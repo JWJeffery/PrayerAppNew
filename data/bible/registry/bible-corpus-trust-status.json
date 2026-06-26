@@ -690,7 +690,15 @@
         "Tobit KJV has 55 active DRB-grid rows without KJV source witness; those rows were not synthesized.",
         "Tobit remains part of the deuterocanon repair queue; this bounded KJV source-scope repair does not by itself promote deuterocanon to textual trust.",
         "Letter of Jeremiah KJV is source-backed and exact-verified for the 73 rows present in the historical KJV source mirror.",
-        "Letter of Jeremiah remains part of the deuterocanon repair queue; this bounded KJV source-scope repair does not by itself promote deuterocanon to textual trust."
+        "Letter of Jeremiah remains part of the deuterocanon repair queue; this bounded KJV source-scope repair does not by itself promote deuterocanon to textual trust.",
+        "Baruch NABRE is source-backed and exact-verified for the 141 rows present in the historical NABRE source mirror.",
+        "Baruch remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust.",
+        "1 Maccabees NABRE is source-backed and exact-verified for the 924 rows present in the historical NABRE source mirror.",
+        "1 Maccabees NABRE has 5 active rows without NABRE source witness; those rows were not synthesized.",
+        "1 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust.",
+        "2 Maccabees NABRE is source-backed and exact-verified for the 556 rows present in the historical NABRE source mirror.",
+        "2 Maccabees NABRE has 2 active rows without NABRE source witness; those rows were not synthesized.",
+        "2 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -708,7 +716,10 @@
         "maccabees_2_kjv_source_scope_repair_1",
         "baruch_kjv_source_scope_repair_1",
         "tobit_kjv_source_scope_repair_1",
-        "letterofjeremiah_kjv_source_scope_repair_1"
+        "letterofjeremiah_kjv_source_scope_repair_1",
+        "baruch_nabre_source_scope_repair_1",
+        "maccabees_1_nabre_source_scope_repair_1",
+        "maccabees_2_nabre_source_scope_repair_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -873,6 +884,84 @@
           "any active rows without KJV are recorded as source-scope absences, not synthesized"
         ],
         "summary": "Letter of Jeremiah KJV was repaired to exact source-scope match from the historical KJV source mirror."
+      },
+      "latest_baruch_nabre_source_scope_repair": {
+        "id": "baruch_nabre_source_scope_repair_2026_06_26",
+        "status": "source_backed_nabre_source_scope_exact_verified",
+        "activePath": "data/bible/OT/baruch.json",
+        "activeLane": "text.NABRE",
+        "sourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "sourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Baruch.json",
+        "sourceChapters": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "targetChapter": null,
+        "activeRows": 141,
+        "sourceRows": 141,
+        "activeNabreRows": 141,
+        "activeRefsWithoutNabre": [],
+        "changedRefsCount": 141,
+        "verification": [
+          "active Baruch text.NABRE exactly matches the historical NABRE source mirror for every source row by chapter:verse",
+          "historical source mirror was read from the parent of the source-removal commit",
+          "any active rows without NABRE are recorded as source-scope absences, not synthesized"
+        ],
+        "summary": "Baruch NABRE was repaired to exact source-scope match from the historical NABRE source mirror."
+      },
+      "latest_maccabees_1_nabre_source_scope_repair": {
+        "id": "maccabees_1_nabre_source_scope_repair_2026_06_26",
+        "status": "source_backed_nabre_source_scope_exact_verified",
+        "activePath": "data/bible/OT/1maccabees.json",
+        "activeLane": "text.NABRE",
+        "sourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "sourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/1Maccabees.json",
+        "sourceChapters": null,
+        "targetChapter": null,
+        "activeRows": 929,
+        "sourceRows": 924,
+        "activeNabreRows": 924,
+        "activeRefsWithoutNabre": [
+          "1:65",
+          "1:66",
+          "1:67",
+          "12:54",
+          "13:54"
+        ],
+        "changedRefsCount": 924,
+        "verification": [
+          "active 1 Maccabees text.NABRE exactly matches the historical NABRE source mirror for every source row by chapter:verse",
+          "historical source mirror was read from the parent of the source-removal commit",
+          "any active rows without NABRE are recorded as source-scope absences, not synthesized"
+        ],
+        "summary": "1 Maccabees NABRE was repaired to exact source-scope match from the historical NABRE source mirror."
+      },
+      "latest_maccabees_2_nabre_source_scope_repair": {
+        "id": "maccabees_2_nabre_source_scope_repair_2026_06_26",
+        "status": "source_backed_nabre_source_scope_exact_verified",
+        "activePath": "data/bible/OT/2maccabees.json",
+        "activeLane": "text.NABRE",
+        "sourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "sourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/2Maccabees.json",
+        "sourceChapters": null,
+        "targetChapter": null,
+        "activeRows": 558,
+        "sourceRows": 556,
+        "activeNabreRows": 556,
+        "activeRefsWithoutNabre": [
+          "2:33",
+          "15:40"
+        ],
+        "changedRefsCount": 556,
+        "verification": [
+          "active 2 Maccabees text.NABRE exactly matches the historical NABRE source mirror for every source row by chapter:verse",
+          "historical source mirror was read from the parent of the source-removal commit",
+          "any active rows without NABRE are recorded as source-scope absences, not synthesized"
+        ],
+        "summary": "2 Maccabees NABRE was repaired to exact source-scope match from the historical NABRE source mirror."
       }
     },
     "broader_canon": {

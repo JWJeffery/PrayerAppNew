@@ -13,7 +13,7 @@
           "number": 1,
           "text": {
             "KJV": "And these are the wordes of the booke, which Baruch the sonne of Nerias, the sonne of Maasias, the sonne of Sedecias, the sonne of Asadias, the son of Chelcias, wrote in Babylon,",
-            "NABRE": "1:1 I. Letter to Jerusalem Chapter 1 A. Historical Setting Now these are the words of the scroll which Baruch, son of Neriah, son of Mahseiah, son of Zedekiah, son of Hasadiah, son of Hilkiah, wrote in Babylon,",
+            "NABRE": "I. Letter to Jerusalem Chapter 1 A. Historical Setting Now these are the words of the scroll which Baruch, son of Neriah, son of Mahseiah, son of Zedekiah, son of Hasadiah, son of Hilkiah, wrote in Babylon,",
             "NRSV": "These are the words of the book that Baruch son of Neriah son of Mahseiah son of Zedekiah son of Hasadiah son of Hilkiah wrote in Babylon,",
             "DRB": "And these be the words of the book, that Baruch the son of Nerias, the son of Maasias, the son of Sedecias, the son of Sedei, the son of Helcias wrote in Babylon,"
           }
@@ -22,7 +22,7 @@
           "number": 2,
           "text": {
             "KJV": "In the fift yere, and in the seuenth day of the moneth, what time as the Caldeans tooke Ierusalem, and burnt it with fire.",
-            "NABRE": "1:2 in the fifth year, on the seventh day of the month, at the time the Chaldeans took Jerusalem and destroyed it with fire.",
+            "NABRE": "in the fifth year, on the seventh day of the month, at the time the Chaldeans took Jerusalem and destroyed it with fire.",
             "NRSV": "in the fifth year, on the seventh day of the month, at the time when the Chaldeans took Jerusalem and burned it with fire.",
             "DRB": "in the fifth year, in the seventh day of the month, at the time that the Chaldees took Jerusalem, and burnt it with fire."
           }
@@ -31,7 +31,7 @@
           "number": 3,
           "text": {
             "KJV": "And Baruch did reade the words of this booke, in the hearing of Iechonias, the sonne of Ioachim king of Iuda, and in the eares of all the people, that came to the booke.",
-            "NABRE": "1:3 Baruch read the words of this scroll in the hearing of Jeconiah, son of Jehoiakim, king of Judah, and all the people who came to the reading:",
+            "NABRE": "Baruch read the words of this scroll in the hearing of Jeconiah, son of Jehoiakim, king of Judah, and all the people who came to the reading:",
             "NRSV": "Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to hear the book,",
             "DRB": "And Baruch read the words of this book unto the ears of Jechonias the son of Joakim king of Juda, and to the ears of all the people coming to the book,"
           }
@@ -40,7 +40,7 @@
           "number": 4,
           "text": {
             "KJV": "And in the hearing of the nobles, and of the kings sonnes, and in the hearing of the Elders, and of all the people from the lowest vnto the highest, euen of all them that dwelt at Babylon, by the riuer Sud.",
-            "NABRE": "1:4 the nobles, kings’ sons, elders, and all the people, small and great—all who lived in Babylon by the river Sud.",
+            "NABRE": "the nobles, kings’ sons, elders, and all the people, small and great—all who lived in Babylon by the river Sud.",
             "NRSV": "the nobles and the princes, and in the hearing of the elders, and in the hearing of all the people, small and great, all who lived in Babylon by the river Sud.",
             "DRB": "and to the ears of the mighty, the sons of the kings, and to the ears of the ancients, and to the ears of the people, from the least even to the greatest of them, that dwelt in Babylon, by the river Sodi."
           }
@@ -49,7 +49,7 @@
           "number": 5,
           "text": {
             "KJV": "Whereupon they wept, fasted, and prayed before the Lord.",
-            "NABRE": "1:5 They wept, fasted, and prayed before the Lord,",
+            "NABRE": "They wept, fasted, and prayed before the Lord,",
             "NRSV": "Then they wept, and fasted, and prayed before the Lord;",
             "DRB": "Who hearing it wept, and fasted, and prayed in the sight of our Lord."
           }
@@ -58,35 +58,39 @@
           "number": 6,
           "text": {
             "DRB": "And they gathered money, according as every man's hand was able,",
-            "KJV": "They made also a collection of money, according to euery mans power."
+            "KJV": "They made also a collection of money, according to euery mans power.",
+            "NABRE": "and collected such funds as each could afford."
           }
         },
         {
           "number": 7,
           "text": {
             "DRB": "and they sent into Jerusalem to Joakim the son of Helcias, the son of Salom, priest, and to the priests, and to all the people, that were found with him in Jerusalem.",
-            "KJV": "And they sent it to Ierusalem vnto Ioachim the hie Priest the sonne of Chelcias, sonne of Salom, and to the Priestes, and to all the people which were found with him at Ierusalem,"
+            "KJV": "And they sent it to Ierusalem vnto Ioachim the hie Priest the sonne of Chelcias, sonne of Salom, and to the Priestes, and to all the people which were found with him at Ierusalem,",
+            "NABRE": "These they sent to Jerusalem, to Jehoiakim the priest, son of Hilkiah, son of Shallum, and to the priests and the whole people who were with him in Jerusalem."
           }
         },
         {
           "number": 8,
           "text": {
             "DRB": "When he took the vessels of the temple of our Lord, which had been taken away out of the temple, to return them into the Land of Juda the tenth day of the month Sivan, the silver vessels, which Sedecias the son of Josias the king of Juda made,",
-            "KJV": "At the same time, when he receiued the vessels of the house of the Lord that were caried out of the Temple, to returne them into the land of Iuda the tenth day of the moneth Siuan, siluer vessels, which Sedecias the sonne of Iosias king of Iuda had made,"
+            "KJV": "At the same time, when he receiued the vessels of the house of the Lord that were caried out of the Temple, to returne them into the land of Iuda the tenth day of the moneth Siuan, siluer vessels, which Sedecias the sonne of Iosias king of Iuda had made,",
+            "NABRE": "(At the same time he received the vessels of the house of the Lord that had been removed from the temple, to restore them to the land of Judah, on the tenth of Sivan. These silver vessels Zedekiah, son of Josiah, king of Judah, had had made"
           }
         },
         {
           "number": 9,
           "text": {
             "DRB": "after that Nabuchodonosor king of Babylon had taken Jechonias, and the princes, and all the mighty, and the people of the land from Jerusalem, and brought them bound into Babylon.",
-            "KJV": "After that Nabuchodonosor king of Babylon had caried away Iechonias, and the Princes, and the captiues, and the mightie men, and the people of the land from Ierusalem, and brought them vnto Babylon:"
+            "KJV": "After that Nabuchodonosor king of Babylon had caried away Iechonias, and the Princes, and the captiues, and the mightie men, and the people of the land from Ierusalem, and brought them vnto Babylon:",
+            "NABRE": "after Nebuchadnezzar, king of Babylon, carried off as captives Jeconiah and the princes, the skilled workers, the nobles, and the people of the land from Jerusalem, and brought them to Babylon.)"
           }
         },
         {
           "number": 10,
           "text": {
             "KJV": "And they said, Behold, we haue sent you money, to buy you burnt offerings, and sinne offerings, and incense, and prepare yee Manna, and offer vpon the Altar of the Lord our God,",
-            "NABRE": "1:10 B. Confession of Guilt The message was: “We send you funds, with which you are to procure burnt offerings, sin offerings, and frankincense, and to prepare grain offerings; offer these on the altar of the Lord our God,",
+            "NABRE": "B. Confession of Guilt The message was: “We send you funds, with which you are to procure burnt offerings, sin offerings, and frankincense, and to prepare grain offerings; offer these on the altar of the Lord our God,",
             "NRSV": "And they said: “Here we are sending you money; so buy burnt offerings and sin offerings and incense, and prepare a grain offering, and offer them on the altar of the Lord our God;”",
             "DRB": "And they said: Behold we have sent you money, with the which buy ye holocausts, and frankincense, and make manna, and offer for sin at the altar of the Lord our God:"
           }
@@ -95,28 +99,31 @@
           "number": 11,
           "text": {
             "DRB": "and pray ye for the life of Nabuchodonosor the king of Babylon, and for the life of Balthasar his son, that their days may be as the days of heaven upon the earth:",
-            "KJV": "And pray for the life of Nabuchodonosor king of Babylon, and for the life of Balthasar his sonne, that their dayes may be vpon earth as the dayes of heauen."
+            "KJV": "And pray for the life of Nabuchodonosor king of Babylon, and for the life of Balthasar his sonne, that their dayes may be vpon earth as the dayes of heauen.",
+            "NABRE": "and pray for the life of Nebuchadnezzar, king of Babylon, and of Belshazzar, his son, that their lifetimes may be as the days of the heavens above the earth."
           }
         },
         {
           "number": 12,
           "text": {
             "DRB": "and that our Lord give us strength, and illuminate our eyes, that we may live under the shadow of Nabuchodonosor the king of Babylon, and under the shadow of Balthasar his son, and may serve them many days, and may find grace in their sight.",
-            "KJV": "And the Lord wil giue vs strength, and lighten our eyes, and we shall liue vnder the shadow of Nabuchodonosor king of Babylon, and vnder the shadow of Balthasar his sonne, and wee shall serue them many dayes, and finde fauour in their sight."
+            "KJV": "And the Lord wil giue vs strength, and lighten our eyes, and we shall liue vnder the shadow of Nabuchodonosor king of Babylon, and vnder the shadow of Balthasar his sonne, and wee shall serue them many dayes, and finde fauour in their sight.",
+            "NABRE": "Pray that the Lord may give us strength, and light to our eyes, that we may live under the protective shadow of Nebuchadnezzar, king of Babylon, and of Belshazzar, his son, to serve them many days, and find favor in their sight."
           }
         },
         {
           "number": 13,
           "text": {
             "DRB": "And for ourselves pray ye to the Lord our God: because we have sinned to the Lord our God, and his fury is not turned away from us even to this day.",
-            "KJV": "Pray for vs also vnto the Lord our God, (for wee haue sinned against the Lord our God, and vnto this day the fury of the Lord, and his wrath is not turned from vs)"
+            "KJV": "Pray for vs also vnto the Lord our God, (for wee haue sinned against the Lord our God, and vnto this day the fury of the Lord, and his wrath is not turned from vs)",
+            "NABRE": "Pray for us to the Lord, our God, for we have sinned against the Lord, our God. Even to this day the wrath of the Lord and his anger have not turned away from us."
           }
         },
         {
           "number": 14,
           "text": {
             "KJV": "And yee shall reade this booke, which we haue sent vnto you, to make confession in the house of the Lord, vpon the feasts and solemne dayes.",
-            "NABRE": "1:14 On the feast day and during the days of assembly, read aloud in the house of the Lord this scroll that we send you:",
+            "NABRE": "On the feast day and during the days of assembly, read aloud in the house of the Lord this scroll that we send you:",
             "NRSV": "“And you shall read this book that we are sending you, to make your confession in the house of the Lord on the days of the festivals and at appointed seasons.”",
             "DRB": "And read ye this book, which we have sent to you to be recited in the temple of our Lord, in a solemn day, and in a day convenient."
           }
@@ -125,7 +132,7 @@
           "number": 15,
           "text": {
             "KJV": "And yee shall say, To the Lord our God belongeth righteousnesse, but vnto vs the confusion of faces, as it is come to passe this day vnto them of Iuda, & to the inhabitants of Ierusalem,",
-            "NABRE": "1:15 “To the Lord our God belongs justice; to us, people of Judah and inhabitants of Jerusalem, to be shamefaced, as on this day—",
+            "NABRE": "“To the Lord our God belongs justice; to us, people of Judah and inhabitants of Jerusalem, to be shamefaced, as on this day—",
             "NRSV": "And you shall say: “The Lord our God is in the right, but there is open shame on us and our ancestors, as at this day.”",
             "DRB": "And you shall say: To the Lord our God justice: but to us confusion of our face: as is this day to all Juda, and them that dwell in Jerusalem,"
           }
@@ -134,14 +141,15 @@
           "number": 16,
           "text": {
             "DRB": "to our kings, and to our princes, and to our priests, and to our prophets, and to our fathers.",
-            "KJV": "And to our kings, and to our princes, and to our Priests, and to our Prophets, and to our fathers."
+            "KJV": "And to our kings, and to our princes, and to our Priests, and to our Prophets, and to our fathers.",
+            "NABRE": "to us, our kings, rulers, priests, and prophets, and our ancestors."
           }
         },
         {
           "number": 17,
           "text": {
             "KJV": "For wee haue sinned before the Lord,",
-            "NABRE": "1:17 We have sinned in the Lord ’s sight",
+            "NABRE": "We have sinned in the Lord ’s sight",
             "NRSV": "“because we have sinned before the Lord.”",
             "DRB": "We have sinned before the Lord our God, and believed him not, having diffidence in him:"
           }
@@ -150,35 +158,40 @@
           "number": 18,
           "text": {
             "DRB": "and we would not be made subject to him, and we have not heard the voice of the Lord our God, to walk in his commandments, which he hath given us.",
-            "KJV": "And disobeyed him, and haue not hearkened vnto the voice of the Lord our God, to walke in the commaundements that he gaue vs openly:"
+            "KJV": "And disobeyed him, and haue not hearkened vnto the voice of the Lord our God, to walke in the commaundements that he gaue vs openly:",
+            "NABRE": "and disobeyed him. We have not listened to the voice of the Lord, our God, so as to follow the precepts the Lord set before us."
           }
         },
         {
           "number": 19,
           "text": {
             "DRB": "From the day, that he brought our fathers out of the Land of Ægypt, even to this day, we would not be brought to believe the Lord our God: and dissipated we revolted, that we might not hear his voice.",
-            "KJV": "Since the day that the Lorde brought our forefathers out of the land of Egypt, vnto this present day, wee haue beene disobedient vnto the Lord our God, and we haue beene negligent in not hearing his voice."
+            "KJV": "Since the day that the Lorde brought our forefathers out of the land of Egypt, vnto this present day, wee haue beene disobedient vnto the Lord our God, and we haue beene negligent in not hearing his voice.",
+            "NABRE": "From the day the Lord led our ancestors out of the land of Egypt until the present day, we have been disobedient to the Lord, our God, and neglected to listen to his voice."
           }
         },
         {
           "number": 20,
           "text": {
             "DRB": "And many evils and maledictions have cloven to us, which our Lord appointed to Moyses his servant: who brought our fathers out of the Land of Ægypt, to give us a land flowing with milk and honey, as at this present day.",
-            "KJV": "Wherefore the euils cleaued vnto vs, and the curse which the Lord appointed by Moses his seruant, at the time that he brought our fathers out of the land of Egypt, to giue vs a land that floweth with milke and honie, like as it is to see this day."
+            "KJV": "Wherefore the euils cleaued vnto vs, and the curse which the Lord appointed by Moses his seruant, at the time that he brought our fathers out of the land of Egypt, to giue vs a land that floweth with milke and honie, like as it is to see this day.",
+            "NABRE": "Even today evils cling to us, the curse the Lord pronounced to Moses, his servant, at the time he led our ancestors out of the land of Egypt to give us a land flowing with milk and honey."
           }
         },
         {
           "number": 21,
           "text": {
             "DRB": "And we have not heard the voice of the Lord our God according to all the words of the prophets, which he hath sent to us:",
-            "KJV": "Neuerthelesse we haue not hearkened vnto the voice of the Lord our God, according vnto all the wordes of the Prophets, whom he sent vnto vs."
+            "KJV": "Neuerthelesse we haue not hearkened vnto the voice of the Lord our God, according vnto all the wordes of the Prophets, whom he sent vnto vs.",
+            "NABRE": "For we did not listen to the voice of the Lord, our God, in all the words of the prophets he sent us,"
           }
         },
         {
           "number": 22,
           "text": {
             "DRB": "and we have gone away every man into the sense of our malignant heart, to serve strange gods, doing evils before the eyes of the Lord our God.",
-            "KJV": "But euery man followed the imagination of his owne wicked heart, to serue strange gods, and to doe euill in the sight of the Lord our God."
+            "KJV": "But euery man followed the imagination of his owne wicked heart, to serue strange gods, and to doe euill in the sight of the Lord our God.",
+            "NABRE": "but each of us has followed the inclinations of our wicked hearts, served other gods, and done evil in the sight of the Lord, our God."
           }
         }
       ]
@@ -190,7 +203,7 @@
           "number": 1,
           "text": {
             "KJV": "Therefore the Lord hath made good his worde, which hee pronounced against vs, and against our Iudges that iudged Israel, and against our kings, and against our princes, and against the men of Israel and Iuda,",
-            "NABRE": "2:1 Chapter 2 “So the Lord carried out the warning he had uttered against us: against our judges, who governed Israel, against our kings and princes, and against the people of Israel and Judah.",
+            "NABRE": "Chapter 2 “So the Lord carried out the warning he had uttered against us: against our judges, who governed Israel, against our kings and princes, and against the people of Israel and Judah.",
             "NRSV": "“So the Lord carried out the threat he spoke against us: against our judges who ruled Israel, and against our kings and our officials and against the people of Israel and Judah.”",
             "DRB": "For the which thing the Lord our God hath established his word, that he spake to us, and to our judges, that have judged Israel, and to our kings, and to our princes, and to all Israel and Juda:"
           }
@@ -199,70 +212,79 @@
           "number": 2,
           "text": {
             "DRB": "that our Lord might bring upon us great evils, which were not done under the heaven, as have been done in Jerusalem, according to the things that are written in the law of Moyses:",
-            "KJV": "To bring vpon vs great plagues, such as neuer happened vnder the whole heauen, as it came to passe in Ierusalem, according to the things that were written in the Law of Moses,"
+            "KJV": "To bring vpon vs great plagues, such as neuer happened vnder the whole heauen, as it came to passe in Ierusalem, according to the things that were written in the Law of Moses,",
+            "NABRE": "Nowhere under heaven has anything been done like what he did in Jerusalem, as was written in the law of Moses:"
           }
         },
         {
           "number": 3,
           "text": {
             "DRB": "that a man should eat the flesh of his son, and the flesh of his daughter.",
-            "KJV": "That a man should eat the flesh of his owne sonne, and the flesh of his owne daughter."
+            "KJV": "That a man should eat the flesh of his owne sonne, and the flesh of his owne daughter.",
+            "NABRE": "that we would each eat the flesh of our sons, each the flesh of our daughters."
           }
         },
         {
           "number": 4,
           "text": {
             "DRB": "And he hath given them under the hand of all the kings, that are round about us into reproach, and into desolation among all peoples, into which our Lord hath dispersed us.",
-            "KJV": "Moreouer, he hath deliuered them to be in subiection to all the kingdomes that are round about vs, to be as a reproch and desolation among all the people round about, where the Lord hath scattered them."
+            "KJV": "Moreouer, he hath deliuered them to be in subiection to all the kingdomes that are round about vs, to be as a reproch and desolation among all the people round about, where the Lord hath scattered them.",
+            "NABRE": "He has made us subject to all the kingdoms around us, an object of reproach and horror among all the peoples around us, where the Lord has scattered us."
           }
         },
         {
           "number": 5,
           "text": {
             "DRB": "And we are made underneath, and not above: because we have sinned to the Lord our God, in not obeying his voice.",
-            "KJV": "Thus wee were cast downe and not exalted, because wee haue sinned against the Lord our God, and haue not beene obedient vnto his voice."
+            "KJV": "Thus wee were cast downe and not exalted, because wee haue sinned against the Lord our God, and haue not beene obedient vnto his voice.",
+            "NABRE": "We are brought low, not raised high, because we sinned against the Lord, our God, not listening to his voice."
           }
         },
         {
           "number": 6,
           "text": {
             "DRB": "To the Lord our God justice: but to us, and to our fathers confusion of face, as is this day.",
-            "KJV": "To the Lord our God appertaineth righteousnesse: but vnto vs and to our fathers open shame, as appeareth this day."
+            "KJV": "To the Lord our God appertaineth righteousnesse: but vnto vs and to our fathers open shame, as appeareth this day.",
+            "NABRE": "“To the Lord, our God, belongs justice; to us and to our ancestors, to be shamefaced, as on this day."
           }
         },
         {
           "number": 7,
           "text": {
             "DRB": "Because our Lord hath spoken upon us all these evils, that are come upon us:",
-            "KJV": "For all these plagues are come vpon vs, which the Lord hath pronounced against vs,"
+            "KJV": "For all these plagues are come vpon vs, which the Lord hath pronounced against vs,",
+            "NABRE": "All the evils of which the Lord had warned us have come upon us."
           }
         },
         {
           "number": 8,
           "text": {
             "DRB": "and we have not besought the face of the Lord our God, to return every one of us from our most wicked ways.",
-            "KJV": "Yet haue we not prayed before the Lord, &thorn; we might turne euery one from the imaginations of his wicked heart."
+            "KJV": "Yet haue we not prayed before the Lord, &thorn; we might turne euery one from the imaginations of his wicked heart.",
+            "NABRE": "We did not entreat the favor of the Lord by turning, each one, from the designs of our evil hearts."
           }
         },
         {
           "number": 9,
           "text": {
             "DRB": "And our Lord hath watched in evils, and hath brought them upon us: because our Lord is just in all his works, which he hath commanded us:",
-            "KJV": "Wherefore the Lord watched ouer vs for euill, and the Lord hath brought it vpon vs: for the Lord is righteous in all his works, which he hath commanded vs."
+            "KJV": "Wherefore the Lord watched ouer vs for euill, and the Lord hath brought it vpon vs: for the Lord is righteous in all his works, which he hath commanded vs.",
+            "NABRE": "The Lord kept watch over the evils, and brought them home to us; for the Lord is just in all the works he commanded us to do,"
           }
         },
         {
           "number": 10,
           "text": {
             "DRB": "and we have not heard his voice to walk in the precepts of our Lord, which he hath given before our face.",
-            "KJV": "Yet we haue not hearkened vnto his voice, to walk in the c&#333;mandements of the Lord, that he hath set before vs."
+            "KJV": "Yet we haue not hearkened vnto his voice, to walk in the c&#333;mandements of the Lord, that he hath set before vs.",
+            "NABRE": "but we did not listen to his voice, or follow the precepts of the Lord which he had set before us."
           }
         },
         {
           "number": 11,
           "text": {
             "KJV": "And now O Lord God of Israel, that hast brought thy people out of the land of Egypt with a mighty hand, and high arme, and with signes & with wonders, & with great power, and hast gotten thy selfe a name, as appeareth this day:",
-            "NABRE": "2:11 C. Prayer for Deliverance “And now, Lord, God of Israel, who led your people out of the land of Egypt with a strong hand, with signs and wonders and great might, and with an upraised arm, so that you have made for yourself a name to the present day:",
+            "NABRE": "C. Prayer for Deliverance “And now, Lord, God of Israel, who led your people out of the land of Egypt with a strong hand, with signs and wonders and great might, and with an upraised arm, so that you have made for yourself a name to the present day:",
             "NRSV": "“And now, O Lord God of Israel, who brought your people out of the land of Egypt with a mighty hand and with signs and wonders and with great power and outstretched arm, and made yourself a name that continues to this day,”",
             "DRB": "And now o Lord God of Israel, which brought out thy people out of the Land of Ægypt in a strong hand, and in signs, and in wonders, and in thy great strength, and in a mighty arm, and madest thee a name as is this day:"
           }
@@ -271,7 +293,7 @@
           "number": 12,
           "text": {
             "KJV": "O Lord our God, we haue sinned, we haue done vngodly, wee haue dealt vnrighteously in all thine ordinances.",
-            "NABRE": "2:12 we have sinned, we have committed sacrilege, we have violated all your statutes, Lord, our God.",
+            "NABRE": "we have sinned, we have committed sacrilege, we have violated all your statutes, Lord, our God.",
             "NRSV": "“we have sinned, we have been ungodly, we have done wrong, O Lord our God, against all your ordinances.”",
             "DRB": "we have sinned, we have done impiously, we have dealt unjustly o Lord our God, in all thy justices."
           }
@@ -280,42 +302,47 @@
           "number": 13,
           "text": {
             "DRB": "Let thy wrath be turned away from us: because we are left a few among the nations, where thou hast dispersed us.",
-            "KJV": "Let thy wrath turne from vs: for we are but a few left among the heathen, where thou hast scattered vs."
+            "KJV": "Let thy wrath turne from vs: for we are but a few left among the heathen, where thou hast scattered vs.",
+            "NABRE": "Withdraw your anger from us, for we are left few in number among the nations where you have scattered us."
           }
         },
         {
           "number": 14,
           "text": {
             "DRB": "Hear o Lord our prayers, and our petitions, and bring us out for thine own sake: and grant us to find grace before their face, that have led us away:",
-            "KJV": "Heare our prayers, O Lord, and our petitions, and deliuer vs for thine owne sake, and giue vs fauour in the sight of them which haue led vs away:"
+            "KJV": "Heare our prayers, O Lord, and our petitions, and deliuer vs for thine owne sake, and giue vs fauour in the sight of them which haue led vs away:",
+            "NABRE": "Hear, Lord, our prayer of supplication, and deliver us for your own sake: grant us favor in the sight of those who brought us into exile,"
           }
         },
         {
           "number": 15,
           "text": {
             "DRB": "that all the earth may know that thou art the Lord our God, and that thy name is invocated upon Israel, and upon his stock.",
-            "KJV": "That all the earth may know that thou art &thorn; Lord our God, because Israel & his posterity is called by thy name."
+            "KJV": "That all the earth may know that thou art &thorn; Lord our God, because Israel & his posterity is called by thy name.",
+            "NABRE": "that the whole earth may know that you are the Lord, our God, and that Israel and his descendants bear your name."
           }
         },
         {
           "number": 16,
           "text": {
             "DRB": "Look o Lord from thy holy house upon us, and incline thine ear, and hear us.",
-            "KJV": "O Lord looke downe from thy holy house, & consider vs: bow downe thine eare, O Lord, to heare vs."
+            "KJV": "O Lord looke downe from thy holy house, & consider vs: bow downe thine eare, O Lord, to heare vs.",
+            "NABRE": "Lord, look down from your holy dwelling and take thought of us; Lord, incline your ear to hear us."
           }
         },
         {
           "number": 17,
           "text": {
             "DRB": "Open thine eyes, & see: because the dead that are in hell, whose spirit is taken from their bowels, shall not give honour and justification to our Lord:",
-            "KJV": "Open thine eyes and behold: for the dead that are in the graues, whose soules are taken from their bodies, wil giue vnto the Lord neither praise nor righteousnesse."
+            "KJV": "Open thine eyes and behold: for the dead that are in the graues, whose soules are taken from their bodies, wil giue vnto the Lord neither praise nor righteousnesse.",
+            "NABRE": "Open your eyes and see: it is not the dead in Hades, whose breath has been taken from within them, who will declare the glory and vindication to the Lord."
           }
         },
         {
           "number": 18,
           "text": {
             "KJV": "But &thorn; soule that is greatly vexed, which goeth stouping & feeble, and the eyes that faile, and the hungry soule wil giue thee praise & righteousnes O Lord.",
-            "NABRE": "2:18 The person who is deeply grieved, who walks bowed and feeble, with failing eyes and famished soul, will declare your glory and justice, Lord!",
+            "NABRE": "The person who is deeply grieved, who walks bowed and feeble, with failing eyes and famished soul, will declare your glory and justice, Lord!",
             "NRSV": "“but the person who is deeply grieved, who walks bent and feeble, with failing eyes and a hungry soul, will declare your glory and righteousness, O Lord.”",
             "DRB": "but the soul, that is sorrowful for the greatness of evil, and goeth crooked, and weak, and the eyes failing, and the hungry soul giveth glory and justice to thee their Lord."
           }
@@ -324,84 +351,95 @@
           "number": 19,
           "text": {
             "DRB": "For not according to the justices of our fathers do we pour out prayers, and ask mercy before thy sight o Lord our God:",
-            "KJV": "Therfore wee doe not make our humble supplication before thee, O Lord our God, for the righteousnes of our fathers, and of our kings."
+            "KJV": "Therfore wee doe not make our humble supplication before thee, O Lord our God, for the righteousnes of our fathers, and of our kings.",
+            "NABRE": "“Not on the just deeds of our ancestors and our kings do we base our plea for mercy in your sight, Lord, our God."
           }
         },
         {
           "number": 20,
           "text": {
             "DRB": "but because thou hast sent thy wrath, and thy fury upon us, as thou hast spoken by the hand of thy servants the prophets, saying:",
-            "KJV": "For thou hast sent out thy wrath & indignation vpon vs, as thou hast spoken by thy seruants &thorn; prophets, saying,"
+            "KJV": "For thou hast sent out thy wrath & indignation vpon vs, as thou hast spoken by thy seruants &thorn; prophets, saying,",
+            "NABRE": "You have sent your wrath and anger upon us, as you had warned us through your servants the prophets:"
           }
         },
         {
           "number": 21,
           "text": {
             "DRB": "Thus saith our Lord: Bow down your shoulder, & your neck, and do works for the king of Babylon: and you shall sit in the land, which I have given to your fathers.",
-            "KJV": "Thus saith the Lord, bow down your shoulders to serue the king of Babylon: so shall ye remaine in the lande that I gaue vnto your fathers."
+            "KJV": "Thus saith the Lord, bow down your shoulders to serue the king of Babylon: so shall ye remaine in the lande that I gaue vnto your fathers.",
+            "NABRE": "Thus says the Lord: Bend your necks and serve the king of Babylon, that you may continue in the land I gave your ancestors;"
           }
         },
         {
           "number": 22,
           "text": {
             "DRB": "But if you will not hear the voice of the Lord your God, to work for the king of Babylon: I will make you to fail out of the cities of Juda, and from without Jerusalem,",
-            "KJV": "But if ye will not heare the voice of the Lord to serue &thorn; king of Babylon,"
+            "KJV": "But if ye will not heare the voice of the Lord to serue &thorn; king of Babylon,",
+            "NABRE": "for if you do not listen to the Lord ’s voice so as to serve the king of Babylon,"
           }
         },
         {
           "number": 23,
           "text": {
             "DRB": "and I will take from you the voice of mirth, and the voice of joy, and the voice of the bridegroom, and the voice of the bride, and all the land shall be without foot step that inhabit it.",
-            "KJV": "I will cause to cease out of the cities of Iuda, and from without Ierusalem the voice of mirth, and the voice of ioy: the voice of the bridegrome, and the voice of the bride, and the whole land shall be desolate of inhabitants."
+            "KJV": "I will cause to cease out of the cities of Iuda, and from without Ierusalem the voice of mirth, and the voice of ioy: the voice of the bridegrome, and the voice of the bride, and the whole land shall be desolate of inhabitants.",
+            "NABRE": "I will silence from the cities of Judah and from the streets of Jerusalem the cry of joy and the cry of gladness, the voice of the bridegroom and the voice of the bride; and all the land shall be deserted, without inhabitants."
           }
         },
         {
           "number": 24,
           "text": {
             "DRB": "And they heard not thy voice, to work for the king of Babylon: and thou hast established thy words, which thou spakest by the hands of thy servants the prophets, that the bones of our kings, and of our fathers should be transported out of their place:",
-            "KJV": "But we would not hearken vnto thy voyce, to serue the king of Babylon: therefore hast thou made good the wordes that thou spakest by thy seruants the prophets, namely that the bones of our kings, and the bones of our fathers should be taken out of their places."
+            "KJV": "But we would not hearken vnto thy voyce, to serue the king of Babylon: therefore hast thou made good the wordes that thou spakest by thy seruants the prophets, namely that the bones of our kings, and the bones of our fathers should be taken out of their places.",
+            "NABRE": "But we did not listen to your voice, or serve the king of Babylon, and you carried out the threats you had made through your servants the prophets, that the bones of our kings and the bones of our ancestors would be brought out from their burial places."
           }
         },
         {
           "number": 25,
           "text": {
             "DRB": "and behold they are cast forth in the heat of the sun, and in the frost of the night: and they are dead in very sore pains, in famine, and by sword, and by casting forth.",
-            "KJV": "And loe, they are cast out to the heat of the day, and to the frost of the night, and they died in great miseries, by famine, by sword, and by pestilence."
+            "KJV": "And loe, they are cast out to the heat of the day, and to the frost of the night, and they died in great miseries, by famine, by sword, and by pestilence.",
+            "NABRE": "And indeed, they lie exposed to the heat of day and the frost of night. They died in great suffering, by famine and sword and plague."
           }
         },
         {
           "number": 26,
           "text": {
             "DRB": "And hast made the temple, in which thy name was there invocated, as it is this day, for the iniquity of the house of Israel, and of the house of Juda.",
-            "KJV": "And the house which is called by thy name (hast thou laid waste) as it is to be seene this day, for the wickednesse of the house of Israel, and the house of Iuda."
+            "KJV": "And the house which is called by thy name (hast thou laid waste) as it is to be seene this day, for the wickednesse of the house of Israel, and the house of Iuda.",
+            "NABRE": "And you reduced the house which bears your name to what it is today, because of the wickedness of the house of Israel and the house of Judah."
           }
         },
         {
           "number": 27,
           "text": {
             "DRB": "And thou hast done in us o Lord our God according to all thy goodness, and according to all that thy great compassion:",
-            "KJV": "O Lord our God, thou hast dealt with vs after all thy goodnesse, and according to all that great mercie of thine."
+            "KJV": "O Lord our God, thou hast dealt with vs after all thy goodnesse, and according to all that great mercie of thine.",
+            "NABRE": "God’s Promises Recalled. “But with us, Lord, our God, you have dealt in all your clemency and in all your great mercy."
           }
         },
         {
           "number": 28,
           "text": {
             "DRB": "as thou spakest by the hand of thy servant Moyses, in the day, that thou didst command him to write thy law before the children of Israel,",
-            "KJV": "As thou spakest by thy seruant Moses in the day when thou didst command him to write thy Law, before the children of Israel, saying,"
+            "KJV": "As thou spakest by thy seruant Moses in the day when thou didst command him to write thy Law, before the children of Israel, saying,",
+            "NABRE": "Thus you spoke through your servant Moses, the day you ordered him to write down your law in the presence of the Israelites:"
           }
         },
         {
           "number": 29,
           "text": {
             "DRB": "saying: If you will not hear my voice, this great multitude shall be turned into a very little one among the Gentiles, whither I will disperse them:",
-            "KJV": "If ye will not heare my voyce, surely this very great multitude shalbe turned into a smal among the nations, where I will scatter them."
+            "KJV": "If ye will not heare my voyce, surely this very great multitude shalbe turned into a smal among the nations, where I will scatter them.",
+            "NABRE": "‘If you do not listen to my voice, surely this great and numerous throng will dwindle away among the nations to which I will scatter them."
           }
         },
         {
           "number": 30,
           "text": {
             "KJV": "For I knew that they would not heare me: because it is a stiffenecked people: but in the land of their captiuities, they shall remember themselues,",
-            "NABRE": "2:30 For I know they will not listen to me, because they are a stiff-necked people. But in the land of their exile they shall have a change of heart;",
+            "NABRE": "For I know they will not listen to me, because they are a stiff-necked people. But in the land of their exile they shall have a change of heart;",
             "NRSV": "“For I know that they will not obey me, for they are a stiff-necked people. But in the land of their exile they will come to themselves”",
             "DRB": "because I know that the people will not hear me. for it is a people of a stiff neck: and they shall be converted to their heart in the land of their captivity:"
           }
@@ -410,35 +448,40 @@
           "number": 31,
           "text": {
             "DRB": "and they shall know that I am the Lord their God: and I will give them a heart, and they shall understand: and ears, and they shall hear.",
-            "KJV": "And shall know that I am the Lord their God: For I giue them an heart, and eares to heare."
+            "KJV": "And shall know that I am the Lord their God: For I giue them an heart, and eares to heare.",
+            "NABRE": "they shall know that I, the Lord, am their God. I will give them a heart and ears that listen;"
           }
         },
         {
           "number": 32,
           "text": {
             "DRB": "And they shall praise me in the land of their captivity, and shall be mindful of my name.",
-            "KJV": "And they shal praise me in the land of their captiuitie, and thinke vpon my name,"
+            "KJV": "And they shal praise me in the land of their captiuitie, and thinke vpon my name,",
+            "NABRE": "and they shall praise me in the land of their exile, and shall remember my name."
           }
         },
         {
           "number": 33,
           "text": {
             "DRB": "And they shall turn away themselves from their hard back, and from their malignant works: because they shall remember the way of their fathers, that sinned against me.",
-            "KJV": "And returne from their stiffe neck, and from their wicked deeds: for they shal remember the way of their fathers which sinned before the Lord."
+            "KJV": "And returne from their stiffe neck, and from their wicked deeds: for they shal remember the way of their fathers which sinned before the Lord.",
+            "NABRE": "Then they shall turn back from their stiff-necked stubbornness, and from their evil deeds, because they shall remember the ways of their ancestors, who sinned against the Lord."
           }
         },
         {
           "number": 34,
           "text": {
             "DRB": "And I will recall them back into the land, which I sware to their fathers, Abraham, Isaac, and Jacob, and they shall have dominion thereof: and I will multiply them, and they shall not be lessened.",
-            "KJV": "And I will bring them againe into the land which I promised with an oath vnto their fathers, Abraham, Isaac, and Iacob, and they shall bee lords of it, and I will increase them, and they shall not be diminished."
+            "KJV": "And I will bring them againe into the land which I promised with an oath vnto their fathers, Abraham, Isaac, and Iacob, and they shall bee lords of it, and I will increase them, and they shall not be diminished.",
+            "NABRE": "And I will bring them back to the land I promised on oath to their ancestors, to Abraham, Isaac, and Jacob; and they shall rule it. I will make them increase; they shall not be few."
           }
         },
         {
           "number": 35,
           "text": {
             "DRB": "And I will establish unto them another testament everlasting, that I be their God, and they shall be my people: and I will no more move my people, the children of Israel from the land, that I have given them.",
-            "KJV": "And I will make an euerlasting couenant with them, to be their God, and they shall be my people: and I will no more driue my people of Israel out of the land that I haue giuen them."
+            "KJV": "And I will make an euerlasting couenant with them, to be their God, and they shall be my people: and I will no more driue my people of Israel out of the land that I haue giuen them.",
+            "NABRE": "And I will establish for them an eternal covenant: I will be their God, and they shall be my people; and I will never again remove my people Israel from the land I gave them.’"
           }
         }
       ]
@@ -450,7 +493,7 @@
           "number": 1,
           "text": {
             "KJV": "O Lord almighty, God of Israel, the soule in anguish, the troubled spirit crieth vnto thee.",
-            "NABRE": "3:1 Chapter 3 “ Lord Almighty, God of Israel, the anguished soul, the dismayed spirit cries out to you.",
+            "NABRE": "Chapter 3 “ Lord Almighty, God of Israel, the anguished soul, the dismayed spirit cries out to you.",
             "NRSV": "“O Lord Almighty, God of Israel, the soul in anguish and the wearied spirit cry out to you.”",
             "DRB": "And now o Lord omnipotent, God of Israel, the soul in distresses, & the pensive spirit cryeth to thee:"
           }
@@ -459,56 +502,63 @@
           "number": 2,
           "text": {
             "DRB": "hear Lord, and have mercy, because thou art a merciful God, & have mercy upon us: because we have sinned before thee.",
-            "KJV": "Heare O Lord, and haue mercy: for thou art mercifull, and haue pitty vpon vs, because we haue sinned before thee."
+            "KJV": "Heare O Lord, and haue mercy: for thou art mercifull, and haue pitty vpon vs, because we haue sinned before thee.",
+            "NABRE": "Hear, Lord, and have mercy, for you are a merciful God; have mercy on us, who have sinned against you:"
           }
         },
         {
           "number": 3,
           "text": {
             "DRB": "Because thou sittest for ever, and shall we perish everlastingly?",
-            "KJV": "For thou endurest for euer, and we perish vtterly."
+            "KJV": "For thou endurest for euer, and we perish vtterly.",
+            "NABRE": "for you are enthroned forever, while we are perishing forever."
           }
         },
         {
           "number": 4,
           "text": {
             "DRB": "O Lord omnipotent, God of Israel, hear now the prayer of the dead of Israel, and of their children, that have sinned before thee, and have not heard the voice of the Lord their God, and evils have stuck fast to us.",
-            "KJV": "O Lord almighty, thou God of Israel, heare now the prayers of the dead Israelites, and of their children, which haue sinned before thee, and not hearkened vnto the voice of thee their God: for the which cause these plagues cleaue vnto vs."
+            "KJV": "O Lord almighty, thou God of Israel, heare now the prayers of the dead Israelites, and of their children, which haue sinned before thee, and not hearkened vnto the voice of thee their God: for the which cause these plagues cleaue vnto vs.",
+            "NABRE": "Lord Almighty, God of Israel, hear the prayer of the dead of Israel, children who sinned against you; they did not listen to the voice of the Lord, their God, and their evils cling to us."
           }
         },
         {
           "number": 5,
           "text": {
             "DRB": "Remember not the iniquities of our fathers, but remember thy hand, and thy name in this time:",
-            "KJV": "Remember not the iniquities of our forefathers: but thinke vpon thy power and thy name, now at this time."
+            "KJV": "Remember not the iniquities of our forefathers: but thinke vpon thy power and thy name, now at this time.",
+            "NABRE": "Do not remember the wicked deeds of our ancestors, but remember at this time your power and your name,"
           }
         },
         {
           "number": 6,
           "text": {
             "DRB": "because thou art the Lord our God, and we will praise thee o Lord:",
-            "KJV": "For thou art the Lord our God, and thee, O Lord, will we praise."
+            "KJV": "For thou art the Lord our God, and thee, O Lord, will we praise.",
+            "NABRE": "for you are the Lord our God; and you, Lord, we will praise!"
           }
         },
         {
           "number": 7,
           "text": {
             "DRB": "because for this end thou hast given thy fear in our hearts, and that we may invocate thy name, and may praise thee in our captivity, because we are converted from the iniquity of our fathers, which have sinned before thee.",
-            "KJV": "And for this cause thou hast put thy feare in our hearts, to the intent that we should call vpon thy name, and praise thee in our captiuity: for we haue called to minde all the iniquity of our forefathers that sinned before thee."
+            "KJV": "And for this cause thou hast put thy feare in our hearts, to the intent that we should call vpon thy name, and praise thee in our captiuity: for we haue called to minde all the iniquity of our forefathers that sinned before thee.",
+            "NABRE": "This is why you put into our hearts the fear of you: that we may call upon your name, and praise you in our exile, when we have removed from our hearts all the wickedness of our ancestors who sinned against you."
           }
         },
         {
           "number": 8,
           "text": {
             "DRB": "And behold we are in our captivity, this day, whereby thou hast dispersed us into reproach, and into malediction, and into sin, according to all the iniquities of our fathers, which have revolted from thee o Lord our God.",
-            "KJV": "Behold, we are yet this day in our captiuity, where thou hast scattered vs, for a reproch and a curse, and to be subiect to payments, according to all the iniquities of our fathers which departed from the Lord our God."
+            "KJV": "Behold, we are yet this day in our captiuity, where thou hast scattered vs, for a reproch and a curse, and to be subiect to payments, according to all the iniquities of our fathers which departed from the Lord our God.",
+            "NABRE": "See, today we are in exile, where you have scattered us, an object of reproach and cursing and punishment for all the wicked deeds of our ancestors, who withdrew from the Lord, our God.”"
           }
         },
         {
           "number": 9,
           "text": {
             "KJV": "Heare, Israel, the commandements of life, giue eare to vnderstand wisedome.",
-            "NABRE": "3:9 II. Praise of Wisdom A. Importance of Wisdom Hear, Israel, the commandments of life: listen, and know prudence!",
+            "NABRE": "II. Praise of Wisdom A. Importance of Wisdom Hear, Israel, the commandments of life: listen, and know prudence!",
             "NRSV": "Hear the commandments of life, O Israel; give ear, and learn wisdom!",
             "DRB": "Hear Israel the commandments of life: harken with your ears, that you may know prudence."
           }
@@ -517,21 +567,23 @@
           "number": 10,
           "text": {
             "DRB": "What is the matter Israel that thou art in the land of the enemies?",
-            "KJV": "How happeneth it, Israel, that thou art in thine enemies land, that thou art waxen old in a strange countrey, that thou art defiled with the dead?"
+            "KJV": "How happeneth it, Israel, that thou art in thine enemies land, that thou art waxen old in a strange countrey, that thou art defiled with the dead?",
+            "NABRE": "How is it, Israel, that you are in the land of your foes, grown old in a foreign land,"
           }
         },
         {
           "number": 11,
           "text": {
             "DRB": "Thou art waxen old in a strange land, thou art defiled with the dead: thou art reputed with them that go down into hell.",
-            "KJV": "That thou art counted with them that goe downe into the graue?"
+            "KJV": "That thou art counted with them that goe downe into the graue?",
+            "NABRE": "Defiled with the dead, counted among those destined for Hades?"
           }
         },
         {
           "number": 12,
           "text": {
             "KJV": "Thou hast forsaken the fountaine of wisedome.",
-            "NABRE": "3:12 You have forsaken the fountain of wisdom!",
+            "NABRE": "You have forsaken the fountain of wisdom!",
             "NRSV": "You have forsaken the fountain of wisdom.",
             "DRB": "Thou hast forsaken the fountain of wisdom:"
           }
@@ -540,14 +592,15 @@
           "number": 13,
           "text": {
             "DRB": "for if thou hadst walked in the way of God, thou hadst verily dwelt in peace everlasting.",
-            "KJV": "For if thou hadst walked in the way of God, thou shouldest haue dwelled in peace for euer."
+            "KJV": "For if thou hadst walked in the way of God, thou shouldest haue dwelled in peace for euer.",
+            "NABRE": "Had you walked in the way of God, you would have dwelt in enduring peace."
           }
         },
         {
           "number": 14,
           "text": {
             "KJV": "Learne where is wisedome, where is strength, where is vnderstanding, that thou mayest know also where is length of daies, and life, where is the light of the eyes and peace.",
-            "NABRE": "3:14 Learn where prudence is, where strength, where understanding; That you may know also where are length of days, and life, where light of the eyes, and peace.",
+            "NABRE": "Learn where prudence is, where strength, where understanding; That you may know also where are length of days, and life, where light of the eyes, and peace.",
             "NRSV": "Learn where there is wisdom, where there is strength, where there is understanding, so that you may at the same time discern where there is length of days and life, where there is light for the eyes, and peace.",
             "DRB": "Learn where wisdom is, where strength is, where understanding is: that thou mayst know withal where is the long continuance of life and living, where the light of the eyes, and peace is."
           }
@@ -556,70 +609,79 @@
           "number": 15,
           "text": {
             "DRB": "Who hath found the place thereof? and who hath entered into the treasures thereof?",
-            "KJV": "Who hath found out her place? or who hath come into her treasures?"
+            "KJV": "Who hath found out her place? or who hath come into her treasures?",
+            "NABRE": "Who has found the place of wisdom? Who has entered into her treasuries?"
           }
         },
         {
           "number": 16,
           "text": {
             "DRB": "Where are the princes of the Gentiles, and they that rule over the beasts, that are upon the earth?",
-            "KJV": "Where are the princes of the heathen become, and such as ruled the beasts vpon the earth."
+            "KJV": "Where are the princes of the heathen become, and such as ruled the beasts vpon the earth.",
+            "NABRE": "Where are the rulers of the nations, who lorded it over the wild beasts of the earth,"
           }
         },
         {
           "number": 17,
           "text": {
             "DRB": "that play with the birds of the heaven,",
-            "KJV": "They that had their pastime with the foules of the aire, and they that hoorded vp siluer and gold wherein men trust, and made no end of their getting?"
+            "KJV": "They that had their pastime with the foules of the aire, and they that hoorded vp siluer and gold wherein men trust, and made no end of their getting?",
+            "NABRE": "made sport of the birds in the heavens, Who heaped up the silver, the gold in which people trust, whose possessions were unlimited,"
           }
         },
         {
           "number": 18,
           "text": {
             "DRB": "that treasure up silver, and gold, wherein men have confidence, and is there no end of their getting? which fashion silver & are careful, neither is there invention of their works?",
-            "KJV": "For they that wrought in siluer, and were so carefull, and whose workes are vnsearchable,"
+            "KJV": "For they that wrought in siluer, and were so carefull, and whose workes are vnsearchable,",
+            "NABRE": "Who schemed anxiously for money, their doings beyond discovery?"
           }
         },
         {
           "number": 19,
           "text": {
             "DRB": "They are destroyed, and are gone down to hell, and others are risen up in their place.",
-            "KJV": "They are vanished, and gone downe to the graue, and others are come vp in their steads."
+            "KJV": "They are vanished, and gone downe to the graue, and others are come vp in their steads.",
+            "NABRE": "They have vanished, gone down to Hades, and others have risen up in their stead."
           }
         },
         {
           "number": 20,
           "text": {
             "DRB": "Young men saw the light, and dwelt upon the earth: but the way of discipline they knew not,",
-            "KJV": "Young men haue seene light, and dwelt vpon the earth: but the way of knowledge haue they not knowen,"
+            "KJV": "Young men haue seene light, and dwelt vpon the earth: but the way of knowledge haue they not knowen,",
+            "NABRE": "Later generations have seen the light of day, have dwelt on the earth, But the way to understanding they have not known,"
           }
         },
         {
           "number": 21,
           "text": {
             "DRB": "neither understood they the paths thereof, neither have their children received it, it is made far from their face.",
-            "KJV": "Nor vnderstood the pathes thereof; nor laid hold of it: their children were farre off from that way."
+            "KJV": "Nor vnderstood the pathes thereof; nor laid hold of it: their children were farre off from that way.",
+            "NABRE": "they have not perceived her paths or reached her; their children remain far from the way to her."
           }
         },
         {
           "number": 22,
           "text": {
             "DRB": "It hath not been heard in the Land of Chanaan, neither hath it been seen in Theman.",
-            "KJV": "It hath not beene heard of in Chanaan: neither hath it beene seene in Theman."
+            "KJV": "It hath not beene heard of in Chanaan: neither hath it beene seene in Theman.",
+            "NABRE": "She has not been heard of in Canaan, nor seen in Teman."
           }
         },
         {
           "number": 23,
           "text": {
             "DRB": "The children of Agar also, that seek out the prudence, that is of the earth, merchants of Merrhe, and of Theman, and fablers, and searchers of prudence and understanding: but the way of wisdom they have not known, neither have they remembered the paths thereof.",
-            "KJV": "The Agarenes that seek wisdome vpon earth, the marchants of Merran, and of Theman, the authors of fables, and searchers out of vnderstanding: none of these haue knowen the way of wisedome, or remember her pathes."
+            "KJV": "The Agarenes that seek wisdome vpon earth, the marchants of Merran, and of Theman, the authors of fables, and searchers out of vnderstanding: none of these haue knowen the way of wisedome, or remember her pathes.",
+            "NABRE": "The descendants of Hagar who seek knowledge on earth, the merchants of Medan and Tema, the storytellers and those seeking knowledge— These have not known the way to wisdom, nor have they kept her paths in mind."
           }
         },
         {
           "number": 24,
           "text": {
             "KJV": "O Israel, how great is the house of God? and how large is the place of his possession?",
-            "NABRE": "3:24 B. Inaccessibility of Wisdom O Israel, how vast is the dwelling of God, how broad the scope of his dominion:",
+            "NABRE": "B. Inaccessibility of Wisdom O Israel, how vast is the dwelling of God, how broad the scope of his dominion:",
             "NRSV": "O Israel, how great is the house of God, how vast the territory that he possesses!",
             "DRB": "O Israel how great is the house of God, and how great is the place of his possession!"
           }
@@ -628,56 +690,63 @@
           "number": 25,
           "text": {
             "DRB": "It is great, and hath no end: high and unmeasurable.",
-            "KJV": "Great, and hath none end: high, and vnmeasurable."
+            "KJV": "Great, and hath none end: high, and vnmeasurable.",
+            "NABRE": "Vast and endless, high and immeasurable!"
           }
         },
         {
           "number": 26,
           "text": {
             "DRB": "There were the giants those renowned, that were from the beginning, of big stature, expert in war?",
-            "KJV": "There were the gyants, famous from the beginning, that were of so great stature, and so expert in warre."
+            "KJV": "There were the gyants, famous from the beginning, that were of so great stature, and so expert in warre.",
+            "NABRE": "In it were born the giants, renowned at the first, huge in stature, skilled in war."
           }
         },
         {
           "number": 27,
           "text": {
             "DRB": "These did not our Lord choose, neither found they the way of discipline: therefore did they perish.",
-            "KJV": "Those did not the Lord chuse, neither gaue he the way of knowledge vnto them."
+            "KJV": "Those did not the Lord chuse, neither gaue he the way of knowledge vnto them.",
+            "NABRE": "These God did not choose, nor did he give them the way of understanding;"
           }
         },
         {
           "number": 28,
           "text": {
             "DRB": "And because they had not wisdom, they perished through their folly.",
-            "KJV": "But they were destroyed, because they had no wisedome, and perished through their owne foolishnesse."
+            "KJV": "But they were destroyed, because they had no wisedome, and perished through their owne foolishnesse.",
+            "NABRE": "They perished for lack of prudence, perished through their own folly."
           }
         },
         {
           "number": 29,
           "text": {
             "DRB": "Who hath ascended into heaven, and taken her, and brought her down from the clouds?",
-            "KJV": "Who hath gone vp into heauen and taken her, and brought her downe from the clouds?"
+            "KJV": "Who hath gone vp into heauen and taken her, and brought her downe from the clouds?",
+            "NABRE": "Who has gone up to the heavens and taken her, bringing her down from the clouds?"
           }
         },
         {
           "number": 30,
           "text": {
             "DRB": "Who hath passed over the sea, and found her, and brought her above chosen gold?",
-            "KJV": "Who hath gone ouer the Sea, and found her, & wil bring her for pure gold?"
+            "KJV": "Who hath gone ouer the Sea, and found her, & wil bring her for pure gold?",
+            "NABRE": "Who has crossed the sea and found her, bearing her away rather than choice gold?"
           }
         },
         {
           "number": 31,
           "text": {
             "DRB": "There is none that can know her ways, nor that can search out her paths:",
-            "KJV": "No man knoweth her way, nor thinketh of her path."
+            "KJV": "No man knoweth her way, nor thinketh of her path.",
+            "NABRE": "None knows the way to her, nor has at heart her path."
           }
         },
         {
           "number": 32,
           "text": {
             "KJV": "But he that knoweth all things, knoweth her, and hath found her out with his vnderstanding: he that prepared the earth for euermore, hath filled it with fourefooted beasts.",
-            "NABRE": "3:32 But the one who knows all things knows her; he has probed her by his knowledge— The one who established the earth for all time, and filled it with four-footed animals,",
+            "NABRE": "But the one who knows all things knows her; he has probed her by his knowledge— The one who established the earth for all time, and filled it with four-footed animals,",
             "NRSV": "But the one who knows all things knows her, he found her by his understanding. He who prepared the earth for all time filled it with four-footed creatures;",
             "DRB": "but he that knoweth all things, knoweth her, & hath found her out by his prudence: he hath prepared the earth in time everlasting, and replenished it with cattle, and fourfooted beasts:"
           }
@@ -686,21 +755,23 @@
           "number": 33,
           "text": {
             "DRB": "he that sendeth forth light, and it goeth: and hath called it, and it obeyeth him with trembling.",
-            "KJV": "He that sendeth forth light, and it goeth: calleth it againe, and it obeyeth him with feare."
+            "KJV": "He that sendeth forth light, and it goeth: calleth it againe, and it obeyeth him with feare.",
+            "NABRE": "Who sends out the lightning, and it goes, calls it, and trembling it obeys him;"
           }
         },
         {
           "number": 34,
           "text": {
             "DRB": "And the stars have given light in their watches, and rejoiced:",
-            "KJV": "The starres shined in their watches, and reioyced: when he calleth them, they say, Here we be, and so with cheerefulnesse they shewed light vnto him that made them."
+            "KJV": "The starres shined in their watches, and reioyced: when he calleth them, they say, Here we be, and so with cheerefulnesse they shewed light vnto him that made them.",
+            "NABRE": "Before whom the stars at their posts shine and rejoice."
           }
         },
         {
           "number": 35,
           "text": {
             "KJV": "This is our God, and there shall none other be accounted of in comparison of him.",
-            "NABRE": "3:35 When he calls them, they answer, “Here we are!” shining with joy for their Maker.",
+            "NABRE": "When he calls them, they answer, “Here we are!” shining with joy for their Maker.",
             "NRSV": "This is our God; no other can be compared to him.",
             "DRB": "they were called, and they said: here we are: and they have shined to him with cheerfulness, that made them."
           }
@@ -709,14 +780,15 @@
           "number": 36,
           "text": {
             "DRB": "This is our God, and there shall none other be esteemed against him.",
-            "KJV": "He hath found out all the way of knowledge, and hath giuen it vnto Iacob his seruant, & to Israel his beloued."
+            "KJV": "He hath found out all the way of knowledge, and hath giuen it vnto Iacob his seruant, & to Israel his beloued.",
+            "NABRE": "Such is our God; no other is to be compared to him:"
           }
         },
         {
           "number": 37,
           "text": {
             "KJV": "Afterward did he shew himselfe vpon earth, and conuersed with men.",
-            "NABRE": "3:37 C. Wisdom Contained in the Law He has uncovered the whole way of understanding, and has given her to Jacob, his servant, to Israel, his beloved.",
+            "NABRE": "C. Wisdom Contained in the Law He has uncovered the whole way of understanding, and has given her to Jacob, his servant, to Israel, his beloved.",
             "NRSV": "Afterward she appeared on earth and lived with humankind.",
             "DRB": "He found out all the way of discipline, and delivered it to Jacob his servant, and to Israel his beloved."
           }
@@ -724,7 +796,8 @@
         {
           "number": 38,
           "text": {
-            "DRB": "After these things he was seen upon the earth, and was conversant with men."
+            "DRB": "After these things he was seen upon the earth, and was conversant with men.",
+            "NABRE": "Thus she has appeared on earth, is at home with mortals."
           }
         }
       ]
@@ -736,7 +809,7 @@
           "number": 1,
           "text": {
             "KJV": "This is the Booke of the commandements of God: and the Law that endureth for euer: all they that keepe it shall come to life: but such as leaue it, shall die.",
-            "NABRE": "4:1 Chapter 4 She is the book of the precepts of God, the law that endures forever; All who cling to her will live, but those will die who forsake her.",
+            "NABRE": "Chapter 4 She is the book of the precepts of God, the law that endures forever; All who cling to her will live, but those will die who forsake her.",
             "NRSV": "She is the book of the commandments of God, the law that endures forever. All who hold her fast will live, and those who forsake her will die.",
             "DRB": "This is the book of the commandments of God, and the law, that is for ever: all that hold it, shall come to life: but they that have forsaken it, into death."
           }
@@ -745,7 +818,7 @@
           "number": 2,
           "text": {
             "KJV": "Turne thee, O Iacob, & take heed of it: walke in the presence of the light therof, that thou mayest be illuminated.",
-            "NABRE": "4:2 Turn, O Jacob, and receive her: walk by her light toward splendor.",
+            "NABRE": "Turn, O Jacob, and receive her: walk by her light toward splendor.",
             "NRSV": "Turn, O Jacob, and take her; walk toward the shining of her light.",
             "DRB": "Return Jacob, and take hold of it, walk by the way to the brightness of it, against the light thereof."
           }
@@ -754,14 +827,15 @@
           "number": 3,
           "text": {
             "DRB": "Deliver not thy glory to another, & dignity to a strange nation.",
-            "KJV": "Giue not thine honour to another, nor the things that are profitable vnto thee, to a strange nation."
+            "KJV": "Giue not thine honour to another, nor the things that are profitable vnto thee, to a strange nation.",
+            "NABRE": "Do not give your glory to another, your privileges to an alien nation."
           }
         },
         {
           "number": 4,
           "text": {
             "KJV": "O Israel, happie are wee: for things that are pleasing to God, are made knowen vnto vs.",
-            "NABRE": "4:4 Blessed are we, O Israel; for what pleases God is known to us!",
+            "NABRE": "Blessed are we, O Israel; for what pleases God is known to us!",
             "NRSV": "Happy are we, O Israel, for we know what is pleasing to God.",
             "DRB": "We are blessed o Israel: because the things that please God, are manifest to us."
           }
@@ -770,119 +844,135 @@
           "number": 5,
           "text": {
             "DRB": "Be of good comfort o people of God, memorable Israel:",
-            "KJV": "Be of good cheare, my people, the memoriall of Israel."
+            "KJV": "Be of good cheare, my people, the memoriall of Israel.",
+            "NABRE": "III. Baruch’s Poem of Consolation A. Baruch Addresses Diaspora Take courage, my people! Remember, O Israel,"
           }
         },
         {
           "number": 6,
           "text": {
             "DRB": "you are sold to the Gentiles, not into perdition: but for that in anger you provoked God to wrath, you are delivered to the adversaries.",
-            "KJV": "Ye were sold to the nations, not for destruction: but because you moued God to wrath, ye were deliuered vnto the enemies."
+            "KJV": "Ye were sold to the nations, not for destruction: but because you moued God to wrath, ye were deliuered vnto the enemies.",
+            "NABRE": "You were sold to the nations not for destruction; It was because you angered God that you were handed over to your foes."
           }
         },
         {
           "number": 7,
           "text": {
             "DRB": "For you have exasperated him, that made you, the eternal God, immolating to devils, and not to God.",
-            "KJV": "For yee prouoked him that made you, by sacrificing vnto deuils, and not to God."
+            "KJV": "For yee prouoked him that made you, by sacrificing vnto deuils, and not to God.",
+            "NABRE": "For you provoked your Maker with sacrifices to demons and not to God;"
           }
         },
         {
           "number": 8,
           "text": {
             "DRB": "For you have forgotten God, who hath nourished you, and your nurse Jerusalem you have made sorrowful.",
-            "KJV": "Ye haue forgotten the euerlasting God, that brought you vp, and ye haue grieued Ierusalem that noursed you."
+            "KJV": "Ye haue forgotten the euerlasting God, that brought you vp, and ye haue grieued Ierusalem that noursed you.",
+            "NABRE": "You forgot the eternal God who nourished you, and you grieved Jerusalem who nurtured you."
           }
         },
         {
           "number": 9,
           "text": {
             "DRB": "For she saw the wrath coming from God to you, and she said: Hear ye confines of Sion, for God hath brought me great mourning:",
-            "KJV": "For when shee saw the wrath of God c&#333;ming vpon you, she said; Hearken, O ye that dwell about Sion: God hath brought vp&#333; me great mourning."
+            "KJV": "For when shee saw the wrath of God c&#333;ming vpon you, she said; Hearken, O ye that dwell about Sion: God hath brought vp&#333; me great mourning.",
+            "NABRE": "She indeed saw coming upon you the wrath of God; and she said: B. Jerusalem Addresses Neighbors “Hear, you neighbors of Zion! God has brought great mourning upon me,"
           }
         },
         {
           "number": 10,
           "text": {
             "DRB": "For I have seen the captivity of my people, and of my sons, and daughters, which the everlasting hath brought upon them.",
-            "KJV": "For I saw the captiuitie of my sonnes and daughters, which the euerlasting brought vpon them."
+            "KJV": "For I saw the captiuitie of my sonnes and daughters, which the euerlasting brought vpon them.",
+            "NABRE": "For I have seen the captivity that the Eternal One has brought upon my sons and daughters."
           }
         },
         {
           "number": 11,
           "text": {
             "DRB": "For I nourished them with joyfulness: but I have left them with weeping and mourning.",
-            "KJV": "With ioy did I nourish them: but sent them away with weeping and mourning."
+            "KJV": "With ioy did I nourish them: but sent them away with weeping and mourning.",
+            "NABRE": "With joy I nurtured them; but with mourning and lament I sent them away."
           }
         },
         {
           "number": 12,
           "text": {
             "DRB": "Let no man rejoice over me a widow, and desolate: I am forsaken of many for the sins of my children, because they have declined from the law of God.",
-            "KJV": "Let no man reioyce ouer me a widow, and forsaken of many, who for the sinnes of my children, am left desolate: because they departed from the Law of God."
+            "KJV": "Let no man reioyce ouer me a widow, and forsaken of many, who for the sinnes of my children, am left desolate: because they departed from the Law of God.",
+            "NABRE": "Let no one gloat over me, a widow, bereft of many; For the sins of my children I am left desolate, because they turned from the law of God,"
           }
         },
         {
           "number": 13,
           "text": {
             "DRB": "And his justices they have not known, nor walked by the ways of God's commandments, neither have they entered by the paths of his truth and justice.",
-            "KJV": "They knew not his statutes, nor walked in the waies of his Commandements, nor trode in the pathes of discipline in his righteousnesse."
+            "KJV": "They knew not his statutes, nor walked in the waies of his Commandements, nor trode in the pathes of discipline in his righteousnesse.",
+            "NABRE": "and did not acknowledge his statutes; In the ways of God’s commandments they did not walk, nor did they tread the disciplined paths of his justice."
           }
         },
         {
           "number": 14,
           "text": {
             "DRB": "Let the borderers of Sion come, and remember the captivity of my sons & daughters, which the everlasting hath brought upon them.",
-            "KJV": "Let them that dwell about Sion come, and remember ye the captiuity of my sonnes and daughters, which the euerlasting hath brought vpon them."
+            "KJV": "Let them that dwell about Sion come, and remember ye the captiuity of my sonnes and daughters, which the euerlasting hath brought vpon them.",
+            "NABRE": "“Let Zion’s neighbors come— Remember the captivity of my sons and daughters, brought upon them by the Eternal One."
           }
         },
         {
           "number": 15,
           "text": {
             "DRB": "For he hath brought upon them a nation from afar, a wicked nation, and of another tongue:",
-            "KJV": "For he hath brought a nation vpon them from far: a shamelesse nation, and of a strange language, who neither reuerenced old man, nor pitied childe."
+            "KJV": "For he hath brought a nation vpon them from far: a shamelesse nation, and of a strange language, who neither reuerenced old man, nor pitied childe.",
+            "NABRE": "He has brought against them a nation from afar, a nation ruthless and of alien speech, That has neither reverence for old age nor pity for the child;"
           }
         },
         {
           "number": 16,
           "text": {
             "DRB": "which have not reverenced the ancient, nor pitied the children, & have led away the beloved of the widow, and made the sole woman desolate of children.",
-            "KJV": "These haue caried away the deare beloued children of the widow, and left her that was alone, desolate without daughters."
+            "KJV": "These haue caried away the deare beloued children of the widow, and left her that was alone, desolate without daughters.",
+            "NABRE": "They have led away this widow’s beloved sons, have left me solitary, without daughters."
           }
         },
         {
           "number": 17,
           "text": {
             "DRB": "But as for me what can I help you?",
-            "KJV": "But what can I helpe you?"
+            "KJV": "But what can I helpe you?",
+            "NABRE": "C. Jerusalem Addresses Diaspora What can I do to help you?"
           }
         },
         {
           "number": 18,
           "text": {
             "DRB": "For he that hath brought the evils upon you, he will deliver you out of the hands of your enemies.",
-            "KJV": "For he that brought these plagues vpon you, will deliuer you from the hands of your enemies."
+            "KJV": "For he that brought these plagues vpon you, will deliuer you from the hands of your enemies.",
+            "NABRE": "The one who has brought this evil upon you must himself deliver you from your enemies’ hands."
           }
         },
         {
           "number": 19,
           "text": {
             "DRB": "walk children, walk: for I am left alone.",
-            "KJV": "Goe your way, O my children, goe your way: for I am left desolate."
+            "KJV": "Goe your way, O my children, goe your way: for I am left desolate.",
+            "NABRE": "Farewell, my children, farewell; I am left desolate."
           }
         },
         {
           "number": 20,
           "text": {
             "DRB": "I have put off the stole of peace, and I have put upon me the sackcloth of prayer, and I will cry to the Highest in my days.",
-            "KJV": "I haue put off the clothing of peace, and put vpon me the sackcloth of my prayer. I will cry vnto the euerlasting in my dayes."
+            "KJV": "I haue put off the clothing of peace, and put vpon me the sackcloth of my prayer. I will cry vnto the euerlasting in my dayes.",
+            "NABRE": "I have taken off the garment of peace, have put on sackcloth for my prayer of supplication; while I live I will cry out to the Eternal One."
           }
         },
         {
           "number": 21,
           "text": {
             "KJV": "Be of good cheare, O my children, cry vnto the Lord: & he shal deliuer you from the power & hand of the enemies.",
-            "NABRE": "4:21 “Take courage, my children; call upon God; he will deliver you from oppression, from enemy hands.",
+            "NABRE": "“Take courage, my children; call upon God; he will deliver you from oppression, from enemy hands.",
             "NRSV": "“Take courage, my children, cry to God, and he will deliver you from the power and hand of the enemy.”",
             "DRB": "Be of good comfort my children, cry to our Lord, and he will deliver you out of the hand of the princes your enemies."
           }
@@ -891,14 +981,15 @@
           "number": 22,
           "text": {
             "DRB": "For I have hoped in the everlasting for your salvation: & joy is come to me from the holy one upon the mercy, which shall come to you from our everlasting saviour.",
-            "KJV": "For my hope is in the Euerlasting that hee will saue you, and ioy is come vnto me from the Holy one, because of the mercy which shall soone come vnto you from the euerlasting our Sauiour."
+            "KJV": "For my hope is in the Euerlasting that hee will saue you, and ioy is come vnto me from the Holy one, because of the mercy which shall soone come vnto you from the euerlasting our Sauiour.",
+            "NABRE": "I have put my hope for your deliverance in the Eternal One, and joy has come to me from the Holy One Because of the mercy that will swiftly reach you from your eternal Savior."
           }
         },
         {
           "number": 23,
           "text": {
             "KJV": "For I sent you out with mourning and weeping: but God will giue you to mee againe, with ioy and gladnesse for euer.",
-            "NABRE": "4:23 With mourning and lament I sent you away, but God will give you back to me with gladness and joy forever.",
+            "NABRE": "With mourning and lament I sent you away, but God will give you back to me with gladness and joy forever.",
             "NRSV": "“For I sent you out with sorrow and weeping, but God will give you back to me with joy and gladness forever.”",
             "DRB": "For I sent you forth with mourning and weeping: but our Lord will bring you back to me with joy and gladness for ever."
           }
@@ -907,49 +998,55 @@
           "number": 24,
           "text": {
             "DRB": "For as the neighbours of Sion have seen your captivity from God: so shall they see also with celerity your salvation from God, which shall come upon you with great honour, and everlasting brightness.",
-            "KJV": "Like as now the neighbours of Sion haue seene your captiuity: so shall they see shortly your saluation from our God, which shall come vpon you with great glory, and brightnesse of the euerlasting."
+            "KJV": "Like as now the neighbours of Sion haue seene your captiuity: so shall they see shortly your saluation from our God, which shall come vpon you with great glory, and brightnesse of the euerlasting.",
+            "NABRE": "As Zion’s neighbors lately saw you taken captive, so shall they soon see God’s salvation come to you, with great glory and the splendor of the Eternal One."
           }
         },
         {
           "number": 25,
           "text": {
             "DRB": "Children patiently sustain the wrath, which is come upon you: for thine enemy hath persecuted thee, but thou shalt quickly see his destruction: and thou shalt get up upon his neck.",
-            "KJV": "My children, suffer patiently the wrath that is come vpon you from God: for thine enemy hath persecuted thee: but shortly thou shalt see his destruction, & shalt tread vpon his necke."
+            "KJV": "My children, suffer patiently the wrath that is come vpon you from God: for thine enemy hath persecuted thee: but shortly thou shalt see his destruction, & shalt tread vpon his necke.",
+            "NABRE": "“My children, bear patiently the wrath that has come upon you from God; Your enemies have persecuted you, but you will soon see their destruction and trample upon their necks."
           }
         },
         {
           "number": 26,
           "text": {
             "DRB": "My delicate ones have walked rough ways, for they are led as a flock taken violently of the enemies.",
-            "KJV": "My delicate ones haue gone rough wayes, and were taken away as a flocke caught of the enemies."
+            "KJV": "My delicate ones haue gone rough wayes, and were taken away as a flocke caught of the enemies.",
+            "NABRE": "My pampered children have trodden rough roads, carried off by their enemies like sheep in a raid."
           }
         },
         {
           "number": 27,
           "text": {
             "DRB": "Be of good comfort children, and cry out to our Lord: for there shall be remembrance of you with him, that hath led you away.",
-            "KJV": "Be of good comfort, O my children, and cry vnto God: for you shall be remembred of him that brought these things vpon you."
+            "KJV": "Be of good comfort, O my children, and cry vnto God: for you shall be remembred of him that brought these things vpon you.",
+            "NABRE": "Take courage, my children; call out to God! The one who brought this upon you will remember you."
           }
         },
         {
           "number": 28,
           "text": {
             "DRB": "For as your mind hath been to stray from God: ten times so much shall you returning again seek him.",
-            "KJV": "For as it was your minde to goe astray from God: so being returned seeke him ten times more."
+            "KJV": "For as it was your minde to goe astray from God: so being returned seeke him ten times more.",
+            "NABRE": "As your hearts have been disposed to stray from God, so turn now ten times the more to seek him;"
           }
         },
         {
           "number": 29,
           "text": {
             "DRB": "For he that hath brought the evils upon you, he again will bring unto you everlasting joy with your salvation.",
-            "KJV": "For he that hath brought these plagues vpon you, shall bring you euerlasting ioy againe with your saluation."
+            "KJV": "For he that hath brought these plagues vpon you, shall bring you euerlasting ioy againe with your saluation.",
+            "NABRE": "For the one who has brought disaster upon you will, in saving you, bring you eternal joy.”"
           }
         },
         {
           "number": 30,
           "text": {
             "KJV": "Take a good heart, O Ierusalem: for hee that gaue thee that name, will comfort thee.",
-            "NABRE": "4:30 D. Baruch Addresses Jerusalem Take courage, Jerusalem! The one who gave you your name will console you.",
+            "NABRE": "D. Baruch Addresses Jerusalem Take courage, Jerusalem! The one who gave you your name will console you.",
             "NRSV": "Take courage, O Jerusalem, for the one who named you will comfort you.",
             "DRB": "Be of good comfort Jerusalem: for he exhorteth thee, that named thee."
           }
@@ -958,49 +1055,56 @@
           "number": 31,
           "text": {
             "DRB": "The wicked afflicters shall perish, that have vexed thee: & they that have rejoiced in thy ruin, shall be punished.",
-            "KJV": "Miserable are they that afflicted thee, and reioyced at thy fall."
+            "KJV": "Miserable are they that afflicted thee, and reioyced at thy fall.",
+            "NABRE": "Wretched shall be those who harmed you, who rejoiced at your downfall;"
           }
         },
         {
           "number": 32,
           "text": {
             "DRB": "The cities which thy children have served, shall be punished: and she that received thy children.",
-            "KJV": "Miserable are the cities which thy children serued: miserable is she that receiued thy sonnes."
+            "KJV": "Miserable are the cities which thy children serued: miserable is she that receiued thy sonnes.",
+            "NABRE": "Wretched shall be the cities where your children were enslaved, wretched the city that received your children."
           }
         },
         {
           "number": 33,
           "text": {
             "DRB": "For as she hath rejoiced in thy ruin, and been glad at thy fall: so shall she be made sorrowful in her own desolation.",
-            "KJV": "For as shee reioyced at thy ruine, and was glad of thy fall: so shall she be grieued for her owne desolation."
+            "KJV": "For as shee reioyced at thy ruine, and was glad of thy fall: so shall she be grieued for her owne desolation.",
+            "NABRE": "As that city rejoiced at your collapse, and made merry at your downfall, so shall she grieve over her own desolation."
           }
         },
         {
           "number": 34,
           "text": {
             "DRB": "And the rejoicing of her multitude shall be cut off, & her gladness shall be turned to mourning.",
-            "KJV": "For I will take away the reioycing of her great multitude, and her pride shalbe turned into mourning."
+            "KJV": "For I will take away the reioycing of her great multitude, and her pride shalbe turned into mourning.",
+            "NABRE": "I will take from her the rejoicing crowds, and her exultation shall be turned to mourning:"
           }
         },
         {
           "number": 35,
           "text": {
             "DRB": "For fire shall come upon her from the everlasting in long during days, and she shall be inhabited of devils a great time.",
-            "KJV": "For fire shal come vpon her fr&#333; the euerlasting, long to endure: and she shal be inhabited of deuils for a great time."
+            "KJV": "For fire shal come vpon her fr&#333; the euerlasting, long to endure: and she shal be inhabited of deuils for a great time.",
+            "NABRE": "For fire shall come upon her from the Eternal One, for many a day, to be inhabited by demons for a long time."
           }
         },
         {
           "number": 36,
           "text": {
             "DRB": "Look about o Jerusalem toward the East, and see the joy that cometh to thee from God.",
-            "KJV": "O Ierusalem, looke about thee toward the East, and behold the ioy that commeth vnto thee from God."
+            "KJV": "O Ierusalem, looke about thee toward the East, and behold the ioy that commeth vnto thee from God.",
+            "NABRE": "Look to the east, Jerusalem; see the joy that comes to you from God!"
           }
         },
         {
           "number": 37,
           "text": {
             "DRB": "For behold thy children come, whom thou hast let go dispersed, they come gathered together from the East even to the West, in the word of the holy one rejoicing to the honor of God.",
-            "KJV": "Loe, thy sonnes come whom thou sentest away: they come gathered together from the East to the West, by the word of the holy One, reioycing in the glory of God."
+            "KJV": "Loe, thy sonnes come whom thou sentest away: they come gathered together from the East to the West, by the word of the holy One, reioycing in the glory of God.",
+            "NABRE": "Here come your children whom you sent away, gathered in from east to west By the word of the Holy One, rejoicing in the glory of God."
           }
         }
       ]
@@ -1012,7 +1116,7 @@
           "number": 1,
           "text": {
             "KJV": "Put off, O Ierusalem, the garment of thy mourning and affliction, and put on the comelinesse of the glory that commeth from God for euer.",
-            "NABRE": "5:1 Chapter 5 Jerusalem, take off your robe of mourning and misery; put on forever the splendor of glory from God:",
+            "NABRE": "Chapter 5 Jerusalem, take off your robe of mourning and misery; put on forever the splendor of glory from God:",
             "NRSV": "Take off the garment of your sorrow and affliction, O Jerusalem, and put on forever the beauty of the glory from God.",
             "DRB": "Put off Jerusalem the robe of mourning, and of thy vexation: and put on the beauty, and honor of that everlasting glory, which thou hast of God."
           }
@@ -1021,7 +1125,7 @@
           "number": 2,
           "text": {
             "KJV": "Cast about thee a double garment of the righteousnesse which commeth from God, and set a diademe on thine head of the glory of the euerlasting.",
-            "NABRE": "5:2 Wrapped in the mantle of justice from God, place on your head the diadem of the glory of the Eternal One.",
+            "NABRE": "Wrapped in the mantle of justice from God, place on your head the diadem of the glory of the Eternal One.",
             "NRSV": "Put on the robe of the righteousness that comes from God; put on your head the diadem of the glory of the Everlasting;",
             "DRB": "God will clothe thee with the doublet of justice, and will put upon thy head the mitre of everlasting honour."
           }
@@ -1030,7 +1134,7 @@
           "number": 3,
           "text": {
             "KJV": "For God wil shew thy brightnesse vnto euery countrey vnder heauen.",
-            "NABRE": "5:3 For God will show your splendor to all under the heavens;",
+            "NABRE": "For God will show your splendor to all under the heavens;",
             "NRSV": "for God will show your splendor to everywhere under heaven.",
             "DRB": "For God will shew his brightness in thee, which is under the heaven."
           }
@@ -1039,7 +1143,7 @@
           "number": 4,
           "text": {
             "KJV": "For thy name shall bee called of God for euer, The peace of righteousnesse, and the glory of Gods worship.",
-            "NABRE": "5:4 you will be named by God forever: the peace of justice, the glory of God’s worship.",
+            "NABRE": "you will be named by God forever: the peace of justice, the glory of God’s worship.",
             "NRSV": "For God will give you evermore the name, ‘Righteous Peace, Godly Glory.’",
             "DRB": "For thy name shall be named of God to thee for ever: The peace of justice, and honor of piety."
           }
@@ -1048,7 +1152,7 @@
           "number": 5,
           "text": {
             "KJV": "Arise, O Ierusalem, and stand on high, and looke about toward the East, and behold thy children gathered from the West vnto the East by the word of the holy One, reioycing in the remembrance of God.",
-            "NABRE": "5:5 Rise up, Jerusalem! stand upon the heights; look to the east and see your children Gathered from east to west at the word of the Holy One, rejoicing that they are remembered by God.",
+            "NABRE": "Rise up, Jerusalem! stand upon the heights; look to the east and see your children Gathered from east to west at the word of the Holy One, rejoicing that they are remembered by God.",
             "NRSV": "Arise, O Jerusalem, stand upon the height; look toward the east, and see your children gathered from west to east at the word of the Holy One, rejoicing that God has remembered them.",
             "DRB": "Arise Jerusalem, and stand on high: and look about toward the East, and see thy children gathered together from the rising of the sun to the going down, in the word of the holy rejoicing at the memory of God."
           }
@@ -1057,28 +1161,31 @@
           "number": 6,
           "text": {
             "DRB": "For they went out from thee on foot led by the enemies: but our Lord will bring them to the exalted into honour as children of the kingdom.",
-            "KJV": "For they departed from thee on foote, and were ledde away of their enemies: but God bringeth them vnto thee exalted with glory, as children of the kingdome."
+            "KJV": "For they departed from thee on foote, and were ledde away of their enemies: but God bringeth them vnto thee exalted with glory, as children of the kingdome.",
+            "NABRE": "Led away on foot by their enemies they left you: but God will bring them back to you carried high in glory as on royal thrones."
           }
         },
         {
           "number": 7,
           "text": {
             "DRB": "For God hath appointed to humble every high mountain, and everlasting rocks, and to fill up valleys to be equal with the earth: that Israel may walk diligently to the honour of God.",
-            "KJV": "For God hath appointed that euery high hill, and banks of long continuance should be cast downe, and valleys filled vp, to make euen the ground, that Israel may goe safely in the glory of God."
+            "KJV": "For God hath appointed that euery high hill, and banks of long continuance should be cast downe, and valleys filled vp, to make euen the ground, that Israel may goe safely in the glory of God.",
+            "NABRE": "For God has commanded that every lofty mountain and the age-old hills be made low, That the valleys be filled to make level ground, that Israel may advance securely in the glory of God."
           }
         },
         {
           "number": 8,
           "text": {
             "DRB": "And the woods also, and every tree of sweetness have overshadowed Israel by the commandment of God.",
-            "KJV": "Moreouer, euen the woods, & euery sweet smelling tree, shall ouershadow Israel by the commandement of God."
+            "KJV": "Moreouer, euen the woods, & euery sweet smelling tree, shall ouershadow Israel by the commandement of God.",
+            "NABRE": "The forests and every kind of fragrant tree have overshadowed Israel at God’s command;"
           }
         },
         {
           "number": 9,
           "text": {
             "KJV": "For God shall leade Israel with ioy, in the light of his glory, with the mercy and righteousnes that commeth from him.",
-            "NABRE": "5:9 For God is leading Israel in joy by the light of his glory, with the mercy and justice that are his.",
+            "NABRE": "For God is leading Israel in joy by the light of his glory, with the mercy and justice that are his.",
             "NRSV": "For God will lead Israel with joy, in the light of his glory, with the mercy and righteousness that come from him.",
             "DRB": "For God will bring Israel with joyfulness in the light of his majesty, with mercy, and justice, which is of him."
           }
