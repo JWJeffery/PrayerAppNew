@@ -1,7 +1,7 @@
 {
   "id": "bible-corpus-trust-status",
   "status": "partial_trust_boundary_active",
-  "lastUpdated": "2026-06-23",
+  "lastUpdated": "2026-06-26",
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
@@ -79,7 +79,7 @@
       }
     },
     "psalms": {
-      "status": "not_globally_trusted_psalms_nrsv_source_repaired_remaining_lanes_pending",
+      "status": "not_globally_trusted_psalms_nrsv_coverdale_source_repaired_remaining_lanes_pending",
       "reasons": [
         "Psalms subsystem governance and shape checks passed for 155 root-array records.",
         "NRSV Psalms 1-150 were repaired as a single source-backed lane from the Oremus Bible Browser NRSV Psalms source snapshot.",
@@ -95,17 +95,22 @@
         "Psalms legacy subsystem is shape-governed but remains textually not trusted.",
         "Psalm records contain only id and text keys, with no row-level source or provenance fields.",
         "Grail1963 remains a liturgical psalter lane with separate conventions.",
-        "Psalms 151-155 remain Orthodox appendix material, not normal canonical OT chapter rows."
+        "Psalms 151-155 remain Orthodox appendix material, not normal canonical OT chapter rows.",
+        "Coverdale Psalms 1-150 were repaired as a single source-backed lane from the 1979 Book of Common Prayer Psalter source snapshot.",
+        "The local Coverdale 1979 BCP Psalter source snapshot contains 150 Psalms and 2507 verse rows.",
+        "Active data/bible/OT/psalms.json text.Coverdale Psalms 1-150 exactly matches data/bible/translations/coverdale-1979-bcp-psalter/raw/psalms.json.",
+        "The whole Psalter is not globally promoted as textually trusted by this Coverdale lane repair; remaining lane-specific source/trust decisions must be recorded separately."
       ],
       "completedRemediations": [
         "psalms_legacy_subsystem_governance_1",
         "psalms_trust_readiness_classification_1",
         "psalms_provenance_absent_lane_policy_1",
-        "nrsv_psalms_oremus_source_repair_1"
+        "nrsv_psalms_oremus_source_repair_1",
+        "coverdale_1979_bcp_psalms_source_repair_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
-        "status": "classified_not_globally_trust_ready_after_nrsv_source_repair",
+        "status": "classified_not_globally_trust_ready_after_nrsv_and_coverdale_source_repairs",
         "recordCount": 155,
         "translationCounts": {
           "NRSV": 150,
@@ -124,9 +129,9 @@
           "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
         ],
         "recommendedNextAction": "continue_remaining_psalter_lane_source_verification",
-        "summary": "Psalms are shape-governed. NRSV Psalms 1-150 are now source-backed by the local Oremus NRSV source snapshot and exact active/source verification. Whole-Psalter trust still depends on remaining lane-specific source decisions."
+        "summary": "Psalms are shape-governed. NRSV Psalms 1-150 and Coverdale Psalms 1-150 are now source-backed by local source snapshots and exact active/source verification. Whole-Psalter trust still depends on remaining lane-specific source decisions."
       },
-      "reason": "NRSV Psalms 1-150 are source-backed and exactly verified against the local Oremus NRSV Psalms snapshot. Whole-Psalter textual trust is not asserted by this NRSV-only repair.",
+      "reason": "NRSV Psalms 1-150 and Coverdale Psalms 1-150 are source-backed and exactly verified against local source snapshots. Whole-Psalter textual trust is not asserted because remaining Psalter lanes still require their own source/trust classification.",
       "latest_nrsv_psalms_oremus_source_repair": {
         "id": "nrsv_psalms_oremus_source_repair_2026_06_25",
         "status": "source_backed_single_source_lane_repair_verified",
@@ -153,6 +158,35 @@
           "Douay-Rheims Psalms audit passed"
         ],
         "summary": "NRSV Psalms were replaced as one source-backed lane from the Oremus NRSV Psalms source snapshot. This repairs the prior mixed-source-family NRSV Psalms condition without changing other Psalter lanes."
+      },
+      "latest_coverdale_1979_bcp_psalms_source_repair": {
+        "id": "coverdale_1979_bcp_psalms_source_repair_2026_06_26",
+        "status": "source_backed_single_source_lane_repair_verified",
+        "activePath": "data/bible/OT/psalms.json",
+        "activeLane": "text.Coverdale Psalms 1-150",
+        "sourceManifestPath": "data/bible/translations/coverdale-1979-bcp-psalter/manifest.json",
+        "rawSourcePath": "data/bible/translations/coverdale-1979-bcp-psalter/raw/psalms.json",
+        "sourceName": "The Psalter, Book of Common Prayer 1979",
+        "sourceUrl": "https://bcponline.org/Psalter/the_psalter.html",
+        "sourcePsalmCount": 150,
+        "sourceVerseRows": 2507,
+        "activeCoverdaleCount": 150,
+        "activeRowsWithCoverdaleAfter150": [],
+        "exactSourceSnapshotMismatchCount": 0,
+        "repairCommit": "9084f6a5d7ef93618f3519d44ef4b5f9ca47c57d",
+        "verification": [
+          "active Coverdale Psalms exactly match local 1979 BCP Psalter source snapshot",
+          "local Coverdale 1979 BCP Psalter manifest exists",
+          "local Coverdale 1979 BCP Psalter raw source snapshot exists",
+          "Rotherham Psalms audit passed after repair",
+          "Douay-Rheims Psalms audit passed after repair"
+        ],
+        "preservedScope": [
+          "all non-Coverdale Psalter lanes",
+          "Psalms 151-155",
+          "155-record Psalter root-array container"
+        ],
+        "summary": "Coverdale Psalms 1-150 were replaced as one source-backed 1979 BCP Psalter lane with exact active/source verification. This is a lane-specific trust claim only and does not promote the whole Psalter to global textual trust."
       }
     },
     "deuterocanon": {
@@ -254,9 +288,11 @@
     "schema_container_guard_present",
     "whole_corpus_trust_boundary_active",
     "nrsv_psalms_source_backed",
-    "nrsv_psalms_single_source_lane_repaired"
+    "nrsv_psalms_single_source_lane_repaired",
+    "coverdale_psalms_1979_bcp_source_backed",
+    "coverdale_psalms_exact_source_snapshot_verified"
   ],
-  "psalms_status": "shape_governed_not_trust_ready_pending_provenance_and_lane_adjudication",
+  "psalms_status": "not_globally_trusted_psalms_nrsv_coverdale_source_repaired_remaining_lanes_pending",
   "latest_greek_esther_form_policy": {
     "id": "greek_esther_form_policy_2026_06_23",
     "status": "active_nrsv_addition_form_governed_no_text_mutation",
@@ -410,13 +446,13 @@
     "laneStatuses": {
       "canonical_nt": "named_defect_tranche_complete",
       "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
-      "psalms": "not_trusted_psalms_provenance_and_lane_adjudication_required",
+      "psalms": "not_globally_trusted_psalms_nrsv_coverdale_source_repaired_remaining_lanes_pending",
       "deuterocanon": "not_trusted_deuterocanon_form_versification_variant_policy_required",
       "broader_canon": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required"
     },
     "vulgateStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
     "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust",
-    "summary": "Active non-Vulgate Bible corpus lanes are now explicitly classified, but the active non-Vulgate corpus is not globally trusted. Canonical NT named-defect tranche is complete and canonical OT non-Psalms is trusted with governed exclusions. Psalms, deuterocanon, and broader canon remain not trust-ready under recorded blockers. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Canonical NT named-defect tranche is complete and canonical OT non-Psalms is trusted with governed exclusions. Psalms remain not globally trusted even though NRSV and Coverdale Psalms 1-150 are now source-backed and exact-source verified; deuterocanon and broader canon remain not trust-ready under recorded blockers. Vulgate remains deferred and audit-only.",
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
       "whole_ot_including_psalms_textually_trusted",
@@ -530,7 +566,7 @@
     "recordedAt": "2026-06-25T18:38:38.958852+00:00",
     "textMutation": false,
     "bibleTextMutation": false,
-    "summary": "Active non-Vulgate corpus is fully classified. Canonical NT and canonical OT non-Psalms have bounded trust status; Psalms, deuterocanon, and broader canon are policy-closed but remain not textually trusted. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate corpus is fully classified. Canonical NT and canonical OT non-Psalms have bounded trust status. Psalms remain not globally trusted even though NRSV and Coverdale Psalms 1-150 are now source-backed and exact-source verified; deuterocanon and broader canon are policy-closed but remain not textually trusted. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
     "nextAllowedTargets": [],
     "blockedClaims": [
       "entire_biblical_corpus_trusted",

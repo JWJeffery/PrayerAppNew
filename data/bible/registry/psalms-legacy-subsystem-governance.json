@@ -1,15 +1,16 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v1",
-  "status": "governed_not_textually_trusted",
+  "schema": "psalms-legacy-subsystem-governance-v2",
+  "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
     "containerPolicy": "Psalms remains a governed 155-record root array. Do not force it into the standard canonical OT chapter schema without a separate migration.",
     "canonicalPsalmPolicy": "Psalms 1-150 carry main psalm translation lanes.",
     "orthodoxAppendixPolicy": "Psalms 151-155 are present as Orthodox appendix material and are not normal canonical OT chapter rows.",
     "grailPolicy": "Grail1963 is a liturgical psalter lane and uses its own formatting/numbering conventions.",
-    "nrsvPolicy": "The NRSV key in data/bible/OT/psalms.json is not promoted as a trusted Bible NRSV lane by this governance pass.",
-    "sourcePolicy": "This pass does not adjudicate Psalm text provenance. It freezes current shape and prevents accidental normalization or false trust.",
-    "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported."
+    "nrsvPolicy": "NRSV Psalms 1-150 are source-backed by the local Oremus NRSV Psalms source snapshot and exact active/source verification.",
+    "sourcePolicy": "Lane-level source trust may be recorded separately. This governance record does not promote the whole Psalter to global textual trust.",
+    "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
+    "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification."
   },
   "expectedShape": {
     "topType": "array",
@@ -28,7 +29,8 @@
     "NABRE": 150,
     "NRSV": 150,
     "Orthodox": 5,
-    "Rotherham": 150
+    "Rotherham": 150,
+    "DRB": 150
   },
   "expectedAppendix": {
     "orthodoxIds": [
@@ -41,5 +43,35 @@
     "grailExtraIds": [
       "PSALM 151"
     ]
-  }
+  },
+  "laneSourceTrust": {
+    "NRSV": {
+      "status": "source_backed_exact_snapshot_verified",
+      "scope": "Psalms 1-150",
+      "sourceManifestPath": "data/bible/translations/nrsv-psalms-oremus/manifest.json",
+      "rawSourcePath": "data/bible/translations/nrsv-psalms-oremus/raw/psalms.json"
+    },
+    "Coverdale": {
+      "status": "source_backed_exact_snapshot_verified",
+      "scope": "Psalms 1-150",
+      "sourceManifestPath": "data/bible/translations/coverdale-1979-bcp-psalter/manifest.json",
+      "rawSourcePath": "data/bible/translations/coverdale-1979-bcp-psalter/raw/psalms.json",
+      "sourceName": "The Psalter, Book of Common Prayer 1979",
+      "sourcePsalmCount": 150,
+      "sourceVerseRows": 2507,
+      "exactSourceSnapshotMismatchCount": 0,
+      "repairCommit": "9084f6a5d7ef93618f3519d44ef4b5f9ca47c57d"
+    }
+  },
+  "blockedClaims": [
+    "whole_psalter_textually_trusted",
+    "psalms_textually_trusted",
+    "whole_ot_including_psalms_textually_trusted",
+    "entire_biblical_corpus_trusted"
+  ],
+  "allowedClaims": [
+    "psalms_shape_governed",
+    "nrsv_psalms_source_backed_exact_snapshot_verified",
+    "coverdale_psalms_1979_bcp_source_backed_exact_snapshot_verified"
+  ]
 }
