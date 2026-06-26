@@ -97,6 +97,20 @@ for (const file of roots.flatMap(listJsonFiles)) {
 
   const isSourceLane = rel(file).includes('/nabre-internal-source-lane/');
   const bookName = json?.book || json?.meta?.name || path.basename(file, '.json');
+  const isPsalmsRootArray = rel(file) === 'data/bible/OT/psalms.json' && Array.isArray(json);
+
+  if (isPsalmsRootArray) {
+    for (const row of json) {
+      const locator = row?.id || 'PSALM_UNKNOWN';
+      const text = row?.text?.NABRE;
+      if (typeof text === 'string') {
+        report.scannedNabreVerses += 1;
+        const pattern = testText(text);
+        if (pattern) addFinding(file, locator, pattern, text);
+      }
+    }
+    continue;
+  }
 
   for (const chapter of chaptersOf(json)) {
     const c = chapterNum(chapter);
