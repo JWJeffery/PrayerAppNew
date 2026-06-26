@@ -1,5 +1,5 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v5",
+  "schema": "psalms-legacy-subsystem-governance-v6",
   "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
@@ -12,7 +12,8 @@
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
     "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
     "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope.",
-    "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope."
+    "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope.",
+    "jps1985Policy": "JPS1985 Psalms 1-150 are source-identified and history-stable from the Sefaria source-consistent import chain using Tanakh: The Holy Scriptures, published by JPS. Psalms 151-155 remain outside JPS1985 source scope. This is not a fresh exact-checksum source claim."
   },
   "expectedShape": {
     "topType": "array",
@@ -134,6 +135,28 @@
       "activeRowsWithDrbAfter150": [],
       "exactRawSourceMismatchCount": 0,
       "auditScript": "audit:douay-rheims-psalms"
+    },
+    "JPS1985": {
+      "status": "source_identified_history_stable_source_consistent_import_chain_verified",
+      "scope": "Psalms 1-150",
+      "sourceName": "Tanakh: The Holy Scriptures, published by JPS",
+      "sourceSystem": "Sefaria API",
+      "sourceApiBase": "https://www.sefaria.org/api/texts/",
+      "historicalHelperPath": "data/bible/OT/fetch_jps1985_psalms.py",
+      "sourceEvidenceCommits": {
+        "addHelper": "b6b1161ecc6731d4e5bcce2d100127fff67176ad",
+        "sourceConsistentHelper": "8e3c98c7e24f5837b80bc438585736b5fae158cf",
+        "normalizeConsistentSource": "e3f9fa86b7843b02294739a2a682066fb36f822d",
+        "stripSefariaFootnotes": "bf09cd44b2d7b13082ffe16d46eb2afe6ef2e92a",
+        "cleanInlineSourceNotes": "880f064415aa0ec20295ce99c7b37c87b2ca7c11"
+      },
+      "activeJps1985Count": 150,
+      "activeJps1985VerseRows": 2527,
+      "activeRowsWithJps1985After150": [],
+      "apparentSourceNoteArtifactCount": 0,
+      "blockedClaims": [
+        "jps1985_psalms_fresh_exact_source_checksum_verified"
+      ]
     }
   },
   "blockedClaims": [
@@ -150,6 +173,8 @@
     "rotherham_psalms_1_150_source_backed",
     "rotherham_psalms_source_scope_import_audit_verified",
     "drb_psalms_1_150_source_backed",
-    "drb_psalms_exact_raw_source_verified"
+    "drb_psalms_exact_raw_source_verified",
+    "jps1985_psalms_1_150_source_identified",
+    "jps1985_psalms_history_stable_source_consistent_import_chain_verified"
   ]
 }
