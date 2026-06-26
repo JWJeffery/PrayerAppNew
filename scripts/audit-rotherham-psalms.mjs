@@ -160,13 +160,13 @@ async function runResolverSmoke() {
       code: 'orthodox_extended_psalm_preserved',
       citation: 'Psalm 151:1',
       options: { translation: 'Orthodox' },
-      includes: ['I was small among my brothers']
+      includes: ['I was the youngest among my brethren']
     },
     {
       code: 'rotherham_extended_psalm_fallback_documented',
       citation: 'Psalm 151:1',
       options: { translation: 'Rotherham' },
-      includes: ['I was small among my brothers']
+      includes: ['I was the youngest among my brethren']
     }
   ];
 

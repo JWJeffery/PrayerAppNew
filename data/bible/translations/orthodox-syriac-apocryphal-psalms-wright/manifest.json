@@ -1,0 +1,16 @@
+{
+  "schema": "orthodox_syriac_apocryphal_psalms_wright_manifest_v1",
+  "status": "source_backed_snapshot_recorded",
+  "sourceName": "W. Wright, Some Apocryphal Psalms in Syriac",
+  "sourceUrl": "https://www.tertullian.org/fathers/wright_syriac_apocryphal_psalms.htm",
+  "sourceCitation": "W. Wright, Some Apocryphal Psalms in Syriac, Proceedings of the Society of Biblical Archaeology, vol. 9 (1886-7), pp. 257-258, 264-266.",
+  "rawSourcePath": "data/bible/translations/orthodox-syriac-apocryphal-psalms-wright/raw/psalms-151-155.json",
+  "activePath": "data/bible/OT/psalms.json",
+  "activeLane": "text.Orthodox Psalms 151-155",
+  "sourceRecordCount": 5,
+  "sourceVerseRows": 57,
+  "activeOrthodoxCount": 5,
+  "activeOrthodoxVerseRows": 57,
+  "exactSourceSnapshotMismatchCount": 0,
+  "note": "This snapshot repairs the Orthodox appendix lane from a public-domain English source witness for the five Syriac apocryphal psalms."
+}

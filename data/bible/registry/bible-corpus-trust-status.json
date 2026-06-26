@@ -79,7 +79,7 @@
       }
     },
     "psalms": {
-      "status": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_nabre_source_repaired_orthodox_pending",
+      "status": "source_governed_all_expected_psalter_lanes_complete",
       "reasons": [
         "Psalms subsystem governance and shape checks passed for 155 root-array records.",
         "NRSV Psalms 1-150 were repaired as a single source-backed lane from the Oremus Bible Browser NRSV Psalms source snapshot.",
@@ -129,7 +129,11 @@
         "NABRE Psalms 1-150 were repaired from the historical NABRE source mirror at d3d1d4967f15c8b45758151e47e7d762b7194dd7^.",
         "The NABRE contamination audit previously skipped data/bible/OT/psalms.json because the Psalter is a root array; that audit blind spot is now repaired.",
         "Active data/bible/OT/psalms.json text.NABRE Psalms 1-150 exactly matches the historical NABRE source mirror by normalized chapter/verse text.",
-        "The whole Psalter is not globally promoted as textually trusted because Orthodox Psalms 151-155 source/trust remains pending."
+        "The whole Psalter is not globally promoted as textually trusted because Orthodox Psalms 151-155 source/trust remains pending.",
+        "Orthodox Psalms 151-155 are source-backed by W. Wright, Some Apocryphal Psalms in Syriac.",
+        "A local public-domain Wright source snapshot is recorded at data/bible/translations/orthodox-syriac-apocryphal-psalms-wright/raw/psalms-151-155.json.",
+        "Active data/bible/OT/psalms.json text.Orthodox Psalms 151-155 exactly matches the Wright source snapshot by normalized verse-prefixed text.",
+        "Psalter source-governance is complete for all expected lanes, without promoting whole-OT or whole-corpus trust."
       ],
       "completedRemediations": [
         "psalms_legacy_subsystem_governance_1",
@@ -143,11 +147,12 @@
         "jps1985_psalms_source_history_verification_1",
         "kjv_psalms_historical_source_exact_verification_1",
         "nabre_psalms_source_blocker_record_1",
-        "nabre_psalms_historical_source_repair_1"
+        "nabre_psalms_historical_source_repair_1",
+        "orthodox_psalms_151_155_wright_source_repair_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
-        "status": "classified_not_globally_trust_ready_after_nrsv_coverdale_grail_rotherham_drb_jps_kjv_nabre_source_verifications_orthodox_pending",
+        "status": "source_governed_all_expected_psalter_lanes_complete",
         "recordCount": 155,
         "translationCounts": {
           "NRSV": 150,
@@ -165,10 +170,10 @@
           "Grail1963 is a liturgical psalter lane with separate conventions.",
           "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
         ],
-        "recommendedNextAction": "verify_orthodox_psalms_151_155_source_trust",
-        "summary": "Psalms are shape-governed. NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, KJV, and NABRE now have recorded source or source-history verification. NABRE Psalm heading contamination was repaired and the audit blind spot was closed. Whole-Psalter trust still depends on Orthodox Psalms 151-155 source/trust."
+        "recommendedNextAction": "run_final_active_non_vulgate_trust_boundary_review_after_psalter_completion",
+        "summary": "All expected Psalter lanes now have recorded source or source-history verification. This completes Psalter lane source governance only; whole-OT and whole-corpus trust remain governed separately."
       },
-      "reason": "NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, KJV, and NABRE now have recorded source or source-history verification. NABRE Psalm heading contamination was repaired from the historical source mirror, and the NABRE contamination audit now scans the Psalter root array. Whole-Psalter textual trust is not asserted because Orthodox Psalms 151-155 source/trust remains pending.",
+      "reason": "All expected Psalter lanes now have recorded source or source-history verification: NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, KJV, NABRE, and Orthodox Psalms 151-155. This is a Psalter-lane trust completion claim only and does not promote whole-OT or whole-corpus trust.",
       "latest_nrsv_psalms_oremus_source_repair": {
         "id": "nrsv_psalms_oremus_source_repair_2026_06_25",
         "status": "source_backed_single_source_lane_repair_verified",
@@ -610,6 +615,51 @@
           "source mirrors remain removed from active runtime tree"
         ],
         "summary": "NABRE Psalms 1-150 were repaired from the historical NABRE source mirror. The prior blocker was caused by active Psalm heading contamination plus an audit blind spot that skipped the root-array Psalter."
+      },
+      "latest_orthodox_psalms_source_repair": {
+        "id": "orthodox_psalms_151_155_wright_source_repair_2026_06_26",
+        "status": "source_backed_public_domain_wright_snapshot_exact_verified",
+        "activePath": "data/bible/OT/psalms.json",
+        "activeLane": "text.Orthodox Psalms 151-155",
+        "sourceManifestPath": "data/bible/translations/orthodox-syriac-apocryphal-psalms-wright/manifest.json",
+        "rawSourcePath": "data/bible/translations/orthodox-syriac-apocryphal-psalms-wright/raw/psalms-151-155.json",
+        "sourceWitness": {
+          "name": "W. Wright, Some Apocryphal Psalms in Syriac",
+          "publication": "Proceedings of the Society of Biblical Archaeology, vol. 9 (1886-7), pp. 257-258, 264-266",
+          "url": "https://www.tertullian.org/fathers/wright_syriac_apocryphal_psalms.htm",
+          "publicDomainStatement": "All material on this page is in the public domain - copy freely."
+        },
+        "sourceRecordCount": 5,
+        "sourceVerseRows": 57,
+        "activeOrthodoxCount": 5,
+        "activeOrthodoxVerseRows": 57,
+        "activeOrthodoxIds": [
+          "PSALM 151",
+          "PSALM 152",
+          "PSALM 153",
+          "PSALM 154",
+          "PSALM 155"
+        ],
+        "exactSourceSnapshotMismatchCount": 0,
+        "changedRows": [
+          "PSALM 151",
+          "PSALM 152",
+          "PSALM 153",
+          "PSALM 154",
+          "PSALM 155"
+        ],
+        "verification": [
+          "active Orthodox Psalms 151-155 exactly match the local Wright source snapshot by normalized verse-prefixed text",
+          "the source snapshot is derived from W. Wright, Some Apocryphal Psalms in Syriac",
+          "the source witness is public domain according to the Tertullian.org transcription",
+          "Orthodox text is present only in Psalms 151-155"
+        ],
+        "preservedScope": [
+          "all non-Orthodox Psalter lanes",
+          "155-record Psalter root-array container",
+          "Grail1963 Psalm 151 appendix text"
+        ],
+        "summary": "Orthodox Psalms 151-155 were repaired from a public-domain Wright source snapshot and exact source verification is recorded."
       }
     },
     "deuterocanon": {
@@ -730,9 +780,12 @@
     "nabre_psalms_1_150_source_backed",
     "nabre_psalms_exact_historical_source_verified",
     "nabre_psalms_heading_contamination_repaired",
-    "nabre_contamination_audit_scans_psalter_root_array"
+    "nabre_contamination_audit_scans_psalter_root_array",
+    "orthodox_psalms_151_155_source_backed",
+    "orthodox_psalms_151_155_wright_source_verified",
+    "psalter_all_expected_lanes_source_governed"
   ],
-  "psalms_status": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_nabre_source_repaired_orthodox_pending",
+  "psalms_status": "source_governed_all_expected_psalter_lanes_complete",
   "latest_greek_esther_form_policy": {
     "id": "greek_esther_form_policy_2026_06_23",
     "status": "active_nrsv_addition_form_governed_no_text_mutation",
@@ -886,13 +939,13 @@
     "laneStatuses": {
       "canonical_nt": "named_defect_tranche_complete",
       "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
-      "psalms": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_nabre_source_repaired_orthodox_pending",
+      "psalms": "source_governed_all_expected_psalter_lanes_complete",
       "deuterocanon": "not_trusted_deuterocanon_form_versification_variant_policy_required",
       "broader_canon": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required"
     },
     "vulgateStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
     "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust",
-    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Psalms remain not globally trusted only because Orthodox Psalms 151-155 remain pending. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Psalms now have complete expected-lane source governance. Vulgate remains deferred and audit-only.",
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
       "whole_ot_including_psalms_textually_trusted",
@@ -1006,7 +1059,7 @@
     "recordedAt": "2026-06-25T18:38:38.958852+00:00",
     "textMutation": false,
     "bibleTextMutation": false,
-    "summary": "Active non-Vulgate corpus is fully classified. Psalms remain not globally trusted only because Orthodox Psalms 151-155 remain pending. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate corpus is fully classified. Psalms now have complete expected-lane source governance. Whole-corpus trust remains blocked by separately governed corpus lanes. Vulgate remains deferred and audit-only.",
     "nextAllowedTargets": [],
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
@@ -1019,5 +1072,9 @@
       "vulgate_complete"
     ],
     "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust"
-  }
+  },
+  "blockedClaims": [
+    "whole_ot_including_psalms_textually_trusted",
+    "entire_biblical_corpus_trusted"
+  ]
 }

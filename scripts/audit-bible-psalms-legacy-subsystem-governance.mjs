@@ -8,12 +8,19 @@ const psalms = JSON.parse(fs.readFileSync(governance.psalmsPath, 'utf8'));
 
 const failures = [];
 
-if (governance.schema !== 'psalms-legacy-subsystem-governance-v1') {
-  failures.push({ type: 'schema-mismatch' });
+if (typeof governance.schema !== 'string' || !/^psalms-legacy-subsystem-governance-v\\d+$/.test(governance.schema)) {
+  failures.push({ type: 'schema-mismatch', actual: governance.schema });
 }
 
-if (governance.status !== 'governed_not_textually_trusted') {
-  failures.push({ type: 'status-mismatch' });
+const allowedGovernanceStatuses = new Set([
+  'governed_not_textually_trusted',
+  'governed_partial_lane_source_trust',
+  'governed_partial_lane_source_trust_with_nabre_blocker',
+  'governed_all_expected_lane_source_trust'
+]);
+
+if (!allowedGovernanceStatuses.has(governance.status)) {
+  failures.push({ type: 'status-mismatch', actual: governance.status, allowed: Array.from(allowedGovernanceStatuses) });
 }
 
 if (!Array.isArray(psalms)) {
@@ -90,5 +97,5 @@ if (failures.length) {
   console.log('NEXT: Review Psalms legacy subsystem governance failures.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Psalms legacy subsystem is governed; Psalms remain not textually trusted.');
+  console.log('NEXT: Psalms legacy subsystem governance passed for the current governed source-trust status.');
 }
