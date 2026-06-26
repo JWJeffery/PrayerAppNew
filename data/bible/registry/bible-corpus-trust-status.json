@@ -700,7 +700,10 @@
         "2 Maccabees NABRE has 2 active rows without NABRE source witness; those rows were not synthesized.",
         "2 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust.",
         "1 Esdras KJV 8:60 is governed as a KJV-only source ref absent from the active DRB-shaped grid; no synthetic active row was inserted.",
-        "1 Esdras remains part of the deuterocanon repair queue; this policy record does not by itself promote deuterocanon to textual trust."
+        "1 Esdras remains part of the deuterocanon repair queue; this policy record does not by itself promote deuterocanon to textual trust.",
+        "Wisdom KJV has source refs 17:21 and 19:21 absent from the active DRB-shaped grid; no synthetic active rows were inserted.",
+        "Wisdom active rows 17:20 and 19:20 exist as DRB-grid rows without active KJV lane text in current main; they are not blindly filled from same-numbered KJV source refs because Wisdom source-form alignment requires explicit versification/source-address policy.",
+        "Wisdom active 19:22 is preserved with existing KJV/NABRE/NRSV text while the local DRB source lacks 19:22."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -722,7 +725,8 @@
         "baruch_nabre_source_scope_repair_1",
         "maccabees_1_nabre_source_scope_repair_1",
         "maccabees_2_nabre_source_scope_repair_1",
-        "esdras_1_kjv_8_60_versification_policy_1"
+        "esdras_1_kjv_8_60_versification_policy_1",
+        "wisdom_kjv_17_21_19_21_versification_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -1004,6 +1008,70 @@
           "create explicit migration policy if active grid is later changed away from DRB shape"
         ],
         "boundedClaim": "1 Esdras KJV 8:60 is adjudicated as a governed KJV-only source ref absent from the active DRB-shaped grid; no Bible text mutation was performed."
+      },
+      "latest_wisdom_kjv_17_21_19_21_versification_policy": {
+        "id": "wisdom_kjv_17_21_19_21_versification_policy_2026_06_26",
+        "status": "governed_kjv_source_refs_absent_from_active_drb_grid_no_text_mutation",
+        "activePath": "data/bible/OT/wisdom.json",
+        "activeGridBasis": "DRB active grid with preserved existing non-DRB lanes where already present",
+        "drbPath": "data/bible/translations/drb-original-douay-rheims/raw/wisdom.json",
+        "kjvSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "kjvSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Wisdom of Solomon.json",
+        "refs": [
+          "17:21",
+          "19:21"
+        ],
+        "evidence": {
+          "activeRows": {
+            "17:20": true,
+            "17:21": false,
+            "19:20": true,
+            "19:21": false,
+            "19:22": true
+          },
+          "activeDRB": {
+            "17:20": true,
+            "17:21": false,
+            "19:20": true,
+            "19:21": false,
+            "19:22": false
+          },
+          "activeKJV": {
+            "17:20": false,
+            "17:21": false,
+            "19:20": false,
+            "19:21": false,
+            "19:22": true
+          },
+          "drbSource": {
+            "17:20": true,
+            "17:21": false,
+            "19:20": true,
+            "19:21": false,
+            "19:22": false
+          },
+          "kjvSource": {
+            "17:20": true,
+            "17:21": true,
+            "19:20": true,
+            "19:21": true,
+            "19:22": true
+          }
+        },
+        "policyDecision": "Do not insert active Wisdom 17:21 or 19:21 as synthetic DRB-grid rows. Do not shift Wisdom chapter 17 or 19 numbering to match the historical KJV source. Do not blindly fill active 17:20 or 19:20 from same-numbered KJV source refs, because current active evidence shows those rows are DRB-grid rows without active KJV lane text and the local source forms diverge. Preserve active 19:22 and defer any source-address display or migration to a separate policy.",
+        "blockedActions": [
+          "insert_active_wisdom_17_21_from_kjv_only",
+          "insert_active_wisdom_19_21_from_kjv_only",
+          "shift_active_wisdom_17_numbering_to_match_kjv",
+          "shift_active_wisdom_19_numbering_to_match_kjv",
+          "blind_same_ref_kjv_fill_for_wisdom_17_20_or_19_20_without_form_policy",
+          "remove_or_shift_active_wisdom_19_22"
+        ],
+        "allowedFutureActions": [
+          "create_variant_apparatus_or_source-address_display_policy",
+          "create explicit migration policy if active Wisdom grid is later changed away from DRB shape"
+        ],
+        "boundedClaim": "Wisdom KJV 17:21 and 19:21 are adjudicated as governed KJV-only source refs absent from the active DRB-shaped grid; no Bible text mutation was performed."
       }
     },
     "broader_canon": {
