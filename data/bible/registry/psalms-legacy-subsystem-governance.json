@@ -1,5 +1,5 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v6",
+  "schema": "psalms-legacy-subsystem-governance-v7",
   "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
@@ -13,7 +13,8 @@
     "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
     "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope.",
     "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope.",
-    "jps1985Policy": "JPS1985 Psalms 1-150 are source-identified and history-stable from the Sefaria source-consistent import chain using Tanakh: The Holy Scriptures, published by JPS. Psalms 151-155 remain outside JPS1985 source scope. This is not a fresh exact-checksum source claim."
+    "jps1985Policy": "JPS1985 Psalms 1-150 are source-identified and history-stable from the Sefaria source-consistent import chain using Tanakh: The Holy Scriptures, published by JPS. Psalms 151-155 remain outside JPS1985 source scope. This is not a fresh exact-checksum source claim.",
+    "kjvPolicy": "KJV Psalms 1-150 are source-backed and exact-historical-source verified against data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^. Psalms 151-155 remain outside KJV source scope. The historical source mirror remains removed from active runtime paths."
   },
   "expectedShape": {
     "topType": "array",
@@ -157,6 +158,19 @@
       "blockedClaims": [
         "jps1985_psalms_fresh_exact_source_checksum_verified"
       ]
+    },
+    "KJV": {
+      "status": "source_backed_historical_source_exact_verified",
+      "scope": "Psalms 1-150",
+      "historicalSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json",
+      "historicalSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+      "sourceMirrorRemovalCommit": "d3d1d4967f15c8b45758151e47e7d762b7194dd7",
+      "sourcePsalmCount": 150,
+      "sourceVerseRows": 2461,
+      "activeKjvCount": 150,
+      "activeKjvVerseRows": 2461,
+      "activeRowsWithKjvAfter150": [],
+      "exactHistoricalSourceMismatchCount": 0
     }
   },
   "blockedClaims": [
@@ -175,6 +189,8 @@
     "drb_psalms_1_150_source_backed",
     "drb_psalms_exact_raw_source_verified",
     "jps1985_psalms_1_150_source_identified",
-    "jps1985_psalms_history_stable_source_consistent_import_chain_verified"
+    "jps1985_psalms_history_stable_source_consistent_import_chain_verified",
+    "kjv_psalms_1_150_source_backed",
+    "kjv_psalms_exact_historical_source_verified"
   ]
 }
