@@ -753,7 +753,11 @@
         "Letter of Jeremiah NABRE is source-backed and exact-verified from Baruch chapter 6 remapped to active Letter of Jeremiah chapter 1, using no-prefix NABRE lane text.",
         "Letter of Jeremiah NABRE source refs 1:1-1:72 are present in the active grid; active 1:73 is a governed non-NABRE row and no synthetic NABRE text was inserted.",
         "Letter of Jeremiah active rows without NABRE source refs do not retain unsourced NABRE text.",
-        "Letter of Jeremiah remains part of the deuterocanon repair queue; this bounded NABRE source-scope verification and policy do not by itself promote deuterocanon to textual trust."
+        "Letter of Jeremiah remains part of the deuterocanon repair queue; this bounded NABRE source-scope verification and policy do not by itself promote deuterocanon to textual trust.",
+        "1 Esdras has no 1 Esdras/3 Esdras NABRE source file in the historical NABRE source lane and no active NABRE rows.",
+        "Historical NABRE Ezra.json is canonical Ezra, not 1 Esdras, and is excluded as a 1 Esdras source.",
+        "1 Esdras NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Ezra, or any non-NABRE witness.",
+        "1 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -795,7 +799,8 @@
         "tobit_nabre_source_scope_repair_1",
         "tobit_nabre_versification_policy_1",
         "letterofjeremiah_nabre_source_scope_repair_1",
-        "letterofjeremiah_nabre_versification_policy_1"
+        "letterofjeremiah_nabre_versification_policy_1",
+        "esdras_1_nabre_absence_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6239,6 +6244,48 @@
           "create explicit lane-text normalization policy if Letter of Jeremiah NABRE prefixing is later standardized"
         ],
         "boundedClaim": "Letter of Jeremiah NABRE source-scope rows are Baruch chapter 6 mapped to active chapter 1 refs 1:1-1:72 and exact-verified; active 1:73 remains a governed non-NABRE row without synthetic insertion."
+      },
+      "latest_1esdras_nabre_absence_policy": {
+        "id": "esdras_1_nabre_absence_policy_2026_06_27",
+        "status": "governed_no_historical_1esdras_nabre_source_no_active_nabre_rows",
+        "activePath": "data/bible/OT/1esdras.json",
+        "activeLane": "text.NABRE",
+        "sourceCommit": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "sourceRoot": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books",
+        "activeRows": 450,
+        "activeNabreRows": 0,
+        "historicalNabreSourceFileCount": 73,
+        "oneEsdrasSourceCandidates": [],
+        "excludedCanonicalEzraSource": {
+          "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Ezra.json",
+          "present": true,
+          "book": "Ezra",
+          "rows": 280,
+          "exclusionReason": "Canonical NABRE Ezra is not 1 Esdras / 3 Esdras / Greek Esdras and must not be used as a 1 Esdras source."
+        },
+        "evidence": {
+          "activeMetaId": "1ESD",
+          "activeMetaName": "1 Esdras",
+          "activeNabreRows": 0,
+          "historicalNabreSourceDirectoryListed": true,
+          "historicalNabreOneEsdrasCandidates": [],
+          "canonicalEzraBookField": "Ezra"
+        },
+        "policyDecision": "Do not synthesize 1 Esdras NABRE text. The historical NABRE source lane contains canonical Ezra but no 1 Esdras / 3 Esdras / Greek Esdras candidate source file, and the active 1 Esdras file contains no NABRE rows.",
+        "blockedActions": [
+          "synthesize_1esdras_nabre_from_drb",
+          "synthesize_1esdras_nabre_from_kjv",
+          "synthesize_1esdras_nabre_from_nrsv",
+          "synthesize_1esdras_nabre_from_webbe",
+          "copy_1esdras_nabre_from_canonical_ezra",
+          "copy_1esdras_nabre_from_non_nabre_witness",
+          "claim_1esdras_nabre_source_scope_repair_without_historical_1esdras_nabre_source"
+        ],
+        "allowedFutureActions": [
+          "import a legitimate NABRE 1 Esdras source only if an actual NABRE witness is later identified and policy-approved",
+          "record external canon/source evidence in a separate bibliography or source registry if needed"
+        ],
+        "boundedClaim": "1 Esdras NABRE is governed absent: no historical 1 Esdras NABRE source file was present in the inspected source lane, canonical Ezra was excluded as a different book, and no active NABRE text is present."
       }
     },
     "broader_canon": {
