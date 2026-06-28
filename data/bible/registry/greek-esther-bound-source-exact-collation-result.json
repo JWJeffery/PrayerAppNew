@@ -1,0 +1,223 @@
+{
+  "schema": "greek-esther-bound-source-exact-collation-result-v1",
+  "id": "greek_esther_bound_source_exact_collation_result_2026_06_28",
+  "status": "passed_repaired_text_committable",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/estherGK.json",
+  "policy": "data/bible/registry/greek-esther-source-address-policy.json",
+  "repairScript": "scripts/repair-bible-greek-esther-bound-source-lanes.mjs",
+  "exactCollationAuditScript": "scripts/audit-bible-greek-esther-bound-source-exact-collation.mjs",
+  "repairSummary": {
+    "convertedExistingNRSVStringRowsToObjects": 267,
+    "insertedSourceAddressRows": [
+      "8:13",
+      "8:14",
+      "8:15",
+      "8:16",
+      "8:17"
+    ],
+    "writtenLaneCount": 606
+  },
+  "exactCollationResult": {
+    "status": "passed",
+    "checkedRefsCount": 606,
+    "exactMatchCount": 606,
+    "mismatchCount": 0,
+    "missingCount": 0,
+    "byUnit": {
+      "KJV:ordinary_esther": {
+        "checked": 167,
+        "exact": 167,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "NABRE:ordinary_esther": {
+        "checked": 167,
+        "exact": 167,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_ordinary_esther": {
+        "checked": 167,
+        "exact": 167,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_a": {
+        "checked": 17,
+        "exact": 17,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_b": {
+        "checked": 7,
+        "exact": 7,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_c": {
+        "checked": 30,
+        "exact": 30,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_d": {
+        "checked": 16,
+        "exact": 16,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_e": {
+        "checked": 24,
+        "exact": 24,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "DRB:drb_addition_f": {
+        "checked": 11,
+        "exact": 11,
+        "mismatched": 0,
+        "missing": 0
+      }
+    },
+    "absenceChecks": [
+      {
+        "translation": "NRSV",
+        "activeRef": "8:13",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "NRSV",
+        "activeRef": "8:14",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "NRSV",
+        "activeRef": "8:15",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "NRSV",
+        "activeRef": "8:16",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "NRSV",
+        "activeRef": "8:17",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition A",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition B",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition C",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition D",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition E",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeChapter": "Addition F",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition A",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition B",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition C",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition D",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition E",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeChapter": "Addition F",
+        "expectedPresentCount": 0,
+        "actualPresentCount": 0,
+        "status": "passed"
+      }
+    ],
+    "failures": []
+  },
+  "claim": "Active Greek Esther KJV/NABRE ordinary lanes and DRB ordinary/addition lanes are populated and exact-source-collated under the Greek Esther source-address policy.",
+  "trustedScopes": {
+    "KJV": "Ordinary Esther 1-10 only, including source-address rows 8:13-17.",
+    "NABRE": "Ordinary Esther 1-10 only, including source-address rows 8:13-17.",
+    "DRB": "Ordinary Esther rows plus DRB mapped addition lanes A-F under source-address policy."
+  },
+  "limitations": [
+    "This does not verify active NRSV Greek Esther text because an approved NRSV/NRSVA source witness remains unbound.",
+    "NRSV remains absent at Esther 8:13-17 unless an approved NRSV source witness provides those addresses.",
+    "KJV and NABRE named additions remain absent because the bound KJV/NABRE source witnesses cover ordinary Esther only.",
+    "DRB Esther 15:1-3 remains source-present but inactive under current Addition D policy."
+  ],
+  "nextRequiredWork": [
+    "Update Greek Esther and Greek additions status records to reflect exact-collated KJV/NABRE ordinary lanes and DRB ordinary/addition lanes.",
+    "Keep active Greek Esther NRSV blocked pending approved source witness.",
+    "Continue NRSV source acquisition for Greek Esther and Greek Daniel additions."
+  ]
+}
