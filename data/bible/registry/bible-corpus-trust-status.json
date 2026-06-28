@@ -765,7 +765,10 @@
         "Prayer of Manasseh has no Prayer of Manasseh NABRE source file in the historical NABRE source lane and no active NABRE rows.",
         "Historical NABRE Daniel.json is canonical Daniel, not Prayer of Manasseh, and is excluded as a Prayer of Manasseh source.",
         "Prayer of Manasseh NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Daniel, or any non-NABRE witness.",
-        "Prayer of Manasseh remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
+        "Prayer of Manasseh remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust.",
+        "Deuterocanon KJV source-scope and versification-policy markers are complete for the expected bounded marker set.",
+        "Deuterocanon NABRE source-scope and absence-policy markers are complete for the expected bounded marker set.",
+        "This marker-completion boundary does not promote deuterocanon to textual trust; deuterocanon remains explicitly not trusted pending broader text-trust criteria."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -810,7 +813,8 @@
         "letterofjeremiah_nabre_versification_policy_1",
         "esdras_1_nabre_absence_policy_1",
         "esdras_2_nabre_absence_policy_1",
-        "prayerofmanasseh_nabre_absence_policy_1"
+        "prayerofmanasseh_nabre_absence_policy_1",
+        "deuterocanon_kjv_nabre_source_scope_absence_markers_complete_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6389,6 +6393,82 @@
           "record external canon/source evidence in a separate bibliography or source registry if needed"
         ],
         "boundedClaim": "Prayer of Manasseh NABRE is governed absent: no historical Prayer of Manasseh NABRE source file was present in the inspected source lane, canonical Daniel was excluded as a different source file, and no active NABRE text is present."
+      },
+      "latest_deuterocanon_kjv_nabre_source_scope_absence_completion": {
+        "id": "deuterocanon_kjv_nabre_source_scope_absence_completion_2026_06_28",
+        "status": "marker_set_complete_no_textual_trust_promotion",
+        "statusPath": "data/bible/registry/bible-corpus-trust-status.json",
+        "deuterocanonStatusBeforeAndAfter": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+        "expectedMarkers": {
+          "kjvSourceScopeOrPolicy": [
+            "maccabees_1_kjv_source_scope_repair_1",
+            "maccabees_2_kjv_source_scope_repair_1",
+            "baruch_kjv_source_scope_repair_1",
+            "tobit_kjv_source_scope_repair_1",
+            "letterofjeremiah_kjv_source_scope_repair_1",
+            "esdras_1_kjv_8_60_versification_policy_1",
+            "wisdom_kjv_17_21_19_21_versification_policy_1",
+            "sirach_kjv_17_32_19_29_19_30_versification_policy_1",
+            "esdras_2_kjv_source_scope_repair_1",
+            "esdras_2_kjv_4_14_10_1_11_30_12_16_14_48_15_56_versification_policy_1",
+            "judith_kjv_source_scope_repair_1",
+            "judith_kjv_versification_policy_1",
+            "prayerofmanasseh_kjv_single_source_row_policy_1",
+            "esdras_1_kjv_source_scope_repair_1",
+            "wisdom_kjv_source_scope_repair_1",
+            "sirach_kjv_source_scope_repair_1"
+          ],
+          "nabreSourceScopeOrAbsence": [
+            "baruch_nabre_source_scope_repair_1",
+            "maccabees_1_nabre_source_scope_repair_1",
+            "maccabees_2_nabre_source_scope_repair_1",
+            "judith_nabre_source_scope_repair_1",
+            "judith_nabre_versification_policy_1",
+            "wisdom_nabre_source_scope_repair_1",
+            "wisdom_nabre_versification_policy_1",
+            "sirach_nabre_source_scope_repair_1",
+            "sirach_nabre_versification_policy_1",
+            "tobit_nabre_source_scope_repair_1",
+            "tobit_nabre_versification_policy_1",
+            "letterofjeremiah_nabre_source_scope_repair_1",
+            "letterofjeremiah_nabre_versification_policy_1",
+            "esdras_1_nabre_absence_policy_1",
+            "esdras_2_nabre_absence_policy_1",
+            "prayerofmanasseh_nabre_absence_policy_1"
+          ],
+          "governingAuditsAndClassifications": [
+            "deuterocanon_drb_completion_tranche_1",
+            "deuterocanon_drb_nabre_completion_tranche_2",
+            "deuterocanon_remaining_governance_1",
+            "greek_esther_daniel_source_shape_review_1",
+            "greek_esther_form_policy_1",
+            "greek_daniel_form_policy_1",
+            "maccabees_3_4_source_backed_repair_recognized_1",
+            "maccabees_4_variant_footnote_gap_policy_1",
+            "deuterocanon_trust_readiness_classification_1",
+            "deuterocanon_policy_closed_not_trust_ready_1"
+          ]
+        },
+        "missing": {
+          "kjvSourceScopeOrPolicy": [],
+          "nabreSourceScopeOrAbsence": [],
+          "governingAuditsAndClassifications": []
+        },
+        "completedRemediationCountBeforeRecord": 43,
+        "completionMarker": "deuterocanon_kjv_nabre_source_scope_absence_markers_complete_1",
+        "boundedClaim": "The expected deuterocanon KJV source-scope/versification-policy markers and NABRE source-scope/absence-policy markers are present. This is a marker-completion boundary only and does not promote deuterocanon to textual trust.",
+        "blockedActions": [
+          "promote_deuterocanon_to_textually_trusted_from_marker_completion_alone",
+          "claim_whole_bible_corpus_textual_trust_from_deuterocanon_marker_completion",
+          "treat_policy_closed_absence_records_as_source_text_repair",
+          "treat_greek_esther_or_greek_daniel_governance_as_textual_repair_completion"
+        ],
+        "requiredFutureWorkBeforeTrustPromotion": [
+          "define positive deuterocanon textual trust criteria beyond marker presence",
+          "separately adjudicate Greek Esther form/text if trust promotion is desired",
+          "separately adjudicate Greek Daniel form/text if trust promotion is desired",
+          "separately adjudicate broader canon and Vulgate trust blockers outside this boundary"
+        ]
       }
     },
     "broader_canon": {
