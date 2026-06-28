@@ -4,7 +4,7 @@
     "version": "3.8.156",
     "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-28: PrayerAppNew records Bible corpus trust-boundary work through deuterocanon KJV/NABRE source-scope and absence marker completion. The architecture checkpoint is repaired at current main. Canonical OT non-Psalms is selected as the next large section to finish to 100% trusted with no governed exclusions. Daniel 11:1-45 and Nehemiah 7:73 are no longer acceptable as terminal governed exclusions; they must be positively repaired, source-verified, or otherwise resolved before canonical OT can be called complete.",
+    "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms no-exclusion completion is in progress. Daniel 11:1-45 NABRE has been imported from an official USCCB source snapshot and exact-verified into active Daniel. Nehemiah 7:73/8:1 source-address alignment remains before canonical OT can be promoted to no-exclusion trust.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1213,15 +1213,16 @@
     "next_bible_corpus_target": {
       "key": "canonical_ot_non_psalms",
       "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
-      "reason": "Canonical OT non-Psalms is already closest to a full trust claim but still contains governed exclusions for Daniel 11:1-45 and Nehemiah 7:73. Those exclusions must be repaired or converted into verified positive trust records before the section can be called finished.",
-      "requiredNextWork": [
-        "inspect canonical OT trust audit and residual records",
-        "inspect Daniel 11 active file, source lane, and controlled source options",
-        "inspect Nehemiah 7:72-73 and 8:1 active/source mappings",
-        "repair or positively source-verify each remaining exclusion",
-        "rerun canonical OT final audit with zero governed exclusions",
-        "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
-      ]
+      "status": "in_progress_daniel_11_repaired_nehemiah_remaining",
+      "completedSubtargets": [
+        "daniel_11_1_45_nabre_usccb_source_import"
+      ],
+      "remainingSubtargets": [
+        "nehemiah_7_73_8_1_source_address_alignment",
+        "canonical_ot_final_no_exclusion_audit",
+        "canonical_ot_no_exclusion_trust_status_promotion"
+      ],
+      "nextSubtarget": "nehemiah_7_73_8_1_source_address_alignment"
     },
     "latest_known_commit": "af88450",
     "latest_known_commit_message": "Repair Bible corpus architecture checkpoint",

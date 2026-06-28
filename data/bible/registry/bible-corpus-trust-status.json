@@ -17,7 +17,8 @@
         "Ordinary canonical OT non-Psalms chapter/verse completeness audit passed for 38 books and 779 chapters with zero findings.",
         "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
         "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
-        "This lane-level trust result excludes Psalms, which remain a separate not-trusted legacy psalter subsystem."
+        "This lane-level trust result excludes Psalms, which remain a separate not-trusted legacy psalter subsystem.",
+        "Daniel 11:1-45 NABRE was imported from an official USCCB Daniel 11 source snapshot; active Daniel 11 text.NABRE exact-matches the local controlled source snapshot by verse address."
       ],
       "completedRemediations": [
         "mechanical_nabre_chapter_verse_prefix_cleanup",
@@ -34,7 +35,8 @@
         "canonical_ot_residual_policy_review_1",
         "nehemiah_7_73_adapter_policy_1",
         "daniel_11_source_absent_governed_exclusion_1",
-        "canonical_ot_final_trust_audit_1"
+        "canonical_ot_final_trust_audit_1",
+        "daniel_11_nabre_usccb_source_import_1"
       ],
       "latest_canonical_ot_final_trust_audit": {
         "id": "canonical_ot_final_trust_audit_2026_06_23",
@@ -44,7 +46,6 @@
         "checkedChapterCount": 779,
         "findingCount": 0,
         "governedExclusions": [
-          "daniel_11_nabre_source_absent_no_synthetic_overlay",
           "nehemiah_7_73_adapter_versification_no_synthetic_row"
         ],
         "excludedFromThisTrustClaim": [
@@ -54,7 +55,10 @@
           "vulgate",
           "nt_full_recollation_beyond_named_defects"
         ],
-        "summary": "Canonical OT non-Psalms final trust readiness passed after ordinary OT completeness, recovery consolidation, trust boundary, Daniel 11 governed source-absent exclusion, and Nehemiah 7:73 adapter policy checks. This is not a whole-Bible or whole-OT-with-Psalms trust claim."
+        "summary": "Canonical OT non-Psalms final trust readiness passed after ordinary OT completeness, recovery consolidation, trust boundary, Daniel 11 governed source-absent exclusion, and Nehemiah 7:73 adapter policy checks. This is not a whole-Bible or whole-OT-with-Psalms trust claim.",
+        "resolvedFormerExclusions": [
+          "daniel_11_nabre_source_absent_no_synthetic_overlay"
+        ]
       },
       "latest_nehemiah_7_73_adapter_policy": {
         "id": "nehemiah_7_73_adapter_policy_2026_06_23",
@@ -75,6 +79,119 @@
           "daniel_11_nabre_synthesized",
           "whole_ot_including_psalms_textually_trusted",
           "entire_biblical_corpus_trusted"
+        ]
+      },
+      "latest_daniel_11_nabre_usccb_source_import": {
+        "id": "daniel_11_nabre_usccb_source_import_2026_06_28",
+        "status": "official_source_imported_exact_verified",
+        "activePath": "data/bible/OT/daniel.json",
+        "activeLane": "text.NABRE",
+        "sourcePath": "data/bible/translations/nabre-official-usccb/source/daniel-11.json",
+        "sourceUrl": "https://bible.usccb.org/bible/daniel/11",
+        "refs": [
+          "11:1",
+          "11:2",
+          "11:3",
+          "11:4",
+          "11:5",
+          "11:6",
+          "11:7",
+          "11:8",
+          "11:9",
+          "11:10",
+          "11:11",
+          "11:12",
+          "11:13",
+          "11:14",
+          "11:15",
+          "11:16",
+          "11:17",
+          "11:18",
+          "11:19",
+          "11:20",
+          "11:21",
+          "11:22",
+          "11:23",
+          "11:24",
+          "11:25",
+          "11:26",
+          "11:27",
+          "11:28",
+          "11:29",
+          "11:30",
+          "11:31",
+          "11:32",
+          "11:33",
+          "11:34",
+          "11:35",
+          "11:36",
+          "11:37",
+          "11:38",
+          "11:39",
+          "11:40",
+          "11:41",
+          "11:42",
+          "11:43",
+          "11:44",
+          "11:45"
+        ],
+        "restoredRows": 45,
+        "activeMissingNabreBefore": [
+          "11:1",
+          "11:2",
+          "11:3",
+          "11:4",
+          "11:5",
+          "11:6",
+          "11:7",
+          "11:8",
+          "11:9",
+          "11:10",
+          "11:11",
+          "11:12",
+          "11:13",
+          "11:14",
+          "11:15",
+          "11:16",
+          "11:17",
+          "11:18",
+          "11:19",
+          "11:20",
+          "11:21",
+          "11:22",
+          "11:23",
+          "11:24",
+          "11:25",
+          "11:26",
+          "11:27",
+          "11:28",
+          "11:29",
+          "11:30",
+          "11:31",
+          "11:32",
+          "11:33",
+          "11:34",
+          "11:35",
+          "11:36",
+          "11:37",
+          "11:38",
+          "11:39",
+          "11:40",
+          "11:41",
+          "11:42",
+          "11:43",
+          "11:44",
+          "11:45"
+        ],
+        "activeMissingNabreAfter": [],
+        "verification": [
+          "source snapshot contains Daniel 11:1-45 from the official USCCB Daniel 11 page",
+          "active Daniel 11 text.NABRE exactly matches the source snapshot by verse address",
+          "Daniel 11 is removed from canonical OT governed exclusions",
+          "Nehemiah 7:73/8:1 remains the only canonical OT non-Psalms no-exclusion target"
+        ],
+        "remainingCanonicalOtGovernedExclusions": [
+          "nehemiah_7_73_adapter_versification_no_synthetic_row"
         ]
       }
     },
