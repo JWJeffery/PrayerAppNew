@@ -12,9 +12,9 @@
   "activeFiles": {
     "estherGK": {
       "path": "data/bible/OT/estherGK.json",
-      "currentShape": "NRSV-only unkeyed active text",
-      "activeRows": 267,
-      "status": "active_source_not_yet_bound_for_nrsv"
+      "currentShape": "explicit translation-object active text with unverified NRSV base rows plus KJV/NABRE ordinary lanes and DRB ordinary/addition lanes",
+      "activeRows": 272,
+      "status": "partial_text_collation_complete_nrsv_blocked"
     },
     "danielGK": {
       "path": "data/bible/OT/danielGK.json",
@@ -26,29 +26,33 @@
   "sourceWitnesses": {
     "estherGK": {
       "DRB": {
-        "status": "source_present_ready_for_collation",
+        "status": "ordinary_and_addition_lanes_exact_source_collated",
         "sourceRef": "main/current",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/esther.json",
-        "observedRows": 351,
-        "note": "Douay-Rheims raw Esther includes Catholic Esther form and must be mapped before any active text comparison or import."
+        "observedRows": 275,
+        "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+        "policy": "data/bible/registry/greek-esther-source-address-policy.json",
+        "note": "Douay-Rheims raw Esther is exact-source-collated into active Greek Esther for ordinary Esther rows and mapped addition lanes A-F under the source-address policy. DRB Esther 15:1-3 remains source-present but inactive under the current Addition D policy."
       },
       "NABRE": {
-        "status": "source_present_ready_for_collation",
+        "status": "ordinary_lanes_exact_source_collated",
         "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
         "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Esther.json",
         "observedRows": 167,
-        "note": "Historical NABRE Esther source is present. It must be compared in its own source form rather than forced into the active NRSV addition grid."
+        "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+        "note": "Historical NABRE Esther source is exact-source-collated for ordinary Esther 1-10 only, including source-address rows Esther 8:13-17. It does not provide Greek named-addition rows."
       },
       "KJV": {
-        "status": "source_present_ready_for_collation",
+        "status": "ordinary_lanes_exact_source_collated",
         "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
         "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Esther.json",
-        "observedBook": "Esther",
+        "observedRows": 167,
         "observedChapterCount": 10,
-        "note": "Historical KJV source uses the ordinary Esther file path, not an Additions_to_Esther underscore path."
+        "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+        "note": "Historical KJV Esther source is exact-source-collated for ordinary Esther 1-10 only, including source-address rows Esther 8:13-17. It does not provide Greek named-addition rows."
       },
       "NRSV": {
-        "status": "external_source_required_before_active_trust",
+        "status": "active_text_unverified_pending_approved_source_witness",
         "path": null,
         "localRepoSearchStatus": "no_independent_local_nrsv_source_witness_found",
         "localRepoSearchEvidence": [
@@ -64,7 +68,7 @@
             "note": "Candidate must be opened, acquired, and compared before active Greek Esther NRSV trust. It is not yet a bound source witness."
           }
         ],
-        "note": "Active Greek Esther claims NRSV text, but no independent local NRSV source witness has been found or bound. External source acquisition or a pre-existing licensed source witness is required before active NRSV trust."
+        "note": "Active Greek Esther contains existing NRSV text converted to explicit NRSV lanes, but no independent approved NRSV source witness is bound. NRSV remains absent at Esther 8:13-17 unless an approved source witness supplies those addresses."
       }
     },
     "danielGK": {
@@ -137,9 +141,10 @@
     }
   },
   "blockedActions": [
-    "mutate_estherGK_before_nrsv_source_binding",
+    "mutate_estherGK_nrsv_text_before_approved_source_binding",
     "mutate_danielGK_nrsv_additions_before_approved_source_binding",
     "overlay_drb_over_active_greek_esther",
+    "force_kjv_or_nabre_ordinary_sources_into_greek_esther_named_additions",
     "force_kjv_split_addition_files_into_active_daniel_without_mapping",
     "treat_current_daniel_11_nabre_snapshot_as_full_greek_daniel_source",
     "treat_active_nrsv_greek_files_as_self-authenticating_sources",
