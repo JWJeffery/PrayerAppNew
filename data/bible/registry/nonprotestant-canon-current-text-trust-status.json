@@ -1,11 +1,11 @@
 {
   "schema": "nonprotestant-canon-current-text-trust-status-v1",
   "id": "nonprotestant_canon_current_text_trust_status_2026_06_28",
-  "status": "not_trust_ready_partial_greek_additions_tobit_judith_progress",
+  "status": "not_trust_ready_partial_greek_additions_tobit_judith_wisdom_progress",
   "recordedAt": "2026-06-28",
   "controllingDecision": "data/bible/registry/nonprotestant-canon-text-trust-decision.json",
   "priorMatrix": "data/bible/registry/nonprotestant-canon-collation-matrix.json",
-  "reason": "Greek Esther, Greek Daniel, Tobit, and Judith now have partial exact-source-collated lanes, but the broader non-Protestant canon matrix remains not trust-ready and unresolved NRSV/rawText source blocks remain active.",
+  "reason": "Greek Esther, Greek Daniel, Tobit, Judith, and Wisdom now have partial exact-source-collated lanes, but the broader non-Protestant canon matrix remains not trust-ready and unresolved NRSV/rawText source blocks remain active.",
   "blockedGlobalClaimsStillActive": [
     "deuterocanon_complete",
     "nonprotestant_canon_textually_trusted",
@@ -48,6 +48,24 @@
         "Active NRSV Judith remains unresolved with 147 active rows pending approved source witness or policy.",
         "Full Judith trust remains blocked by NRSV resolution."
       ]
+    },
+    "wisdom": {
+      "status": "partial_trust_ready_nrsv_unresolved",
+      "activePath": "data/bible/OT/wisdom.json",
+      "activeRows": 442,
+      "statusRecord": "data/bible/registry/wisdom-text-trust-status.json",
+      "resultRecord": "data/bible/registry/wisdom-bound-source-exact-collation-result.json",
+      "policy": "data/bible/registry/wisdom-source-address-policy.json",
+      "repairCommit": "95a78d7",
+      "trustedClaims": [
+        "KJV Wisdom active lane exact-source-collated for 436 bound source rows under source-address policy.",
+        "NABRE Wisdom active lane exact-source-collated for 403 bound source rows under source-address policy.",
+        "DRB Wisdom active lane exact-source-collated for 439 bound source rows."
+      ],
+      "blockedClaims": [
+        "Active NRSV Wisdom remains unresolved with 115 active rows pending approved source witness or policy.",
+        "Full Wisdom trust remains blocked by NRSV resolution."
+      ]
     }
   },
   "greekAdditionsProgress": {
@@ -85,13 +103,14 @@
     }
   },
   "matrixStalenessNotice": {
-    "status": "prior_matrix_stale_for_greek_additions_tobit_and_judith",
-    "reason": "The previous non-Protestant collation matrix predates Greek Esther, Greek Daniel, Tobit, and Judith lane repairs/status records. It remains useful as a backlog boundary but not as a current per-cell source of truth for those active files.",
+    "status": "prior_matrix_stale_for_greek_additions_tobit_judith_and_wisdom",
+    "reason": "The previous non-Protestant collation matrix predates Greek Esther, Greek Daniel, Tobit, Judith, and Wisdom lane repairs/status records. It remains useful as a backlog boundary but not as a current per-cell source of truth for those active files.",
     "doNotUsePriorMatrixToClaim": [
       "Greek Esther still has only unkeyed text after a8b6af1.",
       "Greek Daniel lacks KJV/NABRE/DRB addition lane records after b443e51 and fead200.",
       "Tobit KJV/NABRE/DRB lanes remain unreviewed after fee2b5e.",
-      "Judith KJV/NABRE/DRB lanes remain unreviewed after 0eab59c."
+      "Judith KJV/NABRE/DRB lanes remain unreviewed after 0eab59c.",
+      "Wisdom KJV/NABRE/DRB lanes remain unreviewed after 95a78d7."
     ]
   },
   "remainingBlocks": [
@@ -99,6 +118,7 @@
     "Greek Daniel NRSV addition source witness acquisition and collation.",
     "Tobit NRSV source witness/status resolution and Tobit rawText classification.",
     "Judith NRSV source witness/status resolution.",
+    "Wisdom NRSV source witness/status resolution.",
     "Book-by-book direct source collation for remaining deuterocanon/non-Protestant corpus lanes still marked unverified or final-review-required in the matrix.",
     "Explicit absence/display checks for source-absent lanes."
   ],
@@ -106,6 +126,7 @@
     "Greek additions have partial exact-source-collated progress for specified KJV/NABRE/DRB scopes.",
     "Tobit has partial exact-source-collated progress for KJV/NABRE/DRB scopes only.",
     "Judith has partial exact-source-collated progress for KJV/NABRE/DRB scopes only.",
+    "Wisdom has partial exact-source-collated progress for KJV/NABRE/DRB scopes only.",
     "Non-Protestant canon text trust remains incomplete and not globally trust-ready.",
     "The prior matrix is stale for Greek Esther, Greek Daniel, Tobit, and Judith and must be superseded by their specific status records for those files."
   ],
@@ -120,7 +141,9 @@
     "Tobit NRSV is source-verified.",
     "Tobit rawText is trusted or classified.",
     "Judith is fully trusted.",
-    "Judith NRSV is source-verified."
+    "Judith NRSV is source-verified.",
+    "Wisdom is fully trusted.",
+    "Wisdom NRSV is source-verified."
   ],
   "nextRequiredWork": [
     "Run the current text trust status audit.",

@@ -1,0 +1,45 @@
+{
+  "schema": "wisdom-text-trust-status-v1",
+  "id": "wisdom_text_trust_status_2026_06_28",
+  "status": "partial_trust_ready_nrsv_unresolved",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/wisdom.json",
+  "activeRows": 442,
+  "repairCommit": "95a78d7",
+  "resultRecord": "data/bible/registry/wisdom-bound-source-exact-collation-result.json",
+  "policy": "data/bible/registry/wisdom-source-address-policy.json",
+  "trustedClaims": {
+    "KJV": "trusted_exact_source_collated_source_address_policy",
+    "NABRE": "trusted_exact_source_collated_source_address_policy",
+    "DRB": "trusted_exact_source_collated"
+  },
+  "unresolved": {
+    "NRSV": {
+      "status": "pending_approved_source_witness_or_policy",
+      "activeRows": 115
+    },
+    "Rotherham": {
+      "status": "absent",
+      "activeRows": 0
+    },
+    "rawText": {
+      "status": "absent",
+      "activeRows": 0
+    }
+  },
+  "blockedFullTrustReason": "Wisdom cannot be fully trusted while active NRSV remains unresolved.",
+  "allowedClaims": [
+    "Wisdom KJV, NABRE, and DRB active lanes are exact-source-collated within their recorded scopes.",
+    "Wisdom remains partial-trust only."
+  ],
+  "forbiddenClaims": [
+    "Wisdom is fully trusted.",
+    "Wisdom NRSV is source-verified.",
+    "The non-Protestant canon is textually trusted."
+  ],
+  "nextRequiredWork": [
+    "Run Wisdom text trust status audit.",
+    "Resolve Wisdom NRSV source witness/status.",
+    "Update the current non-Protestant canon status after the Wisdom status audit passes."
+  ]
+}
