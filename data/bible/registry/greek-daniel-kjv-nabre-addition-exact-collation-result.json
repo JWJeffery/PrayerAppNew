@@ -1,0 +1,74 @@
+{
+  "schema": "greek-daniel-kjv-nabre-addition-exact-collation-result-v1",
+  "id": "greek_daniel_kjv_nabre_addition_exact_collation_result_2026_06_28",
+  "status": "passed_repaired_text_committable",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/danielGK.json",
+  "repairScript": "scripts/repair-bible-greek-daniel-kjv-nabre-addition-lanes.mjs",
+  "statusAuditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-collation-status.mjs",
+  "exactCollationAuditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs",
+  "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+  "statusAuditResult": {
+    "status": "ready_for_exact_collation",
+    "unitCount": 6,
+    "activeLanePresentCount": 6,
+    "activeLaneAbsentCount": 0
+  },
+  "exactCollationResult": {
+    "status": "passed",
+    "checkedRefsCount": 346,
+    "exactMatchCount": 346,
+    "mismatchCount": 0,
+    "missingCount": 0,
+    "byUnit": {
+      "KJV:prayer_song": {
+        "checked": 67,
+        "exact": 67,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "KJV:susanna": {
+        "checked": 64,
+        "exact": 64,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "KJV:bel_and_dragon": {
+        "checked": 42,
+        "exact": 42,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "NABRE:prayer_song": {
+        "checked": 67,
+        "exact": 67,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "NABRE:susanna": {
+        "checked": 64,
+        "exact": 64,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "NABRE:bel_and_dragon": {
+        "checked": 42,
+        "exact": 42,
+        "mismatched": 0,
+        "missing": 0
+      }
+    },
+    "failures": []
+  },
+  "claim": "Active Greek Daniel KJV and NABRE addition lanes are populated and exact-source-collated for Prayer/Song, Susanna, and Bel and the Dragon.",
+  "limitations": [
+    "This does not verify NRSV addition text because NRSV additions remain blocked pending approved source witness acquisition.",
+    "This does not populate or verify DRB because DRB Bel and the Dragon remains policy-bound at Daniel 14:42.",
+    "This does not claim full Greek Daniel trust across every translation lane."
+  ],
+  "nextRequiredWork": [
+    "Resolve DRB Daniel 14:42 policy before DRB Bel and the Dragon trust claim.",
+    "Acquire or approve NRSV addition source witness before NRSV addition collation.",
+    "Continue Greek Esther source acquisition and mapping."
+  ]
+}
