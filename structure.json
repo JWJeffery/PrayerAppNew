@@ -1,7 +1,7 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.157",
+    "version": "3.8.158",
     "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
     "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms is complete and trusted with no governed exclusions. Daniel 11:1-45 NABRE is restored from official source. Nehemiah 7:73 NABRE is resolved as a positive source-address alignment. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
@@ -368,6 +368,185 @@
             "Hudra broad-label usage removes the need to track Qdham u-Wathar, Psalter/Hullale, Gezza, Kashkol, Bedjan, Darmo, or other source-family distinctions"
           ]
         }
+      },
+      {
+        "id": "auxiliary_offices_companion_offices_devotional_cycle_taxonomy",
+        "status": "accepted",
+        "date": "2026-06-28",
+        "scope": [
+          "Universal Office",
+          "office taxonomy",
+          "auxiliary offices",
+          "little offices",
+          "devotional cycles",
+          "source governance",
+          "future expansion"
+        ],
+        "decision": "Universal Office will distinguish canonical office families from auxiliary or companion office-shaped devotions. The main tradition selector is reserved for governed ecclesial office families such as Anglican Daily Office, Roman LOTH / Roman Breviary, Byzantine Horologion, Ethiopian Sa\\’atat, East Syriac Office, Coptic Agpeya, West Syriac Shehimo, and other full office systems. Little offices, order-specific offices, votive/proper offices, psalter devotions, manuscript devotional cycles, novenas, rosaries, adoration cycles, and similar prayer forms may be researched and eventually surfaced, but they must not be flattened into main office-family lanes.",
+        "governance": {
+          "community_research_policy": "Community lists, Reddit threads, blog indexes, archive pointers, and similar resources may seed research registries and product-intelligence questions, but they do not authorize liturgical text, office structure, rubrics, or public rendering.",
+          "source_authority_policy": "Actual office text, rubrics, psalmody, readings, hymns, collects, calendars, and provenance must remain governed by identifiable liturgical books, manuscripts, public-domain sources, licensed sources, or explicitly recorded internal/private source witnesses.",
+          "taxonomy_policy": "Every non-primary office-shaped item must be typed before implementation. Do not build an item merely because it resembles an office or appears in a devotional list.",
+          "selector_policy": "The main tradition selector must not become a catalog of every office-shaped devotion. Auxiliary material belongs behind a secondary Companion Offices / Devotions layer once governed.",
+          "rights_policy": "Historical availability, archive visibility, or devotional popularity does not imply public-rendering clearance. Rights and source-status posture must be recorded separately from corpus construction and UI discovery."
+        },
+        "accepted_classes": {
+          "canonical_office_family": {
+            "definition": "A full ecclesial daily-office system requiring calendar logic, office resolution, rubrics, diagnostics, source governance, and tradition-specific UI posture.",
+            "examples": [
+              "Anglican Daily Office",
+              "Roman Liturgy of the Hours",
+              "Roman Breviary",
+              "Byzantine Horologion",
+              "Ethiopian Sa\\’atat",
+              "East Syriac Office / Hudra broad-label lane",
+              "Coptic Agpeya",
+              "West Syriac Shehimo"
+            ],
+            "main_selector_eligible": true
+          },
+          "order_or_rite_office": {
+            "definition": "A governed office use belonging to a religious order, rite, monastic usage, or historically distinct liturgical family.",
+            "examples": [
+              "Dominican Office",
+              "Carmelite Office",
+              "Carthusian Office",
+              "Monastic Roman Office",
+              "Ambrosian Office"
+            ],
+            "main_selector_eligible": "only_after_governed_as_distinct_office_family_or_subfamily"
+          },
+          "little_office": {
+            "definition": "An office-shaped companion devotion with hour-like structure, often semi-static or lightly variable, normally adjacent to rather than replacing the appointed daily office.",
+            "examples": [
+              "Little Office of the Blessed Virgin Mary",
+              "Little Office of the Passion",
+              "Little Office of the Holy Cross",
+              "Little Office of the Holy Trinity",
+              "Little Office of the Blessed Sacrament",
+              "Little Office of St Joseph",
+              "Little Office of the Holy Angels"
+            ],
+            "main_selector_eligible": false,
+            "future_surface": "Companion Offices"
+          },
+          "proper_or_votive_office": {
+            "definition": "An office appointed for a particular liturgical condition, saint, dead, feast, votive observance, or special use.",
+            "examples": [
+              "Office of the Dead",
+              "Saturday Office of the Blessed Virgin Mary",
+              "votive offices",
+              "saint-specific offices"
+            ],
+            "main_selector_eligible": false,
+            "future_surface": "Companion Offices / Proper Offices"
+          },
+          "psalter_devotion": {
+            "definition": "A structured psalm or psalm-like devotional sequence that may resemble the office but is not itself a full daily-office family.",
+            "examples": [
+              "Penitential Psalms",
+              "Gradual Psalms",
+              "Psalter of Mary",
+              "Psalter of St Joseph",
+              "Psalter of Jesus",
+              "Psalms of Solomon",
+              "Syriac apocryphal psalms"
+            ],
+            "main_selector_eligible": false,
+            "future_surface": "Devotions / Psalter Devotions"
+          },
+          "devotional_cycle": {
+            "definition": "A repeated prayer structure such as a rosary, novena, adoration cycle, or time-bound devotion. These may be valuable but must not be mislabeled as canonical offices unless the source tradition explicitly does so.",
+            "examples": [
+              "Rosary cycles",
+              "novenas",
+              "adoration hours",
+              "24 Hours of the Passion",
+              "40-day prayers for the departed"
+            ],
+            "main_selector_eligible": false,
+            "future_surface": "Devotions"
+          },
+          "source_lead_only": {
+            "definition": "A mention, link, archive listing, Reddit item, blog pointer, storefront entry, or unverified PDF lead that has not yet been governed as usable source material.",
+            "examples": [
+              "Reddit office lists",
+              "Scribd leads",
+              "unverified blog compilations",
+              "archive records not yet source-adjudicated"
+            ],
+            "main_selector_eligible": false,
+            "implementation_allowed": false
+          }
+        },
+        "engine_implications": {
+          "canonical_office_families": "Use tradition-specific resolver engines with calendar, season, proper, source, and diagnostics boundaries.",
+          "companion_offices": "Future implementation should use a shared Companion Office engine with typed slots such as opening versicle, hymn, antiphon, psalm_or_canticle, reading_or_chapter, responsory_or_versicle, collect, and conclusion.",
+          "devotional_cycles": "Future implementation should use a separate Devotional Cycle engine rather than borrowing office-family resolver semantics.",
+          "no_broad_import": "Do not bulk-import enormous lists of little offices or devotions. Add research registry entries first, then source-governed prototypes."
+        },
+        "ui_implications": {
+          "primary_action": "Pray the appointed office.",
+          "secondary_action": "Add a companion office or devotion.",
+          "filter_candidates": [
+            "Marian",
+            "Passion",
+            "Eucharistic",
+            "Saints",
+            "Dead",
+            "Penitential",
+            "Monastic",
+            "Historical",
+            "Manuscript",
+            "Personal devotion"
+          ],
+          "badge_candidates": [
+            "official",
+            "historical",
+            "order-specific",
+            "devotional",
+            "manuscript witness",
+            "source lead only",
+            "rights blocked",
+            "not yet governed"
+          ],
+          "visibility_rule": "A prayer form may be visible as research, planned, or unavailable without becoming selectable for prayer. Public prayer rendering requires source, rights, and structure governance."
+        },
+        "research_priorities": {
+          "high_value": [
+            "Little Office of the Blessed Virgin Mary",
+            "Office of the Dead",
+            "Little Office of the Passion",
+            "Hours of the Holy Cross / Compassion",
+            "Agpeya",
+            "Shehimo",
+            "Carthusian Office",
+            "Dominican Office",
+            "Carmelite Office"
+          ],
+          "medium_value": [
+            "Little Office of the Holy Trinity",
+            "Little Office of the Blessed Sacrament",
+            "Little Office of the Sacred Heart",
+            "Little Office of St Joseph",
+            "Little Office of the Holy Angels",
+            "All Saints and order-specific saint offices"
+          ],
+          "defer_or_research_only": [
+            "modern boutique offices without clear ecclesial/source pedigree",
+            "private devotional compilations",
+            "unverified online office lists",
+            "storefront-only or inaccessible text leads"
+          ]
+        },
+        "blocked_claims": [
+          "Every office-shaped devotion belongs in the main office selector",
+          "Reddit lists are source authority",
+          "A devotional cycle is a canonical office because it has hours or repeated sections",
+          "Archive visibility equals public-rendering clearance",
+          "Little offices should be implemented through full tradition engines by default",
+          "Universal Office should become an undifferentiated catalog of all known offices and devotions"
+        ]
       }
     ],
     "audit_findings": {
