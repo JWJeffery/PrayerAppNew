@@ -1,0 +1,44 @@
+{
+  "schema": "judith-text-trust-status-v1",
+  "id": "judith_text_trust_status_2026_06_28",
+  "status": "partial_trust_ready_nrsv_unresolved",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/judith.json",
+  "activeRows": 359,
+  "repairCommit": "0d9a8ce",
+  "resultRecord": "data/bible/registry/judith-bound-source-exact-collation-result.json",
+  "policy": "data/bible/registry/judith-source-address-policy.json",
+  "trustedClaims": {
+    "KJV": "trusted_exact_source_collated_source_address_policy",
+    "NABRE": "trusted_exact_source_collated_source_address_policy",
+    "DRB": "trusted_exact_source_collated"
+  },
+  "blockedClaims": {
+    "NRSV": {
+      "status": "blocked_pending_approved_source_witness_or_policy",
+      "activeRows": 147
+    },
+    "fullJudithAllLanes": {
+      "status": "blocked_by_nrsv_resolution",
+      "reason": "Judith cannot be fully trusted while active NRSV remains unresolved."
+    }
+  },
+  "knownAbsences": {
+    "Rotherham": "absent with 0 active rows",
+    "rawText": "absent with 0 active rows"
+  },
+  "allowedClaims": [
+    "Judith KJV, NABRE, and DRB active lanes are exact-source-collated within their recorded scopes.",
+    "Judith remains partial-trust only."
+  ],
+  "forbiddenClaims": [
+    "Judith is fully trusted.",
+    "Judith NRSV is source-verified.",
+    "The non-Protestant canon is textually trusted."
+  ],
+  "nextRequiredWork": [
+    "Run Judith text trust status audit.",
+    "Resolve Judith NRSV source witness/status.",
+    "Update the current non-Protestant canon status after the Judith status audit passes."
+  ]
+}
