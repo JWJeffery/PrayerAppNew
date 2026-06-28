@@ -1,0 +1,60 @@
+{
+  "schema": "bible-source-registry-v1",
+  "phase": "inventory_scaffold",
+  "status": "phase1_label_registry_only",
+  "trustAssertionsMade": false,
+  "bibleTextMutated": false,
+  "sourceCollationPerformed": false,
+  "registeredTextMeaning": "Known registry lane/source label only; not source-verified and not trusted by this registry.",
+  "notes": [
+    "Phase 1 registry supports active-text inventory classification only.",
+    "Registered source IDs do not imply source collation, trust, release readiness, resolver behavior changes, or public-rendering clearance.",
+    "Do not add Protestant/non-Protestant terminology here; use neutral or tradition-specific source labels."
+  ],
+  "activeSources": [
+    {
+      "id": "NRSV",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "KJV",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "NABRE",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "DRB",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "Rotherham",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "rawText",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "WEBBE",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "VULGATE",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "Latin",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "Greek",
+      "status": "registered_label_only"
+    },
+    {
+      "id": "English",
+      "status": "registered_label_only"
+    }
+  ]
+}
