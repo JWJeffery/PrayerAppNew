@@ -1,0 +1,41 @@
+{
+  "schema": "greek-daniel-kjv-nabre-lane-expansion-decision-v1",
+  "id": "greek_daniel_kjv_nabre_lane_expansion_decision_2026_06_28",
+  "status": "lane_expansion_selected_pending_local_repair",
+  "recordedAt": "2026-06-28",
+  "dependsOn": [
+    "data/bible/registry/greek-daniel-bound-addition-address-mapping-result.json",
+    "scripts/audit-bible-greek-daniel-kjv-nabre-addition-collation-status.mjs"
+  ],
+  "activeFile": "data/bible/OT/danielGK.json",
+  "decision": "Expand active Greek Daniel from string-only NRSV rows to explicit translation objects, then populate KJV and NABRE only for mapped addition rows where source witnesses are bound.",
+  "reason": [
+    "KJV and NABRE source witnesses are bound and address-mapped for Prayer/Song, Susanna, and Bel and the Dragon.",
+    "Active danielGK currently stores string text, which represents NRSV but is not an explicit NRSV lane.",
+    "The Bible browser treats string verse.text as available text for any requested translation, so adding KJV/NABRE metadata without object conversion would risk displaying NRSV as KJV or NABRE for rows where those lanes are absent.",
+    "Converting existing strings to text.NRSV preserves the active NRSV text while making lane absence explicit."
+  ],
+  "repairScope": {
+    "convertAllStringRows": "Every existing string verse.text in danielGK becomes { NRSV: existingString }.",
+    "populateKJV": "Populate KJV only for active addition rows mapped from bound KJV source files: Daniel 3:24-90, Daniel 13:1-64, Daniel 14:1-42.",
+    "populateNABRE": "Populate NABRE only for active addition rows mapped from bound historical NABRE Daniel source: Daniel 3:24-90, Daniel 13:1-64, Daniel 14:1-42.",
+    "doNotPopulate": [
+      "KJV ordinary Daniel rows in danielGK during this repair",
+      "NABRE ordinary Daniel rows in danielGK during this repair",
+      "DRB rows during this repair",
+      "NRSV additions from Oremus or BibleGateway candidates"
+    ]
+  },
+  "metadataRule": "Add meta.translations entries only for lanes actually represented after repair: NRSV, KJV, NABRE. Do not add DRB or Rotherham here.",
+  "blockedActions": [
+    "leave_string_rows_after_adding_kjv_or_nabre_metadata",
+    "claim_kjv_or_nabre_ordinary_daniel_present_in_danielGK_after_this_repair",
+    "populate_drb_before_drb_bel_policy",
+    "populate_nrsv_additions_from_unapproved_external_candidates"
+  ],
+  "nextRequiredWork": [
+    "Run bounded lane-expansion repair script locally.",
+    "Run collation-status audit again; KJV/NABRE addition lanes should be present.",
+    "Run exact KJV/NABRE addition collation audit after lane expansion."
+  ]
+}
