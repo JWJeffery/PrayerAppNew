@@ -1,0 +1,152 @@
+{
+  "schema": "greek-daniel-bound-addition-address-mapping-v1",
+  "id": "greek_daniel_bound_addition_address_mapping_2026_06_28",
+  "status": "address_mapping_recorded_text_not_mutated",
+  "recordedAt": "2026-06-28",
+  "dependsOn": [
+    "data/bible/registry/greek-daniel-nrsv-additions-source-acquisition-gate.json",
+    "scripts/audit-bible-greek-daniel-bound-addition-source-shapes.mjs"
+  ],
+  "scope": "Address mapping for bound DRB, NABRE, and KJV Greek Daniel addition source witnesses against active data/bible/OT/danielGK.json placements.",
+  "bibleTextMutation": false,
+  "activePlacements": {
+    "prayer_song": {
+      "activeChapter": 3,
+      "activeVerseRange": "24-90",
+      "activeRows": 67
+    },
+    "ordinary_daniel_after_insertion": {
+      "activeChapter": 3,
+      "activeVerseRange": "91-97",
+      "activeRows": 7,
+      "sourceRelation": "canonical Daniel 3:24-30 already repaired and verified against canonical Daniel NRSV"
+    },
+    "susanna": {
+      "activeChapter": 13,
+      "activeVerseRange": "1-64",
+      "activeRows": 64
+    },
+    "bel_and_dragon": {
+      "activeChapter": 14,
+      "activeVerseRange": "1-42",
+      "activeRows": 42
+    }
+  },
+  "mappings": {
+    "KJV": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "prayer_song": {
+        "sourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Prayer of Azariah.json",
+        "sourceChapter": 1,
+        "sourceVerseRange": "1-67",
+        "activeChapter": 3,
+        "activeVerseRange": "24-90",
+        "mappingRule": "source verse n maps to active Daniel 3:(n+23)",
+        "rowCountAlignment": "67_to_67"
+      },
+      "susanna": {
+        "sourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Susanna.json",
+        "sourceChapter": 1,
+        "sourceVerseRange": "1-64",
+        "activeChapter": 13,
+        "activeVerseRange": "1-64",
+        "mappingRule": "source verse n maps to active Daniel 13:n",
+        "rowCountAlignment": "64_to_64"
+      },
+      "bel_and_dragon": {
+        "sourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Bel and the Dragon.json",
+        "sourceChapter": 1,
+        "sourceVerseRange": "1-42",
+        "activeChapter": 14,
+        "activeVerseRange": "1-42",
+        "mappingRule": "source verse n maps to active Daniel 14:n",
+        "rowCountAlignment": "42_to_42"
+      }
+    },
+    "NABRE": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "sourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Daniel.json",
+      "prayer_song": {
+        "sourceChapter": 3,
+        "sourceVerseRange": "24-90",
+        "activeChapter": 3,
+        "activeVerseRange": "24-90",
+        "mappingRule": "source Daniel 3:n maps to active Daniel 3:n for verses 24-90",
+        "rowCountAlignment": "67_to_67"
+      },
+      "susanna": {
+        "sourceChapter": 13,
+        "sourceVerseRange": "1-64",
+        "activeChapter": 13,
+        "activeVerseRange": "1-64",
+        "mappingRule": "source Daniel 13:n maps to active Daniel 13:n",
+        "rowCountAlignment": "64_to_64"
+      },
+      "bel_and_dragon": {
+        "sourceChapter": 14,
+        "sourceVerseRange": "1-42",
+        "activeChapter": 14,
+        "activeVerseRange": "1-42",
+        "mappingRule": "source Daniel 14:n maps to active Daniel 14:n",
+        "rowCountAlignment": "42_to_42"
+      }
+    },
+    "DRB": {
+      "sourceRef": "main/current",
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+      "prayer_song": {
+        "sourceChapter": 3,
+        "sourceVerseRange": "24-90",
+        "activeChapter": 3,
+        "activeVerseRange": "24-90",
+        "mappingRule": "source Daniel 3:n maps to active Daniel 3:n for verses 24-90",
+        "rowCountAlignment": "67_to_67"
+      },
+      "susanna": {
+        "sourceChapter": 13,
+        "sourceVerseRange": "1-64",
+        "activeChapter": 13,
+        "activeVerseRange": "1-64",
+        "mappingRule": "source Daniel 13:n maps to active Daniel 13:n for verses 1-64",
+        "rowCountAlignment": "64_to_64",
+        "note": "DRB Daniel 13 has 65 rows; verse 65 is not Susanna ending but the Astyages/Cyrus transition corresponding to Bel and the Dragon opening material."
+      },
+      "bel_and_dragon": {
+        "sourceSegments": [
+          {
+            "sourceChapter": 13,
+            "sourceVerseRange": "65",
+            "activeChapter": 14,
+            "activeVerseRange": "1",
+            "mappingRule": "DRB Daniel 13:65 maps to active Daniel 14:1"
+          },
+          {
+            "sourceChapter": 14,
+            "sourceVerseRange": "1-41",
+            "activeChapter": 14,
+            "activeVerseRange": "2-42",
+            "mappingRule": "DRB Daniel 14:n maps to active Daniel 14:(n+1) for source verses 1-41"
+          }
+        ],
+        "sourceChapter14Unmapped": {
+          "sourceChapter": 14,
+          "sourceVerseRange": "42",
+          "status": "source_extra_or_epilogue_pending_policy",
+          "note": "DRB Daniel 14 has 42 rows after the DRB 13:65 transition. Active Bel and the Dragon has 42 rows total, so DRB 14:42 is not mapped by the 42-row active grid unless a policy chooses to replace or append. Do not synthesize or append without policy."
+        },
+        "rowCountAlignment": "43_source_candidates_to_42_active_rows_pending_policy_for_drb_14_42"
+      }
+    }
+  },
+  "blockedActions": [
+    "insert_drb_daniel_14_42_into_active_grid_without_policy",
+    "collapse_drb_daniel_13_65_into_susanna",
+    "claim_drb_bel_and_dragon_exactly_mapped_without_resolving_drb_14_42",
+    "mutate_active_addition_text_before_translation-specific_collation"
+  ],
+  "nextRequiredWork": [
+    "Create a bounded audit that validates this mapping against row counts only.",
+    "Create translation-specific collation reports for KJV, NABRE, and DRB additions without mutating active text.",
+    "Resolve DRB Daniel 14:42 policy before any DRB Bel and the Dragon trust claim."
+  ]
+}
