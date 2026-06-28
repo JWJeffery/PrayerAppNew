@@ -1,0 +1,1120 @@
+{
+  "schema": "nonprotestant-canon-collation-matrix-v1",
+  "id": "nonprotestant_canon_collation_matrix_2026_06_28",
+  "status": "work_matrix_created_not_trust_ready",
+  "generatedAt": "2026-06-28T13:56:56.648Z",
+  "controllingDecision": "data/bible/registry/nonprotestant-canon-text-trust-decision.json",
+  "trustStandard": "For every in-scope book and every translation lane, the app must either reproduce the correct source text at the correct displayed book/chapter/verse address, or omit that translation for that book/address because no legitimate source witness exists. The app must not synthesize missing translation text, silently shift source text to the wrong address, or treat governance markers as textual trust.",
+  "summary": {
+    "inScopeBookCount": 22,
+    "activeFileMissingCount": 0,
+    "notTrustReadyBookCount": 22,
+    "activeTextUnverifiedCellCount": 30,
+    "formMappingRequiredBookCount": 2,
+    "variantPolicyRequiredBookCount": 1,
+    "sourceAbsentAllowedCellCount": 24
+  },
+  "books": [
+    {
+      "key": "tobit",
+      "path": "data/bible/OT/tobit.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 1006,
+      "laneCounts": {
+        "KJV": 244,
+        "NABRE": 226,
+        "NRSV": 237,
+        "DRB": 298,
+        "rawText": 1
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 298,
+          "totalTextSlots": 298,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 244,
+          "totalTextSlots": 244,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 226,
+          "totalTextSlots": 226,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 237,
+          "totalTextSlots": 237,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "rawText": {
+          "activeRows": 1,
+          "totalTextSlots": 1,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 5,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "judith",
+      "path": "data/bible/OT/judith.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 1132,
+      "laneCounts": {
+        "KJV": 319,
+        "NABRE": 320,
+        "NRSV": 147,
+        "DRB": 346
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 346,
+          "totalTextSlots": 346,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 319,
+          "totalTextSlots": 319,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 320,
+          "totalTextSlots": 320,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 147,
+          "totalTextSlots": 147,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "estherGK",
+      "path": "data/bible/OT/estherGK.json",
+      "group": "greek_additions",
+      "filePresent": true,
+      "textRows": 267,
+      "laneCounts": {
+        "UNKEYED": 267
+      },
+      "unkeyedTextRows": 267,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 267,
+          "totalTextSlots": 267,
+          "status": "active_text_present_form_mapping_required",
+          "workLeft": "Map source form to user-facing book/chapter/verse for each translation; do not overlay blindly."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "wisdom",
+      "path": "data/bible/OT/wisdom.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 1385,
+      "laneCounts": {
+        "KJV": 432,
+        "NABRE": 399,
+        "NRSV": 115,
+        "DRB": 439
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 439,
+          "totalTextSlots": 439,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 432,
+          "totalTextSlots": 432,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 399,
+          "totalTextSlots": 399,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 115,
+          "totalTextSlots": 115,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "sirach",
+      "path": "data/bible/OT/sirach.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 4584,
+      "laneCounts": {
+        "NRSV": 473,
+        "DRB": 1592,
+        "KJV": 1388,
+        "NABRE": 1131
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 1592,
+          "totalTextSlots": 1592,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 1388,
+          "totalTextSlots": 1388,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 1131,
+          "totalTextSlots": 1131,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 473,
+          "totalTextSlots": 473,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "baruch",
+      "path": "data/bible/OT/baruch.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 456,
+      "laneCounts": {
+        "KJV": 140,
+        "NABRE": 141,
+        "NRSV": 34,
+        "DRB": 141
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 141,
+          "totalTextSlots": 141,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 140,
+          "totalTextSlots": 140,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 141,
+          "totalTextSlots": 141,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 34,
+          "totalTextSlots": 34,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "letterofjeremiah",
+      "path": "data/bible/OT/letterofjeremiah.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 228,
+      "laneCounts": {
+        "KJV": 73,
+        "NABRE": 72,
+        "NRSV": 11,
+        "DRB": 72
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 72,
+          "totalTextSlots": 72,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 73,
+          "totalTextSlots": 73,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 72,
+          "totalTextSlots": 72,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 11,
+          "totalTextSlots": 11,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "danielGK",
+      "path": "data/bible/OT/danielGK.json",
+      "group": "greek_additions",
+      "filePresent": true,
+      "textRows": 530,
+      "laneCounts": {
+        "UNKEYED": 530
+      },
+      "unkeyedTextRows": 530,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 530,
+          "totalTextSlots": 530,
+          "status": "active_text_present_form_mapping_required",
+          "workLeft": "Map source form to user-facing book/chapter/verse for each translation; do not overlay blindly."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "1maccabees",
+      "path": "data/bible/OT/1maccabees.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 2869,
+      "laneCounts": {
+        "KJV": 924,
+        "NABRE": 924,
+        "NRSV": 92,
+        "DRB": 929
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 929,
+          "totalTextSlots": 929,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "KJV": {
+          "activeRows": 924,
+          "totalTextSlots": 924,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 924,
+          "totalTextSlots": 924,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 92,
+          "totalTextSlots": 92,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "2maccabees",
+      "path": "data/bible/OT/2maccabees.json",
+      "group": "deuterocanon",
+      "filePresent": true,
+      "textRows": 1725,
+      "laneCounts": {
+        "KJV": 555,
+        "NABRE": 556,
+        "NRSV": 56,
+        "DRB": 558
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 558,
+          "totalTextSlots": 558,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 555,
+          "totalTextSlots": 555,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 556,
+          "totalTextSlots": 556,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NRSV": {
+          "activeRows": 56,
+          "totalTextSlots": 56,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "1esdras",
+      "path": "data/bible/OT/1esdras.json",
+      "group": "apocrypha",
+      "filePresent": true,
+      "textRows": 937,
+      "laneCounts": {
+        "KJV": 447,
+        "NRSV": 40,
+        "DRB": 450
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 450,
+          "totalTextSlots": 450,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 447,
+          "totalTextSlots": 447,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NRSV": {
+          "activeRows": 40,
+          "totalTextSlots": 40,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 3,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "2esdras",
+      "path": "data/bible/OT/2esdras.json",
+      "group": "apocrypha",
+      "filePresent": true,
+      "textRows": 1793,
+      "laneCounts": {
+        "KJV": 868,
+        "NRSV": 69,
+        "DRB": 856
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 856,
+          "totalTextSlots": 856,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "KJV": {
+          "activeRows": 868,
+          "totalTextSlots": 868,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NRSV": {
+          "activeRows": 69,
+          "totalTextSlots": 69,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        }
+      },
+      "unfinishedCellCount": 3,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "prayerofmanasseh",
+      "path": "data/bible/OT/prayerofmanasseh.json",
+      "group": "apocrypha",
+      "filePresent": true,
+      "textRows": 31,
+      "laneCounts": {
+        "KJV": 1,
+        "NRSV": 1,
+        "DRB": 15,
+        "rawText": 14
+      },
+      "unkeyedTextRows": 0,
+      "matrix": {
+        "DRB": {
+          "activeRows": 15,
+          "totalTextSlots": 15,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "KJV": {
+          "activeRows": 1,
+          "totalTextSlots": 1,
+          "status": "source_scope_verified_but_final_address_review_required",
+          "workLeft": "Confirm every displayed verse matches source and every source/address absence is visible and non-synthetic."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NRSV": {
+          "activeRows": 1,
+          "totalTextSlots": 1,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "rawText": {
+          "activeRows": 14,
+          "totalTextSlots": 14,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 4,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "3maccabees",
+      "path": "data/bible/OT/3maccabees.json",
+      "group": "broader_deuterocanon",
+      "filePresent": true,
+      "textRows": 228,
+      "laneCounts": {
+        "UNKEYED": 228
+      },
+      "unkeyedTextRows": 228,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "UNKEYED": {
+          "activeRows": 228,
+          "totalTextSlots": 228,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 1,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "4maccabees",
+      "path": "data/bible/OT/4maccabees.json",
+      "group": "broader_deuterocanon",
+      "filePresent": true,
+      "textRows": 479,
+      "laneCounts": {
+        "UNKEYED": 479
+      },
+      "unkeyedTextRows": 479,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "source_absent_allowed_needs_visibility_check",
+          "workLeft": "Ensure the app does not offer synthetic text and exposes/handles the absence cleanly."
+        },
+        "UNKEYED": {
+          "activeRows": 479,
+          "totalTextSlots": 479,
+          "status": "active_text_present_variant_policy_required",
+          "workLeft": "Handle 4 Maccabees 10:4 and 11:7-8 as visible variant or explicit non-primary material."
+        }
+      },
+      "unfinishedCellCount": 1,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "1enoch",
+      "path": "data/bible/OT/1enoch.json",
+      "group": "broader_canon",
+      "filePresent": true,
+      "textRows": 1048,
+      "laneCounts": {
+        "UNKEYED": 1048
+      },
+      "unkeyedTextRows": 1048,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 1048,
+          "totalTextSlots": 1048,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "armenian_canticles",
+      "path": "data/bible/ODES/armeniancanticlesAR.json",
+      "group": "odes",
+      "filePresent": true,
+      "textRows": 14,
+      "laneCounts": {
+        "UNKEYED": 14
+      },
+      "unkeyedTextRows": 14,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 14,
+          "totalTextSlots": 14,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "coptic_odes",
+      "path": "data/bible/ODES/copticodesCO.json",
+      "group": "odes",
+      "filePresent": true,
+      "textRows": 16,
+      "laneCounts": {
+        "UNKEYED": 16
+      },
+      "unkeyedTextRows": 16,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 16,
+          "totalTextSlots": 16,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "eastern_orthodox_odes",
+      "path": "data/bible/ODES/eoodes.json",
+      "group": "odes",
+      "filePresent": true,
+      "textRows": 13,
+      "laneCounts": {
+        "UNKEYED": 13
+      },
+      "unkeyedTextRows": 13,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 13,
+          "totalTextSlots": 13,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "ethiopian_odes",
+      "path": "data/bible/ODES/ethiopianodes.json",
+      "group": "odes",
+      "filePresent": true,
+      "textRows": 3,
+      "laneCounts": {
+        "UNKEYED": 3
+      },
+      "unkeyedTextRows": 3,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 3,
+          "totalTextSlots": 3,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "odes_of_solomon",
+      "path": "data/bible/ODES/odesofsolomonSY.json",
+      "group": "odes",
+      "filePresent": true,
+      "textRows": 3,
+      "laneCounts": {
+        "UNKEYED": 3
+      },
+      "unkeyedTextRows": 3,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 3,
+          "totalTextSlots": 3,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    },
+    {
+      "key": "syriac_letter_of_baruch",
+      "path": "data/bible/SY/letterofbaruchSY.json",
+      "group": "broader_canon",
+      "filePresent": true,
+      "textRows": 2,
+      "laneCounts": {
+        "UNKEYED": 2
+      },
+      "unkeyedTextRows": 2,
+      "matrix": {
+        "DRB": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "KJV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NABRE": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "NRSV": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "Rotherham": {
+          "activeRows": 0,
+          "totalTextSlots": 0,
+          "status": "lane_absent_source_status_unknown",
+          "workLeft": "Determine whether this translation has a legitimate source witness for this book."
+        },
+        "UNKEYED": {
+          "activeRows": 2,
+          "totalTextSlots": 2,
+          "status": "active_text_unverified",
+          "workLeft": "Compare active text directly against source Bible for this lane."
+        }
+      },
+      "unfinishedCellCount": 6,
+      "bookStatus": "not_trust_ready"
+    }
+  ],
+  "failures": []
+}

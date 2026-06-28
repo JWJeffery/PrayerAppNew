@@ -1,0 +1,23 @@
+{
+  "schema": "nonprotestant-canon-text-trust-decision-v1",
+  "id": "nonprotestant_canon_text_trust_decision_2026_06_28",
+  "status": "accepted",
+  "recordedAt": "2026-06-28",
+  "scope": "Every active biblical or quasi-biblical book outside the Protestant canon, including deuterocanon, apocrypha, broader canon, additions, odes, and related active corpus files.",
+  "plainEnglishStandard": "For every in-scope book and every translation lane, the app must either reproduce the correct source text at the correct displayed book/chapter/verse address, or omit that translation for that book/address because no legitimate source witness exists. The app must not synthesize missing translation text, silently shift source text to the wrong address, or treat governance markers as textual trust.",
+  "translationRule": "Each translation lane present in the app must be independently trusted against its own source witness. A translation/book pair with no legitimate source witness is an allowed absence, not a blocker, provided the absence is explicit and non-synthetic.",
+  "userFacingTest": "If a user opens a passage such as NRSV Tobit in the app and in the corresponding source Bible, the words must match at the displayed book/chapter/verse address. If the source Bible has no such book or verse for that translation, the app must not fake it.",
+  "variantRule": "Variants, additions, alternate canonical forms, footnote-only readings, and source-form differences must be represented visibly through source-address mapping, variant apparatus, or explicit absence. They must not be hidden by forcing every source into one artificial row grid.",
+  "blockedClaimsUntilMatrixPasses": [
+    "deuterocanon_complete",
+    "nonprotestant_canon_textually_trusted",
+    "whole_ot_including_psalms_textually_trusted",
+    "entire_biblical_corpus_trusted"
+  ],
+  "nextRequiredWork": [
+    "Create a book-by-book and translation-by-translation collation matrix.",
+    "Classify every cell as exact-source-verified, source-absent-allowed, variant-handled, source-needed, or active-text-unverified.",
+    "Repair only cells that fail by source comparison, never by synthesis.",
+    "Promote trust only after the matrix has no failed or unverified active text cells."
+  ]
+}
