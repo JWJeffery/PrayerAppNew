@@ -1,0 +1,66 @@
+{
+  "schema": "greek-daniel-text-trust-status-v1",
+  "id": "greek_daniel_text_trust_status_2026_06_28",
+  "status": "partial_trust_ready_nrsv_additions_blocked",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/danielGK.json",
+  "activeShape": "explicit translation-object rows with NRSV base, KJV/NABRE addition lanes, and DRB source-address addition lanes",
+  "activeRows": 531,
+  "trustedClaims": {
+    "ordinaryDanielNRSV": {
+      "status": "trusted_internal_baseline",
+      "scope": "Daniel 1-12 ordinary Daniel rows only, using Greek Daniel chapter 3 insertion mapping for ordinary Daniel 3:24-30 at active Daniel 3:91-97.",
+      "resultRecord": "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
+      "auditScript": "scripts/audit-bible-greek-daniel-nrsv-internal-baseline.mjs",
+      "limitation": "This is an internal baseline against trusted canonical Daniel NRSV, not an external NRSV source witness for the additions."
+    },
+    "additionKJV": {
+      "status": "trusted_exact_source_collated",
+      "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon addition lanes only.",
+      "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
+    },
+    "additionNABRE": {
+      "status": "trusted_exact_source_collated",
+      "scope": "Prayer/Song, Susanna, and Bel and the Dragon addition lanes only.",
+      "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
+    },
+    "additionDRB": {
+      "status": "trusted_exact_source_collated_source_address_policy",
+      "scope": "Prayer/Song Daniel 3:24-90, Susanna/transition Daniel 13:1-65, and Bel and the Dragon Daniel 14:1-42.",
+      "resultRecord": "data/bible/registry/greek-daniel-drb-addition-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-daniel-drb-addition-exact-collation.mjs",
+      "policy": "data/bible/registry/greek-daniel-drb-addition-source-address-policy.json"
+    }
+  },
+  "blockedClaims": {
+    "additionNRSV": {
+      "status": "blocked_pending_approved_source_witness",
+      "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon NRSV addition text.",
+      "sourceGate": "data/bible/registry/greek-daniel-nrsv-additions-source-acquisition-gate.json",
+      "reason": "No approved bound NRSV source witness for the additions is present. Oremus candidates are identified but not extracted or approved as bound source witnesses."
+    },
+    "fullGreekDanielAllLanes": {
+      "status": "blocked_by_nrsv_additions",
+      "reason": "Greek Daniel cannot be fully trusted while active NRSV addition text remains unverified against an approved source witness."
+    }
+  },
+  "allowedClaims": [
+    "Greek Daniel ordinary Daniel 1-12 NRSV is internally baseline-verified against canonical Daniel NRSV under the insertion mapping.",
+    "Greek Daniel KJV addition lanes are exact-source-collated for Prayer of Azariah, Susanna, and Bel and the Dragon.",
+    "Greek Daniel NABRE addition lanes are exact-source-collated for Prayer/Song, Susanna, and Bel and the Dragon.",
+    "Greek Daniel DRB addition/source-address lanes are exact-source-collated under the DRB source-address policy."
+  ],
+  "forbiddenClaims": [
+    "Greek Daniel is fully trusted across all lanes.",
+    "Greek Daniel NRSV additions are source-verified.",
+    "Oremus candidates are bound NRSV source witnesses.",
+    "Canonical Daniel internal baseline replaces an external/source witness for NRSV additions."
+  ],
+  "nextRequiredWork": [
+    "Acquire or approve NRSV source witnesses for Greek Daniel additions before NRSV addition collation.",
+    "Continue Greek Esther source acquisition and address mapping.",
+    "Keep deuterocanon/non-Protestant canon status partial until remaining Greek additions and Greek Esther are source-collated or explicitly governed as source-absent."
+  ]
+}
