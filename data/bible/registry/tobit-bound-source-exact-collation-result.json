@@ -1,0 +1,82 @@
+{
+  "schema": "tobit-bound-source-exact-collation-result-v1",
+  "id": "tobit_bound_source_exact_collation_result_2026_06_28",
+  "status": "partial_pass_kjv_nabre_drb_exact_nrsv_rawtext_rotherham_unresolved",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/tobit.json",
+  "policy": "data/bible/registry/tobit-source-address-policy.json",
+  "sourceStatusAudit": "scripts/audit-bible-tobit-bound-source-status.mjs",
+  "exactCollationAudit": "scripts/audit-bible-tobit-bound-source-exact-collation-v2.mjs",
+  "strictLaneMode": true,
+  "bibleTextMutation": false,
+  "trustedScopes": {
+    "KJV": {
+      "status": "trusted_exact_source_collated",
+      "sourceRows": 244,
+      "activeRows": 244,
+      "exactRows": 244,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Tobit.json"
+    },
+    "NABRE": {
+      "status": "trusted_exact_source_collated",
+      "sourceRows": 226,
+      "activeRows": 226,
+      "exactRows": 226,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Tobit.json"
+    },
+    "DRB": {
+      "status": "trusted_exact_source_collated_source_address_policy",
+      "sourceRows": 298,
+      "activeRows": 298,
+      "exactRows": 298,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "main/current",
+      "path": "data/bible/translations/drb-original-douay-rheims/raw/tobias.json",
+      "sourceChapterZeroInactive": true
+    }
+  },
+  "unresolvedScopes": {
+    "NRSV": {
+      "activeRows": 237,
+      "status": "active_text_unverified_pending_approved_source_witness_or_policy"
+    },
+    "rawText": {
+      "activeRows": 1,
+      "status": "active_rawtext_unverified_requires_classification"
+    },
+    "Rotherham": {
+      "activeRows": 0,
+      "status": "absent"
+    },
+    "DRBSourceChapter0": {
+      "sourceRows": 1,
+      "status": "source_present_inactive_introductory_title_material"
+    }
+  },
+  "allowedClaims": [
+    "Tobit KJV active lane is exact-source-collated for the bound KJV source scope.",
+    "Tobit NABRE active lane is exact-source-collated for the bound NABRE source scope.",
+    "Tobit DRB active lane is exact-source-collated for displayed source chapters 1-14 under source-address policy."
+  ],
+  "forbiddenClaims": [
+    "Tobit is fully trusted.",
+    "Tobit NRSV is source-verified.",
+    "Tobit rawText is classified or source-verified.",
+    "Non-Protestant canon is textually trusted."
+  ],
+  "nextRequiredWork": [
+    "Record Tobit partial text trust status.",
+    "Keep Tobit full trust blocked pending NRSV/rawText resolution.",
+    "Update current non-Protestant canon status after Tobit status audit passes."
+  ]
+}
