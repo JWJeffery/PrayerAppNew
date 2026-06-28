@@ -1,0 +1,77 @@
+{
+  "schema": "judith-bound-source-exact-collation-result-v1",
+  "id": "judith_bound_source_exact_collation_result_2026_06_28",
+  "status": "partial_pass_kjv_nabre_drb_exact_nrsv_unresolved",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/judith.json",
+  "policy": "data/bible/registry/judith-source-address-policy.json",
+  "repairCommit": "0d9a8ce",
+  "sourceStatusAudit": "scripts/audit-bible-judith-bound-source-status.mjs",
+  "exactCollationAudit": "scripts/audit-bible-judith-bound-source-exact-collation.mjs",
+  "strictLaneMode": true,
+  "bibleTextMutation": false,
+  "trustedScopes": {
+    "KJV": {
+      "status": "trusted_exact_source_collated_source_address_policy",
+      "sourceRows": 339,
+      "activeRows": 339,
+      "exactRows": 339,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Judith.json"
+    },
+    "NABRE": {
+      "status": "trusted_exact_source_collated_source_address_policy",
+      "sourceRows": 340,
+      "activeRows": 340,
+      "exactRows": 340,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Judith.json"
+    },
+    "DRB": {
+      "status": "trusted_exact_source_collated",
+      "sourceRows": 346,
+      "activeRows": 346,
+      "exactRows": 346,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "extraActiveCount": 0,
+      "sourceRef": "main/current",
+      "path": "data/bible/translations/drb-original-douay-rheims/raw/judith.json"
+    }
+  },
+  "unresolvedScopes": {
+    "NRSV": {
+      "activeRows": 147,
+      "status": "active_text_unverified_pending_approved_source_witness_or_policy"
+    },
+    "Rotherham": {
+      "activeRows": 0,
+      "status": "absent"
+    },
+    "rawText": {
+      "activeRows": 0,
+      "status": "absent"
+    }
+  },
+  "allowedClaims": [
+    "Judith KJV active lane is exact-source-collated for the bound KJV source scope under source-address policy.",
+    "Judith NABRE active lane is exact-source-collated for the bound NABRE source scope under source-address policy.",
+    "Judith DRB active lane is exact-source-collated for the bound DRB source scope."
+  ],
+  "forbiddenClaims": [
+    "Judith is fully trusted.",
+    "Judith NRSV is source-verified.",
+    "Non-Protestant canon is textually trusted."
+  ],
+  "nextRequiredWork": [
+    "Record Judith partial text trust status.",
+    "Keep Judith full trust blocked pending NRSV resolution.",
+    "Update current non-Protestant canon status after Judith status audit passes."
+  ]
+}
