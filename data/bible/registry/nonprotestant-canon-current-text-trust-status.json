@@ -1,17 +1,37 @@
 {
   "schema": "nonprotestant-canon-current-text-trust-status-v1",
   "id": "nonprotestant_canon_current_text_trust_status_2026_06_28",
-  "status": "not_trust_ready_partial_greek_additions_progress",
+  "status": "not_trust_ready_partial_greek_additions_and_tobit_progress",
   "recordedAt": "2026-06-28",
   "controllingDecision": "data/bible/registry/nonprotestant-canon-text-trust-decision.json",
   "priorMatrix": "data/bible/registry/nonprotestant-canon-collation-matrix.json",
-  "reason": "Greek Esther and Greek Daniel now have partial exact-source-collated lanes, but the broader non-Protestant canon matrix remains not trust-ready and NRSV source blocks remain unresolved.",
+  "reason": "Greek Esther, Greek Daniel, and Tobit now have partial exact-source-collated lanes, but the broader non-Protestant canon matrix remains not trust-ready and unresolved NRSV/rawText source blocks remain active.",
   "blockedGlobalClaimsStillActive": [
     "deuterocanon_complete",
     "nonprotestant_canon_textually_trusted",
     "whole_ot_including_psalms_textually_trusted",
     "entire_biblical_corpus_trusted"
   ],
+  "deuterocanonProgress": {
+    "tobit": {
+      "status": "partial_trust_ready_nrsv_rawtext_unresolved",
+      "activePath": "data/bible/OT/tobit.json",
+      "activeRows": 299,
+      "statusRecord": "data/bible/registry/tobit-text-trust-status.json",
+      "resultRecord": "data/bible/registry/tobit-bound-source-exact-collation-result.json",
+      "policy": "data/bible/registry/tobit-source-address-policy.json",
+      "trustedClaims": [
+        "KJV Tobit active lane exact-source-collated for 244 bound source rows.",
+        "NABRE Tobit active lane exact-source-collated for 226 bound source rows.",
+        "DRB Tobit active lane exact-source-collated for 298 displayed source rows under chapter-zero inactive policy."
+      ],
+      "blockedClaims": [
+        "Active NRSV Tobit remains unresolved with 237 active rows pending approved source witness or policy.",
+        "Active rawText Tobit remains unresolved with 1 active row pending classification.",
+        "Full Tobit trust remains blocked by NRSV/rawText resolution."
+      ]
+    }
+  },
   "greekAdditionsProgress": {
     "estherGK": {
       "status": "partial_trust_ready_nrsv_blocked",
@@ -47,23 +67,26 @@
     }
   },
   "matrixStalenessNotice": {
-    "status": "prior_matrix_stale_for_greek_additions",
-    "reason": "The previous non-Protestant collation matrix predates Greek Esther and Greek Daniel lane repairs/status records. It remains useful as a backlog boundary but not as a current per-cell source of truth for those two active files.",
+    "status": "prior_matrix_stale_for_greek_additions_and_tobit",
+    "reason": "The previous non-Protestant collation matrix predates Greek Esther, Greek Daniel, and Tobit lane repairs/status records. It remains useful as a backlog boundary but not as a current per-cell source of truth for those active files.",
     "doNotUsePriorMatrixToClaim": [
       "Greek Esther still has only unkeyed text after a8b6af1.",
-      "Greek Daniel lacks KJV/NABRE/DRB addition lane records after b443e51 and fead200."
+      "Greek Daniel lacks KJV/NABRE/DRB addition lane records after b443e51 and fead200.",
+      "Tobit KJV/NABRE/DRB lanes remain unreviewed after fee2b5e."
     ]
   },
   "remainingBlocks": [
     "Greek Esther NRSV source witness acquisition and collation.",
     "Greek Daniel NRSV addition source witness acquisition and collation.",
+    "Tobit NRSV source witness/status resolution and Tobit rawText classification.",
     "Book-by-book direct source collation for remaining deuterocanon/non-Protestant corpus lanes still marked unverified or final-review-required in the matrix.",
     "Explicit absence/display checks for source-absent lanes."
   ],
   "allowedClaims": [
     "Greek additions have partial exact-source-collated progress for specified KJV/NABRE/DRB scopes.",
+    "Tobit has partial exact-source-collated progress for KJV/NABRE/DRB scopes only.",
     "Non-Protestant canon text trust remains incomplete and not globally trust-ready.",
-    "The prior matrix is stale for Greek Esther and Greek Daniel and must be superseded by their specific status records for those files."
+    "The prior matrix is stale for Greek Esther, Greek Daniel, and Tobit and must be superseded by their specific status records for those files."
   ],
   "forbiddenClaims": [
     "Deuterocanon is complete.",
@@ -71,11 +94,14 @@
     "Whole OT including Psalms is textually trusted.",
     "Entire biblical corpus is trusted.",
     "Greek Esther NRSV is source-verified.",
-    "Greek Daniel NRSV additions are source-verified."
+    "Greek Daniel NRSV additions are source-verified.",
+    "Tobit is fully trusted.",
+    "Tobit NRSV is source-verified.",
+    "Tobit rawText is trusted or classified."
   ],
   "nextRequiredWork": [
     "Run the current text trust status audit.",
-    "Then either proceed to approved NRSV source acquisition for Greek Esther/Greek Daniel additions or select the next non-Protestant canon lane from the remaining matrix backlog.",
+    "Then select the next non-Protestant canon lane from the remaining matrix backlog or resolve active NRSV/rawText source blocks.",
     "Do not promote any global trust claim until the matrix and file-specific status records have no unverified active text cells."
   ]
 }
