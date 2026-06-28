@@ -5,7 +5,11 @@ import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const statusPath = path.join(root, 'data/bible/registry/bible-corpus-trust-status.json');
-const canonicalOtTrustedStatus = 'trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions';
+const canonicalOtTrustedStatuses = [
+  'trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions',
+  'trusted_canonical_ot_non_psalms_no_exclusions'
+];
+const canonicalOtNoExclusionsStatus = 'trusted_canonical_ot_non_psalms_no_exclusions';
 
 function run(args) {
   const p = spawnSync(args[0], args.slice(1), { cwd: root, encoding: 'utf8' });
@@ -43,9 +47,30 @@ if (status) {
     if (!laneStatus) failures.push({ type: 'missing-lane', lane });
   }
 
-  const canonicalOtStatus = status.lanes?.canonical_ot?.status || '';
-  if (canonicalOtStatus !== canonicalOtTrustedStatus) {
+  const canonicalOt = status.lanes?.canonical_ot || {};
+  const canonicalOtStatus = canonicalOt.status || '';
+  if (!canonicalOtTrustedStatuses.includes(canonicalOtStatus)) {
     failures.push({ type: 'unexpected-canonical-ot-status', actual: canonicalOtStatus });
+  }
+
+  if (canonicalOtStatus === canonicalOtNoExclusionsStatus) {
+    if (!Array.isArray(canonicalOt.governedExclusions) || canonicalOt.governedExclusions.length !== 0) {
+      failures.push({
+        type: 'canonical-ot-no-exclusion-guard-failed',
+        field: 'lanes.canonical_ot.governedExclusions',
+        expected: [],
+        actual: canonicalOt.governedExclusions || null
+      });
+    }
+
+    if (canonicalOt.noGovernedExclusions !== true) {
+      failures.push({
+        type: 'canonical-ot-no-exclusion-guard-failed',
+        field: 'lanes.canonical_ot.noGovernedExclusions',
+        expected: true,
+        actual: canonicalOt.noGovernedExclusions || null
+      });
+    }
   }
 
   const canonicalOtMarkers = status.lanes?.canonical_ot?.completedRemediations || [];
@@ -53,10 +78,38 @@ if (status) {
     failures.push({ type: 'missing-canonical-ot-final-trust-marker' });
   }
 
-  if (status.lanes?.canonical_ot?.latest_canonical_ot_final_trust_audit?.status !== 'passed_with_governed_exclusions') {
+  const canonicalOtFinalTrustAudit = canonicalOt.latest_canonical_ot_final_trust_audit || {};
+  const canonicalOtFinalTrustAuditStatus = canonicalOtFinalTrustAudit.status || null;
+
+  if (canonicalOtStatus === canonicalOtNoExclusionsStatus) {
+    if (canonicalOtFinalTrustAuditStatus !== 'passed_no_exclusions') {
+      failures.push({
+        type: 'missing-canonical-ot-final-trust-record',
+        actual: canonicalOtFinalTrustAuditStatus
+      });
+    }
+
+    if (!Array.isArray(canonicalOtFinalTrustAudit.governedExclusions) || canonicalOtFinalTrustAudit.governedExclusions.length !== 0) {
+      failures.push({
+        type: 'canonical-ot-final-audit-no-exclusion-guard-failed',
+        field: 'latest_canonical_ot_final_trust_audit.governedExclusions',
+        expected: [],
+        actual: canonicalOtFinalTrustAudit.governedExclusions || null
+      });
+    }
+
+    if (canonicalOtFinalTrustAudit.noGovernedExclusions !== true) {
+      failures.push({
+        type: 'canonical-ot-final-audit-no-exclusion-guard-failed',
+        field: 'latest_canonical_ot_final_trust_audit.noGovernedExclusions',
+        expected: true,
+        actual: canonicalOtFinalTrustAudit.noGovernedExclusions || null
+      });
+    }
+  } else if (canonicalOtFinalTrustAuditStatus !== 'passed_with_governed_exclusions') {
     failures.push({
       type: 'missing-canonical-ot-final-trust-record',
-      actual: status.lanes?.canonical_ot?.latest_canonical_ot_final_trust_audit?.status || null
+      actual: canonicalOtFinalTrustAuditStatus
     });
   }
 

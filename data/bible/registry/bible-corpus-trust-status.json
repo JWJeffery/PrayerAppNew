@@ -12,13 +12,14 @@
       ]
     },
     "canonical_ot": {
-      "status": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
+      "status": "trusted_canonical_ot_non_psalms_no_exclusions",
       "reasons": [
         "Ordinary canonical OT non-Psalms chapter/verse completeness audit passed for 38 books and 779 chapters with zero findings.",
         "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
         "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
         "This lane-level trust result excludes Psalms, which remain a separate not-trusted legacy psalter subsystem.",
-        "Daniel 11:1-45 NABRE was imported from an official USCCB Daniel 11 source snapshot; active Daniel 11 text.NABRE exact-matches the local controlled source snapshot by verse address."
+        "Daniel 11:1-45 NABRE was imported from an official USCCB Daniel 11 source snapshot; active Daniel 11 text.NABRE exact-matches the local controlled source snapshot by verse address.",
+        "Nehemiah 7:73 NABRE is resolved by positive source-address alignment: official NABRE Nehemiah 7 ends at 7:72 and official NABRE Nehemiah 8:1 carries the seventh-month transition material; no synthetic NABRE 7:73 text is created."
       ],
       "completedRemediations": [
         "mechanical_nabre_chapter_verse_prefix_cleanup",
@@ -37,18 +38,17 @@
         "daniel_11_source_absent_governed_exclusion_1",
         "canonical_ot_final_trust_audit_1",
         "daniel_11_nabre_usccb_source_import_1",
-        "daniel_11_nabre_source_snapshot_boundary_path_repair_1"
+        "daniel_11_nabre_source_snapshot_boundary_path_repair_1",
+        "nehemiah_7_73_nabre_source_address_alignment_1"
       ],
       "latest_canonical_ot_final_trust_audit": {
         "id": "canonical_ot_final_trust_audit_2026_06_23",
-        "status": "passed_with_governed_exclusions",
+        "status": "passed_no_exclusions",
         "scope": "ordinary_canonical_ot_non_psalms",
         "ordinaryOtNonPsalmsBookCount": 38,
         "checkedChapterCount": 779,
         "findingCount": 0,
-        "governedExclusions": [
-          "nehemiah_7_73_adapter_versification_no_synthetic_row"
-        ],
+        "governedExclusions": [],
         "excludedFromThisTrustClaim": [
           "psalms_legacy_psalter_subsystem",
           "deuterocanon",
@@ -58,8 +58,10 @@
         ],
         "summary": "Canonical OT non-Psalms final trust readiness passed after ordinary OT completeness, recovery consolidation, trust boundary, Daniel 11 governed source-absent exclusion, and Nehemiah 7:73 adapter policy checks. This is not a whole-Bible or whole-OT-with-Psalms trust claim.",
         "resolvedFormerExclusions": [
-          "daniel_11_nabre_source_absent_no_synthetic_overlay"
-        ]
+          "daniel_11_nabre_source_absent_no_synthetic_overlay",
+          "nehemiah_7_73_adapter_versification_no_synthetic_row"
+        ],
+        "noGovernedExclusions": true
       },
       "latest_nehemiah_7_73_adapter_policy": {
         "id": "nehemiah_7_73_adapter_policy_2026_06_23",
@@ -201,7 +203,28 @@
           "newPath": "data/bible/translations/nabre-official-usccb/raw/daniel-11.json",
           "reason": "active corpus boundary audit disallows translation source mirror directories ending in /source; official source snapshot is retained under raw witness storage instead"
         }
-      }
+      },
+      "latest_nehemiah_7_73_nabre_source_address_alignment": {
+        "id": "nehemiah_7_73_nabre_source_address_alignment_2026_06_28",
+        "status": "positive_source_address_alignment_verified",
+        "activePath": "data/bible/OT/nehemiah.json",
+        "alignmentPath": "data/bible/registry/source-address-alignments/canonical-ot-nehemiah-7-73-nabre.json",
+        "refs": [
+          "7:72",
+          "7:73",
+          "8:1"
+        ],
+        "verification": [
+          "active Nehemiah 7:72 contains NABRE terminal chapter-7 settlement material",
+          "active Nehemiah 7:73 has no NABRE text because official NABRE has no Nehemiah 7:73 source address",
+          "active Nehemiah 8:1 contains NABRE seventh-month transition material",
+          "no synthetic NABRE 7:73 text was created",
+          "canonical OT governed exclusions are now empty"
+        ],
+        "remainingCanonicalOtGovernedExclusions": []
+      },
+      "governedExclusions": [],
+      "noGovernedExclusions": true
     },
     "psalms": {
       "status": "source_governed_all_expected_psalter_lanes_complete",
@@ -6687,7 +6710,9 @@
     "nabre_contamination_audit_scans_psalter_root_array",
     "orthodox_psalms_151_155_source_backed",
     "orthodox_psalms_151_155_wright_source_verified",
-    "psalter_all_expected_lanes_source_governed"
+    "psalter_all_expected_lanes_source_governed",
+    "canonical_ot_non_psalms_textually_trusted",
+    "canonical_ot_non_psalms_no_governed_exclusions"
   ],
   "psalms_status": "source_governed_all_expected_psalter_lanes_complete",
   "latest_greek_esther_form_policy": {

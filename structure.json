@@ -4,7 +4,7 @@
     "version": "3.8.156",
     "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms no-exclusion completion is in progress. Daniel 11:1-45 NABRE has been imported from an official USCCB source snapshot and exact-verified into active Daniel. Nehemiah 7:73/8:1 source-address alignment remains before canonical OT can be promoted to no-exclusion trust.",
+    "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms is complete and trusted with no governed exclusions. Daniel 11:1-45 NABRE is restored from official source. Nehemiah 7:73 NABRE is resolved as a positive source-address alignment. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1213,16 +1213,14 @@
     "next_bible_corpus_target": {
       "key": "canonical_ot_non_psalms",
       "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
-      "status": "in_progress_daniel_11_repaired_nehemiah_remaining",
+      "status": "complete",
       "completedSubtargets": [
-        "daniel_11_1_45_nabre_usccb_source_import"
-      ],
-      "remainingSubtargets": [
+        "daniel_11_1_45_nabre_usccb_source_import",
         "nehemiah_7_73_8_1_source_address_alignment",
         "canonical_ot_final_no_exclusion_audit",
         "canonical_ot_no_exclusion_trust_status_promotion"
       ],
-      "nextSubtarget": "nehemiah_7_73_8_1_source_address_alignment"
+      "remainingSubtargets": []
     },
     "latest_known_commit": "af88450",
     "latest_known_commit_message": "Repair Bible corpus architecture checkpoint",

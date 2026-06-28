@@ -1,0 +1,40 @@
+{
+  "id": "canonical_ot_nehemiah_7_73_nabre_source_address_alignment_2026_06_28",
+  "status": "positive_source_address_alignment_verified",
+  "activePath": "data/bible/OT/nehemiah.json",
+  "translation": "NABRE",
+  "sourceWitnesses": [
+    {
+      "sourceName": "USCCB NABRE Nehemiah 7",
+      "sourceUrl": "https://bible.usccb.org/bible/nehemiah/7",
+      "observedFact": "USCCB NABRE Nehemiah 7 ends at verse 72; there is no NABRE Nehemiah 7:73 source address."
+    },
+    {
+      "sourceName": "USCCB NABRE Nehemiah 8",
+      "sourceUrl": "https://bible.usccb.org/bible/nehemiah/8",
+      "observedFact": "USCCB NABRE Nehemiah 8:1 begins with the seventh-month transition material."
+    }
+  ],
+  "activeAlignment": {
+    "nabre_7_72": {
+      "activeRef": "Nehemiah 7:72",
+      "activeLane": "text.NABRE",
+      "textAnchor": "took up residence in their cities",
+      "role": "NABRE terminal verse for chapter 7; corresponds to settlement material carried in other traditions at Nehemiah 7:73."
+    },
+    "nabre_7_73": {
+      "activeRef": "Nehemiah 7:73",
+      "activeLane": "text.NABRE",
+      "textPresent": false,
+      "role": "NABRE has no source verse at Nehemiah 7:73. Absence is a verified source-address absence, not an unresolved textual gap."
+    },
+    "nabre_8_1": {
+      "activeRef": "Nehemiah 8:1",
+      "activeLane": "text.NABRE",
+      "textAnchor": "Now when the seventh month came",
+      "role": "NABRE source address for seventh-month transition and Ezra Water Gate material."
+    }
+  },
+  "noSyntheticTextCreated": true,
+  "completionEffect": "Removes Nehemiah 7:73 from canonical OT governed exclusions by converting it to a positive source-address alignment."
+}
