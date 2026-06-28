@@ -1,0 +1,69 @@
+{
+  "schema": "greek-esther-bound-source-shape-result-v1",
+  "id": "greek_esther_bound_source_shape_result_2026_06_28",
+  "status": "passed_shape_inventory_only",
+  "recordedAt": "2026-06-28",
+  "auditScript": "scripts/audit-bible-greek-esther-bound-source-shapes.mjs",
+  "bibleTextMutation": false,
+  "active": {
+    "path": "data/bible/OT/estherGK.json",
+    "shape": "NRSV string text with named additions A-F plus ordinary chapters 1-10",
+    "totalRows": 267,
+    "stringRows": 267,
+    "chapters": {
+      "Addition A": 17,
+      "1": 22,
+      "2": 23,
+      "3": 15,
+      "Addition B": 7,
+      "4": 17,
+      "Addition C": 30,
+      "Addition D": 16,
+      "5": 14,
+      "6": 14,
+      "7": 10,
+      "8": 12,
+      "Addition E": 24,
+      "9": 32,
+      "10": 3,
+      "Addition F": 11
+    }
+  },
+  "boundSources": {
+    "DRB": {
+      "sourceRef": "main/current",
+      "path": "data/bible/translations/drb-original-douay-rheims/raw/esther.json",
+      "totalRows": 275,
+      "shape": "Catholic Esther as numbered chapters 1-16"
+    },
+    "NABRE": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Esther.json",
+      "totalRows": 167,
+      "shape": "ordinary Esther chapters 1-10 only"
+    },
+    "KJV": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Esther.json",
+      "totalRows": 167,
+      "shape": "ordinary Esther chapters 1-10 only"
+    }
+  },
+  "classification": [
+    "Active Greek Esther is not directly aligned to DRB chapter numbering.",
+    "KJV and NABRE bound sources cover ordinary Esther only, not Greek addition rows.",
+    "DRB contains addition material but in numbered Catholic chapter form requiring address policy before lane expansion.",
+    "NRSV active text remains unverified because no approved independent source witness is bound."
+  ],
+  "blockedActions": [
+    "mutate_estherGK_before_address_mapping_policy",
+    "claim_active_greek_esther_nrsv_verified",
+    "force_drb_numbered_chapters_into_named_addition_grid_without_policy",
+    "claim_kjv_or_nabre_additions_present_from_ordinary_esther_sources"
+  ],
+  "nextRequiredWork": [
+    "Create a mapping-candidate audit comparing active named additions against DRB numbered addition ranges by row counts and boundary previews.",
+    "Create ordinary Esther KJV/NABRE active-lane status audit before any lane expansion.",
+    "Acquire or approve NRSV Greek Esther source witness before active NRSV trust."
+  ]
+}
