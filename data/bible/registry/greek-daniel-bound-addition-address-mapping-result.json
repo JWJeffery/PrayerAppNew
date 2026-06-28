@@ -1,0 +1,38 @@
+{
+  "schema": "greek-daniel-bound-addition-address-mapping-result-v1",
+  "id": "greek_daniel_bound_addition_address_mapping_result_2026_06_28",
+  "status": "passed",
+  "recordedAt": "2026-06-28",
+  "auditScript": "scripts/audit-bible-greek-daniel-bound-addition-address-mapping.mjs",
+  "mappingRecord": "data/bible/registry/greek-daniel-bound-addition-address-mapping.json",
+  "activePath": "data/bible/OT/danielGK.json",
+  "bibleTextMutation": false,
+  "passedChecks": {
+    "activePrayerSongRows": 67,
+    "activeOrdinaryDanielPostInsertionRows": 7,
+    "activeSusannaRows": 64,
+    "activeBelAndDragonRows": 42,
+    "kjvPrayerRows": 67,
+    "kjvSusannaRows": 64,
+    "kjvBelAndDragonRows": 42,
+    "nabrePrayerSongRows": 67,
+    "nabreSusannaRows": 64,
+    "nabreBelAndDragonRows": 42,
+    "drbPrayerSongRows": 67,
+    "drbSusannaRows": 64,
+    "drbBelTransitionPresent": true,
+    "drbBelContinuationRows": 41,
+    "drbPolicyExtraRowPresent": true
+  },
+  "claim": "Bound KJV, NABRE, and DRB Greek Daniel addition source witnesses have validated row-count/address mappings against active Greek Daniel placements.",
+  "limitations": [
+    "This result validates address shape only; it does not compare translation text.",
+    "DRB Bel and the Dragon remains policy-bound because DRB Daniel 14:42 is an extra source row relative to the active 42-row grid.",
+    "NRSV additions remain blocked pending approved source witness acquisition."
+  ],
+  "nextRequiredWork": [
+    "Create translation-specific collation-status audit for KJV and NABRE additions.",
+    "Classify active KJV/NABRE lane presence or absence for Greek Daniel additions.",
+    "Resolve DRB Daniel 14:42 policy before DRB Bel and the Dragon trust claim."
+  ]
+}
