@@ -101,6 +101,12 @@
           "Repository search for NRSV/NRSVA plus estherGK/danielGK/BibleGateway returned governance files only, not a source witness.",
           "Repository search for New Revised Standard Version plus Daniel (Extended/Catholic Canon) returned only data/bible/OT/danielGK.json, the active file itself."
         ],
+        "internalComparisonBaseline": {
+          "status": "ordinary_daniel_1_12_internal_baseline_available_not_external_source",
+          "path": "data/bible/OT/daniel.json",
+          "lane": "text.NRSV",
+          "basis": "Canonical OT non-Psalms is trusted with no governed exclusions; ordinary Daniel can be compared internally against the trusted canonical Daniel NRSV lane, but this does not replace the need for an external/source witness if final NRSV source trust is required."
+        },
         "externalCandidateStatus": "partial_candidates_identified_not_bound",
         "externalCandidateSources": [
           {
@@ -122,7 +128,7 @@
             "observedPlacement": "Chapter 14 of the Greek version of Daniel"
           }
         ],
-        "note": "Active Greek Daniel claims NRSV text, but no independent local NRSV source witness has been found or bound. Oremus NRSV Anglicized candidates exist for the three additions, but they are not yet extracted, normalized, or compared; ordinary Daniel 1-12 NRSV source remains unbound for this active extended file."
+        "note": "Active Greek Daniel claims NRSV text, but no independent local NRSV source witness has been found or bound. Oremus NRSV Anglicized candidates exist for the three additions, and ordinary Daniel 1-12 has a trusted internal canonical NRSV baseline; none of these are yet a complete bound external source witness for active Greek Daniel."
       }
     }
   },
@@ -134,11 +140,12 @@
     "force_kjv_split_addition_files_into_active_daniel_without_mapping",
     "treat_current_daniel_11_nabre_snapshot_as_full_greek_daniel_source",
     "treat_active_nrsv_greek_files_as_self-authenticating_sources",
-    "treat_oremus_candidates_as_bound_sources_before_extraction_and_comparison"
+    "treat_oremus_candidates_as_bound_sources_before_extraction_and_comparison",
+    "treat_canonical_daniel_internal_baseline_as_external_nrsv_source"
   ],
   "nextRequiredWork": [
     "Acquire or bind the NRSV/NRSVA source witness for active Greek Esther.",
-    "Acquire or bind ordinary Daniel 1-12 NRSV source for active Greek Daniel.",
+    "Use canonical Daniel NRSV only as an internal comparison baseline for active Greek Daniel ordinary chapters 1-12 unless/until an external NRSV source witness is bound.",
     "Extract and normalize the Oremus NRSV Anglicized Daniel-addition candidates only if that source family is approved for active NRSV comparison.",
     "Create a comparison plan that maps DRB, NABRE, KJV, and NRSV source forms without changing Bible text.",
     "Only after source binding, run exact text collation for active NRSV Greek Esther and active NRSV Greek Daniel."
