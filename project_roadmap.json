@@ -6,8 +6,8 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "2bd15ff",
-    "latest_known_commit_message": "Record deuterocanon KJV NABRE marker completion",
+    "latest_known_commit": "af88450",
+    "latest_known_commit_message": "Repair Bible corpus architecture checkpoint",
     "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
@@ -230,7 +230,13 @@
         "broader_canon_textually_trusted",
         "vulgate_textually_trusted"
       ],
-      "nextAllowedTarget": "canonical_ot_non_psalms_no_exclusion_completion"
+      "nextAllowedTarget": "canonical_ot_non_psalms_no_exclusion_completion",
+      "architectureRecordCommit": "af88450",
+      "architectureRecordCommitFull": "af884508eff231195be9587521ecbb49999f21ae",
+      "architectureRecordCommitMessage": "Repair Bible corpus architecture checkpoint",
+      "commitRole": "corpus_state_described_by_checkpoint",
+      "architectureRecordCommitRole": "commit_that_recorded_this_checkpoint_in_navigation_files",
+      "pointerRepairRecordedAt": "2026-06-28T12:31:43.451Z"
     },
     "next_bible_corpus_target": {
       "key": "canonical_ot_non_psalms",
@@ -244,7 +250,13 @@
         "rerun canonical OT final audit with zero governed exclusions",
         "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
       ]
-    }
+    },
+    "latest_architecture_checkpoint_record_commit": "af88450",
+    "latest_architecture_checkpoint_record_commit_full": "af884508eff231195be9587521ecbb49999f21ae",
+    "latest_architecture_checkpoint_record_commit_message": "Repair Bible corpus architecture checkpoint",
+    "latest_bible_corpus_content_commit": "2bd15ff",
+    "latest_bible_corpus_content_commit_message": "Record deuterocanon KJV NABRE marker completion",
+    "latest_bible_corpus_checkpoint_commit_role": "corpus_state_described_by_checkpoint_not_the_architecture_record_commit"
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
