@@ -6,6 +6,7 @@ const decisionPath = 'data/bible/registry/nonprotestant-canon-text-trust-decisio
 const estherStatusPath = 'data/bible/registry/greek-esther-text-trust-status.json';
 const danielStatusPath = 'data/bible/registry/greek-daniel-text-trust-status.json';
 const tobitStatusPath = 'data/bible/registry/tobit-text-trust-status.json';
+const judithStatusPath = 'data/bible/registry/judith-text-trust-status.json';
 const reportPath = process.env.NONPROTESTANT_CANON_CURRENT_TEXT_TRUST_STATUS_REPORT || null;
 const failures = [];
 
@@ -35,11 +36,12 @@ const decision = readJson(decisionPath);
 const esther = readJson(estherStatusPath);
 const daniel = readJson(danielStatusPath);
 const tobit = readJson(tobitStatusPath);
+const judith = readJson(judithStatusPath);
 const checks = [];
 
-if (status && decision && esther && daniel && tobit) {
+if (status && decision && esther && daniel && tobit && judith) {
   checks.push(check('status.schema', status.schema, 'nonprotestant-canon-current-text-trust-status-v1'));
-  checks.push(check('status.status', status.status, 'not_trust_ready_partial_greek_additions_and_tobit_progress'));
+  checks.push(check('status.status', status.status, 'not_trust_ready_partial_greek_additions_tobit_judith_progress'));
   checks.push(check('decision.status', decision.status, 'accepted'));
   checks.push(includes('decision.blockedClaimsUntilMatrixPasses', decision.blockedClaimsUntilMatrixPasses, 'deuterocanon_complete'));
   checks.push(includes('decision.blockedClaimsUntilMatrixPasses', decision.blockedClaimsUntilMatrixPasses, 'nonprotestant_canon_textually_trusted'));
@@ -47,31 +49,37 @@ if (status && decision && esther && daniel && tobit) {
   checks.push(check('esther.statusRecord', esther.status, 'partial_trust_ready_nrsv_blocked'));
   checks.push(check('daniel.statusRecord', daniel.status, 'partial_trust_ready_nrsv_additions_blocked'));
   checks.push(check('tobit.statusRecord', tobit.status, 'partial_trust_ready_nrsv_rawtext_unresolved'));
+  checks.push(check('judith.statusRecord', judith.status, 'partial_trust_ready_nrsv_unresolved'));
   checks.push(check('status.esther.activeRows', status.greekAdditionsProgress?.estherGK?.activeRows, 272));
   checks.push(check('status.daniel.activeRows', status.greekAdditionsProgress?.danielGK?.activeRows, 531));
   checks.push(check('status.tobit.activeRows', status.deuterocanonProgress?.tobit?.activeRows, 299));
+  checks.push(check('status.judith.activeRows', status.deuterocanonProgress?.judith?.activeRows, 359));
   checks.push(check('status.esther.status', status.greekAdditionsProgress?.estherGK?.status, 'partial_trust_ready_nrsv_blocked'));
   checks.push(check('status.daniel.status', status.greekAdditionsProgress?.danielGK?.status, 'partial_trust_ready_nrsv_additions_blocked'));
   checks.push(check('status.tobit.status', status.deuterocanonProgress?.tobit?.status, 'partial_trust_ready_nrsv_rawtext_unresolved'));
-  checks.push(check('status.matrixStalenessNotice.status', status.matrixStalenessNotice?.status, 'prior_matrix_stale_for_greek_additions_and_tobit'));
+  checks.push(check('status.judith.status', status.deuterocanonProgress?.judith?.status, 'partial_trust_ready_nrsv_unresolved'));
+  checks.push(check('status.matrixStalenessNotice.status', status.matrixStalenessNotice?.status, 'prior_matrix_stale_for_greek_additions_tobit_and_judith'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Non-Protestant canon is textually trusted.'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Greek Esther NRSV is source-verified.'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Greek Daniel NRSV additions are source-verified.'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Tobit is fully trusted.'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Tobit NRSV is source-verified.'));
   checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Tobit rawText is trusted or classified.'));
+  checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Judith is fully trusted.'));
+  checks.push(includes('status.forbiddenClaims', status.forbiddenClaims, 'Judith NRSV is source-verified.'));
 }
 
 const report = {
   audit: 'nonprotestant-canon-current-text-trust-status',
   status: failures.length ? 'failed' : 'passed',
   bibleTextMutation: false,
-  scope: 'Validate current non-Protestant canon text trust boundary after Greek additions and Tobit progress. This does not regenerate the full collation matrix.',
+  scope: 'Validate current non-Protestant canon text trust boundary after Greek additions, Tobit, and Judith progress. This does not regenerate the full collation matrix.',
   statusPath,
   decisionPath,
   estherStatusPath,
   danielStatusPath,
   tobitStatusPath,
+  judithStatusPath,
   checks,
   failures
 };
