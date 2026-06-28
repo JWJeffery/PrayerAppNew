@@ -22,6 +22,12 @@
         "sourceType": "historical_internal_source_lane",
         "rights": "USCCB source witness; project-internal historical source lane",
         "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "DRB": {
+        "label": "Douay-Rheims Bible",
+        "sourceType": "drb_original_douay_rheims_raw_source",
+        "rights": "Public Domain",
+        "sourceRef": "main/current"
       }
     }
   },
@@ -602,7 +608,8 @@
           "text": {
             "NRSV": "They walked around in the midst of the flames, singing hymns to God and blessing the Lord.",
             "KJV": "Then Azarias stood vp & prayed on this manner, and opening his mouth in the midst of the fire, said,",
-            "NABRE": "They walked about in the flames, singing to God and blessing the Lord."
+            "NABRE": "They walked about in the flames, singing to God and blessing the Lord.",
+            "DRB": "And they walked in the midst of the flame praising God, and blessing our Lord."
           }
         },
         {
@@ -610,7 +617,8 @@
           "text": {
             "NRSV": "Then Azariah stood still in the midst of the fire and prayed aloud: ",
             "KJV": "Blessed art thou, O Lord God of our fathers: thy Name is worthy to be praised, and glorified for euermore.",
-            "NABRE": "Azariah stood up in the midst of the fire and prayed aloud:"
+            "NABRE": "Azariah stood up in the midst of the fire and prayed aloud:",
+            "DRB": "And Azarias standing prayed thus, and opening his mouth in the midst of the fire, he said:"
           }
         },
         {
@@ -618,7 +626,8 @@
           "text": {
             "NRSV": "“Blessed are you, O Lord, God of our ancestors, and worthy of praise; and glorious is your name forever!”",
             "KJV": "For thou art righteous in all the things that thou hast done to vs: yea, true are all thy workes: thy wayes are right, and all thy iudgements trueth.",
-            "NABRE": "“Blessed are you, and praiseworthy, O Lord, the God of our ancestors, and glorious forever is your name."
+            "NABRE": "“Blessed are you, and praiseworthy, O Lord, the God of our ancestors, and glorious forever is your name.",
+            "DRB": "Blessed art thou o Lord the God of our fathers, and laudable, and glorious is thy name for ever:"
           }
         },
         {
@@ -626,7 +635,8 @@
           "text": {
             "NRSV": "“For you are just in all you have done; all your works are true and your ways right, and all your judgments are true.”",
             "KJV": "In all the things that thou hast brought vpon vs, and vpon the holy citie of our fathers, euen Ierusalem, thou hast executed true iudgement: for according to trueth and iudgement, didst thou bring all these things vpon vs, because of our sinnes.",
-            "NABRE": "For you are just in all you have done; all your deeds are faultless, all your ways right, and all your judgments proper."
+            "NABRE": "For you are just in all you have done; all your deeds are faultless, all your ways right, and all your judgments proper.",
+            "DRB": "because thou art just in all things, which thou hast done to us, and all thy works are true, and thy ways right, and all thy judgements true."
           }
         },
         {
@@ -634,7 +644,8 @@
           "text": {
             "NRSV": "“You have executed true judgments in all that you have brought upon us and upon Jerusalem, the holy city of our ancestors; for in truth and justice you have brought all this upon us because of our sins.”",
             "KJV": "For wee haue sinned and committed iniquitie, departing from thee.",
-            "NABRE": "You have executed proper judgments in all that you have brought upon us and upon Jerusalem, the holy city of our ancestors. By a proper judgment you have done all this because of our sins;"
+            "NABRE": "You have executed proper judgments in all that you have brought upon us and upon Jerusalem, the holy city of our ancestors. By a proper judgment you have done all this because of our sins;",
+            "DRB": "For thou hast done true judgements according to all things, that thou hast brought upon us, and upon the holy city of our fathers Jerusalem: because in truth, & in judgement thou hast brought in all these things for our sins."
           }
         },
         {
@@ -642,7 +653,8 @@
           "text": {
             "NRSV": "“For we have sinfully and lawlessly departed from you, and have sinned in all things and have not obeyed your commandments;”",
             "KJV": "In all things haue we trespassed, and not obeyed thy Commandements, nor kept them, neither done as thou hast commanded vs, that it might goe well with vs.",
-            "NABRE": "For we have sinned and transgressed by departing from you, and we have done every kind of evil."
+            "NABRE": "For we have sinned and transgressed by departing from you, and we have done every kind of evil.",
+            "DRB": "For we have sinned, and done unjustly revolting from thee: and we have offended in all things;"
           }
         },
         {
@@ -650,7 +662,8 @@
           "text": {
             "NRSV": "“we have not observed them or done as you have commanded us, so that it might go well with us.”",
             "KJV": "Wherefore all that thou hast brought vpon vs, and euery thing that thou hast done to vs, thou hast done in true iudgement.",
-            "NABRE": "Your commandments we have not heeded or observed, nor have we done as you ordered us for our good."
+            "NABRE": "Your commandments we have not heeded or observed, nor have we done as you ordered us for our good.",
+            "DRB": "and thy precepts we have not heard, nor observed, nor done as thou hadst commanded us, that it might be well with us."
           }
         },
         {
@@ -658,7 +671,8 @@
           "text": {
             "NRSV": "“So all that you have brought upon us, and all that you have done to us, you have done by a true judgment.”",
             "KJV": "And thou didst deliuer vs into the hands of lawlesse enemies, most hatefull forsakers  and to an vniust King, and the most wicked in all the world.",
-            "NABRE": "Therefore all you have brought upon us, all you have done to us, you have done by a proper judgment."
+            "NABRE": "Therefore all you have brought upon us, all you have done to us, you have done by a proper judgment.",
+            "DRB": "All things therefore that thou hast brought in upon us, and all things that thou hast done to us, thou hast done with true judgement:"
           }
         },
         {
@@ -666,7 +680,8 @@
           "text": {
             "NRSV": "“You have handed us over to our enemies, lawless and hateful rebels, and to an unjust king, the most wicked in all the world.”",
             "KJV": "And now wee can not open our mouthes, we are become a shame, and reproch to thy seruants, and to them that worship thee.",
-            "NABRE": "You have handed us over to our enemies, lawless and hateful rebels; to an unjust king, the worst in all the world."
+            "NABRE": "You have handed us over to our enemies, lawless and hateful rebels; to an unjust king, the worst in all the world.",
+            "DRB": "and thou hast delivered us into the hands of our enemies unjust, & most wicked, & prevaricators, & to an unjust king and most wicked above all the earth."
           }
         },
         {
@@ -674,7 +689,8 @@
           "text": {
             "NRSV": "“And now we cannot open our mouths; we, your servants who worship you, have become a shame and a reproach.”",
             "KJV": "Yet deliuer vs not vp wholy for thy Names sake, neither disanull thou thy Couenant:",
-            "NABRE": "Now we cannot open our mouths; shame and reproach have come upon us, your servants, who revere you."
+            "NABRE": "Now we cannot open our mouths; shame and reproach have come upon us, your servants, who revere you.",
+            "DRB": "And now we cannot open the mouth: we are become a confusion, and reproach to thy servants, & to them that worship thee."
           }
         },
         {
@@ -682,7 +698,8 @@
           "text": {
             "NRSV": "“For your name’s sake do not give us up forever, and do not annul your covenant.”",
             "KJV": "And cause not thy mercy to depart from vs: for thy beloued Abrahams sake: for thy seruant Isaacs sake, and for thy holy Israels sake.",
-            "NABRE": "For your name’s sake, do not deliver us up forever, or make void your covenant."
+            "NABRE": "For your name’s sake, do not deliver us up forever, or make void your covenant.",
+            "DRB": "Deliver us not for ever, we beseech thee, for thy name sake, and dissipate not thy testament:"
           }
         },
         {
@@ -690,7 +707,8 @@
           "text": {
             "NRSV": "“Do not withdraw your mercy from us, for the sake of Abraham your beloved and for the sake of Isaac your servant and Israel your holy one,”",
             "KJV": "To whom thou hast spoken and promised, That thou wouldest multiply their seed as the starres of heauen, and as the sand that lyeth vpon the sea shore.",
-            "NABRE": "Do not take away your mercy from us, for the sake of Abraham, your beloved, Isaac your servant, and Israel your holy one,"
+            "NABRE": "Do not take away your mercy from us, for the sake of Abraham, your beloved, Isaac your servant, and Israel your holy one,",
+            "DRB": "neither take thou away thy mercy from us, for Abraham thy beloved, and Isaac thy servant, and Israel thy holy one:"
           }
         },
         {
@@ -698,7 +716,8 @@
           "text": {
             "NRSV": "“to whom you promised to multiply their descendants like the stars of heaven and like the sand on the shore of the sea.”",
             "KJV": "For we, O Lord, are become lesse then any nation, and bee kept vnder this day in all the world, because of our sinnes.",
-            "NABRE": "To whom you promised to multiply their offspring like the stars of heaven, or the sand on the shore of the sea."
+            "NABRE": "To whom you promised to multiply their offspring like the stars of heaven, or the sand on the shore of the sea.",
+            "DRB": "to whom thou hast spoken, promising that thou wouldest multiply their seed as the stars of heaven, and as the sand that is in the sea shore."
           }
         },
         {
@@ -706,7 +725,8 @@
           "text": {
             "NRSV": "“For we, O Lord, have become fewer than any other nation, and are brought low this day in all the world because of our sins.”",
             "KJV": "Neither is there at this time, Prince, or Prophet, or leader, or burnt offering, or sacrifice, or oblation, or incense, or place to sacrifice before thee, and to finde mercie.",
-            "NABRE": "For we are reduced, O Lord, beyond any other nation, brought low everywhere in the world this day because of our sins."
+            "NABRE": "For we are reduced, O Lord, beyond any other nation, brought low everywhere in the world this day because of our sins.",
+            "DRB": "Because o Lord we are diminished more than all nations, and are abased in all the earth this day for our sins."
           }
         },
         {
@@ -714,7 +734,8 @@
           "text": {
             "NRSV": "“In our day we have no ruler, or prophet, or leader, no burnt offering, or sacrifice, or oblation, or incense, no place to make an offering before you and to find mercy.”",
             "KJV": "Neuerthelesse in a contrite heart, and an humble spirit, let vs be accepted.",
-            "NABRE": "We have in our day no prince, prophet, or leader, no burnt offering, sacrifice, oblation, or incense, no place to offer first fruits, to find favor with you."
+            "NABRE": "We have in our day no prince, prophet, or leader, no burnt offering, sacrifice, oblation, or incense, no place to offer first fruits, to find favor with you.",
+            "DRB": "And there is not at this time prince, & duke, and prophet, nor holocaust, nor sacrifice, nor oblation, nor incense, nor place of first fruits before thee,"
           }
         },
         {
@@ -722,7 +743,8 @@
           "text": {
             "NRSV": "“Yet with a contrite heart and a humble spirit may we be accepted,”",
             "KJV": "Like as in the burnt offering of rammes and bullockes, and like as in ten thousands of fat lambes: so let our sacrifice bee in thy sight this day, and  that wee may wholy goe after thee: for they shall not bee confounded that put their trust in thee.",
-            "NABRE": "But with contrite heart and humble spirit let us be received; As though it were burnt offerings of rams and bulls, or tens of thousands of fat lambs,"
+            "NABRE": "But with contrite heart and humble spirit let us be received; As though it were burnt offerings of rams and bulls, or tens of thousands of fat lambs,",
+            "DRB": "that we may find thy mercy: but in contrite mind, & spirit of humility let us be received."
           }
         },
         {
@@ -730,7 +752,8 @@
           "text": {
             "NRSV": "“as though it were with burnt offerings of rams and bulls, or with tens of thousands of fat lambs; such may our sacrifice be in your sight this day, and may we unreservedly follow you, for no shame will come to those who trust in you.”",
             "KJV": "And now wee follow thee, with all our heart, wee feare thee, and seeke thy face.",
-            "NABRE": "So let our sacrifice be in your presence today and find favor before you; for those who trust in you cannot be put to shame."
+            "NABRE": "So let our sacrifice be in your presence today and find favor before you; for those who trust in you cannot be put to shame.",
+            "DRB": "As in holocaust of rams, and bulls, and as in thousands of fat lambs: so let our sacrifice be made in thy sight this day, that it may please thee: because there is no confusion to them that trust in thee."
           }
         },
         {
@@ -738,7 +761,8 @@
           "text": {
             "NRSV": "“And now with all our heart we follow you; we fear you and seek your presence. Do not put us to shame,”",
             "KJV": "Put vs not to shame: but deale with vs after thy louing kindenesse, and according to the multitude of thy mercies.",
-            "NABRE": "And now we follow you with our whole heart, we fear you and we seek your face. Do not put us to shame,"
+            "NABRE": "And now we follow you with our whole heart, we fear you and we seek your face. Do not put us to shame,",
+            "DRB": "And now we follow thee in all our heart, and fear thee, and seek thy face."
           }
         },
         {
@@ -746,7 +770,8 @@
           "text": {
             "NRSV": "“but deal with us in your forbearance and in your abundant mercy.”",
             "KJV": "Deliuer vs also according to thy marueilous workes, and giue glory to thy Name, O Lord, and let all them that doe thy seruants hurt be ashamed.",
-            "NABRE": "but deal with us in your kindness and great mercy."
+            "NABRE": "but deal with us in your kindness and great mercy.",
+            "DRB": "Confound us not, but do with us according to thy meekness, and according to the multitude of thy mercy."
           }
         },
         {
@@ -754,7 +779,8 @@
           "text": {
             "NRSV": "“Deliver us in accordance with your marvelous works, and bring glory to your name, O Lord.”",
             "KJV": "And let them be confounded in all their power and might, and let their strength be broken.",
-            "NABRE": "Deliver us in accord with your wonders, and bring glory to your name, O Lord:"
+            "NABRE": "Deliver us in accord with your wonders, and bring glory to your name, O Lord:",
+            "DRB": "And deliver us in thy marvels, and give glory to thy name o Lord:"
           }
         },
         {
@@ -762,7 +788,8 @@
           "text": {
             "NRSV": "“Let all who do harm to your servants be put to shame; let them be disgraced and deprived of all power, and let their strength be broken.”",
             "KJV": "And let them know that thou art Lord, the onely God, and glorious ouer the whole world.",
-            "NABRE": "Let all those be put to shame who inflict evils on your servants; Let them be shamed and powerless, and their strength broken;"
+            "NABRE": "Let all those be put to shame who inflict evils on your servants; Let them be shamed and powerless, and their strength broken;",
+            "DRB": "and let all be confounded that shew evils to thy servants, let them be confounded in all thy might, and let their strength be broken:"
           }
         },
         {
@@ -770,7 +797,8 @@
           "text": {
             "NRSV": "“Let them know that you alone are the Lord God, glorious over the whole world.”",
             "KJV": "And the kings seruants that put them in, ceased not to make the ouen hote with rosin, pitch, towe, and small wood.",
-            "NABRE": "Let them know that you alone are the Lord God, glorious over the whole world.”"
+            "NABRE": "Let them know that you alone are the Lord God, glorious over the whole world.”",
+            "DRB": "and let them know that thou art the Lord, the only God, and glorious over the round world."
           }
         },
         {
@@ -778,7 +806,8 @@
           "text": {
             "NRSV": "Now the king’s servants who threw them in kept stoking the furnace with naphtha, pitch, tow, and brushwood.",
             "KJV": "So that the flame streamed forth aboue the fornace, fourtie and nine cubites:",
-            "NABRE": "Now the king’s servants who had thrown them in continued to stoke the furnace with naphtha, pitch, tow, and brush."
+            "NABRE": "Now the king’s servants who had thrown them in continued to stoke the furnace with naphtha, pitch, tow, and brush.",
+            "DRB": "And the king's servants that had cast them in, ceased not to heat the furnace, with Naphtha, and tow, and pitch, and dry sticks,"
           }
         },
         {
@@ -786,7 +815,8 @@
           "text": {
             "NRSV": "And the flames poured out above the furnace forty-nine cubits,",
             "KJV": "And it passed through, and burnt those Caldeans it found about the fornace.",
-            "NABRE": "The flames rose forty-nine cubits above the furnace,"
+            "NABRE": "The flames rose forty-nine cubits above the furnace,",
+            "DRB": "and the flame mounted out above the furnace nine and forty cubits:"
           }
         },
         {
@@ -794,7 +824,8 @@
           "text": {
             "NRSV": "and spread out and burned those Chaldeans who were caught near the furnace.",
             "KJV": "But the Angel of the Lord came downe into the ouen, together with Azarias and his fellowes, and smote the flame of the fire out of the ouen:",
-            "NABRE": "and spread out, burning the Chaldeans that it caught around the furnace."
+            "NABRE": "and spread out, burning the Chaldeans that it caught around the furnace.",
+            "DRB": "and it brake forth, and burnt them whom it found by the furnace, of the Chaldees."
           }
         },
         {
@@ -802,7 +833,8 @@
           "text": {
             "NRSV": "But the angel of the Lord came down into the furnace to be with Azariah and his companions, and drove the fiery flame out of the furnace,",
             "KJV": "And made the mids of the fornace, as it had bene a moist whistling wind, so that the fire touched them not at all, neither hurt nor troubled them.",
-            "NABRE": "But the angel of the Lord went down into the furnace with Azariah and his companions, drove the fiery flames out of the furnace,"
+            "NABRE": "But the angel of the Lord went down into the furnace with Azariah and his companions, drove the fiery flames out of the furnace,",
+            "DRB": "But the Angel of our Lord descended with Azarias, and his fellows into the furnace: and he shook the flame of the fire out of the furnace,"
           }
         },
         {
@@ -810,7 +842,8 @@
           "text": {
             "NRSV": "and made the inside of the furnace as though a moist, whistling wind were passing through it. The fire did not touch them at all and caused them no pain or distress.",
             "KJV": "Then the three, as out of one mouth, praised, glorified, and blessed God in the fornace, saying;",
-            "NABRE": "and made the inside of the furnace as though a dew-laden breeze were blowing through it. The fire in no way touched them or caused them pain or harm."
+            "NABRE": "and made the inside of the furnace as though a dew-laden breeze were blowing through it. The fire in no way touched them or caused them pain or harm.",
+            "DRB": "and made the midst of the furnace as a wind of dew blowing, and the fire touched them not at all, nor pained them, nor did them any grievance."
           }
         },
         {
@@ -818,7 +851,8 @@
           "text": {
             "NRSV": "Then the three with one voice praised and glorified and blessed God in the furnace, saying:",
             "KJV": "Blessed art thou, O Lord God of our fathers: and to be praised and exalted aboue all for euer.",
-            "NABRE": "Then these three in the furnace with one voice sang, glorifying and blessing God:"
+            "NABRE": "Then these three in the furnace with one voice sang, glorifying and blessing God:",
+            "DRB": "Then these three as out of one mouth praised, and glorified, and blessed God in the furnace, saying:"
           }
         },
         {
@@ -826,7 +860,8 @@
           "text": {
             "NRSV": "“Blessed are you, Lord God of our ancestors, and to be praised and highly exalted forever; And blessed is your glorious, holy name, and to be highly praised and highly exalted forever.”",
             "KJV": "And blessed is thy glorious and holy Name: and to be praised and exalted aboue all for euer.",
-            "NABRE": "“Blessed are you, O Lord, the God of our ancestors, praiseworthy and exalted above all forever; And blessed is your holy and glorious name, praiseworthy and exalted above all for all ages."
+            "NABRE": "“Blessed are you, O Lord, the God of our ancestors, praiseworthy and exalted above all forever; And blessed is your holy and glorious name, praiseworthy and exalted above all for all ages.",
+            "DRB": "Blessed art thou o Lord the God of our fathers: and laudable, and glorious, and superexalted for ever: and blessed is the holy name of thy glory: and laudable, and superexalted in all ages."
           }
         },
         {
@@ -834,7 +869,8 @@
           "text": {
             "NRSV": "“Blessed are you in the temple of your holy glory, and to be extolled and highly glorified forever.”",
             "KJV": "Blessed art thou in the Temple of thine holy glory: and to be praised and glorified aboue all for euer.",
-            "NABRE": "Blessed are you in the temple of your holy glory, praiseworthy and glorious above all forever."
+            "NABRE": "Blessed are you in the temple of your holy glory, praiseworthy and glorious above all forever.",
+            "DRB": "Blessed art thou in the holy temple of thy glory: & passing laudable, and passing glorious for ever."
           }
         },
         {
@@ -842,7 +878,8 @@
           "text": {
             "NRSV": "“Blessed are you who look into the depths from your throne on the cherubim, and to be praised and highly exalted forever.”",
             "KJV": "Blessed art thou that beholdest the depths, and sittest vpon the Cherubims, and to be praised and exalted aboue all for euer.",
-            "NABRE": "Blessed are you on the throne of your kingdom, praiseworthy and exalted above all forever."
+            "NABRE": "Blessed are you on the throne of your kingdom, praiseworthy and exalted above all forever.",
+            "DRB": "Blessed art thou in the throne of thy kingdom, and passing laudable, and superexalted for ever."
           }
         },
         {
@@ -850,7 +887,8 @@
           "text": {
             "NRSV": "“Blessed are you on the throne of your kingdom, and to be extolled and highly exalted forever.”",
             "KJV": "Blessed art thou on the glorious Throne of thy kingdome: and to bee praised and glorified aboue all for euer.",
-            "NABRE": "Blessed are you who look into the depths from your throne upon the cherubim, praiseworthy and exalted above all forever."
+            "NABRE": "Blessed are you who look into the depths from your throne upon the cherubim, praiseworthy and exalted above all forever.",
+            "DRB": "Blessed art thou, that beholdest the depths, and sittest upon the Cherubs: and laudable, and superexalted for ever."
           }
         },
         {
@@ -858,7 +896,8 @@
           "text": {
             "NRSV": "“Blessed are you in the firmament of heaven, and to be sung and glorified forever.”",
             "KJV": "Blessed art thou in the firmament of heauen: and aboue all to be praised and glorified for euer.",
-            "NABRE": "Blessed are you in the firmament of heaven, praiseworthy and glorious forever."
+            "NABRE": "Blessed are you in the firmament of heaven, praiseworthy and glorious forever.",
+            "DRB": "Blessed art thou in the firmament of heaven: and laudable and glorious for ever."
           }
         },
         {
@@ -866,7 +905,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all you works of the Lord; sing praise to him and highly exalt him forever.”",
             "KJV": "O all yee workes of the Lorde, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Bless the Lord, all you works of the Lord, praise and exalt him above all forever."
+            "NABRE": "Bless the Lord, all you works of the Lord, praise and exalt him above all forever.",
+            "DRB": "All works of our Lord bless ye our Lord, praise and superexalt him for ever."
           }
         },
         {
@@ -874,7 +914,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you heavens; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye heauens, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Angels of the Lord, bless the Lord, praise and exalt him above all forever."
+            "NABRE": "Angels of the Lord, bless the Lord, praise and exalt him above all forever.",
+            "DRB": "Bless our Lord ye Angels of our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -882,7 +923,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you angels of the Lord; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee Angels of the Lord, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "You heavens, bless the Lord, praise and exalt him above all forever."
+            "NABRE": "You heavens, bless the Lord, praise and exalt him above all forever.",
+            "DRB": "Ye heavens bless our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -890,7 +932,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all you waters above the heavens; sing praise to him and highly exalt him forever.”",
             "KJV": "O all ye waters that be aboue the heauen, blesse yee the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you waters above the heavens, bless the Lord, praise and exalt him above all forever."
+            "NABRE": "All you waters above the heavens, bless the Lord, praise and exalt him above all forever.",
+            "DRB": "All waters that are above the heavens, bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -898,7 +941,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all you powers of the Lord; sing praise to him and highly exalt him forever.”",
             "KJV": "O all yee powers of the Lord, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you powers, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "All you powers, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Bless our Lord all ye powers of our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -906,7 +950,8 @@
           "text": {
             "NRSV": "“Bless the Lord, sun and moon; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee Sunne and Moone, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Sun and moon, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Sun and moon, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Sun and moon bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -914,7 +959,8 @@
           "text": {
             "NRSV": "“Bless the Lord, stars of heaven; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye starres of heauen, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Stars of heaven, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Stars of heaven, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Stars of heavens bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -922,7 +968,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all rain and dew; sing praise to him and highly exalt him forever.”",
             "KJV": "O euery showre and dew, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Every shower and dew, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Every shower and dew, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Every shower, & dew bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -930,7 +977,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all you winds; sing praise to him and highly exalt him forever.”",
             "KJV": "O all ye windes, blesse yee the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you winds, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "All you winds, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "All spirits of God bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -938,7 +986,8 @@
           "text": {
             "NRSV": "“Bless the Lord, fire and heat; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee fire and heate, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Fire and heat, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Fire and heat, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Fire and heat bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -946,7 +995,8 @@
           "text": {
             "NRSV": "“Bless the Lord, winter cold and summer heat; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee Winter and Summer, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Cold and chill, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Cold and chill, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Cold and heat bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -954,7 +1004,8 @@
           "text": {
             "NRSV": "“Bless the Lord, dews and falling snow; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye dewes and stormes of snow, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Dew and rain, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Dew and rain, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Dews and hoar frost bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -962,7 +1013,8 @@
           "text": {
             "NRSV": "“Bless the Lord, nights and days; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye nights and dayes, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Frost and chill, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Frost and chill, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Frost and cold bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -970,7 +1022,8 @@
           "text": {
             "NRSV": "“Bless the Lord, light and darkness; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye light and darkenesse, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Hoarfrost and snow, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Hoarfrost and snow, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Ice and snows bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -978,7 +1031,8 @@
           "text": {
             "NRSV": "“Bless the Lord, ice and cold; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee yce and colde, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Nights and days, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Nights and days, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Nights and days bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -986,7 +1040,8 @@
           "text": {
             "NRSV": "“Bless the Lord, frosts and snows; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye frost and snow, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Light and darkness, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Light and darkness, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Light and darkness bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -994,7 +1049,8 @@
           "text": {
             "NRSV": "“Bless the Lord, lightnings and clouds; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye lightnings and clouds, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Lightnings and clouds, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Lightnings and clouds, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Lightnings and clouds bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1002,7 +1058,8 @@
           "text": {
             "NRSV": "“Let the earth bless the Lord; let it sing praise to him and highly exalt him forever.”",
             "KJV": "O let the earth blesse the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Let the earth bless the Lord, praise and exalt him above all forever."
+            "NABRE": "Let the earth bless the Lord, praise and exalt him above all forever.",
+            "DRB": "Let the earth bless our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1010,7 +1067,8 @@
           "text": {
             "NRSV": "“Bless the Lord, mountains and hills; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye mountaines and little hils, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Mountains and hills, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Mountains and hills, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Mountains and little hills bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1018,7 +1076,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all that grows in the ground; sing praise to him and highly exalt him forever.”",
             "KJV": "O all ye things that grow on the earth, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Everything growing on earth, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Everything growing on earth, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "All things that spring in the earth bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1026,7 +1085,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you springs; sing praise to him and highly exalt him forever.”",
             "KJV": "O yee fountaines, blesse yee the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "You springs, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "You springs, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Bless our Lord ye fountains: praise and superexalt him for ever."
           }
         },
         {
@@ -1034,7 +1094,8 @@
           "text": {
             "NRSV": "“Bless the Lord, seas and rivers; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye seas and riuers, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Seas and rivers, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Seas and rivers, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Seas and rivers bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1042,7 +1103,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you whales and all that swim in the waters; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye whales and all that mooue in the waters, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "You sea monsters and all water creatures, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "You sea monsters and all water creatures, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Whales, and all things that move in the waters, bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1050,7 +1112,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all birds of the air; sing praise to him and highly exalt him forever.”",
             "KJV": "O all ye foules of the aire, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you birds of the air, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "All you birds of the air, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Bless our Lord all ye fowls of heaven: praise and superexalt him for ever."
           }
         },
         {
@@ -1058,7 +1121,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all wild animals and cattle; sing praise to him and highly exalt him forever.”",
             "KJV": "O all ye beasts and cattell, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you beasts, wild and tame, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "All you beasts, wild and tame, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "All beasts and cattle bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1066,7 +1130,8 @@
           "text": {
             "NRSV": "“Bless the Lord, all people on earth; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye children of men, blesse yee the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "All you mortals, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "All you mortals, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Sons of men bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1074,7 +1139,8 @@
           "text": {
             "NRSV": "“Bless the Lord, O Israel; sing praise to him and highly exalt him forever.”",
             "KJV": "O Israel blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "O Israel, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "O Israel, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Let Israel bless our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1082,7 +1148,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you priests of the Lord; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye priests of the Lord, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Priests of the Lord, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Priests of the Lord, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Priests of our Lord bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1090,7 +1157,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you servants of the Lord; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye seruants of the Lord, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Servants of the Lord, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Servants of the Lord, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Servants of our Lord bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1098,7 +1166,8 @@
           "text": {
             "NRSV": "“Bless the Lord, spirits and souls of the righteous; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye spirits and soules of the righteous, blesse ye the Lord, praise and exalt him aboue all for euer.",
-            "NABRE": "Spirits and souls of the just, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Spirits and souls of the just, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Spirits and souls of the just bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1106,7 +1175,8 @@
           "text": {
             "NRSV": "“Bless the Lord, you who are holy and humble in heart; sing praise to him and highly exalt him forever.”",
             "KJV": "O ye holy and humble men of heart, blesse ye the Lord: praise and exalt him aboue all for euer.",
-            "NABRE": "Holy and humble of heart, bless the Lord; praise and exalt him above all forever."
+            "NABRE": "Holy and humble of heart, bless the Lord; praise and exalt him above all forever.",
+            "DRB": "Holy and humble of heart bless ye our Lord: praise and superexalt him for ever."
           }
         },
         {
@@ -1114,7 +1184,8 @@
           "text": {
             "NRSV": "“Bless the Lord, Hananiah, Azariah, and Mishael; sing praise to him and highly exalt him forever. For he has rescued us from Hades and saved us from the power of death, and delivered us from the midst of the burning fiery furnace; from the midst of the fire he has delivered us.”",
             "KJV": "O Ananias, Azarias, and Misael, blesse ye the Lord, praise and exalt him aboue all for euer: for hee hath deliuered vs from hell, and saued vs from the hand of death, and deliuered vs out of the mids of the furnace,  burning flame: euen out of the mids of the fire hath he deliuered vs.",
-            "NABRE": "Hananiah, Azariah, Mishael, bless the Lord; praise and exalt him above all forever. For he has delivered us from Sheol, and saved us from the power of death; He has freed us from the raging flame and delivered us from the fire."
+            "NABRE": "Hananiah, Azariah, Mishael, bless the Lord; praise and exalt him above all forever. For he has delivered us from Sheol, and saved us from the power of death; He has freed us from the raging flame and delivered us from the fire.",
+            "DRB": "Ananias, Azarias, and Misael, bless ye our Lord: praise and superexalt him for ever. Because he hath delivered us from hell, and saved us out of the hand of death, and delivered us out of the midst of the burning flame, and out of the midst of the fire hath he rid us."
           }
         },
         {
@@ -1122,7 +1193,8 @@
           "text": {
             "NRSV": "“Give thanks to the Lord, for he is good, for his mercy endures forever.”",
             "KJV": "O giue thanks vnto the Lord, because he is gracious: for his mercie endureth for euer.",
-            "NABRE": "Give thanks to the Lord, who is good, whose mercy endures forever."
+            "NABRE": "Give thanks to the Lord, who is good, whose mercy endures forever.",
+            "DRB": "Confess ye to our Lord, because he is good: because his mercy is for ever."
           }
         },
         {
@@ -1130,7 +1202,8 @@
           "text": {
             "NRSV": "“All who worship the Lord, bless the God of gods, sing praise to him and give thanks to him, for his mercy endures forever.”",
             "KJV": "O all ye that worship the Lord, blesse the God of gods, praise him, and giue him thankes: for his mercie endureth for euer.",
-            "NABRE": "Bless the God of gods, all you who fear the Lord; praise and give thanks, for his mercy endures forever.”"
+            "NABRE": "Bless the God of gods, all you who fear the Lord; praise and give thanks, for his mercy endures forever.”",
+            "DRB": "All religious bless ye our Lord the God of gods: praise and confess ye to him, because his mercy is unto all worlds."
           }
         },
         {
@@ -2773,7 +2846,8 @@
           "text": {
             "NRSV": "There was a man living in Babylon whose name was Joakim.",
             "KJV": "There dwelt a man in Babylon, called Ioacim.",
-            "NABRE": "III. Appendix: Susanna, Bel, and the Dragon Chapter 13 Susanna. In Babylon there lived a man named Joakim,"
+            "NABRE": "III. Appendix: Susanna, Bel, and the Dragon Chapter 13 Susanna. In Babylon there lived a man named Joakim,",
+            "DRB": "And there was a man dwelling in Babylon, and his name Joakim:"
           }
         },
         {
@@ -2781,7 +2855,8 @@
           "text": {
             "NRSV": "He had married the daughter of Hilkiah, named Susanna, a very beautiful woman and one who feared the Lord.",
             "KJV": "And hee tooke a wife, whose name was Susanna, the daughter of Chelcias, a very faire woman, and one that feared the Lord.",
-            "NABRE": "who married a very beautiful and God-fearing woman, Susanna, the daughter of Hilkiah;"
+            "NABRE": "who married a very beautiful and God-fearing woman, Susanna, the daughter of Hilkiah;",
+            "DRB": "& he took a wife named Susanna, the daughter of Helcias exceeding fair, and fearing God."
           }
         },
         {
@@ -2789,7 +2864,8 @@
           "text": {
             "NRSV": "Her parents were righteous, and had trained their daughter according to the law of Moses.",
             "KJV": "Her parents also were righteous, and taught their daughter according to the Law of Moses.",
-            "NABRE": "her parents were righteous and had trained their daughter according to the law of Moses."
+            "NABRE": "her parents were righteous and had trained their daughter according to the law of Moses.",
+            "DRB": "For her parents being just, instructed their daughter according to the law of Moyses."
           }
         },
         {
@@ -2797,7 +2873,8 @@
           "text": {
             "NRSV": "Joakim was very rich, and had a fine garden adjoining his house; the Judeans used to come to him because he was the most honored of them all.",
             "KJV": "Now Ioacim was a great rich man, and had a faire garden ioyning vnto his house, and to him resorted the Iewes: because he was more honourable then all others.",
-            "NABRE": "Joakim was very rich and he had a garden near his house. The Jews had recourse to him often because he was the most respected of them all."
+            "NABRE": "Joakim was very rich and he had a garden near his house. The Jews had recourse to him often because he was the most respected of them all.",
+            "DRB": "And Joakim was very rich, and he had an orchard near unto his house: and to him the Jews resorted together, because he was the more honorable of all."
           }
         },
         {
@@ -2805,7 +2882,8 @@
           "text": {
             "NRSV": "That year two elders from the people were appointed as judges. Concerning them the Lord had said: “Wickedness has come forth from Babylon, from elders who were judges, who were supposed to guide the people.”",
             "KJV": "The same yeere were appointed two of the Ancients of the people to be iudges, such as the Lord spake of, that wickednesse came from Babylon from ancient iudges, who seemed to gouerne the people.",
-            "NABRE": "That year, two elders of the people were appointed judges, of whom the Lord said, “Lawlessness has come out of Babylon, that is, from the elders who were to govern the people as judges.”"
+            "NABRE": "That year, two elders of the people were appointed judges, of whom the Lord said, “Lawlessness has come out of Babylon, that is, from the elders who were to govern the people as judges.”",
+            "DRB": "And there were two ancients appointed judges in that year, of whom our Lord spake: That iniquities came out of Babylon from the senior judges, that seemed to rule the people."
           }
         },
         {
@@ -2813,7 +2891,8 @@
           "text": {
             "NRSV": "These men were frequently at Joakim’s house, and all who had a case to be tried came to them there.",
             "KJV": "These kept much at Ioacims house: and all that had any suits in lawe, came vnto them.",
-            "NABRE": "These men, to whom all brought their cases, frequented the house of Joakim."
+            "NABRE": "These men, to whom all brought their cases, frequented the house of Joakim.",
+            "DRB": "These frequented the house of Joakim, and all that had judgements came to them."
           }
         },
         {
@@ -2821,7 +2900,8 @@
           "text": {
             "NRSV": "When the people left at noon, Susanna would go into her husband’s garden to walk.",
             "KJV": "Now when the people departed away at noone, Susanna went into her husbands garden to walke.",
-            "NABRE": "When the people left at noon, Susanna used to enter her husband’s garden for a walk."
+            "NABRE": "When the people left at noon, Susanna used to enter her husband’s garden for a walk.",
+            "DRB": "And when the people returned at noon, Susanna went in, and walked in her husband's orchard."
           }
         },
         {
@@ -2829,7 +2909,8 @@
           "text": {
             "NRSV": "Every day the two elders used to see her, going in and walking about, and they began to lust for her.",
             "KJV": "And the two Elders saw her going in euery day and walking: so that their lust was inflamed toward her.",
-            "NABRE": "When the elders saw her enter every day for her walk, they began to lust for her."
+            "NABRE": "When the elders saw her enter every day for her walk, they began to lust for her.",
+            "DRB": "and the ancients saw her daily going in, and walking: and they were inflamed to the concupiscence of her:"
           }
         },
         {
@@ -2837,7 +2918,8 @@
           "text": {
             "NRSV": "They perverted their minds and turned away their eyes from looking to heaven or remembering righteous judgments.",
             "KJV": "And they peruerted their owne mind, and turned away their eyes, that they might not looke vnto heauen, nor remember iust iudgements.",
-            "NABRE": "They perverted their thinking; they would not allow their eyes to look to heaven, and did not keep in mind just judgments."
+            "NABRE": "They perverted their thinking; they would not allow their eyes to look to heaven, and did not keep in mind just judgments.",
+            "DRB": "and they subverted their sense, and declined their eyes that they would not see heaven, nor remember just judgements."
           }
         },
         {
@@ -2845,7 +2927,8 @@
           "text": {
             "NRSV": "Both were overwhelmed with passion for her, but they did not tell each other of their distress,",
             "KJV": "And albeit they both were wounded with her loue: yet durst not one shew another his griefe.",
-            "NABRE": "Though both were enamored of her, they did not tell each other their trouble,"
+            "NABRE": "Though both were enamored of her, they did not tell each other their trouble,",
+            "DRB": "They were both therefore wounded with the love of her, neither did they shew their grief one to the other:"
           }
         },
         {
@@ -2853,7 +2936,8 @@
           "text": {
             "NRSV": "for they were ashamed to confess their lust and their desire to have sex with her.",
             "KJV": "For they were ashamed to declare their lust, that they desired to haue to doe with her.",
-            "NABRE": "for they were ashamed to reveal their lustful desire to have her."
+            "NABRE": "for they were ashamed to reveal their lustful desire to have her.",
+            "DRB": "for they were ashamed to shew one another their concupiscence, being desirous to lie with her:"
           }
         },
         {
@@ -2861,7 +2945,8 @@
           "text": {
             "NRSV": "Day after day they watched eagerly to see her.",
             "KJV": "Yet they watched diligently from day to day to see her.",
-            "NABRE": "Day by day they watched eagerly for her."
+            "NABRE": "Day by day they watched eagerly for her.",
+            "DRB": "and they watched every day carefully to see her. And one said to the other:"
           }
         },
         {
@@ -2869,7 +2954,8 @@
           "text": {
             "NRSV": "One day they said to each other, “Let us go home, for it is time for lunch.” So they both left and parted from each other.",
             "KJV": "And the one said to the other, Let vs now goe home: for it is dinner time.",
-            "NABRE": "One day they said to each other, “Let us be off for home, it is time for the noon meal.” So they went their separate ways."
+            "NABRE": "One day they said to each other, “Let us be off for home, it is time for the noon meal.” So they went their separate ways.",
+            "DRB": "Let us go home, because it is the hour of dinner. And going forth they departed one from another."
           }
         },
         {
@@ -2877,7 +2963,8 @@
           "text": {
             "NRSV": "But turning back, they met again; and when each questioned the other as to the reason, they confessed their lust. Then they agreed on a time when they could find her alone.",
             "KJV": "So when they were gone out, they parted the one from the other, and turning backe againe they came to the same place, and after that they had asked one another the cause, they acknowledged their lust: then appointed they a time both together, when they might find her alone.",
-            "NABRE": "But both turned back and arrived at the same spot. When they asked each other the reason, they admitted their lust, and then they agreed to look for an occasion when they could find her alone."
+            "NABRE": "But both turned back and arrived at the same spot. When they asked each other the reason, they admitted their lust, and then they agreed to look for an occasion when they could find her alone.",
+            "DRB": "And when they were returned, they came into one place: and asking of each other the cause, they confessed their concupiscence: and then in commune they appointed a time, when they might find her alone."
           }
         },
         {
@@ -2885,7 +2972,8 @@
           "text": {
             "NRSV": "While they were waiting for an opportune day, she went in as before with only two maids, and began to bathe in the garden, for it was a hot day.",
             "KJV": "And it fell out as they watched a fit time, she went in as before, with two maids onely, and she was desirous to wash her selfe in the garden: for it was hot.",
-            "NABRE": "One day, while they were waiting for the right moment, she entered as usual, with two maids only, wanting to bathe in the garden, for the weather was warm."
+            "NABRE": "One day, while they were waiting for the right moment, she entered as usual, with two maids only, wanting to bathe in the garden, for the weather was warm.",
+            "DRB": "And it came to pass, when they observed a fit day, she went in on a time as yesterday and the day before, with two maids only, & would be washed in the orchard: for it was an hot season."
           }
         },
         {
@@ -2893,7 +2981,8 @@
           "text": {
             "NRSV": "No one was there except the two elders, who had hidden themselves and were watching her.",
             "KJV": "And there was no body there saue the two Elders, that had hid themselues, and watched her.",
-            "NABRE": "Nobody else was there except the two elders, who had hidden themselves and were watching her."
+            "NABRE": "Nobody else was there except the two elders, who had hidden themselves and were watching her.",
+            "DRB": "And there was none there, but the two ancients hid, & beholding her."
           }
         },
         {
@@ -2901,7 +2990,8 @@
           "text": {
             "NRSV": "She said to her maids, “Bring me olive oil and ointments, and shut the garden doors so that I can bathe.”",
             "KJV": "Then she said to her maids, Bring me oile and washing bals, and shut the garden doores, that I may wash me.",
-            "NABRE": "“Bring me oil and soap,” she said to the maids, “and shut the garden gates while I bathe.”"
+            "NABRE": "“Bring me oil and soap,” she said to the maids, “and shut the garden gates while I bathe.”",
+            "DRB": "She therefore said to the maids: Fetch me oil, and washing balls, and shut the doors of the orchard, that I may be washed."
           }
         },
         {
@@ -2909,7 +2999,8 @@
           "text": {
             "NRSV": "They did as she said: they shut the garden doors and went out by the side doors to bring what they had been commanded; they did not see the elders, for they were hidden.",
             "KJV": "And they did as she bad them, and shut the garden doores, and went out themselues at priuie doores to fetch the things that she had commaunded them: but they saw not the Elders, because they were hid.",
-            "NABRE": "They did as she said; they shut the garden gates and left by the side gate to fetch what she had ordered, unaware that the elders were hidden inside."
+            "NABRE": "They did as she said; they shut the garden gates and left by the side gate to fetch what she had ordered, unaware that the elders were hidden inside.",
+            "DRB": "And they did as she had commanded: and they shut the doors of the orchard, and went out by a back door to fetch the thing that she had commanded; and they knew not that the ancients were hid within."
           }
         },
         {
@@ -2917,7 +3008,8 @@
           "text": {
             "NRSV": "As soon as the maids had gone out, the two elders got up and ran to her.",
             "KJV": "Now when the maids were gone forth, the two Elders rose vp, and ran vnto her, saying,",
-            "NABRE": "As soon as the maids had left, the two old men got up and ran to her."
+            "NABRE": "As soon as the maids had left, the two old men got up and ran to her.",
+            "DRB": "But when the maids were gone forth, the two ancients arose, and ran to her, and said:"
           }
         },
         {
@@ -2925,7 +3017,8 @@
           "text": {
             "NRSV": "They said, “Look, the garden doors are shut, and no one can see us. We are burning with lust for you; so give your consent, and lie with us.”",
             "KJV": "Behold, the garden doores are shut, that no man can see vs, and we are in loue with thee: therefore consent vnto vs, and lie with vs.",
-            "NABRE": "“Look,” they said, “the garden doors are shut, no one can see us, and we want you. So give in to our desire, and lie with us."
+            "NABRE": "“Look,” they said, “the garden doors are shut, no one can see us, and we want you. So give in to our desire, and lie with us.",
+            "DRB": "Lo the doors of the orchard be shut, and nobody seeth us, and we are in the concupiscence of thee: wherefore consent to us, and lie with us."
           }
         },
         {
@@ -2933,7 +3026,8 @@
           "text": {
             "NRSV": "“If you refuse, we will testify against you that a young man was with you, and that was why you sent your maids away.”",
             "KJV": "If thou wilt not, we will beare witnesse against thee, that a young man was with thee: and therefore thou didst send away thy maides from thee.",
-            "NABRE": "If you refuse, we will testify against you that a young man was here with you and that is why you sent your maids away.”"
+            "NABRE": "If you refuse, we will testify against you that a young man was here with you and that is why you sent your maids away.”",
+            "DRB": "and if thou wilt not, we will give testimony against thee, that there was a young man with thee, and for this cause thou didst send out thy maids from thee."
           }
         },
         {
@@ -2941,7 +3035,8 @@
           "text": {
             "NRSV": "Susanna groaned and said, “I am hemmed in on every side. For if I do this thing, it is death for me; and if I do not, I shall not escape your hands.”",
             "KJV": "Then Susanna sighed and said, I am straited on euery side: for if I doe this thing, it is death vnto me: and if I doe it not, I cannot escape your hands.",
-            "NABRE": "“I am completely trapped,” Susanna groaned. “If I yield, it will be my death; if I refuse, I cannot escape your power."
+            "NABRE": "“I am completely trapped,” Susanna groaned. “If I yield, it will be my death; if I refuse, I cannot escape your power.",
+            "DRB": "Susanna sighed, and said: Perplexities are to me on every side: for if I shall do this, it is death to me: and if I do it not, I shall not escape your hands."
           }
         },
         {
@@ -2949,7 +3044,8 @@
           "text": {
             "NRSV": "“It is better for me to fall into your hands without doing it than to sin in the sight of the Lord.”",
             "KJV": "It is better for me to fall into your hands, and not doe it: then to sinne in the sight of the Lord.",
-            "NABRE": "Yet it is better for me not to do it and to fall into your power than to sin before the Lord.”"
+            "NABRE": "Yet it is better for me not to do it and to fall into your power than to sin before the Lord.”",
+            "DRB": "But it is better for me without the act to fall into your hands, than to sin in the sight of our Lord."
           }
         },
         {
@@ -2957,7 +3053,8 @@
           "text": {
             "NRSV": "Then Susanna cried out with a loud voice, and the two elders shouted against her.",
             "KJV": "With that Susanna cried with a loud voice: and the two Elders cried out against her.",
-            "NABRE": "Then Susanna screamed, and the two old men also shouted at her,"
+            "NABRE": "Then Susanna screamed, and the two old men also shouted at her,",
+            "DRB": "And Susanna cried out with a loud voice: but the ancients also cried out against her."
           }
         },
         {
@@ -2965,7 +3062,8 @@
           "text": {
             "NRSV": "And one of them ran and opened the garden doors.",
             "KJV": "Then ranne the one, and opened the garden doore.",
-            "NABRE": "as one of them ran to open the garden gates."
+            "NABRE": "as one of them ran to open the garden gates.",
+            "DRB": "And one ran to the door of the orchard, and opened it."
           }
         },
         {
@@ -2973,7 +3071,8 @@
           "text": {
             "NRSV": "When the people in the house heard the shouting in the garden, they rushed in at the side door to see what had happened to her.",
             "KJV": "So when the seruants of the house heard the crie in the garden, they rushed in at a priuie doore to see what was done vnto her.",
-            "NABRE": "When the people in the house heard the cries from the garden, they rushed in by the side gate to see what had happened to her."
+            "NABRE": "When the people in the house heard the cries from the garden, they rushed in by the side gate to see what had happened to her.",
+            "DRB": "when the servants therefore of the house had heard the cry in the orchard, they rushed in by the back door, to see what it was."
           }
         },
         {
@@ -2981,7 +3080,8 @@
           "text": {
             "NRSV": "And when the elders told their story, the servants felt very much ashamed, for nothing like this had ever been said about Susanna.",
             "KJV": "But when the Elders had declared their matter, the seruants were greatly ashamed: for there was neuer such a report made of Susanna.",
-            "NABRE": "At the accusations of the old men, the servants felt very much ashamed, for never had any such thing been said about Susanna."
+            "NABRE": "At the accusations of the old men, the servants felt very much ashamed, for never had any such thing been said about Susanna.",
+            "DRB": "And after the ancients spake, the servants were ashamed exceedingly: because never had there been such a word said of Susanna. And the morrow came."
           }
         },
         {
@@ -2989,7 +3089,8 @@
           "text": {
             "NRSV": "The next day, when the people gathered at the house of her husband Joakim, the two elders came, full of their wicked design to put Susanna to death.",
             "KJV": "And it came to passe the next day, when the people were assembled to her husband Ioacim, the two Elders came also full of mischieuous imagination against Susanna to put her to death,",
-            "NABRE": "When the people came to her husband Joakim the next day, the two wicked old men also came, full of lawless intent to put Susanna to death."
+            "NABRE": "When the people came to her husband Joakim the next day, the two wicked old men also came, full of lawless intent to put Susanna to death.",
+            "DRB": "And when the people was come to Joakim her husband, the two ancients also came full of unjust cogitation against Susanna, to put her to death."
           }
         },
         {
@@ -2997,7 +3098,8 @@
           "text": {
             "NRSV": "In the presence of the people they said, “Send for Susanna daughter of Hilkiah, the wife of Joakim.” So they sent for her.",
             "KJV": "And said before the people, Send for Susanna, the daughter of Chelcias, Ioacims wife. And so they sent.",
-            "NABRE": "Before the people they ordered: “Send for Susanna, the daughter of Hilkiah, the wife of Joakim.” When she was sent for,"
+            "NABRE": "Before the people they ordered: “Send for Susanna, the daughter of Hilkiah, the wife of Joakim.” When she was sent for,",
+            "DRB": "And they said before the people: Send to Susanna daughter of Helcias the wife of Joakim. And forthwith they sent."
           }
         },
         {
@@ -3005,7 +3107,8 @@
           "text": {
             "NRSV": "And she came with her parents, her children, and all her kindred.",
             "KJV": "So she came with her father and mother, her children and all her kinred.",
-            "NABRE": "she came with her parents, children and all her relatives."
+            "NABRE": "she came with her parents, children and all her relatives.",
+            "DRB": "And she came with her parents, and children, and all her kin."
           }
         },
         {
@@ -3013,7 +3116,8 @@
           "text": {
             "NRSV": "Now Susanna was a woman of great refinement and beautiful in appearance.",
             "KJV": "Now Susanna was a very delicate woman and beauteous to behold.",
-            "NABRE": "Susanna, very delicate and beautiful,"
+            "NABRE": "Susanna, very delicate and beautiful,",
+            "DRB": "Moreover Susanna was exceeding delicate, and beautiful of face."
           }
         },
         {
@@ -3021,7 +3125,8 @@
           "text": {
             "NRSV": "As she was veiled, the scoundrels ordered her to be unveiled, so that they might feast their eyes on her beauty.",
             "KJV": "And these wicked men commanded to vncouer her face (for she was couered) that they might be filled with her beautie.",
-            "NABRE": "was veiled; but those transgressors of the law ordered that she be exposed so as to sate themselves with her beauty."
+            "NABRE": "was veiled; but those transgressors of the law ordered that she be exposed so as to sate themselves with her beauty.",
+            "DRB": "But those wicked men commanded that she should be uncovered (for she was covered) that so at least they might be satisfied with her beauty."
           }
         },
         {
@@ -3029,7 +3134,8 @@
           "text": {
             "NRSV": "Those who were with her and all who saw her were weeping.",
             "KJV": "Therefore her friends, and all that saw her, wept.",
-            "NABRE": "All her companions and the onlookers were weeping."
+            "NABRE": "All her companions and the onlookers were weeping.",
+            "DRB": "Her friends therefore wept, & all that had known her."
           }
         },
         {
@@ -3037,7 +3143,8 @@
           "text": {
             "NRSV": "Then the two elders stood up in the midst of the people and laid their hands on her head.",
             "KJV": "Then the two Elders stood vp in the mids of the people, and laid their hands vpon her head.",
-            "NABRE": "In the midst of the people the two old men rose up and laid their hands on her head."
+            "NABRE": "In the midst of the people the two old men rose up and laid their hands on her head.",
+            "DRB": "But the two ancients rising up in the midst of the people, laid their hands upon her head."
           }
         },
         {
@@ -3045,7 +3152,8 @@
           "text": {
             "NRSV": "And she, weeping, looked up toward heaven, for her heart trusted in the Lord.",
             "KJV": "And she weeping looked vp towards heauen: for her heart trusted in the Lord.",
-            "NABRE": "As she wept she looked up to heaven, for she trusted in the Lord wholeheartedly."
+            "NABRE": "As she wept she looked up to heaven, for she trusted in the Lord wholeheartedly.",
+            "DRB": "Who weeping looked up to heaven, for her heart had confidence in our Lord."
           }
         },
         {
@@ -3053,7 +3161,8 @@
           "text": {
             "NRSV": "The elders said, “While we were walking in the garden alone, this woman came in with two maids, shut the garden doors, and sent the maids away.”",
             "KJV": "And the Elders said, As we walked in the garden alone, this woman came in, with two maides, and shut the garden doores, & sent the maides away.",
-            "NABRE": "The old men said, “As we were walking in the garden alone, this woman entered with two servant girls, shut the garden gates and sent the servant girls away."
+            "NABRE": "The old men said, “As we were walking in the garden alone, this woman entered with two servant girls, shut the garden gates and sent the servant girls away.",
+            "DRB": "And the ancients said: When we walked alone in the orchard, this woman came in with two maids, and shut the doors of the orchard: and she sent away the maids from her."
           }
         },
         {
@@ -3061,7 +3170,8 @@
           "text": {
             "NRSV": "“Then a young man, who was hidden there, came to her and lay with her.”",
             "KJV": "Then a young man who there was hid, came vnto her & lay with her.",
-            "NABRE": "A young man, who was hidden there, came and lay with her."
+            "NABRE": "A young man, who was hidden there, came and lay with her.",
+            "DRB": "And a young man that was hid came to her, and lay with her."
           }
         },
         {
@@ -3069,7 +3179,8 @@
           "text": {
             "NRSV": "“We were in a corner of the garden, and when we saw this wickedness we ran to them.”",
             "KJV": "Then we that stood in a corner of the garden, seeing this wickednesse, ran vnto them.",
-            "NABRE": "When we, in a corner of the garden, saw this lawlessness, we ran toward them."
+            "NABRE": "When we, in a corner of the garden, saw this lawlessness, we ran toward them.",
+            "DRB": "But we being in a corner of the orchard, seeing the iniquity, ran to them, and saw them lie together."
           }
         },
         {
@@ -3077,7 +3188,8 @@
           "text": {
             "NRSV": "“Although we saw them embracing, we could not hold the man, because he was stronger than we, and he opened the doors and got away.”",
             "KJV": "And when we saw them together, the man we could not hold: for he was stronger then we, and opened the doore, and leaped out.",
-            "NABRE": "We saw them lying together, but the man we could not hold, because he was stronger than we; he opened the gates and ran off."
+            "NABRE": "We saw them lying together, but the man we could not hold, because he was stronger than we; he opened the gates and ran off.",
+            "DRB": "And him indeed we could not take, because he was stronger than we, and opening the doors he lept out:"
           }
         },
         {
@@ -3085,7 +3197,8 @@
           "text": {
             "NRSV": "“But we seized this woman and asked her who the young man was, but she would not tell us. These things we testify.”",
             "KJV": "But hauing taken this woman, we asked who the young man was: but she would not tell vs: these things doe we testifie.",
-            "NABRE": "Then we seized this one and asked who the young man was,"
+            "NABRE": "Then we seized this one and asked who the young man was,",
+            "DRB": "but her when we apprehended, we asked what youngman it was, and she would not tell us, of this thing we are witnesses."
           }
         },
         {
@@ -3093,7 +3206,8 @@
           "text": {
             "NRSV": "The assembly believed them, because they were elders of the people and judges; and they condemned her to death.",
             "KJV": "Then the assembly beleeued them, as those that were the Elders and Iudges of the people: so they condemned her to death.",
-            "NABRE": "but she refused to tell us. We testify to this.” The assembly believed them, since they were elders and judges of the people, and they condemned her to death."
+            "NABRE": "but she refused to tell us. We testify to this.” The assembly believed them, since they were elders and judges of the people, and they condemned her to death.",
+            "DRB": "The multitude believed them as the ancients and the judges of the people, and they condemned her to death."
           }
         },
         {
@@ -3101,7 +3215,8 @@
           "text": {
             "NRSV": "Then Susanna cried out with a loud voice, and said, “O eternal God, you know what is secret and are aware of all things before they come to be!”",
             "KJV": "Then Susanna cried out with a loud voice and said: O euerlasting God that knowest the secrets, and knowest all things before they be:",
-            "NABRE": "But Susanna cried aloud: “Eternal God, you know what is hidden and are aware of all things before they come to be:"
+            "NABRE": "But Susanna cried aloud: “Eternal God, you know what is hidden and are aware of all things before they come to be:",
+            "DRB": "But Susanna cried out with a loud voice, and said: Eternal God, which art the knower of hidden things before they come to pass,"
           }
         },
         {
@@ -3109,7 +3224,8 @@
           "text": {
             "NRSV": "“You know that these men have borne false witness against me. And now I am to die, though I have done none of the things that they have wickedly invented against me.”",
             "KJV": "Thou knowest that they haue borne false witnesse against me, and behold I must die: whereas I neuer did such things, as these men haue maliciously inuented against me.",
-            "NABRE": "you know that they have testified falsely against me. Here I am about to die, though I have done none of the things for which these men have condemned me.”"
+            "NABRE": "you know that they have testified falsely against me. Here I am about to die, though I have done none of the things for which these men have condemned me.”",
+            "DRB": "thou knowest that they have borne false witness against me: and lo I die, whereas I have done none of these things, which these men have maliciously forged against me."
           }
         },
         {
@@ -3117,7 +3233,8 @@
           "text": {
             "NRSV": "The Lord heard her cry.",
             "KJV": "And the Lord heard her voice.",
-            "NABRE": "The Lord heard her prayer."
+            "NABRE": "The Lord heard her prayer.",
+            "DRB": "And our Lord heard her voice."
           }
         },
         {
@@ -3125,7 +3242,8 @@
           "text": {
             "NRSV": "As she was being led off to execution, God stirred up the holy spirit of a young lad named Daniel;",
             "KJV": "Therefore when she was led to be put to death: the Lord raised vp the holy spirit of a young youth, whose name was Daniel,",
-            "NABRE": "As she was being led to execution, God stirred up the holy spirit of a young boy named Daniel,"
+            "NABRE": "As she was being led to execution, God stirred up the holy spirit of a young boy named Daniel,",
+            "DRB": "and when she was led to death, our Lord raised up the holy spirit of a young boy, whose name was Daniel:"
           }
         },
         {
@@ -3133,7 +3251,8 @@
           "text": {
             "NRSV": "and he shouted with a loud voice, “I am innocent of the blood of this woman!”",
             "KJV": "Who cried with a loud voice: I am cleare fr&#333; the blood of this woman.",
-            "NABRE": "and he cried aloud: “I am innocent of this woman’s blood.”"
+            "NABRE": "and he cried aloud: “I am innocent of this woman’s blood.”",
+            "DRB": "and he cried out with a loud voice: I am clean from the blood of this woman."
           }
         },
         {
@@ -3141,7 +3260,8 @@
           "text": {
             "NRSV": "All the people turned to him and asked, “What is this you are saying?”",
             "KJV": "Then all the people turned them towards him, & said: what meane these words that thou hast spoken?",
-            "NABRE": "All the people turned and asked him, “What are you saying?”"
+            "NABRE": "All the people turned and asked him, “What are you saying?”",
+            "DRB": "And all the people turning to him, said: What is this word, that thou hast spoken?"
           }
         },
         {
@@ -3149,7 +3269,8 @@
           "text": {
             "NRSV": "Taking his stand in the middle of them, he said, “Are you such fools, O Israelites, as to condemn a daughter of Israel without examination and without learning the facts?”",
             "KJV": "So he standing in the mids of them, said, Are ye such fooles ye sonnes of Israel, that without examination or knowledge of the truth, ye haue condemned a daughter of Israel?",
-            "NABRE": "He stood in their midst and said, “Are you such fools, you Israelites, to condemn a daughter of Israel without investigation and without clear evidence?"
+            "NABRE": "He stood in their midst and said, “Are you such fools, you Israelites, to condemn a daughter of Israel without investigation and without clear evidence?",
+            "DRB": "Who when he stood in the midst of them, said: So foolish ye children of Israel, not judging, nor discerning that which is the truth, have you condemned the daughter of Israel?"
           }
         },
         {
@@ -3157,7 +3278,8 @@
           "text": {
             "NRSV": "“Return to court, for these men have borne false witness against her.”",
             "KJV": "Returne againe to the place of iudgement: for they haue borne false witnesse against her",
-            "NABRE": "Return to court, for they have testified falsely against her.”"
+            "NABRE": "Return to court, for they have testified falsely against her.”",
+            "DRB": "Return ye to judgement, because they have spoken false testimony against her."
           }
         },
         {
@@ -3165,7 +3287,8 @@
           "text": {
             "NRSV": "So all the people hurried back. And the rest of the elders said to him, “Come, sit among us and inform us, for God has given you the standing of an elder.”",
             "KJV": "Wherefore all the people turned againe in hast, and the Elders said vnto him, Come sit downe among vs, and shew it vs, seeing God hath giuen thee the honour of an Elder.",
-            "NABRE": "Then all the people returned in haste. To Daniel the elders said, “Come, sit with us and inform us, since God has given you the prestige of old age.”"
+            "NABRE": "Then all the people returned in haste. To Daniel the elders said, “Come, sit with us and inform us, since God has given you the prestige of old age.”",
+            "DRB": "The people therefore returned with speed, and the ancients said to him: Come, and sit in the midst of us, and tell us: because God hath given thee the honour of old age."
           }
         },
         {
@@ -3173,7 +3296,8 @@
           "text": {
             "NRSV": "Daniel said to them, “Separate them far from each other, and I will examine them.”",
             "KJV": "Then said Daniel vnto them, Put these two aside one farre from another, and I will examine them.",
-            "NABRE": "But he replied, “Separate these two far from one another, and I will examine them.”"
+            "NABRE": "But he replied, “Separate these two far from one another, and I will examine them.”",
+            "DRB": "And Daniel said to the people: Separate them far one from another, and I will discover them."
           }
         },
         {
@@ -3181,7 +3305,8 @@
           "text": {
             "NRSV": "When they were separated from each other, he summoned one of them and said to him, “You old relic of wicked days, your sins have now come home, which you have committed in the past,”",
             "KJV": "So when they were put asunder one from another, hee called one of them, and said vnto him, O thou that art waxen old in wickednesse: now thy sinnes which thou hast committed aforetime, are come",
-            "NABRE": "After they were separated from each other, he called one of them and said: “How you have grown evil with age! Now have your past sins come to term:"
+            "NABRE": "After they were separated from each other, he called one of them and said: “How you have grown evil with age! Now have your past sins come to term:",
+            "DRB": "When they were therefore divided one from the other, he called one of them, and said to him: O thou inveterated of evil days, now are thy sins come, which thou didst commit before:"
           }
         },
         {
@@ -3189,7 +3314,8 @@
           "text": {
             "NRSV": "“pronouncing unjust judgments, condemning the innocent and letting the guilty go free, though the Lord said, ‘You shall not put an innocent and righteous person to death.’”",
             "KJV": "For thou hast pronounced false iudgement, and hast condemned the innocent, and hast let the guiltie goe free, albeit the Lord saith, The innocent and righteous shalt thou not slay.",
-            "NABRE": "passing unjust sentences, condemning the innocent, and freeing the guilty, although the Lord says, ‘The innocent and the just you shall not put to death.’"
+            "NABRE": "passing unjust sentences, condemning the innocent, and freeing the guilty, although the Lord says, ‘The innocent and the just you shall not put to death.’",
+            "DRB": "judging unjust judgements, oppressing innocents, and dismissing offenders, our Lord saying: The innocent and the just thou shalt not kill."
           }
         },
         {
@@ -3197,7 +3323,8 @@
           "text": {
             "NRSV": "“Now then, if you really saw this woman, tell me this: Under what tree did you see them being intimate with each other?” He answered, “Under a mastic tree.”",
             "KJV": "Now then if thou hast seene her: tell me, Under what tree sawest thou them companying together? who answered, Under a masticke tree.",
-            "NABRE": "Now, then, if you were a witness, tell me under what tree you saw them together.”"
+            "NABRE": "Now, then, if you were a witness, tell me under what tree you saw them together.”",
+            "DRB": "Now then if thou sawest her, tell under what tree thou sawest them talking together. Who said: Under a schine tree."
           }
         },
         {
@@ -3205,7 +3332,8 @@
           "text": {
             "NRSV": "And Daniel said, “Very well! This lie has cost you your head, for the angel of God has received the sentence from God and will immediately cut you in two.”",
             "KJV": "And Daniel said, Uery wel; Thou hast lied against thine owne head: for euen now the Angel of God hath receiued the sentence of God, to cut thee in two.",
-            "NABRE": "“Under a mastic tree,” he answered. “Your fine lie has cost you your head,” said Daniel; “for the angel of God has already received the sentence from God and shall split you in two.”"
+            "NABRE": "“Under a mastic tree,” he answered. “Your fine lie has cost you your head,” said Daniel; “for the angel of God has already received the sentence from God and shall split you in two.”",
+            "DRB": "And Daniel said: Well hast thou lied against thine own head: for behold the Angel of God taking the sentence of him, shall cut thee in the midst."
           }
         },
         {
@@ -3213,7 +3341,8 @@
           "text": {
             "NRSV": "Then, putting him to one side, he ordered them to bring the other. And he said to him, “You offspring of Canaan and not of Judah, beauty has beguiled you and lust has perverted your heart.”",
             "KJV": "So hee put him aside, and commanded to bring the other, & said vnto him, O thou seed of Chanaan, and not of Iuda, beauty hath deceiued thee, and lust hath peruerted thine heart.",
-            "NABRE": "Putting him to one side, he ordered the other one to be brought. “Offspring of Canaan, not of Judah,” Daniel said to him, “beauty has seduced you, lust has perverted your heart."
+            "NABRE": "Putting him to one side, he ordered the other one to be brought. “Offspring of Canaan, not of Judah,” Daniel said to him, “beauty has seduced you, lust has perverted your heart.",
+            "DRB": "And removing him away, he commanded that the other should come, and he said to him: Seed of Chanaan, and not of Juda, beauty hath deceived thee, and concupiscence hath subverted thy heart:"
           }
         },
         {
@@ -3221,7 +3350,8 @@
           "text": {
             "NRSV": "“This is how you have been treating the daughters of Israel, and they were intimate with you through fear; but a daughter of Judah would not tolerate your wickedness.”",
             "KJV": "Thus haue yee dealt with the daughters of Israel, and they for feare companied with you: but the daughter of Iuda would not abide your wickednesse.",
-            "NABRE": "This is how you acted with the daughters of Israel, and in their fear they yielded to you; but a daughter of Judah did not tolerate your lawlessness."
+            "NABRE": "This is how you acted with the daughters of Israel, and in their fear they yielded to you; but a daughter of Judah did not tolerate your lawlessness.",
+            "DRB": "so did you to the daughters of Israel, and they fearing spake to you: but the daughter of Juda did not abide your iniquity."
           }
         },
         {
@@ -3229,7 +3359,8 @@
           "text": {
             "NRSV": "“Now then, tell me: Under what tree did you catch them being intimate with each other?” He answered, “Under an evergreen oak.”",
             "KJV": "Now therefore tell mee, Under what tree didst thou take them companying together? who answered, Under a holme tree.",
-            "NABRE": "Now, then, tell me under what tree you surprised them together.”"
+            "NABRE": "Now, then, tell me under what tree you surprised them together.”",
+            "DRB": "Now therefore tell me, under what tree thou tookest them speaking one to another. Who said: Under a prine tree."
           }
         },
         {
@@ -3237,7 +3368,8 @@
           "text": {
             "NRSV": "Daniel said to him, “Very well! This lie has also cost you your head, for the angel of God is waiting with his sword to split you in two, so as to destroy you both.”",
             "KJV": "Then said Daniel vnto him, Well: thou hast also lied against thine owne head: for the Angel of God waiteth with the sword to cut thee in two, that he may destroy you.",
-            "NABRE": "“Under an oak,” he said. “Your fine lie has cost you also your head,” said Daniel; “for the angel of God waits with a sword to cut you in two so as to destroy you both.”"
+            "NABRE": "“Under an oak,” he said. “Your fine lie has cost you also your head,” said Daniel; “for the angel of God waits with a sword to cut you in two so as to destroy you both.”",
+            "DRB": "And Daniel said to him: Well hast thou also lied against thine own head: for the Angel of our Lord tarrieth, having a sword, that he may cut thee in the midst, and kill you."
           }
         },
         {
@@ -3245,7 +3377,8 @@
           "text": {
             "NRSV": "Then the whole assembly raised a great shout and blessed God, who saves those who hope in him.",
             "KJV": "With that all the assembly cried out with a lowd voice, and praised God who saueth them that trust in him.",
-            "NABRE": "The whole assembly cried aloud, blessing God who saves those who hope in him."
+            "NABRE": "The whole assembly cried aloud, blessing God who saves those who hope in him.",
+            "DRB": "Therefore all the assembly cried out with a loud voice, and they blessed God, which saveth them that hope in him."
           }
         },
         {
@@ -3253,7 +3386,8 @@
           "text": {
             "NRSV": "And they rose up against the two elders, for out of their own mouths Daniel had convicted them of bearing false witness; they did to them as they had wickedly planned to do to their neighbor.",
             "KJV": "And they arose against the two Elders, (for Daniel had conuicted them of false witnesse by their owne mouth)",
-            "NABRE": "They rose up against the two old men, for by their own words Daniel had convicted them of bearing false witness. They condemned them to the fate they had planned for their neighbor:"
+            "NABRE": "They rose up against the two old men, for by their own words Daniel had convicted them of bearing false witness. They condemned them to the fate they had planned for their neighbor:",
+            "DRB": "And they rose up against the two elders (for Daniel had convinced them by their own mouth to have given false testimony) and they did to them as they had dealt naughtily against their neighbour,"
           }
         },
         {
@@ -3261,7 +3395,8 @@
           "text": {
             "NRSV": "Acting in accordance with the law of Moses, they put them to death; and innocent blood was spared that day.",
             "KJV": "And according to the Law of Moses, they did vnto them in such sort as they malitiously intended to doe to their neighbour: And they put them to death. Thus the innocent blood was saued the same day.",
-            "NABRE": "in accordance with the law of Moses they put them to death. Thus was innocent blood spared that day."
+            "NABRE": "in accordance with the law of Moses they put them to death. Thus was innocent blood spared that day.",
+            "DRB": "to do according to the law of Moyses: & they killed them, and innocent blood was saved in that day."
           }
         },
         {
@@ -3269,7 +3404,8 @@
           "text": {
             "NRSV": "Hilkiah and his wife praised God for their daughter Susanna, and so did her husband Joakim and all her kindred, because nothing shameful was found in her.",
             "KJV": "Therefore Chelcias and his wife praised God for their daughter Susanna, with Ioacim her husband, and all the kinred: because there was no dishonestie found in her.",
-            "NABRE": "Hilkiah and his wife praised God for their daughter Susanna, with Joakim her husband and all her relatives, because she was found innocent of any shameful deed."
+            "NABRE": "Hilkiah and his wife praised God for their daughter Susanna, with Joakim her husband and all her relatives, because she was found innocent of any shameful deed.",
+            "DRB": "But Helcias, and his wife praised God, for their daughter Susanna, with Joakim her husband, and all her kin, because there was no unhonest thing found in her."
           }
         },
         {
@@ -3277,7 +3413,14 @@
           "text": {
             "NRSV": "And Daniel became a great man in the eyes of the people from that day onward.",
             "KJV": "From that day foorth was Daniel had in great reputation in the sight of the people.",
-            "NABRE": "And from that day onward Daniel was greatly esteemed by the people."
+            "NABRE": "And from that day onward Daniel was greatly esteemed by the people.",
+            "DRB": "And Daniel became great in the sight of the people from that day, & thence forward."
+          }
+        },
+        {
+          "num": 65,
+          "text": {
+            "DRB": "And king Astyages was laid to his fathers, & Cyrus the Persian received his kingdom."
           }
         }
       ]
@@ -3291,7 +3434,8 @@
           "text": {
             "NRSV": "When King Astyages was laid with his ancestors, Cyrus the Persian succeeded to his kingdom.",
             "KJV": "And King Astyages was gathered to his fathers, and Cyrus of Persia receiued his kingdome.",
-            "NABRE": "Chapter 14 Bel and the Dragon. After King Astyages was gathered to his ancestors, Cyrus the Persian succeeded to his kingdom."
+            "NABRE": "Chapter 14 Bel and the Dragon. After King Astyages was gathered to his ancestors, Cyrus the Persian succeeded to his kingdom.",
+            "DRB": "And Daniel was the king's guest, and honoured above all his friends."
           }
         },
         {
@@ -3299,7 +3443,8 @@
           "text": {
             "NRSV": "Daniel was a companion of the king, and was the most honored of all his friends.",
             "KJV": "And Daniel conuersed with the king, and was honored aboue all his friends.",
-            "NABRE": "Daniel was a companion of the king and was held in higher honor than any of the Friends of the King."
+            "NABRE": "Daniel was a companion of the king and was held in higher honor than any of the Friends of the King.",
+            "DRB": "There was also an idol among the Babylonians named Bel: and there were bestowed on him every day of flour twelve arctabæs, and forty sheep, and of wine six great pots."
           }
         },
         {
@@ -3307,7 +3452,8 @@
           "text": {
             "NRSV": "Now the Babylonians had an idol called Bel, and every day they provided for it twelve bushels of choice flour and forty sheep and six measures of wine.",
             "KJV": "Now the Babylonians had an Idol called Bel, and there were spent vpon him euery day twelue great measures of fine flowre, and fourtie sheepe, and sixe vessels of wine.",
-            "NABRE": "The Babylonians had an idol called Bel, and every day they provided for it six bushels of fine flour, forty sheep, and six measures of wine."
+            "NABRE": "The Babylonians had an idol called Bel, and every day they provided for it six bushels of fine flour, forty sheep, and six measures of wine.",
+            "DRB": "The king also did worship him, and went every day to adore him: But Daniel adored his God. & the king said to him: Why dost thou not adore Bel."
           }
         },
         {
@@ -3315,7 +3461,8 @@
           "text": {
             "NRSV": "The king revered it and went every day to worship it. But Daniel worshiped his own God.",
             "KJV": "And the king worshipped it, and went daily to adore it: but Daniel worshipped his owne God. And the king said vnto him, Why doest not thou worship Bel?",
-            "NABRE": "The king revered it and went every day to worship it; but Daniel worshiped only his God."
+            "NABRE": "The king revered it and went every day to worship it; but Daniel worshiped only his God.",
+            "DRB": "Who answering, said to him: Because I worship not idols made with hand, but the living God, that created heaven, and earth, and hath power over all flesh."
           }
         },
         {
@@ -3323,7 +3470,8 @@
           "text": {
             "NRSV": "So the king said to him, “Why do you not worship Bel?” He answered, “Because I do not revere idols made with hands, but the living God, who created heaven and earth and has dominion over all living creatures.”",
             "KJV": "Who answered and said, Because I may not worship idols made with hands, but the liuing God, who hath created the heauen, and the earth, and hath soueraigntie ouer all flesh.",
-            "NABRE": "When the king asked him, “Why do you not worship Bel?” Daniel replied, “Because I do not revere idols made with hands, but only the living God who made heaven and earth and has dominion over all flesh.”"
+            "NABRE": "When the king asked him, “Why do you not worship Bel?” Daniel replied, “Because I do not revere idols made with hands, but only the living God who made heaven and earth and has dominion over all flesh.”",
+            "DRB": "And the king said to him: Doeth not Bel seem unto thee to be a living God? Seest thou not how much he eateth and drinketh every day?"
           }
         },
         {
@@ -3331,7 +3479,8 @@
           "text": {
             "NRSV": "The king said to him, “Do you not think that Bel is a living god? Do you not see how much he eats and drinks every day?”",
             "KJV": "Then saide the King vnto him, Thinkest thou not that Bel is a liuing god? seest thou not how much he eateth and drinketh euery day?",
-            "NABRE": "Then the king continued, “You do not think Bel is a living god? Do you not see how much he eats and drinks every day?”"
+            "NABRE": "Then the king continued, “You do not think Bel is a living god? Do you not see how much he eats and drinks every day?”",
+            "DRB": "And Daniel smiling said: Be not deceived o king: For this same is within of clay, and without of brass, neither hath he eaten at any time."
           }
         },
         {
@@ -3339,7 +3488,8 @@
           "text": {
             "NRSV": "Then Daniel laughed, and said to the king, “Do not be deceived, O king, for this is only clay inside and bronze outside, and it never ate or drank anything.”",
             "KJV": "Then Daniel smiled, and said, O king, be not deceiued: for this is but clay within, and brasse without, and did neuer eate or drinke any thing.",
-            "NABRE": "Daniel began to laugh. “Do not be deceived, O king,” he said; “it is only clay inside and bronze outside; it has never eaten or drunk anything.”"
+            "NABRE": "Daniel began to laugh. “Do not be deceived, O king,” he said; “it is only clay inside and bronze outside; it has never eaten or drunk anything.”",
+            "DRB": "And the king being wrath called his priests, & said to them: Unless you tell me, who it is that eateth these expenses, you shall die."
           }
         },
         {
@@ -3347,7 +3497,8 @@
           "text": {
             "NRSV": "Then the king was angry and called his priests of Bel and said to them, “If you do not tell me who is eating these provisions, you shall die.”",
             "KJV": "So the king was wroth, and called for his Priests, and said vnto them, If yee tell me not who this is that deuoureth these expenses, ye shall die.",
-            "NABRE": "Enraged, the king called his priests and said to them, “Unless you tell me who it is that consumes these provisions, you shall die. But if you can show that Bel consumes them, Daniel shall die for blaspheming Bel.”"
+            "NABRE": "Enraged, the king called his priests and said to them, “Unless you tell me who it is that consumes these provisions, you shall die. But if you can show that Bel consumes them, Daniel shall die for blaspheming Bel.”",
+            "DRB": "But if you shew, that Bel eateth these things Daniel shall die, because he hath blasphemed against Bel. And Daniel said to the king: Be it done according to thy word."
           }
         },
         {
@@ -3355,7 +3506,8 @@
           "text": {
             "NRSV": "“But if you prove that Bel is eating them, Daniel shall die, because he has spoken blasphemy against Bel.” Daniel said to the king, “Let it be done as you have said.”",
             "KJV": "But if ye can certifie me that Bel deuoureth them, then Daniel shall die: for hee hath spoken blasphemie against Bel. And Daniel sayd vnto the king, Let it be according to thy word.",
-            "NABRE": "Daniel said to the king, “Let it be as you say!” There were seventy priests of Bel, besides their wives and children."
+            "NABRE": "Daniel said to the king, “Let it be as you say!” There were seventy priests of Bel, besides their wives and children.",
+            "DRB": "And the priests of Bel were seventy, beside their wives, and little ones, & children. And the king came with Daniel into the temple of Bel."
           }
         },
         {
@@ -3363,7 +3515,8 @@
           "text": {
             "NRSV": "Now there were seventy priests of Bel, besides their wives and children. So the king went with Daniel into the temple of Bel.",
             "KJV": "(Now the Priests of Bel were threescore and tenne, beside their wiues and children) and the king went with Daniel into the temple of Bel.",
-            "NABRE": "When the king went with Daniel into the temple of Bel,"
+            "NABRE": "When the king went with Daniel into the temple of Bel,",
+            "DRB": "And the priests of Bel said: Behold we go forth: & thou o king set the meats, & mingle the wine, & shut the door, & seal it with thy ring:"
           }
         },
         {
@@ -3371,7 +3524,8 @@
           "text": {
             "NRSV": "The priests of Bel said, “See, we are now going outside; you yourself, O king, set out the food and prepare the wine, and shut the door and seal it with your signet.”",
             "KJV": "So Bels Priests said, Loe, wee goe out: but thou, O king, set on the meate, and make ready the wine, and shut the doore fast, and seale it with thine owne signet:",
-            "NABRE": "the priests of Bel said, “See, we are going to leave. You, O king, set out the food and prepare the wine; then shut the door and seal it with your ring."
+            "NABRE": "the priests of Bel said, “See, we are going to leave. You, O king, set out the food and prepare the wine; then shut the door and seal it with your ring.",
+            "DRB": "and when thou shalt come in the morning, unless thou find all eaten of Bel, dying we will die, or Daniel that hath lied against us."
           }
         },
         {
@@ -3379,7 +3533,8 @@
           "text": {
             "NRSV": "“If, when you return in the morning, you do not find that Bel has eaten it all, we will die; otherwise Daniel will, who is telling lies about us.”",
             "KJV": "And to morrow, when thou commest in, if thou findest not that Bel hath eaten vp all, wee will suffer death; or else Daniel, that speaketh falsely against vs.",
-            "NABRE": "If you do not find that Bel has eaten it all when you return in the morning, we are to die; otherwise Daniel shall die for his lies against us.”"
+            "NABRE": "If you do not find that Bel has eaten it all when you return in the morning, we are to die; otherwise Daniel shall die for his lies against us.”",
+            "DRB": "And they contemned, because they had made under the table a secret entrance, & by it they came in always, and devoured those things."
           }
         },
         {
@@ -3387,7 +3542,8 @@
           "text": {
             "NRSV": "They were unconcerned, for under the table they had made a secret entrance through which they used to go in regularly and consume the provisions.",
             "KJV": "And they little regarded it: for vnder the table they had made a priuie entrance, whereby they entred in continually, and consumed those things.",
-            "NABRE": "They were not perturbed, because under the table they had made a secret entrance through which they always came in to consume the food."
+            "NABRE": "They were not perturbed, because under the table they had made a secret entrance through which they always came in to consume the food.",
+            "DRB": "It came to pass therefore after they were gone out, the king set the meats before Bel: & Daniel commanded his servants, and they brought ashes, and he sifted them over all the temple before the king: and going forth they shut the door, and sealing it with the king's ring, they departed."
           }
         },
         {
@@ -3395,7 +3551,8 @@
           "text": {
             "NRSV": "After they had gone out, the king set out the food for Bel. Then Daniel ordered his servants to bring some ashes, and they scattered them throughout the whole temple in the presence of the king alone. Then they went out, shut the door and sealed it with the king’s signet, and departed.",
             "KJV": "So when they were gone forth, the king set meates before Bel. Now Daniel had commanded his seruants to bring ashes, and those they strewed throughout all the temple, in the presence of the king alone: then went they out and shut the doore, & sealed it with the kings signet, and so departed.",
-            "NABRE": "After they departed the king set the food before Bel, while Daniel ordered his servants to bring some ashes, which they scattered through the whole temple; the king alone was present. Then they went outside, sealed the closed door with the king’s ring, and departed."
+            "NABRE": "After they departed the king set the food before Bel, while Daniel ordered his servants to bring some ashes, which they scattered through the whole temple; the king alone was present. Then they went outside, sealed the closed door with the king’s ring, and departed.",
+            "DRB": "But the priests went in by night, according to their custom, and their wives, and their children: and they did eat, and drink all."
           }
         },
         {
@@ -3403,7 +3560,8 @@
           "text": {
             "NRSV": "During the night the priests came with their wives and children, as they were accustomed to do, and ate and drank everything.",
             "KJV": "Now in the night came the Priests with their wiues and children (as they were woont to doe) and did eate and drinke vp all.",
-            "NABRE": "The priests entered that night as usual, with their wives and children, and they ate and drank everything."
+            "NABRE": "The priests entered that night as usual, with their wives and children, and they ate and drank everything.",
+            "DRB": "And the king arose in the first break of day, and Daniel with him."
           }
         },
         {
@@ -3411,7 +3569,8 @@
           "text": {
             "NRSV": "Early in the morning the king rose and came, and Daniel with him.",
             "KJV": "In the morning betime the king arose, and Daniel with him.",
-            "NABRE": "Early the next morning, the king came with Daniel."
+            "NABRE": "Early the next morning, the king came with Daniel.",
+            "DRB": "And the king said: Are the seals safe, Daniel? Who answered: Safe o king."
           }
         },
         {
@@ -3419,7 +3578,8 @@
           "text": {
             "NRSV": "The king said, “Are the seals unbroken, Daniel?” He answered, “They are unbroken, O king.”",
             "KJV": "And the king said, Daniel, are the seales whole? And he said, Yea, O king, they be whole.",
-            "NABRE": "“Are the seals unbroken, Daniel?” he asked. And Daniel answered, “They are unbroken, O king.”"
+            "NABRE": "“Are the seals unbroken, Daniel?” he asked. And Daniel answered, “They are unbroken, O king.”",
+            "DRB": "And forthwith when he had opened the door, the king looking on the table, cried out with a loud voice: Great art thou o Bel, and there is not any deceit with thee."
           }
         },
         {
@@ -3427,7 +3587,8 @@
           "text": {
             "NRSV": "As soon as the doors were opened, the king looked at the table and shouted with a loud voice, “You are great, O Bel, and with you there is no deceit, none at all!”",
             "KJV": "And assoone as he had opened the doore, the king looked vpon the table, and cried with a loude voice, Great art thou, O Bel, and with thee is no deceit at all.",
-            "NABRE": "As soon as he had opened the door, the king looked at the table and cried aloud, “You are great, O Bel; there is no deceit in you.”"
+            "NABRE": "As soon as he had opened the door, the king looked at the table and cried aloud, “You are great, O Bel; there is no deceit in you.”",
+            "DRB": "And Daniel laughed: and he held the king that he should not go in: and he said: Behold the pavement, mark whose steps these are."
           }
         },
         {
@@ -3435,7 +3596,8 @@
           "text": {
             "NRSV": "But Daniel laughed and restrained the king from going in. “Look at the floor,” he said, “and notice whose footprints these are.”",
             "KJV": "Then laughed Daniel, and helde the king that he should not goe in, and sayd, Behold now the pauement, and marke well whose footsteps are these.",
-            "NABRE": "But Daniel laughed and kept the king from entering. He said, “Look at the floor and consider whose footprints these are.”"
+            "NABRE": "But Daniel laughed and kept the king from entering. He said, “Look at the floor and consider whose footprints these are.”",
+            "DRB": "And the king said: I see the steps of men, & women, and of infants. And the king was angry."
           }
         },
         {
@@ -3443,7 +3605,8 @@
           "text": {
             "NRSV": "The king said, “I see the footprints of men and women and children.”",
             "KJV": "And the king said, I see the footsteps of men, women and children: and then the king was angry,",
-            "NABRE": "“I see the footprints of men, women, and children!” said the king."
+            "NABRE": "“I see the footprints of men, women, and children!” said the king.",
+            "DRB": "Then apprehended he the priests, & their wives, & their children: and they shewed him secret little doors by which they came in, & consumed the things that were on the table."
           }
         },
         {
@@ -3451,7 +3614,8 @@
           "text": {
             "NRSV": "Then the king was enraged, and he arrested the priests and their wives and children; then they showed him the secret doors through which they used to go in and consume the provisions on the table.",
             "KJV": "And tooke the Priests, with their wiues and children, who shewed him the priuy doores, where they came in, and consumed such things as were vpon the table.",
-            "NABRE": "In his wrath the king arrested the priests, their wives, and their children. They showed him the secret door by which they used to enter to consume what was on the table."
+            "NABRE": "In his wrath the king arrested the priests, their wives, and their children. They showed him the secret door by which they used to enter to consume what was on the table.",
+            "DRB": "The king therefore slew them, & he delivered Bel into the power of Daniel: who overthrew him, & his temple."
           }
         },
         {
@@ -3459,7 +3623,8 @@
           "text": {
             "NRSV": "Therefore the king put them to death, and gave Bel over to Daniel, who destroyed it and its temple.",
             "KJV": "Therefore the king slewe them, and deliuered Bel into Daniels power, who destroyed him and his temple.",
-            "NABRE": "The king put them to death, and handed Bel over to Daniel, who destroyed it and its temple."
+            "NABRE": "The king put them to death, and handed Bel over to Daniel, who destroyed it and its temple.",
+            "DRB": "And there was a great dragon in that place, & the Babylonians worshipped him."
           }
         },
         {
@@ -3467,7 +3632,8 @@
           "text": {
             "NRSV": "Now in that place there was a great dragon, which the Babylonians revered.",
             "KJV": "And in that same place there was a great Dragon, which they of Babylon worshipped.",
-            "NABRE": "There was a great dragon which the Babylonians revered."
+            "NABRE": "There was a great dragon which the Babylonians revered.",
+            "DRB": "And the king said to Daniel: Lo now thou canst not say, that this same is not a living god: adore him therefore."
           }
         },
         {
@@ -3475,7 +3641,8 @@
           "text": {
             "NRSV": "The king said to Daniel, “You cannot deny that this is a living god; so worship him.”",
             "KJV": "And the king said vnto Daniel, Wilt thou also say that this is of brasse? loe, he liueth, he eateth and drinketh, thou canst not say, that he is no liuing God: therefore worship him.",
-            "NABRE": "The king said to Daniel, “You cannot deny that this is a living god, so worship it.”"
+            "NABRE": "The king said to Daniel, “You cannot deny that this is a living god, so worship it.”",
+            "DRB": "And Daniel said: The Lord my God I do adore: because he is the living God:"
           }
         },
         {
@@ -3483,7 +3650,8 @@
           "text": {
             "NRSV": "Daniel said, “I worship the Lord my God, for he is the living God.”",
             "KJV": "Then said Daniel vnto the king, I will worship the Lord my God: for he is the liuing God.",
-            "NABRE": "But Daniel answered, “I worship the Lord, my God, for he is the living God."
+            "NABRE": "But Daniel answered, “I worship the Lord, my God, for he is the living God.",
+            "DRB": "but thou o king give me licence, and I will kill the dragon without sword and club. And the king said: I give thee licence."
           }
         },
         {
@@ -3491,7 +3659,8 @@
           "text": {
             "NRSV": "“But give me permission, O king, and I will kill the dragon without sword or club.” The king said, “I give you permission.”",
             "KJV": "But giue me leaue, O king, and I shall slay this dragon without sword or staffe. The king sayde, I giue thee leaue.",
-            "NABRE": "Give me permission, O king, and I will kill this dragon without sword or club.” “I give you permission,” the king said."
+            "NABRE": "Give me permission, O king, and I will kill this dragon without sword or club.” “I give you permission,” the king said.",
+            "DRB": "Daniel therefore took pitch, and fat, and hairs, and sod them together: & he made lumps, and gave into the dragon's mouth, & the dragon burst in sunder. And he said: Lo whom you worshipped."
           }
         },
         {
@@ -3499,7 +3668,8 @@
           "text": {
             "NRSV": "Then Daniel took pitch and fat and hair, and boiled them together and made cakes; he fed them to the dragon, and the dragon consumed them and burst open. Daniel said, “See what you have been worshiping!”",
             "KJV": "Then Daniel tooke pitch, fat, and haire, and did seethe them together, and made lumpes thereof: this hee put in the Dragons mouth, and so the Dragon burst in sunder: and Daniel said, Loe, these are the gods you worship.",
-            "NABRE": "Then Daniel took some pitch, fat, and hair; these he boiled together and made into cakes. He put them into the mouth of the dragon, and when the dragon ate them, he burst. “This,” he said, “is what you revered.”"
+            "NABRE": "Then Daniel took some pitch, fat, and hair; these he boiled together and made into cakes. He put them into the mouth of the dragon, and when the dragon ate them, he burst. “This,” he said, “is what you revered.”",
+            "DRB": "Which when the Babylonians had heard, they were wrath exceedingly: and being gathered together against the king, they said: The king is become a Jew. Bel he hath destroyed, the dragon he hath killed, & he hath slain the priests."
           }
         },
         {
@@ -3507,7 +3677,8 @@
           "text": {
             "NRSV": "When the Babylonians heard about it, they were very indignant and conspired against the king, saying, “The king has become a Jew; he has destroyed Bel, and killed the dragon, and slaughtered the priests.”",
             "KJV": "When they of Babylon heard that, they tooke great indignation, and conspired against the king, saying, The king is become a Iew, and he hath destroyed Bel, he hath slaine the Dragon, and put the Priests to death.",
-            "NABRE": "When the Babylonians heard this, they were angry and turned against the king. “The king has become a Jew,” they said; “he has destroyed Bel, killed the dragon, and put the priests to death.”"
+            "NABRE": "When the Babylonians heard this, they were angry and turned against the king. “The king has become a Jew,” they said; “he has destroyed Bel, killed the dragon, and put the priests to death.”",
+            "DRB": "And they said when they were come to the king: Deliver us Daniel, otherwise we will kill thee, & thy house."
           }
         },
         {
@@ -3515,7 +3686,8 @@
           "text": {
             "NRSV": "Going to the king, they said, “Hand Daniel over to us, or else we will kill you and your household.”",
             "KJV": "So they came to the king, and said, Deliuer vs Daniel, or else we will destroy thee and thine house.",
-            "NABRE": "They went to the king and demanded: “Hand Daniel over to us, or we will kill you and your family.”"
+            "NABRE": "They went to the king and demanded: “Hand Daniel over to us, or we will kill you and your family.”",
+            "DRB": "The king therefore saw that they pressed upon him vehemently: and compelled by necessity he delivered Daniel to them."
           }
         },
         {
@@ -3523,7 +3695,8 @@
           "text": {
             "NRSV": "The king saw that they were pressing him hard, and under compulsion he handed Daniel over to them.",
             "KJV": "Now when the king sawe that they pressed him sore, being constrained, he deliuered Daniel vnto them:",
-            "NABRE": "When he saw himself threatened with violence, the king was forced to hand Daniel over to them."
+            "NABRE": "When he saw himself threatened with violence, the king was forced to hand Daniel over to them.",
+            "DRB": "Who cast him into the lake of lions, and he was there six days."
           }
         },
         {
@@ -3531,7 +3704,8 @@
           "text": {
             "NRSV": "They threw Daniel into the lions’ den, and he was there for six days.",
             "KJV": "Who cast him into the lions den, where he was sixe dayes.",
-            "NABRE": "They threw Daniel into a lions’ den, where he remained six days."
+            "NABRE": "They threw Daniel into a lions’ den, where he remained six days.",
+            "DRB": "Moreover in the lake were seven lions, & there were given to them two bodies every day, & two sheep: and they were not given unto them, that they might devour Daniel."
           }
         },
         {
@@ -3539,7 +3713,8 @@
           "text": {
             "NRSV": "There were seven lions in the den, and every day they had been given two human bodies and two sheep; but now they were given nothing, so that they would devour Daniel.",
             "KJV": "And in the den there were seuen lyons, and they had giuen them euery day two carkeises, and two sheepe: which then were not giuen to them, to the intent they might deuoure Daniel.",
-            "NABRE": "In the den were seven lions. Two carcasses and two sheep had been given to them daily, but now they were given nothing, so that they would devour Daniel."
+            "NABRE": "In the den were seven lions. Two carcasses and two sheep had been given to them daily, but now they were given nothing, so that they would devour Daniel.",
+            "DRB": "And there was Habacuc a prophet in Jewry, & he had boiled broth, & had broken bread in a bowl: and he went into the field, to carry it to the reapers."
           }
         },
         {
@@ -3547,7 +3722,8 @@
           "text": {
             "NRSV": "Now the prophet Habakkuk was in Judea; he had made a stew and had broken bread into a bowl, and was going into the field to take it to the reapers.",
             "KJV": "Now there was in Iury a Prophet called Habacuc, who had made pottage, & had broken bread in a boule, and was going into the field, for to bring it to the reapers.",
-            "NABRE": "The prophet Habakkuk was in Judea. He mixed some bread in a bowl with the stew he had boiled, and was going to bring it to the reapers in the field,"
+            "NABRE": "The prophet Habakkuk was in Judea. He mixed some bread in a bowl with the stew he had boiled, and was going to bring it to the reapers in the field,",
+            "DRB": "And the Angel of our Lord said to Habacuc: Carry the dinner which thou hast, into Babylon to Daniel, who is in the lake of lions."
           }
         },
         {
@@ -3555,7 +3731,8 @@
           "text": {
             "NRSV": "But the angel of the Lord said to Habakkuk, “Take the food that you have to Babylon, to Daniel, in the lions’ den.”",
             "KJV": "But the Angel of the Lord said vnto Habacuc, Goe carrie the dinner that thou hast into Babylon vnto Daniel, who is in the lions denne.",
-            "NABRE": "when an angel of the Lord told him, “Take the meal you have to Daniel in the lions’ den at Babylon.”"
+            "NABRE": "when an angel of the Lord told him, “Take the meal you have to Daniel in the lions’ den at Babylon.”",
+            "DRB": "And Habacuc said: Lord, Babylon I have not seen, and the lake I know not."
           }
         },
         {
@@ -3563,7 +3740,8 @@
           "text": {
             "NRSV": "Habakkuk said, “Sir, I have never seen Babylon, and I know nothing about the den.”",
             "KJV": "And Habacuc said, Lord, I neuer saw Babylon: neither do I know where the denne is.",
-            "NABRE": "But Habakkuk answered, “Sir, I have never seen Babylon, and I do not know the den!”"
+            "NABRE": "But Habakkuk answered, “Sir, I have never seen Babylon, and I do not know the den!”",
+            "DRB": "And the Angel of our Lord took him by the top of his head, and carried him by the hair of his head, & put him into Babylon over the lake in the force of his spirit."
           }
         },
         {
@@ -3571,7 +3749,8 @@
           "text": {
             "NRSV": "Then the angel of the Lord took him by the crown of his head and carried him by his hair; with the speed of the spirit he set him down in Babylon, right over the den.",
             "KJV": "Then the Angel of the Lord tooke him by the crown, and bare him by the haire of his head, and through the vehemencie of his spirit, set him in Babylon ouer the den.",
-            "NABRE": "The angel of the Lord seized him by the crown of his head and carried him by the hair; with the speed of the wind, he set him down in Babylon above the den."
+            "NABRE": "The angel of the Lord seized him by the crown of his head and carried him by the hair; with the speed of the wind, he set him down in Babylon above the den.",
+            "DRB": "And Habacuc cried, saying: Daniel, take the dinner that God hath sent to thee."
           }
         },
         {
@@ -3579,7 +3758,8 @@
           "text": {
             "NRSV": "Then Habakkuk shouted, “Daniel, Daniel! Take the food that God has sent you.”",
             "KJV": "And Habacuc cryed, saying, O Daniel, Daniel, take the dinner which God hath sent thee.",
-            "NABRE": "“Daniel, Daniel,” cried Habakkuk, “take the meal God has sent you.”"
+            "NABRE": "“Daniel, Daniel,” cried Habakkuk, “take the meal God has sent you.”",
+            "DRB": "And Daniel said: Thou hast remembered me o God, and hast not forsaken them that love thee."
           }
         },
         {
@@ -3587,7 +3767,8 @@
           "text": {
             "NRSV": "Daniel said, “You have remembered me, O God, and have not forsaken those who love you.”",
             "KJV": "And Daniel saide, Thou hast remembred mee, O God: neither hast thou forsaken them that seeke thee, and loue thee.",
-            "NABRE": "“You have remembered me, O God,” said Daniel; “you have not forsaken those who love you.”"
+            "NABRE": "“You have remembered me, O God,” said Daniel; “you have not forsaken those who love you.”",
+            "DRB": "And Daniel rising up did eat. Moreover the Angel of our Lord restored Habacuc forthwith in his place."
           }
         },
         {
@@ -3595,7 +3776,8 @@
           "text": {
             "NRSV": "So Daniel got up and ate. And the angel of God immediately carried Habakkuk back to his own place.",
             "KJV": "So Daniel arose and did eate: and the Angel of the Lord set Habacuc in his owne place againe immediatly.",
-            "NABRE": "So Daniel ate, but the angel of God at once brought Habakkuk back to his own place."
+            "NABRE": "So Daniel ate, but the angel of God at once brought Habakkuk back to his own place.",
+            "DRB": "The king therefore came the seventh day to lament Daniel: and he came to the lake, and looked in, and behold Daniel sitting in the midst of the lions."
           }
         },
         {
@@ -3603,7 +3785,8 @@
           "text": {
             "NRSV": "On the seventh day the king came to mourn for Daniel. When he came to the den he looked in, and there sat Daniel!",
             "KJV": "Upon the seuenth day the king went to bewaile Daniel: and when he came to the den, he looked in, and behold, Daniel was sitting.",
-            "NABRE": "On the seventh day the king came to mourn for Daniel. As he came to the den and looked in, there was Daniel, sitting there."
+            "NABRE": "On the seventh day the king came to mourn for Daniel. As he came to the den and looked in, there was Daniel, sitting there.",
+            "DRB": "And the king cried out with a loud voice, saying: Great art thou o Lord the God of Daniel. And he drew him out of the lake of lions."
           }
         },
         {
@@ -3611,7 +3794,8 @@
           "text": {
             "NRSV": "The king shouted with a loud voice, “You are great, O Lord, the God of Daniel, and there is no other besides you!”",
             "KJV": "Then cried the king with a loud voyce, saying, Great art thou, O Lord God of Daniel, and there is none other besides thee.",
-            "NABRE": "The king cried aloud, “You are great, O Lord, the God of Daniel, and there is no other besides you!”"
+            "NABRE": "The king cried aloud, “You are great, O Lord, the God of Daniel, and there is no other besides you!”",
+            "DRB": "But those that had been the cause of his perdition, he cast into the lake, and they were devoured in a moment before him."
           }
         },
         {
@@ -3619,7 +3803,8 @@
           "text": {
             "NRSV": "Then he drew Daniel out, and threw into the den those who had attempted his destruction, and they were instantly eaten before his eyes.",
             "KJV": "And he drew him out: and cast those that were the cause of his destruction into the den: and they were deuoured in a moment before his face.",
-            "NABRE": "He brought Daniel out, but those who had tried to destroy him he threw into the den, and they were devoured in a moment before his eyes."
+            "NABRE": "He brought Daniel out, but those who had tried to destroy him he threw into the den, and they were devoured in a moment before his eyes.",
+            "DRB": "Then the king said: Let all inhabitants in the whole earth fear the God of Daniel: because he is the Saviour, doing signs, & marvels in the earth: who hath delivered Daniel out of the lions' den."
           }
         }
       ]

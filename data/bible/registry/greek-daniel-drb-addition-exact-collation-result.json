@@ -1,0 +1,78 @@
+{
+  "schema": "greek-daniel-drb-addition-exact-collation-result-v1",
+  "id": "greek_daniel_drb_addition_exact_collation_result_2026_06_28",
+  "status": "passed_repaired_text_committable",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/danielGK.json",
+  "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+  "policy": "data/bible/registry/greek-daniel-drb-addition-source-address-policy.json",
+  "repairScript": "scripts/repair-bible-greek-daniel-drb-addition-lanes.mjs",
+  "exactCollationAuditScript": "scripts/audit-bible-greek-daniel-drb-addition-exact-collation.mjs",
+  "exactCollationResult": {
+    "status": "passed",
+    "checkedRefsCount": 174,
+    "exactMatchCount": 174,
+    "mismatchCount": 0,
+    "missingCount": 0,
+    "byUnit": {
+      "prayer_song": {
+        "checked": 67,
+        "exact": 67,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "susanna_and_transition": {
+        "checked": 65,
+        "exact": 65,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "bel_and_dragon": {
+        "checked": 42,
+        "exact": 42,
+        "mismatched": 0,
+        "missing": 0
+      }
+    },
+    "drbOnlyRow13_65Checks": [
+      {
+        "translation": "NRSV",
+        "activeRef": "13:65",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "KJV",
+        "activeRef": "13:65",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      },
+      {
+        "translation": "NABRE",
+        "activeRef": "13:65",
+        "expectedPresent": false,
+        "actualPresent": false,
+        "status": "passed"
+      }
+    ],
+    "failures": []
+  },
+  "claim": "Active Greek Daniel DRB addition/source-address lanes are populated and exact-source-collated for Prayer/Song, Susanna plus DRB transition row, and Bel and the Dragon.",
+  "sourceAddressPolicy": {
+    "prayerSong": "DRB Daniel 3:24-90 maps to active Daniel 3:24-90.",
+    "susannaAndTransition": "DRB Daniel 13:1-65 maps to active Daniel 13:1-65; Daniel 13:65 is DRB-only.",
+    "belAndDragon": "DRB Daniel 14:1-42 maps to active Daniel 14:1-42."
+  },
+  "limitations": [
+    "This does not verify NRSV addition text because NRSV additions remain blocked pending approved source witness acquisition.",
+    "This does not claim full Greek Daniel trust across every translation lane.",
+    "This does not resolve Greek Esther."
+  ],
+  "nextRequiredWork": [
+    "Acquire or approve NRSV addition source witness before NRSV addition collation.",
+    "Continue Greek Esther source acquisition and mapping.",
+    "Update Greek Daniel trust/status records to reflect ordinary NRSV, KJV/NABRE additions, and DRB additions now exact-collated, while NRSV additions remain blocked."
+  ]
+}
