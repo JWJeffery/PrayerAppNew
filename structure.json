@@ -1,7 +1,7 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.158",
+    "version": "3.8.159",
     "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
     "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms is complete and trusted with no governed exclusions. Daniel 11:1-45 NABRE is restored from official source. Nehemiah 7:73 NABRE is resolved as a positive source-address alignment. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
@@ -382,7 +382,7 @@
           "source governance",
           "future expansion"
         ],
-        "decision": "Universal Office will distinguish canonical office families from auxiliary or companion office-shaped devotions. The main tradition selector is reserved for governed ecclesial office families such as Anglican Daily Office, Roman LOTH / Roman Breviary, Byzantine Horologion, Ethiopian Sa\\’atat, East Syriac Office, Coptic Agpeya, West Syriac Shehimo, and other full office systems. Little offices, order-specific offices, votive/proper offices, psalter devotions, manuscript devotional cycles, novenas, rosaries, adoration cycles, and similar prayer forms may be researched and eventually surfaced, but they must not be flattened into main office-family lanes.",
+        "decision": "Universal Office will distinguish canonical office families from auxiliary or companion office-shaped devotions. The main tradition selector is reserved for governed ecclesial office families such as Anglican Daily Office, Roman LOTH / Roman Breviary, Byzantine Horologion, Ethiopian Sa’atat, East Syriac Office, Coptic Agpeya, West Syriac Shehimo, and other full office systems. Little offices, order-specific offices, votive/proper offices, psalter devotions, manuscript devotional cycles, novenas, rosaries, adoration cycles, and similar prayer forms may be researched and eventually surfaced, but they must not be flattened into main office-family lanes.",
         "governance": {
           "community_research_policy": "Community lists, Reddit threads, blog indexes, archive pointers, and similar resources may seed research registries and product-intelligence questions, but they do not authorize liturgical text, office structure, rubrics, or public rendering.",
           "source_authority_policy": "Actual office text, rubrics, psalmody, readings, hymns, collects, calendars, and provenance must remain governed by identifiable liturgical books, manuscripts, public-domain sources, licensed sources, or explicitly recorded internal/private source witnesses.",
@@ -398,7 +398,7 @@
               "Roman Liturgy of the Hours",
               "Roman Breviary",
               "Byzantine Horologion",
-              "Ethiopian Sa\\’atat",
+              "Ethiopian Sa’atat",
               "East Syriac Office / Hudra broad-label lane",
               "Coptic Agpeya",
               "West Syriac Shehimo"
