@@ -27,10 +27,10 @@ function chNum(ch, i) { return n(ch?.number ?? ch?.num ?? ch?.chapter) ?? i + 1;
 function vNum(v, i) { return n(v?.number ?? v?.num ?? v?.verse) ?? i + 1; }
 function rowText(row, lane = null) {
   if (!row || typeof row !== 'object') return null;
-  if (typeof row.text === 'string') return row.text;
+  if (typeof row.text === 'string') return lane ? null : row.text;
   if (row.text && typeof row.text === 'object' && !Array.isArray(row.text)) {
-    if (lane && typeof row.text[lane] === 'string') return row.text[lane];
-    for (const key of ['KJV', 'NABRE', 'DRB', 'NRSV', 'rawText']) if (typeof row.text[key] === 'string') return row.text[key];
+    if (lane) return typeof row.text[lane] === 'string' ? row.text[lane] : null;
+    for (const key of ['KJV', 'NABRE', 'DRB', 'NRSV', 'rawText', 'Rotherham']) if (typeof row.text[key] === 'string') return row.text[key];
   }
   return null;
 }
@@ -89,23 +89,24 @@ for (const result of results) {
 }
 
 const unresolved = {
-  NRSV: rows(active, 'NRSV').length,
-  rawText: rows(active, 'rawText').length,
-  Rotherham: rows(active, 'Rotherham').length
+  NRSV: active ? rows(active, 'NRSV').length : 0,
+  rawText: active ? rows(active, 'rawText').length : 0,
+  Rotherham: active ? rows(active, 'Rotherham').length : 0
 };
 
 const report = {
   audit: 'tobit-bound-source-status',
-  status: failures.length ? 'failed' : 'partial_pass_kjv_nabre_drb_exact_nrsv_rawtext_unresolved',
+  status: failures.length ? 'failed' : 'partial_pass_kjv_nabre_drb_exact_nrsv_rawtext_rotherham_unresolved',
   bibleTextMutation: false,
   activePath,
   sources: { KJV: kjvPath, NABRE: nabrePath, DRB: drbPath, historicalRef: ref },
   results,
   unresolved,
+  strictLaneMode: true,
   failures,
   nextRequiredWork: [
     'Record KJV/NABRE/DRB Tobit status only if this passes.',
-    'Do not claim full Tobit trust while NRSV or rawText are unresolved.'
+    'Do not claim full Tobit trust while NRSV, rawText, or Rotherham are unresolved.'
   ]
 };
 
@@ -117,5 +118,5 @@ if (failures.length) {
   process.exitCode = 1;
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Record Tobit KJV/NABRE/DRB exact-source-collated; NRSV/rawText remain unresolved.');
+  console.log('NEXT: Record Tobit KJV/NABRE/DRB exact-source-collated; NRSV/rawText/Rotherham remain unresolved.');
 }
