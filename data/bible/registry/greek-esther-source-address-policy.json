@@ -1,0 +1,91 @@
+{
+  "schema": "greek-esther-source-address-policy-v1",
+  "id": "greek_esther_source_address_policy_2026_06_28",
+  "status": "source_address_policy_selected_pending_local_repair",
+  "recordedAt": "2026-06-28",
+  "activeFile": "data/bible/OT/estherGK.json",
+  "dependsOn": [
+    "data/bible/registry/greek-esther-bound-source-shape-result.json",
+    "scripts/audit-bible-greek-esther-address-mapping-candidates.mjs"
+  ],
+  "decision": "Preserve active Greek Esther named-addition form, add explicit translation-object lanes, and preserve source-address rows where bound ordinary sources have rows absent from active NRSV.",
+  "activeNRSVPolicy": {
+    "status": "existing_active_text_unverified_pending_approved_source_witness",
+    "rule": "Existing active strings may be converted to text.NRSV objects without changing the NRSV text, but active NRSV Greek Esther is not source-trusted until an approved NRSV/NRSVA source witness is bound and collated.",
+    "rowsAbsentFromNRSV": [
+      "Esther 8:13-17 must remain absent from NRSV unless an approved NRSV source witness provides those addresses."
+    ]
+  },
+  "ordinaryChapterPolicy": {
+    "KJV": "Populate KJV for ordinary Esther 1-10 from bound KJV 1611 Esther source. Insert active Esther 8:13-17 as KJV source-address rows because the active NRSV grid currently stops at 8:12.",
+    "NABRE": "Populate NABRE for ordinary Esther 1-10 from bound historical NABRE Esther source. Insert active Esther 8:13-17 as NABRE source-address rows because the active NRSV grid currently stops at 8:12.",
+    "DRB": "Populate DRB ordinary Esther source-address rows 1-10, with chapter 8:13-17 inserted and chapter 10:4-13 mapped only through Addition F policy rather than ordinary chapter 10 display."
+  },
+  "drbAdditionMapping": {
+    "Addition A": {
+      "activeChapter": "Addition A",
+      "activeVerseRange": "1-17",
+      "sourceSegments": [
+        { "sourceChapter": 11, "sourceVerseRange": "2-12", "activeVerseRange": "1-11" },
+        { "sourceChapter": 12, "sourceVerseRange": "1-6", "activeVerseRange": "12-17" }
+      ]
+    },
+    "Addition B": {
+      "activeChapter": "Addition B",
+      "activeVerseRange": "1-7",
+      "sourceSegments": [
+        { "sourceChapter": 13, "sourceVerseRange": "1-7", "activeVerseRange": "1-7" }
+      ]
+    },
+    "Addition C": {
+      "activeChapter": "Addition C",
+      "activeVerseRange": "1-30",
+      "sourceSegments": [
+        { "sourceChapter": 13, "sourceVerseRange": "8-18", "activeVerseRange": "1-11" },
+        { "sourceChapter": 14, "sourceVerseRange": "1-19", "activeVerseRange": "12-30" }
+      ]
+    },
+    "Addition D": {
+      "activeChapter": "Addition D",
+      "activeVerseRange": "1-16",
+      "selectedSourceSegment": { "sourceChapter": 15, "sourceVerseRange": "4-19", "activeVerseRange": "1-16" },
+      "rejectedCandidate": { "sourceChapter": 15, "sourceVerseRange": "1-16" },
+      "reason": "Active Addition D begins with Esther's third-day approach to the king; DRB 15:4 begins that same scene, while DRB 15:1-3 are a preceding Mordecai/transition block."
+    },
+    "Addition E": {
+      "activeChapter": "Addition E",
+      "activeVerseRange": "1-24",
+      "sourceSegments": [
+        { "sourceChapter": 16, "sourceVerseRange": "1-24", "activeVerseRange": "1-24" }
+      ]
+    },
+    "Addition F": {
+      "activeChapter": "Addition F",
+      "activeVerseRange": "1-11",
+      "sourceSegments": [
+        { "sourceChapter": 10, "sourceVerseRange": "4-13", "activeVerseRange": "1-10" },
+        { "sourceChapter": 11, "sourceVerseRange": "1", "activeVerseRange": "11" }
+      ]
+    }
+  },
+  "sourceExtraPolicy": [
+    {
+      "source": "DRB",
+      "sourceRef": "Esther 15:1-3",
+      "status": "source_present_inactive_not_mapped_to_active_named_addition_grid",
+      "reason": "The active named Addition D grid starts at the third-day approach scene. These preceding rows are not present in active NRSV Addition D and are not inserted without a separate display/address policy."
+    }
+  ],
+  "blockedActions": [
+    "claim_active_greek_esther_nrsv_verified",
+    "populate_kjv_or_nabre_named_additions_from_ordinary_esther_sources",
+    "map_drb_addition_d_from_15_1_16",
+    "insert_drb_15_1_3_into_active_named_addition_grid_without_separate_policy",
+    "leave_string_rows_after_adding_translation_metadata"
+  ],
+  "nextRequiredWork": [
+    "Add bounded lane-expansion repair for KJV/NABRE ordinary rows and DRB ordinary/addition rows under this policy.",
+    "Run exact source collation for KJV/NABRE ordinary lanes and DRB ordinary/addition lanes.",
+    "Keep NRSV Greek Esther blocked pending approved source witness."
+  ]
+}
