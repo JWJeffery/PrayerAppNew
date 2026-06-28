@@ -1,0 +1,64 @@
+{
+  "schema": "greek-esther-text-trust-status-v1",
+  "id": "greek_esther_text_trust_status_2026_06_28",
+  "status": "partial_trust_ready_nrsv_blocked",
+  "recordedAt": "2026-06-28",
+  "activePath": "data/bible/OT/estherGK.json",
+  "activeShape": "explicit translation-object rows with unverified NRSV base, KJV/NABRE ordinary lanes, and DRB ordinary/addition lanes",
+  "activeRows": 272,
+  "trustedClaims": {
+    "ordinaryKJV": {
+      "status": "trusted_exact_source_collated",
+      "scope": "Ordinary Esther 1-10 only, including source-address rows Esther 8:13-17.",
+      "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-esther-bound-source-exact-collation.mjs"
+    },
+    "ordinaryNABRE": {
+      "status": "trusted_exact_source_collated",
+      "scope": "Ordinary Esther 1-10 only, including source-address rows Esther 8:13-17.",
+      "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-esther-bound-source-exact-collation.mjs"
+    },
+    "ordinaryAndAdditionDRB": {
+      "status": "trusted_exact_source_collated_source_address_policy",
+      "scope": "Ordinary Esther rows plus DRB mapped addition lanes A-F under source-address policy.",
+      "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+      "auditScript": "scripts/audit-bible-greek-esther-bound-source-exact-collation.mjs",
+      "policy": "data/bible/registry/greek-esther-source-address-policy.json"
+    }
+  },
+  "blockedClaims": {
+    "activeNRSV": {
+      "status": "blocked_pending_approved_source_witness",
+      "scope": "All active Greek Esther NRSV text, including named additions A-F and ordinary rows.",
+      "reason": "No approved independent NRSV/NRSVA source witness is bound. Existing active text was preserved as explicit NRSV lane text but not source-verified."
+    },
+    "fullGreekEstherAllLanes": {
+      "status": "blocked_by_nrsv_source_absence",
+      "reason": "Greek Esther cannot be fully trusted while active NRSV text remains unverified against an approved source witness."
+    }
+  },
+  "allowedClaims": [
+    "Greek Esther KJV ordinary lanes are exact-source-collated for Esther 1-10, including source-address rows 8:13-17.",
+    "Greek Esther NABRE ordinary lanes are exact-source-collated for Esther 1-10, including source-address rows 8:13-17.",
+    "Greek Esther DRB ordinary and mapped addition lanes are exact-source-collated under source-address policy.",
+    "Greek Esther NRSV active text is preserved but not source-verified."
+  ],
+  "forbiddenClaims": [
+    "Greek Esther is fully trusted across all lanes.",
+    "Greek Esther NRSV is source-verified.",
+    "BibleGateway Greek Esther candidate is a bound NRSV source witness.",
+    "KJV or NABRE provide named Greek Esther addition lanes."
+  ],
+  "knownAbsences": [
+    "NRSV absent at Esther 8:13-17 pending approved source witness.",
+    "KJV absent from named additions A-F because the bound KJV source covers ordinary Esther only.",
+    "NABRE absent from named additions A-F because the bound NABRE source covers ordinary Esther only.",
+    "DRB Esther 15:1-3 source-present but inactive under current Addition D policy."
+  ],
+  "nextRequiredWork": [
+    "Acquire or bind approved NRSV/NRSVA source witness for Greek Esther before NRSV trust.",
+    "Acquire or approve NRSV source witnesses for Greek Daniel additions before Greek Daniel full trust.",
+    "Keep non-Protestant canon status partial until remaining NRSV source blocks are resolved or explicitly governed."
+  ]
+}
