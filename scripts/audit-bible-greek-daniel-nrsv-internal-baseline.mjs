@@ -19,53 +19,107 @@ function readJson(path) {
 const active = readJson(activePath);
 const baseline = readJson(baselinePath);
 
-function textOfActiveVerse(chapterIndex, verseIndex) {
-  const verse = active?.chapters?.[chapterIndex]?.verses?.[verseIndex];
+function textOfActive(chapterNumber, verseNumber) {
+  const verse = active?.chapters?.[chapterNumber - 1]?.verses?.find((row) => Number(row?.num ?? row?.verse) === verseNumber);
   return typeof verse?.text === 'string' ? verse.text : null;
 }
 
-function textOfBaselineVerse(chapterIndex, verseIndex) {
-  const verse = baseline?.chapters?.[chapterIndex]?.verses?.[verseIndex];
+function textOfBaseline(chapterNumber, verseNumber) {
+  const verse = baseline?.chapters?.[chapterNumber - 1]?.verses?.find((row) => Number(row?.num ?? row?.verse) === verseNumber);
   return typeof verse?.text?.NRSV === 'string' ? verse.text.NRSV : null;
+}
+
+const comparisons = [];
+
+function addDirectChapter(chapterNumber) {
+  const baselineVerses = baseline?.chapters?.[chapterNumber - 1]?.verses || [];
+  for (const verse of baselineVerses) {
+    const verseNumber = Number(verse?.num ?? verse?.verse);
+    if (!Number.isInteger(verseNumber)) continue;
+    comparisons.push({
+      baselineRef: `${chapterNumber}:${verseNumber}`,
+      activeRef: `${chapterNumber}:${verseNumber}`,
+      baselineChapter: chapterNumber,
+      baselineVerse: verseNumber,
+      activeChapter: chapterNumber,
+      activeVerse: verseNumber,
+      mapping: 'direct'
+    });
+  }
+}
+
+if (active && baseline) {
+  addDirectChapter(1);
+  addDirectChapter(2);
+
+  for (let verseNumber = 1; verseNumber <= 23; verseNumber += 1) {
+    comparisons.push({
+      baselineRef: `3:${verseNumber}`,
+      activeRef: `3:${verseNumber}`,
+      baselineChapter: 3,
+      baselineVerse: verseNumber,
+      activeChapter: 3,
+      activeVerse: verseNumber,
+      mapping: 'daniel_3_before_prayer_song_direct'
+    });
+  }
+
+  for (let verseNumber = 24; verseNumber <= 30; verseNumber += 1) {
+    comparisons.push({
+      baselineRef: `3:${verseNumber}`,
+      activeRef: `3:${verseNumber + 67}`,
+      baselineChapter: 3,
+      baselineVerse: verseNumber,
+      activeChapter: 3,
+      activeVerse: verseNumber + 67,
+      mapping: 'daniel_3_after_prayer_song_shifted_plus_67'
+    });
+  }
+
+  for (let chapterNumber = 4; chapterNumber <= 12; chapterNumber += 1) {
+    addDirectChapter(chapterNumber);
+  }
 }
 
 const checked = [];
 const mismatches = [];
 
-if (active && baseline) {
-  for (let chapterIndex = 0; chapterIndex < 12; chapterIndex += 1) {
-    const chapterNumber = chapterIndex + 1;
-    const activeVerses = active.chapters?.[chapterIndex]?.verses || [];
-    const baselineVerses = baseline.chapters?.[chapterIndex]?.verses || [];
-    const max = Math.max(activeVerses.length, baselineVerses.length);
+for (const comparison of comparisons) {
+  const activeText = textOfActive(comparison.activeChapter, comparison.activeVerse);
+  const baselineText = textOfBaseline(comparison.baselineChapter, comparison.baselineVerse);
 
-    for (let verseIndex = 0; verseIndex < max; verseIndex += 1) {
-      const verseNumber = verseIndex + 1;
-      const activeText = textOfActiveVerse(chapterIndex, verseIndex);
-      const baselineText = textOfBaselineVerse(chapterIndex, verseIndex);
+  checked.push({
+    baselineRef: comparison.baselineRef,
+    activeRef: comparison.activeRef,
+    mapping: comparison.mapping
+  });
 
-      checked.push(`${chapterNumber}:${verseNumber}`);
-
-      if (activeText !== baselineText) {
-        mismatches.push({
-          ref: `${chapterNumber}:${verseNumber}`,
-          activePresent: activeText !== null,
-          baselinePresent: baselineText !== null,
-          activePreview: activeText ? activeText.slice(0, 160) : null,
-          baselinePreview: baselineText ? baselineText.slice(0, 160) : null
-        });
-      }
-    }
+  if (activeText !== baselineText) {
+    mismatches.push({
+      baselineRef: comparison.baselineRef,
+      activeRef: comparison.activeRef,
+      mapping: comparison.mapping,
+      activePresent: activeText !== null,
+      baselinePresent: baselineText !== null,
+      activePreview: activeText ? activeText.slice(0, 160) : null,
+      baselinePreview: baselineText ? baselineText.slice(0, 160) : null
+    });
   }
 }
 
 const report = {
   audit: 'greek-daniel-nrsv-internal-baseline',
   status: failures.length ? 'failed' : mismatches.length ? 'mismatched' : 'passed',
-  scope: 'Compare active Greek Daniel ordinary chapters 1-12 against canonical Daniel text.NRSV only.',
+  scope: 'Compare active Greek Daniel ordinary chapters 1-12 against canonical Daniel text.NRSV using Greek Daniel chapter 3 insertion mapping.',
   activePath,
   baselinePath,
   bibleTextMutation: false,
+  mappingPolicy: {
+    'Daniel 1-2': 'direct chapter:verse comparison',
+    'Daniel 3:1-23': 'direct chapter:verse comparison before Prayer/Song insertion',
+    'Daniel 3:24-30': 'compare canonical Daniel 3:24-30 to active Greek Daniel 3:91-97 after Prayer/Song insertion',
+    'Daniel 4-12': 'direct chapter:verse comparison'
+  },
   checkedRefsCount: checked.length,
   mismatchCount: mismatches.length,
   mismatchSample: mismatches.slice(0, 50),
@@ -84,9 +138,9 @@ if (failures.length) {
   process.exitCode = 1;
 } else if (mismatches.length) {
   console.log('ALL FAILED');
-  console.log('NEXT: Greek Daniel ordinary chapters 1-12 do not exactly match canonical Daniel NRSV. Review mismatchSample before any mutation.');
+  console.log('NEXT: Greek Daniel ordinary chapters 1-12 do not match canonical Daniel NRSV under the Greek Daniel insertion mapping. Review mismatchSample before any mutation.');
   process.exitCode = 1;
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Record Greek Daniel ordinary chapters 1-12 as internally consistent with canonical Daniel NRSV, then proceed to Daniel additions source extraction.');
+  console.log('NEXT: Record Greek Daniel ordinary chapters 1-12 as internally consistent with canonical Daniel NRSV under the Greek Daniel insertion mapping, then proceed to Daniel additions source extraction.');
 }
