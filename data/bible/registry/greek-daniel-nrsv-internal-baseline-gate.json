@@ -1,0 +1,22 @@
+{
+  "schema": "greek-daniel-nrsv-internal-baseline-gate-v1",
+  "id": "greek_daniel_nrsv_internal_baseline_gate_2026_06_28",
+  "status": "audit_created_pending_local_execution",
+  "recordedAt": "2026-06-28",
+  "auditScript": "scripts/audit-bible-greek-daniel-nrsv-internal-baseline.mjs",
+  "scope": "Active Greek Daniel ordinary chapters 1-12 compared against canonical Daniel text.NRSV only.",
+  "activePath": "data/bible/OT/danielGK.json",
+  "baselinePath": "data/bible/OT/daniel.json",
+  "bibleTextMutation": false,
+  "passMeaning": "Active Greek Daniel ordinary chapters 1-12 are internally consistent with the trusted canonical Daniel NRSV lane.",
+  "failMeaning": "Active Greek Daniel ordinary chapters 1-12 do not exactly match canonical Daniel NRSV; mismatch sample must be reviewed before any mutation or promotion.",
+  "blockedUntilPassedOrClassified": [
+    "claim_active_greek_daniel_ordinary_chapters_1_12_nrsv_verified",
+    "promote_danielGK_nrsv_active_text_trust",
+    "begin_danielGK_text_mutation_from_assumption"
+  ],
+  "nextAfterPass": [
+    "record Greek Daniel ordinary chapters 1-12 as internally consistent",
+    "proceed to NRSV addition-source extraction for Prayer of Azariah/Song, Susanna, and Bel and the Dragon"
+  ]
+}
