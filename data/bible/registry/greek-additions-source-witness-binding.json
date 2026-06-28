@@ -1,7 +1,7 @@
 {
   "schema": "greek-additions-source-witness-binding-v1",
   "id": "greek_additions_source_witness_binding_2026_06_28",
-  "status": "source_witnesses_bound_text_not_mutated",
+  "status": "source_witnesses_bound_text_not_mutated_nrsv_external_source_required",
   "recordedAt": "2026-06-28",
   "scope": [
     "data/bible/OT/estherGK.json",
@@ -48,9 +48,14 @@
         "note": "Historical KJV source uses the ordinary Esther file path, not an Additions_to_Esther underscore path."
       },
       "NRSV": {
-        "status": "source_needed_before_active_trust",
+        "status": "external_source_required_before_active_trust",
         "path": null,
-        "note": "Active Greek Esther claims NRSV text, but no independent local NRSV source witness has been bound."
+        "localRepoSearchStatus": "no_independent_local_nrsv_source_witness_found",
+        "localRepoSearchEvidence": [
+          "Repository search for NRSV/NRSVA plus estherGK/danielGK/BibleGateway returned governance files only, not a source witness.",
+          "Repository search for New Revised Standard Version plus Esther (with Additions) returned only data/bible/OT/estherGK.json, the active file itself."
+        ],
+        "note": "Active Greek Esther claims NRSV text, but no independent local NRSV source witness has been found or bound. External source acquisition or a pre-existing licensed source witness is required before active NRSV trust."
       }
     },
     "danielGK": {
@@ -80,9 +85,14 @@
         "note": "Historical KJV Daniel material is split across ordinary Daniel plus separate apocryphal addition files. The exact source paths use spaces, not underscores."
       },
       "NRSV": {
-        "status": "source_needed_before_active_trust",
+        "status": "external_source_required_before_active_trust",
         "path": null,
-        "note": "Active Greek Daniel claims NRSV text, but no independent local NRSV source witness has been bound."
+        "localRepoSearchStatus": "no_independent_local_nrsv_source_witness_found",
+        "localRepoSearchEvidence": [
+          "Repository search for NRSV/NRSVA plus estherGK/danielGK/BibleGateway returned governance files only, not a source witness.",
+          "Repository search for New Revised Standard Version plus Daniel (Extended/Catholic Canon) returned only data/bible/OT/danielGK.json, the active file itself."
+        ],
+        "note": "Active Greek Daniel claims NRSV text, but no independent local NRSV source witness has been found or bound. External source acquisition or a pre-existing licensed source witness is required before active NRSV trust."
       }
     }
   },
@@ -92,11 +102,12 @@
     "overlay_drb_over_active_greek_esther",
     "overlay_drb_over_active_greek_daniel",
     "force_kjv_split_addition_files_into_active_daniel_without_mapping",
-    "treat_current_daniel_11_nabre_snapshot_as_full_greek_daniel_source"
+    "treat_current_daniel_11_nabre_snapshot_as_full_greek_daniel_source",
+    "treat_active_nrsv_greek_files_as_self-authenticating_sources"
   ],
   "nextRequiredWork": [
-    "Bind or acquire the NRSV source witness for active Greek Esther.",
-    "Bind or acquire the NRSV source witness for active Greek Daniel.",
+    "Acquire or bind the NRSV/NRSVA source witness for active Greek Esther.",
+    "Acquire or bind the NRSV/NRSVA source witness for active Greek Daniel.",
     "Create a comparison plan that maps DRB, NABRE, KJV, and NRSV source forms without changing Bible text.",
     "Only after source binding, run exact text collation for active NRSV Greek Esther and active NRSV Greek Daniel."
   ]
