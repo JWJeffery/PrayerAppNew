@@ -35,10 +35,11 @@ function rowText(row, lane = null) {
   return null;
 }
 
-function rows(book, lane = null) {
+function rows(book, lane = null, minChapter = null) {
   const out = [];
   for (const [ci, ch] of (book?.chapters || []).entries()) {
     const c = chNum(ch, ci);
+    if (minChapter !== null && c < minChapter) continue;
     for (const [vi, verse] of (ch?.verses || []).entries()) {
       const v = vNum(verse, vi);
       const text = rowText(verse, lane);
@@ -48,9 +49,9 @@ function rows(book, lane = null) {
   return out;
 }
 
-function compare(active, lane, source) {
+function compare(active, lane, source, minChapter = null) {
   const activeRows = new Map(rows(active, lane).map((row) => [row.ref, row.text]));
-  const sourceRows = new Map(rows(source).map((row) => [row.ref, row.text]));
+  const sourceRows = new Map(rows(source, null, minChapter).map((row) => [row.ref, row.text]));
   const missing = [];
   const mismatched = [];
   const extra = [];
@@ -82,7 +83,7 @@ const results = [];
 if (active && drb && kjv && nabre) {
   results.push(compare(active, 'KJV', kjv));
   results.push(compare(active, 'NABRE', nabre));
-  results.push(compare(active, 'DRB', drb));
+  results.push(compare(active, 'DRB', drb, 1));
 }
 for (const result of results) {
   if (result.status !== 'exact_source_collated') failures.push({ type: 'lane-failed', lane: result.lane, result });
@@ -91,7 +92,8 @@ for (const result of results) {
 const unresolved = {
   NRSV: active ? rows(active, 'NRSV').length : 0,
   rawText: active ? rows(active, 'rawText').length : 0,
-  Rotherham: active ? rows(active, 'Rotherham').length : 0
+  Rotherham: active ? rows(active, 'Rotherham').length : 0,
+  DRBSourceChapter0: drb ? rows(drb).filter((row) => row.ref.startsWith('0:')).length : 0
 };
 
 const report = {
@@ -100,9 +102,11 @@ const report = {
   bibleTextMutation: false,
   activePath,
   sources: { KJV: kjvPath, NABRE: nabrePath, DRB: drbPath, historicalRef: ref },
+  policy: 'data/bible/registry/tobit-source-address-policy.json',
   results,
   unresolved,
   strictLaneMode: true,
+  drbSourceChapter0Inactive: true,
   failures,
   nextRequiredWork: [
     'Record KJV/NABRE/DRB Tobit status only if this passes.',
