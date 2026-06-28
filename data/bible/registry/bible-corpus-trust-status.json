@@ -761,7 +761,11 @@
         "2 Esdras has no 2 Esdras/4 Esdras NABRE source file in the historical NABRE source lane and no active NABRE rows.",
         "Historical NABRE Ezra.json and Nehemiah.json are canonical Ezra and Nehemiah, not 2 Esdras, and are excluded as 2 Esdras sources.",
         "2 Esdras NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Ezra, canonical Nehemiah, or any non-NABRE witness.",
-        "2 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
+        "2 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust.",
+        "Prayer of Manasseh has no Prayer of Manasseh NABRE source file in the historical NABRE source lane and no active NABRE rows.",
+        "Historical NABRE Daniel.json is canonical Daniel, not Prayer of Manasseh, and is excluded as a Prayer of Manasseh source.",
+        "Prayer of Manasseh NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Daniel, or any non-NABRE witness.",
+        "Prayer of Manasseh remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -805,7 +809,8 @@
         "letterofjeremiah_nabre_source_scope_repair_1",
         "letterofjeremiah_nabre_versification_policy_1",
         "esdras_1_nabre_absence_policy_1",
-        "esdras_2_nabre_absence_policy_1"
+        "esdras_2_nabre_absence_policy_1",
+        "prayerofmanasseh_nabre_absence_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6342,6 +6347,48 @@
           "record external canon/source evidence in a separate bibliography or source registry if needed"
         ],
         "boundedClaim": "2 Esdras NABRE is governed absent: no historical 2 Esdras NABRE source file was present in the inspected source lane, canonical Ezra and Nehemiah were excluded as different books, and no active NABRE text is present."
+      },
+      "latest_prayerofmanasseh_nabre_absence_policy": {
+        "id": "prayerofmanasseh_nabre_absence_policy_2026_06_28",
+        "status": "governed_no_historical_prayerofmanasseh_nabre_source_no_active_nabre_rows",
+        "activePath": "data/bible/OT/prayerofmanasseh.json",
+        "activeLane": "text.NABRE",
+        "sourceCommit": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "sourceRoot": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books",
+        "activeRows": 15,
+        "activeNabreRows": 0,
+        "historicalNabreSourceFileCount": 73,
+        "prayerOfManassehSourceCandidates": [],
+        "excludedCanonicalDanielSource": {
+          "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Daniel.json",
+          "present": true,
+          "book": "Daniel",
+          "rows": 485,
+          "exclusionReason": "Canonical NABRE Daniel is not Prayer of Manasseh and must not be used as a Prayer of Manasseh source."
+        },
+        "evidence": {
+          "activeMetaId": "MAN",
+          "activeMetaName": "The Prayer of Manasseh",
+          "activeNabreRows": 0,
+          "historicalNabreSourceDirectoryListed": true,
+          "historicalNabrePrayerOfManassehCandidates": [],
+          "canonicalDanielBookField": "Daniel"
+        },
+        "policyDecision": "Do not synthesize Prayer of Manasseh NABRE text. The historical NABRE source lane contains canonical Daniel but no Prayer of Manasseh candidate source file, and the active Prayer of Manasseh file contains no NABRE rows.",
+        "blockedActions": [
+          "synthesize_prayerofmanasseh_nabre_from_drb",
+          "synthesize_prayerofmanasseh_nabre_from_kjv",
+          "synthesize_prayerofmanasseh_nabre_from_nrsv",
+          "synthesize_prayerofmanasseh_nabre_from_webbe",
+          "copy_prayerofmanasseh_nabre_from_canonical_daniel",
+          "copy_prayerofmanasseh_nabre_from_non_nabre_witness",
+          "claim_prayerofmanasseh_nabre_source_scope_repair_without_historical_prayerofmanasseh_nabre_source"
+        ],
+        "allowedFutureActions": [
+          "import a legitimate NABRE Prayer of Manasseh source only if an actual NABRE witness is later identified and policy-approved",
+          "record external canon/source evidence in a separate bibliography or source registry if needed"
+        ],
+        "boundedClaim": "Prayer of Manasseh NABRE is governed absent: no historical Prayer of Manasseh NABRE source file was present in the inspected source lane, canonical Daniel was excluded as a different source file, and no active NABRE text is present."
       }
     },
     "broader_canon": {
