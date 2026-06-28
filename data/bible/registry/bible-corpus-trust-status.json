@@ -1,7 +1,7 @@
 {
   "id": "bible-corpus-trust-status",
   "status": "partial_trust_boundary_active",
-  "lastUpdated": "2026-06-27",
+  "lastUpdated": "2026-06-28",
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
@@ -757,7 +757,11 @@
         "1 Esdras has no 1 Esdras/3 Esdras NABRE source file in the historical NABRE source lane and no active NABRE rows.",
         "Historical NABRE Ezra.json is canonical Ezra, not 1 Esdras, and is excluded as a 1 Esdras source.",
         "1 Esdras NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Ezra, or any non-NABRE witness.",
-        "1 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
+        "1 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust.",
+        "2 Esdras has no 2 Esdras/4 Esdras NABRE source file in the historical NABRE source lane and no active NABRE rows.",
+        "Historical NABRE Ezra.json and Nehemiah.json are canonical Ezra and Nehemiah, not 2 Esdras, and are excluded as 2 Esdras sources.",
+        "2 Esdras NABRE text was not synthesized from DRB, KJV, NRSV, WEBBE, canonical Ezra, canonical Nehemiah, or any non-NABRE witness.",
+        "2 Esdras remains part of the deuterocanon repair queue; this bounded NABRE absence policy does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -800,7 +804,8 @@
         "tobit_nabre_versification_policy_1",
         "letterofjeremiah_nabre_source_scope_repair_1",
         "letterofjeremiah_nabre_versification_policy_1",
-        "esdras_1_nabre_absence_policy_1"
+        "esdras_1_nabre_absence_policy_1",
+        "esdras_2_nabre_absence_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6286,6 +6291,57 @@
           "record external canon/source evidence in a separate bibliography or source registry if needed"
         ],
         "boundedClaim": "1 Esdras NABRE is governed absent: no historical 1 Esdras NABRE source file was present in the inspected source lane, canonical Ezra was excluded as a different book, and no active NABRE text is present."
+      },
+      "latest_2esdras_nabre_absence_policy": {
+        "id": "esdras_2_nabre_absence_policy_2026_06_27",
+        "status": "governed_no_historical_2esdras_nabre_source_no_active_nabre_rows",
+        "activePath": "data/bible/OT/2esdras.json",
+        "activeLane": "text.NABRE",
+        "sourceCommit": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "sourceRoot": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books",
+        "activeRows": 869,
+        "activeNabreRows": 0,
+        "historicalNabreSourceFileCount": 73,
+        "twoEsdrasSourceCandidates": [],
+        "excludedCanonicalEzraSource": {
+          "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Ezra.json",
+          "present": true,
+          "book": "Ezra",
+          "rows": 280,
+          "exclusionReason": "Canonical NABRE Ezra is not 2 Esdras / 4 Esdras / Latin Esdras and must not be used as a 2 Esdras source."
+        },
+        "excludedCanonicalNehemiahSource": {
+          "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Nehemiah.json",
+          "present": true,
+          "book": "Nehemiah",
+          "rows": 405,
+          "exclusionReason": "Canonical NABRE Nehemiah is not 2 Esdras / 4 Esdras / Latin Esdras and must not be used as a 2 Esdras source."
+        },
+        "evidence": {
+          "activeMetaId": "2ESD",
+          "activeMetaName": "2 Esdras",
+          "activeNabreRows": 0,
+          "historicalNabreSourceDirectoryListed": true,
+          "historicalNabreTwoEsdrasCandidates": [],
+          "canonicalEzraBookField": "Ezra",
+          "canonicalNehemiahBookField": "Nehemiah"
+        },
+        "policyDecision": "Do not synthesize 2 Esdras NABRE text. The historical NABRE source lane contains canonical Ezra and Nehemiah but no 2 Esdras / 4 Esdras / Latin Esdras candidate source file, and the active 2 Esdras file contains no NABRE rows.",
+        "blockedActions": [
+          "synthesize_2esdras_nabre_from_drb",
+          "synthesize_2esdras_nabre_from_kjv",
+          "synthesize_2esdras_nabre_from_nrsv",
+          "synthesize_2esdras_nabre_from_webbe",
+          "copy_2esdras_nabre_from_canonical_ezra",
+          "copy_2esdras_nabre_from_canonical_nehemiah",
+          "copy_2esdras_nabre_from_non_nabre_witness",
+          "claim_2esdras_nabre_source_scope_repair_without_historical_2esdras_nabre_source"
+        ],
+        "allowedFutureActions": [
+          "import a legitimate NABRE 2 Esdras source only if an actual NABRE witness is later identified and policy-approved",
+          "record external canon/source evidence in a separate bibliography or source registry if needed"
+        ],
+        "boundedClaim": "2 Esdras NABRE is governed absent: no historical 2 Esdras NABRE source file was present in the inspected source lane, canonical Ezra and Nehemiah were excluded as different books, and no active NABRE text is present."
       }
     },
     "broader_canon": {
