@@ -1,0 +1,39 @@
+{
+  "schema": "greek-daniel-nrsv-ordinary-baseline-result-v1",
+  "id": "greek_daniel_nrsv_ordinary_baseline_result_2026_06_28",
+  "status": "passed_repaired_text_committable",
+  "recordedAt": "2026-06-28",
+  "repairScript": "scripts/repair-bible-greek-daniel-nrsv-ordinary-from-canonical.mjs",
+  "auditScript": "scripts/audit-bible-greek-daniel-nrsv-internal-baseline.mjs",
+  "activePath": "data/bible/OT/danielGK.json",
+  "baselinePath": "data/bible/OT/daniel.json",
+  "mappingPolicy": {
+    "Daniel 1-2": "direct chapter:verse comparison",
+    "Daniel 3:1-23": "direct chapter:verse comparison before Prayer/Song insertion",
+    "Daniel 3:24-30": "compare canonical Daniel 3:24-30 to active Greek Daniel 3:91-97 after Prayer/Song insertion",
+    "Daniel 4-12": "direct chapter:verse comparison"
+  },
+  "auditResult": {
+    "status": "passed",
+    "checkedRefsCount": 357,
+    "exactMatchCount": 357,
+    "exactMismatchCount": 0,
+    "spacingQuoteOnlyMismatchCount": 0,
+    "substantiveMismatchCount": 0,
+    "presenceMismatchCount": 0,
+    "failures": []
+  },
+  "claim": "Active Greek Daniel ordinary chapters 1-12 are internally consistent with canonical Daniel NRSV under the Greek Daniel insertion mapping.",
+  "limitations": [
+    "This does not verify Prayer of Azariah/Song of the Three Jews.",
+    "This does not verify Susanna.",
+    "This does not verify Bel and the Dragon.",
+    "This does not bind an external NRSV source witness for the additions.",
+    "This does not promote all Greek Daniel or deuterocanon trust."
+  ],
+  "nextRequiredWork": [
+    "Extract or bind NRSV source witnesses for Prayer of Azariah/Song of the Three Jews, Susanna, and Bel and the Dragon.",
+    "Acquire or bind NRSV/NRSVA Greek Esther source witness.",
+    "Run exact source collation for remaining Greek addition material only after source binding."
+  ]
+}
