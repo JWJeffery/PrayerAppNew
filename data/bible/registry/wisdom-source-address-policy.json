@@ -1,0 +1,61 @@
+{
+  "schema": "wisdom-source-address-policy-v1",
+  "id": "wisdom_source_address_policy_2026_06_28",
+  "status": "source_address_policy_selected_pending_local_repair",
+  "recordedAt": "2026-06-28",
+  "activeFile": "data/bible/OT/wisdom.json",
+  "dependsOn": [
+    "scripts/audit-bible-wisdom-bound-source-status.mjs",
+    "scripts/audit-bible-wisdom-prefix-gap-diagnostic.mjs"
+  ],
+  "decision": "For Wisdom, KJV and NABRE active lane text must match the bound source text without embedded verse-reference prefixes. Where the bound KJV/NABRE source has a displayed book/chapter/verse address absent from the active file, add a source-address row for that lane only. Do not synthesize NRSV, DRB, Rotherham, or rawText into those rows.",
+  "diagnosticFindings": {
+    "KJV": {
+      "sourceRows": 436,
+      "activeRowsBeforeRepair": 432,
+      "exactAfterPrefixStrip": 432,
+      "missingRefs": [
+        "17:20",
+        "17:21",
+        "19:20",
+        "19:21"
+      ]
+    },
+    "NABRE": {
+      "sourceRows": 403,
+      "activeRowsBeforeRepair": 399,
+      "exactAfterPrefixStrip": 399,
+      "missingRefs": [
+        "17:20",
+        "17:21",
+        "19:20",
+        "19:21"
+      ]
+    },
+    "DRB": {
+      "status": "already_exact_source_collated",
+      "sourceRows": 439,
+      "activeRows": 439
+    },
+    "NRSV": {
+      "status": "active_text_unverified_pending_approved_source_witness_or_policy",
+      "activeRows": 115
+    }
+  },
+  "blockedActions": [
+    "claim_full_wisdom_trust_before_nrsv_resolution",
+    "keep_embedded_kjv_nabre_verse_prefixes_after_source_collation",
+    "insert_nrsv_or_drb_text_into_kjv_nabre_source_address_rows_without_policy",
+    "treat_source_address_rows_as_full_wisdom_trust"
+  ],
+  "allowedActions": [
+    "strip embedded KJV/NABRE verse-reference prefixes only where the stripped text exactly equals the bound source text at the same ref",
+    "insert KJV/NABRE-only source-address rows for 17:20, 17:21, 19:20, and 19:21",
+    "record DRB as exact-source-collated from the existing strict audit result"
+  ],
+  "nextRequiredWork": [
+    "Run bounded Wisdom KJV/NABRE prefix and source-address repair.",
+    "Run strict source collation audit for KJV/NABRE/DRB.",
+    "Record Wisdom partial trust only if the audit passes; keep full Wisdom trust blocked pending NRSV."
+  ]
+}
