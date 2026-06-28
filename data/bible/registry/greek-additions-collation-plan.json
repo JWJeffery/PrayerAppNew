@@ -1,0 +1,48 @@
+{
+  "schema": "greek-additions-collation-plan-v1",
+  "id": "greek_additions_collation_plan_2026_06_28",
+  "status": "comparison_plan_recorded_text_not_mutated",
+  "recordedAt": "2026-06-28",
+  "sourceBinding": "data/bible/registry/greek-additions-source-witness-binding.json",
+  "scope": [
+    "data/bible/OT/estherGK.json",
+    "data/bible/OT/danielGK.json"
+  ],
+  "goal": "Every displayed verse in Greek Esther and Greek Daniel must either exact-match its own translation source or be explicitly absent because that translation has no legitimate source witness.",
+  "rules": [
+    "No Bible text mutation in this plan.",
+    "No overlay from DRB, NABRE, or KJV into active NRSV files.",
+    "No synthetic NRSV text from another translation.",
+    "No treating active NRSV text as its own source."
+  ],
+  "estherGK": {
+    "activeFile": "data/bible/OT/estherGK.json",
+    "activeShape": "NRSV-only unkeyed Greek Esther file",
+    "activeRows": 267,
+    "sourceStatus": {
+      "DRB": "source present; mapping needed",
+      "NABRE": "historical source present; mapping needed",
+      "KJV": "historical Esther source present; mapping needed",
+      "NRSV": "external source candidate identified but not bound"
+    },
+    "nextConcreteStep": "Acquire or bind NRSV/NRSVA Greek Esther source before active text comparison."
+  },
+  "danielGK": {
+    "activeFile": "data/bible/OT/danielGK.json",
+    "activeShape": "NRSV-only unkeyed extended Daniel file",
+    "activeRows": 530,
+    "sourceStatus": {
+      "DRB": "source present; mapping needed",
+      "NABRE": "historical source present; mapping needed",
+      "KJV": "historical ordinary Daniel and addition sources present; mapping needed",
+      "NRSV": "ordinary Daniel internal baseline available; addition candidates identified but not bound"
+    },
+    "nextConcreteStep": "Run internal consistency comparison for ordinary Daniel 1-12 against canonical Daniel NRSV, then bind/extract addition sources."
+  },
+  "nextWorkOrder": [
+    "Greek Daniel internal consistency check for ordinary Daniel 1-12 against canonical Daniel NRSV.",
+    "Acquire or bind NRSV/NRSVA Greek Esther source witness.",
+    "Extract and normalize approved NRSV Daniel-addition sources.",
+    "Create exact source-collation reports only after source binding."
+  ]
+}
