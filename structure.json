@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.154",
-    "last_updated": "2026-06-23",
+    "version": "3.8.155",
+    "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-23: PrayerAppNew records Bible corpus recovery through Vulgate pilot checkpoint and canonical OT residual policy review. Nehemiah 7:73 and Daniel 11:1-45 remain governed blockers; no Bible text was mutated in the policy review.",
+    "operational_status": "Current operational status as of 2026-06-28: PrayerAppNew records Bible corpus trust-boundary work through deuterocanon KJV/NABRE source-scope and absence marker completion. The architecture checkpoint is repaired at current main. Canonical OT non-Psalms is selected as the next large section to finish to 100% trusted with no governed exclusions. Daniel 11:1-45 and Nehemiah 7:73 are no longer acceptable as terminal governed exclusions; they must be positively repaired, source-verified, or otherwise resolved before canonical OT can be called complete.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1034,39 +1034,7 @@
         ]
       }
     ],
-    "latest_bible_corpus_checkpoint": {
-      "id": "canonical_ot_residual_checkpoint_2026_06_23",
-      "commit": "ce82db6",
-      "commitMessage": "Record canonical OT residual checkpoint",
-      "ledgerPath": "data/bible/registry/bible-corpus-remediation-ledger.md",
-      "status": "checkpoint_passed_not_global_trust",
-      "ledgerTargetsTotal": 15,
-      "ledgerTargetsClosed": 13,
-      "ledgerTargetsGovernedRemaining": 2,
-      "governedRemaining": [
-        {
-          "ref": "Nehemiah 7:73",
-          "reason": "split_partial_row_review_required"
-        },
-        {
-          "ref": "Daniel 11:1-45",
-          "reason": "historical_NABRE_source_chapter_absent_no_synthetic_overlay_authorized"
-        }
-      ],
-      "repairedRanges": [
-        "Nehemiah 4:15-23",
-        "Job 41:24-34",
-        "Ezekiel 20:45-49"
-      ],
-      "blockedClaims": [
-        "whole Bible corpus trusted",
-        "canonical OT globally trusted",
-        "Psalms normalized",
-        "deuterocanon complete",
-        "broader canon complete",
-        "Vulgate recovered"
-      ]
-    },
+    "latest_bible_corpus_checkpoint": "bible_corpus_active_trust_boundary_checkpoint_2026_06_28",
     "latest_bible_psalms_checkpoint": {
       "id": "drb_psalms_active_psalter_lane_2026_06_23",
       "commit": "21bd48f",
@@ -1180,6 +1148,73 @@
       "nextAllowedTargets": [
         "nehemiah_7_73_adapter_versification_policy",
         "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+      ]
+    },
+    "latest_bible_corpus_checkpoint_commit": "2bd15ff",
+    "bible_corpus_active_trust_boundary_checkpoint": {
+      "id": "bible_corpus_active_trust_boundary_checkpoint_2026_06_28",
+      "commit": "2bd15ff",
+      "commitFull": "2bd15ff6f04945eccf5a096efe34c89f8fd65705",
+      "commitMessage": "Record deuterocanon KJV NABRE marker completion",
+      "recordedAt": "2026-06-28T12:28:51.531Z",
+      "status": "partial_trust_boundary_active_architecture_checkpoint_repaired",
+      "trustStatusPath": "data/bible/registry/bible-corpus-trust-status.json",
+      "trustStatusGlobalStatus": "partial_trust_boundary_active",
+      "laneStatuses": {
+        "canonical_nt": "named_defect_tranche_complete",
+        "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
+        "psalms": "source_governed_all_expected_psalter_lanes_complete",
+        "deuterocanon": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+        "broader_canon": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+        "vulgate": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication"
+      },
+      "completedSincePriorRoadmapCheckpoint": [
+        "canonical_ot_non_psalms_final_trust_audit_recorded_with_governed_exclusions",
+        "psalms_all_expected_psalter_lanes_source_governed",
+        "deuterocanon_kjv_nabre_source_scope_and_absence_marker_set_completed",
+        "deuterocanon_marker_completion_boundary_recorded"
+      ],
+      "explicitNonCompletion": [
+        "canonical_ot_is_not_finished_under_the_new_no_governed_exclusions_requirement",
+        "canonical_nt_is_named_defect_tranche_complete_only_not_full_recollation",
+        "deuterocanon_remains_not_textually_trusted",
+        "broader_canon_remains_not_textually_trusted",
+        "vulgate_remains_pilot_only_and_deferred"
+      ],
+      "nextLargeSectionSelected": {
+        "key": "canonical_ot_non_psalms",
+        "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
+        "reason": "Canonical OT non-Psalms is already closest to a full trust claim but still contains governed exclusions for Daniel 11:1-45 and Nehemiah 7:73. Those exclusions must be repaired or converted into verified positive trust records before the section can be called finished.",
+        "requiredNextWork": [
+          "inspect canonical OT trust audit and residual records",
+          "inspect Daniel 11 active file, source lane, and controlled source options",
+          "inspect Nehemiah 7:72-73 and 8:1 active/source mappings",
+          "repair or positively source-verify each remaining exclusion",
+          "rerun canonical OT final audit with zero governed exclusions",
+          "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
+        ]
+      },
+      "blockedClaims": [
+        "whole_bible_corpus_trusted",
+        "canonical_ot_100_percent_trusted",
+        "canonical_ot_no_exclusions",
+        "deuterocanon_textually_trusted",
+        "broader_canon_textually_trusted",
+        "vulgate_textually_trusted"
+      ],
+      "nextAllowedTarget": "canonical_ot_non_psalms_no_exclusion_completion"
+    },
+    "next_bible_corpus_target": {
+      "key": "canonical_ot_non_psalms",
+      "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
+      "reason": "Canonical OT non-Psalms is already closest to a full trust claim but still contains governed exclusions for Daniel 11:1-45 and Nehemiah 7:73. Those exclusions must be repaired or converted into verified positive trust records before the section can be called finished.",
+      "requiredNextWork": [
+        "inspect canonical OT trust audit and residual records",
+        "inspect Daniel 11 active file, source lane, and controlled source options",
+        "inspect Nehemiah 7:72-73 and 8:1 active/source mappings",
+        "repair or positively source-verify each remaining exclusion",
+        "rerun canonical OT final audit with zero governed exclusions",
+        "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
       ]
     }
   },

@@ -6,8 +6,8 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "16246b4",
-    "latest_known_commit_message": "Add Roman Breviary Vulgate pilot lanes",
+    "latest_known_commit": "2bd15ff",
+    "latest_known_commit_message": "Record deuterocanon KJV NABRE marker completion",
     "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
@@ -23,9 +23,9 @@
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
-    "latest_bible_corpus_checkpoint": "canonical_ot_residual_checkpoint_2026_06_23",
-    "latest_bible_corpus_checkpoint_commit": "ce82db6",
-    "current_bible_corpus_summary": "Canonical OT residual policy review recorded: Nehemiah 7:73 remains governed split/partial material requiring adapter policy, and Daniel 11:1-45 remains governed source-absent material requiring controlled source acquisition or explicit governed exclusion. Canonical OT remains not trusted.",
+    "latest_bible_corpus_checkpoint": "bible_corpus_active_trust_boundary_checkpoint_2026_06_28",
+    "latest_bible_corpus_checkpoint_commit": "2bd15ff",
+    "current_bible_corpus_summary": "Bible corpus architecture checkpoint repaired after trust-boundary work through deuterocanon KJV/NABRE marker completion. Canonical OT non-Psalms is trusted only with governed exclusions and is now selected as the next large section to finish to 100% trusted with no governed exclusions. Psalms are source-governed across expected lanes. Deuterocanon, broader canon, and Vulgate remain non-trusted or deferred.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -177,6 +177,72 @@
       "nextAllowedTargets": [
         "nehemiah_7_73_adapter_versification_policy",
         "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+      ]
+    },
+    "bible_corpus_active_trust_boundary_checkpoint": {
+      "id": "bible_corpus_active_trust_boundary_checkpoint_2026_06_28",
+      "commit": "2bd15ff",
+      "commitFull": "2bd15ff6f04945eccf5a096efe34c89f8fd65705",
+      "commitMessage": "Record deuterocanon KJV NABRE marker completion",
+      "recordedAt": "2026-06-28T12:28:51.531Z",
+      "status": "partial_trust_boundary_active_architecture_checkpoint_repaired",
+      "trustStatusPath": "data/bible/registry/bible-corpus-trust-status.json",
+      "trustStatusGlobalStatus": "partial_trust_boundary_active",
+      "laneStatuses": {
+        "canonical_nt": "named_defect_tranche_complete",
+        "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
+        "psalms": "source_governed_all_expected_psalter_lanes_complete",
+        "deuterocanon": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+        "broader_canon": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+        "vulgate": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication"
+      },
+      "completedSincePriorRoadmapCheckpoint": [
+        "canonical_ot_non_psalms_final_trust_audit_recorded_with_governed_exclusions",
+        "psalms_all_expected_psalter_lanes_source_governed",
+        "deuterocanon_kjv_nabre_source_scope_and_absence_marker_set_completed",
+        "deuterocanon_marker_completion_boundary_recorded"
+      ],
+      "explicitNonCompletion": [
+        "canonical_ot_is_not_finished_under_the_new_no_governed_exclusions_requirement",
+        "canonical_nt_is_named_defect_tranche_complete_only_not_full_recollation",
+        "deuterocanon_remains_not_textually_trusted",
+        "broader_canon_remains_not_textually_trusted",
+        "vulgate_remains_pilot_only_and_deferred"
+      ],
+      "nextLargeSectionSelected": {
+        "key": "canonical_ot_non_psalms",
+        "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
+        "reason": "Canonical OT non-Psalms is already closest to a full trust claim but still contains governed exclusions for Daniel 11:1-45 and Nehemiah 7:73. Those exclusions must be repaired or converted into verified positive trust records before the section can be called finished.",
+        "requiredNextWork": [
+          "inspect canonical OT trust audit and residual records",
+          "inspect Daniel 11 active file, source lane, and controlled source options",
+          "inspect Nehemiah 7:72-73 and 8:1 active/source mappings",
+          "repair or positively source-verify each remaining exclusion",
+          "rerun canonical OT final audit with zero governed exclusions",
+          "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
+        ]
+      },
+      "blockedClaims": [
+        "whole_bible_corpus_trusted",
+        "canonical_ot_100_percent_trusted",
+        "canonical_ot_no_exclusions",
+        "deuterocanon_textually_trusted",
+        "broader_canon_textually_trusted",
+        "vulgate_textually_trusted"
+      ],
+      "nextAllowedTarget": "canonical_ot_non_psalms_no_exclusion_completion"
+    },
+    "next_bible_corpus_target": {
+      "key": "canonical_ot_non_psalms",
+      "target": "finish_canonical_ot_non_psalms_to_100_percent_trusted_no_governed_exclusions",
+      "reason": "Canonical OT non-Psalms is already closest to a full trust claim but still contains governed exclusions for Daniel 11:1-45 and Nehemiah 7:73. Those exclusions must be repaired or converted into verified positive trust records before the section can be called finished.",
+      "requiredNextWork": [
+        "inspect canonical OT trust audit and residual records",
+        "inspect Daniel 11 active file, source lane, and controlled source options",
+        "inspect Nehemiah 7:72-73 and 8:1 active/source mappings",
+        "repair or positively source-verify each remaining exclusion",
+        "rerun canonical OT final audit with zero governed exclusions",
+        "update trust-status, roadmap, and structure to canonical_ot_non_psalms_100_percent_trusted"
       ]
     }
   },
