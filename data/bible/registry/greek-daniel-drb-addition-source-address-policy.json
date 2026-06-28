@@ -1,0 +1,61 @@
+{
+  "schema": "greek-daniel-drb-addition-source-address-policy-v1",
+  "id": "greek_daniel_drb_addition_source_address_policy_2026_06_28",
+  "status": "source_address_policy_selected_pending_local_repair",
+  "recordedAt": "2026-06-28",
+  "activeFile": "data/bible/OT/danielGK.json",
+  "dependsOn": [
+    "data/bible/registry/greek-daniel-bound-addition-address-mapping.json",
+    "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json"
+  ],
+  "decision": "Preserve DRB source addresses for Greek Daniel additions rather than forcing DRB Bel and the Dragon into the 42-row NRSV/KJV/NABRE semantic grid.",
+  "reason": [
+    "The project standard is correct text at the correct book/chapter/verse address.",
+    "DRB Daniel 13:65 is an Astyages/Cyrus transition row in the DRB source and must remain addressable as DRB Daniel 13:65.",
+    "DRB Daniel 14:42 is a closing declaration by the king in the DRB source and must remain addressable as DRB Daniel 14:42.",
+    "Mapping DRB Daniel 13:65 to active Daniel 14:1 and DRB Daniel 14:1-41 to active Daniel 14:2-42 would make active DRB Daniel 14:42 display DRB source Daniel 14:41, which violates source-address correctness.",
+    "NRSV/KJV/NABRE may remain absent at Daniel 13:65 because those source forms end Susanna at Daniel 13:64."
+  ],
+  "selectedMapping": {
+    "prayer_song": {
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+      "sourceChapter": 3,
+      "sourceVerseRange": "24-90",
+      "activeChapter": 3,
+      "activeVerseRange": "24-90",
+      "mappingRule": "DRB Daniel 3:n maps to active Daniel 3:n for 24-90"
+    },
+    "susanna": {
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+      "sourceChapter": 13,
+      "sourceVerseRange": "1-65",
+      "activeChapter": 13,
+      "activeVerseRange": "1-65",
+      "mappingRule": "DRB Daniel 13:n maps to active Daniel 13:n for 1-65; active Daniel 13:65 is DRB-only"
+    },
+    "bel_and_dragon": {
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+      "sourceChapter": 14,
+      "sourceVerseRange": "1-42",
+      "activeChapter": 14,
+      "activeVerseRange": "1-42",
+      "mappingRule": "DRB Daniel 14:n maps to active Daniel 14:n for 1-42"
+    }
+  },
+  "allowedAbsence": [
+    "NRSV absent at active Daniel 13:65 unless an approved NRSV source provides that address.",
+    "KJV absent at active Daniel 13:65 because bound KJV Susanna has 64 rows.",
+    "NABRE absent at active Daniel 13:65 because bound NABRE Susanna has 64 rows."
+  ],
+  "blockedActions": [
+    "map_drb_daniel_13_65_to_active_daniel_14_1",
+    "map_drb_daniel_14_42_to_active_daniel_14_43",
+    "drop_drb_daniel_14_42_as_source_extra",
+    "claim_drb_bel_trust_under_semantic_42_row_alignment"
+  ],
+  "nextRequiredWork": [
+    "Add a bounded repair script to add/populate DRB addition lanes under source-address policy.",
+    "Run exact DRB addition collation audit after repair.",
+    "Record DRB additions result if exact collation passes."
+  ]
+}
