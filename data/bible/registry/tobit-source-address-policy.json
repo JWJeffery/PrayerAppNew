@@ -1,0 +1,47 @@
+{
+  "schema": "tobit-source-address-policy-v1",
+  "id": "tobit_source_address_policy_2026_06_28",
+  "status": "source_address_policy_selected_pending_local_repair",
+  "recordedAt": "2026-06-28",
+  "activeFile": "data/bible/OT/tobit.json",
+  "dependsOn": [
+    "scripts/audit-bible-tobit-bound-source-status.mjs",
+    "scripts/audit-bible-tobit-overflow-diagnostic.mjs"
+  ],
+  "decision": "For Tobit, keep active KJV/NABRE/DRB lanes only where the bound source witness has the displayed book/chapter/verse address. Remove copied or source-absent active lane text rather than carrying it as synthetic text.",
+  "sourceWitnesses": {
+    "KJV": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Tobit.json",
+      "policy": "KJV active Tobit rows must exactly match the bound KJV source rows. Active KJV rows with no source row are removed as source-absent lane contamination."
+    },
+    "NABRE": {
+      "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+      "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Tobit.json",
+      "policy": "NABRE active Tobit rows must exactly match the bound NABRE source rows. Active NABRE rows with no source row are removed as source-absent lane contamination."
+    },
+    "DRB": {
+      "sourceRef": "main/current",
+      "path": "data/bible/translations/drb-original-douay-rheims/raw/tobias.json",
+      "policy": "DRB active Tobit rows map to source chapters 1-14 only. DRB source chapter 0 is introductory/title material and remains source-present inactive. Active DRB 10:14 is removed because there is no bound DRB source row at 10:14."
+    }
+  },
+  "blockedOrUnresolvedLanes": {
+    "NRSV": "Active NRSV Tobit remains unverified pending approved source witness/status.",
+    "rawText": "Active rawText remains unverified and requires classification before full Tobit trust.",
+    "Rotherham": "Active Rotherham rows are unexpected under current matrix assumptions and require separate source/status classification."
+  },
+  "blockedActions": [
+    "claim_full_tobit_trust_before_nrsv_rawtext_rotherham_resolution",
+    "keep_kjv_rows_without_bound_kjv_source_rows",
+    "keep_nabre_rows_without_bound_nabre_source_rows",
+    "keep_drb_10_14_without_bound_drb_source_row",
+    "insert_drb_source_chapter_0_into_active_tobit_without_display_policy"
+  ],
+  "nextRequiredWork": [
+    "Run bounded Tobit lane cleanup under this policy.",
+    "Run policy-aware exact source collation for KJV/NABRE/DRB.",
+    "Record Tobit KJV/NABRE/DRB partial trust only if exact collation passes.",
+    "Keep Tobit not fully trust-ready while NRSV/rawText/Rotherham remain unresolved."
+  ]
+}
