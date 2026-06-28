@@ -36,7 +36,8 @@
         "nehemiah_7_73_adapter_policy_1",
         "daniel_11_source_absent_governed_exclusion_1",
         "canonical_ot_final_trust_audit_1",
-        "daniel_11_nabre_usccb_source_import_1"
+        "daniel_11_nabre_usccb_source_import_1",
+        "daniel_11_nabre_source_snapshot_boundary_path_repair_1"
       ],
       "latest_canonical_ot_final_trust_audit": {
         "id": "canonical_ot_final_trust_audit_2026_06_23",
@@ -86,7 +87,7 @@
         "status": "official_source_imported_exact_verified",
         "activePath": "data/bible/OT/daniel.json",
         "activeLane": "text.NABRE",
-        "sourcePath": "data/bible/translations/nabre-official-usccb/source/daniel-11.json",
+        "sourcePath": "data/bible/translations/nabre-official-usccb/raw/daniel-11.json",
         "sourceUrl": "https://bible.usccb.org/bible/daniel/11",
         "refs": [
           "11:1",
@@ -192,7 +193,14 @@
         ],
         "remainingCanonicalOtGovernedExclusions": [
           "nehemiah_7_73_adapter_versification_no_synthetic_row"
-        ]
+        ],
+        "sourcePathBoundaryRepair": {
+          "id": "daniel_11_nabre_source_snapshot_boundary_path_repair_2026_06_28",
+          "status": "source_snapshot_moved_out_of_forbidden_source_directory",
+          "oldPath": "data/bible/translations/nabre-official-usccb/source/daniel-11.json",
+          "newPath": "data/bible/translations/nabre-official-usccb/raw/daniel-11.json",
+          "reason": "active corpus boundary audit disallows translation source mirror directories ending in /source; official source snapshot is retained under raw witness storage instead"
+        }
       }
     },
     "psalms": {
