@@ -1,0 +1,103 @@
+{
+  "schema": "greek-additions-source-witness-binding-v1",
+  "id": "greek_additions_source_witness_binding_2026_06_28",
+  "status": "source_witnesses_bound_text_not_mutated",
+  "recordedAt": "2026-06-28",
+  "scope": [
+    "data/bible/OT/estherGK.json",
+    "data/bible/OT/danielGK.json"
+  ],
+  "controllingDecision": "data/bible/registry/nonprotestant-canon-text-trust-decision.json",
+  "plainEnglishRule": "Greek Esther and Greek Daniel may not be promoted or repaired by overlay. Each translation must be compared against its own source witness. A source-missing translation lane is an allowed absence; synthetic text is forbidden.",
+  "activeFiles": {
+    "estherGK": {
+      "path": "data/bible/OT/estherGK.json",
+      "currentShape": "NRSV-only unkeyed active text",
+      "activeRows": 267,
+      "status": "active_source_not_yet_bound_for_nrsv"
+    },
+    "danielGK": {
+      "path": "data/bible/OT/danielGK.json",
+      "currentShape": "NRSV-only unkeyed active text",
+      "activeRows": 530,
+      "status": "active_source_not_yet_bound_for_nrsv"
+    }
+  },
+  "sourceWitnesses": {
+    "estherGK": {
+      "DRB": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "main/current",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/esther.json",
+        "observedRows": 351,
+        "note": "Douay-Rheims raw Esther includes Catholic Esther form and must be mapped before any active text comparison or import."
+      },
+      "NABRE": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Esther.json",
+        "observedRows": 167,
+        "note": "Historical NABRE Esther source is present. It must be compared in its own source form rather than forced into the active NRSV addition grid."
+      },
+      "KJV": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "path": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Esther.json",
+        "observedBook": "Esther",
+        "observedChapterCount": 10,
+        "note": "Historical KJV source uses the ordinary Esther file path, not an Additions_to_Esther underscore path."
+      },
+      "NRSV": {
+        "status": "source_needed_before_active_trust",
+        "path": null,
+        "note": "Active Greek Esther claims NRSV text, but no independent local NRSV source witness has been bound."
+      }
+    },
+    "danielGK": {
+      "DRB": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "main/current",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/daniel.json",
+        "observedRows": 701,
+        "note": "Douay-Rheims raw Daniel includes Catholic/extended Daniel material and must be mapped before any active text comparison or import."
+      },
+      "NABRE": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "path": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Daniel.json",
+        "observedRows": 485,
+        "note": "Historical NABRE Daniel source is present. The separate current Daniel 11 snapshot is not itself a Greek Daniel source witness."
+      },
+      "KJV": {
+        "status": "source_present_ready_for_collation",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6",
+        "paths": [
+          "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Daniel.json",
+          "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Prayer of Azariah.json",
+          "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Susanna.json",
+          "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Bel and the Dragon.json"
+        ],
+        "note": "Historical KJV Daniel material is split across ordinary Daniel plus separate apocryphal addition files. The exact source paths use spaces, not underscores."
+      },
+      "NRSV": {
+        "status": "source_needed_before_active_trust",
+        "path": null,
+        "note": "Active Greek Daniel claims NRSV text, but no independent local NRSV source witness has been bound."
+      }
+    }
+  },
+  "blockedActions": [
+    "mutate_estherGK_before_nrsv_source_binding",
+    "mutate_danielGK_before_nrsv_source_binding",
+    "overlay_drb_over_active_greek_esther",
+    "overlay_drb_over_active_greek_daniel",
+    "force_kjv_split_addition_files_into_active_daniel_without_mapping",
+    "treat_current_daniel_11_nabre_snapshot_as_full_greek_daniel_source"
+  ],
+  "nextRequiredWork": [
+    "Bind or acquire the NRSV source witness for active Greek Esther.",
+    "Bind or acquire the NRSV source witness for active Greek Daniel.",
+    "Create a comparison plan that maps DRB, NABRE, KJV, and NRSV source forms without changing Bible text.",
+    "Only after source binding, run exact text collation for active NRSV Greek Esther and active NRSV Greek Daniel."
+  ]
+}
