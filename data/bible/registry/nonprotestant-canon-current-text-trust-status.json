@@ -1,0 +1,81 @@
+{
+  "schema": "nonprotestant-canon-current-text-trust-status-v1",
+  "id": "nonprotestant_canon_current_text_trust_status_2026_06_28",
+  "status": "not_trust_ready_partial_greek_additions_progress",
+  "recordedAt": "2026-06-28",
+  "controllingDecision": "data/bible/registry/nonprotestant-canon-text-trust-decision.json",
+  "priorMatrix": "data/bible/registry/nonprotestant-canon-collation-matrix.json",
+  "reason": "Greek Esther and Greek Daniel now have partial exact-source-collated lanes, but the broader non-Protestant canon matrix remains not trust-ready and NRSV source blocks remain unresolved.",
+  "blockedGlobalClaimsStillActive": [
+    "deuterocanon_complete",
+    "nonprotestant_canon_textually_trusted",
+    "whole_ot_including_psalms_textually_trusted",
+    "entire_biblical_corpus_trusted"
+  ],
+  "greekAdditionsProgress": {
+    "estherGK": {
+      "status": "partial_trust_ready_nrsv_blocked",
+      "activePath": "data/bible/OT/estherGK.json",
+      "activeRows": 272,
+      "statusRecord": "data/bible/registry/greek-esther-text-trust-status.json",
+      "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+      "trustedClaims": [
+        "KJV ordinary Esther 1-10 exact-source-collated, including source-address rows 8:13-17.",
+        "NABRE ordinary Esther 1-10 exact-source-collated, including source-address rows 8:13-17.",
+        "DRB ordinary and mapped addition lanes exact-source-collated under source-address policy."
+      ],
+      "blockedClaims": [
+        "Active NRSV Greek Esther remains unverified pending approved NRSV/NRSVA source witness.",
+        "Full Greek Esther trust remains blocked by NRSV source absence."
+      ]
+    },
+    "danielGK": {
+      "status": "partial_trust_ready_nrsv_additions_blocked",
+      "activePath": "data/bible/OT/danielGK.json",
+      "activeRows": 531,
+      "statusRecord": "data/bible/registry/greek-daniel-text-trust-status.json",
+      "trustedClaims": [
+        "Ordinary Daniel 1-12 NRSV internally baseline-verified against canonical Daniel NRSV.",
+        "KJV Greek Daniel addition lanes exact-source-collated.",
+        "NABRE Greek Daniel addition lanes exact-source-collated.",
+        "DRB Greek Daniel addition/source-address lanes exact-source-collated."
+      ],
+      "blockedClaims": [
+        "Active NRSV Greek Daniel additions remain unverified pending approved source witness.",
+        "Full Greek Daniel trust remains blocked by NRSV additions."
+      ]
+    }
+  },
+  "matrixStalenessNotice": {
+    "status": "prior_matrix_stale_for_greek_additions",
+    "reason": "The previous non-Protestant collation matrix predates Greek Esther and Greek Daniel lane repairs/status records. It remains useful as a backlog boundary but not as a current per-cell source of truth for those two active files.",
+    "doNotUsePriorMatrixToClaim": [
+      "Greek Esther still has only unkeyed text after a8b6af1.",
+      "Greek Daniel lacks KJV/NABRE/DRB addition lane records after b443e51 and fead200."
+    ]
+  },
+  "remainingBlocks": [
+    "Greek Esther NRSV source witness acquisition and collation.",
+    "Greek Daniel NRSV addition source witness acquisition and collation.",
+    "Book-by-book direct source collation for remaining deuterocanon/non-Protestant corpus lanes still marked unverified or final-review-required in the matrix.",
+    "Explicit absence/display checks for source-absent lanes."
+  ],
+  "allowedClaims": [
+    "Greek additions have partial exact-source-collated progress for specified KJV/NABRE/DRB scopes.",
+    "Non-Protestant canon text trust remains incomplete and not globally trust-ready.",
+    "The prior matrix is stale for Greek Esther and Greek Daniel and must be superseded by their specific status records for those files."
+  ],
+  "forbiddenClaims": [
+    "Deuterocanon is complete.",
+    "Non-Protestant canon is textually trusted.",
+    "Whole OT including Psalms is textually trusted.",
+    "Entire biblical corpus is trusted.",
+    "Greek Esther NRSV is source-verified.",
+    "Greek Daniel NRSV additions are source-verified."
+  ],
+  "nextRequiredWork": [
+    "Run the current text trust status audit.",
+    "Then either proceed to approved NRSV source acquisition for Greek Esther/Greek Daniel additions or select the next non-Protestant canon lane from the remaining matrix backlog.",
+    "Do not promote any global trust claim until the matrix and file-specific status records have no unverified active text cells."
+  ]
+}
