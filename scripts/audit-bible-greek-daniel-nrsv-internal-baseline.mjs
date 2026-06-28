@@ -29,6 +29,22 @@ function textOfBaseline(chapterNumber, verseNumber) {
   return typeof verse?.text?.NRSV === 'string' ? verse.text.NRSV : null;
 }
 
+function compactText(value) {
+  return String(value ?? '')
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/[\s\u00a0]+/g, '')
+    .replace(/["']/g, '')
+    .trim();
+}
+
+function compareKind(activeText, baselineText) {
+  if (activeText === baselineText) return 'exact';
+  if (activeText === null || baselineText === null) return 'presence_mismatch';
+  if (compactText(activeText) === compactText(baselineText)) return 'spacing_quote_only';
+  return 'substantive';
+}
+
 const comparisons = [];
 
 function addDirectChapter(chapterNumber) {
@@ -82,34 +98,51 @@ if (active && baseline) {
 }
 
 const checked = [];
-const mismatches = [];
+const exactMatches = [];
+const spacingQuoteOnlyMismatches = [];
+const substantiveMismatches = [];
+const presenceMismatches = [];
 
 for (const comparison of comparisons) {
   const activeText = textOfActive(comparison.activeChapter, comparison.activeVerse);
   const baselineText = textOfBaseline(comparison.baselineChapter, comparison.baselineVerse);
+  const kind = compareKind(activeText, baselineText);
 
   checked.push({
     baselineRef: comparison.baselineRef,
     activeRef: comparison.activeRef,
-    mapping: comparison.mapping
+    mapping: comparison.mapping,
+    kind
   });
 
-  if (activeText !== baselineText) {
-    mismatches.push({
-      baselineRef: comparison.baselineRef,
-      activeRef: comparison.activeRef,
-      mapping: comparison.mapping,
-      activePresent: activeText !== null,
-      baselinePresent: baselineText !== null,
-      activePreview: activeText ? activeText.slice(0, 160) : null,
-      baselinePreview: baselineText ? baselineText.slice(0, 160) : null
-    });
-  }
+  const record = {
+    baselineRef: comparison.baselineRef,
+    activeRef: comparison.activeRef,
+    mapping: comparison.mapping,
+    activePresent: activeText !== null,
+    baselinePresent: baselineText !== null,
+    activePreview: activeText ? activeText.slice(0, 200) : null,
+    baselinePreview: baselineText ? baselineText.slice(0, 200) : null
+  };
+
+  if (kind === 'exact') exactMatches.push(record);
+  else if (kind === 'spacing_quote_only') spacingQuoteOnlyMismatches.push(record);
+  else if (kind === 'presence_mismatch') presenceMismatches.push(record);
+  else substantiveMismatches.push(record);
 }
+
+const exactMismatchCount = spacingQuoteOnlyMismatches.length + substantiveMismatches.length + presenceMismatches.length;
+const status = failures.length
+  ? 'failed'
+  : substantiveMismatches.length || presenceMismatches.length
+    ? 'substantive_mismatch'
+    : spacingQuoteOnlyMismatches.length
+      ? 'formatting_only_mismatch'
+      : 'passed';
 
 const report = {
   audit: 'greek-daniel-nrsv-internal-baseline',
-  status: failures.length ? 'failed' : mismatches.length ? 'mismatched' : 'passed',
+  status,
   scope: 'Compare active Greek Daniel ordinary chapters 1-12 against canonical Daniel text.NRSV using Greek Daniel chapter 3 insertion mapping.',
   activePath,
   baselinePath,
@@ -121,8 +154,14 @@ const report = {
     'Daniel 4-12': 'direct chapter:verse comparison'
   },
   checkedRefsCount: checked.length,
-  mismatchCount: mismatches.length,
-  mismatchSample: mismatches.slice(0, 50),
+  exactMatchCount: exactMatches.length,
+  exactMismatchCount,
+  spacingQuoteOnlyMismatchCount: spacingQuoteOnlyMismatches.length,
+  substantiveMismatchCount: substantiveMismatches.length,
+  presenceMismatchCount: presenceMismatches.length,
+  spacingQuoteOnlyMismatchSample: spacingQuoteOnlyMismatches.slice(0, 50),
+  substantiveMismatchSample: substantiveMismatches.slice(0, 50),
+  presenceMismatchSample: presenceMismatches.slice(0, 50),
   failures
 };
 
@@ -136,9 +175,13 @@ if (failures.length) {
   console.log('ALL FAILED');
   console.log('NEXT: Fix audit input/read failure. No Bible text was mutated.');
   process.exitCode = 1;
-} else if (mismatches.length) {
+} else if (substantiveMismatches.length || presenceMismatches.length) {
   console.log('ALL FAILED');
-  console.log('NEXT: Greek Daniel ordinary chapters 1-12 do not match canonical Daniel NRSV under the Greek Daniel insertion mapping. Review mismatchSample before any mutation.');
+  console.log('NEXT: Greek Daniel ordinary chapters 1-12 has substantive or presence mismatches. Review substantiveMismatchSample and presenceMismatchSample before any mutation.');
+  process.exitCode = 1;
+} else if (spacingQuoteOnlyMismatches.length) {
+  console.log('ALL FAILED');
+  console.log('NEXT: Greek Daniel ordinary chapters 1-12 has spacing/quote-only exact-text defects. Repair active formatting from canonical Daniel NRSV before promotion.');
   process.exitCode = 1;
 } else {
   console.log('ALL PASSED');
