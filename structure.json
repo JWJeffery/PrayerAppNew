@@ -1,7 +1,7 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.156",
+    "version": "3.8.157",
     "last_updated": "2026-06-28",
     "bcp_compliance": "100%",
     "operational_status": "Current operational status as of 2026-06-28: Canonical OT non-Psalms is complete and trusted with no governed exclusions. Daniel 11:1-45 NABRE is restored from official source. Nehemiah 7:73 NABRE is resolved as a positive source-address alignment. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
@@ -311,6 +311,63 @@
           "audit:office-of-readings-private-psalmody-section",
           "audit:office-of-readings-private-pilot-context-corpus"
         ]
+      },
+      {
+        "id": "east_syriac_hudra_cathedral_monastic_practice_witness_model",
+        "status": "accepted",
+        "date": "2026-06-28",
+        "scope": [
+          "Church of the East",
+          "East Syriac Office",
+          "Hudra / Khudra",
+          "Cathedral offering",
+          "Monastic offering",
+          "practice witnesses",
+          "comparative Syriac sources"
+        ],
+        "decision": "Universal Office will treat the Church of the East lane as an East Syriac Office using Hudra/Khudra as an acceptable broad public-facing label where appropriate, not as a claim that every rendered component comes narrowly from one liturgical book. Cathedral and Monastic are distinct usage models: Cathedral represents living public/parish practice and may be curated to Ramsha, Lelya, and Sapra when supported by practice/source evidence; Monastic represents the fuller canonical hour cycle and may expose Quta'a, Endana, D-tsha' Sa'in / Ninth Hour, Suba'a, and other implemented hours as full-cycle prayer rather than ordinary cathedral default.",
+        "governance": {
+          "shheemo_term_policy": "Sh'heemo/Shehimo is West Syriac and must not be used as the East Syriac/Church of the East lane label.",
+          "practice_witness_policy": "Community reports, parish descriptions, Reddit discussions, and similar resources may guide usage-mode decisions, cathedral/monastic defaults, and UI emphasis, but they are not textual authorities.",
+          "source_authority_policy": "Actual office text, rubrics, psalmody, readings, responsories, hymnody, and provenance remain governed by source-tracked liturgical books and corpus witnesses.",
+          "comparative_witness_policy": "West Syriac Fenqiotho/Fanqitho material may be used as a comparative Syriac liturgical witness for office idiom, feast-proper structure, and Semitic liturgical register, but it is not a direct Hudra/Endana source and must not determine East Syriac structure."
+        },
+        "ui_implications": {
+          "selector_label": "Church of the East",
+          "technical_label": "East Syriac Office",
+          "hudra_label_policy": "Hudra / Khudra may remain as a broad recognizable label where source notes preserve internal book distinctions.",
+          "cathedral_default_candidate_hours": [
+            "Ramsha",
+            "Lelya",
+            "Sapra"
+          ],
+          "monastic_full_cycle_candidate_hours": [
+            "Ramsha",
+            "Suba'a",
+            "Lelya",
+            "Qala d-Shahra",
+            "Sapra",
+            "Quta'a",
+            "Endana",
+            "D-tsha' Sa'in / Ninth Hour"
+          ],
+          "visibility_rule": "Do not show all implemented East Syriac hours as cathedral-normal merely because they exist. Less common public hours should be marked as monastic, expanded, restored, or full-cycle when practice/source evidence does not support cathedral default use."
+        },
+        "research_posture": {
+          "accepted_practice_leads": [
+            "r/divineoffice East Syriac Office / Hudra discussion as practice witness only"
+          ],
+          "accepted_comparative_leads": [
+            "ephremishac/syriac-liturgy Fenqiotho material as West Syriac comparative witness only"
+          ],
+          "blocked_claims": [
+            "Sh'heemo is an East Syriac label",
+            "Fenqiotho is the West Syriac Hudra in a one-to-one sense",
+            "Reddit or community practice reports authorize office text",
+            "All implemented East Syriac hours are automatically cathedral-default",
+            "Hudra broad-label usage removes the need to track Qdham u-Wathar, Psalter/Hullale, Gezza, Kashkol, Bedjan, Darmo, or other source-family distinctions"
+          ]
+        }
       }
     ],
     "audit_findings": {
