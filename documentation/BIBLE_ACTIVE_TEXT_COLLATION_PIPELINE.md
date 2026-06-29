@@ -58,6 +58,12 @@ Phase 8 keeps the pipeline read-only and extends `releasePostureSummary` with fi
 
 The summary now includes `countsByFileScope` and `fileScopesByPosture`, showing how release posture is distributed across Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, and other Bible inventory. These are triage aids only and do not change text, trust, or release status.
 
+## Phase 9
+
+Phase 9 keeps the pipeline read-only and adds `collationEvidenceRecordSummary` to the compact report.
+
+The summary groups active cells by the existing governed collation/status record that supplied inherited evidence. It shows evidence-record counts, classifications by evidence record, release postures by evidence record, and top files by evidence record. This is inherited evidence only; the report still does not perform live source collation or authorize new trust claims.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
