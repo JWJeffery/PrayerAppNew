@@ -1,14 +1,17 @@
 {
   "schema": "bible-source-registry-v1",
-  "phase": "inventory_scaffold",
-  "status": "phase1_label_registry_only",
+  "phase": "source_collation_record_ingestion",
+  "status": "phase2_label_registry_with_record_index",
   "trustAssertionsMade": false,
   "bibleTextMutated": false,
   "sourceCollationPerformed": false,
+  "sourceCollationEvidenceIngested": true,
+  "collationRecordIndex": "data/bible/registry/active-text-collation-record-index.json",
   "registeredTextMeaning": "Known registry lane/source label only; not source-verified and not trusted by this registry.",
   "notes": [
-    "Phase 1 registry supports active-text inventory classification only.",
+    "Phase 2 adds ingestion of existing governed collation/status records.",
     "Registered source IDs do not imply source collation, trust, release readiness, resolver behavior changes, or public-rendering clearance.",
+    "Exact-source-collated classifications are inherited only from existing governed result records; this pipeline branch does not perform new live collation.",
     "Do not add Protestant/non-Protestant terminology here; use neutral or tradition-specific source labels."
   ],
   "activeSources": [
