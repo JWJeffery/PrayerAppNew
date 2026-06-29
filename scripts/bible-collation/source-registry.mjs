@@ -19,11 +19,13 @@ export function loadSourceRegistry(options = {}) {
 
   return {
     registryPath,
+    collationRecordIndex: registry.collationRecordIndex || null,
     phase: registry.phase || null,
     status: registry.status || null,
     trustAssertionsMade: registry.trustAssertionsMade === true,
     bibleTextMutated: registry.bibleTextMutated === true,
     sourceCollationPerformed: registry.sourceCollationPerformed === true,
+    sourceCollationEvidenceIngested: registry.sourceCollationEvidenceIngested === true,
     registeredTextMeaning: registry.registeredTextMeaning || null,
     registeredIds,
     isRegistered(id) {
