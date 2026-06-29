@@ -49,6 +49,22 @@ function groupTopFilesByScope(records, limit = 8) {
   );
 }
 
+function groupTopFilesByLane(records, limit = 8) {
+  const groups = new Map();
+  for (const record of records) {
+    const lane = record.lane;
+    if (!lane) continue;
+    if (!groups.has(lane)) groups.set(lane, []);
+    groups.get(lane).push(record);
+  }
+
+  return Object.fromEntries(
+    [...groups.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([lane, laneRecords]) => [lane, topRecordCounts(laneRecords, record => record.file, limit)])
+  );
+}
+
 function releasePostureForClassification(classification) {
   if (classification === 'exact_source_collated') return 'source_collated_evidence';
   if (classification === 'registered_text') return 'registered_not_collated';
@@ -129,6 +145,7 @@ function buildCollationEvidenceRecordSummary(records) {
 function buildCoverageSummary(records) {
   const withEvidence = records.filter(record => record.evidenceRecord);
   const withoutEvidence = records.filter(record => !record.evidenceRecord);
+  const registeredWithoutEvidence = withoutEvidence.filter(record => record.classification === 'registered_text');
   return {
     meaning: 'Coverage summary compares active cells that have inherited governed record evidence with active cells still outside inherited evidence coverage. It is triage-only and not a trust assertion.',
     totalActiveCells: records.length,
@@ -140,8 +157,11 @@ function buildCoverageSummary(records) {
     withoutEvidenceByPosture: objectFromCounts(countRecords(withoutEvidence, record => releasePostureForClassification(record.classification))),
     withEvidenceByFileScope: objectFromCounts(countRecords(withEvidence, record => fileScope(record.file))),
     withoutEvidenceByFileScope: objectFromCounts(countRecords(withoutEvidence, record => fileScope(record.file))),
+    withoutEvidenceByLane: objectFromCounts(countRecords(withoutEvidence, record => record.lane)),
+    registeredWithoutEvidenceByLane: objectFromCounts(countRecords(registeredWithoutEvidence, record => record.lane)),
     topFilesWithoutEvidenceRecord: topRecordCounts(withoutEvidence, record => record.file, 12),
-    topFilesWithoutEvidenceRecordByFileScope: groupTopFilesByScope(withoutEvidence, 8)
+    topFilesWithoutEvidenceRecordByFileScope: groupTopFilesByScope(withoutEvidence, 8),
+    topRegisteredFilesWithoutEvidenceByLane: groupTopFilesByLane(registeredWithoutEvidence, 8)
   };
 }
 
