@@ -138,7 +138,10 @@ function buildCoverageSummary(records) {
     withoutEvidenceByClassification: objectFromCounts(countRecords(withoutEvidence, record => record.classification)),
     withEvidenceByPosture: objectFromCounts(countRecords(withEvidence, record => releasePostureForClassification(record.classification))),
     withoutEvidenceByPosture: objectFromCounts(countRecords(withoutEvidence, record => releasePostureForClassification(record.classification))),
-    topFilesWithoutEvidenceRecord: topRecordCounts(withoutEvidence, record => record.file, 12)
+    withEvidenceByFileScope: objectFromCounts(countRecords(withEvidence, record => fileScope(record.file))),
+    withoutEvidenceByFileScope: objectFromCounts(countRecords(withoutEvidence, record => fileScope(record.file))),
+    topFilesWithoutEvidenceRecord: topRecordCounts(withoutEvidence, record => record.file, 12),
+    topFilesWithoutEvidenceRecordByFileScope: groupTopFilesByScope(withoutEvidence, 8)
   };
 }
 
