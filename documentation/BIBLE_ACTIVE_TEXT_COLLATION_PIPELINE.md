@@ -22,6 +22,12 @@ The compact report includes these flags:
 - `sourceCollationPerformed: false`
 - `sourceCollationEvidenceIngested: true`
 
+## Phase 3
+
+Phase 3 keeps the pipeline read-only and tightens classification hygiene. Generic `text` fields and fallback text leaves are classified as `active_text_untyped` instead of `unregistered_source:text`.
+
+That keeps `unregistered_source` reserved for actual source or lane labels that need registry decisions, while still surfacing untyped active text as unresolved inventory work.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
