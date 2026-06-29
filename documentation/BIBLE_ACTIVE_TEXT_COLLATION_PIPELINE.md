@@ -76,6 +76,12 @@ Phase 11 keeps the pipeline read-only and extends `coverageSummary` with file-sc
 
 The summary now shows active cells with and without inherited evidence by file scope, and top files without inherited evidence grouped by file scope. This makes later source-collation planning more precise without changing text, trust, release status, or placement decisions.
 
+## Phase 12
+
+Phase 12 keeps the pipeline read-only and extends `coverageSummary` with lane/source-label coverage splits.
+
+The summary now shows active cells without inherited evidence by lane, registered active cells without inherited evidence by lane, and top registered files without inherited evidence grouped by lane. This makes later source-collation planning more precise without changing text, trust, release status, or placement decisions.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
