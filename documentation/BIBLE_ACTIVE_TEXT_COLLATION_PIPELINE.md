@@ -28,6 +28,12 @@ Phase 3 keeps the pipeline read-only and tightens classification hygiene. Generi
 
 That keeps `unregistered_source` reserved for actual source or lane labels that need registry decisions, while still surfacing untyped active text as unresolved inventory work.
 
+## Phase 4
+
+Phase 4 keeps the pipeline read-only and adds bounded triage breakdowns to the compact report.
+
+The report now includes top unresolved files, top untyped text files, top untyped source shapes, top blocked files, and top missing-source files. These are review aids only. They do not mutate text, create source claims, or replace the full runtime report.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
