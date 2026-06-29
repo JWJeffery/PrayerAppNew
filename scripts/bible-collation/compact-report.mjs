@@ -126,6 +126,32 @@ function buildCollationEvidenceRecordSummary(records) {
   };
 }
 
+function buildCoverageSummary(records) {
+  const withEvidence = records.filter(record => record.evidenceRecord);
+  const withoutEvidence = records.filter(record => !record.evidenceRecord);
+  return {
+    meaning: 'Coverage summary compares active cells that have inherited governed record evidence with active cells still outside inherited evidence coverage. It is triage-only and not a trust assertion.',
+    totalActiveCells: records.length,
+    cellsWithEvidenceRecord: withEvidence.length,
+    cellsWithoutEvidenceRecord: withoutEvidence.length,
+    withEvidenceByClassification: objectFromCounts(countRecords(withEvidence, record => record.classification)),
+    withoutEvidenceByClassification: objectFromCounts(countRecords(withoutEvidence, record => record.classification)),
+    withEvidenceByPosture: objectFromCounts(countRecords(withEvidence, record => releasePostureForClassification(record.classification))),
+    withoutEvidenceByPosture: objectFromCounts(countRecords(withoutEvidence, record => releasePostureForClassification(record.classification))),
+    topFilesWithoutEvidenceRecord: topRecordCounts(withoutEvidence, record => record.file, 12)
+  };
+}
+
+function countRecords(records, keyFn) {
+  const counts = new Map();
+  for (const record of records) {
+    const key = keyFn(record);
+    if (!key) continue;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return counts;
+}
+
 function buildReleasePostureSummary(records) {
   const counts = new Map();
   for (const record of records) {
@@ -184,6 +210,7 @@ export function buildCompactReport({ inventory, classified, registry, collationE
     totalActiveFilesScanned: inventory.filesScanned,
     totalActiveCellsScanned: inventory.cells.length,
     classificationCounts: objectFromCounts(classified.classificationCounts),
+    coverageSummary: buildCoverageSummary(records),
     releasePostureSummary: buildReleasePostureSummary(records),
     collationEvidenceRecordSummary: buildCollationEvidenceRecordSummary(records),
     sourceEvidenceCounts: objectFromCounts(classified.sourceEvidenceCounts || new Map()),
