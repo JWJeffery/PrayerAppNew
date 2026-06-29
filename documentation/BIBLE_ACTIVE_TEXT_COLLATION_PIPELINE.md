@@ -40,6 +40,12 @@ Phase 5 keeps the pipeline read-only and adds corpus-root/file-scope breakdowns 
 
 These breakdowns separate `data/bible/ET`, `data/bible/OT`, `data/bible/NT`, and other Bible inventory roots so untyped active text can be triaged as Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, or other inventory before any source, shape, or placement decision is made.
 
+## Phase 6
+
+Phase 6 keeps the pipeline read-only and adds top-file lists grouped by file scope under `classificationBreakdowns.fileScopeBreakdowns`.
+
+The grouped lists show top untyped and unresolved files separately for Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, and other Bible inventory. These lists are review aids only and do not authorize text repair, source claims, or placement changes.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
