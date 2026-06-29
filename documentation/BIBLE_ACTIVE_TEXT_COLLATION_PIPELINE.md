@@ -46,6 +46,12 @@ Phase 6 keeps the pipeline read-only and adds top-file lists grouped by file sco
 
 The grouped lists show top untyped and unresolved files separately for Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, and other Bible inventory. These lists are review aids only and do not authorize text repair, source claims, or placement changes.
 
+## Phase 7
+
+Phase 7 keeps the pipeline read-only and adds `releasePostureSummary` to the compact report.
+
+The summary maps report classifications into triage-only release posture buckets: source-collated evidence, registered but not collated, blocked source or license, missing source, untyped active text, and other unresolved. This is not a trust assertion and does not authorize public release.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:

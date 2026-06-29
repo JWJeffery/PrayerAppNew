@@ -49,6 +49,33 @@ function groupTopFilesByScope(records, limit = 8) {
   );
 }
 
+function releasePostureForClassification(classification) {
+  if (classification === 'exact_source_collated') return 'source_collated_evidence';
+  if (classification === 'registered_text') return 'registered_not_collated';
+  if (classification === 'blocked_licensed_or_unresolved_source') return 'blocked_source_or_license';
+  if (classification === 'missing_source') return 'missing_source';
+  if (classification === 'active_text_untyped') return 'untyped_active_text';
+  return 'other_unresolved';
+}
+
+function buildReleasePostureSummary(records) {
+  const counts = new Map();
+  for (const record of records) {
+    const posture = releasePostureForClassification(record.classification);
+    counts.set(posture, (counts.get(posture) || 0) + 1);
+  }
+
+  return {
+    meaning: 'Release posture summarizes report classifications for triage only. It is not a trust assertion and does not authorize public release.',
+    counts: objectFromCounts(counts),
+    topFilesByPosture: Object.fromEntries(
+      [...new Set(records.map(record => releasePostureForClassification(record.classification)))]
+        .sort()
+        .map(posture => [posture, topRecordCounts(records.filter(record => releasePostureForClassification(record.classification) === posture), record => record.file, 8)])
+    )
+  };
+}
+
 function buildFileScopeBreakdowns(records) {
   const activeTextUntyped = records.filter(record => record.classification === 'active_text_untyped');
   const unresolved = records.filter(record => record.classification !== 'registered_text' && record.classification !== 'exact_source_collated');
@@ -75,6 +102,7 @@ function buildClassificationBreakdowns(records) {
 }
 
 export function buildCompactReport({ inventory, classified, registry, collationEvidence = null }) {
+  const records = classified.records || [];
   return {
     phase: 'source_collation_record_ingestion',
     trustAssertionsMade: false,
@@ -86,9 +114,10 @@ export function buildCompactReport({ inventory, classified, registry, collationE
     totalActiveFilesScanned: inventory.filesScanned,
     totalActiveCellsScanned: inventory.cells.length,
     classificationCounts: objectFromCounts(classified.classificationCounts),
+    releasePostureSummary: buildReleasePostureSummary(records),
     sourceEvidenceCounts: objectFromCounts(classified.sourceEvidenceCounts || new Map()),
     topUnresolvedClasses: topCounts(classified.unresolvedCounts),
-    classificationBreakdowns: buildClassificationBreakdowns(classified.records || []),
+    classificationBreakdowns: buildClassificationBreakdowns(records),
     evidenceWarnings: classified.evidenceWarnings || [],
     skippedEvidenceRecords: classified.skippedEvidenceRecords || [],
     parseErrors: inventory.parseErrors
