@@ -64,6 +64,12 @@ Phase 9 keeps the pipeline read-only and adds `collationEvidenceRecordSummary` t
 
 The summary groups active cells by the existing governed collation/status record that supplied inherited evidence. It shows evidence-record counts, classifications by evidence record, release postures by evidence record, and top files by evidence record. This is inherited evidence only; the report still does not perform live source collation or authorize new trust claims.
 
+## Phase 10
+
+Phase 10 keeps the pipeline read-only and adds `coverageSummary` to the compact report.
+
+The summary compares active cells with inherited governed record evidence against active cells still outside inherited evidence coverage. It reports coverage totals, classification and posture splits, and top files without inherited evidence. This is triage-only and does not change text, trust, or release status.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
