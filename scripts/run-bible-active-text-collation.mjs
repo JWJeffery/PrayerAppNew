@@ -5,6 +5,7 @@ import path from 'node:path';
 import { collectActiveTextInventory } from './bible-collation/active-text-inventory.mjs';
 import { classifyInventory } from './bible-collation/collation-classifier.mjs';
 import { buildCompactReport } from './bible-collation/compact-report.mjs';
+import { loadCollationRecordEvidence } from './bible-collation/collation-record-index.mjs';
 import { loadSourceRegistry } from './bible-collation/source-registry.mjs';
 
 function readOutPath(argv) {
@@ -15,9 +16,10 @@ function readOutPath(argv) {
 const repoRoot = process.cwd();
 const outPath = readOutPath(process.argv.slice(2));
 const registry = loadSourceRegistry({ repoRoot });
+const collationEvidence = loadCollationRecordEvidence({ repoRoot });
 const inventory = collectActiveTextInventory({ repoRoot });
-const classified = classifyInventory(inventory, registry);
-const compact = buildCompactReport({ inventory, classified, registry });
+const classified = classifyInventory(inventory, registry, collationEvidence);
+const compact = buildCompactReport({ inventory, classified, registry, collationEvidence });
 const fullReport = {
   ...compact,
   reportPathPolicy: 'Full generated reports are runtime artifacts and should remain outside the repository unless explicitly approved.',
