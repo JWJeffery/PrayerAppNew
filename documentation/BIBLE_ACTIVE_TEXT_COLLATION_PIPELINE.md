@@ -52,6 +52,12 @@ Phase 7 keeps the pipeline read-only and adds `releasePostureSummary` to the com
 
 The summary maps report classifications into triage-only release posture buckets: source-collated evidence, registered but not collated, blocked source or license, missing source, untyped active text, and other unresolved. This is not a trust assertion and does not authorize public release.
 
+## Phase 8
+
+Phase 8 keeps the pipeline read-only and extends `releasePostureSummary` with file-scope breakdowns.
+
+The summary now includes `countsByFileScope` and `fileScopesByPosture`, showing how release posture is distributed across Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, and other Bible inventory. These are triage aids only and do not change text, trust, or release status.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:

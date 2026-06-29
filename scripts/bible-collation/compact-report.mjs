@@ -58,6 +58,40 @@ function releasePostureForClassification(classification) {
   return 'other_unresolved';
 }
 
+function countByPostureAndScope(records) {
+  const scoped = new Map();
+  for (const record of records) {
+    const scope = fileScope(record.file);
+    const posture = releasePostureForClassification(record.classification);
+    if (!scoped.has(scope)) scoped.set(scope, new Map());
+    const counts = scoped.get(scope);
+    counts.set(posture, (counts.get(posture) || 0) + 1);
+  }
+
+  return Object.fromEntries(
+    [...scoped.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([scope, counts]) => [scope, objectFromCounts(counts)])
+  );
+}
+
+function countByScopeAndPosture(records) {
+  const postures = new Map();
+  for (const record of records) {
+    const posture = releasePostureForClassification(record.classification);
+    const scope = fileScope(record.file);
+    if (!postures.has(posture)) postures.set(posture, new Map());
+    const counts = postures.get(posture);
+    counts.set(scope, (counts.get(scope) || 0) + 1);
+  }
+
+  return Object.fromEntries(
+    [...postures.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([posture, counts]) => [posture, objectFromCounts(counts)])
+  );
+}
+
 function buildReleasePostureSummary(records) {
   const counts = new Map();
   for (const record of records) {
@@ -68,6 +102,8 @@ function buildReleasePostureSummary(records) {
   return {
     meaning: 'Release posture summarizes report classifications for triage only. It is not a trust assertion and does not authorize public release.',
     counts: objectFromCounts(counts),
+    countsByFileScope: countByPostureAndScope(records),
+    fileScopesByPosture: countByScopeAndPosture(records),
     topFilesByPosture: Object.fromEntries(
       [...new Set(records.map(record => releasePostureForClassification(record.classification)))]
         .sort()
