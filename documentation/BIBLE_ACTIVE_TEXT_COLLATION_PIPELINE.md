@@ -70,6 +70,12 @@ Phase 10 keeps the pipeline read-only and adds `coverageSummary` to the compact 
 
 The summary compares active cells with inherited governed record evidence against active cells still outside inherited evidence coverage. It reports coverage totals, classification and posture splits, and top files without inherited evidence. This is triage-only and does not change text, trust, or release status.
 
+## Phase 11
+
+Phase 11 keeps the pipeline read-only and extends `coverageSummary` with file-scope coverage splits.
+
+The summary now shows active cells with and without inherited evidence by file scope, and top files without inherited evidence grouped by file scope. This makes later source-collation planning more precise without changing text, trust, release status, or placement decisions.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
