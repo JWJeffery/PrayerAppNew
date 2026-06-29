@@ -92,6 +92,40 @@ function countByScopeAndPosture(records) {
   );
 }
 
+function groupedCounts(records, groupKeyFn, countKeyFn) {
+  const groups = new Map();
+  for (const record of records) {
+    const groupKey = groupKeyFn(record);
+    const countKey = countKeyFn(record);
+    if (!groupKey || !countKey) continue;
+    if (!groups.has(groupKey)) groups.set(groupKey, new Map());
+    const counts = groups.get(groupKey);
+    counts.set(countKey, (counts.get(countKey) || 0) + 1);
+  }
+
+  return Object.fromEntries(
+    [...groups.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([groupKey, counts]) => [groupKey, objectFromCounts(counts)])
+  );
+}
+
+function buildCollationEvidenceRecordSummary(records) {
+  const evidenceRecords = records.filter(record => record.evidenceRecord);
+  return {
+    meaning: 'Evidence record summary groups active cells by existing governed collation/status records. It is inherited evidence only; this report does not perform live source collation.',
+    totalCellsWithEvidenceRecord: evidenceRecords.length,
+    countsByEvidenceRecord: topRecordCounts(evidenceRecords, record => record.evidenceRecord, 20),
+    classificationsByEvidenceRecord: groupedCounts(evidenceRecords, record => record.evidenceRecord, record => record.classification),
+    posturesByEvidenceRecord: groupedCounts(evidenceRecords, record => record.evidenceRecord, record => releasePostureForClassification(record.classification)),
+    topFilesByEvidenceRecord: Object.fromEntries(
+      [...new Set(evidenceRecords.map(record => record.evidenceRecord))]
+        .sort()
+        .map(recordId => [recordId, topRecordCounts(evidenceRecords.filter(record => record.evidenceRecord === recordId), record => record.file, 8)])
+    )
+  };
+}
+
 function buildReleasePostureSummary(records) {
   const counts = new Map();
   for (const record of records) {
@@ -151,6 +185,7 @@ export function buildCompactReport({ inventory, classified, registry, collationE
     totalActiveCellsScanned: inventory.cells.length,
     classificationCounts: objectFromCounts(classified.classificationCounts),
     releasePostureSummary: buildReleasePostureSummary(records),
+    collationEvidenceRecordSummary: buildCollationEvidenceRecordSummary(records),
     sourceEvidenceCounts: objectFromCounts(classified.sourceEvidenceCounts || new Map()),
     topUnresolvedClasses: topCounts(classified.unresolvedCounts),
     classificationBreakdowns: buildClassificationBreakdowns(records),
