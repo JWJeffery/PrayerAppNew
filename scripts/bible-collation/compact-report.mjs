@@ -34,14 +34,31 @@ function fileScope(file) {
   return 'other_bible_inventory';
 }
 
+function groupTopFilesByScope(records, limit = 8) {
+  const groups = new Map();
+  for (const record of records) {
+    const scope = fileScope(record.file);
+    if (!groups.has(scope)) groups.set(scope, []);
+    groups.get(scope).push(record);
+  }
+
+  return Object.fromEntries(
+    [...groups.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([scope, scopeRecords]) => [scope, topRecordCounts(scopeRecords, record => record.file, limit)])
+  );
+}
+
 function buildFileScopeBreakdowns(records) {
   const activeTextUntyped = records.filter(record => record.classification === 'active_text_untyped');
   const unresolved = records.filter(record => record.classification !== 'registered_text' && record.classification !== 'exact_source_collated');
   return {
     activeTextUntypedByCorpusRoot: topRecordCounts(activeTextUntyped, record => corpusRoot(record.file)),
     activeTextUntypedByFileScope: topRecordCounts(activeTextUntyped, record => fileScope(record.file)),
+    activeTextUntypedTopFilesByFileScope: groupTopFilesByScope(activeTextUntyped),
     unresolvedByCorpusRoot: topRecordCounts(unresolved, record => corpusRoot(record.file)),
-    unresolvedByFileScope: topRecordCounts(unresolved, record => fileScope(record.file))
+    unresolvedByFileScope: topRecordCounts(unresolved, record => fileScope(record.file)),
+    unresolvedTopFilesByFileScope: groupTopFilesByScope(unresolved)
   };
 }
 
