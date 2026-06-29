@@ -22,6 +22,29 @@ function topRecordCounts(records, keyFn, limit = 12) {
     .map(([key, count]) => ({ key, count }));
 }
 
+function corpusRoot(file) {
+  const parts = String(file || '').split('/');
+  return parts.length >= 3 ? parts.slice(0, 3).join('/') : file || null;
+}
+
+function fileScope(file) {
+  if (String(file).startsWith('data/bible/ET/')) return 'eastern_single_text_inventory';
+  if (String(file).startsWith('data/bible/OT/')) return 'ot_or_broader_canon_inventory';
+  if (String(file).startsWith('data/bible/NT/')) return 'nt_or_christian_witness_inventory';
+  return 'other_bible_inventory';
+}
+
+function buildFileScopeBreakdowns(records) {
+  const activeTextUntyped = records.filter(record => record.classification === 'active_text_untyped');
+  const unresolved = records.filter(record => record.classification !== 'registered_text' && record.classification !== 'exact_source_collated');
+  return {
+    activeTextUntypedByCorpusRoot: topRecordCounts(activeTextUntyped, record => corpusRoot(record.file)),
+    activeTextUntypedByFileScope: topRecordCounts(activeTextUntyped, record => fileScope(record.file)),
+    unresolvedByCorpusRoot: topRecordCounts(unresolved, record => corpusRoot(record.file)),
+    unresolvedByFileScope: topRecordCounts(unresolved, record => fileScope(record.file))
+  };
+}
+
 function buildClassificationBreakdowns(records) {
   const unresolved = records.filter(record => record.classification !== 'registered_text' && record.classification !== 'exact_source_collated');
   return {
@@ -29,7 +52,8 @@ function buildClassificationBreakdowns(records) {
     topUntypedTextFiles: topRecordCounts(records.filter(record => record.classification === 'active_text_untyped'), record => record.file),
     topUntypedTextShapes: topRecordCounts(records.filter(record => record.classification === 'active_text_untyped'), record => record.sourceShape),
     topBlockedFiles: topRecordCounts(records.filter(record => record.classification === 'blocked_licensed_or_unresolved_source'), record => record.file),
-    topMissingSourceFiles: topRecordCounts(records.filter(record => record.classification === 'missing_source'), record => record.file)
+    topMissingSourceFiles: topRecordCounts(records.filter(record => record.classification === 'missing_source'), record => record.file),
+    fileScopeBreakdowns: buildFileScopeBreakdowns(records)
   };
 }
 

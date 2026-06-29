@@ -34,6 +34,12 @@ Phase 4 keeps the pipeline read-only and adds bounded triage breakdowns to the c
 
 The report now includes top unresolved files, top untyped text files, top untyped source shapes, top blocked files, and top missing-source files. These are review aids only. They do not mutate text, create source claims, or replace the full runtime report.
 
+## Phase 5
+
+Phase 5 keeps the pipeline read-only and adds corpus-root/file-scope breakdowns under `classificationBreakdowns.fileScopeBreakdowns`.
+
+These breakdowns separate `data/bible/ET`, `data/bible/OT`, `data/bible/NT`, and other Bible inventory roots so untyped active text can be triaged as Eastern single-text inventory, OT/broader-canon inventory, NT/Christian-witness inventory, or other inventory before any source, shape, or placement decision is made.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:
