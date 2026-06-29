@@ -9,6 +9,30 @@ function topCounts(counts, limit = 12) {
     .map(([classification, count]) => ({ class: classification, count }));
 }
 
+function topRecordCounts(records, keyFn, limit = 12) {
+  const counts = new Map();
+  for (const record of records) {
+    const key = keyFn(record);
+    if (!key) continue;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([key, count]) => ({ key, count }));
+}
+
+function buildClassificationBreakdowns(records) {
+  const unresolved = records.filter(record => record.classification !== 'registered_text' && record.classification !== 'exact_source_collated');
+  return {
+    topUnresolvedFiles: topRecordCounts(unresolved, record => record.file),
+    topUntypedTextFiles: topRecordCounts(records.filter(record => record.classification === 'active_text_untyped'), record => record.file),
+    topUntypedTextShapes: topRecordCounts(records.filter(record => record.classification === 'active_text_untyped'), record => record.sourceShape),
+    topBlockedFiles: topRecordCounts(records.filter(record => record.classification === 'blocked_licensed_or_unresolved_source'), record => record.file),
+    topMissingSourceFiles: topRecordCounts(records.filter(record => record.classification === 'missing_source'), record => record.file)
+  };
+}
+
 export function buildCompactReport({ inventory, classified, registry, collationEvidence = null }) {
   return {
     phase: 'source_collation_record_ingestion',
@@ -23,6 +47,7 @@ export function buildCompactReport({ inventory, classified, registry, collationE
     classificationCounts: objectFromCounts(classified.classificationCounts),
     sourceEvidenceCounts: objectFromCounts(classified.sourceEvidenceCounts || new Map()),
     topUnresolvedClasses: topCounts(classified.unresolvedCounts),
+    classificationBreakdowns: buildClassificationBreakdowns(classified.records || []),
     evidenceWarnings: classified.evidenceWarnings || [],
     skippedEvidenceRecords: classified.skippedEvidenceRecords || [],
     parseErrors: inventory.parseErrors
