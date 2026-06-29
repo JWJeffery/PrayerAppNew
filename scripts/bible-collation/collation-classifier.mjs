@@ -17,6 +17,10 @@ function evidenceApplies(evidence, observedRows) {
   return Number(evidence.expectedRows) === Number(observedRows);
 }
 
+function isGenericTextLane(cell) {
+  return cell.lane === 'text' || cell.sourceShape === 'fallback_text_leaf' || cell.sourceShape === 'chapter_verse_string_text';
+}
+
 export function classifyCell(cell, registry, evidence, observedRows) {
   if (cell.blank) return { classification: 'blank_text', unresolvedKey: `blank_text:${cell.lane}` };
   if (cell.placeholder) return { classification: 'placeholder_text', unresolvedKey: `placeholder_text:${cell.lane}` };
@@ -26,6 +30,10 @@ export function classifyCell(cell, registry, evidence, observedRows) {
       return { classification: 'exact_source_collated', unresolvedKey: null, evidence };
     }
     return { classification: evidence.classification, unresolvedKey: `${evidence.classification}:${cell.lane}`, evidence };
+  }
+
+  if (isGenericTextLane(cell)) {
+    return { classification: 'active_text_untyped', unresolvedKey: `active_text_untyped:${cell.sourceShape || cell.lane}` };
   }
 
   if (!registry.isRegistered(cell.lane)) {
