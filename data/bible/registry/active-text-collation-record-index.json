@@ -1,0 +1,72 @@
+{
+  "schema": "active-text-collation-record-index-v1",
+  "phase": "source_collation_record_ingestion",
+  "status": "phase2_existing_record_index_only",
+  "trustAssertionsMade": false,
+  "bibleTextMutated": false,
+  "liveSourceCollationPerformed": false,
+  "sourceCollationEvidenceIngested": true,
+  "meaning": "This index points the active-text pipeline at existing governed collation/status records. It does not create new source-verification claims and does not mutate Bible text.",
+  "records": [
+    {
+      "id": "tobit-bound-source-exact-collation",
+      "kind": "trustedScopesResult",
+      "activePath": "data/bible/OT/tobit.json",
+      "resultRecord": "data/bible/registry/tobit-bound-source-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/tobit-text-trust-status.json"
+    },
+    {
+      "id": "judith-bound-source-exact-collation",
+      "kind": "trustedScopesResult",
+      "activePath": "data/bible/OT/judith.json",
+      "resultRecord": "data/bible/registry/judith-bound-source-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/judith-text-trust-status.json"
+    },
+    {
+      "id": "wisdom-bound-source-exact-collation",
+      "kind": "trustedScopesResult",
+      "activePath": "data/bible/OT/wisdom.json",
+      "resultRecord": "data/bible/registry/wisdom-bound-source-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/wisdom-text-trust-status.json"
+    },
+    {
+      "id": "greek-esther-bound-source-exact-collation",
+      "kind": "byUnitTranslationPrefixResult",
+      "activePath": "data/bible/OT/estherGK.json",
+      "resultRecord": "data/bible/registry/greek-esther-bound-source-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/greek-esther-text-trust-status.json",
+      "blockAllLanes": [
+        {
+          "lane": "NRSV",
+          "classification": "blocked_licensed_or_unresolved_source",
+          "reason": "Greek Esther NRSV remains blocked pending approved source witness."
+        }
+      ]
+    },
+    {
+      "id": "greek-daniel-kjv-nabre-addition-exact-collation",
+      "kind": "byUnitTranslationPrefixResult",
+      "activePath": "data/bible/OT/danielGK.json",
+      "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/greek-daniel-text-trust-status.json"
+    },
+    {
+      "id": "greek-daniel-drb-addition-exact-collation",
+      "kind": "byUnitSingleLaneResult",
+      "lane": "DRB",
+      "activePath": "data/bible/OT/danielGK.json",
+      "resultRecord": "data/bible/registry/greek-daniel-drb-addition-exact-collation-result.json",
+      "statusRecord": "data/bible/registry/greek-daniel-text-trust-status.json"
+    },
+    {
+      "id": "greek-daniel-nrsv-ordinary-internal-baseline",
+      "kind": "internalBaselineOnly",
+      "lane": "NRSV",
+      "activePath": "data/bible/OT/danielGK.json",
+      "resultRecord": "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
+      "statusRecord": "data/bible/registry/greek-daniel-text-trust-status.json",
+      "classification": "registered_text",
+      "reason": "Internal baseline is recorded, but Phase 2 does not treat it as external source collation for NRSV additions."
+    }
+  ]
+}
