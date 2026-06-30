@@ -2442,6 +2442,12 @@
           }
         },
         {
+          "num": 16,
+          "text": {
+            "NABRE": "[ ]"
+          }
+        },
+        {
           "num": 17,
           "text": {
             "KJV": "And when hee was entred into the house from the people, his disciples asked him concerning the parable.",
@@ -3306,11 +3312,23 @@
           }
         },
         {
+          "num": 44,
+          "text": {
+            "NABRE": "[ ]"
+          }
+        },
+        {
           "num": 45,
           "text": {
             "KJV": "And if thy foote offend thee, cut it off: it is better for thee to enter halt into life, then hauing two feete, to be cast into hell, into the fire that neuer shall be quenched:",
             "NABRE": "And if your foot causes you to sin, cut it off. It is better for you to enter into life crippled than with two feet to be thrown into Gehenna.",
             "NRSV": "And if your foot causes you to stumble, cut it off; it is better for you to enter life lame than to have two feet and to be thrown into hell."
+          }
+        },
+        {
+          "num": 46,
+          "text": {
+            "NABRE": "[ ]"
           }
         },
         {
@@ -4021,6 +4039,12 @@
             "KJV": "And when ye stand, praying, forgiue, if ye haue ought against any: that your Father also which is in heauen, may forgiue you your trespasses.",
             "NABRE": "When you stand to pray, forgive anyone against whom you have a grievance, so that your heavenly Father may in turn forgive you your transgressions.”",
             "NRSV": "“Whenever you stand praying, forgive, if you have anything against anyone; so that your Father in heaven may also forgive you your trespasses.”"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NABRE": "[ ] The Authority of Jesus Questioned."
           }
         },
         {
@@ -5690,6 +5714,12 @@
             "KJV": "And with him they crucifie two theeues, the one on his right hand, and the other on his left.",
             "NABRE": "With him they crucified two revolutionaries, one on his right and one on his left.",
             "NRSV": "And with him they crucified two bandits, one on his right and one on his left."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NABRE": "[ ]"
           }
         },
         {

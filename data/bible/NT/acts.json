@@ -2660,6 +2660,12 @@
           }
         },
         {
+          "num": 37,
+          "text": {
+            "NABRE": "[ ]"
+          }
+        },
+        {
           "num": 38,
           "text": {
             "KJV": "And he commanded the charet to stand still: and they went downe both into the water, both Philip, and the Eunuch, and he baptized him.",
@@ -3510,6 +3516,12 @@
             "Rotherham": "And he commanded them in the name of Jesus Christ to be immersed. Then, requested they him, to abide still some days.  ",
             "KJV": "And hee commanded them to be baptized in the Name of the Lord. Then prayed they him to tarie certaine dayes.",
             "NABRE": "He ordered them to be baptized in the name of Jesus Christ."
+          }
+        },
+        {
+          "num": 49,
+          "text": {
+            "NABRE": "Then they invited him to stay for a few days."
           }
         }
       ]
@@ -4891,7 +4903,8 @@
         {
           "num": 18,
           "text": {
-            "DRB": "To our Lord was his own work known from the beginning of the world."
+            "DRB": "To our Lord was his own work known from the beginning of the world.",
+            "NABRE": "known from of old.’"
           }
         },
         {
@@ -5012,6 +5025,12 @@
             "KJV": "And after they had taried there a space, they were let goe in peace from the breehren vnto the Apostles.",
             "NABRE": "After they had spent some time there, they were sent off with greetings of peace from the brothers to those who had commissioned them.",
             "NRSV": "After they had been there for some time, they were sent off in peace by the believers to those who had sent them."
+          }
+        },
+        {
+          "num": 34,
+          "text": {
+            "NABRE": "[ ]"
           }
         },
         {
@@ -7571,7 +7590,8 @@
         {
           "num": 26,
           "text": {
-            "DRB": "writing a letter containing this much: Claudius Lysias to the most excellent President Felix, greeting."
+            "DRB": "writing a letter containing this much: Claudius Lysias to the most excellent President Felix, greeting.",
+            "NABRE": "“Claudius Lysias to his excellency the governor Felix, greetings."
           }
         },
         {
@@ -7697,6 +7717,12 @@
             "KJV": "Who also hath gone about to profane the Temple: whom we tooke, and would haue iudged according to our lawe.",
             "NABRE": "He even tried to desecrate our temple, but we arrested him.",
             "NRSV": "He even tried to profane the temple, and so we seized him."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NABRE": "[ ]"
           }
         },
         {
@@ -9028,6 +9054,12 @@
             "KJV": "Be it knowen therfore vnto you, that the saluation of God is sent vnto the Gentiles, and that they wil heare it.",
             "NABRE": "Let it be known to you that this salvation of God has been sent to the Gentiles; they will listen.”",
             "NRSV": "“Let it be known to you then that this salvation of God has been sent to the Gentiles; they will listen.”"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NABRE": "[ ]"
           }
         },
         {
