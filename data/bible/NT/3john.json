@@ -23,11 +23,12 @@
         "emptySourceRowsPolicy": "empty Rotherham source rows are governed omissions and are not imported as blank text"
       },
       "DRB": {
-        "label": "Douay-Rheims Bible",
-        "sourceType": "drbo_public_domain_source_witness",
+        "label": "Original Douay-Rheims Bible",
+        "sourceType": "preserved_source_lane",
         "rights": "Public Domain",
-        "sourceWitness": "https://www.drbo.org/",
-        "sourceUrlPattern": "https://www.drbo.org/chapter/71{chapter:03d}.htm"
+        "sourceRepo": "https://github.com/janvier-s/original-douay-rheims",
+        "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/3-john.json",
+        "sourceGovernance": "Preserved source versification; active DRB rows 1:1-14 match this source exactly. Active 1:15 intentionally has no DRB row because the preserved source has 14 verses."
       },
       "KJV": {
         "status": "present",
@@ -54,20 +55,26 @@
     },
     "lastTranslationIntake": {
       "translation": "DRB",
-      "date": "2026-06-07",
-      "tranche": "BIBLE-DRB-B-loth-c08-book-intake",
-      "sourceWitness": "https://www.drbo.org/",
+      "date": "2026-06-30",
+      "tranche": "BIBLE-NT-3JOHN-DRB-SOURCE-METADATA-REPAIR",
+      "sourceName": "Original Douay-Rheims Bible",
+      "sourceRepo": "https://github.com/janvier-s/original-douay-rheims",
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/3-john.json",
       "book": "3 John",
-      "directVerseCount": 0,
-      "overlayVerseCount": 14,
-      "mismatchChapters": [
-        1
-      ],
-      "drboParsedVerseCountsByChapter": {
+      "directVerseCount": 14,
+      "overlayVerseCount": 0,
+      "mismatchChapters": [],
+      "sourceVerseCountsByChapter": {
         "1": 14
       },
-      "publicRenderingPermitted": false,
-      "notCurrentOfficialLothNabAssertion": true
+      "intentionalActiveGaps": [
+        {
+          "chapter": 1,
+          "verse": 15,
+          "reason": "The preserved Original Douay-Rheims source for 3 John contains 14 verses; active NRSV/NABRE verse 15 has no DRB source row."
+        }
+      ],
+      "publicRenderingPermitted": true
     }
   },
   "chapters": [
@@ -228,24 +235,6 @@
         "12": " Unto Demetrius, hath witness been borne by all and by the truth itself; howbeit, we also, bear witness, and thou knowest that, our witness, is, true.",
         "13": "Many things, had I to write unto thee,—but I am unwilling, with ink and pen, to be writing;",
         "14": "I hope, however, straightway, to see thee, and, mouth to mouth, will we talk. Peace be unto thee. The friends salute thee. Salute the friends by name.   "
-      }
-    },
-    "DRB": {
-      "1": {
-        "1": "The ancient to the dearly beloved Gaius, whom I love in truth.",
-        "2": "Dearly beloved, concerning all things I make it my prayer that thou mayest proceed prosperously, and fare well as thy soul doth prosperously.",
-        "3": "I was exceedingly glad when the brethren came and gave testimony to the truth in thee, even as thou walkest in the truth.",
-        "4": "I have no greater grace than this, to hear that my children walk in truth.",
-        "5": "Dearly beloved, thou dost faithfully whatever thou dost for the brethren, and that for strangers,",
-        "6": "Who have given testimony to thy charity in the sight of the church: whom thou shalt do well to bring forward on their way in a manner worthy of God.",
-        "7": "Because, for his name they went out, taking nothing of the Gentiles .",
-        "8": "We therefore ought to receive such, that we may be fellow helpers of the truth.",
-        "9": "I had written perhaps to the church: but Diotrephes, who loveth to have the pre-eminence among them, doth not receive us.",
-        "10": "For this cause, if I come, I will advertise his works which he doth, with malicious words prating against us. And as if these things were not enough for him, neither doth he himself receive the brethren, and them that do receive them he forbiddeth, and casteth out of the church.",
-        "11": "Dearly beloved, follow not that which is evil, but that which is good. He that doth good, is of God: he that doth evil, hath not seen God.",
-        "12": "To Demetrius testimony is given by all, and by the truth itself, yea and we also give testimony: and thou knowest that our testimony is true.",
-        "13": "I had many things to write unto thee: but I would not by ink and pen write to thee.",
-        "14": "But I hope speedily to see thee, and we will speak mouth to mouth. Peace be to thee. Our friends salute thee. Salute the friends by name."
       }
     }
   }
