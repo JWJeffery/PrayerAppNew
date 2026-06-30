@@ -4889,6 +4889,12 @@
           }
         },
         {
+          "num": 18,
+          "text": {
+            "DRB": "To our Lord was his own work known from the beginning of the world."
+          }
+        },
+        {
           "num": 19,
           "text": {
             "KJV": "Wherefore my sentence is, that we trouble not them, which from among the Gentiles are turned to God:",
@@ -7560,6 +7566,12 @@
             "KJV": "And hee wrote a letter after this manner:",
             "NABRE": "Then he wrote a letter with this content:",
             "NRSV": "He wrote a letter to this effect: “Claudius Lysias to his Excellency the governor Felix, greetings."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "DRB": "writing a letter containing this much: Claudius Lysias to the most excellent President Felix, greeting."
           }
         },
         {
