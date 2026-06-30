@@ -7237,6 +7237,12 @@
           }
         },
         {
+          "num": 36,
+          "text": {
+            "NABRE": "[ ]"
+          }
+        },
+        {
           "num": 37,
           "text": {
             "KJV": "And they answered, and said vnto him, Where, Lord? And he said vnto them, Wheresoeuer the body is, thither will the Eagles be gathered together.",
@@ -9623,6 +9629,12 @@
             "KJV": "I will therefore chastise him, and release him.",
             "NABRE": "Therefore I shall have him flogged and then release him.”",
             "NRSV": "I will therefore have him flogged and release him.”"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NABRE": "[ ] The Sentence of Death."
           }
         },
         {
