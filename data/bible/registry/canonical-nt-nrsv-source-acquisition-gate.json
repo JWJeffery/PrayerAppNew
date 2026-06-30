@@ -1,0 +1,56 @@
+{
+  "schema": "canonical-nt-nrsv-source-acquisition-gate-v1",
+  "id": "canonical_nt_nrsv_source_acquisition_gate",
+  "status": "blocked_pending_controlled_nrsv_nt_source",
+  "scope": "Canonical NT NRSV lane across the 27-book New Testament corpus.",
+  "certificationRule": "All text must be present in active text rows and source-verifiable. Existing active text without a controlled source witness is not sufficient for certification.",
+  "activeLaneState": {
+    "translationKey": "NRSV",
+    "activeBookCount": 27,
+    "activeRowCount": 7939,
+    "activeTextPresent": true,
+    "sourceResolved": false
+  },
+  "latestAudit": {
+    "schema": "nrsv-canonical-nt-source-decision-v1",
+    "classification": "documentation_contains_source_and_nt_signals_needs_human_identity_decision",
+    "currentCandidatePathCount": 7,
+    "sourceCandidatePathCount": 2,
+    "ntSourceLikeCurrentCandidateCount": 0,
+    "usableCurrentNtSourceCandidate": false,
+    "foundCurrentCandidates": [
+      "data/bible/registry/greek-daniel-nrsv-additions-source-acquisition-gate.json",
+      "data/bible/registry/greek-daniel-nrsv-internal-baseline-gate.json",
+      "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
+      "data/bible/translations/nrsv-psalms-oremus/manifest.json",
+      "data/bible/translations/nrsv-psalms-oremus/raw/psalms.json",
+      "scripts/audit-bible-greek-daniel-nrsv-internal-baseline.mjs",
+      "scripts/repair-bible-greek-daniel-nrsv-ordinary-from-canonical.mjs"
+    ],
+    "reason": "Current controlled NRSV source material is Psalms and Greek Daniel related only; no controlled Canonical NT NRSV source candidate was found."
+  },
+  "blockedActions": [
+    "certify_canonical_nt_text_trust",
+    "claim_nrsv_nt_source_backed",
+    "claim_canonical_nt_globally_trusted",
+    "treat_existing_target_corpus_as_source_without_governed_source_witness"
+  ],
+  "allowedActions": [
+    "acquire_or_identify_controlled_nrsv_nt_source",
+    "record_source_rights_and_source_witness",
+    "run_exact_nrsv_nt_source_collation",
+    "repair_nrsv_nt_active_rows_if_exact_collation_finds_delta",
+    "explicitly_govern_nrsv_exclusion_from_certifiable_canonical_nt_lane_if_project_owner_decides"
+  ],
+  "certificationImpact": {
+    "canonicalNtCertificationReady": false,
+    "sourceExactLanesAlreadyPassing": [
+      "KJV",
+      "NABRE",
+      "DRB",
+      "Rotherham"
+    ],
+    "remainingBlockerLane": "NRSV"
+  },
+  "nextRequiredWork": "Acquire or identify a controlled NRSV NT source, then run exact source collation before Canonical NT certification."
+}
