@@ -1,0 +1,44 @@
+{
+  "schema": "psalter-text-trust-certification-v1",
+  "id": "psalter_text_trust_certification_2026_06_30",
+  "status": "certified_textually_trusted_psalter",
+  "scope": {
+    "activePath": "data/bible/OT/psalms.json",
+    "recordShape": "155-record root-array psalter subsystem",
+    "canonicalPsalms": "Psalms 1-150",
+    "extendedOrthodoxPsalms": "Psalms 151-155",
+    "certifiedLanes": {
+      "NRSV": "Psalms 1-150 exact local Oremus source snapshot",
+      "Coverdale": "Psalms 1-150 exact local 1979 BCP Psalter source snapshot",
+      "KJV": "Psalms 1-150 exact historical KJV source mirror verification",
+      "JPS1985": "Psalms 1-150 source-identified/history-stable JPS/Sefaria import chain",
+      "Grail1963": "Psalms 1-151 exact checksum against source-governed Grail1963 corpus as recorded in trust status",
+      "Rotherham": "Psalms 1-150 source-backed source-scope import-audit verification",
+      "NABRE": "Psalms 1-150 exact historical NABRE source verification after heading contamination repair",
+      "DRB": "Psalms 1-150 exact local DRB raw-source verification",
+      "Orthodox": "Psalms 151-155 exact local Wright source snapshot"
+    }
+  },
+  "verificationBasis": [
+    "scripts/audit-bible-psalms-legacy-subsystem-governance.mjs",
+    "scripts/audit-rotherham-psalms.mjs",
+    "scripts/audit-douay-rheims-psalms.mjs",
+    "scripts/audit-bible-nabre-corpus-contamination.mjs",
+    "data/bible/registry/bible-corpus-trust-status.json lanes.psalms",
+    "data/bible/registry/psalms-legacy-subsystem-governance.json"
+  ],
+  "certifiedClaims": [
+    "Psalter shape is governed and supported as a 155-record root-array subsystem.",
+    "All expected Psalter lanes have recorded source or source-history verification.",
+    "Psalms 1-150 have certified expected main and liturgical lanes according to their source scope.",
+    "Psalms 151-155 have certified Orthodox source text and remain outside ordinary canonical OT chapter schema.",
+    "This certifies the Psalter subsystem only."
+  ],
+  "blockedClaimsStillActive": [
+    "whole_ot_including_psalms_textually_trusted_until_whole_ot_final_rollup",
+    "entire_biblical_corpus_trusted_until_all_other_boundaries_certified",
+    "vulgate_complete",
+    "broader_canon_textually_trusted",
+    "deuterocanon_textually_trusted"
+  ]
+}

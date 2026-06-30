@@ -8,7 +8,7 @@ const psalms = JSON.parse(fs.readFileSync(governance.psalmsPath, 'utf8'));
 
 const failures = [];
 
-if (typeof governance.schema !== 'string' || !/^psalms-legacy-subsystem-governance-v\\d+$/.test(governance.schema)) {
+if (typeof governance.schema !== 'string' || !/^psalms-legacy-subsystem-governance-v\d+$/.test(governance.schema)) {
   failures.push({ type: 'schema-mismatch', actual: governance.schema });
 }
 
