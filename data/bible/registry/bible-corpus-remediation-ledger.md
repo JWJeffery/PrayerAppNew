@@ -109,7 +109,7 @@ Named NT defects from audit record include:
 - Hebrews 5:9-14 DRB — repaired;
 - 3 John DRB metadata/content mismatch;
 - Matthew Rotherham ledger label;
-- KJV `&thorn;` artifacts.
+- KJV `&thorn;` artifacts — repaired in active KJV lane text as Unicode thorn characters.
 
 ### Broader-canon corpus
 
