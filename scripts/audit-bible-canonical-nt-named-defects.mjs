@@ -5,18 +5,17 @@ import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 
-const unresolvedMissingRows = [
+const unresolvedMissingRows = [];
+
+const requiredTranslationRows = [
   {
-    id: '2corinthians_13_14',
+    id: '2corinthians_13_14_kjv',
     file: 'data/bible/NT/2corinthians.json',
     chapter: 13,
-    verse: 14,
-    status: 'main_row_unresolved_kjv_overlay_present',
-    expectedOverlay: { translation: 'KJV', chapter: 13, verse: 14 },
+    verses: [14],
+    translation: 'KJV',
+    status: 'repaired',
   },
-];
-
-const requiredDrbRows = [
   {
     id: 'acts_15_18_drb',
     file: 'data/bible/NT/acts.json',
@@ -154,7 +153,7 @@ function getOverlayText(data, translation, chapter, verse) {
 const failures = [];
 const findings = {
   unresolvedMissingRows: [],
-  repairedDrbRows: [],
+  repairedTranslationRows: [],
   intentionalTranslationGaps: [],
 };
 
@@ -204,7 +203,7 @@ for (const target of unresolvedMissingRows) {
   }
 }
 
-for (const group of requiredDrbRows) {
+for (const group of requiredTranslationRows) {
   let map;
   try {
     const data = loadJson(group.file);
@@ -219,7 +218,7 @@ for (const group of requiredDrbRows) {
     const text = getTranslationText(verse, group.translation);
     const ok = typeof text === 'string' && text.trim().length > 0;
 
-    findings.repairedDrbRows.push({
+    findings.repairedTranslationRows.push({
       id: group.id,
       file: group.file,
       chapter: group.chapter,
