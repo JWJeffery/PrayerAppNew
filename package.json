@@ -88,7 +88,8 @@
     "audit:bible-nabre-selector-bridge": "node scripts/audit-bible-nabre-selector-bridge.mjs",
     "audit:bible-nabre-label-eradication": "node scripts/audit-bible-nabre-label-eradication.mjs",
     "roman-breviary:dev-slice": "node scripts/build-roman-breviary-1960-dev-slice.mjs",
-    "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs"
+    "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs",
+    "bible:text-repair": "node scripts/run-bible-text-mass-repair.mjs"
   },
   "repository": {
     "type": "git",
