@@ -227,7 +227,7 @@
       "noGovernedExclusions": true
     },
     "psalms": {
-      "status": "source_governed_all_expected_psalter_lanes_complete",
+      "status": "certified_textually_trusted_psalter",
       "reasons": [
         "Psalms subsystem governance and shape checks passed for 155 root-array records.",
         "NRSV Psalms 1-150 were repaired as a single source-backed lane from the Oremus Bible Browser NRSV Psalms source snapshot.",
@@ -296,7 +296,8 @@
         "kjv_psalms_historical_source_exact_verification_1",
         "nabre_psalms_source_blocker_record_1",
         "nabre_psalms_historical_source_repair_1",
-        "orthodox_psalms_151_155_wright_source_repair_1"
+        "orthodox_psalms_151_155_wright_source_repair_1",
+        "psalter_final_text_trust_certification_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
@@ -321,7 +322,7 @@
         "recommendedNextAction": "run_final_active_non_vulgate_trust_boundary_review_after_psalter_completion",
         "summary": "All expected Psalter lanes now have recorded source or source-history verification. This completes Psalter lane source governance only; whole-OT and whole-corpus trust remain governed separately."
       },
-      "reason": "All expected Psalter lanes now have recorded source or source-history verification: NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, KJV, NABRE, and Orthodox Psalms 151-155. This is a Psalter-lane trust completion claim only and does not promote whole-OT or whole-corpus trust.",
+      "reason": "Psalter subsystem is certified textually trusted for all expected lanes and source scopes: NRSV, Coverdale, KJV, JPS1985, Grail1963, Rotherham, NABRE, DRB, and Orthodox Psalms 151-155. This is a Psalter-only certification and does not promote canonical NT, deuterocanon, broader canon, Vulgate, or whole-corpus trust.",
       "latest_nrsv_psalms_oremus_source_repair": {
         "id": "nrsv_psalms_oremus_source_repair_2026_06_25",
         "status": "source_backed_single_source_lane_repair_verified",
@@ -808,6 +809,50 @@
           "Grail1963 Psalm 151 appendix text"
         ],
         "summary": "Orthodox Psalms 151-155 were repaired from a public-domain Wright source snapshot and exact source verification is recorded."
+      },
+      "latest_psalter_final_text_trust_certification": {
+        "schema": "psalter-text-trust-certification-v1",
+        "id": "psalter_text_trust_certification_2026_06_30",
+        "status": "certified_textually_trusted_psalter",
+        "scope": {
+          "activePath": "data/bible/OT/psalms.json",
+          "recordShape": "155-record root-array psalter subsystem",
+          "canonicalPsalms": "Psalms 1-150",
+          "extendedOrthodoxPsalms": "Psalms 151-155",
+          "certifiedLanes": {
+            "NRSV": "Psalms 1-150 exact local Oremus source snapshot",
+            "Coverdale": "Psalms 1-150 exact local 1979 BCP Psalter source snapshot",
+            "KJV": "Psalms 1-150 exact historical KJV source mirror verification",
+            "JPS1985": "Psalms 1-150 source-identified/history-stable JPS/Sefaria import chain",
+            "Grail1963": "Psalms 1-151 exact checksum against source-governed Grail1963 corpus as recorded in trust status",
+            "Rotherham": "Psalms 1-150 source-backed source-scope import-audit verification",
+            "NABRE": "Psalms 1-150 exact historical NABRE source verification after heading contamination repair",
+            "DRB": "Psalms 1-150 exact local DRB raw-source verification",
+            "Orthodox": "Psalms 151-155 exact local Wright source snapshot"
+          }
+        },
+        "verificationBasis": [
+          "scripts/audit-bible-psalms-legacy-subsystem-governance.mjs",
+          "scripts/audit-rotherham-psalms.mjs",
+          "scripts/audit-douay-rheims-psalms.mjs",
+          "scripts/audit-bible-nabre-corpus-contamination.mjs",
+          "data/bible/registry/bible-corpus-trust-status.json lanes.psalms",
+          "data/bible/registry/psalms-legacy-subsystem-governance.json"
+        ],
+        "certifiedClaims": [
+          "Psalter shape is governed and supported as a 155-record root-array subsystem.",
+          "All expected Psalter lanes have recorded source or source-history verification.",
+          "Psalms 1-150 have certified expected main and liturgical lanes according to their source scope.",
+          "Psalms 151-155 have certified Orthodox source text and remain outside ordinary canonical OT chapter schema.",
+          "This certifies the Psalter subsystem only."
+        ],
+        "blockedClaimsStillActive": [
+          "whole_ot_including_psalms_textually_trusted_until_whole_ot_final_rollup",
+          "entire_biblical_corpus_trusted_until_all_other_boundaries_certified",
+          "vulgate_complete",
+          "broader_canon_textually_trusted",
+          "deuterocanon_textually_trusted"
+        ]
       }
     },
     "deuterocanon": {

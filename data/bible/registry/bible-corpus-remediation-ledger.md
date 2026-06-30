@@ -997,3 +997,24 @@ Canonical OT remains not trusted pending versification remediation. This phase r
 - Repairs completed: NABRE missing rows and KJV missing rows across Matthew, Mark, Luke, John, Romans, and Acts.
 - Boundary: this does not establish global Bible corpus trust; OT, deuterocanon, broader canon, psalms, and non-KJV/NABRE trust boundaries remain governed by their own audits.
 
+## Psalter text trust certification
+
+Status: certified.
+
+Scope:
+
+- Active Psalter path: `data/bible/OT/psalms.json`.
+- Shape: governed 155-record root-array psalter subsystem.
+- Certified expected lanes: NRSV, Coverdale, KJV, JPS1985, Grail1963, Rotherham, NABRE, DRB, and Orthodox Psalms 151-155.
+
+Certification basis:
+
+- Psalter governance and shape audit passed after schema-regex repair.
+- Rotherham, DRB, and NABRE contamination audits passed.
+- Existing trust records establish source-backed, exact-source, source-history, or source-scope verification for every expected Psalter lane.
+
+Boundary:
+
+- This certifies the Psalter subsystem only.
+- This does not certify canonical NT, deuterocanon, broader canon, Vulgate, or the entire biblical corpus.
+
