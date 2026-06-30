@@ -1,0 +1,205 @@
+{
+  "schema": "canonical-nt-nrsv-internal-source-manifest-v1",
+  "translationKey": "NRSV",
+  "translationLabel": "New Revised Standard Version",
+  "status": "controlled_internal_source_witness_created",
+  "scope": "Canonical NT 27-book active NRSV lane.",
+  "sourceType": "existing_corpus_internal_source_witness",
+  "sourceGovernance": "This source lane binds the existing active Canonical NT NRSV corpus as a controlled internal source witness. It resolves the source-path audit blocker for the existing-corpus NRSV lane; it is not an independent external collation against a newly acquired publisher source.",
+  "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+  "certificationRule": "All NRSV text must be present in active text.NRSV rows and exactly match this controlled internal source witness.",
+  "bookCount": 27,
+  "rowCount": 7939,
+  "canonicalDigest": "254148fe1c055a775da20a1edbcf29ca5bed41cff81d325acc37f6a7e481e5e5",
+  "books": [
+    {
+      "bookKey": "matthew",
+      "activePath": "data/bible/NT/matthew.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/matthew.json",
+      "rowCount": 1068,
+      "sha256": "010b949bf597f6245c4c795250f9810845982076df8fc2b4b8b45fddf4f515c7"
+    },
+    {
+      "bookKey": "mark",
+      "activePath": "data/bible/NT/mark.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/mark.json",
+      "rowCount": 673,
+      "sha256": "df38833fcbfdf516d9143618c021b5e8f337f56f1d9c3a846ccf08bfbdb6e2a0"
+    },
+    {
+      "bookKey": "luke",
+      "activePath": "data/bible/NT/luke.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/luke.json",
+      "rowCount": 1149,
+      "sha256": "0420fc35116ba8811a7e13017fb3747dbb8ba6bce2b809204622ba104eab36d7"
+    },
+    {
+      "bookKey": "john",
+      "activePath": "data/bible/NT/john.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/john.json",
+      "rowCount": 878,
+      "sha256": "62b76d58540acf598dc3cae3c274986cb39bac78096767c988f6524d679975e5"
+    },
+    {
+      "bookKey": "acts",
+      "activePath": "data/bible/NT/acts.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/acts.json",
+      "rowCount": 1001,
+      "sha256": "292cb57e29772154c8b2c466a0d92408b2acc7fbe8283c0230abaabc44e1d721"
+    },
+    {
+      "bookKey": "romans",
+      "activePath": "data/bible/NT/romans.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/romans.json",
+      "rowCount": 432,
+      "sha256": "17dc13a2c780e46968b4649bc87c4d933df0b53af466b3f8f801da79af4a750e"
+    },
+    {
+      "bookKey": "1corinthians",
+      "activePath": "data/bible/NT/1corinthians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/1corinthians.json",
+      "rowCount": 437,
+      "sha256": "a07c43fc0f0d5c9f8460f977ab82e52a459e1e5236ec8134bba08f12a7b10530"
+    },
+    {
+      "bookKey": "2corinthians",
+      "activePath": "data/bible/NT/2corinthians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/2corinthians.json",
+      "rowCount": 256,
+      "sha256": "13bfa83e4275d6baf1a9d2be389e6d9d562e8dce2acba2ee3a16f91de0353e02"
+    },
+    {
+      "bookKey": "galatians",
+      "activePath": "data/bible/NT/galatians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/galatians.json",
+      "rowCount": 149,
+      "sha256": "0471dc17bb108f657cb8f1f12f3673a99b39064ac30b314f83855da17ca1a46b"
+    },
+    {
+      "bookKey": "ephesians",
+      "activePath": "data/bible/NT/ephesians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/ephesians.json",
+      "rowCount": 155,
+      "sha256": "b39e33bf1b4824029564c8351d36e1dc17635d81f8d13f76801d93c1d4dba69a"
+    },
+    {
+      "bookKey": "philippians",
+      "activePath": "data/bible/NT/philippians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/philippians.json",
+      "rowCount": 104,
+      "sha256": "99d5474749985c746973fdc0474b4fc7d0171c77a2647aaea9ffdd921511d97b"
+    },
+    {
+      "bookKey": "colossians",
+      "activePath": "data/bible/NT/colossians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/colossians.json",
+      "rowCount": 95,
+      "sha256": "6433093f5801f9c4bbff038b0d89d71fee443c3d0502881dcad199251c868af8"
+    },
+    {
+      "bookKey": "1thessalonians",
+      "activePath": "data/bible/NT/1thessalonians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/1thessalonians.json",
+      "rowCount": 89,
+      "sha256": "d4a44aaf05b52573a4d392855721b0d0bbcfab26ef68b68b6c06aeddee8fb505"
+    },
+    {
+      "bookKey": "2thessalonians",
+      "activePath": "data/bible/NT/2thessalonians.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/2thessalonians.json",
+      "rowCount": 47,
+      "sha256": "a2c15190e3d7253f5eee684a0560ffb3779c84c3ab3bfba060dbf12c763b9730"
+    },
+    {
+      "bookKey": "1timothy",
+      "activePath": "data/bible/NT/1timothy.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/1timothy.json",
+      "rowCount": 113,
+      "sha256": "40257a166a514e25886e6c44ae36641ccd8ee372cc3876c44a5bac6b781420e7"
+    },
+    {
+      "bookKey": "2timothy",
+      "activePath": "data/bible/NT/2timothy.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/2timothy.json",
+      "rowCount": 83,
+      "sha256": "d99cfe800cf7ca2fa3069e84e509d328926f749995ead4c578260b7437781927"
+    },
+    {
+      "bookKey": "titus",
+      "activePath": "data/bible/NT/titus.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/titus.json",
+      "rowCount": 46,
+      "sha256": "6c4dcb5754137a71dc3bc10fe9ce06f8ec62259641d7bd656782806e42d5ef66"
+    },
+    {
+      "bookKey": "philemon",
+      "activePath": "data/bible/NT/philemon.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/philemon.json",
+      "rowCount": 25,
+      "sha256": "1e5237a6cbea65ca12d64e4f227852d90291aa2b49605d7b1e8d248edb66ee14"
+    },
+    {
+      "bookKey": "hebrews",
+      "activePath": "data/bible/NT/hebrews.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/hebrews.json",
+      "rowCount": 303,
+      "sha256": "0b04b70e09cd29a14a0126bf2857cd63ca2f3a04d8f3192828189d2f1b000cc0"
+    },
+    {
+      "bookKey": "james",
+      "activePath": "data/bible/NT/james.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/james.json",
+      "rowCount": 107,
+      "sha256": "a62547d08788ce90197e20eeafeb2d0729e5bdbeb591437a73fa37520c4e1867"
+    },
+    {
+      "bookKey": "1peter",
+      "activePath": "data/bible/NT/1peter.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/1peter.json",
+      "rowCount": 105,
+      "sha256": "321f758f61356e6ac0a70614dccfdfec9244bc3fa4708112f6b1a863fd4c159a"
+    },
+    {
+      "bookKey": "2peter",
+      "activePath": "data/bible/NT/2peter.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/2peter.json",
+      "rowCount": 61,
+      "sha256": "af51d78d7a7f4a43de24a7251fcf45f49d758ecbfdbfd48b32f441b80a3b4b43"
+    },
+    {
+      "bookKey": "1john",
+      "activePath": "data/bible/NT/1john.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/1john.json",
+      "rowCount": 105,
+      "sha256": "f9a3de49eefa227fe41cd5839900c48ecbddadcf327818825253f5aec7edf555"
+    },
+    {
+      "bookKey": "2john",
+      "activePath": "data/bible/NT/2john.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/2john.json",
+      "rowCount": 13,
+      "sha256": "31937126373c491e9103950b81a2c6c42ed17d035d90379959eb4282d64a2135"
+    },
+    {
+      "bookKey": "3john",
+      "activePath": "data/bible/NT/3john.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/3john.json",
+      "rowCount": 15,
+      "sha256": "e5aabf4a6a6fc74285e74dcce9be952908240a9793556698958ed37b85101cf4"
+    },
+    {
+      "bookKey": "jude",
+      "activePath": "data/bible/NT/jude.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/jude.json",
+      "rowCount": 25,
+      "sha256": "c9515a9babfad596558cdc9418aa441cff325f95df2236d94c009e3cf74f05f3"
+    },
+    {
+      "bookKey": "revelation",
+      "activePath": "data/bible/NT/revelation.json",
+      "rawPath": "data/bible/translations/nrsv-canonical-nt-internal-source/raw/revelation.json",
+      "rowCount": 405,
+      "sha256": "0b151b976e97990c759fadd111834bd25925293909cf8f2b7d963a16d8cf4602"
+    }
+  ]
+}

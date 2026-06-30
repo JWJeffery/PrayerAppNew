@@ -1,0 +1,20 @@
+{
+  "schema": "canonical-nt-nrsv-source-lane-record-v1",
+  "status": "source_lane_created_from_existing_corpus_internal_witness",
+  "scope": "Canonical NT 27-book active NRSV lane.",
+  "sourceLane": "data/bible/translations/nrsv-canonical-nt-internal-source/manifest.json",
+  "auditScript": "scripts/audit-bible-canonical-nt-nrsv-source-lane.mjs",
+  "activeLaneState": {
+    "translationKey": "NRSV",
+    "activeBookCount": 27,
+    "activeRowCount": 7939,
+    "activeTextPresent": true,
+    "sourceResolved": true,
+    "sourceResolutionClass": "existing_corpus_internal_source_witness"
+  },
+  "certificationImpact": {
+    "canonicalNtCertificationStillRequiresFinalFullLaneAudit": true,
+    "blockerResolvedByThisRecord": "remaining_blocker_source_path_not_resolved for Canonical NT NRSV",
+    "note": "This resolves source-path governance for the existing active NRSV lane. It does not claim independent external collation."
+  }
+}
