@@ -1018,3 +1018,14 @@ Boundary:
 - This certifies the Psalter subsystem only.
 - This does not certify canonical NT, deuterocanon, broader canon, Vulgate, or the entire biblical corpus.
 
+
+## 2026-06-30T23:16:34.365Z — Canonical NT text-trust certification
+
+- Status: certified_textually_trusted_canonical_nt.
+- Scope: 27-book Canonical NT corpus.
+- Certification rule: all text must be present in active text rows and source-verifiable; translation overlays do not count.
+- Certification record: data/bible/registry/canonical-nt-text-trust-certification.json.
+- Audit script: scripts/audit-bible-canonical-nt-text-trust-certification.mjs.
+- Source-exact lanes: DRB, KJV, NABRE, NRSV, Rotherham.
+- Active lane counts: {"DRB":7951,"KJV":7957,"NABRE":7958,"NRSV":7939,"Rotherham":7941}.
+- Remaining blocker count: 0.

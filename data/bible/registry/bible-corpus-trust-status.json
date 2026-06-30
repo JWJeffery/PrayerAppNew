@@ -5,11 +5,29 @@
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
-      "status": "named_defect_tranche_complete",
+      "status": "certified_textually_trusted_canonical_nt",
       "notes": [
         "Currently named canonical NT defects are repaired or overlay-represented without main-row insertion.",
         "This does not assert a fresh full scholarly collation of every NT verse."
-      ]
+      ],
+      "certificationRecord": "data/bible/registry/canonical-nt-text-trust-certification.json",
+      "certifiedAt": "2026-06-30T23:16:34.365Z",
+      "activeTextRowsSourceExact": true,
+      "sourceExactLanes": [
+        "DRB",
+        "KJV",
+        "NABRE",
+        "NRSV",
+        "Rotherham"
+      ],
+      "activeLaneCounts": {
+        "DRB": 7951,
+        "KJV": 7957,
+        "NABRE": 7958,
+        "NRSV": 7939,
+        "Rotherham": 7941
+      },
+      "auditScript": "scripts/audit-bible-canonical-nt-text-trust-certification.mjs"
     },
     "canonical_ot": {
       "status": "trusted_canonical_ot_non_psalms_no_exclusions",
@@ -7028,5 +7046,7 @@
   "blockedClaims": [
     "whole_ot_including_psalms_textually_trusted",
     "entire_biblical_corpus_trusted"
-  ]
+  ],
+  "schema": "bible-corpus-trust-status-v1",
+  "updatedAt": "2026-06-30T23:16:34.365Z"
 }

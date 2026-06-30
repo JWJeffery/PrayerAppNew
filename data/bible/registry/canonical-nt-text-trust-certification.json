@@ -1,0 +1,78 @@
+{
+  "schema": "canonical-nt-text-trust-certification-v1",
+  "status": "certified_textually_trusted_canonical_nt",
+  "certifiedAt": "2026-06-30T23:16:34.365Z",
+  "scope": "canonical_nt_27_books_only_active_text_rows_only",
+  "certificationRule": "All text must be present in active text rows and source-verifiable. Translation overlays do not count.",
+  "requiredLanes": [
+    "DRB",
+    "KJV",
+    "NABRE",
+    "NRSV",
+    "Rotherham"
+  ],
+  "activeLaneCounts": {
+    "DRB": 7951,
+    "KJV": 7957,
+    "NABRE": 7958,
+    "NRSV": 7939,
+    "Rotherham": 7941
+  },
+  "pairCount": 135,
+  "sourceExactPassPairs": 135,
+  "failedPairs": 0,
+  "groupedPasses": [
+    {
+      "lane": "DRB",
+      "pairCount": 27,
+      "activeRefs": 7951,
+      "sourceRefs": 7951
+    },
+    {
+      "lane": "KJV",
+      "pairCount": 27,
+      "activeRefs": 7957,
+      "sourceRefs": 7957
+    },
+    {
+      "lane": "NABRE",
+      "pairCount": 27,
+      "activeRefs": 7958,
+      "sourceRefs": 7958
+    },
+    {
+      "lane": "NRSV",
+      "pairCount": 27,
+      "activeRefs": 7939,
+      "sourceRefs": 7939
+    },
+    {
+      "lane": "Rotherham",
+      "pairCount": 27,
+      "activeRefs": 7941,
+      "sourceRefs": 7941
+    }
+  ],
+  "sourcePosture": {
+    "KJV": "historical_git_source_exact",
+    "NABRE": "historical_git_source_exact",
+    "DRB": "local_raw_source_exact",
+    "Rotherham": "verified_source_witness_exact",
+    "NRSV": "controlled_internal_source_witness_exact"
+  },
+  "prerequisiteMerges": [
+    "8244df7 Certify Psalter text trust",
+    "1156044 Repair canonical NT DRB source lane",
+    "ee57f4f Materialize canonical NT Rotherham source rows",
+    "ecf51a5 Add Canonical NT NRSV source lane"
+  ],
+  "auditScript": "scripts/audit-bible-canonical-nt-text-trust-certification.mjs",
+  "auditReportSchema": "canonical-nt-text-trust-certification-audit-v1",
+  "certificationReady": true,
+  "limitations": [
+    "Certification applies to the 27-book Canonical NT corpus only.",
+    "Certification applies to active text rows only.",
+    "Translation overlays do not count for certification.",
+    "NRSV is certified against the controlled internal source witness created from the existing active corpus, not an independently reacquired publisher source."
+  ]
+}
