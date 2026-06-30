@@ -989,3 +989,11 @@ Trust status:
 
 Canonical OT remains not trusted pending versification remediation. This phase records policy posture only and does not close canonical OT trust.
 
+## NT KJV/NABRE source-backed closure
+
+- Closed after PR #28.
+- Scope: canonical NT active KJV and NABRE lanes only.
+- Verification: source-backed NT KJV/NABRE mismatch selector, with KJV thorn entities normalized to the active text convention, returned scannedPairs 54, actionablePairs 0, failureCount 0.
+- Repairs completed: NABRE missing rows and KJV missing rows across Matthew, Mark, Luke, John, Romans, and Acts.
+- Boundary: this does not establish global Bible corpus trust; OT, deuterocanon, broader canon, psalms, and non-KJV/NABRE trust boundaries remain governed by their own audits.
+
