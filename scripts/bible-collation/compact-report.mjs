@@ -159,6 +159,8 @@ function buildCoverageSummary(records) {
     withoutEvidenceByFileScope: objectFromCounts(countRecords(withoutEvidence, record => fileScope(record.file))),
     withoutEvidenceByLane: objectFromCounts(countRecords(withoutEvidence, record => record.lane)),
     registeredWithoutEvidenceByLane: objectFromCounts(countRecords(registeredWithoutEvidence, record => record.lane)),
+    registeredWithoutEvidenceByFileScopeAndLane: groupedCounts(registeredWithoutEvidence, record => fileScope(record.file), record => record.lane),
+    registeredWithoutEvidenceByLaneAndFileScope: groupedCounts(registeredWithoutEvidence, record => record.lane, record => fileScope(record.file)),
     topFilesWithoutEvidenceRecord: topRecordCounts(withoutEvidence, record => record.file, 12),
     topFilesWithoutEvidenceRecordByFileScope: groupTopFilesByScope(withoutEvidence, 8),
     topRegisteredFilesWithoutEvidenceByLane: groupTopFilesByLane(registeredWithoutEvidence, 8)
