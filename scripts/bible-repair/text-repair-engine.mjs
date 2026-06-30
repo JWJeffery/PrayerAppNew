@@ -76,6 +76,66 @@ function deleteVerseText(verse, lane) {
   return true;
 }
 
+function verseIdentityKey(chapter) {
+  const first = Array.isArray(chapter?.verses) ? chapter.verses.find(item => item && typeof item === 'object') : null;
+  for (const key of ['num', 'number', 'verse']) {
+    if (first && Object.prototype.hasOwnProperty.call(first, key)) return key;
+  }
+  return 'num';
+}
+
+function numericValue(value) {
+  const parsed = Number.parseInt(String(value), 10);
+  return Number.isFinite(parsed) && /^\d+$/.test(String(value)) ? parsed : null;
+}
+
+function findChapter(book, chapterValue) {
+  for (const [index, chapter] of (book?.chapters || []).entries()) {
+    if (String(chapterRef(chapter, index + 1)) === String(chapterValue)) return chapter;
+  }
+  return null;
+}
+
+function findVerse(chapter, verseValue) {
+  for (const [index, verse] of (chapter?.verses || []).entries()) {
+    if (String(verseRef(verse, index + 1)) === String(verseValue)) return verse;
+  }
+  return null;
+}
+
+function insertVerseText(book, lane, chapterValue, verseValue, value) {
+  const chapter = findChapter(book, chapterValue);
+  if (!chapter || !Array.isArray(chapter.verses)) return false;
+
+  const existing = findVerse(chapter, verseValue);
+  if (existing) return setVerseText(existing, lane, value);
+
+  const key = verseIdentityKey(chapter);
+  const numericVerse = numericValue(verseValue);
+  const verseObject = {
+    [key]: numericVerse ?? String(verseValue),
+    text: lane === 'text' ? value : { [lane]: value }
+  };
+
+  const insertAt = chapter.verses.findIndex(item => {
+    const itemValue = numericValue(item?.[key] ?? item?.num ?? item?.number ?? item?.verse);
+    return numericVerse !== null && itemValue !== null && itemValue > numericVerse;
+  });
+
+  if (insertAt === -1) chapter.verses.push(verseObject);
+  else chapter.verses.splice(insertAt, 0, verseObject);
+
+  return true;
+}
+
+function filterRowsByRefs(rowResult, refs) {
+  if (!refs) return rowResult;
+  return {
+    rows: new Map([...rowResult.rows.entries()].filter(([ref]) => refs.has(String(ref)))),
+    duplicateRefs: rowResult.duplicateRefs.filter(ref => refs.has(String(ref)))
+  };
+}
+
 function collectRows(book, options = {}) {
   const lane = options.lane || 'text';
   const includeChapterZero = options.includeChapterZero === true;
@@ -130,6 +190,10 @@ export function planTextRepair(target, options = {}) {
   const lane = target.lane;
   const sourceLane = target.sourceLane || 'text';
   const deleteOrphaned = target.deleteOrphaned === true;
+  const insertMissingActiveRefs = target.insertMissingActiveRefs === true;
+  const targetRefs = Array.isArray(target.refs) && target.refs.length
+    ? new Set(target.refs.map(ref => String(ref)))
+    : null;
 
   const summary = {
     id: target.id || `${activePath}:${lane}`,
@@ -144,8 +208,10 @@ export function planTextRepair(target, options = {}) {
     activeRefs: 0,
     plannedSetText: 0,
     plannedDeleteText: 0,
+    plannedInsertText: 0,
     appliedSetText: 0,
     appliedDeleteText: 0,
+    appliedInsertText: 0,
     residualCount: 0,
     duplicateSourceRefs: 0,
     duplicateActiveRefs: 0,
@@ -175,8 +241,14 @@ export function planTextRepair(target, options = {}) {
     return summary;
   }
 
-  const sourceRows = collectRows(source, { lane: sourceLane, includeChapterZero: target.includeSourceChapterZero === true });
-  const activeRows = collectRows(active, { lane, includeChapterZero: true });
+  const sourceRows = filterRowsByRefs(
+    collectRows(source, { lane: sourceLane, includeChapterZero: target.includeSourceChapterZero === true }),
+    targetRefs
+  );
+  const activeRows = filterRowsByRefs(
+    collectRows(active, { lane, includeChapterZero: true }),
+    targetRefs
+  );
 
   summary.sourceRefs = sourceRows.rows.size;
   summary.activeRefs = activeRows.rows.size;
@@ -194,7 +266,19 @@ export function planTextRepair(target, options = {}) {
   for (const [ref, sourceRow] of sourceRows.rows.entries()) {
     const activeRow = activeRows.rows.get(ref);
     if (!activeRow) {
-      summary.residuals.push({ type: 'missing-active-ref', ref });
+      if (insertMissingActiveRefs) {
+        summary.operations.push({
+          type: 'insert_text',
+          ref,
+          chapter: sourceRow.chapter,
+          verse: sourceRow.verse,
+          text: sourceRow.text,
+          afterHash: hashText(sourceRow.text),
+          afterLength: sourceRow.text.length
+        });
+      } else {
+        summary.residuals.push({ type: 'missing-active-ref', ref });
+      }
       continue;
     }
 
@@ -228,9 +312,16 @@ export function planTextRepair(target, options = {}) {
 
   summary.plannedSetText = summary.operations.filter(op => op.type === 'set_text').length;
   summary.plannedDeleteText = summary.operations.filter(op => op.type === 'delete_text').length;
+  summary.plannedInsertText = summary.operations.filter(op => op.type === 'insert_text').length;
 
   if (apply && summary.failures.length === 0) {
     for (const op of summary.operations) {
+      if (op.type === 'insert_text') {
+        if (insertVerseText(active, lane, op.chapter, op.verse, op.text)) summary.appliedInsertText += 1;
+        else summary.residuals.push({ type: 'apply-insert-unsafe-shape', ref: op.ref });
+        continue;
+      }
+
       const row = activeRows.rows.get(op.ref);
       if (!row) {
         summary.residuals.push({ type: 'apply-row-not-found', ref: op.ref });
@@ -248,7 +339,7 @@ export function planTextRepair(target, options = {}) {
       }
     }
 
-    if (summary.appliedSetText || summary.appliedDeleteText) {
+    if (summary.appliedSetText || summary.appliedDeleteText || summary.appliedInsertText) {
       fs.writeFileSync(path.resolve(repoRoot, activePath), `${JSON.stringify(active, null, 2)}\n`, 'utf8');
     }
   }
@@ -268,8 +359,10 @@ export function runTextRepair(targets, options = {}) {
     acc.activeRefs += item.activeRefs;
     acc.plannedSetText += item.plannedSetText;
     acc.plannedDeleteText += item.plannedDeleteText;
+    acc.plannedInsertText += item.plannedInsertText || 0;
     acc.appliedSetText += item.appliedSetText;
     acc.appliedDeleteText += item.appliedDeleteText;
+    acc.appliedInsertText += item.appliedInsertText || 0;
     acc.residualCount += item.residualCount;
     acc.failureCount += item.failures.length;
     return acc;
@@ -278,8 +371,10 @@ export function runTextRepair(targets, options = {}) {
     activeRefs: 0,
     plannedSetText: 0,
     plannedDeleteText: 0,
+    plannedInsertText: 0,
     appliedSetText: 0,
     appliedDeleteText: 0,
+    appliedInsertText: 0,
     residualCount: 0,
     failureCount: 0
   });
@@ -287,7 +382,7 @@ export function runTextRepair(targets, options = {}) {
   return {
     schema: 'bible-text-mass-repair-v1',
     apply: options.apply === true,
-    bibleTextMutated: options.apply === true && (totals.appliedSetText > 0 || totals.appliedDeleteText > 0),
+    bibleTextMutated: options.apply === true && (totals.appliedSetText > 0 || totals.appliedDeleteText > 0 || totals.appliedInsertText > 0),
     targetCount: targets.length,
     totals,
     targets: summaries

@@ -102,11 +102,11 @@ Repair class:
 
 Named NT defects from audit record include:
 
-- Acts 15:18;
-- Acts 23:26;
-- James 1:8;
-- 2 Corinthians 13:14 KJV;
-- Hebrews 5:9-14 DRB;
+- Acts 15:18 DRB — repaired as a main active row from DRB source;
+- Acts 23:26 DRB — repaired as a main active row from DRB source;
+- James 1:8 DRB — repaired as a main active row from DRB source;
+- 2 Corinthians 13:14 KJV — still overlay-guarded pending KJV source-row repair;
+- Hebrews 5:9-14 DRB — repaired;
 - 3 John DRB metadata/content mismatch;
 - Matthew Rotherham ledger label;
 - KJV `&thorn;` artifacts.

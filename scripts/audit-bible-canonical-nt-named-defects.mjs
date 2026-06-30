@@ -7,30 +7,6 @@ const root = process.cwd();
 
 const unresolvedMissingRows = [
   {
-    id: 'acts_15_18',
-    file: 'data/bible/NT/acts.json',
-    chapter: 15,
-    verse: 18,
-    status: 'main_row_unresolved_drb_overlay_present',
-    expectedOverlay: { translation: 'DRB', chapter: 15, verse: 18 },
-  },
-  {
-    id: 'acts_23_26',
-    file: 'data/bible/NT/acts.json',
-    chapter: 23,
-    verse: 26,
-    status: 'main_row_unresolved_drb_overlay_present',
-    expectedOverlay: { translation: 'DRB', chapter: 23, verse: 26 },
-  },
-  {
-    id: 'james_1_8',
-    file: 'data/bible/NT/james.json',
-    chapter: 1,
-    verse: 8,
-    status: 'main_row_unresolved_drb_overlay_present',
-    expectedOverlay: { translation: 'DRB', chapter: 1, verse: 8 },
-  },
-  {
     id: '2corinthians_13_14',
     file: 'data/bible/NT/2corinthians.json',
     chapter: 13,
@@ -41,6 +17,30 @@ const unresolvedMissingRows = [
 ];
 
 const requiredDrbRows = [
+  {
+    id: 'acts_15_18_drb',
+    file: 'data/bible/NT/acts.json',
+    chapter: 15,
+    verses: [18],
+    translation: 'DRB',
+    status: 'repaired',
+  },
+  {
+    id: 'acts_23_26_drb',
+    file: 'data/bible/NT/acts.json',
+    chapter: 23,
+    verses: [26],
+    translation: 'DRB',
+    status: 'repaired',
+  },
+  {
+    id: 'james_1_8_drb',
+    file: 'data/bible/NT/james.json',
+    chapter: 1,
+    verses: [8],
+    translation: 'DRB',
+    status: 'repaired',
+  },
   {
     id: 'hebrews_5_9_14_drb',
     file: 'data/bible/NT/hebrews.json',

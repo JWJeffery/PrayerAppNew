@@ -60,6 +60,7 @@ try {
       plannedDeleteText: 0,
       appliedSetText: 0,
       appliedDeleteText: 0,
+      appliedInsertText: 0,
       residualCount: 0,
       failureCount: 1
     },
@@ -88,6 +89,7 @@ console.log(JSON.stringify({
     plannedDeleteText: target.plannedDeleteText,
     appliedSetText: target.appliedSetText,
     appliedDeleteText: target.appliedDeleteText,
+    appliedInsertText: target.appliedInsertText || 0,
     residualCount: target.residualCount,
     failureCount: target.failures.length
   })),
