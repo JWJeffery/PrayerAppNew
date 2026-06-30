@@ -107,7 +107,7 @@ Named NT defects from audit record include:
 - James 1:8 DRB — repaired as a main active row from DRB source;
 - 2 Corinthians 13:14 KJV — repaired as a main active row from KJV source;
 - Hebrews 5:9-14 DRB — repaired;
-- 3 John DRB metadata/content mismatch;
+- 3 John DRB metadata/content mismatch — repaired; active DRB rows 1:1-14 match preserved Original Douay-Rheims source and stale DRBO overlay metadata was removed;
 - Matthew Rotherham ledger label;
 - KJV `&thorn;` artifacts — repaired in active KJV lane text as Unicode thorn characters.
 
