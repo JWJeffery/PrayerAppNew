@@ -1,0 +1,19 @@
+{
+  "schema": "canonical-ot-drb-source-lane-repair-record-v3",
+  "status": "passed_same_reference_materialization_with_residual_versification_blockers",
+  "scope": "canonical_ot_nonpsalms_38_books_text_DRB_only",
+  "sourceRoot": "data/bible/translations/drb-original-douay-rheims/raw",
+  "mutationPolicy": "Rebuild each active file from HEAD baseline, then change only active text.DRB from exact local DRB raw source mapping.",
+  "totals": {
+    "bookCount": 38,
+    "changedRows": 20576,
+    "addedRows": 18250,
+    "replacedRows": 2326,
+    "activeRowsMissingSource": 40,
+    "sourceRowsNotInActive": 312,
+    "remainingMissingDrbRowsAfterRepair": 40
+  },
+  "reportPath": "/tmp/prayerappnew_canonical_ot_drb_source_lane_exact_recovery_20260701_031557.json",
+  "note": "Dirty-branch recovery rebuilt each active file from HEAD baseline and then changed only text.DRB from exact local DRB raw source mapping. Residual rows are recorded as versification/source-shape blockers.",
+  "nextRequiredWork": "Commit same-reference DRB materialization, then triage residual DRB versification/source-shape blockers."
+}
