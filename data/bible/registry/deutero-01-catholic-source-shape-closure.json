@@ -1,0 +1,247 @@
+{
+  "schema": "deutero-01-catholic-source-shape-closure-v1",
+  "id": "deutero_01_catholic_source_shape_closure_2026_07_02",
+  "status": "closed_with_governed_source_shape_boundaries",
+  "closedAt": "2026-07-02T06:10:52Z",
+  "scope": {
+    "tranche": "DEUTERO-01",
+    "books": [
+      "TOBIT",
+      "JUDITH",
+      "WISDOM",
+      "SIRACH",
+      "BARUCH",
+      "LETTER_OF_JEREMIAH",
+      "1_MACCABEES",
+      "2_MACCABEES"
+    ],
+    "lane": "text.NRSV",
+    "sourceWitness": "BibleGateway NRSVA",
+    "repairRecord": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
+    "postrepairAudit": "data/bible/registry/deutero-01-catholic-postrepair-source-shape-audit.json"
+  },
+  "determination": {
+    "summary": "DEUTERO-01 Catholic deuterocanon NRSV repair is closed for the current active grid. BibleGateway NRSVA was acquired and exact same-address rows were repaired. Remaining active refs without NRSVA source rows are governed source-shape/source-scope boundary rows and are not to be filled by synthesis or source-row splitting. NRSVA source refs absent from the active grid are recorded and not inserted without a separate active-grid/source-shape adapter policy. Pre-existing NRSV rows at active refs without NRSVA source refs are preserved but excluded from source-backed claims until separately verified.",
+    "sameAddressRepair": "completed",
+    "remainingActiveGaps": "governed_not_synthesized",
+    "sourceRowsAbsentFromActiveGrid": "governed_not_inserted_without_adapter_policy",
+    "preexistingNoSourceNrsVRows": "preserved_but_excluded_from_source_backed_claims",
+    "deuterocanonGlobalTrust": "not_promoted_by_deutero_01_closure"
+  },
+  "totals": {
+    "books": 8,
+    "activeRows": 4410,
+    "sourceRows": 4064,
+    "activeNrsVRows": 4067,
+    "missingNrsVRows": 343,
+    "sourceRefsWithoutActive": 6,
+    "activeRefsWithoutSource": 352,
+    "noSourceButHasNrsV": 9,
+    "mismatches": 0
+  },
+  "books": [
+    {
+      "id": "TOBIT",
+      "activePath": "data/bible/OT/tobit.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/tobit.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 299,
+      "sourceRows": 241,
+      "activeNrsVRows": 242,
+      "missingNrsVRows": 57,
+      "activeRefsWithoutSourceCount": 58,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 1,
+      "noSourceButHasNrsV": [
+        "11:19"
+      ],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "JUDITH",
+      "activePath": "data/bible/OT/judith.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/judith.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 375,
+      "sourceRows": 340,
+      "activeNrsVRows": 340,
+      "missingNrsVRows": 35,
+      "activeRefsWithoutSourceCount": 35,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "WISDOM",
+      "activePath": "data/bible/OT/wisdom.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 442,
+      "sourceRows": 436,
+      "activeNrsVRows": 436,
+      "missingNrsVRows": 6,
+      "activeRefsWithoutSourceCount": 6,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "SIRACH",
+      "activePath": "data/bible/OT/sirach.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/sirach.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 1593,
+      "sourceRows": 1357,
+      "activeNrsVRows": 1359,
+      "missingNrsVRows": 234,
+      "activeRefsWithoutSourceCount": 242,
+      "sourceRefsWithoutActiveCount": 6,
+      "noSourceButHasNrsVCount": 8,
+      "noSourceButHasNrsV": [
+        "3:4",
+        "22:7",
+        "34:15",
+        "34:18",
+        "35:2",
+        "35:4",
+        "36:2",
+        "36:16"
+      ],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "BARUCH",
+      "activePath": "data/bible/OT/baruch.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 141,
+      "sourceRows": 139,
+      "activeNrsVRows": 139,
+      "missingNrsVRows": 2,
+      "activeRefsWithoutSourceCount": 2,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "LETTER_OF_JEREMIAH",
+      "activePath": "data/bible/OT/letterofjeremiah.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/letterofjeremiah.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 73,
+      "sourceRows": 73,
+      "activeNrsVRows": 73,
+      "missingNrsVRows": 0,
+      "activeRefsWithoutSourceCount": 0,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "same_address_complete_for_active_grid",
+      "allowedClaim": "book_nrsv_same_address_complete_for_active_grid",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "1_MACCABEES",
+      "activePath": "data/bible/OT/1maccabees.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 929,
+      "sourceRows": 923,
+      "activeNrsVRows": 923,
+      "missingNrsVRows": 6,
+      "activeRefsWithoutSourceCount": 6,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    },
+    {
+      "id": "2_MACCABEES",
+      "activePath": "data/bible/OT/2maccabees.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 558,
+      "sourceRows": 555,
+      "activeNrsVRows": 555,
+      "missingNrsVRows": 3,
+      "activeRefsWithoutSourceCount": 3,
+      "sourceRefsWithoutActiveCount": 0,
+      "noSourceButHasNrsVCount": 0,
+      "noSourceButHasNrsV": [],
+      "closurePolicy": "remaining_refs_governed_as_source_shape_or_source_scope_boundary",
+      "allowedClaim": "book_nrsv_same_address_repair_completed_with_governed_remaining_boundaries",
+      "blockedClaims": [
+        "book_nrsv_active_grid_complete_without_source_shape_adapter",
+        "book_nrsv_synthetic_fill",
+        "book_nrsv_source_row_split_without_adapter_policy"
+      ]
+    }
+  ],
+  "allowedClaims": [
+    "deutero_01_catholic_nrsv_source_backed_same_address_repair_completed",
+    "deutero_01_catholic_remaining_nrsv_source_shape_boundaries_governed",
+    "deutero_01_catholic_closure_recorded_without_text_mutation"
+  ],
+  "blockedClaims": [
+    "deutero_01_catholic_nrsv_active_grid_complete_without_source_shape_adapter",
+    "deutero_01_catholic_nrsv_synthetic_fill",
+    "deutero_01_catholic_nrsv_source_row_split_without_adapter_policy",
+    "deutero_01_catholic_no_source_nrsv_rows_source_backed_without_verification",
+    "deuterocanon_textually_trusted",
+    "deuterocanon_complete",
+    "broad_canon_started_before_deuterocanon_boundary_closure"
+  ],
+  "nextActions": [
+    {
+      "id": "deutero_02",
+      "action": "Proceed to Greek Esther and Greek Daniel form policy/repair boundary; do not start broad canon yet."
+    },
+    {
+      "id": "deutero_01_optional_adapter",
+      "action": "Only if needed for Office display, design a source-shape adapter for active refs/source refs that do not match BibleGateway NRSVA addresses."
+    }
+  ]
+}

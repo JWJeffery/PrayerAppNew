@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_deutero_01_nrsv_repaired_source_shape_boundaries_recorded",
+      "status": "not_trusted_deutero_01_closed_deutero_02_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1074,7 +1074,8 @@
         "deutero_01_catholic_source_candidate_audit_2026_07_02",
         "deutero_01_catholic_source_scope_boundaries_2026_07_02",
         "deutero_01_catholic_nrsv_biblegateway_nrsva_repair_2026_07_02",
-        "deutero_01_catholic_postrepair_source_shape_audit_2026_07_02"
+        "deutero_01_catholic_postrepair_source_shape_audit_2026_07_02",
+        "deutero_01_catholic_source_shape_closure_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6732,7 +6733,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Close DEUTERO-01 by deciding whether remaining active refs without NRSVA source rows require source-shape adapter policy, source-scope absence governance, or active-grid cleanup.",
+      "nextAction": "Proceed to DEUTERO-02 Greek Esther and Greek Daniel form policy/repair boundary. Broad canon remains blocked until Deuterocanon boundaries close.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6747,18 +6748,27 @@
         "deutero_01_nrsv_active_grid_complete_without_source_shape_adapter",
         "deutero_01_nrsv_synthetic_fill",
         "deutero_01_nrsv_source_row_split_without_adapter_policy",
-        "deuterocanon_textually_trusted_until_remaining_boundaries_close"
+        "deuterocanon_textually_trusted_until_remaining_boundaries_close",
+        "deutero_01_catholic_nrsv_active_grid_complete_without_source_shape_adapter",
+        "deutero_01_catholic_nrsv_synthetic_fill",
+        "deutero_01_catholic_nrsv_source_row_split_without_adapter_policy",
+        "deutero_01_catholic_no_source_nrsv_rows_source_backed_without_verification",
+        "broad_canon_started_before_deuterocanon_boundary_closure"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
         "deutero_01_rotherham_source_scope_absence_recorded",
         "deutero_01_existing_source_scope_boundaries_recorded",
         "deutero_01_catholic_nrsv_source_backed_same_address_repair_completed",
-        "deutero_01_catholic_postrepair_source_shape_boundaries_recorded"
+        "deutero_01_catholic_postrepair_source_shape_boundaries_recorded",
+        "deutero_01_catholic_remaining_nrsv_source_shape_boundaries_governed",
+        "deutero_01_catholic_closure_recorded_without_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
-      "latestCatholicPostrepairSourceShapeAudit": "data/bible/registry/deutero-01-catholic-postrepair-source-shape-audit.json"
+      "latestCatholicPostrepairSourceShapeAudit": "data/bible/registry/deutero-01-catholic-postrepair-source-shape-audit.json",
+      "latestCatholicSourceShapeClosure": "data/bible/registry/deutero-01-catholic-source-shape-closure.json",
+      "latestCatholicClosureAuditScript": "scripts/audit-bible-deutero-01-catholic-closure.mjs"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
