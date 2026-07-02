@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_deutero_01_closed_deutero_02_pending",
+      "status": "not_trusted_deutero_02_form_policy_recorded_source_audit_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1075,7 +1075,8 @@
         "deutero_01_catholic_source_scope_boundaries_2026_07_02",
         "deutero_01_catholic_nrsv_biblegateway_nrsva_repair_2026_07_02",
         "deutero_01_catholic_postrepair_source_shape_audit_2026_07_02",
-        "deutero_01_catholic_source_shape_closure_2026_07_02"
+        "deutero_01_catholic_source_shape_closure_2026_07_02",
+        "deutero_02_greek_additions_form_policy_boundary_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6733,7 +6734,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Proceed to DEUTERO-02 Greek Esther and Greek Daniel form policy/repair boundary. Broad canon remains blocked until Deuterocanon boundaries close.",
+      "nextAction": "Run bounded source/active-form audits for estherGK.json and danielGK.json, then decide whether adapter policy or source-backed text repair is required.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6753,7 +6754,12 @@
         "deutero_01_catholic_nrsv_synthetic_fill",
         "deutero_01_catholic_nrsv_source_row_split_without_adapter_policy",
         "deutero_01_catholic_no_source_nrsv_rows_source_backed_without_verification",
-        "broad_canon_started_before_deuterocanon_boundary_closure"
+        "broad_canon_started_before_deuterocanon_boundary_closure",
+        "greek_esther_missing_because_greekesther_json_absent",
+        "greek_daniel_missing_because_greekdaniel_json_absent",
+        "greek_esther_simple_full_source_overlay_allowed",
+        "greek_daniel_simple_full_source_overlay_allowed",
+        "create_parallel_greekesther_or_greekdaniel_active_files_without_migration_policy"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6762,13 +6768,19 @@
         "deutero_01_catholic_nrsv_source_backed_same_address_repair_completed",
         "deutero_01_catholic_postrepair_source_shape_boundaries_recorded",
         "deutero_01_catholic_remaining_nrsv_source_shape_boundaries_governed",
-        "deutero_01_catholic_closure_recorded_without_text_mutation"
+        "deutero_01_catholic_closure_recorded_without_text_mutation",
+        "greek_esther_active_file_estherGK_governed",
+        "greek_daniel_active_file_danielGK_governed",
+        "greek_additions_no_simple_overlay_policy_recorded",
+        "deutero_02_form_policy_recorded_without_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
       "latestCatholicPostrepairSourceShapeAudit": "data/bible/registry/deutero-01-catholic-postrepair-source-shape-audit.json",
       "latestCatholicSourceShapeClosure": "data/bible/registry/deutero-01-catholic-source-shape-closure.json",
-      "latestCatholicClosureAuditScript": "scripts/audit-bible-deutero-01-catholic-closure.mjs"
+      "latestCatholicClosureAuditScript": "scripts/audit-bible-deutero-01-catholic-closure.mjs",
+      "latestGreekAdditionsFormPolicyBoundary": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
+      "latestGreekAdditionsFormPolicyAuditScript": "scripts/audit-bible-deutero-02-greek-additions-form-policy.mjs"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",

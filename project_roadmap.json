@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.43",
-  "last_updated": "2026-07-02T06:10:52Z",
+  "last_updated": "2026-07-02T06:14:14Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -23,9 +23,9 @@
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
-    "latest_bible_corpus_checkpoint": "deutero_01_catholic_source_shape_closure_2026_07_02",
+    "latest_bible_corpus_checkpoint": "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
     "latest_bible_corpus_checkpoint_commit": "2bd15ff",
-    "current_bible_corpus_summary": "DEUTERO-01 Catholic deuterocanon NRSV same-address repair is closed with governed source-shape/source-scope boundaries. Deuterocanon remains not globally trusted; proceed to DEUTERO-02 Greek Esther and Greek Daniel before any broad-canon work.",
+    "current_bible_corpus_summary": "DEUTERO-02 Greek Esther and Greek Daniel form policy is recorded: active files are estherGK.json and danielGK.json, not missing greekesther.json/greekdaniel.json files. Deuterocanon remains not globally trusted pending bounded source/active-form audit.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -345,6 +345,92 @@
         "activeRefsWithoutSource": 352,
         "noSourceButHasNrsV": 9,
         "mismatches": 0
+      }
+    },
+    "deutero_02_greek_additions_form_policy_boundary": {
+      "id": "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
+      "status": "form_policy_recorded_no_text_mutation",
+      "recordPath": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
+      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-form-policy.mjs",
+      "inspection": {
+        "GREEK_ESTHER": {
+          "path": "data/bible/OT/estherGK.json",
+          "exists": true,
+          "meta": {
+            "name": "Esther (with Additions)",
+            "id": "ESTH_GRK",
+            "version": "NRSV",
+            "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+            "defaultTranslation": "NRSV",
+            "translations": {
+              "NRSV": {
+                "label": "New Revised Standard Version",
+                "sourceType": "existing_active_corpus_explicit_lane_unverified_pending_source",
+                "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+              },
+              "KJV": {
+                "label": "King James Version 1611",
+                "sourceType": "historical_kjv_1611_source_witness",
+                "rights": "Public Domain",
+                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+              },
+              "NABRE": {
+                "label": "New American Bible Revised Edition",
+                "sourceType": "historical_internal_source_lane",
+                "rights": "USCCB source witness; project-internal historical source lane",
+                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+              },
+              "DRB": {
+                "label": "Douay-Rheims Bible",
+                "sourceType": "drb_original_douay_rheims_raw_source",
+                "rights": "Public Domain",
+                "sourceRef": "main/current"
+              }
+            }
+          },
+          "chapterCount": 16,
+          "activeRows": 272,
+          "activeNrsVRows": 267
+        },
+        "GREEK_DANIEL": {
+          "path": "data/bible/OT/danielGK.json",
+          "exists": true,
+          "meta": {
+            "name": "Daniel (Extended/Catholic Canon)",
+            "id": "DAN_EXT",
+            "version": "NRSV",
+            "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+            "defaultTranslation": "NRSV",
+            "translations": {
+              "NRSV": {
+                "label": "New Revised Standard Version",
+                "sourceType": "existing_active_corpus_explicit_lane",
+                "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+              },
+              "KJV": {
+                "label": "King James Version 1611 Apocrypha",
+                "sourceType": "historical_kjv_1611_source_witness",
+                "rights": "Public Domain",
+                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+              },
+              "NABRE": {
+                "label": "New American Bible Revised Edition",
+                "sourceType": "historical_internal_source_lane",
+                "rights": "USCCB source witness; project-internal historical source lane",
+                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+              },
+              "DRB": {
+                "label": "Douay-Rheims Bible",
+                "sourceType": "drb_original_douay_rheims_raw_source",
+                "rights": "Public Domain",
+                "sourceRef": "main/current"
+              }
+            }
+          },
+          "chapterCount": 14,
+          "activeRows": 531,
+          "activeNrsVRows": 530
+        }
       }
     }
   },

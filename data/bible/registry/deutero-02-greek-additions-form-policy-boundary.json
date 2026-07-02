@@ -1,0 +1,153 @@
+{
+  "schema": "deutero-02-greek-additions-form-policy-boundary-v1",
+  "id": "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
+  "status": "form_policy_recorded_no_text_mutation",
+  "recordedAt": "2026-07-02T06:14:14Z",
+  "scope": {
+    "tranche": "DEUTERO-02",
+    "books": [
+      "GREEK_ESTHER",
+      "GREEK_DANIEL"
+    ],
+    "governanceSource": "data/bible/registry/deuterocanon-remaining-governance.json"
+  },
+  "activeFilePolicy": {
+    "GREEK_ESTHER": {
+      "canonicalActivePath": "data/bible/OT/estherGK.json",
+      "legacyOrFalseMissingPath": "data/bible/OT/greekesther.json",
+      "form": "Greek Esther active form is governed as named Addition sections plus ordinary Esther chapters; do not repair by simple full-source overlay.",
+      "policy": "Treat estherGK.json as the actual active Greek Esther file for this repo. Do not create greekesther.json as a parallel active file without a separate migration decision."
+    },
+    "GREEK_DANIEL": {
+      "canonicalActivePath": "data/bible/OT/danielGK.json",
+      "legacyOrFalseMissingPath": "data/bible/OT/greekdaniel.json",
+      "form": "Greek Daniel active form is governed as extended Daniel in a single book shape, with chapter 3 embedded Prayer/Song material, Susanna as chapter 13, and Bel and the Dragon as chapter 14; do not repair by simple full-source overlay.",
+      "policy": "Treat danielGK.json as the actual active Greek Daniel file for this repo. Do not create greekdaniel.json as a parallel active file without a separate migration decision."
+    }
+  },
+  "inspection": {
+    "GREEK_ESTHER": {
+      "path": "data/bible/OT/estherGK.json",
+      "exists": true,
+      "meta": {
+        "name": "Esther (with Additions)",
+        "id": "ESTH_GRK",
+        "version": "NRSV",
+        "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+        "defaultTranslation": "NRSV",
+        "translations": {
+          "NRSV": {
+            "label": "New Revised Standard Version",
+            "sourceType": "existing_active_corpus_explicit_lane_unverified_pending_source",
+            "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+          },
+          "KJV": {
+            "label": "King James Version 1611",
+            "sourceType": "historical_kjv_1611_source_witness",
+            "rights": "Public Domain",
+            "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+          },
+          "NABRE": {
+            "label": "New American Bible Revised Edition",
+            "sourceType": "historical_internal_source_lane",
+            "rights": "USCCB source witness; project-internal historical source lane",
+            "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+          },
+          "DRB": {
+            "label": "Douay-Rheims Bible",
+            "sourceType": "drb_original_douay_rheims_raw_source",
+            "rights": "Public Domain",
+            "sourceRef": "main/current"
+          }
+        }
+      },
+      "chapterCount": 16,
+      "activeRows": 272,
+      "activeNrsVRows": 267
+    },
+    "GREEK_DANIEL": {
+      "path": "data/bible/OT/danielGK.json",
+      "exists": true,
+      "meta": {
+        "name": "Daniel (Extended/Catholic Canon)",
+        "id": "DAN_EXT",
+        "version": "NRSV",
+        "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+        "defaultTranslation": "NRSV",
+        "translations": {
+          "NRSV": {
+            "label": "New Revised Standard Version",
+            "sourceType": "existing_active_corpus_explicit_lane",
+            "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+          },
+          "KJV": {
+            "label": "King James Version 1611 Apocrypha",
+            "sourceType": "historical_kjv_1611_source_witness",
+            "rights": "Public Domain",
+            "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+          },
+          "NABRE": {
+            "label": "New American Bible Revised Edition",
+            "sourceType": "historical_internal_source_lane",
+            "rights": "USCCB source witness; project-internal historical source lane",
+            "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+          },
+          "DRB": {
+            "label": "Douay-Rheims Bible",
+            "sourceType": "drb_original_douay_rheims_raw_source",
+            "rights": "Public Domain",
+            "sourceRef": "main/current"
+          }
+        }
+      },
+      "chapterCount": 14,
+      "activeRows": 531,
+      "activeNrsVRows": 530
+    }
+  },
+  "legacyPathState": {
+    "GREEK_ESTHER": {
+      "path": "data/bible/OT/greekesther.json",
+      "exists": false,
+      "policy": "not_the_canonical_active_path_for_this_repo"
+    },
+    "GREEK_DANIEL": {
+      "path": "data/bible/OT/greekdaniel.json",
+      "exists": false,
+      "policy": "not_the_canonical_active_path_for_this_repo"
+    }
+  },
+  "determination": {
+    "summary": "DEUTERO-02 Greek Esther and Greek Daniel are not missing-book problems. The repo already has active Greek addition files under estherGK.json and danielGK.json. Their boundary is form policy and source-shape governance, not source acquisition or same-name file creation.",
+    "allowedClaims": [
+      "greek_esther_active_file_estherGK_governed",
+      "greek_daniel_active_file_danielGK_governed",
+      "greek_additions_no_simple_overlay_policy_recorded",
+      "deutero_02_form_policy_recorded_without_text_mutation"
+    ],
+    "blockedClaims": [
+      "greek_esther_missing_because_greekesther_json_absent",
+      "greek_daniel_missing_because_greekdaniel_json_absent",
+      "greek_esther_simple_full_source_overlay_allowed",
+      "greek_daniel_simple_full_source_overlay_allowed",
+      "create_parallel_greekesther_or_greekdaniel_active_files_without_migration_policy",
+      "deuterocanon_textually_trusted",
+      "deuterocanon_complete"
+    ]
+  },
+  "nextActions": [
+    {
+      "id": "deutero_02_source_audit",
+      "action": "Run a bounded source/active-form audit for estherGK.json and danielGK.json if textual repair or adapter work is needed."
+    },
+    {
+      "id": "readiness_audit_alignment",
+      "action": "Update any readiness audit that still classifies Greek Esther or Greek Daniel as missing solely because greekesther.json or greekdaniel.json is absent."
+    }
+  ],
+  "existingGovernanceSnapshot": {
+    "path": "data/bible/registry/deuterocanon-remaining-governance.json",
+    "present": true,
+    "note": "Existing governance file is the controlling prior decision record; this DEUTERO-02 boundary records the actual active file paths and blocks false missing-file claims."
+  }
+}
