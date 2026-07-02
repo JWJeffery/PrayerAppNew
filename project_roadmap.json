@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.43",
-  "last_updated": "2026-06-23T03:33:32.854Z",
+  "last_updated": "2026-07-02T03:28:54Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -23,9 +23,9 @@
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
-    "latest_bible_corpus_checkpoint": "bible_corpus_active_trust_boundary_checkpoint_2026_06_28",
+    "latest_bible_corpus_checkpoint": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
     "latest_bible_corpus_checkpoint_commit": "2bd15ff",
-    "current_bible_corpus_summary": "Canonical OT non-Psalms is complete and trusted with no governed exclusions. Daniel 11:1-45 NABRE is restored from official source. Nehemiah 7:73 NABRE is resolved as a positive source-address alignment: official NABRE has no Nehemiah 7:73 address, with chapter 7 ending at 7:72 and seventh-month transition material at 8:1. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
+    "current_bible_corpus_summary": "Canonical OT non-Psalms structural chapter/verse shape passes, but Canonical OT non-Psalms is not fully textually trusted: active text.DRB has 36 empty rows across 16 books. Same-source-address and whole-unused-source-row repairs are ruled out; adjacent-source-unit evidence does not authorize active text mutation under the current no-splitting/no-duplication policy. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -255,7 +255,21 @@
     "latest_architecture_checkpoint_record_commit_message": "Repair Bible corpus architecture checkpoint",
     "latest_bible_corpus_content_commit": "2bd15ff",
     "latest_bible_corpus_content_commit_message": "Record deuterocanon KJV NABRE marker completion",
-    "latest_bible_corpus_checkpoint_commit_role": "corpus_state_described_by_checkpoint_not_the_architecture_record_commit"
+    "latest_bible_corpus_checkpoint_commit_role": "corpus_state_described_by_checkpoint_not_the_architecture_record_commit",
+    "canonical_ot_drb_active_row_source_shape_blocker": {
+      "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
+      "status": "active_trust_blocker",
+      "recordPath": "data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json",
+      "missingDrbActiveRows": 36,
+      "affectedBooks": 16,
+      "blockedClaims": [
+        "canonical_ot_nonpsalms_no_exclusions",
+        "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
+        "canonical_ot_globally_trusted",
+        "whole_ot_including_psalms_textually_trusted",
+        "entire_biblical_corpus_trusted"
+      ]
+    }
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",

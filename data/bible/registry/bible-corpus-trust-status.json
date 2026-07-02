@@ -1,7 +1,7 @@
 {
   "id": "bible-corpus-trust-status",
   "status": "partial_trust_boundary_active",
-  "lastUpdated": "2026-06-28",
+  "lastUpdated": "2026-07-02",
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
@@ -30,8 +30,13 @@
       "auditScript": "scripts/audit-bible-canonical-nt-text-trust-certification.mjs"
     },
     "canonical_ot": {
-      "status": "trusted_canonical_ot_non_psalms_no_exclusions",
+      "status": "not_trusted_canonical_ot_non_psalms_drb_active_row_source_shape_blockers",
       "reasons": [
+        "2026-07-02 DRB active-row audit found 36 Canonical OT non-Psalms active rows with empty text.DRB across 16 books.",
+        "Manifest-verified raw DRB lookup found no same-source-address source row for any of the 36 missing active rows.",
+        "Whole unused source-row candidate evidence found no safe whole-source shifted-row repair class.",
+        "Adjacent-source-unit evidence suggests source-shape or versification compression for 26 rows, but that does not authorize splitting, duplicating, or generating active text.DRB under the current mutation policy.",
+        "Canonical OT non-Psalms structural chapter/verse shape still passes, but structural shape is not textual trust.",
         "Ordinary canonical OT non-Psalms chapter/verse completeness audit passed for 38 books and 779 chapters with zero findings.",
         "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
         "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
@@ -57,16 +62,22 @@
         "canonical_ot_final_trust_audit_1",
         "daniel_11_nabre_usccb_source_import_1",
         "daniel_11_nabre_source_snapshot_boundary_path_repair_1",
-        "nehemiah_7_73_nabre_source_address_alignment_1"
+        "nehemiah_7_73_nabre_source_address_alignment_1",
+        "canonical_ot_drb_active_row_source_shape_blocker_2026_07_02"
       ],
       "latest_canonical_ot_final_trust_audit": {
         "id": "canonical_ot_final_trust_audit_2026_06_23",
-        "status": "passed_no_exclusions",
+        "status": "superseded_by_drb_active_row_source_shape_blockers",
         "scope": "ordinary_canonical_ot_non_psalms",
         "ordinaryOtNonPsalmsBookCount": 38,
         "checkedChapterCount": 779,
         "findingCount": 0,
-        "governedExclusions": [],
+        "governedExclusions": [
+          {
+            "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
+            "reason": "36 Canonical OT non-Psalms active rows have empty text.DRB and cannot be safely repaired by same-source-address or whole-unused-source-row materialization."
+          }
+        ],
         "excludedFromThisTrustClaim": [
           "psalms_legacy_psalter_subsystem",
           "deuterocanon",
@@ -79,7 +90,8 @@
           "daniel_11_nabre_source_absent_no_synthetic_overlay",
           "nehemiah_7_73_adapter_versification_no_synthetic_row"
         ],
-        "noGovernedExclusions": true
+        "noGovernedExclusions": false,
+        "supersededBy": "data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json"
       },
       "latest_nehemiah_7_73_adapter_policy": {
         "id": "nehemiah_7_73_adapter_policy_2026_06_23",
@@ -242,7 +254,26 @@
         "remainingCanonicalOtGovernedExclusions": []
       },
       "governedExclusions": [],
-      "noGovernedExclusions": true
+      "noGovernedExclusions": true,
+      "activeDrbSourceShapeBlocker": {
+        "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
+        "status": "active_trust_blocker",
+        "recordPath": "data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json",
+        "missingDrbActiveRows": 36,
+        "affectedBooks": 16,
+        "sameSourceAddressAvailable": 0,
+        "wholeUnusedSourceCandidateReviewRows": 0,
+        "adjacentSourcePossibleRows": 26,
+        "weakOrNoAdjacentSourceEvidenceRows": 10,
+        "activeTextMutationAuthorized": false
+      },
+      "blockedClaims": [
+        "canonical_ot_nonpsalms_no_exclusions",
+        "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
+        "canonical_ot_globally_trusted",
+        "whole_ot_including_psalms_textually_trusted",
+        "entire_biblical_corpus_trusted"
+      ]
     },
     "psalms": {
       "status": "certified_textually_trusted_psalter",

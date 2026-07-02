@@ -1,0 +1,369 @@
+{
+  "schema": "canonical-ot-drb-active-row-source-shape-blockers-v1",
+  "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
+  "status": "active_trust_blocker",
+  "recordedAt": "2026-07-02T03:28:54Z",
+  "scope": "canonical_ot_nonpsalms_38_books_text_DRB_active_rows",
+  "sourceRoot": "data/bible/translations/drb-original-douay-rheims/raw",
+  "activeRoot": "data/bible/OT",
+  "summary": "Canonical OT non-Psalms structural shape passes, but active text.DRB is not fully trusted. Thirty-six active rows across sixteen books have empty text.DRB. Manifest-verified raw DRB source lookup found no same-source-address row for any of the thirty-six. Whole unused source-row candidate evidence found no safe whole-source shifted-row repair class. Adjacent-source-unit evidence explains many rows as source-shape or versification compression, but does not authorize active text mutation under the current no-splitting/no-duplication policy.",
+  "totals": {
+    "activeRowsChecked": 20684,
+    "affectedBooks": 16,
+    "missingDrbActiveRows": 36,
+    "sameSourceAddressAvailable": 0,
+    "wholeUnusedSourceCandidateReviewRows": 0,
+    "adjacentSourcePossibleRows": 26,
+    "weakOrNoAdjacentSourceEvidenceRows": 10
+  },
+  "mutationPolicy": {
+    "activeTextMutationAuthorized": false,
+    "allowed": [
+      "Record trust boundary",
+      "Record affected active references",
+      "Record evidence reports",
+      "Develop a future explicit adjacent-source-unit display or metadata policy"
+    ],
+    "prohibitedWithoutNewPolicy": [
+      "Generated DRB text",
+      "Heuristic verse splitting",
+      "Duplicating a preserved DRB source verse into multiple active rows",
+      "Filling active text.DRB with partial source text without a source-address rule",
+      "Calling Canonical OT non-Psalms fully trusted while these active-row DRB gaps remain"
+    ]
+  },
+  "evidenceReports": [
+    {
+      "audit": "canonical_ot_nonpsalms_drb_active_row_missing_text",
+      "result": "fail",
+      "missingDrbActiveRows": 36,
+      "affectedBooks": 16
+    },
+    {
+      "audit": "canonical_ot_nonpsalms_drb_residual_manifest_classification",
+      "result": "pass_classification_ready",
+      "sameSourceAddressAvailable": 0,
+      "noSameSourceAddress": 36
+    },
+    {
+      "audit": "canonical_ot_nonpsalms_drb_whole_source_candidate_evidence",
+      "result": "pass_evidence_ready",
+      "wholeUnusedSourceCandidateReviewRows": 0
+    },
+    {
+      "audit": "canonical_ot_nonpsalms_drb_adjacent_source_unit_evidence",
+      "result": "pass_evidence_ready",
+      "possibleAdjacentSourceUnitCoverageRows": 26,
+      "weakOrNoAdjacentSourceUnitEvidenceRows": 10
+    }
+  ],
+  "affectedBooks": [
+    {
+      "activeFile": "genesis.json",
+      "rawFile": "genesis.json",
+      "missingRefs": [
+        "5:32",
+        "49:33",
+        "50:26"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "5:32",
+          "49:33",
+          "50:26"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "exodus.json",
+      "rawFile": "exodus.json",
+      "missingRefs": [
+        "40:37",
+        "40:38"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "40:37",
+          "40:38"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "leviticus.json",
+      "rawFile": "leviticus.json",
+      "missingRefs": [
+        "26:46"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "26:46"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "numbers.json",
+      "rawFile": "numbers.json",
+      "missingRefs": [
+        "11:35",
+        "12:16",
+        "29:40"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "29:40"
+        ],
+        "weakOrNoStrongEvidence": [
+          "11:35",
+          "12:16"
+        ]
+      },
+      "sourceOnlyRefs": [
+        "13:34",
+        "20:30",
+        "30:17"
+      ]
+    },
+    {
+      "activeFile": "joshua.json",
+      "rawFile": "josue.json",
+      "missingRefs": [
+        "21:44",
+        "21:45"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "21:44"
+        ],
+        "weakOrNoStrongEvidence": [
+          "21:45"
+        ]
+      },
+      "sourceOnlyRefs": [
+        "4:25",
+        "5:16"
+      ]
+    },
+    {
+      "activeFile": "judges.json",
+      "rawFile": "judges.json",
+      "missingRefs": [
+        "21:25"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "21:25"
+        ],
+        "weakOrNoStrongEvidence": []
+      },
+      "sourceOnlyRefs": [
+        "5:32"
+      ]
+    },
+    {
+      "activeFile": "1samuel.json",
+      "rawFile": "1-kings.json",
+      "missingRefs": [
+        "23:29"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "23:29"
+        ],
+        "weakOrNoStrongEvidence": []
+      },
+      "sourceOnlyRefs": [
+        "20:43",
+        "24:23"
+      ]
+    },
+    {
+      "activeFile": "1chronicles.json",
+      "rawFile": "1-paralipomenon.json",
+      "missingRefs": [
+        "11:47",
+        "20:8"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "20:8"
+        ],
+        "weakOrNoStrongEvidence": [
+          "11:47"
+        ]
+      }
+    },
+    {
+      "activeFile": "nehemiah.json",
+      "rawFile": "2-esdras.json",
+      "missingRefs": [
+        "3:32",
+        "12:47"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "3:32",
+          "12:47"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "job.json",
+      "rawFile": "job.json",
+      "missingRefs": [
+        "41:26",
+        "41:27",
+        "41:28",
+        "41:29",
+        "41:30",
+        "41:31",
+        "41:32",
+        "41:33",
+        "41:34",
+        "42:17"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "41:26",
+          "41:27",
+          "41:28",
+          "41:31",
+          "41:33",
+          "41:34",
+          "42:17"
+        ],
+        "weakOrNoStrongEvidence": [
+          "41:29",
+          "41:30",
+          "41:32"
+        ]
+      },
+      "sourceOnlyRefs": [
+        "16:23",
+        "39:31",
+        "39:32",
+        "39:33",
+        "39:34",
+        "39:35",
+        "40:25",
+        "40:26",
+        "40:27",
+        "40:28"
+      ]
+    },
+    {
+      "activeFile": "ecclesiastes.json",
+      "rawFile": "ecclesiastes.json",
+      "missingRefs": [
+        "5:20",
+        "6:12"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "5:20",
+          "6:12"
+        ],
+        "weakOrNoStrongEvidence": []
+      },
+      "sourceOnlyRefs": [
+        "4:17",
+        "7:30"
+      ]
+    },
+    {
+      "activeFile": "songofsolomon.json",
+      "rawFile": "canticle-of-canticles.json",
+      "missingRefs": [
+        "1:17"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "1:17"
+        ],
+        "weakOrNoStrongEvidence": []
+      },
+      "sourceOnlyRefs": [
+        "5:17"
+      ]
+    },
+    {
+      "activeFile": "jeremiah.json",
+      "rawFile": "jeremie.json",
+      "missingRefs": [
+        "37:21"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "37:21"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "ezekiel.json",
+      "rawFile": "ezechiel.json",
+      "missingRefs": [
+        "2:10"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "2:10"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    },
+    {
+      "activeFile": "daniel.json",
+      "rawFile": "daniel.json",
+      "missingRefs": [
+        "4:35",
+        "4:36",
+        "4:37"
+      ],
+      "adjacentEvidence": {
+        "possible": [],
+        "weakOrNoStrongEvidence": [
+          "4:35",
+          "4:36",
+          "4:37"
+        ]
+      },
+      "sourceOnlyRefsSummary": {
+        "count": 177,
+        "ranges": [
+          "3:31-100",
+          "13:1-65",
+          "14:1-42"
+        ]
+      }
+    },
+    {
+      "activeFile": "micah.json",
+      "rawFile": "micheas.json",
+      "missingRefs": [
+        "5:15"
+      ],
+      "adjacentEvidence": {
+        "possible": [
+          "5:15"
+        ],
+        "weakOrNoStrongEvidence": []
+      }
+    }
+  ],
+  "blockedClaims": [
+    "canonical_ot_nonpsalms_no_exclusions",
+    "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
+    "canonical_ot_globally_trusted",
+    "whole_ot_including_psalms_textually_trusted",
+    "entire_biblical_corpus_trusted"
+  ],
+  "nextRequiredWork": [
+    "Define whether adjacent-source-unit coverage belongs in display metadata, source-lane metadata, or a new non-active-text coverage field.",
+    "Do not populate active text.DRB for these rows unless a future policy explicitly permits source-unit splitting or coverage representation with audit guards.",
+    "Keep Canonical OT DRB active-row completeness not trusted until the blocker is resolved or a source-faithful representation policy is implemented."
+  ]
+}
