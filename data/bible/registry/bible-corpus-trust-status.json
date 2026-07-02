@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_tobit_source_shape_classified_review_pending",
+      "status": "not_trusted_post_tobit_accounting_review_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1081,7 +1081,8 @@
         "deutero_02_greek_additions_source_active_review_2026_07_02",
         "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
         "deuterocanon_status_consolidation_audit_2026_07_02",
-        "deutero_tobit_nrsv_source_shape_classification_2026_07_02"
+        "deutero_tobit_nrsv_source_shape_classification_2026_07_02",
+        "deuterocanon_status_accounting_after_tobit_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6739,7 +6740,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review Tobit source-shape classification, then update deuterocanon status accounting before further repair work.",
+      "nextAction": "Review post-Tobit accounting, then proceed to the next remaining NRSV-applicable source-family tranche.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6783,7 +6784,9 @@
         "daniel_13_65_nrsv_filled_or_synthesized",
         "tobit_nrsv_repaired_by_synthetic_fill",
         "tobit_14_9_standalone_nrsv_gap",
-        "tobit_rows_textually_mutated_by_source_shape_classification"
+        "tobit_rows_textually_mutated_by_source_shape_classification",
+        "tobit_text_mutated_by_accounting_update",
+        "tobit_remaining_in_nrsv_applicable_gap_queue"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6814,7 +6817,12 @@
         "tobit_nrsv_source_shape_classified",
         "tobit_56_rows_beyond_biblegateway_nrsva_endpoints",
         "tobit_14_9_merged_source_span_already_represented_at_14_8",
-        "tobit_classification_no_bible_text_mutation"
+        "tobit_classification_no_bible_text_mutation",
+        "deuterocanon_post_tobit_accounting_recorded",
+        "tobit_removed_from_nrsv_applicable_gap_queue",
+        "remaining_deuterocanon_nrsv_applicable_gaps_286",
+        "deuterocanon_nrsv_not_applicable_rows_58",
+        "post_tobit_accounting_no_bible_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6832,7 +6840,11 @@
       "latestDeuterocanonStatusConsolidationAudit": "data/bible/registry/deuterocanon-status-consolidation-audit-2026-07-02.json",
       "latestDeuterocanonStatusConsolidationAuditScript": "scripts/audit-bible-deuterocanon-status-consolidation.mjs",
       "latestTobitNrsVSourceShapeClassification": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json",
-      "latestTobitNrsVSourceShapeClassificationAuditScript": "scripts/audit-bible-deutero-tobit-nrsv-source-shape-classification.mjs"
+      "latestTobitNrsVSourceShapeClassificationAuditScript": "scripts/audit-bible-deutero-tobit-nrsv-source-shape-classification.mjs",
+      "latestDeuterocanonPostTobitAccounting": "data/bible/registry/deuterocanon-status-accounting-after-tobit-2026-07-02.json",
+      "latestDeuterocanonPostTobitAccountingAuditScript": "scripts/audit-bible-deuterocanon-status-accounting-after-tobit.mjs",
+      "remainingNrsVApplicableGapsAfterTobit": 286,
+      "nrsvNotApplicableRowsAfterTobit": 58
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
