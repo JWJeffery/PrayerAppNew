@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_status_consolidated_review_pending",
+      "status": "not_trusted_tobit_source_shape_classified_review_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1080,7 +1080,8 @@
         "deutero_02_greek_additions_source_active_audit_2026_07_02",
         "deutero_02_greek_additions_source_active_review_2026_07_02",
         "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
-        "deuterocanon_status_consolidation_audit_2026_07_02"
+        "deuterocanon_status_consolidation_audit_2026_07_02",
+        "deutero_tobit_nrsv_source_shape_classification_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6738,7 +6739,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review deuterocanon status consolidation audit before broad-canon work or any global trust promotion.",
+      "nextAction": "Review Tobit source-shape classification, then update deuterocanon status accounting before further repair work.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6779,7 +6780,10 @@
         "deuterocanon_globally_textually_trusted",
         "deuterocanon_complete_without_review",
         "broad_canon_started_before_consolidation_review",
-        "daniel_13_65_nrsv_filled_or_synthesized"
+        "daniel_13_65_nrsv_filled_or_synthesized",
+        "tobit_nrsv_repaired_by_synthetic_fill",
+        "tobit_14_9_standalone_nrsv_gap",
+        "tobit_rows_textually_mutated_by_source_shape_classification"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6806,7 +6810,11 @@
         "deuterocanon_status_consolidation_audit_recorded",
         "deutero_01_and_deutero_02_status_inputs_consolidated",
         "deuterocanon_nrsv_applicable_gap_count_recorded",
-        "deuterocanon_no_active_bible_text_mutation_in_consolidation_audit"
+        "deuterocanon_no_active_bible_text_mutation_in_consolidation_audit",
+        "tobit_nrsv_source_shape_classified",
+        "tobit_56_rows_beyond_biblegateway_nrsva_endpoints",
+        "tobit_14_9_merged_source_span_already_represented_at_14_8",
+        "tobit_classification_no_bible_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6822,7 +6830,9 @@
       "latestGreekEstherTailNrsVRepair": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json",
       "latestGreekEstherTailNrsVRepairAuditScript": "scripts/audit-bible-deutero-02-greek-esther-tail-nrsv-repair.mjs",
       "latestDeuterocanonStatusConsolidationAudit": "data/bible/registry/deuterocanon-status-consolidation-audit-2026-07-02.json",
-      "latestDeuterocanonStatusConsolidationAuditScript": "scripts/audit-bible-deuterocanon-status-consolidation.mjs"
+      "latestDeuterocanonStatusConsolidationAuditScript": "scripts/audit-bible-deuterocanon-status-consolidation.mjs",
+      "latestTobitNrsVSourceShapeClassification": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json",
+      "latestTobitNrsVSourceShapeClassificationAuditScript": "scripts/audit-bible-deutero-tobit-nrsv-source-shape-classification.mjs"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
