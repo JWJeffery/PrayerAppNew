@@ -1,0 +1,882 @@
+{
+  "schema": "biblegateway-nrsva-source-snapshot-v1",
+  "id": "BARUCH",
+  "name": "Baruch",
+  "translation": "NRSVA",
+  "normalizedLane": "NRSV",
+  "sourceWitness": "BibleGateway NRSVA",
+  "sourceUrlTemplate": "https://www.biblegateway.com/passage/?search={book}%20{chapter}&version=NRSVA",
+  "capturedAt": "2026-07-02T05:51:35Z",
+  "chapters": [
+    {
+      "chapter": 1,
+      "url": "https://www.biblegateway.com/passage/?search=Baruch%201&version=NRSVA",
+      "verseCount": 22,
+      "verses": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "ref": "1:1",
+          "text": "Baruch and the Jews in Babylon 1"
+        },
+        {
+          "chapter": 1,
+          "verse": 2,
+          "ref": "1:2",
+          "text": "in the fifth year, on the seventh day of the month, at the time when the Chaldeans took Jerusalem and burned it with fire."
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "ref": "1:3",
+          "text": "Baruch read the words of this book to Jeconiah son of Jehoiakim, king of Judah, and to all the people who came to hear the book,"
+        },
+        {
+          "chapter": 1,
+          "verse": 4,
+          "ref": "1:4",
+          "text": "and to the nobles and the princes, and to the elders, and to all the people, small and great, all who lived in Babylon by the river Sud."
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "ref": "1:5",
+          "text": "Then they wept, and fasted, and prayed before the Lord;"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "ref": "1:6",
+          "text": "they collected as much money as each could give,"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "ref": "1:7",
+          "text": "and sent it to Jerusalem to the high priest Jehoiakim son of Hilkiah son of Shallum, and to the priests, and to all the people who were present with him in Jerusalem."
+        },
+        {
+          "chapter": 1,
+          "verse": 8,
+          "ref": "1:8",
+          "text": "At the same time, on the tenth day of Sivan, Baruch took the vessels of the house of the Lord, which had been carried away from the temple, to return them to the land of Judah—the silver vessels that Zedekiah son of Josiah, king of Judah, had made,"
+        },
+        {
+          "chapter": 1,
+          "verse": 9,
+          "ref": "1:9",
+          "text": "after King Nebuchadnezzar of Babylon had carried away from Jerusalem Jeconiah and the princes and the prisoners and the nobles and the people of the land, and brought them to Babylon."
+        },
+        {
+          "chapter": 1,
+          "verse": 10,
+          "ref": "1:10",
+          "text": "A Letter to Jerusalem They said: Here we send you money; so buy with the money burnt-offerings and sin-offerings and incense, and prepare a grain-offering, and offer them on the altar of the Lord our God;"
+        },
+        {
+          "chapter": 1,
+          "verse": 11,
+          "ref": "1:11",
+          "text": "and pray for the life of King Nebuchadnezzar of Babylon, and for the life of his son Belshazzar, so that their days on earth may be like the days of heaven."
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "ref": "1:12",
+          "text": "The Lord will give us strength, and light to our eyes; we shall live under the protection of King Nebuchadnezzar of Babylon, and under the protection of his son Belshazzar, and we shall serve them for many days and find favour in their sight."
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "ref": "1:13",
+          "text": "Pray also for us to the Lord our God, for we have sinned against the Lord our God, and to this day the anger of the Lord and his wrath have not turned away from us."
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "ref": "1:14",
+          "text": "And you shall read aloud this scroll that we are sending you, to make your confession in the house of the Lord on the days of the festivals and at appointed seasons."
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "ref": "1:15",
+          "text": "Confession of Sins And you shall say: The Lord our God is in the right, but there is open shame on us today, on the people of Judah, on the inhabitants of Jerusalem,"
+        },
+        {
+          "chapter": 1,
+          "verse": 16,
+          "ref": "1:16",
+          "text": "and on our kings, our rulers, our priests, our prophets, and our ancestors,"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "ref": "1:17",
+          "text": "because we have sinned before the Lord."
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "ref": "1:18",
+          "text": "We have disobeyed him, and have not heeded the voice of the Lord our God, to walk in the statutes of the Lord that he set before us."
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "ref": "1:19",
+          "text": "From the time when the Lord brought our ancestors out of the land of Egypt until today, we have been disobedient to the Lord our God, and we have been negligent, in not heeding his voice."
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "ref": "1:20",
+          "text": "So to this day there have clung to us the calamities and the curse that the Lord declared through his servant Moses at the time when he brought our ancestors out of the land of Egypt to give to us a land flowing with milk and honey."
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "ref": "1:21",
+          "text": "We did not listen to the voice of the Lord our God in all the words of the prophets whom he sent to us,"
+        },
+        {
+          "chapter": 1,
+          "verse": 22,
+          "ref": "1:22",
+          "text": "but all of us followed the intent of our own wicked hearts by serving other gods and doing what is evil in the sight of the Lord our God."
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "url": "https://www.biblegateway.com/passage/?search=Baruch%202&version=NRSVA",
+      "verseCount": 35,
+      "verses": [
+        {
+          "chapter": 2,
+          "verse": 1,
+          "ref": "2:1",
+          "text": "2"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "ref": "2:2",
+          "text": "Under the whole heaven there has not been done the like of what he has done in Jerusalem, in accordance with the threats that were written in the law of Moses."
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "ref": "2:3",
+          "text": "Some of us ate the flesh of their sons and others the flesh of their daughters."
+        },
+        {
+          "chapter": 2,
+          "verse": 4,
+          "ref": "2:4",
+          "text": "He made them subject to all the kingdoms around us, to be an object of scorn and a desolation among all the surrounding peoples, where the Lord has scattered them."
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "ref": "2:5",
+          "text": "They were brought down and not raised up, because our nation sinned against the Lord our God, in not heeding his voice."
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "ref": "2:6",
+          "text": "The Lord our God is in the right, but there is open shame on us and our ancestors this very day."
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "ref": "2:7",
+          "text": "All those calamities with which the Lord threatened us have come upon us."
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "ref": "2:8",
+          "text": "Yet we have not entreated the favour of the Lord by turning away, each of us, from the thoughts of our wicked hearts."
+        },
+        {
+          "chapter": 2,
+          "verse": 9,
+          "ref": "2:9",
+          "text": "And the Lord has kept the calamities ready, and the Lord has brought them upon us, for the Lord is just in all the works that he has commanded us to do."
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "ref": "2:10",
+          "text": "Yet we have not obeyed his voice, to walk in the statutes of the Lord that he set before us."
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "ref": "2:11",
+          "text": "Prayer for Deliverance And now, O Lord God of Israel, who brought your people out of the land of Egypt with a mighty hand and with signs and wonders and with great power and outstretched arm, and made yourself a name that continues to this day,"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "ref": "2:12",
+          "text": "we have sinned, we have been ungodly, we have done wrong, O Lord our God, against all your ordinances."
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "ref": "2:13",
+          "text": "Let your anger turn away from us, for we are left, few in number, among the nations where you have scattered us."
+        },
+        {
+          "chapter": 2,
+          "verse": 14,
+          "ref": "2:14",
+          "text": "Hear, O Lord, our prayer and our supplication, and for your own sake deliver us, and grant us favour in the sight of those who have carried us into exile;"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "ref": "2:15",
+          "text": "so that all the earth may know that you are the Lord our God, for Israel and his descendants are called by your name."
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "ref": "2:16",
+          "text": "O Lord, look down from your holy dwelling, and consider us. Incline your ear, O Lord, and hear;"
+        },
+        {
+          "chapter": 2,
+          "verse": 17,
+          "ref": "2:17",
+          "text": "open your eyes, O Lord, and see, for the dead who are in Hades, whose spirit has been taken from their bodies, will not ascribe glory or justice to the Lord;"
+        },
+        {
+          "chapter": 2,
+          "verse": 18,
+          "ref": "2:18",
+          "text": "but the person who is deeply grieved, who walks bowed and feeble, with failing eyes and famished soul, will declare your glory and righteousness, O Lord."
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "ref": "2:19",
+          "text": "For it is not because of any righteous deeds of our ancestors or our kings that we bring before you our prayer for mercy, O Lord our God."
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "ref": "2:20",
+          "text": "For you have sent your anger and your wrath upon us, as you declared by your servants the prophets, saying:"
+        },
+        {
+          "chapter": 2,
+          "verse": 21,
+          "ref": "2:21",
+          "text": "Thus says the Lord: Bend your shoulders and serve the king of Babylon, and you will remain in the land that I gave to your ancestors."
+        },
+        {
+          "chapter": 2,
+          "verse": 22,
+          "ref": "2:22",
+          "text": "But if you will not obey the voice of the Lord and will not serve the king of Babylon,"
+        },
+        {
+          "chapter": 2,
+          "verse": 23,
+          "ref": "2:23",
+          "text": "I will make to cease from the towns of Judah and from the region around Jerusalem the voice of mirth and the voice of gladness, the voice of the bridegroom and the voice of the bride, and the whole land will be a desolation without inhabitants."
+        },
+        {
+          "chapter": 2,
+          "verse": 24,
+          "ref": "2:24",
+          "text": "But we did not obey your voice, to serve the king of Babylon; and you have carried out your threats, which you spoke by your servants the prophets, that the bones of our kings and the bones of our ancestors would be brought out of their resting-place;"
+        },
+        {
+          "chapter": 2,
+          "verse": 25,
+          "ref": "2:25",
+          "text": "and indeed they have been thrown out to the heat of day and the frost of night. They perished in great misery, by famine and sword and pestilence."
+        },
+        {
+          "chapter": 2,
+          "verse": 26,
+          "ref": "2:26",
+          "text": "And the house that is called by your name you have made as it is today, because of the wickedness of the house of Israel and the house of Judah."
+        },
+        {
+          "chapter": 2,
+          "verse": 27,
+          "ref": "2:27",
+          "text": "God’s Promise Recalled Yet you have dealt with us, O Lord our God, in all your kindness and in all your great compassion,"
+        },
+        {
+          "chapter": 2,
+          "verse": 28,
+          "ref": "2:28",
+          "text": "as you spoke by your servant Moses on the day when you commanded him to write your law in the presence of the people of Israel, saying,"
+        },
+        {
+          "chapter": 2,
+          "verse": 29,
+          "ref": "2:29",
+          "text": "‘If you will not obey my voice, this very great multitude will surely turn into a small number among the nations, where I will scatter them."
+        },
+        {
+          "chapter": 2,
+          "verse": 30,
+          "ref": "2:30",
+          "text": "For I know that they will not obey me, for they are a stiff-necked people. But in the land of their exile they will come to themselves"
+        },
+        {
+          "chapter": 2,
+          "verse": 31,
+          "ref": "2:31",
+          "text": "and know that I am the Lord their God. I will give them a heart that obeys and ears that hear;"
+        },
+        {
+          "chapter": 2,
+          "verse": 32,
+          "ref": "2:32",
+          "text": "they will praise me in the land of their exile, and will remember my name"
+        },
+        {
+          "chapter": 2,
+          "verse": 33,
+          "ref": "2:33",
+          "text": "and turn from their stubbornness and their wicked deeds; for they will remember the ways of their ancestors, who sinned before the Lord."
+        },
+        {
+          "chapter": 2,
+          "verse": 34,
+          "ref": "2:34",
+          "text": "I will bring them again into the land that I swore to give to their ancestors, to Abraham, Isaac, and Jacob, and they will rule over it; and I will increase them, and they will not be diminished."
+        },
+        {
+          "chapter": 2,
+          "verse": 35,
+          "ref": "2:35",
+          "text": "I will make an everlasting covenant with them to be their God and they shall be my people; and I will never again remove my people Israel from the land that I have given them.’"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "url": "https://www.biblegateway.com/passage/?search=Baruch%203&version=NRSVA",
+      "verseCount": 36,
+      "verses": [
+        {
+          "chapter": 3,
+          "verse": 1,
+          "ref": "3:1",
+          "text": "3"
+        },
+        {
+          "chapter": 3,
+          "verse": 2,
+          "ref": "3:2",
+          "text": "Hear, O Lord, and have mercy, for we have sinned before you."
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "ref": "3:3",
+          "text": "For you are enthroned for ever, and we are perishing for ever."
+        },
+        {
+          "chapter": 3,
+          "verse": 4,
+          "ref": "3:4",
+          "text": "O Lord Almighty, God of Israel, hear now the prayer of the people of Israel, the children of those who sinned before you, who did not heed the voice of the Lord their God, so that calamities have clung to us."
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "ref": "3:5",
+          "text": "Do not remember the iniquities of our ancestors, but in this crisis remember your power and your name."
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "ref": "3:6",
+          "text": "For you are the Lord our God, and it is you, O Lord, whom we will praise."
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "ref": "3:7",
+          "text": "For you have put the fear of you in our hearts so that we call upon your name; and we will praise you in our exile, for we have put away from our hearts all the iniquity of our ancestors who sinned against you."
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "ref": "3:8",
+          "text": "See, we are today in our exile where you have scattered us, to be reproached and cursed and punished for all the iniquities of our ancestors, who forsook the Lord our God."
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "ref": "3:9",
+          "text": "In Praise of Wisdom Hear the commandments of life, O Israel; give ear, and learn wisdom!"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "ref": "3:10",
+          "text": "Why is it, O Israel, why is it that you are in the land of your enemies, that you are growing old in a foreign country, that you are defiled with the dead,"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "ref": "3:12",
+          "text": "You have forsaken the fountain of wisdom."
+        },
+        {
+          "chapter": 3,
+          "verse": 13,
+          "ref": "3:13",
+          "text": "If you had walked in the way of God, you would be living in peace for ever."
+        },
+        {
+          "chapter": 3,
+          "verse": 14,
+          "ref": "3:14",
+          "text": "Learn where there is wisdom, where there is strength, where there is understanding, so that you may at the same time discern where there is length of days, and life, where there is light for the eyes, and peace."
+        },
+        {
+          "chapter": 3,
+          "verse": 15,
+          "ref": "3:15",
+          "text": "Who has found her place? And who has entered her storehouses?"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "ref": "3:16",
+          "text": "Where are the rulers of the nations, and those who lorded it over the animals on earth;"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "ref": "3:17",
+          "text": "those who made sport of the birds of the air, and who hoarded up silver and gold in which people trust, and there is no end to their getting;"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "ref": "3:18",
+          "text": "those who schemed to get silver, and were anxious, but there is no trace of their works?"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "ref": "3:19",
+          "text": "They have vanished and gone down to Hades, and others have arisen in their place."
+        },
+        {
+          "chapter": 3,
+          "verse": 20,
+          "ref": "3:20",
+          "text": "Later generations have seen the light of day, and have lived upon the earth; but they have not learned the way to knowledge, nor understood her paths, nor laid hold of her."
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "ref": "3:21",
+          "text": "Their descendants have strayed far from her way."
+        },
+        {
+          "chapter": 3,
+          "verse": 22,
+          "ref": "3:22",
+          "text": "She has not been heard of in Canaan, or seen in Teman;"
+        },
+        {
+          "chapter": 3,
+          "verse": 23,
+          "ref": "3:23",
+          "text": "the descendants of Hagar, who seek for understanding on the earth, the merchants of Merran and Teman, the story-tellers and the seekers for understanding, have not learned the way to wisdom, or given thought to her paths."
+        },
+        {
+          "chapter": 3,
+          "verse": 24,
+          "ref": "3:24",
+          "text": "O Israel, how great is the house of God, how vast the territory that he possesses!"
+        },
+        {
+          "chapter": 3,
+          "verse": 25,
+          "ref": "3:25",
+          "text": "It is great and has no bounds; it is high and immeasurable."
+        },
+        {
+          "chapter": 3,
+          "verse": 26,
+          "ref": "3:26",
+          "text": "The giants were born there, who were famous of old, great in stature, expert in war."
+        },
+        {
+          "chapter": 3,
+          "verse": 27,
+          "ref": "3:27",
+          "text": "God did not choose them, or give them the way to knowledge;"
+        },
+        {
+          "chapter": 3,
+          "verse": 28,
+          "ref": "3:28",
+          "text": "so they perished because they had no wisdom, they perished through their folly."
+        },
+        {
+          "chapter": 3,
+          "verse": 29,
+          "ref": "3:29",
+          "text": "Who has gone up into heaven, and taken her, and brought her down from the clouds?"
+        },
+        {
+          "chapter": 3,
+          "verse": 30,
+          "ref": "3:30",
+          "text": "Who has gone over the sea, and found her, and will buy her for pure gold?"
+        },
+        {
+          "chapter": 3,
+          "verse": 31,
+          "ref": "3:31",
+          "text": "No one knows the way to her, or is concerned about the path to her."
+        },
+        {
+          "chapter": 3,
+          "verse": 32,
+          "ref": "3:32",
+          "text": "But the one who knows all things knows her, he found her by his understanding. The one who prepared the earth for all time filled it with four-footed creatures;"
+        },
+        {
+          "chapter": 3,
+          "verse": 33,
+          "ref": "3:33",
+          "text": "the one who sends forth the light, and it goes; he called it, and it obeyed him, trembling;"
+        },
+        {
+          "chapter": 3,
+          "verse": 34,
+          "ref": "3:34",
+          "text": "the stars shone in their watches, and were glad; he called them, and they said, ‘Here we are!’ They shone with gladness for him who made them."
+        },
+        {
+          "chapter": 3,
+          "verse": 35,
+          "ref": "3:35",
+          "text": "This is our God; no other can be compared to him."
+        },
+        {
+          "chapter": 3,
+          "verse": 36,
+          "ref": "3:36",
+          "text": "He found the whole way to knowledge, and gave her to his servant Jacob and to Israel, whom he loved."
+        },
+        {
+          "chapter": 3,
+          "verse": 37,
+          "ref": "3:37",
+          "text": "Afterwards she appeared on earth and lived with humankind."
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "url": "https://www.biblegateway.com/passage/?search=Baruch%204&version=NRSVA",
+      "verseCount": 37,
+      "verses": [
+        {
+          "chapter": 4,
+          "verse": 1,
+          "ref": "4:1",
+          "text": "4 the law that endures for ever. All who hold her fast will live, and those who forsake her will die."
+        },
+        {
+          "chapter": 4,
+          "verse": 2,
+          "ref": "4:2",
+          "text": "Turn, O Jacob, and take her; walk towards the shining of her light."
+        },
+        {
+          "chapter": 4,
+          "verse": 3,
+          "ref": "4:3",
+          "text": "Do not give your glory to another, or your advantages to an alien people."
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "ref": "4:4",
+          "text": "Happy are we, O Israel, for we know what is pleasing to God."
+        },
+        {
+          "chapter": 4,
+          "verse": 5,
+          "ref": "4:5",
+          "text": "Encouragement for Israel Take courage, my people, who perpetuate Israel’s name!"
+        },
+        {
+          "chapter": 4,
+          "verse": 6,
+          "ref": "4:6",
+          "text": "It was not for destruction that you were sold to the nations, but you were handed over to your enemies because you angered God."
+        },
+        {
+          "chapter": 4,
+          "verse": 7,
+          "ref": "4:7",
+          "text": "For you provoked the one who made you by sacrificing to demons and not to God."
+        },
+        {
+          "chapter": 4,
+          "verse": 8,
+          "ref": "4:8",
+          "text": "You forgot the everlasting God, who brought you up, and you grieved Jerusalem, who reared you."
+        },
+        {
+          "chapter": 4,
+          "verse": 9,
+          "ref": "4:9",
+          "text": "For she saw the wrath that came upon you from God, and she said: Listen, you neighbours of Zion, God has brought great sorrow upon me;"
+        },
+        {
+          "chapter": 4,
+          "verse": 10,
+          "ref": "4:10",
+          "text": "for I have seen the exile of my sons and daughters, which the Everlasting brought upon them."
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "ref": "4:11",
+          "text": "With joy I nurtured them, but I sent them away with weeping and sorrow."
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "ref": "4:12",
+          "text": "Let no one rejoice over me, a widow and bereaved of many; I was left desolate because of the sins of my children, because they turned away from the law of God."
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "ref": "4:13",
+          "text": "They had no regard for his statutes; they did not walk in the ways of God’s commandments, or tread the paths his righteousness showed them."
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "ref": "4:14",
+          "text": "Let the neighbours of Zion come; remember the capture of my sons and daughters, which the Everlasting brought upon them."
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "ref": "4:15",
+          "text": "For he brought a distant nation against them, a nation ruthless and of a strange language, which had no respect for the aged and no pity for a child."
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "ref": "4:16",
+          "text": "They led away the widow’s beloved sons, and bereaved the lonely woman of her daughters."
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "ref": "4:17",
+          "text": "But I, how can I help you?"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "ref": "4:18",
+          "text": "For he who brought these calamities upon you will deliver you from the hand of your enemies."
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "ref": "4:19",
+          "text": "Go, my children, go; for I have been left desolate."
+        },
+        {
+          "chapter": 4,
+          "verse": 20,
+          "ref": "4:20",
+          "text": "I have taken off the robe of peace and put on sackcloth for my supplication; I will cry to the Everlasting all my days."
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "ref": "4:21",
+          "text": "Take courage, my children, cry to God, and he will deliver you from the power and hand of the enemy."
+        },
+        {
+          "chapter": 4,
+          "verse": 22,
+          "ref": "4:22",
+          "text": "For I have put my hope in the Everlasting to save you, and joy has come to me from the Holy One, because of the mercy that will soon come to you from your everlasting saviour."
+        },
+        {
+          "chapter": 4,
+          "verse": 23,
+          "ref": "4:23",
+          "text": "For I sent you out with sorrow and weeping, but God will give you back to me with joy and gladness for ever."
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "ref": "4:24",
+          "text": "For as the neighbours of Zion have now seen your capture, so they soon will see your salvation by God, which will come to you with great glory and with the splendour of the Everlasting."
+        },
+        {
+          "chapter": 4,
+          "verse": 25,
+          "ref": "4:25",
+          "text": "My children, endure with patience the wrath that has come upon you from God. Your enemy has overtaken you, but you will soon see their destruction and will tread upon their necks."
+        },
+        {
+          "chapter": 4,
+          "verse": 26,
+          "ref": "4:26",
+          "text": "My pampered children have travelled rough roads; they were taken away like a flock carried off by the enemy."
+        },
+        {
+          "chapter": 4,
+          "verse": 27,
+          "ref": "4:27",
+          "text": "Take courage, my children, and cry to God, for you will be remembered by the one who brought this upon you."
+        },
+        {
+          "chapter": 4,
+          "verse": 28,
+          "ref": "4:28",
+          "text": "For just as you were disposed to go astray from God, return with tenfold zeal to seek him."
+        },
+        {
+          "chapter": 4,
+          "verse": 29,
+          "ref": "4:29",
+          "text": "For the one who brought these calamities upon you will bring you everlasting joy with your salvation."
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "ref": "4:30",
+          "text": "Jerusalem Is Assured of Help Take courage, O Jerusalem, for the one who named you will comfort you."
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "ref": "4:31",
+          "text": "Wretched will be those who mistreated you and who rejoiced at your fall."
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "ref": "4:32",
+          "text": "Wretched will be the cities that your children served as slaves; wretched will be the city that received your offspring."
+        },
+        {
+          "chapter": 4,
+          "verse": 33,
+          "ref": "4:33",
+          "text": "For just as she rejoiced at your fall and was glad at your ruin, so she will be grieved at her own desolation."
+        },
+        {
+          "chapter": 4,
+          "verse": 34,
+          "ref": "4:34",
+          "text": "I will take away her pride in her great population, and her insolence will be turned to grief."
+        },
+        {
+          "chapter": 4,
+          "verse": 35,
+          "ref": "4:35",
+          "text": "For fire will come upon her from the Everlasting for many days, and for a long time she will be inhabited by demons."
+        },
+        {
+          "chapter": 4,
+          "verse": 36,
+          "ref": "4:36",
+          "text": "Look towards the east, O Jerusalem, and see the joy that is coming to you from God."
+        },
+        {
+          "chapter": 4,
+          "verse": 37,
+          "ref": "4:37",
+          "text": "Look, your children are coming, whom you sent away; they are coming, gathered from east and west, at the word of the Holy One, rejoicing in the glory of God."
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "url": "https://www.biblegateway.com/passage/?search=Baruch%205&version=NRSVA",
+      "verseCount": 9,
+      "verses": [
+        {
+          "chapter": 5,
+          "verse": 1,
+          "ref": "5:1",
+          "text": "5 and put on for ever the beauty of the glory from God."
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "ref": "5:2",
+          "text": "Put on the robe of the righteousness that comes from God; put on your head the diadem of the glory of the Everlasting;"
+        },
+        {
+          "chapter": 5,
+          "verse": 3,
+          "ref": "5:3",
+          "text": "for God will show your splendour everywhere under heaven."
+        },
+        {
+          "chapter": 5,
+          "verse": 4,
+          "ref": "5:4",
+          "text": "For God will give you evermore the name, ‘Righteous Peace, Godly Glory’."
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "ref": "5:5",
+          "text": "Arise, O Jerusalem, stand upon the height; look towards the east, and see your children gathered from west and east at the word of the Holy One, rejoicing that God has remembered them."
+        },
+        {
+          "chapter": 5,
+          "verse": 6,
+          "ref": "5:6",
+          "text": "For they went out from you on foot, led away by their enemies; but God will bring them back to you, carried in glory, as on a royal throne."
+        },
+        {
+          "chapter": 5,
+          "verse": 7,
+          "ref": "5:7",
+          "text": "For God has ordered that every high mountain and the everlasting hills be made low and the valleys filled up, to make level ground, so that Israel may walk safely in the glory of God."
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "ref": "5:8",
+          "text": "The woods and every fragrant tree have shaded Israel at God’s command."
+        },
+        {
+          "chapter": 5,
+          "verse": 9,
+          "ref": "5:9",
+          "text": "For God will lead Israel with joy, in the light of his glory, with the mercy and righteousness that come from him."
+        }
+      ]
+    }
+  ],
+  "rowCount": 139
+}

@@ -14,7 +14,7 @@
           "text": {
             "KJV": "A copy of an Epistle which Ieremie sent vnto them which were to be led captiues into Babylon, by the king of the Babylonians, to certifie them as it was commanded him of God.",
             "NABRE": "A copy of the letter which Jeremiah sent to those led captive to Babylon by the king of the Babylonians, to tell them what God had commanded him: For the sins you committed before God, you are being led captive to Babylon by Nebuchadnezzar, king of the Babylonians.",
-            "NRSV": "A copy of a letter that Jeremiah sent to those who were to be taken as captives to Babylon by the king of the Babylonians, to give them the message that God had commanded him.",
+            "NRSV": "6",
             "DRB": "For the sins that you have sinned before God, you shall be led away captive into Babylon by Nabuchodonosor the king of Babylon."
           }
         },
@@ -23,7 +23,7 @@
           "text": {
             "KJV": "Because of þ sinnes which ye haue committed before God, ye shall be led away captiues vnto Babylon by Nabuchodonosor king of the Babylonians.",
             "NABRE": "When you reach Babylon you will be there many years, a long time—seven generations; after that I will bring you back from there in peace.",
-            "NRSV": "Because of the sins that you have committed before God, you will be taken to Babylon as captives by Nebuchadnezzar, king of the Babylonians.",
+            "NRSV": "The People Face a Long Captivity Because of the sins that you have committed before God, you will be taken to Babylon as exiles by Nebuchadnezzar, king of the Babylonians.",
             "DRB": "Being entered therefore into Babylon, you shall be there many years, and long times even unto seven generations: and after this I will bring you forth from thence with peace."
           }
         },
@@ -32,7 +32,7 @@
           "text": {
             "KJV": "So when ye be come vnto Babylon, ye shal remaine there many yeeres, and for a long season, namely seuen generations: and after that I will bring you away peaceably from thence.",
             "NABRE": "And now in Babylon you will see gods of silver and gold and wood, carried shoulder high, to cast fear upon the nations.",
-            "NRSV": "“Now in Babylon you will see gods made of silver and gold and wood, which people carry on their shoulders, and which cause the nations to fear.”",
+            "NRSV": "Therefore, when you have come to Babylon you will remain there for many years, for a long time, up to seven generations; after that I will bring you away from there in peace.",
             "DRB": "But now you shall see in Babylon gods of gold, and of silver, and of stone, and of wood to be carried upon shoulders, shewing fear to the Gentiles."
           }
         },
@@ -41,7 +41,7 @@
           "text": {
             "KJV": "Now shal ye see in Babylon gods of siluer, and of gold, and of wood, borne vpon shoulders, which cause the nations to feare.",
             "NABRE": "Take care that you yourselves do not become like these foreigners and let not such fear possess you.",
-            "NRSV": "“So beware of becoming at all like the foreigners or of letting fear for these gods take hold of you when you see the multitude before and behind them worshiping them.”",
+            "NRSV": "Now in Babylon you will see gods made of silver and gold and wood, which people carry on their shoulders, and which cause the heathen to fear.",
             "DRB": "Beware therefore lest you also be like to the doing of strangers, and you be afraid, and fear take you in them."
           }
         },
@@ -50,7 +50,7 @@
           "text": {
             "KJV": "Beware therefore that yee in no wise be like to strangers, neither be yee afraid of them, when yee see the multitude before them, and behinde them, worshipping them.",
             "NABRE": "When you see the crowd before them and behind worshiping them, say in your hearts, “You, Lord, are the one to be worshiped!”",
-            "NRSV": "“But say in your heart, ‘It is you, O Lord, whom we must worship.’”",
+            "NRSV": "So beware of becoming at all like the foreigners or of letting fear for these gods possess you",
             "DRB": "Seeing therefore the multitude adoring behind, and before, say you in your hearts: Thou oughtest to be adored o Lord."
           }
         },
@@ -59,7 +59,7 @@
           "text": {
             "KJV": "But say yee in your hearts, O Lord, we must worship thee.",
             "NABRE": "For my angel is with you, and he will keep watch on you.",
-            "NRSV": "“For my angel is with you, and he is watching over your lives.”",
+            "NRSV": "when you see the multitude before and behind them worshipping them. But say in your heart, ‘It is you, O Lord, whom we must worship.’",
             "DRB": "For mine Angel is with you: and myself will ask account of your souls."
           }
         },
@@ -68,7 +68,8 @@
           "text": {
             "DRB": "For their tongue polished by the craftsman, themselves also laid over with gold, and silver are false things, and they cannot speak.",
             "NABRE": "Their tongues are smoothed by woodworkers; they are covered with gold and silver—but they are frauds, and cannot speak.",
-            "KJV": "For mine Angel is with you, and I my selfe caring for your soules."
+            "KJV": "For mine Angel is with you, and I my selfe caring for your soules.",
+            "NRSV": "For my angel is with you, and he is watching over your lives."
           }
         },
         {
@@ -76,7 +77,7 @@
           "text": {
             "KJV": "As for their tongue, it is polished by the workeman, and they themselues are guilded and laid ouer with siluer, yet are they but false and cannot speake.",
             "NABRE": "People bring gold, as though for a girl fond of dressing up,",
-            "NRSV": "“For their tongues are smoothed by the artisan, and they themselves are overlaid with gold and silver; but they are a fraud and cannot speak.”",
+            "NRSV": "The Helplessness of Idols Their tongues are smoothed by the carpenter, and they themselves are overlaid with gold and silver; but they are false and cannot speak.",
             "DRB": "And as to a virgin that loveth ornaments: so taking gold their gods are forged."
           }
         },
@@ -85,7 +86,8 @@
           "text": {
             "DRB": "Their gods certes have golden crowns upon their heads: whereof the priests secretly convey away from them gold, and silver, and bestow it on themselves.",
             "NABRE": "and prepare crowns for the heads of their gods. Then sometimes the priests filch the gold and silver from their gods and spend it on themselves,",
-            "KJV": "And taking golde, as it were for a virgine that loues to go gay, they make crownes for the heads of their gods."
+            "KJV": "And taking golde, as it were for a virgine that loues to go gay, they make crownes for the heads of their gods.",
+            "NRSV": "People take gold and make crowns for the heads of their gods, as they might for a girl who loves ornaments."
           }
         },
         {
@@ -93,7 +95,8 @@
           "text": {
             "DRB": "Yea and they give thereof to strumpets, and they deck whores: and again when they receive it of the harlots, they deck their gods.",
             "NABRE": "or give part of it to harlots in the brothel. They dress them up in clothes like human beings, these gods of silver and gold and wood.",
-            "KJV": "Sometimes also the Priests conuey from their gods golde and siluer, and bestow it vpon themselues."
+            "KJV": "Sometimes also the Priests conuey from their gods golde and siluer, and bestow it vpon themselues.",
+            "NRSV": "Sometimes the priests secretly take gold and silver from their gods and spend it on themselves,"
           }
         },
         {
@@ -101,7 +104,7 @@
           "text": {
             "KJV": "Yea they will giue thereof to the common harlots, and decke them as men with garments gods of siluer, and gods of gold, and wood.",
             "NABRE": "Though they are wrapped in purple clothing, they are not safe from rust and corrosion.",
-            "NRSV": "“They even take some of the clothing from the gods and put it on their own wives and children.”",
+            "NRSV": "or even give some of it to the prostitutes on the terrace. They deck their gods out with garments like human beings—these gods of silver and gold and wood",
             "DRB": "But these are not delivered from the rust, and the moth."
           }
         },
@@ -110,7 +113,8 @@
           "text": {
             "DRB": "And these being covered with a purple garment, they wipe their face for the dust of the house, which is very much among them.",
             "NABRE": "Their faces are wiped clean of the cloud of dust which is thick upon them.",
-            "KJV": "Yet cannot these gods saue themselues from rust and moths, though they be couered with purple raiment."
+            "KJV": "Yet cannot these gods saue themselues from rust and moths, though they be couered with purple raiment.",
+            "NRSV": "that cannot save themselves from rust and corrosion. When they have been dressed in purple robes,"
           }
         },
         {
@@ -118,7 +122,8 @@
           "text": {
             "DRB": "And he hath a sceptre as a man, as a judge of the country, that killeth him not that offendeth against him.",
             "NABRE": "Each has a scepter, like the human ruler of a district, but none can do away with those that offend against it.",
-            "KJV": "They wipe their faces because of the dust of the Temple, when there is much vpon them."
+            "KJV": "They wipe their faces because of the dust of the Temple, when there is much vpon them.",
+            "NRSV": "their faces are wiped because of the dust from the temple, which is thick upon them."
           }
         },
         {
@@ -126,7 +131,8 @@
           "text": {
             "DRB": "He hath also in his hand a sword, and an axe, but himself he delivereth not from the sword, and from robbers, whereby be it known to you that they are not gods.",
             "NABRE": "Each has in its right hand an ax or dagger, but it cannot save itself from war or pillage. Thus it is known they are not gods; do not fear them.",
-            "KJV": "And he that cannot put to death one that offendeth him, holdeth a scepter as though hee were a iudge of the countrey."
+            "KJV": "And he that cannot put to death one that offendeth him, holdeth a scepter as though hee were a iudge of the countrey.",
+            "NRSV": "One of them holds a sceptre, like a district judge, but is unable to destroy anyone who offends it."
           }
         },
         {
@@ -134,7 +140,7 @@
           "text": {
             "KJV": "Hee hath also in his right hand a dagger, and an axe: but cannot deliuer himselfe from warre and theeues.",
             "NABRE": "As useless as a broken pot",
-            "NRSV": "“He has a dagger in his right hand, and an ax; but he cannot deliver himself from war and robbers.”",
+            "NRSV": "Another has a dagger in its right hand, and an axe, but cannot defend itself from war and robbers.",
             "DRB": "Therefore fear them not. For as a man's vessel being broken is made unprofitable: such also are their gods:"
           }
         },
@@ -143,7 +149,8 @@
           "text": {
             "DRB": "they being placed in the house, their eyes are full of dust by the feet of them that go in.",
             "NABRE": "are their gods, set up in their temples, their eyes full of dust from the feet of those who enter.",
-            "KJV": "Whereby they are knowen not to bee gods, therefore feare them not."
+            "KJV": "Whereby they are knowen not to bee gods, therefore feare them not.",
+            "NRSV": "From this it is evident that they are not gods; so do not fear them."
           }
         },
         {
@@ -151,7 +158,8 @@
           "text": {
             "DRB": "And as upon one, that hath offended the king, the gates be shut round about, or as the dead brought to the grave, so do the priests guard the doors with shuttings, and locks, lest they be spoiled of thieves.",
             "NABRE": "Their courtyards are walled in like those of someone brought to execution for a crime against the king; the priests reinforce their temples with gates and bars and bolts, so they will not be carried off by robbers.",
-            "KJV": "For like as a vessell that a man vseth, is nothing worth when it is broken: euen so it is with their gods: when they be set vp in the Temple, their eyes be full of dust, thorow the feet of them that come in."
+            "KJV": "For like as a vessell that a man vseth, is nothing worth when it is broken: euen so it is with their gods: when they be set vp in the Temple, their eyes be full of dust, thorow the feet of them that come in.",
+            "NRSV": "For just as someone’s dish is useless when it is broken,"
           }
         },
         {
@@ -159,7 +167,8 @@
           "text": {
             "DRB": "They light candles to them, and that many, of the which they can see none: but they are as beams in the house.",
             "NABRE": "They light more lamps for them than for themselves, yet not one of these can they see.",
-            "KJV": "And as the doores are made sure on euery side, vpon him that offendeth the king, as being committed to suffer death: euen so the priests make fast their temples, with doores, with lockes and barres, lest their gods bee spoiled with robbers."
+            "KJV": "And as the doores are made sure on euery side, vpon him that offendeth the king, as being committed to suffer death: euen so the priests make fast their temples, with doores, with lockes and barres, lest their gods bee spoiled with robbers.",
+            "NRSV": "so are their gods when they have been set up in the temples. Their eyes are full of the dust raised by the feet of those who enter. And just as the gates are shut on every side against anyone who has offended a king, as though under sentence of death, so the priests make their temples secure with doors and locks and bars, in order that they may not be plundered by robbers."
           }
         },
         {
@@ -167,7 +176,8 @@
           "text": {
             "DRB": "And they say that the serpents which are of the earth, gnaw out their hearts, whiles they eat them and their garment, and they feel not.",
             "NABRE": "They are like any timber in the temple; their hearts, it is said, are eaten away. Though crawling creatures from the ground consume them and their garments, they do not feel it.",
-            "KJV": "They light them candles, yea, more then for themselues, whereof they cannot see one."
+            "KJV": "They light them candles, yea, more then for themselues, whereof they cannot see one.",
+            "NRSV": "They light more lamps for them than they light for themselves, though their gods can see none of them."
           }
         },
         {
@@ -175,7 +185,8 @@
           "text": {
             "DRB": "Their faces are black with the smoke, that is made in the house.",
             "NABRE": "Their faces become sooty from the smoke in the temple.",
-            "KJV": "They are as one of the beames of the temple, yet they say, their hearts are gnawed vpon by things creeping out of the earth, & when they eate them and their clothes, they feele it not."
+            "KJV": "They are as one of the beames of the temple, yet they say, their hearts are gnawed vpon by things creeping out of the earth, & when they eate them and their clothes, they feele it not.",
+            "NRSV": "They are just like a beam of the temple, but their hearts, it is said, are eaten away when crawling creatures from the earth devour them and their robes. They do not notice"
           }
         },
         {
@@ -183,7 +194,8 @@
           "text": {
             "DRB": "The owls, and the swallows fly upon their body, and upon their head, and the birds also, the cats in like manner.",
             "NABRE": "Bats and swallows alight on their bodies and heads—any bird, and cats as well.",
-            "KJV": "Their faces are blacked, thorow the smoke that comes out of the temple."
+            "KJV": "Their faces are blacked, thorow the smoke that comes out of the temple.",
+            "NRSV": "when their faces have been blackened by the smoke of the temple."
           }
         },
         {
@@ -191,7 +203,8 @@
           "text": {
             "DRB": "Whereby you may know that they are not gods. Therefore fear them not.",
             "NABRE": "Know, therefore, that they are not gods; do not fear them.",
-            "KJV": "Upon their bodies and heads, sit battes, swallowes, and birds, and the cats also."
+            "KJV": "Upon their bodies and heads, sit battes, swallowes, and birds, and the cats also.",
+            "NRSV": "Bats, swallows, and birds alight on their bodies and heads; and so do cats."
           }
         },
         {
@@ -199,7 +212,8 @@
           "text": {
             "DRB": "The gold also which they have, is for beauty, unless a man wipe off the rust, they shall not shine: for neither when they were molten, did they feel.",
             "NABRE": "Gold adorns them, but unless someone wipes away the corrosion, they do not shine; they felt nothing when they were molded.",
-            "KJV": "By this you may know that they are no gods: therefore feare them not."
+            "KJV": "By this you may know that they are no gods: therefore feare them not.",
+            "NRSV": "From this you will know that they are not gods; so do not fear them."
           }
         },
         {
@@ -207,7 +221,8 @@
           "text": {
             "DRB": "With all price are they bought, whereas there is no breath in them.",
             "NABRE": "They are bought at whatever price, but there is no spirit in them.",
-            "KJV": "Notwithstanding the gold that is about them, to make them beautifull, except they wipe off the rust they will not shine: for neither when they were molten did they feele it."
+            "KJV": "Notwithstanding the gold that is about them, to make them beautifull, except they wipe off the rust they will not shine: for neither when they were molten did they feele it.",
+            "NRSV": "As for the gold that they wear for beauty—it will not shine unless someone wipes off the tarnish; for even when they were being cast, they did not feel it."
           }
         },
         {
@@ -215,7 +230,8 @@
           "text": {
             "DRB": "As being without feet they are carried upon shoulders, shewing their baseness to men. Be they confounded also that worship them.",
             "NABRE": "Since they have no feet, they are carried shoulder high, displaying to all how worthless they are; even those who worship them are put to shame",
-            "KJV": "The things wherein there is no breath, are bought for a most hie price."
+            "KJV": "The things wherein there is no breath, are bought for a most hie price.",
+            "NRSV": "They are bought without regard to cost, but there is no breath in them."
           }
         },
         {
@@ -223,7 +239,7 @@
           "text": {
             "KJV": "They are borne vpon shoulders, hauing no feete, whereby they declare vnto men that they be nothing worth.",
             "NABRE": "because, if they fall to the ground, the worshipers must pick them up. They neither move of themselves if one sets them upright, nor come upright if they are tipped over; offerings are set out for them as for the dead.",
-            "NRSV": "“Having no feet, they are carried on the shoulders of others, revealing to humankind their worthlessness.”",
+            "NRSV": "Having no feet, they are carried on the shoulders of others, revealing to humankind their worthlessness. And those who serve them are put to shame",
             "DRB": "Therefore if they fall to the ground, they rise not up of themselves, nor if a man set him upright, shall he stand by himself, but as to dead men their gifts shall be set before them."
           }
         },
@@ -232,7 +248,8 @@
           "text": {
             "DRB": "Their priests sell their sacrifices, and abuse them: likewise also their wives plucking from them, impart nothing, neither to the sick, nor to the beggar.",
             "NABRE": "Their priests sell their sacrifices for their own advantage. Likewise their wives cure some of the meat, but they do not share it with the poor and the weak;",
-            "KJV": "They also that serue them, are ashamed: for if they fall to the ground at any time, they cannot rise vp againe of themselues: neither if one set them upright can they moue of themselues: neither if they be bowed downe, can they make themselues streight: but they set gifts before them as vnto dead men."
+            "KJV": "They also that serue them, are ashamed: for if they fall to the ground at any time, they cannot rise vp againe of themselues: neither if one set them upright can they moue of themselues: neither if they be bowed downe, can they make themselues streight: but they set gifts before them as vnto dead men.",
+            "NRSV": "because, if any of these gods falls to the ground, they themselves must pick it up. If anyone sets it upright, it cannot move itself; and if it is tipped over, it cannot straighten itself. Gifts are placed before them just as before the dead."
           }
         },
         {
@@ -240,7 +257,8 @@
           "text": {
             "DRB": "Of their sacrifices women in childbed, and in flowers do touch: knowing therefore by these things that they are not gods, fear them not.",
             "NABRE": "women ritually unclean or at childbirth handle their sacrifices. From such things, know that they are not gods; do not fear them.",
-            "KJV": "As for the things that are sacrificed vnto them, their priests sell and abuse: in like maner their wiues lay vp part thereof in salt: but vnto the poore and impotent, they giue nothing of it."
+            "KJV": "As for the things that are sacrificed vnto them, their priests sell and abuse: in like maner their wiues lay vp part thereof in salt: but vnto the poore and impotent, they giue nothing of it.",
+            "NRSV": "The priests sell the sacrifices that are offered to these gods and use the money themselves. Likewise their wives preserve some of the meat with salt, but give none to the poor or helpless."
           }
         },
         {
@@ -248,7 +266,8 @@
           "text": {
             "DRB": "For whence are they called gods? Because women offer to the gods of silver, and gold, and wood.",
             "NABRE": "How can they be called gods? Women set out the offerings for these gods of silver and gold and wood,",
-            "KJV": "Menstruous women, and women in childbed eate their sacrifices: by these things ye may know that they are no gods: feare them not."
+            "KJV": "Menstruous women, and women in childbed eate their sacrifices: by these things ye may know that they are no gods: feare them not.",
+            "NRSV": "Sacrifices to them may even be touched by women in their periods or at childbirth. Since you know by these things that they are not gods, do not fear them."
           }
         },
         {
@@ -256,7 +275,8 @@
           "text": {
             "DRB": "And priests sit in their houses, having their garments rent, and their heads, & beard shaven, whose heads be bare.",
             "NABRE": "and in their temples the priests squat with torn tunic and with shaven hair and beard, and with their heads uncovered.",
-            "KJV": "For how can they be called gods? because women set meate before the gods of siluer, gold, and wood."
+            "KJV": "For how can they be called gods? because women set meate before the gods of siluer, gold, and wood.",
+            "NRSV": "For how can they be called gods? Women serve meals for gods of silver and gold and wood;"
           }
         },
         {
@@ -264,7 +284,8 @@
           "text": {
             "DRB": "And they were crying before their gods, as at the supper of the dead.",
             "NABRE": "They shout and wail before their gods as others do at a funeral banquet.",
-            "KJV": "And the priests sit in their temples, hauing their clothes rent, and their heads and beards shauen, and nothing vpon their heads."
+            "KJV": "And the priests sit in their temples, hauing their clothes rent, and their heads and beards shauen, and nothing vpon their heads.",
+            "NRSV": "and in their temples the priests sit with their clothes torn, their heads and beards shaved, and their heads uncovered."
           }
         },
         {
@@ -272,7 +293,8 @@
           "text": {
             "DRB": "The priests take away their garments, and they clothe their wives & their children.",
             "NABRE": "The priests take some of the clothing from their gods and put it on their wives and children.",
-            "KJV": "They roare and crie before their gods: as men doe at the feast when one is dead."
+            "KJV": "They roare and crie before their gods: as men doe at the feast when one is dead.",
+            "NRSV": "They howl and shout before their gods as some do at a funeral banquet."
           }
         },
         {
@@ -280,7 +302,8 @@
           "text": {
             "DRB": "Neither if they suffer any evil, nor if any good of any man, are they able to recompence it: neither can they make a king, nor take him away:",
             "NABRE": "Whether these gods are treated well or badly by anyone, they cannot repay it. They can neither set up nor remove a king.",
-            "KJV": "The priestes also take off their garments, and clothe their wiues and children."
+            "KJV": "The priestes also take off their garments, and clothe their wiues and children.",
+            "NRSV": "The priests take some of the clothing of their gods to clothe their wives and children."
           }
         },
         {
@@ -288,7 +311,8 @@
           "text": {
             "DRB": "In like manner they can neither give riches, nor requite evil. If a man vow a vow unto them, and perform it not; neither this do they require.",
             "NABRE": "They cannot give anyone riches or pennies; if one fails to fulfill a vow to them, they will not exact it.",
-            "KJV": "Whether it be euill that one doth vnto them, or good: they are not able to recompense it: they can neither set vp a king, nor put him downe."
+            "KJV": "Whether it be euill that one doth vnto them, or good: they are not able to recompense it: they can neither set vp a king, nor put him downe.",
+            "NRSV": "Whether one does evil to them or good, they will not be able to repay it. They cannot set up a king or depose one."
           }
         },
         {
@@ -296,7 +320,8 @@
           "text": {
             "DRB": "They deliver not a man from death, nor save the weak from the mightier.",
             "NABRE": "They neither save anyone from death, nor deliver the weak from the strong,",
-            "KJV": "In like maner, they can neither giue riches nor money: though a man make a vowe vnto them, and keepe it not, they will not require it."
+            "KJV": "In like maner, they can neither giue riches nor money: though a man make a vowe vnto them, and keepe it not, they will not require it.",
+            "NRSV": "Likewise they are not able to give either wealth or money; if one makes a vow to them and does not keep it, they will not require it."
           }
         },
         {
@@ -304,7 +329,8 @@
           "text": {
             "DRB": "The blind man they restore not to his sight: they shall not deliver a man out of necessity.",
             "NABRE": "nor do they restore sight to the blind, or rescue anyone in distress.",
-            "KJV": "They can saue no man from death, neither deliuer the weake from the mightie."
+            "KJV": "They can saue no man from death, neither deliuer the weake from the mightie.",
+            "NRSV": "They cannot save anyone from death or rescue the weak from the strong."
           }
         },
         {
@@ -312,7 +338,8 @@
           "text": {
             "DRB": "They shall not pity the widow, nor do good to the fatherless.",
             "NABRE": "The widow they do not pity, the orphan they do not help.",
-            "KJV": "They cannot restore a blind man to his sight, nor helpe any man in his distresse."
+            "KJV": "They cannot restore a blind man to his sight, nor helpe any man in his distresse.",
+            "NRSV": "They cannot restore sight to the blind; they cannot rescue one who is in distress."
           }
         },
         {
@@ -320,7 +347,8 @@
           "text": {
             "DRB": "Like unto the stones of the mountain are their gods, of wood, and of stone, and of gold, and of silver. & they that worship them, shall be confounded:",
             "NABRE": "These gilded and silvered wooden statues are no better than stones from the mountains; their worshipers will be put to shame.",
-            "KJV": "They can shew no mercie to the widow: nor doe good to the fatherlesse."
+            "KJV": "They can shew no mercie to the widow: nor doe good to the fatherlesse.",
+            "NRSV": "They cannot take pity on a widow or do good to an orphan."
           }
         },
         {
@@ -328,7 +356,8 @@
           "text": {
             "DRB": "How then is it to be supposed, or to be said, that they are gods?",
             "NABRE": "How then can it be thought or claimed that they are gods?",
-            "KJV": "Their gods of wood, and which are ouerlaid with gold, and siluer, are like the stones that be hewen out of the mountaine: they that worship them shall be confounded."
+            "KJV": "Their gods of wood, and which are ouerlaid with gold, and siluer, are like the stones that be hewen out of the mountaine: they that worship them shall be confounded.",
+            "NRSV": "These things that are made of wood and overlaid with gold and silver are like stones from the mountain, and those who serve them will be put to shame."
           }
         },
         {
@@ -336,7 +365,8 @@
           "text": {
             "DRB": "Moreover the Chaldees themselves not honoring them: who when they hear that the dumb cannot speak, they offer it to Bel, requesting of him, that it may speak.",
             "NABRE": "Even the Chaldeans themselves have no respect for them; for when they see a deaf mute, unable to speak, they bring forward Bel and expect him to make a sound, as though he could hear.",
-            "KJV": "How should a man then thinke and say that they are gods? when euen the Chaldeans th&#275;selues dishonor them."
+            "KJV": "How should a man then thinke and say that they are gods? when euen the Chaldeans th&#275;selues dishonor them.",
+            "NRSV": "Why then must anyone think that they are gods, or call them gods? The Foolishness of Worshipping Idols Besides, even the Chaldeans themselves dishonour them; for when they see someone who cannot speak, they bring Bel and pray that the mute may speak, as though Bel were able to understand!"
           }
         },
         {
@@ -344,7 +374,8 @@
           "text": {
             "DRB": "As though they could feel that have no motion: and they when they shall understand, will leave them: for their gods themselves have no sense.",
             "NABRE": "They themselves are unable to reflect and abandon these gods, for they have no sense.",
-            "KJV": "Who if they shall see one dumbe that cannot speake, they bring him and intreate Bel that he may speake, as though he were able to vnderstand."
+            "KJV": "Who if they shall see one dumbe that cannot speake, they bring him and intreate Bel that he may speake, as though he were able to vnderstand.",
+            "NRSV": "Yet they themselves cannot perceive this and abandon them, for they have no sense."
           }
         },
         {
@@ -352,7 +383,8 @@
           "text": {
             "DRB": "And women compassed with cords, sit in the ways, burning the bones of olives.",
             "NABRE": "And the women, with cords around them, sit by the roads, burning chaff for incense;",
-            "KJV": "Yet they cannot vnderstand this themselues, and leaue them: for they haue no knowledge."
+            "KJV": "Yet they cannot vnderstand this themselues, and leaue them: for they haue no knowledge.",
+            "NRSV": "And the women, with cords around them, sit along the passageways, burning bran for incense."
           }
         },
         {
@@ -360,7 +392,8 @@
           "text": {
             "DRB": "And when one of them being drawn of some passenger shall lie with him, she upbraideth her neighbour, that she is not counted worthy, as herself, neither is her cord broken.",
             "NABRE": "and whenever one of them is taken aside by some passerby who lies with her, she mocks her neighbor who has not been thought thus worthy, and has not had her cord broken.",
-            "KJV": "The women also with cordes aboue them, sitting in the wayes, burne branne for perfume: but if any of them drawen by some that passeth by, lie with him, she reproacheth her fellow that she was not thought as worthy as her selfe, nor her cord broken."
+            "KJV": "The women also with cordes aboue them, sitting in the wayes, burne branne for perfume: but if any of them drawen by some that passeth by, lie with him, she reproacheth her fellow that she was not thought as worthy as her selfe, nor her cord broken.",
+            "NRSV": "When one of them is led off by one of the passers-by and is taken to bed by him, she derides the woman next to her, because she was not as attractive as herself and her cord was not broken."
           }
         },
         {
@@ -368,7 +401,8 @@
           "text": {
             "DRB": "But all things that are done about them are false, how is it then to be thought, or to be said, that they be gods?",
             "NABRE": "All that is done for these gods is a fraud; how then can it be thought or claimed that they are gods?",
-            "KJV": "Whatsoeuer is done among them is false: how may it then be thought or said that they are gods?"
+            "KJV": "Whatsoeuer is done among them is false: how may it then be thought or said that they are gods?",
+            "NRSV": "Whatever is done for these idols is false. Why then must anyone think that they are gods, or call them gods?"
           }
         },
         {
@@ -376,7 +410,8 @@
           "text": {
             "DRB": "And they are made by craftsmen, & by goldsmiths. They shall be nothing else, but that which the priests will have them to be.",
             "NABRE": "They are produced by woodworkers and goldsmiths; they are nothing other than what these artisans wish them to be.",
-            "KJV": "They are made of carpenters, and goldsmiths, they can be nothing else, then the workman will haue them to be."
+            "KJV": "They are made of carpenters, and goldsmiths, they can be nothing else, then the workman will haue them to be.",
+            "NRSV": "They are made by carpenters and goldsmiths; they can be nothing but what the artisans wish them to be."
           }
         },
         {
@@ -384,7 +419,8 @@
           "text": {
             "DRB": "For the artificers themselves, that make them, are of no long time. Why, can those things then that are made by them, be gods?",
             "NABRE": "Even those who produce them are not long-lived;",
-            "KJV": "And they themselues that made them, can neuer continue long, how should then the things that are made of them, be gods?"
+            "KJV": "And they themselues that made them, can neuer continue long, how should then the things that are made of them, be gods?",
+            "NRSV": "Those who make them will certainly not live very long themselves;"
           }
         },
         {
@@ -392,7 +428,8 @@
           "text": {
             "DRB": "But they have left forged things & reproach, to them that shall come after.",
             "NABRE": "how then can the things they have produced be gods? They have left frauds and disgrace to their successors.",
-            "KJV": "For they left lies and reproaches to them that come after."
+            "KJV": "For they left lies and reproaches to them that come after.",
+            "NRSV": "how then can the things that are made by them be gods? They have left only lies and reproach for those who come after."
           }
         },
         {
@@ -400,7 +437,8 @@
           "text": {
             "DRB": "For when battle cometh upon them, and evils: the priests devise with themselves, where they may hide themselves with them.",
             "NABRE": "For when war or disaster comes upon them, the priests deliberate among themselves where they can hide with them.",
-            "KJV": "For when there commeth any warre or plague vpon them, the priests consult with themselues, where they may be hidden with them."
+            "KJV": "For when there commeth any warre or plague vpon them, the priests consult with themselues, where they may be hidden with them.",
+            "NRSV": "For when war or calamity comes upon them, the priests consult together as to where they can hide themselves and their gods."
           }
         },
         {
@@ -408,7 +446,8 @@
           "text": {
             "DRB": "How then may they be thought, that they are gods, which neither deliver themselves from battle, nor save themselves from evils?",
             "NABRE": "How then can one not understand that these are not gods, who save themselves neither from war nor from disaster?",
-            "KJV": "How then cannot men perceiue, that they be no gods, which can neither saue themselues from warre nor from plague?"
+            "KJV": "How then cannot men perceiue, that they be no gods, which can neither saue themselues from warre nor from plague?",
+            "NRSV": "How then can one fail to see that these are not gods, for they cannot save themselves from war or calamity?"
           }
         },
         {
@@ -416,7 +455,8 @@
           "text": {
             "DRB": "For seeing they be of wood, & laid over with gold, and with silver, it shall be known afterwards that they are false things, of all the Gentiles, and kings: Which are manifest that they are no gods, but the works of men's hands, and no work of God is with them.",
             "NABRE": "Beings that are wooden, gilded and silvered, they will later be known for frauds. To all nations and kings it will be clear that they are not gods, but human handiwork; and that God’s work is not in them.",
-            "KJV": "For seeing they be but of wood, and ouerlaide with siluer and gold: it shall be knowen heereafter that they are false."
+            "KJV": "For seeing they be but of wood, and ouerlaide with siluer and gold: it shall be knowen heereafter that they are false.",
+            "NRSV": "Since they are made of wood and overlaid with gold and silver, it will afterwards be known that they are false."
           }
         },
         {
@@ -424,7 +464,8 @@
           "text": {
             "DRB": "Whence then is it known, that they are not gods, but the works of men's hands, & no work of God is in them?",
             "NABRE": "Is it not obvious that they are not gods?",
-            "KJV": "And it shall manifestly appeare to all nations and kings, that they are no gods: but the workes of mens hands, and that there is no worke of God in them."
+            "KJV": "And it shall manifestly appeare to all nations and kings, that they are no gods: but the workes of mens hands, and that there is no worke of God in them.",
+            "NRSV": "It will be manifest to all the nations and kings that they are not gods but the work of human hands, and that there is no work of God in them."
           }
         },
         {
@@ -432,7 +473,8 @@
           "text": {
             "DRB": "Aking to the country they raise not up, neither shall they give rain to men.",
             "NABRE": "They set no king over the land, nor do they give rain.",
-            "KJV": "Who then may not know that they are no gods?"
+            "KJV": "Who then may not know that they are no gods?",
+            "NRSV": "Who then can fail to know that they are not gods?"
           }
         },
         {
@@ -440,7 +482,8 @@
           "text": {
             "DRB": "Judgement also they shall not discern, neither shall they deliver countries from injury: because they can do nothing, as crows between the heaven and the earth.",
             "NABRE": "They neither vindicate their own rights, nor do they rescue anyone wronged, for they are powerless.",
-            "KJV": "For neither can they set vp a king in the land, nor giue raine vnto men."
+            "KJV": "For neither can they set vp a king in the land, nor giue raine vnto men.",
+            "NRSV": "For they cannot set up a king over a country or give rain to people."
           }
         },
         {
@@ -448,7 +491,8 @@
           "text": {
             "DRB": "For when fire shall fall into the house of the wooden, and silver, and golden gods, their priests indeed shall flee, and be delivered: but themselves as beams shall be burnt in the midst.",
             "NABRE": "They are like crows in midair. For when fire breaks out in the temple of these wooden or gilded or silvered gods, though the priests flee and are safe, they themselves are burned up in the fire like timbers.",
-            "KJV": "Neither can they iudge their owne cause, nor redresse a wrong being vnable: for they are as crowes between heauen and earth."
+            "KJV": "Neither can they iudge their owne cause, nor redresse a wrong being vnable: for they are as crowes between heauen and earth.",
+            "NRSV": "They cannot judge their own cause or deliver one who is wronged, for they have no power;"
           }
         },
         {
@@ -456,7 +500,8 @@
           "text": {
             "DRB": "And king and battle they shall not resist. How is it then to be supposed, or to be received that they are gods?",
             "NABRE": "They cannot resist a king or enemy forces.",
-            "KJV": "Whereupon when fire falleth vpon the house of gods of wood, or layd ouer with gold or siluer, their priests will fly away, & escape: but they themselues shall be burnt asunder like beames."
+            "KJV": "Whereupon when fire falleth vpon the house of gods of wood, or layd ouer with gold or siluer, their priests will fly away, & escape: but they themselues shall be burnt asunder like beames.",
+            "NRSV": "they are like crows between heaven and earth. When fire breaks out in a temple of wooden gods overlaid with gold or silver, their priests will flee and escape, but the gods will be burned up like timbers."
           }
         },
         {
@@ -464,7 +509,8 @@
           "text": {
             "DRB": "Not from thieves, nor from robbers shall the gods of wood, and of stone, and laid over with gold, and with silver deliver themselves, stronger than which are the wicked men.",
             "NABRE": "How then can it be admitted or thought that they are gods? They are safe from neither thieves nor bandits, these wooden and silvered and gilded gods.",
-            "KJV": "Moreouer they cannot withstand any king or enemies: how can it then be thought or said that they be gods?"
+            "KJV": "Moreouer they cannot withstand any king or enemies: how can it then be thought or said that they be gods?",
+            "NRSV": "Besides, they can offer no resistance to king or enemy. Why then must anyone admit or think that they are gods?"
           }
         },
         {
@@ -472,7 +518,8 @@
           "text": {
             "DRB": "The gold, and silver, and the garment wherewith they are covered, they shall take from them, and shall depart, neither shall they help themselves.",
             "NABRE": "Anyone who can will strip off the gold and the silver, and go away with the clothing that was on them; they cannot help themselves.",
-            "KJV": "Neither are those gods of wood, and layd ouer with siluer or gold able to escape either from theeues or robbers."
+            "KJV": "Neither are those gods of wood, and layd ouer with siluer or gold able to escape either from theeues or robbers.",
+            "NRSV": "Gods made of wood and overlaid with silver and gold are unable to save themselves from thieves or robbers."
           }
         },
         {
@@ -480,7 +527,8 @@
           "text": {
             "DRB": "Therefore it is better to be a king shewing his strength: or a profitable vessel in the house, wherein he will glory that possesseth it: or a door in the house, which keepeth the things that are therein, than false gods.",
             "NABRE": "How much better to be a king displaying his valor, or a handy tool in a house, the joy of its owner, than these false gods; better the door of a house, protecting whatever is within, than these false gods; better a wooden post in a palace, than these false gods!",
-            "KJV": "Whose gold, and siluer, and garments wherwith they are clothed, they that are strong doe take, and goe away withall: neither are they able to helpe themselues."
+            "KJV": "Whose gold, and siluer, and garments wherwith they are clothed, they that are strong doe take, and goe away withall: neither are they able to helpe themselues.",
+            "NRSV": "Anyone who can will strip them of their gold and silver and of the robes they wear, and go off with this booty, and they will not be able to help themselves."
           }
         },
         {
@@ -488,7 +536,8 @@
           "text": {
             "DRB": "The sun certes, and the moon, and the stars whereas they are bright, and sent forth for profitable uses, obey.",
             "NABRE": "The sun and moon and stars are bright, obedient in the task for which they are sent.",
-            "KJV": "Therefore it is better to be a king that sheweth his power, or else a profitable vessell in an house, which the owner shall haue vse of, then such false gods: or to be a doore in an house to keepe such things safe as be therein, then such false gods: or a pillar of wood in a palace, then such false gods."
+            "KJV": "Therefore it is better to be a king that sheweth his power, or else a profitable vessell in an house, which the owner shall haue vse of, then such false gods: or to be a doore in an house to keepe such things safe as be therein, then such false gods: or a pillar of wood in a palace, then such false gods.",
+            "NRSV": "So it is better to be a king who shows his courage, or a household utensil that serves its owner’s need, than to be these false gods; better even the door of a house that protects its contents, than these false gods; better also a wooden pillar in a palace, than these false gods."
           }
         },
         {
@@ -496,7 +545,8 @@
           "text": {
             "DRB": "Likewise also the lightning, when it shall appear is perspicuous: and the wind also bloweth the self same in every country.",
             "NABRE": "Likewise the lightning, when it flashes, is a great sight; and the one wind blows over every land.",
-            "KJV": "For Sunne, Moone, and starres, being bright and sent to doe their offices, are obedient."
+            "KJV": "For Sunne, Moone, and starres, being bright and sent to doe their offices, are obedient.",
+            "NRSV": "For sun and moon and stars are bright, and when sent to do a service, they are obedient."
           }
         },
         {
@@ -504,7 +554,8 @@
           "text": {
             "DRB": "And the clouds, which when God shall command to walk throughout the whole world, they do that which is commanded them.",
             "NABRE": "The clouds, too, when commanded by God to proceed across the whole world, fulfill the command;",
-            "KJV": "In like maner the lightning when it breaketh forth is easie to bee seene, and after the same maner the wind bloweth in euery country."
+            "KJV": "In like maner the lightning when it breaketh forth is easie to bee seene, and after the same maner the wind bloweth in euery country.",
+            "NRSV": "So also the lightning, when it flashes, is widely seen; and the wind likewise blows in every land."
           }
         },
         {
@@ -512,7 +563,8 @@
           "text": {
             "DRB": "The fire also being sent from above to consume mountains, and woods, doeth that which is commanded it. But these neither in shapes, nor in virtues are like to one of them.",
             "NABRE": "and fire, sent from on high to burn up the mountains and the forests, carries out its command. But these false gods are not their equal, whether in appearance or in power.",
-            "KJV": "And when God commandeth the clouds to goe ouer the whole world: they doe as they are bidden:"
+            "KJV": "And when God commandeth the clouds to goe ouer the whole world: they doe as they are bidden:",
+            "NRSV": "When God commands the clouds to go over the whole world, they carry out his command."
           }
         },
         {
@@ -520,7 +572,8 @@
           "text": {
             "DRB": "Wherefore neither is it to be thought, nor to be said, that they be gods: whereas they can neither judge judgment, nor do any thing for men.",
             "NABRE": "So it is unthinkable, and cannot be claimed that they are gods. They can neither execute judgment, nor benefit anyone.",
-            "KJV": "And the fire sent from aboue to consume hilles and woods, doth as it is commanded: but these are like vnto them neither in shew, nor power."
+            "KJV": "And the fire sent from aboue to consume hilles and woods, doth as it is commanded: but these are like vnto them neither in shew, nor power.",
+            "NRSV": "And the fire sent from above to consume mountains and woods does what it is ordered. But these idols are not to be compared with them in appearance or power."
           }
         },
         {
@@ -528,7 +581,8 @@
           "text": {
             "DRB": "Knowing therefore that they are not gods, then fear them not.",
             "NABRE": "Know, therefore, that they are not gods; do not fear them.",
-            "KJV": "Wherefore it is neither to be supposed nor said, that they are gods, seeing they are able, neither to iudge causes, nor to doe good vnto men."
+            "KJV": "Wherefore it is neither to be supposed nor said, that they are gods, seeing they are able, neither to iudge causes, nor to doe good vnto men.",
+            "NRSV": "Therefore one must not think that they are gods, nor call them gods, for they are not able either to decide a case or to do good to anyone."
           }
         },
         {
@@ -536,7 +590,8 @@
           "text": {
             "DRB": "For neither shall they curse kings, nor bless them.",
             "NABRE": "Kings they can neither curse nor bless.",
-            "KJV": "Knowing therefore that they are no gods, feare them not."
+            "KJV": "Knowing therefore that they are no gods, feare them not.",
+            "NRSV": "Since you know then that they are not gods, do not fear them."
           }
         },
         {
@@ -544,7 +599,8 @@
           "text": {
             "DRB": "Signs also in the heaven to the Gentiles they shew not, neither shall they shine as the sun, nor give light as the moon.",
             "NABRE": "They show the nations no signs in the heavens, nor do they shine like the sun, nor give light like the moon.",
-            "KJV": "For they can neither curse nor blesse kings."
+            "KJV": "For they can neither curse nor blesse kings.",
+            "NRSV": "They can neither curse nor bless kings;"
           }
         },
         {
@@ -552,7 +608,8 @@
           "text": {
             "DRB": "Beasts are better than they, which can fly under the roof, and profit themselves.",
             "NABRE": "The beasts are better than they—beasts can help themselves by fleeing to shelter.",
-            "KJV": "Neither can they signes in the heauens among the heathen: nor shine as the Sunne, nor giue light as the Moone."
+            "KJV": "Neither can they signes in the heauens among the heathen: nor shine as the Sunne, nor giue light as the Moone.",
+            "NRSV": "they cannot show signs in the heavens for the nations, or shine like the sun or give light like the moon."
           }
         },
         {
@@ -560,7 +617,8 @@
           "text": {
             "DRB": "By no means therefore is it manifest unto us, that they are gods: for which cause fear them not.",
             "NABRE": "Thus is it in no way apparent to us that they are gods; so do not fear them.",
-            "KJV": "The beasts are better then they: for they can get vnder a couert, and helpe themselues."
+            "KJV": "The beasts are better then they: for they can get vnder a couert, and helpe themselues.",
+            "NRSV": "The wild animals are better than they are, for they can flee to shelter and help themselves."
           }
         },
         {
@@ -568,7 +626,8 @@
           "text": {
             "DRB": "For as in a garden of cucumbers a scarecrow keepeth nothing, so are their gods of wood, and of silver, and laid over with gold.",
             "NABRE": "For like a scarecrow in a cucumber patch, providing no protection, are their wooden, gilded, silvered gods.",
-            "KJV": "It is then by no meanes manifest vnto vs that they are gods: therefore feare them not."
+            "KJV": "It is then by no meanes manifest vnto vs that they are gods: therefore feare them not.",
+            "NRSV": "So we have no evidence whatever that they are gods; therefore do not fear them."
           }
         },
         {
@@ -576,7 +635,8 @@
           "text": {
             "DRB": "After the same sort also in a garden the white thorn, upon the which every bird sitteth. In like manner also their gods of wood, and laid over with gold, and with silver, are like to a dead body cast forth in the dark.",
             "NABRE": "Just like a thornbush in a garden on which perches every kind of bird, or like a corpse hurled into darkness, are their wooden, gilded, silvered gods.",
-            "KJV": "For as a scarcrow in a garden of Cucumbers keepeth nothing: so are their gods of wood, and laid ouer with siluer and gold."
+            "KJV": "For as a scarcrow in a garden of Cucumbers keepeth nothing: so are their gods of wood, and laid ouer with siluer and gold.",
+            "NRSV": "Like a scarecrow in a cucumber bed, which guards nothing, so are their gods of wood, overlaid with gold and silver."
           }
         },
         {
@@ -584,7 +644,8 @@
           "text": {
             "DRB": "By the purple also and the murex colour laid upon them, which fadeth, you shall know that they are not gods. At the last also they are consumed, and shall be a reproach in the country.",
             "NABRE": "From the rotting of the purple and the linen upon them, you can know that they are not gods; they themselves will in the end be consumed, and be a disgrace in the land.",
-            "KJV": "And likewise their gods of wood, and laid ouer with siluer and gold, are like to a white thorne in an orchard that euery bird sitteth vpon: as also to a dead body, that is cast into the darke."
+            "KJV": "And likewise their gods of wood, and laid ouer with siluer and gold, are like to a white thorne in an orchard that euery bird sitteth vpon: as also to a dead body, that is cast into the darke.",
+            "NRSV": "In the same way, their gods of wood, overlaid with gold and silver, are like a thornbush in a garden on which every bird perches; or like a corpse thrown out in the darkness."
           }
         },
         {
@@ -592,14 +653,15 @@
           "text": {
             "DRB": "Better is therefore the just man, that hath not idols: for he shall be far from reproaches.",
             "NABRE": "Better the just who has no idols; such shall be far from disgrace!",
-            "KJV": "And you shall know them to be no gods, by the bright purple that rotteth vpon them: and they themselues afterward shall be eaten, and shall be a reproach in the country."
+            "KJV": "And you shall know them to be no gods, by the bright purple that rotteth vpon them: and they themselues afterward shall be eaten, and shall be a reproach in the country.",
+            "NRSV": "From the purple and linen that rot upon them you will know that they are not gods; and they will finally be consumed themselves, and be a reproach in the land."
           }
         },
         {
           "number": 73,
           "text": {
             "KJV": "Better therefore is the iust man that hath none idoles: for he shall be farre from reproach.",
-            "NRSV": "Better then is the righteous person who has no idols, for he will be far from reproach."
+            "NRSV": "Better, therefore, is someone upright who has no idols; such a person will be far above reproach."
           }
         }
       ]

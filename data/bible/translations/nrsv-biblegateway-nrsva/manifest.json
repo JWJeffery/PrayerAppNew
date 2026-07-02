@@ -1,0 +1,16 @@
+{
+  "schema": "bible-translation-source-manifest-v1",
+  "translation_key": "NRSV",
+  "source_name": "BibleGateway NRSVA",
+  "source_url_template": "https://www.biblegateway.com/passage/?search={book}%20{chapter}&version=NRSVA",
+  "source_language": "English",
+  "capturedAt": "2026-07-02T05:51:35Z",
+  "normalized_active_lane": "text.NRSV",
+  "raw_path": "data/bible/translations/nrsv-biblegateway-nrsva/raw",
+  "scope": "DEUTERO-01 Catholic deuterocanon source witness for Tobit, Judith, Wisdom, Sirach, Baruch, Letter of Jeremiah, 1 Maccabees, and 2 Maccabees",
+  "notes": [
+    "Used for source-address repair of existing active-grid NRSV rows only.",
+    "No source row is split or synthesized into an active row.",
+    "Rows absent from the active grid are recorded as source-scope/source-shape absences."
+  ]
+}

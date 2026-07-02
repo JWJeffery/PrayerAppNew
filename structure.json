@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.163",
+    "version": "3.8.164",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: Canonical NT is certified trusted. Psalter is certified trusted as a source-governed subsystem. Canonical OT non-Psalms is certified for Office-reading rendering with Original DRB source-shape trust. DEUTERO-01 Catholic deuterocanon source-candidate audit found all eight target books locally NRSV source-blocked; Rotherham is governed source-scope absent. Deuterocanon remains not trusted and broad canon remains blocked until Deuterocanon boundaries close.",
+    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-01 Catholic deuterocanon NRSV was repaired from BibleGateway NRSVA source snapshots by exact same-address import. Deuterocanon remains not globally trusted until remaining source-shape/source-scope boundaries, Greek Esther/Daniel, and boundary books close.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,10 +1271,10 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deutero_01_catholic_source_scope_boundaries_2026_07_02",
-      "status": "recorded_source_blockers_and_source_scope_boundaries_no_text_mutation",
-      "recordPath": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
-      "sourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json"
+      "id": "deutero_01_catholic_nrsv_biblegateway_nrsva_repair_2026_07_02",
+      "status": "source_backed_same_address_repair_completed",
+      "recordPath": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
+      "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/manifest.json"
     },
     "latest_bible_psalms_checkpoint": {
       "id": "drb_psalms_active_psalter_lane_2026_06_23",
