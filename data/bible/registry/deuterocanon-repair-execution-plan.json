@@ -1,0 +1,61 @@
+{
+  "schema": "deuterocanon-repair-execution-plan-v1",
+  "id": "deuterocanon_repair_execution_plan_2026_07_02",
+  "status": "active_after_drb_source_shape_certification",
+  "recordedAt": "2026-07-02T04:56:27Z",
+  "activeAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
+  "governingPrinciples": [
+    "Do not synthesize biblical text.",
+    "Do not equate active-grid row completeness with source-witness trust.",
+    "Prefer source-shape/source-scope certification when the source witness is trustworthy but not active-grid symmetric.",
+    "Use adapter policy for appointed-reading rendering when verse divisions differ.",
+    "Do not move to broad canon until Deuterocanon is certified or explicitly blocked by governed boundaries."
+  ],
+  "repairOrder": [
+    {
+      "tranche": "DEUTERO-01",
+      "title": "Catholic deuterocanon source-shape/source-scope certification",
+      "scope": [
+        "tobit",
+        "judith",
+        "wisdom",
+        "sirach",
+        "baruch",
+        "letterofjeremiah",
+        "1maccabees",
+        "2maccabees"
+      ],
+      "rule": "Certify rows only by source address, governed source-shape adapter, or recorded source-scope absence. No synthetic fills and no splitting without adapter policy."
+    },
+    {
+      "tranche": "DEUTERO-02",
+      "title": "Greek Esther and Greek Daniel form policy",
+      "scope": [
+        "greekesther",
+        "greekdaniel"
+      ],
+      "rule": "Resolve form, Catholic/Greek addition boundaries, and versification policy before text mutation or trust promotion."
+    },
+    {
+      "tranche": "DEUTERO-03",
+      "title": "Apocrypha/broader-boundary deuterocanon books",
+      "scope": [
+        "prayerofmanasseh",
+        "1esdras",
+        "2esdras",
+        "3maccabees",
+        "4maccabees"
+      ],
+      "rule": "Keep source-scope absences and variant-footnote material governed unless a variant apparatus or source-address display policy is created."
+    },
+    {
+      "tranche": "BROAD-CANON-NEXT",
+      "title": "Broad canon repair begins only after Deuterocanon closure",
+      "scope": [
+        "broader_canon"
+      ],
+      "rule": "Do not promote or repair broad canon until Deuterocanon has a trust certification or explicit blocked-boundary record."
+    }
+  ],
+  "nextAction": "Run DEUTERO-01 source-scope/source-shape repair against Catholic deuterocanon books."
+}

@@ -30,7 +30,7 @@
       "auditScript": "scripts/audit-bible-canonical-nt-text-trust-certification.mjs"
     },
     "canonical_ot": {
-      "status": "trusted_for_office_reading_rendering_with_drb_source_shape_adapter_active_row_gaps_preserved",
+      "status": "certified_for_office_reading_with_original_drb_source_shape_trust",
       "reasons": [
         "Canonical OT non-Psalms structural chapter/verse completeness audit passes for 38 books and 779 chapters.",
         "Original Douay-Rheims / Vulgate-shaped DRB source divisions are preserved rather than forced into the shared active verse grid.",
@@ -263,7 +263,8 @@
       "blockedClaims": [
         "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
         "single_source_original_douay_exactness_in_shared_active_grid",
-        "generated_or_split_drb_active_row_repair"
+        "generated_or_split_drb_active_row_repair",
+        "canonical_ot_nonpsalms_text_DRB_same_address_active_grid_complete"
       ],
       "latest_drb_source_shape_adapter_governance": {
         "id": "canonical_ot_drb_office_reading_source_shape_governance_2026_07_02",
@@ -275,8 +276,18 @@
       "allowedClaims": [
         "canonical_ot_nonpsalms_drb_office_reading_rendering_source_shape_adapter_active",
         "original_douay_source_divisions_preserved",
-        "empty_active_drb_rows_governed_for_adapter_rendering"
-      ]
+        "empty_active_drb_rows_governed_for_adapter_rendering",
+        "canonical_ot_nonpsalms_original_drb_source_shape_text_trusted",
+        "canonical_ot_nonpsalms_drb_office_reading_rendering_trusted_with_source_shape_adapter"
+      ],
+      "latest_drb_original_source_shape_text_trust_certification": {
+        "id": "canonical_ot_drb_original_source_shape_text_trust_certification_2026_07_02",
+        "status": "certified_textually_trusted_original_drb_source_shape_for_office_reading",
+        "recordPath": "data/bible/registry/canonical-ot-drb-original-source-shape-text-trust-certification.json",
+        "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+        "affectedActiveRows": 36,
+        "activeTextDrbRowsRemainEmpty": true
+      }
     },
     "psalms": {
       "status": "certified_textually_trusted_psalter",
@@ -908,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+      "status": "not_trusted_repair_execution_active_after_drb_source_shape_certification",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -6714,7 +6725,10 @@
           "separately adjudicate Greek Daniel form/text if trust promotion is desired",
           "separately adjudicate broader canon and Vulgate trust blockers outside this boundary"
         ]
-      }
+      },
+      "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
+      "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
+      "nextAction": "DEUTERO-01 source-scope/source-shape repair against Catholic deuterocanon books"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",

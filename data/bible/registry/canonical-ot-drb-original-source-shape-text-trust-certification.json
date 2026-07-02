@@ -1,0 +1,45 @@
+{
+  "schema": "canonical-ot-drb-original-source-shape-text-trust-certification-v1",
+  "id": "canonical_ot_drb_original_source_shape_text_trust_certification_2026_07_02",
+  "status": "certified_textually_trusted_original_drb_source_shape_for_office_reading",
+  "certifiedAt": "2026-07-02T04:56:27Z",
+  "scope": {
+    "corpus": "canonical_ot_nonpsalms",
+    "translationKey": "DRB",
+    "sourceWitness": "Original Douay-Rheims / Vulgate-shaped DRB preserved source lane",
+    "activeSourceLane": "data/bible/translations/drb-original-douay-rheims",
+    "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+    "sourceShapeGovernance": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json"
+  },
+  "determination": "Original DRB is textually trustworthy for its own preserved source shape and for Office-reading rendering. The 36 affected active-grid text.DRB rows remain empty by design because the preserved Original Douay source has no independent same-address source unit there; the resolver renders the corresponding native DRB source unit or units so appointed readings are not truncated.",
+  "certifiedClaims": [
+    "canonical_ot_nonpsalms_original_drb_source_shape_text_trusted",
+    "canonical_ot_nonpsalms_drb_office_reading_rendering_trusted_with_source_shape_adapter",
+    "original_douay_source_divisions_preserved",
+    "empty_active_drb_rows_governed_for_adapter_rendering"
+  ],
+  "blockedClaimsStillActive": [
+    "canonical_ot_nonpsalms_text_DRB_same_address_active_grid_complete",
+    "single_source_original_douay_exactness_in_shared_active_grid",
+    "generated_or_split_drb_active_row_repair",
+    "whole_ot_including_psalms_textually_trusted_until_whole_ot_rollup",
+    "entire_biblical_corpus_trusted_until_deuterocanon_broader_canon_and_vulgate_boundaries_close"
+  ],
+  "verificationBasis": [
+    "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+    "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
+    "scripts/audit-canonical-ot-drb-source-shape-adapter.mjs",
+    "post-push checkpoint: targeted DRB source-shape adapter audit passed with 36 mapped rows, 37 native refs checked, 36 resolver rows checked, and no failures",
+    "post-push checkpoint: active DRB rows remain empty by design and adapter covers 36 rows"
+  ],
+  "metrics": {
+    "affectedActiveRows": 36,
+    "nativeSourceRefsRenderedByAdapter": 37,
+    "activeTextMutationAuthorized": false
+  },
+  "nextCorpusQueue": [
+    "deuterocanon",
+    "broader_canon",
+    "vulgate"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.161",
+    "version": "3.8.162",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: Canonical OT non-Psalms structural chapter/verse shape passes. Original Douay-Rheims DRB source divisions are preserved for Office readings through a governed source-shape adapter: 36 active text.DRB rows remain empty by design, and the resolver renders corresponding native DRB source units so appointed readings are not truncated. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
+    "operational_status": "Current operational status as of 2026-07-02: Canonical NT is certified trusted. Psalter is certified trusted as a source-governed subsystem. Canonical OT non-Psalms is certified for Office-reading rendering with Original DRB source-shape trust: 36 active text.DRB rows remain empty by design and the resolver renders native DRB source units. Deuterocanon repair execution is active and must complete before broad canon repair proceeds. Broader canon and Vulgate remain separate unresolved/deferred lanes.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,12 +1271,10 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "canonical_ot_drb_office_reading_source_shape_governance_2026_07_02",
-      "status": "accepted_and_executed",
-      "recordPath": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
-      "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
-      "affectedActiveRows": 36,
-      "activeTextDrbRowsRemainEmpty": true
+      "id": "canonical_ot_drb_original_source_shape_text_trust_certification_2026_07_02",
+      "status": "certified_textually_trusted_original_drb_source_shape_for_office_reading",
+      "recordPath": "data/bible/registry/canonical-ot-drb-original-source-shape-text-trust-certification.json",
+      "deuterocanonPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json"
     },
     "latest_bible_psalms_checkpoint": {
       "id": "drb_psalms_active_psalter_lane_2026_06_23",
