@@ -1,7 +1,7 @@
 {
   "schema": "deuterocanon-catholic-source-scope-boundaries-v1",
   "id": "deutero_01_catholic_source_scope_boundaries_2026_07_02",
-  "status": "recorded_source_blockers_and_source_scope_boundaries_no_text_mutation",
+  "status": "superseded_by_postrepair_nrsv_source_shape_audit",
   "recordedAt": "2026-07-02T05:14:25Z",
   "scope": {
     "tranche": "DEUTERO-01",
@@ -326,5 +326,8 @@
       "id": "deutero_02_when_deutero_01_blocked",
       "action": "If NRSV source acquisition is deferred, proceed to Greek Esther and Greek Daniel form policy as a Deuterocanon boundary task, not to broad canon."
     }
-  ]
+  ],
+  "supersededAt": "2026-07-02T06:01:37Z",
+  "supersededBy": "data/bible/registry/deutero-01-catholic-postrepair-source-shape-audit.json",
+  "supersedingDetermination": "NRSV is no longer locally source-blocked for DEUTERO-01. BibleGateway NRSVA was acquired and exact same-address repair completed. Remaining NRSV gaps are source-shape/source-scope boundary rows, not unresolved source acquisition."
 }
