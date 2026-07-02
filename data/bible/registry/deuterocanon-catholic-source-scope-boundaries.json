@@ -1,0 +1,330 @@
+{
+  "schema": "deuterocanon-catholic-source-scope-boundaries-v1",
+  "id": "deutero_01_catholic_source_scope_boundaries_2026_07_02",
+  "status": "recorded_source_blockers_and_source_scope_boundaries_no_text_mutation",
+  "recordedAt": "2026-07-02T05:14:25Z",
+  "scope": {
+    "tranche": "DEUTERO-01",
+    "books": [
+      "TOBIT",
+      "JUDITH",
+      "WISDOM",
+      "SIRACH",
+      "BARUCH",
+      "LETTER_OF_JEREMIAH",
+      "1_MACCABEES",
+      "2_MACCABEES"
+    ],
+    "expectedLanes": [
+      "DRB",
+      "KJV",
+      "NABRE",
+      "NRSV",
+      "Rotherham"
+    ],
+    "sourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
+    "readinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json"
+  },
+  "determination": {
+    "summary": "DEUTERO-01 cannot honestly complete by filling the NRSV lane from the current repository state. All eight Catholic deuterocanon targets have missing NRSV rows and no local NRSV/NRSVA source candidate. Rotherham is absent across these active rows and is governed as source-scope absent unless a future source witness is acquired. Existing DRB/KJV/NABRE rows remain bounded by source-scope, source-shape, or previous governance records; this record does not synthesize, split, or promote any text.",
+    "nrsV": {
+      "status": "source_blocked_locally",
+      "affectedBookCount": 8,
+      "policy": "Do not repair, fill, or certify Catholic deuterocanon NRSV rows without an acquired and recorded NRSV/NRSVA source witness."
+    },
+    "rotherham": {
+      "status": "source_scope_absent_for_deutero_01",
+      "policy": "Do not synthesize Rotherham deuterocanon text. Treat the lane as absent unless a source witness and canonical scope policy are acquired."
+    },
+    "otherLanes": {
+      "status": "bounded_source_scope_claims_only",
+      "policy": "DRB, KJV, and NABRE may be certified only by exact source address, governed source-shape adapter, or recorded source-scope absence. Existing source-scope repairs are preserved but not promoted to whole-Deuterocanon trust."
+    }
+  },
+  "books": [
+    {
+      "id": "TOBIT",
+      "activeFile": "tobit.json",
+      "activeRows": 299,
+      "laneCounts": {
+        "DRB": 298,
+        "KJV": 244,
+        "NABRE": 226,
+        "NRSV": 237,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 1,
+        "KJV": 55,
+        "NABRE": 73,
+        "NRSV": 62,
+        "Rotherham": 299
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "JUDITH",
+      "activeFile": "judith.json",
+      "activeRows": 375,
+      "laneCounts": {
+        "DRB": 346,
+        "KJV": 339,
+        "NABRE": 340,
+        "NRSV": 147,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 29,
+        "KJV": 36,
+        "NABRE": 35,
+        "NRSV": 228,
+        "Rotherham": 375
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "WISDOM",
+      "activeFile": "wisdom.json",
+      "activeRows": 442,
+      "laneCounts": {
+        "DRB": 439,
+        "KJV": 436,
+        "NABRE": 403,
+        "NRSV": 115,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 3,
+        "KJV": 6,
+        "NABRE": 39,
+        "NRSV": 327,
+        "Rotherham": 442
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "SIRACH",
+      "activeFile": "sirach.json",
+      "activeRows": 1593,
+      "laneCounts": {
+        "DRB": 1592,
+        "KJV": 1388,
+        "NABRE": 1131,
+        "NRSV": 473,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 1,
+        "KJV": 205,
+        "NABRE": 462,
+        "NRSV": 1120,
+        "Rotherham": 1593
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "BARUCH",
+      "activeFile": "baruch.json",
+      "activeRows": 141,
+      "laneCounts": {
+        "DRB": 141,
+        "KJV": 140,
+        "NABRE": 141,
+        "NRSV": 34,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 0,
+        "KJV": 1,
+        "NABRE": 0,
+        "NRSV": 107,
+        "Rotherham": 141
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "LETTER_OF_JEREMIAH",
+      "activeFile": "letterofjeremiah.json",
+      "activeRows": 73,
+      "laneCounts": {
+        "DRB": 72,
+        "KJV": 73,
+        "NABRE": 72,
+        "NRSV": 11,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 1,
+        "NRSV": 62,
+        "Rotherham": 73
+      },
+      "localSourceCandidates": {
+        "DRB": 0,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "1_MACCABEES",
+      "activeFile": "1maccabees.json",
+      "activeRows": 929,
+      "laneCounts": {
+        "DRB": 929,
+        "KJV": 924,
+        "NABRE": 924,
+        "NRSV": 92,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 0,
+        "KJV": 5,
+        "NABRE": 5,
+        "NRSV": 837,
+        "Rotherham": 929
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    },
+    {
+      "id": "2_MACCABEES",
+      "activeFile": "2maccabees.json",
+      "activeRows": 558,
+      "laneCounts": {
+        "DRB": 558,
+        "KJV": 555,
+        "NABRE": 556,
+        "NRSV": 56,
+        "Rotherham": 0
+      },
+      "missingCounts": {
+        "DRB": 0,
+        "KJV": 3,
+        "NABRE": 2,
+        "NRSV": 502,
+        "Rotherham": 558
+      },
+      "localSourceCandidates": {
+        "DRB": 1,
+        "KJV": 0,
+        "NABRE": 0,
+        "NRSV": 0
+      },
+      "boundary": {
+        "NRSV": "source_blocked_locally_no_text_mutation_authorized",
+        "Rotherham": "source_scope_absent_no_text_mutation_authorized",
+        "DRB": "source_scope_or_source_shape_review_required_before_trust_promotion",
+        "KJV": "existing_source_scope_claims_preserved_no_new_synthesis",
+        "NABRE": "existing_source_scope_claims_preserved_no_new_synthesis"
+      }
+    }
+  ],
+  "allowedClaims": [
+    "deutero_01_catholic_source_candidate_audit_completed",
+    "deutero_01_nrsv_source_blocker_recorded",
+    "deutero_01_rotherham_source_scope_absence_recorded",
+    "deutero_01_existing_source_scope_boundaries_recorded"
+  ],
+  "blockedClaims": [
+    "deuterocanon_textually_trusted",
+    "deuterocanon_complete",
+    "deutero_01_nrsv_repaired_without_source_witness",
+    "deutero_01_rotherham_synthesized",
+    "deutero_01_active_grid_symmetry_forced",
+    "broad_canon_repair_started_before_deuterocanon_boundary_closure"
+  ],
+  "nextActions": [
+    {
+      "id": "deutero_01_source_acquisition",
+      "action": "Acquire or identify a usable NRSV/NRSVA Catholic deuterocanon source witness before NRSV text repair."
+    },
+    {
+      "id": "deutero_01_source_scope_certification",
+      "action": "Run source-scope/source-shape certification for existing DRB/KJV/NABRE rows and governed absences without Bible text mutation."
+    },
+    {
+      "id": "deutero_02_when_deutero_01_blocked",
+      "action": "If NRSV source acquisition is deferred, proceed to Greek Esther and Greek Daniel form policy as a Deuterocanon boundary task, not to broad canon."
+    }
+  ]
+}

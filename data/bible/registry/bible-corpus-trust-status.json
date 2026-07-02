@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_repair_execution_active_after_drb_source_shape_certification",
+      "status": "not_trusted_deutero_01_nrsv_source_blocked_boundaries_recorded",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1070,7 +1070,9 @@
         "esdras_1_nabre_absence_policy_1",
         "esdras_2_nabre_absence_policy_1",
         "prayerofmanasseh_nabre_absence_policy_1",
-        "deuterocanon_kjv_nabre_source_scope_absence_markers_complete_1"
+        "deuterocanon_kjv_nabre_source_scope_absence_markers_complete_1",
+        "deutero_01_catholic_source_candidate_audit_2026_07_02",
+        "deutero_01_catholic_source_scope_boundaries_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6728,7 +6730,22 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "DEUTERO-01 source-scope/source-shape repair against Catholic deuterocanon books"
+      "nextAction": "Acquire or identify NRSV/NRSVA Catholic deuterocanon source witness, or continue Deuterocanon boundary closure with Greek Esther/Daniel form policy before broad canon.",
+      "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
+      "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
+      "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
+      "blockedClaims": [
+        "deuterocanon_textually_trusted",
+        "deuterocanon_complete",
+        "deutero_01_nrsv_repaired_without_source_witness",
+        "deutero_01_rotherham_synthesized",
+        "broad_canon_repair_started_before_deuterocanon_boundary_closure"
+      ],
+      "allowedClaims": [
+        "deutero_01_nrsv_source_blocker_recorded",
+        "deutero_01_rotherham_source_scope_absence_recorded",
+        "deutero_01_existing_source_scope_boundaries_recorded"
+      ]
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
