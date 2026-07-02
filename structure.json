@@ -3650,5 +3650,99 @@
     "resolver_data_id": "NABRE_INTERNAL",
     "audit": "scripts/audit-bible-nabre-label-eradication.mjs",
     "updated_at": "2026-06-20T06:19:08.559Z"
+  },
+  "liturgical_research_governance": {
+    "description": "Durable liturgical research and governance decisions affecting Universal Office structure, source lanes, office-family sequencing, and future resolver design.",
+    "entries": [
+      {
+        "id": "2026-07-01-west-syriac-shehimo-subtraditions",
+        "date": "2026-07-01",
+        "status": "accepted_future_architecture_not_implemented",
+        "topic": "West Syriac Shehimo office family and Eastern Catholic subtradition sequencing",
+        "research_summary": {
+          "office_family": "West Syriac / Syro-Antiochene Shehimo, also rendered Shhimo or Shhimo.",
+          "core_finding": "The Shehimo is the ordinary West Syriac daily office / canonical hours tradition. It is a liturgical office family, not an ecclesial communion label.",
+          "ordinary_hours": [
+            "Ramsho / Evening Prayer",
+            "Soutoro / Compline / Prayer of Protection",
+            "Lilio / Night Prayer",
+            "Sapro / Morning Prayer",
+            "Third Hour",
+            "Sixth Hour",
+            "Ninth Hour"
+          ],
+          "important_distinction": "West Syriac is not synonymous with Eastern Catholic. The same West Syriac office family is received by Oriental Orthodox, Eastern Catholic, independent Malankara, and reformed Malankara / Anglican-influenced bodies."
+        },
+        "subtradition_implications": {
+          "oriental_orthodox_receptions": [
+            "Syriac Orthodox Shehimo",
+            "Malankara Orthodox Shehimo",
+            "Jacobite Syrian Christian / Malankara Jacobite Shehimo"
+          ],
+          "eastern_catholic_receptions": [
+            "Syro-Malankara Catholic West Syriac Shehimo / Divine Office reception",
+            "Syriac Catholic West Syriac Shehimo reception"
+          ],
+          "related_but_distinct": [
+            "Maronite office tradition is West-Syriac-related but should not be collapsed into the ordinary Shehimo lane without separate source and resolver review.",
+            "Mar Thoma daily prayer belongs to the reformed Malankara / West Syriac-derived ecology and is Anglican-influenced in reception, but is not an Eastern Catholic lane."
+          ]
+        },
+        "governance_decisions": [
+          {
+            "decision": "Agpeya remains the next intended Oriental Orthodox office-family buildout.",
+            "implementation_status": "planned_not_implemented"
+          },
+          {
+            "decision": "West Syriac Shehimo is accepted as a future office family after the Agpeya buildout or later, depending on release priorities and source readiness.",
+            "implementation_status": "accepted_future_architecture"
+          },
+          {
+            "decision": "The first West Syriac implementation should prioritize an Oriental Orthodox source lane, likely Syriac Orthodox / Malankara Orthodox / Jacobite, using a strong English source with clear source-governance posture.",
+            "implementation_status": "future_candidate"
+          },
+          {
+            "decision": "West Syriac Shehimo — Syro-Malankara Catholic edition is valid as an Eastern Catholic reception but is deferred until after gated beta and public release.",
+            "implementation_status": "deferred_post_public_release"
+          },
+          {
+            "decision": "West Syriac Shehimo — Syriac Catholic edition is valid as an Eastern Catholic reception but is deferred until after gated beta and public release.",
+            "implementation_status": "deferred_post_public_release"
+          },
+          {
+            "decision": "Do not collapse Oriental Orthodox and Eastern Catholic West Syriac editions into a single undifferentiated text lane. Shared rite-family logic may be reusable, but source lanes, calendars, commemorative layers, permissions, and edition authority must remain distinct.",
+            "implementation_status": "governance_rule"
+          }
+        ],
+        "architecture_implications": {
+          "recommended_model": "One West Syriac Shehimo office-family resolver family may eventually support multiple source-governed edition lanes.",
+          "resolver_warning": "Shared hour structure does not imply identical text, calendar, saints, commemorations, rubrics, or devotional appendices.",
+          "source_warning": "A lay prayer book, abridged devotional edition, or Catholic-approved prayer manual must not be treated automatically as equivalent to the full Orthodox Shehimo.",
+          "source_governance_required_before_build": [
+            "Identify exact English source edition.",
+            "Record ecclesial authority and edition scope.",
+            "Distinguish full office, parish/lay abridgment, devotional supplement, and calendar material.",
+            "Record permissions/public-rendering posture separately from private corpus construction posture.",
+            "Add resolver diagnostics for missing hours, abridged material, and edition-specific omissions."
+          ]
+        },
+        "roadmap_implications": {
+          "near_term": [
+            "Coptic Orthodox Agpeya remains the next Oriental Orthodox buildout candidate."
+          ],
+          "medium_term": [
+            "West Syriac Shehimo Oriental Orthodox edition may become the next Oriental-family office after Agpeya."
+          ],
+          "late_expansion": [
+            "Syro-Malankara Catholic Shehimo / Divine Office edition.",
+            "Syriac Catholic Shehimo edition."
+          ],
+          "not_current_work": [
+            "Do not begin Eastern Catholic West Syriac corpus work during gated beta unless Josh explicitly reopens release scope.",
+            "Do not use governance-only placeholder work as a substitute for source-backed corpus work when an implementation tranche begins."
+          ]
+        }
+      }
+    ]
   }
 }
