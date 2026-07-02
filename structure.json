@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.167",
+    "version": "3.8.168",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 Greek Esther and Greek Daniel form policy is recorded. Active files are estherGK.json and danielGK.json; absence of greekesther.json/greekdaniel.json is not a missing-book defect. Deuterocanon remains not globally trusted pending bounded source/active-form audit.",
+    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 Greek Esther and Greek Daniel source-active shape audit is recorded from BibleGateway NRSVA candidate snapshots. No active Bible text was mutated. Deuterocanon remains not globally trusted pending review of source-active findings.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,89 +1271,22 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
-      "status": "form_policy_recorded_no_text_mutation",
-      "recordPath": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
-      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-form-policy.mjs",
-      "inspection": {
-        "GREEK_ESTHER": {
-          "path": "data/bible/OT/estherGK.json",
-          "exists": true,
-          "meta": {
-            "name": "Esther (with Additions)",
-            "id": "ESTH_GRK",
-            "version": "NRSV",
-            "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
-            "defaultTranslation": "NRSV",
-            "translations": {
-              "NRSV": {
-                "label": "New Revised Standard Version",
-                "sourceType": "existing_active_corpus_explicit_lane_unverified_pending_source",
-                "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
-              },
-              "KJV": {
-                "label": "King James Version 1611",
-                "sourceType": "historical_kjv_1611_source_witness",
-                "rights": "Public Domain",
-                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
-              },
-              "NABRE": {
-                "label": "New American Bible Revised Edition",
-                "sourceType": "historical_internal_source_lane",
-                "rights": "USCCB source witness; project-internal historical source lane",
-                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
-              },
-              "DRB": {
-                "label": "Douay-Rheims Bible",
-                "sourceType": "drb_original_douay_rheims_raw_source",
-                "rights": "Public Domain",
-                "sourceRef": "main/current"
-              }
-            }
-          },
-          "chapterCount": 16,
-          "activeRows": 272,
-          "activeNrsVRows": 267
-        },
-        "GREEK_DANIEL": {
-          "path": "data/bible/OT/danielGK.json",
-          "exists": true,
-          "meta": {
-            "name": "Daniel (Extended/Catholic Canon)",
-            "id": "DAN_EXT",
-            "version": "NRSV",
-            "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
-            "defaultTranslation": "NRSV",
-            "translations": {
-              "NRSV": {
-                "label": "New Revised Standard Version",
-                "sourceType": "existing_active_corpus_explicit_lane",
-                "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
-              },
-              "KJV": {
-                "label": "King James Version 1611 Apocrypha",
-                "sourceType": "historical_kjv_1611_source_witness",
-                "rights": "Public Domain",
-                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
-              },
-              "NABRE": {
-                "label": "New American Bible Revised Edition",
-                "sourceType": "historical_internal_source_lane",
-                "rights": "USCCB source witness; project-internal historical source lane",
-                "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
-              },
-              "DRB": {
-                "label": "Douay-Rheims Bible",
-                "sourceType": "drb_original_douay_rheims_raw_source",
-                "rights": "Public Domain",
-                "sourceRef": "main/current"
-              }
-            }
-          },
-          "chapterCount": 14,
-          "activeRows": 531,
-          "activeNrsVRows": 530
-        }
+      "id": "deutero_02_greek_additions_source_active_audit_2026_07_02",
+      "status": "PASS_SOURCE_ACTIVE_SHAPE_FINDINGS_RECORDED",
+      "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
+      "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-manifest.json",
+      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active.mjs",
+      "totals": {
+        "books": 2,
+        "activeRows": 803,
+        "activeNrsVRows": 797,
+        "activeMissingNrsVRows": 6,
+        "sourceRows": 524,
+        "sourceRefsWithoutActive": 0,
+        "activeRefsWithoutSource": 229,
+        "matchingRefs": 189,
+        "mismatches": 330,
+        "unavailableChapters": 8
       }
     },
     "latest_bible_psalms_checkpoint": {

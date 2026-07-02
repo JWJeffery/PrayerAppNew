@@ -1,0 +1,2058 @@
+{
+  "schema": "deutero-02-greek-additions-source-active-audit-v1",
+  "id": "deutero_02_greek_additions_source_active_audit_2026_07_02",
+  "status": "PASS_SOURCE_ACTIVE_SHAPE_FINDINGS_RECORDED",
+  "auditedAt": "2026-07-02T06:18:47Z",
+  "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-manifest.json",
+  "sourceWitness": "BibleGateway NRSVA",
+  "scope": {
+    "tranche": "DEUTERO-02",
+    "books": [
+      "GREEK_ESTHER",
+      "GREEK_DANIEL"
+    ],
+    "activeFiles": [
+      "data/bible/OT/estherGK.json",
+      "data/bible/OT/danielGK.json"
+    ],
+    "lane": "text.NRSV"
+  },
+  "determination": {
+    "summary": "DEUTERO-02 source-active shape audit recorded BibleGateway NRSVA candidate source snapshots for estherGK.json and danielGK.json. This is audit-only; no active Bible text was mutated. Findings must be reviewed before any source-backed text repair or adapter mapping.",
+    "allowedClaims": [
+      "deutero_02_greek_additions_source_active_shape_audited",
+      "deutero_02_bible_text_not_mutated"
+    ],
+    "blockedClaims": [
+      "deutero_02_text_repaired",
+      "deutero_02_same_address_complete_without_review",
+      "deutero_02_source_row_split_without_adapter_policy",
+      "deutero_02_synthetic_fill",
+      "deuterocanon_textually_trusted",
+      "deuterocanon_complete"
+    ]
+  },
+  "books": [
+    {
+      "id": "GREEK_ESTHER",
+      "name": "Greek Esther",
+      "activePath": "data/bible/OT/estherGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/estherGK.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 272,
+      "activeNrsVRows": 267,
+      "activeMissingNrsVRowsCount": 5,
+      "activeMissingNrsVRows": [
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17"
+      ],
+      "sourceRows": 167,
+      "unavailableChapters": [
+        {
+          "chapter": 11,
+          "query": "Esther 11",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2011&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 12,
+          "query": "Esther 12",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2012&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 13,
+          "query": "Esther 13",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2013&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 14,
+          "query": "Esther 14",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2014&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 15,
+          "query": "Esther 15",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2015&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 16,
+          "query": "Esther 16",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2016&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "sourceRefsWithoutActiveCount": 0,
+      "sourceRefsWithoutActive": [],
+      "activeRefsWithoutSourceCount": 55,
+      "activeRefsWithoutSource": [
+        "7:11",
+        "7:12",
+        "7:13",
+        "7:14",
+        "7:15",
+        "7:16",
+        "7:17",
+        "7:18",
+        "7:19",
+        "7:20",
+        "7:21",
+        "7:22",
+        "7:23",
+        "7:24",
+        "7:25",
+        "7:26",
+        "7:27",
+        "7:28",
+        "7:29",
+        "7:30",
+        "13:1",
+        "13:2",
+        "13:3",
+        "13:4",
+        "13:5",
+        "13:6",
+        "13:7",
+        "13:8",
+        "13:9",
+        "13:10",
+        "13:11",
+        "13:12",
+        "13:13",
+        "13:14",
+        "13:15",
+        "13:16",
+        "13:17",
+        "13:18",
+        "13:19",
+        "13:20",
+        "13:21",
+        "13:22",
+        "13:23",
+        "13:24",
+        "16:1",
+        "16:2",
+        "16:3",
+        "16:4",
+        "16:5",
+        "16:6",
+        "16:7",
+        "16:8",
+        "16:9",
+        "16:10",
+        "16:11"
+      ],
+      "matchingRefsCount": 64,
+      "mismatchCount": 98,
+      "mismatches": [
+        {
+          "ref": "1:1",
+          "activeText": "This happened in the days of Ahasuerus, the same Ahasuerus who ruled over one hundred twenty-seven provinces from India to Ethiopia.",
+          "sourceText": "King Ahasuerus Deposes Queen Vashti 1"
+        },
+        {
+          "ref": "1:4",
+          "activeText": "while he displayed the great wealth of his kingdom and the splendor and pomp of his majesty for many days, one hundred eighty days in all.",
+          "sourceText": "while he displayed the great wealth of his kingdom and the splendour and pomp of his majesty for many days, one hundred and eighty days in all."
+        },
+        {
+          "ref": "1:6",
+          "activeText": "There were white cotton curtains and blue hangings tied with cords of fine linen and purple wool to silver rings and marble pillars. There were couches of gold and silver on a mosaic pavement of porphyry, marble, mother-of-pearl, and colored stones.",
+          "sourceText": "There were white cotton curtains and blue hangings tied with cords of fine linen and purple to silver rings and marble pillars. There were couches of gold and silver on a mosaic pavement of porphyry, marble, mother-of-pearl, and coloured stones."
+        },
+        {
+          "ref": "1:7",
+          "activeText": "Drinks were served in golden goblets, goblets of different kinds, and the royal wine was lavished according to the bounty of the king.",
+          "sourceText": "Drinks were served in golden goblets, goblets of different kinds, and the royal wine was lavished in accordance with the bounty of the king."
+        },
+        {
+          "ref": "1:8",
+          "activeText": "Drinking was by ordinance without restraint; for the king had given orders to all the officials of his palace to do as each one desired.",
+          "sourceText": "Drinking was by flagons, without restraint; for the king had given orders to all the officials of his palace to do as each one desired."
+        },
+        {
+          "ref": "1:11",
+          "activeText": "to bring Queen Vashti before the king with her royal crown, in order to show the peoples and the officials her beauty; for she was fair to behold.",
+          "sourceText": "to bring Queen Vashti before the king, wearing the royal crown, in order to show the peoples and the officials her beauty; for she was fair to behold."
+        },
+        {
+          "ref": "1:13",
+          "activeText": "Then the king consulted the sages who knew the laws (for this was the king’s procedure toward all who were versed in law and custom,",
+          "sourceText": "Then the king consulted the sages who knew the laws (for this was the king’s procedure towards all who were versed in law and custom,"
+        },
+        {
+          "ref": "1:15",
+          "activeText": "“According to the law, what is to be done to Queen Vashti because she has not performed the command of King Ahasuerus conveyed by the eunuchs?”",
+          "sourceText": "‘According to the law, what is to be done to Queen Vashti because she has not performed the command of King Ahasuerus conveyed by the eunuchs?’"
+        },
+        {
+          "ref": "1:16",
+          "activeText": "Then Memucan said in the presence of the king and the officials, “Not only has Queen Vashti done wrong to the king, but also to all the officials and all the peoples who are in all the provinces of King Ahasuerus.",
+          "sourceText": "Then Memucan said in the presence of the king and the officials, ‘Not only has Queen Vashti done wrong to the king, but also to all the officials and all the peoples who are in all the provinces of King Ahasuerus."
+        },
+        {
+          "ref": "1:17",
+          "activeText": "For this deed of the queen will be made known to all women, causing them to look with contempt on their husbands, since they will say, ‘King Ahasuerus commanded Queen Vashti to be brought before him, and she did not come.’",
+          "sourceText": "For this deed of the queen will be made known to all women, causing them to look with contempt on their husbands, since they will say, “King Ahasuerus commanded Queen Vashti to be brought before him, and she did not come.”"
+        },
+        {
+          "ref": "1:18",
+          "activeText": "This very day the noble ladies of Persia and Media who have heard of the queen’s deed will be telling it to all the king’s officials, and there will be no end of contempt and wrath!",
+          "sourceText": "This very day the noble ladies of Persia and Media who have heard of the queen’s behaviour will rebel against the king’s officials, and there will be no end of contempt and wrath!"
+        },
+        {
+          "ref": "1:20",
+          "activeText": "So when the decree made by the king is proclaimed throughout all his kingdom, vast as it is, all women will give honor to their husbands, high and low alike.”",
+          "sourceText": "So when the decree made by the king is proclaimed throughout all his kingdom, vast as it is, all women will give honour to their husbands, high and low alike.’"
+        },
+        {
+          "ref": "2:1",
+          "activeText": "After these things, when the anger of King Ahasuerus had abated, he remembered Vashti and what she had done and what had been decreed against her.",
+          "sourceText": "Esther Becomes Queen 2"
+        },
+        {
+          "ref": "2:2",
+          "activeText": "Then the king’s servants who attended him said, “Let beautiful young virgins be sought out for the king.",
+          "sourceText": "Then the king’s servants who attended him said, ‘Let beautiful young virgins be sought out for the king."
+        },
+        {
+          "ref": "2:4",
+          "activeText": "And let the girl who pleases the king be queen instead of Vashti.” This pleased the king, and he did so.",
+          "sourceText": "And let the girl who pleases the king be queen instead of Vashti.’ This pleased the king, and he did so."
+        },
+        {
+          "ref": "2:6",
+          "activeText": "Kish had been carried away from Jerusalem among the captives carried away with King Jeconiah of Judah, whom King Nebuchadnezzar of Babylon had captured.",
+          "sourceText": "Kish had been carried away from Jerusalem among the captives carried away with King Jeconiah of Judah, whom King Nebuchadnezzar of Babylon had carried away."
+        },
+        {
+          "ref": "2:8",
+          "activeText": "So when the king’s order and his edict were proclaimed, and when many young women were gathered in the citadel of Susa in custody of Hegai, Esther also was taken into the king’s palace and put in custody of Hegai, who had charge of the women.",
+          "sourceText": "So when the king’s order and his edict were proclaimed, and when many young women were gathered in the citadel of Susa in the custody of Hegai, Esther also was taken into the king’s palace and put in the custody of Hegai, who had charge of the women."
+        },
+        {
+          "ref": "2:9",
+          "activeText": "The girl pleased him and won his favor, and he quickly provided her with her cosmetic treatments and her portion of food, and with seven chosen maids from the king’s palace, and advanced her and her maids to the best place in the harem.",
+          "sourceText": "The girl pleased him and won his favour, and he quickly provided her with her cosmetic treatments and her portion of food, and with seven chosen maids from the king’s palace, and advanced her and her maids to the best place in the harem."
+        },
+        {
+          "ref": "2:14",
+          "activeText": "In the evening she went in; then in the morning she came back to the second harem in custody of Shaashgaz, the king’s eunuch, who was in charge of the concubines. She did not go in to the king again unless the king delighted in her and she was summoned by name.",
+          "sourceText": "In the evening she went in; then in the morning she came back to the second harem in the custody of Shaashgaz, the king’s eunuch, who was in charge of the concubines; she did not go in to the king again, unless the king delighted in her and she was summoned by name."
+        },
+        {
+          "ref": "2:17",
+          "activeText": "the king loved Esther more than all the other women; of all the virgins she won his favor and devotion, so that he set the royal crown on her head and made her queen instead of Vashti.",
+          "sourceText": "the king loved Esther more than all the other women; of all the virgins she won his favour and devotion, so that he set the royal crown on her head and made her queen instead of Vashti."
+        },
+        {
+          "ref": "2:18",
+          "activeText": "Then the king gave a great banquet to all his officials and ministers—“Esther’s banquet.” He also granted a holiday to the provinces, and gave gifts with royal liberality.",
+          "sourceText": "Then the king gave a great banquet to all his officials and ministers—‘Esther’s banquet.’ He also granted a holiday to the provinces, and gave gifts with royal liberality."
+        },
+        {
+          "ref": "2:19",
+          "activeText": "When the virgins were being gathered together a second time, Mordecai was sitting at the king’s gate.",
+          "sourceText": "Mordecai Discovers a Plot When the virgins were being gathered together, Mordecai was sitting at the king’s gate."
+        },
+        {
+          "ref": "2:21",
+          "activeText": "In those days, while Mordecai was sitting at the king’s gate, Bigthan and Teresh, two of the king’s eunuchs, who guarded the threshold, became angry and conspired to lay hands on King Ahasuerus.",
+          "sourceText": "In those days, while Mordecai was sitting at the king’s gate, Bigthan and Teresh, two of the king’s eunuchs, who guarded the threshold, became angry and conspired to assassinate King Ahasuerus."
+        },
+        {
+          "ref": "2:22",
+          "activeText": "But the matter became known to Mordecai, and he told it to Queen Esther, and Esther told the king in the name of Mordecai.",
+          "sourceText": "But the matter came to the knowledge of Mordecai, and he told it to Queen Esther, and Esther told the king in the name of Mordecai."
+        },
+        {
+          "ref": "3:1",
+          "activeText": "After these things King Ahasuerus promoted Haman son of Hammedatha the Agagite, and advanced him and set his seat above all the officials who were with him.",
+          "sourceText": "Haman Undertakes to Destroy the Jews 3"
+        },
+        {
+          "ref": "3:3",
+          "activeText": "Then the king’s servants who were at the king’s gate said to Mordecai, “Why do you disobey the king’s command?”",
+          "sourceText": "Then the king’s servants who were at the king’s gate said to Mordecai, ‘Why do you disobey the king’s command?’"
+        },
+        {
+          "ref": "3:5",
+          "activeText": "When Haman saw that Mordecai did not bow down or do obeisance to him, Haman was consumed with rage.",
+          "sourceText": "When Haman saw that Mordecai did not bow down or do obeisance to him, Haman was infuriated."
+        },
+        {
+          "ref": "3:7",
+          "activeText": "In the first month, which is the month of Nisan, in the twelfth year of King Ahasuerus, they cast Pur—which means “the lot”—before Haman for the day and for the month, and the lot fell on the thirteenth day of the twelfth month, which is the month of Adar.",
+          "sourceText": "In the first month, which is the month of Nisan, in the twelfth year of King Ahasuerus, they cast Pur—which means ‘the lot’—before Haman for the day and for the month, and the lot fell on the thirteenth day of the twelfth month, which is the month of Adar."
+        },
+        {
+          "ref": "3:8",
+          "activeText": "Then Haman said to King Ahasuerus, “There is a certain people scattered and separated among the peoples in all the provinces of your kingdom; their laws are different from those of every other people, and they do not keep the king’s laws, so that it is not appropriate for the king to tolerate them.",
+          "sourceText": "Then Haman said to King Ahasuerus, ‘There is a certain people scattered and separated among the peoples in all the provinces of your kingdom; their laws are different from those of every other people, and they do not keep the king’s laws, so that it is not appropriate for the king to tolerate them."
+        },
+        {
+          "ref": "3:9",
+          "activeText": "If it pleases the king, let a decree be issued for their destruction, and I will pay ten thousand talents of silver into the hands of those who have charge of the king’s business, so that they may put it into the king’s treasuries.”",
+          "sourceText": "If it pleases the king, let a decree be issued for their destruction, and I will pay ten thousand talents of silver into the hands of those who have charge of the king’s business, so that they may put it into the king’s treasuries.’"
+        },
+        {
+          "ref": "3:11",
+          "activeText": "The king said to Haman, “The money is given to you, and the people as well, to do with them as it seems good to you.”",
+          "sourceText": "The king said to Haman, ‘The money is given to you, and the people as well, to do with them as it seems good to you.’"
+        },
+        {
+          "ref": "3:12",
+          "activeText": "Then the king’s secretaries were summoned on the thirteenth day of the first month, and an edict, according to all that Haman commanded, was written to the king’s satraps and to the governors over all the provinces and to the officials of all the peoples, to every province in its own script and every people in its own language; it was written in the name of King Ahasuerus and sealed with the king’s signet ring.",
+          "sourceText": "Then the king’s secretaries were summoned on the thirteenth day of the first month, and an edict, according to all that Haman commanded, was written to the king’s satraps and to the governors over all the provinces and to the officials of all the peoples, to every province in its own script and every people in its own language; it was written in the name of King Ahasuerus and sealed with the king’s ring."
+        },
+        {
+          "ref": "4:1",
+          "activeText": "When Mordecai learned all that had been done, Mordecai tore his clothes and put on sackcloth and ashes, and went through the city, wailing with a loud and bitter cry;",
+          "sourceText": "Esther Agrees to Help the Jews 4"
+        },
+        {
+          "ref": "4:3",
+          "activeText": "In every province, wherever the king’s command and his edict came, there was great mourning among the Jews, with fasting and weeping and lamenting, and most of them lay in sackcloth and ashes.",
+          "sourceText": "In every province, wherever the king’s command and his decree came, there was great mourning among the Jews, with fasting and weeping and lamenting, and most of them lay in sackcloth and ashes."
+        },
+        {
+          "ref": "4:8",
+          "activeText": "Mordecai also gave him a copy of the written decree issued in Susa for their destruction, that he might show it to Esther and explain it to her, and charge her to go to the king to make supplication to him and entreat him for her people.",
+          "sourceText": "Mordecai also gave him a copy of the written decree issued in Susa for their destruction, that he might show it to Esther, explain it to her, and charge her to go to the king to make supplication to him and entreat him for her people."
+        },
+        {
+          "ref": "4:11",
+          "activeText": "“All the king’s servants and the people of the king’s provinces know that if any man or woman goes to the king inside the inner court without being called, there is but one law—all alike are to be put to death. Only if the king holds out the golden scepter to them may they live. I myself have not been called to come in to the king for thirty days.”",
+          "sourceText": "‘All the king’s servants and the people of the king’s provinces know that if any man or woman goes to the king inside the inner court without being called, there is but one law—all alike are to be put to death. Only if the king holds out the golden sceptre to someone, may that person live. I myself have not been called to come in to the king for thirty days.’"
+        },
+        {
+          "ref": "4:13",
+          "activeText": "Mordecai told them to reply to Esther, “Do not think that in the king’s palace you will escape any more than all the other Jews.",
+          "sourceText": "Mordecai told them to reply to Esther, ‘Do not think that in the king’s palace you will escape any more than all the other Jews."
+        },
+        {
+          "ref": "4:14",
+          "activeText": "For if you keep silence at such a time as this, relief and deliverance will rise for the Jews from another quarter, but you and your father’s family will perish. Who knows? Perhaps you have come to royal dignity for just such a time as this.”",
+          "sourceText": "For if you keep silence at such a time as this, relief and deliverance will rise for the Jews from another quarter, but you and your father’s family will perish. Who knows? Perhaps you have come to royal dignity for just such a time as this.’"
+        },
+        {
+          "ref": "4:16",
+          "activeText": "“Go, gather all the Jews to be found in Susa, and hold a fast on my behalf, and neither eat nor drink for three days, night or day. I and my maids will also fast as you do. After that I will go to the king, though it is against the law; and if I perish, I perish.”",
+          "sourceText": "‘Go, gather all the Jews to be found in Susa, and hold a fast on my behalf, and neither eat nor drink for three days, night or day. I and my maids will also fast as you do. After that I will go to the king, though it is against the law; and if I perish, I perish.’"
+        },
+        {
+          "ref": "5:1",
+          "activeText": "On the third day Esther put on her royal robes and stood in the inner court of the king’s palace, opposite the king’s hall. The king was sitting on his royal throne inside the palace opposite the entrance to the palace.",
+          "sourceText": "Esther’s Banquet 5"
+        },
+        {
+          "ref": "5:2",
+          "activeText": "As soon as the king saw Queen Esther standing in the court, she won his favor and he held out to her the golden scepter that was in his hand. Then Esther approached and touched the top of the scepter.",
+          "sourceText": "As soon as the king saw Queen Esther standing in the court, she won his favour and he held out to her the golden sceptre that was in his hand. Then Esther approached and touched the top of the sceptre."
+        },
+        {
+          "ref": "5:3",
+          "activeText": "The king said to her, “What is it, Queen Esther? What is your request? It shall be given you, even to the half of my kingdom.”",
+          "sourceText": "The king said to her, ‘What is it, Queen Esther? What is your request? It shall be given you, even to the half of my kingdom.’"
+        },
+        {
+          "ref": "5:4",
+          "activeText": "Then Esther said, “If it pleases the king, let the king and Haman come today to a banquet that I have prepared for the king.”",
+          "sourceText": "Then Esther said, ‘If it pleases the king, let the king and Haman come today to a banquet that I have prepared for the king.’"
+        },
+        {
+          "ref": "5:5",
+          "activeText": "Then the king said, “Bring Haman quickly, so that we may do as Esther desires.” So the king and Haman came to the banquet that Esther had prepared.",
+          "sourceText": "Then the king said, ‘Bring Haman quickly, so that we may do as Esther desires.’ So the king and Haman came to the banquet that Esther had prepared."
+        },
+        {
+          "ref": "5:6",
+          "activeText": "While they were drinking wine, the king said to Esther, “What is your petition? It shall be granted you. And what is your request? Even to the half of my kingdom, it shall be fulfilled.”",
+          "sourceText": "While they were drinking wine, the king said to Esther, ‘What is your petition? It shall be granted you. And what is your request? Even to the half of my kingdom, it shall be fulfilled.’"
+        },
+        {
+          "ref": "5:7",
+          "activeText": "Then Esther said, “This is my petition and my request:",
+          "sourceText": "Then Esther said, ‘This is my petition and request:"
+        },
+        {
+          "ref": "5:8",
+          "activeText": "If I have won the king’s favor, and if it pleases the king to grant my petition and fulfill my request, let the king and Haman come to the banquet that I will prepare for them, and tomorrow I will do as the king has said.”",
+          "sourceText": "If I have won the king’s favour, and if it pleases the king to grant my petition and fulfil my request, let the king and Haman come tomorrow to the banquet that I will prepare for them, and then I will do as the king has said.’"
+        },
+        {
+          "ref": "5:9",
+          "activeText": "Haman went out that day happy and in good spirits. But when Haman saw Mordecai in the king’s gate, and observed that he neither rose nor trembled before him, he was infuriated with Mordecai.",
+          "sourceText": "Haman Plans to Have Mordecai Hanged Haman went out that day happy and in good spirits. But when Haman saw Mordecai in the king’s gate, and observed that he neither rose nor trembled before him, he was infuriated with Mordecai;"
+        },
+        {
+          "ref": "5:10",
+          "activeText": "Nevertheless Haman restrained himself and went home; and he sent and called for his friends and his wife Zeresh.",
+          "sourceText": "nevertheless, Haman restrained himself and went home. Then he sent and called for his friends and his wife Zeresh,"
+        },
+        {
+          "ref": "5:11",
+          "activeText": "Haman recounted to them the splendor of his riches, the number of his sons, all the promotions with which the king had honored him, and how he had advanced him above the officials and the ministers of the king.",
+          "sourceText": "and Haman recounted to them the splendour of his riches, the number of his sons, all the promotions with which the king had honoured him, and how he had advanced him above the officials and the ministers of the king."
+        },
+        {
+          "ref": "5:12",
+          "activeText": "Haman added, “Even Queen Esther let no one but myself come with the king to the banquet she prepared. Tomorrow also I am invited by her, together with the king.",
+          "sourceText": "Haman added, ‘Even Queen Esther let no one but myself come with the king to the banquet that she prepared. Tomorrow also I am invited by her, together with the king."
+        },
+        {
+          "ref": "5:13",
+          "activeText": "Yet all this avails me nothing, so long as I see Mordecai the Jew sitting at the king’s gate.”",
+          "sourceText": "Yet all this does me no good so long as I see the Jew Mordecai sitting at the king’s gate.’"
+        },
+        {
+          "ref": "5:14",
+          "activeText": "Then his wife Zeresh and all his friends said to him, “Let a gallows fifty cubits high be made, and in the morning tell the king to have Mordecai hanged on it; then go with the king to the banquet in good spirits.” This advice pleased Haman, and he had the gallows made.",
+          "sourceText": "Then his wife Zeresh and all his friends said to him, ‘Let a gallows fifty cubits high be made, and in the morning tell the king to have Mordecai hanged on it; then go with the king to the banquet in good spirits.’ This advice pleased Haman, and he had the gallows made."
+        },
+        {
+          "ref": "6:1",
+          "activeText": "On that night the king could not sleep, and he gave orders to bring the book of records, the annals, and they were read to the king.",
+          "sourceText": "The King Honours Mordecai 6"
+        },
+        {
+          "ref": "6:2",
+          "activeText": "It was found written how Mordecai had told about Bigthana and Teresh, two of the king’s eunuchs, who guarded the threshold, and who had conspired to lay hands on King Ahasuerus.",
+          "sourceText": "It was found written how Mordecai had told about Bigthana and Teresh, two of the king’s eunuchs, who guarded the threshold, and who had conspired to assassinate King Ahasuerus."
+        },
+        {
+          "ref": "6:3",
+          "activeText": "Then the king said, “What honor or distinction has been bestowed on Mordecai for this?” The king’s servants who attended him said, “Nothing has been done for him.”",
+          "sourceText": "Then the king said, ‘What honour or distinction has been bestowed on Mordecai for this?’ The king’s servants who attended him said, ‘Nothing has been done for him.’"
+        },
+        {
+          "ref": "6:4",
+          "activeText": "The king said, “Who is in the court?” Now Haman had just entered the outer court of the king’s palace to speak to the king about having Mordecai hanged on the gallows that he had prepared for him.",
+          "sourceText": "The king said, ‘Who is in the court?’ Now Haman had just entered the outer court of the king’s palace to speak to the king about having Mordecai hanged on the gallows that he had prepared for him."
+        },
+        {
+          "ref": "6:5",
+          "activeText": "So the king’s servants told him, “Haman is there, standing in the court.” The king said, “Let him come in.”",
+          "sourceText": "So the king’s servants told him, ‘Haman is there, standing in the court.’ The king said, ‘Let him come in.’"
+        },
+        {
+          "ref": "6:6",
+          "activeText": "So Haman came in, and the king said to him, “What shall be done for the man whom the king wishes to honor?” Haman said to himself, “Whom would the king wish to honor more than me?”",
+          "sourceText": "So Haman came in, and the king said to him, ‘What shall be done for the man whom the king wishes to honour?’ Haman said to himself, ‘Whom would the king wish to honour more than me?’"
+        },
+        {
+          "ref": "6:7",
+          "activeText": "So Haman said to the king, “For the man whom the king wishes to honor,",
+          "sourceText": "So Haman said to the king, ‘For the man whom the king wishes to honour,"
+        },
+        {
+          "ref": "6:9",
+          "activeText": "Let the robes and the horse be delivered to one of the king’s most noble officials; let him robe the man whom the king wishes to honor, and let him conduct the man on horseback through the open square of the city, proclaiming before him: ‘Thus shall it be done for the man whom the king wishes to honor.’”",
+          "sourceText": "Let the robes and the horse be handed over to one of the king’s most noble officials; let him robe the man whom the king wishes to honour, and let him conduct the man on horseback through the open square of the city, proclaiming before him: “Thus shall it be done for the man whom the king wishes to honour.”’"
+        },
+        {
+          "ref": "6:10",
+          "activeText": "Then the king said to Haman, “Quickly, take the robes and the horse, as you have said, and do so to Mordecai the Jew who sits at the king’s gate. Leave out nothing that you have mentioned.”",
+          "sourceText": "Then the king said to Haman, ‘Quickly, take the robes and the horse, as you have said, and do so to the Jew Mordecai who sits at the king’s gate. Leave out nothing that you have mentioned.’"
+        },
+        {
+          "ref": "6:11",
+          "activeText": "So Haman took the robes and the horse and robed Mordecai and led him through the open square of the city, proclaiming, “Thus shall it be done for the man whom the king wishes to honor.”",
+          "sourceText": "So Haman took the robes and the horse and robed Mordecai and led him riding through the open square of the city, proclaiming, ‘Thus shall it be done for the man whom the king wishes to honour.’"
+        },
+        {
+          "ref": "6:13",
+          "activeText": "When Haman told his wife Zeresh and all his friends everything that had happened to him, his advisers and his wife Zeresh said to him, “If Mordecai, before whom your downfall has begun, is of the Jewish people, you will not prevail against him, but will surely fall before him.”",
+          "sourceText": "When Haman told his wife Zeresh and all his friends everything that had happened to him, his advisers and his wife Zeresh said to him, ‘If Mordecai, before whom your downfall has begun, is of the Jewish people, you will not prevail against him, but will surely fall before him.’"
+        },
+        {
+          "ref": "6:14",
+          "activeText": "While they were still talking with him, the king’s eunuchs arrived and hurried Haman off to the banquet that Esther had prepared.",
+          "sourceText": "Haman’s Downfall and Mordecai’s Advancement While they were still talking with him, the king’s eunuchs arrived and hurried Haman off to the banquet that Esther had prepared."
+        },
+        {
+          "ref": "7:1",
+          "activeText": "So the king and Haman went in to feast with Queen Esther.",
+          "sourceText": "7"
+        },
+        {
+          "ref": "7:2",
+          "activeText": "On the second day, as they were drinking wine, the king again said to Esther, “What is your petition, Queen Esther? It shall be granted you. And what is your request? Even to the half of my kingdom, it shall be fulfilled.”",
+          "sourceText": "On the second day, as they were drinking wine, the king again said to Esther, ‘What is your petition, Queen Esther? It shall be granted you. And what is your request? Even to the half of my kingdom, it shall be fulfilled.’"
+        },
+        {
+          "ref": "7:3",
+          "activeText": "Then Queen Esther answered, “If I have won your favor, O king, and if it pleases the king, let my life be given me—that is my petition—and the lives of my people—that is my request.",
+          "sourceText": "Then Queen Esther answered, ‘If I have won your favour, O king, and if it pleases the king, let my life be given me—that is my petition—and the lives of my people—that is my request."
+        },
+        {
+          "ref": "7:4",
+          "activeText": "For we have been sold, I and my people, to be destroyed, to be killed, and to be annihilated. If we had been sold merely as slaves, men and women, I would have held my peace; but no enemy can compensate for this damage to the king.”",
+          "sourceText": "For we have been sold, I and my people, to be destroyed, to be killed, and to be annihilated. If we had been sold merely as slaves, men and women, I would have held my peace; but no enemy can compensate for this damage to the king.’"
+        },
+        {
+          "ref": "7:5",
+          "activeText": "Then King Ahasuerus said to Queen Esther, “Who is he, and where is he, who has presumed to do this?”",
+          "sourceText": "Then King Ahasuerus said to Queen Esther, ‘Who is he, and where is he, who has presumed to do this?’"
+        },
+        {
+          "ref": "7:6",
+          "activeText": "Esther said, “A foe and enemy, this wicked Haman!” Then Haman was terrified before the king and the queen.",
+          "sourceText": "Esther said, ‘A foe and enemy, this wicked Haman!’ Then Haman was terrified before the king and the queen."
+        },
+        {
+          "ref": "7:7",
+          "activeText": "The king rose from the feast in wrath and went into the palace garden, but Haman stayed to beg his life from Queen Esther, for he saw that the king had determined on his ruin.",
+          "sourceText": "The king rose from the feast in wrath and went into the palace garden, but Haman stayed to beg his life from Queen Esther, for he saw that the king had determined to destroy him."
+        },
+        {
+          "ref": "7:8",
+          "activeText": "When the king returned from the palace garden to the banquet hall, Haman had thrown himself on the couch where Esther was reclining; and the king said, “Will he even assault the queen in my presence, in my own house?” As the words left the mouth of the king, they covered Haman’s face.",
+          "sourceText": "When the king returned from the palace garden to the banquet hall, Haman had thrown himself on the couch where Esther was reclining; and the king said, ‘Will he even assault the queen in my presence, in my own house?’ As the words left the mouth of the king, they covered Haman’s face."
+        },
+        {
+          "ref": "7:9",
+          "activeText": "Then Harbona, one of the eunuchs in attendance on the king, said, “Look, the very gallows that Haman has prepared for Mordecai, whose word saved the king, stands at Haman’s house, fifty cubits high.” And the king said, “Hang him on that.”",
+          "sourceText": "Then Harbona, one of the eunuchs in attendance on the king, said, ‘Look, the very gallows that Haman has prepared for Mordecai, whose word saved the king, stands at Haman’s house, fifty cubits high.’ And the king said, ‘Hang him on that.’"
+        },
+        {
+          "ref": "8:1",
+          "activeText": "On that day King Ahasuerus gave to Queen Esther the house of Haman, the enemy of the Jews; and Mordecai came before the king, for Esther had told what he was to her.",
+          "sourceText": "Esther Saves the Jews 8"
+        },
+        {
+          "ref": "8:4",
+          "activeText": "The king held out the golden scepter to Esther,",
+          "sourceText": "The king held out the golden sceptre to Esther,"
+        },
+        {
+          "ref": "8:5",
+          "activeText": "and Esther rose and stood before the king. She said, “If it pleases the king, and if I have won his favor, and if the thing seems right before the king, and I have his approval, let an order be written to revoke the letters devised by Haman son of Hammedatha the Agagite, which he wrote to destroy the Jews who are in all the provinces of the king.",
+          "sourceText": "and Esther rose and stood before the king. She said, ‘If it pleases the king, and if I have won his favour, and if the thing seems right before the king, and I have his approval, let an order be written to revoke the letters devised by Haman son of Hammedatha the Agagite, which he wrote giving orders to destroy the Jews who are in all the provinces of the king."
+        },
+        {
+          "ref": "8:6",
+          "activeText": "For how can I bear to see the calamity that is coming on my people? Or how can I bear to see the destruction of my kindred?”",
+          "sourceText": "For how can I bear to see the calamity that is coming on my people? Or how can I bear to see the destruction of my kindred?’"
+        },
+        {
+          "ref": "8:7",
+          "activeText": "Then King Ahasuerus said to Queen Esther and to the Jew Mordecai, “See, I have given Esther the house of Haman, and they have hanged him on the gallows, because he plotted to lay hands on the Jews.",
+          "sourceText": "Then King Ahasuerus said to Queen Esther and to the Jew Mordecai, ‘See, I have given Esther the house of Haman, and they have hanged him on the gallows, because he plotted to lay hands on the Jews."
+        },
+        {
+          "ref": "8:8",
+          "activeText": "You may write as you please with regard to the Jews, in the name of the king, and seal it with the king’s ring; for an edict written in the name of the king and sealed with the king’s ring cannot be revoked.”",
+          "sourceText": "You may write as you please with regard to the Jews, in the name of the king, and seal it with the king’s ring; for an edict written in the name of the king and sealed with the king’s ring cannot be revoked.’"
+        },
+        {
+          "ref": "8:9",
+          "activeText": "The king’s secretaries were summoned at that time, in the third month, which is the month of Sivan, on the twenty-third day; and an edict was written, according to all that Mordecai commanded, to the Jews and to the satraps and the governors and the officials of the provinces from India to Ethiopia, one hundred twenty-seven provinces, to every province in its own script and to every people in its own language, and also to the Jews in their script and their language.",
+          "sourceText": "The king’s secretaries were summoned at that time, in the third month, which is the month of Sivan, on the twenty-third day; and an edict was written, according to all that Mordecai commanded, to the Jews and to the satraps and the governors and the officials of the provinces from India to Ethiopia, one hundred and twenty-seven provinces, to every province in its own script and to every people in its own language, and also to the Jews in their script and their language."
+        },
+        {
+          "ref": "8:10",
+          "activeText": "He wrote in the name of King Ahasuerus and sealed it with the king’s signet ring. Then he sent the letters by couriers on horseback, riding on fast steeds used in the royal service, bred from the royal gazelles.",
+          "sourceText": "He wrote letters in the name of King Ahasuerus, sealed them with the king’s ring, and sent them by mounted couriers riding on fast steeds bred from the royal herd."
+        },
+        {
+          "ref": "9:1",
+          "activeText": "Now in the twelfth month, which is the month of Adar, on the thirteenth day, when the king’s command and edict were about to be executed, on the very day when the enemies of the Jews hoped to gain power over them, but which had been changed to a day when the Jews would gain power over those who hated them,",
+          "sourceText": "Destruction of the Enemies of the Jews 9"
+        },
+        {
+          "ref": "9:9",
+          "activeText": "Parmashta, Arisai, Aridai, and Vaizatha,",
+          "sourceText": "Parmashta, Arisai, Aridai, Vaizatha,"
+        },
+        {
+          "ref": "9:12",
+          "activeText": "The king said to Queen Esther, “In the citadel of Susa the Jews have killed and destroyed five hundred people and also the ten sons of Haman. What have they done in the rest of the king’s provinces? Now what is your petition? It shall be granted you. And what further is your request? It shall be fulfilled.”",
+          "sourceText": "The king said to Queen Esther, ‘In the citadel of Susa the Jews have killed five hundred people and also the ten sons of Haman. What have they done in the rest of the king’s provinces? Now what is your petition? It shall be granted you. And what further is your request? It shall be fulfilled.’"
+        },
+        {
+          "ref": "9:13",
+          "activeText": "Esther said, “If it pleases the king, let the Jews who are in Susa be allowed tomorrow also to do according to this day’s edict, and let the ten sons of Haman be hanged on the gallows.”",
+          "sourceText": "Esther said, ‘If it pleases the king, let the Jews who are in Susa be allowed tomorrow also to do according to this day’s edict, and let the ten sons of Haman be hanged on the gallows.’"
+        },
+        {
+          "ref": "9:15",
+          "activeText": "The Jews who were in Susa gathered also on the fourteenth day of the month of Adar and they killed three hundred at Susa; but they did not touch the plunder.",
+          "sourceText": "The Jews who were in Susa gathered also on the fourteenth day of the month of Adar and they killed three hundred people in Susa; but they did not touch the plunder."
+        },
+        {
+          "ref": "9:18",
+          "activeText": "But the Jews who were in Susa gathered on the thirteenth day and on the fourteenth, and rested on the fifteenth day, making that a day of feasting and gladness.",
+          "sourceText": "The Feast of Purim Inaugurated But the Jews who were in Susa gathered on the thirteenth day and on the fourteenth, and rested on the fifteenth day, making that a day of feasting and gladness."
+        },
+        {
+          "ref": "9:21",
+          "activeText": "enjoining them that they should keep the fourteenth day of the month Adar and also the fifteenth day of the same, year by year,",
+          "sourceText": "enjoining them that they should keep the fourteenth day of the month Adar and also the fifteenth day of the same month, year by year,"
+        },
+        {
+          "ref": "9:24",
+          "activeText": "Haman son of Hammedatha the Agagite, the enemy of all the Jews, had plotted against the Jews to destroy them, and had cast Pur—that is “the lot”—to crush and destroy them;",
+          "sourceText": "Haman son of Hammedatha the Agagite, the enemy of all the Jews, had plotted against the Jews to destroy them, and had cast Pur—that is, ‘the lot’—to crush and destroy them;"
+        },
+        {
+          "ref": "9:27",
+          "activeText": "the Jews established and accepted as a custom for themselves and their descendants and all who joined them, that without fail they would continue of observe these two days every year, as it was written and at the time appointed.",
+          "sourceText": "the Jews established and accepted as a custom for themselves and their descendants and all who joined them, that without fail they would continue to observe these two days every year, as it was written and at the time appointed."
+        },
+        {
+          "ref": "9:29",
+          "activeText": "Then Queen Esther daughter of Abihail, along with the Jew Mordecai, gave full written authority, confirming this second letter about Purim.",
+          "sourceText": "Queen Esther daughter of Abihail, along with the Jew Mordecai, gave full written authority, confirming this second letter about Purim."
+        },
+        {
+          "ref": "9:30",
+          "activeText": "Letters were sent wishing peace and security to all the Jews, to the one hundred twenty-seven provinces of the kingdom of Ahasuerus,",
+          "sourceText": "Letters were sent wishing peace and security to all the Jews, to the one hundred and twenty-seven provinces of the kingdom of Ahasuerus,"
+        },
+        {
+          "ref": "9:31",
+          "activeText": "and giving orders that these days of Purim should be observed at their appointed time, as the Jew Mordecai and Queen Esther enjoined on the Jews, and as they had laid down for themselves and for their descendants, with regard to their fasts and their lamentations.",
+          "sourceText": "and giving orders that these days of Purim should be observed at their appointed seasons, as the Jew Mordecai and Queen Esther enjoined on the Jews, just as they had laid down for themselves and for their descendants regulations concerning their fasts and their lamentations."
+        },
+        {
+          "ref": "9:32",
+          "activeText": "The command of Esther established these customs for Purim, and it was recorded in writing.",
+          "sourceText": "The command of Queen Esther fixed these practices of Purim, and it was recorded in writing."
+        },
+        {
+          "ref": "10:1",
+          "activeText": "King Ahasuerus laid tribute on the land and on the islands of the sea.",
+          "sourceText": "10"
+        },
+        {
+          "ref": "10:2",
+          "activeText": "All the acts of his power and might, and the full account of the high honor of Mordecai, to which the king advanced him, are they not written in the annals of the kings of Media and Persia?",
+          "sourceText": "All the acts of his power and might, and the full account of the high honour of Mordecai, to which the king advanced him, are they not written in the annals of the kings of Media and Persia?"
+        },
+        {
+          "ref": "10:3",
+          "activeText": "For Mordecai the Jew was next in rank to King Ahasuerus, and he was powerful among the Jews and popular with his many kindred, for he sought the good of his people and spoke peace to all his race.",
+          "sourceText": "For Mordecai the Jew was next in rank to King Ahasuerus, and he was powerful among the Jews and popular with his many kindred, for he sought the good of his people and interceded for the welfare of all his descendants."
+        }
+      ],
+      "determination": {
+        "sameAddressExactMatches": 64,
+        "sameAddressMismatches": 98,
+        "sourceShapeBoundaryRows": 55,
+        "repairReadiness": "source_active_shape_review_required_before_any_text_repair"
+      }
+    },
+    {
+      "id": "GREEK_DANIEL",
+      "name": "Greek Daniel",
+      "activePath": "data/bible/OT/danielGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/danielGK.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "activeRows": 531,
+      "activeNrsVRows": 530,
+      "activeMissingNrsVRowsCount": 1,
+      "activeMissingNrsVRows": [
+        "13:65"
+      ],
+      "sourceRows": 357,
+      "unavailableChapters": [
+        {
+          "chapter": 13,
+          "query": "Daniel 13",
+          "url": "https://www.biblegateway.com/passage/?search=Daniel%2013&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 14,
+          "query": "Daniel 14",
+          "url": "https://www.biblegateway.com/passage/?search=Daniel%2014&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "sourceRefsWithoutActiveCount": 0,
+      "sourceRefsWithoutActive": [],
+      "activeRefsWithoutSourceCount": 174,
+      "activeRefsWithoutSource": [
+        "3:31",
+        "3:32",
+        "3:33",
+        "3:34",
+        "3:35",
+        "3:36",
+        "3:37",
+        "3:38",
+        "3:39",
+        "3:40",
+        "3:41",
+        "3:42",
+        "3:43",
+        "3:44",
+        "3:45",
+        "3:46",
+        "3:47",
+        "3:48",
+        "3:49",
+        "3:50",
+        "3:51",
+        "3:52",
+        "3:53",
+        "3:54",
+        "3:55",
+        "3:56",
+        "3:57",
+        "3:58",
+        "3:59",
+        "3:60",
+        "3:61",
+        "3:62",
+        "3:63",
+        "3:64",
+        "3:65",
+        "3:66",
+        "3:67",
+        "3:68",
+        "3:69",
+        "3:70",
+        "3:71",
+        "3:72",
+        "3:73",
+        "3:74",
+        "3:75",
+        "3:76",
+        "3:77",
+        "3:78",
+        "3:79",
+        "3:80",
+        "3:81",
+        "3:82",
+        "3:83",
+        "3:84",
+        "3:85",
+        "3:86",
+        "3:87",
+        "3:88",
+        "3:89",
+        "3:90",
+        "3:91",
+        "3:92",
+        "3:93",
+        "3:94",
+        "3:95",
+        "3:96",
+        "3:97",
+        "13:1",
+        "13:2",
+        "13:3",
+        "13:4",
+        "13:5",
+        "13:6",
+        "13:7",
+        "13:8",
+        "13:9",
+        "13:10",
+        "13:11",
+        "13:12",
+        "13:13",
+        "13:14",
+        "13:15",
+        "13:16",
+        "13:17",
+        "13:18",
+        "13:19",
+        "13:20",
+        "13:21",
+        "13:22",
+        "13:23",
+        "13:24",
+        "13:25",
+        "13:26",
+        "13:27",
+        "13:28",
+        "13:29",
+        "13:30",
+        "13:31",
+        "13:32",
+        "13:33",
+        "13:34",
+        "13:35",
+        "13:36",
+        "13:37",
+        "13:38",
+        "13:39",
+        "13:40",
+        "13:41",
+        "13:42",
+        "13:43",
+        "13:44",
+        "13:45",
+        "13:46",
+        "13:47",
+        "13:48",
+        "13:49",
+        "13:50",
+        "13:51",
+        "13:52",
+        "13:53",
+        "13:54",
+        "13:55",
+        "13:56",
+        "13:57",
+        "13:58",
+        "13:59",
+        "13:60",
+        "13:61",
+        "13:62",
+        "13:63",
+        "13:64",
+        "13:65",
+        "14:1",
+        "14:2",
+        "14:3",
+        "14:4",
+        "14:5",
+        "14:6",
+        "14:7",
+        "14:8",
+        "14:9",
+        "14:10",
+        "14:11",
+        "14:12",
+        "14:13",
+        "14:14",
+        "14:15",
+        "14:16",
+        "14:17",
+        "14:18",
+        "14:19",
+        "14:20",
+        "14:21",
+        "14:22",
+        "14:23",
+        "14:24",
+        "14:25",
+        "14:26",
+        "14:27",
+        "14:28",
+        "14:29",
+        "14:30",
+        "14:31",
+        "14:32",
+        "14:33",
+        "14:34",
+        "14:35",
+        "14:36",
+        "14:37",
+        "14:38",
+        "14:39",
+        "14:40",
+        "14:41",
+        "14:42"
+      ],
+      "matchingRefsCount": 125,
+      "mismatchCount": 232,
+      "mismatches": [
+        {
+          "ref": "1:1",
+          "activeText": "In the third year of the reign of King Jehoiakim of Judah, King Nebuchadnezzar of Babylon came to Jerusalem and besieged it.",
+          "sourceText": "Four Young Israelites at the Babylonian Court 1"
+        },
+        {
+          "ref": "1:5",
+          "activeText": "The king assigned them a daily portion of the royal rations of food and wine. They were to be educated for three years, so that at the end of that time they could be stationed in the king’s palace.",
+          "sourceText": "The king assigned them a daily portion of the royal rations of food and wine. They were to be educated for three years, so that at the end of that time they could be stationed in the king’s court."
+        },
+        {
+          "ref": "1:9",
+          "activeText": "Now God allowed Daniel to receive favor and compassion from the palace master.",
+          "sourceText": "Now God allowed Daniel to receive favour and compassion from the palace master."
+        },
+        {
+          "ref": "1:10",
+          "activeText": "The palace master said to Daniel, “I am afraid of my lord the king; he has appointed your food and your drink. If he should see you in poorer condition than the other young men of your age, you would endanger my head with the king.”",
+          "sourceText": "The palace master said to Daniel, ‘I am afraid of my lord the king; he has appointed your food and your drink. If he should see you in poorer condition than the other young men of your own age, you would endanger my head with the king.’"
+        },
+        {
+          "ref": "1:12",
+          "activeText": "“Please test your servants for ten days. Let us be given vegetables to eat and water to drink.",
+          "sourceText": "‘Please test your servants for ten days. Let us be given vegetables to eat and water to drink."
+        },
+        {
+          "ref": "1:13",
+          "activeText": "You can then compare our appearance with the appearance of the young men who eat the royal rations, and deal with your servants according to what you observe.”",
+          "sourceText": "You can then compare our appearance with the appearance of the young men who eat the royal rations, and deal with your servants according to what you observe.’"
+        },
+        {
+          "ref": "1:19",
+          "activeText": "and the king spoke with them. And among them all, no one was found to compare with Daniel, Hananiah, Mishael, and Azariah; therefore they were stationed in the king’s palace.",
+          "sourceText": "and the king spoke with them. And among them all, no one was found to compare with Daniel, Hananiah, Mishael, and Azariah; therefore they were stationed in the king’s court."
+        },
+        {
+          "ref": "2:1",
+          "activeText": "In the second year of as Nebuchadnezzar's reign, Nebuchadnezzar had dreams; his spirit was troubled and his sleep left him.",
+          "sourceText": "Nebuchadnezzar’s Dream 2"
+        },
+        {
+          "ref": "2:2",
+          "activeText": "The king commanded that the magicians, the enchanters, the sorcerers, and the Chaldeans be summoned to tell the king his dreams. When they came in and stood before the king,",
+          "sourceText": "So the king commanded that the magicians, the enchanters, the sorcerers, and the Chaldeans be summoned to tell the king his dreams. When they came in and stood before the king,"
+        },
+        {
+          "ref": "2:3",
+          "activeText": "he said to them, “I have had such a dream that my spirit is troubled by the desire to understand it.”",
+          "sourceText": "he said to them, ‘I have had such a dream that my spirit is troubled by the desire to understand it.’"
+        },
+        {
+          "ref": "2:4",
+          "activeText": "The Chaldeans said to the king (in Aramaic), “O king, live forever! Tell your servants the dream, and we will reveal the interpretation.”",
+          "sourceText": "The Chaldeans said to the king (in Aramaic), ‘O king, live for ever! Tell your servants the dream, and we will reveal the interpretation.’"
+        },
+        {
+          "ref": "2:5",
+          "activeText": "The king answered the Chaldeans, “This is a public decree: if you do not tell me both the dream and its interpretation, you shall be torn limb from limb, and your houses shall be laid in ruins.",
+          "sourceText": "The king answered the Chaldeans, ‘This is a public decree: if you do not tell me both the dream and its interpretation, you shall be torn limb from limb, and your houses shall be laid in ruins."
+        },
+        {
+          "ref": "2:6",
+          "activeText": "But if you do tell me the dream and its interpretation, you shall receive from me gifts and rewards and great honor. Therefore tell me the dream and its interpretation.”",
+          "sourceText": "But if you do tell me the dream and its interpretation, you shall receive from me gifts and rewards and great honour. Therefore tell me the dream and its interpretation.’"
+        },
+        {
+          "ref": "2:7",
+          "activeText": "They answered a second time, “Let the king tell his servants the dream, and we will reveal its interpretation.”",
+          "sourceText": "They answered a second time, ‘Let the king first tell his servants the dream, then we can give its interpretation.’"
+        },
+        {
+          "ref": "2:8",
+          "activeText": "The king answered, “I know with certainty that you are trying to gain time, because you see I have firmly decreed:",
+          "sourceText": "The king answered, ‘I know with certainty that you are trying to gain time, because you see I have firmly decreed:"
+        },
+        {
+          "ref": "2:9",
+          "activeText": "if you do not tell me the dream, there is but one verdict for you. You have agreed to speak delusive and corrupt words to me until things take a change. Therefore tell me the dream, and I shall know that you can give me its interpretation.”",
+          "sourceText": "if you do not tell me the dream, there is but one verdict for you. You have agreed to speak lying and misleading words to me until things take a turn. Therefore, tell me the dream, and I shall know that you can give me its interpretation.’"
+        },
+        {
+          "ref": "2:10",
+          "activeText": "The Chaldeans answered the king, “There is no one on earth who can satisfy the king’s demand, for no great and powerful king has ever asked such a thing of any magician or enchanter or Chaldean.",
+          "sourceText": "The Chaldeans answered the king, ‘There is no one on earth who can reveal what the king demands! In fact no king, however great and powerful, has ever asked such a thing of any magician or enchanter or Chaldean."
+        },
+        {
+          "ref": "2:11",
+          "activeText": "The thing that the king is asking is too difficult, and no one can reveal it to the king except the gods, whose dwelling is not with mortals.”",
+          "sourceText": "The thing that the king is asking is too difficult, and no one can reveal it to the king except the gods, whose dwelling is not with mortals.’"
+        },
+        {
+          "ref": "2:15",
+          "activeText": "he asked Arioch, the royal officer, “Why is the decree of the king so urgent?” Arioch then explained the matter to Daniel.",
+          "sourceText": "he asked Arioch, the royal official, ‘Why is the decree of the king so urgent?’ Arioch then explained the matter to Daniel."
+        },
+        {
+          "ref": "2:17",
+          "activeText": "Then Daniel went to his home and informed his companions, Hananiah, Mishael, and Azariah,",
+          "sourceText": "God Reveals Nebuchadnezzar’s Dream Then Daniel went to his home and informed his companions, Hananiah, Mishael, and Azariah,"
+        },
+        {
+          "ref": "2:18",
+          "activeText": "and told them to seek mercy from the God of heaven concerning this mystery, so that Daniel and his companions might not perish with the rest of the wise men of Babylon.",
+          "sourceText": "and told them to seek mercy from the God of heaven concerning this mystery, so that Daniel and his companions with the rest of the wise men of Babylon might not perish."
+        },
+        {
+          "ref": "2:20",
+          "activeText": "Daniel said: “Blessed be the name of God from age to age, for wisdom and power are his.",
+          "sourceText": "Daniel said: ‘Blessed be the name of God from age to age, for wisdom and power are his."
+        },
+        {
+          "ref": "2:21",
+          "activeText": "He changes times and seasons, deposes kings and sets up kings; he gives wisdom to the wise and knowledge to those who have understanding;",
+          "sourceText": "He changes times and seasons, deposes kings and sets up kings; he gives wisdom to the wise and knowledge to those who have understanding."
+        },
+        {
+          "ref": "2:22",
+          "activeText": "he reveals deep and hidden things; he knows what is in the darkness, and light dwells with him.",
+          "sourceText": "He reveals deep and hidden things; he knows what is in the darkness, and light dwells with him."
+        },
+        {
+          "ref": "2:23",
+          "activeText": "To you, O God of my ancestors, I give thanks and praise, for you have given me wisdom and power, and have now revealed to me what we asked of you, for you have revealed to us what the king ordered.”",
+          "sourceText": "To you, O God of my ancestors, I give thanks and praise, for you have given me wisdom and power, and have now revealed to me what we asked of you, for you have revealed to us what the king ordered.’"
+        },
+        {
+          "ref": "2:24",
+          "activeText": "Therefore Daniel went to Arioch, whom the king had appointed to destroy the wise men of Babylon, and said to him: “Do not destroy the wise men of Babylon; bring me in before the king, and I will give the king the interpretation.”",
+          "sourceText": "Daniel Interprets the Dream Therefore Daniel went to Arioch, whom the king had appointed to destroy the wise men of Babylon, and said to him, ‘Do not destroy the wise men of Babylon; bring me in before the king, and I will give the king the interpretation.’"
+        },
+        {
+          "ref": "2:25",
+          "activeText": "Then Arioch quickly brought Daniel before the king and said to him: “I have found among the exiles from Judah a man who can tell the king the interpretation.”",
+          "sourceText": "Then Arioch quickly brought Daniel before the king and said to him: ‘I have found among the exiles from Judah a man who can tell the king the interpretation.’"
+        },
+        {
+          "ref": "2:26",
+          "activeText": "The king said to Daniel, whose name was Belteshazzar, “Are you able to tell me the dream that I have seen and its interpretation?”",
+          "sourceText": "The king said to Daniel, whose name was Belteshazzar, ‘Are you able to tell me the dream that I have seen and its interpretation?’"
+        },
+        {
+          "ref": "2:27",
+          "activeText": "Daniel answered the king, “No wise men, enchanters, magicians, or diviners can show to the king the mystery that the king is asking,",
+          "sourceText": "Daniel answered the king, ‘No wise men, enchanters, magicians, or diviners can show to the king the mystery that the king is asking,"
+        },
+        {
+          "ref": "2:30",
+          "activeText": "But as for me, this mystery has not been revealed to me because of any wisdom that I have more than any other living being, but in order that the interpretation may be made known to the king and that you may understand the thoughts of your mind.",
+          "sourceText": "But as for me, this mystery has not been revealed to me because of any wisdom that I have more than any other living being, but in order that the interpretation may be known to the king and that you may understand the thoughts of your mind."
+        },
+        {
+          "ref": "2:31",
+          "activeText": "“You were looking, O king, and lo! there was a great statue. This statue was huge, its brilliance extraordinary; it was standing before you, and its appearance was frightening.",
+          "sourceText": "‘You were looking, O king, and lo! there was a great statue. This statue was huge, its brilliance extraordinary; it was standing before you, and its appearance was frightening."
+        },
+        {
+          "ref": "2:32",
+          "activeText": "The head of that statue was of fine gold, its chest and arms of silver, its midsection and thighs of bronze,",
+          "sourceText": "The head of that statue was of fine gold, its chest and arms of silver, its middle and thighs of bronze,"
+        },
+        {
+          "ref": "2:35",
+          "activeText": "Then the iron, the clay, the bronze, the silver, and the gold were all broken in pieces and became like the chaff of the summer threshing floors; and the wind carried them away, so that not a trace of them could be found. But the stone that struck the statue became a great mountain and filled the whole earth.",
+          "sourceText": "Then the iron, the clay, the bronze, the silver, and the gold, were all broken in pieces and became like the chaff of the summer threshing-floors; and the wind carried them away, so that not a trace of them could be found. But the stone that struck the statue became a great mountain and filled the whole earth."
+        },
+        {
+          "ref": "2:36",
+          "activeText": "“This was the dream; now we will tell the king its interpretation.",
+          "sourceText": "‘This was the dream; now we will tell the king its interpretation."
+        },
+        {
+          "ref": "2:44",
+          "activeText": "And in the days of those kings the God of heaven will set up a kingdom that shall never be destroyed, nor shall this kingdom be left to another people. It shall crush all these kingdoms and bring them to an end, and it shall stand forever;",
+          "sourceText": "And in the days of those kings the God of heaven will set up a kingdom that shall never be destroyed, nor shall this kingdom be left to another people. It shall crush all these kingdoms and bring them to an end, and it shall stand for ever;"
+        },
+        {
+          "ref": "2:45",
+          "activeText": "just as you saw that a stone was cut from the mountain not by hands, and that it crushed the iron, the bronze, the clay, the silver, and the gold. The great God has informed the king what shall be hereafter. The dream is certain, and its interpretation trustworthy.”",
+          "sourceText": "just as you saw that a stone was cut from the mountain not by hands, and that it crushed the iron, the bronze, the clay, the silver, and the gold. The great God has informed the king what shall be hereafter. The dream is certain, and its interpretation trustworthy.’"
+        },
+        {
+          "ref": "2:46",
+          "activeText": "Then King Nebuchadnezzar fell on his face, worshiped Daniel, and commanded that a grain offering and incense be offered to him.",
+          "sourceText": "Daniel and His Friends Promoted Then King Nebuchadnezzar fell on his face, worshipped Daniel, and commanded that a grain-offering and incense be offered to him."
+        },
+        {
+          "ref": "2:47",
+          "activeText": "The king said to Daniel, “Truly, your God is God of gods and Lord of kings and a revealer of mysteries, for you have been able to reveal this mystery!”",
+          "sourceText": "The king said to Daniel, ‘Truly, your God is God of gods and Lord of kings and a revealer of mysteries, for you have been able to reveal this mystery!’"
+        },
+        {
+          "ref": "2:49",
+          "activeText": "At Daniel’s request the king appointed Shadrach, Meshach, and Abednego over the affairs of the province of Babylon. But Daniel remained at the king’s court.",
+          "sourceText": "Daniel made a request of the king, and he appointed Shadrach, Meshach, and Abednego over the affairs of the province of Babylon. But Daniel remained at the king’s court."
+        },
+        {
+          "ref": "3:1",
+          "activeText": "King Nebuchadnezzar made a golden statue whose height was sixty cubits and whose width was six cubits; he set it up on the plain of Dura in the province of Babylon.",
+          "sourceText": "The Golden Image 3"
+        },
+        {
+          "ref": "3:2",
+          "activeText": "Then King Nebuchadnezzar sent for the satraps, the prefects, and the governors, the counselors, the treasurers, the justices, the magistrates, and all the officials of the provinces to assemble and come to the dedication of the statue that King Nebuchadnezzar had set up.",
+          "sourceText": "Then King Nebuchadnezzar sent for the satraps, the prefects, and the governors, the counsellors, the treasurers, the justices, the magistrates, and all the officials of the provinces, to assemble and come to the dedication of the statue that King Nebuchadnezzar had set up."
+        },
+        {
+          "ref": "3:3",
+          "activeText": "So the satraps, the prefects, and the governors, the counselors, the treasurers, the justices, the magistrates, and all the officials of the provinces, assembled for the dedication of the statue that King Nebuchadnezzar had set up. When they were standing before the statue that Nebuchadnezzar had set up,",
+          "sourceText": "So the satraps, the prefects, and the governors, the counsellors, the treasurers, the justices, the magistrates, and all the officials of the provinces, assembled for the dedication of the statue that King Nebuchadnezzar had set up. When they were standing before the statue that Nebuchadnezzar had set up,"
+        },
+        {
+          "ref": "3:4",
+          "activeText": "the herald proclaimed aloud, “You are commanded, O peoples, nations, and languages,",
+          "sourceText": "the herald proclaimed aloud, ‘You are commanded, O peoples, nations, and languages,"
+        },
+        {
+          "ref": "3:6",
+          "activeText": "Whoever does not fall down and worship shall immediately be thrown into a furnace of blazing fire.”",
+          "sourceText": "Whoever does not fall down and worship shall immediately be thrown into a furnace of blazing fire.’"
+        },
+        {
+          "ref": "3:7",
+          "activeText": "Therefore, as soon as all the peoples heard the sound of the horn, pipe, lyre, trigon, harp, drum, and entire musical ensemble, all the peoples, nations, and languages fell down and worshiped the golden statue that King Nebuchadnezzar had set up.",
+          "sourceText": "Therefore, as soon as all the peoples heard the sound of the horn, pipe, lyre, trigon, harp, drum, and entire musical ensemble, all the peoples, nations, and languages fell down and worshipped the golden statue that King Nebuchadnezzar had set up."
+        },
+        {
+          "ref": "3:9",
+          "activeText": "They said to King Nebuchadnezzar, “O king, live forever!",
+          "sourceText": "They said to King Nebuchadnezzar, ‘O king, live for ever!"
+        },
+        {
+          "ref": "3:12",
+          "activeText": "There are certain Jews whom you have appointed over the affairs of the province of Babylon: Shadrach, Meshach, and Abednego. These pay no heed to you, O king. They do not serve your gods and they do not worship the golden statue that you have set up.”",
+          "sourceText": "There are certain Jews whom you have appointed over the affairs of the province of Babylon: Shadrach, Meshach, and Abednego. These pay no heed to you, O king. They do not serve your gods and they do not worship the golden statue that you have set up.’"
+        },
+        {
+          "ref": "3:14",
+          "activeText": "Nebuchadnezzar said to them, “Is it true, O Shadrach, Meshach, and Abednego, that you do not serve my gods and you do not worship the golden statue that I have set up?",
+          "sourceText": "Nebuchadnezzar said to them, ‘Is it true, O Shadrach, Meshach, and Abednego, that you do not serve my gods and you do not worship the golden statue that I have set up?"
+        },
+        {
+          "ref": "3:15",
+          "activeText": "Now if you are ready when you hear the sound of the horn, pipe, lyre, trigon, harp, drum, and entire musical ensemble to fall down and worship the statue that I have made, well and good. But if you do not worship, you shall immediately be thrown into a furnace of blazing fire, and who is the god that will deliver you out of my hands?”",
+          "sourceText": "Now if you are ready when you hear the sound of the horn, pipe, lyre, trigon, harp, drum, and entire musical ensemble to fall down and worship the statue that I have made, well and good. But if you do not worship, you shall immediately be thrown into a furnace of blazing fire, and who is the god that will deliver you out of my hands?’"
+        },
+        {
+          "ref": "3:16",
+          "activeText": "Shadrach, Meshach, and Abednego answered the king, “O Nebuchadnezzar, we have no need to present a defense to you in this matter.",
+          "sourceText": "Shadrach, Meshach, and Abednego answered the king, ‘O Nebuchadnezzar, we have no need to present a defence to you in this matter."
+        },
+        {
+          "ref": "3:18",
+          "activeText": "But if not, be it known to you, O king, that we will not serve your gods and we will not worship the golden statue that you have set up.”",
+          "sourceText": "But if not, be it known to you, O king, that we will not serve your gods and we will not worship the golden statue that you have set up.’"
+        },
+        {
+          "ref": "3:19",
+          "activeText": "Then Nebuchadnezzar was so filled with rage against Shadrach, Meshach, and Abednego that his face was distorted. He ordered the furnace heated seven times a more than was customary,",
+          "sourceText": "The Fiery Furnace Then Nebuchadnezzar was so filled with rage against Shadrach, Meshach, and Abednego that his face was distorted. He ordered the furnace to be heated up seven times more than was customary,"
+        },
+        {
+          "ref": "3:24",
+          "activeText": "They walked around in the midst of the flames, singing hymns to God and blessing the Lord.",
+          "sourceText": "Then King Nebuchadnezzar was astonished and rose up quickly. He said to his counsellors, ‘Was it not three men that we threw bound into the fire?’ They answered the king, ‘True, O king.’"
+        },
+        {
+          "ref": "3:25",
+          "activeText": "Then Azariah stood still in the midst of the fire and prayed aloud: ",
+          "sourceText": "He replied, ‘But I see four men unbound, walking in the middle of the fire, and they are not hurt; and the fourth has the appearance of a god.’"
+        },
+        {
+          "ref": "3:26",
+          "activeText": "“Blessed are you, O Lord, God of our ancestors, and worthy of praise; and glorious is your name forever!”",
+          "sourceText": "Nebuchadnezzar then approached the door of the furnace of blazing fire and said, ‘Shadrach, Meshach, and Abednego, servants of the Most High God, come out! Come here!’ So Shadrach, Meshach, and Abednego came out from the fire."
+        },
+        {
+          "ref": "3:27",
+          "activeText": "“For you are just in all you have done; all your works are true and your ways right, and all your judgments are true.”",
+          "sourceText": "And the satraps, the prefects, the governors, and the king’s counsellors gathered together and saw that the fire had not had any power over the bodies of those men; the hair of their heads was not singed, their tunics were not harmed, and not even the smell of fire came from them."
+        },
+        {
+          "ref": "3:28",
+          "activeText": "“You have executed true judgments in all that you have brought upon us and upon Jerusalem, the holy city of our ancestors; for in truth and justice you have brought all this upon us because of our sins.”",
+          "sourceText": "Nebuchadnezzar said, ‘Blessed be the God of Shadrach, Meshach, and Abednego, who has sent his angel and delivered his servants who trusted in him. They disobeyed the king’s command and yielded up their bodies rather than serve and worship any god except their own God."
+        },
+        {
+          "ref": "3:29",
+          "activeText": "“For we have sinfully and lawlessly departed from you, and have sinned in all things and have not obeyed your commandments;”",
+          "sourceText": "Therefore I make a decree: Any people, nation, or language that utters blasphemy against the God of Shadrach, Meshach, and Abednego shall be torn limb from limb, and their houses laid in ruins; for there is no other god who is able to deliver in this way.’"
+        },
+        {
+          "ref": "3:30",
+          "activeText": "“we have not observed them or done as you have commanded us, so that it might go well with us.”",
+          "sourceText": "Then the king promoted Shadrach, Meshach, and Abednego in the province of Babylon."
+        },
+        {
+          "ref": "4:1",
+          "activeText": "King Nebuchadnezzar to all peoples, nations, and languages that live throughout the whole world: May you have abundant prosperity!",
+          "sourceText": "Nebuchadnezzar’s Second Dream 4"
+        },
+        {
+          "ref": "4:3",
+          "activeText": "How great are his signs, how mighty his wonders! His kingdom is an everlasting kingdom, and his sovereignty endures from generation to generation.",
+          "sourceText": "How great are his signs, how mighty his wonders! His kingdom is an everlasting kingdom, and his sovereignty is from generation to generation."
+        },
+        {
+          "ref": "4:5",
+          "activeText": "I saw a dream that frightened me; my thoughts in bed and the visions of my head terrified me.",
+          "sourceText": "I saw a dream that frightened me; my fantasies in bed and the visions of my head terrified me."
+        },
+        {
+          "ref": "4:7",
+          "activeText": "When the magicians, the enchanters, the Chaldeans, and the diviners came in, I told them the dream, but they could not tell me its interpretation.",
+          "sourceText": "Then the magicians, the enchanters, the Chaldeans, and the diviners came in, and I told them the dream, but they could not tell me its interpretation."
+        },
+        {
+          "ref": "4:9",
+          "activeText": "“O Belteshazzar, chief of the magicians, I know that you are endowed with a spirit of the holy gods and that no mystery is too difficult for you. Hear the visions of my dream that I saw and tell me its interpretation.",
+          "sourceText": "‘O Belteshazzar, chief of the magicians, I know that you are endowed with a spirit of the holy gods and that no mystery is too difficult for you. Hear the dream that I saw; tell me its interpretation."
+        },
+        {
+          "ref": "4:10",
+          "activeText": "Upon my bed this is what I saw; there was a tree at the center of the earth, and its height was great.",
+          "sourceText": "Upon my bed this is what I saw; there was a tree at the centre of the earth, and its height was great."
+        },
+        {
+          "ref": "4:11",
+          "activeText": "The tree grew and became strong; its top reached to heaven, and it was visible to the ends of the whole earth.",
+          "sourceText": "The tree grew great and strong, its top reached to heaven, and it was visible to the ends of the whole earth."
+        },
+        {
+          "ref": "4:12",
+          "activeText": "Its foliage was beautiful and its fruit abundant, and it provided food for all. The animals of the field found shade under it, the birds of the air nested in its branches, and from it all living beings were fed.",
+          "sourceText": "Its foliage was beautiful, its fruit abundant, and it provided food for all. The animals of the field found shade under it, the birds of the air nested in its branches, and from it all living beings were fed."
+        },
+        {
+          "ref": "4:13",
+          "activeText": "I continued to look in the visions of my head as I lay in bed, and there was a holy watcher, coming down from heaven.",
+          "sourceText": "‘I continued looking, in the visions of my head as I lay in bed, and there was a holy watcher, coming down from heaven."
+        },
+        {
+          "ref": "4:14",
+          "activeText": "He cried aloud and said: ‘Cut down the tree and chop off its branches, strip off its foliage and scatter its fruit. Let the animals flee from under it and the birds from its branches.",
+          "sourceText": "He cried aloud and said: “Cut down the tree and chop off its branches, strip off its foliage and scatter its fruit. Let the animals flee from beneath it and the birds from its branches."
+        },
+        {
+          "ref": "4:17",
+          "activeText": "The sentence is rendered by decree of the watchers, the decision is given by word of the holy ones, in order that all who live may know that the Most High is sovereign over the kingdom of mortals; he gives it to whom he will and sets over it the lowliest of human beings.’",
+          "sourceText": "The sentence is rendered by decree of the watchers, the decision is given by order of the holy ones, in order that all who live may know that the Most High is sovereign over the kingdom of mortals; he gives it to whom he will and sets over it the lowliest of human beings.”"
+        },
+        {
+          "ref": "4:18",
+          "activeText": "“This is the dream that I, King Nebuchadnezzar, saw. Now you, Belteshazzar, tell me the interpretation, since all the wise men of my kingdom are unable to tell me the interpretation; you are able, however, for you are endowed with a spirit of the holy gods.”",
+          "sourceText": "‘This is the dream that I, King Nebuchadnezzar, saw. Now you, Belteshazzar, declare the interpretation, since all the wise men of my kingdom are unable to tell me the interpretation. You are able, however, for you are endowed with a spirit of the holy gods.’"
+        },
+        {
+          "ref": "4:19",
+          "activeText": "Then Daniel, who was called Belteshazzar, was severely distressed for a while, and his thoughts terrified him. The king said, “Belteshazzar, do not let the dream or the interpretation terrify you.” Belteshazzar answered, “My lord, may the dream be for those who hate you, and its interpretation for your enemies!",
+          "sourceText": "Daniel Interprets the Second Dream Then Daniel, who was called Belteshazzar, was severely distressed for a while. His thoughts terrified him. The king said, ‘Belteshazzar, do not let the dream or the interpretation terrify you.’ Belteshazzar answered, ‘My lord, may the dream be for those who hate you, and its interpretation for your enemies!"
+        },
+        {
+          "ref": "4:20",
+          "activeText": "The tree that you saw, which grew and became strong, so that its top reached to heaven and was visible to the end of the whole earth,",
+          "sourceText": "The tree that you saw, which grew great and strong, so that its top reached to heaven and was visible to the end of the whole earth,"
+        },
+        {
+          "ref": "4:22",
+          "activeText": "it is you, O king! You have grown and become strong. Your greatness has increased and reaches to heaven, and your sovereignty to the ends of the earth.",
+          "sourceText": "it is you, O king! You have grown great and strong. Your greatness has increased and reaches to heaven, and your sovereignty to the ends of the earth."
+        },
+        {
+          "ref": "4:23",
+          "activeText": "And whereas the king saw a holy watcher coming down from heaven and saying, ‘Cut down the tree and destroy it, but leave its stump and roots in the ground, with a band of iron and bronze, in the tender grass of the field; and let him be bathed with the dew of heaven, and let his lot be with the animals of the field, until seven times pass over him’—",
+          "sourceText": "And whereas the king saw a holy watcher coming down from heaven and saying, “Cut down the tree and destroy it, but leave its stump and roots in the ground, with a band of iron and bronze, in the grass of the field; and let him be bathed with the dew of heaven, and let his lot be with the animals of the field, until seven times pass over him”—"
+        },
+        {
+          "ref": "4:24",
+          "activeText": "this is the interpretation, O king: it is a decree of the Most High that has come upon my lord the king:",
+          "sourceText": "this is the interpretation, O king, and it is a decree of the Most High that has come upon my lord the king:"
+        },
+        {
+          "ref": "4:25",
+          "activeText": "you shall be driven away from human society, and your dwelling shall be with the wild animals. You shall be made to eat grass like oxen, and you shall be bathed with the dew of heaven, and seven times shall pass over you, until you have learned that the Most High has sovereignty over the kingdom of mortals and gives it to whom he will.",
+          "sourceText": "You shall be driven away from human society, and your dwelling shall be with the wild animals. You shall be made to eat grass like oxen, you shall be bathed with the dew of heaven, and seven times shall pass over you, until you have learned that the Most High has sovereignty over the kingdom of mortals, and gives it to whom he will."
+        },
+        {
+          "ref": "4:27",
+          "activeText": "Therefore, O king, may my counsel be acceptable to you: atone for your sins with righteousness, and your iniquities with mercy to the oppressed, so that your prosperity may perhaps be prolonged.”",
+          "sourceText": "Therefore, O king, may my counsel be acceptable to you: atone for your sins with righteousness, and your iniquities with mercy to the oppressed, so that your prosperity may be prolonged.’"
+        },
+        {
+          "ref": "4:28",
+          "activeText": "All this came upon King Nebuchadnezzar.",
+          "sourceText": "Nebuchadnezzar’s Humiliation All this came upon King Nebuchadnezzar."
+        },
+        {
+          "ref": "4:30",
+          "activeText": "and the king uttered these words: “Is this not magnificent Babylon, which I have built as a royal residence by my mighty power and for my glorious majesty?”",
+          "sourceText": "and the king said, ‘Is this not magnificent Babylon, which I have built as a royal capital by my mighty power and for my glorious majesty?’"
+        },
+        {
+          "ref": "4:31",
+          "activeText": "While the words were still in the king’s mouth, a voice came from heaven: “O King Nebuchadnezzar, to you it is declared: The kingdom has departed from you!",
+          "sourceText": "While the words were still in the king’s mouth, a voice came from heaven: ‘O King Nebuchadnezzar, to you it is declared: The kingdom has departed from you!"
+        },
+        {
+          "ref": "4:32",
+          "activeText": "You shall be driven away from human society, and your dwelling shall be with the wild animals. You shall be made to eat grass like oxen, and seven times shall pass over you, until you have learned that the Most High has sovereignty over the kingdom of mortals and gives it to whom he will.”",
+          "sourceText": "You shall be driven away from human society, and your dwelling shall be with the animals of the field. You shall be made to eat grass like oxen, and seven times shall pass over you, until you have learned that the Most High has sovereignty over the kingdom of mortals and gives it to whom he will.’"
+        },
+        {
+          "ref": "4:34",
+          "activeText": "When that period was over, I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me. I blessed the Most High, and praised and honored the one who lives forever. For his sovereignty is an everlasting sovereignty, and his kingdom endures from generation to generation.",
+          "sourceText": "Nebuchadnezzar Praises God When that period was over, I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me. I blessed the Most High, and praised and honoured the one who lives for ever. For his sovereignty is an everlasting sovereignty, and his kingdom endures from generation to generation."
+        },
+        {
+          "ref": "4:35",
+          "activeText": "All the inhabitants of the earth are accounted as nothing, and he does what he wills with the host of heaven and the inhabitants of the earth. There is no one who can stay his hand or say to him, “What are you doing?”",
+          "sourceText": "All the inhabitants of the earth are accounted as nothing, and he does what he wills with the host of heaven and the inhabitants of the earth. There is no one who can stay his hand or say to him, ‘What are you doing?’"
+        },
+        {
+          "ref": "4:36",
+          "activeText": "At that time my reason returned to me; and my majesty and splendor were restored to me for the glory of my kingdom. My counselors and my lords sought me out, I was re-established in my kingdom, and still more greatness was added to me.",
+          "sourceText": "At that time my reason returned to me; and my majesty and splendour were restored to me for the glory of my kingdom. My counsellors and my lords sought me out, I was re-established over my kingdom, and still more greatness was added to me."
+        },
+        {
+          "ref": "4:37",
+          "activeText": "Now I, Nebuchadnezzar, praise and extol and honor the King of heaven, for all his works are truth, and his ways are justice; and he is able to humble those who walk in pride.",
+          "sourceText": "Now I, Nebuchadnezzar, praise and extol and honour the King of heaven, for all his works are truth, and his ways are justice; and he is able to bring low those who walk in pride."
+        },
+        {
+          "ref": "5:1",
+          "activeText": "King Belshazzar made a great festival for a thousand of his lords, and he was drinking wine in the presence of the thousand.",
+          "sourceText": "Belshazzar’s Feast 5"
+        },
+        {
+          "ref": "5:5",
+          "activeText": "Immediately the fingers of a human hand appeared and began writing on the plaster of the wall of the royal palace, next to the lampstand. The king was watching the hand as it wrote.",
+          "sourceText": "The Writing on the Wall Immediately the fingers of a human hand appeared and began writing on the plaster of the wall of the royal palace, next to the lampstand. The king was watching the hand as it wrote."
+        },
+        {
+          "ref": "5:7",
+          "activeText": "The king cried aloud to bring in the enchanters, the Chaldeans, and the diviners; and the king said to the wise men of Babylon, “Whoever can read this writing and tell me its interpretation shall be clothed in purple, have a chain of gold around his neck, and rank third in the kingdom.”",
+          "sourceText": "The king cried aloud to bring in the enchanters, the Chaldeans, and the diviners; and the king said to the wise men of Babylon, ‘Whoever can read this writing and tell me its interpretation shall be clothed in purple, have a chain of gold around his neck, and rank third in the kingdom.’"
+        },
+        {
+          "ref": "5:9",
+          "activeText": "Then King Belshazzar became sufficiently terrified and his face turned pale, and his lords were perplexed.",
+          "sourceText": "Then King Belshazzar became greatly terrified and his face turned pale, and his lords were perplexed."
+        },
+        {
+          "ref": "5:10",
+          "activeText": "The queen, when she heard the discussion of the king and his lords, came into the banqueting hall. The queen said, “O king, live forever! Do not let your thoughts terrify you or your face grow pale.",
+          "sourceText": "The queen, when she heard the discussion of the king and his lords, came into the banqueting-hall. The queen said, ‘O king, live for ever! Do not let your thoughts terrify you or your face grow pale."
+        },
+        {
+          "ref": "5:11",
+          "activeText": "There is a man in your kingdom who is endowed with a spirit of the holy gods. In the days of your father he was found to have enlightenment, understanding, and wisdom like the wisdom of the gods. Your father, King Nebuchadnezzar, made him chief of the magicians, enchanters, Chaldeans, and diviners.",
+          "sourceText": "There is a man in your kingdom who is endowed with a spirit of the holy gods. In the days of your father he was found to have enlightenment, understanding, and wisdom like the wisdom of the gods. Your father, King Nebuchadnezzar, made him chief of the magicians, enchanters, Chaldeans, and diviners,"
+        },
+        {
+          "ref": "5:12",
+          "activeText": "Because an excellent spirit, knowledge, and understanding to interpret dreams, explain riddles, and solve problems were found in this Daniel, whom the king named Belteshazzar. Now let Daniel be called, and he will give the interpretation.”",
+          "sourceText": "because an excellent spirit, knowledge, and understanding to interpret dreams, explain riddles, and solve problems were found in this Daniel, whom the king named Belteshazzar. Now let Daniel be called, and he will give the interpretation.’"
+        },
+        {
+          "ref": "5:13",
+          "activeText": "Then Daniel was brought in before the king. The king said to Daniel, “Are you that Daniel, one of the exiles of Judah, whom my father the king brought from Judah?",
+          "sourceText": "The Writing on the Wall Interpreted Then Daniel was brought in before the king. The king said to Daniel, ‘So you are Daniel, one of the exiles of Judah, whom my father the king brought from Judah?"
+        },
+        {
+          "ref": "5:15",
+          "activeText": "Now the wise men and the enchanters have been brought in before me to read this writing and tell me its interpretation, but they were not able to give the interpretation of the matter.",
+          "sourceText": "Now the wise men, the enchanters, have been brought in before me to read this writing and tell me its interpretation, but they were not able to give the interpretation of the matter."
+        },
+        {
+          "ref": "5:16",
+          "activeText": "But I have heard that you can give interpretations and solve problems. Now if you are able to read the writing and tell me its interpretation, you shall be clothed in purple, have a chain of gold around your neck, and rank third in the kingdom.”",
+          "sourceText": "But I have heard that you can give interpretations and solve problems. Now if you are able to read the writing and tell me its interpretation, you shall be clothed in purple, have a chain of gold around your neck, and rank third in the kingdom.’"
+        },
+        {
+          "ref": "5:17",
+          "activeText": "Then Daniel answered in the presence of the king, “Keep your gifts for yourself, and give your rewards to another! Nevertheless I will read the writing to the king and let him know the interpretation.",
+          "sourceText": "Then Daniel answered in the presence of the king, ‘Let your gifts be for yourself, or give your rewards to someone else! Nevertheless, I will read the writing to the king and let him know the interpretation."
+        },
+        {
+          "ref": "5:19",
+          "activeText": "And because of the greatness that he gave him, all peoples, nations, and languages trembled and feared before him. He killed those he wanted to kill, and kept alive those he wanted to keep alive; he honored those he wanted to honor, and humbled those he wanted to humble.",
+          "sourceText": "And because of the greatness that he gave him, all peoples, nations, and languages trembled and feared before him. He killed those he wanted to kill, kept alive those he wanted to keep alive, honoured those he wanted to honour, and degraded those he wanted to degrade."
+        },
+        {
+          "ref": "5:20",
+          "activeText": "But when his heart was lifted up and his spirit was hardened so that he acted proudly, he was deposed from his kingly throne, and his glory was taken from him.",
+          "sourceText": "But when his heart was lifted up and his spirit was hardened so that he acted proudly, he was deposed from his kingly throne, and his glory was stripped from him."
+        },
+        {
+          "ref": "5:21",
+          "activeText": "He was driven from human society, and his mind was made like that of an animal. His dwelling was with the wild asses, he was fed grass like oxen, and his body was bathed with the dew of heaven, until he learned that the Most High God has sovereignty over the kingdom of mortals, and sets over it whomever he will.",
+          "sourceText": "He was driven from human society, and his mind was made like that of an animal. His dwelling was with the wild asses, he was fed grass like oxen, and his body was bathed with the dew of heaven, until he learned that the Most High God has sovereignty over the kingdom of mortals, and sets over it whomsoever he will."
+        },
+        {
+          "ref": "5:23",
+          "activeText": "You have exalted yourself against the Lord of heaven! The vessels of his house have been brought in before you, and you and your lords, your wives and your concubines have been drinking wine from them. You have praised the gods of silver and gold, of bronze, iron, wood, and stone, which do not see or hear or know; but the God in whose hand is your very breath, and to whom belong all your ways, you have not honored.",
+          "sourceText": "You have exalted yourself against the Lord of heaven! The vessels of his temple have been brought in before you, and you and your lords, your wives and your concubines have been drinking wine from them. You have praised the gods of silver and gold, of bronze, iron, wood, and stone, which do not see or hear or know; but the God in whose power is your very breath, and to whom belong all your ways, you have not honoured."
+        },
+        {
+          "ref": "5:24",
+          "activeText": "“So from his presence the hand was sent and this writing was inscribed.",
+          "sourceText": "‘So from his presence the hand was sent and this writing was inscribed."
+        },
+        {
+          "ref": "5:25",
+          "activeText": "And this is the writing that was inscribed: mene, mene, tekel, and parsin.",
+          "sourceText": "And this is the writing that was inscribed: mene"
+        },
+        {
+          "ref": "5:26",
+          "activeText": "This is the interpretation of the matter: mene, God has numbered the days of your kingdom and brought it to an end;",
+          "sourceText": "This is the interpretation of the matter: mene"
+        },
+        {
+          "ref": "5:27",
+          "activeText": "tekel, you have been weighed on the scales and found wanting;",
+          "sourceText": "tekel"
+        },
+        {
+          "ref": "5:28",
+          "activeText": "peres, your kingdom is divided and given to the Medes and Persians.”",
+          "sourceText": "peres"
+        },
+        {
+          "ref": "6:1",
+          "activeText": "It pleased Darius to set over the kingdom one hundred twenty satraps, stationed throughout the whole kingdom,",
+          "sourceText": "The Plot against Daniel 6"
+        },
+        {
+          "ref": "6:2",
+          "activeText": "and over them three presidents, including Daniel; to these the satraps were to give account, so that the king might suffer no loss.",
+          "sourceText": "and over them three presidents, including Daniel; to these the satraps gave account, so that the king might suffer no loss."
+        },
+        {
+          "ref": "6:4",
+          "activeText": "So the presidents and the satraps tried to find grounds for complaint against Daniel in connection with the kingdom. But they could find no grounds for complaint or any corruption, because he was faithful, and no negligence or corruption was found in him.",
+          "sourceText": "So the presidents and the satraps tried to find grounds for complaint against Daniel in connection with the kingdom. But they could find no grounds for complaint or any corruption, because he was faithful, and no negligence or corruption could be found in him."
+        },
+        {
+          "ref": "6:5",
+          "activeText": "The men said, “We shall not find any ground for complaint against this Daniel unless we find it in connection with the law of his God.”",
+          "sourceText": "The men said, ‘We shall not find any ground for complaint against this Daniel unless we find it in connection with the law of his God.’"
+        },
+        {
+          "ref": "6:6",
+          "activeText": "So the presidents and satraps conspired and came to the king and said to him, “O King Darius, live forever!",
+          "sourceText": "So the presidents and satraps conspired and came to the king and said to him, ‘O King Darius, live for ever!"
+        },
+        {
+          "ref": "6:7",
+          "activeText": "All the presidents of the kingdom, the prefects and the satraps, the counselors and the governors are agreed that the king should establish an ordinance and enforce an interdict, that whoever prays to anyone, divine or human, for thirty days, except to you, O king, shall be thrown into a den of lions.",
+          "sourceText": "All the presidents of the kingdom, the prefects and the satraps, the counsellors and the governors, are agreed that the king should establish an ordinance and enforce an interdict, that whoever prays to anyone, divine or human, for thirty days, except to you, O king, shall be thrown into a den of lions."
+        },
+        {
+          "ref": "6:8",
+          "activeText": "Now, O king, establish the interdict and sign the document, so that it cannot be changed, according to the law of the Medes and the Persians, which cannot be revoked.”",
+          "sourceText": "Now, O king, establish the interdict and sign the document, so that it cannot be changed, according to the law of the Medes and the Persians, which cannot be revoked.’"
+        },
+        {
+          "ref": "6:10",
+          "activeText": "Although Daniel knew that the document had been signed, he continued to go to his house, which had windows in its upper room open toward Jerusalem, and to get down on his knees three times a day to pray to his God and praise him, just as he had done previously.",
+          "sourceText": "Daniel in the Lions’ Den Although Daniel knew that the document had been signed, he continued to go to his house, which had windows in its upper room open towards Jerusalem, and to get down on his knees three times a day to pray to his God and praise him, just as he had done previously."
+        },
+        {
+          "ref": "6:12",
+          "activeText": "Then they approached the king and said concerning the interdict, “O king! Did you not sign an interdict, that anyone who prays to anyone, divine or human, within thirty days, except to you, O king, shall be thrown into a den of lions?” The king answered, “The thing is fixed, according to the law of the Medes and Persians, which cannot be revoked.”",
+          "sourceText": "Then they approached the king and said concerning the interdict, ‘O king! Did you not sign an interdict, that anyone who prays to anyone, divine or human, within thirty days except to you, O king, shall be thrown into a den of lions?’ The king answered, ‘The thing stands fast, according to the law of the Medes and Persians, which cannot be revoked.’"
+        },
+        {
+          "ref": "6:13",
+          "activeText": "Then they responded to the king, “Daniel, one of the exiles from Judah, pays no attention to you, O king, or to the interdict you have signed, but he is saying his prayers three times a day.”",
+          "sourceText": "Then they responded to the king, ‘Daniel, one of the exiles from Judah, pays no attention to you, O king, or to the interdict you have signed, but he is saying his prayers three times a day.’"
+        },
+        {
+          "ref": "6:14",
+          "activeText": "When the king heard this, he was much distressed and set his mind to deliver Daniel; and until the sun went down he made every effort to rescue him.",
+          "sourceText": "When the king heard the charge, he was very much distressed. He was determined to save Daniel, and until the sun went down he made every effort to rescue him."
+        },
+        {
+          "ref": "6:15",
+          "activeText": "Then the conspirators came to the king and said to him, “Know, O king, that it is a law of the Medes and Persians that no interdict or ordinance that the king establishes can be changed.”",
+          "sourceText": "Then the conspirators came to the king and said to him, ‘Know, O king, that it is a law of the Medes and Persians that no interdict or ordinance that the king establishes can be changed.’"
+        },
+        {
+          "ref": "6:16",
+          "activeText": "Then the king gave the command, and Daniel was brought and thrown into the den of lions. The king said to Daniel, “May your God, whom you faithfully serve, deliver you!”",
+          "sourceText": "Then the king gave the command, and Daniel was brought and thrown into the den of lions. The king said to Daniel, ‘May your God, whom you faithfully serve, deliver you!’"
+        },
+        {
+          "ref": "6:19",
+          "activeText": "Then, at break of day, the king got up and hurried to the den of lions.",
+          "sourceText": "Daniel Saved from the Lions Then, at break of day, the king got up and hurried to the den of lions."
+        },
+        {
+          "ref": "6:20",
+          "activeText": "When he came near the den where Daniel was, he cried out anxiously to Daniel, “O Daniel, servant of the living God, has your God whom you faithfully serve been able to deliver you from the lions?”",
+          "sourceText": "When he came near the den where Daniel was, he cried out anxiously to Daniel, ‘O Daniel, servant of the living God, has your God whom you faithfully serve been able to deliver you from the lions?’"
+        },
+        {
+          "ref": "6:21",
+          "activeText": "Daniel then said to the king, “O king, live forever!",
+          "sourceText": "Daniel then said to the king, ‘O king, live for ever!"
+        },
+        {
+          "ref": "6:22",
+          "activeText": "My God sent his angel and shut the lions’ mouths so that they would not hurt me, because I was found blameless before him; and also before you, O king, I have done no wrong.”",
+          "sourceText": "My God sent his angel and shut the lions’ mouths so that they would not hurt me, because I was found blameless before him; and also before you, O king, I have done no wrong.’"
+        },
+        {
+          "ref": "6:24",
+          "activeText": "The king gave a command, and those who had accused Daniel were brought and thrown into the den of lions, they, their children, and their wives. Before they reached the bottom of the den the lions overpowered them and broke all their bones in pieces.",
+          "sourceText": "The king gave a command, and those who had accused Daniel were brought and thrown into the den of lions—they, their children, and their wives. Before they reached the bottom of the den the lions overpowered them and broke all their bones in pieces."
+        },
+        {
+          "ref": "6:25",
+          "activeText": "Then King Darius wrote to all peoples and nations of every language throughout the whole world: “May you have abundant prosperity!",
+          "sourceText": "Then King Darius wrote to all peoples and nations of every language throughout the whole world: ‘May you have abundant prosperity!"
+        },
+        {
+          "ref": "6:26",
+          "activeText": "I make a decree, that in all my royal dominion people should tremble and fear before the God of Daniel: For he is the living God, enduring forever. His kingdom shall never be destroyed, and his dominion has no end.",
+          "sourceText": "I make a decree, that in all my royal dominion people should tremble and fear before the God of Daniel: For he is the living God, enduring for ever. His kingdom shall never be destroyed, and his dominion has no end."
+        },
+        {
+          "ref": "6:27",
+          "activeText": "He delivers and rescues, he works signs and wonders in heaven and on earth; for he has saved Daniel from the power of the lions.”",
+          "sourceText": "He delivers and rescues, he works signs and wonders in heaven and on earth; for he has saved Daniel from the power of the lions.’"
+        },
+        {
+          "ref": "7:1",
+          "activeText": "In the first year of King Belshazzar of Babylon, Daniel had a dream and visions of his head as he lay in bed. Then he wrote down the dream:",
+          "sourceText": "Visions of the Four Beasts 7"
+        },
+        {
+          "ref": "7:5",
+          "activeText": "Another beast appeared, a second one, that looked like a bear. It was raised up on one side, had three tusks in its mouth among its teeth and was told, “Arise, devour many bodies!”",
+          "sourceText": "Another beast appeared, a second one, that looked like a bear. It was raised up on one side, had three tusks in its mouth among its teeth and was told, ‘Arise, devour many bodies!’"
+        },
+        {
+          "ref": "7:7",
+          "activeText": "After this I saw in the visions by night a fourth beast, terrifying and extraordinarily strong. It had great iron teeth and was devouring, breaking in pieces, and stamping what was left with its feet. It was different from all the beasts that preceded it, and it had ten horns.",
+          "sourceText": "After this I saw in the visions by night a fourth beast, terrifying and dreadful and exceedingly strong. It had great iron teeth and was devouring, breaking in pieces, and stamping what was left with its feet. It was different from all the beasts that preceded it, and it had ten horns."
+        },
+        {
+          "ref": "7:9",
+          "activeText": "As I watched, thrones were set in place, and an Ancient One took his throne, his clothing was white as snow, and the hair of his head like pure wool; his throne was fiery flames, and its wheels were burning fire.",
+          "sourceText": "Judgement before the Ancient One As I watched, thrones were set in place, and an Ancient One took his throne; his clothing was white as snow, and the hair of his head like pure wool; his throne was fiery flames, and its wheels were burning fire."
+        },
+        {
+          "ref": "7:10",
+          "activeText": "A stream of fire issued and flowed out from his presence. A thousand thousands served him, and ten thousand times ten thousand stood attending him. The court sat in judgment, and the books were opened.",
+          "sourceText": "A stream of fire issued and flowed out from his presence. A thousand thousand served him, and ten thousand times ten thousand stood attending him. The court sat in judgement, and the books were opened."
+        },
+        {
+          "ref": "7:15",
+          "activeText": "As for me, Daniel, my spirit was troubled within me, and the visions of my head terrified me.",
+          "sourceText": "Daniel’s Visions Interpreted As for me, Daniel, my spirit was troubled within me, and the visions of my head terrified me."
+        },
+        {
+          "ref": "7:16",
+          "activeText": "I approached one of those standing there and asked him the truth concerning all this. So he said that he would disclose to me the interpretation of the matter:",
+          "sourceText": "I approached one of the attendants to ask him the truth concerning all this. So he said that he would disclose to me the interpretation of the matter:"
+        },
+        {
+          "ref": "7:17",
+          "activeText": "“As for these four great beasts, four kings shall arise out of the earth.",
+          "sourceText": "‘As for these four great beasts, four kings shall arise out of the earth."
+        },
+        {
+          "ref": "7:18",
+          "activeText": "But the holy ones of the Most High shall receive the kingdom and possess the kingdom forever—forever and ever.”",
+          "sourceText": "But the holy ones of the Most High shall receive the kingdom and possess the kingdom for ever—for ever and ever.’"
+        },
+        {
+          "ref": "7:20",
+          "activeText": "and concerning the ten horns that were on its head, and concerning the other horn, which came up and to make room for which three of them fell out—the horn that had eyes and a mouth that spoke arrogantly, and that seemed greater than the others.",
+          "sourceText": "and concerning the ten horns that were on its head, and concerning the other horn that came up, and to make room for which three of them fell out—the horn that had eyes and a mouth that spoke arrogantly, and that seemed greater than the others."
+        },
+        {
+          "ref": "7:22",
+          "activeText": "until the Ancient One came; then judgment was given for the holy ones of the Most High, and the time arrived when the holy ones gained possession of the kingdom.",
+          "sourceText": "until the Ancient One came; then judgement was given for the holy ones of the Most High, and the time arrived when the holy ones gained possession of the kingdom."
+        },
+        {
+          "ref": "7:23",
+          "activeText": "This is what he said: “As for the fourth beast, there shall be a fourth kingdom on earth that shall be different from all the other kingdoms; it shall devour the whole earth, and trample it down, and break it to pieces.",
+          "sourceText": "This is what he said: ‘As for the fourth beast, there shall be a fourth kingdom on earth that shall be different from all the other kingdoms; it shall devour the whole earth, and trample it down, and break it to pieces."
+        },
+        {
+          "ref": "7:26",
+          "activeText": "Then the court shall sit in judgment, and his dominion shall be taken away, to be consumed and totally destroyed.",
+          "sourceText": "Then the court shall sit in judgement, and his dominion shall be taken away, to be consumed and totally destroyed."
+        },
+        {
+          "ref": "7:27",
+          "activeText": "The kingship and dominion and the greatness of the kingdoms under the whole heaven shall be given to the people of the holy ones of the Most High; their kingdom shall be an everlasting kingdom, and all dominions shall serve and obey them.”",
+          "sourceText": "The kingship and dominion and the greatness of the kingdoms under the whole heaven shall be given to the people of the holy ones of the Most High; their kingdom shall be an everlasting kingdom, and all dominions shall serve and obey them.’"
+        },
+        {
+          "ref": "8:1",
+          "activeText": "In the third year of the reign of King Belshazzar a vision appeared to me, Daniel, after the one that had appeared to me at first.",
+          "sourceText": "Vision of a Ram and a Goat 8"
+        },
+        {
+          "ref": "8:2",
+          "activeText": "In the vision I saw myself in Susa the capital, in the province of Elam, and I was by the river Ulai.",
+          "sourceText": "In the vision I was looking and saw myself in Susa the capital, in the province of Elam, and I was by the river Ulai."
+        },
+        {
+          "ref": "8:4",
+          "activeText": "I saw the ram charging westward and northward and southward. All beasts were powerless to withstand it, and no one could rescue from its power; it did as it pleased and became strong.",
+          "sourceText": "I saw the ram charging westwards and northwards and southwards. All beasts were powerless to withstand it, and no one could rescue from its power; it did as it pleased and became strong."
+        },
+        {
+          "ref": "8:5",
+          "activeText": "As I was considering, a male goat came from the west across the face of the whole earth without touching the ground; the goat had a horn between its eyes.",
+          "sourceText": "As I was watching, a male goat appeared from the west, coming across the face of the whole earth without touching the ground. The goat had a horn between its eyes."
+        },
+        {
+          "ref": "8:6",
+          "activeText": "It came toward the ram with the two horns that I had seen standing beside the river, and it ran at it with savage force.",
+          "sourceText": "It came towards the ram with the two horns that I had seen standing beside the river, and it ran at it with savage force."
+        },
+        {
+          "ref": "8:8",
+          "activeText": "Then the male goat grew exceedingly strong; but when it was most powerful, the great horn was broken, and in its place there came up four prominent horns toward the four winds of heaven.",
+          "sourceText": "Then the male goat grew exceedingly great; but at the height of its power, the great horn was broken, and in its place there came up four prominent horns towards the four winds of heaven."
+        },
+        {
+          "ref": "8:9",
+          "activeText": "Out of one of them came another horn, a little one, which grew exceedingly great toward the south, toward the east, and toward the beautiful land.",
+          "sourceText": "Out of one of them came another horn, a little one, which grew exceedingly great towards the south, towards the east, and towards the beautiful land."
+        },
+        {
+          "ref": "8:11",
+          "activeText": "Even against the prince of the host it acted arrogantly; it took the regular burnt offering away from him and overthrew the place of his sanctuary.",
+          "sourceText": "Even against the prince of the host it acted arrogantly; it took the regular burnt-offering away from him and overthrew the place of his sanctuary."
+        },
+        {
+          "ref": "8:12",
+          "activeText": "Because of wickedness, the host was given over to it together with the regular burnt offering; it cast truth to the ground, and kept prospering in what it did.",
+          "sourceText": "Because of wickedness, the host was given over to it together with the regular burnt-offering; it cast truth to the ground, and kept prospering in what it did."
+        },
+        {
+          "ref": "8:13",
+          "activeText": "Then I heard a holy one speaking, and another holy one said to the one that was speaking, “For how long is this vision concerning the regular burnt offering, the transgression that makes desolate, and the giving over of the sanctuary and host to be trampled?”",
+          "sourceText": "Then I heard a holy one speaking, and another holy one said to the one that spoke, ‘For how long is this vision concerning the regular burnt-offering, the transgression that makes desolate, and the giving over of the sanctuary and host to be trampled?’"
+        },
+        {
+          "ref": "8:14",
+          "activeText": "And he answered him, “For two thousand three hundred evenings and mornings; then the sanctuary shall be restored to its rightful state.”",
+          "sourceText": "And he answered him, ‘For two thousand three hundred evenings and mornings; then the sanctuary shall be restored to its rightful state.’"
+        },
+        {
+          "ref": "8:15",
+          "activeText": "When I, Daniel, had seen the vision, I tried to understand it. Then someone appeared standing before me, having the appearance of a man,",
+          "sourceText": "Gabriel Interprets the Vision When I, Daniel, had seen the vision, I tried to understand it. Then someone appeared standing before me, having the appearance of a man,"
+        },
+        {
+          "ref": "8:16",
+          "activeText": "and I heard a human voice from the Ulai, calling out, “Gabriel, help this man understand the vision.”",
+          "sourceText": "and I heard a human voice by the Ulai, calling, ‘Gabriel, help this man understand the vision.’"
+        },
+        {
+          "ref": "8:17",
+          "activeText": "So he came near where I stood; and when he came, I was terrified and fell prostrate. But he said to me, “Understand, O mortal, that the vision is for the time of the end.”",
+          "sourceText": "So he came near where I stood; and when he came, I became frightened and fell prostrate. But he said to me, ‘Understand, O mortal, that the vision is for the time of the end.’"
+        },
+        {
+          "ref": "8:18",
+          "activeText": "As he was speaking to me, I fell into a deep sleep with my face to the ground; but he touched me and set me on my feet.",
+          "sourceText": "As he was speaking to me, I fell into a trance, face to the ground; then he touched me and set me on my feet."
+        },
+        {
+          "ref": "8:19",
+          "activeText": "He said, “Listen, and I will tell you what will take place later in the period of wrath; for it refers to the appointed time of the end.",
+          "sourceText": "He said, ‘Listen, and I will tell you what will take place later in the period of wrath; for it refers to the appointed time of the end."
+        },
+        {
+          "ref": "8:23",
+          "activeText": "At the end of their rule, when the transgressions have reached their full measure, a king of bold countenance shall arise, skilled in intrigues.",
+          "sourceText": "At the end of their rule, when the transgressions have reached their full measure, a king of bold countenance shall arise, skilled in intrigue."
+        },
+        {
+          "ref": "8:24",
+          "activeText": "His power shall be great, he shall cause fearful destruction, and shall succeed in what he does. He shall destroy the powerful and the holy people.",
+          "sourceText": "He shall grow strong in power, shall cause fearful destruction, and shall succeed in what he does. He shall destroy the powerful and the people of the holy ones."
+        },
+        {
+          "ref": "8:25",
+          "activeText": "By his cunning he shall make deceit prosper under his hand, and in his own mind he shall be proud. Without warning he shall destroy many and shall even rise up against the Prince of princes. But he shall be broken, and not by human hands.",
+          "sourceText": "By his cunning he shall make deceit prosper under his hand, and in his own mind he shall be great. Without warning he shall destroy many and shall even rise up against the Prince of princes. But he shall be broken, and not by human hands."
+        },
+        {
+          "ref": "8:26",
+          "activeText": "The vision of the evenings and the mornings that has been told is true. As for you, seal up the vision, for it refers to many days from now.”",
+          "sourceText": "The vision of the evenings and the mornings that has been told is true. As for you, seal up the vision, for it refers to many days from now.’"
+        },
+        {
+          "ref": "9:1",
+          "activeText": "In the first year of Darius son of Ahasuerus, by birth a Mede, who became king over the realm of the Chaldeans—",
+          "sourceText": "Daniel’s Prayer for the People 9"
+        },
+        {
+          "ref": "9:2",
+          "activeText": "in the first year of his reign, I, Daniel, perceived in the books the number of years that, according to the word of the Lord to the prophet Jeremiah, must be fulfilled for the devastation of Jerusalem, namely, seventy years.",
+          "sourceText": "in the first year of his reign, I, Daniel, perceived in the books the number of years that, according to the word of the Lord"
+        },
+        {
+          "ref": "9:4",
+          "activeText": "I prayed to the Lord my God and made confession, saying, “Ah, Lord, great and awesome God, keeping covenant and steadfast love with those who love you and keep your commandments,",
+          "sourceText": "I prayed to the Lord ‘Ah, Lord, great and awesome God, keeping covenant and steadfast love with those who love you and keep your commandments,"
+        },
+        {
+          "ref": "9:7",
+          "activeText": "“Righteousness is on your side, O Lord, but open shame, as at this day, falls on us, the people of Judah, the inhabitants of Jerusalem, and all Israel, those who are near and those who are far away, in all the lands to which you have driven them, because of the treachery that they have committed against you.",
+          "sourceText": "‘Righteousness is on your side, O Lord, but open shame, as at this day, falls on us, the people of Judah, the inhabitants of Jerusalem, and all Israel, those who are near and those who are far away, in all the lands to which you have driven them, because of the treachery that they have committed against you."
+        },
+        {
+          "ref": "9:8",
+          "activeText": "Open shame, O Lord, falls on us, our kings, our officials, and our ancestors, because we have sinned against you.",
+          "sourceText": "Open shame, O Lord"
+        },
+        {
+          "ref": "9:10",
+          "activeText": "and have not obeyed the voice of the Lord our God by following his laws, which he set before us by his servants the prophets.",
+          "sourceText": "and have not obeyed the voice of the Lord"
+        },
+        {
+          "ref": "9:11",
+          "activeText": "“All Israel has transgressed your law and turned aside, refusing to obey your voice. So the curse and the oath written in the law of Moses, the servant of God, have been poured out upon us, because we have sinned against him.",
+          "sourceText": "‘All Israel has transgressed your law and turned aside, refusing to obey your voice. So the curse and the oath written in the law of Moses, the servant of God, have been poured out upon us, because we have sinned against you."
+        },
+        {
+          "ref": "9:13",
+          "activeText": "Just as it is written in the law of Moses, all this calamity has come upon us. We did not entreat the favor of the Lord our God, turning from our iniquities and reflecting on his fidelity.",
+          "sourceText": "Just as it is written in the law of Moses, all this calamity has come upon us. We did not entreat the favour of the Lord"
+        },
+        {
+          "ref": "9:14",
+          "activeText": "So the Lord kept watch over this calamity until he brought it upon us. Indeed, the Lord our God is right in all that he has done; for we have not obeyed his voice.",
+          "sourceText": "So the Lord"
+        },
+        {
+          "ref": "9:15",
+          "activeText": "“And now, O Lord our God, who brought your people out of the land of Egypt with a mighty hand and made your name renowned even to this day—we have sinned, we have done wickedly.",
+          "sourceText": "‘And now, O Lord our God, who brought your people out of the land of Egypt with a mighty hand and made your name renowned even to this day—we have sinned, we have done wickedly."
+        },
+        {
+          "ref": "9:16",
+          "activeText": "O Lord, in view of all your righteous acts, let your anger and wrath, we pray, turn away from your city Jerusalem, your holy mountain; because of our sins and the iniquities of our ancestors, Jerusalem and your people have become a disgrace among all our neighbors.",
+          "sourceText": "O Lord, in view of all your righteous acts, let your anger and wrath, we pray, turn away from your city Jerusalem, your holy mountain; because of our sins and the iniquities of our ancestors, Jerusalem and your people have become a disgrace among all our neighbours."
+        },
+        {
+          "ref": "9:19",
+          "activeText": "O Lord, hear; O Lord, forgive; O Lord, listen and act and do not delay! For your own sake, O my God, because your city and your people bear your name.”",
+          "sourceText": "O Lord, hear; O Lord, forgive; O Lord, listen and act and do not delay! For your own sake, O my God, because your city and your people bear your name!’"
+        },
+        {
+          "ref": "9:20",
+          "activeText": "While I was speaking, and was praying and confessing my sin and the sin of my people Israel, and presenting my supplication before the Lord my God on behalf of the holy mountain of my God—",
+          "sourceText": "The Seventy Weeks While I was speaking, and was praying and confessing my sin and the sin of my people Israel, and presenting my supplication before the Lord"
+        },
+        {
+          "ref": "9:22",
+          "activeText": "He came and said to me, “Daniel, I have now come out to give you wisdom and understanding.",
+          "sourceText": "He came and said to me, ‘Daniel, I have now come out to give you wisdom and understanding."
+        },
+        {
+          "ref": "9:24",
+          "activeText": "“Seventy weeks are decreed for your people and your holy city: to finish the transgression, to put an end to sin, and to atone for iniquity, to bring in everlasting righteousness, to seal both vision and prophet, and to anoint a most holy place.",
+          "sourceText": "‘Seventy weeks are decreed for your people and your holy city: to finish the transgression, to put an end to sin, and to atone for iniquity, to bring in everlasting righteousness, to seal both vision and prophet, and to anoint a most holy place."
+        },
+        {
+          "ref": "9:27",
+          "activeText": "He shall make a strong covenant with many for one week, and for half of the week he shall make sacrifice and offering cease; and in their place shall be an abomination that desolates, until the decreed end is poured out upon the desolator.”",
+          "sourceText": "He shall make a strong covenant with many for one week, and for half of the week he shall make sacrifice and offering cease; and in their place shall be an abomination that desolates, until the decreed end is poured out upon the desolator.’"
+        },
+        {
+          "ref": "10:1",
+          "activeText": "In the third year of King Cyrus of Persia a word was revealed to Daniel, who was named Belteshazzar. The word was true, and it concerned a great conflict. He understood the word and had insight into the vision.",
+          "sourceText": "Conflict of Nations and Heavenly Powers 10"
+        },
+        {
+          "ref": "10:4",
+          "activeText": "On the twenty-fourth day of the first month, as I was standing on the bank of the great river, that is, the Tigris,",
+          "sourceText": "On the twenty-fourth day of the first month, as I was standing on the bank of the great river (that is, the Tigris),"
+        },
+        {
+          "ref": "10:9",
+          "activeText": "Then I heard the sound of his words; and when I heard the sound of his words, I fell into a deep sleep on my face, with my face to the ground.",
+          "sourceText": "Then I heard the sound of his words; and when I heard the sound of his words, I fell into a trance, face to the ground."
+        },
+        {
+          "ref": "10:11",
+          "activeText": "He said to me, “Daniel, greatly beloved, pay attention to the words that I am going to speak to you. Stand on your feet, for I have now been sent to you.” When he had spoken this word to me, I stood up trembling.",
+          "sourceText": "He said to me, ‘Daniel, greatly beloved, pay attention to the words that I am going to speak to you. Stand on your feet, for I have now been sent to you.’ So while he was speaking this word to me, I stood up trembling."
+        },
+        {
+          "ref": "10:12",
+          "activeText": "He said to me, “Do not fear, Daniel, for from the first day that you set your mind to gain understanding and to humble yourself before your God, your words have been heard, and I have come because of your words.",
+          "sourceText": "He said to me, ‘Do not fear, Daniel, for from the first day that you set your mind to gain understanding and to humble yourself before your God, your words have been heard, and I have come because of your words."
+        },
+        {
+          "ref": "10:13",
+          "activeText": "But the prince of the kingdom of Persia opposed me twenty-one days. So Michael, one of the chief princes, came to help me, and I left him there with the prince of the kingdom of Persia,",
+          "sourceText": "But the prince of the kingdom of Persia opposed me for twenty-one days. So Michael, one of the chief princes, came to help me, and I left him there with the prince of the kingdom of Persia,"
+        },
+        {
+          "ref": "10:14",
+          "activeText": "and have come to help you understand what is to happen to your people at the end of days. For there is a further vision for those days.”",
+          "sourceText": "and have come to help you understand what is to happen to your people at the end of days. For there is a further vision for those days.’"
+        },
+        {
+          "ref": "10:15",
+          "activeText": "While he was speaking these words to me, I turned my face toward the ground and was speechless.",
+          "sourceText": "While he was speaking these words to me, I turned my face towards the ground and was speechless."
+        },
+        {
+          "ref": "10:16",
+          "activeText": "Then one in human form touched my lips, and I opened my mouth to speak, and said to the one who stood before me, “My lord, because of the vision such pains have come upon me that I retain no strength.",
+          "sourceText": "Then one in human form touched my lips, and I opened my mouth to speak, and said to the one who stood before me, ‘My lord, because of the vision such pains have come upon me that I retain no strength."
+        },
+        {
+          "ref": "10:17",
+          "activeText": "How can my lord’s servant speak with my lord? For now no strength remains in me, and no breath is left in me.”",
+          "sourceText": "How can my lord’s servant talk with my lord? For I am shaking, no strength remains in me, and no breath is left in me.’"
+        },
+        {
+          "ref": "10:19",
+          "activeText": "He said, “Do not fear, greatly beloved, you are safe. Be strong and courageous!” When he spoke to me, I was strengthened and said, “Let my lord speak, for you have strengthened me.”",
+          "sourceText": "He said, ‘Do not fear, greatly beloved, you are safe. Be strong and courageous!’ When he spoke to me, I was strengthened and said, ‘Let my lord speak, for you have strengthened me.’"
+        },
+        {
+          "ref": "10:20",
+          "activeText": "Then he said, “Do you know why I have come to you? Now I must return to fight against the prince of Persia, and when I am through with him, the prince of Greece will come.",
+          "sourceText": "Then he said, ‘Do you know why I have come to you? Now I must return to fight against the prince of Persia, and when I am through with him, the prince of Greece will come."
+        },
+        {
+          "ref": "11:1",
+          "activeText": "“As for me, in the first year of Darius the Mede, I stood up to support and strengthen him.",
+          "sourceText": "11"
+        },
+        {
+          "ref": "11:2",
+          "activeText": "“Now I will announce the truth to you. Three more kings shall arise in Persia. The fourth shall be far richer than all of them, and when he has become strong through his riches, he shall stir up all against the kingdom of Greece.",
+          "sourceText": "‘Now I will announce the truth to you. Three more kings shall arise in Persia. The fourth shall be far richer than all of them, and when he has become strong through his riches, he shall stir up all against the kingdom of Greece."
+        },
+        {
+          "ref": "11:3",
+          "activeText": "Then a warrior king shall arise, who shall rule with great dominion and shall do as he pleases.",
+          "sourceText": "Then a warrior king shall arise, who shall rule with great dominion and take action as he pleases."
+        },
+        {
+          "ref": "11:4",
+          "activeText": "But as soon as he has risen to power, his kingdom shall be broken and divided toward the four winds of heaven, but not to his posterity, nor according to the dominion with which he ruled; for his kingdom shall be uprooted and go to others besides these.",
+          "sourceText": "And while still rising in power, his kingdom shall be broken and divided towards the four winds of heaven, but not to his posterity, nor according to the dominion with which he ruled; for his kingdom shall be uprooted and go to others besides these."
+        },
+        {
+          "ref": "11:5",
+          "activeText": "“Then the king of the south shall grow strong, but one of his officers shall grow stronger than he and shall rule a dominion greater than his own.",
+          "sourceText": "‘Then the king of the south shall grow strong, but one of his officers shall grow stronger than he and shall rule a realm greater than his own realm."
+        },
+        {
+          "ref": "11:6",
+          "activeText": "With the passing of some years they shall make an alliance, and the daughter of the king of the south shall come to the king of the north to ratify the agreement. But she shall not retain her power, and his offspring shall not survive. She and those who brought her, as well as her child and her supporter, shall be given up at that time.",
+          "sourceText": "After some years they shall make an alliance, and the daughter of the king of the south shall come to the king of the north to ratify the agreement. But she shall not retain her power, and his offspring shall not endure. She shall be given up, she and her attendants and her child and the one who supported her. ‘In those times"
+        },
+        {
+          "ref": "11:7",
+          "activeText": "“In her place one from her family roots shall arise as king. He shall come against the army and enter the fortress of the king of the north, and he shall take action against them and prevail.",
+          "sourceText": "a branch from her roots shall rise up in his place. He shall come against the army and enter the fortress of the king of the north, and he shall take action against them and prevail."
+        },
+        {
+          "ref": "11:8",
+          "activeText": "Even their gods, with their metal images and their precious vessels of silver and gold, he shall carry off to Egypt as spoil. For some years he shall refrain from attacking the king of the north;",
+          "sourceText": "Even their gods, with their idols and with their precious vessels of silver and gold, he shall carry off to Egypt as spoils of war. For some years he shall refrain from attacking the king of the north;"
+        },
+        {
+          "ref": "11:10",
+          "activeText": "“His sons shall wage war and assemble a multitude of great forces, which shall advance like a flood and pass through, and again shall carry the war as far as his fortress.",
+          "sourceText": "‘His sons shall wage war and assemble a multitude of great forces, which shall advance like a flood and pass through, and again shall carry the war as far as his fortress."
+        },
+        {
+          "ref": "11:11",
+          "activeText": "Moved with rage, the king of the south shall go out and fight with the king of the north; he shall muster a great multitude, which shall, however, be defeated by his enemy.",
+          "sourceText": "Moved with rage, the king of the south shall go out and do battle against the king of the north, who shall muster a great multitude, which shall, however, be defeated by his enemy."
+        },
+        {
+          "ref": "11:13",
+          "activeText": "For the king of the north shall again raise a multitude, greater than the first; and after some years he shall advance with a great army and abundant supplies.",
+          "sourceText": "For the king of the north shall again raise a multitude, larger than the former, and after some years he shall advance with a great army and abundant supplies."
+        },
+        {
+          "ref": "11:14",
+          "activeText": "“In those times many shall rise against the king of the south. The lawless among your own people shall lift themselves up in order to fulfill the vision, but they shall fail.",
+          "sourceText": "‘In those times many shall rise against the king of the south. The lawless among your own people shall lift themselves up in order to fulfil the vision, but they shall fail."
+        },
+        {
+          "ref": "11:15",
+          "activeText": "Then the king of the north shall come and throw up siegeworks, and take a well-fortified city. And the forces of the south shall not stand, not even their picked troops, for there shall be no strength to resist.",
+          "sourceText": "Then the king of the north shall come and throw up siege-works, and take a well-fortified city. And the forces of the south shall not stand, not even his picked troops, for there shall be no strength to resist."
+        },
+        {
+          "ref": "11:16",
+          "activeText": "But he who comes against him shall take the whole city as he pleases, and no one shall withstand him. He shall take a position in the beautiful land, and all of it shall be in his power.",
+          "sourceText": "But he who comes against him shall take the actions he pleases, and no one shall withstand him. He shall take a position in the beautiful land, and all of it shall be in his power."
+        },
+        {
+          "ref": "11:17",
+          "activeText": "He shall set his mind to come with the strength of his whole kingdom, and he shall bring terms of peace and ratify them. He shall give him a woman in marriage in order to destroy the kingdom, but it shall not succeed or be to his advantage.",
+          "sourceText": "He shall set his mind to come with the strength of his whole kingdom, and he shall bring terms of peace and perform them. In order to destroy the kingdom, he shall give him a woman in marriage; but it shall not succeed or be to his advantage."
+        },
+        {
+          "ref": "11:18",
+          "activeText": "Afterward he shall turn to the coastlands, and shall capture many. But a commander shall put an end to his insolence; indeed, he shall turn his insolence back upon him.",
+          "sourceText": "Afterwards he shall turn to the coastlands, and shall capture many. But a commander shall put an end to his insolence; indeed, he shall turn his insolence back upon him."
+        },
+        {
+          "ref": "11:19",
+          "activeText": "Then he shall turn back toward the fortresses of his own land, but he shall stumble and fall, and shall not be found.",
+          "sourceText": "Then he shall turn back towards the fortresses of his own land, but he shall stumble and fall, and shall not be found."
+        },
+        {
+          "ref": "11:20",
+          "activeText": "“Then shall arise in his place one who shall send an officer through the glory of the kingdom to levy taxes; but within a few days he shall be broken, though not in anger or in battle.",
+          "sourceText": "‘Then shall arise in his place one who shall send an official for the glory of the kingdom; but within a few days he shall be broken, though not in anger or in battle."
+        },
+        {
+          "ref": "11:21",
+          "activeText": "In his place shall arise a contemptible person on whom royal majesty has not been conferred; he shall come in without warning and obtain the kingdom through intrigue.",
+          "sourceText": "In his place shall arise a contemptible person on whom royal majesty had not been conferred; he shall come in without warning and obtain the kingdom through intrigue."
+        },
+        {
+          "ref": "11:25",
+          "activeText": "He shall stir up his power and determination against the king of the south with a great army, and the king of the south shall wage war with a much greater and stronger army. But he shall not succeed, for plots shall be devised against him.",
+          "sourceText": "He shall stir up his power and determination against the king of the south with a great army, and the king of the south shall wage war with a much greater and stronger army. But he shall not succeed, for plots shall be devised against him"
+        },
+        {
+          "ref": "11:26",
+          "activeText": "Those who eat of the royal rations shall break him, his army shall be swept away, and many shall fall slain.",
+          "sourceText": "by those who eat of the royal rations. They shall break him, his army shall be swept away, and many shall fall slain."
+        },
+        {
+          "ref": "11:27",
+          "activeText": "As for the two kings, their minds shall be bent on evil; they shall sit at one table and exchange lies. But it shall not succeed, for there remains an end at the time appointed.",
+          "sourceText": "The two kings, their minds bent on evil, shall sit at one table and exchange lies. But it shall not succeed, for there remains an end at the time appointed."
+        },
+        {
+          "ref": "11:29",
+          "activeText": "“At the time appointed he shall return and come into the south, but this time it shall not be as it was before.",
+          "sourceText": "‘At the time appointed he shall return and come into the south, but this time it shall not be as it was before."
+        },
+        {
+          "ref": "11:30",
+          "activeText": "For ships of Kittim shall come against him, and he shall lose heart and withdraw. He shall be enraged and take action against the holy covenant. He shall turn back and pay attention to those who forsake the holy covenant.",
+          "sourceText": "For ships of Kittim shall come against him, and he shall lose heart and withdraw. He shall be enraged and take action against the holy covenant. He shall turn back and pay heed to those who forsake the holy covenant."
+        },
+        {
+          "ref": "11:31",
+          "activeText": "Forces from him shall appear and profane the temple and fortress. They shall abolish the regular burnt offering and set up the abomination that desolates.",
+          "sourceText": "Forces sent by him shall occupy and profane the temple and fortress. They shall abolish the regular burnt-offering and set up the abomination that makes desolate."
+        },
+        {
+          "ref": "11:32",
+          "activeText": "He shall seduce with flattery those who violate the covenant; but the people who are loyal to their God shall stand firm and take action.",
+          "sourceText": "He shall seduce with intrigue those who violate the covenant; but the people who are loyal to their God shall stand firm and take action."
+        },
+        {
+          "ref": "11:34",
+          "activeText": "When they fall, they shall receive a little help, and many shall join them insincerely.",
+          "sourceText": "When they fall victim, they shall receive a little help, and many shall join them insincerely."
+        },
+        {
+          "ref": "11:36",
+          "activeText": "“The king shall do as he pleases. He shall exalt himself and consider himself greater than any god, and shall speak horrendous things against the God of gods. He shall prosper until the period of wrath is completed, for what is determined shall be done.",
+          "sourceText": "‘The king shall act as he pleases. He shall exalt himself and consider himself greater than any god, and shall speak horrendous things against the God of gods. He shall prosper until the period of wrath is completed, for what is determined shall be done."
+        },
+        {
+          "ref": "11:37",
+          "activeText": "He shall pay no heed to the gods of his ancestors, or to the one beloved by women; he shall pay no heed to any other god, for he shall consider himself greater than all.",
+          "sourceText": "He shall pay no respect to the gods of his ancestors, or to the one beloved by women; he shall pay no respect to any other god, for he shall consider himself greater than all."
+        },
+        {
+          "ref": "11:38",
+          "activeText": "He shall honor the god of fortresses instead of these; a god whom his ancestors did not know he shall honor with gold and silver, with precious stones and costly gifts.",
+          "sourceText": "He shall honour the god of fortresses instead of these; a god whom his ancestors did not know he shall honour with gold and silver, with precious stones and costly gifts."
+        },
+        {
+          "ref": "11:40",
+          "activeText": "“At the time of the end the king of the south shall settle scores with him. But the king of the north shall rush upon him like a whirlwind, with chariots and horsemen, and with many ships. He shall advance against countries and pass through like a flood.",
+          "sourceText": "The Time of the End ‘At the time of the end the king of the south shall attack him. But the king of the north shall rush upon him like a whirlwind, with chariots and horsemen, and with many ships. He shall advance against countries and pass through like a flood."
+        },
+        {
+          "ref": "11:41",
+          "activeText": "He shall come into the beautiful land, and tens of thousands shall fall, but Edom and Moab and the main part of the Ammonites shall escape from his power.",
+          "sourceText": "He shall come into the beautiful land, and tens of thousands shall fall victim, but Edom and Moab and the main part of the Ammonites shall escape from his power."
+        },
+        {
+          "ref": "11:43",
+          "activeText": "He shall become master of the treasures of gold and of silver, and all the precious things of Egypt; and the Libyans and the Ethiopians shall follow in his train.",
+          "sourceText": "He shall become ruler of the treasures of gold and of silver, and all the riches of Egypt; and the Libyans and the Ethiopians shall follow in his train."
+        },
+        {
+          "ref": "12:1",
+          "activeText": "“At that time Michael, the great prince, the protector of your people, shall arise. There shall be a time of anguish, such as has never occurred since nations first came into existence. But at that time your people shall be delivered, everyone who is found written in the book.",
+          "sourceText": "The Resurrection of the Dead 12"
+        },
+        {
+          "ref": "12:3",
+          "activeText": "Those who are wise shall shine like the brightness of the sky, and those who lead many to righteousness, like the stars forever and ever.",
+          "sourceText": "Those who are wise shall shine like the brightness of the sky, and those who lead many to righteousness, like the stars for ever and ever."
+        },
+        {
+          "ref": "12:4",
+          "activeText": "But you, Daniel, keep the words secret and the book sealed until the time of the end. Many shall be running back and forth, and evil shall increase.”",
+          "sourceText": "But you, Daniel, keep the words secret and the book sealed until the time of the end. Many shall be running back and forth, and evil shall increase.’"
+        },
+        {
+          "ref": "12:6",
+          "activeText": "One of them said to the man clothed in linen, who was upstream, “How long shall it be until the end of these wonders?”",
+          "sourceText": "One of them said to the man clothed in linen, who was upstream, ‘How long shall it be until the end of these wonders?’"
+        },
+        {
+          "ref": "12:7",
+          "activeText": "The man clothed in linen, who was upstream, raised his right hand and his left hand toward heaven. And I heard him swear by the one who lives forever that it would be for a time, two times, and half a time; and that when the shattering of the power of the holy people comes to an end, all these things would be accomplished.",
+          "sourceText": "The man clothed in linen, who was upstream, raised his right hand and his left hand towards heaven. And I heard him swear by the one who lives for ever that it would be for a time, two times, and half a time, and that when the shattering of the power of the holy people comes to an end, all these things would be accomplished."
+        },
+        {
+          "ref": "12:8",
+          "activeText": "I heard but could not understand; so I said, “My lord, what shall be the outcome of these things?”",
+          "sourceText": "I heard but could not understand; so I said, ‘My lord, what shall be the outcome of these things?’"
+        },
+        {
+          "ref": "12:9",
+          "activeText": "He said, “Go your way, Daniel, for the words are kept secret and sealed until the time of the end.",
+          "sourceText": "He said, ‘Go your way, Daniel, for the words are to remain secret and sealed until the time of the end."
+        },
+        {
+          "ref": "12:11",
+          "activeText": "From the time that the regular burnt offering is taken away and the abomination that desolates is set up, there shall be one thousand two hundred ninety days.",
+          "sourceText": "From the time that the regular burnt-offering is taken away and the abomination that desolates is set up, there shall be one thousand two hundred and ninety days."
+        },
+        {
+          "ref": "12:12",
+          "activeText": "Happy are those who persevere and attain the one thousand three hundred thirty-five days.",
+          "sourceText": "Happy are those who persevere and attain the thousand three hundred and thirty-five days."
+        },
+        {
+          "ref": "12:13",
+          "activeText": "But you, go your way, and rest; you shall rise for your reward at the end of the days.”",
+          "sourceText": "But you, go your way, and rest; you shall rise for your reward at the end of the days.’"
+        }
+      ],
+      "determination": {
+        "sameAddressExactMatches": 125,
+        "sameAddressMismatches": 232,
+        "sourceShapeBoundaryRows": 174,
+        "repairReadiness": "source_active_shape_review_required_before_any_text_repair"
+      }
+    }
+  ],
+  "totals": {
+    "books": 2,
+    "activeRows": 803,
+    "activeNrsVRows": 797,
+    "activeMissingNrsVRows": 6,
+    "sourceRows": 524,
+    "sourceRefsWithoutActive": 0,
+    "activeRefsWithoutSource": 229,
+    "matchingRefs": 189,
+    "mismatches": 330,
+    "unavailableChapters": 8
+  }
+}

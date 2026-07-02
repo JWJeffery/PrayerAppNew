@@ -1,0 +1,29 @@
+{
+  "schema": "biblegateway-nrsva-greek-additions-source-manifest-v1",
+  "source_name": "BibleGateway NRSVA",
+  "source_url_template": "https://www.biblegateway.com/passage/?search={book}%20{chapter}&version=NRSVA",
+  "capturedAt": "2026-07-02T06:18:47Z",
+  "normalized_active_lane": "text.NRSV",
+  "scope": "DEUTERO-02 Greek Esther and Greek Daniel source-active shape audit",
+  "rawSources": [
+    {
+      "id": "GREEK_ESTHER",
+      "activePath": "data/bible/OT/estherGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/estherGK.json",
+      "queryBook": "Esther",
+      "chapters": 16
+    },
+    {
+      "id": "GREEK_DANIEL",
+      "activePath": "data/bible/OT/danielGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/danielGK.json",
+      "queryBook": "Daniel",
+      "chapters": 14
+    }
+  ],
+  "notes": [
+    "These source snapshots are audit witnesses only.",
+    "This tranche does not mutate active Bible text.",
+    "Same-address repair must not be performed until source-active shape findings are reviewed."
+  ]
+}
