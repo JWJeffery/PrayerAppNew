@@ -1,0 +1,643 @@
+{
+  "schema": "canonical-ot-drb-boundary-realignment-repair-v1",
+  "status": "passed_with_residual_work_remaining",
+  "scope": "canonical_ot_nonpsalms_drb_whole_source_chapter_boundary_realignment",
+  "mutationPolicy": "Only whole raw DRB source rows are reassigned into active text.DRB. No generated text. No text splitting.",
+  "plans": [
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13.",
+      "mapCount": 13
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9.",
+      "mapCount": 10
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10.",
+      "mapCount": 11
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23.",
+      "mapCount": 24
+    }
+  ],
+  "applied": [
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:1",
+      "sourceRef": "5:17",
+      "beforeSample": "My beloved is gone down into the garden, to the bed of aromatical spices, to feed in the gardens, and to gather lilies.",
+      "afterSample": "Whither is thy beloved gone o most beautiful of women? Whither is thy beloved turned aside? And we will seek him with thee.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:2",
+      "sourceRef": "6:1",
+      "beforeSample": "Ito my beloved, and my beloved to me, who feedeth among the lilies.",
+      "afterSample": "My beloved is gone down into the garden, to the bed of aromatical spices, to feed in the gardens, and to gather lilies.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:3",
+      "sourceRef": "6:2",
+      "beforeSample": "Thou art fair o my love, sweet, and comely as Jerusalem: terrible as the army of a camp set in array.",
+      "afterSample": "Ito my beloved, and my beloved to me, who feedeth among the lilies.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:4",
+      "sourceRef": "6:3",
+      "beforeSample": "Turn away thine eyes from me, because they have made me fly away. Thy hairs as a flock of goats, which have appeared from Galaad.",
+      "afterSample": "Thou art fair o my love, sweet, and comely as Jerusalem: terrible as the army of a camp set in array.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:5",
+      "sourceRef": "6:4",
+      "beforeSample": "Thy teeth as a flock of sheep, which have come up from the lavatory, all with twins, and there is no barren among them.",
+      "afterSample": "Turn away thine eyes from me, because they have made me fly away. Thy hairs as a flock of goats, which have appeared from Galaad.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:6",
+      "sourceRef": "6:5",
+      "beforeSample": "As the bark of a pomegranate, so are thy cheeks, beside thy hidden.",
+      "afterSample": "Thy teeth as a flock of sheep, which have come up from the lavatory, all with twins, and there is no barren among them.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:7",
+      "sourceRef": "6:6",
+      "beforeSample": "There are threescore queens, & fourscore concubines, and of young maids there is no number.",
+      "afterSample": "As the bark of a pomegranate, so are thy cheeks, beside thy hidden.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:8",
+      "sourceRef": "6:7",
+      "beforeSample": "My dove is one, my perfect one, she is the only of her mother, elect to her that bare her. The daughters have seen her, and declared her to be most blessed: the queens and concubines, and have praised her.",
+      "afterSample": "There are threescore queens, & fourscore concubines, and of young maids there is no number.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:9",
+      "sourceRef": "6:8",
+      "beforeSample": "What is she, that cometh forth as the morning rising, fair as the moon, elect as the sun, terrible as the army of a camp set in array?",
+      "afterSample": "My dove is one, my perfect one, she is the only of her mother, elect to her that bare her. The daughters have seen her, and declared her to be most blessed: the queens and concubines, and have praised her.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:10",
+      "sourceRef": "6:9",
+      "beforeSample": "I came down into the garden of nuts, to see the fruits of the valleys, and to look if the vineyard had flourished, and the pomegranates budded.",
+      "afterSample": "What is she, that cometh forth as the morning rising, fair as the moon, elect as the sun, terrible as the army of a camp set in array?",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:11",
+      "sourceRef": "6:10",
+      "beforeSample": "I knew not: my soul troubled me for the chariots of Aminadab.",
+      "afterSample": "I came down into the garden of nuts, to see the fruits of the valleys, and to look if the vineyard had flourished, and the pomegranates budded.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:12",
+      "sourceRef": "6:11",
+      "beforeSample": "Return, return o Sulamitess: return, return, that we may behold thee.",
+      "afterSample": "I knew not: my soul troubled me for the chariots of Aminadab.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/canticle-of-canticles.json",
+      "activeRef": "6:13",
+      "sourceRef": "6:12",
+      "beforeSample": null,
+      "afterSample": "Return, return o Sulamitess: return, return, that we may behold thee.",
+      "reason": "Song chapter-six boundary displacement: raw 5:17 maps to active 6:1, raw 6:1-6:12 maps to active 6:2-6:13."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "13:16",
+      "sourceRef": "14:1",
+      "beforeSample": null,
+      "afterSample": "Let Samaria perish, because she hath stirred up her God to bitterness: let them perish by the sword, let their little ones be dashed, and let the women with child be cut in sunder.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:1",
+      "sourceRef": "14:2",
+      "beforeSample": "Let Samaria perish, because she hath stirred up her God to bitterness: let them perish by the sword, let their little ones be dashed, and let the women with child be cut in sunder.",
+      "afterSample": "Convert o Israel to our Lord thy God: because thou art fallen in thine iniquity.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:2",
+      "sourceRef": "14:3",
+      "beforeSample": "Convert o Israel to our Lord thy God: because thou art fallen in thine iniquity.",
+      "afterSample": "Take words with you, and convert to our Lord, and say to him: Take away all iniquity, and receive good: and we will render the calves of our lips.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:3",
+      "sourceRef": "14:4",
+      "beforeSample": "Take words with you, and convert to our Lord, and say to him: Take away all iniquity, and receive good: and we will render the calves of our lips.",
+      "afterSample": "Assur shall not save us, we will not mount upon horse: neither will we say any more: Our gods the work of our hands: because thou wilt have mercy on the pupil, which is in thee.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:4",
+      "sourceRef": "14:5",
+      "beforeSample": "Assur shall not save us, we will not mount upon horse: neither will we say any more: Our gods the work of our hands: because thou wilt have mercy on the pupil, which is in thee.",
+      "afterSample": "I will heal their confractions, I will love them voluntarily: because my fury is averted from them.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:5",
+      "sourceRef": "14:6",
+      "beforeSample": "I will heal their confractions, I will love them voluntarily: because my fury is averted from them.",
+      "afterSample": "I will be as dew, Israel shall spring as the lily, and his root shall break forth as that of Libanus.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:6",
+      "sourceRef": "14:7",
+      "beforeSample": "I will be as dew, Israel shall spring as the lily, and his root shall break forth as that of Libanus.",
+      "afterSample": "His boughs shall go, and his glory shall be as the olive-tree: and his smell as of Libanus.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:7",
+      "sourceRef": "14:8",
+      "beforeSample": "His boughs shall go, and his glory shall be as the olive-tree: and his smell as of Libanus.",
+      "afterSample": "They shall be converted that sit under his shadow: they shall live with wheat, and they shall spring as a vine: his memorial as the wine of Libanus.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:8",
+      "sourceRef": "14:9",
+      "beforeSample": "They shall be converted that sit under his shadow: they shall live with wheat, and they shall spring as a vine: his memorial as the wine of Libanus.",
+      "afterSample": "Ephraim, what have I to do any more with idols? I will hear, and I will direct him as a verdant fir-tree: out of me thy fruit is found.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "hosea",
+      "activePath": "data/bible/OT/hosea.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/osee.json",
+      "activeRef": "14:9",
+      "sourceRef": "14:10",
+      "beforeSample": "Ephraim, what have I to do any more with idols? I will hear, and I will direct him as a verdant fir-tree: out of me thy fruit is found.",
+      "afterSample": "Who is wise, and shall understand these things? Of understanding, and shall know these things? Because the ways of our Lord be right, and the just shall walk in them: but prevaricators shall fall in them.",
+      "reason": "Hosea boundary displacement: raw 14:1 maps to active 13:16, raw 14:2-14:10 maps to active 14:1-14:9."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "1:17",
+      "sourceRef": "2:1",
+      "beforeSample": null,
+      "afterSample": "And our Lord prepared a great fish to swallow down Jonas: and Jonas was in the belly of the fish three days and three nights.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:1",
+      "sourceRef": "2:2",
+      "beforeSample": "And our Lord prepared a great fish to swallow down Jonas: and Jonas was in the belly of the fish three days and three nights.",
+      "afterSample": "And Jonas prayed to our Lord his God out of the belly of the fish.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:2",
+      "sourceRef": "2:3",
+      "beforeSample": "And Jonas prayed to our Lord his God out of the belly of the fish.",
+      "afterSample": "And he said: I cried out of my tribulation to our Lord, & he hath heard me: out of the belly of hell cried I, and thou hast heard my voice.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:3",
+      "sourceRef": "2:4",
+      "beforeSample": "And he said: I cried out of my tribulation to our Lord, & he hath heard me: out of the belly of hell cried I, and thou hast heard my voice.",
+      "afterSample": "And thou hast cast me forth into the depth in the heart of the sea, & a flood hath compassed me: all thy surges, and thy waves have passed over me.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:4",
+      "sourceRef": "2:5",
+      "beforeSample": "And thou hast cast me forth into the depth in the heart of the sea, & a flood hath compassed me: all thy surges, and thy waves have passed over me.",
+      "afterSample": "And I said: I am cast away from the sight of thine eyes: but yet I shall see thy holy temple again.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:5",
+      "sourceRef": "2:6",
+      "beforeSample": "And I said: I am cast away from the sight of thine eyes: but yet I shall see thy holy temple again.",
+      "afterSample": "The waters have compassed me even to the soul: the depth hath inclosed me, the sea hath covered my head.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:6",
+      "sourceRef": "2:7",
+      "beforeSample": "The waters have compassed me even to the soul: the depth hath inclosed me, the sea hath covered my head.",
+      "afterSample": "I am descended to the extreme parts of the mountains: the bars of the earth have shut me up for ever: and thou wilt lift up my life from corruption, o Lord my God.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:7",
+      "sourceRef": "2:8",
+      "beforeSample": "I am descended to the extreme parts of the mountains: the bars of the earth have shut me up for ever: and thou wilt lift up my life from corruption, o Lord my God.",
+      "afterSample": "When my soul was in distress within me, I remembered our Lord: that my prayer may come to thee unto thy holy temple.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:8",
+      "sourceRef": "2:9",
+      "beforeSample": "When my soul was in distress within me, I remembered our Lord: that my prayer may come to thee unto thy holy temple.",
+      "afterSample": "They that keep vanities in vain, forsake their mercy.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:9",
+      "sourceRef": "2:10",
+      "beforeSample": "They that keep vanities in vain, forsake their mercy.",
+      "afterSample": "But I in the voice of praise will immolate to thee: what things soever I have vowed I will render for salvation to our Lord.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "jonah",
+      "activePath": "data/bible/OT/jonah.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/jonas.json",
+      "activeRef": "2:10",
+      "sourceRef": "2:11",
+      "beforeSample": "But I in the voice of praise will immolate to thee: what things soever I have vowed I will render for salvation to our Lord.",
+      "afterSample": "And our Lord spake to the fish: and it vomited up Jonas upon the dry land.",
+      "reason": "Jonah boundary displacement: raw 2:1 maps to active 1:17, raw 2:2-2:11 maps to active 2:1-2:10."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "1:15",
+      "sourceRef": "2:1",
+      "beforeSample": null,
+      "afterSample": "In the four and twentieth day of the month, in the sixth month, in the second year of Darius the king.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:1",
+      "sourceRef": "2:2",
+      "beforeSample": "In the four and twentieth day of the month, in the sixth month, in the second year of Darius the king.",
+      "afterSample": "In the seventh month, the one & twentieth of the month, the word of our Lord was made in the hand of Aggeus the Prophet, saying:",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:2",
+      "sourceRef": "2:3",
+      "beforeSample": "In the seventh month, the one & twentieth of the month, the word of our Lord was made in the hand of Aggeus the Prophet, saying:",
+      "afterSample": "Speak to Zorobabel the son of Salathiel the Duke of Juda, and to Jesus the son of Josedec the grand Priest, and to the rest of the people, saying:",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:3",
+      "sourceRef": "2:4",
+      "beforeSample": "Speak to Zorobabel the son of Salathiel the Duke of Juda, and to Jesus the son of Josedec the grand Priest, and to the rest of the people, saying:",
+      "afterSample": "Who among you is left, that saw this house in the first glory thereof? And what do you see this same now? Why, is it not so, as if it were not in your eyes?",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:4",
+      "sourceRef": "2:5",
+      "beforeSample": "Who among you is left, that saw this house in the first glory thereof? And what do you see this same now? Why, is it not so, as if it were not in your eyes?",
+      "afterSample": "And now take courage Zorobabel, saith our Lord, and take courage Jesus the son of Josedec grand Priest, and take courage all ye people of the land, saith the Lord of hosts: & do (because I am with you, saith the Lord of ",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:5",
+      "sourceRef": "2:6",
+      "beforeSample": "And now take courage Zorobabel, saith our Lord, and take courage Jesus the son of Josedec grand Priest, and take courage all ye people of the land, saith the Lord of hosts: & do (because I am with you, saith the Lord of ",
+      "afterSample": "the word that I did covenant with you when you came out of the Land of Ægypt: & my spirit shall be in the midst of you: fear not.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:6",
+      "sourceRef": "2:7",
+      "beforeSample": "the word that I did covenant with you when you came out of the Land of Ægypt: & my spirit shall be in the midst of you: fear not.",
+      "afterSample": "Because thus saith the Lord of hosts: As yet there is one little while, and I will move the heaven, and the earth, and the sea, and the dry land.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:7",
+      "sourceRef": "2:8",
+      "beforeSample": "Because thus saith the Lord of hosts: As yet there is one little while, and I will move the heaven, and the earth, and the sea, and the dry land.",
+      "afterSample": "And I will move all nations: And The Desired of All Nations Shall Come: and I will fill this house with glory, saith the Lord of hosts.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:8",
+      "sourceRef": "2:9",
+      "beforeSample": "And I will move all nations: And The Desired of All Nations Shall Come: and I will fill this house with glory, saith the Lord of hosts.",
+      "afterSample": "Mine is the silver, & mine is the gold, saith the Lord of hosts.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:9",
+      "sourceRef": "2:10",
+      "beforeSample": "Mine is the silver, & mine is the gold, saith the Lord of hosts.",
+      "afterSample": "Great shall be the glory of this last house, more than of the first, saith the Lord of hosts: and in this place will I give peace, saith the Lord of hosts.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:10",
+      "sourceRef": "2:11",
+      "beforeSample": "Great shall be the glory of this last house, more than of the first, saith the Lord of hosts: and in this place will I give peace, saith the Lord of hosts.",
+      "afterSample": "In the four and twentieth of the ninth month, in the second year of Darius the king, the word of our Lord was made to Aggeus the Prophet, saying:",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:11",
+      "sourceRef": "2:12",
+      "beforeSample": "In the four and twentieth of the ninth month, in the second year of Darius the king, the word of our Lord was made to Aggeus the Prophet, saying:",
+      "afterSample": "Thus saith the Lord of hosts: Ask the Priests the law, saying:",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:12",
+      "sourceRef": "2:13",
+      "beforeSample": "Thus saith the Lord of hosts: Ask the Priests the law, saying:",
+      "afterSample": "If a man take sanctified flesh in the skirt of his garment, and touch with the skirt thereof bread, or broth, or wine, or oil, or any meat: shall it be sanctified? And the Priests answering, said: No.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:13",
+      "sourceRef": "2:14",
+      "beforeSample": "If a man take sanctified flesh in the skirt of his garment, and touch with the skirt thereof bread, or broth, or wine, or oil, or any meat: shall it be sanctified? And the Priests answering, said: No.",
+      "afterSample": "And Aggeus said: If one polluted on a soul touch any of all these, shall he be contaminated? And the Priests answered, and said: He shall be contaminated.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:14",
+      "sourceRef": "2:15",
+      "beforeSample": "And Aggeus said: If one polluted on a soul touch any of all these, shall he be contaminated? And the Priests answered, and said: He shall be contaminated.",
+      "afterSample": "And Aggeus answered, and said: So this people, and so this nation before my face, saith our Lord, and so all the work of their hands: & all that they have offered there, shall be contaminated.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:15",
+      "sourceRef": "2:16",
+      "beforeSample": "And Aggeus answered, and said: So this people, and so this nation before my face, saith our Lord, and so all the work of their hands: & all that they have offered there, shall be contaminated.",
+      "afterSample": "And now set your hearts, from this day & upward, before there was stone laid upon stone in the temple of our Lord.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:16",
+      "sourceRef": "2:17",
+      "beforeSample": "And now set your hearts, from this day & upward, before there was stone laid upon stone in the temple of our Lord.",
+      "afterSample": "When you went to an heap of twenty bushels, and they became ten: and entered into the press, to press out fifty flagons, & they became twenty.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:17",
+      "sourceRef": "2:18",
+      "beforeSample": "When you went to an heap of twenty bushels, and they became ten: and entered into the press, to press out fifty flagons, & they became twenty.",
+      "afterSample": "Istruck you with the burning wind, and with the blast, and with hail, all the works of your hands: and there was none among you, that returned to me, saith our Lord.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:18",
+      "sourceRef": "2:19",
+      "beforeSample": "Istruck you with the burning wind, and with the blast, and with hail, all the works of your hands: and there was none among you, that returned to me, saith our Lord.",
+      "afterSample": "Set your hearts from this day, & henceforward, from the four & twentieth day of the ninth month: from the day that the foundations of the temple of our Lord were laid, lay it upon your hearts.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:19",
+      "sourceRef": "2:20",
+      "beforeSample": "Set your hearts from this day, & henceforward, from the four & twentieth day of the ninth month: from the day that the foundations of the temple of our Lord were laid, lay it upon your hearts.",
+      "afterSample": "Is there the seed now abreward? And as yet the wine, and the fig-tree, and the pomegranate, and the olive-tree hath not flourished? From this day I will bless.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:20",
+      "sourceRef": "2:21",
+      "beforeSample": "Is there the seed now abreward? And as yet the wine, and the fig-tree, and the pomegranate, and the olive-tree hath not flourished? From this day I will bless.",
+      "afterSample": "And the word of our Lord was made the second time to Aggeus in the four and twentieth of the month, saying:",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:21",
+      "sourceRef": "2:22",
+      "beforeSample": "And the word of our Lord was made the second time to Aggeus in the four and twentieth of the month, saying:",
+      "afterSample": "Speak to Zorobabel the Duke of Juda, saying: I will move the heaven and also the earth.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:22",
+      "sourceRef": "2:23",
+      "beforeSample": "Speak to Zorobabel the Duke of Juda, saying: I will move the heaven and also the earth.",
+      "afterSample": "And I will overthrow the throne of Kingdoms, and will destroy the strength of the Kingdom of the Gentiles: and I will overthrow the chariot, and the rider thereof: and the horses shall come down, and the riders of them, ",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    },
+    {
+      "key": "haggai",
+      "activePath": "data/bible/OT/haggai.json",
+      "rawPath": "data/bible/translations/drb-original-douay-rheims/raw/aggeus.json",
+      "activeRef": "2:23",
+      "sourceRef": "2:24",
+      "beforeSample": "And I will overthrow the throne of Kingdoms, and will destroy the strength of the Kingdom of the Gentiles: and I will overthrow the chariot, and the rider thereof: and the horses shall come down, and the riders of them, ",
+      "afterSample": "In that day, saith the Lord of hosts, I will take thee o Zorobabel son of Salathiel my servant, saith our Lord, and will put thee as a signet, because thee have I chosen, saith the Lord of hosts.",
+      "reason": "Haggai boundary displacement: raw 2:1 maps to active 1:15, raw 2:2-2:24 maps to active 2:1-2:23."
+    }
+  ],
+  "failures": [],
+  "changedFiles": [
+    "data/bible/OT/haggai.json",
+    "data/bible/OT/hosea.json",
+    "data/bible/OT/jonah.json",
+    "data/bible/OT/songofsolomon.json"
+  ],
+  "remainingByPlanBook": [
+    {
+      "key": "songofsolomon",
+      "activePath": "data/bible/OT/songofsolomon.json",
+      "missingDrbRows": 1,
+      "missingRefs": [
+        "1:17"
+      ]
+    }
+  ],
+  "totals": {
+    "appliedMappings": 58,
+    "changedFiles": 4,
+    "failures": 0,
+    "remainingPlanBooksWithMissingDrb": 1,
+    "remainingPlanBookMissingDrbRows": 1
+  },
+  "nextRequiredWork": "Commit this whole-source boundary realignment tranche, then return to remaining DRB residual books."
+}
