@@ -1,0 +1,2729 @@
+{
+  "schema": "deuterocanon-status-consolidation-audit-v1",
+  "id": "deuterocanon_status_consolidation_audit_2026_07_02",
+  "status": "deuterocanon_status_consolidated_remaining_nrsv_applicable_gaps",
+  "auditedAt": "2026-07-02T17:37:15Z",
+  "scope": {
+    "lane": "text.NRSV",
+    "activeRoot": "data/bible/OT",
+    "description": "Consolidates deuterocanon NRSV status after DEUTERO-01 and DEUTERO-02 work."
+  },
+  "registryStatuses": [
+    {
+      "path": "data/bible/registry/deutero-01-catholic-source-boundaries.json",
+      "status": "missing"
+    },
+    {
+      "path": "data/bible/registry/deutero-01-catholic-source-shape-closure.json",
+      "id": "deutero_01_catholic_source_shape_closure_2026_07_02",
+      "status": "closed_with_governed_source_shape_boundaries",
+      "totals": {
+        "books": 8,
+        "activeRows": 4410,
+        "sourceRows": 4064,
+        "activeNrsVRows": 4067,
+        "missingNrsVRows": 343,
+        "sourceRefsWithoutActive": 6,
+        "activeRefsWithoutSource": 352,
+        "noSourceButHasNrsV": 9,
+        "mismatches": 0
+      }
+    },
+    {
+      "path": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
+      "id": "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
+      "status": "form_policy_recorded_no_text_mutation",
+      "totals": null
+    },
+    {
+      "path": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
+      "id": "deutero_02_greek_additions_source_active_audit_2026_07_02",
+      "status": "PASS_SOURCE_ACTIVE_SHAPE_FINDINGS_RECORDED",
+      "totals": {
+        "books": 2,
+        "activeRows": 803,
+        "activeNrsVRows": 797,
+        "activeMissingNrsVRows": 6,
+        "sourceRows": 524,
+        "sourceRefsWithoutActive": 0,
+        "activeRefsWithoutSource": 229,
+        "matchingRefs": 189,
+        "mismatches": 330,
+        "unavailableChapters": 8
+      }
+    },
+    {
+      "path": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
+      "id": "deutero_02_greek_additions_source_active_review_2026_07_02",
+      "status": "source_active_audit_reviewed_not_repair_ready",
+      "totals": {
+        "books": 2,
+        "activeRows": 803,
+        "activeNrsVRows": 797,
+        "activeMissingNrsVRows": 6,
+        "sourceRows": 524,
+        "sourceRefsWithoutActive": 0,
+        "activeRefsWithoutSource": 229,
+        "matchingRefs": 189,
+        "mismatches": 330,
+        "unavailableChapters": 8
+      }
+    },
+    {
+      "path": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json",
+      "id": "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
+      "status": "nrsv_applicable_gap_repair_completed",
+      "totals": {
+        "mutatedBooks": 1,
+        "mutatedRows": 5,
+        "nrsvApplicableMissingRowsBefore": 5,
+        "nrsvApplicableMissingRowsAfter": 0,
+        "nrsvNotApplicableRows": 1,
+        "syntheticRows": 0
+      }
+    }
+  ],
+  "candidateFiles": [
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json"
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json"
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json"
+    },
+    {
+      "bookId": "GREEK_DANIEL",
+      "path": "data/bible/OT/danielGK.json"
+    },
+    {
+      "bookId": "GREEK_ESTHER",
+      "path": "data/bible/OT/estherGK.json"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json"
+    },
+    {
+      "bookId": "LETTER_OF_JEREMIAH",
+      "path": "data/bible/OT/letterofjeremiah.json"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json"
+    }
+  ],
+  "bookSummaries": [
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "activeRows": 929,
+      "nrsvRows": 923,
+      "missingNrsVRows": [
+        "1:65",
+        "1:66",
+        "1:67",
+        "2:13",
+        "12:54",
+        "13:54"
+      ],
+      "nrsvApplicableMissingRows": [
+        "1:65",
+        "1:66",
+        "1:67",
+        "2:13",
+        "12:54",
+        "13:54"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 924,
+        "NABRE": 924,
+        "DRB": 929
+      }
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "activeRows": 558,
+      "nrsvRows": 555,
+      "missingNrsVRows": [
+        "2:33",
+        "12:46",
+        "15:40"
+      ],
+      "nrsvApplicableMissingRows": [
+        "2:33",
+        "12:46",
+        "15:40"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 555,
+        "NABRE": 556,
+        "DRB": 558
+      }
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "activeRows": 141,
+      "nrsvRows": 139,
+      "missingNrsVRows": [
+        "3:11",
+        "3:38"
+      ],
+      "nrsvApplicableMissingRows": [
+        "3:11",
+        "3:38"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 140,
+        "NABRE": 141,
+        "DRB": 141
+      }
+    },
+    {
+      "bookId": "GREEK_DANIEL",
+      "path": "data/bible/OT/danielGK.json",
+      "activeRows": 531,
+      "nrsvRows": 530,
+      "missingNrsVRows": [
+        "13:65"
+      ],
+      "nrsvApplicableMissingRows": [],
+      "nrsvNotApplicableRows": [
+        {
+          "ref": "13:65",
+          "reason": "DRB-only versification/source-shape row; NRSV Bel and the Dragon begins at active Daniel 14:1.",
+          "governedBy": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json"
+        }
+      ],
+      "translationPresence": {
+        "KJV": 173,
+        "NABRE": 173,
+        "DRB": 174
+      }
+    },
+    {
+      "bookId": "GREEK_ESTHER",
+      "path": "data/bible/OT/estherGK.json",
+      "activeRows": 272,
+      "nrsvRows": 272,
+      "missingNrsVRows": [],
+      "nrsvApplicableMissingRows": [],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 167,
+        "NABRE": 167,
+        "DRB": 272
+      }
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "activeRows": 375,
+      "nrsvRows": 340,
+      "missingNrsVRows": [
+        "3:11",
+        "3:12",
+        "3:13",
+        "3:14",
+        "3:15",
+        "4:16",
+        "4:17",
+        "5:25",
+        "5:26",
+        "5:27",
+        "5:28",
+        "5:29",
+        "9:15",
+        "9:16",
+        "9:17",
+        "9:18",
+        "9:19",
+        "13:21",
+        "13:22",
+        "13:23",
+        "13:24",
+        "13:25",
+        "13:26",
+        "13:27",
+        "13:28",
+        "13:29",
+        "13:30",
+        "13:31",
+        "15:15",
+        "16:26",
+        "16:27",
+        "16:28",
+        "16:29",
+        "16:30",
+        "16:31"
+      ],
+      "nrsvApplicableMissingRows": [
+        "3:11",
+        "3:12",
+        "3:13",
+        "3:14",
+        "3:15",
+        "4:16",
+        "4:17",
+        "5:25",
+        "5:26",
+        "5:27",
+        "5:28",
+        "5:29",
+        "9:15",
+        "9:16",
+        "9:17",
+        "9:18",
+        "9:19",
+        "13:21",
+        "13:22",
+        "13:23",
+        "13:24",
+        "13:25",
+        "13:26",
+        "13:27",
+        "13:28",
+        "13:29",
+        "13:30",
+        "13:31",
+        "15:15",
+        "16:26",
+        "16:27",
+        "16:28",
+        "16:29",
+        "16:30",
+        "16:31"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 339,
+        "NABRE": 340,
+        "DRB": 346
+      }
+    },
+    {
+      "bookId": "LETTER_OF_JEREMIAH",
+      "path": "data/bible/OT/letterofjeremiah.json",
+      "activeRows": 73,
+      "nrsvRows": 73,
+      "missingNrsVRows": [],
+      "nrsvApplicableMissingRows": [],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 73,
+        "NABRE": 72,
+        "DRB": 72
+      }
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "activeRows": 1593,
+      "nrsvRows": 1359,
+      "missingNrsVRows": [
+        "1:5",
+        "1:7",
+        "1:21",
+        "1:31",
+        "1:32",
+        "1:33",
+        "1:34",
+        "1:35",
+        "1:36",
+        "1:37",
+        "1:38",
+        "1:39",
+        "1:40",
+        "2:19",
+        "2:20",
+        "2:21",
+        "2:22",
+        "2:23",
+        "3:7",
+        "3:19",
+        "3:32",
+        "3:33",
+        "3:34",
+        "4:32",
+        "4:33",
+        "4:34",
+        "4:35",
+        "4:36",
+        "5:16",
+        "5:17",
+        "5:18",
+        "7:37",
+        "7:38",
+        "7:39",
+        "7:40",
+        "8:20",
+        "8:21",
+        "8:22",
+        "9:19",
+        "9:20",
+        "9:21",
+        "9:22",
+        "9:23",
+        "9:24",
+        "9:25",
+        "10:21",
+        "10:32",
+        "10:33",
+        "10:34",
+        "11:15",
+        "11:16",
+        "11:35",
+        "11:36",
+        "12:19",
+        "13:14",
+        "13:27",
+        "13:28",
+        "13:29",
+        "13:30",
+        "13:31",
+        "13:32",
+        "15:21",
+        "15:22",
+        "16:15",
+        "16:16",
+        "16:31",
+        "17:5",
+        "17:9",
+        "17:16",
+        "17:18",
+        "17:21",
+        "18:2",
+        "18:3",
+        "19:6",
+        "19:18",
+        "19:19",
+        "19:21",
+        "20:32",
+        "20:33",
+        "21:29",
+        "21:30",
+        "21:31",
+        "22:8",
+        "22:28",
+        "22:29",
+        "22:30",
+        "22:31",
+        "22:32",
+        "22:33",
+        "23:5",
+        "23:28",
+        "23:29",
+        "23:30",
+        "23:31",
+        "23:32",
+        "23:33",
+        "23:34",
+        "23:35",
+        "23:36",
+        "23:37",
+        "23:38",
+        "24:18",
+        "24:24",
+        "24:35",
+        "24:36",
+        "24:37",
+        "24:38",
+        "24:39",
+        "24:40",
+        "24:41",
+        "24:42",
+        "24:43",
+        "24:44",
+        "24:45",
+        "24:46",
+        "24:47",
+        "25:12",
+        "25:27",
+        "25:28",
+        "25:29",
+        "25:30",
+        "25:31",
+        "25:32",
+        "25:33",
+        "25:34",
+        "25:35",
+        "25:36",
+        "27:31",
+        "27:32",
+        "27:33",
+        "28:25",
+        "28:27",
+        "28:28",
+        "28:29",
+        "28:30",
+        "29:17",
+        "29:29",
+        "29:30",
+        "29:31",
+        "29:32",
+        "29:33",
+        "29:34",
+        "29:35",
+        "30:26",
+        "30:27",
+        "31:32",
+        "31:33",
+        "31:34",
+        "31:35",
+        "31:36",
+        "31:37",
+        "31:38",
+        "31:39",
+        "31:40",
+        "31:41",
+        "31:42",
+        "32:22",
+        "32:25",
+        "32:26",
+        "32:27",
+        "32:28",
+        "33:29",
+        "33:33",
+        "34:11",
+        "34:22",
+        "34:27",
+        "35:7",
+        "35:19",
+        "36:7",
+        "36:9",
+        "36:14",
+        "36:15",
+        "37:32",
+        "37:33",
+        "37:34",
+        "38:35",
+        "38:36",
+        "38:37",
+        "38:38",
+        "38:39",
+        "39:36",
+        "39:37",
+        "39:38",
+        "39:39",
+        "39:40",
+        "39:41",
+        "40:31",
+        "40:32",
+        "41:23",
+        "41:24",
+        "41:25",
+        "41:26",
+        "41:27",
+        "41:28",
+        "42:26",
+        "43:17",
+        "43:34",
+        "43:35",
+        "43:36",
+        "43:37",
+        "44:24",
+        "44:25",
+        "44:26",
+        "44:27",
+        "45:27",
+        "45:28",
+        "45:29",
+        "45:30",
+        "45:31",
+        "46:21",
+        "46:22",
+        "46:23",
+        "47:26",
+        "47:27",
+        "47:28",
+        "47:29",
+        "47:30",
+        "47:31",
+        "48:26",
+        "48:27",
+        "48:28",
+        "49:17",
+        "49:18",
+        "49:19",
+        "50:30",
+        "50:31",
+        "51:31",
+        "51:32",
+        "51:33",
+        "51:34",
+        "51:35",
+        "51:36",
+        "51:37",
+        "51:38"
+      ],
+      "nrsvApplicableMissingRows": [
+        "1:5",
+        "1:7",
+        "1:21",
+        "1:31",
+        "1:32",
+        "1:33",
+        "1:34",
+        "1:35",
+        "1:36",
+        "1:37",
+        "1:38",
+        "1:39",
+        "1:40",
+        "2:19",
+        "2:20",
+        "2:21",
+        "2:22",
+        "2:23",
+        "3:7",
+        "3:19",
+        "3:32",
+        "3:33",
+        "3:34",
+        "4:32",
+        "4:33",
+        "4:34",
+        "4:35",
+        "4:36",
+        "5:16",
+        "5:17",
+        "5:18",
+        "7:37",
+        "7:38",
+        "7:39",
+        "7:40",
+        "8:20",
+        "8:21",
+        "8:22",
+        "9:19",
+        "9:20",
+        "9:21",
+        "9:22",
+        "9:23",
+        "9:24",
+        "9:25",
+        "10:21",
+        "10:32",
+        "10:33",
+        "10:34",
+        "11:15",
+        "11:16",
+        "11:35",
+        "11:36",
+        "12:19",
+        "13:14",
+        "13:27",
+        "13:28",
+        "13:29",
+        "13:30",
+        "13:31",
+        "13:32",
+        "15:21",
+        "15:22",
+        "16:15",
+        "16:16",
+        "16:31",
+        "17:5",
+        "17:9",
+        "17:16",
+        "17:18",
+        "17:21",
+        "18:2",
+        "18:3",
+        "19:6",
+        "19:18",
+        "19:19",
+        "19:21",
+        "20:32",
+        "20:33",
+        "21:29",
+        "21:30",
+        "21:31",
+        "22:8",
+        "22:28",
+        "22:29",
+        "22:30",
+        "22:31",
+        "22:32",
+        "22:33",
+        "23:5",
+        "23:28",
+        "23:29",
+        "23:30",
+        "23:31",
+        "23:32",
+        "23:33",
+        "23:34",
+        "23:35",
+        "23:36",
+        "23:37",
+        "23:38",
+        "24:18",
+        "24:24",
+        "24:35",
+        "24:36",
+        "24:37",
+        "24:38",
+        "24:39",
+        "24:40",
+        "24:41",
+        "24:42",
+        "24:43",
+        "24:44",
+        "24:45",
+        "24:46",
+        "24:47",
+        "25:12",
+        "25:27",
+        "25:28",
+        "25:29",
+        "25:30",
+        "25:31",
+        "25:32",
+        "25:33",
+        "25:34",
+        "25:35",
+        "25:36",
+        "27:31",
+        "27:32",
+        "27:33",
+        "28:25",
+        "28:27",
+        "28:28",
+        "28:29",
+        "28:30",
+        "29:17",
+        "29:29",
+        "29:30",
+        "29:31",
+        "29:32",
+        "29:33",
+        "29:34",
+        "29:35",
+        "30:26",
+        "30:27",
+        "31:32",
+        "31:33",
+        "31:34",
+        "31:35",
+        "31:36",
+        "31:37",
+        "31:38",
+        "31:39",
+        "31:40",
+        "31:41",
+        "31:42",
+        "32:22",
+        "32:25",
+        "32:26",
+        "32:27",
+        "32:28",
+        "33:29",
+        "33:33",
+        "34:11",
+        "34:22",
+        "34:27",
+        "35:7",
+        "35:19",
+        "36:7",
+        "36:9",
+        "36:14",
+        "36:15",
+        "37:32",
+        "37:33",
+        "37:34",
+        "38:35",
+        "38:36",
+        "38:37",
+        "38:38",
+        "38:39",
+        "39:36",
+        "39:37",
+        "39:38",
+        "39:39",
+        "39:40",
+        "39:41",
+        "40:31",
+        "40:32",
+        "41:23",
+        "41:24",
+        "41:25",
+        "41:26",
+        "41:27",
+        "41:28",
+        "42:26",
+        "43:17",
+        "43:34",
+        "43:35",
+        "43:36",
+        "43:37",
+        "44:24",
+        "44:25",
+        "44:26",
+        "44:27",
+        "45:27",
+        "45:28",
+        "45:29",
+        "45:30",
+        "45:31",
+        "46:21",
+        "46:22",
+        "46:23",
+        "47:26",
+        "47:27",
+        "47:28",
+        "47:29",
+        "47:30",
+        "47:31",
+        "48:26",
+        "48:27",
+        "48:28",
+        "49:17",
+        "49:18",
+        "49:19",
+        "50:30",
+        "50:31",
+        "51:31",
+        "51:32",
+        "51:33",
+        "51:34",
+        "51:35",
+        "51:36",
+        "51:37",
+        "51:38"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 1388,
+        "NABRE": 1131,
+        "DRB": 1592
+      }
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "activeRows": 299,
+      "nrsvRows": 242,
+      "missingNrsVRows": [
+        "1:23",
+        "1:24",
+        "1:25",
+        "2:15",
+        "2:16",
+        "2:17",
+        "2:18",
+        "2:19",
+        "2:20",
+        "2:21",
+        "2:22",
+        "2:23",
+        "3:18",
+        "3:19",
+        "3:20",
+        "3:21",
+        "3:22",
+        "3:23",
+        "3:24",
+        "3:25",
+        "4:22",
+        "4:23",
+        "5:23",
+        "5:24",
+        "5:25",
+        "5:26",
+        "5:27",
+        "5:28",
+        "6:19",
+        "6:20",
+        "6:21",
+        "6:22",
+        "7:17",
+        "7:18",
+        "7:19",
+        "7:20",
+        "8:22",
+        "8:23",
+        "8:24",
+        "9:7",
+        "9:8",
+        "9:9",
+        "9:10",
+        "9:11",
+        "9:12",
+        "10:14",
+        "11:20",
+        "11:21",
+        "13:18",
+        "13:19",
+        "13:20",
+        "13:21",
+        "13:22",
+        "13:23",
+        "14:9",
+        "14:16",
+        "14:17"
+      ],
+      "nrsvApplicableMissingRows": [
+        "1:23",
+        "1:24",
+        "1:25",
+        "2:15",
+        "2:16",
+        "2:17",
+        "2:18",
+        "2:19",
+        "2:20",
+        "2:21",
+        "2:22",
+        "2:23",
+        "3:18",
+        "3:19",
+        "3:20",
+        "3:21",
+        "3:22",
+        "3:23",
+        "3:24",
+        "3:25",
+        "4:22",
+        "4:23",
+        "5:23",
+        "5:24",
+        "5:25",
+        "5:26",
+        "5:27",
+        "5:28",
+        "6:19",
+        "6:20",
+        "6:21",
+        "6:22",
+        "7:17",
+        "7:18",
+        "7:19",
+        "7:20",
+        "8:22",
+        "8:23",
+        "8:24",
+        "9:7",
+        "9:8",
+        "9:9",
+        "9:10",
+        "9:11",
+        "9:12",
+        "10:14",
+        "11:20",
+        "11:21",
+        "13:18",
+        "13:19",
+        "13:20",
+        "13:21",
+        "13:22",
+        "13:23",
+        "14:9",
+        "14:16",
+        "14:17"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 244,
+        "NABRE": 226,
+        "DRB": 298
+      }
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "activeRows": 442,
+      "nrsvRows": 436,
+      "missingNrsVRows": [
+        "2:25",
+        "5:24",
+        "6:26",
+        "6:27",
+        "9:19",
+        "11:27"
+      ],
+      "nrsvApplicableMissingRows": [
+        "2:25",
+        "5:24",
+        "6:26",
+        "6:27",
+        "9:19",
+        "11:27"
+      ],
+      "nrsvNotApplicableRows": [],
+      "translationPresence": {
+        "KJV": 436,
+        "NABRE": 403,
+        "DRB": 439
+      }
+    }
+  ],
+  "totals": {
+    "candidateBooks": 10,
+    "activeRows": 5213,
+    "nrsvRows": 4869,
+    "nrsvApplicableMissingRows": 343,
+    "nrsvNotApplicableRows": 1
+  },
+  "nrsvApplicableMissingRows": [
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:65"
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:66"
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:67"
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "2:13"
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "12:54"
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "13:54"
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "2:33"
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "12:46"
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "15:40"
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:11"
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:38"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:11"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:12"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:13"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:14"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "4:16"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "4:17"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:25"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:16"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:17"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:18"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:19"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:21"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:22"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:23"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:24"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:25"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:30"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:31"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "15:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:30"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "12:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:14"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "15:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "15:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:9"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "18:2"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "18:3"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:6"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "20:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "20:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:8"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:42"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:43"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:44"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:45"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:46"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:47"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:12"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "30:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "30:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:42"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "33:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "33:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:11"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "35:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "35:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:9"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:14"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "40:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "40:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "42:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "50:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "50:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:38"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:24"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:25"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:15"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:16"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:17"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:18"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:19"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:21"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:18"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:19"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:21"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:24"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:25"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "4:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "4:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:24"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:25"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:26"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:27"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:28"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:19"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:21"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:17"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:18"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:19"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:24"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:7"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:8"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:9"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:10"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:11"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:12"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "10:14"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "11:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "11:21"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:18"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:19"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:20"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:21"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:22"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:23"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:9"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:16"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:17"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "2:25"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "5:24"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:26"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:27"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "9:19"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "11:27"
+    }
+  ],
+  "nrsvNotApplicableRows": [
+    {
+      "bookId": "GREEK_DANIEL",
+      "path": "data/bible/OT/danielGK.json",
+      "ref": "13:65",
+      "reason": "DRB-only versification/source-shape row; NRSV Bel and the Dragon begins at active Daniel 14:1.",
+      "governedBy": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json"
+    }
+  ],
+  "determination": {
+    "summary": "This audit separates NRSV-applicable gaps from governed source-shape or versification exceptions. It does not globally promote deuterocanon trust.",
+    "globalTrustPromotion": "not_performed",
+    "activeBibleTextMutation": "none",
+    "broadCanonWork": "blocked_until_this_audit_is_reviewed_and_pushed"
+  },
+  "allowedClaims": [
+    "deuterocanon_status_consolidation_audit_recorded",
+    "deutero_01_and_deutero_02_status_inputs_consolidated",
+    "deuterocanon_nrsv_applicable_gap_count_recorded",
+    "deuterocanon_no_active_bible_text_mutation_in_consolidation_audit"
+  ],
+  "blockedClaims": [
+    "deuterocanon_globally_textually_trusted",
+    "deuterocanon_complete_without_review",
+    "broad_canon_started_before_consolidation_review",
+    "daniel_13_65_nrsv_filled_or_synthesized"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.170",
+    "version": "3.8.171",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 NRSV-applicable Greek Esther tail repair is applied. Active estherGK.json 8:13-17 is filled from BibleGateway Esther 8 NRSVA spans; Daniel 13:65 is classified as DRB-only / NRSV-not-applicable source-shape row. Deuterocanon remains pending status consolidation before any global trust promotion.",
+    "operational_status": "Current operational status as of 2026-07-02: deuterocanon status consolidation audit recorded after DEUTERO-01 and DEUTERO-02. No Bible text was mutated. Global trust promotion was not performed.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,18 +1271,16 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
-      "status": "nrsv_applicable_gap_repair_completed",
-      "recordPath": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json",
-      "auditScript": "scripts/audit-bible-deutero-02-greek-esther-tail-nrsv-repair.mjs",
-      "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-esther-tail-repair-manifest.json",
+      "id": "deuterocanon_status_consolidation_audit_2026_07_02",
+      "status": "deuterocanon_status_consolidated_remaining_nrsv_applicable_gaps",
+      "recordPath": "data/bible/registry/deuterocanon-status-consolidation-audit-2026-07-02.json",
+      "auditScript": "scripts/audit-bible-deuterocanon-status-consolidation.mjs",
       "totals": {
-        "mutatedBooks": 1,
-        "mutatedRows": 5,
-        "nrsvApplicableMissingRowsBefore": 5,
-        "nrsvApplicableMissingRowsAfter": 0,
-        "nrsvNotApplicableRows": 1,
-        "syntheticRows": 0
+        "candidateBooks": 10,
+        "activeRows": 5213,
+        "nrsvRows": 4869,
+        "nrsvApplicableMissingRows": 343,
+        "nrsvNotApplicableRows": 1
       }
     },
     "latest_bible_psalms_checkpoint": {

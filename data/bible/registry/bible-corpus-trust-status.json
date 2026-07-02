@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_deutero_02_nrsv_applicable_gap_repaired_status_consolidation_pending",
+      "status": "not_trusted_status_consolidated_review_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1079,7 +1079,8 @@
         "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
         "deutero_02_greek_additions_source_active_audit_2026_07_02",
         "deutero_02_greek_additions_source_active_review_2026_07_02",
-        "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02"
+        "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
+        "deuterocanon_status_consolidation_audit_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6737,7 +6738,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Run deuterocanon status consolidation audit after DEUTERO-02 NRSV-applicable Greek Esther tail repair.",
+      "nextAction": "Review deuterocanon status consolidation audit before broad-canon work or any global trust promotion.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6774,7 +6775,11 @@
         "deutero_02_all_rows_textually_trusted_without_status_consolidation",
         "deutero_02_daniel_13_65_filled_with_duplicate_or_synthetic_nrsv",
         "deutero_02_repaired_from_prior_nrsva_diagnostic_snapshot",
-        "deuterocanon_textually_trusted_without_status_consolidation"
+        "deuterocanon_textually_trusted_without_status_consolidation",
+        "deuterocanon_globally_textually_trusted",
+        "deuterocanon_complete_without_review",
+        "broad_canon_started_before_consolidation_review",
+        "daniel_13_65_nrsv_filled_or_synthesized"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6797,7 +6802,11 @@
         "deutero_02_nrsv_applicable_gap_repair_completed",
         "greek_esther_8_13_17_nrsv_source_backed",
         "greek_daniel_13_65_classified_nrsv_not_applicable",
-        "deutero_02_no_synthetic_fill"
+        "deutero_02_no_synthetic_fill",
+        "deuterocanon_status_consolidation_audit_recorded",
+        "deutero_01_and_deutero_02_status_inputs_consolidated",
+        "deuterocanon_nrsv_applicable_gap_count_recorded",
+        "deuterocanon_no_active_bible_text_mutation_in_consolidation_audit"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6811,7 +6820,9 @@
       "latestGreekAdditionsSourceActiveReview": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
       "latestGreekAdditionsSourceActiveReviewAuditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active-review.mjs",
       "latestGreekEstherTailNrsVRepair": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json",
-      "latestGreekEstherTailNrsVRepairAuditScript": "scripts/audit-bible-deutero-02-greek-esther-tail-nrsv-repair.mjs"
+      "latestGreekEstherTailNrsVRepairAuditScript": "scripts/audit-bible-deutero-02-greek-esther-tail-nrsv-repair.mjs",
+      "latestDeuterocanonStatusConsolidationAudit": "data/bible/registry/deuterocanon-status-consolidation-audit-2026-07-02.json",
+      "latestDeuterocanonStatusConsolidationAuditScript": "scripts/audit-bible-deuterocanon-status-consolidation.mjs"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
