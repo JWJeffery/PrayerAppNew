@@ -1,0 +1,81 @@
+{
+  "schema": "deutero-02-greek-esther-tail-nrsv-repair-v1",
+  "id": "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
+  "status": "nrsv_applicable_gap_repair_completed",
+  "repairedAt": "2026-07-02T15:38:17Z",
+  "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-esther-tail-repair-manifest.json",
+  "activeMutations": [
+    {
+      "activePath": "data/bible/OT/estherGK.json",
+      "lane": "text.NRSV",
+      "refs": [
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17"
+      ],
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/estherGK-8-13-17-esther-8-nrsva-source.json",
+      "adapter": "ordinary_esther_8_nrsva_Esth_8_13_17_to_active_greek_esther_8_13_17"
+    }
+  ],
+  "nonMutatingDeterminations": [
+    {
+      "activePath": "data/bible/OT/danielGK.json",
+      "ref": "13:65",
+      "determination": "not_applicable_to_nrsv_active_grid",
+      "evidence": "Daniel 13:65 is a DRB-only row; NRSV Bel and the Dragon begins at active Daniel 14:1.",
+      "activeTextMutation": "none"
+    }
+  ],
+  "before": {
+    "GREEK_ESTHER": {
+      "missingNrsVRows": [
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17"
+      ]
+    },
+    "GREEK_DANIEL": {
+      "missingNrsVRows": [
+        "13:65"
+      ]
+    }
+  },
+  "after": {
+    "GREEK_ESTHER": {
+      "missingNrsVRows": []
+    },
+    "GREEK_DANIEL": {
+      "missingNrsVRows": [
+        "13:65"
+      ],
+      "nrsvNotApplicableRows": [
+        "13:65"
+      ]
+    }
+  },
+  "totals": {
+    "mutatedBooks": 1,
+    "mutatedRows": 5,
+    "nrsvApplicableMissingRowsBefore": 5,
+    "nrsvApplicableMissingRowsAfter": 0,
+    "nrsvNotApplicableRows": 1,
+    "syntheticRows": 0
+  },
+  "allowedClaims": [
+    "deutero_02_nrsv_applicable_gap_repair_completed",
+    "greek_esther_8_13_17_nrsv_source_backed",
+    "greek_daniel_13_65_classified_nrsv_not_applicable",
+    "deutero_02_no_synthetic_fill"
+  ],
+  "blockedClaims": [
+    "deutero_02_all_rows_textually_trusted_without_status_consolidation",
+    "deutero_02_daniel_13_65_filled_with_duplicate_or_synthetic_nrsv",
+    "deutero_02_repaired_from_prior_nrsva_diagnostic_snapshot",
+    "deuterocanon_textually_trusted_without_status_consolidation"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "biblegateway-nrsva-esther-8-tail-source-v1",
+  "sourceWitness": "BibleGateway NRSVA",
+  "capturedAt": "2026-07-02T15:38:17Z",
+  "sourceUrl": "https://www.biblegateway.com/passage/?search=Esther%208&version=NRSVA",
+  "finalUrl": "https://www.biblegateway.com/passage/?search=Esther%208&version=NRSVA",
+  "activePath": "data/bible/OT/estherGK.json",
+  "activeRefs": [
+    "8:13",
+    "8:14",
+    "8:15",
+    "8:16",
+    "8:17"
+  ],
+  "sourceRows": {
+    "8:13": "A copy of the writ was to be issued as a decree in every province and published to all peoples, and the Jews were to be ready on that day to take revenge on their enemies.",
+    "8:14": "So the couriers, mounted on their swift royal steeds, hurried out, urged by the king’s command. The decree was issued in the citadel of Susa.",
+    "8:15": "Then Mordecai went out from the presence of the king, wearing royal robes of blue and white, with a great golden crown and a mantle of fine linen and purple, while the city of Susa shouted and rejoiced.",
+    "8:16": "For the Jews there was light and gladness, joy and honour.",
+    "8:17": "In every province and in every city, wherever the king’s command and his edict came, there was gladness and joy among the Jews, a festival and a holiday. Furthermore, many of the peoples of the country professed to be Jews, because the fear of the Jews had fallen upon them."
+  },
+  "diagnostics": [
+    {
+      "ref": "8:13",
+      "token": "Esth-8-13",
+      "tokenIndex": 4156,
+      "candidateCount": 1,
+      "usableCount": 1,
+      "candidates": [
+        {
+          "rawSample": "<span id=\"en-NRSVA-12831\" class=\"text Esth-8-13\"><sup class=\"versenum\">13 </sup>A copy of the writ was to be issued as a decree in every province and published to all peoples, and the Jews were to be ready on that day to take revenge on their enemies. </span>",
+          "text": "A copy of the writ was to be issued as a decree in every province and published to all peoples, and the Jews were to be ready on that day to take revenge on their enemies."
+        }
+      ]
+    },
+    {
+      "ref": "8:14",
+      "token": "Esth-8-14",
+      "tokenIndex": 4416,
+      "candidateCount": 1,
+      "usableCount": 1,
+      "candidates": [
+        {
+          "rawSample": "<span id=\"en-NRSVA-12832\" class=\"text Esth-8-14\"><sup class=\"versenum\">14 </sup>So the couriers, mounted on their swift royal steeds, hurried out, urged by the king’s command. The decree was issued in the citadel of Susa.</span>",
+          "text": "So the couriers, mounted on their swift royal steeds, hurried out, urged by the king’s command. The decree was issued in the citadel of Susa."
+        }
+      ]
+    },
+    {
+      "ref": "8:15",
+      "token": "Esth-8-15",
+      "tokenIndex": 4652,
+      "candidateCount": 1,
+      "usableCount": 1,
+      "candidates": [
+        {
+          "rawSample": "<span id=\"en-NRSVA-12833\" class=\"text Esth-8-15\"><sup class=\"versenum\">15 </sup>Then Mordecai went out from the presence of the king, wearing royal robes of blue and white, with a great golden crown and a mantle of fine linen and purple, while the city of Susa shouted and rejoiced. </span>",
+          "text": "Then Mordecai went out from the presence of the king, wearing royal robes of blue and white, with a great golden crown and a mantle of fine linen and purple, while the city of Susa shouted and rejoiced."
+        }
+      ]
+    },
+    {
+      "ref": "8:16",
+      "token": "Esth-8-16",
+      "tokenIndex": 4943,
+      "candidateCount": 1,
+      "usableCount": 1,
+      "candidates": [
+        {
+          "rawSample": "<span id=\"en-NRSVA-12834\" class=\"text Esth-8-16\"><sup class=\"versenum\">16 </sup>For the Jews there was light and gladness, joy and honour. </span>",
+          "text": "For the Jews there was light and gladness, joy and honour."
+        }
+      ]
+    },
+    {
+      "ref": "8:17",
+      "token": "Esth-8-17",
+      "tokenIndex": 5090,
+      "candidateCount": 1,
+      "usableCount": 1,
+      "candidates": [
+        {
+          "rawSample": "<span id=\"en-NRSVA-12835\" class=\"text Esth-8-17\"><sup class=\"versenum\">17 </sup>In every province and in every city, wherever the king’s command and his edict came, there was gladness and joy among the Jews, a festival and a holiday. Furthermore, many of the peoples of the country professed to be Jews, because the fear of the Jews had fallen upon them.</span>",
+          "text": "In every province and in every city, wherever the king’s command and his edict came, there was gladness and joy among the Jews, a festival and a holiday. Furthermore, many of the peoples of the country professed to be Jews, because the fear of the Jews had fallen upon them."
+        }
+      ]
+    }
+  ],
+  "adapter": "ordinary_esther_8_nrsva_Esth_8_13_17_to_active_greek_esther_8_13_17",
+  "notes": [
+    "BibleGateway Greek Esther 8 does not expose GkEsth-8-13 through GkEsth-8-17.",
+    "The active Greek Esther 8:13-17 rows align to ordinary Esther 8:13-17 source spans for this corpus shape.",
+    "This repair fills only active estherGK.json text.NRSV rows 8:13-17."
+  ]
+}

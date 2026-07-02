@@ -1,0 +1,38 @@
+{
+  "schema": "deutero-02-greek-esther-tail-nrsv-repair-manifest-v1",
+  "capturedAt": "2026-07-02T15:38:17Z",
+  "normalizedActiveLane": "text.NRSV",
+  "scope": "DEUTERO-02 Greek Esther active 8:13-17 NRSV tail repair",
+  "sources": [
+    {
+      "id": "GREEK_ESTHER_ACTIVE_8_13_17",
+      "sourceWitness": "BibleGateway NRSVA",
+      "sourceUrl": "https://www.biblegateway.com/passage/?search=Esther%208&version=NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/estherGK-8-13-17-esther-8-nrsva-source.json",
+      "activePath": "data/bible/OT/estherGK.json",
+      "activeRefs": [
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17"
+      ],
+      "sourceRefs": [
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17"
+      ],
+      "adapter": "ordinary_esther_8_nrsva_Esth_8_13_17_to_active_greek_esther_8_13_17"
+    }
+  ],
+  "nonMutatingDeterminations": [
+    {
+      "id": "GREEK_DANIEL_13_65",
+      "activePath": "data/bible/OT/danielGK.json",
+      "ref": "13:65",
+      "determination": "DRB-only versification/source-shape row; not an NRSV active-grid gap. NRSV Bel and the Dragon begins at active Daniel 14:1."
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.169",
+    "version": "3.8.170",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 Greek Esther and Greek Daniel source-active audit has been reviewed and is not repair-ready. Current BibleGateway NRSVA snapshots are diagnostic only; automated overlay repair is blocked pending a better source witness/extraction method or governed source-shape adapter.",
+    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 NRSV-applicable Greek Esther tail repair is applied. Active estherGK.json 8:13-17 is filled from BibleGateway Esther 8 NRSVA spans; Daniel 13:65 is classified as DRB-only / NRSV-not-applicable source-shape row. Deuterocanon remains pending status consolidation before any global trust promotion.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,27 +1271,18 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deutero_02_greek_additions_source_active_review_2026_07_02",
-      "status": "source_active_audit_reviewed_not_repair_ready",
-      "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
-      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active-review.mjs",
-      "blockingCounts": {
-        "mismatches": 330,
-        "activeRefsWithoutSource": 229,
-        "activeMissingNrsVRows": 6,
-        "unavailableChapters": 8
-      },
+      "id": "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
+      "status": "nrsv_applicable_gap_repair_completed",
+      "recordPath": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json",
+      "auditScript": "scripts/audit-bible-deutero-02-greek-esther-tail-nrsv-repair.mjs",
+      "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-esther-tail-repair-manifest.json",
       "totals": {
-        "books": 2,
-        "activeRows": 803,
-        "activeNrsVRows": 797,
-        "activeMissingNrsVRows": 6,
-        "sourceRows": 524,
-        "sourceRefsWithoutActive": 0,
-        "activeRefsWithoutSource": 229,
-        "matchingRefs": 189,
-        "mismatches": 330,
-        "unavailableChapters": 8
+        "mutatedBooks": 1,
+        "mutatedRows": 5,
+        "nrsvApplicableMissingRowsBefore": 5,
+        "nrsvApplicableMissingRowsAfter": 0,
+        "nrsvNotApplicableRows": 1,
+        "syntheticRows": 0
       }
     },
     "latest_bible_psalms_checkpoint": {
