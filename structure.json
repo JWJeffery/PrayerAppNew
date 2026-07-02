@@ -1988,7 +1988,28 @@
       "path": "documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md",
       "status": "active",
       "created": "2026-06-20",
-      "purpose": "Phase -1 architecture contract above all office-family lanes: no universal resolver; each lane keeps its own resolver, calendar, rank logic, vocabulary, and structure and emits a shared resolved-office output contract."
+      "purpose": "Phase -1 architecture contract above all office-family lanes: no universal resolver; each lane keeps its own resolver, calendar, rank logic, vocabulary, and structure and emits a shared resolved-office output contract.",
+      "governance_decisions": [
+        {
+          "id": "universal_office_catechetical_liturgical_integration",
+          "status": "governed",
+          "decision": "The Universal Office feature for incorporating prayers from another tradition is governed as catechetical liturgical integration, not consumerist spiritual sampling.",
+          "architecture_rule": "Users should first encounter, learn, and pray each tradition's offices as themselves; then understand the office element's internal liturgical meaning and spiritual function; then compare related office families across traditions; and only then incorporate specific prayers or devotional elements into another Daily Office pattern.",
+          "education_category": {
+            "name": "Night Prayer / Sleep / Vigil / Examination of the Day",
+            "purpose": "Teach how apostolic and ecclesial traditions pray the threshold of sleep through repentance, mercy, protection, judgment, vigilance, bodily vulnerability, and examination of the day.",
+            "representative_traditions_and_forms": [
+              "Coptic Prayer of the Veil",
+              "Byzantine Small Compline",
+              "Syriac Sootoro / Soutoro",
+              "Armenian Rest Service",
+              "Roman / Anglican Compline",
+              "Ignatian Examen"
+            ]
+          },
+          "implementation_implication": "The import/supplement feature must remain downstream from education and tradition-specific office exposure. It should preserve tradition identity, source honesty, and liturgical function rather than presenting prayers as interchangeable devotional fragments."
+        }
+      ]
     },
     "roman_breviary_1960_1962_architecture": {
       "path": "documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md",
