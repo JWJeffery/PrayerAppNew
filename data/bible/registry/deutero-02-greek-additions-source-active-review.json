@@ -1,0 +1,177 @@
+{
+  "schema": "deutero-02-greek-additions-source-active-review-v1",
+  "id": "deutero_02_greek_additions_source_active_review_2026_07_02",
+  "status": "source_active_audit_reviewed_not_repair_ready",
+  "reviewedAt": "2026-07-02T14:16:53Z",
+  "scope": {
+    "tranche": "DEUTERO-02",
+    "books": [
+      "GREEK_ESTHER",
+      "GREEK_DANIEL"
+    ],
+    "activeFiles": [
+      "data/bible/OT/estherGK.json",
+      "data/bible/OT/danielGK.json"
+    ],
+    "sourceActiveAudit": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
+    "formPolicyBoundary": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
+    "lane": "text.NRSV"
+  },
+  "determination": {
+    "summary": "DEUTERO-02 source-active audit is useful as a diagnostic witness but is not safe for automated same-address text repair. The current BibleGateway NRSVA snapshots contain substantial mismatches, unavailable chapters, active refs without source rows, and active missing NRSV rows. The observed mismatch set includes source-shape and extraction problems such as heading contamination, partial verse extraction, punctuation/quotation differences, edition/orthography differences, and Greek-addition form coverage gaps. Therefore, do not overlay these snapshots onto estherGK.json or danielGK.json.",
+    "repairReadiness": "not_repair_ready",
+    "automatedOverlayRepair": "blocked",
+    "sameAddressRepair": "blocked_pending_better_source_or_adapter_policy",
+    "adapterPolicy": "required_before_any_source_row_split_or_form_mapping",
+    "activeTextMutation": "none"
+  },
+  "blockingCounts": {
+    "mismatches": 330,
+    "activeRefsWithoutSource": 229,
+    "activeMissingNrsVRows": 6,
+    "unavailableChapters": 8
+  },
+  "totals": {
+    "books": 2,
+    "activeRows": 803,
+    "activeNrsVRows": 797,
+    "activeMissingNrsVRows": 6,
+    "sourceRows": 524,
+    "sourceRefsWithoutActive": 0,
+    "activeRefsWithoutSource": 229,
+    "matchingRefs": 189,
+    "mismatches": 330,
+    "unavailableChapters": 8
+  },
+  "bookSummaries": [
+    {
+      "id": "GREEK_ESTHER",
+      "name": "Greek Esther",
+      "activePath": "data/bible/OT/estherGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/estherGK.json",
+      "activeRows": 272,
+      "activeNrsVRows": 267,
+      "activeMissingNrsVRowsCount": 5,
+      "sourceRows": 167,
+      "sourceRefsWithoutActiveCount": 0,
+      "activeRefsWithoutSourceCount": 55,
+      "matchingRefsCount": 64,
+      "mismatchCount": 98,
+      "unavailableChapters": [
+        {
+          "chapter": 11,
+          "query": "Esther 11",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2011&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 12,
+          "query": "Esther 12",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2012&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 13,
+          "query": "Esther 13",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2013&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 14,
+          "query": "Esther 14",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2014&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 15,
+          "query": "Esther 15",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2015&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 16,
+          "query": "Esther 16",
+          "url": "https://www.biblegateway.com/passage/?search=Esther%2016&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewDecision": "diagnostic_only_not_repair_ready"
+    },
+    {
+      "id": "GREEK_DANIEL",
+      "name": "Greek Daniel",
+      "activePath": "data/bible/OT/danielGK.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/danielGK.json",
+      "activeRows": 531,
+      "activeNrsVRows": 530,
+      "activeMissingNrsVRowsCount": 1,
+      "sourceRows": 357,
+      "sourceRefsWithoutActiveCount": 0,
+      "activeRefsWithoutSourceCount": 174,
+      "matchingRefsCount": 125,
+      "mismatchCount": 232,
+      "unavailableChapters": [
+        {
+          "chapter": 13,
+          "query": "Daniel 13",
+          "url": "https://www.biblegateway.com/passage/?search=Daniel%2013&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        },
+        {
+          "chapter": 14,
+          "query": "Daniel 14",
+          "url": "https://www.biblegateway.com/passage/?search=Daniel%2014&version=NRSVA",
+          "ok": true,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewDecision": "diagnostic_only_not_repair_ready"
+    }
+  ],
+  "allowedClaims": [
+    "deutero_02_source_active_audit_reviewed",
+    "deutero_02_biblegateway_nrsva_snapshots_diagnostic_only",
+    "deutero_02_no_active_bible_text_mutation",
+    "deutero_02_repair_blocked_pending_source_or_adapter_policy"
+  ],
+  "blockedClaims": [
+    "deutero_02_text_repaired",
+    "deutero_02_overlay_repair_allowed_from_current_snapshots",
+    "deutero_02_same_address_complete",
+    "deutero_02_source_row_split_without_adapter_policy",
+    "deutero_02_synthetic_fill",
+    "greek_esther_textually_trusted",
+    "greek_daniel_textually_trusted",
+    "deuterocanon_textually_trusted",
+    "deuterocanon_complete"
+  ],
+  "nextActions": [
+    {
+      "id": "find_better_greek_additions_source",
+      "action": "Identify a source witness or extraction method that cleanly covers Greek Esther and Greek Daniel in the repo's active form before attempting text repair."
+    },
+    {
+      "id": "design_adapter_policy",
+      "action": "If using BibleGateway NRSVA remains necessary, design and govern a source-shape adapter that handles headings, partial rows, missing chapters, edition differences, and Greek-addition form mapping before any text mutation."
+    },
+    {
+      "id": "do_not_overlay",
+      "action": "Do not apply current BibleGateway NRSVA snapshots directly to estherGK.json or danielGK.json."
+    }
+  ]
+}

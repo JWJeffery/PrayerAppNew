@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.168",
+    "version": "3.8.169",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 Greek Esther and Greek Daniel source-active shape audit is recorded from BibleGateway NRSVA candidate snapshots. No active Bible text was mutated. Deuterocanon remains not globally trusted pending review of source-active findings.",
+    "operational_status": "Current operational status as of 2026-07-02: DEUTERO-02 Greek Esther and Greek Daniel source-active audit has been reviewed and is not repair-ready. Current BibleGateway NRSVA snapshots are diagnostic only; automated overlay repair is blocked pending a better source witness/extraction method or governed source-shape adapter.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,11 +1271,16 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deutero_02_greek_additions_source_active_audit_2026_07_02",
-      "status": "PASS_SOURCE_ACTIVE_SHAPE_FINDINGS_RECORDED",
-      "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
-      "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-manifest.json",
-      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active.mjs",
+      "id": "deutero_02_greek_additions_source_active_review_2026_07_02",
+      "status": "source_active_audit_reviewed_not_repair_ready",
+      "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
+      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active-review.mjs",
+      "blockingCounts": {
+        "mismatches": 330,
+        "activeRefsWithoutSource": 229,
+        "activeMissingNrsVRows": 6,
+        "unavailableChapters": 8
+      },
       "totals": {
         "books": 2,
         "activeRows": 803,

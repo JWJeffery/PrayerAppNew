@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_deutero_02_source_active_shape_audited_review_pending",
+      "status": "not_trusted_deutero_02_reviewed_adapter_or_better_source_required",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1077,7 +1077,8 @@
         "deutero_01_catholic_postrepair_source_shape_audit_2026_07_02",
         "deutero_01_catholic_source_shape_closure_2026_07_02",
         "deutero_02_greek_additions_form_policy_boundary_2026_07_02",
-        "deutero_02_greek_additions_source_active_audit_2026_07_02"
+        "deutero_02_greek_additions_source_active_audit_2026_07_02",
+        "deutero_02_greek_additions_source_active_review_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6735,7 +6736,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review DEUTERO-02 source-active shape findings for estherGK.json and danielGK.json, then decide whether source-backed text repair, adapter policy, or closure governance is appropriate.",
+      "nextAction": "Find a better Greek additions source witness/extraction method or design a governed source-shape adapter before any estherGK.json or danielGK.json text repair.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6764,7 +6765,11 @@
         "deutero_02_text_repaired",
         "deutero_02_same_address_complete_without_review",
         "deutero_02_source_row_split_without_adapter_policy",
-        "deutero_02_synthetic_fill"
+        "deutero_02_synthetic_fill",
+        "deutero_02_overlay_repair_allowed_from_current_snapshots",
+        "deutero_02_same_address_complete",
+        "greek_esther_textually_trusted",
+        "greek_daniel_textually_trusted"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6779,7 +6784,11 @@
         "greek_additions_no_simple_overlay_policy_recorded",
         "deutero_02_form_policy_recorded_without_text_mutation",
         "deutero_02_greek_additions_source_active_shape_audited",
-        "deutero_02_bible_text_not_mutated"
+        "deutero_02_bible_text_not_mutated",
+        "deutero_02_source_active_audit_reviewed",
+        "deutero_02_biblegateway_nrsva_snapshots_diagnostic_only",
+        "deutero_02_no_active_bible_text_mutation",
+        "deutero_02_repair_blocked_pending_source_or_adapter_policy"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6789,7 +6798,9 @@
       "latestGreekAdditionsFormPolicyBoundary": "data/bible/registry/deutero-02-greek-additions-form-policy-boundary.json",
       "latestGreekAdditionsFormPolicyAuditScript": "scripts/audit-bible-deutero-02-greek-additions-form-policy.mjs",
       "latestGreekAdditionsSourceActiveAudit": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
-      "latestGreekAdditionsSourceActiveAuditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active.mjs"
+      "latestGreekAdditionsSourceActiveAuditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active.mjs",
+      "latestGreekAdditionsSourceActiveReview": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
+      "latestGreekAdditionsSourceActiveReviewAuditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active-review.mjs"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",

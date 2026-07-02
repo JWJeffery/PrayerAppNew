@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.43",
-  "last_updated": "2026-07-02T06:18:47Z",
+  "last_updated": "2026-07-02T14:16:53Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -23,9 +23,9 @@
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
-    "latest_bible_corpus_checkpoint": "deutero_02_greek_additions_source_active_audit_2026_07_02",
+    "latest_bible_corpus_checkpoint": "deutero_02_greek_additions_source_active_review_2026_07_02",
     "latest_bible_corpus_checkpoint_commit": "2bd15ff",
-    "current_bible_corpus_summary": "DEUTERO-02 Greek Esther and Greek Daniel source-active shape audit is recorded from BibleGateway NRSVA candidate snapshots. No active Bible text was mutated. Deuterocanon remains not globally trusted pending review of source-active findings.",
+    "current_bible_corpus_summary": "DEUTERO-02 Greek Esther and Greek Daniel source-active audit has been reviewed and is not repair-ready. Current BibleGateway NRSVA snapshots are diagnostic only; automated overlay repair is blocked pending a better source witness/extraction method or governed source-shape adapter.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -439,6 +439,30 @@
       "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-audit.json",
       "sourceManifest": "data/bible/translations/nrsv-biblegateway-nrsva/greek-additions-manifest.json",
       "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active.mjs",
+      "totals": {
+        "books": 2,
+        "activeRows": 803,
+        "activeNrsVRows": 797,
+        "activeMissingNrsVRows": 6,
+        "sourceRows": 524,
+        "sourceRefsWithoutActive": 0,
+        "activeRefsWithoutSource": 229,
+        "matchingRefs": 189,
+        "mismatches": 330,
+        "unavailableChapters": 8
+      }
+    },
+    "deutero_02_greek_additions_source_active_review": {
+      "id": "deutero_02_greek_additions_source_active_review_2026_07_02",
+      "status": "source_active_audit_reviewed_not_repair_ready",
+      "recordPath": "data/bible/registry/deutero-02-greek-additions-source-active-review.json",
+      "auditScript": "scripts/audit-bible-deutero-02-greek-additions-source-active-review.mjs",
+      "blockingCounts": {
+        "mismatches": 330,
+        "activeRefsWithoutSource": 229,
+        "activeMissingNrsVRows": 6,
+        "unavailableChapters": 8
+      },
       "totals": {
         "books": 2,
         "activeRows": 803,
