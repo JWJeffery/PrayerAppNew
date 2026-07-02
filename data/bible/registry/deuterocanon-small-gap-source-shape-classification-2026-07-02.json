@@ -1,0 +1,2361 @@
+{
+  "schema": "deuterocanon-small-gap-source-shape-classification-v1",
+  "id": "deuterocanon_small_gap_source_shape_classification_2026_07_02",
+  "status": "small_gap_rows_classified_as_source_shape_addressability",
+  "recordedAt": "2026-07-02T20:20:11Z",
+  "scope": {
+    "lane": "text.NRSV",
+    "sourceWitness": "BibleGateway NRSVA",
+    "priorAccounting": "data/bible/registry/deuterocanon-status-accounting-after-tobit-2026-07-02.json",
+    "books": [
+      "BARUCH",
+      "FIRST_MACCABEES",
+      "SECOND_MACCABEES",
+      "WISDOM"
+    ]
+  },
+  "summary": {
+    "targetRows": 17,
+    "classifiedNotApplicable": 17,
+    "remainingNrsVApplicableRowsAfterClassification": 269,
+    "nrsvNotApplicableRowsAfterClassification": 75,
+    "activeBibleTextMutation": "none",
+    "syntheticRows": 0
+  },
+  "rawSourceSummaries": {
+    "WISDOM": {
+      "rawPath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawRefCount": 436,
+      "rawMaxByChapter": {
+        "1": 16,
+        "2": 24,
+        "3": 19,
+        "4": 20,
+        "5": 23,
+        "6": 25,
+        "7": 30,
+        "8": 21,
+        "9": 18,
+        "10": 21,
+        "11": 26,
+        "12": 27,
+        "13": 19,
+        "14": 31,
+        "15": 19,
+        "16": 29,
+        "17": 21,
+        "18": 25,
+        "19": 22
+      }
+    },
+    "BARUCH": {
+      "rawPath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "rawRefCount": 139,
+      "rawMaxByChapter": {
+        "1": 22,
+        "2": 35,
+        "3": 37,
+        "4": 37,
+        "5": 9
+      }
+    },
+    "FIRST_MACCABEES": {
+      "rawPath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawRefCount": 923,
+      "rawMaxByChapter": {
+        "1": 64,
+        "2": 70,
+        "3": 60,
+        "4": 61,
+        "5": 68,
+        "6": 63,
+        "7": 50,
+        "8": 32,
+        "9": 73,
+        "10": 89,
+        "11": 74,
+        "12": 53,
+        "13": 53,
+        "14": 49,
+        "15": 41,
+        "16": 24
+      }
+    },
+    "SECOND_MACCABEES": {
+      "rawPath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawRefCount": 555,
+      "rawMaxByChapter": {
+        "1": 36,
+        "2": 32,
+        "3": 40,
+        "4": 50,
+        "5": 27,
+        "6": 31,
+        "7": 42,
+        "8": 36,
+        "9": 29,
+        "10": 38,
+        "11": 38,
+        "12": 45,
+        "13": 26,
+        "14": 46,
+        "15": 39
+      }
+    }
+  },
+  "classificationCounts": {
+    "nrsv_not_applicable_absent_from_source_grid": 2,
+    "nrsv_not_applicable_beyond_source_endpoint": 15
+  },
+  "classifiedByBook": {
+    "BARUCH": 2,
+    "FIRST_MACCABEES": 6,
+    "SECOND_MACCABEES": 3,
+    "WISDOM": 6
+  },
+  "remainingApplicableMissingByBook": {
+    "JUDITH": 35,
+    "SIRACH": 234
+  },
+  "notApplicableByBook": {
+    "BARUCH": 2,
+    "FIRST_MACCABEES": 6,
+    "GREEK_DANIEL": 1,
+    "SECOND_MACCABEES": 3,
+    "TOBIT": 57,
+    "WISDOM": 6
+  },
+  "classifiedRows": [
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "2:25",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 2 ends at verse 24; active 2:25 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 24,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "5:24",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 5 ends at verse 23; active 5:24 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 23,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:26",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 6 ends at verse 25; active 6:26 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 25,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:27",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 6 ends at verse 25; active 6:27 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 25,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "9:19",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 9 ends at verse 18; active 9:19 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 18,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "11:27",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 11 ends at verse 26; active 11:27 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 26,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:11",
+      "classification": "nrsv_not_applicable_absent_from_source_grid",
+      "reason": "BibleGateway NRSVA BARUCH chapter 3 does not contain standalone source ref 3:11; active row is a multi-version addressability row.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "rawChapterMaxVerse": 37,
+      "activeTranslationsPresent": [
+        "DRB",
+        "KJV",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:38",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA BARUCH chapter 3 ends at verse 37; active 3:38 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "rawChapterMaxVerse": 37,
+      "activeTranslationsPresent": [
+        "DRB",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:65",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:65 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:66",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:66 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:67",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:67 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "2:13",
+      "classification": "nrsv_not_applicable_absent_from_source_grid",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 2 does not contain standalone source ref 2:13; active row is a multi-version addressability row.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 70,
+      "activeTranslationsPresent": [
+        "DRB",
+        "KJV",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "12:54",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 12 ends at verse 53; active 12:54 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 53,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "13:54",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 13 ends at verse 53; active 13:54 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 53,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "2:33",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 2 ends at verse 32; active 2:33 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 32,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "12:46",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 12 ends at verse 45; active 12:46 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 45,
+      "activeTranslationsPresent": [
+        "DRB",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "15:40",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 15 ends at verse 39; active 15:40 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 39,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    }
+  ],
+  "remainingNrsVApplicableMissingRows": [
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:11"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:12"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:13"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:14"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "3:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "4:16"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "4:17"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:25"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "5:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:16"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:17"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:18"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "9:19"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:21"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:22"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:23"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:24"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:25"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:30"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "13:31"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "15:15"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:26"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:27"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:28"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:29"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:30"
+    },
+    {
+      "bookId": "JUDITH",
+      "path": "data/bible/OT/judith.json",
+      "ref": "16:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "1:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "2:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "3:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "4:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "5:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "7:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "8:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:20"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "9:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "10:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "11:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "12:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:14"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "13:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "15:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "15:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "16:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:9"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:16"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "17:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "18:2"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "18:3"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:6"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "19:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "20:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "20:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "21:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:8"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "22:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:5"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "23:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:42"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:43"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:44"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:45"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:46"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "24:47"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:12"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "25:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "27:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "28:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "29:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "30:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "30:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "31:42"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "32:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "33:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "33:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:11"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "34:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "35:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "35:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:7"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:9"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:14"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "36:15"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "37:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "38:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:38"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:39"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:40"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "39:41"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "40:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "40:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "41:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "42:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "43:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:24"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:25"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "44:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "45:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:21"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:22"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "46:23"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:29"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "47:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:26"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:27"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "48:28"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:17"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:18"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "49:19"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "50:30"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "50:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:31"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:32"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:33"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:34"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:35"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:36"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:37"
+    },
+    {
+      "bookId": "SIRACH",
+      "path": "data/bible/OT/sirach.json",
+      "ref": "51:38"
+    }
+  ],
+  "nrsvNotApplicableRows": [
+    {
+      "bookId": "GREEK_DANIEL",
+      "path": "data/bible/OT/danielGK.json",
+      "ref": "13:65",
+      "reason": "DRB-only versification/source-shape row; NRSV Bel and the Dragon begins at active Daniel 14:1.",
+      "governedBy": "data/bible/registry/deutero-02-greek-esther-tail-nrsv-repair.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:24",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "1:25",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:15",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:16",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:17",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:18",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:19",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:21",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "2:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:18",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:19",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:21",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:24",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "3:25",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "4:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "4:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:24",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:25",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:26",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:27",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "5:28",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:19",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:21",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "6:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:17",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:18",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:19",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "7:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "8:24",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:7",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:8",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:9",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:10",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:11",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "9:12",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "10:14",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "11:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "11:21",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:18",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:19",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:20",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:21",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:22",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "13:23",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:9",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:16",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "TOBIT",
+      "path": "data/bible/OT/tobit.json",
+      "ref": "14:17",
+      "classification": "nrsv_not_applicable_source_shape",
+      "classifiedBy": "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json"
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "2:25",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 2 ends at verse 24; active 2:25 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 24,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "5:24",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 5 ends at verse 23; active 5:24 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 23,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:26",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 6 ends at verse 25; active 6:26 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 25,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "6:27",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 6 ends at verse 25; active 6:27 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 25,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "9:19",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 9 ends at verse 18; active 9:19 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 18,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "WISDOM",
+      "path": "data/bible/OT/wisdom.json",
+      "ref": "11:27",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA WISDOM chapter 11 ends at verse 26; active 11:27 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/wisdom.json",
+      "rawChapterMaxVerse": 26,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:11",
+      "classification": "nrsv_not_applicable_absent_from_source_grid",
+      "reason": "BibleGateway NRSVA BARUCH chapter 3 does not contain standalone source ref 3:11; active row is a multi-version addressability row.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "rawChapterMaxVerse": 37,
+      "activeTranslationsPresent": [
+        "DRB",
+        "KJV",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "BARUCH",
+      "path": "data/bible/OT/baruch.json",
+      "ref": "3:38",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA BARUCH chapter 3 ends at verse 37; active 3:38 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/baruch.json",
+      "rawChapterMaxVerse": 37,
+      "activeTranslationsPresent": [
+        "DRB",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:65",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:65 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:66",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:66 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "1:67",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 1 ends at verse 64; active 1:67 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 64,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "2:13",
+      "classification": "nrsv_not_applicable_absent_from_source_grid",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 2 does not contain standalone source ref 2:13; active row is a multi-version addressability row.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 70,
+      "activeTranslationsPresent": [
+        "DRB",
+        "KJV",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "12:54",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 12 ends at verse 53; active 12:54 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 53,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "FIRST_MACCABEES",
+      "path": "data/bible/OT/1maccabees.json",
+      "ref": "13:54",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA FIRST_MACCABEES chapter 13 ends at verse 53; active 13:54 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1maccabees.json",
+      "rawChapterMaxVerse": 53,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "2:33",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 2 ends at verse 32; active 2:33 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 32,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "12:46",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 12 ends at verse 45; active 12:46 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 45,
+      "activeTranslationsPresent": [
+        "DRB",
+        "NABRE"
+      ]
+    },
+    {
+      "bookId": "SECOND_MACCABEES",
+      "path": "data/bible/OT/2maccabees.json",
+      "ref": "15:40",
+      "classification": "nrsv_not_applicable_beyond_source_endpoint",
+      "reason": "BibleGateway NRSVA SECOND_MACCABEES chapter 15 ends at verse 39; active 15:40 is outside the selected NRSVA source grid.",
+      "sourceWitness": "BibleGateway NRSVA",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2maccabees.json",
+      "rawChapterMaxVerse": 39,
+      "activeTranslationsPresent": [
+        "DRB"
+      ]
+    }
+  ],
+  "failures": [],
+  "determination": {
+    "summary": "The small remaining Wisdom/Baruch/1-2 Maccabees rows are non-corresponding NRSVA addressability rows in the active multi-version grid, not repairable NRSVA text gaps against the selected source witness.",
+    "activeBibleTextMutation": "none",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "small_gap_source_shape_classification_recorded",
+    "wisdom_baruch_maccabees_small_rows_removed_from_nrsv_applicable_gap_queue",
+    "remaining_deuterocanon_nrsv_applicable_gaps_269",
+    "deuterocanon_nrsv_not_applicable_rows_75",
+    "small_gap_classification_no_bible_text_mutation"
+  ],
+  "blockedClaims": [
+    "small_gap_rows_filled_synthetically",
+    "small_gap_rows_repaired_from_absent_source_refs",
+    "deuterocanon_globally_textually_trusted"
+  ],
+  "nextActions": [
+    "Review and push this small-gap source-shape classification.",
+    "Proceed next to Judith source-shape/repair discovery before Sirach."
+  ]
+}

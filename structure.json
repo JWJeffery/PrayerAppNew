@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.173",
+    "version": "3.8.174",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: post-Tobit deuterocanon accounting recorded. Tobit moved out of the NRSV-applicable gap queue. Remaining NRSV-applicable gaps: 286. NRSV-not-applicable rows: 58. No Bible text was mutated.",
+    "operational_status": "Current operational status as of 2026-07-02: small deuterocanon NRSV source-shape classification recorded for Wisdom, Baruch, 1 Maccabees, and 2 Maccabees. Remaining NRSV-applicable gaps: 269. NRSV-not-applicable rows: 75. No Bible text was mutated.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,23 +1271,21 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deuterocanon_status_accounting_after_tobit_2026_07_02",
-      "status": "deuterocanon_status_accounted_after_tobit_source_shape_classification",
-      "recordPath": "data/bible/registry/deuterocanon-status-accounting-after-tobit-2026-07-02.json",
-      "auditScript": "scripts/audit-bible-deuterocanon-status-accounting-after-tobit.mjs",
-      "postTobitTotals": {
-        "nrsvApplicableMissingRows": 286,
-        "nrsvNotApplicableRows": 58,
-        "tobitRowsMovedFromApplicableToNotApplicable": 57,
-        "activeBibleTextMutation": "none"
+      "id": "deuterocanon_small_gap_source_shape_classification_2026_07_02",
+      "status": "small_gap_rows_classified_as_source_shape_addressability",
+      "recordPath": "data/bible/registry/deuterocanon-small-gap-source-shape-classification-2026-07-02.json",
+      "auditScript": "scripts/audit-bible-deuterocanon-small-gap-source-shape-classification.mjs",
+      "summary": {
+        "targetRows": 17,
+        "classifiedNotApplicable": 17,
+        "remainingNrsVApplicableRowsAfterClassification": 269,
+        "nrsvNotApplicableRowsAfterClassification": 75,
+        "activeBibleTextMutation": "none",
+        "syntheticRows": 0
       },
       "remainingApplicableMissingByBook": {
-        "BARUCH": 2,
-        "FIRST_MACCABEES": 6,
         "JUDITH": 35,
-        "SECOND_MACCABEES": 3,
-        "SIRACH": 234,
-        "WISDOM": 6
+        "SIRACH": 234
       }
     },
     "latest_bible_psalms_checkpoint": {

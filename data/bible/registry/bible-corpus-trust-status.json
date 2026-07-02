@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_post_tobit_accounting_review_pending",
+      "status": "not_trusted_small_gap_source_shape_classified_review_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1082,7 +1082,8 @@
         "deutero_02_greek_esther_tail_nrsv_repair_2026_07_02",
         "deuterocanon_status_consolidation_audit_2026_07_02",
         "deutero_tobit_nrsv_source_shape_classification_2026_07_02",
-        "deuterocanon_status_accounting_after_tobit_2026_07_02"
+        "deuterocanon_status_accounting_after_tobit_2026_07_02",
+        "deuterocanon_small_gap_source_shape_classification_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6740,7 +6741,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review post-Tobit accounting, then proceed to the next remaining NRSV-applicable source-family tranche.",
+      "nextAction": "Review small-gap source-shape classification, then proceed to Judith source-shape/repair discovery before Sirach.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6786,7 +6787,9 @@
         "tobit_14_9_standalone_nrsv_gap",
         "tobit_rows_textually_mutated_by_source_shape_classification",
         "tobit_text_mutated_by_accounting_update",
-        "tobit_remaining_in_nrsv_applicable_gap_queue"
+        "tobit_remaining_in_nrsv_applicable_gap_queue",
+        "small_gap_rows_filled_synthetically",
+        "small_gap_rows_repaired_from_absent_source_refs"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6822,7 +6825,12 @@
         "tobit_removed_from_nrsv_applicable_gap_queue",
         "remaining_deuterocanon_nrsv_applicable_gaps_286",
         "deuterocanon_nrsv_not_applicable_rows_58",
-        "post_tobit_accounting_no_bible_text_mutation"
+        "post_tobit_accounting_no_bible_text_mutation",
+        "small_gap_source_shape_classification_recorded",
+        "wisdom_baruch_maccabees_small_rows_removed_from_nrsv_applicable_gap_queue",
+        "remaining_deuterocanon_nrsv_applicable_gaps_269",
+        "deuterocanon_nrsv_not_applicable_rows_75",
+        "small_gap_classification_no_bible_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6844,7 +6852,11 @@
       "latestDeuterocanonPostTobitAccounting": "data/bible/registry/deuterocanon-status-accounting-after-tobit-2026-07-02.json",
       "latestDeuterocanonPostTobitAccountingAuditScript": "scripts/audit-bible-deuterocanon-status-accounting-after-tobit.mjs",
       "remainingNrsVApplicableGapsAfterTobit": 286,
-      "nrsvNotApplicableRowsAfterTobit": 58
+      "nrsvNotApplicableRowsAfterTobit": 58,
+      "latestSmallGapSourceShapeClassification": "data/bible/registry/deuterocanon-small-gap-source-shape-classification-2026-07-02.json",
+      "latestSmallGapSourceShapeClassificationAuditScript": "scripts/audit-bible-deuterocanon-small-gap-source-shape-classification.mjs",
+      "remainingNrsVApplicableGapsAfterSmallGapClassification": 269,
+      "nrsvNotApplicableRowsAfterSmallGapClassification": 75
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
