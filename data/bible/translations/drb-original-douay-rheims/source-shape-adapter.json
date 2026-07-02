@@ -1,0 +1,343 @@
+{
+  "schema": "drb-original-source-shape-adapter-v1",
+  "id": "drb_original_office_reading_source_shape_adapter_2026_07_02",
+  "status": "active",
+  "recordedAt": "2026-07-02T04:32:26Z",
+  "sourceLane": "data/bible/translations/drb-original-douay-rheims",
+  "activeRoot": "data/bible/OT",
+  "translationKey": "DRB",
+  "purpose": "Render the Church-appointed canonical reading from the selected Original Douay-Rheims source witness without forcing the DRB/Vulgate source shape into the shared active verse grid.",
+  "governanceRule": "For Original Douay-Rheims / Vulgate-shaped DRB, active-grid rows with no independent DRB source unit remain empty in active text.DRB. The Office resolver must render the governed native DRB source unit or units that cover the appointed material. Do not generate text, split source units, duplicate source units into active rows, or supplement with another DRB variant merely to satisfy active-grid symmetry.",
+  "renderingPolicy": {
+    "singleTranslationDrb": "Render native DRB source units in source order for the appointed range. Suppress empty active-grid rows that are covered by this adapter.",
+    "parallelDisplay": "Do not display empty DRB cells as missing text when coveredByNativeSourceUnit is true. Surface metadata such as “DRB material included in native source unit X” when useful.",
+    "activeTextMutation": "prohibited",
+    "sourceSupplementDefault": "prohibited"
+  },
+  "affectedActiveRows": 36,
+  "books": {
+    "GENESIS": {
+      "activeFile": "genesis.json",
+      "rawFile": "genesis.json",
+      "activeRefs": {
+        "5:32": {
+          "nativeRefs": [
+            "5:31"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "49:33": {
+          "nativeRefs": [
+            "49:32"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "50:26": {
+          "nativeRefs": [
+            "50:25"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "EXODUS": {
+      "activeFile": "exodus.json",
+      "rawFile": "exodus.json",
+      "activeRefs": {
+        "40:37": {
+          "nativeRefs": [
+            "40:34",
+            "40:35"
+          ],
+          "basis": "final_cloud_section_source_shape_compression"
+        },
+        "40:38": {
+          "nativeRefs": [
+            "40:36"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "LEVITICUS": {
+      "activeFile": "leviticus.json",
+      "rawFile": "leviticus.json",
+      "activeRefs": {
+        "26:46": {
+          "nativeRefs": [
+            "26:45"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "NUMBERS": {
+      "activeFile": "numbers.json",
+      "rawFile": "numbers.json",
+      "activeRefs": {
+        "11:35": {
+          "nativeRefs": [
+            "11:34"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "12:16": {
+          "nativeRefs": [
+            "13:1"
+          ],
+          "basis": "vulgate_drb_chapter_boundary_shift"
+        },
+        "29:40": {
+          "nativeRefs": [
+            "30:1"
+          ],
+          "basis": "vulgate_drb_chapter_boundary_shift"
+        }
+      }
+    },
+    "JOSHUA": {
+      "activeFile": "joshua.json",
+      "rawFile": "josue.json",
+      "activeRefs": {
+        "21:44": {
+          "nativeRefs": [
+            "21:42"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "21:45": {
+          "nativeRefs": [
+            "21:43"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "JUDGES": {
+      "activeFile": "judges.json",
+      "rawFile": "judges.json",
+      "activeRefs": {
+        "21:25": {
+          "nativeRefs": [
+            "21:24"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "1_SAMUEL": {
+      "activeFile": "1samuel.json",
+      "rawFile": "1-kings.json",
+      "activeRefs": {
+        "23:29": {
+          "nativeRefs": [
+            "24:1"
+          ],
+          "basis": "vulgate_drb_chapter_boundary_shift"
+        }
+      }
+    },
+    "1_CHRONICLES": {
+      "activeFile": "1chronicles.json",
+      "rawFile": "1-paralipomenon.json",
+      "activeRefs": {
+        "11:47": {
+          "nativeRefs": [
+            "11:46"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "20:8": {
+          "nativeRefs": [
+            "20:7"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "NEHEMIAH": {
+      "activeFile": "nehemiah.json",
+      "rawFile": "2-esdras.json",
+      "activeRefs": {
+        "3:32": {
+          "nativeRefs": [
+            "3:31"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "12:47": {
+          "nativeRefs": [
+            "12:46"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "JOB": {
+      "activeFile": "job.json",
+      "rawFile": "job.json",
+      "activeRefs": {
+        "41:26": {
+          "nativeRefs": [
+            "41:17"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:27": {
+          "nativeRefs": [
+            "41:18"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:28": {
+          "nativeRefs": [
+            "41:19"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:29": {
+          "nativeRefs": [
+            "41:20"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:30": {
+          "nativeRefs": [
+            "41:21"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:31": {
+          "nativeRefs": [
+            "41:22"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:32": {
+          "nativeRefs": [
+            "41:23"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:33": {
+          "nativeRefs": [
+            "41:24"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "41:34": {
+          "nativeRefs": [
+            "41:25"
+          ],
+          "basis": "vulgate_drb_leviathan_section_numbering_shift"
+        },
+        "42:17": {
+          "nativeRefs": [
+            "42:16"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "ECCLESIASTES": {
+      "activeFile": "ecclesiastes.json",
+      "rawFile": "ecclesiastes.json",
+      "activeRefs": {
+        "5:20": {
+          "nativeRefs": [
+            "5:19"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        },
+        "6:12": {
+          "nativeRefs": [
+            "7:1"
+          ],
+          "basis": "vulgate_drb_chapter_boundary_shift"
+        }
+      }
+    },
+    "SONG_OF_SOLOMON": {
+      "activeFile": "songofsolomon.json",
+      "rawFile": "canticle-of-canticles.json",
+      "activeRefs": {
+        "1:17": {
+          "nativeRefs": [
+            "1:16"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "JEREMIAH": {
+      "activeFile": "jeremiah.json",
+      "rawFile": "jeremie.json",
+      "activeRefs": {
+        "37:21": {
+          "nativeRefs": [
+            "37:20"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "EZEKIEL": {
+      "activeFile": "ezekiel.json",
+      "rawFile": "ezechiel.json",
+      "activeRefs": {
+        "2:10": {
+          "nativeRefs": [
+            "2:9"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    },
+    "DANIEL": {
+      "activeFile": "daniel.json",
+      "rawFile": "daniel.json",
+      "activeRefs": {
+        "4:35": {
+          "nativeRefs": [
+            "4:32"
+          ],
+          "basis": "vulgate_drb_daniel_numbering_shift_after_greek_addition_material"
+        },
+        "4:36": {
+          "nativeRefs": [
+            "4:33"
+          ],
+          "basis": "vulgate_drb_daniel_numbering_shift_after_greek_addition_material"
+        },
+        "4:37": {
+          "nativeRefs": [
+            "4:34"
+          ],
+          "basis": "vulgate_drb_daniel_numbering_shift_after_greek_addition_material"
+        }
+      }
+    },
+    "MICAH": {
+      "activeFile": "micah.json",
+      "rawFile": "micheas.json",
+      "activeRefs": {
+        "5:15": {
+          "nativeRefs": [
+            "5:14"
+          ],
+          "basis": "native_source_unit_covers_active_boundary_material"
+        }
+      }
+    }
+  },
+  "blockedClaims": [
+    "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
+    "single_source_original_douay_exactness_in_shared_active_grid",
+    "generated_or_split_drb_active_row_repair"
+  ],
+  "allowedClaims": [
+    "canonical_ot_nonpsalms_drb_office_reading_rendering_source_shape_adapter_active",
+    "original_douay_source_divisions_preserved",
+    "empty_active_drb_rows_governed_for_adapter_rendering"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.160",
+    "version": "3.8.161",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: Canonical OT non-Psalms structural chapter/verse shape passes, but Canonical OT non-Psalms is not fully textually trusted because active text.DRB has 36 empty rows across 16 books. Same-source-address and whole-unused-source-row repairs are ruled out; adjacent-source-unit evidence does not authorize active text mutation under the current no-splitting/no-duplication policy. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
+    "operational_status": "Current operational status as of 2026-07-02: Canonical OT non-Psalms structural chapter/verse shape passes. Original Douay-Rheims DRB source divisions are preserved for Office readings through a governed source-shape adapter: 36 active text.DRB rows remain empty by design, and the resolver renders corresponding native DRB source units so appointed readings are not truncated. Psalms remain their own source-governed psalter lane; deuterocanon, broader canon, and Vulgate remain separate unresolved/deferred lanes.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,19 +1271,12 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
-      "status": "active_trust_blocker",
-      "recordPath": "data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json",
-      "scope": "canonical_ot_nonpsalms_38_books_text_DRB_active_rows",
-      "missingDrbActiveRows": 36,
-      "affectedBooks": 16,
-      "blockedClaims": [
-        "canonical_ot_nonpsalms_no_exclusions",
-        "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
-        "canonical_ot_globally_trusted",
-        "whole_ot_including_psalms_textually_trusted",
-        "entire_biblical_corpus_trusted"
-      ]
+      "id": "canonical_ot_drb_office_reading_source_shape_governance_2026_07_02",
+      "status": "accepted_and_executed",
+      "recordPath": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
+      "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+      "affectedActiveRows": 36,
+      "activeTextDrbRowsRemainEmpty": true
     },
     "latest_bible_psalms_checkpoint": {
       "id": "drb_psalms_active_psalter_lane_2026_06_23",

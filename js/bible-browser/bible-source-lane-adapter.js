@@ -8,6 +8,7 @@
       manifestPath: "data/bible/translations/drb-original-douay-rheims/manifest.json",
       basePath: "data/bible/translations/drb-original-douay-rheims",
       filePrefix: "raw/",
+        sourceShapeAdapterPath: "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
       bookMap: {
         GENESIS: "genesis.json",
         EXODUS: "exodus.json",
@@ -260,6 +261,91 @@
       .filter((verse) => verse.text);
   }
 
+  function refKey(chapter, verse) {
+    return String(Number(chapter)) + ":" + String(Number(verse));
+  }
+
+  function rowByRef(bookJson) {
+    const rows = new Map();
+
+    for (const chapter of chaptersOf(bookJson)) {
+      const c = chapterNumber(chapter);
+      for (const verse of versesOf(chapter)) {
+        const v = verseNumber(verse);
+        if (Number.isFinite(c) && Number.isFinite(v)) {
+          rows.set(refKey(c, v), {
+            chapter: c,
+            verse: v,
+            text: verseText(verse)
+          });
+        }
+      }
+    }
+
+    return rows;
+  }
+
+  function activeRefsFor(chapter, verseStart, verseEnd) {
+    const wantedChapter = Number(chapter);
+    const start = Number(verseStart);
+    const end = Number(verseEnd || verseStart);
+    const refs = [];
+
+    for (let verse = start; verse <= end; verse += 1) {
+      refs.push(refKey(wantedChapter, verse));
+    }
+
+    return refs;
+  }
+
+  function adapterRuleFor(sourceShapeAdapter, bookId, activeRef) {
+    const bookRules = sourceShapeAdapter?.books?.[bookId];
+    return bookRules?.activeRefs?.[activeRef] || null;
+  }
+
+  function extractRefs(bookJson, refs) {
+    const rows = rowByRef(bookJson);
+    return refs
+      .map((ref) => rows.get(ref))
+      .filter((row) => row && row.text);
+  }
+
+  function extractRangeWithSourceShape(bookJson, request, bookId, sourceShapeAdapter) {
+    const activeRefs = activeRefsFor(
+      request.chapter,
+      request.verseStart ?? request.verse,
+      request.verseEnd ?? request.verseStart ?? request.verse
+    );
+
+    const sourceRefs = [];
+    const sourceShapeEvents = [];
+
+    function pushSourceRef(ref) {
+      if (!sourceRefs.includes(ref)) sourceRefs.push(ref);
+    }
+
+    for (const activeRef of activeRefs) {
+      const rule = adapterRuleFor(sourceShapeAdapter, bookId, activeRef);
+      if (rule && Array.isArray(rule.nativeRefs) && rule.nativeRefs.length) {
+        for (const nativeRef of rule.nativeRefs) pushSourceRef(nativeRef);
+        sourceShapeEvents.push({
+          activeRef,
+          nativeRefs: rule.nativeRefs.slice(),
+          policy: "covered_by_native_drb_source_unit",
+          basis: rule.basis || "source_shape_adapter"
+        });
+      } else {
+        pushSourceRef(activeRef);
+      }
+    }
+
+    return {
+      sourceShapeAdapter: sourceShapeEvents.length ? sourceShapeAdapter.id || null : null,
+      sourceShapeEvents,
+      verses: extractRefs(bookJson, sourceRefs)
+    };
+  }
+
   async function loadJson(pathValue, options = {}) {
     if (options.readJson) return options.readJson(pathValue);
 
@@ -281,8 +367,26 @@
     const sourcePath = sourcePathFor(lane, bookId);
     if (!sourcePath) throw new Error(`Book ${bookId} is not mapped for lane ${lane.id}`);
 
+    const chapter = Number(request.chapter);
+    const verseStart = Number(request.verseStart ?? request.verse);
+    const verseEnd = Number(request.verseEnd ?? request.verseStart ?? request.verse);
+
     const bookJson = await loadJson(sourcePath, options);
-    const verses = extractRange(bookJson, request.chapter, request.verseStart ?? request.verse, request.verseEnd);
+
+    let sourceShapeAdapter = null;
+    if (lane.sourceShapeAdapterPath) {
+      sourceShapeAdapter = await loadJson(lane.sourceShapeAdapterPath, options);
+    }
+
+    const resolved = sourceShapeAdapter
+      ? extractRangeWithSourceShape(bookJson, { chapter, verseStart, verseEnd }, bookId, sourceShapeAdapter)
+      : {
+          sourceShapeAdapter: null,
+          sourceShapeEvents: [],
+          verses: extractRange(bookJson, chapter, verseStart, verseEnd)
+        };
+
+    const verses = resolved.verses;
 
     return {
       laneId: lane.id,
@@ -290,10 +394,12 @@
       translationKey: lane.translationKey,
       use: lane.use,
       bookId,
-      chapter: Number(request.chapter),
-      verseStart: Number(request.verseStart ?? request.verse),
-      verseEnd: Number(request.verseEnd ?? request.verseStart ?? request.verse),
+      chapter,
+      verseStart,
+      verseEnd,
       sourcePath,
+      sourceShapeAdapter: resolved.sourceShapeAdapter,
+      sourceShapeEvents: resolved.sourceShapeEvents,
       verses,
       text: verses.map((verse) => verse.text).join(" ")
     };
@@ -308,6 +414,9 @@
     _internals: {
       normalizeBookId,
       extractRange,
+      extractRangeWithSourceShape,
+      extractRefs,
+      activeRefsFor,
       chaptersOf,
       versesOf,
       verseNumber,

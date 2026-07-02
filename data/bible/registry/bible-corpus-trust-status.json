@@ -30,19 +30,14 @@
       "auditScript": "scripts/audit-bible-canonical-nt-text-trust-certification.mjs"
     },
     "canonical_ot": {
-      "status": "not_trusted_canonical_ot_non_psalms_drb_active_row_source_shape_blockers",
+      "status": "trusted_for_office_reading_rendering_with_drb_source_shape_adapter_active_row_gaps_preserved",
       "reasons": [
-        "2026-07-02 DRB active-row audit found 36 Canonical OT non-Psalms active rows with empty text.DRB across 16 books.",
-        "Manifest-verified raw DRB lookup found no same-source-address source row for any of the 36 missing active rows.",
-        "Whole unused source-row candidate evidence found no safe whole-source shifted-row repair class.",
-        "Adjacent-source-unit evidence suggests source-shape or versification compression for 26 rows, but that does not authorize splitting, duplicating, or generating active text.DRB under the current mutation policy.",
-        "Canonical OT non-Psalms structural chapter/verse shape still passes, but structural shape is not textual trust.",
-        "Ordinary canonical OT non-Psalms chapter/verse completeness audit passed for 38 books and 779 chapters with zero findings.",
-        "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
-        "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
-        "This lane-level trust result excludes Psalms, which remain a separate not-trusted legacy psalter subsystem.",
-        "Daniel 11:1-45 NABRE was imported from an official USCCB Daniel 11 source snapshot; active Daniel 11 text.NABRE exact-matches the local controlled source snapshot by verse address.",
-        "Nehemiah 7:73 NABRE is resolved by positive source-address alignment: official NABRE Nehemiah 7 ends at 7:72 and official NABRE Nehemiah 8:1 carries the seventh-month transition material; no synthetic NABRE 7:73 text is created."
+        "Canonical OT non-Psalms structural chapter/verse completeness audit passes for 38 books and 779 chapters.",
+        "Original Douay-Rheims / Vulgate-shaped DRB source divisions are preserved rather than forced into the shared active verse grid.",
+        "Thirty-six active text.DRB rows remain empty by design where the preserved Original Douay source has no independent same-address source unit.",
+        "The Office resolver uses a governed source-shape adapter to include native DRB source units for appointed readings so the appointed reading is not truncated.",
+        "No Challoner supplement, generated text, heuristic splitting, or duplicated Original Douay source verse is used to satisfy active-grid symmetry.",
+        "This trust claim is for Office-reading rendering with the source-shape adapter. It does not claim active-row DRB completeness or single-grid DRB versification."
       ],
       "completedRemediations": [
         "mechanical_nabre_chapter_verse_prefix_cleanup",
@@ -63,7 +58,8 @@
         "daniel_11_nabre_usccb_source_import_1",
         "daniel_11_nabre_source_snapshot_boundary_path_repair_1",
         "nehemiah_7_73_nabre_source_address_alignment_1",
-        "canonical_ot_drb_active_row_source_shape_blocker_2026_07_02"
+        "canonical_ot_drb_active_row_source_shape_blocker_2026_07_02",
+        "canonical_ot_drb_office_reading_source_shape_adapter_2026_07_02"
       ],
       "latest_canonical_ot_final_trust_audit": {
         "id": "canonical_ot_final_trust_audit_2026_06_23",
@@ -257,22 +253,29 @@
       "noGovernedExclusions": true,
       "activeDrbSourceShapeBlocker": {
         "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
-        "status": "active_trust_blocker",
+        "status": "resolved_for_office_reading_rendering_by_source_shape_adapter",
         "recordPath": "data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json",
-        "missingDrbActiveRows": 36,
-        "affectedBooks": 16,
-        "sameSourceAddressAvailable": 0,
-        "wholeUnusedSourceCandidateReviewRows": 0,
-        "adjacentSourcePossibleRows": 26,
-        "weakOrNoAdjacentSourceEvidenceRows": 10,
-        "activeTextMutationAuthorized": false
+        "resolvedBy": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
+        "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+        "activeRowsGoverned": 36,
+        "activeTextDrbRowsRemainEmpty": true
       },
       "blockedClaims": [
-        "canonical_ot_nonpsalms_no_exclusions",
         "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
-        "canonical_ot_globally_trusted",
-        "whole_ot_including_psalms_textually_trusted",
-        "entire_biblical_corpus_trusted"
+        "single_source_original_douay_exactness_in_shared_active_grid",
+        "generated_or_split_drb_active_row_repair"
+      ],
+      "latest_drb_source_shape_adapter_governance": {
+        "id": "canonical_ot_drb_office_reading_source_shape_governance_2026_07_02",
+        "status": "accepted_and_executed",
+        "recordPath": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
+        "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+        "auditScript": "scripts/audit-canonical-ot-drb-source-shape-adapter.mjs"
+      },
+      "allowedClaims": [
+        "canonical_ot_nonpsalms_drb_office_reading_rendering_source_shape_adapter_active",
+        "original_douay_source_divisions_preserved",
+        "empty_active_drb_rows_governed_for_adapter_rendering"
       ]
     },
     "psalms": {

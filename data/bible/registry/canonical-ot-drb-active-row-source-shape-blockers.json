@@ -1,7 +1,7 @@
 {
   "schema": "canonical-ot-drb-active-row-source-shape-blockers-v1",
   "id": "canonical_ot_drb_active_row_source_shape_blockers_2026_07_02",
-  "status": "active_trust_blocker",
+  "status": "resolved_for_office_reading_rendering_by_source_shape_adapter",
   "recordedAt": "2026-07-02T03:28:54Z",
   "scope": "canonical_ot_nonpsalms_38_books_text_DRB_active_rows",
   "sourceRoot": "data/bible/translations/drb-original-douay-rheims/raw",
@@ -355,15 +355,28 @@
     }
   ],
   "blockedClaims": [
-    "canonical_ot_nonpsalms_no_exclusions",
     "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
-    "canonical_ot_globally_trusted",
-    "whole_ot_including_psalms_textually_trusted",
-    "entire_biblical_corpus_trusted"
+    "single_source_original_douay_exactness_in_shared_active_grid",
+    "generated_or_split_drb_active_row_repair"
   ],
   "nextRequiredWork": [
     "Define whether adjacent-source-unit coverage belongs in display metadata, source-lane metadata, or a new non-active-text coverage field.",
     "Do not populate active text.DRB for these rows unless a future policy explicitly permits source-unit splitting or coverage representation with audit guards.",
     "Keep Canonical OT DRB active-row completeness not trusted until the blocker is resolved or a source-faithful representation policy is implemented."
+  ],
+  "resolvedAt": "2026-07-02T04:32:26Z",
+  "resolution": {
+    "type": "source_shape_adapter_not_active_text_fill",
+    "governanceRecord": "data/bible/registry/canonical-ot-drb-office-reading-source-shape-governance.json",
+    "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+    "sourceLaneAdapter": "js/bible-browser/bible-source-lane-adapter.js",
+    "affectedActiveRows": 36,
+    "activeTextDrbRowsRemainEmpty": true,
+    "policy": "For Original Douay-Rheims / Vulgate-shaped DRB, active-grid rows with no independent DRB source unit remain empty in active text.DRB. The Office resolver must render the governed native DRB source unit or units that cover the appointed material. Do not generate text, split source units, duplicate source units into active rows, or supplement with another DRB variant merely to satisfy active-grid symmetry."
+  },
+  "allowedClaims": [
+    "canonical_ot_nonpsalms_drb_office_reading_rendering_source_shape_adapter_active",
+    "original_douay_source_divisions_preserved",
+    "empty_active_drb_rows_governed_for_adapter_rendering"
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "schema": "canonical-ot-drb-office-reading-source-shape-governance-v1",
+  "id": "canonical_ot_drb_office_reading_source_shape_governance_2026_07_02",
+  "status": "accepted_and_executed",
+  "recordedAt": "2026-07-02T04:32:26Z",
+  "decision": "The Bible resolver’s obligation for the Office is to render the Church-appointed canonical reading from the selected source witness, not to force every translation into the shared active verse grid.",
+  "rule": "For Original Douay-Rheims / Vulgate-shaped DRB, active-grid rows with no independent DRB source unit remain empty in active text.DRB. The Office resolver must render the governed native DRB source unit or units that cover the appointed material. Do not generate text, split source units, duplicate source units into active rows, or supplement with another DRB variant merely to satisfy active-grid symmetry.",
+  "sourceShapeAdapter": "data/bible/translations/drb-original-douay-rheims/source-shape-adapter.json",
+  "sourceLaneAdapter": "js/bible-browser/bible-source-lane-adapter.js",
+  "activeTextPolicy": "The 36 affected active text.DRB rows remain empty by design. They are not repaired by Challoner, synthetic text, source splitting, or duplicated Original Douay source text.",
+  "readingCoveragePolicy": "When an appointed reading range includes an affected active reference, the resolver uses the adapter map to include the corresponding native Original Douay source reference or references so the appointed reading is not truncated.",
+  "validation": [
+    "No data/bible/OT active text files are modified by this governance execution.",
+    "The adapter audit must prove every mapped native source reference exists and has text.",
+    "The adapter audit must prove every affected active text.DRB row remains empty.",
+    "The adapter audit must prove resolver output is nonempty for every affected active reference."
+  ],
+  "blockedClaims": [
+    "canonical_ot_nonpsalms_text_DRB_active_rows_complete",
+    "single_source_original_douay_exactness_in_shared_active_grid",
+    "generated_or_split_drb_active_row_repair"
+  ],
+  "allowedClaims": [
+    "canonical_ot_nonpsalms_drb_office_reading_rendering_source_shape_adapter_active",
+    "original_douay_source_divisions_preserved",
+    "empty_active_drb_rows_governed_for_adapter_rendering"
+  ]
+}
