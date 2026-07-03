@@ -66,7 +66,9 @@
     "broader_canon_candidate_text_source_verified",
     "broader_canon_complete_by_meta_version_labels",
     "zero_row_files_renderable",
-    "zero_row_files_textually_trusted"
+    "zero_row_files_textually_trusted",
+    "broader_canon_source_visible_candidates_textually_trusted",
+    "broader_canon_source_visible_candidates_app_render_eligible"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -123,7 +125,9 @@
     "broader_canon_zero_row_artifacts_excluded",
     "broader_canon_no_candidate_text_app_render_eligible_without_source_witness",
     "broader_canon_zero_row_artifacts_disposition_closed",
-    "broader_canon_zero_row_artifacts_excluded_from_completion"
+    "broader_canon_zero_row_artifacts_excluded_from_completion",
+    "broader_canon_source_visible_candidates_classified_7",
+    "broader_canon_source_visible_candidates_pending_collation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -137,5 +141,10 @@
     "recordPath": "data/bible/registry/broader-canon-zero-row-disposition-2026-07-04.json",
     "status": "closed_excluded_from_text_trust_and_app_rendering",
     "excludedZeroRowArtifactCount": 3
+  },
+  "sourceVisibleClassification": {
+    "recordPath": "data/bible/registry/broader-canon-source-visible-classification-2026-07-04.json",
+    "status": "classified_source_visible_pending_collation",
+    "candidateCount": 7
   }
 }
