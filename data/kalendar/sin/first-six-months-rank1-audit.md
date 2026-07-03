@@ -1,15 +1,21 @@
 # First Six Months SIN and Rank-1 Audit
 
-## Scope
+## Status
 
-This audit covers the first six completed Kalendar v0.1 months: July, August, September, October, November, and December.
+This file records the initial rank-1 SIN pass for the first six completed Kalendar v0.1 months: July, August, September, October, November, and December.
 
-The audit controls the rank-1 daily identity for each date and assigns a Universal Office Saint Identification Number (SIN) to each controlled rank-1 identity. The monthly candidate matrices remain pre-decisional.
+It has now been superseded by the full candidate-row SIN pass recorded in:
 
-## SIN result
+`data/kalendar/sin/first-six-months-full-sin-audit.md`
+
+## Original rank-1 scope
+
+The rank-1 audit controlled the first-ranked daily identity for each date and assigned a Universal Office Saint Identification Number (SIN) to each controlled rank-1 identity. The monthly candidate matrices remain pre-decisional.
+
+## Rank-1 SIN result
 
 - Total rank-1 daily slots audited: 184.
-- Total distinct SINs assigned in this tranche: 181.
+- Total distinct rank-1 SINs assigned in that tranche: 181.
 - Shared SINs were intentionally used where one identity appears as rank-1 on more than one date or where the date is under harmonization.
 
 Shared rank-1 SINs in this tranche:
@@ -34,18 +40,8 @@ Examples:
 - `Thomas Becket` shares one SIN across December 23 and December 29 for the same reason.
 - `Frances Joseph-Gaudet` shares one SIN across December 30 and December 31 while current LFF and BCP date forms are being reconciled.
 - Group commemorations receive their own group SINs when the source form is itself a group, for example `Joachim and Anne`, `The Martyrs of New Guinea`, and `Hugh Latimer, Nicholas Ridley, and Thomas Cranmer`.
-- Feasts and observances receive SINs in this tranche because the Universal Office needs stable identity keys for all daily rank-1 commemorations, not only individual persons.
+- Feasts and observances receive SINs because the Universal Office needs stable identity keys for all daily rank-1 commemorations, not only individual persons.
 
-## Outstanding limitation
+## Follow-up completed
 
-Alternate candidate rows have not yet received SINs. This is intentional, not a completion claim. The next identity-control pass should assign SINs to alternate candidates, with priority given to duplicate/date-harmonization rows in `data/kalendar/kalendar-v0.1-cross-date-harmonization.csv`.
-
-## Files created
-
-- `data/kalendar/sin/README.md`
-- `data/kalendar/sin/rank1/july-rank1-sins.csv`
-- `data/kalendar/sin/rank1/august-rank1-sins.csv`
-- `data/kalendar/sin/rank1/september-rank1-sins.csv`
-- `data/kalendar/sin/rank1/october-rank1-sins.csv`
-- `data/kalendar/sin/rank1/november-rank1-sins.csv`
-- `data/kalendar/sin/rank1/december-rank1-sins.csv`
+The alternate candidate rows have now received SINs in `data/kalendar/sin/alternate/`. This file remains as the rank-1 audit record, not the final word on first-six-month SIN coverage.
