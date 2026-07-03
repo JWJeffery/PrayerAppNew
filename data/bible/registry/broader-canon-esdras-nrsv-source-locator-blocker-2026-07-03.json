@@ -1,0 +1,236 @@
+{
+  "schema": "broader-canon-esdras-nrsv-source-locator-blocker-v1",
+  "id": "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
+  "status": "esdras_nrsv_repair_blocked_pending_source_locator",
+  "recordedAt": "2026-07-03T19:17:08Z",
+  "scope": {
+    "activeFiles": [
+      "data/bible/OT/1esdras.json",
+      "data/bible/OT/2esdras.json"
+    ],
+    "lane": "text.NRSV",
+    "sourceFamilyNeeded": "NRSV/NRSVA source witness or explicit source-family adjudication before any alternative translation insertion",
+    "priorNormalizationRecord": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json"
+  },
+  "summary": {
+    "activeRowsChecked": 1319,
+    "existingNrsVRows": 109,
+    "remainingKnownActiveOtNrsVGapRows": 1210,
+    "remainingKnownActiveOtNrsVGapBooks": {
+      "1ESDRAS": 410,
+      "2ESDRAS": 800
+    },
+    "localNrsVOrBibleGatewaySourceSnapshotsFound": 0,
+    "localWebbeSourceSnapshotsFound": 0,
+    "activeBibleTextMutation": "none",
+    "globalTrustPromotion": "not_performed"
+  },
+  "books": {
+    "1ESDRAS": {
+      "path": "data/bible/OT/1esdras.json",
+      "meta": {
+        "name": "1 Esdras",
+        "id": "1ESD",
+        "version": "NRSV",
+        "copyrightPresent": true
+      },
+      "rowCount": 450,
+      "translationCounts": {
+        "DRB": 450,
+        "KJV": 447,
+        "NRSV": 40
+      },
+      "missingNrsVRows": 410,
+      "missingNrsVCompact": {
+        "1": [
+          "2-22",
+          "24-31",
+          "33-52",
+          "54",
+          "56-58"
+        ],
+        "2": [
+          "5-29",
+          "31"
+        ],
+        "3": [
+          "2-3",
+          "6-9",
+          "13-24"
+        ],
+        "4": [
+          "1-12",
+          "14-32",
+          "34-37",
+          "39-40",
+          "44-63"
+        ],
+        "5": [
+          "2-45",
+          "47-70",
+          "72-73"
+        ],
+        "6": [
+          "3-32",
+          "34"
+        ],
+        "7": [
+          "3-4",
+          "6-15"
+        ],
+        "8": [
+          "2-6",
+          "8-24",
+          "26-59",
+          "61-90",
+          "92-97"
+        ],
+        "9": [
+          "2-36",
+          "38",
+          "40-45",
+          "48-56"
+        ]
+      },
+      "localSourceCandidates": [
+        "data/bible/translations/drb-original-douay-rheims/raw/1-esdras.json"
+      ],
+      "localNrsVOrBibleGatewaySourceCandidates": [],
+      "localWebbeSourceCandidates": []
+    },
+    "2ESDRAS": {
+      "path": "data/bible/OT/2esdras.json",
+      "meta": {
+        "name": "2 Esdras",
+        "id": "2ESD",
+        "version": "NRSV",
+        "copyrightPresent": true
+      },
+      "rowCount": 869,
+      "translationCounts": {
+        "DRB": 856,
+        "KJV": 868,
+        "NRSV": 69
+      },
+      "missingNrsVRows": 800,
+      "missingNrsVCompact": {
+        "1": [
+          "6-29",
+          "31-36",
+          "38-40"
+        ],
+        "2": [
+          "2-9",
+          "11-32",
+          "34-41",
+          "44-46",
+          "48"
+        ],
+        "3": [
+          "3-19",
+          "21-35"
+        ],
+        "4": [
+          "3-9",
+          "12-13",
+          "15-25",
+          "27-52"
+        ],
+        "5": [
+          "2-3",
+          "5-32",
+          "34-56"
+        ],
+        "6": [
+          "2-5",
+          "7-19",
+          "21-53",
+          "55-59"
+        ],
+        "7": [
+          "2-10",
+          "12-27",
+          "31",
+          "33-69"
+        ],
+        "8": [
+          "2",
+          "5-63"
+        ],
+        "9": [
+          "3-36",
+          "39-47"
+        ],
+        "10": [
+          "2-24",
+          "26",
+          "28-43",
+          "45-60"
+        ],
+        "11": [
+          "2-29",
+          "31-36",
+          "38-39",
+          "41-46"
+        ],
+        "12": [
+          "2",
+          "4-15",
+          "17-30",
+          "32-51"
+        ],
+        "13": [
+          "4-24",
+          "27-58"
+        ],
+        "14": [
+          "2",
+          "4-23",
+          "25-43",
+          "47"
+        ],
+        "15": [
+          "3-7",
+          "9-55",
+          "57-63"
+        ],
+        "16": [
+          "2-66",
+          "68-77"
+        ]
+      },
+      "localSourceCandidates": [
+        "data/bible/translations/drb-original-douay-rheims/raw/2-esdras.json"
+      ],
+      "localNrsVOrBibleGatewaySourceCandidates": [],
+      "localWebbeSourceCandidates": []
+    }
+  },
+  "determination": {
+    "summary": "1 Esdras and 2 Esdras have real remaining active NRSV coverage gaps, but no local NRSV/BibleGateway or WEBBE source snapshots were found in the repository under data/bible/translations. NRSV repair is therefore blocked pending source-locator/provenance work.",
+    "repairRule": "Do not fill 1 Esdras or 2 Esdras NRSV gaps from DRB, KJV, memory, inferred parallels, or an unrecorded source.",
+    "sourceRule": "If an NRSV/NRSVA source witness is added later, record the source path and provenance before mutation. If a non-NRSV source such as WEBBE is used, it must be inserted under its own translation lane after source-family adjudication, not as NRSV.",
+    "activeBibleTextMutation": "none",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "broader_canon_esdras_nrsv_repair_blocked_pending_source_locator",
+    "broader_canon_active_ot_remaining_known_nrsv_gap_rows_1210",
+    "one_esdras_nrsv_gap_rows_410",
+    "two_esdras_nrsv_gap_rows_800",
+    "broader_canon_esdras_no_text_mutation_in_source_blocker_record"
+  ],
+  "blockedClaims": [
+    "one_esdras_two_esdras_nrsv_repaired",
+    "broader_canon_active_ot_nrsv_complete",
+    "broader_canon_textually_trusted",
+    "webbe_text_can_be_written_as_nrsv",
+    "esdras_gaps_can_be_filled_from_drb_or_kjv",
+    "broader_canon_global_trust_promoted"
+  ],
+  "nextActions": [
+    "Locate and store an explicit NRSV/NRSVA source witness for 1 Esdras and 2 Esdras before NRSV repair, or deliberately adjudicate an alternative source family into its own translation lane.",
+    "Do not mutate 1 Esdras or 2 Esdras text until source/provenance is resolved."
+  ],
+  "failures": []
+}
