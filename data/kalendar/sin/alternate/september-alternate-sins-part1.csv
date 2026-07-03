@@ -1,0 +1,46 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+09-01,2,UO-SIN-000312,Simeon Stylites the Elder,person,Simeon Stylites the Elder,
+09-01,3,UO-SIN-000313,Giles,person,Giles,
+09-01,4,UO-SIN-000314,Joshua and Gideon,group,Joshua and Gideon,biblical group source form
+09-02,2,UO-SIN-000315,Nikolai Grundtvig,person,Nikolai Grundtvig,also appears 09-08
+09-02,3,UO-SIN-000316,September Martyrs of Paris,group,September Martyrs of Paris,group source form
+09-02,4,UO-SIN-000317,William of Roskilde,person,William of Roskilde,
+09-03,2,UO-SIN-000318,Gregory the Great,person,Gregory the Great,
+09-03,3,UO-SIN-000319,Prudence Crandall,person,Prudence Crandall,
+09-03,4,UO-SIN-000320,Aigulf of Lérins,person,Aigulf of Lérins,
+09-04,2,UO-SIN-000321,Moses,person,Moses,biblical figure
+09-04,3,UO-SIN-000322,Birinus of Dorchester,person,Birinus of Dorchester,also appears 12-03
+09-04,4,UO-SIN-000323,Albert Schweitzer,person,Albert Schweitzer,
+09-05,2,UO-SIN-000324,Teresa of Calcutta,person,Teresa of Calcutta,
+09-05,3,UO-SIN-000325,Gregorio Aglipay,person,Gregorio Aglipay,
+09-05,4,UO-SIN-000326,Bertin,person,Bertin,
+09-06,2,UO-SIN-000327,Allen Gardiner,person,Allen Gardiner,
+09-06,3,UO-SIN-000328,Zechariah,person,Zechariah,biblical prophet
+09-06,4,UO-SIN-000329,Allen Crite,person,Allen Crite,
+09-07,2,UO-SIN-000330,Elie Naud,person,Élie Naud,
+09-07,3,UO-SIN-000331,Cloud,person,Cloud,
+09-07,4,UO-SIN-000332,John of Lodi,person,John of Lodi,
+09-08,2,UO-SIN-000333,Isaac the Great,person,Isaac the Great,
+09-08,3,UO-SIN-000315,Nikolai Grundtvig,person,Nikolai Grundtvig,also appears 09-02
+09-08,4,UO-SIN-000334,Soren Kierkegaard,person,Søren Kierkegaard,also appears 11-11
+09-08,5,UO-SIN-000335,Frederick Ozanam,person,Frederick Ozanam,
+09-09,2,UO-SIN-000336,Ciaran of Clonmacnoise,person,Ciaran of Clonmacnoise,
+09-09,3,UO-SIN-000337,Peter Claver,person,Peter Claver,
+09-09,4,UO-SIN-000338,Charles Fuge Lowder,person,Charles Fuge Lowder,
+09-10,2,UO-SIN-000339,Edmund James Peck,person,Edmund James Peck,
+09-10,3,UO-SIN-000340,William Salesbury and William Morgan,group,William Salesbury and William Morgan,group source form
+09-10,4,UO-SIN-000341,Ambrose Barlow,person,Ambrose Barlow,
+09-10,5,UO-SIN-000342,Mordecai Johnson,person,Mordecai Johnson,
+09-11,2,UO-SIN-000343,Harry Thacker Burleigh,person,Harry Thacker Burleigh,
+09-11,3,UO-SIN-000344,Paphnutius,person,Paphnutius,
+09-11,4,UO-SIN-000345,Protus and Hyacinth,group,Protus and Hyacinth,group source form
+09-12,2,UO-SIN-000346,Ailbhe,person,Ailbhe,
+09-12,3,UO-SIN-000347,Japanese Martyrs of Omura,group,Japanese Martyrs of Omura,group source form
+09-13,2,UO-SIN-000348,John Chrysostom,person,John Chrysostom,
+09-13,3,UO-SIN-000349,Maurilius of Angers,person,Maurilius of Angers,
+09-14,2,UO-SIN-000350,Albert of Jerusalem,person,Albert of Jerusalem,also appears 09-17
+09-14,3,UO-SIN-000351,Peter of Tarentaise,person,Peter of Tarentaise,
+09-15,2,UO-SIN-000352,James Chisholm,person,James Chisholm,
+09-15,3,UO-SIN-000075,Cyprian of Carthage,person,Cyprian of Carthage,also rank1 09-13
+09-15,4,UO-SIN-000353,Our Lady of Sorrows,feast,Our Lady of Sorrows,Marian feast
+09-15,5,UO-SIN-000354,Dora P. Chaplin,person,Dora P. Chaplin,
