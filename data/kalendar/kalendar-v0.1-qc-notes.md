@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, and the July-through-December cross-sectional QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, the July-through-December cross-sectional QC pass, and the July-through-January cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July through December
+## Lessons learned from July through January
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Basil and Gregory, Macarius of Egypt/Macarius the Great, Hilary of Poitiers, Richard Meux Benson and Charles Gore, the Confession of Peter, Timothy/Titus/Silas, Francis de Sales, John Horden, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -55,6 +55,10 @@ As more months are added, bidirectional row edits become brittle. Candidate rows
 12. Every new month must be checked directly against the current LFF calendar before cross-sectional comparison.
 
 The initial December file exposed a workflow failure: several entries were given current LFF authority or first rank even though LFF 2024 placed them elsewhere or did not list them on that date. December was repaired against the LFF 2024 calendar before cross-month harmonization was updated.
+
+13. Distinguish true transfers from ordinary provincial date variants.
+
+January exposed a smaller but important source-discipline issue. The SEC master calendar sometimes marks a transfer explicitly, but sometimes simply gives a different fixed provincial date. Candidate rows must not call a provincial date variant a transfer unless the source itself marks it as transferred.
 
 ## QC actions taken
 
@@ -96,6 +100,16 @@ The initial December file exposed a workflow failure: several entries were given
 - Added or promoted current LFF December entries that were missing or under-ranked: Frederick Howden Jr. on December 11, Francis de Sales and Jane de Chantal on December 12, Nino of Georgia on December 15, Dorothy L. Sayers on December 17, and Frances Joseph-Gaudet on December 31.
 - Removed false current-LFF authority from Juan Diego, Thomas Merton, Our Lady of Guadalupe, Cram/Upjohn/La Farge, Garrison/Stewart, Lillian Trasher, Charlotte Digges Moon, Samuel Ajayi Crowther, and other December rows where the authority was HWHM/GCW/AM/provincial rather than LFF 2024.
 - Updated the cross-date harmonization ledger with December conflicts including Nicholas Ferrar, Birinus, Osmund, Barbara, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Stephen, and Samuel Ajayi Crowther.
+
+## Cross-sectional QC actions after comparing July through January
+
+- Rechecked January against current LFF 2024 before cross-month comparison.
+- Normalized January 5 to the current LFF source form: `Sarah, Theodora, and Syncletica of Egypt`.
+- Removed an unverified SEC witness marker from Aelred of Rievaulx on January 12.
+- Corrected Hilary of Poitiers: SEC January 14 is now treated as a provincial date variant, not as an unverified transfer.
+- Corrected Kentigern / Mungo by removing the incorrect January 14 transfer/harmonization note; SEC 2026 lists Kentigern on January 13.
+- Added explicit January harmonization notes for Macarius of Egypt / Macarius the Great, Richard Rolle, Cecilia, Francis de Sales, John Horden, Timothy/Titus/Silas, Lydia/Dorcas/Phoebe, and other overlapping forms.
+- Updated the cross-date harmonization ledger with January conflicts and future dependencies including Basil and Gregory, Gregory of Nyssa, David I, Hilary, Benson/Gore, MLK, the Confession of Peter, Timothy/Titus/Silas, John Chrysostom, Agnes Tsao Kou Ying, and others.
 
 ## Continuing QC rule
 
