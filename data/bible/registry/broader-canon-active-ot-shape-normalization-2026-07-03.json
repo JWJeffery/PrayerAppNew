@@ -1,0 +1,124 @@
+{
+  "schema": "broader-canon-active-ot-shape-normalization-v1",
+  "id": "broader_canon_active_ot_shape_normalization_2026_07_03",
+  "status": "active_ot_shape_normalized_existing_nrsv_text",
+  "recordedAt": "2026-07-03T19:12:33Z",
+  "scope": {
+    "files": [
+      "data/bible/OT/3maccabees.json",
+      "data/bible/OT/4maccabees.json",
+      "data/bible/OT/prayerofmanasseh.json"
+    ],
+    "normalizationOnly": true
+  },
+  "summary": {
+    "normalizedPaths": 3,
+    "rowsNormalized": 721,
+    "textualContentAdded": "none",
+    "textualContentInvented": "none",
+    "sourcePolicy": "existing file-local NRSV-labelled text moved into standard text.NRSV lane",
+    "remainingKnownActiveOtNrsVGapRows": 1210,
+    "remainingKnownActiveOtNrsVGapBooks": {
+      "1ESDRAS": 410,
+      "2ESDRAS": 800
+    },
+    "globalTrustPromotion": "not_performed"
+  },
+  "before": {
+    "byPath": {
+      "data/bible/OT/3maccabees.json": {
+        "rowCount": 228,
+        "counts": {
+          "text_string": 228
+        }
+      },
+      "data/bible/OT/4maccabees.json": {
+        "rowCount": 479,
+        "counts": {
+          "text_string": 479
+        }
+      },
+      "data/bible/OT/prayerofmanasseh.json": {
+        "rowCount": 15,
+        "counts": {
+          "NRSV": 1,
+          "rawText": 14,
+          "text_object": 15
+        }
+      }
+    },
+    "totalRows": 722,
+    "totalNrsvRows": 1,
+    "totalRawTextRows": 14,
+    "totalStringTextRows": 707
+  },
+  "after": {
+    "byPath": {
+      "data/bible/OT/3maccabees.json": {
+        "rowCount": 228,
+        "counts": {
+          "NRSV": 228,
+          "text_object": 228
+        }
+      },
+      "data/bible/OT/4maccabees.json": {
+        "rowCount": 479,
+        "counts": {
+          "NRSV": 479,
+          "text_object": 479
+        }
+      },
+      "data/bible/OT/prayerofmanasseh.json": {
+        "rowCount": 15,
+        "counts": {
+          "NRSV": 15,
+          "text_object": 15
+        }
+      }
+    },
+    "totalRows": 722,
+    "totalNrsvRows": 722,
+    "totalRawTextRows": 0,
+    "totalStringTextRows": 0
+  },
+  "normalized": [
+    {
+      "path": "data/bible/OT/3maccabees.json",
+      "normalization": "verse.text string -> verse.text.NRSV",
+      "rowsNormalized": 228
+    },
+    {
+      "path": "data/bible/OT/4maccabees.json",
+      "normalization": "verse.text string -> verse.text.NRSV",
+      "rowsNormalized": 479
+    },
+    {
+      "path": "data/bible/OT/prayerofmanasseh.json",
+      "normalization": "verse.text.rawText -> verse.text.NRSV",
+      "rowsNormalized": 14
+    }
+  ],
+  "determination": {
+    "summary": "3 Maccabees, 4 Maccabees, and Prayer of Manasseh contained existing NRSV-labelled or NRSV-shaped text in non-standard row shapes. This tranche normalized that existing text into text.NRSV without inventing or sourcing new text.",
+    "remainingBlocker": "1 Esdras and 2 Esdras retain known NRSV coverage gaps and no local raw source snapshots were found by the preceding audit. Broader canon remains not globally trusted.",
+    "activeBibleTextMutation": "shape_only_existing_text_preserved",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "broader_canon_active_ot_shape_normalized_for_3maccabees_4maccabees_prayerofmanasseh",
+    "broader_canon_existing_nrsv_text_preserved_no_invention",
+    "broader_canon_active_ot_remaining_known_nrsv_gap_rows_1210"
+  ],
+  "blockedClaims": [
+    "broader_canon_textually_trusted",
+    "broader_canon_complete",
+    "broader_canon_all_active_ot_nrsv_complete",
+    "one_esdras_two_esdras_repaired",
+    "broader_canon_global_trust_promoted"
+  ],
+  "nextActions": [
+    "Review and push this active OT shape normalization.",
+    "Then handle 1 Esdras and 2 Esdras as a source-locator/provenance problem before any NRSV repair."
+  ],
+  "failures": []
+}

@@ -1,7 +1,7 @@
 {
   "id": "bible-corpus-trust-status",
   "status": "partial_trust_boundary_active",
-  "lastUpdated": "2026-07-02",
+  "lastUpdated": "2026-07-03",
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
@@ -6902,7 +6902,7 @@
       "globalTextTrustPromotion": "not_performed"
     },
     "broader_canon": {
-      "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+      "status": "not_trusted_active_ot_shape_normalized_esdras_source_blocked",
       "reasons": [
         "Broader-canon files include non-standard schemas.",
         "Odes and related canticle files are structurally identified but underpopulated.",
@@ -6918,8 +6918,30 @@
       "completedRemediations": [
         "broader_canon_governance_1",
         "broader_canon_trust_readiness_classification_1",
-        "broader_canon_policy_closed_not_trust_ready_1"
-      ]
+        "broader_canon_policy_closed_not_trust_ready_1",
+        "broader_canon_active_ot_shape_normalization_2026_07_03"
+      ],
+      "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
+      "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
+      "remainingKnownActiveOtNrsVGapRows": 1210,
+      "remainingKnownActiveOtNrsVGapBooks": {
+        "1ESDRAS": 410,
+        "2ESDRAS": 800
+      },
+      "globalTextTrustPromotion": "not_performed",
+      "allowedClaims": [
+        "broader_canon_active_ot_shape_normalized_for_3maccabees_4maccabees_prayerofmanasseh",
+        "broader_canon_existing_nrsv_text_preserved_no_invention",
+        "broader_canon_active_ot_remaining_known_nrsv_gap_rows_1210"
+      ],
+      "blockedClaims": [
+        "broader_canon_textually_trusted",
+        "broader_canon_complete",
+        "broader_canon_all_active_ot_nrsv_complete",
+        "one_esdras_two_esdras_repaired",
+        "broader_canon_global_trust_promoted"
+      ],
+      "nextAction": "Handle 1 Esdras and 2 Esdras as a source-locator/provenance problem before any NRSV repair."
     },
     "vulgate": {
       "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
