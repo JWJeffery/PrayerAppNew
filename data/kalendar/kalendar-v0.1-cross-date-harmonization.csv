@@ -1,0 +1,36 @@
+candidate_or_group,dates_seen,files_seen,issue_type,qc_status,notes
+Thomas the Apostle,07-03; 12-21 expected,july; future December,apostle-date harmonization,Open,July 3 is supported by some provincial sources but BCP uses December 21; resolve after full apostolic cycle.
+John Hus,07-06; 10-30,july; october,duplicate/date harmonization,Open,July has Hus as reformer/martyr candidate; October has Hus in FAS-linked reformer context. Apply Protestant-reformer rule before final placement.
+Declan of Ardmore,07-23; 07-24,july,duplicate/date harmonization,Open,Both July rows now carry harmonization flags.
+Margaret / Marina of Antioch,07-20; 11-24,july; november,duplicate/group-form harmonization,Open,July has individual Margaret/Marina martyr tradition; November has Catherine-Barbara-Margaret LFF group. Legendary-material handling required either way.
+Sojourner Truth / July social-reformer forms,07-20; 11-26,july; november,source-form/date harmonization,Open,July includes current LFF group and older four-person form; November has separate Sojourner Truth row. Preserve separate holiness case rather than flattening into social-reformer grouping.
+Moses the Black,07-02; 08-28,july; august,duplicate/date harmonization,Open,LFF current date is July 2; August 28 appears in older TEC/Great Church witness.
+Blane,08-10; 08-12,august,duplicate/date harmonization,Open,Both August rows now carry harmonization flags.
+Herman of Alaska,08-09; 11-15,august; november,duplicate/date harmonization,Open,August is HWHM/GCW/AM; November is current LFF. Likely prefer current LFF unless full-year review decides otherwise.
+Martin de Porres,08-23; 11-03,august; november,group/individual date harmonization,Open,August has South America witness group with Martin de Porres; November has individual Martin de Porres as Great Church alternate.
+Clare of Montefalco,08-17; 10-30,august; october,duplicate/date harmonization,Open,August row is AM; October row is Oxford/AM date variant. Resolve after full-year review.
+John Bunyan,08-29; 08-30,august,duplicate/date harmonization,Open,August row flags are now reciprocal.
+Grundtvig,09-02; 09-08,september,duplicate/date harmonization,Open,September row flags are now reciprocal.
+Søren Kierkegaard,09-08; 11-11,september; november,duplicate/date harmonization,Open,September HWHM/GCW row and November AM row both need Protestant/non-Anglican and intellectual-significance caution.
+Cyprian of Carthage,09-13; 09-15,september,duplicate/date harmonization,Open,September 13 has BCP/LFF/FAS authority; September 15 is HWHM/GCW/SEC transfer artifact.
+John Chrysostom,09-13; future date likely,july-september plus future,duplicate/date harmonization,Open,Strong Eastern father; date placement needs whole-year review.
+Albert of Jerusalem,09-14; 09-17,september,duplicate/date harmonization,Open,September row flags are now reciprocal.
+Edward Bouverie Pusey,09-16; 09-18,september,duplicate/date harmonization,Open,BCP/LFF September 18 likely controls; AM has September 16 variant.
+Richard Rolle / English Mystics,09-28; 09-29; 11-09,september; november,source-form/date harmonization,Open,Current LFF November 9 places Rolle-Hilton-Kempe group; September file contains older TEC/AM variants.
+Gregory the Enlightener,09-30; 10-01; March expected,september; october; future March,duplicate/date harmonization,Open,October SEC evidence revised to require fixed-date verification. Armenian source verification required.
+Remigius of Rheims,10-01; 10-02,october,source-form/date harmonization,Open,BCP/HWHM/GCW retain October 1; LFF 2024 uses October 2. Keep both source forms visible.
+Thomas Cantilupe,10-02; 10-03,october,duplicate/date harmonization,Open,October rows already carry harmonization flags.
+Thomas Traherne,09-27; 10-10,september; october,duplicate/date harmonization,Open,September HWHM/GCW row and October AM row require whole-year placement.
+Kenneth / Canice,10-11; 10-13,october,SEC transfer/date harmonization,Open,October 13 is SEC 2026 transfer from October 11; do not treat transfer as fixed date.
+Thecla,09-23; 10-15,september; october,duplicate/date harmonization,Open,LFF September 23 likely controls; October is a Great Church/Oxford reference variant.
+George Whitefield,10-30; 11-15,october; november,group/individual date harmonization,Open,October has individual Whitefield; November has Asbury-Whitefield group. Apply Protestant/evangelical and hagiographic-honesty review.
+Mechthilde of Hackeborn and Gertrude the Great,11-16; 11-21,november,duplicate/date harmonization,Open,November 21 is current LFF; November 16 is AM date variant.
+Hilda of Whitby,11-17; 11-18; 11-19 SEC,november,duplicate/date harmonization,Open,BCP/LFF November 18 likely controls; AM and SEC date variants remain noted.
+Elizabeth of Hungary,11-17; 11-19,november,duplicate/date harmonization,Open,BCP/LFF November 19 likely controls; AM date variant remains noted.
+Charles Simeon,11-12; 11-13,november,duplicate/date harmonization,Open,BCP/LFF November 12 likely controls; AM date variant remains noted.
+Columbanus,11-21; 11-23,november,duplicate/date harmonization,Open,SEC/AM date variants require full-year resolution.
+Cecilia of Rome,11-22; 11-25 SEC transfer,november,SEC transfer/date harmonization,Open,SEC 2026 transfer from November 22 to November 25 should not be treated as fixed-date evidence.
+Catherine of Alexandria,11-24; 11-25,november,duplicate/date harmonization,Open,Current LFF groups Catherine with Barbara and Margaret on November 24; AM/Oxford preserve November 25 individual tradition.
+Isaac Watts,11-25; 11-26,november,duplicate/date harmonization,Open,HWHM/GCW November 26 and AM November 25 variants require resolution.
+James Theodore Holly,11-08; 03-13 expected,november; future March,date harmonization,Open,November 8 is alternative date; TEC primary date is March 13 in current project notes.
+Martin Luther,10-31; 02-18 expected,october; future February,date harmonization / Protestant-reformer caution,Open,October 31 Reformation context should not override ordinary Luther date without governance.
