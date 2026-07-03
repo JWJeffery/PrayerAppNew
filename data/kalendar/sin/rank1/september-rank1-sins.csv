@@ -1,0 +1,31 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+09-01,UO-SIN-000063,David Pendleton Oakerhater,person,rank1_controlled,rank preserved pending Indigenous mission review,Indigenous mission/colonial-context review; modern review
+09-02,UO-SIN-000064,The Martyrs of New Guinea,group,rank1_controlled,rank preserved pending mission-context review,colonial/mission-context honesty
+09-03,UO-SIN-000065,Phoebe,person,rank1_controlled,rank preserved pending governance,
+09-04,UO-SIN-000066,Paul Jones,person,rank1_controlled,rank preserved pending peace-witness review,Anglican bishop rule; peace-witness/social-context review
+09-05,UO-SIN-000067,Katharina Zell,person,rank1_controlled,rank preserved pending Protestant-reformer review,Protestant-reformer caution
+09-06,UO-SIN-000068,Hannah More,person,rank1_controlled,rank preserved pending social-impact review,social-impact caution; writer/philanthropist holiness framing
+09-07,UO-SIN-000069,Kassiani,person,rank1_controlled,rank preserved pending source verification,source verification
+09-08,UO-SIN-000070,The Nativity of the Blessed Virgin Mary,feast,rank1_controlled,rank preserved pending Marian-title discipline,Marian title/doctrine handling
+09-09,UO-SIN-000071,"Constance, Thecla, Ruth, Frances, Charles Parsons, and Louis Schuyler",group,rank1_controlled,rank preserved pending group-form governance,group entry
+09-10,UO-SIN-000072,Alexander Crummell,person,rank1_controlled,rank preserved pending social-impact review,race/social-impact caution; priestly holiness framing
+09-11,UO-SIN-000073,Deiniol,person,rank1_controlled,rank preserved pending source verification,source/date verification
+09-12,UO-SIN-000074,John Henry Hobart,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+09-13,UO-SIN-000075,Cyprian of Carthage,person,rank1_controlled,rank preserved pending governance,
+09-14,UO-SIN-000076,Holy Cross Day,feast,rank1_controlled,rank preserved pending governance,
+09-15,UO-SIN-000077,Catherine of Genoa,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+09-16,UO-SIN-000078,Ninian,person,rank1_controlled,rank preserved pending historical uncertainty review,legendary/historical uncertainty review
+09-17,UO-SIN-000079,Hildegard of Bingen,person,rank1_controlled,rank preserved pending governance,
+09-18,UO-SIN-000080,Edward Bouverie Pusey,person,rank1_controlled,rank preserved pending date-form review,date variant in AM; Anglo-Catholic framing
+09-19,UO-SIN-000081,Theodore of Tarsus,person,rank1_controlled,rank preserved pending governance,
+09-20,UO-SIN-000082,John Coleridge Patteson and his Companions,group,rank1_controlled,rank preserved pending mission-context review,mission/colonial context honesty
+09-21,UO-SIN-000083,Matthew the Apostle and Evangelist,person,rank1_controlled,rank preserved pending governance,
+09-22,UO-SIN-000084,Philander Chase,person,rank1_controlled,rank preserved pending frontier/colonial review,Anglican bishop rule; frontier/colonial context review
+09-23,UO-SIN-000085,Thecla of Iconium,person,rank1_controlled,rank preserved pending legendary-material review,legendary Acts of Paul and Thecla handling
+09-24,UO-SIN-000086,Anna Ellison Butler Alexander,person,rank1_controlled,rank preserved pending modern/social review,modern review; race/social-impact context
+09-25,UO-SIN-000087,Sergius of Radonezh,person,rank1_controlled,rank preserved pending governance,
+09-26,UO-SIN-000088,Lancelot Andrewes,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+09-27,UO-SIN-000089,Euphrosyne / Smaragdus of Alexandria,person,rank1_controlled,rank preserved pending naming/historical review,gender/naming/historical handling
+09-28,UO-SIN-000090,Paula and Eustochium of Rome,group,rank1_controlled,rank preserved pending group-form governance,group entry
+09-29,UO-SIN-000091,Saint Michael and All Angels,feast,rank1_controlled,rank preserved pending governance,
+09-30,UO-SIN-000092,Jerome,person,rank1_controlled,rank preserved pending hagiographic-honesty review,theological/personality complexity
