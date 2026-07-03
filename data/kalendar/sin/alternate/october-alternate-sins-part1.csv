@@ -1,0 +1,49 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+10-01,2,UO-SIN-000094,Remigius of Rheims,person,Remigius of Rheims,also rank1 10-02
+10-01,3,UO-SIN-000393,Gregory the Enlightener,person,Gregory the Enlightener,also appears 09-30
+10-01,4,UO-SIN-000395,Bavo,person,Bavo,
+10-02,2,UO-SIN-000396,The Holy Guardian Angels,feast,The Holy Guardian Angels,angelic feast
+10-02,3,UO-SIN-000397,Leodegar of Autun,person,Leodegar of Autun,
+10-02,4,UO-SIN-000398,Thomas Cantilupe of Hereford,person,Thomas Cantilupe of Hereford,also appears 10-03
+10-03,2,UO-SIN-000399,George Kennedy Allen Bell,person,George Kennedy Allen Bell,
+10-03,3,UO-SIN-000398,Thomas Cantilupe of Hereford,person,Thomas Cantilupe of Hereford,also appears 10-02
+10-03,4,UO-SIN-000400,Gerard of Brogne,person,Gerard of Brogne,
+10-03,5,UO-SIN-000401,Columba Marmion,person,Columba Marmion,
+10-04,2,UO-SIN-000402,Ammon of Nitria,person,Ammon of Nitria,
+10-05,2,UO-SIN-000403,Maurus and Placid,group,Maurus and Placid,group source form
+10-05,3,UO-SIN-000404,Raymund of Capua,person,Raymund of Capua,
+10-05,4,UO-SIN-000405,Flora of Beaulieu,person,Flora of Beaulieu,
+10-06,2,UO-SIN-000406,William Tyndale and Miles Coverdale,group,William Tyndale and Miles Coverdale,group source form
+10-06,3,UO-SIN-000407,Bruno of Cologne the Carthusian,person,Bruno of Cologne,distinguished from Bruno of Cologne archbishop 10-11
+10-06,4,UO-SIN-000408,Faith of Agen,person,Faith of Agen,
+10-07,2,UO-SIN-000409,Henry Melchior Muhlenberg,person,Henry Melchior Muhlenberg,
+10-07,3,UO-SIN-000410,Our Lady of the Rosary,feast,Our Lady of the Rosary,Marian feast
+10-07,4,UO-SIN-000411,Justina of Padua,person,Justina of Padua,
+10-08,2,UO-SIN-000412,William Dwight Porter Bliss and Richard Theodore Ely,group,William Dwight Porter Bliss and Richard Theodore Ely,group source form
+10-08,3,UO-SIN-000413,Simeon the God-Receiver,person,Simeon the God-Receiver,biblical figure
+10-08,4,UO-SIN-000414,Pelagia of Antioch,person,Pelagia of Antioch,
+10-08,5,UO-SIN-000415,Demetrius of Sirmium,person,Demetrius of Sirmium,
+10-09,2,UO-SIN-000416,Wilfred Thomason Grenfell,person,Wilfred Thomason Grenfell,
+10-09,3,UO-SIN-000417,Dionysius the Areopagite,person,Dionysius the Areopagite,identity-complex tradition
+10-09,4,UO-SIN-000418,Abraham,person,Abraham,biblical patriarch
+10-09,5,UO-SIN-000419,John Leonardi,person,John Leonardi,
+10-10,2,UO-SIN-000420,Paulinus of York,person,Paulinus of York,
+10-10,3,UO-SIN-000421,Francis Borgia,person,Francis Borgia,
+10-10,4,UO-SIN-000422,Daniel Comboni,person,Daniel Comboni,
+10-10,5,UO-SIN-000386,Thomas Traherne,person,Thomas Traherne,also appears 09-27
+10-11,2,UO-SIN-000423,Kenneth / Canice,person,Kenneth / Canice,also appears 10-13 transfer
+10-11,3,UO-SIN-000424,James the Deacon,person,James the Deacon,
+10-11,4,UO-SIN-000425,Ethelburga of Barking,person,Ethelburga of Barking,
+10-11,5,UO-SIN-000426,Bruno of Cologne the Archbishop,person,Bruno of Cologne,distinguished from Carthusian founder 10-06
+10-12,2,UO-SIN-000427,Elizabeth Fry,person,Elizabeth Fry,
+10-12,3,UO-SIN-000428,Wilfrid of Ripon,person,Wilfrid of Ripon,
+10-12,4,UO-SIN-000429,Edwin of Northumbria,person,Edwin of Northumbria,
+10-13,2,UO-SIN-000423,Kenneth / Canice,person,Kenneth / Canice,SEC transfer variant
+10-13,3,UO-SIN-000430,Gerald of Aurillac,person,Gerald of Aurillac,
+10-13,4,UO-SIN-000431,Comgan,person,Comgan,
+10-14,2,UO-SIN-000432,Esther John,person,Esther John,
+10-14,3,UO-SIN-000433,Callistus I,person,Callistus I,
+10-14,4,UO-SIN-000434,Justus of Lyon,person,Justus of Lyon,
+10-15,2,UO-SIN-000167,John of the Cross,person,John of the Cross,also rank1 12-14
+10-15,3,UO-SIN-000435,Richard Gwyn,person,Richard Gwyn,
+10-15,4,UO-SIN-000085,Thecla of Iconium,person,Thecla,also rank1 09-23
