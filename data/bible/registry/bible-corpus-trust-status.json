@@ -6902,64 +6902,53 @@
       "globalTextTrustPromotion": "not_performed"
     },
     "broader_canon": {
-      "status": "not_trusted_active_ot_nrsv_applicable_gaps_zero_measured_source_grid_mismatch_governed",
+      "status": "not_trusted_broader_canon_source_provenance_adjudication_required",
       "reasons": [
-        "Broader-canon files include non-standard schemas.",
-        "Odes and related canticle files are structurally identified but underpopulated.",
-        "Some metadata overstates completeness or liturgical status.",
-        "Broader canon raw corpus is governed but remains not trusted.",
-        "Broader canon governance audit found 38 candidate records.",
-        "Broader canon governance audit found 36 raw-text-only records.",
-        "Broader canon governance audit found 2 zero-row records.",
-        "Broader canon material has not received source-family and translation-lane adjudication.",
-        "Broader canon material has not received final textual collation sufficient for a trust claim."
+        "Broader-canon active OT NRSV applicable gaps are zero after measured BibleGateway NRSVA Esdras repair.",
+        "The separate broader-canon candidate corpus has 38 candidate files.",
+        "Live inspection found 35 text-bearing files stored as plain string text rather than source-bound translation lanes.",
+        "Live inspection found 3 zero-row files: data/bible/ET/josipponET.json, data/bible/ET/mazahetaET.json, and data/bible/ET/miraclesofmaryET.json.",
+        "Candidate file metadata usually contains broad version/copyright labels, but no explicit source URL, source snapshot, witness edition, transcription history, or row-level source binding sufficient for textual trust.",
+        "Broader canon material has not received final source-family, translation-lane, or textual collation sufficient for a trust claim."
       ],
-      "reason": "Broader canon source-adjudication is policy-closed for the current active corpus, but the lane remains not textually trusted. The raw corpus is governed, with 38 candidate records, 36 raw-text-only records, and 2 zero-row records. No Bible text mutation was performed.",
+      "reason": "Broader canon active OT NRSV applicable gaps are repaired where measured NRSVA source matched the active grid, but the broader-canon candidate corpus is not textually trusted. Live inspection found 38 candidate files, 35 string-text-only files, 3 zero-row files, and no explicit source URL, source snapshot, witness edition, or row-level provenance sufficient for a trust claim.",
       "completedRemediations": [
         "broader_canon_governance_1",
         "broader_canon_trust_readiness_classification_1",
         "broader_canon_policy_closed_not_trust_ready_1",
         "broader_canon_active_ot_shape_normalization_2026_07_03",
         "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
-        "broader_canon_esdras_nrsva_source_repair_2026_07_03"
+        "broader_canon_esdras_nrsva_source_repair_2026_07_03",
+        "broader_canon_source_provenance_adjudication_2026_07_03"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
-      "remainingKnownActiveOtNrsVGapRows": 1210,
-      "remainingKnownActiveOtNrsVGapBooks": {
-        "1ESDRAS": 410,
-        "2ESDRAS": 800
-      },
+      "remainingKnownActiveOtNrsVGapRows": 0,
+      "remainingKnownActiveOtNrsVGapBooks": {},
       "globalTextTrustPromotion": "not_performed",
       "allowedClaims": [
-        "broader_canon_active_ot_shape_normalized_for_3maccabees_4maccabees_prayerofmanasseh",
-        "broader_canon_existing_nrsv_text_preserved_no_invention",
-        "broader_canon_active_ot_remaining_known_nrsv_gap_rows_1210",
-        "broader_canon_esdras_nrsv_repair_blocked_pending_source_locator",
-        "one_esdras_nrsv_gap_rows_410",
-        "two_esdras_nrsv_gap_rows_800",
-        "broader_canon_esdras_no_text_mutation_in_source_blocker_record",
-        "broader_canon_esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
         "broader_canon_active_ot_remaining_nrsv_applicable_gap_rows_zero",
         "broader_canon_esdras_source_snapshots_recorded",
-        "source_matched_esdras_nrsv_gaps_repaired"
+        "source_matched_esdras_nrsv_gaps_repaired",
+        "broader_canon_source_provenance_adjudication_recorded",
+        "broader_canon_candidate_count_38",
+        "broader_canon_zero_row_files_3",
+        "broader_canon_string_text_only_files_35",
+        "broader_canon_concrete_source_pointer_files_zero"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
         "broader_canon_complete",
-        "broader_canon_all_active_ot_nrsv_complete",
-        "one_esdras_two_esdras_repaired",
         "broader_canon_global_trust_promoted",
-        "one_esdras_two_esdras_nrsv_repaired",
-        "broader_canon_active_ot_nrsv_complete",
-        "webbe_text_can_be_written_as_nrsv",
-        "esdras_gaps_can_be_filled_from_drb_or_kjv",
         "broader_canon_raw_candidate_corpus_source_verified",
         "public_rendering_permission_resolved",
         "active_source_grid_mismatch_rows_are_textual_defects",
-        "source_only_rows_were_forced_into_active_grid"
+        "source_only_rows_were_forced_into_active_grid",
+        "broader_canon_trusted_from_meta_version_labels",
+        "zero_row_files_complete",
+        "string_text_files_source_verified_without_external_witness"
       ],
-      "nextAction": "Run or record a broader-canon active OT closeout audit; keep broader-canon raw candidate corpus not globally trusted.",
+      "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
       "latestEsdrasNrsVSourceLocatorBlockerAuditScript": "scripts/audit-bible-broader-canon-esdras-nrsv-source-locator-blocker.mjs",
       "activeBibleTextMutationInLatestStep": "filled_measured_source_matched_missing_text_NRSV_from_recorded_NRSVA_source",
@@ -6971,7 +6960,13 @@
       "sourceSnapshotsAdded": [
         "data/bible/translations/nrsv-biblegateway-nrsva/raw/1esdras.json",
         "data/bible/translations/nrsv-biblegateway-nrsva/raw/2esdras.json"
-      ]
+      ],
+      "latestBroaderCanonSourceProvenanceAdjudication": "data/bible/registry/broader-canon-source-provenance-adjudication-2026-07-03.json",
+      "latestBroaderCanonSourceProvenanceAdjudicationAuditScript": "scripts/audit-bible-broader-canon-governance.mjs",
+      "candidateCount": 38,
+      "textBearingStringOnlyFiles": 35,
+      "zeroRowFiles": 3,
+      "concreteSourcePointerFiles": 0
     },
     "vulgate": {
       "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",

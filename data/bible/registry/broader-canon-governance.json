@@ -1,6 +1,6 @@
 {
-  "schema": "broader-canon-governance-v1",
-  "status": "not_trusted_broader_canon_governed",
+  "schema": "broader-canon-governance-v2",
+  "status": "not_trust_ready_source_provenance_adjudication_recorded",
   "candidateCount": 38,
   "candidatePaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -43,10 +43,28 @@
     "data/bible/SY/letterofbaruchSY.json"
   ],
   "zeroRowPaths": [
+    "data/bible/ET/josipponET.json",
     "data/bible/ET/mazahetaET.json",
     "data/bible/ET/miraclesofmaryET.json"
   ],
-  "rawTextOnlyPaths": [
+  "decisions": {
+    "corpusPolicy": "Broader-canon files remain a separate candidate corpus lane, not promoted into canonical OT/NT/deuterocanon completion.",
+    "textPolicy": "No broader-canon candidate text is changed by this source/provenance adjudication tranche.",
+    "sourcePolicy": "Version/copyright labels alone are not sufficient source provenance. Each text-bearing file requires explicit source witness acquisition and collation before trust.",
+    "emptyFilePolicy": "Zero-row broader-canon files are blockers, not complete corpus entries.",
+    "trustPolicy": "The broader canon lane remains not trusted until source-family, translation-lane, public-rendering, and collation work is complete."
+  },
+  "blockedClaims": [
+    "broader_canon_textually_trusted",
+    "broader_canon_complete",
+    "broader_canon_global_trust_promoted",
+    "broader_canon_raw_candidate_corpus_source_verified",
+    "public_rendering_permission_resolved",
+    "broader_canon_trusted_from_meta_version_labels",
+    "zero_row_files_complete",
+    "string_text_files_source_verified_without_external_witness"
+  ],
+  "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
     "data/bible/AR/prayerofapolloniusAR.json",
     "data/bible/ET/1clementET.json",
@@ -68,7 +86,6 @@
     "data/bible/ET/didaskaliaET.json",
     "data/bible/ET/fethanagastET.json",
     "data/bible/ET/hermastheshepherdET.json",
-    "data/bible/ET/josipponET.json",
     "data/bible/ET/restofbaruchET.json",
     "data/bible/ET/restofjeremiahET.json",
     "data/bible/ET/siratetsionET.json",
@@ -84,18 +101,18 @@
     "data/bible/OT/1enoch.json",
     "data/bible/SY/letterofbaruchSY.json"
   ],
-  "decisions": {
-    "corpusPolicy": "Broader-canon files are governed as a separate raw-text corpus lane, not promoted into canonical OT/NT/deuterocanon completion.",
-    "textPolicy": "No broader-canon text is repaired or normalized in this governance tranche.",
-    "sourcePolicy": "Raw-text candidates require separate source/provenance adjudication before trust claims.",
-    "emptyFilePolicy": "Zero-row broader-canon files are allowed only as governed unresolved artifacts, not as complete corpus entries.",
-    "trustPolicy": "The broader canon lane remains not trusted/governance pending."
+  "sourceProvenanceAdjudication": {
+    "recordPath": "data/bible/registry/broader-canon-source-provenance-adjudication-2026-07-03.json",
+    "recordedAt": "2026-07-03T21:00:00Z",
+    "trustReady": false,
+    "concreteSourcePointerCount": 0,
+    "totalRows": 3717
   },
-  "blockedClaims": [
-    "broader_canon_complete",
-    "broader_canon_textually_trusted",
-    "broader_canon_normalized",
-    "zero_row_files_complete",
-    "raw_text_files_source_verified"
+  "allowedClaims": [
+    "broader_canon_source_provenance_adjudication_recorded",
+    "broader_canon_candidate_count_38",
+    "broader_canon_zero_row_files_3",
+    "broader_canon_string_text_only_files_35",
+    "broader_canon_concrete_source_pointer_files_zero"
   ]
 }

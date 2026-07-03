@@ -1,0 +1,712 @@
+{
+  "schema": "broader-canon-source-provenance-adjudication-v1",
+  "id": "broader_canon_source_provenance_adjudication_2026_07_03",
+  "status": "not_trust_ready_source_provenance_insufficient",
+  "trustReady": false,
+  "recordedAt": "2026-07-03T21:00:00Z",
+  "scope": {
+    "candidateRegistry": "data/bible/registry/broader-canon-governance.json",
+    "candidateCount": 38,
+    "priorActiveOtEsdrasRepair": "data/bible/registry/broader-canon-esdras-nrsva-source-repair-2026-07-03.json",
+    "auditScript": "scripts/audit-bible-broader-canon-governance.mjs"
+  },
+  "summary": {
+    "candidateCount": 38,
+    "zeroRowCount": 3,
+    "stringTextOnlyCount": 35,
+    "concreteSourcePointerCount": 0,
+    "totalRows": 3717
+  },
+  "zeroRowPaths": [
+    "data/bible/ET/josipponET.json",
+    "data/bible/ET/mazahetaET.json",
+    "data/bible/ET/miraclesofmaryET.json"
+  ],
+  "stringTextOnlyPaths": [
+    "data/bible/AR/3corinthiansAR.json",
+    "data/bible/AR/prayerofapolloniusAR.json",
+    "data/bible/ET/1clementET.json",
+    "data/bible/ET/2clementET.json",
+    "data/bible/ET/2meqa'abyanET.json",
+    "data/bible/ET/3clementET.json",
+    "data/bible/ET/4clementET.json",
+    "data/bible/ET/5ClementET.json",
+    "data/bible/ET/7clementET.json",
+    "data/bible/ET/8ClementET.json",
+    "data/bible/ET/ClementBookofRollsET.json",
+    "data/bible/ET/ClementVisionaryET.json",
+    "data/bible/ET/abtilisET.json",
+    "data/bible/ET/admonitionsET.json",
+    "data/bible/ET/ascensionofisaiahET.json",
+    "data/bible/ET/bookofjubileesET.json",
+    "data/bible/ET/clement6ET.json",
+    "data/bible/ET/clementstatutesET.json",
+    "data/bible/ET/didaskaliaET.json",
+    "data/bible/ET/fethanagastET.json",
+    "data/bible/ET/hermastheshepherdET.json",
+    "data/bible/ET/restofbaruchET.json",
+    "data/bible/ET/restofjeremiahET.json",
+    "data/bible/ET/siratetsionET.json",
+    "data/bible/ET/tizazET.json",
+    "data/bible/NT/2baruchCE.json",
+    "data/bible/NT/epistleofthelaodiceans.json",
+    "data/bible/NT/historyofzosimus.json",
+    "data/bible/ODES/armeniancanticlesAR.json",
+    "data/bible/ODES/copticodesCO.json",
+    "data/bible/ODES/eoodes.json",
+    "data/bible/ODES/ethiopianodes.json",
+    "data/bible/ODES/odesofsolomonSY.json",
+    "data/bible/OT/1enoch.json",
+    "data/bible/SY/letterofbaruchSY.json"
+  ],
+  "concreteSourcePointerPaths": [],
+  "inspection": [
+    {
+      "path": "data/bible/AR/3corinthiansAR.json",
+      "rows": 19,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/AR/prayerofapolloniusAR.json",
+      "rows": 8,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/1clementET.json",
+      "rows": 47,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/2clementET.json",
+      "rows": 40,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/2meqa'abyanET.json",
+      "rows": 105,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/3clementET.json",
+      "rows": 25,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/4clementET.json",
+      "rows": 20,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/5ClementET.json",
+      "rows": 20,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/7clementET.json",
+      "rows": 20,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/8ClementET.json",
+      "rows": 19,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/ClementBookofRollsET.json",
+      "rows": 6,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/ClementVisionaryET.json",
+      "rows": 11,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/abtilisET.json",
+      "rows": 14,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/admonitionsET.json",
+      "rows": 15,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/ascensionofisaiahET.json",
+      "rows": 140,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/bookofjubileesET.json",
+      "rows": 975,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/clement6ET.json",
+      "rows": 20,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/clementstatutesET.json",
+      "rows": 4,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/didaskaliaET.json",
+      "rows": 87,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/fethanagastET.json",
+      "rows": 49,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/hermastheshepherdET.json",
+      "rows": 99,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/josipponET.json",
+      "rows": 0,
+      "textShape": "zero_row",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/mazahetaET.json",
+      "rows": 0,
+      "textShape": "zero_row",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/miraclesofmaryET.json",
+      "rows": 0,
+      "textShape": "zero_row",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/restofbaruchET.json",
+      "rows": 56,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/restofjeremiahET.json",
+      "rows": 14,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/siratetsionET.json",
+      "rows": 17,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ET/tizazET.json",
+      "rows": 23,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "description",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/NT/2baruchCE.json",
+      "rows": 746,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/NT/epistleofthelaodiceans.json",
+      "rows": 16,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/NT/historyofzosimus.json",
+      "rows": 3,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ODES/armeniancanticlesAR.json",
+      "rows": 14,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ODES/copticodesCO.json",
+      "rows": 16,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ODES/eoodes.json",
+      "rows": 13,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ODES/ethiopianodes.json",
+      "rows": 3,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/ODES/odesofsolomonSY.json",
+      "rows": 3,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/OT/1enoch.json",
+      "rows": 1048,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    },
+    {
+      "path": "data/bible/SY/letterofbaruchSY.json",
+      "rows": 2,
+      "textShape": "string_text_only",
+      "metaKeys": [
+        "copyright",
+        "id",
+        "name",
+        "version"
+      ],
+      "sourceLikeMetaKeys": [
+        "copyright",
+        "version"
+      ],
+      "hasConcreteSourcePointer": false
+    }
+  ],
+  "determination": {
+    "sourceFamilyAdjudication": "not_complete",
+    "translationLaneAdjudication": "not_complete",
+    "textualCollation": "not_complete",
+    "publicRenderingPermission": "not_resolved",
+    "globalTrustPromotion": "not_performed",
+    "summary": "The broader-canon active OT Esdras NRSV gap repair is complete, but the separate broader-canon candidate corpus cannot be called trusted from current metadata. The files need explicit source witnesses, source-family classification, translation-lane decisions, and collation before any trust claim."
+  },
+  "allowedClaims": [
+    "broader_canon_source_provenance_adjudication_recorded",
+    "broader_canon_candidate_count_38",
+    "broader_canon_zero_row_files_3",
+    "broader_canon_string_text_only_files_35",
+    "broader_canon_concrete_source_pointer_files_zero"
+  ],
+  "blockedClaims": [
+    "broader_canon_textually_trusted",
+    "broader_canon_complete",
+    "broader_canon_global_trust_promoted",
+    "broader_canon_raw_candidate_corpus_source_verified",
+    "public_rendering_permission_resolved",
+    "broader_canon_trusted_from_meta_version_labels",
+    "zero_row_files_complete",
+    "string_text_files_source_verified_without_external_witness"
+  ],
+  "nextActions": [
+    "Acquire explicit source witnesses or source snapshots for each text-bearing broader-canon candidate.",
+    "Classify each candidate by tradition, source family, translation lane, canonical/liturgical status, and public rendering posture.",
+    "Remove, rebuild, or non-Bible-classify zero-row artifacts before any broader-canon completion claim.",
+    "Collate candidate text against recorded witnesses before any trust claim."
+  ]
+}
