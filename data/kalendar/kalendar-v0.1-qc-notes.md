@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, and the July-August-September-October-November cross-sectional QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, and the July-through-December cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July through November
+## Lessons learned from July through December
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -51,6 +51,10 @@ This does not make LFF infallible, but it keeps the working candidate matrix ali
 11. Cross-month duplicate tracking now requires a central ledger.
 
 As more months are added, bidirectional row edits become brittle. Candidate rows should still carry obvious local harmonization flags, but the cross-date harmonization ledger is the central audit surface for duplicates, transferred dates, variant source forms, and future-month dependencies.
+
+12. Every new month must be checked directly against the current LFF calendar before cross-sectional comparison.
+
+The initial December file exposed a workflow failure: several entries were given current LFF authority or first rank even though LFF 2024 placed them elsewhere or did not list them on that date. December was repaired against the LFF 2024 calendar before cross-month harmonization was updated.
 
 ## QC actions taken
 
@@ -84,6 +88,15 @@ As more months are added, bidirectional row edits become brittle. Candidate rows
 - Confirmed November preserves current LFF source-forms while retaining date variants and older/provincial forms as separate candidate rows where needed.
 - Confirmed November continues the standing exclusion discipline for non-sanctoral historical remembrances, including Kristallnacht and Armistice Day.
 
+## Cross-sectional QC actions after comparing July through December
+
+- Repaired December against the current LFF 2024 calendar before final cross-month comparison.
+- Corrected December 1: Charles de Foucauld is now first-ranked as the current LFF entry; Nicholas Ferrar remains visible as a BCP/older-date variant.
+- Corrected December 8: Nicholas Ferrar is now first-ranked as the current LFF entry; Richard Baxter was downgraded to TEC-secondary/Anglican martyrology review status.
+- Added or promoted current LFF December entries that were missing or under-ranked: Frederick Howden Jr. on December 11, Francis de Sales and Jane de Chantal on December 12, Nino of Georgia on December 15, Dorothy L. Sayers on December 17, and Frances Joseph-Gaudet on December 31.
+- Removed false current-LFF authority from Juan Diego, Thomas Merton, Our Lady of Guadalupe, Cram/Upjohn/La Farge, Garrison/Stewart, Lillian Trasher, Charlotte Digges Moon, Samuel Ajayi Crowther, and other December rows where the authority was HWHM/GCW/AM/provincial rather than LFF 2024.
+- Updated the cross-date harmonization ledger with December conflicts including Nicholas Ferrar, Birinus, Osmund, Barbara, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Stephen, and Samuel Ajayi Crowther.
+
 ## Continuing QC rule
 
-Each future monthly tranche should be checked against all earlier months for source-form consistency, duplicate/date harmonization, status-language consistency, year-specific transfer artifacts, and whether the ranking reflects the project rules: holiness over significance, social impact as evidence rather than proof, Anglican-centered source hierarchy, Great Church supplementation only when properly labeled, and the final test of prayability and discipleship.
+Each future monthly tranche should be checked against current LFF first, then against earlier months for source-form consistency, duplicate/date harmonization, status-language consistency, year-specific transfer artifacts, and whether the ranking reflects the project rules: holiness over significance, social impact as evidence rather than proof, Anglican-centered source hierarchy, Great Church supplementation only when properly labeled, and the final test of prayability and discipleship.
