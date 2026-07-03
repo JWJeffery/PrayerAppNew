@@ -1,0 +1,44 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+11-01,2,UO-SIN-000483,Benignus of Dijon,person,Benignus of Dijon,
+11-01,3,UO-SIN-000484,Nonius of Portugal,person,Nonius of Portugal,
+11-02,2,UO-SIN-000485,Odilo of Cluny,person,Odilo of Cluny,
+11-02,3,UO-SIN-000486,Margaret of Lorraine,person,Margaret of Lorraine,
+11-03,2,UO-SIN-000487,Martin de Porres,person,Martin de Porres,individual identity also appears in 08-23 group
+11-03,3,UO-SIN-000488,Winefride / Gwenfrewi,person,Winefride / Gwenfrewi,
+11-03,4,UO-SIN-000489,Malachy of Armagh,person,Malachy of Armagh,
+11-04,2,UO-SIN-000490,Saints of the Old Testament,group,Saints of the Old Testament,biblical group commemoration
+11-04,3,UO-SIN-000491,Charles Borromeo,person,Charles Borromeo,
+11-04,4,UO-SIN-000492,John Zedazneli and Companions,group,John Zedazneli and Companions,group source form
+11-05,2,UO-SIN-000493,Cybi,person,Cybi,
+11-05,3,UO-SIN-000494,Bernard Lichtenberg,person,Bernard Lichtenberg,
+11-05,4,UO-SIN-000495,Gomidas Keumurgian,person,Gomidas Keumurgian,
+11-06,2,UO-SIN-000496,Illtud,person,Illtud,
+11-06,3,UO-SIN-000497,Leonard of Noblac,person,Leonard of Noblac,
+11-07,2,UO-SIN-000498,Richard Davies,person,Richard Davies,
+11-08,2,UO-SIN-000499,Elizabeth of the Trinity,person,Elizabeth of the Trinity,
+11-08,3,UO-SIN-000500,John Duns Scotus,person,John Duns Scotus,
+11-08,4,UO-SIN-000501,All Saints and Martyrs of England / All Saints of Wales,group,All Saints and Martyrs of England / All Saints of Wales,national group commemoration
+11-08,5,UO-SIN-000502,James Theodore Holly,person,James Theodore Holly,date variant
+11-09,2,UO-SIN-000503,Margery Kempe,person,Margery Kempe,individual identity also in English mystics group
+11-09,3,UO-SIN-000504,George Hay Forbes,person,George Hay Forbes,
+11-09,4,UO-SIN-000505,Dedication of Saint John Lateran,feast,Dedication of Saint John Lateran,church dedication feast
+11-09,5,UO-SIN-000506,Radbod of Utrecht,person,Radbod of Utrecht,
+11-10,2,UO-SIN-000507,Justus of Canterbury,person,Justus of Canterbury,
+11-10,3,UO-SIN-000508,Kristallnacht remembrance,event,Kristallnacht remembrance,non-sanctoral historical remembrance
+11-11,2,UO-SIN-000509,Theodore the Studite,person,Theodore the Studite,
+11-11,3,UO-SIN-000334,Soren Kierkegaard,person,Søren Kierkegaard,also appears 09-08
+11-11,4,UO-SIN-000510,Armistice Day,event,Armistice Day,non-sanctoral civic remembrance
+11-12,2,UO-SIN-000511,Machar,person,Machar,
+11-12,3,UO-SIN-000512,Tysilio,person,Tysilio,
+11-12,4,UO-SIN-000513,Josaphat Kuntsevych,person,Josaphat Kuntsevych,
+11-13,2,UO-SIN-000514,Abbo of Fleury,person,Abbo of Fleury,
+11-13,3,UO-SIN-000515,Nicholas I,person,Nicholas I,
+11-13,4,UO-SIN-000135,Charles Simeon,person,Charles Simeon,also rank1 11-12
+11-14,2,UO-SIN-000516,Samuel Seabury,person,Samuel Seabury,person form of 11-14 event
+11-14,3,UO-SIN-000517,Dyfrig / Dubricius,person,Dyfrig / Dubricius,
+11-14,4,UO-SIN-000518,Lawrence O'Toole,person,Lawrence O’Toole,
+11-14,5,UO-SIN-000519,Nicholas of Sibenik and Companions,group,Nicholas of Sibenik and Companions,group source form
+11-15,2,UO-SIN-000520,Albert the Great,person,Albert the Great,
+11-15,3,UO-SIN-000521,Francis Asbury and George Whitefield,group,Francis Asbury and George Whitefield,group source form
+11-15,4,UO-SIN-000522,Roque Gonzalez and Companions,group,Roque González and Companions,group source form
+11-15,5,UO-SIN-000523,Malo,person,Malo,
