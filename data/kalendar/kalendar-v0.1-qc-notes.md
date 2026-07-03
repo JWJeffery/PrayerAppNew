@@ -2,7 +2,7 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche and the first July-August-September crosswise QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -52,6 +52,15 @@ The Scottish Episcopal master calendar CSV is useful, but it includes year-speci
 - Revised August 5 to make explicit why the Dürer/Grünewald/Cranach artist group remains below Oswald despite higher TEC-secondary source presence.
 - Revised August 24 to mark Simone Weil as `Exclude from primary consideration`, not ordinary `Review`, because of ecclesial-status mismatch for the Christian-sanctoral primary calendar.
 - Added September candidate rows using the SEC calendar only with transfer caution where year-specific transfer artifacts were visible.
+
+## Crosswise QC actions after comparing July, August, and September
+
+- Added explicit date-harmonization flags for Declan of Ardmore on July 23 and July 24.
+- Added explicit date-harmonization flags for Blane on August 10 and August 12.
+- Added explicit date-harmonization flag for John Bunyan on August 29, matching the existing August 30 duplicate warning.
+- Added explicit date-harmonization flag for Grundtvig on September 2, matching the September 8 duplicate warning.
+- Added explicit date-harmonization flag for Albert of Jerusalem on September 14, matching the September 17 duplicate warning.
+- Revised September 20 and September 27 SEC language from `fixed-date witness via transfer note` to `SEC transfer witness`, so year-specific transfer evidence is not mistaken for fixed-date evidence.
 
 ## Continuing QC rule
 
