@@ -1,0 +1,61 @@
+{
+  "schema": "deuterocanon-nrsv-final-no-applicable-gap-status-v1",
+  "id": "deuterocanon_nrsv_final_no_applicable_gap_status_2026_07_02",
+  "status": "deuterocanon_nrsv_no_applicable_gaps_remaining",
+  "recordedAt": "2026-07-03T06:19:46Z",
+  "scope": {
+    "lane": "text.NRSV",
+    "corpusArea": "data/bible/OT deuterocanon",
+    "sourceWitness": "BibleGateway NRSVA",
+    "lineage": [
+      "data/bible/registry/deuterocanon-status-consolidation-audit-2026-07-02.json",
+      "data/bible/registry/deutero-tobit-nrsv-source-shape-classification-2026-07-02.json",
+      "data/bible/registry/deuterocanon-status-accounting-after-tobit-2026-07-02.json",
+      "data/bible/registry/deuterocanon-small-gap-source-shape-classification-2026-07-02.json",
+      "data/bible/registry/deuterocanon-judith-source-shape-classification-2026-07-02.json",
+      "data/bible/registry/deuterocanon-sirach-source-shape-classification-2026-07-02.json"
+    ]
+  },
+  "summary": {
+    "remainingNrsVApplicableRows": 0,
+    "nrsvNotApplicableRows": 344,
+    "repairCandidatesRemaining": 0,
+    "activeBibleTextMutation": "none",
+    "syntheticRows": 0,
+    "globalTextTrustPromotion": "not_performed"
+  },
+  "classifiedNotApplicableByBook": {
+    "GREEK_DANIEL": 1,
+    "TOBIT": 57,
+    "BARUCH": 2,
+    "FIRST_MACCABEES": 6,
+    "SECOND_MACCABEES": 3,
+    "WISDOM": 6,
+    "JUDITH": 35,
+    "SIRACH": 234
+  },
+  "determination": {
+    "summary": "The Catholic deuterocanon NRSV applicable-gap queue is exhausted. Remaining non-NRSV active rows in this tranche are governed source-shape/addressability rows against the selected BibleGateway NRSVA source grid, not repairable NRSVA text gaps.",
+    "importantLanguage": "Use 'source-complete for the selected NRSVA source grid' rather than 'incomplete' for Tobit, Judith, Sirach, and other source-shape classifications.",
+    "activeBibleTextMutation": "none",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "deuterocanon_nrsv_applicable_gap_queue_exhausted",
+    "remaining_deuterocanon_nrsv_applicable_gaps_zero",
+    "deuterocanon_nrsv_source_shape_rows_governed",
+    "deuterocanon_nrsv_no_bible_text_mutation_in_final_status_record"
+  ],
+  "blockedClaims": [
+    "deuterocanon_globally_textually_trusted",
+    "deuterocanon_all_translations_complete",
+    "source_shape_rows_are_textual_defects",
+    "tobit_judith_sirach_incomplete_for_selected_nrsva_grid",
+    "synthetic_nrsv_rows_created"
+  ],
+  "nextActions": [
+    "Review and push this final deuterocanon NRSV no-applicable-gap status record.",
+    "After push, choose the next corpus governance target outside this completed deuterocanon NRSV applicable-gap queue."
+  ],
+  "failures": []
+}

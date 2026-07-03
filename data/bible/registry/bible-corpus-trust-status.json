@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_sirach_source_shape_classified_review_pending",
+      "status": "nrsv_applicable_gap_queue_exhausted_source_shape_governed",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1085,7 +1085,8 @@
         "deuterocanon_status_accounting_after_tobit_2026_07_02",
         "deuterocanon_small_gap_source_shape_classification_2026_07_02",
         "deuterocanon_judith_source_shape_classification_2026_07_02",
-        "deuterocanon_sirach_source_shape_classification_2026_07_02"
+        "deuterocanon_sirach_source_shape_classification_2026_07_02",
+        "deuterocanon_nrsv_final_no_applicable_gap_status_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6743,7 +6744,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review Sirach source-shape classification, then record final deuterocanon NRSV no-applicable-gap status.",
+      "nextAction": "Review and push final deuterocanon NRSV no-applicable-gap status; then choose the next corpus governance target outside this queue.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6797,7 +6798,11 @@
         "judith_rows_filled_synthetically",
         "sirach_incomplete_for_nrsva",
         "sirach_rows_repaired_from_absent_source_refs",
-        "sirach_rows_filled_synthetically"
+        "sirach_rows_filled_synthetically",
+        "deuterocanon_all_translations_complete",
+        "source_shape_rows_are_textual_defects",
+        "tobit_judith_sirach_incomplete_for_selected_nrsva_grid",
+        "synthetic_nrsv_rows_created"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6849,7 +6854,10 @@
         "sirach_addressability_rows_classified_not_applicable",
         "remaining_deuterocanon_nrsv_applicable_gaps_zero",
         "deuterocanon_nrsv_not_applicable_rows_344",
-        "sirach_classification_no_bible_text_mutation"
+        "sirach_classification_no_bible_text_mutation",
+        "deuterocanon_nrsv_applicable_gap_queue_exhausted",
+        "deuterocanon_nrsv_source_shape_rows_governed",
+        "deuterocanon_nrsv_no_bible_text_mutation_in_final_status_record"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6886,7 +6894,12 @@
       "latestSirachSourceShapeClassification": "data/bible/registry/deuterocanon-sirach-source-shape-classification-2026-07-02.json",
       "latestSirachSourceShapeClassificationAuditScript": "scripts/audit-bible-deuterocanon-sirach-source-shape-classification.mjs",
       "remainingNrsVApplicableGapsAfterSirachClassification": 0,
-      "nrsvNotApplicableRowsAfterSirachClassification": 344
+      "nrsvNotApplicableRowsAfterSirachClassification": 344,
+      "latestFinalNrsVNoApplicableGapStatus": "data/bible/registry/deuterocanon-nrsv-final-no-applicable-gap-status-2026-07-02.json",
+      "latestFinalNrsVNoApplicableGapStatusAuditScript": "scripts/audit-bible-deuterocanon-nrsv-final-no-applicable-gap-status.mjs",
+      "remainingNrsVApplicableGaps": 0,
+      "nrsvNotApplicableRowsGoverned": 344,
+      "globalTextTrustPromotion": "not_performed"
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
