@@ -1,0 +1,320 @@
+{
+  "schema": "deuterocanon-sirach-source-shape-classification-v1",
+  "id": "deuterocanon_sirach_source_shape_classification_2026_07_02",
+  "status": "sirach_source_complete_nrsva_addressability_rows_classified",
+  "recordedAt": "2026-07-03T06:10:16Z",
+  "scope": {
+    "bookId": "SIRACH",
+    "lane": "text.NRSV",
+    "sourceWitness": "BibleGateway NRSVA",
+    "activePath": "data/bible/OT/sirach.json",
+    "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/sirach.json",
+    "priorAccounting": "data/bible/registry/deuterocanon-judith-source-shape-classification-2026-07-02.json"
+  },
+  "summary": {
+    "targetRows": 234,
+    "classifiedNotApplicable": 234,
+    "repairCandidates": 0,
+    "remainingNrsVApplicableRowsAfterClassification": 0,
+    "nrsvNotApplicableRowsAfterClassification": 344,
+    "activeBibleTextMutation": "none",
+    "syntheticRows": 0
+  },
+  "classificationCounts": {
+    "source_shape_absent_from_raw_nrsva_grid": 41,
+    "source_shape_beyond_raw_nrsva_endpoint": 193
+  },
+  "refsByClassificationCompact": {
+    "source_shape_absent_from_raw_nrsva_grid": {
+      "1": [
+        "5",
+        "7",
+        "21"
+      ],
+      "3": [
+        "7",
+        "19"
+      ],
+      "10": [
+        "21"
+      ],
+      "11": [
+        "15-16"
+      ],
+      "13": [
+        "14"
+      ],
+      "16": [
+        "15-16"
+      ],
+      "17": [
+        "5",
+        "9",
+        "16",
+        "18",
+        "21"
+      ],
+      "18": [
+        "2-3"
+      ],
+      "19": [
+        "6",
+        "18-19",
+        "21"
+      ],
+      "22": [
+        "8"
+      ],
+      "23": [
+        "5"
+      ],
+      "24": [
+        "18",
+        "24"
+      ],
+      "25": [
+        "12"
+      ],
+      "28": [
+        "25"
+      ],
+      "29": [
+        "17"
+      ],
+      "32": [
+        "22"
+      ],
+      "33": [
+        "29"
+      ],
+      "34": [
+        "11",
+        "22",
+        "27"
+      ],
+      "35": [
+        "7",
+        "19"
+      ],
+      "36": [
+        "7",
+        "9",
+        "14-15"
+      ],
+      "43": [
+        "17"
+      ]
+    },
+    "source_shape_beyond_raw_nrsva_endpoint": {
+      "1": [
+        "31-40"
+      ],
+      "2": [
+        "19-23"
+      ],
+      "3": [
+        "32-34"
+      ],
+      "4": [
+        "32-36"
+      ],
+      "5": [
+        "16-18"
+      ],
+      "7": [
+        "37-40"
+      ],
+      "8": [
+        "20-22"
+      ],
+      "9": [
+        "19-25"
+      ],
+      "10": [
+        "32-34"
+      ],
+      "11": [
+        "35-36"
+      ],
+      "12": [
+        "19"
+      ],
+      "13": [
+        "27-32"
+      ],
+      "15": [
+        "21-22"
+      ],
+      "16": [
+        "31"
+      ],
+      "20": [
+        "32-33"
+      ],
+      "21": [
+        "29-31"
+      ],
+      "22": [
+        "28-33"
+      ],
+      "23": [
+        "28-38"
+      ],
+      "24": [
+        "35-47"
+      ],
+      "25": [
+        "27-36"
+      ],
+      "27": [
+        "31-33"
+      ],
+      "28": [
+        "27-30"
+      ],
+      "29": [
+        "29-35"
+      ],
+      "30": [
+        "26-27"
+      ],
+      "31": [
+        "32-42"
+      ],
+      "32": [
+        "25-28"
+      ],
+      "33": [
+        "33"
+      ],
+      "37": [
+        "32-34"
+      ],
+      "38": [
+        "35-39"
+      ],
+      "39": [
+        "36-41"
+      ],
+      "40": [
+        "31-32"
+      ],
+      "41": [
+        "23-28"
+      ],
+      "42": [
+        "26"
+      ],
+      "43": [
+        "34-37"
+      ],
+      "44": [
+        "24-27"
+      ],
+      "45": [
+        "27-31"
+      ],
+      "46": [
+        "21-23"
+      ],
+      "47": [
+        "26-31"
+      ],
+      "48": [
+        "26-28"
+      ],
+      "49": [
+        "17-19"
+      ],
+      "50": [
+        "30-31"
+      ],
+      "51": [
+        "31-38"
+      ]
+    }
+  },
+  "activeTranslationCountsAcrossTargetRows": {
+    "DRB": 234,
+    "KJV": 42,
+    "NABRE": 17
+  },
+  "rawChapterCount": 51,
+  "rawMaxByChapter": {
+    "1": 30,
+    "2": 18,
+    "3": 31,
+    "4": 31,
+    "5": 15,
+    "6": 37,
+    "7": 36,
+    "8": 19,
+    "9": 18,
+    "10": 31,
+    "11": 34,
+    "12": 18,
+    "13": 26,
+    "14": 27,
+    "15": 20,
+    "16": 30,
+    "17": 32,
+    "18": 33,
+    "19": 30,
+    "20": 31,
+    "21": 28,
+    "22": 27,
+    "23": 27,
+    "24": 34,
+    "25": 26,
+    "26": 29,
+    "27": 30,
+    "28": 26,
+    "29": 28,
+    "30": 25,
+    "31": 31,
+    "32": 24,
+    "33": 32,
+    "34": 31,
+    "35": 26,
+    "36": 31,
+    "37": 31,
+    "38": 34,
+    "39": 35,
+    "40": 30,
+    "41": 22,
+    "42": 25,
+    "43": 33,
+    "44": 23,
+    "45": 26,
+    "46": 20,
+    "47": 25,
+    "48": 25,
+    "49": 16,
+    "50": 29,
+    "51": 30
+  },
+  "remainingNrsVApplicableMissingRows": [],
+  "failures": [],
+  "determination": {
+    "summary": "Sirach is source-complete for the selected BibleGateway NRSVA source grid. The 234 active rows are non-corresponding multi-version addressability rows, not repairable NRSVA text gaps.",
+    "activeBibleTextMutation": "none",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "sirach_source_complete_for_selected_nrsva_grid",
+    "sirach_addressability_rows_classified_not_applicable",
+    "remaining_deuterocanon_nrsv_applicable_gaps_zero",
+    "deuterocanon_nrsv_not_applicable_rows_344",
+    "sirach_classification_no_bible_text_mutation"
+  ],
+  "blockedClaims": [
+    "sirach_incomplete_for_nrsva",
+    "sirach_rows_repaired_from_absent_source_refs",
+    "sirach_rows_filled_synthetically",
+    "deuterocanon_globally_textually_trusted"
+  ],
+  "nextActions": [
+    "Review and push Sirach source-shape classification.",
+    "Record final deuterocanon NRSV no-applicable-gap status after review."
+  ]
+}
