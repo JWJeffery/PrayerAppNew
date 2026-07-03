@@ -1,0 +1,39 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+11-16,2,UO-SIN-000144,Mechthilde of Hackeborn and Gertrude the Great,group,Mechthilde of Hackeborn and Gertrude the Great,also rank1 11-21
+11-16,3,UO-SIN-000524,Edmund Rich of Canterbury,person,Edmund Rich of Canterbury,
+11-16,4,UO-SIN-000525,Otmar of Saint Gall,person,Otmar of Saint Gall,
+11-17,2,UO-SIN-000526,Hugh of Lincoln and Robert Grosseteste,group,Hugh of Lincoln and Robert Grosseteste,group source form
+11-17,3,UO-SIN-000141,Hilda of Whitby,person,Hilda of Whitby,also rank1 11-18
+11-17,4,UO-SIN-000142,Elizabeth of Hungary,person,Elizabeth of Hungary,also rank1 11-19
+11-18,2,UO-SIN-000527,Fergus,person,Fergus,
+11-18,3,UO-SIN-000528,Dedication of the Basilicas of Peter and Paul,feast,Dedication of the Basilicas of Peter and Paul,church dedication feast
+11-19,2,UO-SIN-000529,Nerses I of Armenia,person,Nerses I of Armenia,
+11-19,3,UO-SIN-000530,Mechthild of Magdeburg,person,Mechthild of Magdeburg,
+11-19,4,UO-SIN-000531,Obadiah,person,Obadiah,biblical prophet
+11-20,2,UO-SIN-000532,Priscilla Lydia Sellon,person,Priscilla Lydia Sellon,
+11-20,3,UO-SIN-000533,Bernward of Hildesheim,person,Bernward of Hildesheim,
+11-21,2,UO-SIN-000534,The Presentation of the Blessed Virgin Mary,feast,The Presentation of the Blessed Virgin Mary,Marian feast
+11-21,3,UO-SIN-000535,"William Byrd, John Merbecke, and Thomas Tallis",group,"William Byrd, John Merbecke, and Thomas Tallis",musician group
+11-21,4,UO-SIN-000536,Paulinus of Wales,person,Paulinus of Wales,
+11-21,5,UO-SIN-000537,Columbanus,person,Columban / Columbanus,also appears 11-23
+11-22,2,UO-SIN-000538,Cecilia of Rome,person,Cecilia of Rome,also appears 11-25 transfer
+11-22,3,UO-SIN-000539,Philemon,person,Philemon,biblical figure
+11-23,2,UO-SIN-000537,Columbanus,person,Columbanus,also appears 11-21
+11-23,3,UO-SIN-000540,Amphilochius of Iconium,person,Amphilochius of Iconium,
+11-24,2,UO-SIN-000541,Lucy Menzies,person,Lucy Menzies,also appears 12-11
+11-24,3,UO-SIN-000542,Andrew Dung-Lac and the Martyrs of Vietnam,group,Andrew Dung-Lac and the Martyrs of Vietnam,group source form
+11-24,4,UO-SIN-000543,Colman of Cloyne,person,Colman of Cloyne,
+11-25,2,UO-SIN-000544,Catherine of Alexandria,person,Catherine of Alexandria,individual date variant of 11-24 group
+11-25,3,UO-SIN-000538,Cecilia of Rome,person,Cecilia of Rome,also appears 11-22
+11-25,4,UO-SIN-000149,Isaac Watts,person,Isaac Watts,also rank1 11-26
+11-25,5,UO-SIN-000545,Moses of Rome,person,Moses of Rome,
+11-26,2,UO-SIN-000546,Sojourner Truth,person,Sojourner Truth,also appears within July group forms
+11-26,3,UO-SIN-000547,Peter of Alexandria,person,Peter of Alexandria,
+11-26,4,UO-SIN-000548,Silvester Gozzolini,person,Silvester Gozzolini,
+11-26,5,UO-SIN-000549,Leonard of Port Maurice,person,Leonard of Port Maurice,
+11-27,2,UO-SIN-000550,Humilis of Bisignano,person,Humilis of Bisignano,
+11-28,2,UO-SIN-000551,Stephen the Younger,person,Stephen the Younger,
+11-28,3,UO-SIN-000552,Catherine Labouré,person,Catherine Labouré,
+11-29,2,UO-SIN-000553,Saturninus of Toulouse,person,Saturninus of Toulouse,
+11-29,3,UO-SIN-000554,Francis of Lucera,person,Francis of Lucera,
+11-30,2,UO-SIN-000555,Cuthbert Mayne,person,Cuthbert Mayne,
