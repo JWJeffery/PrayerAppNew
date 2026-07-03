@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+08-01,UO-SIN-000032,Joseph of Arimathea,person,rank1_controlled,rank preserved pending governance,Glastonbury legends require restraint
+08-02,UO-SIN-000033,Samuel Ferguson,person,rank1_controlled,rank preserved pending source verification,source verification; modern mission framing
+08-03,UO-SIN-000034,"Joanna, Mary, and Salome",group,rank1_controlled,rank preserved pending governance,group entry
+08-04,UO-SIN-000035,Anthony of Sourozh,person,rank1_controlled,rank preserved pending governance,modern review; Greater Church remembers
+08-05,UO-SIN-000036,Oswald of Northumbria,person,rank1_controlled,rank preserved pending ruler-saint review,ruler-saint review
+08-06,UO-SIN-000037,The Transfiguration of Our Lord Jesus Christ,feast,rank1_controlled,rank preserved pending governance,Feast of Our Lord
+08-07,UO-SIN-000038,John Mason Neale,person,rank1_controlled,rank preserved pending governance,
+08-08,UO-SIN-000039,Dominic,person,rank1_controlled,rank preserved pending governance,
+08-09,UO-SIN-000040,Edith Stein (Teresa Benedicta of the Cross),person,rank1_controlled,rank preserved pending governance,modern martyr review; Jewish-Christian framing
+08-10,UO-SIN-000041,Laurence of Rome,person,rank1_controlled,rank preserved pending governance,
+08-11,UO-SIN-000042,Clare of Assisi,person,rank1_controlled,rank preserved pending governance,
+08-12,UO-SIN-000043,Florence Nightingale,person,rank1_controlled,rank preserved pending vocation/social-reformer review,social-reformer/vocation framing
+08-13,UO-SIN-000044,Jeremy Taylor,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+08-14,UO-SIN-000045,Jonathan Myrick Daniels,person,rank1_controlled,rank preserved pending modern martyr review,modern review; civil-rights/social-impact framing
+08-15,UO-SIN-000046,Saint Mary the Virgin,person,rank1_controlled,rank preserved pending Marian-title discipline,Marian doctrine/title handling
+08-16,UO-SIN-000047,Holy Women of the Old Testament,group,rank1_controlled,rank preserved pending biblical-group governance,group entry; Old Testament strategy
+08-17,UO-SIN-000048,"Samuel Johnson, Timothy Cutler, and Thomas Bradbury Chandler",group,rank1_controlled,rank preserved pending group-form governance,group entry
+08-18,UO-SIN-000049,William Porcher DuBose,person,rank1_controlled,rank preserved pending governance,
+08-19,UO-SIN-000050,Mary Sumner,person,rank1_controlled,rank preserved pending source verification,source/date verification; institutional-founder framing
+08-20,UO-SIN-000051,Bernard of Clairvaux,person,rank1_controlled,rank preserved pending complexity review,crusade/preaching complexity
+08-21,UO-SIN-000052,Tan Sri John Savarimuthu,person,rank1_controlled,rank preserved pending appendix/modern review,modern review; appendix status
+08-22,UO-SIN-000053,"Alicia Cristina Rivera, OSH",person,rank1_controlled,rank preserved pending appendix/source review,modern review; appendix status; source verification
+08-23,UO-SIN-000054,"Martin de Porres, Rosa de Lima, and Toribio de Mogrovejo",group,rank1_controlled,rank preserved pending group-form governance,group entry; Greater Church remembers
+08-24,UO-SIN-000055,Bartholomew the Apostle,person,rank1_controlled,rank preserved pending governance,
+08-25,UO-SIN-000056,Louis IX of France,person,rank1_controlled,rank preserved pending ruler/crusade review,ruler-saint review; crusade complexity
+08-26,UO-SIN-000057,Simeon Bachos the Ethiopian Eunuch,person,rank1_controlled,rank preserved pending naming review,naming/identity handling
+08-27,UO-SIN-000058,Thomas Gallaudet and Henry Winter Syle,group,rank1_controlled,rank preserved pending group-form governance,group entry
+08-28,UO-SIN-000059,Augustine of Hippo,person,rank1_controlled,rank preserved pending theological complexity review,theological complexity
+08-29,UO-SIN-000060,The Beheading of Saint John the Baptist,feast,rank1_controlled,rank preserved pending governance,
+08-30,UO-SIN-000061,"Margaret Ward, Margaret Clitherow, and Anne Line",group,rank1_controlled,rank preserved pending Reformation-context review,Reformation conflict; group entry
+08-31,UO-SIN-000062,Aidan of Lindisfarne,person,rank1_controlled,rank preserved pending governance,
