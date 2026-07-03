@@ -1,0 +1,67 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+12-01,2,UO-SIN-000161,Nicholas Ferrar,person,Nicholas Ferrar,also rank1 12-08
+12-01,3,UO-SIN-000556,Eligius of Noyon,person,Eligius of Noyon,
+12-01,4,UO-SIN-000557,Edmund Campion and Companions,group,Edmund Campion and Companions,group source form
+12-02,2,UO-SIN-000558,Bibiana / Viviana,person,Bibiana / Viviana,
+12-02,3,UO-SIN-000559,Silverius,person,Silverius,
+12-03,2,UO-SIN-000322,Birinus of Dorchester,person,Birinus of Dorchester,also appears 09-04
+12-03,3,UO-SIN-000560,Zephaniah,person,Sophonius / Zephaniah,biblical prophet
+12-04,2,UO-SIN-000016,Osmund of Salisbury,person,Osmund of Salisbury,also rank1 07-16
+12-04,3,UO-SIN-000561,Barbara of Nicomedia,person,Barbara of Nicomedia,individual date variant of 11-24 group
+12-05,2,UO-SIN-000562,Sabas the Sanctified,person,Sabas / Sabbas the Sanctified,
+12-05,3,UO-SIN-000563,Christina Rossetti,person,Christina Rossetti,
+12-06,2,UO-SIN-000564,Emilian of Cogolla,person,Emilian of Cogolla,
+12-06,3,UO-SIN-000565,Roger Williams,person,Major Roger Williams,
+12-07,2,UO-SIN-000566,Maria Joseph Rossello,person,Maria Joseph Rossello,
+12-07,3,UO-SIN-000567,Charles Garnier,person,Charles Garnier,individual date variant of 10-19 group
+12-08,2,UO-SIN-000568,Richard Baxter,person,Richard Baxter,
+12-08,3,UO-SIN-000569,The Conception of the Blessed Virgin Mary,feast,The Conception of the Blessed Virgin Mary,Marian feast
+12-08,4,UO-SIN-000570,Romaric,person,Romaric,
+12-09,2,UO-SIN-000571,Leocadia of Toledo,person,Leocadia of Toledo,
+12-09,3,UO-SIN-000572,Peter Fourier,person,Peter Fourier,
+12-10,2,UO-SIN-000573,Karl Barth,person,Karl Barth,
+12-10,3,UO-SIN-000574,Eulalia of Merida,person,Eulalia of Mérida,
+12-10,4,UO-SIN-000575,John Roberts,person,John Roberts,
+12-11,2,UO-SIN-000576,Daniel the Stylite,person,Daniel the Stylite,
+12-11,3,UO-SIN-000577,Damasus I,person,Damasus I,
+12-11,4,UO-SIN-000541,Lucy Menzies,person,Lucy Menzies,also appears 11-24
+12-12,2,UO-SIN-000578,Our Lady of Guadalupe,feast,Our Lady of Guadalupe,Marian apparition feast
+12-12,3,UO-SIN-000579,Spyridon of Trimythous,person,Spyridon of Trimythous,
+12-13,2,UO-SIN-000580,Samuel Johnson,person,Samuel Johnson,individual date variant of 08-17 group
+12-13,3,UO-SIN-000581,Odile of Alsace,person,Odile of Alsace,
+12-14,2,UO-SIN-000582,Venantius Fortunatus,person,Venantius Fortunatus,
+12-14,3,UO-SIN-000583,Nimatullah Kassab Al-Hardini,person,Nimatullah Kassab Al-Hardini,
+12-15,2,UO-SIN-000584,John Horden,person,John Horden,
+12-15,3,UO-SIN-000585,Maria Crocifissa di Rosa,person,Maria Crocifissa di Rosa,
+12-16,2,UO-SIN-000586,Ado of Vienne,person,Ado of Vienne,
+12-16,3,UO-SIN-000587,Adelaide of Italy,person,Adelaide of Italy,
+12-16,4,UO-SIN-000588,Isaac of Nineveh,person,Isaac of Nineveh,
+12-17,2,UO-SIN-000589,William Lloyd Garrison and Maria Stewart,group,William Lloyd Garrison and Maria Stewart,group source form
+12-17,3,UO-SIN-000590,Sturmi of Fulda,person,Sturmi of Fulda,
+12-17,4,UO-SIN-000591,Daniel and the Three Holy Youths,group,Daniel and the Three Holy Youths,biblical group source form
+12-18,2,UO-SIN-000592,Flannan,person,Flannan,
+12-18,3,UO-SIN-000593,Wunibald,person,Wunibald,
+12-18,4,UO-SIN-000594,Charles Wesley,person,Charles Wesley,
+12-19,2,UO-SIN-000595,Gregory of Auxerre,person,Gregory of Auxerre,
+12-19,3,UO-SIN-000596,Nemesius of Alexandria,person,Nemesius of Alexandria,
+12-20,2,UO-SIN-000597,Dominic of Silos,person,Dominic of Silos,
+12-20,3,UO-SIN-000598,Ammonius and Companions,group,Ammonius and Companions,group source form
+12-21,2,UO-SIN-000599,Peter Canisius,person,Peter Canisius,
+12-21,3,UO-SIN-000600,Forefathers of Christ / Genealogy witnesses,group,Forefathers of Christ / Genealogy witnesses,biblical Advent group
+12-22,2,UO-SIN-000181,Frances Joseph-Gaudet,person,Frances Joseph-Gaudet,unverified date variant of 12-30 and 12-31
+12-22,3,UO-SIN-000601,Chaeremon of Nilopolis and Companions,group,Chaeremon of Nilopolis and Companions,group source form
+12-23,2,UO-SIN-000602,Victoria and Anatolia,group,Victoria and Anatolia,group source form
+12-23,3,UO-SIN-000603,Thorlak of Iceland,person,Thorlak of Iceland,
+12-24,2,UO-SIN-000604,Adam and Eve,group,Adam and Eve,biblical group source form
+12-24,3,UO-SIN-000605,Tarsilla,person,Tarsilla,
+12-25,2,UO-SIN-000606,Eugenia of Rome,person,Eugenia of Rome,
+12-26,2,UO-SIN-000607,Dionysius / Zosimus post-Christmas saints,group,Dionysius / Zosimus? post-Christmas saints,uncertain source group
+12-27,2,UO-SIN-000608,Fabiola of Rome,person,Fabiola of Rome,
+12-28,2,UO-SIN-000609,Antony of Lerins,person,Antony of Lérins,
+12-29,2,UO-SIN-000610,David of London,person,David of London,
+12-29,3,UO-SIN-000611,Trophimus of Arles,person,Trophimus of Arles,
+12-30,2,UO-SIN-000612,Egwin of Worcester,person,Egwin of Worcester,
+12-30,3,UO-SIN-000613,Sabinus and Companions,group,Sabinus and Companions,group source form
+12-31,2,UO-SIN-000614,Samuel Ajayi Crowther,person,Samuel Ajayi Crowther,
+12-31,3,UO-SIN-000615,Sylvester I,person,Sylvester I,
+12-31,4,UO-SIN-000616,Columba of Sens,person,Columba of Sens,
