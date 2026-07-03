@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+12-01,UO-SIN-000154,Charles de Foucauld,person,rank1_controlled,rank preserved pending governance,modern review; Greater Church remembers; mission/context review
+12-02,UO-SIN-000155,Channing Moore Williams,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; mission/colonial context review
+12-03,UO-SIN-000156,Francis Xavier,person,rank1_controlled,rank preserved pending mission/colonial review,mission/colonial context; Greater Church remembers
+12-04,UO-SIN-000157,John of Damascus,person,rank1_controlled,rank preserved pending governance,
+12-05,UO-SIN-000158,Clement of Alexandria,person,rank1_controlled,rank preserved pending governance,
+12-06,UO-SIN-000159,Nicholas of Myra,person,rank1_controlled,rank preserved pending legendary-material discipline,legendary material handled honestly
+12-07,UO-SIN-000160,Ambrose of Milan,person,rank1_controlled,rank preserved pending governance,
+12-08,UO-SIN-000161,Nicholas Ferrar,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-01
+12-09,UO-SIN-000162,Juan Diego,person,rank1_controlled,rank preserved pending apparition/context review,Marian apparition handling; Indigenous/colonial context
+12-10,UO-SIN-000163,Thomas Merton,person,rank1_controlled,rank preserved pending modern/writer review,modern review; writer/monastic holiness
+12-11,UO-SIN-000164,Frederick Howden Jr.,person,rank1_controlled,rank preserved pending war/chaplaincy review,modern/war context; priestly holiness framing
+12-12,UO-SIN-000165,Francis de Sales and Jane de Chantal,group,rank1_controlled,rank preserved pending group/date governance,group entry; Jane date harmonization
+12-13,UO-SIN-000166,Lucy of Syracuse,person,rank1_controlled,rank preserved pending legendary-material discipline,legendary material
+12-14,UO-SIN-000167,John of the Cross,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 10-15
+12-15,UO-SIN-000168,Nino of Georgia,person,rank1_controlled,rank preserved pending Georgian source review,Georgian source verification
+12-16,UO-SIN-000169,"Ralph Adams Cram, Richard Upjohn, and John La Farge",group,rank1_controlled,rank preserved pending artist/architect review,artist/architect holiness test; group entry
+12-17,UO-SIN-000170,Dorothy L. Sayers,person,rank1_controlled,rank preserved pending writer/apologist review,writer/apologist holiness test; modern review
+12-18,UO-SIN-000171,Expectation of the Blessed Virgin Mary / O Antiphons context,observance,rank1_controlled,rank preserved pending observance/saint governance,Marian-title/Advent feast review
+12-19,UO-SIN-000172,Lillian Trasher,person,rank1_controlled,rank preserved pending missionary/social review,modern review; mission/colonial context; social-impact caution
+12-20,UO-SIN-000173,Katharina von Bora,person,rank1_controlled,rank preserved pending Protestant-reformer review,Protestant-reformer caution
+12-21,UO-SIN-000003,Thomas the Apostle,person,rank1_controlled,rank preserved pending apostle-date harmonization,apostle-date harmonization with 07-03
+12-22,UO-SIN-000174,Charlotte Digges Moon,person,rank1_controlled,rank preserved pending non-Anglican/mission review,Protestant/non-Anglican review; mission/colonial context
+12-23,UO-SIN-000175,Thomas Becket,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-29
+12-24,UO-SIN-000176,The Eve of the Nativity,feast,rank1_controlled,rank preserved pending vigil/genre governance,vigil of principal feast
+12-25,UO-SIN-000177,The Nativity of Our Lord Jesus Christ,feast,rank1_controlled,rank preserved pending governance,Principal Feast
+12-26,UO-SIN-000178,Stephen the Protomartyr,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 08-03
+12-27,UO-SIN-000179,John the Apostle and Evangelist,person,rank1_controlled,rank preserved pending governance,
+12-28,UO-SIN-000180,The Holy Innocents,feast,rank1_controlled,rank preserved pending governance,
+12-29,UO-SIN-000175,Thomas Becket,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-23
+12-30,UO-SIN-000181,Frances Joseph-Gaudet,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-31
+12-31,UO-SIN-000181,Frances Joseph-Gaudet,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-30
