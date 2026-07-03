@@ -919,7 +919,7 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_small_gap_source_shape_classified_review_pending",
+      "status": "not_trusted_judith_source_shape_classified_review_pending",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -1083,7 +1083,8 @@
         "deuterocanon_status_consolidation_audit_2026_07_02",
         "deutero_tobit_nrsv_source_shape_classification_2026_07_02",
         "deuterocanon_status_accounting_after_tobit_2026_07_02",
-        "deuterocanon_small_gap_source_shape_classification_2026_07_02"
+        "deuterocanon_small_gap_source_shape_classification_2026_07_02",
+        "deuterocanon_judith_source_shape_classification_2026_07_02"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -6741,7 +6742,7 @@
       },
       "activeRepairPlan": "data/bible/registry/deuterocanon-repair-execution-plan.json",
       "latestRepairReadinessAudit": "data/bible/registry/deuterocanon-repair-readiness-audit.json",
-      "nextAction": "Review small-gap source-shape classification, then proceed to Judith source-shape/repair discovery before Sirach.",
+      "nextAction": "Review Judith source-shape classification, then proceed to Sirach source-shape/repair discovery.",
       "latestCatholicSourceCandidateAudit": "data/bible/registry/deuterocanon-catholic-source-candidate-audit.json",
       "latestCatholicSourceScopeBoundaries": "data/bible/registry/deuterocanon-catholic-source-scope-boundaries.json",
       "latestBoundaryAuditScript": "scripts/audit-bible-deuterocanon-catholic-source-boundaries.mjs",
@@ -6789,7 +6790,10 @@
         "tobit_text_mutated_by_accounting_update",
         "tobit_remaining_in_nrsv_applicable_gap_queue",
         "small_gap_rows_filled_synthetically",
-        "small_gap_rows_repaired_from_absent_source_refs"
+        "small_gap_rows_repaired_from_absent_source_refs",
+        "judith_incomplete_for_nrsva",
+        "judith_rows_repaired_from_absent_source_refs",
+        "judith_rows_filled_synthetically"
       ],
       "allowedClaims": [
         "deutero_01_nrsv_source_blocker_recorded",
@@ -6830,7 +6834,13 @@
         "wisdom_baruch_maccabees_small_rows_removed_from_nrsv_applicable_gap_queue",
         "remaining_deuterocanon_nrsv_applicable_gaps_269",
         "deuterocanon_nrsv_not_applicable_rows_75",
-        "small_gap_classification_no_bible_text_mutation"
+        "small_gap_classification_no_bible_text_mutation",
+        "judith_source_complete_for_selected_nrsva_grid",
+        "judith_addressability_rows_classified_not_applicable",
+        "remaining_deuterocanon_nrsv_applicable_gaps_234",
+        "remaining_deuterocanon_nrsv_applicable_book_sirach_only",
+        "deuterocanon_nrsv_not_applicable_rows_110",
+        "judith_classification_no_bible_text_mutation"
       ],
       "latestCatholicNrsVRepair": "data/bible/registry/deutero-01-catholic-nrsv-biblegateway-nrsva-repair.json",
       "latestCatholicNrsVAuditScript": "scripts/audit-bible-deuterocanon-nrsv-biblegateway-nrsva-repair.mjs",
@@ -6856,7 +6866,14 @@
       "latestSmallGapSourceShapeClassification": "data/bible/registry/deuterocanon-small-gap-source-shape-classification-2026-07-02.json",
       "latestSmallGapSourceShapeClassificationAuditScript": "scripts/audit-bible-deuterocanon-small-gap-source-shape-classification.mjs",
       "remainingNrsVApplicableGapsAfterSmallGapClassification": 269,
-      "nrsvNotApplicableRowsAfterSmallGapClassification": 75
+      "nrsvNotApplicableRowsAfterSmallGapClassification": 75,
+      "latestJudithSourceShapeClassification": "data/bible/registry/deuterocanon-judith-source-shape-classification-2026-07-02.json",
+      "latestJudithSourceShapeClassificationAuditScript": "scripts/audit-bible-deuterocanon-judith-source-shape-classification.mjs",
+      "remainingNrsVApplicableGapsAfterJudithClassification": 234,
+      "remainingNrsVApplicableBooksAfterJudithClassification": [
+        "SIRACH"
+      ],
+      "nrsvNotApplicableRowsAfterJudithClassification": 110
     },
     "broader_canon": {
       "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",

@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.174",
+    "version": "3.8.175",
     "last_updated": "2026-07-02",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-02: small deuterocanon NRSV source-shape classification recorded for Wisdom, Baruch, 1 Maccabees, and 2 Maccabees. Remaining NRSV-applicable gaps: 269. NRSV-not-applicable rows: 75. No Bible text was mutated.",
+    "operational_status": "Current operational status as of 2026-07-02: Judith NRSV source-shape classification recorded. Judith is source-complete for the selected NRSVA grid; 35 non-corresponding addressability rows classified not-applicable. Remaining NRSV-applicable deuterocanon gaps: 234, Sirach only. No Bible text was mutated.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,20 +1271,22 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "deuterocanon_small_gap_source_shape_classification_2026_07_02",
-      "status": "small_gap_rows_classified_as_source_shape_addressability",
-      "recordPath": "data/bible/registry/deuterocanon-small-gap-source-shape-classification-2026-07-02.json",
-      "auditScript": "scripts/audit-bible-deuterocanon-small-gap-source-shape-classification.mjs",
+      "id": "deuterocanon_judith_source_shape_classification_2026_07_02",
+      "status": "judith_source_complete_nrsva_addressability_rows_classified",
+      "recordPath": "data/bible/registry/deuterocanon-judith-source-shape-classification-2026-07-02.json",
+      "auditScript": "scripts/audit-bible-deuterocanon-judith-source-shape-classification.mjs",
       "summary": {
-        "targetRows": 17,
-        "classifiedNotApplicable": 17,
-        "remainingNrsVApplicableRowsAfterClassification": 269,
-        "nrsvNotApplicableRowsAfterClassification": 75,
+        "targetRows": 35,
+        "classifiedNotApplicable": 35,
+        "remainingNrsVApplicableRowsAfterClassification": 234,
+        "nrsvNotApplicableRowsAfterClassification": 110,
+        "remainingApplicableBooksAfterClassification": [
+          "SIRACH"
+        ],
         "activeBibleTextMutation": "none",
         "syntheticRows": 0
       },
       "remainingApplicableMissingByBook": {
-        "JUDITH": 35,
         "SIRACH": 234
       }
     },
