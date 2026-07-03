@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.179",
+    "version": "3.8.180",
     "last_updated": "2026-07-03",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-07-03: Broader canon Esdras NRSV repair is blocked pending source-locator/provenance work. 1 Esdras and 2 Esdras retain 1210 known active OT NRSV gap rows: 410 in 1 Esdras and 800 in 2 Esdras. No local NRSV/BibleGateway or WEBBE source snapshots were found under data/bible/translations for these active files. No Bible text was mutated. Broader canon remains not globally trusted.",
+    "operational_status": "Current operational status as of 2026-07-03: Broader canon active OT Esdras source-matched NRSV gaps repaired from measured BibleGateway NRSVA source snapshots. Active files now have zero known applicable active OT NRSV gaps. Existing active NRSV rows were preserved; source-matched missing NRSV rows were filled from source. Active-only missing rows remain governed source-grid mismatch rows, and source-only rows were stored in raw source snapshots rather than forced into the active grid. Broader canon remains not globally trusted because the separate raw candidate corpus still requires source-family/provenance adjudication.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1271,21 +1271,22 @@
       }
     ],
     "latest_bible_corpus_checkpoint": {
-      "id": "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
-      "status": "esdras_nrsv_repair_blocked_pending_source_locator",
-      "recordPath": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
-      "auditScript": "scripts/audit-bible-broader-canon-esdras-nrsv-source-locator-blocker.mjs",
+      "id": "broader_canon_esdras_nrsva_source_repair_2026_07_03",
+      "status": "esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
+      "recordPath": "data/bible/registry/broader-canon-esdras-nrsva-source-repair-2026-07-03.json",
+      "auditScript": "scripts/audit-bible-broader-canon-esdras-nrsva-source-repair.mjs",
       "summary": {
+        "sourceWitness": "BibleGateway NRSVA",
+        "sourceSnapshotsWritten": 2,
+        "activeBooksRepaired": 2,
         "activeRowsChecked": 1319,
-        "existingNrsVRows": 109,
-        "remainingKnownActiveOtNrsVGapRows": 1210,
-        "remainingKnownActiveOtNrsVGapBooks": {
-          "1ESDRAS": 410,
-          "2ESDRAS": 800
-        },
-        "localNrsVOrBibleGatewaySourceSnapshotsFound": 0,
-        "localWebbeSourceSnapshotsFound": 0,
-        "activeBibleTextMutation": "none",
+        "existingNrsVRowsBeforeRepair": 109,
+        "rowsRepaired": 1206,
+        "activeOnlyMissingRowsWithoutNrsVAfterRepair": 4,
+        "sourceRowsNotInActiveGrid": 77,
+        "remainingNrsVApplicableGapRows": 0,
+        "activeBibleTextMutation": "filled_measured_source_matched_missing_text_NRSV_from_recorded_NRSVA_source",
+        "syntheticRows": 0,
         "globalTrustPromotion": "not_performed"
       }
     },

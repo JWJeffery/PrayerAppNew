@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.43",
-  "last_updated": "2026-07-03T19:17:08Z",
+  "last_updated": "2026-07-03T20:15:39Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -23,9 +23,9 @@
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
-    "latest_bible_corpus_checkpoint": "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
+    "latest_bible_corpus_checkpoint": "broader_canon_esdras_nrsva_source_repair_2026_07_03",
     "latest_bible_corpus_checkpoint_commit": "2bd15ff",
-    "current_bible_corpus_summary": "Broader canon Esdras NRSV repair is blocked pending source-locator/provenance work. 1 Esdras and 2 Esdras retain 1210 known active OT NRSV gap rows: 410 in 1 Esdras and 800 in 2 Esdras. No local NRSV/BibleGateway or WEBBE source snapshots were found under data/bible/translations for these active files. No Bible text was mutated. Broader canon remains not globally trusted.",
+    "current_bible_corpus_summary": "Broader canon active OT Esdras source-matched NRSV gaps repaired from measured BibleGateway NRSVA source snapshots. Active files now have zero known applicable active OT NRSV gaps. Existing active NRSV rows were preserved; source-matched missing NRSV rows were filled from source. Active-only missing rows remain governed source-grid mismatch rows, and source-only rows were stored in raw source snapshots rather than forced into the active grid. Broader canon remains not globally trusted because the separate raw candidate corpus still requires source-family/provenance adjudication.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -654,6 +654,26 @@
         "localNrsVOrBibleGatewaySourceSnapshotsFound": 0,
         "localWebbeSourceSnapshotsFound": 0,
         "activeBibleTextMutation": "none",
+        "globalTrustPromotion": "not_performed"
+      }
+    },
+    "broader_canon_esdras_nrsva_source_repair": {
+      "id": "broader_canon_esdras_nrsva_source_repair_2026_07_03",
+      "status": "esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
+      "recordPath": "data/bible/registry/broader-canon-esdras-nrsva-source-repair-2026-07-03.json",
+      "auditScript": "scripts/audit-bible-broader-canon-esdras-nrsva-source-repair.mjs",
+      "summary": {
+        "sourceWitness": "BibleGateway NRSVA",
+        "sourceSnapshotsWritten": 2,
+        "activeBooksRepaired": 2,
+        "activeRowsChecked": 1319,
+        "existingNrsVRowsBeforeRepair": 109,
+        "rowsRepaired": 1206,
+        "activeOnlyMissingRowsWithoutNrsVAfterRepair": 4,
+        "sourceRowsNotInActiveGrid": 77,
+        "remainingNrsVApplicableGapRows": 0,
+        "activeBibleTextMutation": "filled_measured_source_matched_missing_text_NRSV_from_recorded_NRSVA_source",
+        "syntheticRows": 0,
         "globalTrustPromotion": "not_performed"
       }
     }

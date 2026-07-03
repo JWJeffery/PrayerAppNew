@@ -6902,7 +6902,7 @@
       "globalTextTrustPromotion": "not_performed"
     },
     "broader_canon": {
-      "status": "not_trusted_esdras_nrsv_source_locator_blocked",
+      "status": "not_trusted_active_ot_nrsv_applicable_gaps_zero_measured_source_grid_mismatch_governed",
       "reasons": [
         "Broader-canon files include non-standard schemas.",
         "Odes and related canticle files are structurally identified but underpopulated.",
@@ -6920,7 +6920,8 @@
         "broader_canon_trust_readiness_classification_1",
         "broader_canon_policy_closed_not_trust_ready_1",
         "broader_canon_active_ot_shape_normalization_2026_07_03",
-        "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03"
+        "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
+        "broader_canon_esdras_nrsva_source_repair_2026_07_03"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6937,7 +6938,11 @@
         "broader_canon_esdras_nrsv_repair_blocked_pending_source_locator",
         "one_esdras_nrsv_gap_rows_410",
         "two_esdras_nrsv_gap_rows_800",
-        "broader_canon_esdras_no_text_mutation_in_source_blocker_record"
+        "broader_canon_esdras_no_text_mutation_in_source_blocker_record",
+        "broader_canon_esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
+        "broader_canon_active_ot_remaining_nrsv_applicable_gap_rows_zero",
+        "broader_canon_esdras_source_snapshots_recorded",
+        "source_matched_esdras_nrsv_gaps_repaired"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6948,12 +6953,25 @@
         "one_esdras_two_esdras_nrsv_repaired",
         "broader_canon_active_ot_nrsv_complete",
         "webbe_text_can_be_written_as_nrsv",
-        "esdras_gaps_can_be_filled_from_drb_or_kjv"
+        "esdras_gaps_can_be_filled_from_drb_or_kjv",
+        "broader_canon_raw_candidate_corpus_source_verified",
+        "public_rendering_permission_resolved",
+        "active_source_grid_mismatch_rows_are_textual_defects",
+        "source_only_rows_were_forced_into_active_grid"
       ],
-      "nextAction": "Locate and store an explicit NRSV/NRSVA source witness for 1 Esdras and 2 Esdras before NRSV repair, or adjudicate a non-NRSV source family into its own translation lane.",
+      "nextAction": "Run or record a broader-canon active OT closeout audit; keep broader-canon raw candidate corpus not globally trusted.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
       "latestEsdrasNrsVSourceLocatorBlockerAuditScript": "scripts/audit-bible-broader-canon-esdras-nrsv-source-locator-blocker.mjs",
-      "activeBibleTextMutationInLatestStep": "none"
+      "activeBibleTextMutationInLatestStep": "filled_measured_source_matched_missing_text_NRSV_from_recorded_NRSVA_source",
+      "latestEsdrasNrsvaSourceRepair": "data/bible/registry/broader-canon-esdras-nrsva-source-repair-2026-07-03.json",
+      "latestEsdrasNrsvaSourceRepairAuditScript": "scripts/audit-bible-broader-canon-esdras-nrsva-source-repair.mjs",
+      "remainingNrsVApplicableGapRows": 0,
+      "activeOtSourceGridMismatchRowsWithoutNrsV": 4,
+      "sourceRowsNotInActiveGrid": 77,
+      "sourceSnapshotsAdded": [
+        "data/bible/translations/nrsv-biblegateway-nrsva/raw/1esdras.json",
+        "data/bible/translations/nrsv-biblegateway-nrsva/raw/2esdras.json"
+      ]
     },
     "vulgate": {
       "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",

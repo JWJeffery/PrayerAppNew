@@ -1,0 +1,235 @@
+{
+  "schema": "broader-canon-esdras-nrsva-source-repair-v1",
+  "id": "broader_canon_esdras_nrsva_source_repair_2026_07_03",
+  "status": "esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
+  "recordedAt": "2026-07-03T20:15:39Z",
+  "scope": {
+    "activeFiles": [
+      "data/bible/OT/1esdras.json",
+      "data/bible/OT/2esdras.json"
+    ],
+    "rawSourceFiles": [
+      "data/bible/translations/nrsv-biblegateway-nrsva/raw/1esdras.json",
+      "data/bible/translations/nrsv-biblegateway-nrsva/raw/2esdras.json"
+    ],
+    "lane": "text.NRSV",
+    "sourceWitness": "BibleGateway NRSVA",
+    "priorSourceBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json"
+  },
+  "summary": {
+    "sourceWitness": "BibleGateway NRSVA",
+    "sourceSnapshotsWritten": 2,
+    "activeBooksRepaired": 2,
+    "activeRowsChecked": 1319,
+    "existingNrsVRowsBeforeRepair": 109,
+    "rowsRepaired": 1206,
+    "activeOnlyMissingRowsWithoutNrsVAfterRepair": 4,
+    "sourceRowsNotInActiveGrid": 77,
+    "remainingNrsVApplicableGapRows": 0,
+    "activeBibleTextMutation": "filled_measured_source_matched_missing_text_NRSV_from_recorded_NRSVA_source",
+    "syntheticRows": 0,
+    "globalTrustPromotion": "not_performed"
+  },
+  "books": {
+    "1ESDRAS": {
+      "activePath": "data/bible/OT/1esdras.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/1esdras.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "before": {
+        "activeRowCount": 450,
+        "existingNrsVRows": 40,
+        "missingNrsVRows": 410,
+        "translationCounts": {
+          "DRB": 450,
+          "KJV": 447,
+          "NRSV": 40
+        }
+      },
+      "source": {
+        "sourceRowCount": 448,
+        "chapterCount": 9,
+        "sourceRowsByChapter": {
+          "1": 58,
+          "2": 30,
+          "3": 24,
+          "4": 63,
+          "5": 73,
+          "6": 34,
+          "7": 15,
+          "8": 96,
+          "9": 55
+        },
+        "sourceUrlsByChapter": {
+          "1": "https://www.biblegateway.com/passage/?search=1%20Esdras%201&version=NRSVA",
+          "2": "https://www.biblegateway.com/passage/?search=1%20Esdras%202&version=NRSVA",
+          "3": "https://www.biblegateway.com/passage/?search=1%20Esdras%203&version=NRSVA",
+          "4": "https://www.biblegateway.com/passage/?search=1%20Esdras%204&version=NRSVA",
+          "5": "https://www.biblegateway.com/passage/?search=1%20Esdras%205&version=NRSVA",
+          "6": "https://www.biblegateway.com/passage/?search=1%20Esdras%206&version=NRSVA",
+          "7": "https://www.biblegateway.com/passage/?search=1%20Esdras%207&version=NRSVA",
+          "8": "https://www.biblegateway.com/passage/?search=1%20Esdras%208&version=NRSVA",
+          "9": "https://www.biblegateway.com/passage/?search=1%20Esdras%209&version=NRSVA"
+        }
+      },
+      "measuredRepairPlan": {
+        "repairableMissingRows": 407,
+        "activeOnlyMissingRowsNotInSource": 3,
+        "activeOnlyMissingCompact": {
+          "2": [
+            "31"
+          ],
+          "8": [
+            "97"
+          ],
+          "9": [
+            "56"
+          ]
+        },
+        "sourceOnlyRowsNotInActiveGrid": 1,
+        "sourceOnlyCompact": {
+          "8": [
+            "60"
+          ]
+        }
+      },
+      "repair": {
+        "rowsRepaired": 407,
+        "activeOnlyMissingRowsWithoutNrsVAfterRepair": 3,
+        "sourceOnlyRowsNotInActiveGrid": 1,
+        "missingNrsVRowsAfterRepair": 3,
+        "nrsVRowsAfterRepair": 447,
+        "translationCountsAfterRepair": {
+          "DRB": 450,
+          "KJV": 447,
+          "NRSV": 447
+        }
+      }
+    },
+    "2ESDRAS": {
+      "activePath": "data/bible/OT/2esdras.json",
+      "rawSourcePath": "data/bible/translations/nrsv-biblegateway-nrsva/raw/2esdras.json",
+      "sourceWitness": "BibleGateway NRSVA",
+      "before": {
+        "activeRowCount": 869,
+        "existingNrsVRows": 69,
+        "missingNrsVRows": 800,
+        "translationCounts": {
+          "DRB": 856,
+          "KJV": 868,
+          "NRSV": 69
+        }
+      },
+      "source": {
+        "sourceRowCount": 944,
+        "chapterCount": 16,
+        "sourceRowsByChapter": {
+          "1": 40,
+          "2": 48,
+          "3": 36,
+          "4": 52,
+          "5": 56,
+          "6": 59,
+          "7": 140,
+          "8": 63,
+          "9": 47,
+          "10": 59,
+          "11": 46,
+          "12": 51,
+          "13": 58,
+          "14": 48,
+          "15": 63,
+          "16": 78
+        },
+        "sourceUrlsByChapter": {
+          "1": "https://www.biblegateway.com/passage/?search=2%20Esdras%201&version=NRSVA",
+          "2": "https://www.biblegateway.com/passage/?search=2%20Esdras%202&version=NRSVA",
+          "3": "https://www.biblegateway.com/passage/?search=2%20Esdras%203&version=NRSVA",
+          "4": "https://www.biblegateway.com/passage/?search=2%20Esdras%204&version=NRSVA",
+          "5": "https://www.biblegateway.com/passage/?search=2%20Esdras%205&version=NRSVA",
+          "6": "https://www.biblegateway.com/passage/?search=2%20Esdras%206&version=NRSVA",
+          "7": "https://www.biblegateway.com/passage/?search=2%20Esdras%207&version=NRSVA",
+          "8": "https://www.biblegateway.com/passage/?search=2%20Esdras%208&version=NRSVA",
+          "9": "https://www.biblegateway.com/passage/?search=2%20Esdras%209&version=NRSVA",
+          "10": "https://www.biblegateway.com/passage/?search=2%20Esdras%2010&version=NRSVA",
+          "11": "https://www.biblegateway.com/passage/?search=2%20Esdras%2011&version=NRSVA",
+          "12": "https://www.biblegateway.com/passage/?search=2%20Esdras%2012&version=NRSVA",
+          "13": "https://www.biblegateway.com/passage/?search=2%20Esdras%2013&version=NRSVA",
+          "14": "https://www.biblegateway.com/passage/?search=2%20Esdras%2014&version=NRSVA",
+          "15": "https://www.biblegateway.com/passage/?search=2%20Esdras%2015&version=NRSVA",
+          "16": "https://www.biblegateway.com/passage/?search=2%20Esdras%2016&version=NRSVA"
+        }
+      },
+      "measuredRepairPlan": {
+        "repairableMissingRows": 799,
+        "activeOnlyMissingRowsNotInSource": 1,
+        "activeOnlyMissingCompact": {
+          "10": [
+            "60"
+          ]
+        },
+        "sourceOnlyRowsNotInActiveGrid": 76,
+        "sourceOnlyCompact": {
+          "4": [
+            "14"
+          ],
+          "7": [
+            "71-140"
+          ],
+          "10": [
+            "1"
+          ],
+          "11": [
+            "30"
+          ],
+          "12": [
+            "16"
+          ],
+          "14": [
+            "48"
+          ],
+          "15": [
+            "56"
+          ]
+        }
+      },
+      "repair": {
+        "rowsRepaired": 799,
+        "activeOnlyMissingRowsWithoutNrsVAfterRepair": 1,
+        "sourceOnlyRowsNotInActiveGrid": 76,
+        "missingNrsVRowsAfterRepair": 1,
+        "nrsVRowsAfterRepair": 868,
+        "translationCountsAfterRepair": {
+          "DRB": 856,
+          "KJV": 868,
+          "NRSV": 868
+        }
+      }
+    }
+  },
+  "determination": {
+    "summary": "1 Esdras and 2 Esdras source-matched NRSV gaps were repaired from measured BibleGateway NRSVA source grids. Existing active NRSV rows were preserved. Active-only missing rows remain governed source-grid mismatch rows; source-only rows are stored in the raw NRSVA source snapshots and not forced into the active grid.",
+    "sourceRule": "Source-grid mismatch rows must not be filled from DRB, KJV, memory, inferred parallels, or another translation lane.",
+    "remainingBlocker": "Broader canon still includes separate raw broader-canon candidate files and zero-row files that remain not textually trusted.",
+    "globalTrustPromotion": "not_performed"
+  },
+  "allowedClaims": [
+    "broader_canon_esdras_nrsva_source_repair_complete_with_measured_grid_mismatch_governed",
+    "broader_canon_active_ot_remaining_nrsv_applicable_gap_rows_zero",
+    "broader_canon_esdras_source_snapshots_recorded",
+    "source_matched_esdras_nrsv_gaps_repaired"
+  ],
+  "blockedClaims": [
+    "broader_canon_textually_trusted",
+    "broader_canon_complete",
+    "broader_canon_global_trust_promoted",
+    "broader_canon_raw_candidate_corpus_source_verified",
+    "public_rendering_permission_resolved",
+    "active_source_grid_mismatch_rows_are_textual_defects",
+    "source_only_rows_were_forced_into_active_grid"
+  ],
+  "nextActions": [
+    "Review and push this Esdras NRSVA source repair.",
+    "Then run or record a broader-canon active OT closeout audit; do not promote the broader-canon raw candidate corpus globally."
+  ],
+  "failures": []
+}
