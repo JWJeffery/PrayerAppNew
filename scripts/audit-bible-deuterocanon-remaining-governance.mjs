@@ -135,8 +135,23 @@ for (const blocked of [
 }
 
 const lane = status.lanes?.deuterocanon;
-if (!lane || lane.status !== 'not_trusted_deuterocanon_policy_closed_text_trust_blocked') {
+const allowedLaneStatuses = [
+  'not_trusted_deuterocanon_policy_closed_text_trust_blocked',
+  'certified_textually_trusted_deuterocanon_with_governed_boundaries'
+];
+
+if (!lane || !allowedLaneStatuses.includes(lane.status)) {
   failures.push({ type: 'deuterocanon-trust-status-mismatch', actual: lane?.status || null });
+}
+
+if (lane?.status === 'certified_textually_trusted_deuterocanon_with_governed_boundaries') {
+  if (lane.certificationRecord !== 'data/bible/registry/deuterocanon-text-trust-certification-2026-07-04.json') {
+    failures.push({ type: 'missing-deuterocanon-certification-record', actual: lane.certificationRecord || null });
+  }
+
+  if (!Array.isArray(lane.completedRemediations) || !lane.completedRemediations.includes('deuterocanon_text_trust_certification_2026_07_04')) {
+    failures.push({ type: 'missing-deuterocanon-certification-marker' });
+  }
 }
 
 for (const marker of [

@@ -1,0 +1,47 @@
+{
+  "schema": "deuterocanon-text-trust-certification-v1",
+  "id": "deuterocanon_text_trust_certification_2026_07_04",
+  "status": "certified_textually_trusted_deuterocanon_with_governed_boundaries",
+  "trustReady": true,
+  "certifiedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "lane": "deuterocanon",
+    "certificationType": "app_use_text_trust_with_governed_boundaries",
+    "appUsesCertified": [
+      "liturgical_reading",
+      "devotional_reading",
+      "study_reading"
+    ],
+    "evidenceRecords": [
+      "data/bible/registry/deutero-01-catholic-source-shape-closure.json",
+      "data/bible/registry/deuterocanon-remaining-governance.json"
+    ]
+  },
+  "determinations": [
+    "DEUTERO-01 Catholic deuterocanon NRSV same-address repair is closed against BibleGateway NRSVA with zero mismatches; remaining rows are governed source-shape/source-scope boundaries, not unresolved text defects.",
+    "Greek Esther is accepted for app use in the active NRSV named-Addition form unless a later canonical-form migration policy changes it.",
+    "Greek Daniel is accepted for app use in the active NRSV extended-Daniel single-book form unless a later canonical-form migration policy changes it.",
+    "3 Maccabees and 4 Maccabees are accepted as source-backed NRSV repairs from BibleGateway NRSVA.",
+    "4 Maccabees 10:4 and 11:7-8 remain variant-footnote material excluded from primary active rows unless a later variant apparatus policy is adopted.",
+    "No synthetic text, source-row splitting, or active-grid symmetry forcing is authorized or required for this certification."
+  ],
+  "certifiedClaims": [
+    "deuterocanon_app_use_text_trusted_with_governed_boundaries",
+    "deuterocanon_liturgical_devotional_study_use_trusted",
+    "deutero_01_catholic_nrsv_source_shape_closure_accepted_for_app_use",
+    "greek_esther_active_nrsv_addition_form_accepted_for_app_use",
+    "greek_daniel_active_nrsv_extended_form_accepted_for_app_use",
+    "maccabees_3_4_nrsv_source_backed_state_accepted_for_app_use",
+    "maccabees_4_variant_footnote_gaps_governed_non_primary"
+  ],
+  "blockedClaims": [
+    "deuterocanon_active_grid_symmetry_complete",
+    "deuterocanon_all_translation_lanes_complete",
+    "deuterocanon_synthetic_gap_fill",
+    "deuterocanon_source_row_split_without_adapter_policy",
+    "greek_esther_rewritten_to_drb_or_nabre_grid",
+    "greek_daniel_rewritten_to_drb_or_nabre_grid",
+    "maccabees_4_variant_footnotes_inserted_as_primary_rows",
+    "whole_bible_corpus_trusted"
+  ]
+}
