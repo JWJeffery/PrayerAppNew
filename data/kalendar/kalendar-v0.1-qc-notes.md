@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July and August
+## Lessons learned from July, August, and September
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -40,6 +40,10 @@ Groups can be retained as candidates, but the ranking rationale must state wheth
 
 These candidates are not excluded by default, but their entries must teach prayer, holiness, and discipleship rather than admiration for genius, activism, or cultural importance.
 
+9. Year-specific provincial calendars must not be mistaken for fixed-date kalendars.
+
+The Scottish Episcopal master calendar CSV is useful, but it includes year-specific transfers when a feast is displaced by Sunday or another higher observance. A transferred entry may prove that the candidate is in the SEC calendar, but the transferred civil date must not be treated as the saint’s fixed date for Kalendar v0.1. When a SEC entry is visibly transferred, mark that fact in `review_flags` or `notes` and defer date resolution to whole-year harmonization.
+
 ## QC actions taken
 
 - Revised July 5 to remove `SEC-adjacent` as if it were a source witness. Palladius is now marked as AM only pending provincial-calendar verification.
@@ -47,7 +51,8 @@ These candidates are not excluded by default, but their entries must teach praye
 - Revised August 2 to add GCW as a witness for Samuel Ferguson.
 - Revised August 5 to make explicit why the Dürer/Grünewald/Cranach artist group remains below Oswald despite higher TEC-secondary source presence.
 - Revised August 24 to mark Simone Weil as `Exclude from primary consideration`, not ordinary `Review`, because of ecclesial-status mismatch for the Christian-sanctoral primary calendar.
+- Added September candidate rows using the SEC calendar only with transfer caution where year-specific transfer artifacts were visible.
 
 ## Continuing QC rule
 
-Each future monthly tranche should be checked against all earlier months for source-form consistency, duplicate/date harmonization, status-language consistency, and whether the ranking reflects the project rules: holiness over significance, social impact as evidence rather than proof, Anglican-centered source hierarchy, Great Church supplementation only when properly labeled, and the final test of prayability and discipleship.
+Each future monthly tranche should be checked against all earlier months for source-form consistency, duplicate/date harmonization, status-language consistency, year-specific transfer artifacts, and whether the ranking reflects the project rules: holiness over significance, social impact as evidence rather than proof, Anglican-centered source hierarchy, Great Church supplementation only when properly labeled, and the final test of prayability and discipleship.
