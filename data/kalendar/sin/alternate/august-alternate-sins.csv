@@ -1,0 +1,76 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+08-01,2,UO-SIN-000243,Æthelwold of Winchester,person,Æthelwold of Winchester,
+08-01,3,UO-SIN-000244,Alphonsus de Liguori,person,Alphonsus de Liguori,
+08-01,4,UO-SIN-000245,Peter Julian Eymard,person,Peter Julian Eymard,
+08-02,2,UO-SIN-000246,Eusebius of Vercelli,person,Eusebius of Vercelli,
+08-03,2,UO-SIN-000178,Stephen the Protomartyr,person,Stephen,date variant for 12-26
+08-03,3,UO-SIN-000247,George Freeman Bragg Jr.,person,"George Freeman Bragg, Jr.",
+08-03,4,UO-SIN-000248,W. E. B. Du Bois,person,W. E. B. Du Bois,
+08-03,5,UO-SIN-000249,Lydia of Thyatira,person,Lydia of Thyatira,
+08-04,2,UO-SIN-000250,John Vianney,person,John Vianney,
+08-05,2,UO-SIN-000251,Addai and Mari,group,Addai and Mari,group source form
+08-05,3,UO-SIN-000252,"Albrecht Dürer, Matthias Grünewald, and Lucas Cranach the Elder",group,"Albrecht Dürer, Matthias Grünewald, and Lucas Cranach the Elder",artist group
+08-06,2,UO-SIN-000253,Justus and Pastor,group,Justus and Pastor,group source form
+08-06,3,UO-SIN-000254,Hiroshima atomic bombing,event,Hiroshima atomic bombing,non-sanctoral historical event
+08-07,2,UO-SIN-000255,Catherine Winkworth,person,Catherine Winkworth,
+08-07,3,UO-SIN-000256,Sixtus II and Companions,group,Sixtus II and Companions,group source form
+08-07,4,UO-SIN-000007,Boisil of Melrose,person,Boisil of Melrose,also rank1 07-07
+08-08,2,UO-SIN-000257,Mary MacKillop,person,Mary MacKillop,
+08-08,3,UO-SIN-000258,Altman of Passau,person,Altman of Passau,
+08-09,2,UO-SIN-000138,Herman of Alaska,person,Herman of Alaska,also rank1 11-15
+08-09,3,UO-SIN-000259,Felim,person,Felim,
+08-10,2,UO-SIN-000260,Blane,person,Blane,also appears 08-12
+08-11,2,UO-SIN-000261,John Henry Newman,person,John Henry Newman,
+08-11,3,UO-SIN-000262,Susanna of Rome,person,Susanna of Rome,
+08-12,2,UO-SIN-000263,Consecration of Charles Inglis,event,Consecration of Charles Inglis,ecclesial event
+08-12,3,UO-SIN-000260,Blane,person,Blane,also appears 08-10
+08-12,4,UO-SIN-000264,Ann Griffiths,person,Ann Griffiths,
+08-13,2,UO-SIN-000265,Maximus the Confessor,person,Maximus the Confessor,
+08-13,3,UO-SIN-000266,Radegund,person,Radegund,
+08-13,4,UO-SIN-000267,Pontian and Hippolytus,group,Pontian and Hippolytus,group source form
+08-14,2,UO-SIN-000268,Maximilian Kolbe,person,Maximilian Kolbe,
+08-14,3,UO-SIN-000269,Dietrich Bonhoeffer and Maximilian Kolbe,group,Dietrich Bonhoeffer and Maximilien Kolbe,paired source form
+08-14,4,UO-SIN-000270,Meinhard of Latvia,person,Meinhard of Latvia,
+08-15,2,UO-SIN-000271,Assumption / Dormition of the Blessed Virgin Mary,feast,Assumption/Dormition of the Blessed Virgin Mary,Marian feast
+08-15,3,UO-SIN-000272,Alypius of Tagaste,person,Alypius of Tagaste,
+08-16,2,UO-SIN-000273,Charles Inglis,person,Charles Inglis,
+08-16,3,UO-SIN-000274,Roger Schütz,person,Roger Schütz,
+08-16,4,UO-SIN-000275,Stephen of Hungary,person,Stephen of Hungary,
+08-17,2,UO-SIN-000276,John Stuart,person,John Stuart,
+08-17,3,UO-SIN-000277,Clare of Montefalco,person,Clare of Montefalco,also appears 10-30
+08-17,4,UO-SIN-000278,Joan of the Cross,person,Joan of the Cross,
+08-18,2,UO-SIN-000279,Artemisia Bowden,person,Artemisia Bowden,
+08-18,3,UO-SIN-000280,Helena,person,Helena,
+08-18,4,UO-SIN-000281,Jane Frances de Chantal,person,Jane Frances de Chantal,also appears in 12-12 group
+08-19,2,UO-SIN-000282,John Eudes,person,John Eudes,
+08-19,3,UO-SIN-000283,Blaise Pascal,person,Blaise Pascal,
+08-19,4,UO-SIN-000284,Louis of Anjou,person,Louis of Anjou,
+08-20,2,UO-SIN-000285,William and Catherine Booth,group,William and Catherine Booth,group source form
+08-20,3,UO-SIN-000286,Bernard Tolomei,person,Bernard Tolomei,
+08-21,2,UO-SIN-000287,Pius X,person,Pius X,
+08-21,3,UO-SIN-000288,Sidonius Apollinaris,person,Sidonius Apollinaris,
+08-22,2,UO-SIN-000289,Queenship of Mary,feast,Queenship of Mary,Marian feast
+08-22,3,UO-SIN-000290,Philip Benizi,person,Philip Benizi,
+08-23,2,UO-SIN-000291,Rose of Lima,person,Rose of Lima,
+08-23,3,UO-SIN-000292,Tydfil,person,Tydfil,
+08-24,2,UO-SIN-000293,Simone Weil,person,Simone Weil,borderline ecclesial status
+08-24,3,UO-SIN-000294,Audoenus of Rouen,person,Audoenus of Rouen,
+08-25,2,UO-SIN-000295,Ebba of Coldingham,person,Ebba of Coldingham,
+08-25,3,UO-SIN-000296,Genesius of Arles,person,Genesius of Arles,
+08-25,4,UO-SIN-000297,Joseph Calasanz,person,Joseph Calasanz,
+08-26,2,UO-SIN-000298,Tarsicius,person,Tarsicius,
+08-26,3,UO-SIN-000299,Maximilian of Numidia,person,Maximilian of Numidia,
+08-26,4,UO-SIN-000300,Teresa of Ávila’s Transverberation,feast,Teresa of Ávila’s Transverberation,mystical feast
+08-27,2,UO-SIN-000301,Monnica,person,Monnica,
+08-27,3,UO-SIN-000302,Poemen,person,Poemen,
+08-27,4,UO-SIN-000303,Caesarius of Arles,person,Caesarius of Arles,
+08-28,2,UO-SIN-000002,Moses the Black,person,Moses the Black,also rank1 07-02
+08-29,2,UO-SIN-000304,John Bunyan,person,John Bunyan,also appears 08-30
+08-29,3,UO-SIN-000305,Ignatius Rice,person,Ignatius Rice,
+08-30,2,UO-SIN-000306,Charles Chapman Grafton,person,Charles Chapman Grafton,
+08-30,3,UO-SIN-000307,Robert McDonald,person,Robert McDonald,
+08-30,4,UO-SIN-000304,John Bunyan,person,John Bunyan,also appears 08-29
+08-30,5,UO-SIN-000308,Fiacre,person,Fiacre,
+08-31,2,UO-SIN-000309,Aidan and Cuthbert,group,Aidan and Cuthbert,paired source form
+08-31,3,UO-SIN-000310,Joseph of Arimathea and Nicodemus,group,Joseph of Arimathea and Nicodemus,paired source form
+08-31,4,UO-SIN-000311,Paulinus of Trier,person,Paulinus of Trier,
