@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+07-01,UO-SIN-000001,Pauli Murray,person,rank1_controlled,rank preserved pending governance,modern review; social-impact caution
+07-02,UO-SIN-000002,Moses the Black,person,rank1_controlled,rank preserved pending governance,
+07-03,UO-SIN-000003,Thomas the Apostle,person,rank1_controlled,rank preserved pending apostle-date harmonization,date harmonization with 12-21
+07-04,UO-SIN-000004,Independence Day,observance,rank1_controlled,rank preserved pending genre governance,non-sanctoral civic observance; genre review
+07-05,UO-SIN-000005,Palladius,person,rank1_controlled,rank preserved pending source verification,source verification
+07-06,UO-SIN-000006,Eva Lee Matthews,person,rank1_controlled,rank preserved pending governance,modern review
+07-07,UO-SIN-000007,Boisil of Melrose,person,rank1_controlled,rank preserved pending source verification,source verification
+07-08,UO-SIN-000008,Priscilla and Aquila,group,rank1_controlled,rank preserved pending governance,group entry
+07-09,UO-SIN-000009,Augustine Zhao Rong and the Martyrs of China,group,rank1_controlled,rank preserved pending governance,Greater Church remembers
+07-10,UO-SIN-000010,Anthony and Theodosius of the Kyiv Caves,group,rank1_controlled,rank preserved pending governance,Greater Church remembers
+07-11,UO-SIN-000011,Benedict of Nursia,person,rank1_controlled,rank preserved pending governance,
+07-12,UO-SIN-000012,Drostan of Deer,person,rank1_controlled,rank preserved pending source verification,source verification
+07-13,UO-SIN-000013,Henry of Finland,person,rank1_controlled,rank preserved pending source verification,source verification
+07-14,UO-SIN-000014,Argula von Grumbach,person,rank1_controlled,rank preserved pending Protestant-reformer review,Protestant-reformer caution
+07-15,UO-SIN-000015,Bonaventure,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+07-16,UO-SIN-000016,Osmund of Salisbury,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 12-04
+07-17,UO-SIN-000017,William White,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+07-18,UO-SIN-000018,Bartolomé de las Casas,person,rank1_controlled,rank preserved pending colonial-context review,colonial complexity; holiness test
+07-19,UO-SIN-000019,Macrina of Caesarea,person,rank1_controlled,rank preserved pending governance,
+07-20,UO-SIN-000020,Elijah the Prophet,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+07-21,UO-SIN-000021,Maria Skobtsova,person,rank1_controlled,rank preserved pending governance,modern review
+07-22,UO-SIN-000022,Mary Magdalene,person,rank1_controlled,rank preserved pending governance,
+07-23,UO-SIN-000023,John Cassian,person,rank1_controlled,rank preserved pending governance,
+07-24,UO-SIN-000024,Thomas à Kempis,person,rank1_controlled,rank preserved pending governance,
+07-25,UO-SIN-000025,James the Apostle,person,rank1_controlled,rank preserved pending governance,
+07-26,UO-SIN-000026,Joachim and Anne,group,rank1_controlled,rank preserved pending governance,group entry
+07-27,UO-SIN-000027,William Reed Huntington,person,rank1_controlled,rank preserved pending governance,
+07-28,UO-SIN-000028,Johann Sebastian Bach,person,rank1_controlled,rank preserved pending artist/composer holiness review,artist/composer holiness test
+07-29,UO-SIN-000029,"Mary, Martha, and Lazarus of Bethany",group,rank1_controlled,rank preserved pending governance,group entry
+07-30,UO-SIN-000030,William Wilberforce,person,rank1_controlled,rank preserved pending social-impact and date review,social-impact caution; date harmonization
+07-31,UO-SIN-000031,Ignatius of Loyola,person,rank1_controlled,rank preserved pending governance,
