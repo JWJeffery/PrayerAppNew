@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, the July-through-December cross-sectional QC pass, and the July-through-January cross-sectional QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, the July-through-December cross-sectional QC pass, the July-through-January cross-sectional QC pass, and the July-through-March cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July through January
+## Lessons learned from July through March
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -14,7 +14,7 @@ BCP and LFF authority matter strongly, but a candidate with strong official-sour
 
 2. Do not conflate variant source forms.
 
-If different Anglican sources preserve different forms of the same commemoration, especially different group membership, the forms should be split into separate rows or clearly explained. This arose on July 20: LFF 2024 gives Elizabeth Cady Stanton, Amelia Bloomer, and Sojourner Truth; older/other Anglican sources also include Harriet Ross Tubman. Tubman must not be absorbed into a social-reformer group without her separate holiness rationale.
+If different Anglican sources preserve different forms of the same commemoration, especially different group membership, the forms should be split into separate rows or clearly explained. This arose on July 20: LFF 2024 gives Elizabeth Cady Stanton, Amelia Bloomer, and Sojourner Truth; older/other Anglican sources also include Harriet Ross Tubman. Tubman must not be absorbed into a social-reformer group without her separate holiness rationale. March 10 now gives Tubman a separate current-LFF row, but the Tubman contrast rule still governs the entry.
 
 3. Non-sanctoral and borderline-Christian entries must be flagged more strictly.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Basil and Gregory, Macarius of Egypt/Macarius the Great, Hilary of Poitiers, Richard Meux Benson and Charles Gore, the Confession of Peter, Timothy/Titus/Silas, Francis de Sales, John Horden, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener/Illuminator, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Harriet Tubman source forms, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Basil and Gregory, Macarius of Egypt/Macarius the Great, Hilary of Poitiers, Richard Meux Benson and Charles Gore, the Confession of Peter, Timothy/Titus/Silas, Francis de Sales, John Horden, Brigid, Cornelius, the Martyrs of Japan, Thomas Bray, Colman of Lindisfarne, Emily Malbone Morgan, John Cassian, John and Charles Wesley, Gregory of Nyssa, Gregory the Great, James Theodore Holly, Vincent de Paul and Louise de Marillac, Thomas Ken, John Keble, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -60,6 +60,14 @@ The initial December file exposed a workflow failure: several entries were given
 
 January exposed a smaller but important source-discipline issue. The SEC master calendar sometimes marks a transfer explicitly, but sometimes simply gives a different fixed provincial date. Candidate rows must not call a provincial date variant a transfer unless the source itself marks it as transferred.
 
+14. When a figure is deliberately excluded by governance, remove the row and its identity scaffolding.
+
+The removal of Martin Luther from February and from the October alternate SIN map is the controlling precedent. A rejected candidate should not remain in the harmonization ledger or SIN maps merely because a source witness exists.
+
+15. Person-event distinction must be preserved.
+
+John Keble / Oxford Movement is the current test case. March has John Keble as priest and poet; July has an Oxford Movement / Assize Sermon event connected to Keble. These should not share a SIN or be treated as the same entity merely because the same person is involved.
+
 ## QC actions taken
 
 - Revised July 5 to remove `SEC-adjacent` as if it were a source witness. Palladius is now marked as AM only pending provincial-calendar verification.
@@ -82,7 +90,7 @@ January exposed a smaller but important source-discipline issue. The SEC master 
 
 - Revised October 1 Gregory the Enlightener source wording from `SEC transfer/fixed witness` to `SEC witness requiring fixed-date verification`, so the October SEC evidence is not overstated.
 - Promoted the current LFF October 16 Reformation Martyrs form, Hugh Latimer, Nicholas Ridley, and Thomas Cranmer, above the older BCP/HWHM two-bishop form while retaining both source-forms as separate rows.
-- Confirmed that October already carried date-harmonization flags for Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, and Martin Luther.
+- Confirmed that October already carried date-harmonization flags for Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, and Clare of Montefalco.
 - Confirmed that October continues the standing treatment of SEC year-specific transfers for Luke, Henry Martyn, Kenneth/Canice, and other affected rows.
 
 ## Cross-sectional QC actions after comparing July through November
@@ -110,6 +118,16 @@ January exposed a smaller but important source-discipline issue. The SEC master 
 - Corrected Kentigern / Mungo by removing the incorrect January 14 transfer/harmonization note; SEC 2026 lists Kentigern on January 13.
 - Added explicit January harmonization notes for Macarius of Egypt / Macarius the Great, Richard Rolle, Cecilia, Francis de Sales, John Horden, Timothy/Titus/Silas, Lydia/Dorcas/Phoebe, and other overlapping forms.
 - Updated the cross-date harmonization ledger with January conflicts and future dependencies including Basil and Gregory, Gregory of Nyssa, David I, Hilary, Benson/Gore, MLK, the Confession of Peter, Timothy/Titus/Silas, John Chrysostom, Agnes Tsao Kou Ying, and others.
+
+## Cross-sectional QC actions after comparing July through March
+
+- Rechecked March against current LFF 2024 before cross-month comparison.
+- Corrected March 1 David of Wales to say SEC 2026 transfers David from March 1 to March 5; the earlier note wrongly described a David/Bride transfer sequence.
+- Corrected March 12 Gregory the Great by replacing the vague `SEC date likely elsewhere` language with the actual SEC September 3 date variant and adding ledger harmonization.
+- Clarified March 21 Thomas Ken source forms: current LFF/BCP use March 21, HWHM/GCW use March 20, FAS/SEC use March 22, and SEC 2026 transfers Thomas Ken to March 23.
+- Preserved Harriet Ross Tubman as a separate March 10 current-LFF row while recording date/source-form harmonization with the older July 20 group form.
+- Updated the cross-date harmonization ledger with February and March conflicts not yet recorded, including Brigid, Cornelius, the Martyrs of Japan, Thomas Bray, Colman of Lindisfarne, Emily Malbone Morgan, John Cassian, Charles Wesley / John and Charles Wesley, Gregory of Nyssa, Gregory the Great, James Theodore Holly, Vincent de Paul and Louise de Marillac, Cuthbert, Thomas Ken, Gregory the Illuminator, and John Keble / the Oxford Movement event.
+- Confirmed that Martin Luther remains removed from the working Kalendar files and no longer appears in the cross-date harmonization ledger.
 
 ## Continuing QC rule
 
