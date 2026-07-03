@@ -6829,7 +6829,7 @@
       }
     },
     "broader_canon": {
-      "status": "not_trusted_broader_canon_source_provenance_adjudication_required",
+      "status": "not_trusted_textually_broader_canon_candidates_quarantined_app_safe",
       "reasons": [
         "Broader-canon active OT NRSV applicable gaps are zero after measured BibleGateway NRSVA Esdras repair.",
         "The separate broader-canon candidate corpus has 38 candidate files.",
@@ -6846,7 +6846,8 @@
         "broader_canon_active_ot_shape_normalization_2026_07_03",
         "broader_canon_esdras_nrsv_source_locator_blocker_2026_07_03",
         "broader_canon_esdras_nrsva_source_repair_2026_07_03",
-        "broader_canon_source_provenance_adjudication_2026_07_03"
+        "broader_canon_source_provenance_adjudication_2026_07_03",
+        "broader_canon_app_use_source_gate_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6861,7 +6862,11 @@
         "broader_canon_candidate_count_38",
         "broader_canon_zero_row_files_3",
         "broader_canon_string_text_only_files_35",
-        "broader_canon_concrete_source_pointer_files_zero"
+        "broader_canon_concrete_source_pointer_files_zero",
+        "broader_canon_app_safe_by_source_gate",
+        "broader_canon_unsourced_candidates_quarantined",
+        "broader_canon_zero_row_artifacts_excluded",
+        "broader_canon_no_candidate_text_app_render_eligible_without_source_witness"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6873,7 +6878,9 @@
         "source_only_rows_were_forced_into_active_grid",
         "broader_canon_trusted_from_meta_version_labels",
         "zero_row_files_complete",
-        "string_text_files_source_verified_without_external_witness"
+        "string_text_files_source_verified_without_external_witness",
+        "broader_canon_candidate_text_source_verified",
+        "broader_canon_complete_by_meta_version_labels"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -6893,7 +6900,21 @@
       "candidateCount": 38,
       "textBearingStringOnlyFiles": 35,
       "zeroRowFiles": 3,
-      "concreteSourcePointerFiles": 0
+      "concreteSourcePointerFiles": 0,
+      "textTrustReady": false,
+      "appUseTrustReady": true,
+      "appUseSourceGate": {
+        "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
+        "status": "closed_app_safe_unsourced_candidates_quarantined",
+        "appRenderEligibleCandidateCount": 0,
+        "quarantinedCandidateCount": 35,
+        "excludedZeroRowArtifactCount": 3
+      },
+      "latest_broader_canon_app_use_source_gate": {
+        "id": "broader_canon_app_use_source_gate_2026_07_04",
+        "status": "closed_app_safe_unsourced_candidates_quarantined",
+        "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json"
+      }
     },
     "vulgate": {
       "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
@@ -6942,7 +6963,13 @@
     "greek_esther_rewritten_to_drb_or_nabre_grid",
     "greek_daniel_rewritten_to_drb_or_nabre_grid",
     "maccabees_4_variant_footnotes_inserted_as_primary_rows",
-    "whole_bible_corpus_trusted"
+    "whole_bible_corpus_trusted",
+    "broader_canon_textually_trusted",
+    "broader_canon_candidate_text_source_verified",
+    "broader_canon_global_trust_promoted",
+    "broader_canon_complete_by_meta_version_labels",
+    "zero_row_files_complete",
+    "string_text_files_source_verified_without_external_witness"
   ],
   "allowedClaims": [
     "canonical_nt_named_defect_tranche_complete",
@@ -6983,7 +7010,11 @@
     "greek_esther_active_nrsv_addition_form_accepted_for_app_use",
     "greek_daniel_active_nrsv_extended_form_accepted_for_app_use",
     "maccabees_3_4_nrsv_source_backed_state_accepted_for_app_use",
-    "maccabees_4_variant_footnote_gaps_governed_non_primary"
+    "maccabees_4_variant_footnote_gaps_governed_non_primary",
+    "broader_canon_app_safe_by_source_gate",
+    "broader_canon_unsourced_candidates_quarantined",
+    "broader_canon_zero_row_artifacts_excluded",
+    "broader_canon_no_candidate_text_app_render_eligible_without_source_witness"
   ],
   "psalms_status": "source_governed_all_expected_psalter_lanes_complete",
   "latest_greek_esther_form_policy": {

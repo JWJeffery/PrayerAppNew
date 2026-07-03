@@ -1,6 +1,6 @@
 {
   "schema": "broader-canon-governance-v2",
-  "status": "not_trust_ready_source_provenance_adjudication_recorded",
+  "status": "app_use_source_gate_closed_unsourced_candidates_quarantined",
   "candidateCount": 38,
   "candidatePaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -62,7 +62,9 @@
     "public_rendering_permission_resolved",
     "broader_canon_trusted_from_meta_version_labels",
     "zero_row_files_complete",
-    "string_text_files_source_verified_without_external_witness"
+    "string_text_files_source_verified_without_external_witness",
+    "broader_canon_candidate_text_source_verified",
+    "broader_canon_complete_by_meta_version_labels"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -113,6 +115,18 @@
     "broader_canon_candidate_count_38",
     "broader_canon_zero_row_files_3",
     "broader_canon_string_text_only_files_35",
-    "broader_canon_concrete_source_pointer_files_zero"
-  ]
+    "broader_canon_concrete_source_pointer_files_zero",
+    "broader_canon_app_safe_by_source_gate",
+    "broader_canon_unsourced_candidates_quarantined",
+    "broader_canon_zero_row_artifacts_excluded",
+    "broader_canon_no_candidate_text_app_render_eligible_without_source_witness"
+  ],
+  "appUseSourceGate": {
+    "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
+    "status": "closed_app_safe_unsourced_candidates_quarantined",
+    "appSafety": "certified_by_source_gate_and_candidate_quarantine",
+    "appRenderEligibleCandidateCount": 0,
+    "quarantinedCandidateCount": 35,
+    "excludedZeroRowArtifactCount": 3
+  }
 }

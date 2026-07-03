@@ -1,0 +1,303 @@
+{
+  "schema": "broader-canon-app-use-source-gate-v1",
+  "id": "broader_canon_app_use_source_gate_2026_07_04",
+  "status": "closed_app_safe_unsourced_candidates_quarantined",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidateRegistry": "data/bible/registry/broader-canon-governance.json",
+    "sourceProvenanceAdjudication": "data/bible/registry/broader-canon-source-provenance-adjudication-2026-07-03.json",
+    "candidateCount": 38,
+    "textBearingCandidateCount": 35,
+    "zeroRowArtifactCount": 3,
+    "concreteSourcePointerCount": 0
+  },
+  "determination": {
+    "appUseBoundary": "No broader-canon candidate file is eligible for trusted app rendering until it has an explicit source witness, source-family/lane classification, public-rendering posture, and collation record.",
+    "textTrust": "not_certified_for_candidate_text",
+    "appSafety": "certified_by_source_gate_and_candidate_quarantine",
+    "zeroRowPolicy": "Zero-row artifacts are excluded from broader-canon completion and rendering.",
+    "sourcePolicy": "Do not trust broader-canon candidate text from meta.version or meta.copyright labels alone."
+  },
+  "dispositions": [
+    {
+      "path": "data/bible/ET/josipponET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Zero-row broader-canon candidate; cannot count as complete text."
+    },
+    {
+      "path": "data/bible/ET/mazahetaET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Zero-row broader-canon candidate; cannot count as complete text."
+    },
+    {
+      "path": "data/bible/ET/miraclesofmaryET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Zero-row broader-canon candidate; cannot count as complete text."
+    },
+    {
+      "path": "data/bible/AR/3corinthiansAR.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/AR/prayerofapolloniusAR.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/1clementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/2clementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/2meqa'abyanET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/3clementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/4clementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/5ClementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/7clementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/8ClementET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/ClementBookofRollsET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/ClementVisionaryET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/abtilisET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/admonitionsET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/ascensionofisaiahET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/bookofjubileesET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/clement6ET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/clementstatutesET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/didaskaliaET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/fethanagastET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/hermastheshepherdET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/restofbaruchET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/restofjeremiahET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/siratetsionET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ET/tizazET.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/NT/2baruchCE.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/NT/epistleofthelaodiceans.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/NT/historyofzosimus.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ODES/armeniancanticlesAR.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ODES/copticodesCO.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ODES/eoodes.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ODES/ethiopianodes.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/ODES/odesofsolomonSY.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/OT/1enoch.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    },
+    {
+      "path": "data/bible/SY/letterofbaruchSY.json",
+      "disposition": "quarantined_pending_source_witness_and_collation",
+      "appRenderEligible": false,
+      "textTrustEligible": false,
+      "reason": "Text-bearing broader-canon candidate has no concrete source pointer; version/copyright labels alone are insufficient."
+    }
+  ],
+  "certifiedClaims": [
+    "broader_canon_app_safe_by_source_gate",
+    "broader_canon_unsourced_candidates_quarantined",
+    "broader_canon_zero_row_artifacts_excluded",
+    "broader_canon_no_candidate_text_app_render_eligible_without_source_witness"
+  ],
+  "blockedClaims": [
+    "broader_canon_textually_trusted",
+    "broader_canon_candidate_text_source_verified",
+    "broader_canon_global_trust_promoted",
+    "broader_canon_complete_by_meta_version_labels",
+    "zero_row_files_complete",
+    "string_text_files_source_verified_without_external_witness"
+  ]
+}

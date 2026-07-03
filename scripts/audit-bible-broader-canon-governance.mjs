@@ -102,7 +102,7 @@ const actualStringTextOnly = inspected.filter((item) => item.textShape === "stri
 const actualConcreteSourcePointers = inspected.filter((item) => item.hasConcreteSourcePointer).map((item) => item.path).sort();
 
 if (governance.schema !== "broader-canon-governance-v2") failures.push({ type: "schema-mismatch", actual: governance.schema });
-if (governance.status !== "not_trust_ready_source_provenance_adjudication_recorded") failures.push({ type: "governance-status-mismatch", actual: governance.status });
+if (!["not_trust_ready_source_provenance_adjudication_recorded", "app_use_source_gate_closed_unsourced_candidates_quarantined"].includes(governance.status)) failures.push({ type: "governance-status-mismatch", actual: governance.status });
 if (governance.candidatePaths.join("\n") !== actualCandidates.join("\n")) failures.push({ type: "candidate-paths-changed" });
 if ((governance.zeroRowPaths || []).join("\n") !== actualZeroRows.join("\n")) failures.push({ type: "zero-row-paths-mismatch", actualZeroRows });
 if ((governance.stringTextOnlyPaths || []).join("\n") !== actualStringTextOnly.join("\n")) failures.push({ type: "string-text-only-paths-mismatch" });
@@ -116,7 +116,7 @@ if (adjudication.summary?.stringTextOnlyCount !== 35) failures.push({ type: "str
 if (adjudication.summary?.concreteSourcePointerCount !== 0) failures.push({ type: "concrete-source-pointer-count-mismatch", actual: adjudication.summary?.concreteSourcePointerCount });
 
 const lane = status.lanes?.broader_canon;
-if (!lane || lane.status !== "not_trusted_broader_canon_source_provenance_adjudication_required") failures.push({ type: "broader-canon-status-mismatch", actual: lane?.status || null });
+if (!lane || !["not_trusted_broader_canon_source_provenance_adjudication_required", "not_trusted_textually_broader_canon_candidates_quarantined_app_safe"].includes(lane.status)) failures.push({ type: "broader-canon-status-mismatch", actual: lane?.status || null });
 if (!Array.isArray(lane?.completedRemediations) || !lane.completedRemediations.includes("broader_canon_source_provenance_adjudication_2026_07_03")) failures.push({ type: "missing-completed-remediation-marker" });
 if (lane?.globalTextTrustPromotion !== "not_performed") failures.push({ type: "global-trust-promotion-mismatch", actual: lane?.globalTextTrustPromotion });
 if (lane?.remainingNrsVApplicableGapRows !== 0) failures.push({ type: "remaining-nrsv-applicable-gap-mismatch", actual: lane?.remainingNrsVApplicableGapRows });
