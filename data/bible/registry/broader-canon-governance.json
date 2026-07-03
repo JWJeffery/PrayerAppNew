@@ -64,7 +64,9 @@
     "zero_row_files_complete",
     "string_text_files_source_verified_without_external_witness",
     "broader_canon_candidate_text_source_verified",
-    "broader_canon_complete_by_meta_version_labels"
+    "broader_canon_complete_by_meta_version_labels",
+    "zero_row_files_renderable",
+    "zero_row_files_textually_trusted"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -119,7 +121,9 @@
     "broader_canon_app_safe_by_source_gate",
     "broader_canon_unsourced_candidates_quarantined",
     "broader_canon_zero_row_artifacts_excluded",
-    "broader_canon_no_candidate_text_app_render_eligible_without_source_witness"
+    "broader_canon_no_candidate_text_app_render_eligible_without_source_witness",
+    "broader_canon_zero_row_artifacts_disposition_closed",
+    "broader_canon_zero_row_artifacts_excluded_from_completion"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -127,6 +131,11 @@
     "appSafety": "certified_by_source_gate_and_candidate_quarantine",
     "appRenderEligibleCandidateCount": 0,
     "quarantinedCandidateCount": 35,
+    "excludedZeroRowArtifactCount": 3
+  },
+  "zeroRowDisposition": {
+    "recordPath": "data/bible/registry/broader-canon-zero-row-disposition-2026-07-04.json",
+    "status": "closed_excluded_from_text_trust_and_app_rendering",
     "excludedZeroRowArtifactCount": 3
   }
 }

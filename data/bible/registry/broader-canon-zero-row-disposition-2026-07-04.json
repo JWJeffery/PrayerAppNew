@@ -1,0 +1,46 @@
+{
+  "schema": "broader-canon-zero-row-disposition-v1",
+  "id": "broader_canon_zero_row_disposition_2026_07_04",
+  "status": "closed_excluded_from_text_trust_and_app_rendering",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "zeroRowCount": 3,
+    "paths": [
+      "data/bible/ET/josipponET.json",
+      "data/bible/ET/mazahetaET.json",
+      "data/bible/ET/miraclesofmaryET.json"
+    ]
+  },
+  "dispositions": [
+    {
+      "path": "data/bible/ET/josipponET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "reason": "File has no text rows and cannot be counted as a broader-canon text witness, trusted text, or renderable Bible entry.",
+      "textTrustEligible": false,
+      "appRenderEligible": false
+    },
+    {
+      "path": "data/bible/ET/mazahetaET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "reason": "File has no text rows and cannot be counted as a broader-canon text witness, trusted text, or renderable Bible entry.",
+      "textTrustEligible": false,
+      "appRenderEligible": false
+    },
+    {
+      "path": "data/bible/ET/miraclesofmaryET.json",
+      "disposition": "excluded_zero_row_artifact",
+      "reason": "File has no text rows and cannot be counted as a broader-canon text witness, trusted text, or renderable Bible entry.",
+      "textTrustEligible": false,
+      "appRenderEligible": false
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_zero_row_artifacts_disposition_closed",
+    "broader_canon_zero_row_artifacts_excluded_from_completion"
+  ],
+  "blockedClaims": [
+    "zero_row_files_complete",
+    "zero_row_files_renderable",
+    "zero_row_files_textually_trusted"
+  ]
+}
