@@ -1,0 +1,81 @@
+{
+  "schema": "broader-canon-rh-charles-source-witnesses-v1",
+  "id": "broader_canon_rh_charles_source_witnesses_2026_07_04",
+  "status": "source_witnesses_recorded_pending_collation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidateCount": 4,
+    "bibleTextMutation": false,
+    "corpusLane": "broader_canon"
+  },
+  "policy": {
+    "witnessMeaning": "External source witnesses are identified for the R.H. Charles cluster, but this is not yet row-level collation or textual trust certification.",
+    "appRendering": "not_app_render_eligible_until_collation_passes",
+    "trustBoundary": "Candidate files remain quarantined from trusted app rendering until source snapshot, source-basis verification, and row-level collation are recorded."
+  },
+  "items": [
+    {
+      "path": "data/bible/OT/1enoch.json",
+      "title": "1 Enoch",
+      "repoMetadataVersion": "Ethiopic (R.H. Charles translation)",
+      "sourceWitnessStatus": "external_source_witness_identified_pending_collation",
+      "sourceWitnesses": [
+        {
+          "label": "Internet Sacred Text Archive, The Book of Enoch, tr. R.H. Charles [1917]",
+          "url": "https://www.sacred-texts.com/bib/boe/index.htm",
+          "downloadableTextCandidate": "https://www.sacred-texts.com/bib/boe/boe.txt.gz"
+        }
+      ],
+      "currentTrustDisposition": "quarantined_pending_source_snapshot_and_collation"
+    },
+    {
+      "path": "data/bible/ET/bookofjubileesET.json",
+      "title": "The Book of Jubilees",
+      "repoMetadataVersion": "R.H. Charles translation",
+      "sourceWitnessStatus": "external_source_witness_identified_pending_collation",
+      "sourceWitnesses": [
+        {
+          "label": "Internet Sacred Text Archive, The Book of Jubilees, translated by R.H. Charles [1917]",
+          "url": "https://www.sacred-texts.com/bib/jub/index.htm",
+          "titlePageUrl": "https://www.sacred-texts.com/bib/jub/jub00.htm"
+        }
+      ],
+      "currentTrustDisposition": "quarantined_pending_source_snapshot_and_collation"
+    },
+    {
+      "path": "data/bible/ET/ascensionofisaiahET.json",
+      "title": "The Ascension of Isaiah",
+      "repoMetadataVersion": "R.H. Charles Ethiopic translation",
+      "sourceWitnessStatus": "online_text_witness_identified_source_basis_verification_required",
+      "sourceWitnesses": [
+        {
+          "label": "Early Christian Writings, The Ascension of Isaiah online text",
+          "url": "https://www.earlychristianwritings.com/text/ascension.html"
+        }
+      ],
+      "currentTrustDisposition": "quarantined_pending_source_basis_verification_and_collation"
+    },
+    {
+      "path": "data/bible/NT/2baruchCE.json",
+      "title": "2 Baruch",
+      "repoMetadataVersion": "Charles",
+      "sourceWitnessStatus": "online_text_witness_identified_source_basis_verification_required",
+      "sourceWitnesses": [
+        {
+          "label": "Pseudepigrapha.com, 2 Baruch translation attributed to R.H. Charles",
+          "url": "http://www.pseudepigrapha.com/pseudepigrapha/2Baruch.html"
+        }
+      ],
+      "currentTrustDisposition": "quarantined_pending_source_basis_verification_and_collation"
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_rh_charles_source_witnesses_recorded_4",
+    "broader_canon_rh_charles_cluster_pending_collation"
+  ],
+  "blockedClaims": [
+    "broader_canon_rh_charles_cluster_textually_trusted_without_collation",
+    "broader_canon_rh_charles_cluster_app_render_eligible_without_collation",
+    "broader_canon_complete"
+  ]
+}

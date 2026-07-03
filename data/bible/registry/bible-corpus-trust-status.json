@@ -6849,7 +6849,8 @@
         "broader_canon_source_provenance_adjudication_2026_07_03",
         "broader_canon_app_use_source_gate_2026_07_04",
         "broader_canon_zero_row_disposition_2026_07_04",
-        "broader_canon_source_visible_classification_2026_07_04"
+        "broader_canon_source_visible_classification_2026_07_04",
+        "broader_canon_rh_charles_source_witnesses_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6872,7 +6873,9 @@
         "broader_canon_zero_row_artifacts_disposition_closed",
         "broader_canon_zero_row_artifacts_excluded_from_completion",
         "broader_canon_source_visible_candidates_classified_7",
-        "broader_canon_source_visible_candidates_pending_collation"
+        "broader_canon_source_visible_candidates_pending_collation",
+        "broader_canon_rh_charles_source_witnesses_recorded_4",
+        "broader_canon_rh_charles_cluster_pending_collation"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6890,7 +6893,9 @@
         "zero_row_files_renderable",
         "zero_row_files_textually_trusted",
         "broader_canon_source_visible_candidates_textually_trusted",
-        "broader_canon_source_visible_candidates_app_render_eligible"
+        "broader_canon_source_visible_candidates_app_render_eligible",
+        "broader_canon_rh_charles_cluster_textually_trusted_without_collation",
+        "broader_canon_rh_charles_cluster_app_render_eligible_without_collation"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -6934,6 +6939,11 @@
         "id": "broader_canon_source_visible_classification_2026_07_04",
         "status": "classified_source_visible_pending_collation",
         "recordPath": "data/bible/registry/broader-canon-source-visible-classification-2026-07-04.json"
+      },
+      "latest_broader_canon_rh_charles_source_witnesses": {
+        "id": "broader_canon_rh_charles_source_witnesses_2026_07_04",
+        "status": "source_witnesses_recorded_pending_collation",
+        "recordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json"
       }
     },
     "vulgate": {

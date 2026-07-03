@@ -68,7 +68,9 @@
     "zero_row_files_renderable",
     "zero_row_files_textually_trusted",
     "broader_canon_source_visible_candidates_textually_trusted",
-    "broader_canon_source_visible_candidates_app_render_eligible"
+    "broader_canon_source_visible_candidates_app_render_eligible",
+    "broader_canon_rh_charles_cluster_textually_trusted_without_collation",
+    "broader_canon_rh_charles_cluster_app_render_eligible_without_collation"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -127,7 +129,9 @@
     "broader_canon_zero_row_artifacts_disposition_closed",
     "broader_canon_zero_row_artifacts_excluded_from_completion",
     "broader_canon_source_visible_candidates_classified_7",
-    "broader_canon_source_visible_candidates_pending_collation"
+    "broader_canon_source_visible_candidates_pending_collation",
+    "broader_canon_rh_charles_source_witnesses_recorded_4",
+    "broader_canon_rh_charles_cluster_pending_collation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -146,5 +150,10 @@
     "recordPath": "data/bible/registry/broader-canon-source-visible-classification-2026-07-04.json",
     "status": "classified_source_visible_pending_collation",
     "candidateCount": 7
+  },
+  "rhCharlesSourceWitnesses": {
+    "recordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
+    "status": "source_witnesses_recorded_pending_collation",
+    "candidateCount": 4
   }
 }
