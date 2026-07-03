@@ -1,5 +1,5 @@
 candidate_or_group,dates_seen,files_seen,issue_type,qc_status,notes
-Thomas the Apostle,07-03; 12-21 expected,july; future December,apostle-date harmonization,Open,July 3 is supported by some provincial sources but BCP uses December 21; resolve after full apostolic cycle.
+Thomas the Apostle,07-03; 12-21,july; december,apostle-date harmonization,Open,July 3 is supported by some provincial sources but BCP/LFF use December 21; December likely controls unless whole-year apostolic cycle governs otherwise.
 John Hus,07-06; 10-30,july; october,duplicate/date harmonization,Open,July has Hus as reformer/martyr candidate; October has Hus in FAS-linked reformer context. Apply Protestant-reformer rule before final placement.
 Declan of Ardmore,07-23; 07-24,july,duplicate/date harmonization,Open,Both July rows now carry harmonization flags.
 Margaret / Marina of Antioch,07-20; 11-24,july; november,duplicate/group-form harmonization,Open,July has individual Margaret/Marina martyr tradition; November has Catherine-Barbara-Margaret LFF group. Legendary-material handling required either way.
@@ -13,11 +13,11 @@ John Bunyan,08-29; 08-30,august,duplicate/date harmonization,Open,August row fla
 Grundtvig,09-02; 09-08,september,duplicate/date harmonization,Open,September row flags are now reciprocal.
 Søren Kierkegaard,09-08; 11-11,september; november,duplicate/date harmonization,Open,September HWHM/GCW row and November AM row both need Protestant/non-Anglican and intellectual-significance caution.
 Cyprian of Carthage,09-13; 09-15,september,duplicate/date harmonization,Open,September 13 has BCP/LFF/FAS authority; September 15 is HWHM/GCW/SEC transfer artifact.
-John Chrysostom,09-13; future date likely,july-september plus future,duplicate/date harmonization,Open,Strong Eastern father; date placement needs whole-year review.
+John Chrysostom,09-13; 01-27 expected,september; future January,duplicate/date harmonization,Open,Strong Eastern father; LFF January 27 expected to control but full-year review is needed.
 Albert of Jerusalem,09-14; 09-17,september,duplicate/date harmonization,Open,September row flags are now reciprocal.
 Edward Bouverie Pusey,09-16; 09-18,september,duplicate/date harmonization,Open,BCP/LFF September 18 likely controls; AM has September 16 variant.
 Richard Rolle / English Mystics,09-28; 09-29; 11-09,september; november,source-form/date harmonization,Open,Current LFF November 9 places Rolle-Hilton-Kempe group; September file contains older TEC/AM variants.
-Gregory the Enlightener,09-30; 10-01; March expected,september; october; future March,duplicate/date harmonization,Open,October SEC evidence revised to require fixed-date verification. Armenian source verification required.
+Gregory the Enlightener,09-30; 10-01; 03-23 expected,september; october; future March,duplicate/date harmonization,Open,October SEC evidence revised to require fixed-date verification. Armenian source verification required.
 Remigius of Rheims,10-01; 10-02,october,source-form/date harmonization,Open,BCP/HWHM/GCW retain October 1; LFF 2024 uses October 2. Keep both source forms visible.
 Thomas Cantilupe,10-02; 10-03,october,duplicate/date harmonization,Open,October rows already carry harmonization flags.
 Thomas Traherne,09-27; 10-10,september; october,duplicate/date harmonization,Open,September HWHM/GCW row and October AM row require whole-year placement.
@@ -34,3 +34,16 @@ Catherine of Alexandria,11-24; 11-25,november,duplicate/date harmonization,Open,
 Isaac Watts,11-25; 11-26,november,duplicate/date harmonization,Open,HWHM/GCW November 26 and AM November 25 variants require resolution.
 James Theodore Holly,11-08; 03-13 expected,november; future March,date harmonization,Open,November 8 is alternative date; TEC primary date is March 13 in current project notes.
 Martin Luther,10-31; 02-18 expected,october; future February,date harmonization / Protestant-reformer caution,Open,October 31 Reformation context should not override ordinary Luther date without governance.
+Nicholas Ferrar,12-01; 12-08,december,source-form/date harmonization,Open,BCP retains December 1 while LFF 2024 uses December 8; December file now ranks LFF Dec 8 form as controlling for current TEC source discipline.
+Birinus of Dorchester,09-04; 12-03,september; december,duplicate/date harmonization,Open,September AM and December FAS/AM variants require whole-year placement.
+Osmund of Salisbury,07-16; 12-04,july; december,duplicate/date harmonization,Open,July AM row and December AM/Oxford row both remain open pending English/Sarum source review.
+Barbara of Nicomedia,11-24; 12-04,november; december,group/individual date harmonization,Open,Current LFF groups Barbara with Catherine and Margaret on November 24; December 4 is traditional individual date.
+Charles Garnier,10-19; 12-07,october; december,group/individual date harmonization,Open,October New France martyr group and December individual AM variant require mission/colonial context review.
+Jane de Chantal,08-18; 12-12,august; december,duplicate/date harmonization,Open,August has individual Jane Frances de Chantal; December has current LFF pairing with Francis de Sales.
+Lucy Menzies,11-24; 12-11,november; december,duplicate/date harmonization,Open,November SEC/AM row and December AM row require source/date verification.
+John of the Cross,10-15; 12-14,october; december,duplicate/date harmonization,Open,FAS pairs John with Teresa on October 15; BCP/LFF December 14 likely controls for this project.
+Samuel Johnson,08-17; 12-13,august; december,group/individual date harmonization,Open,August Johnson-Cutler-Chandler group and December individual AM variant require source-form review.
+Frances Joseph-Gaudet,12-22 unverified; 12-30; 12-31,december,source-form/date harmonization,Open,Current LFF 2024 uses December 31 while BCP has bracketed December 30; December 22 row retained only as unverified source flag.
+Thomas Becket,12-23; 12-29,december,duplicate/date harmonization,Open,BCP/LFF December 29 likely controls; December 23 is FAS/AM date variant.
+Stephen,08-03; 12-26,august; december,duplicate/date harmonization,Open,FAS gives August 3 option while BCP/LFF December 26 controls as major feast.
+Samuel Ajayi Crowther,12-31; future possible date,december; future,source/date verification,Open,December row corrected to TEC secondary/provincial witness rather than BCP/LFF authority; verify final date against remaining months.
