@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche and the first July-August-September crosswise QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, and the first July-August-September-October cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July, August, and September
+## Lessons learned from July, August, September, and October
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -43,6 +43,10 @@ These candidates are not excluded by default, but their entries must teach praye
 9. Year-specific provincial calendars must not be mistaken for fixed-date kalendars.
 
 The Scottish Episcopal master calendar CSV is useful, but it includes year-specific transfers when a feast is displaced by Sunday or another higher observance. A transferred entry may prove that the candidate is in the SEC calendar, but the transferred civil date must not be treated as the saint’s fixed date for Kalendar v0.1. When a SEC entry is visibly transferred, mark that fact in `review_flags` or `notes` and defer date resolution to whole-year harmonization.
+
+10. Current LFF source-forms should generally outrank older TEC secondary forms when the same date preserves variant group membership.
+
+This does not make LFF infallible, but it keeps the working candidate matrix aligned with the current Episcopal source form. Older BCP/HWHM/GCW forms should remain visible as separate rows when they materially differ, especially for group commemorations.
 
 ## QC actions taken
 
@@ -61,6 +65,13 @@ The Scottish Episcopal master calendar CSV is useful, but it includes year-speci
 - Added explicit date-harmonization flag for Grundtvig on September 2, matching the September 8 duplicate warning.
 - Added explicit date-harmonization flag for Albert of Jerusalem on September 14, matching the September 17 duplicate warning.
 - Revised September 20 and September 27 SEC language from `fixed-date witness via transfer note` to `SEC transfer witness`, so year-specific transfer evidence is not mistaken for fixed-date evidence.
+
+## Cross-sectional QC actions after comparing July, August, September, and October
+
+- Revised October 1 Gregory the Enlightener source wording from `SEC transfer/fixed witness` to `SEC witness requiring fixed-date verification`, so the October SEC evidence is not overstated.
+- Promoted the current LFF October 16 Reformation Martyrs form, Hugh Latimer, Nicholas Ridley, and Thomas Cranmer, above the older BCP/HWHM two-bishop form while retaining both source-forms as separate rows.
+- Confirmed that October already carried date-harmonization flags for Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, and Martin Luther.
+- Confirmed that October continues the standing treatment of SEC year-specific transfers for Luke, Henry Martyn, Kenneth/Canice, and other affected rows.
 
 ## Continuing QC rule
 
