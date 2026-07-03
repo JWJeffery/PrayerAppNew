@@ -1,0 +1,67 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+07-01,2,UO-SIN-000182,Serf,person,Serf,
+07-01,3,UO-SIN-000183,Harriet Beecher Stowe,person,Harriet Beecher Stowe,
+07-01,4,UO-SIN-000184,John Venn and Henry Venn,group,John Venn and Henry Venn,group source form
+07-02,2,UO-SIN-000185,Swithin of Winchester,person,Swithin,
+07-02,3,UO-SIN-000186,"Walter Rauschenbusch, Washington Gladden, and Jacob Riis",group,"Walter Rauschenbusch, Washington Gladden, and Jacob Riis",group source form
+07-02,4,UO-SIN-000187,Otto of Bamberg,person,Otto of Bamberg,
+07-04,2,UO-SIN-000188,Elizabeth of Portugal,person,Elizabeth of Portugal,
+07-04,3,UO-SIN-000189,Peblig,person,Peblig,
+07-05,2,UO-SIN-000190,Athanasius of Jerusalem,person,Athanasius of Jerusalem,
+07-06,2,UO-SIN-000191,Moninne of Killeavy,person,Moninne of Killeavy,
+07-06,3,UO-SIN-000192,John Hus,person,John Hus,also appears 10-30
+07-06,4,UO-SIN-000193,Thomas More,person,Thomas More,
+07-07,2,UO-SIN-000194,Pantaenus of Alexandria,person,Pantaenus of Alexandria,
+07-07,3,UO-SIN-000195,Benedict XI,person,Benedict XI,
+07-08,2,UO-SIN-000196,Disibod,person,Disibod,
+07-08,3,UO-SIN-000197,Kilian,person,Kilian,
+07-10,2,UO-SIN-000198,Amalburga,person,Amalburga,
+07-11,2,UO-SIN-000199,Pius I,person,Pius I,
+07-11,3,UO-SIN-000200,Placidus and Sigisbert,group,Placidus and Sigisbert,group source form
+07-12,2,UO-SIN-000201,Nathan Söderblom,person,Nathan Söderblom,
+07-12,3,UO-SIN-000202,John Gualbert,person,John Gualbert,
+07-12,4,UO-SIN-000203,Veronica,person,Veronica,
+07-13,2,UO-SIN-000204,Conrad Weiser,person,Conrad Weiser,
+07-13,3,UO-SIN-000205,Silas / Silvanus,person,Silas / Silvanus,also appears as Silas 07-30
+07-13,4,UO-SIN-000206,Henry II and Kunegunda,group,Henry II and Kunegunda,group source form
+07-14,2,UO-SIN-000207,Samson Occom,person,Samson Occom,
+07-14,3,UO-SIN-000208,Kateri Tekakwitha,person,Kateri Tekakwitha,
+07-14,4,UO-SIN-000209,Oxford Movement / John Keble Assize Sermon anniversary,event,Oxford Movement / John Keble Assize Sermon anniversary,ecclesial event
+07-15,2,UO-SIN-000185,Swithin of Winchester,person,Swithin translation,translation-date variant
+07-15,3,UO-SIN-000210,Vladimir of Kyiv,person,Vladimir of Kyiv,
+07-16,2,UO-SIN-000211,Our Lady of Mount Carmel / Our Lady of the Hermits,feast,Our Lady of Mount Carmel / Our Lady of the Hermits,Marian feast
+07-16,3,UO-SIN-000212,The Righteous Gentiles,group,The Righteous Gentiles,non-Christian group memorial
+07-16,4,UO-SIN-000213,Fulrad,person,Fulrad,
+07-17,2,UO-SIN-000214,Jane Haining,person,Jane Haining,
+07-17,3,UO-SIN-000215,Marcellina,person,Marcellina,
+07-17,4,UO-SIN-000216,Leo IV,person,Leo IV,
+07-18,2,UO-SIN-000217,Elizabeth Ferard,person,Elizabeth Ferard,
+07-18,3,UO-SIN-000218,Elizabeth of Russia,person,Elizabeth of Russia,
+07-18,4,UO-SIN-000219,Camillus de Lellis,person,Camillus de Lellis,
+07-19,2,UO-SIN-000220,Adelaide Teague Case,person,Adelaide Teague Case,
+07-19,3,UO-SIN-000221,Arsenius,person,Arsenius,
+07-20,2,UO-SIN-000222,Margaret / Marina of Antioch,person,Margaret / Marina of Antioch,also appears in 11-24 group
+07-20,3,UO-SIN-000223,"Elizabeth Cady Stanton, Amelia Bloomer, and Sojourner Truth",group,"Elizabeth Cady Stanton, Amelia Bloomer, and Sojourner Truth",current LFF group form
+07-20,4,UO-SIN-000224,"Elizabeth Cady Stanton, Amelia Bloomer, Sojourner Truth, and Harriet Ross Tubman",group,"Elizabeth Cady Stanton, Amelia Bloomer, Sojourner Truth, and Harriet Ross Tubman",older TEC group form
+07-21,2,UO-SIN-000225,Albert Luthuli,person,Albert Luthuli,
+07-21,3,UO-SIN-000030,William Wilberforce,person,William Wilberforce,also rank1 07-30
+07-21,4,UO-SIN-000226,Laurence of Brindisi,person,Laurence of Brindisi,
+07-22,2,UO-SIN-000227,Wandrille,person,Wandrille,
+07-23,2,UO-SIN-000228,Bridget of Sweden,person,Bridget of Sweden,
+07-23,3,UO-SIN-000229,Declan of Ardmore,person,Declan of Ardmore,also appears 07-24
+07-24,2,UO-SIN-000229,Declan of Ardmore,person,Declan of Ardmore,also appears 07-23
+07-24,3,UO-SIN-000230,Boris and Gleb,group,Boris and Gleb,group source form
+07-24,4,UO-SIN-000231,Sharbel Makhluf,person,Sharbel Makhluf,
+07-26,2,UO-SIN-000232,Charles Raymond Barnes,person,Charles Raymond Barnes,
+07-27,2,UO-SIN-000233,John Comper,person,John Comper,
+07-27,3,UO-SIN-000234,Brooke Foss Westcott,person,Brooke Foss Westcott,
+07-27,4,UO-SIN-000235,Pantaleon,person,Pantaleon,
+07-28,2,UO-SIN-000236,"Johann Sebastian Bach, George Frideric Handel, and Henry Purcell",group,"Johann Sebastian Bach, George Frideric Handel, and Henry Purcell",group source form
+07-28,3,UO-SIN-000237,Samson of Dol,person,Samson of Dol,
+07-28,4,UO-SIN-000238,Victor I,person,Victor I,
+07-29,2,UO-SIN-000239,Philadelphia Eleven / First Ordination of Women to the Priesthood in TEC,event,Philadelphia Eleven / First Ordination of Women to the Priesthood in TEC,ecclesial event
+07-29,3,UO-SIN-000030,William Wilberforce,person,William Wilberforce,also rank1 07-30
+07-29,4,UO-SIN-000240,Lupus of Troyes,person,Lupus of Troyes,
+07-30,2,UO-SIN-000205,Silas / Silvanus,person,Silas,also appears 07-13
+07-30,3,UO-SIN-000241,Peter Chrysologus,person,Peter Chrysologus,
+07-31,2,UO-SIN-000242,Germanus of Auxerre,person,Germanus of Auxerre,
