@@ -1,0 +1,31 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+11-01,UO-SIN-000124,All Saints,feast,rank1_controlled,rank preserved pending governance,Principal Feast
+11-02,UO-SIN-000125,All Souls / All the Faithful Departed,commemoration,rank1_controlled,rank preserved pending genre governance,commemoration of the dead
+11-03,UO-SIN-000126,Richard Hooker,person,rank1_controlled,rank preserved pending governance,
+11-04,UO-SIN-000127,Adeline Blanchard Tyler and her Companions,group,rank1_controlled,rank preserved pending bracketed-status review,bracketed LFF status; group entry
+11-05,UO-SIN-000128,Zechariah and Elizabeth,group,rank1_controlled,rank preserved pending biblical-date governance,biblical-date strategy
+11-06,UO-SIN-000129,William Temple,person,rank1_controlled,rank preserved pending social-teaching framing,Anglican bishop rule; social-teaching framing
+11-07,UO-SIN-000130,Willibrord,person,rank1_controlled,rank preserved pending governance,
+11-08,UO-SIN-000131,Ammonius,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+11-09,UO-SIN-000132,"Richard Rolle, Walter Hilton, and Margery Kempe",group,rank1_controlled,rank preserved pending source-form/date governance,group entry; date harmonization
+11-10,UO-SIN-000133,Leo the Great,person,rank1_controlled,rank preserved pending governance,
+11-11,UO-SIN-000134,Martin of Tours,person,rank1_controlled,rank preserved pending governance,
+11-12,UO-SIN-000135,Charles Simeon,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 11-13
+11-13,UO-SIN-000136,Frances Xavier Cabrini,person,rank1_controlled,rank preserved pending modern review,modern review; Greater Church remembers
+11-14,UO-SIN-000137,Consecration of Samuel Seabury,event,rank1_controlled,rank preserved pending event/person governance,ecclesial-event genre review
+11-15,UO-SIN-000138,Herman of Alaska,person,rank1_controlled,rank preserved pending date harmonization,date harmonization with 08-09
+11-16,UO-SIN-000139,Margaret of Scotland,person,rank1_controlled,rank preserved pending ruler-saint review,ruler-saint review
+11-17,UO-SIN-000140,Hugh of Lincoln,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+11-18,UO-SIN-000141,Hilda of Whitby,person,rank1_controlled,rank preserved pending date harmonization,date variants on 11-17 and SEC 11-19
+11-19,UO-SIN-000142,Elizabeth of Hungary,person,rank1_controlled,rank preserved pending ruler/princess review,ruler/princess-saint review
+11-20,UO-SIN-000143,Edmund of East Anglia,person,rank1_controlled,rank preserved pending ruler/legend review,ruler-saint review; legendary material
+11-21,UO-SIN-000144,Mechthilde of Hackeborn and Gertrude the Great,group,rank1_controlled,rank preserved pending group/date governance,group entry; date harmonization
+11-22,UO-SIN-000145,Clive Staples Lewis,person,rank1_controlled,rank preserved pending writer/apologist review,writer/apologist holiness test; modern review
+11-23,UO-SIN-000146,Clement of Rome,person,rank1_controlled,rank preserved pending governance,
+11-24,UO-SIN-000147,"Catherine of Alexandria, Barbara of Nicomedia, and Margaret of Antioch",group,rank1_controlled,rank preserved pending legendary/group review,legendary material review; group entry
+11-25,UO-SIN-000148,James Otis Sargent Huntington,person,rank1_controlled,rank preserved pending governance,
+11-26,UO-SIN-000149,Isaac Watts,person,rank1_controlled,rank preserved pending hymnwriter/non-Anglican review,Protestant/non-Anglican review; hymnwriter holiness test
+11-27,UO-SIN-000150,Virgil of Salzburg,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+11-28,UO-SIN-000151,Kamehameha and Emma of Hawaiʻi,group,rank1_controlled,rank preserved pending Hawaiian/context review,ruler-saint review; colonial/Hawaiian context
+11-29,UO-SIN-000152,Dorothy Day,person,rank1_controlled,rank preserved pending modern/social review,modern review; social-impact caution
+11-30,UO-SIN-000153,Andrew the Apostle,person,rank1_controlled,rank preserved pending governance,
