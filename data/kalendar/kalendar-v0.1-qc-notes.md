@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, and the first July-August-September-October cross-sectional QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, and the July-August-September-October-November cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July, August, September, and October
+## Lessons learned from July through November
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, George Whitefield, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -47,6 +47,10 @@ The Scottish Episcopal master calendar CSV is useful, but it includes year-speci
 10. Current LFF source-forms should generally outrank older TEC secondary forms when the same date preserves variant group membership.
 
 This does not make LFF infallible, but it keeps the working candidate matrix aligned with the current Episcopal source form. Older BCP/HWHM/GCW forms should remain visible as separate rows when they materially differ, especially for group commemorations.
+
+11. Cross-month duplicate tracking now requires a central ledger.
+
+As more months are added, bidirectional row edits become brittle. Candidate rows should still carry obvious local harmonization flags, but the cross-date harmonization ledger is the central audit surface for duplicates, transferred dates, variant source forms, and future-month dependencies.
 
 ## QC actions taken
 
@@ -72,6 +76,13 @@ This does not make LFF infallible, but it keeps the working candidate matrix ali
 - Promoted the current LFF October 16 Reformation Martyrs form, Hugh Latimer, Nicholas Ridley, and Thomas Cranmer, above the older BCP/HWHM two-bishop form while retaining both source-forms as separate rows.
 - Confirmed that October already carried date-harmonization flags for Remigius, Gregory the Enlightener, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, and Martin Luther.
 - Confirmed that October continues the standing treatment of SEC year-specific transfers for Luke, Henry Martyn, Kenneth/Canice, and other affected rows.
+
+## Cross-sectional QC actions after comparing July through November
+
+- Created `data/kalendar/kalendar-v0.1-cross-date-harmonization.csv` as the central audit ledger for cross-month duplicate/date issues.
+- Added cross-month ledger entries for November conflicts and dependencies including Herman of Alaska, Martin de Porres, Sojourner Truth, Margaret/Marina of Antioch, Richard Rolle and the English mystics, Søren Kierkegaard, George Whitefield, Hilda of Whitby, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, and others.
+- Confirmed November preserves current LFF source-forms while retaining date variants and older/provincial forms as separate candidate rows where needed.
+- Confirmed November continues the standing exclusion discipline for non-sanctoral historical remembrances, including Kristallnacht and Armistice Day.
 
 ## Continuing QC rule
 
