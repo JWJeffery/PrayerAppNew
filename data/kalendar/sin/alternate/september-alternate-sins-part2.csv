@@ -1,0 +1,45 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+09-16,2,UO-SIN-000355,Cornelius,person,Cornelius,Bishop of Rome
+09-16,3,UO-SIN-000356,Ludmila of Bohemia,person,Ludmila of Bohemia,
+09-16,4,UO-SIN-000080,Edward Bouverie Pusey,person,Edward Bouverie Pusey,also rank1 09-18
+09-17,2,UO-SIN-000357,Lambert of Maastricht,person,Lambert of Maastricht,
+09-17,3,UO-SIN-000350,Albert of Jerusalem,person,Albert of Jerusalem,also appears 09-14
+09-17,4,UO-SIN-000358,Robert Bellarmine,person,Robert Bellarmine,
+09-18,2,UO-SIN-000359,Dag Hammarskjold,person,Dag Hammarskjöld,
+09-18,3,UO-SIN-000360,"Founders, Benefactors, and Missionaries of the Anglican Church of Canada",group,"Founders, Benefactors, and Missionaries of the Anglican Church of Canada",group commemoration
+09-18,4,UO-SIN-000361,Joseph of Cupertino,person,Joseph of Cupertino,
+09-19,2,UO-SIN-000362,Januarius,person,Januarius,
+09-19,3,UO-SIN-000363,Alphonsus de Orozco,person,Alphonsus de Orozco,
+09-20,2,UO-SIN-000364,"Andrew Kim Taegon, Paul Chong Hasang, and the Martyrs of Korea",group,"Andrew Kim Taegon, Paul Chong Hasang, and the Martyrs of Korea",group source form
+09-20,3,UO-SIN-000365,Methodius of Olympus,person,Methodius of Olympus,
+09-20,4,UO-SIN-000366,"Saints, Martyrs, and Missionaries of Australasia and the Pacific",group,"Saints, Martyrs, and Missionaries of Australasia and the Pacific",regional group commemoration
+09-21,2,UO-SIN-000367,Jonah,person,Jonah,biblical prophet
+09-21,3,UO-SIN-000368,Cadoc,person,Cadoc,
+09-21,4,UO-SIN-000369,Henri Nouwen,person,Henri Nouwen,
+09-22,2,UO-SIN-000370,Maurice and the Theban Legion,group,Maurice and the Theban Legion,group source form
+09-22,3,UO-SIN-000371,Emmeram,person,Emmeram,
+09-22,4,UO-SIN-000372,Felix IV,person,Felix IV,
+09-23,2,UO-SIN-000373,Adomnan of Iona,person,Adomnán of Iona,
+09-23,3,UO-SIN-000374,Linus,person,Linus,
+09-23,4,UO-SIN-000375,Pius of Pietrelcina,person,Pius of Pietrelcina (Padre Pio),
+09-24,2,UO-SIN-000376,Gerard of Csanad,person,Gerard of Csanád,
+09-24,3,UO-SIN-000377,Robert of Knaresborough,person,Robert of Knaresborough,
+09-24,4,UO-SIN-000378,Anton Martin Slomsek,person,Anton Martin Slomšek,
+09-25,2,UO-SIN-000379,Finnbar of Caithness,person,Finnbar of Caithness,
+09-25,3,UO-SIN-000380,Ceolfrith,person,Ceolfrith,
+09-25,4,UO-SIN-000381,Nicholas von Flue,person,Nicholas von Flüe,
+09-25,5,UO-SIN-000088,Lancelot Andrewes,person,Lancelot Andrewes,also rank1 09-26
+09-26,2,UO-SIN-000382,Wilson Carlile,person,Wilson Carlile,
+09-26,3,UO-SIN-000383,Cosmas and Damian,group,Cosmas and Damian,group source form
+09-26,4,UO-SIN-000384,Nilus of Rossano,person,Nilus of Rossano,
+09-26,5,UO-SIN-000385,Colman Elo,person,Colmán Elo,
+09-27,2,UO-SIN-000386,Thomas Traherne,person,Thomas Traherne,also appears 10-10
+09-27,3,UO-SIN-000387,Vincent de Paul,person,Vincent de Paul,
+09-28,2,UO-SIN-000132,"Richard Rolle, Walter Hilton, and Margery Kempe",group,"Richard Rolle, Walter Hilton, and Margery Kempe",also rank1 11-09
+09-28,3,UO-SIN-000388,Wenceslas of Bohemia,person,Wenceslas of Bohemia,
+09-28,4,UO-SIN-000389,Lioba,person,Lioba,
+09-28,5,UO-SIN-000390,Lorenzo Ruiz and Companions,group,Lorenzo Ruiz and Companions,group source form
+09-29,2,UO-SIN-000391,Richard Rolle,person,Richard Rolle,individual date variant of English mystics group
+09-29,3,UO-SIN-000392,Charles of Blois,person,Charles of Blois,
+09-30,2,UO-SIN-000393,Gregory the Enlightener,person,Gregory the Enlightener,also appears 10-01
+09-30,3,UO-SIN-000394,George Whitefield,person,George Whitefield,also appears 11-15 group
