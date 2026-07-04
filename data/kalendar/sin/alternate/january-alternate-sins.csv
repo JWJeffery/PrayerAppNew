@@ -1,0 +1,61 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+01-01,2,UO-SIN-000787,Fulgentius of Ruspe,person,Fulgentius of Ruspe,
+01-01,3,UO-SIN-000788,William of Volpiano,person,William of Volpiano,
+01-01,4,UO-SIN-000789,Zdislava of Lemberk,person,Zdislava of Lemberk,
+01-02,2,UO-SIN-000790,Basil the Great and Gregory of Nazianzus,group,Basil the Great and Gregory of Nazianzus,paired source form distinct from individual Basil and Gregory entries
+01-02,3,UO-SIN-000791,Seraphim of Sarov,person,Seraphim of Sarov,
+01-02,4,UO-SIN-000792,Macarius of Egypt / Macarius the Great,person,Macarius of Egypt,also appears 01-19 as Macarius the Great
+01-03,2,UO-SIN-000793,William Passavant,person,William Passavant,
+01-03,3,UO-SIN-000794,Morris Williams,person,Morris Williams,
+01-04,2,UO-SIN-000795,Angela of Foligno,person,Angela of Foligno,
+01-05,2,UO-SIN-000796,John Neumann,person,John Neumann,
+01-05,3,UO-SIN-000797,Telesphorus,person,Telesphorus,
+01-07,2,UO-SIN-000798,Raymond of Penafort,person,Raymond of Peñafort,
+01-08,2,UO-SIN-000799,Apollinaris of Hierapolis,person,Apollinaris of Hierapolis,
+01-08,3,UO-SIN-000800,Lawrence Giustiniani,person,Lawrence Giustiniani,
+01-08,4,UO-SIN-000801,Richard Watson,person,Richard Watson,
+01-09,2,UO-SIN-000802,Adrian of Canterbury,person,Adrian of Canterbury,
+01-10,2,UO-SIN-000681,Gregory of Nyssa,person,Gregory of Nyssa,also rank1 03-09
+01-10,3,UO-SIN-000803,Agatho,person,Agatho,
+01-11,2,UO-SIN-000804,David I of Scotland,person,David I of Scotland,
+01-11,3,UO-SIN-000805,Paulinus of Aquileia,person,Paulinus of Aquileia,
+01-12,2,UO-SIN-000806,Benedict Biscop,person,Benedict Biscop,
+01-12,3,UO-SIN-000807,Marguerite Bourgeoys,person,Marguerite Bourgeoys,
+01-12,4,UO-SIN-000584,John Horden,person,John Horden,also appears 12-15
+01-13,2,UO-SIN-000808,Kentigern / Mungo,person,Kentigern / Mungo,
+01-13,3,UO-SIN-000094,Remigius of Rheims,person,Remy / Remigius of Rheims,also rank1 10-02 and October variants
+01-14,2,UO-SIN-000809,Sava of Serbia,person,Sava of Serbia,
+01-14,3,UO-SIN-000810,Macrina the Elder,person,Macrina the Elder,distinct from Macrina of Caesarea
+01-14,4,UO-SIN-000811,Felix of Nola,person,Felix of Nola,
+01-15,2,UO-SIN-000812,Paul the Hermit,person,Paul the Hermit,
+01-15,3,UO-SIN-000813,Habakkuk and Micah,group,Habakkuk and Micah,biblical prophetic group source form
+01-16,2,UO-SIN-000630,Richard Meux Benson and Charles Gore,group,Richard Meux Benson and Charles Gore,also rank1 01-14; date variant source form
+01-16,3,UO-SIN-000814,Priscilla of Rome,person,Priscilla of Rome,source identity review with Prisca of Rome
+01-17,2,UO-SIN-000815,Sulpicius of Bourges,person,Sulpicius of Bourges,
+01-18,2,UO-SIN-000816,Prisca of Rome,person,Prisca of Rome,source identity review with Priscilla of Rome
+01-19,2,UO-SIN-000792,Macarius of Egypt / Macarius the Great,person,Macarius the Great,also appears 01-02 as Macarius of Egypt
+01-19,3,UO-SIN-000817,Commemoration of Scottish Saints and Martyrs of the Reformation Period,commemoration,Commemoration of Scottish Saints and Martyrs of the Reformation Period,regional group commemoration
+01-19,4,UO-SIN-000818,Interior Life of Our Saviour,observance,Interior Life of Our Saviour,devotional Christological observance
+01-20,2,UO-SIN-000819,Sebastian,person,Sebastian,
+01-20,3,UO-SIN-000391,Richard Rolle,person,Richard Rolle,also appears in English Mystics source forms
+01-20,4,UO-SIN-000634,The Confession of Saint Peter the Apostle,feast,The Confession of Saint Peter the Apostle,SEC transfer of 01-18 feast
+01-21,2,UO-SIN-000820,Agnes of Rome,person,Agnes of Rome,individual source form distinct from Agnes-Cecilia group
+01-21,3,UO-SIN-000821,Patroclus of Troyes,person,Patroclus of Troyes,
+01-22,2,UO-SIN-000822,Anastasius the Persian,person,Anastasius the Persian,
+01-23,2,UO-SIN-000823,Ildephonsus of Toledo,person,Ildephonsus of Toledo,
+01-23,3,UO-SIN-000824,Mary Ward,person,Mary Ward,
+01-24,2,UO-SIN-000825,Francis de Sales,person,Francis de Sales,individual source form distinct from 12-12 Francis de Sales and Jane de Chantal group
+01-24,3,UO-SIN-000368,Cadoc,person,Cadoc,also appears 09-21
+01-25,2,UO-SIN-000826,Poppo of Stavelot,person,Poppo of Stavelot,
+01-26,2,UO-SIN-000827,"Timothy, Titus, and Silas",group,"Timothy, Titus, and Silas",older TEC group source form distinct from current Timothy and Titus
+01-26,3,UO-SIN-000828,Paula of Rome,person,Paula of Rome,
+01-27,2,UO-SIN-000829,"Lydia, Dorcas, and Phoebe",group,"Lydia, Dorcas, and Phoebe",biblical women group source form distinct from individual Lydia/Phoebe/Tabitha forms
+01-27,3,UO-SIN-000830,George Matulaitis,person,George Matulaitis,
+01-28,2,UO-SIN-000831,Agnes Tsao Kou Ying,person,Agnes Tsao Kou Ying,individual source form distinct from 02-19 Chinese martyrs group
+01-29,2,UO-SIN-000832,Andrei Rublev,person,Andrei Rublev,
+01-29,3,UO-SIN-000833,Gildas,person,Gildas,
+01-30,2,UO-SIN-000834,Bathild,person,Bathild,
+01-30,3,UO-SIN-000835,Adelelmus of Burgos,person,Adelelmus of Burgos,
+01-31,2,UO-SIN-000836,John Bosco,person,John Bosco,
+01-31,3,UO-SIN-000837,Samuel Shoemaker,person,Samuel Shoemaker,
+01-31,4,UO-SIN-000838,Charles Mackenzie of Central Africa,person,Charles Mackenzie of Central Africa,
