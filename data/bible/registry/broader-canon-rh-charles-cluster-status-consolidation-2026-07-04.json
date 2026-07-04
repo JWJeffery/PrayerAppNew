@@ -1,0 +1,98 @@
+{
+  "schema": "broader-canon-rh-charles-cluster-status-consolidation-v1",
+  "id": "broader_canon_rh_charles_cluster_status_consolidation_2026_07_04",
+  "status": "closed_status_consolidated_collated_2_blocked_2_no_trust_promotion",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "sourceWitnessRecordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "broaderCanonTextTrustPromotion": false,
+    "broaderCanonAppRenderPromotion": false
+  },
+  "clusterSummary": {
+    "candidateCount": 4,
+    "sourceBindingCollatedCount": 2,
+    "sourceBasisBlockedCount": 2,
+    "sourceBindingCollatedCandidates": [
+      {
+        "title": "1 Enoch",
+        "candidatePath": "data/bible/OT/1enoch.json",
+        "recordPath": "data/bible/registry/broader-canon-source-binding-collation-1enoch-2026-07-04.json",
+        "status": "passed_fixed_entity_source_binding_collation_no_bible_verse_text_mutation",
+        "mutationPolicy": {
+          "bibleVerseTextMutation": false,
+          "candidateJsonMutation": false
+        }
+      },
+      {
+        "title": "Jubilees",
+        "candidatePath": "data/bible/ET/bookofjubileesET.json",
+        "recordPath": "data/bible/registry/broader-canon-source-binding-collation-jubilees-2026-07-04.json",
+        "status": "passed_source_page_binding_collation_no_candidate_mutation",
+        "mutationPolicy": {
+          "bibleVerseTextMutation": false,
+          "candidateJsonMutation": false
+        }
+      }
+    ],
+    "sourceBasisBlockedCandidates": [
+      {
+        "title": "Ascension of Isaiah",
+        "candidatePath": "data/bible/ET/ascensionofisaiahET.json",
+        "recordPath": "data/bible/registry/broader-canon-source-basis-blocker-ascensionofisaiah-2026-07-04.json",
+        "status": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation",
+        "blockerType": "source_basis_chapter_shape_mismatch",
+        "mutationPolicy": {
+          "bibleVerseTextMutation": false,
+          "candidateJsonMutation": false
+        }
+      },
+      {
+        "title": "2 Baruch",
+        "candidatePath": "data/bible/NT/2baruchCE.json",
+        "recordPath": "data/bible/registry/broader-canon-source-basis-blocker-2baruch-2026-07-04.json",
+        "status": "blocked_online_witness_incomplete_tail_no_candidate_mutation",
+        "blockerType": "online_witness_incomplete_tail",
+        "mutationPolicy": {
+          "bibleVerseTextMutation": false,
+          "candidateJsonMutation": false
+        }
+      }
+    ]
+  },
+  "governanceDecision": {
+    "summary": "The R.H. Charles broader-canon cluster pass is status-consolidated, not completed. 1 Enoch and Jubilees have governed source-binding records. Ascension of Isaiah and 2 Baruch have governed source-basis blockers. The broader-canon lane remains quarantined and not textually trusted.",
+    "closedForCurrentPass": [
+      "record identified R.H. Charles source witnesses",
+      "collate candidates whose available witness supports bounded source binding",
+      "record blockers where the available witness does not support safe source binding"
+    ],
+    "notClosed": [
+      "complete public-domain source acquisition for Ascension of Isaiah and 2 Baruch",
+      "row-level source binding for Ascension of Isaiah and 2 Baruch",
+      "broader-canon textual trust",
+      "broader-canon app-render eligibility",
+      "broader-canon completion"
+    ]
+  },
+  "allowedClaims": [
+    "broader_canon_rh_charles_cluster_status_consolidated",
+    "broader_canon_rh_charles_cluster_collated_2_blocked_2",
+    "broader_canon_rh_charles_current_pass_closed_without_trust_promotion"
+  ],
+  "blockedClaims": [
+    "broader_canon_rh_charles_cluster_complete",
+    "broader_canon_rh_charles_cluster_textually_trusted",
+    "broader_canon_rh_charles_cluster_app_render_eligible",
+    "broader_canon_ascensionofisaiah_source_binding_collated",
+    "broader_canon_2baruch_source_binding_collated",
+    "broader_canon_complete",
+    "broader_canon_textually_trusted"
+  ],
+  "nextAllowedWork": [
+    "move to the next broader-canon source-visible cluster",
+    "or acquire complete public-domain source witnesses for Ascension of Isaiah and 2 Baruch",
+    "or consolidate broader-canon status across all source-visible classifications"
+  ]
+}

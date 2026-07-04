@@ -82,7 +82,9 @@
     "broader_canon_rh_charles_cluster_complete",
     "broader_canon_2baruch_source_binding_collated",
     "broader_canon_2baruch_textually_trusted",
-    "broader_canon_2baruch_app_render_eligible"
+    "broader_canon_2baruch_app_render_eligible",
+    "broader_canon_rh_charles_cluster_textually_trusted",
+    "broader_canon_rh_charles_cluster_app_render_eligible"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -151,7 +153,10 @@
     "broader_canon_ascensionofisaiah_source_basis_blocker_recorded",
     "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready",
     "broader_canon_2baruch_source_basis_blocker_recorded",
-    "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready"
+    "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready",
+    "broader_canon_rh_charles_cluster_status_consolidated",
+    "broader_canon_rh_charles_cluster_collated_2_blocked_2",
+    "broader_canon_rh_charles_current_pass_closed_without_trust_promotion"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -251,5 +256,16 @@
     "bibleVerseTextMutation": false,
     "candidateJsonMutation": false,
     "blockerType": "online_witness_incomplete_tail"
+  },
+  "rhCharlesClusterStatusConsolidation": {
+    "recordPath": "data/bible/registry/broader-canon-rh-charles-cluster-status-consolidation-2026-07-04.json",
+    "status": "closed_status_consolidated_collated_2_blocked_2_no_trust_promotion",
+    "candidateCount": 4,
+    "sourceBindingCollatedCount": 2,
+    "sourceBasisBlockedCount": 2,
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "broaderCanonTextTrustPromotion": false,
+    "broaderCanonAppRenderPromotion": false
   }
 }
