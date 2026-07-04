@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.43",
-  "last_updated": "2026-07-03T21:00:00Z",
+  "last_updated": "2026-07-04T00:00:00-07:00",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -676,7 +676,43 @@
         "syntheticRows": 0,
         "globalTrustPromotion": "not_performed"
       }
-    }
+    },
+    "latest_ethiopian_senkessar_blocker": {
+      "id": "ethiopian_senkessar_deep_assembly_provenance_audit_blocker",
+      "status": "major_production_blocker",
+      "recordPath": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
+      "blocks": [
+        "public_shipment_of_ethiopian_saatat_lane_with_daily_senkessar_readings_enabled"
+      ],
+      "doesNotBlock": [
+        "current_catholic_office_completion_work"
+      ],
+      "resolutionSequence": "defer_active_remediation_until_after_catholic_offices_completed",
+      "currentPriorityPreserved": "current_catholic_office_completion_work"
+    },
+    "production_blockers": [
+      {
+        "id": "ethiopian_senkessar_deep_assembly_provenance_audit_blocker",
+        "status": "major_production_blocker",
+        "recordPath": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
+        "blocks": [
+          "public_shipment_of_ethiopian_saatat_lane_with_daily_senkessar_readings_enabled"
+        ],
+        "doesNotBlock": [
+          "current_catholic_office_completion_work"
+        ],
+        "queuedAfter": "catholic_offices_completed",
+        "summary": "Ethiopian Senkessar Deep Assembly corpus is not source-trusted pending provenance audit against source-controlled daily roster."
+      }
+    ],
+    "deferred_post_catholic_office_work": [
+      {
+        "id": "ethiopian_senkessar_deep_assembly_provenance_audit_blocker",
+        "status": "queued_major_production_blocker",
+        "recordPath": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
+        "reason": "Does not block current Catholic office completion work; active remediation begins after Catholic offices are completed."
+      }
+    ]
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",

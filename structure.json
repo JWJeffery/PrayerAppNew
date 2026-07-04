@@ -1501,7 +1501,46 @@
         "decision": "The Ethiopian Senkessar Deep Assembly corpus is governed as Ethiopian Sa'atat runtime office-embedded synaxarial material, not as an Anglican Synaxarium corpus or detachable saint-biography library. It completed the eth-saints-commemoration runtime promise and requires pre-shipment non-destructive inventory/classification before rewrite.",
         "documentation": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_GOVERNANCE.md",
         "implementation_rule": "Do not migrate Deep Assembly entries into An Anglican Synaxarium automatically. If an Ethiopian saint is later included in the Anglican Synaxarium, write the Anglican entry under Anglican criteria and treat the Ethiopian Senkessar text only as a source witness or comparative hagiographical model.",
-        "required_manifest": "Create or update an Ethiopian Senkessar review manifest recording month, day, path, title/saint names, index linkage, runtime status, word count, suspected prose origin, Deep Assembly status, review classification, and source/length/theological notes before any broad rewrite pass."
+        "required_manifest": "Create or update an Ethiopian Senkessar review manifest recording month, day, path, title/saint names, index linkage, runtime status, word count, suspected prose origin, Deep Assembly status, review classification, and source/length/theological notes before any broad rewrite pass.",
+        "production_blocker": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
+        "trust_status": "not_source_trusted_pending_provenance_audit",
+        "shipment_status": "public_shipment_blocked_with_daily_senkessar_readings_enabled"
+      }
+    ],
+    "production_blockers_2026_07_04": [
+      {
+        "id": "ethiopian_senkessar_deep_assembly_provenance_audit_blocker",
+        "status": "major_production_blocker",
+        "date": "2026-07-04",
+        "applies_to": [
+          "Ethiopian Sa'atat",
+          "Ethiopian Senkessar",
+          "Synaxarium runtime readings"
+        ],
+        "blocks": [
+          "public_shipment_of_ethiopian_saatat_lane_with_daily_senkessar_readings_enabled"
+        ],
+        "does_not_block": [
+          "current_catholic_office_completion_work"
+        ],
+        "resolution_sequence": "defer_active_remediation_until_after_catholic_offices_completed",
+        "decision": "The Ethiopian Senkessar Deep Assembly corpus is not source-trusted pending provenance audit. The older multiple-witness/four-witness production heuristic is deprecated as source authority. Public shipment of daily Senkessar readings is blocked until the corpus is audited against a source-controlled daily roster and rebuilt or quarantined where necessary.",
+        "documentation": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
+        "cross_references": [
+          "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_GOVERNANCE.md",
+          "documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md"
+        ],
+        "primary_control_witness": "Ethiopian Synaxarium / Book of the Saints of the Ethiopian Orthodox Tewahedo Church, translated by Sir E. A. Wallis Budge",
+        "required_resolution": [
+          "complete_thirteen_month_senkessar_manifest",
+          "identify_source_controlled_roster_for_every_day",
+          "classify_every_named_figure",
+          "classify_every_paragraph",
+          "remove_or_quarantine_untraced_or_displaced_figures_and_unsupported_details",
+          "rebuild_daily_office_readings_from_attested_source_roster",
+          "do_not_rewrite_full_corpus_before_provenance_audit"
+        ],
+        "runtime_posture_until_resolved": "internal_functionality_allowed_public_shipment_not_source_trusted"
       }
     ]
   },

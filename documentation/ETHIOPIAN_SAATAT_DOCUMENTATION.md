@@ -333,6 +333,8 @@ if (item === 'eth-saints-commemoration') {
 
 ## The Senkessar (Ethiopian Synaxarium)
 
+> **Major production blocker:** The daily Senkessar runtime readings are not source-trusted for public shipment pending the [Ethiopian Senkessar Deep Assembly Provenance Audit](ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md). The lane may remain internally functional, but trustworthy public shipment with daily Senkessar readings enabled is blocked until the source-controlled roster/provenance audit is completed after Catholic office completion.
+
 > **Governance memo:** The Deep Assembly corpus is governed by [Ethiopian Senkessar Deep Assembly Corpus](ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_GOVERNANCE.md). It is an Ethiopian Sa'atat runtime office corpus, not an Anglican Synaxarium corpus. Before shipment, the corpus requires a non-destructive inventory/classification manifest before any broad rewrite pass.
 
 ### Overview

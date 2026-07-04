@@ -1,5 +1,7 @@
 # Governance Memo: Ethiopian Senkessar Deep Assembly Corpus
 
+> **Production blocker cross-reference:** Public shipment of the Ethiopian Sa'atat lane with daily Senkessar readings enabled is blocked pending the [Ethiopian Senkessar Deep Assembly Provenance Audit](ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md). This blocker does not interrupt current Catholic office completion work; remediation is queued after Catholic offices are completed.
+
 **Authorized by:** Josh  
 **Status:** Accepted governance clarification  
 **Scope:** Ethiopian Sa'atat; Ethiopian Senkessar / Synaxarium; runtime saint-commemoration slot; legacy AI-generated hagiographical prose  
