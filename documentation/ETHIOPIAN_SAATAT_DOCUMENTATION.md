@@ -333,6 +333,8 @@ if (item === 'eth-saints-commemoration') {
 
 ## The Senkessar (Ethiopian Synaxarium)
 
+> **Governance memo:** The Deep Assembly corpus is governed by [Ethiopian Senkessar Deep Assembly Corpus](ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_GOVERNANCE.md). It is an Ethiopian Sa'atat runtime office corpus, not an Anglican Synaxarium corpus. Before shipment, the corpus requires a non-destructive inventory/classification manifest before any broad rewrite pass.
+
 ### Overview
 
 The Senkessar is the Ethiopian hagiographical lectionary — a narrative reading for each day of the 13-month Ethiopian calendar. In The Universal Office it renders as the Commemoration of the Day for all canonical hours.
