@@ -1,0 +1,117 @@
+{
+  "schema": "broader-canon-source-visible-tranche-consolidation-v1",
+  "id": "broader_canon_source_visible_tranche_consolidation_2026_07_04",
+  "status": "closed_source_visible_tranche_adjudicated_3_source_bound_or_repaired_4_blocked_no_global_trust_promotion",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidateCount": 7,
+    "sourceBoundOrRepairedCount": 3,
+    "blockedCount": 4,
+    "globalBroaderCanonTextTrustPromotion": false,
+    "globalBroaderCanonAppRenderPromotion": false,
+    "bibleVerseTextMutationInThisConsolidation": false
+  },
+  "dispositionSummary": {
+    "sourceBoundOrRepaired": [
+      "data/bible/OT/1enoch.json",
+      "data/bible/ET/bookofjubileesET.json",
+      "data/bible/NT/epistleofthelaodiceans.json"
+    ],
+    "blocked": [
+      "data/bible/ET/ascensionofisaiahET.json",
+      "data/bible/NT/2baruchCE.json",
+      "data/bible/ODES/odesofsolomonSY.json",
+      "data/bible/AR/3corinthiansAR.json"
+    ]
+  },
+  "items": [
+    {
+      "path": "data/bible/OT/1enoch.json",
+      "title": "1 Enoch",
+      "statusClass": "source_bound",
+      "currentDisposition": "source_binding_collated_no_bible_text_mutation",
+      "sourceVisibility": "source_witness_collated",
+      "governancePointerKey": "sourceBindingCollation1Enoch",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-binding-collation-1enoch-2026-07-04.json",
+      "governanceStatus": "passed_fixed_entity_source_binding_collation_no_bible_verse_text_mutation"
+    },
+    {
+      "path": "data/bible/ET/bookofjubileesET.json",
+      "title": "The Book of Jubilees",
+      "statusClass": "source_bound",
+      "currentDisposition": "source_page_binding_collated_no_candidate_mutation",
+      "sourceVisibility": "source_witness_collated",
+      "governancePointerKey": "sourceBindingCollationJubilees",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-binding-collation-jubilees-2026-07-04.json",
+      "governanceStatus": "passed_source_page_binding_collation_no_candidate_mutation"
+    },
+    {
+      "path": "data/bible/ET/ascensionofisaiahET.json",
+      "title": "The Ascension of Isaiah",
+      "statusClass": "blocked",
+      "currentDisposition": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation",
+      "sourceVisibility": "source_visible_blocked",
+      "governancePointerKey": "sourceBasisBlockerAscensionOfIsaiah",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-basis-blocker-ascensionofisaiah-2026-07-04.json",
+      "governanceStatus": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation"
+    },
+    {
+      "path": "data/bible/NT/2baruchCE.json",
+      "title": "2 Baruch",
+      "statusClass": "blocked",
+      "currentDisposition": "blocked_online_witness_incomplete_tail_no_candidate_mutation",
+      "sourceVisibility": "source_visible_blocked",
+      "governancePointerKey": "sourceBasisBlocker2Baruch",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-basis-blocker-2baruch-2026-07-04.json",
+      "governanceStatus": "blocked_online_witness_incomplete_tail_no_candidate_mutation"
+    },
+    {
+      "path": "data/bible/ODES/odesofsolomonSY.json",
+      "title": "The Odes of Solomon",
+      "statusClass": "blocked",
+      "currentDisposition": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation",
+      "sourceVisibility": "source_visible_blocked",
+      "governancePointerKey": "sourceScopeBlockerOdesOfSolomon",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-scope-blocker-odesofsolomon-2026-07-04.json",
+      "governanceStatus": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation"
+    },
+    {
+      "path": "data/bible/NT/epistleofthelaodiceans.json",
+      "title": "Epistle to the Laodiceans",
+      "statusClass": "source_bound_with_candidate_repair",
+      "currentDisposition": "source_visible_exact_source_repair_recorded",
+      "sourceVisibility": "source_witness_collated_candidate_repaired",
+      "governancePointerKey": "sourceBindingCollationLaodiceans",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-binding-collation-laodiceans-2026-07-04.json",
+      "governanceStatus": "passed_exact_visible_gutenberg_source_repair_candidate_mutated"
+    },
+    {
+      "path": "data/bible/AR/3corinthiansAR.json",
+      "title": "3 Corinthians",
+      "statusClass": "blocked",
+      "currentDisposition": "blocked_modern_source_identity_no_bible_text_mutation",
+      "sourceVisibility": "source_visible_blocked",
+      "governancePointerKey": "sourceIdentityBlocker3Corinthians",
+      "governanceRecordPath": "data/bible/registry/broader-canon-source-identity-blocker-3corinthians-2026-07-04.json",
+      "governanceStatus": "blocked_modern_hovhanessian_source_identity_no_bible_text_mutation"
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_source_visible_tranche_closed_7",
+    "broader_canon_source_visible_tranche_source_bound_or_repaired_3",
+    "broader_canon_source_visible_tranche_blocked_4",
+    "broader_canon_source_visible_tranche_no_global_text_trust_promotion",
+    "broader_canon_source_visible_tranche_no_global_app_render_promotion"
+  ],
+  "blockedClaims": [
+    "broader_canon_source_visible_tranche_all_textually_trusted",
+    "broader_canon_source_visible_tranche_all_app_render_eligible",
+    "broader_canon_source_visible_blockers_resolved",
+    "broader_canon_complete"
+  ],
+  "nextAllowedWork": [
+    "Proceed to remaining broader-canon source acquisition outside the initial seven source-visible candidates.",
+    "Do not promote global broader-canon text trust until remaining candidates are sourced, repaired, or blocked.",
+    "Use separate version lanes for modern copyrighted or permission-gated witnesses."
+  ]
+}

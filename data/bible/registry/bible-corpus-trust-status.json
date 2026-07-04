@@ -6859,7 +6859,8 @@
         "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04",
         "broader_canon_source_binding_collation_laodiceans_2026_07_04",
         "broader_canon_source_binding_collation_laodiceans_2026_07_04_exact_visible_source_repair",
-        "broader_canon_source_identity_blocker_3corinthians_2026_07_04"
+        "broader_canon_source_identity_blocker_3corinthians_2026_07_04",
+        "broader_canon_source_visible_tranche_consolidation_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6908,7 +6909,12 @@
         "broader_canon_3corinthians_source_identity_blocker_recorded",
         "broader_canon_3corinthians_hovhanessian_identified_as_modern_2000_peter_lang_source_lead",
         "broader_canon_3corinthians_no_bible_verse_text_mutation",
-        "broader_canon_3corinthians_candidate_metadata_marked_unverified"
+        "broader_canon_3corinthians_candidate_metadata_marked_unverified",
+        "broader_canon_source_visible_tranche_closed_7",
+        "broader_canon_source_visible_tranche_source_bound_or_repaired_3",
+        "broader_canon_source_visible_tranche_blocked_4",
+        "broader_canon_source_visible_tranche_no_global_text_trust_promotion",
+        "broader_canon_source_visible_tranche_no_global_app_render_promotion"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6955,7 +6961,10 @@
         "broader_canon_3corinthians_app_render_eligible",
         "broader_canon_3corinthians_repair_to_interfaith_source",
         "broader_canon_3corinthians_interfaith_source_public_domain_verified",
-        "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain"
+        "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain",
+        "broader_canon_source_visible_tranche_all_textually_trusted",
+        "broader_canon_source_visible_tranche_all_app_render_eligible",
+        "broader_canon_source_visible_blockers_resolved"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -7049,6 +7058,11 @@
         "id": "broader_canon_source_identity_blocker_3corinthians_2026_07_04",
         "status": "blocked_modern_hovhanessian_source_identity_no_bible_text_mutation",
         "recordPath": "data/bible/registry/broader-canon-source-identity-blocker-3corinthians-2026-07-04.json"
+      },
+      "latest_broader_canon_source_visible_tranche_consolidation": {
+        "id": "broader_canon_source_visible_tranche_consolidation_2026_07_04",
+        "status": "closed_source_visible_tranche_adjudicated_3_source_bound_or_repaired_4_blocked_no_global_trust_promotion",
+        "recordPath": "data/bible/registry/broader-canon-source-visible-tranche-consolidation-2026-07-04.json"
       }
     },
     "vulgate": {

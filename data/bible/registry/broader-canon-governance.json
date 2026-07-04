@@ -97,7 +97,10 @@
     "broader_canon_3corinthians_app_render_eligible",
     "broader_canon_3corinthians_repair_to_interfaith_source",
     "broader_canon_3corinthians_interfaith_source_public_domain_verified",
-    "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain"
+    "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain",
+    "broader_canon_source_visible_tranche_all_textually_trusted",
+    "broader_canon_source_visible_tranche_all_app_render_eligible",
+    "broader_canon_source_visible_blockers_resolved"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -182,7 +185,12 @@
     "broader_canon_3corinthians_source_identity_blocker_recorded",
     "broader_canon_3corinthians_hovhanessian_identified_as_modern_2000_peter_lang_source_lead",
     "broader_canon_3corinthians_no_bible_verse_text_mutation",
-    "broader_canon_3corinthians_candidate_metadata_marked_unverified"
+    "broader_canon_3corinthians_candidate_metadata_marked_unverified",
+    "broader_canon_source_visible_tranche_closed_7",
+    "broader_canon_source_visible_tranche_source_bound_or_repaired_3",
+    "broader_canon_source_visible_tranche_blocked_4",
+    "broader_canon_source_visible_tranche_no_global_text_trust_promotion",
+    "broader_canon_source_visible_tranche_no_global_app_render_promotion"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -199,8 +207,10 @@
   },
   "sourceVisibleClassification": {
     "recordPath": "data/bible/registry/broader-canon-source-visible-classification-2026-07-04.json",
-    "status": "classified_source_visible_pending_collation",
-    "candidateCount": 7
+    "status": "closed_source_visible_tranche_adjudicated",
+    "candidateCount": 7,
+    "sourceBoundOrRepairedCount": 3,
+    "blockedCount": 4
   },
   "rhCharlesSourceWitnesses": {
     "recordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
@@ -346,5 +356,15 @@
     "metadataMutation": true,
     "blockerType": "modern_hovhanessian_source_identity_not_public_domain_verified",
     "interfaithRepairRejected": true
+  },
+  "sourceVisibleTrancheConsolidation": {
+    "recordPath": "data/bible/registry/broader-canon-source-visible-tranche-consolidation-2026-07-04.json",
+    "status": "closed_source_visible_tranche_adjudicated_3_source_bound_or_repaired_4_blocked_no_global_trust_promotion",
+    "candidateCount": 7,
+    "sourceBoundOrRepairedCount": 3,
+    "blockedCount": 4,
+    "bibleVerseTextMutationInThisConsolidation": false,
+    "globalBroaderCanonTextTrustPromotion": false,
+    "globalBroaderCanonAppRenderPromotion": false
   }
 }

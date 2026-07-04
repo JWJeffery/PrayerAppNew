@@ -1,64 +1,65 @@
 {
   "schema": "broader-canon-source-visible-classification-v1",
   "id": "broader_canon_source_visible_classification_2026_07_04",
-  "status": "classified_source_visible_pending_collation",
+  "status": "closed_source_visible_tranche_adjudicated",
   "recordedAt": "2026-07-04T00:00:00-07:00",
   "scope": {
     "candidateCount": 7,
     "source": "candidate metadata inspection",
-    "bibleTextMutation": false
+    "bibleTextMutation": true,
+    "bibleTextMutationNote": "Only Laodiceans was intentionally repaired to match the selected visible Gutenberg witness; all other source-visible tranche actions were registry/metadata/blocker actions."
   },
   "policy": {
-    "classificationMeaning": "Metadata identifies a plausible public-domain translation or source basis.",
-    "trustBoundary": "This is not textual trust certification. Candidate text remains quarantined from trusted rendering until source snapshot and collation are recorded.",
-    "appRendering": "not_app_render_eligible_yet"
+    "classificationMeaning": "The seven source-visible broader-canon candidates have been adjudicated into source-bound/repaired or blocked dispositions.",
+    "trustBoundary": "This tranche closure is not global broader-canon textual trust. Candidate rendering remains governed by each item disposition and broader-canon public-rendering policy.",
+    "appRendering": "no_global_app_render_promotion"
   },
   "items": [
     {
       "path": "data/bible/OT/1enoch.json",
       "title": "1 Enoch",
       "metadataSourceStatement": "Ethiopic (R.H. Charles translation), Public Domain",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "sourceVisibility": "source_witness_collated",
       "traditionFamily": "ethiopic_broader_canon",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "source_binding_collated_no_bible_text_mutation"
     },
     {
       "path": "data/bible/ET/bookofjubileesET.json",
       "title": "The Book of Jubilees",
       "metadataSourceStatement": "R.H. Charles translation, Public Domain",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "sourceVisibility": "source_witness_collated",
       "traditionFamily": "ethiopic_broader_canon",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "source_page_binding_collated_no_candidate_mutation"
     },
     {
       "path": "data/bible/ET/ascensionofisaiahET.json",
       "title": "The Ascension of Isaiah",
       "metadataSourceStatement": "R.H. Charles Ethiopic translation, Public Domain",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "sourceVisibility": "source_visible_blocked",
       "traditionFamily": "ethiopic_broader_canon",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation"
     },
     {
       "path": "data/bible/NT/2baruchCE.json",
       "title": "2 Baruch",
       "metadataSourceStatement": "R.H. Charles translation, Public Domain",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "sourceVisibility": "source_visible_blocked",
       "traditionFamily": "syriac_pseudepigrapha_broader_canon_candidate",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "blocked_online_witness_incomplete_tail_no_candidate_mutation"
     },
     {
       "path": "data/bible/ODES/odesofsolomonSY.json",
       "title": "The Odes of Solomon",
       "metadataSourceStatement": "James Rendel Harris Translation, Public Domain",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "sourceVisibility": "source_visible_blocked",
       "traditionFamily": "syriac_odes_liturgical_broader_canon_candidate",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation"
     },
     {
       "path": "data/bible/NT/epistleofthelaodiceans.json",
       "title": "Epistle to the Laodiceans",
       "metadataSourceStatement": "The Lost Books of the Bible / Project Gutenberg English Witness, Public Domain",
-      "sourceVisibility": "metadata_specific_public_domain_witness_identified",
+      "sourceVisibility": "source_witness_collated_candidate_repaired",
       "traditionFamily": "western_apocryphal_epistle_candidate",
       "currentDisposition": "source_visible_exact_source_repair_recorded"
     },
@@ -66,18 +67,26 @@
       "path": "data/bible/AR/3corinthiansAR.json",
       "title": "3 Corinthians",
       "metadataSourceStatement": "Hovhanessian source lead identifies a modern 2000 Peter Lang work; public-domain translation claim not verified",
-      "sourceVisibility": "metadata_specific_source_identity_blocked",
+      "sourceVisibility": "source_visible_blocked",
       "traditionFamily": "armenian_broader_canon_candidate",
       "currentDisposition": "blocked_modern_source_identity_no_bible_text_mutation"
     }
   ],
   "allowedClaims": [
     "broader_canon_source_visible_candidates_classified_7",
-    "broader_canon_source_visible_candidates_pending_collation"
+    "broader_canon_source_visible_candidates_pending_collation",
+    "broader_canon_source_visible_tranche_closed_7",
+    "broader_canon_source_visible_tranche_source_bound_or_repaired_3",
+    "broader_canon_source_visible_tranche_blocked_4",
+    "broader_canon_source_visible_tranche_no_global_text_trust_promotion",
+    "broader_canon_source_visible_tranche_no_global_app_render_promotion"
   ],
   "blockedClaims": [
     "broader_canon_source_visible_candidates_textually_trusted",
     "broader_canon_source_visible_candidates_app_render_eligible",
-    "broader_canon_complete"
+    "broader_canon_complete",
+    "broader_canon_source_visible_tranche_all_textually_trusted",
+    "broader_canon_source_visible_tranche_all_app_render_eligible",
+    "broader_canon_source_visible_blockers_resolved"
   ]
 }
