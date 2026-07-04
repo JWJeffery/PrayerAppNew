@@ -1,0 +1,141 @@
+{
+  "schema": "laodiceans-gutenberg-lost-books-source-v1",
+  "id": "laodiceans_gutenberg_lost_books_source_2026_07_04",
+  "sourceUrl": "https://www.gutenberg.org/cache/epub/6516/pg6516.txt",
+  "sourceSha256": "5cc3e2a42f06d05ad83bca97fd61ff3f95f2fc136d7715eea5c7a48d772eb229",
+  "sourceTitle": "The Lost Books of the Bible and The Forgotten Books of Eden",
+  "sourceSection": "The Epistle of St. Paul the Apostle to the Laodiceans",
+  "sourceSystem": "Project Gutenberg",
+  "publicDomainBasis": "Project Gutenberg public-domain ebook",
+  "extractionMethod": "Extracted visible Laodiceans source rows from the Project Gutenberg text. The witness has no visible verse 7 marker; no synthetic verse 7 was created.",
+  "visibleVerseNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "normalizedRows": [
+    {
+      "chapter": 1,
+      "verse": 1,
+      "ref": "1:1",
+      "text": "PAUL an Apostle, not of men, neither by man, but by Jesus Christ, to the brethren which are at Laodicea."
+    },
+    {
+      "chapter": 1,
+      "verse": 2,
+      "ref": "1:2",
+      "text": "Grace be to you, and peace from God the Father and our Lord Jesus Christ."
+    },
+    {
+      "chapter": 1,
+      "verse": 3,
+      "ref": "1:3",
+      "text": "I thank Christ in every prayer of mine, that ye may continue and persevere in good works, looking for that which is promised in the day of judgment."
+    },
+    {
+      "chapter": 1,
+      "verse": 4,
+      "ref": "1:4",
+      "text": "Let not the vain speeches of any trouble you, who pervert the truth, that they may draw you aside from the truth of the Gospel which I have preached."
+    },
+    {
+      "chapter": 1,
+      "verse": 5,
+      "ref": "1:5",
+      "text": "And now may God grant, that my converts may attain to a perfect knowledge of the truth of the Gospel, be beneficent, and doing good works which accompany salvation."
+    },
+    {
+      "chapter": 1,
+      "verse": 6,
+      "ref": "1:6",
+      "text": "And now my bonds, which I suffer in Christ, are manifest, in which I rejoice and am glad. For I know that this shall turn to my salvation for ever, which shall be through your prayer, and the supply of the Holy Spirit."
+    },
+    {
+      "chapter": 1,
+      "verse": 8,
+      "ref": "1:8",
+      "text": "Whether I live or die, to live shall be a life to Christ, to die will be joy."
+    },
+    {
+      "chapter": 1,
+      "verse": 9,
+      "ref": "1:9",
+      "text": "And our Lord will grant us his mercy, that ye may have the same love, and be like-minded."
+    },
+    {
+      "chapter": 1,
+      "verse": 10,
+      "ref": "1:10",
+      "text": "Wherefore, my beloved, as ye have heard of the coming of the Lord, so think and act in fear, and it shall be to you life eternal;"
+    },
+    {
+      "chapter": 1,
+      "verse": 11,
+      "ref": "1:11",
+      "text": "For it is God, who worketh in you:"
+    },
+    {
+      "chapter": 1,
+      "verse": 12,
+      "ref": "1:12",
+      "text": "And do all things without sin."
+    },
+    {
+      "chapter": 1,
+      "verse": 13,
+      "ref": "1:13",
+      "text": "And what is best, my beloved rejoice in the Lord Jesus Christ and avoid all filthy lucre."
+    },
+    {
+      "chapter": 1,
+      "verse": 14,
+      "ref": "1:14",
+      "text": "Let all your requests be made known to God, and be steady in the doctrine of Christ."
+    },
+    {
+      "chapter": 1,
+      "verse": 15,
+      "ref": "1:15",
+      "text": "And whatsoever things are sound and true, and of good report, and chaste, and just, and lovely, these things do."
+    },
+    {
+      "chapter": 1,
+      "verse": 16,
+      "ref": "1:16",
+      "text": "Those things which ye have heard, and received, think on these things, and peace shall be with you."
+    },
+    {
+      "chapter": 1,
+      "verse": 17,
+      "ref": "1:17",
+      "text": "All the saints salute you."
+    },
+    {
+      "chapter": 1,
+      "verse": 18,
+      "ref": "1:18",
+      "text": "The grace of our Lord Jesus Christ be with your spirit. Amen."
+    },
+    {
+      "chapter": 1,
+      "verse": 19,
+      "ref": "1:19",
+      "text": "Cause this Epistle to be read to the Colossians, and the Epistle of the Colossians to be read among you."
+    }
+  ]
+}

@@ -57,10 +57,10 @@
     {
       "path": "data/bible/NT/epistleofthelaodiceans.json",
       "title": "Epistle to the Laodiceans",
-      "metadataSourceStatement": "Westcott-Hort Latin Basis, Public Domain",
-      "sourceVisibility": "metadata_specific_source_basis_identified",
+      "metadataSourceStatement": "The Lost Books of the Bible / Project Gutenberg English Witness, Public Domain",
+      "sourceVisibility": "metadata_specific_public_domain_witness_identified",
       "traditionFamily": "western_apocryphal_epistle_candidate",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "source_visible_exact_source_repair_recorded"
     },
     {
       "path": "data/bible/AR/3corinthiansAR.json",
