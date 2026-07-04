@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Anglican Synaxarium — Kalendar Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">
+    <span class="masthead-eyebrow">Universal Office</span>
+    <h1>An Anglican Synaxarium</h1>
+  </div>
+  <div class="masthead-progress" id="progressWrap">
+    <div class="progress-label" id="progressLabel">0 of 0 days decided</div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+  <div class="masthead-actions">
+    <span class="file-status" id="fileStatus"></span>
+    <button class="btn btn-secondary" id="btnConnectFile">Connect decisions file</button>
+    <button class="btn btn-ghost" id="btnImport" title="Load a previously exported decisions file">Import decisions</button>
+    <input type="file" id="fileImport" accept=".json" hidden>
+    <button class="btn btn-primary" id="btnExport" title="Download all recorded decisions">Export decisions</button>
+  </div>
+</header>
+
+<div class="app">
+  <nav class="ledger" id="ledger" aria-label="Month and day navigation">
+    <div class="month-tabs" id="monthTabs"></div>
+    <ol class="day-list" id="dayList"></ol>
+  </nav>
+
+  <main class="folio" id="folio">
+    <!-- filled by app.js -->
+  </main>
+</div>
+
+<div class="seal-overlay" id="sealOverlay" aria-hidden="true">
+  <svg viewBox="0 0 120 120" class="seal-svg">
+    <circle cx="60" cy="60" r="52" class="seal-ring"/>
+    <text x="60" y="55" text-anchor="middle" class="seal-text">DECIDED</text>
+    <text x="60" y="74" text-anchor="middle" class="seal-text seal-text-small">GOVERNED BY JOSH</text>
+  </svg>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
