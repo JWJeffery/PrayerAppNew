@@ -77,5 +77,14 @@
     "Acquire a usable public-domain 3 Corinthians witness and compare it before any text repair.",
     "If Hovhanessian is required, treat it as a modern source/permission lane, not as public domain.",
     "If an Armenian canonical/study witness is needed, add it as a separately governed source/version lane."
-  ]
+  ],
+  "latestMrJamesSourceSelection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+    "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+    "status": "source_selection_target_recorded_pending_exact_row_mapping_and_candidate_repair",
+    "candidateAppearsRelatedToSourceLead": true,
+    "candidateIsSourceExact": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false
+  }
 }

@@ -105,5 +105,14 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansMrJamesSourceSelection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+    "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+    "status": "source_selection_target_recorded_pending_exact_row_mapping_and_candidate_repair",
+    "sourceVisibleImpact": "3 Corinthians now has a governed M. R. James English collation target, but the current candidate is related rather than exact and remains untrusted.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

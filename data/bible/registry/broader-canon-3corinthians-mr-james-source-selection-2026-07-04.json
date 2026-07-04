@@ -1,0 +1,207 @@
+{
+  "schema": "broader-canon-3corinthians-mr-james-source-selection-v1",
+  "id": "broader_canon_3corinthians_mr_james_source_selection_2026_07_04",
+  "status": "source_selection_target_recorded_pending_exact_row_mapping_and_candidate_repair",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+  "sourceSelection": {
+    "selectedEnglishCollationTarget": "M. R. James, The Apocryphal New Testament (1924), Third Epistle to the Corinthians",
+    "sourceUrl": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Acts/The_Acts_of_Paul/Third_Epistle_to_the_Corinthians",
+    "sourceRole": "English repair/collation target for 3 Corinthians candidate",
+    "canonicalWitnessContext": "Armenian Zohrab NT appendix pages 735-736 remain the Armenian canonical/historical witness located in the separate Zohrab record."
+  },
+  "diagnosticSummary": {
+    "candidateRowsDetected": 19,
+    "exactNormalizedSubstringRows": 0,
+    "highOverlapRows": 12,
+    "mediumOverlapRows": 6,
+    "lowOverlapRows": 1,
+    "interpretation": "candidate_appears_related_to_mr_james_but_not_exact"
+  },
+  "rowOverlapSample": [
+    {
+      "index": 0,
+      "path": "$.chapters[0].verses[0]",
+      "contentWordCount": 8,
+      "overlapCount": 5,
+      "overlapRatio": 0.625,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "Stephen and the elders who are with him, Daphne, Eubulus, Theophilus, and Xenon, to Paul the brother in the Lord, greeting.",
+      "overlapSample": [
+        "brother",
+        "elders",
+        "eubulus",
+        "greeting",
+        "theophilus"
+      ]
+    },
+    {
+      "index": 1,
+      "path": "$.chapters[0].verses[1]",
+      "contentWordCount": 9,
+      "overlapCount": 8,
+      "overlapRatio": 0.8889,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "Two men have come to Corinth, Simon and Cleobius, who are perverting the faith of many with wicked words.",
+      "overlapSample": [
+        "cleobius",
+        "come",
+        "corinth",
+        "faith",
+        "many",
+        "simon",
+        "wicked",
+        "words"
+      ]
+    },
+    {
+      "index": 2,
+      "path": "$.chapters[0].verses[2]",
+      "contentWordCount": 4,
+      "overlapCount": 3,
+      "overlapRatio": 0.75,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "For they say that we must not appeal to the prophets, and that God is not Almighty.",
+      "overlapSample": [
+        "almighty",
+        "must",
+        "prophets"
+      ]
+    },
+    {
+      "index": 3,
+      "path": "$.chapters[0].verses[3]",
+      "contentWordCount": 3,
+      "overlapCount": 3,
+      "overlapRatio": 1.0,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "They say there is no resurrection of the flesh, and that man was not made by God.",
+      "overlapSample": [
+        "flesh",
+        "made",
+        "resurrection"
+      ]
+    },
+    {
+      "index": 4,
+      "path": "$.chapters[0].verses[4]",
+      "contentWordCount": 5,
+      "overlapCount": 5,
+      "overlapRatio": 1.0,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "They also say that the Lord has not come in the flesh, nor was He born of Mary.",
+      "overlapSample": [
+        "also",
+        "born",
+        "come",
+        "flesh",
+        "mary"
+      ]
+    },
+    {
+      "index": 5,
+      "path": "$.chapters[0].verses[5]",
+      "contentWordCount": 15,
+      "overlapCount": 10,
+      "overlapRatio": 0.6667,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "Therefore, brother, make haste to come to us, that the church of the Corinthians may remain without offense, and that the folly of these men may be made manifest. Farewell in the Lord.",
+      "overlapSample": [
+        "brother",
+        "church",
+        "come",
+        "corinthians",
+        "farewell",
+        "made",
+        "remain",
+        "therefore",
+        "these",
+        "without"
+      ]
+    },
+    {
+      "index": 6,
+      "path": "$.chapters[1].verses[0]",
+      "contentWordCount": 4,
+      "overlapCount": 4,
+      "overlapRatio": 1.0,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "Paul, a prisoner of Jesus Christ, to the brethren in Corinth, greeting.",
+      "overlapSample": [
+        "brethren",
+        "corinth",
+        "greeting",
+        "prisoner"
+      ]
+    },
+    {
+      "index": 7,
+      "path": "$.chapters[1].verses[1]",
+      "contentWordCount": 7,
+      "overlapCount": 4,
+      "overlapRatio": 0.5714,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "Being in many tribulations, I do not wonder that the teachings of the evil one are spreading so quickly.",
+      "overlapSample": [
+        "evil",
+        "many",
+        "teachings",
+        "tribulations"
+      ]
+    },
+    {
+      "index": 8,
+      "path": "$.chapters[1].verses[2]",
+      "contentWordCount": 10,
+      "overlapCount": 5,
+      "overlapRatio": 0.5,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "For my Lord Jesus Christ will hasten His coming, since He can no longer endure the errors of those who pervert His words.",
+      "overlapSample": [
+        "coming",
+        "hasten",
+        "since",
+        "will",
+        "words"
+      ]
+    },
+    {
+      "index": 9,
+      "path": "$.chapters[1].verses[3]",
+      "contentWordCount": 7,
+      "overlapCount": 6,
+      "overlapRatio": 0.8571,
+      "exactNormalizedSubstring": false,
+      "candidateTextSample": "I delivered to you from the beginning what I received from the apostles who were before me, who at all times were with the Lord Jesus Christ.",
+      "overlapSample": [
+        "apostles",
+        "before",
+        "beginning",
+        "delivered",
+        "received",
+        "times"
+      ]
+    }
+  ],
+  "governanceDecision": {
+    "candidateAppearsRelatedToSourceLead": true,
+    "candidateIsSourceExact": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "requiredNextWork": [
+      "Create exact row mapping from selected M. R. James source body to active 3 Corinthians row structure.",
+      "Repair or rebuild 3 Corinthians only from the governed source target after row mapping passes QC.",
+      "Keep Hovhanessian/public-domain metadata unverified until independently resolved or replaced.",
+      "Keep Armenian Zohrab pages as source witness context rather than English translation source."
+    ]
+  },
+  "blockedClaims": [
+    "current 3 Corinthians candidate is textually trusted",
+    "current 3 Corinthians candidate exactly matches M. R. James",
+    "3 Corinthians app render eligible",
+    "Hovhanessian public-domain translation verified",
+    "3 Corinthians repaired without exact row mapping"
+  ]
+}

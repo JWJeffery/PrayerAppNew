@@ -109,7 +109,11 @@
     "broader_canon_armenian_zohrab_nt_appendix_trusted_from_ocr_alone",
     "broader_canon_armenian_zohrab_nt_appendix_candidate_repaired_from_ocr_without_transcription",
     "broader_canon_armenian_3corinthians_text_trusted_from_page_location_alone",
-    "broader_canon_prayerofapollonius_renamed_from_page_location_alone"
+    "broader_canon_prayerofapollonius_renamed_from_page_location_alone",
+    "broader_canon_3corinthians_trusted_from_overlap_diagnostic",
+    "broader_canon_3corinthians_current_candidate_exact_mr_james",
+    "broader_canon_3corinthians_repaired_without_exact_row_mapping",
+    "broader_canon_3corinthians_app_render_eligible_from_source_selection_only"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -207,7 +211,11 @@
     "broader_canon_armenian_zohrab_nt_appendix_source_snapshot_created",
     "broader_canon_armenian_zohrab_nt_appendix_pages_735_740_ocr_captured_untrusted",
     "broader_canon_armenian_zohrab_nt_appendix_manual_transcription_required",
-    "broader_canon_armenian_zohrab_nt_appendix_no_candidate_text_mutation"
+    "broader_canon_armenian_zohrab_nt_appendix_no_candidate_text_mutation",
+    "broader_canon_3corinthians_mr_james_source_selection_target_recorded",
+    "broader_canon_3corinthians_candidate_related_to_mr_james_not_exact",
+    "broader_canon_3corinthians_exact_row_mapping_required",
+    "broader_canon_3corinthians_no_candidate_text_mutation_in_source_selection"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -424,6 +432,22 @@
       "rawSourceMetadataPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-source-metadata.json",
       "rawPagesPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-pages-735-740.json",
       "status": "source_snapshot_created_pending_manual_transcription_and_collation"
+    }
+  },
+  "latest3CorinthiansMrJamesSourceSelection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+    "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+    "status": "source_selection_target_recorded_pending_exact_row_mapping_and_candidate_repair",
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "diagnosticSummary": {
+      "candidateRowsDetected": 19,
+      "exactNormalizedSubstringRows": 0,
+      "highOverlapRows": 12,
+      "mediumOverlapRows": 6,
+      "lowOverlapRows": 1,
+      "interpretation": "candidate_appears_related_to_mr_james_but_not_exact"
     }
   }
 }
