@@ -1,0 +1,31 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+04-01,UO-SIN-000701,Frederick Denison Maurice,person,rank1_controlled,rank preserved pending governance,Anglican priest; theologian framing
+04-02,UO-SIN-000702,James Lloyd Breck,person,rank1_controlled,rank preserved pending governance,Anglican priest; mission context
+04-03,UO-SIN-000703,Richard of Chichester,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+04-04,UO-SIN-000704,Isidore of Seville,person,rank1_controlled,rank preserved pending source verification,governed replacement after excluded row removed
+04-05,UO-SIN-000705,Harriet Starr Cannon,person,rank1_controlled,rank preserved pending governance,Anglican religious-life witness
+04-06,UO-SIN-000706,Daniel G. C. Wu,person,rank1_controlled,rank preserved pending source verification,Anglican priestly and missionary witness
+04-07,UO-SIN-000707,Tikhon of Moscow,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; modern/confessor review
+04-08,UO-SIN-000708,William Augustus Muhlenberg,person,rank1_controlled,rank preserved pending source-form governance,individual distinct from Muhlenberg-Ayres paired source form
+04-09,UO-SIN-000709,Dietrich Bonhoeffer,person,rank1_controlled,rank preserved pending Protestant exception governance,individual distinct from Bonhoeffer-Kolbe paired source form
+04-10,UO-SIN-000710,William Law,person,rank1_controlled,rank preserved pending governance,Anglican spiritual writer; Nonjuror context
+04-11,UO-SIN-000711,George Augustus Selwyn,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; mission/colonial review
+04-12,UO-SIN-000712,Zeno of Verona,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+04-13,UO-SIN-000713,Martin I,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; papal context
+04-14,UO-SIN-000714,"Zenaida, Philonella, and Hermione",group,rank1_controlled,rank preserved pending governance,group entry; unmercenary physicians
+04-15,UO-SIN-000715,Damien of Molokai and Marianne Cope of Hawaii,group,rank1_controlled,rank preserved pending governance,group entry; Greater Church remembers
+04-16,UO-SIN-000716,Peter Williams Cassey and Anna Besant Cassey,group,rank1_controlled,rank preserved pending governance,group entry; Anglican diaconal/lay witness
+04-17,UO-SIN-000208,Kateri Tekakwitha,person,rank1_controlled,rank preserved pending date governance,reuses July alternate SIN; current LFF April date controls
+04-18,UO-SIN-000717,Juana Ines de la Cruz,person,rank1_controlled,rank preserved pending governance,monastic and intellectual framing
+04-19,UO-SIN-000718,Alphege of Canterbury,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; martyr
+04-20,UO-SIN-000719,Maelrubha of Applecross,person,rank1_controlled,rank preserved pending source verification,Scottish-Irish monastic witness
+04-21,UO-SIN-000720,Anselm of Canterbury,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; intellectual framing
+04-22,UO-SIN-000721,Hadewijch of Brabant,person,rank1_controlled,rank preserved pending governance,mystic/poet framing
+04-23,UO-SIN-000722,Toyohiko Kagawa,person,rank1_controlled,rank preserved pending governance,Protestant/non-Anglican review; social-impact caution
+04-24,UO-SIN-000723,Mellitus of Canterbury,person,rank1_controlled,rank preserved pending source verification,Anglican bishop rule
+04-25,UO-SIN-000724,Mark the Evangelist,person,rank1_controlled,rank preserved pending governance,evangelist feast
+04-26,UO-SIN-000725,Robert Hunt,person,rank1_controlled,rank preserved pending governance,Anglican priest; colonial/Jamestown context
+04-27,UO-SIN-000726,Zita of Tuscany,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; lay works-of-charity witness
+04-28,UO-SIN-000727,Peter Chanel,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; mission/colonial review
+04-29,UO-SIN-000728,Catherine of Siena,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; visionary material handling
+04-30,UO-SIN-000729,Marie de l'Incarnation,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; New France context
