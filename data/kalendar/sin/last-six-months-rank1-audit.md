@@ -72,4 +72,6 @@ The last-six-month daily controls were preserved as rank-1 pending governance af
 
 ## Boundary
 
-This audit controls the rank-1 daily entries for January through June. January also contains alternate candidate rows in the candidate matrix; those alternates require a separate alternate-row SIN pass if they are to be controlled with the same granularity as the July-through-December alternate maps.
+This audit controls the rank-1 daily entries for January through June.
+
+The earlier January alternate-row limitation has been corrected in `last-six-months-full-sin-audit.md` and `alternate/january-alternate-sins.csv`. As of that follow-up, January through June are controlled for all candidate rows presently in the monthly matrices: January has full rank-1 and alternate-row SIN coverage, and February through June currently contain rank-1 control rows only.
