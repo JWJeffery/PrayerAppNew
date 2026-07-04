@@ -19,7 +19,7 @@ The first completed full candidate-row SIN tranche covers all candidate rows cur
 - `commemoration`
 - `event`
 
-The second completed rank-1 tranche covers the daily controlling entries for January, February, March, April, May, and June.
+The second completed tranche covers the January-through-June side as currently structured: all January candidate rows, plus the rank-1 daily control rows for February, March, April, May, and June, whose matrices currently exist as rank-1 control passes.
 
 ## Governance rule
 
@@ -47,11 +47,13 @@ Rank-1 maps:
 Audit notes:
 
 - `last-six-months-rank1-audit.md`
+- `last-six-months-full-sin-audit.md`
 - `first-six-months-rank1-audit.md`
 - `first-six-months-full-sin-audit.md`
 
 Alternate-row maps:
 
+- `alternate/january-alternate-sins.csv`
 - `alternate/july-alternate-sins.csv`
 - `alternate/august-alternate-sins.csv`
 - `alternate/september-alternate-sins-part1.csv`
@@ -66,6 +68,6 @@ Alternate-row maps:
 
 The July-through-December full candidate-row tranche controls identities for the candidate rows currently present in the July-December candidate matrices. If a monthly candidate matrix is later revised, added to, split, or merged, the corresponding SIN map must be updated in the same commit or a clearly linked follow-up commit.
 
-The January-through-June rank-1 tranche controls the daily rank-1 entries for the remaining six months. January alternate candidate rows have not yet received a complete alternate-row SIN pass; if those alternates are retained at full candidate-row granularity, create January alternate maps before treating January as fully candidate-row controlled.
+The January-through-June tranche now controls all candidate rows currently present in those matrices: January has both rank-1 and alternate-row maps; February through June currently contain rank-1 control rows only and their rank-1 maps cover every row presently in those files. If February-through-June are later expanded into full alternate-row candidate matrices, create corresponding alternate SIN maps in the same commit or a clearly linked follow-up commit.
 
-The SIN space currently runs through `UO-SIN-000786`.
+The SIN space currently runs through `UO-SIN-000838`.
