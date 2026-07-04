@@ -1,0 +1,93 @@
+{
+  "LFF": {
+    "label": "Lesser Feasts and Fasts 2024",
+    "path": "data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf",
+    "kind": "official_tec_calendar_hagiography",
+    "authority_tier": "current_tec",
+    "notes": "Current TEC Lesser Feasts and Fasts source witness."
+  },
+  "GCW": {
+    "label": "A Great Cloud of Witnesses",
+    "path": "data/kalendar/source-witnesses/lm_great_cloud_of_witnesses.pdf",
+    "kind": "tec_secondary_calendar_hagiography",
+    "authority_tier": "tec_secondary",
+    "notes": "TEC hagiographical source witness."
+  },
+  "HWHM": {
+    "label": "Holy Women, Holy Men",
+    "path": "data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf",
+    "kind": "tec_secondary_calendar_hagiography",
+    "authority_tier": "tec_secondary",
+    "notes": "TEC hagiographical and calendar source witness."
+  },
+  "BCP": {
+    "label": "Book of Common Prayer",
+    "path": "data/kalendar/source-witnesses/book_of_common_prayer.pdf",
+    "kind": "prayer_book_calendar",
+    "authority_tier": "prayer_book",
+    "notes": "Prayer Book calendar and liturgical source witness."
+  },
+  "SEC": {
+    "label": "Scottish Episcopal Church Master Calendar 2025-2026",
+    "path": "data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv",
+    "kind": "provincial_anglican_calendar",
+    "authority_tier": "provincial_anglican",
+    "notes": "Provincial Anglican calendar witness."
+  },
+  "FAS": {
+    "label": "For All The Saints",
+    "path": "data/kalendar/source-witnesses/For-All-The-Saints.pdf",
+    "kind": "provincial_anglican_calendar_hagiography",
+    "authority_tier": "provincial_anglican",
+    "notes": "Provincial Anglican hagiographical source witness."
+  },
+  "AM": {
+    "label": "Anglican Martyrology",
+    "path": "data/kalendar/source-witnesses/martyrology-12-09-19.pdf",
+    "kind": "anglican_martyrology",
+    "authority_tier": "anglican_martyrology",
+    "notes": "Anglican martyrology witness."
+  },
+  "ODS": {
+    "label": "The Oxford Dictionary of Saints",
+    "path": "data/kalendar/source-witnesses/The Oxford Dictionary of Saints.pdf",
+    "kind": "reference_work",
+    "authority_tier": "reference",
+    "notes": "Reference source; not an Anglican calendar authority."
+  },
+  "ODCC": {
+    "label": "The Oxford Dictionary of the Christian Church",
+    "path": "data/kalendar/source-witnesses/the oxford dictionary of the christian church.pdf",
+    "kind": "reference_work",
+    "authority_tier": "reference",
+    "notes": "Reference source; not an Anglican calendar authority."
+  },
+  "BOS": {
+    "label": "The Book of Saints",
+    "path": "data/kalendar/source-witnesses/the-book-of-saints-a-comprehensive-biographical-dictionary.pdf",
+    "kind": "reference_work",
+    "authority_tier": "reference",
+    "notes": "Reference source; not an Anglican calendar authority."
+  },
+  "ETH": {
+    "label": "Ethiopian Synaxarium",
+    "path": "data/kalendar/source-witnesses/ethiopian-synaxarium.pdf",
+    "kind": "oriental_orthodox_synaxarial_witness",
+    "authority_tier": "great_church_supplement",
+    "notes": "Great Church / Oriental Orthodox source witness."
+  },
+  "COFE_2026": {
+    "label": "English Calendar 2026",
+    "path": "data/kalendar/source-witnesses/English_2026_2.pdf",
+    "kind": "anglican_calendar_reference",
+    "authority_tier": "anglican_calendar_reference",
+    "notes": "English Anglican calendar/reference witness; exact source label to be refined if used."
+  },
+  "LOTS": {
+    "label": "LOTS compressed text witness",
+    "path": "data/kalendar/source-witnesses/lots.txt.gz",
+    "kind": "compressed_text_reference",
+    "authority_tier": "reference",
+    "notes": "Compressed text source witness; exact source role to be refined if used."
+  }
+}
