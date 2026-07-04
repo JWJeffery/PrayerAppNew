@@ -1,32 +1,32 @@
-date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result
-10-01,UO-SIN-000093,Thérèse of Lisieux,person,rank1_controlled,rank preserved pending governance
-10-02,UO-SIN-000094,Remigius of Rheims,person,rank1_controlled,rank preserved pending source-form/date governance
-10-03,UO-SIN-000095,John Raleigh Mott,person,rank1_controlled,rank preserved pending modern/institutional review
-10-04,UO-SIN-000096,Francis of Assisi,person,rank1_controlled,rank preserved pending governance
-10-05,UO-SIN-000097,Faustina Kowalska,person,rank1_controlled,rank preserved pending private-revelation review
-10-06,UO-SIN-000098,William Tyndale,person,rank1_controlled,rank preserved pending Reformation-context review
-10-07,UO-SIN-000099,Birgitta of Sweden,person,rank1_controlled,rank preserved pending visionary-material review
-10-08,UO-SIN-000100,Alexander Penrose Forbes,person,rank1_controlled,rank preserved pending controversy review
-10-09,UO-SIN-000101,Robert Grosseteste,person,rank1_controlled,rank preserved pending scholar-saint framing
-10-10,UO-SIN-000102,Vida Dutton Scudder,person,rank1_controlled,rank preserved pending social-impact review
-10-11,UO-SIN-000103,Philip the Deacon and Evangelist,person,rank1_controlled,rank preserved pending governance
-10-12,UO-SIN-000104,Edith Cavell,person,rank1_controlled,rank preserved pending war/hero framing review
-10-13,UO-SIN-000105,Edward the Confessor,person,rank1_controlled,rank preserved pending ruler-saint review
-10-14,UO-SIN-000106,Samuel Isaac Joseph Schereschewsky,person,rank1_controlled,rank preserved pending mission/translation review
-10-15,UO-SIN-000107,Teresa of Avila,person,rank1_controlled,rank preserved pending governance
-10-16,UO-SIN-000108,"Hugh Latimer, Nicholas Ridley, and Thomas Cranmer",group,rank1_controlled,rank preserved pending Reformation/group-form review
-10-17,UO-SIN-000109,Ignatius of Antioch,person,rank1_controlled,rank preserved pending governance
-10-18,UO-SIN-000110,Luke the Evangelist,person,rank1_controlled,rank preserved pending governance
-10-19,UO-SIN-000111,Henry Martyn,person,rank1_controlled,rank preserved pending mission/colonial review
-10-20,UO-SIN-000112,Cornelius the Centurion,person,rank1_controlled,rank preserved pending governance
-10-21,UO-SIN-000113,Hilarion,person,rank1_controlled,rank preserved pending Great Church supplement review
-10-22,UO-SIN-000114,Ignatius of Jesus OSB (Joseph Leycester Lyne),person,rank1_controlled,rank preserved pending source/modern review
-10-23,UO-SIN-000115,James of Jerusalem,person,rank1_controlled,rank preserved pending governance
-10-24,UO-SIN-000116,Hiram Hisanori Kano,person,rank1_controlled,rank preserved pending modern/race-context review
-10-25,UO-SIN-000117,Tabitha (Dorcas) of Joppa,person,rank1_controlled,rank preserved pending governance
-10-26,UO-SIN-000118,Alfred the Great,person,rank1_controlled,rank preserved pending ruler-saint review
-10-27,UO-SIN-000119,Odran of Iona,person,rank1_controlled,rank preserved pending legendary/source review
-10-28,UO-SIN-000120,Simon and Jude,group,rank1_controlled,rank preserved pending governance
-10-29,UO-SIN-000121,James Hannington and his Companions,group,rank1_controlled,rank preserved pending mission/colonial review
-10-30,UO-SIN-000122,Maryam of Qidun,person,rank1_controlled,rank preserved pending Syriac-source review
-10-31,UO-SIN-000123,Paul Shinji Sasaki and Philip Lindel Tsen,group,rank1_controlled,rank preserved pending modern/bishop review
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+10-01,UO-SIN-000093,Thérèse of Lisieux,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; modern cultus/hagiographic sentimentality handling
+10-02,UO-SIN-000094,Remigius of Rheims,person,rank1_controlled,rank preserved pending source-form/date governance,date harmonization with October 1; ruler-conversion historical complexity
+10-03,UO-SIN-000095,John Raleigh Mott,person,rank1_controlled,rank preserved pending modern/institutional review,modern review; ecumenical-institutional significance caution
+10-04,UO-SIN-000096,Francis of Assisi,person,rank1_controlled,rank preserved pending governance,none
+10-05,UO-SIN-000097,Faustina Kowalska,person,rank1_controlled,rank preserved pending private-revelation review,modern review; private-revelation handling; Greater Church remembers
+10-06,UO-SIN-000098,William Tyndale,person,rank1_controlled,rank preserved pending Reformation-context review,Reformation conflict; Protestant-reformer caution; date harmonization with Coverdale grouping
+10-07,UO-SIN-000099,Birgitta of Sweden,person,rank1_controlled,rank preserved pending visionary-material review,Greater Church remembers; visionary material handling
+10-08,UO-SIN-000100,Alexander Penrose Forbes,person,rank1_controlled,rank preserved pending controversy review,Anglican bishop rule; eucharistic-controversy context
+10-09,UO-SIN-000101,Robert Grosseteste,person,rank1_controlled,rank preserved pending scholar-saint framing,Anglican bishop rule; scholar/scientist framing
+10-10,UO-SIN-000102,Vida Dutton Scudder,person,rank1_controlled,rank preserved pending social-impact review,social-impact caution; modern review
+10-11,UO-SIN-000103,Philip the Deacon and Evangelist,person,rank1_controlled,rank preserved pending governance,none
+10-12,UO-SIN-000104,Edith Cavell,person,rank1_controlled,rank preserved pending war/hero framing review,modern/war context; national-hero framing caution
+10-13,UO-SIN-000105,Edward the Confessor,person,rank1_controlled,rank preserved pending ruler-saint review,ruler-saint review; Westminster/royal cultus handling
+10-14,UO-SIN-000106,Samuel Isaac Joseph Schereschewsky,person,rank1_controlled,rank preserved pending mission/translation review,Anglican bishop rule; mission/translation framing
+10-15,UO-SIN-000107,Teresa of Avila,person,rank1_controlled,rank preserved pending governance,none
+10-16,UO-SIN-000108,"Hugh Latimer, Nicholas Ridley, and Thomas Cranmer",group,rank1_controlled,rank preserved pending Reformation/group-form review,Reformation conflict; group-form harmonization; Protestant-reformer caution
+10-17,UO-SIN-000109,Ignatius of Antioch,person,rank1_controlled,rank preserved pending governance,none
+10-18,UO-SIN-000110,Luke the Evangelist,person,rank1_controlled,rank preserved pending governance,none
+10-19,UO-SIN-000111,Henry Martyn,person,rank1_controlled,rank preserved pending mission/colonial review,mission/colonial context review; SEC transfer artifact
+10-20,UO-SIN-000112,Cornelius the Centurion,person,rank1_controlled,rank preserved pending governance,none
+10-21,UO-SIN-000113,Hilarion,person,rank1_controlled,rank preserved pending Great Church supplement review,Greater Church remembers
+10-22,UO-SIN-000114,Ignatius of Jesus OSB (Joseph Leycester Lyne),person,rank1_controlled,rank preserved pending source/modern review,modern review; source verification; hagiographic-honesty review
+10-23,UO-SIN-000115,James of Jerusalem,person,rank1_controlled,rank preserved pending governance,none
+10-24,UO-SIN-000116,Hiram Hisanori Kano,person,rank1_controlled,rank preserved pending modern/race-context review,modern review; wartime/race context
+10-25,UO-SIN-000117,Tabitha (Dorcas) of Joppa,person,rank1_controlled,rank preserved pending governance,none
+10-26,UO-SIN-000118,Alfred the Great,person,rank1_controlled,rank preserved pending ruler-saint review,ruler-saint review
+10-27,UO-SIN-000119,Odran of Iona,person,rank1_controlled,rank preserved pending legendary/source review,legendary material review; source verification
+10-28,UO-SIN-000120,Simon and Jude,group,rank1_controlled,rank preserved pending governance,none
+10-29,UO-SIN-000121,James Hannington and his Companions,group,rank1_controlled,rank preserved pending mission/colonial review,mission/colonial context; Anglican bishop rule; martyr group
+10-30,UO-SIN-000122,Maryam of Qidun,person,rank1_controlled,rank preserved pending Syriac-source review,Greater Church remembers; Syriac source verification
+10-31,UO-SIN-000123,Paul Shinji Sasaki and Philip Lindel Tsen,group,rank1_controlled,rank preserved pending modern/bishop review,Anglican bishop rule; modern review
