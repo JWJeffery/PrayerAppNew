@@ -62,7 +62,7 @@ January exposed a smaller but important source-discipline issue. The SEC master 
 
 14. When a figure is deliberately excluded by governance, remove the row and its identity scaffolding.
 
-The removal of Martin Luther from February and from the October alternate SIN map is the controlling precedent. A rejected candidate should not remain in the harmonization ledger or SIN maps merely because a source witness exists.
+The removal of Martin Luther from February and from the October alternate SIN map is the controlling precedent. The governed exclusion formerly present on January 15 and April 4 confirms the same rule: an excluded figure must not remain in the candidate matrices, harmonization ledger, SIN maps, or alternate apparatus merely because a source witness exists.
 
 15. Person-event distinction must be preserved.
 
@@ -121,7 +121,7 @@ April exposed this especially clearly. Dietrich Bonhoeffer, George of Lydda, Chr
 - Corrected Hilary of Poitiers: SEC January 14 is now treated as a provincial date variant, not as an unverified transfer.
 - Corrected Kentigern / Mungo by removing the incorrect January 14 transfer/harmonization note; SEC 2026 lists Kentigern on January 13.
 - Added explicit January harmonization notes for Macarius of Egypt / Macarius the Great, Richard Rolle, Cecilia, Francis de Sales, John Horden, Timothy/Titus/Silas, Lydia/Dorcas/Phoebe, and other overlapping forms.
-- Updated the cross-date harmonization ledger with January conflicts and future dependencies including Basil and Gregory, Gregory of Nyssa, David I, Hilary, Benson/Gore, MLK, the Confession of Peter, Timothy/Titus/Silas, John Chrysostom, Agnes Tsao Kou Ying, and others.
+- Updated the cross-date harmonization ledger with January conflicts and future dependencies including Basil and Gregory, Gregory of Nyssa, David I, Hilary, Benson/Gore, the Confession of Peter, Timothy/Titus/Silas, John Chrysostom, Agnes Tsao Kou Ying, and others.
 
 ## Cross-sectional QC actions after comparing July through March
 
@@ -136,13 +136,13 @@ April exposed this especially clearly. Dietrich Bonhoeffer, George of Lydda, Chr
 ## Cross-sectional QC actions after comparing July through April
 
 - Rechecked April against current LFF 2024 before cross-month comparison.
-- Added explicit harmonization language to April 4 Martin Luther King Jr., tying the current April date to the January 15 alternate date while preserving the project caution rule.
+- Replaced the governed-out April 4 row with Isidore of Seville and removed the corresponding January 15 alternate-date row.
 - Added April 9 Dietrich Bonhoeffer harmonization with the August paired Bonhoeffer-Kolbe source form and kept him as a Protestant exception candidate rather than automatic inclusion.
 - Confirmed April 17 Kateri Tekakwitha as the current LFF controlling date while adding ledger harmonization with the July 14 date variant.
 - Added April 23 George of Lydda future-May dependency because George appears as an April alternate and is expected as a May bracketed LFF/source-form issue.
 - Added April 27 Christina Rossetti harmonization with the December date-variant row.
 - Added April ledger entries for William Augustus Muhlenberg and Anne Ayres source-form harmonization and Albert Ernest Laurie SEC transfer/source verification.
-- Strengthened April 24 Genocide Remembrance language so it remains outside the primary saint slot unless governed as event/observance apparatus.
+- Strengthened April 24 non-sanctoral remembrance language so it remains outside the primary saint slot unless governed as event/observance apparatus.
 
 ## Continuing QC rule
 
