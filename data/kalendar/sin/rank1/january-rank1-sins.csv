@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+01-01,UO-SIN-000617,The Holy Name of Our Lord Jesus Christ,feast,rank1_controlled,rank preserved pending governance,feast of Our Lord
+01-02,UO-SIN-000618,Vedanayagam Samuel Azariah,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; mission/postcolonial review
+01-03,UO-SIN-000619,Geneviève of Paris,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+01-04,UO-SIN-000620,Elizabeth Ann Seton,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+01-05,UO-SIN-000621,"Sarah, Theodora, and Syncletica of Egypt",group,rank1_controlled,rank preserved pending governance,group entry; Desert Mothers source form
+01-06,UO-SIN-000622,The Epiphany of Our Lord Jesus Christ,feast,rank1_controlled,rank preserved pending governance,principal feast
+01-07,UO-SIN-000623,Lucian of Antioch,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+01-08,UO-SIN-000624,Harriet Bedell,person,rank1_controlled,rank preserved pending governance,modern review; mission/Indigenous context
+01-09,UO-SIN-000625,Julia Chester Emery,person,rank1_controlled,rank preserved pending governance,modern review; institutional-founder framing
+01-10,UO-SIN-000626,William Laud,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; Reformation/conflict review
+01-11,UO-SIN-000627,Theodosius the Cenobiarch,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+01-12,UO-SIN-000628,Aelred of Rievaulx,person,rank1_controlled,rank preserved pending governance,monastic/theological witness
+01-13,UO-SIN-000629,Hilary of Poitiers,person,rank1_controlled,rank preserved pending date governance,date harmonization with SEC Jan 14 variant
+01-14,UO-SIN-000630,Richard Meux Benson and Charles Gore,group,rank1_controlled,rank preserved pending governance,group entry; Anglican bishop rule for Gore
+01-15,UO-SIN-000631,Ita of Killeedy,person,rank1_controlled,rank preserved pending source verification,Irish monastic witness; governed-out row removed
+01-16,UO-SIN-000632,Honoratus of Arles,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+01-17,UO-SIN-000633,Antony of Egypt,person,rank1_controlled,rank preserved pending governance,desert monastic witness
+01-18,UO-SIN-000634,The Confession of Saint Peter the Apostle,feast,rank1_controlled,rank preserved pending governance,apostolic feast
+01-19,UO-SIN-000635,Wulfstan of Worcester,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+01-20,UO-SIN-000636,Fabian,person,rank1_controlled,rank preserved pending governance,bishop and martyr
+01-21,UO-SIN-000637,Agnes and Cecilia of Rome,group,rank1_controlled,rank preserved pending source-form governance,group source form; Cecilia individual source forms remain distinct
+01-22,UO-SIN-000638,Vincent of Saragossa,person,rank1_controlled,rank preserved pending governance,deacon and martyr
+01-23,UO-SIN-000639,Phillips Brooks,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; public-preacher framing
+01-24,UO-SIN-000640,Florence Li Tim-Oi,person,rank1_controlled,rank preserved pending governance,modern review; ordination/event framing
+01-25,UO-SIN-000641,The Conversion of Saint Paul the Apostle,feast,rank1_controlled,rank preserved pending governance,apostolic feast
+01-26,UO-SIN-000642,Timothy and Titus,group,rank1_controlled,rank preserved pending source-form governance,apostolic companions; older Silas group distinct
+01-27,UO-SIN-000348,John Chrysostom,person,rank1_controlled,rank preserved pending date governance,reuses September alternate SIN; current LFF date controls
+01-28,UO-SIN-000643,Thomas Aquinas,person,rank1_controlled,rank preserved pending governance,intellectual framing; Greater Church remembers
+01-29,UO-SIN-000644,Liliʻuokalani of Hawaiʻi,person,rank1_controlled,rank preserved pending bracketed-entry governance,ruler-saint review; Hawaiian sovereignty context
+01-30,UO-SIN-000645,Charles I,person,rank1_controlled,rank preserved pending governance,ruler-saint review; provincial Anglican witness
+01-31,UO-SIN-000646,Marcella of Rome,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
