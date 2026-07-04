@@ -79,7 +79,10 @@
     "broader_canon_ascensionofisaiah_source_binding_collated",
     "broader_canon_ascensionofisaiah_textually_trusted",
     "broader_canon_ascensionofisaiah_app_render_eligible",
-    "broader_canon_rh_charles_cluster_complete"
+    "broader_canon_rh_charles_cluster_complete",
+    "broader_canon_2baruch_source_binding_collated",
+    "broader_canon_2baruch_textually_trusted",
+    "broader_canon_2baruch_app_render_eligible"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -146,7 +149,9 @@
     "broader_canon_jubilees_source_page_binding_collated",
     "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation",
     "broader_canon_ascensionofisaiah_source_basis_blocker_recorded",
-    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready"
+    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready",
+    "broader_canon_2baruch_source_basis_blocker_recorded",
+    "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -238,5 +243,13 @@
     "bibleVerseTextMutation": false,
     "candidateJsonMutation": false,
     "blockerType": "source_basis_chapter_shape_mismatch"
+  },
+  "sourceBasisBlocker2Baruch": {
+    "recordPath": "data/bible/registry/broader-canon-source-basis-blocker-2baruch-2026-07-04.json",
+    "status": "blocked_online_witness_incomplete_tail_no_candidate_mutation",
+    "candidatePath": "data/bible/NT/2baruchCE.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "blockerType": "online_witness_incomplete_tail"
   }
 }

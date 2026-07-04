@@ -1,0 +1,69 @@
+{
+  "schema": "broader-canon-source-basis-blocker-2baruch-v1",
+  "id": "broader_canon_source_basis_blocker_2baruch_2026_07_04",
+  "status": "blocked_online_witness_incomplete_tail_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/NT/2baruchCE.json",
+    "sourceWitnessRecordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
+    "sourceWitnessUrl": "http://www.pseudepigrapha.com/pseudepigrapha/2Baruch.html",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false
+  },
+  "candidateSnapshot": {
+    "meta": {
+      "name": "2 Baruch",
+      "id": "2BA",
+      "version": "Charles",
+      "copyright": "Public Domain translation by R.H. Charles"
+    },
+    "chapterCount": 87,
+    "rowCount": 746,
+    "tailChaptersPresentInCandidate": [
+      85,
+      86,
+      87
+    ],
+    "chapter85FirstVerseAnchor": "Know, therefore, that in former times and in the generations of old our fathers had helpers, righteous men and holy prophets.",
+    "chapter86FirstVerseAnchor": "Therefore, when you receive my letter, read it carefully in your assemblies. And meditate upon it, in particular however on the days of your fasts. And remember me by this letter, as I also, in the same way, remember you by it, and it may fare you well always.",
+    "chapter87FirstVerseAnchor": "And it happened, after I had finished all the words of this letter, composing it carefully until the end, that I folded it, and sealed it carefully, and bound it to the neck of the eagle. And I let it go and sent it away."
+  },
+  "finding": {
+    "blockerType": "online_witness_incomplete_tail",
+    "summary": "The identified Pseudepigrapha.com 2 Baruch witness aligns strongly through the visible main-text body, but the online page truncates after the beginning of Chapter 85 and does not provide the repo candidate's chapters 86-87. This witness is therefore not sufficient for a complete row-level source-binding collation.",
+    "diagnosticBasis": {
+      "observedAlignedRange": "chapters 1-84 appear source-shape aligned by diagnostic chapter matching",
+      "observedTailBlocker": "source page begins Chapter 85 and then terminates; repo candidate contains chapters 85-87",
+      "candidateChapterCount": 87,
+      "candidateRowCount": 746,
+      "sourceShapeNotes": [
+        "online witness includes interleaved Oxyrhynchus Greek fragment markers around chapters 12a, 13a, and 14a",
+        "online witness tail is incomplete for candidate chapters 85-87",
+        "source-basis verification is required before app rendering or text trust"
+      ]
+    },
+    "localImplications": [
+      "Do not claim 2 Baruch source-binding collation from this witness.",
+      "Do not mutate the candidate text from the incomplete online witness.",
+      "Do not mark 2 Baruch app-render eligible.",
+      "Next work must identify a complete public-domain R.H. Charles witness or a governed local source snapshot covering chapters 85-87."
+    ]
+  },
+  "allowedClaims": [
+    "broader_canon_2baruch_source_basis_blocker_recorded",
+    "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready"
+  ],
+  "blockedClaims": [
+    "broader_canon_2baruch_source_binding_collated",
+    "broader_canon_2baruch_textually_trusted",
+    "broader_canon_2baruch_app_render_eligible",
+    "broader_canon_rh_charles_cluster_complete",
+    "broader_canon_complete"
+  ],
+  "nextAllowedWork": [
+    "identify a complete public-domain R.H. Charles 2 Baruch source witness",
+    "compare candidate chapters 85-87 against the complete witness",
+    "record a local source snapshot before any row-level collation",
+    "only then attempt 2 Baruch source binding"
+  ]
+}
