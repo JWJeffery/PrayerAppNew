@@ -1,0 +1,31 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+06-01,UO-SIN-000758,Justin Martyr,person,rank1_controlled,rank preserved pending governance,SEC Visitation transfer is context only
+06-02,UO-SIN-000759,"Blandina and Her Companions, the Martyrs of Lyons",group,rank1_controlled,rank preserved pending governance,group entry; martyrs
+06-03,UO-SIN-000760,The Martyrs of Uganda,group,rank1_controlled,rank preserved pending source-form governance,group distinct from Janani Luwum individual
+06-04,UO-SIN-000761,John XXIII,person,rank1_controlled,rank preserved pending date/source governance,papal context; SEC June 8 verification
+06-05,UO-SIN-000762,Boniface of Mainz,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; missionary martyr
+06-06,UO-SIN-000763,Ini Kopuria,person,rank1_controlled,rank preserved pending source verification,Anglican religious-founder framing
+06-07,UO-SIN-000764,Willibald of Eichstatt,person,rank1_controlled,rank preserved pending source verification,Anglican bishop rule; English missionary witness
+06-08,UO-SIN-000765,Melania the Elder,person,rank1_controlled,rank preserved pending governance,distinct from Melania the Younger unless governed otherwise
+06-09,UO-SIN-000766,Columba of Iona,person,rank1_controlled,rank preserved pending governance,Anglican/Irish-Scottish monastic witness
+06-10,UO-SIN-000767,Ephrem of Nisibis,person,rank1_controlled,rank preserved pending governance,Syriac deacon and poet-theologian
+06-11,UO-SIN-000768,Barnabas the Apostle,person,rank1_controlled,rank preserved pending governance,apostolic feast
+06-12,UO-SIN-000769,Enmegahbowh,person,rank1_controlled,rank preserved pending governance,mission/Indigenous context
+06-13,UO-SIN-000770,The First Book of Common Prayer,observance,rank1_controlled,rank preserved pending genre governance,liturgical observance; not a personal saint
+06-14,UO-SIN-000771,Basil of Caesarea,person,rank1_controlled,rank preserved pending source-form governance,individual distinct from January Basil-Gregory pair
+06-15,UO-SIN-000772,Evelyn Underhill,person,rank1_controlled,rank preserved pending governance,writer/mystic framing; modern review
+06-16,UO-SIN-000773,Joseph Butler,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; intellectual framing
+06-17,UO-SIN-000774,Marina the Monk,person,rank1_controlled,rank preserved pending identity governance,do not collapse with Margaret/Marina of Antioch
+06-18,UO-SIN-000775,Bernard Mizeki,person,rank1_controlled,rank preserved pending governance,Anglican martyr; mission/colonial context
+06-19,UO-SIN-000220,Adelaide Teague Case,person,rank1_controlled,rank preserved pending governance,reuses July alternate SIN; educator/public-intellectual framing
+06-20,UO-SIN-000776,Fillan,person,rank1_controlled,rank preserved pending source/date governance,Alban date-variant context
+06-21,UO-SIN-000777,Aloysius Gonzaga,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; ascetical-extremity caution
+06-22,UO-SIN-000778,Alban,person,rank1_controlled,rank preserved pending date governance,June 20 AM variant; first British martyr
+06-23,UO-SIN-000779,Etheldreda / Audrey of Ely,person,rank1_controlled,rank preserved pending source verification,English royal abbess; Moluag date context
+06-24,UO-SIN-000780,The Nativity of Saint John the Baptist,feast,rank1_controlled,rank preserved pending governance,biblical saint feast
+06-25,UO-SIN-000781,Moluag of Lismore,person,rank1_controlled,rank preserved pending date governance,Anglican bishop rule; June 23 variant
+06-26,UO-SIN-000782,Isabel Florence Hapgood,person,rank1_controlled,rank preserved pending governance,ecumenist/intellectual framing; modern review
+06-27,UO-SIN-000783,Alexander Jolly,person,rank1_controlled,rank preserved pending source verification,Anglican bishop rule
+06-28,UO-SIN-000784,Irenaeus of Lyons,person,rank1_controlled,rank preserved pending date governance,normalized LFF spelling; SEC June 30 transfer
+06-29,UO-SIN-000785,Peter and Paul,group,rank1_controlled,rank preserved pending source-form governance,joint apostolic feast distinct from January feasts
+06-30,UO-SIN-000786,The First Martyrs of Rome under Nero,group,rank1_controlled,rank preserved pending source verification,group entry; Greater Church remembers
