@@ -2,11 +2,11 @@
 
 ## Scope
 
-These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, the July-through-December cross-sectional QC pass, the July-through-January cross-sectional QC pass, the July-through-March cross-sectional QC pass, the July-through-April cross-sectional QC pass, and the July-through-May cross-sectional QC pass.
+These notes govern quality control for the Kalendar v0.1 ranked candidate matrices. They were written after comparing the July and August ranked studies, then extended during the September tranche, the July-August-September crosswise QC pass, the July-August-September-October cross-sectional QC pass, the July-August-September-October-November cross-sectional QC pass, the July-through-December cross-sectional QC pass, the July-through-January cross-sectional QC pass, the July-through-March cross-sectional QC pass, the July-through-April cross-sectional QC pass, the July-through-May cross-sectional QC pass, and the July-through-June cross-sectional QC pass.
 
 The candidate CSV files remain pre-decisional. A rank is an editorial recommendation for review, not a final primary selection. `decision_status` should remain `Pending` and `final_primary` should remain blank until Josh governs the day.
 
-## Lessons learned from July through May
+## Lessons learned from July through June
 
 1. Source hierarchy and holiness fit must both be visible.
 
@@ -26,7 +26,7 @@ Rows drawn from Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of t
 
 5. Duplicate and transfer dates need whole-year harmonization.
 
-A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener/Illuminator, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Harriet Tubman source forms, Margaret/Marina of Antioch, George Whitefield, Reformation martyr source-forms, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Basil and Gregory, Macarius of Egypt/Macarius the Great, Hilary of Poitiers, Richard Meux Benson and Charles Gore, the Confession of Peter, Timothy/Titus/Silas, Lydia/Dorcas/Phoebe, Francis de Sales, John Horden, Brigid, Cornelius, the Martyrs of Japan, Thomas Bray, Colman of Lindisfarne, Emily Malbone Morgan, Matthias, John Cassian, John and Charles Wesley, Gregory of Nyssa, Gregory the Great, James Theodore Holly, Vincent de Paul and Louise de Marillac, Thomas Ken, John Keble, Kateri Tekakwitha, Dietrich Bonhoeffer, Christina Rossetti, George of Lydda, Augustine of Canterbury, Mechthild/Mechthilde name-distinction issues, William Augustus Muhlenberg and Anne Ayres, and others.
+A candidate appearing on more than one date should carry a date-harmonization flag until the full 366-day Kalendar is visible. Examples already found include Thomas the Apostle, Stephen, Moses the Black, Wilberforce, Joseph of Arimathea, Cuthbert, Cyprian, John Chrysostom, Pusey, Andrewes, Richard Rolle, Declan, Blane, John Bunyan, Grundtvig, Albert of Jerusalem, Remigius, Gregory the Enlightener/Illuminator, Thomas Cantilupe, Thomas Traherne, Kenneth/Canice, Thecla, John Hus, Clare of Montefalco, Herman of Alaska, Martin de Porres, Sojourner Truth, Harriet Tubman source forms, Margaret/Marina of Antioch, George Whitefield, Reformation martyr source-forms, Hilda, Elizabeth of Hungary, Charles Simeon, Columbanus, Cecilia, Catherine of Alexandria, Isaac Watts, Nicholas Ferrar, Birinus, Osmund of Salisbury, Barbara of Nicomedia, Charles Garnier, Jane de Chantal, Lucy Menzies, John of the Cross, Samuel Johnson, Frances Joseph-Gaudet, Thomas Becket, Basil and Gregory, Macarius of Egypt/Macarius the Great, Hilary of Poitiers, Richard Meux Benson and Charles Gore, the Confession of Peter, Timothy/Titus/Silas, Lydia/Dorcas/Phoebe, Francis de Sales, John Horden, the Visitation, Brigid, Cornelius, the Martyrs of Japan, Thomas Bray, Colman of Lindisfarne, Emily Malbone Morgan, Matthias, Janani Luwum/Martyrs of Uganda source forms, John Cassian, John and Charles Wesley, Gregory of Nyssa, Gregory the Great, James Theodore Holly, Vincent de Paul and Louise de Marillac, Thomas Ken, John Keble, Kateri Tekakwitha, Dietrich Bonhoeffer, Christina Rossetti, George of Lydda, Augustine of Canterbury, Mechthild/Mechthilde name-distinction issues, Alban, Moluag, Irenaeus, Peter and Paul source forms, William Augustus Muhlenberg and Anne Ayres, and others.
 
 6. Appendix material should not be treated as equal to calendar material.
 
@@ -66,7 +66,7 @@ The removal of Martin Luther from February and from the October alternate SIN ma
 
 15. Person-event distinction must be preserved.
 
-John Keble / Oxford Movement is the current test case. March has John Keble as priest and poet; July has an Oxford Movement / Assize Sermon event connected to Keble. These should not share a SIN or be treated as the same entity merely because the same person is involved.
+John Keble / Oxford Movement is the current test case. March has John Keble as priest and poet; July has an Oxford Movement / Assize Sermon event connected to Keble. June adds the First Book of Common Prayer as a liturgical observance rather than a personal saint. These should not share a SIN or be treated as the same entity merely because persons are involved.
 
 16. Alternates named in monthly notes still need harmonization when they overlap prior or future work.
 
@@ -74,7 +74,11 @@ April exposed this especially clearly. Dietrich Bonhoeffer, George of Lydda, Chr
 
 17. Similar names are not identity evidence.
 
-May exposed this through Mechthild of Magdeburg versus Mechthilde of Hackeborn. Name similarity and near-date clustering must trigger identity review, not automatic merger. Separate persons, groups, and source-forms must remain separate until deliberately harmonized.
+May exposed this through Mechthild of Magdeburg versus Mechthilde of Hackeborn. June adds Marina the Monk versus Margaret/Marina of Antioch. Name similarity and near-date clustering must trigger identity review, not automatic merger. Separate persons, groups, and source-forms must remain separate until deliberately harmonized.
+
+18. Transfer context is not source witness for the occupying fixed date.
+
+June exposed this through SEC transfer contexts around the Visitation, Justin, and Irenaeus. A transferred feast can create a conflict note or ledger entry, but it must not be counted as a fixed-date witness for the saint who normally occupies that civil date.
 
 ## QC actions taken
 
@@ -159,6 +163,20 @@ May exposed this through Mechthild of Magdeburg versus Mechthilde of Hackeborn. 
 - Added May 26 and May 27 Augustine of Canterbury date harmonization.
 - Corrected May 28 from generic `Mechthild/Mechthilde` harmonization to explicit name-distinction review: Mechthild of Magdeburg must not be collapsed with Mechthilde of Hackeborn.
 - Added May 30 Josephine Butler future December death-date check.
+
+## Cross-sectional QC actions after comparing July through June
+
+- Rechecked June against current LFF 2024 before cross-month comparison.
+- Clarified June 1 Justin so the SEC-transferred Visitation is treated as transfer context only, not as a Justin source witness.
+- Added a Visitation ledger row for May 31 / June 1 SEC transfer.
+- Added June 3 Martyrs of Uganda / Feb 17 Janani Luwum source-form harmonization, keeping group and individual entries distinct.
+- Tightened June 4 John XXIII by marking the SEC June 8 reference as source/date verification rather than overclaiming a fixed date.
+- Added June 13 First Book of Common Prayer entity-type control as a liturgical observance, not a personal saint.
+- Updated the Basil/Gregory ledger to include June 14 Basil of Caesarea alongside January paired Basil-Gregory and May Gregory of Nazianzus.
+- Added June 17 Marina the Monk name/source distinction against Margaret/Marina of Antioch and the November Catherine-Barbara-Margaret group.
+- Added June 20/22 Alban and June 23/25 Moluag date-harmonization notes.
+- Normalized June 28 to the LFF source-form spelling `Irenaeus of Lyons` and added the June 30 SEC transfer ledger entry.
+- Added June 29 Peter-and-Paul source-form harmonization with January 18 Confession of Peter and January 25 Conversion of Paul.
 
 ## Continuing QC rule
 
