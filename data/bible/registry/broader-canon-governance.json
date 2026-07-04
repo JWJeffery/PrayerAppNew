@@ -100,7 +100,12 @@
     "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain",
     "broader_canon_source_visible_tranche_all_textually_trusted",
     "broader_canon_source_visible_tranche_all_app_render_eligible",
-    "broader_canon_source_visible_blockers_resolved"
+    "broader_canon_source_visible_blockers_resolved",
+    "broader_canon_prayerofapollonius_identified_as_prayer_of_euthalius",
+    "broader_canon_prayerofapollonius_text_source_verified",
+    "broader_canon_prayerofapollonius_renamed_without_collation",
+    "broader_canon_armenian_zohrab_appendix_text_trusted_without_extraction",
+    "broader_canon_armenian_zohrab_appendix_app_render_eligible_without_collation"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -190,7 +195,11 @@
     "broader_canon_source_visible_tranche_source_bound_or_repaired_3",
     "broader_canon_source_visible_tranche_blocked_4",
     "broader_canon_source_visible_tranche_no_global_text_trust_promotion",
-    "broader_canon_source_visible_tranche_no_global_app_render_promotion"
+    "broader_canon_source_visible_tranche_no_global_app_render_promotion",
+    "broader_canon_armenian_zohrab_nt_appendix_witness_located",
+    "broader_canon_armenian_3corinthians_zohrab_witness_located_pending_extraction",
+    "broader_canon_armenian_prayer_of_euthalius_zohrab_witness_located_pending_extraction",
+    "broader_canon_armenian_repose_of_john_zohrab_witness_located_pending_extraction"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -366,5 +375,41 @@
     "bibleVerseTextMutationInThisConsolidation": false,
     "globalBroaderCanonTextTrustPromotion": false,
     "globalBroaderCanonAppRenderPromotion": false
+  },
+  "armenianZohrabNtAppendixSourceWitness": {
+    "recordPath": "data/bible/registry/armenian-zohrab-nt-appendix-source-witness-2026-07-04.json",
+    "status": "source_witness_located_pending_extraction_and_collation",
+    "sourceWitness": "Armenian Zohrab Bible - New Testament (1805), Archive identifier armenian-zohrab-bible-new-testament-1805",
+    "locatedItems": [
+      {
+        "item": "3 Corinthians",
+        "candidatePath": "data/bible/AR/3corinthiansAR.json",
+        "pdfPages": [
+          735,
+          736
+        ],
+        "status": "source_witness_located_not_text_trusted"
+      },
+      {
+        "item": "Repose of John",
+        "pdfPages": [
+          737,
+          738,
+          739
+        ],
+        "status": "source_witness_located_not_extracted"
+      },
+      {
+        "item": "Prayer of Euthalius",
+        "relatedCandidatePath": "data/bible/AR/prayerofapolloniusAR.json",
+        "pdfPages": [
+          740
+        ],
+        "status": "source_witness_located_not_identified_with_current_candidate"
+      }
+    ],
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

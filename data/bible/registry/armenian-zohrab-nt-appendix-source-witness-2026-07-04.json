@@ -1,0 +1,123 @@
+{
+  "schema": "armenian-zohrab-nt-appendix-source-witness-v1",
+  "id": "armenian_zohrab_nt_appendix_source_witness_2026_07_04",
+  "status": "source_witness_located_pending_extraction_and_collation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": [
+    "broader canon",
+    "Armenian canon",
+    "Zohrab Bible",
+    "3 Corinthians",
+    "Repose of John",
+    "Prayer of Euthalius",
+    "Prayer of Apollonius candidate identity review"
+  ],
+  "sourceWitness": {
+    "title": "Armenian Zohrab Bible - New Testament (1805)",
+    "archiveIdentifier": "armenian-zohrab-bible-new-testament-1805",
+    "archivePdfUrl": "https://archive.org/download/armenian-zohrab-bible-new-testament-1805/Armenian-Zohrab-Bible-New-Testament-1805.pdf",
+    "archiveDjvuTextUrl": "https://archive.org/download/armenian-zohrab-bible-new-testament-1805/Armenian-Zohrab-Bible-New-Testament-1805_djvu.txt",
+    "archiveDjvuXmlUrl": "https://archive.org/download/armenian-zohrab-bible-new-testament-1805/Armenian-Zohrab-Bible-New-Testament-1805_djvu.xml",
+    "publicationDate": "1805",
+    "language": "Classical Armenian",
+    "inspectionMethod": "PDF tail pages rendered from Archive source and visually inspected because OCR did not cleanly identify appendix headings.",
+    "inspectedPdfPages": [
+      734,
+      735,
+      736,
+      737,
+      738,
+      739,
+      740,
+      741,
+      742,
+      743,
+      744
+    ]
+  },
+  "visualFindings": [
+    {
+      "item": "Revelation / Apocalypse closing",
+      "pdfPages": [
+        734
+      ],
+      "status": "visually_located",
+      "finding": "Page 734 appears to contain the close of Revelation / Apocalypse and apparatus notes."
+    },
+    {
+      "item": "3 Corinthians",
+      "repoCandidatePath": "data/bible/AR/3corinthiansAR.json",
+      "pdfPages": [
+        735,
+        736
+      ],
+      "status": "source_witness_located_pending_extraction_and_collation",
+      "finding": "Appendix text visually identified from heading and structure across PDF pages 735-736.",
+      "blockedClaims": [
+        "current English candidate text source verified",
+        "current Hovhanessian metadata public-domain claim verified",
+        "candidate text repaired",
+        "textually trusted",
+        "app render eligible"
+      ]
+    },
+    {
+      "item": "Repose of John",
+      "pdfPages": [
+        737,
+        738,
+        739
+      ],
+      "status": "source_witness_located_pending_extraction_and_collation",
+      "finding": "Appendix text visually identified by running headings corresponding to Repose/Death and John.",
+      "blockedClaims": [
+        "English text extracted",
+        "candidate file created",
+        "textually trusted",
+        "app render eligible"
+      ]
+    },
+    {
+      "item": "Prayer of Euthalius",
+      "relatedRepoCandidatePath": "data/bible/AR/prayerofapolloniusAR.json",
+      "pdfPages": [
+        740
+      ],
+      "status": "source_witness_located_pending_extraction_and_collation",
+      "finding": "Appendix text visually identified by heading corresponding to Prayer/Supplication of Euthalius.",
+      "blockedClaims": [
+        "Prayer of Apollonius identified as Prayer of Euthalius",
+        "current Prayer of Apollonius text source verified",
+        "candidate renamed",
+        "candidate repaired",
+        "textually trusted",
+        "app render eligible"
+      ]
+    },
+    {
+      "item": "Errata / correction tables",
+      "pdfPages": [
+        741,
+        742,
+        743,
+        744
+      ],
+      "status": "visually_located",
+      "finding": "Pages following the appendix texts appear to be correction/errata/index material, not a further appendix text."
+    }
+  ],
+  "governanceDecisions": {
+    "bibleTextMutation": false,
+    "candidateTextRepair": false,
+    "sourceWitnessAcquired": true,
+    "textTrustPromoted": false,
+    "appRenderPromoted": false,
+    "nextWork": [
+      "Extract exact Armenian text/pages for 3 Corinthians, Repose of John, and Prayer of Euthalius.",
+      "Create page-image or OCR-backed source snapshots for the identified Zohrab appendix pages.",
+      "Collate current 3 Corinthians English candidate against an authorized source or rebuild from a governed translation lane.",
+      "Do not rename Prayer of Apollonius to Prayer of Euthalius until the current candidate text is compared against the Zohrab Prayer of Euthalius witness.",
+      "Keep Prayer of Euthalius as the positive Armenian source-acquisition target."
+    ]
+  }
+}
