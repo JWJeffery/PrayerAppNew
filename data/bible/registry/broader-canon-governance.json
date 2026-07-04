@@ -84,7 +84,11 @@
     "broader_canon_2baruch_textually_trusted",
     "broader_canon_2baruch_app_render_eligible",
     "broader_canon_rh_charles_cluster_textually_trusted",
-    "broader_canon_rh_charles_cluster_app_render_eligible"
+    "broader_canon_rh_charles_cluster_app_render_eligible",
+    "broader_canon_odesofsolomon_source_binding_collated",
+    "broader_canon_odesofsolomon_textually_trusted",
+    "broader_canon_odesofsolomon_app_render_eligible",
+    "broader_canon_odesofsolomon_complete"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -156,7 +160,9 @@
     "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready",
     "broader_canon_rh_charles_cluster_status_consolidated",
     "broader_canon_rh_charles_cluster_collated_2_blocked_2",
-    "broader_canon_rh_charles_current_pass_closed_without_trust_promotion"
+    "broader_canon_rh_charles_current_pass_closed_without_trust_promotion",
+    "broader_canon_odesofsolomon_source_scope_blocker_recorded",
+    "broader_canon_odesofsolomon_source_visible_fragmentary_not_collation_ready"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -267,5 +273,13 @@
     "candidateJsonMutation": false,
     "broaderCanonTextTrustPromotion": false,
     "broaderCanonAppRenderPromotion": false
+  },
+  "sourceScopeBlockerOdesOfSolomon": {
+    "recordPath": "data/bible/registry/broader-canon-source-scope-blocker-odesofsolomon-2026-07-04.json",
+    "status": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation",
+    "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "blockerType": "candidate_fragmentary_source_scope"
   }
 }

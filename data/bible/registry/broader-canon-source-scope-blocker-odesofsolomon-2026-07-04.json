@@ -1,0 +1,80 @@
+{
+  "schema": "broader-canon-source-scope-blocker-odesofsolomon-v1",
+  "id": "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04",
+  "status": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+    "sourceVisibleClassificationPath": "data/bible/registry/broader-canon-source-visible-classification-2026-07-04.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "broaderCanonTextTrustPromotion": false,
+    "broaderCanonAppRenderPromotion": false
+  },
+  "candidateSnapshot": {
+    "meta": {
+      "name": "The Odes of Solomon",
+      "id": "SOL-ODES",
+      "version": "James Rendel Harris Translation",
+      "copyright": "Public Domain"
+    },
+    "chapterCount": 1,
+    "rowCount": 3,
+    "presentRefs": [
+      "1:1",
+      "1:2",
+      "1:3"
+    ],
+    "firstVerseAnchor": "The Lord is on my head like a crown, and I shall not be without Him.",
+    "lastVerseAnchor": "For it is not like a withered crown which blossoms not; but Thou livest upon my head, and Thou hast blossomed upon my head."
+  },
+  "sourceProbeSummary": {
+    "sourceBasis": "James Rendel Harris translation/source family identified by metadata and source probes",
+    "bestObservedWitnesses": [
+      {
+        "url": "https://web.archive.org/web/20120414215755/http://www.atmajyoti.org/ch_odes_solomon_TEXT.asp",
+        "directAnchorMatchCount": 2,
+        "fullCandidateScoreAgainstSource": 1,
+        "observedSourceLength": 63854,
+        "observedOdeMarkerCount": 48
+      },
+      {
+        "url": "https://archive.org/download/TheOdesAndPsalmsOfSolomon/TheOdesAndPsalmsOfSolomon_djvu.txt",
+        "directAnchorMatchCount": 1,
+        "fullCandidateScoreAgainstSource": 1,
+        "observedSourceLength": 257492,
+        "observedNumericOdeMarkerCount": 154
+      }
+    ],
+    "sourceShapeFinding": "Available witnesses show a broader Odes corpus, while the candidate contains only Ode 1 with three rows.",
+    "diagnosticNote": "The candidate's three rows are source-family compatible with observed Ode 1 witnesses, but the file is not a complete Odes of Solomon candidate and cannot be source-bound as the work."
+  },
+  "finding": {
+    "blockerType": "candidate_fragmentary_source_scope",
+    "summary": "The Odes of Solomon candidate is source-visible but fragmentary. It contains only Ode 1 with three rows, while available public witnesses contain a substantially larger Odes corpus. This is not safe for app rendering, textual trust, or complete source-binding collation.",
+    "localImplications": [
+      "Do not claim Odes of Solomon source-binding collation.",
+      "Do not mutate the three-row candidate text from a source witness in this pass.",
+      "Do not mark Odes of Solomon app-render eligible.",
+      "Next work must decide whether to rebuild/replace the candidate from a complete governed public-domain source snapshot or retain this as a fragmentary excluded candidate."
+    ]
+  },
+  "allowedClaims": [
+    "broader_canon_odesofsolomon_source_scope_blocker_recorded",
+    "broader_canon_odesofsolomon_source_visible_fragmentary_not_collation_ready"
+  ],
+  "blockedClaims": [
+    "broader_canon_odesofsolomon_source_binding_collated",
+    "broader_canon_odesofsolomon_textually_trusted",
+    "broader_canon_odesofsolomon_app_render_eligible",
+    "broader_canon_odesofsolomon_complete",
+    "broader_canon_complete",
+    "broader_canon_textually_trusted"
+  ],
+  "nextAllowedWork": [
+    "identify a complete public-domain James Rendel Harris Odes of Solomon source witness",
+    "record a local source snapshot before any row-level collation",
+    "decide whether the candidate should be rebuilt from the complete witness or retained as a fragmentary excluded candidate",
+    "only then attempt Odes of Solomon source binding"
+  ]
+}

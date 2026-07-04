@@ -6855,7 +6855,8 @@
         "broader_canon_source_binding_collation_jubilees_2026_07_04",
         "broader_canon_source_basis_blocker_ascensionofisaiah_2026_07_04",
         "broader_canon_source_basis_blocker_2baruch_2026_07_04",
-        "broader_canon_rh_charles_cluster_status_consolidation_2026_07_04"
+        "broader_canon_rh_charles_cluster_status_consolidation_2026_07_04",
+        "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6891,7 +6892,9 @@
         "broader_canon_2baruch_witness_identified_incomplete_tail_not_collation_ready",
         "broader_canon_rh_charles_cluster_status_consolidated",
         "broader_canon_rh_charles_cluster_collated_2_blocked_2",
-        "broader_canon_rh_charles_current_pass_closed_without_trust_promotion"
+        "broader_canon_rh_charles_current_pass_closed_without_trust_promotion",
+        "broader_canon_odesofsolomon_source_scope_blocker_recorded",
+        "broader_canon_odesofsolomon_source_visible_fragmentary_not_collation_ready"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6925,7 +6928,11 @@
         "broader_canon_2baruch_textually_trusted",
         "broader_canon_2baruch_app_render_eligible",
         "broader_canon_rh_charles_cluster_textually_trusted",
-        "broader_canon_rh_charles_cluster_app_render_eligible"
+        "broader_canon_rh_charles_cluster_app_render_eligible",
+        "broader_canon_odesofsolomon_source_binding_collated",
+        "broader_canon_odesofsolomon_textually_trusted",
+        "broader_canon_odesofsolomon_app_render_eligible",
+        "broader_canon_odesofsolomon_complete"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -7003,6 +7010,11 @@
         "id": "broader_canon_rh_charles_cluster_status_consolidation_2026_07_04",
         "status": "closed_status_consolidated_collated_2_blocked_2_no_trust_promotion",
         "recordPath": "data/bible/registry/broader-canon-rh-charles-cluster-status-consolidation-2026-07-04.json"
+      },
+      "latest_broader_canon_source_scope_blocker_odesofsolomon": {
+        "id": "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04",
+        "status": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation",
+        "recordPath": "data/bible/registry/broader-canon-source-scope-blocker-odesofsolomon-2026-07-04.json"
       }
     },
     "vulgate": {
