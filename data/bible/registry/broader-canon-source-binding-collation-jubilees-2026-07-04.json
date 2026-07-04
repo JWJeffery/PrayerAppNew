@@ -1,0 +1,317 @@
+{
+  "schema": "broader-canon-source-binding-collation-jubilees-v4",
+  "id": "broader_canon_source_binding_collation_jubilees_2026_07_04",
+  "status": "passed_source_page_binding_collation_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/ET/bookofjubileesET.json",
+    "sourceIndexUrl": "https://www.sacred-texts.com/bib/jub/index.htm",
+    "sourceWitness": "Internet Sacred Text Archive, The Book of Jubilees, tr. R.H. Charles [1917]",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false
+  },
+  "sourceShapePolicy": {
+    "sourceShape": "Sacred Texts Jubilees is a sectional page source. Index labels usually contain ranges, but some early pages are rangeless, some labels are malformed, and the Joseph section has local repo/source range drift.",
+    "collationPolicy": "Rows are bound to Sacred Texts source pages. Parsed index ranges control normal rows. High text score handles rangeless pages. Manual local exceptions bind rows where the repo verse number does not match the Sacred Texts range label but the row text belongs to the named source section.",
+    "manualRows": [
+      {
+        "ref": "1:6",
+        "sourcePageFileNumber": 12,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub12.htm",
+        "sourceLabel": "God's Revelation to Moses on Mount Sinai",
+        "sourceRanges": [],
+        "score": 0.8,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "c740bf8d36f9e6e59a7401c6fb0e53977bdd59c62055b565f04637f74f16fb8f"
+      },
+      {
+        "ref": "12:37",
+        "sourcePageFileNumber": 30,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub30.htm",
+        "sourceLabel": "The Family of Terah in Haran; Abram's Experiences there; his Journey to Canaan (xii. 15-31)",
+        "sourceRanges": [
+          {
+            "chapterNum": 12,
+            "startVerse": 15,
+            "endVerse": 31,
+            "raw": "(xii. 15-31)"
+          }
+        ],
+        "score": 0.833333,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "4b01f5785d055ad37b0499ed4373c6b975d71766a9e49bb692761407a9876a08"
+      },
+      {
+        "ref": "23:33",
+        "sourcePageFileNumber": 52,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub52.htm",
+        "sourceLabel": "Renewed Study of the Law followed by a Renewal of Mankind. The Messianic Kingdom and the Blessedness of the Righteous (xxiii. 26-32)",
+        "sourceRanges": [
+          {
+            "chapterNum": 23,
+            "startVerse": 26,
+            "endVerse": 32,
+            "raw": "(xxiii. 26-32)"
+          }
+        ],
+        "score": 0.8125,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "cdb876194acc7e120f1ce25747694945e0df1750dcf02286344e4c3e56eca62a"
+      },
+      {
+        "ref": "38:5",
+        "sourcePageFileNumber": 68,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub68.htm",
+        "sourceLabel": "War of the Amorite Kings against Jacob and his Sons. Joseph sold into Egypt. The Death of Bilhah and Dinah (xxxiv. 1-19)",
+        "sourceRanges": [
+          {
+            "chapterNum": 34,
+            "startVerse": 1,
+            "endVerse": 19,
+            "raw": "(xxxiv. 1-19)"
+          }
+        ],
+        "score": 0.818182,
+        "acceptanceClass": "manual_best_text_page_exception",
+        "repoTextSha256": "55e83ef1c834c500faf12d8582e8c2cc6338fa7b173c70313d3844936f27648a"
+      },
+      {
+        "ref": "39:19",
+        "sourcePageFileNumber": 75,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub75.htm",
+        "sourceLabel": "Joseph's Service with Potiphar; his Purity and Imprisonment (xxxix. 1-13)",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 1,
+            "endVerse": 13,
+            "raw": "(xxxix. 1-13)"
+          }
+        ],
+        "score": 0.666667,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "1839a2d7a9e2f8fb17d306eb4fdfd974599db1414183f48172c8c62a75730def"
+      },
+      {
+        "ref": "39:20",
+        "sourcePageFileNumber": 75,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub75.htm",
+        "sourceLabel": "Joseph's Service with Potiphar; his Purity and Imprisonment (xxxix. 1-13)",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 1,
+            "endVerse": 13,
+            "raw": "(xxxix. 1-13)"
+          }
+        ],
+        "score": 0.833333,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "2c7f5394c88bf6f0db562bd6fe51258ab04af94eeed43390b77669013c33b040"
+      },
+      {
+        "ref": "40:14",
+        "sourcePageFileNumber": 76,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub76.htm",
+        "sourceLabel": "Joseph interprets the Dreams of the Chief Butler and the Chief Baker (xxxix. 14-18",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 14,
+            "endVerse": 18,
+            "raw": "(xxxix. 14-18"
+          }
+        ],
+        "score": 0.214286,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "e0bf5aeed73048574ed17662467be0ceb697251f1f3b5132140ce8aa4a112c5c"
+      },
+      {
+        "ref": "40:15",
+        "sourcePageFileNumber": 76,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub76.htm",
+        "sourceLabel": "Joseph interprets the Dreams of the Chief Butler and the Chief Baker (xxxix. 14-18",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 14,
+            "endVerse": 18,
+            "raw": "(xxxix. 14-18"
+          }
+        ],
+        "score": 0.5,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "e07cdd9e1c551c162cd97ab0036720afaa98bf940d7bc906943604f907b9997c"
+      },
+      {
+        "ref": "40:16",
+        "sourcePageFileNumber": 76,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub76.htm",
+        "sourceLabel": "Joseph interprets the Dreams of the Chief Butler and the Chief Baker (xxxix. 14-18",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 14,
+            "endVerse": 18,
+            "raw": "(xxxix. 14-18"
+          }
+        ],
+        "score": 0.16,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "a75467317bb8213124c091b65710b609b34c3f9c6092d020d9374611a0ddb999"
+      },
+      {
+        "ref": "40:17",
+        "sourcePageFileNumber": 76,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub76.htm",
+        "sourceLabel": "Joseph interprets the Dreams of the Chief Butler and the Chief Baker (xxxix. 14-18",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 14,
+            "endVerse": 18,
+            "raw": "(xxxix. 14-18"
+          }
+        ],
+        "score": 0.214286,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "d7ea93c0d67b2bb3eb3b2ec968ac8116c5f071bc09a515ae84f5abdac3a9935c"
+      },
+      {
+        "ref": "40:18",
+        "sourcePageFileNumber": 76,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub76.htm",
+        "sourceLabel": "Joseph interprets the Dreams of the Chief Butler and the Chief Baker (xxxix. 14-18",
+        "sourceRanges": [
+          {
+            "chapterNum": 39,
+            "startVerse": 14,
+            "endVerse": 18,
+            "raw": "(xxxix. 14-18"
+          }
+        ],
+        "score": 0.066667,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "062f7b7fd525b96f7afbe1d1026d88fcc758938cf180405a78f65f914b7e58cf"
+      },
+      {
+        "ref": "41:23",
+        "sourcePageFileNumber": 79,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub79.htm",
+        "sourceLabel": "The Two Journeys of the Sons of Jacob to Egypt (xlii. 1-25",
+        "sourceRanges": [
+          {
+            "chapterNum": 42,
+            "startVerse": 1,
+            "endVerse": 25,
+            "raw": "(xlii. 1-25"
+          }
+        ],
+        "score": 0.923077,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "9ec3480b1e4294c493bacf21d8913a42d2dd41c3d0be25ee13c8db9f963c2da3"
+      },
+      {
+        "ref": "41:24",
+        "sourcePageFileNumber": 79,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub79.htm",
+        "sourceLabel": "The Two Journeys of the Sons of Jacob to Egypt (xlii. 1-25",
+        "sourceRanges": [
+          {
+            "chapterNum": 42,
+            "startVerse": 1,
+            "endVerse": 25,
+            "raw": "(xlii. 1-25"
+          }
+        ],
+        "score": 0.727273,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "ae0fab5a6a9a5677f3f24a2a31830174025939c6a390c6678e14b97f82df4806"
+      },
+      {
+        "ref": "43:23",
+        "sourcePageFileNumber": 81,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub81.htm",
+        "sourceLabel": "Jacob, celebrates the Feast of First-fruits and journeys to Egypt. List of his Descendants. (xliv. 1-34)",
+        "sourceRanges": [
+          {
+            "chapterNum": 44,
+            "startVerse": 1,
+            "endVerse": 34,
+            "raw": "(xliv. 1-34)"
+          }
+        ],
+        "score": 1,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "92fbd5c286c67fdf48299b8d018877f04334696de123d3d561c546529c377033"
+      },
+      {
+        "ref": "43:24",
+        "sourcePageFileNumber": 81,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/jub/jub81.htm",
+        "sourceLabel": "Jacob, celebrates the Feast of First-fruits and journeys to Egypt. List of his Descendants. (xliv. 1-34)",
+        "sourceRanges": [
+          {
+            "chapterNum": 44,
+            "startVerse": 1,
+            "endVerse": 34,
+            "raw": "(xliv. 1-34)"
+          }
+        ],
+        "score": 0.9,
+        "acceptanceClass": "manual_local_source_range_exception",
+        "repoTextSha256": "cab9efe20a93ff496ee72cd031696495cfe6a868955e7b9c434976b17c6df9b7"
+      }
+    ],
+    "notClaimed": [
+      "exact Sacred Texts page reproduction",
+      "source verse-number rebuild",
+      "footnotes preserved as display text",
+      "global broader-canon completion",
+      "remaining broader-canon candidates textually trusted"
+    ]
+  },
+  "validation": {
+    "repoRowCount": 975,
+    "sourcePageCount": 84,
+    "bindingCount": 975,
+    "failureCount": 0,
+    "acceptanceClassCounts": {
+      "index_range_contains_ref": 903,
+      "high_text_page_binding": 57,
+      "manual_local_source_range_exception": 14,
+      "manual_best_text_page_exception": 1
+    },
+    "manualRowRefs": [
+      "1:6",
+      "12:37",
+      "23:33",
+      "38:5",
+      "39:19",
+      "39:20",
+      "40:14",
+      "40:15",
+      "40:16",
+      "40:17",
+      "40:18",
+      "41:23",
+      "41:24",
+      "43:23",
+      "43:24"
+    ],
+    "minimumScore": 0,
+    "averageScore": 0.854358,
+    "sourcePagesSha256": "4ec2a2dd7dd0cacb89a2db2a771dabb39f1fdbc5768bf34637ca5eeb0a2a8c01",
+    "bindingsSha256": "3174ff085704a71cf7259a87eff6623744655593cc28835526669aa7a20de808"
+  },
+  "allowedClaims": [
+    "broader_canon_jubilees_source_page_binding_collated",
+    "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation"
+  ],
+  "blockedClaims": [
+    "broader_canon_jubilees_exact_sacred_texts_page_reproduction",
+    "broader_canon_jubilees_source_verse_number_rebuild",
+    "broader_canon_remaining_candidates_textually_trusted",
+    "broader_canon_complete"
+  ]
+}

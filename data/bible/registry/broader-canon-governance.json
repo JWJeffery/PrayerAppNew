@@ -73,7 +73,9 @@
     "broader_canon_rh_charles_cluster_app_render_eligible_without_collation",
     "broader_canon_1enoch_exact_sacred_texts_page_reproduction",
     "broader_canon_1enoch_critical_apparatus_preserved_as_display_text",
-    "broader_canon_remaining_candidates_textually_trusted"
+    "broader_canon_remaining_candidates_textually_trusted",
+    "broader_canon_jubilees_exact_sacred_texts_page_reproduction",
+    "broader_canon_jubilees_source_verse_number_rebuild"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -136,7 +138,9 @@
     "broader_canon_rh_charles_source_witnesses_recorded_4",
     "broader_canon_rh_charles_cluster_pending_collation",
     "broader_canon_1enoch_fixed_entity_source_binding_collated",
-    "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation"
+    "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation",
+    "broader_canon_jubilees_source_page_binding_collated",
+    "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -188,5 +192,37 @@
     ],
     "minimumScore": 0.38871,
     "averageScore": 0.921587
+  },
+  "sourceBindingCollationJubilees": {
+    "recordPath": "data/bible/registry/broader-canon-source-binding-collation-jubilees-2026-07-04.json",
+    "status": "passed_source_page_binding_collation_no_candidate_mutation",
+    "candidatePath": "data/bible/ET/bookofjubileesET.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "acceptanceClassCounts": {
+      "index_range_contains_ref": 903,
+      "high_text_page_binding": 57,
+      "manual_local_source_range_exception": 14,
+      "manual_best_text_page_exception": 1
+    },
+    "manualRowRefs": [
+      "1:6",
+      "12:37",
+      "23:33",
+      "38:5",
+      "39:19",
+      "39:20",
+      "40:14",
+      "40:15",
+      "40:16",
+      "40:17",
+      "40:18",
+      "41:23",
+      "41:24",
+      "43:23",
+      "43:24"
+    ],
+    "minimumScore": 0,
+    "averageScore": 0.854358
   }
 }

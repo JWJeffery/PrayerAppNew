@@ -6851,7 +6851,8 @@
         "broader_canon_zero_row_disposition_2026_07_04",
         "broader_canon_source_visible_classification_2026_07_04",
         "broader_canon_rh_charles_source_witnesses_2026_07_04",
-        "broader_canon_source_binding_collation_1enoch_2026_07_04"
+        "broader_canon_source_binding_collation_1enoch_2026_07_04",
+        "broader_canon_source_binding_collation_jubilees_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6878,7 +6879,9 @@
         "broader_canon_rh_charles_source_witnesses_recorded_4",
         "broader_canon_rh_charles_cluster_pending_collation",
         "broader_canon_1enoch_fixed_entity_source_binding_collated",
-        "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation"
+        "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation",
+        "broader_canon_jubilees_source_page_binding_collated",
+        "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6901,7 +6904,9 @@
         "broader_canon_rh_charles_cluster_app_render_eligible_without_collation",
         "broader_canon_1enoch_exact_sacred_texts_page_reproduction",
         "broader_canon_1enoch_critical_apparatus_preserved_as_display_text",
-        "broader_canon_remaining_candidates_textually_trusted"
+        "broader_canon_remaining_candidates_textually_trusted",
+        "broader_canon_jubilees_exact_sacred_texts_page_reproduction",
+        "broader_canon_jubilees_source_verse_number_rebuild"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -6952,12 +6957,18 @@
         "recordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json"
       },
       "sourceBackedAppUseCandidates": [
-        "data/bible/OT/1enoch.json"
+        "data/bible/OT/1enoch.json",
+        "data/bible/ET/bookofjubileesET.json"
       ],
       "latest_broader_canon_source_binding_collation_1enoch": {
         "id": "broader_canon_source_binding_collation_1enoch_2026_07_04",
         "status": "passed_fixed_entity_source_binding_collation_no_bible_verse_text_mutation",
         "recordPath": "data/bible/registry/broader-canon-source-binding-collation-1enoch-2026-07-04.json"
+      },
+      "latest_broader_canon_source_binding_collation_jubilees": {
+        "id": "broader_canon_source_binding_collation_jubilees_2026_07_04",
+        "status": "passed_source_page_binding_collation_no_candidate_mutation",
+        "recordPath": "data/bible/registry/broader-canon-source-binding-collation-jubilees-2026-07-04.json"
       }
     },
     "vulgate": {
