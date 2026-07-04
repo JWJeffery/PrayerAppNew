@@ -1,0 +1,30 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+02-01,UO-SIN-000647,Brigid of Kildare,person,rank1_controlled,rank preserved pending governance,SEC transfer context
+02-02,UO-SIN-000648,The Presentation of Our Lord Jesus Christ in the Temple,feast,rank1_controlled,rank preserved pending governance,feast of Our Lord
+02-03,UO-SIN-000649,Anskar,person,rank1_controlled,rank preserved pending governance,missionary bishop
+02-04,UO-SIN-000650,Manche Masemola,person,rank1_controlled,rank preserved pending governance,modern martyr review
+02-05,UO-SIN-000651,Agatha of Sicily,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+02-06,UO-SIN-000652,The Martyrs of Japan,group,rank1_controlled,rank preserved pending source-form governance,group entry; Paul Miki and companions source form
+02-07,UO-SIN-000112,Cornelius the Centurion,person,rank1_controlled,rank preserved pending date governance,reuses October rank1 SIN; current LFF Oct 20 likely controls
+02-08,UO-SIN-000653,Josephine Bakhita,person,rank1_controlled,rank preserved pending governance,modern review; Greater Church remembers
+02-09,UO-SIN-000654,Apollonia of Alexandria,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+02-10,UO-SIN-000655,Scholastica,person,rank1_controlled,rank preserved pending governance,monastic witness
+02-11,UO-SIN-000656,Consecration of Barbara Clementine Harris,event,rank1_controlled,rank preserved pending genre governance,ecclesial event; not a person SIN
+02-12,UO-SIN-000657,Theodora,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+02-13,UO-SIN-000658,Absalom Jones,person,rank1_controlled,rank preserved pending governance,Anglican priestly witness
+02-14,UO-SIN-000659,Cyril and Methodius,group,rank1_controlled,rank preserved pending governance,group entry; missionary bishops
+02-15,UO-SIN-000660,Thomas Bray,person,rank1_controlled,rank preserved pending date governance,SEC transfer context
+02-16,UO-SIN-000661,Charles Todd Quintard,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+02-17,UO-SIN-000662,Janani Luwum,person,rank1_controlled,rank preserved pending source-form governance,Anglican bishop rule; distinct from Martyrs of Uganda group
+02-18,UO-SIN-000663,Colman of Lindisfarne,person,rank1_controlled,rank preserved pending date governance,replaced governed-out Protestant reformer; SEC transfer context
+02-19,UO-SIN-000664,"Agnes Tsao Kou Ying, Agatha Lin Zhao, and Lucy Yi Zhenmei",group,rank1_controlled,rank preserved pending governance,group entry; Chinese martyrs
+02-20,UO-SIN-000665,Frederick Douglass,person,rank1_controlled,rank preserved pending governance,social-impact caution; Christian witness review
+02-21,UO-SIN-000261,John Henry Newman,person,rank1_controlled,rank preserved pending governance,reuses August alternate SIN; intellectual framing; Greater Church remembers
+02-22,UO-SIN-000666,Margaret of Cortona,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+02-23,UO-SIN-000667,Polycarp of Smyrna,person,rank1_controlled,rank preserved pending governance,bishop and martyr
+02-24,UO-SIN-000668,Matthias the Apostle,person,rank1_controlled,rank preserved pending apostle-date governance,May 14 variant does not displace BCP/LFF date
+02-25,UO-SIN-000669,Emily Malbone Morgan,person,rank1_controlled,rank preserved pending date governance,date harmonization with Feb 26 older form
+02-26,UO-SIN-000670,Photini,person,rank1_controlled,rank preserved pending governance,biblical/Great Church witness
+02-27,UO-SIN-000671,George Herbert,person,rank1_controlled,rank preserved pending governance,Anglican priest and poet
+02-28,UO-SIN-000672,Anna Julia Haywood Cooper,person,rank1_controlled,rank preserved pending governance,public-intellectual and Christian witness review
+02-29,UO-SIN-000023,John Cassian,person,rank1_controlled,rank preserved pending leap-day governance,reuses July rank1 SIN; current LFF July 23 controls ordinary years
