@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+03-01,UO-SIN-000673,David of Wales,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; SEC transfer context
+03-02,UO-SIN-000674,Chad of Lichfield,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+03-03,UO-SIN-000675,John and Charles Wesley,group,rank1_controlled,rank preserved pending governance,group entry; Methodist/Anglican reception
+03-04,UO-SIN-000676,Adrian of May Island and Companions,group,rank1_controlled,rank preserved pending source verification,group entry
+03-05,UO-SIN-000677,Gerasimus of the Jordan,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+03-06,UO-SIN-000678,Baldred,person,rank1_controlled,rank preserved pending source verification,Scottish witness
+03-07,UO-SIN-000679,Perpetua and Felicity,group,rank1_controlled,rank preserved pending governance,group entry; martyrs
+03-08,UO-SIN-000680,Edward King,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+03-09,UO-SIN-000681,Gregory of Nyssa,person,rank1_controlled,rank preserved pending date governance,January AM/Oxford variant remains subordinate to BCP/LFF date
+03-10,UO-SIN-000682,Harriet Ross Tubman,person,rank1_controlled,rank preserved pending governance,Tubman contrast case; individual distinct from July group forms
+03-11,UO-SIN-000683,Sophronius of Jerusalem,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+03-12,UO-SIN-000318,Gregory the Great,person,rank1_controlled,rank preserved pending date governance,reuses September alternate SIN; March BCP/LFF date controls
+03-13,UO-SIN-000502,James Theodore Holly,person,rank1_controlled,rank preserved pending date governance,reuses November alternate SIN; Anglican bishop rule
+03-14,UO-SIN-000684,Matilda of Ringelheim,person,rank1_controlled,rank preserved pending source verification,ruler-family review; Greater Church remembers
+03-15,UO-SIN-000685,Vincent de Paul and Louise de Marillac,group,rank1_controlled,rank preserved pending source-form governance,group entry; Vincent individual source forms remain distinct
+03-16,UO-SIN-000686,Boniface of Ross,person,rank1_controlled,rank preserved pending source verification,Anglican/Scottish bishop witness
+03-17,UO-SIN-000687,Patrick of Ireland,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+03-18,UO-SIN-000688,Cyril of Jerusalem,person,rank1_controlled,rank preserved pending governance,Greater Church remembers
+03-19,UO-SIN-000689,Saint Joseph,person,rank1_controlled,rank preserved pending governance,biblical saint; foster father of Jesus
+03-20,UO-SIN-000690,Cuthbert of Lindisfarne,person,rank1_controlled,rank preserved pending source-form governance,individual distinct from Aidan-Cuthbert paired source form
+03-21,UO-SIN-000691,Thomas Ken,person,rank1_controlled,rank preserved pending date governance,Anglican bishop rule; multiple date/source forms
+03-22,UO-SIN-000692,James De Koven,person,rank1_controlled,rank preserved pending governance,Anglican priestly/liturgical witness
+03-23,UO-SIN-000393,Gregory the Illuminator / Gregory the Enlightener,person,rank1_controlled,rank preserved pending date governance,reuses September/October alternate SIN; March BCP/LFF date controls
+03-24,UO-SIN-000693,Óscar Romero and the Martyrs of El Salvador,group,rank1_controlled,rank preserved pending governance,group entry; modern martyr review
+03-25,UO-SIN-000694,The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary,feast,rank1_controlled,rank preserved pending governance,major feast
+03-26,UO-SIN-000695,Harriet Monsell,person,rank1_controlled,rank preserved pending governance,Anglican religious-life witness
+03-27,UO-SIN-000696,Charles Henry Brent,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; mission/ecumenical context
+03-28,UO-SIN-000697,James Solomon Russell,person,rank1_controlled,rank preserved pending governance,Anglican priest and founder; modern review
+03-29,UO-SIN-000698,John Keble,person,rank1_controlled,rank preserved pending person/event governance,person distinct from July Oxford Movement event
+03-30,UO-SIN-000699,Mary of Egypt,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; penitential witness
+03-31,UO-SIN-000700,John Donne,person,rank1_controlled,rank preserved pending governance,Anglican priest and poet
