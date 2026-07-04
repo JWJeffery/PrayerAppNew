@@ -1,6 +1,6 @@
 # Universal Office Saint Identification Numbers (SINs)
 
-This directory holds the first controlled SIN metadata for Kalendar v0.1.
+This directory holds controlled SIN metadata for Kalendar v0.1.
 
 ## SIN format
 
@@ -8,18 +8,9 @@ This directory holds the first controlled SIN metadata for Kalendar v0.1.
 
 The number is intentionally non-semantic. It does not encode rank, holiness, tradition, month, feast class, or final inclusion. It is only a stable identity key for Universal Office and Synaxarium metadata.
 
-## Entity coverage
+## Current status
 
-The first completed full candidate-row SIN tranche covers all candidate rows currently present in the first six completed monthly matrices: July, August, September, October, November, and December. This includes persons, groups, feasts, observances, commemorations, and ecclesial events because the working Kalendar contains more than individual saints. The `entity_type` field therefore distinguishes:
-
-- `person`
-- `group`
-- `feast`
-- `observance`
-- `commemoration`
-- `event`
-
-The second completed tranche covers the January-through-June side as currently structured: all January candidate rows, plus the rank-1 daily control rows for February, March, April, May, and June, whose matrices currently exist as rank-1 control passes.
+July through December have full candidate-row SIN coverage. January has full candidate-row SIN coverage. February through June require expansion before full candidate-row SIN coverage can be claimed.
 
 ## Governance rule
 
@@ -44,13 +35,6 @@ Rank-1 maps:
 - `rank1/november-rank1-sins.csv`
 - `rank1/december-rank1-sins.csv`
 
-Audit notes:
-
-- `last-six-months-rank1-audit.md`
-- `last-six-months-full-sin-audit.md`
-- `first-six-months-rank1-audit.md`
-- `first-six-months-full-sin-audit.md`
-
 Alternate-row maps:
 
 - `alternate/january-alternate-sins.csv`
@@ -64,10 +48,13 @@ Alternate-row maps:
 - `alternate/november-alternate-sins-part2.csv`
 - `alternate/december-alternate-sins.csv`
 
+Audit notes:
+
+- `last-six-months-rank1-audit.md`
+- `last-six-months-full-sin-audit.md`
+- `first-six-months-rank1-audit.md`
+- `first-six-months-full-sin-audit.md`
+
 ## Completion boundary
-
-The July-through-December full candidate-row tranche controls identities for the candidate rows currently present in the July-December candidate matrices. If a monthly candidate matrix is later revised, added to, split, or merged, the corresponding SIN map must be updated in the same commit or a clearly linked follow-up commit.
-
-The January-through-June tranche now controls all candidate rows currently present in those matrices: January has both rank-1 and alternate-row maps; February through June currently contain rank-1 control rows only and their rank-1 maps cover every row presently in those files. If February-through-June are later expanded into full alternate-row candidate matrices, create corresponding alternate SIN maps in the same commit or a clearly linked follow-up commit.
 
 The SIN space currently runs through `UO-SIN-000838`.
