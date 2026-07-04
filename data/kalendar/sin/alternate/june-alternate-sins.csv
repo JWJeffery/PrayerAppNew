@@ -1,0 +1,61 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+06-01,2,UO-SIN-000757,The Visitation of the Blessed Virgin Mary,feast,The Visitation of the Blessed Virgin Mary transfer,reused existing SIN
+06-01,3,UO-SIN-001052,Pamphilus of Caesarea,person,Pamphilus of Caesarea,
+06-02,2,UO-SIN-001053,Erasmus / Elmo,person,Erasmus / Elmo,
+06-02,3,UO-SIN-001054,Pothinus of Lyons,person,Pothinus of Lyons,date/source-form harmonization
+06-03,2,UO-SIN-001055,Charles Lwanga and Companions,group,Charles Lwanga and Companions,date/source-form harmonization
+06-03,3,UO-SIN-001056,Kevin of Glendalough,person,Kevin of Glendalough,
+06-04,2,UO-SIN-000749,Petroc of Cornwall,person,Petroc of Cornwall source/date variant,reused existing SIN; date/source-form harmonization
+06-04,3,UO-SIN-001057,Clotilde,person,Clotilde,
+06-05,2,UO-SIN-001058,Dorotheus of Tyre,person,Dorotheus of Tyre,
+06-05,3,UO-SIN-001059,Sancho of Cordoba,person,Sancho of Cordoba,
+06-06,2,UO-SIN-001060,Norbert of Xanten,person,Norbert of Xanten,
+06-06,3,UO-SIN-001061,Philip the Deacon,person,Philip the Deacon,
+06-07,2,UO-SIN-001062,Robert of Newminster,person,Robert of Newminster,
+06-07,3,UO-SIN-001063,Paul I of Constantinople,person,Paul I of Constantinople,
+06-08,2,UO-SIN-001064,William of York,person,William of York,
+06-08,3,UO-SIN-001065,Medard of Noyon,person,Medard of Noyon,
+06-09,2,UO-SIN-001066,Columba,group,Columba source variants,normalized from Columba source variants; date/source-form harmonization
+06-09,3,UO-SIN-001067,Ephrem,person,Ephrem source-date preparation,normalized from Ephrem source-date preparation; date/source-form harmonization
+06-10,2,UO-SIN-001068,Margaret of Scotland,person,Margaret of Scotland source/date variant,normalized from Margaret of Scotland source/date variant; date/source-form harmonization
+06-10,3,UO-SIN-001069,Maurinus of Cologne,person,Maurinus of Cologne,
+06-11,2,UO-SIN-001070,Paula Frassinetti,person,Paula Frassinetti,
+06-11,3,UO-SIN-001071,Herebald / Rembert source traditions,person,Herebald / Rembert source traditions,
+06-12,2,UO-SIN-001072,Onuphrius,person,Onuphrius,
+06-12,3,UO-SIN-001073,Eskil of Strängnäs,person,Eskil of Strängnäs,
+06-13,2,UO-SIN-001074,Anthony of Padua,person,Anthony of Padua,
+06-13,3,UO-SIN-001075,Aventinus of Larboust,person,Aventinus of Larboust,
+06-14,2,UO-SIN-001076,Elisha,person,Elisha,
+06-14,3,UO-SIN-001077,Methodius I of Constantinople,person,Methodius I of Constantinople,
+06-15,2,UO-SIN-001078,Vitus,person,Vitus,
+06-15,3,UO-SIN-001079,Lotharius of Séez,person,Lotharius of Séez,
+06-16,2,UO-SIN-000703,Richard of Chichester,person,Richard of Chichester date variant,reused existing SIN; date/source-form harmonization
+06-16,3,UO-SIN-001080,Lutgardis of Aywières,person,Lutgardis of Aywières,
+06-17,2,UO-SIN-001081,Botolph of Iken,person,Botolph of Iken,
+06-17,3,UO-SIN-001082,Adulf of Utrecht,person,Adulf of Utrecht,
+06-18,2,UO-SIN-000767,Ephrem of Nisibis,person,Ephrem of Nisibis source/date variant,reused existing SIN; date/source-form harmonization
+06-18,3,UO-SIN-001083,Elizabeth of Schönau,person,Elizabeth of Schönau,
+06-19,2,UO-SIN-001084,Romuald,person,Romuald,
+06-19,3,UO-SIN-001085,Gervase and Protase,group,Gervase and Protase,
+06-20,2,UO-SIN-000778,Alban,person,Alban date variant,reused existing SIN; date/source-form harmonization
+06-20,3,UO-SIN-001086,Silverius,person,Silverius,
+06-21,2,UO-SIN-001087,Ralph of Bourges,person,Ralph of Bourges,
+06-21,3,UO-SIN-001088,Leutfridus of Évreux,person,Leutfridus of Évreux,
+06-22,2,UO-SIN-001089,Paulinus of Nola,person,Paulinus of Nola,
+06-22,3,UO-SIN-001090,John Fisher and Thomas More,group,John Fisher and Thomas More,
+06-23,2,UO-SIN-001091,Moluag,person,Moluag date variant,normalized from Moluag date variant; date/source-form harmonization
+06-23,3,UO-SIN-001092,Joseph Cafasso,person,Joseph Cafasso,
+06-24,2,UO-SIN-001093,Bartholomew of Farne,person,Bartholomew of Farne,
+06-24,3,UO-SIN-001094,The Seven Sleepers of Ephesus,person,The Seven Sleepers of Ephesus,
+06-25,2,UO-SIN-001095,Prosper of Aquitaine,person,Prosper of Aquitaine,
+06-25,3,UO-SIN-001096,Adalbert of Egmond,person,Adalbert of Egmond,
+06-26,2,UO-SIN-001097,Robert Leighton,person,Robert Leighton,
+06-26,3,UO-SIN-001098,Josemaría Escrivá,person,Josemaría Escrivá,
+06-27,2,UO-SIN-001099,Cyril of Alexandria,person,Cyril of Alexandria,
+06-27,3,UO-SIN-001100,Emma of Gurk,person,Emma of Gurk,
+06-28,2,UO-SIN-001101,Irenaeus,person,Irenaeus SEC transfer row,normalized from Irenaeus SEC transfer row
+06-28,3,UO-SIN-001102,Leo II,person,Leo II,
+06-29,2,UO-SIN-001103,Saint Peter the Apostle,person,Saint Peter the Apostle individual source form,normalized from Saint Peter the Apostle individual source form; date/source-form harmonization
+06-29,3,UO-SIN-001104,Saint Paul the Apostle,person,Saint Paul the Apostle individual source form,normalized from Saint Paul the Apostle individual source form; date/source-form harmonization
+06-30,2,UO-SIN-001105,Raymond Lull,person,Raymond Lull,
+06-30,3,UO-SIN-001101,Irenaeus,person,Irenaeus transfer context,same identity reused within last-six-month alternate pass

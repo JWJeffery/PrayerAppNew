@@ -1,0 +1,59 @@
+date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
+02-01,2,UO-SIN-000647,Brigid of Kildare,person,Brigid of Kildare / Bride of Kildare,reused existing SIN
+02-02,2,UO-SIN-000112,Cornelius the Centurion,person,Cornelius the Centurion,reused existing SIN; date/source-form harmonization
+02-02,3,UO-SIN-000839,Laurence of Canterbury,person,Laurence of Canterbury,
+02-03,2,UO-SIN-000840,The Dorchester Chaplains,group,The Dorchester Chaplains,
+02-03,3,UO-SIN-000841,Blaise of Sebaste,person,Blaise of Sebaste,
+02-03,4,UO-SIN-000842,Seiriol,person,Seiriol,
+02-04,2,UO-SIN-000112,Cornelius the Centurion,person,Cornelius the Centurion,reused existing SIN; date/source-form harmonization
+02-04,3,UO-SIN-000843,Gilbert of Sempringham,person,Gilbert of Sempringham,
+02-04,4,UO-SIN-000647,Brigid of Kildare,person,Brigid of Kildare,reused existing SIN
+02-05,2,UO-SIN-000844,The Martyrs of Japan,group,The Martyrs of Japan,date/source-form harmonization
+02-05,3,UO-SIN-000845,Roger Williams and Anne Hutchinson,group,Roger Williams and Anne Hutchinson,
+02-05,4,UO-SIN-000846,Adelaide of Vilich,person,Adelaide of Vilich,
+02-06,2,UO-SIN-000847,Vedast of Arras,person,Vedast of Arras,
+02-07,2,UO-SIN-000848,Richard of Wessex,person,Richard of Wessex,
+02-07,3,UO-SIN-000849,Pius IX,person,Pius IX,
+02-08,2,UO-SIN-000850,Jerome Emiliani,person,Jerome Emiliani,
+02-08,3,UO-SIN-000851,Ælfflæd of Whitby,person,Ælfflæd of Whitby,
+02-09,2,UO-SIN-000852,Teilo,person,Teilo,
+02-09,3,UO-SIN-000853,Miguel Febres Cordero,person,Miguel Febres Cordero,
+02-10,2,UO-SIN-000854,William of Maleval,person,William of Maleval,
+02-11,2,UO-SIN-000855,Fanny Crosby,person,Fanny Crosby,
+02-11,3,UO-SIN-000856,Our Lady of Lourdes,feast,Our Lady of Lourdes,
+02-11,4,UO-SIN-000857,Cædmon,person,Cædmon,
+02-12,2,UO-SIN-000858,Charles Freer Andrews,person,Charles Freer Andrews,
+02-12,3,UO-SIN-000859,Meletius of Antioch,person,Meletius of Antioch,
+02-12,4,UO-SIN-000860,Benedict of Aniane,person,Benedict of Aniane,
+02-13,2,UO-SIN-000861,Jordan of Saxony,person,Jordan of Saxony,
+02-14,2,UO-SIN-000862,Valentine of Rome / Valentine traditions,person,Valentine of Rome / Valentine traditions,
+02-15,2,UO-SIN-000863,Sigfrid of Sweden,person,Sigfrid of Sweden,
+02-15,3,UO-SIN-000864,Claude de la Colombière,person,Claude de la Colombière,
+02-16,2,UO-SIN-000660,Thomas Bray,person,Thomas Bray,reused existing SIN; date/source-form harmonization
+02-16,3,UO-SIN-000865,Onesimus,person,Onesimus,
+02-16,4,UO-SIN-000866,Elias and Companions,group,Elias and Companions,
+02-17,2,UO-SIN-000867,Finan of Lindisfarne,person,Finan of Lindisfarne,
+02-17,3,UO-SIN-000868,The Seven Founders of the Servite Order,group,The Seven Founders of the Servite Order,
+02-18,2,UO-SIN-000869,Tarasius of Constantinople,person,Tarasius of Constantinople,
+02-19,2,UO-SIN-000870,Quodvultdeus of Carthage,person,Quodvultdeus of Carthage,
+02-19,3,UO-SIN-000871,Thomas Burgess,person,Thomas Burgess,
+02-20,2,UO-SIN-000663,Colman of Lindisfarne,person,Colman of Lindisfarne,reused existing SIN; date/source-form harmonization
+02-20,3,UO-SIN-000872,Eucherius of Orléans,person,Eucherius of Orléans,
+02-20,4,UO-SIN-000873,Wulfric of Haselbury,person,Wulfric of Haselbury,
+02-21,2,UO-SIN-000874,Peter Damian,person,Peter Damian,
+02-21,3,UO-SIN-000875,Robert Southwell,person,Robert Southwell,
+02-22,2,UO-SIN-000876,Eric Liddell,person,Eric Liddell,
+02-22,3,UO-SIN-000877,Chair of Saint Peter,observance,Chair of Saint Peter,
+02-22,4,UO-SIN-000878,Papias of Hierapolis,person,Papias of Hierapolis,
+02-23,2,UO-SIN-000879,Mildburga,person,Mildburga,
+02-24,2,UO-SIN-000880,Philip Lindel Tsen and Paul Shinji Sasaki,group,Philip Lindel Tsen and Paul Shinji Sasaki,date/source-form harmonization
+02-24,3,UO-SIN-000881,Æthelberht of Kent,person,Æthelberht of Kent,
+02-25,2,UO-SIN-000882,John Roberts,person,John Roberts,date/source-form harmonization
+02-25,3,UO-SIN-000883,Walburga,person,Walburga,
+02-26,2,UO-SIN-000669,Emily Malbone Morgan,person,Emily Malbone Morgan,reused existing SIN; date/source-form harmonization
+02-26,3,UO-SIN-000884,Porphyry of Gaza,person,Porphyry of Gaza,
+02-27,2,UO-SIN-000885,Julian and Companions of Alexandria,group,Julian and Companions of Alexandria,
+02-28,2,UO-SIN-000886,Anna Julia Haywood Cooper and Elizabeth Evelyn Wright,group,Anna Julia Haywood Cooper and Elizabeth Evelyn Wright,date/source-form harmonization
+02-28,3,UO-SIN-000887,Oswald of Worcester,person,Oswald of Worcester,
+02-28,4,UO-SIN-000888,Romanus of Condat,person,Romanus of Condat,
+02-29,2,UO-SIN-000887,Oswald of Worcester,person,Oswald of Worcester,same identity reused within last-six-month alternate pass; date/source-form harmonization

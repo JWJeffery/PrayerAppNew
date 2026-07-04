@@ -10,7 +10,9 @@ The number is intentionally non-semantic. It does not encode rank, holiness, tra
 
 ## Current status
 
-July through December have full candidate-row SIN coverage. January has full candidate-row SIN coverage. February through June require expansion before full candidate-row SIN coverage can be claimed.
+The full candidate-row SIN coverage now includes January through December as the matrices currently exist.
+
+July through December were the first full candidate-row tranche. January was separately completed with rank-1 and alternate-row maps. February through June have now been expanded from rank-1 control passes into full ranked candidate matrices and have corresponding alternate-row SIN maps.
 
 ## Governance rule
 
@@ -38,6 +40,11 @@ Rank-1 maps:
 Alternate-row maps:
 
 - `alternate/january-alternate-sins.csv`
+- `alternate/february-alternate-sins.csv`
+- `alternate/march-alternate-sins.csv`
+- `alternate/april-alternate-sins.csv`
+- `alternate/may-alternate-sins.csv`
+- `alternate/june-alternate-sins.csv`
 - `alternate/july-alternate-sins.csv`
 - `alternate/august-alternate-sins.csv`
 - `alternate/september-alternate-sins-part1.csv`
@@ -57,4 +64,6 @@ Audit notes:
 
 ## Completion boundary
 
-The SIN space currently runs through `UO-SIN-000838`.
+The January-through-June repair expands February through June into full ranked candidate matrices and adds alternate-row SIN maps for each month. The SIN space currently runs through `UO-SIN-001105`.
+
+If any monthly matrix is later revised, added to, split, or merged, the corresponding SIN map must be updated in the same commit or a clearly linked follow-up commit.
