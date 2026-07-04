@@ -1,0 +1,81 @@
+{
+  "schema": "broader-canon-source-identity-blocker-3corinthians-v1",
+  "id": "broader_canon_source_identity_blocker_3corinthians_2026_07_04",
+  "status": "blocked_modern_hovhanessian_source_identity_no_bible_text_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/AR/3corinthiansAR.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": true,
+    "metadataMutation": true,
+    "broaderCanonTextTrustPromotion": false,
+    "broaderCanonAppRenderPromotion": false
+  },
+  "candidateSnapshot": {
+    "previousMeta": {
+      "name": "3 Corinthians",
+      "id": "3CO",
+      "version": "Hovhanessian",
+      "copyright": "Public Domain translation from the Armenian"
+    },
+    "repairedMeta": {
+      "name": "3 Corinthians",
+      "id": "3CO",
+      "version": "Source identity blocked: Hovhanessian claim unverified",
+      "copyright": "Not public-domain verified; candidate quarantined pending usable source witness"
+    },
+    "chapterCount": 2,
+    "rowCount": 19,
+    "verseTextSha256Before": "8f727d57e01e1c2cae7cc1d6cc3c6e8a8222872939760a337318c915c462b952",
+    "verseTextSha256After": "8f727d57e01e1c2cae7cc1d6cc3c6e8a8222872939760a337318c915c462b952"
+  },
+  "identityFindings": {
+    "hovhanessianBibliographicLead": {
+      "status": "identified_modern_secondary_or_translation_source_lead_not_public_domain_verified",
+      "title": "Third Corinthians: Reclaiming Paul for Christian Orthodoxy",
+      "creator": "Hovhanessian, Vahan, 1963-",
+      "date": "2000",
+      "publisher": "Peter Lang Publishing",
+      "isbn10": "0820445274",
+      "isbn13": "9780820445274",
+      "sourceLeadIdentifier": "thirdcorinthians18vaha",
+      "rightsFinding": "No public-domain rights basis found in source-identity diagnostic."
+    },
+    "interfaithLead": {
+      "status": "rejected_as_repair_source",
+      "url": "https://www.interfaith.org/christianity/apocrypha-iii-corinthians/",
+      "attributionObserved": "By Dr. Ken Johnson",
+      "copyrightObserved": "Copyright interfaith.org 2025",
+      "fullCandidateScoreAgainstSource": 0.791667,
+      "directAnchorMatchCount": 0,
+      "highAnchorScoreCount": 3,
+      "finding": "Interfaith is a related online text witness but not an exact candidate match and not a public-domain Hovhanessian source."
+    }
+  },
+  "decision": {
+    "sourceIdentityDecision": "The active 3 Corinthians candidate cannot honestly be treated as a public-domain Hovhanessian translation.",
+    "textDecision": "No Bible verse text was changed.",
+    "metadataDecision": "Candidate metadata was changed only to remove the unsupported public-domain/version claim and mark the source identity blocker.",
+    "repairDecision": "Do not repair this candidate to Interfaith. A future repair requires a usable public-domain witness or a separately authorized source lane."
+  },
+  "allowedClaims": [
+    "broader_canon_3corinthians_source_identity_blocker_recorded",
+    "broader_canon_3corinthians_hovhanessian_identified_as_modern_2000_peter_lang_source_lead",
+    "broader_canon_3corinthians_no_bible_verse_text_mutation",
+    "broader_canon_3corinthians_candidate_metadata_marked_unverified"
+  ],
+  "blockedClaims": [
+    "broader_canon_3corinthians_hovhanessian_public_domain_translation_verified",
+    "broader_canon_3corinthians_candidate_text_source_verified",
+    "broader_canon_3corinthians_textually_trusted",
+    "broader_canon_3corinthians_app_render_eligible",
+    "broader_canon_3corinthians_repair_to_interfaith_source",
+    "broader_canon_3corinthians_interfaith_source_public_domain_verified",
+    "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain"
+  ],
+  "nextAllowedWork": [
+    "Acquire a usable public-domain 3 Corinthians witness and compare it before any text repair.",
+    "If Hovhanessian is required, treat it as a modern source/permission lane, not as public domain.",
+    "If an Armenian canonical/study witness is needed, add it as a separately governed source/version lane."
+  ]
+}

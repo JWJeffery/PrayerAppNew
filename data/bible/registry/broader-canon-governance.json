@@ -90,7 +90,14 @@
     "broader_canon_odesofsolomon_app_render_eligible",
     "broader_canon_odesofsolomon_complete",
     "broader_canon_laodiceans_westcott_hort_latin_basis_exact_certified",
-    "broader_canon_laodiceans_synthetic_verse_7"
+    "broader_canon_laodiceans_synthetic_verse_7",
+    "broader_canon_3corinthians_hovhanessian_public_domain_translation_verified",
+    "broader_canon_3corinthians_candidate_text_source_verified",
+    "broader_canon_3corinthians_textually_trusted",
+    "broader_canon_3corinthians_app_render_eligible",
+    "broader_canon_3corinthians_repair_to_interfaith_source",
+    "broader_canon_3corinthians_interfaith_source_public_domain_verified",
+    "broader_canon_3corinthians_modern_hovhanessian_text_reused_as_public_domain"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -171,7 +178,11 @@
     "broader_canon_laodiceans_gutenberg_visible_source_exact_repair_recorded",
     "broader_canon_laodiceans_candidate_now_matches_selected_gutenberg_witness",
     "broader_canon_laodiceans_manual_variant_exceptions_superseded",
-    "broader_canon_laodiceans_no_synthetic_verse_7_created"
+    "broader_canon_laodiceans_no_synthetic_verse_7_created",
+    "broader_canon_3corinthians_source_identity_blocker_recorded",
+    "broader_canon_3corinthians_hovhanessian_identified_as_modern_2000_peter_lang_source_lead",
+    "broader_canon_3corinthians_no_bible_verse_text_mutation",
+    "broader_canon_3corinthians_candidate_metadata_marked_unverified"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -325,5 +336,15 @@
     ],
     "exactRawSourceMismatchCount": 0,
     "manualVariantExceptionRefsAfterRepair": []
+  },
+  "sourceIdentityBlocker3Corinthians": {
+    "recordPath": "data/bible/registry/broader-canon-source-identity-blocker-3corinthians-2026-07-04.json",
+    "status": "blocked_modern_hovhanessian_source_identity_no_bible_text_mutation",
+    "candidatePath": "data/bible/AR/3corinthiansAR.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": true,
+    "metadataMutation": true,
+    "blockerType": "modern_hovhanessian_source_identity_not_public_domain_verified",
+    "interfaithRepairRejected": true
   }
 }

@@ -65,10 +65,10 @@
     {
       "path": "data/bible/AR/3corinthiansAR.json",
       "title": "3 Corinthians",
-      "metadataSourceStatement": "Hovhanessian, Public Domain translation from the Armenian",
-      "sourceVisibility": "metadata_specific_translation_identified",
+      "metadataSourceStatement": "Hovhanessian source lead identifies a modern 2000 Peter Lang work; public-domain translation claim not verified",
+      "sourceVisibility": "metadata_specific_source_identity_blocked",
       "traditionFamily": "armenian_broader_canon_candidate",
-      "currentDisposition": "source_visible_pending_collation"
+      "currentDisposition": "blocked_modern_source_identity_no_bible_text_mutation"
     }
   ],
   "allowedClaims": [
