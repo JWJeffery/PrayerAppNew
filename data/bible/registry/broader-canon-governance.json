@@ -75,7 +75,11 @@
     "broader_canon_1enoch_critical_apparatus_preserved_as_display_text",
     "broader_canon_remaining_candidates_textually_trusted",
     "broader_canon_jubilees_exact_sacred_texts_page_reproduction",
-    "broader_canon_jubilees_source_verse_number_rebuild"
+    "broader_canon_jubilees_source_verse_number_rebuild",
+    "broader_canon_ascensionofisaiah_source_binding_collated",
+    "broader_canon_ascensionofisaiah_textually_trusted",
+    "broader_canon_ascensionofisaiah_app_render_eligible",
+    "broader_canon_rh_charles_cluster_complete"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -140,7 +144,9 @@
     "broader_canon_1enoch_fixed_entity_source_binding_collated",
     "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation",
     "broader_canon_jubilees_source_page_binding_collated",
-    "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation"
+    "broader_canon_jubilees_app_use_text_source_page_backed_no_candidate_mutation",
+    "broader_canon_ascensionofisaiah_source_basis_blocker_recorded",
+    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -224,5 +230,13 @@
     ],
     "minimumScore": 0,
     "averageScore": 0.854358
+  },
+  "sourceBasisBlockerAscensionOfIsaiah": {
+    "recordPath": "data/bible/registry/broader-canon-source-basis-blocker-ascensionofisaiah-2026-07-04.json",
+    "status": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation",
+    "candidatePath": "data/bible/ET/ascensionofisaiahET.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "blockerType": "source_basis_chapter_shape_mismatch"
   }
 }

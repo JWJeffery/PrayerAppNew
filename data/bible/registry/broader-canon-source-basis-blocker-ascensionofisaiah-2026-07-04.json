@@ -1,0 +1,59 @@
+{
+  "schema": "broader-canon-source-basis-blocker-ascensionofisaiah-v1",
+  "id": "broader_canon_source_basis_blocker_ascensionofisaiah_2026_07_04",
+  "status": "blocked_source_basis_chapter_shape_mismatch_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/ET/ascensionofisaiahET.json",
+    "sourceWitnessRecordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
+    "sourceWitnessUrl": "https://www.earlychristianwritings.com/text/ascension.html",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false
+  },
+  "candidateSnapshot": {
+    "meta": {
+      "name": "The Ascension of Isaiah",
+      "id": "ASC_ISA",
+      "version": "R.H. Charles Ethiopic translation",
+      "copyright": "Public Domain"
+    },
+    "chapterCount": 11,
+    "rowCount": 140,
+    "chapter4FirstVerseAnchor": "For Beliar was in great wrath against Isaiah on account of the vision, and because of the exposure wherewith he had exposed Sammael, and because through him the going forth of the Beloved from the seven heavens had been made manifest, and His transformation and His descent and the likeness into which He should be transformed (that of man), and the persecution which He should suffer, and the tortures wherewith the children of Israel should torture Him, and the coming of His twelve disciples, and the teaching, and that He should before the sabbath be crucified upon the tree, and should be crucified together with wicked men, and that He should be buried in the sepulchre."
+  },
+  "finding": {
+    "blockerType": "source_basis_chapter_shape_mismatch",
+    "summary": "The identified Early Christian Writings online witness and the repo candidate do not share a clean chapter basis. Repo chapter 4 begins with material that the witness places in source chapter 3, while the witness source chapter 4 is a separate section not represented as repo chapter 4.",
+    "diagnosticBasis": {
+      "repoChapter4BestSourceChapter": 3,
+      "repoChapter4BestSourceChapterScore": 0.947368,
+      "repoChapter4SourceChapter4Score": 0.438596,
+      "repoChapterCount": 11,
+      "sourceChapterCount": 11,
+      "repoRowCount": 140
+    },
+    "localImplications": [
+      "Do not source-bind Ascension of Isaiah by chapter/verse address from this witness.",
+      "Do not mutate the candidate text from this witness without a governed source-basis decision.",
+      "Do not claim Ascension of Isaiah app-render eligibility or textual trust.",
+      "Next work must determine whether the candidate is a different R.H. Charles source/recension, an abbreviated witness, or a chapter-split import error."
+    ]
+  },
+  "allowedClaims": [
+    "broader_canon_ascensionofisaiah_source_basis_blocker_recorded",
+    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready"
+  ],
+  "blockedClaims": [
+    "broader_canon_ascensionofisaiah_source_binding_collated",
+    "broader_canon_ascensionofisaiah_textually_trusted",
+    "broader_canon_ascensionofisaiah_app_render_eligible",
+    "broader_canon_rh_charles_cluster_complete",
+    "broader_canon_complete"
+  ],
+  "nextAllowedWork": [
+    "identify the exact R.H. Charles source basis for the repo candidate",
+    "compare candidate against an alternate Ascension of Isaiah Charles witness",
+    "decide whether to replace/rebuild candidate from a governed public-domain source snapshot",
+    "only then attempt row-level source binding"
+  ]
+}
