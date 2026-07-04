@@ -1,0 +1,32 @@
+date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
+05-01,UO-SIN-000730,Philip and James,group,rank1_controlled,rank preserved pending governance,apostolic feast; group entry
+05-02,UO-SIN-000731,Athanasius of Alexandria,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; Nicene witness
+05-03,UO-SIN-000732,Elisabeth Cruciger,person,rank1_controlled,rank preserved pending governance,Protestant/non-Anglican review; hymnwriter framing
+05-04,UO-SIN-000301,Monica,person,rank1_controlled,rank preserved pending date/name governance,reuses August alternate SIN for Monnica
+05-05,UO-SIN-000733,Martyrs of the Reformation Era,group,rank1_controlled,rank preserved pending source-form governance,group entry; not a generic Protestant-reformer bucket
+05-06,UO-SIN-000734,George of Lydda,person,rank1_controlled,rank preserved pending bracketed-entry governance,legendary material review; April alternate harmonization
+05-07,UO-SIN-000735,John of Beverley,person,rank1_controlled,rank preserved pending source verification,Anglican bishop rule
+05-08,UO-SIN-000736,Julian of Norwich,person,rank1_controlled,rank preserved pending governance,Anglican mystic and theologian
+05-09,UO-SIN-000737,Gregory of Nazianzus,person,rank1_controlled,rank preserved pending source-form governance,individual distinct from January Basil-Gregory pair
+05-10,UO-SIN-000738,Comgall of Bangor,person,rank1_controlled,rank preserved pending source verification,Irish monastic witness
+05-11,UO-SIN-000739,Johann Arndt and Jacob Boehme,group,rank1_controlled,rank preserved pending governance,Protestant/non-Anglican review; group entry
+05-12,UO-SIN-000740,Thomas Rattray,person,rank1_controlled,rank preserved pending source verification,Anglican bishop rule
+05-13,UO-SIN-000741,Frances Perkins,person,rank1_controlled,rank preserved pending governance,social-impact caution; modern/public figure review
+05-14,UO-SIN-000742,Carthach of Lismore,person,rank1_controlled,rank preserved pending source verification,Matthias date-variant context
+05-15,UO-SIN-000743,Pachomius of Tabenissi,person,rank1_controlled,rank preserved pending governance,Greater Church remembers; monastic witness
+05-16,UO-SIN-000744,Alexander of Jerusalem,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; bishop and martyr
+05-17,UO-SIN-000745,Thurgood Marshall,person,rank1_controlled,rank preserved pending governance,social-impact caution; modern/public figure review
+05-18,UO-SIN-000746,John I,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers; papal context
+05-19,UO-SIN-000747,Dunstan,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule
+05-20,UO-SIN-000748,Alcuin of York,person,rank1_controlled,rank preserved pending governance,Anglican deacon; intellectual framing
+05-21,UO-SIN-000249,Lydia of Thyatira,person,rank1_controlled,rank preserved pending source-form governance,reuses August alternate SIN; distinct from January Lydia-Dorcas-Phoebe group
+05-22,UO-SIN-000280,Helena of Constantinople,person,rank1_controlled,rank preserved pending governance,reuses August alternate SIN for Helena; ruler-family review
+05-23,UO-SIN-000749,Petroc of Cornwall,person,rank1_controlled,rank preserved pending source verification,Cornish monastic witness
+05-24,UO-SIN-000750,Jackson Kemper,person,rank1_controlled,rank preserved pending governance,Anglican bishop rule; mission/frontier context
+05-25,UO-SIN-000751,Bede,person,rank1_controlled,rank preserved pending governance,Anglican priest and historian
+05-26,UO-SIN-000752,Augustine of Canterbury,person,rank1_controlled,rank preserved pending date governance,Anglican bishop rule; May 27 AM variant
+05-27,UO-SIN-000753,Melangell / Monacella,person,rank1_controlled,rank preserved pending source verification,Welsh abbess; legendary material review
+05-28,UO-SIN-000754,Mechthild of Magdeburg,person,rank1_controlled,rank preserved pending identity governance,do not collapse with Mechthilde of Hackeborn
+05-29,UO-SIN-000755,Maximinus of Trier,person,rank1_controlled,rank preserved pending source verification,Greater Church remembers
+05-30,UO-SIN-000756,Josephine Butler,person,rank1_controlled,rank preserved pending date/source governance,social-impact caution; future December check
+05-31,UO-SIN-000757,The Visitation of the Blessed Virgin Mary,feast,rank1_controlled,rank preserved pending governance,Marian feast; SEC transfer to June 1
