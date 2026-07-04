@@ -70,7 +70,10 @@
     "broader_canon_source_visible_candidates_textually_trusted",
     "broader_canon_source_visible_candidates_app_render_eligible",
     "broader_canon_rh_charles_cluster_textually_trusted_without_collation",
-    "broader_canon_rh_charles_cluster_app_render_eligible_without_collation"
+    "broader_canon_rh_charles_cluster_app_render_eligible_without_collation",
+    "broader_canon_1enoch_exact_sacred_texts_page_reproduction",
+    "broader_canon_1enoch_critical_apparatus_preserved_as_display_text",
+    "broader_canon_remaining_candidates_textually_trusted"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -131,7 +134,9 @@
     "broader_canon_source_visible_candidates_classified_7",
     "broader_canon_source_visible_candidates_pending_collation",
     "broader_canon_rh_charles_source_witnesses_recorded_4",
-    "broader_canon_rh_charles_cluster_pending_collation"
+    "broader_canon_rh_charles_cluster_pending_collation",
+    "broader_canon_1enoch_fixed_entity_source_binding_collated",
+    "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -155,5 +160,33 @@
     "recordPath": "data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json",
     "status": "source_witnesses_recorded_pending_collation",
     "candidateCount": 4
+  },
+  "sourceBindingCollation1Enoch": {
+    "recordPath": "data/bible/registry/broader-canon-source-binding-collation-1enoch-2026-07-04.json",
+    "status": "passed_fixed_entity_source_binding_collation_no_bible_verse_text_mutation",
+    "candidatePath": "data/bible/OT/1enoch.json",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "acceptanceClassCounts": {
+      "direct_score_threshold": 1024,
+      "manual_verified_transliteration_6_7": 1,
+      "same_roman_high_content": 21,
+      "expected_file_high_content": 1,
+      "same_roman_moderate_content_source_shape": 1
+    },
+    "manualVerifiedRows": [
+      {
+        "ref": "6:7",
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe009.htm",
+        "sourcePageFileNumber": 9,
+        "sourceRomanMarkers": [
+          "XI",
+          "VI"
+        ],
+        "reason": "Repo uses simplified leader-name transliteration; Sacred Texts prints the same Chapter VI leader-name row with accented R.H. Charles forms."
+      }
+    ],
+    "minimumScore": 0.38871,
+    "averageScore": 0.921587
   }
 }

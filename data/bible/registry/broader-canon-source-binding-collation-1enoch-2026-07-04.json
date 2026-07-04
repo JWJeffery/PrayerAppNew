@@ -1,0 +1,483 @@
+{
+  "schema": "broader-canon-source-binding-collation-1enoch-v4",
+  "id": "broader_canon_source_binding_collation_1enoch_2026_07_04",
+  "status": "passed_fixed_entity_source_binding_collation_no_bible_verse_text_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/OT/1enoch.json",
+    "sourceIndexUrl": "https://www.sacred-texts.com/bib/boe/index.htm",
+    "sourceWitness": "Internet Sacred Text Archive, The Book of Enoch, tr. R.H. Charles [1917]",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false
+  },
+  "sourceShapePolicy": {
+    "sourceShape": "Sacred Texts 1 Enoch is not a clean one-row-per-verse source. It contains page-chapter shifts, repeated witness variants, headings, critical apparatus, named HTML entities for accented transliteration, transliteration differences, and orthographic differences.",
+    "collationPolicy": "Each repo display row is bound to a Sacred Texts source page. Direct score accepts ordinary rows. Corrected acceptance allows same-Roman or expected-file bindings with high/moderate content coverage where ordered coverage is degraded by apparatus, poetry layout, page shape, or transliteration. Row 6:7 is guarded by explicit source-page verification because R.H. Charles prints the leader names in accented forms while the repo stores simplified spellings.",
+    "notClaimed": [
+      "exact Sacred Texts page reproduction",
+      "critical apparatus preserved as display text",
+      "footnotes preserved as display text",
+      "global broader-canon completion",
+      "remaining broader-canon candidates textually trusted"
+    ]
+  },
+  "validation": {
+    "repoRowCount": 1048,
+    "sourcePageCount": 109,
+    "bindingCount": 1048,
+    "failureCount": 0,
+    "acceptanceClassCounts": {
+      "direct_score_threshold": 1024,
+      "manual_verified_transliteration_6_7": 1,
+      "same_roman_high_content": 21,
+      "expected_file_high_content": 1,
+      "same_roman_moderate_content_source_shape": 1
+    },
+    "manualVerifiedRows": [
+      {
+        "ref": "6:7",
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe009.htm",
+        "sourcePageFileNumber": 9,
+        "sourceRomanMarkers": [
+          "XI",
+          "VI"
+        ],
+        "reason": "Repo uses simplified leader-name transliteration; Sacred Texts prints the same Chapter VI leader-name row with accented R.H. Charles forms."
+      }
+    ],
+    "minimumScore": 0.38871,
+    "averageScore": 0.921587,
+    "belowDirectAcceptedCount": 24,
+    "belowDirectAcceptedSample": [
+      {
+        "ref": "6:7",
+        "chapterNum": 6,
+        "verseNum": 7,
+        "sourcePageFileNumber": 9,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe009.htm",
+        "sourceRomanMarkers": [
+          "XI",
+          "VI"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "manualVerified6_7": true,
+        "score": 1,
+        "orderedCoverage": 1,
+        "contentCoverage": 1,
+        "acceptanceClass": "manual_verified_transliteration_6_7",
+        "repoTextSha256": "2151e36b3c8f30d02563c6687a96abfda2da06f273b425f4b4222cc9bc0d0ad4"
+      },
+      {
+        "ref": "8:3",
+        "chapterNum": 8,
+        "verseNum": 3,
+        "sourcePageFileNumber": 11,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe011.htm",
+        "sourceRomanMarkers": [
+          "VIII"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.485484,
+        "orderedCoverage": 0.090909,
+        "contentCoverage": 0.967742,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "2850f43529c9f5dbba15bb6108fd68e28b7f988f0ea1f73cab362fe55004c7d6"
+      },
+      {
+        "ref": "14:6",
+        "chapterNum": 14,
+        "verseNum": 6,
+        "sourcePageFileNumber": 17,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe017.htm",
+        "sourceRomanMarkers": [
+          "XIV"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.449167,
+        "orderedCoverage": 0.066667,
+        "contentCoverage": 0.916667,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "fbcaca507ade5717df927f4ea65d034703c0fd2896380f4b6c78d0d0b1f72de9"
+      },
+      {
+        "ref": "18:3",
+        "chapterNum": 18,
+        "verseNum": 3,
+        "sourcePageFileNumber": 21,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe021.htm",
+        "sourceRomanMarkers": [],
+        "sameRoman": false,
+        "expectedFile": true,
+        "score": 0.495652,
+        "orderedCoverage": 0.173913,
+        "contentCoverage": 0.888889,
+        "acceptanceClass": "expected_file_high_content",
+        "repoTextSha256": "d622fd2b6cb89d26dd3735e8295012dae0ef7c0478f8fdbd27234bf10affdbaa"
+      },
+      {
+        "ref": "36:1",
+        "chapterNum": 36,
+        "verseNum": 1,
+        "sourcePageFileNumber": 39,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe039.htm",
+        "sourceRomanMarkers": [
+          "XXXVI"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.507813,
+        "orderedCoverage": 0.15625,
+        "contentCoverage": 0.9375,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "110a8f04f41cec93fd401390841b07721960f60b8b655b3219f58e76435e8b9a"
+      },
+      {
+        "ref": "36:2",
+        "chapterNum": 36,
+        "verseNum": 2,
+        "sourcePageFileNumber": 39,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe039.htm",
+        "sourceRomanMarkers": [
+          "XXXVI"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.516703,
+        "orderedCoverage": 0.172414,
+        "contentCoverage": 0.9375,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "be6b6704b780a4dca4807febcc13f4f9f41999834875e1c96de9aafaebd992b9"
+      },
+      {
+        "ref": "39:3",
+        "chapterNum": 39,
+        "verseNum": 3,
+        "sourcePageFileNumber": 42,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe042.htm",
+        "sourceRomanMarkers": [
+          "XXXIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.38871,
+        "orderedCoverage": 0.16129,
+        "contentCoverage": 0.666667,
+        "acceptanceClass": "same_roman_moderate_content_source_shape",
+        "repoTextSha256": "8d5efa3c008f0161ff7d2661d3b341d13c48231fac57697ed76b59b182b9953f"
+      },
+      {
+        "ref": "54:1",
+        "chapterNum": 54,
+        "verseNum": 1,
+        "sourcePageFileNumber": 57,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe057.htm",
+        "sourceRomanMarkers": [
+          "LIV"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.434091,
+        "orderedCoverage": 0.045455,
+        "contentCoverage": 0.909091,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "6a44af0ebd234768ce8e8958e832af83f6c410ddeb51dd908ddbaf28bf3dfe46"
+      },
+      {
+        "ref": "58:6",
+        "chapterNum": 58,
+        "verseNum": 6,
+        "sourcePageFileNumber": 61,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe061.htm",
+        "sourceRomanMarkers": [
+          "LXXI",
+          "LVIII"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.515865,
+        "orderedCoverage": 0.153846,
+        "contentCoverage": 0.958333,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "3cbc8cc9b63ebe7dbcbc13def5de8259a408b8670c8b6e22d8707d5b1c3c6265"
+      },
+      {
+        "ref": "60:25",
+        "chapterNum": 60,
+        "verseNum": 25,
+        "sourcePageFileNumber": 63,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe063.htm",
+        "sourceRomanMarkers": [
+          "LX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.436809,
+        "orderedCoverage": 0.085106,
+        "contentCoverage": 0.866667,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "2b1d3aac0cd4823076d726d1ae8bc1ba927c6df323ef0af93ff750295d890f40"
+      },
+      {
+        "ref": "67:11",
+        "chapterNum": 67,
+        "verseNum": 11,
+        "sourcePageFileNumber": 70,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe070.htm",
+        "sourceRomanMarkers": [
+          "LXVII"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.515476,
+        "orderedCoverage": 0.119048,
+        "contentCoverage": 1,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "8f15776de21f27fe69566b409b9755a8b4038f6109f214482ccaa096b0d4ccda"
+      },
+      {
+        "ref": "76:13",
+        "chapterNum": 76,
+        "verseNum": 13,
+        "sourcePageFileNumber": 79,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe079.htm",
+        "sourceRomanMarkers": [
+          "LXXVI"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.455,
+        "orderedCoverage": 0.090909,
+        "contentCoverage": 0.9,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "0b3d6e8834a7b6c8f45d54887906cd3f2305876c87717846769bb1a09adf0541"
+      },
+      {
+        "ref": "82:18",
+        "chapterNum": 82,
+        "verseNum": 18,
+        "sourcePageFileNumber": 85,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe085.htm",
+        "sourceRomanMarkers": [
+          "LXXXII"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.439857,
+        "orderedCoverage": 0.04,
+        "contentCoverage": 0.928571,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "d898399ab9e5dcdbf20376cb11a5c65a45c701c518c4280f9153c38a3cf84175"
+      },
+      {
+        "ref": "85:6",
+        "chapterNum": 85,
+        "verseNum": 6,
+        "sourcePageFileNumber": 88,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe088.htm",
+        "sourceRomanMarkers": [
+          "XC",
+          "LXXXV"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.449774,
+        "orderedCoverage": 0.085714,
+        "contentCoverage": 0.894737,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "b8a10479e536a6d0b0b32e6b96f3f950878377a43db79a4bd5adcaaf87f8b9a3"
+      },
+      {
+        "ref": "89:6",
+        "chapterNum": 89,
+        "verseNum": 6,
+        "sourcePageFileNumber": 92,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe092.htm",
+        "sourceRomanMarkers": [
+          "LXXXIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.465541,
+        "orderedCoverage": 0.06383,
+        "contentCoverage": 0.956522,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "a6ca67ae30aef1af8584354196c4f540abd0cbe23a341374c1ab927d707e2e00"
+      },
+      {
+        "ref": "89:10",
+        "chapterNum": 89,
+        "verseNum": 10,
+        "sourcePageFileNumber": 92,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe092.htm",
+        "sourceRomanMarkers": [
+          "LXXXIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.465556,
+        "orderedCoverage": 0.088889,
+        "contentCoverage": 0.925926,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "a2f6b9a0bcd87467c6d6ed0562a8d49ec722d95a30350fdbdd4b5d629aaa02f3"
+      },
+      {
+        "ref": "89:54",
+        "chapterNum": 89,
+        "verseNum": 54,
+        "sourcePageFileNumber": 92,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe092.htm",
+        "sourceRomanMarkers": [
+          "LXXXIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.511111,
+        "orderedCoverage": 0.111111,
+        "contentCoverage": 1,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "6202c4270b34b2496e73abcd81634d9ebff27e571f7d4d7bc0d395f2a4274dc3"
+      },
+      {
+        "ref": "89:66",
+        "chapterNum": 89,
+        "verseNum": 66,
+        "sourcePageFileNumber": 92,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe092.htm",
+        "sourceRomanMarkers": [
+          "LXXXIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.47871,
+        "orderedCoverage": 0.16129,
+        "contentCoverage": 0.866667,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "39ffc1429c97d09bfc98e8824563121cd1096a3be3a6796810a4f105ba0a8553"
+      },
+      {
+        "ref": "90:1",
+        "chapterNum": 90,
+        "verseNum": 1,
+        "sourcePageFileNumber": 93,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe093.htm",
+        "sourceRomanMarkers": [
+          "XC"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.496619,
+        "orderedCoverage": 0.121951,
+        "contentCoverage": 0.954545,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "644612cc14770a83c89a2c72db1a1fb13c0a0dd3e19fa5d751ab158b470b341b"
+      },
+      {
+        "ref": "90:22",
+        "chapterNum": 90,
+        "verseNum": 22,
+        "sourcePageFileNumber": 93,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe093.htm",
+        "sourceRomanMarkers": [
+          "XC"
+        ],
+        "sameRoman": true,
+        "expectedFile": true,
+        "score": 0.451413,
+        "orderedCoverage": 0.043478,
+        "contentCoverage": 0.95,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "f2b70710fb07dfd50ab1a61cfd3bd30941008ac8e27f4a2dce4000321329ae45"
+      },
+      {
+        "ref": "91:2",
+        "chapterNum": 91,
+        "verseNum": 2,
+        "sourcePageFileNumber": 95,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe095.htm",
+        "sourceRomanMarkers": [
+          "XCI"
+        ],
+        "sameRoman": true,
+        "expectedFile": false,
+        "score": 0.422381,
+        "orderedCoverage": 0.066667,
+        "contentCoverage": 0.857143,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "f5ef22da4b8f8555a59adc271f27a6ccd7346369e5986e55a49a78abea2c50ea"
+      },
+      {
+        "ref": "96:4",
+        "chapterNum": 96,
+        "verseNum": 4,
+        "sourcePageFileNumber": 100,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe100.htm",
+        "sourceRomanMarkers": [
+          "XCVI"
+        ],
+        "sameRoman": true,
+        "expectedFile": false,
+        "score": 0.494595,
+        "orderedCoverage": 0.081081,
+        "contentCoverage": 1,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "430285bbf86491e61a124625608e9116a3164e954de4b264db1c73363f10c6fa"
+      },
+      {
+        "ref": "99:16",
+        "chapterNum": 99,
+        "verseNum": 16,
+        "sourcePageFileNumber": 103,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe103.htm",
+        "sourceRomanMarkers": [
+          "XCIX"
+        ],
+        "sameRoman": true,
+        "expectedFile": false,
+        "score": 0.465833,
+        "orderedCoverage": 0.083333,
+        "contentCoverage": 0.933333,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "7371bf1427acb4de1e5b9c76417b7ed27cb171373f0d42c9f9d413de5eda110c"
+      },
+      {
+        "ref": "106:17",
+        "chapterNum": 106,
+        "verseNum": 17,
+        "sourcePageFileNumber": 110,
+        "sourcePageUrl": "https://www.sacred-texts.com/bib/boe/boe110.htm",
+        "sourceRomanMarkers": [
+          "CVII",
+          "CVI"
+        ],
+        "sameRoman": true,
+        "expectedFile": false,
+        "score": 0.467143,
+        "orderedCoverage": 0.085714,
+        "contentCoverage": 0.933333,
+        "acceptanceClass": "same_roman_high_content",
+        "repoTextSha256": "776bf3eca7c07698990c4a1895db6a6b9073920f1b99e9238d99193cfe2344c2"
+      }
+    ],
+    "sourcePagesSha256": "42954cc8e836aca0acc600e2ff4bcb4eea63ca2e6d21e500d7de8a97a51ec2cb",
+    "bindingsSha256": "349f7e844b7b471ef1a9ceb9c55d6f0f4eb0c3f977f55f7dd827db1a03dba7cd",
+    "reviewedDiagnosticBasis": [
+      "repo-grid parser diagnostic showed exact repo grid could not be recovered by naive verse markers",
+      "source-binding mapper showed correct page bindings despite shifted chapters and low ordered coverage rows",
+      "corrected acceptance treats same-Roman/expected-file high-content rows as source-bound even when ordered coverage is degraded",
+      "6:7 is explicitly verified against Sacred Texts Chapter VI because name transliteration prevents ordinary token scoring"
+    ]
+  },
+  "allowedClaims": [
+    "broader_canon_1enoch_fixed_entity_source_binding_collated",
+    "broader_canon_1enoch_app_use_text_source_backed_no_bible_verse_text_mutation"
+  ],
+  "blockedClaims": [
+    "broader_canon_1enoch_exact_sacred_texts_page_reproduction",
+    "broader_canon_1enoch_critical_apparatus_preserved_as_display_text",
+    "broader_canon_remaining_candidates_textually_trusted",
+    "broader_canon_complete"
+  ]
+}
