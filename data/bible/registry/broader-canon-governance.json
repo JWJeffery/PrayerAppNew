@@ -105,7 +105,11 @@
     "broader_canon_prayerofapollonius_text_source_verified",
     "broader_canon_prayerofapollonius_renamed_without_collation",
     "broader_canon_armenian_zohrab_appendix_text_trusted_without_extraction",
-    "broader_canon_armenian_zohrab_appendix_app_render_eligible_without_collation"
+    "broader_canon_armenian_zohrab_appendix_app_render_eligible_without_collation",
+    "broader_canon_armenian_zohrab_nt_appendix_trusted_from_ocr_alone",
+    "broader_canon_armenian_zohrab_nt_appendix_candidate_repaired_from_ocr_without_transcription",
+    "broader_canon_armenian_3corinthians_text_trusted_from_page_location_alone",
+    "broader_canon_prayerofapollonius_renamed_from_page_location_alone"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -199,7 +203,11 @@
     "broader_canon_armenian_zohrab_nt_appendix_witness_located",
     "broader_canon_armenian_3corinthians_zohrab_witness_located_pending_extraction",
     "broader_canon_armenian_prayer_of_euthalius_zohrab_witness_located_pending_extraction",
-    "broader_canon_armenian_repose_of_john_zohrab_witness_located_pending_extraction"
+    "broader_canon_armenian_repose_of_john_zohrab_witness_located_pending_extraction",
+    "broader_canon_armenian_zohrab_nt_appendix_source_snapshot_created",
+    "broader_canon_armenian_zohrab_nt_appendix_pages_735_740_ocr_captured_untrusted",
+    "broader_canon_armenian_zohrab_nt_appendix_manual_transcription_required",
+    "broader_canon_armenian_zohrab_nt_appendix_no_candidate_text_mutation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -410,6 +418,12 @@
     ],
     "textMutation": false,
     "trustPromotion": false,
-    "appRenderPromotion": false
+    "appRenderPromotion": false,
+    "latestExtractionSnapshot": {
+      "recordPath": "data/bible/registry/armenian-zohrab-nt-appendix-extraction-snapshot-2026-07-04.json",
+      "rawSourceMetadataPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-source-metadata.json",
+      "rawPagesPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-pages-735-740.json",
+      "status": "source_snapshot_created_pending_manual_transcription_and_collation"
+    }
   }
 }

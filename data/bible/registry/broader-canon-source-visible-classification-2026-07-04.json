@@ -95,5 +95,15 @@
     "sourceVisibleImpact": "3 Corinthians now has an Armenian Zohrab appendix witness located, but candidate English text remains untrusted. Prayer of Euthalius is now the positive source-acquisition target for the Prayer of Apollonius identity review.",
     "textMutation": false,
     "trustPromotion": false
+  },
+  "armenianZohrabNtAppendixExtractionSnapshot": {
+    "recordPath": "data/bible/registry/armenian-zohrab-nt-appendix-extraction-snapshot-2026-07-04.json",
+    "rawSourceMetadataPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-source-metadata.json",
+    "rawPagesPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-pages-735-740.json",
+    "status": "source_snapshot_created_pending_manual_transcription_and_collation",
+    "sourceVisibleImpact": "Armenian Zohrab appendix pages 735-740 now have governed source metadata and Archive DjVu OCR/page anchors, but OCR is not textually trusted and no candidate Bible text is mutated or promoted.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

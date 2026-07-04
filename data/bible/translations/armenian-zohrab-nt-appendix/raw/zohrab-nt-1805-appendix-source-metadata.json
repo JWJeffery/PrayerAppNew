@@ -1,0 +1,41 @@
+{
+  "schema": "armenian-zohrab-nt-appendix-source-metadata-v1",
+  "id": "armenian_zohrab_nt_1805_appendix_source_metadata",
+  "status": "source_metadata_recorded_pending_manual_transcription_and_collation",
+  "source": {
+    "title": "Armenian Zohrab Bible - New Testament (1805)",
+    "archiveIdentifier": "armenian-zohrab-bible-new-testament-1805",
+    "language": "Classical Armenian",
+    "publicationDate": "1805",
+    "pdfUrl": "https://archive.org/download/armenian-zohrab-bible-new-testament-1805/Armenian-Zohrab-Bible-New-Testament-1805.pdf",
+    "djvuXmlUrl": "https://archive.org/download/armenian-zohrab-bible-new-testament-1805/Armenian-Zohrab-Bible-New-Testament-1805_djvu.xml",
+    "pdfSha256": "e41fe89f903f58e5366d7cec55d03e0d701d62c01c209a32b50494ed26efceef",
+    "djvuXmlSha256": "3d9ba550dbc6b42657c2dd21e5256e18b492380be44fb1704a48c50ee756f327",
+    "pdfPageCountVerified": 744,
+    "djvuXmlObjectCountVerified": 744
+  },
+  "scope": {
+    "pdfPages": [
+      735,
+      736,
+      737,
+      738,
+      739,
+      740
+    ],
+    "items": [
+      "3 Corinthians",
+      "Repose of John",
+      "Prayer of Euthalius"
+    ]
+  },
+  "trustBoundary": {
+    "sourceWitnessLocated": true,
+    "ocrTextTrusted": false,
+    "manualTranscriptionCompleted": false,
+    "collationCompleted": false,
+    "candidateBibleTextMutated": false,
+    "textTrustPromoted": false,
+    "appRenderPromoted": false
+  }
+}

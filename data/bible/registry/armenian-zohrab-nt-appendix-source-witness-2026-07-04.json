@@ -119,5 +119,14 @@
       "Do not rename Prayer of Apollonius to Prayer of Euthalius until the current candidate text is compared against the Zohrab Prayer of Euthalius witness.",
       "Keep Prayer of Euthalius as the positive Armenian source-acquisition target."
     ]
+  },
+  "latestExtractionSnapshot": {
+    "recordPath": "data/bible/registry/armenian-zohrab-nt-appendix-extraction-snapshot-2026-07-04.json",
+    "rawSourceMetadataPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-source-metadata.json",
+    "rawPagesPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-pages-735-740.json",
+    "status": "source_snapshot_created_pending_manual_transcription_and_collation",
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

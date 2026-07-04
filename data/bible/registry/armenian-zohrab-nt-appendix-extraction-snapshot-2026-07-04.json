@@ -1,0 +1,69 @@
+{
+  "schema": "armenian-zohrab-nt-appendix-extraction-snapshot-v1",
+  "id": "armenian_zohrab_nt_appendix_extraction_snapshot_2026_07_04",
+  "status": "source_snapshot_created_pending_manual_transcription_and_collation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "witnessRecordPath": "data/bible/registry/armenian-zohrab-nt-appendix-source-witness-2026-07-04.json",
+  "rawSourceMetadataPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-source-metadata.json",
+  "rawPagesPath": "data/bible/translations/armenian-zohrab-nt-appendix/raw/zohrab-nt-1805-appendix-pages-735-740.json",
+  "sourceWitness": {
+    "title": "Armenian Zohrab Bible - New Testament (1805)",
+    "archiveIdentifier": "armenian-zohrab-bible-new-testament-1805",
+    "pdfSha256": "e41fe89f903f58e5366d7cec55d03e0d701d62c01c209a32b50494ed26efceef",
+    "djvuXmlSha256": "3d9ba550dbc6b42657c2dd21e5256e18b492380be44fb1704a48c50ee756f327",
+    "pdfPageCountVerified": 744,
+    "djvuXmlObjectCountVerified": 744
+  },
+  "extractedPages": [
+    {
+      "pdfPage": 735,
+      "item": "3 Corinthians",
+      "role": "start_or_title_page"
+    },
+    {
+      "pdfPage": 736,
+      "item": "3 Corinthians",
+      "role": "continuation_or_response_page"
+    },
+    {
+      "pdfPage": 737,
+      "item": "Repose of John",
+      "role": "start_or_title_page"
+    },
+    {
+      "pdfPage": 738,
+      "item": "Repose of John",
+      "role": "continuation_page"
+    },
+    {
+      "pdfPage": 739,
+      "item": "Repose of John",
+      "role": "continuation_or_close_page"
+    },
+    {
+      "pdfPage": 740,
+      "item": "Prayer of Euthalius",
+      "role": "single_page_text"
+    }
+  ],
+  "sourceTextBoundary": {
+    "archiveDjvuOcrCaptured": true,
+    "archiveDjvuOcrTrustedAsExactText": false,
+    "pageImagesRenderedForVerification": true,
+    "renderedPageImagesCommitted": false,
+    "manualTranscriptionRequired": true,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "candidateImpact": {
+    "data/bible/AR/3corinthiansAR.json": "source witness and OCR/page snapshot acquired; current English candidate remains untrusted pending collation or rebuild from governed translation source",
+    "data/bible/AR/prayerofapolloniusAR.json": "Prayer of Euthalius page snapshot acquired; current Prayer of Apollonius candidate is not identified with Prayer of Euthalius pending comparison"
+  },
+  "nextWork": [
+    "Manual transcription or authoritative Armenian text extraction for pages 735-740.",
+    "Collate current 3 Corinthians candidate against a governed translation/source basis.",
+    "Determine whether Prayer of Apollonius is a mislabeled Prayer of Euthalius candidate, an orphaned candidate, or a separate text.",
+    "Do not promote broader-canon Armenian appendix texts to trusted/app-renderable status from OCR alone."
+  ]
+}
