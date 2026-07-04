@@ -1,0 +1,200 @@
+{
+  "schema": "broader-canon-source-binding-collation-laodiceans-v2",
+  "id": "broader_canon_source_binding_collation_laodiceans_2026_07_04",
+  "status": "passed_source_witness_binding_with_manual_variant_exceptions_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "scope": {
+    "candidatePath": "data/bible/NT/epistleofthelaodiceans.json",
+    "sourceUrl": "https://www.gutenberg.org/cache/epub/6516/pg6516.txt",
+    "bibleVerseTextMutation": false,
+    "candidateJsonMutation": false,
+    "broaderCanonTextTrustPromotion": false,
+    "broaderCanonAppRenderPromotion": false
+  },
+  "candidateSnapshot": {
+    "meta": {
+      "name": "Epistle to the Laodiceans",
+      "id": "LAO",
+      "version": "Westcott-Hort Latin Basis",
+      "copyright": "Public Domain"
+    },
+    "chapterCount": 1,
+    "rowCount": 16,
+    "firstVerseAnchor": "Paul, an apostle, not of men, neither by man, but by Jesus Christ, to the brethren which are at Laodicea.",
+    "lastVerseAnchor": "Cause this epistle to be read to the Colossians, and the epistle of the Colossians to be read unto you."
+  },
+  "sourceWitness": {
+    "sourceUrl": "https://www.gutenberg.org/cache/epub/6516/pg6516.txt",
+    "sourceSha256": "5cc3e2a42f06d05ad83bca97fd61ff3f95f2fc136d7715eea5c7a48d772eb229",
+    "sourceLength": 715536,
+    "witnessDescription": "Project Gutenberg text of The Lost Books of the Bible and The Forgotten Books of Eden, containing Paul the Apostle to the Laodiceans",
+    "sourceBasisCaution": "This binds the candidate to the observed public-domain Gutenberg English witness with manual variant exceptions. It does not certify the candidate metadata phrase 'Westcott-Hort Latin Basis' as an exact source statement."
+  },
+  "bindingSummary": {
+    "rowCount": 16,
+    "bindingCount": 16,
+    "acceptanceClassCounts": {
+      "direct_normalized_source_anchor": 4,
+      "manual_variant_exception_source_family_binding": 3,
+      "moderate_text_source_witness_binding_variant_wording": 3,
+      "high_text_source_witness_binding": 6
+    },
+    "minimumScore": 0.714286,
+    "averageScore": 0.929001,
+    "directNormalizedFoundCount": 4,
+    "manualVariantExceptionRefs": [
+      "1:3",
+      "1:12",
+      "1:14"
+    ]
+  },
+  "rowBindings": [
+    {
+      "ref": "1:1",
+      "verseNum": 1,
+      "directNormalizedFound": true,
+      "score": 1,
+      "acceptanceClass": "direct_normalized_source_anchor",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:2",
+      "verseNum": 2,
+      "directNormalizedFound": true,
+      "score": 1,
+      "acceptanceClass": "direct_normalized_source_anchor",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:3",
+      "verseNum": 3,
+      "directNormalizedFound": false,
+      "score": 0.846154,
+      "acceptanceClass": "manual_variant_exception_source_family_binding",
+      "manualExceptionReason": "Candidate uses a harmonized devotional wording for the prayer/good-works judgment row; Gutenberg witness has high but not direct wording overlap."
+    },
+    {
+      "ref": "1:4",
+      "verseNum": 4,
+      "directNormalizedFound": false,
+      "score": 0.857143,
+      "acceptanceClass": "moderate_text_source_witness_binding_variant_wording",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:5",
+      "verseNum": 5,
+      "directNormalizedFound": true,
+      "score": 1,
+      "acceptanceClass": "direct_normalized_source_anchor",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:6",
+      "verseNum": 6,
+      "directNormalizedFound": true,
+      "score": 1,
+      "acceptanceClass": "direct_normalized_source_anchor",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:7",
+      "verseNum": 7,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:8",
+      "verseNum": 8,
+      "directNormalizedFound": false,
+      "score": 0.857143,
+      "acceptanceClass": "moderate_text_source_witness_binding_variant_wording",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:9",
+      "verseNum": 9,
+      "directNormalizedFound": false,
+      "score": 0.875,
+      "acceptanceClass": "moderate_text_source_witness_binding_variant_wording",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:10",
+      "verseNum": 10,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:11",
+      "verseNum": 11,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:12",
+      "verseNum": 12,
+      "directNormalizedFound": false,
+      "score": 0.714286,
+      "acceptanceClass": "manual_variant_exception_source_family_binding",
+      "manualExceptionReason": "Candidate uses a compact doctrine/petition wording; Gutenberg witness has related wording but not direct normalized identity."
+    },
+    {
+      "ref": "1:13",
+      "verseNum": 13,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:14",
+      "verseNum": 14,
+      "directNormalizedFound": false,
+      "score": 0.714286,
+      "acceptanceClass": "manual_variant_exception_source_family_binding",
+      "manualExceptionReason": "Candidate uses a compact retain/peace wording; Gutenberg witness has related wording but not direct normalized identity."
+    },
+    {
+      "ref": "1:15",
+      "verseNum": 15,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    },
+    {
+      "ref": "1:16",
+      "verseNum": 16,
+      "directNormalizedFound": false,
+      "score": 1,
+      "acceptanceClass": "high_text_source_witness_binding",
+      "manualExceptionReason": null
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_laodiceans_source_witness_binding_recorded",
+    "broader_canon_laodiceans_public_domain_gutenberg_witness_bound_no_candidate_mutation",
+    "broader_canon_laodiceans_manual_variant_exceptions_recorded"
+  ],
+  "blockedClaims": [
+    "broader_canon_laodiceans_exact_text_source_collation",
+    "broader_canon_laodiceans_westcott_hort_latin_basis_exact_certified",
+    "broader_canon_laodiceans_textually_trusted",
+    "broader_canon_laodiceans_app_render_eligible",
+    "broader_canon_complete",
+    "broader_canon_textually_trusted"
+  ],
+  "nextAllowedWork": [
+    "separately verify or correct the Laodiceans metadata source-basis statement",
+    "record a local source snapshot if Laodiceans is later promoted toward app rendering",
+    "resolve manual variant exceptions before any exact-text trust claim",
+    "only promote Laodiceans rendering after public-rendering and text-trust policy is explicitly closed"
+  ]
+}

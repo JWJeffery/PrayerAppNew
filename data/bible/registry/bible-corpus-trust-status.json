@@ -6856,7 +6856,8 @@
         "broader_canon_source_basis_blocker_ascensionofisaiah_2026_07_04",
         "broader_canon_source_basis_blocker_2baruch_2026_07_04",
         "broader_canon_rh_charles_cluster_status_consolidation_2026_07_04",
-        "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04"
+        "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04",
+        "broader_canon_source_binding_collation_laodiceans_2026_07_04"
       ],
       "latestActiveOtShapeNormalization": "data/bible/registry/broader-canon-active-ot-shape-normalization-2026-07-03.json",
       "latestActiveOtShapeNormalizationAuditScript": "scripts/audit-bible-broader-canon-active-ot-shape-normalization.mjs",
@@ -6894,7 +6895,10 @@
         "broader_canon_rh_charles_cluster_collated_2_blocked_2",
         "broader_canon_rh_charles_current_pass_closed_without_trust_promotion",
         "broader_canon_odesofsolomon_source_scope_blocker_recorded",
-        "broader_canon_odesofsolomon_source_visible_fragmentary_not_collation_ready"
+        "broader_canon_odesofsolomon_source_visible_fragmentary_not_collation_ready",
+        "broader_canon_laodiceans_source_witness_binding_recorded",
+        "broader_canon_laodiceans_public_domain_gutenberg_witness_bound_no_candidate_mutation",
+        "broader_canon_laodiceans_manual_variant_exceptions_recorded"
       ],
       "blockedClaims": [
         "broader_canon_textually_trusted",
@@ -6932,7 +6936,11 @@
         "broader_canon_odesofsolomon_source_binding_collated",
         "broader_canon_odesofsolomon_textually_trusted",
         "broader_canon_odesofsolomon_app_render_eligible",
-        "broader_canon_odesofsolomon_complete"
+        "broader_canon_odesofsolomon_complete",
+        "broader_canon_laodiceans_exact_text_source_collation",
+        "broader_canon_laodiceans_westcott_hort_latin_basis_exact_certified",
+        "broader_canon_laodiceans_textually_trusted",
+        "broader_canon_laodiceans_app_render_eligible"
       ],
       "nextAction": "Acquire and bind explicit source witnesses for each text-bearing broader-canon candidate, and remove, rebuild, or non-Bible-classify zero-row/non-scriptural artifacts before any broader-canon textual trust claim.",
       "latestEsdrasNrsVSourceLocatorBlocker": "data/bible/registry/broader-canon-esdras-nrsv-source-locator-blocker-2026-07-03.json",
@@ -7015,6 +7023,11 @@
         "id": "broader_canon_source_scope_blocker_odesofsolomon_2026_07_04",
         "status": "blocked_candidate_fragmentary_source_scope_no_candidate_mutation",
         "recordPath": "data/bible/registry/broader-canon-source-scope-blocker-odesofsolomon-2026-07-04.json"
+      },
+      "latest_broader_canon_source_binding_collation_laodiceans": {
+        "id": "broader_canon_source_binding_collation_laodiceans_2026_07_04",
+        "status": "passed_source_witness_binding_with_manual_variant_exceptions_no_candidate_mutation",
+        "recordPath": "data/bible/registry/broader-canon-source-binding-collation-laodiceans-2026-07-04.json"
       }
     },
     "vulgate": {
