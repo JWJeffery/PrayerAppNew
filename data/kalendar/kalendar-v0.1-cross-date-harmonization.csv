@@ -27,6 +27,7 @@ Thomas Traherne,09-27; 10-10,september; october,duplicate/date harmonization,Ope
 Kenneth / Canice,10-11; 10-13,october,SEC transfer/date harmonization,Open,October 13 is SEC 2026 transfer from October 11; do not treat transfer as fixed date.
 Thecla,09-23; 10-15,september; october,duplicate/date harmonization,Open,LFF September 23 likely controls; October is a Great Church/Oxford reference variant.
 George Whitefield,10-30; 11-15,october; november,group/individual date harmonization,Open,October has individual Whitefield; November has Asbury-Whitefield group. Apply Protestant/evangelical and hagiographic-honesty review.
+Martyrs of the Reformation Era / Reformation Martyrs source-forms,05-05; 10-16; 10-31,may; october,source-form harmonization,Open,May has broad LFF reconciliation source form; October has Latimer-Ridley-Cranmer and broader Reformation-era source forms. Do not turn this into a generic Protestant-reformer bucket.
 Mechthilde of Hackeborn and Gertrude the Great,11-16; 11-21,november,duplicate/date harmonization,Open,November 21 is current LFF; November 16 is AM date variant.
 Hilda of Whitby,11-17; 11-18; 11-19 SEC,november,duplicate/date harmonization,Open,BCP/LFF November 18 likely controls; AM and SEC date variants remain noted.
 Elizabeth of Hungary,11-17; 11-19,november,duplicate/date harmonization,Open,BCP/LFF November 19 likely controls; AM date variant remains noted.
@@ -49,14 +50,14 @@ Frances Joseph-Gaudet,12-22 unverified; 12-30; 12-31,december,source-form/date h
 Thomas Becket,12-23; 12-29,december,duplicate/date harmonization,Open,BCP/LFF December 29 likely controls; December 23 is FAS/AM date variant.
 Stephen,08-03; 12-26,august; december,duplicate/date harmonization,Open,FAS gives August 3 option while BCP/LFF December 26 controls as major feast.
 Samuel Ajayi Crowther,12-31; future possible date,december; future,source/date verification,Open,December row corrected to TEC secondary/provincial witness rather than BCP/LFF authority; verify final date against remaining months.
-Basil the Great and Gregory of Nazianzus,01-02; future fixed dates,january; future,source-form/date harmonization,Open,January FAS/AM/Oxford paired Cappadocian source form is strong but may conflict with later fixed dates for Basil and Gregory.
+Basil the Great and Gregory of Nazianzus / Gregory of Nazianzus,01-02; 05-09; future Basil fixed date,january; may; future,source-form/date harmonization,Open,May has current BCP/LFF individual Gregory of Nazianzus; January has paired Basil-Gregory source form. Keep source forms distinct until Basil's fixed date is reviewed.
 Macarius of Egypt / Macarius the Great,01-02; 01-19,january,duplicate/date harmonization,Open,January has Macarius of Egypt on Jan 2 and Macarius the Great on Jan 19; likely same identity and should receive one SIN if retained.
 David I of Scotland,01-11 fixed; 01-12 SEC transfer,january,SEC transfer/date harmonization,Open,January matrix records fixed-date candidate under Jan 11 with SEC 2026 transfer to Jan 12; do not treat transfer as fixed date.
 Hilary of Poitiers,01-13; 01-14 SEC,january,provincial date variant,Open,BCP/LFF and most January sources use Jan 13; SEC 2026 lists Jan 14 as a date variant rather than a visibly marked transfer.
 Richard Meux Benson and Charles Gore,01-14; 01-16,january,source-form/date harmonization,Open,Current LFF source form places paired Benson-Gore on Jan 14; HWHM/GCW preserve older Jan 16 date variant.
 The Confession of Saint Peter the Apostle,01-18; 01-20 SEC transfer,january,SEC transfer/date harmonization,Open,Fixed BCP/LFF date is Jan 18; SEC 2026 transfers to Jan 20 because Jan 18 is Sunday.
 Timothy and Titus / Timothy Titus and Silas,01-26; 01-29 SEC transfer; Silas 07-13/07-30,january; july,source-form/date harmonization,Open,Current BCP/LFF form is Timothy and Titus on Jan 26; older TEC secondary form adds Silas; SEC 2026 transfer should not be treated as fixed date.
-Lydia Dorcas and Phoebe,01-27; 08-03; 09-03; 10-25,january; august; september; october,group/individual source-form harmonization,Open,January HWHM/GCW group overlaps Lydia of Thyatira, Phoebe, and Tabitha/Dorcas source forms in other months.
+Lydia Dorcas and Phoebe / Lydia of Thyatira,01-27; 05-21; 08-03; 09-03; 10-25,january; may; august; september; october,group/individual source-form harmonization,Open,May has current LFF Lydia of Thyatira; January HWHM/GCW group overlaps Lydia Dorcas and Phoebe; other months preserve Phoebe and Tabitha/Dorcas forms.
 Francis de Sales,01-24; 12-12,january; december,duplicate/date harmonization,Open,January has provincial/date-variant Francis de Sales; December has current LFF paired form with Jane de Chantal.
 Agnes Tsao Kou Ying,01-28; 02-19,january; february,date harmonization,Open,January AM date variant should be reconciled with current LFF Chinese martyrs group in February.
 John Horden,01-12; 12-15,january; december,duplicate/date harmonization,Open,January FAS/AM variant and December matrix candidate should be reconciled before final placement.
@@ -66,6 +67,7 @@ The Martyrs of Japan / Paul Miki and Companions,02-05; 02-06,february,source-for
 Thomas Bray,02-15; 02-16 SEC transfer,february,SEC transfer/date harmonization,Open,Fixed BCP/LFF date is Feb 15; SEC 2026 transfers to Feb 16 because Feb 15 is Sunday.
 Colman of Lindisfarne,02-18; 02-20 SEC transfer,february,SEC transfer/date harmonization,Open,February 18 is the fixed AM candidate date used after removing Luther; SEC 2026 transfers Colman to Feb 20 because Feb 18 is Ash Wednesday.
 Emily Malbone Morgan,02-25; 02-26,february,source-form/date harmonization,Open,Current LFF uses Feb 25; HWHM/GCW preserve Feb 26.
+Matthias the Apostle,02-24; 05-14,february; may,apostle-date harmonization,Open,February 24 has current BCP/LFF apostolic feast authority; May 14 is an AM/date-variant witness and should not displace the apostolic feast.
 Philip Lindel Tsen and Paul Shinji Sasaki,02-24; 10-31,february; october,duplicate/date harmonization,Open,February FAS variant cannot displace Matthias; October TEC secondary source form remains stronger for the bishop pair.
 John Cassian,02-29; 07-23,february; july,leap-day/date harmonization,Open,Current LFF places Cassian on July 23; leap-day HWHM/GCW form remains open for leap-year strategy.
 Charles Wesley / John and Charles Wesley,12-18; 03-03,december; march,source-form/date harmonization,Open,March current LFF pairs John and Charles Wesley; December has a Charles Wesley date-variant candidate requiring Methodist/Anglican hymnwriter review.
@@ -76,5 +78,8 @@ Cuthbert of Lindisfarne,08-31; 03-20,august; march,source-form/date harmonizatio
 Thomas Ken,03-20; 03-21; 03-22; 03-23 SEC transfer,march,source-form/date harmonization,Open,Current LFF/BCP use Mar 21; HWHM/GCW use Mar 20; FAS/SEC use Mar 22 with SEC 2026 transfer to Mar 23.
 John Keble / Oxford Movement Assize Sermon,07-14; 03-29,july; march,event/person harmonization,Open,March has John Keble as priest and poet; July has Oxford Movement/Keble Assize Sermon event. Do not conflate person and event SINs.
 William Augustus Muhlenberg and Anne Ayres,04-08,april,source-form harmonization,Open,April current LFF gives Muhlenberg alone; older TEC secondary sources pair Muhlenberg with Anne Ayres. Keep the source forms distinct in the alternate pass.
-George of Lydda,04-23; 05-06 expected,april; future May,source-form/date harmonization,Open,April contains George as strong HWHM/GCW/FAS/SEC alternate to Kagawa; May bracketed LFF variant is expected and should be reconciled in May.
+George of Lydda,04-23; 05-06,april; may,source-form/date harmonization,Open,April contains George as strong HWHM/GCW/FAS/SEC alternate to Kagawa; May has bracketed LFF George of Lydda and should control if retained.
 Albert Ernest Laurie,04-26 SEC transfer/source witness,april,SEC transfer/source verification,Open,April matrix preserves Albert Ernest Laurie as a SEC-linked alternate needing fixed-date and transfer verification.
+Augustine of Canterbury,05-26; 05-27,may,duplicate/date harmonization,Open,May 26 has current BCP/LFF authority; May 27 is an AM date variant noted in the May matrix.
+Mechthild of Magdeburg / Mechthilde of Hackeborn,05-28; 11-16; 11-21,may; november,name-distinction harmonization,Open,Do not collapse Mechthild of Magdeburg with Mechthilde of Hackeborn or the Mechthilde-Gertrude group.
+Josephine Butler,05-30; future December possible,may; future,date/source verification,Open,May row follows AM baptismal-date note but flags a future December death-date check.
