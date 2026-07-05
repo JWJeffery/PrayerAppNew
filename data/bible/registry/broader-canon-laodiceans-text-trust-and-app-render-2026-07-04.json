@@ -1,0 +1,26 @@
+{
+  "schema": "broader-canon-laodiceans-text-trust-and-app-render-v1",
+  "id": "broader_canon_laodiceans_text_trust_and_app_render_2026_07_04",
+  "status": "app_render_eligible_textually_trusted_gutenberg_witness_backed",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/NT/epistleofthelaodiceans.json",
+  "sourceBindingCollationPath": "data/bible/registry/broader-canon-source-binding-collation-laodiceans-2026-07-04.json",
+  "certificationBasis": {
+    "selectedSource": "Public-domain Gutenberg visible witness recorded in Laodiceans source-binding collation",
+    "candidateRows": 18,
+    "candidateNowMatchesSelectedGutenbergWitness": true,
+    "noSyntheticVerse7": true,
+    "bibleTextMutatedInThisStep": false
+  },
+  "trustBoundary": {
+    "candidateTextTrusted": true,
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "candidateFileSha256BeforeStatusUpdate": "2c59706292b2f6c6cb93883011c5a9710c28710d4ba6d3bae32cc807f45b2c45",
+    "candidateFileSha256AfterStatusUpdate": "ed11739136ee23abbd89c248c25a0c991bc47207d5ce24aec3f5ef5103c5cb1d",
+    "candidateTextSha256BeforeStatusUpdate": "379912ee10fe4005f46bb9c38b2f8110f986862ad2241f2cc5c592a2f34e6568",
+    "candidateTextSha256AfterStatusUpdate": "379912ee10fe4005f46bb9c38b2f8110f986862ad2241f2cc5c592a2f34e6568"
+  }
+}

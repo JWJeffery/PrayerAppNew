@@ -173,5 +173,15 @@
     "appRenderPromotion": true,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false
+  },
+  "laodiceansTextTrustAndAppRender": {
+    "recordPath": "data/bible/registry/broader-canon-laodiceans-text-trust-and-app-render-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_gutenberg_witness_backed",
+    "sourceVisibleImpact": "Laodiceans is textually trusted and app-render eligible from the selected Gutenberg witness. This does not promote the whole broader-canon corpus or any other candidate.",
+    "textTrust": true,
+    "appRenderPromotion": true,
+    "bibleTextMutation": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
   }
 }

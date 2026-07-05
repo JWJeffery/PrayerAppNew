@@ -83,5 +83,17 @@
         }
       ]
     }
-  ]
+  ],
+  "status": "app_render_eligible_textually_trusted_gutenberg_witness_backed",
+  "sourceTrust": {
+    "status": "textually_trusted_gutenberg_witness_backed",
+    "sourceBindingCollationPath": "data/bible/registry/broader-canon-source-binding-collation-laodiceans-2026-07-04.json",
+    "finalizationRecordPath": "data/bible/registry/broader-canon-laodiceans-text-trust-and-app-render-2026-07-04.json",
+    "rowCount": 18,
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "noSyntheticVerse7": true
+  }
 }
