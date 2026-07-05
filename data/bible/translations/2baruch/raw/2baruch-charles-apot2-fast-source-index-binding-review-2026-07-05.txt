@@ -1,0 +1,206 @@
+2 BARUCH FAST APOT SOURCE-INDEX BINDING REVIEW
+
+candidate_rows=746
+source_tokens=35202
+status_counts={'bound_review_required': 718, 'weak_review_required': 28}
+tail_85_1_86_1_87_1_have_source_candidates=True
+
+== weak / unbound rows ==
+
+14:1 weak_review_required
+best score=0.516091 sig=0.818182 bag=0.886364 ord=0.045455 noise=0.933333 lines=1053-1060
+source=after these things, (25-27) And thou hast said unto me 25 (εσγεσθαι καὶ εἰπες μάο)ι" and Thou hast said unto that the retribution which was {ort ut εθνων me, that the retribution, spoken of by thee shall be jen- υπενεχθῃσείται ἡ ὑπο σου which has been spoken of duredt by the nations. λεχθεισα by Thee, shall come upon (27-32) 2. And now I know that those mpagis καὶ vey (oda ort 2 2the nations. And now
+
+42:3 weak_review_required
+best score=0.540909 sig=0.636364 bag=0.590909 ord=0.227273 noise=0.0 lines=2170-2173
+source=of these things. And as for what thou didst say regarding those who have drawn XXXIX. 3-5. Of the four world-empires here mentioned undoubtedly the first is Babylon (ver. 3), and the
+
+58:3 weak_review_required
+best score=0.534337 sig=0.705882 bag=0.55814 ord=0.069767 noise=0.0 lines=3541-3545
+source=And the black third waters which thou hast seen, these are the mingling of all sins, which the nations afterwards wrought after the death of those righteous men, and the wickedness of the land of 2 Egypt, wherein they did wickedly in the service wherewith they made their sons to serve. Never- theless, these also perished at last. 1 ‘And the
+
+58:4 weak_review_required
+best score=0.380769 sig=0.5 bag=0.384615 ord=0.076923 noise=0.0 lines=4458-4460
+source=of your tribulations. For know ye that our Maker will assuredly avenge us on all our enemies, according to all that they have done to us, also that the consummation which the Most High will make is very nigh, and His mercy
+
+59:2 weak_review_required
+best score=0.365837 sig=0.384615 bag=0.558824 ord=0.029412 noise=0.0 lines=3546-3548
+source=Caleb and of all those like them. For at that time the lamp of the eternal law shone on all those who sat in darkness, which announced to them that believe the 3 promise of their reward, and to them that deny, the torment
+
+59:3 weak_review_required
+best score=0.35696 sig=0.461538 bag=0.404762 ord=0.02381 noise=0.0 lines=3394-3402
+source=Adam is therefore not the cause, save only of his own soul, But each of us has been the Adam of his own soul. 20 But do Thou, O Lord, expound to me regarding those things which Thou hast revealed to me, And inform me regarding that which I besought Thee. 21 For atthe consummation of the world vengeance shall
+
+59:4 weak_review_required
+best score=0.266667 sig=0.071429 bag=0.690476 ord=0.119048 noise=0.0 lines=3607-3612
+source=mouth of Gehenna, and the station of vengeance, and the place of faith, and the region of 11 hope: And the likeness of future torment, and the multitude of innumerable angels, and the flaming hosts, and the splendour of the lightnings, and the voice of the thunders, and the orders of the chiefs of the angels, and the treasuries
+
+59:5 weak_review_required
+best score=0.290437 sig=0.153846 bag=0.675676 ord=0.054054 noise=0.0 lines=3602-3606
+source=of judgement : 8 And the root of wisdom, and the riches of understanding, and the fount of knowledge: And the height of the air, and the greatness of Paradise, and the consummation of the ages, and the beginning 9 of the day of judgement: And the number of the offerings, and the earths which have
+
+59:6 weak_review_required
+best score=0.541667 sig=0.5 bag=0.833333 ord=0.208333 noise=0.0 lines=3601-3602
+source=of the abyss, and the weight of the winds, and the number of the drops of 6 rain: And the suppression of anger, and the multitude of long-suffering, and the truth of judgement
+
+59:7 weak_review_required
+best score=0.466667 sig=0.375 bag=0.791667 ord=0.208333 noise=0.0 lines=3605-3607
+source=greatness of Paradise, and the consummation of the ages, and the beginning 9 of the day of judgement: And the number of the offerings, and the earths which have not yet come: 10 And the mouth of Gehenna, and the station of
+
+59:8 weak_review_required
+best score=0.381034 sig=0.3 bag=0.724138 ord=0.068966 noise=0.0 lines=3605-3607
+source=greatness of Paradise, and the consummation of the ages, and the beginning 9 of the day of judgement: And the number of the offerings, and the earths which have not yet come: 10 And the mouth of Gehenna, and the station of vengeance, and the place of
+
+59:9 weak_review_required
+best score=0.425926 sig=0.555556 bag=0.444444 ord=0.074074 noise=0.0 lines=1502-1504
+source=were guarded by angels, and were full of rest (1 En.c.5; 4 Ezra vii. 95). At the judgement they were to restore the souls (2 Bar. xxi. 2, 3, xxx. 2; 4 Ezra vii. 32). There were also treasuries of righteous works (see xxiv. 1). Note that the souls of the wicked
+
+59:10 weak_review_required
+best score=0.343111 sig=0.222222 bag=0.72 ord=0.08 noise=0.0 lines=3603-3606
+source=wisdom, and the riches of understanding, and the fount of knowledge: And the height of the air, and the greatness of Paradise, and the consummation of the ages, and the beginning 9 of the day
+
+59:11 weak_review_required
+best score=0.343111 sig=0.222222 bag=0.72 ord=0.08 noise=0.0 lines=3601-3605
+source=of 6 rain: And the suppression of anger, and the multitude of long-suffering, and the truth of judgement : 8 And the root of wisdom, and the riches of understanding, and the fount of knowledge: And the height of the air, and the
+
+59:12 weak_review_required
+best score=0.4375 sig=0.375 bag=0.772727 ord=0.090909 noise=0.0 lines=3603-3606
+source=the riches of understanding, and the fount of knowledge: And the height of the air, and the greatness of Paradise, and the consummation of the ages, and the beginning 9 of the day of judgement: And the number of
+
+60:3 weak_review_required
+best score=0.301042 sig=0.333333 bag=0.40625 ord=0.0625 noise=0.0 lines=3765-3769
+source=your days. But also against the two tribes and a half 6 went forth a decree that they should also be led away captive, as thou hast now seen. And to such a degree did the impiety of Manasseh increase, that it removed the praise of the Most High
+
+62:6 weak_review_required
+best score=0.459091 sig=0.5 bag=0.636364 ord=0.090909 noise=0.0 lines=3665-3666
+source=time of their captivity which came upon the nine 6 tribes and a half, because they were in many sins. And Salmanasar king of Assyria came and led
+
+83:12 weak_review_required
+best score=0.528061 sig=0.666667 bag=0.52 ord=0.48 noise=0.318182 lines=4578-4582
+source=turning into impotence, 12 And every energy of youth is turning into old age and consummation. 3,4. avapour...adrop. Cf. 4 Ezra vii. 61, vi. 56 (Isa
+
+85:2 weak_review_required
+best score=0.487695 sig=0.681818 bag=0.725 ord=0.0 noise=0.392857 lines=4699-4713
+source=they helped us. Cf. 4 Baruch ii. 3. 524 : IT-BARUE€H 85. 2-ι2} And they interceded for us with Him who made us, isa share ἢ ἐπ re Because they trusted in their works], a: nd the Mighty One heard their prayer and forgave us. vs oe 3 But now the righteous have been gathered And the prophets have fallen asleep, And we
+
+85:7 weak_review_required
+best score=0.318391 sig=0.333333 bag=0.482759 ord=0.034483 noise=0.0 lines=3849-3851
+source=so that he left none that was uncircumcised, or that wrought impiety in all the land, all the days of 6 his life. Therefore he shall receive an eternal reward, and he shall be glorified with the Mighty One 7 beyond many at a later time. For
+
+85:8 weak_review_required
+best score=0.330952 sig=0.428571 bag=0.388889 ord=0.0 noise=0.0 lines=2146-2147
+source=gather and set before him all the works of his hosts. And afterwards he will put him to death, and protect the rest of My people which shall be found in the place which
+
+85:9 weak_review_required
+best score=0.429391 sig=0.555556 bag=0.483871 ord=0.032258 noise=0.0 lines=4587-4589
+source=to judgement (2, 3, 7) ; let them attend not to the present but to the end and its joys (4, 5), and hold to their old faith, to avoid torment in the world to come (8), for this world is passing away with its strength, its virtues and its lusts (9-23). There is a
+
+85:10 weak_review_required
+best score=0.457143 sig=0.571429 bag=0.571429 ord=0.0 noise=0.0 lines=4736-4743
+source=what will befall in the end. 9 Before therefore judgement exact its own, - And truth that which is its due, Let us prepare our soul That we may possess, and not be taken possession of, And that we may hope and not be put to shame
+
+85:11 weak_review_required
+best score=0.388168 sig=0.444444 bag=0.571429 ord=0.142857 noise=0.189189 lines=4810-4824
+source=soul, Nor supplication for offences, Nor intercession of the fathers, Nor prayer of the prophets, Nor help of the righteous. 13 There there is the sentence of corruption, The way of fire, And the path which bringeth to
+
+85:12 weak_review_required
+best score=0.375806 sig=0.5 bag=0.419355 ord=0.0 noise=0.0 lines=4458-4461
+source=that our Maker will assuredly avenge us on all our enemies, according to all that they have done to us, also that the consummation which the Most High will make is very nigh, and His mercy that is coming, and the consummation of His judgement, is by
+
+85:13 weak_review_required
+best score=0.423656 sig=0.466667 bag=0.612903 ord=0.032258 noise=0.0 lines=4762-4778
+source=will bring to pass all these ings, There shall not there be again [a place of repentance, nor] a limit to the times, Nor a duration for the hours, Nor a change of ways, Nor place for prayer, Nor sending of petitions, Nor receiving of knowledge, Nor
+
+85:14 weak_review_required
+best score=0.528947 sig=0.7 bag=0.526316 ord=0.105263 noise=0.0 lines=4441-4444
+source=from the Most High, and I said : 3 * How long will these things endure for us Ὁ And will these evils come upon us always?’ 4 And the Mighty One did according to the multitude of His mercies
+
+85:15 weak_review_required
+best score=0.468323 sig=0.571429 bag=0.608696 ord=0.0 noise=0.0 lines=1972-1975
+source=to withdraw from you, but I will only go unto the Holy of Holies to inquire of the Mighty One concerning you and concerning Zion, if in some respect I should receive more illumination: and after these things I
+
+== tail sample ==
+
+84:1 bound_review_required
+lines=4634-4641 score=0.955652 :: to the truth.] 84 1 Behold! I have therefore made known unto you (these things) whilst I live; for I have said (it) that ye should learn the things that are excellent; for the Mighty One hath commanded me to δ᾽ instruct you: and I will set before you some of the commandments of His judgement before I die. 2 Remember that formerly Moses assuredly called heaven and earth to witness against you
+
+84:2 bound_review_required
+lines=4639-4642 score=1.0 :: before I die. 2 Remember that formerly Moses assuredly called heaven and earth to witness against you and said; 3 ‘If ye transgress the law ye shall be dispersed, but if ye keep it ye shall be kept.’ And
+
+84:3 bound_review_required
+lines=4642-4643 score=1.0 :: shall be kept.’ And other 4 things also he used to say unto you when ye the twelve tribes were together in the desert. And
+
+84:4 bound_review_required
+lines=4643-4645 score=1.0 :: in the desert. And after his death ye cast them away from you: on this account there came upon you what had been 5 predicted. And
+
+84:5 bound_review_required
+lines=4644-4646 score=1.0 :: had been 5 predicted. And now Moses used to tell you before they befell you, and lo! they have befallen you : 6 for ye have forsaken the law. Lo
+
+84:6 bound_review_required
+lines=4646-4648 score=1.0 :: forsaken the law. Lo! I also say unto you after ye have suffered, that if ye obey those things which have been said unto you, ye will receive from the Mighty One whatever has been laid “7 up and reserved for you. Moreover
+
+84:7 bound_review_required
+lines=4648-4650 score=0.918088 :: reserved for you. Moreover, let this epistle be for a testimony between me and you, that ye may remember the commandments of the Mighty One, and that also there may be to me a defence 8 in the presence of Him who sent me. And
+
+84:8 bound_review_required
+lines=4650-4652 score=0.992857 :: Him who sent me. And remember ye the law and Zion, and the holy land and 9 your brethren, and the covenant of your fathers, and forget not the festivals and the sabbaths. And deliver ye this epistle and the traditions of the law to your
+
+84:9 bound_review_required
+lines=4651-4653 score=1.0 :: festivals and the sabbaths. And deliver ye this epistle and the traditions of the law to your sons after you, as also your fathers 10 delivered (them) to you
+
+84:10 bound_review_required
+lines=4653-4655 score=1.0 :: them) to you. And at all times make request perseveringly and pray diligently with your whole heart that the Mighty One may be reconciled to you, and that He may not reckon the 11 multitude of your sins, but remember the rectitude of your fathers. For
+
+84:11 bound_review_required
+lines=4655-4656 score=0.7825 :: of your fathers. For if He judge us not accord- ing to the multitude of His mercies, woe unto all us who are born
+
+85:1 bound_review_required
+lines=4656-4664 score=0.759524 :: are born. 85: Know ye, moreover, that n former times and in the generations of old our fathers had helpers, BS Righteous men and holy prophets: 2 Nay more, we were in our
+
+85:2 weak_review_required
+lines=4699-4713 score=0.487695 :: they helped us. Cf. 4 Baruch ii. 3. 524 : IT-BARUE€H 85. 2-ι2} And they interceded for us with Him who made us, isa share ἢ ἐπ re Because they trusted in their works], a: nd the Mighty One heard their prayer and forgave us. vs oe 3 But now the righteous have been gathered And the prophets have fallen asleep, And we
+
+85:3 bound_review_required
+lines=4710-4718 score=1.0 :: us. vs oe 3 But now the righteous have been gathered And the prophets have fallen asleep, And we also have gone forth from the land, And Zion has been taken from us, : And we have nothing now save the Mighty One and His law. 4 If
+
+85:4 bound_review_required
+lines=4715-4720 score=0.884 :: One and His law. 4 If therefore we direct and dispose our hearts, We shall receive everything that we lost, And much better things than we lost by many times
+
+85:5 bound_review_required
+lines=4720-4727 score=0.681113 :: we lost by many times. 5 For what we have lost was subject to corruption, _ And what we shall receive shall not be corruptible. 6 [Moreover, also, I have written thus to our brethren to Babylon, that
+
+85:6 bound_review_required
+lines=4727-4731 score=0.642029 :: Moreover, also, I have written thus to our brethren to Babylon, that to them also I may attest these very things. ] ah 7 And let all those things aforesaid be always before your eyes, Because we are still in the
+
+85:7 weak_review_required
+lines=3849-3851 score=0.318391 :: so that he left none that was uncircumcised, or that wrought impiety in all the land, all the days of 6 his life. Therefore he shall receive an eternal reward, and he shall be glorified with the Mighty One 7 beyond many at a later time. For
+
+85:8 weak_review_required
+lines=2146-2147 score=0.330952 :: gather and set before him all the works of his hosts. And afterwards he will put him to death, and protect the rest of My people which shall be found in the place which
+
+85:9 weak_review_required
+lines=4587-4589 score=0.429391 :: to judgement (2, 3, 7) ; let them attend not to the present but to the end and its joys (4, 5), and hold to their old faith, to avoid torment in the world to come (8), for this world is passing away with its strength, its virtues and its lusts (9-23). There is a
+
+85:10 weak_review_required
+lines=4736-4743 score=0.457143 :: what will befall in the end. 9 Before therefore judgement exact its own, - And truth that which is its due, Let us prepare our soul That we may possess, and not be taken possession of, And that we may hope and not be put to shame
+
+85:11 weak_review_required
+lines=4810-4824 score=0.388168 :: soul, Nor supplication for offences, Nor intercession of the fathers, Nor prayer of the prophets, Nor help of the righteous. 13 There there is the sentence of corruption, The way of fire, And the path which bringeth to
+
+85:12 weak_review_required
+lines=4458-4461 score=0.375806 :: that our Maker will assuredly avenge us on all our enemies, according to all that they have done to us, also that the consummation which the Most High will make is very nigh, and His mercy that is coming, and the consummation of His judgement, is by
+
+85:13 weak_review_required
+lines=4762-4778 score=0.423656 :: will bring to pass all these ings, There shall not there be again [a place of repentance, nor] a limit to the times, Nor a duration for the hours, Nor a change of ways, Nor place for prayer, Nor sending of petitions, Nor receiving of knowledge, Nor
+
+85:14 weak_review_required
+lines=4441-4444 score=0.528947 :: from the Most High, and I said : 3 * How long will these things endure for us Ὁ And will these evils come upon us always?’ 4 And the Mighty One did according to the multitude of His mercies
+
+85:15 weak_review_required
+lines=1972-1975 score=0.468323 :: to withdraw from you, but I will only go unto the Holy of Holies to inquire of the Mighty One concerning you and concerning Zion, if in some respect I should receive more illumination: and after these things I
+
+86:1 bound_review_required
+lines=4830-4841 score=0.563658 :: sins. ] 86 1,2 When therefore ye receive this my epistle, read it in your congregations with care. And meditate 3 thereon, above all on the days of your fasts. And bear me in mind by means of this epistle, as I also bear you in mind in it, and always. Fare ye well. LXXXVII. Zhe Dispatch of the Letter to the Nine and a Half Tribes. 871 And it
+
+87:1 bound_review_required
+lines=4838-4846 score=0.595556 :: to the Nine and a Half Tribes. 871 And it came to pass when I had ended all the words of this epistle, and had written it sedulously to its close, that I folded it, and sealed it carefully, and bound it to the neck of the eagle, and dis- missed and sent it. HERE

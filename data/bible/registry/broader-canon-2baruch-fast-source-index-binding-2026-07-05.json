@@ -1,0 +1,29 @@
+{
+  "schema": "broader-canon-2baruch-fast-source-index-binding-v1",
+  "id": "broader_canon_2baruch_fast_source_index_binding_2026_07_05",
+  "status": "review_packet_complete_no_trust_promotion",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/NT/2baruchCE.json",
+  "sourceSnapshotPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt",
+  "bindingReportPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-fast-source-index-binding-report-2026-07-05.json",
+  "bindingReviewPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-fast-source-index-binding-review-2026-07-05.txt",
+  "candidateMutation": false,
+  "bibleVerseTextMutation": false,
+  "textTrustPromotion": false,
+  "appRenderPromotion": false,
+  "statusCounts": {
+    "bound_review_required": 718,
+    "weak_review_required": 28
+  },
+  "tailRowsHaveSourceCandidates": true,
+  "blockedClaims": [
+    "broader_canon_2baruch_textually_trusted",
+    "broader_canon_2baruch_app_render_eligible",
+    "broader_canon_2baruch_source_binding_collated"
+  ],
+  "nextWork": [
+    "review weak_review_required and unbound_review_required rows",
+    "manually correct source spans where APOT OCR/critical notes confuse lookup",
+    "emit final row binding only after review rows are resolved"
+  ]
+}
