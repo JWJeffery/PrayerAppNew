@@ -1,7 +1,7 @@
 {
   "schema": "broader-canon-2baruch-complete-source-witness-found-v1",
   "id": "broader_canon_2baruch_complete_source_witness_found_2026_07_05",
-  "status": "complete_public_domain_print_witness_found_materialization_pending",
+  "status": "complete_apot_source_snapshot_materialized_rebuild_pending",
   "recordedAt": "2026-07-05T00:00:00-07:00",
   "candidatePath": "data/bible/NT/2baruchCE.json",
   "priorBlockerRecordPath": "data/bible/registry/broader-canon-source-basis-blocker-2baruch-2026-07-04.json",
@@ -27,7 +27,9 @@
     "bibleVerseTextMutation": false,
     "sourceBindingBacked": false,
     "textTrustPromotion": false,
-    "appRenderPromotion": false
+    "appRenderPromotion": false,
+    "sourceSnapshotMaterialized": true,
+    "candidateRebuildRequiredBeforeBinding": true
   },
   "candidateTailAnchorsToVerifyDuringMaterialization": [
     {
@@ -55,8 +57,10 @@
     "broader_canon_complete"
   ],
   "nextAllowedWork": [
-    "materialize the 2 Baruch section from the Internet Archive APOT volume 2 full text or PDF",
-    "compare candidate chapters 85-87 against the materialized source witness",
-    "record local source snapshot and row-level bindings before any text-trust or app-render promotion"
-  ]
+    "inspect the materialized APOT snapshot",
+    "rebuild data/bible/NT/2baruchCE.json from the APOT snapshot",
+    "row-bind rebuilt rows against the source snapshot before text-trust or app-render promotion"
+  ],
+  "sourceSnapshotPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt",
+  "sourceMaterializationRecordPath": "data/bible/registry/broader-canon-2baruch-source-materialization-2026-07-05.json"
 }

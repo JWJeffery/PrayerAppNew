@@ -1,0 +1,34 @@
+{
+  "schema": "broader-canon-2baruch-source-materialization-v1",
+  "id": "broader_canon_2baruch_source_materialization_2026_07_05",
+  "status": "complete_apot_source_snapshot_materialized_rebuild_pending",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/NT/2baruchCE.json",
+  "sourceSnapshotPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt",
+  "sourceMetadataPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-metadata-2026-07-05.json",
+  "completeSourceWitnessFoundPath": "data/bible/registry/broader-canon-2baruch-complete-source-witness-found-2026-07-05.json",
+  "internetArchiveSourceUrl": "https://archive.org/download/apocryphapseudep02charuoft/apocryphapseudep02charuoft_djvu.txt",
+  "snapshotSha256": "dc5ff0b1640b234a574267ed8f0afd5ff9c750206ea88afe0d30f18b04d214b5",
+  "snapshotCharCount": 206839,
+  "snapshotLineCount": 4846,
+  "sourceAnchorsVerified": {
+    "title": true,
+    "chapter1Opening": true,
+    "chapter85Observed": true,
+    "chapter86Observed": true,
+    "chapter87Observed": true,
+    "closingMarkerObserved": true
+  },
+  "textTrustPromotion": false,
+  "appRenderPromotion": false,
+  "candidateMutation": false,
+  "bibleVerseTextMutation": false,
+  "finding": "The complete APOT source has been materialized locally. Prior inspection showed the current candidate is not exact APOT wording, so the next step is rebuild from this source snapshot before row-level binding.",
+  "inspectionArtifact": "/tmp/2baruch_apot_source_numbered.txt",
+  "nextAllowedWork": [
+    "inspect /tmp/2baruch_apot_source_numbered.txt",
+    "build a bounded parser/rebuilder from the materialized APOT snapshot",
+    "replace the active 2 Baruch candidate only after parser output is inspected",
+    "then row-bind rebuilt rows against the source snapshot"
+  ]
+}

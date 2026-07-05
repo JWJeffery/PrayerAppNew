@@ -1,7 +1,7 @@
 {
   "schema": "2baruch-charles-apot2-source-metadata-v1",
   "id": "2baruch_charles_apot2_source_metadata_2026_07_05",
-  "status": "complete_print_witness_metadata_recorded_source_text_download_pending",
+  "status": "complete_print_witness_source_snapshot_materialized_rebuild_pending",
   "recordedAt": "2026-07-05T00:00:00-07:00",
   "candidatePath": "data/bible/NT/2baruchCE.json",
   "sourceWitnessRecordPath": "data/bible/registry/broader-canon-2baruch-complete-source-witness-found-2026-07-05.json",
@@ -47,14 +47,20 @@
     "printPageRangeFromMirrorCitation": "APOT volume 2, pages 481-524",
     "candidateChapterCount": 87,
     "candidateRowCount": 746,
-    "tailChaptersToVerify": [85, 86, 87]
+    "tailChaptersToVerify": [
+      85,
+      86,
+      87
+    ]
   },
   "materializationState": {
     "localPlainTextSnapshotPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt",
     "localRowBindingPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-row-bindings-2026-07-05.json",
-    "plainTextSnapshotCommitted": false,
+    "plainTextSnapshotCommitted": true,
     "rowBindingCommitted": false,
     "textTrustPromotion": false,
-    "appRenderPromotion": false
+    "appRenderPromotion": false,
+    "sourceMaterializationRecordPath": "data/bible/registry/broader-canon-2baruch-source-materialization-2026-07-05.json",
+    "candidateRebuildPending": true
   }
 }
