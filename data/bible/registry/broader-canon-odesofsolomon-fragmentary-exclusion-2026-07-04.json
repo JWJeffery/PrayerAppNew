@@ -1,0 +1,33 @@
+{
+  "schema": "broader-canon-odesofsolomon-fragmentary-exclusion-v1",
+  "id": "broader_canon_odesofsolomon_fragmentary_exclusion_2026_07_04",
+  "status": "excluded_fragmentary_source_scope_not_app_render_eligible",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+  "sourceScopeBlockerPath": "data/bible/registry/broader-canon-source-scope-blocker-odesofsolomon-2026-07-04.json",
+  "decision": {
+    "disposition": "retain_current_candidate_as_fragmentary_excluded_artifact",
+    "reason": "Current candidate contains only Ode 1 with three rows while source witnesses represent a substantially larger Odes of Solomon corpus.",
+    "futureRebuildPermitted": true,
+    "futureRebuildRequirement": "A complete governed public-domain James Rendel Harris source snapshot must be recorded before any rebuild, row-level collation, text-trust promotion, or app-render eligibility."
+  },
+  "certificationBasis": {
+    "candidateRows": 3,
+    "fragmentaryScopeConfirmed": true,
+    "bibleTextMutatedInThisStep": false,
+    "candidateJsonMutationLimitedToStatus": true,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
+  },
+  "trustBoundary": {
+    "candidateTextTrustedAsCompleteWork": false,
+    "candidateExcludedFromCompletion": true,
+    "candidateExcludedFromAppRender": true,
+    "candidateFileSha256BeforeStatusUpdate": "01e20163bb3916d56c636d52f216a88e668d2d5be0a3ea59ad1b9dc0758c1a8a",
+    "candidateFileSha256AfterStatusUpdate": "87470012720ac6166d7242361c23b242a87f9f84c81d8b01cefa3647c9ed6087",
+    "candidateTextSha256BeforeStatusUpdate": "003cf2f82af18939b0b159edbc9a36c6d520c04e9dc7e20b9fde4816e2507f22",
+    "candidateTextSha256AfterStatusUpdate": "003cf2f82af18939b0b159edbc9a36c6d520c04e9dc7e20b9fde4816e2507f22"
+  }
+}

@@ -153,7 +153,11 @@
     "broader_canon_global_app_render_eligible_from_jubilees",
     "broader_canon_other_candidates_promoted_by_jubilees_app_render",
     "broader_canon_jubilees_exact_sacred_texts_page_reproduction_claim_promoted",
-    "broader_canon_jubilees_source_verse_number_rebuild_claim_promoted"
+    "broader_canon_jubilees_source_verse_number_rebuild_claim_promoted",
+    "broader_canon_odesofsolomon_fragmentary_candidate_treated_as_complete",
+    "broader_canon_odesofsolomon_fragmentary_candidate_app_render_eligible",
+    "broader_canon_odesofsolomon_rebuilt_without_complete_source_snapshot",
+    "broader_canon_odesofsolomon_textually_trusted_from_three_row_fragment"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -291,7 +295,10 @@
     "broader_canon_1enoch_completed_certified_and_render_eligible",
     "broader_canon_jubilees_textually_trusted_source_page_binding_backed",
     "broader_canon_jubilees_app_render_eligible_source_page_binding_backed",
-    "broader_canon_jubilees_completed_certified_and_render_eligible"
+    "broader_canon_jubilees_completed_certified_and_render_eligible",
+    "broader_canon_odesofsolomon_fragmentary_exclusion_recorded",
+    "broader_canon_odesofsolomon_current_candidate_excluded_from_app_render",
+    "broader_canon_odesofsolomon_current_candidate_excluded_from_completion"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -616,5 +623,17 @@
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false,
     "bibleTextMutation": false
+  },
+  "latestOdesOfSolomonFragmentaryExclusion": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-fragmentary-exclusion-2026-07-04.json",
+    "status": "excluded_fragmentary_source_scope_not_app_render_eligible",
+    "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+    "candidateRows": 3,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "bibleTextMutation": false,
+    "futureRebuildPermitted": true
   }
 }

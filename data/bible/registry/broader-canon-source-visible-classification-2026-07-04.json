@@ -203,5 +203,16 @@
     "bibleTextMutation": false,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false
+  },
+  "odesOfSolomonFragmentaryExclusion": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-fragmentary-exclusion-2026-07-04.json",
+    "status": "excluded_fragmentary_source_scope_not_app_render_eligible",
+    "sourceVisibleImpact": "The current Odes of Solomon candidate is retained only as a fragmentary three-row artifact and is excluded from app rendering and broader-canon completion. A future rebuild remains permitted only from a complete governed public-domain James Rendel Harris source snapshot.",
+    "textTrust": false,
+    "appRenderPromotion": false,
+    "bibleTextMutation": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "futureRebuildPermitted": true
   }
 }
