@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Universal Office — Audit Ledger</title>
+<style>
+  :root{
+    --vellum: #1b1712;
+    --vellum-dark: #2a231a;
+    --ink: #e8dcb8;
+    --ink-soft: #a99a72;
+    --red: #e5726a;
+    --red-bg: #3a1e1c;
+    --green: #8fbf6e;
+    --green-bg: #223018;
+    --amber: #e0b84a;
+    --amber-bg: #3a2f14;
+    --rule: #56492f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:32px 20px 80px;
+    background:var(--vellum);
+    background-image: radial-gradient(ellipse at top, #241f16 0%, var(--vellum) 60%);
+    color:var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; }
+  h1{
+    font-size: 28px; letter-spacing: 0.02em; margin: 0 0 4px;
+    border-bottom: 3px double var(--rule); padding-bottom: 14px;
+  }
+  .subtitle{ font-style: italic; color: var(--ink-soft); margin: 0 0 28px; font-size: 14px; }
+  .legend{ display:flex; gap:20px; margin-bottom:28px; font-size:13px; font-family: 'Courier New', monospace; }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; border:1px solid var(--ink-soft); }
+  .dot.red{background:var(--red);} .dot.green{background:var(--green);} .dot.amber{background:var(--amber);}
+  h2{
+    font-size: 15px; text-transform: uppercase; letter-spacing: 0.12em;
+    margin: 40px 0 4px; color: var(--ink);
+    border-bottom: 1px solid var(--rule); padding-bottom: 6px;
+  }
+  .section-note{ font-size:12.5px; color:var(--ink-soft); margin: 0 0 14px; font-style:italic;}
+  table{ width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 6px;}
+  td, th{ padding: 6px 8px; border-bottom: 1px solid var(--vellum-dark); vertical-align: top;}
+  th{ text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); font-weight:normal;}
+  tr.book-row td.name{ font-family: 'Courier New', monospace; font-size: 13px; }
+  .stamp{
+    width: 34px; height: 18px; border-radius: 3px;
+    display:inline-block;
+    cursor:pointer; user-select:none;
+    border: 1px solid var(--ink-soft); transition: transform .08s;
+  }
+  .stamp:active{ transform: scale(0.9); }
+  .stamp.red{ background:var(--red); border-color:var(--red); }
+  .stamp.green{ background:var(--green); border-color:var(--green); }
+  .stamp.amber{ background:var(--amber); border-color:var(--amber); }
+  .book-grid{ display:flex; flex-wrap:wrap; gap:10px 8px; margin-bottom:18px; }
+  .book-cell{ display:flex; flex-direction:column; align-items:center; gap:3px; width:36px; }
+  .book-code{ font-family:'Courier New',monospace; font-size:10.5px; letter-spacing:0.02em; }
+  .book-code.red{ color:var(--red); } .book-code.green{ color:var(--green); } .book-code.amber{ color:var(--amber); }
+  .note-cell{ font-size:12px; color:var(--ink-soft); font-style:italic; }
+  .group-header{ font-weight:bold; font-size:13px; margin-top:18px; letter-spacing:0.03em; }
+  .indent{ padding-left: 22px !important; }
+  .counts{ font-family:'Courier New',monospace; font-size:12px; color:var(--ink-soft); margin-top:6px; }
+  .reset-link{ font-size:11px; color:var(--ink-soft); cursor:pointer; text-decoration:underline; }
+  .part-row td.name{ font-style: italic; }
+  details{ margin-bottom: 10px; }
+  summary{ cursor:pointer; font-weight:bold; padding:6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Universal Office — Audit Ledger</h1>
+  <p class="subtitle">Every yellow is a debt, not a rest. Click a stamp to cycle its status.</p>
+  <div class="legend">
+    <span><span class="dot green"></span> Certified accurate</span>
+    <span><span class="dot red"></span> Known bad</span>
+    <span><span class="dot amber"></span> Unknown / unverified</span>
+    <span class="reset-link" id="resetAll">reset all to seed data</span>
+  </div>
+
+  <h2>I. Biblical Corpus</h2>
+  <p class="section-note">Lucy's certifications for NT, Psalms, and Deuterocanon are void per governance decision (2026-07-05). Nothing here is trusted until independently re-verified.</p>
+  <div id="bibleSection"></div>
+
+  <h2>II. The Daily Office (1979 BCP)</h2>
+  <p class="section-note">Only Morning Prayer has been broken into parts so far. Other Daily Office components (Evening Prayer, Noonday, Compline) need their part-lists defined before granular tracking can begin.</p>
+  <div id="dailyOfficeSection"></div>
+
+  <h2>III. The Ethiopian Office</h2>
+  <p class="section-note">Sa'atat: structural shape mismatch already found (2026-07-05) — the app's 9-watch schema does not match the historically attested Sa'atat of Abba Giyorgis. Senkessar: Ginbot audited days 1–17 (see notes); remaining 12 months untouched.</p>
+  <div id="ethiopianSection"></div>
+
+  <h2>IV. The Church of the East Office</h2>
+  <p class="section-note">Already passed through prior governance rounds (COE II architecture, Final Five adjudication, governance closure) but not yet re-audited against source under current standard.</p>
+  <div id="coeSection"></div>
+
+  <h2>V. The Byzantine (Slavic) Divine Office</h2>
+  <p class="section-note">Naming note: "Horologion" is one of four constituent books (fixed hours) — not the name of the whole office. This lane is being built Slavic-first, with Greek, Antiochian, etc. planned for later. Menaion and Triodion/Pentecostarion completeness is already known-incomplete, not merely unverified — flagged red rather than yellow.</p>
+  <div id="byzantineSection"></div>
+
+  <h2>VI. The Book of Needs</h2>
+  <p class="section-note">Governance/intake scripts exist; unclear whether actual service text exists yet to audit. Status pending clarification.</p>
+  <div id="needsSection"></div>
+
+  <h2>VII. Roman Breviary (1960/1962) — completed portion only</h2>
+  <p class="section-note">DivinumOfficium source mirror already vendored in-repo. Five governance gates required before any corpus import — audit here is gate-compliance, not content, until gates clear.</p>
+  <div id="breviarySection"></div>
+
+  <p class="counts" id="summaryCounts"></p>
+</div>
+
+<script>
+const STATUS_CYCLE = ['amber','red','green'];
+const SYMBOLS = { amber:'?', red:'✕', green:'✓' };
+
+// ---- Seed data ----
+const OT_BOOKS = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth",
+"1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Esther (Greek)",
+"Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Daniel (Greek)",
+"Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi",
+"1 Esdras","2 Esdras","Tobit","Judith","Wisdom","Sirach","Baruch","Letter of Jeremiah","Prayer of Manasseh",
+"1 Maccabees","2 Maccabees","3 Maccabees","4 Maccabees","1 Enoch"];
+const NT_BOOKS = ["Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians",
+"Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon",
+"Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation",
+"Epistle of the Laodiceans","History of Zosimus","2 Baruch (CE)"];
+const ET_BOOKS = ["1 Clement (ET)","2 Clement (ET)","3 Clement (ET)","4 Clement (ET)","5 Clement (ET)","7 Clement (ET)","8 Clement (ET)",
+"Clement, Book of Rolls","Clement, Visionary","Clement 6","Clement, Statutes","1 Meqabyan","2 Meqabyan","3 Meqabyan",
+"Abtilis","Admonitions","Ascension of Isaiah","Book of Jubilees","Didaskalia","Fetha Nagast","Guba'ekana",
+"Hermas, The Shepherd","Josippon","Malke'a Guba'e","Malke'a Iyasus","Malke'a Virgin Mary","Mazaheta",
+"Miracles of Mary","Rest of Baruch","Rest of Jeremiah","Sirate Tsion","Tizaz"];
+const AR_BOOKS = ["3 Corinthians (AR)","Prayer of Apollonius (AR)"];
+const SY_BOOKS = ["Letter of Baruch (SY)"];
+const ODES_BOOKS = ["Armenian Canticles","Coptic Odes","EO Odes","Ethiopian Odes","Odes of Solomon (SY)"];
+
+const RED_SEED = new Set(["Genesis","Deuteronomy","2 Kings","Jeremiah","2 Chronicles","Isaiah"]);
+const RED_NOTES = {
+  "Genesis":"severe: gaps predate recoverable git history",
+  "Deuteronomy":"severe: gaps predate recoverable git history",
+  "2 Kings":"severe: gaps predate recoverable git history",
+  "Jeremiah":"severe: gaps predate recoverable git history",
+  "2 Chronicles":"ch.9 missing v9 + extra terminal v32 — needs sequence adjudication",
+  "Isaiah":"ch.25 missing v9 + extra terminal v13 — needs sequence adjudication"
+};
+
+function makeBooks(list, corpus){
+  return list.map(name => ({
+    key: corpus+':'+name,
+    name,
+    status: RED_SEED.has(name) ? 'red' : 'amber',
+    note: RED_NOTES[name] || ''
+  }));
+}
+
+const MORNING_PRAYER_PARTS = ["Opening Sentences","Confession","Invitatory","Invitatory Psalm",
+"Appointed Psalms","Lessons with Canticles","Apostles' Creed","Lord's Prayer","Suffrages",
+"Collects","Mission Prayer","Hymn / Intercessions / Thanksgivings (optional)",
+"General Thanksgiving and/or Prayer of St. Chrysostom","Let Us Bless the Lord — Concluding Sentence"];
+
+const NOONDAY_PARTS = ["Opening Versicle (O God, make speed to save us)","Hymn (optional)","Psalm(s)",
+"Gloria Patri","Silence / Lesson","Response (Thanks be to God)","Kyrie (Lord have mercy)","Lord's Prayer",
+"Versicle & Response","Collect","Free Intercessions (optional)","Let Us Bless the Lord — concluding sentence"];
+
+const EVENING_PRAYER_PARTS = ["Opening Sentences","Confession (optional)","Invitatory (O God, make speed to save us / Phos Hilaron)",
+"Psalms","Lessons with Canticles (Magnificat / Nunc Dimittis)","Apostles' Creed","Lord's Prayer","Suffrages",
+"Collects","Mission Prayer","Hymn / Intercessions / Thanksgivings (optional)",
+"General Thanksgiving and/or Prayer of St. Chrysostom","Let Us Bless the Lord — concluding sentence"];
+
+const COMPLINE_PARTS = ["Opening Versicles (Our help is in the Name of the Lord)","Confession (brief, optional)",
+"O God, make speed to save us + Gloria Patri","Psalmody (4, 31:1-6, 91, or 134)","Short Lesson",
+"Responsory (Into your hands, O Lord...)","Nunc Dimittis with Antiphon (Guide us waking, O Lord)",
+"Kyrie","Lord's Prayer","Suffrages/Collects proper to Compline","Silence & free intercessions (optional)",
+"Let Us Bless the Lord + Concluding Blessing"];
+
+const DAILY_OFFICE = [
+  {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>({key:'do:mp:'+p,name:p,status:'amber',note:''}))},
+  {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>({key:'do:ep:'+p,name:p,status:'amber',note:''}))},
+  {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>({key:'do:noon:'+p,name:p,status:'amber',note:''}))},
+  {group:"Compline", parts: COMPLINE_PARTS.map(p=>({key:'do:comp:'+p,name:p,status:'amber',note:''}))}
+];
+
+const ETHIOPIAN = [
+  {key:'eth:saatat:shape', name:"Sa'atat — overall shape", status:'red', note:"9-watch/3-psalm schema built does not match attested Giyorgis structure (Taft: lesson-based, not fixed-psalm-per-watch)"},
+  {key:'eth:saatat:nocturns', name:"Sa'atat — Nocturns (real structure: 4 lessons + responsorial psalm + gospel)", status:'amber', note:'needs full rebuild-or-reaudit decision'},
+  {key:'eth:saatat:eleventh', name:"Sa'atat — Eleventh Hour / Vespers", status:'amber', note:'same lesson-based structure per Taft'},
+  {key:'eth:saatat:twelfth', name:"Sa'atat — Twelfth Hour (Marian devotional office)", status:'amber', note:'distinct office, not currently represented at all'},
+  {key:'eth:senk:ginbot', name:"Senkessar — Ginbot", status:'red', note:"days 1–17 audited vs Budge; hallucinated + displaced saints found"},
+  {key:'eth:senk:other', name:"Senkessar — other 12 months", status:'amber', note:'not yet audited'}
+];
+
+const COE_HOURS = ["Ramsha — Evening (6pm)","Suba'a — Compline (9pm, rarely used)","Lelya — Night Vigil (midnight)",
+"Sapra — Morning (6am)","Third Hour — Quta'a (9am)","Sixth Hour — Endana/Noon (12pm)","Ninth Hour — Tsha'a (3pm)"];
+const COE = COE_HOURS.map(h=>({key:'coe:'+h, name:h, status:'amber', note:'top-level hour confirmed via source; internal parts not yet broken down'}));
+
+const BYZ_HOURS = ["Vespers (Vechernya)","Compline (Povecherie)","Midnight Office (Polunoshchnitsa)",
+"Matins / Orthros (Utrenya)","First Hour","Third Hour","Sixth Hour","Ninth Hour","Typika"];
+const BYZANTINE_TOP = BYZ_HOURS.map(h=>({key:'byz:hour:'+h, name:h, status:'amber', note:"Lucy's 'complete' claim voided; not yet re-verified. Slavic terms given per Josh's specification."}));
+const BYZANTINE = BYZANTINE_TOP.concat([
+  {key:'byz:octoechos', name:"Octoechos (weekday corpus)", status:'amber', note:'sourced from Lambertsen; not yet re-verified'},
+  {key:'byz:menaion', name:"Menaion", status:'red', note:'open research-queue.json — acknowledged incomplete'},
+  {key:'byz:triodion', name:"Triodion", status:'red', note:'only 1 file exists (lenten weekday) — barely started'},
+  {key:'byz:pentecostarion', name:"Pentecostarion", status:'red', note:'only 1 file exists (bright week) — barely started'}
+]);
+
+const NEEDS = [
+  {key:'needs:content', name:"Service texts", status:'amber', note:'unclear whether content exists yet to audit'},
+  {key:'needs:governance', name:"Governance/taxonomy scaffolding", status:'amber', note:'scripts exist; content status unclear'}
+];
+
+const BREVIARY = [
+  {key:'brev:gates', name:"Pre-import governance gates", status:'amber', note:'need to confirm all 5 gates still holding'},
+  {key:'brev:completed', name:"Completed portion so far", status:'amber', note:'awaiting definition of what has shipped to runtime'}
+];
+
+// ---- storage ----
+async function loadStatus(key, fallback){
+  try{
+    const r = await window.storage.get(key, false);
+    return r ? JSON.parse(r.value) : fallback;
+  }catch(e){ return fallback; }
+}
+async function saveStatus(key, val){
+  try{ await window.storage.set(key, JSON.stringify(val), false); }catch(e){ console.error('save failed', key, e); }
+}
+
+function stampEl(item, onchange){
+  const el = document.createElement('span');
+  el.className = 'stamp ' + item.status;
+  el.title = 'click to change status';
+  el.onclick = async () => {
+    const idx = STATUS_CYCLE.indexOf(item.status);
+    item.status = STATUS_CYCLE[(idx+1) % STATUS_CYCLE.length];
+    el.className = 'stamp ' + item.status;
+    await saveStatus(item.key, {status:item.status, note:item.note});
+    onchange && onchange();
+    renderCounts();
+  };
+  return el;
+}
+
+const BOOK_CODES = {
+  "Genesis":"Gen","Exodus":"Exo","Leviticus":"Lev","Numbers":"Num","Deuteronomy":"Deu","Joshua":"Jos","Judges":"Jdg","Ruth":"Rut",
+  "1 Samuel":"1Sa","2 Samuel":"2Sa","1 Kings":"1Ki","2 Kings":"2Ki","1 Chronicles":"1Ch","2 Chronicles":"2Ch","Ezra":"Ezr","Nehemiah":"Neh","Esther":"Est","Esther (Greek)":"EsG",
+  "Job":"Job","Psalms":"Psa","Proverbs":"Pro","Ecclesiastes":"Ecc","Song of Songs":"Sng","Isaiah":"Isa","Jeremiah":"Jer","Lamentations":"Lam","Ezekiel":"Eze","Daniel":"Dan","Daniel (Greek)":"DaG",
+  "Hosea":"Hos","Joel":"Joe","Amos":"Amo","Obadiah":"Oba","Jonah":"Jon","Micah":"Mic","Nahum":"Nah","Habakkuk":"Hab","Zephaniah":"Zep","Haggai":"Hag","Zechariah":"Zec","Malachi":"Mal",
+  "1 Esdras":"1Es","2 Esdras":"2Es","Tobit":"Tob","Judith":"Jdt","Wisdom":"Wis","Sirach":"Sir","Baruch":"Bar","Letter of Jeremiah":"LJe","Prayer of Manasseh":"PrM",
+  "1 Maccabees":"1Ma","2 Maccabees":"2Ma","3 Maccabees":"3Ma","4 Maccabees":"4Ma","1 Enoch":"1En",
+  "Matthew":"Mat","Mark":"Mrk","Luke":"Luk","John":"Jhn","Acts":"Act","Romans":"Rom","1 Corinthians":"1Co","2 Corinthians":"2Co","Galatians":"Gal",
+  "Ephesians":"Eph","Philippians":"Php","Colossians":"Col","1 Thessalonians":"1Th","2 Thessalonians":"2Th","1 Timothy":"1Ti","2 Timothy":"2Ti","Titus":"Tit","Philemon":"Phm",
+  "Hebrews":"Heb","James":"Jas","1 Peter":"1Pe","2 Peter":"2Pe","1 John":"1Jn","2 John":"2Jn","3 John":"3Jn","Jude":"Jud","Revelation":"Rev",
+  "Epistle of the Laodiceans":"Lao","History of Zosimus":"Zos","2 Baruch (CE)":"2Br"
+};
+function codeFor(name){ return BOOK_CODES[name] || name.replace(/[^A-Za-z]/g,'').slice(0,3); }
+
+function renderBookTable(container, groupLabel, items){
+  const h = document.createElement('div');
+  h.className = 'group-header';
+  h.textContent = groupLabel;
+  container.appendChild(h);
+  const grid = document.createElement('div');
+  grid.className = 'book-grid';
+  items.forEach(item => {
+    const cell = document.createElement('div');
+    cell.className = 'book-cell';
+    cell.title = item.name + (item.note ? ' — ' + item.note : '');
+    const stamp = stampEl(item, () => {
+      code.className = 'book-code ' + item.status;
+    });
+    const code = document.createElement('div');
+    code.className = 'book-code ' + item.status;
+    code.textContent = codeFor(item.name);
+    cell.appendChild(stamp);
+    cell.appendChild(code);
+    grid.appendChild(cell);
+  });
+  container.appendChild(grid);
+}
+
+function renderOfficeTable(container, indent, items){
+  const table = document.createElement('table');
+  items.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.className = 'part-row';
+    const tdStamp = document.createElement('td');
+    tdStamp.style.width = '34px';
+    tdStamp.appendChild(stampEl(item));
+    const tdName = document.createElement('td');
+    tdName.className = indent ? 'name indent' : 'name';
+    tdName.textContent = item.name;
+    const tdNote = document.createElement('td');
+    tdNote.className = 'note-cell';
+    tdNote.textContent = item.note;
+    tr.appendChild(tdStamp); tr.appendChild(tdName); tr.appendChild(tdNote);
+    table.appendChild(tr);
+  });
+  container.appendChild(table);
+}
+
+let ALL_ITEMS = [];
+
+async function hydrateAndRender(items, renderFn, container, ...args){
+  for (const item of items){
+    const stored = await loadStatus(item.key, null);
+    if (stored){ item.status = stored.status; item.note = stored.note || item.note; }
+  }
+  ALL_ITEMS.push(...items);
+  renderFn(container, ...args, items);
+}
+
+function renderCounts(){
+  const counts = {red:0, amber:0, green:0};
+  ALL_ITEMS.forEach(i => counts[i.status]++);
+  document.getElementById('summaryCounts').textContent =
+    `Ledger totals — ${ALL_ITEMS.length} entries: ${counts.green} certified, ${counts.red} known bad, ${counts.amber} unknown.`;
+}
+
+async function init(){
+  const bibleSec = document.getElementById('bibleSection');
+  await hydrateAndRender(makeBooks(OT_BOOKS,'OT'), renderBookTable, bibleSec, "Old Testament (canonical + broader canon, as filed)");
+  await hydrateAndRender(makeBooks(NT_BOOKS,'NT'), renderBookTable, bibleSec, "New Testament");
+  await hydrateAndRender(makeBooks(ET_BOOKS,'ET'), renderBookTable, bibleSec, "Ethiopian broader-canon texts (ET)");
+  await hydrateAndRender(makeBooks(AR_BOOKS,'AR'), renderBookTable, bibleSec, "Armenian texts (AR)");
+  await hydrateAndRender(makeBooks(SY_BOOKS,'SY'), renderBookTable, bibleSec, "Syriac texts (SY)");
+  await hydrateAndRender(makeBooks(ODES_BOOKS,'ODES'), renderBookTable, bibleSec, "Odes / Canticles");
+
+  const doSec = document.getElementById('dailyOfficeSection');
+  for (const g of DAILY_OFFICE){
+    const det = document.createElement('details');
+    det.open = (g.group === "Morning Prayer");
+    const sum = document.createElement('summary');
+    sum.textContent = g.group;
+    det.appendChild(sum);
+    const inner = document.createElement('div');
+    det.appendChild(inner);
+    doSec.appendChild(det);
+    await hydrateAndRender(g.parts, renderOfficeTable, inner, true);
+  }
+
+  await hydrateAndRender(ETHIOPIAN, renderOfficeTable, document.getElementById('ethiopianSection'), false);
+  await hydrateAndRender(COE, renderOfficeTable, document.getElementById('coeSection'), false);
+  await hydrateAndRender(BYZANTINE, renderOfficeTable, document.getElementById('byzantineSection'), false);
+  await hydrateAndRender(NEEDS, renderOfficeTable, document.getElementById('needsSection'), false);
+  await hydrateAndRender(BREVIARY, renderOfficeTable, document.getElementById('breviarySection'), false);
+
+  renderCounts();
+}
+
+document.getElementById('resetAll').onclick = async () => {
+  if (!confirm('Reset every entry back to seed data? This clears manual updates.')) return;
+  for (const item of ALL_ITEMS){
+    try{ await window.storage.delete(item.key, false); }catch(e){}
+  }
+  location.reload();
+};
+
+init();
+</script>
+</body>
+</html>
