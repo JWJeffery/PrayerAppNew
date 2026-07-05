@@ -62,3 +62,8 @@
 ## Resolved
 
 - **2026-07-05 — Byzantine complexity representation, confirmed by Josh:** two separate tracks, not one ledger row. (A) Content-completeness grids per book (Octoechos: tone × weekday; Menaion: month × day; etc.), same model as the Bible-book grid, just finer resolution. (B) A separate adversarial test-case suite for the *combination/concurrence engine* — specific real dates chosen to stress tone-of-week + fixed feast + movable season + rank rules, checked pass/fail against correct Typikon behavior. These are different failure modes (content vs. behavior) and must not be conflated into a single cell.
+- **2026-07-05 — Fix workflow, confirmed by Josh:** two-tier, not per-item pre-approval and not full-audit-then-fix-everything.
+  - **Mechanical corrections** (verified unambiguously against a primary source, one correct answer) — commit directly to the audit branch immediately upon verification. Do not wait for per-item sign-off; the source-verification step already is the rigor. Continue auditing forward without pausing.
+  - **Judgment calls** (a decision is being made, not just a correction) — flag and hold for Josh's decision before touching anything. Do not block continued auditing elsewhere while a judgment call is pending.
+  - Either way, nothing reaches `main` without Josh's review, batched by office/session, not by sentence.
+  - **Dashboard currency rule:** the dashboard must be updated in the same action as any fix or finding — never described in chat and updated later. The dashboard has an auto-reseed mechanism (`SEED_VERSION` string in the HTML) — bump this string whenever seed data changes so stale browser-stored state doesn't mask new findings.
