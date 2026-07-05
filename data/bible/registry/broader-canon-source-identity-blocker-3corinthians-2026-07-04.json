@@ -131,5 +131,13 @@
     "trustPromotion": false,
     "appRenderPromotion": false,
     "nextRequiredAction": "run rebuild QC and then separate trust certification"
+  },
+  "latestTextTrustCertification": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json",
+    "status": "certified_textually_trusted_source_map_backed_pending_app_render_policy",
+    "blockerResolvedForTextTrust": true,
+    "trustPromotion": true,
+    "appRenderPromotion": false,
+    "globalBroaderCanonTrustPromotion": false
   }
 }

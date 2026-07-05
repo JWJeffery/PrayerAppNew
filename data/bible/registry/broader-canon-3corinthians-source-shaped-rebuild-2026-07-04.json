@@ -30,5 +30,12 @@
     "Run source-shaped rebuild audit.",
     "Then perform separate text-trust certification if the rebuild audit passes.",
     "Do not app-render 3 Corinthians until trust certification and app-render policy are separately promoted."
-  ]
+  ],
+  "latestTextTrustCertification": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json",
+    "status": "certified_textually_trusted_source_map_backed_pending_app_render_policy",
+    "trustPromotion": true,
+    "appRenderPromotion": false,
+    "globalBroaderCanonTrustPromotion": false
+  }
 }

@@ -136,7 +136,10 @@
     "broader_canon_3corinthians_textually_trusted_by_rebuild_alone",
     "broader_canon_3corinthians_app_render_eligible_by_rebuild_alone",
     "broader_canon_3corinthians_old_19_row_candidate_still_active",
-    "broader_canon_3corinthians_trust_promoted_without_certification"
+    "broader_canon_3corinthians_trust_promoted_without_certification",
+    "broader_canon_3corinthians_app_render_eligible_without_app_render_policy",
+    "broader_canon_global_textually_trusted_from_3corinthians_certification",
+    "broader_canon_remaining_blockers_resolved_by_3corinthians_certification"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -259,7 +262,10 @@
     "broader_canon_3corinthians_candidate_rebuilt_from_corrected_mr_james_source_map",
     "broader_canon_3corinthians_candidate_rows_now_33",
     "broader_canon_3corinthians_old_19_row_candidate_superseded",
-    "broader_canon_3corinthians_text_mutated_by_source_shaped_rebuild_pending_certification"
+    "broader_canon_3corinthians_text_mutated_by_source_shaped_rebuild_pending_certification",
+    "broader_canon_3corinthians_textually_trusted_source_map_backed",
+    "broader_canon_3corinthians_trust_certified_corrected_33_row_mr_james_source_map",
+    "broader_canon_3corinthians_old_19_row_candidate_superseded_and_not_active"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -537,5 +543,13 @@
     "candidateTextMutation": true,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "latest3CorinthiansTextTrustCertification": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json",
+    "status": "certified_textually_trusted_source_map_backed_pending_app_render_policy",
+    "candidatePath": "data/bible/AR/3corinthiansAR.json",
+    "trustPromotion": true,
+    "appRenderPromotion": false,
+    "globalBroaderCanonTrustPromotion": false
   }
 }
