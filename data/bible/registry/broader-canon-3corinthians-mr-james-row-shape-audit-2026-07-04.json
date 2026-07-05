@@ -185,5 +185,15 @@
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "latestCorrectedMrJamesSourceMap": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+    "segmentationPath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-source-segmentation.json",
+    "status": "source_map_created_corrected_33_pending_rebuild_script_no_candidate_mutation",
+    "correctedStrictSourceRowsMapped": 33,
+    "supersedesLooseMarkerTotal": 35,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

@@ -138,5 +138,14 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansCorrectedMrJamesSourceMap": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+    "segmentationPath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-source-segmentation.json",
+    "status": "source_map_created_corrected_33_pending_rebuild_script_no_candidate_mutation",
+    "sourceVisibleImpact": "3 Corinthians has a corrected 33-row M. R. James source segmentation and source map for a future source-shaped rebuild; current candidate text remains unmutated, untrusted, and not app-render eligible.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

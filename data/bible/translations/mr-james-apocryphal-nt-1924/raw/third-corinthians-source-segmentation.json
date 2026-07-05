@@ -1,0 +1,624 @@
+{
+  "schema": "mr-james-apocryphal-nt-1924-third-corinthians-source-segmentation-v1",
+  "id": "mr_james_apocryphal_nt_1924_third_corinthians_source_segmentation",
+  "status": "segmented_corrected_33_for_source_shape_rebuild_pending_candidate_mutation",
+  "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+  "sourceSelectionPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+  "sourceShapeMigrationPolicyPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
+  "markerCountCorrectionPath": "data/bible/registry/broader-canon-3corinthians-mr-james-marker-count-correction-2026-07-04.json",
+  "source": {
+    "title": "The Apocryphal New Testament (1924), Third Epistle to the Corinthians",
+    "translator": "Montague Rhodes James",
+    "sourceUrl": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Acts/The_Acts_of_Paul/Third_Epistle_to_the_Corinthians",
+    "sourceBodySha256": "85a83e60baf8c20ee04df888a3e9c76811be460841325f61eac630caafc54b03"
+  },
+  "sections": [
+    {
+      "sectionKey": "intro_narrative",
+      "sectionTitle": "Introductory narrative before the Corinthians' letter",
+      "sourceText": "For there were certain men come to Corinth, Simon and Cleobius, saying: There is no resurrection of the flesh, but that of the spirit only: and that the body of man is not the creation of God; and also concerning the world, that God did not create it, and that God knoweth not the world, and that Jesus Christ was not crucified, but it was an appearance (i.e. but only in appearance), and that lie was not born of Mary, nor of the seed of David. And in a word, there were many things which they had taught in Corinth, deceiving many other men, (and deceiving also) themselves. When therefore the Corinthians heard that Paul was at Philippi, they sent a letter unto Paul to Macedonia by Threptus and Eutychus the deacons. And the letter was after this manner.",
+      "sourceTextSha256": "fe755684bae5ef6e237bc10308e4c8c46db242cf1b056dfb4ec4609cec859fab",
+      "sourceRows": []
+    },
+    {
+      "sectionKey": "I_corinthians_letter",
+      "sectionTitle": "Corinthians' letter to Paul",
+      "sourceRows": [
+        {
+          "sourceRowId": "I_corinthians_letter.01",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 1,
+          "visibleMarker": "1",
+          "visibleNumber": 1,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Stephanus and the elders (presbyters) that are with him, even Daphnus and Eubulus and Theophilus and Zenon, unto Paul THEIR BROTHER ETERNAL greeting in the Lord.",
+          "sourceTextSha256": "22e134304987f8239ca3a727a18a42df96715a34d3163c524df9fc2693d0c5ee",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 1,
+            "visibleMarker": "1"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.02",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 2,
+          "visibleMarker": "2",
+          "visibleNumber": 2,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "There have come unto Corinth two men, Simon and Cleobius, which are overthrowing the faith of many with evil (CORRUPT) words, 3 which do thou prove AND EXAMINE: 4 for we have never heard such words from thee nor from the other apostles: 5 but all that we have received from thee or from them, that do we hold fast.",
+          "sourceTextSha256": "08530716b71714ff2a801d513a13811f926cba0002544a453984966906dc0f5d",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 2,
+            "visibleMarker": "2"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.03",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 3,
+          "visibleMarker": "6",
+          "visibleNumber": 6,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Since therefore the Lord hath had mercy on us, that while thou art still in the flesh we may hear these things again from thee, 7 if it be possible, either come unto us or write unto us.",
+          "sourceTextSha256": "e205a794856a23170744975985f5a462e111227da40271cbbe3c72557bc3eedc",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 3,
+            "visibleMarker": "6"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.04",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 4,
+          "visibleMarker": "8",
+          "visibleNumber": 8,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For we believe, according as it hath been revealed unto Theonoë, that the Lord hath delivered thee out of the hand of the lawless one (enemy, Laon).",
+          "sourceTextSha256": "52d6293504c6850d84c90b5160e40c1e302bc431d081c3a5d81f5d17f0c63793",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 4,
+            "visibleMarker": "8"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.05",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 5,
+          "visibleMarker": "9",
+          "visibleNumber": 9,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Now the things which these men say and teach are these:",
+          "sourceTextSha256": "dc0db891ca7a31c7857b051107fd48b293a7663932459c38ac488e7a90b115e8",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 5,
+            "visibleMarker": "9"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.06",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 6,
+          "visibleMarker": "10",
+          "visibleNumber": 10,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "They say that we must not use the prophets, 11 and that God is not Almighty, 12 and that there shall be no resurrection of the flesh, 13 and that man was not made by God, 14 and that Christ came not down (is not come, Copt.) in the flesh, neither was born of Mary, 15 and that the world is not of God, but of the angels.",
+          "sourceTextSha256": "a44b4e6ffc805e93b03159a5946d2d648b16874fa23f80c056435d108aa701bc",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 6,
+            "visibleMarker": "10"
+          }
+        },
+        {
+          "sourceRowId": "I_corinthians_letter.07",
+          "sectionKey": "I_corinthians_letter",
+          "sectionTitle": "Corinthians' letter to Paul",
+          "sourceRowOrdinal": 7,
+          "visibleMarker": "16",
+          "visibleNumber": 16,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Wherefore, brother, WE PRAY THEE use all diligence to come unto us, that the church of the Corinthians may remain without offence, and the madness of these men may be made plain. Farewell ALWAYS in the Lord.",
+          "sourceTextSha256": "71c370d11029a0e0db07eb00906a6ae70fa15180e5ead4ad5d3b3e9332724d91",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "I_corinthians_letter",
+            "row": 7,
+            "visibleMarker": "16"
+          }
+        }
+      ]
+    },
+    {
+      "sectionKey": "II_narrative_bridge",
+      "sectionTitle": "Narrative bridge before Paul's reply",
+      "sourceRows": [
+        {
+          "sourceRowId": "II_narrative_bridge.01",
+          "sectionKey": "II_narrative_bridge",
+          "sectionTitle": "Narrative bridge before Paul's reply",
+          "sourceRowOrdinal": 1,
+          "visibleMarker": "1",
+          "visibleNumber": 1,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "The deacons Threptus and Eutyches brought the letter unto Philippi, 2 so that Paul received it, being in bonds because of Stratonice the wife of Apollophanes, AND HE FORGAT HIS BONDS, and was sore afflicted, 3 and cried out, saying: It were better for me to die and to be with the Lord, than to continue in the flesh and to hear such things AND THE CALAMITIES OF FALSE DOCTRINE, so that trouble cometh upon trouble.",
+          "sourceTextSha256": "3cc85bd668c0c10a1ca2cbb7ac1754e36b1178afa1e02dd65fa3fb25576d702a",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "II_narrative_bridge",
+            "row": 1,
+            "visibleMarker": "1"
+          }
+        },
+        {
+          "sourceRowId": "II_narrative_bridge.02",
+          "sectionKey": "II_narrative_bridge",
+          "sectionTitle": "Narrative bridge before Paul's reply",
+          "sourceRowOrdinal": 2,
+          "visibleMarker": "4",
+          "visibleNumber": 4,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "And over and above this so great affliction I am in bonds and behold these evils whereby the devices of Satan are accomplished. (4 Harnack: may not the priests (intrigues) of Satan anticipate me while (or after) I suffer (have suffered) fetters for the sake (?) of men.)",
+          "sourceTextSha256": "01bfc941fc94c8f639bcc809a8c171c4b639abb3e0ae7e448c30cccd2ff47138",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "II_narrative_bridge",
+            "row": 2,
+            "visibleMarker": "4"
+          }
+        },
+        {
+          "sourceRowId": "II_narrative_bridge.03",
+          "sectionKey": "II_narrative_bridge",
+          "sectionTitle": "Narrative bridge before Paul's reply",
+          "sourceRowOrdinal": 3,
+          "visibleMarker": "5",
+          "visibleNumber": 5,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Paul therefore, in great affliction, wrote a letter, answering thus:",
+          "sourceTextSha256": "1f391fd0e0deec8aaba55ee3976158ea8da9d23e679371b20fcb0f26754a791b",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "II_narrative_bridge",
+            "row": 3,
+            "visibleMarker": "5"
+          }
+        }
+      ]
+    },
+    {
+      "sectionKey": "III_paul_reply",
+      "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+      "sourceRows": [
+        {
+          "sourceRowId": "III_paul_reply.01",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 1,
+          "visibleMarker": "1",
+          "visibleNumber": 1,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Paul, a prisoner of Jesus Christ, unto the brethren which are in Corinth, greeting.",
+          "sourceTextSha256": "297cda211f0c690172e146a7b2b075ca92a5a1a815da27ae03ae0cbd96453eff",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 1,
+            "visibleMarker": "1"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.02",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 2,
+          "visibleMarker": "2",
+          "visibleNumber": 2,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Being in the midst of many tribulations, I marvel not if the teachings of the evil one run abroad apace.",
+          "sourceTextSha256": "c187d9a03916f3959e6b6399ab44d1f10c02ce91f16a235e387575a163a0dabd",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 2,
+            "visibleMarker": "2"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.03",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 3,
+          "visibleMarker": "3",
+          "visibleNumber": 3,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For my Lord Jesus Christ will hasten his coming, and will set at nought (no longer endure the insolence of) them that falsify his words.",
+          "sourceTextSha256": "90585f22191a2f97b628389f60f00b5009646f9b9d71c74be165d7701025f7da",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 3,
+            "visibleMarker": "3"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.04",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 4,
+          "visibleMarker": "4",
+          "visibleNumber": 4,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For I delivered unto you in the beginning the things which I received of the HOLY apostles which were before me, who were at all times with Jesus Christ: 5 namely, that our Lord Jesus Christ was born of Mary WHICH IS of the seed of David ACCORDING TO THE FLESH, the Holy Ghost being sent forth from heaven from the Father unto her by the angel Gabriel, 6 that he (Jesus) might come down into this world and redeem all flesh by his flesh, and raise us up from the dead in the flesh, like as he hath shown to us in himself for an ensample.",
+          "sourceTextSha256": "f5519920e3672cf0857b0e46f66c634121394f0719d285d35deb9863da394813",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 4,
+            "visibleMarker": "4"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.05",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 5,
+          "visibleMarker": "7",
+          "visibleNumber": 7,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "And because man was formed by his Father, 8 therefore was he sought when he was lost, that he might be quickened by adoption.",
+          "sourceTextSha256": "2ae29cff118e20ffcd9773a4e14755237fe0481fc56074d768fc1f493d1f1c77",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 5,
+            "visibleMarker": "7"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.06",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 6,
+          "visibleMarker": "9",
+          "visibleNumber": 9,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For to this end did God Almighty who made heaven and earth first send the prophets unto the Jews, that they might be drawn away from their sins.",
+          "sourceTextSha256": "3ad48764b51bde20878dd3ac96bef1274e26a3bcfa4082d61f7c0d0034178f9f",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 6,
+            "visibleMarker": "9"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.07",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 7,
+          "visibleMarker": "10",
+          "visibleNumber": 10,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For he designed to save the house of Israel: therefore he conferred a portion of the spirit of Christ upon the prophets and sent them unto the Jews first (or unto the first Jews), and they proclaimed the true worship of God for a long space of time.",
+          "sourceTextSha256": "1223c565d62ebb1b41139c73a5074eb5c0bd6f147ae639dee8ea08f4b022e6a3",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 7,
+            "visibleMarker": "10"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.08",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 8,
+          "visibleMarker": "11",
+          "visibleNumber": 11,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "But the prince of iniquity, desiring to be God, laid hands on them and slew them (banished them from God, Laon MS.), and bound all flesh by evil lusts (AND THE END OF THE WORLD BY JUDGEMENT DREW NEAR).",
+          "sourceTextSha256": "21c584bb6c2d7a60f226b605525c6109c6ea2e77b458484e66a0ca102a664ff5",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 8,
+            "visibleMarker": "11"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.09",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 9,
+          "visibleMarker": "12",
+          "visibleNumber": 12,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "But God Almighty, who is righteous, would not cast away his own creation, BUT HAD COMPASSION ON THEM FROM HEAVEN, 13 and sent his spirit into Mary IN GALILEE, [14 Milan MS. and Arm.: who believed with all her heart and received the Holy Ghost in her womb, that Jesus might come into the world,] 15 that by that flesh whereby that wicked one had brought in death (had triumphed), by the same he should be shown to be overcome.",
+          "sourceTextSha256": "be83d4990487088e2347c73748c0e46338889561d3f5b58fcac6585d3ceca80c",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 9,
+            "visibleMarker": "12"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.10",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 10,
+          "visibleMarker": "16",
+          "visibleNumber": 16,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For by his own body Jesus Christ saved all flesh [AND RESTORED IT UNTO LIFE], 17 that he might show forth the temple of righteousness in his body.",
+          "sourceTextSha256": "2af7fbd80f4dd215093b9a2852ae43ca3e634ef5754f5f31019345ab852c9ec7",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 10,
+            "visibleMarker": "16"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.11",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 11,
+          "visibleMarker": "18",
+          "visibleNumber": 18,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "In whom (or whereby) we are saved (Milan, Paris: in whom if we believe we are set free).",
+          "sourceTextSha256": "b02dbd9a773d0cd29673bac9797c2da39cda7dbc3db12ed471fe3edb5d7a0789",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 11,
+            "visibleMarker": "18"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.12",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 12,
+          "visibleMarker": "19",
+          "visibleNumber": 19,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "They therefore (Paris MS.; Arm. has: Know therefore that. Laon has: They therefore who agree with them) are not children of righteousness but children of wrath who reject the wisdom (providence?) of God, saying that the heaven and the earth and all that are in them are not the work of God.",
+          "sourceTextSha256": "983578cf830b050d654258c04660054f7a827ca1566ad47fd3ff3950deded7f9",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 12,
+            "visibleMarker": "19"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.13",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 13,
+          "visibleMarker": "20",
+          "visibleNumber": 20,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "They therefore are children of wrath, for cursed are they, following the teaching of the serpent, 21 whom do ye drive out from you and flee from their doctrine. [Arm., Milan, Paris:",
+          "sourceTextSha256": "cff3cccb8391b2d09e5e6623a1094ac80dfb0ac231ca1b9f4f823285a171708b",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 13,
+            "visibleMarker": "20"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.14",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 14,
+          "visibleMarker": "22",
+          "visibleNumber": 22,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "For ye are not children of disobedience, but of the well-beloved church.",
+          "sourceTextSha256": "9943e00ec0523904279db36b56722f837fffbb78cbbd14f91adaf11bc95eefdd",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 14,
+            "visibleMarker": "22"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.15",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 15,
+          "visibleMarker": "23",
+          "visibleNumber": 23,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Therefore is the time of the resurrection proclaimed unto all.]",
+          "sourceTextSha256": "97e38a06a0080e680a1e924a557408a6e0ff039c97ab9df6edcb47849916f50b",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 15,
+            "visibleMarker": "23"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.16",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 16,
+          "visibleMarker": "24",
+          "visibleNumber": 24,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "And as for that which they say, that there is no resurrection of the flesh, they indeed shall have no resurrection UNTO LIFE, BUT UNTO JUDGEMENT, 25 because they believe not in him that is risen from the dead, NOT BELIEVING NOR UNDERSTANDING, 26 for they know not, O Corinthians, the seeds of wheat or of other seeds (grain), how they are cast bare into the earth and are corrupted and rise again by the will of God with bodies, and clothed.[1]",
+          "sourceTextSha256": "73caa2b0389da5da6a1037160f4a227ff56bf65ccca9553ff3377e32cf034e9c",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 16,
+            "visibleMarker": "24"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.17",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 17,
+          "visibleMarker": "27",
+          "visibleNumber": 27,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "And not only that [body] which is cast in riseth again, but manifold more blessing itself [i.e. fertile and prospering].",
+          "sourceTextSha256": "8afe95188ccc8f40929bc6cb5ffaf273d7f6944d6dbeff244601f4600728e649",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 17,
+            "visibleMarker": "27"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.18",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 18,
+          "visibleMarker": "28",
+          "visibleNumber": 28,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "And if we must not take an example from seeds ONLY, BUT FROM MORE NOBLE BODIES, 29 ye know how Jonas the son of Amathi, when he would not preach to them of Nineve, BUT FLED, was swallowed by the sea-monster; 30 and after three days and three nights God heard the prayer of Jonas out of the lowest hell, and no part of him was consumed, not even an hair nor an eyelash.",
+          "sourceTextSha256": "de62a38a4966ac4f60a0472cbd444f69625618df685c42697d77a8a78ed89363",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 18,
+            "visibleMarker": "28"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.19",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 19,
+          "visibleMarker": "31",
+          "visibleNumber": 31,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "How much more, O YE OF LITTLE FAITH, shall he raise up you that have believed in Christ Jesus, like as he himself arose.",
+          "sourceTextSha256": "521ceb70f67937aee02138d94da53f30840f2bb17d9d2bf9a9a6505b41361691",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 19,
+            "visibleMarker": "31"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.20",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 20,
+          "visibleMarker": "32",
+          "visibleNumber": 32,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "Likewise also a dead man was cast upon the bones of the prophet Helisaetis by the children of Israel, and he arose, both body and soul and bones and spirit (Laon: arose in his body); how much more shall ye which have been cast upon the body and bones and spirit of the Lord [Milan, Paris: how much more, O ye of little faith, shall ye which have been cast on him] arise again in that day having your flesh whole, EVEN AS HE AROSE? [33 Arm., Milan, Paris: Likewise also concerning the prophet Helias: he raised up the widow’s son from death: how much more shall the Lord Jesus raise you up from death at the sound of the trumpet, in the twinkling of an eye? for he hath showed us an ensample in his own body.]",
+          "sourceTextSha256": "86e998edb6484fd04400baf6941ad88be6faf7329847cff4030131afcb7bcbb5",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 20,
+            "visibleMarker": "32"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.21",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 21,
+          "visibleMarker": "34",
+          "visibleNumber": 34,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "If, then, ye receive any other doctrine, God shall be witness against you; and let no man trouble me, 35 for I bear these bonds that I may win Christ, and I therefore bear his marks in my body that I may attain unto the resurrection of the dead.",
+          "sourceTextSha256": "9200337aead4778ab125afcfb4899a8685f65dd2fc6ba4fc00be551c36fff80c",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 21,
+            "visibleMarker": "34"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.22",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 22,
+          "visibleMarker": "86",
+          "visibleNumber": 86,
+          "visibleMarkerPolicy": "preserved_visible_source_anomaly_not_silently_corrected",
+          "sourceText": "And whoso receiveth (abideth in) the rule which he hath received by the blessed prophets and the holy gospel, shall receive a recompense from the Lord, AND WHEN HE RISETH FROM THE DEAD SHALL OBTAIN ETERNAL LIFE.",
+          "sourceTextSha256": "fd541c4a25428cf7d26519f36691b2bcc87c91be616249529da61e6eaf018f42",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 22,
+            "visibleMarker": "86"
+          }
+        },
+        {
+          "sourceRowId": "III_paul_reply.23",
+          "sectionKey": "III_paul_reply",
+          "sectionTitle": "Paul's reply / Third Epistle to the Corinthians",
+          "sourceRowOrdinal": 23,
+          "visibleMarker": "37",
+          "visibleNumber": 37,
+          "visibleMarkerPolicy": "preserved_visible_source_marker",
+          "sourceText": "But whoso trans- gresseth these things, with him is the fire, and with them that walk in like manner (Milan, Paris: with them that go before in the same way, who are men without God), 38 which are a generation of vipers, 39 whom do ye reject in the power of the Lord, 40 and peace, GRACE, AND LOVE shall be with you.\n\n[Laon adds: This I found in an old book, entitled the third to the Corinthians, though it is not in the Canon.]",
+          "sourceTextSha256": "6e7c43760d77d1d28fcbd87edb92897898a5938d5a4c894cdce25d50149906a1",
+          "proposedFutureRef": {
+            "book": "3corinthians",
+            "section": "III_paul_reply",
+            "row": 23,
+            "visibleMarker": "37"
+          }
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "introNarrativeUnits": 1,
+    "correctedStrictNumberedSourceRows": 33,
+    "supersededLooseNumberedSourceRows": 35,
+    "excludedLooseOnlyApparatusMarkers": 2,
+    "sectionCounts": {
+      "I_corinthians_letter": 7,
+      "II_narrative_bridge": 3,
+      "III_paul_reply": 23
+    },
+    "preservedVisibleSourceAnomaly86Count": 1
+  },
+  "trustBoundary": {
+    "segmentationCompleted": true,
+    "candidateBibleTextMutated": false,
+    "candidateTextTrusted": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "candidateSha256Before": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f",
+    "candidateSha256After": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f"
+  }
+}

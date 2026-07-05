@@ -128,7 +128,11 @@
     "broader_canon_3corinthians_marker_86_silently_corrected_to_36",
     "broader_canon_3corinthians_text_repaired_by_marker_count_correction",
     "broader_canon_3corinthians_trusted_by_marker_count_correction",
-    "broader_canon_3corinthians_app_render_eligible_by_marker_count_correction"
+    "broader_canon_3corinthians_app_render_eligible_by_marker_count_correction",
+    "broader_canon_3corinthians_text_repaired_by_corrected_source_map",
+    "broader_canon_3corinthians_trusted_by_corrected_source_map",
+    "broader_canon_3corinthians_app_render_eligible_by_corrected_source_map",
+    "broader_canon_3corinthians_corrected_source_map_silently_mutated_candidate"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -242,7 +246,12 @@
     "broader_canon_3corinthians_previous_35_marker_total_superseded_for_source_map",
     "broader_canon_3corinthians_bracketed_apparatus_markers_excluded_from_active_source_rows",
     "broader_canon_3corinthians_marker_86_preserved_as_visible_source_anomaly",
-    "broader_canon_3corinthians_current_candidate_unmutated_after_marker_count_correction"
+    "broader_canon_3corinthians_current_candidate_unmutated_after_marker_count_correction",
+    "broader_canon_3corinthians_mr_james_source_segmentation_created_corrected_33",
+    "broader_canon_3corinthians_mr_james_source_map_created_corrected_33",
+    "broader_canon_3corinthians_corrected_source_rows_mapped_33",
+    "broader_canon_3corinthians_current_candidate_unmutated_after_corrected_source_map",
+    "broader_canon_3corinthians_marker_86_preserved_in_corrected_source_map"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -498,6 +507,16 @@
     "status": "corrected_source_marker_total_33_no_candidate_mutation",
     "previousLooseSourceMarkerTotal": 35,
     "correctedStrictSourceMarkerTotal": 33,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "latest3CorinthiansMrJamesSourceMap": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+    "segmentationPath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-source-segmentation.json",
+    "status": "source_map_created_corrected_33_pending_rebuild_script_no_candidate_mutation",
+    "correctedStrictSourceRowsMapped": 33,
+    "currentCandidateRows": 19,
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false

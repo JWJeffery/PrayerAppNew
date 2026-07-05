@@ -119,5 +119,14 @@
     "3 Corinthians text repaired by marker-count correction",
     "3 Corinthians textually trusted by marker-count correction",
     "3 Corinthians app render eligible by marker-count correction"
-  ]
+  ],
+  "latestMrJamesSourceMap": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+    "segmentationPath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-source-segmentation.json",
+    "status": "source_map_created_corrected_33_pending_rebuild_script_no_candidate_mutation",
+    "correctedStrictSourceRowsMapped": 33,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  }
 }
