@@ -2,13 +2,13 @@
   {
     "id": "bcp-opening-1",
     "title": "Opening Sentence",
-    "text": "Send out your light and your truth, that they may lead me; let them bring me to your holy hill and to your dwelling.",
+    "text": "Send out your light and your truth, that they may lead me, and bring me to your holy hill and to your dwelling.",
     "type": "Opening"
   },
   {
     "id": "bcp-opening-rite1",
     "title": "Opening Sentence (Traditional)",
-    "text": "The Lord is in his holy temple: let all the earth keep silence before him.",
+    "text": "The Lord is in his holy temple; let all the earth keep silence before him.",
     "type": "Opening"
   },
   {
@@ -122,7 +122,7 @@
   {
     "id": "bcp-ant-default",
     "title": "Ordinary Time Antiphon",
-    "text": "The earth is the Lord's for he made it: Come let us adore him.",
+    "text": "The earth is the Lord's, for he made it: Come let us adore him.",
     "type": "Antiphon"
   },
   {
@@ -364,7 +364,7 @@
     "title": "Prayer of St. Chrysostom",
     "text": {
       "rite1": "Almighty God, who hast given us grace at this time with one accord to make our common supplication unto thee; and hast promised through thy well-beloved Son that when two or three are gathered together in his Name thou wilt be in the midst of them: Fulfill now, O Lord, the desires and petitions of thy servants as may be best for us; granting us in this world knowledge of thy truth, and in the world to come life everlasting. Amen.",
-      "rite2": "Almighty God, you have given us grace at this time with one accord to make our common supplication to you; and you have promised through your well-beloved Son that when two or three are gathered together in his Name you will be in the midst of them: Fulfill now, O Lord, our desires and petitions as may be best for us; granting us in this world knowledge of your truth, and in the life to come life everlasting. Amen."
+      "rite2": "Almighty God, you have given us grace at this time with one accord to make our common supplication to you; and you have promised through your well-beloved Son that when two or three are gathered together in his Name you will be in the midst of them: Fulfill now, O Lord, our desires and petitions as may be best for us; granting us in this world knowledge of your truth, and in the age to come life everlasting. Amen."
     },
     "type": "Prayer"
   },
