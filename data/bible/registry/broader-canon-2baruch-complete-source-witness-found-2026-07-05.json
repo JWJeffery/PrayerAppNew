@@ -1,0 +1,62 @@
+{
+  "schema": "broader-canon-2baruch-complete-source-witness-found-v1",
+  "id": "broader_canon_2baruch_complete_source_witness_found_2026_07_05",
+  "status": "complete_public_domain_print_witness_found_materialization_pending",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/NT/2baruchCE.json",
+  "priorBlockerRecordPath": "data/bible/registry/broader-canon-source-basis-blocker-2baruch-2026-07-04.json",
+  "completeWitness": {
+    "sourceType": "public_domain_print_scan_with_ocr_download",
+    "archiveItemUrl": "https://archive.org/details/apocryphapseudep02charuoft",
+    "bibliographicTitle": "The Apocrypha and Pseudepigrapha of the Old Testament in English",
+    "editor": "R. H. Charles",
+    "publisher": "Oxford: Clarendon Press",
+    "publicationDate": 1913,
+    "volume": 2,
+    "volumeDescription": "Pseudepigrapha",
+    "internetArchiveIdentifier": "apocryphapseudep02charuoft",
+    "internetArchivePossibleCopyrightStatus": "NOT_IN_COPYRIGHT",
+    "internetArchiveCopyrightEvidence": "no visible notice of copyright; stated date is 1913",
+    "pseudepigraphaMirrorCitation": "R. H. Charles, APOT volume 2, pages 481-524"
+  },
+  "finding": {
+    "summary": "The prior online mirror blocker was real, but the complete public-domain print source has now been located as the Internet Archive scan/OCR of Charles APOT volume 2. The Pseudepigrapha.com mirror remains incomplete at the tail and must not be used alone for full source binding. The Internet Archive item supplies the complete underlying print witness from which a local source snapshot can be materialized.",
+    "priorMirrorStillIncomplete": true,
+    "completePrintWitnessLocated": true,
+    "candidateMutation": false,
+    "bibleVerseTextMutation": false,
+    "sourceBindingBacked": false,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "candidateTailAnchorsToVerifyDuringMaterialization": [
+    {
+      "chapter": 85,
+      "anchor": "Know, therefore, that in former times and in the generations of old our fathers had helpers"
+    },
+    {
+      "chapter": 86,
+      "anchor": "Therefore, when you receive my letter, read it carefully in your assemblies"
+    },
+    {
+      "chapter": 87,
+      "anchor": "And it happened, after I had finished all the words of this letter"
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_2baruch_complete_public_domain_print_witness_found",
+    "broader_canon_2baruch_source_materialization_ready"
+  ],
+  "blockedClaims": [
+    "broader_canon_2baruch_source_binding_collated",
+    "broader_canon_2baruch_textually_trusted",
+    "broader_canon_2baruch_app_render_eligible",
+    "broader_canon_rh_charles_cluster_complete",
+    "broader_canon_complete"
+  ],
+  "nextAllowedWork": [
+    "materialize the 2 Baruch section from the Internet Archive APOT volume 2 full text or PDF",
+    "compare candidate chapters 85-87 against the materialized source witness",
+    "record local source snapshot and row-level bindings before any text-trust or app-render promotion"
+  ]
+}
