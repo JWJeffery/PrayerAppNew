@@ -142,9 +142,15 @@ const psalterCycle = [
     {day: 26, morning: '119:105-144',             evening: '119:145-176'},
     {day: 27, morning: '120,121,122,123,124,125', evening: '126,127,128,129,130,131'},
     {day: 28, morning: '132,133,134,135',         evening: '136,137,138'},
-    {day: 29, morning: '139,140,141',             evening: '142,143,144'},
-    {day: 30, morning: '145,146,147',             evening: '148,149,150'},
-    {day: 31, morning: '139,140',                 evening: '141,142,143'}
+    {day: 29, morning: '139,140',                 evening: '141,142,143'},
+    {day: 30, morning: '144,145,146',             evening: '147,148,149,150'},
+    // Day 31: the BCP Psalter (p.584-808) prints no explicit rubric for a 31st
+    // day at all — the printed table ends at the Thirtieth Day. This repeats
+    // the Thirtieth Day's psalms per long-standing Anglican custom (back to
+    // 1662), but that convention is NOT printed in the 1979 BCP text itself.
+    // FLAGGED for Josh: confirm whether an explicit source exists before
+    // treating this as settled rather than a reasonable customary fallback.
+    {day: 31, morning: '144,145,146',             evening: '147,148,149,150'}
 ];
 
 // ── Seasonal Theme ───────────────────────────────────────────────────────────

@@ -85,7 +85,7 @@
   <div id="bibleSection"></div>
 
   <h2>II. The Daily Office (1979 BCP)</h2>
-  <p class="section-note">Only Morning Prayer has been broken into parts so far. Other Daily Office components (Evening Prayer, Noonday, Compline) need their part-lists defined before granular tracking can begin.</p>
+  <p class="section-note">Morning Prayer: in progress, not complete. Opening Sentences, Confession, Invitatory, Invitatory Psalm, Apostles' Creed, Lord's Prayer, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are verified against BCP1979.pdf. Appointed Psalms (30-day table) verified and corrected. Still unverified: the full Collects set (~150 individual propers, only Collect for Grace checked so far) and the full Canticle set beyond the Te Deum. Evening Prayer, Noonday Prayer, and Compline are broken into parts but not yet individually audited.</p>
   <div id="dailyOfficeSection"></div>
 
   <h2>III. The Ethiopian Office</h2>
@@ -179,13 +179,13 @@ const MORNING_PRAYER_STATUS = {
   "Confession": {status:'green', note:'both rites verified verbatim'},
   "Invitatory": {status:'green', note:'both rites verified verbatim'},
   "Invitatory Psalm": {status:'green', note:'Venite and Jubilate verified verbatim'},
-  "Appointed Psalms": {status:'amber', note:'lectionary psalm-selection logic not yet audited'},
+  "Appointed Psalms": {status:'amber', note:'30-day psalter table (js/office-ui.js psalterCycle) verified against BCP1979.pdf pp.584-808 and corrected 2026-07-05 — Days 29-30 had a shift error, now fixed; Day 31 flagged (BCP prints no explicit 31st-day rubric; current value repeats Day 30 by custom, needs Josh confirmation). IMPORTANT: the 30-day table is NOT the default — the "Rotate Mission Prayer Daily"-style toggle for it defaults unchecked, so the default path is the Daily Office Lectionary (DOL), which pulls psalms_mp/psalms_ep per calendar date from a separate data file. That DOL path (effectively 365+ dates) has not been audited at all. Still amber until that larger piece is done.'},
   "Lessons with Canticles": {status:'amber', note:'Te Deum text verified verbatim; full canticle set (1-21) and lectionary lesson-selection not yet audited'},
   "Apostles' Creed": {status:'green', note:'both rites verified verbatim (shared common.json)'},
   "Lord's Prayer": {status:'green', note:'FIXED 2026-07-05 — rite2 was a duplicate of rite1 (wrong, traditional-language text). This is shared across every office, not just Morning Prayer.'},
   "Suffrages": {status:'green', note:'Suffrages A, both rites, verified verbatim'},
   "Collects": {status:'amber', note:'Collect for Grace verified verbatim; the ~150 other collects in this file not yet individually audited'},
-  "Mission Prayer": {status:'red', note:'JUDGMENT CALL, NOT YET FIXED: bcp-mission-prayer-1 contains the Evening Prayer II mission prayer (BCP p.124), not one of the 3 actual Morning Prayer II mission prayers. Needs a decision on which of the 3 to use before fixing.'},
+  "Mission Prayer": {status:'green', note:'FIXED 2026-07-05 — replaced wrong (Evening Prayer) text with all 3 real Morning Prayer II mission prayers, verified vs BCP p.99-100/p.56-57. Now configurable with deterministic daily rotation (toggle in Settings). Side finding: Ethiopian Sa\'atat rubric borrowed this same component — repointed, not yet reviewed for whether that borrowing itself is correct.'},
   "Hymn / Intercessions / Thanksgivings (optional)": {status:'amber', note:'not a fixed text item; not applicable to text-accuracy audit'},
   "General Thanksgiving and/or Prayer of St. Chrysostom": {status:'green', note:'FIXED 2026-07-05 — Chrysostom rite2 had "life to come life everlasting" corrected to "age to come life everlasting". General Thanksgiving itself verified verbatim.'},
   "Let Us Bless the Lord — concluding sentence": {status:'green', note:'verified verbatim; only 1 of 3 authorized closing sentences represented (completeness note, not an error)'}
@@ -316,19 +316,28 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v2-2026-07-05-morning-prayer-audit';
+const SEED_VERSION = 'v4-2026-07-05-psalter-fix-and-seedbug-fix';
 
 async function checkSeedVersion(){
+  let storedValue = null;
   try{
     const stored = await window.storage.get('__seed_version__', false);
-    if (!stored || stored.value !== SEED_VERSION){
-      const keys = await window.storage.list('', false);
-      if (keys && keys.keys){
-        for (const k of keys.keys){ try{ await window.storage.delete(k, false); }catch(e){} }
-      }
-      await window.storage.set('__seed_version__', SEED_VERSION, false);
+    storedValue = stored ? stored.value : null;
+  }catch(e){
+    // A missing key throws here — this is the normal, expected case on first
+    // run or in a fresh browser, not an error. storedValue stays null.
+  }
+  if (storedValue === SEED_VERSION) return; // already current, nothing to do
+
+  try{
+    const keys = await window.storage.list('', false);
+    if (keys && keys.keys){
+      for (const k of keys.keys){ try{ await window.storage.delete(k, false); }catch(e){} }
     }
-  }catch(e){ console.error('seed version check failed', e); }
+    await window.storage.set('__seed_version__', SEED_VERSION, false);
+  }catch(e){
+    console.error('seed version reseed failed — dashboard may show stale data until this succeeds', e);
+  }
 }
 
 async function hydrateAndRender(items, renderFn, container, ...args){
