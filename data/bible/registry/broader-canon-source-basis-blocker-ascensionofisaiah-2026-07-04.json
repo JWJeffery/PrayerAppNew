@@ -39,9 +39,21 @@
       "Next work must determine whether the candidate is a different R.H. Charles source/recension, an abbreviated witness, or a chapter-split import error."
     ]
   },
+  "sourceBasisDecisionPath": "data/bible/registry/broader-canon-ascensionofisaiah-source-basis-decision-2026-07-05.json",
+  "sourceExtractionManifestPath": "data/bible/registry/broader-canon-ascensionofisaiah-source-extraction-manifest-2026-07-05.json",
+  "resolutionProgress": {
+    "status": "source_basis_decision_and_extraction_manifest_recorded_rebuild_pending",
+    "candidateMutation": false,
+    "bibleVerseTextMutation": false,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false,
+    "rowLevelCollationComplete": false
+  },
   "allowedClaims": [
     "broader_canon_ascensionofisaiah_source_basis_blocker_recorded",
-    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready"
+    "broader_canon_ascensionofisaiah_witness_identified_not_collation_ready",
+    "broader_canon_ascensionofisaiah_source_basis_decision_recorded",
+    "broader_canon_ascensionofisaiah_source_extraction_manifest_recorded"
   ],
   "blockedClaims": [
     "broader_canon_ascensionofisaiah_source_binding_collated",
@@ -51,9 +63,8 @@
     "broader_canon_complete"
   ],
   "nextAllowedWork": [
-    "identify the exact R.H. Charles source basis for the repo candidate",
-    "compare candidate against an alternate Ascension of Isaiah Charles witness",
-    "decide whether to replace/rebuild candidate from a governed public-domain source snapshot",
-    "only then attempt row-level source binding"
+    "materialize a full plain-text local source snapshot from Early Christian Writings source lines 8-511",
+    "rebuild the candidate from that materialized source snapshot in source chapter shape",
+    "only after rebuild and QC perform row-level source binding"
   ]
 }
