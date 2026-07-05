@@ -1,0 +1,60 @@
+{
+  "schema": "2baruch-charles-apot2-source-metadata-v1",
+  "id": "2baruch_charles_apot2_source_metadata_2026_07_05",
+  "status": "complete_print_witness_metadata_recorded_source_text_download_pending",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/NT/2baruchCE.json",
+  "sourceWitnessRecordPath": "data/bible/registry/broader-canon-2baruch-complete-source-witness-found-2026-07-05.json",
+  "internetArchiveItem": {
+    "identifier": "apocryphapseudep02charuoft",
+    "itemUrl": "https://archive.org/details/apocryphapseudep02charuoft",
+    "directoryUrl": "https://archive.org/download/apocryphapseudep02charuoft",
+    "bibliographicTitle": "The Apocrypha and Pseudepigrapha of the Old Testament in English",
+    "editor": "R. H. Charles",
+    "publisher": "Oxford: Clarendon Press",
+    "publicationDate": 1913,
+    "volume": 2,
+    "volumeDescription": "Pseudepigrapha",
+    "language": "English; Ancient Greek",
+    "possibleCopyrightStatus": "NOT_IN_COPYRIGHT",
+    "copyrightEvidence": "no visible notice of copyright; stated date is 1913",
+    "ocrEngine": "tesseract 5.1.0-1-ge935"
+  },
+  "availableDownloadFiles": [
+    {
+      "label": "FULL TEXT",
+      "filename": "apocryphapseudep02charuoft_djvu.txt",
+      "listedSize": "4.3M"
+    },
+    {
+      "label": "PDF",
+      "filename": "apocryphapseudep02charuoft.pdf",
+      "listedSize": "77.2M"
+    },
+    {
+      "label": "EPUB",
+      "filename": "apocryphapseudep02charuoft.epub",
+      "listedSize": "3.8M"
+    },
+    {
+      "label": "OCR SEARCH TEXT",
+      "filename": "apocryphapseudep02charuoft_hocr_searchtext.txt.gz",
+      "listedSize": "1.6M"
+    }
+  ],
+  "sourceScope": {
+    "workTitle": "2 Baruch / The Book of the Apocalypse of Baruch, the Son of Neriah",
+    "printPageRangeFromMirrorCitation": "APOT volume 2, pages 481-524",
+    "candidateChapterCount": 87,
+    "candidateRowCount": 746,
+    "tailChaptersToVerify": [85, 86, 87]
+  },
+  "materializationState": {
+    "localPlainTextSnapshotPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt",
+    "localRowBindingPath": "data/bible/translations/2baruch/raw/2baruch-charles-apot2-row-bindings-2026-07-05.json",
+    "plainTextSnapshotCommitted": false,
+    "rowBindingCommitted": false,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false
+  }
+}
