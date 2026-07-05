@@ -132,7 +132,11 @@
     "broader_canon_3corinthians_text_repaired_by_corrected_source_map",
     "broader_canon_3corinthians_trusted_by_corrected_source_map",
     "broader_canon_3corinthians_app_render_eligible_by_corrected_source_map",
-    "broader_canon_3corinthians_corrected_source_map_silently_mutated_candidate"
+    "broader_canon_3corinthians_corrected_source_map_silently_mutated_candidate",
+    "broader_canon_3corinthians_textually_trusted_by_rebuild_alone",
+    "broader_canon_3corinthians_app_render_eligible_by_rebuild_alone",
+    "broader_canon_3corinthians_old_19_row_candidate_still_active",
+    "broader_canon_3corinthians_trust_promoted_without_certification"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -251,7 +255,11 @@
     "broader_canon_3corinthians_mr_james_source_map_created_corrected_33",
     "broader_canon_3corinthians_corrected_source_rows_mapped_33",
     "broader_canon_3corinthians_current_candidate_unmutated_after_corrected_source_map",
-    "broader_canon_3corinthians_marker_86_preserved_in_corrected_source_map"
+    "broader_canon_3corinthians_marker_86_preserved_in_corrected_source_map",
+    "broader_canon_3corinthians_candidate_rebuilt_from_corrected_mr_james_source_map",
+    "broader_canon_3corinthians_candidate_rows_now_33",
+    "broader_canon_3corinthians_old_19_row_candidate_superseded",
+    "broader_canon_3corinthians_text_mutated_by_source_shaped_rebuild_pending_certification"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -518,6 +526,15 @@
     "correctedStrictSourceRowsMapped": 33,
     "currentCandidateRows": 19,
     "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "latest3CorinthiansSourceShapedRebuild": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shaped-rebuild-2026-07-04.json",
+    "status": "candidate_rebuilt_from_corrected_mr_james_source_map_pending_trust_certification",
+    "candidateRowsBefore": 19,
+    "candidateRowsAfter": 33,
+    "candidateTextMutation": true,
     "trustPromotion": false,
     "appRenderPromotion": false
   }

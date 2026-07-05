@@ -1,0 +1,34 @@
+{
+  "schema": "broader-canon-3corinthians-source-shaped-rebuild-v1",
+  "id": "broader_canon_3corinthians_source_shaped_rebuild_2026_07_04",
+  "status": "candidate_rebuilt_from_corrected_mr_james_source_map_pending_trust_certification",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "sourceMapPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+  "supersededCandidatePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-superseded-19-row-candidate.json",
+  "rebuildSummary": {
+    "previousCandidateRows": 19,
+    "rebuiltCandidateRows": 33,
+    "sectionCounts": {
+      "I_corinthians_letter": 7,
+      "II_narrative_bridge": 3,
+      "III_paul_reply": 23
+    },
+    "introNarrativePreserved": true,
+    "preservedVisibleSourceAnomaly86Count": 0
+  },
+  "trustBoundary": {
+    "candidateBibleTextMutated": true,
+    "mutationType": "source_shaped_rebuild_from_corrected_mr_james_source_map",
+    "candidateTextTrusted": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "candidateSha256Before": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f",
+    "candidateSha256After": "5575a6301d4ff0e4096b3b1f405c4b9a11fbf3f70a1b8b6cd48ea36982fda67a"
+  },
+  "requiredNextWork": [
+    "Run source-shaped rebuild audit.",
+    "Then perform separate text-trust certification if the rebuild audit passes.",
+    "Do not app-render 3 Corinthians until trust certification and app-render policy are separately promoted."
+  ]
+}

@@ -147,5 +147,13 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansSourceShapedRebuild": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shaped-rebuild-2026-07-04.json",
+    "status": "candidate_rebuilt_from_corrected_mr_james_source_map_pending_trust_certification",
+    "sourceVisibleImpact": "3 Corinthians candidate text was rebuilt from the corrected 33-row M. R. James source map. The old 19-row candidate is superseded. Trust and app rendering are still not promoted.",
+    "textMutation": true,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

@@ -121,5 +121,15 @@
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "latestSourceShapedRebuild": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shaped-rebuild-2026-07-04.json",
+    "status": "candidate_rebuilt_from_corrected_mr_james_source_map_pending_trust_certification",
+    "candidateRowsBefore": 19,
+    "candidateRowsAfter": 33,
+    "candidateTextMutation": true,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "nextRequiredAction": "run rebuild QC and then separate trust certification"
   }
 }
