@@ -1,0 +1,57 @@
+{
+  "schema": "broader-canon-ascensionofisaiah-source-basis-decision-v1",
+  "id": "broader_canon_ascensionofisaiah_source_basis_decision_2026_07_05",
+  "status": "source_basis_decision_recorded_candidate_rebuild_required_no_candidate_mutation",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/ET/ascensionofisaiahET.json",
+  "priorBlockerRecordPath": "data/bible/registry/broader-canon-source-basis-blocker-ascensionofisaiah-2026-07-04.json",
+  "inspectedSource": {
+    "title": "The Ascension of Isaiah",
+    "url": "https://www.earlychristianwritings.com/text/ascension.html",
+    "witness": "R.H. Charles text as hosted by Early Christian Writings"
+  },
+  "decision": {
+    "summary": "The inspected Early Christian Writings witness confirms that the repo candidate is not a safe local chapter-split repair. The source has chapter 3 continuing through the Beliar/Beloved material that the repo candidate separated into chapter 4, and then has a distinct source chapter 4 beginning with the completion-of-the-world/Beliar ruler section. Because the repo candidate also differs in earlier chapter wording and verse shape, it must be rebuilt from a recorded source extraction before collation rather than repaired by moving only one local chapter boundary.",
+    "candidateMutation": false,
+    "bibleVerseTextMutation": false,
+    "appRenderPromotion": false,
+    "textTrustPromotion": false,
+    "rowLevelCollationComplete": false,
+    "sourceBindingBacked": false
+  },
+  "sourceShapeEvidence": [
+    {
+      "sourceChapter": 3,
+      "sourceVerse": 13,
+      "evidence": "Source chapter 3 verse 13 begins: For Beliar was in great wrath against Isaiah by reason of the vision...",
+      "repoImplication": "This is the material the repo blocker had identified as the beginning of repo chapter 4. It belongs inside source chapter 3 in the inspected witness."
+    },
+    {
+      "sourceChapter": 4,
+      "sourceVerse": 1,
+      "evidence": "Source chapter 4 begins: AND now Hezekiah and Josab my son, these are the days of the completion of the world.",
+      "repoImplication": "The inspected witness contains a distinct source chapter 4 not represented by the current repo chapter 4 shape."
+    },
+    {
+      "sourceChapter": 11,
+      "sourceVerse": 43,
+      "evidence": "Source chapter 11 concludes with: Here endeth the vision of Isaiah the prophet with his ascension.",
+      "repoImplication": "The inspected witness is complete through the closing chapter."
+    }
+  ],
+  "allowedClaims": [
+    "broader_canon_ascensionofisaiah_source_basis_decision_recorded",
+    "broader_canon_ascensionofisaiah_rebuild_required_before_collation"
+  ],
+  "blockedClaims": [
+    "broader_canon_ascensionofisaiah_local_chapter_split_repair_safe",
+    "broader_canon_ascensionofisaiah_source_binding_collated",
+    "broader_canon_ascensionofisaiah_textually_trusted",
+    "broader_canon_ascensionofisaiah_app_render_eligible"
+  ],
+  "nextAllowedWork": [
+    "extract the complete Early Christian Writings Charles source text into a recorded local snapshot using a bounded connector-safe or manually reviewed extraction",
+    "rebuild the candidate from that source snapshot in source chapter shape",
+    "only after rebuild and QC perform row-level source binding/collation"
+  ]
+}
