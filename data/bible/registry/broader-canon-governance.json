@@ -145,7 +145,11 @@
     "broader_canon_quarantine_removed_globally_by_3corinthians_app_render",
     "broader_canon_global_app_render_eligible_from_laodiceans",
     "broader_canon_other_candidates_promoted_by_laodiceans_app_render",
-    "broader_canon_laodiceans_synthetic_verse_7_created_during_finalization"
+    "broader_canon_laodiceans_synthetic_verse_7_created_during_finalization",
+    "broader_canon_global_app_render_eligible_from_1enoch",
+    "broader_canon_other_candidates_promoted_by_1enoch_app_render",
+    "broader_canon_1enoch_exact_sacred_texts_page_reproduction_claim_promoted",
+    "broader_canon_1enoch_critical_apparatus_display_claim_promoted"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -277,7 +281,10 @@
     "broader_canon_3corinthians_completed_repaired_certified_and_render_eligible",
     "broader_canon_laodiceans_textually_trusted_gutenberg_witness_backed",
     "broader_canon_laodiceans_app_render_eligible_gutenberg_witness_backed",
-    "broader_canon_laodiceans_completed_repaired_certified_and_render_eligible"
+    "broader_canon_laodiceans_completed_repaired_certified_and_render_eligible",
+    "broader_canon_1enoch_textually_trusted_fixed_entity_source_binding_backed",
+    "broader_canon_1enoch_app_render_eligible_fixed_entity_source_binding_backed",
+    "broader_canon_1enoch_completed_certified_and_render_eligible"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -577,6 +584,16 @@
     "recordPath": "data/bible/registry/broader-canon-laodiceans-text-trust-and-app-render-2026-07-04.json",
     "status": "app_render_eligible_textually_trusted_gutenberg_witness_backed",
     "candidatePath": "data/bible/NT/epistleofthelaodiceans.json",
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "bibleTextMutation": false
+  },
+  "latest1EnochTextTrustAndAppRender": {
+    "recordPath": "data/bible/registry/broader-canon-1enoch-text-trust-and-app-render-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_fixed_entity_source_binding_backed",
+    "candidatePath": "data/bible/OT/1enoch.json",
     "textTrustPromotion": true,
     "appRenderPromotion": true,
     "globalBroaderCanonTrustPromotion": false,

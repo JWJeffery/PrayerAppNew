@@ -1,0 +1,27 @@
+{
+  "schema": "broader-canon-1enoch-text-trust-and-app-render-v1",
+  "id": "broader_canon_1enoch_text_trust_and_app_render_2026_07_04",
+  "status": "app_render_eligible_textually_trusted_fixed_entity_source_binding_backed",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/OT/1enoch.json",
+  "sourceBindingCollationPath": "data/bible/registry/broader-canon-source-binding-collation-1enoch-2026-07-04.json",
+  "certificationBasis": {
+    "candidateRows": 1048,
+    "fixedEntitySourceBindingCollated": true,
+    "appUseTextSourceBacked": true,
+    "bibleTextMutatedInThisStep": false,
+    "exactSacredTextsPageReproductionClaim": false,
+    "criticalApparatusPreservedAsDisplayTextClaim": false
+  },
+  "trustBoundary": {
+    "candidateTextTrusted": true,
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "candidateFileSha256BeforeStatusUpdate": "b3afcd759d3551e4855a468c848b056189d4095cbfa0ff08f0868dba3cd25898",
+    "candidateFileSha256AfterStatusUpdate": "a832a43f543b2e944e21682e0969822f54579b59bb61dc310216ca211025262d",
+    "candidateTextSha256BeforeStatusUpdate": "ae5e3464c2f202ee8f3a624cea8846123a6d87f623bc117e064b71b722c2e4dd",
+    "candidateTextSha256AfterStatusUpdate": "ae5e3464c2f202ee8f3a624cea8846123a6d87f623bc117e064b71b722c2e4dd"
+  }
+}
