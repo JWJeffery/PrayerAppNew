@@ -130,5 +130,13 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansMrJamesMarkerCountCorrection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-marker-count-correction-2026-07-04.json",
+    "status": "corrected_source_marker_total_33_no_candidate_mutation",
+    "sourceVisibleImpact": "3 Corinthians M. R. James source-map creation must use the corrected strict 33-row marker count; bracketed apparatus markers are excluded from active source rows.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

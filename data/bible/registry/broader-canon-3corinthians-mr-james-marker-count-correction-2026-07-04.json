@@ -1,0 +1,123 @@
+{
+  "schema": "broader-canon-3corinthians-mr-james-marker-count-correction-v1",
+  "id": "broader_canon_3corinthians_mr_james_marker_count_correction_2026_07_04",
+  "status": "corrected_source_marker_total_33_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+  "rowShapeAuditPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
+  "sourceShapeMigrationPolicyPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "correctionDecision": {
+    "previousLooseSourceMarkerTotal": 35,
+    "correctedStrictSourceMarkerTotal": 33,
+    "excludedLooseOnlyMarkerCount": 2,
+    "reason": "The previous row-shape audit used a loose marker regex that counted bracketed apparatus/variant-note markers as active source rows. The source-map parser correctly excludes those bracketed markers from active source rows.",
+    "simpleOverlayAllowed": false,
+    "currentCandidateRows": 19
+  },
+  "sectionCorrections": [
+    {
+      "sectionKey": "I_corinthians_letter",
+      "previousLooseMarkerCount": 7,
+      "correctedStrictMarkerCount": 7,
+      "correctedStrictMarkers": [
+        1,
+        2,
+        6,
+        8,
+        9,
+        10,
+        16
+      ],
+      "looseOnlyMarkersExcludedFromSourceRows": []
+    },
+    {
+      "sectionKey": "II_narrative_bridge",
+      "previousLooseMarkerCount": 3,
+      "correctedStrictMarkerCount": 3,
+      "correctedStrictMarkers": [
+        1,
+        4,
+        5
+      ],
+      "looseOnlyMarkersExcludedFromSourceRows": []
+    },
+    {
+      "sectionKey": "III_paul_reply",
+      "previousLooseMarkerCount": 25,
+      "correctedStrictMarkerCount": 23,
+      "correctedStrictMarkers": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10,
+        11,
+        12,
+        16,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        27,
+        28,
+        31,
+        32,
+        34,
+        86,
+        37
+      ],
+      "looseOnlyMarkersExcludedFromSourceRows": [
+        {
+          "marker": "14",
+          "number": 14,
+          "index": 1770,
+          "reason": "bracketed_apparatus_or_variant_note_marker_not_active_source_row",
+          "context": "ION ON THEM FROM HEAVEN, 13 and sent his spirit into Mary IN GALILEE, [14 Milan MS. and Arm.: who believed with all her heart and received the Holy Ghost in her womb, that Jesus might come into the world,] 15 that by that flesh whereby that wicked one had brou"
+        },
+        {
+          "marker": "33",
+          "number": 33,
+          "index": 4405,
+          "reason": "bracketed_apparatus_or_variant_note_marker_not_active_source_row",
+          "context": "m] arise again in that day having your flesh whole, EVEN AS HE AROSE? [33 Arm., Milan, Paris: Likewise also concerning the prophet Helias: he raised up the widow’s son from death: how much more shall the Lord Jesus raise you up from death at the sound of the t"
+        }
+      ]
+    }
+  ],
+  "visibleSourceNumberingAnomaliesPreserved": [
+    {
+      "sectionKey": "III_paul_reply",
+      "visibleNumber": 86,
+      "policy": "preserve_visible_source_anomaly_in_source_map; do not silently correct to 36 without separate page-image/source policy"
+    }
+  ],
+  "trustBoundary": {
+    "markerCountCorrected": true,
+    "candidateBibleTextMutated": false,
+    "candidateTextTrusted": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "candidateSha256Before": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f",
+    "candidateSha256After": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f"
+  },
+  "allowedClaims": [
+    "3 Corinthians M. R. James corrected source marker total is 33",
+    "previous 35 marker total is superseded for source-map creation",
+    "two bracketed apparatus/variant markers are excluded from active source rows",
+    "visible source marker 86 is preserved as an anomaly, not silently corrected",
+    "current candidate remains unmutated and quarantined"
+  ],
+  "blockedClaims": [
+    "3 Corinthians source map must force 35 source rows",
+    "bracketed apparatus markers are active source rows",
+    "marker 86 was silently corrected",
+    "3 Corinthians text repaired by marker-count correction",
+    "3 Corinthians textually trusted by marker-count correction",
+    "3 Corinthians app render eligible by marker-count correction"
+  ]
+}

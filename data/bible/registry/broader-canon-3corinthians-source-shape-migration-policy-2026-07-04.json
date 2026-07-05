@@ -106,5 +106,20 @@
     "3 Corinthians app render eligible by this policy",
     "current 19-row candidate is exact M. R. James",
     "M. R. James source numbering silently corrected"
-  ]
+  ],
+  "latestMarkerCountCorrection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-marker-count-correction-2026-07-04.json",
+    "status": "corrected_source_marker_total_33_no_candidate_mutation",
+    "previousLooseSourceMarkerTotal": 35,
+    "correctedStrictSourceMarkerTotal": 33,
+    "sourceMapMustUseCorrectedStrictTotal": true,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "correctedObservedMismatch": {
+    "activeCandidateRows": 19,
+    "correctedSourceMarkerTotal": 33,
+    "simpleOverlayAllowed": false
+  }
 }

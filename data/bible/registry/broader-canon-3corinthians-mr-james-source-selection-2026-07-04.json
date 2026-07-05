@@ -218,5 +218,13 @@
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "latestMarkerCountCorrection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-marker-count-correction-2026-07-04.json",
+    "status": "corrected_source_marker_total_33_no_candidate_mutation",
+    "correctedStrictSourceMarkerTotal": 33,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

@@ -122,7 +122,13 @@
     "broader_canon_3corinthians_trusted_by_migration_policy",
     "broader_canon_3corinthians_app_render_eligible_by_migration_policy",
     "broader_canon_3corinthians_current_19_row_candidate_reused_as_exact_translation",
-    "broader_canon_3corinthians_source_numbering_silently_corrected"
+    "broader_canon_3corinthians_source_numbering_silently_corrected",
+    "broader_canon_3corinthians_source_map_forces_superseded_35_marker_count",
+    "broader_canon_3corinthians_bracketed_apparatus_markers_active_source_rows",
+    "broader_canon_3corinthians_marker_86_silently_corrected_to_36",
+    "broader_canon_3corinthians_text_repaired_by_marker_count_correction",
+    "broader_canon_3corinthians_trusted_by_marker_count_correction",
+    "broader_canon_3corinthians_app_render_eligible_by_marker_count_correction"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -231,7 +237,12 @@
     "broader_canon_3corinthians_source_shape_migration_policy_recorded",
     "broader_canon_3corinthians_rebuild_required_before_candidate_repair",
     "broader_canon_3corinthians_current_19_row_candidate_quarantined",
-    "broader_canon_3corinthians_future_rebuild_authorized_only_after_source_map_qc"
+    "broader_canon_3corinthians_future_rebuild_authorized_only_after_source_map_qc",
+    "broader_canon_3corinthians_mr_james_marker_count_corrected_to_33",
+    "broader_canon_3corinthians_previous_35_marker_total_superseded_for_source_map",
+    "broader_canon_3corinthians_bracketed_apparatus_markers_excluded_from_active_source_rows",
+    "broader_canon_3corinthians_marker_86_preserved_as_visible_source_anomaly",
+    "broader_canon_3corinthians_current_candidate_unmutated_after_marker_count_correction"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -478,6 +489,15 @@
     "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
     "status": "policy_recorded_rebuild_required_before_candidate_repair",
     "sourceShapeMigrationAuthorizedForFutureCommand": true,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "latest3CorinthiansMrJamesMarkerCountCorrection": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-marker-count-correction-2026-07-04.json",
+    "status": "corrected_source_marker_total_33_no_candidate_mutation",
+    "previousLooseSourceMarkerTotal": 35,
+    "correctedStrictSourceMarkerTotal": 33,
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
