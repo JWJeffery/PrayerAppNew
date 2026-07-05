@@ -342,15 +342,6 @@
     "type": "Collect"
   },
   {
-    "id": "bcp-mission-prayer-1",
-    "title": "A Prayer for Mission (Option 1)",
-    "text": {
-      "rite1": "O God and Father of all, whom the whole heavens adore: Let the whole earth also worship thee, all nations obey thee, all tongues confess and bless thee, and men and women everywhere love thee and serve thee in peace; through Jesus Christ our Lord. Amen.",
-      "rite2": "O God and Father of all, whom the whole heavens adore: Let the whole earth also worship you, all nations obey you, all tongues confess and bless you, and men and women everywhere love you and serve you in peace; through Jesus Christ our Lord. Amen."
-    },
-    "type": "Prayer"
-  },
-  {
     "id": "bcp-general-thanksgiving",
     "title": "General Thanksgiving",
     "text": {
@@ -1522,5 +1513,32 @@
       "rite2": "Almighty God, who gave such grace to your apostle Andrew that he readily obeyed the call of your Son Jesus Christ, and brought his brother with him: Give us, who are called by your holy Word, grace to follow him without delay, and to bring those near to us into his gracious presence; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
+  },
+  {
+    "id": "bcp-mission-prayer-mp-a",
+    "title": "A Prayer for Mission (Morning Prayer, Option A)",
+    "type": "Prayer",
+    "text": {
+      "rite1": "Almighty and everlasting God, by whose Spirit the whole body of thy faithful people is governed and sanctified: Receive our supplications and prayers which we offer before thee for all members of thy holy Church, that in their vocation and ministry they may truly and godly serve thee; through our Lord and Savior Jesus Christ. Amen.",
+      "rite2": "Almighty and everlasting God, by whose Spirit the whole body of your faithful people is governed and sanctified: Receive our supplications and prayers which we offer before you for all members of your holy Church, that in their vocation and ministry they may truly and devoutly serve you; through our Lord and Savior Jesus Christ. Amen."
+    }
+  },
+  {
+    "id": "bcp-mission-prayer-mp-b",
+    "title": "A Prayer for Mission (Morning Prayer, Option B)",
+    "type": "Prayer",
+    "text": {
+      "rite1": "O God, who hast made of one blood all the peoples of the earth, and didst send thy blessed Son to preach peace to those who are far off and to those who are near: Grant that people everywhere may seek after thee and find thee; bring the nations into thy fold; pour out thy Spirit upon all flesh; and hasten the coming of thy kingdom; through the same thy Son Jesus Christ our Lord. Amen.",
+      "rite2": "O God, you have made of one blood all the peoples of the earth, and sent your blessed Son to preach peace to those who are far off and to those who are near: Grant that people everywhere may seek after you and find you; bring the nations into your fold; pour out your Spirit upon all flesh; and hasten the coming of your kingdom; through Jesus Christ our Lord. Amen."
+    }
+  },
+  {
+    "id": "bcp-mission-prayer-mp-c",
+    "title": "A Prayer for Mission (Morning Prayer, Option C)",
+    "type": "Prayer",
+    "text": {
+      "rite1": "Lord Jesus Christ, who didst stretch out thine arms of love on the hard wood of the cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. Amen.",
+      "rite2": "Lord Jesus Christ, you stretched out your arms of love on the hard wood of the cross that everyone might come within the reach of your saving embrace: So clothe us in your Spirit that we, reaching forth our hands in love, may bring those who do not know you to the knowledge and love of you; for the honor of your Name. Amen."
+    }
   }
 ]

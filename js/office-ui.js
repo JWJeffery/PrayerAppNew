@@ -2556,6 +2556,7 @@ function saveSettings() {
         gospelPlacement:     document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening',
         litany:              document.getElementById('toggle-litany')?.checked || false,
         suffrages:           document.getElementById('toggle-suffrages')?.checked || false,
+        rotateMissionPrayer: document.getElementById('toggle-rotate-mission-prayer')?.checked ?? true,
         psalter30Day:        document.getElementById('toggle-30day-psalter')?.checked || false,
         generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
         chrysostom:          document.getElementById('toggle-chrysostom')?.checked || false,
@@ -2608,6 +2609,7 @@ function loadSettings() {
         setChk('toggle-agpeya-opening',        s.agpeyaOpening);
         setChk('toggle-litany',                s.litany);
         setChk('toggle-suffrages',             s.suffrages);
+        setChk('toggle-rotate-mission-prayer', s.rotateMissionPrayer !== false);
         setChk('toggle-30day-psalter',         s.psalter30Day);
         setChk('toggle-general-thanksgiving',  s.generalThanksgiving);
         setChk('toggle-chrysostom',            s.chrysostom);
@@ -3172,6 +3174,22 @@ function _horDiagLayer(resolvedAs) {
         resolvedAs.endsWith('-pending'))                            return 'Fallback';
     return null;
 }
+// ── Deterministic daily rotation helper ─────────────────────────────────────
+// Used to rotate among a fixed, ordered list of authorized text options based
+// on the calendar date, so the same date always yields the same option
+// worldwide (no timezone drift) and the choice never depends on load order,
+// randomness, or client state. Anchor: ISO-8601 ordinal day-of-year (1-366),
+// computed via UTC date math to avoid local-timezone boundary drift, taken
+// modulo the number of options. Do not replace this with Math.random() or
+// any non-deterministic source — liturgical rotation must be reproducible
+// (so the same office is prayed by everyone on a given date) and auditable.
+function getDailyRotationIndex(date, optionCount) {
+    const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    const startOfYear = new Date(Date.UTC(date.getFullYear(), 0, 1));
+    const dayOfYear = Math.floor((utcDate - startOfYear) / 86400000) + 1; // 1-366
+    return (dayOfYear - 1) % optionCount;
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -3532,14 +3550,20 @@ async function renderBcpOffice() {
             continue;
         }
 
-        // VARIABLE_MISSION_PRAYER — fixed mission prayer
+        // VARIABLE_MISSION_PRAYER — rotates among the 3 BCP-authorized Morning
+        // Prayer mission prayers (p.99-100 Rite II / p.56-57 Rite I) when the
+        // "Rotate Mission Prayer Daily" toggle is on; otherwise always uses
+        // Option A, matching the app's prior fixed behavior.
         if (item === 'VARIABLE_MISSION_PRAYER') {
-            const comp = appData.components.find(c => c.id === 'bcp-mission-prayer-1');
+            const missionPrayerIds = ['bcp-mission-prayer-mp-a', 'bcp-mission-prayer-mp-b', 'bcp-mission-prayer-mp-c'];
+            const rotateMissionPrayer = document.getElementById('toggle-rotate-mission-prayer')?.checked ?? true;
+            const missionIdx = rotateMissionPrayer ? getDailyRotationIndex(currentDate, missionPrayerIds.length) : 0;
+            const comp = appData.components.find(c => c.id === missionPrayerIds[missionIdx]);
             if (comp) {
                 const t = resolveText(comp, rite) || comp.text || '';
                 officeHtml += `<span class="rubric-text">A Prayer for Mission</span><span class="component-text">${t}</span>`;
             } else {
-                console.warn('[renderOffice] VARIABLE_MISSION_PRAYER: bcp-mission-prayer-1 not found');
+                console.warn(`[renderOffice] VARIABLE_MISSION_PRAYER: ${missionPrayerIds[missionIdx]} not found`);
             }
             continue;
         }
@@ -3815,7 +3839,9 @@ async function renderBcpOffice() {
             'bcp-collect-grace':              'A Collect for Grace',
             'bcp-collect-peace':              'A Collect for Peace',
             'bcp-collect-compline-1':         'A Collect for the Evening',
-            'bcp-mission-prayer-1':           'A Prayer for Mission',
+            'bcp-mission-prayer-mp-a':        'A Prayer for Mission',
+            'bcp-mission-prayer-mp-b':        'A Prayer for Mission',
+            'bcp-mission-prayer-mp-c':        'A Prayer for Mission',
             'bcp-versicles-before-prayers-compline': 'Versicles',
             'bcp-opening-blessing-compline':  'Opening Blessing',
             'bcp-nunc-dimittis':              'Nunc Dimittis',
