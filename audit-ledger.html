@@ -174,8 +174,25 @@ const COMPLINE_PARTS = ["Opening Versicles (Our help is in the Name of the Lord)
 "Kyrie","Lord's Prayer","Suffrages/Collects proper to Compline","Silence & free intercessions (optional)",
 "Let Us Bless the Lord + Concluding Blessing"];
 
+const MORNING_PRAYER_STATUS = {
+  "Opening Sentences": {status:'green', note:'bcp-opening-1 and bcp-opening-rite1 corrected 2026-07-05 (verified vs BCP1979.pdf)'},
+  "Confession": {status:'green', note:'both rites verified verbatim'},
+  "Invitatory": {status:'green', note:'both rites verified verbatim'},
+  "Invitatory Psalm": {status:'green', note:'Venite and Jubilate verified verbatim'},
+  "Appointed Psalms": {status:'amber', note:'lectionary psalm-selection logic not yet audited'},
+  "Lessons with Canticles": {status:'amber', note:'Te Deum text verified verbatim; full canticle set (1-21) and lectionary lesson-selection not yet audited'},
+  "Apostles' Creed": {status:'green', note:'both rites verified verbatim (shared common.json)'},
+  "Lord's Prayer": {status:'green', note:'FIXED 2026-07-05 — rite2 was a duplicate of rite1 (wrong, traditional-language text). This is shared across every office, not just Morning Prayer.'},
+  "Suffrages": {status:'green', note:'Suffrages A, both rites, verified verbatim'},
+  "Collects": {status:'amber', note:'Collect for Grace verified verbatim; the ~150 other collects in this file not yet individually audited'},
+  "Mission Prayer": {status:'red', note:'JUDGMENT CALL, NOT YET FIXED: bcp-mission-prayer-1 contains the Evening Prayer II mission prayer (BCP p.124), not one of the 3 actual Morning Prayer II mission prayers. Needs a decision on which of the 3 to use before fixing.'},
+  "Hymn / Intercessions / Thanksgivings (optional)": {status:'amber', note:'not a fixed text item; not applicable to text-accuracy audit'},
+  "General Thanksgiving and/or Prayer of St. Chrysostom": {status:'green', note:'FIXED 2026-07-05 — Chrysostom rite2 had "life to come life everlasting" corrected to "age to come life everlasting". General Thanksgiving itself verified verbatim.'},
+  "Let Us Bless the Lord — concluding sentence": {status:'green', note:'verified verbatim; only 1 of 3 authorized closing sentences represented (completeness note, not an error)'}
+};
+
 const DAILY_OFFICE = [
-  {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>({key:'do:mp:'+p,name:p,status:'amber',note:''}))},
+  {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>({key:'do:mp:'+p,name:p,status:(MORNING_PRAYER_STATUS[p]||{}).status||'amber',note:(MORNING_PRAYER_STATUS[p]||{}).note||''}))},
   {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>({key:'do:ep:'+p,name:p,status:'amber',note:''}))},
   {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>({key:'do:noon:'+p,name:p,status:'amber',note:''}))},
   {group:"Compline", parts: COMPLINE_PARTS.map(p=>({key:'do:comp:'+p,name:p,status:'amber',note:''}))}
@@ -299,6 +316,20 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
+const SEED_VERSION = 'v2-2026-07-05-morning-prayer-audit';
+
+async function checkSeedVersion(){
+  try{
+    const stored = await window.storage.get('__seed_version__', false);
+    if (!stored || stored.value !== SEED_VERSION){
+      const keys = await window.storage.list('', false);
+      if (keys && keys.keys){
+        for (const k of keys.keys){ try{ await window.storage.delete(k, false); }catch(e){} }
+      }
+      await window.storage.set('__seed_version__', SEED_VERSION, false);
+    }
+  }catch(e){ console.error('seed version check failed', e); }
+}
 
 async function hydrateAndRender(items, renderFn, container, ...args){
   for (const item of items){
@@ -317,6 +348,7 @@ function renderCounts(){
 }
 
 async function init(){
+  await checkSeedVersion();
   const bibleSec = document.getElementById('bibleSection');
   await hydrateAndRender(makeBooks(OT_BOOKS,'OT'), renderBookTable, bibleSec, "Old Testament (canonical + broader canon, as filed)");
   await hydrateAndRender(makeBooks(NT_BOOKS,'NT'), renderBookTable, bibleSec, "New Testament");
