@@ -36,7 +36,7 @@
         },
         {
           "num": 5,
-          "text": "Your fruits are full and ripe; they are full of your healing. A hypothetical reconstruction from the Greek (From"
+          "text": "Your fruits are full and ripe; they are full of your healing."
         }
       ]
     },
@@ -59,7 +59,7 @@
         },
         {
           "num": 4,
-          "text": "Blessed are those who &lt;see&gt; your waters."
+          "text": "Blessed are those who <see> your waters."
         }
       ]
     },
@@ -74,7 +74,7 @@
         },
         {
           "num": 2,
-          "text": "And his limbs are with &lt;me&gt;, and to them I cling, and he loves me."
+          "text": "And his limbs are with <me>, and to them I cling, and he loves me."
         },
         {
           "num": 3,
@@ -212,7 +212,7 @@
         },
         {
           "num": 7,
-          "text": "Let their plan wax &lt;weak&gt;, and let what they have cunningly devised return upon their own heads."
+          "text": "Let their plan wax <weak>, and let what they have cunningly devised return upon their own heads."
         },
         {
           "num": 8,
@@ -334,7 +334,7 @@
       "verses": [
         {
           "num": 1,
-          "text": "Like the impulse of &lt;love&gt; over &lt;infancy&gt;, so is the impulse of joy over the beloved, who brings in joy’s fruits unhindered."
+          "text": "Like the impulse of <love> over <infancy>, so is the impulse of joy over the beloved, who brings in joy’s fruits unhindered."
         },
         {
           "num": 2,
@@ -358,7 +358,7 @@
         },
         {
           "num": 7,
-          "text": "&lt;From&gt; the Father of knowledge is the utterance of knowledge."
+          "text": "<From> the Father of knowledge is the utterance of knowledge."
         },
         {
           "num": 8,
@@ -796,7 +796,7 @@
         },
         {
           "num": 3,
-          "text": "And wipe off the &lt;eyeshadow&gt; from your face, and love his holiness, and put it on (instead)!"
+          "text": "And wipe off the <eyeshadow> from your face, and love his holiness, and put it on (instead)!"
         },
         {
           "num": 4,
@@ -1063,7 +1063,7 @@
       "verses": [
         {
           "num": 1,
-          "text": "My heart was lifted up in the love of the Most High and expanded, that I might praise him on account of &lt;his&gt; name."
+          "text": "My heart was lifted up in the love of the Most High and expanded, that I might praise him on account of <his> name."
         },
         {
           "num": 2,
@@ -1170,7 +1170,7 @@
         },
         {
           "num": 10,
-          "text": "&lt;And&gt; she brought forth because of will, and she brought forth because of declaration, and she acquired because of abundant majesty,"
+          "text": "<And> she brought forth because of will, and she brought forth because of declaration, and she acquired because of abundant majesty,"
         },
         {
           "num": 11,
@@ -2391,7 +2391,7 @@
         },
         {
           "num": 22,
-          "text": "and I set my name on their head, because they are the free children, and they are mine. -->"
+          "text": "and I set my name on their head, because they are the free children, and they are mine."
         }
       ]
     }

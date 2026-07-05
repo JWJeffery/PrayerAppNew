@@ -27,11 +27,30 @@
     "rowLevelCollationComplete": false,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false,
-    "candidateFileSha256": "2d0a067df1c56f5d3666f8acc13d979b7f2890e250f393937db11b7db8e99ad5",
-    "candidateTextSha256": "10ca0c60d4b891d6e1e8f101f38cae4e636e710c4348bb0cd192da2e64a47a74"
+    "candidateFileSha256": "0e26c1368c821b5ad7be060ea6626ad9183d79ef92706b43865afcecc427aae4",
+    "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb"
   },
   "nextAllowedWork": [
     "perform row-level source binding/collation against the recorded Nuhra source snapshot",
     "only after collation decide text-trust and app-render eligibility"
-  ]
+  ],
+  "cleanup": {
+    "status": "parser_contamination_removed",
+    "recordedAt": "2026-07-05T00:00:00-07:00",
+    "changedVerseCount": 10,
+    "bibleVerseTextMutation": true,
+    "reason": "Removed parser/source-heading contamination and decoded source text angle-bracket entities after complete Nuhra rebuild.",
+    "changedRefs": [
+      "1:5",
+      "2:4",
+      "3:2",
+      "5:7",
+      "7:1",
+      "7:7",
+      "13:3",
+      "18:1",
+      "19:10",
+      "42:22"
+    ]
+  }
 }

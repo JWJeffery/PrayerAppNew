@@ -44,6 +44,13 @@ eq("metadata chapter count", metadata.diagnostic?.rebuiltChapterCount, 42);
 eq("metadata row count", metadata.diagnostic?.rebuiltRowCount, candidateRows.length);
 if (!String(candidate.chapters[0]?.verses?.[0]?.text || "").startsWith("The Lord is upon my head like a wreath")) fail("ode-1-anchor-mismatch");
 if (candidate.chapters[41]?.num !== 42) fail("ode-42-missing");
+for (const row of candidateRows) {
+  const rowText = String(row.text || "");
+  if (rowText.includes("A hypothetical reconstruction") || rowText.includes("<!--") || rowText.includes("-->") || rowText.includes("&lt;") || rowText.includes("&gt;") || rowText.trim().endsWith("(From")) {
+    fail("parser-contamination-check", { ref: row.ref, text: row.text });
+  }
+}
+truthy("cleanup recorded", record.cleanup?.status === "parser_contamination_removed");
 
 eq("governance latest", governance.latestOdesOfSolomonNuhraRebuild?.recordPath, recordPath);
 truthy("governance bible mutation", governance.latestOdesOfSolomonNuhraRebuild?.bibleTextMutation);

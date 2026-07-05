@@ -13,8 +13,8 @@
     "publicDomainStatementDetected": true,
     "ode42Detected": true,
     "sourceSnapshotSha256": "635c283d205b90ef44996778b05bb99db09122d99dc1e69f7b0118fd22d4e480",
-    "candidateFileSha256": "2d0a067df1c56f5d3666f8acc13d979b7f2890e250f393937db11b7db8e99ad5",
-    "candidateTextSha256": "10ca0c60d4b891d6e1e8f101f38cae4e636e710c4348bb0cd192da2e64a47a74",
+    "candidateFileSha256": "0e26c1368c821b5ad7be060ea6626ad9183d79ef92706b43865afcecc427aae4",
+    "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb",
     "oldRowCount": 3,
     "rebuiltChapterCount": 42,
     "rebuiltRowCount": 522,
@@ -61,6 +61,22 @@
       "40": "syriac",
       "41": "syriac",
       "42": "syriac"
+    },
+    "cleanup": {
+      "status": "parser_contamination_removed",
+      "changedVerseCount": 10,
+      "changedRefs": [
+        "1:5",
+        "2:4",
+        "3:2",
+        "5:7",
+        "7:1",
+        "7:7",
+        "13:3",
+        "18:1",
+        "19:10",
+        "42:22"
+      ]
     }
   }
 }
