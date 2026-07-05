@@ -22,8 +22,7 @@
       "sourceWitnesses": [
         {
           "label": "Internet Sacred Text Archive, The Book of Enoch, tr. R.H. Charles [1917]",
-          "url": "https://www.sacred-texts.com/bib/boe/index.htm",
-          "downloadableTextCandidate": "https://www.sacred-texts.com/bib/boe/boe.txt.gz"
+          "url": "https://www.sacred-texts.com/bib/boe/index.htm"
         }
       ],
       "currentTrustDisposition": "quarantined_pending_source_snapshot_and_collation"
@@ -36,8 +35,7 @@
       "sourceWitnesses": [
         {
           "label": "Internet Sacred Text Archive, The Book of Jubilees, translated by R.H. Charles [1917]",
-          "url": "https://www.sacred-texts.com/bib/jub/index.htm",
-          "titlePageUrl": "https://www.sacred-texts.com/bib/jub/jub00.htm"
+          "url": "https://www.sacred-texts.com/bib/jub/index.htm"
         }
       ],
       "currentTrustDisposition": "quarantined_pending_source_snapshot_and_collation"
@@ -49,7 +47,7 @@
       "sourceWitnessStatus": "source_basis_decision_and_extraction_manifest_recorded_rebuild_pending",
       "sourceWitnesses": [
         {
-          "label": "Early Christian Writings, The Ascension of Isaiah online text",
+          "label": "Early Christian Writings online text",
           "url": "https://www.earlychristianwritings.com/text/ascension.html"
         }
       ],
@@ -61,14 +59,19 @@
       "path": "data/bible/NT/2baruchCE.json",
       "title": "2 Baruch",
       "repoMetadataVersion": "Charles",
-      "sourceWitnessStatus": "online_text_witness_identified_source_basis_verification_required",
+      "sourceWitnessStatus": "complete_public_domain_print_witness_found_materialization_pending",
       "sourceWitnesses": [
         {
-          "label": "Pseudepigrapha.com, 2 Baruch translation attributed to R.H. Charles",
+          "label": "Pseudepigrapha.com mirror, incomplete at tail",
           "url": "http://www.pseudepigrapha.com/pseudepigrapha/2Baruch.html"
+        },
+        {
+          "label": "Internet Archive scan/OCR of R. H. Charles APOT volume 2, 1913",
+          "url": "https://archive.org/details/apocryphapseudep02charuoft"
         }
       ],
-      "currentTrustDisposition": "quarantined_pending_source_basis_verification_and_collation"
+      "currentTrustDisposition": "quarantined_complete_source_witness_found_materialization_pending",
+      "completeSourceWitnessFoundPath": "data/bible/registry/broader-canon-2baruch-complete-source-witness-found-2026-07-05.json"
     }
   ],
   "allowedClaims": [
