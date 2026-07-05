@@ -85,7 +85,7 @@
   <div id="bibleSection"></div>
 
   <h2>II. The Daily Office (1979 BCP)</h2>
-  <p class="section-note">Morning Prayer: in progress, not complete. Opening Sentences, Confession, Invitatory, Invitatory Psalm, Apostles' Creed, Lord's Prayer, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are verified against BCP1979.pdf. Appointed Psalms (30-day table) verified and corrected. Still unverified: the full Collects set (~150 individual propers, only Collect for Grace checked so far) and the full Canticle set beyond the Te Deum. Evening Prayer, Noonday Prayer, and Compline are broken into parts but not yet individually audited.</p>
+  <p class="section-note">Morning Prayer: in progress, not complete. Opening Sentences, Confession, Invitatory, Invitatory Psalm, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are verified against BCP1979.pdf. Appointed Psalms (30-day table) verified and corrected. Still unverified: the full Collects set (~150 individual propers, only Collect for Grace checked so far) and the full Canticle set beyond the Te Deum. Lord's Prayer and Apostles' Creed are shared components (common.json) — verified once, shown green in every office that references them, including Evening Prayer, Noonday Prayer, and Compline below, even though those offices haven't been individually audited otherwise yet.</p>
   <div id="dailyOfficeSection"></div>
 
   <h2>III. The Ethiopian Office</h2>
@@ -174,15 +174,27 @@ const COMPLINE_PARTS = ["Opening Versicles (Our help is in the Name of the Lord)
 "Kyrie","Lord's Prayer","Suffrages/Collects proper to Compline","Silence & free intercessions (optional)",
 "Let Us Bless the Lord + Concluding Blessing"];
 
+// Components genuinely shared across offices (same component ID resolved by
+// the app, not just similar text) belong here, ONCE. Every office's status
+// map below pulls from this automatically via statusFor(), so fixing a
+// shared component's finding here is enough — no office row can go stale
+// because nobody has to remember to update it in N places by hand.
+const SHARED_COMPONENT_STATUS = {
+  "Lord's Prayer": {status:'green', note:"Shared component (comm-lords-prayer, common.json) — resolved by ID in Morning Prayer, Evening Prayer, Noonday Prayer, Compline, AND borrowed directly by the Ethiopian Sa'atat rubric. Verified 2026-07-05: only one shared copy exists in the code, so this status applies everywhere it's referenced. FIXED 2026-07-05 — rite2 was a duplicate of rite1 (wrong, traditional-language text); now the actual contemporary-language Lord's Prayer. Does NOT apply to the Church of the East, which uses a separate, distinct component (esy-lords-prayer-farced, the traditional Syriac 'farced' expanded form) — correctly untouched."},
+  "Apostles' Creed": {status:'green', note:"Shared component (comm-creed-apostles, common.json). Both rites verified verbatim against BCP1979.pdf."}
+};
+function statusFor(partName, officeStatusMap){
+  if (SHARED_COMPONENT_STATUS[partName]) return SHARED_COMPONENT_STATUS[partName];
+  return (officeStatusMap && officeStatusMap[partName]) || {status:'amber', note:''};
+}
+
 const MORNING_PRAYER_STATUS = {
   "Opening Sentences": {status:'green', note:'bcp-opening-1 and bcp-opening-rite1 corrected 2026-07-05 (verified vs BCP1979.pdf)'},
   "Confession": {status:'green', note:'both rites verified verbatim'},
   "Invitatory": {status:'green', note:'both rites verified verbatim'},
   "Invitatory Psalm": {status:'green', note:'Venite and Jubilate verified verbatim'},
-  "Appointed Psalms": {status:'amber', note:'30-day psalter table (js/office-ui.js psalterCycle) verified against BCP1979.pdf pp.584-808 and corrected 2026-07-05 — Days 29-30 had a shift error, now fixed; Day 31 flagged (BCP prints no explicit 31st-day rubric; current value repeats Day 30 by custom, needs Josh confirmation). IMPORTANT: the 30-day table is NOT the default — the "Rotate Mission Prayer Daily"-style toggle for it defaults unchecked, so the default path is the Daily Office Lectionary (DOL), which pulls psalms_mp/psalms_ep per calendar date from a separate data file. That DOL path (effectively 365+ dates) has not been audited at all. Still amber until that larger piece is done.'},
+  "Appointed Psalms": {status:'amber', note:'30-day psalter table (js/office-ui.js psalterCycle) verified against BCP1979.pdf pp.584-808 and corrected 2026-07-05 — Days 29-30 had a shift error, now fixed; Day 31 flagged (BCP prints no explicit 31st-day rubric; current value repeats Day 30 by custom, needs Josh confirmation). IMPORTANT: the 30-day table is NOT the default — its toggle defaults unchecked, so the default path is the Daily Office Lectionary (DOL), which pulls psalms_mp/psalms_ep per calendar date from a separate data file. That DOL path (effectively 365+ dates) has not been audited at all. Still amber until that larger piece is done.'},
   "Lessons with Canticles": {status:'amber', note:'Te Deum text verified verbatim; full canticle set (1-21) and lectionary lesson-selection not yet audited'},
-  "Apostles' Creed": {status:'green', note:'both rites verified verbatim (shared common.json)'},
-  "Lord's Prayer": {status:'green', note:'FIXED 2026-07-05 — rite2 was a duplicate of rite1 (wrong, traditional-language text). This is shared across every office, not just Morning Prayer.'},
   "Suffrages": {status:'green', note:'Suffrages A, both rites, verified verbatim'},
   "Collects": {status:'amber', note:'Collect for Grace verified verbatim; the ~150 other collects in this file not yet individually audited'},
   "Mission Prayer": {status:'green', note:'FIXED 2026-07-05 — replaced wrong (Evening Prayer) text with all 3 real Morning Prayer II mission prayers, verified vs BCP p.99-100/p.56-57. Now configurable with deterministic daily rotation (toggle in Settings). Side finding: Ethiopian Sa\'atat rubric borrowed this same component — repointed, not yet reviewed for whether that borrowing itself is correct.'},
@@ -192,11 +204,12 @@ const MORNING_PRAYER_STATUS = {
 };
 
 const DAILY_OFFICE = [
-  {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>({key:'do:mp:'+p,name:p,status:(MORNING_PRAYER_STATUS[p]||{}).status||'amber',note:(MORNING_PRAYER_STATUS[p]||{}).note||''}))},
-  {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>({key:'do:ep:'+p,name:p,status:'amber',note:''}))},
-  {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>({key:'do:noon:'+p,name:p,status:'amber',note:''}))},
-  {group:"Compline", parts: COMPLINE_PARTS.map(p=>({key:'do:comp:'+p,name:p,status:'amber',note:''}))}
+  {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>{const s=statusFor(p, MORNING_PRAYER_STATUS); return {key:'do:mp:'+p,name:p,status:s.status,note:s.note};})},
+  {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:ep:'+p,name:p,status:s.status,note:s.note};})},
+  {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:noon:'+p,name:p,status:s.status,note:s.note};})},
+  {group:"Compline", parts: COMPLINE_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:comp:'+p,name:p,status:s.status,note:s.note};})}
 ];
+
 
 const ETHIOPIAN = [
   {key:'eth:saatat:shape', name:"Sa'atat — overall shape", status:'red', note:"9-watch/3-psalm schema built does not match attested Giyorgis structure (Taft: lesson-based, not fixed-psalm-per-watch)"},
@@ -316,7 +329,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v4-2026-07-05-psalter-fix-and-seedbug-fix';
+const SEED_VERSION = 'v5-2026-07-05-shared-component-architecture';
 
 async function checkSeedVersion(){
   let storedValue = null;
