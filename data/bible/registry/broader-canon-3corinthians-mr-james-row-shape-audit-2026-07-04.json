@@ -1,0 +1,172 @@
+{
+  "schema": "broader-canon-3corinthians-mr-james-row-shape-audit-v1",
+  "id": "broader_canon_3corinthians_mr_james_row_shape_audit_2026_07_04",
+  "status": "blocked_simple_overlay_source_shape_migration_required_no_candidate_mutation",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+  "sourceSelectionPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+  "sourceShape": {
+    "sourceSectionCount": 4,
+    "numberedSourceSectionCount": 3,
+    "sourceMarkerTotal": 35,
+    "sourceSections": [
+      {
+        "key": "intro_narrative",
+        "label": "Introductory narrative before the Corinthians' letter",
+        "hasNumberedVerseMarkers": false,
+        "textLength": 758,
+        "startsWith": "For there were certain men come to Corinth, Simon and Cleobius, saying: There is no resurrection of the flesh, but that of the spirit only: and that the body of man is not the crea"
+      },
+      {
+        "key": "I_corinthians_letter",
+        "label": "Corinthians' letter to Paul",
+        "expectedRole": "source primary numbered section",
+        "markerCount": 7,
+        "markers": [
+          1,
+          2,
+          6,
+          8,
+          9,
+          10,
+          16
+        ],
+        "textLength": 1416,
+        "startsWith": "I. 1 Stephanus and the elders (presbyters) that are with him, even Daphnus and Eubulus and Theophilus and Zenon, unto Paul THEIR BROTHER ETERNAL greeting in the Lord. 2 There have "
+      },
+      {
+        "key": "II_narrative_bridge",
+        "label": "Narrative bridge before Paul's reply",
+        "expectedRole": "source primary numbered section",
+        "markerCount": 3,
+        "markers": [
+          1,
+          4,
+          5
+        ],
+        "textLength": 765,
+        "startsWith": "II. 1 The deacons Threptus and Eutyches brought the letter unto Philippi, 2 so that Paul received it, being in bonds because of Stratonice the wife of Apollophanes, AND HE FORGAT H"
+      },
+      {
+        "key": "III_paul_reply",
+        "label": "Paul's reply, commonly called Third Epistle to the Corinthians",
+        "expectedRole": "source primary numbered section",
+        "markerCount": 25,
+        "markers": [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10,
+          11,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          27,
+          28,
+          31,
+          32,
+          33,
+          34,
+          86,
+          37
+        ],
+        "textLength": 5578,
+        "startsWith": "III. 1 Paul, a prisoner of Jesus Christ, unto the brethren which are in Corinth, greeting. 2 Being in the midst of many tribulations, I marvel not if the teachings of the evil one "
+      }
+    ],
+    "sourceNumberingObservations": [
+      {
+        "type": "visible_source_numbering_anomaly",
+        "observation": "The captured Wikisource body contains marker 86 in Paul's reply after marker 35 where 36 is expected by sequence. Preserve as source-transcription anomaly unless separately corrected against page images."
+      }
+    ]
+  },
+  "activeCandidateShape": {
+    "candidateRowsDetected": 19,
+    "chapterRowCounts": {
+      "0": 6,
+      "1": 13
+    },
+    "topLevelKeys": [
+      "meta",
+      "chapters"
+    ],
+    "rowSamples": [
+      {
+        "path": "$.chapters[0].verses[0]",
+        "chapterIndex": 0,
+        "text": "Stephen and the elders who are with him, Daphne, Eubulus, Theophilus, and Xenon, to Paul the brother in the Lord, greeting."
+      },
+      {
+        "path": "$.chapters[0].verses[1]",
+        "chapterIndex": 0,
+        "text": "Two men have come to Corinth, Simon and Cleobius, who are perverting the faith of many with wicked words."
+      },
+      {
+        "path": "$.chapters[0].verses[2]",
+        "chapterIndex": 0,
+        "text": "For they say that we must not appeal to the prophets, and that God is not Almighty."
+      },
+      {
+        "path": "$.chapters[0].verses[3]",
+        "chapterIndex": 0,
+        "text": "They say there is no resurrection of the flesh, and that man was not made by God."
+      },
+      {
+        "path": "$.chapters[0].verses[4]",
+        "chapterIndex": 0,
+        "text": "They also say that the Lord has not come in the flesh, nor was He born of Mary."
+      },
+      {
+        "path": "$.chapters[0].verses[5]",
+        "chapterIndex": 0,
+        "text": "Therefore, brother, make haste to come to us, that the church of the Corinthians may remain without offense, and that the folly of these men may be made manifest. Farewell in the Lord."
+      },
+      {
+        "path": "$.chapters[1].verses[0]",
+        "chapterIndex": 1,
+        "text": "Paul, a prisoner of Jesus Christ, to the brethren in Corinth, greeting."
+      },
+      {
+        "path": "$.chapters[1].verses[1]",
+        "chapterIndex": 1,
+        "text": "Being in many tribulations, I do not wonder that the teachings of the evil one are spreading so quickly."
+      }
+    ]
+  },
+  "shapeDecision": {
+    "simpleOverlayAllowed": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "decision": "Do not repair by overlaying M. R. James text onto the existing 19-row candidate shape. A source-shape migration/rebuild policy is required first.",
+    "requiredNextWork": [
+      "Decide whether 3 Corinthians should be rebuilt to the M. R. James source shape, including intro narrative, section I, section II, and section III.",
+      "If rebuilt, define the active row schema before mutating candidate text.",
+      "Resolve or explicitly preserve the visible source numbering anomaly in Paul's reply.",
+      "Keep the current 19-row candidate quarantined until source-shape migration is approved."
+    ]
+  },
+  "blockedClaims": [
+    "current 19-row 3 Corinthians candidate can be repaired by simple overlay",
+    "3 Corinthians textually trusted from M. R. James source selection alone",
+    "3 Corinthians app render eligible before row-shape migration",
+    "visible source numbering anomaly silently corrected"
+  ],
+  "allowedClaims": [
+    "3 Corinthians M. R. James source shape audited",
+    "current 3 Corinthians candidate remains unmutated",
+    "simple overlay blocked unless source and candidate shapes are compatible",
+    "source-shape migration required before trustworthy candidate repair if shape mismatch remains"
+  ]
+}

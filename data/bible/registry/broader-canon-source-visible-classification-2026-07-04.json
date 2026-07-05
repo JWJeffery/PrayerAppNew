@@ -114,5 +114,13 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansMrJamesRowShapeAudit": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
+    "status": "blocked_simple_overlay_source_shape_migration_required_no_candidate_mutation",
+    "sourceVisibleImpact": "3 Corinthians M. R. James source shape is not safely overlay-compatible with the current 19-row candidate; candidate remains quarantined pending source-shape migration policy.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

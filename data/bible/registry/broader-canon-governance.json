@@ -113,7 +113,11 @@
     "broader_canon_3corinthians_trusted_from_overlap_diagnostic",
     "broader_canon_3corinthians_current_candidate_exact_mr_james",
     "broader_canon_3corinthians_repaired_without_exact_row_mapping",
-    "broader_canon_3corinthians_app_render_eligible_from_source_selection_only"
+    "broader_canon_3corinthians_app_render_eligible_from_source_selection_only",
+    "broader_canon_3corinthians_simple_overlay_repair_without_shape_audit",
+    "broader_canon_3corinthians_textually_trusted_from_source_selection_alone",
+    "broader_canon_3corinthians_app_render_eligible_before_shape_migration",
+    "broader_canon_3corinthians_visible_source_numbering_anomaly_silently_corrected"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -215,7 +219,10 @@
     "broader_canon_3corinthians_mr_james_source_selection_target_recorded",
     "broader_canon_3corinthians_candidate_related_to_mr_james_not_exact",
     "broader_canon_3corinthians_exact_row_mapping_required",
-    "broader_canon_3corinthians_no_candidate_text_mutation_in_source_selection"
+    "broader_canon_3corinthians_no_candidate_text_mutation_in_source_selection",
+    "broader_canon_3corinthians_mr_james_row_shape_audited",
+    "broader_canon_3corinthians_current_candidate_unmutated_after_row_shape_audit",
+    "broader_canon_3corinthians_simple_overlay_blocked_pending_shape_migration_if_mismatch"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -449,5 +456,13 @@
       "lowOverlapRows": 1,
       "interpretation": "candidate_appears_related_to_mr_james_but_not_exact"
     }
+  },
+  "latest3CorinthiansMrJamesRowShapeAudit": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
+    "status": "blocked_simple_overlay_source_shape_migration_required_no_candidate_mutation",
+    "simpleOverlayAllowed": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

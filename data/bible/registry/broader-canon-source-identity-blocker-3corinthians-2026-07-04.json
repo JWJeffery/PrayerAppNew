@@ -86,5 +86,13 @@
     "candidateIsSourceExact": false,
     "candidateTextMutation": false,
     "trustPromotion": false
+  },
+  "latestMrJamesRowShapeAudit": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
+    "status": "blocked_simple_overlay_source_shape_migration_required_no_candidate_mutation",
+    "simpleOverlayAllowed": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }
