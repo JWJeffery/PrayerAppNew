@@ -1,0 +1,29 @@
+{
+  "schema": "broader-canon-jubilees-text-trust-and-app-render-v1",
+  "id": "broader_canon_jubilees_text_trust_and_app_render_2026_07_04",
+  "status": "app_render_eligible_textually_trusted_source_page_binding_backed",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/ET/bookofjubileesET.json",
+  "sourceBindingCollationPath": "data/bible/registry/broader-canon-source-binding-collation-jubilees-2026-07-04.json",
+  "certificationBasis": {
+    "candidateRows": 975,
+    "sourcePageBindingCollated": true,
+    "appUseTextSourceBacked": true,
+    "bibleTextMutatedInThisStep": false,
+    "candidateJsonMutationLimitedToStatus": true,
+    "exactSacredTextsPageReproductionClaim": false,
+    "sourceVerseNumberRebuildClaim": false,
+    "footnotesPreservedAsDisplayTextClaim": false
+  },
+  "trustBoundary": {
+    "candidateTextTrusted": true,
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "candidateFileSha256BeforeStatusUpdate": "3afd0d27b33f3065e7c10e9044b78e5bd3ecd4baff406b83629d82fa3e8d5604",
+    "candidateFileSha256AfterStatusUpdate": "e9bc78571371256f05eaa157c6b421485ee4779c074b9051e2e673e9a351a8f0",
+    "candidateTextSha256BeforeStatusUpdate": "94bf18f3e31537f1d18597db945901afb3c3db33803060518838b16bc7de33ac",
+    "candidateTextSha256AfterStatusUpdate": "94bf18f3e31537f1d18597db945901afb3c3db33803060518838b16bc7de33ac"
+  }
+}

@@ -193,5 +193,15 @@
     "bibleTextMutation": false,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false
+  },
+  "jubileesTextTrustAndAppRender": {
+    "recordPath": "data/bible/registry/broader-canon-jubilees-text-trust-and-app-render-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_source_page_binding_backed",
+    "sourceVisibleImpact": "Jubilees is textually trusted and app-render eligible as source-page-binding-backed app-use text. This does not claim exact Sacred Texts page reproduction, does not rebuild source verse numbering, does not preserve footnotes as display text, and does not promote the whole broader-canon corpus or any other candidate.",
+    "textTrust": true,
+    "appRenderPromotion": true,
+    "bibleTextMutation": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
   }
 }

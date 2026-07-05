@@ -149,7 +149,11 @@
     "broader_canon_global_app_render_eligible_from_1enoch",
     "broader_canon_other_candidates_promoted_by_1enoch_app_render",
     "broader_canon_1enoch_exact_sacred_texts_page_reproduction_claim_promoted",
-    "broader_canon_1enoch_critical_apparatus_display_claim_promoted"
+    "broader_canon_1enoch_critical_apparatus_display_claim_promoted",
+    "broader_canon_global_app_render_eligible_from_jubilees",
+    "broader_canon_other_candidates_promoted_by_jubilees_app_render",
+    "broader_canon_jubilees_exact_sacred_texts_page_reproduction_claim_promoted",
+    "broader_canon_jubilees_source_verse_number_rebuild_claim_promoted"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -284,7 +288,10 @@
     "broader_canon_laodiceans_completed_repaired_certified_and_render_eligible",
     "broader_canon_1enoch_textually_trusted_fixed_entity_source_binding_backed",
     "broader_canon_1enoch_app_render_eligible_fixed_entity_source_binding_backed",
-    "broader_canon_1enoch_completed_certified_and_render_eligible"
+    "broader_canon_1enoch_completed_certified_and_render_eligible",
+    "broader_canon_jubilees_textually_trusted_source_page_binding_backed",
+    "broader_canon_jubilees_app_render_eligible_source_page_binding_backed",
+    "broader_canon_jubilees_completed_certified_and_render_eligible"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -594,6 +601,16 @@
     "recordPath": "data/bible/registry/broader-canon-1enoch-text-trust-and-app-render-2026-07-04.json",
     "status": "app_render_eligible_textually_trusted_fixed_entity_source_binding_backed",
     "candidatePath": "data/bible/OT/1enoch.json",
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "bibleTextMutation": false
+  },
+  "latestJubileesTextTrustAndAppRender": {
+    "recordPath": "data/bible/registry/broader-canon-jubilees-text-trust-and-app-render-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_source_page_binding_backed",
+    "candidatePath": "data/bible/ET/bookofjubileesET.json",
     "textTrustPromotion": true,
     "appRenderPromotion": true,
     "globalBroaderCanonTrustPromotion": false,
