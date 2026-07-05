@@ -1,0 +1,49 @@
+{
+  "schema": "broader-canon-ascensionofisaiah-source-extraction-manifest-v1",
+  "id": "broader_canon_ascensionofisaiah_source_extraction_manifest_2026_07_05",
+  "status": "source_extraction_manifest_recorded_rebuild_pending",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/ET/ascensionofisaiahET.json",
+  "sourceBasisDecisionPath": "data/bible/registry/broader-canon-ascensionofisaiah-source-basis-decision-2026-07-05.json",
+  "inspectedSource": {
+    "title": "The Ascension of Isaiah",
+    "url": "https://www.earlychristianwritings.com/text/ascension.html",
+    "witness": "R.H. Charles text as hosted by Early Christian Writings"
+  },
+  "extractionScope": {
+    "sourceBodyStartLine": 8,
+    "sourceBodyEndLine": 511,
+    "chapterCount": 11,
+    "firstChapterMarker": "CHAPTER 1",
+    "lastChapterMarker": "CHAPTER 11"
+  },
+  "chapterLineMap": [
+    { "chapter": 1, "startsAtSourceLine": 8 },
+    { "chapter": 2, "startsAtSourceLine": 30 },
+    { "chapter": 3, "startsAtSourceLine": 55 },
+    { "chapter": 4, "startsAtSourceLine": 108 },
+    { "chapter": 5, "startsAtSourceLine": 142 },
+    { "chapter": 6, "startsAtSourceLine": 171 },
+    { "chapter": 7, "startsAtSourceLine": 202 },
+    { "chapter": 8, "startsAtSourceLine": 263 },
+    { "chapter": 9, "startsAtSourceLine": 311 },
+    { "chapter": 10, "startsAtSourceLine": 384 },
+    { "chapter": 11, "startsAtSourceLine": 436 }
+  ],
+  "sourceBasisObservations": {
+    "sourceChapter3ContinuesThroughMaterialPreviouslyMappedAsRepoChapter4": true,
+    "sourceChapter4HasDistinctOpeningAtLine108": true,
+    "sourceChapter11ClosingObservedAtLine511": true,
+    "candidateRebuildRequiredBeforeCollation": true
+  },
+  "candidateMutation": false,
+  "bibleVerseTextMutation": false,
+  "textTrustPromotion": false,
+  "appRenderPromotion": false,
+  "rowLevelCollationComplete": false,
+  "nextAllowedWork": [
+    "materialize a full plain-text local source snapshot from source lines 8-511",
+    "rebuild data/bible/ET/ascensionofisaiahET.json from that materialized snapshot in source chapter shape",
+    "then run row-level source binding against the materialized snapshot before any text-trust or app-render promotion"
+  ]
+}
