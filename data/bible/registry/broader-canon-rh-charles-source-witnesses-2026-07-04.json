@@ -46,14 +46,16 @@
       "path": "data/bible/ET/ascensionofisaiahET.json",
       "title": "The Ascension of Isaiah",
       "repoMetadataVersion": "R.H. Charles Ethiopic translation",
-      "sourceWitnessStatus": "online_text_witness_identified_source_basis_verification_required",
+      "sourceWitnessStatus": "source_basis_decision_and_extraction_manifest_recorded_rebuild_pending",
       "sourceWitnesses": [
         {
           "label": "Early Christian Writings, The Ascension of Isaiah online text",
           "url": "https://www.earlychristianwritings.com/text/ascension.html"
         }
       ],
-      "currentTrustDisposition": "quarantined_pending_source_basis_verification_and_collation"
+      "currentTrustDisposition": "quarantined_rebuild_required_before_source_binding",
+      "sourceBasisDecisionPath": "data/bible/registry/broader-canon-ascensionofisaiah-source-basis-decision-2026-07-05.json",
+      "sourceExtractionManifestPath": "data/bible/registry/broader-canon-ascensionofisaiah-source-extraction-manifest-2026-07-05.json"
     },
     {
       "path": "data/bible/NT/2baruchCE.json",
