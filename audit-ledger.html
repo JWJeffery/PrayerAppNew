@@ -196,7 +196,7 @@ const MORNING_PRAYER_STATUS = {
   "Appointed Psalms": {status:'amber', note:'30-day psalter table (js/office-ui.js psalterCycle) verified against BCP1979.pdf pp.584-808 and corrected 2026-07-05 — Days 29-30 had a shift error, now fixed; Day 31 flagged (BCP prints no explicit 31st-day rubric; current value repeats Day 30 by custom, needs Josh confirmation). IMPORTANT: the 30-day table is NOT the default — its toggle defaults unchecked, so the default path is the Daily Office Lectionary (DOL), which pulls psalms_mp/psalms_ep per calendar date from a separate data file. That DOL path (effectively 365+ dates) has not been audited at all. Still amber until that larger piece is done.'},
   "Lessons with Canticles": {status:'amber', note:'Te Deum text verified verbatim; full canticle set (1-21) and lectionary lesson-selection not yet audited'},
   "Suffrages": {status:'green', note:'Suffrages A, both rites, verified verbatim'},
-  "Collects": {status:'amber', note:'Collect for Grace verified verbatim; the ~150 other collects in this file not yet individually audited'},
+  "Collects": {status:'amber', note:'Batch-verified 133 collects against BCP1979.pdf 2026-07-05: 59 matched exactly, 2 confirmed errors FIXED (bcp-collect-ordinary-2 had an inserted word; bcp-collect-proper-4 had "Lord" for "God"). CONFIRMED BUG NOT YET FIXED: bcp-collect-proper-5 is an exact duplicate of proper-4\\'s text — needs its own real text sourced. MAJOR NEW FINDING NOT YET RESOLVED: bcp-collect-jan20-fabian does not match Lesser Feasts and Fasts 2024\\'s actual Fabian collect at all — appears composed rather than sourced. This calls into question ALL minor-saint collects sourced from LFF rather than the BCP (jan21-agnes, jan22-vincent, jan23-phillips-brooks, jan24-florence-li-tim-oi, january-27, james-jerusalem, luke, and likely more) — none checked against LFF yet. Remaining ~70 collects from the batch pass (mismatches/not-found) still need manual triage since the automated matching has false positives from page-break artifacts. Still substantial work remaining.'},
   "Mission Prayer": {status:'green', note:'FIXED 2026-07-05 — replaced wrong (Evening Prayer) text with all 3 real Morning Prayer II mission prayers, verified vs BCP p.99-100/p.56-57. Now configurable with deterministic daily rotation (toggle in Settings). Side finding: Ethiopian Sa\'atat rubric borrowed this same component — repointed, not yet reviewed for whether that borrowing itself is correct.'},
   "Hymn / Intercessions / Thanksgivings (optional)": {status:'amber', note:'not a fixed text item; not applicable to text-accuracy audit'},
   "General Thanksgiving and/or Prayer of St. Chrysostom": {status:'green', note:'FIXED 2026-07-05 — Chrysostom rite2 had "life to come life everlasting" corrected to "age to come life everlasting". General Thanksgiving itself verified verbatim.'},
@@ -329,7 +329,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v5-2026-07-05-shared-component-architecture';
+const SEED_VERSION = 'v6-2026-07-05-collects-batch-pass';
 
 async function checkSeedVersion(){
   let storedValue = null;
