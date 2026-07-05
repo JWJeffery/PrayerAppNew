@@ -211,5 +211,12 @@
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "latestSourceShapeMigrationPolicy": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
+    "status": "policy_recorded_rebuild_required_before_candidate_repair",
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }

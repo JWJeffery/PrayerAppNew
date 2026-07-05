@@ -1,0 +1,110 @@
+{
+  "schema": "broader-canon-3corinthians-source-shape-migration-policy-v1",
+  "id": "broader_canon_3corinthians_source_shape_migration_policy_2026_07_04",
+  "status": "policy_recorded_rebuild_required_before_candidate_repair",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "rowShapeAuditPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
+  "sourceSelectionPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-selection-2026-07-04.json",
+  "sourceBasis": {
+    "englishCollationTarget": "M. R. James, The Apocryphal New Testament (1924), Third Epistle to the Corinthians",
+    "rawSourcePath": "data/bible/translations/mr-james-apocryphal-nt-1924/raw/third-corinthians-wikisource-source-body.json",
+    "armenianWitnessContext": "Armenian Zohrab NT appendix pages 735-736 remain the Armenian canonical/historical witness context, not the English translation source."
+  },
+  "observedMismatch": {
+    "activeCandidateRows": 19,
+    "activeCandidateChapterRowCounts": {
+      "0": 6,
+      "1": 13
+    },
+    "sourceMarkerTotal": 35,
+    "sourceSections": [
+      {
+        "key": "intro_narrative",
+        "label": "Introductory narrative before the Corinthians' letter",
+        "markerCount": null,
+        "hasNumberedVerseMarkers": false
+      },
+      {
+        "key": "I_corinthians_letter",
+        "label": "Corinthians' letter to Paul",
+        "markerCount": 7,
+        "hasNumberedVerseMarkers": true
+      },
+      {
+        "key": "II_narrative_bridge",
+        "label": "Narrative bridge before Paul's reply",
+        "markerCount": 3,
+        "hasNumberedVerseMarkers": true
+      },
+      {
+        "key": "III_paul_reply",
+        "label": "Paul's reply, commonly called Third Epistle to the Corinthians",
+        "markerCount": 25,
+        "hasNumberedVerseMarkers": true
+      }
+    ],
+    "simpleOverlayAllowed": false
+  },
+  "migrationDecision": {
+    "decision": "Rebuild 3 Corinthians to a governed source-shaped structure before any candidate repair or trust promotion.",
+    "currentCandidateDisposition": "quarantined_related_but_not_exact_not_app_render_eligible",
+    "approvedFutureMutationType": "source_shape_rebuild_from_selected_mr_james_source_after_row_mapping_qc",
+    "approvedFutureTargetShape": {
+      "preserveIntroNarrative": true,
+      "numberedSections": [
+        {
+          "sourceKey": "I_corinthians_letter",
+          "title": "Corinthians' letter to Paul",
+          "role": "primary_text_section"
+        },
+        {
+          "sourceKey": "II_narrative_bridge",
+          "title": "Narrative bridge before Paul's reply",
+          "role": "primary_text_section_or_governed_narrative_section"
+        },
+        {
+          "sourceKey": "III_paul_reply",
+          "title": "Paul's reply / Third Epistle to the Corinthians",
+          "role": "primary_text_section"
+        }
+      ],
+      "visibleSourceNumberingPolicy": "preserve_source_numbering_in_raw/source-map records; do not silently correct anomalies in Bible candidate text without a separate policy",
+      "activeCandidateSchemaPolicy": "future rebuild script must inspect current Bible candidate schema and create a source-shaped JSON form compatible with the app before mutation"
+    },
+    "requiredBeforeCandidateMutation": [
+      "Create exact source-body segmentation into intro narrative, section I, section II, and section III.",
+      "Create deterministic row map from M. R. James source markers to future active candidate rows.",
+      "Record how the current 19-row paraphrase/compression candidate will be superseded or retained as deprecated provenance.",
+      "Run an audit proving no source rows are dropped, synthesized, silently renumbered, or merged without policy."
+    ],
+    "blockedUntilCompleted": [
+      "candidate_text_repair",
+      "candidate_trust_promotion",
+      "app_render_promotion",
+      "current_candidate_reuse_as_exact_translation"
+    ]
+  },
+  "trustBoundary": {
+    "candidateBibleTextMutated": false,
+    "candidateTextTrusted": false,
+    "sourceShapeMigrationAuthorizedForFutureCommand": true,
+    "trustPromotion": false,
+    "appRenderPromotion": false,
+    "candidateSha256Before": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f",
+    "candidateSha256After": "6fce2bcb34892ac8bb062f8ab795c0d18f5a93bd181ae6643e5d44ae2ad92d4f"
+  },
+  "allowedClaims": [
+    "3 Corinthians source-shape migration policy recorded",
+    "current 19-row candidate remains unmutated and quarantined",
+    "future rebuild may proceed only from governed M. R. James source map",
+    "simple overlay remains blocked"
+  ],
+  "blockedClaims": [
+    "3 Corinthians text repaired by this policy",
+    "3 Corinthians textually trusted by this policy",
+    "3 Corinthians app render eligible by this policy",
+    "current 19-row candidate is exact M. R. James",
+    "M. R. James source numbering silently corrected"
+  ]
+}

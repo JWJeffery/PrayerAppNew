@@ -117,7 +117,12 @@
     "broader_canon_3corinthians_simple_overlay_repair_without_shape_audit",
     "broader_canon_3corinthians_textually_trusted_from_source_selection_alone",
     "broader_canon_3corinthians_app_render_eligible_before_shape_migration",
-    "broader_canon_3corinthians_visible_source_numbering_anomaly_silently_corrected"
+    "broader_canon_3corinthians_visible_source_numbering_anomaly_silently_corrected",
+    "broader_canon_3corinthians_text_repaired_by_migration_policy",
+    "broader_canon_3corinthians_trusted_by_migration_policy",
+    "broader_canon_3corinthians_app_render_eligible_by_migration_policy",
+    "broader_canon_3corinthians_current_19_row_candidate_reused_as_exact_translation",
+    "broader_canon_3corinthians_source_numbering_silently_corrected"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -222,7 +227,11 @@
     "broader_canon_3corinthians_no_candidate_text_mutation_in_source_selection",
     "broader_canon_3corinthians_mr_james_row_shape_audited",
     "broader_canon_3corinthians_current_candidate_unmutated_after_row_shape_audit",
-    "broader_canon_3corinthians_simple_overlay_blocked_pending_shape_migration_if_mismatch"
+    "broader_canon_3corinthians_simple_overlay_blocked_pending_shape_migration_if_mismatch",
+    "broader_canon_3corinthians_source_shape_migration_policy_recorded",
+    "broader_canon_3corinthians_rebuild_required_before_candidate_repair",
+    "broader_canon_3corinthians_current_19_row_candidate_quarantined",
+    "broader_canon_3corinthians_future_rebuild_authorized_only_after_source_map_qc"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -461,6 +470,14 @@
     "recordPath": "data/bible/registry/broader-canon-3corinthians-mr-james-row-shape-audit-2026-07-04.json",
     "status": "blocked_simple_overlay_source_shape_migration_required_no_candidate_mutation",
     "simpleOverlayAllowed": false,
+    "candidateTextMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
+  },
+  "latest3CorinthiansSourceShapeMigrationPolicy": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
+    "status": "policy_recorded_rebuild_required_before_candidate_repair",
+    "sourceShapeMigrationAuthorizedForFutureCommand": true,
     "candidateTextMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false

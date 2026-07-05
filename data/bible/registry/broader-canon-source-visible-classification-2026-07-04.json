@@ -122,5 +122,13 @@
     "textMutation": false,
     "trustPromotion": false,
     "appRenderPromotion": false
+  },
+  "threeCorinthiansSourceShapeMigrationPolicy": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-source-shape-migration-policy-2026-07-04.json",
+    "status": "policy_recorded_rebuild_required_before_candidate_repair",
+    "sourceVisibleImpact": "3 Corinthians requires source-shape rebuild before candidate repair; the current 19-row related/non-exact candidate remains quarantined and not app-render eligible.",
+    "textMutation": false,
+    "trustPromotion": false,
+    "appRenderPromotion": false
   }
 }
