@@ -77,3 +77,13 @@
 ## Resolved (continued)
 
 - **2026-07-05 — Dashboard architecture, shared components:** the dashboard now has a `SHARED_COMPONENT_STATUS` object + `statusFor()` helper (audit-ledger.html). Any component genuinely shared by ID across multiple offices (verified in code, not assumed) is defined ONCE there, and every office's row pulls from it automatically. This prevents the specific staleness failure that occurred on 2026-07-05: a shared component (Lord's Prayer) was fixed once but tracked as N separate per-office dashboard rows, any of which could silently go stale on the next fix. Going forward: before adding a new item to a per-office status map, check whether it's actually a shared component first (grep the component ID across office render code) — if so, it belongs in SHARED_COMPONENT_STATUS, not duplicated per office.
+
+## New findings, not yet resolved (2026-07-05, end of session)
+
+- **bcp-collect-proper-5** is an exact duplicate of bcp-collect-proper-4's text (confirmed bug, needs real Proper 5 text sourced from BCP1979.pdf).
+- **bcp-collect-jan20-fabian does not match Lesser Feasts and Fasts 2024's actual Fabian collect at all** — appears to be composed/paraphrased rather than sourced from LFF. This raises the same question for every other minor-saint collect sourced from LFF rather than the BCP (jan21-agnes, jan22-vincent, jan23-phillips-brooks, jan24-florence-li-tim-oi, january-27, james-jerusalem, luke, and likely more not yet checked). This is a new, separate body of work — auditing Collects against Lesser Feasts and Fasts 2024, not just against the BCP.
+- Collects batch-verification method (2026-07-05): anchor-based automated text matching against BCP1979.pdf caught 59 exact matches and 2 real errors (both fixed) out of 133 total collect entries, but produces false positives on "mismatch"/"not found" results due to page-break/page-number artifacts in the extracted source text. The ~70 remaining flagged entries need manual triage, not automated re-runs of the same method.
+
+## Session status (2026-07-05)
+
+Session ended near context/turn limit, per Josh's instruction to continue auditing until then rather than stop early. Morning Prayer is NOT 100% complete — Collects (partially done, see above) and the full Canticle set beyond Te Deum remain. Per the finish-what-we-start rule, the next session should resume Morning Prayer here before moving to Evening Prayer.
