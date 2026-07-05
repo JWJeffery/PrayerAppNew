@@ -303,7 +303,10 @@
     "broader_canon_odesofsolomon_current_candidate_excluded_from_completion",
     "broader_canon_odesofsolomon_complete_candidate_rebuilt_from_nuhra_public_domain_source",
     "broader_canon_odesofsolomon_fragmentary_exclusion_superseded_by_complete_rebuild",
-    "broader_canon_odesofsolomon_complete_candidate_pending_collation"
+    "broader_canon_odesofsolomon_complete_candidate_pending_collation",
+    "broader_canon_odesofsolomon_source_binding_complete",
+    "broader_canon_odesofsolomon_text_trusted_source_binding_backed",
+    "broader_canon_odesofsolomon_app_render_eligible"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -656,6 +659,20 @@
     "textTrustPromotion": false,
     "appRenderPromotion": false,
     "rowLevelCollationComplete": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
+  },
+  "latestOdesOfSolomonSourceBinding": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-source-binding-2026-07-05.json",
+    "status": "app_render_eligible_textually_trusted_source_binding_backed",
+    "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+    "rawSourcePath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-snapshot-2026-07-05.html",
+    "rowBindingPath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-row-bindings-2026-07-05.json",
+    "rowCount": 522,
+    "sourceBindingBacked": true,
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "rowLevelCollationComplete": true,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false
   }

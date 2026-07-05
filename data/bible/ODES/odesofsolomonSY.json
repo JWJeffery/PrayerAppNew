@@ -1,5 +1,5 @@
 {
-  "status": "rebuilt_complete_nuhra_source_snapshot_pending_collation",
+  "status": "app_render_eligible_textually_trusted_source_binding_backed",
   "meta": {
     "name": "The Odes of Solomon",
     "id": "SOL-ODES",
@@ -10,7 +10,7 @@
     "title": "The Odes of Solomon: The Nuhra Version (2021)",
     "url": "https://www.nuhra.net/nuhra-2021",
     "citation": "Samuel Zinner and Mark M. Mattison, The Odes of Solomon: The Nuhra Version (2021)",
-    "sourceUse": "complete public-domain source snapshot rebuild pending collation"
+    "sourceUse": "complete public-domain Nuhra source snapshot; row-level source binding complete"
   },
   "chapters": [
     {

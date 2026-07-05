@@ -24,11 +24,12 @@
   "trustBoundary": {
     "textTrustPromotion": false,
     "appRenderPromotion": false,
-    "rowLevelCollationComplete": false,
+    "rowLevelCollationComplete": true,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false,
-    "candidateFileSha256": "0e26c1368c821b5ad7be060ea6626ad9183d79ef92706b43865afcecc427aae4",
-    "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb"
+    "candidateFileSha256": "603ef34e04710ab73071b2bc43200b43ffae789a433ae3c2539dce7cd2f34cd9",
+    "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb",
+    "sourceBindingRecordPath": "data/bible/registry/broader-canon-odesofsolomon-source-binding-2026-07-05.json"
   },
   "nextAllowedWork": [
     "perform row-level source binding/collation against the recorded Nuhra source snapshot",
@@ -52,5 +53,6 @@
       "19:10",
       "42:22"
     ]
-  }
+  },
+  "supersededBySourceBinding": "data/bible/registry/broader-canon-odesofsolomon-source-binding-2026-07-05.json"
 }

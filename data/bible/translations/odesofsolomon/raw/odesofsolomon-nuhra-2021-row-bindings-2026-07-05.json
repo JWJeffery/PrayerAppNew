@@ -1,0 +1,5255 @@
+{
+  "schema": "odesofsolomon-nuhra-2021-row-bindings-v1",
+  "id": "odesofsolomon_nuhra_2021_row_bindings_2026_07_05",
+  "status": "passed",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+  "rawSourcePath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-snapshot-2026-07-05.html",
+  "sourceSnapshotSha256": "635c283d205b90ef44996778b05bb99db09122d99dc1e69f7b0118fd22d4e480",
+  "candidateFileSha256": "603ef34e04710ab73071b2bc43200b43ffae789a433ae3c2539dce7cd2f34cd9",
+  "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb",
+  "bindingBasis": "normalized exact string match in candidate row order against recorded Nuhra 2021 source snapshot",
+  "rowCount": 522,
+  "firstBinding": {
+    "rowIndex": 1,
+    "ref": "1:1",
+    "chapter": 1,
+    "verse": 1,
+    "sourceMode": "unknown",
+    "candidateTextSha256": "d4ce7b0e62a9e5bc5189a85be4276e38f5a13b85323bb04f43e5d04cd38454b3",
+    "normalizedSourceOffset": 1574,
+    "normalizedSourceEndOffset": 1640
+  },
+  "lastBinding": {
+    "rowIndex": 522,
+    "ref": "42:22",
+    "chapter": 42,
+    "verse": 22,
+    "sourceMode": "syriac",
+    "candidateTextSha256": "73ae8c173f98908c858bc44e0e26b735bebaca848aae9d5482ad5eeb5dab2f74",
+    "normalizedSourceOffset": 56623,
+    "normalizedSourceEndOffset": 56710
+  },
+  "rows": [
+    {
+      "rowIndex": 1,
+      "ref": "1:1",
+      "chapter": 1,
+      "verse": 1,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "d4ce7b0e62a9e5bc5189a85be4276e38f5a13b85323bb04f43e5d04cd38454b3",
+      "normalizedSourceOffset": 1574,
+      "normalizedSourceEndOffset": 1640
+    },
+    {
+      "rowIndex": 2,
+      "ref": "1:2",
+      "chapter": 1,
+      "verse": 2,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "a184c82bf9d3d650fc51fec044de0eb048d09a30809bfff4fccdb7e189046d70",
+      "normalizedSourceOffset": 1643,
+      "normalizedSourceEndOffset": 1730
+    },
+    {
+      "rowIndex": 3,
+      "ref": "1:3",
+      "chapter": 1,
+      "verse": 3,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "2d23f3963035010cb5d88d4c6523fdb5833a9ed22f1cb35890ad177bd5a0e255",
+      "normalizedSourceOffset": 1733,
+      "normalizedSourceEndOffset": 1781
+    },
+    {
+      "rowIndex": 4,
+      "ref": "1:4",
+      "chapter": 1,
+      "verse": 4,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "10a77b1fa0088400109fcfe47a0a0ed88e1d8aac5a4f44734b5c07478a8e2bad",
+      "normalizedSourceOffset": 1784,
+      "normalizedSourceEndOffset": 1835
+    },
+    {
+      "rowIndex": 5,
+      "ref": "1:5",
+      "chapter": 1,
+      "verse": 5,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "6b8d8687e305d6725727913deb962098b8c68e61c2dd97eed16ec84562b0af70",
+      "normalizedSourceOffset": 1838,
+      "normalizedSourceEndOffset": 1899
+    },
+    {
+      "rowIndex": 6,
+      "ref": "2:1",
+      "chapter": 2,
+      "verse": 1,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "832bf434fd2a421a343efa3250fd878982c0c3ade241e91df3e3b5a9cae2febb",
+      "normalizedSourceOffset": 1992,
+      "normalizedSourceEndOffset": 2060
+    },
+    {
+      "rowIndex": 7,
+      "ref": "2:2",
+      "chapter": 2,
+      "verse": 2,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "8c9ac94dd164a6c98e5f0273bf17ca9e94297feab691f798bc6caa2d7f5fca47",
+      "normalizedSourceOffset": 2063,
+      "normalizedSourceEndOffset": 2151
+    },
+    {
+      "rowIndex": 8,
+      "ref": "2:3",
+      "chapter": 2,
+      "verse": 3,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "08dc73cc56803c4833c53eaef6bca176a3ce9bb5cf6cc2820a5f732788888802",
+      "normalizedSourceOffset": 2154,
+      "normalizedSourceEndOffset": 2232
+    },
+    {
+      "rowIndex": 9,
+      "ref": "2:4",
+      "chapter": 2,
+      "verse": 4,
+      "sourceMode": "unknown",
+      "candidateTextSha256": "c5c0dab54e2183166bc11e39dbdd568a602ed69b7b11357ed64f7fe0a179463c",
+      "normalizedSourceOffset": 2235,
+      "normalizedSourceEndOffset": 2275
+    },
+    {
+      "rowIndex": 10,
+      "ref": "3:1",
+      "chapter": 3,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "24c87e5439b596616196bfac8fe8b773993bcb3ebdff7a40af264baa4eb6ea71",
+      "normalizedSourceOffset": 2328,
+      "normalizedSourceEndOffset": 2364
+    },
+    {
+      "rowIndex": 11,
+      "ref": "3:2",
+      "chapter": 3,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dbcb2699ffb1e6ad3929fe3ff6a3ce1684c858cf3ba421444ea7a9a33b8096c0",
+      "normalizedSourceOffset": 2367,
+      "normalizedSourceEndOffset": 2433
+    },
+    {
+      "rowIndex": 12,
+      "ref": "3:3",
+      "chapter": 3,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d940713cdb88b784b139e9bede249db3cbe4f1377477861b393bebf6ce8703a9",
+      "normalizedSourceOffset": 2436,
+      "normalizedSourceEndOffset": 2508
+    },
+    {
+      "rowIndex": 13,
+      "ref": "3:4",
+      "chapter": 3,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8a7e3cfecd45ff9ac5a2896c38ea753dbe7f84b95e49ea17de95a3d18b1bc5fe",
+      "normalizedSourceOffset": 2511,
+      "normalizedSourceEndOffset": 2566
+    },
+    {
+      "rowIndex": 14,
+      "ref": "3:5",
+      "chapter": 3,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d62c45aabe97a149b9f8ee72babaecb9ccf04949bf0d2180eb4449af6b21d924",
+      "normalizedSourceOffset": 2569,
+      "normalizedSourceEndOffset": 2651
+    },
+    {
+      "rowIndex": 15,
+      "ref": "3:6",
+      "chapter": 3,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8971f0f788c1e16cddd6470be8dbb5e75e5d55bc123616d7ea409f16236f1ba4",
+      "normalizedSourceOffset": 2654,
+      "normalizedSourceEndOffset": 2744
+    },
+    {
+      "rowIndex": 16,
+      "ref": "3:7",
+      "chapter": 3,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b5e62d115f772474d55762cf4ebd78fff23b339e6dffd67691480d3728c4f5b7",
+      "normalizedSourceOffset": 2747,
+      "normalizedSourceEndOffset": 2894
+    },
+    {
+      "rowIndex": 17,
+      "ref": "3:8",
+      "chapter": 3,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fe35085ab919c2d949256c464b1b8ec5b519db8f81d8439485b4abe86d2aa3de",
+      "normalizedSourceOffset": 2897,
+      "normalizedSourceEndOffset": 2968
+    },
+    {
+      "rowIndex": 18,
+      "ref": "3:9",
+      "chapter": 3,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8663e9ad60117ea61a6313ca158968ad6d3bb026b33e133fb65874699f29bd2e",
+      "normalizedSourceOffset": 2971,
+      "normalizedSourceEndOffset": 3019
+    },
+    {
+      "rowIndex": 19,
+      "ref": "3:10",
+      "chapter": 3,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5a353795f0b109eccef2513bdc2cf96a677336555024b6cb71bba8a1c53ea95d",
+      "normalizedSourceOffset": 3023,
+      "normalizedSourceEndOffset": 3109
+    },
+    {
+      "rowIndex": 20,
+      "ref": "3:11",
+      "chapter": 3,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9c5c8ebad2c8295222a09cc63f836fe814fc663fc79e8f26a7dd7900beac52e9",
+      "normalizedSourceOffset": 3113,
+      "normalizedSourceEndOffset": 3150
+    },
+    {
+      "rowIndex": 21,
+      "ref": "4:1",
+      "chapter": 4,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "488675b8233ec4190a7c3d818975fa940376a921adcd33397312d329ffb5d79a",
+      "normalizedSourceOffset": 3223,
+      "normalizedSourceEndOffset": 3328
+    },
+    {
+      "rowIndex": 22,
+      "ref": "4:2",
+      "chapter": 4,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d2860a20fdf3e1e4bb4ec956dc6adc24c7bbec138b9cbebbb722e3dbde18af1e",
+      "normalizedSourceOffset": 3331,
+      "normalizedSourceEndOffset": 3447
+    },
+    {
+      "rowIndex": 23,
+      "ref": "4:3",
+      "chapter": 4,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "be1167b0a416af6c05589e7aac2a0c66299211ff0a67c9795af0e7485e3f974d",
+      "normalizedSourceOffset": 3450,
+      "normalizedSourceEndOffset": 3568
+    },
+    {
+      "rowIndex": 24,
+      "ref": "4:4",
+      "chapter": 4,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e126888eaabc105dc52908b2cbdab6c72c9ba47b6e5b780a40a223d9c2d11479",
+      "normalizedSourceOffset": 3571,
+      "normalizedSourceEndOffset": 3614
+    },
+    {
+      "rowIndex": 25,
+      "ref": "4:5",
+      "chapter": 4,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "172cb6c40d31b3fbf71132d3668e0469a852d4657f286c5c4695ba9ddb535438",
+      "normalizedSourceOffset": 3617,
+      "normalizedSourceEndOffset": 3688
+    },
+    {
+      "rowIndex": 26,
+      "ref": "4:6",
+      "chapter": 4,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "59e0c1a2d0b7c941ef602f39277d96fe16a93aabb4082980e37e45ec0d6b6f7b",
+      "normalizedSourceOffset": 3691,
+      "normalizedSourceEndOffset": 3762
+    },
+    {
+      "rowIndex": 27,
+      "ref": "4:7",
+      "chapter": 4,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4b271c94ff798414c7dd57c4d7c68c6eb3394a1e1ff02215377eb1e39bc27739",
+      "normalizedSourceOffset": 3765,
+      "normalizedSourceEndOffset": 3828
+    },
+    {
+      "rowIndex": 28,
+      "ref": "4:8",
+      "chapter": 4,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "689cae95dd5108fe4142c5ccffa92f555ab3218f8b65a5bc0afdee2bc11cc51a",
+      "normalizedSourceOffset": 3831,
+      "normalizedSourceEndOffset": 3899
+    },
+    {
+      "rowIndex": 29,
+      "ref": "4:9",
+      "chapter": 4,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7da13e54127bfeba3db59424bb1d12db84394db6d1f4b1e8bf2e2a258e8595be",
+      "normalizedSourceOffset": 3902,
+      "normalizedSourceEndOffset": 3999
+    },
+    {
+      "rowIndex": 30,
+      "ref": "4:10",
+      "chapter": 4,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5be26a4b98844bac890198272bcba7aa2e51ab70837a3f85ea6efd9080fbc664",
+      "normalizedSourceOffset": 4003,
+      "normalizedSourceEndOffset": 4100
+    },
+    {
+      "rowIndex": 31,
+      "ref": "4:11",
+      "chapter": 4,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "efcc722059141b4be23bc65ef5304ccf84d29e125a488f4703061de7a9722e3b",
+      "normalizedSourceOffset": 4104,
+      "normalizedSourceEndOffset": 4191
+    },
+    {
+      "rowIndex": 32,
+      "ref": "4:12",
+      "chapter": 4,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c37e151f82410f69370d0b5911af587ac83c42bb9c7ffd70a11be67c7849cccc",
+      "normalizedSourceOffset": 4195,
+      "normalizedSourceEndOffset": 4227
+    },
+    {
+      "rowIndex": 33,
+      "ref": "4:13",
+      "chapter": 4,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d7bf8ec330ba38541db6790515e00f92063e7d493fbb100f87fdf6530c373e5f",
+      "normalizedSourceOffset": 4231,
+      "normalizedSourceEndOffset": 4329
+    },
+    {
+      "rowIndex": 34,
+      "ref": "4:14",
+      "chapter": 4,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "275c9b68dd668fdcd52b43d44bef84310e5ff43dc154977bcacab3bd56c26649",
+      "normalizedSourceOffset": 4333,
+      "normalizedSourceEndOffset": 4414
+    },
+    {
+      "rowIndex": 35,
+      "ref": "4:15",
+      "chapter": 4,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ba0052f15a39669fe3307cb9f4c63d1448e36dfaccafdd3307d7c97a0dc399da",
+      "normalizedSourceOffset": 4418,
+      "normalizedSourceEndOffset": 4456
+    },
+    {
+      "rowIndex": 36,
+      "ref": "5:1",
+      "chapter": 5,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f2a75156bec93abb036dfd5ed37f8c329d33df714629df6c93169c83f2b9a819",
+      "normalizedSourceOffset": 4508,
+      "normalizedSourceEndOffset": 4554
+    },
+    {
+      "rowIndex": 37,
+      "ref": "5:2",
+      "chapter": 5,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "197a68f02804dd6fc27f68faf5e82fa9e39f8a0b73f414ded4761f80bb7b4113",
+      "normalizedSourceOffset": 4557,
+      "normalizedSourceEndOffset": 4613
+    },
+    {
+      "rowIndex": 38,
+      "ref": "5:3",
+      "chapter": 5,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7248cdc205cfc81ed1a257b8dc3bc190bb602540ad975665db7866fbf40a3274",
+      "normalizedSourceOffset": 4616,
+      "normalizedSourceEndOffset": 4678
+    },
+    {
+      "rowIndex": 39,
+      "ref": "5:4",
+      "chapter": 5,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a19c6eef6fd5782feffeaf85be9f012cb6b8acb137f4435eaf49073c21aafe78",
+      "normalizedSourceOffset": 4681,
+      "normalizedSourceEndOffset": 4734
+    },
+    {
+      "rowIndex": 40,
+      "ref": "5:5",
+      "chapter": 5,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "05b96932502ee7b08636473e44da9265a3fcada2f5d0e7eb38957cce55ce8ab4",
+      "normalizedSourceOffset": 4737,
+      "normalizedSourceEndOffset": 4816
+    },
+    {
+      "rowIndex": 41,
+      "ref": "5:6",
+      "chapter": 5,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "67a86789cf6bc36ada41fd3a430c6c132889b8e741acfc16a7766bd9b2f659cb",
+      "normalizedSourceOffset": 4819,
+      "normalizedSourceEndOffset": 4873
+    },
+    {
+      "rowIndex": 42,
+      "ref": "5:7",
+      "chapter": 5,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b9caab3de5768301a518b002dd28a57dd90edf2b8bf5a1fafe50fa9033026a5f",
+      "normalizedSourceOffset": 4876,
+      "normalizedSourceEndOffset": 4972
+    },
+    {
+      "rowIndex": 43,
+      "ref": "5:8",
+      "chapter": 5,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f34bc2ccfd5d1fb1016c7dbe0a6bfead533e284934fc07cf92d716eda9ce6518",
+      "normalizedSourceOffset": 4975,
+      "normalizedSourceEndOffset": 5045
+    },
+    {
+      "rowIndex": 44,
+      "ref": "5:9",
+      "chapter": 5,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "665903fb217c09acd0c85334ffa7b09d924784f531aa75e6391a613c8a241d10",
+      "normalizedSourceOffset": 5048,
+      "normalizedSourceEndOffset": 5137
+    },
+    {
+      "rowIndex": 45,
+      "ref": "5:10",
+      "chapter": 5,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d5c29ad583206d65610fe8bbfa0cc9f5f6336b0570cb76eff560050ae2925571",
+      "normalizedSourceOffset": 5141,
+      "normalizedSourceEndOffset": 5189
+    },
+    {
+      "rowIndex": 46,
+      "ref": "5:11",
+      "chapter": 5,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6420562da352d4dc0970929d859f0960b44ace856025d82390e42bdb6a1883a9",
+      "normalizedSourceOffset": 5193,
+      "normalizedSourceEndOffset": 5247
+    },
+    {
+      "rowIndex": 47,
+      "ref": "5:12",
+      "chapter": 5,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "49e16bea84541c5009db8e01cc251e5c0b5eba4e905a1817837ab842a4ca4cf5",
+      "normalizedSourceOffset": 5251,
+      "normalizedSourceEndOffset": 5313
+    },
+    {
+      "rowIndex": 48,
+      "ref": "5:13",
+      "chapter": 5,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cde81ed84532a17e4535eedbab85493e9baa8d4e041ca161a43269e936b9cde2",
+      "normalizedSourceOffset": 5317,
+      "normalizedSourceEndOffset": 5372
+    },
+    {
+      "rowIndex": 49,
+      "ref": "5:14",
+      "chapter": 5,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "83a24bf29cea380d5e03b244039c04a85f207a29687dd9b76bfce623e5695487",
+      "normalizedSourceOffset": 5376,
+      "normalizedSourceEndOffset": 5433
+    },
+    {
+      "rowIndex": 50,
+      "ref": "5:15",
+      "chapter": 5,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "20ab38b04b58dcf5caf5ebb9e12dba24e1f65297402a831d7d9aceff37342e74",
+      "normalizedSourceOffset": 5437,
+      "normalizedSourceEndOffset": 5492
+    },
+    {
+      "rowIndex": 51,
+      "ref": "6:1",
+      "chapter": 6,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "befbdab2633186b247e6e602ea00710f7fd7d92a26dbf7e115d8cd2b15cf4506",
+      "normalizedSourceOffset": 6620,
+      "normalizedSourceEndOffset": 6681
+    },
+    {
+      "rowIndex": 52,
+      "ref": "6:2",
+      "chapter": 6,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8fb18047cc19a992bbc0edfe044ee3adda4cdbf026aa301720a1eb240df9c73a",
+      "normalizedSourceOffset": 6684,
+      "normalizedSourceEndOffset": 6766
+    },
+    {
+      "rowIndex": 53,
+      "ref": "6:3",
+      "chapter": 6,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "63105dfe539319b0441e7e58ef79245b7af6029da27f014252f680e25e839176",
+      "normalizedSourceOffset": 6769,
+      "normalizedSourceEndOffset": 6827
+    },
+    {
+      "rowIndex": 54,
+      "ref": "6:4",
+      "chapter": 6,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0dedfbe4a38b83b11457814abdb57fe3f2b93e1a576c7ed340a345c444c81f82",
+      "normalizedSourceOffset": 6830,
+      "normalizedSourceEndOffset": 6891
+    },
+    {
+      "rowIndex": 55,
+      "ref": "6:5",
+      "chapter": 6,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "94fa23727a12c08523f5d3e0c6cacdea781b74f4afadf04b20d55bc1f920b011",
+      "normalizedSourceOffset": 6894,
+      "normalizedSourceEndOffset": 6959
+    },
+    {
+      "rowIndex": 56,
+      "ref": "6:6",
+      "chapter": 6,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d698e808536fe2ca09c8830e7202d112eab3d8df08dd63a3d3a6076b12ad0491",
+      "normalizedSourceOffset": 6962,
+      "normalizedSourceEndOffset": 7083
+    },
+    {
+      "rowIndex": 57,
+      "ref": "6:7",
+      "chapter": 6,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "745b5a6b528a2e839f36f9df2676efd2cd6c7f12121bc2e3d5d3310a54b73a80",
+      "normalizedSourceOffset": 7086,
+      "normalizedSourceEndOffset": 7188
+    },
+    {
+      "rowIndex": 58,
+      "ref": "6:8",
+      "chapter": 6,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6dcef9ec36f1ad2e14faa7474b3c1315ee0142e4615a1d5e0df1d850c504a22f",
+      "normalizedSourceOffset": 7191,
+      "normalizedSourceEndOffset": 7322
+    },
+    {
+      "rowIndex": 59,
+      "ref": "6:9",
+      "chapter": 6,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "13b0f6ad4068526bf4f2cc19673d5693aae38e770008640208a5d5b83568d334",
+      "normalizedSourceOffset": 7325,
+      "normalizedSourceEndOffset": 7435
+    },
+    {
+      "rowIndex": 60,
+      "ref": "6:10",
+      "chapter": 6,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6fccff360f2a5fd60b3d836b09b5b7420d9fb8ec50650f475d6a279a201f43db",
+      "normalizedSourceOffset": 7439,
+      "normalizedSourceEndOffset": 7513
+    },
+    {
+      "rowIndex": 61,
+      "ref": "6:11",
+      "chapter": 6,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4f309014adaecaf70339bbd8bae0ebcaf7416b7e113ca32373cde1f9de20f48f",
+      "normalizedSourceOffset": 7517,
+      "normalizedSourceEndOffset": 7598
+    },
+    {
+      "rowIndex": 62,
+      "ref": "6:12",
+      "chapter": 6,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f7f36da22d5d12a20be5c09da3573465b4d1e34130126d502c28d73bfed17357",
+      "normalizedSourceOffset": 7602,
+      "normalizedSourceEndOffset": 7645
+    },
+    {
+      "rowIndex": 63,
+      "ref": "6:13",
+      "chapter": 6,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "665b5592c663f319e1dfe217194885c4d4b442e94ecb47a112b1318bc2702e88",
+      "normalizedSourceOffset": 7649,
+      "normalizedSourceEndOffset": 7735
+    },
+    {
+      "rowIndex": 64,
+      "ref": "6:14",
+      "chapter": 6,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f1bb3df0212fcecb6b23ab1be8e6677b308de1953595f6f6ccb452bab04564db",
+      "normalizedSourceOffset": 7739,
+      "normalizedSourceEndOffset": 7823
+    },
+    {
+      "rowIndex": 65,
+      "ref": "6:15",
+      "chapter": 6,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "332d4a65e5aafae34a1fb29842d8437a9ece85f96417c91997884a651cd45813",
+      "normalizedSourceOffset": 7827,
+      "normalizedSourceEndOffset": 7889
+    },
+    {
+      "rowIndex": 66,
+      "ref": "6:16",
+      "chapter": 6,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dee87906b9af9769ab5a85e5bd23f26c19f0cfa94459df8a2403fb78d6654143",
+      "normalizedSourceOffset": 7893,
+      "normalizedSourceEndOffset": 7954
+    },
+    {
+      "rowIndex": 67,
+      "ref": "6:17",
+      "chapter": 6,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ba9f3bc25a55045a3b58f21aa97ba428e32376357ed246ddb664fd9a6a1b53dd",
+      "normalizedSourceOffset": 7958,
+      "normalizedSourceEndOffset": 8018
+    },
+    {
+      "rowIndex": 68,
+      "ref": "6:18",
+      "chapter": 6,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f1edd3732646c23b7f164bd6cb34c5fc352fc0673a8f8305b5a6bc235a5e45b2",
+      "normalizedSourceOffset": 8022,
+      "normalizedSourceEndOffset": 8115
+    },
+    {
+      "rowIndex": 69,
+      "ref": "7:1",
+      "chapter": 7,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d0fa37a45f7130dbeefdb9e8ad64bdba29a0eb7b1489652bda74780afb61e215",
+      "normalizedSourceOffset": 9205,
+      "normalizedSourceEndOffset": 9329
+    },
+    {
+      "rowIndex": 70,
+      "ref": "7:2",
+      "chapter": 7,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "83f6bbbec87c19c8c8f53ff75673bb55161a12ebd4457ea90c70635ad705c598",
+      "normalizedSourceOffset": 9332,
+      "normalizedSourceEndOffset": 9403
+    },
+    {
+      "rowIndex": 71,
+      "ref": "7:3",
+      "chapter": 7,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "09f15f9a28d7852fb80e29412d85e558c1368164705fdbcd2cca1c69a20074bd",
+      "normalizedSourceOffset": 9406,
+      "normalizedSourceEndOffset": 9555
+    },
+    {
+      "rowIndex": 72,
+      "ref": "7:4",
+      "chapter": 7,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9b05d22b9feeba39cfab6163875604e8532d1bb30c92f800e38ae3378159bf4f",
+      "normalizedSourceOffset": 9558,
+      "normalizedSourceEndOffset": 9675
+    },
+    {
+      "rowIndex": 73,
+      "ref": "7:5",
+      "chapter": 7,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6267b959384c4bc29cf8a7aa8c10607acf843bc5954069d75bff73fffff87ae0",
+      "normalizedSourceOffset": 9678,
+      "normalizedSourceEndOffset": 9757
+    },
+    {
+      "rowIndex": 74,
+      "ref": "7:6",
+      "chapter": 7,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5d12abc5a6c2866c66dbc35b687ae492ce6c433b108a91f0f52a241fd7756d75",
+      "normalizedSourceOffset": 9760,
+      "normalizedSourceEndOffset": 9883
+    },
+    {
+      "rowIndex": 75,
+      "ref": "7:7",
+      "chapter": 7,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "bc50e9d3bbd2e231b91b5cff4d1fea374c1e967a55bcc416789d5fa6aa21b009",
+      "normalizedSourceOffset": 9886,
+      "normalizedSourceEndOffset": 9947
+    },
+    {
+      "rowIndex": 76,
+      "ref": "7:8",
+      "chapter": 7,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4c94db8f8bec381217fd5e5ad33c64e94041f34b9046871e61b6ba4788e0ea5e",
+      "normalizedSourceOffset": 9950,
+      "normalizedSourceEndOffset": 10001
+    },
+    {
+      "rowIndex": 77,
+      "ref": "7:9",
+      "chapter": 7,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dac7284526b88c381d4e44bce6b7db109b75974bbd37f8cf79840d6c4114cfb8",
+      "normalizedSourceOffset": 10004,
+      "normalizedSourceEndOffset": 10102
+    },
+    {
+      "rowIndex": 78,
+      "ref": "7:10",
+      "chapter": 7,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d9267cc5d2ae5495dcdc10a064b7ce3235ec86f322f33d6ccb87bdc930616eb2",
+      "normalizedSourceOffset": 10106,
+      "normalizedSourceEndOffset": 10222
+    },
+    {
+      "rowIndex": 79,
+      "ref": "7:11",
+      "chapter": 7,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a0a85e730368b97b7a09c2e7e1111294b01ecbd8be59f2ae30883b386121ebaf",
+      "normalizedSourceOffset": 10226,
+      "normalizedSourceEndOffset": 10313
+    },
+    {
+      "rowIndex": 80,
+      "ref": "7:12",
+      "chapter": 7,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6c91264be1af9208b36d9aea135b95c3ebcd25becaf9c44ed7874a5a2fe4a676",
+      "normalizedSourceOffset": 10317,
+      "normalizedSourceEndOffset": 10488
+    },
+    {
+      "rowIndex": 81,
+      "ref": "7:13",
+      "chapter": 7,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d6a7ed53b71fb985bcd58884f0d5d4128f61e3b77533f0df5efc4d238cc772d2",
+      "normalizedSourceOffset": 10492,
+      "normalizedSourceEndOffset": 10615
+    },
+    {
+      "rowIndex": 82,
+      "ref": "7:14",
+      "chapter": 7,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "43fe42e9aef834e3fb5a6f3d60d763e7bab79e5af05ca49ac002fe3e107534ed",
+      "normalizedSourceOffset": 10619,
+      "normalizedSourceEndOffset": 10736
+    },
+    {
+      "rowIndex": 83,
+      "ref": "7:15",
+      "chapter": 7,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ed013f7292ec156bb38caee76f9151513e2e32af3f6eb5711f19c9055e56276c",
+      "normalizedSourceOffset": 10740,
+      "normalizedSourceEndOffset": 10814
+    },
+    {
+      "rowIndex": 84,
+      "ref": "7:16",
+      "chapter": 7,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d45b3e85e03deacb7e5a00580891306bba0a3f02aba6b7be2d3c010a6e07ba27",
+      "normalizedSourceOffset": 10818,
+      "normalizedSourceEndOffset": 10926
+    },
+    {
+      "rowIndex": 85,
+      "ref": "7:17",
+      "chapter": 7,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "399bd19eac2ed2f1234e0ab825dd81ea700c9fad832a5f50078244877a059413",
+      "normalizedSourceOffset": 10930,
+      "normalizedSourceEndOffset": 11088
+    },
+    {
+      "rowIndex": 86,
+      "ref": "7:18",
+      "chapter": 7,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "eae705c0133a3b97c3e9aecdd1e958e77d1b794a4410aa55671c158404958091",
+      "normalizedSourceOffset": 11092,
+      "normalizedSourceEndOffset": 11170
+    },
+    {
+      "rowIndex": 87,
+      "ref": "7:19",
+      "chapter": 7,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1b6a27a4d360aa27a8c2c89793ceeb33bea7c5cade2c34bf7e574bd771e7f9cb",
+      "normalizedSourceOffset": 11174,
+      "normalizedSourceEndOffset": 11245
+    },
+    {
+      "rowIndex": 88,
+      "ref": "7:20",
+      "chapter": 7,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ceabc188a3d0ebfb52fba6114243b5c10fd961bd73a6bf519cd60c062fa26643",
+      "normalizedSourceOffset": 11249,
+      "normalizedSourceEndOffset": 11337
+    },
+    {
+      "rowIndex": 89,
+      "ref": "7:21",
+      "chapter": 7,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "038e09d6f363dd6d2154ce375560b97e68ff28a463517812b6b82f74e102635b",
+      "normalizedSourceOffset": 11341,
+      "normalizedSourceEndOffset": 11430
+    },
+    {
+      "rowIndex": 90,
+      "ref": "7:22",
+      "chapter": 7,
+      "verse": 22,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4113581575fbf6345fce4fc83205b4f39a2caf479d499cf01fd390aa5b0a5f33",
+      "normalizedSourceOffset": 11434,
+      "normalizedSourceEndOffset": 11529
+    },
+    {
+      "rowIndex": 91,
+      "ref": "7:23",
+      "chapter": 7,
+      "verse": 23,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ea1331b05dc631af58295c7fa24a909cec21335afa3f1b5261880c7f589b580f",
+      "normalizedSourceOffset": 11533,
+      "normalizedSourceEndOffset": 11698
+    },
+    {
+      "rowIndex": 92,
+      "ref": "7:24",
+      "chapter": 7,
+      "verse": 24,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ef2c0bd6c97a35342308c8126bc819a47dd9009246ef54a59caf5d8d9c3e4adf",
+      "normalizedSourceOffset": 11702,
+      "normalizedSourceEndOffset": 11801
+    },
+    {
+      "rowIndex": 93,
+      "ref": "7:25",
+      "chapter": 7,
+      "verse": 25,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f8a4c073bf2c82b8abb67c52d8d510fbf9e13f46565ff2ad06a3a8fd61c4cb5f",
+      "normalizedSourceOffset": 11805,
+      "normalizedSourceEndOffset": 11845
+    },
+    {
+      "rowIndex": 94,
+      "ref": "8:1",
+      "chapter": 8,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9cdf96fcf019268a72de456e55ebbd932cf5ebf45e92cd88394875d9b10984bc",
+      "normalizedSourceOffset": 11909,
+      "normalizedSourceEndOffset": 12010
+    },
+    {
+      "rowIndex": 95,
+      "ref": "8:2",
+      "chapter": 8,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b852f14f1b3ede3d8993e07dc8ee890619db091eccbb995970fa5448cd5d0a98",
+      "normalizedSourceOffset": 12013,
+      "normalizedSourceEndOffset": 12102
+    },
+    {
+      "rowIndex": 96,
+      "ref": "8:3",
+      "chapter": 8,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2862ce3a9ec52becedbe79b43b12e61ffd02b45707d932424a43f54431e8b389",
+      "normalizedSourceOffset": 12105,
+      "normalizedSourceEndOffset": 12159
+    },
+    {
+      "rowIndex": 97,
+      "ref": "8:4",
+      "chapter": 8,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "20c04bae9b34a7c937461f1bda3a48e09a0dd1b13442f9db1fc0c28bdf641939",
+      "normalizedSourceOffset": 12162,
+      "normalizedSourceEndOffset": 12229
+    },
+    {
+      "rowIndex": 98,
+      "ref": "8:5",
+      "chapter": 8,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4ad5ed32e8b1cde46e3bef4ffacebd0e8373f6c1919f1525a1b2e799429a1906",
+      "normalizedSourceOffset": 12232,
+      "normalizedSourceEndOffset": 12322
+    },
+    {
+      "rowIndex": 99,
+      "ref": "8:6",
+      "chapter": 8,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "60c38e938ccd607dca5e86ab4a28a34bb4e0ffc358a8c57434d9bfb5884f265f",
+      "normalizedSourceOffset": 12325,
+      "normalizedSourceEndOffset": 12395
+    },
+    {
+      "rowIndex": 100,
+      "ref": "8:7",
+      "chapter": 8,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a83089882300e19b489de88ee81b3dd4f21f507e73c9da35e37215f6e05871cb",
+      "normalizedSourceOffset": 12398,
+      "normalizedSourceEndOffset": 12455
+    },
+    {
+      "rowIndex": 101,
+      "ref": "8:8",
+      "chapter": 8,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e500b2e0493d23fd42a6a84846b8d9a609763b03c04867cce9bca51a1ada26c4",
+      "normalizedSourceOffset": 12458,
+      "normalizedSourceEndOffset": 12530
+    },
+    {
+      "rowIndex": 102,
+      "ref": "8:9",
+      "chapter": 8,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fd14fe5cfe9f7c316bb8293ab9d80f6c9ab8034c1b0641af9bc4a82a070b09bd",
+      "normalizedSourceOffset": 12533,
+      "normalizedSourceEndOffset": 12623
+    },
+    {
+      "rowIndex": 103,
+      "ref": "8:10",
+      "chapter": 8,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "bc72f006c3212520d602a784c9dbc41dc69db3cf063dfc4f8f5a57a5a43d38df",
+      "normalizedSourceOffset": 12627,
+      "normalizedSourceEndOffset": 12669
+    },
+    {
+      "rowIndex": 104,
+      "ref": "8:11",
+      "chapter": 8,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "adc7ac51908c46fca4bc028f9f1a013e04514c65690aa1c108b6d71d5c9c4adc",
+      "normalizedSourceOffset": 12673,
+      "normalizedSourceEndOffset": 12721
+    },
+    {
+      "rowIndex": 105,
+      "ref": "8:12",
+      "chapter": 8,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "679ef90ded75fd85187a1cb5748b4706f626a31efb92e00d9763f52e212061f6",
+      "normalizedSourceOffset": 12725,
+      "normalizedSourceEndOffset": 12773
+    },
+    {
+      "rowIndex": 106,
+      "ref": "8:13",
+      "chapter": 8,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0245602847988d83c9fbc5dcfdbe4239ec5c641d7496efd54a2ccd12f64189ba",
+      "normalizedSourceOffset": 12777,
+      "normalizedSourceEndOffset": 12819
+    },
+    {
+      "rowIndex": 107,
+      "ref": "8:14",
+      "chapter": 8,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6d8eeb98b39f16c384fb5edcfdc030bc5b20515e05b48d37bd98b9afc5a9cbb9",
+      "normalizedSourceOffset": 12823,
+      "normalizedSourceEndOffset": 12887
+    },
+    {
+      "rowIndex": 108,
+      "ref": "8:15",
+      "chapter": 8,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c7a9fc2b2d9e59ccd53d433dd0140306b68891bb4eb0705d160e317ef00bb222",
+      "normalizedSourceOffset": 12891,
+      "normalizedSourceEndOffset": 12969
+    },
+    {
+      "rowIndex": 109,
+      "ref": "8:16",
+      "chapter": 8,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6eb27a7c6608840205c63b64f1cc4c488348e7b1f4a3a439d1bf5f04c76b97f1",
+      "normalizedSourceOffset": 12973,
+      "normalizedSourceEndOffset": 13088
+    },
+    {
+      "rowIndex": 110,
+      "ref": "8:17",
+      "chapter": 8,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5fc728c52634fcb6bec29a5952a0f45cd90b7f9aa27683d3ae9339b729e4ebd2",
+      "normalizedSourceOffset": 13092,
+      "normalizedSourceEndOffset": 13148
+    },
+    {
+      "rowIndex": 111,
+      "ref": "8:18",
+      "chapter": 8,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3d3237a9590d9920754cc9c3325bc26d9a184e19ed46391e3575c6d8e0c1d0de",
+      "normalizedSourceOffset": 13152,
+      "normalizedSourceEndOffset": 13212
+    },
+    {
+      "rowIndex": 112,
+      "ref": "8:19",
+      "chapter": 8,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e054bff7405c5ef9789343a256a2021ba09304336f58e347ec92bda49ad862f6",
+      "normalizedSourceOffset": 13216,
+      "normalizedSourceEndOffset": 13298
+    },
+    {
+      "rowIndex": 113,
+      "ref": "8:20",
+      "chapter": 8,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f5554896ac948296510a4e4735c93d7015674d0280670f4a42620d6330f981a3",
+      "normalizedSourceOffset": 13302,
+      "normalizedSourceEndOffset": 13405
+    },
+    {
+      "rowIndex": 114,
+      "ref": "8:21",
+      "chapter": 8,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1eb651917427c464c0e798a1e2924bf12712bf0bc86311a1ddc990f940f56baa",
+      "normalizedSourceOffset": 13409,
+      "normalizedSourceEndOffset": 13524
+    },
+    {
+      "rowIndex": 115,
+      "ref": "8:22",
+      "chapter": 8,
+      "verse": 22,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "973cd35ab16465072ab5f3fa33dd73e0a34a79687092c3f2e090a09c56529d97",
+      "normalizedSourceOffset": 13528,
+      "normalizedSourceEndOffset": 13692
+    },
+    {
+      "rowIndex": 116,
+      "ref": "8:23",
+      "chapter": 8,
+      "verse": 23,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9da9c5fdd953de2eb9ecebe69ccfdc39535d2f0e7490a95fd8d6b16ca5711dce",
+      "normalizedSourceOffset": 13696,
+      "normalizedSourceEndOffset": 13784
+    },
+    {
+      "rowIndex": 117,
+      "ref": "9:1",
+      "chapter": 9,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "104cfc67ca4f3a3f7923e1895458d04c2cdf7745c3e327c6c2eb5f0b459af2e0",
+      "normalizedSourceOffset": 13850,
+      "normalizedSourceEndOffset": 13889
+    },
+    {
+      "rowIndex": 118,
+      "ref": "9:2",
+      "chapter": 9,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7c1889cad6e1ad9d8b9427b621c525a5138fcefb50bca94c68b69adc191c705e",
+      "normalizedSourceOffset": 13892,
+      "normalizedSourceEndOffset": 13947
+    },
+    {
+      "rowIndex": 119,
+      "ref": "9:3",
+      "chapter": 9,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fb194b84bf273ce6ca740a2c956b7787708250b75073060a2a7be8e6bce91786",
+      "normalizedSourceOffset": 13950,
+      "normalizedSourceEndOffset": 14047
+    },
+    {
+      "rowIndex": 120,
+      "ref": "9:4",
+      "chapter": 9,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0ce5ba4d88e6d5aef7c741f1fa59be0d176b84105349d737467bc696550fc129",
+      "normalizedSourceOffset": 14050,
+      "normalizedSourceEndOffset": 14169
+    },
+    {
+      "rowIndex": 121,
+      "ref": "9:5",
+      "chapter": 9,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fc5fbcf7aaff5bc30e0e6ae176434a979538f4d7bbbbd238f3dd929d62d3a9c1",
+      "normalizedSourceOffset": 14172,
+      "normalizedSourceEndOffset": 14300
+    },
+    {
+      "rowIndex": 122,
+      "ref": "9:6",
+      "chapter": 9,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2fb6db072fb47c5934da329c6af445dc7fa7dbd7e4e0bbdaca0f6607c26bfe36",
+      "normalizedSourceOffset": 14303,
+      "normalizedSourceEndOffset": 14395
+    },
+    {
+      "rowIndex": 123,
+      "ref": "9:7",
+      "chapter": 9,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "85900ac49053d6ea23c9b9215333b6cbd7631ad6115831b7cc2069fdcb786c53",
+      "normalizedSourceOffset": 14398,
+      "normalizedSourceEndOffset": 14505
+    },
+    {
+      "rowIndex": 124,
+      "ref": "9:8",
+      "chapter": 9,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4d217f61fc2c3c18c1744ae99a72a112a2e664ee997b04a2e1d92a8f0a66fbff",
+      "normalizedSourceOffset": 14508,
+      "normalizedSourceEndOffset": 14581
+    },
+    {
+      "rowIndex": 125,
+      "ref": "9:9",
+      "chapter": 9,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "357d552a2068a7a6e87ef095d88ab873377c51d94d04aa2778aebe3c1f7f1627",
+      "normalizedSourceOffset": 14584,
+      "normalizedSourceEndOffset": 14655
+    },
+    {
+      "rowIndex": 126,
+      "ref": "9:10",
+      "chapter": 9,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ea9334bab321eded2dfab2a761abb4d11c36c34b1e3e55b49c4f5f716ee9e6c8",
+      "normalizedSourceOffset": 14659,
+      "normalizedSourceEndOffset": 14708
+    },
+    {
+      "rowIndex": 127,
+      "ref": "9:11",
+      "chapter": 9,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8f8e262f2fb4758a27883aec28567339b745d829def93c56c0d2db6ad9bd1bbc",
+      "normalizedSourceOffset": 14712,
+      "normalizedSourceEndOffset": 14830
+    },
+    {
+      "rowIndex": 128,
+      "ref": "9:12",
+      "chapter": 9,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c257c727a34ab7f9cc0c1192fabf8366ebea35d7699ccb4e8d8d69b766c14d20",
+      "normalizedSourceOffset": 14834,
+      "normalizedSourceEndOffset": 14948
+    },
+    {
+      "rowIndex": 129,
+      "ref": "10:1",
+      "chapter": 10,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e9303ccc88210bafe902b13d3f18be4418326265f4d4d48a74be89dcd6117fde",
+      "normalizedSourceOffset": 14997,
+      "normalizedSourceEndOffset": 15072
+    },
+    {
+      "rowIndex": 130,
+      "ref": "10:2",
+      "chapter": 10,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "33d0c59c3d80701456a96c746d881172bd4baee5e4cdca94331c38a5c92f5018",
+      "normalizedSourceOffset": 15075,
+      "normalizedSourceEndOffset": 15171
+    },
+    {
+      "rowIndex": 131,
+      "ref": "10:3",
+      "chapter": 10,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9d330eac7bbb4c61a248138cc05eddd8508428cefd4082bce8e64a48184f84a1",
+      "normalizedSourceOffset": 15174,
+      "normalizedSourceEndOffset": 15276
+    },
+    {
+      "rowIndex": 132,
+      "ref": "10:4",
+      "chapter": 10,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "afedfc6cced19c901eda7aac937946d1aea517d8c44a19fa04d0fc522a312267",
+      "normalizedSourceOffset": 15279,
+      "normalizedSourceEndOffset": 15414
+    },
+    {
+      "rowIndex": 133,
+      "ref": "10:5",
+      "chapter": 10,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b083ba81e7e4319a55de7ecda76f1ab56c2ce2b833026b3565952a1266a6a97e",
+      "normalizedSourceOffset": 15417,
+      "normalizedSourceEndOffset": 15571
+    },
+    {
+      "rowIndex": 134,
+      "ref": "10:6",
+      "chapter": 10,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8ca72cc1267e0882574d46ee62615278a030e6bb77d949f2035fd964713d1096",
+      "normalizedSourceOffset": 15574,
+      "normalizedSourceEndOffset": 15716
+    },
+    {
+      "rowIndex": 135,
+      "ref": "11:1",
+      "chapter": 11,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a8e2cce112a7b81bb0d17833ac8475277ea5881b325e348765097cda082488d0",
+      "normalizedSourceOffset": 15768,
+      "normalizedSourceEndOffset": 15896
+    },
+    {
+      "rowIndex": 136,
+      "ref": "11:2",
+      "chapter": 11,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2fdb6664885cb252e079b0cb080793bc95a713896661c5a69d7cbed248ded202",
+      "normalizedSourceOffset": 15899,
+      "normalizedSourceEndOffset": 16023
+    },
+    {
+      "rowIndex": 137,
+      "ref": "11:3",
+      "chapter": 11,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3b0a2e8f1086c8b441236902d4f24d0cb66db18bfa5c7081961e1e052f0988ad",
+      "normalizedSourceOffset": 16026,
+      "normalizedSourceEndOffset": 16129
+    },
+    {
+      "rowIndex": 138,
+      "ref": "11:4",
+      "chapter": 11,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "04bf7705d8b8852e2e135acc351768b7b3144d2935254991f0c8815725dc0bb6",
+      "normalizedSourceOffset": 16132,
+      "normalizedSourceEndOffset": 16195
+    },
+    {
+      "rowIndex": 139,
+      "ref": "11:5",
+      "chapter": 11,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "52428967497d643d906cc14fdf9abe1c1e82943d04b7a8cede472925c8b8e5fd",
+      "normalizedSourceOffset": 16198,
+      "normalizedSourceEndOffset": 16271
+    },
+    {
+      "rowIndex": 140,
+      "ref": "11:6",
+      "chapter": 11,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b011f9a8039cc4bdf98697c14f160b0b37b76c73987f55e73e0fa30c4ad71fac",
+      "normalizedSourceOffset": 16274,
+      "normalizedSourceEndOffset": 16360
+    },
+    {
+      "rowIndex": 141,
+      "ref": "11:7",
+      "chapter": 11,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8ed97d51e4b3ed47a2bbbafa91f79fd284f8efb7a99a00a61837c52514a441df",
+      "normalizedSourceOffset": 16363,
+      "normalizedSourceEndOffset": 16428
+    },
+    {
+      "rowIndex": 142,
+      "ref": "11:8",
+      "chapter": 11,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f8df9e69f39d6b1f2d1d0cf6e030d03ad3f6a1b59d787c3fe5af85d073129228",
+      "normalizedSourceOffset": 16431,
+      "normalizedSourceEndOffset": 16500
+    },
+    {
+      "rowIndex": 143,
+      "ref": "11:9",
+      "chapter": 11,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3cfb835a13f9a8a9dd8737296b733c9610166b346c0e1c4cc36ca11b8ca47eb2",
+      "normalizedSourceOffset": 16503,
+      "normalizedSourceEndOffset": 16571
+    },
+    {
+      "rowIndex": 144,
+      "ref": "11:10",
+      "chapter": 11,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "505d69d87a6769a1c8df096ecd35b82b6f64af5c6085f9ec0ef5fe76bb549d22",
+      "normalizedSourceOffset": 16575,
+      "normalizedSourceEndOffset": 16662
+    },
+    {
+      "rowIndex": 145,
+      "ref": "11:11",
+      "chapter": 11,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d3a41ec97e152cdf434d1289d5883c68f835192feae2523d523e334d506f270c",
+      "normalizedSourceOffset": 16666,
+      "normalizedSourceEndOffset": 16734
+    },
+    {
+      "rowIndex": 146,
+      "ref": "11:12",
+      "chapter": 11,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "110d6c7d8adcbfb5756c20ce858ad259ab796b2f5479dd38c0b121edd3212afb",
+      "normalizedSourceOffset": 16738,
+      "normalizedSourceEndOffset": 16857
+    },
+    {
+      "rowIndex": 147,
+      "ref": "11:13",
+      "chapter": 11,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e7da8e474be9b4004b4b5cb2613fb8dc832d3031f10477a30ce284f8df04c21f",
+      "normalizedSourceOffset": 16861,
+      "normalizedSourceEndOffset": 16917
+    },
+    {
+      "rowIndex": 148,
+      "ref": "11:14",
+      "chapter": 11,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2bc2e072b99d3a4746ef83bd43ce32b7fe01ba9d63d541787d0cc673d6e007a1",
+      "normalizedSourceOffset": 16921,
+      "normalizedSourceEndOffset": 16965
+    },
+    {
+      "rowIndex": 149,
+      "ref": "11:15",
+      "chapter": 11,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9637c8df36ddec4fe97a79c4fff426563577ad8df17d2353dc143b8daecc84bd",
+      "normalizedSourceOffset": 16969,
+      "normalizedSourceEndOffset": 17027
+    },
+    {
+      "rowIndex": 150,
+      "ref": "11:16",
+      "chapter": 11,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3925f2a2972d2e6c592b2ad09314e0a3c763ec039a8459362ca417d504023ad1",
+      "normalizedSourceOffset": 17031,
+      "normalizedSourceEndOffset": 17117
+    },
+    {
+      "rowIndex": 151,
+      "ref": "11:17",
+      "chapter": 11,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e2004900b9bccf9cec8286d9df15df85064ecdb87219e2bbc8db293c6f0620f6",
+      "normalizedSourceOffset": 17121,
+      "normalizedSourceEndOffset": 17168
+    },
+    {
+      "rowIndex": 152,
+      "ref": "11:18",
+      "chapter": 11,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a1c714224b564a36ea15075ad7cb98bbc6d98f970d4056d96ffdedc76eca2c29",
+      "normalizedSourceOffset": 17172,
+      "normalizedSourceEndOffset": 17278
+    },
+    {
+      "rowIndex": 153,
+      "ref": "11:19",
+      "chapter": 11,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5ba33e5bad11a24f7c074f09e75e64942a0fb266a388d944aaba13bb2551b957",
+      "normalizedSourceOffset": 17282,
+      "normalizedSourceEndOffset": 17364
+    },
+    {
+      "rowIndex": 154,
+      "ref": "11:20",
+      "chapter": 11,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ee9b7f03e3b069b5a852927663aa4ed7a0d394db74fb5098eab662fbd2ec5062",
+      "normalizedSourceOffset": 17368,
+      "normalizedSourceEndOffset": 17422
+    },
+    {
+      "rowIndex": 155,
+      "ref": "11:21",
+      "chapter": 11,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5fee389d1f0154c66191ab8e4e9936567baf9d8d23c9bedf1371c763fbab8c21",
+      "normalizedSourceOffset": 17426,
+      "normalizedSourceEndOffset": 17582
+    },
+    {
+      "rowIndex": 156,
+      "ref": "11:22",
+      "chapter": 11,
+      "verse": 22,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4806ef4bb87bf07f2e3aed8adc856d6f5d43f95403a133b0814fd85e083d0a91",
+      "normalizedSourceOffset": 17586,
+      "normalizedSourceEndOffset": 17682
+    },
+    {
+      "rowIndex": 157,
+      "ref": "11:23",
+      "chapter": 11,
+      "verse": 23,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7bc079a8c827cce71b5fc0ee3758f0c7a13cf519d2ed2a2f63052ee4e5fbd02e",
+      "normalizedSourceOffset": 17686,
+      "normalizedSourceEndOffset": 17805
+    },
+    {
+      "rowIndex": 158,
+      "ref": "11:24",
+      "chapter": 11,
+      "verse": 24,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e75cba2781e74d0c8f9029b1ff1601dca3ea194217a18d275639a3f2893fce58",
+      "normalizedSourceOffset": 17809,
+      "normalizedSourceEndOffset": 17862
+    },
+    {
+      "rowIndex": 159,
+      "ref": "12:1",
+      "chapter": 12,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "15ea73e9c963259da045181d9470477ac24769e101f1615c802856ddd56063ee",
+      "normalizedSourceOffset": 20125,
+      "normalizedSourceEndOffset": 20193
+    },
+    {
+      "rowIndex": 160,
+      "ref": "12:2",
+      "chapter": 12,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "11ce4c9ea735ac345fc7a2d5c6bcc0b8eb0254bc6245603a3ae57a6a4120991a",
+      "normalizedSourceOffset": 20196,
+      "normalizedSourceEndOffset": 20287
+    },
+    {
+      "rowIndex": 161,
+      "ref": "12:3",
+      "chapter": 12,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0f4c41a79c63b263b0340e9231ecbb9a2f3b15f9f7403c0a5f574e2cdae5322e",
+      "normalizedSourceOffset": 20290,
+      "normalizedSourceEndOffset": 20435
+    },
+    {
+      "rowIndex": 162,
+      "ref": "12:4",
+      "chapter": 12,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "012a716c46ae2e9435ee12f0e0985995df86c582a10e8acb5bad28779d213201",
+      "normalizedSourceOffset": 20438,
+      "normalizedSourceEndOffset": 20650
+    },
+    {
+      "rowIndex": 163,
+      "ref": "12:5",
+      "chapter": 12,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c811437b79edd1bc235334e5db0d82bef78a43308ff0420e2c9eba6a4d8bb05b",
+      "normalizedSourceOffset": 20653,
+      "normalizedSourceEndOffset": 20799
+    },
+    {
+      "rowIndex": 164,
+      "ref": "12:6",
+      "chapter": 12,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b415de4a51661b74002b993bbb7a23a524957832b96d19f6efd478a4a405257b",
+      "normalizedSourceOffset": 20802,
+      "normalizedSourceEndOffset": 20899
+    },
+    {
+      "rowIndex": 165,
+      "ref": "12:7",
+      "chapter": 12,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "97d850b1b9ceb578c44272064517f6a6cb0b930a33c01e9c95969f66dba93867",
+      "normalizedSourceOffset": 20902,
+      "normalizedSourceEndOffset": 20984
+    },
+    {
+      "rowIndex": 166,
+      "ref": "12:8",
+      "chapter": 12,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "feed66a60f1073368eeaa910955dcb6280db7c5f5f286c989aa21958f4f6c5d2",
+      "normalizedSourceOffset": 20987,
+      "normalizedSourceEndOffset": 21083
+    },
+    {
+      "rowIndex": 167,
+      "ref": "12:9",
+      "chapter": 12,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "62488476cc3f3162a0cfca5e18c82d8076e4dde03cc684c605c73515370491bd",
+      "normalizedSourceOffset": 21086,
+      "normalizedSourceEndOffset": 21171
+    },
+    {
+      "rowIndex": 168,
+      "ref": "12:10",
+      "chapter": 12,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1ddf158b767cfc75814d4ee5262bad4d2ef47591bf837515df1fbd5910ddd8a7",
+      "normalizedSourceOffset": 21175,
+      "normalizedSourceEndOffset": 21282
+    },
+    {
+      "rowIndex": 169,
+      "ref": "12:11",
+      "chapter": 12,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4467084879823f1fdf51013c550692da8185a78323788405ff069ec523ced20b",
+      "normalizedSourceOffset": 21286,
+      "normalizedSourceEndOffset": 21380
+    },
+    {
+      "rowIndex": 170,
+      "ref": "12:12",
+      "chapter": 12,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b863ecc06790dd6c4969fd505ac80ae25c85d1ab16ede29340deed0bc3a4512b",
+      "normalizedSourceOffset": 21384,
+      "normalizedSourceEndOffset": 21475
+    },
+    {
+      "rowIndex": 171,
+      "ref": "12:13",
+      "chapter": 12,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8d5dd3a2132ad948d04728bf36e30e5d7c208656cfd1d62485dcfe34a4274130",
+      "normalizedSourceOffset": 21479,
+      "normalizedSourceEndOffset": 21580
+    },
+    {
+      "rowIndex": 172,
+      "ref": "13:1",
+      "chapter": 13,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "52d5167f6903964d261c3cedec60a4ac8bc05eec5823f25c6440b0c010cd08c9",
+      "normalizedSourceOffset": 21650,
+      "normalizedSourceEndOffset": 21714
+    },
+    {
+      "rowIndex": 173,
+      "ref": "13:2",
+      "chapter": 13,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0e482b4d2f50c4427aaa53ce4bdd9f378edfda6c9755fe1b961e76afb94d94d9",
+      "normalizedSourceOffset": 21717,
+      "normalizedSourceEndOffset": 21797
+    },
+    {
+      "rowIndex": 174,
+      "ref": "13:3",
+      "chapter": 13,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b96b55a68b2a8bd2394f90adf58d6024cd010277086a5ca759fe3edd57a8a157",
+      "normalizedSourceOffset": 21800,
+      "normalizedSourceEndOffset": 21892
+    },
+    {
+      "rowIndex": 175,
+      "ref": "13:4",
+      "chapter": 13,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d1f6fd27e0327543b8d2cbed42ea1dc9bdb9fb7d490ab0b48271d978a2719d3b",
+      "normalizedSourceOffset": 21895,
+      "normalizedSourceEndOffset": 21949
+    },
+    {
+      "rowIndex": 176,
+      "ref": "14:1",
+      "chapter": 14,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dee68053f16f7801c91ec8154268ed9a7480edfc0b864400db45a3c5b3142160",
+      "normalizedSourceOffset": 21993,
+      "normalizedSourceEndOffset": 22077
+    },
+    {
+      "rowIndex": 177,
+      "ref": "14:2",
+      "chapter": 14,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6104aa0f94f7ff78336985fdcc473eaa28008136ec276f69366f61bb80be13d4",
+      "normalizedSourceOffset": 22080,
+      "normalizedSourceEndOffset": 22138
+    },
+    {
+      "rowIndex": 178,
+      "ref": "14:3",
+      "chapter": 14,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "71af9d446d03bf7b45018b8f2a0b75c717d476a44c2ffb0c92f79a151dbd7b67",
+      "normalizedSourceOffset": 22141,
+      "normalizedSourceEndOffset": 22221
+    },
+    {
+      "rowIndex": 179,
+      "ref": "14:4",
+      "chapter": 14,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b474f1c73abff67d1fb1bb132619dacc6d26ef9b075f3e2d904f2376046153ee",
+      "normalizedSourceOffset": 22224,
+      "normalizedSourceEndOffset": 22335
+    },
+    {
+      "rowIndex": 180,
+      "ref": "14:5",
+      "chapter": 14,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0b6c200aa8a21bf494c14a8725f3d84c1c0710ba69f57e2c0317cb78767b2a95",
+      "normalizedSourceOffset": 22338,
+      "normalizedSourceEndOffset": 22444
+    },
+    {
+      "rowIndex": 181,
+      "ref": "14:6",
+      "chapter": 14,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0fd7ae9bb9f6d5c61fd0fe40926d97ff0c25ea2b4f9c9018fdaef36c76304c0f",
+      "normalizedSourceOffset": 22447,
+      "normalizedSourceEndOffset": 22527
+    },
+    {
+      "rowIndex": 182,
+      "ref": "14:7",
+      "chapter": 14,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "399b3d2c52e1fb9f9fa4b5d9493d64b5836feedb799e5bae475b070e31de1490",
+      "normalizedSourceOffset": 22530,
+      "normalizedSourceEndOffset": 22596
+    },
+    {
+      "rowIndex": 183,
+      "ref": "14:8",
+      "chapter": 14,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c3a33bdbae249d7271ed0b768e998b669fecbdcc3bb3648858b30de69a3d5ca8",
+      "normalizedSourceOffset": 22599,
+      "normalizedSourceEndOffset": 22696
+    },
+    {
+      "rowIndex": 184,
+      "ref": "14:9",
+      "chapter": 14,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "db727469d0769c4a9555a806d02f7abab89c8f40c66436a775ef0d501d128dfe",
+      "normalizedSourceOffset": 22699,
+      "normalizedSourceEndOffset": 22809
+    },
+    {
+      "rowIndex": 185,
+      "ref": "14:10",
+      "chapter": 14,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9c22761e21e8ff99ec04b7f55005536655a5876b9400523887591d1357a202a5",
+      "normalizedSourceOffset": 22813,
+      "normalizedSourceEndOffset": 22860
+    },
+    {
+      "rowIndex": 186,
+      "ref": "15:1",
+      "chapter": 15,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ed7e739cb0d85ee080bfc7abd56daf17f17b35aa47f7b525423840f5d94965ac",
+      "normalizedSourceOffset": 22952,
+      "normalizedSourceEndOffset": 23018
+    },
+    {
+      "rowIndex": 187,
+      "ref": "15:2",
+      "chapter": 15,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9c30c953c5b879b5f29287f9737a7f7bc9864caeb0b174a25b440b5254d020c9",
+      "normalizedSourceOffset": 23021,
+      "normalizedSourceEndOffset": 23119
+    },
+    {
+      "rowIndex": 188,
+      "ref": "15:3",
+      "chapter": 15,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "43e70a35167f00ba51b617a3ef623c8ab5e66dd01f85dacefef4fbf365f76d3d",
+      "normalizedSourceOffset": 23122,
+      "normalizedSourceEndOffset": 23166
+    },
+    {
+      "rowIndex": 189,
+      "ref": "15:4",
+      "chapter": 15,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f236401182a98e19409d5bbd92cd28952e48ef96ee8bf287dedc962b8ca9fa65",
+      "normalizedSourceOffset": 23169,
+      "normalizedSourceEndOffset": 23203
+    },
+    {
+      "rowIndex": 190,
+      "ref": "15:5",
+      "chapter": 15,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a1f47a0f087d1784c3e627dff55ecb2dafd2330124a0d524e28d3975ca5fcb3e",
+      "normalizedSourceOffset": 23206,
+      "normalizedSourceEndOffset": 23292
+    },
+    {
+      "rowIndex": 191,
+      "ref": "15:6",
+      "chapter": 15,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1fec31b3989a47ff882efa7a6144e0e074688c54076d8566aa11b06e590365bf",
+      "normalizedSourceOffset": 23295,
+      "normalizedSourceEndOffset": 23408
+    },
+    {
+      "rowIndex": 192,
+      "ref": "15:7",
+      "chapter": 15,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fac003b31ac512eff242a7470bd1371d0449e57a2534659108fea7189e9918d4",
+      "normalizedSourceOffset": 23411,
+      "normalizedSourceEndOffset": 23517
+    },
+    {
+      "rowIndex": 193,
+      "ref": "15:8",
+      "chapter": 15,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3df4a039baf4e2a7cc6dd84763d4e1d2cf1471d0e0874cabb2a7858e19d45d95",
+      "normalizedSourceOffset": 23520,
+      "normalizedSourceEndOffset": 23607
+    },
+    {
+      "rowIndex": 194,
+      "ref": "15:9",
+      "chapter": 15,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1b3771dca0fd60a55cfe23c1f9738a971294686b11176cef2565c1fdaacc9bd8",
+      "normalizedSourceOffset": 23610,
+      "normalizedSourceEndOffset": 23685
+    },
+    {
+      "rowIndex": 195,
+      "ref": "15:10",
+      "chapter": 15,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9fac0c9f7bc4540da5ce97ced9748633f988aff95be95349cf9a1298fa7ec301",
+      "normalizedSourceOffset": 23689,
+      "normalizedSourceEndOffset": 23848
+    },
+    {
+      "rowIndex": 196,
+      "ref": "16:1",
+      "chapter": 16,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5e720b341ce6c7df5796c4218b794ae1995d988dfa52139eac069b60e1d79d67",
+      "normalizedSourceOffset": 23929,
+      "normalizedSourceEndOffset": 24074
+    },
+    {
+      "rowIndex": 197,
+      "ref": "16:2",
+      "chapter": 16,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d634bd7c88430da9b5f1c5b1123202e73e8bdab405f025c2a195dfd87776b35d",
+      "normalizedSourceOffset": 24077,
+      "normalizedSourceEndOffset": 24215
+    },
+    {
+      "rowIndex": 198,
+      "ref": "16:3",
+      "chapter": 16,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a33fef324ee6cb82ce7159f94c5f44fad7296896dc31252906b29a47ef5c6119",
+      "normalizedSourceOffset": 24218,
+      "normalizedSourceEndOffset": 24276
+    },
+    {
+      "rowIndex": 199,
+      "ref": "16:4",
+      "chapter": 16,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d9edb48d5df05ca8c83dabdbf88c2ffbf27cdaacc7dcbe843f652d8eb9fbcf39",
+      "normalizedSourceOffset": 24279,
+      "normalizedSourceEndOffset": 24343
+    },
+    {
+      "rowIndex": 200,
+      "ref": "16:5",
+      "chapter": 16,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fefc541ec82c823ae8f5480ce61e70decc8861bdbdeef77e0d0a8841edd1e383",
+      "normalizedSourceOffset": 24346,
+      "normalizedSourceEndOffset": 24442
+    },
+    {
+      "rowIndex": 201,
+      "ref": "16:6",
+      "chapter": 16,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7e2b5774181d2d4494aa82bea7da2a84487388ec7e14472d4547ed4fe270eca4",
+      "normalizedSourceOffset": 24445,
+      "normalizedSourceEndOffset": 24496
+    },
+    {
+      "rowIndex": 202,
+      "ref": "16:7",
+      "chapter": 16,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "764d404047006d3bc0d057ddbcf230cdd67878a597f09edbfd705aee22eb7ab2",
+      "normalizedSourceOffset": 24499,
+      "normalizedSourceEndOffset": 24567
+    },
+    {
+      "rowIndex": 203,
+      "ref": "16:8",
+      "chapter": 16,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4c724c99f70e4426f3064f54a85b9e6ccb13f31e48b716189f612de429f50d47",
+      "normalizedSourceOffset": 24570,
+      "normalizedSourceEndOffset": 24669
+    },
+    {
+      "rowIndex": 204,
+      "ref": "16:9",
+      "chapter": 16,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ef861e8cc2d31c64ad847df8c10a03c84f2a1df0055cc79a0250230d4ba02989",
+      "normalizedSourceOffset": 24672,
+      "normalizedSourceEndOffset": 24729
+    },
+    {
+      "rowIndex": 205,
+      "ref": "16:10",
+      "chapter": 16,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "da84ecccec2e9073e082a20a93cdf7802b35517c5962fdddf7bf63d4c8a68ccc",
+      "normalizedSourceOffset": 24733,
+      "normalizedSourceEndOffset": 24791
+    },
+    {
+      "rowIndex": 206,
+      "ref": "16:11",
+      "chapter": 16,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "787ed642fb20ffed2a17778f33de487dae9e7d1213b2b4f1ddbc1df5489aa3fe",
+      "normalizedSourceOffset": 24795,
+      "normalizedSourceEndOffset": 24841
+    },
+    {
+      "rowIndex": 207,
+      "ref": "16:12",
+      "chapter": 16,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "842809b6bb0ecc51c8943b7ef383c00eaefffdb7070a2eb39c2c3a1e9e1eac5e",
+      "normalizedSourceOffset": 24845,
+      "normalizedSourceEndOffset": 24924
+    },
+    {
+      "rowIndex": 208,
+      "ref": "16:13",
+      "chapter": 16,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a1a9924ad6e570f38446464c4c837082324ba0fee70fe5159b5b1a0eee27a15a",
+      "normalizedSourceOffset": 24928,
+      "normalizedSourceEndOffset": 25037
+    },
+    {
+      "rowIndex": 209,
+      "ref": "16:14",
+      "chapter": 16,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9c9cec6aa0be2eb0ff694ecb9ce45c27ff86900e0cbe885671bc729f01027dbd",
+      "normalizedSourceOffset": 25041,
+      "normalizedSourceEndOffset": 25081
+    },
+    {
+      "rowIndex": 210,
+      "ref": "16:15",
+      "chapter": 16,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "64a16c0bd04f91c88f10401c005c1b38858c95c7a9b4370275b328be32022bed",
+      "normalizedSourceOffset": 25085,
+      "normalizedSourceEndOffset": 25173
+    },
+    {
+      "rowIndex": 211,
+      "ref": "16:16",
+      "chapter": 16,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "29e9fc4fb799d5bebdf6534012c5db997205b0576677ca19e235847ea62438a6",
+      "normalizedSourceOffset": 25177,
+      "normalizedSourceEndOffset": 25270
+    },
+    {
+      "rowIndex": 212,
+      "ref": "16:17",
+      "chapter": 16,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5088094d864a3f7bf127ee3f9be79e8985021709d46de2742e8b630e93365ea3",
+      "normalizedSourceOffset": 25274,
+      "normalizedSourceEndOffset": 25333
+    },
+    {
+      "rowIndex": 213,
+      "ref": "16:18",
+      "chapter": 16,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8c32e1595f43044a8b7d95f1d695fd58c0115255f81371555b5477f848ccb416",
+      "normalizedSourceOffset": 25337,
+      "normalizedSourceEndOffset": 25426
+    },
+    {
+      "rowIndex": 214,
+      "ref": "16:19",
+      "chapter": 16,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1458d01ecb19036e3db8582d050760733440708bd289d677c2a0a7b46281ba39",
+      "normalizedSourceOffset": 25430,
+      "normalizedSourceEndOffset": 25494
+    },
+    {
+      "rowIndex": 215,
+      "ref": "16:20",
+      "chapter": 16,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "22ae71b784fdfd00f7422dbd05022d4839f78d1c1c186f99c3919833b8e072f2",
+      "normalizedSourceOffset": 25498,
+      "normalizedSourceEndOffset": 25526
+    },
+    {
+      "rowIndex": 216,
+      "ref": "17:1",
+      "chapter": 17,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c2a397c4401943d326a6c708e61dfdee3a54b093ecd9f1cfc1e3b8665e879603",
+      "normalizedSourceOffset": 25588,
+      "normalizedSourceEndOffset": 25642
+    },
+    {
+      "rowIndex": 217,
+      "ref": "17:2",
+      "chapter": 17,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "deae3b86b1b928a9281caaf5f0e8b4e5f07aa78ab7d9e93f73d64aa85f8003b6",
+      "normalizedSourceOffset": 25645,
+      "normalizedSourceEndOffset": 25710
+    },
+    {
+      "rowIndex": 218,
+      "ref": "17:3",
+      "chapter": 17,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f52995aba901e1d2d9d155dfe258ca5359cfaa6ea5aad423f09551b1bb04f3fc",
+      "normalizedSourceOffset": 25713,
+      "normalizedSourceEndOffset": 25765
+    },
+    {
+      "rowIndex": 219,
+      "ref": "17:4",
+      "chapter": 17,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0d63e2c3cdc1f5db03b11678334673b0e909bbec96b87ecfac8c46a541180f11",
+      "normalizedSourceOffset": 25768,
+      "normalizedSourceEndOffset": 25895
+    },
+    {
+      "rowIndex": 220,
+      "ref": "17:5",
+      "chapter": 17,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "87054dbca70a86c892167310bc4694a926875370573231be0cde32e4753eccaf",
+      "normalizedSourceOffset": 25898,
+      "normalizedSourceEndOffset": 25988
+    },
+    {
+      "rowIndex": 221,
+      "ref": "17:6",
+      "chapter": 17,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3a4e57925339d5ccfa79cea03533272fa3473e3b121131c82d1754ef2db5d527",
+      "normalizedSourceOffset": 25991,
+      "normalizedSourceEndOffset": 26060
+    },
+    {
+      "rowIndex": 222,
+      "ref": "17:7",
+      "chapter": 17,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "27fa205454cac891d7ad5abdddbb6a95cd58ad38a154d85d8e06b67e37b714a3",
+      "normalizedSourceOffset": 26063,
+      "normalizedSourceEndOffset": 26223
+    },
+    {
+      "rowIndex": 223,
+      "ref": "17:8",
+      "chapter": 17,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4583872aa845a0d6cefe11172910295fd5442ad4e16bb2997089223a5048ff2f",
+      "normalizedSourceOffset": 26226,
+      "normalizedSourceEndOffset": 26318
+    },
+    {
+      "rowIndex": 224,
+      "ref": "17:9",
+      "chapter": 17,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b0c1d359dbed10e3cb54e729f59e7e44398dcfc77d000888b4bfd0946ddb7aae",
+      "normalizedSourceOffset": 26321,
+      "normalizedSourceEndOffset": 26399
+    },
+    {
+      "rowIndex": 225,
+      "ref": "17:10",
+      "chapter": 17,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b438dc65066938dc75b8159468bd282b975e02a782d6c1faefe5dedd0b051fdf",
+      "normalizedSourceOffset": 26403,
+      "normalizedSourceEndOffset": 26482
+    },
+    {
+      "rowIndex": 226,
+      "ref": "17:11",
+      "chapter": 17,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ee5c4a2acc2f990045f1e109e5a37a0fdc6d7107d32a78f16df9dbaed1773d76",
+      "normalizedSourceOffset": 26486,
+      "normalizedSourceEndOffset": 26580
+    },
+    {
+      "rowIndex": 227,
+      "ref": "17:12",
+      "chapter": 17,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e89a723147c8186ce7e6bedf571bdf72a5794398154ce971a7a4756a4c764935",
+      "normalizedSourceOffset": 26584,
+      "normalizedSourceEndOffset": 26658
+    },
+    {
+      "rowIndex": 228,
+      "ref": "17:13",
+      "chapter": 17,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3d16bbafa52621924e234c8ab47b337a4f98ba0b2a94ad84859d99af283a0d13",
+      "normalizedSourceOffset": 26662,
+      "normalizedSourceEndOffset": 26723
+    },
+    {
+      "rowIndex": 229,
+      "ref": "17:14",
+      "chapter": 17,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "540c0722acfb40cace5fd2edb76d6b9e8838c6303779c890de2646d30dcf836c",
+      "normalizedSourceOffset": 26727,
+      "normalizedSourceEndOffset": 26815
+    },
+    {
+      "rowIndex": 230,
+      "ref": "17:15",
+      "chapter": 17,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2a1c058fdb21604cd8d175f3179806d6461464d92ebbad25343043fe68a572de",
+      "normalizedSourceOffset": 26819,
+      "normalizedSourceEndOffset": 26877
+    },
+    {
+      "rowIndex": 231,
+      "ref": "17:16",
+      "chapter": 17,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8c35e77cde3f884a871e8386e124dca7805a3c59c5e14810a31f4183c91ad14d",
+      "normalizedSourceOffset": 26881,
+      "normalizedSourceEndOffset": 26924
+    },
+    {
+      "rowIndex": 232,
+      "ref": "18:1",
+      "chapter": 18,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "681ae9e65e876143e14be12a948cf7ebe3fff3ad2a50c5d04c28d7ef94f795f7",
+      "normalizedSourceOffset": 26974,
+      "normalizedSourceEndOffset": 27089
+    },
+    {
+      "rowIndex": 233,
+      "ref": "18:2",
+      "chapter": 18,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "724f673bac331ec999854cee8d481fd5bc83fbadc67f661a298557e9ffb6b82d",
+      "normalizedSourceOffset": 27092,
+      "normalizedSourceEndOffset": 27159
+    },
+    {
+      "rowIndex": 234,
+      "ref": "18:3",
+      "chapter": 18,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3984b2813dc302501f24710e3d23654b72db212e69e717d1c855273c8b678c11",
+      "normalizedSourceOffset": 27162,
+      "normalizedSourceEndOffset": 27286
+    },
+    {
+      "rowIndex": 235,
+      "ref": "18:4",
+      "chapter": 18,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5ed16f7d94e78448c9329cc11c31773f6c12aa9ad4d122ca3992ef7b80862f95",
+      "normalizedSourceOffset": 27289,
+      "normalizedSourceEndOffset": 27367
+    },
+    {
+      "rowIndex": 236,
+      "ref": "18:5",
+      "chapter": 18,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8e71656dd32a97b127ed431e5d431fcc09918003ebd9fe03560903580d6aae9d",
+      "normalizedSourceOffset": 27370,
+      "normalizedSourceEndOffset": 27432
+    },
+    {
+      "rowIndex": 237,
+      "ref": "18:6",
+      "chapter": 18,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8e5b03ee0b1853632aa32bdaf1d411d4a7483a3eea5b56a5f0e97a9db04866ea",
+      "normalizedSourceOffset": 27435,
+      "normalizedSourceEndOffset": 27523
+    },
+    {
+      "rowIndex": 238,
+      "ref": "18:7",
+      "chapter": 18,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "541341287ef1e66b2c8285ac23ed43d41993985c5d364c051794b5a9137794e8",
+      "normalizedSourceOffset": 27526,
+      "normalizedSourceEndOffset": 27669
+    },
+    {
+      "rowIndex": 239,
+      "ref": "18:8",
+      "chapter": 18,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "63714baa499b3576799d2c39339f67ea7ed9b7165d4e52c50944237c73f82b3d",
+      "normalizedSourceOffset": 27672,
+      "normalizedSourceEndOffset": 27759
+    },
+    {
+      "rowIndex": 240,
+      "ref": "18:9",
+      "chapter": 18,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "950a3eb1860a2ba60b08edd5339d77f24343cafcc85be3d92aa003cc0622ea41",
+      "normalizedSourceOffset": 27762,
+      "normalizedSourceEndOffset": 27823
+    },
+    {
+      "rowIndex": 241,
+      "ref": "18:10",
+      "chapter": 18,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c29e0e9321c2e3adaca2d7c85e3c482a8022e7babe144d5c0cfbb18805df7c99",
+      "normalizedSourceOffset": 27827,
+      "normalizedSourceEndOffset": 27887
+    },
+    {
+      "rowIndex": 242,
+      "ref": "18:11",
+      "chapter": 18,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e8706b4914578479d56dfb89b818ac663c8c0cfd440acd6f0ab96744cf0d16a3",
+      "normalizedSourceOffset": 27891,
+      "normalizedSourceEndOffset": 27963
+    },
+    {
+      "rowIndex": 243,
+      "ref": "18:12",
+      "chapter": 18,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "11c783b28a343aefdd02798cf8f62db43250cd17f792c7a095253d3e3f67a715",
+      "normalizedSourceOffset": 27967,
+      "normalizedSourceEndOffset": 28074
+    },
+    {
+      "rowIndex": 244,
+      "ref": "18:13",
+      "chapter": 18,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "bc55e960235a6030a9adafee0880fe1046d1ac78b8947221b768d1d41c4c575b",
+      "normalizedSourceOffset": 28078,
+      "normalizedSourceEndOffset": 28166
+    },
+    {
+      "rowIndex": 245,
+      "ref": "18:14",
+      "chapter": 18,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "35c1a76f51bc1ff9fce813b2ab9b2bc69805b4d201f29980e965af69d936e0f5",
+      "normalizedSourceOffset": 28170,
+      "normalizedSourceEndOffset": 28269
+    },
+    {
+      "rowIndex": 246,
+      "ref": "18:15",
+      "chapter": 18,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ef8f60496da7dd930d5f92c3992d9ab5a23b4aee9caeaf41573335836ee352cd",
+      "normalizedSourceOffset": 28273,
+      "normalizedSourceEndOffset": 28360
+    },
+    {
+      "rowIndex": 247,
+      "ref": "18:16",
+      "chapter": 18,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1202aec6645956395bdc2276a9a4494c57eaba935d767b5d7e59cbafffc4f7cf",
+      "normalizedSourceOffset": 28364,
+      "normalizedSourceEndOffset": 28402
+    },
+    {
+      "rowIndex": 248,
+      "ref": "19:1",
+      "chapter": 19,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "68816df3666d35472ae60ef7a47495600e611578572707ea8605bccce1400dd5",
+      "normalizedSourceOffset": 28471,
+      "normalizedSourceEndOffset": 28564
+    },
+    {
+      "rowIndex": 249,
+      "ref": "19:2",
+      "chapter": 19,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8e8eef332c40b42761ef070d8df246a53f28f2ece1d8b1eda612cd98a5306778",
+      "normalizedSourceOffset": 28567,
+      "normalizedSourceEndOffset": 28666
+    },
+    {
+      "rowIndex": 250,
+      "ref": "19:3",
+      "chapter": 19,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8d4ff62cc4cacbe033a0dee2d74924daa4f3624043bef52bb22ff2de08d8182d",
+      "normalizedSourceOffset": 28669,
+      "normalizedSourceEndOffset": 28770
+    },
+    {
+      "rowIndex": 251,
+      "ref": "19:4",
+      "chapter": 19,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b1772b9e327581a6025b54dbc48768d248dddc5e98016b3d2d59d770de5ee3db",
+      "normalizedSourceOffset": 28773,
+      "normalizedSourceEndOffset": 28852
+    },
+    {
+      "rowIndex": 252,
+      "ref": "19:5",
+      "chapter": 19,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e28503a0a77d277ebc9f879163d2acba27b0722e16059c65e991ebaa8e329769",
+      "normalizedSourceOffset": 28855,
+      "normalizedSourceEndOffset": 28982
+    },
+    {
+      "rowIndex": 253,
+      "ref": "19:6",
+      "chapter": 19,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "add4f98d2ee6b3127c4fe6136e3e19d0316561c545d21ca49f4f0966b2c5c439",
+      "normalizedSourceOffset": 28985,
+      "normalizedSourceEndOffset": 29080
+    },
+    {
+      "rowIndex": 254,
+      "ref": "19:7",
+      "chapter": 19,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9f7268307ecfb46bb93db18ca22d90f1eae0e99bc73a573c1f4442a98d8ce6b9",
+      "normalizedSourceOffset": 29083,
+      "normalizedSourceEndOffset": 29203
+    },
+    {
+      "rowIndex": 255,
+      "ref": "19:8",
+      "chapter": 19,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b1818b7f3cca1cb83d443bd2cc537b068aab57b79bef5307866752d518c8c8a5",
+      "normalizedSourceOffset": 29206,
+      "normalizedSourceEndOffset": 29242
+    },
+    {
+      "rowIndex": 256,
+      "ref": "19:9",
+      "chapter": 19,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8682c6f3d2c47f08098e6c7856c125d1357709c985c94b0a270adf71188f52c2",
+      "normalizedSourceOffset": 29245,
+      "normalizedSourceEndOffset": 29324
+    },
+    {
+      "rowIndex": 257,
+      "ref": "19:10",
+      "chapter": 19,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6f81847365baf275d80f598b5d6a4c7a37f1eb5320dcf44e1390f2a21cda3dc7",
+      "normalizedSourceOffset": 29328,
+      "normalizedSourceEndOffset": 29460
+    },
+    {
+      "rowIndex": 258,
+      "ref": "19:11",
+      "chapter": 19,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9c6bdf600260f17a4c2778a63dd7c96f4dfb834b236e59553e0541235e669270",
+      "normalizedSourceOffset": 29464,
+      "normalizedSourceEndOffset": 29563
+    },
+    {
+      "rowIndex": 259,
+      "ref": "20:1",
+      "chapter": 20,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8dc3ee82d1822144ec35a39aa4ae60584a1a834c5c84d404dec6d33100122cea",
+      "normalizedSourceOffset": 29611,
+      "normalizedSourceEndOffset": 29669
+    },
+    {
+      "rowIndex": 260,
+      "ref": "20:2",
+      "chapter": 20,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "50bfa868bc75d60fa0ba753efa904a8b44a3532aa79e5e47f36a977bd8b77481",
+      "normalizedSourceOffset": 29672,
+      "normalizedSourceEndOffset": 29720
+    },
+    {
+      "rowIndex": 261,
+      "ref": "20:3",
+      "chapter": 20,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d30e67a34437431a14c4caf84784be16c7bab42a55d8fabd416c076bd97f2ae7",
+      "normalizedSourceOffset": 29723,
+      "normalizedSourceEndOffset": 29858
+    },
+    {
+      "rowIndex": 262,
+      "ref": "20:4",
+      "chapter": 20,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e28101f96595760ce4c44442a6fb69be2a8be7c104e76a9c26180fb82cb1e1f0",
+      "normalizedSourceOffset": 29861,
+      "normalizedSourceEndOffset": 29928
+    },
+    {
+      "rowIndex": 263,
+      "ref": "20:5",
+      "chapter": 20,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "51d29c3e48f176ecf09ef2da4c76da115a597d203b1e14b4a5674eacbc8577d4",
+      "normalizedSourceOffset": 29931,
+      "normalizedSourceEndOffset": 30063
+    },
+    {
+      "rowIndex": 264,
+      "ref": "20:6",
+      "chapter": 20,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2b7b01670f9b27f22f43c10a2970a9a13169f8536a01b37064aadec149364008",
+      "normalizedSourceOffset": 30066,
+      "normalizedSourceEndOffset": 30199
+    },
+    {
+      "rowIndex": 265,
+      "ref": "20:7",
+      "chapter": 20,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "652214c94df94080ec3c0067fa72ea712eaa23fff4ef865f3e6237b7fec6817b",
+      "normalizedSourceOffset": 30202,
+      "normalizedSourceEndOffset": 30338
+    },
+    {
+      "rowIndex": 266,
+      "ref": "20:8",
+      "chapter": 20,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "bb830eb1e5e752f14741c60355bc7191b8c99e39b5ed6a6cde0b5e3bc2cfbfa4",
+      "normalizedSourceOffset": 30341,
+      "normalizedSourceEndOffset": 30408
+    },
+    {
+      "rowIndex": 267,
+      "ref": "20:9",
+      "chapter": 20,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "69d64c67b1e7bac52bdf790aa562715cbd1ac91689d3e75619dd7643ed98bd64",
+      "normalizedSourceOffset": 30411,
+      "normalizedSourceEndOffset": 30579
+    },
+    {
+      "rowIndex": 268,
+      "ref": "20:10",
+      "chapter": 20,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "22ae71b784fdfd00f7422dbd05022d4839f78d1c1c186f99c3919833b8e072f2",
+      "normalizedSourceOffset": 30583,
+      "normalizedSourceEndOffset": 30611
+    },
+    {
+      "rowIndex": 269,
+      "ref": "21:1",
+      "chapter": 21,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "27bfca0ea87f36e8914f568cc929c3254a3d98ef1ef1d7977fe089ec90550a2d",
+      "normalizedSourceOffset": 30664,
+      "normalizedSourceEndOffset": 30725
+    },
+    {
+      "rowIndex": 270,
+      "ref": "21:2",
+      "chapter": 21,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b751b78278b8c74084c6d10b5d1570453bfea693d404255c2d6eb9be127a455d",
+      "normalizedSourceOffset": 30728,
+      "normalizedSourceEndOffset": 30851
+    },
+    {
+      "rowIndex": 271,
+      "ref": "21:3",
+      "chapter": 21,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7b0b36959d737113d537653bdf148f992dbeffc3a1b92b8692613e7927731423",
+      "normalizedSourceOffset": 30854,
+      "normalizedSourceEndOffset": 30907
+    },
+    {
+      "rowIndex": 272,
+      "ref": "21:4",
+      "chapter": 21,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2535c877e2f2e10b4375eb34cecac02cb2fc5930d6ad74bda5a7af8d651d109d",
+      "normalizedSourceOffset": 30910,
+      "normalizedSourceEndOffset": 30978
+    },
+    {
+      "rowIndex": 273,
+      "ref": "21:5",
+      "chapter": 21,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d2fb872bc3af27cbfb30b4c11ba9a0de030ca3e53c3124d52bccf4ce51f1878f",
+      "normalizedSourceOffset": 30981,
+      "normalizedSourceEndOffset": 31107
+    },
+    {
+      "rowIndex": 274,
+      "ref": "21:6",
+      "chapter": 21,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ec44c5e1c6d4933ccd9e447ef863f5fca480ebb06724dca4aa8c2c371e43131c",
+      "normalizedSourceOffset": 31110,
+      "normalizedSourceEndOffset": 31172
+    },
+    {
+      "rowIndex": 275,
+      "ref": "21:7",
+      "chapter": 21,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "24281945e5da54e0c903d76d50be6ef4dab61f9eeca719ab6f1b64faada6722f",
+      "normalizedSourceOffset": 31175,
+      "normalizedSourceEndOffset": 31221
+    },
+    {
+      "rowIndex": 276,
+      "ref": "21:8",
+      "chapter": 21,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "af44ba7e393cf2766475cc690d8636958a9511e1b351ada8d467ee03b6129a83",
+      "normalizedSourceOffset": 31224,
+      "normalizedSourceEndOffset": 31306
+    },
+    {
+      "rowIndex": 277,
+      "ref": "21:9",
+      "chapter": 21,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3784dc9102c0093aa695478a7f7a6a87da38159e2c33da07911c0bb46a361d97",
+      "normalizedSourceOffset": 31309,
+      "normalizedSourceEndOffset": 31378
+    },
+    {
+      "rowIndex": 278,
+      "ref": "22:1",
+      "chapter": 22,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6135819126eb68a9c24f6bb14b63f8bfe589c5fdd511e0c0924870760f1736ca",
+      "normalizedSourceOffset": 31424,
+      "normalizedSourceEndOffset": 31510
+    },
+    {
+      "rowIndex": 279,
+      "ref": "22:2",
+      "chapter": 22,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f8efba3074460ecb15c7a4d0a7f25403add1eb023db79bd494b023d752469e2f",
+      "normalizedSourceOffset": 31513,
+      "normalizedSourceEndOffset": 31635
+    },
+    {
+      "rowIndex": 280,
+      "ref": "22:3",
+      "chapter": 22,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "749d2eea19dac3b527a0dabf1d2bb56f7e1fb3b865e4895772fd5561769ec875",
+      "normalizedSourceOffset": 31638,
+      "normalizedSourceEndOffset": 31683
+    },
+    {
+      "rowIndex": 281,
+      "ref": "22:4",
+      "chapter": 22,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c026d0ef8400ff0296cf679beff9792d1f46c044ea6da7bcca27270c52b226d4",
+      "normalizedSourceOffset": 31686,
+      "normalizedSourceEndOffset": 31747
+    },
+    {
+      "rowIndex": 282,
+      "ref": "22:5",
+      "chapter": 22,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a583e21588c7c950ab164dccdd5001f1e27e85f93b2dc836970f68f243760116",
+      "normalizedSourceOffset": 31750,
+      "normalizedSourceEndOffset": 31885
+    },
+    {
+      "rowIndex": 283,
+      "ref": "22:6",
+      "chapter": 22,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c55b51a2f54cea3e910b8a1197f937d20fa248aca6f8f54d10b9fc067222e246",
+      "normalizedSourceOffset": 31888,
+      "normalizedSourceEndOffset": 31961
+    },
+    {
+      "rowIndex": 284,
+      "ref": "22:7",
+      "chapter": 22,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "03f9bc876d8a2a2032c3bd1f7df1a4c9e4eaa26e10835ccac1d73c81e8e82596",
+      "normalizedSourceOffset": 31964,
+      "normalizedSourceEndOffset": 32065
+    },
+    {
+      "rowIndex": 285,
+      "ref": "22:8",
+      "chapter": 22,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "51bc15e90192e4fabbb414c4344afaaca20a39fc8c491f2530fffe9fd92b6371",
+      "normalizedSourceOffset": 32068,
+      "normalizedSourceEndOffset": 32136
+    },
+    {
+      "rowIndex": 286,
+      "ref": "22:9",
+      "chapter": 22,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "88415be53db765fe03e4fe33f2f3497c2278e9e334dfa4eff85ba438b0716ad6",
+      "normalizedSourceOffset": 32139,
+      "normalizedSourceEndOffset": 32201
+    },
+    {
+      "rowIndex": 287,
+      "ref": "22:10",
+      "chapter": 22,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e101e20af97e8381d5801f99b1284b24ad45f345594d0110cac0c6d4a9ad1d1f",
+      "normalizedSourceOffset": 32205,
+      "normalizedSourceEndOffset": 32265
+    },
+    {
+      "rowIndex": 288,
+      "ref": "22:11",
+      "chapter": 22,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b717368b723a19f2397ef203fa39f2f2b9c21f970a1bbf6e9bbeb24508acae3b",
+      "normalizedSourceOffset": 32269,
+      "normalizedSourceEndOffset": 32431
+    },
+    {
+      "rowIndex": 289,
+      "ref": "22:12",
+      "chapter": 22,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "410de9b294c49927eb1a32c404e670ceeca2d3322e57421fdecad3fffeead0c2",
+      "normalizedSourceOffset": 32435,
+      "normalizedSourceEndOffset": 32572
+    },
+    {
+      "rowIndex": 290,
+      "ref": "23:1",
+      "chapter": 23,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "149b175f3cb61c524267cd168150293b596ddcb34a896fa852154409ba2c6d66",
+      "normalizedSourceOffset": 33780,
+      "normalizedSourceEndOffset": 33849
+    },
+    {
+      "rowIndex": 291,
+      "ref": "23:2",
+      "chapter": 23,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "11943e0cd397472dae5c19833ade44283132fc41d04958ae9c1f59ead4afa304",
+      "normalizedSourceOffset": 33852,
+      "normalizedSourceEndOffset": 33976
+    },
+    {
+      "rowIndex": 292,
+      "ref": "23:3",
+      "chapter": 23,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "50f737e0585fb6283ce7c4a6543a120bfc784981fb487c6f36ef5f8e728758c1",
+      "normalizedSourceOffset": 33979,
+      "normalizedSourceEndOffset": 34085
+    },
+    {
+      "rowIndex": 293,
+      "ref": "23:4",
+      "chapter": 23,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "46863e624bab62e15111ce5c1c0de739a41b680d0ae74175fb88f72d2b738327",
+      "normalizedSourceOffset": 34088,
+      "normalizedSourceEndOffset": 34261
+    },
+    {
+      "rowIndex": 294,
+      "ref": "23:5",
+      "chapter": 23,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e77464f9ed604323561b17e588774c5e884c5f461727e8a131fcd61f180a4924",
+      "normalizedSourceOffset": 34264,
+      "normalizedSourceEndOffset": 34333
+    },
+    {
+      "rowIndex": 295,
+      "ref": "23:6",
+      "chapter": 23,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5af041a2445159f033387458ccf1a72b9cab863d86d3a926fc5974066610e933",
+      "normalizedSourceOffset": 34336,
+      "normalizedSourceEndOffset": 34403
+    },
+    {
+      "rowIndex": 296,
+      "ref": "23:7",
+      "chapter": 23,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4873c563dc56601d44286bf8a3963876c5cd3dc5f97fd064aa9807934df36ef2",
+      "normalizedSourceOffset": 34406,
+      "normalizedSourceEndOffset": 34491
+    },
+    {
+      "rowIndex": 297,
+      "ref": "23:8",
+      "chapter": 23,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e2b5e46c0b8659a4defb0aaced27ac61091d222bc9b4cddd9f32772d1aa78a4c",
+      "normalizedSourceOffset": 34494,
+      "normalizedSourceEndOffset": 34575
+    },
+    {
+      "rowIndex": 298,
+      "ref": "23:9",
+      "chapter": 23,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5c484b691bbbf40452843d74d1bcd239bf0d1cec1dc71ec141ad89e977e89c17",
+      "normalizedSourceOffset": 34578,
+      "normalizedSourceEndOffset": 34689
+    },
+    {
+      "rowIndex": 299,
+      "ref": "23:10",
+      "chapter": 23,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fde31e1c4d861790b59299b3827fb4447c9c22b3007f36d79c0442c5f5d1b52a",
+      "normalizedSourceOffset": 34693,
+      "normalizedSourceEndOffset": 34831
+    },
+    {
+      "rowIndex": 300,
+      "ref": "23:11",
+      "chapter": 23,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "84fd2ae0f40672673cae5cb4a68a88916324ba21540d9e43ad6865881e2e65b9",
+      "normalizedSourceOffset": 34835,
+      "normalizedSourceEndOffset": 34927
+    },
+    {
+      "rowIndex": 301,
+      "ref": "23:12",
+      "chapter": 23,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6b14071cae32cc42e8db4dcdcf4bf75d5b9d7964ad4b77428552e3c9f5df018f",
+      "normalizedSourceOffset": 34931,
+      "normalizedSourceEndOffset": 35004
+    },
+    {
+      "rowIndex": 302,
+      "ref": "23:13",
+      "chapter": 23,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3fbec9cbfe59eed19fd7a6fd92e931ddec7adcc5de6ba406dd83dab4950b5cda",
+      "normalizedSourceOffset": 35008,
+      "normalizedSourceEndOffset": 35091
+    },
+    {
+      "rowIndex": 303,
+      "ref": "23:14",
+      "chapter": 23,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "500743942ad542ceb7a17cb10203b05a4172ccd1bac9ec3c25232e6fc254273f",
+      "normalizedSourceOffset": 35095,
+      "normalizedSourceEndOffset": 35184
+    },
+    {
+      "rowIndex": 304,
+      "ref": "23:15",
+      "chapter": 23,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "668e4c182eaaf1618c60f8982f5b4ef5a4d1bf79e214ef7fd9613724cd9fbe15",
+      "normalizedSourceOffset": 35188,
+      "normalizedSourceEndOffset": 35259
+    },
+    {
+      "rowIndex": 305,
+      "ref": "23:16",
+      "chapter": 23,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ceff31d4d1711197dd124897502c345684ef7823a84b34eed7da46a17c703d34",
+      "normalizedSourceOffset": 35263,
+      "normalizedSourceEndOffset": 35386
+    },
+    {
+      "rowIndex": 306,
+      "ref": "23:17",
+      "chapter": 23,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "991aaff2f01d3bde42441864d81d8d250d25474edac769559e9e3097225fb966",
+      "normalizedSourceOffset": 35390,
+      "normalizedSourceEndOffset": 35487
+    },
+    {
+      "rowIndex": 307,
+      "ref": "23:18",
+      "chapter": 23,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "67755c886f7ffbf096dd762b6f73b0c033a9b8ebb09eb95b309a29584eb95f7a",
+      "normalizedSourceOffset": 35491,
+      "normalizedSourceEndOffset": 35623
+    },
+    {
+      "rowIndex": 308,
+      "ref": "23:19",
+      "chapter": 23,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "499462f36397ed2562202d49ccf47d7ec80c99162af1cc0ee755bb82927c2f5f",
+      "normalizedSourceOffset": 35627,
+      "normalizedSourceEndOffset": 35711
+    },
+    {
+      "rowIndex": 309,
+      "ref": "23:20",
+      "chapter": 23,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ead0095b118e8fa82a145849ce9d1f8a04fcaddaeca5ce95c7841eaf5139b33c",
+      "normalizedSourceOffset": 35715,
+      "normalizedSourceEndOffset": 35849
+    },
+    {
+      "rowIndex": 310,
+      "ref": "23:21",
+      "chapter": 23,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "65f88692a6bad797cd326039296269c1db494de165bc696b82d4a10671da668a",
+      "normalizedSourceOffset": 35853,
+      "normalizedSourceEndOffset": 35927
+    },
+    {
+      "rowIndex": 311,
+      "ref": "23:22",
+      "chapter": 23,
+      "verse": 22,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "346a757f4bdecce416e70c15406625a02ae0b9b6ab3b8aa2f65114026a33ef0e",
+      "normalizedSourceOffset": 35931,
+      "normalizedSourceEndOffset": 36086
+    },
+    {
+      "rowIndex": 312,
+      "ref": "24:1",
+      "chapter": 24,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "52e630280c355ef3deca8997479c995c49b7ec38361b7b8fbb67d3e5d2b95417",
+      "normalizedSourceOffset": 36148,
+      "normalizedSourceEndOffset": 36223
+    },
+    {
+      "rowIndex": 313,
+      "ref": "24:2",
+      "chapter": 24,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f623cde66b1661285e1fc31b2b394f1d26e567e69f196a1c3900152cc9e7e223",
+      "normalizedSourceOffset": 36226,
+      "normalizedSourceEndOffset": 36284
+    },
+    {
+      "rowIndex": 314,
+      "ref": "24:3",
+      "chapter": 24,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6ac869789cee908c63788bda10dd6d462e51288e08252376c0eb099f232b0647",
+      "normalizedSourceOffset": 36287,
+      "normalizedSourceEndOffset": 36351
+    },
+    {
+      "rowIndex": 315,
+      "ref": "24:4",
+      "chapter": 24,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "34695ebd8dc822d12f7553d99a39ee144e3fed17298974e4c558987f59c920be",
+      "normalizedSourceOffset": 36354,
+      "normalizedSourceEndOffset": 36429
+    },
+    {
+      "rowIndex": 316,
+      "ref": "24:5",
+      "chapter": 24,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "883ff686f64fcc818315e399bd375910b02186a7669a6053a269a85f0bdf61d8",
+      "normalizedSourceOffset": 36432,
+      "normalizedSourceEndOffset": 36547
+    },
+    {
+      "rowIndex": 317,
+      "ref": "24:6",
+      "chapter": 24,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5847e9de041a41ca0f908d1e6b1833723fd81124d11017abece740b57b8d49f5",
+      "normalizedSourceOffset": 36550,
+      "normalizedSourceEndOffset": 36622
+    },
+    {
+      "rowIndex": 318,
+      "ref": "24:7",
+      "chapter": 24,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3e94aa8f2475a00e705b7b015e1336340eac7814eca00f9dcfddd295f7ea1e6e",
+      "normalizedSourceOffset": 36625,
+      "normalizedSourceEndOffset": 36768
+    },
+    {
+      "rowIndex": 319,
+      "ref": "24:8",
+      "chapter": 24,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a1a25762b1c0433ac891e0971b8a1417a48aa84b7c697e027dca839fce542777",
+      "normalizedSourceOffset": 36771,
+      "normalizedSourceEndOffset": 36877
+    },
+    {
+      "rowIndex": 320,
+      "ref": "24:9",
+      "chapter": 24,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e61de84ed6b22e5e74bf45db7593c8af387ffe8864f17b807015ba96d97a8b8e",
+      "normalizedSourceOffset": 36880,
+      "normalizedSourceEndOffset": 37007
+    },
+    {
+      "rowIndex": 321,
+      "ref": "24:10",
+      "chapter": 24,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "476a5b0e7e119e1d80f90519bab05d3e0a85cb2ff45c61f372351710e8056253",
+      "normalizedSourceOffset": 37011,
+      "normalizedSourceEndOffset": 37081
+    },
+    {
+      "rowIndex": 322,
+      "ref": "24:11",
+      "chapter": 24,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1ce20e9cff4c25e6bd3104829cad422e48f20f397ba4ec864bb84c1754c060c5",
+      "normalizedSourceOffset": 37085,
+      "normalizedSourceEndOffset": 37125
+    },
+    {
+      "rowIndex": 323,
+      "ref": "24:12",
+      "chapter": 24,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "38d3d2ba958ab965dd74e4297e768709b2e8bed3bc109061575b434cd980fc24",
+      "normalizedSourceOffset": 37129,
+      "normalizedSourceEndOffset": 37192
+    },
+    {
+      "rowIndex": 324,
+      "ref": "24:13",
+      "chapter": 24,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "078f321e5b80b0a042644706e06b1e4684dbd02e12c8ff41e0d9a7a65f30836b",
+      "normalizedSourceOffset": 37196,
+      "normalizedSourceEndOffset": 37265
+    },
+    {
+      "rowIndex": 325,
+      "ref": "24:14",
+      "chapter": 24,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c9f3365c9cd5cf1e599197a1f00e086e3002ea8425ff692e6b8340b864c63623",
+      "normalizedSourceOffset": 37269,
+      "normalizedSourceEndOffset": 37323
+    },
+    {
+      "rowIndex": 326,
+      "ref": "25:1",
+      "chapter": 25,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3456215edb820065e4a470504552e94531a3cf5c67ebed16622c0a671e682187",
+      "normalizedSourceOffset": 37387,
+      "normalizedSourceEndOffset": 37441
+    },
+    {
+      "rowIndex": 327,
+      "ref": "25:2",
+      "chapter": 25,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0abd24089002814386bf908e3db4be20a7d4d694e343fbd67cd5f8eb402ee7b5",
+      "normalizedSourceOffset": 37444,
+      "normalizedSourceEndOffset": 37506
+    },
+    {
+      "rowIndex": 328,
+      "ref": "25:3",
+      "chapter": 25,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1c00dddae07fd692b970764034134a6bf3c2d97b8351fd532db6bd7d726ad5bc",
+      "normalizedSourceOffset": 37509,
+      "normalizedSourceEndOffset": 37589
+    },
+    {
+      "rowIndex": 329,
+      "ref": "25:4",
+      "chapter": 25,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "eda33781d9ddf6fd2733149a05ae829dfb49c36b724c3efad5a69dafa2cf42fd",
+      "normalizedSourceOffset": 37592,
+      "normalizedSourceEndOffset": 37661
+    },
+    {
+      "rowIndex": 330,
+      "ref": "25:5",
+      "chapter": 25,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d3a0c27715672b7ac5cd311ef93f99b718f2894b603d725f3634a7d1938fb973",
+      "normalizedSourceOffset": 37664,
+      "normalizedSourceEndOffset": 37761
+    },
+    {
+      "rowIndex": 331,
+      "ref": "25:6",
+      "chapter": 25,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a64818a7a79838d9fdd6099608bf255c95f8005ab5bc00bd9c3db6e4cd06f95b",
+      "normalizedSourceOffset": 37764,
+      "normalizedSourceEndOffset": 37802
+    },
+    {
+      "rowIndex": 332,
+      "ref": "25:7",
+      "chapter": 25,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3c511b6af61f47697534cbb367c28e5ad52e9bd9787c64f9d5b39634825c296b",
+      "normalizedSourceOffset": 37805,
+      "normalizedSourceEndOffset": 37906
+    },
+    {
+      "rowIndex": 333,
+      "ref": "25:8",
+      "chapter": 25,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "86072aa05c34bdf20391cadd7ddd1e079c221804ac6b93a1f3375c1442fd041c",
+      "normalizedSourceOffset": 37909,
+      "normalizedSourceEndOffset": 38005
+    },
+    {
+      "rowIndex": 334,
+      "ref": "25:9",
+      "chapter": 25,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9184ce64a859e922174a713ccc1a338c4e68f75f4db3d6a455b13f8181ef92e3",
+      "normalizedSourceOffset": 38008,
+      "normalizedSourceEndOffset": 38081
+    },
+    {
+      "rowIndex": 335,
+      "ref": "25:10",
+      "chapter": 25,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "08d093fa40c74d832f660147557ef309877f2db0745ae94a38fa3b12989308fd",
+      "normalizedSourceOffset": 38085,
+      "normalizedSourceEndOffset": 38149
+    },
+    {
+      "rowIndex": 336,
+      "ref": "25:11",
+      "chapter": 25,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8657d4a24e365ad0dc2e0f1510dc1b3049a3a7d2c555b2ebb5aede573b564568",
+      "normalizedSourceOffset": 38153,
+      "normalizedSourceEndOffset": 38234
+    },
+    {
+      "rowIndex": 337,
+      "ref": "25:12",
+      "chapter": 25,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "04594ddb5b90bed8134409f5de61063073f8ab518be950cac0e284ce83922208",
+      "normalizedSourceOffset": 38238,
+      "normalizedSourceEndOffset": 38308
+    },
+    {
+      "rowIndex": 338,
+      "ref": "26:1",
+      "chapter": 26,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a786ea8fc8cd8c9d1aaa26ee244a906825186fc54937cd29f6d69bd73870a6f4",
+      "normalizedSourceOffset": 39315,
+      "normalizedSourceEndOffset": 39365
+    },
+    {
+      "rowIndex": 339,
+      "ref": "26:2",
+      "chapter": 26,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4a51a1647509fe330b98d3bc337a3c14fc59c101bea703dd350aa3f852f1a494",
+      "normalizedSourceOffset": 39368,
+      "normalizedSourceEndOffset": 39433
+    },
+    {
+      "rowIndex": 340,
+      "ref": "26:3",
+      "chapter": 26,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b3dce04b59e0e060f05ea437515ddedf8b39aa87101f06bab065d924dbebaf3a",
+      "normalizedSourceOffset": 39436,
+      "normalizedSourceEndOffset": 39520
+    },
+    {
+      "rowIndex": 341,
+      "ref": "26:4",
+      "chapter": 26,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4521773ddfbd78bc6281abdb1f6fec2ed9708b8fca8714905a7666769254dd0c",
+      "normalizedSourceOffset": 39523,
+      "normalizedSourceEndOffset": 39607
+    },
+    {
+      "rowIndex": 342,
+      "ref": "26:5",
+      "chapter": 26,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3138193450399eb1eecfc2bf2af5ec8482bba6cc04c5ae37cab452fde92dc911",
+      "normalizedSourceOffset": 39610,
+      "normalizedSourceEndOffset": 39652
+    },
+    {
+      "rowIndex": 343,
+      "ref": "26:6",
+      "chapter": 26,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4c494112e1d42093bb7e9ad7cbfd07deb7d09a12a2cad9d095cb94a93bef5cc7",
+      "normalizedSourceOffset": 39655,
+      "normalizedSourceEndOffset": 39707
+    },
+    {
+      "rowIndex": 344,
+      "ref": "26:7",
+      "chapter": 26,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "535f9893151f8f01147ebe17725513ba9405e3d20b52a8e9b8be2cd6286973b7",
+      "normalizedSourceOffset": 39710,
+      "normalizedSourceEndOffset": 39780
+    },
+    {
+      "rowIndex": 345,
+      "ref": "26:8",
+      "chapter": 26,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "59bf36e9c92a43be1ce2f69972dd6c1cbde64cf0d44dd61a16a89072782c43d6",
+      "normalizedSourceOffset": 39783,
+      "normalizedSourceEndOffset": 39840
+    },
+    {
+      "rowIndex": 346,
+      "ref": "26:9",
+      "chapter": 26,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2869a33e96b4001de9c7ccc6cff29f24303ff872ac85dfa840e4955b9e8d4c1e",
+      "normalizedSourceOffset": 39843,
+      "normalizedSourceEndOffset": 39931
+    },
+    {
+      "rowIndex": 347,
+      "ref": "26:10",
+      "chapter": 26,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "41a8e7f038db43141399e2f4236b0492f328a298171121f5a0e3bd9d9a37c343",
+      "normalizedSourceOffset": 39935,
+      "normalizedSourceEndOffset": 40036
+    },
+    {
+      "rowIndex": 348,
+      "ref": "26:11",
+      "chapter": 26,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "980dda802f2dca265b08c6cd6d2f35d74d8ee4e1f1741c0170632f915a7ca77a",
+      "normalizedSourceOffset": 40040,
+      "normalizedSourceEndOffset": 40210
+    },
+    {
+      "rowIndex": 349,
+      "ref": "26:12",
+      "chapter": 26,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "816f593abd0b805e4afb6db412b5161e5fbea05a3cb183b9cddfe2e64fc7b5d1",
+      "normalizedSourceOffset": 40214,
+      "normalizedSourceEndOffset": 40298
+    },
+    {
+      "rowIndex": 350,
+      "ref": "26:13",
+      "chapter": 26,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "924a3d3e27f9e2b13a7c8b1d808998c593557270e5e6391cdf937484924bd7fc",
+      "normalizedSourceOffset": 40302,
+      "normalizedSourceEndOffset": 40408
+    },
+    {
+      "rowIndex": 351,
+      "ref": "27:1",
+      "chapter": 27,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5dbf283de653e18b0aa7be53ae83dce93699716eae437e19477262c3fbee2081",
+      "normalizedSourceOffset": 40456,
+      "normalizedSourceEndOffset": 40507
+    },
+    {
+      "rowIndex": 352,
+      "ref": "27:2",
+      "chapter": 27,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "08cbbad35354e91f84d6da7d9823ded906bcb543407fe44333a02a55e6274778",
+      "normalizedSourceOffset": 40510,
+      "normalizedSourceEndOffset": 40560
+    },
+    {
+      "rowIndex": 353,
+      "ref": "27:3",
+      "chapter": 27,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1f58f39b8d044b2342798210c0cd23eea8399602698db0e0b9fc30222bff6b85",
+      "normalizedSourceOffset": 40563,
+      "normalizedSourceEndOffset": 40625
+    },
+    {
+      "rowIndex": 354,
+      "ref": "28:1",
+      "chapter": 28,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2d9db45f941c5f0e84d54cf12eef1a2a2fa1dbb135e35c0ad0490540e913aeb3",
+      "normalizedSourceOffset": 40685,
+      "normalizedSourceEndOffset": 40836
+    },
+    {
+      "rowIndex": 355,
+      "ref": "28:2",
+      "chapter": 28,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "77709ef93853e98b3655865e8a361c77e042da1f3b91f8bf54674234a9de62f4",
+      "normalizedSourceOffset": 40839,
+      "normalizedSourceEndOffset": 40923
+    },
+    {
+      "rowIndex": 356,
+      "ref": "28:3",
+      "chapter": 28,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "779fd013d8d7a86aabb3586801089fbad8eab1fe2338c570b97c01b247dc0de5",
+      "normalizedSourceOffset": 40926,
+      "normalizedSourceEndOffset": 41016
+    },
+    {
+      "rowIndex": 357,
+      "ref": "28:4",
+      "chapter": 28,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d0f4303060dbed3737a89beadbc9419e587bfa6ab369acf8b6c4e5be41632360",
+      "normalizedSourceOffset": 41019,
+      "normalizedSourceEndOffset": 41132
+    },
+    {
+      "rowIndex": 358,
+      "ref": "28:5",
+      "chapter": 28,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1b7a1f3d358ae667e732d7cb07702577d44411323644b2bf17d600bdf4eb91ac",
+      "normalizedSourceOffset": 41135,
+      "normalizedSourceEndOffset": 41246
+    },
+    {
+      "rowIndex": 359,
+      "ref": "28:6",
+      "chapter": 28,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2f4f618878936b0742d4477528eb8e7b77e24d164ab8896404a248318791fb02",
+      "normalizedSourceOffset": 41249,
+      "normalizedSourceEndOffset": 41291
+    },
+    {
+      "rowIndex": 360,
+      "ref": "28:7",
+      "chapter": 28,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0d9ab581a96e337ef5d7f5cbc2801b77ad65b4911b0fa6a4a56f5411010578ea",
+      "normalizedSourceOffset": 41294,
+      "normalizedSourceEndOffset": 41378
+    },
+    {
+      "rowIndex": 361,
+      "ref": "28:8",
+      "chapter": 28,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "aaa23e26cf4f924a9e3f5b84aa900e665c7721a4b5b9cc1fd8c332b1605788dd",
+      "normalizedSourceOffset": 41381,
+      "normalizedSourceEndOffset": 41435
+    },
+    {
+      "rowIndex": 362,
+      "ref": "28:9",
+      "chapter": 28,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9355eea96fdca77e6301a4756a83ffaae9f1fe53976af6b8a05a0db32fc5a889",
+      "normalizedSourceOffset": 41438,
+      "normalizedSourceEndOffset": 41532
+    },
+    {
+      "rowIndex": 363,
+      "ref": "28:10",
+      "chapter": 28,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "61284452aa1acf009fb56502916bfea3f3d2eddb1c471dbc5c424e14cf2ef9ef",
+      "normalizedSourceOffset": 41536,
+      "normalizedSourceEndOffset": 41597
+    },
+    {
+      "rowIndex": 364,
+      "ref": "28:11",
+      "chapter": 28,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a9598aa1c10866bf63794fdcd30c7a79795e01177ff1c0592a58373a588eb223",
+      "normalizedSourceOffset": 41601,
+      "normalizedSourceEndOffset": 41662
+    },
+    {
+      "rowIndex": 365,
+      "ref": "28:12",
+      "chapter": 28,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3648d8feb0051e857481a18f39fc444bea84ad8a8f5587dc33c4c742b9be75ee",
+      "normalizedSourceOffset": 41666,
+      "normalizedSourceEndOffset": 41710
+    },
+    {
+      "rowIndex": 366,
+      "ref": "28:13",
+      "chapter": 28,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1032ee23acf5a4059848a0c9642605b7c66bf1c980ee1ad90bae7708b2e86128",
+      "normalizedSourceOffset": 41714,
+      "normalizedSourceEndOffset": 41787
+    },
+    {
+      "rowIndex": 367,
+      "ref": "28:14",
+      "chapter": 28,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "859ffe184abb6ff9150007edef6a5b1e198cb84dc6e43ba97ac6e4adb7860c3e",
+      "normalizedSourceOffset": 41791,
+      "normalizedSourceEndOffset": 41851
+    },
+    {
+      "rowIndex": 368,
+      "ref": "28:15",
+      "chapter": 28,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "91e05f62c61f7d59cf8011be7148981e9fbc30f979e329fa31694ed0274a65ad",
+      "normalizedSourceOffset": 41855,
+      "normalizedSourceEndOffset": 41941
+    },
+    {
+      "rowIndex": 369,
+      "ref": "28:16",
+      "chapter": 28,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cf391c2dee83831102771aaa43eb58384fb75167f9619504a69d5729257f5636",
+      "normalizedSourceOffset": 41945,
+      "normalizedSourceEndOffset": 42033
+    },
+    {
+      "rowIndex": 370,
+      "ref": "28:17",
+      "chapter": 28,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "21590e6f82489655116c00ede10d611f122097dbd7db735b01b69c01819217bc",
+      "normalizedSourceOffset": 42037,
+      "normalizedSourceEndOffset": 42154
+    },
+    {
+      "rowIndex": 371,
+      "ref": "28:18",
+      "chapter": 28,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6367a32d85abfc68de14651b381710422fc50bb75581c1e2516ba3ed5eda4253",
+      "normalizedSourceOffset": 42158,
+      "normalizedSourceEndOffset": 42307
+    },
+    {
+      "rowIndex": 372,
+      "ref": "28:19",
+      "chapter": 28,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c49424d4f43fab31d9b130d2735820ba72c1b6f341a61b1e7ed0451ea3b23352",
+      "normalizedSourceOffset": 42311,
+      "normalizedSourceEndOffset": 42401
+    },
+    {
+      "rowIndex": 373,
+      "ref": "29:1",
+      "chapter": 29,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "16c69f9af39060d082855e70e0fd1e391d4d9f42d2070d6b32c705bb51181738",
+      "normalizedSourceOffset": 42507,
+      "normalizedSourceEndOffset": 42558
+    },
+    {
+      "rowIndex": 374,
+      "ref": "29:2",
+      "chapter": 29,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5c9a4021672b5bfda79e7d61069901adfcb553aa4f0508470392ebf051d76352",
+      "normalizedSourceOffset": 42561,
+      "normalizedSourceEndOffset": 42624
+    },
+    {
+      "rowIndex": 375,
+      "ref": "29:3",
+      "chapter": 29,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "110c3f94a9eba543ed1d1c6294374f96c2e33caf685f26d83bacf78d0cebf773",
+      "normalizedSourceOffset": 42627,
+      "normalizedSourceEndOffset": 42701
+    },
+    {
+      "rowIndex": 376,
+      "ref": "29:4",
+      "chapter": 29,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d2538d75152ee4e0b9c5c340bc0bd936c8a2f37261cea5289bf934baf433ccbb",
+      "normalizedSourceOffset": 42704,
+      "normalizedSourceEndOffset": 42798
+    },
+    {
+      "rowIndex": 377,
+      "ref": "29:5",
+      "chapter": 29,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a948ab3d61108b8d45c4e75a2207ec7ced85c2008ee9dac49496e47d5dfa0d75",
+      "normalizedSourceOffset": 42801,
+      "normalizedSourceEndOffset": 42871
+    },
+    {
+      "rowIndex": 378,
+      "ref": "29:6",
+      "chapter": 29,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "15f6977da6fc6ac49da90a250bb91e7ce58761f7667d544f9fd86a8c3ba5d591",
+      "normalizedSourceOffset": 42874,
+      "normalizedSourceEndOffset": 42959
+    },
+    {
+      "rowIndex": 379,
+      "ref": "29:7",
+      "chapter": 29,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a587fe50fdea3f7c16d2ebdc284c0f3ce4b534f44d16b04dc298560e38c8205d",
+      "normalizedSourceOffset": 42962,
+      "normalizedSourceEndOffset": 43011
+    },
+    {
+      "rowIndex": 380,
+      "ref": "29:8",
+      "chapter": 29,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9de64624941a16008081bb55bf03b2468f25da9b5f11a26723d14fd28db904f8",
+      "normalizedSourceOffset": 43014,
+      "normalizedSourceEndOffset": 43132
+    },
+    {
+      "rowIndex": 381,
+      "ref": "29:9",
+      "chapter": 29,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a09ba6781e6abf4f20fe9a3a0d84fec79300c88e4ba58f4b035adb57f8cfd480",
+      "normalizedSourceOffset": 43135,
+      "normalizedSourceEndOffset": 43200
+    },
+    {
+      "rowIndex": 382,
+      "ref": "29:10",
+      "chapter": 29,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "31cefe9865301243ccfceead4634547c777a145ffc3d436b56a287ea34ffce1a",
+      "normalizedSourceOffset": 43204,
+      "normalizedSourceEndOffset": 43307
+    },
+    {
+      "rowIndex": 383,
+      "ref": "29:11",
+      "chapter": 29,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fd496473a79d1f5c59e2d7d6d3325825ea24169dc7265e88bff4f0edd0174896",
+      "normalizedSourceOffset": 43311,
+      "normalizedSourceEndOffset": 43410
+    },
+    {
+      "rowIndex": 384,
+      "ref": "30:1",
+      "chapter": 30,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "de417fb37bfa471e08e9826cd58c5afce5633cdd42303672b14ab40f809cefab",
+      "normalizedSourceOffset": 43458,
+      "normalizedSourceEndOffset": 43557
+    },
+    {
+      "rowIndex": 385,
+      "ref": "30:2",
+      "chapter": 30,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6f9bf997a63eb20edc0f597ba4f5d71f8f33b51e2241a6fd589765fe527e4add",
+      "normalizedSourceOffset": 43560,
+      "normalizedSourceEndOffset": 43654
+    },
+    {
+      "rowIndex": 386,
+      "ref": "30:3",
+      "chapter": 30,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "95877f553f4745eefa279f330e74d7acac9d12c24ad4800324ddc2db77d842de",
+      "normalizedSourceOffset": 43657,
+      "normalizedSourceEndOffset": 43719
+    },
+    {
+      "rowIndex": 387,
+      "ref": "30:4",
+      "chapter": 30,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cd53449200e72fde7632ea10fbf8fa8f5d00ba357d8916e701c5e349bf845feb",
+      "normalizedSourceOffset": 43722,
+      "normalizedSourceEndOffset": 43822
+    },
+    {
+      "rowIndex": 388,
+      "ref": "30:5",
+      "chapter": 30,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "87df3947f4cc71a36185766b4e4e86c184bf45d7dadd309c9a11cc4b13c9faf2",
+      "normalizedSourceOffset": 43825,
+      "normalizedSourceEndOffset": 43915
+    },
+    {
+      "rowIndex": 389,
+      "ref": "30:6",
+      "chapter": 30,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f6b5bcc2267158716417d5eef3a29857721f00dea2c312085648fa2af7fb9cda",
+      "normalizedSourceOffset": 43918,
+      "normalizedSourceEndOffset": 44009
+    },
+    {
+      "rowIndex": 390,
+      "ref": "30:7",
+      "chapter": 30,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2f2d4e3ff104e12167b1521edeb984844e1dd380df43851b8aa412884697fddb",
+      "normalizedSourceOffset": 44012,
+      "normalizedSourceEndOffset": 44079
+    },
+    {
+      "rowIndex": 391,
+      "ref": "31:1",
+      "chapter": 31,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "5fcfb316ca7beafdcd079f4486bd1d215f458372c071f622b9ea8470520e0334",
+      "normalizedSourceOffset": 44139,
+      "normalizedSourceEndOffset": 44227
+    },
+    {
+      "rowIndex": 392,
+      "ref": "31:2",
+      "chapter": 31,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4c2a1f2a2ecbebb62c0d61fbce33043cb5f9830b89e9b1e4b6d001dbef9994ff",
+      "normalizedSourceOffset": 44230,
+      "normalizedSourceEndOffset": 44363
+    },
+    {
+      "rowIndex": 393,
+      "ref": "31:3",
+      "chapter": 31,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "58e7900b16014b3f92d93a0d4193e5e1f32aab55272230c9a15353047c1350ba",
+      "normalizedSourceOffset": 44366,
+      "normalizedSourceEndOffset": 44468
+    },
+    {
+      "rowIndex": 394,
+      "ref": "31:4",
+      "chapter": 31,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f57614b8e699c887d883b9d1b201a3cbb7d8631405f8c8eccdce8d6de46df668",
+      "normalizedSourceOffset": 44471,
+      "normalizedSourceEndOffset": 44583
+    },
+    {
+      "rowIndex": 395,
+      "ref": "31:5",
+      "chapter": 31,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "88909816348f9a13314901afdf014f79e2270ed7f942f82983ab5e6cb02098e1",
+      "normalizedSourceOffset": 44586,
+      "normalizedSourceEndOffset": 44665
+    },
+    {
+      "rowIndex": 396,
+      "ref": "31:6",
+      "chapter": 31,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b763c1acac975f54802ad9d60d3897ff6777989b0274f30dc2e10730d274d633",
+      "normalizedSourceOffset": 44668,
+      "normalizedSourceEndOffset": 44725
+    },
+    {
+      "rowIndex": 397,
+      "ref": "31:7",
+      "chapter": 31,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0b2f649f3c8cf5381dd27626ba1c725d819038db9cf6c057fed282b8a794a99d",
+      "normalizedSourceOffset": 44728,
+      "normalizedSourceEndOffset": 44809
+    },
+    {
+      "rowIndex": 398,
+      "ref": "31:8",
+      "chapter": 31,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "72c82c2f9db33a5b0f0cecf83a18504edaf2fc98a03d9ae92b703b3a98fab48c",
+      "normalizedSourceOffset": 44812,
+      "normalizedSourceEndOffset": 44880
+    },
+    {
+      "rowIndex": 399,
+      "ref": "31:9",
+      "chapter": 31,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f6fa41c22f7dfdabcbbd7c0e07665106d26a637e53cc8d6ba8328615169fbd09",
+      "normalizedSourceOffset": 44883,
+      "normalizedSourceEndOffset": 44943
+    },
+    {
+      "rowIndex": 400,
+      "ref": "31:10",
+      "chapter": 31,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f7a43f950d15b999e6c44336c8feb7c94d739bf7e63c2708ef521090a7bac679",
+      "normalizedSourceOffset": 44947,
+      "normalizedSourceEndOffset": 45026
+    },
+    {
+      "rowIndex": 401,
+      "ref": "31:11",
+      "chapter": 31,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "621936681b202ead6d557b5d8bec9014a38a373f67dfeb17cc4c99ec888ba6dc",
+      "normalizedSourceOffset": 45030,
+      "normalizedSourceEndOffset": 45111
+    },
+    {
+      "rowIndex": 402,
+      "ref": "31:12",
+      "chapter": 31,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "bd4ebbb4d3de08bf44bf94cdd9a0dbfef14b475c6f13e052c3ea27af3f15a7fa",
+      "normalizedSourceOffset": 45115,
+      "normalizedSourceEndOffset": 45214
+    },
+    {
+      "rowIndex": 403,
+      "ref": "31:13",
+      "chapter": 31,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "232f217ea0436a3cebe8411abff937e425fccae2025460a240a250f8c1f083e0",
+      "normalizedSourceOffset": 45218,
+      "normalizedSourceEndOffset": 45349
+    },
+    {
+      "rowIndex": 404,
+      "ref": "32:1",
+      "chapter": 32,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7541b4bb0f1e95062908f224687043699fe5eb1e8a85c38dc61dfa04852876fb",
+      "normalizedSourceOffset": 45402,
+      "normalizedSourceEndOffset": 45482
+    },
+    {
+      "rowIndex": 405,
+      "ref": "32:2",
+      "chapter": 32,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "58982eca3f3c74d3b321c344a99333617842f25d3a450099d70a68f6f76c0aeb",
+      "normalizedSourceOffset": 45485,
+      "normalizedSourceEndOffset": 45540
+    },
+    {
+      "rowIndex": 406,
+      "ref": "32:3",
+      "chapter": 32,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fc903f5561f678567b3b7eafc70506ec3b9df111240b82ea2cce0c69a0696935",
+      "normalizedSourceOffset": 45543,
+      "normalizedSourceEndOffset": 45644
+    },
+    {
+      "rowIndex": 407,
+      "ref": "33:1",
+      "chapter": 33,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4c16af355a10d347a164b019bd6acc8a72f44c882ad9175dee7656d1903badc5",
+      "normalizedSourceOffset": 45707,
+      "normalizedSourceEndOffset": 45822
+    },
+    {
+      "rowIndex": 408,
+      "ref": "33:2",
+      "chapter": 33,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cf6550b6fef479861209a944306f60282e01fecf81b28d034d39652d7685e4cd",
+      "normalizedSourceOffset": 45825,
+      "normalizedSourceEndOffset": 45894
+    },
+    {
+      "rowIndex": 409,
+      "ref": "33:3",
+      "chapter": 33,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "efac081c9eaadfde4017338d9e699d4c164eeefd20367e70cc7389f6024d0e2a",
+      "normalizedSourceOffset": 45897,
+      "normalizedSourceEndOffset": 45988
+    },
+    {
+      "rowIndex": 410,
+      "ref": "33:4",
+      "chapter": 33,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dd868b2a6ce2d74d0d9f1c852d9be0a30aa6013911aff4a75626dfab86832006",
+      "normalizedSourceOffset": 45991,
+      "normalizedSourceEndOffset": 46096
+    },
+    {
+      "rowIndex": 411,
+      "ref": "33:5",
+      "chapter": 33,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "42f1b0fde6225fcc8f2e7ffe7d51e0a037bc8ac0db01ee7f5f18d38d712afcf7",
+      "normalizedSourceOffset": 46099,
+      "normalizedSourceEndOffset": 46180
+    },
+    {
+      "rowIndex": 412,
+      "ref": "33:6",
+      "chapter": 33,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "faaf8a3b2f9585f252cac895194b3bee89519690e27816a9fde2e68cfa10a521",
+      "normalizedSourceOffset": 46183,
+      "normalizedSourceEndOffset": 46248
+    },
+    {
+      "rowIndex": 413,
+      "ref": "33:7",
+      "chapter": 33,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "14a1c5dd4c175cafa6b155463e15daeb7bbf67d90d03dd26fc9afc5ee64885a5",
+      "normalizedSourceOffset": 46251,
+      "normalizedSourceEndOffset": 46313
+    },
+    {
+      "rowIndex": 414,
+      "ref": "33:8",
+      "chapter": 33,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dd1dee33c31e49772634263a429c598ac9a74e26414f598a2a6a733fe653bd53",
+      "normalizedSourceOffset": 46316,
+      "normalizedSourceEndOffset": 46415
+    },
+    {
+      "rowIndex": 415,
+      "ref": "33:9",
+      "chapter": 33,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ba8827e16e57e967eb84d1e70720b81491fca745b9b83196aceb7f50c9f45cb8",
+      "normalizedSourceOffset": 46418,
+      "normalizedSourceEndOffset": 46456
+    },
+    {
+      "rowIndex": 416,
+      "ref": "33:10",
+      "chapter": 33,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "3789a1d8dd5b92c23488b4a9fe534d00d644d98577f9c536cbb2985592af72b8",
+      "normalizedSourceOffset": 46460,
+      "normalizedSourceEndOffset": 46541
+    },
+    {
+      "rowIndex": 417,
+      "ref": "33:11",
+      "chapter": 33,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "32bec25e4222cd251ab07e42d74e7c43d08e2e1a26465287ea1568d1df358cc8",
+      "normalizedSourceOffset": 46545,
+      "normalizedSourceEndOffset": 46605
+    },
+    {
+      "rowIndex": 418,
+      "ref": "33:12",
+      "chapter": 33,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a02cf83c59db27a6cf68bf35bd326d051c2c8da7fe0f821b53bc4924496fa7cd",
+      "normalizedSourceOffset": 46609,
+      "normalizedSourceEndOffset": 46705
+    },
+    {
+      "rowIndex": 419,
+      "ref": "33:13",
+      "chapter": 33,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b6ba61c7bbee0ae4a1315a060803c0d9af389f824116f20ed37d4518c18b727c",
+      "normalizedSourceOffset": 46709,
+      "normalizedSourceEndOffset": 46839
+    },
+    {
+      "rowIndex": 420,
+      "ref": "34:1",
+      "chapter": 34,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "856fe282ebd29e4bd5ed6caa6ea59a92c0399b8378992697b6db3fb1ae50e087",
+      "normalizedSourceOffset": 46903,
+      "normalizedSourceEndOffset": 46995
+    },
+    {
+      "rowIndex": 421,
+      "ref": "34:2",
+      "chapter": 34,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a9e7a540ee6e0c07fb7abc8ec2f42e9dea8f8c91b0e7b8c2f1d54fb71973c35d",
+      "normalizedSourceOffset": 46998,
+      "normalizedSourceEndOffset": 47058
+    },
+    {
+      "rowIndex": 422,
+      "ref": "34:3",
+      "chapter": 34,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b04290ad7e118f3452a09793e2e52ca2dfe12398ec4777a6b71b97ade88e6bbc",
+      "normalizedSourceOffset": 47061,
+      "normalizedSourceEndOffset": 47145
+    },
+    {
+      "rowIndex": 423,
+      "ref": "34:4",
+      "chapter": 34,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8f148c663d267a26d555bdbcbcaedfcf0f809a03867ba91737dc9a5116562f29",
+      "normalizedSourceOffset": 47148,
+      "normalizedSourceEndOffset": 47195
+    },
+    {
+      "rowIndex": 424,
+      "ref": "34:5",
+      "chapter": 34,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0054a80969137bc3a5b866ee30dc34358ea22d42a9945e3a8ed5dfbac07bf50d",
+      "normalizedSourceOffset": 47198,
+      "normalizedSourceEndOffset": 47315
+    },
+    {
+      "rowIndex": 425,
+      "ref": "34:6",
+      "chapter": 34,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2e41a4e6a0f6b5060713497ac700cca6184fa70bfd5fe685812530ed67bcd4e2",
+      "normalizedSourceOffset": 47318,
+      "normalizedSourceEndOffset": 47396
+    },
+    {
+      "rowIndex": 426,
+      "ref": "35:1",
+      "chapter": 35,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2ed4c736191483dbc029a5b5f988c2518784056759269be79e03814fa6022fa1",
+      "normalizedSourceOffset": 47455,
+      "normalizedSourceEndOffset": 47552
+    },
+    {
+      "rowIndex": 427,
+      "ref": "35:2",
+      "chapter": 35,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "88aa4882cc872b4e2eea9c6f211171154a559bdc51520758288defe849b1fd12",
+      "normalizedSourceOffset": 47555,
+      "normalizedSourceEndOffset": 47613
+    },
+    {
+      "rowIndex": 428,
+      "ref": "35:3",
+      "chapter": 35,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0f985155e705177bf98d5adee6c1391f3558bf76e2fa6c73650960f828217f29",
+      "normalizedSourceOffset": 47616,
+      "normalizedSourceEndOffset": 47714
+    },
+    {
+      "rowIndex": 429,
+      "ref": "35:4",
+      "chapter": 35,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b2335f6b84fa248df004ed621dbab1ddcc1a7f5a7f19d3c31213a00d69595cb6",
+      "normalizedSourceOffset": 47717,
+      "normalizedSourceEndOffset": 47824
+    },
+    {
+      "rowIndex": 430,
+      "ref": "35:5",
+      "chapter": 35,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4753ebd5d82e10bf7699d5f845803682466cb4e65ac9de9019e78af628841573",
+      "normalizedSourceOffset": 47827,
+      "normalizedSourceEndOffset": 47922
+    },
+    {
+      "rowIndex": 431,
+      "ref": "35:6",
+      "chapter": 35,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fc504e250b68acf6f43289f656f5a8e277ca7d0589c279764bcba526ec081930",
+      "normalizedSourceOffset": 47925,
+      "normalizedSourceEndOffset": 47985
+    },
+    {
+      "rowIndex": 432,
+      "ref": "35:7",
+      "chapter": 35,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8e3f6c46baf260c9e8a792a59684fee42fa5696436afe7079c83a09bcf233b3e",
+      "normalizedSourceOffset": 47988,
+      "normalizedSourceEndOffset": 48119
+    },
+    {
+      "rowIndex": 433,
+      "ref": "36:1",
+      "chapter": 36,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "eef4d0c0f02edd3134802608c979577f5cc6c253fee4655b55ff7e5b057e4fc4",
+      "normalizedSourceOffset": 48174,
+      "normalizedSourceEndOffset": 48238
+    },
+    {
+      "rowIndex": 434,
+      "ref": "36:2",
+      "chapter": 36,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2e371c914ad7a958e3c5f0af2d4d56332d347693366af57e69135daba2e800f0",
+      "normalizedSourceOffset": 48241,
+      "normalizedSourceEndOffset": 48388
+    },
+    {
+      "rowIndex": 435,
+      "ref": "36:3",
+      "chapter": 36,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cf3f79e9067e5a620e514ee20d6f76594db593c0e7955b372110b7a038f3d2c9",
+      "normalizedSourceOffset": 48391,
+      "normalizedSourceEndOffset": 48512
+    },
+    {
+      "rowIndex": 436,
+      "ref": "36:4",
+      "chapter": 36,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dfb81ff175566cb46a5c6425522e8459cc1a0f7042d93bc5d78415a4e62ebc72",
+      "normalizedSourceOffset": 48515,
+      "normalizedSourceEndOffset": 48592
+    },
+    {
+      "rowIndex": 437,
+      "ref": "36:5",
+      "chapter": 36,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8f8425994ca8a18208334d12ba74d44a34552288bedd1f2ade54efeeb78f5d0a",
+      "normalizedSourceOffset": 48595,
+      "normalizedSourceEndOffset": 48696
+    },
+    {
+      "rowIndex": 438,
+      "ref": "36:6",
+      "chapter": 36,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dac41be065674cb0f2cd9b2ee8518d8ce80bb2f33ea719c2cec8800e27f5fef1",
+      "normalizedSourceOffset": 48699,
+      "normalizedSourceEndOffset": 48775
+    },
+    {
+      "rowIndex": 439,
+      "ref": "36:7",
+      "chapter": 36,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "7476a1d812c026e120eb93b005aa8827f1fcd6afa399b5191c788ff8d3e25ed1",
+      "normalizedSourceOffset": 48778,
+      "normalizedSourceEndOffset": 48872
+    },
+    {
+      "rowIndex": 440,
+      "ref": "36:8",
+      "chapter": 36,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2493da093a33ec48a19af982da6c139e41f614f2ef5d0af18eddf102346eb5a7",
+      "normalizedSourceOffset": 48875,
+      "normalizedSourceEndOffset": 48956
+    },
+    {
+      "rowIndex": 441,
+      "ref": "37:1",
+      "chapter": 37,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2dbbc633457051d2c9133bc7a09dfcbbf4e9df61d653ff120f25955d6d78d827",
+      "normalizedSourceOffset": 49004,
+      "normalizedSourceEndOffset": 49084
+    },
+    {
+      "rowIndex": 442,
+      "ref": "37:2",
+      "chapter": 37,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "acfe985039e8801f3f984f42ef9bb0540999a5fb4dc7f532d92ad2426408ffb4",
+      "normalizedSourceOffset": 49087,
+      "normalizedSourceEndOffset": 49168
+    },
+    {
+      "rowIndex": 443,
+      "ref": "37:3",
+      "chapter": 37,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d39295407375fc11090114977f0c5d3cd74032b913bad5d6a044651e0827513d",
+      "normalizedSourceOffset": 49171,
+      "normalizedSourceEndOffset": 49244
+    },
+    {
+      "rowIndex": 444,
+      "ref": "37:4",
+      "chapter": 37,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "29ca113579149969e8f2513c527d9c9ebaad53c7e28179d854d8c18505a3dc44",
+      "normalizedSourceOffset": 49247,
+      "normalizedSourceEndOffset": 49293
+    },
+    {
+      "rowIndex": 445,
+      "ref": "38:1",
+      "chapter": 38,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "555a0213c88e3652f340f2d1f9ab4362016bace29c6d57397bfe3eaed28fbdd2",
+      "normalizedSourceOffset": 49344,
+      "normalizedSourceEndOffset": 49428
+    },
+    {
+      "rowIndex": 446,
+      "ref": "38:2",
+      "chapter": 38,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "dee0c6631fdb290443018381b9a9456e4cf1c3f70ed9a407e0e71be8815248aa",
+      "normalizedSourceOffset": 49431,
+      "normalizedSourceEndOffset": 49513
+    },
+    {
+      "rowIndex": 447,
+      "ref": "38:3",
+      "chapter": 38,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cf5ec3adcf819dce58c01eb12d10feb09d9022f2d7ebe5013d3e5a64745684ef",
+      "normalizedSourceOffset": 49516,
+      "normalizedSourceEndOffset": 49604
+    },
+    {
+      "rowIndex": 448,
+      "ref": "38:4",
+      "chapter": 38,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ecf2de119257002e4d36322c9c1cf3f19759d31f05df76f3614878a71a5104b5",
+      "normalizedSourceOffset": 49607,
+      "normalizedSourceEndOffset": 49699
+    },
+    {
+      "rowIndex": 449,
+      "ref": "38:5",
+      "chapter": 38,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "836cf1ebc566abfb2dfd1f1702267bcdda0639a75cb5438c67b74ae4624fdcd7",
+      "normalizedSourceOffset": 49702,
+      "normalizedSourceEndOffset": 49802
+    },
+    {
+      "rowIndex": 450,
+      "ref": "38:6",
+      "chapter": 38,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f1bfe8245e5464ddb45824ae28ffcbee5f6a9da31312d3980ea91f501e57b345",
+      "normalizedSourceOffset": 49805,
+      "normalizedSourceEndOffset": 49852
+    },
+    {
+      "rowIndex": 451,
+      "ref": "38:7",
+      "chapter": 38,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ebcd24837a705ee6a3248070ef69a9d24ed3846ef5fb244f8e905890514bbaab",
+      "normalizedSourceOffset": 49855,
+      "normalizedSourceEndOffset": 49934
+    },
+    {
+      "rowIndex": 452,
+      "ref": "38:8",
+      "chapter": 38,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "748b0ce3a7e1c7820c7e826552f4b6f1970afa6dbf3841237ae92d31033d8362",
+      "normalizedSourceOffset": 49937,
+      "normalizedSourceEndOffset": 50027
+    },
+    {
+      "rowIndex": 453,
+      "ref": "38:9",
+      "chapter": 38,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "e7c0f79088da4afbd3d2e9028fe917758e5d9b20ea91cbf42efc81fc8235360c",
+      "normalizedSourceOffset": 50030,
+      "normalizedSourceEndOffset": 50186
+    },
+    {
+      "rowIndex": 454,
+      "ref": "38:10",
+      "chapter": 38,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "27f5f84d2d66fc104c04017584750b307c1bc18e1c222f8b00d02980e2807e0f",
+      "normalizedSourceOffset": 50190,
+      "normalizedSourceEndOffset": 50272
+    },
+    {
+      "rowIndex": 455,
+      "ref": "38:11",
+      "chapter": 38,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4e3aeb0ab2f342cf94da50cc97b42eba021f5948d57f48a48cccd17dcd8b7f93",
+      "normalizedSourceOffset": 50276,
+      "normalizedSourceEndOffset": 50365
+    },
+    {
+      "rowIndex": 456,
+      "ref": "38:12",
+      "chapter": 38,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "00e5044a682d658e004743cb917edf37535170d3fc26e65b713e02b2b7d0051a",
+      "normalizedSourceOffset": 50369,
+      "normalizedSourceEndOffset": 50470
+    },
+    {
+      "rowIndex": 457,
+      "ref": "38:13",
+      "chapter": 38,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8d27c6e8883c9cbcfc9c04d93771100b7d8cca1b2715de266d015c5496d92c4f",
+      "normalizedSourceOffset": 50474,
+      "normalizedSourceEndOffset": 50551
+    },
+    {
+      "rowIndex": 458,
+      "ref": "38:14",
+      "chapter": 38,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8c9a7b342d540181eada1fca6fe9096412d3e5bf7e6de1dcf962b963d89f5ab2",
+      "normalizedSourceOffset": 50555,
+      "normalizedSourceEndOffset": 50699
+    },
+    {
+      "rowIndex": 459,
+      "ref": "38:15",
+      "chapter": 38,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c474ab32bdde9c74afbe8606956efd943fc842e6adf7447fc5d0fe0a79d1c848",
+      "normalizedSourceOffset": 50703,
+      "normalizedSourceEndOffset": 50836
+    },
+    {
+      "rowIndex": 460,
+      "ref": "38:16",
+      "chapter": 38,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a32cb326d3889efae2804eee233acc468cf1de0c1d7ff5dd3b02d319fd1d3198",
+      "normalizedSourceOffset": 50840,
+      "normalizedSourceEndOffset": 50980
+    },
+    {
+      "rowIndex": 461,
+      "ref": "38:17",
+      "chapter": 38,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "50a0cc24937232b7fad110925195de464263be825362324eb66ab2bae20537a9",
+      "normalizedSourceOffset": 50984,
+      "normalizedSourceEndOffset": 51076
+    },
+    {
+      "rowIndex": 462,
+      "ref": "38:18",
+      "chapter": 38,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ea013ad1919d185b014fcb6e28f72275cd0a12778a3acf70bbf71bcba0cd0f5e",
+      "normalizedSourceOffset": 51080,
+      "normalizedSourceEndOffset": 51149
+    },
+    {
+      "rowIndex": 463,
+      "ref": "38:19",
+      "chapter": 38,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "97b5e881a36a5ff35899550994652f182c7092c295d743ec4a0637ea0ca5a89c",
+      "normalizedSourceOffset": 51153,
+      "normalizedSourceEndOffset": 51223
+    },
+    {
+      "rowIndex": 464,
+      "ref": "38:20",
+      "chapter": 38,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "8cf9a66ce0536da883428f20e86a426d7db5a5cd82aa264daa8a33ece1ddec23",
+      "normalizedSourceOffset": 51227,
+      "normalizedSourceEndOffset": 51319
+    },
+    {
+      "rowIndex": 465,
+      "ref": "38:21",
+      "chapter": 38,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fd4e4ac5a2193e2d64e74e77e3f9d54301e35b92489874a29f7980d3c0e88d9b",
+      "normalizedSourceOffset": 51323,
+      "normalizedSourceEndOffset": 51399
+    },
+    {
+      "rowIndex": 466,
+      "ref": "39:1",
+      "chapter": 39,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f34648570e08e7ad5a309d52698c9ef24b5b41edcabe4122b0fc28eade9da3c8",
+      "normalizedSourceOffset": 51456,
+      "normalizedSourceEndOffset": 51553
+    },
+    {
+      "rowIndex": 467,
+      "ref": "39:2",
+      "chapter": 39,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fd6850a37ab219295c9d8ec019f923ea5ae8be9cfae16d1339349702c6cc9547",
+      "normalizedSourceOffset": 51556,
+      "normalizedSourceEndOffset": 51612
+    },
+    {
+      "rowIndex": 468,
+      "ref": "39:3",
+      "chapter": 39,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "15cc719d4bd462ba5d0448d45bce8031337b9a8a640e4c311c7a4f708ea9841a",
+      "normalizedSourceOffset": 51615,
+      "normalizedSourceEndOffset": 51663
+    },
+    {
+      "rowIndex": 469,
+      "ref": "39:4",
+      "chapter": 39,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "848b04314a053dc5b733f62515b10b899b0abbcbd4e35cd71577178ce6ba4a83",
+      "normalizedSourceOffset": 51666,
+      "normalizedSourceEndOffset": 51719
+    },
+    {
+      "rowIndex": 470,
+      "ref": "39:5",
+      "chapter": 39,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "51ca91ae826f6ffebe916430da039eadb1b81e9f7d127abeffbbcc9932059569",
+      "normalizedSourceOffset": 51722,
+      "normalizedSourceEndOffset": 51773
+    },
+    {
+      "rowIndex": 471,
+      "ref": "39:6",
+      "chapter": 39,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "842bd8ad69a51b7f5f274fe0a8ab7df094f8685af65a3b4b6f6a18803b69100a",
+      "normalizedSourceOffset": 51776,
+      "normalizedSourceEndOffset": 51840
+    },
+    {
+      "rowIndex": 472,
+      "ref": "39:7",
+      "chapter": 39,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "9ccfe5bdca3790803194120ce8addcf695c70b419391d3f41cf7fed966528830",
+      "normalizedSourceOffset": 51843,
+      "normalizedSourceEndOffset": 51969
+    },
+    {
+      "rowIndex": 473,
+      "ref": "39:8",
+      "chapter": 39,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f80f85c8bbe93d5176daca4e5ba945f375fdd5125da8e5de574aa9303b78040c",
+      "normalizedSourceOffset": 51972,
+      "normalizedSourceEndOffset": 52097
+    },
+    {
+      "rowIndex": 474,
+      "ref": "39:9",
+      "chapter": 39,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "67d4cb72cf8f554a8ea2efd20187e7e1cac066e13b338f34134b0e7e9f145367",
+      "normalizedSourceOffset": 52100,
+      "normalizedSourceEndOffset": 52207
+    },
+    {
+      "rowIndex": 475,
+      "ref": "39:10",
+      "chapter": 39,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4d0014fab47f0043a230fa5609e8793803961ac9e10d7c15631ee1584deea445",
+      "normalizedSourceOffset": 52211,
+      "normalizedSourceEndOffset": 52366
+    },
+    {
+      "rowIndex": 476,
+      "ref": "39:11",
+      "chapter": 39,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "514d74bc37242329c98be2d4680342599010acd164d718be1bb7dc2867a666d7",
+      "normalizedSourceOffset": 52370,
+      "normalizedSourceEndOffset": 52474
+    },
+    {
+      "rowIndex": 477,
+      "ref": "39:12",
+      "chapter": 39,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a39885564d2800fa00995389c327010b869cd839d95a10a233e41edd93f6e8f1",
+      "normalizedSourceOffset": 52478,
+      "normalizedSourceEndOffset": 52519
+    },
+    {
+      "rowIndex": 478,
+      "ref": "39:13",
+      "chapter": 39,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "fd5d3c9974e0d44383c73506864791a0d1f04c74d686b1ab2ad9c67daf82a644",
+      "normalizedSourceOffset": 52523,
+      "normalizedSourceEndOffset": 52656
+    },
+    {
+      "rowIndex": 479,
+      "ref": "40:1",
+      "chapter": 40,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2e1d9f9e32c4003098b44b4c51fc3def8051696df8dd73f68a52357383702d61",
+      "normalizedSourceOffset": 52719,
+      "normalizedSourceEndOffset": 52854
+    },
+    {
+      "rowIndex": 480,
+      "ref": "40:2",
+      "chapter": 40,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a0c69841bb878c4ef9db9b9518a4fb6b5babd2e680bd1871a2d57914a37d8a8d",
+      "normalizedSourceOffset": 52857,
+      "normalizedSourceEndOffset": 52984
+    },
+    {
+      "rowIndex": 481,
+      "ref": "40:3",
+      "chapter": 40,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "d83633a660c3cc278889fc37c68198b9b9dc29da02d1a55b8c1dba90c3f315b1",
+      "normalizedSourceOffset": 52987,
+      "normalizedSourceEndOffset": 53064
+    },
+    {
+      "rowIndex": 482,
+      "ref": "40:4",
+      "chapter": 40,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "281c1709b5f9790c3bb8893f22a6cb8b7259a01e9378dbea223270947e8023fe",
+      "normalizedSourceOffset": 53067,
+      "normalizedSourceEndOffset": 53172
+    },
+    {
+      "rowIndex": 483,
+      "ref": "40:5",
+      "chapter": 40,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6c6cc3bc2c20a19c7afb738e42bad94cead30c46dc8d7158c8300df689759dc3",
+      "normalizedSourceOffset": 53175,
+      "normalizedSourceEndOffset": 53248
+    },
+    {
+      "rowIndex": 484,
+      "ref": "40:6",
+      "chapter": 40,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ce45642bc8e0a0c962caf87e7cc907529e0879e7bd21a32bfb55558bdfb702fe",
+      "normalizedSourceOffset": 53251,
+      "normalizedSourceEndOffset": 53362
+    },
+    {
+      "rowIndex": 485,
+      "ref": "41:1",
+      "chapter": 41,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "ea081d1f592a05586b5ff29ce0ba09a32348bc99ffa1d972d52c36861e393bc8",
+      "normalizedSourceOffset": 53422,
+      "normalizedSourceEndOffset": 53517
+    },
+    {
+      "rowIndex": 486,
+      "ref": "41:2",
+      "chapter": 41,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "55af257d9c3275e71bb3cda5545cd0db8cfe6411f84bca5815fd693c01e2eb0d",
+      "normalizedSourceOffset": 53520,
+      "normalizedSourceEndOffset": 53586
+    },
+    {
+      "rowIndex": 487,
+      "ref": "41:3",
+      "chapter": 41,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c8a96eec7e10907ddddb8e94091f0b63f8155009438660cc53c37fce9ece5d82",
+      "normalizedSourceOffset": 53589,
+      "normalizedSourceEndOffset": 53672
+    },
+    {
+      "rowIndex": 488,
+      "ref": "41:4",
+      "chapter": 41,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f3634b11f62878dd4decd09e9b776033c0372b3664313c336a8ef77a0e15daeb",
+      "normalizedSourceOffset": 53675,
+      "normalizedSourceEndOffset": 53763
+    },
+    {
+      "rowIndex": 489,
+      "ref": "41:5",
+      "chapter": 41,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "09236fe8cb14d6400e6a1633e10dbc3c313f6514d395db22d1764fffe2c5c6a3",
+      "normalizedSourceOffset": 53766,
+      "normalizedSourceEndOffset": 53866
+    },
+    {
+      "rowIndex": 490,
+      "ref": "41:6",
+      "chapter": 41,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "1bb0cc75ae6d50d30402435501d846b16ae0c487f9bd269f0fce9c102281fc9e",
+      "normalizedSourceOffset": 53869,
+      "normalizedSourceEndOffset": 53987
+    },
+    {
+      "rowIndex": 491,
+      "ref": "41:7",
+      "chapter": 41,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f82f4852db9b0bc4bf19d0d2df6d0eec427b36fe98aabca39d7c75ddaecf83f4",
+      "normalizedSourceOffset": 53990,
+      "normalizedSourceEndOffset": 54033
+    },
+    {
+      "rowIndex": 492,
+      "ref": "41:8",
+      "chapter": 41,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "787f9fb915edbb38617694ce4b529a1b065926e44f0b9cd020ac83f9968739cd",
+      "normalizedSourceOffset": 54036,
+      "normalizedSourceEndOffset": 54102
+    },
+    {
+      "rowIndex": 493,
+      "ref": "41:9",
+      "chapter": 41,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4d6a0f29b881ffc7763b5ac8b5722a4582088ca614774d1e33ad8132b0933e03",
+      "normalizedSourceOffset": 54105,
+      "normalizedSourceEndOffset": 54183
+    },
+    {
+      "rowIndex": 494,
+      "ref": "41:10",
+      "chapter": 41,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "68aba0e4a0a54dfd890eba984e8f28a18c9d470db038ccf75875544bb6227d03",
+      "normalizedSourceOffset": 54187,
+      "normalizedSourceEndOffset": 54245
+    },
+    {
+      "rowIndex": 495,
+      "ref": "41:11",
+      "chapter": 41,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "28b8ebf33d680e3b3b1e9409fc35c26193e4ff388c1b8543cc8a15afb82e4835",
+      "normalizedSourceOffset": 54249,
+      "normalizedSourceEndOffset": 54357
+    },
+    {
+      "rowIndex": 496,
+      "ref": "41:12",
+      "chapter": 41,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "86bc77ab40bfd0b86669c6c697661a5e4e82b80775c41ddde0a5ccae3470b275",
+      "normalizedSourceOffset": 54361,
+      "normalizedSourceEndOffset": 54422
+    },
+    {
+      "rowIndex": 497,
+      "ref": "41:13",
+      "chapter": 41,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "a8e155f2efb967189b2ebc3c8d354ee10b13324f0f786b7419648519dcaadbdf",
+      "normalizedSourceOffset": 54426,
+      "normalizedSourceEndOffset": 54494
+    },
+    {
+      "rowIndex": 498,
+      "ref": "41:14",
+      "chapter": 41,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "55269748f81f9b3e0431c03315694b89e406cf5e1e6dc7b1877ab38b99c2e1b1",
+      "normalizedSourceOffset": 54498,
+      "normalizedSourceEndOffset": 54570
+    },
+    {
+      "rowIndex": 499,
+      "ref": "41:15",
+      "chapter": 41,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "f615ced9791be5d8174c0e8bf3068a213371d3b47bcc3b043bf29df5388f4ae4",
+      "normalizedSourceOffset": 54574,
+      "normalizedSourceEndOffset": 54664
+    },
+    {
+      "rowIndex": 500,
+      "ref": "41:16",
+      "chapter": 41,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "903174f884c5e57df3ec657c1429e23cb279b685818cb26688c23b50edeec579",
+      "normalizedSourceOffset": 54668,
+      "normalizedSourceEndOffset": 54768
+    },
+    {
+      "rowIndex": 501,
+      "ref": "42:1",
+      "chapter": 42,
+      "verse": 1,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "204256309bfc21a9459aece2f097cf13f37270879557dfdde12fcdf65c960820",
+      "normalizedSourceOffset": 54814,
+      "normalizedSourceEndOffset": 54911
+    },
+    {
+      "rowIndex": 502,
+      "ref": "42:2",
+      "chapter": 42,
+      "verse": 2,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "66ca779769388dfb01b3533d73704c4e260594b514ccf218ec2a9a7f29bce8a9",
+      "normalizedSourceOffset": 54914,
+      "normalizedSourceEndOffset": 55014
+    },
+    {
+      "rowIndex": 503,
+      "ref": "42:3",
+      "chapter": 42,
+      "verse": 3,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "2dd16d9d4fd4f7f405d1fde1a48ae1d631fa086fbfda0f0a8575b0dcdef28c99",
+      "normalizedSourceOffset": 55017,
+      "normalizedSourceEndOffset": 55152
+    },
+    {
+      "rowIndex": 504,
+      "ref": "42:4",
+      "chapter": 42,
+      "verse": 4,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "11b35497e3d20ef63cf4446c7a6cfa50adac3cb773ec3afd01b900a1713c5864",
+      "normalizedSourceOffset": 55156,
+      "normalizedSourceEndOffset": 55180
+    },
+    {
+      "rowIndex": 505,
+      "ref": "42:5",
+      "chapter": 42,
+      "verse": 5,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "be528e2477e8a465d2584a5c05427521c97149c032081698af43c1c6561a581a",
+      "normalizedSourceOffset": 55183,
+      "normalizedSourceEndOffset": 55224
+    },
+    {
+      "rowIndex": 506,
+      "ref": "42:6",
+      "chapter": 42,
+      "verse": 6,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6ba76a51673ed84b8ceb7f8ab87e55d620003732a337db01d132ec7e237561e2",
+      "normalizedSourceOffset": 55228,
+      "normalizedSourceEndOffset": 55284
+    },
+    {
+      "rowIndex": 507,
+      "ref": "42:7",
+      "chapter": 42,
+      "verse": 7,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "58023a720be84c79ae9903ca9e185433eb6f5cbb1dc16366eda56bbdbf9632c0",
+      "normalizedSourceOffset": 55288,
+      "normalizedSourceEndOffset": 55307
+    },
+    {
+      "rowIndex": 508,
+      "ref": "42:8",
+      "chapter": 42,
+      "verse": 8,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6c062841812b22682e06dc6d3592c4cc0a68309e2f23679f8c3fc08ea75136b7",
+      "normalizedSourceOffset": 55310,
+      "normalizedSourceEndOffset": 55381
+    },
+    {
+      "rowIndex": 509,
+      "ref": "42:9",
+      "chapter": 42,
+      "verse": 9,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "555acf8e27ca31707de7d6543b4e2c649f26f80b832f06ac256ceba3130abd1a",
+      "normalizedSourceOffset": 55384,
+      "normalizedSourceEndOffset": 55474
+    },
+    {
+      "rowIndex": 510,
+      "ref": "42:10",
+      "chapter": 42,
+      "verse": 10,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "0c0365f8e3613ba558a448783f1aee71a7455f60fdd6d0a1af415b2058be224f",
+      "normalizedSourceOffset": 55477,
+      "normalizedSourceEndOffset": 55557
+    },
+    {
+      "rowIndex": 511,
+      "ref": "42:11",
+      "chapter": 42,
+      "verse": 11,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "6a8ef198538a3604ec19ccba2c6f09e346769267b3f1327304edd751d5af5174",
+      "normalizedSourceOffset": 55560,
+      "normalizedSourceEndOffset": 55677
+    },
+    {
+      "rowIndex": 512,
+      "ref": "42:12",
+      "chapter": 42,
+      "verse": 12,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "4fcca395459a64aa33796d4080200177937604dbf24a8f3ef19c9e36a2d53d01",
+      "normalizedSourceOffset": 55681,
+      "normalizedSourceEndOffset": 55789
+    },
+    {
+      "rowIndex": 513,
+      "ref": "42:13",
+      "chapter": 42,
+      "verse": 13,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "b610b4dcfae2d2c669c25f253f7b775dd8d7b200d202410a4b4b797b3cd83fac",
+      "normalizedSourceOffset": 55793,
+      "normalizedSourceEndOffset": 55875
+    },
+    {
+      "rowIndex": 514,
+      "ref": "42:14",
+      "chapter": 42,
+      "verse": 14,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "57eb3de0d894ab2f5b1bd4433763e75b6828c34988f15c0b48a10f7f6baaaea7",
+      "normalizedSourceOffset": 55879,
+      "normalizedSourceEndOffset": 55961
+    },
+    {
+      "rowIndex": 515,
+      "ref": "42:15",
+      "chapter": 42,
+      "verse": 15,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "53720e03bf74884eeaf5035883b39b182a76b39f6442824eb0522968da829f5d",
+      "normalizedSourceOffset": 55965,
+      "normalizedSourceEndOffset": 56048
+    },
+    {
+      "rowIndex": 516,
+      "ref": "42:16",
+      "chapter": 42,
+      "verse": 16,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c57acef89f616f85bb8a29a8f92068b8dc9a3c5a88986a7520c8858ce63902eb",
+      "normalizedSourceOffset": 56052,
+      "normalizedSourceEndOffset": 56189
+    },
+    {
+      "rowIndex": 517,
+      "ref": "42:17",
+      "chapter": 42,
+      "verse": 17,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "c809c10b664722550c45f003820cfcbb8867d8d190221dae31fdfb23d3368af3",
+      "normalizedSourceOffset": 56193,
+      "normalizedSourceEndOffset": 56285
+    },
+    {
+      "rowIndex": 518,
+      "ref": "42:18",
+      "chapter": 42,
+      "verse": 18,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "cae5e6ca9c5a11b9150e648d99526c749a7e6151d7bfae6a0562e2d6839de5ec",
+      "normalizedSourceOffset": 56289,
+      "normalizedSourceEndOffset": 56374
+    },
+    {
+      "rowIndex": 519,
+      "ref": "42:19",
+      "chapter": 42,
+      "verse": 19,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "05554c2383113141c58a3edcd10299a25a7ec2daa091b1d8273f0db2c437c41e",
+      "normalizedSourceOffset": 56378,
+      "normalizedSourceEndOffset": 56490
+    },
+    {
+      "rowIndex": 520,
+      "ref": "42:20",
+      "chapter": 42,
+      "verse": 20,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "faf675898d5c40b0e08e7ea2929e4d4206257510dc9bfdc1ab337ea129b7cdfa",
+      "normalizedSourceOffset": 56494,
+      "normalizedSourceEndOffset": 56552
+    },
+    {
+      "rowIndex": 521,
+      "ref": "42:21",
+      "chapter": 42,
+      "verse": 21,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "095f8131d24dfe58af546107fb411272b88141c5a92b718a6b511053c69e588f",
+      "normalizedSourceOffset": 56556,
+      "normalizedSourceEndOffset": 56619
+    },
+    {
+      "rowIndex": 522,
+      "ref": "42:22",
+      "chapter": 42,
+      "verse": 22,
+      "sourceMode": "syriac",
+      "candidateTextSha256": "73ae8c173f98908c858bc44e0e26b735bebaca848aae9d5482ad5eeb5dab2f74",
+      "normalizedSourceOffset": 56623,
+      "normalizedSourceEndOffset": 56710
+    }
+  ]
+}

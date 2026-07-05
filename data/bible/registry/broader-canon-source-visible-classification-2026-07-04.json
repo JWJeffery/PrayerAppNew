@@ -227,5 +227,18 @@
     "rowLevelCollationComplete": false,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false
+  },
+  "odesOfSolomonSourceBinding": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-source-binding-2026-07-05.json",
+    "status": "app_render_eligible_textually_trusted_source_binding_backed",
+    "sourceVisibleImpact": "Odes of Solomon is row-level source-bound to the recorded public-domain Nuhra 2021 source snapshot and is eligible for app rendering.",
+    "bibleTextMutation": false,
+    "candidateJsonMutation": true,
+    "sourceBindingBacked": true,
+    "textTrust": true,
+    "appRenderPromotion": true,
+    "rowLevelCollationComplete": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
   }
 }

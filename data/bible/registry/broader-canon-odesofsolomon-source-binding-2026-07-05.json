@@ -1,0 +1,43 @@
+{
+  "schema": "broader-canon-odesofsolomon-source-binding-v1",
+  "id": "broader_canon_odesofsolomon_source_binding_2026_07_05",
+  "status": "app_render_eligible_textually_trusted_source_binding_backed",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+  "rebuildRecordPath": "data/bible/registry/broader-canon-odesofsolomon-nuhra-rebuild-2026-07-05.json",
+  "rawSourcePath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-snapshot-2026-07-05.html",
+  "rawSourceMetadataPath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-metadata-2026-07-05.json",
+  "rowBindingPath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-row-bindings-2026-07-05.json",
+  "source": {
+    "title": "The Odes of Solomon: The Nuhra Version (2021)",
+    "url": "https://www.nuhra.net/nuhra-2021",
+    "citation": "Samuel Zinner and Mark M. Mattison, The Odes of Solomon: The Nuhra Version (2021)",
+    "sourceUse": "complete public-domain Nuhra source snapshot; row-level source binding complete"
+  },
+  "collation": {
+    "method": "normalized_exact_candidate_row_sequence_match_against_recorded_source_snapshot",
+    "chapterCount": 42,
+    "rowCount": 522,
+    "matchedRowCount": 522,
+    "missedRowCount": 0,
+    "sourceSnapshotSha256": "635c283d205b90ef44996778b05bb99db09122d99dc1e69f7b0118fd22d4e480",
+    "candidateFileSha256": "603ef34e04710ab73071b2bc43200b43ffae789a433ae3c2539dce7cd2f34cd9",
+    "candidateTextSha256": "65d2dc13a550f63f845ea8342c352681179e083102ae6a732e859cf5cf3b98eb"
+  },
+  "trustBoundary": {
+    "textTrustPromotion": true,
+    "appRenderPromotion": true,
+    "rowLevelCollationComplete": true,
+    "sourceBindingBacked": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
+  },
+  "priorBlockedClaimsResolvedForThisCandidate": [
+    "broader_canon_odesofsolomon_text_trust_from_rebuild_without_collation",
+    "broader_canon_odesofsolomon_app_render_from_rebuild_without_collation"
+  ],
+  "nextAllowedWork": [
+    "render Odes of Solomon in app surfaces that consume app_render_eligible_textually_trusted_source_binding_backed Bible candidates",
+    "continue broader-canon text-trust work on the next selected assignment"
+  ]
+}
