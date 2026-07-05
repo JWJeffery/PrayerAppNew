@@ -19,7 +19,7 @@
   "trustBoundary": {
     "candidateTextCertifiedTrusted": true,
     "trustPromotion": true,
-    "appRenderPromotion": false,
+    "appRenderPromotion": true,
     "globalBroaderCanonTrustPromotion": false,
     "rebuiltTextSha256": "5575a6301d4ff0e4096b3b1f405c4b9a11fbf3f70a1b8b6cd48ea36982fda67a",
     "certifiedCandidateSha256": "19908d4afbb1461a7c818371320be10cb447c950c0c716906a667ad2529f3860"
@@ -28,5 +28,12 @@
     "This certifies 3 Corinthians only, not the whole broader-canon corpus.",
     "App render eligibility still requires a separate app-render policy/gate update.",
     "Other broader-canon blocked candidates remain blocked."
-  ]
+  ],
+  "latestAppRenderEligibility": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-app-render-eligibility-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_source_map_backed",
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
+  }
 }

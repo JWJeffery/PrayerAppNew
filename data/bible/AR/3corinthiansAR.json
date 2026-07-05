@@ -325,7 +325,7 @@
       ]
     }
   ],
-  "status": "textually_trusted_source_map_backed_pending_app_render_policy",
+  "status": "app_render_eligible_textually_trusted_source_map_backed",
   "title": "3 Corinthians",
   "sourceRebuild": {
     "status": "rebuilt_from_corrected_mr_james_source_map",
@@ -335,8 +335,9 @@
     "correctedStrictSourceRows": 33,
     "previousCandidateRows": 19,
     "trustPromotion": true,
-    "appRenderPromotion": false,
-    "textTrustCertificationPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json"
+    "appRenderPromotion": true,
+    "textTrustCertificationPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json",
+    "appRenderEligibilityPath": "data/bible/registry/broader-canon-3corinthians-app-render-eligibility-2026-07-04.json"
   },
   "introductoryNarrative": {
     "sourceUnitId": "intro_narrative",

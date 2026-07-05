@@ -1,0 +1,32 @@
+{
+  "schema": "broader-canon-3corinthians-app-render-eligibility-v1",
+  "id": "broader_canon_3corinthians_app_render_eligibility_2026_07_04",
+  "status": "app_render_eligible_textually_trusted_source_map_backed",
+  "recordedAt": "2026-07-04T00:00:00-07:00",
+  "candidatePath": "data/bible/AR/3corinthiansAR.json",
+  "sourceMapPath": "data/bible/registry/broader-canon-3corinthians-mr-james-source-map-2026-07-04.json",
+  "rebuildPath": "data/bible/registry/broader-canon-3corinthians-source-shaped-rebuild-2026-07-04.json",
+  "textTrustCertificationPath": "data/bible/registry/broader-canon-3corinthians-text-trust-certification-2026-07-04.json",
+  "eligibilityBasis": {
+    "candidateRows": 33,
+    "correctedStrictSourceRows": 33,
+    "textTrustCertified": true,
+    "rowTextMatchesSourceMap": true,
+    "old19RowCandidateSuperseded": true,
+    "visibleSourceAnomaly86Preserved": true,
+    "appRenderScope": "3corinthians_only"
+  },
+  "trustBoundary": {
+    "appRenderPromotion": true,
+    "candidateTextTrusted": true,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "candidateSha256BeforeStatusUpdate": "19908d4afbb1461a7c818371320be10cb447c950c0c716906a667ad2529f3860",
+    "candidateSha256AfterStatusUpdate": "ed4af203a2fa6b8e0b3b873364a187e3c158a3e5f1f7257579add9407273d41d"
+  },
+  "remainingBoundaries": [
+    "This opens app-render eligibility for 3 Corinthians only.",
+    "This does not certify or open the whole broader-canon corpus.",
+    "Other broader-canon candidates remain governed by their existing source gates and quarantine state."
+  ]
+}

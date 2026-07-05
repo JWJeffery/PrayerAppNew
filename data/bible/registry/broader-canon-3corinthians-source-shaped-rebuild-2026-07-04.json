@@ -37,5 +37,11 @@
     "trustPromotion": true,
     "appRenderPromotion": false,
     "globalBroaderCanonTrustPromotion": false
+  },
+  "latestAppRenderEligibility": {
+    "recordPath": "data/bible/registry/broader-canon-3corinthians-app-render-eligibility-2026-07-04.json",
+    "status": "app_render_eligible_textually_trusted_source_map_backed",
+    "appRenderPromotion": true,
+    "globalBroaderCanonTrustPromotion": false
   }
 }
