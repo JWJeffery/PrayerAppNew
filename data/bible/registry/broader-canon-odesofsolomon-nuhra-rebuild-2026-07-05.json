@@ -1,0 +1,37 @@
+{
+  "schema": "broader-canon-odesofsolomon-nuhra-rebuild-v1",
+  "id": "broader_canon_odesofsolomon_nuhra_rebuild_2026_07_05",
+  "status": "rebuilt_complete_nuhra_source_snapshot_pending_collation",
+  "recordedAt": "2026-07-05T00:00:00-07:00",
+  "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+  "rawSourcePath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-snapshot-2026-07-05.html",
+  "rawSourceMetadataPath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-metadata-2026-07-05.json",
+  "supersedesFragmentaryExclusionPath": "data/bible/registry/broader-canon-odesofsolomon-fragmentary-exclusion-2026-07-04.json",
+  "source": {
+    "title": "The Odes of Solomon: The Nuhra Version (2021)",
+    "url": "https://www.nuhra.net/nuhra-2021",
+    "citation": "Samuel Zinner and Mark M. Mattison, The Odes of Solomon: The Nuhra Version (2021)",
+    "sourceUse": "complete public-domain source snapshot rebuild pending collation"
+  },
+  "repair": {
+    "action": "replaced_three_row_fragment_with_complete_42_ode_public_domain_candidate",
+    "oldRowCount": 3,
+    "rebuiltChapterCount": 42,
+    "rebuiltRowCount": 522,
+    "bibleVerseTextMutation": true,
+    "candidateJsonMutation": true
+  },
+  "trustBoundary": {
+    "textTrustPromotion": false,
+    "appRenderPromotion": false,
+    "rowLevelCollationComplete": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false,
+    "candidateFileSha256": "2d0a067df1c56f5d3666f8acc13d979b7f2890e250f393937db11b7db8e99ad5",
+    "candidateTextSha256": "10ca0c60d4b891d6e1e8f101f38cae4e636e710c4348bb0cd192da2e64a47a74"
+  },
+  "nextAllowedWork": [
+    "perform row-level source binding/collation against the recorded Nuhra source snapshot",
+    "only after collation decide text-trust and app-render eligibility"
+  ]
+}

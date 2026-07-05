@@ -213,6 +213,19 @@
     "bibleTextMutation": false,
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false,
-    "futureRebuildPermitted": true
+    "futureRebuildPermitted": true,
+    "supersededBy": "data/bible/registry/broader-canon-odesofsolomon-nuhra-rebuild-2026-07-05.json"
+  },
+  "odesOfSolomonNuhraRebuild": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-nuhra-rebuild-2026-07-05.json",
+    "status": "rebuilt_complete_nuhra_source_snapshot_pending_collation",
+    "sourceVisibleImpact": "Odes of Solomon has been rebuilt from the complete public-domain Nuhra 2021 source snapshot, replacing the prior three-row fragment. Text trust and app rendering remain blocked until row-level collation.",
+    "bibleTextMutation": true,
+    "candidateJsonMutation": true,
+    "textTrust": false,
+    "appRenderPromotion": false,
+    "rowLevelCollationComplete": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
   }
 }

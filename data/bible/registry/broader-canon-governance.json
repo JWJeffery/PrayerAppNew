@@ -157,7 +157,9 @@
     "broader_canon_odesofsolomon_fragmentary_candidate_treated_as_complete",
     "broader_canon_odesofsolomon_fragmentary_candidate_app_render_eligible",
     "broader_canon_odesofsolomon_rebuilt_without_complete_source_snapshot",
-    "broader_canon_odesofsolomon_textually_trusted_from_three_row_fragment"
+    "broader_canon_odesofsolomon_textually_trusted_from_three_row_fragment",
+    "broader_canon_odesofsolomon_text_trust_from_rebuild_without_collation",
+    "broader_canon_odesofsolomon_app_render_from_rebuild_without_collation"
   ],
   "stringTextOnlyPaths": [
     "data/bible/AR/3corinthiansAR.json",
@@ -298,7 +300,10 @@
     "broader_canon_jubilees_completed_certified_and_render_eligible",
     "broader_canon_odesofsolomon_fragmentary_exclusion_recorded",
     "broader_canon_odesofsolomon_current_candidate_excluded_from_app_render",
-    "broader_canon_odesofsolomon_current_candidate_excluded_from_completion"
+    "broader_canon_odesofsolomon_current_candidate_excluded_from_completion",
+    "broader_canon_odesofsolomon_complete_candidate_rebuilt_from_nuhra_public_domain_source",
+    "broader_canon_odesofsolomon_fragmentary_exclusion_superseded_by_complete_rebuild",
+    "broader_canon_odesofsolomon_complete_candidate_pending_collation"
   ],
   "appUseSourceGate": {
     "recordPath": "data/bible/registry/broader-canon-app-use-source-gate-2026-07-04.json",
@@ -634,6 +639,24 @@
     "globalBroaderCanonTrustPromotion": false,
     "otherBroaderCanonCandidatePromotion": false,
     "bibleTextMutation": false,
-    "futureRebuildPermitted": true
+    "futureRebuildPermitted": true,
+    "supersededBy": "data/bible/registry/broader-canon-odesofsolomon-nuhra-rebuild-2026-07-05.json"
+  },
+  "latestOdesOfSolomonNuhraRebuild": {
+    "recordPath": "data/bible/registry/broader-canon-odesofsolomon-nuhra-rebuild-2026-07-05.json",
+    "status": "rebuilt_complete_nuhra_source_snapshot_pending_collation",
+    "candidatePath": "data/bible/ODES/odesofsolomonSY.json",
+    "rawSourcePath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-snapshot-2026-07-05.html",
+    "rawSourceMetadataPath": "data/bible/translations/odesofsolomon/raw/odesofsolomon-nuhra-2021-source-metadata-2026-07-05.json",
+    "oldRowCount": 3,
+    "rebuiltChapterCount": 42,
+    "rebuiltRowCount": 522,
+    "bibleTextMutation": true,
+    "candidateJsonMutation": true,
+    "textTrustPromotion": false,
+    "appRenderPromotion": false,
+    "rowLevelCollationComplete": false,
+    "globalBroaderCanonTrustPromotion": false,
+    "otherBroaderCanonCandidatePromotion": false
   }
 }
