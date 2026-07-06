@@ -1,19 +1,43 @@
 
-## Immediate pending work (as of end of session, 2026-07-05, resumed)
+## Pending work (as of end of session, 2026-07-06)
 
-The 8 Holy Days collect fixes previously pending here, plus the Holy Cross Day entry, have been applied to `components/anglican.json`, re-verified character-for-character against `book_of_common_prayer.pdf` at application time (see AUDIT_GOVERNANCE_LEDGER.md, "Session, 2026-07-05 (resumed) — Holy Days collects batch 3, applied," for the full list and an important method-correction finding: several of the originally-drafted fixes understated the actual scope of error).
+For full session history and consolidated workflow practices, see `AUDIT_GOVERNANCE_LEDGER.md`, sections "Standing Workflow Practices (consolidated, 2026-07-06)" and "Session history recap, 2026-07-06." This note covers only what's actually left to do.
 
-**Per the finish-what-we-start rule, Morning Prayer Collects are still not complete.** Remaining work before Morning Prayer as a whole can be marked done:
+### 1. Collects audit — in progress, next in queue
 
-1. **Common of Saints collects (the generic Martyr/Missionary/Pastor/Theologian/Monastic/"Of a Saint" formularies)** — confirmed 2026-07-06 these do not exist anywhere in the codebase and nothing currently references them, so this is new-build work needing its own architecture/schema decision (ID convention, file location, calendar-engine fallback behavior), not a targeted repair. **Deliberately scheduled for after item 2 below, not before** — see governance ledger, "Deferred, 2026-07-06."
-2. **Automated-sweep triage — first pass complete 2026-07-06.** Re-ran the sweep, checked live/dead status for every flagged item before spending effort, found and fixed real errors in 8 live entries (Proper 3, 14, 15, 18; Advent 2; Epiphany 1; Easter 6; James the Apostle). Confirmed the entire `bcp-collect-ordinary-N` family (14 more entries) plus `easter-wednesday` are dead data with serious internal corruption — deprioritized, not fixed, but documented in the ledger in case ever revived. Re-running the sweep after these fixes shows only known false positives and dead data remaining — **this pass is effectively done**, pending final confirmation.
+Of 133 total collect entries, 92 are confirmed live (referenced somewhere real in the codebase — check via full-repo grep, not just `data/season/*.json`) and 41 are confirmed dead. **68 of the 92 live collects are verified** against `book_of_common_prayer.pdf` directly. **24 remain completely unchecked:**
 
-Also deferred as a new-build feature (not started, not repair-track): **Quinquagesima/Sexagesima/Septuagesima as clearly-labeled, opt-in historical add-ons** on top of the 1979 base, plus a broader standing instruction to flag (not discard) any other pre-1979 content encountered during future audit work that might be worth offering the same way. See governance ledger, "Deferred, 2026-07-06 — Quinquagesima/Sexagesima..." Both this and Common of Saints are queued behind item 2 above.
+- Propers 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 (11 entries)
+- All Saints
+- Annunciation
+- Presentation
+- Holy Innocents
+- Holy Name
+- Peter & Paul
+- Mary Magdalene
+- Luke
+- Matthew
+- Simon & Jude
+- St. Stephen
+- Confession of St. Peter
+- `default-ferial`
 
-Closed 2026-07-06: **Collects vs. Lesser Feasts and Fasts 2024.** Re-established the true scope first (2 of the assumed 8 candidates — Joseph, James of Jerusalem — turned out to be BCP1979 Major Feasts, not LFF, misclassified in an earlier session). All 6 genuine LFF entries verified correct against the actual PDF. Found and fixed one real remaining problem: **Fabian was still fully fabricated** despite an earlier session's note claiming the pattern was identified — the fix was never actually applied to the data. Also fixed real (not trivial) errors in James of Jerusalem rite1 and a trivial one in Joseph rite1, both found during re-verification. See governance ledger for full detail.
+Method that's been working: pull each collect's current text, find the exact corresponding page in `book_of_common_prayer.pdf` (both traditional and contemporary language), compare directly, fix what's wrong, confirm what's right. This pass has found real misassignments (not just wording drift) at a meaningfully high rate — treat every unchecked entry as a real candidate for a serious problem, not a formality.
 
-**All content changes through the LFF cross-check have been reviewed by Josh and merged to `main`** (fast-forward, `9643808..d216428`, 2026-07-06). **The triage-pass-1 fixes have also been reviewed (before/after summary) and merged to `main`** (fast-forward, `d216428..aa65dbd`, 2026-07-06).
+### 2. Canticle selection logic — not started
 
-Completed 2026-07-06: **Full Canticle set (1–21) built.** 9 canticles were completely missing from `anglican.json` (Benedicite/Song of Creation, Gloria in excelsis, and 7 canticles that exist only in contemporary language: Cantemus Domino, Ecce Deus, Quaerite Dominum, Surge illuminare, Kyrie Pantokrator, Dignus es, Magna et mirabilia). All 9 built from `book_of_common_prayer.pdf` directly and verified via automated chunk-match sweep. See governance ledger for full detail, including what's still NOT done (the Table of Suggested Canticles selection logic, and lectionary lesson-selection generally) — the 21 texts existing correctly is not the same as the app correctly choosing which one to show on a given day, which remains unaudited.
+The full Canticle 1–21 text set now exists and is verified, but the Table of Suggested Canticles (BCP p. 143–144 — which canticle pairs with which day/season/reading) has not been audited, and neither has the lectionary lesson-selection logic generally. Having the right text is not the same as the app choosing the right text on a given day.
 
-Once the Canticle selection-logic and lectionary-lesson-selection gaps above are addressed (or explicitly deferred): Morning Prayer can be marked complete and Evening Prayer begun. Only then take up the deferred features (Common of Saints, Quinquagesima/Sexagesima).
+### 3. Deferred features — not started, intentionally queued behind items 1 and 2
+
+- **Common of Saints collects** (generic Martyr/Missionary/Pastor/Theologian/Monastic/"Of a Saint" formularies) — no existing ID/schema convention anywhere in the codebase; needs its own architecture decision before any content work starts.
+- **Quinquagesima/Sexagesima/Septuagesima** as clearly-labeled, opt-in historical add-ons on top of the 1979 base — also needs its own architecture (settings toggle vs. calendar overlay; sourcing rigorously from 1662 BCP or similar; never blended silently into 1979 output).
+- Standing instruction: flag (don't discard) any other pre-1979 content encountered in future audit work as a candidate for the same opt-in treatment.
+
+### Sequencing
+
+Once item 1 (Collects) and item 2 (Canticle selection) are done: Morning Prayer can be marked complete and Evening Prayer audit begun. Only then take up item 3.
+
+### Git state
+
+Everything through this session is merged to `main` (currently at `1800237`). Nothing is pending application.

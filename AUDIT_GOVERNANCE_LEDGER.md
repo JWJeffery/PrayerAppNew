@@ -239,6 +239,36 @@ Josh pushed back on the amber/red/green semantics: amber must mean "not yet audi
 
 **Running total: 68 of 92 live collects verified. 24 remain**: Propers 19–29 (11 entries), All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, `default-ferial`.
 
+## Standing Workflow Practices (consolidated, 2026-07-06)
+
+These accumulated piecemeal across this session's work and are collected here so a future session doesn't have to rediscover them one at a time.
+
+**Source discipline:**
+- Never trust a prior session's "confirmed fixed" or "checking out correctly" note without re-verifying against the primary source at the point of application. This caught real, materially different problems (a still-fabricated collect; genuine wording errors) on multiple separate occasions this session. Treat every such note as a lead to re-check, not a settled fact.
+- Lectionary readings for the Daily Office: **1979 BCP only** (bcponline.org or justus.anglican.org/resources/bcp/bcp79.pdf). Never RCL, USCCB, Satucket, ACNA 2019, 1928 BCP, or any other source. This rule is about preventing *accidental* substitution of the wrong source — it does not prohibit Josh *deliberately* adding clearly-labeled, opt-in historical content (see the Quinquagesima/Sexagesima decision below) on top of the 1979 base.
+- "Live" vs. "dead" data must be checked across the **whole codebase** by grep, not assumed from one likely-looking directory (`data/season/*.json` alone missed the actual location of fixed-date saint-day references, which cost real misprioritized effort on the LFF cross-check).
+- Dashboard status colors: **amber means "not yet audited," full stop** — not "audited, mostly fine, some doubt remains." An item is amber until it has actually been checked, at which point it becomes green (confirmed correct) or red (confirmed wrong, needs fixing). Vague "still open" language that doesn't give a precise, itemized remaining-scope list is not acceptable going forward.
+
+**Git / patch-application workflow (this sandbox has no push credentials):**
+- Generate patches with `git format-patch`, verified with `git apply --check` against a **fresh clone** of the actual current remote branch — never just the local working copy, which can silently diverge.
+- **`git am` regenerates commit hashes.** After Josh applies and pushes a patch, this sandbox's local copy of that same commit has a *different hash* than what's actually on GitHub, even though the content is identical. This causes the next patch to be built on a stale base. Fix: `git fetch origin`, then `git rebase --onto origin/<branch> <old-local-commit> HEAD` to rebuild pending work onto the real current state before generating the next patch. Always re-verify with a fresh clone afterward.
+- Patch files are **transport only, not a record**. Once applied and confirmed pushed (commit hash in `git push` output matches), the `.patch` file itself is disposable — no numbering scheme, no archive. `git log` on the actual branch is the single source of truth for what's applied.
+- **File hand-off is unreliable on mobile** (phone downloads land on the phone's local storage, with no filesystem connection to a cloud Codespace) but works via **drag-and-drop into the Codespace's browser file explorer on a laptop**. Heredoc-paste-into-terminal is a fallback, but must be split into two separate paste actions (create the file, confirm it landed via e.g. `ls filename`, *then* run the git commands) — combining both into one paste risks the shell only executing part of it.
+- Provide the actual explicit command block every time, even if "same as before" would be shorter — Josh is not a coder and referencing back to earlier instructions creates friction. Same principle applies to code edits generally: always give full surrounding-context landmarks, never a single bracket.
+- Content-review checkpoints (a plain-English before/after summary, no code diffs) happened before merging larger batches to `main`; smaller/mechanical batches were sometimes merged directly by Josh without a separate review pass, which is his call to make.
+
+## Session history recap, 2026-07-06
+
+Brief account of what this session accomplished, for quick orientation:
+
+1. Applied the 8 pending Holy Days collect fixes plus Holy Cross Day (batch 3), re-verifying all against `book_of_common_prayer.pdf` rather than trusting the prior session's draft — found several understated errors in the process.
+2. Produced a full plain-English content-review document for Josh; he reviewed and approved merge to `main`.
+3. Closed the LFF-2024 cross-check: found Fabian was still fully fabricated despite an earlier session claiming otherwise; found Joseph and James of Jerusalem were misclassified as LFF when they're actually BCP1979 entries; fixed all three.
+4. Deferred two new-build features rather than starting them opportunistically: Common of Saints (no existing schema anywhere in the codebase) and Quinquagesima/Sexagesima/Septuagesima as opt-in historical add-ons (Josh's explicit framing: the 1979-only rule prevents accidental substitution, not deliberate curated extras).
+5. Built the full Canticle set (1–21) — 9 canticles were completely missing from the codebase and were transcribed and verified against source.
+6. Established the true scope of the Collects audit: 92 of 133 total collect entries are live, 41 dead — and corrected an earlier assumption that the LFF work had touched live content (it hadn't). Systematically worked through the live collects season by season (Advent through Holy Week, Easter through Ascension, Propers 9–17 and Trinity Sunday), finding and fixing several serious misassignments along the way (Epiphany Day and Last Sunday after Epiphany both had entirely wrong text; Holy Tuesday and Proper 16 both had their real content missing from the file, replaced by a neighboring day's text).
+7. All of the above is merged to `main`. **68 of 92 live collects are now verified; 24 remain**, listed explicitly rather than left vague.
+
 ## Session, 2026-07-06 — LFF 2024 cross-check, recon and fixes applied
 
 Before starting, re-established the actual scope of the "LFF-sourced collects" bucket rather than trusting the prior session's count, per standing rule. Found **two of the eight previously-assumed LFF candidates are actually misclassified — Saint Joseph and Saint James of Jerusalem are both Major Feasts fixed in the BCP1979 itself**, not LFF at all (confirmed via `book_of_common_prayer.pdf`, which lists both explicitly as Major Feasts and gives full collect text for each). This means the true LFF-sourced bucket is 6 entries, not 8.
