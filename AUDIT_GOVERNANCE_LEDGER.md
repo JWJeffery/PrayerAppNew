@@ -185,6 +185,37 @@ For the 7 contemporary-only canticles, followed the existing precedent set by Ve
 
 **Not yet done:** the Table of Suggested Canticles (p. 143–144, which canticle pairs with which day/season/reading) has not been audited — the 9 new entries exist as correct standalone texts, but nothing yet governs when the app should actually select and display each one. This is a separate follow-on task, not addressed in this session.
 
+## Session, 2026-07-06 — Full-coverage Collects audit begun: true scope established, Advent through Holy Week done
+
+Josh pushed back on the amber/red/green semantics: amber must mean "not yet audited," not "audited with some remaining doubt." This prompted an honest accounting of actual Collects coverage rather than continuing to rely on the automated sweep's necessarily-incomplete flagging.
+
+**Established the true numbers first.** Of 133 total collect entries in `anglican.json`, exactly **92 are live** (referenced by some real calendar mechanism in the codebase — checked via full-repo grep, not just `data/season/`) and 41 are dead (zero references anywhere). Cross-referencing against every fix and confirmation made across this entire audit history, only **29 of the 92 live collects had actually been checked** prior to this session — batches so far had covered real ground, but nowhere near the whole live set. The remaining 63 had never been examined at all.
+
+**Correction to an earlier assumption:** the entire LFF-2024 cross-check (Fabian, Agnes/Cecilia, Vincent, Phillips Brooks, Florence Li Tim-Oi, Chrysostom) was performed on collects that turned out to be **dead data** — none of the 6 genuine LFF entries are referenced by any live calendar mechanism. The fixes remain correct and worth having, but that entire piece of work did not move any live-content item out of amber. Worth knowing for prioritization going forward: dead-data correctness matters less than live-data correctness.
+
+**Systematic pass, live collects, Advent through Holy Week (25 checked, all verified against `book_of_common_prayer.pdf` directly):**
+
+- **Advent 1, rite1** — missing "one God" and "for" before "ever." Fixed.
+- **Advent 3, rite1** — "sore let and hindered" (a pre-1979 phrase) restored to 1979's "sorely hindered." A second, independent 1928-contamination find, same class as the Proper 4/Quinquagesima finding from an earlier session.
+- **Advent 4, Christmas Day** — both rites verified verbatim, no changes.
+- **Christmas 2, both rites** — an inserted "our Lord" not present in the source, removed from both.
+- **Epiphany (the Day itself, `bcp-collect-epiphany` — distinct entry from `epiphany-1`), rite1** — was **entirely pre-1979 text** ("manifest thy Son to the Gentiles... fruition of thy glorious Godhead"), not 1979 BCP at all. rite2 on the same entry was already correct 1979 text — the two rites had been sourced from different eras. Replaced rite1 with the real 1979 text.
+- **Epiphany 2, 4, 5** — verified verbatim, no changes (including confirming the "who with thee and the Holy Spirit liveth and reigneth" word order is genuinely correct in the source for Epiphany 2, not an error — checked directly rather than assumed from pattern-matching against other collects).
+- **Epiphany 3, rite1** — missing "all" ("we and the whole world" → "we and all the whole world"). Fixed.
+- **Last Sunday after the Epiphany, rite1** — was **entirely the wrong collect** (borrowed from the Transfiguration, August 6 — a different feast with different text). Confirmed via direct source check that Last Epiphany has its own distinct traditional-language collect. rite2 was already correct. Fixed rite1.
+- **Ash Wednesday** — verified verbatim, no changes.
+- **Lent 1 and Lent-ferial, rite1** (identical text, correctly so per the BCP's own rubric that the same collect serves the weekdays) — was the contemporary text mechanically converted to "thee/thou" form rather than the genuine traditional-language BCP1979 text, the same bug pattern found with St. John Evangelist in an earlier session. Replaced both with the real traditional text.
+- **Lent 2, 3, 4** — verified verbatim, no changes.
+- **Lent 5, rite1** — missing "O" at the start. Fixed.
+- **Palm Sunday, Holy Monday** — verified verbatim, no changes.
+- **Holy Tuesday** — **both rites were entirely Wednesday's text**, duplicated; the real, distinct Tuesday collect was missing from the file altogether. Replaced with the genuine Tuesday text, both rites.
+- **Holy Wednesday, rite1** — was a paraphrase, not the genuine traditional-language text (same "converted-contemporary" bug pattern as Lent 1). rite2 was already correct (confirmed it's genuinely Wednesday's real contemporary text, now correctly it belongs only to Wednesday since Tuesday no longer wrongly borrows it). Fixed rite1.
+- **Maundy Thursday** — both rites had real wording/doxology-form differences from source. Fixed both.
+- **Good Friday** — rite1 doxology form differed ("Holy Ghost ever...world without end" vs. app's "Holy Spirit...for ever and ever"); rite2 had "for which" where source says "for whom." Fixed both.
+- **Holy Saturday** — verified verbatim, no changes.
+
+**Running total: 54 of 92 live collects now verified** (29 before this session + 25 this session). **38 remain completely unchecked**: Easter 2–5, 7, Easter Day, Ascension, remaining Propers (9, 10, 11, 12, 16, 17, 19–29), Trinity Sunday, All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, and `default-ferial`. This list, not the vague "still open" language used in earlier ledger entries, is the actual remaining scope — continuing systematically next.
+
 ## Session, 2026-07-06 — LFF 2024 cross-check, recon and fixes applied
 
 Before starting, re-established the actual scope of the "LFF-sourced collects" bucket rather than trusting the prior session's count, per standing rule. Found **two of the eight previously-assumed LFF candidates are actually misclassified — Saint Joseph and Saint James of Jerusalem are both Major Feasts fixed in the BCP1979 itself**, not LFF at all (confirmed via `book_of_common_prayer.pdf`, which lists both explicitly as Major Feasts and gives full collect text for each). This means the true LFF-sourced bucket is 6 entries, not 8.

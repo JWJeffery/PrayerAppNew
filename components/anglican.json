@@ -447,7 +447,7 @@
     "id": "bcp-collect-advent-1",
     "title": "Collect for the First Sunday of Advent",
     "text": {
-      "rite1": "Almighty God, give us grace that we may cast away the works of darkness, and put upon us the armour of light, now in the time of this mortal life, in which thy Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the quick and the dead, we may rise to the life immortal, through him who liveth and reigneth with thee and the Holy Ghost, now and ever. Amen.",
+      "rite1": "Almighty God, give us grace that we may cast away the works of darkness, and put upon us the armour of light, now in the time of this mortal life, in which thy Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the quick and the dead, we may rise to the life immortal, through him who liveth and reigneth with thee and the Holy Ghost, one God, now and for ever. Amen.",
       "rite2": "Almighty God, give us grace to cast away the works of darkness, and put on the armor of light, now in the time of this mortal life in which your Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the living and the dead, we may rise to the life immortal; through him who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
@@ -465,7 +465,7 @@
     "id": "bcp-collect-advent-3",
     "title": "Collect for the Third Sunday of Advent",
     "text": {
-      "rite1": "Stir up thy power, O Lord, and with great might come among us; and, because we are sore let and hindered by our sins, let thy bountiful grace and mercy speedily help and deliver us; through Jesus Christ our Lord, to whom, with thee and the Holy Ghost, be honor and glory, world without end. Amen.",
+      "rite1": "Stir up thy power, O Lord, and with great might come among us; and, because we are sorely hindered by our sins, let thy bountiful grace and mercy speedily help and deliver us; through Jesus Christ our Lord, to whom, with thee and the Holy Ghost, be honor and glory, world without end. Amen.",
       "rite2": "Stir up your power, O Lord, and with great might come among us; and, because we are sorely hindered by our sins, let your bountiful grace and mercy speedily help and deliver us; through Jesus Christ our Lord, to whom, with you and the Holy Spirit, be honor and glory, now and for ever. Amen."
     },
     "type": "Collect"
@@ -492,8 +492,8 @@
     "id": "bcp-collect-christmas-2",
     "title": "Collect for the Second Sunday after Christmas",
     "text": {
-      "rite1": "O God, who didst wonderfully create, and yet more wonderfully restore, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, thy Son Jesus Christ our Lord; who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "O God, who wonderfully created, and yet more wonderfully restored, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, your Son Jesus Christ our Lord; who lives and reigns with you, in the unity of the Holy Spirit, one God, for ever and ever. Amen."
+      "rite1": "O God, who didst wonderfully create, and yet more wonderfully restore, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, thy Son Jesus Christ; who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, who wonderfully created, and yet more wonderfully restored, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, your Son Jesus Christ; who lives and reigns with you, in the unity of the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   },
@@ -510,7 +510,7 @@
     "id": "bcp-collect-epiphany",
     "title": "Collect for the Epiphany (January 6)",
     "text": {
-      "rite1": "O God, who by the leading of a star didst manifest thy only-begotten Son to the Gentiles: Mercifully grant that we, who know thee now by faith, may after this life have the fruition of thy glorious Godhead; through the same thy Son Jesus Christ our Lord. Amen.",
+      "rite1": "O God, who by the leading of a star didst manifest thy only-begotten Son to the peoples of the earth: Lead us, who know thee now by faith, to thy presence, where we may behold thy glory face to face; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "O God, by the leading of a star you manifested your only Son to the peoples of the earth: Lead us, who know you now by faith, to your presence, where we may see your glory face to face; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
@@ -552,7 +552,7 @@
     "id": "bcp-collect-epiphany-3",
     "title": "Collect for the Third Sunday after the Epiphany",
     "text": {
-      "rite1": "Give us grace, O Lord, to answer readily the call of our Savior Jesus Christ and proclaim to all people the Good News of his salvation, that we and the whole world may perceive the glory of his marvelous works; who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite1": "Give us grace, O Lord, to answer readily the call of our Savior Jesus Christ and proclaim to all people the Good News of his salvation, that we and all the whole world may perceive the glory of his marvelous works; who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
       "rite2": "Give us grace, O Lord, to answer readily the call of our Savior Jesus Christ and proclaim to all people the Good News of his salvation, that we and the whole world may perceive the glory of his marvelous works; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
@@ -597,7 +597,7 @@
     "id": "bcp-collect-last-epiphany",
     "title": "Collect for the Transfiguration (Last Sunday after Epiphany)",
     "text": {
-      "rite1": "O God, who on the holy mount didst reveal to chosen witnesses thy well-beloved Son, wonderfully transfigured, in raiment white and glistening: Mercifully grant that we, being delivered from the disquietude of this world, may by faith behold the King in his beauty; who with thee, O Father, and thee, O Holy Ghost, liveth and reigneth, one God, world without end. Amen.",
+      "rite1": "O God, who before the passion of thy only-begotten Son didst reveal his glory upon the holy mount: Grant unto us that we, beholding by faith the light of his countenance, may be strengthened to bear our cross, and be changed into his likeness from glory to glory; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
       "rite2": "O God, who before the passion of your only-begotten Son revealed his glory upon the holy mountain: Grant to us that we, beholding by faith the light of his countenance, may be strengthened to bear our cross, and be changed into his likeness from glory to glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
@@ -615,7 +615,7 @@
     "id": "bcp-collect-lent-ferial",
     "title": "Collect for Lenten Weekdays",
     "text": {
-      "rite1": "Almighty God, whose blessed Son was led by the Spirit to be tempted by Satan: Come quickly to help us who are assaulted by many temptations; and, as thou knowest the weaknesses of each of us, let each one find thee mighty to save; through Jesus Christ thy Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite1": "Almighty God, whose blessed Son was led by the Spirit to be tempted of Satan: Make speed to help thy servants who are assaulted by manifold temptations; and, as thou knowest their several infirmities, let each one find thee mighty to save; through Jesus Christ thy Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Almighty God, whose blessed Son was led by the Spirit to be tempted by Satan: Come quickly to help us who are assaulted by many temptations; and, as you know the weaknesses of each of us, let each one find you mighty to save; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
@@ -624,7 +624,7 @@
     "id": "bcp-collect-lent-1",
     "title": "Collect for the First Sunday in Lent",
     "text": {
-      "rite1": "Almighty God, whose blessed Son was led by the Spirit to be tempted by Satan: Come quickly to help us who are assaulted by many temptations; and, as thou knowest the weaknesses of each of us, let each one find thee mighty to save; through Jesus Christ thy Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite1": "Almighty God, whose blessed Son was led by the Spirit to be tempted of Satan: Make speed to help thy servants who are assaulted by manifold temptations; and, as thou knowest their several infirmities, let each one find thee mighty to save; through Jesus Christ thy Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Almighty God, whose blessed Son was led by the Spirit to be tempted by Satan: Come quickly to help us who are assaulted by many temptations; and, as you know the weaknesses of each of us, let each one find you mighty to save; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
@@ -660,7 +660,7 @@
     "id": "bcp-collect-lent-5",
     "title": "Collect for the Fifth Sunday in Lent",
     "text": {
-      "rite1": "Almighty God, who alone canst order the unruly wills and affections of sinful men: Grant unto thy people that they may love the thing which thou commandest, and desire that which thou dost promise; that so, among the sundry and manifold changes of the world, our hearts may surely there be fixed where true joys are to be found; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite1": "O Almighty God, who alone canst order the unruly wills and affections of sinful men: Grant unto thy people that they may love the thing which thou commandest, and desire that which thou dost promise; that so, among the sundry and manifold changes of the world, our hearts may surely there be fixed where true joys are to be found; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Almighty God, you alone can bring into order the unruly wills and affections of sinners: Grant your people grace to love what you command and desire what you promise; that, among the swift and varied changes of the world, our hearts may surely there be fixed where true joys are to be found; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
@@ -696,8 +696,8 @@
     "id": "bcp-collect-holy-tuesday",
     "title": "Collect for Tuesday in Holy Week",
     "text": {
-      "rite1": "O Lord God, whose blessed Son our Savior gave his body to be whipped and his face to be spit upon: Give us grace to accept joyfully the sufferings of the present time, confident of the glory that shall be revealed; through Jesus Christ your Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "O Lord God, whose blessed Son our Savior gave his body to be whipped and his face to be spit upon: Give us grace to accept joyfully the sufferings of the present time, confident of the glory that shall be revealed; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+      "rite1": "O God, who by the passion of thy blessed Son didst make an instrument of shameful death to be unto us the means of life: Grant us so to glory in the cross of Christ, that we may gladly suffer shame and loss for the sake of thy Son our Savior Jesus Christ; who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, by the passion of your blessed Son you made an instrument of shameful death to be for us the means of life: Grant us so to glory in the cross of Christ, that we may gladly suffer shame and loss for the sake of your Son our Savior Jesus Christ; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   },
@@ -705,8 +705,8 @@
     "id": "bcp-collect-holy-wednesday",
     "title": "Collect for Wednesday in Holy Week",
     "text": {
-      "rite1": "Lord God, whose blessed Son our Savior gave his back to the smiters and did not hide his face from shame: Give us grace to endure the sufferings of this present time with sure confidence in the glory that shall be revealed; through Jesus Christ your Son our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "Lord God, whose blessed Son our Savior gave his back to the smiters and did not hide his face from shame: Give us grace to endure the sufferings of this present time with sure confidence in the glory that shall be revealed; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+      "rite1": "O Lord God, whose blessed Son our Savior gave his back to the smiters and hid not his face from shame: Grant us grace to take joyfully the sufferings of the present time, in full assurance of the glory that shall be revealed; through the same thy Son Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Lord God, whose blessed Son our Savior gave his body to be whipped and his face to be spit upon: Give us grace to accept joyfully the sufferings of the present time, confident of the glory that shall be revealed; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   },
@@ -714,8 +714,8 @@
     "id": "bcp-collect-maundy-thursday",
     "title": "Collect for Maundy Thursday",
     "text": {
-      "rite1": "Almighty Father, whose dear Son, on the night before he suffered, did institute the Sacrament of his Body and Blood: Mercifully grant that we may receive it thankfully in remembrance of Jesus Christ our Lord, who in these holy mysteries giveth us a pledge of life eternal; the same our Savior Jesus Christ, who now liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "Almighty Father, whose dear Son, on the night before he suffered, instituted the Sacrament of his Body and Blood: Mercifully grant that we may receive it thankfully in remembrance of Jesus Christ our Lord, who in these holy mysteries gives us a pledge of life eternal; the same our Savior Jesus Christ, who now lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+      "rite1": "Almighty Father, whose dear Son, on the night before he suffered, did institute the Sacrament of his Body and Blood: Mercifully grant that we may thankfully receive the same in remembrance of him who in these holy mysteries giveth us a pledge of life eternal, the same thy Son Jesus Christ our Lord; who now liveth and reigneth with thee and the Holy Spirit ever, one God, world without end. Amen.",
+      "rite2": "Almighty Father, whose dear Son, on the night before he suffered, instituted the Sacrament of his Body and Blood: Mercifully grant that we may receive it thankfully in remembrance of Jesus Christ our Lord, who in these holy mysteries gives us a pledge of eternal life; and who now lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   },
@@ -723,8 +723,8 @@
     "id": "bcp-collect-good-friday",
     "title": "Collect for Good Friday",
     "text": {
-      "rite1": "Almighty God, we beseech thee graciously to behold this thy family, for which our Lord Jesus Christ was contented to be betrayed and given up into the hands of sinners, and to suffer death upon the cross; who now liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "Almighty God, we pray you graciously to behold this your family, for which our Lord Jesus Christ was willing to be betrayed, and given into the hands of sinners, and to suffer death upon the cross; who now lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+      "rite1": "Almighty God, we beseech thee graciously to behold this thy family, for which our Lord Jesus Christ was contented to be betrayed, and given up into the hands of sinners, and to suffer death upon the cross; who now liveth and reigneth with thee and the Holy Ghost ever, one God, world without end. Amen.",
+      "rite2": "Almighty God, we pray you graciously to behold this your family, for whom our Lord Jesus Christ was willing to be betrayed, and given into the hands of sinners, and to suffer death upon the cross; who now lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   },
