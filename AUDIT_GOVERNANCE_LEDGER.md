@@ -149,3 +149,13 @@ All edits validated as well-formed JSON. `components/anglican.json` re-checked a
 **Standing lesson reinforced again:** this is now the second time in two sessions that a prior session's "confirmed fixed" or "checking out correctly" note did not match what was actually in the data. The practice of re-verifying against the primary source at the point of application — rather than trusting a prior session's own ledger entry — has now caught real, materially different problems (a still-fabricated collect; a real wording error) on both occasions it's been applied. This is not a one-off; treat every "confirmed" note from a prior session as a lead to re-check, not a settled fact, going forward.
 
 **LFF-2024 cross-check item, closed** (all 6 genuine LFF entries now verified correct; the 2 misclassified BCP1979 entries also fixed as a byproduct). Next up per the resume note: the ~70-item manual triage list from the earlier automated BCP1979 sweep.
+
+## Decisions, 2026-07-06 — content review resolved, cleared for merge
+
+Josh reviewed the consolidated content-review document (all substantive text changes across the unmerged `audit-ledger-workspace` commits) and resolved the one open question:
+
+- **30-Day Psalter, Day 31: KEEP the 1662 customary repeat of Day 30's psalms.** Decision explicitly grounded in appeal to longstanding church tradition — the custom predates the 1979 BCP and remains an accepted practice even though the 1979 BCP prints no explicit 31st-day rubric of its own. Not to be revisited as an open question going forward; this is settled.
+- **Quinquagesima** (the 1928-BCP content that was removed from Proper 4, see "Genuine 1928 BCP violation" entry above) — Josh confirmed the removal was correct given the 1979-only rule, but noted historical interest in the pre-Lenten Sunday sequence (Septuagesima/Sexagesima/Quinquagesima) for its own sake, separate from the live liturgy. Not an app-data item; flagged only as a possible future non-liturgical writing topic, no action taken in the codebase.
+- **Mission Prayer rotation** (daily rotation between the 3 real BCP options) — confirmed as the desired approach.
+
+All content changes reviewed and approved for merge to `main`.
