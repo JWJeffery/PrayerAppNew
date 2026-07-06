@@ -101,3 +101,22 @@ Session ended near context/turn limit, per Josh's instruction to continue auditi
 Also confirmed this session: Proper 6, 7, 8, and 13 collects each contained text belonging to a **different** Proper entirely (not wording errors — wrong content assigned to the slot), and these are live/served content (confirmed via `data/season/ordinary1.json` referencing them directly), not dead data. Separately, `bcp-collect-ordinary-2/4` and siblings were confirmed to be dead data (zero calendar file references) — still wrong, but not currently served, and deprioritized accordingly.
 
 **Process note:** while updating the dashboard for this finding, caught a repeat of the earlier bad-escape mistake before it shipped — Python's own parser rejected the malformed string before the file was ever written. The fix: build note text as plain Python strings with real apostrophes, then escape via `.replace("'", "\\'")` for JS embedding, rather than hand-typing escape sequences into source. `node --check` remains mandatory before every commit to audit-ledger.html, confirmed clean both before and after this update.
+
+## Session, 2026-07-05 (resumed) — Holy Days collects batch 3, applied
+
+Applied the 8 collect fixes left pending in `RESUME_PROJECT_NOTE.md` (Saint Bartholomew, Saint Mary the Virgin, Saint Michael and All Angels, Saint John Evangelist, Nativity of Saint John the Baptist, Saint Philip and Saint James, Saint Mark, Conversion of Saint Paul), plus the previously-unresolved Holy Cross Day entry, to `components/anglican.json`. All 9 re-verified character-for-character against `book_of_common_prayer.pdf` (confirmed 1979 BCP text) before writing, per standing rule — not applied as-is from the prior session's draft.
+
+**Method-correction finding:** re-verification caught that the prior session's drafted fixes, though individually correct as far as they went, **understated the actual scope of error** in several entries:
+- **Saint Philip and Saint James** — both rites had a substantially different, composed second half (not just the flagged difference) and no ending doxology at all.
+- **Nativity of Saint John the Baptist** — both rites were truncated, missing the doxology entirely ("...our Lord. Amen." with no "who liveth/lives and reigneth/reigns..." clause) — this was not caught or mentioned in the prior session's note.
+- **Saint Michael and All Angels rite1** — had non-source wording beyond the flagged doxology reorder ("mortals" for "men", clause order changed, "here on earth" added).
+- **Saint John Evangelist rite1** — was missing "we beseech thee" and had reordered/altered phrasing beyond the flagged doxology reorder; only rite2 matched the prior session's fix scope exactly.
+- Several rite1 (traditional-language) texts were also missing small but real source words ("O" at the start of Bartholomew and Michael and All Angels; "the same" before "thy Son"/"Jesus Christ" in Mary the Virgin and Saint Mark) that a targeted wording tweak wouldn't have caught.
+
+**Standing lesson:** a prior session's draft fix, even one explicitly recorded as "verified against source," must be re-verified against the primary source at the time it is actually applied — not trusted and applied as-is. This is consistent with, and reinforces, the existing standing rule not to trust other documentation in this repo without independent verification; it now applies to Claude's own prior-session notes as well as to `structure.json` and the like.
+
+Left as-is (verified as trivial, non-substantive variance only, consistent with the earlier Andrew/Thomas precedent): Conversion of Saint Paul rite1 (comma placement only) and Holy Cross Day rite2 (already matched source exactly; only rite1 needed "unto himself" restored).
+
+Dashboard (`audit-ledger.html`) Collects note and `SEED_VERSION` (now `v10-2026-07-05-collects-batch-3`) updated in the same action; `node --check` run clean on the extracted script both before and after. `components/anglican.json` re-validated as well-formed JSON after edits.
+
+**Still open per finish-what-we-start rule:** Morning Prayer Collects are not complete — the remaining Common of Saints collects beyond the Holy Days already covered, and the broader Collects-vs-LFF-2024 audit noted above, remain outstanding before Morning Prayer as a whole can be marked done.
