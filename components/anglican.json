@@ -1324,32 +1324,47 @@
   },
   {
     "id": "bcp-collect-jan21-agnes",
-    "title": "Collect for Agnes, Martyr at Rome (January 21)",
-    "text": "Almighty and everlasting God, who chose the weak things of the world to confound the wise: Mercifully grant that we, celebrating the feast of your servant Agnes, may remain constant in the faith; through Jesus Christ our Lord. Amen.",
+    "title": "Agnes and Cecilia of Rome, Martyrs",
+    "text": {
+      "rite1": "Almighty and everlasting God, who dost choose those whom the world deemeth powerless to put the powerful to shame: Grant us so to cherish the memory of thy youthful martyrs Agnes and Cecilia, that we might share their pure and steadfast faith in thee; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, one God for ever and ever. Amen.",
+      "rite2": "Almighty and everlasting God, who chooses those whom the world deems powerless to put the powerful to shame: Grant us so to cherish the memory of your youthful martyrs Agnes and Cecilia, that we might share their pure and steadfast faith in you; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God for ever and ever. Amen."
+    },
     "type": "Collect"
   },
   {
     "id": "bcp-collect-jan22-vincent",
     "title": "Collect for Vincent, Deacon of Saragossa and Martyr (January 22)",
-    "text": "Almighty God, whose deacon Vincent, upheld by you, was not terrified by threats nor overcome by torments: Grant us to endure all adversity with invincible steadfastness; through Jesus Christ our Lord. Amen.",
+    "text": {
+      "rite1": "Almighty God, whose deacon Vincent, upheld by thee, was neither terrified by threats nor overcome by torments: Strengthen us, we beseech thee, to endure all adversity with invincible and steadfast faith; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, one God, for ever and ever. Amen.",
+      "rite2": "Almighty God, whose deacon Vincent, upheld by you, was neither terrified by threats nor overcome by torments: Strengthen us to endure all adversity with invincible and steadfast faith; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
     "type": "Collect"
   },
   {
     "id": "bcp-collect-jan23-phillips-brooks",
     "title": "Collect for Phillips Brooks, Bishop of Massachusetts (January 23)",
-    "text": "O everlasting God, who revealed truth to your servant Phillips Brooks, and so formed and molded his mind and heart that he was able to mediate that truth with grace and power: Grant, we pray, that all whom you call to preach the Gospel may steward the wisdom of your majesty poured out upon them; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
+    "text": {
+      "rite1": "Everlasting God, who dost implant thy living Word in the minds and on the lips of all who proclaim thy truth: Grant that we, like thy pastor and preacher Phillips Brooks, might proclaim thy Gospel in our own generation with grace and power. Through Jesus Christ our Lord, who livest and reignest with thee and the Holy Ghost, ever one God, now and for ever. Amen.",
+      "rite2": "Everlasting God, who implants your living Word in the minds and on the lips of all who proclaim your truth: Grant that we, like your pastor and preacher Phillips Brooks, might proclaim your Gospel in our own generation with grace and power. Through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, ever one God, now and for ever. Amen."
+    },
     "type": "Collect"
   },
   {
     "id": "bcp-collect-jan24-florence-li-tim-oi",
     "title": "Collect for Ordination of Florence Li Tim-Oi (January 24)",
-    "text": "Gracious God, who called Florence Li Tim-Oi to be the first woman ordained to the priesthood in the Anglican Communion: Grant that we may be faithful to your call, breaking down barriers and serving you with courage and love; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
+    "text": {
+      "rite1": "Almighty God, who dost pour out thy Spirit upon thy sons and daughters: Grant that we, following the example of thy servant Florence Li Tim-Oi, chosen priest in thy church, may with faithfulness, patience, and tenacity proclaim thy holy gospel to all the nations, through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, one God, in glory everlasting. Amen.",
+      "rite2": "Almighty God, who pours out your Spirit upon your sons and daughters: Grant that we, following the example of your servant Florence Li Tim-Oi, chosen priest in your church, may with faithfulness, patience, and tenacity proclaim your holy gospel to all the nations, through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, in glory everlasting. Amen."
+    },
     "type": "Collect"
   },
   {
     "id": "bcp-collect-january-27",
     "title": "Collect for John Chrysostom, Bishop of Constantinople (January 27)",
-    "text": "O God, who gave your servant John Chrysostom grace eloquently to proclaim your righteousness in the great congregation, and fearlessly to bear reproach for the honor of your Name: Mercifully grant to all bishops and pastors such excellence in preaching, and faithfulness in ministering your Word, that your people shall be partakers of the divine wisdom; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
+    "text": {
+      "rite1": "O God, who didst give thy servant John Chrysostom grace eloquently to proclaim thy righteousness in the great congregation, and fearlessly to bear reproach for the honor of thy Name: Mercifully grant to all who proclaim thy word such excellence in preaching that all thy people may be made partakers of the glory that shall be revealed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, one God for ever and ever. Amen.",
+      "rite2": "O God, who gave your servant John Chrysostom grace eloquently to proclaim your righteousness in the great congregation, and fearlessly to bear reproach for the honor of your Name: Mercifully grant to all who proclaim your word such excellence in preaching, that all your people may be made partakers of the glory that shall be revealed; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
     "type": "Collect"
   },
   {
@@ -1501,7 +1516,7 @@
     "title": "Collect for Saint Luke the Evangelist (October 18)",
     "text": {
       "rite1": "Almighty God, who didst inspire thy servant Luke the physician to set forth in the Gospel the love and healing power of thy Son: Graciously continue in thy Church this love and power to heal, to the praise and glory of thy Name; through thy Son Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
-      "rite2": "Almighty God, you inspired your servant Luke the physician to set forth in the Gospel the love and healing power of your Son: Graciously continue in your Church this love and power to heal, to the praise and glory of your Name; through your Son Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+      "rite2": "Almighty God, who inspired your servant Luke the physician to set forth in the Gospel the love and healing power of your Son: Graciously continue in your Church this love and power to heal, to the praise and glory of your Name; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
   },
