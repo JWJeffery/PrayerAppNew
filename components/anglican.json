@@ -1319,7 +1319,10 @@
   {
     "id": "bcp-collect-jan20-fabian",
     "title": "Collect for Fabian, Bishop and Martyr of Rome (January 20)",
-    "text": "Almighty God, you called Fabian to be a faithful pastor and servant of your people, and to lay down his life in witness to your Son: Grant that we, strengthened by his example and aided by his prayers, may persevere in faith to the end; through Jesus Christ our Lord. Amen.",
+    "text": {
+      "rite1": "Grant, Almighty God, that in all times of trial and persecution, we might remain steadfast in faith and endurance, according to the example of thy servant Fabian, who was faithful even unto death. We ask this for the sake of him who laid down his life for us all, Jesus Christ our Savior; who livest and reignest with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Grant, Almighty God, that in all times of trial and persecution, we might remain steadfast in faith and endurance, according to the example of your servant Fabian, who was faithful even unto death. We ask this for the sake of him who laid down his life for us all, Jesus Christ our Savior; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
     "type": "Collect"
   },
   {
@@ -1380,7 +1383,7 @@
     "id": "bcp-collect-st-joseph",
     "title": "Collect for Saint Joseph (March 19)",
     "text": {
-      "rite1": "O God, who from the family of thy servant David didst raise up Joseph to be the guardian of thine incarnate Son and the spouse of his virgin mother: Give us grace to imitate his uprightness of life and his obedience to thy commands; through the same thy Son Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite1": "O God, who from the family of thy servant David didst raise up Joseph to be the guardian of thy incarnate Son and the spouse of his virgin mother: Give us grace to imitate his uprightness of life and his obedience to thy commands; through the same thy Son Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
       "rite2": "O God, who from the family of your servant David raised up Joseph to be the guardian of your incarnate Son and the spouse of his virgin mother: Give us grace to imitate his uprightness of life and his obedience to your commands; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
@@ -1488,7 +1491,7 @@
     "id": "bcp-collect-james-jerusalem",
     "title": "Collect for Saint James of Jerusalem (October 23)",
     "text": {
-      "rite1": "Grant, O God, that following the example of thy servant James the Just, brother of our Lord, thy Church may give itself continually to prayer and to the reconciliation of all who are at variance and enmity; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite1": "Grant, we beseech thee, O God, that after the example of thy servant James the Just, brother of our Lord, thy Church may give itself continually to prayer and to the reconciliation of all who are at variance and enmity; through the same our Lord Jesus Christ, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Grant, O God, that following the example of your servant James the Just, brother of our Lord, your Church may give itself continually to prayer and to the reconciliation of all who are at variance and enmity; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
