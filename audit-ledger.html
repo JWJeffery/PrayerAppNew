@@ -253,7 +253,14 @@ async function loadStatus(key, fallback){
   }catch(e){ return fallback; }
 }
 async function saveStatus(key, val){
-  try{ await window.storage.set(key, JSON.stringify(val), false); }catch(e){ console.error('save failed', key, e); }
+  try{
+    const result = await window.storage.set(key, JSON.stringify(val), false);
+    if (!result) throw new Error('storage.set returned falsy result');
+    return true;
+  }catch(e){
+    console.error('save failed', key, e);
+    return false;
+  }
 }
 
 function stampEl(item, onchange){
@@ -261,10 +268,23 @@ function stampEl(item, onchange){
   el.className = 'stamp ' + item.status;
   el.title = 'click to change status';
   el.onclick = async () => {
+    const previousStatus = item.status;
     const idx = STATUS_CYCLE.indexOf(item.status);
     item.status = STATUS_CYCLE[(idx+1) % STATUS_CYCLE.length];
     el.className = 'stamp ' + item.status;
-    await saveStatus(item.key, {status:item.status, note:item.note});
+    el.style.opacity = '0.5'; // pending-save indicator
+    const saved = await saveStatus(item.key, {status:item.status, note:item.note});
+    el.style.opacity = '1';
+    if (!saved) {
+      // Revert visual state — do not show a color that didn't actually persist.
+      item.status = previousStatus;
+      el.className = 'stamp ' + item.status;
+      el.title = 'Save failed — change was NOT persisted. Click to retry.';
+      el.style.outline = '2px solid var(--red)';
+      setTimeout(() => { el.style.outline = ''; }, 3000);
+      return;
+    }
+    el.title = 'click to change status';
     onchange && onchange();
     renderCounts();
   };
@@ -330,7 +350,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v7-2026-07-05-proper-4-5-correction';
+const SEED_VERSION = 'v8-2026-07-05-save-failure-handling';
 
 async function checkSeedVersion(){
   let storedValue = null;
