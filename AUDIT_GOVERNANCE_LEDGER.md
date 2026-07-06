@@ -163,6 +163,28 @@ Re-ran the automated "no trace in BCP1979.pdf" sweep against the current (post-m
 
 All fixes validated as well-formed JSON. Remaining flagged items from this pass, not yet re-checked in this session, are limited to entries already confirmed correct earlier or confirmed dead — this pass is effectively complete for live content, pending a final confirmation sweep.
 
+## Session, 2026-07-06 — Full Canticle set built (Canticles 1–21)
+
+Before writing anything, checked the BCP1979's own Table of Contents and canticle rubrics (`book_of_common_prayer.pdf` pp. 46, 83–84, 143–144) to establish the true scope rather than guessing from memory. Found: a 7-canticle traditional-language set (pp. 47–52, numbered 1–7) and a 14-item contemporary-language set (pp. 85–95, numbered 8–21), where canticles 12, 13, 15, 16, 17, 20, and 21 are the contemporary-language renderings of the same texts as traditional 1, 2, 3, 4, 5, 6, and 7 respectively, and canticles 8, 9, 10, 11, 14, 18, and 19 exist **only** in contemporary language — they were newly introduced in the 1979 revision and have no traditional-language form in the BCP at all.
+
+Only 8 of the resulting distinct texts existed in `anglican.json` before this session (Venite, Jubilate, Phos Hilaron, Te Deum, Benedictus es Domine, Benedictus, Magnificat, Nunc Dimittis). **9 were completely missing:**
+
+- **A Song of Creation (Benedicite, omnia opera Domini)** — both rite1 (traditional, Canticle 1) and rite2 (contemporary, Canticle 12). Transcribed the Invocation, Cosmic Order, Earth and its Creatures, and People of God sections as a single flowing text (the structural "I/II/III/IV" subheadings and Doxology label in the source are organizational markers for optional partial use, not part of the sung/said text itself — consistent with how no other canticle in this file carries internal section labels).
+- **Glory to God (Gloria in excelsis)** — both rite1 (traditional, Canticle 6) and rite2 (contemporary, Canticle 20). Note: this is the Morning Prayer canticle use of Gloria in excelsis; a Eucharistic-context use, if the app has one, is a separate component not touched here.
+- **The Song of Moses (Cantemus Domino)** — Canticle 8, contemporary only.
+- **The First Song of Isaiah (Ecce, Deus)** — Canticle 9, contemporary only.
+- **The Second Song of Isaiah (Quaerite Dominum)** — Canticle 10, contemporary only.
+- **The Third Song of Isaiah (Surge, illuminare)** — Canticle 11, contemporary only.
+- **A Song of Penitence (Kyrie Pantokrator)** — Canticle 14, contemporary only.
+- **A Song to the Lamb (Dignus es)** — Canticle 18, contemporary only.
+- **The Song of the Redeemed (Magna et mirabilia)** — Canticle 19, contemporary only.
+
+For the 7 contemporary-only canticles, followed the existing precedent set by Venite and Jubilate (both already flat strings, no rite1/rite2 split, since no traditional-language form exists to pair against) rather than inventing a new schema shape.
+
+**Verification method:** built each entry as a literal transcription typed directly from the extracted PDF text (not from memory), then ran an automated chunk-match sweep (8-word rolling windows, asterisks and page-footer noise stripped from both sides) against the full PDF text to catch transcription errors before considering this done. All 9 entries passed cleanly; the handful of initial chunk mismatches were confirmed to be page-break/footer artifacts (e.g., "86 Morning Prayer II" landing mid-sentence in the raw extraction) — the same class of false positive already established with `bcp-collect-grace` earlier in this audit — not actual content errors.
+
+**Not yet done:** the Table of Suggested Canticles (p. 143–144, which canticle pairs with which day/season/reading) has not been audited — the 9 new entries exist as correct standalone texts, but nothing yet governs when the app should actually select and display each one. This is a separate follow-on task, not addressed in this session.
+
 ## Session, 2026-07-06 — LFF 2024 cross-check, recon and fixes applied
 
 Before starting, re-established the actual scope of the "LFF-sourced collects" bucket rather than trusting the prior session's count, per standing rule. Found **two of the eight previously-assumed LFF candidates are actually misclassified — Saint Joseph and Saint James of Jerusalem are both Major Feasts fixed in the BCP1979 itself**, not LFF at all (confirmed via `book_of_common_prayer.pdf`, which lists both explicitly as Major Feasts and gives full collect text for each). This means the true LFF-sourced bucket is 6 entries, not 8.
