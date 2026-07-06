@@ -304,3 +304,24 @@ All content changes reviewed and approved for merge to `main`.
 - This supersedes the "do not wait for per-item sign-off... continue auditing forward" language from 2026-07-05 for future work. The two-tier mechanical-vs-judgment-call distinction from that entry still holds for *how* something eventually gets fixed once the fix phase begins — it's the *timing* (fix-as-you-go vs. audit-then-fix) that changes, not the correction-approval tiers themselves.
 - **Not retroactive.** Work already committed under the old model (the Collects audit closure and the canticle-selection-logic fix, both earlier in this session) was correct under the instruction in force at the time and is not being unwound. This correction governs work from this point forward — starting with the Daily Office Lectionary (Appointed Psalms + Lessons with Canticles reading assignments) audit, which will now proceed as a full record-first pass, season by season, with fixes applied only after each season's audit is complete and reviewed.
 
+## Session, 2026-07-06 — Daily Office Lectionary audit, Advent season (record-only pass)
+
+ADVENT SEASON — FULL AUDIT COMPLETE 2026-07-06 (record-only pass, no fixes applied). 26 of 26 entries classified, zero amber remaining.
+
+GREEN, verified verbatim against BCP1979.pdf Daily Office Lectionary pp.936-939 (11 entries): Dec 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12.
+
+RED -- minor (1 entry): Nov 29 (First Sunday of Advent) -- Year One Gospel reading_gospel_ep_year1 says "Matthew 25:1-13", source says "Matthew 25:1-18" (verse range short by 5 verses).
+
+RED -- moderate, Year One readings corrupted while Year Two is correct (7 entries): Dec 13-19 (Week of 3 Advent, all 7 days). reading_ot_mp_year1 / reading_epistle_mp_year1 / reading_gospel_ep_year1 all show content belonging to OTHER dates -- OT citations are shifted forward by roughly 2 Isaiah-passages per day (compounding across the week), and several Epistle citations (e.g. "Acts 28:16-31", assorted Revelation ranges) do not match ANY correct Advent DOL entry at all, suggesting content pulled from an unrelated part of the lectionary rather than a simple date-shift. Year Two fields for all 7 days are fully correct.
+
+RED -- severe, both years wrong with duplication (4 entries): Dec 20, 22, 23, 24. Both Year One and Year Two reading fields are wrong. Dec 20 and Dec 22 share IDENTICAL Year Two Epistle/Gospel content (Revelation 7:1-8 / Matthew 26:1-16) despite being different calendar days -- the same duplication-across-days bug pattern found repeatedly in the Collects audit. Psalms also shift by one day starting Dec 22 (each day showing the prior day's true psalm). Dec 24 additionally has BOTH Gospel fields (reading_gospel_ep_year1, reading_gospel_mp_year2) completely empty.
+
+RED -- Holy Days, wrong lectionary track / missing field (2 entries):
+- Nov 30 (St. Andrew): psalms and 3 of 4 true DOL readings match the DOL's own Holy Days table (p.995) exactly. But that table assigns FOUR readings per Holy Day (2 for MP, 2 for EP) and the app schema has only 3 reading slots (ot/epistle/gospel) -- the EP Old Testament reading (Isaiah 55:1-5) has no field to live in and is simply absent. Architecture gap, not just a content error.
+- Dec 21 (St. Thomas): psalms match, but all 3 readings present (Habakkuk 2:1-4 / Hebrews 10:35-11:1 / John 20:24-29) are the EUCHARISTIC lectionary's St. Thomas readings (BCP p.921), not the Daily Office Lectionary's (which should be Job 42:1-6 / 1 Peter 1:3-9 / Isaiah 43:8-13 / John 14:1-7) -- the wrong lectionary track was used for this Holy Day. Same missing-4th-reading schema gap as St. Andrew.
+
+OPEN QUESTION for Josh, not yet decided: several entries (Dec 5, 13, 16, 17, 19 psalms_ep) show the BCP's bracketed/optional trailing verses (e.g. "(8-14)", "[53]") dropped from the citation. The source itself defines brackets/parentheses as marking OPTIONAL content that may be omitted, so this may not be an error at all -- flagged as a format-consistency question, not classified red or green pending a decision on whether citations should include the full bracketed form or the shorter required form.
+
+Total: 11 green, 15 red (1 minor + 7 moderate + 4 severe + 2 Holy-Day/schema-gap), 1 open format question not yet decided. No entries remain amber (unaudited). Per the new audit-then-fix workflow, no data has been changed yet -- this is the full record for this season, awaiting direction on the fix phase.
+
+
