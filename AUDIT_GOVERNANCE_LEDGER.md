@@ -120,3 +120,14 @@ Left as-is (verified as trivial, non-substantive variance only, consistent with 
 Dashboard (`audit-ledger.html`) Collects note and `SEED_VERSION` (now `v10-2026-07-05-collects-batch-3`) updated in the same action; `node --check` run clean on the extracted script both before and after. `components/anglican.json` re-validated as well-formed JSON after edits.
 
 **Still open per finish-what-we-start rule:** Morning Prayer Collects are not complete — the remaining Common of Saints collects beyond the Holy Days already covered, and the broader Collects-vs-LFF-2024 audit noted above, remain outstanding before Morning Prayer as a whole can be marked done.
+
+## Deferred, 2026-07-06 — Common of Saints collects: new-build, not repair, scheduled after BCP audit completes
+
+Checked for an existing ID/schema convention for Common of Saints collects (the generic BCP1979 formularies for a Martyr, a Missionary, a Pastor, a Theologian/Doctor, a Monastic/Religious, "Of a Saint," etc. — traditional-language pages ~195–199, contemporary ~246–251) before starting any pull from the source PDF. Found none:
+
+- No `bcp-collect-common-*` or similar ID anywhere in `components/anglican.json` (which runs Holy Days/Sundays/propers through St. Andrew + mission prayers, then stops — 133 collect entries total, none Common-of-Saints).
+- `components/common.json` is unrelated (Lord's Prayer, Gloria Patri, Creeds, Kyrie).
+- Checked `documentation/BCP_PROPERS_DOCUMENTATION.md`, `documentation/CALENDAR_ENGINE_DOCUMENTATION.md`, `documentation/STRUCTURE_JSON_CONTRACT.md` — no mention.
+- Checked how `VARIABLE_COLLECT` resolution actually works in `js/office-ui.js` (`dailyData.collect` per calendar day, resolved against `anglican.json` IDs, with one hardcoded manual ID-mapping exception for Transfiguration) and confirmed via `data/season/*.json` that every day currently in the calendar points to an individually-named saint collect, never a generic Common-of category. So there is no live broken reference this would fix — the gap is real but not currently blocking anything in production.
+
+**Decision (Josh, 2026-07-06):** this is a fresh build requiring its own architecture and schema (ID naming convention, storage location — new file vs. appended to `anglican.json`, and how/whether the calendar engine should ever resolve a saint to a Common-of collect as a fallback when no individual collect exists), not a targeted repair like the Holy Days batch. Scheduled to be picked up as its own task **after** the current BCP repair work (remaining Holy Days/Common-of-Saints-as-individually-named audit gaps, and the LFF-2024 cross-check) is finished — not before. Do not start pulling BCP1979 Common of Saints text or generating new JSON entries until this is explicitly next in the queue.
