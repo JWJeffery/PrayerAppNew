@@ -294,3 +294,13 @@ Josh reviewed the consolidated content-review document (all substantive text cha
 - **Mission Prayer rotation** (daily rotation between the 3 real BCP options) — confirmed as the desired approach.
 
 All content changes reviewed and approved for merge to `main`.
+
+## Correction, 2026-07-06 — fix-workflow decision superseded
+
+**The 2026-07-05 "Fix workflow, confirmed by Josh" decision (see "Resolved" above) is superseded as of this entry.** That decision established a fix-as-you-find model: mechanical corrections get committed to the audit branch immediately upon verification, without waiting for per-item sign-off, so auditing can continue uninterrupted. Josh has clarified that this was the wrong choice, and it should not have been offered as the default — the correct workflow is:
+
+- **Audit first, record findings, do not fix in place.** When auditing a section (an office, a data lane, a table), go through the full scope and record every finding — status (correct / wrong / misassigned), what's wrong, what the source actually says — without editing the underlying data or code as you go. Establish full, precise coverage (every item classified, no vague "still open" language) before any fix is applied.
+- **Fix systematically as a distinct second phase**, once the audit for that scope is complete and the findings have been recorded. This mirrors the "finish what we start" principle already in place, but applies it one level earlier: finish the *audit* of a scope before starting *repairs* on it, rather than interleaving the two.
+- This supersedes the "do not wait for per-item sign-off... continue auditing forward" language from 2026-07-05 for future work. The two-tier mechanical-vs-judgment-call distinction from that entry still holds for *how* something eventually gets fixed once the fix phase begins — it's the *timing* (fix-as-you-go vs. audit-then-fix) that changes, not the correction-approval tiers themselves.
+- **Not retroactive.** Work already committed under the old model (the Collects audit closure and the canticle-selection-logic fix, both earlier in this session) was correct under the instruction in force at the time and is not being unwound. This correction governs work from this point forward — starting with the Daily Office Lectionary (Appointed Psalms + Lessons with Canticles reading assignments) audit, which will now proceed as a full record-first pass, season by season, with fixes applied only after each season's audit is complete and reviewed.
+
