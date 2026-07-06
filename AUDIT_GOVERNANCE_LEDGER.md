@@ -144,6 +144,25 @@ Discussed in the context of the Proper 4 fix above (which removed a genuine 1928
 
 **Both items remain queued behind the current repair-track work** (the ~70-item automated-sweep triage, next up per the resume note) and are not to be started until explicitly next in the queue.
 
+## Session, 2026-07-06 — Automated-sweep triage: first pass
+
+Re-ran the automated "no trace in BCP1979.pdf" sweep against the current (post-merge) state of `anglican.json`, using a more targeted method (a 6-word chunk from partway into each collect, rather than the earlier crude whole-text match) to reduce false positives. Returned 32 hits — down substantially from the earlier ~70, both because many items have since been fixed and because of the improved method. Of these 32, several were entries already hand-verified correct earlier this session (`bcp-collect-grace`, the six genuine LFF saints, Pentecost) — confirming the known false-positive pattern (PDF line-wrap/hyphenation artifacts) rather than new problems.
+
+**Dead-data finding, extended:** checked live/dead status for every remaining flagged item before spending effort on it. The entire `bcp-collect-ordinary-N` family (14 entries beyond the already-known-dead ordinary-2/4: ordinary-1, 3, 4, 6, 10, 15, 18, 21, 23, 25–29) is confirmed dead — zero references anywhere in `data/season/*.json`. Worth flagging even though deprioritized: this dead bucket has **serious internal corruption** — several entries have rite1 and rite2 holding two entirely different prayers, and ordinary-25/26/27/28 are near-duplicates of each other (same text reused across four different Sundays). None of this is fixed (per established practice, dead data is deprioritized behind live content), but it's recorded here in case this family is ever revived or repurposed rather than deleted outright. `bcp-collect-easter-wednesday` is also confirmed dead (zero references under any naming convention).
+
+**Live items checked and fixed** (all verified via `book_of_common_prayer.pdf` before editing, all confirmed referenced by `data/season/*.json`):
+
+- **Proper 3** — both rites held Week-after-Trinity-Sunday text (identical to dead `ordinary-1`), not Proper 3's actual text at all. Replaced, both rites.
+- **Proper 14, rite1** — held Proper 15's traditional-language text (misassigned). rite2 was already correct. Fixed rite1.
+- **Proper 15, rite1** — held unrelated text matching neither Proper 15 nor any of its neighbors precisely (closest to an old Trinity-numbered collect). rite2 was already correct. Fixed rite1.
+- **Proper 18** — both rites wrong: rite1 held old Trinity-21-style text, rite2 held Proper 20's actual text. Replaced, both rites.
+- **Advent 2, rite1** — inserted "didst" not in source ("who didst send thy messengers" → "who sent thy messengers"). rite2 was already correct.
+- **Epiphany 1 (First Week after the Epiphany), rite1** — several small restorations against the actual Epiphany Day collect it borrows (per the BCP's own rubric that the Epiphany Day collect serves the weekdays following): missing "who," "only-begotten" shortened to "only," "behold" changed to "see," missing "the same" before "Jesus Christ our Lord." rite2 was already correct. Note: confirmed this entry is NOT a misassignment — the BCP rubric explicitly directs the Epiphany Day collect to serve weekdays between Epiphany and the following Sunday, and Baptism of Our Lord Sunday has its own separate, already-correct entry (`bcp-collect-baptism-of-our-lord`).
+- **Easter 6, rite1** — "them that love thee" corrected to "those who love thee," and a truncated doxology restored (was cut off at "through Jesus Christ our Lord. Amen." with no "who liveth and reigneth..." clause). rite2 was already correct.
+- **James the Apostle, rite1** — "today" corrected to "this day" (trivial single-word restoration to match source exactly). rite2 was already correct.
+
+All fixes validated as well-formed JSON. Remaining flagged items from this pass, not yet re-checked in this session, are limited to entries already confirmed correct earlier or confirmed dead — this pass is effectively complete for live content, pending a final confirmation sweep.
+
 ## Session, 2026-07-06 — LFF 2024 cross-check, recon and fixes applied
 
 Before starting, re-established the actual scope of the "LFF-sourced collects" bucket rather than trusting the prior session's count, per standing rule. Found **two of the eight previously-assumed LFF candidates are actually misclassified — Saint Joseph and Saint James of Jerusalem are both Major Feasts fixed in the BCP1979 itself**, not LFF at all (confirmed via `book_of_common_prayer.pdf`, which lists both explicitly as Major Feasts and gives full collect text for each). This means the true LFF-sourced bucket is 6 entries, not 8.
