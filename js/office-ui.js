@@ -3463,16 +3463,47 @@ async function renderBcpOffice() {
             continue;
         }
 
-        // VARIABLE_CANTICLE1 — Te Deum (Morning) / Magnificat (Evening)
+        // VARIABLE_CANTICLE1 — canticle after the Old Testament Reading
+        // Per BCP1979 "Suggested Canticles at Morning/Evening Prayer" (pp.144-145),
+        // selection depends on day of week, with seasonal overrides in Advent/Lent/Easter.
+        // NOTE: the table's separate "Feasts of our Lord and other Major Feasts" override
+        // row is NOT yet implemented here — this app has no Major Feast / feast-rank flag
+        // in the Anglican calendar data to detect that case. Flagged for Josh; until
+        // resolved, Major Feast days will show the ordinary weekday canticle instead of
+        // the Major-Feast override the BCP calls for.
         if (item === 'VARIABLE_CANTICLE1') {
             let canticleId = null;
             let canticleLabel = '';
+            const dow = currentDate.getDay(); // 0=Sun, 1=Mon, ... 6=Sat
             if (isMorning) {
-                canticleId    = 'bcp-te-deum';
-                canticleLabel = 'Te Deum Laudamus';
+                if (dow === 0) { // Sunday
+                    if (season === 'advent')      { canticleId = 'bcp-surge-illuminare';   canticleLabel = 'The Third Song of Isaiah'; }
+                    else if (season === 'lent')    { canticleId = 'bcp-kyrie-pantokrator';  canticleLabel = 'A Song of Penitence'; }
+                    else if (season === 'easter')  { canticleId = 'bcp-cantemus-domino';    canticleLabel = 'The Song of Moses'; }
+                    else                            { canticleId = 'bcp-benedictus';         canticleLabel = 'Benedictus Dominus Deus'; }
+                } else if (dow === 1) { canticleId = 'bcp-ecce-deus';        canticleLabel = 'The First Song of Isaiah'; }
+                else if (dow === 2)   { canticleId = 'bcp-benedictus-es';    canticleLabel = 'Benedictus es, Domine'; }
+                else if (dow === 3) {
+                    if (season === 'lent') { canticleId = 'bcp-kyrie-pantokrator'; canticleLabel = 'A Song of Penitence'; }
+                    else                     { canticleId = 'bcp-surge-illuminare'; canticleLabel = 'The Third Song of Isaiah'; }
+                }
+                else if (dow === 4)   { canticleId = 'bcp-cantemus-domino';  canticleLabel = 'The Song of Moses'; }
+                else if (dow === 5) {
+                    if (season === 'lent') { canticleId = 'bcp-kyrie-pantokrator'; canticleLabel = 'A Song of Penitence'; }
+                    else                     { canticleId = 'bcp-quaerite-dominum'; canticleLabel = 'The Second Song of Isaiah'; }
+                }
+                else if (dow === 6)   { canticleId = 'bcp-benedicite';       canticleLabel = 'A Song of Creation'; }
             } else if (isEvening) {
-                canticleId    = 'bcp-magnificat';
-                canticleLabel = 'The Magnificat';
+                if (dow === 0)        { canticleId = 'bcp-magnificat';       canticleLabel = 'The Magnificat'; }
+                else if (dow === 1) {
+                    if (season === 'lent') { canticleId = 'bcp-kyrie-pantokrator'; canticleLabel = 'A Song of Penitence'; }
+                    else                     { canticleId = 'bcp-cantemus-domino'; canticleLabel = 'The Song of Moses'; }
+                }
+                else if (dow === 2)   { canticleId = 'bcp-quaerite-dominum'; canticleLabel = 'The Second Song of Isaiah'; }
+                else if (dow === 3)   { canticleId = 'bcp-benedicite';       canticleLabel = 'A Song of Creation'; }
+                else if (dow === 4)   { canticleId = 'bcp-surge-illuminare'; canticleLabel = 'The Third Song of Isaiah'; }
+                else if (dow === 5)   { canticleId = 'bcp-benedictus-es';    canticleLabel = 'Benedictus es, Domine'; }
+                else if (dow === 6)   { canticleId = 'bcp-ecce-deus';        canticleLabel = 'The First Song of Isaiah'; }
             }
             if (canticleId) {
                 const comp = appData.components.find(c => c.id === canticleId);
@@ -3486,16 +3517,34 @@ async function renderBcpOffice() {
             continue;
         }
 
-        // VARIABLE_CANTICLE2 — Benedictus (Morning) / Nunc Dimittis (Evening)
+        // VARIABLE_CANTICLE2 — canticle after the New Testament Reading
+        // Per BCP1979 "Suggested Canticles at Morning/Evening Prayer" (pp.144-145).
+        // Same Major Feast caveat as VARIABLE_CANTICLE1 above applies here.
         if (item === 'VARIABLE_CANTICLE2') {
             let canticleId = null;
             let canticleLabel = '';
+            const dow = currentDate.getDay();
             if (isMorning) {
-                canticleId    = 'bcp-benedictus';
-                canticleLabel = 'The Benedictus';
+                if (dow === 0) { // Sunday
+                    if (season === 'advent' || season === 'lent') { canticleId = 'bcp-benedictus'; canticleLabel = 'Benedictus Dominus Deus'; }
+                    else                                            { canticleId = 'bcp-te-deum';    canticleLabel = 'Te Deum Laudamus'; }
+                } else if (dow === 1) { canticleId = 'bcp-magna-et-mirabilia'; canticleLabel = 'The Song of the Redeemed'; }
+                else if (dow === 2)   { canticleId = 'bcp-dignus-es';          canticleLabel = 'A Song to the Lamb'; }
+                else if (dow === 3)   { canticleId = 'bcp-benedictus';         canticleLabel = 'Benedictus Dominus Deus'; }
+                else if (dow === 4) {
+                    if (season === 'advent' || season === 'lent') { canticleId = 'bcp-magna-et-mirabilia'; canticleLabel = 'The Song of the Redeemed'; }
+                    else                                            { canticleId = 'bcp-gloria-in-excelsis'; canticleLabel = 'Glory to God'; }
+                }
+                else if (dow === 5)   { canticleId = 'bcp-dignus-es';          canticleLabel = 'A Song to the Lamb'; }
+                else if (dow === 6)   { canticleId = 'bcp-magna-et-mirabilia'; canticleLabel = 'The Song of the Redeemed'; }
             } else if (isEvening) {
-                canticleId    = 'bcp-nunc-dimittis';
-                canticleLabel = 'Nunc Dimittis';
+                if (dow === 0)        { canticleId = 'bcp-nunc-dimittis'; canticleLabel = 'Nunc Dimittis'; }
+                else if (dow === 1)   { canticleId = 'bcp-nunc-dimittis'; canticleLabel = 'Nunc Dimittis'; }
+                else if (dow === 2)   { canticleId = 'bcp-magnificat';    canticleLabel = 'The Magnificat'; }
+                else if (dow === 3)   { canticleId = 'bcp-nunc-dimittis'; canticleLabel = 'Nunc Dimittis'; }
+                else if (dow === 4)   { canticleId = 'bcp-magnificat';    canticleLabel = 'The Magnificat'; }
+                else if (dow === 5)   { canticleId = 'bcp-nunc-dimittis'; canticleLabel = 'Nunc Dimittis'; }
+                else if (dow === 6)   { canticleId = 'bcp-magnificat';    canticleLabel = 'The Magnificat'; }
             }
             if (canticleId) {
                 const comp = appData.components.find(c => c.id === canticleId);
