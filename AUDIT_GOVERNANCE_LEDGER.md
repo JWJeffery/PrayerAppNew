@@ -324,4 +324,22 @@ OPEN QUESTION for Josh, not yet decided: several entries (Dec 5, 13, 16, 17, 19 
 
 Total: 11 green, 15 red (1 minor + 7 moderate + 4 severe + 2 Holy-Day/schema-gap), 1 open format question not yet decided. No entries remain amber (unaudited). Per the new audit-then-fix workflow, no data has been changed yet -- this is the full record for this season, awaiting direction on the fix phase.
 
+## Decision, 2026-07-06 — bracketed/optional psalm verses: policy settled, Advent reclassified
+
+**Josh's rule, stated plainly: nothing is optional — use the full reading.** This resolves the open format question flagged in the Advent audit above, and is grounded directly in the BCP's own rubric (p.934): "Brackets and parentheses are used... to indicate Psalms and verses of Psalms which may be omitted... Those who desire to recite the Psalter in its entirety should, in each instance, use the bracketed Psalms rather than the alternatives." Going forward, for every psalm citation across the whole DOL audit (not just Advent):
+
+- **Parenthetical verses within a psalm** (e.g. `21:1-7(8-14)`) — include the full range: `21:1-14`.
+- **Bracketed whole psalms offered as an addition** (e.g. `49, [53]`) — include the bracketed psalm: `49, 53`.
+- **Bracketed psalms offered as the "entire" option against a substitute** (e.g. `[59, 60] or 33`) — use the bracketed option (`59, 60`), per the BCP's own explicit instruction, not the substitute.
+
+**Advent reclassified accordingly** (still record-only, no data touched):
+- **Dec 5** — moves from "open question" to RED. psalms_mp incomplete (`Psalm 20, 21:1-7` should be `Psalm 20, 21:1-14`); psalms_ep incomplete (`Psalm 110:1-5, 116, 117` should be `Psalm 110:1-7, 116, 117`).
+- **Dec 13** — additional finding on top of its existing red status (Year One readings corrupted, see above): psalms_mp incomplete (`Psalm 63:1-8, 98` should be `Psalm 63:1-11, 98`).
+- **Dec 16** — psalm citation confirmed CORRECT under this policy (`Psalm 49, 53` already includes the bracketed psalm) — no psalm-level finding here; the entry remains red only for its Year One reading corruption.
+- **Dec 17** — additional finding: psalms_ep is not just incomplete but WRONG — the app used the substitute Psalm 33 instead of the bracketed full-Psalter option, which per this policy should be `Psalm 59, 60`.
+- **Dec 19** — additional finding: psalms_ep incomplete (`Psalm 138, 139:1-17` should be `Psalm 138, 139:1-23`).
+
+**Corrected Advent total: 11 green, 15 red, 0 open questions.** (The previous entry's "15 red" figure was arithmetically inconsistent with its own itemization — 1+7+4+2=14 — before Dec 5 was folded in from the open-question bucket; the corrected total of 15 red is now internally consistent.) This bracket policy applies retroactively to how all remaining season files get audited, not just Advent — every psalm citation check from here forward will apply the three rules above directly, no separate flag needed per occurrence.
+
+
 
