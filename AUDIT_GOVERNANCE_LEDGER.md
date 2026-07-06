@@ -216,6 +216,29 @@ Josh pushed back on the amber/red/green semantics: amber must mean "not yet audi
 
 **Running total: 54 of 92 live collects now verified** (29 before this session + 25 this session). **38 remain completely unchecked**: Easter 2–5, 7, Easter Day, Ascension, remaining Propers (9, 10, 11, 12, 16, 17, 19–29), Trinity Sunday, All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, and `default-ferial`. This list, not the vague "still open" language used in earlier ledger entries, is the actual remaining scope — continuing systematically next.
 
+**Continued, same session — Easter season through Ascension (7 checked):**
+
+- **Easter Day, rite1** — doxology form differed ("with thee and the Holy Ghost, ever one God" vs. source's "with thee and the same Spirit ever, one God"). Fixed.
+- **Easter 2, rite1** — "express" should be "profess" (real word-choice error, not archaism), and missing "the same" before "Jesus Christ our Lord." Fixed. rite2 already correct.
+- **Easter 3, rite2** — "and the Holy Spirit" should be "in the unity of the Holy Spirit" (construction difference). Fixed. rite1 already correct (confirmed earlier this session).
+- **Easter 4** — verified verbatim, no changes.
+- **Easter 5, rite1** — truncated doxology restored (was cut off at "our Lord. Amen." with no "who liveth and reigneth" clause). Fixed. rite2 already correct.
+- **Ascension, rite1** — missing "O," "end of the world" should be "end of the ages" (real wording error), and truncated doxology restored. Fixed. rite2 already correct.
+- **Easter 7, rite1** — "the Holy Spirit" should be "the same Holy Ghost" (source's specific word choice for this collect). Fixed. rite2 already correct.
+
+**Running total: 61 of 92 live collects verified. 31 remain**: Propers 9, 10, 11, 12, 16, 17, 19–29 (17 entries), Trinity Sunday, All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, `default-ferial`.
+
+**Continued, same session — Propers 9–17 and Trinity Sunday (7 checked):**
+
+- **Proper 9, rite1** — truncated doxology restored (rite2 already correct).
+- **Proper 10, rite1** — truncated doxology restored (rite2 already correct).
+- **Proper 11** — rite1 had different wording throughout plus a truncated doxology; rite2 had only the truncated doxology. Both fixed to match source exactly.
+- **Proper 12, rite1** — the ending was an older-form construction ("grant this, O heavenly Father, for the sake of...") not matching 1979 at all, and was itself truncated. Replaced with the real 1979 text. rite2 already correct.
+- **Proper 16 and Proper 17 — both entries were sharing Proper 17's content in rite2, and each had a different wrong/unrelated rite1.** This meant Proper 16's real, distinct collect was completely absent from the file. Both entries fully corrected: Proper 16 now has its own real text (both rites), Proper 17 now has its own real text (both rites, rite1 previously held a different, unrelated collect entirely).
+- **Trinity Sunday** — verified verbatim, both rites, no changes.
+
+**Running total: 68 of 92 live collects verified. 24 remain**: Propers 19–29 (11 entries), All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, `default-ferial`.
+
 ## Session, 2026-07-06 — LFF 2024 cross-check, recon and fixes applied
 
 Before starting, re-established the actual scope of the "LFF-sourced collects" bucket rather than trusting the prior session's count, per standing rule. Found **two of the eight previously-assumed LFF candidates are actually misclassified — Saint Joseph and Saint James of Jerusalem are both Major Feasts fixed in the BCP1979 itself**, not LFF at all (confirmed via `book_of_common_prayer.pdf`, which lists both explicitly as Major Feasts and gives full collect text for each). This means the true LFF-sourced bucket is 6 entries, not 8.
