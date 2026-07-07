@@ -348,3 +348,14 @@ Total: 11 green, 15 red (1 minor + 7 moderate + 4 severe + 2 Holy-Day/schema-gap
 
 
 
+## Session, 2026-07-06 — Daily Office Lectionary audit, Christmas season (record-only pass)
+
+CHRISTMAS SEASON — FULL AUDIT COMPLETE 2026-07-06 (record-only pass, no fixes applied). 12 of 12 entries classified, zero amber remaining.
+
+GREEN, verified verbatim against BCP1979.pdf Daily Office Lectionary pp.939-940 (6 entries): Monday after Christmas (Dec 29), Wednesday after Christmas (Dec 31, including its Eve-of-Holy-Name evening fields), The Holy Name (Jan 1), Thursday after Christmas (Jan 2), Friday after Christmas (Jan 3), Second Sunday after Christmas (Jan 4).
+
+RED -- minor, bracket-policy violations under the settled full-reading rule (3 entries): Christmas Day (psalms_ep should be "Psalm 110:1-7, Psalm 132", drops the bracketed verses 6-7); Tuesday after Christmas / Dec 30 (psalms_mp should be "Psalm 20, Psalm 21:1-14", drops bracketed verses 8-14); Monday before Epiphany / Jan 5 (psalms_mp should be "Psalm 2, Psalm 110:1-7", drops bracketed verses 6-7 -- this entry's Eve-of-Epiphany fields are otherwise fully correct).
+
+RED -- severe, SYSTEMIC wrong-lectionary-track pattern (3 entries, all Holy Days): St. Stephen (Dec 26), St. John (Dec 27), and The Holy Innocents (Dec 28) all pull their Daily Office readings from the EUCHARISTIC lectionary (BCP p.996) instead of the Daily Office Lectionary's own dedicated Holy Days table (BCP p.995-996), which assigns different psalms and readings entirely. This is now confirmed systemic, not isolated -- St. Thomas in the Advent audit showed the identical bug. Of 5 Holy Days checked so far across both seasons, only St. Andrew (Advent) was correctly sourced from the DOL; the other 4 (Thomas, Stephen, John, Innocents) all used the Eucharistic track instead. Expect this pattern to recur on every remaining Holy Day in the unaudited seasons -- treat it as the default hypothesis to check, not a surprise each time. St. John additionally has a secondary error even within its (wrong-track) reading: reading_gospel_ep_year1 says "John 21:19b-25", but even the Eucharistic lectionary itself says "John 21:19b-24" -- so this entry doesn't correctly match ANY source. Same 4-reading-per-Holy-Day schema gap noted in the Advent audit applies here once these are corrected to the true DOL source (2 readings for MP, 2 for EP -- the app's 3-slot schema can't hold all 4).
+
+Total: 6 green, 6 red (3 minor bracket + 3 severe systemic). No entries remain amber (unaudited).
