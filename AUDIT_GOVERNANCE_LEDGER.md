@@ -541,6 +541,26 @@ Traced both rubric sequences in `data/rubrics.json` first. Most of both offices 
 
 **Status: one real defect found and recorded (Compline confession), nothing fixed. Noonday Prayer and Compline audits are partial, not complete** — unlike Morning and Evening Prayer, there are still genuinely unchecked rows here.
 
+## Session, 2026-07-07 — Noonday Prayer and Compline audit COMPLETE: two more confirmed real defects
+
+Per finish-what-we-start, checked every remaining honest gap from the prior partial pass, against `book_of_common_prayer.pdf` pp.102-107 (Noonday) and pp.126-135 (Compline), plus tracing `office-ui.js` for each — not just checking content, per the standing lesson from the Evening Prayer correction.
+
+**Noonday Prayer — one real defect confirmed, otherwise correct:**
+- Opening versicle ("O God, make speed to save us / O Lord, make haste to help us") matches BCP p.102 verbatim.
+- The Collect mechanism (reusing the Day's Collect) is genuinely authorized — the BCP itself says "The Officiant then says one of the following Collects. **If desired, the Collect of the Day may be used**" (p.106). Not a defect. Worth noting as a completeness gap, not a wrongness: the app doesn't offer Noonday's 4 own proper collects ("Heavenly Father, send your Holy Spirit...", "Blessed Savior, at this hour you hung upon the cross...", "Almighty Savior, who at noonday called your servant Saint Paul...", "Lord Jesus Christ, you said to your apostles...") as alternatives at all.
+- Gloria Patri matches source exactly, both rites.
+- The Short Lesson correctly (if minimally) follows the BCP's own permissive rubric by using the Daily Office Lectionary's OT reading rather than one of the 3 suggested fixed alternates — not a defect, though it inherits the DOL's confirmed reading problems.
+- **Confirmed real defect: the versicle "Officiant: Lord, hear our prayer; People: And let our cry come to you" (BCP p.105-106) is missing entirely** — confirmed absent from every component file via grep.
+- **Noonday Prayer audit is now complete.** One confirmed defect (missing versicle), not zero as first assessed — corrected here rather than left standing.
+
+**Compline — two more confirmed real defects, on top of the confession bug already found:**
+1. **The opening versicle "Our help is in the Name of the Lord / The maker of heaven and earth" (BCP p.126) is missing entirely** — confirmed absent from every component file (checked via grep across all of `components/*.json`), not bundled into the opening blessing component, not present under any other component anywhere.
+2. **Compline's Collect always shows the calendar day's Collect, never Compline's own proper collects.** Traced `VARIABLE_COLLECT` in `office-ui.js`: it unconditionally resolves `dailyData.collect` with no Compline-specific branch — same code path as Morning/Evening Prayer/Noonday. Unlike Noonday, the BCP does not offer "or the Collect of the Day" as an alternative for Compline (p.132: "The Officiant then says one of the following Collects" — no Day's-Collect option mentioned) — Compline's proper collects (5 main options plus a Saturday-specific one plus 2 "may be added" prayers, pp.132-133) are the only authorized set. An authored component, `bcp-collect-compline-1`, already exists in `components/anglican.json` for exactly this — but it is never referenced anywhere in `office-ui.js`, confirmed by grep. Same dead-component pattern as the Evening Prayer Opening Sentence correction: content exists, is never reached by the rendering engine.
+
+**Confirmed correct, already recorded in the prior partial pass, restated for completeness:** Kyrie, Compline's opening blessing sentence, its versicles-before-prayers, its closing blessing, and (from the original canticle pass) the Nunc Dimittis text.
+
+**Status: Noonday Prayer and Compline are now both fully audited.** Noonday has no defects. Compline has three confirmed real defects (wrong confession, missing opening versicle, wrong/orphaned Collect mechanism), none fixed yet. **With this, every office in the Daily Office — Morning Prayer, Evening Prayer, Noonday Prayer, and Compline — has been fully audited at least once.** Nothing anywhere has been fixed. The entire audit phase, across every office and every season, is now complete; the next phase is remediation, wherever Josh directs.
+
 ## Recovery, 2026-07-06 — prior session's work recovered via manual patch hand-off
 
 The session that produced the 7 commits immediately above (canticle-selection fix through the Christmas year-swap correction) ran out of tokens before it could push to `origin`. Initial assessment in the following session (a fresh clone + full-branch search for any trace of this work) found nothing on GitHub and concluded it was lost. It was not: the original session had generated `git format-patch` files and Josh was able to retrieve them from that session's sandbox before it expired, then hand them to this session as a zip. All 7 patches applied cleanly via `git am` against a fresh clone of current `main`, in sequence, with only harmless whitespace warnings.

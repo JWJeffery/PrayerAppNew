@@ -75,9 +75,18 @@ Evening Prayer is now fully audited — its unique parts checked here, everythin
 
 Neither has been touched at all — every row defaults to amber with no note. Per finish-what-we-start, these are next before any fix-phase work begins.
 
-### Noonday Prayer and Compline — PARTIAL pass done, time-limited
+### Noonday Prayer and Compline audit: COMPLETE
 
-Most of both offices reuse components already covered (Invitatory, Lord's Prayer, DOL psalms/readings, Collects, closing). Confirmed correct: Kyrie, Compline's opening blessing, Compline's versicles-before-prayers. **Real defect found: Compline shows the wrong Confession** — BCP gives Compline its own distinct, shorter confession, but the engine reuses Morning/Evening Prayer's longer one; no Compline-specific confession component exists at all. Not yet checked: Noonday's own opening versicle, whether "Our help is in the Name of the Lord" is bundled correctly, Noonday's Collect sourcing. This audit is honestly incomplete, unlike Morning/Evening Prayer — resume here next.
+**Noonday Prayer — one confirmed defect, otherwise fine.** Opening versicle and Gloria Patri correct; Collect mechanism is explicitly BCP-authorized ("If desired, the Collect of the Day may be used," p.106); Short Lesson correctly follows the BCP's permissive rubric using DOL data. **Confirmed missing: the versicle "Lord, hear our prayer / And let our cry come to you" (p.105-106) doesn't exist anywhere in the app.**
+
+**Compline — three confirmed real defects:**
+1. Wrong Confession (uses Morning/Evening Prayer's, not Compline's own distinct shorter one).
+2. "Our help is in the Name of the Lord" opening versicle missing entirely — not present anywhere in the data.
+3. Collect always shows the calendar day's Collect — traced in `office-ui.js`, no Compline-specific branch exists. Unlike Noonday, BCP doesn't authorize this substitution for Compline; its own proper collects are the only correct set. An authored `bcp-collect-compline-1` component exists but is never referenced anywhere in the rendering code — orphaned, same pattern as the Evening Prayer Opening Sentence correction.
+
+Confirmed correct: Kyrie, opening blessing, versicles-before-prayers, closing blessing, Nunc Dimittis text.
+
+**With this, every office — Morning Prayer, Evening Prayer, Noonday Prayer, Compline — is now fully audited at least once. The entire audit phase (every office, every season, the Holy Days table) is complete. Nothing has been fixed anywhere. Next phase is remediation, wherever directed.**
 
 True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it, plus the Holy Days lectionary table. Remaining open item: the Shrove Tuesday scope question above.
 
