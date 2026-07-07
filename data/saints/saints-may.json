@@ -245,6 +245,7 @@
     "description": "Soldier and martyr, died 303 AD.",
     "type": "saint",
     "tags": [
+      "ANG",
       "OOR"
     ]
   },
@@ -813,6 +814,16 @@
     "type": "saint",
     "tags": [
       "LAT"
+    ]
+  },
+  {
+    "id": "saint-lydia-of-thyatira",
+    "day": "May 21",
+    "name": "Saint Lydia of Thyatira",
+    "description": "The first convert to Christianity in Europe recorded in Acts.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {

@@ -825,4 +825,17 @@ Per Josh's direction: pause the by-tradition duplicate-date work, and instead cr
 
 **Not resolved — this is a confirmed, well-evidenced set of findings, not a fix.** 23 identities need real per-case judgment (same kind of care as the original 27 ANG duplicates — checking whether the discrepancy is a genuine error, a legitimate joint/alternate commemoration, or something else) before changing any data. The full 284-entry LFF list was checked only against exact-ish name matches; looser or missed matches (identities named differently enough that they didn't surface in this pass) are not ruled out. Common Worship (Church of England) cross-referencing was not attempted this session — only the TEC/LFF 2024 source was used.
 
+## Fix applied, 2026-07-07 — all 24 findings above resolved in `data/saints/commemorations.json`
+
+Per finish-what-we-start, applied all 24 items from the immediately preceding entry (the Fabian regression plus the 23 LFF cross-check findings), not just one:
+
+- **Fabian regression reverted:** `ANG` tag restored at Jan 20.
+- **13 identities added:** Confession of Saint Peter (Jan 18), Vincent of Saragossa (Jan 22), David of Wales (Mar 1), Mary of Egypt (Mar 30), George of Lydda (May 6), Lydia of Thyatira (May 21), Basil of Caesarea (Jun 14), Moses the Black (Jul 2), Ignatius of Loyola (Jul 31), Teresa Benedicta of the Cross/Edith Stein (Aug 9), Thérèse of Lisieux (Oct 1), Herman of Alaska (Nov 15), Francis de Sales (Dec 12) — each a new `ANG` record at the LFF 2024 date, none previously existed.
+- **9 identities corrected to the LFF 2024 date:** Harriet Bedell (Jan 7→8), Martyrs of Japan (Feb 5→6), Emily Malbone Morgan (Feb 26→25), John Keble (Mar 28→29), John Cassian (`saint-john-cassian` — the actual identity_id, not `john-cassian` as first assumed; Jul 12→23), Cyprian of Carthage (Sep 15→13), Hilda of Whitby (Nov 17→18), Nicholas Ferrar (Dec 1→8).
+- **Vincent de Paul, resolved as a genuine joint commemoration, not a simple date correction:** the on-file `ANG` tag at Sep 27 was copying the Roman Rite's *solo* Vincent de Paul date, not the actual Anglican commemoration. LFF 2024 lists him jointly with Louise de Marillac at March 15 — moved `vincent-de-paul`'s `ANG` date to Mar 15, and added a new `ANG` record for `saint-louise-de-marillac` (previously untagged for Anglican use at all) at the same date.
+
+**Verified before and after the fix:** all 24 changes confirmed present at the correct date in `commemorations.json` by direct lookup. Ran `node tools/build_saints_cache.js` to regenerate all 12 monthly cache files. Spot-checked the January cache directly — Fabian, Confession of St. Peter, Vincent of Saragossa, and Harriet Bedell all show the correct date and tag set.
+
+**Still not done:** Common Worship (Church of England) cross-referencing for these same non-ANG identities was not attempted — only TEC/LFF 2024 was used as the source. The full text-content audit (descriptions, ranks, associated collects) for all now-372 `ANG` identities remains unstarted, as does the by-tradition duplicate-date work for LAT/EOR/OOR/COE (paused per Josh's direction, not abandoned).
+
 

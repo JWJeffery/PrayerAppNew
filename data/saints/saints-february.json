@@ -177,16 +177,6 @@
     ]
   },
   {
-    "id": "martyrs-of-japan",
-    "day": "February 5",
-    "name": "Martyrs of Japan",
-    "description": "Christian martyrs, 1597.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-agatha",
     "day": "February 5",
     "name": "Saint Agatha",
@@ -197,6 +187,16 @@
       "EOR",
       "LAT",
       "OOR"
+    ]
+  },
+  {
+    "id": "martyrs-of-japan",
+    "day": "February 6",
+    "name": "Martyrs of Japan",
+    "description": "Christian martyrs, 1597.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -909,6 +909,16 @@
     ]
   },
   {
+    "id": "emily-malbone-morgan",
+    "day": "February 25",
+    "name": "Emily Malbone Morgan",
+    "description": "Prophetic witness, 1937.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "john-roberts",
     "day": "February 25",
     "name": "John Roberts",
@@ -937,16 +947,6 @@
     "type": "saint",
     "tags": [
       "COE"
-    ]
-  },
-  {
-    "id": "emily-malbone-morgan",
-    "day": "February 26",
-    "name": "Emily Malbone Morgan",
-    "description": "Prophetic witness, 1937.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {

@@ -535,6 +535,7 @@
     "description": "Missionary.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR"
     ]
   },
@@ -674,16 +675,6 @@
     ]
   },
   {
-    "id": "saint-hilda-of-whitby",
-    "day": "November 17",
-    "name": "Saint Hilda of Whitby",
-    "description": "Abbess and teacher.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "dedication-of-peter-and-paul-basilicas",
     "day": "November 18",
     "name": "Dedication of Peter and Paul Basilicas",
@@ -711,6 +702,16 @@
     "type": "saint",
     "tags": [
       "COE"
+    ]
+  },
+  {
+    "id": "saint-hilda-of-whitby",
+    "day": "November 18",
+    "name": "Saint Hilda of Whitby",
+    "description": "Abbess and teacher.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {

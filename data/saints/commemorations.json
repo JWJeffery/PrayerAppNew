@@ -301,7 +301,7 @@
     "tradition": "ANG",
     "date": {
       "month": 1,
-      "day": 7
+      "day": 8
     },
     "calendar": "gregorian"
   },
@@ -1588,7 +1588,7 @@
     "tradition": "ANG",
     "date": {
       "month": 2,
-      "day": 5
+      "day": 6
     },
     "calendar": "gregorian"
   },
@@ -2470,7 +2470,7 @@
     "tradition": "ANG",
     "date": {
       "month": 2,
-      "day": 26
+      "day": 25
     },
     "calendar": "gregorian"
   },
@@ -3835,7 +3835,7 @@
     "calendar": "gregorian",
     "date": {
       "month": 3,
-      "day": 28
+      "day": 29
     },
     "rank": "commemoration",
     "status": "verified"
@@ -8125,7 +8125,7 @@
     "tradition": "ANG",
     "date": {
       "month": 7,
-      "day": 12
+      "day": 23
     },
     "calendar": "gregorian"
   },
@@ -11149,7 +11149,7 @@
     "tradition": "ANG",
     "date": {
       "month": 9,
-      "day": 15
+      "day": 13
     },
     "calendar": "gregorian"
   },
@@ -11643,8 +11643,8 @@
     "identity_id": "vincent-de-paul",
     "tradition": "ANG",
     "date": {
-      "month": 9,
-      "day": 27
+      "month": 3,
+      "day": 15
     },
     "calendar": "gregorian"
   },
@@ -13885,7 +13885,7 @@
     "tradition": "ANG",
     "date": {
       "month": 11,
-      "day": 17
+      "day": 18
     },
     "calendar": "gregorian"
   },
@@ -14533,7 +14533,7 @@
     "tradition": "ANG",
     "date": {
       "month": 12,
-      "day": 1
+      "day": 8
     },
     "calendar": "gregorian"
   },
@@ -16149,5 +16149,140 @@
     "calendar": "gregorian",
     "rank": "commemoration",
     "status": "verified"
+  },
+  {
+    "identity_id": "saint-fabian",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 1,
+      "day": 20
+    }
+  },
+  {
+    "identity_id": "confession-of-saint-peter",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 1,
+      "day": 18
+    }
+  },
+  {
+    "identity_id": "saint-vincent-of-saragossa",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 1,
+      "day": 22
+    }
+  },
+  {
+    "identity_id": "saint-david-of-wales",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 3,
+      "day": 1
+    }
+  },
+  {
+    "identity_id": "saint-mary-of-egypt",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 3,
+      "day": 30
+    }
+  },
+  {
+    "identity_id": "saint-george-of-lydda",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 5,
+      "day": 6
+    }
+  },
+  {
+    "identity_id": "saint-lydia-of-thyatira",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 5,
+      "day": 21
+    }
+  },
+  {
+    "identity_id": "saint-basil-of-caesarea",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 6,
+      "day": 14
+    }
+  },
+  {
+    "identity_id": "saint-moses-the-black",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 7,
+      "day": 2
+    }
+  },
+  {
+    "identity_id": "saint-ignatius-of-loyola",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 7,
+      "day": 31
+    }
+  },
+  {
+    "identity_id": "saint-teresa-benedicta-of-the-cross-edith-stein",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 8,
+      "day": 9
+    }
+  },
+  {
+    "identity_id": "saint-th-r-se-of-lisieux",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 10,
+      "day": 1
+    }
+  },
+  {
+    "identity_id": "herman-of-alaska",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 11,
+      "day": 15
+    }
+  },
+  {
+    "identity_id": "saint-francis-de-sales",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 12,
+      "day": 12
+    }
+  },
+  {
+    "identity_id": "saint-louise-de-marillac",
+    "tradition": "ANG",
+    "calendar": "gregorian",
+    "date": {
+      "month": 3,
+      "day": 15
+    }
   }
 ]

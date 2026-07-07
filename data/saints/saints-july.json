@@ -70,6 +70,16 @@
     ]
   },
   {
+    "id": "saint-moses-the-black",
+    "day": "July 2",
+    "name": "Saint Moses the Black",
+    "description": "Former bandit turned Desert Father.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-otto-of-bamberg",
     "day": "July 2",
     "name": "Saint Otto of Bamberg",
@@ -463,16 +473,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "saint-john-cassian",
-    "day": "July 12",
-    "name": "Saint John Cassian",
-    "description": "Abbot and theologian, died 435.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -891,6 +891,16 @@
     ]
   },
   {
+    "id": "saint-john-cassian",
+    "day": "July 23",
+    "name": "Saint John Cassian",
+    "description": "Abbot and theologian, died 435.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-phocas",
     "day": "July 23",
     "name": "Saint Phocas",
@@ -1161,6 +1171,7 @@
     "description": "Founder of the Society of Jesus.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   }

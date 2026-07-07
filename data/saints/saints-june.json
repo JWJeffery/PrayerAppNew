@@ -450,6 +450,16 @@
     ]
   },
   {
+    "id": "saint-basil-of-caesarea",
+    "day": "June 14",
+    "name": "Saint Basil of Caesarea",
+    "description": "The Great; author of the Divine Liturgy (commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-basil-the-great",
     "day": "June 14",
     "name": "Saint Basil the Great",

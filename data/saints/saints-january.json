@@ -231,16 +231,6 @@
     ]
   },
   {
-    "id": "harriet-bedell",
-    "day": "January 7",
-    "name": "Harriet Bedell",
-    "description": "Deaconess and Missionary, 1969.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-raymond-of-penyafort",
     "day": "January 7",
     "name": "Saint Raymond of Penyafort",
@@ -268,6 +258,16 @@
     "type": "saint",
     "tags": [
       "EOR"
+    ]
+  },
+  {
+    "id": "harriet-bedell",
+    "day": "January 8",
+    "name": "Harriet Bedell",
+    "description": "Deaconess and Missionary, 1969.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -655,6 +655,7 @@
     "description": "Peter's recognition of Christ as Messiah, venerated in Anglican Communion, Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
     "type": "commemoration",
     "tags": [
+      "ANG",
       "EOR"
     ]
   },
@@ -785,6 +786,7 @@
     "description": "Pope and martyr.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -878,6 +880,7 @@
     "description": "Deacon and martyr.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT",
       "OOR"
     ]

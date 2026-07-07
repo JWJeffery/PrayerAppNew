@@ -190,6 +190,12 @@ Per Josh's direction, checked every identity not currently ANG-tagged against LF
 
 **Not resolved — needs the same careful per-case judgment as the original 27 duplicates**, not a blind fix. Common Worship (Church of England) wasn't cross-checked this session, only TEC/LFF 2024.
 
+### Fix applied, 2026-07-07 — all 24 findings resolved in data
+
+Per finish-what-we-start: Fabian's regression reverted (ANG restored at Jan 20); 13 identities added at their LFF 2024 date; 9 corrected to the LFF 2024 date; Vincent de Paul resolved as a genuine joint commemoration with Louise de Marillac at March 15 (not just a date fix — the old Sep 27 date was copying the Roman solo date, and Louise had no ANG tag at all before this). All 24 verified present at the correct date; saints cache regenerated for all 12 months; January cache spot-checked directly.
+
+**Still open:** Common Worship cross-check for these same identities not attempted. Full text-content audit (descriptions/ranks/collects) for all ANG identities not started. By-tradition duplicate-date work (LAT/EOR/OOR/COE) paused per Josh's direction, not abandoned.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.

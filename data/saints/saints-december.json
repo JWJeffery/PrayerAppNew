@@ -10,16 +10,6 @@
     ]
   },
   {
-    "id": "nicholas-ferrar",
-    "day": "December 1",
-    "name": "Nicholas Ferrar",
-    "description": "Deacon and founder of Little Gidding.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "prophet-nahum",
     "day": "December 1",
     "name": "Prophet Nahum",
@@ -264,6 +254,16 @@
     ]
   },
   {
+    "id": "nicholas-ferrar",
+    "day": "December 8",
+    "name": "Nicholas Ferrar",
+    "description": "Deacon and founder of Little Gidding.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-barbara-oriental-date",
     "day": "December 8",
     "name": "Saint Barbara (Oriental date)",
@@ -469,6 +469,16 @@
     "day": "December 12",
     "name": "Saint Finnian",
     "description": "Teacher of Irish saints.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-francis-de-sales",
+    "day": "December 12",
+    "name": "Saint Francis de Sales",
+    "description": "Doctor of the Church.",
     "type": "saint",
     "tags": [
       "ANG"

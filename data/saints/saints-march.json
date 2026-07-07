@@ -26,6 +26,7 @@
     "description": "Bishop and patron of Wales (shared commemoration).",
     "type": "saint",
     "tags": [
+      "ANG",
       "OOR"
     ]
   },
@@ -441,7 +442,18 @@
     "description": "Foundress of the Daughters of Charity, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
+    ]
+  },
+  {
+    "id": "vincent-de-paul",
+    "day": "March 15",
+    "name": "Vincent de Paul",
+    "description": "Priest and worker for charity.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -782,16 +794,6 @@
     ]
   },
   {
-    "id": "john-keble",
-    "day": "March 28",
-    "name": "John Keble",
-    "description": "Priest, Tractarian, and Poet, 1866.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-hesychius-of-jerusalem",
     "day": "March 28",
     "name": "Saint Hesychius of Jerusalem",
@@ -801,6 +803,16 @@
       "EOR",
       "LAT",
       "OOR"
+    ]
+  },
+  {
+    "id": "john-keble",
+    "day": "March 29",
+    "name": "John Keble",
+    "description": "Priest, Tractarian, and Poet, 1866.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -844,6 +856,16 @@
       "EOR",
       "LAT",
       "OOR"
+    ]
+  },
+  {
+    "id": "saint-mary-of-egypt",
+    "day": "March 30",
+    "name": "Saint Mary of Egypt",
+    "description": "Repentant hermit and desert ascetic, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {

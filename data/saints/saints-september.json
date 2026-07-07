@@ -584,6 +584,16 @@
     ]
   },
   {
+    "id": "saint-cyprian-of-carthage",
+    "day": "September 13",
+    "name": "Saint Cyprian of Carthage",
+    "description": "Bishop and Martyr, 258.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-john-chrysostom",
     "day": "September 13",
     "name": "Saint John Chrysostom",
@@ -635,16 +645,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-cyprian-of-carthage",
-    "day": "September 15",
-    "name": "Saint Cyprian of Carthage",
-    "description": "Bishop and Martyr, 258.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -1158,7 +1158,6 @@
     "description": "Priest and worker for charity.",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },
