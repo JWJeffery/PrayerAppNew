@@ -151,6 +151,16 @@ Full correct/spurious table for all 27 is in the ledger.
 
 Commit and push (or hand off a patch) after each individually-verified finding or season, not batched across a whole audit — the prior session's work survived only because its patches were manually retrieved from an expiring sandbox before it was torn down. Don't rely on that happening again.
 
+### Recovered, 2026-07-07 — three sweep findings that never made it to origin
+
+A prior instance's systematic sweep for silent option-picking found three more real gaps beyond the Noonday/Compline toggle items — generated as a patch, never pushed before a token-limit handoff, and confirmed lost (dashboard still showed all three green). Re-recorded now, not re-investigated:
+
+- **Suffrages B is missing entirely** — app only has Suffrages A; BCP offers both as equal alternatives (pp.54/96).
+- **Concluding Sentence: only 1 of 3 authorized options exists** — previously waved off as "completeness, not an error," that framing is retracted.
+- **Seasonal Opening Sentences: only 4 of many BCP categories implemented** (Advent/Lent/Easter/General only) — largest of the gaps found, not fully scoped.
+
+All three reclassified red in the dashboard, not yet decided (same "offer all options or make a deliberate choice" treatment as everywhere else).
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
