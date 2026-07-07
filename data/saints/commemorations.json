@@ -4693,15 +4693,6 @@
   },
   {
     "identity_id": "saint-george",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 23
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-george",
     "tradition": "EOR",
     "date": {
       "month": 4,

@@ -850,4 +850,12 @@ Per finish-what-we-start, followed up on the "still not done" item immediately a
 
 **Status: cross-check done, one new discovery flagged for follow-up, nothing further changed in the data this session.**
 
+## Fix applied, 2026-07-07 — George/George of Lydda resolved
+
+Per finish-what-we-start, resolved the flag immediately above rather than leaving it open. Re-checked LFF 2024's full calendar text specifically for any entry naming "George" as a martyr/patron figure: there is exactly one, the bracketed "[George of Lydda, Soldier and Martyr, c. 304]" at May 6 — no April 23 entry exists anywhere in TEC's current calendar.
+
+**Confirmed: `saint-george`'s `ANG` tag at April 23 is not supported by the current authoritative TEC calendar at all, and represents the same historical person as the correctly-tagged `saint-george-of-lydda` (May 6).** Per the TEC-priority convention already established for this project, removed the unsupported `ANG` record from `saint-george` at April 23 — its `EOR`/`LAT`/`OOR` tags at that date are untouched, since those traditions' own dates weren't part of this check. `saint-george-of-lydda` keeps its sole `ANG` tag at May 6.
+
+Regenerated all 12 monthly caches; verified directly that `saint-george`'s April cache entry now shows `tags: ["EOR", "LAT", "OOR"]` with `ANG` removed, and `saint-george-of-lydda`'s commemoration record is unaffected. This closes the last open item from the Common Worship cross-check.
+
 

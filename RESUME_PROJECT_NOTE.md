@@ -202,6 +202,10 @@ Checked the just-applied 24 fixes against the Church of England's Common Worship
 
 **New flag, not resolved: `saint-george-of-lydda` (May 6, just tagged ANG) may be the same person as the pre-existing `saint-george` (April 23, already ANG-tagged) split into two identity records.** May 6 is the Oriental Orthodox/Julian-shifted date for the same historical St. George, not a separate saint. If true, this re-introduces a split version of the exact defect just fixed — needs real editorial judgment (merge vs. genuinely separate), not a quick mechanical correction. Left as-is pending that decision.
 
+### George/George of Lydda resolved
+
+LFF 2024 has exactly one entry for this saint (the bracketed May 6 one) — no April 23 entry exists in TEC's calendar at all. Removed `saint-george`'s unsupported `ANG` tag at April 23 (its EOR/LAT/OOR tags there are untouched). `saint-george-of-lydda` keeps the sole ANG tag at May 6. Cache regenerated and verified.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
