@@ -948,3 +948,52 @@ Continuing the same sweep that found the Ordinary Time Invitatory Antiphon defec
 
 **Relationship to the earlier Morning Prayer Invitatory Psalm finding:** that entry already established the Lent→Jubilate/Lent-Friday→Psalm-95 branches have no BCP basis at all, and that the Easter→Pascha-Nostrum branch, while textually correct, silently picks one BCP-permitted path over the alternative. Both of those problems are inherited wholesale by Evening Prayer through the shared code path — fixing the Morning Prayer selection logic without also addressing Evening Prayer's redundant double-render would leave this defect in place.
 
+
+## Session, 2026-07-07 — "Audit the audit": checked the audit itself against the BCP1979 table of contents and a full rubric-sequence inventory
+
+Josh asked directly: did we audit all of the Daily Office? Have we gone through the rendering logic with a fine tooth comb? What are we missing? This entry answers by (1) checking the audit's scope against BCP1979's own table of contents for "The Daily Office" section, and (2) inventorying every single item in every office's `data/rubrics.json` sequence and cross-checking each against what's actually been verified, rather than trusting the "every office fully audited" claim already on record.
+
+### Two entire BCP1979 Daily Office services were never in scope at all
+
+BCP1979's own table of contents lists nine items under "The Daily Office" (pp.37-148): Daily Morning Prayer Rite One, Daily Evening Prayer Rite One, Daily Morning Prayer Rite Two, **Noonday Prayer**, **Order of Worship for the Evening**, Daily Evening Prayer Rite Two, **Compline**, **Daily Devotions for Individuals and Families**, and the Table of Suggested Canticles. Of these, the audit covered Morning Prayer, Evening Prayer, Noonday Prayer, Compline, and the Canticle table. **Two were never mentioned anywhere in this entire audit and do not exist anywhere in the codebase** (confirmed via `grep -rli` across all `.js`/`.json` files, zero matches):
+
+- **Order of Worship for the Evening** (p.108-114, the "Service of Light" — a complete, self-contained evening liturgy distinct from ordinary Evening Prayer, with its own opening dialogue, thanksgiving for light, and structure).
+- **Daily Devotions for Individuals and Families** (p.137-140 — four short forms: Morning, Noonday, Evening, and Close of Day, intended for use without a priest, minimal structure).
+
+These were not "audited and found fine" — they were simply never considered part of the office inventory. Whether the app should implement them at all is a scope/feature question for Josh, not an audit finding in the usual sense, but their complete absence from every prior session's checklist is itself the gap being reported here.
+
+### The Great Litany: referenced, toggled, verified once at a shallow level — but severely truncated, never actually checked
+
+`bcp-litany` is a real, toggleable component in both Morning and Evening Prayer's sequence. Its existing text (2,034 characters) is **word-for-word correct** as far as it goes — but the real BCP Great Litany spans pages 148-155 (8 full pages, ~9,000+ characters of raw source text). The stored component cuts off after the very first "We beseech thee to hear us, good Lord" response — the BCP source has at least 19 such responses before the Litany even reaches its concluding acclamations, Kyrie, Lord's Prayer, versicles, and closing Collects. **The app is missing roughly 75-80% of the actual Great Litany** — everything from the second petition ("That it may please thee to illumine all bishops, priests, and deacons...") onward. Confirmed only one `bcp-litany` component exists (no second component holding the remainder). No rite1/rite2 split needed — BCP1979 uses identical Litany text regardless of rite, confirmed by only one occurrence of the opening line in the whole document.
+
+### Morning and Evening Prayer's second Collect: BCP offers a whole anthology, the app hardcodes one path each — and the one path used for Evening Prayer is the wrong text
+
+This is the largest and most significant finding of this pass. `VARIABLE_WEEKDAY_COLLECT` in `js/office-ui.js` always resolves to `bcp-collect-grace` for Morning Prayer and `bcp-collect-peace` for Evening Prayer (the `collect_weekday` data field that would allow variation is never populated anywhere in `data/season/*.json` — confirmed via grep, zero hits — so this fallback fires unconditionally, every day, both offices).
+
+**The actual BCP rubric** (checked in both rites, both offices): immediately after the Collect of the Day, "The Officiant then says **one or more of the following Collects**" — not a single fixed collect, a genuine small anthology:
+
+- **Morning Prayer** (p.55-57 traditional, p.98-99 contemporary): Collect of the Day, **A Collect for Sundays**, **A Collect for Fridays**, **A Collect for Saturdays**, **A Collect for the Renewal of Life**, A Collect for Peace, A Collect for Grace — 7 total.
+- **Evening Prayer** (p.68-70 traditional, p.123-124ish contemporary): Collect of the Day, **A Collect for Sundays**, **A Collect for Fridays**, **A Collect for Saturdays**, A Collect for Peace, **A Collect for Aid against Perils**, **A Collect for Protection**, **A Collect for the Presence of Christ** — 8 total.
+
+**Of these 13 distinct named collects (Collect of the Day counted once, Peace shared by name across both lists but with different text in each), the app implements exactly 2: Grace (Morning, verified correct as part of the original 92-collect audit) and Peace (used for Evening).**
+
+**The Peace text stored in the app is not Evening Prayer's Collect for Peace at all — it's Morning Prayer's.** Direct comparison:
+- App's `bcp-collect-peace`, rite1: "O God, who art the author of peace and lover of concord, in knowledge of whom standeth our eternal life..." — this is **Morning Prayer I's** "A Collect for Peace" (BCP p.56), verbatim.
+- **Evening Prayer I's actual "A Collect for Peace"** (BCP p.69) reads entirely differently: "O God, from whom all holy desires, all good counsels, and all just works do proceed: Give unto thy servants that peace which the world cannot give..." — this text does not exist anywhere in the app's data.
+- Same mismatch confirmed in the contemporary rite: app's rite2 matches Morning Prayer II's "A Collect for Peace" (p.99) verbatim; Evening Prayer II's actual, differently-worded "A Collect for Peace" (p.124ish, "Most holy God, the source of all good desires, all right judgments, and all just works...") is likewise absent entirely.
+
+So the defect is two-layered: (1) both offices silently hardcode one path through a rubric that authorizes several, the same "silent single-path" pattern already found repeatedly this audit (Invitatory Psalm, Noonday/Compline Collects, Concluding Sentence, Seasonal Opening Sentences, Invitatory Antiphon) — and (2) independent of that, the single path Evening Prayer does show is not even Evening Prayer's own text; it's Morning's, misapplied.
+
+**Not fixed.** Recorded for Josh's decision on the anthology question (offer real choice vs. pick defaults, same category as the other toggle items), plus a straightforward mechanical correction once decided: at minimum, Evening Prayer needs its own correct "A Collect for Peace" text sourced from BCP p.69/124ish rather than continuing to borrow Morning's.
+
+### Spot-checked and appear sound, not deep-audited
+
+`bcp-absolution-r1-priest` / `-r1-lay` / `-r2-priest` / `-r2-lay` (properly split by rite and by priest/lay form, matching the real BCP rubric distinction) and `bcp-salutation` ("The Lord be with you... Let us pray," correct in both rites) were checked structurally and look right, but have not been checked word-for-word against BCP1979 the way the Collects, Canticles, and DOL content have been. Flagged as lower-confidence "probably fine" rather than "confirmed correct."
+
+### What this changes about the "every office fully audited" claim
+
+The prior claim ("every office — Morning Prayer, Evening Prayer, Noonday Prayer, Compline — is now fully audited at least once. The entire audit phase... is complete") should be read as **"every office's DOL-adjacent content and previously-inventoried rubric slots have been audited"** — not as "every BCP-specified element of the Daily Office has been checked for existence and completeness." This session's method (start from BCP's own table of contents and its own rubric text — "one or more of the following" — rather than from the app's existing component inventory) found gaps the component-by-component method structurally could not: it can't catch content that was never built in the first place, or a component that exists but silently stops partway through the source text.
+
+**Follow-up check completed the same session:** applied this same method directly to Noonday Prayer and Compline's own collect rubrics, per the concern raised above. Result: both were already correctly and completely characterized by the existing dashboard entries — Noonday's "4 proper Noonday collects + the Day's Collect" (BCP p.106) and Compline's "5 main options + a Saturday-specific one + 2 optional additions" (BCP p.132-133) both verified against the primary source directly and found accurate, no new gap. Useful negative result: confirms the earlier Noonday/Compline audit work holds up under the more rigorous source-first method, unlike the Morning/Evening Prayer second-collect rubric, which had never been checked this way at all until this session.
+
+
