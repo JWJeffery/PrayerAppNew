@@ -108,17 +108,21 @@ The Easter branch (`isEaster` → Pascha Nostrum) **is** correctly grounded and 
 
 **Dashboard corrected:** "Invitatory Psalm" reclassified from green to red — the texts are fine, but the selection rule isn't, and the prior green rating only checked text, not the logic governing which text displays when. Same standing lesson as Evening Prayer's Opening Sentence: checking a component's content isn't the whole audit; the rule for *when* it's chosen needs independent verification too.
 
-### 6. Sanctoral Calendar (Anglican-tagged saints) — first pass, structural defect confirmed, most of the scope still unaudited
+### 6. Sanctoral Calendar (Anglican-tagged saints) — duplicate-date defect fully resolved; broader content audit not started
 
-Per Josh's direction: the Daily Office audit can't be called complete without also checking the rubric/selection logic (done, see above) and the Anglican-tagged saints calendar, since the calendar engine resolves Holy Days from this data. This is a first pass, not a complete audit.
+Per Josh's direction: the Daily Office audit can't be called complete without also checking the rubric/selection logic (done, see above) and the Anglican-tagged saints calendar, since the calendar engine resolves Holy Days from this data.
 
 **Data model** (`data/saints/readme.md`): `identities.json` (one record per person/event, date-free) + `commemorations.json` (one record per tradition × date × identity) generate the `saints-{month}.json` cache files used at runtime. Checked the source-of-truth file (`commemorations.json`) directly, not the generated cache.
 
-**Confirmed defect: 27 identities have multiple, conflicting ANG-tagged dates.** 376 total ANG records across 348 distinct identities; 27 of those identities have 2 or 3 different dates on file simultaneously (28 spurious extra records total, assuming one date is correct per identity). Full list and detail in the ledger and the new dashboard Sanctoral section — includes Bede the Venerable, Basil the Great, Matthew the Apostle, John Chrysostom, Thomas Ken (3 dates), and 22 others.
+**Defect found and now fully resolved: 27 identities had multiple, conflicting ANG-tagged dates.** 376 total ANG records across 348 distinct identities; 27 of those identities had 2 or 3 different dates on file simultaneously. All 27 checked against `lesser_feasts_and_fasts_-_2024__final_.pdf`, with `book_holy_women_holy_men_for_web.pdf` (the predecessor calendar) consulted wherever LFF was silent:
 
-**Spot-checked 3 of 27 against `lesser_feasts_and_fasts_-_2024__final_.pdf`** (the ledger's own designated current TEC sanctoral authority): Matthew the Apostle (Sep 21 correct, no Nov 16 entry exists), John Coleridge Patteson (Sep 20 correct, matches LFF exactly), Basil the Great (Jun 14 correct, matches LFF; Jan 1 is Holy Name, not available for a saint). All 3 confirm the same pattern — exactly one date correct, the other spurious with no LFF basis. This is consistent with a real, systemic data-entry defect, not legitimate dual observance, but has only been directly confirmed for 3 of 27.
+- **21 resolved cleanly** — exactly one on-file date confirmed correct per LFF 2024, the rest spurious.
+- **2 where neither on-file date was correct, but LFF supplies the true one, currently absent from the data entirely:** Cornelius the Centurion (true date Oct 20) and Robert Grosseteste (true date Oct 9 — the app's Oct 8 is off by exactly one day, plausibly a transcription slip; the app's other date, Mar 16, has no support anywhere).
+- **4 absent from both LFF 2024 and the predecessor calendar at either on-file date** — Vincent Ferrer, John of Beverley, Edward the Confessor, Cyril of Alexandria. Not necessarily errors requiring deletion; may be genuine older/diocesan/Roman commemorations neither source PDF captures. Flagged for Josh's direction on provenance, not resolved unilaterally — same "flag, don't discard" principle as pre-1979 content elsewhere in this project.
 
-**Remaining scope, not started:** the other 24 identities' correct/spurious date (needs the same LFF spot-check, one at a time); the full text-content audit (identity description, rank, associated collect where one exists) against LFF 2024 and BCP1979 for all 348 ANG identities — this finding covers only the date-duplication structural defect, not a content-accuracy pass; and the other four traditions (LAT/EOR/OOR/COE) in the same `commemorations.json` haven't been checked for the same duplicate-date pattern at all.
+Full correct/spurious table for all 27 is in the ledger.
+
+**Remaining scope, genuinely not started:** the full text-content audit (identity description, rank, associated collect where one exists) against LFF 2024 and BCP1979 for all 348 ANG identities — the work above resolved only the date-duplication defect, not a content-accuracy pass; and the other four traditions (LAT/EOR/OOR/COE) in the same `commemorations.json` haven't been checked for the same duplicate-date pattern at all.
 
 ### 7. Deferred features — not started, queued behind items 2 and 3
 

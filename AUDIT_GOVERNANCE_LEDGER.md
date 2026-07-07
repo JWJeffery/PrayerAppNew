@@ -692,3 +692,50 @@ All three spot-checks show the identical pattern: exactly one date is genuinely 
 
 **Not fixed.** Per audit-then-fix, recorded here as a confirmed defect for the eventual remediation phase. Resolving each duplicate requires picking the correct date per identity (mechanical once individually checked against LFF 2024/BCP1979, per the established source-verification discipline) and removing the spurious record, then regenerating the affected `saints-{month}.json` cache files via `tools/build_saints_cache.js`.
 
+
+## Session, 2026-07-07 — Sanctoral duplicate-date finding: all 27 identities resolved against LFF 2024 (and HWHM where LFF is silent)
+
+Completes the scope flagged as "not yet done" in the prior sanctoral entry. Checked all remaining 24 identities (3 had already been spot-checked) against `lesser_feasts_and_fasts_-_2024__final_.pdf`, and where an identity is absent from LFF 2024 entirely, additionally checked `book_holy_women_holy_men_for_web.pdf` (the predecessor calendar, per this ledger's own designation: "superseded, useful for history/comparison only") before concluding an identity has no support in either source. Method: read each relevant month's full calendar listing directly (not just grep for the name in isolation) to catch cases where neither on-file date happens to be correct at all.
+
+**21 of 27 resolved cleanly — exactly one on-file date confirmed correct, the other(s) spurious:**
+
+| Identity | Correct (LFF 2024) | Spurious |
+|---|---|---|
+| Saint Matthew the Apostle | Sep 21 | Nov 16 |
+| John Coleridge Patteson | Sep 20 | Jul 3 |
+| Saint Basil the Great | Jun 14 | Jan 1 |
+| Bede the Venerable | May 25 | Jun 7 |
+| Saint Augustine of Canterbury | May 26 | May 27 |
+| Saint Ignatius of Antioch | Oct 17 | Dec 20 |
+| Saint James, Brother of the Lord | Oct 23 | Apr 30 |
+| Richard of Chichester | Apr 3 | Jun 16 |
+| Saints Cyril and Methodius | Feb 14 | May 11 |
+| Saint Matthias the Apostle | Feb 24 | May 14 |
+| Saint John Chrysostom | Jan 27 | Nov 13 |
+| Saint Gregory of Nyssa | Mar 9 | Jan 10 |
+| Thomas Ken | Mar 21 | Mar 22 *and* Jun 8 (two spurious, three dates on file total) |
+| John Donne | Mar 31 | Mar 29 |
+| Philip and James, Apostles | May 1 | May 3 |
+| Saint Monica | May 4 | Aug 27 |
+| Saint Julian of Norwich | May 8 | May 13 |
+| Saint Justin Martyr | Jun 1 | Apr 14 |
+| Joseph of Arimathea | Aug 1 | Jul 31 |
+| Saint Catherine of Alexandria | Nov 24 | Nov 25 |
+| Saint Leo the Great | Nov 10 (LFF 2024 lists him as "Leo of Rome," same identity, same date — confirmed in *both* the current and predecessor calendars) | Jul 9 |
+
+**2 where NEITHER on-file date is correct, but LFF 2024 supplies the true date (not currently on file at all):**
+- **Cornelius the Centurion** — on file at Feb 4 and Feb 7; LFF 2024 actually places him at **Oct 20** ("20 Cornelius the Centurion," under October, confirmed by surrounding context: Oct 18 Saint Luke, Oct 19 Henry Martyn, Oct 20 Cornelius, Oct 23 Saint James of Jerusalem). Neither February date has any basis at all.
+- **Robert Grosseteste** — on file at Mar 16 and Oct 8; LFF 2024 places him at **Oct 9** ("9 Robert Grosseteste, Bishop, 1253," under October, confirmed by Oct 7 Birgitta of Sweden, Oct 10 Vida Dutton Scudder on either side). Oct 8 is off by exactly one day from the true date — plausibly a single-digit transcription slip rather than a wholesale error, worth noting for whoever does the fix. Mar 16 has no support in either source (HWHM places him at Nov 17, a third, different date, under neither of the app's two on-file options). Mar 16 is fully unsupported.
+
+**4 absent from both LFF 2024 and HWHM entirely — a provenance question, not a simple date correction:**
+- **Vincent Ferrer** (on file Mar 15 / Apr 5) — LFF's Mar 15 is actually Vincent de Paul (a different person); LFF's Apr 5 is Harriet Starr Cannon. No entry for Vincent Ferrer anywhere in either source PDF in this repo.
+- **John of Beverley** (on file May 6 / May 7) — LFF's May 6 is bracketed "[George of Lydda...]" (a different, provisional entry); May 7 is blank. No entry for John of Beverley anywhere in either source.
+- **Edward the Confessor** (on file Oct 12 / Oct 13) — both blank in LFF's October listing. No entry anywhere in either source (only an unrelated "Edward Bouverie Pusey" appears, a different historical figure, Sep 18).
+- **Cyril of Alexandria** (on file Jun 27 / Jul 5) — both blank/other entries in LFF; his name appears only in passing body text (crediting him with coining the term "Theotokos") in both LFF 2024 and HWHM, never as his own calendar entry in either.
+
+**These four are not necessarily errors requiring deletion** — they may reflect a genuine older Anglican, diocesan, or Roman commemoration not captured by either of the two source-witness PDFs currently in this repo (parallel to the already-established Common of Saints / pre-1979-content handling: flag, don't discard, without a source). Recorded here as needing Josh's direction on provenance before any fix, distinct in kind from the 21 clean date-corrections and the 2 LFF-supplies-a-real-date cases above, which are mechanical once the fix phase begins.
+
+**Still not done, not to be assumed covered by this entry:** the full text-content audit (identity description, rank, associated collect) for all 348 ANG identities remains unstarted — this and the prior sanctoral entry together resolve only the specific 27-identity duplicate-date defect. The other four tradition codes (LAT, EOR, OOR, COE) in `commemorations.json` have not been checked for the same duplicate-date pattern.
+
+**Not fixed.** Per audit-then-fix, this is a complete record for the duplicate-date defect class specifically, awaiting the remediation phase and, for the 4 provenance-question identities, Josh's direction first.
+
