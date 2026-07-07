@@ -791,4 +791,24 @@ A prior instance of this session (before a token-limit handoff to a different ac
 
 **Status: all three corrected in the dashboard (reclassified green → red), recorded here, nothing fixed.** These join Suffrages, Opening Sentences, and the Concluding Sentence to the list of confirmed-not-yet-decided silent-option gaps, alongside Noonday's Collect/Short Lesson and Compline's Short Lesson (already settled: offer both as a toggle) and the Invitatory Psalm selection logic (also confirmed groundless, not yet decided).
 
+## Session, 2026-07-07 — the sanctoral duplicate-date defect is systemic across all 5 traditions, not just Anglican
+
+Per the resume note's own open item ("the other four tradition codes haven't been checked for the same duplicate-date pattern"), ran the identical mechanical check used for `ANG` against `LAT`, `EOR`, `OOR`, and `COE`.
+
+**Confirmed: every tradition in `commemorations.json` has the same defect.**
+
+| Tradition | Total entries | Identities with duplicate dates |
+|---|---|---|
+| ANG | 346 (post-fix) | 0 (fixed this session, prior entry) |
+| LAT | 404 | 8 |
+| EOR | 412 | 8 |
+| OOR | 368 | 15 |
+| COE | 235 | **35** |
+
+COE (Church of the East) is by far the worst — roughly 1 in 7 of its entries is part of a duplicate-date cluster, and several individual identities have far more than 2 dates on file simultaneously: **Mar Narsai has 5 distinct dates** (Jan 18, Jul 13, Aug 21, Sep 5, Dec 16); **Mar Babai the Great also has 5** (Jan 25, Jul 10, Aug 22, Sep 3, Dec 3). Sample duplicates from the other traditions: `saint-matthias-the-apostle` appears at 3 different date-pairs across LAT/EOR/OOR depending on tradition (not necessarily wrong on its own — different traditions can legitimately commemorate the same person on different real dates — but *within* a single tradition tag, as with the ANG fix, more than one date for the same identity under the same tag is the same defect class).
+
+**Not resolved — this is a materially larger undertaking than the ANG fix, not a quick follow-on.** The ANG fix was tractable because two authoritative, readily-available primary sources existed (`lesser_feasts_and_fasts_-_2024__final_.pdf` for TEC, the Church of England's Common Worship calendar) and covered 27 identities. Resolving these 66 identities across 4 traditions would need the equivalent authoritative calendars for the Eastern Orthodox, Oriental Orthodox, Church of the East, and Roman Rite traditions specifically — none of which are in hand in this session the way the two Anglican sources were. This is flagged as a real, confirmed defect of the same class and severity as the ANG one (worse in COE's case), not deferred because it's unimportant, but because resolving it responsibly needs sourcing work this session doesn't yet have the material for.
+
+**Status: defect confirmed and quantified, not resolved.** Recommend treating this as its own scoped task — identifying or obtaining the four traditions' authoritative calendars — before attempting the same fix-in-place approach used for ANG.
+
 

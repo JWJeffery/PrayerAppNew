@@ -161,6 +161,21 @@ A prior instance's systematic sweep for silent option-picking found three more r
 
 All three reclassified red in the dashboard, not yet decided (same "offer all options or make a deliberate choice" treatment as everywhere else).
 
+### Sanctoral duplicate-dates: confirmed systemic across all 5 traditions, not just Anglican
+
+Ran the same duplicate-date check used for ANG against LAT, EOR, OOR, COE:
+
+| Tradition | Entries | Duplicated identities |
+|---|---|---|
+| LAT | 404 | 8 |
+| EOR | 412 | 8 |
+| OOR | 368 | 15 |
+| COE | 235 | **35** |
+
+COE is by far the worst — roughly 1 in 7 entries affected, with **Mar Narsai and Mar Babai the Great each carrying 5 different dates** on file simultaneously.
+
+**Not resolved.** The ANG fix worked because two authoritative sources (LFF 2024, Common Worship) were readily available for 27 identities. These 66 identities need the equivalent authoritative calendars for Eastern Orthodox, Oriental Orthodox, Church of the East, and Roman Rite — none in hand this session. Confirmed and quantified as a real defect of the same class (worse in COE's case), but resolving it needs its own sourcing effort before attempting the same fix-in-place approach.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
