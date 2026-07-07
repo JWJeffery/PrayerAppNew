@@ -169,7 +169,7 @@ const DOL_SEASONS = [
   { key: 'dol:advent', name: 'Advent', status: 'red',
     note: 'AUDITED 2026-07-06 (record-only pass; fixes deferred until full DOL audit completes). 26 entries: 11 green, 15 red. Findings: 1 minor verse-range error; 7 entries (Dec 13-19) with corrupted Year One readings while Year Two is correct; 4 entries (Dec 20, 22-24) with both years wrong plus cross-day duplication and empty Gospel fields; 4 psalm-citation errors under the settled "full reading, nothing optional" policy; and both Holy Days (St. Andrew, St. Thomas) exposing a schema gap -- the BCP assigns 4 readings per Holy Day (2 MP, 2 EP) but the app only has 3 slots, and St. Thomas additionally used the wrong lectionary track (Eucharistic, not Daily Office). See AUDIT_GOVERNANCE_LEDGER.md for full per-date detail.' },
   { key: 'dol:christmas', name: 'Christmas', status: 'red',
-    note: 'AUDITED 2026-07-06 (record-only pass; fixes deferred until full DOL audit completes). 12 entries: 6 green, 6 red. Findings: 3 minor bracket-policy violations (dropped optional verses); and 3 Holy Days (St. Stephen, St. John, Holy Innocents) confirmed using the WRONG lectionary track entirely -- Eucharistic instead of Daily Office -- the same systemic bug found with St. Thomas in Advent. Of 5 Holy Days checked across both seasons so far, only St. Andrew was correctly sourced. See AUDIT_GOVERNANCE_LEDGER.md for full per-date detail.' },
+    note: 'CORRECTED 2026-07-06: initial audit wrongly called 6 entries green. Rigorous footer re-check found Christmas Year One/Year Two labels are SYSTEMICALLY SWAPPED -- every reading_*_year1 field actually holds true Year Two content and vice versa (confirmed programmatically for all 9 year-split entries; every individual citation IS accurate BCP text, just filed under the wrong year, breaking 2-year-cycle continuity across the Advent-Christmas boundary). Isolated to Christmas -- Advent and Epiphany both label correctly. Corrected total: 12 entries, 0 green, 12 red (9 year-swapped + 3 Holy Days on the wrong lectionary track entirely -- St. Stephen, St. John, Holy Innocents -- same bug as St. Thomas in Advent). See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
   { key: 'dol:epiphany', name: 'Epiphany', status: 'amber',
     note: 'Not yet audited. 43 entries in data/season/epiphany.json.' },
   { key: 'dol:lent', name: 'Lent', status: 'amber',
@@ -382,7 +382,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v23-2026-07-06-christmas-dol-audit-recorded';
+const SEED_VERSION = 'v24-2026-07-06-christmas-year-swap-correction';
 
 async function checkSeedVersion(){
   let storedValue = null;
