@@ -96,7 +96,31 @@ True scope of "live" DOL content (366 date entries, ~732 psalm-appointment value
 
 **Fix phase has not started for any season** — per the audit-then-fix workflow, the whole audit (DOL + Holy Days) is now done; the next phase is systematic remediation, season by season, starting wherever you direct — but only after Evening Prayer's own remaining parts are audited too.
 
-### 4. Deferred features — not started, queued behind items 2 and 3
+### 5. Invitatory Psalm selection logic — confirmed defect, no BCP basis (2026-07-07)
+
+Josh pushed back on calling the Venite/Jubilate/Pascha Nostrum pattern "sound" without actually checking it against the BCP. Correct to push back — it wasn't grounded, and this has now been independently verified from the primary source (not taken on the strength of a prior session's note).
+
+**The actual BCP rule** (checked in both `book_of_common_prayer.pdf`'s traditional-language Morning Prayer, p.42/45, and contemporary-language Morning Prayer, p.83+): "Then follows one of the Invitatory Psalms, Venite or Jubilate" — a genuinely free daily choice with **zero** seasonal restriction. The only seasonal rule anywhere governing the Invitatory is: "In Easter Week, in place of an Invitatory Psalm, [Pascha Nostrum] is sung or said. It may also be used daily until the Day of Pentecost" — mandatory for Easter Week, optional through the rest of Eastertide.
+
+**`js/office-ui.js` hardcodes a rule with no textual basis at all**: Lent → always Jubilate; Lent Fridays → raw Psalm 95 instead of either Invitatory Psalm; every other day → Venite. There is no rubric anywhere in the BCP associating Jubilate with Lent, or calling for unabridged Psalm 95 on Lenten Fridays specifically. This is invented content dressed up as a rule, not a sourced BCP practice — the same fabrication pattern already found in the LFF collects, the Ethiopian Senkessar, and the fabricated Evening Prayer Opening Sentence.
+
+The Easter branch (`isEaster` → Pascha Nostrum) **is** correctly grounded and correctly computed (`season === 'easter'` matches `CalendarEngine`'s actual lowercase output — no case-mismatch bug), but per the standing rule below, it still silently picks one BCP-permitted path (always Pascha Nostrum through the whole season) over the equally legitimate alternative (plain Venite/Jubilate) for the optional-extension period (Easter 2 onward), without ever making that an actual decision. Flagged for the same toggle-or-decide treatment as the Noonday/Compline questions, but lower priority since the content itself is correct.
+
+**Dashboard corrected:** "Invitatory Psalm" reclassified from green to red — the texts are fine, but the selection rule isn't, and the prior green rating only checked text, not the logic governing which text displays when. Same standing lesson as Evening Prayer's Opening Sentence: checking a component's content isn't the whole audit; the rule for *when* it's chosen needs independent verification too.
+
+### 6. Sanctoral Calendar (Anglican-tagged saints) — first pass, structural defect confirmed, most of the scope still unaudited
+
+Per Josh's direction: the Daily Office audit can't be called complete without also checking the rubric/selection logic (done, see above) and the Anglican-tagged saints calendar, since the calendar engine resolves Holy Days from this data. This is a first pass, not a complete audit.
+
+**Data model** (`data/saints/readme.md`): `identities.json` (one record per person/event, date-free) + `commemorations.json` (one record per tradition × date × identity) generate the `saints-{month}.json` cache files used at runtime. Checked the source-of-truth file (`commemorations.json`) directly, not the generated cache.
+
+**Confirmed defect: 27 identities have multiple, conflicting ANG-tagged dates.** 376 total ANG records across 348 distinct identities; 27 of those identities have 2 or 3 different dates on file simultaneously (28 spurious extra records total, assuming one date is correct per identity). Full list and detail in the ledger and the new dashboard Sanctoral section — includes Bede the Venerable, Basil the Great, Matthew the Apostle, John Chrysostom, Thomas Ken (3 dates), and 22 others.
+
+**Spot-checked 3 of 27 against `lesser_feasts_and_fasts_-_2024__final_.pdf`** (the ledger's own designated current TEC sanctoral authority): Matthew the Apostle (Sep 21 correct, no Nov 16 entry exists), John Coleridge Patteson (Sep 20 correct, matches LFF exactly), Basil the Great (Jun 14 correct, matches LFF; Jan 1 is Holy Name, not available for a saint). All 3 confirm the same pattern — exactly one date correct, the other spurious with no LFF basis. This is consistent with a real, systemic data-entry defect, not legitimate dual observance, but has only been directly confirmed for 3 of 27.
+
+**Remaining scope, not started:** the other 24 identities' correct/spurious date (needs the same LFF spot-check, one at a time); the full text-content audit (identity description, rank, associated collect where one exists) against LFF 2024 and BCP1979 for all 348 ANG identities — this finding covers only the date-duplication structural defect, not a content-accuracy pass; and the other four traditions (LAT/EOR/OOR/COE) in the same `commemorations.json` haven't been checked for the same duplicate-date pattern at all.
+
+### 7. Deferred features — not started, queued behind items 2 and 3
 
 - **Common of Saints collects** — no existing ID/schema convention; needs its own architecture decision before any content work starts.
 - **Quinquagesima/Sexagesima/Septuagesima** as opt-in historical add-ons — also needs its own architecture (settings toggle vs. calendar overlay; sourced rigorously from 1662 BCP or similar; never blended silently into 1979 output).
@@ -112,4 +136,6 @@ When the record-only DOL audit surfaces evidence of a possible underlying engine
 
 ### Git state
 
-Everything above (canticle-selection fix through Christmas findings, plus this note) is prepared as a sequence of patches, verified to apply cleanly via `git am` against a fresh clone of current `main` (`e42960a`). Not yet pushed — this sandbox has no push credentials.
+**Corrected 2026-07-07:** the prior version of this section was stale — it claimed nothing had been pushed, but everything through the Noonday/Compline toggle decision (commit `19e98e1`, "Record settled decision: offer a toggle for all three open questions...") **is confirmed pushed and live on `origin/main`**, verified by cloning fresh and checking `git log origin/main` directly rather than trusting this note's own prior claim. The session that did that work ran out of tokens partway through a follow-up investigation (Venite/Jubilate rubric check, sanctoral calendar check) — that specific follow-up work was never committed or pushed, and is not recoverable from this sandbox (a different Claude account's sandbox, now inaccessible). It has been redone from scratch in this session; see the new sections below.
+
+This session's own new findings (Invitatory Psalm selection-logic defect, Sanctoral duplicate-date finding) are prepared as patches, verified via `git am` against a fresh clone of the actual current `main` (`19e98e1`). Not yet pushed — this sandbox also has no push credentials.

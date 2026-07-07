@@ -608,3 +608,87 @@ The session that produced the 7 commits immediately above (canticle-selection fi
 
 **Status: recorded as a defect + design direction. Not implemented.** Deferred to the fix phase alongside the Holy Days 4-reading schema gap and every other DOL-audit finding.
 
+
+## Session, 2026-07-07 — Invitatory Psalm selection logic audited: confirmed defect, no BCP basis
+
+**Recovery context:** the prior session (working via a second Claude account, per Josh's own account-rotation practice for hitting usage limits) had reached the same conclusion described here, but ran out of tokens before committing or pushing it. That specific work is not recoverable from this sandbox — a different account's sandbox, now inaccessible — and has been redone from scratch in this session, independently re-verified against the primary source rather than taken on trust. Everything below was checked directly against `book_of_common_prayer.pdf`, not reconstructed from the interrupted session's summary.
+
+**Josh's challenge, and it was the right one:** an earlier pass through this codebase described the Venite/Jubilate/Pascha Nostrum pattern in `js/office-ui.js` as "a real, textured decision already built in, not a silent default," while explicitly flagging as an open question whether the specific rule was textually correct. That question was never actually answered before the audit moved on — meaning "Invitatory Psalm" was left green on the dashboard on the strength of the texts alone, without the selection rule itself ever being checked. Josh's instruction this session was direct: audit the rubrics, don't defer the check again.
+
+**The actual BCP rule**, verified independently in both rites:
+- Traditional-language Morning Prayer (`book_of_common_prayer.pdf` p.42, rubric appears just before p.42/45): "Then follows one of the Invitatory Psalms, Venite or Jubilate."
+- Contemporary-language Morning Prayer (p.83+, same rubric position): "Then follows one of the Invitatory Psalms, Venite or Jubilate."
+- Neither rubric carries any seasonal, weekday, or other qualifier. The choice is genuinely free, every day, full stop.
+- The only seasonal rule governing the Invitatory anywhere in the BCP: "In Easter Week, in place of an Invitatory Psalm, [Christ our Passover / Pascha nostrum] is sung or said. It may also be used daily until the Day of Pentecost" — present in both rites, identical wording pattern. Mandatory for Easter Week; optional (not required) for the remainder of Eastertide through Pentecost.
+
+**What `js/office-ui.js` actually does** (the `bcp-invitatory-full` block, `isMorning || isEvening` branch):
+```
+if (isEaster)              -> Pascha Nostrum
+else if (isLent && isFriday) -> raw Psalm 95 (via getScriptureText, not the Venite component)
+else if (isLent)           -> Jubilate, always
+else                       -> Venite, always
+```
+
+**Confirmed: the Lent branches have no BCP basis whatsoever.** No rubric anywhere in the BCP associates Jubilate specifically with Lent. No rubric anywhere calls for unabridged Psalm 95 (as opposed to the Venite's specific selection, Psalm 95:1-7 + 96:9,13 in the traditional rite, or 95:1-7 alone in the contemporary rite) on Lenten Fridays or any other day. This is invented liturgical practice presented as if it were a real rule — the same fabrication pattern already found this audit in the LFF collects, the Ethiopian Senkessar's hallucinated saints, and the fabricated Evening Prayer Opening Sentence. It may reflect a genuine older Anglican custom somewhere (Lent-associated psalmody isn't an unheard-of idea in the wider tradition), but it isn't sourced from BCP1979, and — critically — it was never recorded anywhere as a deliberate choice on Josh's part. It was simply built and shipped as if it were the rule.
+
+**The Easter branch is different in kind and should be treated separately.** `isEaster` correctly maps to `season === 'easter'`, and `CalendarEngine._getRangesForDate()` (`js/calendar-engine.js`) genuinely emits the lowercase string `"easter"` for this range (`easter` through `easter + 49 days`, i.e. through Pentecost Sunday inclusive) — confirmed by direct source read, not assumed; this is not a repeat of the case-mismatch bug found earlier in Compline's dashboard status. Pascha Nostrum replacing the Invitatory for this entire span is fully within what the BCP authorizes ("may also be used daily until the Day of Pentecost"). However, per the standing rule established this session (Correction and standing rule, 2026-07-07, below): the BCP frames this as optional beyond Easter Week, meaning the true alternative — plain Venite/Jubilate choice — remains equally legitimate for Easter 2 onward, and the app never offers it or records a decision that always-Pascha-Nostrum is the intended choice. Flagged for the same toggle-or-decide treatment as the three Noonday/Compline questions, but at meaningfully lower priority, since unlike the Lent branches this content is genuinely BCP-grounded.
+
+**Dashboard corrected:** "Invitatory Psalm" reclassified green → red. The component *texts* (Venite, Jubilate) remain independently verified correct — that finding stands — but the *selection logic* governing which text actually renders on a given day does not, and the row's prior all-green status conflated the two. Same standing lesson already recorded for Evening Prayer's Opening Sentence: verifying a component's content is necessary but not sufficient; the rule for *when* and *whether* it's actually selected needs its own independent check.
+
+**Not fixed.** Per audit-then-fix, this is a recorded finding awaiting the fix phase. The fix itself is a judgment call (what should the app actually do, given the BCP leaves it genuinely open) rather than a mechanical correction, so it additionally needs Josh's input on the toggle/decision question before any code changes, the same as the other open toggle items.
+
+## Session, 2026-07-07 — Sanctoral Calendar (Anglican-tagged saints), first pass: confirmed structural defect, most of the scope still unaudited
+
+**Scope of this session's work:** Josh's instruction was to audit the Anglican-tagged saints before the Daily Office audit can be considered complete, since the calendar engine resolves Holy Days and commemorations from this data. This entry documents a first pass — a structural check for one specific defect class, plus limited spot-verification — not a complete content audit of the sanctoral calendar. The remaining scope is substantial and explicitly enumerated below rather than left as vague "still open" language.
+
+**Data model** (`data/saints/readme.md`, read in full before starting): a two-file source model. `identities.json` holds one date-free record per distinct person or liturgical event (id, name, description, type, status). `commemorations.json` holds one record per tradition × date × identity triple (identity_id, tradition code, calendar system, numeric `{month, day}`, rank, status). A deterministic generator (`tools/build_saints_cache.js`) reads both and writes the runtime `data/saints/saints-{month}.json` cache files consumed by `office-ui.js`. Checked the source-of-truth file (`commemorations.json`) directly rather than the generated cache, since any defect in the source would simply propagate through generation.
+
+**Method:** programmatically grouped every `commemorations.json` record with `tradition === "ANG"` by `identity_id`, and flagged any identity with more than one such record.
+
+**Result: 376 total ANG-tagged commemoration records, covering 348 distinct identities. 27 of those identities have 2 or 3 separate ANG records at genuinely different calendar dates** (28 spurious extra records total, if the working assumption — exactly one correct date per identity — holds; this assumption is not yet verified for all 27, see below). Full list:
+
+| Identity | Dates on file |
+|---|---|
+| Bede the Venerable | May 25 vs Jun 7 |
+| Cornelius the Centurion | Feb 4 vs Feb 7 |
+| Edward the Confessor | Oct 12 vs Oct 13 |
+| John Coleridge Patteson | Jul 3 vs Sep 20 |
+| John Donne | Mar 29 vs Mar 31 |
+| Joseph of Arimathea | Jul 31 vs Aug 1 |
+| Philip and James, Apostles | May 1 vs May 3 |
+| Richard of Chichester | Apr 3 vs Jun 16 |
+| Robert Grosseteste | Mar 16 vs Oct 8 |
+| Saint Augustine of Canterbury | May 26 vs May 27 |
+| Saint Basil the Great | Jan 1 vs Jun 14 |
+| Saint Catherine of Alexandria | Nov 24 vs Nov 25 |
+| Saint Cyril of Alexandria | Jun 27 vs Jul 5 |
+| Saint Gregory of Nyssa | Jan 10 vs Mar 9 |
+| Saint Ignatius of Antioch | Oct 17 vs Dec 20 |
+| Saint James, Brother of the Lord | Apr 30 vs Oct 23 |
+| Saint John Chrysostom | Jan 27 vs Nov 13 |
+| Saint John of Beverley | May 6 vs May 7 |
+| Saint Julian of Norwich | May 8 vs May 13 |
+| Saint Justin Martyr | Apr 14 vs Jun 1 |
+| Saint Leo the Great | Jul 9 vs Nov 10 |
+| Saint Matthew the Apostle | Sep 21 vs Nov 16 |
+| Saint Matthias the Apostle | Feb 24 vs May 14 |
+| Saint Monica | May 4 vs Aug 27 |
+| Saint Vincent Ferrer | Mar 15 vs Apr 5 |
+| Saints Cyril and Methodius | Feb 14 vs May 11 |
+| Thomas Ken | Mar 21 vs Mar 22 vs Jun 8 (three dates) |
+
+**Spot-checked 3 of 27 against `lesser_feasts_and_fasts_-_2024__final_.pdf`** (this repo's own designated current authority for the TEC sanctoral calendar, per earlier LFF-2024 cross-check work in this ledger):
+
+- **Saint Matthew the Apostle** — LFF lists "21 Saint Matthew, Apostle and Evangelist" under September, with no entry for him anywhere near November 16. **Sep 21 confirmed correct; Nov 16 spurious.**
+- **John Coleridge Patteson** — LFF lists "20 John Coleridge Patteson, Bishop, and his Companions, Martyrs, 1871" under September, matching exactly. **Sep 20 confirmed correct; Jul 3 spurious.**
+- **Saint Basil the Great** — LFF lists "14 Basil of Caesarea, Bishop and Theologian, 379" under June (confirmed by surrounding context: June 11 Barnabas, June 13 First Book of Common Prayer 1549, June 14 Basil, June 15 Evelyn Underhill — an unambiguous June sequence). No January 1 entry for Basil exists in LFF at all; January 1 is the Holy Name of Our Lord, a Principal Feast, not available for a saint's commemoration regardless. **Jun 14 confirmed correct; Jan 1 spurious.**
+
+All three spot-checks show the identical pattern: exactly one date is genuinely attested in LFF 2024, the other has no basis there at all. This is consistent with a real, systemic data-entry defect — not legitimate dual observance (translation feasts, differing calendar traditions, etc., which do occasionally produce genuine multiple dates for a single figure) — but this conclusion is currently only directly evidenced for 3 of the 27 identities, not the full set.
+
+**Explicitly NOT done, and not to be assumed clean:**
+- The other 24 identities' correct-vs-spurious date has not been individually checked against LFF 2024 or any other source.
+- No content-accuracy audit (identity description text, assigned rank, any linked collect) has been attempted for any of the 348 distinct ANG identities — this session's finding is limited to the date-duplication structural defect, found by a direct query against the source file, not a read-through content check.
+- The same duplicate-date check has not been run against the other four tradition codes present in the same `commemorations.json` (LAT, EOR, OOR, COE) — if the defect pattern is generator- or data-entry-process-related rather than specific to how ANG entries were added, it could recur there too, unverified either way.
+
+**Not fixed.** Per audit-then-fix, recorded here as a confirmed defect for the eventual remediation phase. Resolving each duplicate requires picking the correct date per identity (mechanical once individually checked against LFF 2024/BCP1979, per the established source-verification discipline) and removing the spurious record, then regenerating the affected `saints-{month}.json` cache files via `tools/build_saints_cache.js`.
+
