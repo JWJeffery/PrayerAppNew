@@ -838,4 +838,16 @@ Per finish-what-we-start, applied all 24 items from the immediately preceding en
 
 **Still not done:** Common Worship (Church of England) cross-referencing for these same non-ANG identities was not attempted — only TEC/LFF 2024 was used as the source. The full text-content audit (descriptions, ranks, associated collects) for all now-372 `ANG` identities remains unstarted, as does the by-tradition duplicate-date work for LAT/EOR/OOR/COE (paused per Josh's direction, not abandoned).
 
+## Session, 2026-07-07 — Common Worship cross-check: mostly confirms the fix, but surfaces a likely split-identity duplication, not yet resolved
+
+Per finish-what-we-start, followed up on the "still not done" item immediately above. Fetched the Church of England's full Common Worship calendar (via Wikipedia's structured table, sourced to the authorized 2000/2010 calendar) and checked it against the 24 identities just fixed, plus the broader dataset.
+
+**Good news: several of the just-applied fixes are independently confirmed by a second source.** Vincent of Saragossa (Jan 22) and David of Wales (Mar 1) match exactly between LFF 2024 and Common Worship — strong corroboration those two fixes are correct. Ignatius of Loyola (Jul 31) also matches both calendars exactly.
+
+**Expected, not an error: some fixed identities have a different date in Common Worship than the one just applied from LFF 2024** — Basil the Great (TEC/LFF 2024: solo, June 14; Common Worship: jointly with Gregory of Nazianzus, January 2) and Francis de Sales (TEC/LFF 2024: jointly with Jane de Chantal, December 12; Common Worship: solo, January 24). These are genuine differences between the U.S. Episcopal and Church of England provincial calendars, not mistakes — consistent with the already-established TEC-priority convention for this project, and exactly the kind of case the deferred jurisdiction/province schema question (recorded earlier) would eventually resolve properly rather than force a single date.
+
+**Flagged, not resolved: `saint-george-of-lydda` (May 6, just given an `ANG` tag this session) may be the same historical person as the pre-existing `saint-george` (April 23, already `ANG`-tagged before this session) recorded as two separate identities rather than one.** St. George of Lydda/Diospolis is the same figure commonly called "Saint George" (patron of England, Common Worship's April 23 entry) — May 6 corresponds to the Julian-calendar-shifted date used in Oriental Orthodox practice for the same person, not a distinct saint. If that's correct, tagging both `saint-george` and `saint-george-of-lydda` as `ANG` effectively re-introduces a split version of the exact defect this whole effort has been fixing — the same person commemorated twice under the Anglican tag, just split across two identity records instead of two dates on one record. **Not resolved this session** — confirming this requires more certainty than a quick check provides, and unwinding it (merging identities vs. leaving both if they are in fact treated as separate observances in practice) is a real editorial decision, not a mechanical fix.
+
+**Status: cross-check done, one new discovery flagged for follow-up, nothing further changed in the data this session.**
+
 

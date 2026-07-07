@@ -196,6 +196,12 @@ Per finish-what-we-start: Fabian's regression reverted (ANG restored at Jan 20);
 
 **Still open:** Common Worship cross-check for these same identities not attempted. Full text-content audit (descriptions/ranks/collects) for all ANG identities not started. By-tradition duplicate-date work (LAT/EOR/OOR/COE) paused per Josh's direction, not abandoned.
 
+### Common Worship cross-check done — confirms most fixes, flags one new issue
+
+Checked the just-applied 24 fixes against the Church of England's Common Worship calendar. Vincent of Saragossa, David of Wales, and Ignatius of Loyola match exactly across both TEC and CofE — good corroboration. Basil the Great and Francis de Sales have different dates in each calendar (expected — genuine provincial differences, not errors, matches the TEC-priority convention already in use).
+
+**New flag, not resolved: `saint-george-of-lydda` (May 6, just tagged ANG) may be the same person as the pre-existing `saint-george` (April 23, already ANG-tagged) split into two identity records.** May 6 is the Oriental Orthodox/Julian-shifted date for the same historical St. George, not a separate saint. If true, this re-introduces a split version of the exact defect just fixed — needs real editorial judgment (merge vs. genuinely separate), not a quick mechanical correction. Left as-is pending that decision.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
