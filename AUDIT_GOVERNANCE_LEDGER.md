@@ -375,6 +375,35 @@ Discovered while establishing Epiphany's source tables: a rigorous re-check of t
 
 **Standing lesson:** the Isaiah/Genesis/other-OT-book "theme" of a track is not a reliable way to identify which year it belongs to across a season boundary -- only the page footer is authoritative, and it must be checked by direct line inspection (footer text appears immediately before the `\f` that starts the next page's content, describing what preceded it) rather than assumed from thematic continuity with the previous season. Every remaining season's Year One/Year Two attribution should be verified this same rigorous way before comparing content, not assumed from Advent's pattern.
 
+## Session, 2026-07-07 — Daily Office Lectionary audit, Epiphany season (record-only pass)
+
+All 40 non-Holy-Day entries in `data/season/epiphany.json` checked against `book_of_common_prayer.pdf` pp.941-951 directly (psalms and both years' OT/Epistle/Gospel citations). The 3 Holy Days inside this range (Confession of St. Peter, Jan 18; Conversion of St. Paul, Jan 25; The Presentation, Feb 2) were **not checked in this pass** — they draw from the separate Holy Days lectionary table, different BCP pages, not yet pulled.
+
+**Confirmed dated-day/Sunday transition bug (matches the specific concern raised mid-audit before the session ended):** with Baptism of Our Lord actually falling on Jan 11 this year, the dated "Jan. 11"/"Jan. 12" BCP citations should **not** be used — per the BCP's own footnote ("dated days... used only until the following Saturday evening"), the numbered "Week of 1 Epiphany" track should begin immediately on Jan 11. Confirmed: `2026-01-11` (First Sunday after the Epiphany: Baptism of Our Lord) currently shows the dated Jan.11 citation instead of Week-of-1-Epiphany-Sunday's citation (Isaiah 40:1-11/Hebrews 1:1-12/John 1:1-7,19-20,29-34 for Year One; Genesis 1:1-2:3/Ephesians 1:3-14/John 1:29-34 for Year Two) — both readings and psalms wrong. Real defect, not yet fixed.
+
+**Confirmed systemic psalm-cycle defect — evidence of a shared indexing bug, not isolated wrong citations.** Multiple entries' psalms don't just fail to match their own correct BCP citation — they exactly match a *different* week's citation:
+- `2026-01-08/09/10` (dated Jan 8-10): psalms exactly match Week-of-2-Epiphany's Thursday/Friday/Saturday psalms, not the dated-day psalms.
+- `2026-01-12/13/16` (Week of 1 Epiphany, Mon/Tue/Fri): psalms exactly match Week-of-3-Epiphany's psalms for the same weekday.
+- `2026-02-01` (Fourth Sunday after the Epiphany): psalms exactly match Week-of-1-Epiphany-Sunday's psalms.
+- `2026-02-05` and `2026-02-11` (Week of 4 Epiphany Thursday; Week of 5 Epiphany Wednesday): psalms\_mp and psalms\_ep appear to be the correct pair but **swapped** between morning and evening.
+
+This pattern — exact matches to other weeks' citations rather than random corruption — points to a psalter-cycle index/offset bug in the engine (likely wherever the 7-week rotating Psalter position or Sunday-count is computed), not a data-entry problem specific to Epiphany. **Flagged for the fix phase to trace in the engine code itself, not just patch each date's data.** Not yet diagnosed to root cause; recorded as a defect with the above evidence, not fixed.
+
+**Separately confirmed: named/major Sundays show Eucharistic Proper psalms instead of Daily Office Lectionary psalms.** `2026-01-06` (Epiphany Day) shows Psalm 72:1-7,10-14 & 72:15-20 — this is the Collect/Psalm/Lessons **Eucharistic Proper** for Epiphany, not the DOL psalms (46, 97 & 96, 100). `2026-01-11` (Baptism of Our Lord) shows Psalm 29 & 104 — Psalm 29 is the Eucharistic Proper for Baptism of Our Lord, not a DOL psalm at all. `2026-02-15` (Last Sunday after the Epiphany/Transfiguration) shows Psalm 99 at both offices — Transfiguration's Eucharistic Proper psalm, not the DOL's 148,149,150 & 114,115. **Pattern: on days with a named/thematic Sunday title, the DOL psalm field appears to be getting the Eucharistic Sunday-propers psalm instead.** Worth checking whether this also affects other named Sundays throughout the year, not just this season's three.
+
+**Confirmed severe reading (not just psalm) misalignment from Week 5 Tuesday onward, apparently off by one calendar day, worsening toward the end of the file:**
+- `2026-02-10` (Week of 5 Epiphany, Tuesday): OT/Epistle/Gospel for both years don't match `wk5_tue` *or any nearby BCP entry in this season* — Year One's Gospel citation is Luke (`Luke 11:53-12:12`), which doesn't belong to this lectionary lane at all (Epiphany-season Year One Gospels in this stretch are Mark).
+- `2026-02-14` (Saturday): shows exactly what `2026-02-15`'s correct citation should be (both years) — the Last-Epiphany-Sunday reading, one day early.
+- `2026-02-15` (Last Sunday after the Epiphany): shows exactly what `2026-02-16`'s correct citation should be (Monday's reading, both years) — one day early again.
+
+This is a confirmed one-day-forward shift for at least the file's last three dated entries, and unrelated wrong content (from outside this season entirely) at `2026-02-10`. **Not yet determined where the shift begins or how far it extends past this file's boundary into Lent** — flagged for the fix phase to trace fully, not patched here.
+
+**Entries confirmed correct or only trivially different (bracket/spacing only) — no action needed beyond the already-settled bracket policy:** most Week 2 and Week 3 weekday entries (readings), several Week 4 entries, and the psalm citations for those same weeks.
+
+**Status: all findings above recorded, nothing in `data/season/epiphany.json` fixed.** Per the audit-then-fix workflow, this stays a defect list until the full DOL audit (Lent, Easter, Ordinary 1/2/3 remaining) is complete.
+
+**Scope note:** Epiphany's entry count (43, including 3 Holy Days) confirmed directly from the file — matches the prior session's unverified estimate.
+
 ## Recovery, 2026-07-06 — prior session's work recovered via manual patch hand-off
 
 The session that produced the 7 commits immediately above (canticle-selection fix through the Christmas year-swap correction) ran out of tokens before it could push to `origin`. Initial assessment in the following session (a fresh clone + full-branch search for any trace of this work) found nothing on GitHub and concluded it was lost. It was not: the original session had generated `git format-patch` files and Josh was able to retrieve them from that session's sandbox before it expired, then hand them to this session as a zip. All 7 patches applied cleanly via `git am` against a fresh clone of current `main`, in sequence, with only harmless whitespace warnings.
@@ -382,4 +411,21 @@ The session that produced the 7 commits immediately above (canticle-selection fi
 **Correction to the prior "push-early rule" framing:** the lesson isn't quite "a local commit is worthless until pushed" — this recovery proves local commits plus generated patch files *can* survive a session's end, provided they're retrieved before the sandbox itself is torn down. The real lesson is narrower and still holds: **there is no guarantee of when a sandbox becomes unreachable**, so the safest default remains committing (and pushing, when credentials exist) as work is verified rather than batching — that way recovery never depends on a race against an expiring container. Manual retrieval-and-handoff, as happened here, is a fallback worth knowing about, not a substitute for pushing early.
 
 **Open judgment call, flagged by the canticle-selection fix (commit `9d54378` above) — needs Josh's decision, not yet actioned:** BCP1979's "Suggested Canticles" table (pp.144-145) has a "Feasts of our Lord and other Major Feasts" override row that is not yet implemented, because the Anglican calendar data has no Major Feast / feast-rank flag to detect that case. Until this is resolved, Major Feast days will show the ordinary weekday canticle instead of the BCP's Major-Feast override. This needs a decision on how "Major Feast" should be detected in the existing calendar data model before it can be implemented — not a mechanical fix.
+
+## Decision, 2026-07-06 — feast-rank/precedence field: recorded as a governance decision and defect, deferred per audit-then-fix
+
+**Josh's ruling:** we finish what we start — currently auditing, not fixing. Record the governance decision and the underlying defect now; implement in the fix phase alongside everything else found during the DOL audit, not opportunistically mid-audit.
+
+**Confirmed via `book_of_common_prayer.pdf` pp.14-17 (BCP1979's own "Table of Precedence"):** the calendar has five formal precedence tiers, not an ad hoc "Major Feast" flag:
+1. **Principal Feasts** — Easter, Ascension, Pentecost, Trinity Sunday, All Saints', Christmas, Epiphany. Take precedence over everything.
+2. **Sundays** — all Sundays are feasts of our Lord; only the Holy Name, the Presentation, and the Transfiguration outrank a Sunday among fixed-date feasts.
+3. **Holy Days** — split into two named sub-categories that the BCP itself lists separately: **"Other Feasts of our Lord"** (Holy Name, Presentation, Annunciation, Visitation, St. John Baptist, Transfiguration, Holy Cross Day) and **"Other Major Feasts"** (all Apostles, all Evangelists, St. Stephen, Holy Innocents, St. Joseph, St. Mary Magdalene, St. Mary the Virgin, St. Michael and All Angels, St. James of Jerusalem, Independence Day, Thanksgiving Day).
+4. **Days of Special Devotion** — Ash Wednesday, Lenten/Holy Week weekdays, Fridays (a devotional-discipline flag, orthogonal to precedence rank, not a competing tier).
+5. **Days of Optional Observance** — calendar commemorations, Common of Saints, Ember/Rogation Days, Various Occasions.
+
+**Best-practice recommendation for the data model:** add a `precedence` field (controlled enum matching the 5 tiers above, with tier 3 split into its two named sub-categories since the canticle table's override applies to both but they're independently useful elsewhere — e.g. the Sunday-transfer rule in tier 2 only cares about "Feast of Our Lord" vs. "Major Feast") to every calendar-day entry across `data/season/*.json` and `anglican.json`'s Holy Day entries. This single field would resolve the canticle-override gap and is very likely needed again for other rank-sensitive logic (Sunday-transfer rules, Ash Wednesday non-precedence, Holy Week/Easter Week feast-transfer rules — all in the same BCP pages) — worth designing once, broadly, rather than as a single-purpose canticle flag.
+
+**Related existing resource, not currently live:** `synaxarium-review/data/kalendar-data.json` (a research dataset for a separate future sanctoral-calendar project, not wired into the running app) already carries a `rank` field and a `designation` field with values like `"Feast of Our Lord"` — the same taxonomy. Worth reusing that pattern/vocabulary when this is actually implemented, though the two datasets are unrelated today and this is not a suggestion to wire them together without a separate decision.
+
+**Status: recorded as a defect + design direction. Not implemented.** Deferred to the fix phase alongside the Holy Days 4-reading schema gap and every other DOL-audit finding.
 

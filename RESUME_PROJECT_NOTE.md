@@ -11,7 +11,7 @@ All 92 of 92 live collect entries verified against `book_of_common_prayer.pdf`. 
 
 The hardcoded canticle selection in `js/office-ui.js` has been replaced with day-of-week + season-aware selection implementing BCP1979's Suggested Canticles table (pp.144-145) exactly, verified programmatically against every cell.
 
-**Open judgment call — needs your decision:** the table's "Feasts of our Lord and other Major Feasts" override row is not implemented — there's no Major Feast/feast-rank flag in the Anglican calendar data to detect that case. Until decided, Major Feast days show the ordinary weekday canticle instead of the BCP's override. Needs a decision on how "Major Feast" should be flagged in the existing calendar data model.
+**Resolved, 2026-07-06:** add a `precedence` field to calendar-day entries, matching BCP1979's own 5-tier Table of Precedence (pp.14-17), with tier 3 ("Holy Days") split into its two named sub-categories ("Other Feasts of our Lord" vs. "Other Major Feasts") since the app needs both independently. Recorded as a governance decision + defect — **not implemented yet**, deferred to the fix phase alongside every other DOL-audit finding, per the audit-then-fix workflow.
 
 ### 3. Daily Office Lectionary (DOL) audit — in progress, audit-then-fix workflow now in effect
 
@@ -24,7 +24,13 @@ The hardcoded canticle selection in `js/office-ui.js` has been replaced with day
 **Season-by-season progress (record-only, nothing in `data/season/*.json` touched yet):**
 - **Advent — audited, 11 green / 15 red, 0 open questions.**
 - **Christmas — audited, 0 green / 12 red** (9 year-split entries all red due to a systematic Year One/Year Two label swap across the season boundary — content itself is accurate BCP text, just filed under the wrong year label; 3 Holy Days red for a wrong-lectionary-track bug, same pattern as St. Thomas in Advent).
-- **Epiphany, Lent, Easter, Ordinary 1/2/3 — not yet started.** (Prior estimate of entry counts — Epiphany 43, Lent 46, Easter 50, Ordinary 69/61/59 — is unverified, re-confirm before relying on it.)
+- **Epiphany — audited, significant findings, all recorded:**
+  - Confirmed the Baptism-of-Our-Lord/dated-day transition bug (Jan 11 should use Week-of-1-Epiphany-Sunday's citation, currently shows the dated Jan.11 citation instead).
+  - Confirmed a **systemic psalm-cycle indexing defect** — several entries' psalms exactly match a *different* week's BCP citation (not just wrong, but identifiably shifted), plus 2 confirmed morning/evening psalm swaps. Looks like an engine bug (psalter-cycle position calculation), not isolated data errors — flagged for the fix phase to trace in code.
+  - Confirmed **named/major Sundays (Epiphany Day, Baptism of Our Lord, Transfiguration/Last Epiphany) show the Eucharistic Proper psalm instead of the Daily Office Lectionary psalm** — worth checking if this recurs on other named Sundays year-round.
+  - Confirmed a **one-day-forward reading shift** for at least the file's last 3 dated entries (Feb 14-15), plus unrelated wrong-lectionary content at Feb 10 (a Gospel citation from Luke that doesn't belong to this lane at all). Extent not yet traced past this file's boundary into Lent.
+  - The Confession of St. Peter, Conversion of St. Paul, and Presentation (Holy Days inside this range) were not checked — separate Holy Days lectionary table, not yet pulled.
+- **Lent, Easter, Ordinary 1/2/3 — not yet started.** (Prior estimate of entry counts — Lent 46, Easter 50, Ordinary 69/61/59 — is unverified, re-confirm before relying on it.)
 
 True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) established but not yet audited beyond Advent + Christmas.
 
