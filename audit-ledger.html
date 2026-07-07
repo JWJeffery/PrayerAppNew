@@ -237,7 +237,7 @@ const MORNING_PRAYER_STATUS = {
 };
 
 const EVENING_PRAYER_STATUS = {
-  "Opening Sentences": {status:'red', note:'CONFIRMED FABRICATED 2026-07-07: bcp-opening-evening ("Jesus said, \'Peace I leave with you...\'", John 14:27) does not appear anywhere in book_of_common_prayer.pdf -- checked via full-text search of the entire book. Matches none of the 7 real Evening-specific opening sentences (BCP pp.60-61 Rite One / pp.114-115 Rite Two) nor the seasonal Morning Prayer sentences Evening Prayer is explicitly permitted to borrow per the BCP\'s own rubric. Same fabrication pattern as the LFF collects and the Ethiopian Senkessar. Architecture gap on top of the content problem: Morning Prayer has seasonal opening-sentence variants (bcp-opening-advent/lent/easter/general); Evening Prayer has only this one non-seasonal, fabricated entry. Nothing fixed yet.'},
+  "Opening Sentences": {status:'green', note:'CORRECTED 2026-07-07: shared with Morning Prayer, no new defect. Original "fabricated" finding checked bcp-opening-evening\'s text without confirming it\'s ever rendered -- it isn\'t. data/rubrics.json shows both offices use the identical VARIABLE_OPENING slot (resolves to bcp-opening-${season}, falling back to bcp-opening-general) -- the same shared seasonal components already verified under Morning Prayer. bcp-opening-evening is confirmed dead/orphaned data (fabricated text, not sourced from the BCP, but never referenced anywhere in the rendering code) -- a minor cleanup item, not a live defect. See AUDIT_GOVERNANCE_LEDGER.md self-correction entry for full detail.'},
   "Confession (optional)": {status:'green', note:'Shared with Morning Prayer\'s already-verified bcp-confession-rite1/rite2 components -- confirmed via js/office-ui.js. BCP itself uses identical confession-prayer text for both offices (only the officiant\'s introductory exhortation differs, which the app does not render as separate text to check).'},
   "Invitatory (O God, make speed to save us / Phos Hilaron)": {status:'red', note:'"O God, make speed to save us" versicle: shared component, already verified correct. Phos Hilaron (bcp-phos-hilaron): CONFIRMED MINOR DEFECT 2026-07-07 -- rite1\'s final line reads "to be glorified THOUGH all the worlds," should be "THROUGH all the worlds" (BCP p.63). One-word transcription error changes the sense of the line. Rite2 is correct ("through," p.117). Not yet fixed.'},
   "Psalms": {status:'red', note:'Same data and same findings as Morning Prayer\'s Appointed Psalms row (Daily Office Lectionary psalms_ep field) -- DOL record-only audit complete for all 8 seasons, extensive real defects, nothing fixed yet. See AUDIT_GOVERNANCE_LEDGER.md.'},
@@ -397,7 +397,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v33-2026-07-07-evening-prayer-audit-complete';
+const SEED_VERSION = 'v34-2026-07-07-ep-opening-sentence-correction';
 
 async function checkSeedVersion(){
   let storedValue = null;

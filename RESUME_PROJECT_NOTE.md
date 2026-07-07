@@ -63,9 +63,11 @@ Every component checked at least once: Opening Sentences, Confession, Invitatory
 ### Evening Prayer — audited, complete
 
 Its own unique parts (everything else shared with Morning Prayer, already covered):
-- **Opening Sentence — confirmed fabricated.** `bcp-opening-evening`'s text doesn't appear anywhere in the BCP at all (checked via full-text search). Doesn't match any of the 7 real Evening-specific opening sentences, nor the seasonal Morning sentences Evening Prayer is explicitly allowed to borrow per the BCP's own rubric. Architecture gap too: Morning Prayer has seasonal opening-sentence variants; Evening Prayer has only this one fabricated, non-seasonal entry.
-- **Phos Hilaron — confirmed minor defect.** Rite1 has "glorified **though** all the worlds," should be "**through**." One-word typo, rite2 is correct.
+- **Opening Sentence — CORRECTED, this is shared with Morning Prayer, no new defect.** Original finding (below, struck through) was based on checking `bcp-opening-evening`'s text without confirming it's ever actually rendered — it isn't. `data/rubrics.json` shows both offices use the identical `VARIABLE_OPENING` slot, resolving to the same seasonal components already verified under Morning Prayer. `bcp-opening-evening` is dead, orphaned data (confirmed fabricated text, but never referenced anywhere in the rendering code) — a minor cleanup item, not a live defect.
+- **Phos Hilaron — confirmed minor defect, stands.** `bcp-phos-hilaron` is hardcoded directly into the Evening Prayer sequence (genuinely live, unlike the Opening Sentence). Rite1 has "glorified **though** all the worlds," should be "**through**." One-word typo, rite2 is correct.
 - **Confession — confirmed correct**, properly shared with Morning Prayer's already-verified component (BCP uses identical confession text for both offices).
+
+**Standing lesson:** checking a component's content against source isn't enough — confirm it's actually reachable by the rendering engine (rubric sequence / resolver code) before recording a live defect, the same way engine investigations already check *how* a value is used.
 
 Evening Prayer is now fully audited — its unique parts checked here, everything else already covered by Morning Prayer.
 

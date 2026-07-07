@@ -517,6 +517,18 @@ Per finish-what-we-start, with Morning Prayer complete, checked the parts specif
 
 **Status: findings recorded, nothing fixed yet** (per audit-then-fix). Evening Prayer's own parts are the last of it that needed dedicated checking — with this, Evening Prayer is fully audited (its unique parts checked here; everything else shared and already green or red from Morning Prayer's audit).
 
+## Self-correction, 2026-07-07 — Evening Prayer's Opening Sentence finding was wrong: checked the data, not what actually renders
+
+Josh's prompt — double-check that Evening Prayer's components aren't already-audited Morning Prayer components — caught a real mistake in the finding immediately above. The "fabricated Opening Sentence" claim was based on checking `bcp-opening-evening`'s text against the BCP without first checking whether the rendering engine ever actually displays that component.
+
+**It doesn't.** Traced `data/rubrics.json`: both `morning-office` and `evening-office` open with the identical `VARIABLE_OPENING` slot, which resolves to `bcp-opening-${season}` (falling back to `bcp-opening-general`) — the exact same shared seasonal components already verified correct under Morning Prayer. `bcp-opening-evening` does not appear anywhere else in the codebase (confirmed by grep across every `.js` and `.json` file) — it is never referenced by any rendering path. **Evening Prayer's actual, displayed Opening Sentence is Morning Prayer's already-audited shared component, not the fabricated one.**
+
+**Corrected finding:** Opening Sentences for Evening Prayer — green, shared with Morning Prayer, no new defect. Separately, `bcp-opening-evening` itself is confirmed dead data: fabricated text (not sourced from the BCP, as found) sitting in `components/anglican.json` but never rendered to a user under any circumstance. Worth flagging as a minor cleanup item — orphaned content, not a live defect — rather than the serious "users are seeing invented Scripture" finding originally recorded.
+
+**Phos Hilaron's typo finding stands, re-confirmed:** `bcp-phos-hilaron` is hardcoded directly into `evening-office`'s sequence (not resolved dynamically), confirmed genuinely live. The rite1 "though"/"through" typo is real and unaffected by this correction.
+
+**Standing lesson, worth generalizing:** checking a component's *content* against source is necessary but not sufficient — a component can be perfectly wrong (or perfectly right) and still be irrelevant if it's never actually reached by the rendering engine. Before recording a finding as a live defect, trace whether the component is actually referenced in the relevant rubric sequence or resolution code, the same way the Epiphany/Ordinary-Time investigations already checked `CalendarEngine`/`office-ui.js` for *how* a value gets used — this should extend to confirming a component is *used at all*, not just checking it's wrong when found.
+
 ## Recovery, 2026-07-06 — prior session's work recovered via manual patch hand-off
 
 The session that produced the 7 commits immediately above (canticle-selection fix through the Christmas year-swap correction) ran out of tokens before it could push to `origin`. Initial assessment in the following session (a fresh clone + full-branch search for any trace of this work) found nothing on GitHub and concluded it was lost. It was not: the original session had generated `git format-patch` files and Josh was able to retrieve them from that session's sandbox before it expired, then hand them to this session as a zip. All 7 patches applied cleanly via `git am` against a fresh clone of current `main`, in sequence, with only harmless whitespace warnings.
