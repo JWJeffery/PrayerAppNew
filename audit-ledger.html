@@ -171,7 +171,7 @@ const DOL_SEASONS = [
   { key: 'dol:christmas', name: 'Christmas', status: 'red',
     note: 'CORRECTED 2026-07-06: initial audit wrongly called 6 entries green. Rigorous footer re-check found Christmas Year One/Year Two labels are SYSTEMICALLY SWAPPED -- every reading_*_year1 field actually holds true Year Two content and vice versa (confirmed programmatically for all 9 year-split entries; every individual citation IS accurate BCP text, just filed under the wrong year, breaking 2-year-cycle continuity across the Advent-Christmas boundary). Isolated to Christmas -- Advent and Epiphany both label correctly. Corrected total: 12 entries, 0 green, 12 red (9 year-swapped + 3 Holy Days on the wrong lectionary track entirely -- St. Stephen, St. John, Holy Innocents -- same bug as St. Thomas in Advent). See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
   { key: 'dol:epiphany', name: 'Epiphany', status: 'red',
-    note: 'AUDITED 2026-07-07 (record-only pass; fixes deferred until full DOL audit completes). 43 entries, 3 Holy Days not checked (separate lectionary table). Confirmed: (1) Baptism-of-Our-Lord/dated-day transition bug -- Jan 11 shows the dated Jan.11 citation instead of Week-of-1-Epiphany-Sunday\'s; (2) systemic psalm-cycle indexing defect -- several entries\' psalms exactly match a DIFFERENT week\'s BCP citation, plus 2 confirmed AM/PM psalm swaps, pointing to an engine bug rather than isolated data errors; (3) named/major Sundays (Epiphany Day, Baptism, Transfiguration/Last Epiphany) show the Eucharistic Proper psalm instead of the Daily Office psalm; (4) confirmed one-day-forward reading shift for the file\'s last 3 dated entries plus unrelated wrong-lectionary content at Feb 10. See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
+    note: 'AUDITED 2026-07-07 (record-only pass; fixes deferred until full DOL audit completes). 43 entries, 3 Holy Days not checked (separate lectionary table). Confirmed: (1) Baptism-of-Our-Lord/dated-day transition bug -- Jan 11 shows the dated Jan.11 citation instead of Week-of-1-Epiphany-Sunday\'s; (2) psalm-cycle "wrong week" pattern and (3) named-Sunday Eucharistic-Proper-psalm substitution and (4) one-day-forward reading shift near season end -- ROOT CAUSE TRACED for (2)-(4): all are static data-entry errors baked into epiphany.json itself, NOT live engine bugs (CalendarEngine.findEntry matches by literal date field, office-ui.js reads psalm fields verbatim, no generator script populates this file, no internal duplication found). Fix = re-populate the specific wrong fields against BCP source once the fix phase begins. See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
   { key: 'dol:lent', name: 'Lent', status: 'amber',
     note: 'Not yet audited. 46 entries in data/season/lent.json.' },
   { key: 'dol:easter', name: 'Easter', status: 'amber',
@@ -382,7 +382,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v25-2026-07-07-epiphany-dol-audit-findings';
+const SEED_VERSION = 'v26-2026-07-07-epiphany-root-cause-traced';
 
 async function checkSeedVersion(){
   let storedValue = null;

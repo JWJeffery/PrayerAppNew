@@ -404,6 +404,28 @@ This is a confirmed one-day-forward shift for at least the file's last three dat
 
 **Scope note:** Epiphany's entry count (43, including 3 Holy Days) confirmed directly from the file — matches the prior session's unverified estimate.
 
+## Decision, 2026-07-07 — standing workflow: audit surfaces engine bugs, investigate one at a time, in place
+
+**Josh's ruling — this is now the standard workflow going forward, not a one-off:** when the record-only DOL audit surfaces evidence of an underlying engine bug (not just a wrong data value) — like the Epiphany psalm-cycle indexing pattern and the reading day-shift above — the correct response is not to keep auditing past it, and not to fully stop the audit either. Instead:
+
+1. **Pause the audit at the point the bug was found.**
+2. **Investigate that one bug** — trace it to its actual root cause in the engine code, not just the symptom in the data.
+3. **Record the finding** (root cause, scope, affected dates/seasons) in this ledger.
+4. **Resume the audit** where it left off.
+
+This is explicitly framed as an *extension* of the audit, not a separate fix-phase activity — tracing a bug to its cause is diagnostic work, the same kind of work as comparing a citation to its source, even though it touches code rather than a PDF. It is **not** the same as fixing the bug: per the standing audit-then-fix rule, actually changing `data/season/*.json` or engine code to correct the defect still waits until the full DOL audit is complete, unless Josh says otherwise for a specific case. One bug is investigated fully before returning to auditing the next date — not both at once, and not deferred to some later "investigation phase" separate from the audit itself.
+
+## Investigation, 2026-07-07 — Epiphany psalm-cycle and reading-shift bugs: root cause traced, both are static data errors, not live engine bugs
+
+Traced both bugs flagged in the Epiphany DOL audit above by reading the actual resolution path, not just the symptom:
+
+- **`CalendarEngine.findEntry()` (`js/calendar-engine.js`)** matches each date against a literal `date` field on the season-file entry (Priority 1, exact ISO/long-format match) before ever falling back to a computed `day_of_season` offset. Since every entry in `data/season/epiphany.json` carries its own literal `date` field for 2026, the exact-match path fires for all 43 entries — there is no live per-request week-offset or psalm-cycle-position calculation happening at render time for this season.
+- **`js/office-ui.js` (~line 3285-3287)** reads `dailyData.psalms_mp` / `dailyData.psalms_ep` verbatim, with no transformation, rotation, or lookup against any separate psalm-cycle table.
+- **No generator/build script produces this file's psalm fields** — checked `scripts/`, `tools/`, and repo root for anything that could programmatically populate `data/season/epiphany.json`; found none. The psalms and readings were entered directly, by hand or by an earlier session, into the JSON.
+- **Confirmed no internal duplication** (no two entries in the file share identical Year One reading content) — ruling out a simple "one entry got copy-pasted into two slots, cascading everything after it by one" explanation for the Feb 14/15 reading-shift finding.
+
+**Conclusion: both the psalm-cycle "wrong week" pattern and the one-day-forward reading shift are static data-entry errors baked directly into `data/season/epiphany.json` at the time it was populated — not a live engine defect.** This is materially better news than the "engine indexing bug" framing in the audit entry above: it means the fix, when the fix phase begins, is re-populating the specific wrong fields in this one file against the BCP source (already transcribed in this session's working notes), not a code change that could be silently affecting other season files too. Nothing to fix in `js/calendar-engine.js` or `js/office-ui.js` for this specific defect. Resuming the DOL audit at Lent per the standing workflow above.
+
 ## Recovery, 2026-07-06 — prior session's work recovered via manual patch hand-off
 
 The session that produced the 7 commits immediately above (canticle-selection fix through the Christmas year-swap correction) ran out of tokens before it could push to `origin`. Initial assessment in the following session (a fresh clone + full-branch search for any trace of this work) found nothing on GitHub and concluded it was lost. It was not: the original session had generated `git format-patch` files and Josh was able to retrieve them from that session's sandbox before it expired, then hand them to this session as a zip. All 7 patches applied cleanly via `git am` against a fresh clone of current `main`, in sequence, with only harmless whitespace warnings.
