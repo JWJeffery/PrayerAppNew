@@ -8623,15 +8623,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-victor-i",
-    "tradition": "ANG",
-    "date": {
-      "month": 7,
-      "day": 28
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "mar-papa-commemoration",
     "tradition": "COE",
     "date": {
@@ -14770,15 +14761,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "damasus",
-    "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 11
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "mar-barsabba",
     "tradition": "COE",
     "date": {
@@ -15792,15 +15774,6 @@
     "date": {
       "month": 12,
       "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-sylvester-i",
-    "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 31
     },
     "calendar": "gregorian"
   },

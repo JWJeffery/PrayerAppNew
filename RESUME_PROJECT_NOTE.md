@@ -212,9 +212,11 @@ Common Worship confirmed 25. Holy Women, Holy Men 2010 (TEC's predecessor calend
 
 **Real limitation found:** `saint-lawrence` still showed as "unsupported" by the automated method, but HWHM 2010 clearly has him ("Laurence") at the identical date — the matcher just failed on the British/American spelling variant. **This means the automated approach cannot safely confirm the remaining ~55 are actually wrong** — it's demonstrated a real false-negative mode at this granularity. No further changes made this session. Resolving the rest needs manual, name-by-name verification, not more of the same automated matching — treat as its own bounded task if revisited.
 
-### Two more sources checked, then 28 of 31 fixed — 3 exceptions kept
+### Two more sources checked, then 28 of 31 fixed, then final 3 removed — this thread is closed
 
-For All the Saints (Canadian) and A Great Cloud of Witnesses confirmed 2 more (Saint Lawrence, Junia) — 39 of 91 total now confirmed legitimate, no changes needed. **28 of the remaining 31 removed from ANG** (per Josh's ruling) after exhausting all 5 sources — each keeps any other tradition's tag it already had. **3 kept as exceptions, not yet resolved:** `damasus` (Dec 11), `saint-sylvester-i` (Dec 31), `saint-victor-i` (Jul 28) — real ancient Bishops of Rome, plausibly legitimate via a provincial calendar not checked. Cache regenerated and verified.
+For All the Saints (Canadian) and A Great Cloud of Witnesses confirmed 2 more (Saint Lawrence, Junia) — 39 of 91 total confirmed legitimate, no changes needed. 28 of the remaining 31 removed from ANG after exhausting all 5 sources. **The final 3 exceptions (Damasus, Saint Sylvester I, Saint Victor I) also removed per Josh's ruling** — `damasus` and `saint-victor-i` had only the ANG record and are now gone from the dataset entirely; `saint-sylvester-i` retains its EOR/LAT/OOR tags. Cache regenerated and verified.
+
+**This closes the entire 91-identity thread.** Final tally: 39 confirmed legitimate (unchanged), 31 removed as unsupported by all 5 checked sources, plus the original 24 fixes and the George/George of Lydda resolution. **Genuinely open, separate from this thread:** the full text-content audit for remaining ANG identities, and the paused by-tradition duplicate work (LAT/EOR/OOR/COE), deliberately deferred until those offices are reached.
 
 ### Standing workflow: audit-then-investigate-then-resume
 

@@ -395,16 +395,6 @@
     ]
   },
   {
-    "id": "damasus",
-    "day": "December 11",
-    "name": "Damasus",
-    "description": "Bishop of Rome.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "mar-barsabba",
     "day": "December 11",
     "name": "Mar Barsabba",
@@ -1212,7 +1202,6 @@
     "description": "Pope; celebrated across traditions.",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR",
       "LAT",
       "OOR"

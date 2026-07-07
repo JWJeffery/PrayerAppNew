@@ -892,4 +892,12 @@ Josh's ruling: remove the ANG tag from all 31 except the three ancient-Bishops-o
 
 **Verified:** all 28 removals confirmed absent from `commemorations.json`'s `ANG` tag directly; the 3 exceptions confirmed still present and untouched. Regenerated all 12 monthly caches. Spot-checked January's cache directly — `polyeuctus-of-melitine` correctly still present (its `EOR` tag intact) with `ANG` gone from its tag list.
 
+## Fix applied, 2026-07-07 — the last 3 exceptions also removed; this closes the whole 91-identity thread
+
+Josh's ruling: remove `ANG` from the three remaining exceptions too. Removed `damasus` (Dec 11), `saint-sylvester-i` (Dec 31), `saint-victor-i` (Jul 28). `damasus` and `saint-victor-i` had only the `ANG` record — they're now gone from the dataset entirely (no other tradition ever tagged them here). `saint-sylvester-i` correctly retains its `EOR`/`LAT`/`OOR` tags, only `ANG` removed.
+
+Regenerated all 12 monthly caches; verified directly that all three identities show no `ANG` tag anywhere in `commemorations.json`.
+
+**This closes the entire thread that began with checking non-ANG identities against Anglican sources.** Final tally across all 91 originally-flagged identities: 39 confirmed legitimate and left unchanged (across 5 sources: LFF 2024, Common Worship, Holy Women/Holy Men 2010, For All the Saints, A Great Cloud of Witnesses), 31 removed as unsupported by any of those 5 sources, plus the earlier 24 fixes (13 added, 9 corrected, Vincent de Paul/Louise de Marillac resolved as a joint commemoration, Fabian's regression reverted) and the George/George of Lydda split-identity resolution. **Still genuinely open, not part of this thread's scope:** the full text-content audit (descriptions, ranks, collects) for all remaining ANG identities, and the paused by-tradition duplicate-date work for LAT/EOR/OOR/COE (deliberately deferred until those offices are reached, per Josh's direction).
+
 
