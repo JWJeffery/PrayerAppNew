@@ -40,11 +40,19 @@ The hardcoded canticle selection in `js/office-ui.js` has been replaced with day
   - **Pentecost: same duplication, total** — both years show Year Two's content, Year One's real Pentecost reading missing entirely.
   - Saint Mark and Saints Philip & James (Holy Days in this range) not checked.
   - No fresh root-cause investigation run — all patterns above are recurrences of already-diagnosed defect classes (static data-entry errors), not new mechanisms.
-- **Ordinary 1/2/3 — not yet started.** (Prior estimate of entry counts — 69/61/59 — is unverified, re-confirm before relying on it. Check for Year-swap/duplication/shift patterns as standard practice, per the pattern in every season so far.)
+- **Ordinary Time (Propers 1-29, all 3 files) — audited, the most severe finding of the entire audit:**
+  - **All 150 of 150 checked weekday entries have real reading errors.** Not a clean swap: Year Two fields consistently hold the true Year One content (confirmed by direct trace), but Year One fields hold scattered citations from unrelated Propers/weekdays, not Year Two's content in exchange. Year One's true content for many days may not survive anywhere in the file.
+  - Psalms are correct throughout — no psalm defects found here, unlike Epiphany.
+  - Root cause: same as everywhere else — static data-entry error, no generator script, no live engine bug (confirmed via the same check used for Epiphany).
+  - 19 Holy Days across the three files not checked (separate lectionary table).
+  - **Unresolved scope question:** `ordinary1.json`'s first entry ("Tuesday before Ash Wednesday (Shrove Tuesday)," Feb 17) doesn't belong with the rest of the file's Pentecost-season content — needs a live-reference check to determine if it's dead data or a real scope question.
+  - Full parsed BCP source table (all 29 Propers, both years, Monday-Saturday) was built this session and exists in working notes — reusable for the fix phase rather than needing re-transcription.
 
-True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) established but not yet audited beyond Advent + Christmas.
+**DOL record-only pass is now COMPLETE for every season** (Advent, Christmas, Epiphany, Lent, Easter, Ordinary 1/2/3). Every single one has confirmed real defects — none have been fixed yet.
 
-**Fix phase for Advent + Christmas has not started** — per the audit-then-fix workflow, wait until the full DOL audit (all 8 seasons) is recorded before fixing any of it, unless you instruct otherwise.
+True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it except the 19+ Holy Days across the year (separate lectionary table, not yet pulled) and the Shrove Tuesday scope question above.
+
+**Fix phase has not started for any season** — per the audit-then-fix workflow, the whole DOL record-only pass is now done; the next phase is systematic remediation, season by season, starting wherever you direct.
 
 ### 4. Deferred features — not started, queued behind items 2 and 3
 
