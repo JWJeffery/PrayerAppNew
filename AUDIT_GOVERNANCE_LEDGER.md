@@ -341,5 +341,10 @@ Total: 11 green, 15 red (1 minor + 7 moderate + 4 severe + 2 Holy-Day/schema-gap
 
 **Corrected Advent total: 11 green, 15 red, 0 open questions.** (The previous entry's "15 red" figure was arithmetically inconsistent with its own itemization — 1+7+4+2=14 — before Dec 5 was folded in from the open-question bucket; the corrected total of 15 red is now internally consistent.) This bracket policy applies retroactively to how all remaining season files get audited, not just Advent — every psalm citation check from here forward will apply the three rules above directly, no separate flag needed per occurrence.
 
+## Decision, 2026-07-06 — Holy Days 4-reading schema gap: recorded as a problem, fix deferred to end of DOL audit
+
+**Josh's ruling: if the BCP says four readings, the app provides four readings.** The schema gap found in the Advent audit (St. Andrew and St. Thomas both need 2 readings for Morning Prayer and 2 for Evening Prayer — 4 total — but `data/season/*.json` Holy Day entries currently only have 3 reading slots: `reading_ot_mp`, `reading_epistle`, `reading_gospel`, doubled for Year One/Year Two) is confirmed as a real problem, not an acceptable simplification. This is recorded here as a standing item, **not fixed now** — per the audit-then-fix workflow, the fix (adding a 4th reading slot to the Holy Day schema, and backfilling the missing reading for every Holy Day across every season file, not just Advent's two) is deferred until the full DOL audit is complete across all 8 season files. Every remaining Holy Day encountered in Christmas, Epiphany, Lent, Easter, and the Ordinary Time files should be checked against the same DOL Holy Days table (BCP1979.pdf pp.995 onward) for this same 4-reading gap, and each instance recorded here rather than fixed individually as found.
+
+
 
 

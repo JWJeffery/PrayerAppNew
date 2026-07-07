@@ -88,6 +88,11 @@
   <p class="section-note">Morning Prayer: in progress, not complete. Opening Sentences, Confession, Invitatory, Invitatory Psalm, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are verified against BCP1979.pdf. Appointed Psalms (30-day table) verified and corrected. Collects are now fully verified (all 92 live entries, see Collects row below). Still unverified: the Table of Suggested Canticles (which canticle pairs with which day/season/reading) and the Daily Office Lectionary date-by-date readings. Lord's Prayer and Apostles' Creed are shared components (common.json) — verified once, shown green in every office that references them, including Evening Prayer, Noonday Prayer, and Compline below, even though those offices haven't been individually audited otherwise yet.</p>
   <div id="dailyOfficeSection"></div>
 
+  <h3>Daily Office Lectionary — audit progress by season</h3>
+  <p class="section-note">The Daily Office Lectionary (data/season/*.json, 366 date entries across 8 season files, feeding both Appointed Psalms and Lessons with Canticles above) is being audited season by season under the audit-then-fix workflow: fully record findings for a season before fixing anything in it. A season shown red has at least one confirmed problem even if most of its entries are clean — hover or click for the real breakdown; full per-date detail is in AUDIT_GOVERNANCE_LEDGER.md.</p>
+  <div id="dolSeasonSection"></div>
+
+
   <h2>III. The Ethiopian Office</h2>
   <p class="section-note">Sa'atat: structural shape mismatch already found (2026-07-05) — the app's 9-watch schema does not match the historically attested Sa'atat of Abba Giyorgis. Senkessar: Ginbot audited days 1–17 (see notes); remaining 12 months untouched.</p>
   <div id="ethiopianSection"></div>
@@ -153,6 +158,31 @@ function makeBooks(list, corpus){
     note: RED_NOTES[name] || ''
   }));
 }
+
+// Daily Office Lectionary — audit progress by season file (data/season/*.json).
+// Status reflects the season AS A WHOLE: 'red' means the audit found at least one
+// confirmed problem (even if most entries are clean); 'amber' means not yet audited
+// at all; 'green' would mean every entry in that season checked out clean. A mixed
+// season (some green, some red entries) is marked red at this grid's resolution —
+// the note gives the real green/red breakdown; per-entry detail lives in the ledger.
+const DOL_SEASONS = [
+  { key: 'dol:advent', name: 'Advent', status: 'red',
+    note: 'AUDITED 2026-07-06 (record-only pass; fixes deferred until full DOL audit completes). 26 entries: 11 green, 15 red. Findings: 1 minor verse-range error; 7 entries (Dec 13-19) with corrupted Year One readings while Year Two is correct; 4 entries (Dec 20, 22-24) with both years wrong plus cross-day duplication and empty Gospel fields; 4 psalm-citation errors under the settled "full reading, nothing optional" policy; and both Holy Days (St. Andrew, St. Thomas) exposing a schema gap -- the BCP assigns 4 readings per Holy Day (2 MP, 2 EP) but the app only has 3 slots, and St. Thomas additionally used the wrong lectionary track (Eucharistic, not Daily Office). See AUDIT_GOVERNANCE_LEDGER.md for full per-date detail.' },
+  { key: 'dol:christmas', name: 'Christmas', status: 'amber',
+    note: 'Not yet audited. 12 entries in data/season/christmas.json.' },
+  { key: 'dol:epiphany', name: 'Epiphany', status: 'amber',
+    note: 'Not yet audited. 43 entries in data/season/epiphany.json.' },
+  { key: 'dol:lent', name: 'Lent', status: 'amber',
+    note: 'Not yet audited. 46 entries in data/season/lent.json.' },
+  { key: 'dol:easter', name: 'Easter', status: 'amber',
+    note: 'Not yet audited. 50 entries in data/season/easter.json.' },
+  { key: 'dol:ordinary1', name: 'Ordinary 1', status: 'amber',
+    note: 'Not yet audited. 69 entries in data/season/ordinary1.json.' },
+  { key: 'dol:ordinary2', name: 'Ordinary 2', status: 'amber',
+    note: 'Not yet audited. 61 entries in data/season/ordinary2.json.' },
+  { key: 'dol:ordinary3', name: 'Ordinary 3', status: 'amber',
+    note: 'Not yet audited. 59 entries in data/season/ordinary3.json.' }
+];
 
 const MORNING_PRAYER_PARTS = ["Opening Sentences","Confession","Invitatory","Invitatory Psalm",
 "Appointed Psalms","Lessons with Canticles","Apostles' Creed","Lord's Prayer","Suffrages",
@@ -301,7 +331,9 @@ const BOOK_CODES = {
   "Matthew":"Mat","Mark":"Mrk","Luke":"Luk","John":"Jhn","Acts":"Act","Romans":"Rom","1 Corinthians":"1Co","2 Corinthians":"2Co","Galatians":"Gal",
   "Ephesians":"Eph","Philippians":"Php","Colossians":"Col","1 Thessalonians":"1Th","2 Thessalonians":"2Th","1 Timothy":"1Ti","2 Timothy":"2Ti","Titus":"Tit","Philemon":"Phm",
   "Hebrews":"Heb","James":"Jas","1 Peter":"1Pe","2 Peter":"2Pe","1 John":"1Jn","2 John":"2Jn","3 John":"3Jn","Jude":"Jud","Revelation":"Rev",
-  "Epistle of the Laodiceans":"Lao","History of Zosimus":"Zos","2 Baruch (CE)":"2Br"
+  "Epistle of the Laodiceans":"Lao","History of Zosimus":"Zos","2 Baruch (CE)":"2Br",
+  "Advent":"Adv","Christmas":"Xms","Epiphany":"Epi","Lent":"Lnt","Easter":"Est",
+  "Ordinary 1":"Or1","Ordinary 2":"Or2","Ordinary 3":"Or3"
 };
 function codeFor(name){ return BOOK_CODES[name] || name.replace(/[^A-Za-z]/g,'').slice(0,3); }
 
@@ -350,7 +382,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v21-2026-07-06-bracket-policy-settled';
+const SEED_VERSION = 'v22-2026-07-06-dol-season-grid-added';
 
 async function checkSeedVersion(){
   let storedValue = null;
@@ -412,6 +444,9 @@ async function init(){
     doSec.appendChild(det);
     await hydrateAndRender(g.parts, renderOfficeTable, inner, true);
   }
+
+  const dolSec = document.getElementById('dolSeasonSection');
+  await hydrateAndRender(DOL_SEASONS, renderBookTable, dolSec, "Season files (data/season/*.json)");
 
   await hydrateAndRender(ETHIOPIAN, renderOfficeTable, document.getElementById('ethiopianSection'), false);
   await hydrateAndRender(COE, renderOfficeTable, document.getElementById('coeSection'), false);
