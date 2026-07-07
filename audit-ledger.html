@@ -249,11 +249,36 @@ const EVENING_PRAYER_STATUS = {
   "Let Us Bless the Lord — concluding sentence": {status:'green', note:'Shared with Morning Prayer\'s verified closing sentence.'}
 };
 
+const NOONDAY_STATUS = {
+  "Opening Versicle (O God, make speed to save us)": {status:'green', note:'Shared component (bcp-invitatory-full), already verified under Morning Prayer.'},
+  "Hymn (optional)": {status:'green', note:'Not applicable to text-accuracy audit -- no fixed text.'},
+  "Psalm(s)": {status:'red', note:'Same data and findings as Morning/Evening Prayer\'s Psalms rows (DOL). Nothing fixed yet.'},
+  "Kyrie (Lord have mercy)": {status:'green', note:'Verified 2026-07-07 against BCP1979.pdf p.131, both rites.'},
+  "Lord's Prayer": {status:'green', note:'Shared component, already verified.'},
+  "Collect": {status:'green', note:'Uses the same Collect-of-the-Day data as Morning/Evening Prayer -- Collects audit complete (92/92 live entries).'},
+  "Free Intercessions (optional)": {status:'green', note:'Not applicable to text-accuracy audit -- no fixed text.'},
+  "Let Us Bless the Lord — concluding sentence": {status:'green', note:'Shared component, already verified.'}
+};
+
+const COMPLINE_STATUS = {
+  "Opening Versicles (Our help is in the Name of the Lord)": {status:'amber', note:'Not yet checked 2026-07-07 -- the opening blessing ("The Lord Almighty grant us a peaceful night...") was verified, but whether "Our help is in the Name of the Lord / The maker of heaven and earth" is bundled into the same component or missing entirely was not confirmed. Honest gap, not yet audited.'},
+  "Confession (brief, optional)": {status:'red', note:'CONFIRMED DEFECT 2026-07-07: BCP1979 p.126 gives Compline its own distinct, shorter confession ("Almighty God, our heavenly Father: We have sinned against you...") -- completely different wording from Morning/Evening Prayer\'s confession. The engine\'s compline-office rubric reuses the same bcp-confession-[rite] placeholder as Morning/Evening Prayer, and only bcp-confession-rite1/rite2 exist in the codebase -- no Compline-specific confession component exists at all. Compline currently displays the wrong confession text entirely. Not yet fixed.'},
+  "O God, make speed to save us + Gloria Patri": {status:'green', note:'Shared component (bcp-invitatory-full), already verified under Morning Prayer.'},
+  "Psalmody (4, 31:1-6, 91, or 134)": {status:'red', note:'Same DOL data/findings as elsewhere for the psalm citation mechanism; the 4 specific Compline psalm texts themselves (Ps.4, 31:1-6, 91, 134) were not individually re-verified this session.'},
+  "Responsory (Into your hands, O Lord...)": {status:'green', note:'Verified 2026-07-07 against BCP1979.pdf p.131, both rites, verbatim.'},
+  "Nunc Dimittis with Antiphon (Guide us waking, O Lord)": {status:'amber', note:'Nunc Dimittis TEXT was verified as part of the original all-21-canticles pass (2026-07-06). The antiphon ("Guide us waking, O Lord...") was not checked this session -- honest gap.'},
+  "Kyrie": {status:'green', note:'Verified 2026-07-07 against BCP1979.pdf p.131, both rites.'},
+  "Lord's Prayer": {status:'green', note:'Shared component, already verified.'},
+  "Suffrages/Collects proper to Compline": {status:'amber', note:'Not yet checked 2026-07-07 -- whether Compline draws from its own proper Collects (BCP pp.132-133 lists several Compline-specific collects) or incorrectly reuses the Daily Office Collect-of-the-Day was not confirmed. Honest gap.'},
+  "Silence & free intercessions (optional)": {status:'green', note:'Not applicable to text-accuracy audit -- no fixed text.'},
+  "Let Us Bless the Lord + Concluding Blessing": {status:'green', note:'Verified 2026-07-07 against BCP1979.pdf p.134-135, verbatim ("The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.").'}
+};
+
 const DAILY_OFFICE = [
   {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>{const s=statusFor(p, MORNING_PRAYER_STATUS); return {key:'do:mp:'+p,name:p,status:s.status,note:s.note};})},
   {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>{const s=statusFor(p, EVENING_PRAYER_STATUS); return {key:'do:ep:'+p,name:p,status:s.status,note:s.note};})},
-  {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:noon:'+p,name:p,status:s.status,note:s.note};})},
-  {group:"Compline", parts: COMPLINE_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:comp:'+p,name:p,status:s.status,note:s.note};})}
+  {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>{const s=statusFor(p, NOONDAY_STATUS); return {key:'do:noon:'+p,name:p,status:s.status,note:s.note};})},
+  {group:"Compline", parts: COMPLINE_PARTS.map(p=>{const s=statusFor(p, COMPLINE_STATUS); return {key:'do:comp:'+p,name:p,status:s.status,note:s.note};})}
 ];
 
 
@@ -397,7 +422,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v34-2026-07-07-ep-opening-sentence-correction';
+const SEED_VERSION = 'v35-2026-07-07-noonday-compline-partial-audit';
 
 async function checkSeedVersion(){
   let storedValue = null;

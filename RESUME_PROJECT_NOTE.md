@@ -75,6 +75,10 @@ Evening Prayer is now fully audited — its unique parts checked here, everythin
 
 Neither has been touched at all — every row defaults to amber with no note. Per finish-what-we-start, these are next before any fix-phase work begins.
 
+### Noonday Prayer and Compline — PARTIAL pass done, time-limited
+
+Most of both offices reuse components already covered (Invitatory, Lord's Prayer, DOL psalms/readings, Collects, closing). Confirmed correct: Kyrie, Compline's opening blessing, Compline's versicles-before-prayers. **Real defect found: Compline shows the wrong Confession** — BCP gives Compline its own distinct, shorter confession, but the engine reuses Morning/Evening Prayer's longer one; no Compline-specific confession component exists at all. Not yet checked: Noonday's own opening versicle, whether "Our help is in the Name of the Lord" is bundled correctly, Noonday's Collect sourcing. This audit is honestly incomplete, unlike Morning/Evening Prayer — resume here next.
+
 True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it, plus the Holy Days lectionary table. Remaining open item: the Shrove Tuesday scope question above.
 
 **Fix phase has not started for any season** — per the audit-then-fix workflow, the whole audit (DOL + Holy Days) is now done; the next phase is systematic remediation, season by season, starting wherever you direct — but only after Evening Prayer's own remaining parts are audited too.
