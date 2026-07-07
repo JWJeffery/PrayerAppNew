@@ -77,7 +77,9 @@ Neither has been touched at all — every row defaults to amber with no note. Pe
 
 ### Noonday Prayer and Compline audit: COMPLETE
 
-**Noonday Prayer — one confirmed defect, otherwise fine.** Opening versicle and Gloria Patri correct; Collect mechanism is explicitly BCP-authorized ("If desired, the Collect of the Day may be used," p.106); Short Lesson correctly follows the BCP's permissive rubric using DOL data. **Confirmed missing: the versicle "Lord, hear our prayer / And let our cry come to you" (p.105-106) doesn't exist anywhere in the app.**
+**Noonday Prayer — one confirmed missing-content defect, plus two open decisions (corrected 2026-07-07).** Opening versicle and Gloria Patri correct. **Confirmed missing: the versicle "Lord, hear our prayer / And let our cry come to you" (p.105-106) doesn't exist anywhere in the app.** Collect mechanism and Short Lesson were originally waved through as "BCP-permitted, not a defect" — **wrong framing, corrected**: the BCP names multiple real options (4 proper Noonday collects + the Day's Collect; 3 suggested Short Lesson texts + "or some other passage"), and the app silently implements only one path for each, never as a deliberate choice. Both reclassified as open decisions needing Josh's actual input, same category as the Major Feast canticle override.
+
+**Standing rule, applies everywhere in this project:** when source material authorizes multiple options, the app must either offer all real options or have an actual recorded decision selecting one — never just whatever the code happens to default to because only one path was ever built. Apply this retroactively wherever this audit concluded "not a defect, the BCP allows this" without confirming a real choice was made.
 
 **Compline — three confirmed real defects:**
 1. Wrong Confession (uses Morning/Evening Prayer's, not Compline's own distinct shorter one).
