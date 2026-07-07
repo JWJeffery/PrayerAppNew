@@ -246,8 +246,16 @@ Josh asked pointedly: did we audit all of the Daily Office in the '79 BCP? Have 
 
 **What this changes:** the prior "every office is fully audited, the entire audit phase is complete" claim should be read as covering DOL-adjacent content and previously-inventoried rubric slots, not as "every BCP-specified element has been checked for existence and completeness." The component-by-component method that produced that claim structurally cannot catch content that was never built, or a component that silently stops partway through the source text — only starting from the source's own structure catches those. All four new findings recorded in the ledger and dashboard; none fixed. The Litany truncation is a mechanical fix once the fix phase begins. The second-collect anthology needs the same anthology-vs-single-path decision as Noonday/Compline, plus a mechanical correction to Evening's wrong Peace text independent of that decision.
 
+### Systematic option-language sweep, same session, 2026-07-07 — one more real defect found, rest confirmed clean
+
+Followed up "audit the audit" with a full grep of every "one or more of the following" / equivalent option-language pattern across the entire Daily Office section (pp.37-155) — 24 hits total. 22 were already accounted for by existing findings. Two were not, and both are the same real defect:
+
+**Noonday Prayer and Compline both silently show the wrong Psalms — every day, not occasionally.** `js/office-ui.js` computes Noonday's and Compline's psalms from `dailyData.psalms_ep` (the DOL's Evening Prayer psalm for that date) — no dedicated logic for either office exists. BCP appoints Noonday its own fixed set (Psalm 119 vv.105-112, Psalm 121, Psalm 126) and Compline its own (Psalm 4, 31 vv.1-5, 91, 134 — the classic Compline psalms in nearly every Western breviary tradition), neither related to the DOL cycle at all. Compline's dashboard row already had the right label ("4, 31:1-6, 91, or 134") from an earlier session — the label was correct, the code was just never wired to use it. Recorded, not fixed.
+
+This closes out the systematic sweep with a useful negative result on the rest: nothing else of this shape (BCP naming real options, app silently picking one) remains unaudited in the four core offices.
+
 ### Git state
 
-**Corrected again, 2026-07-07:** `origin/main` is at `a6c4bf2` (the Invitatory Antiphon / Evening Prayer structural-defect commit), confirmed via fresh clone. This session's four "audit the audit" findings (Order of Worship for the Evening / Daily Devotions scope gap, Great Litany truncation, Second Collect anthology gap) are recorded in the ledger and dashboard, not yet committed to a patch as of this note's writing.
+**Corrected again, 2026-07-07:** `origin/main` is at `4273439` (the audit-the-audit commit — Litany truncation, Second Collect anthology, service-scope gaps). This session's Noonday/Compline Psalm finding is recorded in the ledger and dashboard, not yet committed to a patch as of this note's writing.
 
 
