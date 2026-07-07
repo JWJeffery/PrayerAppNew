@@ -97,6 +97,10 @@
   <p class="section-note">Not part of the Daily Office proper, but required before the Daily Office audit can be called complete, since the calendar engine resolves Holy Days and commemorations from this data. First pass 2026-07-07: a structural check for duplicate/conflicting dates, not yet a full content audit — see the row below for exact scope and what remains.</p>
   <div id="sanctoralSection"></div>
 
+  <h3>Daily Devotions for Individuals and Families</h3>
+  <p class="section-note">A new short-form mode (BCP p.137-140), not an audit finding — built 2026-07-07 per Josh's direction, mirroring the existing Church of the East full/short-form (Cathedral/Monastic) toggle pattern. See the row below for what was verified and how.</p>
+  <div id="devotionsSection"></div>
+
 
   <h2>III. The Ethiopian Office</h2>
   <p class="section-note">Sa'atat: structural shape mismatch already found (2026-07-05) — the app's 9-watch schema does not match the historically attested Sa'atat of Abba Giyorgis. Senkessar: Ginbot audited days 1–17 (see notes); remaining 12 months untouched.</p>
@@ -195,6 +199,14 @@ const DOL_SEASONS = [
 const SANCTORAL = [
   { key: 'sanctoral:ang-duplicate-dates', name: 'ANG duplicate/conflicting dates', status: 'green',
     note: 'FIXED 2026-07-07 (not just recorded -- Josh directed an actual data fix for this item, departing from audit-then-fix deliberately). All 27 duplicate-date identities resolved and corrected in data/saints/commemorations.json, cache regenerated via tools/build_saints_cache.js. 21 resolved via LFF 2024 alone. 2 more (Cornelius the Centurion, Robert Grosseteste) had neither on-file date correct -- true dates (Oct 20, Oct 9) added, since not present under either original duplicate. 2 (Edward the Confessor, Cyril of Alexandria) were absent from TEC entirely but confirmed via the Church of England Common Worship calendar -- kept their already-correct on-file date (Oct 13, Jun 27), deleted the other. 2 (John of Beverley, Vincent Ferrer) confirmed absent from LFF 2024, HWHM, AND Church of England Common Worship -- ANG tag removed entirely per instruction; Vincent Ferrer retains his separate, untouched LAT tag. NUANCE: 4 identities (Richard of Chichester, Thomas Ken, Catherine of Alexandria, Monica) had BOTH on-file dates independently correct, one per calendar (TEC vs Church of England) -- kept TEC per this project\'s established primary authority, flagged as a judgment call, not an error, in case the ANG tag\'s schema is ever extended to represent multiple Anglican provinces. Before: 376 ANG records / 348 identities, 27 duplicated. After: 346 ANG records / 346 identities, zero duplicates -- confirmed programmatically. Full detail and the complete before/after table in AUDIT_GOVERNANCE_LEDGER.md. STILL NOT DONE: full text-content audit of all 346 remaining ANG identities; the other 4 tradition codes not checked for the same pattern.' }
+];
+
+// Daily Devotions for Individuals and Families (BCP p.137-140) — new short-form
+// mode built 2026-07-07, not an audit finding. See the note for full detail
+// including a provenance correction on the underlying content.
+const DEVOTIONS = [
+  { key: 'devotions:short-form-build', name: 'Short-form mode (Office Mode toggle)', status: 'green',
+    note: 'BUILT 2026-07-07, per Josh\'s explicit direction, mirroring the existing Church of the East esy-mode (Cathedral/Monastic) toggle pattern exactly rather than a new fifth office. New "Office Mode" radio toggle (ang-office-mode, Full/Devotion) added to the sidebar. Each of the 4 existing offices gets a devotionSequence array in data/rubrics.json alongside its existing sequence array; the render loop picks whichever the toggle selects, falling back to the full sequence if no devotionSequence exists. PROVENANCE NOTE: the 12 content components and 4 devotionSequence arrays were found already sitting uncommitted in the working tree before this build began -- confirmed via git log --all (no matching commit anywhere) to NOT be prior committed work, most plausibly untracked content from earlier in this same long conversation that was never git-added. Independently re-verified byte-for-byte against BCP1979.pdf pp.136-140 before being trusted -- all 12 components confirmed exact matches. The UI toggle and rendering logic are new work this session. Every devotion-sequence item traced by hand through the render loop before considering this done -- no collisions with existing dedicated handlers, all items resolve correctly via either their own handler (Lord\'s Prayer, Phos Hilaron) or the generic catch-all (with new display labels added). node --check clean, both touched JSON files valid. NOT YET DONE: no browser available in this sandbox, so this is a code-level correctness check only, not a verified rendered-output check -- worth a first real look before treating this as fully proven.' }
 ];
 
 const MORNING_PRAYER_PARTS = ["Opening Sentences","Confession","Invitatory","Invitatory Psalm",
@@ -442,7 +454,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v45-2026-07-07-noonday-compline-wrong-psalms';
+const SEED_VERSION = 'v46-2026-07-07-daily-devotions-short-form-built';
 
 async function checkSeedVersion(){
   let storedValue = null;
@@ -510,6 +522,9 @@ async function init(){
 
   const sanctoralSec = document.getElementById('sanctoralSection');
   await hydrateAndRender(SANCTORAL, renderBookTable, sanctoralSec, "Sanctoral findings (data/saints/*.json)");
+
+  const devotionsSec = document.getElementById('devotionsSection');
+  await hydrateAndRender(DEVOTIONS, renderBookTable, devotionsSec, "Daily Devotions build (data/rubrics.json, components/anglican.json)");
 
   await hydrateAndRender(ETHIOPIAN, renderOfficeTable, document.getElementById('ethiopianSection'), false);
   await hydrateAndRender(COE, renderOfficeTable, document.getElementById('coeSection'), false);

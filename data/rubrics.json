@@ -25,6 +25,12 @@
       "bcp-general-thanksgiving",
       "bcp-chrysostom",
       "bcp-closing"
+    ],
+    "devotionSequence": [
+      "bcp-devotion-psalm-morning",
+      "bcp-devotion-reading-morning",
+      "comm-lords-prayer",
+      "bcp-collect-grace"
     ]
   },
   {
@@ -54,6 +60,12 @@
       "bcp-general-thanksgiving",
       "bcp-chrysostom",
       "bcp-closing"
+    ],
+    "devotionSequence": [
+      "bcp-phos-hilaron",
+      "bcp-devotion-reading-evening",
+      "comm-lords-prayer",
+      "bcp-collect-devotion-evening"
     ]
   },
   {
@@ -67,6 +79,12 @@
       "comm-lords-prayer",
       "VARIABLE_COLLECT",
       "bcp-closing"
+    ],
+    "devotionSequence": [
+      "bcp-devotion-psalm-noon",
+      "bcp-devotion-reading-noon",
+      "comm-lords-prayer",
+      "bcp-collect-devotion-noon"
     ]
   },
   {
@@ -85,6 +103,14 @@
       "VARIABLE_COLLECT",
       "bcp-nunc-dimittis",
       "bcp-closing"
+    ],
+    "devotionSequence": [
+      "bcp-devotion-psalm-close",
+      "bcp-devotion-reading-close",
+      "bcp-devotion-nunc-dimittis",
+      "comm-lords-prayer",
+      "bcp-collect-devotion-close",
+      "bcp-devotion-closing-blessing"
     ]
   }
 ]

@@ -1618,5 +1618,77 @@
       "rite1": "Lord Jesus Christ, who didst stretch out thine arms of love on the hard wood of the cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. Amen.",
       "rite2": "Lord Jesus Christ, you stretched out your arms of love on the hard wood of the cross that everyone might come within the reach of your saving embrace: So clothe us in your Spirit that we, reaching forth our hands in love, may bring those who do not know you to the knowledge and love of you; for the honor of your Name. Amen."
     }
+  },
+  {
+    "id": "bcp-devotion-psalm-morning",
+    "title": "Daily Devotions: Morning Psalm (from Psalm 51)",
+    "text": "Open my lips, O Lord, *\n  and my mouth shall proclaim your praise.\nCreate in me a clean heart, O God, *\n  and renew a right spirit within me.\nCast me not away from your presence *\n  and take not your holy Spirit from me.\nGive me the joy of your saving help again *\n  and sustain me with your bountiful Spirit.\nGlory to the Father, and to the Son, and to the Holy Spirit: *\n  as it was in the beginning, is now, and will be for ever. Amen.",
+    "type": "Psalm-Excerpt"
+  },
+  {
+    "id": "bcp-devotion-psalm-noon",
+    "title": "Daily Devotions: Noon Psalm (from Psalm 113)",
+    "text": "Give praise, you servants of the Lord; *\n   praise the Name of the Lord.\nLet the Name of the Lord be blessed, *\n   from this time forth for evermore.\nFrom the rising of the sun to its going down *\n   let the Name of the Lord be praised.\nThe Lord is high above all nations, *\n   and his glory above the heavens.",
+    "type": "Psalm-Excerpt"
+  },
+  {
+    "id": "bcp-devotion-psalm-close",
+    "title": "Daily Devotions: Close of Day Psalm (Psalm 134)",
+    "text": "Behold now, bless the Lord, all you servants of the Lord, *\n   you that stand by night in the house of the Lord.\nLift up your hands in the holy place and bless the Lord; *\n   the Lord who made heaven and earth bless you out of Zion.",
+    "type": "Psalm-Excerpt"
+  },
+  {
+    "id": "bcp-devotion-reading-morning",
+    "title": "Daily Devotions: Morning Reading (1 Peter 1:3)",
+    "text": "Blessed be the God and Father of our Lord Jesus Christ! By his great mercy we have been born anew to a living hope through the resurrection of Jesus Christ from the dead.",
+    "type": "Reading"
+  },
+  {
+    "id": "bcp-devotion-reading-noon",
+    "title": "Daily Devotions: Noon Reading (Isaiah 26:3; 30:15)",
+    "text": "O God, you will keep in perfect peace those whose minds are fixed on you; for in returning and rest we shall be saved; in quietness and trust shall be our strength.",
+    "type": "Reading"
+  },
+  {
+    "id": "bcp-devotion-reading-evening",
+    "title": "Daily Devotions: Evening Reading (2 Corinthians 4:5-6)",
+    "text": "It is not ourselves that we proclaim; we proclaim Christ Jesus as Lord, and ourselves as your servants, for Jesus’ sake. For the same God who said, “Out of darkness let light shine,” has caused his light to shine within us, to give the light of revelation—the revelation of the glory of God in the face of Jesus Christ.",
+    "type": "Reading"
+  },
+  {
+    "id": "bcp-devotion-reading-close",
+    "title": "Daily Devotions: Close of Day Reading (Jeremiah 14:9, 22)",
+    "text": "Lord, you are in the midst of us and we are called by your Name: Do not forsake us, O Lord our God.",
+    "type": "Reading"
+  },
+  {
+    "id": "bcp-devotion-nunc-dimittis",
+    "title": "Daily Devotions: Close of Day Nunc Dimittis",
+    "text": "Lord, you now have set your servant free *\n  to go in peace as you have promised;\nFor these eyes of mine have seen the Savior, *\n  whom you have prepared for all the world to see:\nA Light to enlighten the nations, *\n  and the glory of your people Israel.",
+    "type": "Canticle"
+  },
+  {
+    "id": "bcp-collect-devotion-noon",
+    "title": "Daily Devotions: Noon Collect",
+    "text": "Blessed Savior, at this hour you hung upon the cross, stretching out your loving arms: Grant that all the peoples of the earth may look to you and be saved; for your mercies’ sake. Amen.",
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-devotion-evening",
+    "title": "Daily Devotions: Evening Collect (Presence of Christ)",
+    "text": "Lord Jesus, stay with us, for evening is at hand and the day is past; be our companion in the way, kindle our hearts, and awaken hope, that we may know you as you are revealed in Scripture and the breaking of bread. Grant this for the sake of your love. Amen.",
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-devotion-close",
+    "title": "Daily Devotions: Close of Day Collect",
+    "text": "Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon us always; through Jesus Christ our Lord. Amen.",
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-devotion-closing-blessing",
+    "title": "Daily Devotions: Closing Blessing",
+    "text": "The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.",
+    "type": "Blessing"
   }
 ]

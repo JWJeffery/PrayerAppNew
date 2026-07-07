@@ -1014,3 +1014,50 @@ Neither set has any relationship to the DOL's Evening Prayer psalm for a given d
 
 **Sweep method note:** the remaining ~22 of 24 option-language hits in the Daily Office section were all confirmed to already correspond to findings already on record — no other new gaps found by this method in this pass. This was a genuinely useful verification exercise: it both caught this real defect and confirmed nothing else of this specific shape (BCP naming multiple options, app silently picking one path) remains unaudited in the four core offices.
 
+
+## Session, 2026-07-07 — Daily Devotions for Individuals and Families: built and wired in as a selectable "short form"
+
+Per Josh's direction: mirror the existing Monastic/Cathedral (full/short form) selectability pattern already used elsewhere in this repo (Church of the East's `esy-mode` toggle) rather than building Daily Devotions as a separate fifth office. This closes the "Daily Devotions for Individuals and Families" scope gap identified in the earlier "audit the audit" session.
+
+### Provenance correction — important, stated plainly
+
+While doing this work, `git diff` and the reflog showed that `data/rubrics.json`'s four `devotionSequence` arrays and 12 `bcp-devotion-*`/`bcp-collect-devotion-*` components in `components/anglican.json` **already existed in the working tree, fully written, before any edit made in this turn** — but **do not exist anywhere in git history**, confirmed via `git log --all --oneline | grep -i devotion` (no matches) and `git log --all --source -- data/rubrics.json` (no matching commit touches this content). This was reported to Josh initially as if it were pre-existing verified work from an earlier session. That framing was wrong, and the correction is recorded here rather than left implicit: this content was sitting as **uncommitted local sandbox state**, not committed work. The most plausible mechanical explanation is that it was written in an earlier, less-visible part of this same long conversation and never committed (every commit in this session used a targeted `git add <specific files>`, never `git add -A`, so changes to these two files would have silently ridden along through every subsequent `git rebase` without ever being swept into a commit) — but this is inference, not a confirmed account, and is stated as such rather than asserted as fact.
+
+**What matters going forward: the content itself was independently re-verified**, not taken on faith because it looked plausible. All 12 components were checked programmatically, byte-for-byte, against `book_of_common_prayer.pdf` pp.136-140 before being wired in — see the verification section below. The wiring (UI toggle, `office-ui.js` logic) is new work done in this session, not inherited from anywhere.
+
+### Content verified
+
+All 12 components in `components/anglican.json` match the source exactly:
+
+| Component | BCP source |
+|---|---|
+| `bcp-devotion-psalm-morning` | Psalm 51 excerpt |
+| `bcp-devotion-reading-morning` | 1 Peter 1:3 |
+| `bcp-devotion-psalm-noon` | Psalm 113 excerpt |
+| `bcp-devotion-reading-noon` | Isaiah 26:3, 30:15 |
+| `bcp-collect-devotion-noon` | "Blessed Savior, at this hour..." |
+| `bcp-devotion-reading-evening` | 2 Corinthians 4:5-6 |
+| `bcp-collect-devotion-evening` | "Lord Jesus, stay with us..." (matches Evening Prayer's own "Collect for the Presence of Christ," one of the 8 anthology collects identified as missing in the earlier Second Collect finding — this build incidentally supplies that text, though it is not yet wired into Evening Prayer's own full-office anthology, which remains a separate open item) |
+| `bcp-devotion-psalm-close` | Psalm 134 |
+| `bcp-devotion-reading-close` | Jeremiah 14:9, 22 |
+| `bcp-devotion-nunc-dimittis` | Nunc Dimittis, devotion-specific paraphrase (worded differently from the main office's Nunc Dimittis — this is the BCP's own wording for this context, not an error) |
+| `bcp-collect-devotion-close` | "Visit this place, O Lord..." (matches one of Compline's own unnamed anthology collects, same incidental-supply note as above) |
+| `bcp-devotion-closing-blessing` | "The almighty and merciful Lord..." |
+
+Morning's Collect and Evening's opening reuse existing, already-verified shared components (`bcp-collect-grace`, `bcp-phos-hilaron`) rather than duplicating text — matches the BCP's own structure, where the Morning devotion's Collect is word-for-word "A Collect for Grace" and the Evening devotion explicitly offers Phos Hilaron as its opening.
+
+### Architecture: mirrors the East Syriac full/short-form pattern exactly
+
+- **UI** (`index.html`): a new "Office Mode" radio group (`ang-office-mode`, values `full`/`devotion`), placed immediately after the existing "Time of Day" office selector — same placement and `setting-group` styling as East Syriac's own "Office Mode" (`esy-mode`, Cathedral/Monastic) toggle it's modeled on.
+- **Data** (`data/rubrics.json`): each of the 4 existing office objects (`morning-office`, `evening-office`, `noonday-office`, `compline-office`) gets a sibling `devotionSequence` array alongside its existing `sequence` array — not a new office entry, so the existing `appData.rubrics.find(r => r.id === resolvedOfficeId)` lookup needs no change.
+- **Rendering** (`js/office-ui.js`): the main sequence loop now reads `officeFormMode` (from the new toggle) and picks `activeRubric.devotionSequence` instead of `activeRubric.sequence` when `devotion` mode is selected and a `devotionSequence` exists, falling back to the full sequence otherwise (so offices without a devotion form, e.g. other traditions, are unaffected). Traced every item in all 4 `devotionSequence` arrays through the render loop before considering this done: `comm-lords-prayer` and `bcp-phos-hilaron` hit their existing dedicated handlers unchanged; every `bcp-devotion-*`/`bcp-collect-devotion-*` ID falls through cleanly to the existing generic catch-all handler, with new `DISPLAY_LABELS` entries added for clean rubric labels. No collisions with any existing dedicated handler (checked by exact-string grep for each ID against every `item === '...'` branch in the loop).
+- **Persistence**: added `angOfficeMode` to `saveSettings()`/`loadSettings()` so the choice survives a reload — East Syriac's own `esy-mode` toggle does not currently persist (a pre-existing gap, not something to silently reproduce here).
+
+### Validated
+
+`node --check js/office-ui.js` clean. `data/rubrics.json` and `components/anglican.json` both valid JSON. Manually traced all 4 devotion sequences item-by-item through the render loop to confirm correct handling before committing, rather than relying on the generic catch-all being correct by assumption.
+
+### Not yet done
+
+Visual/manual testing in an actual browser has not been performed (no browser available in this sandbox) — the trace-through above is a code-level correctness check, not a rendered-output check. Worth a first real use before treating this as fully proven. The incidental overlap with the Second Collect anthology and Compline collect gaps (noted above) is not a full fix for either of those larger findings — those remain open, recorded separately.
+

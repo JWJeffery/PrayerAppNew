@@ -2549,6 +2549,7 @@ function saveSettings() {
         darkMode:            document.getElementById('toggle-dark')?.checked || false,
         bcpOnly:             document.getElementById('toggle-bcp-only')?.checked || false,
         officeTime:          document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',
+        angOfficeMode:       document.querySelector('input[name="ang-office-mode"]:checked')?.value || 'full',
         rite:                document.querySelector('input[name="rite"]:checked')?.value || 'rite2',
         minister:            document.querySelector('input[name="minister"]:checked')?.value || 'lay',
         marianElement:       document.querySelector('input[name="marian-element"]:checked')?.value || 'none',
@@ -2601,6 +2602,7 @@ function loadSettings() {
             if (el) el.checked = true;
         };
         pick('office-time',         s.officeTime);
+        pick('ang-office-mode',     s.angOfficeMode);
         pick('rite',                s.rite);
         pick('minister',            s.minister);
         pick('marian-element',      s.marianElement);
@@ -3228,6 +3230,7 @@ async function renderBcpOffice() {
     const suffragesChecked   = document.getElementById('toggle-suffrages')?.checked || false;
     const greatLitanyChecked = document.getElementById('toggle-litany')?.checked || false;
     const use30Day           = document.getElementById('toggle-30day-psalter')?.checked || false;
+    const officeFormMode     = document.querySelector('input[name="ang-office-mode"]:checked')?.value || 'full';
 
     // ── Calendar ─────────────────────────────────────────────────────────────
     const seasonInfo = await withDailyOfficeTimeout(
@@ -3392,7 +3395,15 @@ async function renderBcpOffice() {
     await preloadDailyOfficeCommemorations(currentDate, 'ANG');
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
-    for (let item of (activeRubric?.sequence || [])) {
+    // Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter
+    // form of each office. When selected, use the office's devotionSequence
+    // (data/rubrics.json) instead of its full sequence. Falls back to the full
+    // sequence if an office has no devotionSequence defined (e.g. offices from
+    // other traditions that don't go through this same rubric structure).
+    const sequenceToRender = (officeFormMode === 'devotion' && activeRubric?.devotionSequence)
+        ? activeRubric.devotionSequence
+        : (activeRubric?.sequence || []);
+    for (let item of sequenceToRender) {
         item = item.trim();
 
         let compId = item.replace('[rite]', rite);
@@ -3903,6 +3914,18 @@ async function renderBcpOffice() {
             'bcp-benedictus':                 'The Benedictus',
             'bcp-magnificat':                 'The Magnificat',
             'bcp-te-deum':                    'Te Deum Laudamus',
+            'bcp-devotion-psalm-morning':     'From Psalm 51',
+            'bcp-devotion-reading-morning':   'A Reading',
+            'bcp-devotion-psalm-noon':        'From Psalm 113',
+            'bcp-devotion-reading-noon':      'A Reading',
+            'bcp-collect-devotion-noon':      'The Collect',
+            'bcp-devotion-reading-evening':   'A Reading',
+            'bcp-collect-devotion-evening':   'The Collect',
+            'bcp-devotion-psalm-close':       'Psalm 134',
+            'bcp-devotion-reading-close':     'A Reading',
+            'bcp-devotion-nunc-dimittis':     'The Song of Simeon',
+            'bcp-collect-devotion-close':     'The Collect',
+            'bcp-devotion-closing-blessing':  'The Blessing',
         };
         const comp = appData.components.find(c => c.id === compId);
         if (comp) {

@@ -254,8 +254,16 @@ Followed up "audit the audit" with a full grep of every "one or more of the foll
 
 This closes out the systematic sweep with a useful negative result on the rest: nothing else of this shape (BCP naming real options, app silently picking one) remains unaudited in the four core offices.
 
+### Daily Devotions for Individuals and Families — built, 2026-07-07
+
+Per Josh's direction: mirrors the existing Church of the East full/short-form pattern (`esy-mode`, Cathedral/Monastic) rather than a new fifth office. New "Office Mode" toggle (`ang-office-mode`, Full/Devotion) in the sidebar, right after the existing Time of Day selector. Each of the 4 existing offices (`morning-office`, `evening-office`, `noonday-office`, `compline-office`) gets a `devotionSequence` array alongside its `sequence` array in `data/rubrics.json`; the render loop picks whichever the toggle selects.
+
+**Provenance correction, stated plainly:** the 12 content components and 4 `devotionSequence` arrays were found already sitting in this sandbox's uncommitted working tree before this session wrote any code — initially reported to Josh as pre-existing verified work, which was wrong. `git log --all` confirms this content is not in git history anywhere; it was uncommitted local state, most plausibly (not confirmed) from earlier untracked work in this same long conversation that never got committed because every commit in this session used a targeted `git add <files>`, not `git add -A`. The content was independently re-verified byte-for-byte against BCP1979.pdf pp.136-140 before being trusted and wired in — all 12 components check out exactly. The UI toggle and rendering logic are new work from this session.
+
+Traced every devotion-sequence item through the render loop by hand before considering this done (no collisions with existing dedicated handlers; everything falls through correctly to either its own handler or the generic catch-all). `node --check` clean, both touched JSON files valid. Not yet tested in an actual browser — no browser available in this sandbox; this is a code-level correctness check only.
+
 ### Git state
 
-**Corrected again, 2026-07-07:** `origin/main` is at `4273439` (the audit-the-audit commit — Litany truncation, Second Collect anthology, service-scope gaps). This session's Noonday/Compline Psalm finding is recorded in the ledger and dashboard, not yet committed to a patch as of this note's writing.
+**Corrected again, 2026-07-07:** `origin/main` is at `cf9315c` (the Noonday/Compline Psalm finding). This session's Daily Devotions build is recorded in the ledger, not yet committed to a patch as of this note's writing.
 
 

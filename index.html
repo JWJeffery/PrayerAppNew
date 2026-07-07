@@ -251,6 +251,12 @@
             <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
         </div>
 
+        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
+            <strong>Office Mode <span class="info-btn" data-tip="Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter form of each office, intended for use without a priest or when the fuller form isn't practical.">i</span></strong>
+            <label><input type="radio" name="ang-office-mode" value="full" checked onchange="renderOffice(); saveSettings()"> Full Office</label>
+            <label><input type="radio" name="ang-office-mode" value="devotion" onchange="renderOffice(); saveSettings()"> Daily Devotion (Short Form)</label>
+        </div>
+
         <!-- Appearance -->
         <div class="setting-group">
             <strong>Appearance:</strong>
