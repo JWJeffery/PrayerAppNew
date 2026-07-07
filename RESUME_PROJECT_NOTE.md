@@ -176,6 +176,20 @@ COE is by far the worst — roughly 1 in 7 entries affected, with **Mar Narsai a
 
 **Not resolved.** The ANG fix worked because two authoritative sources (LFF 2024, Common Worship) were readily available for 27 identities. These 66 identities need the equivalent authoritative calendars for Eastern Orthodox, Oriental Orthodox, Church of the East, and Roman Rite — none in hand this session. Confirmed and quantified as a real defect of the same class (worse in COE's case), but resolving it needs its own sourcing effort before attempting the same fix-in-place approach.
 
+### Non-ANG identities checked against Anglican sources — real gaps found, including a likely regression
+
+Per Josh's direction, checked every identity not currently ANG-tagged against LFF 2024 (284 calendar entries parsed, matched at high confidence only).
+
+**Likely regression:** "Fabian, Bishop and Martyr" is genuinely in LFF 2024 at Jan 20 — the earlier session's removal of `saint-fabian`'s ANG tag (believing it fabricated/absent from TEC) appears to have been wrong. Needs restoring.
+
+**13 identities matched to a real LFF entry with no ANG tag at all**, including Confession of Saint Peter (Jan 18 — already a confirmed live BCP1979 Holy Day elsewhere in this audit, currently only tagged EOR), David of Wales, Basil of Caesarea, Ignatius of Loyola, Herman of Alaska, and 8 others.
+
+**9 identities have an ANG tag at the wrong date** vs. LFF 2024 — Harriet Bedell, Martyrs of Japan, Emily Malbone Morgan, Vincent de Paul (biggest gap: on-file Sep 27 vs. LFF's Mar 15 — needs care, could be a legitimate separate/joint commemoration rather than a simple error), John Keble, John Cassian, Cyprian of Carthage, Hilda of Whitby, Nicholas Ferrar.
+
+**One naming mismatch, not a date problem:** Aug 15 is correctly ANG-tagged but under `dormition-or-assumption-of-the-virgin-mary` rather than a dedicated Mary-the-Virgin identity.
+
+**Not resolved — needs the same careful per-case judgment as the original 27 duplicates**, not a blind fix. Common Worship (Church of England) wasn't cross-checked this session, only TEC/LFF 2024.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
