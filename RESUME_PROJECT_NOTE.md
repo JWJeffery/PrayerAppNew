@@ -212,6 +212,10 @@ Common Worship confirmed 25. Holy Women, Holy Men 2010 (TEC's predecessor calend
 
 **Real limitation found:** `saint-lawrence` still showed as "unsupported" by the automated method, but HWHM 2010 clearly has him ("Laurence") at the identical date — the matcher just failed on the British/American spelling variant. **This means the automated approach cannot safely confirm the remaining ~55 are actually wrong** — it's demonstrated a real false-negative mode at this granularity. No further changes made this session. Resolving the rest needs manual, name-by-name verification, not more of the same automated matching — treat as its own bounded task if revisited.
 
+### Two more sources checked (For All the Saints, A Great Cloud of Witnesses) — 31 remain unconfirmed across all 5 sources
+
+Confirmed 2 more: `saint-lawrence` (independently corroborated by the Canadian calendar too) and `junia` (Great Cloud of Witnesses). **31 identities remain unconfirmed after 5 independent Anglican-tradition sources** — meaningfully stronger evidence than before. Full list and per-case notes (O Adonai is a liturgical text not a person; Prophet Elijah is OT, which Common Worship explicitly excludes by policy; Damasus/Sylvester I/Victor I are real ancient figures possibly just outside any checked provincial calendar) are in the ledger. **Not yet resolved — awaiting direction on whether to remove ANG from these 31 or treat some as special cases.**
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
