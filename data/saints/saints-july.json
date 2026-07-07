@@ -90,16 +90,6 @@
     ]
   },
   {
-    "id": "john-coleridge-patteson",
-    "day": "July 3",
-    "name": "John Coleridge Patteson",
-    "description": "Bishop of Melanesia and Martyr, 1871.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "martyr-hyacinth-of-caesarea",
     "day": "July 3",
     "name": "Martyr Hyacinth of Caesarea",
@@ -180,16 +170,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-cyril-of-alexandria",
-    "day": "July 5",
-    "name": "Saint Cyril of Alexandria",
-    "description": "Archbishop of Alexandria, Doctor of the Church, died 444.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -372,16 +352,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-leo-the-great",
-    "day": "July 9",
-    "name": "Saint Leo the Great",
-    "description": "Pope and Doctor of the Church, died 461.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -1158,16 +1128,6 @@
     "day": "July 30",
     "name": "William Wilberforce",
     "description": "Prophetic witness and abolitionist, 1833.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
-    "id": "joseph-of-arimathea",
-    "day": "July 31",
-    "name": "Joseph of Arimathea",
-    "description": "The disciple who buried Jesus in his own tomb.",
     "type": "saint",
     "tags": [
       "ANG"

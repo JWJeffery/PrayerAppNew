@@ -146,16 +146,6 @@
     ]
   },
   {
-    "id": "cornelius-the-centurion",
-    "day": "February 4",
-    "name": "Cornelius the Centurion",
-    "description": "First Gentile convert to Christianity.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-john-de-britto",
     "day": "February 4",
     "name": "Saint John de Britto",
@@ -257,16 +247,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "cornelius-the-centurion",
-    "day": "February 7",
-    "name": "Cornelius the Centurion",
-    "description": "First Gentile convert to Christianity.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {

@@ -445,16 +445,6 @@
     ]
   },
   {
-    "id": "saint-vincent-ferrer",
-    "day": "March 15",
-    "name": "Saint Vincent Ferrer",
-    "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "martyr-sabinus-of-egypt",
     "day": "March 16",
     "name": "Martyr Sabinus of Egypt",
@@ -464,16 +454,6 @@
       "EOR",
       "LAT",
       "OOR"
-    ]
-  },
-  {
-    "id": "robert-grosseteste",
-    "day": "March 16",
-    "name": "Robert Grosseteste",
-    "description": "Bishop of Lincoln, 1253.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -635,16 +615,6 @@
     "tags": [
       "LAT",
       "OOR"
-    ]
-  },
-  {
-    "id": "thomas-ken",
-    "day": "March 22",
-    "name": "Thomas Ken",
-    "description": "Bishop of Bath and Wells, 1711.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -831,16 +801,6 @@
       "EOR",
       "LAT",
       "OOR"
-    ]
-  },
-  {
-    "id": "john-donne",
-    "day": "March 29",
-    "name": "John Donne",
-    "description": "Priest and Poet, 1631.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {

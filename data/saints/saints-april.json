@@ -121,7 +121,6 @@
     "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },
@@ -302,16 +301,6 @@
       "ANG",
       "EOR",
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-justin-martyr",
-    "day": "April 14",
-    "name": "Saint Justin Martyr",
-    "description": "Philosopher and apologist, defender of the faith and martyr at Rome.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -530,11 +519,10 @@
     "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
     "type": "saint",
     "tags": [
-      "ANG",
-      "LAT",
+      "COE",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   }
 ]

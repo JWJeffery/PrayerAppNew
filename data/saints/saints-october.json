@@ -254,16 +254,6 @@
     ]
   },
   {
-    "id": "robert-grosseteste",
-    "day": "October 8",
-    "name": "Robert Grosseteste",
-    "description": "Bishop of Lincoln, 1253.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-pelagia",
     "day": "October 8",
     "name": "Saint Pelagia",
@@ -311,6 +301,16 @@
     "type": "apostle",
     "tags": [
       "EOR"
+    ]
+  },
+  {
+    "id": "robert-grosseteste",
+    "day": "October 9",
+    "name": "Robert Grosseteste",
+    "description": "Bishop of Lincoln, 1253.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -413,16 +413,6 @@
     "tags": [
       "COE",
       "OOR"
-    ]
-  },
-  {
-    "id": "edward-the-confessor",
-    "day": "October 12",
-    "name": "Edward the Confessor",
-    "description": "King of England, 1066.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -682,6 +672,16 @@
     "type": "saint",
     "tags": [
       "LAT"
+    ]
+  },
+  {
+    "id": "cornelius-the-centurion",
+    "day": "October 20",
+    "name": "Cornelius the Centurion",
+    "description": "First Gentile convert to Christianity.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {

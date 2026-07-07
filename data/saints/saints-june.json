@@ -217,16 +217,6 @@
     ]
   },
   {
-    "id": "bede-the-venerable",
-    "day": "June 7",
-    "name": "Bede the Venerable",
-    "description": "Priest, monk of Jarrow, and 'Father of English History,' died 735 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "hieromartyr-theodotus-of-ancyra",
     "day": "June 7",
     "name": "Hieromartyr Theodotus of Ancyra",
@@ -275,16 +265,6 @@
     "tags": [
       "ANG",
       "LAT"
-    ]
-  },
-  {
-    "id": "thomas-ken",
-    "day": "June 8",
-    "name": "Thomas Ken",
-    "description": "Bishop of Bath and Wells, 1711.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -515,16 +495,6 @@
     "day": "June 15",
     "name": "Saint Vitus",
     "description": "Martyr, 303 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
-    "id": "richard-of-chichester",
-    "day": "June 16",
-    "name": "Richard of Chichester",
-    "description": "Bishop known for his 'Prayer of St. Richard,' 1253, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
       "ANG"

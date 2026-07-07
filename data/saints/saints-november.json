@@ -499,7 +499,6 @@
     "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR",
       "LAT",
       "OOR"
@@ -627,11 +626,10 @@
     "description": "Apostle, tax collector, and author of the first Gospel.",
     "type": "apostle",
     "tags": [
-      "ANG",
-      "LAT",
+      "COE",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -973,11 +971,10 @@
     "description": "Great Martyr.",
     "type": "saint",
     "tags": [
-      "ANG",
-      "LAT",
+      "COE",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {

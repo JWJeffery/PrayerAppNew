@@ -739,3 +739,44 @@ Completes the scope flagged as "not yet done" in the prior sanctoral entry. Chec
 
 **Not fixed.** Per audit-then-fix, this is a complete record for the duplicate-date defect class specifically, awaiting the remediation phase and, for the 4 provenance-question identities, Josh's direction first.
 
+
+## Session, 2026-07-07 — Sanctoral duplicate-date defect: FIXED (not record-only), per Josh's explicit direction
+
+Josh's instruction departed from the audit-then-fix workflow deliberately for this one item: "determine the correct dates," "remove the Anglican tag if you cannot find them in the TEC or Anglican national calendars," and stop deferring. This entry documents the actual fix applied to `data/saints/commemorations.json`, not just a finding.
+
+**Extended the source check beyond TEC.** The prior entry resolved all 27 identities against `lesser_feasts_and_fasts_-_2024__final_.pdf` and `book_holy_women_holy_men_for_web.pdf`, but left 4 identities unresolved (absent from both). Per Josh's instruction to check "Anglican national calendars" more broadly, additionally checked the Church of England's Common Worship calendar (via the full holy-day table at `en.wikipedia.org/wiki/Calendar_of_saints_(Church_of_England)`, which transcribes the authorized Common Worship calendar directly, cross-referenced against the Church of England's own site for the October entries specifically).
+
+**2 of the 4 previously-unresolved identities found in the Church of England calendar:**
+- **Edward the Confessor** — "13 Edward the Confessor, King of England, 1066" under October. Oct 13 (already one of the two on-file dates) is correct; Oct 12 deleted.
+- **Cyril of Alexandria** — "27 Cyril, Bishop of Alexandria, Teacher of the Faith, 444" under June. Jun 27 (already one of the two on-file dates) is correct; Jul 5 deleted.
+
+**2 identities confirmed absent from all three sources checked (LFF 2024, HWHM, Church of England Common Worship) — ANG tag removed entirely, per instruction:**
+- **John of Beverley** — both ANG records (May 6, May 7) deleted. He had no other tradition tag, so he is now absent from every generated cache file entirely, which is correct: nothing in this app currently supports commemorating him.
+- **Vincent Ferrer** — both ANG records (Mar 15, Apr 5) deleted. He retains a legitimate `LAT` (Roman Catholic) tag at Apr 5, untouched — only the unsupported `ANG` tag was removed. He still appears in the app under the LAT tradition, correctly.
+
+**Important nuance surfaced while cross-checking the Church of England calendar against the 21 identities already resolved via TEC alone:** four of them — Richard of Chichester, Thomas Ken, Catherine of Alexandria, Monica — have BOTH on-file dates independently attested, one per calendar (TEC vs. Church of England), not "one right, one wrong":
+
+| Identity | TEC (LFF 2024) | Church of England |
+|---|---|---|
+| Richard of Chichester | Apr 3 | Jun 16 |
+| Thomas Ken | Mar 21 | Jun 8 |
+| Catherine of Alexandria | Nov 24 | Nov 25 |
+| Monica | May 4 | Aug 27 |
+
+Since `commemorations.json`'s schema (per `data/saints/readme.md`) has exactly one `ANG` slot per identity — it cannot represent "Anglican Communion" as two separate provincial variants — and since this project's established primary sanctoral authority is TEC (per the ledger's own prior designation of LFF 2024 as "current official TEC sanctoral calendar"), TEC's date was kept in each case and the Church of England's alternate deleted, same as for the other 21. This is recorded explicitly as a **judgment call under TEC-priority**, not a claim that the deleted date was ever wrong or fabricated — it's a genuine Church of England commemoration, just not the one this project's Episcopal/TEC-oriented calendar uses. If the `ANG` tag's data model is ever revisited to support multiple Anglican provinces distinctly (a real architecture question, not decided here), these four would be the first candidates to re-examine.
+
+**Full set of changes applied to `data/saints/commemorations.json`:** 32 records deleted (29 "pick the TEC/attested date, drop the other" resolutions across the 27 identities, plus the John of Beverley and Vincent Ferrer full removals), 2 records added (Cornelius the Centurion at Oct 20, Robert Grosseteste at Oct 9 — true dates that weren't on file under either original duplicate). Before: 376 ANG records / 348 distinct ANG identities, 27 with duplicate dates. After: 346 ANG records / 346 distinct ANG identities, **zero duplicates** — confirmed programmatically.
+
+**Cache regenerated.** Ran `node tools/build_saints_cache.js` (all months, per the documented usage) to regenerate all 12 `data/saints/saints-{month}.json` files from the corrected source. Spot-checked the October cache directly: Grosseteste now shows October 9, Edward the Confessor October 13, Cornelius the Centurion October 20 — all correct. Confirmed John of Beverley and Vincent Ferrer's ANG tag is gone from every cache file; Vincent Ferrer still correctly appears under his untouched LAT tag.
+
+**Validated:** `commemorations.json` and all 12 regenerated cache files are valid JSON. A before/after round-trip check confirmed `json.dump` reproduces this project's existing formatting exactly, so the diff reflects only the intended changes, not a reformatting of the whole file.
+
+**Scope note, unchanged from the prior entry:** this closes the duplicate-date defect specifically. The full text-content audit (identity description, rank, associated collect) for the remaining 346 ANG identities has not been attempted, and the other four tradition codes (LAT, EOR, OOR, COE) have not been checked for the same duplicate-date pattern. Both remain open scope.
+
+## Decision (open, not implemented), 2026-07-07 — Josh: consider a schema change to record communion, tradition, and jurisdiction separately
+
+Reacting to the Richard of Chichester / Thomas Ken / Catherine of Alexandria / Monica finding above (each has two independently legitimate dates, one per Anglican province, collapsed into a single `ANG` slot by the current schema): Josh's view is that `commemorations.json` ought to be able to record communion, tradition, *and* jurisdiction (province/national church) as distinct fields where they vary, rather than treating `ANG` as a single undifferentiated value that can only hold one date per identity. This would let the data represent, e.g., a TEC date and a Church of England date for the same person as two legitimate records rather than forcing a pick-one resolution under a single tag.
+
+**Not decided in detail and not implemented.** This is recorded as a live architecture question, in the same category as the already-deferred Common of Saints schema work and the Holy Days 4-reading-slot gap — something to design properly (what the new field(s) look like, how the generator and runtime UI consume them, whether existing `ANG` records need a default jurisdiction value on migration) rather than something to bolt on informally. Whoever picks this up next should treat the TEC-priority resolution just applied to those 4 identities as provisional under the current schema, revisited once/if this schema work happens.
+
+

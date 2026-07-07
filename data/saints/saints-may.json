@@ -124,7 +124,6 @@
     "description": "Apostles and martyrs (Western traditional date).",
     "type": "apostle",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },
@@ -250,16 +249,6 @@
     ]
   },
   {
-    "id": "saint-john-of-beverley",
-    "day": "May 6",
-    "name": "Saint John of Beverley",
-    "description": "Bishop of York, died 721 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "commemoration-of-the-sign-of-the-cross-over-jerusalem",
     "day": "May 7",
     "name": "Commemoration of the Sign of the Cross over Jerusalem",
@@ -307,16 +296,6 @@
     "type": "saint",
     "tags": [
       "COE"
-    ]
-  },
-  {
-    "id": "saint-john-of-beverley",
-    "day": "May 7",
-    "name": "Saint John of Beverley",
-    "description": "Bishop of York, died 721 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -469,7 +448,6 @@
     "description": "Patrons of Europe and missionaries to the Slavs, venerated in Catholic and Anglican Communion traditions.",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR",
       "LAT",
       "OOR"
@@ -551,16 +529,6 @@
     ]
   },
   {
-    "id": "saint-julian-of-norwich",
-    "day": "May 13",
-    "name": "Saint Julian of Norwich",
-    "description": "Mystic, died c. 1417 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "virgin-martyr-glyceria",
     "day": "May 13",
     "name": "Virgin Martyr Glyceria",
@@ -587,7 +555,6 @@
     "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
     "type": "apostle",
     "tags": [
-      "ANG",
       "COE",
       "LAT"
     ]
@@ -1163,7 +1130,6 @@
     "description": "Missionary to England.",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },
