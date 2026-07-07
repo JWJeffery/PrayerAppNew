@@ -212,7 +212,8 @@ const COMPLINE_PARTS = ["Opening Versicles (Our help is in the Name of the Lord)
 // because nobody has to remember to update it in N places by hand.
 const SHARED_COMPONENT_STATUS = {
   "Lord's Prayer": {status:'green', note:"Shared component (comm-lords-prayer, common.json) — resolved by ID in Morning Prayer, Evening Prayer, Noonday Prayer, Compline, AND borrowed directly by the Ethiopian Sa'atat rubric. Verified 2026-07-05: only one shared copy exists in the code, so this status applies everywhere it's referenced. FIXED 2026-07-05 — rite2 was a duplicate of rite1 (wrong, traditional-language text); now the actual contemporary-language Lord's Prayer. Does NOT apply to the Church of the East, which uses a separate, distinct component (esy-lords-prayer-farced, the traditional Syriac 'farced' expanded form) — correctly untouched."},
-  "Apostles' Creed": {status:'green', note:"Shared component (comm-creed-apostles, common.json). Both rites verified verbatim against BCP1979.pdf."}
+  "Apostles' Creed": {status:'green', note:"Shared component (comm-creed-apostles, common.json). Both rites verified verbatim against BCP1979.pdf."},
+  "Collects": {status:'green', note:'COLLECTS AUDIT COMPLETE 2026-07-06: all 92 of 92 live collect entries now verified against BCP1979.pdf directly (133 total collect entries in the file; 41 confirmed dead, zero calendar references, not prioritized). Final batch (the last 24): Propers 19-29 (11 entries), All Saints, Annunciation, Presentation, Holy Innocents, Holy Name, Peter & Paul, Mary Magdalene, Luke, Matthew, Simon & Jude, St. Stephen, Confession of St. Peter, default-ferial. 7 of these 24 were already correct as found (Proper 29, Annunciation, Presentation, St. Stephen, Matthew, Simon & Jude, default-ferial -- the latter confirmed as the BCP\'s "A Collect for Grace," p.99). 17 fixed: Proper 20 rite1 was entirely Proper 2\'s misassigned text (serious error); Proper 25 and Proper 26 rite1 each showed the same converted-contemporary bug pattern found earlier in this audit (mechanical thee/thou conversion rather than genuine traditional-language text); five truncated doxologies restored (Propers 19, 22, 24, 28, plus Proper 24 also missing "the same"); Proper 27 had "sons" for "children" and a missing "ever"; Proper 21 and Proper 23 had real wording drift in rite2; and six Holy Days entries (Holy Name, All Saints, Holy Innocents, Confession of St. Peter, Peter & Paul, Mary Magdalene, Luke) had small but real word-level errors (missing "even," "O," or "the same"; "we pray" for "we beseech thee"; wrong prepositions/synonyms) caught only by direct line-by-line comparison against source, not by a plausibility read. TRUE SCOPE (established 2026-07-06, earlier in this audit): of 133 total collect entries, 92 are live (referenced by some real calendar mechanism, confirmed via full-repo grep) and 41 are dead. Across the whole audit: 24 live collects had serious misassignments (content belonging to the wrong day entirely, not just wording drift) -- Epiphany Day, Last Sunday after Epiphany, Holy Tuesday, Proper 16, Proper 17, and Proper 20 among them. Two independent 1928-BCP contamination finds (Advent 3, and the original Proper 4/Quinquagesima finding). Shared component set across Morning Prayer and Evening Prayer -- both marked complete for this item.'}
 };
 function statusFor(partName, officeStatusMap){
   if (SHARED_COMPONENT_STATUS[partName]) return SHARED_COMPONENT_STATUS[partName];
@@ -235,9 +236,22 @@ const MORNING_PRAYER_STATUS = {
   "Let Us Bless the Lord — Concluding Sentence": {status:'green', note:'verified verbatim; only 1 of 3 authorized closing sentences represented (completeness note, not an error)'}
 };
 
+const EVENING_PRAYER_STATUS = {
+  "Opening Sentences": {status:'red', note:'CONFIRMED FABRICATED 2026-07-07: bcp-opening-evening ("Jesus said, \'Peace I leave with you...\'", John 14:27) does not appear anywhere in book_of_common_prayer.pdf -- checked via full-text search of the entire book. Matches none of the 7 real Evening-specific opening sentences (BCP pp.60-61 Rite One / pp.114-115 Rite Two) nor the seasonal Morning Prayer sentences Evening Prayer is explicitly permitted to borrow per the BCP\'s own rubric. Same fabrication pattern as the LFF collects and the Ethiopian Senkessar. Architecture gap on top of the content problem: Morning Prayer has seasonal opening-sentence variants (bcp-opening-advent/lent/easter/general); Evening Prayer has only this one non-seasonal, fabricated entry. Nothing fixed yet.'},
+  "Confession (optional)": {status:'green', note:'Shared with Morning Prayer\'s already-verified bcp-confession-rite1/rite2 components -- confirmed via js/office-ui.js. BCP itself uses identical confession-prayer text for both offices (only the officiant\'s introductory exhortation differs, which the app does not render as separate text to check).'},
+  "Invitatory (O God, make speed to save us / Phos Hilaron)": {status:'red', note:'"O God, make speed to save us" versicle: shared component, already verified correct. Phos Hilaron (bcp-phos-hilaron): CONFIRMED MINOR DEFECT 2026-07-07 -- rite1\'s final line reads "to be glorified THOUGH all the worlds," should be "THROUGH all the worlds" (BCP p.63). One-word transcription error changes the sense of the line. Rite2 is correct ("through," p.117). Not yet fixed.'},
+  "Psalms": {status:'red', note:'Same data and same findings as Morning Prayer\'s Appointed Psalms row (Daily Office Lectionary psalms_ep field) -- DOL record-only audit complete for all 8 seasons, extensive real defects, nothing fixed yet. See AUDIT_GOVERNANCE_LEDGER.md.'},
+  "Lessons with Canticles (Magnificat / Nunc Dimittis)": {status:'red', note:'Magnificat and Nunc Dimittis TEXTS were verified correct as part of the original all-21-canticles pass (2026-07-06). Canticle SELECTION logic is fixed (day-of-week + season-aware, per BCP1979 pp.144-145). Still red because the underlying DOL readings (same data as Morning Prayer\'s Lessons with Canticles row) have extensive confirmed defects across every season, nothing fixed yet.'},
+  "Suffrages": {status:'green', note:'Shared component (bcp-suffrages-rite1/rite2, resolved via a generic slot regardless of office) -- confirmed via js/office-ui.js. Already verified verbatim under Morning Prayer.'},
+  "Mission Prayer": {status:'green', note:'Shared component, already verified and fixed under Morning Prayer.'},
+  "Hymn / Intercessions / Thanksgivings (optional)": {status:'green', note:'Not applicable to text-accuracy audit -- no fixed text exists here to check. Same reasoning as the Morning Prayer row.'},
+  "General Thanksgiving and/or Prayer of St. Chrysostom": {status:'green', note:'Shared component, already verified and fixed under Morning Prayer.'},
+  "Let Us Bless the Lord — concluding sentence": {status:'green', note:'Shared with Morning Prayer\'s verified closing sentence.'}
+};
+
 const DAILY_OFFICE = [
   {group:"Morning Prayer", parts: MORNING_PRAYER_PARTS.map(p=>{const s=statusFor(p, MORNING_PRAYER_STATUS); return {key:'do:mp:'+p,name:p,status:s.status,note:s.note};})},
-  {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:ep:'+p,name:p,status:s.status,note:s.note};})},
+  {group:"Evening Prayer", parts: EVENING_PRAYER_PARTS.map(p=>{const s=statusFor(p, EVENING_PRAYER_STATUS); return {key:'do:ep:'+p,name:p,status:s.status,note:s.note};})},
   {group:"Noonday Prayer", parts: NOONDAY_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:noon:'+p,name:p,status:s.status,note:s.note};})},
   {group:"Compline", parts: COMPLINE_PARTS.map(p=>{const s=statusFor(p, null); return {key:'do:comp:'+p,name:p,status:s.status,note:s.note};})}
 ];
@@ -383,7 +397,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v32-2026-07-07-mp-status-semantics-fix';
+const SEED_VERSION = 'v33-2026-07-07-evening-prayer-audit-complete';
 
 async function checkSeedVersion(){
   let storedValue = null;

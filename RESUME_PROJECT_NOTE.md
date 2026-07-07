@@ -60,9 +60,18 @@ Structural confirmation: the BCP's Holy Days table has no Year One/Year Two spli
 
 Every component checked at least once: Opening Sentences, Confession, Invitatory, Invitatory Psalm, Apostles' Creed, Lord's Prayer, Suffrages, Collects, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are all verified correct. Appointed Psalms and Lessons with Canticles remain amber only because real defects were found and not yet fixed (not because anything is unchecked). Per finish-what-we-start, Morning Prayer is done as an audited unit.
 
-### Evening Prayer — next
+### Evening Prayer — audited, complete
 
-Shares most components with Morning Prayer (Collects, Suffrages, Creed, Lord's Prayer — already green; the DOL readings/psalms — already audited, same data). What's specific to Evening Prayer and has never been checked: its own Opening Sentences, Phos Hilaron (the evening Invitatory), and its optional Confession. Per finish-what-we-start, this is the next unit to audit before any fix-phase work begins — not Noonday Prayer or Compline yet.
+Its own unique parts (everything else shared with Morning Prayer, already covered):
+- **Opening Sentence — confirmed fabricated.** `bcp-opening-evening`'s text doesn't appear anywhere in the BCP at all (checked via full-text search). Doesn't match any of the 7 real Evening-specific opening sentences, nor the seasonal Morning sentences Evening Prayer is explicitly allowed to borrow per the BCP's own rubric. Architecture gap too: Morning Prayer has seasonal opening-sentence variants; Evening Prayer has only this one fabricated, non-seasonal entry.
+- **Phos Hilaron — confirmed minor defect.** Rite1 has "glorified **though** all the worlds," should be "**through**." One-word typo, rite2 is correct.
+- **Confession — confirmed correct**, properly shared with Morning Prayer's already-verified component (BCP uses identical confession text for both offices).
+
+Evening Prayer is now fully audited — its unique parts checked here, everything else already covered by Morning Prayer.
+
+### Noonday Prayer and Compline — next, entirely unaudited
+
+Neither has been touched at all — every row defaults to amber with no note. Per finish-what-we-start, these are next before any fix-phase work begins.
 
 True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it, plus the Holy Days lectionary table. Remaining open item: the Shrove Tuesday scope question above.
 
