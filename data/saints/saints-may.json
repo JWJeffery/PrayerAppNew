@@ -6,11 +6,10 @@
     "description": "Old Testament prophet known for his lamentations.",
     "type": "prophet",
     "tags": [
-      "ANG",
-      "LAT",
+      "COE",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -176,16 +175,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "saint-asaph",
-    "day": "May 5",
-    "name": "Saint Asaph",
-    "description": "Bishop in Wales, died 601 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -654,16 +643,6 @@
     ]
   },
   {
-    "id": "saint-madron-of-cornwall",
-    "day": "May 17",
-    "name": "Saint Madron of Cornwall",
-    "description": "Hermit and martyr in Cornwall, 6th century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-paschal-baylon",
     "day": "May 17",
     "name": "Saint Paschal Baylon",
@@ -867,16 +846,6 @@
     ]
   },
   {
-    "id": "st-collen",
-    "day": "May 21",
-    "name": "St. Collen",
-    "description": "7th-century Welsh abbot.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "st-eugene-de-mazenod",
     "day": "May 21",
     "name": "St. Eugene de Mazenod",
@@ -884,16 +853,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "st-isberga",
-    "day": "May 21",
-    "name": "St. Isberga",
-    "description": "Sister of Charlemagne and a nun in France.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -946,16 +905,6 @@
       "COE",
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-begh-of-bee",
-    "day": "May 22",
-    "name": "Saint Begh of Bee",
-    "description": "Irish princess who founded a convent at St. Bees.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {

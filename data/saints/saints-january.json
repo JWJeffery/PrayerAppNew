@@ -318,7 +318,6 @@
     "description": "Martyr (shared commemoration).",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR"
     ]
   },
@@ -511,7 +510,6 @@
     "description": "Priest.",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },

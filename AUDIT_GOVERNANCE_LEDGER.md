@@ -882,4 +882,14 @@ Per Josh's direction, checked the remaining 33 flagged identities (the ones the 
 
 **Not yet resolved. Status: findings recorded, no data changed. Awaiting direction on whether to remove the ANG tag from these 31 now that 5 sources have been exhausted, or treat some of them (per the notes above) as special cases needing individual judgment rather than uniform removal.**
 
+## Fix applied, 2026-07-07 — 28 of the 31 removed; 3 ancient-Pope exceptions kept pending further review
+
+Josh's ruling: remove the ANG tag from all 31 except the three ancient-Bishops-of-Rome cases (Damasus, Saint Sylvester I, Saint Victor I) — kept as exceptions, not yet resolved.
+
+**Removed:** Polyeuctus of Melitine, Saint Felix of Nola, Saint Oswald of Worcester, Saint Dismas, Saint Isidore of Seville, Herodion and Agabus, Saint Macarius the Egyptian, Stanislaus of Kraków, Saint Symeon, Jeremiah the Prophet, Saint Asaph, Saint Madron of Cornwall, St. Collen, St. Isberga, Saint Begh of Bee, Saint Vitus, Saint Botolph, Saint Gervase and Protase, Saint Oliver Plunkett, Saint Otto of Bamberg, Prophet Elijah, Saint Lawrence of Brindisi, Saint Alphonsus Rodriguez, Saint Machutus, Mechtild of Magdeburg, Saint Finnian, O Adonai, Synaxis of the Theotokos — 28 identities, `ANG` tag only. Each retains any other tradition's tag it already had (e.g., `polyeuctus-of-melitine` keeps its `EOR` tag; only the unsupported `ANG` record was removed).
+
+**Kept as exceptions, not yet decided:** `damasus` (Dec 11), `saint-sylvester-i` (Dec 31), `saint-victor-i` (Jul 28) — real, well-documented ancient Bishops of Rome, plausible candidates for being legitimately Anglican-observed via a provincial calendar not among the 5 checked, rather than fabricated. Left untouched pending further review.
+
+**Verified:** all 28 removals confirmed absent from `commemorations.json`'s `ANG` tag directly; the 3 exceptions confirmed still present and untouched. Regenerated all 12 monthly caches. Spot-checked January's cache directly — `polyeuctus-of-melitine` correctly still present (its `EOR` tag intact) with `ANG` gone from its tag list.
+
 

@@ -99,7 +99,6 @@
     "description": "Bishop, Scholar, and Doctor of the Church, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR",
       "LAT"
     ]
@@ -196,7 +195,6 @@
     "description": "Apostles of the Seventy (shared commemoration).",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },
@@ -239,7 +237,6 @@
     "description": "Desert father.",
     "type": "saint",
     "tags": [
-      "ANG",
       "EOR",
       "LAT",
       "OOR"
@@ -265,16 +262,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "stanislaus-of-krak-w",
-    "day": "April 11",
-    "name": "Stanislaus of Kraków",
-    "description": "Bishop and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -470,7 +457,6 @@
     "description": "Bishop of Jerusalem (shared commemoration).",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },

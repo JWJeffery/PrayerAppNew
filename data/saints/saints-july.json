@@ -20,16 +20,6 @@
     ]
   },
   {
-    "id": "saint-oliver-plunkett",
-    "day": "July 1",
-    "name": "Saint Oliver Plunkett",
-    "description": "Archbishop of Armagh and martyr, died 1681.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-pishoy-bishoy",
     "day": "July 1",
     "name": "Saint Pishoy (Bishoy)",
@@ -74,16 +64,6 @@
     "day": "July 2",
     "name": "Saint Moses the Black",
     "description": "Former bandit turned Desert Father.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
-    "id": "saint-otto-of-bamberg",
-    "day": "July 2",
-    "name": "Saint Otto of Bamberg",
-    "description": "Bishop and missionary to Pomerania, died 1139.",
     "type": "saint",
     "tags": [
       "ANG"
@@ -795,16 +775,6 @@
     ]
   },
   {
-    "id": "prophet-elijah",
-    "day": "July 20",
-    "name": "Prophet Elijah",
-    "description": "Old Testament prophet.",
-    "type": "prophet",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-apollinaris",
     "day": "July 20",
     "name": "Saint Apollinaris",
@@ -842,7 +812,6 @@
     "description": "Doctor of the Church and Capuchin.",
     "type": "saint",
     "tags": [
-      "ANG",
       "LAT"
     ]
   },

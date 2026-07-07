@@ -465,16 +465,6 @@
     ]
   },
   {
-    "id": "saint-finnian",
-    "day": "December 12",
-    "name": "Saint Finnian",
-    "description": "Teacher of Irish saints.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-francis-de-sales",
     "day": "December 12",
     "name": "Saint Francis de Sales",
@@ -740,16 +730,6 @@
     "type": "saint",
     "tags": [
       "COE"
-    ]
-  },
-  {
-    "id": "o-adonai",
-    "day": "December 18",
-    "name": "O Adonai",
-    "description": "Liturgical antiphon.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -1030,11 +1010,10 @@
     "description": "Feast of the Mother of God; recognized in Eastern and Western contexts.",
     "type": "marian_feast",
     "tags": [
-      "ANG",
-      "LAT",
+      "COE",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {

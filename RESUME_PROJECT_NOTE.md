@@ -212,9 +212,9 @@ Common Worship confirmed 25. Holy Women, Holy Men 2010 (TEC's predecessor calend
 
 **Real limitation found:** `saint-lawrence` still showed as "unsupported" by the automated method, but HWHM 2010 clearly has him ("Laurence") at the identical date — the matcher just failed on the British/American spelling variant. **This means the automated approach cannot safely confirm the remaining ~55 are actually wrong** — it's demonstrated a real false-negative mode at this granularity. No further changes made this session. Resolving the rest needs manual, name-by-name verification, not more of the same automated matching — treat as its own bounded task if revisited.
 
-### Two more sources checked (For All the Saints, A Great Cloud of Witnesses) — 31 remain unconfirmed across all 5 sources
+### Two more sources checked, then 28 of 31 fixed — 3 exceptions kept
 
-Confirmed 2 more: `saint-lawrence` (independently corroborated by the Canadian calendar too) and `junia` (Great Cloud of Witnesses). **31 identities remain unconfirmed after 5 independent Anglican-tradition sources** — meaningfully stronger evidence than before. Full list and per-case notes (O Adonai is a liturgical text not a person; Prophet Elijah is OT, which Common Worship explicitly excludes by policy; Damasus/Sylvester I/Victor I are real ancient figures possibly just outside any checked provincial calendar) are in the ledger. **Not yet resolved — awaiting direction on whether to remove ANG from these 31 or treat some as special cases.**
+For All the Saints (Canadian) and A Great Cloud of Witnesses confirmed 2 more (Saint Lawrence, Junia) — 39 of 91 total now confirmed legitimate, no changes needed. **28 of the remaining 31 removed from ANG** (per Josh's ruling) after exhausting all 5 sources — each keeps any other tradition's tag it already had. **3 kept as exceptions, not yet resolved:** `damasus` (Dec 11), `saint-sylvester-i` (Dec 31), `saint-victor-i` (Jul 28) — real ancient Bishops of Rome, plausibly legitimate via a provincial calendar not checked. Cache regenerated and verified.
 
 ### Standing workflow: audit-then-investigate-then-resume
 

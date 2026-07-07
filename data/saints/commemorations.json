@@ -370,15 +370,6 @@
   },
   {
     "identity_id": "polyeuctus-of-melitine",
-    "tradition": "ANG",
-    "date": {
-      "month": 1,
-      "day": 9
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "polyeuctus-of-melitine",
     "tradition": "EOR",
     "date": {
       "month": 1,
@@ -563,15 +554,6 @@
     "date": {
       "month": 1,
       "day": 13
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-felix-of-nola",
-    "tradition": "ANG",
-    "date": {
-      "month": 1,
-      "day": 14
     },
     "calendar": "gregorian"
   },
@@ -2547,15 +2529,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-oswald-of-worcester",
-    "tradition": "ANG",
-    "date": {
-      "month": 2,
-      "day": 28
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "venerable-basil-the-confessor",
     "tradition": "EOR",
     "date": {
@@ -3621,17 +3594,6 @@
     "status": "verified"
   },
   {
-    "identity_id": "saint-dismas",
-    "tradition": "ANG",
-    "calendar": "gregorian",
-    "date": {
-      "month": 3,
-      "day": 25
-    },
-    "rank": "commemoration",
-    "status": "verified"
-  },
-  {
     "identity_id": "annunciation-of-the-lord-annunciation-of-the-theotokos",
     "tradition": "COE",
     "calendar": "gregorian",
@@ -4126,15 +4088,6 @@
   },
   {
     "identity_id": "saint-isidore-of-seville",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 4
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-isidore-of-seville",
     "tradition": "EOR",
     "date": {
       "month": 4,
@@ -4242,15 +4195,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "herodion-and-agabus",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 8
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "apostles-herodion-and-agabus",
     "tradition": "COE",
     "date": {
@@ -4323,15 +4267,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-macarius-the-egyptian",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 10
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "good-friday",
     "tradition": "COE",
     "date": {
@@ -4364,15 +4299,6 @@
     "date": {
       "month": 4,
       "day": 10
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "stanislaus-of-krak-w",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 11
     },
     "calendar": "gregorian"
   },
@@ -4791,15 +4717,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-symeon",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 27
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "saint-symeon-kinsman-of-the-lord",
     "tradition": "EOR",
     "date": {
@@ -4931,15 +4848,6 @@
     "date": {
       "month": 4,
       "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "jeremiah-the-prophet",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 1
     },
     "calendar": "gregorian"
   },
@@ -5147,15 +5055,6 @@
     "date": {
       "month": 5,
       "day": 4
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-asaph",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 5
     },
     "calendar": "gregorian"
   },
@@ -5691,15 +5590,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-madron-of-cornwall",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 17
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "apostles-andronicus-and-junia",
     "tradition": "EOR",
     "date": {
@@ -5853,24 +5743,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "st-collen",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 21
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "st-isberga",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 21
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "martyrs-polyeuctus-victorinus-and-donatus",
     "tradition": "EOR",
     "date": {
@@ -5957,15 +5829,6 @@
     "date": {
       "month": 5,
       "day": 21
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-begh-of-bee",
-    "tradition": "ANG",
-    "date": {
-      "month": 5,
-      "day": 22
     },
     "calendar": "gregorian"
   },
@@ -6978,15 +6841,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-vitus",
-    "tradition": "ANG",
-    "date": {
-      "month": 6,
-      "day": 15
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "prophet-amos",
     "tradition": "EOR",
     "date": {
@@ -7046,15 +6900,6 @@
     "date": {
       "month": 6,
       "day": 16
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-botolph",
-    "tradition": "ANG",
-    "date": {
-      "month": 6,
-      "day": 17
     },
     "calendar": "gregorian"
   },
@@ -7127,15 +6972,6 @@
     "date": {
       "month": 6,
       "day": 18
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-gervase-and-protase",
-    "tradition": "ANG",
-    "date": {
-      "month": 6,
-      "day": 19
     },
     "calendar": "gregorian"
   },
@@ -7662,15 +7498,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-oliver-plunkett",
-    "tradition": "ANG",
-    "date": {
-      "month": 7,
-      "day": 1
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "mar-mari-the-apostle",
     "tradition": "COE",
     "date": {
@@ -7703,15 +7530,6 @@
     "date": {
       "month": 7,
       "day": 1
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-otto-of-bamberg",
-    "tradition": "ANG",
-    "date": {
-      "month": 7,
-      "day": 2
     },
     "calendar": "gregorian"
   },
@@ -8472,15 +8290,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "prophet-elijah",
-    "tradition": "ANG",
-    "date": {
-      "month": 7,
-      "day": 20
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "prophet-elias-elijah",
     "tradition": "COE",
     "date": {
@@ -8513,15 +8322,6 @@
     "date": {
       "month": 7,
       "day": 20
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-lawrence-of-brindisi",
-    "tradition": "ANG",
-    "date": {
-      "month": 7,
-      "day": 21
     },
     "calendar": "gregorian"
   },
@@ -12963,15 +12763,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-alphonsus-rodriguez",
-    "tradition": "ANG",
-    "date": {
-      "month": 10,
-      "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "hieromartyr-zenobius-and-zenobia",
     "tradition": "EOR",
     "date": {
@@ -13737,15 +13528,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-machutus",
-    "tradition": "ANG",
-    "date": {
-      "month": 11,
-      "day": 15
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "mar-pethion",
     "tradition": "COE",
     "date": {
@@ -13958,15 +13740,6 @@
     "date": {
       "month": 11,
       "day": 18
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "mechtild-of-magdeburg",
-    "tradition": "ANG",
-    "date": {
-      "month": 11,
-      "day": 19
     },
     "calendar": "gregorian"
   },
@@ -15042,15 +14815,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-finnian",
-    "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 12
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "mar-kardagh",
     "tradition": "COE",
     "date": {
@@ -15344,15 +15108,6 @@
     "date": {
       "month": 12,
       "day": 17
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "o-adonai",
-    "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 18
     },
     "calendar": "gregorian"
   },
@@ -15736,15 +15491,6 @@
   },
   {
     "identity_id": "saint-stephen-protomartyr",
-    "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 26
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "synaxis-of-the-theotokos",
     "tradition": "ANG",
     "date": {
       "month": 12,

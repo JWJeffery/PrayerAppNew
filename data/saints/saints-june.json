@@ -501,16 +501,6 @@
     ]
   },
   {
-    "id": "saint-vitus",
-    "day": "June 15",
-    "name": "Saint Vitus",
-    "description": "Martyr, 303 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-lutgardis",
     "day": "June 16",
     "name": "Saint Lutgardis",
@@ -541,16 +531,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-botolph",
-    "day": "June 17",
-    "name": "Saint Botolph",
-    "description": "Abbot, died 680 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -622,16 +602,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-gervase-and-protase",
-    "day": "June 19",
-    "name": "Saint Gervase and Protase",
-    "description": "Martyrs, 2nd century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {

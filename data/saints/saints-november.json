@@ -560,16 +560,6 @@
     ]
   },
   {
-    "id": "saint-machutus",
-    "day": "November 15",
-    "name": "Saint Machutus",
-    "description": "Bishop and hermit, died 565.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-mar-menas-relics",
     "day": "November 15",
     "name": "Saint Mar Menas (Relics)",
@@ -742,16 +732,6 @@
     "type": "saint",
     "tags": [
       "COE"
-    ]
-  },
-  {
-    "id": "mechtild-of-magdeburg",
-    "day": "November 19",
-    "name": "Mechtild of Magdeburg",
-    "description": "Mystic.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
