@@ -1061,3 +1061,7 @@ Morning's Collect and Evening's opening reuse existing, already-verified shared 
 
 Visual/manual testing in an actual browser has not been performed (no browser available in this sandbox) — the trace-through above is a code-level correctness check, not a rendered-output check. Worth a first real use before treating this as fully proven. The incidental overlap with the Second Collect anthology and Compline collect gaps (noted above) is not a full fix for either of those larger findings — those remain open, recorded separately.
 
+
+## Session, 2026-07-07 — FIXED: Noonday Prayer and Compline now use their own BCP psalms
+
+Mechanical fix, no judgment call needed. `js/office-ui.js` psalm-selection block: Noonday and Compline now get their own fixed BCP-appointed psalm citations (`Psalm 119:105-112, Psalm 121, Psalm 126` for Noonday; `Psalm 4, Psalm 31:1-5, Psalm 91, Psalm 134:1-2` for Compline) instead of falling through to `dailyData.psalms_ep` (the DOL's Evening Prayer psalm). Takes priority over the 30-Day Psalter toggle too, since BCP's fixed psalms for these two offices don't vary with the main offices' psalter-cycle choice. No new content authored — reuses the existing `getScriptureText`/`VARIABLE_PSALM` pipeline already proven across the whole DOL audit; citations parse through unchanged. `node --check` clean.

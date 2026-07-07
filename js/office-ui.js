@@ -3280,13 +3280,21 @@ async function renderBcpOffice() {
 
     // ── Psalm selection ───────────────────────────────────────────────────────
     let psalms = '';
-    if (use30Day) {
+    if (isNoonday) {
+        // BCP p.103-104: Noonday's own fixed psalms -- not tied to the Daily
+        // Office Lectionary cycle, and not affected by the 30-Day Psalter toggle.
+        psalms = 'Psalm 119:105-112, Psalm 121, Psalm 126';
+    } else if (isCompline) {
+        // BCP p.127-130: Compline's own fixed psalms (4, 31:1-5, 91, 134) --
+        // same rationale as Noonday above.
+        psalms = 'Psalm 4, Psalm 31:1-5, Psalm 91, Psalm 134:1-2';
+    } else if (use30Day) {
         const dayOfMonth = currentDate.getDate();
         const psalmEntry = psalterCycle.find(p => p.day === dayOfMonth);
         if (psalmEntry) psalms = isMorning ? psalmEntry.morning : psalmEntry.evening;
     } else {
         psalms = dailyData?.psalms_mp || dailyData?.psalms_morning || dailyData?.psalms || '';
-        if (isEvening || isCompline || isNoonday) {
+        if (isEvening) {
             psalms = dailyData?.psalms_ep || dailyData?.psalms_evening || dailyData?.psalms || '';
         }
     }
