@@ -901,3 +901,50 @@ Regenerated all 12 monthly caches; verified directly that all three identities s
 **This closes the entire thread that began with checking non-ANG identities against Anglican sources.** Final tally across all 91 originally-flagged identities: 39 confirmed legitimate and left unchanged (across 5 sources: LFF 2024, Common Worship, Holy Women/Holy Men 2010, For All the Saints, A Great Cloud of Witnesses), 31 removed as unsupported by any of those 5 sources, plus the earlier 24 fixes (13 added, 9 corrected, Vincent de Paul/Louise de Marillac resolved as a joint commemoration, Fabian's regression reverted) and the George/George of Lydda split-identity resolution. **Still genuinely open, not part of this thread's scope:** the full text-content audit (descriptions, ranks, collects) for all remaining ANG identities, and the paused by-tradition duplicate-date work for LAT/EOR/OOR/COE (deliberately deferred until those offices are reached, per Josh's direction).
 
 
+
+## Session, 2026-07-07 — Systematic rubrics/logic sweep, continued: Invitatory Antiphon found unsourced across the entire Season after Pentecost
+
+Per Josh's direction to keep auditing everything necessary — text corpus, rubrics, logic, engines — without pausing to ask, this continues the systematic sweep for silent single-path selections (the same method that already found the Invitatory Psalm, Suffrages B, Concluding Sentence, and Seasonal Opening Sentence gaps). Started from `VARIABLE_ANTIPHON` in `js/office-ui.js`, which had not been individually checked by name anywhere in the prior sessions' work.
+
+**The code itself is simple and not the problem:** `VARIABLE_ANTIPHON` reads `dailyData.antiphon_mp`/`antiphon_ep` verbatim from `data/season/*.json` with no selection logic of its own — this is a text-corpus finding, not a live engine bug, confirmed the same way as the Ordinary Time DOL reading defects (no generator script touches this field, no code hardcodes the fallback text anywhere — it's baked directly into the static JSON).
+
+**The BCP rubric governing this** (`book_of_common_prayer.pdf` p.42-43 traditional, p.79-80 contemporary — checked both): "One of the following Antiphons may be sung or said with the Invitatory Psalm," followed by exactly **six** named windows and their texts:
+
+1. Advent
+2. The Twelve Days of Christmas
+3. From the Epiphany through the Baptism of Christ, and on the Feasts of the Transfiguration and Holy Cross
+4. In Lent
+5. From Easter Day until the Ascension
+6. From Ascension Day until the Day of Pentecost
+
+This list is confirmed exhaustive, not illustrative — a later cross-reference in the same document ("The proper antiphons on pages 43-44 and 80-82 may be used as refrains," p.934 area) points back to exactly these same six, with no other antiphon set provided anywhere else in the BCP for the Invitatory. The rubric's own coverage stops "until the Day of Pentecost" — nothing is provided for Trinity Sunday or any day of the Season after Pentecost (Propers 1-29), which is the great majority of the church year.
+
+**Finding: every entry in `ordinary1.json`, `ordinary2.json`, and `ordinary3.json` (190 entries total, both `antiphon_mp` and `antiphon_ep` fields) is unsupported by the BCP.** Broken down:
+
+- **173 of 190 entries (91%) show Lent's specific antiphon text** ("The Lord is full of compassion and mercy: Come let us adore him.") during a season that is nowhere near Lent — clearly a copy-paste default baked into the data population, not a deliberate choice.
+- **The remaining 17 entries show other, distinct texts** on apparently notable days — "Holy, holy, holy Lord God Almighty" (1 entry, plausibly Trinity Sunday), "The Lord is glorious in his saints" (13 entries across the three files, plausibly saints' days), "The Lord is King, let the peoples tremble" (1 entry, plausibly Christ the King), "The Lord has shown forth his glory" (1 entry — this one is Epiphany's actual BCP text, misapplied outside its season), and "Alleluia. The Spirit of the Lord reneweth the face of the world" (1 entry, plausibly meant for Pentecost eve/Whitsunday-adjacent, also outside the BCP's actual Pentecost antiphon window). **None of these fixed-text antiphons for Trinity Sunday, saints' days, or Christ the King exist anywhere in BCP1979** — they are invented, following the same "plausible-sounding fabricated content" pattern already found repeatedly in this audit (LFF collects, the Ethiopian Senkessar, the Evening Prayer Opening Sentence, and the Lent/Jubilate Invitatory rule).
+
+**Not fixed.** Per audit-then-fix, and because the correct remedy (most plausibly: no fixed Invitatory Antiphon at all during the Season after Pentecost, since the BCP simply doesn't provide one for that stretch of the year) is a content-removal decision across 190 entries × 2 fields, not a straightforward pick-the-right-value correction — this is recorded here for Josh's decision rather than acted on unilaterally, consistent with how the Major Feast canticle override and the Noonday/Compline toggle questions were handled, not the more mechanical sanctoral date-picking work.
+
+**Scope check on the other 5 audited seasons (Advent, Christmas, Epiphany, Lent, Easter):** these fall inside the BCP's six named windows, so the antiphon *category* is plausible for the season, but the specific *texts* have not been checked word-for-word against BCP1979 anywhere in this audit — only Ordinary Time's wholesale category mismatch was caught by this pass. A verbatim text check for those five seasons' antiphons remains open scope, not yet done.
+
+
+## Session, 2026-07-07 — Systematic rubrics/logic sweep, continued: Evening Prayer shows both an Invitatory Psalm AND Phos Hilaron, when the BCP offers them as alternatives
+
+Continuing the same sweep that found the Ordinary Time Invitatory Antiphon defect above. This one corrects and substantially extends the prior Evening Prayer audit entry's "Phos Hilaron — confirmed minor defect, stands" note, which only checked Phos Hilaron's *text* (a one-word typo) without checking whether it's *structurally* correct for it to render unconditionally alongside whatever else the rubric sequence produces at that point.
+
+**The BCP rubric** (`book_of_common_prayer.pdf` p.63 traditional / p.117 contemporary, "The Invitatory and Psalter," checked in both rites and confirmed identically worded): after the fixed opening versicle ("O God, make speed to save us" / "O Lord, make haste to help us" / Gloria Patri), the rubric reads: **"The following, or some other suitable hymn, or an Invitatory Psalm, may be sung or said"** — immediately followed by the printed text of Phos Hilaron. This is explicitly a three-way *alternative*: Phos Hilaron, or some other hymn, or an Invitatory Psalm (i.e., Venite/Jubilate, the same texts used at Morning Prayer) — exactly one is used, not more than one.
+
+**`data/rubrics.json`'s Evening Prayer sequence renders both anyway.** The sequence is `..., bcp-invitatory-full, bcp-phos-hilaron, VARIABLE_ANTIPHON, VARIABLE_PSALM, ...`. Traced in `js/office-ui.js`:
+- `bcp-invitatory-full` first renders the fixed opening versicle (`bcp-invitatory-full-ep-noon-compline` for non-Morning offices — correct, this part is the shared fixed dialogue, not itself an Invitatory Psalm).
+- It then unconditionally continues (`if (isMorning || isEvening)`) into the exact same Pascha Nostrum / Lent-Friday-Psalm-95 / Lent-Jubilate / Venite selection already flagged as defective for Morning Prayer above — and this branch **is not gated to Morning Prayer only**; `isEvening` is explicitly included in the condition, so it fires at Evening Prayer too.
+- Immediately after, `bcp-phos-hilaron` renders unconditionally, with no check for whether an Invitatory Psalm was just shown.
+
+**Net effect: every Evening Prayer currently shows an Invitatory Psalm (Venite, Jubilate, Psalm 95, or Pascha Nostrum depending on season/day) immediately followed by Phos Hilaron, back to back** — both of the BCP's mutually exclusive alternatives, not one. This is a genuine structural defect, not a text-accuracy issue like the earlier "though/through" typo finding (which still stands as a separate, minor point on top of this).
+
+**Confirmed NOT to affect Noonday Prayer or Compline** — the Venite/Jubilate/Pascha-Nostrum branch's condition (`isMorning || isEvening`) explicitly excludes both, so those offices correctly show only the fixed opening versicle from `bcp-invitatory-full-ep-noon-compline` with no Invitatory Psalm content appended. This part of the code is correctly scoped.
+
+**Not fixed.** Per audit-then-fix, and because the correct remedy is itself an open question — the BCP presents three alternatives (Phos Hilaron / another hymn / an Invitatory Psalm) without mandating which, the same "genuinely free choice" pattern already found for Morning Prayer's own Invitatory Psalm selection — this is recorded for Josh's decision rather than acted on unilaterally. Candidate framings: default to Phos Hilaron only (matching the BCP's own printed default) and suppress the Invitatory-Psalm branch entirely at Evening Prayer, or offer a toggle the way the Noonday/Compline questions were resolved. Flagged as the same category of defect as those toggle items, not a mechanical correction.
+
+**Relationship to the earlier Morning Prayer Invitatory Psalm finding:** that entry already established the Lent→Jubilate/Lent-Friday→Psalm-95 branches have no BCP basis at all, and that the Easter→Pascha-Nostrum branch, while textually correct, silently picks one BCP-permitted path over the alternative. Both of those problems are inherited wholesale by Evening Prayer through the shared code path — fixing the Morning Prayer selection logic without also addressing Evening Prayer's redundant double-render would leave this defect in place.
+
