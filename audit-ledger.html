@@ -85,7 +85,8 @@
   <div id="bibleSection"></div>
 
   <h2>II. The Daily Office (1979 BCP)</h2>
-  <p class="section-note">Morning Prayer: in progress, not complete. Opening Sentences, Confession, Invitatory, Invitatory Psalm, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are verified against BCP1979.pdf. Appointed Psalms (30-day table) verified and corrected. Collects are now fully verified (all 92 live entries, see Collects row below). Still unverified: the Table of Suggested Canticles (which canticle pairs with which day/season/reading) and the Daily Office Lectionary date-by-date readings. Lord's Prayer and Apostles' Creed are shared components (common.json) — verified once, shown green in every office that references them, including Evening Prayer, Noonday Prayer, and Compline below, even though those offices haven't been individually audited otherwise yet.</p>
+  <p class="section-note">Morning Prayer: AUDIT COMPLETE (2026-07-07). Opening Sentences, Confession, Invitatory, Invitatory Psalm, Suffrages, Mission Prayer, General Thanksgiving/Chrysostom, Collects (all 92 live entries), and the closing sentence are all verified correct. Appointed Psalms and Lessons with Canticles remain amber — not because anything is unchecked, but because the Daily Office Lectionary (all 8 seasons) and the Holy Days lectionary table (25 of 25 Holy Days checked, only St. Andrew genuinely correct) both found extensive real defects, none fixed yet. Canticle selection logic was hardcoded and is now fixed to implement BCP1979's actual table; one judgment call (Major Feast override) remains open, resolved as a governance decision (add a precedence field) but not yet implemented. Lord's Prayer and Apostles' Creed are shared components — verified once, shown green in every office that references them, including Evening Prayer, Noonday Prayer, and Compline below, even though those offices haven't been individually audited otherwise yet. NEXT: Evening Prayer's own unaudited parts (Opening Sentences, Phos Hilaron, Confession), per finish-what-we-start.</p>
+  <p class="section-note">Holy Days lectionary table (book_of_common_prayer.pdf pp.995-1000): audited 2026-07-07, record-only. Structurally distinct from the seasonal DOL tables — no Year One/Year Two split, exactly 4 readings per Holy Day (MP: OT+Epistle; EP: OT+Gospel). Of 25 Holy Days checked, only St. Andrew is genuinely correct — every other one pulls Eucharistic Proper readings instead of the Daily Office Lectionary, the same "wrong lectionary track" bug first found on St. Thomas and St. Stephen/John/Holy Innocents, now confirmed as the default condition across the whole calendar. The app's 3-reading schema is specifically missing Evening Prayer's own OT reading, every time. Nothing fixed yet.</p>
   <div id="dailyOfficeSection"></div>
 
   <h3>Daily Office Lectionary — audit progress by season</h3>
@@ -382,7 +383,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v30-2026-07-07-mp-status-currency-fix';
+const SEED_VERSION = 'v31-2026-07-07-holy-days-audit-mp-complete';
 
 async function checkSeedVersion(){
   let storedValue = null;

@@ -50,9 +50,23 @@ The hardcoded canticle selection in `js/office-ui.js` has been replaced with day
 
 **DOL record-only pass is now COMPLETE for every season** (Advent, Christmas, Epiphany, Lent, Easter, Ordinary 1/2/3). Every single one has confirmed real defects — none have been fixed yet.
 
-True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it except the 19+ Holy Days across the year (separate lectionary table, not yet pulled) and the Shrove Tuesday scope question above.
+### Holy Days lectionary table — audited, the clearest systemic finding of the whole audit
 
-**Fix phase has not started for any season** — per the audit-then-fix workflow, the whole DOL record-only pass is now done; the next phase is systematic remediation, season by season, starting wherever you direct.
+Of 25 Holy Days checked across all 8 season files, **only St. Andrew is genuinely correct.** Every other one pulls its Eucharistic Proper readings instead of the Daily Office Lectionary — the same "wrong lectionary track" bug first spotted on St. Thomas (Advent) and St. Stephen/John/Holy Innocents (Christmas), now confirmed as the *default* condition for nearly every fixed Holy Day in the app, not an isolated incident.
+
+Structural confirmation: the BCP's Holy Days table has no Year One/Year Two split at all (same content every year) and assigns exactly 4 readings (MP: OT + Epistle; EP: OT + Gospel). The app's 3-reading schema is specifically missing **Evening Prayer's own OT reading** — the same gap, every time. The Year1/Year2 duplication in the app's Holy Day entries is harmless (source is identical either way) but worth reconsidering as an unnecessary schema artifact in the fix phase.
+
+### Morning Prayer audit: COMPLETE
+
+Every component checked at least once: Opening Sentences, Confession, Invitatory, Invitatory Psalm, Apostles' Creed, Lord's Prayer, Suffrages, Collects, Mission Prayer, General Thanksgiving/Chrysostom, and the closing sentence are all verified correct. Appointed Psalms and Lessons with Canticles remain amber only because real defects were found and not yet fixed (not because anything is unchecked). Per finish-what-we-start, Morning Prayer is done as an audited unit.
+
+### Evening Prayer — next
+
+Shares most components with Morning Prayer (Collects, Suffrages, Creed, Lord's Prayer — already green; the DOL readings/psalms — already audited, same data). What's specific to Evening Prayer and has never been checked: its own Opening Sentences, Phos Hilaron (the evening Invitatory), and its optional Confession. Per finish-what-we-start, this is the next unit to audit before any fix-phase work begins — not Noonday Prayer or Compline yet.
+
+True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) — audit now covers all of it, plus the Holy Days lectionary table. Remaining open item: the Shrove Tuesday scope question above.
+
+**Fix phase has not started for any season** — per the audit-then-fix workflow, the whole audit (DOL + Holy Days) is now done; the next phase is systematic remediation, season by season, starting wherever you direct — but only after Evening Prayer's own remaining parts are audited too.
 
 ### 4. Deferred features — not started, queued behind items 2 and 3
 
