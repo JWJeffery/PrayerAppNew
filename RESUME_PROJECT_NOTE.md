@@ -31,7 +31,16 @@ The hardcoded canticle selection in `js/office-ui.js` has been replaced with day
   - Confirmed a **one-day-forward reading shift** for at least the file's last 3 dated entries (Feb 14-15), plus unrelated wrong-lectionary content at Feb 10 (a Gospel citation from Luke that doesn't belong to this lane at all). **Root cause traced: also a static data error** (no internal duplication found that would explain a mechanical cascade) — each affected entry was individually populated with the wrong day's content. Extent not yet traced past this file's boundary into Lent.
   - The Confession of St. Peter, Conversion of St. Paul, and Presentation (Holy Days inside this range) were not checked — separate Holy Days lectionary table, not yet pulled.
 - **Lent — audited, major finding: the Year One/Year Two swap found in Christmas recurs here at much larger scale.** Nearly every entry across all 5 weeks of Lent plus Ash Wednesday plus Holy Week has `year1`/`year2` reading fields swapped (accurate BCP content, wrong year label) — same bug class as Christmas, far bigger footprint. Maundy Thursday/Good Friday/Holy Saturday additionally show the AM/PM structure confused with Year1/Year2 fields; Holy Saturday has an epistle (Romans 8:1-11) stored in a Gospel field. Saint Joseph and the Annunciation (Holy Days in this range) not checked. One minor unrelated defect: Thursday after Ash Wednesday's OT reading missing bracketed verses for both years.
-- **Easter, Ordinary 1/2/3 — not yet started.** (Prior estimate of entry counts — Easter 50, Ordinary 69/61/59 — is unverified, re-confirm before relying on it. Given the Year-swap pattern found in 2 of 3 seasons checked so far, treat checking for it as a standard step in every remaining season.)
+- **Easter — audited, most defect-dense season yet, several distinct bug types:**
+  - **Easter Day: no Year One readings at all** (fields blank); Year Two fields show Eucharistic Proper content, not DOL content.
+  - **Easter Week (Mon-Sat): Year Two is a straight duplicate of Year One**, not a swap — no real Year Two content exists there. Gospel field Tue-Fri also doesn't match the DOL for either year (looks like Eucharistic daily-Mass gospels).
+  - **Week of 2 Easter: classic full Year One/Year Two swap**, same as Christmas/Lent.
+  - **Week of 4 Easter, Year Two only (Apr 26-30): one-day-forward shift**, same bug class as Epiphany's tail-end shift.
+  - **Ascension Day: OT reading duplicated** — Year One's field holds Year Two's content, Year One's real citation missing.
+  - **Pentecost: same duplication, total** — both years show Year Two's content, Year One's real Pentecost reading missing entirely.
+  - Saint Mark and Saints Philip & James (Holy Days in this range) not checked.
+  - No fresh root-cause investigation run — all patterns above are recurrences of already-diagnosed defect classes (static data-entry errors), not new mechanisms.
+- **Ordinary 1/2/3 — not yet started.** (Prior estimate of entry counts — 69/61/59 — is unverified, re-confirm before relying on it. Check for Year-swap/duplication/shift patterns as standard practice, per the pattern in every season so far.)
 
 True scope of "live" DOL content (366 date entries, ~732 psalm-appointment values, ~2,196 reading values across `data/season/*.json`) established but not yet audited beyond Advent + Christmas.
 

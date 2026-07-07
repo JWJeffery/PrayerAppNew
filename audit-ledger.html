@@ -174,8 +174,8 @@ const DOL_SEASONS = [
     note: 'AUDITED 2026-07-07 (record-only pass; fixes deferred until full DOL audit completes). 43 entries, 3 Holy Days not checked (separate lectionary table). Confirmed: (1) Baptism-of-Our-Lord/dated-day transition bug -- Jan 11 shows the dated Jan.11 citation instead of Week-of-1-Epiphany-Sunday\'s; (2) psalm-cycle "wrong week" pattern and (3) named-Sunday Eucharistic-Proper-psalm substitution and (4) one-day-forward reading shift near season end -- ROOT CAUSE TRACED for (2)-(4): all are static data-entry errors baked into epiphany.json itself, NOT live engine bugs (CalendarEngine.findEntry matches by literal date field, office-ui.js reads psalm fields verbatim, no generator script populates this file, no internal duplication found). Fix = re-populate the specific wrong fields against BCP source once the fix phase begins. See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
   { key: 'dol:lent', name: 'Lent', status: 'red',
     note: 'AUDITED 2026-07-07 (record-only pass; fixes deferred until full DOL audit completes). 46 entries, 2 Holy Days not checked (St. Joseph, Annunciation -- separate lectionary table). MAJOR FINDING: the Christmas Year One/Year Two swap recurs here at far larger scale -- nearly every one of the 44 checked entries (Ash Wednesday OT, all 5 weeks of Lent, Holy Week weekdays) has year1/year2 reading fields swapped (content is accurate BCP text, wrong year label). Maundy Thursday/Good Friday/Holy Saturday additionally confuse the AM/PM reading structure with Year1/Year2 fields; Holy Saturday has an epistle (Romans 8:1-11) stored in a Gospel field. Minor unrelated defect: Thursday after Ash Wednesday OT missing bracketed verses, both years. See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
-  { key: 'dol:easter', name: 'Easter', status: 'amber',
-    note: 'Not yet audited. 50 entries in data/season/easter.json.' },
+  { key: 'dol:easter', name: 'Easter', status: 'red',
+    note: 'AUDITED 2026-07-07 (record-only pass; fixes deferred until full DOL audit completes). 50 entries, 2 Holy Days not checked (St. Mark, Philip & James -- separate lectionary table). MOST DEFECT-DENSE SEASON YET, several distinct bug types: Easter Day has NO Year One readings at all (blank fields), Year Two shows Eucharistic Proper content instead of DOL; Easter Week Mon-Sat has Year Two as a straight duplicate of Year One (no real Y2 content), plus Gospel Tue-Fri wrong for both years; Week of 2 Easter has the classic full Year1/Year2 swap (same as Christmas/Lent); Week of 4 Easter Year Two only shows a one-day-forward shift (same bug class as Epiphany); Ascension Day OT duplicated (Y1 missing); Pentecost -- the whole reading set duplicated, Year One entirely missing. See AUDIT_GOVERNANCE_LEDGER.md for full detail.' },
   { key: 'dol:ordinary1', name: 'Ordinary 1', status: 'amber',
     note: 'Not yet audited. 69 entries in data/season/ordinary1.json.' },
   { key: 'dol:ordinary2', name: 'Ordinary 2', status: 'amber',
@@ -382,7 +382,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v27-2026-07-07-lent-year-swap-finding';
+const SEED_VERSION = 'v28-2026-07-07-easter-multi-defect-finding';
 
 async function checkSeedVersion(){
   let storedValue = null;
