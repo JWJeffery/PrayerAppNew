@@ -206,6 +206,12 @@ Checked the just-applied 24 fixes against the Church of England's Common Worship
 
 LFF 2024 has exactly one entry for this saint (the bracketed May 6 one) — no April 23 entry exists in TEC's calendar at all. Removed `saint-george`'s unsupported `ANG` tag at April 23 (its EOR/LAT/OOR tags there are untouched). `saint-george-of-lydda` keeps the sole ANG tag at May 6. Cache regenerated and verified.
 
+### The 91 flagged identities, checked against a third source (HWHM 2010) — 36 of 91 confirmed legitimate, method limits discovered
+
+Common Worship confirmed 25. Holy Women, Holy Men 2010 (TEC's predecessor calendar) confirms 11 more at the same date: Andrei Rublev, Fanny Crosby, Charles Freer Andrews, John Roberts, Innocent of Alaska, Molly Brant, Samson Occom, Charles Grafton, Gregorio Aglipay, Richard Rolle, Samuel Ajayi Crowther. **No changes needed for these 36 — they're genuine, just absent from LFF 2024's exact headline list.**
+
+**Real limitation found:** `saint-lawrence` still showed as "unsupported" by the automated method, but HWHM 2010 clearly has him ("Laurence") at the identical date — the matcher just failed on the British/American spelling variant. **This means the automated approach cannot safely confirm the remaining ~55 are actually wrong** — it's demonstrated a real false-negative mode at this granularity. No further changes made this session. Resolving the rest needs manual, name-by-name verification, not more of the same automated matching — treat as its own bounded task if revisited.
+
 ### Standing workflow: audit-then-investigate-then-resume
 
 When the record-only DOL audit surfaces evidence of a possible underlying engine bug (not just a wrong data value), pause the audit at that point, trace it to root cause, record the finding, then resume auditing. This is an extension of the audit itself, not a separate fix-phase step — and it is not the same as fixing the bug, which still waits for the fix phase per audit-then-fix.
