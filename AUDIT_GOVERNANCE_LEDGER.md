@@ -571,6 +571,16 @@ Josh's correction: the Noonday "Silence / Lesson" and Compline "Short Lesson" fi
 
 **Same correction applies to Noonday's Collect finding.** BCP p.106 names 4 proper Noonday collects and explicitly offers the Day's Collect as an alternative — multiple real, named options. The app only implements the Day's-Collect path; the 4 proper collects were never built, not because that option was chosen over them, but because no other path exists in code. Reclassified from green/authorized to the same open-decision category. Not yet decided.
 
+## Decision, 2026-07-07 — all three toggle questions settled: offer both options, in all three cases
+
+Josh's ruling, for all three open decisions above: **offer both as a toggle/choice** — not one path chosen over the other, not left to a silent default.
+
+- **Noonday's Collect:** toggle between the 4 proper Noonday collects and the Collect of the Day.
+- **Noonday's Short Lesson:** toggle between the 3 suggested fixed texts (Romans 5:5 / 2 Corinthians 5:17-18 / Malachi 1:11) and the day's Daily Office Lectionary reading.
+- **Compline's Short Lesson:** toggle between the 4 suggested fixed texts (Jeremiah 14:9,22 / Matthew 11:28-30 / Hebrews 13:20-21 / 1 Peter 5:8-9a) and the day's DOL reading.
+
+**This is now a confirmed defect, not an open question** — same category as the Holy Days 4-reading schema gap. The decision has been made; the toggle does not exist in code (`js/office-ui.js`'s `VARIABLE_COLLECT` and `VARIABLE_READING_OT` resolvers have no such branch, confirmed earlier this session). Recorded and deferred to the fix phase, per audit-then-fix — not implemented in this session.
+
 ## Recovery, 2026-07-06 — prior session's work recovered via manual patch hand-off
 
 The session that produced the 7 commits immediately above (canticle-selection fix through the Christmas year-swap correction) ran out of tokens before it could push to `origin`. Initial assessment in the following session (a fresh clone + full-branch search for any trace of this work) found nothing on GitHub and concluded it was lost. It was not: the original session had generated `git format-patch` files and Josh was able to retrieve them from that session's sandbox before it expired, then hand them to this session as a zip. All 7 patches applied cleanly via `git am` against a fresh clone of current `main`, in sequence, with only harmless whitespace warnings.

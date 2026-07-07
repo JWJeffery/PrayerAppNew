@@ -81,6 +81,8 @@ Neither has been touched at all — every row defaults to amber with no note. Pe
 
 **Standing rule, applies everywhere in this project:** when source material authorizes multiple options, the app must either offer all real options or have an actual recorded decision selecting one — never just whatever the code happens to default to because only one path was ever built. Apply this retroactively wherever this audit concluded "not a defect, the BCP allows this" without confirming a real choice was made.
 
+**Settled 2026-07-07 — all three: offer both as a toggle.** Noonday's Collect (4 proper Noonday collects vs. the Day's Collect), Noonday's Short Lesson (3 suggested texts vs. the DOL reading), and Compline's Short Lesson (4 suggested texts vs. the DOL reading) all get a toggle, not a single silent path. This is now a confirmed defect (missing toggle), same category as the Holy Days schema gap — decided, not yet implemented, deferred to the fix phase.
+
 **Compline — three confirmed real defects:**
 1. Wrong Confession (uses Morning/Evening Prayer's, not Compline's own distinct shorter one).
 2. "Our help is in the Name of the Lord" opening versicle missing entirely — not present anywhere in the data.
