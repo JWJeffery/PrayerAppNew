@@ -3662,7 +3662,12 @@ async function renderBcpOffice() {
             continue;
         }
 
-        // VARIABLE_WEEKDAY_COLLECT — ferial/weekday supplementary collect
+        // VARIABLE_WEEKDAY_COLLECT -- ferial/weekday supplementary collect. BCP
+        // p.55-57/98-99 (Morning) and p.68-70/122-124 (Evening) each offer a real
+        // anthology of 7 options after the Collect of the Day -- previously the
+        // app silently showed only one (Grace/Peace), every day. Per Josh's
+        // decision 2026-07-08, these now rotate daily rather than needing a
+        // manual pick, same convention as Mission Prayer's rotation.
         if (item === 'VARIABLE_WEEKDAY_COLLECT') {
             let wkComp = null;
             if (dailyData.collect_weekday) {
@@ -3672,8 +3677,12 @@ async function renderBcpOffice() {
                 wkComp = appData.components.find(c => c.id === wkId);
             }
             if (!wkComp) {
-                const fallbackId = isMorning ? 'bcp-collect-grace' : 'bcp-collect-peace';
-                wkComp = appData.components.find(c => c.id === fallbackId);
+                const morningCollectIds = ['bcp-collect-mp-sundays', 'bcp-collect-mp-fridays', 'bcp-collect-mp-saturdays', 'bcp-collect-renewal-of-life', 'bcp-collect-peace-morning', 'bcp-collect-grace', 'bcp-collect-guidance'];
+                const eveningCollectIds = ['bcp-collect-ep-sundays', 'bcp-collect-ep-fridays', 'bcp-collect-ep-saturdays', 'bcp-collect-peace', 'bcp-collect-aid-against-perils', 'bcp-collect-protection', 'bcp-collect-presence-of-christ'];
+                const collectIds = isMorning ? morningCollectIds : eveningCollectIds;
+                const rotate = document.getElementById('toggle-rotate-weekday-collect')?.checked ?? true;
+                const idx = rotate ? getDailyRotationIndex(currentDate, collectIds.length) : (isMorning ? 5 : 3);
+                wkComp = appData.components.find(c => c.id === collectIds[idx]);
             }
             if (wkComp) {
                 const t = resolveText(wkComp, rite) || wkComp.text || '';
@@ -3987,6 +3996,18 @@ async function renderBcpOffice() {
             'bcp-phos-hilaron':               'O Gracious Light',
             'bcp-collect-grace':              'A Collect for Grace',
             'bcp-collect-peace':              'A Collect for Peace',
+            'bcp-collect-mp-sundays':         'A Collect for Sundays',
+            'bcp-collect-mp-fridays':         'A Collect for Fridays',
+            'bcp-collect-mp-saturdays':       'A Collect for Saturdays',
+            'bcp-collect-renewal-of-life':    'A Collect for the Renewal of Life',
+            'bcp-collect-peace-morning':      'A Collect for Peace',
+            'bcp-collect-guidance':           'A Collect for Guidance',
+            'bcp-collect-ep-sundays':         'A Collect for Sundays',
+            'bcp-collect-ep-fridays':         'A Collect for Fridays',
+            'bcp-collect-ep-saturdays':       'A Collect for Saturdays',
+            'bcp-collect-aid-against-perils': 'A Collect for Aid against Perils',
+            'bcp-collect-protection':         'A Collect for Protection',
+            'bcp-collect-presence-of-christ': 'A Collect for the Presence of Christ',
             'bcp-collect-noonday-1':          'A Collect for Noonday',
             'bcp-collect-noonday-2':          'A Collect for Noonday',
             'bcp-collect-noonday-3':          'A Collect for Noonday',

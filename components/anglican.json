@@ -1825,5 +1825,104 @@
     "title": "Daily Devotions: Closing Blessing",
     "text": "The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. Amen.",
     "type": "Blessing"
+  },
+  {
+    "id": "bcp-collect-mp-sundays",
+    "title": "A Collect for Sundays (Weekday, MP)",
+    "text": {
+      "rite1": "O God, who makest us glad with the weekly remembrance of the glorious resurrection of thy Son our Lord: Grant us this day such blessing through our worship of thee, that the days to come may be spent in thy favor; through the same Jesus Christ our Lord. Amen.",
+      "rite2": "O God, you make us glad with the weekly remembrance of the glorious resurrection of your Son our Lord: Give us this day such blessing through our worship of you, that the week to come may be spent in your favor; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-mp-fridays",
+    "title": "A Collect for Fridays (Weekday, MP)",
+    "text": {
+      "rite1": "Almighty God, whose most dear Son went not up to joy but first he suffered pain, and entered not into glory before he was crucified: Mercifully grant that we, walking in the way of the cross, may find it none other than the way of life and peace; through the same thy Son Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty God, whose most dear Son went not up to joy but first he suffered pain, and entered not into glory before he was crucified: Mercifully grant that we, walking in the way of the cross, may find it none other than the way of life and peace; through Jesus Christ your Son our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-mp-saturdays",
+    "title": "A Collect for Saturdays (Weekday, MP)",
+    "text": {
+      "rite1": "Almighty God, who after the creation of the world didst rest from all thy works and sanctify a day of rest for all thy creatures: Grant that we, putting away all earthly anxieties, may be duly prepared for the service of thy sanctuary, and that our rest here upon earth may be a preparation for the eternal rest promised to thy people in heaven; through Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty God, who after the creation of the world rested from all your works and sanctified a day of rest for all your creatures: Grant that we, putting away all earthly anxieties, may be duly prepared for the service of your sanctuary, and that our rest here upon earth may be a preparation for the eternal rest promised to your people in heaven; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-renewal-of-life",
+    "title": "A Collect for the Renewal of Life (Weekday, MP)",
+    "text": {
+      "rite1": "O God, the King eternal, who dividest the day from the night and turnest the shadow of death into the morning: Drive far from us all wrong desires, incline our hearts to keep thy law, and guide our feet into the way of peace; that, having done thy will with cheerfulness while it was day, we may, when the night cometh, rejoice to give thee thanks; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, the King eternal, whose light divides the day from the night and turns the shadow of death into the morning: Drive far from us all wrong desires, incline our hearts to keep your law, and guide our feet into the way of peace; that, having done your will with cheerfulness during the day, we may, when night comes, rejoice to give you thanks; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-guidance",
+    "title": "A Collect for Guidance (Weekday, MP)",
+    "text": {
+      "rite1": "O heavenly Father, in whom we live and move and have our being: We humbly pray thee so to guide and govern us by thy Holy Spirit, that in all the cares and occupations of our life we may not forget thee, but may remember that we are ever walking in thy sight; through Jesus Christ our Lord. Amen.",
+      "rite2": "Heavenly Father, in you we live and move and have our being: We humbly pray you so to guide and govern us by your Holy Spirit, that in all the cares and occupations of our life we may not forget you, but may remember that we are ever walking in your sight; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-ep-sundays",
+    "title": "A Collect for Sundays (Weekday, EP)",
+    "text": {
+      "rite1": "Lord God, whose Son our Savior Jesus Christ triumphed over the powers of death and prepared for us our place in the new Jerusalem: Grant that we, who have this day given thanks for his resurrection, may praise thee in that City of which he is the light; and where he liveth and reigneth for ever and ever. Amen.",
+      "rite2": "Lord God, whose Son our Savior Jesus Christ triumphed over the powers of death and prepared for us our place in the new Jerusalem: Grant that we, who have this day given thanks for his resurrection, may praise you in that City of which he is the light, and where he lives and reigns for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-ep-fridays",
+    "title": "A Collect for Fridays (Weekday, EP)",
+    "text": {
+      "rite1": "O Lord Jesus Christ, who by thy death didst take away the sting of death: Grant unto us thy servants so to follow in faith where thou hast led the way, that we may at length fall asleep peacefully in thee, and awake up after thy likeness; for thy tender mercies' sake. Amen.",
+      "rite2": "Lord Jesus Christ, by your death you took away the sting of death: Grant to us your servants so to follow in faith where you have led the way, that we may at length fall asleep peacefully in you and wake up in your likeness; for your tender mercies' sake. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-ep-saturdays",
+    "title": "A Collect for Saturdays (Weekday, EP)",
+    "text": {
+      "rite1": "O God, the source of eternal light: Shed forth thine unending day upon us who watch for thee, that our lips may praise thee, our lives may bless thee, and our worship on the morrow may give thee glory; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, the source of eternal light: Shed forth your unending day upon us who watch for you, that our lips may praise you, our lives may bless you, and our worship on the morrow give you glory; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-aid-against-perils",
+    "title": "A Collect for Aid against Perils (Weekday, EP)",
+    "text": {
+      "rite1": "Lighten our darkness, we beseech thee, O Lord; and by thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Savior Jesus Christ. Amen.",
+      "rite2": "Be our light in the darkness, O Lord, and in your great mercy defend us from all perils and dangers of this night; for the love of your only Son, our Savior Jesus Christ. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-protection",
+    "title": "A Collect for Protection (Weekday, EP)",
+    "text": {
+      "rite1": "O God, who art the life of all who live, the light of the faithful, the strength of those who labor, and the repose of the dead: We thank thee for the timely blessings of the day, and humbly beseech thy merciful protection all the night. Bring us, we pray thee, in safety to the morning hours; through him who died for us and rose again, thy Son our Savior Jesus Christ. Amen.",
+      "rite2": "O God, the life of all who live, the light of the faithful, the strength of those who labor, and the repose of the dead: We thank you for the blessings of the day that is past, and humbly ask for your protection through the coming night. Bring us in safety to the morning hours; through him who died and rose again for us, your Son our Savior Jesus Christ. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-presence-of-christ",
+    "title": "A Collect for the Presence of Christ (Weekday, EP)",
+    "text": {
+      "rite1": "Lord Jesus, stay with us, for evening is at hand and the day is past; be our companion in the way, kindle our hearts, and awaken hope, that we may know thee as thou art revealed in Scripture and the breaking of bread. Grant this for the sake of thy love. Amen.",
+      "rite2": "Lord Jesus, stay with us, for evening is at hand and the day is past; be our companion in the way, kindle our hearts, and awaken hope, that we may know you as you are revealed in Scripture and the breaking of bread. Grant this for the sake of your love. Amen."
+    },
+    "type": "Collect"
   }
 ]
