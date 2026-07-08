@@ -266,4 +266,29 @@ Traced every devotion-sequence item through the render loop by hand before consi
 
 **Corrected again, 2026-07-07:** `origin/main` is at `cf9315c` (the Noonday/Compline Psalm finding). This session's Daily Devotions build is recorded in the ledger, not yet committed to a patch as of this note's writing.
 
+### Fix phase — begun 2026-07-08, in progress, updated after each tranche per Josh's direction
+
+The audit-then-fix workflow's fix phase is now underway. Each tranche below is its own commit/patch, applied and pushed by Josh, verified against a fresh clone before handoff each time. `origin/main` is at `29b156a` as of this update (Advent tranche below is not yet pushed as of this note's writing — see git state note at the very end).
+
+**Non-DOL fixes (Evening Prayer, Compline, Noonday, Morning Prayer) — all pushed:**
+1. Evening Prayer Phos Hilaron typo ("though" -> "through," rite1).
+2. Compline's missing opening versicle ("Our help is in the Name of the Lord") added.
+3. Compline's confession and absolution replaced with its own BCP p.126-127 text (was silently reusing Morning/Evening's).
+4. Compline's Collect fixed: was showing the calendar day's Collect (never BCP-authorized there) — now uses Compline's own 5 collects (4 general + Saturday-specific) plus the 2 optional "may be added" night-prayers, all newly added. Also added the missing pre-Collect versicle ("Lord, hear our prayer").
+5. Noonday's Collect: implemented Josh's settled decision (toggle between Noonday's own 4 collects and the Day's Collect, neither silently chosen). Same missing "Lord, hear our prayer" versicle added here too (renamed to a shared component since it's identical text at both offices).
+6. Fabricated Invitatory Psalm Lent rule removed (no BCP basis) — replaced with a genuine Venite/Jubilate rotation. Fixed the related Evening Prayer structural defect: Phos Hilaron and the Invitatory Psalm are two of three BCP-authorized alternatives, not both-every-day — new toggle picks one.
+7. Great Litany's missing ~75% restored (was cutting off after the first petition-response) — transcribed from BCP pp.148-153, verified character-for-character against the source PDF (whitespace-normalized diff), not just by eye.
+
+Housekeeping: added `.gitignore` (previously existed only locally, uncommitted, and self-referentially excluded itself from git — fixed both problems) with a `*.patch` entry so applied patch files stop accumulating in the repo root.
+
+**DOL fixes (season files) — in progress, one season at a time:**
+
+- **Christmas — 9 of 12 entries fixed.** The Year One/Year Two swap found in the 2026-07-06 audit was confirmed real (cross-checked against BCP's actual Year One/Year Two tables, pp.940-941) and corrected: for each reading type, swapped the *value* between the year1-keyed and year2-keyed fields, leaving field names untouched. Confirmed in the process that the app's MP/EP-by-year field-naming convention was already correct all along (it implements BCP p.933's own suggested rule) — almost mis-flagged this as a bug before checking source. **Not fixed:** the 3 Holy Days (St. Stephen, St. John, Holy Innocents) — separate, larger defect (wrong lectionary track entirely), deferred to the Holy Days fix below.
+
+- **Advent — 13 of 26 entries fixed** (this tranche). Nov 29's Year One Gospel verse-range restored; Dec 5's two incomplete psalm citations completed per the bracket policy; Dec 13-19 (all 7 days) had Year One readings replaced with correct content — confirmed the corruption pattern was a one-day-forward content shift compounding across the week (each wrong value matched the *following* day's true reading), not simply missing data; Dec 17 and Dec 19 psalm citations corrected to the bracketed full-Psalter option; Dec 20/22/23/24 (both years wrong, plus a confirmed cross-day duplication bug matching the same pattern found repeatedly in the Collects audit) fully replaced, both years, all fields. Every corrected value cross-checked against the BCP's own Year One (pp.936-938) and Year Two (pp.936-938) Daily Office Lectionary tables. **Not fixed, on purpose:** St. Andrew and St. Thomas (Holy Days — same deferred wrong-lectionary-track/4-reading-schema-gap defect as Christmas's 3 Holy Days), and Dec 20's `eve_*` fields (Eve of St. Thomas content, same reason).
+
+**Still fully unfixed, awaiting their turn:** Epiphany, Lent, Easter, Ordinary Time (Propers 1-29 across 3 files) — each audited and confirmed defective, none touched yet. The Holy Days lectionary-table fix (24 of 25 Holy Days pulling the wrong lectionary track, plus the 3-slot-vs-4-reading schema gap affecting every Holy Day across every season) is being deliberately deferred as its own batched fix rather than patched piecemeal per season, per Josh's own ruling when the gap was first found.
+
+**Git state, updated per tranche:** `origin/main` was at `972b09e` before the Christmas fix, `29b156a` after Christmas was pushed. This note is being updated as part of the Advent tranche, before that patch has been generated/pushed — check `git log` against the commit messages above (each fix's commit message names the exact defect and verification method) to see what's actually landed vs. what's recorded here.
+
 
