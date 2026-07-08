@@ -66,6 +66,15 @@
     "type": "Opening"
   },
   {
+    "id": "bcp-help-versicle-compline",
+    "title": "Our Help Is in the Name of the Lord (Compline)",
+    "text": {
+      "rite1": "Officiant  Our help is in the Name of the Lord;\nPeople  The maker of heaven and earth.",
+      "rite2": "Officiant  Our help is in the Name of the Lord;\nPeople  The maker of heaven and earth."
+    },
+    "type": "Versicle"
+  },
+  {
     "id": "bcp-invitatory",
     "title": "The Invitatory",
     "text": "Lord, open our lips.\nAnd our mouth shall proclaim your praise.",

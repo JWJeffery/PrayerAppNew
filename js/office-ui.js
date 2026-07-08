@@ -3918,6 +3918,7 @@ async function renderBcpOffice() {
             'bcp-mission-prayer-mp-c':        'A Prayer for Mission',
             'bcp-versicles-before-prayers-compline': 'Versicles',
             'bcp-opening-blessing-compline':  'Opening Blessing',
+            'bcp-help-versicle-compline':     'Our Help Is in the Name of the Lord',
             'bcp-nunc-dimittis':              'Nunc Dimittis',
             'bcp-benedictus':                 'The Benedictus',
             'bcp-magnificat':                 'The Magnificat',

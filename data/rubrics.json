@@ -92,6 +92,7 @@
     "officeName": "Compline",
     "sequence": [
       "bcp-opening-blessing-compline",
+      "bcp-help-versicle-compline",
       "bcp-confession-[rite]",
       "bcp-absolution-slot",
       "bcp-invitatory-full",
