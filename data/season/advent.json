@@ -433,13 +433,15 @@
     "antiphon_ep": "Our King and Savior now draws near: Come let us adore him.",
     "psalms_mp": "Psalm 23, 121",
     "psalms_ep": "Psalm 27",
-    "reading_ot_mp_year1": "Habakkuk 2:1-4",
-    "reading_epistle_mp_year1": "Hebrews 10:35-11:1",
-    "reading_gospel_ep_year1": "John 20:24-29",
-    "reading_ot_mp_year2": "Habakkuk 2:1-4",
-    "reading_epistle_ep_year2": "Hebrews 10:35-11:1",
-    "reading_gospel_mp_year2": "John 20:24-29",
-    "day_of_season": 23
+    "reading_ot_mp_year1": "Job 42:1-6",
+    "reading_epistle_mp_year1": "1 Peter 1:3-9",
+    "reading_gospel_ep_year1": "John 14:1-7",
+    "reading_ot_mp_year2": "Job 42:1-6",
+    "reading_epistle_ep_year2": "1 Peter 1:3-9",
+    "reading_gospel_mp_year2": "John 14:1-7",
+    "day_of_season": 23,
+    "reading_ot_ep_year1": "Isaiah 43:8-13",
+    "reading_ot_ep_year2": "Isaiah 43:8-13"
   },
   {
     "date": "2026-12-22",
