@@ -429,6 +429,69 @@
     "type": "Collect"
   },
   {
+    "id": "bcp-collect-compline-2",
+    "title": "Collect for Compline (Option 2)",
+    "text": {
+      "rite1": "Be present, O merciful God, and protect us through the hours of this night, so that we who are wearied by the changes and chances of this life may rest in your eternal changelessness; through Jesus Christ our Lord. Amen.",
+      "rite2": "Be present, O merciful God, and protect us through the hours of this night, so that we who are wearied by the changes and chances of this life may rest in your eternal changelessness; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-compline-3",
+    "title": "Collect for Compline (Option 3)",
+    "text": {
+      "rite1": "Look down, O Lord, from your heavenly throne, and illumine this night with your celestial brightness; that by night as by day your people may glorify your holy Name; through Jesus Christ our Lord. Amen.",
+      "rite2": "Look down, O Lord, from your heavenly throne, and illumine this night with your celestial brightness; that by night as by day your people may glorify your holy Name; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-compline-4",
+    "title": "Collect for Compline (Option 4)",
+    "text": {
+      "rite1": "Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon us always; through Jesus Christ our Lord. Amen.",
+      "rite2": "Visit this place, O Lord, and drive far from it all snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be upon us always; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-compline-saturday",
+    "title": "A Collect for Saturdays (Compline)",
+    "text": {
+      "rite1": "We give you thanks, O God, for revealing your Son Jesus Christ to us by the light of his resurrection: Grant that as we sing your glory at the close of this day, our joy may abound in the morning as we celebrate the Paschal mystery; through Jesus Christ our Lord. Amen.",
+      "rite2": "We give you thanks, O God, for revealing your Son Jesus Christ to us by the light of his resurrection: Grant that as we sing your glory at the close of this day, our joy may abound in the morning as we celebrate the Paschal mystery; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-compline-addl-1",
+    "title": "A Prayer for the Night (Compline, optional)",
+    "text": {
+      "rite1": "Keep watch, dear Lord, with those who work, or watch, or weep this night, and give your angels charge over those who sleep. Tend the sick, Lord Christ; give rest to the weary, bless the dying, soothe the suffering, pity the afflicted, shield the joyous; and all for your love's sake. Amen.",
+      "rite2": "Keep watch, dear Lord, with those who work, or watch, or weep this night, and give your angels charge over those who sleep. Tend the sick, Lord Christ; give rest to the weary, bless the dying, soothe the suffering, pity the afflicted, shield the joyous; and all for your love's sake. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-compline-addl-2",
+    "title": "A Prayer for the Night (Compline, optional, alternate)",
+    "text": {
+      "rite1": "O God, your unfailing providence sustains the world we live in and the life we live: Watch over those, both night and day, who work while others sleep, and grant that we may never forget that our common life depends upon each other's toil; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, your unfailing providence sustains the world we live in and the life we live: Watch over those, both night and day, who work while others sleep, and grant that we may never forget that our common life depends upon each other's toil; through Jesus Christ our Lord. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-versicle-hear-our-prayer-compline",
+    "title": "Lord, Hear Our Prayer (Compline)",
+    "text": {
+      "rite1": "Officiant  Lord, hear our prayer;\nPeople  And let our cry come to you.",
+      "rite2": "Officiant  Lord, hear our prayer;\nPeople  And let our cry come to you."
+    },
+    "type": "Versicle"
+  },
+  {
     "id": "bcp-general-thanksgiving",
     "title": "General Thanksgiving",
     "text": {

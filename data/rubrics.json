@@ -101,7 +101,8 @@
       "bcp-versicles-before-prayers-compline",
       "comm-kyrie",
       "comm-lords-prayer",
-      "VARIABLE_COLLECT",
+      "bcp-versicle-hear-our-prayer-compline",
+      "VARIABLE_COMPLINE_COLLECT",
       "bcp-nunc-dimittis",
       "bcp-closing"
     ],

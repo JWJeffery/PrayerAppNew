@@ -3577,6 +3577,46 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // VARIABLE_COMPLINE_COLLECT — Compline's own proper collects (BCP p.132-133),
+        // never the calendar day's Collect. Saturdays get their own collect; other
+        // days rotate among the 4 general options (or stay on Option 1 if the
+        // rotation toggle is off, matching the Mission Prayer convention).
+        if (item === 'VARIABLE_COMPLINE_COLLECT') {
+            officeHtml += `<span class="rubric-text">The Collect</span>`;
+            const isSaturday = currentDate.getDay() === 6;
+            let cId;
+            if (isSaturday) {
+                cId = 'bcp-collect-compline-saturday';
+            } else {
+                const complineCollectIds = ['bcp-collect-compline-1', 'bcp-collect-compline-2', 'bcp-collect-compline-3', 'bcp-collect-compline-4'];
+                const rotate = document.getElementById('toggle-rotate-compline-collect')?.checked ?? true;
+                const idx = rotate ? getDailyRotationIndex(currentDate, complineCollectIds.length) : 0;
+                cId = complineCollectIds[idx];
+            }
+            const comp = appData.components.find(c => c.id === cId);
+            const t = comp ? (resolveText(comp, rite) || 'No collect appointed') : 'No collect appointed';
+            officeHtml += `<span class="component-text">${t}</span>`;
+
+            if (document.getElementById('toggle-compline-additional-prayer')?.checked) {
+                const addlIds = ['bcp-collect-compline-addl-1', 'bcp-collect-compline-addl-2'];
+                const addlIdx = getDailyRotationIndex(currentDate, addlIds.length);
+                const addlComp = appData.components.find(c => c.id === addlIds[addlIdx]);
+                if (addlComp) {
+                    const addlText = resolveText(addlComp, rite) || addlComp.text || '';
+                    officeHtml += `<span class="component-text">${addlText}</span>`;
+                }
+            }
+            officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+
+            if (document.getElementById('toggle-examen')?.checked) {
+                const ex = appData.components.find(c => c.id === 'ecu-examen');
+                if (ex) {
+                    officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(ex.text)}</div>`;
+                }
+            }
+            continue;
+        }
+
         // VARIABLE_COLLECT — principal daily collect with manual ID mappings
         if (item === 'VARIABLE_COLLECT') {
             officeHtml += `<span class="rubric-text">The Collect</span>`;
@@ -3589,13 +3629,7 @@ async function renderBcpOffice() {
             officeHtml += `<span class="component-text">${t}</span>`;
             officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
 
-            if (isCompline && document.getElementById('toggle-examen')?.checked) {
-                const ex = appData.components.find(c => c.id === 'ecu-examen');
-                if (ex) {
-                    officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(ex.text)}</div>`;
-                }
-            }
-            if (!isCompline && !isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
+            if (!isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
                 const kp = appData.components.find(c => c.id === 'ecu-kyrie-pantocrator');
                 if (kp) officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kp.text}</span>`;
             }
@@ -3915,6 +3949,13 @@ async function renderBcpOffice() {
             'bcp-collect-grace':              'A Collect for Grace',
             'bcp-collect-peace':              'A Collect for Peace',
             'bcp-collect-compline-1':         'A Collect for the Evening',
+            'bcp-collect-compline-2':         'A Collect for the Evening',
+            'bcp-collect-compline-3':         'A Collect for the Evening',
+            'bcp-collect-compline-4':         'A Collect for the Evening',
+            'bcp-collect-compline-saturday':  'A Collect for Saturdays',
+            'bcp-collect-compline-addl-1':    'A Prayer for the Night',
+            'bcp-collect-compline-addl-2':    'A Prayer for the Night',
+            'bcp-versicle-hear-our-prayer-compline': 'Lord, Hear Our Prayer',
             'bcp-mission-prayer-mp-a':        'A Prayer for Mission',
             'bcp-mission-prayer-mp-b':        'A Prayer for Mission',
             'bcp-mission-prayer-mp-c':        'A Prayer for Mission',
