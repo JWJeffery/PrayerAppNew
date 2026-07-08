@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.log
+web-release/
+web-release.zip
+
+# Universal Office source-intake workspaces
+.external/
+
+# Python transient files
+__pycache__/
+*.pyc
+
+GBON/
+*.patch
+*.patch
