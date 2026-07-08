@@ -292,6 +292,8 @@ Traced every devotion-sequence item through the render loop by hand before consi
 
 The rest of this section (below) is the historical log of tranches completed — kept for detail and provenance, not something that needs re-doing.
 
+- **Evening Prayer's Collect for Peace — fixed 2026-07-08.** Josh asked specifically for items reused across more than one office as the next low-hanging fruit. `bcp-collect-peace` (used only by Evening Prayer's weekday-collect fallback, confirmed by grep — Morning never references it) held Morning Prayer's actual Collect for Peace verbatim, not Evening's own, textually distinct one. Replaced with Evening's real text, verified against BCP p.69 (Rite I) and p.123 (Rite II). Morning's real Collect for Peace, which existed nowhere else in the data, was preserved as a new component (`bcp-collect-peace-morning`) rather than lost — not currently wired into any office, since Morning only offers Grace today, but ready whenever the larger anthology decision below gets made. **Not fixed:** the anthology-vs-single-path decision itself (Morning has 7 BCP-authorized second-collect options, Evening has 8; the app silently shows only one each, every day) — that's Josh's call, same category as the Noonday/Compline toggle questions, not something to decide unilaterally.
+
 **Non-DOL fixes (Evening Prayer, Compline, Noonday, Morning Prayer) — all pushed:**
 1. Evening Prayer Phos Hilaron typo ("though" -> "through," rite1).
 2. Compline's missing opening versicle ("Our help is in the Name of the Lord") added.

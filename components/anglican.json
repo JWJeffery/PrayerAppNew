@@ -414,6 +414,15 @@
     "id": "bcp-collect-peace",
     "title": "A Collect for Peace (Weekday, EP)",
     "text": {
+      "rite1": "O God, from whom all holy desires, all good counsels, and all just works do proceed: Give unto thy servants that peace which the world cannot give, that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of all enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. Amen.",
+      "rite2": "Most holy God, the source of all good desires, all right judgments, and all just works: Give to us, your servants, that peace which the world cannot give, so that our minds may be fixed on the doing of your will, and that we, being delivered from the fear of all enemies, may live in peace and quietness; through the mercies of Christ Jesus our Savior. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-peace-morning",
+    "title": "A Collect for Peace (Weekday, MP) -- not yet wired into any office",
+    "text": {
       "rite1": "O God, the author of peace and lover of concord, to know thee is eternal life and to serve thee is perfect freedom: Defend us, thy humble servants, in all assaults of our enemies; that we, surely trusting in thy defense, may not fear the power of any adversaries; through the might of Jesus Christ our Lord. Amen.",
       "rite2": "O God, the author of peace and lover of concord, to know you is eternal life and to serve you is perfect freedom: Defend us, your humble servants, in all assaults of our enemies; that we, surely trusting in your defense, may not fear the power of any adversaries; through the might of Jesus Christ our Lord. Amen."
     },
