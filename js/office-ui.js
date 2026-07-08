@@ -3717,29 +3717,34 @@ async function renderBcpOffice() {
             officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${invText}</span>`;
 
             if (isMorning || isEvening) {
-                const isLent   = season === 'lent';
                 const isEaster = season === 'easter';
-                const isFriday = currentDate.getDay() === 5;
                 if (isEaster) {
                     const pasch = appData.components.find(c => c.id === 'bcp-pascha-nostrum');
                     if (pasch) {
                         const pt = resolveText(pasch, rite) || pasch.text || '';
                         officeHtml += `<span class="rubric-text">Christ Our Passover</span><span class="component-text">${pt}</span>`;
                     }
-                } else if (isLent && isFriday) {
-                    const ps95 = await getScriptureText('Psalm 95');
-                    officeHtml += `<span class="rubric-text">Psalm 95</span><div class="psalm-block">${formatPsalmAsPoetry(ps95)}</div>`;
-                } else if (isLent) {
-                    const jub = appData.components.find(c => c.id === 'bcp-jubilate');
-                    if (jub) {
-                        const jt = resolveText(jub, rite) || jub.text || '';
-                        officeHtml += `<span class="rubric-text">Jubilate</span><span class="component-text">${jt}</span>`;
-                    }
                 } else {
-                    const ven = appData.components.find(c => c.id === 'bcp-venite');
-                    if (ven) {
-                        const vt = resolveText(ven, rite) || ven.text || '';
-                        officeHtml += `<span class="rubric-text">Venite</span><span class="component-text">${vt}</span>`;
+                    // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
+                    // of the Invitatory Psalms, Venite or Jubilate" -- a genuinely
+                    // free daily choice with no seasonal restriction. (The former
+                    // Lent->Jubilate and Lent-Friday->Psalm-95 rules here had no
+                    // BCP basis and have been removed.) At Evening Prayer this is
+                    // one of three authorized alternatives alongside Phos Hilaron
+                    // (p.63/117), so it only renders here when the toggle below
+                    // selects it instead of Phos Hilaron; at Morning Prayer it's
+                    // the only variable part of the Invitatory, so it always shows.
+                    const showInvitatoryPsalm = isMorning || (document.getElementById('toggle-invitatory-psalm-at-evening')?.checked ?? false);
+                    if (showInvitatoryPsalm) {
+                        const inviteIds = ['bcp-venite', 'bcp-jubilate'];
+                        const rotate = document.getElementById('toggle-rotate-invitatory-psalm')?.checked ?? true;
+                        const idx = rotate ? getDailyRotationIndex(currentDate, inviteIds.length) : 0;
+                        const comp = appData.components.find(c => c.id === inviteIds[idx]);
+                        if (comp) {
+                            const t = resolveText(comp, rite) || comp.text || '';
+                            const label = inviteIds[idx] === 'bcp-jubilate' ? 'Jubilate' : 'Venite';
+                            officeHtml += `<span class="rubric-text">${label}</span><span class="component-text">${t}</span>`;
+                        }
                     }
                 }
             }
@@ -3956,6 +3961,14 @@ async function renderBcpOffice() {
                     console.warn('[renderOffice] bcp-litany: component not found');
                 }
             }
+            continue;
+        }
+
+        // bcp-phos-hilaron — one of three BCP-authorized alternatives at Evening
+        // Prayer (Phos Hilaron / "some other suitable hymn" / an Invitatory Psalm,
+        // p.63/117) -- skip it when the Invitatory Psalm toggle is showing the
+        // other alternative instead, so only one renders, never both.
+        if (item === 'bcp-phos-hilaron' && (document.getElementById('toggle-invitatory-psalm-at-evening')?.checked ?? false)) {
             continue;
         }
 
