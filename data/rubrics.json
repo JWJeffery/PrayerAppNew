@@ -77,7 +77,8 @@
       "VARIABLE_READING_OT",
       "comm-kyrie",
       "comm-lords-prayer",
-      "VARIABLE_COLLECT",
+      "bcp-versicle-hear-our-prayer",
+      "VARIABLE_NOONDAY_COLLECT",
       "bcp-closing"
     ],
     "devotionSequence": [
@@ -101,7 +102,7 @@
       "bcp-versicles-before-prayers-compline",
       "comm-kyrie",
       "comm-lords-prayer",
-      "bcp-versicle-hear-our-prayer-compline",
+      "bcp-versicle-hear-our-prayer",
       "VARIABLE_COMPLINE_COLLECT",
       "bcp-nunc-dimittis",
       "bcp-closing"

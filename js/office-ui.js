@@ -3577,6 +3577,32 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // VARIABLE_NOONDAY_COLLECT — Josh's settled decision (2026-07-07): BCP p.106
+        // explicitly authorizes EITHER one of Noonday's own 4 collects OR the Collect
+        // of the Day ("If desired, the Collect of the Day may be used") -- offer both
+        // via a toggle rather than silently picking one. Off by default: Noonday's
+        // own proper collects take priority, rotating daily, matching the BCP's own
+        // ordering (the Day's Collect is presented as the secondary "if desired" option).
+        if (item === 'VARIABLE_NOONDAY_COLLECT') {
+            officeHtml += `<span class="rubric-text">The Collect</span>`;
+            const useDayCollect = document.getElementById('toggle-noonday-day-collect')?.checked ?? false;
+            let cId;
+            if (useDayCollect) {
+                let rawId = dailyData.collect || 'collect-default-ferial';
+                cId = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
+                if (cId === 'bcp-collect-transfiguration') cId = 'bcp-collect-the-transfiguration-of-our-lord';
+            } else {
+                const noondayCollectIds = ['bcp-collect-noonday-1', 'bcp-collect-noonday-2', 'bcp-collect-noonday-3', 'bcp-collect-noonday-4'];
+                const idx = getDailyRotationIndex(currentDate, noondayCollectIds.length);
+                cId = noondayCollectIds[idx];
+            }
+            const comp = appData.components.find(c => c.id === cId);
+            const t = comp ? (resolveText(comp, rite) || 'No collect appointed') : 'No collect appointed';
+            officeHtml += `<span class="component-text">${t}</span>`;
+            officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+            continue;
+        }
+
         // VARIABLE_COMPLINE_COLLECT — Compline's own proper collects (BCP p.132-133),
         // never the calendar day's Collect. Saturdays get their own collect; other
         // days rotate among the 4 general options (or stay on Option 1 if the
@@ -3948,6 +3974,10 @@ async function renderBcpOffice() {
             'bcp-phos-hilaron':               'O Gracious Light',
             'bcp-collect-grace':              'A Collect for Grace',
             'bcp-collect-peace':              'A Collect for Peace',
+            'bcp-collect-noonday-1':          'A Collect for Noonday',
+            'bcp-collect-noonday-2':          'A Collect for Noonday',
+            'bcp-collect-noonday-3':          'A Collect for Noonday',
+            'bcp-collect-noonday-4':          'A Collect for Noonday',
             'bcp-collect-compline-1':         'A Collect for the Evening',
             'bcp-collect-compline-2':         'A Collect for the Evening',
             'bcp-collect-compline-3':         'A Collect for the Evening',
@@ -3955,7 +3985,7 @@ async function renderBcpOffice() {
             'bcp-collect-compline-saturday':  'A Collect for Saturdays',
             'bcp-collect-compline-addl-1':    'A Prayer for the Night',
             'bcp-collect-compline-addl-2':    'A Prayer for the Night',
-            'bcp-versicle-hear-our-prayer-compline': 'Lord, Hear Our Prayer',
+            'bcp-versicle-hear-our-prayer': 'Lord, Hear Our Prayer',
             'bcp-mission-prayer-mp-a':        'A Prayer for Mission',
             'bcp-mission-prayer-mp-b':        'A Prayer for Mission',
             'bcp-mission-prayer-mp-c':        'A Prayer for Mission',

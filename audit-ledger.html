@@ -282,13 +282,13 @@ const NOONDAY_STATUS = {
   "Psalm(s)": {status:'green', note:'FIXED 2026-07-07: js/office-ui.js now assigns Noonday its own fixed BCP-appointed psalms (Psalm 119:105-112, Psalm 121, Psalm 126, per p.103-104) instead of the DOL Evening Prayer psalm. Reuses the existing scripture-resolver pipeline, no new content authored. Prior defect: was pulling dailyData.psalms_ep unconditionally. See AUDIT_GOVERNANCE_LEDGER.md.'},
   "Kyrie (Lord have mercy)": {status:'green', note:'Verified 2026-07-07 against BCP1979.pdf p.131, both rites.'},
   "Lord's Prayer": {status:'green', note:'Shared component, already verified.'},
-  "Collect": {status:'red', note:'SETTLED 2026-07-07: Josh\'s decision is to offer both as a toggle -- the 4 proper Noonday collects (BCP p.106) AND the Collect of the Day, not one silently chosen. Confirmed defect, not an open question anymore: no such toggle exists in code (VARIABLE_COLLECT has no such branch, confirmed via office-ui.js). Deferred to the fix phase, per audit-then-fix.'},
+  "Collect": {status:'green', note:'FIXED 2026-07-08, implementing the 2026-07-07 settled decision: added the 4 proper Noonday collects (bcp-collect-noonday-1/2/3/4, BCP p.106, wording verified against book_of_common_prayer.pdf) to components/anglican.json. New VARIABLE_NOONDAY_COLLECT handler in office-ui.js, toggled by a new "Use the Day\\'s Collect at Noonday" checkbox (unchecked by default -- Noonday\\'s own collects rotate daily by default, matching BCP\\'s own ordering where the Day\\'s Collect is the secondary "if desired" option, p.106). Checking the toggle uses the same Collect-of-the-Day lookup Morning/Evening Prayer already use. Both options now genuinely available, neither silently chosen.'},
   "Free Intercessions (optional)": {status:'green', note:'Not applicable to text-accuracy audit -- no fixed text.'},
   "Let Us Bless the Lord — concluding sentence": {status:'red', note:'Shared component -- same confirmed gap as Morning/Evening Prayer: only 1 of 3 authorized closing options exists. Not yet decided.'},
   "Gloria Patri": {status:'green', note:'Shared component (comm-gloria-patri) -- verified 2026-07-07 against BCP1979.pdf, both rites match exactly (rite1 traditional "world without end" form, rite2 contemporary "for ever" form).'},
   "Silence / Lesson": {status:'red', note:'SETTLED 2026-07-07: Josh\'s decision is to offer both as a toggle -- the 3 suggested fixed texts (Romans 5:5 / 2 Corinthians 5:17-18 / Malachi 1:11, BCP p.104) AND the day\'s Daily Office Lectionary reading, not one silently chosen. Confirmed defect, not an open question anymore: no such toggle exists in code (VARIABLE_READING_OT has no such branch). Deferred to the fix phase, per audit-then-fix.'},
   "Response (Thanks be to God)": {status:'green', note:'Standard congregational response bundled into the reading rubric, not a separate text to audit.'},
-  "Versicle & Response": {status:'red', note:'CONFIRMED MISSING 2026-07-07: "Officiant: Lord, hear our prayer; People: And let our cry come to you" (BCP p.105-106) does not exist anywhere in the app -- confirmed absent via grep across all of components/*.json. Not yet fixed.'}
+  "Versicle & Response": {status:'green', note:'FIXED 2026-07-08: "Officiant: Lord, hear our prayer; People: And let our cry come to you" (BCP p.105-106, wording verified against book_of_common_prayer.pdf) added as bcp-versicle-hear-our-prayer in components/anglican.json, wired into noonday-office\\'s sequence in data/rubrics.json right before the Collect. This is the same versicle used at Compline (p.132, identical wording) -- the component originally added for Compline (bcp-versicle-hear-our-prayer-compline) was renamed to drop the office-specific suffix and is now shared between both, matching the app\\'s existing convention for genuinely cross-office components (comm-kyrie, comm-lords-prayer).'}
 };
 
 const COMPLINE_STATUS = {
@@ -454,7 +454,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v50-2026-07-08-compline-collects-and-hear-our-prayer-versicle-fixed';
+const SEED_VERSION = 'v51-2026-07-08-noonday-collect-toggle-and-hear-our-prayer-versicle-fixed';
 
 async function checkSeedVersion(){
   let storedValue = null;
