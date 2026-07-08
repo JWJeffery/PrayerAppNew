@@ -117,7 +117,8 @@
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "",
     "reading_ot_ep_year1": "Daniel 7:9-10, 13-14",
-    "reading_ot_ep_year2": "Daniel 7:9-10, 13-14"
+    "reading_ot_ep_year2": "Daniel 7:9-10, 13-14",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-08-07",
@@ -281,7 +282,8 @@
     "reading_gospel_mp_year2": "Acts 1:6-14",
     "day_of_season": 85,
     "reading_ot_ep_year1": "Jeremiah 31:1-14",
-    "reading_ot_ep_year2": "Jeremiah 31:1-14"
+    "reading_ot_ep_year2": "Jeremiah 31:1-14",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-08-16",
@@ -445,7 +447,8 @@
     "reading_gospel_mp_year2": "1 Peter 5:1-11",
     "day_of_season": 94,
     "reading_ot_ep_year1": "Isaiah 66:1-2, 18-23",
-    "reading_ot_ep_year2": "Isaiah 66:1-2, 18-23"
+    "reading_ot_ep_year2": "Isaiah 66:1-2, 18-23",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-08-25",
@@ -835,7 +838,8 @@
     "reading_gospel_mp_year2": "1 Peter 3:17-22",
     "day_of_season": 115,
     "reading_ot_ep_year1": "Genesis 3:1-15",
-    "reading_ot_ep_year2": "Genesis 3:1-15"
+    "reading_ot_ep_year2": "Genesis 3:1-15",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-09-15",
@@ -963,7 +967,8 @@
     "reading_gospel_mp_year2": "Matthew 13:44-52",
     "day_of_season": 122,
     "reading_ot_ep_year1": "Job 28:12-28",
-    "reading_ot_ep_year2": "Job 28:12-28"
+    "reading_ot_ep_year2": "Job 28:12-28",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-09-22",
@@ -1109,7 +1114,8 @@
     "reading_gospel_mp_year2": "Mark 13:21-27",
     "day_of_season": 130,
     "reading_ot_ep_year1": "Daniel 12:1-3",
-    "reading_ot_ep_year2": "Daniel 12:1-3"
+    "reading_ot_ep_year2": "Daniel 12:1-3",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-09-30",

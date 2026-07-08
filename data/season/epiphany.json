@@ -14,7 +14,8 @@
     "reading_gospel_ep_year1": "Matthew 12:14-21",
     "reading_ot_mp_year2": "Isaiah 49:1-7",
     "reading_epistle_ep_year2": "Revelation 21:22-27",
-    "reading_gospel_mp_year2": "Matthew 12:14-21"
+    "reading_gospel_mp_year2": "Matthew 12:14-21",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-01-07",
@@ -225,7 +226,8 @@
     "reading_epistle_ep_year2": "Acts 10:34-44",
     "reading_gospel_mp_year2": "John 21:15-22",
     "reading_ot_ep_year1": "Ezekiel 34:11-16",
-    "reading_ot_ep_year2": "Ezekiel 34:11-16"
+    "reading_ot_ep_year2": "Ezekiel 34:11-16",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-01-19",
@@ -351,7 +353,8 @@
     "reading_epistle_ep_year2": "Philippians 3:4b-11",
     "reading_gospel_mp_year2": "Acts 9:1-22",
     "reading_ot_ep_year1": "Ecclesiasticus 39:1-10",
-    "reading_ot_ep_year2": "Ecclesiasticus 39:1-10"
+    "reading_ot_ep_year2": "Ecclesiasticus 39:1-10",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-01-26",
@@ -494,7 +497,8 @@
     "reading_epistle_ep_year2": "John 8:31-36",
     "reading_gospel_mp_year2": "1 John 3:1-8",
     "reading_ot_ep_year1": "Haggai 2:1-9",
-    "reading_ot_ep_year2": "Haggai 2:1-9"
+    "reading_ot_ep_year2": "Haggai 2:1-9",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-02-03",
@@ -725,8 +729,8 @@
     "collect": "collect-last-epiphany",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
-    "psalms_mp": "Psalm 106:1-18",
-    "psalms_ep": "Psalm 106:19-48",
+    "psalms_mp": "Psalm 25",
+    "psalms_ep": "Psalm 9, 15",
     "reading_ot_mp_year1": "Deuteronomy 6:10-15",
     "reading_epistle_mp_year1": "Hebrews 1:1-14",
     "reading_gospel_ep_year1": "John 1:1-18",
@@ -742,8 +746,8 @@
     "collect": "collect-last-epiphany",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
-    "psalms_mp": "Psalm 121, 122, 123",
-    "psalms_ep": "Psalm 124, 125, 126",
+    "psalms_mp": "Psalm 26, 28",
+    "psalms_ep": "Psalm 36, 39",
     "reading_ot_mp_year1": "Deuteronomy 6:16-25",
     "reading_epistle_mp_year1": "Hebrews 2:1-10",
     "reading_gospel_ep_year1": "John 1:19-28",

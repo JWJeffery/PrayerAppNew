@@ -569,7 +569,8 @@
     "reading_gospel_mp_year2": "Ephesians 3:14-21",
     "day_of_season": 30,
     "reading_ot_ep_year1": "2 Chronicles 6:12-17",
-    "reading_ot_ep_year2": "2 Chronicles 6:12-17"
+    "reading_ot_ep_year2": "2 Chronicles 6:12-17",
+    "precedence": "major-feast"
   },
   {
     "date": "March 20, 2026",
@@ -690,7 +691,8 @@
     "reading_gospel_mp_year2": "John 1:9-14",
     "day_of_season": 36,
     "reading_ot_ep_year1": "Wisdom 9:1-12",
-    "reading_ot_ep_year2": "Wisdom 9:1-12"
+    "reading_ot_ep_year2": "Wisdom 9:1-12",
+    "precedence": "major-feast"
   },
   {
     "date": "March 26, 2026",

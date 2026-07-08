@@ -3527,16 +3527,22 @@ async function renderBcpOffice() {
         // VARIABLE_CANTICLE1 — canticle after the Old Testament Reading
         // Per BCP1979 "Suggested Canticles at Morning/Evening Prayer" (pp.144-145),
         // selection depends on day of week, with seasonal overrides in Advent/Lent/Easter.
-        // NOTE: the table's separate "Feasts of our Lord and other Major Feasts" override
-        // row is NOT yet implemented here — this app has no Major Feast / feast-rank flag
-        // in the Anglican calendar data to detect that case. Flagged for Josh; until
-        // resolved, Major Feast days will show the ordinary weekday canticle instead of
-        // the Major-Feast override the BCP calls for.
+        // FIXED 2026-07-08 (Josh's decision): the table's separate "Feasts of our Lord
+        // and other Major Feasts" override row is now implemented, using the new
+        // `precedence` field (added to Principal Feasts and Holy Days only, not every
+        // calendar entry) rather than day-of-week/season -- on these days the table
+        // gives one fixed pair of canticles regardless of season or weekday: Benedictus
+        // Dominus/Te Deum at Morning Prayer, Magnificat/Nunc Dimittis at Evening Prayer.
         if (item === 'VARIABLE_CANTICLE1') {
             let canticleId = null;
             let canticleLabel = '';
+            const isMajorFeast = dailyData?.precedence === 'major-feast';
             const dow = currentDate.getDay(); // 0=Sun, 1=Mon, ... 6=Sat
-            if (isMorning) {
+            if (isMajorFeast && isMorning) {
+                canticleId = 'bcp-benedictus'; canticleLabel = 'Benedictus Dominus Deus';
+            } else if (isMajorFeast && isEvening) {
+                canticleId = 'bcp-magnificat'; canticleLabel = 'The Magnificat';
+            } else if (isMorning) {
                 if (dow === 0) { // Sunday
                     if (season === 'advent')      { canticleId = 'bcp-surge-illuminare';   canticleLabel = 'The Third Song of Isaiah'; }
                     else if (season === 'lent')    { canticleId = 'bcp-kyrie-pantokrator';  canticleLabel = 'A Song of Penitence'; }
@@ -3580,12 +3586,17 @@ async function renderBcpOffice() {
 
         // VARIABLE_CANTICLE2 — canticle after the New Testament Reading
         // Per BCP1979 "Suggested Canticles at Morning/Evening Prayer" (pp.144-145).
-        // Same Major Feast caveat as VARIABLE_CANTICLE1 above applies here.
+        // Same Major Feast handling as VARIABLE_CANTICLE1 above.
         if (item === 'VARIABLE_CANTICLE2') {
             let canticleId = null;
             let canticleLabel = '';
+            const isMajorFeast = dailyData?.precedence === 'major-feast';
             const dow = currentDate.getDay();
-            if (isMorning) {
+            if (isMajorFeast && isMorning) {
+                canticleId = 'bcp-te-deum'; canticleLabel = 'Te Deum Laudamus';
+            } else if (isMajorFeast && isEvening) {
+                canticleId = 'bcp-nunc-dimittis'; canticleLabel = 'Nunc Dimittis';
+            } else if (isMorning) {
                 if (dow === 0) { // Sunday
                     if (season === 'advent' || season === 'lent') { canticleId = 'bcp-benedictus'; canticleLabel = 'Benedictus Dominus Deus'; }
                     else                                            { canticleId = 'bcp-te-deum';    canticleLabel = 'Te Deum Laudamus'; }

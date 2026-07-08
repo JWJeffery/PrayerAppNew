@@ -413,7 +413,8 @@
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "",
     "reading_ot_ep_year1": "Isaiah 52:7-10",
-    "reading_ot_ep_year2": "Isaiah 52:7-10"
+    "reading_ot_ep_year2": "Isaiah 52:7-10",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-10-19",
@@ -530,7 +531,8 @@
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "",
     "reading_ot_ep_year1": "Isaiah 65:17-25",
-    "reading_ot_ep_year2": "Isaiah 65:17-25"
+    "reading_ot_ep_year2": "Isaiah 65:17-25",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-10-24",
@@ -647,7 +649,8 @@
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "",
     "reading_ot_ep_year1": "Isaiah 4:2-6",
-    "reading_ot_ep_year2": "Isaiah 4:2-6"
+    "reading_ot_ep_year2": "Isaiah 4:2-6",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-10-29",
@@ -741,7 +744,8 @@
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "",
     "reading_ot_ep_year1": "Wisdom 5:1-5, 14-16",
-    "reading_ot_ep_year2": "Wisdom 5:1-5, 14-16"
+    "reading_ot_ep_year2": "Wisdom 5:1-5, 14-16",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-11-02",

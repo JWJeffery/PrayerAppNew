@@ -35,7 +35,8 @@
     "reading_ot_mp_year2": "Isaiah 49:1-6",
     "reading_epistle_ep_year2": "1 Corinthians 4:1-16",
     "reading_gospel_mp_year2": "John 1:35-42",
-    "day_of_season": 2
+    "day_of_season": 2,
+    "precedence": "major-feast"
   },
   {
     "date": "2026-12-01",
@@ -441,7 +442,8 @@
     "reading_gospel_mp_year2": "John 14:1-7",
     "day_of_season": 23,
     "reading_ot_ep_year1": "Isaiah 43:8-13",
-    "reading_ot_ep_year2": "Isaiah 43:8-13"
+    "reading_ot_ep_year2": "Isaiah 43:8-13",
+    "precedence": "major-feast"
   },
   {
     "date": "2026-12-22",

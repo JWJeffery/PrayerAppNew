@@ -14,7 +14,8 @@
     "reading_gospel_ep_year1": "John 3:31-36",
     "reading_ot_mp_year2": "Micah 4:1-5; 5:2-4",
     "reading_epistle_ep_year2": "1 John 4:7-16",
-    "reading_gospel_mp_year2": "John 3:31-36"
+    "reading_gospel_mp_year2": "John 3:31-36",
+    "precedence": "major-feast"
   },
   {
     "date": "December 26, 2025",
@@ -33,7 +34,8 @@
     "reading_epistle_mp_year2": "Acts 6:1-7",
     "reading_gospel_ep_year2": "Acts 7:59-8:8",
     "reading_ot_ep_year1": "Wisdom 4:7-15",
-    "reading_ot_ep_year2": "Wisdom 4:7-15"
+    "reading_ot_ep_year2": "Wisdom 4:7-15",
+    "precedence": "major-feast"
   },
   {
     "date": "December 27, 2025",
@@ -52,7 +54,8 @@
     "reading_epistle_mp_year2": "John 13:20-35",
     "reading_gospel_ep_year2": "1 John 5:1-12",
     "reading_ot_ep_year1": "Isaiah 44:1-8",
-    "reading_ot_ep_year2": "Isaiah 44:1-8"
+    "reading_ot_ep_year2": "Isaiah 44:1-8",
+    "precedence": "major-feast"
   },
   {
     "date": "December 28, 2025",
@@ -71,7 +74,8 @@
     "reading_epistle_mp_year2": "Matthew 18:1-14",
     "reading_gospel_ep_year2": "Mark 10:13-16",
     "reading_ot_ep_year1": "Isaiah 54:1-13",
-    "reading_ot_ep_year2": "Isaiah 54:1-13"
+    "reading_ot_ep_year2": "Isaiah 54:1-13",
+    "precedence": "major-feast"
   },
   {
     "date": "December 29, 2025",
@@ -144,7 +148,8 @@
     "reading_gospel_ep_year1": "John 16:23b-30",
     "reading_ot_mp_year2": "Isaiah 62:1-5,10-12",
     "reading_epistle_ep_year2": "Revelation 19:11-16",
-    "reading_gospel_mp_year2": "Matthew 1:18-25"
+    "reading_gospel_mp_year2": "Matthew 1:18-25",
+    "precedence": "major-feast"
   },
   {
     "date": "January 2, 2026",
