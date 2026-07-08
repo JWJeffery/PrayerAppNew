@@ -3470,7 +3470,43 @@ async function renderBcpOffice() {
                 if (pbr) officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbr.text}</span>`;
             }
             let reading = '', title = '';
-            if (item === 'VARIABLE_READING_OT')      { reading = isMorning ? morningOT      : eveningOT;      title = 'The Old Testament Lesson'; }
+            if (item === 'VARIABLE_READING_OT') {
+                // Noonday (BCP p.105, 3 options) and Compline (BCP p.130, 4 options) each
+                // offer their own suggested Short Lesson texts as an alternative to "some
+                // other suitable passage of Scripture" -- previously the app silently always
+                // used the day's Daily Office Lectionary reading (the "some other suitable
+                // passage" branch), never the BCP's own suggested texts. Settled 2026-07-07:
+                // offer both via a toggle. Default is the BCP's own suggested texts,
+                // rotating daily, matching the same reasoning as Noonday's Collect toggle
+                // (the office's own proper texts take priority over the borrowed-from-DOL
+                // default); unchecking uses the day's DOL reading as before. Labeled "A
+                // Reading" rather than "The Old Testament Lesson" here since several of the
+                // BCP's own suggested texts are New Testament (Matthew, Hebrews, 1 Peter).
+                if (isNoonday) {
+                    title = 'A Reading';
+                    const useDOL = document.getElementById('toggle-noonday-lesson-dol')?.checked ?? false;
+                    if (useDOL) {
+                        reading = eveningOT;
+                        title = 'The Old Testament Lesson';
+                    } else {
+                        const noondayLessons = ['Romans 5:5', '2 Corinthians 5:17-18', 'Malachi 1:11'];
+                        reading = noondayLessons[getDailyRotationIndex(currentDate, noondayLessons.length)];
+                    }
+                } else if (isCompline) {
+                    title = 'A Reading';
+                    const useDOL = document.getElementById('toggle-compline-lesson-dol')?.checked ?? false;
+                    if (useDOL) {
+                        reading = eveningOT;
+                        title = 'The Old Testament Lesson';
+                    } else {
+                        const complineLessons = ['Jeremiah 14:9, 22', 'Matthew 11:28-30', 'Hebrews 13:20-21', '1 Peter 5:8-9a'];
+                        reading = complineLessons[getDailyRotationIndex(currentDate, complineLessons.length)];
+                    }
+                } else {
+                    reading = isMorning ? morningOT : eveningOT;
+                    title = 'The Old Testament Lesson';
+                }
+            }
             if (item === 'VARIABLE_READING_EPISTLE')  { reading = isMorning ? morningEpistle : eveningEpistle; title = 'The Epistle'; }
             if (item === 'VARIABLE_READING_GOSPEL')   { reading = isMorning ? morningGospel  : eveningGospel;  title = 'The Holy Gospel'; }
             if (reading) {
