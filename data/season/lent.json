@@ -856,12 +856,12 @@
     "psalms_mp": "Psalm 95, Psalm 22",
     "psalms_ep": "Psalm 40:1-14, Psalm 54",
     "reading_ot_mp_year1": "Wisdom 1:16-2:1, 12-22",
-    "reading_epistle_mp_year1": "1 Peter 1:10-20",
-    "reading_gospel_ep_year1": "John 19:38-42",
     "reading_ot_mp_year2": "Lamentations 3:1-9, 19-33",
-    "reading_epistle_ep_year2": "1 Peter 1:10-20",
-    "reading_gospel_mp_year2": "John 13:36-38",
-    "day_of_season": 45
+    "day_of_season": 45,
+    "reading_epistle_mp": "1 Peter 1:10-20",
+    "reading_gospel_mp": "John 13:36-38",
+    "reading_gospel_ep": "John 19:38-42",
+    "reading_ot_ep_alt_year1": "Genesis 22:1-14"
   },
   {
     "date": "April 4, 2026",
@@ -875,11 +875,9 @@
     "psalms_mp": "Psalm 95, Psalm 88",
     "psalms_ep": "Psalm 27",
     "reading_ot_mp_year1": "Job 19:21-27a",
-    "reading_epistle_mp_year1": "Hebrews 4:1-16",
-    "reading_gospel_ep_year1": "Romans 8:1-11",
     "reading_ot_mp_year2": "Lamentations 3:37-58",
-    "reading_epistle_ep_year2": "Romans 8:1-11",
-    "reading_gospel_mp_year2": "Hebrews 4:1-16",
-    "day_of_season": 46
+    "day_of_season": 46,
+    "reading_epistle_mp": "Hebrews 4:1-16",
+    "reading_epistle_ep": "Romans 8:1-11"
   }
 ]

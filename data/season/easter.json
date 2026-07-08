@@ -10,12 +10,12 @@
     "psalms_mp": "Psalm 148, Psalm 149, Psalm 150",
     "psalms_ep": "Psalm 113, Psalm 114, Psalm 118",
     "reading_ot_mp_year1": "Exodus 12:1-14",
-    "reading_epistle_mp_year1": "",
-    "reading_gospel_ep_year1": "Luke 24:13-35",
     "reading_ot_mp_year2": "Exodus 12:1-14",
-    "reading_epistle_ep_year2": "",
-    "reading_gospel_mp_year2": "John 1:1-18",
-    "day_of_season": 1
+    "day_of_season": 1,
+    "reading_gospel_mp": "John 1:1-18",
+    "reading_ot_ep": "Isaiah 51:9-11",
+    "reading_gospel_ep": "Luke 24:13-35",
+    "reading_gospel_ep_alt": "John 20:19-23"
   },
   {
     "date": "2026-04-06",

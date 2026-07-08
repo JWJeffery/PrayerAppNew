@@ -3310,16 +3310,22 @@ async function renderBcpOffice() {
     }
 
     // ── Reading chains ────────────────────────────────────────────────────────
+    // The fallback chain checks, in order: this year's field, the other year's
+    // field, then a non-year "mp"/"ep" field (added 2026-07-08 for Easter Day,
+    // Good Friday, and Holy Saturday -- these three days have a genuine AM/PM
+    // structure in the BCP, not a Year One/Two structure, so their Epistle/
+    // Gospel content is the same regardless of year and belongs in these plain
+    // fields instead), then the fully generic single-reading field.
     const otherYear = litYear === 'year1' ? 'year2' : 'year1';
-    let morningOT      = dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot']      || '';
-    let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]  || dailyData[`reading_epistle_mp_${otherYear}`]  || dailyData['reading_epistle']  || '';
+    let morningOT      = dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot_mp']      || dailyData['reading_ot']      || '';
+    let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]  || dailyData[`reading_epistle_mp_${otherYear}`]  || dailyData['reading_epistle_mp']  || dailyData['reading_epistle']  || '';
     let morningGospel  = (gospelPlacement === 'morning' || gospelPlacement === 'both')
-                         ? (dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_mp_${otherYear}`] || dailyData['reading_gospel'] || '') : '';
+                         ? (dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_mp_${otherYear}`] || dailyData['reading_gospel_mp'] || dailyData['reading_gospel'] || '') : '';
 
-    let eveningOT      = dailyData[`reading_ot_ep_${litYear}`]      || dailyData[`reading_ot_ep_${otherYear}`]      || dailyData['reading_ot']      || '';
-    let eveningEpistle = dailyData[`reading_epistle_ep_${litYear}`]  || dailyData[`reading_epistle_ep_${otherYear}`]  || dailyData['reading_epistle']  || '';
+    let eveningOT      = dailyData[`reading_ot_ep_${litYear}`]      || dailyData[`reading_ot_ep_${otherYear}`]      || dailyData['reading_ot_ep']      || dailyData['reading_ot']      || '';
+    let eveningEpistle = dailyData[`reading_epistle_ep_${litYear}`]  || dailyData[`reading_epistle_ep_${otherYear}`]  || dailyData['reading_epistle_ep']  || dailyData['reading_epistle']  || '';
     let eveningGospel  = (gospelPlacement === 'evening' || gospelPlacement === 'both')
-                         ? (dailyData[`reading_gospel_ep_${litYear}`] || dailyData[`reading_gospel_ep_${otherYear}`] || dailyData['reading_gospel'] || '') : '';
+                         ? (dailyData[`reading_gospel_ep_${litYear}`] || dailyData[`reading_gospel_ep_${otherYear}`] || dailyData['reading_gospel_ep'] || dailyData['reading_gospel'] || '') : '';
 
     if (!isMorning) { morningOT = ''; morningEpistle = ''; morningGospel = ''; }
     if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
@@ -3762,14 +3768,29 @@ async function renderBcpOffice() {
             officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${invText}</span>`;
 
             if (isMorning || isEvening) {
-                const isEaster = season === 'easter';
-                if (isEaster) {
+                // BCP p.45/85: Pascha Nostrum (Christ Our Passover) replaces the
+                // Invitatory for Easter Week (Easter Day through the following
+                // Saturday, day_of_season 1-7) -- mandatory. For the rest of the
+                // Easter season (Easter 2 through Pentecost), the BCP permits
+                // Pascha Nostrum daily but also permits the ordinary Venite/Jubilate
+                // rotation every other season uses -- previously the app silently
+                // used Pascha Nostrum for the entire 49-day season, every day.
+                // Settled 2026-07-08: default now falls back to the normal rotation
+                // after Easter Week, matching how the rest of the year behaves;
+                // a toggle is available to extend Pascha Nostrum through the whole
+                // season for those who prefer it.
+                const isEasterWeek = season === 'easter' && (dailyData?.day_of_season ?? 99) <= 7;
+                const extendPaschaNostrum = document.getElementById('toggle-pascha-nostrum-all-season')?.checked ?? false;
+                const usePaschaNostrum = isEasterWeek || (season === 'easter' && extendPaschaNostrum);
+                if (usePaschaNostrum) {
                     const pasch = appData.components.find(c => c.id === 'bcp-pascha-nostrum');
                     if (pasch) {
                         const pt = resolveText(pasch, rite) || pasch.text || '';
                         officeHtml += `<span class="rubric-text">Christ Our Passover</span><span class="component-text">${pt}</span>`;
                     }
                 } else {
+                    // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
+                    // of the Invitatory Psalms, Venite or Jubilate" -- a genuinely
                     // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
                     // of the Invitatory Psalms, Venite or Jubilate" -- a genuinely
                     // free daily choice with no seasonal restriction. (The former
