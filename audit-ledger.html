@@ -293,7 +293,7 @@ const NOONDAY_STATUS = {
 
 const COMPLINE_STATUS = {
   "Opening Versicles (Our help is in the Name of the Lord)": {status:'green', note:'FIXED 2026-07-08: "Our help is in the Name of the Lord / The maker of heaven and earth" (BCP p.126, wording verified directly against book_of_common_prayer.pdf pp.126-127) added as new component bcp-help-versicle-compline in components/anglican.json, wired into compline-office\\'s sequence in data/rubrics.json between bcp-opening-blessing-compline and bcp-confession-[rite] -- matching the BCP\\'s actual order. Display label added to office-ui.js\\'s DISPLAY_LABELS map. No existing content touched.'},
-  "Confession (brief, optional)": {status:'red', note:'CONFIRMED DEFECT 2026-07-07: BCP1979 p.126 gives Compline its own distinct, shorter confession ("Almighty God, our heavenly Father: We have sinned against you...") -- completely different wording from Morning/Evening Prayer\'s confession. The engine\'s compline-office rubric reuses the same bcp-confession-[rite] placeholder as Morning/Evening Prayer, and only bcp-confession-rite1/rite2 exist in the codebase -- no Compline-specific confession component exists at all. Compline currently displays the wrong confession text entirely. Not yet fixed.'},
+  "Confession (brief, optional)": {status:'green', note:'FIXED 2026-07-08: BCP1979 p.126-127 gives Compline its own distinct, shorter confession ("Almighty God, our heavenly Father: We have sinned against you...") and its own absolution ("May the Almighty God grant us forgiveness of all our sins..."), wording verified directly against book_of_common_prayer.pdf p.127. Added as new components bcp-confession-compline and bcp-absolution-compline in components/anglican.json. compline-office\\'s sequence in data/rubrics.json rewired to point at these instead of the shared bcp-confession-[rite] / bcp-absolution-slot placeholders (which pulled Morning/Evening Prayer\\'s longer confession and priest/lay absolution -- neither authorized for Compline). Morning and Evening Prayer\\'s sequences untouched. Display labels added to office-ui.js.'},
   "O God, make speed to save us + Gloria Patri": {status:'green', note:'Shared component (bcp-invitatory-full), already verified under Morning Prayer.'},
   "Psalmody (4, 31:1-6, 91, or 134)": {status:'green', note:'FIXED 2026-07-07: js/office-ui.js now assigns Compline its own fixed BCP-appointed psalms (Psalm 4, Psalm 31:1-5, Psalm 91, Psalm 134:1-2, per p.127-130) instead of the DOL Evening Prayer psalm. Reuses the existing scripture-resolver pipeline, no new content authored. Prior defect: was pulling dailyData.psalms_ep unconditionally. See AUDIT_GOVERNANCE_LEDGER.md.'},
   "Short Lesson": {status:'red', note:'SETTLED 2026-07-07: Josh\'s decision is to offer both as a toggle -- the 4 suggested fixed texts (Jeremiah 14:9,22 / Matthew 11:28-30 / Hebrews 13:20-21 / 1 Peter 5:8-9a, BCP pp.130-131) AND the day\'s DOL reading, not one silently chosen. Confirmed defect, not an open question anymore: no such toggle exists in code. Deferred to the fix phase, per audit-then-fix.'},
@@ -454,7 +454,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v48-2026-07-08-phos-hilaron-typo-and-compline-help-versicle-fixed';
+const SEED_VERSION = 'v49-2026-07-08-compline-confession-absolution-fixed';
 
 async function checkSeedVersion(){
   let storedValue = null;

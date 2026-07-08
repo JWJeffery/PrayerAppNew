@@ -3903,6 +3903,8 @@ async function renderBcpOffice() {
         const DISPLAY_LABELS = {
             'bcp-confession-rite1':           'Confession of Sin',
             'bcp-confession-rite2':           'Confession of Sin',
+            'bcp-confession-compline':        'Confession of Sin',
+            'bcp-absolution-compline':        'Absolution',
             'bcp-absolution-r1-priest':       'Absolution',
             'bcp-absolution-r1-lay':          'Prayer for Forgiveness',
             'bcp-absolution-r2-priest':       'Absolution',

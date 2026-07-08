@@ -75,6 +75,24 @@
     "type": "Versicle"
   },
   {
+    "id": "bcp-confession-compline",
+    "title": "Confession of Sin (Compline)",
+    "text": {
+      "rite1": "Almighty God, our heavenly Father: We have sinned against you, through our own fault, in thought, and word, and deed, and in what we have left undone. For the sake of your Son our Lord Jesus Christ, forgive us all our offenses; and grant that we may serve you in newness of life, to the glory of your Name. Amen.",
+      "rite2": "Almighty God, our heavenly Father: We have sinned against you, through our own fault, in thought, and word, and deed, and in what we have left undone. For the sake of your Son our Lord Jesus Christ, forgive us all our offenses; and grant that we may serve you in newness of life, to the glory of your Name. Amen."
+    },
+    "type": "Penitential"
+  },
+  {
+    "id": "bcp-absolution-compline",
+    "title": "Absolution (Compline)",
+    "text": {
+      "rite1": "May the Almighty God grant us forgiveness of all our sins, and the grace and comfort of the Holy Spirit. Amen.",
+      "rite2": "May the Almighty God grant us forgiveness of all our sins, and the grace and comfort of the Holy Spirit. Amen."
+    },
+    "type": "Absolution"
+  },
+  {
     "id": "bcp-invitatory",
     "title": "The Invitatory",
     "text": "Lord, open our lips.\nAnd our mouth shall proclaim your praise.",

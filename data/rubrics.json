@@ -93,8 +93,8 @@
     "sequence": [
       "bcp-opening-blessing-compline",
       "bcp-help-versicle-compline",
-      "bcp-confession-[rite]",
-      "bcp-absolution-slot",
+      "bcp-confession-compline",
+      "bcp-absolution-compline",
       "bcp-invitatory-full",
       "VARIABLE_PSALM",
       "VARIABLE_READING_OT",
