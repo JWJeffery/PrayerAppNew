@@ -268,7 +268,26 @@ Traced every devotion-sequence item through the render loop by hand before consi
 
 ### Fix phase — begun 2026-07-08, in progress, updated after each tranche per Josh's direction
 
-The audit-then-fix workflow's fix phase is now underway. Each tranche below is its own commit/patch, applied and pushed by Josh, verified against a fresh clone before handoff each time. `origin/main` is at `29b156a` as of this update (Advent tranche below is not yet pushed as of this note's writing — see git state note at the very end).
+**HANDOFF — read this first if picking up fresh.** `origin/main` is at `35d9734` (Ordinary Time weekday DOL rebuild — 150 of 150 weekday entries across ordinary1/2/3.json, confirmed pushed). That commit was made by a separate session/account ("PrayerAppNew Architect") picking up from this note; its own commit message is excellent (specific page numbers, six named OCR artifacts each checked against page images, explicit cross-verification against known-good data) — see the dedicated log entry for it further down. That session's commit did **not** update `audit-ledger.html` (stale red notes, `SEED_VERSION` not bumped) — caught and fixed in this update, catching yet another occurrence of the double-escaped-apostrophe bug in the process (see below — this is now a cross-session pattern, not one instance's habit).
+
+**What's actually left, per Josh's own summary after the Ordinary Time work landed:**
+1. **Holy Days lectionary fix — NOT STARTED, still deliberately batched.** 24 of 25 Holy Days across every season pull the wrong lectionary track (Eucharistic Proper, not Daily Office), plus the app's 3-reading schema is missing the 4th slot every Holy Day needs (Evening Prayer's own OT reading). Needs a schema decision before any content fix — that's why it's one batched job, not per-season patches.
+2. **40 Sunday/named-feast/apostle-day entries inside the Ordinary Time files, plus "The Day of Pentecost" and "Shrove Tuesday" entries in those same files** — explicitly out of scope for the weekday rebuild (Mon-Sat Propers only). Worth checking whether "The Day of Pentecost" here duplicates the entry already fixed in `easter.json` before fixing it twice, and resolving the open Shrove-Tuesday scope question.
+3. **Decided-but-unimplemented items**, per Josh: Noonday/Compline short-lesson toggles, the second-collect anthologies (including Evening Prayer's wrong Peace text), and the canticle-selection precedence field. Check `AUDIT_GOVERNANCE_LEDGER.md` and this note's earlier tranches before assuming these are still fully outstanding — some may already be partly done.
+4. Two flagged schema questions from this session, still undecided: the Lent/Easter AM/PM-vs-year1/year2 mismatch (Good Friday, Holy Saturday, Easter Day), and the Invitatory Psalm's Easter-extension toggle (lower priority).
+
+**Standing workflow, confirmed working across 9+ tranches and two different sessions now — keep doing this:**
+1. Pick one bounded scope (one season file, or one confirmed defect).
+2. Extract the relevant `book_of_common_prayer.pdf` pages directly (pdfplumber, or page-image rasterization for OCR-suspect passages) rather than trusting memory or the prior audit note — multiple times this session the prior audit note itself was wrong, and only direct source-checking caught it.
+3. Build the fix as a small script, print a diff of what changed, validate JSON, verify idempotency (reapplying produces zero further changes) where possible, and cross-check against any independently-known-good data if available.
+4. **Before treating any `audit-ledger.html` edit as done: extract the `<script>` block and run `node --check` against it, not just eyeball it.** A double-escaped apostrophe (`\\'` instead of `\'`) inside a single-quoted JS string is a real syntax error that breaks the ENTIRE inline script and takes down the whole dashboard page. This has now happened at least 5 times across two different accounts — it is not one instance's habit, it's something about how these long explanatory notes get written. Never skip the check.
+5. Update the dashboard row's note + status, bump `SEED_VERSION`, **in the same commit as the content fix, not a follow-up** — the Ordinary Time session skipped this step entirely; don't repeat that gap.
+6. Commit with a full explanatory message (what was wrong, what source page proves it, what's still not fixed and why).
+7. `git format-patch` from the **last commit Josh actually confirmed pushed** — check his most recent `git push` output for the real hash, don't assume local HEAD matches origin.
+8. Verify the patch applies cleanly against a **fresh clone of the real `origin/main`** before handing it to Josh, and actually call `present_files` on it.
+9. Update this HANDOFF section in the same commit as the fix. If a different account/session did the prior work, read their commit message carefully and reconcile it with this note rather than assuming this note is already current.
+
+The rest of this section (below) is the historical log of tranches completed — kept for detail and provenance, not something that needs re-doing.
 
 **Non-DOL fixes (Evening Prayer, Compline, Noonday, Morning Prayer) — all pushed:**
 1. Evening Prayer Phos Hilaron typo ("though" -> "through," rite1).
@@ -301,6 +320,6 @@ Housekeeping: added `.gitignore` (previously existed only locally, uncommitted, 
 
 **All DOL season files are now fixed** (Advent, Christmas, Epiphany, Lent, Easter, Ordinary 1/2/3). What remains on the DOL side is **not** any season's weekday/Sunday cycle but: (1) the Holy Days lectionary-table fix — 24 of 25 Holy Days pulling the wrong lectionary track, plus the 3-slot-vs-4-reading schema gap affecting every Holy Day across every season — deliberately deferred as its own batched fix rather than patched piecemeal, per Josh's ruling when the gap was first found; (2) the Sunday/feast/Pentecost/Shrove-Tuesday entries inside the Ordinary Time files, never part of the "150 weekday" audit; and (3) the decided-but-unimplemented items (Noonday/Compline Short-Lesson toggles, the Morning/Evening second-collect anthologies incl. Evening's wrong Peace text, the `precedence` field, the Good Friday/Holy Saturday/Easter Day AM/PM schema question).
 
-**Git state, updated per tranche:** the Christmas → Advent → Epiphany → Lent → Easter DOL tranches have all landed; `HEAD` before this Ordinary Time tranche was `4be79b9` ("Fix: Easter DOL corruption (48 of 48 non-Holy-Day entries)"). This note is being updated as part of the Ordinary Time tranche, whose patch is generated for Josh to apply/push but is not yet on `origin/main` as of this writing — check `git log` against the commit messages above (each fix's commit message names the exact defect and verification method) to see what's actually landed vs. what's recorded here.
+**Git state:** confirmed landed and pushed as `35d9734`. See the HANDOFF section at the top of this fix-phase log for the current authoritative state and next steps — this line is kept as historical record of the tranche sequence, not a live pointer.
 
 
