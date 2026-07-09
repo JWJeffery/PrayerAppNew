@@ -1115,3 +1115,33 @@ Checked every Sunday and Holy Day across all six DOL season files against BCP so
 **Item 2 (Sunday/named-feast/Holy Day bracket sweep) is complete.** This does not touch the separate, larger "wrong lectionary track" / 3-vs-4-reading schema defect already documented for the Holy Days table (only St. Andrew confirmed fully correct in that audit) -- that remains its own priority.
 
 **Running total for 2026-07-09: 26 citations fixed** (13 Ordinary Time weekdays + 9 five-season sweep + 1 Trinity Sunday + 3 Ordinary Time Sundays), one research error corrected (false "missing Monday, Proper 20" claim), one table confirmed clean (Holy Days, bracket-wise).
+
+
+## Session, 2026-07-09 continued — Holy Days lectionary-track audit: old "only St. Andrew correct" claim corrected
+
+Re-audited the Holy Days table from scratch against `book_of_common_prayer.pdf` pp.995-1000 (the single shared table every fixed-date Holy Day across all six season files draws from), rather than trusting the much older finding on record ("of 25 Holy Days checked, only St. Andrew is genuinely correct").
+
+**That old claim is badly stale. 24 of 27 locatable Holy Days are already fully correct**, all four DOL readings (MP Psalm/OT/Epistle, EP Psalm/OT/Gospel) verified word-for-word. Consistent with "the batched Holy Days pass" mentioned elsewhere in this ledger, which evidently fixed most of the table but was never reflected in a corrected top-line status. Recording the correction here per this project's standing practice.
+
+**Fixed:**
+1. St. Andrew — missing `reading_ot_ep_year1`/`year2` entirely (the one entry the old audit called correct is the one still missing the schema fix everyone else got). Added `Isaiah 55:1-5` both years.
+2. The Visitation (May 31) had been fully absorbed into "Trinity Sunday / The Visitation," losing its own content -- Trinity Sunday (Principal Feast, tier 1) coincided with the Visitation (Holy Day, tier 3) on a Sunday. Applied BCP's own transfer rule (p.15: "other Feasts of our Lord... which occur on a Sunday are normally transferred to the first convenient open day within the week"): renamed the May 31 entry back to "Trinity Sunday" (content already correct, re-verified), built a new "The Visitation of the Blessed Virgin Mary" entry on June 1 (superseding the regular weekday DOL slot there, same pattern as every other Holy-Day-displaces-weekday case in the app) with full BCP content. Its Collect didn't exist in `components/anglican.json` at all -- added `bcp-collect-visitation` (both rites, BCP p.240 area).
+
+**Flagged as decisions needed (BCP offers real alternatives, app silently picked one -- same pattern as Noonday/Compline collects and the Second Collect anthology):** St. Mary the Virgin's EP alternatives (Psalm 45 or 138,149; Jeremiah 31:1-14 or Zechariah 2:10-13; John 19:23-27 or Acts 1:6-14) and St. Michael and All Angels' EP alternatives (Psalm 34,7,150 or 104; Daniel 12:1-3 or 2 Kings 6:8-17; Mark 13:21-27 or Revelation 5:1-14).
+
+**Confirmed genuinely missing, not optional civic days:** checked the actual Table of Precedence (p.16) rather than assuming -- Independence Day and Thanksgiving Day are "Other Major Feasts," same tier as St. Stephen and Holy Innocents, not "Days of Optional Observance." So St. Matthias, St. Barnabas, Independence Day, and Thanksgiving Day are all real gaps. Full readings and both-rite Collect texts sourced and recorded in `RESUME_PROJECT_NOTE.md`, ready to build. Thanksgiving Day specifically needs moveable-date computation logic (4th Thursday of November has no fixed BCP date), a different kind of work than the other three's simple fixed-date entries -- flagged as its own design question, not folded into this fix.
+
+**Note on the correction itself:** this reverses a significant piece of project status that had been carried forward across multiple sessions without being re-verified. Worth remembering the standing lesson from earlier in this ledger -- verify claims against source directly rather than trusting an inherited status, especially for claims this consequential to prioritization.
+
+
+## Session, 2026-07-09 continued — St. Mary the Virgin / St. Michael and All Angels: alternate EP readings offered as a toggle
+
+Josh's decision: same "offer both, don't silently pick" treatment as the Noonday/Compline collect and lesson toggles -- implement, not just flag.
+
+Built a general, reusable mechanism rather than one-off code: any calendar-day entry can carry an `alt_ep_toggle_id` field; `js/office-ui.js`'s Evening Prayer psalm/OT/Gospel resolution checks a `toggle-{id}-alt` checkbox and prefers `psalms_ep_alt` / `reading_ot_ep_alt_year1/2` / `reading_gospel_ep_alt_year1/2` when checked, falling back to the existing primary fields unchanged when unchecked (default, matches current behavior exactly). Wired up for both days:
+- Saint Mary the Virgin (`mary-virgin` / `toggle-mary-virgin-alt`): alternates are Psalm 138,149; Zechariah 2:10-13; John 19:23-27, all verified against BCP p.997.
+- Saint Michael and All Angels (`michaelmas` / `toggle-michaelmas-alt`): alternates are Psalm 104; 2 Kings 6:8-17; Revelation 5:1-14, verified against BCP p.999.
+
+Both checkboxes added to the settings panel with source-citing tooltips, same convention as every other BCP-decision toggle in this project. `node --check js/office-ui.js` clean; both season-file edits valid JSON.
+
+**Not persisted to `saveSettings`/`loadSettings`** -- checked first that most of the other 2026-07-08 decision toggles (Noonday/Compline lesson toggles, rotate-suffrages, rotate-closing-blessing, rotate-invitatory-psalm, pascha-nostrum-all-season, etc.) aren't persisted either, so adding it only for these two would be inconsistent with the existing majority pattern rather than closing a real gap. Toggle persistence generally remains its own separate, unaddressed item if Josh wants it.
