@@ -253,6 +253,12 @@
     "day_of_season": 85,
     "reading_ot_ep_year1": "Jeremiah 31:1-14",
     "reading_ot_ep_year2": "Jeremiah 31:1-14",
+    "alt_ep_toggle_id": "mary-virgin",
+    "psalms_ep_alt": "Psalm 138, Psalm 149",
+    "reading_ot_ep_alt_year1": "Zechariah 2:10-13",
+    "reading_ot_ep_alt_year2": "Zechariah 2:10-13",
+    "reading_gospel_ep_alt_year1": "John 19:23-27",
+    "reading_gospel_ep_alt_year2": "John 19:23-27",
     "precedence": "major-feast"
   },
   {
@@ -995,6 +1001,12 @@
     "day_of_season": 130,
     "reading_ot_ep_year1": "Daniel 12:1-3",
     "reading_ot_ep_year2": "Daniel 12:1-3",
+    "alt_ep_toggle_id": "michaelmas",
+    "psalms_ep_alt": "Psalm 104",
+    "reading_ot_ep_alt_year1": "2 Kings 6:8-17",
+    "reading_ot_ep_alt_year2": "2 Kings 6:8-17",
+    "reading_gospel_ep_alt_year1": "Revelation 5:1-14",
+    "reading_gospel_ep_alt_year2": "Revelation 5:1-14",
     "precedence": "major-feast"
   },
   {

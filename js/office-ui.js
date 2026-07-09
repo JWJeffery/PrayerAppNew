@@ -3295,7 +3295,14 @@ async function renderBcpOffice() {
     } else {
         psalms = dailyData?.psalms_mp || dailyData?.psalms_morning || dailyData?.psalms || '';
         if (isEvening) {
-            psalms = dailyData?.psalms_ep || dailyData?.psalms_evening || dailyData?.psalms || '';
+            // Josh's settled decision (2026-07-09): where the BCP Holy Days table
+            // offers a genuine "or" alternative for Evening Prayer (currently
+            // Saint Mary the Virgin and Saint Michael and All Angels), offer both
+            // via a toggle rather than silently picking one -- same pattern as
+            // the Noonday Collect / Short Lesson toggles above.
+            const altToggleId = dailyData?.alt_ep_toggle_id;
+            const useAlt = altToggleId && (document.getElementById(`toggle-${altToggleId}-alt`)?.checked ?? false);
+            psalms = (useAlt && dailyData?.psalms_ep_alt) || dailyData?.psalms_ep || dailyData?.psalms_evening || dailyData?.psalms || '';
         }
     }
 
@@ -3322,10 +3329,19 @@ async function renderBcpOffice() {
     let morningGospel  = (gospelPlacement === 'morning' || gospelPlacement === 'both')
                          ? (dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_mp_${otherYear}`] || dailyData['reading_gospel_mp'] || dailyData['reading_gospel'] || '') : '';
 
-    let eveningOT      = dailyData[`reading_ot_ep_${litYear}`]      || dailyData[`reading_ot_ep_${otherYear}`]      || dailyData['reading_ot_ep']      || dailyData['reading_ot']      || '';
+    // Josh's settled decision (2026-07-09): same alt-EP toggle as the psalm
+    // selection above -- Saint Mary the Virgin and Saint Michael and All Angels
+    // both have a real BCP "or" alternative for the Evening Prayer OT and
+    // Gospel readings; check it once here and prefer the alt fields when set.
+    const altEpToggleId = dailyData?.alt_ep_toggle_id;
+    const useAltEp = altEpToggleId && (document.getElementById(`toggle-${altEpToggleId}-alt`)?.checked ?? false);
+
+    let eveningOT      = (useAltEp && (dailyData[`reading_ot_ep_alt_${litYear}`] || dailyData[`reading_ot_ep_alt_${otherYear}`]))
+                         || dailyData[`reading_ot_ep_${litYear}`]      || dailyData[`reading_ot_ep_${otherYear}`]      || dailyData['reading_ot_ep']      || dailyData['reading_ot']      || '';
     let eveningEpistle = dailyData[`reading_epistle_ep_${litYear}`]  || dailyData[`reading_epistle_ep_${otherYear}`]  || dailyData['reading_epistle_ep']  || dailyData['reading_epistle']  || '';
     let eveningGospel  = (gospelPlacement === 'evening' || gospelPlacement === 'both')
-                         ? (dailyData[`reading_gospel_ep_${litYear}`] || dailyData[`reading_gospel_ep_${otherYear}`] || dailyData['reading_gospel_ep'] || dailyData['reading_gospel'] || '') : '';
+                         ? ((useAltEp && (dailyData[`reading_gospel_ep_alt_${litYear}`] || dailyData[`reading_gospel_ep_alt_${otherYear}`]))
+                            || dailyData[`reading_gospel_ep_${litYear}`] || dailyData[`reading_gospel_ep_${otherYear}`] || dailyData['reading_gospel_ep'] || dailyData['reading_gospel'] || '') : '';
 
     if (!isMorning) { morningOT = ''; morningEpistle = ''; morningGospel = ''; }
     if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
