@@ -3428,7 +3428,15 @@ async function renderBcpOffice() {
         } else if (compId === 'comm-creed-slot') {
             compId = creedSelection;
         } else if (compId === 'bcp-suffrages-slot') {
-            if (suffragesChecked) { compId = `bcp-suffrages-${rite}`; } else { continue; }
+            // BCP p.54/96: "Then follows one of these sets of Suffrages" -- A and B
+            // are equally authorized alternative forms. Only A existed until now;
+            // fixed 2026-07-08 by adding B and rotating between them daily, same
+            // convention as Venite/Jubilate and the Second Collect rotation.
+            if (suffragesChecked) {
+                const rotateSuffrages = document.getElementById('toggle-rotate-suffrages')?.checked ?? true;
+                const useB = rotateSuffrages && (getDailyRotationIndex(currentDate, 2) === 1);
+                compId = useB ? `bcp-suffrages-b-${rite}` : `bcp-suffrages-${rite}`;
+            } else { continue; }
         }
 
         // VARIABLE_OPENING — seasonal opening sentence
@@ -4085,6 +4093,8 @@ async function renderBcpOffice() {
             'bcp-absolution-r2-lay':          'Prayer for Forgiveness',
             'bcp-suffrages-rite1':            'The Suffrages',
             'bcp-suffrages-rite2':            'The Suffrages',
+            'bcp-suffrages-b-rite1':          'The Suffrages',
+            'bcp-suffrages-b-rite2':          'The Suffrages',
             'bcp-phos-hilaron':               'O Gracious Light',
             'bcp-collect-grace':              'A Collect for Grace',
             'bcp-collect-peace':              'A Collect for Peace',

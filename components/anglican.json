@@ -2014,5 +2014,17 @@
       "rite2": "We give thanks to the Father, who has made us worthy to share in the inheritance of the saints in light."
     },
     "type": "Opening"
+  },
+  {
+    "id": "bcp-suffrages-b-rite1",
+    "title": "The Suffrages B (Rite I)",
+    "text": "V. O Lord, save thy people, and bless thine heritage;\nR. Govern them and lift them up for ever.\nV. Day by day we magnify thee;\nR. And we worship thy Name ever, world without end.\nV. Vouchsafe, O Lord, to keep us this day without sin;\nR. O Lord, have mercy upon us, have mercy upon us.\nV. O Lord, let thy mercy be upon us;\nR. As our trust is in thee.\nV. O Lord, in thee have I trusted;\nR. Let me never be confounded.",
+    "type": "Versicle"
+  },
+  {
+    "id": "bcp-suffrages-b-rite2",
+    "title": "The Suffrages B (Rite II)",
+    "text": "V. Save your people, Lord, and bless your inheritance;\nR. Govern and uphold them, now and always.\nV. Day by day we bless you;\nR. We praise your Name for ever.\nV. Lord, keep us from all sin today;\nR. Have mercy on us, Lord, have mercy.\nV. Lord, show us your love and mercy;\nR. For we put our trust in you.\nV. In you, Lord, is our hope;\nR. And we shall never hope in vain.",
+    "type": "Versicle"
   }
 ]
