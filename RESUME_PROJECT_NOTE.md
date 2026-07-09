@@ -366,3 +366,17 @@ Housekeeping: added `.gitignore` (previously existed only locally, uncommitted, 
 - **Noonday's closing sentence + 2 small cleanups, 2026-07-08.** Checked Noonday's own source (BCP p.107) directly rather than assuming it matched Morning/Evening's structure — it doesn't. Noonday has no closing-blessing anthology at all; the service just ends "Let us bless the Lord / Thanks be to God," nothing more. It had been silently reusing the shared bcp-closing component built for Morning/Evening, which wrongly appended an extra blessing sentence that doesn't belong at Noonday. Added bcp-closing-noonday (versicle only) and rewired just Noonday's sequence. Also: removed the confirmed-dead bcp-opening-evening orphaned component (zero references anywhere), and added the Easter-season "Alleluia, alleluia, alleluia" addition to the Nunc Dimittis antiphon (BCP p.134), which had been flagged as skipped in the prior tranche.
 
 **Process note for whoever picks this up:** mid-session, a `git reset --hard origin/main` at the start of a new turn silently discarded a fully-committed, verified fix (Suffrages B) that hadn't been pushed yet, because the reset command runs before checking whether local work is unpushed. Recovered it from `git reflog` and rebuilt the commit sequence in the correct order before it was lost for good. Going forward: before any `git reset --hard origin/main`, check `git log --oneline -5` first for local commits not yet confirmed pushed by Josh, and don't discard them.
+
+- **Evening Opening Sentences dashboard row was stale, 2026-07-08 (Josh caught it by inspection).** Said red and "still open"/"still not removed" for two things already fixed in the prior tranche. Corrected to green.
+
+## STATUS: Anglican/BCP Daily Office — DONE, with two known, documented, non-error gaps
+
+Josh confirmed this session's Anglican/BCP Daily Office audit-then-fix work as complete. Every dashboard row for this tradition is green except the 5 unrelated Ethiopian/Byzantine rows (Sa'atat, Senkessar-Ginbot, Menaion, Triodion, Pentecostarion — separate traditions, never in scope this session, still their own large unfinished projects).
+
+**Two acknowledged "not fullest implementation" spots, not errors, no fix pending unless asked:**
+1. Opening Sentences: within a covered BCP category, the app hardcodes one verse where BCP offers 2-3 alternatives — no rotation built for this, unlike Second Collect/Suffrages/Venite-Jubilate.
+2. Two stored-but-unwired BCP "or" alternates: Good Friday's Year-One-only evening OT option (Genesis 22:1-14, `reading_ot_ep_alt_year1`) and Easter Day's alternate evening Gospel (John 20:19-23, `reading_gospel_ep_alt`).
+
+**One acknowledged rigor gap, not an implementation gap:** the Invitatory Antiphon's fabricated content was removed, but the seasons where BCP genuinely provides one (Advent, Christmas, Epiphany, Lent, Easter-to-Pentecost) were only checked for plausible category, never verified word-for-word the way everything else this session was.
+
+**If picking this up fresh:** the Anglican/BCP Daily Office needs no further work unless Josh specifically asks for one of the three items above, or for the Byzantine/Ethiopian traditions (a different, much larger project — read their own dashboard rows and any existing research-queue.json before starting).
