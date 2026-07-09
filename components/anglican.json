@@ -1969,5 +1969,23 @@
       "rite2": "Glory to God whose power, working in us, can do infinitely more than we can ask or imagine: Glory to him from generation to generation in the Church, and in Christ Jesus for ever and ever. Amen."
     },
     "type": "Closing"
+  },
+  {
+    "id": "bcp-opening-christmas",
+    "title": "Opening Sentence (Christmas)",
+    "text": {
+      "rite1": "Behold, I bring you good tidings of great joy, which shall be to all people. For unto you is born this day in the city of David a Savior, which is Christ the Lord.",
+      "rite2": "Behold, I bring you good news of a great joy which will come to all the people; for to you is born this day in the city of David, a Savior, who is Christ the Lord."
+    },
+    "type": "Opening"
+  },
+  {
+    "id": "bcp-opening-epiphany",
+    "title": "Opening Sentence (Epiphany)",
+    "text": {
+      "rite1": "From the rising of the sun even unto the going down of the same my Name shall be great among the Gentiles, and in every place incense shall be offered unto my Name, and a pure offering: for my Name shall be great among the heathen, saith the Lord of hosts.",
+      "rite2": "From the rising of the sun to its setting my Name shall be great among the nations, and in every place incense shall be offered to my Name, and a pure offering; for my Name shall be great among the nations, says the Lord of hosts."
+    },
+    "type": "Opening"
   }
 ]
