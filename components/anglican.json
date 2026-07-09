@@ -48,15 +48,6 @@
     "type": "Opening"
   },
   {
-    "id": "bcp-opening-evening",
-    "title": "Opening Sentence (Evening General)",
-    "text": {
-      "rite1": "Jesus said, 'Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you.'",
-      "rite2": "Jesus said, 'Peace I leave with you; my peace I give to you: not as the world gives do I give to you.'"
-    },
-    "type": "Opening"
-  },
-  {
     "id": "bcp-opening-blessing-compline",
     "title": "Opening Blessing (Compline)",
     "text": {
@@ -2026,5 +2017,14 @@
     "title": "The Suffrages B (Rite II)",
     "text": "V. Save your people, Lord, and bless your inheritance;\nR. Govern and uphold them, now and always.\nV. Day by day we bless you;\nR. We praise your Name for ever.\nV. Lord, keep us from all sin today;\nR. Have mercy on us, Lord, have mercy.\nV. Lord, show us your love and mercy;\nR. For we put our trust in you.\nV. In you, Lord, is our hope;\nR. And we shall never hope in vain.",
     "type": "Versicle"
+  },
+  {
+    "id": "bcp-closing-noonday",
+    "title": "Closing (Noonday)",
+    "text": {
+      "rite1": "Let us bless the Lord.\nThanks be to God.",
+      "rite2": "Let us bless the Lord.\nThanks be to God."
+    },
+    "type": "Closing"
   }
 ]

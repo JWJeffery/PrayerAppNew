@@ -4081,6 +4081,18 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // bcp-antiphon-nunc-dimittis — BCP p.134: "In Easter Season, add Alleluia,
+        // alleluia, alleluia." Fixed 2026-07-08.
+        if (item === 'bcp-antiphon-nunc-dimittis') {
+            const comp = appData.components.find(c => c.id === 'bcp-antiphon-nunc-dimittis');
+            if (comp) {
+                let t = resolveText(comp, rite) || comp.text || '';
+                if (season === 'easter') t += ' Alleluia, alleluia, alleluia.';
+                officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text">${t}</span>`;
+            }
+            continue;
+        }
+
         // ── Generic component lookup ──────────────────────────────────────────
         const DISPLAY_LABELS = {
             'bcp-confession-rite1':           'Confession of Sin',
