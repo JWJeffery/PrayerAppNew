@@ -101,6 +101,13 @@
   <p class="section-note">A new short-form mode (BCP p.137-140), not an audit finding — built 2026-07-07 per Josh's direction, mirroring the existing Church of the East full/short-form (Cathedral/Monastic) toggle pattern. See the row below for what was verified and how.</p>
   <div id="devotionsSection"></div>
 
+  <h3>Engines & Rendering Logic — the BCP Daily Office</h3>
+  <p class="section-note">2026-07-10: Josh's direction — audit the CODE that computes and renders the Office, not only the content it displays. Everything above this point checked whether displayed text matches BCP source; this checks whether the logic that selects, computes, and parses that text actually works, including across multiple years (not just 2026). Scope: every engine that the BCP Daily Office actually touches, including the scripture resolver (shared infrastructure, not BCP-specific, but in scope because the Office depends on it directly). Two severe, previously-undiscovered defects confirmed and reproduced empirically (not just inferred from reading code) — see the rows below. Neither is fixed yet.</p>
+  <div id="bcpEnginesSection"></div>
+
+  <h3>Engines & Rendering Logic — other traditions (flagged, not audited)</h3>
+  <p class="section-note">Per Josh's explicit scoping: these engines were NOT read or tested this session — BCP was the boundary. Flagged here so the gap is visible on the dashboard rather than silently assumed-fine because a content-level audit exists elsewhere for some of these traditions. A content audit and an engine audit are different questions, per the same standing lesson recorded throughout this ledger; passing one says nothing about the other.</p>
+  <div id="otherEnginesSection"></div>
 
   <h2>III. The Ethiopian Office</h2>
   <p class="section-note">Sa'atat: structural shape mismatch already found (2026-07-05) — the app's 9-watch schema does not match the historically attested Sa'atat of Abba Giyorgis. Senkessar: Ginbot audited days 1–17 (see notes); remaining 12 months untouched.</p>
@@ -342,6 +349,34 @@ const NEEDS = [
   {key:'needs:governance', name:"Governance/taxonomy scaffolding", status:'amber', note:'scripts exist; content status unclear'}
 ];
 
+// Engine/rendering-logic audit, 2026-07-10 — Josh's direction: audit the CODE that
+// computes and renders the Daily Office, not just the CONTENT it displays. Everything
+// this session before now checked "is the text correct"; this checks "does the logic
+// that selects/computes/parses that text actually work, including across years."
+const BCP_ENGINES = [
+  {key:'engine:calendar-engine', name:"js/calendar-engine.js — season/date resolution", status:'red',
+   note:'Read in full, empirically tested against multiple years (not just inspected). Core algorithmic machinery is sound and verified: _getEaster() matches known public Easter dates 2024-2033, _getAdventSunday()/getLiturgicalYear() pass every boundary case the (stale) engine documentation itself claims to have verified, season-range generation is genuinely perpetual via _generateSeasonRanges(year). CONFIRMED BUG, reproduced directly: findEntry()\'s Priority 2 (day_of_season offset match) runs before Priority 3 (month-day match for fixed feasts), and always succeeds first in any file where every entry carries day_of_season (Advent/Lent/Easter/Ordinary Time all do; Christmas/Epiphany don\'t, which is why those two are unaffected). Result: every fixed-civil-date Holy Day sitting inside a moveable season is correct for 2026 only and will silently show the wrong content in every other year. Empirically verified failing case: Nov 30, 2027 (Saint Andrew) returns "Tuesday in the Week of 1 Advent" instead. Affects roughly 20 existing Holy Days (St. Andrew, St. Thomas, St. Joseph, Annunciation, the Visitation, St. Mark, SS. Philip & James, and every summer/fall Holy Day from Barnabas through All Saints) plus the 3 Holy Days and 1 transferred entry added 2026-07-10. Not yet fixed — affects the core matching priority order, deserves a deliberate fix rather than another special case.'},
+  {key:'engine:scripture-resolver', name:"js/scripture-resolver.js — citation parsing & text lookup", status:'red',
+   note:'Read in full. CONFIRMED SEVERE BUG, reproduced against real Bible data: getScriptureText() -> extractFromBook() -> extractBookRange() — the only path office-ui.js actually calls for every DOL reading — mishandles cross-chapter citations in "C:V-C:V" format (e.g. "2 Corinthians 6:3-7:1"). Its range.split(\':\') produces 3 parts for a cross-chapter string, silently discards the trailing verse number, and treats the middle piece as an end-verse within the START chapter only — so "6:3-7:1" renders as just 6:3-6:7 (5 verses), never reaching chapter 7 at all. Verified against real data/bible/NT/2corinthians.json: displays 5 of the intended ~17 verses. A SEPARATE, CORRECT parser already exists in the same file (_parseSubrange -> _normalizeCitationToSegments -> resolveScripturePericope, properly splits cross-chapter ranges into per-chapter segments) but is dead code as far as the Daily Office is concerned — office-ui.js never calls it, only the buggy path. SCOPE: a full-corpus scan found 172 reading citations in "C:V-C:V" format across data/season/*.json — every one of them is affected, not just newly-added ones. This is almost certainly the single highest-impact defect found in this entire project to date. Not yet fixed.'},
+  {key:'engine:saints-resolver', name:"js/saints-resolver.js — commemoration date matching", status:'green',
+   note:'Read in full, empirically tested. saintOccursOnDate()\'s month/day string comparison is correctly year-agnostic by design (no year value enters the comparison at all) — tested against leading-zero normalization, multi-date fields (comma and semicolon separated), and non-matching dates; all passed. No defects found.'},
+  {key:'engine:office-ui-core', name:"js/office-ui.js — Daily Office rendering (renderOffice and related)", status:'amber',
+   note:'5,050 lines, 129 top-level functions — not read in full; most of it is app-shell/UI logic (splash screens, entry routing, profile settings) outside the Daily Office computation itself. Focused reading covered: the full VARIABLE_READING/psalm/canticle resolution chain (already touched extensively this session via individual content fixes), every date-math and modulo-rotation function in the file (getDailyRotationIndex — sound, day-of-year based, no season-boundary dependency; the 30-Day Psalter\'s day-of-month lookup — sound, matches its own known BCP mechanism). Confirmed exactly how the scripture-resolver bug reaches the page: raw citation strings pass unmodified from dailyData straight into getScriptureText(), no pre-processing. No other logic bugs found in the areas checked, but this is a partial read, not a clean bill of health for the whole file — the app-shell/UI portions were not examined at all since they don\'t compute Office content.'},
+];
+
+const OTHER_TRADITION_ENGINES = [
+  {key:'engine:calendar-ethiopian', name:"js/calendar-ethiopian.js — Ethiopian/Coptic date conversion", status:'amber', note:'Not engine-audited this session (BCP-only scope, per Josh\'s direction). Has its own 9-case self-test suite that runs on every page load per its documentation — worth checking whether that suite is still passing before assuming it\'s sound.'},
+  {key:'engine:calendar-east-syriac', name:"js/calendar-east-syriac.js — Church of the East calendar", status:'amber', note:'Not engine-audited this session. 35KB, includes its own Julian Easter computation (julianEasterDate/getEaster) — worth checking independently of the BCP engine\'s Gregorian Easter algorithm.'},
+  {key:'engine:coe-eligibility', name:"js/coe-eligibility.js", status:'amber', note:'Not engine-audited this session.'},
+  {key:'engine:calendar-eastern-orthodox', name:"js/calendar-eastern-orthodox.js", status:'amber', note:'Not engine-audited this session. calendar-engine.js\'s getEOSeasonRanges() calls into this module directly (EasternOrthodoxCalendar.getYearSnapshot) — the two are not fully independent, worth auditing together.'},
+  {key:'engine:byzantine-paschalion', name:"js/byzantine-paschalion.js", status:'amber', note:'Not engine-audited this session.'},
+  {key:'engine:orthros-eothinon-engine', name:"js/orthros-eothinon-engine.js", status:'amber', note:'Not engine-audited this session.'},
+  {key:'engine:horologion-engine', name:"js/horologion-engine.js", status:'amber', note:'Not engine-audited this session. By far the largest engine file in the codebase (~475KB) — Lucy\'s "complete" claim for the Byzantine hours was already voided elsewhere in this ledger; this file has not been independently re-verified as an engine, separate from the content-level Byzantine audit rows above.'},
+  {key:'engine:menaion-resolver', name:"js/menaion-resolver.js", status:'amber', note:'Not engine-audited this session.'},
+  {key:'engine:octoechos-modules', name:"js/octoechos/* (12 files — Orthros canon/hymnody by tone)", status:'amber', note:'Not engine-audited this session. Treated as one row for dashboard purposes; each file would need its own pass.'},
+  {key:'engine:roman-breviary', name:"js/roman-breviary-1960-1962-dev-slice.js", status:'amber', note:'Not engine-audited this session. Pre-import governance gates for this lane are tracked separately above (section VII) — this row is specifically about the rendering code, not corpus-import readiness.'},
+];
+
 const BREVIARY = [
   {key:'brev:gates', name:"Pre-import governance gates", status:'amber', note:'need to confirm all 5 gates still holding'},
   {key:'brev:completed', name:"Completed portion so far", status:'amber', note:'awaiting definition of what has shipped to runtime'}
@@ -454,7 +489,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v71-2026-07-08-evening-opening-sentences-dashboard-sync-fixed';
+const SEED_VERSION = 'v72-2026-07-10-engine-audit-calendar-scripture-resolver-bugs-found';
 
 async function checkSeedVersion(){
   let storedValue = null;
@@ -525,6 +560,9 @@ async function init(){
 
   const devotionsSec = document.getElementById('devotionsSection');
   await hydrateAndRender(DEVOTIONS, renderBookTable, devotionsSec, "Daily Devotions build (data/rubrics.json, components/anglican.json)");
+
+  await hydrateAndRender(BCP_ENGINES, renderOfficeTable, document.getElementById('bcpEnginesSection'), false);
+  await hydrateAndRender(OTHER_TRADITION_ENGINES, renderOfficeTable, document.getElementById('otherEnginesSection'), false);
 
   await hydrateAndRender(ETHIOPIAN, renderOfficeTable, document.getElementById('ethiopianSection'), false);
   await hydrateAndRender(COE, renderOfficeTable, document.getElementById('coeSection'), false);

@@ -46,6 +46,26 @@ class CalendarEngine {
         return new Date(year, 10, 27 + daysUntilSunday);
     }
 
+    static _getThanksgivingDay(year) {
+        // U.S. civil Thanksgiving = the fourth Thursday of November.
+        // Not a BCP-dated Holy Day (unlike Independence Day, which has a fixed
+        // July 4), so it needs its own per-year computation rather than a
+        // literal "date" field in the season data — see findEntry()'s Priority 0
+        // check below, which is what actually routes to the dedicated entry.
+        const nov1 = new Date(year, 10, 1); // month is 0-indexed
+        const dow  = nov1.getDay();          // 0=Sun ... 4=Thu
+        const daysUntilFirstThursday = (4 - dow + 7) % 7;
+        const firstThursday = 1 + daysUntilFirstThursday;
+        return new Date(year, 10, firstThursday + 21); // +3 weeks = 4th Thursday
+    }
+
+    static _isThanksgivingDay(date) {
+        const t = this._getThanksgivingDay(date.getFullYear());
+        return date.getFullYear() === t.getFullYear() &&
+               date.getMonth()    === t.getMonth()    &&
+               date.getDate()     === t.getDate();
+    }
+
     static _addDays(date, n) {
         const d = new Date(date);
         d.setDate(d.getDate() + n);
@@ -256,6 +276,20 @@ class CalendarEngine {
     static findEntry(data, date, fileName) {
         const iso = this.formatDateISO(date);
         const long = this.formatDateForLookup(date);
+
+        // Priority 0: Thanksgiving Day (4th Thursday of November) — a genuine
+        // moveable date with no fixed BCP date, so it can't be matched by a
+        // literal "date" field the way every other Holy Day is. Computed
+        // per-year via _isThanksgivingDay(); the matching data entry carries a
+        // `moveable_id` marker instead of `date`/`day_of_season`, so it's
+        // invisible to Priorities 1-2 and only ever reached here.
+        if (this._isThanksgivingDay(date)) {
+            const twEntry = data.find(d => d.moveable_id === 'thanksgiving-day');
+            if (twEntry) {
+                console.log(`[Calendar Engine] Thanksgiving Day match for ${iso} in ${fileName}`);
+                return twEntry;
+            }
+        }
 
         // Priority 1: Exact ISO or long-format match
         let entry = data.find(d => d.date === iso || d.date === long);

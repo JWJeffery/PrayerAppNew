@@ -1250,5 +1250,23 @@
     "reading_ot_ep_eve": "",
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": ""
+  },
+  {
+    "moveable_id": "thanksgiving-day",
+    "title": "Thanksgiving Day",
+    "season": "Ordinary",
+    "liturgicalColor": "white",
+    "collect": "collect-thanksgiving-day",
+    "psalms_mp": "Psalm 147",
+    "psalms_ep": "Psalm 145",
+    "reading_ot_mp_year1": "Deuteronomy 26:1-11",
+    "reading_epistle_mp_year1": "John 6:26-35",
+    "reading_ot_mp_year2": "Deuteronomy 26:1-11",
+    "reading_epistle_ep_year2": "John 6:26-35",
+    "reading_ot_ep_year1": "Joel 2:21-27",
+    "reading_ot_ep_year2": "Joel 2:21-27",
+    "reading_gospel_ep_year1": "1 Thessalonians 5:12-24",
+    "reading_gospel_mp_year2": "1 Thessalonians 5:12-24",
+    "precedence": "major-feast"
   }
 ]
