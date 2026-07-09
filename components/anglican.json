@@ -1987,5 +1987,32 @@
       "rite2": "From the rising of the sun to its setting my Name shall be great among the nations, and in every place incense shall be offered to my Name, and a pure offering; for my Name shall be great among the nations, says the Lord of hosts."
     },
     "type": "Opening"
+  },
+  {
+    "id": "bcp-opening-holy-week",
+    "title": "Opening Sentence (Holy Week)",
+    "text": {
+      "rite1": "All we like sheep have gone astray; we have turned every one to his own way; and the Lord hath laid on him the iniquity of us all.",
+      "rite2": "All we like sheep have gone astray; we have turned every one to his own way; and the Lord has laid on him the iniquity of us all."
+    },
+    "type": "Opening"
+  },
+  {
+    "id": "bcp-opening-trinity-sunday",
+    "title": "Opening Sentence (Trinity Sunday)",
+    "text": {
+      "rite1": "Holy, holy, holy, Lord God Almighty, which was, and is, and is to come.",
+      "rite2": "Holy, holy, holy is the Lord God Almighty, who was, and is, and is to come!"
+    },
+    "type": "Opening"
+  },
+  {
+    "id": "bcp-opening-all-saints",
+    "title": "Opening Sentence (All Saints and other Major Saints' Days)",
+    "text": {
+      "rite1": "We give thanks unto the Father, which hath made us meet to be partakers of the inheritance of the saints in light.",
+      "rite2": "We give thanks to the Father, who has made us worthy to share in the inheritance of the saints in light."
+    },
+    "type": "Opening"
   }
 ]

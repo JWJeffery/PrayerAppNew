@@ -768,7 +768,8 @@
     "reading_ot_mp_year2": "Zechariah 9:9-12",
     "reading_epistle_ep_year2": "1 Timothy 6:12-16",
     "reading_gospel_mp_year2": "Luke 19:41-48",
-    "day_of_season": 40
+    "day_of_season": 40,
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "March 30, 2026",
@@ -787,7 +788,8 @@
     "reading_ot_mp_year2": "Lamentations 1:1-2, 6-12",
     "reading_epistle_ep_year2": "2 Corinthians 1:1-7",
     "reading_gospel_mp_year2": "Mark 11:12-25",
-    "day_of_season": 41
+    "day_of_season": 41,
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "March 31, 2026",
@@ -806,7 +808,8 @@
     "reading_ot_mp_year2": "Lamentations 1:17-22",
     "reading_epistle_ep_year2": "2 Corinthians 1:8-22",
     "reading_gospel_mp_year2": "Mark 11:27-33",
-    "day_of_season": 42
+    "day_of_season": 42,
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "April 1, 2026",
@@ -825,7 +828,8 @@
     "reading_ot_mp_year2": "Lamentations 2:1-9",
     "reading_epistle_ep_year2": "2 Corinthians 1:23-2:11",
     "reading_gospel_mp_year2": "Mark 12:1-11",
-    "day_of_season": 43
+    "day_of_season": 43,
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "April 2, 2026",
@@ -844,7 +848,8 @@
     "reading_ot_mp_year2": "Lamentations 2:10-18",
     "reading_epistle_ep_year2": "1 Corinthians 10:14-17; 11:27-32",
     "reading_gospel_mp_year2": "Mark 14:12-25",
-    "day_of_season": 44
+    "day_of_season": 44,
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "April 3, 2026",
@@ -863,7 +868,8 @@
     "reading_epistle_mp": "1 Peter 1:10-20",
     "reading_gospel_mp": "John 13:36-38",
     "reading_gospel_ep": "John 19:38-42",
-    "reading_ot_ep_alt_year1": "Genesis 22:1-14"
+    "reading_ot_ep_alt_year1": "Genesis 22:1-14",
+    "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
     "date": "April 4, 2026",
@@ -880,6 +886,7 @@
     "reading_ot_mp_year2": "Lamentations 3:37-58",
     "day_of_season": 46,
     "reading_epistle_mp": "Hebrews 4:1-16",
-    "reading_epistle_ep": "Romans 8:1-11"
+    "reading_epistle_ep": "Romans 8:1-11",
+    "opening_sentence_override": "bcp-opening-holy-week"
   }
 ]

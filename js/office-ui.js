@@ -3433,7 +3433,14 @@ async function renderBcpOffice() {
 
         // VARIABLE_OPENING — seasonal opening sentence
         if (item === 'VARIABLE_OPENING') {
-            const comp = appData.components.find(c => c.id === `bcp-opening-${season}`)
+            // Holy Week, Trinity Sunday, and All Saints each have their own distinct
+            // BCP opening sentence (pp.38-40/76-77) that the simple per-season lookup
+            // below can't reach (Holy Week sits inside "lent", Trinity Sunday and All
+            // Saints inside "ordinary"). Fixed 2026-07-08 via a lightweight override
+            // field on just these entries, same pattern as the canticle precedence field.
+            const openingOverride = dailyData?.opening_sentence_override;
+            const comp = (openingOverride && appData.components.find(c => c.id === openingOverride))
+                      || appData.components.find(c => c.id === `bcp-opening-${season}`)
                       || appData.components.find(c => c.id === 'bcp-opening-general');
             const t = comp ? (resolveText(comp, rite) || 'Text not found') : 'Text not found';
             officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${t}</span>`;
