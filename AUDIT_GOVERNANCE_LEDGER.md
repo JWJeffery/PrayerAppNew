@@ -1078,3 +1078,16 @@ Mechanical fix, no judgment call needed. `js/office-ui.js` psalm-selection block
 **New gap found, not fixed:** Monday in the Week of Proper 20 (2026-09-21) has no entry at all in `ordinary2.json` — `day_of_season` jumps 121→123, skipping 122 entirely. Source content for both years identified from BCP pp.984-985 and recorded in `RESUME_PROJECT_NOTE.md`. Not built yet — inserting it likely requires renumbering `day_of_season` for every later entry in the file, a bigger structural change than a citation fix, and it's unknown whether this same missing-weekday pattern recurs elsewhere (found incidentally, not via a systematic sweep of all `day_of_season` sequences).
 
 **Not yet done:** the fuller-reading convention hasn't been swept against the other five "done" seasons (Advent, Christmas, Epiphany, Lent, Easter) yet — only Ordinary Time has been checked. Given the original rebuild's note that the drop convention "matches every other season in the app," those seasons likely have the same pattern and need the same check.
+
+
+## Session, 2026-07-09 continued — bracketed-verse convention swept across Advent/Christmas/Epiphany/Lent/Easter
+
+Following up on the Ordinary Time bracket-extension fix above, checked the other five "done" seasons directly against `book_of_common_prayer.pdf` pp.936-965 (page images, same page-parity method: even=Year One, odd=Year Two, confirmed by footer text throughout) for the same dropped-parenthetical-verse pattern.
+
+**Finding: most of these five seasons were already correct** — unlike Ordinary Time, most candidate bracketed citations in the source table were already fully merged in the app. Real drops found and fixed: 8 reading citations (2 in Lent, 6 in Easter) plus one Sunday/Major-Feast catch (Trinity Sunday's OT reading, in `ordinary1.json`, non-contiguous bracket recorded comma-joined per house style for discontinuous verses). Full before/after table in `RESUME_PROJECT_NOTE.md`'s second 2026-07-09 entry.
+
+**Negative results worth recording so they aren't re-investigated:** Advent's apparent Week-4-Thursday citation mismatch is not a defect — the BCP table provides both a weekday-of-week row and a separate fixed "Dec. 24" row, and 2026's Dec. 24 (a Thursday) correctly uses the dated row's content, not the weekday row's. Several Epiphany candidates don't exist in the 2026 calendar because that year's Epiphany season is short (early Easter) and never reaches weeks 6-8 — not a gap.
+
+**Not done:** a systematic sweep of the remaining ~39 Sunday/named-feast/apostle-day entries across all six DOL files for this same pattern — only Trinity Sunday was checked, incidentally, while tracing a different citation. Still open scope, same as flagged in the 2026-07-08 tranche.
+
+**Running total for 2026-07-09:** 22 reading citations extended to their fuller BCP form (13 Ordinary Time weekdays + 9 from this sweep), across `ordinary1/2/3.json`, `lent.json`, and `easter.json`.

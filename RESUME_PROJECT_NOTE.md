@@ -413,3 +413,32 @@ Diff is exactly 13 insertions/13 deletions across the three files — only these
 Not built yet because inserting a missing day likely means renumbering `day_of_season` for every subsequent entry in the file, which is a bigger structural change than a citation fix and deserves its own verification pass (and a check for whether this same "missing weekday" pattern recurs elsewhere in Ordinary Time or the other five seasons — this was found incidentally, not by a systematic sweep).
 
 **Also flagged, not yet acted on:** Josh's decision applies the fuller-reading convention project-wide, so the five seasons already marked "done" (Advent, Christmas, Epiphany, Lent, Easter) likely have the same dropped-bracket pattern in their reading citations and haven't been checked against this convention yet — only Ordinary Time has been swept for it so far.
+
+## Session, 2026-07-09 continued — swept Advent/Christmas/Epiphany/Lent/Easter for the same pattern; 10 more fixed, one Sunday caught in Ordinary Time too
+
+Per the note above, checked all five remaining seasons directly against `book_of_common_prayer.pdf` pp.936-965 (the Advent-through-Pentecost DOL table) for the same dropped-bracket pattern, using the same page-parity method (even page = Year One, odd = Year Two, confirmed by footer text on every page checked, consistent with the Propers table).
+
+**Result: most of these seasons were already correct.** The majority of candidate citations found in the source table turned out to already be fully merged in the app — this rebuild/fix predates the Ordinary Time one and appears to have handled the bracket convention correctly the first time in most cases. Real drops were rare:
+
+**Fixed (9 citations):**
+| Season | Entry | Field | Was | Now |
+|---|---|---|---|---|
+| Lent | Monday, 2 Lent, Y2 | Epistle | 1 Corinthians 4:8-20 | 1 Corinthians 4:8-21 |
+| Lent | Monday, 5 Lent, Y2 | OT | Exodus 4:10-20, 27-31 | Exodus 4:10-31 |
+| Easter | Tuesday in Easter Week, Y1 | Epistle | Acts 2:36-41 | Acts 2:36-47 |
+| Easter | Wednesday in Easter Week, Y2 | Epistle | 1 Corinthians 15:30-41 | 1 Corinthians 15:29-41 |
+| Easter | Saturday in Easter Week, Y1 | Epistle | Acts 4:13-21 | Acts 4:13-31 |
+| Easter | Monday, 2 Easter, Y1 | Gospel | John 14:8-17 | John 14:1-17 |
+| Easter | Tuesday, 4 Easter, Y2 | Epistle | Colossians 3:18-4:6 | Colossians 3:18-4:18 |
+| Easter | Saturday, 4 Easter, Y1 | Gospel | Luke 7:18-28, 31-35 | Luke 7:18-35 |
+| Ordinary (Trinity Sunday) | Trinity Sunday, Y1 | OT | Ecclesiasticus 43:1-12 | Ecclesiasticus 43:1-12, 27-33 |
+
+That last one is a Sunday/Major-Feast entry, technically inside the "40 Sunday/feast/apostle-day entries not yet audited" gap from the original Ordinary Time tranche — caught incidentally while sweeping the source table's Trinity Sunday row, not from a systematic Sunday-entries pass. Its bracket was non-contiguous (`43:1-12(27-33)` skips 13-26 entirely), so it's recorded comma-joined rather than collapsed into a single range, matching the app's existing house style for genuinely discontinuous verses (e.g. `Ezek. 7:10-15, 23b-27`).
+
+**Checked and confirmed already correct, no change needed:** Advent (2 candidates, both already merged or superseded by a same-date "Dec. 24" override — see note below), Christmas (0 candidates found), Epiphany (8 candidates checked; the ones not found in the app turned out to be for Epiphany weeks 6-8, which don't occur in the 2026 calendar since Easter is early that year — not a gap), 1 John 5:13-21 (already merged), Matthew 1:1-17; 3:1-6 (already merged), Colossians 3:18-4:18 for Monday-5-Easter (already merged), Wisdom 10:1-21 for Tuesday-5-Easter (already merged).
+
+**Worth knowing for future sessions:** Advent's DOL table has both weekday-of-week rows (e.g. "Thursday, Week of 4 Advent") *and* separate fixed-date rows for Dec. 17-24, and whichever a given civil year's Dec. 24 falls on, the dated row overrides the weekday row for that date — the app is already doing this correctly (confirmed 2026-12-24 uses the "Dec. 24" row's content, not "Thursday, Week of 4 Advent"'s). Don't mistake this for a defect if it comes up again; it's the same category as the already-known "dated day overrides weekday-in-week" behavior documented for Epiphany's Baptism-of-Our-Lord transition.
+
+Diff for this sweep: 9 insertions/9 deletions across `easter.json`, `lent.json`, `ordinary1.json`, plus documentation updates here and in the governance ledger. Combined with the first Ordinary Time pass, 22 total citations fixed today.
+
+**Not done:** a full systematic sweep of the ~40 Sunday/named-feast/apostle-day entries (across Ordinary Time and the other five seasons) for the same bracket pattern — only Trinity Sunday was checked, incidentally. That remains open scope, same as it was flagged in the original 2026-07-08 tranche.
