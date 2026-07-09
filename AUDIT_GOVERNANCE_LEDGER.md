@@ -1065,3 +1065,16 @@ Visual/manual testing in an actual browser has not been performed (no browser av
 ## Session, 2026-07-07 — FIXED: Noonday Prayer and Compline now use their own BCP psalms
 
 Mechanical fix, no judgment call needed. `js/office-ui.js` psalm-selection block: Noonday and Compline now get their own fixed BCP-appointed psalm citations (`Psalm 119:105-112, Psalm 121, Psalm 126` for Noonday; `Psalm 4, Psalm 31:1-5, Psalm 91, Psalm 134:1-2` for Compline) instead of falling through to `dailyData.psalms_ep` (the DOL's Evening Prayer psalm). Takes priority over the 30-Day Psalter toggle too, since BCP's fixed psalms for these two offices don't vary with the main offices' psalter-cycle choice. No new content authored — reuses the existing `getScriptureText`/`VARIABLE_PSALM` pipeline already proven across the whole DOL audit; citations parse through unchanged. `node --check` clean.
+
+
+## Session, 2026-07-09 — Bracketed-verse convention extended to scripture readings; 13 Ordinary Time citations fixed; missing-day gap found
+
+**Governance decision (Josh):** the settled psalm-bracket policy ("bracketed alternatives are not optional — always use the fuller reading," grounded in BCP p.934's rubric) is extended to scripture readings project-wide. This reverses part of the "normalized to house style" step in the 2026-07-08 Ordinary Time DOL rebuild (`35d9734`), which had dropped bracketed verse extensions from reading citations rather than merging them in.
+
+**Verified directly against `book_of_common_prayer.pdf` pp.966-994** (rendered page images, not OCR text alone) before any fix: confirmed the drop was real (e.g. source `Luke 16:10-17(18)` stored as `Luke 16:10-17`, source `Num. 11:24-33(34-35)` stored as `Numbers 11:24-33`) — not a merge that only looked like a drop.
+
+**Fixed:** 13 weekday reading citations across `ordinary1/2/3.json`, full list and before/after values in `RESUME_PROJECT_NOTE.md`'s 2026-07-09 entry. Diff: exactly 13 insertions/13 deletions, only the affected reading fields touched. House style (full book names, plain hyphen, `; ` for split ranges) confirmed against unrelated existing entries before applying, not assumed.
+
+**New gap found, not fixed:** Monday in the Week of Proper 20 (2026-09-21) has no entry at all in `ordinary2.json` — `day_of_season` jumps 121→123, skipping 122 entirely. Source content for both years identified from BCP pp.984-985 and recorded in `RESUME_PROJECT_NOTE.md`. Not built yet — inserting it likely requires renumbering `day_of_season` for every later entry in the file, a bigger structural change than a citation fix, and it's unknown whether this same missing-weekday pattern recurs elsewhere (found incidentally, not via a systematic sweep of all `day_of_season` sequences).
+
+**Not yet done:** the fuller-reading convention hasn't been swept against the other five "done" seasons (Advent, Christmas, Epiphany, Lent, Easter) yet — only Ordinary Time has been checked. Given the original rebuild's note that the drop convention "matches every other season in the app," those seasons likely have the same pattern and need the same check.

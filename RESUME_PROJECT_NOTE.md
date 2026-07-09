@@ -380,3 +380,36 @@ Josh confirmed this session's Anglican/BCP Daily Office audit-then-fix work as c
 **One acknowledged rigor gap, not an implementation gap:** the Invitatory Antiphon's fabricated content was removed, but the seasons where BCP genuinely provides one (Advent, Christmas, Epiphany, Lent, Easter-to-Pentecost) were only checked for plausible category, never verified word-for-word the way everything else this session was.
 
 **If picking this up fresh:** the Anglican/BCP Daily Office needs no further work unless Josh specifically asks for one of the three items above, or for the Byzantine/Ethiopian traditions (a different, much larger project — read their own dashboard rows and any existing research-queue.json before starting).
+
+## Session, 2026-07-09 — Ordinary Time DOL: bracketed-verse convention decided, 13 citations fixed; one new gap found
+
+**Convention decided by Josh:** the settled psalm-bracket policy ("bracketed alternatives are not optional — always use the fuller reading") now applies to scripture readings too, not just psalms. This reverses the "drop optional parenthetical verses" normalization applied during the 2026-07-08 Ordinary Time DOL rebuild (`35d9734`).
+
+**Fixed, verified directly against `book_of_common_prayer.pdf` pp.966-994 (page images, not just OCR text):** 13 weekday reading citations across `ordinary1/2/3.json` where the BCP source had a bracketed verse extension that had been dropped rather than merged in. All are simple range-merges (bracket immediately extends or prefixes the stored range); house style (full book name, plain hyphen for spans, `Book C:V-C:V` for cross-chapter, `; ` for split ranges) confirmed against existing unrelated entries before applying, not assumed.
+
+| Entry | Field | Was | Now |
+|---|---|---|---|
+| Fri, Proper 3, Y1 | Gospel | Luke 16:10-17 | Luke 16:10-18 |
+| Fri, Proper 3, Y2 | Epistle | 1 Timothy 5:17-22 | 1 Timothy 5:17-25 |
+| Tue, Proper 4, Y1 | Epistle | 2 Corinthians 6:3-13 | 2 Corinthians 6:3-7:1 |
+| Wed, Proper 6, Y2 | OT | Numbers 11:24-33 | Numbers 11:24-35 |
+| Tue, Proper 18, Y1 | Gospel | Mark 16:1-8 | Mark 16:1-20 |
+| Mon, Proper 23, Y1 | Epistle | 1 Corinthians 13:4-13 | 1 Corinthians 13:1-13 |
+| Tue, Proper 24, Y1 | OT | Lamentations 1:1-5, 10-12 | Lamentations 1:1-12 |
+| Sat, Proper 25, Y1 | Epistle | Revelation 7:9-17 | Revelation 7:4-17 |
+| Thu, Proper 26, Y1 | OT | Ezra 7:11-26 | Ezra 7:1-26 |
+| Mon, Proper 27, Y1 | OT | Nehemiah 9:1-15 | Nehemiah 9:1-25 |
+| Tue, Proper 27, Y2 | OT | Joel 1:15-2:2 | Joel 1:15-2:11 |
+| Sat, Proper 27, Y2 | Gospel | Luke 16:10-17 | Luke 16:10-18 |
+| Tue, Proper 28, Y2 | OT | Habakkuk 3:1-10, 16-18 | Habakkuk 3:1-18 |
+
+Diff is exactly 13 insertions/13 deletions across the three files — only these fields touched, nothing else. Psalms were not affected (already correct/untouched by the original rebuild).
+
+**New gap found while checking this — not fixed, needs its own pass:** while locating one of the 13 candidates (the Esther/Luke citation), discovered **Monday in the Week of Proper 20 (2026-09-21) does not exist anywhere in `ordinary2.json`.** The calendar jumps straight from "Twentieth Sunday after Pentecost" (day_of_season 121) to "Tuesday in the Week of Proper 20" (day_of_season 123) — day 122 is simply absent, not a citation error but a missing calendar-day entry. Confirmed via BCP source (pp.984-985) what belongs there:
+- **Year One:** OT 2 Kings 5:1-19, Epistle 1 Corinthians 4:8-21, Gospel Matthew 5:21-26.
+- **Year Two:** OT Esther 4:4-17 (with the "Judith may be read in place of Esther" footnote — same unresolved single-citation-per-field issue as the rest of the Esther track), Epistle Acts 18:1-11, Gospel Luke 1:1-4; 3:1-14 (bracket already merged per the new convention).
+- **Psalms (shared both years):** MP Psalm 80; EP Psalm 77, Psalm 79 (BCP brackets Psalm 79 as optional — per the existing psalm policy, include it).
+
+Not built yet because inserting a missing day likely means renumbering `day_of_season` for every subsequent entry in the file, which is a bigger structural change than a citation fix and deserves its own verification pass (and a check for whether this same "missing weekday" pattern recurs elsewhere in Ordinary Time or the other five seasons — this was found incidentally, not by a systematic sweep).
+
+**Also flagged, not yet acted on:** Josh's decision applies the fuller-reading convention project-wide, so the five seasons already marked "done" (Advent, Christmas, Epiphany, Lent, Easter) likely have the same dropped-bracket pattern in their reading citations and haven't been checked against this convention yet — only Ordinary Time has been swept for it so far.
