@@ -264,7 +264,7 @@ const MORNING_PRAYER_STATUS = {
 };
 
 const EVENING_PRAYER_STATUS = {
-  "Opening Sentences": {status:'red', note:'CORRECTED 2026-07-07: shared with Morning Prayer, no separate defect of its own -- inherits Morning Prayer\'s seasonal-coverage gap (see that row -- Christmas/Epiphany fixed 2026-07-08, Holy Week/Trinity/All Saints still open). bcp-opening-evening is confirmed dead/orphaned data (fabricated text, never referenced anywhere in the rendering code) -- a minor cleanup item, still not removed.'},
+  "Opening Sentences": {status:'green', note:'CORRECTED 2026-07-07: shared with Morning Prayer, no separate defect of its own -- inherits Morning Prayer\'s seasonal-coverage gap (see that row -- now fully fixed 2026-07-08: Christmas, Epiphany, Holy Week, Trinity Sunday, and All Saints all added). bcp-opening-evening, the confirmed dead/orphaned data flagged here, was removed 2026-07-08 -- this row was stale until now, still showing red and "still not removed" after both were actually fixed.'},
   "Confession (optional)": {status:'green', note:'Shared with Morning Prayer\'s already-verified bcp-confession-rite1/rite2 components -- confirmed via js/office-ui.js. BCP itself uses identical confession-prayer text for both offices (only the officiant\'s introductory exhortation differs, which the app does not render as separate text to check).'},
   "Invitatory (O God, make speed to save us / Phos Hilaron)": {status:'green', note:'"O God, make speed to save us" versicle: shared component, already verified correct. Phos Hilaron (bcp-phos-hilaron) TEXT: one-word typo FIXED 2026-07-08 -- rite1\'s final line read "to be glorified THOUGH all the worlds," corrected to "THROUGH all the worlds" (BCP p.63), matching rite2 (already correct, "through," p.117). STRUCTURAL DEFECT ALSO FIXED 2026-07-08: BCP p.63/117 ("The Invitatory and Psalter") frames Phos Hilaron, "some other suitable hymn," and "an Invitatory Psalm" as three ALTERNATIVES -- pick one. Both used to render unconditionally, every day. New "Invitatory Psalm at Evening Prayer" toggle (unchecked by default, so Phos Hilaron shows as before) now makes this a genuine either/or: checking it shows the Invitatory Psalm (Venite/Jubilate, same fix as Morning Prayer\'s Invitatory Psalm row) and suppresses Phos Hilaron instead. Confirmed still correctly excluded from Noonday Prayer and Compline (unaffected).'},
   "Psalms": {status:'green', note:'Same data as Morning Prayer\'s Appointed Psalms row (Daily Office Lectionary psalms_ep field) -- DOL fixed and verified for all 8 seasons plus the Holy Days table across this session\'s tranches. Dashboard was stale (said "nothing fixed yet"), corrected 2026-07-08. See that row for full detail.'},
@@ -454,7 +454,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v70-2026-07-08-noonday-closing-plus-two-small-fixes';
+const SEED_VERSION = 'v71-2026-07-08-evening-opening-sentences-dashboard-sync-fixed';
 
 async function checkSeedVersion(){
   let storedValue = null;
