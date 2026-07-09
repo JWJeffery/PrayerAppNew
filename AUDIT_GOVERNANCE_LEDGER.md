@@ -1091,3 +1091,12 @@ Following up on the Ordinary Time bracket-extension fix above, checked the other
 **Not done:** a systematic sweep of the remaining ~39 Sunday/named-feast/apostle-day entries across all six DOL files for this same pattern — only Trinity Sunday was checked, incidentally, while tracing a different citation. Still open scope, same as flagged in the 2026-07-08 tranche.
 
 **Running total for 2026-07-09:** 22 reading citations extended to their fuller BCP form (13 Ordinary Time weekdays + 9 from this sweep), across `ordinary1/2/3.json`, `lent.json`, and `easter.json`.
+
+
+## Correction, 2026-07-09 (later same day) — the "missing Monday, Proper 20" finding above was wrong
+
+The gap reported in the previous entry ("Monday in the Week of Proper 20 has no entry at all in `ordinary2.json`") does not exist. Re-checked by listing every entry around 2026-09-20 through 09-22 directly rather than relying on a title-string search: **2026-09-21 is present as "Saint Matthew, Apostle and Evangelist,"** a fixed Holy Day correctly overriding the regular weekday DOL slot for that date — same category as the already-confirmed Dec-24/Christmas-Eve and Presentation-Day overrides.
+
+Checked its content directly against the BCP's Holy Days table (p.998) while correcting this: Psalm 119:41-64 / 19, 112; Isaiah 8:11-20; Romans 10:1-15; Job 28:12-28; Matthew 13:44-52 — all four readings present and correct (the 3-vs-4-reading Holy Days schema gap documented elsewhere in this ledger does not apply here; this entry already has `reading_ot_ep_year1`/`year2` populated), no brackets in the source, nothing to fix.
+
+**Root cause of the error:** the original claim was reached by searching `ordinary2.json` for titles containing "Proper 20" or by content ("Esther"), which correctly found the Tuesday-Saturday weekday entries but never checked what (if anything) occupied the Monday date directly — a real gap in method, not a coincidence. Recorded here per this project's standing practice of correcting the record rather than letting a wrong claim stand once found.
