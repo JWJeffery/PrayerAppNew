@@ -3630,6 +3630,23 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // VARIABLE_CLOSING_BLESSING — Morning/Evening Prayer's closing blessing.
+        // BCP p.59-60: "The Officiant may then conclude with one of the following" --
+        // 3 options (2 Cor. 13:14 / Romans 15:13 / Eph. 3:20-21). Previously only
+        // the first was ever shown. Fixed 2026-07-08: rotates daily, same convention
+        // as Mission Prayer and the Second Collect rotation.
+        if (item === 'VARIABLE_CLOSING_BLESSING') {
+            const blessingIds = ['bcp-closing-blessing-1', 'bcp-closing-blessing-2', 'bcp-closing-blessing-3'];
+            const rotate = document.getElementById('toggle-rotate-closing-blessing')?.checked ?? true;
+            const idx = rotate ? getDailyRotationIndex(currentDate, blessingIds.length) : 0;
+            const comp = appData.components.find(c => c.id === blessingIds[idx]);
+            if (comp) {
+                const t = resolveText(comp, rite) || comp.text || '';
+                officeHtml += `<span class="component-text">${t}</span>`;
+            }
+            continue;
+        }
+
         // VARIABLE_NOONDAY_COLLECT — Josh's settled decision (2026-07-07): BCP p.106
         // explicitly authorizes EITHER one of Noonday's own 4 collects OR the Collect
         // of the Day ("If desired, the Collect of the Day may be used") -- offer both
@@ -4095,6 +4112,8 @@ async function renderBcpOffice() {
             'bcp-opening-blessing-compline':  'Opening Blessing',
             'bcp-help-versicle-compline':     'Our Help Is in the Name of the Lord',
             'bcp-nunc-dimittis':              'Nunc Dimittis',
+            'bcp-versicle-bless-the-lord':    'Let Us Bless the Lord',
+            'bcp-antiphon-nunc-dimittis':     'Antiphon',
             'bcp-benedictus':                 'The Benedictus',
             'bcp-magnificat':                 'The Magnificat',
             'bcp-te-deum':                    'Te Deum Laudamus',
