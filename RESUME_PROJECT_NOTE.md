@@ -442,3 +442,25 @@ That last one is a Sunday/Major-Feast entry, technically inside the "40 Sunday/f
 Diff for this sweep: 9 insertions/9 deletions across `easter.json`, `lent.json`, `ordinary1.json`, plus documentation updates here and in the governance ledger. Combined with the first Ordinary Time pass, 22 total citations fixed today.
 
 **Not done:** a full systematic sweep of the ~40 Sunday/named-feast/apostle-day entries (across Ordinary Time and the other five seasons) for the same bracket pattern — only Trinity Sunday was checked, incidentally. That remains open scope, same as it was flagged in the original 2026-07-08 tranche.
+
+## Session, 2026-07-09 continued — Sunday/named-feast/Holy Day sweep completed (item 2)
+
+Systematically checked every Sunday and Holy Day across all six DOL season files against the BCP source for the same bracket pattern.
+
+**Ordinary Time Sundays (Propers 3-29):** checked all 27 Sunday reading lines against `book_of_common_prayer.pdf` pp.966-994. Found 3 with a variant of the same problem — not dropped, but left as fragmented comma-separated pieces instead of collapsed into a continuous range once the bracket was included, breaking house style:
+
+| Entry | Field | Was | Now |
+|---|---|---|---|
+| Eighth Sunday after Pentecost (Proper 8), Y2 | Epistle | Acts 17:12-21, 22-34 | Acts 17:12-34 |
+| Seventeenth Sunday after Pentecost (Proper 17), Y1 | OT | 1 Kings 8:22-30, 31-40 | 1 Kings 8:22-40 |
+| Twenty-seventh Sunday after Pentecost (Proper 28), Y2 | OT | Habakkuk 1:1-4, 5-11, 12-2:1 | Habakkuk 1:1-2:1 |
+
+**Advent/Christmas/Epiphany/Lent/Easter Sundays:** already covered by the earlier 2026-07-09 five-season sweep (that pass's day-matching included Sunday rows; zero bracket candidates turned up there).
+
+**The Holy Days table (pp.996-1000, the canonical table all ~25 fixed-date Holy Days across every season file draw from):** extracted and checked in full — a single bracket in the entire table, and it's on a psalm citation (Annunciation's EP psalm, `110:1-5(6-7)`), not a reading. Already correctly stored as `Psalm 110:1-7, 132` — psalms already follow the established bracket policy, so this needed no fix. **Zero reading-citation bracket defects anywhere in the Holy Days table.**
+
+**Item 2 is now complete.** Combined with the Trinity Sunday catch from earlier today, that's 4 Sunday-level fixes plus a clean Holy Days table — full coverage of the bracket-extension convention across every Sunday and Holy Day entry in the DOL, not just weekdays.
+
+**Note — this does NOT touch the separate, larger, already-flagged Holy Days project:** the Holy Days table being clean of *bracket* defects says nothing about the "wrong lectionary track" / 3-vs-4-reading schema defects documented earlier in this note and the governance ledger (only St. Andrew was found genuinely correct across all readings in that audit). That remains its own priority, untouched by today's work.
+
+**Running total for 2026-07-09: 26 citations extended/cleaned to their fuller BCP form** (13 Ordinary Time weekdays + 9 from the five-season sweep + 1 Trinity Sunday catch + 3 Ordinary Time Sundays), plus one corrected research error (the false "missing Monday, Proper 20" claim) and one confirmed-clean table (Holy Days).

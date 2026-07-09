@@ -1100,3 +1100,18 @@ The gap reported in the previous entry ("Monday in the Week of Proper 20 has no 
 Checked its content directly against the BCP's Holy Days table (p.998) while correcting this: Psalm 119:41-64 / 19, 112; Isaiah 8:11-20; Romans 10:1-15; Job 28:12-28; Matthew 13:44-52 — all four readings present and correct (the 3-vs-4-reading Holy Days schema gap documented elsewhere in this ledger does not apply here; this entry already has `reading_ot_ep_year1`/`year2` populated), no brackets in the source, nothing to fix.
 
 **Root cause of the error:** the original claim was reached by searching `ordinary2.json` for titles containing "Proper 20" or by content ("Esther"), which correctly found the Tuesday-Saturday weekday entries but never checked what (if anything) occupied the Monday date directly — a real gap in method, not a coincidence. Recorded here per this project's standing practice of correcting the record rather than letting a wrong claim stand once found.
+
+
+## Session, 2026-07-09 continued — Sunday/named-feast/Holy Day bracket sweep complete
+
+Checked every Sunday and Holy Day across all six DOL season files against BCP source for the bracket-drop/fragment pattern, closing out the item flagged earlier today.
+
+**Ordinary Time Sundays (27 checked, Propers 3-29):** 3 defects found and fixed — not a drop this time, but a bracket that was included yet left as fragmented comma-separated pieces instead of a continuous range (`Acts 17:12-21, 22-34` -> `Acts 17:12-34`; `1 Kings 8:22-30, 31-40` -> `1 Kings 8:22-40`; `Habakkuk 1:1-4, 5-11, 12-2:1` -> `Habakkuk 1:1-2:1`). Full table in `RESUME_PROJECT_NOTE.md`.
+
+**Advent/Christmas/Epiphany/Lent/Easter Sundays:** already covered by the earlier five-season sweep this session (Sunday rows were included in that pass; nothing found).
+
+**The Holy Days table (pp.996-1000):** extracted and checked in full -- every fixed-date Holy Day across every season file draws from this single table. Exactly one bracket in the whole table, on a psalm (Annunciation's EP psalm), already correctly stored per the existing psalm policy. Zero reading-citation defects.
+
+**Item 2 (Sunday/named-feast/Holy Day bracket sweep) is complete.** This does not touch the separate, larger "wrong lectionary track" / 3-vs-4-reading schema defect already documented for the Holy Days table (only St. Andrew confirmed fully correct in that audit) -- that remains its own priority.
+
+**Running total for 2026-07-09: 26 citations fixed** (13 Ordinary Time weekdays + 9 five-season sweep + 1 Trinity Sunday + 3 Ordinary Time Sundays), one research error corrected (false "missing Monday, Proper 20" claim), one table confirmed clean (Holy Days, bracket-wise).
