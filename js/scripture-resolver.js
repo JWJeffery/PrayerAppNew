@@ -249,6 +249,35 @@ async function extractPsalmRange(psalmsData, range, translation = DEFAULT_BIBLE_
 function extractBookRange(bookData, bookName, range, lastChapter, translation = DEFAULT_BIBLE_TRANSLATION) {
     if (!range || typeof range !== 'string') return { text: '', lastChapter };
 
+    // Cross-chapter format: "C:V-C:V" (e.g. "6:3-7:1"). Must be checked before the
+    // generic range.split(':') below, which produces 3 parts for this format,
+    // silently discards the trailing verse number, and misreads the middle piece
+    // as an end-verse within the START chapter only -- confirmed bug: "6:3-7:1"
+    // was rendering as just 6:3-6:7 (5 verses), never reaching chapter 7 at all.
+    // Verified against real data (2 Corinthians) before this fix; 172 reading
+    // citations across data/season/*.json use this format.
+    const crossChapterMatch = range.match(/^(\d+):(\d+)-(\d+):(\d+)$/);
+    if (crossChapterMatch) {
+        const startCh = parseInt(crossChapterMatch[1]);
+        const startV  = parseInt(crossChapterMatch[2]);
+        const endCh   = parseInt(crossChapterMatch[3]);
+        const endV    = parseInt(crossChapterMatch[4]);
+        let tempText = '';
+        for (let ch = startCh; ch <= endCh; ch++) {
+            const chapter = bookData.chapters.find(c => c.num === ch);
+            if (!chapter) { tempText += `[${bookName} ${ch} unavailable]\n`; continue; }
+            const vMin = (ch === startCh) ? startV : 1;
+            const vMax = (ch === endCh) ? endV : Infinity;
+            chapter.verses.forEach(v => {
+                if (v.num >= vMin && (vMax === Infinity || v.num <= vMax)) {
+                    const verseText = _selectBibleText(v.text, translation);
+                    tempText += `${ch}:${v.num} ${verseText}\n`;
+                }
+            });
+        }
+        return { text: tempText + '\n\n', lastChapter: endCh };
+    }
+
     let chNum, vStart, vEnd;
 
     if (range.includes(':')) {

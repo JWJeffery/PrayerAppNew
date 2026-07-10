@@ -1186,3 +1186,14 @@ Verification: 253-case sweep (23 Holy Days x 11 years, 2025-2035) -- 0 failures 
 Deeper gap surfaced, not created, left honest rather than papered over: the ~23 day_of_season slots these Holy Days occupy no longer have any regular-weekday content (overwritten when each Holy Day was built, historically and today). In years where the offset doesn't align with the Holy Day's real date, the app now correctly falls through to the existing "no entry" fallback sentinel instead of showing fabricated or wrong content -- an honest improvement, not a complete fix. Recovering the actual correct content would require re-deriving what BCP assigns to each numbered offset position, a real research task.
 
 Defect 1 closed for its stated purpose. Defect 2 (scripture-resolver) is next.
+
+
+## Session, 2026-07-10 continued — Defect 2 fixed: scripture-resolver cross-chapter citations; a fourth defect found
+
+Fix: extractBookRange() in js/scripture-resolver.js only ever fetched a single chapter. Added a branch, checked before the existing logic, that detects "C:V-C:V" format and loops across every chapter from start to end. Existing single-chapter and chapterless-subrange (lastChapter-threading) logic untouched.
+
+Verification: original failing case (2 Corinthians 6:3-7:1) now correctly returns all 17 verses spanning both chapters, versus 5 before. Regression-tested plain citations and chapterless sub-ranges -- unaffected. Full sweep of all 130 unique cross-chapter citations actually used across data/season/*.json, tested against real Bible data files: 124/130 fully correct (right verse count, right first/last verse, right chapters spanned).
+
+Fourth defect found while testing, not caused by this fix: the remaining 6 failures are Baruch/Ecclesiasticus/Wisdom citations. Traced precisely -- all chapters in all three books' JSON files have chapter.num set to null instead of an actual number, so the chapter lookup can never match anything from these books at all, cross-chapter or not, old code or new. Confirmed: a plain single-chapter Wisdom citation also fails identically. Every reading from these three books across the entire Daily Office (Wisdom 19 chapters, Baruch 5, Sirach 51, all null) currently renders as an unavailability message. Not fixed here -- a data-structure problem in three source files, not a resolver-logic problem, deserves its own scoped fix.
+
+Defect 2 closed for its stated scope (cross-chapter parsing). Wisdom/Baruch/Ecclesiasticus chapter-numbering is a distinct, newly-flagged open item.
