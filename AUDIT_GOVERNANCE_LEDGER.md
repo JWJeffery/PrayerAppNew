@@ -1162,3 +1162,14 @@ Both checkboxes added to the settings panel with source-citing tooltips, same co
 **None of the three defects are fixed.** All are empirically confirmed and well-understood, not inferred or guessed -- but each touches matching logic shared by hundreds of entries and deserves Josh's direction on approach, not a rushed bundled fix.
 
 **Dashboard updated:** two new sections added to audit-ledger.html -- BCP engines (the 4 above, 2 red/1 green/1 amber) and other-tradition engines (10 files, all amber, flagged per Josh's explicit BCP-only scoping for this session). SEED_VERSION bumped to v72. Script block re-extracted and node --check'd before committing, per this ledger's own standing rule about the historical double-escaped-apostrophe failure mode.
+
+
+## Session, 2026-07-10 continued — Defect 3 fixed: ordinary1.json day_of_season off-by-2
+
+Root cause confirmed: two dead entries (the already-known-dead "Day of Pentecost" duplicate, re-verified independently -- getSeasonAndFile() routes Pentecost to easter.json, never ordinary1.json; and the Shrove Tuesday entry closed out earlier the same day, also confirmed dead) were occupying day_of_season 1-2, pushing all real content 2 slots later than the engine's own offset math expects.
+
+Fix: removed both dead entries from ordinary1.json; shifted every remaining day_of_season down by 2 across all three Ordinary Time files (188 entries total). Done via script given the scale; diff verified clean (one changed line per entry, two clean removals, no incidental reformatting).
+
+Verification: full-corpus scan comparing every entry's stored day_of_season against the engine's own live-computed value -- zero mismatches across all 188 entries. Tested day-after-Pentecost resolution for 2027/2028/2029 (three different dates, since Easter moves) -- all three correctly resolve to the true first day of Ordinary Time via offset matching, confirming the fix holds across years.
+
+Defect 3 closed. Defects 1 and 2 remain, addressed in their own follow-up entries.

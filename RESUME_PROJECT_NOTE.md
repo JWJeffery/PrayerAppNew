@@ -531,6 +531,20 @@ Read `calendar-engine.js`, `scripture-resolver.js`, and `saints-resolver.js` in 
 
 **None of these three are fixed yet.** All are well-understood and empirically confirmed, not guessed at, but each touches core matching logic used by hundreds of entries — they deserve Josh's direction on approach before any patch, not a rushed fix bundled into this session.
 
+## Session, 2026-07-10 continued — Defect 3 fixed (day_of_season off-by-2), verified across multiple years
+
+Josh's chosen order: Defect 3 first (simplest, and a prerequisite for cleanly testing Defect 1 across years), then Defect 1, then Defect 2. Resume note written after each engine's fix lands, per Josh's instruction, rather than batched at the end.
+
+**Root cause, confirmed:** two dead entries were occupying `day_of_season` 1 and 2 in `ordinary1.json` — the already-known-dead "Day of Pentecost" duplicate (re-verified independently this session: `getSeasonAndFile()` routes May 24, 2026 to `easter.json`, never `ordinary1.json`; the real entry lives correctly in `easter.json`) and the Shrove Tuesday entry closed out earlier today (also confirmed dead: Feb 17, 2026 routes to `epiphany.json`). Real content didn't start until `day_of_season: 3`.
+
+**Fix:** removed both dead entries from `ordinary1.json` entirely (they served no purpose and actively caused the bug), then shifted every remaining `day_of_season` value down by 2 across all three files — `ordinary1.json` (68 real entries after removal), `ordinary2.json` (61 entries), `ordinary3.json` (60 entries) — done via a script, not by hand, given the scale (188 single-field changes). Diff verified clean: exactly one changed line per entry plus the two full removals, no incidental reformatting.
+
+**Verification, not just inspection:**
+- Full-corpus scan comparing every entry's stored `day_of_season` against the engine's own live-computed value (`getSeasonStartDate()` + offset math): **zero mismatches across all 188 entries**, before this fix there would have been essentially all of them (anything not shielded by an exact 2026 date match).
+- Tested the actual day-after-Pentecost resolution for 2027, 2028, and 2029 (three different Pentecost dates, since Easter moves) — all three correctly resolve to "Monday in the Week of Proper 3," the true first day of Ordinary Time, via offset matching. Confirms the fix holds across years, not just for 2026's own numbers.
+
+**Defect 3 is closed.** Two defects remain: Defect 1 (findEntry's priority order breaking fixed-date Holy Days in moveable seasons) and Defect 2 (the scripture-resolver cross-chapter citation bug) — full detail on both in the entry above.
+
 ### Dashboard updated
 
 Added two new sections to `audit-ledger.html`: "Engines & Rendering Logic — the BCP Daily Office" (the 4 engines above: calendar-engine.js and scripture-resolver.js red with the findings above; saints-resolver.js green, clean; office-ui.js's core rendering amber, partially surveyed) and "Engines & Rendering Logic — other traditions (flagged, not audited)" (all 10 other-tradition engine files — Ethiopian, East Syriac, Eastern Orthodox, Byzantine/Horologion/Menaion/Octoechos, Roman Breviary — marked amber per Josh's explicit instruction that this session's scope was BCP-only). `SEED_VERSION` bumped, script block re-validated with `node --check` before committing. The St. Mary the Virgin / St. Michael and All Angels alternate-readings toggles are now implemented — see above, in this same entry.
