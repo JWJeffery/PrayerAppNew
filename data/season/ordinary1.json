@@ -120,6 +120,22 @@
   },
   {
     "date": "2026-06-01",
+    "title": "Monday in the Week of Proper 4",
+    "season": "Ordinary",
+    "liturgicalColor": "green",
+    "collect": "collect-proper-4",
+    "psalms_mp": "Psalm 41, Psalm 52",
+    "psalms_ep": "Psalm 44",
+    "reading_ot_mp_year1": "Deuteronomy 11:13-19",
+    "reading_epistle_mp_year1": "2 Corinthians 5:11-6:2",
+    "reading_gospel_ep_year1": "Luke 17:1-10",
+    "reading_ot_mp_year2": "Ecclesiastes 2:1-15",
+    "reading_epistle_ep_year2": "Galatians 1:1-17",
+    "reading_gospel_mp_year2": "Matthew 13:44-52",
+    "day_of_season": 8
+  },
+  {
+    "moveable_id": "visitation",
     "title": "The Visitation of the Blessed Virgin Mary",
     "season": "Ordinary",
     "liturgicalColor": "white",
@@ -132,7 +148,6 @@
     "reading_ot_mp_year2": "1 Samuel 1:1-20",
     "reading_epistle_ep_year2": "Hebrews 3:1-6",
     "reading_gospel_mp_year2": "John 3:25-30",
-    "day_of_season": 8,
     "reading_ot_ep_year1": "Zechariah 2:10-13",
     "reading_ot_ep_year2": "Zechariah 2:10-13",
     "precedence": "major-feast"

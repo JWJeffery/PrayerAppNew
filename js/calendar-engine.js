@@ -66,6 +66,29 @@ class CalendarEngine {
                date.getDate()     === t.getDate();
     }
 
+    static _getVisitationDate(year) {
+        // The Visitation of the Blessed Virgin Mary has a genuine fixed BCP date,
+        // May 31 -- but per BCP's transfer rule (p.15: "other Feasts of our Lord...
+        // which occur on a Sunday are normally transferred to the first convenient
+        // open day within the week"), when May 31 coincides with Trinity Sunday
+        // (a Principal Feast, which always wins), the Visitation moves to the next
+        // day instead. Trinity Sunday = the Sunday after Pentecost = Easter + 56.
+        const easter = this._getEaster(year);
+        const trinitySunday = this._addDays(easter, 56);
+        const may31 = new Date(year, 4, 31); // month is 0-indexed
+        const collides = trinitySunday.getFullYear() === may31.getFullYear() &&
+                          trinitySunday.getMonth()    === may31.getMonth()    &&
+                          trinitySunday.getDate()     === may31.getDate();
+        return collides ? this._addDays(may31, 1) : may31;
+    }
+
+    static _isVisitationDate(date) {
+        const v = this._getVisitationDate(date.getFullYear());
+        return date.getFullYear() === v.getFullYear() &&
+               date.getMonth()    === v.getMonth()    &&
+               date.getDate()     === v.getDate();
+    }
+
     static _addDays(date, n) {
         const d = new Date(date);
         d.setDate(d.getDate() + n);
@@ -235,6 +258,37 @@ class CalendarEngine {
     }
 
     static async fetchLectionaryData(targetDate = this.currentDate) {
+        // The Visitation of the Blessed Virgin Mary (May 31, or June 1 in years
+        // it collides with Trinity Sunday -- see _getVisitationDate) is checked
+        // before normal season/file routing, because its date can fall in EITHER
+        // Easter season or Ordinary Time depending on how early/late Easter is
+        // that year (confirmed empirically: 5 of 12 tested years land in Easter
+        // season, not Ordinary Time, where its data entry actually lives).
+        // findEntry()'s own Priority checks can't help here, since they only ever
+        // see whichever single file getSeasonAndFile() already picked.
+        if (this._isVisitationDate(targetDate)) {
+            const file = 'ordinary1.json';
+            let data = this.seasonalCache[file];
+            if (!data) {
+                try {
+                    const response = await fetch(`data/season/${file}`);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    data = await response.json();
+                    this.seasonalCache[file] = data;
+                } catch (err) {
+                    console.error(`[Calendar Engine] Error loading ${file} for Visitation lookup:`, err);
+                    data = null;
+                }
+            }
+            if (data) {
+                const visEntry = data.find(d => d.moveable_id === 'visitation');
+                if (visEntry) {
+                    console.log(`[Calendar Engine] Visitation match for ${this.formatDateISO(targetDate)}`);
+                    return visEntry;
+                }
+            }
+        }
+
         const { file } = this.getSeasonAndFile(targetDate);
 
         if (this.seasonalCache[file]) {

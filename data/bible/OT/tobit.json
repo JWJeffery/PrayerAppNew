@@ -7,10 +7,10 @@
   },
   "chapters": [
     {
-      "number": 1,
+      "num": 1,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "The Booke of the wordes of Tobit, sonne of Tobiel, the son of Ananiel, the sonne of Aduel, the sonne of Gabael, of the seed of Asael, of the Tribe of Nephthali,",
             "NABRE": "Chapter 1 Tobit. This book tells the story of Tobit, son of Tobiel, son of Hananiel, son of Aduel, son of Gabael, son of Raphael, son of Raguel, of the family of Asiel and the tribe of Naphtali.",
@@ -19,7 +19,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Who in the time of Enemessar king of the Assyrians, was led captiue out of This be which is at the right hand of that citie, which is called properly Nephthali in Galile aboue Aser.",
             "NABRE": "During the days of Shalmaneser, king of the Assyrians, he was taken captive from Thisbe, which is south of Kedesh Naphtali in upper Galilee, above and to the west of Asher, north of Phogor.",
@@ -28,7 +28,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "I Tobit haue walked all the dayes of my life in the way of trueth, and iustice, and I did many almes deeds to my brethren, and my nation, who came with me to Nineue into the land of the Assyrians.",
             "NABRE": "I. Tobit’s Ordeals His Virtue. I, Tobit, have walked all the days of my life on paths of fidelity and righteousness. I performed many charitable deeds for my kindred and my people who had been taken captive with me to Nineveh, in the land of the Assyrians.",
@@ -37,7 +37,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And when I was in mine owne countrey, in the land of Israel, being but yong, all the tribe of Nephthali my father, fell from the house of Ierusalem, which was chosen out of all the tribes of Israel, that all the tribes should sacrifice there where the Temple of the habitation of the most High was consecrated, and built for all ages.",
             "NABRE": "When I lived as a young man in my own country, in the land of Israel, the entire tribe of my ancestor Naphtali broke away from the house of David, my ancestor, and from Jerusalem, the city that had been singled out of all Israel’s tribes that all Israel might offer sacrifice there. It was the place where the temple, God’s dwelling, had been built and consecrated for all generations to come.",
@@ -46,7 +46,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Now all the tribes which together reuolted, and the house of my father Nephthali sacrificed vnto the heifer Baal.",
             "NABRE": "All my kindred, as well as the house of Naphtali, my ancestor, used to offer sacrifice on every hilltop in Galilee to the calf that Jeroboam, king of Israel, had made in Dan.",
@@ -55,7 +55,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "But I alone went often to Ierusalem at the Feasts, as it was ordeined vnto al the people of Israel by an euerlasting decree, hauing the first fruits, and tenths of encrease, with that which was first shorne, and them gaue I at the Altar to the Priestes the children of Aaron.",
             "NABRE": "But I alone used to go often to Jerusalem for the festivals, as was prescribed for all Israel by longstanding decree. Bringing with me the first fruits of crops, the firstlings of the flock, the tithes of livestock, and the first shearings of sheep, I used to hasten to Jerusalem",
@@ -64,7 +64,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "The first tenth part of al increase, I gaue to the sonnes of Aaron, who ministred at Ierusalem: another tenth part I sold away, and went, and spent it euery yeere at Ierusalem.",
             "NABRE": "and present them to the priests, Aaron’s sons, at the altar. To the Levites ministering in Jerusalem I used to give the tithe of grain, wine, olive oil, pomegranates, figs, and other fruits. Six years in a row, I used to give a second tithe in money, which each year I would go to pay in Jerusalem.",
@@ -73,7 +73,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "And the third, I gaue vnto them to whom it was meet, as Debora my fathers mother had commanded mee, because I was left an orphane by my father.",
             "NABRE": "The third-year tithe I gave to orphans, widows, and converts who had joined the Israelites. Every third year I would bring them this offering, and we ate it in keeping with the decree laid down in the Mosaic law concerning it, and according to the commands of Deborah, the mother of my father Tobiel; for my father had died and left me an orphan.",
@@ -82,7 +82,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Furthermore when I was come to the age of a man, I married Anna of mine owne kinred, and of her I begate Tobias.",
             "NABRE": "When I reached manhood, I married Anna, a woman of our ancestral family. By her I had a son whom I named Tobiah.",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And when we were caried away captiues to Nineue, all my brethren, and those that were of my kinred, did eate of the bread of the Gentiles.",
             "NABRE": "Now, after I had been deported to the Assyrians and came as a captive to Nineveh, all my kindred and my people used to eat the food of the Gentiles,",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "But I kept my selfe from eating",
             "NABRE": "but I refrained from eating that Gentile food.",
@@ -109,7 +109,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Because I remembred God with all my heart.",
             "NABRE": "Because I was mindful of God with all my heart,",
@@ -118,7 +118,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And the most High gaue me grace, and fauour before Enemessar, so that I was his purueyour.",
             "NABRE": "the Most High granted me favor and status with Shalmaneser, so that I became purchasing agent for all his needs.",
@@ -127,7 +127,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And I went into Media, and left in trust with Gabael, the brother of Gabrias at Rages a citie of Media, ten talents of siluer.",
             "NABRE": "Until he died, I would go to Media to buy goods for him there. I also deposited pouches of silver worth ten talents in trust with my kinsman Gabael, son of Gabri, who lived at Rages, in the land of Media.",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Now when Enemessar was dead, Sennacherib his sonne reigned in his stead, whose estate was troubled, that I could not goe into Media.",
             "NABRE": "When Shalmaneser died and his son Sennacherib came to rule in his stead, the roads to Media became unsafe, so I could no longer go to Media.",
@@ -145,7 +145,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "And in the time of Enemessar, I gaue many almes to my brethren, and gaue my bread to the hungry,",
             "NABRE": "Courage in Burying the Dead. In the days of Shalmaneser I had performed many charitable deeds for my kindred, members of my people.",
@@ -154,7 +154,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "And my clothes to the naked: and if I saw any of my nation dead, or cast about the walles of Nineue, I buried him.",
             "NABRE": "I would give my bread to the hungry and clothing to the naked. If I saw one of my people who had died and been thrown behind the wall of Nineveh, I used to bury him.",
@@ -163,7 +163,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "And if the king Sennacherib had slaine any, when hee was come, and fledde from Iudea, I buried them priuily, (for in his wrath hee killed many) but the bodies were not found, when they were sought for of the king.",
             "NABRE": "Sennacherib returned from Judea, having fled during the days of the judgment enacted against him by the King of Heaven because of the blasphemies he had uttered; whomever he killed I buried. For in his rage he killed many Israelites, but I used to take their bodies away by stealth and bury them. So when Sennacherib looked for them, he could not find them.",
@@ -172,7 +172,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "And when one of the Nineuites went, and complained of me to the king that I buried them, and hid my selfe: vnderstanding that I was sought for to be put to death, I withdrew my selfe for feare.",
             "NABRE": "But a certain Ninevite went and informed the king about me, that I was burying them, and I went into hiding. When I realized that the king knew about me and that I was being hunted to be put to death, I became afraid and took flight.",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Then all my goods were forcibly taken away, neither was there any thing left me, besides my wife Anna, and my sonne Tobias.",
             "NABRE": "All my property was confiscated; I was left with nothing. All that I had was taken to the king’s palace, except for my wife Anna and my son Tobiah.",
@@ -190,7 +190,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "And there passed not fiue and fiftie dayes before two of his sonnes killed him, and they fled into the mountaines of Ararath, and Sarchedonus his sonne reigned in his stead, who appointed ouer his fathers accounts, and ouer all his affaires, Achiacharus my brother Anaels sonne.",
             "NABRE": "But forty days did not pass before two of the king’s sons assassinated him and fled to the mountains of Ararat. A son of his, Esarhaddon, succeeded him as king. He put Ahiqar, my kinsman Anael’s son, in charge of all the credit accounts of his kingdom, and he took control over the entire administration.",
@@ -199,7 +199,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "And Achiacharus entreating for me, I returned to Nineue: now Achiacharus was Cup-bearer, and keeper of the Signet, and Steward, and ouerseer of the accounts: and Sarchedonus appointed him next vnto him: and hee was my brothers sonne.",
             "NABRE": "Then Ahiqar interceded on my behalf, and I returned to Nineveh. Ahiqar had been chief cupbearer, keeper of the signet ring, treasury accountant, and credit accountant under Sennacherib, king of the Assyrians; and Esarhaddon appointed him as Second to himself. He was, in fact, my nephew, of my father’s house, and of my own family.",
@@ -208,19 +208,19 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "But Tobias flying with his son and with his wife, nakedly lay hid, because many loved him."
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "But after forty five days the king was slain of his own sons,"
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "and Tobias returned into his house, and all his substance was restored to him."
           }
@@ -228,10 +228,10 @@
       ]
     },
     {
-      "number": 2,
+      "num": 2,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Now when I was come home againe, and my wife Anna was restored vnto me, with my sonne Tobias, in the feast of Pentecost, which is the holy Feast of the seuen weekes, there was a good dinner prepared me, in the which I sate down to eate.",
             "NABRE": "Chapter 2 Thus under King Esarhaddon I returned to my home, and my wife Anna and my son Tobiah were restored to me. Then on our festival of Pentecost, the holy feast of Weeks, a fine dinner was prepared for me, and I reclined to eat.",
@@ -240,7 +240,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And when I saw abundance of meate, I sayd to my sonne, Goe and bring what poore man soeuer thou shalt finde out of our brethren, who is mindfull of the Lord, and loe, I tarie for thee.",
             "NABRE": "The table was set for me, and the dishes placed before me were many. So I said to my son Tobiah: “Son, go out and bring in whatever poor person you find among our kindred exiled here in Nineveh who may be a sincere worshiper of God to share this meal with me. Indeed, son, I shall wait for you to come back.”",
@@ -249,7 +249,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "But he came againe and said, Father, one of our nation is strangled, and is cast out in the market place.",
             "NABRE": "Tobiah went out to look for some poor person among our kindred, but he came back and cried, “Father!” I said to him, “Here I am, son.” He answered, “Father, one of our people has been murdered! He has been thrown out into the market place, and there he lies strangled.”",
@@ -258,7 +258,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Then before I had tasted of any meate, I start vp and tooke him vp into a roume, vntill the going downe of the Sunne.",
             "NABRE": "I sprang to my feet, leaving the dinner untouched, carried the dead man from the square, and put him in one of the rooms until sundown, so that I might bury him.",
@@ -267,7 +267,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Then I returned and washed my selfe, and ate my meate in heauinesse,",
             "NABRE": "I returned and washed and in sorrow ate my food.",
@@ -276,7 +276,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Remembring that prophesie of Amos, as hee said; Your feasts shall be turned into mourning, and all your mirth into lamentation.",
             "NABRE": "I remembered the oracle pronounced by the prophet Amos against Bethel: “I will turn your feasts into mourning, and all your songs into dirges.”",
@@ -285,7 +285,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Therefore I wept: and after the going downe of the Sunne, I went and made a graue, and buried him.",
             "NABRE": "Then I wept. At sunset I went out, dug a grave, and buried him.",
@@ -294,7 +294,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "But my neighbours mocked me, and said, This man is not yet afraide to be put to death for this matter, who fledde away, and yet loe, he burieth the dead againe.",
             "NABRE": "My neighbors mocked me, saying: “Does he have no fear? Once before he was hunted, to be executed for this sort of deed, and he ran away; yet here he is again burying the dead!”",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "The same night also I returned from the buriall, and slept by the wall of my court yard, being polluted, and my face was vncouered:",
             "NABRE": "Tobit’s Blindness. That same night I washed and went into my courtyard, where I lay down to sleep beside the wall. Because of the heat I left my face uncovered.",
@@ -312,7 +312,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And I knewe not that there were Sparrowes in the wall, and mine eyes being open, the Sparrowes muted warme doung into mine eyes, and a whitenesse came in mine eyes, and I went to the Physicians, but they helped me not: moreouer Achiacharus did nourish mee, vntill I went into Elymais.",
             "NABRE": "I did not know that sparrows were perched on the wall above me; their warm droppings settled in my eyes, causing white scales on them. I went to doctors for a cure, but the more they applied ointments, the more my vision was obscured by the white scales, until I was totally blind. For four years I was unable to see, and all my kindred were distressed at my condition. Ahiqar, however, took care of me for two years, until he left for Elam.",
@@ -321,7 +321,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And my wife Anna did take womens workes to doe.",
             "NABRE": "At that time my wife Anna worked for hire at weaving cloth, doing the kind of work women do.",
@@ -330,7 +330,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And when shee had sent them home to the owners, they payd her wages, and gaue her also besides a kid.",
             "NABRE": "When she delivered the material to her employers, they would pay her a wage. On the seventh day of the month of Dystrus, she finished the woven cloth and delivered it to her employers. They paid her the full salary and also gave her a young goat for a meal.",
@@ -339,7 +339,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And when it was in mine house, and beganne to crie, I said vnto her, From whence is this kidde? is it not stollen? render it to the owners, for it is not lawfull to eate any thing that is stollen.",
             "NABRE": "On entering my house, the goat began to bleat. So I called to my wife and said: “Where did this goat come from? It was not stolen, was it? Give it back to its owners; we have no right to eat anything stolen!”",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "But shee replyed vpon me, It was giuen for a gift more then the wages: Howbeit I did not beleeue her, but bade her render it to the owners: and I was abashed at her. But she replyed vpon me, Where are thine almes, and thy righteous deedes? behold, thou and all thy workes are knowen.",
             "NABRE": "But she said to me, “It was given to me as a bonus over and above my wages.” Yet I would not believe her and told her to give it back to its owners. I flushed with anger at her over this. So she retorted: “Where are your charitable deeds now? Where are your righteous acts? Look! All that has happened to you is well known!”",
@@ -357,55 +357,55 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "For as the kings insulted against blessed Job, so his parents and cousins derided his life, saying:"
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "Where is thy hope, for the which thou didest bestow alms & burials?"
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "But Tobias rebuked them, saying: Speak not so:"
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "because we are the children of holy ones, and look for that life, which God will give to them, that never change their faith from him."
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "But Anna his wife went daily to weaving work, and she brought the gains of her handy labour, which she could get."
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "Whereby it came to pass, that she receiving a kid of goats had brought it home:"
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "the voice whereof bleating when her husband had heard, he said: Take heed, lest perhaps it be stolen, restore ye it to his owners, because it is not lawful for us either to eat any thing of theft or to touch it."
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "To these words his wife being angry answered: Thy hope is become vain manifestly, and thine alms now have appeared."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "And with these, and other such like words she upbraided him."
           }
@@ -413,10 +413,10 @@
       ]
     },
     {
-      "number": 3,
+      "num": 3,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then I being grieued, did weepe, and in my sorrowe prayed, saying,",
             "NABRE": "Chapter 3 Then sad at heart, I groaned and wept aloud. With sobs I began to pray:",
@@ -425,7 +425,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "O Lord, thou art iust and all thy workes, and all thy wayes are mercie and trueth, and thou iudgest truely & iustly for euer.",
             "NABRE": "Tobit’s Prayer for Death “You are righteous, Lord, and all your deeds are just; All your ways are mercy and fidelity; you are judge of the world.",
@@ -434,7 +434,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Remember me, and looke on me, punish me not for my sinnes and ignorances, and the sinnes of my fathers, who haue sinned before thee.",
             "NABRE": "And now, Lord, be mindful of me and look with favor upon me. Do not punish me for my sins, or for my inadvertent offenses, or for those of my ancestors. “They sinned against you,",
@@ -443,7 +443,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "For they obeyed not thy commandements, wherefore thou hast deliuered vs for a spoile, and vnto captiuitie, and vnto death, and for a prouerbe of reproch to all the nations among whom we are dispersed.",
             "NABRE": "and disobeyed your commandments. So you handed us over to plunder, captivity, and death, to become an object lesson, a byword, and a reproach in all the nations among whom you scattered us.",
@@ -452,7 +452,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "And now thy iudgments are many and true: Deale with me according to my sinnes, and my fathers: because we haue not kept thy commandements, neither haue walked in trueth before thee.",
             "NABRE": "“Yes, your many judgments are right in dealing with me as my sins, and those of my ancestors, deserve. For we have neither kept your commandments, nor walked in fidelity before you.",
@@ -461,7 +461,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Now therefore deale with me as seemeth best vnto thee, and command my spirit to be taken from me, that I may be dissolued, and become earth: for it is profitable for me to die, rather then to liue, because I haue heard false reproches, and haue much sorow: command therfore that I may now be deliuered out of this distresse, and goe into the euerlasting place: turne not thy face away from me.",
             "NABRE": "“So now, deal with me as you please; command my life breath to be taken from me, that I may depart from the face of the earth and become dust. It is better for me to die than to live, because I have listened to undeserved reproaches, and great is the grief within me. “Lord, command that I be released from such anguish; let me go to my everlasting abode; Do not turn your face away from me, Lord. For it is better for me to die than to endure so much misery in life, and to listen to such reproaches!”",
@@ -470,7 +470,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "It came to passe the same day, that in Ecbatane a citie of Media, Sara the daughter of Raguel, was also reproched by her fathers maides,",
             "NABRE": "II. Sarah’s Plight Sarah Falsely Accused. On that very day, at Ecbatana in Media, it so happened that Raguel’s daughter Sarah also had to listen to reproaches from one of her father’s maids.",
@@ -479,7 +479,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Because that she had bin maried to seuen husbands, whom Almodeus the euill spirit had killed, before they had lien with her. Doest thou not knowe, said they, that thou hast strangled thine husbands? thou hast had already seuen husbands, neither wast thou named after any of them.",
             "NABRE": "For she had been given in marriage to seven husbands, but the wicked demon Asmodeus kept killing them off before they could have intercourse with her, as is prescribed for wives. The maid said to her: “You are the one who kills your husbands! Look! You have already been given in marriage to seven husbands, but you do not bear the name of a single one of them.",
@@ -488,7 +488,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Wherefore doest thou beate vs for them? If they be dead, goe thy wayes after them, let vs neuer see of thee either sonne or daughter.",
             "NABRE": "Why do you beat us? Because your husbands are dead? Go, join them! May we never see son or daughter of yours!”",
@@ -497,7 +497,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "When she heard these things, she was very sorowful, so that she thought to haue strangled her selfe, and she said, I am the onely daughter of my father, and if I doe this, it shall bee a reproch vnto him, and I shall bring his old age with sorow vnto the graue.",
             "NABRE": "That day Sarah was sad at heart. She went in tears to an upstairs room in her father’s house and wanted to hang herself. But she reconsidered, saying to herself: “No! May people never reproach my father and say to him, ‘You had only one beloved daughter, but she hanged herself because of her misfortune.’ And thus would I bring my father laden with sorrow in his old age to Hades. It is far better for me not to hang myself, but to beg the Lord that I might die, and no longer have to listen to such reproaches in my lifetime.”",
@@ -506,7 +506,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Then she prayed toward the window, & said, Blessed art thou, O Lord my God, and thine holy and glorious Name is blessed, and honourable foreuer, let al thy works praise thee for euer.",
             "NABRE": "At that same time, with hands outstretched toward the window, she implored favor: Sarah’s Prayer for Death “Blessed are you, merciful God! Blessed be your holy and honorable name forever! May all your works forever bless you.",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And now, O Lord, I set mine eyes and my face toward thee,",
             "NABRE": "Now to you, Lord, I have turned my face and have lifted up my eyes.",
@@ -524,7 +524,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And say, take me out of the earth, that I may heare no more the reproch.",
             "NABRE": "Bid me to depart from the earth, never again to listen to such reproaches.",
@@ -533,7 +533,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "Thou knowest, Lord, that I am pure from all sinne with man,",
             "NABRE": "“You know, Master, that I am clean of any defilement with a man.",
@@ -542,7 +542,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "And that I neuer polluted my name, nor the name of my father in the land of my captiuitie: I am the onely daughter of my father, neither hath he any child to bee his heire, neither any neere kinseman, nor any sonne of his aliue, to whome I may keepe my selfe for a wife: my seuen husbands are already dead, and why should I liue? but if it please not thee that I should die, command some regard to be had of me, and pitie taken of me, that I heare no more reproch.",
             "NABRE": "I have never sullied my own name or my father’s name in the land of my captivity. “I am my father’s only daughter, and he has no other child to be his heir, Nor does he have a kinsman or close relative whose wife I should wait to become. Seven husbands of mine have already died. Why then should I live any longer? But if it does not please you, Lord, to take my life, look favorably upon me and have pity on me, that I may never again listen to such reproaches!”",
@@ -551,7 +551,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "So the prayers of them both were heard before the Maiesty of the great God.",
             "NABRE": "An Answer to Prayer. At that very time, the prayer of both of them was heard in the glorious presence of God.",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "And Raphael was sent to heale them both, that is, to scale away the whitenesse of Tobits eyes, and to giue Sara the daughter of Raguel, for a wife to Tobias the sonne of Tobit, and to bind Asmodeus the euill spirit, because she belongeth to Tobias by right of inheritance. The selfe same time came Tobit home, and entred into his house, and Sara, the daughter of Raguel came downe from her vpper chamber.",
             "NABRE": "So Raphael was sent to heal them both: to remove the white scales from Tobit’s eyes, so that he might again see with his own eyes God’s light; and to give Sarah, the daughter of Raguel, as a wife to Tobiah, the son of Tobit, and to rid her of the wicked demon Asmodeus. For it fell to Tobiah’s lot to claim her before any others who might wish to marry her. At that very moment Tobit turned from the courtyard to his house, and Raguel’s daughter Sarah came down from the upstairs room.",
@@ -569,49 +569,49 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "But a husband I consented to take, with thy fear, not with my lust."
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And either I was unworthy of them, or they perhaps were not worthy for me: because perhaps thou hast kept me for another man."
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "For thy counsel is not in man's power."
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "But this hath every one for certain, that worshippeth thee, that his life, if it be in probation, shall be crowned: and if it be in tribulation, it shall be delivered: and if it be in correction, it shall be lawful to come to thy mercy."
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "For thou art not delighted in our perditions: because after a tempest thou makest a calm, and after tears and weeping thou pourest in joyfulness."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "Be thy name God of Israel blessed for ever."
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "At that time the prayers of both were heard in the sight of the glory of the high God:"
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "and the holy Angel of our Lord Raphael was sent to cure them both, whose prayers at one time were recited in the sight of our Lord."
           }
@@ -619,10 +619,10 @@
       ]
     },
     {
-      "number": 4,
+      "num": 4,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "In that day Tobit remembred the money, which he had committed to Gabael in Rages of Media,",
             "NABRE": "III. Preparation for the Journey Chapter 4 A Father’s Instruction. That same day Tobit remembered the money he had deposited in trust with Gabael at Rages in Media.",
@@ -631,7 +631,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And said with himselfe, I haue wished for death, wherefore doe I not call for my sonne Tobias, that I may signifie to him of the money before I die.",
             "NABRE": "He thought to himself, “Now that I have asked for death, why should I not call my son Tobiah and let him know about this money before I die?”",
@@ -640,7 +640,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And when he had called him, he said; My sonne, when I am dead, bury me, and despise not thy mother, but honour her all the dayes of thy life, and doe that which shall please her, and greiue her not.",
             "NABRE": "So he called his son Tobiah; and when he came, he said to him: “Son, when I die, give me a decent burial. Honor your mother, and do not abandon her as long as she lives. Do whatever pleases her, and do not grieve her spirit in any way.",
@@ -649,7 +649,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Remember, my sonne, that shee saw many dangers for thee, when thou wast in her wombe, and when shee is dead, bury her by me in one graue.",
             "NABRE": "Remember, son, how she went through many dangers for you while you were in her womb. When she dies, bury her in the same grave with me.",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "My sonne, be mindfull of the Lord our God all thy dayes, and let not thy will be set to sinne, or to transgresse his Commandements: doe vprightly all thy life long, and follow not the wayes of vnrighteousnesse.",
             "NABRE": "“Through all your days, son, keep the Lord in mind, and do not seek to sin or to transgress the commandments. Perform righteous deeds all the days of your life, and do not tread the paths of wickedness.",
@@ -667,7 +667,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "For if thou deale truely, thy doings shall prosperously succeed to thee, and to all them that liue iustly.",
             "NABRE": "For those who act with fidelity, all who practice righteousness, will prosper in their affairs.",
@@ -676,7 +676,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Giue almes of thy substance, and when thou giuest almes, let not thine eye be enuious, neither turne thy face from any poore, and the face of God shall not be turned away from thee.",
             "NABRE": "“Give alms from your possessions. Do not turn your face away from any of the poor, so that God’s face will not be turned away from you.",
@@ -685,7 +685,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "If thou hast abundance, giue almes accordingly: if thou haue but a litle, be not afraid to giue according to that litle.",
             "NABRE": "Give in proportion to what you own. If you have great wealth, give alms out of your abundance; if you have but little, do not be afraid to give alms even of that little.",
@@ -694,7 +694,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "For thou layest vp a good treasure for thy selfe against the day of necessitie.",
             "NABRE": "You will be storing up a goodly treasure for yourself against the day of adversity.",
@@ -703,7 +703,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Because that almes doth deliuer from death, and suffereth not to come into darknesse.",
             "NABRE": "For almsgiving delivers from death and keeps one from entering into Darkness.",
@@ -712,7 +712,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "For almes is a good gift vnto all that giue it, in the sight of the most High.",
             "NABRE": "Almsgiving is a worthy offering in the sight of the Most High for all who practice it.",
@@ -721,7 +721,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Beware of all whoredome, my sonne, and chiefely take a wife of the seed of thy fathers, and take not a strange woman to wife, which is not of thy fathers tribe: for we are the children of the Prophets, Noe, Abraham, Isaak, and Iacob: remember, my sonne, that our fathers from the beginning, euen that they all maried wiues of their owne kinred, and were blessed in their children, and their seede shall inherite the land.",
             "NABRE": "“Be on your guard, son, against every kind of fornication, and above all, marry a woman of your own ancestral family. Do not marry a foreign woman, one who is not of your father’s tribe, because we are descendants of the prophets, who were the first to speak the truth. Noah prophesied first, then Abraham, Isaac, and Jacob, our ancestors from the beginning of time. Son, remember that all of them took wives from among their own kindred and were blessed in their children, and that their posterity would inherit the land.",
@@ -730,7 +730,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Now therefore my sonne, loue thy brethren, and despise not in thy heart thy brethren, the sonnes and daughters of thy people, in not taking a wife of them: for in pride is destruction and much trouble, and in lewdnesse is decay, and great want: for lewdnesse is the mother of famine.",
             "NABRE": "Therefore, son, love your kindred. Do not act arrogantly toward any of them, the sons and daughters of your people, by refusing to take a wife for yourself from among them. For in arrogance there is ruin and great instability. In idleness there is loss and dire poverty, for idleness is the mother of famine.",
@@ -739,7 +739,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "Let not the wages of any man, which hath wrought for thee, tary with thee, but giue him it out of hand: for if thou serue God he will also repay thee: be circumspect, my sonne, in all things thou doest, and be wise in all thy conuersation.",
             "NABRE": "“Do not keep with you overnight the wages of those who have worked for you, but pay them at once. If you serve God thus, you will receive your reward. Be on your guard, son, in everything you do; be wise in all that you say and discipline yourself in all your conduct.",
@@ -748,7 +748,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Doe that to no man which thou hatest: drinke not wine to make thee drunken; neither let drunkennesse goe with thee in thy iourney.",
             "NABRE": "Do to no one what you yourself hate. Do not drink wine till you become drunk or let drunkenness accompany you on your way.",
@@ -757,7 +757,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "Giue of thy bread to the hungry, and of thy garments to them that are naked, and according to thine abundance giue almes, and let not thine eye be enuious, when thou giuest almes.",
             "NABRE": "“Give to the hungry some of your food, and to the naked some of your clothing. Whatever you have left over, give away as alms; and do not let your eye begrudge the alms that you give.",
@@ -766,7 +766,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "Powre out thy bread on the buriall of the iust, but giue nothing to the wicked.",
             "NABRE": "Pour out your wine and your bread on the grave of the righteous, but do not share them with sinners.",
@@ -775,7 +775,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Aske counsell of all that are wise, and despise not any counsell that is profitable.",
             "NABRE": "“Seek counsel from every wise person, and do not think lightly of any useful advice.",
@@ -784,7 +784,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "Blesse the Lord thy God alway, and desire of him that thy wayes may be directed, and that all thy pathes, and counsels may prosper: for euery nation hath not counsell, but the Lord himselfe giueth all good things, and hee humbleth whom he will, as he will; now therefore my sonne, remember my commandements, neither let them be put out of thy minde.",
             "NABRE": "At all times bless the Lord, your God, and ask him that all your paths may be straight and all your endeavors and plans may prosper. For no other nation possesses good counsel, but it is the Lord who gives all good things. Whomever the Lord chooses to raise is raised; and whomever the Lord chooses to cast down is cast down to the recesses of Hades. So now, son, keep in mind these my commandments, and never let them be erased from your heart.",
@@ -793,7 +793,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "And now I signifie this to thee, that I committed tenne talents to Gabael the sonne of Gabrias at Rages in Media.",
             "NABRE": "“Now, I must tell you, son, that I have deposited in trust ten talents of silver with Gabael, the son of Gabri, at Rages in Media.",
@@ -802,7 +802,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "And feare not my sonne, that we are made poore, for thou hast much wealth, if thou feare God, and depart from all sinne, and doe that which is pleasing in his sight.",
             "NABRE": "Do not fear, son, that we have lived in poverty. You will have great wealth, if you fear God, avoid all sin, and do what is good before the Lord your God.”",
@@ -811,13 +811,13 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "and therefore inquire how thou mayst come to him, and receive of him the foresaid weight of silver, and restore him the bill of his hand."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "Fear not my son: we lead indeed a poor life, but we shall have many good things if we fear God, and depart from all sin, and do well."
           }
@@ -825,10 +825,10 @@
       ]
     },
     {
-      "number": 5,
+      "num": 5,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Tobias then answered and said, Father, I will doe all things, which thou hast commanded me.",
             "NABRE": "Chapter 5 The Angel Raphael. Then Tobiah replied to his father Tobit: “Everything that you have commanded me, father, I shall do.",
@@ -837,7 +837,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "But how can I receiue the money, seeing, I know him not?",
             "NABRE": "But how will I be able to get that money from him, since he does not know me, and I do not know him? What sign can I give him so that he will recognize and trust me, and give me the money? I do not even know the roads to Media, in order to go there.”",
@@ -846,7 +846,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Then he gaue him the handwriting, and said vnto him, Seeke thee a man which may goe with thee whiles I yet liue, and I will giue him wages, and goe, and receiue the money.",
             "NABRE": "Tobit answered his son Tobiah: “He gave me his bond, and I gave him mine; I divided his into two parts, and each of us took one part; I put one part with the money. It is twenty years since I deposited that money! So, son, find yourself a trustworthy person who will make the journey with you, and we will give him wages when you return; but bring back that money from Gabael while I am still alive.”",
@@ -855,7 +855,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Therefore when he went to seeke a man, he found Raphael that was an Angell.",
             "NABRE": "Tobiah went out to look for someone who would travel with him to Media, someone who knew the way. He went out and found the angel Raphael standing before him (though he did not know that this was an angel of God).",
@@ -864,7 +864,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "But he knew not; and he said vnto him, Canst thou goe with me to Rages? & knowest thou those places well?",
             "NABRE": "Tobiah said to him, “Where do you come from, young man?” He replied, “I am an Israelite, one of your kindred. I have come here to work.” Tobiah said to him, “Do you know the way to Media?”",
@@ -873,7 +873,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "To whom the Angel said, I will goe with thee, and I know the way well: for I haue lodged with our brother Gabael.",
             "NABRE": "“Yes,” he replied, “I have been there many times. I know the place well and am acquainted with all the routes. I have often traveled to Media; I used to stay with our kinsman Gabael, who lives at Rages in Media. It is a good two days’ journey from Ecbatana to Rages, for Rages is situated in the mountains, but Ecbatana is in the middle of the plain.”",
@@ -882,7 +882,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Then Tobias said vnto him, Tary for me till I tell my father.",
             "NABRE": "Tobiah said to him, “Wait for me, young man, till I go in and tell my father; for I need you to make the journey with me. I will pay you your wages.”",
@@ -891,7 +891,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Then he said vnto him, Goe and tary not; so he went in, and said to his father; Behold, I haue found one, which wil goe with me. Then he said, Call him vnto me, that I may know of what tribe he is, and whether hee be a trustie man to goe with thee.",
             "NABRE": "He replied, “Very well, I will wait; but do not be long.”",
@@ -900,7 +900,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "So he called him, and he came in, and they saluted one another.",
             "NABRE": "Tobiah went in and informed his father Tobit: “I have found someone of our own Israelite kindred who will go with me!” Tobit said, “Call the man in, so that I may find out from what family and tribe he comes, and whether he is trustworthy enough to travel with you, son.”",
@@ -909,7 +909,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Then Tobit said vnto him, Brother, shew me of what tribe and family thou art.",
             "NABRE": "Tobiah went out to summon him, saying, “Young man, my father is calling for you.” When Raphael entered the house, Tobit greeted him first. He replied, “Joyful greetings to you!” Tobit answered, “What joy is left for me? Here I am, a blind man who cannot see the light of heaven, but must remain in darkness, like the dead who no longer see the light! Though alive, I am among the dead. I can hear people’s voices, but I do not see them.” The young man said, “Take courage! God’s healing is near; so take courage!” Tobit then said: “My son Tobiah wants to go to Media. Can you go with him to show him the way? I will pay you your wages, brother.” He answered: “Yes, I will go with him, and I know all the routes. I have often traveled to Media and crossed all its plains so I know well the mountains and all its roads.”",
@@ -918,7 +918,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "To whom hee said, Doest thou seeke for a tribe or family, or an hired man to goe with thy sonne? Then Tobit said vnto him, I would know, brother, thy kinred, and name.",
             "NABRE": "Tobit asked him, “Brother, tell me, please, from what family and tribe are you?”",
@@ -927,7 +927,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Then he said, I am Azarias, the sonne of Ananias the great, and of thy brethren.",
             "NABRE": "He replied, “Why? What need do you have for a tribe? Aren’t you looking for a hired man?” Tobit replied, “I only want to know, brother, whose son you truly are and what your name is.”",
@@ -936,7 +936,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Then Tobit said, Thou art welcome brother, be not now angry with mee, because I haue enquired to know thy tribe, and thy family, for thou art my brother, of an honest & good stocke: for I know Ananias, and Ionathas sonnes of that great Samaias: as we went together to Ierusalem to worship, and offered the first borne, and the tenths of the fruits, and they were not seduced with the errour of our brethren: my brother, thou art of a good stocke.",
             "NABRE": "He answered, “I am Azariah, son of the great Hananiah, one of your own kindred.”",
@@ -945,7 +945,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "But tell me, what wages shall I giue thee? wilt thou a drachme a day? and things necessary as to my owne sonne?",
             "NABRE": "Tobit exclaimed: “Welcome! God save you, brother! Do not be provoked with me, brother, for wanting to learn the truth about your family. It turns out that you are a kinsman, from a noble and good line! I knew Hananiah and Nathan, the two sons of the great Shemeliah. They used to go to Jerusalem with me, where we would worship together. They were not led astray; your kindred are good people. You are certainly of good lineage. So welcome!”",
@@ -954,7 +954,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Yea moreouer, if ye returne safe, I will adde some thing to the wages.",
             "NABRE": "Then he added: “For each day I will give you a drachma as wages, as well as expenses for you and for my son. So go with my son, and",
@@ -963,7 +963,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "So they were well pleased. Then said he to Tobias; Prepare thy selfe for the iourney, and God send you a good iourney. And when his sonne had prepared all things for the iourney, his father said; Goe thou with this man, and God which dwelleth in heauen prosper your iourney, & the Angel of God keepe you company. So they went foorth both, and the yong mans dogge with them.",
             "NABRE": "I will even add a bonus to your wages!” The young man replied: “I will go with him. Do not fear. In good health we will leave you, and in good health we will return to you, for the way is safe.”",
@@ -972,7 +972,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "But Anna his mother wept, and said to Tobit, Why hast thou sent away our sonne? is hee not the staffe of our hand, in going in and out before vs?",
             "NABRE": "Tobit said, “Blessing be upon you, brother.” Then he called his son and said to him: “Son, prepare whatever you need for the journey, and set out with your kinsman. May God in heaven protect you on the way and bring you back to me safe and sound; may his angel accompany you for your safety, son.” Tobiah left to set out on his journey, and he kissed his father and mother. Tobit said to him, “Have a safe journey.”",
@@ -981,7 +981,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Be not greedy (to adde) money to money: but let it bee as refuse in respect of our childe.",
             "NABRE": "But his mother began to weep and she said to Tobit: “Why have you sent my child away? Is he not the staff of our hands, as he goes in and out before us?",
@@ -990,7 +990,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "For that which the Lord hath giuen vs to liue with, doeth suffice vs.",
             "NABRE": "Do not heap money upon money! Rather relinquish it in exchange for our child!",
@@ -999,7 +999,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Then said Tobit to her, Take no care my sister he shal returne in safety, and thine eyes shall see him.",
             "NABRE": "What the Lord has given us to live on is certainly enough for us.”",
@@ -1008,7 +1008,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "For the good Angel will keepe him company, and his iourney shall be prosperous, and he shall returne safe.",
             "NABRE": "Tobit reassured her: “Do not worry! Our son will leave in good health and come back to us in good health. Your own eyes will see the day when he returns to you safe and sound. So, do not worry; do not fear for them, my sister.",
@@ -1017,7 +1017,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "Then she made an end of weeping.",
             "NABRE": "For a good angel will go with him, his journey will be successful, and he will return in good health.” Then she stopped weeping.",
@@ -1026,37 +1026,37 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "And when they were departed, his mother began to weep, and to say: Thou hast taken the staff of our old age, and sent him away from us."
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "I would the money had never been, for the which thou hast sent him."
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "For our poverty sufficed us, that we might account this thing riches, that we saw our son."
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "DRB": "And Tobias said to her: Weep not, our son shall come thither save, and shall return safe to us, and thine eyes shall see him."
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "DRB": "For I believe that the good Angel of God doth accompany him, & doth well dispose all things that are done about him, so that he shall return to us with joy."
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "DRB": "At this voice his mother left weeping, and held her peace."
           }
@@ -1064,10 +1064,10 @@
       ]
     },
     {
-      "number": 6,
+      "num": 6,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And as they went on their iourney, they came in the euening to the riuer Tigris, & they lodged there.",
             "NRSV": "6 Journey to Rages The young man went out and the angel went with him;",
@@ -1075,7 +1075,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And when the yong man went downe to wash himselfe, a fish leaped out of the riuer, and would haue deuoured him.",
             "NRSV": "and the dog came out with him and went along with them. So they both journeyed along, and when the first night overtook them they camped by the Tigris river.",
@@ -1083,7 +1083,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Then the Angel said vnto him, Take the fish; and the yong man layd hold of the fish, and drew it to land.",
             "NRSV": "Then the young man went down to wash his feet in the Tigris river. Suddenly a large fish leapt up from the water and tried to swallow the young man’s foot, and he cried out.",
@@ -1091,7 +1091,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "To whom the Angel said, Open the fish, and take the heart, and the liuer and the gall, and put them vp safely.",
             "NRSV": "But the angel said to the young man, ‘Catch hold of the fish and hang on to it!’ So the young man grasped the fish and drew it up on the land.",
@@ -1099,7 +1099,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "So the yong man did as the Angel commaunded him, and when they had rosted the fish, they did eate it: then they both went on their way, till they drew neere to Ecbatane.",
             "NRSV": "Then the angel said to him, ‘Cut open the fish and take out its gall, heart, and liver. Keep them with you, but throw away the intestines. For its gall, heart, and liver are useful as medicine.’",
@@ -1107,7 +1107,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then the yong man saide to the Angel; Brother Azarias, to what vse is the heart, and the liuer, and the gall of the fish?",
             "NRSV": "So after cutting open the fish the young man gathered together the gall, heart, and liver; then he roasted and ate some of the fish, and kept some to be salted. The two continued on their way together until they were near Media.",
@@ -1115,7 +1115,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And he said vnto him, Touching the heart and the liuer, if a deuil, or an euil spirit trouble any, we must make a smoke thereof before the man or the woman, and the party shalbe no more vexed.",
             "NRSV": "Then the young man questioned the angel and said to him, ‘Brother Azariah, what medicinal value is there in the fish’s heart and liver, and in the gall?’",
@@ -1123,7 +1123,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "As for the gall it is good to anoint a man that hath whitenesse in his eyes, and he shalbe healed.",
             "NRSV": "He replied, ‘As for the fish’s heart and liver, you must burn them to make a smoke in the presence of a man or woman afflicted by a demon or evil spirit, and every affliction will flee away and never remain with that person any longer.",
@@ -1131,7 +1131,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "And when they were come neere to Rages;",
             "NRSV": "And as for the gall, anoint a person’s eyes where white films have appeared on them; blow upon them, upon the white films, and the eyes will be healed.’",
@@ -1139,7 +1139,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "The Angel said to the yong man, Brother, to day wee shall lodge with Raguel, who is thy cousin; hee also hath one onely daughter, named Sara, I wil speake for her, that she may be giuen thee for a wife.",
             "NRSV": "Raphael’s Instructions When he entered Media and already was approaching Ecbatana,",
@@ -1147,7 +1147,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "For to thee doth the right of her appertaine, seeing thou onely art of her kinred.",
             "NRSV": "Raphael said to the young man, ‘Brother Tobias.’ ‘Here I am,’ he answered. Then Raphael said to him, ‘We must stay this night in the home of Raguel. He is your relative, and he has a daughter named Sarah.",
@@ -1155,7 +1155,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And the maide is faire and wise, now therefore heare me, & I wil speake to her father, and when wee returne from Rages, we will celebrate the mariage: for I know that Raguel cannot marry her to another according to the Law of Moses, but he shalbe guiltie of death, because the right of inheritance doeth rather appertaine to thee, then to any other.",
             "NRSV": "He has no male heir and no daughter except Sarah only, and you, as next of kin to her, have before all other men a hereditary claim on her. Also it is right for you to inherit her father’s possessions. Moreover, the girl is sensible, brave, and very beautiful, and her father is a good man.’",
@@ -1163,7 +1163,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Then the yong man answered the Angel, I haue heard, brother Azarias, that this maide hath beene giuen to seuen men, who all died in the marriage chamber:",
             "NRSV": "He continued, ‘You have every right to take her in marriage. So listen to me, brother; tonight I will speak to her father about the girl, so that we may take her to be your bride. When we return from Rages we will celebrate her marriage. For I know that Raguel can by no means keep her from you or promise her to another man without incurring the penalty of death according to the decree of the book of Moses. Indeed he knows that you, rather than any other man, are entitled to marry his daughter. So now listen to me, brother, and tonight we shall speak concerning the girl and arrange her engagement to you. And when we return from Rages we will take her and bring her back with us to your house.’",
@@ -1171,7 +1171,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And now I am the onely sonne of my father, and I am afraid, lest if I goe in vnto her, I die, as the other before; for a wicked spirit loueth her, which hurteth no body, but those which come vnto her; wherefore I also feare, lest I die, and bring my fathers and my mothers life (because of me) to the graue with sorrow, for they haue no other sonne to bury them.",
             "NRSV": "Then Tobias said in answer to Raphael, ‘Brother Azariah, I have heard that she already has been married to seven husbands and that they died in the bridal chamber. On the night when they went in to her, they would die. I have heard people saying that it was a demon that killed them.",
@@ -1179,7 +1179,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Then the Angel said vnto him, Doest thou not remember the precepts, which thy father gaue thee, that thou shouldest marrie a wife of thine owne kindred? wherefore heare me, O my brother, for she shall be giuen thee to wife, and make thou no reckoning of the euil spirit, for this same night shall shee be giuen thee in mariage.",
             "NRSV": "It does not harm her, but it kills anyone who desires to approach her. So now, since I am the only son my father has, I am afraid that I may die and bring my father’s and mother’s life down to their grave, grieving for me—and they have no other son to bury them.’",
@@ -1187,7 +1187,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "And when thou shalt come into the mariage chamber, thou shalt take the ashes of perfume, and shalt lay vpon them, some of the heart, and liuer of the fish, and shalt make a smoke with it.",
             "NRSV": "But Raphael said to him, ‘Do you not remember your father’s orders when he commanded you to take a wife from your father’s house? Now listen to me, brother, and say no more about this demon. Take her. I know that this very night she will be given to you in marriage.",
@@ -1195,7 +1195,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "And the deuill shall smell it, and flee away, and neuer come againe any more: but when thou shalt come to her, rise vp both of you, and pray to God, which is mercifull, who will haue pity on you, and saue you: feare not, for shee is appointed vnto thee from the beginning; and thou shalt preserue her, and shee shall goe with thee. Moreouer I suppose that shee shall beare thee children. Now when Tobias had heard these things, he loued her, and his heart was effectually ioyned to her.",
             "NRSV": "When you enter the bridal chamber, take some of the fish’s liver and heart, and put them on the embers of the incense. An odour will be given off;",
@@ -1203,32 +1203,32 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "NRSV": "the demon will smell it and flee, and will never be seen near her any more. Now when you are about to go to bed with her, both of you must first stand up and pray, imploring the Lord of heaven that mercy and safety may be granted to you. Do not be afraid, for she was set apart for you before the world was made. You will save her, and she will go with you. I presume that you will have children by her, and they will be as brothers to you. Now say no more!’ When Tobias heard the words of Raphael and learned that she was his kinswoman, related through his father’s lineage, he loved her very much, and his heart was drawn to her.",
             "DRB": "But thou when thou shalt take her, entering into the chamber, for three days be continent from her, and thou shalt give thyself to nothing else but to prayers with her."
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And the same night, the liver of the fish set on the fire, the devil shall be driven away."
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "But the second night thou shalt be admitted in the copulation of the holy Patriarchs."
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "And the third night thou shalt obtain a blessing that sound children may be procreated of you."
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "And when the third night is past, thou shalt take the virgin, with the fear of our Lord, moved rather for love of children than for lust, that in the seed of Abraham thou mayst obtain blessing in children."
           }
@@ -1236,10 +1236,10 @@
       ]
     },
     {
-      "number": 7,
+      "num": 7,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And when they were come to Ecbatane, they came to the house of Raguel; and Sara met them: and after that they had saluted one another, shee brought them into the house.",
             "NABRE": "V. Marriage and Healing of Sarah Chapter 7 At the House of Raguel. When they entered Ecbatana, Tobiah said, “Brother Azariah, bring me straight to the house of our kinsman Raguel.” So he did, and they came to the house of Raguel, whom they found seated by his courtyard gate. They greeted him first, and he answered, “Many greetings to you, brothers! Welcome! You have come in peace! Now enter in peace!” And he brought them into his house.",
@@ -1248,7 +1248,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Then sayd Raguel to Edna his wife, How like is this yong man to Tobit my cousin?",
             "NABRE": "He said to his wife Edna, “How this young man resembles Tobit, the son of my uncle!”",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And Raguel asked them, From whence are you, brethren? To whom they said, We are of the sonnes of Nephthali, which are captiues in Nineue.",
             "NABRE": "So Edna asked them, saying, “Where are you from, brothers?” They answered, “We are descendants of Naphtali, now captives in Nineveh.”",
@@ -1266,7 +1266,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Then hee said to them, Doe yee know Tobit our kinseman? And they said, We know him. Then said hee, Is he in good health?",
             "NABRE": "She said to them, “Do you know our kinsman Tobit?” They answered her, “Indeed, we do know him!” She asked, “Is he well?”",
@@ -1275,7 +1275,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "And they said, Hee is both aliue, and in good health: And Tobias sayd, He is my father.",
             "NABRE": "They answered, “Yes, he is alive and well.” Then Tobiah said, “He is my father!”",
@@ -1284,7 +1284,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then Raguel leaped vp, and kissed him, and wept,",
             "NABRE": "Raguel jumped up, kissed him, and broke into tears.",
@@ -1293,7 +1293,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And blessed him; and said vnto him, Thou art the sonne of an honest and good man: but when he had heard that Tobit was blinde, he was sorowfull, and wept.",
             "NABRE": "Then, finding words, he said, “A blessing upon you, son! You are the son of a good and noble father. What a terrible misfortune that a man so righteous and charitable has been afflicted with blindness!” He embraced his kinsman Tobiah and continued to weep.",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "And likewise Edna his wife, and Sara his daughter wept. Moreouer, they entertained them cheerefully, and after that they had killed a ramme of the flocke, they set store of meat on the table. Then said Tobias to Raphael, Brother Azarias, speak of those things, of which thou diddest talke in the way, and let this businesse be dispatched.",
             "NABRE": "His wife Edna also wept for Tobit; and their daughter Sarah also began to weep.",
@@ -1311,7 +1311,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "So he communicated the matter with Raguel, and Raguel said to Tobias, Eate and drink, and make merry:",
             "NABRE": "Marriage of Tobiah and Sarah. Afterward, Raguel slaughtered a ram from the flock and gave them a warm reception. When they had washed, bathed, and reclined to eat and drink, Tobiah said to Raphael, “Brother Azariah, ask Raguel to give me my kinswoman Sarah.”",
@@ -1320,7 +1320,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "For it is meet that thou shouldest marry my daughter: neuerthelesse I will declare vnto thee the trueth.",
             "NABRE": "Raguel overheard the words; so he said to the young man: “Eat and drink and be merry tonight, for no man has a greater right to marry my daughter Sarah than you, brother. Besides, not even I have the right to give her to anyone but you, because you are my closest relative. However, son, I must frankly tell you the truth.",
@@ -1329,7 +1329,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "I haue giuen my daughter in mariage to seuen men, who died that night they came in vnto her: neuerthelesse for the present be merry: But Tobias said, I will eate nothing here, till we agree and sweare one to another.",
             "NABRE": "I have given her in marriage to seven husbands who were kinsmen of ours, and all died on the very night they approached her. But now, son, eat and drink. The Lord will look after you both.” Tobiah answered, “I will neither eat nor drink anything here until you settle what concerns me.” Raguel said to him: “I will do it. She is yours as decreed by the Book of Moses. It has been decided in heaven that she be given to you! Take your kinswoman; from now on you are her brother, and she is your sister. She is given to you today and here ever after. May the Lord of heaven prosper you both tonight, son, and grant you mercy and peace.”",
@@ -1338,7 +1338,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Raguel said, Then take her from hencefoorth according to the manner, for thou art her cousin, and she is thine, and the mercifull God giue you good successe in all things.",
             "NABRE": "Then Raguel called his daughter Sarah, and she came to him. He took her by the hand and gave her to Tobiah with these words: “Take her according to the law. According to the decree written in the Book of Moses I give her to be your wife. Take her and bring her safely to your father. And may the God of heaven grant both of you a safe journey in peace!”",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Then he called his daughter Sara, and she came to her father, and hee tooke her by the hand, and gaue her to be wife to Tobias, saying, Behold, take her after the Law of Moses, and leade her away to thy father: And he blessed them,",
             "NABRE": "He then called her mother and told her to bring writing materials. He wrote out a copy of a marriage contract stating that he gave Sarah to Tobiah as his wife as decreed by the law of Moses. Her mother brought the material, and he drew up the contract, to which he affixed his seal.",
@@ -1356,7 +1356,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And called Edna his wife, & tooke paper, and did write an instrument of couenants, and sealed it.",
             "NABRE": "Afterward they began to eat and drink.",
@@ -1365,7 +1365,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Then they began to eate.",
             "NABRE": "Later Raguel called his wife Edna and said, “My sister, prepare the other bedroom and bring Sarah there.”",
@@ -1374,7 +1374,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "After Raguel called his wife Edna, and said vnto her, Sister, prepare another chamber, & bring her in thither.",
             "NABRE": "She went, made the bed in the room, as he had told her, and brought Sarah there. After she had cried over her, she wiped away her tears and said,",
@@ -1383,7 +1383,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And after these things they made merry, blessing God.",
             "NABRE": "“Take courage, my daughter! May the Lord of heaven grant you joy in place of your grief! Courage, my daughter!” Then she left.",
@@ -1391,20 +1391,20 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "And Raguel called to him Anna his wife, and commanded her to prepare another chamber.",
             "KJV": "Be of good comfort, my daughter, the Lord of heauen and earth giue thee ioy for this thy sorow: be of good comfort, my daughter."
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And she brought Sara her daughter in thither, and she wept."
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "And she said to her: Be of good cheer my daughter, our Lord of heaven give thee joy for the tediousness which thou has suffered."
           }
@@ -1412,10 +1412,10 @@
       ]
     },
     {
-      "number": 8,
+      "num": 8,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And when they had supped, they brought Tobias in vnto her.",
             "NABRE": "Chapter 8 Expulsion of the Demon. When they had finished eating and drinking, they wanted to retire. So they brought the young man out and led him to the bedroom.",
@@ -1424,7 +1424,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And as he went, he remembred the wordes of Raphael, and tooke the ashes of the perfumes, and put the heart, and the liuer of the fish thereupon, and made a smoke therewith.",
             "NABRE": "Tobiah, mindful of Raphael’s instructions, took the fish’s liver and heart from the bag where he had them, and put them on the embers intended for incense.",
@@ -1433,7 +1433,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "The which smell, when the euill spirit had smelled, hee fled into the outmost parts of Egypt, and the Angel bound him.",
             "NABRE": "The odor of the fish repulsed the demon, and it fled to the upper regions of Egypt; Raphael went in pursuit of it and there bound it hand and foot. Then Raphael returned immediately.",
@@ -1442,7 +1442,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And after that they were both shut in together, Tobias rose out of the bed and said, Sister, arise, and let vs pray, that God would haue pitie on vs.",
             "NABRE": "When Sarah’s parents left the bedroom and closed the door behind them, Tobiah rose from bed and said to his wife, “My sister, come, let us pray and beg our Lord to grant us mercy and protection.”",
@@ -1451,7 +1451,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Then began Tobias to say, Blessed art thou, O God of our fathers, and blessed is thy holy and glorious Name for euer, let the heauens blesse thee, and all thy creatures.",
             "NABRE": "She got up, and they started to pray and beg that they might be protected. He began with these words: “Blessed are you, O God of our ancestors; blessed be your name forever and ever! Let the heavens and all your creation bless you forever.",
@@ -1460,7 +1460,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Thou madest Adam, and gauest him Eue his wife for an helper & stay: of them came mankind: thou hast said, It is not good that man should bee alone, let vs make vnto him an aide like to himselfe.",
             "NABRE": "You made Adam, and you made his wife Eve to be his helper and support; and from these two the human race has come. You said, ‘It is not good for the man to be alone; let us make him a helper like himself.’",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And now, O Lord, I take not this my sister for lust, but vprightly: therefore mercifully ordeine, that wee may become aged together.",
             "NABRE": "Now, not with lust, but with fidelity I take this kinswoman as my wife. Send down your mercy on me and on her, and grant that we may grow old together. Bless us with children.”",
@@ -1478,7 +1478,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "And she said with him, Amen.",
             "NABRE": "They said together, “Amen, amen!”",
@@ -1487,7 +1487,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "So they slept both that night, and Raguel arose, and went & made a graue",
             "NABRE": "Then they went to bed for the night. But Raguel got up and summoned his servants. They went out with him and dug a grave,",
@@ -1496,7 +1496,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Saying, I feare lest he be dead.",
             "NABRE": "for he said, “Perhaps Tobiah will die; then we would be a laughingstock and an object of mockery.”",
@@ -1505,7 +1505,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "But when Raguel was come into his house,",
             "NABRE": "When they had finished digging the grave, Raguel went back into the house and called his wife,",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "He said vnto his wife Edna, Send one of the maids, and let her see, whether he be aliue: if he be not, that we may bury him, and no man know it.",
             "NABRE": "saying, “Send one of the maids in to see whether he is alive. If he has died, let us bury him without anyone knowing about it.”",
@@ -1523,7 +1523,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "So the maid opened the doore and went in, and found them both asleepe,",
             "NABRE": "They sent the maid, lit a lamp, and opened the bedroom door; she went in and found them sleeping together.",
@@ -1532,7 +1532,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And came forth, and told them, that he was aliue.",
             "NABRE": "The maid came out and told them that Tobiah was alive, and that nothing was wrong.",
@@ -1541,7 +1541,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Then Raguel praised God, and said, O God, thou art worthy to be praised with all pure and holy praise: therefore let thy Saints praise thee with all thy creatures, and let all thine Angels and thine elect praise thee for euer.",
             "NABRE": "Then they praised the God of heaven in these words: “Blessed are you, God, with every pure blessing! Let all your chosen ones bless you forever!",
@@ -1550,7 +1550,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "Thou art to be praised, for thou hast made mee ioyfull, and that is not come to me, which I suspected: but thou hast dealt with vs according to thy great mercie.",
             "NABRE": "Blessed are you, for you have made me happy; what I feared did not happen. Rather you have dealt with us according to your abundant mercy.",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "Thou art to be praised, because thou hast had mercie of two, that were the onely begotten children of their fathers, grant them mercy, O Lord, and finish their life in health, with ioy and mercie.",
             "NABRE": "Blessed are you, for you have shown mercy toward two only children. Grant them, Master, mercy and protection, and bring their lives to fulfillment with happiness and mercy.”",
@@ -1568,7 +1568,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Then Raguel bade his seruants to fill the graue.",
             "NABRE": "Then Raguel told his servants to fill in the grave before dawn.",
@@ -1577,7 +1577,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "And hee kept the wedding feast fourteene dayes.",
             "NABRE": "Wedding Feast. He asked his wife to bake many loaves of bread; he himself went out to the herd and brought two steers and four rams, which he ordered to be slaughtered. So they began to prepare the feast.",
@@ -1586,7 +1586,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "For before the dayes of the mariage were finished, Raguel had said vnto him by an othe, that he should not depart, till the fourteene dayes of the mariage were expired,",
             "NABRE": "He summoned Tobiah and said to him, “For fourteen days you shall not stir from here, but shall remain here eating and drinking with me; you shall bring joy to my daughter’s afflicted spirit.",
@@ -1595,7 +1595,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "And then he should take the halfe of his goods, and goe in safetie to his father, and should haue the rest when I and my wife be dead.",
             "NABRE": "Now take half of what I own here; go back in good health to your father. The other half will be yours when I and my wife die. Take courage, son! I am your father, and Edna is your mother; we belong to you and to your sister both now and forever. So take courage, son!”",
@@ -1604,19 +1604,19 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "He caused also two fat kine, and four wethers to be killed, and great cheer to be prepared for all his neighbours and all his friends."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "And Raguel adjured Tobias that he should abide with him two weeks."
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "And of all things which Raguel possessed, he gave the half part to Tobias, and made this writing, that the half part, which was remaining after their decease, should come to the dominion of Tobias."
           }
@@ -1624,10 +1624,10 @@
       ]
     },
     {
-      "number": 9,
+      "num": 9,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then Tobias called Raphael, and said vnto him,",
             "NABRE": "Chapter 9 The Money Recovered. Then Tobiah called Raphael and said to him:",
@@ -1636,7 +1636,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Brother Azarias, Take with thee a seruant, and two camels, and go to Rages of Media to Gabael, & bring me the money, & bring him to the wedding.",
             "NABRE": "“Brother Azariah, take along with you from here four servants and two camels and travel to Rages. Go to Gabael’s house and give him this bond. Get the money and then bring him along with you to the wedding celebration.",
@@ -1645,7 +1645,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "For Raguel hath sworne that I shall not depart.",
             "NABRE": "For you know that my father will be counting the days. If I should delay even by a single day, I would cause him intense grief.",
@@ -1654,7 +1654,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "But my father counteth the dayes, and if I tarie long, he will be very sorie.",
             "NABRE": "You have witnessed the oath that Raguel has sworn; I cannot violate his oath.”",
@@ -1663,7 +1663,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "So Raphael went out and lodged with Gabael, and gaue him the handwriting, who brought forth bags, which were sealed vp, and gaue them to him.",
             "NABRE": "So Raphael, together with the four servants and two camels, traveled to Rages in Media, where they stayed at Gabael’s house. Raphael gave Gabael his bond and told him about Tobit’s son Tobiah, that he had married and was inviting him to the wedding celebration. Gabael got up and counted out for him the moneybags with their seals, and they packed them on the camels.",
@@ -1672,7 +1672,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "And earely in the morning they went forth both together, and came to the wedding, and Tobias blessed his wife.",
             "NABRE": "The following morning they both got an early start and traveled to the wedding celebration. When they entered Raguel’s house, they found Tobiah reclining at table. He jumped up and greeted Gabael, who wept and blessed him, exclaiming: “Good and noble child, son of a good and noble, righteous and charitable man, may the Lord bestow a heavenly blessing on you and on your wife, and on your wife’s father and mother. Blessed be God, because I have seen the very image of my cousin Tobit!”",
@@ -1681,37 +1681,37 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "And he told him of Tobias the son of Tobias, all things that were done: & made him come with him to the marriage."
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "And when he was entered into Raguel's house, he found Tobias sitting at the table: and he leaping up, they kissed each other: and Gabelus wept, and blessed God,"
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "and said: The God of Israel bless thee, because thou art the son of a very good man, and just, and that feareth God, and doth alms deeds:"
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "and blessing be given upon thy wife, and upon your parents:"
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "and that you may see your children, and your children's children, unto the third and fourth generation: and your seed be blessed of the God of Israel, who reigneth for ever and ever."
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "And when all had said, Amen, they went to the feast: but with the fear of our Lord also did they celebrate the feast of the marriage."
           }
@@ -1719,10 +1719,10 @@
       ]
     },
     {
-      "number": 10,
+      "num": 10,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Nowe Tobit his father counted euery day, and when the dayes of the iourney were expired, and they came not:",
             "NABRE": "VI. Tobiah’s Return Journey to Nineveh and the Healing of Tobit Chapter 10 Anxiety of the Parents. Meanwhile, day by day, Tobit was keeping track of the time Tobiah would need to go and to return. When the number of days was reached and his son did not appear,",
@@ -1731,7 +1731,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Then Tobit said, Are they detained? or is Gabael dead? and there is no man to giue him the money?",
             "NABRE": "he said, “Could it be that he has been detained there? Or perhaps Gabael has died, and there is no one to give him the money?”",
@@ -1740,7 +1740,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Therefore he was very sory.",
             "NABRE": "And he began to grieve.",
@@ -1749,7 +1749,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Then his wife said to him, My sonne is dead, seeing hee stayeth long, and she beganne to bewaile him, and said,",
             "NABRE": "His wife Anna said, “My son has perished and is no longer among the living!” And she began to weep aloud and to wail over her son:",
@@ -1758,7 +1758,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Now I care for nothing, my sonne, since I haue let thee goe, the light of mine eyes.",
             "NABRE": "“Alas, child, light of my eyes, that I have let you make this journey!”",
@@ -1767,7 +1767,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "To whom Tobit said, Hold thy peace, take no care; for he is safe.",
             "NABRE": "But Tobit kept telling her: “Be still, do not worry, my sister; he is safe! Probably they have to take care of some unexpected business there. The man who is traveling with him is trustworthy and one of our kindred. So do not grieve over him, my sister. He will be here soon.”",
@@ -1776,7 +1776,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "But she said, Hold thy peace, and deceiue me not: my sonne is dead, and she went out euery day into the way which they went, and did eate no meat on the day time, and ceased not whole nights, to bewaile her sonne Tobias, vntill the foureteene dayes of the wedding were expired, which Raguel had sworne, that he should spend there: Then Tobias said to Raguel, Let me goe, for my father, and my mother look no more to see me.",
             "NABRE": "But she retorted, “You be still, and do not try to deceive me! My son has perished!” She would rush out and keep watch every day at the road her son had taken. She ate nothing. After the sun had set, she would go back home to wail and cry the whole night through, getting no sleep at all. Departure from Ecbatana. Now when the fourteen days of the wedding celebration, which Raguel had sworn to hold for his daughter, had come to an end, Tobiah went to him and said: “Send me off, now, since I know that my father and mother do not believe they will ever see me again. So I beg you, father, let me depart and go back to my own father. I have already told you how I left him.”",
@@ -1785,7 +1785,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "But his father in law said vnto him, Tary with me, and I will send to thy father, and they shall declare vnto him, how things goe with thee.",
             "NABRE": "Raguel said to Tobiah: “Stay, son, stay with me. I am sending messengers to your father Tobit, and they will give him news of you.”",
@@ -1794,7 +1794,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "But Tobias said, No: but let me goe to my father.",
             "NABRE": "But Tobiah insisted, “No, I beg you to send me back to my father.”",
@@ -1803,7 +1803,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Then Raguel arose and gaue him Sara his wife, and halfe his goods, seruants, & cattell, and money.",
             "NABRE": "Raguel then promptly handed over to Tobiah his wife Sarah, together with half of all his property: male and female slaves, oxen and sheep, donkeys and camels, clothing, money, and household goods.",
@@ -1812,7 +1812,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And hee blessed them, and sent them away, saying, The God of heauen giue you a prosperous iourney, my children.",
             "NABRE": "He saw them safely off. Embracing Tobiah, he said to him: “Farewell, son. Have a safe journey. May the Lord of heaven grant prosperity to you and to your wife Sarah. And may I see children of yours before I die!”",
@@ -1821,7 +1821,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And he said to his daughter, Honour thy father and thy mother in law, which are now thy parents, that I may heare good report of thee: and hee kissed her. Edna also said to Tobias, The Lord of heauen restore thee, my deare brother, and grant that I may see thy children of my daughter Sara before I die, that I may reioyce before the Lord: behold, I commit my daughter vnto thee of speciall trust, wherefore doe not entreate her euill.",
             "NABRE": "Then he said to his daughter Sarah, “My daughter, honor your father-in-law and your mother-in-law, because from now on they are as much your parents as the ones who brought you into the world. Go in peace, daughter; let me hear a good report about you as long as I live.” Finally he said good-bye to them and let them go. Edna also said to Tobiah: “My child and beloved kinsman, may the Lord bring you back safely, and may I live long enough to see children of you and of my daughter Sarah before I die. Before the Lord, I entrust my daughter to your care. Never cause her grief all the days of your life. Go in peace, son. From now on I am your mother, and Sarah is your sister. Together may we all prosper throughout the days of our lives.” She kissed them both and saw them safely off.",
@@ -1830,7 +1830,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "NABRE": "Tobiah left Raguel, full of happiness and joy, and he blessed the Lord of heaven and earth, the King of all, for making his journey so successful. Finally he blessed Raguel and his wife Edna, and added, “I have been commanded by the Lord to honor you all the days of your life!”",
             "NRSV": "Tobias parted from Raguel with happiness and joy, praising the Lord of heaven and earth, King over all, because he had made his journey a success. Finally, he blessed Raguel and his wife Edna, and said, ‘I have been commanded by the Lord to honour you all the days of my life.’",
@@ -1838,7 +1838,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "rawText": "Edna said to Tobias, “My child and beloved brother, may the Lord of heaven bring you back safely, and may I live long enough to see children of you and of my daughter Sarah before I die. In the sight of the Lord I entrust my daughter to you; do nothing to grieve her all the days of your life. Go in peace, my child. From now on I am your mother and Sarah is your sister. May we all prosper together all the days of our lives.” Then she kissed them both and saw them off in good health."
           }
@@ -1846,10 +1846,10 @@
       ]
     },
     {
-      "number": 11,
+      "num": 11,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "After these things Tobias went his way, praising God that he had giuen him a prosperous iourney, and blessed Raguel, and Edna his wife, and went on his way till they drew neere vnto Nineue.",
             "NABRE": "Chapter 11 Homeward Journey. As they drew near to Kaserin, which is opposite Nineveh,",
@@ -1858,7 +1858,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Then Raphael said to Tobias, Thou knowest brother, how thou didst leaue thy father.",
             "NABRE": "Raphael said: “You know how we left your father.",
@@ -1867,7 +1867,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Let vs haste before thy wife, and prepare the house.",
             "NABRE": "Let us hurry on ahead of your wife to prepare the house while they are still on the way.”",
@@ -1876,7 +1876,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And take in thine hand the gall of the fish: so they went their way, and the dog went after them.",
             "NABRE": "So both went on ahead together, and Raphael said to him, “Take the gall in your hand!” And the dog ran along behind them.",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Now Anna sate looking about towards the way for her sonne.",
             "NABRE": "Meanwhile, Anna sat watching the road by which her son was to come.",
@@ -1894,7 +1894,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "And when she espied him comming, she said to his father, Behold, thy sonne commeth, and the man that went with him.",
             "NABRE": "When she saw him coming, she called to his father, “Look, your son is coming, and the man who traveled with him!”",
@@ -1903,7 +1903,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Then said Raphael, I know, Tobias, that thy father will open his eyes.",
             "NABRE": "Raphael said to Tobiah before he came near to his father: “I know that his eyes will be opened.",
@@ -1912,7 +1912,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Therefore annoint thou his eies with the gall, and being pricked therewith he shall rub, and the whitenesse shall fall away, and he shall see thee.",
             "NABRE": "Apply the fish gall to his eyes, and the medicine will make the white scales shrink and peel off from his eyes; then your father will have sight again and will see the light of day.”",
@@ -1921,7 +1921,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Then Anna ran forth, and fell vpon the necke of her sonne, and said vnto him, seeing I haue seene thee my sonne, from henceforth, I am content to die, and they wept both.",
             "NABRE": "Sight Restored. Then Anna ran up to her son, embraced him, and said to him, “Now that I have seen you again, son, I am ready to die!” And she sobbed aloud.",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Tobit also went forth toward the doore, and stumbled: but his sonne ran vnto him,",
             "NABRE": "Tobit got up and stumbled out through the courtyard gate to meet his son. Tobiah went up to him",
@@ -1939,7 +1939,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And tooke hold of his father, and he strake of the gall on his fathers eyes, saying, Be of good hope, my father.",
             "NABRE": "with the fish gall in his hand and blew into his eyes. Holding him firmly, he said, “Courage, father.” Then he applied the medicine to his eyes, and it made them sting.",
@@ -1948,7 +1948,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And when his eyes beganne to smart, he rubbed them.",
             "NABRE": ",",
@@ -1957,7 +1957,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And the whitenesse pilled away from the corners of his eyes, and when he saw his sonne, he fell vpon his necke.",
             "NABRE": "Tobiah used both hands to peel the white scales from the corners of his eyes. Tobit saw his son and threw his arms around him.",
@@ -1966,7 +1966,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And he wept, and said, Blessed art thou, O God, and blessed is thy Name for euer, and blessed are all thine holy Angels:",
             "NABRE": "Weeping, he exclaimed, “I can see you, son, the light of my eyes!” Then he prayed, “Blessed be God, blessed be his great name, and blessed be all his holy angels. May his great name be with us, and blessed be all the angels throughout all the ages.",
@@ -1975,7 +1975,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "For thou hast scourged, and hast taken pitie on me: for behold, I see my sonne Tobias. And his sonne went in reioycing, and told his father the great things that had happened to him in Media.",
             "NABRE": "God it was who afflicted me, and God who has had mercy on me. Now I see my son Tobiah!” Then Tobit went back in, rejoicing and praising God with full voice. Tobiah related to his father how his journey had been a success; that he had brought back the money; and that he had married Raguel’s daughter Sarah, who was about to arrive, for she was near the gate of Nineveh.",
@@ -1984,7 +1984,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "Then Tobit went out to meete his daughter in law at the gate of Niniue, reioycing and praysing God: and they which saw him goe, marueiled because he had receiued his sight.",
             "NABRE": "Rejoicing and blessing God, Tobit went out to the gate of Nineveh to meet his daughter-in-law. When the people of Nineveh saw him coming, walking along briskly, with no one leading him by the hand, they were amazed.",
@@ -1993,7 +1993,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "But Tobit gaue thankes before them: because God had mercy on him. And when hee came neere to Sara his daughter in Law, hee blessed her, saying, Thou art welcome daughter: God be blessed which hath brought thee vnto vs, and blessed be thy father and thy mother; And there was ioy amongst all his brethren which were at Nineue.",
             "NABRE": "Before them all Tobit proclaimed how God had shown mercy to him and opened his eyes. When Tobit came up to Sarah, the wife of his son Tobiah, he blessed her and said: “Welcome, my daughter! Blessed be your God for bringing you to us, daughter! Blessed are your father and your mother. Blessed be my son Tobiah, and blessed be you, daughter! Welcome to your home with blessing and joy. Come in, daughter!” That day there was joy for all the Jews who lived in Nineveh.",
@@ -2002,7 +2002,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "And Achiacharus, and Nasbas his brothers sonne came.",
             "NABRE": "Ahiqar and his nephew Nadin were also on hand to rejoice with Tobit. Tobiah’s wedding feast was celebrated with joy for seven days, and many gifts were given to him.",
@@ -2011,7 +2011,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "And Tobias wedding was kept seuen dayes with great ioy.",
             "NRSV": "With merriment they celebrated Tobias’s wedding for seven days, and many gifts were given to him.",
@@ -2019,13 +2019,13 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "And Achior and Nabath Tobias' sister's sons came, rejoicing at Tobias, and congratulating him for all good things that God had shewed towards him."
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "And for seven days making good cheer, they rejoiced all with great joy."
           }
@@ -2033,10 +2033,10 @@
       ]
     },
     {
-      "number": 12,
+      "num": 12,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then Tobit called his son Tobias, and said vnto him, My sonne, see that the man haue his wages, which went with thee, and thou must giue him more.",
             "NABRE": "VII. Raphael Reveals His Identity Chapter 12 Raphael’s Wages. When the wedding celebration came to an end, Tobit called his son Tobiah and said to him, “Son, see to it that you pay his wages to the man who made the journey with you and give him a bonus too.”",
@@ -2045,7 +2045,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And Tobias said vnto him, O father, it is no harme to me to giue him halfe of those things which I haue brought.",
             "NABRE": "Tobiah said: “Father, how much shall I pay him? It would not hurt to give him half the wealth he brought back with me.",
@@ -2054,7 +2054,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "For he hath brought me againe to thee in safety, and made whole my wife, and brought mee the money, and likewise healed thee.",
             "NABRE": "He led me back safe and sound, healed my wife, brought the money back with me, and healed you. How much should I pay him?”",
@@ -2063,7 +2063,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Then the old man said: It is due vnto him.",
             "NABRE": "Tobit answered, “It is only fair, son, that he should receive half of all that he brought back.”",
@@ -2072,7 +2072,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "So he called the Angell, and he said vnto him, Take halfe of all that yee haue brought, and goe away in safety.",
             "NABRE": "So Tobiah called Raphael and said, “Take as your wages half of all that you have brought back, and farewell!” Exhortation.",
@@ -2081,7 +2081,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then he tooke them both apart, and sayd vnto them, Blesse God, praise him, and magnifie him, and praise him for the things which he hath done vnto you in the sight of all that liue. It is good to praise God and exalt his name, & honorably to shew forth the works of God, therfore be not slacke to praise him.",
             "NABRE": "Raphael called the two of them aside privately and said to them: “Bless God and give him thanks before all the living for the good things he has done for you, by blessing and extolling his name in song. Proclaim before all with due honor the deeds of God, and do not be slack in thanking him.",
@@ -2090,7 +2090,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "It is good to keepe close the secret of a King, but it is honorable to reueale the works of God: do that which is good, and no euill shall touch you.",
             "NABRE": "A king’s secret should be kept secret, but one must declare the works of God and give thanks with due honor. Do good, and evil will not overtake you.",
@@ -2099,7 +2099,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Praier is good with fasting, and almes and righteousnesse: a little with righteousnes is better then much with vnrighteousnesse: it is better to giue almes then to lay vp gold.",
             "NABRE": "Prayer with fasting is good. Almsgiving with righteousness is better than wealth with wickedness. It is better to give alms than to store up gold,",
@@ -2108,7 +2108,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "For almes doth deliuer from death, and shall purge away all sinne. Those that exercise almes, and righteousnesse, shall be filled with life.",
             "NABRE": "for almsgiving saves from death, and purges all sin. Those who give alms will enjoy a full life,",
@@ -2117,7 +2117,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "But they that sinne are enemies to their owne life.",
             "NABRE": "but those who commit sin and do evil are their own worst enemies.",
@@ -2126,7 +2126,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Surely I will keep close nothing from you. For I said, it was good to keepe close the secret of a King, but that it was honorable to reueale the works of God.",
             "NABRE": "Raphael’s Identity. “I shall now tell you the whole truth and conceal nothing at all from you. I have already said to you, ‘A king’s secret should be kept secret, but one must declare the works of God with due honor.’",
@@ -2135,7 +2135,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Now therefore, when thou didst pray, and Sara thy daughter in Law, I did bring the remembrance of your prayers before the holy one, and when thou didst bury the dead, I was with thee likewise.",
             "NABRE": "Now when you, Tobit, and Sarah prayed, it was I who presented the record of your prayer before the Glory of the Lord; and likewise whenever you used to bury the dead.",
@@ -2144,7 +2144,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And when thou didst not delay to rise vp, and leaue thy dinner to go and couer the dead, thy good deede was not hidde from me: but I was with thee.",
             "NABRE": "When you did not hesitate to get up and leave your dinner in order to go and bury that dead man,",
@@ -2153,7 +2153,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And now God hath sent mee to heale thee, & Sara thy daughter in law.",
             "NABRE": "I was sent to put you to the test. At the same time, however, God sent me to heal you and your daughter-in-law Sarah.",
@@ -2162,7 +2162,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "I am Raphael one of the seuen holy Angels, which present the prayers of the Saints, and which go in and out before the glory of the Holy one.",
             "NABRE": "I am Raphael, one of the seven angels who stand and serve before the Glory of the Lord.”",
@@ -2171,7 +2171,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "Then they were both troubled, and fel vpon their faces: for they feared.",
             "NABRE": "Greatly shaken, the two of them fell prostrate in fear.",
@@ -2180,7 +2180,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "But he said vnto them, feare not, for it shall go well with you, praise God therefore.",
             "NABRE": "But Raphael said to them: “Do not fear; peace be with you! Bless God now and forever.",
@@ -2189,7 +2189,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "For not of any fauour of mine, but by the will of our God I came, wherefore praise him for euer.",
             "NABRE": "As for me, when I was with you, I was not acting out of any favor on my part, but by God’s will. So bless God every day; give praise with song.",
@@ -2198,7 +2198,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "All these daies I did appeare vnto you, but I did neither eat nor drinke, but you did see a vision.",
             "NABRE": "Even though you saw me eat and drink, I did not eat or drink anything; what you were seeing was a vision.",
@@ -2207,7 +2207,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Now therefore giue God thanks: for I go vp to him þ sent me, but write all things which are done, in a booke.",
             "NABRE": "So now bless the Lord on earth and give thanks to God. Look, I am ascending to the one who sent me. Write down all that has happened to you.” And he ascended.",
@@ -2216,7 +2216,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "And when they rose, they saw him no more.",
             "NABRE": "They stood up but were no longer able to see him.",
@@ -2225,7 +2225,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "Then they confessed the great and wonderfull workes of God, and how the Angel of the Lord had appeared vnto them.",
             "NABRE": "They kept blessing God and singing his praises, and they continued to give thanks for these marvelous works that God had done, because an angel of God appeared to them.",
@@ -2236,10 +2236,10 @@
       ]
     },
     {
-      "number": 13,
+      "num": 13,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then Tobit wrote a prayer of reioycing, and said, Blessed be God that liueth for euer, and blessed be his kingdome:",
             "NABRE": "VIII. Tobit’s Song of Praise Chapter 13 Then Tobit spoke and composed a song of joyful praise; he said: Blessed be God who lives forever, because his kingship lasts for all ages.",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "For he doeth scourge, and hath mercy: hee leadeth downe to hell, and bringeth vp againe: neither is there any that can auoid his hand.",
             "NABRE": "For he afflicts and shows mercy, casts down to the depths of Hades, brings up from the great abyss. What is there that can snatch from his hand?",
@@ -2257,7 +2257,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Confesse him before the Gentiles, ye children of Israel: for he hath scattered vs among them.",
             "NABRE": "Give thanks to him, you Israelites, in the presence of the nations, for though he has scattered you among them,",
@@ -2266,7 +2266,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "There declare his greatnesse, and extoll him before all the liuing, for he is our Lord, and he is the God our father for euer:",
             "NABRE": "even there recount his greatness. Exalt him before every living being, because he is your Lord, and he is your God, our Father and God forever and ever!",
@@ -2275,7 +2275,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "And he wil scourge vs for our iniquities, and will haue mercy againe, and will gather vs out of all nations, among whom he hath scattered vs.",
             "NABRE": "He will afflict you for your iniquities, but will have mercy on all of you. He will gather you from all the nations among whom you have been scattered.",
@@ -2284,7 +2284,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "If you turne to him with your whole heart, and with your whole minde, and deale vprightly before him, then will hee turne vnto you, and will not hide his face from you: Therefore see what he will doe with you, and confesse him with your whole mouth, and praise the Lord of might, and extoll the euerlasting King: in the land of my captiuitie doe I praise him, and declare his might and maiesty to a sinnefull nation: O yee sinners turne, and doe iustice before him: who can tell if he will accept you, and haue mercy on you?",
             "NABRE": "When you turn back to him with all your heart, and with all your soul do what is right before him, Then he will turn to you, and will hide his face from you no longer. Now consider what he has done for you, and give thanks with full voice. Bless the Lord of righteousness, and exalt the King of the ages. In the land of my captivity I give thanks, and declare his power and majesty to a sinful nation. According to your heart do what is right before him: perhaps there will be pardon for you.",
@@ -2293,7 +2293,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "I wil extoll my God, and my soule shal praise the King of heauen, and shal reioyce in his greatnesse.",
             "NABRE": "As for me, I exalt my God, my soul exalts the King of heaven, and rejoices all the days of my life. Let all sing praise to his greatness,",
@@ -2302,7 +2302,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Let all men speake, and let all praise him for his righteousnesse.",
             "NABRE": "let all speak and give thanks in Jerusalem.",
@@ -2311,7 +2311,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "O Ierusalem the holy Citie, he will scourge thee for thy childrens workes, and will haue mercy againe on the sonnes of the righteous.",
             "NABRE": "Jerusalem, holy city, he will afflict you for the works of your hands, but will again pity the children of the righteous.",
@@ -2320,7 +2320,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Giue praise to the Lord, for hee is good: and praise the euerlasting King, that his Tabernacle may bee builded in thee againe with ioy: and let him make ioyfull there in thee, those that are captiues, and loue in thee for euer those that are miserable.",
             "NABRE": "Give thanks to the Lord with righteousness, and bless the King of the ages, so that your tabernacle may be rebuilt in you with joy. May he gladden within you all who are captives; may he cherish within you all who are distressed for all generations to come.",
@@ -2329,7 +2329,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Many nations shall come from farre to the Name of the Lord God, with gifts in their hands, euen giftes to the King of heauen: all generations shall praise thee with great ioy.",
             "NABRE": "A bright light will shine to the limits of the earth. Many nations will come to you from afar, And inhabitants of all the ends of the earth to your holy name, Bearing in their hands gifts for the King of heaven. Generation after generation will offer joyful worship in you; your name will be great forever and ever.",
@@ -2338,7 +2338,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Cursed are all they which hate thee, and blessed shall all be, which loue thee for euer.",
             "NABRE": "Cursed be all who despise you and revile you; cursed be all who hate you and speak a harsh word against you; cursed be all who destroy you and pull down your walls, And all who overthrow your towers and set fire to your homes. But blessed forever be all those who respect you.",
@@ -2347,7 +2347,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Reioyce & be glad for the children of the iust: for they shall be gathered together, & shall blesse the Lord of the iust.",
             "NABRE": "Go, then, rejoice and exult over the children of the righteous, for they will all be gathered together and will bless the Lord of the ages.",
@@ -2356,7 +2356,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "O blessed are they which loue thee, for they shall reioyce in thy peace: blessed are they which haue been sorowfull for all thy scourges, for they shal reioyce for thee, when they haue seene all thy glory, and shalbe glad for euer.",
             "NABRE": "Happy are those who love you, and happy are those who rejoice in your peace. Happy too are all who grieve over all your afflictions, For they will rejoice over you and behold all your joy forever.",
@@ -2365,7 +2365,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Let my soule blesse God the great King.",
             "NABRE": "My soul, bless the Lord, the great King;",
@@ -2374,7 +2374,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "For Ierusalem shall be built vp with Saphires, and Emerauds, and precious stone: thy walles and towres, and battlements with pure golde.",
             "NABRE": "for Jerusalem will be rebuilt as his house forever. Happy too will I be if a remnant of my offspring survives to see your glory and to give thanks to the King of heaven! The gates of Jerusalem will be built with sapphire and emerald, and all your walls with precious stones. The towers of Jerusalem will be built with gold, and their battlements with purest gold.",
@@ -2383,7 +2383,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "And the streets of Ierusalem shal be paued with Berill, and Carbuncle, and stones of Ophir.",
             "NABRE": "The streets of Jerusalem will be paved with rubies and stones of Ophir;",
@@ -2392,7 +2392,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "Blessed are all that love thee, and that rejoice upon thy peace.",
             "NABRE": "The gates of Jerusalem will sing hymns of gladness, and all its houses will cry out, Hallelujah! Blessed be the God of Israel for all ages! For in you the blessed will bless the holy name forever and ever.",
@@ -2400,31 +2400,31 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "My soul, bless thou our Lord, because he hath delivered Jerusalem his city from all her tribulations, the Lord our God."
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "Blessed shall I be if there shall remain of my seed, to see the glory of Jerusalem"
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "The gates of Jerusalem shall be built of Sapphire and the Emerald: and all the compass of the walls thereof of precious stone."
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "With white and clean stone shall all the streets thereof be paved: and in the streets thereof Alleluia shall be sung."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "Blessed be our Lord, which hath exalted it, and his Kingdom be for ever and ever over it. Amen."
           }
@@ -2432,10 +2432,10 @@
       ]
     },
     {
-      "number": 14,
+      "num": 14,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "So Tobit made an ende of praising God.",
             "NABRE": "IX. Epilogue Chapter 14 Parting Advice. So the words of Tobit’s hymn of praise came to an end. Tobit died in peace at the age of a hundred and twelve and was buried with honor in Nineveh.",
@@ -2444,7 +2444,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And he was eight and fifty yeeres olde when hee lost his sight, which was restored to him after eight yeeres, and he gaue almes, and he increased in the feare of the Lord God, and praised him.",
             "NABRE": "He was fifty-eight years old when he lost his eyesight, and after he recovered it he lived in prosperity, giving alms; he continued to fear God and give thanks to the divine Majesty.",
@@ -2453,7 +2453,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And when he was very aged, hee called his sonne, and the sixe sons of his sonne, and said to him, My sonne, take thy children; for behold, I am aged, and am ready to depart out of this life.",
             "NABRE": "As he was dying, he summoned his son Tobiah and Tobiah’s seven sons, and commanded him, “Son, take your children",
@@ -2462,7 +2462,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Goe into Media, my sonne, for I surely beleeue those things which Ionas the Prophet spake of Nineue, that it shall be ouerthrowen, and that for a time peace shal rather be in Media, and that our brethren shall lie scattered in the earth from that good land, and Ierusalem shall be desolate, and the house of God in it shalbe burned, and shall be desolate for a time:",
             "NABRE": "and flee into Media, for I believe God’s word that Nahum spoke against Nineveh. It will all happen and will overtake Assyria and Nineveh; indeed all that was said by Israel’s prophets whom God sent will come to pass. Not one of all their words will remain unfulfilled, but everything will take place in the time appointed for it. So it will be safer in Media than in Assyria or Babylon. For I know and believe that whatever God has said will be accomplished. It will happen, and not a single word of the prophecies will fail. As for our kindred who dwell in the land of Israel, they will all be scattered and taken into captivity from the good land. All the land of Israel will become a wilderness; even Samaria and Jerusalem will be a wilderness! For a time, the house of God will be desolate and will be burned.",
@@ -2471,7 +2471,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "And that againe God will haue mercie on them, and bring them againe into the land where they shall build a Temple, but not like to the first, vntill the time of that age be fulfilled, and afterward they shall returne from all places of their captiuitie, and build vp Ierusalem gloriously, and the house of God shall be built in it for euer, with a glorious building, as the prophets haue spoken thereof.",
             "NABRE": "But God will again have mercy on them and bring them back to the land of Israel. They will build the house again, but it will not be like the first until the era when the appointed times will be completed. Afterward all of them will return from their captivity, and they will rebuild Jerusalem with due honor. In it the house of God will also be rebuilt, just as the prophets of Israel said of it.",
@@ -2480,7 +2480,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "The destruction of Ninive is near: for the word of our Lord faileth not: and our brethren, which are dispersed from the land of Israel, shall return to it.",
             "NABRE": "All the nations of the world will turn and reverence God in truth; all will cast away their idols, which have deceitfully led them into error.",
@@ -2489,7 +2489,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "And all the desert land thereof shall be replenished, & the house of God which is burnt in it, shall again be re-edified: and thither shall all return that fear God,",
             "NABRE": "They will bless the God of the ages in righteousness. All the Israelites truly mindful of God, who are to be saved in those days, will be gathered together and will come to Jerusalem; in security will they dwell forever in the land of Abraham, which will be given to them. Those who love God sincerely will rejoice, but those who commit sin and wickedness will disappear completely from the land.",
@@ -2498,7 +2498,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "and the Gentiles shall forsake their idols, and shall come into Jerusalem; and shall inhabit in it,",
             "NABRE": ",",
@@ -2507,7 +2507,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "and all the kings of the earth shall rejoice in it, adoring the king of Israel.",
             "NABRE": "“Now, my children, I give you this command: serve God sincerely and do what is pleasing in his sight; you must instruct your children to do what is right and to give alms, to be mindful of God and at all times to bless his name sincerely and with all their strength. Now, as for you, son, leave Nineveh; do not stay here.",
@@ -2515,7 +2515,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "Hear ye therefore my children your father: serve our Lord in truth, and seek to do the things that please him:",
             "NABRE": "The day you bury your mother next to me, do not even stay overnight within the confines of the city. For I see that there is much wickedness in it, and much treachery is practiced in it, and people are not ashamed. See, my son, all that Nadin did to Ahiqar, the very one who reared him. Was not Ahiqar brought down alive into the earth? Yet God made Nadin’s disgraceful crime rebound against him. Ahiqar came out again into the light, but Nadin went into the everlasting darkness, for he had tried to kill Ahiqar. Because Ahiqar had given alms he escaped from the deadly trap Nadin had set for him. But Nadin fell into the deadly trap himself, and it destroyed him.",
@@ -2524,7 +2524,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "and command your children that they do justices and alms deeds, that they be mindful of God, and bless him at all time in truth, and in all their power.",
             "NABRE": "So, my children, see what almsgiving does, and also what wickedness does—it kills! But now my spirit is about to leave me.” Death of Tobit and Tobiah. They laid him on his bed, and he died; and he was buried with honor.",
@@ -2533,7 +2533,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And when Anna his mother was dead, he buried her with his father: but Tobias departed with his wife and children to Ecbatane, to Raguel his father in law:",
             "NABRE": "When Tobiah’s mother died, he buried her next to his father. He then departed with his wife and children for Media, where he settled in Ecbatana with his father-in-law Raguel.",
@@ -2542,7 +2542,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Where hee became old with honour, and hee buried his father and mother in lawe honourably, and hee inherited their substance, and his father Tobits.",
             "NABRE": "He took respectful care of his aging father-in-law and mother-in-law; and he buried them at Ecbatana in Media. Then he inherited Raguel’s estate as well as that of his father Tobit.",
@@ -2551,7 +2551,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And he died at Ecbatane in Media, being an hundred and seuen and twentie yeeres old.",
             "NABRE": "He died highly respected at the age of one hundred seventeen.",
@@ -2560,7 +2560,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "But before he died, he heard of the destruction of Nineue, which was taken by Nabuchodonosor & Assuerus: and before his death hee reioyced ouer Nineue.",
             "NABRE": "But before he died, he saw and heard of the destruction of Nineveh. He saw the inhabitants of the city being led captive into Media by Cyaxares, the king of Media. Tobiah blessed God for all that he had done against the Ninevites and Assyrians. Before dying he rejoiced over Nineveh, and he blessed the Lord God forever and ever.",
@@ -2569,13 +2569,13 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "And ninety nine years being accomplished in the fear of our Lord, with joy they buried him."
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And all his kindred, and all his generation continued in good life, and in holy conversation, so that they were acceptable both to God, and to men, and to all the inhabitants in the land."
           }

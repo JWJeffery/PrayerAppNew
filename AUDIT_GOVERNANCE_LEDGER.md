@@ -1197,3 +1197,34 @@ Verification: original failing case (2 Corinthians 6:3-7:1) now correctly return
 Fourth defect found while testing, not caused by this fix: the remaining 6 failures are Baruch/Ecclesiasticus/Wisdom citations. Traced precisely -- all chapters in all three books' JSON files have chapter.num set to null instead of an actual number, so the chapter lookup can never match anything from these books at all, cross-chapter or not, old code or new. Confirmed: a plain single-chapter Wisdom citation also fails identically. Every reading from these three books across the entire Daily Office (Wisdom 19 chapters, Baruch 5, Sirach 51, all null) currently renders as an unavailability message. Not fixed here -- a data-structure problem in three source files, not a resolver-logic problem, deserves its own scoped fix.
 
 Defect 2 closed for its stated scope (cross-chapter parsing). Wisdom/Baruch/Ecclesiasticus chapter-numbering is a distinct, newly-flagged open item.
+
+
+## Session, 2026-07-10 continued — items 1-4: #3 and #1 fixed (bigger than scoped); #2 found much larger than expected, not fixed; #4 already complete
+
+### #3 — Wisdom/Baruch/Ecclesiasticus: fixed, expanded to 11 books
+
+Root cause: chapter.num/verse.num stored as `number` instead of `num` -- a schema mismatch, confirmed against a working file (2corinthians.json). Full-corpus scan found 11 affected books, not 3: 1 Esdras, 1 Maccabees, 2 Esdras, 2 Maccabees, Baruch, Judith, Letter of Jeremiah, Prayer of Manasseh, Sirach, Tobit, Wisdom -- all imported as a batch with a different convention. 3/4 Maccabees and 1 Enoch checked and correctly unaffected.
+
+Fixed by renaming number->num at both levels in all 11 files. Verified: the 130-citation cross-chapter sweep now passes 130/130 (was 124/130); a second sweep of all 62 real citations from these 11 books across the DOL corpus passes 62/62. Every reading from these books was previously rendering as unavailable.
+
+Dashboard: Wisdom/Sirach/Baruch escalated to red in the biblical-corpus grid.
+
+### #1 — Visitation conditional transfer: fixed, harder than scoped
+
+Added _getVisitationDate()/_isVisitationDate() (Trinity Sunday = Easter+56; transfers to June 1 if it lands on May 31, else May 31 directly). Found before implementing, not after: May 31 falls in Easter season (not Ordinary Time) in 5 of 12 tested years, so the check couldn't live in findEntry() like Thanksgiving Day's does -- it had to run in fetchLectionaryData(), before file selection. Implemented there.
+
+Converted the Visitation's entry to moveable_id:"visitation". Recovered the regular "Monday in the Week of Proper 4" content it had been sitting on top of, from git history (commit 9774b41~1), restoring it as its own entry rather than leaving a new orphaned gap.
+
+Verified: 5 scenarios tested end-to-end through the real fetchLectionaryData, including the cross-season case (May 31 2025, naturally Easter season, still correctly resolves to the Visitation). No duplicate/missing day_of_season values in ordinary1.json after the change. Full 2026 regression across all six files, 310 entries -- zero unintended changes.
+
+### #4 — confirmed already complete
+
+St. Matthias/Barnabas/Independence Day/Thanksgiving Day were built in an earlier session. Mislabeled "still open" in a later summary -- corrected.
+
+### #2 — investigated, NOT fixed, much larger than scoped
+
+Before recovering the other ~22 orphaned Holy Day slots the same way as the Visitation's, tested whether a slot's day_of_season offset reliably maps to the same Proper/weekday identity across years. It does not: "Monday in the Week of Proper 4" computes to 6 different offsets across 6 tested years (37,1,8,44,8,37). Confirmed systematic across two more Propers. Root cause: BCP anchors Propers to fixed civil dates; the app's day_of_season is Pentecost-anchored; these only coincide for 2026, the year the data was built against.
+
+Checked whether Advent/Lent/Easter share this problem -- they don't, since their week-labels are anchored to their own moveable season start, the same anchor day_of_season uses (tested: "Monday in 2 Lent" = offset 13 in all 5 tested years).
+
+So the defect is bounded to Ordinary Time specifically, but within that scope affects potentially all ~165 regular weekday entries, not just the ~23 Holy-Day-occupied slots -- a foundational addressing-scheme problem, not a data-recovery task. Proper fix would mean computing each Ordinary Time entry's actual date fresh per year (the same technique _getVisitationDate/_getThanksgivingDay already use) rather than a sequential Pentecost-relative day count. Real architectural redesign, not a patch. Not attempted without Josh's direction on approach.

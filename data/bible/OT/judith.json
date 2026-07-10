@@ -7,10 +7,10 @@
   },
   "chapters": [
     {
-      "number": 1,
+      "num": 1,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "In the twelfth yeere of þ reigne of Nabuchodonosor, who reigned in Nineue the great citie, (in the dayes of Arphaxad, which reigned ouer the Medes in Ecbatane,",
             "NABRE": "I. Assyrian Threat Chapter 1 Nebuchadnezzar Against Arphaxad. It was the twelfth year of the reign of Nebuchadnezzar, who ruled over the Assyrians in the great city of Nineveh. At that time Arphaxad was ruling over the Medes in Ecbatana.",
@@ -19,7 +19,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And built in Ecbatane walles round about of stones hewen, three cubites broad, and sixe cubites long, and made the height of the wall seuenty cubites, and the breadth thereof fiftie cubites:",
             "NABRE": "Around Ecbatana he built a wall of hewn stones, three cubits thick and six cubits long. He made the walls seventy cubits high and fifty cubits wide.",
@@ -28,7 +28,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And set the towers thereof vpon the gates of it, an hundred cubites high, and the breadth thereof in the foundation threescore cubites.",
             "NABRE": "At its gates he raised towers one hundred cubits high with foundations sixty cubits wide.",
@@ -37,7 +37,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And he made the gates thereof, euen gates that were raised to the height of seuentie cubites, & the breadth of them was fourtie cubites, for the going foorth of his mightie armies, and for the setting in aray of his footmen.)",
             "NABRE": "He made its gates seventy cubits high and forty cubits wide to allow passage of his mighty forces, with his infantry in formation.",
@@ -46,7 +46,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Euen in those dayes, king Nabuchodonosor made warre with king Arphaxad in the great plaine, which is the plaine in the borders of Ragau.",
             "NABRE": "At that time King Nebuchadnezzar waged war against King Arphaxad in the vast plain that borders Ragau.",
@@ -55,7 +55,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "And there came vnto him, all they that dwelt in the hill countrey, and all that dwelt by Euphrates, and Tigris, and Hydaspes, and the plaine of Arioch the king of the Elimeans, and very many nations of the sonnes of Chelod, assembled themselues to the battell.",
             "NABRE": "Rallying to him were all who lived in the hill country, all who lived along the Euphrates, the Tigris, and the Hydaspes, as well as Arioch, king of the Elamites, in the plains. Thus many nations joined the ranks of the Chelodites.",
@@ -64,7 +64,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Then Nabuchodonosor king of the Assyrians, sent vnto all that dwelt in Persia, and to all that dwelt Westward, and to those that dwelt in Cilicia, and Damascus and Libanus, and Antilibanus, and to all that dwelt vpon the Sea coast,",
             "NABRE": "Then Nebuchadnezzar, king of the Assyrians, contacted all the inhabitants of Persia and all who lived in the west, the inhabitants of Cilicia and Damascus, Lebanon and Antilebanon, and all who lived along the seacoast,",
@@ -73,7 +73,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "and to the nations, that are in Carmelus, and Cedar, and the inhabitants of Galilee in the great field of Esdrelon,",
             "KJV": "And to those amongst the nations that were of Carmel, and Galaad, and the higher Galile, and the great plaine of Esdrelon,",
@@ -82,7 +82,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "and to all that were in Samaria, and beyond the river Jordan even to Jerusalem, and all the land of Jesse till you come to the borders of Æthiopia.",
             "KJV": "And to all that were in Samaria, and the cities thereof: and beyond Iordan vnto Ierusalem, and Betane, and Chellus, and Kades, and the riuer of Egypt, and Taphnes, and Ramesse, and all the land of Gesem,",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "To all these Nabuchodonosor king of the Assyrians sent messengers:",
             "KJV": "Untill you come beyond Tanis, and Memphis, and to all the inhabitants of Egypt, vntill you come to the borders of Ethiopia.",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "But all the inhabitants of the land made light of the commandement of Nabuchodonosor king of the Assyrians, neither went they with him to the battell: for they were not afraid of him: yea he was before them as one man, and they sent away his Ambassadours from them without effect, and with disgrace.",
             "NABRE": "But all the inhabitants of the whole land made light of the summons of Nebuchadnezzar, king of the Assyrians, and would not join him in the war. They were not afraid of him, since he was only a single opponent. So they sent back his envoys empty-handed and disgraced.",
@@ -109,7 +109,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "Then Nabuchodonosor the king taking indignation against all that land, swore by his throne and kingdom that he would revenge himself of all those countries.",
             "KJV": "Therefore Nabuchodonosor was very angry with all this countrey, and sware by his throne and kingdome, that hee would surely be auenged vpon all those coasts of Cilicia, and Damascus, and Syria, and that he would slay with the sword all the inhabitants of the land of Moab, and the children of Ammon, and all Iudea, and all that were in Egypt, till you come to the borders of the two Seas.",
@@ -118,7 +118,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "Then he marched in battell aray with his power against king Arphaxad in the seuenteenth yeere, and he preuailed in his battell: for he ouerthrew all the power of Arphaxad, and all his horsemen and all his chariots,",
             "NABRE": "Defeat of Arphaxad. In the seventeenth year he mustered his forces against King Arphaxad and was victorious in his campaign. He routed the whole force of Arphaxad, his entire cavalry, and all his chariots,",
@@ -126,7 +126,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And became Lord of his cities, and came vnto Ecbatane, and tooke the towers, and spoiled the streetes thereof, and turned the beauty thereof into shame.",
             "NABRE": "and took possession of his cities. He pressed on to Ecbatana, took its towers, sacked its marketplaces, and turned its glory into shame.",
@@ -134,7 +134,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Hee tooke also Arphaxad in the mountaines of Ragau, and smote him through with his dartes, and destroyed him vtterly that day.",
             "NABRE": "He captured Arphaxad in the mountains of Ragau, ran him through with spears, and utterly destroyed him once and for all.",
@@ -142,7 +142,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "So he returned afterward to Nineue, both he and all his company of sundry nations: being a very great multitude of men of warre, and there he tooke his ease and banketted, both he and his armie an hundred and twenty dayes.",
             "NABRE": "Then he returned to Nineveh with all his consolidated forces, a very great multitude of warriors; and there he and his forces relaxed and feasted for one hundred and twenty days.",
@@ -152,10 +152,10 @@
       ]
     },
     {
-      "number": 2,
+      "num": 2,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And in the eighteenth yeere, the two and twentieth day of the first month, there was talke in the house of Nabuchodonosor king of the Assyrians, that he should as he said auenge himselfe on all the earth.",
             "NABRE": "Chapter 2 Revenge Planned Against the Western Nations. In the eighteenth year, on the twenty-second day of the first month, there was a discussion in the palace of Nebuchadnezzar, king of the Assyrians, about taking revenge on all the land, as he had threatened.",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "So he called vnto him all his officers, and all his nobles, and communicated with them his secret counsell, and concluded the afflicting of the whole earth out of his owne mouth.",
             "NABRE": "He summoned all his attendants and officers, laid before them his secret plan, and with his own lips recounted in full detail the wickedness of all the land.",
@@ -173,7 +173,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "& he said that his cogitation was upon that, to subdue all the earth to his empire.",
             "KJV": "Then they decreed to destroy all flesh that did not obey the commaundement of his mouth.",
@@ -182,7 +182,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And when he had ended his counsell, Nabuchodonosor king of the Assyrians called Olofernes the chiefe captaine of his army, which was next vnto him, and said vnto him,",
             "NABRE": "When he had fully recounted his plan, Nebuchadnezzar, king of the Assyrians, summoned Holofernes, the ranking general of his forces, second only to himself in command, and said to him:",
@@ -191,7 +191,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Thus saith the great king, the Lord of the whole earth: behold, thou shalt goe forth from my presence, and take with thee men that trust in their owne strength, of footemen an hundred and twenty thousand, and the number of horses with their riders twelue thousand.",
             "NABRE": "“Thus says the great king, the lord of all the earth: Go forth from my presence, take with you men of proven valor, one hundred and twenty thousand infantry and twelve thousand cavalry,",
@@ -200,7 +200,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "And thou shalt goe against all the West countrey, because they disobeyed my commandement.",
             "NABRE": "and proceed against all the land of the west, because they disobeyed the order I issued.",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "Then Holofernes called the captains and magistrates of the power of the Assyrians: and he mustered men for the expedition, as the king commanded him, an hundred twenty thousand fighting men on foot, and twelve thousand archers horsemen.",
             "KJV": "And thou shalt declare vnto them that they prepare for me earth and water: for I will goe forth in my wrath against them, and will couer the whole face of the earth with the feete of mine armie, and I will giue them for a spoile vnto them.",
@@ -218,7 +218,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "And he made all his expedition to go before in a multitude of innumerable camels, with those things that might suffice the armies aboundantly, herds of oxen also, & flocks of sheep, which had no number.",
             "KJV": "So that their slaine shall fill their vallies, and brookes, and the riuer shall be filled with their dead, til it ouerflow.",
@@ -227,7 +227,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "He appointed corn to be prepared out of all Syria in his passage.",
             "KJV": "And I will lead them captiues to the vtmost parts of all the earth.",
@@ -236,7 +236,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "But gold & silver he took out of the king's house exceeding much.",
             "KJV": "Thou therefore shalt goe foorth, and take before hand for me all their coasts, and if they will yeeld themselues vnto thee, thou shalt reserue them for me till the day of their punishment.",
@@ -245,7 +245,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "But concerning them that rebell, let not thine eye spare them: but put them to the slaughter, and spoile them wheresoeuer thou goest.",
             "NABRE": "As for those who disobey, show them no mercy, but deliver them up to slaughter and plunder in all the land you occupy.",
@@ -254,7 +254,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "And when he had passed through the coasts of the Assyrians, he came to the great mountains of Ange, which are on the left hand of Cilicia: and he went up into all their castles, and won every fortress.",
             "KJV": "For as I liue, and by the power of my kingdome, whatsoeuer I haue spoken, that will I doe by mine hand.",
@@ -263,7 +263,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "And he brake down the renowned city of Melothus, and spoiled all the children of Tharsis, and the children of Ismael, which were against the face of the desert, and on the south of the land of Cellon.",
             "KJV": "And take thou heede that thou transgresse none of the Commaundements of thy Lord, but accomplish them fully, as I haue commaunded thee, and deferre not to doe them.",
@@ -272,7 +272,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "Then Olofernes went foorth from the presence of his Lord, and called all the gouernours and Captaines, and the officers of the army of Assur.",
             "NABRE": "So Holofernes left the presence of his lord, and summoned all the commanders, generals, and officers of the Assyrian forces.",
@@ -281,7 +281,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "And he mustered the chosen men for the battell, as his Lord had commaunded him, vnto an hundred and twenty thousand, & twelue thousand archers on Horsebacke.",
             "NABRE": "He mustered one hundred and twenty thousand picked troops, as his lord had commanded, and twelve thousand mounted archers,",
@@ -290,7 +290,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "And he carried away all the children of Madian, & spoiled all their riches, and all that resisted him he slew in the edge of the sword.",
             "KJV": "And he ranged them as a great army is ordered for the warre.",
@@ -299,7 +299,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And after these things he went down into the fields of Damascus in the days of harvest, and he set all the corn on fire, & he made all the trees and vineyards to be cut down;",
             "KJV": "And he tooke Camels, and Asses for their cariages a very great number, and sheepe, and Oxen, & Goates without number, for their prouision,",
@@ -308,7 +308,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "and the fear of him fell upon all the inhabitants of the land.",
             "KJV": "And plenty of vittaile for euery man of the army, and very much gold, and siluer, out of the Kings house.",
@@ -317,7 +317,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "Then he went foorth and all his power to go before King Nabuchodonosor in the voyage, and to couer al the face of the earth Westward with their charets, and horsemen, and their chosen footmen.",
             "NABRE": "Then he and all his forces set out on their expedition in advance of King Nebuchadnezzar, to overrun all the lands of the western region with their chariots, cavalry, and picked infantry.",
@@ -325,7 +325,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "A great multitude also of sundry countries came with them, like locusts, and like the sand of the earth: for the multitude was without number.",
             "NABRE": "A huge, irregular force, too many to count, like locusts, like the dust of the earth, went along with them.",
@@ -333,7 +333,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "And they went foorth of Nineue, three dayes iourney toward the plaine of Bectileth, and pitched from Bectileth neere the mountaine, which is at the left hand of the vpper Cilicia.",
             "NABRE": "After a three-day march from Nineveh, they reached the plain of Bectileth, and camped opposite Bectileth near the mountains to the north of Upper Cilicia.",
@@ -341,7 +341,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "Then he tooke all his armie, his footmen, and horsemen and chariots, and went from thence into the hill countrey,",
             "NABRE": "From there Holofernes took all his forces, the infantry, cavalry, and chariots, and marched into the hill country.",
@@ -349,7 +349,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "KJV": "And destroyed Phud, and Lud: and spoiled all the children of Rasses, and the children of Ismael, which were toward the wildernesse at the South of the land of the Chellians.",
             "NABRE": "He devastated Put and Lud, and plundered all the Rassisites and the Ishmaelites on the border of the wilderness toward the south of the Chelleans.",
@@ -357,7 +357,7 @@
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "KJV": "Then he went ouer Euphrates, and went through Mesopotamia, and destroyed all the high cities that were vpon the riuer Arbonai, till you come to the sea.",
             "NABRE": "Then, following the Euphrates, he went through Mesopotamia, and battered down every fortified city along the Wadi Abron, until he reached the sea.",
@@ -365,7 +365,7 @@
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "KJV": "And hee tooke the borders of Cilicia, and killed all that resisted him, and came to the borders of Iapheth, which were toward the South, ouer against Arabia.",
             "NABRE": "He seized the territory of Cilicia, and cut down everyone who resisted him. Then he proceeded to the southern borders of Japheth, toward Arabia.",
@@ -373,7 +373,7 @@
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "KJV": "He compassed also all the children of Madian, and burnt vp their tabernacles, and spoiled their sheepcoats.",
             "NABRE": "He surrounded all the Midianites, burned their tents, and sacked their encampments.",
@@ -381,7 +381,7 @@
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "KJV": "Then hee went downe into the plaine of Damascus in the time of wheat haruest, and burnt vp all their fieldes, and destroyed their flockes, and heards, also he spoiled their cities, and vtterly wasted their countreys, and smote all their yong men with the edge of the sword.",
             "NABRE": "Descending to the plain of Damascus at the time of the wheat harvest, he set fire to all their fields, destroyed their flocks and herds, looted their cities, devastated their plains, and put all their young men to the sword.",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "KJV": "Therefore the feare and dread of him, fell vpon all the inhabitants of the sea coastes, which were in Sidon and Tyrus, and them that dwelt in Sur, and Ocina, and all that dwelt in Ienmaan, and they that dwelt in Azotus, and Aschalon feared him greatly.",
             "NABRE": "Fear and dread of him fell upon all the inhabitants of the coastland, upon those in Sidon and Tyre, and those who dwelt in Sur and Ocina, and the inhabitants of Jamnia. Those in Azotus and Ascalon also feared him greatly.",
@@ -399,10 +399,10 @@
       ]
     },
     {
-      "number": 3,
+      "num": 3,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "So they sent Embassadours vnto him, to treat of peace, saying,",
             "NABRE": "Chapter 3 Submission of the Vassal Nations. So they sent messengers to him to sue for peace in these words:",
@@ -411,7 +411,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Behold, we the seruants of Nabuchodonosor the great king lie before thee; vse vs as shall be good in thy sight.",
             "NABRE": "“We, the servants of Nebuchadnezzar the great king, lie prostrate before you; do with us as you will.",
@@ -420,7 +420,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "Every city of ours, and all our possession, all mountains, and hills, and fields, and herds of oxen, and flocks of sheep, and goats, and of horses, and camels, and all our goods, and families are in thy sight:",
             "KJV": "Behold, our houses, and all our places, and all our fieldes of wheat, and flockes, and heards, and all the lodges of our tents, lie before thy face: vse them as it pleaseth thee.",
@@ -429,7 +429,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "Let all our things be under thy law.",
             "KJV": "Behold, euen our cities and the inhabitants thereof are thy seruants, come and deale with them, as seemeth good vnto thee.",
@@ -438,7 +438,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "We also, and our children are thy servants.",
             "KJV": "So the men came to Holofernes, & declared vnto him after this maner.",
@@ -447,7 +447,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then came hee downe toward the Sea coast, both hee and his armie, and set garisons in the high cities, and tooke out of them chosen men for aide.",
             "NABRE": "he went down with his forces to the seacoast, stationed garrisons in the fortified cities, and took selected men from them as auxiliaries.",
@@ -456,7 +456,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "So they and all the countrey round about, receiued them with garlands, with dances, and with timbrels.",
             "NABRE": "The people of these cities and all the inhabitants of the countryside received him with garlands and dancing to the sound of timbrels.",
@@ -465,7 +465,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Yet hee did cast downe their frontiers, and cut downe their groues: for hee had decreed to destroy all the gods of the land, that all nations should worship Nabuchodonosor onely, and that all tongues and tribes should call vpon him as God.",
             "NABRE": "But he devastated their whole territory and cut down their sacred groves, for he was allowed to destroy all the gods of the land, so that every nation might worship only Nebuchadnezzar, and all their tongues and tribes should invoke him as a god.",
@@ -474,7 +474,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Also he came ouer against Esdraelon neere vnto Iudea, ouer against the great strait of Iudea.",
             "NABRE": "At length Holofernes reached Esdraelon in the neighborhood of Dothan, the approach to the main ridge of the Judean mountains;",
@@ -483,7 +483,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And hee pitched betweene Geba, and Scythopolis, and there hee taried a whole moneth, that he might gather together all the cariages of his armie.",
             "NABRE": "he set up his camp between Geba and Scythopolis, and stayed there a whole month to replenish all the supplies of his forces.",
@@ -492,31 +492,31 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "Neither doing these things, could they for all that mitigate the fierceness of his stomach:"
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "for he did both destroy their cities, and cut down their groves."
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "For Nabuchodonosor the king had commanded him, that he should destroy all the gods of the earth, that he only might be called God of those nations, which could be subdued with the might of Holofernes."
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "And passing through all Syria Sobal, and all Apamea, and all Mesopotamia, he came to the Idumeians into the land of Gabaa,"
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "and took their cities, and sat there for thirty days, in which days he commanded all the army of his power to be united."
           }
@@ -524,10 +524,10 @@
       ]
     },
     {
-      "number": 4,
+      "num": 4,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Now the children of Israel that dwelt in Iudea, heard all that Holofernes the chiefe captaine of Nabuchodonosor king of the Assyrians had done to the nations, and after what manner hee had spoiled all their Temples, and brought them to nought.",
             "NABRE": "II. Siege of Bethulia Chapter 4 Israel Prepares for War. When the Israelites who lived in Judea heard of all that Holofernes, the ranking general of Nebuchadnezzar king of the Assyrians, had done to the nations, and how he had looted all their shrines and utterly destroyed them,",
@@ -536,7 +536,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Therefore they were exceedingly afraid of him, and were troubled for Ierusalem, and for the Temple of the Lord their God.",
             "NABRE": "they were in very great fear of him, and greatly alarmed for Jerusalem and the temple of the Lord, their God.",
@@ -545,7 +545,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "And they sent into all Samaria round about, as far as Jericho, and preoccupated all the tops of mountains:",
             "KJV": "For they were newly returned from the captiuitie, and all the people of Iudea were lately gathered together: and the vessels, and the Altar, and the house, were sanctified after the profanation.",
@@ -554,7 +554,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "Therefore they sent into all the coasts of Samaria, and the villages, and to Bethoron, and Belmen, and Iericho, and to Choba, and Esora, and to the valley of Salem,",
             "NABRE": "So they sent word to the whole region of Samaria, to Kona, Beth-horon, Belmain, and Jericho, to Choba and Aesora, and to the valley of Salem.",
@@ -563,7 +563,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "And possessed themselues beforehand of all the tops of the high mountaines, and fortified the villages that were in them, and laid vp victuals for the prouision of warre: for their fieldes were of late reaped.",
             "NABRE": "The people there secured all the high hilltops, fortified the villages on them, and since their fields had recently been harvested, stored up provisions in preparation for war.",
@@ -572,7 +572,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Also Ioacim the hie Priest which was in those daies in Ierusalem, wrote to them that dwelt in Bethulia, and Betomestham which is ouer against Esdraelon toward the open countrey neere to Dothaim,",
             "NABRE": "Joakim, who was high priest in Jerusalem in those days, wrote to the inhabitants of Bethulia and Betomesthaim, which is opposite Esdraelon, facing the plain near Dothan,",
@@ -581,7 +581,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Charging them to keepe the passages of the hill countrey: for by them there was an entrance into Iudea, and it was easie to stoppe them that would come vp, because the passage was strait for two men at the most.",
             "NABRE": "and instructed them to keep firm hold of the mountain passes, since these offered access to Judea. It would be easy to stop those advancing, as the approach was only wide enough for two at a time.",
@@ -590,7 +590,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "And all the people cried to our Lord with great instance, and they humbled their souls in fastings, and prayers, they and their wives.",
             "KJV": "And the children of Israel did as Ioacim the hie Priest had commanded them, with the ancients of all the people of Israel, which dwelt at Ierusal&#275;.",
@@ -599,7 +599,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Then euery man of Israel cryed to God with great feruencie, and with great vehemency did they humble their soules:",
             "NABRE": "Israel at Prayer. All the men of Israel cried to God with great fervor and humbled themselves.",
@@ -608,7 +608,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "and they cried to our Lord the God of Israel with one accord, that their infants might not be given into prey, and their wives into spoil, & their cities into destruction, and their holy things into pollution, and they be made a reproach to the Gentiles.",
             "KJV": "Both they and their wiues, and their children, and their cattell, and euery stranger and hireling, and their seruants bought with money, put sackecloth vpon their loynes.",
@@ -617,7 +617,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Thus euery man and woman, and the little children, & the inhabitants of Ierusalem fell before the temple, and cast ashes vpon their heads, and spread out their sackcloth before the face of the Lord: also they put sackecloth about the Altar,",
             "NABRE": "And all the Israelite men, women, and children who lived in Jerusalem fell prostrate in front of the temple and sprinkled ashes on their heads, spreading out their sackcloth before the Lord.",
@@ -626,7 +626,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "saying: Know ye, that our Lord will hear your prayers, if continuing you continue in fastings and prayers in the sight of our Lord.",
             "KJV": "And cryed to the God of Israel all with one consent earnestly, that hee would not giue their children for a pray, and their wiues for a spoile, and the cities of their inheritance to destruction, and the Sanctuary to profanation and reproch, & for the nations to reioyce at.",
@@ -635,7 +635,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "Be mindful of Moyses the servant of our Lord, who overthrew Amalec trusting in his power, and in his might, and in his army, & in his shields, and in his chariots, and in his horsemen, not by fighting, but with holy prayers:",
             "KJV": "So God heard their prayers, and looked vpon their afflictions: for the people fasted many dayes in all Iudea, and Ierusalem, before the Sanctuary of the Lord Almighty.",
@@ -644,7 +644,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And Ioacim the high Priest, and all the Priestes that stood before the Lord, and they which ministred vnto the Lord, had their loines girt with sackecloth, and offered the daily burnt offerings, with the vowes and free gifts of the people,",
             "NABRE": "Also girded with sackcloth, Joakim, the high priest, and all the priests in attendance before the Lord, and those who ministered to the Lord offered the daily burnt offering, the votive offerings, and the voluntary offerings of the people.",
@@ -653,7 +653,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "They therefore at this exhortation of his, beseeching our Lord, continued in the sight of our Lord,",
             "KJV": "And had ashes on their miters, and cried vnto the Lord with all their power, that hee would looke vpon all the house of Israel graciously.",
@@ -662,13 +662,13 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "so that they also which offered the holocausts to our Lord, did offer the sacrifices to our Lord girded with hair-cloths, and there were ashes upon their head."
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And they all prayed God with all their heart, that he would visit his people Israel."
           }
@@ -676,10 +676,10 @@
       ]
     },
     {
-      "number": 5,
+      "num": 5,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then was it declared to Holofernes the chief captaine of the armie of Assur that the children of Israel had prepared for warre, and had shut vp the passages of the hill countrey, and had fortified all the tops of the high hilles, and had laide impediments in the champion countreys.",
             "NABRE": "Chapter 5 Achior in the Assyrian War Council. It was reported to Holofernes, the ranking general of the Assyrian forces, that the Israelites were ready for battle, had blocked the mountain passes, fortified the high hilltops, and placed roadblocks in the plains.",
@@ -688,7 +688,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Wherewith he was very angry, and called all the princes of Moab, and the captaines of Ammon, and all the gouernours of the Sea coast.",
             "NABRE": "In great anger he summoned all the rulers of Moab, the governors of Ammon, and all the satraps of the coastland",
@@ -697,7 +697,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And he said vnto them, Tell mee now, ye sonnes of Canaan, who this people is that dwelleth in the hill countrey? and what are the cities that they inhabite? and what is the multitude of their armie? and wherein is their power and strength, and what king is set ouer them, or captaine of their armie?",
             "NABRE": "and said to them: “Now tell me, you Canaanites, what sort of people is this that lives in the hill country? Which cities do they inhabit? How large is their force? In what does their power and strength consist? Who has set himself up as their king and the leader of their army?",
@@ -706,7 +706,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "and why above all that dwell in the East, have these contemned us, & have not come forth to meet us, that they might receive us with peace?",
             "KJV": "And why haue they determined not to come and meet me, more then all the inhabitants of the West?",
@@ -715,7 +715,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Then said Achior, the captaine of all the sonnes of Ammon: Let my lord now heare a word from the mouth of thy seruant, and I will declare vnto thee the trueth, concerning this people which dwelleth neere thee, and inhabiteth the hill countreys: and there shall no lie come out of the mouth of thy seruant.",
             "NABRE": "Then Achior, the leader of all the Ammonites, said to him: “My lord, please listen to a report from your servant. I will tell you the truth about this people that lives in the hill country near here. No lie shall escape your servant’s lips.",
@@ -724,7 +724,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "This people are descended of the Caldeans,",
             "NABRE": "“These people are descendants of the Chaldeans.",
@@ -733,7 +733,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And they soiourned heretofore in Mesopotamia, because they would not follow the gods of their fathers, which were in the land of Caldea.",
             "NABRE": "They formerly lived in Mesopotamia, for they did not wish to follow the gods of their ancestors who were in the land of the Chaldeans.",
@@ -742,7 +742,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "Forsaking therefore the ceremonies of their fathers, which were in multitude of gods,",
             "KJV": "For they left the way of their ancestours, and worshipped the God of heauen, the God whom they knew: so they cast them out from the face of their gods, and they fled into Mesopotamia, and soiourned there many dayes.",
@@ -751,7 +751,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "they worshipped one God of heaven, who also commanded them that they should depart from thence, and should dwell in Charan. And when there was famine over all the land, they went down into Ægypt, and there for four hundred years were so multiplied, that the host of them could not be numbered.",
             "KJV": "Then their God commaunded them to depart from the place where they soiourned, and to goe into the land of Chanaan, where they dwelt, and were increased with gold and siluer, and with very much cattell.",
@@ -760,7 +760,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "And when the king of Ægypt oppressed them, and in the buildings of his cities had subdued them in brick and clay, they cried to their Lord, and he struck the whole Land of Ægypt with diverse plagues.",
             "KJV": "But when a famine couered all the land of Chanaan, they went downe into Egypt, and soiourned there, while they were nourished, and became there a great multitude, so that one could not number their nation.",
@@ -769,7 +769,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "And when the Ægyptians had cast them out from them, and the plague had ceased from them, and they would take them again, and call them back to their service,",
             "KJV": "Therefore the king of Egypt rose vp against them, and dealt subtilly with them, and brought them low, with labouring in bricke, & made them slaues.",
@@ -778,7 +778,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "these flying away, the God of heaven opened the sea, so that the waters were consolidated as a wall, on either side, and they walking through the bottom of the sea passed dry-foot.",
             "KJV": "Then they cried vnto their God, and he smote all the land of Egypt with incurable plagues, so the Egyptians cast them out of their sight.",
@@ -787,7 +787,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "In which place whilst an innumerable army of the Ægyptians pursued them, they were so overwhelmed with the waters, that there was not one remaining, to tell the fact to posterity.",
             "KJV": "And God dried the red Sea before them:",
@@ -796,7 +796,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "Also being past the red sea, they possessed the deserts of Mount Sinai, in which never man could dwell, or son of man rested.",
             "KJV": "And brought them to mount Sina, and Cades Barne, and cast forth all that dwelt in the wildernesse.",
@@ -805,7 +805,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "There bitter fountains were made sweet for them to drink, and for forty years they received meat from heaven.",
             "KJV": "So they dwelt in the land of the Amorites, and they destroyed by their strength all them of Esebon, and passing ouer Iordan they possessed all the hill countrey.",
@@ -814,7 +814,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "Wheresoever they entered without bow and arrow, and without shield and sword, their God fought for them, and overcame.",
             "KJV": "And they cast forth before them, the Chanaanite, the Pheresite, the Iebusite, and the Sychemite, and all the Gergesites, and they dwelt in that countrey many dayes.",
@@ -823,7 +823,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And there was not that did insult against this people, but when they departed from the worship of the Lord their God.",
             "KJV": "And whilest they sinned not before their God, they prospered, because the God that hateth iniquitie, was with them.",
@@ -832,7 +832,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "But as often as beside their own God they worshipped another, they were given to prey, and into the sword, and to reproach.",
             "KJV": "But when they departed from the way which he appointed them, they were destroyed in many battels very sore, and were led captiues into a land that was not theirs, and the Temple of their God was cast to the ground, and their cities were taken by the enemies.",
@@ -841,7 +841,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And as often as they were penitent for that they revolted from the worship of their God, the God of heaven gave them power to resist.",
             "KJV": "But nowe are they returned to their God, and are come vp from the places, where they were scattered, and haue possessed Ierusalem, where their Sanctuary is, and are seated in the hill countrey, for it was desolate.",
@@ -850,7 +850,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Now therefore, my lord and gouernour, if there be any errour in this people, & they sinne against their God, let vs consider that this shal be their ruine, and let vs goe vp, and we shal ouercome them.",
             "NABRE": "“So now, my master and lord, if these people are inadvertently at fault, or if they are sinning against their God, and if we verify this offense of theirs, then we will be able to go up and conquer them.",
@@ -859,7 +859,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "But if there be no iniquitie in their nation, let my lord now passe by, lest their Lord defend them, and their God be for them, and wee become a reproch before all the world.",
             "NABRE": "But if they are not a guilty nation, then let my lord keep his distance; otherwise their Lord and God will shield them, and we will be mocked in the eyes of all the earth.”",
@@ -868,7 +868,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "And when Achior had finished these sayings, all the people standing round about the tent, murmured, and the chiefe men of Holofernes, and all that dwelt by the Sea side, and in Moab, spake that he should kill him.",
             "NABRE": "Now when Achior had finished saying these things, all the people standing round about the tent murmured; and the officers of Holofernes and all the inhabitants of the seacoast and of Moab alike said he should be cut to pieces.",
@@ -877,7 +877,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "But of late returning to the Lord their God, from the dispersion wherein they were dispersed, they are united and are come up into all these mountains, and possess Jerusalem again where their Holies are.",
             "KJV": "For, say they, we will not be afraid of the face of the children of Israel, for loe, it is a people that haue no strength, nor power for a strong battell.",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "Now therefore my Lord, search if there be any iniquity of theirs in the sight of their God: and let us go up to them, because their God delivering will deliver them to thee, and they shall be subdued under the yoke of thy power:",
             "KJV": "Now therefore, Lord Holofernes, we will goe vp, and they shall be a pray, to be deuoured of all thine armie.",
@@ -895,31 +895,31 @@
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "but if there be no offence of this people before their God, we cannot resist them, because their God will defend them: and we shall be a reproach to the whole earth."
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "DRB": "And it came to pass, when Achior had ceased to speak these words, all the great men of Holofernes were angry, and they thought to kill him, saying to each other:"
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "DRB": "who is this, that saith the children of Israel can resist king Nabuchodonosor, and his armies, men unarmed, and without force, and without skill of the feats of war?"
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "DRB": "That Achior therefore may know that he deceiveth us, let us go up into the mountains: and when their mighty ones shall be taken, then shall he with them be strucken through with the sword:"
           }
         },
         {
-          "number": 29,
+          "num": 29,
           "text": {
             "DRB": "that every nation may know that Nabuchodonosor is God of the earth, and besides him there is none other."
           }
@@ -927,10 +927,10 @@
       ]
     },
     {
-      "number": 6,
+      "num": 6,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And when the tumult of men that were about the councell was ceased, Holofernes the chiefe captaine of the armie of Assur, said vnto Achior and all the Moabites, before all the company of other nations,",
             "NABRE": "Chapter 6 When the noise of the crowd surrounding the council had subsided, Holofernes, the ranking general of the Assyrian forces, said to Achior, in the presence of the whole throng of foreigners, of the Moabites, and of the Ammonite mercenaries:",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And who art thou Achior and the hirelings of Ephraim, that thou hast prophesied amongst vs as to day, and hast said, that we should not make warre with the people of Israel, because their God will defend them? and who is God but Nabuchodonosor?",
             "NABRE": "“Who are you, Achior and the mercenaries of Ephraim, to prophesy among us as you have done today, and to tell us not to fight against the people of Israel because their God shields them? Who is God beside Nebuchadnezzar? He will send his force and destroy them from the face of the earth. Their God will not save them;",
@@ -948,7 +948,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "He will send his power, and will destroy them from the face of the earth, and their God shall not deliuer them: but we his seruants will destroy them as one man, for they are not able to sustaine the power of our horses.",
             "NABRE": "but we, the servants of Nebuchadnezzar, will strike them down with one blow, for they will be unable to withstand the force of our cavalry.",
@@ -957,7 +957,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "and thou shalt prove that Nabuchodonosor is Lord of the whole earth: and then the sword of my warfare shall pass through thy sides, & pierced thou shalt fall among the wounded of Israel, & thou shalt no more fetch breath, till thou be destroyed with them.",
             "KJV": "For with them we will tread them vnder foote, and their mountains shall be drunken with their blood, and their fields shall be filled with their dead bodies, and their footesteps shall not be able to stand before vs, for they shal vtterly perish, saith king Nabuchodonosor Lord of all the earth; for hee said, none of my words shall be in vaine.",
@@ -966,7 +966,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "But if thou think thy prophecy true, let not thy countenance quail, and the paleness that is in thy face, let it depart from thee, if thou think these my words cannot be accomplished.",
             "KJV": "And thou Achior, an hireling of Ammon, which hast spoken these words in the day of thine iniquity, shalt see my face no more, from this day vntill I take vengeance of this nation that came out of Egypt.",
@@ -975,7 +975,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "And that thou mayst know that thou shalt prove these things together with them, behold from this hour thou shalt be associate to their people, that whiles they shall receive worthy punishment of my sword, thou withal may be subject to the vengeance.",
             "KJV": "And then shall the sword of mine armie, and the multitude of them that serue me, passe through thy sides, and thou shalt fal among their slaine, when I returne.",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "Then Holofernes commanded his servants that they should take Achior, and lead him into Bethulia, & should deliver him into the hands of the children of Israel.",
             "KJV": "Now therefore my seruants shall bring thee backe into the hill countrey, and shall set thee in one of the cities of the passages.",
@@ -993,7 +993,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "And the servants of Holofernes taking him, went through the champion: but when they came near the mountains, the slingers came forth against them.",
             "KJV": "And thou shalt not perish till thou be destroyed with them.",
@@ -1002,7 +1002,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "And they returning out of the way by the side of the mountain, tied Achior to a tree hand and foot, and so left him bound with withes, and returned to their lord.",
             "KJV": "And if thou perswade thy selfe in thy minde, that they shall not be taken, let not thy countenance fall: I haue spoken it, and none of my words shall be in vaine.",
@@ -1011,7 +1011,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Then Holofernes commanded his seruants that waited in his tent, to take Achior and bring him to Bethulia, and deliuer him into the hands of the children of Israel.",
             "NABRE": "Then Holofernes ordered the servants who were standing by in his tent to seize Achior, conduct him to Bethulia, and hand him over to the Israelites.",
@@ -1020,7 +1020,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "In those days the Princes there, were Ozias the son of Micha of the tribe of Simeon, and Charmi, who also is Gothoniel.",
             "KJV": "So his seruants tooke him, and brought him out of the campe into the plaine, and they went from the midst of the plaine into the hill countrey, and came vnto the fountaines that were vnder Bethulia.",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "In the midst therefore of the ancients, and in the sight of all, Achior told all things that he had spoken being asked of Holofernes: and how the people of Holofernes would have killed him for this word,",
             "KJV": "And when the men of the citie saw them, they tooke vp their weapons, and went out of the citie to the toppe of the hill, and euery man that vsed a sling from comming vp by casting of stones against them.",
@@ -1038,7 +1038,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "and how Holofernes himself being angry commanded him to be delivered for this cause to the Israelites: that when he should overcome the children of Israel, then he might command Achior also himself to die by diverse torments, for this that he had said: The God of heaven is their defender.",
             "KJV": "Neuerthelesse hauing gotten priuily vnder the hill, they bound Achior and cast him downe, and left him at the foote of the hill, and returned to their Lord.",
@@ -1047,7 +1047,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "But the Israelites descended from their citie, and came vnto him, and loosed him, and brought him into Bethulia, and presented him to the gouernours of the citie,",
             "NABRE": "The Israelites came down from their city and found him, untied him, and brought him into Bethulia. They placed him before the rulers of the city,",
@@ -1056,7 +1056,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "Which were in those dayes Ozias the sonne of Micha of the tribe of Simeon, and Chabris the sonne of Gothoniel, and Charmis the sonne of Melchiel.",
             "NABRE": "who in those days were Uzziah, son of Micah of the tribe of Simeon, and Chabris, son of Gothoniel, and Charmis, son of Melchiel.",
@@ -1065,7 +1065,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "And they called together all the ancients of the citie, and all their youth ranne together, and their women to the assembly, and they set Achior in the midst of all their people. Then Ozias asked him of that which was done.",
             "NABRE": "They then convened all the elders of the city, and all their young men, as well as the women, gathered in haste at the place of assembly. They placed Achior in the center of the people, and Uzziah questioned him about what had happened.",
@@ -1074,7 +1074,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "And he answered and declared vnto them the words of the counsell of Holofernes, and all the words that he had spoken in the midst of the princes of Assur, and whatsoeuer Holofernes had spoken proudly against the house of Israel.",
             "NABRE": "He replied by giving them an account of what was said in the council of Holofernes, and of all his own words among the Assyrian rulers, and of all the boasting threats of Holofernes against the house of Israel.",
@@ -1083,7 +1083,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Then the people fell downe, and worshipped God, and cryed vnto God, saying,",
             "NABRE": "At this the people fell prostrate and worshiped God, and they cried out:",
@@ -1092,7 +1092,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "O Lord God of heauen, behold their pride, and pity the low estate of our nation, and looke vpon the face of those that are sanctified vnto thee this day.",
             "NABRE": "“Lord, God of heaven, look at their arrogance! Have mercy on our people in their abject state, and look with favor this day on the faces of those who are consecrated to you.”",
@@ -1101,7 +1101,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "And all the ancients being called, they refreshed themselves together after the fasting was ended.",
             "KJV": "Then they comforted Achior and praised him greatly.",
@@ -1110,7 +1110,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "But afterward all the people was called together, & all the night long within the Church, they prayed desiring help of the God of Israel.",
             "KJV": "And Ozias tooke him out of the assembly vnto his house, and made a feast to the Elders, & they called on the God of Israel all that night for helpe.",
@@ -1121,10 +1121,10 @@
       ]
     },
     {
-      "number": 7,
+      "num": 7,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "The next day Holofernes commanded all his army, and all his people which were come to take his part, that they should remooue their campe against Bethulia, to take aforehand the ascents of the hill countrey, and to make warre against the children of Israel.",
             "NABRE": "Chapter 7 The Campaign Against Israel. The following day Holofernes ordered his whole army, and all the troops who had come to join him, to break camp and move against Bethulia, seize the passes into the hills, and make war on the Israelites.",
@@ -1133,7 +1133,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "Then their strong men remoued their campes in that day, and the armie of the men of warre was, an hundred and seuenty thousand footmen, and twelue thousand horsemen, beside the baggage, & other men that were afoot amongst them, a very great multitude.",
             "NABRE": "That same day all their fighting men went into action. Their forces numbered a hundred and seventy thousand infantry and twelve thousand cavalry, not counting the baggage train or the men who accompanied it on foot, a very great army.",
@@ -1142,7 +1142,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And they camped in the valley neere vnto Bethulia, by the fountaine, and they spred themselues in breadth ouer Dothaim, euen to Belmaim, and in length from Bethulia vnto Cyamon which is ouer against Esdraelon.",
             "NABRE": "They encamped at the spring in the valley near Bethulia, and spread crosswise toward Dothan as far as Balbaim, and lengthwise from Bethulia to Cyamon, which faces Esdraelon.",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "But the children of Israel, as they saw the multitude of them, laid themselves prostrate upon the earth, casting ashes upon their heads, praying with one accord, that the God of Israel would shew his mercy upon his people.",
             "KJV": "Now the children of Israel when they saw the multitude of them, were greatly troubled, and said euery one to his neighbour: Now will these men licke vp the face of the earth; for neither the high mountaines, nor the valleys, nor the hils, are able to beare their waight.",
@@ -1160,7 +1160,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "And taking their weapons of war, they sat at the places, which by a narrow path-way lead directly between the mountains, and they were keeping them all day and night.",
             "KJV": "Then euery man tooke vp his weapons of warre, and when they had kindled fires vpon their towers, they remained and watched all that night.",
@@ -1169,7 +1169,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "Moreover Holofernes, whilst he compasseth round about, found that the fountain which ran in, went directly to their conduit on the south side without the city: and he commanded their conduit to be cut asunder.",
             "KJV": "But in the second day Holofernes brought foorth all his horsemen, in the sight of the children of Israel which were in Bethulia,",
@@ -1178,7 +1178,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And viewed the passages vp to the city, and came to the fountaine of their waters, and tooke them, and set garrisons of men of warre ouer them, and he himselfe remooued towards his people.",
             "NABRE": "He reconnoitered the ascents to their city and located their springs of water; these he seized, stationing armed detachments around them, while he himself returned to his troops.",
@@ -1187,7 +1187,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "But the children of Ammon and Moab came to Holofernes, saying: The children of Israel trust not in spear, nor in arrow, but the mountains defend them, and the hills standing marvelous steep guard them.",
             "KJV": "Then came vnto him all the chiefe of the children of Esau, and al the gouernours of the people of Moab, and the captaines of the sea coast, and said,",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "Therefore that thou mayst overcome them without joining battle, set keepers of the fountains, that they may not draw water of them, and without sword thou shalt kill them, or at the least being wearied they will yield their city, which they think being set in the mountains, cannot be overcome.",
             "KJV": "Let our lord now heare a word, that there be not an ouerthrow in thine armie.",
@@ -1205,7 +1205,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "And these words pleased Holofernes and his soldiers, and he placed round about an hundred men at every fountain.",
             "KJV": "For this people of the children of Israel do not trust in their speares, but in the height of the mountaines wherein they dwell, because it is not easie to come vp to the tops of their mountains.",
@@ -1214,7 +1214,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "And when that watch had been fully kept for twenty days, the cisterns failed, and the collections of waters to all the inhabitants of Bethulia, so that there was not within the city whereof they might be satisfied, no not for one day, because water was daily given to the people by measure.",
             "KJV": "Now therefore my lord, fight not against them in battell aray, and there shall not so much as one man of thy people perish.",
@@ -1223,7 +1223,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "Then all the men, and women, young men, and children, being gathered together to Ozias, all together with one voice,",
             "KJV": "Remaine in thy campe, and keepe all the men of thine army, and let thy seruants get into their hands the fountaine of water which issueth foorth of the foot of the mountaine.",
@@ -1232,7 +1232,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "said: God judge between us and thee, because thou hast done evil against us, in that thou wouldest not speak peaceably with the Assyrians, and for this cause God hath sold us into their hands.",
             "KJV": "For all the inhabitants of Bethulia haue their water thence: so shall thirst kil them, & they shall giue vp their citie, and we and our people shal goe vp to the tops of the mountaines that are neere, and will campe vpon them, to watch that none goe out of the city.",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "And there is none to help, whereas we lie prostrate before their eyes in thirst, and great destruction.",
             "KJV": "So they and their wiues, and their children shalbe consumed with famine, and before the sword come against them, they shall be ouerthrowen in the streets where they dwel.",
@@ -1250,7 +1250,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "And now assemble ye all, that are in the city, that we may of our own accord yield us all to the people of Holofernes.",
             "KJV": "Thus shalt thou render them an euil reward: because they rebelled and met not thy person peaceably.",
@@ -1259,7 +1259,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "For it is better, that captives we bless our Lord living, than we should die, and be a reproach to all flesh, when we shall see our wives and our infants die before our eyes.",
             "KJV": "And these words pleased Holofernes, and al his seruants, and he appointed to doe as they had spoken.",
@@ -1268,7 +1268,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "So the campe of the children of Ammon departed, and with them fiue thousand of the Assyrians, and they pitched in the valley, and tooke the waters, and the fountaines of the waters of the children of Israel.",
             "NABRE": "So the Ammonites moved camp, together with five thousand Assyrians. They encamped in the valley and held the water supply and the springs of the Israelites.",
@@ -1277,7 +1277,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "And when they had said these things, there was made great weeping and howling of all in the assembly, and for many hours with one voice they cried to God, saying:",
             "KJV": "Then the children of Esau went vp, with the children of Ammon, and camped in the hil countrey ouer against Dotha-em: and they sent some of them toward the South, & toward the East ouer against Ekrebel, which is neere vnto Chusi, that is vpon the brooke Mochmur, and the rest of the army of the Assyrians camped in the plaine, and couered the face of the whole land, and their tents and cariages were pitched to a very great multitude.",
@@ -1286,7 +1286,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "We have sinned with our fathers, we have done unjustly, we have committed iniquity.",
             "KJV": "Then the children of Israel cried vnto the Lord their God, because their heart failed, for all their enemies had compassed them round about, & there was no way to escape out from among them.",
@@ -1295,7 +1295,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Thus all the company of Assur remained about them, both their footmen, charets and horsemen, foure and thirtie dayes, so that all their vessels of water failed all the inhabitants of Bethulia.",
             "NABRE": "The whole Assyrian army, infantry, chariots, and cavalry, kept them thus surrounded for thirty-four days. All the reservoirs of water failed the inhabitants of Bethulia,",
@@ -1304,7 +1304,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "that they say not among the Gentiles: Where is their God?",
             "KJV": "And the cisternes were emptied, and they had not water to drinke their fill, for one day; for they gaue them drinke by measure.",
@@ -1313,7 +1313,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "Therefore their young children were out of heart, and their women and yong men fainted for thirst, and fell downe in the streetes of the city, and by the passages of the gates, and there was no longer any strength in them.",
             "NABRE": "Their children were listless, and the women and youths were fainting from thirst and were collapsing in the streets and gateways of the city, with no strength left in them.",
@@ -1322,7 +1322,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "KJV": "Then all the people assembled to Ozias, and to the chiefe of the city, both young men, and women, and children, and cryed with a loude voice, and saide before all the Elders;",
             "NABRE": "So all the people, including youths, women, and children, went in a crowd to Uzziah and the rulers of the city. They cried out loudly and said before all the elders:",
@@ -1331,7 +1331,7 @@
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "KJV": "God be Iudge betweene vs and you: for you haue done vs great iniury in that you haue not required peace of the children of Assur.",
             "NABRE": "“May God judge between you and us! You have done us grave injustice in not making peace with the Assyrians.",
@@ -1340,7 +1340,7 @@
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "But if after five days be past there come no aid, we will do these words, which you have spoken.",
             "KJV": "For now we haue no helper: but God hath sold vs into their hands, that wee should be throwen downe before them with thirst, and great destruction.",
@@ -1349,7 +1349,7 @@
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "KJV": "Now therefore call them vnto you, and deliuer the whole citie for a spoile to the people of Olofernes, and to all his armie.",
             "NABRE": "So now, summon them and deliver the whole city as plunder to the troops of Holofernes and to all his forces;",
@@ -1357,7 +1357,7 @@
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "KJV": "For it is better for vs to be made a spoile vnto them, then to die for thirst: for wee will be his seruants, that our soules may liue, and not see the death of our infants before our eyes, nor our wiues nor our children to die.",
             "NABRE": "we would be better off to become their prey. Although we would be made slaves, at least we would live, and not have to see our little ones dying before our eyes, and our wives and children breathing their last.",
@@ -1365,7 +1365,7 @@
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "KJV": "We take to witnesse against you, the heauen and the earth, and our God, and Lord of our fathers, which punisheth vs according to our sinnes, and the sinnes of our fathers, that hee doe not according as we haue said this day.",
             "NABRE": "We adjure you by heaven and earth and by our God, the Lord of our ancestors, who is punishing us for our sins and the sins of our ancestors, that this very day you do as we have proposed.”",
@@ -1373,7 +1373,7 @@
           }
         },
         {
-          "number": 29,
+          "num": 29,
           "text": {
             "KJV": "Then there was great weeping with one consent in the middest of the assembly, and they cryed vnto the Lord God with a loude voice.",
             "NABRE": "All in the assembly with one accord broke into shrill wailing and cried loudly to the Lord their God.",
@@ -1381,7 +1381,7 @@
           }
         },
         {
-          "number": 30,
+          "num": 30,
           "text": {
             "KJV": "Then said Ozias to them, Brethren, be of good courage, let vs yet endure fiue dayes, in the which space the Lord our God may turne his mercy toward vs, for he will not forsake vs vtterly.",
             "NABRE": "But Uzziah said to them, “Courage, my brothers and sisters! Let us endure patiently five days more for the Lord our God to show mercy toward us; for God will not utterly forsake us.",
@@ -1389,7 +1389,7 @@
           }
         },
         {
-          "number": 31,
+          "num": 31,
           "text": {
             "KJV": "And if these dayes passe, and there come no helpe vnto vs, I wil doe according to your word.",
             "NABRE": "But if these days pass and help does not come to us, I will do as you say.”",
@@ -1397,7 +1397,7 @@
           }
         },
         {
-          "number": 32,
+          "num": 32,
           "text": {
             "KJV": "And he dispersed the people euery one to their owne charge, and they went vnto the walles and towres of their citie, and sent the women and children into their houses, and they were very low brought in the city.",
             "NABRE": "Then he dismissed the people. The men returned to their posts on the walls and towers of the city, the women and children went back to their homes. Throughout the city they were in great misery.",
@@ -1407,10 +1407,10 @@
       ]
     },
     {
-      "number": 8,
+      "num": 8,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Now at that time Iudeth heard thereof, which was the daughter of Merari the sonne of Ox, the sonne of Ioseph, the sonne of Oziel, the sonne of Elcia, the sonne of Ananias, the sonne of Gedeon, the sonne of Raphaim, the son of Acitho, the sonne of Eliu, the sonne of Eliab, the sonne of Nathanael, the sonne of Samael, the sonne of Salasadai, the son of Israel.",
             "NABRE": "III. Judith, Instrument of the Lord Chapter 8 Description of Judith. Now in those days Judith, daughter of Merari, son of Ox, son of Joseph, son of Oziel, son of Elkiah, son of Ananias, son of Gideon, son of Raphain, son of Ahitub, son of Elijah, son of Hilkiah, son of Eliab, son of Nathanael, son of Salamiel, son of Sarasadai, son of Simeon, son of Israel, heard of this.",
@@ -1419,7 +1419,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And Manasses was her husband of her tribe and kinred, who died in the barley haruest.",
             "NABRE": "Her husband, Manasseh, of her own tribe and clan, had died at the time of the barley harvest.",
@@ -1428,7 +1428,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "for he was occupied with them that bound sheaves in the field, and the heat came upon his head, and he died in Bethulia his city, and was buried there with his father.",
             "KJV": "For as hee stood ouerseeing them that bound sheaues in the field, the heat came vpon his head, and hee fell on his bed, and died in the city of Bethulia, and they buried him with his fathers, in the field betweene Dothaim and Balamo.",
@@ -1437,7 +1437,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "So Iudeth was a widow in her house three yeeres, and foure moneths.",
             "NABRE": "Judith was living as a widow in her home for three years and four months.",
@@ -1446,7 +1446,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "And in the higher parts of her house she made herself a secret chamber, in which she abode shut up with her maids.",
             "KJV": "And she made her a tent vpon the top of her house, and put on sackecloth on her loynes, and ware her widowes apparell.",
@@ -1455,7 +1455,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "and having cloth of hair upon her loins, she fasted all the days of her life, but Sabbaths, and new moons, and the feasts of the house of Israel.",
             "KJV": "And she fasted all the dayes of her widowhood, saue the eues of the Sabbath, and the Sabbaths, and the eues of the newe Moones, and the newe Moones, and the Feasts, and solemne dayes of the house of Israel.",
@@ -1464,7 +1464,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Shee was also of a goodly countenance, and very beautifull to behold: and her husband Manasses had left her golde and siluer, and men seruants and maide seruants, and cattell, and lands, and she remained vpon them.",
             "NABRE": "She was beautiful in appearance and very lovely to behold. Her husband, Manasseh, had left her gold and silver, male and female servants, livestock and fields, which she was maintaining.",
@@ -1473,7 +1473,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "And there was none that gaue her an ill worde; for shee feared God greatly.",
             "NABRE": "No one had a bad word to say about her, for she feared God greatly. Judith and the Elders.",
@@ -1482,7 +1482,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "Now when shee heard the euill wordes of the people against the gouernor, that they fainted for lacke of water (for Iudeth had heard all the wordes that Ozias had spoken vnto them, and that he had sworne to deliuer the citie vnto the Assyrians after fiue dayes)",
             "NABRE": "So when Judith heard of the harsh words that the people, discouraged by their lack of water, had spoken against their ruler, and of all that Uzziah had said to them in reply, swearing that he would hand over the city to the Assyrians at the end of five days,",
@@ -1491,7 +1491,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Then shee sent her waiting woman that had the gouernment of all things that she had, to call Ozias, and Chabris, and Charmis, the ancients of the citie.",
             "NABRE": "she sent her maid who was in charge of all her things to summon Uzziah, Chabris, and Charmis, the elders of her city.",
@@ -1500,7 +1500,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And they came vnto her, and she said vnto them, Heare me now, O yee gouernours of the inhabitants of Bethulia: for your wordes that you haue spoken before the people this day are not right, touching this othe which ye made, and pronounced betweene God and you, and haue promised to deliuer the citie to our enemies, vnlesse within these daies the Lord turne to helpe you.",
             "NABRE": "When they came, she said to them: “Listen to me, you rulers of the people of Bethulia. What you said to the people today is not right. You pronounced this oath, made between God and yourselves, and promised to hand over the city to our enemies unless within a certain time the Lord comes to our aid.",
@@ -1509,7 +1509,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And now who are you, that haue tempted God this day, & stand in stead of God amongst the children of men?",
             "NABRE": "Who are you to put God to the test today, setting yourselves in the place of God in human affairs?",
@@ -1518,7 +1518,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "You have set a time for the mercy of our Lord, and according to your pleasure, you have appointed him a day.",
             "KJV": "And now trie the Lord Almighty, but you shall neuer know any thing.",
@@ -1527,7 +1527,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "But because our Lord is patient, let us be penitent for this same thing, and shedding tears let us desire his pardon:",
             "KJV": "For you cannot find the depth of the heart of man, neither can ye perceiue the things that he thinketh: then how can you search out God, that hath made all these things, and knowe his minde, or comprehend his purpose? Nay my brethren, prouoke not the Lord our God to anger.",
@@ -1536,7 +1536,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "for not as man, so will God threaten, neither as the son of man will he be inflamed to anger.",
             "KJV": "For if he will not helpe vs within these few dayes, he hath power to defend vs when he will, euen euery day, or to destroy vs before our enemies.",
@@ -1545,7 +1545,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "And therefore let us humble our souls to him, & being settled in an humble spirit, serving him:",
             "KJV": "Doe not binde the counsels of the Lord our God, for God is not as man, that he may be threatned, neither is he as the sonne of man that he should bee wauering.",
@@ -1554,7 +1554,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "let us say weeping to our Lord, that according to his will so he do his mercy with us: that as our heart is troubled in their pride, so also we may glory in our humility:",
             "KJV": "Therefore let vs waite for saluation of him, and call vpon him to helpe vs, and he will heare our voyce if it please him.",
@@ -1563,7 +1563,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "because we have not followed the sins of our fathers, which forsook their God, and adored strange gods,",
             "KJV": "For there arose none in our age, neither is there any now in these daies, neither tribe, nor familie, nor people, nor city among vs, which worship gods made with hands, as hath bene aforetime.",
@@ -1572,7 +1572,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "for which abomination they were given into the sword, & into confusion to their enemies: but we know no other God but him.",
             "KJV": "For the which cause our fathers were giuen to the sword, & for a spoile, and had a great fall before our enemies.",
@@ -1581,7 +1581,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "Let us humbly expect his consolation, and he will require our blood of the afflictions of our enemies, and he will humble all Nations, what soever shall rise up against us, and the Lord our God will make them without honour.",
             "KJV": "But we know none other god: therefore we trust that he will not despise vs, nor any of our nation.",
@@ -1590,7 +1590,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "And now brethren, because you are ancients in the people of God, and their souls depend of you: by your speech comfort their hearts, that they be mindful, that our fathers were tempted to be proved, whether they did worship their God truly.",
             "KJV": "For if we be taken so, all Iudea shall lie waste, and our Sanctuarie shal be spoiled, and he will require the prophanation thereof, at our mouth.",
@@ -1599,7 +1599,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "They must be mindful how our father Abraham was tempted, and by many tribulations proved, was made the friend of God.",
             "KJV": "And the slaughter of our brethren, and the captiuitie of the countrey, and the desolation of our inheritance, will he turne vpon our heads among the Gentiles, wheresoeuer we shall bee in bondage, and we shall be an offence and a reproch to all them that possesse vs.",
@@ -1608,7 +1608,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "So Isaac, so Jacob, so Moyses, and all that have pleased God, through many tribulations have passed faithful.",
             "KJV": "For our seruitude shall not be directed to fauour: but the Lord our God shall turne it to dishonour.",
@@ -1617,7 +1617,7 @@
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "But they that did not receive the tentations with the fear of our Lord, and uttered their impatience and reproach of their murmuring against our Lord,",
             "KJV": "Now therefore, O brethren, let vs shew an example to our brethren, because their hearts depend vpon vs, and the Sanctuary, and the house, and the Altar rest vpon vs.",
@@ -1626,7 +1626,7 @@
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "were destroyed of the destroyer, and perished by serpents.",
             "KJV": "Moreouer, let vs giue thankes to the Lord our God, which trieth vs, euen as he did our fathers.",
@@ -1635,7 +1635,7 @@
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "DRB": "And we therefore let us not revenge ourselves for these things, which we suffer,",
             "KJV": "Remember what things he did to Abraham, and how he tried Isaac, and what happened to Iacob in Mesopotamia of Syria, when he kept the sheepe of Laban his mothers brother.",
@@ -1644,7 +1644,7 @@
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "DRB": "but reputing these very punishments to be the scourges of our Lord less than our sins, wherewith as servants we are chastised, let us think them to have chanced to our amendment, and not to our destruction.",
             "KJV": "For, hee hath not tried vs in the fire as he did them, for the examination of their hearts, neither hath hee taken vengeance on vs: but the Lord doeth scourge them that come neere vnto him to admonish them.",
@@ -1653,7 +1653,7 @@
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "DRB": "And Ozias and the ancients said to her: All things which thou hast spoken be true, and there is no reprehension in thy words.",
             "KJV": "Then said Ozias to her, All that thou hast spoken, hast thou spoken with a good heart, and there is none that may gainesay thy words.",
@@ -1662,7 +1662,7 @@
           }
         },
         {
-          "number": 29,
+          "num": 29,
           "text": {
             "DRB": "Now therefore pray for us, because thou art a holy woman, and fearing God.",
             "KJV": "For this is not the first day wherin thy wisedome is manifested, but from the beginning of thy dayes all thy people haue knowen thy vnderstanding, because the disposition of thine heart is good.",
@@ -1671,7 +1671,7 @@
           }
         },
         {
-          "number": 30,
+          "num": 30,
           "text": {
             "DRB": "And Judith said to them: As you know, that which I could speak to be of God,",
             "KJV": "But the people were very thirsty, and compelled vs to doe vnto them as we haue spoken, and to bring an othe vpon our selues, which wee will not breake.",
@@ -1680,7 +1680,7 @@
           }
         },
         {
-          "number": 31,
+          "num": 31,
           "text": {
             "DRB": "so that which I have disposed to do, prove if it be of God, and pray that God establish my counsel.",
             "KJV": "Therefore now pray thou for vs, because thou art a godly woman, and the Lord will send vs raine to fill our cisternes, and we shall faint no more.",
@@ -1689,7 +1689,7 @@
           }
         },
         {
-          "number": 32,
+          "num": 32,
           "text": {
             "KJV": "Then said Iudeth vnto them, Heare me, and I wil doe a thing, which shall goe throughout all generations, to the children of our nation.",
             "NABRE": "Then Judith said to them: “Listen to me! I will perform a deed that will go down from generation to generation among our descendants.",
@@ -1698,7 +1698,7 @@
           }
         },
         {
-          "number": 33,
+          "num": 33,
           "text": {
             "KJV": "You shall stand this night in the gate, and I will goe foorth with my waiting woman: and within the dayes that you haue promised to deliuer the citie to our enemies, the Lord will visit Israel by mine hand.",
             "NABRE": "Stand at the city gate tonight to let me pass through with my maid; and within the days you have specified before you will surrender the city to our enemies, the Lord will deliver Israel by my hand.",
@@ -1707,7 +1707,7 @@
           }
         },
         {
-          "number": 34,
+          "num": 34,
           "text": {
             "DRB": "And Ozias the Prince of Juda said to her: Go in peace, and our Lord be with thee to the revenge of our enemies. And returning they departed.",
             "KJV": "But inquire not you of mine act: for I will not declare it vnto you, til the things be finished that I doe.",
@@ -1716,7 +1716,7 @@
           }
         },
         {
-          "number": 35,
+          "num": 35,
           "text": {
             "KJV": "Then said Ozias and the princes vnto her, Goe in peace, and the Lord God be before thee, to take vengeance on our enemies.",
             "NABRE": "Uzziah and the rulers said to her, “Go in peace, and may the Lord God go before you to take vengeance upon our enemies!”",
@@ -1724,7 +1724,7 @@
           }
         },
         {
-          "number": 36,
+          "num": 36,
           "text": {
             "KJV": "So they returned from the tent, and went to their wards.",
             "NABRE": "Then they withdrew from the tent and returned to their posts.",
@@ -1734,10 +1734,10 @@
       ]
     },
     {
-      "number": 9,
+      "num": 9,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then Iudeth fell vpon her face, and put ashes vpon her head, and vncouered the sackcloth wherewith she was clothed, and about the time, that the incense of that euening was offered in Ierusalem, in the house of the Lord, Iudeth cryed with a loud voyce, and said,",
             "NABRE": "Chapter 9 The Prayer of Judith. Judith fell prostrate, put ashes upon her head, and uncovered the sackcloth she was wearing. Just as the evening incense was being offered in the temple of God in Jerusalem, Judith cried loudly to the Lord:",
@@ -1746,7 +1746,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "O Lord God of my father Simeon, to whom thou gauest a sword to take vengeance of the strangers, who loosened the girdle of a maide to defile her, and discouered the thigh to her shame, and polluted her virginity to her reproch, (for thou saidst it shall not be so, and yet they did so.)",
             "NABRE": "“Lord, God of my father Simeon, into whose hand you put a sword to take revenge upon the foreigners who had defiled a virgin by violating her, shaming her by uncovering her thighs, and dishonoring her by polluting her womb. You said, ‘This shall not be done!’ Yet they did it.",
@@ -1755,7 +1755,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "and gavest their women into prey, and their daughters into captivity: and all the prey to be divided to thy servants, which were zealous in thy zeal: help I beseech thee, o Lord God, me a widow.",
             "KJV": "Wherefore thou gauest their rulers to be slaine, so that they died their bed in blood, being deceiued, and smotest the seruants with their Lords, and the Lords vpon their thrones:",
@@ -1764,7 +1764,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "For thou hast done the things heretofore, and hast purposed one thing after another: and that hath been done which thou wouldest.",
             "KJV": "And hast giuen their wiues for a pray, and their daughters to bee captiues, and all their spoiles to be diuided amongst thy deere children: which were mooued with thy zeale, and abhorred the pollution of their blood, and called vpon thee for aide: O God, O my God, heare me also a widow.",
@@ -1773,7 +1773,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "For all thy ways are ready, and thy judgments thou hast put in thy providence.",
             "KJV": "For thou hast wrought not onely those things, but also the things which fell out before, and which ensewed after, thou hast thought vpon the things which are now, and which are to come.",
@@ -1782,7 +1782,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "Look upon the camp of the Assyrians now, as thou didst vouchsafe to see the camp of the Ægyptians, when they ran armed after thy servants, trusting in chariots, and in their horsemen, and in a multitude of men of war.",
             "KJV": "Yea what things thou didst determine were redy at hand, and said, loe we are heere; for all thy wayes are prepared, and thy iudgements are in thy foreknowledge.",
@@ -1791,7 +1791,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "For behold, the Assyrians are multiplyed in their power: they are exalted with horse and man: they glory in the strength of their footemen: they trust in shield and speare, and bow, and sling, and know not that thou art the Lord that breakest the battels: the Lord is thy name.",
             "NABRE": "“Here are the Assyrians, a vast force, priding themselves on horse and chariot, boasting of the power of their infantry, trusting in shield and spear, bow and sling. They do not know that you are the Lord who crushes wars;",
@@ -1800,7 +1800,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "The depth held their feet, and the waters overwhelmed them.",
             "KJV": "Throw downe their strength in thy power, and bring downe their force in thy wrath; for they haue purposed to defile thy Sanctuary, and to pollute the Tabernacle, where thy glorious name resteth, and to cast downe with sword the horne of thy altar.",
@@ -1809,7 +1809,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "So let these also be made o Lord, which trust in their multitude, and in their chariots, and in pikes, and in shields, and in their arrows, and glory in their spears,",
             "KJV": "Behold their pride, and send thy wrath vpon their heads: giue into mine hand which am a widow, the power that I haue conceiued.",
@@ -1818,7 +1818,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "and know not thyself art our God, which destroyest wars from the beginning, and Lord is thy name.",
             "KJV": "Smite by the deceit of my lips the seruant with the prince, and the prince with the seruant: breake downe their statelinesse by the hand of a woman.",
@@ -1827,7 +1827,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "For thy power standeth not in multitude, nor thy might in strong men, for thou art a God of the afflicted, an helper of the oppressed, an vpholder of the weake, a protector of the forelorne, a sauiour of them that are without hope.",
             "NABRE": "“Your strength is not in numbers, nor does your might depend upon the powerful. You are God of the lowly, helper of those of little account, supporter of the weak, protector of those in despair, savior of those without hope.",
@@ -1836,7 +1836,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "Bring to pass Lord, that his pride be cut off with his own sword,",
             "KJV": "I pray thee, I pray thee, O God of my father, and God of the inheritance of Israel, Lord of the heauens, and earth, creator of the waters, king of euery creature: heare thou my prayer:",
@@ -1845,7 +1845,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "let him be caught with the snares of his eyes in me, & thou shalt strike him from the lips of my charity.",
             "KJV": "And make my speech and deceit to be their wound & stripe, who haue purposed cruell things against thy couenant, and thy hallowed house, and against the top of Sion, and against the house of the possession of thy children.",
@@ -1854,7 +1854,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "And make euery nation and tribe to acknowledge that thou art the God of all power and might, and that there is none other that protecteth the people of Israel but thou.",
             "NABRE": "Make every nation and every tribe know clearly that you are God, the God of all power and might, and that there is no other who shields the people of Israel but you alone.”",
@@ -1863,31 +1863,31 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "For this shall be a memorial of thy name, when the hand of a woman shall overthrow him."
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "For not in multitude is thy power o Lord, neither in strength of horses is thy will, neither have the proud pleased thee from the beginning: but the prayer of the humble and meek hath always pleased thee."
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "God of the heavens, creator of the waters, & Lord of every creature, hear me wretch, praying and presuming of thy mercy."
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "Remember Lord thy testament, and give a word in my mouth, and strengthen counsel in my heart, that thy house may continue in thy sanctification:"
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "and all Nations may acknowledge that thou art God, and there is no other besides thee."
           }
@@ -1895,10 +1895,10 @@
       ]
     },
     {
-      "number": 10,
+      "num": 10,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Now after that she had ceased to cry vnto the God of Israel, and had made an end of all these words,",
             "NABRE": "Chapter 10 Judith Prepares to Depart. As soon as Judith had ceased her prayer to the God of Israel and finished all these words,",
@@ -1907,7 +1907,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "She rose where she had fallen downe, and called her maide, and went downe into the house, in the which she abode in the Sabbath dayes and in her feast dayes,",
             "NABRE": "she rose from the ground. She called her maid and they went down into the house, which she used only on sabbaths and feast days.",
@@ -1916,7 +1916,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "And pulled off the sackcloth which she had on, and put off the garments of her widowhood, and washed her body all ouer with water, and annointed herselfe with precious ointment, and braided the haire of her head, and put on a tire vpon it, and put on her garments of gladnesse, wherewith she was clad during the life of Manasses her husband.",
             "NABRE": "She took off the sackcloth she had on, laid aside the garments of her widowhood, washed her body with water, and anointed herself with rich ointment. She arranged her hair, put on a diadem, and dressed in the festive attire she had worn while her husband, Manasseh, was living.",
@@ -1925,7 +1925,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "And she tooke sandals vpon her feete, and put about her, her bracelets and her chaines, and her rings, and her earerings, and all her ornaments, and decked her selfe brauely to allure the eyes of all men that should see her.",
             "NABRE": "She chose sandals for her feet, and put on her anklets, bracelets, rings, earrings, and all her other jewelry. Thus she made herself very beautiful, to entice the eyes of all the men who should see her.",
@@ -1934,7 +1934,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "She therefore laid upon her Abra a bottle of wine, and a vessel of oil, and polent, and dry figs, and bread, and cheese, and went forward.",
             "KJV": "Then she gaue her mayd a bottle of wine, and a cruse of oyle, and filled a bagge with parched corne, and lumpes of figs, and with fine bread, so she folded all these things together, and layd them vpon her.",
@@ -1943,7 +1943,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "And when they were come to the gate of the city, they found Ozias expecting, and the ancients of the city.",
             "KJV": "Thus they went forth to the gate of the citie of Bethulia, and found standiug there Ozias, and the ancients of the city Chabris, and Charmis.",
@@ -1952,7 +1952,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "Who when they saw her, being astonished marveled at her beauty exceedingly.",
             "KJV": "And when they saw her, that her countenance was altered, and her apparel was changed, they wondered at her beautie very greatly, and said vnto her,",
@@ -1961,7 +1961,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "Yet asking her no question, they let her pass, saying: The God of our fathers give thee grace, and strengthen all the counsel of thy heart, with his power, that Jerusalem may glory upon thee, and thy name may be in the number of the holy and just.",
             "KJV": "The God, the God of our fathers giue thee fauour, and accomplish thine enterprises to the glory of the children of Israel, and to the exaltation of Ierusalem: then they worshipped God.",
@@ -1970,7 +1970,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "And they that were there said all with one voice: So be it, so be it.",
             "KJV": "And she said vnto them, Command the gates of the city to be opened vnto me, that I may goe forth to accomplish the things, whereof you haue spoken with me; so they commanded the yong men to open vnto her, as shee had spoken.",
@@ -1979,7 +1979,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And when they had done so, Iudeth went out, she and her mayd with her, and the men of the citie looked after her, vntill shee was gone downe the mountaine, and till she had passed the valley, and could see her no more.",
             "NABRE": "and they did so. Then Judith and her maidservant went out. The men of the city kept her in view as she went down the mountain and crossed the valley; then they lost sight of her.",
@@ -1988,7 +1988,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Thus they went straight foorth in the valley: and the first watch of the Assyrians met her;",
             "NABRE": "IV. Judith Goes out to War As Judith and her maid walked directly across the valley, they encountered the Assyrian patrol.",
@@ -1997,7 +1997,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "And tooke her, and asked her, Of what people art thou? and whence c&#333;mest thou? and whither goest thou? And she said, I am a woman of the Hebrewes, and am fled from them: for they shalbe giuen you to be consumed:",
             "NABRE": "The men took her in custody and asked her, “To what people do you belong? Where do you come from, and where are you going?” She replied: “I am a daughter of the Hebrews, and I am fleeing from them, because they are about to be delivered up to you as prey.",
@@ -2006,7 +2006,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "KJV": "And I am comming before Olofernes the chiefe captaine of your army, to declare words of trueth, and I will shew him a way, whereby he shall goe, and winne all the hil countrey, without loosing the body or life of any one of his men.",
             "NABRE": "I have come to see Holofernes, the ranking general of your forces, to give him a trustworthy report; in his presence I will show him the way by which he can ascend and take possession of the whole hill country without a single one of his men suffering injury or loss of life.”",
@@ -2015,7 +2015,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "And when those men had heard her words, they considered her face, and she was a wonder in their eyes, for they marveled at her beauty exceedingly.",
             "KJV": "Now when the men heard her wordes, and beheld her countenance, they wondered greatly at her beautie, and said vnto her;",
@@ -2024,7 +2024,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "And they said to her: Thou hast saved thy life, in that thou hast found such counsel, that thou wouldest come down to our Lord.",
             "KJV": "Thou hast saued thy life, in that thou hast hasted to come downe to the presence of our lord: now therfore come to his tent, and some of vs shall conduct thee, vntill they haue deliuered thee to his hands.",
@@ -2033,7 +2033,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "And this know thou, that when thou shalt stand in his sight, he will deal well with thee, and thou shalt be most gracious in his heart. And they brought her to the tabernacle of Holofernes, telling him of her.",
             "KJV": "And when thou standest before him, bee not afraid in thine heart: but shew vnto him according to thy word, and he will intreat thee well.",
@@ -2042,7 +2042,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "Then they chose out of them an hundred men, to accompany her and her mayd, and they brought her to the tent of Olofernes.",
             "NABRE": "So they selected a hundred of their men as an escort for her and her maid, and these conducted them to the tent of Holofernes.",
@@ -2051,7 +2051,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "And his guards said to him: Who can contemn the people of the Hebrews, which have so beautiful women, that we should not worthily fight against them for these?",
             "KJV": "Then was there a concourse throughout all the campe: for her comming was noised among the tents, and they came about her, as she stood without the tent of Olofernes, till they told him of her.",
@@ -2060,7 +2060,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "Judith therefore seeing Holofernes sitting in a canopy, which was woven of purple, and gold, and emerald, and precious stones:",
             "KJV": "And they wondered at her beautie, and admired the children of Israel because of her, and euery one said to his neighbour; Who would despise this people, that haue among them such women, surely it is not good that one man of them be left, who being let goe, might deceiue the whole earth.",
@@ -2069,7 +2069,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "and when she had looked in his face, she adored him, falling prostrate upon the ground. And the servants of Holofernes lifted her up, their lord commanding it.",
             "KJV": "And they that lay neere Olofernes, went out, and all his seruants, and they brought her into the tent.",
@@ -2078,7 +2078,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "Now Olofernes rested vpon his bed vnder a canopie which was wouen with purple, and gold, and emeraudes, and precious stones.",
             "NABRE": "Holofernes was reclining on his bed under a canopy woven of purple, gold, emeralds, and other precious stones.",
@@ -2086,7 +2086,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "So they shewed him of her, and he came out before his tent, with siluer lampes going before him.",
             "NABRE": "When they announced her to him, he came out to the front part of the tent, preceded by silver lamps.",
@@ -2094,7 +2094,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "KJV": "And when Iudeth was come before him and his seruants, they all marueiled at the beautie of her countenance; and she fel downe vpon her face, and did reuerence vnto him; and his seruants tooke her vp.",
             "NABRE": "When Judith came before Holofernes and his attendants, they all marveled at the beauty of her face. She fell prostrate and paid homage to him, but his servants raised her up.",
@@ -2104,10 +2104,10 @@
       ]
     },
     {
-      "number": 11,
+      "num": 11,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then said Olofernes vnto her, Woman, bee of good comfort, feare not in thine heart: for I neuer hurt any, that was willing to serue Nabuchodonosor the king of all the earth.",
             "NABRE": "Chapter 11 Then Holofernes said to her: “Take courage, woman! Have no fear in your heart! I have never harmed anyone who chose to serve Nebuchadnezzar, king of all the earth.",
@@ -2116,7 +2116,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "DRB": "And thy people, if they had not contemned me, I would never have lifted up my spear over them.",
             "KJV": "Now therefore if thy people that dwelleth in the mountaines, had not set light by me, I would not haue lifted vp my speare against them: but they haue done these things to themselues.",
@@ -2125,7 +2125,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "But now tell me, for what cause hast thou departed from them, and it hath pleased thee to come to us?",
             "KJV": "But now tell me wherefore thou art fled from them, and art come vnto vs: for thou art come for safeguard, be of good comfort, thou shalt liue this night, and hereafter.",
@@ -2134,7 +2134,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "And Judith said to him: Take the words of thy handmaid, for if thou wilt follow the words of thy handmaid, our Lord will do with thee a perfect thing.",
             "KJV": "For none shall hurt thee, but intreat thee well, as they doe the seruants of king Nabuchodonosor my lord.",
@@ -2143,7 +2143,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Then Iudeth said vnto him, Receiue the words of thy seruant, and suffer thine handmaid to speake in thy presence, and I will declare no lie to my lord this night.",
             "NABRE": "Judith answered him: “Listen to the words of your servant, and let your maidservant speak in your presence! I will say nothing false to my lord this night.",
@@ -2152,7 +2152,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "For the industry of thy mind is reported to all nations, and it is declared to all the world, that thou only art good, and mighty in all his Kingdom, and thy discipline is bruited to all provinces.",
             "KJV": "And if thou wilt follow the words of thine handmaid, God will bring the thing perfectly to passe by thee, and my lord shall not faile of his purposes,",
@@ -2161,7 +2161,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "Neither is that unknown which Achior spake, neither are we ignorant of that thou hast commanded to come upon him.",
             "KJV": "As Nabuchodonosor king of all the earth liueth, and as his power liueth, who hath sent thee for the vpholding of euery liuing thing: for not only men shall serue him by thee, but also the beasts of the field, and the cattell, and the foules of the aire shall liue by thy power, vnder Nabuchodonosor and all his house.",
@@ -2170,7 +2170,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "For it is certain that our God is so offended with sins, that he hath sent word by his Prophets to the people, that he will deliver them for their sins.",
             "KJV": "For wee haue heard of thy wisedome, and thy policies, and it is reported in all the earth, that thou onely art excellent in all the kingdome, and mightie in knowledge, and wonderfull in feates of warre.",
@@ -2179,7 +2179,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "And because the children of Israel know they offended their God, thy dread is upon them.",
             "KJV": "Now as concerning the matter which Achior did speake in thy counsell, we haue heard his words; for the men of Bethulia saued him, and hee declared vnto them all that hee had spoken vnto thee.",
@@ -2188,7 +2188,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "Therefore, O lord and gouernor, reiect not his word, but lay it vp in thine heart, for it is true, for our nation shall not be punished, neither can the sword preuaile against them, except they sinne against their God.",
             "NABRE": "So then, my lord and master, do not disregard his word, but bear it in mind, for it is true. Indeed our people are not punished, nor does the sword prevail against them, except when they sin against their God.",
@@ -2197,7 +2197,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And now, that my lord be not defeated, and frustrate of his purpose, euen death is now fallen vpon them, and their sinne hath ouertaken them, wherewith they will prouoke their God to anger, whensoeuer they shall doe that which is not fit to be done.",
             "NABRE": "But now their sin has caught up with them, by which they will bring the wrath of their God upon them when they do wrong; so that my lord will not be repulsed and fail, but death will overtake them.",
@@ -2206,7 +2206,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "and the holy things of our Lord their God, which God commanded not to be touched, in corn, wine, and oil, these have they purposed to bestow, and they will consume the things which they ought not to touch with their hands: therefore because they do these things, it is sure that they shall be given in to perdition.",
             "KJV": "For their victuals faile them, and all their water is scant, and they haue determined to lay hands vpon their cattell, and purposed to consume all those things, that God hath forbidden them to eate by his Lawes,",
@@ -2215,7 +2215,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "Which I thy handmaid knowing, am fled from them, & our Lord hath sent me to tell thee these very things.",
             "KJV": "And are resolued to spend the first fruits of the corne, & the tenths of wine and oyle, which they had sanctified, and reserued for the Priests that serue in Ierusalem, before the face of our God, the which things it is not lawfull for any of the people so much as to touch with their hands.",
@@ -2224,7 +2224,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "For I thy handmaid worship God, even now being with thee, and thy handmaid will go forth, and I will pray God,",
             "KJV": "For they haue sent some to Ierusalem, because they also that dwelt there haue done the like, to bring them a license from the Senate.",
@@ -2233,7 +2233,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "and he will tell me when he will repay them their sins, and I coming will tell thee, so that I may bring thee through the midst of Jerusalem, and thou shalt have all the people of Israel, as sheep that have no pastor, & there shall not so much as one dog bark against thee:",
             "KJV": "Now when they shall bring them word, they will forthwith doe it, and they shall be giuen thee to be destroyed the same day.",
@@ -2242,7 +2242,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "because these things are told me by the providence of God.",
             "KJV": "Wherefore I thine handmaide knowing all this, am fledde from their presence, & God hath sent me to worke things with thee, whereat all the earth shalbe astonished, and whosoeuer shall heare it.",
@@ -2251,7 +2251,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And because God is angry with them, I am sent to tell these very things to thee.",
             "KJV": "For thy seruant is religious, and serueth the God of heauen day & night: now therefore, my lord, I will remaine with thee, and thy seruant will goe out by night into the valley, and I will pray vnto God, and he wil tel me when they haue committed their sinnes.",
@@ -2260,7 +2260,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "And all these words pleased Holofernes, and his servants, and they marveled at her wisdom, and one said to another:",
             "KJV": "And I will come, and shew it vnto thee: then thou shalt goe forth with all thine army, and there shall be none of them that shall resist thee.",
@@ -2269,7 +2269,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "And I will leade thee through the midst of Iudea, vntill thou come before Ierusalem, and I will set thy throne in the midst thereof, and thou shalt driue them as sheep that haue no shepheard, and a dogge shall not so much as open his mouth at thee: for these things were tolde mee, according to my foreknowledge, and they were declared vnto me, and I am sent to tell thee.",
             "NABRE": "I will lead you through the heart of Judea until you come to Jerusalem, and there in its center I will set up your throne. You will drive them like sheep that have no shepherd, and not even a dog will growl at you. This was told to me in advance and announced to me, and I have been sent to tell you.”",
@@ -2278,7 +2278,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "Then her wordes pleased Olofernes, and all his seruants, and they marueiled at her wisedome, and said,",
             "NABRE": "Her words pleased Holofernes and all his attendants. They marveled at her wisdom and exclaimed,",
@@ -2287,7 +2287,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "There is not such a woman from one end of the earth to the other, both for beautie of face, and wisedome of wordes.",
             "NABRE": "“No other woman from one end of the earth to the other looks so beautiful and speaks so wisely!”",
@@ -2296,7 +2296,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "KJV": "Likewise Olofernes said vnto her, God hath done well to send thee before the people, that strength might be in our hands, and destruction vpon them that lightly regard my lord:",
             "NABRE": "Then Holofernes said to her: “God has done well in sending you ahead of your people, to bring victory to our hands, and destruction to those who have despised my lord.",
@@ -2304,7 +2304,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "KJV": "And now thou art both beautifull in thy countenance, and wittie in thy wordes; surely if thou doe as thou hast spoken, thy God shall be my God, and thou shalt dwel in the house of king Nabuchodonosor, and shalt be renowmed through the whole earth.",
             "NABRE": "You are not only beautiful in appearance, but you are also eloquent. If you do as you have said, your God will be my God; you will live in the palace of King Nebuchadnezzar and be renowned throughout the whole earth.”",
@@ -2314,10 +2314,10 @@
       ]
     },
     {
-      "number": 12,
+      "num": 12,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then hee commaunded to bring her in, where his plate was set, and bad that they should prepare for her of his owne meats, and that she should drinke of his owne wine.",
             "NABRE": "Chapter 12 Then he ordered them to lead her into the room where his silver dinnerware was kept, and ordered them to set a table for her with his own delicacies to eat and his own wine to drink.",
@@ -2326,7 +2326,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And Iudeth said, I will not eat thereof, lest there bee an offence: but prouision shall be made for mee of the things that I haue brought.",
             "NABRE": "But Judith said, “I cannot eat any of them, because it would be a scandal. Besides, I will have enough with the things I brought with me.”",
@@ -2335,7 +2335,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "To whom Holofernes said: If these things which thou hast brought with thee shall fail thee, what shall we do to thee?",
             "KJV": "Then Olofernes said vnto her, If thy prouision should faile, howe should we giue thee the like? for there be none with vs of thy nation.",
@@ -2344,7 +2344,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "And Judith said: Thy soul liveth my lord, that thy handmaid shall not spend all these things, till God do by my hand these things, which I have purposed. And his servants brought her into the tabernacle, which he had commanded.",
             "KJV": "Then said Iudeth vnto him, As thy soule liueth, my lord, thine handemaid shall not spend those things that I haue, before the Lord worke by mine hand, the things þ he hath determined.",
@@ -2353,7 +2353,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Then the seruants of Olofernes brought her into the tent, and shee slept til midnight, and she arose when it was towards the morning watch,",
             "NABRE": "Then the attendants of Holofernes led her to her tent, where she slept until the middle of the night. Toward the early morning watch, she rose",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "And sent to Olofernes, saying, Let my lord now command, that thine handmaid may goe forth vnto prayer.",
             "NABRE": "and sent this message to Holofernes, “Give orders, my lord, to let your servant go out for prayer.”",
@@ -2371,7 +2371,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "Then Olofernes commaunded his guard that they should not stay her: thus she abode in the camp three dayes, and went out in the night into the valley of Bethulia, and washed her selfe in a fountaine of water by the campe.",
             "NABRE": "So Holofernes ordered his guards not to hinder her. Thus she stayed in the camp three days. Each night she went out to the valley of Bethulia, where she bathed herself at the spring of the camp.",
@@ -2380,7 +2380,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "And as she came up, she prayed our Lord the God of Israel, that he would direct her way to the delivery of his people.",
             "KJV": "And when she came out, shee besought the Lord God of Israel to direct her way, to the raising vp of the children of her people.",
@@ -2389,7 +2389,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "And going in, she remained pure in the tabernacle, until she took her own meat in the evening.",
             "KJV": "So she came in cleane, and remained in the tent, vntill shee did eate her meat at euening.",
@@ -2398,7 +2398,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And in the fourth day Olofernes made a feast to his owne seruants only, and called none of the officers to the banquet.",
             "NABRE": "Judith at the Banquet of Holofernes. On the fourth day Holofernes gave a banquet for his servants alone, to which he did not invite any of the officers.",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "Then said he to Bagoas the Eunuch, who had charge ouer all that he had: Goe now, and perswade this Ebrewe woman which is with thee, that she come vnto vs, and eate and drinke with vs.",
             "NABRE": "And he said to Bagoas, the eunuch in charge of his personal affairs, “Go and persuade the Hebrew woman in your care to come and to eat and drink with us.",
@@ -2416,7 +2416,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "Then Vagao went in to Judith, & said: Let not the good young maid fear to go in to my lord, that she may be honoured before his face, that she may eat with him & drink wine in joyfulness.",
             "KJV": "For loe, it will be a shame for our person, if we shall let such a woman go, not hauing had her company: for if we draw her not vnto vs, she will laugh vs to scorne.",
@@ -2425,7 +2425,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "To whom Judith answered: Whom am I, that I should gainsay my lord?",
             "KJV": "Then went Bagoas from the presence of Olofernes, and came to her, and he said, Let not this faire damosell feare to come to my lord, and to bee honoured in his presence, and drink wine, and be merry with vs, and be made this day as one of the daughters of the Assyrians, which serue in the house of Nabuchodonosor.",
@@ -2434,7 +2434,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "All that shall be good & best before his eyes, will I do. And whatsoever shall please him, that shall be best to me all the days of my life.",
             "KJV": "Then said Iudeth vnto him, Who am I now, that I should gainesay my lord? surely whatsoeuer pleaseth him, I will doe speedily, and it shall bee my ioy vnto the day of my death.",
@@ -2443,7 +2443,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "So she arose, and decked her selfe with her apparell, and all her womans attire, and her maid went and laid soft skinnes on the ground for her, ouer against Olofernes, which she had receiued of Bagoas for her daily vse, that she might sit, and eate vpon them.",
             "NABRE": "So she proceeded to put on her festive garments and all her finery. Meanwhile her servant went ahead and spread out on the ground opposite Holofernes the fleece Bagoas had furnished for her daily use in reclining while eating.",
@@ -2452,7 +2452,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "KJV": "Now when Iudeth came in, and sate downe, Olofernes his heart was rauished with her, and his minde was moued, and he desired greatly her company, for hee waited a time to deceiue her, from the day that he had seene her.",
             "NABRE": "Then Judith came in and reclined. The heart of Holofernes was in rapture over her and his passion was aroused. He was burning with the desire to possess her, for he had been biding his time to seduce her from the day he saw her.",
@@ -2461,7 +2461,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "And Holofernes said to her: Drink now, & sit down in joyfulness, because thou hast found grace before me.",
             "KJV": "Then said Olofernes vnto her, Drinke now, and be merry with vs.",
@@ -2470,7 +2470,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "DRB": "And Judith said: I will drink my lord, because my soul is magnified this day above all my days.",
             "KJV": "So Iudeth saide, I will drinke now my lord, because my life is magnified in me this day, more then all the dayes since I was borne.",
@@ -2479,7 +2479,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And she took, and did eat, & drank before him those things, which her handmaid had prepared her.",
             "KJV": "Then she tooke and ate and dranke before him what her maide had prepared.",
@@ -2488,7 +2488,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "KJV": "And Olofernes tooke great delight in her, & dranke much more wine, then he had drunke at any time in one day, since he was borne.",
             "NABRE": "Holofernes, charmed by her, drank a great quantity of wine, more than he had ever drunk on any day since he was born.",
@@ -2499,10 +2499,10 @@
       ]
     },
     {
-      "number": 13,
+      "num": 13,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Now when the euening was come, his seruants made haste to depart, and Bagoas shut his tent without, and dismissed the waiters from the presence of his lord, and they went to their beds: for they were all weary, because the feast had bene long.",
             "NABRE": "Chapter 13 Judith Beheads Holofernes. When it grew late, his servants quickly withdrew. Bagoas closed the tent from the outside and dismissed the attendants from their master’s presence. They went off to their beds, for they were all tired because the banquet had lasted so long.",
@@ -2511,7 +2511,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And Iudeth was left alone in the tent, and Olofernes lying along vpon his bed, for hee was filled with wine.",
             "NABRE": "Judith was left alone in the tent with Holofernes, who lay sprawled on his bed, for he was drunk with wine.",
@@ -2520,7 +2520,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Now Iudeth had commanded her maide to stand without her bedchamber, and to waite for her comming forth as she did daily: for she said, she would goe forth to her prayers, and she spake to Bagoas, according to the same purpose.",
             "NABRE": "Judith had ordered her maidservant to stand outside the bedchamber and to wait, as on the other days, for her to come out; she had said she would be going out for her prayer. She had also said this same thing to Bagoas.",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "KJV": "So all went forth, and none was left in the bedchamber, neither little, nor great. Then Iudeth standing by his bed, said in her heart: O Lord God of all power, looke at this present vpon the workes of mine hands for the exaltation of Ierusalem.",
             "NABRE": "When all had departed, and no one, small or great, was left in the bedchamber, Judith stood by Holofernes’ bed and prayed silently, “O Lord, God of all might, in this hour look graciously on the work of my hands for the exaltation of Jerusalem.",
@@ -2538,7 +2538,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "And Judith said to her maid that she should stand without before the chamber, & watch.",
             "KJV": "For now is the time to helpe thine inheritance, and to execute mine enterprises, to the destruction of the enemies, which are risen against vs.",
@@ -2547,7 +2547,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then she came to the pillar of the bed, which was at Olofernes head, and tooke downe his fauchin from thence,",
             "NABRE": "She went to the bedpost near the head of Holofernes, and taking his sword from it,",
@@ -2556,7 +2556,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "KJV": "And approched to his bed, and tooke hold of the haire of his head, and said, Strengthen mee, O Lord God of Israel, this day.",
             "NABRE": "she drew close to the bed, grasped the hair of his head, and said, “Strengthen me this day, Lord, God of Israel!”",
@@ -2565,7 +2565,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "And she smote twise vpon his necke with all her might, and she tooke away his head from him,",
             "NABRE": "Then with all her might she struck his neck twice and cut off his head.",
@@ -2574,7 +2574,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "And tumbled his body downe from the bed, and pulled downe the canopy from the pillars, and anon after she went forth, and gaue Olofernes his head to her maide.",
             "NABRE": "She rolled his body off the bed and took the canopy from its posts. Soon afterward, she came out and handed over the head of Holofernes to her maid,",
@@ -2583,7 +2583,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And she put it in her bag of meate, so they twaine went together according to their custome vnto prayer, and when they passed the campe, they compassed the valley, and went vp the mountaine of Bethulia, and came to the gates thereof.",
             "NABRE": "who put it into her food bag. Then the two went out together for prayer as they were accustomed to do. Judith and Her Maid Return to Bethulia. They passed through the camp, and skirting that valley, went up the mountain to Bethulia, and approached its gates.",
@@ -2592,7 +2592,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "And after a while she went out, and delivered the head of Holofernes to her maid, and bade her put it into her wallet.",
             "KJV": "Then said Iudeth a farre off to the watchmen at the gate, Open, open now the gate: God, euen our God is with vs, to shew his power yet in Ierusalem, and his forces against the enemie, as he hath euen done this day.",
@@ -2601,7 +2601,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "And they two went forth, according to their custom, as it were to prayer, and they passed the camp, and compassing the valley, they came to the gate of the city.",
             "KJV": "Now when the men of her citie heard her voyce, they made haste to goe downe to the gate of their citie, and they called the Elders of the citie.",
@@ -2610,7 +2610,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "And Judith a far off said to the keepers of the walls: Open the gates, because God is with us, which hath wrought power in Israel.",
             "KJV": "And then they ranne altogether both small and great, for it was strange vnto them that she was come: so they opened the gate, and receiued them, and made a fire for a light, and stood round about them.",
@@ -2619,7 +2619,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "And it came to pass, when the men had heard her voice, they called the ancients of the city.",
             "KJV": "Then she said to them with a loud voyce, Praise, praise God, praise God, (I say) for hee hath not taken away his mercy from the house of Israel, but hath destroyed our enemies by mine hands this night.",
@@ -2628,7 +2628,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "So she tooke the head out of the bag, and shewed it, and said vnto them, Behold the head of Olofernes the chiefe captaine of the armie of Assur, and behold the canopy wherein he did lie in his drunkennesse, and the Lord hath smitten him by the hand of a woman.",
             "NABRE": "Then she took the head out of the bag, showed it to them, and said: “Here is the head of Holofernes, the ranking general of the Assyrian forces, and here is the canopy under which he lay in his drunkenness. The Lord struck him down by the hand of a female!",
@@ -2637,7 +2637,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "And they lighting lights gathered round about her every one: and she going up into a higher place, commanded silence to be made. And when all had held their peace,",
             "KJV": "As the Lord liueth, who hath kept me in my way that I went, my countenance hath deceiued him to his destruction, and yet hath hee not committed sinne with mee, to defile and shame mee.",
@@ -2646,7 +2646,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "Judith said: Praise ye the Lord our God, who hath not forsaken them that hope in him:",
             "KJV": "Then all the people were wonderfully astonished, and bowed themselues, and worshipped God, and said with one accord: Blessed be thou, O our God, which hast this day brought to nought the enemies of thy people.",
@@ -2655,7 +2655,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Then said Ozias vnto her, O daughter, blessed art thou of the most high God, aboue all the women vpon the earth, and blessed be the Lord God, which hath created the heauens, and the earth, which hath directed thee to the cutting off of the head of the chiefe of our enemies.",
             "NABRE": "Then Uzziah said to her, “Blessed are you, daughter, by the Most High God, above all the women on earth; and blessed be the Lord God, the creator of heaven and earth, who guided your blow at the head of the leader of our enemies.",
@@ -2664,7 +2664,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "And bringing forth the head of Holofernes out of the wallet, she shewed it them, saying: Lo the head of Holofernes the General of the army of the Assyrians, & behold his canopy, wherein he lay in is drunkenness, where the Lord our God struck him by the hand of a woman.",
             "KJV": "For this thy confidence shall not depart from the heart of men, which remember the power of God for euer.",
@@ -2673,7 +2673,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "But the same our Lord liveth, that his Angel hath kept me, both going hence, and abiding there, and from thence returning hither: and our Lord hath not suffered me his handmaid to be defiled, but without pollution of sin he hath called me back to you, rejoicing in this victory, in my escape, and in your delivery.",
             "KJV": "And God turne these things to thee for a perpetuall praise, to visite thee in good things, because thou hast not spared thy life for þ affliction of our nation, but hast reuenged our ruine, walking a straight way before our God: and all the people said, So be it, so be it.",
@@ -2682,67 +2682,67 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "DRB": "Confess ye all to him, because he is good, because his mercy is for ever."
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "And they all adoring our Lord, said to her: Our Lord hath blessed thee in his power, because by thee he hath brought our enemies to nothing."
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "DRB": "Moreover Ozias the Prince of the people of Israel, said to her: Blessed art thou daughter of our Lord the high God, above all women upon the earth."
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "DRB": "Blessed be our Lord, which made heaven & earth, which hath directed thee unto the wounds of the head of the Prince of our enemies."
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "DRB": "Because this day he hath so magnified thy name, that thy praise shall not depart out of the mouth of men, which shall be mindful of the power of our Lord for ever, for that thou hast not spared thy life for the distresses and tribulation of thy kindred, but hast holpen the ruin before the presence of our God."
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "DRB": "And all the people said: So be it, so be it."
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "DRB": "Moreover Achior being called came, and Judith said to him: The God of Israel, to whom thou gavest testimony, that he revengeth himself of his enemies, he hath cut off the head of all the unfaithful this night by my hand."
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "DRB": "And that thou mayst prove that it is so, lo the head of Holofernes, who in the contempt of his pride contemned the God of Israel: and threatened thee death, saying: When the people of Israel shall be taken, I will command thy sides to be pierced with a sword."
           }
         },
         {
-          "number": 29,
+          "num": 29,
           "text": {
             "DRB": "But Achior seeing the head of Holofernes, being in anguish for fear, fell on his face upon the earth, and his soul was sore troubled."
           }
         },
         {
-          "number": 30,
+          "num": 30,
           "text": {
             "DRB": "But after taking spirit again he was refreshed, and fell down at her feet, and adored her, and said:"
           }
         },
         {
-          "number": 31,
+          "num": 31,
           "text": {
             "DRB": "Blessed art thou of thy God in every tabernacle of Jacob, because in every nation, which shall hear thy name, the God of Israel shall be magnified in thee."
           }
@@ -2750,10 +2750,10 @@
       ]
     },
     {
-      "number": 14,
+      "num": 14,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then saide Iudeth vnto them, Heare me now, my brethren, & take this head, and hang it vpon the highest place of your walles.",
             "NABRE": "V. Victory and Thanksgiving Chapter 14 Judith’s Plan of Attack. Then Judith said to them: “Listen to me, my brothers and sisters. Take this head and hang it on the parapet of your wall.",
@@ -2762,7 +2762,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And so soone as the morning shall appeare and the Sunne shal come forth vpon the earth, take you euery one his weapons, and goe forth euery valiant man out of the city, & set you a captaine ouer them, as though you would goe downe into the field toward the watch of the Assyrians, but goe not downe.",
             "NABRE": "At daybreak, when the sun rises on the earth, each of you seize your weapons, and let all the able-bodied men rush out of the city under command of a captain, as if about to go down into the valley against the Assyrian patrol, but without going down.",
@@ -2771,7 +2771,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "KJV": "Then they shal take their armour, and shal goe into their campe, and raise vp the captaines of the armie of Assur, and they shall runne to the tent of Olofernes, but shall not finde him, then feare shall fall vpon them, and they shall flee before your face.",
             "NABRE": "The Assyrians will seize their weapons and hurry to their camp to awaken the generals of the army. When they run to the tent of Holofernes and do not find him, panic will seize them, and they will flee before you.",
@@ -2780,7 +2780,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "And when the captains of them shall run to the tabernacle of Holofernes, and shall find him headless rolled in blood, fear will fall upon them.",
             "KJV": "So you, and all that inhabite the coast of Israel, shall pursue them, and ouerthrow them as they goe.",
@@ -2789,7 +2789,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "And when you shall know that they fly, go after them securely, because our Lord will destroy them under your feet.",
             "KJV": "But before you doe these things, call me Achior the Ammonite, that hee may see and know him that despised the house of Israel, and that sent him to vs as it were to his death.",
@@ -2798,7 +2798,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "KJV": "Then they called Achior out of the house of Ozias, and when hee was come, and saw the head of Olofernes in a mans hand, in the assembly of the people, he fell downe on his face, and his spirit failed.",
             "NABRE": "So they called Achior from the house of Uzziah. When he came and saw the head of Holofernes in the hand of one of the men in the assembly of the people, he collapsed in a faint.",
@@ -2807,7 +2807,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "And immediately as day brake, they hung the head of Holofernes upon the walls, & every man took his armour, & they went forth with great noise & shouting.",
             "KJV": "But when they had recouered him, hee fell at Iudeths feete, and reuerenced her, and said: Blessed art thou in all the tabernacle of Iuda, and in all nations, which hearing thy name shall be astonished.",
@@ -2816,7 +2816,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "Which the watchmen seeing, ran to the tabernacle of Holofernes.",
             "KJV": "Now therefore tell mee all the things that thou hast done in these dayes: Then Iudeth declared vnto him in the midst of the people, all that shee had done from the day that shee went foorth, vntill that houre she spake vnto them.",
@@ -2825,7 +2825,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "Moreover they that were in the tabernacle coming, and before the door of the tabernacle making a noise to raise him, they endeavoured by art to disquiet him, that Holofernes might awake not by them raising him, but by them making a noise.",
             "KJV": "And when shee had left off speaking, the people shouted with a lowd voice, & made a ioyful noise in their citie.",
@@ -2834,7 +2834,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "KJV": "And when Achior had seene all that the God of Israel had done, hee beleeued in God greatly, and circumcised the foreskinne of his flesh, and was ioyned vnto the house of Israel vnto this day.",
             "NABRE": "Now Achior, seeing all that the God of Israel had done, believed firmly in God. He circumcised the flesh of his foreskin and he has been united with the house of Israel to the present day.",
@@ -2843,7 +2843,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And assoone as the morning arose, they hanged the head of Olofernes vpon the wall, and euery man took his weapons, and they went foorth by bandes vnto the straits of the mountaine.",
             "NABRE": "Panic in the Assyrian Camp. At daybreak they hung the head of Holofernes on the wall. Then all the Israelite men took up their weapons and went out by groups to the mountain passes.",
@@ -2852,7 +2852,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "But when the Assyrians sawe them, they sent to their leaders, which came to their Captaines, and tribunes, and to euery one of their rulers.",
             "NABRE": "When the Assyrians saw them, they notified their commanders, who, in turn, went to their generals, their division leaders, and all their other leaders.",
@@ -2861,7 +2861,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "Then Vagao entering into his chamber, stood before the curtain, & made a clapping with his hands: for he thought that he slept with Judith.",
             "KJV": "So they came to Olofernes tent, and said to him that had the charge of all his things, Waken now our lord: for the slaues haue beene bold to come downe against vs to battell, that they may be vtterly destroyed.",
@@ -2870,7 +2870,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "KJV": "Then went in Bagoas, and knocked at the doore of the tent: for he thought that he had slept with Iudeth.",
             "NABRE": "So Bagoas went in and knocked at the entry of the tent, presuming that Holofernes was sleeping with Judith.",
@@ -2879,7 +2879,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "KJV": "But because none answered, he opened it, and went into the bedchamber, and found him cast vpon the floore dead, & his head was taken from him.",
             "NABRE": "When no one answered, he parted the curtains, entered the bedchamber, and found him thrown on the floor dead, with his head gone!",
@@ -2888,7 +2888,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "and said: One Hebrew woman hath made confusion in the house of king Nabuchodonosor: for behold Holofernes lieth upon the ground and his head is not upon him.",
             "KJV": "Therefore he cried with a lowd voice, with weeping, and sighing, and a mighty cry, and rent his garments.",
@@ -2897,7 +2897,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "DRB": "Which when the Princes of the power of the Assyrians had heard, they all rent their garments, & intolerable fear and dread fell upon them, and their minds were troubled exceedingly.",
             "KJV": "After, hee went into the tent, where Iudeth lodged, and when hee found her not, he leaped out to the people, and cried,",
@@ -2906,7 +2906,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "These slaues haue dealt treacherously, one woman of the Hebrewes hath brought shame vpon the house of king Nabuchodonosor: for behold, Olofernes lieth vpon the ground without a head.",
             "NABRE": "“The slaves have duped us! One Hebrew woman has brought shame on the house of King Nebuchadnezzar. Look! Holofernes on the ground—without a head!”",
@@ -2915,7 +2915,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "KJV": "When the captaines of the Assyrians armie heard these words, they rent their coats, and their minds were wonderfully troubled, and there was a cry, and a very great noise throughout the campe.",
             "NABRE": "When the leaders of the Assyrian forces heard these words, they tore their tunics and were overcome with great distress. Their loud cries and shouts were heard throughout the camp.",
@@ -2925,10 +2925,10 @@
       ]
     },
     {
-      "number": 15,
+      "num": 15,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "And when they that were in the tents heard, they were astonished at the thing that was done.",
             "NABRE": "Chapter 15 On hearing what had happened, those still in their tents were horrified.",
@@ -2937,7 +2937,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And feare and trembling fell vpon them, so that there was no man that durst abide in the sight of his neighbour, but rushing out altogether, they fled into euery way of the plaine, and of the hill countrey.",
             "NABRE": "Overcome with fear and dread, no one kept ranks any longer. They scattered in all directions, and fled along every path, both through the valley and in the hill country.",
@@ -2946,7 +2946,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "The children of Israel therefore seeing them flying, followed them. And they went down sounding with trumpets, and shouting after them.",
             "KJV": "They also that had camped in the mountaines, round about Bethulia, fled away. Then the children of Israel euery one that was a warriour among them, rushed out vpon them.",
@@ -2955,7 +2955,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "And because the Assyrians were not united together, they went headlong into flight: but the children of Israel pursuing in one company, discomfited all that they could find.",
             "KJV": "Then sent Ozias to Bethomasthem, and to Bebai, and Chobai, and Cola, and to all the coasts of Israel, such as should tell the things that were done, and that all should rush forth vpon their enemies to destroy them.",
@@ -2964,7 +2964,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "KJV": "Now when the children of Israel heard it, they all fell vpon them with one consent, and slewe them vnto Choba: likewise also they that came from Ierusalem, and from all the hill country, for men had told them what things were done in the campe of their enemies, and they that were in Galaad and in Galile chased them with a great slaughter, vntill they were past Damascus, and the borders thereof.",
             "NABRE": "On hearing this, all the Israelites, with one accord, attacked them and cut them down as far as Choba. Even those from Jerusalem and the rest of the hill country took part in this, for they too had been notified of the happenings in the camp of their enemy. The Gileadites and the Galileans struck the enemy’s flanks with great slaughter, even beyond Damascus and its borders.",
@@ -2973,7 +2973,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "Every country therefore, and every city sent chosen youth armed after them, and they pursued them in the edge of the sword, until they came to the extremity of their borders.",
             "KJV": "And the residue that dwelt at Bethulia, fell vpon the campe of Assur, and spoiled them, & were greatly enriched.",
@@ -2982,7 +2982,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "And the rest that were in Bethulia, entered into the camp of the Assyrians, and took away the prey, which the Assyrians flying had left, and were loaden exceedingly.",
             "KJV": "And the children of Israel that returned from the slaughter, had that which remained, and the villages, and the cities that were in the mountaines, and in the plaine, gate many spoiles: for the multitude was very great.",
@@ -2991,7 +2991,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "KJV": "Then Ioacim the high Priest, and the Ancients of the children of Israel that dwelt in Ierusalem, came to behold the good things that God had shewed to Israel, and to see Iudeth, and to salute her.",
             "NABRE": "Israel Celebrates Judith’s Victory. Then the high priest Joakim and the senate of the Israelites who lived in Jerusalem came to see for themselves the good things that the Lord had done for Israel, and to meet and congratulate Judith.",
@@ -3000,7 +3000,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "KJV": "And when they came vnto her, they blessed her with one accord, and said vnto her, Thou art the exaltation of Ierusalem: thou art the great glory of Israel: thou art the great reioycing of our nation.",
             "NABRE": "When they came to her, all with one accord blessed her, saying: “You are the glory of Jerusalem! You are the great pride of Israel! You are the great boast of our nation!",
@@ -3009,7 +3009,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "Who when she was come out to him, they all blessed her with one voice, saying: Thou art the glory of Jerusalem, thou the joy of Israel, thou the honour of our people:",
             "KJV": "Thou hast done all these things by thine hand: thou hast done much good to Israel, and God is pleased therewith: blessed bee thou of the Almightie Lord for euermore: and all the people said, So be it.",
@@ -3018,7 +3018,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "KJV": "And the people spoiled the campe, the space of thirty dayes, and they gaue vnto Iudeth Olofernes his tent, and all his plate, and beds, and vessels, and all his stuffe: and she tooke it, and laide it on her mule, and made ready her carts, and laid them thereon.",
             "NABRE": "For thirty days all the people plundered the camp, giving Judith the tent of Holofernes, with all his silver, his beds, his dishes, and all his furniture. She took them and loaded her mule, hitched her carts, and loaded these things on them.",
@@ -3027,7 +3027,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "KJV": "Then all the women of Israel ran together to see her, and blessed her, and made a dance among them for her: and shee tooke branches in her hand, & gaue also to the women that were with her.",
             "NABRE": "All the women of Israel gathered to see her, and they blessed her and performed a dance in her honor. She took branches in her hands and distributed them to the women around her,",
@@ -3036,7 +3036,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "And for thirty days, scarce were the spoils of the Assyrians gathered of the people of Israel.",
             "KJV": "And they put a garland of oliue vpon her, and her maid that was with her, and shee went before the people in the dance, leading all the women: and all the men of Israel followed in their armor with garlands, and with songs in their mouthes.",
@@ -3045,7 +3045,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "Moreover all things, that were proved to be the peculiar goods of Holofernes, they gave to Judith, in gold, and silver, and garments, and precious stones, and all stuff, and all the things were delivered her of the people.",
             "NABRE": "Judith led all Israel in this song of thanksgiving, and the people loudly sang this hymn of praise:",
@@ -3053,7 +3053,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "And all the people rejoiced with women, and virgins, and youngmen, on instruments and harps."
           }
@@ -3061,10 +3061,10 @@
       ]
     },
     {
-      "number": 16,
+      "num": 16,
       "verses": [
         {
-          "number": 1,
+          "num": 1,
           "text": {
             "KJV": "Then Iudeth began to sing this thankesgiuing in all Israel, and all the people sang after her this song of praise.",
             "NABRE": "Chapter 16 Judith’s Hymn of Deliverance And Judith sang: “Strike up a song to my God with tambourines, sing to the Lord with cymbals; Improvise for him a new song, exalt and acclaim his name.",
@@ -3073,7 +3073,7 @@
           }
         },
         {
-          "number": 2,
+          "num": 2,
           "text": {
             "KJV": "And Iudeth said, Begin vnto my God with timbrels, sing vnto my Lord with cymbals: tune vnto him a newe Psalme: exalt him, & cal vpon his name.",
             "NABRE": "For the Lord is a God who crushes wars; he sets his encampment among his people; he delivered me from the hands of my pursuers.",
@@ -3082,7 +3082,7 @@
           }
         },
         {
-          "number": 3,
+          "num": 3,
           "text": {
             "DRB": "Our Lord confoundeth battles, Lord is his name.",
             "KJV": "For God breaketh the battels: for amongst the campes in the midst of the people hee hath deliuered me out of the hands of them that persecuted me.",
@@ -3091,7 +3091,7 @@
           }
         },
         {
-          "number": 4,
+          "num": 4,
           "text": {
             "DRB": "Who hath set his camp in the midst of his people, that he might deliver us from the hand of all our enemies.",
             "KJV": "Assur came out of the mountains from the North, he came with ten thousands of his army, the multitude wherof stopped the torrents, and their horsemen haue couered the hilles.",
@@ -3100,7 +3100,7 @@
           }
         },
         {
-          "number": 5,
+          "num": 5,
           "text": {
             "DRB": "Assur came out of the mountains from the North in the multitude of his strength: whose multitude stopped up the torrents, and their horses covered the valleys.",
             "KJV": "He bragged that he would burne vp my borders, and kill my young men with the sword, and dash the sucking children against the ground, and make mine infants as a pray, and my virgins as a spoile.",
@@ -3109,7 +3109,7 @@
           }
         },
         {
-          "number": 6,
+          "num": 6,
           "text": {
             "DRB": "He said that he would set my borders on fire, and kill my young men with the sword, to give my infants into prey, and virgins into captivity.",
             "KJV": "But the Almighty Lord hath disappointed them by the hand of a woman.",
@@ -3118,7 +3118,7 @@
           }
         },
         {
-          "number": 7,
+          "num": 7,
           "text": {
             "DRB": "But our Lord omnipotent hath hurt him, and hath delivered him into the hands of a woman, and hath pierced him.",
             "KJV": "For the mighty one did not fall by the yong men, neither did the sonnes of the Titans smite him, nor high gyants set vpon him: but Iudeth the daughter of Merari weakned him with the beautie of her countenance.",
@@ -3127,7 +3127,7 @@
           }
         },
         {
-          "number": 8,
+          "num": 8,
           "text": {
             "DRB": "For, not by young men is their mighty one fallen, neither have the sons of Titan strucken him, neither did the high giants set themselves upon him, but Judith the daughter of Merari in the beauty of her face dissolved him.",
             "KJV": "For she put off the garment of her widowhood, for the exaltation of those that were oppressed in Israel, and anointed her face with oyntment, & bound her haire in a tyre, and tooke a linnen garment to deceiue him.",
@@ -3136,7 +3136,7 @@
           }
         },
         {
-          "number": 9,
+          "num": 9,
           "text": {
             "DRB": "For she put from her the garments of widowhood, and put on her the garments of joy, in the rejoicing of the children of Israel.",
             "KJV": "Her sandals rauished his eyes, her beautie tooke his minde prisoner, and the fauchin passed through his necke.",
@@ -3145,7 +3145,7 @@
           }
         },
         {
-          "number": 10,
+          "num": 10,
           "text": {
             "DRB": "She anointed her face with ointment, and tied together her locks with a crown, she took a new stole to deceive him.",
             "KJV": "The Persians quaked at her boldnesse, and the Medes were daunted at her hardinesse.",
@@ -3154,7 +3154,7 @@
           }
         },
         {
-          "number": 11,
+          "num": 11,
           "text": {
             "DRB": "Her sandals ravished his eyes, her beauty made his soul captive, she with a sword cut off his head.",
             "KJV": "Then my afflicted shouted for ioy, and my weake ones cryed aloude; but they were astonished: these lifted vp their voices, but they were ouerthrowen.",
@@ -3163,7 +3163,7 @@
           }
         },
         {
-          "number": 12,
+          "num": 12,
           "text": {
             "DRB": "The Persians did quake at her constancy, and the Medes at her boldness.",
             "KJV": "The sonnes of the damosels haue pierced them through, and wounded them as fugitiues children: they perished by the battell of the Lord.",
@@ -3172,7 +3172,7 @@
           }
         },
         {
-          "number": 13,
+          "num": 13,
           "text": {
             "DRB": "Then did the camp of the Assyrians howl, when my humble ones appeared, withering in thirst.",
             "KJV": "I will sing vnto the Lord a new song, O Lord thou art great and glorious, wonderful in strength & inuincible.",
@@ -3181,7 +3181,7 @@
           }
         },
         {
-          "number": 14,
+          "num": 14,
           "text": {
             "DRB": "The sons of young women have pierced them, and they have killed them as boys flying away: they have perished in battle before the face of the Lord my God.",
             "KJV": "Let all creatures serue thee: for thou spakest, and they were made, thou didst send forth thy spirit, and it created them, and there is none that can resist thy voyce.",
@@ -3190,7 +3190,7 @@
           }
         },
         {
-          "number": 15,
+          "num": 15,
           "text": {
             "DRB": "Let us sing an hymn to our Lord, let us sing a new hymn to our God.",
             "KJV": "For the mountaines shall be mooued from their foundations with the waters, the rockes shall melt as waxe at thy presence: yet thou art mercifull to them that feare thee.",
@@ -3199,7 +3199,7 @@
           }
         },
         {
-          "number": 16,
+          "num": 16,
           "text": {
             "DRB": "Adonai o Lord, great art thou, and noble in thy power, and whom no man can overcome.",
             "KJV": "For all sacrifice is too little for a sweete sauour vnto thee, and all the fat is not sufficient, for thy burnt offering: but he that feareth the Lord is great at all times.",
@@ -3208,7 +3208,7 @@
           }
         },
         {
-          "number": 17,
+          "num": 17,
           "text": {
             "KJV": "Woe to the nations that rise vp against my kinred: the Lord almighty will take vengeance of them in the day of iudgement in putting fire & wormes in their flesh, and they shall feele them and weepe for euer.",
             "NABRE": "“Woe to the nations that rise against my people! the Lord Almighty will requite them; in the day of judgment he will punish them: He will send fire and worms into their flesh, and they will weep and suffer forever.”",
@@ -3217,7 +3217,7 @@
           }
         },
         {
-          "number": 18,
+          "num": 18,
           "text": {
             "KJV": "Now assoone as they entred into Ierusalem, they worshipped the Lord, and assoone as the people were purified, they offered their burnt offerings, and their free offerings, and their gifts.",
             "NABRE": "When they arrived at Jerusalem, they worshiped God. As soon as the people were purified, they offered their burnt offerings, voluntary offerings, and donations.",
@@ -3226,7 +3226,7 @@
           }
         },
         {
-          "number": 19,
+          "num": 19,
           "text": {
             "DRB": "But they that fear thee, shall be great with thee in all things.",
             "KJV": "Iudeth also dedicated all the stuffe of Olofernes, which the people had giuen her, and gaue the canopy which she had taken out of his bed chamber, for a gift vnto the Lord.",
@@ -3235,7 +3235,7 @@
           }
         },
         {
-          "number": 20,
+          "num": 20,
           "text": {
             "DRB": "Woe be to the nation, that riseth up upon my kindred: for our Lord omnipotent will be revenged on them, in the day of judgment he will visit them.",
             "KJV": "So the people continued feasting in Ierusalem before the Sanctuarie, for the space of three moneths, and Iudeth remained with them.",
@@ -3244,7 +3244,7 @@
           }
         },
         {
-          "number": 21,
+          "num": 21,
           "text": {
             "KJV": "After this time, euery one returned to his owne inheritance, and Iudeth went to Bethulia, and remained in her owne possession, and was in her time honourable in all the countrey.",
             "NABRE": "The Renown and Death of Judith. When those days were over, all of them returned to their inheritance. Judith went back to Bethulia and remained on her estate. For the rest of her life she was renowned throughout the land.",
@@ -3253,7 +3253,7 @@
           }
         },
         {
-          "number": 22,
+          "num": 22,
           "text": {
             "DRB": "And it came to pass after these things, all the people after the victory came into Jerusalem to adore our Lord: and forthwith as they were purified, they all offered holocausts, and vows, and their promises.",
             "KJV": "And many desired her, but none knew her all the dayes of her life, after that Manasses her husband was dead, and was gathered to his people.",
@@ -3262,7 +3262,7 @@
           }
         },
         {
-          "number": 23,
+          "num": 23,
           "text": {
             "KJV": "But she encreased more and more in honour, and waxed olde in her husbands house, being an hundred and fiue yeeres olde, and made her maide free, so shee died in Bethulia: and they buried her in the caue of her husband Manasses.",
             "NABRE": "Her fame continued to increase, and she lived in the house of her husband, reaching the advanced age of one hundred and five. She set her maid free. And when she died in Bethulia, they buried her in the cave of her husband, Manasseh;",
@@ -3271,7 +3271,7 @@
           }
         },
         {
-          "number": 24,
+          "num": 24,
           "text": {
             "KJV": "And the house of Israel lamented her seauen dayes, and before shee dyed, she did distribute her goods to all them that are neerest of kinred to Manasses her husband: and to them that were the neerest of her kinred.",
             "NABRE": "and the house of Israel mourned her for seven days. Before she died, she distributed her property to the relatives of her husband, Manasseh, and to her own relatives.",
@@ -3280,7 +3280,7 @@
           }
         },
         {
-          "number": 25,
+          "num": 25,
           "text": {
             "KJV": "And there was none that made the children of Israel any more afraide, in the dayes of Iudeth, nor a long time after her death.",
             "NABRE": "During the lifetime of Judith and for a long time after her death, no one ever again spread terror among the Israelites.",
@@ -3289,37 +3289,37 @@
           }
         },
         {
-          "number": 26,
+          "num": 26,
           "text": {
             "DRB": "There was also chastity joined to her virtue, so that she knew not man all the days of her life, after that Manasses her husband was dead."
           }
         },
         {
-          "number": 27,
+          "num": 27,
           "text": {
             "DRB": "And on festival days she came forth with great glory."
           }
         },
         {
-          "number": 28,
+          "num": 28,
           "text": {
             "DRB": "And she abode in her husband's house an hundred five years, and dismist her Abra free, & she died and was buried with her husband in Bethulia."
           }
         },
         {
-          "number": 29,
+          "num": 29,
           "text": {
             "DRB": "And all the people mourned for her seven days."
           }
         },
         {
-          "number": 30,
+          "num": 30,
           "text": {
             "DRB": "And in all the space of her life there was not that troubled Israel, and after her death many years."
           }
         },
         {
-          "number": 31,
+          "num": 31,
           "text": {
             "DRB": "But the day of the festivity of this victory is received of the Hebrews in the number of holy days, and is worshipped of the Jews from that time until this present day."
           }
