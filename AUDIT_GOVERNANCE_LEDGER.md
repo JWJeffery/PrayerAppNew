@@ -1173,3 +1173,16 @@ Fix: removed both dead entries from ordinary1.json; shifted every remaining day_
 Verification: full-corpus scan comparing every entry's stored day_of_season against the engine's own live-computed value -- zero mismatches across all 188 entries. Tested day-after-Pentecost resolution for 2027/2028/2029 (three different dates, since Easter moves) -- all three correctly resolve to the true first day of Ordinary Time via offset matching, confirming the fix holds across years.
 
 Defect 3 closed. Defects 1 and 2 remain, addressed in their own follow-up entries.
+
+
+## Session, 2026-07-10 continued — Defect 1 fixed: findEntry priority order, verified across 11 years
+
+Fix: added fixed_month_day:true to the 23 genuine fixed-civil-date Holy Days (excluding Easter Day/Ascension/Pentecost/Trinity Sunday, genuinely Easter-relative, and the Visitation, a third harder category -- conditionally transferred, not fixed). New Priority 1.5 in findEntry() matches these by month-day before the offset check; excluded them from Priority 2's offset search (confirmed necessary independently -- without it, a Holy Day's day_of_season value leaks into unrelated dates in other years, e.g. June 26 2027 incorrectly showed Independence Day before this exclusion). Also restricted the old Priority 3 month-day fallback to fixed_month_day entries or entries with no day_of_season (Christmas/Epiphany) -- once Priority 2 stopped claiming these dates, Priority 3 started incorrectly matching regular weekday entries by coincidental date-string collision.
+
+Real bug caught mid-task by the test sweep, not by inspection: Priority 1.5's first version required date.length===10 (strict ISO), silently excluding Lent's 3 Holy Days (lent.json uses text-format dates). Fixed by handling both formats.
+
+Verification: 253-case sweep (23 Holy Days x 11 years, 2025-2035) -- 0 failures after the fix (25 before it, all in lent.json, which is how the date-format bug was caught). Full 2026 regression across all six season files (310 entries) -- zero unintended changes.
+
+Deeper gap surfaced, not created, left honest rather than papered over: the ~23 day_of_season slots these Holy Days occupy no longer have any regular-weekday content (overwritten when each Holy Day was built, historically and today). In years where the offset doesn't align with the Holy Day's real date, the app now correctly falls through to the existing "no entry" fallback sentinel instead of showing fabricated or wrong content -- an honest improvement, not a complete fix. Recovering the actual correct content would require re-deriving what BCP assigns to each numbered offset position, a real research task.
+
+Defect 1 closed for its stated purpose. Defect 2 (scripture-resolver) is next.

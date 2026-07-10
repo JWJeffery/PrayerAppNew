@@ -296,6 +296,7 @@
     "reading_epistle_ep_year2": "Acts 4:32-37",
     "reading_gospel_mp_year2": "Acts 9:26-31",
     "day_of_season": 18,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Job 29:1-16",
     "reading_ot_ep_year2": "Job 29:1-16",
     "precedence": "major-feast"
@@ -512,6 +513,7 @@
     "reading_epistle_ep_year2": "John 3:22-30",
     "reading_gospel_mp_year2": "Matthew 11:2-19",
     "day_of_season": 31,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Malachi 4:1-6",
     "reading_ot_ep_year2": "Malachi 4:1-6",
     "precedence": "major-feast"
@@ -595,6 +597,7 @@
     "reading_epistle_ep_year2": "Acts 11:1-18",
     "reading_gospel_mp_year2": "Galatians 2:1-9",
     "day_of_season": 36,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Isaiah 49:1-6",
     "reading_ot_ep_year2": "Isaiah 49:1-6",
     "precedence": "major-feast"
@@ -678,6 +681,7 @@
     "reading_epistle_ep_year2": "James 5:7-10",
     "reading_gospel_mp_year2": "Revelation 21:1-7",
     "day_of_season": 41,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Micah 4:1-5",
     "reading_ot_ep_year2": "Micah 4:1-5",
     "precedence": "major-feast"
@@ -969,6 +973,7 @@
     "reading_epistle_ep_year2": "Mark 15:47-16:7",
     "reading_gospel_mp_year2": "2 Corinthians 1:3-7",
     "day_of_season": 59,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Exodus 15:19-21",
     "reading_ot_ep_year2": "Exodus 15:19-21",
     "precedence": "major-feast"
@@ -1020,6 +1025,7 @@
     "reading_epistle_ep_year2": "Mark 1:14-20",
     "reading_gospel_mp_year2": "Matthew 10:16-32",
     "day_of_season": 62,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Jeremiah 26:1-15",
     "reading_ot_ep_year2": "Jeremiah 26:1-15",
     "precedence": "major-feast"

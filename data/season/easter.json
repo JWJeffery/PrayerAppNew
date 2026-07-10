@@ -377,6 +377,7 @@
     "reading_epistle_ep_year2": "Acts 12:25-13:3",
     "reading_gospel_mp_year2": "2 Timothy 4:1-11",
     "day_of_season": 21,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Isaiah 62:6-12",
     "reading_ot_ep_year2": "Isaiah 62:6-12",
     "precedence": "major-feast"
@@ -488,6 +489,7 @@
     "reading_epistle_ep_year2": "John 1:43-51",
     "reading_gospel_mp_year2": "John 12:20-26",
     "day_of_season": 27,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Proverbs 4:7-18",
     "reading_ot_ep_year2": "Proverbs 4:7-18",
     "precedence": "major-feast"

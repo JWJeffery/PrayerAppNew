@@ -298,22 +298,69 @@ class CalendarEngine {
             return entry;
         }
 
-        // Priority 2: day_of_season offset match (perpetual moveable seasons)
+        // Priority 1.5: Fixed-month-day Holy Days inside moveable seasons.
+        // Advent/Lent/Easter/Ordinary Time populate day_of_season on every entry
+        // (needed so season *boundaries* stay perpetual), but that means a Holy
+        // Day with a genuine fixed civil date (e.g. Saint Andrew, Nov 30 every
+        // year) lands at a *different* day_of_season offset each year, since the
+        // season itself starts on a moveable date. Priority 2 below would always
+        // find *something* first and never fall through to the month-day match
+        // that's supposed to catch these. This check runs first, but only
+        // considers entries explicitly marked `fixed_month_day: true` -- added
+        // deliberately to the ~23 genuine fixed-date Holy Days in these files,
+        // NOT to Easter/Ascension/Pentecost/Trinity Sunday (genuinely
+        // Easter-relative, correctly handled by Priority 2 already) or the
+        // Visitation (conditionally transferred depending on whether it collides
+        // with Trinity Sunday that year -- a different, harder problem, not yet
+        // fixed; see RESUME_PROJECT_NOTE.md).
+        const mmddEarly = iso.slice(5);
+        const longNoYearEarly = long.replace(/,\s*\d{4}$/, '').trim();
+        entry = data.find(d => {
+            if (!d.fixed_month_day || !d.date) return false;
+            const dIso = d.date.length === 10 ? d.date.slice(5) : null;
+            const dLong = d.date.replace(/,\s*\d{4}$/, '').trim();
+            return dIso === mmddEarly || dLong === longNoYearEarly;
+        });
+        if (entry) {
+            console.log(`[Calendar Engine] Fixed-month-day match for ${iso} in ${fileName}`);
+            return entry;
+        }
+
+        // Priority 2: day_of_season offset match (perpetual moveable seasons).
+        // Excludes fixed_month_day entries -- without this, a Holy Day's own
+        // day_of_season value (valid only for the specific year it was written
+        // against) can "leak" and incorrectly match an unrelated date in another
+        // year whose offset happens to coincide with it. Confirmed empirically:
+        // before this exclusion, June 26 2027 incorrectly matched Independence
+        // Day's day_of_season slot, 8 days before the real July 4.
         const seasonStart = this.getSeasonStartDate(date);
         if (seasonStart) {
             const dayOfSeason = Math.floor((date - seasonStart) / 86400000) + 1;
-            entry = data.find(d => d.day_of_season === dayOfSeason);
+            entry = data.find(d => d.day_of_season === dayOfSeason && !d.fixed_month_day);
             if (entry) {
                 console.log(`[Calendar Engine] Offset match day ${dayOfSeason} for ${iso} in ${fileName}`);
                 return entry;
             }
         }
 
-        // Priority 3: Month-day match (fixed feasts — christmas, epiphany, sanctoral)
+        // Priority 3: Month-day match (fixed feasts — christmas, epiphany, sanctoral).
+        // Restricted to entries that are either explicitly fixed_month_day (the 23
+        // Advent/Lent/Easter/Ordinary-Time Holy Days above, already caught by
+        // Priority 1.5 in practice, so this is mostly a safety net for them) or
+        // have no day_of_season at all (Christmas/Epiphany, which never populate
+        // it — every entry there is implicitly fixed by construction). Without
+        // this restriction, a regular weekday entry's own literal 2026 date can
+        // coincidentally month-day-match an unrelated date in another year and
+        // return wrong content that isn't even the correct offset-based reading
+        // for that year -- confirmed empirically: before this restriction, June
+        // 26 2027 (day 33 of that year's Ordinary Time) matched "Friday in the
+        // Week of Proper 7" purely because that title happened to sit on
+        // 2026-06-26, not because it was actually correct for 2027.
         const mmdd = iso.slice(5);
         const longNoYear = long.replace(/,\s*\d{4}$/, '').trim();
         entry = data.find(d => {
             if (!d.date) return false;
+            if (d.day_of_season !== undefined && !d.fixed_month_day) return false;
             const dIso = d.date.length === 10 ? d.date.slice(5) : null;
             const dLong = d.date.replace(/,\s*\d{4}$/, '').trim();
             return dIso === mmdd || dLong === longNoYear;

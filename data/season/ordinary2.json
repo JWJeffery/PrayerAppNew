@@ -99,6 +99,7 @@
     "reading_epistle_ep_year2": "2 Corinthians 4:1-6",
     "reading_gospel_mp_year2": "John 12:27-36a",
     "day_of_season": 74,
+    "fixed_month_day": true,
     "eve_title": "",
     "psalms_ep_eve": "",
     "reading_ot_ep_eve": "",
@@ -251,6 +252,7 @@
     "reading_epistle_ep_year2": "John 2:1-12",
     "reading_gospel_mp_year2": "Acts 1:6-14",
     "day_of_season": 83,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Jeremiah 31:1-14",
     "reading_ot_ep_year2": "Jeremiah 31:1-14",
     "alt_ep_toggle_id": "mary-virgin",
@@ -404,6 +406,7 @@
     "reading_epistle_ep_year2": "John 1:43-51",
     "reading_gospel_mp_year2": "1 Peter 5:1-11",
     "day_of_season": 92,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Isaiah 66:1-2, 18-23",
     "reading_ot_ep_year2": "Isaiah 66:1-2, 18-23",
     "precedence": "major-feast"
@@ -753,6 +756,7 @@
     "reading_epistle_ep_year2": "John 3:11-17",
     "reading_gospel_mp_year2": "1 Peter 3:17-22",
     "day_of_season": 113,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Genesis 3:1-15",
     "reading_ot_ep_year2": "Genesis 3:1-15",
     "precedence": "major-feast"
@@ -868,6 +872,7 @@
     "reading_epistle_ep_year2": "Romans 10:1-15",
     "reading_gospel_mp_year2": "Matthew 13:44-52",
     "day_of_season": 120,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Job 28:12-28",
     "reading_ot_ep_year2": "Job 28:12-28",
     "precedence": "major-feast"
@@ -999,6 +1004,7 @@
     "reading_epistle_ep_year2": "Hebrews 1:1-14",
     "reading_gospel_mp_year2": "Mark 13:21-27",
     "day_of_season": 128,
+    "fixed_month_day": true,
     "reading_ot_ep_year1": "Daniel 12:1-3",
     "reading_ot_ep_year2": "Daniel 12:1-3",
     "alt_ep_toggle_id": "michaelmas",
