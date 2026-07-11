@@ -4,9 +4,10 @@
 already established. Read this before starting character-for-character remediation on any
 new book. Update it when a new lesson is learned or a new source is confirmed.
 
-**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** all five translations
-(KJV, DRB, NRSV, NABRE, Rotherham) fully verified/corrected. Only the KJV prefix-pollution mechanical
-fix (data-hygiene, not content-accuracy) remains open.
+**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** fully clean — all five
+translations (KJV, DRB, NRSV, NABRE, Rotherham) verified and, where needed, corrected, with zero known
+open defects. Moved to green on the dashboard only once every identified issue was actually fixed, not
+merely documented.
 
 ---
 
@@ -102,7 +103,11 @@ The NABRE source Josh supplied had the identical chapter/section-heading polluti
 
 When Rotherham's existing app text was checked against a newly-supplied XML, the XML showed 1,183 apparent mismatches — the reflexive assumption (established by every other translation this session) would be "the app is wrong, fix it from the new source." That assumption was wrong here. The XML was a degraded OCR transcription: it had dropped Rotherham's signature emphasis-dashes (the entire point of the "Emphasized Bible") and contained scattered scanning errors. The app's existing text was correct in every single spot-checked case. **The volume of a diff's mismatches says nothing about which side is right** — a large mismatch count is exactly as consistent with "the new source is bad" as "the existing data is bad," and both this session's earlier wrong-edition near-misses and this Rotherham case prove it. Before writing any fix, verify which side actually matches independent, authoritative sources — don't assume newer, user-supplied, or larger-looking evidence is automatically the correction.
 
-## 8. Process notes
+## 8. A book is not "green" while any known problem remains unfixed — full verification is not the same as clean
+
+Josh's direct correction, applied to Genesis on 2026-07-11: full character-for-character verification coverage across all translations, with a real defect documented but left open (the KJV prefix-pollution fix, tracked but not yet applied), is not the same as the book being done. "If there is any type of problem in Genesis, then it's not green." A dashboard status of green requires zero known open defects, not comprehensive audit coverage with an outstanding item, however well-understood or low-risk that item is. Apply this standard to every future book by default — finish the mechanical fixes before calling a book complete, don't leave known-good fixes queued as "next session's work."
+
+## 9. Process notes
 
 - Always fetch a **fresh clone** at the start of a work session before assuming local state —
   patches from a prior session may not have been applied yet, and re-cloning is cheap insurance

@@ -1386,10 +1386,20 @@ Normalizing away all dash/punctuation differences to isolate genuine word-level 
 
 **Genesis is now fully character-for-character verified and corrected across all five translations: KJV, DRB, NRSV, NABRE, and Rotherham.**
 
+### KJV prefix-pollution — fixed. Genesis is now fully clean, not just fully verified
+
+Josh's correction, and the right one: "If there is any type of problem in Genesis, then it's not green." Full character-level verification across all five translations is real progress, but it isn't the same as the book actually being clean — the KJV reference-prefix defect Lucy falsely certified fixed was still sitting in every single verse. Fixed now, not left as a documented-but-open item.
+
+Confirmed scope before touching anything: all 1,533 KJV verses started with the literal `"C:V "` pattern (e.g. `"1:1 In the beginning..."`), uniform, no exceptions. Checked for a KJV entry in `translationOverlays` first (none exists — only NABRE has one, already fixed). Stripped the exact `f"{chapter}:{verse} "` prefix from each verse programmatically — mechanical, bounded, no judgment calls, since the pattern was already confirmed 100% uniform.
+
+**Re-verified against `aruljohn/Bible-kjv-1611`** (the same confirmed-clean source from earlier this session) after stripping: 1,529 of 1,533 verses exact, the same 4 remaining as before (the harmless `þ`/`&thorn;` encoding artifact in the reference file, unrelated to this fix). `git diff --stat` confirms exactly 1,533 lines changed, one per verse, nothing else touched.
+
+**Genesis is now actually, fully clean — all five translations character-for-character accurate, zero known open defects.** Dashboard moved to green.
+
 ### Open items, in priority order
 
-1. **The KJV prefix-pollution fix** — still open; well-understood, bounded, mechanical (strip a known pattern), low-risk, ready to go. NABRE's equivalent is now done.
-2. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence — Genesis's biblical text work is complete.
+1. Genesis is closed. Next: NT, ET/AR/SY/Odes corpora, per the standing sequence, OR proceed to Exodus per the original Genesis-through-Revelation, one-book-at-a-time plan.
+2. Lucy is separately converting Alexander Campbell's "The Living Oracles" from XML to JSON as a side project (Josh's initiative, into separate files for review) — apply the same verify-before-trust discipline as everything else in this ledger when it arrives, given her prior false certifications.
 
 ### Resolution of the previously-flagged Genesis structural tension
 
