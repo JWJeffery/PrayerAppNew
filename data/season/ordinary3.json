@@ -2,6 +2,8 @@
   {
     "date": "2026-10-01",
     "title": "Thursday in the Week of Proper 21",
+    "proper_number": 21,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-21",
@@ -23,6 +25,8 @@
   {
     "date": "2026-10-02",
     "title": "Friday in the Week of Proper 21",
+    "proper_number": 21,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-21",
@@ -44,6 +48,8 @@
   {
     "date": "2026-10-03",
     "title": "Saturday in the Week of Proper 21",
+    "proper_number": 21,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-21",
@@ -65,6 +71,8 @@
   {
     "date": "2026-10-04",
     "title": "Twenty-second Sunday after Pentecost",
+    "proper_number": 22,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -86,6 +94,8 @@
   {
     "date": "2026-10-05",
     "title": "Monday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -107,6 +117,8 @@
   {
     "date": "2026-10-06",
     "title": "Tuesday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -128,6 +140,8 @@
   {
     "date": "2026-10-07",
     "title": "Wednesday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -149,6 +163,8 @@
   {
     "date": "2026-10-08",
     "title": "Thursday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -170,6 +186,8 @@
   {
     "date": "2026-10-09",
     "title": "Friday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -191,6 +209,8 @@
   {
     "date": "2026-10-10",
     "title": "Saturday in the Week of Proper 22",
+    "proper_number": 22,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-22",
@@ -212,6 +232,8 @@
   {
     "date": "2026-10-11",
     "title": "Twenty-third Sunday after Pentecost",
+    "proper_number": 23,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -233,6 +255,8 @@
   {
     "date": "2026-10-12",
     "title": "Monday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -254,6 +278,8 @@
   {
     "date": "2026-10-13",
     "title": "Tuesday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -275,6 +301,8 @@
   {
     "date": "2026-10-14",
     "title": "Wednesday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -296,6 +324,8 @@
   {
     "date": "2026-10-15",
     "title": "Thursday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -317,6 +347,8 @@
   {
     "date": "2026-10-16",
     "title": "Friday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -338,6 +370,8 @@
   {
     "date": "2026-10-17",
     "title": "Saturday in the Week of Proper 23",
+    "proper_number": 23,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-23",
@@ -384,6 +418,8 @@
   {
     "date": "2026-10-19",
     "title": "Monday in the Week of Proper 24",
+    "proper_number": 24,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-24",
@@ -405,6 +441,8 @@
   {
     "date": "2026-10-20",
     "title": "Tuesday in the Week of Proper 24",
+    "proper_number": 24,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-24",
@@ -426,6 +464,8 @@
   {
     "date": "2026-10-21",
     "title": "Wednesday in the Week of Proper 24",
+    "proper_number": 24,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-24",
@@ -447,6 +487,8 @@
   {
     "date": "2026-10-22",
     "title": "Thursday in the Week of Proper 24",
+    "proper_number": 24,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-24",
@@ -493,6 +535,8 @@
   {
     "date": "2026-10-24",
     "title": "Saturday in the Week of Proper 24",
+    "proper_number": 24,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-24",
@@ -514,6 +558,8 @@
   {
     "date": "2026-10-25",
     "title": "Twenty-fourth Sunday after Pentecost",
+    "proper_number": 25,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -535,6 +581,8 @@
   {
     "date": "2026-10-26",
     "title": "Monday in the Week of Proper 25",
+    "proper_number": 25,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -556,6 +604,8 @@
   {
     "date": "2026-10-27",
     "title": "Tuesday in the Week of Proper 25",
+    "proper_number": 25,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -602,6 +652,8 @@
   {
     "date": "2026-10-29",
     "title": "Thursday in the Week of Proper 25",
+    "proper_number": 25,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -623,6 +675,8 @@
   {
     "date": "2026-10-30",
     "title": "Friday in the Week of Proper 25",
+    "proper_number": 25,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -644,6 +698,8 @@
   {
     "date": "2026-10-31",
     "title": "Saturday in the Week of Proper 25",
+    "proper_number": 25,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-25",
@@ -691,6 +747,8 @@
   {
     "date": "2026-11-02",
     "title": "Monday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -712,6 +770,8 @@
   {
     "date": "2026-11-03",
     "title": "Tuesday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -733,6 +793,8 @@
   {
     "date": "2026-11-04",
     "title": "Wednesday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -754,6 +816,8 @@
   {
     "date": "2026-11-05",
     "title": "Thursday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -775,6 +839,8 @@
   {
     "date": "2026-11-06",
     "title": "Friday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -796,6 +862,8 @@
   {
     "date": "2026-11-07",
     "title": "Saturday in the Week of Proper 26",
+    "proper_number": 26,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-26",
@@ -817,6 +885,8 @@
   {
     "date": "2026-11-08",
     "title": "Twenty-sixth Sunday after Pentecost",
+    "proper_number": 27,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -838,6 +908,8 @@
   {
     "date": "2026-11-09",
     "title": "Monday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -859,6 +931,8 @@
   {
     "date": "2026-11-10",
     "title": "Tuesday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -880,6 +954,8 @@
   {
     "date": "2026-11-11",
     "title": "Wednesday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -901,6 +977,8 @@
   {
     "date": "2026-11-12",
     "title": "Thursday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -922,6 +1000,8 @@
   {
     "date": "2026-11-13",
     "title": "Friday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -943,6 +1023,8 @@
   {
     "date": "2026-11-14",
     "title": "Saturday in the Week of Proper 27",
+    "proper_number": 27,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-27",
@@ -964,6 +1046,8 @@
   {
     "date": "2026-11-15",
     "title": "Twenty-seventh Sunday after Pentecost",
+    "proper_number": 28,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -985,6 +1069,8 @@
   {
     "date": "2026-11-16",
     "title": "Monday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1006,6 +1092,8 @@
   {
     "date": "2026-11-17",
     "title": "Tuesday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1027,6 +1115,8 @@
   {
     "date": "2026-11-18",
     "title": "Wednesday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1048,6 +1138,8 @@
   {
     "date": "2026-11-19",
     "title": "Thursday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1069,6 +1161,8 @@
   {
     "date": "2026-11-20",
     "title": "Friday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1090,6 +1184,8 @@
   {
     "date": "2026-11-21",
     "title": "Saturday in the Week of Proper 28",
+    "proper_number": 28,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-28",
@@ -1111,6 +1207,8 @@
   {
     "date": "2026-11-22",
     "title": "Christ the King — Last Sunday after Pentecost",
+    "proper_number": 29,
+    "weekday": "Sunday",
     "season": "Ordinary",
     "liturgicalColor": "white",
     "collect": "collect-proper-29",
@@ -1132,6 +1230,8 @@
   {
     "date": "2026-11-23",
     "title": "Monday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Monday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",
@@ -1153,6 +1253,8 @@
   {
     "date": "2026-11-24",
     "title": "Tuesday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Tuesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",
@@ -1174,6 +1276,8 @@
   {
     "date": "2026-11-25",
     "title": "Wednesday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Wednesday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",
@@ -1195,6 +1299,8 @@
   {
     "date": "2026-11-26",
     "title": "Thursday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Thursday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",
@@ -1216,6 +1322,8 @@
   {
     "date": "2026-11-27",
     "title": "Friday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Friday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",
@@ -1237,6 +1345,8 @@
   {
     "date": "2026-11-28",
     "title": "Saturday in the Week of Proper 29",
+    "proper_number": 29,
+    "weekday": "Saturday",
     "season": "Ordinary",
     "liturgicalColor": "green",
     "collect": "collect-proper-29",

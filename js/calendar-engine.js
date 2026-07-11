@@ -89,6 +89,77 @@ class CalendarEngine {
                date.getDate()     === v.getDate();
     }
 
+    // Transcribed directly from BCP pp.884-885, "A Table to Find Movable Feasts
+    // and Holy Days" -- maps Easter Day's (month, day) to the numbered Proper
+    // used on "the Sunday after Trinity Sunday" (BCP's own label for what this
+    // table calls the "Numbered Proper of 2 Pentecost"). See _getProperWeekInfo
+    // below for how this drives the whole Ordinary Time addressing scheme.
+    static get EASTER_TO_STARTING_PROPER() {
+        return { "3-22":3, "3-23":3, "3-24":3, "3-25":3, "3-26":3,
+                  "3-27":4, "3-28":4, "3-29":4, "3-30":4, "3-31":4,
+                  "4-1":4, "4-2":4,
+                  "4-3":5, "4-4":5, "4-5":5, "4-6":5, "4-7":5, "4-8":5, "4-9":5,
+                  "4-10":6, "4-11":6, "4-12":6, "4-13":6, "4-14":6, "4-15":6, "4-16":6,
+                  "4-17":7, "4-18":7, "4-19":7, "4-20":7, "4-21":7, "4-22":7, "4-23":7,
+                  "4-24":8, "4-25":8 };
+    }
+
+    static _getStartingProper(year) {
+        const easter = this._getEaster(year);
+        const key = (easter.getMonth() + 1) + '-' + easter.getDate();
+        return this.EASTER_TO_STARTING_PROPER[key];
+    }
+
+    static _getProperWeekInfo(date) {
+        // Determines which Proper number and weekday a date within Ordinary
+        // Time's Proper-numbered system corresponds to -- the fix for the
+        // architectural defect found 2026-07-10: BCP anchors Propers to fixed
+        // civil dates (p.158: "the Proper for the Sunday after Trinity Sunday...
+        // is the numbered Proper... the calendar date of which falls on that
+        // Sunday, or is closest to it... Thereafter, the Propers are used
+        // consecutively"), while this app's day_of_season is Pentecost-anchored
+        // -- the two only coincide for 2026, the year the data was built
+        // against. This computes the real BCP-correct Proper/weekday fresh for
+        // any year, the same technique already used for Thanksgiving Day and
+        // the Visitation. Returns { properNumber, weekday } or null if the
+        // date falls outside the Proper-numbered system (before Pentecost+1,
+        // on Trinity Sunday itself, or on/after Advent Sunday).
+        const year = date.getFullYear();
+        const easter = this._getEaster(year);
+        const pentecost = this._addDays(easter, 49);
+        const ordinaryStart = this._addDays(pentecost, 1); // Monday after Pentecost
+        const trinitySunday = this._addDays(easter, 56);
+        const firstProperSunday = this._addDays(trinitySunday, 7); // "Sunday after Trinity Sunday"
+        const adventSunday = this._getAdventSunday(year);
+
+        if (date < ordinaryStart || date >= adventSunday) return null;
+
+        const startingProper = this.EASTER_TO_STARTING_PROPER[(easter.getMonth() + 1) + '-' + easter.getDate()];
+        if (startingProper === undefined) return null;
+
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const weekday = dayNames[date.getDay()];
+
+        if (date < firstProperSunday) {
+            // Pre-sequence weeks: BCP p.158's own example ("Propers 1 and 2
+            // being used on the weekdays of Pentecost and Trinity weeks" when
+            // the starting Proper is 3) generalizes to "the two Propers
+            // immediately before the starting one" -- confirmed against this
+            // app's own verified-correct 2026 data, which already does exactly
+            // this (starting Proper 5 that year; Pentecost week weekdays use
+            // Proper 3's real BCP readings, Trinity week uses Proper 4's).
+            if (date.getTime() === trinitySunday.getTime()) return null; // Trinity Sunday itself, not part of this system
+            if (date < trinitySunday) {
+                return { properNumber: startingProper - 2, weekday };
+            }
+            return { properNumber: startingProper - 1, weekday };
+        }
+
+        const daysSince = Math.floor((date - firstProperSunday) / 86400000);
+        const weeksSince = Math.floor(daysSince / 7);
+        return { properNumber: startingProper + weeksSince, weekday };
+    }
+
     static _addDays(date, n) {
         const d = new Date(date);
         d.setDate(d.getDate() + n);
@@ -257,6 +328,48 @@ class CalendarEngine {
         };
     }
 
+    static async _loadSeasonFile(file) {
+        if (this.seasonalCache[file]) return this.seasonalCache[file];
+        try {
+            const response = await fetch(`data/season/${file}`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const data = await response.json();
+            this.seasonalCache[file] = data;
+            return data;
+        } catch (err) {
+            console.error(`[Calendar Engine] Error loading ${file}:`, err);
+            return null;
+        }
+    }
+
+    static async _findFixedMonthDayEntry(targetDate) {
+        // Fixed-civil-date Holy Days can fall in a DIFFERENT season than their
+        // usual one depending on the year -- e.g. St. Andrew (Nov 30) sits right
+        // at the Advent/Ordinary-Time boundary (Advent Sunday ranges Nov 27-Dec
+        // 3), and St. Matthias (Feb 24) sits near the Epiphany/Lent boundary
+        // (Ash Wednesday ranges Feb 4-March 10). getSeasonAndFile() picks a
+        // single file based on the season boundary for THAT year, which may not
+        // be the file the Holy Day's entry actually lives in. Found 2026-07-10
+        // via exhaustive multi-year testing, not by inspection -- a gap in the
+        // original Defect 1 fix, surfaced (not caused) by this session's testing.
+        // Checks all season files; relies on _loadSeasonFile's cache so this is
+        // only expensive on a cache-cold lookup.
+        const iso = this.formatDateISO(targetDate);
+        const mmdd = iso.slice(5);
+        const longNoYear = this.formatDateForLookup(targetDate).replace(/,\s*\d{4}$/, '').trim();
+        const filesToCheck = ['advent.json', 'christmas.json', 'epiphany.json', 'lent.json', 'easter.json',
+                               'ordinary1.json', 'ordinary2.json', 'ordinary3.json'];
+        for (const f of filesToCheck) {
+            const data = await this._loadSeasonFile(f);
+            if (!data) continue;
+            const match = data.find(d => d.fixed_month_day && d.date &&
+                ((d.date.length === 10 && d.date.slice(5) === mmdd) ||
+                 d.date.replace(/,\s*\d{4}$/, '').trim() === longNoYear));
+            if (match) return match;
+        }
+        return null;
+    }
+
     static async fetchLectionaryData(targetDate = this.currentDate) {
         // The Visitation of the Blessed Virgin Mary (May 31, or June 1 in years
         // it collides with Trinity Sunday -- see _getVisitationDate) is checked
@@ -267,29 +380,61 @@ class CalendarEngine {
         // findEntry()'s own Priority checks can't help here, since they only ever
         // see whichever single file getSeasonAndFile() already picked.
         if (this._isVisitationDate(targetDate)) {
-            const file = 'ordinary1.json';
-            let data = this.seasonalCache[file];
-            if (!data) {
-                try {
-                    const response = await fetch(`data/season/${file}`);
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    data = await response.json();
-                    this.seasonalCache[file] = data;
-                } catch (err) {
-                    console.error(`[Calendar Engine] Error loading ${file} for Visitation lookup:`, err);
-                    data = null;
-                }
-            }
-            if (data) {
-                const visEntry = data.find(d => d.moveable_id === 'visitation');
-                if (visEntry) {
-                    console.log(`[Calendar Engine] Visitation match for ${this.formatDateISO(targetDate)}`);
-                    return visEntry;
-                }
+            const data = await this._loadSeasonFile('ordinary1.json');
+            const visEntry = data && data.find(d => d.moveable_id === 'visitation');
+            if (visEntry) {
+                console.log(`[Calendar Engine] Visitation match for ${this.formatDateISO(targetDate)}`);
+                return visEntry;
             }
         }
 
-        const { file } = this.getSeasonAndFile(targetDate);
+        // Fixed-date Holy Days, checked across all season files (see
+        // _findFixedMonthDayEntry) before any season-specific routing, since
+        // their actual file doesn't always match the one getSeasonAndFile picks
+        // for their civil date in a given year.
+        const holyDayMatch = await this._findFixedMonthDayEntry(targetDate);
+        if (holyDayMatch) {
+            console.log(`[Calendar Engine] Fixed-month-day match for ${this.formatDateISO(targetDate)}`);
+            return holyDayMatch;
+        }
+
+        const { file, season } = this.getSeasonAndFile(targetDate);
+
+        // Ordinary Time's regular Proper-numbered weekday content, fixed
+        // 2026-07-10: BCP anchors Propers to fixed civil dates, so a given
+        // Proper's actual position within Ordinary Time shifts every year --
+        // the old day_of_season offset (Pentecost-anchored) only coincided
+        // with the right Proper for 2026, the year the data was built against.
+        // _getProperWeekInfo computes the real BCP-correct Proper/weekday for
+        // any year; entries are matched by that identity instead of a
+        // sequential day count, searched across all three Ordinary Time files
+        // since a given year's Proper N doesn't necessarily live in whichever
+        // file getSeasonAndFile's civil-date split happens to pick for it.
+        if (season === 'ordinary') {
+            const primaryData = await this._loadSeasonFile(file);
+            if (primaryData) {
+                const iso = this.formatDateISO(targetDate);
+                const exactMatch = primaryData.find(d => d.date === iso || d.date === this.formatDateForLookup(targetDate));
+                if (exactMatch) {
+                    console.log(`[Calendar Engine] Exact match (via Ordinary Time Proper routing) for ${iso}`);
+                    return exactMatch;
+                }
+            }
+
+            const properInfo = this._getProperWeekInfo(targetDate);
+            if (properInfo) {
+                for (const f of ['ordinary1.json', 'ordinary2.json', 'ordinary3.json']) {
+                    const data = await this._loadSeasonFile(f);
+                    if (!data) continue;
+                    const match = data.find(d => d.proper_number === properInfo.properNumber && d.weekday === properInfo.weekday);
+                    if (match) {
+                        console.log(`[Calendar Engine] Proper ${properInfo.properNumber} ${properInfo.weekday} match for ${this.formatDateISO(targetDate)}`);
+                        return match;
+                    }
+                }
+                console.warn(`[Calendar Engine] No entry found for Proper ${properInfo.properNumber} ${properInfo.weekday} (date ${this.formatDateISO(targetDate)}) -- falling through to legacy offset matching.`);
+            }
+        }
 
         if (this.seasonalCache[file]) {
             return this.findEntry(this.seasonalCache[file], targetDate, file);

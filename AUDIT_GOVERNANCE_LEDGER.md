@@ -1228,3 +1228,22 @@ Before recovering the other ~22 orphaned Holy Day slots the same way as the Visi
 Checked whether Advent/Lent/Easter share this problem -- they don't, since their week-labels are anchored to their own moveable season start, the same anchor day_of_season uses (tested: "Monday in 2 Lent" = offset 13 in all 5 tested years).
 
 So the defect is bounded to Ordinary Time specifically, but within that scope affects potentially all ~165 regular weekday entries, not just the ~23 Holy-Day-occupied slots -- a foundational addressing-scheme problem, not a data-recovery task. Proper fix would mean computing each Ordinary Time entry's actual date fresh per year (the same technique _getVisitationDate/_getThanksgivingDay already use) rather than a sequential Pentecost-relative day count. Real architectural redesign, not a patch. Not attempted without Josh's direction on approach.
+
+
+## Session, 2026-07-10 continued — the Ordinary Time redesign
+
+Josh: "If we need to redesign it to work properly, do so."
+
+Fetched BCP's actual rubric (p.158) rather than continue inferring from symptoms: Propers are anchored to fixed civil dates, with the starting Proper for "the Sunday after Trinity Sunday" determined by BCP's own lookup table (pp.884-885), transcribed directly into calendar-engine.js as EASTER_TO_STARTING_PROPER. Verified this understanding against the app's own known-correct 2026 data before trusting it (Pentecost/Trinity week weekday content already correctly uses starting-2/starting-1) before writing any matching code.
+
+Added _getStartingProper()/_getProperWeekInfo() implementing the full algorithm. Tested exhaustively: all of 2026's known-correct dates; a starting-Proper-3 year and a starting-Proper-8 year (both extremes); the Proper-29-before-Advent boundary across 17 years; confirmed Advent/Lent/Easter don't share this problem (their week-labels anchor to their own moveable start, already consistent with day_of_season).
+
+Tagged all 171 regular Ordinary Time entries with proper_number/weekday (parsed cleanly from existing correct titles). Building the matching logic surfaced 16 completely missing (Proper, weekday) combinations -- checked git history (35d9734, the original DOL rebuild): only 2 had ever existed, both later overwritten by Holy Days; the other 14 were never built at all, since 2026 always happened to have a Holy Day on that exact date. Sourced all 16 fresh from BCP pp.972-991, same bracket-extension/house-style conventions as the rest of this session. Full coverage confirmed: 201/201 required combinations, zero gaps, zero duplicates.
+
+Wired the new routing into fetchLectionaryData(), searching all three Ordinary Time files. Exhaustive testing (2,778 days, 15 years) surfaced a second, independent, pre-existing gap: fixed-date Holy Days near a moveable season boundary (St. Andrew/Advent-Ordinary; St. Matthias/Epiphany-Lent) weren't found when their date fell in the "wrong" season that year. Fixed with a general cross-file Holy Day search, the same technique already used for the Visitation, generalized to all 8 season files.
+
+Full verification: 2026 regression (310 entries) -- 1 expected supersession, zero unintended changes. 30-year Ordinary Time sweep (5,556 days) -- 0 fallbacks, 0 errors. 13-year Holy Days sweep (298 combinations) -- 298/298 correct.
+
+One real bug found and NOT fixed, flagged plainly: the cross-file Holy Day fix means Annunciation (fixed March 25) can now incorrectly "win" a collision with Easter Day itself in years Easter falls on March 25 (2035, 2046, 2103 -- confirmed rare, 3x/100 years). Liturgically backwards (Easter should always win; Annunciation should transfer). Not fixed -- tangential to today's scope, deserves proper research into Annunciation's own Holy-Week transfer rule rather than a rushed fix.
+
+Also found and fixed in passing: a stale, duplicate copy of an earlier session entry in RESUME_PROJECT_NOTE.md, left over from a file-copy mishap between working directories -- removed.
