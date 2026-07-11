@@ -657,14 +657,19 @@ The cross-file Holy Day fix has a side effect worth being honest about: **Annunc
 
 **Closed 2026-07-10:** the Annunciation/Easter Day collision, and the broader question of whether any other fixed-date Holy Day needed a similar conditional-transfer rule -- both resolved together (see the "One real bug found, and *fixed*" entry above). Checked systematically this time, not incidentally: exactly four of the app's 29 fixed-date Holy Days can ever collide with Holy Week/Easter Week (Saint Joseph, the Annunciation, Saint Mark, Saints Philip & James), and all four now transfer correctly per BCP p.17.
 
-## Backlog item, added 2026-07-10 — investigate the ordinary1/2/3.json file split, once all other 1979 BCP Daily Office corrections are done
+## Backlog item, added 2026-07-10, closed 2026-07-10 — the ordinary1/2/3.json file split, investigated and merged
 
-Josh's instruction: once every other correction to the 1979 BCP Daily Office is complete, investigate whether the current `ordinary1.json`/`ordinary2.json`/`ordinary3.json` three-way split is still the best way to serve this data. Context from Josh: the original split wasn't an architectural decision made for this app's own sake -- it was a workaround because Gemini (a different AI, in an earlier phase of this project) was struggling with a single `ordinary.json` file's size.
+Josh's instruction: once every other correction to the 1979 BCP Daily Office is complete, investigate whether the current `ordinary1.json`/`ordinary2.json`/`ordinary3.json` three-way split is still the best way to serve this data.
 
-**Worth weighing when this comes up:**
-- Whether a single-file (or differently-partitioned) structure would actually be worse now that today's Ordinary Time redesign already searches across all three files for every single date lookup (`fetchLectionaryData`'s Proper-based routing loops `ordinary1.json`/`ordinary2.json`/`ordinary3.json` looking for a `proper_number`/`weekday` match) -- the three-way split may no longer be buying anything functionally, now that lookups aren't confined to "whichever file the date naturally falls in" the way they were before.
-- Whether splitting by Proper number instead of civil date (i.e., "Propers 1-10," "Propers 11-20," "Propers 21-29" or similar) would be a more natural fit for the new Proper-anchored addressing scheme than the current Aug1/Oct1 civil-date boundaries, which were chosen for the old day_of_season-offset scheme and don't obviously map to anything meaningful under the new one.
-- Whether file size is even a real constraint worth designing around anymore, or whether that was specific to whatever tooling/model was in use at the time the split was made -- worth checking current file sizes against whatever the actual constraint is now, rather than assuming the original reason still applies.
-- Any performance cost of the new cross-file search patterns added today (Proper-based Ordinary Time routing, the general `_findFixedMonthDayEntry` cross-file Holy Day search) -- likely negligible given `_loadSeasonFile`'s caching, but worth confirming rather than assuming.
+**Findings:** file size was never a real constraint for current tooling (each file was 40-60KB, trivially small); the civil-date split (Aug 1/Oct 1) no longer maps to anything under the Proper-anchored addressing scheme built earlier the same day, which is exactly why the Proper-routing loop already searched across all three files on every lookup. But the split was more entangled in the code than just that loop -- nine call sites across `calendar-engine.js` touched it, including the season-boundary generator itself (`_generateSeasonRanges`) and the `day_of_season` continuity logic that stitched the three files back together.
 
-Not investigated yet -- flagged for later per Josh's explicit sequencing (after all other Daily Office corrections are done).
+**Decision (Josh): merge to a single file.** Executed as its own careful tranche:
+- Merged the three JSON arrays into `data/season/ordinary.json` (220 entries) -- checked first for any (Proper, weekday), `day_of_season`, or `moveable_id` collisions across the merge; found none.
+- Collapsed `_generateSeasonRanges`'s three civil-date sub-ranges into one continuous range for the whole season, all pointing to the single file.
+- Removed the now-unnecessary `day_of_season` continuity special-casing in `getSeasonStartDate` (was needed only to stitch `ordinary2`/`ordinary3` back to `ordinary1`'s start date; moot with one file).
+- Updated every other hardcoded reference: the fixed-month-day cross-file search list, the Visitation lookup, the Ordinary Time Proper-routing loop (now a single file load, no loop needed), and the "no season match" fallback default.
+- Deleted `ordinary1.json`/`ordinary2.json`/`ordinary3.json`.
+
+**Verified by snapshot diff, not just by re-running the existing test suites:** captured `fetchLectionaryData`'s output (title, date, day_of_season, proper_number, weekday, moveable_id, psalms) for all 10,958 dates from 2024-2053 *before* touching any code, made the changes, then re-captured the identical range and diffed. **Zero differences.** This confirms the merge is a true behavior-preserving refactor, not just "no errors" -- every single date resolves to exactly the same content as before.
+
+Dashboard: the three "Ordinary 1/2/3" rows consolidated into one "Ordinary Time" row. `SEED_VERSION` bumped to v81.

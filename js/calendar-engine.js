@@ -182,16 +182,17 @@ class CalendarEngine {
         const nextAdvent    = this._getAdventSunday(year + 1);
         const nextAdventEve = this._addDays(nextAdvent, -1);
 
-        // Ordinary Time after Pentecost is split into three files matching
-        // the existing data/season/ file structure:
-        //   ordinary1: day after Pentecost through July 31
-        //   ordinary2: Aug 1 through Sep 30
-        //   ordinary3: Oct 1 through day before next Advent Sunday
+        // Ordinary Time after Pentecost -- previously split into three civil-date
+        // file blocks (ordinary1/2/3.json) as a workaround for an earlier AI
+        // tool's file-size limits, not for any liturgical reason. Merged into a
+        // single ordinary.json 2026-07-10: the civil-date split (Aug 1/Oct 1)
+        // no longer maps to anything under the Proper-anchored addressing
+        // scheme (a Proper's data doesn't reliably live in whichever file the
+        // old split would pick for a given year, which is exactly why the
+        // Proper-routing loop already searched across all three files on every
+        // lookup), and file size was never a real constraint here (each file
+        // was 40-60KB). Now a single continuous range, no civil-date sub-splits.
         const ordinaryStart  = this._addDays(easterEnd, 1);
-        const ordinary1End   = new Date(year + 1, 6, 31);       // Jul 31
-        const ordinary2Start = new Date(year + 1, 7, 1);        // Aug 1
-        const ordinary2End   = new Date(year + 1, 8, 30);       // Sep 30
-        const ordinary3Start = new Date(year + 1, 9, 1);        // Oct 1
 
         const ranges = [];
 
@@ -204,19 +205,23 @@ class CalendarEngine {
 
         // Brief Ordinary Time between Epiphany and Ash Wednesday.
         // In very early Easter years this window can be zero or negative — skip it if so.
+        // (In practice this branch's guard can never be true: briefOrdStart is
+        // defined as epiphanyEnd + 1, which equals ashWednesday exactly, so
+        // briefOrdStart < ashWednesday never holds. Confirmed algebraically, not
+        // just for specific years -- this range is permanently dead code. Left
+        // in place rather than removed, since removing dead code that's never
+        // actually reached is a separate cleanup from today's file-split scope.)
         const briefOrdStart = this._addDays(epiphanyEnd, 1);
         if (briefOrdStart < ashWednesday) {
-            ranges.push({ start: briefOrdStart, end: this._addDays(ashWednesday, -1), season: "ordinary", file: "ordinary1.json", liturgicalColor: "green" });
+            ranges.push({ start: briefOrdStart, end: this._addDays(ashWednesday, -1), season: "ordinary", file: "ordinary.json", liturgicalColor: "green" });
         }
 
         // Lent
         ranges.push({ start: ashWednesday,   end: lentEnd,                   season: "lent",      file: "lent.json",      liturgicalColor: "purple" });
         // Easter
         ranges.push({ start: easter,         end: easterEnd,                 season: "easter",    file: "easter.json",    liturgicalColor: "white"  });
-        // Ordinary Time (three file blocks)
-        ranges.push({ start: ordinaryStart,  end: ordinary1End,              season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  });
-        ranges.push({ start: ordinary2Start, end: ordinary2End,              season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  });
-        ranges.push({ start: ordinary3Start, end: nextAdventEve,             season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  });
+        // Ordinary Time (single continuous range, single file)
+        ranges.push({ start: ordinaryStart,  end: nextAdventEve,             season: "ordinary",  file: "ordinary.json",  liturgicalColor: "green"  });
 
         return ranges;
     }
@@ -318,11 +323,11 @@ class CalendarEngine {
             }
         }
 
-        console.warn(`[Calendar Engine] No season range match for ${date.toDateString()}. Defaulting to ordinary1.json`);
+        console.warn(`[Calendar Engine] No season range match for ${date.toDateString()}. Defaulting to ordinary.json`);
         return {
             _isFallback: true,
             season: "ordinary",
-            file: "ordinary1.json",
+            file: "ordinary.json",
             liturgicalColor: "green",
             litYear: this.getLiturgicalYear(date)
         };
@@ -366,8 +371,7 @@ class CalendarEngine {
         // needed for the Holy-Week/Easter-Week transfer logic below, where the
         // day being looked up (the feast's ORIGINAL fixed date) is different
         // from the date actually being rendered (the transferred date).
-        const filesToCheck = ['advent.json', 'christmas.json', 'epiphany.json', 'lent.json', 'easter.json',
-                               'ordinary1.json', 'ordinary2.json', 'ordinary3.json'];
+        const filesToCheck = ['advent.json', 'christmas.json', 'epiphany.json', 'lent.json', 'easter.json', 'ordinary.json'];
         for (const f of filesToCheck) {
             const data = await this._loadSeasonFile(f);
             if (!data) continue;
@@ -484,7 +488,7 @@ class CalendarEngine {
         // findEntry()'s own Priority checks can't help here, since they only ever
         // see whichever single file getSeasonAndFile() already picked.
         if (this._isVisitationDate(targetDate)) {
-            const data = await this._loadSeasonFile('ordinary1.json');
+            const data = await this._loadSeasonFile('ordinary.json');
             const visEntry = data && data.find(d => d.moveable_id === 'visitation');
             if (visEntry) {
                 console.log(`[Calendar Engine] Visitation match for ${this.formatDateISO(targetDate)}`);
@@ -533,10 +537,13 @@ class CalendarEngine {
         // the old day_of_season offset (Pentecost-anchored) only coincided
         // with the right Proper for 2026, the year the data was built against.
         // _getProperWeekInfo computes the real BCP-correct Proper/weekday for
-        // any year; entries are matched by that identity instead of a
-        // sequential day count, searched across all three Ordinary Time files
-        // since a given year's Proper N doesn't necessarily live in whichever
-        // file getSeasonAndFile's civil-date split happens to pick for it.
+        // any year; entries are matched by that identity. Previously searched
+        // across three separate files (ordinary1/2/3.json) since a given
+        // year's Proper N didn't necessarily live in whichever file
+        // getSeasonAndFile's civil-date split happened to pick for it -- moot
+        // now that all Ordinary Time content lives in one merged file
+        // (data/season/ordinary.json, see the file-split investigation
+        // 2026-07-10), but the identity-based matching itself is unchanged.
         if (season === 'ordinary') {
             const primaryData = await this._loadSeasonFile(file);
             if (primaryData) {
@@ -546,20 +553,16 @@ class CalendarEngine {
                     console.log(`[Calendar Engine] Exact match (via Ordinary Time Proper routing) for ${iso}`);
                     return exactMatch;
                 }
-            }
 
-            const properInfo = this._getProperWeekInfo(targetDate);
-            if (properInfo) {
-                for (const f of ['ordinary1.json', 'ordinary2.json', 'ordinary3.json']) {
-                    const data = await this._loadSeasonFile(f);
-                    if (!data) continue;
-                    const match = data.find(d => d.proper_number === properInfo.properNumber && d.weekday === properInfo.weekday);
+                const properInfo = this._getProperWeekInfo(targetDate);
+                if (properInfo) {
+                    const match = primaryData.find(d => d.proper_number === properInfo.properNumber && d.weekday === properInfo.weekday);
                     if (match) {
                         console.log(`[Calendar Engine] Proper ${properInfo.properNumber} ${properInfo.weekday} match for ${this.formatDateISO(targetDate)}`);
                         return match;
                     }
+                    console.warn(`[Calendar Engine] No entry found for Proper ${properInfo.properNumber} ${properInfo.weekday} (date ${this.formatDateISO(targetDate)}) -- falling through to legacy offset matching.`);
                 }
-                console.warn(`[Calendar Engine] No entry found for Proper ${properInfo.properNumber} ${properInfo.weekday} (date ${this.formatDateISO(targetDate)}) -- falling through to legacy offset matching.`);
             }
         }
 
@@ -600,15 +603,6 @@ class CalendarEngine {
         const ranges = this._getRangesForDate(date);
         for (const range of ranges) {
             if (date >= range.start && date <= range.end) {
-                // For ordinary2 and ordinary3, return the start of ordinary1 for that year
-                // so that day_of_season is continuous across all three ordinary files.
-                if (range.file === 'ordinary2.json' || range.file === 'ordinary3.json') {
-                    const ordinary1 = ranges.find(r =>
-                        r.file === 'ordinary1.json' &&
-                        r.start.getFullYear() === range.start.getFullYear()
-                    );
-                    return ordinary1 ? ordinary1.start : range.start;
-                }
                 return range.start;
             }
         }
