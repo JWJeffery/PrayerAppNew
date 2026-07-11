@@ -1,0 +1,28 @@
+{
+  "translation": "KJV",
+  "editionChange": {
+    "date": "2026-07-11",
+    "from": "1611 original-spelling edition (aruljohn/Bible-kjv-1611)",
+    "to": "1769 modern-spelling edition (KJVA, scrollmapper/bible_databases)",
+    "reason": "Josh's explicit decision: the app's KJV column should read in familiar modern (1769 Blayney-standard) spelling, not 1611 original spelling. This reverses the prior convention documented in documentation/BIBLICAL_REMEDIATION_METHODOLOGY.md \u00a71, which had been inferred from the app's pre-existing data rather than requested by Josh.",
+    "scopeNote": "This is a corpus-wide change, not book-specific. Genesis's KJV column was redone under this new source as the first application; every subsequent book (starting with Exodus) uses this same source going forward."
+  },
+  "source": {
+    "label": "KJVA: King James Version (1769) with Strongs Numbers and Morphology and CatchWords, including Apocrypha (without glosses)",
+    "repo": "https://github.com/scrollmapper/bible_databases",
+    "branch": "master",
+    "path": "formats/json/KJVA.json",
+    "commit": "e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c",
+    "sha256": "404cc86145f221a5599864a1e20033588ec592933c90bb20fe6c4fa461db945a",
+    "license": "MIT (per repo LICENSE)",
+    "upstreamProvenance": "Converted from the Sword Project's KJVA module (crosswire.org) via the repo's sword_to_json.py conversion script.",
+    "bookCount": 80,
+    "canonNote": "66 protocanonical books + 14 traditional KJV Apocrypha books (1&2 Esdras, Tobit, Judith, Additions to Esther, Wisdom, Sirach, Baruch, Prayer of Azariah, Susanna, Bel and the Dragon, Prayer of Manasses, 1&2 Maccabees). Does NOT cover 1 Enoch, 3/4 Maccabees, or Letter of Jeremiah as separate files -- those belong to other canon traditions and are sourced elsewhere in this project."
+  },
+  "editionVerification": {
+    "method": "Landmark-verse check before trusting any diff, per standing project discipline.",
+    "check": "Exodus 1:1 reads 'Now these are the names... every man... came with Jacob' -- modern spelling, not 1611 ('Nowe... euery man... Iacob'). Confirms this is the 1769 Blayney-standard text, not another orthography.",
+    "confirmedBy": "Claude, 2026-07-11, direct inspection of formats/json/KJVA.json"
+  },
+  "usagePattern": "Full-column replacement per documentation/BIBLICAL_REMEDIATION_METHODOLOGY.md \u00a74: replace the entire KJV column for a book from this source, matched by chapter:verse, rather than hand-patching. Re-verify at zero mismatches after writing."
+}

@@ -15,8 +15,16 @@ merely documented.
 
 Confirmed for three of five translations so far:
 
-- **KJV** = the genuine **1611 original-spelling edition** (`"Heauen"`, `"seuen hundred
-  seuentie"`), not the modern-spelling 1769 Blayney text most Bible tools default to.
+- **KJV** = the **1769 modern-spelling (Blayney-standard) edition**, per Josh's explicit
+  decision on 2026-07-11. This reverses the prior convention (which had used the 1611
+  original-spelling edition) — that earlier choice had been *inferred* from the app's
+  pre-existing data rather than requested by Josh, and Josh corrected this once it was
+  surfaced explicitly. Source: `KJVA` from `scrollmapper/bible_databases` (`formats/json/KJVA.json`,
+  MIT license, converted from the Sword Project's KJVA module) — 80 books: the 66
+  protocanonical books plus the 14 traditional KJV Apocrypha books. See
+  `documentation/kjva-source-witness-intake.json` for full provenance, hash, and scope notes.
+  Genesis was redone under this source on 2026-07-11 (full-column replacement, verified at
+  zero mismatches); every subsequent book uses this same source from the start.
 - **DRB** = the genuine **original 1610 Douay-Rheims**, not the later 18th-century Challoner
   revision (commonly labeled "DRC"). Distinctive tell: the "Be [X] made" imperative
   construction (Genesis 1:3, 1:6) that Challoner revised away.
@@ -37,7 +45,7 @@ this project — assume it's wrong until a landmark verse proves otherwise.
 
 | Translation | Source | Access | Notes |
 |---|---|---|---|
-| KJV | `aruljohn/Bible-kjv-1611` (GitHub) | `git clone`, one JSON file per book | Confirmed clean against Genesis, 1529/1533 exact (remaining 4 are a `&thorn;`-vs-þ encoding artifact in a *different* reference file used briefly before this one, not this source) |
+| KJV | `KJVA` from `scrollmapper/bible_databases` (`formats/json/KJVA.json`) | `git clone --filter=blob:none --no-checkout` + sparse-checkout of the one file (full repo is large — see Process notes) | 1769 modern spelling, 80 books incl. 14 Apocrypha books. Confirmed clean against Genesis, 1533/1533 exact after full-column replacement. Superseded the earlier 1611 `aruljohn/Bible-kjv-1611` source per Josh's 2026-07-11 edition decision — see `documentation/kjva-source-witness-intake.json` |
 | DRB | `janvier-s/original-douay-rheims` (GitHub) | `git clone`, USFM format, one file per book | Confirmed clean against Genesis, 1530/1530 exact. Strip `\f...\f*`, `\x...\x*`, `\sc`/`\sc*` markup |
 | NRSV | User-supplied SQLite (`NRSV-CI.SQLite3`, "Catholic Interconfessional," 1989, American spelling) | Provided directly by Josh | **No public legitimate source exists — copyrighted.** This file's own known-issues audit found no structural corruption; issues are canon-mapping/source-shape only, not text defects. `NRSVACE.SQLite3` (Anglicised Catholic Edition) was tried first and works for landmark-verse confirmation but is NOT a clean diff source — its own Catholic-edition editorial layer plus British spelling/idiom created too much false-positive noise (traced and explained, but NRSV-CI is a better primary source going forward) |
 | Rotherham | `documentation/rotherham-source-witness-intake.json` | URL + SHA256 witness already in this repo | Not yet used for an active diff this pass — do that first before trusting it further |
@@ -117,6 +125,16 @@ Josh's direct correction, applied to Genesis on 2026-07-11: full character-for-c
   time and losing track of what's actually pending vs. applied upstream.
 - `git diff --stat` after any content fix is a cheap, valuable sanity check — the number of
   changed lines should match the number of verses you intended to change, no more, no less.
+- `scrollmapper/bible_databases` (source of the KJVA translation) is a large multi-format,
+  140-translation repo — a plain `git clone` or even a cone-mode sparse-checkout of a whole
+  `formats/json` directory can time out. Use `git clone --filter=blob:none --no-checkout`,
+  then `git sparse-checkout init --no-cone` with exact file paths written to
+  `.git/info/sparse-checkout` (e.g. `/formats/json/KJVA.json`), then `git checkout`. Cone mode
+  sparse-checkout only works cleanly for whole directories, not individual files one level in.
+- When replacing a translation column with `json.dump`, explicitly write a trailing newline
+  (`f.write('\n')` after `json.dump(..., f)`) — Python's `json.dump` doesn't add one, and the
+  app's existing files do end with one, so skipping this turns an otherwise-surgical diff into
+  one with a spurious final-line change.
 
 ## 10. Efficiency, without loosening accuracy
 
