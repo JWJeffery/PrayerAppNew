@@ -700,3 +700,16 @@ The dashboard's `scripture-resolver.js` row was still amber over the `chapter.nu
 **The single highest-priority open item, found by this recovery, not yet resolved:** Installment 12 claims zero content defects across all 38 protocanon books — this directly contradicts the dashboard's pre-existing red flags for Genesis/Deuteronomy/2 Kings/Jeremiah ("gaps predate recoverable git history") and 2 Chronicles/Isaiah (specific verse-sequence claims). Left unresolved and red on the dashboard deliberately, not overwritten either direction — see the ledger entry for the reasoning. **This needs to be reconciled before character-for-character remediation starts on any of those six books**, since the two audits may have been checking for genuinely different failure modes and it isn't yet known which claim (if either) is right.
 
 **Audit sequence after biblical remediation, per governance:** Daily Office (1979 BCP — now DONE per above) → Ethiopian → Church of the East → Byzantine → Book of Needs → Roman Breviary.
+
+## Genesis character-for-character remediation — session 2026-07-11, in progress
+
+First real word-for-word verification work (distinct from Installments 12-16's structural auditing). Full detail in `AUDIT_GOVERNANCE_LEDGER.md`. Headline:
+
+- **KJV: fully verified, genuinely clean.** 1,529/1,533 verses exact against the true 1611 source; remaining 4 are a reference-file artifact, not app errors. **But the prefix-pollution defect Lucy certified fixed on 2026-06-21 is confirmed still present and unfixed** across all 1,533 verses — a formatting bug, not a content-accuracy problem; the underlying words are correct.
+- **NABRE heading-pollution** — same story, same false certification, still unfixed in 49/50 chapters.
+- **DRB** — chapter 1 confirmed correct edition (original 1610 Douay-Rheims) and exact match. Chapters 2-50 not yet checked.
+- **NRSV** — diffed against NRSV-ACE (Josh-supplied SQLite file, `NRSVACE.SQLite3`). Most differences are British-vs-American spelling/idiom (not a defect). **One serious, unresolved finding: Genesis 42:34's stored text doesn't match its verse — reads as content from verse 20 instead.** Needs direct investigation. ~40-50 other differences still need adjudication against a plain 1989 NRSV, since NRSV-ACE has its own real Catholic-edition-specific revisions and isn't a perfect stand-in.
+
+**A pattern worth carrying into every future book:** this corpus consistently uses original/historical editions (1611 KJV, 1610 Douay-Rheims, 1989 NRSV base) rather than modern revisions. Three near-miss wrong-edition comparisons happened this session alone (DRC instead of original Douay-Rheims; NRSVue instead of 1989 NRSV) before being caught on a landmark-verse check. **Always verify edition identity on a distinctive verse before trusting any diff** — assuming the "obvious" modern edition is wrong by default for this project.
+
+**Immediate next steps:** investigate Genesis 42:34, complete the DRB chapters 2-50 diff, then decide on the KJV/NABRE mechanical fixes (low-risk, well-understood, ready to go once prioritized).

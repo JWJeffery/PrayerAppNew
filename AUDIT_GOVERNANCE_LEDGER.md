@@ -1297,3 +1297,47 @@ The other ~99 files in `data/bible/registry/` (individual-book provenance/repair
 2. Low-risk single-verse fixes available immediately: Tobit 10:14's `rawText` attribution, Acts 23:26 and James 1:8's missing NRSV text, the two Korean-character corrections in 3/7 Clement (ET), the canon-profiles index's Roman Catholic entry-count regeneration.
 3. Larger, deliberately-scoped decisions still open: the Odes subsystem's ~190-verse transcription gap; the Clement/Qalēmentos provenance question; deuterocanon and broader-canon governance-metadata population (39-46 files lacking it); the `versification` field's inaccurate "rotherham_overlays" naming.
 4. Then: actual character-for-character remediation, Genesis through Revelation, per the standing mandate — these installments are the audit groundwork for that work, not a substitute for it.
+
+
+## Session, 2026-07-11 continued — Genesis character-for-character remediation begins: KJV verified clean, DRB/NRSV in progress, one real NRSV corruption found
+
+First actual character-for-character verification work against primary sources for the biblical corpus remediation mandate (Genesis → Revelation), as distinct from the structural/completeness auditing in Installments 12-16. Method: for each translation, locate and verify a genuine, correctly-identified source edition before diffing (getting this wrong was nearly a repeat mistake twice this session — see below), then run a full programmatic comparison across every verse in the book, not a sample.
+
+### Edition identification — the app uses deliberately original/historical editions throughout, confirmed for three of five translations
+
+Before any diff could be trusted, each translation's *actual* edition had to be identified, because assuming the wrong edition produces false mismatches indistinguishable from real ones:
+
+- **KJV** is the genuine **1611 original-spelling edition** (not the modern-spelling 1769 Blayney text most tools default to) — confirmed via cross-reference against three independent 1611 sources before trusting any diff.
+- **DRB** is the genuine **original 1610 Douay-Rheims** (not the later 18th-century Challoner revision, DRC) — confirmed via the "Be [X] made" imperative construction distinctive to the original translation. **A full diff was run against the wrong edition (DRC) before this was caught** — 1,465 apparent "mismatches" out of 1,530 verses, which was itself the tell (that ratio is a wrong-edition signature, not real corruption at that scale). Caught and corrected before anything was reported as a finding, per the same "catch your own false alarm before it goes in a report" discipline documented in Installment 14.
+- **NRSV** is closest to the **Anglicised Catholic Edition (NRSV-ACE, 1989/1993/1995)** — a source file Josh supplied directly (`NRSVACE.SQLite3`) after an initial diff attempt against a public NRSVue (2021 Updated Edition) source was caught as the wrong edition first (Genesis 1:1's "When God began to create" is a distinctive NRSVue reading; the app's actual stored text, "In the beginning when God created," matches the original 1989 NRSV and the app's own `meta.copyright` field, which explicitly cites 1989). **This is the third near-miss on wrong-edition comparison in one session** — worth naming as a pattern, not three unrelated incidents: this corpus consistently uses older/original editions rather than modern revisions, and every comparison pass needs to verify edition identity on a landmark verse before trusting a diff, not assume.
+- **Rotherham** — not independently re-verified this session; already has an established, trusted witness elsewhere in this repo (`documentation/rotherham-source-witness-intake.json`).
+
+### KJV — fully verified, 1,533/1,533 verses, genuinely clean
+
+Full diff against `aruljohn/Bible-kjv-1611` (GitHub), a clean, complete, correctly-1611-spelled source. **1,529 of 1,533 verses match exactly.** The remaining 4 are not content errors — they're `&thorn;` (HTML entity) in the reference file versus the actual þ character in the app's data, an artifact of how that reference file was generated from HTML, not a defect in the app.
+
+**The known-and-previously-certified-fixed defects remain fully present and unfixed:** every one of Genesis's 1,533 KJV verses still carries the literal `"C:V "` reference-number prefix baked into the text field (e.g., `"1:1 In the beginning..."`), and 49 of 50 NABRE chapter-openings still have `"Chapter N [Section Heading]."` merged into verse 1's text, including inside the one `translationOverlays` entry this book has (NABRE, 31:55). Both are the exact defects Installment 1 (2026-06-21) flagged as HIGH severity, both are exactly what Lucy certified as fixed, and both are untouched in the live file over a month later. **The underlying KJV wording itself is accurate and trustworthy — this is a data-hygiene defect (an unstripped prefix/heading), not a fabricated-text defect.** Worth stating precisely rather than letting the two blur together: the false certification is real and serious, but it was a certification about a formatting bug being fixed, and the content sitting underneath that formatting bug is genuinely sound.
+
+### DRB — chapter 1 confirmed correct edition and exact match; chapters 2-50 not yet checked
+
+Confirmed via `originaldouayrheims.com` that Genesis 1 matches the app's stored DRB text, including the distinctive "Be [X] made" original-1610 phrasing at 1:3 and 1:6. This source paginates one chapter per page (50 fetches needed for the full book) — mechanical but not yet done. **49 chapters remain unverified.**
+
+### NRSV — full diff run against NRSV-ACE; mostly benign Americanization, but one real, serious defect found
+
+Ran a full diff of all 1,533 verses against the NRSV-ACE SQLite database Josh supplied. After stripping footnote/editorial markup and normalizing for British-vs-American spelling and idiom (favour/favor, judgement/judgment, "one hundred and thirty"/"one hundred thirty", eastward(s), grey/gray, etc. — roughly 150+ of the raw differences, near-certainly an intentional Americanization layer applied consistently across the whole book, not a defect) and quotation-mark nesting convention (ACE uses British single-quote-primary style, the app uses American double-quote-primary — a styling difference, not a wording difference), **roughly 40-50 differences remain that are genuine wording/structure differences, not spelling.**
+
+**Important caveat, not yet resolved:** NRSV-ACE is a real, separately-edited Catholic edition (1993/1995 editorial review), not a byte-identical copy of the plain 1989 NRSV the app's own `meta.copyright` field claims to use. So this remaining set of ~40-50 differences cannot be assumed to be app errors — some may be legitimate ACE-specific editorial choices that a plain 1989 NRSV wouldn't share. None of these ~40-50 have been individually adjudicated yet.
+
+**One specific finding stands well outside that ambiguity and needs priority attention: Genesis 42:34.** NRSV-ACE reads "...Then I will release your brother to you, and you may trade in the land." The app's stored NRSV text for this verse reads "...and your words will be verified, and you shall not die.' And they agreed to do so." **This is not a paraphrase or an edition variant — it reads as text belonging to a different verse** (it closely echoes wording from earlier in the same chapter, verse 20). This needs direct, dedicated investigation — checking whether this is an isolated verse-level data corruption or part of a larger pattern — before any fix is attempted.
+
+### Open items, in priority order
+
+1. **Genesis 42:34** — investigate the apparent verse-content misalignment directly; do not assume it's isolated until checked.
+2. **Complete the DRB diff** — chapters 2-50 against `originaldouayrheims.com`, same method as chapter 1.
+3. **Adjudicate the ~40-50 remaining NRSV differences** individually against a plain 1989 NRSV if one becomes available, since NRSV-ACE's own editorial layer means these can't be resolved from the ACE source alone.
+4. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk once prioritized.
+5. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
+
+### Resolution of the previously-flagged Genesis structural tension
+
+Also resolved as a side effect of this session: Installment 12's claim of "zero mismatches across all 38 protocanon books" is now independently reconfirmed for Genesis specifically at the character level, not just the structural level — no verse-numbering gaps, and the actual KJV/DRB(ch.1) text is accurate. The dashboard's old "severe: gaps predate recoverable git history" flag for Genesis is superseded by this direct verification and should be read as resolved for Genesis, though the same flag for Deuteronomy/2 Kings/Jeremiah remains genuinely open and untouched by this session's work, which was Genesis-only.
