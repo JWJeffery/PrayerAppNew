@@ -1318,9 +1318,13 @@ Full diff against `aruljohn/Bible-kjv-1611` (GitHub), a clean, complete, correct
 
 **The known-and-previously-certified-fixed defects remain fully present and unfixed:** every one of Genesis's 1,533 KJV verses still carries the literal `"C:V "` reference-number prefix baked into the text field (e.g., `"1:1 In the beginning..."`), and 49 of 50 NABRE chapter-openings still have `"Chapter N [Section Heading]."` merged into verse 1's text, including inside the one `translationOverlays` entry this book has (NABRE, 31:55). Both are the exact defects Installment 1 (2026-06-21) flagged as HIGH severity, both are exactly what Lucy certified as fixed, and both are untouched in the live file over a month later. **The underlying KJV wording itself is accurate and trustworthy — this is a data-hygiene defect (an unstripped prefix/heading), not a fabricated-text defect.** Worth stating precisely rather than letting the two blur together: the false certification is real and serious, but it was a certification about a formatting bug being fixed, and the content sitting underneath that formatting bug is genuinely sound.
 
-### DRB — chapter 1 confirmed correct edition and exact match; chapters 2-50 not yet checked
+### DRB — fully verified, 1,530/1,530 verses, genuinely clean
 
-Confirmed via `originaldouayrheims.com` that Genesis 1 matches the app's stored DRB text, including the distinctive "Be [X] made" original-1610 phrasing at 1:3 and 1:6. This source paginates one chapter per page (50 fetches needed for the full book) — mechanical but not yet done. **49 chapters remain unverified.**
+Chapter 1 confirmed correct edition and exact match against `originaldouayrheims.com`. Continuing chapter-by-chapter against that site hit real friction (inconsistent URL patterns across chapters, some returning 404s), so a better source was found instead: `janvier-s/original-douay-rheims` on GitHub — the complete original Douay-Rheims in structured USFM format, CC0 public domain. Cross-checked against `originaldouayrheims.com` first (chapters 1 and 35 both matched exactly) before trusting it as the primary source for the full-book diff, same discipline as every other source this session.
+
+Full diff of all 1,530 verses (excludes 5:32, 49:33, 50:26, already explained as DRB's own Vulgate-based versification folding that content into the preceding verse, not gaps): **zero real mismatches.** An initial pass found 7 apparent differences, all traced to leftover `\sc` (small-caps) USFM markup in the extraction script, not content — corrected and re-run to confirm.
+
+**DRB is genuinely, fully clean across the whole book.**
 
 ### NRSV — full diff run against NRSV-ACE; mostly benign Americanization, but one real, serious defect found
 
@@ -1333,7 +1337,7 @@ Ran a full diff of all 1,533 verses against the NRSV-ACE SQLite database Josh su
 ### Open items, in priority order
 
 1. **Genesis 42:34** — investigate the apparent verse-content misalignment directly; do not assume it's isolated until checked.
-2. **Complete the DRB diff** — chapters 2-50 against `originaldouayrheims.com`, same method as chapter 1.
+2. **~~Complete the DRB diff~~ — DONE, fully clean, see update above.**
 3. **Adjudicate the ~40-50 remaining NRSV differences** individually against a plain 1989 NRSV if one becomes available, since NRSV-ACE's own editorial layer means these can't be resolved from the ACE source alone.
 4. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk once prioritized.
 5. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
