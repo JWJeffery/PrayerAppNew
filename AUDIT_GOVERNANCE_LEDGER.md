@@ -1358,12 +1358,28 @@ Method: extracted all 1,533 verses from NRSV-CI, stripped inline markup (`<f>`, 
 
 **NRSV is now fully verified and corrected for Genesis**, alongside KJV and DRB (both already clean). Three of five translations complete.
 
+### NABRE — fixed. The certified-fixed-but-actually-broken defect, plus real new findings
+
+Josh supplied `nabre.json`, a complete Genesis NABRE source (73-book file, one book per entry). **This source has the same chapter/section-heading pollution baked into it as the app's own data** — not a clean reference to diff against directly, but valuable for two things: verifying underlying word accuracy, and providing a large, consistent sample to derive a reliable heading-stripping pattern from.
+
+**Pattern analysis:** the source consistently uses `"Chapter N - Title. "` (with a dash) at chapter openings and `"[Roman numeral]. SectionTitle - Subtitle. "` at major narrative-section breaks. The app's own polluted data has the identical headers minus the dash (`"Chapter N Title. "`), confirming both were derived from the same underlying processing. Built a title-boundary extractor using the source's dash as an unambiguous anchor, validated it against all 51 originally-known chapter-opener cases before trusting it further.
+
+**Comprehensive re-scan found the known defect was worse than previously documented.** The original June 21 audit (and Lucy's false "fixed" certification) only ever described chapter-opening pollution. Direct comparison against the cleaned source found **19 additional bare section-title pollutions with no `"Chapter N"` prefix at all** — mid-narrative section breaks like `"Warning of the Flood."` (6:5), `"Descendants of Ishmael."` (25:12), `"Death of Joseph."` (50:24) — sitting directly on verse text with no marker distinguishing them from real content. These were never flagged by any prior audit because they don't match the `"Chapter N"` pattern everyone was checking for.
+
+**Also found: a previously-undiscovered, systematic stray-space bug** — `"Lord ’s"` instead of `"Lord's"`, `"the Lord —"` instead of `"the Lord—"`, `"Sea )"` instead of `"Sea)"` — affecting roughly a dozen verses, unrelated to the heading issue, apparently an artifact of whatever process originally normalized `LORD`→`Lord` in this column.
+
+**Three false positives caught and excluded before writing anything.** The title-extraction regex, built to recognize Title-Case phrases ending in a period, initially misfired on three verses that are genuine content, not headers — biblical name lists that happen to read like titles: `"Ophir, Havilah and Jobab. All these were descendants of Joktan."` (10:29), and similar at 36:16 and 36:43. Caught because these showed up as false "mismatches" against app's already-correct text; verified directly against app's raw data before excluding them from the fix (same "catch your own false alarm" discipline as Installment 14 and the Genesis DRC/NRSVue near-misses this session).
+
+**Fix applied: full replacement of the NABRE column** (same strategy as NRSV, same Josh authorization) for every verse that didn't match once headers were stripped and `LORD`→`Lord`/`GOD`→`God` normalized to match the app's own established convention (confirmed via the two "Lord GOD" cases at 15:2/15:8 that app's existing "Lord God" is app's own consistent style, not something to reverse toward the source's all-caps form). **85 verses corrected, plus the `translationOverlays` NABRE entry at 31:55** (same content as 32:1 under NABRE's own versification, same pollution, same fix). Re-verified after writing: zero remaining mismatches across all 1,532 checked verses (1,533 minus one None), zero verses still starting with a heading marker anywhere in the book. `git diff --stat` confirms exactly 86 lines changed, nothing else touched.
+
+**NABRE is now fully verified and corrected for Genesis** — the fourth of five translations complete, and specifically the one Lucy's false certification was about.
+
 ### Open items, in priority order
 
-1. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk, ready to go.
-2. **Rotherham** — the fifth translation, not yet independently re-verified this session (an established witness exists in this repo but hasn't been re-checked against live data the way KJV/DRB/NRSV were).
+1. **The KJV prefix-pollution fix** — still open; well-understood, bounded, mechanical (strip a known pattern), low-risk, ready to go. NABRE's equivalent is now done (see above).
+2. **Rotherham** — the fifth translation, not yet independently re-verified this session (an established witness exists in this repo but hasn't been re-checked against live data the way KJV/DRB/NRSV/NABRE were).
 3. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
-4. **Genesis is otherwise fully character-for-character verified**: KJV clean, DRB clean, NRSV clean and corrected. Ready to move to the next book once Rotherham and the two mechanical fixes are handled.
+4. **Genesis status: KJV clean, DRB clean, NRSV clean and corrected, NABRE clean and corrected — 4 of 5 translations fully verified.** Ready to move to the next book once Rotherham and the KJV mechanical fix are handled.
 
 ### Resolution of the previously-flagged Genesis structural tension
 

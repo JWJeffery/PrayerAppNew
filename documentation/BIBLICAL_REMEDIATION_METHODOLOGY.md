@@ -4,11 +4,7 @@
 already established. Read this before starting character-for-character remediation on any
 new book. Update it when a new lesson is learned or a new source is confirmed.
 
-**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** KJV and DRB
-fully verified clean. NRSV fully verified and corrected (389/1533 verses fixed). Rotherham
-not yet independently re-verified this pass. KJV prefix-pollution and NABRE heading-pollution
-(both certified fixed by Lucy on 2026-06-21, both confirmed still broken) remain open
-mechanical fixes.
+**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** KJV, DRB, NRSV, and NABRE all fully verified clean/corrected. Rotherham not yet independently re-verified this pass. KJV's prefix-pollution mechanical fix (certified fixed by Lucy, confirmed still broken) remains open.
 
 ---
 
@@ -42,7 +38,7 @@ this project — assume it's wrong until a landmark verse proves otherwise.
 | DRB | `janvier-s/original-douay-rheims` (GitHub) | `git clone`, USFM format, one file per book | Confirmed clean against Genesis, 1530/1530 exact. Strip `\f...\f*`, `\x...\x*`, `\sc`/`\sc*` markup |
 | NRSV | User-supplied SQLite (`NRSV-CI.SQLite3`, "Catholic Interconfessional," 1989, American spelling) | Provided directly by Josh | **No public legitimate source exists — copyrighted.** This file's own known-issues audit found no structural corruption; issues are canon-mapping/source-shape only, not text defects. `NRSVACE.SQLite3` (Anglicised Catholic Edition) was tried first and works for landmark-verse confirmation but is NOT a clean diff source — its own Catholic-edition editorial layer plus British spelling/idiom created too much false-positive noise (traced and explained, but NRSV-CI is a better primary source going forward) |
 | Rotherham | `documentation/rotherham-source-witness-intake.json` | URL + SHA256 witness already in this repo | Not yet used for an active diff this pass — do that first before trusting it further |
-| NABRE | **None found yet.** Copyrighted; will likely need a user-supplied source the same way NRSV did. | — | Flag this early for the next book if NABRE content needs verification beyond the known prefix/heading bugs |
+| NABRE | User-supplied JSON (`nabre.json`, 73-book file) | Provided directly by Josh | **No public legitimate source exists — copyrighted.** Unlike the NRSV sources, this one has the SAME chapter/section-heading pollution baked in as the app's own data — not directly diffable, but valuable for pattern-deriving (the source keeps a dash `"Chapter N - Title."` where the app dropped it, `"Chapter N Title."` — use the dash as an anchor to extract exact title text) and for content-verification once headers are stripped from both sides. Confirmed clean and complete for Genesis: no structural issues, real content once headers are stripped. |
 
 **SQL/JSON extraction pattern for the two NRSV SQLite sources:** `verses` table, columns
 `book_number, chapter, verse, text`. Strip inline markup before comparing: `<f>[n]</f>`
@@ -92,7 +88,15 @@ mismatches, confirm `git diff --stat` shows only the expected number of changed 
 edit artifacts — leftover markup, double-spacing, unbalanced quotes *within* a single verse
 specifically, not across verses since dialogue legitimately spans verse boundaries).
 
-## 5. Process notes
+## 5. When your own extraction/comparison tooling is doing pattern-matching, validate it against known-correct data before trusting its output
+
+Building an automated header-stripper or content-cleaner is itself a source of error, not just the underlying data. During the NABRE fix, a title-detection regex (built to recognize "Title Case phrase ending in a period" as a section heading) correctly caught 19 previously-undiscovered real defects — but also misfired on three verses that are genuine content, not headers (biblical name lists like "Ophir, Havilah and Jobab." that happen to read like a title). These false positives were only caught because they showed up as "mismatches" against the app's own already-correct text — which is itself the safeguard: **any tool that both cleans a reference and diffs against live data will surface its own false positives as apparent defects**, so long as every flagged mismatch is manually reviewed before being written, not just pattern-counted. Never trust a cleaning/extraction script's output at scale without spot-verifying the edge cases it flags against a source you already know is correct.
+
+## 6. Sources with the same defect as the app's own data are still useful — for pattern-deriving, not direct diffing
+
+The NABRE source Josh supplied had the identical chapter/section-heading pollution baked in as the app's own data (both apparently derived from the same underlying processing pipeline at some point). This made it useless for a direct line-by-line diff, but valuable in a different way: the source preserved a formatting detail (a dash: `"Chapter N - Title."`) that the app's data had dropped (`"Chapter N Title."`), which made the title boundary unambiguous in the source and let it be used to derive an extraction pattern applicable to the app's own data. When a source shares a known defect, look for what it *does* preserve that the target lost, rather than discarding it as unusable.
+
+## 7. Process notes
 
 - Always fetch a **fresh clone** at the start of a work session before assuming local state —
   patches from a prior session may not have been applied yet, and re-cloning is cheap insurance
