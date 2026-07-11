@@ -1334,11 +1334,25 @@ Ran a full diff of all 1,533 verses against the NRSV-ACE SQLite database Josh su
 
 **One specific finding stands well outside that ambiguity and needs priority attention: Genesis 42:34.** NRSV-ACE reads "...Then I will release your brother to you, and you may trade in the land." The app's stored NRSV text for this verse reads "...and your words will be verified, and you shall not die.' And they agreed to do so." **This is not a paraphrase or an edition variant — it reads as text belonging to a different verse** (it closely echoes wording from earlier in the same chapter, verse 20). This needs direct, dedicated investigation — checking whether this is an isolated verse-level data corruption or part of a larger pattern — before any fix is attempted.
 
+### NRSV — a second, trustworthy source arrives; reveals a much bigger finding than 42:34 alone
+
+Josh supplied a second NRSV source, `NRSV-CI.SQLite3` (New Revised Standard Version Catholic Interconfessional, 1989 copyright, American spelling and quote conventions) with its own pre-existing known-issues audit table. That table's own conclusion is worth recording plainly: "No structural corruption found... SQLite integrity passes; no duplicate verse keys, null text, orphan headings, or malformed paired tags." Its listed issues are source-shape/canon-mapping problems (footnote table missing, non-Catholic-73 book structure, some verse-key/printed-number mismatches in other books), not text corruption, and none of them touch Genesis specifically in a way that would compromise using it as a reference. Verified against three landmarks before trusting it: 1:1 matches the app exactly, verse count is 1,533 (matches), and it independently reconfirms both the correct 42:34 wording and the earlier-flagged 3:20 "mother of all living" phrasing (resolving that specific ambiguity in the app's favor — NRSV-ACE's "mother of all who live" was its own Anglicized-edition variant, not evidence of an app error).
+
+**Running the full diff surfaced something much bigger than the single 42:34 defect.** A first pass showed 600 raw mismatches; normalizing for `LORD`/`Lord` (small-caps convention) and straight-vs-curly apostrophes brought that to 374 — still far too many to be residual noise. Mapping quote-style and spelling convention chapter-by-chapter across the app's stored NRSV text revealed why:
+
+- **Chapters 1-23 and 42-49**: consistent, correct, double-quote-primary, American spelling throughout. Clean.
+- **Chapters 24-41**: contaminated with detectable British spelling (favour, savoury, quarrelled, fulfil, skilful, jewellery, and more — 33 verses with an unambiguous British-spelling marker) and inconsistent quote-nesting. **322 of the 374 total mismatches (86%) fall in this specific 18-chapter, 661-verse range — a ~49% mismatch rate within it**, versus a much lower, ordinary residual rate (52 mismatches across the other ~872 verses) everywhere else in the book.
+- **Chapter 50**: uses straight ASCII quotes instead of curly quotes throughout — a third, distinct anomaly, not yet diagnosed.
+
+**This reframes the NRSV picture entirely.** This is not "40-50 scattered differences needing verse-by-verse adjudication against a plain 1989 NRSV" as previously framed — it's a specific, identifiable 18-chapter range that appears to have been populated from a different (Anglicized-style) source at some point in this corpus's history, sitting inside an otherwise clean and accurate book. The 42:34 defect (chapter 42, outside this range) is confirmed to be a separate, unrelated problem — a single-verse content substitution, not part of this broader contamination.
+
+**Not yet understood:** why the mismatch rate within chapters 24-41 is ~49% rather than closer to 100% — a full source-swap for that range would predict near-total mismatch, not half. This needs investigation before assuming the mechanism (partial correction over time? alternating source per verse? something else?) rather than jumping straight to "replace the whole range."
+
 ### Open items, in priority order
 
 1. **Genesis 42:34** — investigate the apparent verse-content misalignment directly; do not assume it's isolated until checked.
 2. **~~Complete the DRB diff~~ — DONE, fully clean, see update above.**
-3. **Adjudicate the ~40-50 remaining NRSV differences** individually against a plain 1989 NRSV if one becomes available, since NRSV-ACE's own editorial layer means these can't be resolved from the ACE source alone.
+3. **Investigate the Genesis 24-41 contamination mechanism** before fixing it — understand why the mismatch rate is ~49% rather than near-100% for a clean source-swap, then decide the correct fix (verse-by-verse repair vs. range replacement from NRSV-CI). Also diagnose chapter 50's straight-quote anomaly.
 4. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk once prioritized.
 5. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
 
