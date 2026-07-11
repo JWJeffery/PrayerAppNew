@@ -3324,7 +3324,20 @@ async function renderBcpOffice() {
     // Gospel content is the same regardless of year and belongs in these plain
     // fields instead), then the fully generic single-reading field.
     const otherYear = litYear === 'year1' ? 'year2' : 'year1';
-    let morningOT      = dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot_mp']      || dailyData['reading_ot']      || '';
+
+    // Josh's decision, 2026-07-10: same toggle pattern as the EP alt below, but
+    // for a genuine Morning Prayer OT alternative (currently only Good Friday's
+    // "Wisdom 1:16-2:1,12-22, or Genesis 22:1-14" Year One reading, BCP p.956).
+    // Unlike the EP alt, this is NOT looked up across both years -- the
+    // alternate is tied to one specific year's own primary reading (Good
+    // Friday's Year Two OT, Lamentations, has no BCP alternate at all), so
+    // falling back to the other year's alt field here would wrongly show
+    // Genesis as a substitute for Lamentations, which the BCP never offers.
+    const altMpToggleId = dailyData?.alt_mp_toggle_id;
+    const useAltMp = altMpToggleId && (document.getElementById(`toggle-${altMpToggleId}-alt`)?.checked ?? false);
+
+    let morningOT      = (useAltMp && dailyData[`reading_ot_mp_alt_${litYear}`])
+                         || dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot_mp']      || dailyData['reading_ot']      || '';
     let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]  || dailyData[`reading_epistle_mp_${otherYear}`]  || dailyData['reading_epistle_mp']  || dailyData['reading_epistle']  || '';
     let morningGospel  = (gospelPlacement === 'morning' || gospelPlacement === 'both')
                          ? (dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_mp_${otherYear}`] || dailyData['reading_gospel_mp'] || dailyData['reading_gospel'] || '') : '';

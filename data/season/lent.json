@@ -874,7 +874,8 @@
     "reading_epistle_mp": "1 Peter 1:10-20",
     "reading_gospel_mp": "John 13:36-38",
     "reading_gospel_ep": "John 19:38-42",
-    "reading_ot_ep_alt_year1": "Genesis 22:1-14",
+    "alt_mp_toggle_id": "good-friday-mp",
+    "reading_ot_mp_alt_year1": "Genesis 22:1-14",
     "opening_sentence_override": "bcp-opening-holy-week"
   },
   {
