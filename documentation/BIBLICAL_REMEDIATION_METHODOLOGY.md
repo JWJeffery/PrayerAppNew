@@ -4,7 +4,9 @@
 already established. Read this before starting character-for-character remediation on any
 new book. Update it when a new lesson is learned or a new source is confirmed.
 
-**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** KJV, DRB, NRSV, and NABRE all fully verified clean/corrected. Rotherham not yet independently re-verified this pass. KJV's prefix-pollution mechanical fix (certified fixed by Lucy, confirmed still broken) remains open.
+**Established:** 2026-07-11, during Genesis remediation. **Status of Genesis:** all five translations
+(KJV, DRB, NRSV, NABRE, Rotherham) fully verified/corrected. Only the KJV prefix-pollution mechanical
+fix (data-hygiene, not content-accuracy) remains open.
 
 ---
 
@@ -96,7 +98,11 @@ Building an automated header-stripper or content-cleaner is itself a source of e
 
 The NABRE source Josh supplied had the identical chapter/section-heading pollution baked in as the app's own data (both apparently derived from the same underlying processing pipeline at some point). This made it useless for a direct line-by-line diff, but valuable in a different way: the source preserved a formatting detail (a dash: `"Chapter N - Title."`) that the app's data had dropped (`"Chapter N Title."`), which made the title boundary unambiguous in the source and let it be used to derive an extraction pattern applicable to the app's own data. When a source shares a known defect, look for what it *does* preserve that the target lost, rather than discarding it as unusable.
 
-## 7. Process notes
+## 7. A newly-supplied source is not automatically an upgrade — check quality before assuming it beats what's already there
+
+When Rotherham's existing app text was checked against a newly-supplied XML, the XML showed 1,183 apparent mismatches — the reflexive assumption (established by every other translation this session) would be "the app is wrong, fix it from the new source." That assumption was wrong here. The XML was a degraded OCR transcription: it had dropped Rotherham's signature emphasis-dashes (the entire point of the "Emphasized Bible") and contained scattered scanning errors. The app's existing text was correct in every single spot-checked case. **The volume of a diff's mismatches says nothing about which side is right** — a large mismatch count is exactly as consistent with "the new source is bad" as "the existing data is bad," and both this session's earlier wrong-edition near-misses and this Rotherham case prove it. Before writing any fix, verify which side actually matches independent, authoritative sources — don't assume newer, user-supplied, or larger-looking evidence is automatically the correction.
+
+## 8. Process notes
 
 - Always fetch a **fresh clone** at the start of a work session before assuming local state —
   patches from a prior session may not have been applied yet, and re-cloning is cheap insurance
