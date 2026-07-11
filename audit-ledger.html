@@ -82,6 +82,7 @@
 
   <h2>I. Biblical Corpus</h2>
   <p class="section-note">Lucy's certifications for NT, Psalms, and Deuterocanon are void per governance decision (2026-07-05). Nothing here is trusted until independently re-verified.</p>
+  <p class="section-note">INDEPENDENT RE-AUDIT, Installments 12-16 (2026-07-10), recovered and committed 2026-07-11 -- these five installments (Old Testament, New Testament, broader-canon, Odes subsystem, canon-profiles registry) were produced in a prior session but never committed to this repo; recovered from delivered .md files and independently spot-verified against live data before being trusted (Tobit 10:14's rawText anomaly, the psalms.json 155-entry shape, the Acts translationOverlays DRB content, both Korean-character verses, and the Roman Catholic canon-profile's real 73-entry count against its stale 2-entry index all confirmed exact on direct inspection). NOTE ON PROVENANCE: all five installments are headed "Prepared for: Lucy" and dated five days after her 2026-07-05 dismissal -- read as a stale template header carried forward without correction (the installments' own text explicitly states they're independent re-audits done at Josh's direction, not Lucy's work), not as evidence of compromised content, given everything spot-checked so far has been accurate. Full installment text preserved in AUDIT_GOVERNANCE_LEDGER.md. Headline results: NT is clean and uniformly governed (27/27 books, only 2 genuine unexplained verse-level gaps: Acts 23:26, James 1:8); OT protocanon+Psalms structurally clean, deuterocanon content-clean but 10-of-13 books ungoverned; broader-canon (46 files) structurally clean with 2 verses of embedded foreign-script corruption (3/7 Clement ET) and a live provenance question about the whole Clement/Qalēmentos series; the Odes subsystem is 4-of-5 genuinely incomplete (~6% for the Nine Odes) with the 5th (Odes of Solomon) a fully complete, unrelated text; the canon-profiles registry exists (was wrongly reported missing in three earlier installments) and is clean except one stale index count. <b>An unresolved tension was found, not resolved:</b> Installment 12 reports zero content defects across all 38 protocanon books, which directly contradicts this grid's pre-existing red flags for Genesis/Deuteronomy/2 Kings/Jeremiah ("severe: gaps predate recoverable git history") and 2 Chronicles/Isaiah (specific verse-sequence defects) -- left red rather than overwritten, since the two audits may have been checking for different failure modes. See each row's note. This needs direct reconciliation before any character-for-character remediation work proceeds on those six books.</p>
   <div id="bibleSection"></div>
 
   <h2>II. The Daily Office (1979 BCP)</h2>
@@ -156,26 +157,34 @@ const AR_BOOKS = ["3 Corinthians (AR)","Prayer of Apollonius (AR)"];
 const SY_BOOKS = ["Letter of Baruch (SY)"];
 const ODES_BOOKS = ["Armenian Canticles","Coptic Odes","EO Odes","Ethiopian Odes","Odes of Solomon (SY)"];
 
-const RED_SEED = new Set(["Genesis","Deuteronomy","2 Kings","Jeremiah","2 Chronicles","Isaiah","Wisdom","Sirach","Baruch"]);
+const RED_SEED = new Set(["Genesis","Deuteronomy","2 Kings","Jeremiah","2 Chronicles","Isaiah","Tobit","1 Clement (ET)","3 Clement (ET)","7 Clement (ET)"]);
+const GREEN_SEED = new Set(["Wisdom","Sirach","Baruch","Odes of Solomon (SY)"]);
 const RED_NOTES = {
-  "Genesis":"severe: gaps predate recoverable git history",
-  "Deuteronomy":"severe: gaps predate recoverable git history",
-  "2 Kings":"severe: gaps predate recoverable git history",
-  "Jeremiah":"severe: gaps predate recoverable git history",
-  "2 Chronicles":"ch.9 missing v9 + extra terminal v32 — needs sequence adjudication",
-  "Isaiah":"ch.25 missing v9 + extra terminal v13 — needs sequence adjudication",
-  "Wisdom":"severe, found 2026-07-10: every chapter.num is null in data/bible/OT/wisdom.json (19 chapters) — no citation from this book can resolve at all, confirmed even for plain single-chapter references, not just the cross-chapter ones that surfaced it. Renders as \"[Wisdom N unavailable]\" everywhere it's cited in the DOL.",
-  "Sirach":"severe, found 2026-07-10: same defect as Wisdom — every chapter.num is null in data/bible/OT/sirach.json (51 chapters). Same total-unavailability result for every Sirach/Ecclesiasticus citation in the DOL.",
-  "Baruch":"severe, found 2026-07-10: same defect as Wisdom — every chapter.num is null in data/bible/OT/baruch.json (5 chapters). Same total-unavailability result for every Baruch citation in the DOL."
+  "Genesis":"UNRESOLVED TENSION, flagged not resolved 2026-07-11: this row's original claim (\"severe: gaps predate recoverable git history\") is directly contradicted by the independent re-audit's Installment 12 (2026-07-10), which checked all 38 protocanon books programmatically (chapter-count accuracy, verse-integrity, duplicate/empty-verse detection) and reported \"38/38 match their canonical chapter count exactly. Zero mismatches\" with no exceptions named for Genesis. Both claims are independently spot-verifiable and neither has been re-checked against the other yet. Left red rather than green because the original claim was specific enough (named git-history unrecoverability) that it shouldn't be silently overwritten by a differently-scoped check -- Installment 12's method (sequential CHAPTER numbering, not verse-number sequence within a chapter) may not have been designed to catch this row's specific failure mode (skipped/missing verse numbers within an otherwise structurally sound chapter). Needs direct reconciliation before either claim is trusted: pick one specific citation this row's original finding was based on and re-check it by hand.",
+  "Deuteronomy":"Same unresolved tension as Genesis above -- see that row's note. Installment 12 reports zero mismatches for all 38 protocanon books with no Deuteronomy exception named.",
+  "2 Kings":"Same unresolved tension as Genesis above -- see that row's note. Installment 12 reports zero mismatches for all 38 protocanon books with no 2 Kings exception named.",
+  "Jeremiah":"Same unresolved tension as Genesis above -- see that row's note. Installment 12 reports zero mismatches for all 38 protocanon books with no Jeremiah exception named.",
+  "2 Chronicles":"Same unresolved tension as Genesis above: this row's specific claim (ch.9 missing v9 + extra terminal v32) is a verse-sequence-within-chapter defect, which Installment 12's stated method (checks chapter-count accuracy and duplicate/empty verses, not explicitly verse-number sequence gaps within a chapter) may or may not have been positioned to catch -- Installment 12 named no 2 Chronicles exception, but its own method description doesn't clearly claim to test this exact failure mode either way. Needs direct reconciliation, not assumed resolved.",
+  "Isaiah":"Same unresolved tension as Genesis above -- see 2 Chronicles' note for the reasoning. This row's specific claim (ch.25 missing v9 + extra terminal v13) needs direct re-verification against live data before trusting either the original flag or Installment 12's silence on it.",
+  "Tobit":"NEW FINDING, Installment 12 (2026-07-10), independently spot-verified 2026-07-11: Tobit 10:14 stores its text under a bare `rawText` key instead of a named translation (NRSV/KJV/DRB/NABRE), unlike its 298 sibling verses in the same file. Does not currently break rendering (scripture-resolver.js falls back to the first available string-valued key), but the verse is effectively untranslatable-by-name -- requesting it in any specific translation silently returns rawText instead, with no way to detect this from the citation alone. Low-risk, single-verse fix: attribute the existing text to whichever translation it actually is. Confirmed present in data/bible/OT/tobit.json by direct inspection, exact text matches the installment's quote.",
+  "1 Clement (ET)":"See 3/7 Clement (ET) note -- part of the same file family under active provenance question, not itself confirmed corrupted, but grouped red pending the Clement-series provenance question (Installment 14 §7): is this an authentic Ethiopic Qalēmentos tradition or content composed for this project? Not asserted as fabrication, but not independently source-verifiable from content alone either.",
+  "3 Clement (ET)":"NEW FINDING, Installment 14 (2026-07-10), independently spot-verified 2026-07-11 by direct grep: chapter 2 verse 4 has a Korean character (그, \"that\"/\"the\") embedded mid-sentence in otherwise-English prose (\"...From 그 day, he shall be the father of the orphans...\"), confirmed present verbatim in data/bible/ET/3clementET.json. Reads as a text-generation artifact. Isolated to this one verse plus 7 Clement 3:1 (only 2 hits across a 46-file scan) -- not systemic, but real, and raises an open provenance question about the whole Clement/Qalēmentos series (see Installment 14 §7) that hasn't been answered.",
+  "7 Clement (ET)":"NEW FINDING, Installment 14 (2026-07-10), independently spot-verified 2026-07-11 by direct grep: chapter 3 verse 1 has the same Korean character (그) embedded mid-sentence (\"...In 그 day, the saints shall be clothed...\"), confirmed present verbatim in data/bible/ET/7clementET.json. See 3 Clement (ET)'s note for full detail -- same artifact, same open provenance question."
+};
+const GREEN_NOTES = {
+  "Wisdom":"RESOLVED 2026-07-10/11, two independent methods agree: (1) the chapter.num-null defect that made this book fully unresolvable was fixed as part of the broader 11-book number→num schema fix (commit 9557ce5), confirmed via live resolver test (commit c68480d). (2) Installment 12's independent re-audit (built without reading that fix) separately reports Wisdom's 19 chapters/442 verses as structurally clean -- zero empty verses, zero duplicate verse numbers -- checked fresh from live data. Both checks converging independently is real confirmation, not restated assumption. Governance metadata (defaultTranslation/canon/versification) still absent -- a completeness gap, not a content defect, tracked separately.",
+  "Sirach":"RESOLVED, same two-method confirmation as Wisdom above. Additionally: Sirach is the only deuterocanon book in Installment 12's audit with FULL governance metadata already present (defaultTranslation: NRSV, canon: OT, versification: deuterocanonical_chapter_verse) -- ahead of the rest of its track on that front, not just content-clean.",
+  "Baruch":"RESOLVED, same two-method confirmation as Wisdom above (5 chapters/141 verses, zero empty/duplicate). Governance metadata still absent, tracked as a completeness gap alongside the other 9 ungoverned deuterocanon books.",
+  "Odes of Solomon (SY)":"CONFIRMED COMPLETE, Installment 15 (2026-07-10): despite sharing a folder and naming convention with 4 unrelated, genuinely-incomplete liturgical-canticle stub files (Armenian Canticles, Coptic Odes, EO Odes, Ethiopian Odes -- all still amber/incomplete, ~6% populated for the Nine Odes specifically), this is a distinct, separate ancient text (the 2nd-century Odes of Solomon) and is fully populated: 42 odes, 522 verses, real substantive content throughout, plus the only ODES file carrying source/status governance metadata (\"Nuhra Version 2021\"). Do not read this as evidence the other 4 ODES files are also complete -- they are not."
 };
 
 function makeBooks(list, corpus){
-  return list.map(name => ({
-    key: corpus+':'+name,
-    name,
-    status: RED_SEED.has(name) ? 'red' : 'amber',
-    note: RED_NOTES[name] || ''
-  }));
+  return list.map(name => {
+    let status = 'amber', note = '';
+    if (RED_SEED.has(name)) { status = 'red'; note = RED_NOTES[name] || ''; }
+    else if (GREEN_SEED.has(name)) { status = 'green'; note = GREEN_NOTES[name] || ''; }
+    return { key: corpus+':'+name, name, status, note };
+  });
 }
 
 // Daily Office Lectionary — audit progress by season file (data/season/*.json).
@@ -488,7 +497,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v81-2026-07-10-ordinary123-merged-to-single-file';
+const SEED_VERSION = 'v82-2026-07-11-biblical-corpus-installments-12-16-recovered';
 
 async function checkSeedVersion(){
   let storedValue = null;
