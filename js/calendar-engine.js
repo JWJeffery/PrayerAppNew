@@ -357,6 +357,15 @@ class CalendarEngine {
         const iso = this.formatDateISO(targetDate);
         const mmdd = iso.slice(5);
         const longNoYear = this.formatDateForLookup(targetDate).replace(/,\s*\d{4}$/, '').trim();
+        return this._findFixedMonthDayEntryByMmdd(mmdd, longNoYear);
+    }
+
+    static async _findFixedMonthDayEntryByMmdd(mmdd, longNoYear = null) {
+        // Same lookup as _findFixedMonthDayEntry, but keyed directly by an
+        // explicit "MM-DD" string rather than derived from a target date --
+        // needed for the Holy-Week/Easter-Week transfer logic below, where the
+        // day being looked up (the feast's ORIGINAL fixed date) is different
+        // from the date actually being rendered (the transferred date).
         const filesToCheck = ['advent.json', 'christmas.json', 'epiphany.json', 'lent.json', 'easter.json',
                                'ordinary1.json', 'ordinary2.json', 'ordinary3.json'];
         for (const f of filesToCheck) {
@@ -364,9 +373,104 @@ class CalendarEngine {
             if (!data) continue;
             const match = data.find(d => d.fixed_month_day && d.date &&
                 ((d.date.length === 10 && d.date.slice(5) === mmdd) ||
-                 d.date.replace(/,\s*\d{4}$/, '').trim() === longNoYear));
+                 (longNoYear && d.date.replace(/,\s*\d{4}$/, '').trim() === longNoYear)));
             if (match) return match;
         }
+        return null;
+    }
+
+    // ── Holy Week / Easter Week fixed-Holy-Day transfer (BCP p.17) ──────────────
+    // "Feasts appointed on fixed days in the Calendar are not observed on the
+    // days of Holy Week or of Easter Week. Major Feasts falling in these weeks
+    // are transferred to the week following the Second Sunday of Easter, in the
+    // order of their occurrence."
+    //
+    // Checked empirically 2026-07-10 against every possible Easter date
+    // (Easter's valid range is March 22 - April 25): of the ~23 fixed-date Holy
+    // Days in the app, exactly four ever fall close enough to collide --
+    // Saint Joseph (Mar 19), the Annunciation (Mar 25), Saint Mark (Apr 25),
+    // and Saints Philip & James (May 1). This is NOT a rare edge case the way
+    // the Visitation/Trinity Sunday collision is: a 100-year sweep (2024-2123)
+    // found the Annunciation colliding in 39 of 100 years, and the Annunciation
+    // landing on Easter Day itself (a Principal Feast, which must always win)
+    // in exactly 3 of those (2035, 2046, 2103). Saint Joseph and the
+    // Annunciation can also collide in the SAME year (both fall in Holy Week
+    // together, e.g. 2062), as can Saint Mark and Philip & James (both fall in
+    // Easter Week together when Easter is April 25, e.g. 2038) -- so the
+    // transfer logic must support stacking more than one feast in the same
+    // destination week, in the order they'd have originally occurred.
+    static get FIXED_HOLY_DAYS_NEAR_EASTER() {
+        return [
+            { id: 'saint-joseph',     month: 3, day: 19 },
+            { id: 'annunciation',     month: 3, day: 25 },
+            { id: 'saint-mark',       month: 4, day: 25 },
+            { id: 'philip-and-james', month: 5, day: 1  },
+        ];
+    }
+
+    static _sameCalendarDate(a, b) {
+        return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    static _getHolyWeekEasterWeekTransfers(year) {
+        const easter        = this._getEaster(year);
+        const palmSunday     = this._addDays(easter, -7);
+        const easterSaturday = this._addDays(easter, 6);
+        const colliding = [];
+        for (const feast of this.FIXED_HOLY_DAYS_NEAR_EASTER) {
+            const fixedDate = new Date(year, feast.month - 1, feast.day);
+            if (fixedDate >= palmSunday && fixedDate <= easterSaturday) {
+                colliding.push({ id: feast.id, month: feast.month, day: feast.day, originalDate: fixedDate });
+            }
+        }
+        // "In the order of their occurrence" -- chronological by original date.
+        colliding.sort((a, b) => a.originalDate - b.originalDate);
+        // "The week following the Second Sunday of Easter" -- 2 Easter Sunday
+        // is Easter+14, so that week's own Monday is Easter+15.
+        let transferDay = this._addDays(easter, 15);
+        const transfers = {};
+        for (const c of colliding) {
+            transfers[c.id] = { originalDate: c.originalDate, transferredDate: transferDay, month: c.month, day: c.day };
+            transferDay = this._addDays(transferDay, 1);
+        }
+        return transfers;
+    }
+
+    static async _resolveFixedHolyDayNearEaster(targetDate) {
+        const year = targetDate.getFullYear();
+        const transfers = this._getHolyWeekEasterWeekTransfers(year);
+
+        // Case 1: targetDate is a TRANSFERRED-TO date this year -- return the
+        // colliding feast's own entry (looked up by its original month/day,
+        // since the transferred date obviously won't match that literally).
+        // Some entries store their date in ISO form ("2026-04-25"), others in
+        // long form ("March 19, 2026") -- build both lookup keys from the
+        // feast's actual original date rather than assuming either format.
+        for (const feastId of Object.keys(transfers)) {
+            const t = transfers[feastId];
+            if (this._sameCalendarDate(targetDate, t.transferredDate)) {
+                const mmdd = `${String(t.month).padStart(2, '0')}-${String(t.day).padStart(2, '0')}`;
+                const longNoYear = this.formatDateForLookup(t.originalDate).replace(/,\s*\d{4}$/, '').trim();
+                const entry = await this._findFixedMonthDayEntryByMmdd(mmdd, longNoYear);
+                if (entry) return entry;
+            }
+        }
+
+        // Case 2: targetDate is the feast's ORIGINAL fixed date, but this
+        // year it's one of the colliding entries transferred elsewhere --
+        // signal suppression (with the month/day so the caller can filter it
+        // out of the normal season file too -- see fetchLectionaryData) so it
+        // doesn't render on its usual date; the caller falls through to
+        // normal Holy-Week/Easter-Week season content instead (the same
+        // weekday/day-of-season data everyone else uses).
+        for (const feast of this.FIXED_HOLY_DAYS_NEAR_EASTER) {
+            if (!transfers[feast.id]) continue;
+            const fixedThisYear = new Date(year, feast.month - 1, feast.day);
+            if (this._sameCalendarDate(targetDate, fixedThisYear)) {
+                return { suppress: true, month: feast.month, day: feast.day };
+            }
+        }
+
         return null;
     }
 
@@ -388,14 +492,37 @@ class CalendarEngine {
             }
         }
 
-        // Fixed-date Holy Days, checked across all season files (see
-        // _findFixedMonthDayEntry) before any season-specific routing, since
-        // their actual file doesn't always match the one getSeasonAndFile picks
-        // for their civil date in a given year.
-        const holyDayMatch = await this._findFixedMonthDayEntry(targetDate);
-        if (holyDayMatch) {
-            console.log(`[Calendar Engine] Fixed-month-day match for ${this.formatDateISO(targetDate)}`);
-            return holyDayMatch;
+        // Holy Week / Easter Week fixed-Holy-Day transfer (BCP p.17) -- checked
+        // before the general fixed-month-day match below, since it needs to
+        // either redirect a transferred-to date to the colliding feast's entry,
+        // or suppress the feast's own literal date in a colliding year (letting
+        // it fall through to normal season content instead). See
+        // _resolveFixedHolyDayNearEaster for the full rule and its scope.
+        let suppressedMonthDay = null;
+        const nearEasterResult = await this._resolveFixedHolyDayNearEaster(targetDate);
+        if (nearEasterResult && nearEasterResult.suppress) {
+            console.log(`[Calendar Engine] Fixed Holy Day suppressed (Holy Week/Easter Week transfer) for ${this.formatDateISO(targetDate)}`);
+            // Unlike the Visitation, these feasts often live in the SAME file
+            // getSeasonAndFile() would naturally pick for this date (e.g. Saint
+            // Joseph sits inside lent.json, and this date genuinely falls in
+            // Lent) -- so findEntry()'s own Priority 1.5 fixed-month-day check
+            // would otherwise re-discover and re-render the very entry just
+            // suppressed. Carry the month/day forward so it can be filtered out
+            // of whichever file's data actually reaches findEntry below.
+            suppressedMonthDay = { month: nearEasterResult.month, day: nearEasterResult.day };
+        } else if (nearEasterResult) {
+            console.log(`[Calendar Engine] Holy Week/Easter Week transfer match for ${this.formatDateISO(targetDate)}`);
+            return nearEasterResult;
+        } else {
+            // Fixed-date Holy Days, checked across all season files (see
+            // _findFixedMonthDayEntry) before any season-specific routing, since
+            // their actual file doesn't always match the one getSeasonAndFile picks
+            // for their civil date in a given year.
+            const holyDayMatch = await this._findFixedMonthDayEntry(targetDate);
+            if (holyDayMatch) {
+                console.log(`[Calendar Engine] Fixed-month-day match for ${this.formatDateISO(targetDate)}`);
+                return holyDayMatch;
+            }
         }
 
         const { file, season } = this.getSeasonAndFile(targetDate);
@@ -436,8 +563,24 @@ class CalendarEngine {
             }
         }
 
+        const filterSuppressed = (data) => {
+            if (!suppressedMonthDay || !data) return data;
+            const mm = String(suppressedMonthDay.month).padStart(2, '0');
+            const dd = String(suppressedMonthDay.day).padStart(2, '0');
+            const mmdd = `${mm}-${dd}`;
+            return data.filter(d => {
+                if (!d.fixed_month_day || !d.date) return true;
+                const dIso = d.date.length === 10 ? d.date.slice(5) : null;
+                if (dIso === mmdd) return false;
+                const dLongMonth = new Date(2000, suppressedMonthDay.month - 1, 1).toLocaleDateString('en-US', { month: 'long' });
+                const dLongNoYear = d.date.replace(/,\s*\d{4}$/, '').trim();
+                if (dLongNoYear === `${dLongMonth} ${suppressedMonthDay.day}`) return false;
+                return true;
+            });
+        };
+
         if (this.seasonalCache[file]) {
-            return this.findEntry(this.seasonalCache[file], targetDate, file);
+            return this.findEntry(filterSuppressed(this.seasonalCache[file]), targetDate, file);
         }
 
         try {
@@ -445,7 +588,7 @@ class CalendarEngine {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
             this.seasonalCache[file] = data;
-            return this.findEntry(data, targetDate, file);
+            return this.findEntry(filterSuppressed(data), targetDate, file);
         } catch (err) {
             console.error(`[Calendar Engine] Error loading ${file}:`, err);
             return { title: "Error loading data" };
