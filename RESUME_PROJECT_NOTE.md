@@ -1,7 +1,39 @@
+> ## ⚠️ CRITICAL — READ THIS FIRST, EVERY TIME
+>
+> **This file is currently 700+ lines. Your `view` tool truncates from the middle at ~16,000
+> characters. If you use `view` on this file without an explicit full-range check, you WILL get
+> a truncated/summarized version and WILL miss content — this has already caused real mistakes
+> in this project (a resume note was twice characterized as stale or current based on only
+> reading its head or a partial view, and both times the characterization was wrong).**
+>
+> **Before saying anything about this file's contents, staleness, or what's "left to do,"
+> actually read the whole thing:**
+> ```
+> wc -l RESUME_PROJECT_NOTE.md
+> ```
+> then read it in full via `sed -n 'START,ENDp' RESUME_PROJECT_NOTE.md` in chunks (e.g. 150-200
+> lines at a time) via the bash tool, covering every line from 1 to the total — not the `view`
+> tool on this file, and not just the first chunk. Confirm you've reached the actual last line
+> before concluding anything.
+>
+> **This file is a chronological, append-only log, not a single current-status snapshot.**
+> Earlier sections (including ones that say "DONE" or "COMPLETE") were true when written but may
+> have been superseded by later corrections — this file corrects its own earlier claims in place
+> more than once. **The LAST dated section is always the authoritative current status.** Don't
+> stop reading partway through and assume an earlier "DONE" is still the whole truth — always
+> read to the actual end.
+>
+> **Before trusting any commit hash, `SEED_VERSION`, or "current state" claim anywhere in this
+> file — including in this critical note by the time you're reading it — run `git log --oneline
+> -5` against a fresh clone and check what's *actually* on `origin/main`.** Patches described as
+> "delivered" or "pending" in this file may or may not have actually been applied by the time you
+> read this; never assume.
 
-## Pending work (as of 2026-07-06, after DOL session recovery)
+---
 
-For full session history and consolidated workflow practices, see `AUDIT_GOVERNANCE_LEDGER.md` — particularly "Standing Workflow Practices," "Recovery, 2026-07-06," and the DOL-related entries from that date. This note covers only what's actually left to do.
+## Project resume log (chronological — Anglican/BCP Daily Office work 2026-07-06 through 2026-07-10, Biblical Corpus remediation 2026-07-10 onward)
+
+For full session history and consolidated workflow practices, see `AUDIT_GOVERNANCE_LEDGER.md` — particularly "Standing Workflow Practices," "Recovery, 2026-07-06," and the DOL-related entries from that date. This note covers what's actually left to do, plus enough historical detail to avoid re-deriving already-settled findings — but per the critical note above, always read to the actual end for current status, don't stop at an early "COMPLETE."
 
 ### 1. Collects audit — COMPLETE
 
@@ -721,3 +753,5 @@ First real word-for-word verification work (distinct from Installments 12-16's s
 **Immediate next steps:** Genesis is closed, zero known open defects. Move to the next book in sequence (Exodus). Note: Lucy is separately converting Alexander Campbell's "The Living Oracles" from XML to JSON as a side project, into separate files for review before incorporation — treat with the same verify-before-trust discipline as everything else in this ledger when it arrives.
 
 **Standing rule going forward, from Josh directly:** a book does not count as "done" or "green" while any known problem — however minor, however well-documented — remains unfixed. Full verification coverage with an open item is not the same as clean.
+
+**Verify before trusting the "Genesis is closed" claim above.** As of this note being written, `origin/main` was confirmed (via fresh clone) to be at commit `59aaa82`, which does NOT yet include the KJV prefix fix or Genesis's move to green — that work is committed locally and delivered to Josh as a patch, but not yet confirmed applied. **Run `git log --oneline -5` against a fresh clone before assuming Genesis is actually green on the live repo.** If the KJV-fix commit isn't there, that patch (or a freshly regenerated equivalent, using the ledger's "KJV prefix-pollution — fixed" entry as the specification) is the very next thing to apply.
