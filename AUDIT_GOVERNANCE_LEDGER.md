@@ -1348,13 +1348,22 @@ Josh supplied a second NRSV source, `NRSV-CI.SQLite3` (New Revised Standard Vers
 
 **Not yet understood:** why the mismatch rate within chapters 24-41 is ~49% rather than closer to 100% — a full source-swap for that range would predict near-total mismatch, not half. This needs investigation before assuming the mechanism (partial correction over time? alternating source per verse? something else?) rather than jumping straight to "replace the whole range."
 
+### NRSV — fixed. Full replacement from verified source, not verse-by-verse patching
+
+Josh's direction: "I don't care how it happens, I just want it accurate." Given a fully verified, trustworthy source was now in hand (NRSV-CI — matches exactly everywhere the app's text was already correct, and independently confirms correct wording everywhere it wasn't), the most reliable fix wasn't to chase down the mechanism behind the chapters 24-41 contamination or hand-patch each flagged verse — it was to replace the entire NRSV column for Genesis with verified-correct text, guaranteeing accuracy regardless of cause.
+
+Method: extracted all 1,533 verses from NRSV-CI, stripped inline markup (`<f>`, `<pb/>`, `<t>`), then converted to the app's own established conventions rather than copying the source verbatim — `LORD` → `Lord`, straight apostrophes/quotes → curly, matching the ~1,144 verses that were already correct so the whole book reads consistently. Compared against the app's current text and replaced only the verses that actually differed.
+
+**Result: 389 verses corrected, 1,144 left untouched (already correct).** `git diff --stat` confirms exactly 389 lines changed, 389 removed — a surgical edit touching only the `NRSV` text field of the affected verses, nothing else in the file. Re-ran the full diff against NRSV-CI after the edit: **zero remaining mismatches across all 1,533 verses.** Checked for edit artifacts (leftover markup, double-spacing): zero found. The chapters 24-41 contamination, the isolated 42:34 substitution, and chapter 50's straight-quote anomaly are all resolved as a side effect of the same pass — their specific mechanisms remain uninvestigated (not needed once the correct text was in hand), but that's an acceptable trade Josh explicitly authorized.
+
+**NRSV is now fully verified and corrected for Genesis**, alongside KJV and DRB (both already clean). Three of five translations complete.
+
 ### Open items, in priority order
 
-1. **Genesis 42:34** — investigate the apparent verse-content misalignment directly; do not assume it's isolated until checked.
-2. **~~Complete the DRB diff~~ — DONE, fully clean, see update above.**
-3. **Investigate the Genesis 24-41 contamination mechanism** before fixing it — understand why the mismatch rate is ~49% rather than near-100% for a clean source-swap, then decide the correct fix (verse-by-verse repair vs. range replacement from NRSV-CI). Also diagnose chapter 50's straight-quote anomaly.
-4. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk once prioritized.
-5. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
+1. **The KJV prefix-pollution and NABRE heading-pollution fixes** — both are well-understood, bounded, mechanical fixes (strip a known pattern) now that the underlying text content itself has been confirmed accurate. Low-risk, ready to go.
+2. **Rotherham** — the fifth translation, not yet independently re-verified this session (an established witness exists in this repo but hasn't been re-checked against live data the way KJV/DRB/NRSV were).
+3. Then: NT, ET/AR/SY/Odes corpora, per the standing sequence.
+4. **Genesis is otherwise fully character-for-character verified**: KJV clean, DRB clean, NRSV clean and corrected. Ready to move to the next book once Rotherham and the two mechanical fixes are handled.
 
 ### Resolution of the previously-flagged Genesis structural tension
 
