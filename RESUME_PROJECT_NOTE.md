@@ -656,3 +656,15 @@ The cross-file Holy Day fix has a side effect worth being honest about: **Annunc
 **Closed:** the core architectural defect (Ordinary Time addressing is now genuinely correct for any year, not just 2026), all 16 data gaps it surfaced, and the Holy Day season-boundary gap it also surfaced.
 
 **Still open:** the Annunciation/Easter Day collision (documented above); whether any of the *other* fixed-date Holy Days have a similarly-unresolved conditional-transfer need beyond the Visitation (not systematically checked — the Annunciation case was found incidentally, not from an exhaustive review of all 23).
+
+## Backlog item, added 2026-07-10 — investigate the ordinary1/2/3.json file split, once all other 1979 BCP Daily Office corrections are done
+
+Josh's instruction: once every other correction to the 1979 BCP Daily Office is complete, investigate whether the current `ordinary1.json`/`ordinary2.json`/`ordinary3.json` three-way split is still the best way to serve this data. Context from Josh: the original split wasn't an architectural decision made for this app's own sake -- it was a workaround because Gemini (a different AI, in an earlier phase of this project) was struggling with a single `ordinary.json` file's size.
+
+**Worth weighing when this comes up:**
+- Whether a single-file (or differently-partitioned) structure would actually be worse now that today's Ordinary Time redesign already searches across all three files for every single date lookup (`fetchLectionaryData`'s Proper-based routing loops `ordinary1.json`/`ordinary2.json`/`ordinary3.json` looking for a `proper_number`/`weekday` match) -- the three-way split may no longer be buying anything functionally, now that lookups aren't confined to "whichever file the date naturally falls in" the way they were before.
+- Whether splitting by Proper number instead of civil date (i.e., "Propers 1-10," "Propers 11-20," "Propers 21-29" or similar) would be a more natural fit for the new Proper-anchored addressing scheme than the current Aug1/Oct1 civil-date boundaries, which were chosen for the old day_of_season-offset scheme and don't obviously map to anything meaningful under the new one.
+- Whether file size is even a real constraint worth designing around anymore, or whether that was specific to whatever tooling/model was in use at the time the split was made -- worth checking current file sizes against whatever the actual constraint is now, rather than assuming the original reason still applies.
+- Any performance cost of the new cross-file search patterns added today (Proper-based Ordinary Time routing, the general `_findFixedMonthDayEntry` cross-file Holy Day search) -- likely negligible given `_loadSeasonFile`'s caching, but worth confirming rather than assuming.
+
+Not investigated yet -- flagged for later per Josh's explicit sequencing (after all other Daily Office corrections are done).
