@@ -117,3 +117,38 @@ Josh's direct correction, applied to Genesis on 2026-07-11: full character-for-c
   time and losing track of what's actually pending vs. applied upstream.
 - `git diff --stat` after any content fix is a cheap, valuable sanity check — the number of
   changed lines should match the number of verses you intended to change, no more, no less.
+
+## 10. Efficiency, without loosening accuracy
+
+Genesis established *how* to verify correctly. This section is about not re-paying that same
+cost on every one of the ~70 remaining books. None of this relaxes anything in §1-9 — it's
+about not redoing already-solved problems, not about checking less carefully.
+
+**One reusable, parametrized script per translation, not bespoke logic per book.** Genesis's
+extraction/normalization/diff logic for KJV, DRB, NRSV, and NABRE is proven and stable now. The
+expensive part was designing and validating that logic once (§5's tooling-validation discipline
+still applies in full) — writing it as a single script per translation that takes a book name
+as a parameter, rather than hand-building comparison code fresh for each book, turns "~70 books
+× 4-5 translations" into "4-5 scripts, run ~70 times." Re-validate a script against a
+known-clean book before trusting its output on a new one, but don't rederive the approach itself
+each time.
+
+**Triage by risk before defaulting to Genesis-level scrutiny everywhere.** Installment 12
+already claims most OT protocanon is structurally clean at the chapter/verse-shape level.
+That's not the same as character-for-character clean, so it doesn't excuse skipping
+verification — but it's a reason to run the scripted diff first and let its result set the
+depth of manual review: a book that comes back clean after the scripted diff plus a couple of
+landmark-verse spot-checks doesn't need the same hand-per-verse scrutiny Genesis got when real
+contamination was found. Full manual depth stays reserved for books where the diff surfaces
+real mismatches, or where a prior flag already exists (see next item).
+
+**Resolve the Installment 12 vs. dashboard contradiction before, not during, remediation of the
+six affected books.** Genesis/Deuteronomy/2 Kings/Jeremiah/2 Chronicles/Isaiah currently have
+two disagreeing claims on record (Installment 12's "zero mismatches" vs. the dashboard's older
+red flags). Reconciling which claim is right is a one-time cost; starting character-for-character
+work on any of those six without resolving it first risks doing the work twice.
+
+**Push after every book, not batched across several.** Already a standing rule elsewhere in this
+project (git state / handoff sections of `RESUME_PROJECT_NOTE.md`); restated here because it's
+also an efficiency matter, not just a safety one — recovering lost work costs far more time than
+committing small and often.
