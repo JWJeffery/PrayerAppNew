@@ -673,3 +673,28 @@ Josh's instruction: once every other correction to the 1979 BCP Daily Office is 
 **Verified by snapshot diff, not just by re-running the existing test suites:** captured `fetchLectionaryData`'s output (title, date, day_of_season, proper_number, weekday, moveable_id, psalms) for all 10,958 dates from 2024-2053 *before* touching any code, made the changes, then re-captured the identical range and diffed. **Zero differences.** This confirms the merge is a true behavior-preserving refactor, not just "no errors" -- every single date resolves to exactly the same content as before.
 
 Dashboard: the three "Ordinary 1/2/3" rows consolidated into one "Ordinary Time" row. `SEED_VERSION` bumped to v81.
+
+## Session, 2026-07-10 continued — Good Friday MP alt and Easter Day EP alts wired (commit 040f085)
+
+Two BCP-genuine "or" alternatives that existed as data but were never actually reachable through any toggle:
+
+- **Good Friday** (BCP p.956): the Year-One-only alternate Morning Prayer OT reading (Wisdom 1:16-2:1,12-22, *or* Genesis 22:1-14) had been misfiled as an evening-alt field (`reading_ot_ep_alt_year1`) and wasn't wired to anything. Moved to `reading_ot_mp_alt_year1`; added a general `alt_mp_toggle_id` mechanism to `js/office-ui.js` (mirrors the existing EP-alt pattern) with a new checkbox `toggle-good-friday-mp-alt`. Deliberately no cross-year fallback — Year Two's Lamentations reading has no BCP alternate at all.
+- **Easter Day** (BCP pp.958-959): two real alternatives — the Evening Gospel (Luke 24:13-35 *or* John 20:19-23) and the Evening Psalms (113 & 114, *or* 118 alone). The Gospel alt was stored under a bare key office-ui.js's lookup never matched; renamed to `reading_gospel_ep_alt_year1/year2`. The Psalms had been flattened into one list of all three numbers, losing the alternative structure — split into primary (113, 114) and `psalms_ep_alt` (118). Both wired to a new `alt_ep_toggle_id` (`easter-day-ep`), reusing the mechanism already built for St. Mary the Virgin/Michaelmas, with checkbox `toggle-easter-day-ep-alt`.
+
+Verified with an isolated logic simulation before/after: toggle off preserves prior default exactly; toggle on surfaces the correct alternate(s); Good Friday's Year Two confirmed unaffected either way. Dashboard notes (Lent, Easter rows) updated. `SEED_VERSION` bumped to v78.
+
+## Session, 2026-07-10 continued — Wisdom/Baruch/Sirach dashboard status corrected: they resolve fine now (commit c68480d)
+
+The dashboard's `scripture-resolver.js` row was still amber over the `chapter.num`-is-null defect documented earlier this session. Re-checked directly against current data rather than trusting the old note: `chapter.num` is populated correctly in all three files (19/19 Wisdom, 51/51 Sirach, 5/5 Baruch chapters — this was fixed as part of the broader 11-book `number`→`num` schema fix earlier the same day, commit `9557ce5`, but the dashboard row was never updated to reflect it). Live resolver test against the previously-failing citations (Wisdom 1:1-15, Ecclesiasticus 43:1-12,27-33, Baruch 3:24-37) returns correct text for all three. Row moved to green. `SEED_VERSION` bumped to v80.
+
+**Note: this does NOT mean Wisdom/Sirach/Baruch's *content* has been verified against source** — it means the resolver can now reach and return their text at all. The Biblical Corpus dashboard grid (`audit-ledger.html`, section I) still shows them RED with the stale null-chapter note, which needs updating separately — that grid tracks content accuracy, not resolver reachability, and hasn't been touched by this fix.
+
+## Where things actually stand right now, 2026-07-10 — end of session
+
+**The Daily Office (1979 BCP) engine work is done.** All three severe defects found in the 07-10 engine survey are fixed (findEntry priority order, cross-chapter citation parsing, day_of_season off-by-2). The Ordinary Time addressing scheme has been rebuilt properly (Proper-anchored, correct for any year). The three-file split is gone — single `data/season/ordinary.json`. The Holy Week/Easter Week fixed-Holy-Day transfer rule is implemented and verified across 100 years. Good Friday and Easter Day's BCP-genuine reading alternatives are wired as toggles. `HEAD` is `1fda4ae`, pushed to `origin/main`.
+
+**Next assigned work: the biblical corpus, character-for-character remediation, Genesis through Revelation, one book at a time, all translations together — then ET/AR/SY/Odes corpora, then re-verify NT.** This follows Lucy's 2026-07-05 dismissal for falsely certifying biblical corpora as accurate; all her certifications (the `data/bible/registry/*trust-certification*` files and everything upstream of them) are void and untrusted until independently re-verified from primary sources.
+
+**Status as of this note:** nothing has actually been committed against `data/bible/` since Lucy's dismissal except the incidental `number`→`num` schema fix (11 Deuterocanonical books, part of `9557ce5`). The Biblical Corpus dashboard grid is still mostly amber (unaudited); Genesis, Deuteronomy, 2 Kings, and Jeremiah are flagged red for "gaps predate recoverable git history"; 2 Chronicles and Isaiah are flagged for specific verse-sequence problems; Wisdom/Sirach/Baruch's dashboard note is stale (see above — resolver issue fixed, content not yet verified). **No Genesis audit or remediation work has landed in git.** If Genesis work happened in an unpushed/uncommitted session, it isn't recoverable from this repo and needs to be confirmed with Josh directly before assuming it exists.
+
+**Audit sequence after biblical remediation, per governance:** Daily Office (1979 BCP — now DONE per above) → Ethiopian → Church of the East → Byzantine → Book of Needs → Roman Breviary.
