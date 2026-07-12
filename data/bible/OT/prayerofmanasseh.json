@@ -12,7 +12,7 @@
         {
           "num": 1,
           "text": {
-            "KJV": "O Lord, Almighty God of our fathers, Abraham, Isaac, and Jacob, and of their righteous seed; who hast made heaven and earth, with all the ornament thereof; who hast bound the sea by the word of thy commandment; who hast shut up the deep, and sealed it by thy terrible and glorious name; whom all men fear, and tremble before thy power; for the majesty of thy glory cannot be borne, and thine angry threatening toward sinners is importable: but thy merciful promise is unmeasurable and unsearchable; for thou art the most high Lord, of great compassion, longsuffering, very merciful, and repentest of the evils of men. Thou, O Lord, according to thy great goodness hast promised repentance and forgiveness to them that have sinned against thee: and of thine infinite mercies hast appointed repentance unto sinners, that they may be saved. Thou therefore, O Lord, that art the God of the just, hast not appointed repentance to the just, as to Abraham, and Isaac, and Jacob, which have not sinned against thee; but thou hast appointed repentance unto me that am a sinner: for I have sinned above the number of the sands of the sea. My transgressions, O Lord, are multiplied: my transgressions are multiplied, and I am not worthy to behold and see the height of heaven for the multitude of mine iniquities. I am bowed down with many iron bands, that I cannot lift up mine head, neither have any release: for I have provoked thy wrath, and done evil before thee: I did not thy will, neither kept I thy commandments: I have set up abominations, and have multiplied offences. Now therefore I bow the knee of mine heart, beseeching thee of grace. I have sinned, O Lord, I have sinned, and I acknowledge mine iniquities: wherefore, I humbly beseech thee, forgive me, O Lord, forgive me, and destroy me not with mine iniquities. Be not angry with me for ever, by reserving evil for me; neither condemn me to the lower parts of the earth. For thou art the God, even the God of them that repent; and in me thou wilt shew all thy goodness: for thou wilt save me, that am unworthy, according to thy great mercy. Therefore I will praise thee for ever all the days of my life: for all the powers of the heavens do praise thee, and thine is the glory for ever and ever. Amen.",
+            "KJV": "O Lord, Almighty God of our fathers, Abraham, Isaac, and Jacob, and of their righteous seed;",
             "NRSV": "O Lord Almighty, God of our ancestors, of Abraham and Isaac and Jacob and of their righteous offspring;",
             "DRB": "Lord omnipotent God of our fathers, Abraham, and Isaac, and Jacob, and of their just seed,"
           }
@@ -21,98 +21,112 @@
           "num": 2,
           "text": {
             "DRB": "which didst make heaven and earth: with all the ornaments of them,",
-            "NRSV": "you who made heaven and earth with all their order;"
+            "NRSV": "you who made heaven and earth with all their order;",
+            "KJV": "who hast made heaven and earth, with all the ornament thereof;"
           }
         },
         {
           "num": 3,
           "text": {
             "DRB": "which hast bound the sea with the word of thy precept, which hast shut up the depth, and sealed it with thy terrible and laudable name:",
-            "NRSV": "who shackled the sea by your word of command, who confined the deep and sealed it with your terrible and glorious name;"
+            "NRSV": "who shackled the sea by your word of command, who confined the deep and sealed it with your terrible and glorious name;",
+            "KJV": "who hast bound the sea by the word of thy commandment; who hast shut up the deep, and sealed it by thy terrible and glorious name;"
           }
         },
         {
           "num": 4,
           "text": {
             "DRB": "whom all things dread, and tremble at the countenance of thy power,",
-            "NRSV": "at whom all things shudder, and tremble before your power,"
+            "NRSV": "at whom all things shudder, and tremble before your power,",
+            "KJV": "whom all men fear, and tremble before thy power;"
           }
         },
         {
           "num": 5,
           "text": {
             "DRB": "because the magnificence of thy glory is importable, and the wrath of thy threatening upon sinners is intolerable:",
-            "NRSV": "for your glorious splendor cannot be borne, and the face of your threat against sinners is irresistible;"
+            "NRSV": "for your glorious splendor cannot be borne, and the face of your threat against sinners is irresistible;",
+            "KJV": "for the majesty of thy glory cannot be borne, and thine angry threatening toward sinners is importable:"
           }
         },
         {
           "num": 6,
           "text": {
             "DRB": "but the mercy of thy promise is infinite and unsearchable:",
-            "NRSV": "yet immeasurable and unsearchable is your promised mercy,"
+            "NRSV": "yet immeasurable and unsearchable is your promised mercy,",
+            "KJV": "but thy merciful promise is unmeasurable and unsearchable;"
           }
         },
         {
           "num": 7,
           "text": {
             "DRB": "because thou art our Lord, most high, benign, long suffering, and very merciful, and penitent upon the wickedness of men. Thou Lord according to the multitude of thy goodness hast promised penance and remission to them that have sinned to thee, and by the multitude of thy mercies thou hast decreed penance to sinners, unto salvation.",
-            "NRSV": "for you are the Lord Most High, of great compassion, long-suffering, and very merciful, and you relent at human suffering. O Lord, according to your great goodness you have promised repentance and forgiveness to those who have sinned against you, and in the multitude of your mercies you have appointed repentance for sinners, so that they may be saved."
+            "NRSV": "for you are the Lord Most High, of great compassion, long-suffering, and very merciful, and you relent at human suffering. O Lord, according to your great goodness you have promised repentance and forgiveness to those who have sinned against you, and in the multitude of your mercies you have appointed repentance for sinners, so that they may be saved.",
+            "KJV": "for thou art the most high Lord, of great compassion, longsuffering, very merciful, and repentest of the evils of men. Thou, O Lord, according to thy great goodness hast promised repentance and forgiveness to them that have sinned against thee: and of thine infinite mercies hast appointed repentance unto sinners, that they may be saved."
           }
         },
         {
           "num": 8,
           "text": {
             "DRB": "Thou therefore Lord God of the just, hast not appointed penance to the just, Abraham, and Isaac, and Jacob, them that have not sinned to thee, but hast appointed penance for me a sinner:",
-            "NRSV": "Therefore you, O Lord, God of the righteous, have not appointed repentance for the righteous, for Abraham and Isaac and Jacob, who did not sin against you, but you have appointed repentance for me, who am a sinner."
+            "NRSV": "Therefore you, O Lord, God of the righteous, have not appointed repentance for the righteous, for Abraham and Isaac and Jacob, who did not sin against you, but you have appointed repentance for me, who am a sinner.",
+            "KJV": "Thou therefore, O Lord, that art the God of the just, hast not appointed repentance to the just, as to Abraham, and Isaac, and Jacob, which have not sinned against thee; but thou hast appointed repentance unto me that am a sinner:"
           }
         },
         {
           "num": 9,
           "text": {
             "DRB": "because I have sinned above the number of the sand of the sea. Mine iniquities Lord be multiplied, mine iniquities be multiplied, and I am not worthy to behold and look upon the height of heaven, for the multitude of mine iniquities.",
-            "NRSV": "For the sins I have committed are more in number than the sands of the sea; my transgressions are multiplied, O Lord, they are multiplied! I am not worthy to look up and see the height of heaven because of the multitude of my iniquities."
+            "NRSV": "For the sins I have committed are more in number than the sands of the sea; my transgressions are multiplied, O Lord, they are multiplied! I am not worthy to look up and see the height of heaven because of the multitude of my iniquities.",
+            "KJV": "for I have sinned above the number of the sands of the sea. My transgressions, O Lord, are multiplied: my transgressions are multiplied, and I am not worthy to behold and see the height of heaven for the multitude of mine iniquities."
           }
         },
         {
           "num": 10,
           "text": {
             "DRB": "I am made crooked with many a band of iron, that I cannot lift up my head, and I have not respiration: because I have stirred up thy wrath, and have done evil before thee: I have not done thy will, and thy commandments I have not kept: I have set up abominations, and multiplied offences.",
-            "NRSV": "I am weighted down with many an iron fetter, so that I am rejected because of my sins, and I have no relief; for I have provoked your spirit and have done what is evil in your sight, setting up abominations and multiplying offenses."
+            "NRSV": "I am weighted down with many an iron fetter, so that I am rejected because of my sins, and I have no relief; for I have provoked your spirit and have done what is evil in your sight, setting up abominations and multiplying offenses.",
+            "KJV": "I am bowed down with many iron bands, that I cannot lift up mine head, neither have any release: for I have provoked thy wrath, and done evil before thee: I did not thy will, neither kept I thy commandments: I have set up abominations, and have multiplied offences."
           }
         },
         {
           "num": 11,
           "text": {
             "DRB": "And now I bow the knee of my heart, beseeching goodness of thee.",
-            "NRSV": "And now I bend the knee of my heart, imploring you for your kindness."
+            "NRSV": "And now I bend the knee of my heart, imploring you for your kindness.",
+            "KJV": "Now therefore I bow the knee of mine heart, beseeching thee of grace."
           }
         },
         {
           "num": 12,
           "text": {
             "DRB": "I have sinned Lord, I have sinned, and I acknowledge mine iniquities.",
-            "NRSV": "I have sinned, O Lord, I have sinned, and I acknowledge my transgressions."
+            "NRSV": "I have sinned, O Lord, I have sinned, and I acknowledge my transgressions.",
+            "KJV": "I have sinned, O Lord, I have sinned, and I acknowledge mine iniquities:"
           }
         },
         {
           "num": 13,
           "text": {
             "DRB": "Wherefore I beseech desiring thee, forgive me Lord, forgive me: and destroy me not together with mine iniquities, neither reserve thou for ever, being angry, evils for me, neither damn me into the lowest places of the earth: because thou art God, I say, of the penitent:",
-            "NRSV": "I earnestly implore you: forgive me, O Lord, forgive me! Do not destroy me with my transgressions; do not be angry with me forever or store up evil for me; do not condemn me to the depths of the earth. For you, O Lord, are the God of those who repent,"
+            "NRSV": "I earnestly implore you: forgive me, O Lord, forgive me! Do not destroy me with my transgressions; do not be angry with me forever or store up evil for me; do not condemn me to the depths of the earth. For you, O Lord, are the God of those who repent,",
+            "KJV": "wherefore, I humbly beseech thee, forgive me, O Lord, forgive me, and destroy me not with mine iniquities. Be not angry with me for ever, by reserving evil for me; neither condemn me to the lower parts of the earth. For thou art the God, even the God of them that repent;"
           }
         },
         {
           "num": 14,
           "text": {
             "DRB": "in me thou shalt shew all thy goodness, because thou shalt save me unworthy according to thy great mercy,",
-            "NRSV": "and in me you will show forth your goodness; for unworthy as I am, you will save me according to your great mercy,"
+            "NRSV": "and in me you will show forth your goodness; for unworthy as I am, you will save me according to your great mercy,",
+            "KJV": "and in me thou wilt shew all thy goodness: for thou wilt save me, that am unworthy, according to thy great mercy."
           }
         },
         {
           "num": 15,
           "text": {
             "DRB": "and I will praise thee always all the days of my life: because all the power of the heavens praiseth thee, and to thee is glory for ever and ever. Amen.",
-            "NRSV": "and I will praise you continually all the days of my life. For all the host of heaven sings your praise, and yours is the glory forever. Amen."
+            "NRSV": "and I will praise you continually all the days of my life. For all the host of heaven sings your praise, and yours is the glory forever. Amen.",
+            "KJV": "Therefore I will praise thee for ever all the days of my life: for all the powers of the heavens do praise thee, and thine is the glory for ever and ever. Amen."
           }
         }
       ]
