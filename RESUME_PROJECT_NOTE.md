@@ -891,3 +891,13 @@ Josh chose Exodus over the wider NABRE investigation initially, then — once Ex
 
 **What's actually left in the project now:** the two live choices are the same as before this whole NABRE detour started — (1) resume Exodus... except Exodus is now closed, so this becomes "move to the next book in the Genesis-through-Revelation sequence" (Leviticus), or (2) something else Josh directs. Ask before assuming.
 
+## Session, 2026-07-12 continued — Leviticus: all five translations verified and fixed, book fully clean
+
+**HANDOFF — read this first if picking up fresh.** Leviticus is CLOSED, same standard as Genesis and Exodus (zero known open defects across all five translations). Next book in sequence is Numbers.
+
+**What happened, briefly (full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "Leviticus remediation" entry):** KJV, Rotherham, DRB all confirmed clean (zero mismatches). NABRE headers were already clean from the corpus-wide 742-verse effort, but a full content-level re-check (not just headers) found the same "Lord 's" stray-space bug from Genesis recurring here — 18 instances, plus one em-dash-spacing variant, fixed by direct pattern substitution. NRSV had 149 real content differences against NRSV-CI, verified against two independent published sources before trusting the pattern, then fixed via targeted per-verse replacement.
+
+**Pattern worth carrying into every remaining book:** all three completed books so far (Genesis, Exodus, Leviticus) show the same shape — KJV/Rotherham/DRB are a formality (already clean from the corpus-wide passes), NRSV is the real content-fix workload every time (Genesis 389, Exodus 108, Leviticus 149 verses), and NABRE needs a full content-level check, not just a header-pollution check, since the stray-space bug isn't Genesis-only — it just hasn't been checked for elsewhere yet. **Recommend explicitly checking every future book's NABRE column for the "Lord 's" / stray-space-before-punctuation pattern, not just chapter headers**, since this session found it silently sitting in a book that had already passed the header check clean.
+
+**Immediate next action for whoever picks this up:** Numbers is next in sequence, following the exact same five-translation method. No open decision needed unless Josh wants to redirect.
+

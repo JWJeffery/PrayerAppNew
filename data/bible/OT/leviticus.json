@@ -118,7 +118,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "If your gift for a burnt offering is from the flock, from the sheep or goats, you shall offer a male without blemish.",
+            "NRSV": "If your gift for a burnt offering is from the flock, from the sheep or goats, your offering shall be a male without blemish.",
             "Rotherham": "But, if of the flock, be his oblation,—of the sheep or of the goats, for an ascending-sacrifice, a male without defect, shall he bring near.",
             "KJV": "And if his offering be of the flocks, namely, of the sheep, or of the goats, for a burnt sacrifice; he shall bring it a male without blemish.",
             "NABRE": "If a person’s burnt offering is from the flock, that is, a sheep or a goat, the offering must be a male without blemish.",
@@ -203,7 +203,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "When anyone presents a grain offering to the Lord, the offering shall be of choice flour; the worshiper shall pour oil on it, and add frankincense to it,",
+            "NRSV": "When anyone presents a grain offering to the Lord, the offering shall be of choice flour; the worshiper shall pour oil on it, and put frankincense on it,",
             "Rotherham": "But, when any person would bring near as an oblation, a meal-offering, unto Yahweh, of fine meal, shall be his oblation,—and he shall pour out thereon oil, and place thereon, frankincense;",
             "KJV": "And when any will offer a meat offering unto the Lord, his offering shall be of fine flour; and he shall pour oil upon it, and put frankincense thereon:",
             "NABRE": "When anyone brings a grain offering to the Lord, the offering must consist of bran flour. The offerer shall pour oil on it and put frankincense over it,",
@@ -243,7 +243,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "If your offering is grain prepared on a griddle, it shall be an unleavened cake of choice flour mixed with oil.",
+            "NRSV": "If your offering is grain prepared on a griddle, it shall be of choice flour mixed with oil, unleavened;",
             "Rotherham": "But, if, a meal-offering, on a girdle, be thine oblation, of fine meal, overflowed with oil unleavened, shall it be;",
             "KJV": "And if thy oblation be a meat offering baken in a pan, it shall be of fine flour unleavened, mingled with oil.",
             "NABRE": "If your offering is a grain offering that is fried on a griddle, it must be of bran flour mixed with oil and unleavened.",
@@ -253,7 +253,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "Break it in pieces, and pour oil on it; it is a grain offering.",
+            "NRSV": "break it in pieces, and pour oil on it; it is a grain offering.",
             "Rotherham": "parting it into pieces, then shalt thou pour thereon oil,—a meal-offering, it is,",
             "KJV": "Thou shalt part it in pieces, and pour oil thereon: it is a meat offering.",
             "NABRE": "Break it into pieces, and pour oil over it. It is a grain offering.",
@@ -313,7 +313,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "You may bring them to the Lord as an offering of choice products, but they shall not be offered on the altar for pleasing odor.",
+            "NRSV": "You may bring them to the Lord as an offering of choice products, but they shall not be offered on the altar for a pleasing odor.",
             "Rotherham": "As for an oblation of first-fruits, ye shall bring them near unto Yahweh,—but unto the altar, they shall not take them up, as a satisfying odour.",
             "KJV": "As for the oblation of the firstfruits, ye shall offer them unto the Lord: but they shall not be burnt on the altar for a sweet savour.",
             "NABRE": "Such you may present to the Lord in the offering of the first produce that is processed, but they are not to be placed on the altar for a pleasing odor.",
@@ -418,7 +418,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "If your offering for a sacrifice of well-being to the Lord is from the flock, you shall offer a male or female without blemish.",
+            "NRSV": "If your offering for a sacrifice of well-being to the Lord is from the flock, male or female, you shall offer one without blemish.",
             "Rotherham": "But, if out of the flock, be his oblation for a peace-offering unto Yahweh, whether male or female—without defect, shall he bring it near.",
             "KJV": "And if his offering for a sacrifice of peace offering unto the Lord be of the flock; male or female, he shall offer it without blemish.",
             "NABRE": "If the communion sacrifice one offers to the Lord is from the flock, be it a male or a female animal, it must be presented without blemish.",
@@ -448,7 +448,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "You shall present its fat from the sacrifice of well-being, as an offering by fire to the Lord: the whole fat tail, which shall be removed close to the spine, the fat that covers the entrails, and all the fat that is around the entrails;",
+            "NRSV": "You shall present its fat from the sacrifice of well-being, as an offering by fire to the Lord: the whole broad tail, which shall be removed close to the backbone, the fat that covers the entrails, and all the fat that is around the entrails;",
             "Rotherham": "Then shall he bring near out of the peace-offering, an altar-flame unto Yahweh, the fat thereof the fat-tail thereof entire close to the backbone, shall he remove it,—and the fat that covereth the inwards, and all the fat that is upon the inwards;",
             "KJV": "And he shall offer of the sacrifice of the peace offering an offering made by fire unto the Lord; the fat thereof, and the whole rump, it shall he take off hard by the backbone; and the fat that covereth the inwards, and all the fat that is upon the inwards,",
             "NABRE": "From the communion sacrifice the individual shall present as an oblation to the Lord its fat: the whole fatty tail, which is removed close to the spine, the fat that covers the inner organs, and all the fat that adheres to them,",
@@ -543,7 +543,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "The Lord spoke to Moses, saying:",
+            "NRSV": "The Lord spoke to Moses, saying,",
             "Rotherham": "And Yahweh spake, unto Moses, saying:",
             "KJV": "And the Lord spake unto Moses, saying,",
             "NABRE": "The Lord said to Moses:",
@@ -556,7 +556,7 @@
             "NRSV": "Speak to the people of Israel, saying: When anyone sins unintentionally in any of the Lord’s commandments about things not to be done, and does any one of them:",
             "Rotherham": "Speak thou unto the sons of Israel, saying—When any person, shall sin by mistake, departing from any of the commandments of Yahweh, as to things which should not be done, and shall do any one of them,—",
             "KJV": "Speak unto the children of Israel, saying, If a soul shall sin through ignorance against any of the commandments of the Lord concerning things which ought not to be done, and shall do against any of them:",
-            "NABRE": "Tell the Israelites: When a person inadvertently does wrong by violating any one of the Lord ’s prohibitions—",
+            "NABRE": "Tell the Israelites: When a person inadvertently does wrong by violating any one of the Lord’s prohibitions—",
             "DRB": "Speak to the children of Israel: The soul that sinneth by ignorance, & doth any thing of all the commandments of our Lord, which he commanded not to be done:"
           }
         },
@@ -583,7 +583,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "The anointed priest shall take some of the blood of the bull and bring it into the tent of meeting,",
+            "NRSV": "The anointed priest shall take some of the blood of the bull and bring it into the tent of meeting.",
             "Rotherham": "And the anointed priest shall take of the blood of the bullock,—and bring it into the tent of meeting;",
             "KJV": "And the priest that is anointed shall take of the bullock’s blood, and bring it to the tabernacle of the congregation:",
             "NABRE": "The anointed priest shall then take some of the bull’s blood and bring it into the tent of meeting,",
@@ -593,7 +593,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "and the priest shall dip his finger in the blood and sprinkle some of the blood seven times before the Lord in front of the curtain of the sanctuary.",
+            "NRSV": "The priest shall dip his finger in the blood and sprinkle some of the blood seven times before the Lord in front of the curtain of the sanctuary.",
             "Rotherham": "and the priest shall dip his finger in the blood,—and sprinkle of the blood seven times, before Yahweh, in front of the veil of the sanctuary.",
             "KJV": "And the priest shall dip his finger in the blood, and sprinkle of the blood seven times before the Lord, before the vail of the sanctuary.",
             "NABRE": "where, dipping his finger in the blood, he shall sprinkle some of it seven times before the Lord, toward the veil of the sanctuary.",
@@ -653,7 +653,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "all the rest of the bull—he shall carry out to a clean place outside the camp, to the ash heap, and shall burn it on a wood fire; on the ash heap it shall be burned.",
+            "NRSV": "all the rest of the bull—he shall carry out to a clean place outside the camp, to the ash heap, and shall burn it on a wood fire; at the ash heap it shall be burned.",
             "Rotherham": "he shall take forth the entire bullock—unto the outside of the camp, unto a clean place unto the outpoured heap of fat-ashes, and shall burn it up on wood in the fire,—upon the outpoured heap of fat-ashes, shall it be burned up.",
             "KJV": "Even the whole bullock shall he carry forth without the camp unto a clean place, where the ashes are poured out, and burn him on the wood with fire: where the ashes are poured out shall he be burnt.",
             "NABRE": "that is, the whole bull, shall be brought outside the camp to a clean place where the ashes are deposited and there be burned in a wood fire. At the place of the ash heap, there it must be burned.",
@@ -666,7 +666,7 @@
             "NRSV": "If the whole congregation of Israel errs unintentionally and the matter escapes the notice of the assembly, and they do any one of the things that by the Lord’s commandments ought not to be done and incur guilt;",
             "Rotherham": "And, if the whole assembly of Israel, shall make a mistake, and a matter be hidden from the eyes of the convocation,—and so they do something, whereby they depart from any of the commandments of Yahweh as to things which should not be done, and become guilty;",
             "KJV": "And if the whole congregation of Israel sin through ignorance, and the thing be hid from the eyes of the assembly, and they have done somewhat against any of the commandments of the Lord concerning things which should not be done, and are guilty;",
-            "NABRE": "For the Community. If the whole community of Israel errs inadvertently and without even being aware of it violates any of the Lord ’s prohibitions, and thus are guilty,",
+            "NABRE": "For the Community. If the whole community of Israel errs inadvertently and without even being aware of it violates any of the Lord’s prohibitions, and thus are guilty,",
             "DRB": "And if all the multitude of Israel be ignorant, and through ignorance do that which is against the commandment of our Lord,"
           }
         },
@@ -806,7 +806,7 @@
             "NRSV": "If anyone of the ordinary people among you sins unintentionally in doing any one of the things that by the Lord’s commandments ought not to be done and incurs guilt,",
             "Rotherham": "And, if, any person, shall sin, by mistake from among the people of the land,—by his doing anything departing from any of the commandments of Yahweh, as to things which should not be done, and shall become aware of his guilt;",
             "KJV": "And if any one of the common people sin through ignorance, while he doeth somewhat against any of the commandments of the Lord concerning things which ought not to be done, and be guilty;",
-            "NABRE": "For the General Populace. If anyone of the general populace does wrong inadvertently by violating one of the Lord ’s prohibitions, and thus is guilty,",
+            "NABRE": "For the General Populace. If anyone of the general populace does wrong inadvertently by violating one of the Lord’s prohibitions, and thus is guilty,",
             "DRB": "And if a soul of the people of the land shall sin through ignorance, doing any of those things that by the law of our Lord are forbidden, and offending,"
           }
         },
@@ -853,7 +853,7 @@
         {
           "num": 32,
           "text": {
-            "NRSV": "If you bring a sheep as your offering for a sin offering, you shall bring a female without blemish,",
+            "NRSV": "If the offering you bring as a sin offering is a sheep, you shall bring a female without blemish.",
             "Rotherham": "And, if a lamb, he bring in. as his oblation for a sin-bearer, a female without defect, shall he bring in;",
             "KJV": "And if he bring a lamb for a sin offering, he shall bring it a female without blemish.",
             "NABRE": "If, however, a person brings a lamb as a purification offering, that person shall bring an unblemished female, and",
@@ -863,7 +863,7 @@
         {
           "num": 33,
           "text": {
-            "NRSV": "lay your hand on its head, slaughter it for a sin offering at the place where the burnt offering is slaughtered.",
+            "NRSV": "You shall lay your hand on the head of the sin offering; and it shall be slaughtered as a sin offering at the spot where the burnt offering is slaughtered.",
             "Rotherham": "and shall lean his hand upon the head of the sin-bearer,—and shall slay it as a sin-bearer, in the place where they slay the ascending-sacrifice.",
             "KJV": "And he shall lay his hand upon the head of the sin offering, and slay it for a sin offering in the place where they kill the burnt offering.",
             "NABRE": "lay a hand on its head. It shall be slaughtered as a purification offering in the place where the burnt offering is slaughtered.",
@@ -883,7 +883,7 @@
         {
           "num": 35,
           "text": {
-            "NRSV": "You shall remove all its fat, as the fat of the sheep is removed from the sacrifice of well-being, and the priest shall turn it into smoke on the altar, on top of the offerings by fire to the Lord. Thus the priest shall make atonement on your behalf for the sin that you have committed, and you shall be forgiven.",
+            "NRSV": "You shall remove all its fat, as the fat of the sheep is removed from the sacrifice of well-being, and the priest shall turn it into smoke on the altar, with the offerings by fire to the Lord. Thus the priest shall make atonement on your behalf for the sin that you have committed, and you shall be forgiven.",
             "Rotherham": "and all the fat thereof, shall he remove as the fat of the lamb is removed, from the peace-offering, and the priest shall make a perfume therewith at the altar, upon the altar-flames of Yahweh,—so shall the priest put a propitiatory-covering over him on account of his sin which he hath committed, and it shall be forgiven him.",
             "KJV": "And he shall take away all the fat thereof, as the fat of the lamb is taken away from the sacrifice of the peace offerings; and the priest shall burn them upon the altar, according to the offerings made by fire unto the Lord: and the priest shall make an atonement for his sin that he hath committed, and it shall be forgiven him.",
             "NABRE": "He shall remove all its fat just as the fat is removed from the lamb of the communion sacrifice. The priest shall burn these on the altar with the other oblations for the Lord. Thus the priest shall make atonement on the person’s behalf for the wrong committed, that the individual may be forgiven.",
@@ -898,7 +898,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "When any of you sin in that you have heard a public adjuration to testify and—though able to testify as one who has seen or learned of the matter—do not give information, you are subject to punishment.",
+            "NRSV": "When any of you sin in that you have heard a public adjuration to testify and—though able to testify as one who has seen or learned of the matter—does not speak up, you are subject to punishment.",
             "Rotherham": "Any person, moreover, whensoever he shall sin in that, when he heareth a voice of swearing, he himself, being a witness either seeing or knowing,—if he do not tell and so hath to bear his iniquity:—",
             "KJV": "And if a soul sin, and hear the voice of swearing, and is a witness, whether he hath seen or known of it; if he do not utter it, then he shall bear his iniquity.",
             "NABRE": "If a person, either having seen or come to know something, does wrong by refusing as a witness under oath to give information, that individual shall bear the penalty;",
@@ -918,7 +918,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Or when you touch human uncleanness—any uncleanness by which one can become unclean—and, when you learn of it, become guilty;",
+            "NRSV": "Or when you touch human uncleanness—any uncleanness by which one can become unclean—and are unaware of it, when you come to know it, you shall be guilty.",
             "Rotherham": "Or whensoever one shall touch the uncleanness of man, as regardeth any uncleanness of his, wherewith one may become unclean,—and it be hidden from him, and then he himself, getting to know it becometh aware of his guilt:—",
             "KJV": "Or if he touch the uncleanness of man, whatsoever uncleanness it be that a man shall be defiled withal, and it be hid from him; when he knoweth of it, then he shall be guilty.",
             "NABRE": "or if someone, without being aware of it, touches some human uncleanness, whatever kind of uncleanness this may be, and then subsequently becomes aware of guilt;",
@@ -928,7 +928,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "or when any of you utter aloud a rash oath for a bad or a good purpose, whatever people utter in an oath, and are unaware of it, when you come to know it, you shall in any of these be guilty.",
+            "NRSV": "Or when any of you utter aloud a rash oath for a bad or a good purpose, whatever people utter in an oath, and are unaware of it, when you come to know it, you shall in any of these be guilty.",
             "Rotherham": "Or, any person, whensoever he shall swear, speaking unadvisedly with the lips, to harm or to help, as regardeth anything wherein the son of earth may speak unadvisedly by way of oath, and it be hidden from him,—and then, he himself, getting to know it, becometh aware of his guilt as regardeth any one of these things.",
             "KJV": "Or if a soul swear, pronouncing with his lips to do evil, or to do good, whatsoever it be that a man shall pronounce with an oath, and it be hid from him; when he knoweth of it, then he shall be guilty in one of these.",
             "NABRE": "or if someone, without being aware of it, rashly utters an oath with bad or good intent, whatever kind of oath this may be, and then subsequently becomes aware of guilt in regard to any of these matters—",
@@ -948,7 +948,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "And you shall bring to the Lord, as your penalty for the sin that you have committed, a female from the flock, a lamb or a goat, as a sin offering; and the priest shall make atonement on your behalf for your sin.",
+            "NRSV": "And you shall bring to the Lord, as your penalty for the sin that you have committed, a female from the flock, a sheep or a goat, as a sin offering; and the priest shall make atonement on your behalf for your sin.",
             "Rotherham": "and shall bring in as his guilt-bearer unto Yahweh for his sin which he hath committed, a female from the flock—a lamb or a kid of the goats—as a sin-bearer,—so shall the priest put propitiatory-covering over him, because of his sin.",
             "KJV": "And he shall bring his trespass offering unto the Lord for his sin which he hath sinned, a female from the flock, a lamb or a kid of the goats, for a sin offering; and the priest shall make an atonement for him concerning his sin.",
             "NABRE": "and make reparation to the Lord for the wrong committed: a female animal from the flock, a ewe lamb or a she-goat, as a purification offering. Thus the priest shall make atonement on the individual’s behalf for the wrong.",
@@ -988,7 +988,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "The second he shall prepare for a burnt offering according to the regulation. Thus the priest shall make atonement on your behalf for the sin that you have committed, and you shall be forgiven.",
+            "NRSV": "And the second he shall offer for a burnt offering according to the regulation. Thus the priest shall make atonement on your behalf for the sin that you have committed, and you shall be forgiven.",
             "Rotherham": "And of the second, shall he make an ascending-sacrifice according to the regulation,—so shall the priest put a propitiatory-covering over him, because of his sin which he hath committed and it shall be forgiven him.",
             "KJV": "And he shall offer the second for a burnt offering, according to the manner: and the priest shall make an atonement for him for his sin which he hath sinned, and it shall be forgiven him.",
             "NABRE": "The other bird he shall offer as a burnt offering according to procedure. Thus the priest shall make atonement on the person’s behalf for the wrong committed, so that the individual may be forgiven.",
@@ -1038,10 +1038,10 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "When any of you commit a trespass and sins unintentionally in any of the holy things of the Lord, you shall bring, as your guilt offering to the Lord, a ram without blemish from the flock, convertible into silver by the sanctuary shekel; it is a guilt offering.",
+            "NRSV": "When any of you commit a trespass and sin unintentionally in any of the holy things of the Lord, you shall bring, as your guilt offering to the Lord, a ram without blemish from the flock, convertible into silver by the sanctuary shekel; it is a guilt offering.",
             "Rotherham": "Whensoever, any person, shall commit a trespass, and shall take away by mistake, from the holy things of Yahweh, then shall he bring in as his guilt-bearer unto Yahweh, a ram without defect out of the flock, with thine estimate in silver by shekels, after the shekel of the sanctuary, for a guilt-bearer:",
             "KJV": "If a soul commit a trespass, and sin through ignorance, in the holy things of the Lord; then he shall bring for his trespass unto the Lord a ram without blemish out of the flocks, with thy estimation by shekels of silver, after the shekel of the sanctuary, for a trespass offering:",
-            "NABRE": "When a person commits sacrilege by inadvertently misusing any of the Lord ’s sacred objects, the wrongdoer shall bring to the Lord as reparation an unblemished ram from the flock, at the established value in silver shekels according to the sanctuary shekel, as a reparation offering.",
+            "NABRE": "When a person commits sacrilege by inadvertently misusing any of the Lord’s sacred objects, the wrongdoer shall bring to the Lord as reparation an unblemished ram from the flock, at the established value in silver shekels according to the sanctuary shekel, as a reparation offering.",
             "DRB": "If a soul transgressing the ceremonies, by error shall sin in those things that are sanctified to our Lord, he shall offer for his offence a ram without spot out of the flocks, that may be bought for two sicles, according to the weight of the Sanctuary:"
           }
         },
@@ -1061,14 +1061,14 @@
             "NRSV": "If any of you sin without knowing it, doing any of the things that by the Lord’s commandments ought not to be done, you have incurred guilt, and are subject to punishment.",
             "Rotherham": "And if any person when he shall sin, and do something, departing from any of the commandments of Yahweh, as to things which should not be done,—though he knew it not, shall so become guilty, and shall bear his iniquity,",
             "KJV": "And if a soul sin, and commit any of these things which are forbidden to be done by the commandments of the Lord; though he wist it not, yet is he guilty, and shall bear his iniquity.",
-            "NABRE": "If someone does wrong and violates one of the Lord ’s prohibitions without realizing it, that person is guilty and shall bear the penalty.",
+            "NABRE": "If someone does wrong and violates one of the Lord’s prohibitions without realizing it, that person is guilty and shall bear the penalty.",
             "DRB": "If a soul sin by ignorance, and do one of those things which by the law of the Lord are forbidden, and being guilty of sin, understand his iniquity,"
           }
         },
         {
           "num": 18,
           "text": {
-            "NRSV": "You shall bring to the priest a ram without blemish from the flock (or the equivalent) as a guilt offering; and the priest shall make atonement on your behalf for the error that you committed unintentionally, and you shall be forgiven.",
+            "NRSV": "You shall bring to the priest a ram without blemish from the flock, or the equivalent, as a guilt offering; and the priest shall make atonement on your behalf for the error that you committed unintentionally, and you shall be forgiven.",
             "Rotherham": "then shall he bring in a ram without defect out of the flock by thine estimate as a guilt-bearer unto the priest,—and the priest shall put a propitiatory-covering over him, on account of his mistake which he made though he knew it not and it shall be forgiven him:",
             "KJV": "And he shall bring a ram without blemish out of the flock, with thy estimation, for a trespass offering, unto the priest: and the priest shall make an atonement for him concerning his ignorance wherein he erred and wist it not, and it shall be forgiven him.",
             "NABRE": "The individual shall bring to the priest an unblemished ram of the flock, at the established value, for a reparation offering. The priest shall then make atonement on the offerer’s behalf for the error inadvertently and unknowingly committed so that the individual may be forgiven.",
@@ -1103,7 +1103,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "When any of you sin and commit a trespass against the Lord by deceiving a neighbor in a matter of a deposit or pledge, or by robbery, or if you have defrauded a neighbor,",
+            "NRSV": "When any of you sin and commit a trespass against the Lord by deceiving a neighbor in a matter of a deposit or a pledge, or by robbery, or if you have defrauded a neighbor,",
             "Rotherham": "When any person, shall sin, and shall commit a trespass against Yahweh,—and shall withhold something of the truth from his neighbour in respect of a deposit, or a pledge or anything plundered, or shall use extortion with his neighbour;",
             "KJV": "If a soul sin, and commit a trespass against the Lord, and lie unto his neighbour in that which was delivered him to keep, or in fellowship, or in a thing taken away by violence, or hath deceived his neighbour;",
             "NABRE": "Give Aaron and his sons the following command: This is the ritual for the burnt offering—the burnt offering that is to remain on the hearth of the altar all night until the next morning, while the fire is kept burning on the altar.",
@@ -1203,7 +1203,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "The fire on the altar shall be kept burning; it shall not go out. Every morning the priest shall add wood to it, lay out the burnt offering upon it, and turn into smoke the fat pieces of the offerings of well-being.",
+            "NRSV": "The fire on the altar shall be kept burning; it shall not go out. Every morning the priest shall add wood to it, lay out the burnt offering on it, and turn into smoke the fat pieces of the offerings of well-being.",
             "Rotherham": "And, the fire on the altar, shall be kept burning therein, it shall not be suffered to go out, but the priest shall kindle up thereon pieces of wood, morning by morning,—and shall set in order thereupon the ascending-sacrifice, and shall make a perfume thereon with the fat-pieces of the peace-offerings:",
             "KJV": "And the fire upon the altar shall be burning in it; it shall not be put out: and the priest shall burn wood on it every morning, and lay the burnt offering in order upon it; and he shall burn thereon the fat of the peace offerings.",
             "NABRE": "The Lord said to Moses:",
@@ -1233,17 +1233,17 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "You shall take from it a handful of the choice flour of the grain offering, with its oil and all the frankincense that is on the offering, and turn this token portion into smoke on the altar as a pleasing odor to the Lord.",
+            "NRSV": "They shall take from it a handful of the choice flour and oil of the grain offering, with all the frankincense that is on the offering, and they shall turn its memorial portion into smoke on the altar as a pleasing odor to the Lord.",
             "Rotherham": "Then shall one lift up therefrom a handful of the fine meal of the meal-offering, and of the oil thereof, and all the frankincense which is upon the meal-offering,—and shall make a perfume at the altar, an altar-flame of a satisfying odour, shall the memorial thereof be, unto Yahweh.",
             "KJV": "And he shall take of it his handful, of the flour of the meat offering, and of the oil thereof, and all the frankincense which is upon the meat offering, and shall burn it upon the altar for a sweet savour, even the memorial of it, unto the Lord.",
-            "NABRE": "The anointed priest descended from Aaron who succeeds him shall do likewise. This is the Lord ’s due forever. The offering shall be wholly burned.",
+            "NABRE": "The anointed priest descended from Aaron who succeeds him shall do likewise. This is the Lord’s due forever. The offering shall be wholly burned.",
             "DRB": "The Priest shall take up a handful of the flour, that is tempered with oil, and all the frankincense, that is put upon the flour: and he shall burn it on the altar for a monument of most sweet odour to the Lord:"
           }
         },
         {
           "num": 16,
           "text": {
-            "NRSV": "Aaron and his sons shall eat what is left of it; it shall be eaten as unleavened cakes in a holy place; they shall eat it in the court of the tent of meeting.",
+            "NRSV": "Aaron and his sons shall eat what is left of it; it shall be eaten as unleavened cakes in a holy place; in the court of the tent of meeting they shall eat it.",
             "Rotherham": "And the remainder thereof, shall Aaron and his sons eat,—as unleavened cakes, shall it be eaten, in a holy place, within the court of the tent of meeting, shall they eat it.",
             "KJV": "And the remainder thereof shall Aaron and his sons eat: with unleavened bread shall it be eaten in the holy place; in the court of the tabernacle of the congregation they shall eat it.",
             "NABRE": "Every grain offering of a priest shall be a whole offering; it may not be eaten. Purification Offerings.",
@@ -1263,7 +1263,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "Every male among the descendants of Aaron shall eat of it, as their due for all time throughout your generations, from the Lord’s offerings by fire; anything that touches them shall become holy.",
+            "NRSV": "Every male among the descendants of Aaron shall eat of it, as their perpetual due throughout your generations, from the Lord’s offerings by fire; anything that touches them shall become holy.",
             "Rotherham": "Any male among the sons of Aaron may eat it, an age-abiding statute to your generations from among the altar-flames of Yahweh,—every one that toucheth them shall be hallowed.",
             "KJV": "All the males among the children of Aaron shall eat of it. It shall be a statute for ever in your generations concerning the offerings of the Lord made by fire: every one that toucheth them shall be holy.",
             "NABRE": "Tell Aaron and his sons: This is the ritual for the purification offering. At the place where the burnt offering is slaughtered, there also, before the Lord, shall the purification offering be slaughtered. It is most holy.",
@@ -1283,7 +1283,7 @@
         {
           "num": 20,
           "text": {
-            "NRSV": "This is the offering that Aaron and his sons shall offer to the Lord on the day when he is anointed: one-tenth of an ephah of choice flour as a regular grain offering, half of it in the morning and half in the evening.",
+            "NRSV": "This is the offering that Aaron and his sons shall offer to the Lord on the day when he is anointed: one-tenth of an ephah of choice flour as a regular offering, half of it in the morning and half in the evening.",
             "Rotherham": "This, is the oblation of Aaron and his sons, which they shall bring near unto Yahweh in the day when he is anointed, The tenth of an ephah of fine meal, as a continual meal-offering,—half thereof in the morning, and half thereof in the evening;",
             "KJV": "This is the offering of Aaron and of his sons, which they shall offer unto the Lord in the day when he is anointed; the tenth part of an ephah of fine flour for a meat offering perpetual, half of it in the morning, and half thereof at night.",
             "NABRE": "Whatever touches its flesh becomes holy. If any of its blood spatters on a garment, the stained part must be washed in a sacred place.",
@@ -1359,7 +1359,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "An earthen vessel in which it is boiled shall be broken; but if it is boiled in a bronze vessel, that shall be scoured and rinsed in water.",
+            "NRSV": "An earthen vessel in which it was boiled shall be broken; but if it is boiled in a bronze vessel, that shall be scoured and rinsed in water.",
             "Rotherham": "But, the earthen vessel wherein it is boiled, shall be broken,—or, if, in a vessel of bronze, it hath been boiled, then shall the vessel be scoured and rinsed in water.",
             "KJV": "But the earthen vessel wherein it is sodden shall be broken: and if it be sodden in a brasen pot, it shall be both scoured, and rinsed in water.",
             "DRB": "And the earthen vessel, wherein it was sodden, shall be broken, but if the vessel be of brass, it shall be scoured, and washed with water."
@@ -1377,7 +1377,7 @@
         {
           "num": 30,
           "text": {
-            "NRSV": "But no sin offering shall be eaten from which any blood is brought into the tent of meeting for making atonement in the holy place; it shall be burned with fire.",
+            "NRSV": "But no sin offering shall be eaten from which any blood is brought into the tent of meeting for atonement in the holy place; it shall be burned with fire.",
             "Rotherham": "But, no sin-bearer whereof any of the blood is taken into the tent of meeting to make a propitiatory-covering in the sanctuary, shall be eaten,—with fire, shall it be consumed.",
             "KJV": "And no sin offering, whereof any of the blood is brought into the tabernacle of the congregation to reconcile withal in the holy place, shall be eaten: it shall be burnt in the fire.",
             "DRB": "For the host that is slain for sin, whose blood is carried into the tabernacle of testimony to make expiation in the Sanctuary, shall not be eaten, but shall be burnt with fire."
@@ -1401,7 +1401,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "at the spot where the burnt offering is slaughtered they shall slaughter the guilt offering, and its blood shall be dashed against all sides of the altar.",
+            "NRSV": "at the spot where the burnt offering is slaughtered, they shall slaughter the guilt offering, and its blood shall be dashed against all sides of the altar.",
             "Rotherham": "In the place where they slay the ascending-sacrifice, shall they slay the guilt-bearer; and, the blood thereof, shall one dash against the altar, round about;",
             "KJV": "In the place where they kill the burnt offering shall they kill the trespass offering: and the blood thereof shall he sprinkle round about upon the altar.",
             "NABRE": "At the place where the burnt offering is slaughtered, the reparation offering shall also be slaughtered. Its blood shall be splashed on all the sides of the altar.",
@@ -1461,7 +1461,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "So, too, the priest who offers anyone’s burnt offering shall keep the skin of the burnt offering that he offered.",
+            "NRSV": "So, too, the priest who offers anyone’s burnt offering shall keep the skin of the burnt offering that he has offered.",
             "Rotherham": "And, as for the priest who bringeth near the ascending-sacrifice of any man, the skin of the ascending-sacrifice which he hath brought near, to the priest himself, shall it belong.",
             "KJV": "And the priest that offereth any man’s burnt offering, even the priest shall have to himself the skin of the burnt offering which he hath offered.",
             "NABRE": "As for the priest who offers someone’s burnt offering, to him belongs the hide of the burnt offering that is offered.",
@@ -1491,7 +1491,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "This is the ritual of the sacrifice of well-being that one may offer to the Lord.",
+            "NRSV": "This is the ritual of the sacrifice of the offering of well-being that one may offer to the Lord.",
             "Rotherham": "And, this, is the law of the peace-offering which one may bring near unto Yahweh.",
             "KJV": "And this is the law of the sacrifice of peace offerings, which he shall offer unto the Lord.",
             "NABRE": "This is the ritual for the communion sacrifice that is offered to the Lord.",
@@ -1571,7 +1571,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "Flesh that touches any unclean thing shall not be eaten; it shall be burned. As for other flesh, all who are clean may eat such flesh.",
+            "NRSV": "Flesh that touches any unclean thing shall not be eaten; it shall be burned up. As for other flesh, all who are clean may eat such flesh.",
             "Rotherham": "And, the flesh that toucheth anything unclean, shall not be eaten, in fire, shall it be consumed,—but, as for the [other] flesh, any one who is clean, may eat flesh.",
             "KJV": "And the flesh that toucheth any unclean thing shall not be eaten; it shall be burnt with fire: and as for the flesh, all that be clean shall eat thereof.",
             "NABRE": "Should the meat touch anything unclean, it may not be eaten, but shall be burned in the fire. As for other meat, all who are clean may eat of it.",
@@ -1621,7 +1621,7 @@
         {
           "num": 24,
           "text": {
-            "NRSV": "The fat of an animal that died or was mangled by wild animals may be put to any use, but you must not eat it.",
+            "NRSV": "The fat of an animal that died or was torn by wild animals may be put to any use, but you must not eat it.",
             "Rotherham": "and though the fat of what dieth of itself and the fat of that which has been torn in pieces, may be used for any other service, yet shall ye, in nowise eat it.",
             "KJV": "And the fat of the beast that dieth of itself, and the fat of that which is torn with beasts, may be used in any other use: but ye shall in no wise eat of it.",
             "NABRE": "Although the fat of an animal that has died a natural death or has been killed by wild beasts may be put to any other use, you may not eat it.",
@@ -1671,7 +1671,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "Speak to the people of Israel, saying: Any who offer a sacrifice of well-being to the Lord shall bring the offering to the Lord from the sacrifice of well-being.",
+            "NRSV": "Speak to the people of Israel, saying: Any one of you who would offer to the Lord your sacrifice of well-being must yourself bring to the Lord your offering from your sacrifice of well-being.",
             "Rotherham": "Speak unto the sons of Israel saying,—He that offereth his peace-offering unto Yahweh, shall bring in his own oblation unto Yahweh out of his peace-offering:",
             "KJV": "Speak unto the children of Israel, saying, He that offereth the sacrifice of his peace offerings unto the Lord shall bring his oblation unto the Lord of the sacrifice of his peace offerings.",
             "NABRE": "Tell the Israelites: The person who offers a communion sacrifice to the Lord shall be the one to bring from it the offering to the Lord.",
@@ -1681,7 +1681,7 @@
         {
           "num": 30,
           "text": {
-            "NRSV": "The worshiper’s own hands shall bring the Lord’s offering by fire. You shall bring the fat with the breast, so that the breast may be raised as an elevation offering before the Lord.",
+            "NRSV": "Your own hands shall bring the Lord’s offering by fire; you shall bring the fat with the breast, so that the breast may be raised as an elevation offering before the Lord.",
             "Rotherham": "his own hands shall bring in the altar-flames of Yahweh,—the fat with the breast, he shall bring it in, the breast, to wave it as a wave-offering before Yahweh.",
             "KJV": "His own hands shall bring the offerings of the Lord made by fire, the fat with the breast, it shall he bring, that the breast may be waved for a wave offering before the Lord.",
             "NABRE": "The offerer’s own hands shall carry the oblations for the Lord: the person shall bring the fat together with the brisket, which is to be raised as an elevated offering before the Lord.",
@@ -1731,7 +1731,7 @@
         {
           "num": 35,
           "text": {
-            "NRSV": "This is the portion allotted to Aaron and to his sons from the offerings made by fire to the Lord, once they have been brought forward to serve as priests to the Lord;",
+            "NRSV": "This is the portion allotted to Aaron and to his sons from the offerings made by fire to the Lord, once they have been brought forward to serve the Lord as priests;",
             "Rotherham": "This, is what pertaineth to the anointing of Aaron and to the anointing of his sons out of the altar-flames of Yahweh,—[granted] in the day when he brought them near, to minister as priests unto Yahweh:",
             "KJV": "This is the portion of the anointing of Aaron, and of the anointing of his sons, out of the offerings of the Lord made by fire, in the day when he presented them to minister unto the Lord in the priest’s office;",
             "NABRE": "This is the priestly share from the oblations for the Lord, allotted to Aaron and his sons on the day they were brought forth to be the priests of the Lord,",
@@ -1786,7 +1786,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "Take Aaron and his sons with him, and the vestments, and the anointing oil, and the bull of sin offering, and the two rams, and the basket of unleavened bread;",
+            "NRSV": "Take Aaron and his sons with him, the vestments, the anointing oil, the bull of sin offering, the two rams, and the basket of unleavened bread;",
             "Rotherham": "Take thou Aaron and his sons with him, and the garments, and the anointing oil,—and the sin-bearing bullock, and the two rams, and the basket of unleavened cakes;",
             "KJV": "Take Aaron and his sons with him, and the garments, and the anointing oil, and a bullock for the sin offering, and two rams, and a basket of unleavened bread;",
             "NABRE": "Take Aaron along with his sons, the vestments, the anointing oil, the bull for a purification offering, the two rams, and the basket of unleavened bread,",
@@ -1836,7 +1836,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "He put the tunic on him, fastened the sash around him, clothed him with the robe, and put the ephod on him; he then put the decorated band of the ephod around him, tying the ephod to him with it.",
+            "NRSV": "He put the tunic on him, fastened the sash around him, clothed him with the robe, and put the ephod on him. He then put the decorated band of the ephod around him, tying the ephod to him with it.",
             "Rotherham": "and put upon him the tunic and girded him with the band, and clothed him with the robe, and put upon him the ephod, and girded him with the curiously-woven band of the ephod, and bound it to him therewith;",
             "KJV": "And he put upon him the coat, and girded him with the girdle, and clothed him with the robe, and put the ephod upon him, and he girded him with the curious girdle of the ephod, and bound it unto him therewith.",
             "NABRE": "Then he put the tunic on Aaron, girded him with the sash, clothed him with the robe, placed the ephod on him, and girded him with the ephod’s embroidered belt, fastening the ephod on him with it.",
@@ -1856,7 +1856,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "And he set the turban on his head, and on the turban, in front, he set the golden ornament, the holy diadem, as the Lord commanded Moses.",
+            "NRSV": "And he set the turban on his head, and on the turban, in front, he set the golden ornament, the holy crown, as the Lord commanded Moses.",
             "Rotherham": "and he put the turban upon his head,—and put upon the turban, on the forefront thereof the burnished plate of gold—the holy crown, As Yahweh commanded Moses.",
             "KJV": "And he put the mitre upon his head; also upon the mitre, even upon his forefront, did he put the golden plate, the holy crown; as the Lord commanded Moses.",
             "NABRE": "He put the turban on his head, attaching the gold medallion, the sacred headband, on the front of the turban, as the Lord had commanded Moses to do.",
@@ -1936,7 +1936,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "But the bull itself, and its skin and flesh and its dung, he burned with fire outside the camp, as the Lord commanded Moses.",
+            "NRSV": "But the bull itself, its skin and flesh and its dung, he burned with fire outside the camp, as the Lord commanded Moses.",
             "Rotherham": "But the bullock itself, and its skin and its flesh and its dung, consumed he with fire, outside the camp,—As Yahweh commanded Moses,",
             "KJV": "But the bullock, and his hide, his flesh, and his dung, he burnt with fire without the camp; as the Lord commanded Moses.",
             "NABRE": "The bull, however, with its hide and flesh and dung he burned in the fire outside the camp, as the Lord had commanded Moses to do.",
@@ -1946,7 +1946,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "Then he presented the ram of burnt offering. Aaron and his sons laid their hands on the head of the ram,",
+            "NRSV": "Then he brought forward the ram of burnt offering. Aaron and his sons laid their hands on the head of the ram,",
             "Rotherham": "Then was brought near the ram for the ascending-sacrifice,—and Aaron and his sons leaned their hands upon the head of the ram;",
             "KJV": "And he brought the ram for the burnt offering: and Aaron and his sons laid their hands upon the head of the ram.",
             "NABRE": "He next brought forward the ram of the burnt offering, and Aaron and his sons laid their hands on its head.",
@@ -1966,7 +1966,7 @@
         {
           "num": 20,
           "text": {
-            "NRSV": "The ram was cut into its parts, and Moses turned the head, the parts, and the suet into smoke on the altar;",
+            "NRSV": "The ram was cut into its parts, and Moses turned into smoke the head and the parts and the suet.",
             "Rotherham": "and the ram itself, was cut up into its pieces,—and Moses made a perfume with the head and with the pieces and with the fat;",
             "KJV": "And he cut the ram into pieces; and Moses burnt the head, and the pieces, and the fat.",
             "NABRE": "After the ram was cut up into pieces, Moses burned the head, the cut-up pieces and the suet.",
@@ -1976,7 +1976,7 @@
         {
           "num": 21,
           "text": {
-            "NRSV": "but the entrails and the legs he washed with water. Moses turned the whole ram into smoke on the altar; it was a burnt offering for a pleasing odor, an offering by fire to the Lord, as the Lord commanded Moses.",
+            "NRSV": "And after the entrails and the legs were washed with water, Moses turned into smoke the whole ram on the altar; it was a burnt offering for a pleasing odor, an offering by fire to the Lord, as the Lord commanded Moses.",
             "Rotherham": "but the inwards and the legs, were bathed in water,—and Moses made a perfume with the whole ram at the altar, an ascending-sacrifice, it was—for a satisfying odour an altar-flame, it was unto Yahweh, As Yahweh commanded Moses.",
             "KJV": "And he washed the inwards and the legs in water; and Moses burnt the whole ram upon the altar: it was a burnt sacrifice for a sweet savour, and an offering made by fire unto the Lord; as the Lord commanded Moses.",
             "NABRE": "After the inner organs and the shanks were washed with water, Moses burned these remaining parts of the ram on the altar. It was a burnt offering for a sweet aroma, an oblation to the Lord, as the Lord had commanded Moses.",
@@ -1986,7 +1986,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "Then he presented the second ram, the ram of ordination. Aaron and his sons laid their hands on the head of the ram,",
+            "NRSV": "Then he brought forward the second ram, the ram of ordination. Aaron and his sons laid their hands on the head of the ram,",
             "Rotherham": "Then was brought near the second ram, the ram of installation, and Aaron and his sons leaned their hands upon the head of the ram;",
             "KJV": "And he brought the other ram, the ram of consecration: and Aaron and his sons laid their hands upon the head of the ram.",
             "NABRE": "Then he brought forward the second ram, the ordination ram, and Aaron and his sons laid their hands on its head.",
@@ -2056,7 +2056,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "Moses took the breast and elevated it as an elevation offering before the Lord; it was Moses’ portion of the ram of ordination, as the Lord commanded Moses.",
+            "NRSV": "Moses took the breast and raised it as an elevation offering before the Lord; it was Moses’ portion of the ram of ordination, as the Lord commanded Moses.",
             "Rotherham": "And Moses took the breast, and waved it as a wave-offering, before Yahweh,—of the ram of installation, unto Moses it belonged, as a portion, As Yahweh commanded Moses.",
             "KJV": "And Moses took the breast, and waved it for a wave offering before the Lord: for of the ram of consecration it was Moses’ part; as the Lord commanded Moses.",
             "NABRE": "He then took the brisket and raised it as an elevated offering before the Lord; this was Moses’ own portion of the ordination ram, as the Lord had commanded Moses.",
@@ -2281,7 +2281,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "Then he presented the people’s offering. He took the goat of the sin offering that was for the people, and slaughtered it, and presented it as a sin offering like the first one.",
+            "NRSV": "Next he presented the people’s offering. He took the goat of the sin offering that was for the people, and slaughtered it, and presented it as a sin offering like the first one.",
             "Rotherham": "Then brought he near the oblation of the people,—and took the sin-bearing goat which pertained to the people, and slew it and made therewith a sin-bearer, like the first.",
             "KJV": "And he brought the people’s offering, and took the goat, which was the sin offering for the people, and slew it, and offered it for sin, as the first.",
             "NABRE": "Then he had the people’s offering brought. Taking the goat that was for the people’s purification offering, he slaughtered it and offered it as a purification offering as before.",
@@ -2291,7 +2291,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "He presented the burnt offering, and sacrificed it according to the regulation.",
+            "NRSV": "He presented the burnt offering, and sacrificed it according to regulation.",
             "Rotherham": "Then brought he near the ascending-sacrifice,—and offered it, according to the regulation,",
             "KJV": "And he brought the burnt offering, and offered it according to the manner.",
             "NABRE": "Then he brought forward the burnt offering and offered it according to procedure.",
@@ -2301,7 +2301,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "Next he presented the grain offering, took a handful of it, and turned it into smoke on the altar, in addition to the burnt offering of the morning.",
+            "NRSV": "He presented the grain offering, and, taking a handful of it, he turned it into smoke on the altar, in addition to the burnt offering of the morning.",
             "Rotherham": "Then brought he near the meal-offering, and filled his hand therefrom, and made a perfume upon the altar,—in addition to the ascending-sacrifice of the morning.",
             "KJV": "And he brought the meat offering, and took an handful thereof, and burnt it upon the altar, beside the burnt sacrifice of the morning.",
             "NABRE": "He then presented the grain offering; taking a handful of it, he burned it on the altar, in addition to the morning burnt offering.",
@@ -2321,7 +2321,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "and the fat from the ox and from the ram—the broad tail, the fat that covers the entrails, the two kidneys and the fat on them, and the appendage of the liver.",
+            "NRSV": "and the fat of the ox and of the ram—the broad tail, the fat that covers the entrails, the two kidneys and the fat on them, and the appendage of the liver.",
             "Rotherham": "and the portions of fat from the ox,—and from the ram, the fat-tail, and the covering, and the kidneys, and the caul of the liver;",
             "KJV": "And the fat of the bullock and of the ram, the rump, and that which covereth the inwards, and the kidneys, and the caul above the liver:",
             "NABRE": "The portions of fat from the ox and from the ram, the fatty tail, the covering fat, the kidneys, and the lobe of the liver",
@@ -2341,7 +2341,7 @@
         {
           "num": 21,
           "text": {
-            "NRSV": "and Aaron raised the breasts and the right thigh as an elevation offering before the Lord, as Moses had commanded.",
+            "NRSV": "and the breasts and the right thigh Aaron raised as an elevation offering before the Lord, as Moses had commanded.",
             "Rotherham": "but the breasts and the right shoulder, did Aaron wave as a wave-offering, before Yahweh,—as Moses commanded,",
             "KJV": "And the breasts and the right shoulder Aaron waved for a wave offering before the Lord; as Moses commanded.",
             "NABRE": "but the briskets and the right thigh he raised as an elevated offering before the Lord, as the Lord had commanded Moses.",
@@ -2371,10 +2371,10 @@
         {
           "num": 24,
           "text": {
-            "NRSV": "Fire came out from the Lord and consumed the burnt offering and the fat pieces on the altar; and when all the people saw it, they shouted and fell on their faces.",
+            "NRSV": "Fire came out from the Lord and consumed the burnt offering and the fat on the altar; and when all the people saw it, they shouted and fell on their faces.",
             "Rotherham": "yea, there came forth fire from before Yahweh, and consumed upon the altar, the ascending-sacrifice and the portions of fat,—and all the people beheld and shouted, and fell down upon their faces.",
             "KJV": "And there came a fire out from before the Lord, and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces.",
-            "NABRE": "Fire came forth from the Lord ’s presence and consumed the burnt offering and the fat on the altar. Seeing this, all the people shouted with joy and fell prostrate.",
+            "NABRE": "Fire came forth from the Lord’s presence and consumed the burnt offering and the fat on the altar. Seeing this, all the people shouted with joy and fell prostrate.",
             "DRB": "& behold a fire coming forth from our Lord, devoured the holocaust, and the fat that was upon the altar: Which thing, when the multitude had seen, they praised our Lord, falling on their faces."
           }
         }
@@ -2386,7 +2386,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "Now Aaron’s sons Nadab and Abihu each took his censer, put fire in it, and laid incense on it; they offered unholy fire before the Lord, such as he had not commanded them.",
+            "NRSV": "Now Aaron’s sons, Nadab and Abihu, each took his censer, put fire in it, and laid incense on it; and they offered unholy fire before the Lord, such as he had not commanded them.",
             "Rotherham": "Then Aaron’s sons, Nadab and Abihu, took each man his censer and placed therein fire, and put thereon incense,—and brought near before Yahweh strange fire, which he had not commanded them.",
             "KJV": "And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before the Lord, which he commanded them not.",
             "NABRE": "Aaron’s sons Nadab and Abihu took their censers and, putting incense on the fire they had set in them, they offered before the Lord unauthorized fire, such as he had not commanded.",
@@ -2399,14 +2399,14 @@
             "NRSV": "And fire came out from the presence of the Lord and consumed them, and they died before the Lord.",
             "Rotherham": "Then came there forth fire from before Yahweh, and consumed them,—and they died before Yahweh.",
             "KJV": "And there went out fire from the Lord, and devoured them, and they died before the Lord.",
-            "NABRE": "Fire therefore came forth from the Lord ’s presence and consumed them, so that they died in the Lord ’s presence.",
+            "NABRE": "Fire therefore came forth from the Lord’s presence and consumed them, so that they died in the Lord’s presence.",
             "DRB": "And fire coming forth from our Lord, devoured them, & they died before our Lord."
           }
         },
         {
           "num": 3,
           "text": {
-            "NRSV": "Then Moses said to Aaron, “This is what the Lord meant when he said, ‘Through those who are near me I will show myself holy, and before all the people I will be glorified.’” And Aaron fell silent.",
+            "NRSV": "Then Moses said to Aaron, “This is what the Lord meant when he said, ‘Through those who are near me I will show myself holy, and before all the people I will be glorified.’” And Aaron was silent.",
             "Rotherham": "Then said Moses unto Aaron—The very thing, that Yahweh spake, saying—In them that draw near to me, must I be hallowed, And before the faces of all the people, must I get myself honour,—And Aaron, was dumb.",
             "KJV": "Then Moses said unto Aaron, This is it that the Lord spake, saying, I will be sanctified in them that come nigh me, and before all the people I will be glorified. And Aaron held his peace.",
             "NABRE": "Moses then said to Aaron, “This is as the Lord said: Through those near to me I will be sanctified; in the sight of all the people I will obtain glory.” But Aaron said nothing.",
@@ -2436,10 +2436,10 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "And Moses said to Aaron and to his sons Eleazar and Ithamar, “Do not bare your heads or tear your clothes, or you will die and wrath will strike all the congregation; but your kindred, the whole house of Israel, shall bewail the burning that the Lord has kindled.",
+            "NRSV": "And Moses said to Aaron and to his sons Eleazar and Ithamar, “Do not dishevel your hair, and do not tear your vestments, or you will die and wrath will strike all the congregation; but your kindred, the whole house of Israel, may mourn the burning that the Lord has sent.",
             "Rotherham": "Then said Moses unto Aaron and to Eleazar and to Ithamar, his sons—Your heads, ye may not bare and your garments, ye shall not rend so shall ye not die, neither against all the assembly, will he be wroth,—but let, your brethren the whole house of Israel, bewail the consuming fire wherewith Yahweh hath consumed.",
             "KJV": "And Moses said unto Aaron, and unto Eleazar and unto Ithamar, his sons, Uncover not your heads, neither rend your clothes; lest ye die, and lest wrath come upon all the people: but let your brethren, the whole house of Israel, bewail the burning which the Lord hath kindled.",
-            "NABRE": "Conduct of the Priests. Moses said to Aaron and his sons Eleazar and Ithamar, “Do not dishevel your hair or tear your garments, lest you die and bring God’s wrath also on the whole community. While your kindred, the rest of the house of Israel, may mourn for those whom the Lord ’s fire has burned up,",
+            "NABRE": "Conduct of the Priests. Moses said to Aaron and his sons Eleazar and Ithamar, “Do not dishevel your hair or tear your garments, lest you die and bring God’s wrath also on the whole community. While your kindred, the rest of the house of Israel, may mourn for those whom the Lord’s fire has burned up,",
             "DRB": "And Moyses spake to Aaron, & to Eleazar, and Ithamar his sons: Uncover not your heads, and rent not your vestments, lest perhaps you die, & indignation come upon all the assembly. Let your brethren, & all the house of Israel, lament the burning that our Lord hath raised,"
           }
         },
@@ -2496,7 +2496,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "Moses spoke to Aaron and to his remaining sons, Eleazar and Ithamar: “Take the grain offering that is left from the Lord’s offerings by fire, and eat it unleavened beside the altar, for it is most holy;",
+            "NRSV": "Moses spoke to Aaron and to his remaining sons, Eleazar and Ithamar: Take the grain offering that is left from the Lord’s offerings by fire, and eat it unleavened beside the altar, for it is most holy;",
             "Rotherham": "Then spake Moses unto Aaron and unto Eleazar and unto Ithamar his sons that were left, Take ye the meal-offering that is left of the altar-flames of Yahweh, and eat it unleavened beside the altar,—for, most holy, it is;",
             "KJV": "And Moses spake unto Aaron, and unto Eleazar and unto Ithamar, his sons that were left, Take the meat offering that remaineth of the offerings of the Lord made by fire, and eat it without leaven beside the altar: for it is most holy:",
             "NABRE": "The Eating of the Priestly Portions. Moses said to Aaron and his surviving sons, Eleazar and Ithamar, “Take the grain offering left over from the oblations to the Lord, and eat it beside the altar in the form of unleavened cakes, since it is most holy.",
@@ -2566,7 +2566,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "And Aaron spoke to Moses, “See, today they offered their sin offering and their burnt offering before the Lord; and yet such things as these have befallen me! If I had eaten the sin offering today, would it have been acceptable to the Lord?”",
+            "NRSV": "And Aaron spoke to Moses, “See, today they offered their sin offering and their burnt offering before the Lord; and yet such things as these have befallen me! If I had eaten the sin offering today, would it have been agreeable to the Lord?”",
             "Rotherham": "Then spake Aaron unto Moses—Lo! this very day, when they had brought near their own sin-bearer, and their own ascending-sacrifice, there befell me such things as these,—if, then, I had eaten of the sin-bearer this day, would it have been well-pleasing in the eyes of Yahweh?",
             "KJV": "And Aaron said unto Moses, Behold, this day have they offered their sin offering and their burnt offering before the Lord; and such things have befallen me: and if I had eaten the sin offering to day, should it have been accepted in the sight of the Lord?",
             "NABRE": "Aaron answered Moses, “Even though they presented their purification offering and burnt offering before the Lord today, still this misfortune has befallen me. Had I then eaten of the purification offering today, would it have been pleasing to the Lord?”",
@@ -2591,7 +2591,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "The Lord spoke to Moses and Aaron:",
+            "NRSV": "The Lord spoke to Moses and Aaron, saying to them:",
             "Rotherham": "And Yahweh spake unto Moses and unto Aaron, saying unto them:",
             "KJV": "And the Lord spake unto Moses and to Aaron, saying unto them,",
             "NABRE": "The Lord said to Moses and Aaron:",
@@ -2601,7 +2601,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "Speak to the people of Israel, saying: From among all the land animals these are the creatures that you may eat.",
+            "NRSV": "Speak to the people of Israel, saying: From among all the land animals, these are the creatures that you may eat.",
             "Rotherham": "Speak ye unto the sons of Israel saying,—These are the living things which ye may eat, of all the beasts which are upon the earth:",
             "KJV": "Speak unto the children of Israel, saying, These are the beasts which ye shall eat among all the beasts that are on the earth.",
             "NABRE": "Speak to the Israelites and tell them: Of all land animals these are the ones you may eat:",
@@ -2821,7 +2821,7 @@
         {
           "num": 24,
           "text": {
-            "NRSV": "By these you shall become unclean; whoever touches their carcass shall be unclean until the evening,",
+            "NRSV": "By these you shall become unclean; whoever touches the carcass of any of them shall be unclean until the evening,",
             "Rotherham": "and, for these, shall ye count yourselves unclean—whosoever toucheth the carcase of them shall be unclean until the evening;",
             "KJV": "And for these ye shall be unclean: whosoever toucheth the carcase of them shall be unclean until the even.",
             "NABRE": "You become unclean by the following—anyone who touches their carcasses shall be unclean until evening,",
@@ -2831,7 +2831,7 @@
         {
           "num": 25,
           "text": {
-            "NRSV": "and whoever carries any part of their carcass shall wash his clothes and be unclean until the evening.",
+            "NRSV": "and whoever carries any part of the carcass of any of them shall wash his clothes and be unclean until the evening.",
             "Rotherham": "and whosoever beareth away aught of the carcase of them, shall wash his clothes and be unclean until the evening.",
             "KJV": "And whosoever beareth ought of the carcase of them shall wash his clothes, and be unclean until the even.",
             "NABRE": "and anyone who carries any part of their carcasses shall wash his garments and be unclean until evening—",
@@ -2841,7 +2841,7 @@
         {
           "num": 26,
           "text": {
-            "NRSV": "Every animal that has divided hoofs but is not cleft-footed or does not chew the cud is unclean for you; everyone who touches them shall be unclean.",
+            "NRSV": "Every animal that has divided hoofs but is not cleft-footed or does not chew the cud is unclean for you; everyone who touches one of them shall be unclean.",
             "Rotherham": "As for every kind of beast which, though it parteth the hoof, yet is not cloven-footed nor cheweth the cud, unclean, they are unto you,—every one who toucheth them shall be unclean.",
             "KJV": "The carcases of every beast which divideth the hoof, and is not clovenfooted, nor cheweth the cud, are unclean unto you: every one that toucheth them shall be unclean.",
             "NABRE": "by all hoofed animals that are not cloven-footed or do not chew the cud; they are unclean for you; anyone who touches them becomes unclean.",
@@ -2851,7 +2851,7 @@
         {
           "num": 27,
           "text": {
-            "NRSV": "All that walk on their paws, among the animals that walk on all fours, are unclean for you; whoever touches their carcass shall be unclean until the evening,",
+            "NRSV": "All that walk on their paws, among the animals that walk on all fours, are unclean for you; whoever touches the carcass of any of them shall be unclean until the evening,",
             "Rotherham": "And, all that go upon their paws, among all the living things that go on all-fours, unclean, they are unto you,—whoso toucheth the carcase of them, shall be unclean until the evening.",
             "KJV": "And whatsoever goeth upon his paws, among all manner of beasts that go on all four, those are unclean unto you: whoso toucheth their carcase shall be unclean until the even.",
             "NABRE": "Also by the various quadrupeds that walk on paws; they are unclean for you; anyone who touches their carcasses shall be unclean until evening,",
@@ -2861,7 +2861,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "and the one who carries their carcass shall wash his clothes and be unclean until the evening; they are unclean for you.",
+            "NRSV": "and the one who carries the carcass shall wash his clothes and be unclean until the evening; they are unclean for you.",
             "Rotherham": "And, he that beareth away the carcase of them shall wash his clothes, and shall be unclean until the evening,—unclean, they are unto you.",
             "KJV": "And he that beareth the carcase of them shall wash his clothes, and be unclean until the even: they are unclean unto you.",
             "NABRE": "and anyone who carries their carcasses shall wash his garments and be unclean until evening. They are unclean for you.",
@@ -2891,7 +2891,7 @@
         {
           "num": 31,
           "text": {
-            "NRSV": "These are unclean for you among all that swarm; whoever touches them when they are dead shall be unclean until the evening.",
+            "NRSV": "These are unclean for you among all that swarm; whoever touches one of them when they are dead shall be unclean until the evening.",
             "Rotherham": "These, are they which are unclean to you among all that creep,—whosoever toucheth them when they are dead shall be unclean until the evening;",
             "KJV": "These are unclean to you among all that creep: whosoever doth touch them, when they be dead, shall be unclean until the even.",
             "NABRE": "Among the various swarming creatures, these are unclean for you. Everyone who touches them when they are dead shall be unclean until evening.",
@@ -2921,7 +2921,7 @@
         {
           "num": 34,
           "text": {
-            "NRSV": "Any food in it which may be eaten, upon which water falls, shall be unclean; all drink that may be drunk from any such vessel shall be unclean.",
+            "NRSV": "Any food that could be eaten shall be unclean if water from any such vessel comes upon it; and any liquid that could be drunk shall be unclean if it was in any such vessel.",
             "Rotherham": "Of all the food that may be eaten, that whereon shall come water, shall be unclean,—and, all drink which might be drunk in any [such] vessel, shall be unclean.",
             "KJV": "Of all meat which may be eaten, that on which such water cometh shall be unclean: and all drink that may be drunk in every such vessel shall be unclean.",
             "NABRE": "Any food that can be eaten which makes contact with water, and any liquid that may be drunk, in any such vessel become unclean.",
@@ -2931,7 +2931,7 @@
         {
           "num": 35,
           "text": {
-            "NRSV": "Anything on which any part of the carcass falls shall be unclean; whether an oven or stove, it shall be broken in pieces; they are unclean, and shall remain unclean for you.",
+            "NRSV": "Everything on which any part of the carcass falls shall be unclean; whether an oven or stove, it shall be broken in pieces; they are unclean, and shall remain unclean for you.",
             "Rotherham": "And, everything whereon shall fall any part of the carcase of them shall be unclean, oven or fire-range, it shall be destroyed, unclean, they are,—and, unclean, Shall they remain to you.",
             "KJV": "And every thing whereupon any part of their carcase falleth shall be unclean; whether it be oven, or ranges for pots, they shall be broken down: for they are unclean, and shall be unclean unto you.",
             "NABRE": "Any object on which any part of their carcasses falls becomes unclean; if it is an oven or stove, this must be broken to pieces; they are unclean and shall always be unclean to you.",
@@ -2971,7 +2971,7 @@
         {
           "num": 39,
           "text": {
-            "NRSV": "If any animal of which you may eat dies, anyone who touches its carcass shall be unclean until the evening.",
+            "NRSV": "If an animal of which you may eat dies, anyone who touches its carcass shall be unclean until the evening.",
             "Rotherham": "And, when any of the beasts which are yours for food shall die, he that toucheth the carcase of it shall be unclean until the evening.",
             "KJV": "And if any beast, of which ye may eat, die; he that toucheth the carcase thereof shall be unclean until the even.",
             "NABRE": "When one of the animals that you could otherwise eat dies of itself, anyone who touches its carcass shall be unclean until evening;",
@@ -2981,7 +2981,7 @@
         {
           "num": 40,
           "text": {
-            "NRSV": "Those who eat of its carcass shall wash their clothes and be unclean until the evening; those who carry the carcass shall wash their clothes and be unclean until the evening.",
+            "NRSV": "Those who eat of its carcass shall wash their clothes and be unclean until the evening; and those who carry the carcass shall wash their clothes and be unclean until the evening.",
             "Rotherham": "And, he that eateth of the carcase of it, shall wash his clothes, and be unclean until the evening,—he also that carrieth away the carcase thereof shall wash his clothes, and be unclean until the evening.",
             "KJV": "And he that eateth of the carcase of it shall wash his clothes, and be unclean until the even: he also that beareth the carcase of it shall wash his clothes, and be unclean until the even.",
             "NABRE": "and anyone who eats any part of its carcass shall wash his garments and be unclean until evening; so also, anyone who carries its carcass shall wash his garments and be unclean until evening.",
@@ -3041,7 +3041,7 @@
         {
           "num": 46,
           "text": {
-            "NRSV": "This is the law of animals and birds and all living creatures that move in the waters and all creatures that swarm on the ground,",
+            "NRSV": "This is the law pertaining to land animal and bird and every living creature that moves through the waters and every creature that swarms upon the earth,",
             "Rotherham": "This, is the law of beast and of bird, and of every living soul that moveth in the waters,—and as to every soul that creepeth upon the earth:",
             "KJV": "This is the law of the beasts, and of the fowl, and of every living creature that moveth in the waters, and of every creature that creepeth upon the earth:",
             "NABRE": "This is the instruction for land animals, birds, and all the creatures that move about in the water, as well as any animal that swarms on the ground,",
@@ -3191,7 +3191,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "The priest shall examine him on the seventh day, and if in his eyes the disease is checked and the disease has not spread in the skin, the priest shall confine him seven days more.",
+            "NRSV": "The priest shall examine him on the seventh day, and if he sees that the disease is checked and the disease has not spread in the skin, then the priest shall confine him seven days more.",
             "Rotherham": "And the priest shall view him on the seventh day, and lo! if the spot hath stayed to his sight, and the spot hath not spread in the skin, then shall the priest shut him up seven days more,",
             "KJV": "And the priest shall look on him the seventh day: and, behold, if the plague in his sight be at a stay, and the plague spread not in the skin; then the priest shall shut him up seven days more:",
             "NABRE": "Should the priest, upon examination on the seventh day, find that the infection has remained unchanged in color and has not spread on the skin, the priest shall quarantine the person for another seven days.",
@@ -3231,7 +3231,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "When a person has a leprous disease, he shall be brought to the priest.",
+            "NRSV": "When a person contracts a leprous disease, he shall be brought to the priest.",
             "Rotherham": "When, the plague of leprosy, cometh to be in any human being, then shall he be brought in unto the priest;",
             "KJV": "When the plague of leprosy is in a man, then he shall be brought unto the priest;",
             "NABRE": "When someone is afflicted with a scaly infection, that person shall be brought to the priest.",
@@ -3271,7 +3271,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "the priest shall make an examination, and if the disease has covered all his body, he shall pronounce him clean of the disease; since it has all turned white, he is clean.",
+            "NRSV": "then the priest shall make an examination, and if the disease has covered all his body, he shall pronounce him clean of the disease; since it has all turned white, he is clean.",
             "Rotherham": "then shall the priest takes view and lo! if the leprosy hath covered all his flesh, then shall he pronounce clean him that was plagued,—all of it, hath turned white, clean, he is.",
             "KJV": "Then the priest shall consider: and, behold, if the leprosy have covered all his flesh, he shall pronounce him clean that hath the plague: it is all turned white: he is clean.",
             "NABRE": "should the priest then, upon examination, find that the scaly infection does cover the whole body, he shall declare the afflicted person clean; since the person has turned completely white; that individual is clean.",
@@ -3321,7 +3321,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "When a boil appears on the skin of one’s body and it heals,",
+            "NRSV": "When there is on the skin of one’s body a boil that has healed,",
             "Rotherham": "And, when, any one’s flesh, hath, in the skin thereof, a boil,—and then it is healed;",
             "KJV": "The flesh also, in which, even in the skin thereof, was a boil, and is healed,",
             "NABRE": "If a boil appeared on a person’s skin which later healed,",
@@ -3401,7 +3401,7 @@
         {
           "num": 26,
           "text": {
-            "NRSV": "But if the priest examines it and the hair on the spot is not white, and it is no deeper than the skin but has abated, the priest shall confine him seven days.",
+            "NRSV": "But if the priest examines it and the hair in the spot is not white, and it is no deeper than the skin but has abated, the priest shall confine him seven days.",
             "Rotherham": "But, if the priest shall view it and lo! there is not, in the bright spot white hair, and it is not deeper than the skin but, itself, is faint, then shall the priest shut him up seven days;",
             "KJV": "But if the priest look on it, and, behold, there be no white hair in the bright spot, and it be no lower than the other skin, but be somewhat dark; then the priest shall shut him up seven days:",
             "NABRE": "But if the priest, upon examination, finds that there is no white hair in the blotch and that this is not deeper than the skin and is faded, the priest shall quarantine the person for seven days.",
@@ -3441,7 +3441,7 @@
         {
           "num": 30,
           "text": {
-            "NRSV": "the priest shall examine the disease. If it appears deeper than the skin and the hair in it is yellow and thin, the priest shall pronounce him unclean; it is a scall, a leprous disease of the head or the beard.",
+            "NRSV": "the priest shall examine the disease. If it appears deeper than the skin and the hair in it is yellow and thin, the priest shall pronounce him unclean; it is an itch, a leprous disease of the head or the beard.",
             "Rotherham": "then shall the priest view the spot and lo! if, the appearance thereof, is deeper than the skin, and, therein, is yellow, thin hair, then shall the priest pronounce him unclean a scall, it is, a leprosy of the head or of the beard, it is.",
             "KJV": "Then the priest shall see the plague: and, behold, if it be in sight deeper than the skin; and there be in it a yellow thin hair; then the priest shall pronounce him unclean: it is a dry scall, even a leprosy upon the head or beard.",
             "NABRE": "should the priest, upon examination, find that the infection appears to be deeper than the skin and that there is fine yellow hair in it, the priest shall declare the person unclean; it is a scall. It is a scaly infection of the head or beard.",
@@ -3451,7 +3451,7 @@
         {
           "num": 31,
           "text": {
-            "NRSV": "But if the priest examines the scaly disease, and it does not appear deeper than the skin and there is no black hair in it, the priest shall confine the person with the scaly disease for seven days.",
+            "NRSV": "If the priest examines the itching disease, and it appears no deeper than the skin and there is no black hair in it, the priest shall confine the person with the itching disease for seven days.",
             "Rotherham": "But when the priest vieweth the spot, and lo! there is, no appearance, of it deeper than the skin, and, no dark hair, is therein, then shall the priest shut up him that hath the plague-spot of scall, seven days;",
             "KJV": "And if the priest look on the plague of the scall, and, behold, it be not in sight deeper than the skin, and that there is no black hair in it; then the priest shall shut up him that hath the plague of the scall seven days:",
             "NABRE": "But if the priest, upon examining the scall infection, finds that it does not appear to be deeper than the skin, though the hair in it may not be black, the priest shall quarantine the scall-stricken person for seven days.",
@@ -3461,7 +3461,7 @@
         {
           "num": 32,
           "text": {
-            "NRSV": "On the seventh day the priest shall examine the itch; if the scall has not spread, and there is no yellow hair in it, and the scall does not appear deeper than the skin,",
+            "NRSV": "On the seventh day the priest shall examine the itch; if the itch has not spread, and there is no yellow hair in it, and the itch appears to be no deeper than the skin,",
             "Rotherham": "and the priest shall view the spot on the seventh day, and lo! if the scall hath not spread, and there hath not come to be therein yellow hair,—and, the appearance of the scall, is not deeper than the skin,",
             "KJV": "And in the seventh day the priest shall look on the plague: and, behold, if the scall spread not, and there be in it no yellow hair, and the scall be not in sight deeper than the skin;",
             "NABRE": "Should the priest, upon examining the infection on the seventh day find that the scall has not spread and has no yellow hair in it and does not seem to be deeper than the skin,",
@@ -3471,7 +3471,7 @@
         {
           "num": 33,
           "text": {
-            "NRSV": "he shall shave, but the scall he shall not shave. The priest shall confine the person with the scall for seven days more.",
+            "NRSV": "he shall shave, but the itch he shall not shave. The priest shall confine the person with the itch for seven days more.",
             "Rotherham": "then shall he shave himself, but the scall, shall he not shave, and the priest shall shut up him who hath the scall seven days, more;",
             "KJV": "He shall be shaven, but the scall shall he not shave; and the priest shall shut up him that hath the scall seven days more:",
             "NABRE": "the person shall shave, but not the scall spot. Then the priest shall quarantine the scall-diseased person for another seven days.",
@@ -3481,7 +3481,7 @@
         {
           "num": 34,
           "text": {
-            "NRSV": "On the seventh day the priest shall examine the scall; if the scall has not spread in the skin and it appears no deeper than the skin, the priest shall pronounce him clean; he shall wash his clothes, and be clean.",
+            "NRSV": "On the seventh day the priest shall examine the itch; if the itch has not spread in the skin and it appears to be no deeper than the skin, the priest shall pronounce him clean. He shall wash his clothes and be clean.",
             "Rotherham": "then shall the priest view the scall, on the seventh day, and lo! if the scall hath not spread in the skin, and, the appearance thereof, is not deeper than the skin, then shall the priest pronounce him clean, and he shall wash his clothes, and be clean.",
             "KJV": "And in the seventh day the priest shall look on the scall: and, behold, if the scall be not spread in the skin, nor be in sight deeper than the skin; then the priest shall pronounce him clean: and he shall wash his clothes, and be clean.",
             "NABRE": "If the priest, upon examining the scall on the seventh day, finds that it has not spread on the skin and that it does not appear to be deeper than the skin, he shall declare the person clean; the latter shall wash his garments, and will thus be clean.",
@@ -3491,7 +3491,7 @@
         {
           "num": 35,
           "text": {
-            "NRSV": "But if the scall spreads in the skin after he has been pronounced clean,",
+            "NRSV": "But if the itch spreads in the skin after he was pronounced clean,",
             "Rotherham": "But, if the scall do indeed spread in the skin,—after he hath been pronounced clean,",
             "KJV": "But if the scall spread much in the skin after his cleansing;",
             "NABRE": "But if the scall spreads at all on the skin after the person has been declared clean—",
@@ -3501,7 +3501,7 @@
         {
           "num": 36,
           "text": {
-            "NRSV": "the priest shall examine him. If the scall has spread in the skin, the priest need not seek for yellow hair; he is unclean.",
+            "NRSV": "the priest shall examine him. If the itch has spread in the skin, the priest need not seek for the yellow hair; he is unclean.",
             "Rotherham": "then shall the priest take a view, and lo! if the scall hath spread in the skin, the priest shall not search for the yellow hair—unclean, he is.",
             "KJV": "Then the priest shall look on him: and, behold, if the scall be spread in the skin, the priest shall not seek for yellow hair; he is unclean.",
             "NABRE": "should the priest, upon examination, find that the scall has indeed spread on the skin, he need not look for yellow hair; the individual is unclean.",
@@ -3511,7 +3511,7 @@
         {
           "num": 37,
           "text": {
-            "NRSV": "If in his eyes the scall is unchanged and black hair has grown in it, the scall is healed; he is clean; and the priest shall pronounce him clean.",
+            "NRSV": "But if in his eyes the itch is checked, and black hair has grown in it, the itch is healed, he is clean; and the priest shall pronounce him clean.",
             "Rotherham": "But, if in his eyes, the scall is at a stay, and dark hair hath grown up therein, the scall is healed, clean, he is,—and the priest shall pronounce him clean.",
             "KJV": "But if the scall be in his sight at a stay, and that there is black hair grown up therein; the scall is healed, he is clean: and the priest shall pronounce him clean.",
             "NABRE": "If, however, the scall has remained unchanged in color and black hair has grown in it, the disease has been healed; the person is clean, and the priest shall declare the individual clean.",
@@ -3611,7 +3611,7 @@
         {
           "num": 47,
           "text": {
-            "NRSV": "When a garment has a mark of leprosy in it, whether it is a woolen or a linen garment,",
+            "NRSV": "Concerning clothing: when a leprous disease appears in it, in woolen or linen cloth,",
             "Rotherham": "And, when, in a garment, there is a plague-spot of leprosy,—whether in a garment of wool, or a garment of flax;",
             "KJV": "The garment also that the plague of leprosy is in, whether it be a woollen garment, or a linen garment;",
             "NABRE": "Fungal Infection of Fabrics and Leather. When a fungal infection is on a garment of wool or of linen,",
@@ -3621,7 +3621,7 @@
         {
           "num": 48,
           "text": {
-            "NRSV": "in warp or woof of linen or wool, or in skin or in anything made of skin,",
+            "NRSV": "in warp or woof of linen or wool, or in a skin or in anything made of skin,",
             "Rotherham": "either in warp or in weft, made with flax, or with wool,—or in a skin, or in anything wrought of skin;",
             "KJV": "Whether it be in the warp, or woof; of linen, or of woollen; whether in a skin, or in any thing made of skin;",
             "NABRE": "or on the warp and woof of linen or wool, or on a hide or anything made of leather,",
@@ -3641,7 +3641,7 @@
         {
           "num": 50,
           "text": {
-            "NRSV": "The priest shall examine the disease, and isolate the disease seven days.",
+            "NRSV": "The priest shall examine the disease, and put the diseased article aside for seven days.",
             "Rotherham": "and the priest shall view the spot,—and shall shut up him that is plagued seven days;",
             "KJV": "And the priest shall look upon the plague, and shut up it that hath the plague seven days:",
             "NABRE": "Having examined the infection, the priest shall quarantine the infected article for seven days.",
@@ -3651,7 +3651,7 @@
         {
           "num": 51,
           "text": {
-            "NRSV": "If the disease has spread in the garment, in warp or woof, or in the skin, whatever be the use of the skin, this is a spreading leprous disease; it is unclean.",
+            "NRSV": "He shall examine the disease on the seventh day. If the disease has spread in the cloth, in warp or woof, or in the skin, whatever be the use of the skin, this is a spreading leprous disease; it is unclean.",
             "Rotherham": "then shall he view the spot, on the seventh day if the spot hath spread in the garment whether in warp or in weft, or in the skin, or anything which may be made of skin for service, the spot is a fretting leprosy, unclean, it is.",
             "KJV": "And he shall look on the plague on the seventh day: if the plague be spread in the garment, either in the warp, or in the woof, or in a skin, or in any work that is made of skin; the plague is a fretting leprosy; it is unclean.",
             "NABRE": "If the priest, upon inspecting the infection on the seventh day, finds that it has spread on the garment, or on the warp or woof, or on the leather, whatever be its use, the infection is a harmful fungus; the article is unclean.",
@@ -3661,7 +3661,7 @@
         {
           "num": 52,
           "text": {
-            "NRSV": "He shall burn the garment, whether diseased in warp or woof, woolen or linen, or anything of skin, for it is a spreading leprous disease; it shall be burned in fire.",
+            "NRSV": "He shall burn the clothing, whether diseased in warp or woof, woolen or linen, or anything of skin, for it is a spreading leprous disease; it shall be burned in fire.",
             "Rotherham": "Then shall he burn up the garment whether it be in the warp or the weft in wool or in flax, or any utensil of skin, wherein shall be the plague-spot,—for, a fretting leprosy, it is, in fire, shall it be burnt up.",
             "KJV": "He shall therefore burn that garment, whether warp or woof, in woollen or in linen, or any thing of skin, wherein the plague is: for it is a fretting leprosy; it shall be burnt in the fire.",
             "NABRE": "He shall therefore burn up the garment, or the warp or woof, be it of wool or linen, or any leather article which is infected; since it is a harmful fungus, it must be destroyed by fire.",
@@ -3671,7 +3671,7 @@
         {
           "num": 53,
           "text": {
-            "NRSV": "If the priest makes an examination, and the disease has not spread in the garment, in warp or woof or in anything of skin,",
+            "NRSV": "If the priest makes an examination, and the disease has not spread in the clothing, in warp or woof or in anything of skin,",
             "Rotherham": "But if the priest shall take a view, and lo! the spot has not spread, in the garment, either in warp or in weft,—or in any utensil of skin,",
             "KJV": "And if the priest shall look, and, behold, the plague be not spread in the garment, either in the warp, or in the woof, or in any thing of skin;",
             "NABRE": "But if the priest, upon examination, finds that it has not spread on the garment, or on the warp or woof, or on the leather article,",
@@ -3681,7 +3681,7 @@
         {
           "num": 54,
           "text": {
-            "NRSV": "the priest shall command that the diseased article be washed, and he shall isolate it seven days more.",
+            "NRSV": "the priest shall command them to wash the article in which the disease appears, and he shall put it aside seven days more.",
             "Rotherham": "then shall the priest give command, and they shall wash that wherein is the spot,—and he shall shut it up seven days more;",
             "KJV": "Then the priest shall command that they wash the thing wherein the plague is, and he shall shut it up seven days more:",
             "NABRE": "he shall give orders to have the infected article washed and then quarantined for another seven days.",
@@ -3691,7 +3691,7 @@
         {
           "num": 55,
           "text": {
-            "NRSV": "Then the priest shall examine the diseased article after it has been washed. If the spot has not changed color, though the disease has not spread, it is unclean; you shall burn it in fire, whether the leprous spot is on the inside or on the outside.",
+            "NRSV": "The priest shall examine the diseased article after it has been washed. If the diseased spot has not changed color, though the disease has not spread, it is unclean; you shall burn it in fire, whether the leprous spot is on the inside or on the outside.",
             "Rotherham": "then shall the priest take a view after the plagued garment hath been washed and lo! if the spot hath not changed its look, then though the spot hath not spread, yet unclean, it is, in the fire, shalt thou burn it up,—a sunken spot, it is, in the back thereof, or in the front thereof.",
             "KJV": "And the priest shall look on the plague, after that it is washed: and, behold, if the plague have not changed his colour, and the plague be not spread; it is unclean; thou shalt burn it in the fire; it is fret inward, whether it be bare within or without.",
             "NABRE": "If the priest, upon examination after the infection was washed, finds that it has not changed its color, even though it may not have spread, the article is unclean. You shall burn it with fire. It is a fray, be it on its inner or outer side.",
@@ -3701,7 +3701,7 @@
         {
           "num": 56,
           "text": {
-            "NRSV": "If the priest makes an examination, and the disease has abated after it is washed, he shall tear the spot out of the garment, in skin, or in warp or woof.",
+            "NRSV": "If the priest makes an examination, and the disease has abated after it is washed, he shall tear the spot out of the cloth, in warp or woof, or out of skin.",
             "Rotherham": "And, if the priest hath taken a view, and lo! the spot is, faint, since it hath been washed, then shall he rend it out of the garment, or out of the skin, whether out of the warp or out of the weft;",
             "KJV": "And if the priest look, and, behold, the plague be somewhat dark after the washing of it; then he shall rend it out of the garment, or out of the skin, or out of the warp, or out of the woof:",
             "NABRE": "But if the priest, upon examination, finds that the infection has faded after the washing, he shall cut it out of the garment, or the leather, or the warp or woof.",
@@ -3711,7 +3711,7 @@
         {
           "num": 57,
           "text": {
-            "NRSV": "If it appears again in the garment, in warp or woof, or in anything of skin, it is spreading; you shall burn with fire that in which is the disease.",
+            "NRSV": "If it appears again in the garment, in warp or woof, or in anything of skin, it is spreading; you shall burn with fire that in which the disease appears.",
             "Rotherham": "and, if it appear still in the garment—either in the warp or in the weft, or in any utensil of skin, a breaking out, it is,—in the fire, shalt thou burn up that wherein is the plague.",
             "KJV": "And if it appear still in the garment, either in the warp, or in the woof, or in any thing of skin; it is a spreading plague: thou shalt burn that wherein the plague is with fire.",
             "NABRE": "If, however, the infection again appears on the garment, or on the warp or woof, or on the leather article, it is still virulent and you shall burn the thing infected with fire.",
@@ -3721,7 +3721,7 @@
         {
           "num": 58,
           "text": {
-            "NRSV": "But the garment, warp or woof, or anything of skin, from which the disease disappears when you have washed it, shall then be washed a second time, and it shall be clean.",
+            "NRSV": "But the cloth, warp or woof, or anything of skin from which the disease disappears when you have washed it, shall then be washed a second time, and it shall be clean.",
             "Rotherham": "But, as for the garment—whether the warp or the weft or any utensil of skin which thou shalt wash, and the plague shall depart therefrom, then shall it be washed a second time, and shall be clean.",
             "KJV": "And the garment, either warp, or woof, or whatsoever thing of skin it be, which thou shalt wash, if the plague be departed from them, then it shall be washed the second time, and shall be clean.",
             "NABRE": "But if, after the washing, the infection has disappeared from the garment, or the warp or woof, or the leather article, the thing shall be washed a second time, and thus it will be clean.",
@@ -3731,7 +3731,7 @@
         {
           "num": 59,
           "text": {
-            "NRSV": "This is the rule for leprous diseases in a garment of wool or linen, either in warp or woof, or in anything of skin, for pronouncing it clean or unclean.",
+            "NRSV": "This is the ritual for a leprous disease in a cloth of wool or linen, either in warp or woof, or in anything of skin, to decide whether it is clean or unclean.",
             "Rotherham": "This, is the law as to the plague-spot of leprosy, in a garment of wool or of flax, whether in the warp or the weft, or in any utensil of skin,—To pronounce it clean, or to pronounce it unclean.",
             "KJV": "This is the law of the plague of leprosy in a garment of woollen or linen, either in the warp, or woof, or any thing of skins, to pronounce it clean, or to pronounce it unclean.",
             "NABRE": "This is the instruction for a fungal infection on a garment of wool or linen, or on a warp or woof, or on any leather article, to determine whether it is clean or unclean.",
@@ -3826,7 +3826,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "On the seventh day he shall shave all his hair: of head, beard, eyebrows; he shall shave all his hair. He shall wash his clothes and bathe his body in water, and he shall be clean.",
+            "NRSV": "On the seventh day he shall shave all his hair: of head, beard, eyebrows; he shall shave all his hair. Then he shall wash his clothes, and bathe his body in water, and he shall be clean.",
             "Rotherham": "and it shall be on the seventh day, that he shall shave off all the hair of his head, and his beard, and his eyebrows, even all his hair, shall he shave off,—and shall wash his clothes and bathe his flesh in water so shall he be clean.",
             "KJV": "But it shall be on the seventh day, that he shall shave all his hair off his head and his beard and his eyebrows, even all his hair he shall shave off: and he shall wash his clothes, also he shall wash his flesh in water, and he shall be clean.",
             "NABRE": "On the seventh day this individual shall again shave off all hair, of the head, beard, and eyebrows—all hair must be shaved—and also wash his garments and bathe the body in water, and so become clean.",
@@ -3856,7 +3856,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "The priest shall take one of the male lambs, and offer it as a guilt offering, along with the log of oil, and raise them as an elevation offering before the Lord.",
+            "NRSV": "The priest shall take one of the lambs, and offer it as a guilt offering, along with the log of oil, and raise them as an elevation offering before the Lord.",
             "Rotherham": "And the priest shall take one he-lamb, and bring him near as a guilt-bearer and the log of oil,—and shall wave them as a wave-offering, before Yahweh;",
             "KJV": "And the priest shall take one he lamb, and offer him for a trespass offering, and the log of oil, and wave them for a wave offering before the Lord:",
             "NABRE": "Taking one of the male lambs, the priest shall present it as a reparation offering, along with the log of oil, raising them as an elevated offering before the Lord.",
@@ -3866,7 +3866,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "He shall slaughter the male lamb in the place where the sin offering and the burnt offering are slaughtered in the holy place; for the guilt offering, like the sin offering, belongs to the priest: it is most holy.",
+            "NRSV": "He shall slaughter the lamb in the place where the sin offering and the burnt offering are slaughtered in the holy place; for the guilt offering, like the sin offering, belongs to the priest: it is most holy.",
             "Rotherham": "and shall slay the lamb in the place where the sin-bearer and the ascending-sacrifice are slain, in the holy place,—for like the sin-bearer, the guilt-bearer, is the priest’s, most holy, it is.",
             "KJV": "And he shall slay the lamb in the place where he shall kill the sin offering and the burnt offering, in the holy place: for as the sin offering is the priest’s, so is the trespass offering: it is most holy:",
             "NABRE": "This lamb shall be slaughtered in the sacred place where the purification offering and the burnt offering are slaughtered, because the reparation offering is like the purification offering; it belongs to the priest and is most holy.",
@@ -3986,7 +3986,7 @@
         {
           "num": 25,
           "text": {
-            "NRSV": "He shall slaughter the lamb of the guilt offering; and the priest shall take some of the blood of the guilt offering, and put it on the lobe of the right ear of the one to be cleansed, and on the thumb of his right hand, and on the big toe of his right foot.",
+            "NRSV": "The priest shall slaughter the lamb of the guilt offering and shall take some of the blood of the guilt offering, and put it on the lobe of the right ear of the one to be cleansed, and on the thumb of the right hand, and on the big toe of the right foot.",
             "Rotherham": "Then shall the guilt-bearing lamb be slain, and the priest shall take of the blood of the guilt-bearer, and put upon the tip of the right ear of him that is to be cleansed,—and upon the thumb of his right hand, and upon the great toe of his right foot;",
             "KJV": "And he shall kill the lamb of the trespass offering, and the priest shall take some of the blood of the trespass offering, and put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:",
             "NABRE": "When the lamb of the reparation offering has been slaughtered, the priest shall take some of its blood, and put it on the lobe of the right ear, on the thumb of the right hand, and on the big toe of the right foot of the person being purified.",
@@ -4126,7 +4126,7 @@
         {
           "num": 39,
           "text": {
-            "NRSV": "The priest shall come again on the seventh day and make an inspection; if the disease has spread on the walls of the house,",
+            "NRSV": "The priest shall come again on the seventh day and make an inspection; if the disease has spread in the walls of the house,",
             "Rotherham": "and the priest shall return on the seventh day,—and take a view, and lo! if the mark hath spread in the walls of the house,",
             "KJV": "And the priest shall come again the seventh day, and shall look: and, behold, if the plague be spread in the walls of the house;",
             "NABRE": "On the seventh day the priest shall return. If, upon inspection, he finds that the infection has spread on the walls,",
@@ -4226,7 +4226,7 @@
         {
           "num": 49,
           "text": {
-            "NRSV": "To cleanse the house he shall take two birds, with cedarwood and crimson yarn and hyssop,",
+            "NRSV": "For the cleansing of the house he shall take two birds, with cedarwood and crimson yarn and hyssop,",
             "Rotherham": "Then shall he take to cleanse, the house, two birds,—and cedar wood, and crimson, and hyssop;",
             "KJV": "And he shall take to cleanse the house two birds, and cedar wood, and scarlet, and hyssop:",
             "NABRE": "To purify the house, he shall take two birds, as well as cedar wood, scarlet yarn, and hyssop.",
@@ -4266,7 +4266,7 @@
         {
           "num": 53,
           "text": {
-            "NRSV": "and he shall let the living bird go out of the city into the open field. So he shall make atonement for the house, and it shall be clean.",
+            "NRSV": "and he shall let the living bird go out of the city into the open field; so he shall make atonement for the house, and it shall be clean.",
             "Rotherham": "and shall let go the living bird unto the outside of the city, unto the face of the field,—so shall he put a propitiatory-covering over the house and it shall be clean.",
             "KJV": "But he shall let go the living bird out of the city into the open fields, and make an atonement for the house: and it shall be clean.",
             "NABRE": "He shall then let the living bird fly away over the countryside outside the city. Thus he shall make atonement for the house, and it will be clean.",
@@ -4276,7 +4276,7 @@
         {
           "num": 54,
           "text": {
-            "NRSV": "This is the ritual for every leprous disease and scale,",
+            "NRSV": "This is the ritual for any leprous disease: for an itch,",
             "Rotherham": "This, is the law,—for every plague-mark of leprosy and for scall;",
             "KJV": "This is the law for all manner of plague of leprosy, and scall,",
             "NABRE": "This is the ritual for every kind of human scaly infection and scall,",
@@ -4296,7 +4296,7 @@
         {
           "num": 56,
           "text": {
-            "NRSV": "and for swelling or eruption or spot,",
+            "NRSV": "and for a swelling or an eruption or a spot,",
             "Rotherham": "and for rising, and for scab and for a bright spot;",
             "KJV": "And for a rising, and for a scab, and for a bright spot:",
             "NABRE": "for marks, lesions and blotches—",
@@ -4331,7 +4331,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "Speak to the people of Israel: When any man has a discharge from his member, his discharge makes him ceremonially unclean.",
+            "NRSV": "Speak to the people of Israel and say to them: When any man has a discharge from his member, his discharge makes him ceremonially unclean.",
             "Rotherham": "Speak unto the sons of Israel, and ye shall say unto them,—When, any man whatsoever, hath a flowing from his flesh, his flux, is, unclean.",
             "KJV": "Speak unto the children of Israel, and say unto them, When any man hath a running issue out of his flesh, because of his issue he is unclean.",
             "NABRE": "Speak to the Israelites and tell them: When any man has a genital discharge, he is thereby unclean.",
@@ -4351,7 +4351,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Any bed on which the one with the discharge lies shall be unclean; and everything on which he sits shall be unclean.",
+            "NRSV": "Every bed on which the one with the discharge lies shall be unclean; and everything on which he sits shall be unclean.",
             "Rotherham": "All the bed whereon he that hath the flux lieth, shall be unclean,—and, every piece of furniture whereon he sitteth, shall be unclean.",
             "KJV": "Every bed, whereon he lieth that hath the issue, is unclean: and every thing, whereon he sitteth, shall be unclean.",
             "NABRE": "Any bed on which the man with the discharge lies is unclean, and any article on which he sits is unclean.",
@@ -4421,7 +4421,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "All those whom the one with the discharge touches without having rinsed his hands in water shall wash their clothes, and bathe in water, and be unclean until the evening.",
+            "NRSV": "All those whom the one with the discharge touches without his having rinsed his hands in water shall wash their clothes, and bathe in water, and be unclean until the evening.",
             "Rotherham": "And, whomsoever he that hath the flux toucheth, not having rinsed, his hands in water, then shall he wash his clothes, and bathe in water and be unclean until the evening,",
             "KJV": "And whomsoever he toucheth that hath the issue, and hath not rinsed his hands in water, he shall wash his clothes, and bathe himself in water, and be unclean until the even.",
             "NABRE": "Anyone whom the man with the discharge touches with his unrinsed hands shall wash his garments, bathe in water, and be unclean until evening.",
@@ -4491,7 +4491,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "If a man lies with a woman and has an emission of semen, both shall bathe in water, and be unclean until the evening.",
+            "NRSV": "If a man lies with a woman and has an emission of semen, both of them shall bathe in water, and be unclean until the evening.",
             "Rotherham": "Also, a woman with whom man lieth carnally, then shall they bathe in water, and be unclean until the evening.",
             "KJV": "The woman also with whom man shall lie with seed of copulation, they shall both bathe themselves in water, and be unclean until the even.",
             "NABRE": "If a man has sexual relations with a woman, they shall both bathe in water and be unclean until evening.",
@@ -4561,7 +4561,7 @@
         {
           "num": 25,
           "text": {
-            "NRSV": "If a woman has a discharge of blood for many days, not at the time of her impurity, or if she has a discharge beyond the time of her impurity, all the days of her discharge she shall continue in uncleanness; as in the days of her impurity, she shall be unclean.",
+            "NRSV": "If a woman has a discharge of blood for many days, not at the time of her impurity, or if she has a discharge beyond the time of her impurity, all the days of the discharge she shall continue in uncleanness; as in the days of her impurity, she shall be unclean.",
             "Rotherham": "And when any woman’s, flow of blood lasteth many day, outside the time of her removal, or when it floweth beyond her removal, all the days of her unclean flow, shall she be as in the days of her removal—unclean, she is.",
             "KJV": "And if a woman have an issue of her blood many days out of the time of her separation, or if it run beyond the time of her separation; all the days of the issue of her uncleanness shall be as the days of her separation: she shall be unclean.",
             "NABRE": "When a woman has a flow of blood for several days outside her menstrual period, or when her flow continues beyond the ordinary period, as long as she suffers this unclean flow she shall be unclean, just as during her menstrual period.",
@@ -4571,7 +4571,7 @@
         {
           "num": 26,
           "text": {
-            "NRSV": "Every bed on which she lies during all the days of her discharge shall be treated as the bed during her impurity; and everything on which she sits shall be unclean, as in the uncleanness of her impurity.",
+            "NRSV": "Every bed on which she lies during all the days of her discharge shall be treated as the bed of her impurity; and everything on which she sits shall be unclean, as in the uncleanness of her impurity.",
             "Rotherham": "All the bed whereon she lieth during all the days of her flow, like her bed in her removal, shall be to her,—and, every thing whereon she sitteth, shall be, unclean, like the uncleanness in her removal;",
             "KJV": "Every bed whereon she lieth all the days of her issue shall be unto her as the bed of her separation: and whatsoever she sitteth upon shall be unclean, as the uncleanness of her separation.",
             "NABRE": "Any bed on which she lies during such a flow becomes unclean, as it would during her menstrual period, and any article on which she sits becomes unclean just as during her menstrual period.",
@@ -4601,7 +4601,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "On the eighth day she shall take two turtledoves or two pigeons and bring them to the priest at the entrance of the tent of meeting.",
+            "NRSV": "On the eighth day she shall take two turtledoves or two pigeons and bring them to the priest to the entrance of the tent of meeting.",
             "Rotherham": "And, on the eighth day, shall she take to herself two turtle doves, or two young pigeons,—and bring them in unto the priest, unto the entrance of the tent of meeting;",
             "KJV": "And on the eighth day she shall take unto her two turtles, or two young pigeons, and bring them unto the priest, to the door of the tabernacle of the congregation.",
             "NABRE": "On the eighth day she shall take two turtledoves or two pigeons and bring them to the priest at the entrance of the tent of meeting.",
@@ -4641,7 +4641,7 @@
         {
           "num": 33,
           "text": {
-            "NRSV": "for her who is in the infirmity of her period, for the man or woman who has a discharge, and for the man who lies with a woman who is unclean.",
+            "NRSV": "for her who is in the infirmity of her period, for anyone, male or female, who has a discharge, and for the man who lies with a woman who is unclean.",
             "Rotherham": "And of her that is unwell with her cause for removal, And of him whose flux floweth, For the male, and for the female,—And for a man who lieth with her that is unclean.",
             "KJV": "And of her that is sick of her flowers, and of him that hath an issue, of the man, and of the woman, and of him that lieth with her that is unclean.",
             "NABRE": "as well as for the woman who has her menstrual period; or one who has a discharge, male or female; and also for the man who lies with an unclean woman.",
@@ -4656,10 +4656,10 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "The Lord spoke to Moses, after the death of the two sons of Aaron, when they drew near before the Lord and died.",
+            "NRSV": "The Lord spoke to Moses after the death of the two sons of Aaron, when they drew near before the Lord and died.",
             "Rotherham": "And Yahweh spake unto Moses, after the death of the two sons of Aaron,—when they had offered strange fire before Yahweh and died.",
             "KJV": "And the Lord spake unto Moses after the death of the two sons of Aaron, when they offered before the Lord, and died;",
-            "NABRE": "After the death of Aaron’s two sons, who died when they encroached on the Lord ’s presence, the Lord spoke to Moses",
+            "NABRE": "After the death of Aaron’s two sons, who died when they encroached on the Lord’s presence, the Lord spoke to Moses",
             "DRB": "And our Lord spake to Moyses, after the death of the two sons of Aaron, when they were slain offering strange fire:"
           }
         },
@@ -4786,7 +4786,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "He shall take some of the blood of the bull, and sprinkle it with his finger on the front of the mercy seat, and before the mercy seat he shall sprinkle the blood seven times.",
+            "NRSV": "He shall take some of the blood of the bull, and sprinkle it with his finger on the front of the mercy seat, and before the mercy seat he shall sprinkle the blood with his finger seven times.",
             "Rotherham": "Then shall he take of the blood of the bullock, and shall sprinkle with his finger upon the face of the propitiatory, eastwards,—and before the propitiatory, shall he sprinkle seven times, of the blood, with his finger.",
             "KJV": "And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times.",
             "NABRE": "Taking some of the bull’s blood, he shall sprinkle it with his finger on the front of the ark’s cover and likewise sprinkle some of the blood with his finger seven times in front of the cover.",
@@ -4926,7 +4926,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "And the one who burns them shall wash his clothes and bathe his body in water, and afterward may come into the camp.",
+            "NRSV": "The one who burns them shall wash his clothes and bathe his body in water, and afterward may come into the camp.",
             "Rotherham": "and he that hath burned them, shall wash his clothes, and bathe his flesh in water,—and, after that, shall he come into the camp.",
             "KJV": "And he that burneth them shall wash his clothes, and bathe his flesh in water, and afterward he shall come into the camp.",
             "NABRE": "The one who burns them shall wash his garments and bathe his body in water; only then may he enter the camp.",
@@ -4966,7 +4966,7 @@
         {
           "num": 32,
           "text": {
-            "NRSV": "The priest who is anointed and consecrated as priest in his father's place shall make atonement, wearing the linen vestments, the holy vestments.",
+            "NRSV": "The priest who is anointed and consecrated as priest in his father’s place shall make atonement, wearing the linen vestments, the holy vestments.",
             "Rotherham": "Therefore shall the priest who shall be anointed, and installed, to minister as priest in the stead of his father make propitiation,—So then he shall put on the linen garments the holy garments;",
             "KJV": "And the priest, whom he shall anoint, and whom he shall consecrate to minister in the priest’s office in his father’s stead, shall make the atonement, and shall put on the linen clothes, even the holy garments:",
             "NABRE": "This atonement is to be made by the priest who has been anointed and ordained to the priesthood in succession to his father. He shall wear the linen garments, the sacred vestments,",
@@ -5034,7 +5034,7 @@
             "NRSV": "and does not bring it to the entrance of the tent of meeting, to present it as an offering to the Lord before the tabernacle of the Lord, he shall be held guilty of bloodshed; he has shed blood, and he shall be cut off from the people.",
             "Rotherham": "and, unto the entrance of the tent of meeting, bringeth it not in, to present it as an oblation unto Yahweh, before the habitation of Yahweh, blood, shall be imputed to that man—blood, hath he shed, therefore shall that man be cut off from the midst of his people:",
             "KJV": "And bringeth it not unto the door of the tabernacle of the congregation, to offer an offering unto the Lord before the tabernacle of the Lord; blood shall be imputed unto that man; he hath shed blood; and that man shall be cut off from among his people:",
-            "NABRE": "without first bringing it to the entrance of the tent of meeting to present it as an offering to the Lord in front of the Lord ’s tabernacle, shall be judged guilty of bloodshed —that individual has shed blood, and shall be cut off from the people.",
+            "NABRE": "without first bringing it to the entrance of the tent of meeting to present it as an offering to the Lord in front of the Lord’s tabernacle, shall be judged guilty of bloodshed—that individual has shed blood, and shall be cut off from the people.",
             "DRB": "and offer it not at the door of the tabernacle an oblation to the Lord, shall be guilty of blood: as if he had shed blood, so shall he perish out of the midst of his people."
           }
         },
@@ -5511,7 +5511,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "When you offer a sacrifice of well-being to the Lord, offer it in such a way that it is acceptable in your behalf.",
+            "NRSV": "When you offer a sacrifice of well-being to the Lord, offer it in such a way that it is acceptable on your behalf.",
             "Rotherham": "And when ye would offer a peace-offering unto Yahweh, ye shall offer it that ye may be accepted.",
             "KJV": "And if ye offer a sacrifice of peace offerings unto the Lord, ye shall offer it at your own will.",
             "NABRE": "When you sacrifice your communion sacrifice to the Lord, you shall sacrifice it so that it is acceptable on your behalf.",
@@ -5751,7 +5751,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "Do not profane your daughter by making her a prostitute, that the land not fall into whoredom and the land become full of depravity.",
+            "NRSV": "Do not profane your daughter by making her a prostitute, that the land not become prostituted and full of depravity.",
             "Rotherham": "Do not profane thy daughter by causing her to be unchaste,—lest the land fall to unchastity, and so the land be filled with wickedness.",
             "KJV": "Do not prostitute thy daughter, to cause her to be a whore; lest the land fall to whoredom, and the land become full of wickedness.",
             "NABRE": "You shall not degrade your daughter by making a prostitute of her; otherwise the land will prostitute itself and become full of lewdness.",
@@ -5876,7 +5876,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "And if the people of the land should ever hide their eyes from those persons, when they give of their offspring to Molech, and do not put them to death,",
+            "NRSV": "And if the people of the land should ever close their eyes to them, when they give of their offspring to Molech, and do not put them to death,",
             "Rotherham": "But, if the people of the land, do even hide, their eyes from that man, when he giveth of his seed unto Molech,—so as not to put him to death,",
             "KJV": "And if the people of the land do any ways hide their eyes from the man, when he giveth of his seed unto Molech, and kill him not:",
             "NABRE": "If the people of the land condone the giving of offspring to Molech, by failing to put the wrongdoer to death,",
@@ -5886,7 +5886,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "I myself will set my face against them and against their family, and will cut them off from their people, them and all who follow them in prostituting themselves to Molech.",
+            "NRSV": "I myself will set my face against them and against their family, and will cut them off from among their people, them and all who follow them in prostituting themselves to Molech.",
             "Rotherham": "then will I myself, set my face against that man, and against his family,—and will cut him off, and all that follow unchastely after him—in going unchastely after Molech—out of the midst of their people.",
             "KJV": "Then I will set my face against that man, and against his family, and will cut him off, and all that go a whoring after him, to commit whoredom with Molech, from among their people.",
             "NABRE": "I myself will turn against that individual and his or her family, and I will cut off from their people both the wrongdoer and all who follow this person by prostituting themselves with Molech.",
@@ -5976,7 +5976,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "If a man takes a wife and her mother also, it is depravity; they shall be burned to death, both he and they, that there be no depravity among you.",
+            "NRSV": "If a man takes a wife and her mother also, it is depravity; they shall be burned to death, both he and they, that there may be no depravity among you.",
             "Rotherham": "And, any man, who taketh a woman and her mother, wickedness, it is,—in fire, shall both he and they be consumed, that wickedness be not in your midst.",
             "KJV": "And if a man take a wife and her mother, it is wickedness: they shall be burnt with fire, both he and they; that there be no wickedness among you.",
             "NABRE": "If a man marries a woman and her mother also, that is shameful conduct; the man and the two women as well shall be burned to death, so that shamefulness may not be found among you.",
@@ -6006,7 +6006,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "If a man takes his sister, a daughter of his father or a daughter of his mother, and sees her nakedness, and she sees his nakedness, it is a disgrace, and they shall be cut off in the sight of their people; he has uncovered his sister’s nakedness, he shall bear his iniquity.",
+            "NRSV": "If a man takes his sister, a daughter of his father or a daughter of his mother, and sees her nakedness, and she sees his nakedness, it is a disgrace, and they shall be cut off in the sight of their people; he has uncovered his sister’s nakedness, he shall be subject to punishment.",
             "Rotherham": "And, any man, who taketh his sister—his father’s daughter or his mother’s daughter, and vieweth her shame, and, she, vieweth his shame, a disgrace, it is,—they shall therefore be cut off in the sight of the sons of their people,—the shame of his sister, hath he uncovered—his iniquity, shall he bear.",
             "KJV": "And if a man shall take his sister, his father’s daughter, or his mother’s daughter, and see her nakedness, and she see his nakedness; it is a wicked thing; and they shall be cut off in the sight of their people: he hath uncovered his sister’s nakedness; he shall bear his iniquity.",
             "NABRE": "If a man marries his sister, his father’s daughter or his mother’s daughter, and they have intercourse with each other, that is disgraceful; they shall be publicly cut off from the people; the man shall bear the penalty of having had intercourse with his own sister.",
@@ -6026,7 +6026,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "You shall not uncover the nakedness of your mother’s sister or of your father’s sister, for that would uncover one’s own flesh; they shall bear their iniquity.",
+            "NRSV": "You shall not uncover the nakedness of your mother’s sister or of your father’s sister, for that is to lay bare one’s own flesh; they shall be subject to punishment.",
             "Rotherham": "And the shame of thy mother’s sister, or of thy father’s sister, shalt thou not uncover,—for his near of kin, hath he exposed—their iniquity, shall they bear.",
             "KJV": "And thou shalt not uncover the nakedness of thy mother’s sister, nor of thy father’s sister: for he uncovereth his near kin: they shall bear their iniquity.",
             "NABRE": "You shall not have intercourse with your mother’s sister or your father’s sister, because that dishonors one’s own flesh; they shall bear their penalty.",
@@ -6036,7 +6036,7 @@
         {
           "num": 20,
           "text": {
-            "NRSV": "If a man lies with his uncle’s wife, he has uncovered his uncle’s nakedness; they shall bear their sin, they shall die childless.",
+            "NRSV": "If a man lies with his uncle’s wife, he has uncovered his uncle’s nakedness; they shall be subject to punishment; they shall die childless.",
             "Rotherham": "And, any man, who lieth with his uncle’s wife, the shame of his uncle, hath he uncovered,—their sin, shall they bear—childless, shall they die.",
             "KJV": "And if a man shall lie with his uncle’s wife, he hath uncovered his uncle’s nakedness: they shall bear their sin; they shall die childless.",
             "NABRE": "If a man lies with his uncle’s wife, he disgraces his uncle; they shall bear the penalty; they shall die childless.",
@@ -6056,7 +6056,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "You shall keep all my statutes and all my ordinances, and observe them, so that the land to which I bring you to settle in does not vomit you out.",
+            "NRSV": "You shall keep all my statutes and all my ordinances, and observe them, so that the land to which I bring you to settle in may not vomit you out.",
             "Rotherham": "Therefore shall ye observe all my statutes and all my regulations, and do them,—So shall the land whereinto I am bringing you to dwell therein, not vomit you forth;",
             "KJV": "Ye shall therefore keep all my statutes, and all my judgments, and do them: that the land, whither I bring you to dwell therein, spue you not out.",
             "NABRE": "Be careful to observe all my statutes and all my decrees; otherwise the land where I am bringing you to dwell will vomit you out.",
@@ -6121,7 +6121,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "The Lord said to Moses: Speak to the priests, the sons of Aaron, and say to them: No one shall defile himself for any dead person among his kin,",
+            "NRSV": "The Lord said to Moses: Speak to the priests, the sons of Aaron, and say to them: No one shall defile himself for a dead person among his relatives,",
             "Rotherham": "And Yahweh said unto Moses, Say unto the priests, the sons of Aaron,—yea thou shalt say unto them, For a dead person, shall no one make himself unclean among his people:",
             "KJV": "And the Lord said unto Moses, Speak unto the priests the sons of Aaron, and say unto them, There shall none be defiled for the dead among his people:",
             "NABRE": "The Lord said to Moses: Speak to the priests, Aaron’s sons, and tell them: None of you shall make himself unclean for any dead person among his kindred,",
@@ -6171,7 +6171,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "They shall be holy to their God, and not profane the name of their God; for they offer the Lord’s offerings by fire, the food of their God, and therefore they shall be holy.",
+            "NRSV": "They shall be holy to their God, and not profane the name of their God; for they offer the Lord’s offerings by fire, the food of their God; therefore they shall be holy.",
             "Rotherham": "Holy persons, shall they be unto their God, and not profane the name of their God,—for, the altar-flames of Yahweh, the food of their God, do they bring near—Therefore shall they be holy.",
             "KJV": "They shall be holy unto their God, and not profane the name of their God: for the offerings of the Lord made by fire, and the bread of their God, they do offer: therefore they shall be holy.",
             "NABRE": "They shall be holy to their God, and shall not profane their God’s name, since they offer the oblations of the Lord, the food of their God; so they must be holy.",
@@ -6191,7 +6191,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "and you shall treat them as holy, since they offer the food of your God; they shall be holy to you, for I the Lord, who sanctify you, am holy.",
+            "NRSV": "and you shall treat them as holy, since they offer the food of your God; they shall be holy to you, for I the Lord, I who sanctify you, am holy.",
             "Rotherham": "Therefore shalt thou hold him as holy, for the food of thy God, doth he bring near,—Holy, shall he be to thee, For, holy, am I—Yahweh, who am making you holy.",
             "KJV": "Thou shalt sanctify him therefore; for he offereth the bread of thy God: he shall be holy unto thee: for I the Lord, which sanctify you, am holy.",
             "NABRE": "Honor him as holy for he offers the food of your God; he shall be holy to you, because I, the Lord, am holy who make you holy.",
@@ -6331,7 +6331,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "He may eat the food of his God, of the most holy as well as of the holy,",
+            "NRSV": "He may eat the food of his God, of the most holy as well as of the holy.",
             "Rotherham": "Of the food of his God, both of the most holy,—and the holy, may he eat:",
             "KJV": "He shall eat the bread of his God, both of the most holy, and of the holy.",
             "NABRE": "He may, however, eat the food of his God: of the most sacred as well as sacred offerings.",
@@ -6341,7 +6341,7 @@
         {
           "num": 23,
           "text": {
-            "NRSV": "but he shall not come near the curtain or approach the altar, because he has a blemish, that he may not profane my sanctuaries; for I am the Lord; I sanctify them.",
+            "NRSV": "But he shall not come near the curtain or approach the altar, because he has a blemish, that he may not profane my sanctuaries; for I am the Lord; I sanctify them.",
             "Rotherham": "Only, unto the veil, shall he not come in and unto the altar, shall he not approach—because, a blemish, is in him, so shall he not profane my sanctuaries, For, I—Yahweh, am hallowing them.",
             "KJV": "Only he shall not go in unto the vail, nor come nigh unto the altar, because he hath a blemish; that he profane not my sanctuaries: for I the Lord do sanctify them.",
             "NABRE": "Only, he may not enter through the veil nor draw near to the altar on account of his blemish; he shall not profane my sacred precincts, for it is I, the Lord, who make them holy.",
@@ -6576,7 +6576,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "Anything blind, or injured, or maimed, or having a wen, or mangy, or scabbed—you shall not offer to the Lord or put any of them on the altar as offerings by fire to the Lord.",
+            "NRSV": "Anything blind, or injured, or maimed, or having a discharge or an itch or scabs—these you shall not offer to the Lord or put any of them on the altar as offerings by fire to the Lord.",
             "Rotherham": "Blind, or broken, or rent, or having a running sore, or scurvy, or scab, ye shall not bring these near unto Yahweh,—and no, altar-flame, shall ye present therefrom upon the altar, unto Yahweh.",
             "KJV": "Blind, or broken, or maimed, or having a wen, or scurvy, or scabbed, ye shall not offer these unto the Lord, nor make an offering by fire of them upon the altar unto the Lord.",
             "NABRE": "One that is blind or lame or maimed, or one that has running lesions or sores or scabs, you shall not offer to the Lord; do not put such an animal on the altar as an oblation to the Lord.",
@@ -6724,7 +6724,7 @@
             "NRSV": "Six days shall work be done; but the seventh day is a sabbath of complete rest, a holy convocation; you shall do no work: it is a sabbath to the Lord throughout your settlements.",
             "Rotherham": "Six days, shall work be done, but, on the seventh day, shall there be a sabbath of sacred rest a holy convocation, no work, shall ye do,—a sabbath, shall it be unto Yahweh, in all your dwellings.",
             "KJV": "Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of the Lord in all your dwellings.",
-            "NABRE": "For six days work may be done; but the seventh day is a sabbath of complete rest, a declared holy day; you shall do no work. It is the Lord ’s sabbath wherever you dwell.",
+            "NABRE": "For six days work may be done; but the seventh day is a sabbath of complete rest, a declared holy day; you shall do no work. It is the Lord’s sabbath wherever you dwell.",
             "DRB": "Six days ye shall do work: the seventh day, because it is the rest of the sabbath, shall be called holy. No work shall you do in it: it is the Sabbath of the Lord in all your habitations."
           }
         },
@@ -6754,7 +6754,7 @@
             "NRSV": "and on the fifteenth day of the same month is the festival of unleavened bread to the Lord; seven days you shall eat unleavened bread.",
             "Rotherham": "and on the fifteenth day of this month, is the festival of unleavened cakes unto Yahweh,—seven days—unleavened cakes, shall ye eat.",
             "KJV": "And on the fifteenth day of the same month is the feast of unleavened bread unto the Lord: seven days ye must eat unleavened bread.",
-            "NABRE": "The fifteenth day of this month is the Lord ’s feast of Unleavened Bread. For seven days you shall eat unleavened bread.",
+            "NABRE": "The fifteenth day of this month is the Lord’s feast of Unleavened Bread. For seven days you shall eat unleavened bread.",
             "DRB": "and the fifteenth day of this month is the solemnity of the Azymes of the Lord. Seven days shall you eat azymes."
           }
         },
@@ -6971,7 +6971,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "you shall do no work during that entire day; for it is a day of atonement, to make atonement on your behalf before the Lord your God.",
+            "NRSV": "and you shall do no work during that entire day; for it is a day of atonement, to make atonement on your behalf before the Lord your God.",
             "Rotherham": "And, no work, shall ye do, on this selfsame day,—for a day of propitiation, it is, to put a propitiatory-covering over you before Yahweh your God.",
             "KJV": "And ye shall do no work in that same day: for it is a day of atonement, to make an atonement for you before the Lord your God.",
             "NABRE": "On this day you shall not do any work, because it is the Day of Atonement, when atonement is made for you before the Lord, your God.",
@@ -6981,7 +6981,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "For any person who is not denied in self on that very day shall be cut off from the people.",
+            "NRSV": "For anyone who does not practice self-denial during that entire day shall be cut off from the people.",
             "Rotherham": "For, whosoever be the person that shall not be humbled on this selfsame day, then shall he be cut off from among his kinsfolk.",
             "KJV": "For whatsoever soul it be that shall not be afflicted in that same day, he shall be cut off from among his people.",
             "NABRE": "Those who do not humble themselves on this day shall be cut off from the people.",
@@ -6991,7 +6991,7 @@
         {
           "num": 30,
           "text": {
-            "NRSV": "And any person who does any work during that entire day, such a person I will destroy from the midst of the people.",
+            "NRSV": "And anyone who does any work during that entire day, such a one I will destroy from the midst of the people.",
             "Rotherham": "And, whosoever be the person that shall do any work on this selfsame day, then will I destroy that person from the midst of his people.",
             "KJV": "And whatsoever soul it be that doeth any work in that same day, the same soul will I destroy from among his people.",
             "NABRE": "If anyone does any work on this day, I will remove that person from the midst of the people.",
@@ -7034,7 +7034,7 @@
             "NRSV": "Speak to the people of Israel, saying: On the fifteenth day of this seventh month, and lasting seven days, there shall be the festival of booths to the Lord.",
             "Rotherham": "Speak unto the sons of Israel, saying:—On the fifteenth day of this seventh month, shall be the festival of booths, for seven days, unto Yahweh.",
             "KJV": "Speak unto the children of Israel, saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto the Lord.",
-            "NABRE": "Tell the Israelites: The fifteenth day of this seventh month is the Lord ’s feast of Booths, which shall continue for seven days.",
+            "NABRE": "Tell the Israelites: The fifteenth day of this seventh month is the Lord’s feast of Booths, which shall continue for seven days.",
             "DRB": "Speak to the children of Israel: From the fifteenth day of this seventh month, shall be the festivity of tabernacles seven days to the Lord."
           }
         },
@@ -7074,7 +7074,7 @@
             "NRSV": "apart from the sabbaths of the Lord, and apart from your gifts, and apart from all your votive offerings, and apart from all your freewill offerings, which you give to the Lord.",
             "Rotherham": "besides the sabbaths of Yahweh, and besides your presents, and besides all your vows, and besides all your freewill offerings which ye shall give unto Yahweh.",
             "KJV": "Beside the sabbaths of the Lord, and beside your gifts, and beside all your vows, and beside all your freewill offerings, which ye give unto the Lord.",
-            "NABRE": "in addition to the Lord ’s sabbaths, your donations, your various votive offerings, and the voluntary offerings that you present to the Lord.",
+            "NABRE": "in addition to the Lord’s sabbaths, your donations, your various votive offerings, and the voluntary offerings that you present to the Lord.",
             "DRB": "beside the sabbaths of the Lord, and your gifts and those that you shall offer by vow, or which you shall give to the Lord voluntarily."
           }
         },
@@ -7111,7 +7111,7 @@
         {
           "num": 42,
           "text": {
-            "NRSV": "You shall live in booths for seven days; all citizens in Israel shall live in booths,",
+            "NRSV": "You shall live in booths for seven days; all that are citizens in Israel shall live in booths,",
             "Rotherham": "In booths, shall ye dwell seven days;—All the home-born in Israel, shall dwell in booths:",
             "KJV": "Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths:",
             "NABRE": "You shall dwell in booths for seven days; every native-born Israelite shall dwell in booths,",
@@ -7246,10 +7246,10 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "The Israelite woman’s son blasphemed the Name in a curse. And they brought him to Moses—his mother’s name was Shelomith daughter of Dibri, of the tribe of Dan—",
+            "NRSV": "The Israelite woman’s son blasphemed the Name in a curse. And they brought him to Moses—now his mother’s name was Shelomith, daughter of Dibri, of the tribe of Dan—",
             "Rotherham": "and the son of the woman of Israel, and a man of Israel, reviled one another in the camp. And the son of the Israelitish woman uttered contemptuously the Name, and reviled. So they brought him in unto Moses,—now, the name of his mother, was Shelomith, daughter of Dibri, of the tribe of Dan;",
             "KJV": "And the Israelitish woman’s son blasphemed the name of the Lord, and cursed. And they brought him unto Moses: (and his mother’s name was Shelomith, the daughter of Dibri, of the tribe of Dan:)",
-            "NABRE": "The son of the Israelite woman uttered the Lord ’s name in a curse and blasphemed. So he was brought to Moses—now his mother’s name was Shelomith, daughter of Dibri, of the tribe of Dan—",
+            "NABRE": "The son of the Israelite woman uttered the Lord’s name in a curse and blasphemed. So he was brought to Moses—now his mother’s name was Shelomith, daughter of Dibri, of the tribe of Dan—",
             "DRB": "And when he had blasphemed the name, and had cursed it, he was brought to Moyses: (And his mother was called Salumith, the daughter of Dabri of the tribe of Dan.)"
           }
         },
@@ -7299,7 +7299,7 @@
             "NRSV": "One who blasphemes the name of the Lord shall be put to death; the whole congregation shall stone the blasphemer. Aliens as well as citizens, when they blaspheme the Name, shall be put to death.",
             "Rotherham": "And, he that contemptuously uttereth the name of Yahweh, shall be, surely put to death, all the assembly shall, surely stone, him,—as the sojourner so the home-born, when he contemptuously uttereth the Name, he shall be put to death.",
             "KJV": "And he that blasphemeth the name of the Lord, he shall surely be put to death, and all the congregation shall certainly stone him: as well the stranger, as he that is born in the land, when he blasphemeth the name of the Lord, shall be put to death.",
-            "NABRE": "whoever utters the name of the Lord in a curse shall be put to death. The whole community shall stone that person; alien and native-born alike must be put to death for uttering the Lord ’s name in a curse.",
+            "NABRE": "whoever utters the name of the Lord in a curse shall be put to death. The whole community shall stone that person; alien and native-born alike must be put to death for uttering the Lord’s name in a curse.",
             "DRB": "and he that blasphemeth the name of the Lord, dying let him die: all the multitude of the people shall stone him, whether he be a natural, or stranger. He that blasphemeth the name of the Lord, dying let him die."
           }
         },
@@ -7461,7 +7461,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "Then you shall have the trumpet sounded loud; on the tenth day of the seventh month—on the day of atonement—you shall have the trumpet sounded throughout all your land",
+            "NRSV": "Then you shall have the trumpet sounded loud; on the tenth day of the seventh month—on the day of atonement—you shall have the trumpet sounded throughout all your land.",
             "Rotherham": "Then shalt thou cause a signal-horn to pass through in the seventh month, on the tenth of the month: on the Day of Propitiation, shall ye cause a horn to pass throughout all your land.",
             "KJV": "Then shalt thou cause the trumpet of the jubile to sound on the tenth day of the seventh month, in the day of atonement shall ye make the trumpet sound throughout all your land.",
             "NABRE": "Then, on the tenth day of the seventh month let the ram’s horn resound; on this, the Day of Atonement, the ram’s horn blast shall resound throughout your land.",
@@ -7471,7 +7471,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "and you shall hallow the fiftieth year and you shall proclaim liberty throughout the land to all its inhabitants. It shall be a jubilee for you: you shall return every one of you to your property and every one of you to your family.",
+            "NRSV": "And you shall hallow the fiftieth year and you shall proclaim liberty throughout the land to all its inhabitants. It shall be a jubilee for you: you shall return, every one of you, to your property and every one of you to your family.",
             "Rotherham": "So shall ye hallow the fiftieth year, and proclaim freedom throughout the land to all the dwellers thereof,—a jubilee, shall it be unto you, and ye shall return, every man unto his possession, and every man unto his family, shall ye return.",
             "KJV": "And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.",
             "NABRE": "You shall treat this fiftieth year as sacred. You shall proclaim liberty in the land for all its inhabitants. It shall be a jubilee for you, when each of you shall return to your own property, each of you to your own family.",
@@ -7501,7 +7501,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "In this year of jubilee you shall return every one of you to your property.",
+            "NRSV": "In this year of jubilee you shall return, every one of you, to your property.",
             "Rotherham": "In this same jubilee year, shall ye return every man unto his possession.",
             "KJV": "In the year of this jubile ye shall return every man unto his possession.",
             "NABRE": "In this year of jubilee, then, each of you shall return to your own property.",
@@ -7571,7 +7571,7 @@
         {
           "num": 20,
           "text": {
-            "NRSV": "Should you ask, “What shall we eat in the seventh year, if we may not sow or gather in our crop?”",
+            "NRSV": "Should you ask, What shall we eat in the seventh year, if we may not sow or gather in our crop?",
             "Rotherham": "And since ye may say, What shall we eat in the seventh year? Lo! we are not to sow, neither are we to gather our increase!",
             "KJV": "And if ye shall say, What shall we eat the seventh year? behold, we shall not sow, nor gather in our increase:",
             "NABRE": "And if you say, “What shall we eat in the seventh year, if we do not sow or reap our crop?”",
@@ -7591,7 +7591,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "When you sow in the eighth year, you will be eating from the old yield; until the ninth year, when its produce comes in, you shall eat the old.",
+            "NRSV": "When you sow in the eighth year, you will be eating from the old crop; until the ninth year, when its produce comes in, you shall eat the old.",
             "Rotherham": "and ye shall sow, the eighth year, and eat of old store,—until the ninth year until the coming in of the increase thereof, shall ye eat old store.",
             "KJV": "And ye shall sow the eighth year, and eat yet of old fruit until the ninth year; until her fruits come in ye shall eat of the old store.",
             "NABRE": "and when you sow in the eighth year, you will still be eating from the old crop; even into the ninth year, until the crop comes in, you will still be eating from the old crop. Redemption of Property.",
@@ -7651,7 +7651,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "But if there are not sufficient means to recover it, what was sold shall remain with the purchaser until the year of jubilee; in the jubilee it shall be released, and the property shall be returned.",
+            "NRSV": "But if there is not sufficient means to recover it, what was sold shall remain with the purchaser until the year of jubilee; in the jubilee it shall be released, and the property shall be returned.",
             "Rotherham": "But, if his hand have not found enough to get it back unto him, then shall that which he sold remain in the hand of him that bought it, until the year of the jubilee,—and shall go out in the jubilee, and he shall return unto his possession.",
             "KJV": "But if he be not able to restore it to him, then that which is sold shall remain in the hand of him that hath bought it until the year of jubile: and in the jubile it shall go out, and he shall return unto his possession.",
             "NABRE": "But if the person does not acquire sufficient means to buy back the land, what was sold shall remain in the possession of the purchaser until the year of the jubilee, when it must be released and returned to the original owner.",
@@ -7661,7 +7661,7 @@
         {
           "num": 29,
           "text": {
-            "NRSV": "If anyone sells a dwelling house in a walled city, then the right of redemption shall be limited to a full year after its sale; the right of redemption lasts a full year.",
+            "NRSV": "If anyone sells a dwelling house in a walled city, it may be redeemed until a year has elapsed since its sale; the right of redemption shall be one year.",
             "Rotherham": "And, when, any man, selleth a dwelling-house in a walled city, then shall his right of redemption remain until the completion of a year after he sold it,—for, [a year of] days, shall his right of redemption remain.",
             "KJV": "And if a man sell a dwelling house in a walled city, then he may redeem it within a whole year after it is sold; within a full year may he redeem it.",
             "NABRE": "When someone sells a dwelling in a walled town, it can be redeemed up to a full year after its sale—the redemption period is one year.",
@@ -7936,7 +7936,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "You shall make no idols and erect no carved image or pillar, and you shall not place figured stone in your land, to worship at it; for I am the Lord your God.",
+            "NRSV": "You shall make for yourselves no idols and erect no carved images or pillars, and you shall not place figured stones in your land, to worship at them; for I am the Lord your God.",
             "Rotherham": "Ye shall not make unto you idols,—neither image nor pillar, shall ye set up for yourselves, nor sculptured stone, shall ye place in your land, to bow yourselves down thereunto,-For, I Yahweh, am your God.",
             "KJV": "Ye shall make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up any image of stone in your land, to bow down unto it: for I am the Lord your God.",
             "NABRE": "Do not make idols for yourselves. You shall not erect a carved image or a sacred stone for yourselves, nor shall you set up a carved stone for worship in your land; for I, the Lord, am your God.",
@@ -8046,7 +8046,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "I will walk among you, and will be your God, and you shall be my people.",
+            "NRSV": "And I will walk among you, and will be your God, and you shall be my people.",
             "Rotherham": "But I will walk to and fro in your midst, And will be unto you a God, And, ye, shall be unto me a people.",
             "KJV": "And I will walk among you, and will be your God, and ye shall be my people.",
             "NABRE": "Ever present in your midst, I will be your God, and you will be my people;",
@@ -8206,7 +8206,7 @@
         {
           "num": 28,
           "text": {
-            "NRSV": "I will continue hostile to you in fury; and I even will chastise you sevenfold for your sins.",
+            "NRSV": "I will continue hostile to you in fury; I in turn will punish you myself sevenfold for your sins.",
             "Rotherham": "Then will I go in a rage of opposition to you,—And I, even I, will correct you seven times for your sins;",
             "KJV": "Then I will walk contrary unto you also in fury; and I, even I, will chastise you seven times for your sins.",
             "NABRE": "I will continue in my hostile rage toward you, and I myself will discipline you for your sins sevenfold,",
@@ -8336,7 +8336,7 @@
         {
           "num": 41,
           "text": {
-            "NRSV": "so that I, in turn, continued hostile to them and brought them into the land of their enemies—if then their uncircumcised heart is humbled and they make amends for their iniquity,",
+            "NRSV": "so that I, in turn, continued hostile to them and brought them into the land of their enemies; if then their uncircumcised heart is humbled and they make amends for their iniquity,",
             "Rotherham": "I also, must needs go in opposition to them, and bring them into the land of their foes,—Save only that, if, even then, their uncircumcised heart shall be humbled, And, even then, they shall accept as a payment the punishment of their iniquity,",
             "KJV": "And that I also have walked contrary unto them, and have brought them into the land of their enemies; if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity:",
             "NABRE": "so that I, too, had to be hostile to them and bring them into their enemies’ land. Then, when their uncircumcised hearts are humbled and they make amends for their iniquity,",
@@ -8610,7 +8610,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "If someone consecrates to the Lord a field that has been purchased, which is not a part of the ancestral holding,",
+            "NRSV": "If someone consecrates to the Lord a field that has been purchased, which is not a part of the inherited landholding,",
             "Rotherham": "If, however, a field that he hath bought, which is not of the fields of his possession, he would hallow unto Yahweh,",
             "KJV": "And if a man sanctify unto the Lord a field which he hath bought, which is not of the fields of his possession;",
             "NABRE": "If someone dedicates to the Lord a field that was purchased and was not part of hereditary property,",
@@ -8620,7 +8620,7 @@
         {
           "num": 23,
           "text": {
-            "NRSV": "the priest shall compute for it the proportionate assessment up to the year of jubilee, and the person shall pay the assessment as of that day, as a holy thing to the Lord.",
+            "NRSV": "the priest shall compute for it the proportionate assessment up to the year of jubilee, and the assessment shall be paid as of that day, a sacred donation to the Lord.",
             "Rotherham": "then shall the priest reckon to him the amount of thine estimate until the year of the jubilee,—and he shall give thine estimate, in that day, as holy unto Yahweh.",
             "KJV": "Then the priest shall reckon unto him the worth of thy estimation, even unto the year of the jubile: and he shall give thine estimation in that day, as a holy thing unto the Lord.",
             "NABRE": "the priest shall compute its value in proportion to the number of years until the next jubilee, and on the same day the person shall pay the price thus established, a sacred donation to the Lord;",
@@ -8653,7 +8653,7 @@
             "NRSV": "A firstling of animals, however, which as a firstling belongs to the Lord, cannot be consecrated by anyone; whether ox or sheep, it is the Lord’s.",
             "Rotherham": "Only the firstling which is born a firstling to Yahweh, among beasts, no man shall hallow it,—whether ox or sheep, unto Yahweh, it belongeth.",
             "KJV": "Only the firstling of the beasts, which should be the Lord’s firstling, no man shall sanctify it; whether it be ox, or sheep: it is the Lord’s.",
-            "NABRE": "Irredeemable Offerings. Note that a firstborn animal, which as such already belongs to the Lord, may not be dedicated. Whether an ox or a sheep, it is the Lord ’s.",
+            "NABRE": "Irredeemable Offerings. Note that a firstborn animal, which as such already belongs to the Lord, may not be dedicated. Whether an ox or a sheep, it is the Lord’s.",
             "DRB": "The first born, which pertain to the Lord, no man may sanctify and vow: whether it be ox, or sheep, they are the Lord's."
           }
         },
