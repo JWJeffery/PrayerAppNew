@@ -810,3 +810,17 @@ First real word-for-word verification work (distinct from Installments 12-16's s
 
 **Immediate next action for whoever picks this up:** ask Josh which of the two options above he wants, rather than assuming either one.
 
+## Assessment for "the other account," 2026-07-12 — should DRB/Rotherham get the same corpus-wide treatment as KJV?
+
+Josh asked whether the other public-domain translations warrant the same cross-cutting audit KJV just got. Checked both sources directly before recommending:
+
+**DRB (Douay-Rheims)** — the source already in active use project-wide, `janvier-s/original-douay-rheims` (77 books, complete Vulgate canon incl. all deuterocanon), is comprehensive and its edition was already correctly identified early in this project (genuine 1610 original, not the Challoner/DRC revision). Registry files surfaced *during this session's own investigation* (`judith-bound-source-exact-collation-result.json`, `greek-daniel-drb-addition-source-address-policy.json`, Esther's collation result) already show DRB as `trusted_exact_source_collated` for Judith, Daniel, and Esther from 2026-06-28 work — meaning a fresh corpus-wide DRB pass is worth doing but likely has a **smaller expected payoff than KJV's did**: there's no equivalent forcing-function defect (like KJV's stuck-on-1611-spelling problem) driving it, and it may turn out to look more like Tobit/Sirach (mostly already fine) than like the real fixes KJV needed.
+
+**Rotherham — a genuine find, worth prioritizing.** The XML Josh supplied (`Rotherhams Emphasized Bible (1902).xml`, in `data/kalendar/source-witnesses/`) was already confirmed OCR-degraded earlier this session (missing the emphasis-dashes that are this translation's whole defining feature). But `scrollmapper/bible_databases`'s `formats/json/Rotherham.json` — same clean Sword Project provenance as KJVA — **does** have the emphasis-dashes intact, confirmed directly (Genesis 1:2: `"darkness,—but, the Spirit of God, was brooding"`, correctly punctuated). This is a real upgrade over the ad-hoc web-verification (studylight.org/studybible.info) Rotherham has relied on so far. Scope-bounded: 66 protocanonical books only, Rotherham never covered the Apocrypha historically, so this can only ever touch a fixed, known set of files.
+
+**Recommendation, not yet actioned:** Rotherham is the clearer win — do it the same way as KJV (full-column replacement + content verification, not just count-matching, learning from every lesson in the section above). DRB is worth a pass too but budget for it looking more like Tobit/Sirach than like KJV. Both are genuinely public-domain, comprehensive, well-provenanced sources sitting unused at the moment — this is real, bounded, low-risk work, not speculative.
+
+**Source locations for whoever implements this:**
+- Rotherham: `scrollmapper/bible_databases`, `formats/json/Rotherham.json` — same sparse-checkout technique as KJVA (`git clone --filter=blob:none --no-checkout`, then `git sparse-checkout init --no-cone` with the exact path in `.git/info/sparse-checkout`, then `git checkout` — a plain clone or cone-mode sparse-checkout of this repo will time out, confirmed twice this session).
+- DRB: already cloneable directly, `janvier-s/original-douay-rheims`, USFM format, one file per book (Vulgate naming — e.g. `1-paralipomenon.usfm` = 1 Chronicles, `4-kings.usfm` = 2 Kings, `3-esdras.usfm`/`4-esdras.usfm` = the books KJV calls 1/2 Esdras).
+
