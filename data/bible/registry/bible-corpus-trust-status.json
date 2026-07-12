@@ -295,7 +295,12 @@
           "finding": "Confirmed FALSE by direct verification, 2026-07-12. 29 of 37 OT books touched by the underlying commit (bb41787, 2026-06-21) still show live chapter-heading pollution in the app's NABRE column (e.g. Exodus 1:1 still reads 'I. Introduction: The Oppression of the Israelites in Egypt Chapter 1 - Jacob’s Descendants in Egypt. These are the names...'). Only Genesis is confirmed actually clean, and only because it was independently re-fixed in a separate 2026-07-11 session, not because this certification held.",
           "fullDetail": "AUDIT_GOVERNANCE_LEDGER.md, 'Exodus remediation, session 2026-07-12' entry"
         },
-        "statusFieldAboveIsUnreliable": "The 'status' and 'reasons' fields above this note pertain to DRB source-shape trust specifically and were not directly disproven by this check (that check was NABRE-specific) -- but given the same certification date and author, they should be independently re-verified before being relied on, not assumed to still hold."
+        "statusFieldAboveIsUnreliable": "The 'status' and 'reasons' fields above this note pertain to DRB source-shape trust specifically and were not directly disproven by this check (that check was NABRE-specific) -- but given the same certification date and author, they should be independently re-verified before being relied on, not assumed to still hold.",
+        "subsequentlyMadeTrue_2026_07_12": {
+          "note": "The underlying claim (mechanical NABRE chapter-heading cleanup) was false when certified by Lucy, and confirmed false by independent verification earlier the same day this note was added. It has since been made TRUE by real remediation work, same day: 742 verses corrected across 37 OT books in a two-pass cross-cutting effort, verified via five independent structural checks after every pattern attempt (not just the one that appeared to work), with a final comprehensive corpus-wide scan confirming zero remaining chapter-heading or section-title pollution anywhere in the affected books.",
+          "fullDetail": "AUDIT_GOVERNANCE_LEDGER.md, 'NABRE cross-cutting header fix' and 'NABRE residual fix' entries, session 2026-07-12",
+          "distinction": "This note intentionally preserves the original false claim and its disproof above, rather than deleting them, per this project's standing practice of correcting the record in place rather than overwriting history. The claim was false, then became true through independently-verified work -- both facts are worth keeping on record."
+        }
       }
     },
     "psalms": {
