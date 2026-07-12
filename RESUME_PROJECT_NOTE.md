@@ -830,6 +830,18 @@ Josh asked whether the other public-domain translations warrant the same cross-c
 
 **Status as of this note: KJV and Rotherham are both fully corpus-wide verified. DRB's triage is done (447 real mismatches found, concentrated in NT) but the fix itself is not yet done — that, plus Exodus's full remediation (or another cross-cutting pass), are the live next-steps. Still needs Josh's direction on which to pick up first.**
 
+## Session, 2026-07-12 continued — DRB: the 447 figure was investigated, does not reproduce, corrected to zero. Josh chose DRB first.
+
+**HANDOFF — read this first if picking up fresh.** DRB is now CLOSED, zero fix needed. Full detail and verification method in `AUDIT_GOVERNANCE_LEDGER.md`'s "DRB corpus-wide fix, session 2026-07-12" entry — read that before assuming anything about DRB's state.
+
+Per the two live options in the section above, Josh chose DRB. Per this project's own standing rule (never start a fix from a carried-forward count without re-deriving it), the very first step was rebuilding the comparison from scratch rather than trusting the 447 figure — and it didn't reproduce. **Zero real mismatches across all 27 NT books; the reported 447 was a parser artifact** (a marker-stripping bug — demonstrated, not just suspected, by deliberately reproducing the bug shape and getting 183/110 false mismatches in Luke/Romans alone from it). The 58 real mismatches found elsewhere (Haggai, Song of Solomon, Jonah, Hosea) are all clean, complete Vulgate-vs-modern chapter-boundary shifts — the same failure class as Judith 15/16 and Revelation 12:18 in the KJV effort — with every word accounted for on both sides. **DRB needs no fix anywhere in this survey's scope.**
+
+`AUDIT_GOVERNANCE_LEDGER.md` and `audit-ledger.html` updated to reflect this (SEED_VERSION bumped to `v90-2026-07-12-drb-447-mismatch-figure-corrected-to-zero`, dashboard script `node --check`ed clean, `git diff --stat` confirms only the ledger + dashboard changed — no bible data files touched, since none needed it).
+
+**Immediate next action for whoever picks this up:** DRB is closed. The remaining live choice is the same one Josh hasn't picked yet between: (1) resume Exodus's full multi-translation remediation (KJV already done corpus-wide; NRSV/NABRE/Rotherham verification needed per the Genesis method; DRB now also pre-cleared corpus-wide, same as KJV/Rotherham — so Exodus's remaining scope is smaller than Genesis's was), or (2) some other cross-cutting pass. Ask Josh before starting either.
+
+**Standing lesson reinforced this session, worth repeating for whoever reads this next:** a resume note's own numeric claims are not ground truth, even when specific and precise-looking (447, broken down by book, is a very convincing-looking number). Re-derive before fixing, every time — this cost nothing this session and caught a real, would-have-been-wasted-effort error before any bible data was touched.
+
 **Source locations for whoever implements this:**
 - Rotherham: `scrollmapper/bible_databases`, `formats/json/Rotherham.json` — same sparse-checkout technique as KJVA (`git clone --filter=blob:none --no-checkout`, then `git sparse-checkout init --no-cone` with the exact path in `.git/info/sparse-checkout`, then `git checkout` — a plain clone or cone-mode sparse-checkout of this repo will time out, confirmed twice this session).
 - DRB: already cloneable directly, `janvier-s/original-douay-rheims`, USFM format, one file per book (Vulgate naming — e.g. `1-paralipomenon.usfm` = 1 Chronicles, `4-kings.usfm` = 2 Kings, `3-esdras.usfm`/`4-esdras.usfm` = the books KJV calls 1/2 Esdras).
