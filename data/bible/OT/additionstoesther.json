@@ -1,0 +1,906 @@
+{
+  "meta": {
+    "name": "Additions to Esther",
+    "id": "ESTH_ADD",
+    "version": "NRSV",
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "defaultTranslation": "NRSV",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_active_corpus_explicit_lane_unverified_pending_source",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "KJV": {
+        "label": "King James Version 1611",
+        "sourceType": "historical_kjv_1611_source_witness",
+        "rights": "Public Domain",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "NABRE": {
+        "label": "New American Bible Revised Edition",
+        "sourceType": "historical_internal_source_lane",
+        "rights": "USCCB source witness; project-internal historical source lane",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "DRB": {
+        "label": "Douay-Rheims Bible",
+        "sourceType": "drb_original_douay_rheims_raw_source",
+        "rights": "Public Domain",
+        "sourceRef": "main/current"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "num": "Addition A",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "In the second year of the reign of Artaxerxes the Great, on the first day of Nisan, Mordecai son of Jair son of Shimei son of Kish, of the tribe of Benjamin, had a dream.",
+            "DRB": "In the second year, when Artaxerxes the greatest reigned, in the first day of the month Nisan, Mardocheus the son of Jairi, the son of Semei, the son of Cis, of the tribe of Benjamin,",
+            "KJV": "In the second year of the reign of Artexerxes the great, in the first day of the month Nisan, Mardocheus the son of Jairus, the son of Semei, the son of Cisai, of the tribe of Benjamin, had a dream;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "He was a Jew, living in the city of Susa, a great man, serving in the court of the king.",
+            "DRB": "a Jew which dwelt in the city of Susan, a great man and among the first of the king's court, saw a dream.",
+            "KJV": "Who was a Jew, and dwelt in the city of Susa, a great man, being a servitor in the king’s court."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "He was one of the captives whom King Nebuchadnezzar of Babylon had brought from Jerusalem with King Jeconiah of Judea.",
+            "DRB": "And he was of that number of captives, whom Nabuchodonosor the king of Babylon had transported from Jerusalem with Jechonias the king of Juda:",
+            "KJV": "He was also one of the captives, which Nabuchodonosor the king of Babylon carried from Jerusalem with Jechonias king of Judea; and this was his dream:"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "And this was his dream: Noises and confusion, thunders and earthquake, tumult on the earth!",
+            "DRB": "and this was his dream: There appeared voices, and tumults, and thunders, and earth-quakes, and perturbation upon the earth.",
+            "KJV": "Behold a noise of a tumult, with thunder, and earthquakes, and uproar in the land:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Then two great dragons came forward, both ready to fight, and they roared terribly.",
+            "DRB": "and behold two great dragons, prepared one against another into battle.",
+            "KJV": "And, behold, two great dragons came forth ready to fight, and their cry was great."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "At their roaring every nation prepared for war, to fight against the nation of the righteous.",
+            "DRB": "At whose cry all nations were raised up to fight against the nation of the just.",
+            "KJV": "And at their cry all nations were prepared to battle, that they might fight against the righteous people."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "It was a day of darkness and gloom, of tribulation and distress, affliction and great tumult on the earth!",
+            "DRB": "And that was a day of darkness and danger, of tribulation and distress, and great fear upon the earth.",
+            "KJV": "And lo a day of darkness and obscurity, tribulation and anguish, affliction and great uproar, upon earth."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And the whole righteous nation was troubled; they feared the evils that threatened them, and were ready to perish.",
+            "DRB": "And the nation of the just fearing their evils, was troubled, and prepared to death.",
+            "KJV": "And the whole righteous nation was troubled, fearing their own evils, and were ready to perish."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Then they cried out to God; and at their cry, as though from a tiny spring, there came a great river, with abundant water;",
+            "DRB": "And they cried to God: and they crying, a little fountain grew into a very great river, and abounded into very many waters.",
+            "KJV": "Then they cried unto God, and upon their cry, as it were from a little fountain, was made a great flood, even much water."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "light came, and the sun rose, and the lowly were exalted and devoured those held in honor.",
+            "DRB": "Light and the sun arose, & the humble were exalted, & they devoured the glorious.",
+            "KJV": "The light and the sun rose up, and the lowly were exalted, and devoured the glorious."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Mordecai saw in this dream what God had determined to do, and after he awoke he kept it in his mind and sought all day to understand it in every detail.",
+            "DRB": "Which when Mardocheus had seen, and risen out of his bed, he mused what God would do: and he had it fixed in his mind, desirous to know what the dream should signify.",
+            "KJV": "Now when Mardocheus, who had seen this dream, and what God had determined to do, was awake, he bare this dream in mind, and until night by all means was desirous to know it."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Now Mordecai took his rest in the courtyard with Gabatha and Tharra, the two eunuchs of the king who kept watch in the courtyard.",
+            "DRB": "And he abode that time in the king's court with Bagatha and Thara the king's eunuchs, which were porters of the palace.",
+            "KJV": "And Mardocheus took his rest in the court with Gabatha and Tharra, the two eunuchs of the king, and keepers of the palace."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "He overheard their conversations and inquired into their purposes, and learned that they were preparing to lay hands on King Artaxerxes; and he informed the king about them.",
+            "DRB": "And when he understood their cogitations, and had throughly seen their cares, he learned that they went about to lay hands on king Artaxerxes, and he told the king thereof.",
+            "KJV": "And he heard their devices, and searched out their purposes, and learned that they were about to lay hands upon Artexerxes the king; and so he certified the king of them."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Then the king examined the two eunuchs, and after they had confessed it, they were led away to execution.",
+            "DRB": "Who having them both in examination, when they had confessed he commanded them to be led to death.",
+            "KJV": "Then the king examined the two eunuchs, and after that they had confessed it, they were strangled."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "The king made a record of these things; Mordecai also wrote an account of them.",
+            "DRB": "But the king wrote that which was done, in the commentaries: and Mardocheus also committed the memory of the thing to writing.",
+            "KJV": "And the king made a record of these things, and Mardocheus also wrote thereof."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "And the king ordered Mordecai to serve in the court, and rewarded him for these things.",
+            "DRB": "And the king commanded him, that he should abide in the court of the palace, giving him gifts for the delation.",
+            "KJV": "So the king commanded, Mardocheus to serve in the court, and for this he rewarded him."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "But Haman son of Hammedatha, a Bougaean, was held in great honor by the king, and he sought to injure Mordecai and his people because of the two eunuchs of the king.",
+            "DRB": "But Aman the son of Amadathi the Bugeite was most glorious before the king, and would hurt Mardocheus, and his people, for the two eunuchs of the king, which were put to death.",
+            "KJV": "Howbeit Aman the son of Amadathus the Agagite, who was in great honour with the king, sought to molest Mardocheus and his people because of the two eunuchs of the king."
+          }
+        }
+      ]
+    },
+    {
+      "num": "Addition B",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "This is a copy of the letter: “The Great King, Artaxerxes, to the governors of the hundred twenty-seven provinces from India to Ethiopia and to the officials under them, writes these things:",
+            "DRB": "And this was the copy of the letter. The most great king Artaxerxes from India unto Æthiopia, to the Princes of an hundred and seven & twenty provinces, and to the captains that are subject to his empire, greeting.",
+            "KJV": "The copy of the letters was this: The great king Artexerxes writeth these things to the princes and governours that are under him from India unto Ethiopia in an hundred and seven and twenty provinces."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "“Having become ruler of many nations and master of the whole world, not elated with presumption of authority but always acting reasonably and with kindness, I have determined to settle the lives of my subjects in lasting tranquility and, in order to make my kingdom peaceable and open to travel throughout all its extent, to re-establish the peace which all people desire.",
+            "DRB": "Whereas I reigned over many nations, and had subdued all the world to my dominion, I would not abuse the greatness of my might, but with clemency & lenity govern my subjects, that passing their life quietly without any terror, they might enjoy peace wished of all men.",
+            "KJV": "After that I became lord over many nations and had dominion over the whole world, not lifted up with presumption of my authority, but carrying myself always with equity and mildness, I purposed to settle my subjects continually in a quiet life, and making my kingdom peaceable, and open for passage to the utmost coasts, to renew peace, which is desired of all men."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "“When I asked my counselors how this might be accomplished, Haman—who excels among us in sound judgment, and is distinguished for his unchanging goodwill and steadfast fidelity, and has attained the second place in the kingdom—",
+            "DRB": "But when I demanded of my counsellers how this might be accomplished, one that excelled the rest in wisdom & fidelity, & was second after the king, Aman by name,",
+            "KJV": "Now when I asked my counsellors how this might be brought to pass, Aman, that excelled in wisdom among us, and was approved for his constant good will and steadfast fidelity, and had the honour of the second place in the kingdom,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "pointed out to us that among all the nations in the world there is scattered a certain hostile people, who have laws contrary to those of every nation and continually disregard the ordinances of the kings, so that the unifying of the kingdom that we honorably intend cannot be brought about.",
+            "DRB": "told me that there was a people dispersed through the whole world, which used new laws, and doing against the customs of all Nations, contemned the commandments of kings, and brake the concord of all nations by their dissension.",
+            "KJV": "Declared unto us, that in all nations throughout the world there was scattered a certain malicious people, that had laws contrary to all nations, and continually despised the commandments of kings, so as the uniting of our kingdoms, honourably intended by us cannot go forward."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "“Therefore, understanding that this people, and it alone, stands constantly in opposition to every nation, perversely following a strange manner of life and laws, and is ill-disposed to our government, doing all the harm they can so that our kingdom may not attain stability,",
+            "DRB": "Which when we had learned, seeing one nation rebellious against all kind of men to use perverse laws, & to go against our commandments, and to disturb the peace and concord of the Provinces subject to us,",
+            "KJV": "Seeing then we understand that this people alone is continually in opposition unto all men, differing in the strange manner of their laws, and evil affected to our state, working all the mischief they can that our kingdom may not be firmly established:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "we have decreed that those indicated to you in the letters of Haman, who is in charge of our affairs and is our second father, shall all—with their wives and children—be utterly destroyed by the sword of their enemies, without any pity or mercy, on the fourteenth day of the twelfth month, Adar, of this present year,",
+            "DRB": "we have commanded that whomsoever Aman shall shew, who is chief over all the Provinces, and second after the king, and whom we honour in stead of a father, they with their wives and children be destroyed of their enemies, and that none have pity on them the fourteenth day of the twelfth month Adar of this present year:",
+            "KJV": "Therefore have we commanded, that all they that are signified in writing unto you by Aman, who is ordained over the affairs, and is next unto us, shall all, with their wives and children, be utterly destroyed by the sword of their enemies, without all mercy and pity, the fourteenth day of the twelfth month Adar of this present year:"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "so that those who have long been hostile and remain so may in a single day go down in violence to Hades, and leave our government completely secure and untroubled hereafter.”",
+            "DRB": "that the wicked men going down to hell in one day, may restore the peace to our empire, which they had disturbed.",
+            "KJV": "That they, who of old and now also are malicious, may in one day with violence go into the grave, and so ever hereafter cause our affairs to be well settled, and without trouble."
+          }
+        }
+      ]
+    },
+    {
+      "num": "Addition C",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Then Mordecai prayed to the Lord, calling to remembrance all the works of the Lord.",
+            "DRB": "But Mardocheus besought our Lord, mindful of all his works,",
+            "KJV": "Then Mardocheus thought upon all the works of the Lord, and made his prayer unto him,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "He said: “O Lord, Lord, King who rulest over all things, for the universe is in thy power and there is no one who can oppose thee if it is thy will to save Israel,",
+            "DRB": "and said: Lord Lord King omnipotent, for in thy dominion are all things set, and there is none that can resist thy will, if thou determine to save Israel.",
+            "KJV": "Saying, O Lord, Lord, the King Almighty: for the whole world is in thy power, and if thou hast appointed to save Israel, there is no man that can gainsay thee:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "for thou hast made heaven and earth and every wonderful thing under heaven,",
+            "DRB": "Thou madest heaven and earth, and whatsoever is contained in the compass of heaven.",
+            "KJV": "For thou hast made heaven and earth, and all the wondrous things under the heaven."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "and thou art Lord of all, and there is no one who can resist thee, who art the Lord.",
+            "DRB": "Thou art Lord of all, neither is there that can resist thy majesty.",
+            "KJV": "Thou art Lord of all things, and and there is no man that can resist thee, which art the Lord."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Thou knowest all things; thou knowest, O Lord, that it was not in insolence or pride or for any love of glory that I did this, and refused to bow down to this proud Haman;",
+            "DRB": "Thou understandest all things, and knowest that I have not done this for pride and contumely, and any desire of glory, that I adored not the proud Aman,",
+            "KJV": "Thou knowest all things, and thou knowest, Lord, that it was neither in contempt nor pride, nor for any desire of glory, that I did not bow down to proud Aman."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "for I would have been willing to kiss the soles of his feet to save Israel!",
+            "DRB": "(for gladly would I be ready for the salvation of Israel to kiss even the steps of his feet,)",
+            "KJV": "For I could have been content with good will for the salvation of Israel to kiss the soles of his feet."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "But I did this, that I might not set the glory of man above the glory of God, and I will not bow down to anyone but to thee, who art my Lord; and I will not do these things in pride.",
+            "DRB": "but I feared lest I should transfer the honour of my God to a man, and lest I should adore any except my God.",
+            "KJV": "But I did this, that I might not prefer the glory of man above the glory of God: neither will I worship any but thee, O God, neither will I do it in pride."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And now, O Lord God and King, God of Abraham, spare thy people; for the eyes of our enemies are upon us to annihilate us, and they desire to destroy the inheritance that has been thine from the beginning.",
+            "DRB": "And now o Lord King, the God of Abraham have mercy upon thy people, because our enemies will destroy us, and extinguish thine inheritance.",
+            "KJV": "And now, O Lord God and King, spare thy people: for their eyes are upon us to bring us to nought; yea, they desire to destroy the inheritance, that hath been thine from the beginning."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Do not neglect thy portion, which thou didst redeem for thyself out of the land of Egypt.",
+            "DRB": "Despise not thy portion, which thou hast redeemed to thyself out of Ægypt.",
+            "KJV": "Despise not the portion, which thou hast delivered out of Egypt for thine own self."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Hear my prayer, and have mercy upon thy inheritance; turn our mourning into feasting, that we may live and sing praise to thy name, O Lord; do not destroy the mouth of those who praise thee.”",
+            "DRB": "Hear my prayer, and be propitious to thy lot and cord, and turn our mourning into joy, that living we may praise thy name o Lord, and do not shut the mouths of them that sing to thee.",
+            "KJV": "Hear my prayer, and be merciful unto thine inheritance: turn our sorrow into joy, that we may live, O Lord, and praise thy name: and destroy not the mouths of them that praise thee, O Lord."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "And all Israel cried out mightily, for their death was before their eyes.",
+            "DRB": "All Israel also with like mind and supplication cried to our Lord, because certain death did hang over them.",
+            "KJV": "All Israel in like manner cried most earnestly unto the Lord, because their death was before their eyes."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "And Queen Esther, seized with deadly anxiety, fled to the Lord;",
+            "DRB": "Esther also the queen fled to our Lord, fearing the peril that was at hand.",
+            "KJV": "Queen Esther also, being in fear of death, resorted unto the Lord:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "she took off her splendid apparel and put on the garments of distress and mourning, and instead of costly perfumes she covered her head with ashes and dung, and she utterly humbled her body, and every part that she loved to adorn she covered with her tangled hair.",
+            "DRB": "And when she had laid off her royal garments, she took cloths meet for weeping and mourning, & for diverse ointments, filled her head with ashes & dung, & her body she humbled with fasts: and all the places, in which before she was accustomed to rejoice, she filled with tearing of her hairs.",
+            "KJV": "And laid away her glorious apparel, and put on the garments of anguish and mourning: and instead of precious ointments, she covered her head with ashes and dung, and she humbled her body greatly, and all the places of her joy she filled with her torn hair."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "And she prayed to the Lord God of Israel, and said: “O my Lord, thou only art our King; help me, who am alone and have no helper but thee,",
+            "DRB": "And she besought our Lord the God of Israel, saying: My Lord, which only art our King, help me solitary woman, and which have no other helper beside thee.",
+            "KJV": "And she prayed unto the Lord God of Israel, saying, O my Lord, thou only art our King: help me, desolate woman, which have no helper but thee:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "for my danger is in my hand.",
+            "DRB": "My peril is in my hands.",
+            "KJV": "For my danger is in mine hand."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Ever since I was born I have heard in the tribe of my family that thou, O Lord, didst take Israel out of all the nations, and our fathers from among all their ancestors, for an everlasting inheritance, and that thou didst do for them all that thou didst promise.",
+            "DRB": "I have heard of my father that thou Lord didst take Israel out from all Gentiles, and our fathers out of all their predecessors before, that thou mightest possess an everlasting inheritance, and thou hast done to them as thou hast spoken.",
+            "KJV": "From my youth up I have heard in the tribe of my family that thou, O Lord, tookest Israel from among all people, and our fathers from all their predecessors, for a perpetual inheritance, and thou hast performed whatsoever thou didst promise them."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "And now we have sinned before thee, and thou hast delivered us into the hands of our enemies,",
+            "DRB": "We have sinned in thy sight, and therefore thou hast delivered us into the hands of our enemies:",
+            "KJV": "And now we have sinned before thee: therefore hast thou given us into the hands of our enemies,"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "because we glorified their gods. Thou art righteous, O Lord!",
+            "DRB": "for we have worshipped their gods. Thou art just o Lord.",
+            "KJV": "Because we worshipped their gods: O Lord, thou art righteous."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "And now they are not satisfied that we are in bitter slavery, but they have covenanted with their idols",
+            "DRB": "And now it sufficeth them not, that they oppress us with most hard servitude, but imputing the force of their hands to the might of their idols,",
+            "KJV": "Nevertheless it satisfieth them not, that we are in bitter captivity: but they have stricken hands with their idols,"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "to abolish what thy mouth has ordained and to destroy thy inheritance, to stop the mouths of those who praise thee and to quench the glory of thy house and thy altar,",
+            "DRB": "they will change thy promises, and destroy thine inheritance, and shut the mouths of them that praise thee, and extinguish the glory of thy temple and altar,",
+            "KJV": "That they will abolish the thing that thou with thy mouth hast ordained, and destroy thine inheritance, and stop the mouth of them that praise thee, and quench the glory of thy house, and of thine altar,"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "and to open the mouths of the nations for the praise of vain idols, and to magnify forever a mortal king.",
+            "DRB": "that they may open the mouths of Gentiles, and praise the strength of idols, and magnify a carnal king for ever.",
+            "KJV": "And open the mouths of the heathen to set forth the praises of the idols, and to magnify a fleshly king for ever."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "O Lord, do not surrender thy scepter to those who are nothing; and do not let them mock at our downfall; but turn their plan against themselves, and make an example of him who began this against us.",
+            "DRB": "Deliver not o Lord thy sceptre to them that are not, lest they laugh at our ruin: but turn their counsel upon them, & destroy him, that hath begun to do cruelly against us.",
+            "KJV": "O Lord, give not thy sceptre unto them that be nothing, and let them not laugh at our fall; but turn their device upon themselves, and make him an example, that hath begun this against us."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Remember, O Lord; make thyself known in this time of our affliction, and give me courage, O King of the gods and Master of all dominion!",
+            "DRB": "Remember o Lord: and shew thyself to us in the time of our tribulation, and give me confidence Lord King of gods, and of all power:",
+            "KJV": "Remember, O Lord, make thyself known in time of our affliction, and give me boldness, O King of the nations, and Lord of all power."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Put eloquent speech in my mouth before the lion, and turn his heart to hate the man who is fighting against us, so that there may be an end of him and those who agree with him.",
+            "DRB": "give me speech well framed in my mouth, in the presence of the lion, and turn his heart into the hatred of our enemy, that both himself may perish, and the rest that consent unto him.",
+            "KJV": "Give me eloquent speech in my mouth before the lion: turn his heart to hate him that fighteth against us, that there may be an end of him, and of all that are likeminded to him:"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "But save us by thy hand, and help me, who am alone and have no helper but thee, O Lord.",
+            "DRB": "But deliver us in thy hand, and help me, having no other help but thee o Lord, which hast the knowledge of all things,",
+            "KJV": "But deliver us with thine hand, and help me that am desolate, and which have no other help but thee."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "Thou hast knowledge of all things; and thou knowest that I hate the splendor of the wicked and abhor the bed of the uncircumcised and of any alien.",
+            "DRB": "and knowest that I hate the glory of the wicked, and detest the bed of the uncircumcised, and of every stranger.",
+            "KJV": "Thou knowest all things, O Lord; thou knowest that I hate the glory of the unrighteous, and abhor the bed of the uncircumcised, and of all the heathen."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "Thou knowest my necessity—that I abhor the sign of my proud position, which is upon my head on the days when I appear in public. I abhor it like a menstruous rag, and I do not wear it on the days when I am at leisure.",
+            "DRB": "Thou knowest my necessity, that I abhor the sign of my pride & glory, which is upon my head in the days of my ostentation, and detest it as the cloth of a woman in her monthly flowers, and wear it not in the days of my silence,",
+            "KJV": "Thou knowest my necessity: for I abhor the sign of my high estate, which is upon mine head in the days wherein I shew myself, and that I abhor it as a menstruous rag, and that I wear it not when I am private by myself."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "And thy servant has not eaten at Haman’s table, and I have not honored the king’s feast or drunk the wine of the libations.",
+            "DRB": "and that I have not eaten at Aman's table, neither the king's banquet hath pleased me, and that I have not drunk the wine of libaments:",
+            "KJV": "And that thine handmaid hath not eaten at Aman’s table, and that I have not greatly esteemed the king’s feast, nor drunk the wine of the drink offerings."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "Thy servant has had no joy since the day that I was brought here until now, except in thee, O Lord God of Abraham.",
+            "DRB": "& that thy handmaid did never rejoice, since I was transported hither unto this day, but in thee o Lord the God of Abraham.",
+            "KJV": "Neither had thine handmaid any joy since the day that I was brought hither to this present, but in thee, O Lord God of Abraham."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "O God, whose might is over all, hear the voice of the despairing, and save us from the hands of evildoers. And save me from my fear!”",
+            "DRB": "O God strong above all, hear the voice of them, that have no other hope, and deliver us from the hand of the wicked, and deliver me from my fear.",
+            "KJV": "O thou mighty God above all, hear the voice of the forlorn and deliver us out of the hands of the mischievous, and deliver me out of my fear."
+          }
+        }
+      ]
+    },
+    {
+      "num": "Addition D",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "On the third day, when she ended her prayer, she took off the garments in which she had worshiped, and arrayed herself in splendid attire.",
+            "DRB": "And in the third day she laid away the garments which she wore, and was clothed in her glory.",
+            "KJV": "And upon the third day, when she had ended her prayers, she laid away her mourning garments, and put on her glorious apparel."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Then, majestically adorned, after invoking the aid of the all-seeing God and Savior, she took her two maids with her,",
+            "DRB": "And when she glistered in royal apparel, and had invocated God the ruler and saviour of all, she took two waiting maids,",
+            "KJV": "And being gloriously adorned, after she had called upon God, who is the beholder and saviour of all things, she took two maids with her:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "leaning gently on the one, as though for luxury,",
+            "DRB": "and upon the one indeed she leaned, as it were for delicateness & very much tenderness not able to bear up her body:",
+            "KJV": "And upon the one she leaned, as carrying herself daintily;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "while the other followed carrying her train.",
+            "DRB": "but the other of the maids followed her lady, bearing up her garments trailing on the ground.",
+            "KJV": "And the other followed, bearing up her train."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "She was radiant with perfect beauty, and she looked happy, as if beloved, but her heart was frozen with fear.",
+            "DRB": "But herself in all her countenance of colour like the rose, also with gracious and shining eyes hid her mind full of sorrow, & exceeding fear.",
+            "KJV": "And she was ruddy through the perfection of her beauty, and her countenance was cheerful and very amiable: but her heart was in anguish for fear."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "When she had passed through all the doors, she stood before the king. He was seated on his royal throne, clothed in the full array of his majesty, all covered with gold and precious stones. He was most terrifying.",
+            "DRB": "She therefore entering through all the doors in order, stood before the king, where he sat upon the throne of his kingdom, clothed with royal garments, & glittering in gold, and precious stones, and he was terrible to behold.",
+            "KJV": "Then having passed through all the doors, she stood before the king, who sat upon his royal throne, and was clothed with all his robes of majesty, all glittering with gold and precious stones; and he was very dreadful."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Lifting his face, flushed with splendor, he looked at her in fierce anger. The queen faltered, and turned pale and faint, and collapsed upon the head of her maid who went before her.",
+            "DRB": "And when he had lifted up his face, and with burning eyes had shewed the fury of his breast, the queen fell down, & her colour being changed into paleness, she rested her weary head upon her handmaid.",
+            "KJV": "Then lifting up his countenance that shone with majesty, he looked very fiercely upon her: and the queen fell down, and was pale, and fainted, and bowed herself upon the head of the maid that went before her."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Then God changed the spirit of the king to gentleness, and in alarm he sprang from his throne and took her in his arms until she came to herself. He comforted her with soothing words, and said to her,",
+            "DRB": "And God turned the king's spirit into mildness, & in haste & fearing he lept out of the throne, & holding her up in his arms, till she came to herself, spake her fair with these words:",
+            "KJV": "Then God changed the spirit of the king into mildness, who in a fear leaped from his throne, and took her in his arms, till she came to herself again, and comforted her with loving words and said unto her,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "“What is it, Esther? I am your brother. Take courage;",
+            "DRB": "What aileth thee Esther? I am thy brother, fear not.",
+            "KJV": "Esther, what is the matter? I am thy brother, be of good cheer:"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "you shall not die, for our ordinance is only for the subjects. Come near.”",
+            "DRB": "Thou shalt not die: for this law is not made for thee, but for the common sort.",
+            "KJV": "Thou shalt not die, though our our commandment be general: come near."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Then he raised the golden scepter and touched her neck with it;",
+            "DRB": "Come near therefore, and touch the sceptre.",
+            "KJV": "And so be held up his golden sceptre, and laid it upon her neck,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "he embraced her, and said, “Speak to me.”",
+            "DRB": "And when she held her peace, he took the golden rod, & put it upon her neck, & kissed her, & said: Why speakest thou not to me?",
+            "KJV": "And embraced her, and said, Speak unto me."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "She said to him, “I saw you, my lord, like an angel of God, and my heart was shaken with fear at your glory.",
+            "DRB": "Who answered: I saw thee, my lord, as an angel of God, and my heart was troubled for the fear of thy glory.",
+            "KJV": "Then said she unto him, I saw thee, my lord, as an angel of God, and my heart was troubled for fear of thy majesty."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For you are wonderful, my lord, and your countenance is full of grace.”",
+            "DRB": "For thou, my lord, art exceeding marvelous, and thy face is full of graces.",
+            "KJV": "For wonderful art thou, lord, and thy countenance is full of grace."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "And while she was speaking, she fainted and fell.",
+            "DRB": "And when she spake, she fell down again, and was almost in a swoon.",
+            "KJV": "And as she was speaking, she fell down for faintness."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Then the king was agitated, and all his servants tried to comfort her.",
+            "DRB": "But the king was troubled, and all his servants did comfort her.",
+            "KJV": "Then the king was troubled, and all his servants comforted her."
+          }
+        }
+      ]
+    },
+    {
+      "num": "Addition E",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "The following is a copy of this letter: “The Great King, Artaxerxes, to the governors of the provinces from India to Ethiopia, one hundred twenty-seven provinces, and to those who are loyal to our government, greeting.",
+            "DRB": "The great king Artaxerxes, from India to Æthiopia, to the dukes and Princes of an hundred twenty seven Provinces, which obey our commandment, sendeth greeting.",
+            "KJV": "The great king Artexerxes unto the princes and governors of an hundred and seven and twenty provinces from India unto Ethiopia, and unto all our faithful subjects, greeting."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "“Many people, the more they are honored by the most generous kindness of their benefactors, the more proud do they become,",
+            "DRB": "Many have abused unto pride the goodness of Princes, and the honour, that hath been bestowed upon them:",
+            "KJV": "Many, the more often they are honoured with the great bounty of their gracious princes, the more proud they are waxen,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "and not only seek to injure our subjects, but in their inability to stand prosperity they even undertake to scheme against their own benefactors.",
+            "DRB": "and they do not only endeavour to oppress the king's subjects, but not bearing the glory that is given them, they work treason against them that gave it.",
+            "KJV": "And endeavour to hurt not our subjects only, but not being able to bear abundance, do take in hand to practise also against those that do them good:"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "They not only take away thankfulness from among others, but, carried away by the boasts of those who know nothing of goodness, they suppose that they will escape the evil-hating justice of God, who always sees everything.",
+            "DRB": "Neither are they content not to give thanks for the benefits, and to violate in themselves the laws of humanity, but they think they can escape the sentence of God also who seeth all things.",
+            "KJV": "And take not only thankfulness away from among men, but also lifted up with the glorious words of lewd persons, that were never good, they think to escape the justice of God, that seeth all things and hateth evil."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "“And often many of those who are set in places of authority have been made in part responsible for the shedding of innocent blood, and have been involved in irremediable calamities, by the persuasion of friends who have been entrusted with the administration of public affairs,",
+            "DRB": "And they have burst forth into so great madness, that such as observe diligently the offices committed unto them, and do all things so that they are worthy of all men's praise, them they endeavour to overthrow by subtile means of lies,",
+            "KJV": "Oftentimes also fair speech of those, that are put in trust to manage their friends’ affairs, hath caused many that are in authority to be partakers of innocent blood, and hath enwrapped them in remediless calamities:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "when these men by the false trickery of their evil natures beguile the sincere goodwill of their sovereigns.",
+            "DRB": "whilst with crafty fraud they deceive the simple ears of Princes, and esteeming others by their own nature.",
+            "KJV": "Beguiling with the falsehood and deceit of their lewd disposition the innocency and goodness of princes."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "“What has been wickedly perpetrated through the exploitation of the good intentions of those who cause the trouble may be seen not so much from the ancient records which we have as from an examination of what has been done more recently before your eyes.",
+            "DRB": "Which thing is proved both out of old histories, and by these things, which are done daily, how the enterprises of kings are depraved by the evil suggestions of certain men.",
+            "KJV": "Now ye may see this, as we have declared, not so much by ancient histories, as ye may, if ye search what hath been wickedly done of late through the pestilent behaviour of them that are unworthily placed in authority."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "In the future we will take care to render our kingdom untroubled and peaceable for all people,",
+            "DRB": "Wherefore we must provide for the peace of all Provinces.",
+            "KJV": "And we must take care for the time to come, that our kingdom may be quiet and peaceable for all men,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "by making such changes as are necessary, and by always judging the matters that come before us with more kindly consideration.",
+            "DRB": "Neither must you think, if we command diverse things, that it cometh of the lightness of our mind, but that we give sentence according to the quality and necessity of times, as the profit of the common wealth requireth.",
+            "KJV": "Both by changing our purposes, and always judging things that are evident with more equal proceeding."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "“For Haman son of Hammedatha, a Macedonian (really an alien to the Persian blood, and quite devoid of our kindliness), having been hospitably entertained by us",
+            "DRB": "And that you may more plainly understand, that which we say, Aman the son of Amadathi, both in mind & country a Macedonian, & an alien from the Persians' blood, and with his cruelty staining our piety, was received of us a stranger:",
+            "KJV": "For Aman, a Macedonian, the son of Amadatha, being indeed a stranger from the Persian blood, and far distant from our goodness, and as a stranger received of us,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "and having enjoyed the goodwill which we have for every nation to such an extent that he was called our father and was continually bowed down to by all as the person second to the royal throne,",
+            "DRB": "and found our humanity so great towards him, that he was called our father, & was adored of all second after the king:",
+            "KJV": "Had so far forth obtained the favour that we shew toward every nation, as that he was called our father, and was continually honoured of all the next person unto the king."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "did not contain his pride, but undertook to deprive us of our kingdom and our life.",
+            "DRB": "who was puft up with so great swelling of arrogancy, that he went about to deprive us of Kingdom and life.",
+            "KJV": "But he, not bearing his great dignity, went about to deprive us of our kingdom and life:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "In fact by intricate deceits he petitioned for the destruction of Mordecai, who saved us and was our continual benefactor, and of Esther, the blameless partner of our kingdom, together with their whole nation.",
+            "DRB": "For by certain new devices and not heard of before he hath sought to kill Mardocheus, by whose fidelity and benefits we live, and Esther the fellow of our Kingdom with all their nation:",
+            "KJV": "Having by manifold and cunning deceits sought of us the destruction, as well of Mardocheus, who saved our life, and continually procured our good, as also of blameless Esther, partaker of our kingdom, with their whole nation."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For by such methods he thought that he would catch us defenseless and so transfer the kingdom of the Persians to the Macedonians.",
+            "DRB": "thinking this that they being slain, he might work treason to our solitariness, and might transfer the Kingdom of the Persians to the Macedonians.",
+            "KJV": "For by these means he thought, finding us destitute of friends to have translated the kingdom of the Persians to the Macedonians."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "“But we find that the Jews, who were consigned to annihilation by this thrice-accursed man, are not evildoers, but are governed by most righteous laws",
+            "DRB": "But we have found the Jews, which were by that most wicked of men appointed to be slain, in no fault at all, but contrary wise using just laws,",
+            "KJV": "But we find that the Jews, whom this wicked wretch hath delivered to utter destruction, are no evildoers, but live by most just laws:"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "and are children of the Most High, the living God, the most great, who has directed the kingdom both for us and for our ancestors in the most excellent order.",
+            "DRB": "and the children of the highest and the greatest, and always loving God, by whose benefit the Kingdom was given both to our fathers and to us, and is kept unto this day.",
+            "KJV": "And that they be children of the most high and most mighty, living God, who hath ordered the kingdom both unto us and to our progenitors in the most excellent manner."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "“You will therefore do well not to put into effect the letters sent by Haman son of Hammedatha,",
+            "DRB": "Wherefore know ye those letters, which he directed in our name, to be of none effect.",
+            "KJV": "Wherefore ye shall do well not to put in execution the letters sent unto you by Aman the son of Amadatha."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "since he who perpetrated these things has been hanged at the gates of Susa with all his household—for God, who rules over all things, has speedily inflicted on him the punishment that he deserved.",
+            "DRB": "For the which heinous fact, before the gates of this city, that is of Susan, both himself that devised it, and all his kindred hang on gibbets: not we, but God repaying him that which he hath deserved.",
+            "KJV": "For he that was the worker of these things, is hanged at the gates of Susa with all his family: God, who ruleth all things, speedily rendering vengeance to him according to his deserts."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "“Therefore publish a copy of this letter openly in every place, and let the Jews live by their own laws of life.",
+            "DRB": "But this edict, which we now send, let it be set forth in all cities, that it be lawful for the Jews to use their own laws.",
+            "KJV": "Therefore ye shall publish the copy of this letter in all places, that the Jews may freely live after their own laws."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "And give them support, so that on the thirteenth day of the twelfth month, Adar, on that very day, they may defend themselves against those who attack them in the time of affliction.",
+            "DRB": "Whom you must help, that those which had prepared themselves to their slaughter, they may kill, the thirteenth day of the twelfth month, which is called Adar.",
+            "KJV": "And ye shall aid them, that even the same day, being the thirteenth day of the twelfth month Adar, they may be avenged on them, who in the time of their affliction shall set upon them."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "For God, who rules over all things, has made this day to be a joy for his chosen people instead of a day of destruction for them.",
+            "DRB": "For God omnipotent hath turned this day of sadness and mourning into joy to them.",
+            "KJV": "For Almighty God hath turned to joy unto them the day, wherein the chosen people should have perished."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "“Therefore you shall keep it with all good cheer as a notable day among your commemorative festivals,",
+            "DRB": "Wherefore count you also this day among other festival days, and celebrate it with all joy, that hereafter also it may be known,",
+            "KJV": "Ye shall therefore among your solemn feasts keep it an high day with all feasting:"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "so that both now and hereafter it may mean salvation for us and the loyal Persians, but that for those who plot against us it may be a reminder of destruction.",
+            "DRB": "that all, which faithfully obey the Persians, receive worthy reward for their fidelity: and they that lie in wait against their Kingdom, perish for their wicked fact.",
+            "KJV": "That both now and hereafter there may be safety to us and the well affected Persians; but to those which do conspire against us a memorial of destruction."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "“Every city and country, without exception, that does not act accordingly shall be destroyed in wrath with spear and fire. It shall be made not only impassable for mortals, but also most hateful for wild animals and birds for all time.”",
+            "DRB": "And every Province and city, that will not be partaker of this solemnity, let it perish by sword and fire, and let it so be destroyed, that not only men, but also beasts have no access thereto for ever, for an example of contempt, and disobedience.",
+            "KJV": "Therefore every city and country whatsoever, which shall not do according to these things, shall be destroyed without mercy with fire and sword, and shall be made not only unpassable for men, but also most hateful to wild beasts and fowls for ever."
+          }
+        }
+      ]
+    },
+    {
+      "num": "Addition F",
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "And Mordecai said, “These things have come from God.",
+            "DRB": "And Mardocheus said: These things are done of God.",
+            "KJV": "The rest of the chapters of the Book of ESTHER, which are found neither in the Hebrew, nor the Chaldee. Then Mardocheus said, God hath done these things."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "For I remember the dream that I had concerning these matters, and none of them has failed to be fulfilled.",
+            "DRB": "I remember the dream that I saw, signifying these very things: neither was any of them frustrate.",
+            "KJV": "For I remember a dream which I saw concerning these matters, and nothing thereof hath failed."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "“The tiny spring that became a river, and there was light and the sun and abundant water—the river is Esther, whom the king married and made queen.",
+            "DRB": "The little fountain which grew into a river, and was turned into light, and into the sun, and abounded into many waters, is Esther, whom the king took to wife, and made her to be queen.",
+            "KJV": "A little fountain became a river, and there was light, and the sun, and much water: this river is Esther, whom the king married, and made queen:"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "The two dragons are Haman and myself.",
+            "DRB": "But the two dragons: I am, and Aman.",
+            "KJV": "And the two dragons are I and Aman."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "The nations are those that gathered to destroy the name of the Jews.",
+            "DRB": "The nations, that were assembled: are they that endeavoured to destroy the name of the Jews.",
+            "KJV": "And the nations were those that were assembled to destroy the name of the Jews:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "And my nation, this is Israel, who cried out to God and was saved. The Lord has saved his people; the Lord has delivered us from all these evils; God has done great signs and wonders, which have not occurred among the nations.",
+            "DRB": "And my nation: is Israel, which cried to our Lord, and our Lord hath saved his people: and he hath delivered us from all evils, and hath done great signs and wonders among the nations:",
+            "KJV": "And my nation is this Israel, which cried to God, and were saved: for the Lord hath saved his people, and the Lord hath delivered us from all those evils, and God hath wrought signs and great wonders, which have not been done among the Gentiles."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "For this purpose he made two lots, one for the people of God and one for all the nations,",
+            "DRB": "and he commanded that there should be two lots, one of the people of God, and the other of all Nations.",
+            "KJV": "Therefore hath he made two lots, one for the people of God, and another for all the Gentiles."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "and these two lots came to the hour and moment and day of decision before God among all the nations.",
+            "DRB": "And both lots are come to the day appointed even now from that time before God to all nations:",
+            "KJV": "And these two lots came at the hour, and time, and day of judgment, before God among all nations."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "And God remembered his people and vindicated his inheritance.",
+            "DRB": "and our Lord hath remembered his people, and hath had mercy on his inheritance.",
+            "KJV": "So God remembered his people, and justified his inheritance."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "So they will observe these days in the month of Adar, on the fourteenth and fifteenth days of that month, with an assembly and joy and gladness before God, from generation to generation forever among his people Israel.”",
+            "DRB": "And these days shall be observed in the month of Adar the fourteenth, and fifteenth day of the same month, with all diligence, and joy of the people gathered into one assembly, throughout all the generations here-after of the People of Israel.",
+            "KJV": "Therefore those days shall be unto them in the month Adar, the fourteenth and fifteenth day of the same month, with an assembly, and joy, and with gladness before God, according to the generations for ever among his people."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "In the fourth year of the reign of Ptolemy and Cleopatra, Dositheus, who said that he was a priest and a Levite, and his son Ptolemy brought to Egypt the preceding Letter about Purim, which they said was authentic and had been translated by Lysimachus son of Ptolemy, one of the residents of Jerusalem.",
+            "DRB": "In the fourth year when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Levitical kindred, and Ptolomee his son brought this epistle of Phurim, which they said Lysimachus the son of Ptolomee did interpret in Jerusalem.",
+            "KJV": "In the fourth year of the reign of Ptolemeus and Cleopatra, Dositheus, who said he was a priest and Levite, and Ptolemeus his son, brought this epistle of Phurim, which they said was the same, and that Lysimachus the son of Ptolemeus, that was in Jerusalem, had interpreted it."
+          }
+        }
+      ]
+    }
+  ]
+}

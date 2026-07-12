@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "name": "Bel and the Dragon",
+    "id": "BEL",
+    "version": "NRSV",
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "defaultTranslation": "NRSV",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_active_corpus_explicit_lane",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "KJV": {
+        "label": "King James Version 1611 Apocrypha",
+        "sourceType": "historical_kjv_1611_source_witness",
+        "rights": "Public Domain",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "NABRE": {
+        "label": "New American Bible Revised Edition",
+        "sourceType": "historical_internal_source_lane",
+        "rights": "USCCB source witness; project-internal historical source lane",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "DRB": {
+        "label": "Douay-Rheims Bible",
+        "sourceType": "drb_original_douay_rheims_raw_source",
+        "rights": "Public Domain",
+        "sourceRef": "main/current"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "When King Astyages was laid with his ancestors, Cyrus the Persian succeeded to his kingdom.",
+            "KJV": "And king Astyages was gathered to his fathers, and Cyrus of Persia received his kingdom.",
+            "NABRE": "Chapter 14 Bel and the Dragon. After King Astyages was gathered to his ancestors, Cyrus the Persian succeeded to his kingdom.",
+            "DRB": "And Daniel was the king's guest, and honoured above all his friends."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Daniel was a companion of the king, and was the most honored of all his friends.",
+            "KJV": "And Daniel conversed with the king, and was honoured above all his friends.",
+            "NABRE": "Daniel was a companion of the king and was held in higher honor than any of the Friends of the King.",
+            "DRB": "There was also an idol among the Babylonians named Bel: and there were bestowed on him every day of flour twelve arctabæs, and forty sheep, and of wine six great pots."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Now the Babylonians had an idol called Bel, and every day they provided for it twelve bushels of choice flour and forty sheep and six measures of wine.",
+            "KJV": "Now the Babylons had an idol, called Bel, and there were spent upon him every day twelve great measures of fine flour, and forty sheep, and six vessels of wine.",
+            "NABRE": "The Babylonians had an idol called Bel, and every day they provided for it six bushels of fine flour, forty sheep, and six measures of wine.",
+            "DRB": "The king also did worship him, and went every day to adore him: But Daniel adored his God. & the king said to him: Why dost thou not adore Bel."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "The king revered it and went every day to worship it. But Daniel worshiped his own God.",
+            "KJV": "And the king worshipped it and went daily to adore it: but Daniel worshipped his own God. And the king said unto him, Why dost not thou worship Bel?",
+            "NABRE": "The king revered it and went every day to worship it; but Daniel worshiped only his God.",
+            "DRB": "Who answering, said to him: Because I worship not idols made with hand, but the living God, that created heaven, and earth, and hath power over all flesh."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "So the king said to him, “Why do you not worship Bel?” He answered, “Because I do not revere idols made with hands, but the living God, who created heaven and earth and has dominion over all living creatures.”",
+            "KJV": "Who answered and said, Because I may not worship idols made with hands, but the living God, who hath created the heaven and the earth, and hath sovereignty over all flesh.",
+            "NABRE": "When the king asked him, “Why do you not worship Bel?” Daniel replied, “Because I do not revere idols made with hands, but only the living God who made heaven and earth and has dominion over all flesh.”",
+            "DRB": "And the king said to him: Doeth not Bel seem unto thee to be a living God? Seest thou not how much he eateth and drinketh every day?"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "The king said to him, “Do you not think that Bel is a living god? Do you not see how much he eats and drinks every day?”",
+            "KJV": "Then said the king unto him, Thinkest thou not that Bel is a living God? seest thou not how much he eateth and drinketh every day?",
+            "NABRE": "Then the king continued, “You do not think Bel is a living god? Do you not see how much he eats and drinks every day?”",
+            "DRB": "And Daniel smiling said: Be not deceived o king: For this same is within of clay, and without of brass, neither hath he eaten at any time."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Then Daniel laughed, and said to the king, “Do not be deceived, O king, for this is only clay inside and bronze outside, and it never ate or drank anything.”",
+            "KJV": "Then Daniel smiled, and said, O king, be not deceived: for this is but clay within, and brass without, and did never eat or drink any thing.",
+            "NABRE": "Daniel began to laugh. “Do not be deceived, O king,” he said; “it is only clay inside and bronze outside; it has never eaten or drunk anything.”",
+            "DRB": "And the king being wrath called his priests, & said to them: Unless you tell me, who it is that eateth these expenses, you shall die."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Then the king was angry and called his priests of Bel and said to them, “If you do not tell me who is eating these provisions, you shall die.”",
+            "KJV": "So the king was wroth, and called for his priests, and said unto them, If ye tell me not who this is that devoureth these expences, ye shall die.",
+            "NABRE": "Enraged, the king called his priests and said to them, “Unless you tell me who it is that consumes these provisions, you shall die. But if you can show that Bel consumes them, Daniel shall die for blaspheming Bel.”",
+            "DRB": "But if you shew, that Bel eateth these things Daniel shall die, because he hath blasphemed against Bel. And Daniel said to the king: Be it done according to thy word."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "“But if you prove that Bel is eating them, Daniel shall die, because he has spoken blasphemy against Bel.” Daniel said to the king, “Let it be done as you have said.”",
+            "KJV": "But if ye can certify me that Bel devoureth them, then Daniel shall die: for he hath spoken blasphemy against Bel. And Daniel said unto the king, Let it be according to thy word.",
+            "NABRE": "Daniel said to the king, “Let it be as you say!” There were seventy priests of Bel, besides their wives and children.",
+            "DRB": "And the priests of Bel were seventy, beside their wives, and little ones, & children. And the king came with Daniel into the temple of Bel."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Now there were seventy priests of Bel, besides their wives and children. So the king went with Daniel into the temple of Bel.",
+            "KJV": "Now the priests of Bel were threescore and ten, beside their wives and children. And the king went with Daniel into the temple of Bel.",
+            "NABRE": "When the king went with Daniel into the temple of Bel,",
+            "DRB": "And the priests of Bel said: Behold we go forth: & thou o king set the meats, & mingle the wine, & shut the door, & seal it with thy ring:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The priests of Bel said, “See, we are now going outside; you yourself, O king, set out the food and prepare the wine, and shut the door and seal it with your signet.”",
+            "KJV": "So Bel’s priests said, Lo, we go out: but thou, O king, set on the meat, and make ready the wine, and shut the door fast and seal it with thine own signet;",
+            "NABRE": "the priests of Bel said, “See, we are going to leave. You, O king, set out the food and prepare the wine; then shut the door and seal it with your ring.",
+            "DRB": "and when thou shalt come in the morning, unless thou find all eaten of Bel, dying we will die, or Daniel that hath lied against us."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "“If, when you return in the morning, you do not find that Bel has eaten it all, we will die; otherwise Daniel will, who is telling lies about us.”",
+            "KJV": "And to morrow when thou comest in, if thou findest not that Bel hath eaten up all, we will suffer death: or else Daniel, that speaketh falsely against us.",
+            "NABRE": "If you do not find that Bel has eaten it all when you return in the morning, we are to die; otherwise Daniel shall die for his lies against us.”",
+            "DRB": "And they contemned, because they had made under the table a secret entrance, & by it they came in always, and devoured those things."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "They were unconcerned, for under the table they had made a secret entrance through which they used to go in regularly and consume the provisions.",
+            "KJV": "And they little regarded it: for under the table they had made a privy entrance, whereby they entered in continually, and consumed those things.",
+            "NABRE": "They were not perturbed, because under the table they had made a secret entrance through which they always came in to consume the food.",
+            "DRB": "It came to pass therefore after they were gone out, the king set the meats before Bel: & Daniel commanded his servants, and they brought ashes, and he sifted them over all the temple before the king: and going forth they shut the door, and sealing it with the king's ring, they departed."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "After they had gone out, the king set out the food for Bel. Then Daniel ordered his servants to bring some ashes, and they scattered them throughout the whole temple in the presence of the king alone. Then they went out, shut the door and sealed it with the king’s signet, and departed.",
+            "KJV": "So when they were gone forth, the king set meats before Bel. Now Daniel had commanded his servants to bring ashes, and those they strewed throughout all the temple in the presence of the king alone: then went they out, and shut the door, and sealed it with the king’s signet, and so departed.",
+            "NABRE": "After they departed the king set the food before Bel, while Daniel ordered his servants to bring some ashes, which they scattered through the whole temple; the king alone was present. Then they went outside, sealed the closed door with the king’s ring, and departed.",
+            "DRB": "But the priests went in by night, according to their custom, and their wives, and their children: and they did eat, and drink all."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "During the night the priests came with their wives and children, as they were accustomed to do, and ate and drank everything.",
+            "KJV": "Now in the night came the priests with their wives and children, as they were wont to do, and did eat and drink up all.",
+            "NABRE": "The priests entered that night as usual, with their wives and children, and they ate and drank everything.",
+            "DRB": "And the king arose in the first break of day, and Daniel with him."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Early in the morning the king rose and came, and Daniel with him.",
+            "KJV": "In the morning betime the king arose, and Daniel with him.",
+            "NABRE": "Early the next morning, the king came with Daniel.",
+            "DRB": "And the king said: Are the seals safe, Daniel? Who answered: Safe o king."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "The king said, “Are the seals unbroken, Daniel?” He answered, “They are unbroken, O king.”",
+            "KJV": "And the king said, Daniel, are the seals whole? And he said, Yea, O king, they be whole.",
+            "NABRE": "“Are the seals unbroken, Daniel?” he asked. And Daniel answered, “They are unbroken, O king.”",
+            "DRB": "And forthwith when he had opened the door, the king looking on the table, cried out with a loud voice: Great art thou o Bel, and there is not any deceit with thee."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "As soon as the doors were opened, the king looked at the table and shouted with a loud voice, “You are great, O Bel, and with you there is no deceit, none at all!”",
+            "KJV": "And as soon as he had opened the dour, the king looked upon the table, and cried with a loud voice, Great art thou, O Bel, and with thee is no deceit at all.",
+            "NABRE": "As soon as he had opened the door, the king looked at the table and cried aloud, “You are great, O Bel; there is no deceit in you.”",
+            "DRB": "And Daniel laughed: and he held the king that he should not go in: and he said: Behold the pavement, mark whose steps these are."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "But Daniel laughed and restrained the king from going in. “Look at the floor,” he said, “and notice whose footprints these are.”",
+            "KJV": "Then laughed Daniel, and held the king that he should not go in, and said, Behold now the pavement, and mark well whose footsteps are these.",
+            "NABRE": "But Daniel laughed and kept the king from entering. He said, “Look at the floor and consider whose footprints these are.”",
+            "DRB": "And the king said: I see the steps of men, & women, and of infants. And the king was angry."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "The king said, “I see the footprints of men and women and children.”",
+            "KJV": "And the king said, I see the footsteps of men, women, and children. And then the king was angry,",
+            "NABRE": "“I see the footprints of men, women, and children!” said the king.",
+            "DRB": "Then apprehended he the priests, & their wives, & their children: and they shewed him secret little doors by which they came in, & consumed the things that were on the table."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Then the king was enraged, and he arrested the priests and their wives and children; then they showed him the secret doors through which they used to go in and consume the provisions on the table.",
+            "KJV": "And took the priests with their wives and children, who shewed him the privy doors, where they came in, and consumed such things as were upon the table.",
+            "NABRE": "In his wrath the king arrested the priests, their wives, and their children. They showed him the secret door by which they used to enter to consume what was on the table.",
+            "DRB": "The king therefore slew them, & he delivered Bel into the power of Daniel: who overthrew him, & his temple."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Therefore the king put them to death, and gave Bel over to Daniel, who destroyed it and its temple.",
+            "KJV": "Therefore the king slew them, and delivered Bel into Daniel’s power, who destroyed him and his temple.",
+            "NABRE": "The king put them to death, and handed Bel over to Daniel, who destroyed it and its temple.",
+            "DRB": "And there was a great dragon in that place, & the Babylonians worshipped him."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Now in that place there was a great dragon, which the Babylonians revered.",
+            "KJV": "And in that same place there was a great dragon, which they of Babylon worshipped.",
+            "NABRE": "There was a great dragon which the Babylonians revered.",
+            "DRB": "And the king said to Daniel: Lo now thou canst not say, that this same is not a living god: adore him therefore."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "The king said to Daniel, “You cannot deny that this is a living god; so worship him.”",
+            "KJV": "And the king said unto Daniel, Wilt thou also say that this is of brass? lo, he liveth, he eateth and drinketh; thou canst not say that he is no living god: therefore worship him.",
+            "NABRE": "The king said to Daniel, “You cannot deny that this is a living god, so worship it.”",
+            "DRB": "And Daniel said: The Lord my God I do adore: because he is the living God:"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Daniel said, “I worship the Lord my God, for he is the living God.”",
+            "KJV": "Then said Daniel unto the king, I will worship the Lord my God: for he is the living God.",
+            "NABRE": "But Daniel answered, “I worship the Lord, my God, for he is the living God.",
+            "DRB": "but thou o king give me licence, and I will kill the dragon without sword and club. And the king said: I give thee licence."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "“But give me permission, O king, and I will kill the dragon without sword or club.” The king said, “I give you permission.”",
+            "KJV": "But give me leave, O king, and I shall slay this dragon without sword or staff. The king said, I give thee leave.",
+            "NABRE": "Give me permission, O king, and I will kill this dragon without sword or club.” “I give you permission,” the king said.",
+            "DRB": "Daniel therefore took pitch, and fat, and hairs, and sod them together: & he made lumps, and gave into the dragon's mouth, & the dragon burst in sunder. And he said: Lo whom you worshipped."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "Then Daniel took pitch and fat and hair, and boiled them together and made cakes; he fed them to the dragon, and the dragon consumed them and burst open. Daniel said, “See what you have been worshiping!”",
+            "KJV": "Then Daniel took pitch, and fat, and hair, and did seethe them together, and made lumps thereof: this he put in the dragon’s mouth, and so the dragon burst in sunder: and Daniel said, Lo, these are the gods ye worship.",
+            "NABRE": "Then Daniel took some pitch, fat, and hair; these he boiled together and made into cakes. He put them into the mouth of the dragon, and when the dragon ate them, he burst. “This,” he said, “is what you revered.”",
+            "DRB": "Which when the Babylonians had heard, they were wrath exceedingly: and being gathered together against the king, they said: The king is become a Jew. Bel he hath destroyed, the dragon he hath killed, & he hath slain the priests."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "When the Babylonians heard about it, they were very indignant and conspired against the king, saying, “The king has become a Jew; he has destroyed Bel, and killed the dragon, and slaughtered the priests.”",
+            "KJV": "When they of Babylon heard that, they took great indignation, and conspired against the king, saying, The king is become a Jew, and he hath destroyed Bel, he hath slain the dragon, and put the priests to death.",
+            "NABRE": "When the Babylonians heard this, they were angry and turned against the king. “The king has become a Jew,” they said; “he has destroyed Bel, killed the dragon, and put the priests to death.”",
+            "DRB": "And they said when they were come to the king: Deliver us Daniel, otherwise we will kill thee, & thy house."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "Going to the king, they said, “Hand Daniel over to us, or else we will kill you and your household.”",
+            "KJV": "So they came to the king, and said, Deliver us Daniel, or else we will destroy thee and thine house.",
+            "NABRE": "They went to the king and demanded: “Hand Daniel over to us, or we will kill you and your family.”",
+            "DRB": "The king therefore saw that they pressed upon him vehemently: and compelled by necessity he delivered Daniel to them."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "The king saw that they were pressing him hard, and under compulsion he handed Daniel over to them.",
+            "KJV": "Now when the king saw that they pressed him sore, being constrained, he delivered Daniel unto them:",
+            "NABRE": "When he saw himself threatened with violence, the king was forced to hand Daniel over to them.",
+            "DRB": "Who cast him into the lake of lions, and he was there six days."
+          }
+        },
+        {
+          "num": 31,
+          "text": {
+            "NRSV": "They threw Daniel into the lions’ den, and he was there for six days.",
+            "KJV": "Who cast him into the lions’ den: where he was six days.",
+            "NABRE": "They threw Daniel into a lions’ den, where he remained six days.",
+            "DRB": "Moreover in the lake were seven lions, & there were given to them two bodies every day, & two sheep: and they were not given unto them, that they might devour Daniel."
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "NRSV": "There were seven lions in the den, and every day they had been given two human bodies and two sheep; but now they were given nothing, so that they would devour Daniel.",
+            "KJV": "And in the den there were seven lions, and they had given them every day two carcases, and two sheep: which then were not given to them, to the intent they might devour Daniel.",
+            "NABRE": "In the den were seven lions. Two carcasses and two sheep had been given to them daily, but now they were given nothing, so that they would devour Daniel.",
+            "DRB": "And there was Habacuc a prophet in Jewry, & he had boiled broth, & had broken bread in a bowl: and he went into the field, to carry it to the reapers."
+          }
+        },
+        {
+          "num": 33,
+          "text": {
+            "NRSV": "Now the prophet Habakkuk was in Judea; he had made a stew and had broken bread into a bowl, and was going into the field to take it to the reapers.",
+            "KJV": "Now there was in Jewry a prophet, called Habbacuc, who had made pottage, and had broken bread in a bowl, and was going into the field, for to bring it to the reapers.",
+            "NABRE": "The prophet Habakkuk was in Judea. He mixed some bread in a bowl with the stew he had boiled, and was going to bring it to the reapers in the field,",
+            "DRB": "And the Angel of our Lord said to Habacuc: Carry the dinner which thou hast, into Babylon to Daniel, who is in the lake of lions."
+          }
+        },
+        {
+          "num": 34,
+          "text": {
+            "NRSV": "But the angel of the Lord said to Habakkuk, “Take the food that you have to Babylon, to Daniel, in the lions’ den.”",
+            "KJV": "But the angel of the Lord said unto Habbacuc, Go, carry the dinner that thou hast into Babylon unto Daniel, who is in the lions’ den.",
+            "NABRE": "when an angel of the Lord told him, “Take the meal you have to Daniel in the lions’ den at Babylon.”",
+            "DRB": "And Habacuc said: Lord, Babylon I have not seen, and the lake I know not."
+          }
+        },
+        {
+          "num": 35,
+          "text": {
+            "NRSV": "Habakkuk said, “Sir, I have never seen Babylon, and I know nothing about the den.”",
+            "KJV": "And Habbacuc said, Lord, I never saw Babylon; neither do I know where the den is.",
+            "NABRE": "But Habakkuk answered, “Sir, I have never seen Babylon, and I do not know the den!”",
+            "DRB": "And the Angel of our Lord took him by the top of his head, and carried him by the hair of his head, & put him into Babylon over the lake in the force of his spirit."
+          }
+        },
+        {
+          "num": 36,
+          "text": {
+            "NRSV": "Then the angel of the Lord took him by the crown of his head and carried him by his hair; with the speed of the spirit he set him down in Babylon, right over the den.",
+            "KJV": "Then the angel of the Lord took him by the crown, and bare him by the hair of his head, and through the vehemency of his spirit set him in Babylon over the den.",
+            "NABRE": "The angel of the Lord seized him by the crown of his head and carried him by the hair; with the speed of the wind, he set him down in Babylon above the den.",
+            "DRB": "And Habacuc cried, saying: Daniel, take the dinner that God hath sent to thee."
+          }
+        },
+        {
+          "num": 37,
+          "text": {
+            "NRSV": "Then Habakkuk shouted, “Daniel, Daniel! Take the food that God has sent you.”",
+            "KJV": "And Habbacuc cried, saying, O Daniel, Daniel, take the dinner which God hath sent thee.",
+            "NABRE": "“Daniel, Daniel,” cried Habakkuk, “take the meal God has sent you.”",
+            "DRB": "And Daniel said: Thou hast remembered me o God, and hast not forsaken them that love thee."
+          }
+        },
+        {
+          "num": 38,
+          "text": {
+            "NRSV": "Daniel said, “You have remembered me, O God, and have not forsaken those who love you.”",
+            "KJV": "And Daniel said, Thou hast remembered me, O God: neither hast thou forsaken them that seek thee and love thee.",
+            "NABRE": "“You have remembered me, O God,” said Daniel; “you have not forsaken those who love you.”",
+            "DRB": "And Daniel rising up did eat. Moreover the Angel of our Lord restored Habacuc forthwith in his place."
+          }
+        },
+        {
+          "num": 39,
+          "text": {
+            "NRSV": "So Daniel got up and ate. And the angel of God immediately carried Habakkuk back to his own place.",
+            "KJV": "So Daniel arose, and did eat: and the angel of the Lord set Habbacuc in his own place again immediately.",
+            "NABRE": "So Daniel ate, but the angel of God at once brought Habakkuk back to his own place.",
+            "DRB": "The king therefore came the seventh day to lament Daniel: and he came to the lake, and looked in, and behold Daniel sitting in the midst of the lions."
+          }
+        },
+        {
+          "num": 40,
+          "text": {
+            "NRSV": "On the seventh day the king came to mourn for Daniel. When he came to the den he looked in, and there sat Daniel!",
+            "KJV": "Upon the seventh day the king went to bewail Daniel: and when he came to the den, he looked in, and behold, Daniel was sitting.",
+            "NABRE": "On the seventh day the king came to mourn for Daniel. As he came to the den and looked in, there was Daniel, sitting there.",
+            "DRB": "And the king cried out with a loud voice, saying: Great art thou o Lord the God of Daniel. And he drew him out of the lake of lions."
+          }
+        },
+        {
+          "num": 41,
+          "text": {
+            "NRSV": "The king shouted with a loud voice, “You are great, O Lord, the God of Daniel, and there is no other besides you!”",
+            "KJV": "Then cried the king with a loud voice, saying, Great art Lord God of Daniel, and there is none other beside thee.",
+            "NABRE": "The king cried aloud, “You are great, O Lord, the God of Daniel, and there is no other besides you!”",
+            "DRB": "But those that had been the cause of his perdition, he cast into the lake, and they were devoured in a moment before him."
+          }
+        },
+        {
+          "num": 42,
+          "text": {
+            "NRSV": "Then he drew Daniel out, and threw into the den those who had attempted his destruction, and they were instantly eaten before his eyes.",
+            "KJV": "And he drew him out, and cast those that were the cause of his destruction into the den: and they were devoured in a moment before his face.",
+            "NABRE": "He brought Daniel out, but those who had tried to destroy him he threw into the den, and they were devoured in a moment before his eyes.",
+            "DRB": "Then the king said: Let all inhabitants in the whole earth fear the God of Daniel: because he is the Saviour, doing signs, & marvels in the earth: who hath delivered Daniel out of the lions' den."
+          }
+        }
+      ]
+    }
+  ]
+}

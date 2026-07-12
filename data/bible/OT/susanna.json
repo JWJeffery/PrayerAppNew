@@ -1,0 +1,617 @@
+{
+  "meta": {
+    "name": "Susanna",
+    "id": "SUS",
+    "version": "NRSV",
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "defaultTranslation": "NRSV",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_active_corpus_explicit_lane",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "KJV": {
+        "label": "King James Version 1611 Apocrypha",
+        "sourceType": "historical_kjv_1611_source_witness",
+        "rights": "Public Domain",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "NABRE": {
+        "label": "New American Bible Revised Edition",
+        "sourceType": "historical_internal_source_lane",
+        "rights": "USCCB source witness; project-internal historical source lane",
+        "sourceRef": "d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6"
+      },
+      "DRB": {
+        "label": "Douay-Rheims Bible",
+        "sourceType": "drb_original_douay_rheims_raw_source",
+        "rights": "Public Domain",
+        "sourceRef": "main/current"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "There was a man living in Babylon whose name was Joakim.",
+            "KJV": "There dwelt a man in Babylon, called Joacim:",
+            "NABRE": "III. Appendix: Susanna, Bel, and the Dragon Chapter 13 Susanna. In Babylon there lived a man named Joakim,",
+            "DRB": "And there was a man dwelling in Babylon, and his name Joakim:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "He had married the daughter of Hilkiah, named Susanna, a very beautiful woman and one who feared the Lord.",
+            "KJV": "And he took a wife, whose name was Susanna, the daughter of Chelcias, a very fair woman, and one that feared the Lord.",
+            "NABRE": "who married a very beautiful and God-fearing woman, Susanna, the daughter of Hilkiah;",
+            "DRB": "& he took a wife named Susanna, the daughter of Helcias exceeding fair, and fearing God."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Her parents were righteous, and had trained their daughter according to the law of Moses.",
+            "KJV": "Her parents also were righteous, and taught their daughter according to the law of Moses.",
+            "NABRE": "her parents were righteous and had trained their daughter according to the law of Moses.",
+            "DRB": "For her parents being just, instructed their daughter according to the law of Moyses."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Joakim was very rich, and had a fine garden adjoining his house; the Judeans used to come to him because he was the most honored of them all.",
+            "KJV": "Now Joacim was a great rich man, and had a fair garden joining unto his house: and to him resorted the Jews; because he was more honourable than all others.",
+            "NABRE": "Joakim was very rich and he had a garden near his house. The Jews had recourse to him often because he was the most respected of them all.",
+            "DRB": "And Joakim was very rich, and he had an orchard near unto his house: and to him the Jews resorted together, because he was the more honorable of all."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "That year two elders from the people were appointed as judges. Concerning them the Lord had said: “Wickedness has come forth from Babylon, from elders who were judges, who were supposed to guide the people.”",
+            "KJV": "The same year were appointed two of the ancients of the people to be judges, such as the Lord spake of, that wickedness came from Babylon from ancient judges, who seemed to govern the people.",
+            "NABRE": "That year, two elders of the people were appointed judges, of whom the Lord said, “Lawlessness has come out of Babylon, that is, from the elders who were to govern the people as judges.”",
+            "DRB": "And there were two ancients appointed judges in that year, of whom our Lord spake: That iniquities came out of Babylon from the senior judges, that seemed to rule the people."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "These men were frequently at Joakim’s house, and all who had a case to be tried came to them there.",
+            "KJV": "These kept much at Joacim’s house: and all that had any suits in law came unto them.",
+            "NABRE": "These men, to whom all brought their cases, frequented the house of Joakim.",
+            "DRB": "These frequented the house of Joakim, and all that had judgements came to them."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "When the people left at noon, Susanna would go into her husband’s garden to walk.",
+            "KJV": "Now when the people departed away at noon, Susanna went into her husband’s garden to walk.",
+            "NABRE": "When the people left at noon, Susanna used to enter her husband’s garden for a walk.",
+            "DRB": "And when the people returned at noon, Susanna went in, and walked in her husband's orchard."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Every day the two elders used to see her, going in and walking about, and they began to lust for her.",
+            "KJV": "And the two elders saw her going in every day, and walking; so that their lust was inflamed toward her.",
+            "NABRE": "When the elders saw her enter every day for her walk, they began to lust for her.",
+            "DRB": "and the ancients saw her daily going in, and walking: and they were inflamed to the concupiscence of her:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "They perverted their minds and turned away their eyes from looking to heaven or remembering righteous judgments.",
+            "KJV": "And they perverted their own mind, and turned away their eyes, that they might not look unto heaven, nor remember just judgments.",
+            "NABRE": "They perverted their thinking; they would not allow their eyes to look to heaven, and did not keep in mind just judgments.",
+            "DRB": "and they subverted their sense, and declined their eyes that they would not see heaven, nor remember just judgements."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Both were overwhelmed with passion for her, but they did not tell each other of their distress,",
+            "KJV": "And albeit they both were wounded with her love, yet durst not one shew another his grief.",
+            "NABRE": "Though both were enamored of her, they did not tell each other their trouble,",
+            "DRB": "They were both therefore wounded with the love of her, neither did they shew their grief one to the other:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "for they were ashamed to confess their lust and their desire to have sex with her.",
+            "KJV": "For they were ashamed to declare their lust, that they desired to have to do with her.",
+            "NABRE": "for they were ashamed to reveal their lustful desire to have her.",
+            "DRB": "for they were ashamed to shew one another their concupiscence, being desirous to lie with her:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Day after day they watched eagerly to see her.",
+            "KJV": "Yet they watched diligently from day to day to see her.",
+            "NABRE": "Day by day they watched eagerly for her.",
+            "DRB": "and they watched every day carefully to see her. And one said to the other:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "One day they said to each other, “Let us go home, for it is time for lunch.” So they both left and parted from each other.",
+            "KJV": "And the one said to the other, Let us now go home: for it is dinner time.",
+            "NABRE": "One day they said to each other, “Let us be off for home, it is time for the noon meal.” So they went their separate ways.",
+            "DRB": "Let us go home, because it is the hour of dinner. And going forth they departed one from another."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "But turning back, they met again; and when each questioned the other as to the reason, they confessed their lust. Then they agreed on a time when they could find her alone.",
+            "KJV": "So when they were gone out, they parted the one from the other, and turning back again they came to the same place; and after that they had asked one another the cause, they acknowledged their lust: then appointed they a time both together, when they might find her alone.",
+            "NABRE": "But both turned back and arrived at the same spot. When they asked each other the reason, they admitted their lust, and then they agreed to look for an occasion when they could find her alone.",
+            "DRB": "And when they were returned, they came into one place: and asking of each other the cause, they confessed their concupiscence: and then in commune they appointed a time, when they might find her alone."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "While they were waiting for an opportune day, she went in as before with only two maids, and began to bathe in the garden, for it was a hot day.",
+            "KJV": "And it fell out, as they watched a fit time, she went in as before with two maids only, and she was desirous to wash herself in the garden: for it was hot.",
+            "NABRE": "One day, while they were waiting for the right moment, she entered as usual, with two maids only, wanting to bathe in the garden, for the weather was warm.",
+            "DRB": "And it came to pass, when they observed a fit day, she went in on a time as yesterday and the day before, with two maids only, & would be washed in the orchard: for it was an hot season."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "No one was there except the two elders, who had hidden themselves and were watching her.",
+            "KJV": "And there was no body there save the two elders, that had hid themselves, and watched her.",
+            "NABRE": "Nobody else was there except the two elders, who had hidden themselves and were watching her.",
+            "DRB": "And there was none there, but the two ancients hid, & beholding her."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "She said to her maids, “Bring me olive oil and ointments, and shut the garden doors so that I can bathe.”",
+            "KJV": "Then she said to her maids, Bring me oil and washing balls, and shut the garden doors, that I may wash me.",
+            "NABRE": "“Bring me oil and soap,” she said to the maids, “and shut the garden gates while I bathe.”",
+            "DRB": "She therefore said to the maids: Fetch me oil, and washing balls, and shut the doors of the orchard, that I may be washed."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "They did as she said: they shut the garden doors and went out by the side doors to bring what they had been commanded; they did not see the elders, for they were hidden.",
+            "KJV": "And they did as she bade them, and shut the garden doors, and went out themselves at privy doors to fetch the things that she had commanded them: but they saw not the elders, because they were hid.",
+            "NABRE": "They did as she said; they shut the garden gates and left by the side gate to fetch what she had ordered, unaware that the elders were hidden inside.",
+            "DRB": "And they did as she had commanded: and they shut the doors of the orchard, and went out by a back door to fetch the thing that she had commanded; and they knew not that the ancients were hid within."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "As soon as the maids had gone out, the two elders got up and ran to her.",
+            "KJV": "Now when the maids were gone forth, the two elders rose up, and ran unto her, saying,",
+            "NABRE": "As soon as the maids had left, the two old men got up and ran to her.",
+            "DRB": "But when the maids were gone forth, the two ancients arose, and ran to her, and said:"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "They said, “Look, the garden doors are shut, and no one can see us. We are burning with lust for you; so give your consent, and lie with us.”",
+            "KJV": "Behold, the garden doors are shut, that no man can see us, and we are in love with thee; therefore consent unto us, and lie with us.",
+            "NABRE": "“Look,” they said, “the garden doors are shut, no one can see us, and we want you. So give in to our desire, and lie with us.",
+            "DRB": "Lo the doors of the orchard be shut, and nobody seeth us, and we are in the concupiscence of thee: wherefore consent to us, and lie with us."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "“If you refuse, we will testify against you that a young man was with you, and that was why you sent your maids away.”",
+            "KJV": "If thou wilt not, we will bear witness against thee, that a young man was with thee: and therefore thou didst send away thy maids from thee.",
+            "NABRE": "If you refuse, we will testify against you that a young man was here with you and that is why you sent your maids away.”",
+            "DRB": "and if thou wilt not, we will give testimony against thee, that there was a young man with thee, and for this cause thou didst send out thy maids from thee."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Susanna groaned and said, “I am hemmed in on every side. For if I do this thing, it is death for me; and if I do not, I shall not escape your hands.”",
+            "KJV": "Then Susanna sighed, and said, I am straitened on every side: for if I do this thing, it is death unto me: and if I do it not I cannot escape your hands.",
+            "NABRE": "“I am completely trapped,” Susanna groaned. “If I yield, it will be my death; if I refuse, I cannot escape your power.",
+            "DRB": "Susanna sighed, and said: Perplexities are to me on every side: for if I shall do this, it is death to me: and if I do it not, I shall not escape your hands."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "“It is better for me to fall into your hands without doing it than to sin in the sight of the Lord.”",
+            "KJV": "It is better for me to fall into your hands, and not do it, than to sin in the sight of the Lord.",
+            "NABRE": "Yet it is better for me not to do it and to fall into your power than to sin before the Lord.”",
+            "DRB": "But it is better for me without the act to fall into your hands, than to sin in the sight of our Lord."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Then Susanna cried out with a loud voice, and the two elders shouted against her.",
+            "KJV": "With that Susanna cried with a loud voice: and the two elders cried out against her.",
+            "NABRE": "Then Susanna screamed, and the two old men also shouted at her,",
+            "DRB": "And Susanna cried out with a loud voice: but the ancients also cried out against her."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "And one of them ran and opened the garden doors.",
+            "KJV": "Then ran the one, and opened the garden door.",
+            "NABRE": "as one of them ran to open the garden gates.",
+            "DRB": "And one ran to the door of the orchard, and opened it."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "When the people in the house heard the shouting in the garden, they rushed in at the side door to see what had happened to her.",
+            "KJV": "So when the servants of the house heard the cry in the garden, they rushed in at the privy door, to see what was done unto her.",
+            "NABRE": "When the people in the house heard the cries from the garden, they rushed in by the side gate to see what had happened to her.",
+            "DRB": "when the servants therefore of the house had heard the cry in the orchard, they rushed in by the back door, to see what it was."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "And when the elders told their story, the servants felt very much ashamed, for nothing like this had ever been said about Susanna.",
+            "KJV": "But when the elders had declared their matter, the servants were greatly ashamed: for there was never such a report made of Susanna.",
+            "NABRE": "At the accusations of the old men, the servants felt very much ashamed, for never had any such thing been said about Susanna.",
+            "DRB": "And after the ancients spake, the servants were ashamed exceedingly: because never had there been such a word said of Susanna. And the morrow came."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "The next day, when the people gathered at the house of her husband Joakim, the two elders came, full of their wicked design to put Susanna to death.",
+            "KJV": "And it came to pass the next day, when the people were assembled to her husband Joacim, the two elders came also full of mischievous imagination against Susanna to put her to death;",
+            "NABRE": "When the people came to her husband Joakim the next day, the two wicked old men also came, full of lawless intent to put Susanna to death.",
+            "DRB": "And when the people was come to Joakim her husband, the two ancients also came full of unjust cogitation against Susanna, to put her to death."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "In the presence of the people they said, “Send for Susanna daughter of Hilkiah, the wife of Joakim.” So they sent for her.",
+            "KJV": "And said before the people, Send for Susanna, the daughter of Chelcias, Joacim’s wife. And so they sent.",
+            "NABRE": "Before the people they ordered: “Send for Susanna, the daughter of Hilkiah, the wife of Joakim.” When she was sent for,",
+            "DRB": "And they said before the people: Send to Susanna daughter of Helcias the wife of Joakim. And forthwith they sent."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "And she came with her parents, her children, and all her kindred.",
+            "KJV": "So she came with her father and mother, her children, and all her kindred.",
+            "NABRE": "she came with her parents, children and all her relatives.",
+            "DRB": "And she came with her parents, and children, and all her kin."
+          }
+        },
+        {
+          "num": 31,
+          "text": {
+            "NRSV": "Now Susanna was a woman of great refinement and beautiful in appearance.",
+            "KJV": "Now Susanna was a very delicate woman, and beauteous to behold.",
+            "NABRE": "Susanna, very delicate and beautiful,",
+            "DRB": "Moreover Susanna was exceeding delicate, and beautiful of face."
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "NRSV": "As she was veiled, the scoundrels ordered her to be unveiled, so that they might feast their eyes on her beauty.",
+            "KJV": "And these wicked men commanded to uncover her face, (for she was covered) that they might be filled with her beauty.",
+            "NABRE": "was veiled; but those transgressors of the law ordered that she be exposed so as to sate themselves with her beauty.",
+            "DRB": "But those wicked men commanded that she should be uncovered (for she was covered) that so at least they might be satisfied with her beauty."
+          }
+        },
+        {
+          "num": 33,
+          "text": {
+            "NRSV": "Those who were with her and all who saw her were weeping.",
+            "KJV": "Therefore her friends and all that saw her wept.",
+            "NABRE": "All her companions and the onlookers were weeping.",
+            "DRB": "Her friends therefore wept, & all that had known her."
+          }
+        },
+        {
+          "num": 34,
+          "text": {
+            "NRSV": "Then the two elders stood up in the midst of the people and laid their hands on her head.",
+            "KJV": "Then the two elders stood up in the midst of the people, and laid their hands upon her head.",
+            "NABRE": "In the midst of the people the two old men rose up and laid their hands on her head.",
+            "DRB": "But the two ancients rising up in the midst of the people, laid their hands upon her head."
+          }
+        },
+        {
+          "num": 35,
+          "text": {
+            "NRSV": "And she, weeping, looked up toward heaven, for her heart trusted in the Lord.",
+            "KJV": "And she weeping looked up toward heaven: for her heart trusted in the Lord.",
+            "NABRE": "As she wept she looked up to heaven, for she trusted in the Lord wholeheartedly.",
+            "DRB": "Who weeping looked up to heaven, for her heart had confidence in our Lord."
+          }
+        },
+        {
+          "num": 36,
+          "text": {
+            "NRSV": "The elders said, “While we were walking in the garden alone, this woman came in with two maids, shut the garden doors, and sent the maids away.”",
+            "KJV": "And the elders said, As we walked in the garden alone, this woman came in with two maids, and shut the garden doors, and sent the maids away.",
+            "NABRE": "The old men said, “As we were walking in the garden alone, this woman entered with two servant girls, shut the garden gates and sent the servant girls away.",
+            "DRB": "And the ancients said: When we walked alone in the orchard, this woman came in with two maids, and shut the doors of the orchard: and she sent away the maids from her."
+          }
+        },
+        {
+          "num": 37,
+          "text": {
+            "NRSV": "“Then a young man, who was hidden there, came to her and lay with her.”",
+            "KJV": "Then a young man, who there was hid, came unto her, and lay with her.",
+            "NABRE": "A young man, who was hidden there, came and lay with her.",
+            "DRB": "And a young man that was hid came to her, and lay with her."
+          }
+        },
+        {
+          "num": 38,
+          "text": {
+            "NRSV": "“We were in a corner of the garden, and when we saw this wickedness we ran to them.”",
+            "KJV": "Then we that stood in a corner of the garden, seeing this wickedness, ran unto them.",
+            "NABRE": "When we, in a corner of the garden, saw this lawlessness, we ran toward them.",
+            "DRB": "But we being in a corner of the orchard, seeing the iniquity, ran to them, and saw them lie together."
+          }
+        },
+        {
+          "num": 39,
+          "text": {
+            "NRSV": "“Although we saw them embracing, we could not hold the man, because he was stronger than we, and he opened the doors and got away.”",
+            "KJV": "And when we saw them together, the man we could not hold: for he was stronger than we, and opened the door, and leaped out.",
+            "NABRE": "We saw them lying together, but the man we could not hold, because he was stronger than we; he opened the gates and ran off.",
+            "DRB": "And him indeed we could not take, because he was stronger than we, and opening the doors he lept out:"
+          }
+        },
+        {
+          "num": 40,
+          "text": {
+            "NRSV": "“But we seized this woman and asked her who the young man was, but she would not tell us. These things we testify.”",
+            "KJV": "But having taken this woman, we asked who the young man was, but she would not tell us: these things do we testify.",
+            "NABRE": "Then we seized this one and asked who the young man was,",
+            "DRB": "but her when we apprehended, we asked what youngman it was, and she would not tell us, of this thing we are witnesses."
+          }
+        },
+        {
+          "num": 41,
+          "text": {
+            "NRSV": "The assembly believed them, because they were elders of the people and judges; and they condemned her to death.",
+            "KJV": "Then the assembly believed them as those that were the elders and judges of the people: so they condemned her to death.",
+            "NABRE": "but she refused to tell us. We testify to this.” The assembly believed them, since they were elders and judges of the people, and they condemned her to death.",
+            "DRB": "The multitude believed them as the ancients and the judges of the people, and they condemned her to death."
+          }
+        },
+        {
+          "num": 42,
+          "text": {
+            "NRSV": "Then Susanna cried out with a loud voice, and said, “O eternal God, you know what is secret and are aware of all things before they come to be!”",
+            "KJV": "Then Susanna cried out with a loud voice, and said, O everlasting God, that knowest the secrets, and knowest all things before they be:",
+            "NABRE": "But Susanna cried aloud: “Eternal God, you know what is hidden and are aware of all things before they come to be:",
+            "DRB": "But Susanna cried out with a loud voice, and said: Eternal God, which art the knower of hidden things before they come to pass,"
+          }
+        },
+        {
+          "num": 43,
+          "text": {
+            "NRSV": "“You know that these men have borne false witness against me. And now I am to die, though I have done none of the things that they have wickedly invented against me.”",
+            "KJV": "Thou knowest that they have borne false witness against me, and, behold, I must die; whereas I never did such things as these men have maliciously invented against me.",
+            "NABRE": "you know that they have testified falsely against me. Here I am about to die, though I have done none of the things for which these men have condemned me.”",
+            "DRB": "thou knowest that they have borne false witness against me: and lo I die, whereas I have done none of these things, which these men have maliciously forged against me."
+          }
+        },
+        {
+          "num": 44,
+          "text": {
+            "NRSV": "The Lord heard her cry.",
+            "KJV": "And the Lord heard her voice.",
+            "NABRE": "The Lord heard her prayer.",
+            "DRB": "And our Lord heard her voice."
+          }
+        },
+        {
+          "num": 45,
+          "text": {
+            "NRSV": "As she was being led off to execution, God stirred up the holy spirit of a young lad named Daniel;",
+            "KJV": "Therefore when she was led to be put to death, the Lord raised up the holy spirit of a young youth whose name was Daniel:",
+            "NABRE": "As she was being led to execution, God stirred up the holy spirit of a young boy named Daniel,",
+            "DRB": "and when she was led to death, our Lord raised up the holy spirit of a young boy, whose name was Daniel:"
+          }
+        },
+        {
+          "num": 46,
+          "text": {
+            "NRSV": "and he shouted with a loud voice, “I am innocent of the blood of this woman!”",
+            "KJV": "Who cried with a loud voice, I am clear from the blood of this woman.",
+            "NABRE": "and he cried aloud: “I am innocent of this woman’s blood.”",
+            "DRB": "and he cried out with a loud voice: I am clean from the blood of this woman."
+          }
+        },
+        {
+          "num": 47,
+          "text": {
+            "NRSV": "All the people turned to him and asked, “What is this you are saying?”",
+            "KJV": "Then all the people turned them toward him, and said, What mean these words that thou hast spoken?",
+            "NABRE": "All the people turned and asked him, “What are you saying?”",
+            "DRB": "And all the people turning to him, said: What is this word, that thou hast spoken?"
+          }
+        },
+        {
+          "num": 48,
+          "text": {
+            "NRSV": "Taking his stand in the middle of them, he said, “Are you such fools, O Israelites, as to condemn a daughter of Israel without examination and without learning the facts?”",
+            "KJV": "So he standing in the midst of them said, Are ye such fools, ye sons of Israel, that without examination or knowledge of the truth ye have condemned a daughter of Israel?",
+            "NABRE": "He stood in their midst and said, “Are you such fools, you Israelites, to condemn a daughter of Israel without investigation and without clear evidence?",
+            "DRB": "Who when he stood in the midst of them, said: So foolish ye children of Israel, not judging, nor discerning that which is the truth, have you condemned the daughter of Israel?"
+          }
+        },
+        {
+          "num": 49,
+          "text": {
+            "NRSV": "“Return to court, for these men have borne false witness against her.”",
+            "KJV": "Return again to the place of judgment: for they have borne false witness against her.",
+            "NABRE": "Return to court, for they have testified falsely against her.”",
+            "DRB": "Return ye to judgement, because they have spoken false testimony against her."
+          }
+        },
+        {
+          "num": 50,
+          "text": {
+            "NRSV": "So all the people hurried back. And the rest of the elders said to him, “Come, sit among us and inform us, for God has given you the standing of an elder.”",
+            "KJV": "Wherefore all the people turned again in haste, and the elders said unto him, Come, sit down among us, and shew it us, seeing God hath given thee the honour of an elder.",
+            "NABRE": "Then all the people returned in haste. To Daniel the elders said, “Come, sit with us and inform us, since God has given you the prestige of old age.”",
+            "DRB": "The people therefore returned with speed, and the ancients said to him: Come, and sit in the midst of us, and tell us: because God hath given thee the honour of old age."
+          }
+        },
+        {
+          "num": 51,
+          "text": {
+            "NRSV": "Daniel said to them, “Separate them far from each other, and I will examine them.”",
+            "KJV": "Then said Daniel unto them, Put these two aside one far from another, and I will examine them.",
+            "NABRE": "But he replied, “Separate these two far from one another, and I will examine them.”",
+            "DRB": "And Daniel said to the people: Separate them far one from another, and I will discover them."
+          }
+        },
+        {
+          "num": 52,
+          "text": {
+            "NRSV": "When they were separated from each other, he summoned one of them and said to him, “You old relic of wicked days, your sins have now come home, which you have committed in the past,”",
+            "KJV": "So when they were put asunder one from another, he called one of them, and said unto him, O thou that art waxen old in wickedness, now thy sins which thou hast committed aforetime are come to light.",
+            "NABRE": "After they were separated from each other, he called one of them and said: “How you have grown evil with age! Now have your past sins come to term:",
+            "DRB": "When they were therefore divided one from the other, he called one of them, and said to him: O thou inveterated of evil days, now are thy sins come, which thou didst commit before:"
+          }
+        },
+        {
+          "num": 53,
+          "text": {
+            "NRSV": "“pronouncing unjust judgments, condemning the innocent and letting the guilty go free, though the Lord said, ‘You shall not put an innocent and righteous person to death.’”",
+            "KJV": "For thou hast pronounced false judgment and hast condemned the innocent and hast let the guilty go free; albeit the Lord saith, The innocent and righteous shalt thou not slay.",
+            "NABRE": "passing unjust sentences, condemning the innocent, and freeing the guilty, although the Lord says, ‘The innocent and the just you shall not put to death.’",
+            "DRB": "judging unjust judgements, oppressing innocents, and dismissing offenders, our Lord saying: The innocent and the just thou shalt not kill."
+          }
+        },
+        {
+          "num": 54,
+          "text": {
+            "NRSV": "“Now then, if you really saw this woman, tell me this: Under what tree did you see them being intimate with each other?” He answered, “Under a mastic tree.”",
+            "KJV": "Now then, if thou hast seen her, tell me, Under what tree sawest thou them companying together? Who answered, Under a mastick tree.",
+            "NABRE": "Now, then, if you were a witness, tell me under what tree you saw them together.”",
+            "DRB": "Now then if thou sawest her, tell under what tree thou sawest them talking together. Who said: Under a schine tree."
+          }
+        },
+        {
+          "num": 55,
+          "text": {
+            "NRSV": "And Daniel said, “Very well! This lie has cost you your head, for the angel of God has received the sentence from God and will immediately cut you in two.”",
+            "KJV": "And Daniel said, Very well; thou hast lied against thine own head; for even now the angel of God hath received the sentence of God to cut thee in two.",
+            "NABRE": "“Under a mastic tree,” he answered. “Your fine lie has cost you your head,” said Daniel; “for the angel of God has already received the sentence from God and shall split you in two.”",
+            "DRB": "And Daniel said: Well hast thou lied against thine own head: for behold the Angel of God taking the sentence of him, shall cut thee in the midst."
+          }
+        },
+        {
+          "num": 56,
+          "text": {
+            "NRSV": "Then, putting him to one side, he ordered them to bring the other. And he said to him, “You offspring of Canaan and not of Judah, beauty has beguiled you and lust has perverted your heart.”",
+            "KJV": "So he put him aside, and commanded to bring the other, and said unto him, O thou seed of Chanaan, and not of Juda, beauty hath deceived thee, and lust hath perverted thine heart.",
+            "NABRE": "Putting him to one side, he ordered the other one to be brought. “Offspring of Canaan, not of Judah,” Daniel said to him, “beauty has seduced you, lust has perverted your heart.",
+            "DRB": "And removing him away, he commanded that the other should come, and he said to him: Seed of Chanaan, and not of Juda, beauty hath deceived thee, and concupiscence hath subverted thy heart:"
+          }
+        },
+        {
+          "num": 57,
+          "text": {
+            "NRSV": "“This is how you have been treating the daughters of Israel, and they were intimate with you through fear; but a daughter of Judah would not tolerate your wickedness.”",
+            "KJV": "Thus have ye dealt with the daughters of Israel, and they for fear companied with you: but the daughter of Juda would not abide your wickedness.",
+            "NABRE": "This is how you acted with the daughters of Israel, and in their fear they yielded to you; but a daughter of Judah did not tolerate your lawlessness.",
+            "DRB": "so did you to the daughters of Israel, and they fearing spake to you: but the daughter of Juda did not abide your iniquity."
+          }
+        },
+        {
+          "num": 58,
+          "text": {
+            "NRSV": "“Now then, tell me: Under what tree did you catch them being intimate with each other?” He answered, “Under an evergreen oak.”",
+            "KJV": "Now therefore tell me, Under what tree didst thou take them companying together? Who answered, Under an holm tree.",
+            "NABRE": "Now, then, tell me under what tree you surprised them together.”",
+            "DRB": "Now therefore tell me, under what tree thou tookest them speaking one to another. Who said: Under a prine tree."
+          }
+        },
+        {
+          "num": 59,
+          "text": {
+            "NRSV": "Daniel said to him, “Very well! This lie has also cost you your head, for the angel of God is waiting with his sword to split you in two, so as to destroy you both.”",
+            "KJV": "Then said Daniel unto him, Well; thou hast also lied against thine own head: for the angel of God waiteth with the sword to cut thee in two, that he may destroy you.",
+            "NABRE": "“Under an oak,” he said. “Your fine lie has cost you also your head,” said Daniel; “for the angel of God waits with a sword to cut you in two so as to destroy you both.”",
+            "DRB": "And Daniel said to him: Well hast thou also lied against thine own head: for the Angel of our Lord tarrieth, having a sword, that he may cut thee in the midst, and kill you."
+          }
+        },
+        {
+          "num": 60,
+          "text": {
+            "NRSV": "Then the whole assembly raised a great shout and blessed God, who saves those who hope in him.",
+            "KJV": "With that all the assembly cried out with a loud voice, and praised God, who saveth them that trust in him.",
+            "NABRE": "The whole assembly cried aloud, blessing God who saves those who hope in him.",
+            "DRB": "Therefore all the assembly cried out with a loud voice, and they blessed God, which saveth them that hope in him."
+          }
+        },
+        {
+          "num": 61,
+          "text": {
+            "NRSV": "And they rose up against the two elders, for out of their own mouths Daniel had convicted them of bearing false witness; they did to them as they had wickedly planned to do to their neighbor.",
+            "KJV": "And they arose against the two elders, for Daniel had convicted them of false witness by their own mouth:",
+            "NABRE": "They rose up against the two old men, for by their own words Daniel had convicted them of bearing false witness. They condemned them to the fate they had planned for their neighbor:",
+            "DRB": "And they rose up against the two elders (for Daniel had convinced them by their own mouth to have given false testimony) and they did to them as they had dealt naughtily against their neighbour,"
+          }
+        },
+        {
+          "num": 62,
+          "text": {
+            "NRSV": "Acting in accordance with the law of Moses, they put them to death; and innocent blood was spared that day.",
+            "KJV": "And according to the law of Moses they did unto them in such sort as they maliciously intended to do to their neighbour: and they put them to death. Thus the innocent blood was saved the same day.",
+            "NABRE": "in accordance with the law of Moses they put them to death. Thus was innocent blood spared that day.",
+            "DRB": "to do according to the law of Moyses: & they killed them, and innocent blood was saved in that day."
+          }
+        },
+        {
+          "num": 63,
+          "text": {
+            "NRSV": "Hilkiah and his wife praised God for their daughter Susanna, and so did her husband Joakim and all her kindred, because nothing shameful was found in her.",
+            "KJV": "Therefore Chelcias and his wife praised God for their daughter Susanna, with Joacim her husband, and all the kindred, because there was no dishonesty found in her.",
+            "NABRE": "Hilkiah and his wife praised God for their daughter Susanna, with Joakim her husband and all her relatives, because she was found innocent of any shameful deed.",
+            "DRB": "But Helcias, and his wife praised God, for their daughter Susanna, with Joakim her husband, and all her kin, because there was no unhonest thing found in her."
+          }
+        },
+        {
+          "num": 64,
+          "text": {
+            "NRSV": "And Daniel became a great man in the eyes of the people from that day onward.",
+            "KJV": "From that day forth was Daniel had in great reputation in the sight of the people.",
+            "NABRE": "And from that day onward Daniel was greatly esteemed by the people.",
+            "DRB": "And Daniel became great in the sight of the people from that day, & thence forward."
+          }
+        }
+      ]
+    }
+  ]
+}
