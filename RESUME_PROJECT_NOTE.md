@@ -828,7 +828,7 @@ Josh asked whether the other public-domain translations warrant the same cross-c
 
 **If picking this up fresh:** the parser and mapping table above are ready to reuse directly (don't re-derive). Characterize a handful of the NT mismatches by content first (same method as the John 1:1/1:14 spot-check that caught the `\sc`/`<alt>` issue) before assuming this needs the same corpus-wide full-column-replacement treatment as KJV/Rotherham — it might, but confirm the diagnosis before treating it as a known quantity.
 
-**Status as of this note: KJV and Rotherham are both fully corpus-wide verified. DRB triage and Exodus's full remediation (or another cross-cutting pass) are the two live next-steps, per the "Architecting the next decision" section above — still needs Josh's direction on which to pick.**
+**Status as of this note: KJV and Rotherham are both fully corpus-wide verified. DRB's triage is done (447 real mismatches found, concentrated in NT) but the fix itself is not yet done — that, plus Exodus's full remediation (or another cross-cutting pass), are the live next-steps. Still needs Josh's direction on which to pick up first.**
 
 **Source locations for whoever implements this:**
 - Rotherham: `scrollmapper/bible_databases`, `formats/json/Rotherham.json` — same sparse-checkout technique as KJVA (`git clone --filter=blob:none --no-checkout`, then `git sparse-checkout init --no-cone` with the exact path in `.git/info/sparse-checkout`, then `git checkout` — a plain clone or cone-mode sparse-checkout of this repo will time out, confirmed twice this session).
