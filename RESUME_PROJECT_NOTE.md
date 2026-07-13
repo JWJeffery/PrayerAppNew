@@ -933,3 +933,13 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 
 **Next book in sequence: Joshua.** No open decisions carried forward — same five-translation method applies. Worth checking Joshua's dashboard history too before starting, the way Deuteronomy's was checked, in case it carries its own old flag needing reconciliation.
 
+## Session, 2026-07-13 continued — Joshua: all five translations verified and fixed
+
+**HANDOFF — read this first if picking up fresh.** Joshua is CLOSED, same standard as Genesis, Exodus, Leviticus, Numbers, and Deuteronomy. No pre-existing dashboard flag on this one either way.
+
+**One naming gotcha worth carrying forward for every remaining book:** the DRB source repo (`janvier-s/original-douay-rheims`) files some books under their Vulgate names, not their common English names. Joshua is `josue.usfm`. Others already known from the file listing: 1/2/3/4 Kings uses the Vulgate 4-book scheme (`1-kings.usfm` through `4-kings.usfm` — note 1-2 Kings there actually correspond to what's commonly called 1-2 Samuel, and 3-4 Kings correspond to common 1-2 Kings), `1-paralipomenon.usfm`/`2-paralipomenon.usfm` for 1-2 Chronicles, `isaie.usfm` for Isaiah, `jeremie.usfm` for Jeremiah, `ezechiel.usfm` for Ezekiel, `osee.usfm` for Hosea, `abdias.usfm` for Obadiah, `micheas.usfm` for Micah, `nahum.usfm` (same), `habacuc.usfm` for Habakkuk, `sophonias.usfm` for Zephaniah, `aggeus.usfm` for Haggai, `zacharias.usfm` for Zechariah, `malachie.usfm` for Malachi, `ecclesiasticus.usfm` for Sirach, `apocalypse.usfm` for Revelation. **Check the full `ls usfm/` listing before assuming any book is "missing" from this source.**
+
+**What happened, briefly (full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "Joshua remediation" entry):** KJV, Rotherham clean. DRB clean, with two already-governed exceptions reconfirmed exact-match against the pre-existing registry (same as Numbers). NABRE had 3 more instances of the stray-space bug (its fifth confirmed book). NRSV had 24 real differences, including a genuinely meaningful one — chapter 12's 16-verse list of defeated kings was missing its em-dash separators entirely, turning a formatted list into a confusing run-on. Verified against an independent citation before trusting the fix.
+
+**Next book in sequence: Judges.** No open decisions carried forward.
+
