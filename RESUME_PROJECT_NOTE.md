@@ -1061,3 +1061,21 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Diff:** exactly 167/167 lines (150 NRSV + 17 NABRE). All translations re-audited: zero real mismatches.
 
 **Next book in sequence: Esther / Esther (Greek).** No open decisions carried forward. Given the pattern so far, check for existing prior-tooling registry files before starting, and check the NRSV column for the same header-pollution pattern independently rather than assuming it.
+
+## Session, 2026-07-14 — Esther: plain Esther closed; Esther-with-Additions partially done, NRSV deliberately deferred
+
+**HANDOFF — read this first if picking up fresh. ESTHER IS NOT FULLY CLOSED — do not mark it green.** Commit `fc81c3d`. Three related active files this book: `esther.json` (plain Hebrew, 10 chapters), `estherGK.json` (merged Catholic/Orthodox form, Additions A-F interspersed), `additionstoesther.json` (standalone Additions book, mirrors KJVA's own division). Extensive prior tooling specific to Greek Esther already existed (`greek-esther-source-address-policy.json`, `greek-esther-text-trust-status.json`, `greek-esther-bound-source-exact-collation-result.json`, `deutero-02-greek-esther-tail-nrsv-repair.json`) — read those first.
+
+**`esther.json` — FULLY CLOSED.** KJV, Rotherham, DRB, NABRE all clean. NRSV: 40 of 167 verses fixed (ordinary wording differences, not header pollution this time — spot-verified 5:9 against a dozen sources).
+
+**`estherGK.json` — KJV/NABRE/DRB confirmed clean; NRSV deliberately NOT attempted.** NABRE: 19 verses fixed (same ordinary-chapter header-pollution bug as Tobit/Judith — this deuterocanonical file was outside the corpus-wide protocanon fix). KJV and DRB both re-verified clean using the established Addition-lane mappings.
+
+**Real methodology catch worth internalizing:** verifying Addition D's KJV content, I initially reused DRB's own established offset (+3, since DRB's chapter 15 has a 3-verse preamble before the "third day" scene) — that produced 16 false "mismatches" against KJVA. KJVA's own "Additions to Esther" book does NOT have that same preamble at its own chapter 15; a zero-offset mapping matched perfectly. **The app's data was already correct — my own verification method's assumption was the bug**, from blindly reusing one translation's established mapping for a different translation. Exactly the kind of mistake to keep watching for.
+
+**Why NRSV is deferred, not just slow-walked:** NRSV-CI's own "Additions to Esther" structure (book_number 192) uses a *third* distinct convention — different from DRB's separate appended chapters and KJVA's separate standalone book. It interleaves each Addition directly into the *same* chapter number as its narrative insertion point, using continuous verse numbers. Additions A, B, C, E, F all cleanly append to the end of their host chapter (confirmed by exact verse-count arithmetic). **Addition D does not cleanly append — it *replaces/merges* with chapter 5's own opening two verses**, since both are the same "third day" scene told at different lengths (NRSV's chapter 5 only uses the expanded Greek telling, not both versions side by side). Reconciling this correctly needs careful, dedicated verse-by-verse work, not a formulaic offset. Attempting it under time pressure risked exactly the flattening error this project has been explicitly warned against — deferred to a focused follow-up instead.
+
+**`additionstoesther.json` — not yet started at all.** Needs its own full five-lane audit: KJV/NRSV against KJVA's/NRSV-CI's own "Additions to Esther" books, DRB against `esther.usfm` chapters 11-16, NABRE likely absent (matching the policy already established for `estherGK.json`'s Additions).
+
+**Diffs this session:** `esther.json` 40/40 lines, `estherGK.json` 19/19 lines. Both independently verified.
+
+**Next step: finish Esther before moving to any new book** — specifically, `estherGK.json`'s NRSV (Addition D needs careful dedicated reconciliation; A/B/C/E/F should append cleanly once mapped), then all five lanes of `additionstoesther.json`. Do not mark Esther green until all three files are done.

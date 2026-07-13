@@ -15,26 +15,30 @@ wc -l RESUME_PROJECT_NOTE.md   # then read it in FULL via sed chunks, not the vi
 Never trust a hash, `SEED_VERSION`, or "done" claim in any file's prose without checking it
 against a fresh clone first. Files describe intent; `git log` on a fresh clone is ground truth.
 
-## 2. Where things stand (written 2026-07-13 — verify this is still current)
+## 2. Where things stand (written 2026-07-14 — verify this is still current)
 
 Genesis through Nehemiah, plus Tobit and Judith, are all fully done: all five
 translations (KJV/KJVA, DRB, NRSV, NABRE, Rotherham where applicable)
 character-for-character verified, zero known open defects, dashboard green.
 Also: KJV switched corpus-wide from 1611 to the 1769 KJVA edition (closed), and
-both Rotherham and DRB have had corpus-wide audit passes. Tobit and Judith both
-resolved years-old blocked NRSV statuses and confirmed a real, recurring
-section-header-pollution pattern in the NRSV column specific to deuterocanonical
-books (now seen in two; still check every remaining one independently, don't
-assume). Judith's KJV also has a documented, already-fixed versification
-difference at its chapter 15/16 boundary (KJVA's own numbering vs. the
-common/shared-grid numbering) — see judith-text-trust-status.json's
-versificationNote before ever touching it. Standing caution, worth repeating:
-versification differences are translation-specific, not tradition-wide; every
-documented internal-order or chapter-boundary exception must be preserved, not
-flattened into a single "corrected" reading — see
-scripts/bible-audit/README.md's known-bug-classes list. Next book in sequence:
-Esther / Esther (Greek) (or wherever Josh redirects — confirm before assuming).
-Full detail: `RESUME_PROJECT_NOTE.md`.
+both Rotherham and DRB have had corpus-wide audit passes.
+
+**Esther is IN PROGRESS, not closed — do not treat it as done.** Three related
+active files: `esther.json` (plain Hebrew, CLOSED), `estherGK.json` (merged
+Catholic/Orthodox form with Additions A-F, KJV/NABRE/DRB closed but NRSV
+deliberately deferred — Addition D's NRSV content doesn't cleanly map and
+needs dedicated care, not a formulaic fix), `additionstoesther.json` (standalone
+Additions book, not yet started at all). See `RESUME_PROJECT_NOTE.md`'s Esther
+entry for full detail before continuing this book.
+
+Standing caution, worth repeating and reinforced again this session: versification
+differences are translation-specific, not tradition-wide, and a mapping solved for
+one translation cannot be assumed to apply to another (confirmed concretely with
+Esther's Addition D: DRB, KJVA, and NRSV-CI each use a *different* convention for
+where the Additions sit relative to the ordinary chapters). Every documented
+internal-order or chapter-boundary exception must be preserved, not flattened
+into a single "corrected" reading — see `scripts/bible-audit/README.md`'s
+known-bug-classes list. Full detail: `RESUME_PROJECT_NOTE.md`.
 
 ## 3. Translation source registry — what exists, and its real limitations
 
