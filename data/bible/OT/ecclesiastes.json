@@ -118,7 +118,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "Is there a thing of which it is said, “See, this is new”? It has been already, in the ages before us.",
+            "NRSV": "Is there a thing of which it is said, “See, this is new”? It has already been, in the ages before us.",
             "Rotherham": "Is there a thing, of which it can be said, See here, it is, new? Already, hath it been, for ages, [it is something] which was before us.",
             "KJV": "Is there any thing whereof it may be said, See, this is new? it hath been already of old time, which was before us.",
             "NABRE": "Even the thing of which we say, “See, this is new!” has already existed in the ages that preceded us.",
@@ -168,7 +168,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "What is crooked cannot be made straight, and what is lacking cannot be numbered.",
+            "NRSV": "What is crooked cannot be made straight, and what is lacking cannot be counted.",
             "Rotherham": "That which is crooked, cannot be straight,—and, that which is wanting, cannot be reckoned.",
             "KJV": "That which is crooked cannot be made straight: and that which is wanting cannot be numbered.",
             "NABRE": "What is crooked cannot be made straight, and you cannot count what is not there.",
@@ -423,7 +423,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "What do mortals get from all the toil and strain they endure under the sun?",
+            "NRSV": "What do mortals get from all the toil and strain with which they toil under the sun?",
             "Rotherham": "For what hath the man for all his toil, and for the striving of his heart,—wherein, he himself, toiled under the sun?",
             "KJV": "For what hath man of all his labour, and of the vexation of his heart, wherein he hath laboured under the sun?",
             "NABRE": "For what profit comes to mortals from all the toil and anxiety of heart with which they toil under the sun?",
@@ -548,7 +548,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "a time for love, and a time for hate; a time for war, and a time for peace.",
+            "NRSV": "a time to love, and a time to hate; a time for war, and a time for peace.",
             "Rotherham": "A time to love and a time to hate,—A time of war, and a time of peace.",
             "KJV": "A time to love, and a time to hate; a time of war, and a time of peace.",
             "NABRE": "A time to love, and a time to hate; a time of war, and a time of peace.",
@@ -773,7 +773,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "the case of solitary individuals, without companion or child or brother, yet there is no end to all their toil, and their eyes are never satisfied with riches. “For whom am I toiling,” they ask, “and depriving myself of pleasure?” This also is vanity and an unhappy business.",
+            "NRSV": "the case of solitary individuals, without sons or brothers; yet there is no end to all their toil, and their eyes are never satisfied with riches. “For whom am I toiling,” they ask, “and depriving myself of pleasure?” This also is vanity and an unhappy business.",
             "Rotherham": "Here is one, without a second, even son or brother, he hath none, yet is there no end to all his toil, even his eye, is not satisfied with riches,—neither [saith he] For whom, am I toiling, and letting my soul want good? Even this, was vanity, yea a vexatious employment, it was!",
             "KJV": "There is one alone, and there is not a second; yea, he hath neither child nor brother: yet is there no end of all his labour; neither is his eye satisfied with riches; neither saith he, For whom do I labour, and bereave my soul of good? This is also vanity, yea, it is a sore travail.",
             "NABRE": "those all alone with no companion, with neither child nor sibling—with no end to all their toil, and no satisfaction from riches. For whom do I toil and deprive myself of good things? This also is vanity and a bad business.",
@@ -843,7 +843,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "I saw all the living who, moving about under the sun, follow that youth, the king’s successor;",
+            "NRSV": "I saw all the living who, moving about under the sun, follow that youth who replaced the king;",
             "Rotherham": "I saw all the living, who were going hither and thither under the sun,—[that they were] with the boy who was to be the second, who was to stand in the other’s place:—",
             "KJV": "I considered all the living which walk under the sun, with the second child that shall stand up in his stead.",
             "NABRE": "I saw all the living, those who move about under the sun, with the second youth who will succeed him.",
@@ -871,8 +871,8 @@
             "NRSV": "Guard your steps when you go to the house of God; to draw near to listen is better than the sacrifice offered by fools; for they do not know how to keep from doing evil.",
             "Rotherham": "Keep thy foot, when thou goest unto the house of God, and be more ready to hear, than dullards to offer sacrifice,—for they make no acknowledgment of doing wrong.",
             "KJV": "Keep thy foot when thou goest to the house of God, and be more ready to hear, than to give the sacrifice of fools: for they consider not that they do evil.",
-            "NABRE": "God is in heaven and you are on earth; therefore let your words be few.",
-            "DRB": "Speak not any thing rashly, neither let thy heart be swift to utter a word before God. For God is in heaven, and thou upon the earth: therefore let thy words be few."
+            "NABRE": "Vanity of Many Words. Guard your step when you go to the house of God. Draw near for obedience, rather than for the fools’ offering of sacrifice; for they know not how to keep from doing evil.",
+            "DRB": "Take heed to keep thy foot, when thou enterest into the house of God, and approach thou to hear. For much better is obedience, than the victims of fools, who know not what evil they do."
           }
         },
         {
@@ -881,8 +881,8 @@
             "NRSV": "Never be rash with your mouth, nor let your heart be quick to utter a word before God, for God is in heaven, and you upon earth; therefore let your words be few.",
             "Rotherham": "Be not rash with thy mouth, and, with thy heart, be not in haste to bring forth a word, before God,—for, God, is in the heavens, and, thou, upon the earth, for this cause, let thy words be few.",
             "KJV": "Be not rash with thy mouth, and let not thine heart be hasty to utter any thing before God: for God is in heaven, and thou upon earth: therefore let thy words be few.",
-            "NABRE": "As dreams come along with many cares, so a fool’s voice along with a multitude of words.",
-            "DRB": "Dreams do follow many cares, and in many words folly will be found."
+            "NABRE": "Be not hasty in your utterance and let not your heart be quick to utter a promise in God’s presence. God is in heaven and you are on earth; therefore let your words be few.",
+            "DRB": "Speak not any thing rashly, neither let thy heart be swift to utter a word before God. For God is in heaven, and thou upon the earth: therefore let thy words be few."
           }
         },
         {
@@ -891,8 +891,8 @@
             "NRSV": "For dreams come with many cares, and a fool’s voice with many words.",
             "Rotherham": "For a dream cometh through the multitude of business,—and, the voice of a dullard, is with a multitude of words.",
             "KJV": "For a dream cometh through the multitude of business; and a fool’s voice is known by multitude of words.",
-            "NABRE": "When you make a vow to God, delay not its fulfillment. For God has no pleasure in fools; fulfill what you have vowed.",
-            "DRB": "If thou hast vowed any thing to God, defer not to pay it: for an unfaithful and foolish promise displeaseth him. But whatsoever thou hast vowed, pay it:"
+            "NABRE": "As dreams come along with many cares, so a fool’s voice along with a multitude of words.",
+            "DRB": "Dreams do follow many cares, and in many words folly will be found."
           }
         },
         {
@@ -901,8 +901,8 @@
             "NRSV": "When you make a vow to God, do not delay fulfilling it; for he has no pleasure in fools. Fulfill what you vow.",
             "Rotherham": "When thou vowest a vow unto God, do not defer to pay it, for there is no pleasure in dullards,—what thou vowest, pay!",
             "KJV": "When thou vowest a vow unto God, defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed.",
-            "NABRE": "It is better not to make a vow than make it and not fulfill it.",
-            "DRB": "and it is much better not to vow, than after a vow not to perform the things promised."
+            "NABRE": "When you make a vow to God, delay not its fulfillment. For God has no pleasure in fools; fulfill what you have vowed.",
+            "DRB": "If thou hast vowed any thing to God, defer not to pay it: for an unfaithful and foolish promise displeaseth him. But whatsoever thou hast vowed, pay it:"
           }
         },
         {
@@ -911,8 +911,8 @@
             "NRSV": "It is better that you should not vow than that you should vow and not fulfill it.",
             "Rotherham": "Better that thou shouldest not vow,—than vow, and not pay.",
             "KJV": "Better is it that thou shouldest not vow, than that thou shouldest vow and not pay.",
-            "NABRE": "Let not your utterances make you guilty, and say not before his representative, “It was a mistake.” Why should God be angered by your words and destroy the works of your hands?",
-            "DRB": "Give not thy mouth to make thy flesh to sin: neither say thou before the Angel: There is no providence; lest perhaps God being wrath against thy words, dissipate all the works of thy hands."
+            "NABRE": "It is better not to make a vow than make it and not fulfill it.",
+            "DRB": "and it is much better not to vow, than after a vow not to perform the things promised."
           }
         },
         {
@@ -921,8 +921,8 @@
             "NRSV": "Do not let your mouth lead you into sin, and do not say before the messenger that it was a mistake; why should God be angry at your words, and destroy the work of your hands?",
             "Rotherham": "Do not let thy mouth cause thy flesh to sin,—neither say thou, before the messenger, that it was, a mistake,—wherefore should God be indignant at thy voice, and destroy the work of thy hands?",
             "KJV": "Suffer not thy mouth to cause thy flesh to sin; neither say thou before the angel, that it was an error: wherefore should God be angry at thy voice, and destroy the work of thine hands?",
-            "NABRE": "Despite many dreams, futilities, and a multitude of words, fear God!",
-            "DRB": "Where many dreams are, there are many vanities, and words innumerable: but do thou fear God."
+            "NABRE": "Let not your utterances make you guilty, and say not before his representative, “It was a mistake.” Why should God be angered by your words and destroy the works of your hands?",
+            "DRB": "Give not thy mouth to make thy flesh to sin: neither say thou before the Angel: There is no providence; lest perhaps God being wrath against thy words, dissipate all the works of thy hands."
           }
         },
         {
@@ -931,8 +931,8 @@
             "NRSV": "With many dreams come vanities and a multitude of words; but fear God.",
             "Rotherham": "For [it was done] amidst a multitude of dreams, and vanities, and many words,—but, towards God, be thou reverent.",
             "KJV": "For in the multitude of dreams and many words there are also divers vanities: but fear thou God.",
-            "NABRE": "Gain and Loss of Goods. If you see oppression of the poor, and violation of rights and justice in the realm, do not be astonished by the fact, for the high official has another higher than he watching him and above these are others higher still—.",
-            "DRB": "If thou shalt see the oppressions of the poor, and violent judgements, and justice to be subverted in the province, marvel not at this matter: because there is another higher than the high, and over these also there are others more eminent:"
+            "NABRE": "Despite many dreams, futilities, and a multitude of words, fear God!",
+            "DRB": "Where many dreams are, there are many vanities, and words innumerable: but do thou fear God."
           }
         },
         {
@@ -941,8 +941,8 @@
             "NRSV": "If you see in a province the oppression of the poor and the violation of justice and right, do not be amazed at the matter; for the high official is watched by a higher, and there are yet higher ones over them.",
             "Rotherham": "If, the oppression of the poor, and the wresting of justice and righteousness, thou see in the province, do not be astonished over the matter,—for, one high above the highest, is watching, yea, the Most High, is over them.",
             "KJV": "If thou seest the oppression of the poor, and violent perverting of judgment and justice in a province, marvel not at the matter: for he that is higher than the highest regardeth; and there be higher than they.",
-            "NABRE": "But profitable for a land in such circumstances is a king concerned about cultivation.",
-            "DRB": "and besides, the King of all the earth reigneth over his servant."
+            "NABRE": "Gain and Loss of Goods. If you see oppression of the poor, and violation of rights and justice in the realm, do not be astonished by the fact, for the high official has another higher than he watching him and above these are others higher still—.",
+            "DRB": "If thou shalt see the oppressions of the poor, and violent judgements, and justice to be subverted in the province, marvel not at this matter: because there is another higher than the high, and over these also there are others more eminent:"
           }
         },
         {
@@ -951,8 +951,8 @@
             "NRSV": "But all things considered, this is an advantage for a land: a king for a plowed field.",
             "Rotherham": "And, the profit of the earth, is, for all,—a king, by the field, is served.",
             "KJV": "Moreover the profit of the earth is for all: the king himself is served by the field.",
-            "NABRE": "The covetous are never satisfied with money, nor lovers of wealth with their gain; so this too is vanity.",
-            "DRB": "Acovetous man shall not be filled with money: and he that loveth riches, shall take no fruit of them: and this therefore is vanity."
+            "NABRE": "But profitable for a land in such circumstances is a king concerned about cultivation.",
+            "DRB": "and besides, the King of all the earth reigneth over his servant."
           }
         },
         {
@@ -961,8 +961,8 @@
             "NRSV": "The lover of money will not be satisfied with money; nor the lover of wealth, with gain. This also is vanity.",
             "Rotherham": "He that loveth silver, shall not be satisfied with silver nor, he that loveth abundance, with revenue,—even this, was vanity.",
             "KJV": "He that loveth silver shall not be satisfied with silver; nor he that loveth abundance with increase: this is also vanity.",
-            "NABRE": "Where there are great riches, there are also many to devour them. Of what use are they to the owner except as a feast for the eyes alone?",
-            "DRB": "Where great riches are, there are also many that eat them. And what doth it profit the owner, but that he seeth the riches with his eyes?"
+            "NABRE": "The covetous are never satisfied with money, nor lovers of wealth with their gain; so this too is vanity.",
+            "DRB": "Acovetous man shall not be filled with money: and he that loveth riches, shall take no fruit of them: and this therefore is vanity."
           }
         },
         {
@@ -971,68 +971,68 @@
             "NRSV": "When goods increase, those who eat them increase; and what gain has their owner but to see them with his eyes?",
             "Rotherham": "When blessings are increased, increased are the eaters thereof,—what profit, then, to the owner of them saving the sight of his eyes?",
             "KJV": "When goods increase, they are increased that eat them: and what good is there to the owners thereof, saving the beholding of them with their eyes?",
-            "NABRE": "Sleep is sweet to the laborer, whether there is little or much to eat; but the abundance of the rich allows them no sleep.",
-            "DRB": "Sleep is sweet to him that worketh, whether he eat much or little: but the satiety of the rich doth not suffer him to sleep."
+            "NABRE": "Where there are great riches, there are also many to devour them. Of what use are they to the owner except as a feast for the eyes alone?",
+            "DRB": "Where great riches are, there are also many that eat them. And what doth it profit the owner, but that he seeth the riches with his eyes?"
           }
         },
         {
           "num": 12,
           "text": {
-            "NRSV": "Sweet is the sleep of laborers, whether they eat little or much; but the abundance of the rich will not let them sleep.",
+            "NRSV": "Sweet is the sleep of laborers, whether they eat little or much; but the surfeit of the rich will not let them sleep.",
             "Rotherham": "Sweet the sleep of the labourer, whether, little or much, he eat,—but, the surfeit of the rich man, will not suffer him to sleep.",
             "KJV": "The sleep of a labouring man is sweet, whether he eat little or much: but the abundance of the rich will not suffer him to sleep.",
-            "NABRE": "This is a grievous evil which I have seen under the sun: riches hoarded by their owners to their own hurt.",
-            "DRB": "There is also another very ill infirmity, which I have seen under the sun: riches kept to the hurt of the owner."
+            "NABRE": "Sleep is sweet to the laborer, whether there is little or much to eat; but the abundance of the rich allows them no sleep.",
+            "DRB": "Sleep is sweet to him that worketh, whether he eat much or little: but the satiety of the rich doth not suffer him to sleep."
           }
         },
         {
           "num": 13,
           "text": {
-            "NRSV": "There is a grievous ill that I have seen under the sun: riches were kept by their owner to his hurt,",
+            "NRSV": "There is a grievous ill that I have seen under the sun: riches were kept by their owners to their hurt,",
             "Rotherham": "Here was an incurable evil, I had seen under the sun, riches kept by the owner thereof, to his hurt;",
             "KJV": "There is a sore evil which I have seen under the sun, namely, riches kept for the owners thereof to their hurt.",
-            "NABRE": "Should the riches be lost through some misfortune, they may have offspring when they have no means.",
-            "DRB": "For they perish in very evil affliction: he hath begotten a son, which shall be in great poverty."
+            "NABRE": "This is a grievous evil which I have seen under the sun: riches hoarded by their owners to their own hurt.",
+            "DRB": "There is also another very ill infirmity, which I have seen under the sun: riches kept to the hurt of the owner."
           }
         },
         {
           "num": 14,
           "text": {
-            "NRSV": "and those riches were lost in a bad venture; though he is father of a son, he has nothing left.",
+            "NRSV": "and those riches were lost in a bad venture; though they are parents of children, they have nothing in their hands.",
             "Rotherham": "and those riches perish, by being ill employed,—and though he begetteth a son, yet is there in his hand nothing at all.",
             "KJV": "But those riches perish by evil travail: and he begetteth a son, and there is nothing in his hand.",
-            "NABRE": "As they came forth from their mother’s womb, so again shall they return, naked as they came, having nothing from their toil to bring with them.",
-            "DRB": "As he came forth naked from his mother's womb, so shall he return, and shall take nothing away with him of his labour."
+            "NABRE": "Should the riches be lost through some misfortune, they may have offspring when they have no means.",
+            "DRB": "For they perish in very evil affliction: he hath begotten a son, which shall be in great poverty."
           }
         },
         {
           "num": 15,
           "text": {
-            "NRSV": "As they came from their mother’s womb, so they shall go again, naked as they came; they shall take nothing for their toil, which they may carry away with them.",
+            "NRSV": "As they came from their mother’s womb, so they shall go again, naked as they came; they shall take nothing for their toil, which they may carry away with their hands.",
             "Rotherham": "As he came from his mother’s womb, naked, he again departeth, as he came,—and, nothing, can he take of his toil, which he can carry in his hand.",
             "KJV": "As he came forth of his mother’s womb, naked shall he return to go as he came, and shall take nothing of his labour, which he may carry away in his hand.",
-            "NABRE": "This too is a grievous evil, that they go just as they came. What then does it profit them to toil for the wind?",
-            "DRB": "An infirmity utterly miserable; as he came, so shall he return. What doth it then profit him, that he hath laboured into the wind?"
+            "NABRE": "As they came forth from their mother’s womb, so again shall they return, naked as they came, having nothing from their toil to bring with them.",
+            "DRB": "As he came forth naked from his mother's womb, so shall he return, and shall take nothing away with him of his labour."
           }
         },
         {
           "num": 16,
           "text": {
-            "NRSV": "This also is a grievous ill: just as they came, so shall they go; and what gain do they have from toiling for the wind,",
+            "NRSV": "This also is a grievous ill: just as they came, so shall they go; and what gain do they have from toiling for the wind?",
             "Rotherham": "Even this, moreover, is an incurable evil, altogether as he came, so, shall he depart,—what profit then shall he have who toileth for the wind?",
             "KJV": "And this also is a sore evil, that in all points as he came, so shall he go: and what profit hath he that hath laboured for the wind?",
-            "NABRE": "All their days they eat in gloom with great vexation, sickness and resentment.",
-            "DRB": "All the days of his life he eateth in darkness, and in misery, and in heaviness."
+            "NABRE": "This too is a grievous evil, that they go just as they came. What then does it profit them to toil for the wind?",
+            "DRB": "An infirmity utterly miserable; as he came, so shall he return. What doth it then profit him, that he hath laboured into the wind?"
           }
         },
         {
           "num": 17,
           "text": {
-            "NRSV": "besides spending all their days in darkness and grief, in much vexation and sickness and resentment?",
+            "NRSV": "Besides, all their days they eat in darkness, in much vexation and sickness and resentment.",
             "Rotherham": "Even all his days, [are spent] in darkness and mourning,—and he is very morose, and is sad and angry.",
             "KJV": "All his days also he eateth in darkness, and he hath much sorrow and wrath with his sickness.",
-            "NABRE": "Here is what I see as good: It is appropriate to eat and drink and prosper from all the toil one toils at under the sun during the limited days of life God gives us; for this is our lot.",
-            "DRB": "This therefore hath seemed good to me, that a man eat, and drink, and take joy of his labour, wherewith he hath laboured under the sun, the number of the days of his life, which God hath given him, and this is his portion."
+            "NABRE": "All their days they eat in gloom with great vexation, sickness and resentment.",
+            "DRB": "All the days of his life he eateth in darkness, and in misery, and in heaviness."
           }
         },
         {
@@ -1041,8 +1041,8 @@
             "NRSV": "This is what I have seen to be good: it is fitting to eat and drink and find enjoyment in all the toil with which one toils under the sun the few days of the life God gives us; for this is our lot.",
             "Rotherham": "Lo! what, I myself, have seen—Better that it should be excellent to eat and to drink and to see blessedness, in all one’s toil wherein one toileth under the sun, for the number of the days of his life, in that God hath given it him, for, that, is his portion:",
             "KJV": "Behold that which I have seen: it is good and comely for one to eat and to drink, and to enjoy the good of all his labour that he taketh under the sun all the days of his life, which God giveth him: for it is his portion.",
-            "NABRE": "Those to whom God gives riches and property, and grants power to partake of them, so that they receive their lot and find joy in the fruits of their toil: This is a gift from God.",
-            "DRB": "And to every man, unto whom God hath given riches, and substance, and hath given him power to eat of them, and to enjoy his portion, and to rejoice of his labour: this is the gift of God."
+            "NABRE": "Here is what I see as good: It is appropriate to eat and drink and prosper from all the toil one toils at under the sun during the limited days of life God gives us; for this is our lot.",
+            "DRB": "This therefore hath seemed good to me, that a man eat, and drink, and take joy of his labour, wherewith he hath laboured under the sun, the number of the days of his life, which God hath given him, and this is his portion."
           }
         },
         {
@@ -1051,8 +1051,8 @@
             "NRSV": "Likewise all to whom God gives wealth and possessions and whom he enables to enjoy them, and to accept their lot and find enjoyment in their toil—this is the gift of God.",
             "Rotherham": "yet, as regardeth every man, to whom God hath given wealth and goods, and granted him power to eat thereof, and to take his portion, and to find gladness in his toil, this, is, the gift of God.",
             "KJV": "Every man also to whom God hath given riches and wealth, and hath given him power to eat thereof, and to take his portion, and to rejoice in his labour; this is the gift of God.",
-            "NABRE": "For they will hardly dwell on the shortness of life, because God lets them busy themselves with the joy of their heart.",
-            "DRB": "For he shall not greatly remember the days of his life, because God doth occupy his heart with delights."
+            "NABRE": "Those to whom God gives riches and property, and grants power to partake of them, so that they receive their lot and find joy in the fruits of their toil: This is a gift from God.",
+            "DRB": "And to every man, unto whom God hath given riches, and substance, and hath given him power to eat of them, and to enjoy his portion, and to rejoice of his labour: this is the gift of God."
           }
         },
         {
@@ -1060,7 +1060,9 @@
           "text": {
             "NRSV": "For they will scarcely brood over the days of their lives, because God keeps them occupied with the joy of their hearts.",
             "Rotherham": "Though it be not much, let him remember the days of his life,—for, God, beareth witness, by the gladness of his heart.",
-            "KJV": "For he shall not much remember the days of his life; because God answereth him in the joy of his heart."
+            "KJV": "For he shall not much remember the days of his life; because God answereth him in the joy of his heart.",
+            "DRB": "For he shall not greatly remember the days of his life, because God doth occupy his heart with delights.",
+            "NABRE": "For they will hardly dwell on the shortness of life, because God lets them busy themselves with the joy of their heart."
           }
         }
       ]
@@ -1091,7 +1093,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "A man may beget a hundred children, and live many years, so that they are many; but if he does not enjoy life’s good things, and has no burial, I say that a stillborn child is better off than he.",
+            "NRSV": "A man may beget a hundred children, and live many years; but however many are the days of his years, if he does not enjoy life’s good things, or has no burial, I say that a stillborn child is better off than he.",
             "Rotherham": "Though a man should beget a hundred children, and live, many years, so that many should be the days of his years but, his own soul, should not be satisfied with the good, and he should not even have, a burial, I said, Better than he, is an untimely birth!",
             "KJV": "If a man beget an hundred children, and live many years, so that the days of his years be many, and his soul be not filled with good, and also that he have no burial; I say, that an untimely birth is better than he.",
             "NABRE": "Should one have a hundred children and live many years, no matter to what great age, still if one has not the full benefit of those goods, I proclaim that the child born dead, even if left unburied, is more fortunate.",
@@ -1151,7 +1153,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "Better is the sight of the eyes than the wandering of the desire; this also is vanity and a chasing after wind.",
+            "NRSV": "Better is the sight of the eyes than the wandering of desire; this also is vanity and a chasing after wind.",
             "Rotherham": "Better what the eyes behold, than the wandering of desire,—even this, was vanity, and a feeding on wind.",
             "KJV": "Better is the sight of the eyes than the wandering of the desire: this is also vanity and vexation of spirit.",
             "NABRE": "“What the eyes see is better than what the desires wander after.” This also is vanity and a chase after wind.",
@@ -1161,7 +1163,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "Whatever has come to be has already been named, and it is known what human beings are, and that they cannot contend with one who is stronger than they.",
+            "NRSV": "Whatever has come to be has already been named, and it is known what human beings are, and that they are not able to dispute with those who are stronger.",
             "Rotherham": "Whatsoever one may be, long ago, was he called by his name, and it is known that it is—Son of Earth,—he cannot, therefore, contend with one stronger than he.",
             "KJV": "That which hath been is named already, and it is known that it is man: neither may he contend with him that is mightier than he.",
             "NABRE": "Whatever is, was long ago given its name, and human nature is known; mortals cannot contend in judgment with One who is stronger.",
@@ -1171,7 +1173,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "The more words, the more vanity, and how is one the better?",
+            "NRSV": "The more words, the more vanity, so how is one the better?",
             "Rotherham": "Seeing there are things in abundance which make vanity abound, what profit hath man?",
             "KJV": "Seeing there be many things that increase vanity, what is man the better?",
             "NABRE": "For the more words, the more vanity; what profit is there for anyone?",
@@ -1184,7 +1186,8 @@
             "NRSV": "For who knows what is good for mortals while they live the few days of their vain life, which they pass like a shadow? For who can tell them what will be after them under the sun?",
             "Rotherham": "For who knoweth what is good for a man throughout his life, for the number of the days of his life of vanity, seeing he will make them, like a shadow,—for who can tell a man, what shall be after him, under the sun?",
             "KJV": "For who knoweth what is good for man in this life, all the days of his vain life which he spendeth as a shadow? for who can tell a man what shall be after him under the sun?",
-            "NABRE": "For who knows what is good for mortals in life, the limited days of their vain life, spent like a shadow? Because who can tell them what will come afterward under the sun?"
+            "NABRE": "For who knows what is good for mortals in life, the limited days of their vain life, spent like a shadow? Because who can tell them what will come afterward under the sun?",
+            "DRB": "What needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?"
           }
         }
       ]
@@ -1199,7 +1202,7 @@
             "Rotherham": "Better a name, than precious ointment,—and the day of death, than the day of one’s birth.",
             "KJV": "A good name is better than precious ointment; and the day of death than the day of one’s birth.",
             "NABRE": "A. No One Can Find Out the Best Way of Acting Chapter 7 Critique of Sages on the Day of Adversity A good name is better than good ointment, and the day of death than the day of birth.",
-            "DRB": "What needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?"
+            "DRB": "Better is a good name than precious ointments: and the day of death, than the day of nativity."
           }
         },
         {
@@ -1209,7 +1212,7 @@
             "Rotherham": "Better to go to the house of mourning, than to go to the house of banqueting, for, that, is the end of all men,—and, the living, should take it to his heart.",
             "KJV": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
             "NABRE": "It is better to go to the house of mourning than to the house of feasting, For that is the end of every mortal, and the living should take it to heart.",
-            "DRB": "Better is a good name than precious ointments: and the day of death, than the day of nativity."
+            "DRB": "It is better to go to the house of mourning, than to the house of banqueting, for in that the end of all men is signified, and he that liveth thinketh what shall be."
           }
         },
         {
@@ -1219,7 +1222,7 @@
             "Rotherham": "Better is grief than laughter,—for, by the marring of the face, amended is the heart.",
             "KJV": "Sorrow is better than laughter: for by the sadness of the countenance the heart is made better.",
             "NABRE": "Sorrow is better than laughter; when the face is sad, the heart grows wise.",
-            "DRB": "It is better to go to the house of mourning, than to the house of banqueting, for in that the end of all men is signified, and he that liveth thinketh what shall be."
+            "DRB": "Anger is better than laughter: because by sadness of the countenance, the mind of the offender is corrected."
           }
         },
         {
@@ -1229,7 +1232,7 @@
             "Rotherham": "The heart of the wise, is in the house of mourning, but, the heart of dullards, in the house of mirth.",
             "KJV": "The heart of the wise is in the house of mourning; but the heart of fools is in the house of mirth.",
             "NABRE": "The heart of the wise is in the house of mourning, but the heart of fools is in the house of merriment.",
-            "DRB": "Anger is better than laughter: because by sadness of the countenance, the mind of the offender is corrected."
+            "DRB": "The heart of wisemen where sadness is, and the heart of fools where mirth."
           }
         },
         {
@@ -1239,7 +1242,7 @@
             "Rotherham": "Better to hear the rebuke of the wise, than for any man to hear the song of dullards,",
             "KJV": "It is better to hear the rebuke of the wise, than for a man to hear the song of fools.",
             "NABRE": "It is better to listen to the rebuke of the wise than to listen to the song of fools;",
-            "DRB": "The heart of wisemen where sadness is, and the heart of fools where mirth."
+            "DRB": "It is better to be rebuked of a wiseman, than to be deceived with the flattery of fools."
           }
         },
         {
@@ -1249,7 +1252,7 @@
             "Rotherham": "For, as the crackling of thorns under a pot, so, is the laughter of the dullard,—even this, then, was vanity.",
             "KJV": "For as the crackling of thorns under a pot, so is the laughter of the fool: this also is vanity.",
             "NABRE": "For as the crackling of thorns under a pot, so is the fool’s laughter. This also is vanity.",
-            "DRB": "It is better to be rebuked of a wiseman, than to be deceived with the flattery of fools."
+            "DRB": "Because as the sound of thorns burning under a pot, so the laughter of a fool: but this also is vanity."
           }
         },
         {
@@ -1259,7 +1262,7 @@
             "Rotherham": "For, oppression, maddeneth the wise,—and a bribe, destroyeth the understanding.",
             "KJV": "Surely oppression maketh a wise man mad; and a gift destroyeth the heart.",
             "NABRE": "Extortion can make a fool out of the wise, and a bribe corrupts the heart.",
-            "DRB": "Because as the sound of thorns burning under a pot, so the laughter of a fool: but this also is vanity."
+            "DRB": "Oppression troubleth the wise, and shall destroy the strength of his heart."
           }
         },
         {
@@ -1269,7 +1272,7 @@
             "Rotherham": "Better the latter end of a thing, than the beginning thereof,—Better a patient spirit, than a haughty spirit.",
             "KJV": "Better is the end of a thing than the beginning thereof: and the patient in spirit is better than the proud in spirit.",
             "NABRE": "Better is the end of a thing than its beginning; better is a patient spirit than a lofty one.",
-            "DRB": "Oppression troubleth the wise, and shall destroy the strength of his heart."
+            "DRB": "Better is the end of a speech, than the beginning. Better is the patient man than the arrogant."
           }
         },
         {
@@ -1279,7 +1282,7 @@
             "Rotherham": "Do not be rash in thy spirit, to be indignant,—for, indignation, in the bosom of dullards, doth remain.",
             "KJV": "Be not hasty in thy spirit to be angry: for anger resteth in the bosom of fools.",
             "NABRE": "Do not let anger upset your spirit, for anger lodges in the bosom of a fool.",
-            "DRB": "Better is the end of a speech, than the beginning. Better is the patient man than the arrogant."
+            "DRB": "Be not quickly angry, because anger resteth in the bosom of a fool."
           }
         },
         {
@@ -1289,7 +1292,7 @@
             "Rotherham": "Do not say, What hath happened, that, the former days, were better than these? for, not wisely, askest thou concerning this.",
             "KJV": "Say not thou, What is the cause that the former days were better than these? for thou dost not enquire wisely concerning this.",
             "NABRE": "Do not say: How is it that former times were better than these? For it is not out of wisdom that you ask about this.",
-            "DRB": "Be not quickly angry, because anger resteth in the bosom of a fool."
+            "DRB": "Say not: What is the cause thinkest thou that the former times were better than they are now? For this manner of question is foolish."
           }
         },
         {
@@ -1299,17 +1302,17 @@
             "Rotherham": "Good is wisdom, with an inheritance,—and a profit, to such as see the sun.",
             "KJV": "Wisdom is good with an inheritance: and by it there is profit to them that see the sun.",
             "NABRE": "Wisdom is as good as an inheritance and profitable to those who see the sun.",
-            "DRB": "Say not: What is the cause thinkest thou that the former times were better than they are now? For this manner of question is foolish."
+            "DRB": "Wisdom with riches is more profitable, and doth more profit them that see the sun."
           }
         },
         {
           "num": 12,
           "text": {
-            "NRSV": "For the protection of wisdom is like the protection of money, and the advantage of knowledge is that wisdom gives life to its possessor.",
+            "NRSV": "For the protection of wisdom is like the protection of money, and the advantage of knowledge is that wisdom gives life to the one who possesses it.",
             "Rotherham": "For, a protection, is wisdom, and, a protection, is silver,—but, the advantage of knowledge, is, that, wisdom, giveth life to the possessors thereof.",
             "KJV": "For wisdom is a defence, and money is a defence: but the excellency of knowledge is, that wisdom giveth life to them that have it.",
             "NABRE": "For the protection of wisdom is as the protection of money; and knowledge is profitable because wisdom gives life to those who possess it.",
-            "DRB": "Wisdom with riches is more profitable, and doth more profit them that see the sun."
+            "DRB": "For as wisdom protecteth, so money protecteth. But learning and wisdom have this much more, that they give life to their owner."
           }
         },
         {
@@ -1319,7 +1322,7 @@
             "Rotherham": "Consider the work of God,—for who can straighten what he hath bent?",
             "KJV": "Consider the work of God: for who can make that straight, which he hath made crooked?",
             "NABRE": "Consider the work of God. Who can make straight what God has made crooked?",
-            "DRB": "For as wisdom protecteth, so money protecteth. But learning and wisdom have this much more, that they give life to their owner."
+            "DRB": "Consider the works of God, that no man can correct whom he hath despised."
           }
         },
         {
@@ -1329,7 +1332,7 @@
             "Rotherham": "In the day of prosperity, be joyful, but, in the day of misfortune, consider,—Even the one equally with the other, hath God made, to the end man might find out—after him—nothing.",
             "KJV": "In the day of prosperity be joyful, but in the day of adversity consider: God also hath set the one over against the other, to the end that man should find nothing after him.",
             "NABRE": "On a good day enjoy good things, and on an evil day consider: Both the one and the other God has made, so that no one may find the least fault with him.",
-            "DRB": "Consider the works of God, that no man can correct whom he hath despised."
+            "DRB": "In the good day enjoy good things, and beware before of the evil day. For as this, so that also hath God made, that man find not against him just complaints."
           }
         },
         {
@@ -1339,27 +1342,27 @@
             "Rotherham": "Everything, had I seen, in my days of vanity,—Here was a righteous man, perishing in his righteousness, and there was a lawless man, continuing long in his wickedness.",
             "KJV": "All things have I seen in the days of my vanity: there is a just man that perisheth in his righteousness, and there is a wicked man that prolongeth his life in his wickedness.",
             "NABRE": "Critique of Sages on Justice and Wickedness. I have seen all manner of things in my vain days: the just perishing in their justice, and the wicked living long in their wickedness.",
-            "DRB": "In the good day enjoy good things, and beware before of the evil day. For as this, so that also hath God made, that man find not against him just complaints."
+            "DRB": "These things also I saw in the days of my vanity: The just man perisheth in his justice, and the impious liveth a long time in his malice."
           }
         },
         {
           "num": 16,
           "text": {
-            "NRSV": "Do not be overrighteous, and do not make yourself overwise; why should you destroy yourself?",
+            "NRSV": "Do not be too righteous, and do not act too wise; why should you destroy yourself?",
             "Rotherham": "Do not become so very righteous, neither count thyself wise beyond measure,—wherefore shouldst thou destroy thyself?",
             "KJV": "Be not righteous over much; neither make thyself over wise: why shouldest thou destroy thyself?",
             "NABRE": "“Be not just to excess, and be not overwise. Why work your own ruin?",
-            "DRB": "These things also I saw in the days of my vanity: The just man perisheth in his justice, and the impious liveth a long time in his malice."
+            "DRB": "Be not just too much: neither be more wise than is necessary, lest thou become more dull."
           }
         },
         {
           "num": 17,
           "text": {
-            "NRSV": "Do not be overwicked, and do not be a fool; why should you die before your time?",
+            "NRSV": "Do not be too wicked, and do not be a fool; why should you die before your time?",
             "Rotherham": "Do not be so very lawless, neither become thou foolish,—wherefore shouldst thou die, before thy time?",
             "KJV": "Be not over much wicked, neither be thou foolish: why shouldest thou die before thy time?",
             "NABRE": "Be not wicked to excess, and be not foolish. Why should you die before your time?”",
-            "DRB": "Be not just too much: neither be more wise than is necessary, lest thou become more dull."
+            "DRB": "Do not impiously much: and be not foolish, lest thou die not in thy time."
           }
         },
         {
@@ -1369,7 +1372,7 @@
             "Rotherham": "It is well that thou shouldst lay fast hold of this, but, even from the other, do not withdraw thy hand,—for, he that revereth God, shall come forth out of them all.",
             "KJV": "It is good that thou shouldest take hold of this; yea, also from this withdraw not thine hand: for he that feareth God shall come forth of them all.",
             "NABRE": "It is good to hold to this rule, and not to let that one go; but the one who fears God will succeed with both.",
-            "DRB": "Do not impiously much: and be not foolish, lest thou die not in thy time."
+            "DRB": "It is good that thou hold up the just, yea and from him withdraw not thy hand: because he that feareth God, neglecteth nothing."
           }
         },
         {
@@ -1379,7 +1382,7 @@
             "Rotherham": "Wisdom, bringeth more strength to a wise man, than ten heroes, that are in the city.",
             "KJV": "Wisdom strengtheneth the wise more than ten mighty men which are in the city.",
             "NABRE": "Wisdom is a better defense for the wise than ten princes in the city,",
-            "DRB": "It is good that thou hold up the just, yea and from him withdraw not thy hand: because he that feareth God, neglecteth nothing."
+            "DRB": "Wisdom hath strengthened the wise above ten Princes of the city."
           }
         },
         {
@@ -1389,7 +1392,7 @@
             "Rotherham": "For, as for men, there is none righteous in the earth, that doeth good, and sinneth not.",
             "KJV": "For there is not a just man upon earth, that doeth good, and sinneth not.",
             "NABRE": "yet there is no one on earth so just as to do good and never sin.",
-            "DRB": "Wisdom hath strengthened the wise above ten Princes of the city."
+            "DRB": "For there is no just man in the earth, that doth good, and sinneth not."
           }
         },
         {
@@ -1399,7 +1402,7 @@
             "Rotherham": "Moreover, not to all the words which men speak, do thou apply thy heart,—lest thou hear thine own servant reviling thee!",
             "KJV": "Also take no heed unto all words that are spoken; lest thou hear thy servant curse thee:",
             "NABRE": "Do not give your heart to every word that is spoken; you may hear your servant cursing you,",
-            "DRB": "For there is no just man in the earth, that doth good, and sinneth not."
+            "DRB": "But to all words also that are spoken, do not apply thy heart: lest perhaps thou hear thy servant cursing thee."
           }
         },
         {
@@ -1409,7 +1412,7 @@
             "Rotherham": "For truly, many times, thy heart knoweth,—that, even thou thyself, hast reviled others.",
             "KJV": "For oftentimes also thine own heart knoweth that thou thyself likewise hast cursed others.",
             "NABRE": "for your heart knows that you have many times cursed others.",
-            "DRB": "But to all words also that are spoken, do not apply thy heart: lest perhaps thou hear thy servant cursing thee."
+            "DRB": "For thy conscience knoweth, that thou also hast cursed others."
           }
         },
         {
@@ -1419,7 +1422,7 @@
             "Rotherham": "All this, have I proved by wisdom,—I said, I will be wise, but, that, was far from me.",
             "KJV": "All this have I proved by wisdom: I said, I will be wise; but it was far from me.",
             "NABRE": "All these things I probed in wisdom. I said, “I will acquire wisdom”; but it was far beyond me.",
-            "DRB": "For thy conscience knoweth, that thou also hast cursed others."
+            "DRB": "I have proved all things in wisdom. I have said: I will become wise, & it departed farther from me"
           }
         },
         {
@@ -1429,7 +1432,7 @@
             "Rotherham": "Far away, is that which hath been,—and deep, deep, who can find it out?",
             "KJV": "That which is far off, and exceeding deep, who can find it out?",
             "NABRE": "What exists is far-reaching; it is deep, very deep: Who can find it out?",
-            "DRB": "I have proved all things in wisdom. I have said: I will become wise, & it departed farther from me"
+            "DRB": "much more than it was: and a deep profundity, who shall find it?"
           }
         },
         {
@@ -1439,17 +1442,17 @@
             "Rotherham": "Resolved, I, in my heart, to know and search out, and to seek wisdom, and a conclusion,—and to know lawlessness [to be] stupidity, and folly to be madness.",
             "KJV": "I applied mine heart to know, and to search, and to seek out wisdom, and the reason of things, and to know the wickedness of folly, even of foolishness and madness:",
             "NABRE": "I turned my heart toward knowledge; I sought and pursued wisdom and its design, and I recognized that wickedness is foolishness and folly is madness.",
-            "DRB": "much more than it was: and a deep profundity, who shall find it?"
+            "DRB": "I have viewed all things with my mind, that I might know, and consider, and might seek wisdom and reason: and that I might know the impiety of the fool, and the error of the imprudent:"
           }
         },
         {
           "num": 26,
           "text": {
-            "NRSV": "I found more bitter than death the woman who is a trap, whose heart is snares and nets, and whose hands are fetters; one who pleases God escapes her, but the sinner is taken by her.",
+            "NRSV": "I found more bitter than death the woman who is a trap, whose heart is snares and nets, whose hands are fetters; one who pleases God escapes her, but the sinner is taken by her.",
             "Rotherham": "I, could indeed find, to be, more bitter than death, the woman, whose heart is, snares and nets, and her hands, bonds,—whoso is pleasing before God, shall escape from her, but, he that sinneth, shall be captured by her.",
             "KJV": "And I find more bitter than death the woman, whose heart is snares and nets, and her hands as bands: whoso pleaseth God shall escape from her; but the sinner shall be taken by her.",
             "NABRE": "Critique of Advice on Women. More bitter than death I find the woman who is a hunter’s trap, whose heart is a snare, whose hands are prison bonds. The one who pleases God will be delivered from her, but the one who displeases will be entrapped by her.",
-            "DRB": "I have viewed all things with my mind, that I might know, and consider, and might seek wisdom and reason: and that I might know the impiety of the fool, and the error of the imprudent:"
+            "DRB": "and I have found that a woman is more bitter than death, who is the snare of hunters, and her heart a net, her hands are bands. He that pleaseth God, will avoid her: but he that is a sinner, will be caught of her."
           }
         },
         {
@@ -1459,7 +1462,7 @@
             "Rotherham": "See! this, have I found, saith the Proclaimer [counting] one by one, to find a conclusion;",
             "KJV": "Behold, this have I found, saith the preacher, counting one by one, to find out the account:",
             "NABRE": "See, this have I found, says Qoheleth, adding one to one to find the sum.",
-            "DRB": "and I have found that a woman is more bitter than death, who is the snare of hunters, and her heart a net, her hands are bands. He that pleaseth God, will avoid her: but he that is a sinner, will be caught of her."
+            "DRB": "Lo this have I found, said Ecclesiastes, one thing and another, that I might find reason,"
           }
         },
         {
@@ -1469,7 +1472,7 @@
             "Rotherham": "what my soul still sought, yet I found not,—one man out of a thousand, have I found, but, a woman among all these, have I not found.",
             "KJV": "Which yet my soul seeketh, but I find not: one man among a thousand have I found; but a woman among all those have I not found.",
             "NABRE": "What my soul still seeks and has yet to find is this: “One man out of a thousand have I found, but a woman among them all I have not found.”",
-            "DRB": "Lo this have I found, said Ecclesiastes, one thing and another, that I might find reason,"
+            "DRB": "which yet my soul seeketh, and I have not found it. A man of a thousand I have found one, a woman of all I have not found."
           }
         },
         {
@@ -1479,7 +1482,7 @@
             "Rotherham": "Only, see, this, have I found, That God made man upright, but, they, have sought out many devices.",
             "KJV": "Lo, this only have I found, that God hath made man upright; but they have sought out many inventions.",
             "NABRE": "But this alone I have found: God made humankind honest, but they have pursued many designs.",
-            "DRB": "which yet my soul seeketh, and I have not found it. A man of a thousand I have found one, a woman of all I have not found."
+            "DRB": "Only this I have found, that God made man right, and he hath entangled himself with infinite questions. Who is such a one as the wise? And who hath known the resolution of the word."
           }
         }
       ]
@@ -1490,7 +1493,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "Who is like the wise? And who knows the interpretation of a thing? Wisdom illumines the face, and the hardness of one’s countenance is changed.",
+            "NRSV": "Who is like the wise man? And who knows the interpretation of a thing? Wisdom makes one’s face shine, and the hardness of one’s countenance is changed.",
             "Rotherham": "Who is really a wise man, and who knoweth the interpretation of a thing? The wisdom of a man, lighteth up his countenance, but, by defiance of countenance, one is disfigured.",
             "KJV": "Who is as the wise man? and who knoweth the interpretation of a thing? a man’s wisdom maketh his face to shine, and the boldness of his face shall be changed.",
             "NABRE": "Who is like the wise person, and who knows the explanation of things? Wisdom illumines the face and transforms a grim countenance.",
@@ -1530,7 +1533,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "Whoever keeps a command will know no evil thing, and the wise mind will know the time and way.",
+            "NRSV": "Whoever obeys a command will meet no harm, and the wise mind will know the time and way.",
             "Rotherham": "He that observeth the commandment, will not notice a vexatious thing,—and, of time and manner, will the heart of the wise take note.",
             "KJV": "Whoso keepeth the commandment shall feel no evil thing: and a wise man’s heart discerneth both time and judgment.",
             "NABRE": "“Whoever observes a command knows no harm, and the wise heart knows times and judgments.”",
@@ -1570,7 +1573,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "All this I observed while applying my mind to all that is done under the sun, while one person exercises authority over another to the other’s hurt.",
+            "NRSV": "All this I observed, applying my mind to all that is done under the sun, while one person exercises authority over another to the other’s hurt.",
             "Rotherham": "All this, had I seen, and tried to apply my heart to every work which was done under the sun,—at such time as one man had power over another man, to his hurt.",
             "KJV": "All this have I seen, and applied my heart unto every work that is done under the sun: there is a time wherein one man ruleth over another to his own hurt.",
             "NABRE": "All these things I saw and I applied my heart to every work that is done under the sun, while one person tyrannizes over another for harm.",
@@ -1600,7 +1603,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "Though sinners do evil a hundred times and prolong their lives, yet I know that it will be well with those who fear God, because they stand in awe before him;",
+            "NRSV": "Though sinners do evil a hundred times and prolong their lives, yet I know that it will be well with those who fear God, because they stand in fear before him,",
             "Rotherham": "Though a sinner be committing wickedness a hundred times, and continuing long in his own way, yet I surely know that it shall be well to them who revere God, who stand in awe before him;",
             "KJV": "Though a sinner do evil an hundred times, and his days be prolonged, yet surely I know that it shall be well with them that fear God, which fear before him:",
             "NABRE": "because the sinner does evil a hundred times and survives. Though indeed I know that it shall be well with those who fear God, for their reverence toward him;",
@@ -1610,7 +1613,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "but it will not be well with the wicked, neither will they prolong their days like a shadow, because they do not stand in awe before God.",
+            "NRSV": "but it will not be well with the wicked, neither will they prolong their days like a shadow, because they do not stand in fear before God.",
             "Rotherham": "but, well, shall it not be to the lawless man, neither shall he lengthen out his days like a shadow,—because he standeth not in awe before God.",
             "KJV": "But it shall not be well with the wicked, neither shall he prolong his days, which are as a shadow; because he feareth not before God.",
             "NABRE": "and that it shall not be well with the wicked, who shall not prolong their shadowy days, for their lack of reverence toward God.",
@@ -1630,7 +1633,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "So I commend enjoyment, for there is nothing better for people under the sun than to eat and drink and enjoy themselves, for this will go with them in their toil through the days of life that God gives them under the sun.",
+            "NRSV": "So I commend enjoyment, for there is nothing better for people under the sun than to eat, and drink, and enjoy themselves, for this will go with them in their toil through the days of life that God gives them under the sun.",
             "Rotherham": "Then extolled I, gladness, in that there was nothing better for a man, under the sun, than to eat and to drink, and to be glad,—since, that, should tarry with him in his toil, for the days of his life which God had given him under the sun.",
             "KJV": "Then I commended mirth, because a man hath no better thing under the sun, than to eat, and to drink, and to be merry: for that shall abide with him of his labour the days of his life, which God giveth him under the sun.",
             "NABRE": "Therefore I praised joy, because there is nothing better for mortals under the sun than to eat and to drink and to be joyful; this will accompany them in their toil through the limited days of life God gives them under the sun.",
@@ -1650,7 +1653,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "then I saw all the work of God, that no one can find out what is happening under the sun. However much they may toil in searching, they will not find it out; even though those who are wise claim to know, they cannot find it out.",
+            "NRSV": "then I saw all the work of God, that no one can find out what is happening under the sun. However much they may toil in seeking, they will not find it out; even though those who are wise claim to know, they cannot find it out.",
             "Rotherham": "Then I considered all the work of God, that man could not find out the work that was done under the sun, inasmuch as man toileth in seeking and yet cannot find,—yea, even though the wise man should say he knoweth, yet can he not find it out.",
             "KJV": "Then I beheld all the work of God, that a man cannot find out the work that is done under the sun: because though a man labour to seek it out, yet he shall not find it; yea further; though a wise man think to know it, yet shall he not be able to find it.",
             "NABRE": "and I saw all the work of God: No mortal can find out the work that is done under the sun. However much mortals may toil in searching, no one finds it out; and even if the wise claim to know, they are unable to find it out.",
@@ -1675,7 +1678,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "is the same for all, since one fate comes to all, to the righteous and the wicked, to the good and the evil, to the clean and the unclean, to those who sacrifice and those who do not sacrifice. As are the good, so are the sinners; and those who swear are like those who shun an oath.",
+            "NRSV": "is vanity, since the same fate comes to all, to the righteous and the wicked, to the good and the evil, to the clean and the unclean, to those who sacrifice and those who do not sacrifice. As are the good, so are the sinners; those who swear are like those who shun an oath.",
             "Rotherham": "Every one, was like every one else, one destiny, had the righteous and the lawless, the good and the pure and the impure, and he that sacrificed, and he that did not sacrifice,—as the good man, so, the sinner, he that took an oath, as he who, of an oath, stood in fear.",
             "KJV": "All things come alike to all: there is one event to the righteous, and to the wicked; to the good and to the clean, and to the unclean; to him that sacrificeth, and to him that sacrificeth not: as is the good, so is the sinner; and he that sweareth, as he that feareth an oath.",
             "NABRE": "Everything is the same for everybody: the same lot for the just and the wicked, for the good, for the clean and the unclean, for the one who offers sacrifice and the one who does not. As it is for the good, so it is for the sinner; as it is for the one who takes an oath, so it is for the one who fears an oath.",
@@ -1745,7 +1748,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun, because that is your lot in life and in your toil at which you toil under the sun.",
+            "NRSV": "Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun, because that is your portion in life and in your toil at which you toil under the sun.",
             "Rotherham": "Enjoy life, with thy wife whom thou lovest, all the days of thy life of vanity, which he hath given thee under the sun, all thy days of vanity,—for, that, is thy portion in life, and in thy toil wherewith, thou, art toiling under the sun.",
             "KJV": "Live joyfully with the wife whom thou lovest all the days of the life of thy vanity, which he hath given thee under the sun, all the days of thy vanity: for that is thy portion in this life, and in thy labour which thou takest under the sun.",
             "NABRE": "Enjoy life with the wife you love, all the days of the vain life granted you under the sun. This is your lot in life, for the toil of your labors under the sun.",
@@ -1775,7 +1778,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "For no one can anticipate the time of disaster. Like fish enumerated in a fatal net, and like birds caught in a snare, so mortals are snared at a time of calamity, when it suddenly falls upon them.",
+            "NRSV": "For no one can anticipate the time of disaster. Like fish taken in a cruel net, and like birds caught in a snare, so mortals are snared at a time of calamity, when it suddenly falls upon them.",
             "Rotherham": "For, indeed, man could not know his own time, like fishes which were caught in a cruel net, and like little birds which were caught in a trap,—like them, were ensnared the sons of men, by a time of misfortune, when it fell upon them suddenly.",
             "KJV": "For man also knoweth not his time: as the fishes that are taken in an evil net, and as the birds that are caught in the snare; so are the sons of men snared in an evil time, when it falleth suddenly upon them.",
             "NABRE": "Human beings no more know their own time than fish taken in the fatal net or birds trapped in the snare; like these, mortals are caught when an evil time suddenly falls upon them.",
@@ -1835,7 +1838,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "Wisdom is better than weapons of war, but one sinner destroys much good.",
+            "NRSV": "Wisdom is better than weapons of war, but one bungler destroys much good.",
             "Rotherham": "Better is wisdom, than weapons of war,—but, one sinner, may destroy much good.",
             "KJV": "Wisdom is better than weapons of war: but one sinner destroyeth much good.",
             "NABRE": "Wisdom is better than weapons of war, but one bungler destroys much good.",
@@ -1850,7 +1853,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "Dead flies make the perfumer’s ointment give off a fetid odor; so a little folly outweighs wisdom and honor.",
+            "NRSV": "Dead flies make the perfumer’s ointment give off a foul odor; so a little folly outweighs wisdom and honor.",
             "Rotherham": "Dead flies, cause to stink [and] ferment, the oil of the perfumer,—More costly than wisdom or honour, is a little folly.",
             "KJV": "Dead flies cause the ointment of the apothecary to send forth a stinking savour: so doth a little folly him that is in reputation for wisdom and honour.",
             "NABRE": "Dead flies corrupt and spoil the perfumer’s oil; more weighty than wisdom or wealth is a little folly!",
@@ -1870,7 +1873,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Even when fools walk along the road, they lack sense, and they show everyone that they are fools.",
+            "NRSV": "Even when fools walk on the road, they lack sense, and show to everyone that they are fools.",
             "Rotherham": "Yea, even by the way, as the foolish man walketh along, his sense faileth him—and he telleth everyone that, foolish, is he!",
             "KJV": "Yea also, when he that is a fool walketh by the way, his wisdom faileth him, and he saith to every one that he is a fool.",
             "NABRE": "Even when walking in the street the fool, lacking understanding, calls everyone a fool.",
@@ -1880,7 +1883,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "If the anger of the ruler rises against you, do not leave your post, for calmness will lay great offenses to rest.",
+            "NRSV": "If the anger of the ruler rises against you, do not leave your post, for calmness will undo great offenses.",
             "Rotherham": "If, the spirit of a ruler, riseth up against thee, thy place, do not leave, for gentleness, pacifieth such as have greatly erred.",
             "KJV": "If the spirit of the ruler rise up against thee, leave not thy place; for yielding pacifieth great offences.",
             "NABRE": "Should the anger of a ruler burst upon you, do not yield your place; for calmness abates great offenses.",
@@ -1890,7 +1893,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "There is an evil that I have seen under the sun, as it were an error proceeding from the ruler:",
+            "NRSV": "There is an evil that I have seen under the sun, as great an error as if it proceeded from the ruler:",
             "Rotherham": "Here was a misfortune I had seen under the sun,—a veritable mistake that was going forth from the presence of one who had power:",
             "KJV": "There is an evil which I have seen under the sun, as an error which proceedeth from the ruler:",
             "NABRE": "I have seen under the sun another evil, like a mistake that proceeds from a tyrant:",
@@ -1970,7 +1973,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "The beginning of their words is folly, and the end of their talk is wicked madness;",
+            "NRSV": "The words of their mouths begin in foolishness, and their talk ends in wicked madness;",
             "Rotherham": "The beginning of the words of his mouth, is folly,—but, the latter end of his speech, is mischievous madness.",
             "KJV": "The beginning of the words of his mouth is foolishness: and the end of his talk is mischievous madness.",
             "NABRE": "The beginning of their words is folly, and the end of their talk is utter madness;",
@@ -1980,7 +1983,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "yet fools talk on and on. No one knows what is to happen, and who can tell them what will be after them?",
+            "NRSV": "yet fools talk on and on. No one knows what is to happen, and who can tell anyone what the future holds?",
             "Rotherham": "Yet, a foolish man, multiplieth words,—[though] no man knoweth that which hath been, and, that which shall be after him, who can tell him?",
             "KJV": "A fool also is full of words: a man cannot tell what shall be; and what shall be after him, who can tell him?",
             "NABRE": "yet fools multiply words. No one knows what is to come, for who can tell anyone what will be?",
@@ -2000,7 +2003,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "Alas for you, O land, when your king is a lad, and your princes feast in the morning!",
+            "NRSV": "Alas for you, O land, when your king is a servant, and your princes feast in the morning!",
             "Rotherham": "Alas! for thee, O land, when thy king is a boy,—and, thy rulers, in the morning, do eat:",
             "KJV": "Woe to thee, O land, when thy king is a child, and thy princes eat in the morning!",
             "NABRE": "No One Knows What Evil Will Come Woe to you, O land, whose king is a youth, and whose princes feast in the morning!",
@@ -2010,7 +2013,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "Happy are you, O land, when your king is a nobleman, and your princes feast at the proper time—for strength, and not for drunkenness!",
+            "NRSV": "Happy are you, O land, when your king is a nobleman, and your princes feast at the proper time— for strength, and not for drunkenness!",
             "Rotherham": "How happy art thou, O land, when thy king is a son of nobles,—and, thy rulers, in season, do eat, for strength, and not for debauchery.",
             "KJV": "Blessed art thou, O land, when thy king is the son of nobles, and thy princes eat in due season, for strength, and not for drunkenness!",
             "NABRE": "Happy are you, O land, whose king is of noble birth, and whose princes dine at the right time— for vigor and not in drinking bouts.",
@@ -2030,7 +2033,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "Feasts are made for laughter; wine gladdens life, and money answers everything.",
+            "NRSV": "Feasts are made for laughter; wine gladdens life, and money meets every need.",
             "Rotherham": "Merrily people make bread, and, wine, gladdeneth life,—but, money, answereth all things.",
             "KJV": "A feast is made for laughter, and wine maketh merry: but money answereth all things.",
             "NABRE": "A feast is made for merriment and wine gives joy to the living, but money answers for everything.",
@@ -2085,7 +2088,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Whoever watches the wind will not sow; and whoever looks at the clouds will not reap.",
+            "NRSV": "Whoever observes the wind will not sow; and whoever regards the clouds will not reap.",
             "Rotherham": "He that observeth the wind, will not sow,—and, he that watcheth the clouds, will not reap.",
             "KJV": "He that observeth the wind shall not sow; and he that regardeth the clouds shall not reap.",
             "NABRE": "One who pays heed to the wind will never sow, and one who watches the clouds will never reap.",
@@ -2180,7 +2183,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "in the day when the keepers of the house tremble, and the strong men are bent, and the women who grind cease because they are few, and those who look through the windows see dimly;",
+            "NRSV": "in the day when the guards of the house tremble, and the strong men are bent, and the women who grind cease working because they are few, and those who look through the windows see dimly;",
             "Rotherham": "In the day when the keepers of the house shall tremble, and the men of might bow themselves,—and the grinders cease because they are few, and they who look through the windows are darkened;",
             "KJV": "In the day when the keepers of the house shall tremble, and the strong men shall bow themselves, and the grinders cease because they are few, and those that look out of the windows be darkened,",
             "NABRE": "When the guardians of the house tremble, and the strong men are bent; When the women who grind are idle because they are few, and those who look through the windows grow blind;",
@@ -2190,7 +2193,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "when the doors on the street are shut, and the sound of the grinding is low, and one rises up at the voice of a bird, and all the daughters of song are brought low;",
+            "NRSV": "when the doors on the street are shut, and the sound of the grinding is low, and one rises up at the sound of a bird, and all the daughters of song are brought low;",
             "Rotherham": "And the doors in the street be closed, when the sound of the mill become low,—and one rise at the chirp of a small bird, and low-voiced be all the daughters of song;",
             "KJV": "And the doors shall be shut in the streets, when the sound of the grinding is low, and he shall rise up at the voice of the bird, and all the daughters of musick shall be brought low;",
             "NABRE": "When the doors to the street are shut, and the sound of the mill is low; When one rises at the call of a bird, and all the daughters of song are quiet;",
@@ -2200,7 +2203,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "when one is afraid of heights, and terrors are in the road; the almond tree blossoms, the grasshopper drags itself along and desire fails; because all must go to their eternal home, and the mourners go about the streets;",
+            "NRSV": "when one is afraid of heights, and terrors are in the road; the almond tree blossoms, the grasshopper drags itself along and desire fails; because all must go to their eternal home, and the mourners will go about the streets;",
             "Rotherham": "Yea, at what is high, they be in fear, and there be, terrors, in the way, and the almond be rejected, and the grasshopper drag itself along, and desire perish,—for man is going to his age-abiding home, when the wailers shall go round in the streets;",
             "KJV": "Also when they shall be afraid of that which is high, and fears shall be in the way, and the almond tree shall flourish, and the grasshopper shall be a burden, and desire shall fail: because man goeth to his long home, and the mourners go about the streets:",
             "NABRE": "When one is afraid of heights, and perils in the street; When the almond tree blooms, and the locust grows sluggish and the caper berry is without effect, Because mortals go to their lasting home, and mourners go about the streets;",
@@ -2280,7 +2283,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "The end of the matter; all has been heard. Fear God, and keep his commandments; for this is the whole duty of everyone.",
+            "NRSV": "The end of the matter; all has been heard. Fear God, and keep his commandments; for that is the whole duty of everyone.",
             "Rotherham": "The conclusion of the matter—the whole, let us hear,—Towards God, be reverent, and, his commandments, observe, for, this, [concerneth] all mankind.",
             "KJV": "Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man.",
             "NABRE": "The last word, when all is heard: Fear God and keep his commandments, for this concerns all humankind;",

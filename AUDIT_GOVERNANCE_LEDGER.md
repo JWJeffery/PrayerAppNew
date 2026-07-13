@@ -1843,3 +1843,11 @@ KJV, Rotherham, DRB: all zero mismatches, zero chapter-count differences — no 
 **Proverbs is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
 
 **Next book in sequence: Ecclesiastes** (continuing to skip Psalms per the governance decision above).
+
+## Ecclesiastes remediation, session 2026-07-13 continued — fully closed; third instance of the chapter-boundary-shift defect class, shared across DRB and NABRE this time
+
+KJV, Rotherham: zero mismatches. DRB and NABRE both share the identical chapter-boundary shift at common Ecclesiastes 4/5 (both place common 5:1 as their own chapter 4's final verse), confirmed content-for-content against the app's own KJV column, same method established in the Job entry above. DRB's shift runs one chapter further than NABRE's (DRB doesn't resync until common 6/7; NABRE resyncs immediately at chapter 6) — confirmed as two genuinely independent shift lengths, not assumed identical just because the starting boundary matched. Rebuilt common ch.5 (20 verses) for both translations, plus common 6:12 and ch.7 (29 verses) for DRB only. One legitimate mid-chapter NABRE section subtitle was deliberately preserved rather than stripped, matching the established header-vs-subtitle stripping convention already visible elsewhere in the same chapter. NRSV: 45 of 222 verses corrected against NRSV-CI — confirmed NRSV itself has no chapter-count divergence in this book before assuming it shared the DRB/NABRE shift (checked directly, it doesn't); changes spread evenly, no contamination signature. One change (10:16) independently corroborated against five further sources given its apparent shift in sense, confirmed genuine NRSV wording.
+
+**Ecclesiastes is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard. Standing pattern now has three data points (Nehemiah, Job, Ecclesiastes) for chapter-boundary versification shifts — continue checking for this specifically whenever `audit_drb`'s chapter-count diff or a clustered `audit_nabre` mismatch run appears.
+
+**Next book in sequence: Song of Songs.**
