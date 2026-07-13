@@ -1835,3 +1835,11 @@ Also fixed: one ordinary NABRE stray-space instance (34:16), and one NABRE chapt
 ## Governance decision, 2026-07-13 — Psalms deferred to last
 
 Josh's explicit direction: Psalms is done **last**, not next after Job, overriding the app's own canonical book-order default (which places Psalms immediately after Job). Next book in sequence is now **Proverbs**. Whether "last" means last of the OT-directory phase or last of the entire remaining corpus (OT + ET/AR/SY/Odes + NT) is not yet resolved — doesn't affect the immediate next step, so not asked as a blocking question now; confirm scope with Josh when Psalms becomes the only book left rather than assuming either reading.
+
+## Proverbs remediation, session 2026-07-13 — fully closed, clean book
+
+KJV, Rotherham, DRB: all zero mismatches, zero chapter-count differences — no versification shifts or structural findings, unlike Job. NABRE: 6 verses fixed, all the established stray-space bug (the "Lord ’s" pattern, plus a trailing-space-before-closing-bracket variant at the two editorial-bracket verses 1:16 and 8:11). NRSV: 171 of 915 verses corrected against NRSV-CI, spread evenly across all 31 chapters. One change (17:2) independently corroborated against five further published NRSV sources before trusting, given how substantial the wording shift looked on a random spot-check — all five agreed exactly with NRSV-CI.
+
+**Proverbs is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
+
+**Next book in sequence: Ecclesiastes** (continuing to skip Psalms per the governance decision above).

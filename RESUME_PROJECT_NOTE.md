@@ -1144,3 +1144,17 @@ Independently cross-checked the whole reconstruction against a completely differ
 ## Governance decision, 2026-07-13 — Psalms deferred to last
 
 **Josh's explicit direction: Psalms will be done LAST, not next after Job.** The app's own canonical book order places Psalms immediately after Job (`Job, Psalms, Proverbs, Ecclesiastes, Song of Songs, Isaiah...`), but that ordering is superseded for sequencing purposes by this decision. With Psalms skipped, the next book in the existing order is **Proverbs**. This note doesn't resolve whether "last" means last of the whole OT-directory phase or last of the entire remediation effort (OT + ET/AR/SY/Odes + NT) — the practical effect is identical either way for the immediate next step (skip to Proverbs now), so this wasn't asked as a blocking question; it only matters much later, when everything else is otherwise done and Psalms is the only book left. Revisit and confirm scope with Josh at that point rather than assuming.
+
+## Session, 2026-07-13 continued — Proverbs: fully closed, clean book, no structural surprises
+
+**HANDOFF — Proverbs is now fully closed. Not yet committed to origin/main** — same no-push-credentials situation as Job; handed off as a patch for `git am`.
+
+**KJV, Rotherham, DRB:** all zero mismatches, zero chapter-count differences — the cleanest book so far in this remediation effort, no versification shifts or structural findings of any kind.
+
+**NABRE:** FIXED — 6 verses, all the familiar stray-space bug (the "Lord ’s" pattern at 5:21, 10:22, 21:31, 22:14, plus a trailing-space-before-closing-bracket variant at the two editorial-bracket verses 1:16 and 8:11).
+
+**NRSV:** FIXED — 171 of 915 verses corrected against NRSV-CI, spread evenly across all 31 chapters (no contamination-range signature). One change (17:2, "clever servant"/"a son" → "a slave who deals wisely"/"a child") looked substantial enough on a random spot-check to warrant independent corroboration before trusting — confirmed via five further independent NRSV sources (Spark Bible, YouVersion, Bible Society UK, Bible History NRSVCE, CourseBible NRSVCE), all in exact agreement with NRSV-CI's text. The app's prior wording was an older paraphrase, not the genuine 1989 NRSV.
+
+**Proverbs is now fully clean across all five applicable translations — zero known open defects.** Mark Proverbs green on the dashboard.
+
+**Next book in sequence: Ecclesiastes** (per the app's own canonical order, continuing to skip Psalms per the governance decision above). No open decisions carried forward.
