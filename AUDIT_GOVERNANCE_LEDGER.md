@@ -1923,3 +1923,21 @@ DRB filenames: Obadiah is abdias.usfm, Jonah is jonas.usfm. Obadiah: KJV/Rotherh
 **4 Maccabees is fully clean — zero known open defects, no content fix needed anywhere in the book.** `audit-ledger.html` updated in this commit: `4 Maccabees` added to `GREEN_SEED`, `GREEN_NOTES` entry added, `SEED_VERSION` bumped to `v107-2026-07-14-4-maccabees-closed`. Script block re-validated with `node --check` before committing.
 
 **Still open:** 3 Maccabees (same NRSV-sourcing method now proven, just needs the text — not yet supplied), and 1 Enoch (real work, separately scoped — see `RESUME_PROJECT_NOTE.md`'s "1 Enoch remediation" progress note; source identified as Project Gutenberg #77935, confirmed identical translation to the original sacred-texts.com collation, chapters I-LIII of CVIII fetched and saved but not yet compared).
+
+## 3 Maccabees remediation, session 2026-07-14 — closed, two real stray-space fixes
+
+Same sourcing method as 4 Maccabees (see that entry above for the full investigation): genuine 1989 NRSVA text pasted directly by Josh from Bible Gateway, since NRSV-CI doesn't cover this book and every automated-fetch alternative tried was either bot-blocked (sacred-texts.com, Bible Society UK) or mislabeled 2021 NRSVUE text (coursebible.com's own "NRSV" tab, caught and rejected before use).
+
+**Method:** same whole-book normalized diff as 4 Maccabees (British→American spelling conversion, verse-number and section-header stripping, whitespace collation). App text: 40,688 characters. Source: 40,686 characters. Similarity 0.99998 — exactly 2 real differences, not a boundary artifact this time (checked directly against the underlying verses before trusting the near-zero diff).
+
+**Both real, both the same already-established bug class — stray space before an em-dash** (already confirmed in Song of Songs 1:5, Job 34:16, 2 Maccabees 8:11 earlier in this project):
+- **5:49**: "arms\u00A0—parents" → "arms—parents"
+- **6:9**: "Israel\u00A0—who" → "Israel—who"
+
+Both fixed via direct, individually-verified substitution. `git diff --stat`: exactly 2 lines changed in `data/bible/OT/3maccabees.json`, nothing else touched, trailing newline preserved, valid JSON confirmed.
+
+**Process note, worth being honest about:** while updating the dashboard for this book, a `str_replace` targeting the `const GREEN_NOTES = {` object-opener line accidentally deleted that declaration line itself (the replacement text didn't include it back). Caught immediately by the standing `node --check` step on the extracted script block before committing — exactly the kind of error that check exists to catch. Fixed before anything shipped.
+
+**3 Maccabees is now fully clean — zero known open defects.** `audit-ledger.html` updated in this commit: `3 Maccabees` added to `GREEN_SEED`, `GREEN_NOTES` entry added, `SEED_VERSION` bumped to `v108-2026-07-14-3-maccabees-closed`.
+
+**This closes out the 3/4 Maccabees sourcing investigation entirely.** Both books needed the same real fix: finding a genuine 1989 NRSV source outside NRSV-CI's coverage, since neither book exists in that bound source. The only OT items still open are 1 Enoch (real work in progress, see `RESUME_PROJECT_NOTE.md`) and Psalms (deliberately deferred to last per Josh's standing decision).

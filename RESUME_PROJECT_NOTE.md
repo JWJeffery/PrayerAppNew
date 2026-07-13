@@ -1667,3 +1667,11 @@ very end. The three Ethiopian Clement texts remain correctly red.
 2. **1 Enoch** — real, separately-scoped work. Source confirmed: Project Gutenberg #77935 (`gutenberg.org/ebooks/77935.txt.utf-8`), verified word-for-word identical translation to the sacred-texts.com source Lucy's now-void 2026-07-04 certification cited — but sacred-texts.com itself blocks automated fetching, so Gutenberg is the better source going forward. Chapters I–LIII of CVIII (108 total) already fetched and saved to a progress note (not yet in the repo — sandbox-local). 1,048 verses, needs full verse-by-verse comparison once the rest of the text is pulled. This is a genuinely large single-book task, not something to rush alongside other work.
 
 **Next book candidates once those two are done:** Psalms (deferred to the very end per Josh's standing decision) is the only remaining OT book after 1 Enoch/3 Maccabees close out. After that, this remediation effort moves to the NT / ET-AR-SY / Odes phase per the original governance sequence.
+
+## Session, 2026-07-14 continued — 3 Maccabees: closed, two real fixes
+
+**HANDOFF — 3 Maccabees is now fully closed.** Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "3 Maccabees remediation" entry.
+
+Same sourcing method just proven on 4 Maccabees (Josh pasting genuine 1989 NRSVA text directly from Bible Gateway). Whole-book normalized diff found exactly 2 real differences this time, not a boundary artifact — both the established stray-space-before-em-dash bug (5:49, 6:9), fixed and verified. Dashboard updated in the same commit.
+
+**This closes out 3/4 Maccabees entirely.** Remaining OT work: 1 Enoch (in progress, real remaining task — see the 2026-07-13/14 progress note above) and Psalms (deferred to the very end). Once those two close, this remediation effort moves to NT / ET-AR-SY / Odes per the original governance sequence.
