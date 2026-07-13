@@ -1467,3 +1467,52 @@ carry the Ezekiel entry now, not just this log.
 not yet in `GREEN_SEED` and untouched by this remediation effort, alongside now-closed Ezekiel).
 Psalms remains deferred to the very end per Josh's standing decision. The three Ethiopian texts
 (1/3/7 Clement (ET)) remain correctly red — unrelated open provenance question, unchanged.
+
+## Session, 2026-07-13 continued — Daniel (plain/protocanonical): fully closed, one major DRB versification bug found and fixed
+
+**HANDOFF — Daniel (the plain protocanonical book, daniel.json) is now fully closed. Dashboard
+updated in this same commit.** This covers only daniel.json (12 chapters); the Greek additions
+(danielGK.json — Prayer of Azariah/Song of the Three, Susanna, Bel and the Dragon) are a
+separate dashboard entry ("Daniel (Greek)") with extensive existing governance infrastructure
+of its own (`data/bible/registry/greek-daniel-*.json`, ~10 files) — deliberately left untouched
+this session, not assumed closed by this note.
+
+**KJV, Rotherham:** zero mismatches.
+
+**DRB — MAJOR FINDING, the most structurally involved versification issue found so far in this
+project.** The Vulgate/DRB source embeds the Greek additions directly inside its own chapter 3
+(100 verses vs. common 30 — the Prayer of Azariah and Song of the Three Young Men sit at DRB's
+own 3:24-90) and then folds common chapter 4's first three verses into the tail of that same
+chapter (DRB's own 3:98-100 = common 4:1-3). From there, DRB's own chapter 4 runs a constant 3
+verses behind common numbering for its entire 34-verse length (DRB's own 4:1-34 = common
+4:4-37). An earlier population pass had copied DRB's own same-numbered verses straight into the
+common-numbered grid with no offset correction: common chapter 3 verses 24-30 held the opening
+of Azariah's prayer instead of the genuine narrative continuation (Nebuchadnezzar's astonishment
+at the fourth figure in the furnace), and all 37 verses of chapter 4 were shifted, with common
+4:1-3 entirely missing and common 4:35-37 blank. Rebuilt both: chapter 3:24-30 restored from
+DRB's own 91-97; chapter 4 fully remapped (common 1-3 = DRB's own ch.3 98-100, common 4-37 =
+DRB's own ch.4 1-34). Every mapping point was individually verified content-for-content against
+KJV both before identifying the bug and after fixing it, not inferred from verse-count
+arithmetic alone. Chapters 13 (Susanna) and 14 (Bel and the Dragon) are correctly absent from
+this file — confirmed against the pre-existing
+`greek-daniel-drb-addition-source-address-policy.json`, which deliberately places that material
+in danielGK.json under DRB's own source addressing rather than forcing it into this file's grid.
+
+**NABRE:** FIXED — 4 verses (5:25-28), a new sub-variant of the established caps-convention bug:
+MENE, TEKEL, and PERES (the handwriting-on-the-wall words) should be rendered all-caps per
+source, the same convention already established for LORD/GOD elsewhere in this project.
+
+**NRSV:** FIXED — 110 of 357 verses corrected against NRSV-CI, zero chapter-count divergence,
+changes spread proportionally across all 12 chapters (screened for a Jeremiah-11-style
+displacement signature before bulk-applying — none found).
+
+**Daniel (plain/protocanonical) is now fully clean across all five applicable translations —
+zero known open defects.** `audit-ledger.html` updated in this same commit.
+
+**Next book in sequence:** confirm with Josh — "Daniel (Greek)" is the natural next candidate
+given its adjacency and existing tooling, but it's a substantially larger undertaking than an
+ordinary book (three distinct addition texts, DRB/KJV/NABRE address-mapping already partially
+solved in the registry, NRSV baseline work flagged as gated in
+`greek-daniel-nrsv-internal-baseline-gate.json`) and deserves a scoping conversation rather than
+being assumed as a same-shape continuation of this session's pace. Lamentations is also not yet
+green and untouched. Psalms remains deferred to the very end.
