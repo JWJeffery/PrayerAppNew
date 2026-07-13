@@ -1228,3 +1228,17 @@ Josh's direction, made for practical context-budget reasons partway through this
 **Hosea is now fully clean across all five applicable translations — zero known open defects.** Mark Hosea green on the dashboard. Sixth data point overall for the chapter-boundary-shift defect class (Nehemiah, Job, Ecclesiastes, Song of Songs ×2, Isaiah-none, Hosea ×2) — worth noting Isaiah broke the streak of every recent book having at least one, so this isn't universal, but common enough to keep checking for by default.
 
 **Next book in sequence: Joel** (continuing through the minor prophets in the app's own canonical order: Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi). Jeremiah remains deferred and red, unchanged from the prior session's decision.
+
+## Session, 2026-07-13 continued — Joel: fully closed, clean book, no structural surprises
+
+**HANDOFF — Joel is now fully closed. Not yet committed to origin/main** — handed off as a patch. DRB source uses standard naming (`joel.usfm`, not a Vulgate alternate) this time.
+
+**KJV, Rotherham, DRB:** all zero mismatches, zero chapter-count differences — no chapter-boundary shift, no structural findings, the second clean-on-that-front book after Isaiah.
+
+**NABRE:** FIXED — 1 verse (2:12), the familiar LORD-casing-plus-stray-space bug.
+
+**NRSV:** FIXED — 11 of 73 verses corrected against NRSV-CI, zero chapter-count divergence, ordinary wording differences throughout, nothing needed independent corroboration.
+
+**Joel is now fully clean across all five applicable translations — zero known open defects.** Mark Joel green on the dashboard.
+
+**Next book in sequence: Amos.** Jeremiah remains deferred and red, unchanged.

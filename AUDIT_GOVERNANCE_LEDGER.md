@@ -1887,3 +1887,11 @@ NRSV: 40 of 197 verses corrected against NRSV-CI, zero chapter-count divergence 
 **Hosea is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard. Isaiah broke the streak of consecutive books needing a chapter-boundary-shift fix; Hosea shows the pattern resuming — not universal, but common enough to keep checking by default every book.
 
 **Next book in sequence: Joel.**
+
+## Joel remediation, session 2026-07-13 continued — fully closed, clean book
+
+KJV, Rotherham, DRB: zero mismatches, zero chapter-count diffs -- second clean-on-that-front minor prophet after Isaiah, no chapter-boundary shift. DRB source uses standard naming (joel.usfm). NABRE: 1 verse fixed (2:12), the established LORD-casing/stray-space bug. NRSV: 11 of 73 verses corrected against NRSV-CI, zero chapter-count divergence, ordinary wording differences.
+
+**Joel is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
+
+**Next book in sequence: Amos.**
