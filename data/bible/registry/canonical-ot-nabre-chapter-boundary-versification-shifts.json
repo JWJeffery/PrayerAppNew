@@ -1,0 +1,26 @@
+{
+  "schema": "canonical-ot-nabre-chapter-boundary-versification-shifts-v1",
+  "id": "canonical_ot_nabre_chapter_boundary_versification_shifts_2026_07_13",
+  "status": "resolved_by_corrected_source_mapping",
+  "recordedAt": "2026-07-13T03:30:00Z",
+  "scope": "canonical_ot_nonpsalms_38_books_text_NABRE_active_rows",
+  "purpose": "Records confirmed cases where NABRE's own official chapter/verse boundaries diverge from the common numbering this app's shared active grid uses (the numbering shared by KJV/KJVA, Rotherham, NRSV, and -- in every book checked so far -- DRB). This is NOT the same phenomenon as the DRB shape-blockers registry (canonical-ot-drb-active-row-source-shape-blockers.json), which records genuine content gaps where no active-grid address exists for real source material. This registry instead records cases where NABRE's raw source content was originally mapped into the wrong active-grid address (a content-quality defect) or could be mistaken for one during a future audit, because the tool-level per-address diff cannot see a whole-passage boundary shift.",
+  "traditionNote": "Versification differences in this corpus are translation-specific, not tradition-wide. DRB and NABRE are both Catholic translations but do not necessarily share the same chapter/verse boundaries as each other -- confirmed directly in the case below, where DRB already matches the common/shared-grid numbering for this book while NABRE alone diverges. Do not assume a versification difference found in one Catholic (or Orthodox, or Protestant) translation applies to any other translation in the same tradition family; each translation's own boundaries must be independently confirmed against its own official host before any remapping.",
+  "confirmedCases": [
+    {
+      "book": "Nehemiah",
+      "activeFile": "nehemiah.json",
+      "commonNumberingRange": "4:1-4:23",
+      "nabreOwnNumbering": "3:33-3:38 (= common 4:1-6), then 4:1-4:17 (= common 4:7-4:23, constant +6 offset)",
+      "verifiedAgainst": "bible.usccb.org (official NABRE host), fetched live 2026-07-13",
+      "priorState": "Active grid held NABRE's raw chapter-4 verse-N content directly at common address 4:N with no offset correction -- wrong content at 4:1-14, duplicate padding (a second copy of 4:9-14's content) at 4:15-20.",
+      "resolution": "Rebuilt all 23 verses of common chapter 4 from source with the corrected mapping (common 1-6 = NABRE's own 3:33-38; common 7-23 = NABRE's own 4:1-17). Fits the existing 23-verse schema allocation exactly (6+17=23) -- no schema change was needed. Re-stripped the 'Chapter 4 - ' header at its true position (common address 7, not 1).",
+      "expectedToolArtifact": "scripts/bible-audit/audit_book.py's audit_nabre(), which compares app[chapter,verse] against the raw nabre.json source at the SAME chapter/verse address, will permanently report 17 'mismatches' at Nehemiah 4:1-4:17 after this fix -- it is comparing the app's now-correctly-shifted content against NABRE's own same-numbered but differently-scoped source addresses. This is expected and correct, NOT a regression or an unresolved defect. Do not re-apply the old (wrong) zero-offset mapping to make the tool's count go to zero."
+    }
+  ],
+  "mutationPolicy": {
+    "activeTextMutationAuthorized": true,
+    "condition": "Only after the divergent numbering is independently confirmed against the translation's own official host (not inferred from tool output alone), and only when the correct mapping is fully representable within the active grid's existing verse-count allocation for the affected common-numbering range."
+  },
+  "standingInstruction": "Before treating any future NABRE content oddity (content at consecutive addresses reading like two spliced-together scenes, or a chapter's raw verse count not matching how many common-numbering verses it should span) as a stray-space or over-stripping bug, check whether it's actually this class of issue -- see scripts/bible-audit/README.md's known-bug-classes list, item 6."
+}
