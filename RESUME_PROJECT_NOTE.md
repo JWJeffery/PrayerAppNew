@@ -1270,3 +1270,42 @@ Josh's direction, made for practical context-budget reasons partway through this
 **Both books now fully clean across all five applicable translations — zero known open defects.** Mark both green on the dashboard.
 
 **Next book in sequence: Micah.** Jeremiah remains deferred and red, unchanged.
+
+## Standing rule, added 2026-07-13 — always give exact terminal commands with a handoff
+
+**Josh's rule, restated because it was missed once:** every patch handoff must include the
+exact terminal commands to apply, commit, and push, in order — not just the patch file. Josh
+does not want a prose walkthrough; he wants a copy-pasteable command block. If `git am` fails
+partway, remind him the standard fix is `rm -rf .git/rebase-apply` then `git status` to confirm
+clean before retrying. This applies to every future handoff without exception.
+
+## Session, 2026-07-13 continued — Micah: fully closed
+
+**HANDOFF — Micah is now fully closed. Not yet committed to origin/main** — handed off as a
+patch, commands included this time. DRB source uses standard naming (`micheas.usfm`).
+
+**KJV, Rotherham:** zero mismatches.
+
+**DRB:** zero mismatches. One pre-existing catalogued gap at 5:15 (see
+`canonical-ot-drb-active-row-source-shape-blockers.json`) — confirmed genuinely absent in this
+DRB edition, not a new defect: DRB's own v13/v14 already carry the content common numbering
+splits into v14/v15 (confirmed against KJV wording), so there's simply no separate DRB verse
+for common 5:15. Correctly represented as a null in the app already.
+
+**NABRE:** FIXED — 5 verses (4:1, 4:2, 4:6, 5:9, 6:2), the established LORD-casing-plus-stray-
+space bug.
+
+**NRSV:** FIXED — 31 of 105 verses corrected against NRSV-CI, zero chapter-count divergence,
+ordinary wording differences throughout.
+
+**Micah is now fully clean across all five applicable translations — zero known open defects.**
+Mark Micah green on the dashboard.
+
+**Also corrected this session:** `SESSION_START_SCRIPT.md`'s "where things stand" section was
+stale (said Job was next; actual state per this log was Micah) — needs a refresh pass. Same
+file's claim that NRSV-CI.zip/nabre.json are sandbox-only and won't persist is also outdated —
+both are committed in this repo at `data/kalendar/source-witnesses/` (commit `b9ba9d5`) and
+usable directly from a fresh clone.
+
+**Next book in sequence: Nahum.** Jeremiah remains deferred and red, unchanged. Pace note: Josh
+has asked to batch more books per session going forward rather than one at a time.
