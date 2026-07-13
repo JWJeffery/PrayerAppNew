@@ -14,7 +14,7 @@
           "text": {
             "KJV": "A copy of an epistle, which Jeremy sent unto them which were to be led captives into Babylon by the king of the Babylonians, to certify them, as it was commanded him of God.",
             "NABRE": "A copy of the letter which Jeremiah sent to those led captive to Babylon by the king of the Babylonians, to tell them what God had commanded him: For the sins you committed before God, you are being led captive to Babylon by Nebuchadnezzar, king of the Babylonians.",
-            "NRSV": "6",
+            "NRSV": "A copy of a letter that Jeremiah sent to those who were to be taken to Babylon as exiles by the king of the Babylonians, to give them the message that God had commanded him.",
             "DRB": "For the sins that you have sinned before God, you shall be led away captive into Babylon by Nabuchodonosor the king of Babylon."
           }
         },
@@ -23,7 +23,7 @@
           "text": {
             "KJV": "Because of the sins which ye have committed before God, ye shall be led away captives into Babylon by Nabuchodonosor king of the Babylonians.",
             "NABRE": "When you reach Babylon you will be there many years, a long time—seven generations; after that I will bring you back from there in peace.",
-            "NRSV": "The People Face a Long Captivity Because of the sins that you have committed before God, you will be taken to Babylon as exiles by Nebuchadnezzar, king of the Babylonians.",
+            "NRSV": "Because of the sins that you have committed before God, you will be taken to Babylon as exiles by Nebuchadnezzar, king of the Babylonians.",
             "DRB": "Being entered therefore into Babylon, you shall be there many years, and long times even unto seven generations: and after this I will bring you forth from thence with peace."
           }
         },
@@ -32,7 +32,7 @@
           "text": {
             "KJV": "So when ye be come unto Babylon, ye shall remain there many years, and for a long season, namely, seven generations: and after that I will bring you away peaceably from thence.",
             "NABRE": "And now in Babylon you will see gods of silver and gold and wood, carried shoulder high, to cast fear upon the nations.",
-            "NRSV": "Therefore, when you have come to Babylon you will remain there for many years, for a long time, up to seven generations; after that I will bring you away from there in peace.",
+            "NRSV": "Therefore when you have come to Babylon you will remain there for many years, for a long time, up to seven generations; after that I will bring you away from there in peace.",
             "DRB": "But now you shall see in Babylon gods of gold, and of silver, and of stone, and of wood to be carried upon shoulders, shewing fear to the Gentiles."
           }
         },
@@ -59,7 +59,7 @@
           "text": {
             "KJV": "But say ye in your hearts, O Lord, we must worship thee.",
             "NABRE": "For my angel is with you, and he will keep watch on you.",
-            "NRSV": "when you see the multitude before and behind them worshipping them. But say in your heart, ‘It is you, O Lord, whom we must worship.’",
+            "NRSV": "when you see the multitude before and behind them worshiping them. But say in your heart, It is you, O Lord, whom we must worship.",
             "DRB": "For mine Angel is with you: and myself will ask account of your souls."
           }
         },
@@ -77,7 +77,7 @@
           "text": {
             "KJV": "As for their tongue, it is polished by the workman, and they themselves are gilded and laid over with silver; yet are they but false, and cannot speak.",
             "NABRE": "People bring gold, as though for a girl fond of dressing up,",
-            "NRSV": "The Helplessness of Idols Their tongues are smoothed by the carpenter, and they themselves are overlaid with gold and silver; but they are false and cannot speak.",
+            "NRSV": "Their tongues are smoothed by the carpenter, and they themselves are overlaid with gold and silver; but they are false and cannot speak.",
             "DRB": "And as to a virgin that loveth ornaments: so taking gold their gods are forged."
           }
         },
@@ -104,7 +104,7 @@
           "text": {
             "KJV": "Yea, they will give thereof to the common harlots, and deck them as men with garments, being gods of silver, and gods of gold, and wood.",
             "NABRE": "Though they are wrapped in purple clothing, they are not safe from rust and corrosion.",
-            "NRSV": "or even give some of it to the prostitutes on the terrace. They deck their gods out with garments like human beings—these gods of silver and gold and wood",
+            "NRSV": "or even give some of it to the prostitutes on the terrace. They deck their gods out with garments like human beings--these gods of silver and gold and wood",
             "DRB": "But these are not delivered from the rust, and the moth."
           }
         },
@@ -132,7 +132,7 @@
             "DRB": "He hath also in his hand a sword, and an axe, but himself he delivereth not from the sword, and from robbers, whereby be it known to you that they are not gods.",
             "NABRE": "Each has in its right hand an ax or dagger, but it cannot save itself from war or pillage. Thus it is known they are not gods; do not fear them.",
             "KJV": "And he that cannot put to death one that offendeth him holdeth a sceptre, as though he were a judge of the country.",
-            "NRSV": "One of them holds a sceptre, like a district judge, but is unable to destroy anyone who offends it."
+            "NRSV": "One of them holds a scepter, like a district judge, but is unable to destroy anyone who offends it."
           }
         },
         {
@@ -140,7 +140,7 @@
           "text": {
             "KJV": "He hath also in his right hand a dagger and an axe: but cannot deliver himself from war and thieves.",
             "NABRE": "As useless as a broken pot",
-            "NRSV": "Another has a dagger in its right hand, and an axe, but cannot defend itself from war and robbers.",
+            "NRSV": "Another has a dagger in its right hand, and an ax, but cannot defend itself from war and robbers.",
             "DRB": "Therefore fear them not. For as a man's vessel being broken is made unprofitable: such also are their gods:"
           }
         },
@@ -366,7 +366,7 @@
             "DRB": "Moreover the Chaldees themselves not honoring them: who when they hear that the dumb cannot speak, they offer it to Bel, requesting of him, that it may speak.",
             "NABRE": "Even the Chaldeans themselves have no respect for them; for when they see a deaf mute, unable to speak, they bring forward Bel and expect him to make a sound, as though he could hear.",
             "KJV": "How should a man then think and say that they are gods, when even the Chaldeans themselves dishonour them?",
-            "NRSV": "Why then must anyone think that they are gods, or call them gods? The Foolishness of Worshipping Idols Besides, even the Chaldeans themselves dishonour them; for when they see someone who cannot speak, they bring Bel and pray that the mute may speak, as though Bel were able to understand!"
+            "NRSV": "Why then must anyone think that they are gods, or call them gods? Besides, even the Chaldeans themselves dishonor them; for when they see someone who cannot speak, they bring Bel and pray that the mute may speak, as though Bel were able to understand!"
           }
         },
         {
@@ -456,7 +456,7 @@
             "DRB": "For seeing they be of wood, & laid over with gold, and with silver, it shall be known afterwards that they are false things, of all the Gentiles, and kings: Which are manifest that they are no gods, but the works of men's hands, and no work of God is with them.",
             "NABRE": "Beings that are wooden, gilded and silvered, they will later be known for frauds. To all nations and kings it will be clear that they are not gods, but human handiwork; and that God’s work is not in them.",
             "KJV": "For seeing they be but of wood, and overlaid with silver and gold, it shall be known hereafter that they are false:",
-            "NRSV": "Since they are made of wood and overlaid with gold and silver, it will afterwards be known that they are false."
+            "NRSV": "Since they are made of wood and overlaid with gold and silver, it will afterward be known that they are false."
           }
         },
         {

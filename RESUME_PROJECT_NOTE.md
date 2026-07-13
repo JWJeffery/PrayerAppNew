@@ -1592,3 +1592,66 @@ going stale.
 
 **Next book in sequence:** confirm with Josh. Lamentations is not yet green and untouched.
 Psalms remains deferred to the very end. The three Ethiopian Clement texts remain correctly red.
+
+## Session, 2026-07-13 continued — Lamentations, Letter of Jeremiah, Prayer of Manasseh, 1 Esdras, 2 Esdras: all five fully closed in one batch
+
+**HANDOFF — all five books fully closed in a single batch, per Josh's request to bundle for
+efficiency.** Dashboard updated in this same commit.
+
+**Lamentations:** KJV, Rotherham, DRB zero mismatches, zero chapter-count differences. NABRE
+FIXED (6 verses, established LORD-casing bug). NRSV FIXED (30 of 154 verses, zero chapter-count
+divergence).
+
+**Letter of Jeremiah** (73 verses, single chapter; maps to KJVA's/DRB's Baruch chapter 6 —
+Rotherham doesn't cover the Apocrypha): KJV, DRB zero mismatches (DRB genuinely one verse
+shorter, a minor Vulgate-vs-KJV versification difference, not a defect). NABRE genuinely clean.
+NRSV FIXED — 10 of 73 verses, including a bare-placeholder-string bug at 1:1 (literal "6") and
+section-header pollution at 2:1/8:1, the same two bug shapes already established in
+Tobit/Judith/Maccabees.
+
+**Prayer of Manasseh** (15 verses, single chapter; no NABRE lane, Rotherham doesn't cover the
+Apocrypha): KJV's own KJVA source is one unbroken paragraph — confirmed the app's 15-verse split
+reproduces it character-for-character when concatenated, not a defect. DRB zero mismatches.
+NRSV FIXED (5 of 15 verses).
+
+**1 Esdras** (9 chapters; no NABRE lane, Rotherham doesn't cover the Apocrypha) — **MAJOR
+FINDING:** chapter 8 was missing an entire verse-object at 8:60 (the address didn't exist at
+all, grid ran 1-59 then 61-97) — confirmed real KJV/NRSV content exists there, confirmed via
+direct grep that the DRB source itself (3-esdras.usfm) genuinely has no `\v 60` marker in its
+own chapter 8 (not an app defect) — inserted the missing verse with KJV+NRSV content, DRB left
+null. KJV zero mismatches after that fix. DRB zero mismatches. NRSV FIXED — 209 verses,
+including two real content-substitution bugs caught by a low-word-overlap screen before
+bulk-applying: 1:32 held a duplicate of 1:31's ending instead of the mourning-for-Josiah
+passage, and 4:33 held a duplicate of an earlier "wine" verse instead of the narrative
+transition into the truth speech.
+
+**2 Esdras** (16 chapters; no NABRE lane, Rotherham doesn't cover the Apocrypha) — same
+missing-verse-object shape as 1 Esdras, six instances this time (4:14, 10:1, 11:30, 12:16,
+14:48, 15:56), all confirmed via KJVA and confirmed genuinely absent from the DRB source
+(4-esdras.usfm) too; all six inserted with KJV+NRSV content, DRB left null. **Chapter 7 needed
+careful, separate handling**: this book's well-known "lost fragment" (~70 verses of Ezra's
+dialogue with the angel, omitted from historic editions, rediscovered in the 19th century) means
+KJV/DRB use the old 70-verse chapter numbering while modern sources use 140 verses with the
+fragment inserted after old v35. A pre-existing project registry
+(`broader-canon-esdras-nrsva-source-repair-2026-07-03.json`) confirmed this book's NRSV lane was
+already, deliberately populated using the source's modern numbering directly at addresses 1-70
+— meaning KJV and NRSV intentionally hold different underlying passages at the same nominal
+address for 7:36-70. This is a disclosed, governed design choice from a prior session, not
+something to realign; audited/fixed NRSV on that same direct-address basis throughout, including
+chapter 7. NRSV FIXED — 445 verses, the largest single-book NRSV batch in the Apocrypha portion
+of this project so far.
+
+**Standing lesson from this batch, worth carrying forward:** when a NABRE- or Rotherham-lane
+audit function errors out or returns no data for a book, check whether that translation
+genuinely doesn't cover this book (Rotherham never covers the Apocrypha; NABRE's canon excludes
+1/2 Esdras and Prayer of Manasseh) before assuming a bug — several books this batch had fewer
+than five applicable translations for entirely legitimate reasons.
+
+**All five books are now fully clean across every applicable translation — zero known open
+defects.** `audit-ledger.html` updated in this same commit.
+
+**Next candidates in the OT canonical order not yet green:** 3 Maccabees, 4 Maccabees (both
+NRSV-only lanes per this app's existing schema), and 1 Enoch (already has its own separate
+2026-07-04 trust/finalization record — worth checking whether it can simply be flipped green
+from that existing record rather than re-audited from scratch). Psalms remains deferred to the
+very end. The three Ethiopian Clement texts remain correctly red.
