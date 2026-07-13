@@ -1410,3 +1410,23 @@ defects.** Mark Jeremiah green on the dashboard, superseding the old red-flag no
 **This closes out the last deferred/red book in the corpus.** Confirm with Josh what comes next
 in the app's canonical order (Ezekiel and Daniel are not yet in the green-seed list and haven't
 been touched by this remediation effort as far as this log shows) rather than assuming.
+
+## Correction, 2026-07-13 continued — dashboard was never actually updated for 8 books this session
+
+**Process gap Josh caught, worth carrying forward:** every "mark X green on the dashboard" line
+in this session's log entries (Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi,
+Jeremiah) was just a note in this file — `audit-ledger.html`'s actual `RED_SEED`/`GREEN_SEED`/
+`RED_NOTES`/`GREEN_NOTES` JS objects were never touched, so the dashboard kept showing Jeremiah
+red and the other seven books amber (never added to `GREEN_SEED` at all) despite the real work
+being done and logged here. Fixed now: all eight moved into `GREEN_SEED`, Jeremiah removed from
+`RED_SEED` and its stale `RED_NOTES` entry deleted, and a `GREEN_NOTES` entry written for each of
+the eight summarizing the findings already detailed above in this log. Verified the embedded
+script still parses (`node -e` syntax check) after the edit.
+
+**Standing rule going forward: closing a book means editing `audit-ledger.html` directly in the
+same commit as the content fix, not just writing "mark green" in this log.** The prose note here
+is documentation for whoever reads this file next session; it was never a substitute for
+updating the actual dashboard data. Confirmed the three Ethiopian texts (1/3/7 Clement (ET))
+remain correctly red — unrelated open provenance question, unchanged by anything this session.
+
+**Next book in sequence: Ezekiel.**
