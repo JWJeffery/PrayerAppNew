@@ -32,7 +32,7 @@
             "Rotherham": "The Song of Songs, which pertaineth to Solomon.",
             "KJV": "The song of songs, which is Solomon’s.",
             "NABRE": "The Song of Songs, which is Solomon’s.",
-            "DRB": "Let him kiss me with the kiss of his mouth: because thy breasts are better than wine."
+            "DRB": null
           }
         },
         {
@@ -42,7 +42,7 @@
             "Rotherham": "[SHE] Let him kiss me with the kisses of his mouth! [THEY] For better are thy caresses than wine:",
             "KJV": "Let him kiss me with the kisses of his mouth: for thy love is better than wine.",
             "NABRE": "The Woman Speaks of Her Lover W Let him kiss me with kisses of his mouth, for your love is better than wine,",
-            "DRB": "smelling fragrantly of the best ointments. Oil poured out is thy name: therefore have young maids loved thee."
+            "DRB": "Let him kiss me with the kiss of his mouth: because thy breasts are better than wine."
           }
         },
         {
@@ -52,7 +52,7 @@
             "Rotherham": "Like the fragrance of thy precious oils, Oil poured out, is thy name, For this cause, virgins love thee.",
             "KJV": "Because of the savour of thy good ointments thy name is as ointment poured forth, therefore do the virgins love thee.",
             "NABRE": "better than the fragrance of your perfumes. Your name is a flowing perfume— therefore young women love you.",
-            "DRB": "Draw me: we will run after thee in the odour of thine ointments. The king hath brought me into his cellars: we will rejoice & be glad in thee, mindful of thy breasts above wine: the righteous love thee."
+            "DRB": "smelling fragrantly of the best ointments. Oil poured out is thy name: therefore have young maids loved thee."
           }
         },
         {
@@ -62,7 +62,7 @@
             "Rotherham": "[SHE] Draw me! [THEY] After thee, will we run! [SHE] The king, hath brought me, into his chambers. [THEY] We will exult and rejoice in thee, we will mention thy caresses, beyond wine, Sincerely they love thee.",
             "KJV": "Draw me, we will run after thee: the king hath brought me into his chambers: we will be glad and rejoice in thee, we will remember thy love more than wine: the upright love thee.",
             "NABRE": "Draw me after you! Let us run! The king has brought me to his bed chambers. Let us exult and rejoice in you; let us celebrate your love: it is beyond wine! Rightly do they love you!",
-            "DRB": "I am black but beautiful, o ye daughters of Jerusalem, as the tabernacles of Cedar, as the skins of Salomon."
+            "DRB": "Draw me: we will run after thee in the odour of thine ointments. The king hath brought me into his cellars: we will rejoice & be glad in thee, mindful of thy breasts above wine: the righteous love thee."
           }
         },
         {
@@ -71,8 +71,8 @@
             "NRSV": "I am black and beautiful, O daughters of Jerusalem, like the tents of Kedar, like the curtains of Solomon.",
             "Rotherham": "[SHE] Swarthy, I am but comely, ye daughters of Jerusalem. [THEY] Like the tents of Kedar, like the curtains of Solomon.",
             "KJV": "I am black, but comely, O ye daughters of Jerusalem, as the tents of Kedar, as the curtains of Solomon.",
-            "NABRE": "Love’s Boast W I am black and beautiful, Daughters of Jerusalem — Like the tents of Qedar, like the curtains of Solomon.",
-            "DRB": "Do not consider me that I am brown, because the sun hath altered my colour: the sons of my mother have fought against me, they have made me a keeper in the vineyards: my vineyard I have not kept."
+            "NABRE": "Love’s Boast W I am black and beautiful, Daughters of Jerusalem— Like the tents of Qedar, like the curtains of Solomon.",
+            "DRB": "I am black but beautiful, o ye daughters of Jerusalem, as the tabernacles of Cedar, as the skins of Salomon."
           }
         },
         {
@@ -82,7 +82,7 @@
             "Rotherham": "[SHE] Do not look on me, because, I, am so swarthy, because the sun hath scorched me,—My mother’s sons, were angry with me, they set me to keep the vineyards, Mine own vineyard, have I not kept. …",
             "KJV": "Look not upon me, because I am black, because the sun hath looked upon me: my mother’s children were angry with me; they made me the keeper of the vineyards; but mine own vineyard have I not kept.",
             "NABRE": "Do not stare at me because I am so black, because the sun has burned me. The sons of my mother were angry with me; they charged me with the care of the vineyards: my own vineyard I did not take care of.",
-            "DRB": "Shew me o thou, whom my soul loveth, where thou feedest, where thou liest in the midday, lest I begin to wander after the flocks of thy companions."
+            "DRB": "Do not consider me that I am brown, because the sun hath altered my colour: the sons of my mother have fought against me, they have made me a keeper in the vineyards: my vineyard I have not kept."
           }
         },
         {
@@ -92,17 +92,17 @@
             "Rotherham": "Tell me, thou loved of my soul! Where wilt thou pasture thy flock? Where wilt thou let them recline at noon? For why should I be as one that wrappeth a veil about her, by the flocks of thy companions?",
             "KJV": "Tell me, O thou whom my soul loveth, where thou feedest, where thou makest thy flock to rest at noon: for why should I be as one that turneth aside by the flocks of thy companions?",
             "NABRE": "Love’s Inquiry W Tell me, you whom my soul loves, where you shepherd, where you give rest at midday. Why should I be like one wandering after the flocks of your companions?",
-            "DRB": "If thou know not thyself, o most fairest among women, go forth, and follow after the steps of the flocks, and feed thy kids beside the tabernacles of the pastors."
+            "DRB": "Shew me o thou, whom my soul loveth, where thou feedest, where thou liest in the midday, lest I begin to wander after the flocks of thy companions."
           }
         },
         {
           "num": 8,
           "text": {
-            "NRSV": "If you do not know, O fairest among women, follow the track of the flock, and pasture your kids beside the shepherds’ tents.",
+            "NRSV": "If you do not know, O fairest among women, follow the tracks of the flock, and pasture your kids beside the shepherds’ tents.",
             "Rotherham": "[HE] If thou know not of thyself, most beautiful among women! get thee forth in the footsteps of the flock, and pasture thy kids by the huts of the shepherds. …",
             "KJV": "If thou know not, O thou fairest among women, go thy way forth by the footsteps of the flock, and feed thy kids beside the shepherds’ tents.",
             "NABRE": "M If you do not know, most beautiful among women, Follow the tracks of the flock and pasture your lambs near the shepherds’ tents.",
-            "DRB": "To my company of horsemen, in the chariots of Pharao, have I likened thee, o my love."
+            "DRB": "If thou know not thyself, o most fairest among women, go forth, and follow after the steps of the flocks, and feed thy kids beside the tabernacles of the pastors."
           }
         },
         {
@@ -112,7 +112,7 @@
             "Rotherham": "To a mare of mine, in the chariots of Pharaoh, have I likened thee, my fair one!",
             "KJV": "I have compared thee, O my love, to a company of horses in Pharaoh’s chariots.",
             "NABRE": "Love’s Vision M To a mare among Pharaoh’s chariotry I compare you, my friend:",
-            "DRB": "Thy cheeks are beautiful as the turtle-doves, thy neck as jewels."
+            "DRB": "To my company of horsemen, in the chariots of Pharao, have I likened thee, o my love."
           }
         },
         {
@@ -122,7 +122,7 @@
             "Rotherham": "Comely are thy cheeks, with bead-rows, thy neck, with strings of gems.",
             "KJV": "Thy cheeks are comely with rows of jewels, thy neck with chains of gold.",
             "NABRE": "Your cheeks lovely in pendants, your neck in jewels.",
-            "DRB": "We will make thee chains of gold, enamelled with silver."
+            "DRB": "Thy cheeks are beautiful as the turtle-doves, thy neck as jewels."
           }
         },
         {
@@ -132,17 +132,17 @@
             "Rotherham": "[THEY] Rows of golden ornaments, will we make thee, with studs of silver.",
             "KJV": "We will make thee borders of gold with studs of silver.",
             "NABRE": "We will make pendants of gold for you, and ornaments of silver.",
-            "DRB": "Whilst the king was at his repose, my spikenard gave the odour thereof."
+            "DRB": "We will make thee chains of gold, enamelled with silver."
           }
         },
         {
           "num": 12,
           "text": {
-            "NRSV": "While the king was at his repose, my nard gave forth its fragrance.",
+            "NRSV": "While the king was on his couch, my nard gave forth its fragrance.",
             "Rotherham": "[SHE] By the time the king is in his circle, my nard, will have given out its fragrance:",
             "KJV": "While the king sitteth at his table, my spikenard sendeth forth the smell thereof.",
             "NABRE": "How Near Is Love! W While the king was upon his couch, my spikenard gave forth its fragrance.",
-            "DRB": "Abundle of myrrh my beloved is to me, he shall abide between my breasts."
+            "DRB": "Whilst the king was at his repose, my spikenard gave the odour thereof."
           }
         },
         {
@@ -152,7 +152,7 @@
             "Rotherham": "A bag of myrrh, is my beloved to me, between my breasts, shall it tarry the night!",
             "KJV": "A bundle of myrrh is my wellbeloved unto me; he shall lie all night betwixt my breasts.",
             "NABRE": "My lover is to me a sachet of myrrh; between my breasts he lies.",
-            "DRB": "Acluster of cypress my love is to me, in the vineyards of Engaddi."
+            "DRB": "Abundle of myrrh my beloved is to me, he shall abide between my breasts."
           }
         },
         {
@@ -162,7 +162,7 @@
             "Rotherham": "A cluster of henna, is my beloved to me, in the vineyards of En-gedi.",
             "KJV": "My beloved is unto me as a cluster of camphire in the vineyards of En–gedi.",
             "NABRE": "My lover is to me a cluster of henna from the vineyards of En-gedi.",
-            "DRB": "Behold thou art fair, o my love, behold thou art fair, thine eyes are as of doves'."
+            "DRB": "Acluster of cypress my love is to me, in the vineyards of Engaddi."
           }
         },
         {
@@ -172,7 +172,7 @@
             "Rotherham": "[HE] Lo! thou art beautiful my fair one, lo! thou art beautiful, Thine eyes, [are] doves!",
             "KJV": "Behold, thou art fair, my love; behold, thou art fair; thou hast doves’ eyes.",
             "NABRE": "M How beautiful you are, my friend, how beautiful! your eyes are doves!",
-            "DRB": "Behold thou art fair my beloved, & comely: our little bed is flourishing."
+            "DRB": "Behold thou art fair, o my love, behold thou art fair, thine eyes are as of doves'."
           }
         },
         {
@@ -182,7 +182,7 @@
             "Rotherham": "[SHE] Lo! thou art beautiful, my beloved, Yea delightful! [BOTH] Yea! our couch, is covered with leaves:",
             "KJV": "Behold, thou art fair, my beloved, yea, pleasant: also our bed is green.",
             "NABRE": "W How beautiful you are, my lover— handsome indeed! Verdant indeed is our couch;",
-            "DRB": "The beams of our houses are of cedar, our rafters of cypress trees."
+            "DRB": "Behold thou art fair my beloved, & comely: our little bed is flourishing."
           }
         },
         {
@@ -191,7 +191,8 @@
             "NRSV": "the beams of our house are cedar, our rafters are pine.",
             "Rotherham": "The beams of our house, are cedars, Our fretted ceiling, is cypress-trees.",
             "KJV": "The beams of our house are cedar, and our rafters of fir.",
-            "NABRE": "the beams of our house are cedars, our rafters, cypresses."
+            "NABRE": "the beams of our house are cedars, our rafters, cypresses.",
+            "DRB": "The beams of our houses are of cedar, our rafters of cypress trees."
           }
         }
       ]
@@ -232,7 +233,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "He brought me to the banqueting house, and his banner over me was love.",
+            "NRSV": "He brought me to the banqueting house, and his intention toward me was love.",
             "Rotherham": "He hath brought me into the house of wine, and, his banner over me, is love.",
             "KJV": "He brought me to the banqueting house, and his banner over me was love.",
             "NABRE": "He brought me to the banquet hall and his glance at me signaled love.",
@@ -262,7 +263,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "I adjure you, O daughters of Jerusalem, by the gazelles or the wild does: do not stir up or awaken love until it is ready.",
+            "NRSV": "I adjure you, O daughters of Jerusalem, by the gazelles or the wild does: do not stir up or awaken love until it is ready!",
             "Rotherham": "[HE] I adjure you, ye daughters of Jerusalem, by the gazelles or by the hinds of the field,—That ye wake not, nor arouse, the dear love until she please! [****]",
             "KJV": "I charge you, O ye daughters of Jerusalem, by the roes, and by the hinds of the field, that ye stir not up, nor awake my love, till he please.",
             "NABRE": "I adjure you, Daughters of Jerusalem, by the gazelles and the does of the field, Do not awaken, or stir up love until it is ready.",
@@ -312,7 +313,7 @@
         {
           "num": 12,
           "text": {
-            "NRSV": "The flowers appear on the earth; the time of singing has come, and the voice of the turtle-dove is heard in our land.",
+            "NRSV": "The flowers appear on the earth; the time of singing has come, and the voice of the turtledove is heard in our land.",
             "Rotherham": "The flowers, have appeared in the earth, the time of the spring-song, hath come,—and, the voice of the turtle, is heard in our land;",
             "KJV": "The flowers appear on the earth; the time of the singing of birds is come, and the voice of the turtle is heard in our land;",
             "NABRE": "The flowers appear on the earth, the time of pruning the vines has come, and the song of the turtledove is heard in our land.",
@@ -342,7 +343,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "Catch us the foxes, the little foxes, that rob the vineyards— for our vineyards are in blossom.”",
+            "NRSV": "Catch us the foxes, the little foxes, that ruin the vineyards— for our vineyards are in blossom.”",
             "Rotherham": "[BOTH] Take ye for us, the foxes, the little foxes that are spoiling the vines,—and, our vines, are all blossom!",
             "KJV": "Take us the foxes, the little foxes, that spoil the vines: for our vines have tender grapes.",
             "NABRE": "W Catch us the foxes, the little foxes that damage the vineyards; for our vineyards are in bloom!",
@@ -397,7 +398,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "The sentinels found me as they went about in the city. “Have you seen him whom my soul loves?”",
+            "NRSV": "The sentinels found me, as they went about in the city. “Have you seen him whom my soul loves?”",
             "Rotherham": "The watchmen that go round in the city, found me, The beloved of my soul, have ye seen?",
             "KJV": "The watchmen that go about the city found me: to whom I said, Saw ye him whom my soul loveth?",
             "NABRE": "The watchmen found me, as they made their rounds in the city: “Him whom my soul loves—have you seen him?”",
@@ -407,7 +408,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Scarcely had I passed them when I found him whom my soul loves. I held him, and would not let him go until I brought him into my mother’s house, and into the chamber of her that conceived me.",
+            "NRSV": "Scarcely had I passed them, when I found him whom my soul loves. I held him, and would not let him go until I brought him into my mother’s house, and into the chamber of her that conceived me.",
             "Rotherham": "Scarcely had I passed from them, when I found the beloved of my soul,—I caught him, and would not let him go, until that I had brought him into the house of my mother, and into the chamber of her that conceived me.",
             "KJV": "It was but a little that I passed from them, but I found him whom my soul loveth: I held him, and would not let him go, until I had brought him into my mother’s house, and into the chamber of her that conceived me.",
             "NABRE": "Hardly had I left them when I found him whom my soul loves. I held him and would not let him go until I had brought him to my mother’s house, to the chamber of her who conceived me.",
@@ -417,7 +418,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "I adjure you, O daughters of Jerusalem, by the gazelles or the wild does: do not stir up or awaken love until it is ready.",
+            "NRSV": "I adjure you, O daughters of Jerusalem, by the gazelles or the wild does: do not stir up or awaken love until it is ready!",
             "Rotherham": "[HE] I adjure you ye, daughters of Jerusalem, by the gazelles, or by the hinds of the field,—That ye wake not, nor arouse, the dear love until she please. [****]",
             "KJV": "I charge you, O ye daughters of Jerusalem, by the roes, and by the hinds of the field, that ye stir not up, nor awake my love, till he please.",
             "NABRE": "I adjure you, Daughters of Jerusalem, by the gazelles and the does of the field, Do not awaken or stir up love until it is ready.",
@@ -467,7 +468,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "He made its posts of silver, its back of gold, its seat of purple; its interior was inlaid with love by the daughters of Jerusalem.",
+            "NRSV": "He made its posts of silver, its back of gold, its seat of purple; its interior was inlaid with love. Daughters of Jerusalem,",
             "Rotherham": "The supports thereof, made he of silver, the couch thereof, of gold, the seat thereof, of purple,—the midst thereof, hath an inlay of love from the daughters of Jerusalem.",
             "KJV": "He made the pillars thereof of silver, the bottom thereof of gold, the covering of it of purple, the midst thereof being paved with love, for the daughters of Jerusalem.",
             "NABRE": "He made its columns of silver, its roof of gold, Its seat of purple cloth, its interior lovingly fitted. Daughters of Jerusalem,",
@@ -477,7 +478,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "Come out, O daughters of Zion, and look at King Solomon, at the crown with which his mother crowned him on the day of his wedding, on the day of the gladness of his heart.",
+            "NRSV": "come out. Look, O daughters of Zion, at King Solomon, at the crown with which his mother crowned him on the day of his wedding, on the day of the gladness of his heart.",
             "Rotherham": "Go forth and gaze, ye daughters of Zion, upon King Solomon,—wearing the crown, wherewith his mother, crowned him, in the day of his marriage, and in the day of his heart gladness.",
             "KJV": "Go forth, O ye daughters of Zion, and behold king Solomon with the crown wherewith his mother crowned him in the day of his espousals, and in the day of the gladness of his heart.",
             "NABRE": "go out and look upon King Solomon In the crown with which his mother has crowned him on the day of his marriage, on the day of the joy of his heart.",
@@ -660,7 +661,7 @@
             "NRSV": "I come to my garden, my sister, my bride; I gather my myrrh with my spice, I eat my honeycomb with my honey, I drink my wine with my milk. Eat, friends, drink, and be drunk with love.",
             "Rotherham": "[HE] I have entered my garden, my sister, bride, I have plucked my myrrh, with my balsam, I have eaten the honey of my thicket, I have drunk my wine, with my milk:—Eat ye, O friends, Drink, yea drink abundantly, ye beloved! [****]",
             "KJV": "I am come into my garden, my sister, my spouse: I have gathered my myrrh with my spice; I have eaten my honeycomb with my honey; I have drunk my wine with my milk: eat, O friends; drink, yea, drink abundantly, O beloved.",
-            "NABRE": "D? Eat, friends; drink! Drink deeply, lovers!",
+            "NABRE": "M I have come to my garden, my sister, my bride; I gather my myrrh with my spices, I eat my honeycomb with my honey, I drink my wine with my milk. D? Eat, friends; drink! Drink deeply, lovers!",
             "DRB": "Let my beloved come into his garden, and eat the fruit of his apple-trees. I am come into my garden o my sister spouse, I have reaped my myrrh, with mine aromatical spices: I have eaten the honey-comb with mine honey, I have drunk my wine with my milk: eat o friends, and drink, and be inebriated my dearest."
           }
         },
@@ -677,7 +678,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "I had put off my garment; how could I put it on again? I had washed my feet; how could I sully them?",
+            "NRSV": "I had put off my garment; how could I put it on again? I had bathed my feet; how could I soil them?",
             "Rotherham": "I have put off my tunic, oh how shall I put it on? I have bathed my feet, oh how shall I soil them?",
             "KJV": "I have put off my coat; how shall I put it on? I have washed my feet; how shall I defile them?",
             "NABRE": "I have taken off my robe, am I then to put it on? I have bathed my feet, am I then to soil them?",
@@ -717,7 +718,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "The sentinels found me as they went about in the city; they beat me, they wounded me, they took away my mantle, those sentinels of the walls.",
+            "NRSV": "Making their rounds in the city the sentinels found me; they beat me, they wounded me, they took away my mantle, those sentinels of the walls.",
             "Rotherham": "The watchmen who were going round in the city, found me, they smote me, wounded me,—The watchmen of the walls, took away my cloak from off me.",
             "KJV": "The watchmen that went about the city found me, they smote me, they wounded me; the keepers of the walls took away my veil from me.",
             "NABRE": "The watchmen found me, as they made their rounds in the city; They beat me, they wounded me, they tore off my mantle, the watchmen of the walls.",
@@ -787,7 +788,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "His arms are rounded gold, set with beryl. His body is ivory work, encrusted with sapphires.",
+            "NRSV": "His arms are rounded gold, set with jewels. His body is ivory work, encrusted with sapphires.",
             "Rotherham": "His hands, cylinders of gold, set with topaz,—His body, wrought work of ivory, covered with sapphires:",
             "KJV": "His hands are as gold rings set with the beryl: his belly is as bright ivory overlaid with sapphires.",
             "NABRE": "His arms are rods of gold adorned with gems; His loins, a work of ivory covered with sapphires.",
@@ -797,7 +798,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "His legs are phoenix-pillars of alabaster, set on bases of gold. His appearance is like Lebanon, choice as the cedars.",
+            "NRSV": "His legs are alabaster columns, set upon bases of gold. His appearance is like Lebanon, choice as the cedars.",
             "Rotherham": "His legs, pillars of white marble, founded on sockets of gold,—His form, like Lebanon, choice as cedars:",
             "KJV": "His legs are as pillars of marble, set upon sockets of fine gold: his countenance is as Lebanon, excellent as the cedars.",
             "NABRE": "His legs, pillars of alabaster, resting on golden pedestals. His appearance, like the Lebanon, imposing as the cedars.",
@@ -945,7 +946,7 @@
             "NRSV": "Return, return, O Shulammite! Return, return, that we may look upon you. Why should you look upon the Shulammite, as upon a dance before two armies?",
             "Rotherham": "[THEY] Return, return, O Shulamite, Return, return, that we may look on thee! [SHE] What would ye look on in the Shulamite? [THEY] As it were the dance of a double camp…",
             "KJV": "Return, return, O Shulamite; return, return, that we may look upon thee. What will ye see in the Shulamite? As it were the company of two armies.",
-            "NABRE": "Turn, turn, O Shulammite! turn, turn that we may gaze upon you! How can you gaze upon the Shulammite as at the dance of the two camps?",
+            "NABRE": "D? Turn, turn, O Shulammite! turn, turn that we may gaze upon you! W How can you gaze upon the Shulammite as at the dance of the two camps?",
             "DRB": "Return, return o Sulamitess: return, return, that we may behold thee."
           }
         }
@@ -960,7 +961,7 @@
             "NRSV": "How graceful are your feet in sandals, O queenly maiden! Your rounded thighs are like jewels, the work of a master hand.",
             "Rotherham": "How beautiful, are thy feet in sandals, O daughter of a noble,—The curvings of thy hips, are like ornaments wrought by the hands of a skilled workman:",
             "KJV": "How beautiful are thy feet with shoes, O prince’s daughter! the joints of thy thighs are like jewels, the work of the hands of a cunning workman.",
-            "NABRE": "D? Turn, turn, O Shulammite! turn, turn that we may gaze upon you! W How can you gaze upon the Shulammite as at the dance of the two camps?",
+            "NABRE": "M How beautiful are your feet in sandals, O noble daughter! Your curving thighs like jewels, the product of skilled hands.",
             "DRB": "What shalt thou see in the Sulamitess but the companies of camps? How beautiful are thy passes in shoes, o prince's daughter! The joints of thy thighs are as jewels, that are made by the hand of the artificer."
           }
         },
@@ -970,7 +971,7 @@
             "NRSV": "Your navel is a rounded bowl that never lacks mixed wine. Your belly is a heap of wheat, encircled with lilies.",
             "Rotherham": "Thy navel, is a round bowl, may it not lack spiced wine! Thy body, a heap of wheat fenced about with lilies;",
             "KJV": "Thy navel is like a round goblet, which wanteth not liquor: thy belly is like an heap of wheat set about with lilies.",
-            "NABRE": "M How beautiful are your feet in sandals, O noble daughter! Your curving thighs like jewels, the product of skilled hands.",
+            "NABRE": "Your valley, a round bowl that should never lack mixed wine. Your belly, a mound of wheat, encircled with lilies.",
             "DRB": "Thy navel as a round bowl, never wanting cups. Thy belly as an heap of wheat, compassed about with lilies."
           }
         },
@@ -980,7 +981,7 @@
             "NRSV": "Your two breasts are like two fawns, twins of a gazelle.",
             "Rotherham": "Thy two breasts, are like two young roes, the twins of a gazelle:",
             "KJV": "Thy two breasts are like two young roes that are twins.",
-            "NABRE": "Your valley, a round bowl that should never lack mixed wine. Your belly, a mound of wheat, encircled with lilies.",
+            "NABRE": "Your breasts are like two fawns, twins of a gazelle.",
             "DRB": "Thy two breasts, as two fawns the twins of a roe."
           }
         },
@@ -990,7 +991,7 @@
             "NRSV": "Your neck is like an ivory tower. Your eyes are pools in Heshbon, by the gate of Bath-rabbim. Your nose is like a tower of Lebanon, overlooking Damascus.",
             "Rotherham": "Thy neck, is like a tower of ivory,—Thine eyes, are pools in Heshbon, by the gate of Bath-rabbim, Thy nose, is like the tower of Lebanon, which looketh towards Damascus:",
             "KJV": "Thy neck is as a tower of ivory; thine eyes like the fishpools in Heshbon, by the gate of Bath–rabbim: thy nose is as the tower of Lebanon which looketh toward Damascus.",
-            "NABRE": "Your breasts are like two fawns, twins of a gazelle.",
+            "NABRE": "Your neck like a tower of ivory; your eyes, pools in Heshbon by the gate of Bath-rabbim. Your nose like the tower of Lebanon that looks toward Damascus.",
             "DRB": "Thy neck as a tower of ivory. Thine eyes as the fish-pools in Hesebon, which are in the gate of the daughter of the multitude. Thy nose as the tower of Libanus, that looketh against Damascus."
           }
         },
@@ -1000,7 +1001,7 @@
             "NRSV": "Your head crowns you like Carmel, and your flowing locks are like purple; a king is held captive in the tresses.",
             "Rotherham": "Thy head upon thee, is like Carmel, And, the hair of thy head, is like purple,—The king, is held captive by the ringlets!",
             "KJV": "Thine head upon thee is like Carmel, and the hair of thine head like purple; the king is held in the galleries.",
-            "NABRE": "Your neck like a tower of ivory; your eyes, pools in Heshbon by the gate of Bath-rabbim. Your nose like the tower of Lebanon that looks toward Damascus.",
+            "NABRE": "Your head rises upon you like Carmel; your hair is like purple; a king is caught in its locks.",
             "DRB": "Thy head as Carmelus: and the hairs of thy head as a king's purple tied to conduit pipes."
           }
         },
@@ -1010,7 +1011,7 @@
             "NRSV": "How fair and pleasant you are, O loved one, delectable maiden!",
             "Rotherham": "[HE] How beautiful, and how delightful, O dear love, for delights:",
             "KJV": "How fair and how pleasant art thou, O love, for delights!",
-            "NABRE": "Your head rises upon you like Carmel; your hair is like purple; a king is caught in its locks.",
+            "NABRE": "Love’s Desires - How beautiful you are, how fair, my love, daughter of delights!",
             "DRB": "How beautiful art thou, and how comely my dearest, in delights!"
           }
         },
@@ -1020,17 +1021,17 @@
             "NRSV": "You are stately as a palm tree, and your breasts are like its clusters.",
             "Rotherham": "This thy stature, is like to a palm-tree, and, thy breasts, are like clusters:",
             "KJV": "This thy stature is like to a palm tree, and thy breasts to clusters of grapes.",
-            "NABRE": "Love’s Desires How beautiful you are, how fair, my love, daughter of delights!",
+            "NABRE": "Your very form resembles a date-palm, and your breasts, clusters.",
             "DRB": "Thy stature is like to a palm-tree, & thy breasts to clusters of grapes."
           }
         },
         {
           "num": 8,
           "text": {
-            "NRSV": "I say I will climb the palm tree and lay hold of its branches. O may your breasts be like clusters of the vine, and the scent of your breath like apples,",
+            "NRSV": "I say I will climb the palm tree and lay hold of its branches. Oh, may your breasts be like clusters of the vine, and the scent of your breath like apples,",
             "Rotherham": "I said, I will ascend the palm-tree, I will lay hold of its fruit stalks—Oh then, let thy breasts, I pray thee, be like vine-clusters, And, the fragrance of thy nose, like apples;",
             "KJV": "I said, I will go up to the palm tree, I will take hold of the boughs thereof: now also thy breasts shall be as clusters of the vine, and the smell of thy nose like apples;",
-            "NABRE": "Your very form resembles a date-palm, and your breasts, clusters.",
+            "NABRE": "I thought, “Let me climb the date-palm! Let me take hold of its branches! Let your breasts be like clusters of the vine and the fragrance of your breath like apples,",
             "DRB": "Isaid: I will go up into the palm-tree, and will take hold of the fruits thereof: and thy breasts shall be as the clusters of a vineyard: and the odour of thy mouth as it were of apples."
           }
         },
@@ -1040,7 +1041,7 @@
             "NRSV": "and your kisses like the best wine that goes down smoothly, gliding over lips and teeth.",
             "Rotherham": "And, thy mouth, like good wine— [SHE] Flowing to my beloved smoothly, gliding over the lips of the sleeping.",
             "KJV": "And the roof of thy mouth like the best wine for my beloved, that goeth down sweetly, causing the lips of those that are asleep to speak.",
-            "NABRE": "I thought, “Let me climb the date-palm! Let me take hold of its branches! Let your breasts be like clusters of the vine and the fragrance of your breath like apples,",
+            "NABRE": "And your mouth like the best wine— W that flows down smoothly for my lover, gliding over my lips and teeth.",
             "DRB": "Thy throat as the best wine, worthy for my beloved to drink, & for his lips and his teeth to ruminate."
           }
         },
@@ -1050,7 +1051,7 @@
             "NRSV": "I am my beloved’s, and his desire is for me.",
             "Rotherham": "I, am my beloved’s, and, unto me, is his longing.",
             "KJV": "I am my beloved’s, and his desire is toward me.",
-            "NABRE": "And your mouth like the best wine— W that flows down smoothly for my lover, gliding over my lips and teeth.",
+            "NABRE": "I belong to my lover, his yearning is for me.",
             "DRB": "Ito my beloved, and his turning is toward me."
           }
         },
@@ -1060,7 +1061,7 @@
             "NRSV": "Come, my beloved, let us go forth into the fields, and lodge in the villages;",
             "Rotherham": "Come, my beloved, Let us go forth into the country, Let us stay the night in the villages:",
             "KJV": "Come, my beloved, let us go forth into the field; let us lodge in the villages.",
-            "NABRE": "I belong to my lover, his yearning is for me.",
+            "NABRE": "Come, my lover! Let us go out to the fields, let us pass the night among the henna.",
             "DRB": "Come my beloved, let us go forth into the field, let us abide in the villages."
           }
         },
@@ -1070,17 +1071,17 @@
             "NRSV": "let us go out early to the vineyards, and see whether the vines have budded, whether the grape blossoms have opened and the pomegranates are in bloom. There I will give you my love.",
             "Rotherham": "Let us get up early to the vineyards, Let us see whether the vine, hath burst forth, the blossom, hath opened, the pomegranates, have bloomed,—There, will I give my caresses to thee.",
             "KJV": "Let us get up early to the vineyards; let us see if the vine flourish, whether the tender grape appear, and the pomegranates bud forth: there will I give thee my loves.",
-            "NABRE": "Come, my lover! Let us go out to the fields, let us pass the night among the henna.",
+            "NABRE": "Let us go early to the vineyards, and see if the vines are in bloom, If the buds have opened, if the pomegranates have blossomed; There will I give you my love.",
             "DRB": "Let us rise early to the vineyards, let us see if the vineyard flourish, if the flowers be ready to bring forth fruits, if the pomegranates flourish: there will I give thee my breasts."
           }
         },
         {
           "num": 13,
           "text": {
-            "NRSV": "The mandrakes give forth fragrance, and over our doors are all choice fruits, new and old, which I have laid up for you, O my beloved.",
+            "NRSV": "The mandrakes give forth fragrance, and over our doors are all choice fruits, new as well as old, which I have laid up for you, O my beloved.",
             "Rotherham": "The love-apples, have given fragrance, and, at our openings, are all precious things, new and yet old,—O my beloved! I have treasured them up for thee.",
             "KJV": "The mandrakes give a smell, and at our gates are all manner of pleasant fruits, new and old, which I have laid up for thee, O my beloved.",
-            "NABRE": "Let us go early to the vineyards, and see if the vines are in bloom, If the buds have opened, if the pomegranates have blossomed; There will I give you my love.",
+            "NABRE": "The mandrakes give forth fragrance, and over our doors are all choice fruits; Fruits both fresh and dried, my lover, have I kept in store for you.",
             "DRB": "The Mandragoræs have given a smell. In our gates all fruits: the new and the old, my beloved, I have kept for thee."
           }
         }
@@ -1102,7 +1103,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "I would lead you and bring you into the house of my mother, and into the chamber of her who conceived me. I would give you spiced wine to drink, the juice of my pomegranates.",
+            "NRSV": "I would lead you and bring you into the house of my mother, and into the chamber of the one who bore me. I would give you spiced wine to drink, the juice of my pomegranates.",
             "Rotherham": "I would have guided thee—brought thee into the house of my mother, Thou wouldst have instructed me,—I would have let thee drink of spiced wine, of the pressed-out juice of my pomegranate.",
             "KJV": "I would lead thee, and bring thee into my mother’s house, who would instruct me: I would cause thee to drink of spiced wine of the juice of my pomegranate.",
             "NABRE": "I would lead you, bring you to my mother’s house, where you would teach me, Where I would give you to drink spiced wine, my pomegranate juice.",
@@ -1122,7 +1123,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "I adjure you, O daughters of Jerusalem, do not stir up or awaken love until it is ready.",
+            "NRSV": "I adjure you, O daughters of Jerusalem, do not stir up or awaken love until it is ready!",
             "Rotherham": "I [HE] adjure you, O ye daughters of Jerusalem,—Why will ye wake, and why will ye arouse the dear love until she please! [****]",
             "KJV": "I charge you, O daughters of Jerusalem, that ye stir not up, nor awake my love, until he please.",
             "NABRE": "I adjure you, Daughters of Jerusalem, do not awaken or stir up love until it is ready!",
@@ -1152,7 +1153,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "Many waters cannot quench love, neither can floods drown it. If one offered for love all the wealth of one’s house, it would be utterly scorned.",
+            "NRSV": "Many waters cannot quench love, neither can floods drown it. If one offered for love all the wealth of his house, it would be utterly scorned.",
             "Rotherham": "Many waters, cannot quench love, nor shall, floods, overwhelm it,—If a man would give all the substance of his house, for love, they would, utterly despise, him. [****]",
             "KJV": "Many waters cannot quench love, neither can the floods drown it: if a man would give all the substance of his house for love, it would utterly be contemned.",
             "NABRE": "Deep waters cannot quench love, nor rivers sweep it away. Were one to offer all the wealth of his house for love, he would be utterly despised.",
@@ -1222,7 +1223,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "Make haste, my beloved, and be like a gazelle or a young stag on the mountains of spices.",
+            "NRSV": "Make haste, my beloved, and be like a gazelle or a young stag upon the mountains of spices!",
             "Rotherham": "[SHE] Come quickly, my beloved, and resemble thou a gazelle, or a young stag, upon the mountains of balsam-trees.",
             "KJV": "Make haste, my beloved, and be thou like to a roe or to a young hart upon the mountains of spices.",
             "NABRE": "W Swiftly, my lover, be like a gazelle or a young stag upon the mountains of spices.",
