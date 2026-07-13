@@ -1859,3 +1859,17 @@ KJV, Rotherham: zero mismatches. DRB: two separate shifts. First, this source's 
 **Song of Songs is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard. Fourth data point for the chapter-boundary-shift defect class (Nehemiah, Job, Ecclesiastes, Song of Songs) and the first case demonstrating that a shift can span an entire chapter from verse 1, not just a tail — reinforces checking the whole chapter, not just the reported diff's immediate vicinity.
 
 **Next book in sequence: Isaiah.**
+
+## Isaiah remediation, session 2026-07-13 continued — fully closed; resolves the long-standing Installment-12-vs-red-flag tension for this specific book
+
+The dashboard's RED_NOTES entry for Isaiah explicitly warned not to assume Genesis's and 2 Chronicles's resolutions of this tension extended here — checked independently. The specific disputed claim ("ch.25 missing v9 + extra terminal v13") does not hold: chapter 25 has all 12 verses, v9 present and correct, no v13 exists in any form. KJV and Rotherham confirm zero mismatches, zero chapter-count diffs for the whole book. **Resolved in favor of clean, moved from red to green.**
+
+KJV, Rotherham, DRB: all zero mismatches — first book since Proverbs with no chapter-boundary-shift defect (the prior three books in a row — Job, Ecclesiastes, Song of Songs — all had at least one). DRB source confirmed filed under its Vulgate name (`isaie.usfm`), consistent with the naming pattern flagged at the start of this phase.
+
+NABRE: 17 of 18 flagged mismatches were genuine (LORD-casing-plus-stray-space bug across 16, two of which also had real content loss — entire leading sentences missing at 57:1 and 65:1). **Process note, worth remembering for future books:** an early attempt to hand-retype several of the longer fixes from truncated terminal output introduced real inaccuracies (wrong punctuation, invented phrasing) — caught and discarded before committing by redoing the whole batch programmatically, pulling exact strings from the source JSON rather than reading them off truncated print output. **Standing rule going forward: never hand-retype source text for a fix of more than a few words — always pull the exact string from the source file directly, even if it means an extra script step.** The 18th flagged mismatch (66:1) was a tool false positive from the same header-stripping over-matching failure mode already documented in the original NABRE header-pollution project section of this ledger — confirmed the app's existing content was already correct and left it untouched rather than "fixing" something that wasn't broken.
+
+NRSV: 277 of 1292 verses corrected against NRSV-CI — the largest single-book NRSV batch in this remediation effort so far. Confirmed zero chapter-count divergence before trusting the volume; changes spread across nearly every chapter, no contamination signature.
+
+**Isaiah is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard, fully superseding (not just caveating) the old red-flag note.
+
+**Next book in sequence: Jeremiah.** Carries the identical class of unresolved red-flag tension — check independently, per the same discipline just applied to Isaiah, not by assumption.
