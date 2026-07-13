@@ -1830,4 +1830,8 @@ Also fixed: one ordinary NABRE stray-space instance (34:16), and one NABRE chapt
 
 **Not yet committed to `origin/main`** — this session's environment has no GitHub push credentials, so the change is being handed to Josh as a patch for `git am` application, with this ledger entry and the matching `RESUME_PROJECT_NOTE.md` entry serving as the plain-English review material, per the standing approval-gate workflow (2026-07-05 decision, "Office audit — general" section above).
 
-**Next book in sequence: Psalms.**
+**Next book in sequence: ~~Psalms~~ — superseded, see below. Next book is Proverbs.**
+
+## Governance decision, 2026-07-13 — Psalms deferred to last
+
+Josh's explicit direction: Psalms is done **last**, not next after Job, overriding the app's own canonical book-order default (which places Psalms immediately after Job). Next book in sequence is now **Proverbs**. Whether "last" means last of the OT-directory phase or last of the entire remaining corpus (OT + ET/AR/SY/Odes + NT) is not yet resolved — doesn't affect the immediate next step, so not asked as a blocking question now; confirm scope with Josh when Psalms becomes the only book left rather than assuming either reading.
