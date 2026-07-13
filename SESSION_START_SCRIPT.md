@@ -17,19 +17,20 @@ against a fresh clone first. Files describe intent; `git log` on a fresh clone i
 
 ## 2. Where things stand (written 2026-07-13 — verify this is still current)
 
-Genesis through Nehemiah are all fully done: all five translations (KJV/KJVA,
-DRB, NRSV, NABRE, Rotherham) character-for-character verified, zero known open
-defects, dashboard green, for Genesis, Exodus, Leviticus, Numbers, Deuteronomy,
-Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, 1-2 Chronicles, Ezra, and Nehemiah.
-Also: KJV switched corpus-wide from 1611 to the 1769 KJVA edition (closed), and
-both Rotherham and DRB have had corpus-wide audit passes (Rotherham fixed
-corpus-wide; DRB surveyed, needed no fix). Nehemiah's audit also turned up a
-genuine NABRE chapter-boundary versification difference (its own numbering
-diverges from every other translation's at the 3/4 boundary) — see
-`scripts/bible-audit/README.md`'s known-bug-classes list before assuming a
-future book's NABRE oddity is just the usual stray-space bug. Next book in
-sequence: Tobit (or wherever Josh redirects — confirm before assuming). Full
-detail and session-by-session history: `RESUME_PROJECT_NOTE.md`.
+Genesis through Nehemiah, plus Tobit, are all fully done: all five translations
+(KJV/KJVA, DRB, NRSV, NABRE, Rotherham where applicable) character-for-character
+verified, zero known open defects, dashboard green. Also: KJV switched
+corpus-wide from 1611 to the 1769 KJVA edition (closed), and both Rotherham and
+DRB have had corpus-wide audit passes. Tobit resolved a years-old blocked
+NRSV/rawText status (see `data/bible/registry/tobit-text-trust-status.json`) and
+surfaced a book-specific NABRE header-pollution gap plus an NRSV
+section-header-pollution pattern not yet checked in any other deuterocanonical
+book — see `scripts/bible-audit/README.md`'s known-bug-classes list, and note
+the standing caution: versification differences are translation-specific, not
+tradition-wide, and every documented internal-order exception (like Tobit
+9:3/9:4, or Exodus 22:1-4 before it) must be preserved, not flattened into a
+single "corrected" reading. Next book in sequence: Judith (or wherever Josh
+redirects — confirm before assuming). Full detail: `RESUME_PROJECT_NOTE.md`.
 
 ## 3. Translation source registry — what exists, and its real limitations
 

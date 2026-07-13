@@ -1025,3 +1025,23 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Diffs:** Ezra exactly 6/6 lines (4 NABRE + 2 NRSV). Nehemiah exactly 16/16 lines (14 chapter-4 remap + 1 stray-space + 1 NRSV). Nothing else touched in either file.
 
 **Next book in sequence: Tobit** (confirmed via USCCB's own canonical order: ...Nehemiah, Tobit, Judith, Esther, 1-2 Maccabees...). No open decisions carried forward.
+
+## Session, 2026-07-13 continued — Tobit: resolves a years-old blocked NRSV/rawText status, all five applicable translations verified and fixed
+
+**HANDOFF — read this first if picking up fresh.** Tobit is CLOSED. Commit `37cec14`. This book had extensive pre-existing tooling and registry files (dated 2026-06-28) that explicitly left NRSV and a "rawText" anomaly blocked — resolved here, not from scratch: read `data/bible/registry/tobit-source-address-policy.json`, `tobit-bound-source-exact-collation-result.json`, and `tobit-text-trust-status.json` (now updated to reflect resolution) before doing anything with a future deuterocanonical book that has similar prior tooling.
+
+**KJV, DRB — clean**, using the already-governed DRB source-address policy (chapter 0 inactive title material; 10:14 has no bound DRB source row, already correctly blank). **Rotherham correctly absent** (never covered the Apocrypha).
+
+**NABRE — 15 verses fixed, a book-specific gap in the earlier corpus-wide effort.** Tobit's NABRE column still had the same chapter-heading pollution bug fixed corpus-wide for the 37 protocanon books — this deuterocanonical book was outside that effort's scope and had never been touched. One address (3:1) needed a manual correction: the audit tool's own regex over-stripped real narrative content ("Then sad at heart, I groaned and wept aloud.") as if it were part of the chapter title — caught by checking the raw source directly rather than trusting the tool's computed value, same discipline as every prior over-stripping catch in this project.
+
+**NRSV — the major finding. Previously explicitly blocked, now resolved.** 168 of 242 verses corrected against NRSV-CI. Dominated by a genuine section-header-pollution pattern specific to this book's NRSV column (editorial subtitles baked into verse text) — confirmed as pollution, not real content, via four independent published NRSV sources showing clean text. Also fixed two literal placeholder-string bugs (1:1, 2:1 held just "1" and "2").
+
+**Two addresses required real judgment, not blind pattern-application — worth internalizing for every future deuterocanonical book:**
+- **9:3/9:4** — NRSV-CI's own raw text stores this in an alternate witness's verse order, with a translator's own footnote ("In other ancient authorities verse 3 precedes verse 4") confirming this is a documented textual-tradition feature, not an error. Deliberately excluded from the fix, same precedent as Exodus 22:1-4 — the app's existing standard-order text was left untouched. **This is exactly the kind of case Josh flagged: don't flatten a genuine textual/versification distinction into one "corrected" reading.**
+- **10:14 (the old "rawText" dashboard flag from Installment 12)** — confirmed via three independent lines of evidence (KJVA's own chapter 10 ends at v12; NRSV-CI has no row past v13; a pre-existing registry file already classified this address as outside the NRSVA source grid) that no translation has genuine content here — it was a near-duplicate of verse 12's already-correct text. Removed rather than reattributed to a translation name.
+
+**Diff:** 202 insertions/210 deletions across three files (tobit.json itself: 185/186, asymmetric because of the 10:14 field removal). All applicable translations re-audited after the fix: zero real mismatches.
+
+**Standing lesson, not yet generalized:** the NRSV section-header-pollution pattern has only been confirmed in Tobit so far. Check every future deuterocanonical book's NRSV column independently — don't assume this was isolated or that it necessarily recurs.
+
+**Next book in sequence: Judith.** No open decisions carried forward.
