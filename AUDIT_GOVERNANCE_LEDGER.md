@@ -1873,3 +1873,7 @@ NRSV: 277 of 1292 verses corrected against NRSV-CI — the largest single-book N
 **Isaiah is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard, fully superseding (not just caveating) the old red-flag note.
 
 **Next book in sequence: Jeremiah.** Carries the identical class of unresolved red-flag tension — check independently, per the same discipline just applied to Isaiah, not by assumption.
+
+## Governance decision, 2026-07-13 continued — Jeremiah deferred (not skipped), pivoting to the minor prophets for context-budget reasons
+
+At 77% session token usage right after Isaiah's push, Josh directed a pivot away from Jeremiah for practical reasons: it's the largest remaining book in this phase (52 chapters), it carries the same unresolved Installment-12-vs-red-flag tension Isaiah did (which took genuine investigation to resolve correctly, not something to rush through with limited remaining budget), and the minor prophets are all short, tractable books better suited to whatever context remains. **Next book in sequence is Hosea**, first of the minor prophets block in the app's own canonical order. **Jeremiah stays red and fully unresolved on the dashboard** — this is a deferral, not a resolution or a skip; nothing here should be read as having touched Jeremiah's status. Return to it after the minor prophets (or sooner if Josh directs), applying the same direct-verification discipline against its specific red-flag claim that was just applied to Isaiah's.
