@@ -1430,3 +1430,40 @@ updating the actual dashboard data. Confirmed the three Ethiopian texts (1/3/7 C
 remain correctly red — unrelated open provenance question, unchanged by anything this session.
 
 **Next book in sequence: Ezekiel.**
+
+## Session, 2026-07-13 continued — Ezekiel: fully closed
+
+**HANDOFF — Ezekiel is now fully closed, dashboard updated in the same commit this time.**
+
+**KJV, Rotherham:** zero mismatches across all 48 chapters.
+
+**DRB:** zero mismatches. One chapter-count diff (2:10, app has 10 verses vs. source's 9),
+already catalogued in `canonical-ot-drb-active-row-source-shape-blockers.json` — checked rather
+than trusted blindly: DRB's own verse 9 genuinely merges the content of common verses 9 and 10
+into a single verse (confirmed against KJV, whose v9/v10 split matches DRB's combined v9
+content exactly). Also checked chapter 1 wasn't affected by the same boundary (DRB's ch.2 v1
+opens with content overlapping the end of common ch.1) — both chapters have the correct verse
+count (28), no hidden shift.
+
+**NABRE:** FIXED — 27 verses. 25 were the established LORD/God-casing-plus-stray-space bug
+(including this book's own instances of the "Lord GOD" variant already seen in Amos), plus one
+em-dash-spacing variant. One real content-loss defect at 5:1 — missing the entire opening
+sentence ("Now you, son of man, take a sharp sword and use it like a barber's razor, to shave
+your head and your beard.") before "Then take a balance scale..." — the same self-inflicted
+chapter-opening bug shape already found in Exodus, 1 Samuel, 2 Kings, and others; confirmed via
+raw unstripped source before fixing.
+
+**NRSV:** FIXED — 433 of 1273 verses corrected against NRSV-CI, zero chapter-count divergence,
+changes spread proportionally across all 48 chapters. Given the Jeremiah 11 content-displacement
+finding earlier this session, ran a low-word-overlap screen across all 433 changes before bulk-
+applying to catch any similar displacement — none found; every change was ordinary wording
+drift.
+
+**Ezekiel is now fully clean across all five applicable translations — zero known open
+defects.** `audit-ledger.html` updated in this same commit: `GREEN_SEED` and `GREEN_NOTES` both
+carry the Ezekiel entry now, not just this log.
+
+**Next book in sequence: Daniel** (per Josh's direction after Jeremiah — Daniel is the other book
+not yet in `GREEN_SEED` and untouched by this remediation effort, alongside now-closed Ezekiel).
+Psalms remains deferred to the very end per Josh's standing decision. The three Ethiopian texts
+(1/3/7 Clement (ET)) remain correctly red — unrelated open provenance question, unchanged.
