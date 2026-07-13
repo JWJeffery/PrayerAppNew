@@ -995,3 +995,17 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Staleness cleanup done this session:** `SESSION_START_SCRIPT.md`'s "Where things stand" section was still dated 2026-07-11 and said Genesis was the only book done with Exodus next — six books stale. Updated to reflect Genesis through 1 Chronicles all closed, next book 2 Chronicles, and pointed to this file for full detail rather than duplicating it.
 
 **Next book in sequence: 2 Chronicles.** No open decisions carried forward. Per the naming-gotcha notes, DRB source likely files it as `2-paralipomenon.usfm` — confirm via `ls usfm/` before assuming.
+
+## Session, 2026-07-13 continued — 2 Chronicles: all five translations verified and fixed
+
+**HANDOFF — read this first if picking up fresh.** 2 Chronicles is CLOSED, same standard as every prior book. Commit `d1dd3b1` (patch delivered to Josh — confirm via `git log --oneline -5` against a fresh clone whether it's landed before trusting this hash).
+
+**What happened, briefly:**
+- **KJV, Rotherham** — clean, zero mismatches.
+- **DRB** — clean against `2-paralipomenon.usfm`, zero content mismatches and, notably, zero chapter-count diffs at all — the first book since Deuteronomy without even the usual benign trailing-blank pattern.
+- **NABRE** — 52 verses fixed. One was the self-inflicted chapter-opening content-loss bug (21:1 — running tally now 8 confirmed instances: Exodus 2×, 1 Samuel 1×, 2 Kings 1×, 1 Chronicles 3×, 2 Chronicles 1×). Ran a full systematic sweep of every chapter-opening verse's stripped-prefix length across the whole book (not just what the audit tool's own regex flagged) to check for anything the pattern-matching might have missed — none found; chapters 1 and 10 have long but genuine Roman-numeral-division-plus-subtitle headers (55 and 79 chars), correctly stripped. The other 51 fixes were the standard "Lord 's" stray-space family. Every one of the 52 was independently re-derived against raw source using a second, differently-written extraction method (not reusing the audit tool's own logic) before trusting it.
+- **NRSV** — 283 of 822 verses corrected, spread across all 36 chapters (checked for a contamination signature — none found, this scale is consistent with prior large single-book NRSV corrections like Numbers's 555). **Worth flagging for future books:** the diff included a "temple"→"house" pattern at 2:4-9 that happens to be exactly the kind of place NRSVue (2021) diverges from the 1989 NRSV this project uses — checked against three independent published NRSV sources before trusting it, confirmed genuine 1989 NRSV wording, not an edition mix-up. Worth this same extra landmark-check whenever a "temple"/"house" or similarly NRSVue-flavored difference shows up in a future book's diff.
+
+**Diff is exactly 335 insertions/335 deletions (52 NABRE + 283 NRSV), nothing else touched.** All five translations re-audited after the fix: zero mismatches across the board.
+
+**Next book in sequence: Ezra.** No open decisions carried forward.

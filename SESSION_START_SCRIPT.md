@@ -17,14 +17,14 @@ against a fresh clone first. Files describe intent; `git log` on a fresh clone i
 
 ## 2. Where things stand (written 2026-07-13 — verify this is still current)
 
-Genesis through 1 Chronicles are all fully done: all five translations (KJV/KJVA,
+Genesis through 2 Chronicles are all fully done: all five translations (KJV/KJVA,
 DRB, NRSV, NABRE, Rotherham) character-for-character verified, zero known open
 defects, dashboard green, for Genesis, Exodus, Leviticus, Numbers, Deuteronomy,
-Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, and 1 Chronicles. Also: KJV switched
+Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, and 1-2 Chronicles. Also: KJV switched
 corpus-wide from 1611 to the 1769 KJVA edition (closed), and both Rotherham and DRB
 have had corpus-wide audit passes (Rotherham fixed corpus-wide; DRB surveyed,
-needed no fix). Next book in sequence: 2 Chronicles (or wherever Josh redirects —
-confirm before assuming). Full detail and session-by-session history:
+needed no fix). Next book in sequence: Ezra (or wherever Josh redirects — confirm
+before assuming). Full detail and session-by-session history:
 `RESUME_PROJECT_NOTE.md`.
 
 ## 3. Translation source registry — what exists, and its real limitations
