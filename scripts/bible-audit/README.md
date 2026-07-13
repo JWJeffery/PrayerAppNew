@@ -82,3 +82,23 @@ nrsv_changes, n_tag_anomalies, total_source_rows = audit_nrsv(app_json_path, nrs
    least once, altered a verse that wasn't actually broken (Numbers 21:18,
    Exodus 15:17, and a third instance in 1 Samuel -- all caught before
    shipping by individually re-checking every change against source).
+6. **NABRE chapter-boundary versification shifts** -- confirmed in
+   Nehemiah 2026-07-13: NABRE's own official chapter numbering can
+   genuinely differ from the common numbering every other translation
+   (and this app's active grid) uses. Nehemiah 3:33-38 in NABRE's own
+   numbering is common Nehemiah 4:1-6 -- NABRE's own chapter 4 begins at
+   what everyone else calls 4:7. `audit_nabre`'s naive same-address
+   comparison can't detect this: it will either report a long, confusing
+   run of "mismatches" (if the app already has some other book's content
+   misplaced there) or silently report zero mismatches while the app
+   holds flatly wrong content, if a prior population pass copied NABRE's
+   raw verse-N content into the app's verse-N slot without adjusting for
+   the shift. Confirmed via `bible.usccb.org` (the official NABRE host)
+   against the passage in question before touching anything -- always
+   verify a suspected boundary shift against the official host, not just
+   internal consistency. If a future book's audit turns up content at
+   consecutive addresses that reads like two different scenes spliced
+   together, or a chapter's `nabre.json` verse count doesn't match the
+   number of common-numbering verses it should span, check for this
+   specifically before assuming it's just another instance of the
+   stray-space or over-stripping bugs.
