@@ -121,7 +121,8 @@
             "NRSV": "Yet the number of the people of Israel shall be like the sand of the sea, which can be neither measured nor numbered; and in the place where it was said to them, “You are not my people,” it shall be said to them, “Children of the living God.”",
             "Rotherham": "Yet shall the number of the sons of Israel become like the sand of the sea, which can neither he measured, nor numbered,—and it shall come to pass, in the place where it used to be said to them, No people of mine, are ye, it shall be said to them, Sons of a Living God!",
             "KJV": "Yet the number of the children of Israel shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living God.",
-            "DRB": "And the number of the children of Israel shall be as the sand of the sea, that is without measure, and shall not be numbered. And it shall be in place where it shall be said to them: Not my people you: it shall be said to them: Children of the living God."
+            "DRB": "And the number of the children of Israel shall be as the sand of the sea, that is without measure, and shall not be numbered. And it shall be in place where it shall be said to them: Not my people you: it shall be said to them: Children of the living God.",
+            "NABRE": "The number of the Israelites will be like the sand of the sea, which can be neither measured nor counted. Instead of being told, “You are Not-My-People,” They will be called, “Children of the living God.”"
           }
         },
         {
@@ -130,7 +131,8 @@
             "NRSV": "The people of Judah and the people of Israel shall be gathered together, and they shall appoint for themselves one head; and they shall take possession of the land, for great shall be the day of Jezreel.",
             "Rotherham": "Then shall the sons of Judah and the sons of Israel, gather themselves together, as one, and shall appoint them one head, and come up out of the earth,—for great shall be the day of Jezreel.",
             "KJV": "Then shall the children of Judah and the children of Israel be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.",
-            "DRB": "And the children of Juda, and the children of Israel shall be gathered together: and they shall set to themselves, one head, and shall ascend out of the earth: because great is the day of Jezrahel."
+            "DRB": "And the children of Juda, and the children of Israel shall be gathered together: and they shall set to themselves, one head, and shall ascend out of the earth: because great is the day of Jezrahel.",
+            "NABRE": "Then the people of Judah and of Israel will gather together; They will appoint for themselves one head and rise up from the land; great indeed shall be the day of Jezreel!"
           }
         }
       ]
@@ -144,7 +146,7 @@
             "NRSV": "Say to your brother, Ammi, and to your sister, Ruhamah.",
             "Rotherham": "Say ye unto your brethren, O Ammi [=\"O my people\"], and unto your sisters, O Ruhamah [=\"O compassionated one\"]:",
             "KJV": "Say ye unto your brethren, Ammi; and to your sisters, Ru–hamah.",
-            "NABRE": "Instead of being told, “You are Not-My-People,” They will be called, “Children of the living God.”",
+            "NABRE": "Say to your brothers, “My People,” and to your sisters, “Pitied.”",
             "DRB": "Say ye to your brethren: My people: and to your sister, She that hath obtained mercy."
           }
         },
@@ -154,17 +156,17 @@
             "NRSV": "Plead with your mother, plead— for she is not my wife, and I am not her husband— that she put away her whoring from her face, and her adultery from between her breasts,",
             "Rotherham": "Contend ye with your mother, contend, for she is no wife of mine, and I am no husband of hers, Let her then put away her paramours from before her, and her partners in adultery, from her embraces:",
             "KJV": "Plead with your mother, plead: for she is not my wife, neither am I her husband: let her therefore put away her whoredoms out of her sight, and her adulteries from between her breasts;",
-            "NABRE": "Then the people of Judah and of Israel will gather together; They will appoint for themselves one head and rise up from the land; great indeed shall be the day of Jezreel!",
+            "NABRE": "The Lord and Israel His Spouse - Accuse your mother, accuse! for she is not my wife, and I am not her husband. Let her remove her prostitution from her face. her adultery from between her breasts,",
             "DRB": "Judge your mother, judge ye: because she not my wife, and I not her husband. Let her take away fornications from her face, and her adulteries from the midst of her breasts."
           }
         },
         {
           "num": 3,
           "text": {
-            "NRSV": "or I will strip her naked and expose her as on the day she was born, and make her like a wilderness, and turn her into a parched land, and kill her with thirst.",
+            "NRSV": "or I will strip her naked and expose her as in the day she was born, and make her like a wilderness, and turn her into a parched land, and kill her with thirst.",
             "Rotherham": "Lest I strip off her under-clothing, and set her forth to view, as in the day she was born,—and make her like a wilderness, and render her like a land that is parched, and suffer her to die of thirst;",
             "KJV": "Lest I strip her naked, and set her as in the day that she was born, and make her as a wilderness, and set her like a dry land, and slay her with thirst.",
-            "NABRE": "Say to your brothers, “My People,” and to your sisters, “Pitied.”",
+            "NABRE": "Or I will strip her naked, leaving her as on the day of her birth; I will make her like the wilderness, make her like an arid land, and let her die of thirst.",
             "DRB": "Lest perhaps I strip her naked, and set her according to the day of her nativity: and I will lay her as a wilderness, and will set her as a land unpassable, and will kill her with drought."
           }
         },
@@ -174,7 +176,7 @@
             "NRSV": "Upon her children also I will have no pity, because they are children of whoredom.",
             "Rotherham": "And, on her children, not have compassion,—because, the children of paramours, they are.",
             "KJV": "And I will not have mercy upon her children; for they be the children of whoredoms.",
-            "NABRE": "The Lord and Israel His Spouse Accuse your mother, accuse! for she is not my wife, and I am not her husband. Let her remove her prostitution from her face. her adultery from between her breasts,",
+            "NABRE": "I will have no pity on her children, for they are children of prostitution.",
             "DRB": "And I will not have mercy on her children: because they are the children of fornications:"
           }
         },
@@ -184,7 +186,7 @@
             "NRSV": "For their mother has played the whore; she who conceived them has acted shamefully. For she said, “I will go after my lovers; they give me my bread and my water, my wool and my flax, my oil and my drink.”",
             "Rotherham": "For their mother, hath been unchaste, and she that conceived them, hath caused shame,—for she said, Let me go after my lovers! who used to give my bread, and my water, my wool, and my flax, mine oil, and my drink.",
             "KJV": "For their mother hath played the harlot: she that conceived them hath done shamefully: for she said, I will go after my lovers, that give me my bread and my water, my wool and my flax, mine oil and my drink.",
-            "NABRE": "Or I will strip her naked, leaving her as on the day of her birth; I will make her like the wilderness, make her like an arid land, and let her die of thirst.",
+            "NABRE": "Yes, their mother has prostituted herself; she who conceived them has acted shamefully. For she said, “I will go after my lovers, who give me my bread and my water, my wool and my flax, my oil and my drink.”",
             "DRB": "because their mother hath fornicated, she is confounded that conceived them: because she said: I will go after my lovers, that give me my breads, & my waters, my wool, and my flax, mine oil, & my drink."
           }
         },
@@ -194,7 +196,7 @@
             "NRSV": "Therefore I will hedge up her way with thorns; and I will build a wall against her, so that she cannot find her paths.",
             "Rotherham": "Therefore, behold me! hedging up her way, with thorns,—and I will wall her in, and, her footpaths, shall she not find.",
             "KJV": "Therefore, behold, I will hedge up thy way with thorns, and make a wall, that she shall not find her paths.",
-            "NABRE": "I will have no pity on her children, for they are children of prostitution.",
+            "NABRE": "Therefore, I will hedge in her way with thorns and erect a wall against her, so that she cannot find her paths.",
             "DRB": "For this behold I will hedge thy way with thorns, and I will hedge it with a wall, & she shall not find her paths."
           }
         },
@@ -204,7 +206,7 @@
             "NRSV": "She shall pursue her lovers, but not overtake them; and she shall seek them, but shall not find them. Then she shall say, “I will go and return to my first husband, for it was better with me then than now.”",
             "Rotherham": "And, when she shall pursue her lovers, and not overtake them, and shall seek them and not find, then will she say, Let me go my way now! and return unto my first husband, for it was better with me, then, than, now!",
             "KJV": "And she shall follow after her lovers, but she shall not overtake them; and she shall seek them, but shall not find them: then shall she say, I will go and return to my first husband; for then was it better with me than now.",
-            "NABRE": "Yes, their mother has prostituted herself; she who conceived them has acted shamefully. For she said, “I will go after my lovers, who give me my bread and my water, my wool and my flax, my oil and my drink.”",
+            "NABRE": "If she runs after her lovers, she will not overtake them; if she seeks them she will not find them. Then she will say, “I will go back to my first husband, for I was better off then than now.”",
             "DRB": "And she shall follow her lovers, and shall not overtake them: and she shall seek them, and shall not find, and she shall say: I will go, and will return to my former husband: because it was well with me then, more than now."
           }
         },
@@ -214,7 +216,7 @@
             "NRSV": "She did not know that it was I who gave her the grain, the wine, and the oil, and who lavished upon her silver and gold that they used for Baal.",
             "Rotherham": "But, she, owneth not, that, I, gave her—the corn, and the new wine and the oil,—silver, also increased I unto her, and gold—[which] they offered to Baal!",
             "KJV": "For she did not know that I gave her corn, and wine, and oil, and multiplied her silver and gold, which they prepared for Baal.",
-            "NABRE": "Therefore, I will hedge in her way with thorns and erect a wall against her, so that she cannot find her paths.",
+            "NABRE": "She did not know that it was I who gave her the grain, the wine, and the oil, I who lavished upon her silver, and gold, which they used for Baal,",
             "DRB": "And she did not know that I gave her corn, and wine, and oil, and multiplied silver unto her, & gold, which they have made to Baal."
           }
         },
@@ -224,7 +226,7 @@
             "NRSV": "Therefore I will take back my grain in its time, and my wine in its season; and I will take away my wool and my flax, which were to cover her nakedness.",
             "Rotherham": "Therefore, will I again take away my corn, in the time thereof, and my new wine, in the season thereof,—and will recover my wool and my flax [given] to hide her shame.",
             "KJV": "Therefore will I return, and take away my corn in the time thereof, and my wine in the season thereof, and will recover my wool and my flax given to cover her nakedness.",
-            "NABRE": "If she runs after her lovers, she will not overtake them; if she seeks them she will not find them. Then she will say, “I will go back to my first husband, for I was better off then than now.”",
+            "NABRE": "Therefore I will take back my grain in its time, and my wine in its season; I will snatch away my wool and my flax, which were to cover her nakedness.",
             "DRB": "Therefore will I return, and will take my corn in his time, and my wine in his time, and I will deliver my wool, and my flax, which covered her ignominy."
           }
         },
@@ -234,17 +236,17 @@
             "NRSV": "Now I will uncover her shame in the sight of her lovers, and no one shall rescue her out of my hand.",
             "Rotherham": "Now, therefore, will I expose her unseemliness, before the eyes of her lovers,—and no, man, shall deliver her out of my hand!",
             "KJV": "And now will I discover her lewdness in the sight of her lovers, and none shall deliver her out of mine hand.",
-            "NABRE": "She did not know that it was I who gave her the grain, the wine, and the oil, I who lavished upon her silver, and gold, which they used for Baal,",
+            "NABRE": "Now I will lay bare her shame in full view of her lovers, and no one can deliver her out of my hand.",
             "DRB": "And now I will reveal her folly in the eyes of her lovers: and there shall not a man deliver her out of my hand:"
           }
         },
         {
           "num": 11,
           "text": {
-            "NRSV": "I will put an end to all her mirth, her festivals, her new moons, her sabbaths, and all her appointed feasts.",
+            "NRSV": "I will put an end to all her mirth, her festivals, her new moons, her sabbaths, and all her appointed festivals.",
             "Rotherham": "And I will cause to cease all her mirth, her pilgrim-festival, her new moon and her sabbath,—and her every appointed meeting;",
             "KJV": "I will also cause all her mirth to cease, her feast days, her new moons, and her sabbaths, and all her solemn feasts.",
-            "NABRE": "Therefore I will take back my grain in its time, and my wine in its season; I will snatch away my wool and my flax, which were to cover her nakedness.",
+            "NABRE": "I will put an end to all her joy, her festivals, her new moons, her sabbaths— all her seasonal feasts.",
             "DRB": "and I will make all her joy to cease, her solemnity, her new-moon, her sabbath, & all her festival times."
           }
         },
@@ -254,17 +256,17 @@
             "NRSV": "I will lay waste her vines and her fig trees, of which she said, “These are my pay, which my lovers have given me.” I will make them a forest, and the wild animals shall devour them.",
             "Rotherham": "And will lay waste her vine and her fig- tree, as to which she hath said, A present, are they for myself, which my lovers, have given me,—and I will make of them a thicket, and the wild beasts of the field shall devour them.",
             "KJV": "And I will destroy her vines and her fig trees, whereof she hath said, These are my rewards that my lovers have given me: and I will make them a forest, and the beasts of the field shall eat them.",
-            "NABRE": "Now I will lay bare her shame in full view of her lovers, and no one can deliver her out of my hand.",
+            "NABRE": "I will lay waste her vines and fig trees, of which she said, “These are the fees my lovers have given me”; I will turn them into rank growth and wild animals shall devour them.",
             "DRB": "And I will destroy her vine, and her figtree, of which she said: These are my rewards, which my lovers have given me: and I will lay her as a forest, & the beast of the field shall eat her."
           }
         },
         {
           "num": 13,
           "text": {
-            "NRSV": "I will punish her for the festival days of the Baals, when she offered incense to them and decked herself with her rings and jewelry, and went after her lovers, and forgot me, says the Lord.",
+            "NRSV": "I will punish her for the festival days of the Baals, when she offered incense to them and decked herself with her ring and jewelry, and went after her lovers, and forgot me, says the Lord.",
             "Rotherham": "So will I visit upon her the days of the Baals, unto whom she used to burn incense, and decked herself with her nose-ring and her jewelry, and went her way after her lovers,—whereas, me, she forgat, Declareth Yahweh.",
             "KJV": "And I will visit upon her the days of Baalim, wherein she burned incense to them, and she decked herself with her earrings and her jewels, and she went after her lovers, and forgat me, saith the Lord.",
-            "NABRE": "I will put an end to all her joy, her festivals, her new moons, her sabbaths— all her seasonal feasts.",
+            "NABRE": "I will punish her for the days of the Baals, for whom she burnt incense, When she decked herself out with her rings and her jewelry, and went after her lovers— but me she forgot—oracle of the LORD.",
             "DRB": "And I will visit upon her the days of Baalim, to whom she burnt incense, and was adorned with her earlet, and with her tablet, & went after her lovers, & forgot me, saith our Lord."
           }
         },
@@ -274,7 +276,7 @@
             "NRSV": "Therefore, I will now allure her, and bring her into the wilderness, and speak tenderly to her.",
             "Rotherham": "Therefore, lo! I, am going to persuade her, and, though I conduct her forth into wilderness, yet will I speak unto her heart.",
             "KJV": "Therefore, behold, I will allure her, and bring her into the wilderness, and speak comfortably unto her.",
-            "NABRE": "I will lay waste her vines and fig trees, of which she said, “These are the fees my lovers have given me”; I will turn them into rank growth and wild animals shall devour them.",
+            "NABRE": "Therefore, I will allure her now; I will lead her into the wilderness and speak persuasively to her.",
             "DRB": "For this, lo I will allure her, and will lead her into the wilderness: and I will speak to her heart."
           }
         },
@@ -284,7 +286,7 @@
             "NRSV": "From there I will give her her vineyards, and make the Valley of Achor a door of hope. There she shall respond as in the days of her youth, as at the time when she came out of the land of Egypt.",
             "Rotherham": "Then will I give to her her vineyards from thence, and the vale of Achor [=\"trouble\"] for a door of hope,—and she will respond there, as in the days of her youth, and as in the day when she came up out of the land of Egypt.",
             "KJV": "And I will give her her vineyards from thence, and the valley of Achor for a door of hope: and she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt.",
-            "NABRE": "I will punish her for the days of the Baals, for whom she burnt incense, When she decked herself out with her rings and her jewelry, and went after her lovers— but me she forgot—oracle of the Lord.",
+            "NABRE": "Then I will give her the vineyards she had, and the valley of Achor as a door of hope. There she will respond as in the days of her youth, as on the day when she came up from the land of Egypt.",
             "DRB": "And I will give her dressers of vines out of the same place, and the vale of Achor to open hope: and she shall sing there according to the days of her youth, and according to the days of her ascending out of the Land of Ægypt."
           }
         },
@@ -294,7 +296,7 @@
             "NRSV": "On that day, says the Lord, you will call me, “My husband,” and no longer will you call me, “My Baal.”",
             "Rotherham": "And it shall come to pass, in that day, Declareth Yahweh, that she will call me Ishi [=\"My husband\"], and will not call me any more, Baali [=\"Mine owner\"].",
             "KJV": "And it shall be at that day, saith the Lord, that thou shalt call me Ishi; and shalt call me no more Baali.",
-            "NABRE": "Therefore, I will allure her now; I will lead her into the wilderness and speak persuasively to her.",
+            "NABRE": "On that day—oracle of the LORD— You shall call me “My husband,” and you shall never again call me “My baal.”",
             "DRB": "And it shall be in that day, saith our Lord: She shall call me: My husband, and she shall call me no more, Baalim."
           }
         },
@@ -304,7 +306,7 @@
             "NRSV": "For I will remove the names of the Baals from her mouth, and they shall be mentioned by name no more.",
             "Rotherham": "So will I take away the names of the Baals, out of her mouth,—and they shall not be called to mind any more, by their name.",
             "KJV": "For I will take away the names of Baalim out of her mouth, and they shall no more be remembered by their name.",
-            "NABRE": "Then I will give her the vineyards she had, and the valley of Achor as a door of hope. There she will respond as in the days of her youth, as on the day when she came up from the land of Egypt.",
+            "NABRE": "I will remove from her mouth the names of the Baals; they shall no longer be mentioned by their name.",
             "DRB": "And I will take away the names of Baalim out of her mouth, and she shall no more remember their name."
           }
         },
@@ -314,7 +316,7 @@
             "NRSV": "I will make for you a covenant on that day with the wild animals, the birds of the air, and the creeping things of the ground; and I will abolish the bow, the sword, and war from the land; and I will make you lie down in safety.",
             "Rotherham": "And I will solemnize to them a covenant, in that day, with the wild-beast of the field, and with the bird of the heavens, and the creeping thing of the ground,—and, bow and sword and battle, will I break in pieces out of the land, so will I cause them to lie down, in security.",
             "KJV": "And in that day will I make a covenant for them with the beasts of the field, and with the fowls of heaven, and with the creeping things of the ground: and I will break the bow and the sword and the battle out of the earth, and will make them to lie down safely.",
-            "NABRE": "On that day—oracle of the Lord — You shall call me “My husband,” and you shall never again call me “My baal.”",
+            "NABRE": "On that day—oracle of the Lord— You shall call me “My husband,” and you shall never again call me “My baal.”",
             "DRB": "And I will make with them a league in that day, with the beast of the field, and with the fowl of the heaven, and with that, which creepeth on the earth: and bow, and sword, and battle I will destroy out of the earth: and will make them sleep confidently."
           }
         },
@@ -324,7 +326,7 @@
             "NRSV": "And I will take you for my wife forever; I will take you for my wife in righteousness and in justice, in steadfast love, and in mercy.",
             "Rotherham": "And I will take thee unto myself, unto times age-abiding,—yea I will take thee unto myself, in righteousness and in justice, and in lovingkindness, and in abounding compassion:",
             "KJV": "And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies.",
-            "NABRE": "I will remove from her mouth the names of the Baals; they shall no longer be mentioned by their name.",
+            "NABRE": "I will betroth you to me forever: I will betroth you to me with justice and with judgment, with loyalty and with compassion;",
             "DRB": "And I will despouse thee to me for ever: and I will despouse thee to me in justice, and judgement, and in mercy, and in commiserations."
           }
         },
@@ -334,7 +336,7 @@
             "NRSV": "I will take you for my wife in faithfulness; and you shall know the Lord.",
             "Rotherham": "Yea I will take thee unto myself, in faithfulness,—So shalt thou know Yahweh.",
             "KJV": "I will even betroth thee unto me in faithfulness: and thou shalt know the Lord.",
-            "NABRE": "I will make a covenant for them on that day, with the wild animals, With the birds of the air, and with the things that crawl on the ground. Bow and sword and warfare I will destroy from the land, and I will give them rest in safety.",
+            "NABRE": "I will betroth you to me with fidelity, and you shall know the LORD.",
             "DRB": "And I will despouse thee to me in faith: and thou shalt know that I am the Lord."
           }
         },
@@ -344,7 +346,7 @@
             "NRSV": "On that day I will answer, says the Lord, I will answer the heavens and they shall answer the earth;",
             "Rotherham": "And it shall come to pass in that day, that I will respond, Declareth Yahweh, I will respond to the heavens,—and, they, shall respond to the earth;",
             "KJV": "And it shall come to pass in that day, I will hear, saith the Lord, I will hear the heavens, and they shall hear the earth;",
-            "NABRE": "I will betroth you to me forever: I will betroth you to me with justice and with judgment, with loyalty and with compassion;",
+            "NABRE": "On that day I will respond—oracle of the LORD— I will respond to the heavens, and they will respond to the earth;",
             "DRB": "And it shall be in that day: I will hear, saith our Lord, I will hear the heavens, and they shall hear the earth."
           }
         },
@@ -354,7 +356,7 @@
             "NRSV": "and the earth shall answer the grain, the wine, and the oil, and they shall answer Jezreel;",
             "Rotherham": "And, the earth, shall respond to the corn, and to the new wine and to the oil,—and, they, shall respond to Jezreel [=\"Whom GOD scattereth,\" \"Whom GOD soweth\"].",
             "KJV": "And the earth shall hear the corn, and the wine, and the oil; and they shall hear Jezreel.",
-            "NABRE": "I will betroth you to me with fidelity, and you shall know the Lord.",
+            "NABRE": "The earth will respond to the grain, and wine, and oil, and these will respond to Jezreel.",
             "DRB": "And the earth shall hear wheat, and wine, and oil: and these shall hear Jezrahel."
           }
         },
@@ -364,8 +366,8 @@
             "NRSV": "and I will sow him for myself in the land. And I will have pity on Lo-ruhamah, and I will say to Lo-ammi, “You are my people”; and he shall say, “You are my God.”",
             "Rotherham": "So will I sow her unto me in the land, and will have compassion upon the uncompassionated one [=\"Lo-ruhamah\"],—and will say to him who was No-people-of-mine [=\"Lo-ammi\"], My people, thou art, and, he, shall say, My God!",
             "KJV": "And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my God.",
-            "NABRE": "On that day I will respond—oracle of the Lord — I will respond to the heavens, and they will respond to the earth;",
-            "DRB": "And I will sow her unto me into the earth, and I will have mercy on her, that was without mercy."
+            "NABRE": "On that day I will respond—oracle of the Lord— I will respond to the heavens, and they will respond to the earth;",
+            "DRB": "And I will sow her unto me into the earth, and I will have mercy on her, that was without mercy. And I will say to Not my people: My people art thou: and it shall say: Thou art my God."
           }
         }
       ]
@@ -376,7 +378,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "The Lord said to me again, “Go, love a woman who has a lover and is an adulteress, just as the Lord loves the people of Israel, though they turn to other gods and love raisin-cakes.”",
+            "NRSV": "The Lord said to me again, “Go, love a woman who has a lover and is an adulteress, just as the Lord loves the people of Israel, though they turn to other gods and love raisin cakes.”",
             "Rotherham": "Then said Yahweh unto me, Once more, go love a woman who loveth a friend, and is an adulteress,—according to the love of Yahweh unto the sons of Israel, though they keep turning away unto other gods, and love [idolatrous] raisin-cakes.",
             "KJV": "Then said the Lord unto me, Go yet, love a woman beloved of her friend, yet an adulteress, according to the love of the Lord toward the children of Israel, who look to other gods, and love flagons of wine.",
             "NABRE": "Hosea and His Wife Reunited Again the Lord said to me: Go, love a woman who is loved by her spouse but commits adultery; Just as the Lord loves the Israelites, though they turn to other gods and love raisin cakes.",
@@ -461,7 +463,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Yet let no one complain, and let no one accuse, for with you is my contention, O priest.",
+            "NRSV": "Yet let no one contend, and let none accuse, for with you is my contention, O priest.",
             "Rotherham": "Howbeit let, no man, contend, nor let him rebuke another,—since, thy people, are as they who contend against a priest:",
             "KJV": "Yet let no man strive, nor reprove another: for thy people are as they that strive with the priest.",
             "NABRE": "Guilt of Priest and of People But let no one accuse, let no one rebuke; with you is my dispute, priest!",
@@ -521,7 +523,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "They shall eat, but not be satisfied; they shall play the whore, but not multiply; because they have abandoned the Lord to devote themselves to",
+            "NRSV": "They shall eat, but not be satisfied; they shall play the whore, but not multiply; because they have forsaken the Lord to devote themselves to",
             "Rotherham": "And they shall eat, and not be satisfied, they have encouraged unchastity, yet have not been making increase,—for unto, Yahweh, have they left off giving heed:—",
             "KJV": "For they shall eat, and not have enough: they shall commit whoredom, and shall not increase: because they have left off to take heed to the Lord.",
             "NABRE": "They will eat but not be satisfied, they will promote prostitution but not increase, Because they have abandoned the Lord, devoting themselves",
@@ -571,7 +573,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "Though you play the whore, O Israel, do not let Judah become guilty. Do not enter Gilgal, or go up to Beth-aven, and do not swear, “As the Lord lives.”",
+            "NRSV": "Though you play the whore, O Israel, do not let Judah become guilty. Do not enter into Gilgal, or go up to Beth-aven, and do not swear, “As the Lord lives.”",
             "Rotherham": "Though unchaste art thou, O Israel, let not Judah, become guilty, neither let them enter Gilgal, nor go up to Beth-aven, and [then] swear, By the life of Yahweh!",
             "KJV": "Though thou, Israel, play the harlot, yet let not Judah offend; and come not ye unto Gilgal, neither go ye up to Beth–aven, nor swear, The Lord liveth.",
             "NABRE": "Though you prostitute yourself, Israel, do not let Judah become guilty! Do not come to Gilgal, do not go up to Beth-aven, do not swear, “As the Lord lives!”",
@@ -591,7 +593,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "Ephraim is joined to idols—let him alone.",
+            "NRSV": "Ephraim is joined to idols— let him alone.",
             "Rotherham": "Mated with idols, is Ephraim, let him alone.",
             "KJV": "Ephraim is joined to idols: let him alone.",
             "NABRE": "Ephraim is bound to idols, let him alone!",
@@ -601,7 +603,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "When their drinking is over, they indulge in whoredom; they love lewdness more than their glory.",
+            "NRSV": "When their drinking is ended, they indulge in sexual orgies; they love lewdness more than their glory.",
             "Rotherham": "Their drinking-bout, having passed,—they became, unchaste, they loved wildly, a contempt, became her great men.",
             "KJV": "Their drink is sour: they have committed whoredom continually: her rulers with shame do love, Give ye.",
             "NABRE": "When their drinking is over, they give themselves to prostitution; they love shame more than their honor.",
@@ -611,7 +613,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "A wind has wrapped them in its wings, and they shall be ashamed because of their sacrifices.",
+            "NRSV": "A wind has wrapped them in its wings, and they shall be ashamed because of their altars.",
             "Rotherham": "The wind hath bound her up in its wings,—that they may be ashamed, because of their sacrifices.",
             "KJV": "The wind hath bound her up in her wings, and they shall be ashamed because of their sacrifices.",
             "NABRE": "A wind has bound them up in its wings; they shall be ashamed because of their altars.",
@@ -686,7 +688,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "They have dealt faithlessly with the Lord; for they have borne illegitimate children. Now the new moon shall devour them along with their parcels of land.",
+            "NRSV": "They have dealt faithlessly with the Lord; for they have borne illegitimate children. Now the new moon shall devour them along with their fields.",
             "Rotherham": "With Yahweh, have they dealt treacherously, for, to alien children, have they given birth,—now, a new moon, shall devour them, with their portions.",
             "KJV": "They have dealt treacherously against the Lord: for they have begotten strange children: now shall a month devour them with their portions.",
             "NABRE": "They have betrayed the Lord, for they have borne illegitimate children; Now the new moon will devour them together with their fields.",
@@ -706,7 +708,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "Ephraim shall become a desolation on the day of punishment; among the tribes of Israel I declare what is sure.",
+            "NRSV": "Ephraim shall become a desolation in the day of punishment; among the tribes of Israel I declare what is sure.",
             "Rotherham": "Ephraim, shall become, a desolation, in the day of rebuke: Throughout the tribes of Israel, have I hide known what is sure.",
             "KJV": "Ephraim shall be desolate in the day of rebuke: among the tribes of Israel have I made known that which shall surely be.",
             "NABRE": "Ephraim shall become a wasteland on the day of punishment: Among the tribes of Israel I announce what is sure to be.",
@@ -766,7 +768,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "I will return again to my place until they acknowledge their guilt and seek my face; in their distress they will beg my favor.",
+            "NRSV": "I will return again to my place until they acknowledge their guilt and seek my face. In their distress they will beg my favor:",
             "Rotherham": "I will depart, will return unto my place! till what time they acknowledge their guilt, and seek my face,—In their trouble, will they make for me diligent search.",
             "KJV": "I will go and return to my place, till they acknowledge their offence, and seek my face: in their affliction they will seek me early.",
             "NABRE": "Insincere Conversion I will go back to my place until they make reparation and seek my presence. In their affliction, they shall look for me.",
@@ -899,7 +901,7 @@
             "NRSV": "when I would heal Israel, the corruption of Ephraim is revealed, and the wicked deeds of Samaria; for they deal falsely, the thief breaks in, and the bandits raid outside.",
             "Rotherham": "When I would have brought healing to Israel, then was disclosed the iniquity of Ephraim, and the wicked doings of Samaria, for they have wrought falsehood,—when, a thief, would enter, a band roamed about, outside,",
             "KJV": "When I would have healed Israel, then the iniquity of Ephraim was discovered, and the wickedness of Samaria: for they commit falsehood; and the thief cometh in, and the troop of robbers spoileth without.",
-            "NABRE": "Thieves break in, bandits roam outside.",
+            "NABRE": "When I would have restored the fortunes of my people, when I would have healed Israel, The guilt of Ephraim was revealed, the wickedness of Samaria: They practiced falsehood. Thieves break in, bandits roam outside.",
             "DRB": "When I would heal Israel, the iniquity of Ephraim was revealed, & the malice of Samaria, because they have wrought lying, & the thief hath entered in spoiling, the robber without."
           }
         },
@@ -926,7 +928,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "They are all adulterers; they are like a heated oven, whose baker desists from stirring the fire, from the kneading of the dough until it is leavened.",
+            "NRSV": "They are all adulterers; they are like a heated oven, whose baker does not need to stir the fire, from the kneading of the dough until it is leavened.",
             "Rotherham": "They all, are adulterers, like an oven too hot for the baker,—who leaveth off stoking, after kneading the dough, till the whole be leavened.",
             "KJV": "They are all adulterers, as an oven heated by the baker, who ceaseth from raising after he hath kneaded the dough, until it be leavened.",
             "NABRE": "They are all adulterers, like a blazing oven, Which the baker quits stoking, after the dough’s kneading until its rising.",
@@ -1026,7 +1028,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "They do not cry to me from the heart, but they wail upon their beds; for grain and wine they gash themselves, they rebel against me.",
+            "NRSV": "They do not cry to me from the heart, but they wail upon their beds; they gash themselves for grain and wine; they rebel against me.",
             "Rotherham": "Neither made they outcry unto me, in their heart, although they kept on howling upon their beds, over corn and new wine, they gathered themselves together, they rebelled against me.",
             "KJV": "And they have not cried unto me with their heart, when they howled upon their beds: they assemble themselves for corn and wine, and they rebel against me.",
             "NABRE": "They have not cried to me from their hearts when they wailed upon their beds; For wheat and wine they lacerated themselves; they rebelled against me.",
@@ -1046,7 +1048,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "They turn to that which does not profit; they have become like a treacherous bow; their officials shall fall by the sword because of the rage of their tongue. This shall be their derision in the land of Egypt.",
+            "NRSV": "They turn to that which does not profit; they have become like a defective bow; their officials shall fall by the sword because of the rage of their tongue. So much for their babbling in the land of Egypt.",
             "Rotherham": "They would return—not to him who is on high! They have become like a deceitful bow, their rulers, shall fall by the sword, for the rage of their tongue, this, [shall be] their derision in the land of Egypt.",
             "KJV": "They return, but not to the most High: they are like a deceitful bow: their princes shall fall by the sword for the rage of their tongue: this shall be their derision in the land of Egypt.",
             "NABRE": "They have again become useless, they have been like a treacherous bow. Their princes shall fall by the sword because of the insolence of their tongues; thus they shall be mocked in the land of Egypt.",
@@ -1071,7 +1073,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "Israel cries to me, “My God, we know you!”",
+            "NRSV": "Israel cries to me, “My God, we—Israel—know you!”",
             "Rotherham": "Unto me, shall they make outcry, My God! we acknowledge thee—[we], Israel!",
             "KJV": "Israel shall cry unto me, My God, we know thee.",
             "NABRE": "They cry out to me, “My God! We know you!”",
@@ -1141,7 +1143,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "For they have gone up to Assyria, a wild ass wandering alone; Ephraim has hired lovers.",
+            "NRSV": "For they have gone up to Assyria, a wild ass wandering alone; Ephraim has bargained for lovers.",
             "Rotherham": "For, they, have gone up to Assyria, A wild ass going alone for himself, is Ephraim! They have hired lovers!",
             "KJV": "For they are gone up to Assyria, a wild ass alone by himself: Ephraim hath hired lovers.",
             "NABRE": "For they went up to Assyria— a wild ass off on its own— Ephraim bargained for lovers.",
@@ -1151,7 +1153,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "Though they hire allies among the nations, I will soon gather them up; and they shall soon begin to languish under the burden of kings and princes.",
+            "NRSV": "Though they bargain with the nations, I will now gather them up. They shall soon writhe under the burden of kings and princes.",
             "Rotherham": "Even though they hire them among the nations, at once, will I gather them, when they have begun to be diminished by reason of the burden of the king of rulers.",
             "KJV": "Yea, though they have hired among the nations, now will I gather them, and they shall sorrow a little for the burden of the king of princes.",
             "NABRE": "Even though they bargain with the nations, I will now gather them together; They will soon succumb under the burden of king and princes.",
@@ -1191,7 +1193,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "For Israel has forgotten his Maker, and built palaces; and Judah has multiplied fortified cities; but I will send a fire upon his cities, and it shall devour his strongholds.",
+            "NRSV": "Israel has forgotten his Maker, and built palaces; and Judah has multiplied fortified cities; but I will send a fire upon his cities, and it shall devour his strongholds.",
             "Rotherham": "And so Israel hath forgotten his Maker, and hath built temples, and, Judah, hath multiplied fortified cities,—Therefore will I send a fire upon his cities, and it shall consume the palaces thereof.",
             "KJV": "For Israel hath forgotten his Maker, and buildeth temples; and Judah hath multiplied fenced cities: but I will send a fire upon his cities, and it shall devour the palaces thereof.",
             "NABRE": "Israel has forgotten his maker and has built palaces. Judah, too, has fortified many cities, but I will send fire upon his cities, to devour their strongholds.",
@@ -1216,7 +1218,7 @@
         {
           "num": 2,
           "text": {
-            "NRSV": "Threshing floor and wine press shall not feed them, and the new wine shall fail them.",
+            "NRSV": "Threshing floor and wine vat shall not feed them, and the new wine shall fail them.",
             "Rotherham": "Threshing-floor and wine-vat, will not feed them, and, new wine, will deny them.",
             "KJV": "The floor and the winepress shall not feed them, and the new wine shall fail in her.",
             "NABRE": "Threshing floor and wine press will not nourish them, the new wine will fail them.",
@@ -1229,14 +1231,14 @@
             "NRSV": "They shall not remain in the land of the Lord; but Ephraim shall return to Egypt, and in Assyria they shall eat unclean food.",
             "Rotherham": "They shall not dwell in the land of Yahweh, but Ephraim shall return to Egypt, and, in Assyria—that which is unclean, shall they eat.",
             "KJV": "They shall not dwell in the Lord’s land; but Ephraim shall return to Egypt, and they shall eat unclean things in Assyria.",
-            "NABRE": "They will not dwell in the Lord ’s land; Ephraim will return to Egypt, and in Assyria they will eat unclean food.",
+            "NABRE": "They will not dwell in the Lord’s land; Ephraim will return to Egypt, and in Assyria they will eat unclean food.",
             "DRB": "They shall not dwell in the land of our Lord: Ephraim is returned into Ægypt, and among the Assyrians he hath eaten the thing polluted."
           }
         },
         {
           "num": 4,
           "text": {
-            "NRSV": "They shall not pour drink offerings of wine to the Lord, and their sacrifices shall not please him. Such sacrifices shall be like mourners’ bread; all who eat of it shall be defiled; for their bread shall be for their hunger only; it shall not come into the house of the Lord.",
+            "NRSV": "They shall not pour drink offerings of wine to the Lord, and their sacrifices shall not please him. Such sacrifices shall be like mourners’ bread; all who eat of it shall be defiled; for their bread shall be for their hunger only; it shall not come to the house of the Lord.",
             "Rotherham": "They shall not pour out to Yahweh—wine, neither shall they be pleasing to him, their sacrifices, are as the food of mourning to them, all that eat thereof, shall defile themselves, because, their food for their appetite, entereth not into the house of Yahweh.",
             "KJV": "They shall not offer wine offerings to the Lord, neither shall they be pleasing unto him: their sacrifices shall be unto them as the bread of mourners; all that eat thereof shall be polluted: for their bread for their soul shall not come into the house of the Lord.",
             "NABRE": "They will not pour libations of wine to the Lord, and their sacrifices will not please him. Their bread will be like mourners’ bread, that makes unclean all who eat of it; Their food will be for their own appetites; it cannot enter the house of the Lord.",
@@ -1246,10 +1248,10 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "What will you do on the day of appointed festival, and on the day of the feast of the Lord?",
+            "NRSV": "What will you do on the day of appointed festival, and on the day of the festival of the Lord?",
             "Rotherham": "What will ye do, for the day of appointed meeting? and in the day of the festival of Yahweh?",
             "KJV": "What will ye do in the solemn day, and in the day of the feast of the Lord?",
-            "NABRE": "What will you do on the festival day, the day of the Lord ’s feast?",
+            "NABRE": "What will you do on the festival day, the day of the Lord’s feast?",
             "DRB": "What will you do in the solemn day, in the day of the festivity of our Lord?"
           }
         },
@@ -1266,7 +1268,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "The days of punishment have come, the days of recompense have come; Israel shall know it. The prophet is a fool, the man of the spirit is mad, because of your great iniquity and great enmity.",
+            "NRSV": "The days of punishment have come, the days of recompense have come; Israel cries, “The prophet is a fool, the man of the spirit is mad!” Because of your great iniquity, your hostility is great.",
             "Rotherham": "Come are the days of visitation, come are the days of recompense, Let Israel know! The prophet is foolish, the man of the spirit doth rave, because of the greatness of thine iniquity, therefore great is the prosecution.",
             "KJV": "The days of visitation are come, the days of recompence are come; Israel shall know it: the prophet is a fool, the spiritual man is mad, for the multitude of thine iniquity, and the great hatred.",
             "NABRE": "They have come, the days of punishment! they have come, the days of recompense! Let Israel know it! “The prophet is a fool, the man of the spirit is mad!” Because your iniquity is great, great, too, is your hostility.",
@@ -1276,7 +1278,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "The prophet is a sentinel for Ephraim with my God, yet a fowler’s snare is on all his ways, and enmity in the house of his God.",
+            "NRSV": "The prophet is a sentinel for my God over Ephraim, yet a fowler’s snare is on all his ways, and hostility in the house of his God.",
             "Rotherham": "The watchman of Ephraim, [should have been] with my God: As for the prophet, the snare of the fowler, is on all his ways, a prosecution [awaiteth him], in the house of his God.",
             "KJV": "The watchman of Ephraim was with my God: but the prophet is a snare of a fowler in all his ways, and hatred in the house of his God.",
             "NABRE": "The watchman of Ephraim, the people of my God, is the prophet; yet a fowler’s snare is on all his ways, hostility in the house of his God.",
@@ -1306,7 +1308,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "Ephraim’s glory shall fly away like a bird—no birth, no pregnancy, no conception!",
+            "NRSV": "Ephraim’s glory shall fly away like a bird— no birth, no pregnancy, no conception!",
             "Rotherham": "As for Ephraim! like a bird, did their glory, fly away,—no birth, and none with child, no conception.",
             "KJV": "As for Ephraim, their glory shall fly away like a bird, from the birth, and from the womb, and from the conception.",
             "NABRE": "Ephraim is like a bird: their glory flies away— no birth, no pregnancy, no conception.",
@@ -1336,7 +1338,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "Give them, O Lord—what will you give? Give them a miscarrying womb and dry breasts.",
+            "NRSV": "Give them, O Lord— what will you give? Give them a miscarrying womb and dry breasts.",
             "Rotherham": "Give them, O Yahweh—what wilt thou give? Give them, a miscarrying womb, and breasts dried up.",
             "KJV": "Give them, O Lord: what wilt thou give? give them a miscarrying womb and dry breasts.",
             "NABRE": "Give them, Lord! give them what? Give them a miscarrying womb, and dry breasts!",
@@ -1346,7 +1348,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "Every evil of theirs began at Gilgal; there I began to hate them. Because of the wickedness of their deeds I will drive them out of my house. I will love them no more; all their officials are rebels.",
+            "NRSV": "Every evil of theirs began at Gilgal; there I came to hate them. Because of the wickedness of their deeds I will drive them out of my house. I will love them no more; all their officials are rebels.",
             "Rotherham": "All their wickedness, is in Gilgal, yea, there, have I come to hate them, For the wickedness of their doings—out of my house, will I drive them forth,—no more will I love them, all their rulers, are unruly.",
             "KJV": "All their wickedness is in Gilgal: for there I hated them: for the wickedness of their doings I will drive them out of mine house, I will love them no more: all their princes are revolters.",
             "NABRE": "All their misfortune began in Gilgal; yes, there I rejected them. Because of their wicked deeds I will drive them out of my house. I will love them no longer; all their princes are rebels.",
@@ -1366,7 +1368,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "My God will reject them because they have not listened to him; they shall be wanderers among the nations.",
+            "NRSV": "Because they have not listened to him, my God will reject them; they shall become wanderers among the nations.",
             "Rotherham": "My God will reject them, because they hearkened not unto him,—that they may become wanderers throughout the nations.",
             "KJV": "My God will cast them away, because they did not hearken unto him: and they shall be wanderers among the nations.",
             "NABRE": "My God will disown them because they have not listened to him; they will be wanderers among the nations.",
@@ -1381,7 +1383,7 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "Israel is a luxuriant vine that yields its fruit. The more his fruit increased the more altars he built; as his land improved he erected more beautiful pillars.",
+            "NRSV": "Israel is a luxuriant vine that yields its fruit. The more his fruit increased the more altars he built; as his country improved, he improved his pillars.",
             "Rotherham": "A luxuriant vine, is Israel, fruit, beseemeth him,—According to the abundance of his fruit, hath he brought abundance to the altars, according to the goodliness of his land, hath he made goodly statues.",
             "KJV": "Israel is an empty vine, he bringeth forth fruit unto himself: according to the multitude of his fruit he hath increased the altars; according to the goodness of his land they have made goodly images.",
             "NABRE": "The more abundant his fruit, the more altars he built; The more productive his land, the more sacred pillars he set up.",
@@ -1451,7 +1453,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "The high places of Aven, the sin of Israel, shall be destroyed. Thorn and thistle shall grow up on their altars. They shall say to the mountains, “Cover us,” and to the hills, “Fall on us.”",
+            "NRSV": "The high places of Aven, the sin of Israel, shall be destroyed. Thorn and thistle shall grow up on their altars. They shall say to the mountains, Cover us, and to the hills, Fall on us.",
             "Rotherham": "So shall the high places of Aven, be destroyed, the sin of Israel, Thorn and prickle, shall come up on their altars,—Therefore shall they say to the mountains, Cover us, and to the hills, Fall on us.",
             "KJV": "The high places also of Aven, the sin of Israel, shall be destroyed: the thorn and the thistle shall come up on their altars; and they shall say to the mountains, Cover us; and to the hills, Fall on us.",
             "NABRE": "The high places of Aven will be destroyed, the sin of Israel; thorns and thistles will overgrow their altars. Then they will cry out to the mountains, “Cover us!” and to the hills, “Fall upon us!”",
@@ -1586,7 +1588,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "The sword rages in their cities, it consumes their oracle-staves, and devours because of their schemes.",
+            "NRSV": "The sword rages in their cities, it consumes their oracle-priests, and devours because of their schemes.",
             "Rotherham": "Therefore shall the sword, rage, in his cities, and make an end of his multitudes, and consume them,—because of their counsels.",
             "KJV": "And the sword shall abide on his cities, and shall consume his branches, and devour them, because of their own counsels.",
             "NABRE": "The sword shall rage in his cities: it shall destroy his diviners, and devour them because of their schemings.",
@@ -1730,7 +1732,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "Ephraim has said, “Ah, I am rich, I have made a fortune for myself; in all my gain no offense has been found in me that would be sin.”",
+            "NRSV": "Ephraim has said, “Ah, I am rich, I have gained wealth for myself; in all of my gain no offense has been found in me that would be sin.”",
             "Rotherham": "So then Ephraim said, Surely I have gotten me riches, I have found wealth for myself,—in all my toils, they cannot find in me perversity which is sin.",
             "KJV": "And Ephraim said, Yet I am become rich, I have found me out substance: in all my labours they shall find none iniquity in me that were sin.",
             "NABRE": "A merchant who holds a false balance, he loves to extort!",
@@ -1750,7 +1752,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "I spoke to the prophets; it was I who multiplied visions, and through the prophets I will speak parables.",
+            "NRSV": "I spoke to the prophets; it was I who multiplied visions, and through the prophets I will bring destruction.",
             "Rotherham": "And I will lay my word upon the prophets, yea, I myself, have magnified, vision,—and, by the hand of the prophets, will I use similitudes.",
             "KJV": "I have also spoken by the prophets, and I have multiplied visions, and used similitudes, by the ministry of the prophets.",
             "NABRE": "I the Lord have been your God, since the land of Egypt; I will again have you live in tents, as on feast days.",
@@ -1760,7 +1762,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "In Gilead there is iniquity, they shall surely come to nothing. In Gilgal they sacrifice bulls, so their altars shall be like stone-heaps in the furrows of the field.",
+            "NRSV": "In Gilead there is iniquity, they shall surely come to nothing. In Gilgal they sacrifice bulls, so their altars shall be like stone heaps on the furrows of the field.",
             "Rotherham": "If, Gilead, is in sorrow, surely false, have they been, In Gilgal, have they sacrificed, bullocks,—their very altars, shall become as heaps upon the furrows of the field.",
             "KJV": "Is there iniquity in Gilead? surely they are vanity: they sacrifice bullocks in Gilgal; yea, their altars are as heaps in the furrows of the fields.",
             "NABRE": "I spoke to the prophets, I granted many visions, and through the prophets I told parables.",
@@ -1790,7 +1792,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "Ephraim has given bitter offense, so his Lord will leave his blood-guilt upon him, and will pay him back for his insults.",
+            "NRSV": "Ephraim has given bitter offense, so his Lord will bring his crimes down on him and pay him back for his insults.",
             "Rotherham": "Ephraim hath provoked, very bitterly,—his own blood, therefore, upon him, will he leave, and, his reproach, shall his Lord, bring back to him.",
             "KJV": "Ephraim provoked him to anger most bitterly: therefore shall he leave his blood upon him, and his reproach shall his Lord return unto him.",
             "NABRE": "But by a prophet the Lord brought Israel out of Egypt, and by a prophet Israel was tended.",
@@ -1825,7 +1827,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Therefore they shall be like the morning cloud or like the dew that goes away early, like chaff that swirls from the threshing floor or like smoke from a window.",
+            "NRSV": "Therefore they shall be like the morning mist or like the dew that goes away early, like chaff that swirls from the threshing floor or like smoke from a window.",
             "Rotherham": "Therefore, shall they become like the morning cloud, and like the dew early departing,—like chaff storm-driven out of the threshing-floor, and like smoke out of a chimney.",
             "KJV": "Therefore they shall be as the morning cloud, and as the early dew that passeth away, as the chaff that is driven with the whirlwind out of the floor, and as the smoke out of the chimney.",
             "NABRE": "Therefore, they will be like a morning cloud or like the dew that vanishes with the dawn, Like chaff storm-driven from the threshing floor or like smoke out of the window.",
@@ -1875,7 +1877,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "I will fall upon them like a bear robbed of her whelps, and will tear open the covering of their heart; there I will devour them like a lion, as a wild animal would mangle them.",
+            "NRSV": "I will fall upon them like a bear robbed of her cubs, and will tear open the covering of their heart; there I will devour them like a lion, as a wild animal would mangle them.",
             "Rotherham": "I will fall upon them as a bear bereaved, and will read asunder the enclosure of their heart,—that I may devour them there, like a lioness, the wild beast of the field, shall tear them in pieces.",
             "KJV": "I will meet them as a bear that is bereaved of her whelps, and will rend the caul of their heart, and there will I devour them like a lion: the wild beast shall tear them.",
             "NABRE": "I will attack them like a bear robbed of its young, and tear their hearts from their breasts; I will devour them on the spot like a lion, as a wild animal would rip them open.",
@@ -1895,7 +1897,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "Where now is your king, that he may save you? Where in all your cities are your rulers, of whom you said, “Give me a king and princes”?",
+            "NRSV": "Where now is your king, that he may save you? Where in all your cities are your rulers, of whom you said, “Give me a king and rulers”?",
             "Rotherham": "Where is thy king, then, that he may save thee throughout all thy cities? and thy judges, concerning whom thou saidst, Oh give me a king and rulers?",
             "KJV": "I will be thy king: where is any other that may save thee in all thy cities? and thy judges of whom thou saidst, Give me a king and princes?",
             "NABRE": "Where now is your king, that he may rescue you? And all your princes, that they may defend you? Of whom you said, “Give me a king and princes”?",
@@ -1989,7 +1991,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Assyria shall not save us; we will not ride on horses; we will say no more, ‘Our God,’ to the work of our hands. In you the orphan finds mercy.”",
+            "NRSV": "Assyria shall not save us; we will not ride upon horses; we will say no more, ‘Our God,’ to the work of our hands. In you the orphan finds mercy.”",
             "Rotherham": "Assyria, shall not save us, Upon horses, will we not ride, neither will we say any more—Our god! to the work of our own hands! For, in thee, shall the fatherless, find compassion.",
             "KJV": "Asshur shall not save us; we will not ride upon horses: neither will we say any more to the work of our hands, Ye are our gods: for in thee the fatherless findeth mercy.",
             "NABRE": "Take with you words, and return to the Lord; Say to him, “Forgive all iniquity, and take what is good. Let us offer the fruit of our lips.",
