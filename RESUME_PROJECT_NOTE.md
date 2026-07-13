@@ -943,3 +943,11 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 
 **Next book in sequence: Judges.** No open decisions carried forward.
 
+## Session, 2026-07-13 continued — Judges: all five translations verified and fixed
+
+**HANDOFF — read this first if picking up fresh.** Judges is CLOSED, same standard as every prior book. No pre-existing dashboard flag on this one.
+
+**What happened, briefly (full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "Judges remediation" entry):** KJV, Rotherham clean. DRB clean, with two already-governed exceptions reconfirmed exact-match against the pre-existing registry, same pattern as Numbers and Joshua. NABRE had one instance of a new stray-space sub-variant (space after an opening quote mark this time, not before an apostrophe). **NRSV had a genuinely striking find**: Judges 5:7, part of the Song of Deborah, read "The peasants ceased in Israel" where the real NRSV says "The peasantry prospered in Israel" — confirmed against 8+ independent sources. Worth noting for future books: the app's wrong text happened to match how *several other* translations render this famously difficult Hebrew line, suggesting the NRSV column picked up cross-contamination from elsewhere at some point, not a random error. If a similar pattern shows up again (app's "wrong" NRSV text matching a different translation's wording too closely), it may be worth checking whether that's a recurring contamination vector rather than independent one-off drift.
+
+**Next book in sequence: Ruth.** No open decisions carried forward.
+
