@@ -1309,3 +1309,54 @@ usable directly from a fresh clone.
 
 **Next book in sequence: Nahum.** Jeremiah remains deferred and red, unchanged. Pace note: Josh
 has asked to batch more books per session going forward rather than one at a time.
+
+## Session, 2026-07-13 continued — Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi: all six fully closed in one batch
+
+**HANDOFF — all six books fully closed in a single batch, per Josh's request to pick up the pace.**
+This closes out every remaining minor prophet; Jeremiah remains the only deferred/red book.
+
+**Nahum:** KJV, Rotherham, DRB, NABRE all zero mismatches. NRSV: 19 of 47 verses corrected
+against NRSV-CI, zero chapter-count divergence.
+
+**Habakkuk:** KJV, Rotherham, DRB all zero mismatches. NABRE: 2 verses fixed (2:14, 2:16),
+established LORD-casing bug. NRSV: 16 of 56 verses corrected; three verses (3:3, 3:9, 3:13)
+needed the misplaced "Selah" moved to its correct mid-verse position — confirmed against KJV
+and NABRE, which both already had Selah in the right place — the app's NRSV had it wrongly
+appended at verse-end. Source also carries `<i>Selah</i>` HTML markup; stripped the tags to
+match the plain-text convention used by every other translation in this app (no italic markup
+anywhere else in the corpus).
+
+**Zephaniah:** KJV, Rotherham, DRB all zero mismatches. NABRE: 7 verses fixed, established
+LORD-casing bug. NRSV: 8 of 53 verses corrected, ordinary wording differences.
+
+**Haggai:** KJV, Rotherham zero mismatches. **DRB — an important false-positive worth
+remembering:** `audit_drb` reported 24 "mismatches" with a chapter 1/2 boundary shift
+(common 1:15 = source's own 2:1, then every subsequent verse in chapter 2 off by one through
+common 2:23 = source's own 2:24). Confirmed via KJV that the shift is real, but the app's
+existing DRB content was **already correctly built** with the shift accounted for — the
+"mismatches" were purely an artifact of the audit script's naive same-address comparison, not
+an actual defect. No content change was needed; a rewrite attempt was a no-op because the
+correct content was already in place. This is a new instance of the established
+chapter-boundary-shift class, but the first time it turned out to already be handled — worth
+checking whether app content is already right before assuming a shift needs a rebuild.
+NABRE: 3 verses fixed, established LORD-casing bug. NRSV: 5 of 38 verses corrected — one
+real content bug caught here, not just wording: verse 1:15 had "in the second year of King
+Darius" duplicated (also present, correctly, at the start of 2:1); removed the duplicate from
+1:15 per NRSV-CI, which ends that verse at "sixth month."
+
+**Zechariah** (14 chapters): KJV, Rotherham, DRB all zero mismatches. NABRE: 15 verses fixed,
+all the established LORD-casing/stray-space bug. NRSV: 44 of 211 verses corrected against
+NRSV-CI, zero chapter-count divergence; two verses (9:1, 12:1) carry `<e>An Oracle.</e>` markup
+in the source — stripped the tags, same plain-text convention decision as Habakkuk's Selah.
+
+**Malachi:** KJV, Rotherham, DRB all zero mismatches. NABRE: 2 verses fixed, established
+LORD-casing bug. NRSV: 5 of 55 verses corrected, ordinary wording differences.
+
+**All six books are now fully clean across all five applicable translations — zero known open
+defects.** Mark Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi green on the
+dashboard.
+
+**Minor prophets are now complete start to finish** (Hosea, Joel, Amos, Obadiah, Jonah, Micah,
+Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi). **Jeremiah remains the only deferred/
+red book** — untouched, waiting. Next work should either tackle Jeremiah or move on to whatever
+comes next in the app's canonical order after Malachi — confirm with Josh before assuming.
