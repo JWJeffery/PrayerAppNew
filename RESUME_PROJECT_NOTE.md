@@ -1079,3 +1079,20 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Diffs this session:** `esther.json` 40/40 lines, `estherGK.json` 19/19 lines. Both independently verified.
 
 **Next step: finish Esther before moving to any new book** — specifically, `estherGK.json`'s NRSV (Addition D needs careful dedicated reconciliation; A/B/C/E/F should append cleanly once mapped), then all five lanes of `additionstoesther.json`. Do not mark Esther green until all three files are done.
+
+## Session, 2026-07-14 continued — estherGK.json ordinary-chapter NRSV fixed; Additions' NRSV mapping is more complex than first assumed
+
+**IMPORTANT — the "A/B/C/E/F append cleanly" assumption above was WRONG. Read this before touching the Additions' NRSV lane.** Commit `1cb0e0a`. Fixed the ordinary-chapter (1-10) NRSV lane in `estherGK.json` (40 verses) by copying directly from plain `esther.json`'s already-verified text — safe, since it's the same underlying narrative and same NRSV source.
+
+**Investigating the Additions' NRSV mapping revealed real complexity, caught before any fix was written:**
+- **Addition A is a prologue, not a trailing append.** NRSV-CI's chapter 1 places Addition A's 17 verses (Mordecai's dream) FIRST (v1-17), with ordinary chapter 1 content following at v18-39 — the reverse of what a naive "ordinary content, then addition" assumption would produce. Caught by reading the actual verse text (Mordecai's dream vs. Vashti's feast), not by trusting verse-count arithmetic.
+- **Addition B is inserted mid-chapter, not appended at the end.** NRSV-CI's chapter 3: v1-13 ordinary, v14-20 Addition B's decree text, v21-22 two more ordinary verses following the decree.
+- **Addition E (chapter 8) shows a similar interleaved shape** on initial inspection — not yet fully resolved, doesn't cleanly match the assumed count boundary.
+- **Addition C (chapter 4) does appear to be a clean end-of-chapter append**, content-confirmed (v1-17 ordinary matching plain Esther exactly, v18-47 Mordecai's and Esther's prayers).
+- **Addition F (chapter 10) not yet content-confirmed**, only arithmetic-checked so far.
+
+**This is the second time this session a formulaic-mapping assumption would have produced wrong content if not caught by reading actual text** (the first was the KJV Addition-D offset false-alarm). Given the real, demonstrated risk, completing the Additions' NRSV mapping is deferred to focused, unhurried follow-up work — each Addition needs its own individual content-verified boundary, not a reused formula.
+
+**Diff this session:** exactly 40/40 lines (ordinary chapters only). No Addition-lane NRSV text touched.
+
+**Next step, unchanged in substance but now more precisely scoped:** for `estherGK.json`, individually content-verify and fix each Addition's NRSV boundary (A, B, definitely need care; C looks safe; D, E, F need confirming) — then move to `additionstoesther.json`'s full five-lane audit. Do not mark Esther green until all of this is done.
