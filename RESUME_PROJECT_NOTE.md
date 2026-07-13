@@ -1114,3 +1114,15 @@ Independently cross-checked the whole reconstruction against a completely differ
 **additionstoesther.json**: identical structure and content to estherGK.json's Additions (same lettering, same verse counts). KJV and DRB verified clean using the same established mappings. NABRE correctly absent throughout. NRSV: copied the now-verified text directly from estherGK.json rather than re-deriving independently — confirmed both files held the same underlying pre-fix text before copying.
 
 **Esther is now fully clean across all three files — zero known open defects.** Ready to move to the next book (Judith→Esther was the sequence; next up per USCCB's canonical order is **1 Maccabees**). Mark Esther green on the dashboard.
+
+## Session, 2026-07-14 continued — 1 Maccabees, 2 Maccabees (batch): both fully closed
+
+**HANDOFF — read this first if picking up fresh.** Both books CLOSED. Commits `ac3a659` (1 Maccabees), `2845371` (2 Maccabees). Neither book had dedicated prior tooling like Tobit/Judith/Esther — both were simply on the KJVA-edition-switch supersession note's "likely stale, not yet individually confirmed" list, re-verified fresh with current tooling.
+
+**1 Maccabees.** KJV, DRB, Rotherham(absent) all clean. NABRE: 17 verses fixed — the by-now-familiar chapter-heading-pollution bug (this deuterocanonical book was outside the corpus-wide protocanon fix). NRSV: 320 of 924 verses corrected — **third consecutive deuterocanonical book confirming the section-header-pollution pattern** (after Tobit and Judith), plus the same literal placeholder-string bug (1:1 held bare "1"). Independently verified via multiple sources.
+
+**2 Maccabees.** Same clean picture. NABRE: 19 verses fixed — one address (8:11) was a minor stray-space-around-an-em-dash issue, not a header strip, worth noting since it shows the same NABRE audit occasionally catches small formatting bugs alongside the header pollution. NRSV: 201 of 555 verses corrected — **fourth consecutive deuterocanonical book confirming the pattern.** With four-for-four now, this is essentially the expected default for any remaining deuterocanonical book's NRSV column, though each still deserves its own independent check rather than blind assumption.
+
+**Diffs:** 1 Maccabees 338/337 (harmless 1-line JSON-formatting asymmetry, content-verified at zero mismatches); 2 Maccabees exactly 220/220.
+
+**Next book in sequence: Job.** No open decisions carried forward.
