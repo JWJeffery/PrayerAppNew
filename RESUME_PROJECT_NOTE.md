@@ -1655,3 +1655,15 @@ NRSV-only lanes per this app's existing schema), and 1 Enoch (already has its ow
 2026-07-04 trust/finalization record — worth checking whether it can simply be flipped green
 from that existing record rather than re-audited from scratch). Psalms remains deferred to the
 very end. The three Ethiopian Clement texts remain correctly red.
+
+## Session, 2026-07-14 — 4 Maccabees: closed, real sourcing gap solved
+
+**HANDOFF — 4 Maccabees is now fully closed.** Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "4 Maccabees remediation" entry — read that first.
+
+**Short version:** NRSV-CI (the bound source behind almost this entire remediation effort) doesn't cover 3/4 Maccabees at all — a real, previously-unknown gap. Bible Society UK and sacred-texts.com both block automated fetching. `coursebible.com` mirrors Bible Society UK and is fetchable, but its own "NRSV" tab turned out to be mislabeled 2021 NRSVUE text — caught via internal footnote IDs and known NRSVUE-specific wording before it could contaminate anything. Josh supplied the genuine 1989 NRSVA text directly by pasting it from Bible Gateway. Full-book normalized diff against the app's existing text: **zero differences, exact match.** No content fix needed. Dashboard updated in the same commit (`4 Maccabees` → `GREEN_SEED`, `SEED_VERSION` → `v107`).
+
+**What's still open, in order of how close each is to done:**
+1. **3 Maccabees** — same sourcing method now proven and ready to reuse; just needs Josh to paste the text (Bible Gateway NRSVA, same as 4 Maccabees) the same way.
+2. **1 Enoch** — real, separately-scoped work. Source confirmed: Project Gutenberg #77935 (`gutenberg.org/ebooks/77935.txt.utf-8`), verified word-for-word identical translation to the sacred-texts.com source Lucy's now-void 2026-07-04 certification cited — but sacred-texts.com itself blocks automated fetching, so Gutenberg is the better source going forward. Chapters I–LIII of CVIII (108 total) already fetched and saved to a progress note (not yet in the repo — sandbox-local). 1,048 verses, needs full verse-by-verse comparison once the rest of the text is pulled. This is a genuinely large single-book task, not something to rush alongside other work.
+
+**Next book candidates once those two are done:** Psalms (deferred to the very end per Josh's standing decision) is the only remaining OT book after 1 Enoch/3 Maccabees close out. After that, this remediation effort moves to the NT / ET-AR-SY / Odes phase per the original governance sequence.

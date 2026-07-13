@@ -1911,3 +1911,15 @@ DRB filenames: Obadiah is abdias.usfm, Jonah is jonas.usfm. Obadiah: KJV/Rotherh
 **Both books fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
 
 **Next book in sequence: Micah.**
+
+## 4 Maccabees remediation, session 2026-07-14 — closed, real sourcing gap solved, zero content fix needed
+
+**Sourcing problem, real and worth documenting:** 3 and 4 Maccabees are not covered by `NRSV-CI.SQLite3`, the bound 1989 NRSV source that has carried nearly this entire remediation effort — confirmed by checking its book list directly. Neither is Bible Society UK's site fetchable by automated tools (bot-blocked), nor is sacred-texts.com for the separate 1 Enoch effort. `coursebible.com` mirrors Bible Society UK content and is fetchable, but its own "NRSV" tab was caught and rejected as mislabeled 2021 NRSVUE text before it could contaminate anything — internal footnote/cross-reference IDs read `NRSVUE-...`, and the wording matched known NRSVUE-specific edits (e.g. "piety of their city" vs. the genuine 1989 "religion of their city"). This is the same wrong-edition trap this project has caught twice before (Job, Genesis).
+
+**Final source:** the complete 4 Maccabees text, pasted directly by Josh from Bible Gateway's NRSVA edition (New Revised Standard Version, Anglicised — the correct 1989 translation, just British spelling).
+
+**Method:** normalized both the pasted source and the app's existing NRSV column (British→American spelling conversion — honour/honor, judgement/judgment, practise/practice, grey/gray — plus verse-number and section-header stripping, whitespace collation), then diffed the full concatenated book (59,235 characters after normalization) via `difflib.SequenceMatcher`. **Result: zero diff operations, exact match.** An earlier per-chapter pass showed small apparent differences at chapter boundaries; investigated before trusting a "clean" result and found every one was a chapter-boundary artifact in the comparison script itself (a section header landing in the wrong chapter's bucket because of how chapter markers were located), not real content drift — confirmed by the second whole-book pass with headers stripped entirely from both sides first.
+
+**4 Maccabees is fully clean — zero known open defects, no content fix needed anywhere in the book.** `audit-ledger.html` updated in this commit: `4 Maccabees` added to `GREEN_SEED`, `GREEN_NOTES` entry added, `SEED_VERSION` bumped to `v107-2026-07-14-4-maccabees-closed`. Script block re-validated with `node --check` before committing.
+
+**Still open:** 3 Maccabees (same NRSV-sourcing method now proven, just needs the text — not yet supplied), and 1 Enoch (real work, separately scoped — see `RESUME_PROJECT_NOTE.md`'s "1 Enoch remediation" progress note; source identified as Project Gutenberg #77935, confirmed identical translation to the original sacred-texts.com collation, chapters I-LIII of CVIII fetched and saved but not yet compared).
