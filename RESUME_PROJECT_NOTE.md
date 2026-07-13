@@ -1675,3 +1675,15 @@ very end. The three Ethiopian Clement texts remain correctly red.
 Same sourcing method just proven on 4 Maccabees (Josh pasting genuine 1989 NRSVA text directly from Bible Gateway). Whole-book normalized diff found exactly 2 real differences this time, not a boundary artifact — both the established stray-space-before-em-dash bug (5:49, 6:9), fixed and verified. Dashboard updated in the same commit.
 
 **This closes out 3/4 Maccabees entirely.** Remaining OT work: 1 Enoch (in progress, real remaining task — see the 2026-07-13/14 progress note above) and Psalms (deferred to the very end). Once those two close, this remediation effort moves to NT / ET-AR-SY / Odes per the original governance sequence.
+
+## Session, 2026-07-14 continued — 1 Enoch: real work begun, this is the hardest book in the whole effort
+
+**HANDOFF — 1 Enoch is NOT closed, and won't be in one session.** Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "1 Enoch remediation" entry — read that first, it explains two confirmed real defect classes worth watching for everywhere else in this book.
+
+**Sources now solved:** Project Gutenberg #77935 (confirmed identical translation to sacred-texts.com, chapters I-LIII fetched) and `scrollmapper/bible_databases_deuterocanonical` on GitHub (same translation, all 108 chapters, clonable directly — but has its own real defects, verified NOT to be trustworthy on its own; every difference needs checking against Gutenberg before deciding which side is wrong).
+
+**Fixed and verified this session:** Chapter 5 (verses 6-9 — real missing content plus verse-shuffling from Charles's lettered sub-verse structure) and the chapter 24/25 boundary (chapter 24 was 3 verses short, chapter 25 had absorbed those but genuinely lost its own true final 3 verses — not shifted, gone). Book's total verse count is now 1,051 (was 1,048).
+
+**What's left:** roughly 26 chapters still flagged with real (not just diacritic) differences, half within the Gutenberg range already fetched (several already investigated and found to be scrollmapper's fault, not the app's — don't assume every flag is a real defect without checking Gutenberg), half beyond it (chapters 59-106, including the Animal Apocalypse and Apocalypse of Weeks sections, which Charles's own introduction documents as having known textual dislocations — same risk pattern as chapter 5, worth extra care).
+
+**Immediate next action for whoever picks this up:** work through the remaining flagged chapters one at a time, same discipline as chapters 5/24/25 — verify against actual Gutenberg/Charles text, watch for content-loss-via-lettered-verses and chapter-boundary shifts specifically. This is genuinely the largest, most delicate single-book task in the whole remediation effort; don't rush it.
