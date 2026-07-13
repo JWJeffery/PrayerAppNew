@@ -1360,3 +1360,53 @@ dashboard.
 Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi). **Jeremiah remains the only deferred/
 red book** — untouched, waiting. Next work should either tackle Jeremiah or move on to whatever
 comes next in the app's canonical order after Malachi — confirm with Josh before assuming.
+
+## Session, 2026-07-13 continued — Jeremiah: fully closed, resolves the long-standing red-flag tension, one major content-displacement bug found and fixed
+
+**HANDOFF — Jeremiah is now fully closed. Not yet committed to origin/main.** This was the last
+remaining deferred/red book in the entire corpus.
+
+**Resolves Jeremiah's own long-standing Installment-12-vs-red-flag tension** (the dashboard's
+`RED_NOTES` entry explicitly did not carry a specific disputed claim the way Isaiah's did —
+it only said the book "needs its own real audit" — so there was nothing narrower to check
+against; the real five-translation audit is the resolution itself, same precedent as Genesis,
+Deuteronomy, 2 Chronicles, 2 Kings, and Isaiah before it).
+
+**KJV, Rotherham:** zero mismatches across all 52 chapters.
+
+**DRB:** zero mismatches. One chapter-count diff (37:21, app has 21 verses vs. source's 20) —
+already catalogued in `canonical-ot-drb-active-row-source-shape-blockers.json`. Investigated
+fully rather than trusting the registry blindly: DRB's own numbering actually merges common
+verses 4 and 5 into a single verse early in the chapter (confirmed against KJV, whose v4/v5
+split matches DRB's own combined v4 content exactly), then runs one behind common numbering
+for the rest of the chapter. The app's existing DRB content was **already correctly built**
+with this shift — addresses 5 through 20 already hold the properly shifted source content
+(verified against KJV at multiple points along the span), and 37:21 is correctly null since
+DRB's own text simply ends one verse short. No rebuild needed, just verification.
+
+**NABRE:** FIXED — 94 of 95 flagged mismatches were the established LORD-casing-plus-stray-space
+bug. The 95th (4:1) plus one more not caught by the naive per-verse diff (41:1) were the
+established audit-tool over-stripping false positive (the header-regex's optional-subtitle
+consumption ate into real verse content because it read like a title) — confirmed by pulling
+the raw unstripped source directly: 4:1's real text begins "If you return, Israel—oracle of the
+LORD—return to me." and 41:1's begins "In the seventh month, Ishmael, son of Nethaniah..." —
+both restored by hand from raw source rather than trusting the tool's computed value.
+
+**NRSV — FIXED, 391 of 1364 verses corrected against NRSV-CI, zero chapter-count divergence,
+changes spread proportionally across every chapter (no contamination-block signature).** One
+finding here was substantially more serious than ordinary wording drift and is worth flagging
+clearly: **chapter 11, verses 1–11 held duplicated content from chapter 15:11–21** ("Can iron
+break iron from the north and bronze?" etc.) sitting at the wrong address, silently overwriting
+what should have been chapter 11's own opening covenant passage ("The word that came to Jeremiah
+from the Lord... Hear the words of this covenant..."). Confirmed via KJV that chapter 11:1-11
+and chapter 15:11-21 are genuinely different passages, and that the app's own (correct) chapter
+15 already holds that content properly — chapter 11 was the sole affected location. Restored
+chapter 11:1-11 from NRSV-CI source directly rather than patching around the existing (wrong)
+text. Verses 12-23 of chapter 11 were already correct and untouched.
+
+**Jeremiah is now fully clean across all five applicable translations — zero known open
+defects.** Mark Jeremiah green on the dashboard, superseding the old red-flag note entirely.
+
+**This closes out the last deferred/red book in the corpus.** Confirm with Josh what comes next
+in the app's canonical order (Ezekiel and Daniel are not yet in the green-seed list and haven't
+been touched by this remediation effort as far as this log shows) rather than assuming.
