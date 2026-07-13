@@ -1096,3 +1096,21 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Diff this session:** exactly 40/40 lines (ordinary chapters only). No Addition-lane NRSV text touched.
 
 **Next step, unchanged in substance but now more precisely scoped:** for `estherGK.json`, individually content-verify and fix each Addition's NRSV boundary (A, B, definitely need care; C looks safe; D, E, F need confirming) — then move to `additionstoesther.json`'s full five-lane audit. Do not mark Esther green until all of this is done.
+
+## Session, 2026-07-14 continued — ESTHER FULLY CLOSED
+
+**HANDOFF — Esther is now fully closed across all three files.** Commits `9d66376` (estherGK.json Additions NRSV), `7d895f7` (additionstoesther.json). No time pressure this round, so each Addition got the careful, individual verification it needed rather than a deferred/formulaic shortcut.
+
+**estherGK.json's six Additions, each verified by reading actual content, not arithmetic:**
+- **Addition A**: NRSV-CI's own row 1 is blank (markup only); real content starts at row 2. Row 12 combines two sentences that the app correctly splits into two verses (11, 12) — preserved that split, supplied correct wording for each half.
+- **Addition B**: confirmed genuinely mid-chapter (not a trailing append) — chapter 3 rows 1-13 ordinary, 14-20 Addition B's decree, 21-22 ordinary again.
+- **Addition C**: clean append (rows 18-47). The app's entire prior text used archaic "thou/thee/thy" — never actually verified against modern NRSV before now. All 23 needed updating.
+- **Addition D**: rows 1-16 directly, as already established last session.
+- **Addition E**: rows 13-36 (not 13-37) — row 37 has no equivalent anywhere in DRB's own independently-collated chapter 16 either (confirmed by checking), so this is a genuine minor NRSV-specific granularity difference not represented in the shared 24-verse grid, documented rather than invented a 25th verse.
+- **Addition F**: rows 4-14, a clean append, content-confirmed (not just arithmetic-assumed, given the lessons from A and B).
+
+Independently cross-checked the whole reconstruction against a completely different published "Additions to Esther" standalone numbering (Bible Study Tools' NRSA presentation) — zero contradictions despite that source grouping chapters entirely differently.
+
+**additionstoesther.json**: identical structure and content to estherGK.json's Additions (same lettering, same verse counts). KJV and DRB verified clean using the same established mappings. NABRE correctly absent throughout. NRSV: copied the now-verified text directly from estherGK.json rather than re-deriving independently — confirmed both files held the same underlying pre-fix text before copying.
+
+**Esther is now fully clean across all three files — zero known open defects.** Ready to move to the next book (Judith→Esther was the sequence; next up per USCCB's canonical order is **1 Maccabees**). Mark Esther green on the dashboard.

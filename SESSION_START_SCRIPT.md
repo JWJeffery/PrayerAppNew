@@ -17,28 +17,33 @@ against a fresh clone first. Files describe intent; `git log` on a fresh clone i
 
 ## 2. Where things stand (written 2026-07-14 — verify this is still current)
 
-Genesis through Nehemiah, plus Tobit and Judith, are all fully done: all five
-translations (KJV/KJVA, DRB, NRSV, NABRE, Rotherham where applicable)
+Genesis through Nehemiah, plus Tobit, Judith, and Esther, are all fully done:
+all five translations (KJV/KJVA, DRB, NRSV, NABRE, Rotherham where applicable)
 character-for-character verified, zero known open defects, dashboard green.
 Also: KJV switched corpus-wide from 1611 to the 1769 KJVA edition (closed), and
 both Rotherham and DRB have had corpus-wide audit passes.
 
-**Esther is IN PROGRESS, not closed — do not treat it as done.** Three related
-active files: `esther.json` (plain Hebrew, CLOSED), `estherGK.json` (merged
-Catholic/Orthodox form with Additions A-F, KJV/NABRE/DRB closed but NRSV
-deliberately deferred — Addition D's NRSV content doesn't cleanly map and
-needs dedicated care, not a formulaic fix), `additionstoesther.json` (standalone
-Additions book, not yet started at all). See `RESUME_PROJECT_NOTE.md`'s Esther
-entry for full detail before continuing this book.
+Esther has three related active files (`esther.json` plain Hebrew,
+`estherGK.json` merged Catholic/Orthodox form with Additions A-F,
+`additionstoesther.json` standalone Additions book) — all three now fully
+closed. This book was the clearest demonstration yet of why every
+translation's versification must be checked independently: it produced three
+near-misses (a KJV false-mismatch from reusing another translation's offset;
+Addition A's structure being a preceding prologue, not a trailing append as
+first assumed; Addition B being a mid-chapter insertion, not an append) —
+every one caught by reading actual verse content before writing anything,
+never by trusting arithmetic alone. See `AUDIT_GOVERNANCE_LEDGER.md`'s Esther
+entries for full detail.
 
-Standing caution, worth repeating and reinforced again this session: versification
-differences are translation-specific, not tradition-wide, and a mapping solved for
-one translation cannot be assumed to apply to another (confirmed concretely with
-Esther's Addition D: DRB, KJVA, and NRSV-CI each use a *different* convention for
-where the Additions sit relative to the ordinary chapters). Every documented
-internal-order or chapter-boundary exception must be preserved, not flattened
-into a single "corrected" reading — see `scripts/bible-audit/README.md`'s
-known-bug-classes list. Full detail: `RESUME_PROJECT_NOTE.md`.
+Standing caution, worth repeating and now concretely demonstrated multiple
+times: versification differences are translation-specific, not tradition-wide,
+and a mapping solved for one translation cannot be assumed to apply to
+another — always verify against actual content, not just verse counts or an
+existing mapping from a different translation. Every documented internal-order
+or chapter-boundary exception must be preserved, not flattened into a single
+"corrected" reading — see `scripts/bible-audit/README.md`'s known-bug-classes
+list. Next book in sequence: 1 Maccabees (or wherever Josh redirects — confirm
+before assuming). Full detail: `RESUME_PROJECT_NOTE.md`.
 
 ## 3. Translation source registry — what exists, and its real limitations
 
