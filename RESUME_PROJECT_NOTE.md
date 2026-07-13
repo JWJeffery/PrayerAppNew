@@ -1045,3 +1045,19 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 **Standing lesson, not yet generalized:** the NRSV section-header-pollution pattern has only been confirmed in Tobit so far. Check every future deuterocanonical book's NRSV column independently — don't assume this was isolated or that it necessarily recurs.
 
 **Next book in sequence: Judith.** No open decisions carried forward.
+
+## Session, 2026-07-13 continued — Judith: resolves blocked NRSV status, confirms Tobit's header-pollution pattern recurs
+
+**HANDOFF — read this first if picking up fresh.** Judith is CLOSED. Commit `9a9ad29`. Second deuterocanonical book with extensive prior 2026-06-28 tooling — read `judith-source-address-policy.json`, `judith-bound-source-exact-collation-result.json`, `judith-text-trust-status.json` (now updated) before starting a future deuterocanonical book.
+
+**KJV — re-confirmed clean, with an important versification note preserved from the 2026-07-12 KJVA switch (commit 3733a42).** KJVA's own official chapter/verse numbering genuinely diverges from the common numbering (shared by DRB/NABRE/NRSV and this app's grid) at the chapter 15/16 boundary — a naive same-address check against KJVA will always show 9 "mismatches" here (15:14, 16:1-8), and that's expected, not a regression. Verified by hand: the app's content is correct at the shared-grid addresses; all four other translations agree with the placement. **This is exactly the kind of thing to watch for — I almost flagged this as a new bug before checking the git history and confirming it was a deliberate, already-correct fix.**
+
+**Rotherham — correctly absent.** **DRB — clean**, with several chapters (1,2,7,8,10,11,14) showing well-documented Vulgate/Greek recension-length differences, all already correctly blank.
+
+**NABRE — 17 verses fixed**, the same chapter-heading-pollution bug independently confirmed in Tobit — this book was likewise outside the corpus-wide protocanon fix's scope. Checked every address against raw source directly (not just the tool's computed value) per the lesson from Tobit's one over-stripping near-miss — none found here.
+
+**NRSV — 150 of 340 rows corrected, resolving another previously-blocked lane.** Confirms the section-header-pollution pattern first found in Tobit **recurs** — this is now confirmed in two books, though still not assumed universal for the rest of the deuterocanon. One placeholder-string bug (11:1 = bare "11") also fixed. Scanned the full changes list for any Tobit-9:3/9:4-style documented order exceptions before applying in bulk — none found this time.
+
+**Diff:** exactly 167/167 lines (150 NRSV + 17 NABRE). All translations re-audited: zero real mismatches.
+
+**Next book in sequence: Esther / Esther (Greek).** No open decisions carried forward. Given the pattern so far, check for existing prior-tooling registry files before starting, and check the NRSV column for the same header-pollution pattern independently rather than assuming it.
