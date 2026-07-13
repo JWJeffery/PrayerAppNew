@@ -1903,3 +1903,11 @@ KJV, Rotherham: zero mismatches. DRB: one finding in chapter 6 — the reported 
 **Amos is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
 
 **Next book in sequence: Obadiah.**
+
+## Obadiah and Jonah remediation, session 2026-07-13 continued — both fully closed
+
+DRB filenames: Obadiah is abdias.usfm, Jonah is jonas.usfm. Obadiah: KJV/Rotherham/DRB all clean, no shift. NABRE 2 verses fixed (established casing/stray-space bug), NRSV 7 of 21 verses corrected. Jonah: KJV/Rotherham/NABRE all clean. DRB: chapter-boundary shift at common 1/2 -- common 1:17 (great fish verse) = source's own chapter 2 verse 1; common 2:1-10 = source's own 2:2-11, confirmed against KJV. NRSV: 6 of 48 verses corrected, no chapter-count divergence.
+
+**Both books fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
+
+**Next book in sequence: Micah.**

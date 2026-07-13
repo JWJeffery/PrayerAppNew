@@ -1258,3 +1258,15 @@ Josh's direction, made for practical context-budget reasons partway through this
 **Amos is now fully clean across all five applicable translations — zero known open defects.** Mark Amos green on the dashboard.
 
 **Next book in sequence: Obadiah.** Jeremiah remains deferred and red, unchanged.
+
+## Session, 2026-07-13 continued — Obadiah and Jonah: both fully closed
+
+**HANDOFF — both books fully closed. Not yet committed to origin/main.** DRB filenames: Obadiah is `abdias.usfm`, Jonah is `jonas.usfm` (Vulgate names).
+
+**Obadiah** (single-chapter book): KJV, Rotherham, DRB all zero mismatches, no chapter-boundary shift. NABRE: 2 verses fixed (1:8, 1:21), established LORD-casing/stray-space bug. NRSV: 7 of 21 verses corrected against NRSV-CI, ordinary wording differences.
+
+**Jonah:** KJV, Rotherham, NABRE all zero mismatches. DRB: one chapter-boundary shift, common 1/2 — common 1:17 (the "great fish" verse) is this source's own chapter 2, verse 1; common 2:1-10 = the source's own 2:2-11. Confirmed content-for-content against KJV before rebuilding. NRSV: 6 of 48 verses corrected against NRSV-CI, zero chapter-count divergence, ordinary wording differences.
+
+**Both books now fully clean across all five applicable translations — zero known open defects.** Mark both green on the dashboard.
+
+**Next book in sequence: Micah.** Jeremiah remains deferred and red, unchanged.
