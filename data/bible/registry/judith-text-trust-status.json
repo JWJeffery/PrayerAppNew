@@ -1,44 +1,38 @@
 {
   "schema": "judith-text-trust-status-v1",
   "id": "judith_text_trust_status_2026_06_28",
-  "status": "partial_trust_ready_nrsv_unresolved",
+  "status": "fully_resolved_2026_07_13",
   "recordedAt": "2026-06-28",
+  "resolvedAt": "2026-07-13",
+  "resolutionNote": "NRSV, blocked as of the original 2026-06-28 recording below, was resolved in the full five-translation remediation pass on 2026-07-13 -- see AUDIT_GOVERNANCE_LEDGER.md's 'Judith remediation' entry for full detail. NRSV was populated from NRSV-CI.SQLite3 (this project's established primary NRSV source), with the same section-header-pollution pattern first confirmed in Tobit found here too (150 of 340 rows corrected) -- confirming that pattern is not isolated to one book, though it still needs checking independently in every remaining deuterocanonical book, not assumed. NABRE separately needed its own fix (17 verses, header pollution -- this deuterocanonical book was outside the corpus-wide protocanon fix's scope). KJV was already independently re-verified against the current KJVA (1769) edition during the 2026-07-12 KJVA switch effort (commit 3733a42) -- re-confirmed here, with one important note: KJVA's own internal chapter/verse numbering genuinely diverges from the common numbering this app's grid (and DRB/NABRE/NRSV) uses at the chapter 15/16 boundary. This is a real, deliberate, already-correctly-handled translation-specific versification difference, not a defect -- see the versificationNote below before ever 'fixing' it back.",
   "activePath": "data/bible/OT/judith.json",
   "activeRows": 359,
   "repairCommit": "0d9a8ce",
   "resultRecord": "data/bible/registry/judith-bound-source-exact-collation-result.json",
   "policy": "data/bible/registry/judith-source-address-policy.json",
   "trustedClaims": {
-    "KJV": "trusted_exact_source_collated_source_address_policy",
-    "NABRE": "trusted_exact_source_collated_source_address_policy",
-    "DRB": "trusted_exact_source_collated"
+    "KJV": "trusted_exact_source_collated_2026_07_12_kjva_edition (see versificationNote -- KJVA's own chapter 15/16 boundary is one verse earlier than the app's shared-grid numbering; content is correctly placed at the shared-grid address, not KJVA's own address)",
+    "NABRE": "trusted_exact_source_collated_2026_07_13 (header-pollution pattern found and fixed, 17 verses, same class as Tobit's finding but independently confirmed here -- this book was outside the corpus-wide protocanon fix's scope)",
+    "DRB": "trusted_exact_source_collated",
+    "NRSV": "trusted_exact_source_collated_2026_07_13 (populated from NRSV-CI.SQLite3; 150 of 340 source rows corrected, dominated by the same section-header-pollution pattern confirmed in Tobit)"
   },
-  "blockedClaims": {
-    "NRSV": {
-      "status": "blocked_pending_approved_source_witness_or_policy",
-      "activeRows": 147
-    },
-    "fullJudithAllLanes": {
-      "status": "blocked_by_nrsv_resolution",
-      "reason": "Judith cannot be fully trusted while active NRSV remains unresolved."
-    }
+  "versificationNote": {
+    "issue": "KJVA's own official chapter/verse numbering for Judith diverges from the common numbering (shared by DRB, NABRE, NRSV, and this app's active grid) at the chapter 15/16 boundary.",
+    "detail": "The app's shared-grid address 15:14 ('Judith began this thanksgiving...') is content that KJVA's own source calls 16:1. The app's shared-grid chapter 16 is then offset by +1 relative to KJVA's own chapter 16 for verses 1-6, and KJVA's own verse 16:8 is one continuous verse that the app's shared-grid numbering (matching DRB/NRSV/NABRE) splits across 16:7 and 16:8. This was found and correctly fixed in commit 3733a42 (2026-07-12) -- the fix places KJVA's own verse content, unaltered in wording, at the shared-grid address that actually corresponds to it. A naive same-address tool comparison against raw KJVA will always report 9 'mismatches' at 15:14 and 16:1-8 as a result -- this is expected and correct, not a regression. Do not 'fix' it back to a naive same-address mapping.",
+    "traditionNote": "This is a KJV-specific versification fact, not evidence of a general Protestant-vs-Catholic split -- DRB, NABRE, and NRSV all already agree with each other and with the app's shared-grid numbering at this exact boundary; only the KJV Apocrypha's own internal numbering differs. Every translation's versification must be checked independently, never assumed from its tradition family."
   },
   "knownAbsences": {
-    "Rotherham": "absent with 0 active rows",
-    "rawText": "absent with 0 active rows"
+    "Rotherham": "absent with 0 active rows -- Rotherham never covered the Apocrypha historically, not a gap"
   },
   "allowedClaims": [
-    "Judith KJV, NABRE, and DRB active lanes are exact-source-collated within their recorded scopes.",
-    "Judith remains partial-trust only."
+    "Judith KJV, NABRE, DRB, and NRSV active lanes are exact-source-collated within their recorded scopes.",
+    "Judith is fully trusted across all five applicable translation lanes as of 2026-07-13."
   ],
   "forbiddenClaims": [
-    "Judith is fully trusted.",
-    "Judith NRSV is source-verified.",
-    "The non-Protestant canon is textually trusted."
+    "Judith's chapter 15/16 KJV versification difference is a defect -- it is a documented, deliberate, already-correctly-handled translation-specific feature.",
+    "This resolution's NRSV header-pollution finding generalizes to any other deuterocanonical book -- confirmed now in both Tobit and Judith, but every remaining deuterocanonical book still needs its own independent check."
   ],
   "nextRequiredWork": [
-    "Run Judith text trust status audit.",
-    "Resolve Judith NRSV source witness/status.",
-    "Update the current non-Protestant canon status after the Judith status audit passes."
+    "Continue checking each remaining deuterocanonical book's NRSV column for the same section-header-pollution pattern, independently -- now confirmed in two books, still not assumed universal."
   ]
 }

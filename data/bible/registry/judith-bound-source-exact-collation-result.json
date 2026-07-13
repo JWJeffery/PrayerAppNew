@@ -2,6 +2,7 @@
   "schema": "judith-bound-source-exact-collation-result-v1",
   "id": "judith_bound_source_exact_collation_result_2026_06_28",
   "status": "partial_pass_kjv_nabre_drb_exact_nrsv_unresolved",
+  "supersededNote": "NRSV, unresolved as of this file's original recording, was resolved 2026-07-13 -- see data/bible/registry/judith-text-trust-status.json's current status and AUDIT_GOVERNANCE_LEDGER.md's 'Judith remediation' entry. This file's KJV/NABRE/DRB findings below remain historically accurate for their recorded scope (this file's KJV path is the pre-1769 1611 source, since superseded by the 2026-07-12 KJVA edition switch and independently re-verified clean then). NABRE was independently re-collated and fixed again in the 2026-07-13 pass (17 header-pollution verses, a different bug class than this file's exact-collation scope covered -- this deuterocanonical book was outside the corpus-wide protocanon header fix).",
   "recordedAt": "2026-06-28",
   "activePath": "data/bible/OT/judith.json",
   "policy": "data/bible/registry/judith-source-address-policy.json",
