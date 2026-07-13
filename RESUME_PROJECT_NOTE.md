@@ -967,3 +967,16 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 
 **Next book in sequence: 2 Samuel.** No open decisions carried forward, but per this session's finding, worth periodically re-running the improved NABRE check against older closed books if the tooling improves further.
 
+## Session, 2026-07-13 continued — 2 Samuel, 1 Kings, 2 Kings (three books in one pass)
+
+**HANDOFF — read this first if picking up fresh.** 2 Samuel, 1 Kings, and 2 Kings are all newly CLOSED. Continuing to batch multiple books per session; full per-book rigor unchanged.
+
+**What happened, briefly (full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "2 Samuel, 1 Kings, 2 Kings" entry):**
+- **2 Samuel**: fully clean, no surprises. 95 verses changed (86 NRSV + 9 NABRE).
+- **1 Kings**: fully clean. 231 verses changed (212 NRSV + 19 NABRE). One more blind-regex near-miss caught and reverted (14:10 — the third such incident after Numbers 21:18 and Exodus 15:17, same pattern: a stray-space "fix" that wasn't actually needed because the source genuinely has that space).
+- **2 Kings**: fully clean, resolved another old unnamed dashboard flag the same way Deuteronomy's was resolved. 264 verses changed (226 NRSV + 38 NABRE). **Found a third instance of the self-inflicted NABRE content-loss bug** (24:1, missing a whole sentence) — same root cause as Exodus and 1 Samuel, same origin commit.
+
+**Running tally on the self-inflicted content-loss bug, worth tracking explicitly going forward:** confirmed in Exodus (2×), 1 Samuel (1×), 2 Kings (1×) — 4 total instances found and fixed so far. Confirmed absent (checked and clean) in Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 2 Samuel, and 1 Kings. Genesis remains confirmed clean (the 20 initial flags there were all false positives from a regex limitation, not the real bug). **Every future book's NABRE audit should include this check** — measure the length of whatever gets stripped from the front of chapter-opening verses; if it's much longer than the ~35-character ceiling every genuine title in this source has stayed under, investigate before trusting it.
+
+**Next book in sequence: 1 Chronicles.** No open decisions carried forward. Per the naming-gotcha notes in `scripts/bible-audit/README.md`, DRB source likely files this as `1-paralipomenon.usfm` — confirm before assuming it's missing.
+
