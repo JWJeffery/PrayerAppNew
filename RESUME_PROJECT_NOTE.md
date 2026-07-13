@@ -1242,3 +1242,19 @@ Josh's direction, made for practical context-budget reasons partway through this
 **Joel is now fully clean across all five applicable translations — zero known open defects.** Mark Joel green on the dashboard.
 
 **Next book in sequence: Amos.** Jeremiah remains deferred and red, unchanged.
+
+## Session, 2026-07-13 continued — Amos: fully closed; second confirmed instance of the within-chapter-split sub-pattern (Hosea 2:23's class, not a boundary crossing), caught by checking the whole chapter per the Song of Songs standing lesson
+
+**HANDOFF — Amos is now fully closed. Not yet committed to origin/main** — handed off as a patch. DRB source uses standard naming (`amos.usfm`).
+
+**KJV, Rotherham:** zero mismatches.
+
+**DRB — one finding, chapter 6.** `audit_drb`'s chapter-count diff (14 vs. 15) pointed to the tail, but per the Song of Songs standing lesson, checked the *whole* chapter against KJV rather than assuming the tail was the only affected region — found the actual divergence starts at v.10/11, not at the very end. This source splits into two verses (6:10 and 6:11) what KJV/common numbering keeps as a single verse (6:10) — the same within-chapter-split sub-pattern first identified at Hosea 2:23, not a boundary crossing into another chapter. Confirmed by KJV's own v.10 wording, which visibly runs both halves together ("...Is there yet any with thee? and he shall say, No. Then shall he say, Hold thy tongue..."). Merged the source's two verses into the single common 6:10 slot, then shifted the remaining tail (common 6:11-14 = source's own 6:12-15) down by one to restore alignment through the end of the chapter.
+
+**NABRE:** FIXED — 6 verses, all the established LORD/GOD-casing-plus-stray-space bug (this book's first instance of the "Lord GOD" → "Lord God" variant of the same normalization, at 7:1, 8:9, 8:11 — confirmed against already-clean verses elsewhere in the book that GOD gets the same title-case treatment as LORD).
+
+**NRSV:** FIXED — 17 of 146 verses corrected against NRSV-CI, zero chapter-count divergence, ordinary wording differences throughout, nothing needed independent corroboration.
+
+**Amos is now fully clean across all five applicable translations — zero known open defects.** Mark Amos green on the dashboard.
+
+**Next book in sequence: Obadiah.** Jeremiah remains deferred and red, unchanged.

@@ -1895,3 +1895,11 @@ KJV, Rotherham, DRB: zero mismatches, zero chapter-count diffs -- second clean-o
 **Joel is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
 
 **Next book in sequence: Amos.**
+
+## Amos remediation, session 2026-07-13 continued — fully closed; second confirmed within-chapter-split instance, caught by whole-chapter checking
+
+KJV, Rotherham: zero mismatches. DRB: one finding in chapter 6 — the reported chapter-count diff (14 vs 15) pointed toward the tail, but checking the whole chapter (per the Song of Songs standing lesson) found the real divergence starts at v.10/11: this source splits into two verses what KJV keeps as one (6:10), the same within-chapter-split sub-pattern first seen at Hosea 2:23. Confirmed via KJV's own combined wording. Merged the source's two verses into the single common slot, then shifted the tail (6:11-14 = source's own 6:12-15) down by one. NABRE: 6 verses fixed, all the established casing-plus-stray-space bug — first appearance of the "Lord GOD" → "Lord God" variant in this book, confirmed against the established convention (GOD gets the same title-case treatment as LORD). NRSV: 17 of 146 verses corrected against NRSV-CI, zero chapter-count divergence, ordinary wording differences.
+
+**Amos is now fully clean across all five applicable translations — zero known open defects.** Moved to green on the dashboard.
+
+**Next book in sequence: Obadiah.**
