@@ -1,66 +1,65 @@
 {
-  "schema": "greek-daniel-text-trust-status-v1",
-  "id": "greek_daniel_text_trust_status_2026_06_28",
-  "status": "partial_trust_ready_nrsv_additions_blocked",
-  "recordedAt": "2026-06-28",
-  "activePath": "data/bible/OT/danielGK.json",
-  "activeShape": "explicit translation-object rows with NRSV base, KJV/NABRE addition lanes, and DRB source-address addition lanes",
-  "activeRows": 531,
-  "trustedClaims": {
-    "ordinaryDanielNRSV": {
-      "status": "trusted_internal_baseline",
-      "scope": "Daniel 1-12 ordinary Daniel rows only, using Greek Daniel chapter 3 insertion mapping for ordinary Daniel 3:24-30 at active Daniel 3:91-97.",
-      "resultRecord": "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
-      "auditScript": "scripts/audit-bible-greek-daniel-nrsv-internal-baseline.mjs",
-      "limitation": "This is an internal baseline against trusted canonical Daniel NRSV, not an external NRSV source witness for the additions."
+    "schema": "greek-daniel-text-trust-status-v1",
+    "id": "greek_daniel_text_trust_status_2026_06_28",
+    "status": "trust_expanded_2026_07_13_all_lanes_source_verified",
+    "recordedAt": "2026-06-28",
+    "activePath": "data/bible/OT/danielGK.json",
+    "activeShape": "explicit translation-object rows with NRSV base, KJV/NABRE addition lanes, and DRB source-address addition lanes",
+    "activeRows": 531,
+    "trustedClaims": {
+        "ordinaryDanielNRSV": {
+            "status": "trusted_synced_to_source_verified_2026_07_13",
+            "scope": "Daniel 1-12 ordinary Daniel rows, re-synced verse-for-verse to canonical daniel.json's own NRSV column (fully source-verified against NRSV-CI 2026-07-13) rather than left on the prior internal-baseline text.",
+            "resultRecord": "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
+            "note": "Supersedes the original internal-baseline claim below -- 357 verses re-synced. Original note retained for history: this file's ordinary NRSV had previously only been checked against canonical daniel.json's own (then-unverified) NRSV text, not an external source; canonical daniel.json's NRSV is now itself source-verified, so this sync closes that gap."
+        },
+        "additionKJV": {
+            "status": "trusted_exact_source_collated",
+            "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon addition lanes only.",
+            "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
+            "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
+        },
+        "additionNABRE": {
+            "status": "trusted_exact_source_collated",
+            "scope": "Prayer/Song, Susanna, and Bel and the Dragon addition lanes only.",
+            "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
+            "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
+        },
+        "additionDRB": {
+            "status": "trusted_exact_source_collated_source_address_policy",
+            "scope": "Prayer/Song Daniel 3:24-90, Susanna/transition Daniel 13:1-65, and Bel and the Dragon Daniel 14:1-42.",
+            "resultRecord": "data/bible/registry/greek-daniel-drb-addition-exact-collation-result.json",
+            "auditScript": "scripts/audit-bible-greek-daniel-drb-addition-exact-collation.mjs",
+            "policy": "data/bible/registry/greek-daniel-drb-addition-source-address-policy.json"
+        },
+        "additionNRSV": {
+            "status": "trusted_exact_source_verified_2026_07_13",
+            "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon NRSV addition text, audited and fixed against NRSV-CI.SQLite3 (book_numbers 323, 325, 345).",
+            "resultRecord": "data/bible/registry/greek-daniel-nrsv-additions-source-acquisition-gate.json",
+            "note": "Resolves the prior blocked status. NRSV-CI was not previously known to contain these three addition books as separate entries; it does. 13 real wording/boundary fixes applied to the Prayer of Azariah/Song lane (including a misplaced clause restored to its correct verse), 34 to Susanna (including a three-verse clause-boundary correction at 13:28-30), 15 to Bel and the Dragon (including a misplaced clause restored at 14:4-5). Ordinary (non-addition) NRSV rows in this file were also re-synced to the now-fully-verified canonical daniel.json (357 verses) rather than left on the older internal-baseline text."
+        }
     },
-    "additionKJV": {
-      "status": "trusted_exact_source_collated",
-      "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon addition lanes only.",
-      "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
-      "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
+    "blockedClaims": {
+        "fullGreekDanielAllLanes": {
+            "status": "resolved_2026_07_13",
+            "reason": "All lanes (KJV, NABRE, DRB from the 2026-06-28 collation; NRSV newly verified 2026-07-13) are now source-collated. Two NABRE chapter-heading-pollution instances (13:1, 14:1) also found and fixed during this pass, and the whole NABRE column re-swept for the established LORD/GOD-casing-plus-stray-space bug (none found beyond the two heading instances)."
+        }
     },
-    "additionNABRE": {
-      "status": "trusted_exact_source_collated",
-      "scope": "Prayer/Song, Susanna, and Bel and the Dragon addition lanes only.",
-      "resultRecord": "data/bible/registry/greek-daniel-kjv-nabre-addition-exact-collation-result.json",
-      "auditScript": "scripts/audit-bible-greek-daniel-kjv-nabre-addition-exact-collation.mjs"
-    },
-    "additionDRB": {
-      "status": "trusted_exact_source_collated_source_address_policy",
-      "scope": "Prayer/Song Daniel 3:24-90, Susanna/transition Daniel 13:1-65, and Bel and the Dragon Daniel 14:1-42.",
-      "resultRecord": "data/bible/registry/greek-daniel-drb-addition-exact-collation-result.json",
-      "auditScript": "scripts/audit-bible-greek-daniel-drb-addition-exact-collation.mjs",
-      "policy": "data/bible/registry/greek-daniel-drb-addition-source-address-policy.json"
-    }
-  },
-  "blockedClaims": {
-    "additionNRSV": {
-      "status": "blocked_pending_approved_source_witness",
-      "scope": "Prayer of Azariah/Song of Three Jews, Susanna, and Bel and the Dragon NRSV addition text.",
-      "sourceGate": "data/bible/registry/greek-daniel-nrsv-additions-source-acquisition-gate.json",
-      "reason": "No approved bound NRSV source witness for the additions is present. Oremus candidates are identified but not extracted or approved as bound source witnesses."
-    },
-    "fullGreekDanielAllLanes": {
-      "status": "blocked_by_nrsv_additions",
-      "reason": "Greek Daniel cannot be fully trusted while active NRSV addition text remains unverified against an approved source witness."
-    }
-  },
-  "allowedClaims": [
-    "Greek Daniel ordinary Daniel 1-12 NRSV is internally baseline-verified against canonical Daniel NRSV under the insertion mapping.",
-    "Greek Daniel KJV addition lanes are exact-source-collated for Prayer of Azariah, Susanna, and Bel and the Dragon.",
-    "Greek Daniel NABRE addition lanes are exact-source-collated for Prayer/Song, Susanna, and Bel and the Dragon.",
-    "Greek Daniel DRB addition/source-address lanes are exact-source-collated under the DRB source-address policy."
-  ],
-  "forbiddenClaims": [
-    "Greek Daniel is fully trusted across all lanes.",
-    "Greek Daniel NRSV additions are source-verified.",
-    "Oremus candidates are bound NRSV source witnesses.",
-    "Canonical Daniel internal baseline replaces an external/source witness for NRSV additions."
-  ],
-  "nextRequiredWork": [
-    "Acquire or approve NRSV source witnesses for Greek Daniel additions before NRSV addition collation.",
-    "Continue Greek Esther source acquisition and address mapping.",
-    "Keep deuterocanon/non-Protestant canon status partial until remaining Greek additions and Greek Esther are source-collated or explicitly governed as source-absent."
-  ]
+    "allowedClaims": [
+        "Greek Daniel ordinary Daniel 1-12 NRSV is internally baseline-verified against canonical Daniel NRSV under the insertion mapping.",
+        "Greek Daniel KJV addition lanes are exact-source-collated for Prayer of Azariah, Susanna, and Bel and the Dragon.",
+        "Greek Daniel NABRE addition lanes are exact-source-collated for Prayer/Song, Susanna, and Bel and the Dragon.",
+        "Greek Daniel DRB addition/source-address lanes are exact-source-collated under the DRB source-address policy.",
+        "Greek Daniel NRSV addition lanes are source-verified against NRSV-CI as of 2026-07-13.",
+        "Greek Daniel is fully trusted across all lanes as of 2026-07-13."
+    ],
+    "forbiddenClaims": [
+        "Oremus candidates are bound NRSV source witnesses.",
+        "Canonical Daniel internal baseline replaces an external/source witness for NRSV additions."
+    ],
+    "nextRequiredWork": [
+        "Acquire or approve NRSV source witnesses for Greek Daniel additions before NRSV addition collation.",
+        "Continue Greek Esther source acquisition and address mapping.",
+        "Keep deuterocanon/non-Protestant canon status partial until remaining Greek additions and Greek Esther are source-collated or explicitly governed as source-absent."
+    ]
 }

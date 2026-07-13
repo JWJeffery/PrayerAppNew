@@ -1516,3 +1516,79 @@ solved in the registry, NRSV baseline work flagged as gated in
 `greek-daniel-nrsv-internal-baseline-gate.json`) and deserves a scoping conversation rather than
 being assumed as a same-shape continuation of this session's pace. Lamentations is also not yet
 green and untouched. Psalms remains deferred to the very end.
+
+## Session, 2026-07-13 continued — Daniel (Greek): fully closed, resolves the long-blocked NRSV additions gate
+
+**HANDOFF — Daniel (Greek) (danielGK.json, 14 chapters) is now fully closed. Dashboard updated
+in this same commit.** This covers the extended Vulgate/Catholic-canon Daniel: Prayer of
+Azariah/Song of the Three embedded in chapter 3, Susanna as chapter 13, Bel and the Dragon as
+chapter 14.
+
+**Resolves a long-blocked lane.** `greek-daniel-nrsv-additions-source-acquisition-gate.json` had
+been blocked since 2026-06-28 for lack of an approved NRSV source witness for the three
+additions — the only path considered was extracting from Oremus web candidates, which was
+correctly refused without an approved source/license path. **NRSV-CI.SQLite3 (the same bound
+source already used across this entire remediation effort) turned out to already contain all
+three additions as separate books** — "Prayer of Azariah and the Song of the Three Jews"
+(book_number 323, 68 verses), "Susanna" (325, 64 verses), "Bel and the Dragon" (345, 42 verses)
+— something not previously known when the gate was recorded. This is the actual resolution, not
+a new source acquisition.
+
+**KJV, NABRE, DRB addition lanes** were already `trusted_exact_source_collated` from the prior
+session (2026-06-28) — spot-checked rather than re-collated from scratch, since that work was
+already verified. Two new findings during the spot-check: NABRE chapter-heading pollution at
+13:1 and 14:1 (the familiar "Chapter N - Title." prefix, not yet stripped in this file), fixed;
+then re-swept the whole NABRE column for the established LORD/GOD-casing-plus-stray-space bug —
+none found beyond those two.
+
+**NRSV — the real work this session.** Each addition's own verse numbering had to be mapped
+against the active file's addressing before any content could be checked, since none of them
+align 1:1:
+- **Prayer of Azariah/Song of the Three** (active 3:24-90, 67 verses) maps against NRSV-CI's own
+  68-verse numbering with a constant -23 offset through active v51, then a **merge point at
+  active v52** (NRSV-CI's own v29 and v30 combine into this one app verse), after which the
+  offset becomes -22 for the rest. Found this by direct content alignment, not assumed from verse
+  counts. FIXED: 13 verses, including one real content-loss defect where "Do not put us to
+  shame," had drifted from the start of v42 onto the end of v41, and one real content swap where
+  verses 77 and 78 ("seas and rivers" / "you springs") were reversed.
+- **Susanna** (active 13:1-64, verse 65 DRB-only per existing policy) maps 1:1 to NRSV-CI's own
+  64 verses. FIXED: 34 verses, including a three-verse clause-boundary correction at 13:28-30 —
+  "In the presence of the people they said," had drifted from the end of v28 onto the start of
+  v29, and "So they sent for her." had drifted from the start of v30 onto the end of v29; both
+  restored to their correct verses by applying NRSV-CI's own boundaries directly.
+- **Bel and the Dragon** (active 14:1-42) maps 1:1 to NRSV-CI's own 42 verses. FIXED: 15 verses,
+  including the same kind of misplaced-clause defect at 14:4-5 ("So the king said to him, 'Why do
+  you not worship Bel?'" had drifted from the end of v4 onto the start of v5).
+- Throughout all three, preserved this file's own per-verse quotation-mark convention (opening
+  and closing quotes on each verse even where NRSV-CI's real punctuation only opens a quote once
+  per multi-verse speech) rather than importing NRSV-CI's raw quote placement — a stylistic
+  choice, not a content one.
+- **Ordinary (non-addition) NRSV rows** — chapters 1-2, 4-12, and chapter 3's non-addition verses
+  (357 verses) — were re-synced to canonical `daniel.json`'s own NRSV column rather than
+  independently re-derived, since that file is now fully source-verified this session and this
+  file's copy had only ever been checked against daniel.json's older, pre-verification text
+  (previously `trusted_internal_baseline`, now genuinely source-backed by inheritance).
+
+**Two registry files updated to reflect the resolution:**
+`greek-daniel-nrsv-additions-source-acquisition-gate.json` (status changed from
+`blocked_pending_approved_nrsv_additions_source` to resolved, with the NRSV-CI discovery
+recorded) and `greek-daniel-text-trust-status.json` (the `additionNRSV` claim moved from blocked
+to trusted, the now-contradictory `forbiddenClaims` entries removed, and the `ordinaryDanielNRSV`
+claim updated to reflect the resync).
+
+**Daniel (Greek) is now fully clean across all four applicable translations (Rotherham does not
+cover the Apocrypha) — zero known open defects.** `audit-ledger.html` updated in this same
+commit.
+
+**Also worth noting for whoever reads this next:** while orienting on plain Daniel earlier this
+session, `daniel-greek-governance.json` (a different, older registry file governing the plain
+book's NABRE lane specifically) claims "Historical NABRE source file has no Daniel 11 rows" and
+classifies 5:31/11:1-45 as pending. This claim is now stale — the current `nabre.json` source
+witness (committed to the repo, used throughout this session) does have full chapter 11 and
+5:31 content, and the already-closed plain Daniel's zero-mismatch NABRE result already silently
+confirmed this. Not corrected in this session (out of scope for the Greek-Daniel task at hand),
+but flagged here so it doesn't cause confusion later — same pattern as `SESSION_START_SCRIPT.md`
+going stale.
+
+**Next book in sequence:** confirm with Josh. Lamentations is not yet green and untouched.
+Psalms remains deferred to the very end. The three Ethiopian Clement texts remain correctly red.

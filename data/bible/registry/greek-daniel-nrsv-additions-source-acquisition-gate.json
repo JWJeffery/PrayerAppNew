@@ -1,62 +1,64 @@
 {
-  "schema": "greek-daniel-nrsv-additions-source-acquisition-gate-v1",
-  "id": "greek_daniel_nrsv_additions_source_acquisition_gate_2026_06_28",
-  "status": "blocked_pending_approved_nrsv_additions_source",
-  "recordedAt": "2026-06-28",
-  "dependsOn": [
-    "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
-    "data/bible/registry/greek-additions-source-witness-binding.json",
-    "data/bible/registry/greek-additions-collation-plan.json"
-  ],
-  "scope": "NRSV source witnesses for active Greek Daniel additions only: Prayer of Azariah/Song of the Three Jews, Susanna, and Bel and the Dragon.",
-  "activeFile": "data/bible/OT/danielGK.json",
-  "ordinaryDanielStatus": "ordinary_daniel_1_12_repaired_and_internal_baseline_passed",
-  "requiredSourceUnits": [
-    {
-      "unit": "prayer_of_azariah_song_of_three_jews",
-      "activePlacement": "Daniel chapter 3 insertion",
-      "candidateStatus": "candidate_identified_not_bound",
-      "candidateSourceFamily": "Oremus NRSV Anglicized",
-      "sourceNeeded": true
+    "schema": "greek-daniel-nrsv-additions-source-acquisition-gate-v1",
+    "id": "greek_daniel_nrsv_additions_source_acquisition_gate_2026_06_28",
+    "status": "resolved_2026_07_13_nrsv_ci_bound_source_used",
+    "recordedAt": "2026-06-28",
+    "dependsOn": [
+        "data/bible/registry/greek-daniel-nrsv-ordinary-baseline-result.json",
+        "data/bible/registry/greek-additions-source-witness-binding.json",
+        "data/bible/registry/greek-additions-collation-plan.json"
+    ],
+    "scope": "NRSV source witnesses for active Greek Daniel additions only: Prayer of Azariah/Song of the Three Jews, Susanna, and Bel and the Dragon.",
+    "activeFile": "data/bible/OT/danielGK.json",
+    "ordinaryDanielStatus": "ordinary_daniel_1_12_repaired_and_internal_baseline_passed",
+    "requiredSourceUnits": [
+        {
+            "unit": "prayer_of_azariah_song_of_three_jews",
+            "activePlacement": "Daniel chapter 3 insertion",
+            "candidateStatus": "candidate_identified_not_bound",
+            "candidateSourceFamily": "Oremus NRSV Anglicized",
+            "sourceNeeded": true
+        },
+        {
+            "unit": "susanna",
+            "activePlacement": "Daniel chapter 13",
+            "candidateStatus": "candidate_identified_not_bound",
+            "candidateSourceFamily": "Oremus NRSV Anglicized",
+            "sourceNeeded": true
+        },
+        {
+            "unit": "bel_and_the_dragon",
+            "activePlacement": "Daniel chapter 14",
+            "candidateStatus": "candidate_identified_not_bound",
+            "candidateSourceFamily": "Oremus NRSV Anglicized",
+            "sourceNeeded": true
+        }
+    ],
+    "approvedSourceRequirement": {
+        "rule": "Do not extract or commit copyrighted NRSV addition text from web candidates through automation unless an approved source-policy/license path is present in the repo or provided by the project owner.",
+        "allowedNextInputs": [
+            "an approved local source file committed to the repo",
+            "a project-owned/licensed source witness with documented provenance",
+            "a governance decision that the existing active addition text is to be compared against a specific external source manually without committing the source text"
+        ]
     },
-    {
-      "unit": "susanna",
-      "activePlacement": "Daniel chapter 13",
-      "candidateStatus": "candidate_identified_not_bound",
-      "candidateSourceFamily": "Oremus NRSV Anglicized",
-      "sourceNeeded": true
-    },
-    {
-      "unit": "bel_and_the_dragon",
-      "activePlacement": "Daniel chapter 14",
-      "candidateStatus": "candidate_identified_not_bound",
-      "candidateSourceFamily": "Oremus NRSV Anglicized",
-      "sourceNeeded": true
-    }
-  ],
-  "approvedSourceRequirement": {
-    "rule": "Do not extract or commit copyrighted NRSV addition text from web candidates through automation unless an approved source-policy/license path is present in the repo or provided by the project owner.",
-    "allowedNextInputs": [
-      "an approved local source file committed to the repo",
-      "a project-owned/licensed source witness with documented provenance",
-      "a governance decision that the existing active addition text is to be compared against a specific external source manually without committing the source text"
-    ]
-  },
-  "blockedActions": [
-    "claim_active_greek_daniel_additions_nrsv_verified",
-    "promote_danielGK_nrsv_full_trust",
-    "commit_extracted_oremus_nrsv_addition_text_without_approved_source_policy",
-    "mutate_prayer_song_susanna_bel_dragon_from_unbound_source"
-  ],
-  "allowedActions": [
-    "map DRB, NABRE, and KJV source forms for Greek Daniel additions because local/historical source witnesses are already bound",
-    "record source-acquisition status without copying NRSV addition text",
-    "prepare comparison scripts that require a locally approved NRSV addition source file before running"
-  ],
-  "nextRequiredWork": [
-    "Map bound KJV Daniel addition source files to active Greek Daniel addition placements.",
-    "Map bound DRB Daniel source form to active Greek Daniel addition placements.",
-    "Map bound NABRE Daniel source form to active Greek Daniel addition placements.",
-    "Acquire or approve an NRSV addition source witness before active addition text collation."
-  ]
+    "blockedActions": [
+        "claim_active_greek_daniel_additions_nrsv_verified",
+        "promote_danielGK_nrsv_full_trust",
+        "commit_extracted_oremus_nrsv_addition_text_without_approved_source_policy",
+        "mutate_prayer_song_susanna_bel_dragon_from_unbound_source"
+    ],
+    "allowedActions": [
+        "map DRB, NABRE, and KJV source forms for Greek Daniel additions because local/historical source witnesses are already bound",
+        "record source-acquisition status without copying NRSV addition text",
+        "prepare comparison scripts that require a locally approved NRSV addition source file before running"
+    ],
+    "nextRequiredWork": [
+        "Map bound KJV Daniel addition source files to active Greek Daniel addition placements.",
+        "Map bound DRB Daniel source form to active Greek Daniel addition placements.",
+        "Map bound NABRE Daniel source form to active Greek Daniel addition placements.",
+        "Acquire or approve an NRSV addition source witness before active addition text collation."
+    ],
+    "resolvedAt": "2026-07-13",
+    "resolution": "NRSV-CI.SQLite3 (the same bound, approved NRSV source witness already used across this entire remediation effort) contains all three addition units as separate books: 'Prayer of Azariah and the Song of the Three Jews' (book_number 323, 68 verses), 'Susanna' (book_number 325, 64 verses), and 'Bel and the Dragon' (book_number 345, 42 verses). This was not known when this gate was recorded 2026-06-28. All three units audited and fixed against this source. The 'candidate_identified_not_bound' Oremus entries below are now moot -- NRSV-CI was the actual solution, not Oremus."
 }
