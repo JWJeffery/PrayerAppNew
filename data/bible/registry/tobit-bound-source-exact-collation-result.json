@@ -2,6 +2,7 @@
   "schema": "tobit-bound-source-exact-collation-result-v1",
   "id": "tobit_bound_source_exact_collation_result_2026_06_28",
   "status": "partial_pass_kjv_nabre_drb_exact_nrsv_rawtext_rotherham_unresolved",
+  "supersededNote": "NRSV and rawText, unresolved as of this file's original recording, were resolved 2026-07-13 -- see data/bible/registry/tobit-text-trust-status.json's current status and AUDIT_GOVERNANCE_LEDGER.md's 'Tobit remediation' entry. This file's KJV/NABRE/DRB findings below remain historically accurate for their recorded scope, though NABRE was independently re-collated and fixed again in the 2026-07-13 pass (15 header-pollution verses, a different bug class than this file's exact-collation scope covered).",
   "recordedAt": "2026-06-28",
   "activePath": "data/bible/OT/tobit.json",
   "policy": "data/bible/registry/tobit-source-address-policy.json",

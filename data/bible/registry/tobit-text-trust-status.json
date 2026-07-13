@@ -1,48 +1,40 @@
 {
   "schema": "tobit-text-trust-status-v1",
   "id": "tobit_text_trust_status_2026_06_28",
-  "status": "partial_trust_ready_nrsv_rawtext_unresolved",
+  "status": "fully_resolved_2026_07_13",
   "recordedAt": "2026-06-28",
+  "resolvedAt": "2026-07-13",
+  "resolutionNote": "NRSV and rawText, both blocked as of the original 2026-06-28 recording below, were resolved in the full five-translation remediation pass on 2026-07-13. See AUDIT_GOVERNANCE_LEDGER.md's 'Tobit remediation' entry for full detail: NRSV was populated from NRSV-CI.SQLite3 (this project's established primary NRSV source), with the section-header-pollution pattern found and stripped (the same class of bug as the corpus-wide NABRE fix, but in the NRSV column, and specific to this book -- NRSV corpus-wide has not been checked for this pattern in any other book). The one documented internal-order exception (9:3/9:4, where NRSV-CI's own text follows an alternate witness's verse order with a footnoted alternate numbering) was deliberately excluded from the fix and left in the app's existing standard order, matching the precedent already set for Exodus 22:1-4. The rawText anomaly at 10:14 was resolved by removing it entirely: independently confirmed (via KJVA's real chapter-10 verse count, the pre-existing NRSV source-shape classification file below, and content comparison) that this address has no genuine independent content in any of the five translations -- its content was a near-duplicate of verse 12's already-correct text.",
   "activePath": "data/bible/OT/tobit.json",
   "activeRows": 299,
   "resultRecord": "data/bible/registry/tobit-bound-source-exact-collation-result.json",
   "policy": "data/bible/registry/tobit-source-address-policy.json",
   "trustedClaims": {
     "KJV": "trusted_exact_source_collated",
-    "NABRE": "trusted_exact_source_collated",
-    "DRB": "trusted_exact_source_collated_source_address_policy"
+    "NABRE": "trusted_exact_source_collated_2026_07_13 (header-pollution pattern found and fixed, 15 verses, same class as the corpus-wide protocanon fix but this book was outside that effort's scope)",
+    "DRB": "trusted_exact_source_collated_source_address_policy",
+    "NRSV": "trusted_exact_source_collated_2026_07_13 (populated from NRSV-CI.SQLite3; 168 of 242 source rows corrected, dominated by a section-header-pollution pattern; 9:3/9:4 deliberately excluded as a documented internal-order exception)"
   },
-  "blockedClaims": {
-    "NRSV": {
-      "status": "blocked_pending_approved_source_witness_or_policy",
-      "activeRows": 237
-    },
+  "resolvedClaims": {
     "rawText": {
-      "status": "blocked_pending_classification",
-      "activeRows": 1
-    },
-    "fullTobitAllLanes": {
-      "status": "blocked_by_nrsv_rawtext_resolution",
-      "reason": "Tobit cannot be fully trusted while active NRSV and rawText remain unresolved."
+      "status": "resolved_2026_07_13_removed_as_redundant",
+      "reason": "Address 10:14 has no genuine independent content in KJV (KJVA's own chapter 10 ends at verse 12), NRSV (NRSV-CI has no row past 13, confirmed independently and matching this file's own prior NRSV source-shape classification below), NABRE, or DRB (already governed absent per the source-address policy). The rawText content was a near-duplicate of verse 12's already-correct combined farewell scene. Removed rather than reattributed to any translation."
     }
   },
   "knownAbsencesOrInactiveSourceRows": {
-    "Rotherham": "absent with 0 active rows",
+    "Rotherham": "absent with 0 active rows -- Rotherham never covered the Apocrypha historically, not a gap",
     "DRBSourceChapter0": "one source row is introductory/title material and inactive under policy"
   },
   "allowedClaims": [
-    "Tobit KJV, NABRE, and DRB active lanes are exact-source-collated within their recorded scopes.",
-    "Tobit remains partial-trust only."
+    "Tobit KJV, NABRE, DRB, and NRSV active lanes are exact-source-collated within their recorded scopes.",
+    "Tobit's rawText anomaly is resolved (removed as redundant, not classified as belonging to a translation).",
+    "Tobit is fully trusted across all five translation lanes as of 2026-07-13."
   ],
   "forbiddenClaims": [
-    "Tobit is fully trusted.",
-    "Tobit NRSV is source-verified.",
-    "Tobit rawText is trusted or classified.",
-    "The non-Protestant canon is textually trusted."
+    "Tobit's 9:3/9:4 internal-order exception is a defect -- it is a documented, deliberate textual-tradition feature, not something to 'fix' to match NRSV-CI's raw internal ordering.",
+    "This resolution generalizes to any other deuterocanonical book's NRSV column -- the header-pollution pattern found here has only been confirmed in Tobit; other books need their own independent check."
   ],
   "nextRequiredWork": [
-    "Run Tobit text trust status audit.",
-    "Resolve Tobit NRSV source witness/status.",
-    "Classify or remove/govern Tobit rawText."
+    "Check other deuterocanonical books' NRSV columns for the same section-header-pollution pattern found here, rather than assuming Tobit was an isolated case."
   ]
 }
