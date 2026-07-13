@@ -980,3 +980,18 @@ Per Josh's direction, verified Lucy's delivered `Living-Oracles-NT-Standalone-Co
 
 **Next book in sequence: 1 Chronicles.** No open decisions carried forward. Per the naming-gotcha notes in `scripts/bible-audit/README.md`, DRB source likely files this as `1-paralipomenon.usfm` — confirm before assuming it's missing.
 
+## Session, 2026-07-13 continued — 1 Chronicles: all five translations verified and fixed
+
+**HANDOFF — read this first if picking up fresh.** 1 Chronicles is CLOSED, same standard as every prior book (zero known open defects across all five translations). Commit `38ec07f` (patch delivered to Josh, verified applying cleanly against a fresh clone of `origin/main` before handoff — confirm via `git log --oneline -5` whether it's landed on the live repo yet, per this file's own standing instruction not to trust a hash without checking).
+
+**What happened, briefly:**
+- **KJV, Rotherham** — clean against KJVA/Rotherham (scrollmapper), zero mismatches, no surprises.
+- **DRB** — clean against `1-paralipomenon.usfm` (confirmed via `ls usfm/` before assuming, per the standing naming-gotcha note — it was there as predicted). Two chapter-count diffs (11:47, 20:8) were already catalogued in `data/bible/registry/canonical-ot-drb-active-row-source-shape-blockers.json` — confirmed the active rows are correctly blank, matching the governed entry exactly rather than treating it as a new finding.
+- **NABRE** — 12 verses fixed. Three were the self-inflicted chapter-opening content-loss bug (9:1, 16:1, 20:1) — same commit-`2e46ca3` lineage as Exodus/1 Samuel/2 Kings, each individually re-verified (stripped prefix was just "Chapter N - " in each case, well under the ~35-char ceiling; missing content ranged 60-190 characters). One `"[ sic ]"` spacing artifact (5:26). One stray-space-after-opening-quote instance (13:6). Seven instances of the standing "Lord 's" stray-space bug. **Running tally on the self-inflicted content-loss bug, updated:** now confirmed in Exodus (2×), 1 Samuel (1×), 2 Kings (1×), 1 Chronicles (3×) — 7 total instances found and fixed. Still confirmed absent in Genesis, Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 2 Samuel, 1 Kings.
+- **NRSV** — 255 of 942 verses corrected against `NRSV-CI.SQLite3`. Spread across all 29 chapters (no contamination-range signature — checked explicitly before trusting a change count this large, per standing practice). Largest concentration in chapter 6 (30 changes), mostly the standard NRSV genealogical elision pattern ("X became the father of Y, Y of Z" rather than repeating "became the father of"). Independently spot-verified 1 Chr 6:4-14 against two published NRSV sources (Bible Society UK, CCEL) before trusting the pattern — exact match, including the verse 10 parenthetical.
+
+**Diff is exactly 267 insertions/267 deletions (12 NABRE + 255 NRSV), nothing else touched** — confirmed via `git diff --stat`, and the patch was verified applying cleanly against a truly fresh clone of `origin/main` before delivery, per standing workflow.
+
+**Staleness cleanup done this session:** `SESSION_START_SCRIPT.md`'s "Where things stand" section was still dated 2026-07-11 and said Genesis was the only book done with Exodus next — six books stale. Updated to reflect Genesis through 1 Chronicles all closed, next book 2 Chronicles, and pointed to this file for full detail rather than duplicating it.
+
+**Next book in sequence: 2 Chronicles.** No open decisions carried forward. Per the naming-gotcha notes, DRB source likely files it as `2-paralipomenon.usfm` — confirm via `ls usfm/` before assuming.
