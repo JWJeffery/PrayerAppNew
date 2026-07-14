@@ -1,0 +1,17 @@
+{
+    "schema": "broader-canon-prayer-of-apollonius-removal-v1",
+    "id": "broader_canon_prayer_of_apollonius_removal_2026_07_14",
+    "status": "removed_no_source_found_likely_fabricated",
+    "recordedAt": "2026-07-14T00:00:00-07:00",
+    "priorCandidatePath": "data/bible/AR/prayerofapolloniusAR.json",
+    "investigation": {
+        "searchedFor": "\"Prayer of Apollonius\" as an Armenian-tradition biblical/apocryphal/liturgical text",
+        "found": "No genuine text by this name exists in any accessible scholarship. The only real 'Apollonius' material connected to Armenian Christian tradition is the Acts of Apollonius (also called the Armenian Apology and Acts of Apollonius, ed. F.C. Conybeare) -- a 2nd-century martyrdom narrative, not a penitential prayer, and with no textual overlap with the candidate content.",
+        "candidateContentAssessment": "The candidate's 8 verses read as a generic penitential prayer, structurally and thematically near-identical to the genuine, canonical Prayer of Manasseh ('O Lord God of hosts... I have sinned against Thee...'), with no distinguishing content tying it to Apollonius or any documented Armenian source.",
+        "conclusion": "Almost certainly fabricated -- invented content presented as a sourced traditional text. This matches an established pattern of prior fabrications found and removed elsewhere in this project (LFF collects composed rather than sourced, Ethiopian Senkessar entries, an invented Evening Prayer Opening Sentence, an invented Invitatory Antiphon)."
+    },
+    "decision": {
+        "decidedBy": "Josh",
+        "action": "Candidate file deleted (git rm data/bible/AR/prayerofapolloniusAR.json). Removed from the audit-ledger.html dashboard's AR_BOOKS array. No prior text-trust certification existed for this candidate to preserve (unlike the Laodiceans removal) -- this text was never audited or promoted before this session."
+    }
+}

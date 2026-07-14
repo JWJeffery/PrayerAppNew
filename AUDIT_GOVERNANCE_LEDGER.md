@@ -2254,3 +2254,85 @@ never been reachable through the normal Bible browser regardless of which folder
 
 Checked the entire dashboard script for any other reference to the three books after all edits --
 only the new `SY_BOOKS` entry remains, confirmed via `node --check`.
+
+## AR/SY/ODES canonicity survey, session 2026-07-14 continued
+
+First real look at the Armenian, Syriac, and Odes/Canticles corpus. This is a structurally
+different kind of task than the OT/NT canonical remediation -- these are minor, sparsely
+documented texts, several stub-sized, none using the five-translation model. Surveyed all 9
+unaudited items (3 Corinthians AR, Prayer of Apollonius AR, Letter of Baruch SY, History of
+Zosimus SY, 2 Baruch SY, Armenian Canticles, Coptic Odes, EO Odes, Ethiopian Odes) before doing
+any content work.
+
+**3 Corinthians (AR) -- one stale-metadata fix.** The actual content was already rebuilt and
+trust-certified 2026-07-04 (root `status` field: `app_render_eligible_textually_trusted_source_
+map_backed`), but `meta.version` still read "Source identity blocked: Hovhanessian claim
+unverified" -- a leftover from before the M.R. James source-map rebuild resolved the sourcing
+question. Corrected `meta.version`/`meta.copyright` to reflect the real, resolved status. No
+content change.
+
+**Prayer of Apollonius (AR) -- REMOVED, per Josh's direction, as an apparent fabrication.**
+No genuine text by this name exists in accessible scholarship. The only real Armenian-tradition
+"Apollonius" material is the Acts of Apollonius (a 2nd-century martyrdom narrative, ed.
+Conybeare) -- structurally and thematically unrelated to the candidate's content, which reads as
+a generic penitential prayer near-identical in shape to the genuine Prayer of Manasseh. This
+matches the established fabrication pattern already found and removed elsewhere in this project
+(LFF collects, Senkessar entries, invented Ethiopian content). `git rm
+data/bible/AR/prayerofapolloniusAR.json`; removed from `AR_BOOKS`. Closure registry note:
+`data/bible/registry/broader-canon-prayer-of-apollonius-removal-2026-07-14.json`.
+
+**Canonicity research, all remaining items -- a real and useful correction to my own earlier
+assumption about the Baruch texts:**
+
+- **History of Zosimus (SY)** -- confirmed genuine (the Story of Zosimus / History of the
+  Rechabites, a real 5th-century pseudepigraphon transmitted in Greek, Syriac, Ethiopic, Arabic,
+  Armenian, Georgian, and Slavonic recensions) but **not canonical anywhere, including the Syriac
+  tradition** -- explicitly listed among apocryphal works "to be discarded" in the Canon of
+  Nicephorus (c. 850 AD), and universally classified as pseudepigrapha in modern scholarship. The
+  app's current 3 verses are only the opening of a text that runs 16-22 chapters in full form --
+  a real, large, still-open content-completion project if pursued, but its non-canonical status
+  doesn't itself argue for removal (matches the precedent already set by 1 Enoch/Jubilees, kept
+  and clearly labeled as broader-canon pseudepigrapha in the Ethiopian tradition, not scripture).
+
+- **Armenian Canticles, Coptic Odes, EO Odes, Ethiopian Odes -- none of these are independently
+  canonical in their traditions.** Each is a liturgical anthology drawing verses FROM already-
+  canonical scripture (Exodus 15, Deuteronomy 32, 1 Samuel 2, Habakkuk 3, Isaiah 26/38, Jonah 2,
+  Daniel 3, Psalms 136/148-150, and the NT canticles from Luke 1-2) for use at Matins/Orthros --
+  the underlying verses are scripture, but "the Book of Odes" as a compiled collection was never
+  received as its own canonical book by any tradition's official biblical canon, Eastern or
+  Western. (Ancient manuscript witness exists -- Codex Alexandrinus includes an odes appendix --
+  but that's manuscript tradition, not ecumenical canonization.) This doesn't change the earlier
+  finding that these four files are ~90%+ incomplete relative to their own stated verse ranges,
+  or that the underlying source verses are already fully verified elsewhere in this app's OT/NT
+  corpus and could be pulled directly to complete them.
+
+- **2 Baruch (SY) -- a real correction to what I told Josh two turns ago.** The FULL 87-chapter
+  Apocalypse (chapters 1-77 specifically) is pseudepigrapha, not canonical anywhere, Jewish or
+  Christian. **But its final 10 chapters (78-87), which circulated separately and widely as "The
+  Letter of Baruch to the Nine and a Half Tribes," attained genuine deuterocanonical status in the
+  Syriac Orthodox Church specifically** -- included in the Peshitta Old Testament (often appended
+  to Jeremiah), attested independently in 36 Syriac manuscripts, and explicitly listed among the
+  deuterocanonical books in modern Syriac Orthodox Bible editions. This is a real, load-bearing
+  distinction: the "2 Baruch (SY)" file (the full 87 chapters) should be labeled as broader-canon
+  pseudepigrapha, NOT canonical, matching the History of Zosimus/1 Enoch precedent -- while the
+  "Letter of Baruch (SY)" file, representing just chapters 78-87, is NOT the same kind of item and
+  has a real, independent canonical claim distinct from its parent text.
+
+- **Letter of Baruch (SY) -- NOT deleted, contrary to my own initial recommendation two turns
+  ago.** I had suggested deleting this as a redundant stub of 2 Baruch. That recommendation was
+  wrong: this text has genuine, independent deuterocanonical status in the Syriac Orthodox Church
+  (see above), distinct from and *more* canonically significant than its parent "2 Baruch" file,
+  which has no canonical status anywhere. The current 2-verse stub (just the opening address) is
+  a real, large gap relative to the full ten chapters it should contain -- but the content to fill
+  it already exists, verbatim, inside the app's own `2baruchSY.json` file at chapters 78-87 (a
+  slightly different digitization/wording of the same text). Given Josh's original instruction
+  was framed as "delete if no reason to keep independent," and a real reason was found, this file
+  was left untouched pending Josh's confirmation rather than deleted or extended unilaterally.
+
+**Nothing else in this survey was modified.** The 3 Corinthians metadata fix and the Prayer of
+Apollonius removal are the only content/dashboard changes in this entry. Zosimus's completion,
+the four Odes files' completion (including the translation-source question -- none of the app's
+five translations is an actual Septuagint translation, relevant for EO/Coptic Odes specifically),
+and 2 Baruch's own content-accuracy rebuild (flagged as pending since 2026-07-05) all remain real,
+substantial, still-open projects, each large enough to deserve its own dedicated session rather
+than being folded into this survey.
