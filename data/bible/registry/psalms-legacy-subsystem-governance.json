@@ -1,12 +1,12 @@
 {
   "schema": "psalms-legacy-subsystem-governance-v12",
-  "status": "governed_partial_lane_source_trust",
+  "status": "governed_all_expected_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
     "containerPolicy": "Psalms remains a governed 155-record root array. Do not force it into the standard canonical OT chapter schema without a separate migration.",
     "canonicalPsalmPolicy": "Psalms 1-150 carry main psalm translation lanes.",
     "orthodoxAppendixPolicy": "Psalms 151-155 are present as Orthodox/Syriac appendix material and are source-backed by W. Wright, Some Apocryphal Psalms in Syriac.",
-    "grailPolicy": "UNVERIFIED as of 2026-07-14 -- the prior claim that Grail1963 was exact-checksum verified against a source-governed external LOTH corpus was FALSE (see laneSourceTrust.Grail1963.correctionNote for full detail). The JWJeffery/LOTH repo contains no psalter, only scaffolding; the audit script and source files this claim cited do not exist anywhere. Treat this lane as never independently verified.",
+    "grailPolicy": "Independently verified 2026-07-14 -- all 150 psalms content-checked against liturgies.net's Liturgy of the Hours Psalter (a genuinely different source pipeline than the LOTH-repo claim, which was confirmed FALSE -- see laneSourceTrust.Grail1963.correctionNote for full detail). 923 corpus-wide mechanical corruption instances fixed plus 23 individual content typos. This closes the gap the prior false claim never actually closed.",
     "nrsvPolicy": "NRSV Psalms 1-150 are source-backed by the local Oremus NRSV Psalms source snapshot and exact active/source verification.",
     "sourcePolicy": "All expected Psalter lanes now have lane-level source or source-history trust recorded. This governance record does not promote whole-OT or whole-corpus trust.",
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
@@ -69,17 +69,18 @@
       "repairCommit": "9084f6a5d7ef93618f3519d44ef4b5f9ca47c57d"
     },
     "Grail1963": {
-      "status": "partially_independently_verified_2026-07-14_psalms_1-79_of_150",
+      "status": "independently_verified_2026-07-14_all_150_psalms",
       "scope": "Psalms 1-151",
-      "correctionNote": "The prior claim below (source_governed_external_loth_corpus_exact_checksum_verified) was FALSE. Josh directly checked the JWJeffery/LOTH repo on 2026-07-14 and confirmed it contains no psalter at all -- only architecture and schema scaffolding. None of the paths this entry cites (resources/psalter/grail-1963/psalms.json, registry/psalm-numbering-map.json, scripts/audit-grail-1963-psalter-corpus.mjs) exist in that repo, nor does the audit script exist anywhere in this repo (PrayerAppNew) either. This appears to be another instance of the same false-certification pattern already documented for Lucy elsewhere in this project (the NABRE prefix bug she certified fixed but wasn't) -- here compounded by also falsely claiming to have built the Office of Readings. Do not trust any prior 'exact-checksum' or 'zero mismatch' claim predating 2026-07-14 for this lane.",
+      "correctionNote": "The prior claim below (source_governed_external_loth_corpus_exact_checksum_verified) was FALSE. Josh directly checked the JWJeffery/LOTH repo on 2026-07-14 and confirmed it contains no psalter at all -- only architecture and schema scaffolding. None of the paths this entry cites (resources/psalter/grail-1963/psalms.json, registry/psalm-numbering-map.json, scripts/audit-grail-1963-psalter-corpus.mjs) exist in that repo, nor does the audit script exist anywhere in this repo (PrayerAppNew) either. This appears to be another instance of the same false-certification pattern already documented for Lucy elsewhere in this project (the NABRE prefix bug she certified fixed but wasn't) -- here compounded by also falsely claiming to have built the Office of Readings. Do not trust any prior 'exact-checksum' or 'zero mismatch' claim predating 2026-07-14 for this lane -- the status below is the first genuine one.",
       "realVerification2026-07-14": {
         "sourceUrl": "https://www.liturgies.net/Prayers/lohpsalterbak.htm",
         "sourceTitle": "The Liturgy of the Hours Psalter",
-        "method": "Fetched publicly, freely-viewable page (same usage pattern as oremus.org for NRSV and the historical KJV/NABRE git mirrors elsewhere in this project -- fetch, diff programmatically, fix, no bulk reproduction). Confirmed exact edition match against Psalm 1 (word-for-word) before proceeding.",
-        "coverage": "Psalms 1-79 content-verified (79 itself cut off mid-verse in the source fetch, so effectively 1-78 full + partial 79). Psalms 80-150 NOT yet content-verified -- the source page truncates on fetch and no alternate retrieval method has been found yet for the back half.",
-        "mechanicalSweepScope": "Whole book, all 150 psalms -- NOT limited to 1-79. Two new corpus-wide bug classes found and fixed: stray slash before verse number (6 instances) and stray period before verse number (905 instances, the largest single defect count of any bug found in this entire remediation project), plus 10 compound slash-dot instances and 2 more plain-dot instances the first sweep missed.",
+        "method": "Fetched publicly, freely-viewable page (same usage pattern as oremus.org for NRSV and the historical KJV/NABRE git mirrors elsewhere in this project -- fetch, diff programmatically, fix, no bulk reproduction). Confirmed exact edition match against Psalm 1 (word-for-word) before proceeding. Psalms 1-79 fetched directly; Psalms 80-150 required a second agent (Gemini, at Josh's suggestion) to fetch the back half of the same page after this session's own fetch tool hit a hard truncation limit at Psalm 79/80 on every attempt regardless of extraction method.",
+        "coverage": "All 150 psalms content-verified.",
+        "mechanicalSweepScope": "Whole book, all 150 psalms. Two new corpus-wide bug classes found and fixed: stray slash before verse number (6 instances) and stray period before verse number (905 instances, the largest single defect count of any bug found in this entire remediation project), plus 10 compound slash-dot instances and 2 more plain-dot instances the first sweep missed.",
         "realDefectsFixed_1_to_79": "8 additional real defects beyond the mechanical sweep: 4:7, 24:4, 24:5, 37:10, 37:34, 69:5, 69:21 (see RESUME_PROJECT_NOTE.md for full detail).",
-        "reviewedNotChanged": "~30 apparent mismatches in 1-79 reviewed and left alone: ~16 are a consistent, deliberate de-hyphenation style choice already present throughout this lane (evildoers, tenstringed, etc.) and ~14 are the source page itself having content gaps (verse text cut off mid-sentence) -- the app's text was confirmed fuller/correct in every one of these cases."
+        "realDefectsFixed_80_to_150": "15 additional real defects beyond the mechanical sweep: 80:9, 81:10, 88:10, 89:23, 98:2, 101:6, 104:14, 110:2, 112:1, 119:14, 121:7, 122:8, 128:3, 144:3, 145:14 (see RESUME_PROJECT_NOTE.md for full detail).",
+        "reviewedNotChanged": "~96 apparent mismatches across the whole book reviewed and left alone: a consistent, deliberate de-hyphenation style choice already present throughout this lane (evildoers, tenstringed, firstborn, etc.), the source page's own content gaps (verse text cut off mid-sentence in a handful of spots in 1-79) where the app's text was confirmed fuller/correct, and parsing artifacts from this session's own verse-splitting script (Latin psalm-title subtitles and the app's own deliberate Hebrew-letter-name glosses in Psalm 119, e.g. '*Beth (B) II', bleeding into adjacent verse text)."
       },
       "originalFalseClaim_preserved_for_record": {
         "sourceBasis": "uploaded LOTH GitIngest jwjeffery-loth-8a5edab282632443.txt",
