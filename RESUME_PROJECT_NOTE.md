@@ -1687,3 +1687,15 @@ Same sourcing method just proven on 4 Maccabees (Josh pasting genuine 1989 NRSVA
 **What's left:** roughly 26 chapters still flagged with real (not just diacritic) differences, half within the Gutenberg range already fetched (several already investigated and found to be scrollmapper's fault, not the app's — don't assume every flag is a real defect without checking Gutenberg), half beyond it (chapters 59-106, including the Animal Apocalypse and Apocalypse of Weeks sections, which Charles's own introduction documents as having known textual dislocations — same risk pattern as chapter 5, worth extra care).
 
 **Immediate next action for whoever picks this up:** work through the remaining flagged chapters one at a time, same discipline as chapters 5/24/25 — verify against actual Gutenberg/Charles text, watch for content-loss-via-lettered-verses and chapter-boundary shifts specifically. This is genuinely the largest, most delicate single-book task in the whole remediation effort; don't rush it.
+
+## Session, 2026-07-14 continued — 1 Enoch: chapters 61-108 checked, book-wide pass complete (not exhaustive)
+
+**HANDOFF — 1 Enoch is still NOT closed, but every chapter flagged by the comparison method has now been checked across the whole book.** Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s second 1 Enoch entry.
+
+Josh supplied chapters 61-108 directly (CCEL's hosting of the same Charles translation), closing the sourcing gap. Six more real defects found and fixed (chapter 76's fabricated portal numbers; three garbled/corrupted phrases in chapter 90; two small sense-breaking typos in chapters 103 and 106). Several more flagged chapters turned out to be scrollmapper's own errors, not the app's — same pattern as the first half of the book.
+
+**Total real defects fixed this session, whole book: chapters 5, 24, 25, 76, 90 (×3), 103, 106 — 9 verses/passages total, plus the ch24/25 boundary restructure.** Book verse count: 1,051 (was 1,048).
+
+**What "checked" means here, precisely:** every chapter that showed a genuine (non-diacritic, non-paraphrase) difference against the scrollmapper comparison has now been individually verified against real Charles-translation source text (Gutenberg for chapters 1-60, CCEL for 61-108) and fixed if the app was actually wrong. What has NOT been done: a slow, fully exhaustive verse-by-verse read of the ~650 verses that already matched scrollmapper, in case scrollmapper itself missed something there too. Given this book's real complexity (lettered sub-verses, documented scholarly dislocations in chapters 5 and 91-93, two cross-checked independent witnesses), this is a defensible stopping point — but if Josh wants full exhaustive verification, that's still open, real work.
+
+**Immediate next step if picking this up:** decide whether book-wide "checked every flagged difference" is sufficient to call 1 Enoch green, or whether Josh wants the fully exhaustive pass first. Either way, Psalms remains the last deferred OT item, and this remains the largest single-book task in the whole remediation effort.

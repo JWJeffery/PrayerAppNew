@@ -1963,3 +1963,29 @@ Both fixed via direct, individually-verified substitution. `git diff --stat`: ex
 **This is not a book that can be closed in one session.** Each remaining flagged chapter needs the same individual verification discipline just demonstrated on chapters 5 and 24/25 -- checking against real Gutenberg/Charles text (not scrollmapper alone), and specifically watching for the two confirmed defect classes found this session: lettered-sub-verse content loss (chapter 5's pattern) and chapter-boundary shifts (chapter 24/25's pattern), either of which could recur anywhere else in the book, especially the Animal Apocalypse (85-90) and Apocalypse of Weeks (91-93) sections which Charles's own introduction flags as having known dislocations.
 
 **`data/bible/OT/1enoch.json` diff this session:** chapters 5, 24, 25 touched. `git diff --stat`: 23 insertions / 11 deletions.
+
+## 1 Enoch remediation, session 2026-07-14 continued — chapters 61-108 checked, five more real defects fixed
+
+**Josh supplied the remaining text directly** (chapters 61-108, from CCEL's hosting of Charles's *Apocrypha and Pseudepigrapha of the Old Testament*, Oxford: Clarendon Press) — confirmed to be the same underlying Charles translation already in use (wording matches Gutenberg/SPCK at every point checked, just without the bracket apparatus). This closes the sourcing gap that blocked verification of the back half of the book.
+
+**Chapters cleared as false alarms (scrollmapper's fault, not the app's), same pattern as the earlier session:** 67, 69, 75, 81, 91 (verses 5/12/13), 100, 89 (verses 1/10/15/16/37/39/48, on inspection these are all synonym-level paraphrase, not content loss).
+
+**Real defects found and fixed, verified against the newly-supplied source:**
+
+1. **Chapter 76, verses 11-13 — fabricated portal numbers.** The app's text invented absolute portal numbers ("ninth portal," "tenth portal," "eleventh portal," "twelfth portal") that don't exist anywhere in Charles's actual text. The real text consistently uses relative position within each three-portal group (first/middle/third, or first/middle/last), with only one absolute reference ("the seventh portal") used as a one-time orientation marker for the north-wind group. Rebuilt verses 11-13 with the correct relative-position language and corrected the content of verse 11's second half, which had also drifted (was showing "dew and rain, locusts and desolation" where the source has "cloud and hoar-frost, and snow and rain, and dew and locusts").
+
+2. **Chapter 90, verse 14 — garbled text.** App read "...showed it everything: the its help was coming down," which isn't grammatical in any reading. Source: "...showed it everything: he had come down for the help of the ram." Fixed.
+
+3. **Chapter 90, verse 33 — missing word.** App read "And all the had been destroyed" (a dropped word breaking the sentence). Source: "And all that had been destroyed and dispersed..." Fixed.
+
+4. **Chapter 90, verse 40 — garbled text.** App read "...they flowed on account of the which I saw," a broken relative clause. Source: "...they flowed on account of what I had seen." Fixed.
+
+5. **Chapter 103, verse 6 — one-word sense error.** App read "And now they have died in prosperity..." opening a quoted rhetorical taunt with "now," which doesn't fit the sentence (it's answering "how" they died, not stating "now"). Source confirms "And how they have died..." Fixed.
+
+6. **Chapter 106, verse 18 — typo.** "make known to thy son Lamech **the** he who has been born" corrected to "**that** he who has been born," matching the source's sense exactly.
+
+**Standing note for anyone continuing this book:** several verses showed minor synonym-level differences from the newly-supplied source (e.g. "acknowledge" vs. "recognize," "little ones" vs. "young ones," singular vs. plural pronoun agreement for "sheep" in 89:16) that were deliberately NOT touched — these read as legitimate translation-variant or house-style choices already consistent elsewhere in the app's text, not corruption, and forcing them to match one source verbatim risked overwriting a deliberate prior choice without evidence it was wrong. Only changes with a clear grammatical break, a fabricated/invented detail, or a genuine sense-reversal were fixed.
+
+**Total book verse count is now 1,051** (was 1,048 at the start of this remediation effort — the increase reflects real content restored in chapters 24 and 25 earlier in this session, not new errors introduced).
+
+**Status: this pass covered every chapter that scrollmapper's comparison had flagged as a genuine (non-diacritic) mismatch, across the whole book (1-108).** That does not mean the book has been checked character-for-character verse-by-verse in the way Genesis through 4 Maccabees were — it means every place where a real difference was *detectable* by the comparison method used has now been individually verified and, where real, fixed. A slower, fully exhaustive pass (checking every one of the ~650 verses that already matched scrollmapper, in case scrollmapper itself missed something) has not been done and would be the next level of rigor if Josh wants it. Given this book's unusual textual history (lettered sub-verses, documented scholarly dislocations, two independently-sourced witnesses now cross-checked), this is a reasonable and well-evidenced stopping point, not a shortcut.
