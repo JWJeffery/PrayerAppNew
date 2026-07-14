@@ -1,12 +1,12 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v10",
-  "status": "governed_all_expected_lane_source_trust",
+  "schema": "psalms-legacy-subsystem-governance-v11",
+  "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
     "containerPolicy": "Psalms remains a governed 155-record root array. Do not force it into the standard canonical OT chapter schema without a separate migration.",
     "canonicalPsalmPolicy": "Psalms 1-150 carry main psalm translation lanes.",
     "orthodoxAppendixPolicy": "Psalms 151-155 are present as Orthodox/Syriac appendix material and are source-backed by W. Wright, Some Apocryphal Psalms in Syriac.",
-    "grailPolicy": "Grail1963 Psalms 1-151 are exact-checksum verified against the source-governed external LOTH Grail1963 Psalter corpus. The source corpus has 152 psalm entries because Psalms 116 and 147 are split, plus one Psalm 151 appendix witness.",
+    "grailPolicy": "UNVERIFIED as of 2026-07-14 -- the prior claim that Grail1963 was exact-checksum verified against a source-governed external LOTH corpus was FALSE (see laneSourceTrust.Grail1963.correctionNote for full detail). The JWJeffery/LOTH repo contains no psalter, only scaffolding; the audit script and source files this claim cited do not exist anywhere. Treat this lane as never independently verified.",
     "nrsvPolicy": "NRSV Psalms 1-150 are source-backed by the local Oremus NRSV Psalms source snapshot and exact active/source verification.",
     "sourcePolicy": "All expected Psalter lanes now have lane-level source or source-history trust recorded. This governance record does not promote whole-OT or whole-corpus trust.",
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
@@ -69,35 +69,38 @@
       "repairCommit": "9084f6a5d7ef93618f3519d44ef4b5f9ca47c57d"
     },
     "Grail1963": {
-      "status": "source_governed_external_loth_corpus_exact_checksum_verified",
+      "status": "UNVERIFIED_false_certification_discovered_2026-07-14",
       "scope": "Psalms 1-151",
-      "sourceBasis": "uploaded LOTH GitIngest jwjeffery-loth-8a5edab282632443.txt",
-      "sourcePaths": [
-        "resources/psalter/grail-1963/psalms.json",
-        "registry/psalm-numbering-map.json",
-        "scripts/audit-grail-1963-psalter-corpus.mjs"
-      ],
-      "sourceSchema": "grail_1963_psalter_corpus_v1",
-      "sourceWitnessId": "uploaded_grail_psalms_no_accents_pdf_20260527",
-      "sourceGovernanceStatus": "source_governed_restricted",
-      "sourcePsalmEntryCount": 152,
-      "sourceAppendixEntryCount": 1,
-      "activeGrail1963Count": 151,
-      "exactChecksumMismatchCount": 0,
-      "splitPsalmMappingsVerified": {
-        "PSALM 116": [
-          "psalm_116_1",
-          "psalm_116_2"
+      "correctionNote": "The prior claim below (source_governed_external_loth_corpus_exact_checksum_verified) was FALSE. Josh directly checked the JWJeffery/LOTH repo on 2026-07-14 and confirmed it contains no psalter at all -- only architecture and schema scaffolding. None of the paths this entry cites (resources/psalter/grail-1963/psalms.json, registry/psalm-numbering-map.json, scripts/audit-grail-1963-psalter-corpus.mjs) exist in that repo, nor does the audit script exist anywhere in this repo (PrayerAppNew) either. This appears to be another instance of the same false-certification pattern already documented for Lucy elsewhere in this project (the NABRE prefix bug she certified fixed but wasn't) -- here compounded by also falsely claiming to have built the Office of Readings. The Grail1963 lane has NEVER been genuinely verified against any real external source. Do not trust any prior 'exact-checksum' or 'zero mismatch' claim for this lane.",
+      "originalFalseClaim_preserved_for_record": {
+        "sourceBasis": "uploaded LOTH GitIngest jwjeffery-loth-8a5edab282632443.txt",
+        "sourcePaths": [
+          "resources/psalter/grail-1963/psalms.json",
+          "registry/psalm-numbering-map.json",
+          "scripts/audit-grail-1963-psalter-corpus.mjs"
         ],
-        "PSALM 147": [
-          "psalm_147_1",
-          "psalm_147_2"
-        ]
-      },
-      "appendixMappingsVerified": {
-        "PSALM 151": [
-          "psalm_151_lxx_appendix"
-        ]
+        "sourceSchema": "grail_1963_psalter_corpus_v1",
+        "sourceWitnessId": "uploaded_grail_psalms_no_accents_pdf_20260527",
+        "sourceGovernanceStatus": "source_governed_restricted",
+        "sourcePsalmEntryCount": 152,
+        "sourceAppendixEntryCount": 1,
+        "activeGrail1963Count": 151,
+        "exactChecksumMismatchCount": 0,
+        "splitPsalmMappingsVerified": {
+          "PSALM 116": [
+            "psalm_116_1",
+            "psalm_116_2"
+          ],
+          "PSALM 147": [
+            "psalm_147_1",
+            "psalm_147_2"
+          ]
+        },
+        "appendixMappingsVerified": {
+          "PSALM 151": [
+            "psalm_151_lxx_appendix"
+          ]
+        }
       }
     },
     "Rotherham": {
@@ -217,7 +220,7 @@
     "psalms_shape_governed",
     "nrsv_psalms_source_backed_exact_snapshot_verified",
     "coverdale_psalms_1979_bcp_source_backed_exact_snapshot_verified",
-    "grail1963_psalms_source_governed_exact_checksum_verified",
+    "grail1963_psalms_UNVERIFIED_do_not_claim_checksum_verified",
     "rotherham_psalms_1_150_source_backed",
     "rotherham_psalms_source_scope_import_audit_verified",
     "drb_psalms_1_150_source_backed",
