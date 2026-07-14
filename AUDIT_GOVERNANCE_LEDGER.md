@@ -2336,3 +2336,60 @@ five translations is an actual Septuagint translation, relevant for EO/Coptic Od
 and 2 Baruch's own content-accuracy rebuild (flagged as pending since 2026-07-05) all remain real,
 substantial, still-open projects, each large enough to deserve its own dedicated session rather
 than being folded into this survey.
+
+## AR/SY/Odes cleanup, session 2026-07-14 continued -- Zosimus removed, 4 Odes stubs removed, Letter of Baruch corrected
+
+Per Josh's direction, acting on the canonicity survey above.
+
+**History of Zosimus (SY) -- REMOVED.** Confirmed non-canonical everywhere (see prior survey
+entry) and only a 3-verse stub of a 16-22 chapter text. `git rm
+data/bible/SY/historyofzosimusSY.json`; removed from `SY_BOOKS`. Closure note:
+`data/bible/registry/broader-canon-history-of-zosimus-removal-2026-07-14.json`.
+
+**Armenian Canticles, Coptic Odes, EO Odes, Ethiopian Odes -- REMOVED.** Josh's instruction was
+to remove unless a real reason to keep existed; investigated each rather than removing on
+assumption. All four are liturgical anthologies of scripture already canonical and already fully
+verified elsewhere in this app (Exodus 15, Deuteronomy 32, 1 Samuel 2, Habakkuk 3, Isaiah 26/38,
+Jonah 2, Daniel 3, Psalm 136, Psalms 148-150, Luke 1-2) -- none independently canonical in its own
+tradition, all ~90%+ incomplete relative to their own stated verse ranges, and confirmed via
+direct grep to have zero references anywhere in the live app's JavaScript (not wired into any
+liturgical rendering engine). No independent canonical, literary, or functional reason to keep
+found. `git rm` all four; removed from `ODES_BOOKS`.
+
+**Odes of Solomon (SY) -- investigated on the same basis, kept.** Categorically different from
+the four removed: a genuine, distinct, independently significant 2nd-century Syriac hymn
+collection (42 odes, 522 verses, already fully verified GREEN), not a scripture-excerpt anthology.
+Kept on the same basis this project already keeps 1 Enoch, Jubilees, and the Shepherd of Hermas --
+genuine historical/theological significance with real, verified content, not derivative stub
+material. `GREEN_NOTES` entry updated to reflect the four sibling files' removal and explain why
+Odes of Solomon wasn't swept up in it.
+
+Closure note covering all four removed Odes files, including the reasoning for keeping Odes of
+Solomon: `data/bible/registry/broader-canon-odes-canticles-stub-removal-2026-07-14.json`.
+
+**Letter of Baruch (SY) -- CORRECTED, not deleted.** Per Josh's direction to correct rather than
+delete, now that a real, independent canonical claim was confirmed. Rebuilt from the 2-verse stub
+to the complete 10-chapter, 76-verse text, using the content already present (and already
+complete) in `data/bible/SY/2baruchSY.json` at chapters 78-87 -- the same underlying text, since
+this is genuinely those ten chapters circulating under their own traditional title. Chapters
+renumbered 1-10 as their own standalone unit, with each chapter object also recording its
+original 2 Baruch chapter number for traceability. New `meta.canonicalStatus` field documents the
+real deuterocanonical status in the Syriac Orthodox Church (Peshitta OT, traditionally appended
+to Jeremiah, 36 independent manuscript witnesses) distinct from and independent of 2 Baruch's own
+non-canonical status. **Honesty note, not glossed over:** this file's content is not independently
+verified against a primary source -- it inherits the same open verification question already
+flagged on 2baruchSY.json's own governance record (`broader-canon-2baruch-source-materialization-
+2026-07-05.json`: wording not yet confirmed exact against the APOT witness, rebuild started and
+left pending since 2026-07-05). `meta.contentTrustNote` states this plainly. Completing the file
+structurally does not resolve that separate, still-open content-accuracy question.
+
+**2 Baruch (SY)'s own metadata updated for symmetry and clarity** -- added `meta.canonicalStatus`
+explicitly stating the full 87-chapter Apocalypse is not canonical anywhere, while flagging the
+chapters-78-87 exception and pointing to the now-independent Letter of Baruch file.
+
+**What's still genuinely open in this corner of the corpus:** 2 Baruch's (and by extension the
+Letter of Baruch's) own content-accuracy verification against a primary source remains
+unresolved -- flagged, not fixed, in this session. 3 Corinthians (AR) remains the only fully
+trust-certified AR/SY item. Odes of Solomon (SY) remains the only fully trust-certified ODES item.
+Everything else in this corner of the project has now either been removed as non-canonical/
+unsourced/derivative, or flagged with an honest open-verification note.

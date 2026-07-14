@@ -1,16 +1,376 @@
 {
   "meta": {
-    "name": "The Letter of Baruch",
+    "name": "The Letter of Baruch to the Nine and a Half Tribes",
     "id": "LBA",
-    "version": "Charles",
-    "copyright": "Public Domain"
+    "version": "R.H. Charles translation (matches data/bible/SY/2baruchSY.json chapters 78-87)",
+    "copyright": "Public Domain",
+    "canonicalStatus": "Deuterocanonical in the Syriac Orthodox Church -- included in the Peshitta Old Testament, traditionally appended to Jeremiah, attested independently in 36 Syriac manuscripts. This is a genuinely canonical text for the Syriac Orthodox Church, distinct from and independent of 2 Baruch (SY) (the full 87-chapter Apocalypse, chapters 1-77 of which are NOT canonical in any tradition). See AUDIT_GOVERNANCE_LEDGER.md, AR/SY/Odes canonicity survey, 2026-07-14.",
+    "relationToParentText": "These are chapters 78-87 of 2 Baruch, which circulated independently and widely under this title from antiquity. Numbered 1-10 here as its own standalone unit; each chapter object also records its original 2 Baruch chapter number.",
+    "contentTrustNote": "This text shares its underlying content with data/bible/SY/2baruchSY.json chapters 78-87, whose own governance record (broader-canon-2baruch-source-materialization-2026-07-05.json) flags the wording as not yet confirmed exact against the APOT source witness -- a rebuild was started and left pending as of 2026-07-05. This file inherits that same open verification status; it is complete (all 10 chapters, 76 verses) but not yet independently content-verified against a primary source."
   },
   "chapters": [
     {
       "num": 1,
+      "originalChapterIn2Baruch": 78,
       "verses": [
-        { "num": 1, "text": "These are the words of that epistle which Baruch the son of Neriah sent to the nine and a half tribes, which were across the river Euphrates." },
-        { "num": 2, "text": "Thus says Baruch the son of Neriah to the brethren carried into captivity: Mercy and peace." }
+        {
+          "num": 1,
+          "text": "These are the words of that epistle which Baruch the son of Neriah sent to the nine and a half tribes, which were across the river Euphrates, in which these things were written."
+        },
+        {
+          "num": 2,
+          "text": "Thus says Baruch the son of Neriah to the brethren carried into captivity: 'Mercy and peace.' I bear in mind, my brethren, the love of Him who created us, who loved us from of old, and never hated us, but above all educated us."
+        },
+        {
+          "num": 3,
+          "text": "And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father."
+        },
+        {
+          "num": 4,
+          "text": "Wherefore I have been the more careful to leave you the words of this epistle before I die, that you may be comforted regarding the evils which have come upon you, and that you may be grieved also regarding the evil that has befallen your brethren; and again, also, that you may justify His judgment which"
+        },
+        {
+          "num": 5,
+          "text": "He has decreed against you that you should be carried away captive—for what you have suffered is disproportioned to what you have done—in order that, at the last times, you may be found worthy of your fathers."
+        },
+        {
+          "num": 6,
+          "text": "Therefore, if you consider that ye have now suffered those things for your good, that you may not finally be condemned and tormented, then you will receive eternal hope; if above all you destroy from your heart vain error, on account of which you departed hence."
+        },
+        {
+          "num": 7,
+          "text": "For if you so do these things, He will continually remember you, He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "originalChapterIn2Baruch": 79,
+      "verses": [
+        {
+          "num": 1,
+          "text": "Now, my brethren, learn first what befell Zion: how that Nebuchadnezzar king of Babylon came up against us."
+        },
+        {
+          "num": 2,
+          "text": "For we have sinned against Him who made us, and we have not kept the commandments which he commanded us, yet he hath not chastened us as we deserved."
+        },
+        {
+          "num": 3,
+          "text": "For what befell you we also suffer in a preeminent degree, for it befell us also."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "originalChapterIn2Baruch": 80,
+      "verses": [
+        {
+          "num": 1,
+          "text": "And now, my brethren, I make known unto you that when the enemy had surrounded the city, the angels of the Most High were sent, and they overthrew the fortifications of the strong wall, and they destroyed the firm iron corners, which could not be rooted out."
+        },
+        {
+          "num": 2,
+          "text": "Nevertheless, they hid all the vessels of the sanctuary, lest the enemy should get possession of them."
+        },
+        {
+          "num": 3,
+          "text": "And when they had done these things, they delivered thereupon to the enemy the overthrown wall, and the plundered house, and the burnt temple, and the people who were overcome because they were delivered up, lest the enemy should boast and say: 'Thus by force have we been able to lay waste even the house of the Most High in war.' Your brethren also have they bound and led away to Babylon, and have caused them to dwell there."
+        },
+        {
+          "num": 5,
+          "text": "But we have been left here, being very few."
+        },
+        {
+          "num": 6,
+          "text": "This is the tribulation about which I wrote to you."
+        },
+        {
+          "num": 7,
+          "text": "For assuredly I know that (the consolation of) the inhabitants of Zion consoles you : so far as you knew that it was prospered (your consolation) was greater than the tribulation which you endured in having to depart from it."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "originalChapterIn2Baruch": 81,
+      "verses": [
+        {
+          "num": 1,
+          "text": "But regarding consolation, hear the word."
+        },
+        {
+          "num": 2,
+          "text": "For I was mourning regarding Zion, and I prayed for mercy from the Most High, and I said:"
+        },
+        {
+          "num": 3,
+          "text": "'How long will these things endure for us?"
+        },
+        {
+          "num": 4,
+          "text": "And the Mighty One did according to the multitude of His mercies,"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "originalChapterIn2Baruch": 82,
+      "verses": [
+        {
+          "num": 1,
+          "text": "Therefore, my brethren, I have written to you, that you may comfort yourselves regarding the multitude of your tribulations."
+        },
+        {
+          "num": 2,
+          "text": "For know you that our Maker will assuredly avenge us on all our enemies, according to all that they have done to us, also that the consummation which the Most High will make is very nigh, and His mercy that is coming, and the consummation of His judgment, is by no means far off."
+        },
+        {
+          "num": 3,
+          "text": "For lo! we see now the multitude of the prosperity of the Gentiles, Though they act impiously, But they shall be like a vapor:"
+        },
+        {
+          "num": 4,
+          "text": "And we behold the multitude of their power, Though they do wickedly, But they shall be made like unto a drop:"
+        },
+        {
+          "num": 5,
+          "text": "And we see the firmness of their might. Though they resist the Mighty One every hour, But they shall be accounted as spittle."
+        },
+        {
+          "num": 6,
+          "text": "And we consider the glory of their greatness, Though they do not keep the statutes of the Most High, But as smoke shall they pass away."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "originalChapterIn2Baruch": 83,
+      "verses": [
+        {
+          "num": 1,
+          "text": "[For the Most High will assuredly hasten His times, And He will assuredly bring on His hours."
+        },
+        {
+          "num": 2,
+          "text": "And He will assuredly judge those who are in His world, And will visit in truth all things by means of all their hidden works."
+        },
+        {
+          "num": 3,
+          "text": "And He will assuredly examine the secret thoughts, And that which is laid up in the secret chambers of all the members of mail. And will make (them) manifest in the presence of all with reproof."
+        },
+        {
+          "num": 4,
+          "text": "Let none therefore of these present things ascend into your hearts, but above all let us be expectant, because that which is promised to us shall come."
+        },
+        {
+          "num": 5,
+          "text": "And let us not now look unto the delights of the Gentiles in the present, but let us remember what has been promised to us in the end."
+        },
+        {
+          "num": 6,
+          "text": "For the ends of the times and of the seasons and whatsoever is with them shall assuredly pass by together."
+        },
+        {
+          "num": 7,
+          "text": "The consummation, moreover, of the age shall then show the great might of its ruler, when all things come to judgment."
+        },
+        {
+          "num": 8,
+          "text": "Do you therefore prepare your hearts for that which before you believed, lest you come to be in bondage in both worlds, so that you be led away captive here and be tormented there."
+        },
+        {
+          "num": 9,
+          "text": "For that which exists now or which has passed away, or which is to come, in all these things, neither is the evil fully evil, nor again the good fully good."
+        },
+        {
+          "num": 10,
+          "text": "For all healthinesses of this time are turning into diseases,"
+        },
+        {
+          "num": 11,
+          "text": "And all might of this time is turning into weakness, And all the force of this time is turning into impotence,"
+        },
+        {
+          "num": 12,
+          "text": "And every energy of youth is turning into old age and consummation. And every beauty of gracefulness of this time is turning faded and hateful,"
+        },
+        {
+          "num": 13,
+          "text": "And every proud dominion of the present is turning into humiliation and shame,"
+        },
+        {
+          "num": 14,
+          "text": "And every praise of the glory of this time is turning into the shame of silence, And every vain splendor and insolence of this time is turning into voiceless ruin."
+        },
+        {
+          "num": 15,
+          "text": "And every delight and joy of this time is turning to worms and corruption,"
+        },
+        {
+          "num": 16,
+          "text": "And every clamor of the pride of this time is turning into dust and stillness."
+        },
+        {
+          "num": 17,
+          "text": "And every possession of riches of this time is being turned into Sheol alone,"
+        },
+        {
+          "num": 18,
+          "text": "And all the rapine of passion of this time is turning into involuntary death, And every passion of the lusts of this time is turning into a judgment of torment."
+        },
+        {
+          "num": 19,
+          "text": "And every artifice and craftiness of this time is turning into a proof of the truth,"
+        },
+        {
+          "num": 20,
+          "text": "And every sweetness of unguents of this time is turning into judgment and condemnation,"
+        },
+        {
+          "num": 21,
+          "text": "And every love of lying is turning to contumely through truth."
+        },
+        {
+          "num": 22,
+          "text": "[Since therefore all these things are done now, does anyone think that they will not be avenged But the consummation of all things will come to the truth.]"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "originalChapterIn2Baruch": 84,
+      "verses": [
+        {
+          "num": 1,
+          "text": "Behold! I have therefore made known unto you (these things) whilst I live: for I have said (it) that you should learn the things that are excellent; for the Mighty One hath commanded me to instruct you: and I will set before you some of the commandments of His judgment before I die."
+        },
+        {
+          "num": 2,
+          "text": "Remember that formerly Moses assuredly called heaven and earth to witness against you and said: 'If you transgress the law you shall be dispersed, but if you keep it you shall be kept.'"
+        },
+        {
+          "num": 3,
+          "text": "And other things also he used to say unto you when you the twelve tribes were together in the desert."
+        },
+        {
+          "num": 4,
+          "text": "And after his death you cast them away from you: on this account there came upon you what had been predicted."
+        },
+        {
+          "num": 5,
+          "text": "And now Moses used to tell you before they befell you, and lo! they have befallen you: for you have forsaken the law."
+        },
+        {
+          "num": 6,
+          "text": "Lo! I also say unto you after you have suffered, that if you obey those things which have been said unto you, you will receive from the Mighty One whatever has been laid up and reserved for you."
+        },
+        {
+          "num": 7,
+          "text": "Moreover, let this epistle be for a testimony between me and you, that you may remember the commandments of the Mighty One, and that also there may be to me a defense in the presence of Him who sent me."
+        },
+        {
+          "num": 8,
+          "text": "And remember you the law and Zion, and the holy land and your brethren, and the covenant of your fathers, and forget not the festivals and the Sabbaths."
+        },
+        {
+          "num": 9,
+          "text": "And deliver this epistle and the traditions of the law to your sons after you, as also your fathers delivered (them) to you."
+        },
+        {
+          "num": 10,
+          "text": "And at all times make request perseveringly and pray diligently with your whole heart that the Mighty One may be reconciled to you, and that He may not reckon the multitude of your sins, but remember the rectitude of your fathers."
+        },
+        {
+          "num": 11,
+          "text": "For if He judge us not according to the multitude of His mercies, woe unto all us who are born."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "originalChapterIn2Baruch": 85,
+      "verses": [
+        {
+          "num": 1,
+          "text": "Know, therefore, that in former times and in the generations of old our fathers had helpers, righteous men and holy prophets."
+        },
+        {
+          "num": 2,
+          "text": "Nay more, we were in our own land, and they helped us when we sinned, and they interceded for us with Him who made us, because they trusted in their works, and the Mighty One heard them and forgave us."
+        },
+        {
+          "num": 3,
+          "text": "But now the righteous have been gathered and the prophets have fallen asleep, and we also have gone forth from the land, and Zion has been taken from us, and we have nothing now save the Mighty One and His Law."
+        },
+        {
+          "num": 4,
+          "text": "If, therefore, we direct and dispose our hearts, we shall receive everything which we lost, and much better things than we lost by many times."
+        },
+        {
+          "num": 5,
+          "text": "For that which we lost was subject to corruption, and that which we shall receive shall not be corruptible."
+        },
+        {
+          "num": 6,
+          "text": "Moreover, also, I have written thus to our brethren in Babylon, that I might also declare to them the word of my care."
+        },
+        {
+          "num": 7,
+          "text": "And let us always be mindful of the Law of the Mighty One; for if we even here behave ourselves rightly, we shall receive a reward in the end."
+        },
+        {
+          "num": 8,
+          "text": "But if we think that here there is rest, we shall be put to shame in the end."
+        },
+        {
+          "num": 9,
+          "text": "For the world of the Mighty One is that which does not come to an end, but the world in which we are is that which is coming to an end."
+        },
+        {
+          "num": 10,
+          "text": "For the end of all things is come; the judgment is at hand. Let us, therefore, prepare our souls, so that we may not be put to shame."
+        },
+        {
+          "num": 11,
+          "text": "For there is no more a way to return, nor a beginning of the path, nor a limit of the seasons."
+        },
+        {
+          "num": 12,
+          "text": "For the judgment of the Most High is that which does not accept persons. For as the life of man is short, so also is the judgment of the Most High."
+        },
+        {
+          "num": 13,
+          "text": "For there is no more place for repentance, nor yet a way of return, nor a limit to the end of the times, nor an entrance to the path of life."
+        },
+        {
+          "num": 14,
+          "text": "For the judgment of the Most High is one, and His world is one, and His law is one."
+        },
+        {
+          "num": 15,
+          "text": "Therefore, if you have respect to these things, and if you hear my words, you shall receive the consolation of the Mighty One."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "originalChapterIn2Baruch": 86,
+      "verses": [
+        {
+          "num": 1,
+          "text": "Therefore, when you receive my letter, read it carefully in your assemblies. And meditate upon it, in particular however on the days of your fasts. And remember me by this letter, as I also, in the same way, remember you by it, and it may fare you well always."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "originalChapterIn2Baruch": 87,
+      "verses": [
+        {
+          "num": 1,
+          "text": "And it happened, after I had finished all the words of this letter, composing it carefully until the end, that I folded it, and sealed it carefully, and bound it to the neck of the eagle. And I let it go and sent it away."
+        }
       ]
     }
   ]

@@ -1,0 +1,20 @@
+{
+    "schema": "broader-canon-odes-canticles-stub-removal-v1",
+    "id": "broader_canon_odes_canticles_stub_removal_2026_07_14",
+    "status": "removed_non_canonical_derivative_incomplete_stubs",
+    "recordedAt": "2026-07-14T00:00:00-07:00",
+    "priorCandidatePaths": [
+        "data/bible/ODES/armeniancanticlesAR.json",
+        "data/bible/ODES/copticodesCO.json",
+        "data/bible/ODES/eoodes.json",
+        "data/bible/ODES/ethiopianodes.json"
+    ],
+    "retainedForComparison": "data/bible/ODES/odesofsolomonSY.json (Odes of Solomon, SY) -- kept; see reasoning below",
+    "decision": {
+        "decidedBy": "Josh",
+        "reason": "Josh's direction: remove the Odes files unless there was an actual reason to keep them. Investigated each of the four before removing: all are liturgical anthologies drawing individual canticles from scripture that is ALREADY canonical, and already fully verified elsewhere in this app's OT/NT corpus (the referenced ranges: Exodus 15:1-19, Deuteronomy 32:1-43, 1 Samuel 2:1-10, Habakkuk 3:2-19, Isaiah 26:9-20, Isaiah 38:10-20, Jonah 2:2-9, Daniel 3:26-88 LXX, Psalm 136, Psalms 148-150, and Luke 1:46-55/1:68-79/2:29-32). None of the four is independently canonical in its own tradition -- the underlying verses are scripture, but the compiled anthology itself was never received as its own canonical book anywhere, East or West. All four were also confirmed ~90%+ incomplete relative to their own stated verse ranges (most canticles had only 1-6 of their real verses populated), and confirmed via direct grep to have zero references anywhere in the live application's JavaScript -- none are wired into any liturgical rendering engine (Orthros, Horologion, or otherwise). No independent literary, canonical, or functional reason to keep them was found.",
+        "action": "All four candidate files deleted (git rm). Removed from the audit-ledger.html dashboard's ODES_BOOKS array. The Odes of Solomon (SY) file, which shared the same folder and naming convention, was investigated separately and kept -- see below."
+    },
+    "whyOdesOfSolomonWasKept": "Odes of Solomon (SY) is a categorically different item, not swept up in this removal: it is a genuine, distinct, independently significant 2nd-century Syriac Christian hymn collection (42 odes, 522 verses, fully populated, already trust-certified GREEN as of Installment 15, 2026-07-10) -- not a scripture-excerpt anthology like the four removed files. It is not canonical Scripture either, but its removal was never proposed; it was kept on the same basis this project already keeps other significant non-canonical broader-canon texts (1 Enoch, Jubilees, Shepherd of Hermas): genuine historical/theological significance and independent, verified content, not derivative stub material.",
+    "note": "This is a canonicity-and-completeness-and-usage decision, not a content-accuracy correction. If a future session builds out a real Byzantine/Coptic/Armenian/Ethiopian Orthros (Matins) engine that needs 'the Nine Odes as sung at Matins' as a compiled liturgical view, rebuilding that from the app's own already-complete and already-verified canonical source text (rather than resurrecting these incomplete stub files) would be the better-motivated approach at that time."
+}

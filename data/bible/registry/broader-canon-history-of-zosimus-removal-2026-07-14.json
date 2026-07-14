@@ -1,0 +1,13 @@
+{
+    "schema": "broader-canon-history-of-zosimus-removal-v1",
+    "id": "broader_canon_history_of_zosimus_removal_2026_07_14",
+    "status": "removed_non_canonical_incomplete_stub",
+    "recordedAt": "2026-07-14T00:00:00-07:00",
+    "priorCandidatePath": "data/bible/SY/historyofzosimusSY.json",
+    "decision": {
+        "decidedBy": "Josh",
+        "reason": "The History of Zosimus (Story of Zosimus / History of the Rechabites) is genuine pseudepigraphal literature -- real, historically attested in Greek, Syriac, Ethiopic, Arabic, Armenian, Georgian, and Slavonic recensions -- but is not canonical Scripture in any Christian tradition, including the Syriac tradition specifically. It was explicitly listed among apocryphal works to be discarded in the Canon of Nicephorus (c. 850 AD) and has no modern canonical status anywhere. The app's candidate held only the opening 3 verses of a text that runs 16-22 chapters in full form -- a near-total stub, not a completed text.",
+        "action": "Candidate file deleted (git rm data/bible/SY/historyofzosimusSY.json). Removed from the audit-ledger.html dashboard's SY_BOOKS array."
+    },
+    "note": "This is a canonicity-and-completeness decision, not a content-accuracy correction. If this text is ever wanted again as a labeled non-canonical curiosity, primary sources are documented in AUDIT_GOVERNANCE_LEDGER.md's AR/SY/Odes canonicity survey entry (2026-07-14): Charlesworth's OTP translation of the Syriac recension, and critical Syriac editions referenced there."
+}
