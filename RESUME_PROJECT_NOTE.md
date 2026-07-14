@@ -1784,3 +1784,20 @@ Book verse count unchanged this session (1,051) — all fixes were word-level su
 Chapters 37-38, 41-42, 44-52, 54-57, 60, 63-66, 68, 70-71 read and confirmed clean, no changes needed. Note: 60:9/60:25 "terra firma" (vs CCEL's "dry land") was checked and left alone — it's used consistently both places in the app's text, judged a deliberate consistent stylistic rendering rather than a defect, same category as "by reason of"→"because of" from ch.4 in the earlier session.
 
 **Next step for whoever picks this up:** fetch `ENOCH_3.HTM` (Section III, chapters 72-82 — Book of the Heavenly Luminaries) and continue.
+
+## Session, 2026-07-14 continued — 1 Enoch exhaustive pass: chapters 72-82 (Section III) done, 3 real fixes
+
+**HANDOFF — Section III (Book of the Heavenly Luminaries, chapters 72-82) now individually read against CCEL.** 26 chapters remain (83-108) for the exhaustive pass.
+
+This section is dense calendrical/astronomical material (portal counts, day-length fractions, angel-leader names for calendar divisions) — highly repetitive and numerically precise, so verification leaned on checking every number as well as every word.
+
+**Real caveat confirmed again: CCEL's own fetch has occasional OCR/extraction noise, not just missing words.** Chapter 74:15 in the CCEL fetch reads "21,832 days" for the 8-year lunar total, which is arithmetically impossible (1,062 + 1,770 = 2,832, matching every other total in the same passage) — a stray extra "1" digit in CCEL's own text, not a defect in the app. The app's existing "2832" is correct and was left untouched. This is the same lesson as the two garbled-sentence cases from Section I: don't trust CCEL blindly when it's internally inconsistent — cross-check the surrounding math/context first.
+
+**3 real fixes applied and committed this session, chapters 72-82:**
+- 78:4 — fixed a garbled typo in the app's own text: "it is syt into the moon until" → "it is transferred till" (not a CCEL disagreement — "syt" isn't a word; this was a pre-existing corruption independent of any diff)
+- 82:1 — typo "writing them down for the," → "for thee,"
+- 82:12 — "one is placed between the leader and the led, behind their station" → "these heads over thousands are intercalated between leader and leader, each behind a station" (confirmed via two independent sources — real content difference, not just phrasing)
+
+Chapters 72-73, 74 (aside from the CCEL-side digit noise), 75-77, 79-81, and the rest of 82 read and confirmed clean. Note: chapter 82's leader/angel-name spellings (Melkijal/Melkejal, Elime'el/Elome'el, ljasusa'el/Ijasusa'el, etc.) were NOT changed — this whole passage is a scholarly-documented textually corrupt list of proper names with real manuscript variation across witnesses, and the letter-level differences don't rise to the same confidence level as the fixes above. Flagging for awareness, not treating as defects.
+
+**Next step for whoever picks this up:** fetch `ENOCH_4.HTM` (Section IV, chapters 83-90 — Book of Dream Visions, includes the well-known Animal Apocalypse) and continue.
