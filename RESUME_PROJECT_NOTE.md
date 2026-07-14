@@ -1801,3 +1801,27 @@ This section is dense calendrical/astronomical material (portal counts, day-leng
 Chapters 72-73, 74 (aside from the CCEL-side digit noise), 75-77, 79-81, and the rest of 82 read and confirmed clean. Note: chapter 82's leader/angel-name spellings (Melkijal/Melkejal, Elime'el/Elome'el, ljasusa'el/Ijasusa'el, etc.) were NOT changed — this whole passage is a scholarly-documented textually corrupt list of proper names with real manuscript variation across witnesses, and the letter-level differences don't rise to the same confidence level as the fixes above. Flagging for awareness, not treating as defects.
 
 **Next step for whoever picks this up:** fetch `ENOCH_4.HTM` (Section IV, chapters 83-90 — Book of Dream Visions, includes the well-known Animal Apocalypse) and continue.
+
+## Session, 2026-07-14 continued — 1 Enoch exhaustive pass: chapters 83-90 (Section IV) done, MAJOR corpus-wide bug found
+
+**HANDOFF — Section IV (Book of Dream Visions, chapters 83-90) now individually read against CCEL.** 18 chapters remain (91-108, the Epistle of Enoch) for the exhaustive pass.
+
+**Significant discovery this session: a systematic "that" → "the" corruption runs through large stretches of 1 Enoch**, well beyond the single chapter where it was first noticed. Found first in chapter 89 (verses 59-77, a dense run of ~15 corrupted instances), then confirmed by a targeted regex sweep of the ENTIRE 1enoch.json file to also be present in chapters 90, 93, 100, 101, 103, 104, 106, and 108 — 27 corrupted instances total across the book, all now fixed and verified this session. Pattern: legitimate conjunction/relative-pronoun "that" (as in "know that they had...", "record all that he destroys") got corrupted to the article "the" somewhere upstream, most densely in the second half of the book. Regex used to find them (safe to rerun on any book to check for the same bug):
+```python
+import re
+pat = re.compile(r'\b(the) (he|they|I|was|were|it|she|thou|we|did|has|have|had|shall|will|does|do|is|are|should|would|could|can|may|might)\b', re.IGNORECASE)
+pat2 = re.compile(r'\b(the) (the|a|an)\b', re.IGNORECASE)
+```
+Note: this regex also flags legitimate uses of "the might" (noun, "power/strength") — confirmed 3 false positives at 60:9, 60:16, 108:2, correctly left alone.
+
+**This is now a known bug class, same tier as the NABRE chapter-opening-verse deletion bug and the Rotherham-XML OCR-degradation issue documented earlier in this project. Any future session working on ANY book in this corpus should run this same regex sweep before calling that book done** — this bug's existence in 1 Enoch, a book from a completely different source pipeline than the canonical OT/NT books, raises the real possibility it could be present elsewhere too. Recommend Josh decide whether to run this sweep retroactively across all already-green books as a dedicated remediation pass.
+
+**Other real fixes this session (chapters 83-90, non-"the/that" content):**
+- 78:4 (carried over context) — n/a, already fixed last session
+- No other chapters in 83-88 needed changes — all read clean against CCEL
+- 89:62 — restored "all the destruction he effects" (was garbled into the the/that bug during the same corruption event)
+- 89:64 — restored "record against each individual all the destruction which the shepherds effect each in his time and lay it all before me" (was heavily paraphrased/corrupted, not just a the/that swap)
+
+CCEL's own Section IV fetch had a real gap this time (skipped verses 90:12-15 and 90:17-18 in the rendered text, jumping straight to v19) — cross-checked those against coursebible.com and confirmed the app's restored text (after the the/that fixes) matches independently.
+
+**Next step for whoever picks this up:** fetch `ENOCH_5.HTM` (Section V, chapters 91-108 — the Epistle of Enoch, the final section) and continue. This is also the range Josh supplied via CCEL-family paste in an earlier (pre-exhaustive) session, but per the standing rule that prior work only "checked flagged differences" rather than reading exhaustively, it still needs the same fresh line-by-line treatment — and given this session's discovery, running the the/that regex sweep on it specifically (already done for 91-108 as part of this session's whole-book sweep, so that particular bug is already closed for the whole book) is a good first step for any future defect class too.
