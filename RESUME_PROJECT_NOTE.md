@@ -1911,3 +1911,21 @@ Confirmed via direct fetch this session: real text, `versionTitle` field literal
 - JPS1985: sourcing solved, verification not yet done — pick up per the plan above.
 
 Once JPS1985 (and, whenever Josh supplies it, Grail1963) close, Psalms is done and this remediation effort moves to NT / ET-AR-SY / Odes per the original governance sequence — there is no other deferred OT book.
+
+## Session, 2026-07-14 continued — JPS1985 fully verified against The Jewish Study Bible — Psalms complete except Grail1963
+
+**HANDOFF — JPS1985 is now genuinely independently verified, all 150 psalms, zero real defects found.**
+
+Josh supplied "The Jewish Study Bible" (Adele Berlin & Marc Zvi Brettler, uses the NJPS/JPS 1985 translation as its base text) as a PDF. This is a completely different source pipeline than the original Sefaria-API import the app's JPS1985 field was built from, so this closes the governance file's own previously-honest gap (it explicitly blocked the claim `jps1985_psalms_fresh_exact_source_checksum_verified` until now).
+
+**Method:** `pdftotext -layout` on the PDF, then a column-truncation script (fixed-width cut, tuned empirically) to strip the side-by-side academic commentary column, leaving the Bible text. This isn't a clean automated diff the way DRB/Coverdale/NRSV/Rotherham/KJVA were — the 2-column typeset layout means occasional clauses get dropped at page-break boundaries during extraction. Given that, verification was done as a close manual read (like the 1 Enoch effort) rather than a mechanical diff, chapter by chapter, all 150 psalms, checked against the app's existing JPS1985 field.
+
+**Result: every single apparent discrepancy across all 150 psalms traced back to the extraction script dropping a clause at a page break — never once to an actual error in the app's stored text.** Specific examples of extraction drops that were NOT real defects (for anyone spot-checking this claim): 78:8's "a wayward and defiant generation," clause, 86:14's "a band of ruthless men seek my life;" clause, 105:12's "a mere handful, sojourning there,", 106:18's "a flame that consumed the wicked", 111:10's "Praise of Him is everlasting.", 112:10's "The desire of the wicked shall come to nothing.", 130:5's "I look to the LORD;" — in every case, the app's text was the fuller, correct version and my extraction just lost a line.
+
+**Updated `data/bible/registry/psalms-legacy-subsystem-governance.json` (now schema v12):** JPS1985's `laneSourceTrust` status changed to `independently_verified_against_print_edition_2026-07-14`, with a full `independentVerification2026-07-14` block documenting method, the extraction caveat, and result. Top-level `jps1985Policy` updated to match. Re-ran the audit script — passes.
+
+**Full current state of all 9 Psalms lanes, end of this multi-session effort:**
+- **Genuinely verified clean, zero defects:** DRB, Coverdale, NRSV, Orthodox (151-155), KJV (switched to 1769 KJVA), NABRE (stray-space fixed, book-division headers stripped), Rotherham, **JPS1985 (this entry)**.
+- **Correctly marked unverified, needs Josh's input:** Grail1963 — the prior "verified" claim was a false certification (see the earlier entry this session); the app's actual text is confirmed NOT to be the 2010 Revised Grail Psalms (checked against Josh's uploaded PDF of that edition — genuinely different translation throughout), so it's very likely the correct 1963/1986-family edition, but nothing has ever actually verified it against a real source. Needs Josh to paste the genuine text directly (copyright-restricted, not otherwise fetchable) — same pattern as NRSV/NABRE/3-4 Maccabees elsewhere in this project.
+
+**Psalms is effectively done** except for Grail1963 awaiting a source. Once (if) that closes, this whole remediation effort has no more deferred OT books and moves to NT / ET-AR-SY / Odes per the original governance sequence. Given the scale of what Psalms turned out to require (9 translation lanes, a false-certification discovery, and a from-scratch manual PDF-based verification for JPS1985), this took substantially longer than any single-lane OT book in the project so far — worth keeping in mind when scoping the NT phase, since some NT lanes may have similar multi-translation complexity.

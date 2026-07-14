@@ -1,5 +1,5 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v11",
+  "schema": "psalms-legacy-subsystem-governance-v12",
   "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
@@ -13,7 +13,7 @@
     "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
     "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope.",
     "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope.",
-    "jps1985Policy": "JPS1985 Psalms 1-150 are source-identified and history-stable from the Sefaria source-consistent import chain using Tanakh: The Holy Scriptures, published by JPS. Psalms 151-155 remain outside JPS1985 source scope. This is not a fresh exact-checksum source claim.",
+    "jps1985Policy": "JPS1985 Psalms 1-150 were independently verified 2026-07-14 by a full line-by-line read against 'The Jewish Study Bible' print edition (a genuinely different source pipeline than the original Sefaria API import) - zero real content defects found. Psalms 151-155 remain outside JPS1985 source scope.",
     "kjvPolicy": "KJV Psalms 1-150 are source-backed and exact-historical-source verified against data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^. Psalms 151-155 remain outside KJV source scope. The historical source mirror remains removed from active runtime paths.",
     "nabrePolicy": "NABRE Psalms 1-150 are source-backed and exact-historical-source verified after repairing active Psalm heading contamination from the historical NABRE source mirror. The NABRE contamination audit now scans data/bible/OT/psalms.json as a root-array Psalter.",
     "orthodoxPolicy": "Orthodox Psalms 151-155 are source-backed and exact-snapshot verified against the local public-domain Wright source snapshot."
@@ -143,7 +143,7 @@
       "auditScript": "audit:douay-rheims-psalms"
     },
     "JPS1985": {
-      "status": "source_identified_history_stable_source_consistent_import_chain_verified",
+      "status": "independently_verified_against_print_edition_2026-07-14",
       "scope": "Psalms 1-150",
       "sourceName": "Tanakh: The Holy Scriptures, published by JPS",
       "sourceSystem": "Sefaria API",
@@ -160,9 +160,15 @@
       "activeJps1985VerseRows": 2527,
       "activeRowsWithJps1985After150": [],
       "apparentSourceNoteArtifactCount": 0,
+      "independentVerification2026-07-14": {
+        "method": "Line-by-line read of all 150 psalms against Josh-supplied 'The Jewish Study Bible' (Adele Berlin & Marc Zvi Brettler, uses the NJPS/JPS 1985 translation as its base text) - a genuinely different source pipeline than the original Sefaria API import, so this closes the prior blockedClaim gap.",
+        "extractionCaveat": "PDF text extraction (2-column academic layout: Bible text + commentary side by side) occasionally dropped a clause at page-break boundaries on the verifier's side - every apparent discrepancy found was traced to this extraction artifact, never to the app's stored text. No real content defects found anywhere in the 150 psalms.",
+        "result": "zero_real_defects_found"
+      },
       "blockedClaims": [
         "jps1985_psalms_fresh_exact_source_checksum_verified"
       ]
+    
     },
     "KJV": {
       "status": "source_backed_historical_source_exact_verified",
