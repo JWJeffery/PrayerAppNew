@@ -39,7 +39,7 @@
             "NRSV": "Paul, an apostle of Christ Jesus by the will of God, for the sake of the promise of life that is in Christ Jesus,",
             "Rotherham": "Paul, an apostle of Christ Jesus, through the will of God,—according to the promise of life in Christ Jesus;—",
             "KJV": "Paul, an apostle of Jesus Christ by the will of God, according to the promise of life which is in Christ Jesus,",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul, an apostle of Christ Jesus by the will of God for the promise of life in Christ Jesus,",
+            "NABRE": "Paul, an apostle of Christ Jesus by the will of God for the promise of life in Christ Jesus,",
             "DRB": "Paul an Apostle of Jesus Christ by the will of God, according to the promise of the life which is in Christ Jesus:"
           }
         },
@@ -89,7 +89,7 @@
             "NRSV": "For this reason I remind you to rekindle the gift of God that is within you through the laying on of my hands;",
             "Rotherham": "For which cause, I put thee in remembrance, to be stirring up God’s gift of favour, which is in thee through means of the laying on of my hands;",
             "KJV": "Wherefore I put thee in remembrance that thou stir up the gift of God, which is in thee by the putting on of my hands.",
-            "NABRE": "II. Exhortations to Timothy The Gifts Timothy Has Received. For this reason, I remind you to stir into flame the gift of God that you have through the imposition of my hands.",
+            "NABRE": "For this reason, I remind you to stir into flame the gift of God that you have through the imposition of my hands.",
             "DRB": "For the which cause I admonish thee that thou resuscitate the grace of God, which is in thee by the imposition of my hands."
           }
         },
@@ -224,7 +224,7 @@
             "NRSV": "You then, my child, be strong in the grace that is in Christ Jesus;",
             "Rotherham": "Thou, therefore, my child, be empowering thyself in the favour that is in Christ Jesus,",
             "KJV": "Thou therefore, my son, be strong in the grace that is in Christ Jesus.",
-            "NABRE": "Chapter 2 Timothy’s Conduct. So you, my child, be strong in the grace that is in Christ Jesus.",
+            "NABRE": "So you, my child, be strong in the grace that is in Christ Jesus.",
             "DRB": "Thou therefore my son, be strong in the grace which is in Christ Jesus:"
           }
         },
@@ -354,7 +354,7 @@
             "NRSV": "Remind them of this, and warn them before God that they are to avoid wrangling over words, which does no good but only ruins those who are listening.",
             "Rotherham": "Of these things, be putting [them] in remembrance, adjuring [them] before God not to be waging word-battles,—useful, for nothing, occasioning a subversion of them that hearken.",
             "KJV": "Of these things put them in remembrance, charging them before the Lord that they strive not about words to no profit, but to the subverting of the hearers.",
-            "NABRE": "III. Instructions Concerning False Teaching Warning Against Useless Disputes. Remind people of these things and charge them before God to stop disputing about words. This serves no useful purpose since it harms those who listen.",
+            "NABRE": "Remind people of these things and charge them before God to stop disputing about words. This serves no useful purpose since it harms those who listen.",
             "DRB": "These things admonish: testifying before our Lord. Contend not in words, for it is profitable for nothing, but for the subversion of them that hear."
           }
         },
@@ -401,7 +401,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "But God’s firm foundation stands, bearing this inscription: “The Lord knows those who are his,” and, “Let everyone who calls on the name of the Lord desist from wickedness.”",
+            "NRSV": "But God’s firm foundation stands, bearing this inscription: “The Lord knows those who are his,” and, “Let everyone who calls on the name of the Lord turn away from wickedness.”",
             "Rotherham": "Howbeit, the firm foundation of God, standeth, having this seal—The Lord hath acknowledged them who are his, and, Let every one that nameth the name of the Lord stand aloof from unrighteousness.",
             "KJV": "Nevertheless the foundation of God standeth sure, having this seal, The Lord knoweth them that are his. And, Let every one that nameth the name of Christ depart from iniquity.",
             "NABRE": "Nevertheless, God’s solid foundation stands, bearing this inscription, “The Lord knows those who are his”; and, “Let everyone who calls upon the name of the Lord avoid evil.”",
@@ -489,7 +489,7 @@
             "NRSV": "You must understand this, that in the last days distressing times will come.",
             "Rotherham": "But, of this, be taking note—that, in last days, there will set in perilous seasons;",
             "KJV": "This know also, that in the last days perilous times shall come.",
-            "NABRE": "Chapter 3 The Dangers of the Last Days. But understand this: there will be terrifying times in the last days.",
+            "NABRE": "But understand this: there will be terrifying times in the last days.",
             "DRB": "And this know thou, that in the last days shall approach perilous times."
           }
         },
@@ -586,7 +586,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "my persecutions, and my suffering the things that happened to me in Antioch, Iconium, and Lystra. What persecutions I endured! Yet the Lord rescued me from all of them.",
+            "NRSV": "my persecutions and suffering the things that happened to me in Antioch, Iconium, and Lystra. What persecutions I endured! Yet the Lord rescued me from all of them.",
             "Rotherham": "persecutions, sufferings, what manner of things, befell me at Antioch, at Iconium, at Lystra, what manner of persecutions, I endured,—and, out of all, the Lord, rescued me;—",
             "KJV": "Persecutions, afflictions, which came unto me at Antioch, at Iconium, at Lystra; what persecutions I endured: but out of them all the Lord delivered me.",
             "NABRE": "persecutions, and sufferings, such as happened to me in Antioch, Iconium, and Lystra, persecutions that I endured. Yet from all these things the Lord delivered me.",
@@ -664,7 +664,7 @@
             "NRSV": "In the presence of God and of Christ Jesus, who is to judge the living and the dead, and in view of his appearing and his kingdom, I solemnly urge you:",
             "Rotherham": "I adjure [thee] before God, and Christ Jesus—Who is about to be judging living and dead,—both as to his forthshining and his kingdom,",
             "KJV": "I charge thee therefore before God, and the Lord Jesus Christ, who shall judge the quick and the dead at his appearing and his kingdom;",
-            "NABRE": "Chapter 4 Solemn Charge. I charge you in the presence of God and of Christ Jesus, who will judge the living and the dead, and by his appearing and his kingly power:",
+            "NABRE": "I charge you in the presence of God and of Christ Jesus, who will judge the living and the dead, and by his appearing and his kingly power:",
             "DRB": "I Testify before God and Jesus Christ who shall judge the living and the dead, and by his advent, and his Kingdom:"
           }
         },
@@ -691,7 +691,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "and will turn away from listening to the truth and wander away into myths.",
+            "NRSV": "and will turn away from listening to the truth and wander away to myths.",
             "Rotherham": "And, from the truth, indeed, their ear, will they turn away, while, unto stories, they will turn themselves aside.",
             "KJV": "And they shall turn away their ears from the truth, and shall be turned unto fables.",
             "NABRE": "and will stop listening to the truth and will be diverted to myths.",
@@ -744,7 +744,7 @@
             "NRSV": "Do your best to come to me soon,",
             "Rotherham": "Give diligence to come unto me speedily,",
             "KJV": "Do thy diligence to come shortly unto me:",
-            "NABRE": "IV. Personal Requests and Final Greetings Paul’s Loneliness. Try to join me soon,",
+            "NABRE": "Try to join me soon,",
             "DRB": "Make haste to come to me quickly."
           }
         },

@@ -39,7 +39,7 @@
             "NRSV": "Paul, a servant of God and an apostle of Jesus Christ, for the sake of the faith of God’s elect and the knowledge of the truth that is in accordance with godliness,",
             "Rotherham": "Paul, a servant of God—an apostle moreover of Jesus Christ,—according to the faith of the chosen ones of God, and the personal knowledge of the truth that is according to godliness,—",
             "KJV": "Paul, a servant of God, and an apostle of Jesus Christ, according to the faith of God’s elect, and the acknowledging of the truth which is after godliness;",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul, a slave of God and apostle of Jesus Christ for the sake of the faith of God’s chosen ones and the recognition of religious truth,",
+            "NABRE": "Paul, a slave of God and apostle of Jesus Christ for the sake of the faith of God’s chosen ones and the recognition of religious truth,",
             "DRB": "Paul the servant of God, and an Apostle of Jesus Christ according to the faith of the elect of God and knowledge of the truth: which is according to piety,"
           }
         },
@@ -79,7 +79,7 @@
             "NRSV": "I left you behind in Crete for this reason, so that you should put in order what remained to be done, and should appoint elders in every town, as I directed you:",
             "Rotherham": "For this cause left I thee in Crete, that, the things remaining undone, thou mightest completely set in order, and mightest establish, in every city, elders, as, I, with thee arranged:—",
             "KJV": "For this cause left I thee in Crete, that thou shouldest set in order the things that are wanting, and ordain elders in every city, as I had appointed thee:",
-            "NABRE": "II. Pastoral Charge Titus in Crete. For this reason I left you in Crete so that you might set right what remains to be done and appoint presbyters in every town, as I directed you,",
+            "NABRE": "For this reason I left you in Crete so that you might set right what remains to be done and appoint presbyters in every town, as I directed you,",
             "DRB": "For this cause left I thee in Crete, that thou shouldest reform the things that are wanting, and shouldest ordain priests by cities, as I also appointed thee:"
           }
         },
@@ -96,7 +96,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "For a bishop, as God’s steward, must be blameless; he must not be arrogant or quick-tempered or a drunkard or violent or greedy for gain;",
+            "NRSV": "For a bishop, as God’s steward, must be blameless; he must not be arrogant or quick-tempered or addicted to wine or violent or greedy for gain;",
             "Rotherham": "For it is needful that the overseer be—unaccusable, as God’s steward, not self-willed, not soon angry, not given to wine, not ready to wound, not seeking gain by base means,",
             "KJV": "For a bishop must be blameless, as the steward of God; not selfwilled, not soon angry, not given to wine, no striker, not given to filthy lucre;",
             "NABRE": "For a bishop as God’s steward must be blameless, not arrogant, not irritable, not a drunkard, not aggressive, not greedy for sordid gain,",
@@ -204,7 +204,7 @@
             "NRSV": "But as for you, teach what is consistent with sound doctrine.",
             "Rotherham": "But do, thou, speak the things which become the healthful instruction:—",
             "KJV": "But speak thou the things which become sound doctrine:",
-            "NABRE": "III. Teaching the Christian Life Chapter 2 Christian Behavior. As for yourself, you must say what is consistent with sound doctrine, namely,",
+            "NABRE": "As for yourself, you must say what is consistent with sound doctrine, namely,",
             "DRB": "But do thou speak the things that become sound doctrine."
           }
         },
@@ -221,7 +221,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Likewise, tell the older women to be reverent in behavior, not to be slanderers or slaves to much wine; they are to teach what is good,",
+            "NRSV": "Likewise, tell the older women to be reverent in behavior, not to be slanderers or slaves to drink; they are to teach what is good,",
             "Rotherham": "Aged women, in the same way, in deportment, as becometh sacred persons, not given to intrigue, nor yet, to much wine, enslaved, teachers of virtue,—",
             "KJV": "The aged women likewise, that they be in behaviour as becometh holiness, not false accusers, not given to much wine, teachers of good things;",
             "NABRE": "Similarly, older women should be reverent in their behavior, not slanderers, not addicted to drink, teaching what is good,",
@@ -359,7 +359,7 @@
             "NRSV": "Remind them to be subject to rulers and authorities, to be obedient, to be ready for every good work,",
             "Rotherham": "Be putting them in mind, unto rulerships, unto authorities, to be in submission, to be yielding to rule, for every good work, to be, prepared,",
             "KJV": "Put them in mind to be subject to principalities and powers, to obey magistrates, to be ready to every good work,",
-            "NABRE": "Chapter 3 Remind them to be under the control of magistrates and authorities, to be obedient, to be open to every good enterprise.",
+            "NABRE": "Remind them to be under the control of magistrates and authorities, to be obedient, to be open to every good enterprise.",
             "DRB": "Admonish them to be subject to Princes and Potestates, to obey at a word, to be ready to every good work,"
           }
         },
@@ -456,7 +456,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "knowing that such a person is perverted and sinful, being self-condemned.",
+            "NRSV": "since you know that such a person is perverted and sinful, being self-condemned.",
             "Rotherham": "Knowing that such a one is perverted, and sinneth, being self-condemned.",
             "KJV": "Knowing that he that is such is subverted, and sinneth, being condemned of himself.",
             "NABRE": "realizing that such a person is perverted and sinful and stands self-condemned. Directives, Greetings, and Blessing.",
@@ -486,7 +486,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "And let our people learn to devote themselves to good works in order to meet urgent needs, so that they may not be unproductive.",
+            "NRSV": "And let people learn to devote themselves to good works in order to meet urgent needs, so that they may not be unproductive.",
             "Rotherham": "Moreover, let our own learn to be forward, in honourable works, for the necessary uses, that they may not be unfruitful.",
             "KJV": "And let ours also learn to maintain good works for necessary uses, that they be not unfruitful.",
             "NABRE": "But let our people, too, learn to devote themselves to good works to supply urgent needs, so that they may not be unproductive.",

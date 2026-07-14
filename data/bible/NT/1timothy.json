@@ -39,7 +39,7 @@
             "NRSV": "Paul, an apostle of Christ Jesus by the command of God our Savior and of Christ Jesus our hope,",
             "Rotherham": "Paul, an apostle of Christ Jesus—by injunction of God our Saviour and Christ Jesus our hope,—",
             "KJV": "Paul, an apostle of Jesus Christ by the commandment of God our Saviour, and Lord Jesus Christ, which is our hope;",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul, an apostle of Christ Jesus by command of God our savior and of Christ Jesus our hope,",
+            "NABRE": "Paul, an apostle of Christ Jesus by command of God our savior and of Christ Jesus our hope,",
             "DRB": "Paul an Apostle of Jesus Christ according to the commandment of God our Saviour, and of Christ Jesus our hope:"
           }
         },
@@ -59,7 +59,7 @@
             "NRSV": "I urge you, as I did when I was on my way to Macedonia, to remain in Ephesus so that you may instruct certain people not to teach any different doctrine,",
             "Rotherham": "Even as I exhorted thee to remain in Ephesus, when I was journeying into Macedonia, that thou mightest charge some—",
             "KJV": "As I besought thee to abide still at Ephesus, when I went into Macedonia, that thou mightest charge some that they teach no other doctrine,",
-            "NABRE": "II. Sound Teaching Warning Against False Doctrine. I repeat the request I made of you when I was on my way to Macedonia, that you stay in Ephesus to instruct certain people not to teach false doctrines",
+            "NABRE": "I repeat the request I made of you when I was on my way to Macedonia, that you stay in Ephesus to instruct certain people not to teach false doctrines",
             "DRB": "As I desired thee to remain at Ephesus when I went into Macedonia, that thou shouldest denounce to certain not to teach otherwise,"
           }
         },
@@ -96,7 +96,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "desiring to be teachers of the law, without understanding either what they are saying or the things about which they make confident assertions.",
+            "NRSV": "desiring to be teachers of the law, without understanding either what they are saying or the things about which they make assertions.",
             "Rotherham": "Desiring to be law-teachers,—not understanding, either what they say or whereof they confidently affirm.",
             "KJV": "Desiring to be teachers of the law; understanding neither what they say, nor whereof they affirm.",
             "NABRE": "wanting to be teachers of the law, but without understanding either what they are saying or what they assert with such assurance.",
@@ -206,7 +206,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "I am giving you these instructions, Timothy, my child, in accordance with the prophecies made earlier concerning you, so that by following them you may fight the good fight,",
+            "NRSV": "I am giving you these instructions, Timothy, my child, in accordance with the prophecies made earlier about you, so that by following them you may fight the good fight,",
             "Rotherham": "This charge, I commit unto thee, child Timothy, According to the prophecies, running before on thee, in order that thou mightest war, with them, the noble warfare.",
             "KJV": "This charge I commit unto thee, son Timothy, according to the prophecies which went before on thee, that thou by them mightest war a good warfare;",
             "NABRE": "I entrust this charge to you, Timothy, my child, in accordance with the prophetic words once spoken about you. Through them may you fight a good fight",
@@ -244,7 +244,7 @@
             "NRSV": "First of all, then, I urge that supplications, prayers, intercessions, and thanksgivings be made for everyone,",
             "Rotherham": "I exhort, therefore, first of all, that there be made—supplications, prayers, intercessions, thankgivings, in behalf of all men,",
             "KJV": "I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;",
-            "NABRE": "III. Problems of Discipline Chapter 2 Prayer and Conduct. First of all, then, I ask that supplications, prayers, petitions, and thanksgivings be offered for everyone,",
+            "NABRE": "First of all, then, I ask that supplications, prayers, petitions, and thanksgivings be offered for everyone,",
             "DRB": "I desire therefore first of all things that obsecrations, prayers, postulations, thanks-givings be made for all men,"
           }
         },
@@ -291,7 +291,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "who gave himself a ransom for all—this was attested at the right time.",
+            "NRSV": "who gave himself a ransom for all —this was attested at the right time.",
             "Rotherham": "Who gave himself a ransom in behalf of all,—the testimony, in its own fit times:",
             "KJV": "Who gave himself a ransom for all, to be testified in due time.",
             "NABRE": "who gave himself as ransom for all. This was the testimony at the proper time.",
@@ -321,7 +321,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "also that the women should dress themselves modestly and decently in suitable clothing, not with hair braided with gold or pearls or expensive clothes,",
+            "NRSV": "also that the women should dress themselves modestly and decently in suitable clothing, not with their hair braided, or with gold, pearls, or expensive clothes,",
             "Rotherham": "In the same way, that, the women, in seemly attire, with modesty and sober-mindedness, be adorning themselves,—not with plaitings and ornamentation of gold, or with pearls, or with costly apparel,—",
             "KJV": "In like manner also, that women adorn themselves in modest apparel, with shamefacedness and sobriety; not with broided hair, or gold, or pearls, or costly array;",
             "NABRE": "Similarly, [too,] women should adorn themselves with proper conduct, with modesty and self-control, not with braided hairstyles and gold ornaments, or pearls, or expensive clothes,",
@@ -399,7 +399,7 @@
             "NRSV": "The saying is sure: whoever aspires to the office of bishop desires a noble task.",
             "Rotherham": "If anyone, for oversight, is eager, a noble work, doth he covet:—",
             "KJV": "This is a true saying, If a man desire the office of a bishop, he desireth a good work.",
-            "NABRE": "Chapter 3 Qualifications of Various Ministers. This saying is trustworthy: whoever aspires to the office of bishop desires a noble task.",
+            "NABRE": "This saying is trustworthy: whoever aspires to the office of bishop desires a noble task.",
             "DRB": "Afaithful saying. If a man desire a Bishop's office, he desireth a good work."
           }
         },
@@ -546,7 +546,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "Without any doubt, the mystery of our religion is great: He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among Gentiles, believed in in the world, taken up in glory.",
+            "NRSV": "Without any doubt, the mystery of our religion is great: He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among Gentiles, believed in throughout the world, taken up in glory.",
             "Rotherham": "And, confessedly great, is the sacred secret of godliness,—Who was made manifest in flesh, was declared righteous in spirit, was made visible unto messengers, was proclaimed among nations, was believed on in the world, was taken up in glory.",
             "KJV": "And without controversy great is the mystery of godliness: God was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, received up into glory.",
             "NABRE": "Undeniably great is the mystery of devotion, Who was manifested in the flesh, vindicated in the spirit, seen by angels, proclaimed to the Gentiles, believed in throughout the world, taken up in glory.",
@@ -564,7 +564,7 @@
             "NRSV": "Now the Spirit expressly says that in later times some will renounce the faith by paying attention to deceitful spirits and teachings of demons,",
             "Rotherham": "Howbeit, the Spirit, expressly saith—that, in later seasons, some will revolt from the faith, giving heed unto seducing spirits, and unto teachings of demons—",
             "KJV": "Now the Spirit speaketh expressly, that in the latter times some shall depart from the faith, giving heed to seducing spirits, and doctrines of devils;",
-            "NABRE": "Chapter 4 False Asceticism. Now the Spirit explicitly says that in the last times some will turn away from the faith by paying attention to deceitful spirits and demonic instructions",
+            "NABRE": "Now the Spirit explicitly says that in the last times some will turn away from the faith by paying attention to deceitful spirits and demonic instructions",
             "DRB": "And the Spirit manifestly saith that in the last times certain shall depart from the faith attending to spirits of error, and doctrines of devils,"
           }
         },
@@ -711,7 +711,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "Pay close attention to yourself and to your teaching; continue in these things, for in doing so you will save both yourself and your hearers.",
+            "NRSV": "Pay close attention to yourself and to your teaching; continue in these things, for in doing this you will save both yourself and your hearers.",
             "Rotherham": "Be giving heed to thyself, and to thy teaching,—abide still in them; for, this doing, both, thyself, shalt thou save, and them that hearken to thee.",
             "KJV": "Take heed unto thyself, and unto the doctrine; continue in them: for in doing this thou shalt both save thyself, and them that hear thee.",
             "NABRE": "Attend to yourself and to your teaching; persevere in both tasks, for by doing so you will save both yourself and those who listen to you.",
@@ -729,7 +729,7 @@
             "NRSV": "Do not speak harshly to an older man, but speak to him as to a father, to younger men as brothers,",
             "Rotherham": "An elderly man, do not thou reprimand, but beseech him, as [though he were thy] father,—younger men, as brothers,",
             "KJV": "Rebuke not an elder, but intreat him as a father; and the younger men as brethren;",
-            "NABRE": "IV. Duties Toward Others Chapter 5 Do not rebuke an older man, but appeal to him as a father. Treat younger men as brothers,",
+            "NABRE": "Do not rebuke an older man, but appeal to him as a father. Treat younger men as brothers,",
             "DRB": "A Senior rebuke not: but beseech as a father: young men, as brethren:"
           }
         },
@@ -786,7 +786,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "Give these instructions as well, so that they may be above reproach.",
+            "NRSV": "Give these commands as well, so that they may be above reproach.",
             "Rotherham": "And, these things, be giving in charge, that, without reproach, they may be;",
             "KJV": "And these things give in charge, that they may be blameless.",
             "NABRE": "Command this, so that they may be irreproachable.",
@@ -816,7 +816,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "she must be well attested for her good works, as one who has brought up children, shown hospitality, washed the saints’ feet, helped the afflicted, and devoted herself to every good work.",
+            "NRSV": "she must be well attested for her good works, as one who has brought up children, shown hospitality, washed the saints’ feet, helped the afflicted, and devoted herself to doing good in every way.",
             "Rotherham": "In noble works, being well-attested;—if she hath nourished children, if she hath shewn hospitality, if, saints feet, she hath washed, if, them who were in tribulation, she hath succoured, if, in every good, work she hath followed on:",
             "KJV": "Well reported of for good works; if she have brought up children, if she have lodged strangers, if she have washed the saints’ feet, if she have relieved the afflicted, if she have diligently followed every good work.",
             "NABRE": "with a reputation for good works, namely, that she has raised children, practiced hospitality, washed the feet of the holy ones, helped those in distress, involved herself in every good work.",
@@ -876,7 +876,7 @@
         {
           "num": 16,
           "text": {
-            "NRSV": "If any believing woman has relatives who are widows, let her assist them; let the church not be burdened, so that it can assist those who are real widows.",
+            "NRSV": "If any believing woman has relatives who are really widows, let her assist them; let the church not be burdened, so that it can assist those who are real widows.",
             "Rotherham": "If any, believing woman, hath widows, let her be giving them succour, and not suffer the assembly to be burdened,—that, them who are indeed widows, it may itself succour.",
             "KJV": "If any man or woman that believeth have widows, let them relieve them, and let not the church be charged; that it may relieve them that are widows indeed.",
             "NABRE": "If any woman believer has widowed relatives, she must assist them; the church is not to be burdened, so that it will be able to help those who are truly widows. Rules for Presbyters.",
@@ -906,7 +906,7 @@
         {
           "num": 19,
           "text": {
-            "NRSV": "Never accept an accusation against an elder except on the evidence of two or three witnesses.",
+            "NRSV": "Never accept any accusation against an elder except on the evidence of two or three witnesses.",
             "Rotherham": "Against an elder, entertain not, an accusation, except at, [the mouth of] two, or three, witnesses;",
             "KJV": "Against an elder receive not an accusation, but before two or three witnesses.",
             "NABRE": "Do not accept an accusation against a presbyter unless it is supported by two or three witnesses.",
@@ -946,7 +946,7 @@
         {
           "num": 23,
           "text": {
-            "NRSV": "No longer drink only water, but use a little wine for the sake of your stomach and your frequent ailments.",
+            "NRSV": "No longer drink only water, but take a little wine for the sake of your stomach and your frequent ailments.",
             "Rotherham": "No longer, be a water-drinker, but, of a little wine, make use, because of thy stomach and thy, frequent, sicknesses.",
             "KJV": "Drink no longer water, but use a little wine for thy stomach’s sake and thine often infirmities.",
             "NABRE": "Stop drinking only water, but have a little wine for the sake of your stomach and your frequent illnesses.",
@@ -984,7 +984,7 @@
             "NRSV": "Let all who are under the yoke of slavery regard their masters as worthy of all honor, so that the name of God and the teaching may not be blasphemed.",
             "Rotherham": "Let, as many as are servants under a yoke, be counting, their own masters, worthy, of all honour, lest, the name of God and the teaching, be defamed.",
             "KJV": "Let as many servants as are under the yoke count their own masters worthy of all honour, that the name of God and his doctrine be not blasphemed.",
-            "NABRE": "Chapter 6 Rules for Slaves. Those who are under the yoke of slavery must regard their masters as worthy of full respect, so that the name of God and our teaching may not suffer abuse.",
+            "NABRE": "Those who are under the yoke of slavery must regard their masters as worthy of full respect, so that the name of God and our teaching may not suffer abuse.",
             "DRB": "Whosoever are servants under yoke, let them count their masters worthy of all honour; lest the name of our Lord and his doctrine be blasphemed."
           }
         },
@@ -1001,7 +1001,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Whoever teaches otherwise and does not agree with the sound words of our Lord Jesus Christ and the teaching that is in accordance with godliness",
+            "NRSV": "Whoever teaches otherwise and does not agree with the sound words of our Lord Jesus Christ and the teaching that is in accordance with godliness,",
             "Rotherham": "If anyone doth otherwise teach, and doth not adhere to healthful discourses—those of our Lord Jesus Christ, and to the teaching that is, according to godliness,",
             "KJV": "If any man teach otherwise, and consent not to wholesome words, even the words of our Lord Jesus Christ, and to the doctrine which is according to godliness;",
             "NABRE": "Whoever teaches something different and does not agree with the sound words of our Lord Jesus Christ and the religious teaching",
@@ -1141,7 +1141,7 @@
         {
           "num": 17,
           "text": {
-            "NRSV": "As for those who in the present age are rich, command them not to be haughty, or to set their hopes on the uncertainty of riches, but rather on God, who richly provides us with everything for our enjoyment.",
+            "NRSV": "As for those who in the present age are rich, command them not to be haughty, or to set their hopes on the uncertainty of riches, but rather on God who richly provides us with everything for our enjoyment.",
             "Rotherham": "Upon them who are rich in the present age, lay thou charge—not to be high-minded, nor to have set their hope on, riches’, uncertainty,—but on God, who offereth us all things richly for enjoying,",
             "KJV": "Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy;",
             "NABRE": "Tell the rich in the present age not to be proud and not to rely on so uncertain a thing as wealth but rather on God, who richly provides us with all things for our enjoyment.",
@@ -1174,7 +1174,7 @@
             "NRSV": "Timothy, guard what has been entrusted to you. Avoid the profane chatter and contradictions of what is falsely called knowledge;",
             "Rotherham": "O Timothy! that which hath been entrusted, do thou guard, avoiding the profane pratings and oppositions of falsely named knowledge,—",
             "KJV": "O Timothy, keep that which is committed to thy trust, avoiding profane and vain babblings, and oppositions of science falsely so called:",
-            "NABRE": "VI. Final Recommendation and Warning O Timothy, guard what has been entrusted to you. Avoid profane babbling and the absurdities of so-called knowledge.",
+            "NABRE": "O Timothy, guard what has been entrusted to you. Avoid profane babbling and the absurdities of so-called knowledge.",
             "DRB": "O Timothee, keep the depositum, avoiding the profane novelties of voices, and oppositions of falsely called knowledge."
           }
         },

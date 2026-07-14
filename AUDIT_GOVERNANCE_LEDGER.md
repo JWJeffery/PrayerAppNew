@@ -2118,3 +2118,29 @@ proportional distribution, no contamination signatures.
 Dashboard (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md` updated in the same session.
 `SEED_VERSION` bumped to `v112-2026-07-14-1cor-2thess-closed`. NT progress: 14/27 books closed.
 Next: 1 Timothy through Jude, then Revelation.
+
+## 1 Timothy - Philemon remediation, session 2026-07-14 continued
+
+4 books: 1 Timothy, 2 Timothy, Titus, Philemon. All fully closed. KJV/Rotherham/DRB zero
+mismatches across all 4, no versification shifts. Philemon was already clean on 4/5 translations
+pre-fix (shortest book audited so far).
+
+**Real NABRE over-stripping bug found in 1 Timothy 5:1 and 6:20.** The header-stripping regex's
+optional short-subtitle allowance (under ~80 chars, ending in a period) consumed genuine verse
+content at both addresses because it happened to fit that shape too -- confirmed by (a) measuring
+the stripped-prefix length (88-96 chars, well over the ~35-char norm for genuine titles) and (b)
+checking against KJV (6:20's stripped "subtitle" is near-verbatim KJV verse text). Fixed by hand.
+The audit tool will keep reporting these two as mismatches against its own wrong expectation --
+documented, expected, same class as Isaiah 66:1 / Jeremiah 4:1 / 41:1. Every other book's header
+list this session was individually prefix-length-checked before applying; none of 2 Timothy or
+Titus had the same issue.
+
+NABRE: 1 Tim 8 (6 auto + 2 manual), 2 Tim 7, Titus 4, Philemon 0. NRSV: 13/113, 3/83, 4/46, 2/25.
+
+**New standing check, added to scripts/bible-audit/README.md guidance in spirit if not in file:**
+measure NABRE header stripped-prefix length before trusting any automated strip, on every future
+book -- 1 Timothy proves this over-stripping risk isn't confined to the already-known-tricky OT
+books.
+
+Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v113-2026-07-14-1tim-philemon-closed.
+NT progress: 18/27 books closed. Next: Hebrews, James, 1-2 Peter, 1-3 John, Jude, Revelation.

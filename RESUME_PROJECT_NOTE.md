@@ -2134,3 +2134,52 @@ All 8 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped
 
 **Immediate next action for whoever picks this up:** continue the NT sequence with 1 Timothy, or
 address the still-outstanding Psalms patch — confirm priority with Josh.
+
+## Session, 2026-07-14 continued — 1 Timothy through Philemon, all 4 fully closed; a real NABRE over-stripping bug caught
+
+**HANDOFF — read this first if picking up fresh.** 1 Timothy, 2 Timothy, Titus, and Philemon are
+all now fully closed. NT progress: 18 of 27 books done.
+
+**KJV, Rotherham, DRB clean across all 4, no versification shifts.** Philemon (the shortest book
+checked so far) was already fully clean on 4 of 5 translations before any fix — only NRSV needed
+correction there.
+
+**A real NABRE over-stripping bug found and fixed in 1 Timothy, worth internalizing for every
+remaining book.** The header-stripping regex allows an optional short subtitle (under ~80 chars,
+ending in a period) between "Chapter N -" and the real verse content — this is normally correct
+(most section titles really are short), but at 1 Timothy 5:1 and 6:20 it mistook real verse
+content for a subtitle, because that content happened to be short and end in a period too. Both
+caught the same way: **measure the stripped prefix length before trusting it** — both were 88-96
+characters, well over the ~35-char norm for a genuine title elsewhere in this project, and
+checking against KJV confirmed the "subtitle" was actually real verse text (6:20's "O Timothy,
+guard what has been entrusted to you..." is word-for-word close to KJV's own v.20). Fixed by hand:
+kept the real content, stripped only the genuine header portion. **The audit tool itself will
+keep flagging these two addresses as mismatches forever** (it's comparing against its own
+over-stripped expectation, not the correct text) — this is expected, matches the same
+already-documented tool-false-positive class as Isaiah 66:1 and Jeremiah 4:1/41:1, not something
+to re-fix.
+
+**Every other book's header list was individually checked for the same over-stripping shape
+before applying** (measuring each stripped prefix's length, not just applying blindly) — none
+found in 2 Timothy or Titus.
+
+NABRE fixes: 1 Timothy 8 (6 header + 2 manual over-stripping corrections), 2 Timothy 7, Titus 4,
+Philemon 0. NRSV fixes: 13/113, 3/83, 4/46, 2/25 respectively — all ordinary, proportional, no
+contamination signatures.
+
+### Dashboard and ledger updated in the same session
+All 4 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped to
+`v113-2026-07-14-1tim-philemon-closed`; script re-validated with `node --check`.
+
+### What's still open
+1. Psalms's patch is still unwritten (unchanged from prior handoffs).
+2. **Next books in the NT sequence: Hebrews, James, 1-2 Peter, 1-3 John, Jude, then Revelation**
+   to close out the NT entirely.
+3. Still worth checking whether James 1:8's old "genuine NRSV gap" flag resolves the same way
+   Acts 23:26 did.
+4. **New standing check for every remaining book:** measure NABRE header stripped-prefix lengths
+   before trusting them — 1 Timothy is proof this can happen anywhere, not just in the
+   already-known-tricky OT books.
+
+**Immediate next action for whoever picks this up:** continue with Hebrews, or address the
+still-outstanding Psalms patch — confirm priority with Josh.
