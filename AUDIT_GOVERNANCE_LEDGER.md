@@ -2179,3 +2179,28 @@ this time. NRSV: 33 fixes total (4/6/8/8/0/1/6), no contamination signatures.
 
 Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v115-2026-07-14-james-jude-closed.
 **NT progress: 26/27 books closed -- only Revelation remains.**
+
+## Revelation remediation, session 2026-07-14 continued -- NEW TESTAMENT REMEDIATION COMPLETE
+
+Rotherham/DRB zero mismatches, no versification shift. KJV's 2 same-address diffs at 12:18/13:1
+confirmed as the already-fixed 2026-07-12 KJVA merge-boundary artifact (app's split is complete
+and correct, verified by concatenation match against KJVA's own merged text) -- permanent,
+expected same-address-diff artifact, not a defect, same class as Nehemiah/Job/Song of Songs.
+
+NABRE: 24 fixes (23 header-pollution, 4 individually length-checked for over-stripping and
+confirmed genuine, + 1 stray-space bug at 20:14). NRSV: 48/405 fixes, proportional, no
+contamination signature.
+
+**This closes the entire NT: all 27 books verified character-for-character across all five
+applicable translations.** Combined with the already-complete OT (minus Psalms, deferred), the
+full biblical corpus remediation is now done except for Psalms.
+
+Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION ->
+v116-2026-07-14-nt-complete-revelation-closed.
+
+**Two genuinely open items before moving to ET-AR-SY/Odes per the original governance sequence:**
+(1) Psalms's patch status is unclear -- a commit referencing "Psalms: JPS1985 independently
+verified..." predates this NT effort, but Josh described the patch as still unwritten this
+session. Needs reconciling via `git log -- <psalms file path>` before assuming either state.
+(2) Whether "Psalms deferred to the end" means end-of-OT (reached) or end-of-whole-project (not
+reached) was never resolved when the deferral was decided. Ask Josh, don't assume.

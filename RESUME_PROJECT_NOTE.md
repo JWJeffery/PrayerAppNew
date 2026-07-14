@@ -2261,3 +2261,56 @@ All 7 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped
 
 **Immediate next action for whoever picks this up:** Revelation, to finish the NT — or the
 still-outstanding Psalms patch. Confirm priority with Josh.
+
+## Session, 2026-07-14 continued — Revelation fully closed. THE ENTIRE NEW TESTAMENT IS NOW DONE.
+
+**HANDOFF — read this first if picking up fresh.** Revelation is now fully closed, and with it,
+**the entire New Testament remediation is complete: all 27 NT books have been verified
+character-for-character across all five applicable translations (KJV/DRB/NABRE/NRSV/Rotherham).**
+
+Rotherham, DRB: zero mismatches, no versification shift. **KJV shows 2 same-address
+"mismatches" at 12:18/13:1** — checked and confirmed to be the already-known, already-fixed
+versification boundary from the 2026-07-12 KJV 1769 edition-switch session: KJVA's own raw text
+merges what the common grid splits into two verses into one continuous verse. Verified the app's
+existing split is complete and correct (12:18 + 13:1 concatenated matches KJVA's merged text
+exactly) — this is the same permanent same-address-diff artifact already documented for
+Nehemiah/Job/Song of Songs, expected forever, not something to re-fix.
+
+**NABRE: 24 fixes** — 23 header-pollution instances (4 individually content-checked against the
+1-Timothy-style over-stripping risk given their length; all confirmed genuine major-division
+titles like "Vision of Heavenly Worship." and safely stripped) plus 1 ordinary
+stray-space-before-closing-parenthesis bug at 20:14.
+
+**NRSV: 48 of 405 verses corrected**, proportional distribution across nearly every chapter, no
+contamination or displacement signature despite this being one of the more complex, imagery-dense
+books in the corpus.
+
+### Dashboard and ledger updated in the same session
+Revelation added to `GREEN_SEED` with a full `GREEN_NOTES` entry explicitly marking the NT phase
+complete; `SEED_VERSION` bumped to `v116-2026-07-14-nt-complete-revelation-closed`; script
+re-validated with `node --check`.
+
+### Where the whole project stands now
+**Every OT book (except Psalms, deferred per Josh's standing decision) and every NT book is fully
+remediated — zero known open defects.** Per the original governance sequence recorded at the top
+of this file, the next phase after the biblical corpus is **ET-AR-SY/Odes** (Ethiopian, Armenian,
+Syriac source traditions and the Odes of Solomon corpus) — but two things are genuinely still
+open first:
+
+1. **Psalms's patch is still unwritten** — this has been carried forward unresolved across
+   multiple sessions now. The analytical work (JPS1985 verification against The Jewish Study
+   Bible) is reportedly done and committed already (see `git log`, commit mentioning "Psalms:
+   JPS1985 independently verified..." predates this whole NT effort) — but Josh's own words this
+   session were "Psalms are pretty much done, but the patch hasn't been written," which doesn't
+   fully square with a commit already existing. **Whoever picks this up next should start by
+   checking `git log -- data/bible/OT/psalms.json` (or wherever the Psalms file lives) against
+   the ledger's own Psalms entries to figure out precisely what's committed vs. still owed,
+   before assuming either way.**
+2. Whether "Psalms deferred to the end" now means "the end of OT" (already reached) or "the end of
+   the whole remediation project" (not reached until ET-AR-SY/Odes is also done) was explicitly
+   left unresolved back when the deferral was decided — worth confirming with Josh now that the
+   OT+NT phase is actually complete.
+
+**Immediate next action for whoever picks this up:** confirm with Josh whether to (a) resolve the
+Psalms patch situation now, (b) move straight to ET-AR-SY/Odes, or (c) both in some order — don't
+assume, this is a real open decision, not a default.
