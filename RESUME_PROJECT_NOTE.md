@@ -1763,3 +1763,24 @@ Chapters 1-13, 18-25, 27-30, 32-34, 36 read and confirmed clean, no changes need
 **Next step for whoever picks this up:** fetch `ENOCH_2.HTM` (Section II, chapters 37-71 — the Book of Parables, the largest section) and continue the same chapter-by-chapter read-and-compare method. Chapters 61-108 already have Josh-supplied CCEL-family text from an earlier session, but that was used only for the flagged-diff passes — it still needs the same exhaustive line-by-line read as everything else, so re-fetch/re-check rather than assuming it's already covered.
 
 Book verse count unchanged this session (1,051) — all fixes were word-level substitutions, no verse additions/removals.
+
+## Session, 2026-07-14 continued — 1 Enoch exhaustive pass: chapters 37-71 (Section II) done, 12 more real fixes
+
+**HANDOFF — Section II (Book of Parables, chapters 37-71) now individually read against CCEL, not diffed.** 34 chapters remain (72-108) for the exhaustive pass.
+
+**12 real fixes applied and committed this session, chapters 37-71** (all confirmed against CCEL, and cross-checked against a second independent source — coursebible.com, Wikisource, sacred-texts.com, or qbible.com parallel-Charles — wherever the difference was substantial enough to warrant it):
+- 39:3 — "a cloud caught me up, and a strong wind took me" → "a whirlwind carried me off"
+- 40:7 — removed a spurious extra sentence not in Charles's text ("And I heard the voices of the four presences which I had seen before the Lord of glory")
+- 40:8 — "whose voices I have heard" → "whose words I have heard"
+- 43:4 — parenthetical gloss "(or 'their names')" → "(lit. 'their parable')"
+- 53:7 — "stand as the ground" → "stand as the earth"
+- 58:6 — "a light that never faileth... unending number of days" → "a light that never endeth... a limit (lit. 'number') of days"
+- 59:2 — "the draughts of the earth, and the sound of the thunder, for peace" → "the judgements executed on the earth, whether they be for well-being"
+- 61:10 — corrupted "Cherubic, Seraphic and Ophannic" (adjectival, nonsensical) → "Cherubic, Seraphin and Ophannin" (the correct angelic-order names, matching the correct form already used at 71:7 in the same book)
+- 62:1 — "acknowledge the Elect One" → "recognize the Elect One"
+- 67:3 — restored a lost clause: "over the face of the earth, and it shall be blessed" → "it shall not be unfruitful on the face of the earth, but it shall be blessed"
+- 69:2 — angel-name spelling fixes: "Baraqijal" (9th) → "Baraqel", "Turejal" (15th) → "Turel", matching CCEL's literal text
+
+Chapters 37-38, 41-42, 44-52, 54-57, 60, 63-66, 68, 70-71 read and confirmed clean, no changes needed. Note: 60:9/60:25 "terra firma" (vs CCEL's "dry land") was checked and left alone — it's used consistently both places in the app's text, judged a deliberate consistent stylistic rendering rather than a defect, same category as "by reason of"→"because of" from ch.4 in the earlier session.
+
+**Next step for whoever picks this up:** fetch `ENOCH_3.HTM` (Section III, chapters 72-82 — Book of the Heavenly Luminaries) and continue.
