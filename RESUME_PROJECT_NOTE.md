@@ -2218,3 +2218,46 @@ Hebrews added to `GREEN_SEED` with a full `GREEN_NOTES` entry; `SEED_VERSION` bu
 
 **Immediate next action for whoever picks this up:** continue with James, or address the
 still-outstanding Psalms patch — confirm priority with Josh.
+
+## Session, 2026-07-14 continued — James through Jude, all 7 fully closed; James 1:8 old flag resolved
+
+**HANDOFF — read this first if picking up fresh.** James, 1 Peter, 2 Peter, 1 John, 2 John,
+3 John, and Jude are all now fully closed. **NT progress: 26 of 27 books done — only Revelation
+remains.**
+
+**KJV, Rotherham, DRB clean across all 7, no real versification shifts.** 2 John was already
+fully clean on all five translations before any fix was needed. 3 John's one DRB chapter-count
+diff (15 vs. 14 source verses) was checked and confirmed to be the already-known 3 John 1:15 —
+one of the 5 NT single-verse cases confirmed genuinely absent from KJVA back in the 2026-07-12 KJV
+edition-switch work — correctly blank across every translation, not a new defect.
+
+**James 1:8 — the old Installment 12-16 "genuine NT-wide NRSV gap" flag is now resolved, but
+differently than Acts 23:26's resolution two tranches ago.** Acts 23:26 turned out to have real
+content in NRSV-CI that just hadn't been checked before — a genuine restoration. **James 1:8 is
+different: it's a real, deliberate translation-structure verse-merge, not an omission.** Every
+other translation (KJV, DRB, NABRE, Rotherham) has a distinct verse 8 ("A double-minded man is
+unstable in all his ways" / equivalent), but NRSV folds that exact content directly into its own
+verse 7 ("...being double-minded and unstable in every way, must not expect to receive anything
+from the Lord."). Confirmed by reading NRSV-CI's actual empty row at 1:8 and NRSV's full verse 7
+text side by side, not assumed from the empty row alone. Correctly left blank — same "the app was
+already right" conclusion as Acts 23:26, reached by a different investigation.
+
+**NABRE: 28 fixes across the 4 books that needed them** (James 8, 1 Peter 8, 2 Peter 4, 1 John 8)
+— all standard header-pollution, no over-stripping risk found this time (checked prefix lengths
+on the longer ones per the standing 1-Timothy lesson; all confirmed genuine). 2 John, 3 John, Jude
+needed zero NABRE fixes.
+
+**NRSV: 33 fixes total** (4+6+8+8+0+1+6), all ordinary, proportional, no contamination signatures.
+
+### Dashboard and ledger updated in the same session
+All 7 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped to
+`v115-2026-07-14-james-jude-closed`; script re-validated with `node --check`.
+
+### What's still open
+1. Psalms's patch is still unwritten (unchanged from prior handoffs).
+2. **Revelation is the only remaining NT book.** Once it's closed, the entire NT phase of this
+   remediation effort is done, and the project moves to ET-AR-SY/Odes per the original governance
+   sequence.
+
+**Immediate next action for whoever picks this up:** Revelation, to finish the NT — or the
+still-outstanding Psalms patch. Confirm priority with Josh.

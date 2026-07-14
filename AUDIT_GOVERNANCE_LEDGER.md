@@ -2159,3 +2159,23 @@ proportional, no contamination signature.
 
 Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v114-2026-07-14-hebrews-closed.
 NT progress: 19/27 books closed. Next: James, 1-2 Peter, 1-3 John, Jude, Revelation.
+
+## James - Jude remediation, session 2026-07-14 continued
+
+7 books: James, 1 Peter, 2 Peter, 1 John, 2 John, 3 John, Jude. All fully closed. KJV/Rotherham/
+DRB zero mismatches across all 7, no real versification shifts. 2 John already fully clean on all
+5 translations pre-fix. 3 John's DRB chapter-count diff confirmed as the already-known 3 John
+1:15 genuine-absence case from the 2026-07-12 KJV edition-switch work, not a new defect.
+
+**James 1:8's old "genuine NT-wide NRSV gap" flag (Installment 12-16) is now resolved -- but
+unlike Acts 23:26, this one really is a genuine gap-that-isn't-a-gap.** NRSV folds what every
+other translation renders as a distinct verse 8 directly into its own verse 7's translation --
+confirmed by reading NRSV-CI's empty row alongside its full verse 7 text, not assumed. Correctly
+left blank. This closes the last of the two addresses flagged by that old structural audit.
+
+NABRE: 28 fixes across James/1 Peter/2 Peter/1 John (8/8/4/8), all standard header-pollution,
+prefix lengths checked on the longer ones per the 1-Timothy standing lesson -- none over-stripped
+this time. NRSV: 33 fixes total (4/6/8/8/0/1/6), no contamination signatures.
+
+Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v115-2026-07-14-james-jude-closed.
+**NT progress: 26/27 books closed -- only Revelation remains.**
