@@ -1733,3 +1733,33 @@ The chapter 24/25 boundary defect (fixed earlier this session — see the two 1 
 5. Update this resume note and the governance ledger after each chunk, the same way every other book in this project has been documented — which chapters have been read against real source and confirmed clean, not just "not flagged by a diff."
 
 **Do not mark 1 Enoch green until all 108 chapters have been read against real source text directly, not diffed against scrollmapper.** Psalms remains deferred to the very end per Josh's standing decision; 1 Enoch is the only other open item in the OT phase.
+
+## Session, 2026-07-14 continued — 1 Enoch exhaustive pass: chapters 1-36 (Section I) done, real fixes found
+
+**HANDOFF — 1 Enoch chapters 1-36 (Section I: Book of the Watchers) now individually read against real primary source, not diffed.** Still NOT closed overall — 72 chapters (37-108) remain for the exhaustive pass.
+
+**Sourcing breakthrough this session:** CCEL's 5 section pages fetch cleanly and completely via `web_fetch` — no truncation, unlike Gutenberg. URLs confirmed working:
+- Section I (ch 1-36): `https://www.ccel.org/c/charles/otpseudepig/enoch/ENOCH_1.HTM`
+- Section II (ch 37-71): `https://www.ccel.org/c/charles/otpseudepig/enoch/ENOCH_2.HTM`
+- Section III (ch 72-82): `https://www.ccel.org/c/charles/otpseudepig/enoch/ENOCH_3.HTM`
+- Section IV (ch 83-90): `https://www.ccel.org/c/charles/otpseudepig/enoch/ENOCH_4.HTM`
+- Section V (ch 91-108): `https://www.ccel.org/c/charles/otpseudepig/enoch/ENOCH_5.HTM`
+
+**Real caveat found this session: CCEL's own HTML-to-markdown extraction occasionally drops words/phrases silently** (confirmed twice: 22:1 lost "showed me to the west a great and high" entirely, rendering as garbled "and he mountain [and] of hard rock"; 18:7 lost the leading "one" before "was of coloured stone"). Both were caught because they made the CCEL sentence read as broken/ungrammatical — the app's existing text was correct in both cases, no fix needed. **Lesson: don't trust a CCEL sentence that reads as broken English; cross-check a second source (coursebible.com mirrors the same Charles text and was used successfully this session) before concluding the app is wrong.**
+
+**Josh's standing ruling (2026-07-14): treat CCEL as authoritative over the app's existing text** for any real (non-garbled) discrepancy found during this pass — apply the fix, don't just flag it.
+
+**7 real fixes applied and committed this session, chapters 1-36:**
+- 14:3 — "the messengers of heaven" → "the children of heaven"
+- 14:20 — "His gown shone" → "His raiment shone"
+- 17:7 — "the waters of the abyss flow" → "the waters of the deep flow"
+- 17:8 — "the mouth of the abyss" → "the mouth of the deep"
+- 26:1 — "[from a felled tree]" → "[of a dismembered tree]" (cross-confirmed via coursebible.com/Knibb-cited independent source)
+- 31:3 — "it was sweeter" → "it smelt sweeter"
+- 35:1 — "the like portals and the like outlets" → "the same number of portals, and the same number of outlets" (cross-confirmed via intertextual.bible citing Knibb's translation)
+
+Chapters 1-13, 18-25, 27-30, 32-34, 36 read and confirmed clean, no changes needed. The previously-fixed ch.5 verses 6-9 (lettered-subverse reconstruction) held up fine against CCEL's own confusing lettered ordering — no further change needed there.
+
+**Next step for whoever picks this up:** fetch `ENOCH_2.HTM` (Section II, chapters 37-71 — the Book of Parables, the largest section) and continue the same chapter-by-chapter read-and-compare method. Chapters 61-108 already have Josh-supplied CCEL-family text from an earlier session, but that was used only for the flagged-diff passes — it still needs the same exhaustive line-by-line read as everything else, so re-fetch/re-check rather than assuming it's already covered.
+
+Book verse count unchanged this session (1,051) — all fixes were word-level substitutions, no verse additions/removals.
