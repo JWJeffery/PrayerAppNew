@@ -2001,3 +2001,53 @@ Both fixed via direct, individually-verified substitution. `git diff --stat`: ex
 Full detail on available sources, their proven limitations, and a recommended method for whoever continues this is in `RESUME_PROJECT_NOTE.md`'s "HANDOFF TO NEXT SESSION" entry — read that first before starting.
 
 **Current state:** 1,051 verses total. Chapters 5, 24, 25, 76, 90, 103, 106 have real fixes applied and committed this session, but per the standard above, these are not to be treated as "closed" any more than any other chapter — they were fixed only because a diff happened to catch them, and still need the same exhaustive re-check as the rest of the book.
+
+## Matthew, Mark, Luke remediation, session 2026-07-14
+
+First NT-phase books in the character-for-character remediation effort, using the reusable
+`scripts/bible-audit/audit_book.py` tooling set up fresh this session per its README.
+
+**Matthew.** KJV/Rotherham zero mismatches. DRB: real within-chapter versification-shift defect
+at chapter 17 — the app's own DRB v.14 already correctly merges common vv.14-15 (verified against
+KJV content), but vv.15-27 were left holding the *source's* raw verse numbers instead of the
+common-numbered grid's addresses. Fixed by shifting the block one address forward and blanking
+v.15. NABRE: 32 fixes (30 header-pollution — this deuterocanonical-adjacent NT book was outside
+the 2026-07-12 corpus-wide 37-book protocanon-only fix scope — plus 2 stray-space bugs at 14:20,
+27:46). NRSV: 66/1071 verses corrected against NRSV-CI; 3 further flagged addresses (17:21,
+18:11, 23:14) confirmed as the standard critical-text-omitted-verse list, correctly blank.
+
+**Mark.** KJV/Rotherham zero mismatches. DRB: a second, larger instance of the same shift class —
+chapter 9's entire DRB column was one address early. Root cause: the app already correctly carries
+a Vulgate-specific extra verse at Mark 8:39 (Vulgate's chapter 8 has one more verse than common
+numbering, holding common 9:1's content — a previously-fixed, governed versification-boundary
+artifact), but chapter 9 was never itself re-aligned to account for it. Diagnosed via word-overlap
+comparison against the app's own KJV column, the same technique that found Matthew 17. Fixed by
+shifting vv.1-49 to vv.2-50 and blanking v.1. Chapter 4's existing blank v.41 (a genuine DRB
+verse-merge at v.40) was checked and confirmed already correct, not touched. NABRE: 21 fixes (17
+header-pollution, 4 stray-space-in-quotes: 5:41, 7:11, 7:34, 15:34). NRSV: 54/678 verses
+corrected; 5 further flagged addresses (7:16, 9:44, 9:46, 11:26, 15:28) confirmed as the standard
+critical-text-omission list.
+
+**Luke.** KJV/Rotherham/DRB all zero mismatches, zero chapter-count differences — no
+versification shift in this book. NABRE: 28 fixes (27 header-pollution, including several long
+but genuine Roman-numeral major-division headers individually content-verified before stripping,
+e.g. 9:51's "V. The Journey to Jerusalem: Luke's Travel Narrative"; plus 1 stray-space bug at
+13:4). NRSV: 76/1151 verses corrected; 2 further flagged addresses (17:36, 23:17) confirmed as
+the standard critical-text-omission list.
+
+**Standing lesson, worth carrying into every remaining NT book:** a same-address diff reporting
+zero DRB mismatches is not proof of correct versification — it can mean a shifted source's raw
+verse numbers were copied directly into the common-numbered grid, which looks clean under a naive
+same-address check but is wrong under content comparison. The tell in both Matthew 17 and Mark 9
+was a genuine verse-merge earlier in the same chapter; whenever one is found, check every
+subsequent verse in that chapter against KJV by content before trusting the diff tool's silence.
+After a shift fix, the tool will permanently flag the shifted range as "mismatched" against the
+raw source — expected and correct, confirmed each time by checking every flagged address falls
+inside the resolved shift range and nothing else.
+
+**NRSV book_number values for NRSV-CI, confirmed this session (don't guess sequentially):**
+Matthew 470, Mark 480, Luke 490.
+
+All three books' dashboard entries (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md`
+updated in the same session. `SEED_VERSION` bumped to `v110-2026-07-14-synoptic-gospels-closed`.
+Next book in sequence: John.

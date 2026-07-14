@@ -1929,3 +1929,92 @@ Josh supplied "The Jewish Study Bible" (Adele Berlin & Marc Zvi Brettler, uses t
 - **Correctly marked unverified, needs Josh's input:** Grail1963 — the prior "verified" claim was a false certification (see the earlier entry this session); the app's actual text is confirmed NOT to be the 2010 Revised Grail Psalms (checked against Josh's uploaded PDF of that edition — genuinely different translation throughout), so it's very likely the correct 1963/1986-family edition, but nothing has ever actually verified it against a real source. Needs Josh to paste the genuine text directly (copyright-restricted, not otherwise fetchable) — same pattern as NRSV/NABRE/3-4 Maccabees elsewhere in this project.
 
 **Psalms is effectively done** except for Grail1963 awaiting a source. Once (if) that closes, this whole remediation effort has no more deferred OT books and moves to NT / ET-AR-SY / Odes per the original governance sequence. Given the scale of what Psalms turned out to require (9 translation lanes, a false-certification discovery, and a from-scratch manual PDF-based verification for JPS1985), this took substantially longer than any single-lane OT book in the project so far — worth keeping in mind when scoping the NT phase, since some NT lanes may have similar multi-translation complexity.
+
+## Session, 2026-07-14 continued — NT phase begins: Matthew, Mark, Luke (the synoptics) all fully closed
+
+**HANDOFF — read this first if picking up fresh.** Psalms is deferred and effectively done (per Josh)
+but its patch was never written in a prior session — that remains genuinely outstanding, separate
+from this entry. This session moved on to the NT phase per Josh's direction: **Matthew, Mark, and
+Luke are now fully closed**, same standard as every OT book (zero known open defects across all
+five applicable translations).
+
+**Tooling used:** the pre-existing `scripts/bible-audit/audit_book.py` reusable tooling (KJV/
+Rotherham vs. KJVA/Rotherham scrollmapper sources, DRB vs. `janvier-s/original-douay-rheims`
+USFM, NABRE vs. `data/kalendar/source-witnesses/nabre.json` with header-stripping regexes, NRSV
+vs. NRSV-CI.SQLite3) — set up fresh this session per its own README (sparse-checkout for KJVA/
+Rotherham, full clone for DRB, unzip for NRSV-CI). **One correction to the README's own usage
+notes going forward: `audit_nrsv`'s `book_number` argument must be looked up per book from
+NRSV-CI's `books` table (`SELECT * FROM books WHERE long_name LIKE '%Matthew%'`) — the values
+used this session were Matthew=470, Mark=480, Luke=490. Don't guess sequential numbers.**
+
+### Matthew — closed
+KJV, Rotherham: zero mismatches (already covered by the 2026-07-12 corpus-wide KJV 1769/
+Rotherham efforts, individually reconfirmed here). **DRB — one real defect found and fixed:**
+chapter 17's own DRB verse 14 genuinely merges common vv.14-15 into a single verse (confirmed
+content-for-content against the app's own KJV column, not by arithmetic alone), but the app had
+left the rest of the chapter (vv.15-27) sitting at the *source's* own verse numbers instead of
+re-aligning to the common grid after the merge — a one-address internal shift, same defect class
+as the OT's Nehemiah/Job/Song of Songs versification-shift findings, just within a single chapter
+rather than across a chapter boundary. Fixed by shifting vv.15-26's content down to vv.16-27 and
+blanking v.15 (fully absorbed into v.14's merge). NABRE: 32 verses fixed — this book was outside
+the 2026-07-12 corpus-wide 37-book *protocanon* header-pollution fix's scope, so it still had 30
+raw `"Chapter N — Title."` / Roman-numeral major-division headers, plus 2 ordinary stray-space
+bugs (14:20 em-dash spacing, 27:46 quote-mark spacing). NRSV: 66 of 1071 verses corrected against
+NRSV-CI (3 more flagged addresses — 17:21, 18:11, 23:14 — are the standard critical-text-omitted-
+verse pattern already correctly blank, not a defect; confirmed, not just assumed, by checking each
+one is a well-known TR-only verse absent from every critical edition).
+
+### Mark — closed
+KJV, Rotherham: zero mismatches. **DRB — a second real versification-shift defect, this time
+spanning nearly the whole of chapter 9:** word-overlap comparison against the app's own KJV column
+(same diagnostic technique used for Matthew 17) showed chapter 9's entire DRB column was one
+address early throughout. Root cause: the app already correctly holds a Vulgate/DRB-specific extra
+verse at Mark 8:39 (a genuine, previously-fixed versification-boundary artifact — Vulgate's own
+chapter 8 has one more verse than common numbering, corresponding to common Mark 9:1's content),
+but chapter 9 itself had never been re-aligned to account for that boundary. Fixed the same way as
+Matthew 17: shifted vv.1-49 to vv.2-50, blanked v.1 (already represented at 8:39). Chapter 4's
+pre-existing blank v.41 was checked and confirmed to be a genuine, already-correctly-handled DRB
+verse-merge (v.40 already contains both common v.40 and v.41's content) — not touched. NABRE: 21
+verses fixed (17 header-pollution, 4 stray-space-in-quotation-marks: 5:41, 7:11, 7:34, 15:34).
+NRSV: 54 of 678 verses corrected (5 more flagged addresses — 7:16, 9:44, 9:46, 11:26, 15:28 — are
+the standard critical-text-omission pattern, already correctly blank).
+
+### Luke — closed
+KJV, Rotherham, DRB: all zero mismatches, zero chapter-count differences — **no versification
+shift in this book**, unlike its two neighbors; worth remembering the shift-checking discipline
+still needs to run on every book even when the prior two both had one, since it isn't universal.
+NABRE: 28 verses fixed (27 header-pollution instances, including several long, genuine Roman-
+numeral major-division headers — e.g. "V. The Journey to Jerusalem: Luke's Travel Narrative" at
+9:51 — individually confirmed as legitimate content before stripping, not assumed safe just
+because they're long; plus 1 ordinary stray-space bug at 13:4). NRSV: 76 of 1151 verses corrected
+(2 more flagged addresses — 17:36, 23:17 — are the standard critical-text-omission pattern).
+
+### Standing lesson reinforced this session
+**A same-address diff tool reporting "zero mismatches" does not mean a chapter's versification is
+correct — it can mean the opposite, if the app was built by copying a shifted source's own verse
+numbers directly into the common-numbered grid.** This is the same failure mode already documented
+for the OT (Nehemiah, Job, Song of Songs, Judith 15/16) recurring in the NT for the first time,
+confirmed twice in three books (Matthew 17, Mark 9). The tell in both cases was a genuine DRB
+verse-merge earlier in the same stretch — whenever a merge is found, check every subsequent verse
+in that chapter against KJV by content, not just trust that "0 mismatches" means alignment is
+correct. After a shift fix, the diff tool will permanently report same-address "mismatches" for
+the shifted range — this is expected and correctly documented (verified this session by confirming
+every flagged address falls in the shifted range and nothing else), not something to re-fix.
+
+### Dashboard and ledger updated in the same session
+`Matthew`, `Mark`, `Luke` added to `GREEN_SEED` with full `GREEN_NOTES` entries; `SEED_VERSION`
+bumped to `v110-2026-07-14-synoptic-gospels-closed`; embedded `<script>` block re-validated with
+`node --check` before committing, per standing practice.
+
+### What's still open
+1. **Psalms's patch was never written** in the prior session that closed it out analytically —
+   this is genuinely outstanding, not just a formality. Check `AUDIT_GOVERNANCE_LEDGER.md`'s most
+   recent Psalms entry for the actual verified findings before re-deriving anything; if the
+   findings are sound, this may just need the mechanical write-and-verify step, not fresh analysis.
+2. **Next book in the NT sequence: John.** No open decisions carried forward for the synoptics.
+3. Per governance, after all NT books close, the sequence moves to ET-AR-SY/Odes, per the original
+   plan recorded earlier in this file.
+
+**Immediate next action for whoever picks this up:** either finish writing Psalms's patch, or
+continue the NT sequence with John — confirm with Josh which takes priority, per this project's
+standing practice of not assuming.
