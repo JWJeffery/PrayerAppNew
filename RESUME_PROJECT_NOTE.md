@@ -2018,3 +2018,71 @@ bumped to `v110-2026-07-14-synoptic-gospels-closed`; embedded `<script>` block r
 **Immediate next action for whoever picks this up:** either finish writing Psalms's patch, or
 continue the NT sequence with John — confirm with Josh which takes priority, per this project's
 standing practice of not assuming.
+
+## Session, 2026-07-14 continued — John, Acts, Romans all fully closed; a real old-flag resolution in Acts
+
+**HANDOFF — read this first if picking up fresh.** John, Acts, and Romans are now fully closed,
+same standard as every prior book. NT progress so far: Matthew, Mark, Luke, John, Acts, Romans —
+6 of 27 NT books.
+
+### John — closed
+KJV, Rotherham: zero mismatches. DRB: chapter 11's chapter-count diff (57 vs. 56 source verses)
+checked and confirmed a genuine, already-correctly-handled merge (source's own v.56 merges common
+vv.56-57; app's v.57 is correctly blank) — not a defect, unlike the Matthew/Mark shifts, this one
+needed no fix. NABRE: 22 header-pollution fixes, including the unusual 7:53 address ("Chapter 8 -
+A Woman Caught in Adultery.") — confirmed genuine before stripping: NABRE brackets the Pericope
+Adulterae as disputed and titles it there, inside chapter 7's own verse range. NRSV: 50/879
+verses corrected (1 more flagged address, 5:4, is the well-known critical-text-omitted "angel
+troubled the water" verse, already correctly blank).
+
+### Acts — closed, including a genuine resolution of an old open flag
+KJV, Rotherham: zero mismatches. **DRB: two more real within-chapter versification shifts, same
+class as Matthew 17/Mark 9** — chapter 7 (source's v.55 merges common vv.55-56; vv.56-59 were left
+holding the source's raw numbers instead of the common grid, fixed to vv.57-60) and chapter 14
+(source's v.6 merges common vv.6-7; vv.7-27 were left unrealigned, fixed to vv.8-28). Two other
+flagged chapter-count diffs (chapters 10 and 19) were checked and confirmed genuine trailing
+verse-merges already correctly represented — no fix needed, including 10:49, a verse already known
+absent from KJVA per the 2026-07-12 KJV edition-switch work. NABRE: 31 header-pollution fixes.
+**NRSV: 131/1007 verses corrected, including a real resolution of an old structural-audit flag** —
+Acts 23:26 was recorded years ago (Installment 12-16) as one of only 2 unexplained gaps in the
+entire NT's NRSV column (the other being James 1:8, not yet reached). NRSV-CI in fact has real
+content there ("Claudius Lysias to his Excellency the governor Felix, greetings.") and at the
+similarly-flagged 15:18 ("known from long ago.") — both restored. **Note for whoever reaches
+James next: check whether 1:8's "gap" resolves the same way before assuming it's still open.**
+A pre-existing `translationOverlays.DRB` entry for these same two Acts addresses (built back when
+NRSV was believed genuinely absent, to give a DRB fallback) was deliberately left untouched — it's
+a separate mechanism from the NRSV column and an architecture question, not a content-accuracy
+one; flagged here rather than touched unilaterally. 4 other flagged addresses (8:37, 15:34, 24:7,
+28:29) confirmed as genuine, well-known critical-text omissions, correctly blank.
+
+### Romans — closed
+KJV, Rotherham, DRB: all zero mismatches, zero chapter-count differences — no versification
+shift. NABRE: 19 fixes (17 header-pollution, plus 2 stray-space-before-em-dash bugs at 5:12 and
+9:10 — found alongside a genuine, correctly-*kept* mid-chapter section subtitle at 5:12
+"Humanity's Sin Through Adam.", confirmed legitimate per the established mid-chapter-subtitle
+convention and not stripped). NRSV: 27/433 verses corrected (1 more flagged address, 16:24, is
+the well-known critical-text-omitted grace-benediction verse, already correctly blank).
+
+### Standing notes carried forward
+- The versification-shift diagnostic (word-overlap of source verse N against common verse N and
+  N+1, run across a whole chapter once any merge or count-diff is spotted) has now caught real
+  defects in 4 different chapters across 3 books (Matthew 17, Mark 9, Acts 7, Acts 14) — always
+  run it before trusting a "0 mismatches" same-address report on any chapter with a count diff.
+- Every chapter-count diff this session was individually diagnosed, not assumed to be the same
+  shape — 4 of the 8 flagged diffs across John/Acts turned out to be genuine, already-correct
+  merges needing no fix, while the other 4 were real defects. Check each one on its own.
+- `NRSV-CI` book_number values, confirmed this session: John 500, Acts 510, Romans 520.
+
+### Dashboard and ledger updated in the same session
+`John`, `Acts`, `Romans` added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped to
+`v111-2026-07-14-john-acts-romans-closed`; embedded `<script>` re-validated with `node --check`.
+
+### What's still open
+1. Psalms's patch is still unwritten (unchanged from the prior handoff — see the entry above this
+   one for what's needed).
+2. **Next books in the NT sequence: 1 Corinthians, 2 Corinthians** (continuing canonical order).
+   Worth checking whether James 1:8's old "genuine gap" flag resolves the same way Acts 23:26 did,
+   whenever James is reached.
+
+**Immediate next action for whoever picks this up:** continue the NT sequence with 1-2
+Corinthians, or address the still-outstanding Psalms patch — confirm priority with Josh.

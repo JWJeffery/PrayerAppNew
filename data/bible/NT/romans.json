@@ -98,7 +98,7 @@
             "Rotherham": "Paul, a servant of Jesus Christ, a called apostle, separated unto the glad-message of God—",
             "DRB": "Paul the servant of Jesus Christ, called to be an Apostle, separated into the Gospel of God,",
             "KJV": "Paul, a servant of Jesus Christ, called to be an apostle, separated unto the gospel of God,",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul, a slave of Christ Jesus, called to be an apostle and set apart for the gospel of God,"
+            "NABRE": "Paul, a slave of Christ Jesus, called to be an apostle and set apart for the gospel of God,"
           }
         },
         {
@@ -224,7 +224,7 @@
         {
           "num": 14,
           "text": {
-            "NRSV": "I am a debtor both to Greeks and to barbarians, both to the wise and to the foolish;",
+            "NRSV": "I am a debtor both to Greeks and to barbarians, both to the wise and to the foolish",
             "Rotherham": "Both to Greeks and to Barbarians, both to wise and to unwise, a debtor, I am:",
             "DRB": "To the Greeks & the Barbarous, to the wise and the unwise I am debter.",
             "KJV": "I am debtor both to the Greeks, and to the Barbarians; both to the wise, and to the unwise.",
@@ -234,7 +234,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "hence my eagerness to proclaim the gospel to you also who are in Rome.",
+            "NRSV": "—hence my eagerness to proclaim the gospel to you also who are in Rome.",
             "Rotherham": "Thus, the eagerness on my part—unto you also who are in Rome, to announce the joyful message.",
             "DRB": "So (as much as is in me) I am ready to evangelize to you also that are at Rome.",
             "KJV": "So, as much as in me is, I am ready to preach the gospel to you that are at Rome also.",
@@ -423,7 +423,7 @@
             "Rotherham": "Wherefore, inexcusable, thou art, O man, whoever judgest; for, wherein thou judgest some one else, thyself, thou dost condemn,—for, the very things, thou dost practise, who art judging:",
             "DRB": "For the which cause thou art inexcusable, o man, whosoever thou be that judgest. For wherein thou judgest another, thou condemnest thyself. For thou doest the same things which thou judgest.",
             "KJV": "Therefore thou art inexcusable, O man, whosoever thou art that judgest: for wherein thou judgest another, thou condemnest thyself; for thou that judgest doest the same things.",
-            "NABRE": "Chapter 2 God’s Just Judgment. Therefore, you are without excuse, every one of you who passes judgment. For by the standard by which you judge another you condemn yourself, since you, the judge, do the very same things."
+            "NABRE": "Therefore, you are without excuse, every one of you who passes judgment. For by the standard by which you judge another you condemn yourself, since you, the judge, do the very same things."
           }
         },
         {
@@ -669,7 +669,7 @@
         {
           "num": 26,
           "text": {
-            "NRSV": "So, if those who are uncircumcised keep the righteous requirements of the law, will not their uncircumcision be regarded as circumcision?",
+            "NRSV": "So, if those who are uncircumcised keep the requirements of the law, will not their uncircumcision be regarded as circumcision?",
             "Rotherham": "If then, the uncircumcision, be guarding the righteous requirement of the law, shall not, his uncircumcision, as circumcision be reckoned?—",
             "DRB": "If then the prepuce keep the justices of the Law; shall not his prepuce be reputed for circumcision?",
             "KJV": "Therefore if the uncircumcision keep the righteousness of the law, shall not his uncircumcision be counted for circumcision?",
@@ -718,13 +718,13 @@
             "Rotherham": "What, then, is the preeminence of the Jew? Or what, the profit of his circumcision?",
             "DRB": "What preeminence then hath the Jew, or what is the profit of circumcision?",
             "KJV": "What advantage then hath the Jew? or what profit is there of circumcision?",
-            "NABRE": "Chapter 3 Answers to Objections. What advantage is there then in being a Jew? Or what is the value of circumcision?"
+            "NABRE": "What advantage is there then in being a Jew? Or what is the value of circumcision?"
           }
         },
         {
           "num": 2,
           "text": {
-            "NRSV": "Much in every way. To begin with, the Jews were entrusted with the oracles of God.",
+            "NRSV": "Much, in every way. For in the first place the Jews were entrusted with the oracles of God.",
             "Rotherham": "Much, every way:—First, indeed, that they were entrusted with the oracles of God.",
             "DRB": "Much by all means. First surely because the words of God were committed to them.",
             "KJV": "Much every way: chiefly, because that unto them were committed the oracles of God.",
@@ -734,7 +734,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "What if some were unfaithful? Will their unfaithfulness nullify the faithfulness of God?",
+            "NRSV": "What if some were unfaithful? Will their faithlessness nullify the faithfulness of God?",
             "Rotherham": "For what? If some distrusted, shall their distrust make, the trust of God, void?",
             "DRB": "For what if certain of them have not believed? Hath their incredulity made the faith of God frustrate?",
             "KJV": "For what if some did not believe? shall their unbelief make the faith of God without effect?",
@@ -754,7 +754,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "But if our injustice serves to confirm the justice of God, what should we say? That God is unjust to inflict wrath on us? (I am speaking in a human way.)",
+            "NRSV": "But if our injustice serves to confirm the justice of God, what should we say? That God is unjust to inflict wrath on us? (I speak in a human way.)",
             "Rotherham": "But, if, our unrighteousness, commendeth, God’s righteousness, what shall we say? Surely, not unrighteous, is God who visiteth with his anger? After the manner of men, I am speaking,—",
             "DRB": "But if our iniquity commend the justice of God, what shall we say? Is God unjust that executeth wrath? (I speak according to man)",
             "KJV": "But if our unrighteousness commend the righteousness of God, what shall we say? Is God unrighteous who taketh vengeance? (I speak as a man)",
@@ -1033,7 +1033,7 @@
             "Rotherham": "What then shall we say—as touching Abraham our forefather?",
             "DRB": "What shall we say then that Abraham did find, our father according to the flesh?",
             "KJV": "What shall we say then that Abraham our father, as pertaining to the flesh, hath found?",
-            "NABRE": "Chapter 4 Abraham Justified by Faith. What then can we say that Abraham found, our ancestor according to the flesh?"
+            "NABRE": "What then can we say that Abraham found, our ancestor according to the flesh?"
           }
         },
         {
@@ -1109,7 +1109,7 @@
         {
           "num": 9,
           "text": {
-            "NRSV": "Is this blessedness, then, only for the circumcised, or also for the uncircumcised? We say, “Faith was reckoned to Abraham as righteousness.”",
+            "NRSV": "Is this blessedness, then, pronounced only on the circumcised, or also on the uncircumcised? We say, “Faith was reckoned to Abraham as righteousness.”",
             "Rotherham": "This happiness, then, [is it] for the circumcision, or for the uncircumcision? for we say—His faith was reckoned unto Abraham as righteousness:",
             "DRB": "This blessedness then doth it abide in the circumcision, or in the prepuce also? For we say that unto Abraham faith was reputed to justice.",
             "KJV": "Cometh this blessedness then upon the circumcision only, or upon the uncircumcision also? for we say that faith was reckoned to Abraham for righteousness.",
@@ -1239,7 +1239,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "Therefore it was “reckoned to him as righteousness.”",
+            "NRSV": "Therefore his faith “was reckoned to him as righteousness.”",
             "Rotherham": "Wherefore [also], it was reckoned unto him as righteousness.",
             "DRB": "Therefore was it also reputed him to justice.",
             "KJV": "And therefore it was imputed to him for righteousness.",
@@ -1288,7 +1288,7 @@
             "Rotherham": "Having, therefore, been declared righteous by faith, let us have, peace, towards God, through our Lord Jesus Christ,—",
             "DRB": "Being justified therefore by faith, let us have peace toward God by our Lord Jesus Christ;",
             "KJV": "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:",
-            "NABRE": "Chapter 5 Faith, Hope, and Love. Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ,"
+            "NABRE": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ,"
           }
         },
         {
@@ -1398,7 +1398,7 @@
             "Rotherham": "For this cause,—just as, through one man, sin into the world entered, and through sin, death,—and, so, unto all men death passed through, for that all had sinned;—",
             "DRB": "Therefore, as by one man sin entered into this world, and by sin death; and so unto all men death did pass, in which all sinned.",
             "KJV": "Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:",
-            "NABRE": "Humanity’s Sin Through Adam. Therefore, just as through one person sin entered the world, and through sin, death, and thus death came to all, inasmuch as all sinned —"
+            "NABRE": "Humanity’s Sin Through Adam. Therefore, just as through one person sin entered the world, and through sin, death, and thus death came to all, inasmuch as all sinned—"
           }
         },
         {
@@ -1503,7 +1503,7 @@
             "Rotherham": "What then shall we say? are we still to continue in sin that favour may abound?",
             "DRB": "What shall we say then? Shall we continue in sin that grace may abound?",
             "KJV": "What shall we say then? Shall we continue in sin, that grace may abound?",
-            "NABRE": "IV. Justification and the Christian Life Chapter 6 Freedom from Sin; Life in God. What then shall we say? Shall we persist in sin that grace may abound? Of course not!"
+            "NABRE": "What then shall we say? Shall we persist in sin that grace may abound? Of course not!"
           }
         },
         {
@@ -1619,7 +1619,7 @@
         {
           "num": 13,
           "text": {
-            "NRSV": "No longer present your members to sin as instruments of wickedness, but present yourselves to God as those who have been brought from death to life, and your members to God as instruments of righteousness.",
+            "NRSV": "No longer present your members to sin as instruments of wickedness, but present yourselves to God as those who have been brought from death to life, and present your members to God as instruments of righteousness.",
             "Rotherham": "Neither be presenting your members as weapons of unrighteousness unto sin, but present yourselves unto God as though alive from among the dead, and your members as weapons of righteousness unto God;",
             "DRB": "But neither do ye exhibit your members instruments of iniquity unto sin: but exhibit yourselves to God as of dead men, alive; and your members instruments of justice to God.",
             "KJV": "Neither yield ye your members as instruments of unrighteousness unto sin: but yield yourselves unto God, as those that are alive from the dead, and your members as instruments of righteousness unto God.",
@@ -1699,7 +1699,7 @@
         {
           "num": 21,
           "text": {
-            "NRSV": "So what advantage did you then get from the things of which you are now ashamed? The end of those things is death.",
+            "NRSV": "So what advantage did you then get from the things of which you now are ashamed? The end of those things is death.",
             "Rotherham": "What fruit, therefore, had ye then—in things for which ye now are taking shame to yourselves? For, the end of those things, is death.",
             "DRB": "What fruit therefore had you then in those things, for which now you are ashamed? For the end of them is death.",
             "KJV": "What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death.",
@@ -1709,7 +1709,7 @@
         {
           "num": 22,
           "text": {
-            "NRSV": "But now that you have been set free from sin and have become slaves of God, the advantage you get is sanctification. The end is eternal life.",
+            "NRSV": "But now that you have been freed from sin and enslaved to God, the advantage you get is sanctification. The end is eternal life.",
             "Rotherham": "Whereas, now, having been freed from sin, and made servants unto God, ye have your fruit for sanctification and, the end, life age-abiding.",
             "DRB": "But now being made free from sin, and become servants to God, you have your fruit unto sanctification, but the end, life everlasting.",
             "KJV": "But now being made free from sin, and become servants to God, ye have your fruit unto holiness, and the end everlasting life.",
@@ -1734,11 +1734,11 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "Do you not know, brothers and sisters—for I am speaking to those who know the law—that the law is binding on a person only that person is alive?",
+            "NRSV": "Do you not know, brothers and sisters —for I am speaking to those who know the law—that the law is binding on a person only during that person’s lifetime?",
             "Rotherham": "Or are ye ignorant, brethren,—for unto them that understand the law am I speaking, that, the law, hath lordship over a men as long as he liveth?",
             "DRB": "Are you ignorant, brethren, (for I speak to them that know the Law) that the Law hath dominion over a man as long time as he liveth?",
             "KJV": "Know ye not, brethren, (for I speak to them that know the law,) how that the law hath dominion over a man as long as he liveth?",
-            "NABRE": "Chapter 7 Freedom from the Law. Are you unaware, brothers (for I am speaking to people who know the law), that the law has jurisdiction over one as long as one lives?"
+            "NABRE": "Are you unaware, brothers (for I am speaking to people who know the law), that the law has jurisdiction over one as long as one lives?"
           }
         },
         {
@@ -1993,7 +1993,7 @@
             "Rotherham": "Hence there is now, no, condemnation unto them who are in Christ Jesus;",
             "DRB": "There is now therefore no damnation to them that are in Christ Jesus; that walk not according to the flesh.",
             "KJV": "There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.",
-            "NABRE": "Chapter 8 The Flesh and the Spirit. Hence, now there is no condemnation for those who are in Christ Jesus."
+            "NABRE": "Hence, now there is no condemnation for those who are in Christ Jesus."
           }
         },
         {
@@ -2388,7 +2388,7 @@
             "Rotherham": "Truth, say I, in Christ, I utter no falsehood,—my conscience bearing witness with me in the Holy Spirit,—",
             "DRB": "I speak the verity in Christ, I lie not, my conscience bearing me witness in the Holy Ghost,",
             "KJV": "I say the truth in Christ, I lie not, my conscience also bearing me witness in the Holy Ghost,",
-            "NABRE": "V. Jews and Gentiles in God’s Plan Chapter 9 Paul’s Love for Israel. I speak the truth in Christ, I do not lie; my conscience joins with the holy Spirit in bearing me witness"
+            "NABRE": "I speak the truth in Christ, I do not lie; my conscience joins with the holy Spirit in bearing me witness"
           }
         },
         {
@@ -2478,7 +2478,7 @@
             "Rotherham": "And, not only so, but, when, Rebekah also, was with child, of one—Isaac our father,—",
             "DRB": "And not only she, But Rebecca also conceiving of one copulation, of Isaac our father.",
             "KJV": "And not only this; but when Rebecca also had conceived by one, even by our father Isaac;",
-            "NABRE": "And not only that, but also when Rebecca had conceived children by one husband, our father Isaac —"
+            "NABRE": "And not only that, but also when Rebecca had conceived children by one husband, our father Isaac—"
           }
         },
         {
@@ -2574,7 +2574,7 @@
         {
           "num": 20,
           "text": {
-            "NRSV": "But who indeed are you, a human being, to argue with God? Will what is molded say to the one who molded it, “Why have you made me like this?”",
+            "NRSV": "But who indeed are you, a human being, to argue with God? Will what is molded say to the one who molds it, “Why have you made me like this?”",
             "Rotherham": "O man! Who, nevertheless, art, thou, that art answering again unto God? Shall the thing formed say unto him that formed it—Why didst thou make me thus?",
             "DRB": "O man, who art thou that doest answer God? Doth the work say to him that wrought it: Why hast thou made me thus?",
             "KJV": "Nay but, O man, who art thou that repliest against God? Shall the thing formed say to him that formed it, Why hast thou made me thus?",
@@ -2723,7 +2723,7 @@
             "Rotherham": "Brethren! the delight of my own heart and my supplication God-ward in their behalf, are for salvation;",
             "DRB": "Brethren, the will of my heart surely and prayer to God, is for them unto salvation.",
             "KJV": "Brethren, my heart’s desire and prayer to God for Israel is, that they might be saved.",
-            "NABRE": "Chapter 10 Brothers, my heart’s desire and prayer to God on their behalf is for salvation."
+            "NABRE": "Brothers, my heart’s desire and prayer to God on their behalf is for salvation."
           }
         },
         {
@@ -2769,7 +2769,7 @@
         {
           "num": 6,
           "text": {
-            "NRSV": "But the righteousness that comes from faith says, “Do not say in your heart, ‘Who will ascend into heaven?’ ” (that is, to bring Christ down)",
+            "NRSV": "But the righteousness that comes from faith says, “Do not say in your heart, ‘Who will ascend into heaven?’” (that is, to bring Christ down)",
             "Rotherham": "Whereas, the righteousness by faith, thus speaketh—Do not say in thy heart, Who shall ascend into heaven? That is, to bring, Christ, down,",
             "DRB": "But the justice which is of faith, saith thus: Say not in thy heart, Who shall ascend into Heaven? that is to bring Christ down.",
             "KJV": "But the righteousness which is of faith speaketh on this wise, Say not in thine heart, Who shall ascend into heaven? (that is, to bring Christ down from above:)",
@@ -2779,7 +2779,7 @@
         {
           "num": 7,
           "text": {
-            "NRSV": "“or ‘Who will descend into the abyss?’ ” (that is, to bring Christ up from the dead).",
+            "NRSV": "“or ‘Who will descend into the abyss?’” (that is, to bring Christ up from the dead).",
             "Rotherham": "Or, Who shall descend into the abyss? That is, to bring up, Christ, from among the dead;",
             "DRB": "Or who descendeth into the depth? that is to call Christ again from the dead.",
             "KJV": "Or, Who shall descend into the deep? (that is, to bring up Christ again from the dead.)",
@@ -2938,7 +2938,7 @@
             "Rotherham": "I say, then—Hath God cast off his people? Far be it! For, I also, am an Israelite,—of the seed of Abraham, of the tribe of Benjamin:",
             "DRB": "I say then: Hath God rejected his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Ben-jamin.",
             "KJV": "I say then, Hath God cast away his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.",
-            "NABRE": "Chapter 11 The Remnant of Israel. I ask, then, has God rejected his people? Of course not! For I too am an Israelite, a descendant of Abraham, of the tribe of Benjamin."
+            "NABRE": "I ask, then, has God rejected his people? Of course not! For I too am an Israelite, a descendant of Abraham, of the tribe of Benjamin."
           }
         },
         {
@@ -3074,7 +3074,7 @@
         {
           "num": 15,
           "text": {
-            "NRSV": "For if their rejection is the reconciliation of the world, what will their acceptance be but life from the dead?",
+            "NRSV": "For if their rejection is the reconciliation of the world, what will their acceptance be but life from the dead!",
             "Rotherham": "For, if, the casting away of them, hath become the reconciling of a world, what shall, the taking of them in addition, be, but life from among the dead?",
             "DRB": "For if the loss of them be the reconciliation of the world; what shall the receiving be, but life from the dead?",
             "KJV": "For if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?",
@@ -3303,7 +3303,7 @@
             "Rotherham": "I beseech you therefore, brethren, through the compassions of God, to present your bodies a living, holy sacrifice, unto God acceptable,—your rational divine service;",
             "DRB": "I Beseech you therefore, brethren, by the mercy of God, that you exhibit your bodies a living host, holy, pleasing to God, your reasonable service.",
             "KJV": "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.",
-            "NABRE": "VI. The Duties of Christians Chapter 12 Sacrifice of Body and Mind. I urge you therefore, brothers, by the mercies of God, to offer your bodies as a living sacrifice, holy and pleasing to God, your spiritual worship."
+            "NABRE": "I urge you therefore, brothers, by the mercies of God, to offer your bodies as a living sacrifice, holy and pleasing to God, your spiritual worship."
           }
         },
         {
@@ -3518,7 +3518,7 @@
             "Rotherham": "Let, every soul, unto protecting authorities be in subjection; for there is no authority save by God, and, they that are in being, have by God been arranged,—",
             "DRB": "Let every soul be subject to higher powers, for there is no power but of God. And those that are, of God are ordained.",
             "KJV": "Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.",
-            "NABRE": "Chapter 13 Obedience to Authority. Let every person be subordinate to the higher authorities, for there is no authority except from God, and those that exist have been established by God."
+            "NABRE": "Let every person be subordinate to the higher authorities, for there is no authority except from God, and those that exist have been established by God."
           }
         },
         {
@@ -3663,7 +3663,7 @@
             "Rotherham": "Him that is weak in his faith, receive ye,—not for disputing opinions:—",
             "DRB": "And him that is weak in faith, take unto you; not in disputations of cogitations.",
             "KJV": "Him that is weak in the faith receive ye, but not to doubtful disputations.",
-            "NABRE": "Chapter 14 To Live and Die for Christ. Welcome anyone who is weak in faith, but not for disputes over opinions."
+            "NABRE": "Welcome anyone who is weak in faith, but not for disputes over opinions."
           }
         },
         {
@@ -3679,7 +3679,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "Those who eat must not despise those who abstain, and those who abstain must not judge those who eat; for God has welcomed them.",
+            "NRSV": "Those who eat must not despise those who abstain, and those who abstain must not pass judgment on those who eat; for God has welcomed them.",
             "Rotherham": "Let not, him that eateth, despise him that eateth not, and let not, him that eateth not, judge him that eateth; for, God, hath received him.",
             "DRB": "Let not him that eateth, despise him that eateth not: and he that eateth not, let him not judge him that eateth. For God hath taken him to him.",
             "KJV": "Let not him that eateth despise him that eateth not; and let not him which eateth not judge him that eateth: for God hath received him.",
@@ -3689,7 +3689,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Who are you to judge someone else’s servant? It is before their own lord that they stand or fall. And they will be upheld, for the Lord is able to make them stand.",
+            "NRSV": "Who are you to pass judgment on servants of another? It is before their own lord that they stand or fall. And they will be upheld, for the Lord is able to make them stand.",
             "Rotherham": "Who art, thou, that judgest another’s domestic? To his own master, he standeth or falleth; he shall, however, be made to stand,—for his master is able to make him stand.",
             "DRB": "Who art thou that judgest another man's servant? To his own Lord he standeth or falleth. And he shall stand: for God is able to make him stand.",
             "KJV": "Who art thou that judgest another man’s servant? to his own master he standeth or falleth. Yea, he shall be holden up: for God is able to make him stand.",
@@ -3879,7 +3879,7 @@
         {
           "num": 23,
           "text": {
-            "NRSV": "But those who have doubts are condemned if they eat, because they do not eat from faith; for whatever does not proceed from faith is sin.",
+            "NRSV": "But those who have doubts are condemned if they eat, because they do not act from faith; for whatever does not proceed from faith is sin.",
             "Rotherham": "But, he that is in doubt, if he eat, hath condemned himself,—because, [it was] not of faith, and, everything which is not of faith, is sin.",
             "DRB": "But he that discerneth, if he eat, is damned; because not of faith. For all that is not of faith, is sin.",
             "KJV": "And he that doubteth is damned if he eat, because he eateth not of faith: for whatsoever is not of faith is sin.",
@@ -3898,7 +3898,7 @@
             "Rotherham": "We are bound, however, we, who are strong, the weakness of them who are not strong to be bearing, and not, unto ourselves, to give pleasure.",
             "DRB": "And we that are the stronger, must sustain the infirmities of the weak, & not please ourselves.",
             "KJV": "We then that are strong ought to bear the infirmities of the weak, and not to please ourselves.",
-            "NABRE": "Chapter 15 Patience and Self-Denial. We who are strong ought to put up with the failings of the weak and not to please ourselves;"
+            "NABRE": "We who are strong ought to put up with the failings of the weak and not to please ourselves;"
           }
         },
         {
@@ -3914,7 +3914,7 @@
         {
           "num": 3,
           "text": {
-            "NRSV": "For Christ did not please himself; but as it is written, “The insults of those who insult you have fallen on me.”",
+            "NRSV": "For Christ did not please himself; but, as it is written, “The insults of those who insult you have fallen on me.”",
             "Rotherham": "For, even the Christ, not unto himself gave pleasure, but, even as it is written—The reproaches of them that we reproaching thee, fell upon me:",
             "DRB": "For, Christ did not please himself, but as it is written: The reproaches of them that reproached thee, fell upon me.",
             "KJV": "For even Christ pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me.",
@@ -3934,7 +3934,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "May the God of steadfastness and encouragement grant you to live in such harmony with one another, in accord with Christ Jesus,",
+            "NRSV": "May the God of steadfastness and encouragement grant you to live in harmony with one another, in accordance with Christ Jesus,",
             "Rotherham": "Now may, the God of the endurance and of the encouragement, give you, the same thing, to be regarding amongst one another, according to Christ Jesus;",
             "DRB": "And the God of patience and of comfort give you to be of one mind one toward another according to Jesus Christ:",
             "KJV": "Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus:",
@@ -4028,7 +4028,7 @@
             "Rotherham": "But I am persuaded my brethren,—even, I myself, concerning you: that, ye yourselves, also are full of goodness, filled with all knowledge, able also, unto one another, to be ministering admonition:",
             "DRB": "And I myself also, my brethren, am assured of you, that you also are full of love, replenished with all knowledge, so that you are able to admonish one another.",
             "KJV": "And I myself also am persuaded of you, my brethren, that ye also are full of goodness, filled with all knowledge, able also to admonish one another.",
-            "NABRE": "VII. Conclusion Apostle to the Gentiles. I myself am convinced about you, my brothers, that you yourselves are full of goodness, filled with all knowledge, and able to admonish one another."
+            "NABRE": "I myself am convinced about you, my brothers, that you yourselves are full of goodness, filled with all knowledge, and able to admonish one another."
           }
         },
         {
@@ -4094,7 +4094,7 @@
         {
           "num": 21,
           "text": {
-            "NRSV": "but as it is written, “Those who have never been told of him shall see, and those who have never heard shall understand.”",
+            "NRSV": "but as it is written, “Those who have never been told of him shall see, and those who have never heard of him shall understand.”",
             "Rotherham": "But, even as it is written—They shall see unto whom had been announced no tidings concerning him, and, they who had not heard, shall understand.",
             "DRB": "but as it is written: They to whom it hath not been preached of him, shall see, and they that have not heard, shall understand.",
             "KJV": "But as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand.",
@@ -4114,7 +4114,7 @@
         {
           "num": 23,
           "text": {
-            "NRSV": "But now, with no further place for me in these regions, I have also for many years had a desire to come to you.",
+            "NRSV": "But now, with no further place for me in these regions, I desire, as I have for many years, to come to you",
             "Rotherham": "But, now, no longer having place in these regions, and having had, a longing, to come unto you a good many years,—",
             "DRB": "But now having no longer place in these countries, and having a desire to come unto you these many years now passed:",
             "KJV": "But now having no more place in these parts, and having a great desire these many years to come unto you;",
@@ -4124,7 +4124,7 @@
         {
           "num": 24,
           "text": {
-            "NRSV": "I hope to see you in passing as I go to Spain, and to be sent on my way there by you, once I have enjoyed your company for a little while.",
+            "NRSV": "when I go to Spain. For I do hope to see you on my journey and to be sent on by you, once I have enjoyed your company for a little while.",
             "Rotherham": "As soon as I am journey to Spain,—I am hoping, in fact, when journeying through to get sight of you, and by you to be set forward thither,—if, with your company, I have first in some measure been satisfied.",
             "DRB": "when I shall begin to take my journey into Spain, I hope that as I pass, I shall see you, and be brought thither of you, if first in part I shall have enjoyed you.",
             "KJV": "Whensoever I take my journey into Spain, I will come to you: for I trust to see you in my journey, and to be brought on my way thitherward by you, if first I be somewhat filled with your company.",
@@ -4154,7 +4154,7 @@
         {
           "num": 27,
           "text": {
-            "NRSV": "They were pleased to do this, and indeed they owe it to them; for if the Gentiles have come to share in their spiritual blessings, they ought also to be of service to them in material blessings.",
+            "NRSV": "They were pleased to do this, and indeed they owe it to them; for if the Gentiles have come to share in their spiritual blessings, they ought also to be of service to them in material things.",
             "Rotherham": "They have been well-pleased, indeed,—and, their debtors, they are; for, if, with their spiritual things the nations have come into fellowship, they are bound also with their own carnal things to minister publicly unto them.",
             "DRB": "For it hath pleased them: and they are their debters. For if the Gentiles be made partakers of their spiritual things; they ought also in carnal things to minister unto them.",
             "KJV": "It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.",
@@ -4230,7 +4230,7 @@
           "num": 1,
           "text": {
             "KJV": "I commend unto you Phebe our sister, which is a servant of the church which is at Cenchrea:",
-            "NABRE": "Chapter 16 Phoebe Commended. I commend to you Phoebe our sister, who is [also] a minister of the church at Cenchreae,",
+            "NABRE": "I commend to you Phoebe our sister, who is [also] a minister of the church at Cenchreae,",
             "NRSV": "I commend to you our sister Phoebe, a deacon of the church at Cenchreae,",
             "DRB": "And I commend to you Phoebe our sister, who is in the ministry of the Church that is in Cenchris:",
             "Rotherham": "And I commend to you Phoebe our sister,—being a minister [also] of the assembly which is in Cenchreae;"
@@ -4401,7 +4401,7 @@
           "text": {
             "KJV": "For they that are such serve not our Lord Jesus Christ, but their own belly; and by good words and fair speeches deceive the hearts of the simple.",
             "NABRE": "For such people do not serve our Lord Christ but their own appetites, and by fair and flattering speech they deceive the hearts of the innocent.",
-            "NRSV": "For such persons do not serve our Lord Christ, but their own appetites, and by smooth talk and flattery they deceive the hearts of the simple-minded.",
+            "NRSV": "For such people do not serve our Lord Christ, but their own appetites, and by smooth talk and flattery they deceive the hearts of the simple-minded.",
             "DRB": "For such do not serve Christ our Lord, but their own belly: and by sweet speeches and benedictions seduce the hearts of innocents.",
             "Rotherham": "For, they who are such, unto our Lord Christ are not doing service, but unto their own belly,—and, through their smooth and flattering speech, deceive the hearts of the innocent."
           }
@@ -4470,7 +4470,7 @@
           "text": {
             "KJV": "Now to him that is of power to stablish you according to my gospel, and the preaching of Jesus Christ, according to the revelation of the mystery, which was kept secret since the world began,",
             "NABRE": "[ Now to him who can strengthen you, according to my gospel and the proclamation of Jesus Christ, according to the revelation of the mystery kept secret for long ages",
-            "NRSV": "Now to God who is able to strengthen you according to my gospel and the preaching of Jesus Christ, according to the revelation of the mystery that was kept secret for long ages",
+            "NRSV": "Now to God who is able to strengthen you according to my gospel and the proclamation of Jesus Christ, according to the revelation of the mystery that was kept secret for long ages",
             "DRB": "And to him that is able to confirm you according to my Gospel and preaching of Jesus Christ, according to the revelation of the mystery from eternal times kept secret,",
             "Rotherham": "Now, unto him who hath power to establish you, according to my glad-message—even the proclamation of Jesus Christ, according to the revelation of a sacred secret, in age-past times kept silent,"
           }

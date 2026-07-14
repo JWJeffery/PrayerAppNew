@@ -2051,3 +2051,39 @@ Matthew 470, Mark 480, Luke 490.
 All three books' dashboard entries (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md`
 updated in the same session. `SEED_VERSION` bumped to `v110-2026-07-14-synoptic-gospels-closed`.
 Next book in sequence: John.
+
+## John, Acts, Romans remediation, session 2026-07-14 continued
+
+**John.** KJV/Rotherham zero mismatches. DRB's chapter 11 count-diff confirmed as a genuine,
+already-correct verse-merge (v.56 merges common vv.56-57) — no fix needed. NABRE: 22 fixes,
+including the unusual 7:53 header ("Chapter 8 - A Woman Caught in Adultery.") confirmed genuine —
+NABRE brackets the Pericope Adulterae as disputed and titles it inside chapter 7's own range.
+NRSV: 50/879 fixes; 5:4 confirmed as the standard critical-text-omitted "troubled the water" verse.
+
+**Acts.** KJV/Rotherham zero mismatches. DRB: two more real within-chapter shifts, same class as
+Matthew 17/Mark 9 — chapter 7 (v.55 merge, vv.56-59 realigned to vv.57-60) and chapter 14 (v.6
+merge, vv.7-27 realigned to vv.8-28). Two other count-diffs (ch.10, ch.19) confirmed genuine
+trailing merges, no fix needed. NABRE: 31 header-pollution fixes. NRSV: 131/1007 fixes —
+**resolves an old structural-audit flag**: Acts 23:26 was recorded in Installment 12-16 as one of
+only 2 unexplained NT-wide NRSV gaps; NRSV-CI in fact has real content there and at 15:18, both
+restored. A pre-existing `translationOverlays.DRB` entry covering these same two addresses was
+left untouched (separate mechanism, architecture question not content-accuracy). 4 further
+flagged addresses (8:37, 15:34, 24:7, 28:29) confirmed genuine critical-text omissions.
+
+**Romans.** KJV/Rotherham/DRB all zero mismatches, no shift. NABRE: 19 fixes (17 header-pollution
++ 2 stray-space-before-em-dash at 5:12, 9:10, alongside a genuine kept mid-chapter subtitle at
+5:12). NRSV: 27/433 fixes; 16:24 confirmed as the standard critical-text-omitted benediction verse.
+
+**Standing note:** the versification-shift diagnostic (word-overlap of source verse N against
+app's common verse N and N+1 across a whole chapter) has now caught real defects in 4 chapters
+across 3 books this session-pair (Matthew 17, Mark 9, Acts 7, Acts 14). Always run it on any
+chapter with a nonzero DRB count-diff before trusting a same-address "0 mismatches" report — 4 of
+8 flagged diffs this session were real defects, the other 4 were genuine already-correct merges.
+Diagnose each individually.
+
+**NRSV-CI book_number values confirmed:** John 500, Acts 510, Romans 520.
+
+Dashboard (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md` updated in the same session.
+`SEED_VERSION` bumped to `v111-2026-07-14-john-acts-romans-closed`. Next books: 1-2 Corinthians.
+Worth checking whether James 1:8's old NT-audit "genuine gap" flag resolves the same way Acts
+23:26 did, whenever James is reached.
