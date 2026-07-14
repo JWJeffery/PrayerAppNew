@@ -2393,3 +2393,24 @@ unresolved -- flagged, not fixed, in this session. 3 Corinthians (AR) remains th
 trust-certified AR/SY item. Odes of Solomon (SY) remains the only fully trust-certified ODES item.
 Everything else in this corner of the project has now either been removed as non-canonical/
 unsourced/derivative, or flagged with an honest open-verification note.
+
+## Dashboard status fix, session 2026-07-14 continued -- 3 Corinthians (AR) was never actually marked green
+
+Josh caught this by screenshot: the app's live AR/SY view showed all three remaining items
+(3 Corinthians, Letter of Baruch, 2 Baruch) as amber/unaudited. Letter of Baruch and 2 Baruch are
+correctly amber -- their content genuinely hasn't been verified against a primary source yet, so
+"not yet audited" is the honest status. But 3 Corinthians (AR) should not have been amber: its own
+root `status` field has read `app_render_eligible_textually_trusted_source_map_backed` since
+2026-07-04, and its full certification chain (source-shaped rebuild -> text-trust certification,
+all 33 rows confirmed against the M.R. James 1924 source map -> app-render eligibility) is
+complete and on record. When this book's stale `meta.version` field was fixed earlier this
+session, the dashboard's own `GREEN_SEED`/`GREEN_NOTES` status was never actually updated to
+match -- a real gap, not a deliberate amber. Fixed now: "3 Corinthians (AR)" added to
+`GREEN_SEED` with a full `GREEN_NOTES` entry citing the certification chain and registry paths.
+`SEED_VERSION` bumped to `v118-2026-07-14-3corinthians-dashboard-status-fixed`. Script
+re-validated with `node --check`.
+
+**Standing lesson for future sessions:** fixing a book's underlying metadata or content does not
+automatically update its dashboard status -- always check whether a book's real, already-recorded
+trust state should also move it into `GREEN_SEED` at the same time content or metadata work is
+done, not as an afterthought.
