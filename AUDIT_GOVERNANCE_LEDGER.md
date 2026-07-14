@@ -2204,3 +2204,53 @@ verified..." predates this NT effort, but Josh described the patch as still unwr
 session. Needs reconciling via `git log -- <psalms file path>` before assuming either state.
 (2) Whether "Psalms deferred to the end" means end-of-OT (reached) or end-of-whole-project (not
 reached) was never resolved when the deferral was decided. Ask Josh, don't assume.
+
+## Corpus filing correction, session 2026-07-14 continued — three misfiled non-NT texts sorted
+
+Josh caught that the dashboard's `NT_BOOKS` array (audit-ledger.html) had three non-canonical
+texts silently appended after the real 27 New Testament books: "Epistle of the Laodiceans" (Lao),
+"History of Zosimus" (Zos), "2 Baruch (CE)" (2Br). Investigated before touching anything: none of
+the three carry a `"canon": "NT"` field in their own JSON metadata (unlike every real NT book),
+and the dashboard's NT section header says only "New Testament" -- no "as filed" disclosure the
+way the OT section explicitly has for its own broader-canon inclusions (1 Enoch, etc.). This was
+an oversight, not a parallel deliberate decision.
+
+**Epistle to the Laodiceans -- removed entirely, per Josh's explicit decision that it isn't
+canonical in any Christian tradition.** `git rm data/bible/NT/epistleofthelaodiceans.json`.
+Removed from `NT_BOOKS` and the book-abbreviation map (`BOOK_CODES`) in audit-ledger.html. A
+closure registry note (`data/bible/registry/broader-canon-laodiceans-removal-2026-07-14.json`)
+records the decision and reasoning, preserving the prior text-trust certification record rather
+than erasing history -- the candidate WAS previously certified accurate against its Gutenberg
+source (2026-07-04), the removal is a canonicity decision, not a content-accuracy one. The raw
+Gutenberg source remains at `data/bible/translations/laodiceans-gutenberg-lost-books/raw/` if
+ever wanted again under a clearly-labeled non-canonical bucket. **Not touched:** the large
+auto-generated `data/bible/registry/file-manifest.json` still lists the deleted file's old path --
+this is a scan snapshot, not hand-maintained, and will go stale until next regenerated; flagged
+here rather than hand-patched.
+
+**History of Zosimus and 2 Baruch -- relocated to their correct tradition.** Both self-declare
+their own tradition in `meta.version`: Zosimus says "Syriac Tradition" directly; 2 Baruch's "(CE)"
+dashboard tag (Church of the East) sits within the same Syriac-tradition family this project
+already tracks under `SY_BOOKS` (alongside the existing "Letter of Baruch (SY)"). Moved via
+`git mv`: `data/bible/NT/historyofzosimus.json` -> `data/bible/SY/historyofzosimusSY.json`,
+`data/bible/NT/2baruchCE.json` -> `data/bible/SY/2baruchSY.json` (renamed to match the
+established `<name><TRADITION>.json` convention already used by `letterofbaruchSY.json`). Both
+added to the dashboard's `SY_BOOKS` array; their entries never had `GREEN_SEED`/`RED_SEED`/notes
+to begin with (never audited), so no status data needed migrating.
+
+**Worth flagging separately, found while investigating:** 2 Baruch's own governance registry
+(`data/bible/registry/broader-canon-2baruch-source-materialization-2026-07-05.json`) shows
+`"textTrustPromotion": false` and states directly that "the current candidate is not exact APOT
+wording" -- a content-accuracy rebuild was left pending as of 2026-07-05 and, as far as this
+session's investigation found, was never completed. This is unrelated to the filing correction
+just made (the file is now in the right place either way) but is a real, still-open content
+question for whenever this text's own remediation is scheduled -- not fixed in this session, out
+of scope for a filing correction.
+
+**Neither `js/bible-browser/reference-parser.js` (the live app's book-name resolver) nor any other
+`.js` file references any of these three books by name or path** -- confirmed by direct grep
+before moving anything, so this filing correction carries zero live-app risk; these three have
+never been reachable through the normal Bible browser regardless of which folder they sit in.
+
+Checked the entire dashboard script for any other reference to the three books after all edits --
+only the new `SY_BOOKS` entry remains, confirmed via `node --check`.

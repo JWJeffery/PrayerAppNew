@@ -2431,3 +2431,33 @@ r'\n/(\d+[a-z]?) '     # slash only
 **Dashboard updated:** "Psalms" added to `GREEN_SEED` with a full `GREEN_NOTES` entry summarizing the whole multi-session effort (all 9 lanes, the false-certification discovery, the truncation-and-Gemini story, the two bug classes). `SEED_VERSION` bumped to `v117-2026-07-14-psalms-closed-all-books-complete`. Script block re-validated with `node --check`.
 
 **Where the whole project stands now: every OT book and every NT book is fully remediated with zero known open defects — there is no deferred book left anywhere in the Bible.** Per the original governance sequence recorded at the top of this file, the next phase is **ET-AR-SY/Odes** (Ethiopian, Armenian, Syriac source traditions and the Odes of Solomon corpus). Nothing else is open.
+## Session, 2026-07-14 continued — Corpus filing correction: Laodiceans removed, Zosimus/2 Baruch relocated
+
+**HANDOFF — read this first if picking up fresh.** Not a content-remediation session — Josh
+caught a dashboard filing bug: three non-canonical texts ("Epistle of the Laodiceans", "History
+of Zosimus", "2 Baruch (CE)") had been silently appended to the end of `NT_BOOKS` in
+audit-ledger.html, sitting alongside the real 27 New Testament books with no disclosure.
+
+**Epistle to the Laodiceans is now fully removed** — Josh's explicit decision, since it isn't
+canonical Scripture in any Christian tradition. File deleted, dashboard entries removed. Full
+detail and the registry closure note's location in `AUDIT_GOVERNANCE_LEDGER.md`'s "Corpus filing
+correction" entry above.
+
+**History of Zosimus and 2 Baruch are now correctly filed under Syriac tradition** — moved from
+`data/bible/NT/` to `data/bible/SY/`, renamed to match the established naming convention
+(`historyofzosimusSY.json`, `2baruchSY.json`), and moved from `NT_BOOKS` to `SY_BOOKS` on the
+dashboard.
+
+**Worth carrying forward: 2 Baruch's own content is flagged in its governance registry as not yet
+rebuilt from source** (`textTrustPromotion: false`, candidate confirmed not exact APOT wording as
+of 2026-07-05) — a real, separate, still-open item whenever this text's own remediation comes up.
+Not touched this session, out of scope for a filing correction.
+
+Confirmed via grep before moving anything: no `.js` file in the live app references any of these
+three books by name or path, so this correction carries zero live-app risk.
+
+### What's still open
+Same as before this correction: Psalms's patch status needs reconciling, and whether "Psalms
+deferred to the end" means end-of-OT or end-of-whole-project is still unresolved. The New
+Testament's 27 real books remain fully closed regardless of this filing correction — nothing
+about their content changed.

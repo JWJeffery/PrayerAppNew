@@ -1,0 +1,15 @@
+{
+    "schema": "broader-canon-laodiceans-removal-v1",
+    "id": "broader_canon_laodiceans_removal_2026_07_14",
+    "status": "removed_not_canonical_in_any_tradition",
+    "recordedAt": "2026-07-14T00:00:00-07:00",
+    "priorCandidatePath": "data/bible/NT/epistleofthelaodiceans.json",
+    "priorTrustRecord": "data/bible/registry/broader-canon-laodiceans-text-trust-and-app-render-2026-07-04.json",
+    "priorSourceBindingCollation": "data/bible/registry/broader-canon-source-binding-collation-laodiceans-2026-07-04.json",
+    "decision": {
+        "decidedBy": "Josh",
+        "reason": "The Epistle to the Laodiceans is not received as canonical Scripture by any Christian tradition (Anglican, Roman Catholic, Eastern Orthodox, Oriental Orthodox, Church of the East, or Protestant). It historically circulated as an appendix in some Western Latin manuscripts but was never part of any tradition's biblical canon. It had been misfiled in data/bible/NT/ and listed in the dashboard's NT_BOOKS array alongside the 27 canonical New Testament books, with no disclosure that it was non-canonical -- unlike the OT section, which explicitly labels itself \"canonical + broader canon, as filed.\"",
+        "action": "Candidate file deleted (git rm data/bible/NT/epistleofthelaodiceans.json). Removed from the audit-ledger.html dashboard's NT_BOOKS array and the book-abbreviation map. Prior text-trust and source-binding registry files for this candidate are left in place as historical record, not deleted, per this project's standing practice of never silently erasing prior work -- this file records that the candidate itself is gone and why."
+    },
+    "note": "This is a canonicity decision, not a content-accuracy correction. The candidate text was previously text-trust-certified and app-render-eligible (see priorTrustRecord) -- the removal has nothing to do with the accuracy of that certification and everything to do with this text never having belonged in the New Testament corpus at all. If this text is ever wanted again as a labeled non-canonical curiosity (e.g. under a future general \"Western apocrypha\" or similar bucket, the way Historyof Zosimus and 2 Baruch now live under SY_BOOKS), the raw Gutenberg source remains at data/bible/translations/laodiceans-gutenberg-lost-books/raw/epistle-to-laodiceans.json."
+}
