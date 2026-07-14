@@ -1825,3 +1825,34 @@ Note: this regex also flags legitimate uses of "the might" (noun, "power/strengt
 CCEL's own Section IV fetch had a real gap this time (skipped verses 90:12-15 and 90:17-18 in the rendered text, jumping straight to v19) — cross-checked those against coursebible.com and confirmed the app's restored text (after the the/that fixes) matches independently.
 
 **Next step for whoever picks this up:** fetch `ENOCH_5.HTM` (Section V, chapters 91-108 — the Epistle of Enoch, the final section) and continue. This is also the range Josh supplied via CCEL-family paste in an earlier (pre-exhaustive) session, but per the standing rule that prior work only "checked flagged differences" rather than reading exhaustively, it still needs the same fresh line-by-line treatment — and given this session's discovery, running the the/that regex sweep on it specifically (already done for 91-108 as part of this session's whole-book sweep, so that particular bug is already closed for the whole book) is a good first step for any future defect class too.
+
+## Session, 2026-07-14 continued — 1 Enoch exhaustive pass: chapters 91-108 (Section V) done — BOOK COMPLETE
+
+**HANDOFF — 1 Enoch is now FULLY closed. All 108 chapters have been individually read against real primary source (CCEL, cross-checked against independent sources wherever ambiguous) rather than diffed. This satisfies Josh's explicit standard from the prior handoff note.**
+
+Section V (Epistle of Enoch, chapters 91-108) is the last section. Real fixes this session, chapters 91-108:
+- 91:1 — missing "that" before "shall befall you"
+- 91:5 — restored "must increase... yea, it shall be cut off" (was paraphrased/altered)
+- 91:15 — restored "There shall be the great eternal judgement, in which He will execute vengeance amongst the angels" (was replaced with fabricated text about "the Watchers" and "the eternal heaven shall blossom forth" — not in Charles at all, confirmed via 3 independent sources)
+- 93:5 — "chosen" → "elected"
+- 94:3 — removed unsupported inserted clause "nor in the paths of violence"
+- 94:4 — "that ye may live and prosper" → "and ye shall live and prosper" (independent clause restored)
+- 94:5 — restored "may minish" (was corrupted to the opposite-ish "may minister to her" — confirmed via 8+ independent sources)
+- 97:10 — "condemnation" → "curse"
+- 107:3 — "the son Noah" → "that son Noah"
+
+**The "that→the" corpus-wide bug (see previous entry) turned out to be even more widespread than first found** — a second, wider regex sweep (`the (in|on|at|of|for|from|by|unto|so|because|this|that)`) caught 10 MORE instances this session that the first regex missed: 93:5-9 (all five "and after that in the Nth week" refrains — every single one had been corrupted to "and after the in the Nth week"), 102:5, 104:1, 106:13, 107:1, 107:2. All fixed and verified. **Updated combined regex for any future book-check, run both together:**
+```python
+pat1 = re.compile(r'\b(the) (he|they|I|was|were|it|she|thou|we|did|has|have|had|shall|will|does|do|is|are|should|would|could|can|may|might)\b', re.IGNORECASE)
+pat2 = re.compile(r'\b(the) (the|a|an)\b', re.IGNORECASE)
+pat3 = re.compile(r'\bthe (in|on|at|of|for|from|by|unto|so|because|this|that)\b', re.IGNORECASE)
+```
+Ran this full combined sweep against the finished 1enoch.json as a final check — zero remaining hits except the 3 confirmed-legitimate "the might" (noun) instances at 60:9, 60:16, 108:2. **1 Enoch is clean of this bug class now.**
+
+**Total fixes across the whole exhaustive 1 Enoch pass (all sections, this multi-session effort): 7 (Section I) + 12 (Section II) + 3 (Section III) + 29 (Section IV, includes the first the/that discovery) + 19 (Section V, includes the second wider the/that sweep) = 70 real defects found and fixed, book-wide.**
+
+**Dashboard NOT yet updated** — per standing rule, edit audit-ledger.html's GREEN_SEED/GREEN_NOTES in the same commit as this final content fix, marking "1 Enoch" green now that the exhaustive standard has been met.
+
+**Next book after 1 Enoch:** Psalms remains the only OT book deferred to the very end (Josh's standing decision). Once Psalms closes, this remediation effort moves to the NT / ET-AR-SY / Odes phase per the original governance sequence.
+
+**Standing recommendation carried over from the previous entry: strongly consider running the three-regex sweep above against every already-"green" book in the corpus**, given this bug turned out to be much larger in scope (70 total defects, one single bug class alone accounting for ~50 of them) than any prior single-book remediation pass in this project. This is now the single largest defect class found in the whole effort to date.
