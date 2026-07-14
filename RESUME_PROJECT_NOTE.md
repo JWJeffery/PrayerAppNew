@@ -2183,3 +2183,38 @@ All 4 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped
 
 **Immediate next action for whoever picks this up:** continue with Hebrews, or address the
 still-outstanding Psalms patch — confirm priority with Josh.
+
+## Session, 2026-07-14 continued — Hebrews fully closed
+
+**HANDOFF — read this first if picking up fresh.** Hebrews is now fully closed. NT progress: 19
+of 27 books done.
+
+KJV, Rotherham, DRB: all zero mismatches, no versification shift. **Worth noting for whoever next
+touches this book's architecture:** Hebrews carries an existing `translationOverlays.DRB` block
+(chapter 5, verses 1-8) — checked before assuming anything, and confirmed the book's main
+`text.DRB` column (the field the resolver and this audit actually read) already holds correct,
+independently-verified content that matches KJV closely. The overlay appears to be a separate,
+likely-legacy artifact from an earlier session — not touched, out of scope for a content-accuracy
+pass, same as the Acts 15:18/23:26 overlay flagged two sessions ago.
+
+**NABRE: 15 fixes** — 14 header-pollution instances (3 of them individually checked for the
+1-Timothy-style over-stripping risk given their length, all confirmed genuine short thematic
+subtitles like "Jesus, Superior to Moses." and "Faith of the Ancients.", safely stripped) plus 1
+ordinary stray-space-before-em-dash bug at 7:20.
+
+**NRSV: 33 of 303 verses corrected**, proportional distribution across the book, no contamination
+or displacement signature.
+
+### Dashboard and ledger updated in the same session
+Hebrews added to `GREEN_SEED` with a full `GREEN_NOTES` entry; `SEED_VERSION` bumped to
+`v114-2026-07-14-hebrews-closed`; script re-validated with `node --check`.
+
+### What's still open
+1. Psalms's patch is still unwritten (unchanged from prior handoffs).
+2. **Next books in the NT sequence: James, 1-2 Peter, 1-3 John, Jude, then Revelation** to close
+   out the NT entirely (8 books remaining).
+3. Still worth checking whether James 1:8's old "genuine NRSV gap" flag resolves the same way
+   Acts 23:26 did — James is next, so this gets checked directly in the next tranche.
+
+**Immediate next action for whoever picks this up:** continue with James, or address the
+still-outstanding Psalms patch — confirm priority with Josh.

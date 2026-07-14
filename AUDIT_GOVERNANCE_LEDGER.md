@@ -2144,3 +2144,18 @@ books.
 
 Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v113-2026-07-14-1tim-philemon-closed.
 NT progress: 18/27 books closed. Next: Hebrews, James, 1-2 Peter, 1-3 John, Jude, Revelation.
+
+## Hebrews remediation, session 2026-07-14 continued
+
+KJV/Rotherham/DRB zero mismatches, no versification shift. Checked the pre-existing
+`translationOverlays.DRB` block (ch.5 vv.1-8, noted in an earlier ledger entry as part of a
+naming-convention pattern across 5 books) before doing anything: the book's main `text.DRB`
+column already holds correct content independently verified against KJV -- the overlay is a
+separate, likely-legacy mechanism, left untouched, same treatment as the Acts 15:18/23:26 overlay.
+
+NABRE: 15 fixes (14 header-pollution, 3 individually length-checked for the 1-Timothy-style
+over-stripping risk and confirmed genuine, plus 1 stray-space bug at 7:20). NRSV: 33/303 fixes,
+proportional, no contamination signature.
+
+Dashboard and RESUME_PROJECT_NOTE.md updated. SEED_VERSION -> v114-2026-07-14-hebrews-closed.
+NT progress: 19/27 books closed. Next: James, 1-2 Peter, 1-3 John, Jude, Revelation.
