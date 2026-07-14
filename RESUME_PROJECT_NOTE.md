@@ -2086,3 +2086,51 @@ the well-known critical-text-omitted grace-benediction verse, already correctly 
 
 **Immediate next action for whoever picks this up:** continue the NT sequence with 1-2
 Corinthians, or address the still-outstanding Psalms patch — confirm priority with Josh.
+
+## Session, 2026-07-14 continued — 1 Corinthians through 2 Thessalonians, all 8 fully closed
+
+**HANDOFF — read this first if picking up fresh.** 1 Corinthians, 2 Corinthians, Galatians,
+Ephesians, Philippians, Colossians, 1 Thessalonians, 2 Thessalonians are all now fully closed.
+NT progress: 14 of 27 books done (Matthew, Mark, Luke, John, Acts, Romans, 1-2 Corinthians,
+Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians).
+
+**Naming gotchas confirmed this session, worth reusing directly:**
+- KJVA/Rotherham (scrollmapper): "I Corinthians"/"II Corinthians", "I Thessalonians"/
+  "II Thessalonians" (Roman numerals, consistent with the already-known Samuel/Kings/Chronicles
+  pattern).
+- NABRE source (`nabre.json`): `"1Corinthians"`, `"2Corinthians"`, `"1Thessalonians"`,
+  `"2Thessalonians"` — no space, digit prefix (consistent with `"1Samuel"` etc.).
+- NRSV-CI `book_number`: 1 Corinthians 530, 2 Corinthians 540, Galatians 550, Ephesians 560,
+  Philippians 570, Colossians 580, 1 Thessalonians 590, 2 Thessalonians 600.
+
+**No versification shifts found in any of the 8** — every DRB chapter-count diff that did appear
+(2 Corinthians ch.1 and ch.13) was individually checked with the versification-shift diagnostic
+and confirmed to be a genuine, already-correctly-handled verse-merge (not a defect requiring a
+fix, unlike the real shifts found earlier this session in Matthew 17, Mark 9, Acts 7, and Acts
+14). KJV/Rotherham/DRB were zero-mismatch clean across the board.
+
+**NABRE: 71 fixes across all 8 books**, all standard header-pollution. Worth noting: an initial
+bulk-sweep script (matching only headers starting with `"chapter"` or a Roman-numeral prefix like
+`"i."`/`"ii."`) missed 3 instances that used a bare sub-letter prefix shape instead — `"C.
+Spiritual Gifts Chapter 12 - ..."` (1 Corinthians 12:1), `"C. The Manner of the Resurrection - "`
+(1 Corinthians 15:35), `"C. Resolution of the Crisis - Paul's Joy in Macedonia."` (2 Corinthians
+7:5). Caught immediately by re-running the audit tool after the sweep rather than trusting the
+sweep's own count — **always re-run `audit_nabre` after any bulk/heuristic fix pass to confirm
+zero remaining, don't trust the fix script's own applied-count as proof of completeness.**
+
+**NRSV: 95 fixes total across the 8 books** (31+30+7+10+2+5+8+2), all ordinary wording
+differences, proportionally distributed, no contamination or displacement signatures in any book.
+
+### Dashboard and ledger updated in the same session
+All 8 books added to `GREEN_SEED` with full `GREEN_NOTES`; `SEED_VERSION` bumped to
+`v112-2026-07-14-1cor-2thess-closed`; script re-validated with `node --check`.
+
+### What's still open
+1. Psalms's patch is still unwritten (unchanged from prior handoffs).
+2. **Next books in the NT sequence: 1 Timothy through Jude** (1-2 Timothy, Titus, Philemon,
+   Hebrews, James, 1-2 Peter, 1-3 John, Jude), then Revelation to close out the NT.
+3. Still worth checking whether James 1:8's old "genuine NRSV gap" flag (from the Installment
+   12-16 structural audit) resolves the same way Acts 23:26 did, once James is reached.
+
+**Immediate next action for whoever picks this up:** continue the NT sequence with 1 Timothy, or
+address the still-outstanding Psalms patch — confirm priority with Josh.

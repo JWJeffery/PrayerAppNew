@@ -2087,3 +2087,34 @@ Dashboard (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md` updated in 
 `SEED_VERSION` bumped to `v111-2026-07-14-john-acts-romans-closed`. Next books: 1-2 Corinthians.
 Worth checking whether James 1:8's old NT-audit "genuine gap" flag resolves the same way Acts
 23:26 did, whenever James is reached.
+
+## 1 Corinthians - 2 Thessalonians remediation, session 2026-07-14 continued
+
+8 books processed together: 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians,
+Colossians, 1 Thessalonians, 2 Thessalonians. All fully closed.
+
+**No real versification shifts in any of the 8.** 2 Corinthians' two DRB chapter-count diffs
+(ch.1: 24 vs.23; ch.13: 14 vs.13) were both individually checked with the same word-overlap
+diagnostic used for Matthew 17/Mark 9/Acts 7/14 and confirmed to be genuine, already-correct
+verse-merges (1:23 merges common 23-24; 13:12 merges common 12-13) — not defects. KJV/Rotherham/
+DRB zero-mismatch clean across all 8 books otherwise.
+
+**NABRE: 71 fixes, all header-pollution.** One process note: an initial bulk-sweep script
+(matching headers starting with "chapter" or a Roman-numeral prefix) missed 3 instances using a
+bare sub-letter prefix shape instead ("C. Spiritual Gifts Chapter 12 - ...", "C. The Manner of
+the Resurrection - ", "C. Resolution of the Crisis - Paul's Joy in Macedonia.") — caught by
+re-running `audit_nabre` after the sweep rather than trusting its own applied-count. Standing
+practice reinforced: always re-verify a bulk/heuristic fix pass with the audit tool itself.
+
+**NRSV: 95 fixes total** (31/30/7/10/2/5/8/2 respectively), ordinary wording differences,
+proportional distribution, no contamination signatures.
+
+**Naming reference, confirmed this session:**
+- KJVA/Rotherham: "I Corinthians"/"II Corinthians", "I Thessalonians"/"II Thessalonians".
+- NABRE source: "1Corinthians"/"2Corinthians"/"1Thessalonians"/"2Thessalonians" (no space).
+- NRSV-CI book_number: 1Cor 530, 2Cor 540, Gal 550, Eph 560, Phil 570, Col 580, 1Thess 590,
+  2Thess 600.
+
+Dashboard (`GREEN_SEED`, `GREEN_NOTES`) and `RESUME_PROJECT_NOTE.md` updated in the same session.
+`SEED_VERSION` bumped to `v112-2026-07-14-1cor-2thess-closed`. NT progress: 14/27 books closed.
+Next: 1 Timothy through Jude, then Revelation.

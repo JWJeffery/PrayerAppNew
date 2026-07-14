@@ -39,7 +39,7 @@
             "NRSV": "Paul and Timothy, servants of Christ Jesus, To all the saints in Christ Jesus who are in Philippi, with the bishops and deacons:",
             "Rotherham": "Paul and Timothy, servants of Jesus Christ,—unto all the saints in Christ Jesus who are in Philippi, with overseers and ministers:—",
             "KJV": "Paul and Timotheus, the servants of Jesus Christ, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons:",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul and Timothy, slaves of Christ Jesus, to all the holy ones in Christ Jesus who are in Philippi, with the overseers and ministers:",
+            "NABRE": "Paul and Timothy, slaves of Christ Jesus, to all the holy ones in Christ Jesus who are in Philippi, with the overseers and ministers:",
             "DRB": "Paul and Timothee the servants of Jesus Christ; to all the saints in Christ Jesus that are at Philippi, with the Bishops and Deacons."
           }
         },
@@ -66,7 +66,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "constantly in every prayer of mine for all of you, praying with joy",
+            "NRSV": "constantly praying with joy in every one of my prayers for all of you,",
             "Rotherham": "At all times, in every supplication of mine, in behalf of you all, with joy, my supplication, making,—",
             "KJV": "Always in every prayer of mine for you all making request with joy,",
             "NABRE": "praying always with joy in my every prayer for all of you,",
@@ -126,7 +126,7 @@
         {
           "num": 10,
           "text": {
-            "NRSV": "to help you determine what is best, so that in the day of Christ you may be pure and blameless,",
+            "NRSV": "to help you to determine what is best, so that in the day of Christ you may be pure and blameless,",
             "Rotherham": "To the end ye may be putting to the test the things that differ, in order that ye may be incorrupt and may give no occasion of stumbling, unto the day of Christ,",
             "KJV": "That ye may approve things that are excellent; that ye may be sincere and without offence till the day of Christ;",
             "NABRE": "to discern what is of value, so that you may be pure and blameless for the day of Christ,",
@@ -149,7 +149,7 @@
             "NRSV": "I want you to know, beloved, that what has happened to me has actually helped to spread the gospel,",
             "Rotherham": "Howbeit, I am minded, brethren, that ye should be, getting to know, that, the things which relate unto myself, rather, unto an advancement of the glad-message, have fallen out,",
             "KJV": "But I would ye should understand, brethren, that the things which happened unto me have fallen out rather unto the furtherance of the gospel;",
-            "NABRE": "II. Progress of the Gospel I want you to know, brothers, that my situation has turned out rather to advance the gospel,",
+            "NABRE": "I want you to know, brothers, that my situation has turned out rather to advance the gospel,",
             "DRB": "And I will have you know, brethren, that the things about me are come to the more furtherance of the Gospel:"
           }
         },
@@ -344,7 +344,7 @@
             "NRSV": "If then there is any encouragement in Christ, any consolation from love, any sharing in the Spirit, any compassion and sympathy,",
             "Rotherham": "If there be, therefore, any encouragement in Christ, if any comfort of love, if any fellowship of spirit, if any tender affections and compassions,",
             "KJV": "If there be therefore any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any bowels and mercies,",
-            "NABRE": "Chapter 2 Plea for Unity and Humility. If there is any encouragement in Christ, any solace in love, any participation in the Spirit, any compassion and mercy,",
+            "NABRE": "If there is any encouragement in Christ, any solace in love, any participation in the Spirit, any compassion and mercy,",
             "DRB": "IF therefore there be any consolation in Christ, if any solace of charity, if any society of spirit, if any bowels of commiseration;"
           }
         },
@@ -524,7 +524,7 @@
             "NRSV": "I hope in the Lord Jesus to send Timothy to you soon, so that I may be cheered by news of you.",
             "Rotherham": "I am hoping, however, in the Lord Jesus—Timothy, shortly, to send unto you, in order that, I also, may be of cheerful soul, when I have ascertained the things that concern you.",
             "KJV": "But I trust in the Lord Jesus to send Timotheus shortly unto you, that I also may be of good comfort, when I know your state.",
-            "NABRE": "IV. Travel Plans of Paul and His Assistants Timothy and Paul. I hope, in the Lord Jesus, to send Timothy to you soon, so that I too may be heartened by hearing news of you.",
+            "NABRE": "I hope, in the Lord Jesus, to send Timothy to you soon, so that I too may be heartened by hearing news of you.",
             "DRB": "And I hope in our Lord Jesus, to send Timothee unto you quickly, that I also may be of good comfort, when I know the things pertaining to you."
           }
         },
@@ -649,7 +649,7 @@
             "NRSV": "Finally, my brothers and sisters, rejoice in the Lord. To write the same things to you is not troublesome to me, and for you it is a safeguard.",
             "Rotherham": "For the rest, my brethren—rejoice in the Lord. To be writing, the same things, unto you, to me, is not irksome, while, for you, is safe:—",
             "KJV": "Finally, my brethren, rejoice in the Lord. To write the same things to you, to me indeed is not grievous, but for you it is safe.",
-            "NABRE": "Chapter 3 Concluding Admonitions. Finally, my brothers, rejoice in the Lord. Writing the same things to you is no burden for me but is a safeguard for you.",
+            "NABRE": "Finally, my brothers, rejoice in the Lord. Writing the same things to you is no burden for me but is a safeguard for you.",
             "DRB": "From hence-forth, my brethren, rejoice in our Lord. To write the same things unto you, to me surely it is not tedious, and to you it is necessary."
           }
         },
@@ -659,7 +659,7 @@
             "NRSV": "Beware of the dogs, beware of the evil workers, beware of those who mutilate the flesh!",
             "Rotherham": "Beware of the dogs, beware of mischievous workers, beware of the mutilation;",
             "KJV": "Beware of dogs, beware of evil workers, beware of the concision.",
-            "NABRE": "V. Polemic: Righteousness and the Goal in Christ Against Legalistic Teachers. Beware of the dogs! Beware of the evil-workers! Beware of the mutilation!",
+            "NABRE": "Beware of the dogs! Beware of the evil-workers! Beware of the mutilation!",
             "DRB": "See the dogs, see the evil workers, see the concision."
           }
         },
@@ -864,7 +864,7 @@
             "NRSV": "Therefore, my brothers and sisters, whom I love and long for, my joy and crown, stand firm in the Lord in this way, my beloved.",
             "Rotherham": "So then, my brethren, beloved and longed for, my joy and crown,—thus, stand fast in the Lord, beloved.",
             "KJV": "Therefore, my brethren dearly beloved and longed for, my joy and crown, so stand fast in the Lord, my dearly beloved.",
-            "NABRE": "VI. Instructions for the Community Chapter 4 Live in Concord. Therefore, my brothers, whom I love and long for, my joy and crown, in this way stand firm in the Lord, beloved.",
+            "NABRE": "Therefore, my brothers, whom I love and long for, my joy and crown, in this way stand firm in the Lord, beloved.",
             "DRB": "Therefore, my dearest brethren and most desired, my joy and my crown: so stand in our Lord, my dearest."
           }
         },
@@ -954,7 +954,7 @@
             "NRSV": "I rejoice in the Lord greatly that now at last you have revived your concern for me; indeed, you were concerned for me, but had no opportunity to show it.",
             "Rotherham": "Howbeit I have been made to rejoice in the Lord greatly—that, now, at length, ye have flourished in your care for me,—although, indeed, ye were caring, but lacked opportunity.",
             "KJV": "But I rejoiced in the Lord greatly, that now at the last your care of me hath flourished again; wherein ye were also careful, but ye lacked opportunity.",
-            "NABRE": "VII. Gratitude for the Philippians’ Generosity I rejoice greatly in the Lord that now at last you revived your concern for me. You were, of course, concerned about me but lacked an opportunity.",
+            "NABRE": "You were, of course, concerned about me but lacked an opportunity.",
             "DRB": "And I rejoiced in our Lord exceedingly, that once at the length you have reflourished to care for me, as you did also care: but you were occupied."
           }
         },
@@ -1064,7 +1064,7 @@
             "NRSV": "Greet every saint in Christ Jesus. The friends who are with me greet you.",
             "Rotherham": "Salute ye every saint in Christ Jesus. The brethren who are with me, salute you.",
             "KJV": "Salute every saint in Christ Jesus. The brethren which are with me greet you.",
-            "NABRE": "VIII. Farewell Give my greetings to every holy one in Christ Jesus. The brothers who are with me send you their greetings;",
+            "NABRE": "The brothers who are with me send you their greetings;",
             "DRB": "Salute ye every saint in Christ Jesus."
           }
         },

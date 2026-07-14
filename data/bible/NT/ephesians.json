@@ -39,7 +39,7 @@
             "NRSV": "Paul, an apostle of Christ Jesus by the will of God, To the saints who are in Ephesus and are faithful in Christ Jesus:",
             "Rotherham": "Paul, an apostle of Christ Jesus, through God’s will, unto the saints who are [in Ephesus] and faithful in Christ Jesus,—",
             "KJV": "Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus:",
-            "NABRE": "I. Address Chapter 1 Greeting. Paul, an apostle of Christ Jesus by the will of God, to the holy ones who are [in Ephesus] faithful in Christ Jesus:",
+            "NABRE": "Paul, an apostle of Christ Jesus by the will of God, to the holy ones who are [in Ephesus] faithful in Christ Jesus:",
             "DRB": "Paul an Apostle of Jesus Christ by the will of God: to all the saints that are at Ephesus; & to the faithful in Christ Jesus."
           }
         },
@@ -274,7 +274,7 @@
             "NRSV": "You were dead through the trespasses and sins",
             "Rotherham": "[Unto] you also—being dead by your offences and sins,",
             "KJV": "And you hath he quickened, who were dead in trespasses and sins;",
-            "NABRE": "Chapter 2 Generosity of God’s Plan. You were dead in your transgressions and sins",
+            "NABRE": "You were dead in your transgressions and sins",
             "DRB": "And you when you were dead by your offences and sins,"
           }
         },
@@ -311,7 +311,7 @@
         {
           "num": 5,
           "text": {
-            "NRSV": "even when we were dead through our trespasses, made us alive together with Christ—by grace you have been saved—",
+            "NRSV": "even when we were dead through our trespasses, made us alive together with Christ —by grace you have been saved—",
             "Rotherham": "Although we were dead by our offences, gave us life together with the Christ,—by favour, ye have been saved,—",
             "KJV": "Even when we were dead in sins, hath quickened us together with Christ, (by grace ye are saved;)",
             "NABRE": "even when we were dead in our transgressions, brought us to life with Christ (by grace you have been saved),",
@@ -496,10 +496,10 @@
         {
           "num": 1,
           "text": {
-            "NRSV": "This is the reason that I, Paul, am a prisoner for Christ Jesus for the sake of you Gentiles—",
+            "NRSV": "This is the reason that I Paul am a prisoner for Christ Jesus for the sake of you Gentiles—",
             "Rotherham": "For this cause, I, Paul, the prisoner of Christ Jesus in behalf of you the nations:—",
             "KJV": "For this cause I Paul, the prisoner of Jesus Christ for you Gentiles,",
-            "NABRE": "III. World Mission of the Church Chapter 3 Commission to Preach God’s Plan. Because of this, I, Paul, a prisoner of Christ [Jesus] for you Gentiles—",
+            "NABRE": "Because of this, I, Paul, a prisoner of Christ [Jesus] for you Gentiles—",
             "DRB": "For this cause, I Paul the prisoner of Jesus Christ, for you Gentiles:"
           }
         },
@@ -596,7 +596,7 @@
         {
           "num": 11,
           "text": {
-            "NRSV": "This was according to the eternal purpose that he has carried out in Christ Jesus our Lord,",
+            "NRSV": "This was in accordance with the eternal purpose that he has carried out in Christ Jesus our Lord,",
             "Rotherham": "According to a plan of the ages which he made in the anointed Jesus our Lord,—",
             "KJV": "According to the eternal purpose which he purposed in Christ Jesus our Lord:",
             "NABRE": "This was according to the eternal purpose that he accomplished in Christ Jesus our Lord,",
@@ -714,7 +714,7 @@
             "NRSV": "I therefore, the prisoner in the Lord, beg you to lead a life worthy of the calling to which you have been called,",
             "Rotherham": "I exhort you, therefore, I, the prisoner in the Lord, to walk in a manner worthy of the calling wherewith ye were called:—",
             "KJV": "I therefore, the prisoner of the Lord, beseech you that ye walk worthy of the vocation wherewith ye are called,",
-            "NABRE": "Chapter 4 Unity in the Body. I, then, a prisoner for the Lord, urge you to live in a manner worthy of the call you have received,",
+            "NABRE": "I, then, a prisoner for the Lord, urge you to live in a manner worthy of the call you have received,",
             "DRB": "I therefore prisoner in our Lord, beseech you, that you walk worthy of the vocation in which you are called,"
           }
         },
@@ -881,7 +881,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart.",
+            "NRSV": "They are darkened in their understanding, alienated from the life of God because of their ignorance and hardness of heart.",
             "Rotherham": "Being darkened in their understanding, alienated from the life of God—by reason of the ignorance that existeth within them, by reason of their hearts being turned into stone,",
             "KJV": "Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:",
             "NABRE": "darkened in understanding, alienated from the life of God because of their ignorance, because of their hardness of heart,",
@@ -911,7 +911,7 @@
         {
           "num": 21,
           "text": {
-            "NRSV": "For surely you have heard about him and were taught in him, as the truth is in Jesus.",
+            "NRSV": "For surely you have heard about him and were taught in him, as truth is in Jesus.",
             "Rotherham": "If, at least, it is, him, ye have heard, and, in him, ye have been taught—even as truth is in Jesus,—",
             "KJV": "If so be that ye have heard him, and have been taught by him, as the truth is in Jesus:",
             "NABRE": "assuming that you have heard of him and were taught in him, as truth is in Jesus,",
@@ -951,10 +951,10 @@
         {
           "num": 25,
           "text": {
-            "NRSV": "So then, putting away falsehood, let all of us speak the truth to our neighbors, for we are members one of another.",
+            "NRSV": "So then, putting away falsehood, let all of us speak the truth to our neighbors, for we are members of one another.",
             "Rotherham": "Wherefore, stripping off what is false, be speaking truth each one with his neighbour, because we are members one of another;",
             "KJV": "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another.",
-            "NABRE": "IV. Daily Conduct, an Expression of Unity Rules for the New Life. Therefore, putting away falsehood, speak the truth, each one to his neighbor, for we are members one of another.",
+            "NABRE": "Therefore, putting away falsehood, speak the truth, each one to his neighbor, for we are members one of another.",
             "DRB": "For the which cause laying away lying, speak ye truth every one with is neighbour, because we are members one of another."
           }
         },
@@ -1039,14 +1039,14 @@
             "NRSV": "Therefore be imitators of God, as beloved children,",
             "Rotherham": "Become ye, therefore, imitators of God, as children beloved,",
             "KJV": "Be ye therefore followers of God, as dear children;",
-            "NABRE": "Chapter 5 So be imitators of God, as beloved children,",
+            "NABRE": "So be imitators of God, as beloved children,",
             "DRB": "Be ye therefore followers of God, as most dear children:"
           }
         },
         {
           "num": 2,
           "text": {
-            "NRSV": "and walk in love, as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God.",
+            "NRSV": "and live in love, as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God.",
             "Rotherham": "And walk in love—even as, the Christ also, loved you, and delivered himself up in your behalf, an offering and sacrifice unto God, for a fragrance of sweet smell.",
             "KJV": "And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.",
             "NABRE": "and live in love, as Christ loved us and handed himself over for us as a sacrificial offering to God for a fragrant aroma.",
@@ -1066,7 +1066,7 @@
         {
           "num": 4,
           "text": {
-            "NRSV": "Entirely out of place is obscene, silly, or vulgar talk; but instead, let there be thanksgiving.",
+            "NRSV": "Entirely out of place is obscene, silly, and vulgar talk; but instead, let there be thanksgiving.",
             "Rotherham": "And shamelessness and foolish talking, or jesting,—which things are beneath you,—but, rather, giving of thanks;",
             "KJV": "Neither filthiness, nor foolish talking, nor jesting, which are not convenient: but rather giving of thanks.",
             "NABRE": "no obscenity or silly or suggestive talk, which is out of place, but instead, thanksgiving.",
@@ -1106,7 +1106,7 @@
         {
           "num": 8,
           "text": {
-            "NRSV": "For once you were darkness, but now in the Lord you are light. Live as children of light,",
+            "NRSV": "For once you were darkness, but now in the Lord you are light. Live as children of light—",
             "Rotherham": "For ye were, at one time, darkness, but, now, are ye light in the Lord,—as children of light, be walking,",
             "KJV": "For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light:",
             "NABRE": "For you were once darkness, but now you are light in the Lord. Live as children of light,",
@@ -1374,7 +1374,7 @@
             "NRSV": "Children, obey your parents in the Lord, for this is right.",
             "Rotherham": "Ye children, be obedient unto your parents [in the Lord], for this is right:",
             "KJV": "Children, obey your parents in the Lord: for this is right.",
-            "NABRE": "Chapter 6 Children and Parents. Children, obey your parents [in the Lord], for this is right.",
+            "NABRE": "Children, obey your parents [in the Lord], for this is right.",
             "DRB": "Children, obey your parents in our Lord. For this is just."
           }
         },
@@ -1541,7 +1541,7 @@
         {
           "num": 18,
           "text": {
-            "NRSV": "Pray at all times in the Spirit, with all prayer and supplication. To that end keep alert and always persevere in supplication for all the saints.",
+            "NRSV": "Pray in the Spirit at all times in every prayer and supplication. To that end keep alert and always persevere in supplication for all the saints.",
             "Rotherham": "With all prayer and supplication, praying in every season, in spirit, and, thereunto, watching, with all perseverance and supplication, for all the saints,—",
             "KJV": "Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints;",
             "NABRE": "Constant Prayer. With all prayer and supplication, pray at every opportunity in the Spirit. To that end, be watchful with all perseverance and supplication for all the holy ones",
