@@ -1886,3 +1886,28 @@ This is the same false-certification pattern already documented for Lucy (the NA
 **Current real state: 8 of 9 Psalms lanes now have genuine, independently-reverified source trust this session** (DRB, Coverdale, NRSV, Orthodox, KJV, NABRE, Rotherham — plus JPS1985 in progress). **Grail1963 is the only lane with NO verified source at all** — not because the text is necessarily wrong, but because nothing has ever actually checked it. Needs a real source: Josh pasting genuine 1963 (or 1986, non-inclusive-language-forbidden-edition — same underlying 1963 base per outside sources) Grail Psalms text directly, the same pattern already proven for NRSV/NABRE/4-Maccabees/3-Maccabees elsewhere in this project, since the Grail Psalter is copyrighted and not otherwise fetchable.
 
 **Recommendation for whoever picks this up:** given this false-certification discovery, it may be worth Josh reviewing whether any OTHER lane-trust claims tied to the LOTH repo or to Lucy's certifications elsewhere in the corpus deserve the same direct-verification treatment, beyond just this one caught here.
+
+## Session, 2026-07-14 continued — JPS1985 sourcing solved, fetch not yet completed (paused for context budget)
+
+**HANDOFF — JPS1985 Psalms verification not started on content, but the sourcing problem is fully solved.**
+
+Real 1985 JPS Tanakh text located and confirmed genuine: Sefaria's own API (`https://www.sefaria.org/api/texts/Psalms.N?...&ven=Tanakh:%20The%20Holy%20Scriptures,%20published%20by%20JPS`) is not directly fetchable (web_fetch tool rejects URLs not already seen in a search/fetch result, and the JS-rendered sefaria.org pages don't return full verse text). **The working source instead: Sefaria's own HuggingFace database export**, which mirrors the same versioned text as flat JSON:
+
+`https://huggingface.co/Sefaria/database_export/resolve/main/json/Tanakh/Writings/Psalms/English/Tanakh%20The%20Holy%20Scriptures%2C%20published%20by%20JPS.json?download=true`
+
+Confirmed via direct fetch this session: real text, `versionTitle` field literally reads "Tanakh: The Holy Scriptures, published by JPS" (the exact 1985 edition per this project's own governance registry), `shortVersionTitle: "JPS, 1985"`. Structure: top-level `text` array, one sub-array per psalm (1-150 in order), each sub-array one string per verse, HTML-formatted (`<br>` for line breaks within a verse, `<sup class="footnote-marker">`/`<i class="footnote">` for footnote markers/bodies, `<small>` around "ORD" in "L<small>ORD</small>"). Will need HTML stripping before comparing to the app's plain-text `psalms.json` JPS1985 field (same treatment the historical `fetch_jps1985_psalms.py` helper already applied, recovered from git history in commit `bf09cd4` earlier this session if useful as a reference for the stripping regex).
+
+**Real limitation confirmed this session: this file (315KB) truncates on fetch, same hard limit already documented for Gutenberg during the 1 Enoch effort — not a token-budget issue on Claude's end, the fetch tool itself cuts off.** One fetch at max `text_content_token_limit` (200000) got cleanly through Psalm 56 (~37% of the book) before cutting off mid-Psalm-57. **Estimate for whoever picks this up: 2 more large fetches of similar size should cover the remaining ~63% (Psalms 57-150), given later psalms include some very long ones (119, 78, 89, 105, 106, 107) that will eat proportionally more of each fetch's budget than the shorter early psalms did.**
+
+**Recommended plan for next session:**
+1. Re-fetch the same URL (already proven to work) — it will start from Psalm 1 again each time since there's no server-side pagination; either re-fetch and discard the already-covered first 37%, or (better) see if a `Range` header or similar partial-fetch approach is available to skip ahead. If not, just re-fetching from the start and only using the new tail content is fine — cheap in tool calls, just wastes some tokens on the parts already covered.
+2. Strip HTML tags per-verse (a Python script is the right tool, not manual reading — this file is far too long to eyeball verse by verse the way CCEL's 1 Enoch text was; treat this like the mechanical DRB/Coverdale/NRSV/Rotherham/KJVA diffs earlier this session, not like the manual 1 Enoch read).
+3. Diff against the app's existing JPS1985 field the same way those other lanes were diffed (parse "N:M text" blob format, compare verse by verse, normalized whitespace).
+4. Fix any real mismatches found, re-verify at zero mismatches, commit.
+
+**Current real status of all 9 Psalms lanes after this session's work:**
+- DRB, Coverdale, NRSV, Orthodox (151-155), KJV (now 1769 KJVA), NABRE (stray-space fixed + book-division headers stripped), Rotherham: all genuinely verified clean.
+- Grail1963: correctly marked UNVERIFIED in governance (false certification corrected this session) — needs Josh to paste real source text; not fetchable, copyrighted, and the previously-claimed LOTH-repo source doesn't exist.
+- JPS1985: sourcing solved, verification not yet done — pick up per the plan above.
+
+Once JPS1985 (and, whenever Josh supplies it, Grail1963) close, Psalms is done and this remediation effort moves to NT / ET-AR-SY / Odes per the original governance sequence — there is no other deferred OT book.
