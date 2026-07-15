@@ -1,6 +1,6 @@
 > ## ⚠️ CRITICAL — READ THIS FIRST, EVERY TIME
 >
-> **This file is currently 700+ lines. Your `view` tool truncates from the middle at ~16,000
+> **This file is currently 2500+ lines. Your `view` tool truncates from the middle at ~16,000
 > characters. If you use `view` on this file without an explicit full-range check, you WILL get
 > a truncated/summarized version and WILL miss content — this has already caused real mistakes
 > in this project (a resume note was twice characterized as stale or current based on only
@@ -2461,3 +2461,67 @@ Same as before this correction: Psalms's patch status needs reconciling, and whe
 deferred to the end" means end-of-OT or end-of-whole-project is still unresolved. The New
 Testament's 27 real books remain fully closed regardless of this filing correction — nothing
 about their content changed.
+
+## Session [today's date] — ET-AR-SY/Odes Phase 0 canonicity survey + Jubilees audit (started, not yet committed)
+
+**Phase 0 canonicity survey completed for the ET section (32 texts).** Unlike the AR/SY/Odes
+survey (Laodiceans, Apollonius, stub Odes — all removed), nothing in the ET backlog is
+fabricated. Every text maps to a real, attested category:
+- Core 81-book canon: Book of Jubilees, 1-3 Meqabyan, Rest of Baruch, Rest of Jeremiah
+  (together = 4 Baruch/Paralipomena of Jeremiah), Josippon
+- The 9 broader-canon books: 11 Clement/Qalēmentos files (= single canonical "Ethiopic
+  Clement," 7-8 parts), Didaskalia, and the complete Sinodos (Sirate Tsion, Tizaz,
+  Admonitions [self-identifies internally as "Gitsiw"], Abtilis)
+- Broader-canon-adjacent Church Order text: Fetha Nagast (legal code, not scripture,
+  historically Ethiopia's constitution — same category as Kebra Nagast)
+- Guba'e Kana = the Council of Nicaea proceedings/canons (self-identified in its own
+  metadata — name was misleading)
+- Ascension of Isaiah, Shepherd of Hermas: historically claimed canonical, not in the
+  current strict 81-book list per modern scholarship (Cowley 1974) — Josh's call: KEEP,
+  labeled honestly, same precedent as Odes of Solomon
+- Devotional/liturgical, not scripture: Miracles of Mary (Ta'amra Maryam), 3 Malke'a hymns,
+  Mazaheta (title not yet independently confirmed — flag for Phase 2)
+
+Open item NOT resolved by Phase 0: the Clement/Qalēmentos *category* is real, but whether
+*this specific corpus content* is authentic is still a separate open question (already red
+on the dashboard).
+
+Josh's decision: fold this canonicity determination into the same commit as the first real
+content fix, rather than committing it standalone.
+
+**Jubilees audit — in progress, not yet applied to the file:**
+- Confirmed missing chapters 6, 7, 8, 9, 26, 27, 28, 29, 30 (file jumps 5→10→25→31→50).
+  All 9 confirmed to genuinely exist in Charles's translation via
+  messianiclearning.org/commentary/apocrypha/jubilees/charles/jubNN.html (clean,
+  verse-numbered R.H. Charles text, confirmed reliable and fetchable this session).
+- Confirmed the same "that"→"the" corruption bug already fixed in 1 Enoch is ALSO present
+  in Jubilees' existing chapters — ~74 candidate instances found via regex
+  (`\bthe (he|she|it|they|we|I|you|was|were|...)\b`), e.g. 5:20 "the Lord said the He would
+  destroy everything the was upon the earth" → should be "that He would destroy...that was."
+  Each instance still needs individual verification against source before fixing (per
+  standing rule), but the sample checked so far all look like genuine hits, no false
+  positives spotted.
+- Chapter 6 full text (38 verses) was successfully re-fetched and confirmed this session.
+  Chapters 7, 8, 9, 26, 27, 28, 29, 30 were fetched earlier in this session but that content
+  was lost when it aged out of context before it got written to disk — NEEDS RE-FETCHING
+  next session from the same confirmed-working source.
+- Known source-side wrinkle to resolve: chapter 8 on the messianiclearning mirror has a
+  verse-numbering glitch (duplicate "17," missing "16") — needs reconciling against standard
+  Jubilees versification (ch. 8 has 30 verses) when rebuilding that chapter, likely just a
+  renumbering of that mirror's HTML, not a real gap.
+- NOTHING has been written to the actual repo file yet. No commit, no push. This is all still
+  pending.
+
+**Sequencing plan agreed with Josh for the full ET-AR-SY/Odes backlog** (established before
+the Jubilees deep-dive): Phase 0 canonicity (done, above) → Phase 1 cheap mechanical sweeps
+across all 34 texts (structural completeness + the "that"→"the" regex, no sourcing needed) →
+Phase 2 source-availability triage (tractable / needs digging / likely needs Josh) → Phase 3
+full audits, tractable tier first → Phase 4 punt list back to Josh for anything unsourceable.
+
+**Next session should:** re-fetch Jubilees chapters 7-9 and 26-30 from
+messianiclearning.org/commentary/apocrypha/jubilees/charles/, resolve the chapter 8
+verse-numbering wrinkle, verify and apply the ~74 "that"→"the" corrections, insert all 9
+chapters in order, then commit the full Jubilees fix together with the Phase 0 canonicity
+write-up (per Josh's instruction to fold them into one commit) — updating
+AUDIT_GOVERNANCE_LEDGER.md and the dashboard GREEN_SEED in the same commit. After that, move
+to Phase 1 sweeps across the remaining 30+ texts.
