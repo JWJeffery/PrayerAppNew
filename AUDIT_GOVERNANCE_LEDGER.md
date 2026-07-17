@@ -2555,3 +2555,50 @@ Registry: `data/bible/registry/broader-canon-et-phase0-canonicity-survey-2026-07
 **This closes the "Phase 0" step of the ET-AR-SY/Odes sequencing plan.** Next: Phase 1 -- cheap
 mechanical sweeps (structural completeness + the that/the corruption regex, no sourcing needed)
 across the ~30 remaining ET/AR/SY/Odes texts not yet content-verified.
+
+## Phase 1 mechanical sweeps, session 2026-07-16 continued -- structural + that/the check, ET/AR/SY backlog
+
+Per the agreed ET-AR-SY/Odes sequencing plan (Phase 0 canonicity -> **Phase 1 mechanical sweeps**
+-> Phase 2 source-availability triage -> Phase 3 full audits -> Phase 4 punt list), ran the
+cheap, no-sourcing-needed mechanical checks across the full remaining backlog: structural
+completeness and the that/the corruption regex.
+
+**Scope:** all 30 ET-corpus files except Book of Jubilees (independently closed this session) and
+the 3 RED_SEED Clement files (1/3/7 Clement (ET) -- their open question is corpus authenticity,
+not a mechanical check), plus the 2 amber SY files (Letter of Baruch, 2 Baruch). 3 Corinthians
+(AR) and Odes of Solomon (SY) already GREEN, out of scope.
+
+**Schema note, worth recording for future sweeps of this corpus:** the ET backlog is NOT uniform
+in structure. Most files use the standard chapters->verses shape, but five use materially
+different schemas: `josipponET.json` nests one level deeper (books->chapters->verses); the three
+Malke'a hymn files (`malke'aguba'eET.json`, `malke'aiyasusET.json`, `malke'avirginmaryET.json`)
+use a flat `stanzas` array with `text` directly on each stanza; `mazahetaET.json` uses `sections`
+(each with its own `chapters`->`verses`); `miraclesofmaryET.json` uses a `miracles` array (each
+with its own `verses`). A sweep script written only for the standard schema would have silently
+skipped all five of these files and produced a false-clean result -- the sweep for this session
+used a recursive text-field collector instead, walking the full JSON tree regardless of shape, to
+avoid that failure mode.
+
+**Results: zero genuine corruption found anywhere in the backlog.** Two regex hits total, both
+already-known false-positive classes from prior books, individually confirmed as legitimate
+English before being dismissed: `8 Clement (ET)` had one "the will" (4:"...that what thou bindest
+here may be bound in heaven..." -- power **to bind** phrasing, not a corruption; same class as
+Jubilees 21:3), and `Ascension of Isaiah` had one "the will" (14:"...through the will of
+Beliar..." -- also genuine). `2 Baruch (SY)` had one "the might" (23:"...let the might of Your
+beauty..." -- same false-positive class already documented from 1 Enoch). No file in this sweep
+required any content change.
+
+**No structural gaps found** -- every file's chapter/verse (or equivalent schema-specific) numbering
+is internally contiguous with no missing sections, unlike Jubilees' pre-remediation state.
+
+**What this does and does NOT establish:** this sweep confirms these texts are free of the specific
+known that/the corruption bug and are structurally complete as stored. It is NOT a content-accuracy
+certification -- none of these 30 ET files or 2 SY files have been checked character-for-character
+against a primary source the way Book of Jubilees, 1 Enoch, or the OT/NT protocanon have. That
+remains Phase 3 work, still fully open for all of them. This sweep's only purpose was to rule out
+the one specific, previously-discovered bug class and confirm no obvious structural damage, cheaply
+and without any sourcing/fetching -- exactly per Phase 1's scope in the sequencing plan.
+
+**Next: Phase 2** -- source-availability triage (tractable / needs digging / likely needs Josh) for
+the texts that will need real Phase 3 audits, prioritizing by how findable a genuine primary source
+looks for each.
