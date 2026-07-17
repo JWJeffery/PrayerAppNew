@@ -2513,3 +2513,45 @@ from the prior session (32 texts categorized) remains separately open -- see the
 entry and `RESUME_PROJECT_NOTE.md` for detail. Next work in the ET-AR-SY/Odes phase per the agreed
 sequencing plan: Phase 1 cheap mechanical sweeps (structural completeness + the that/the regex,
 no sourcing needed) across the remaining ~30 texts in the backlog.
+
+## ET Phase 0 canonicity survey write-up FINALLY committed, session 2026-07-16 continued
+
+This write-up (32 texts categorized) was completed as analysis several sessions ago but had
+never landed in a commit -- Josh's original instruction was to fold it into the same commit as
+the first real Jubilees content fix, but that didn't happen (Jubilees was committed on its own,
+across two separate sessions). Carried forward, undone, across three sessions. Committed now on
+its own, since the "fold together" moment has long since passed and further delay serves nothing.
+
+**Finding, unchanged from the original analysis:** unlike the AR/SY/Odes canonicity survey (which
+found and removed three fabricated items -- Laodiceans, Prayer of Apollonius, four Odes/Canticles
+stubs), nothing in the 32-text ET backlog is fabricated. Every text maps to a real, historically
+attested category:
+- Core 81-book canon: Book of Jubilees, 1-3 Meqabyan, Rest of Baruch, Rest of Jeremiah (= 4
+  Baruch/Paralipomena of Jeremiah), Josippon
+- The 9 broader-canon books: 8 Clement/Qalemcentos files (= single canonical "Ethiopic Clement,"
+  7-8 parts), Didaskalia, and the complete Sinodos (Sirate Tsion, Tizaz, Admonitions
+  [self-identifies internally as "Gitsiw"], Abtilis)
+- Church-order/legal code, not scripture: Fetha Nagast (historically Ethiopia's constitution,
+  same category as Kebra Nagast)
+- Misidentified title: Guba'ekana, which self-identifies internally as the Council of Nicaea's
+  proceedings/canons
+- Historically-claimed-canonical, not in the current strict 81-book list (Cowley 1974): Ascension
+  of Isaiah, Shepherd of Hermas -- Josh's decision: KEEP, labeled honestly, same precedent as Odes
+  of Solomon (SY)
+- Devotional/liturgical, not scripture: Miracles of Mary (Ta'amra Maryam), 3 Malke'a hymns;
+  Mazaheta flagged for Phase 2 since its title isn't yet independently confirmed
+
+**Open item this survey does NOT resolve, restated plainly:** the Clement/Qalemcentos *category*
+being real does not mean *this specific corpus's content* is authentic -- that remains a fully
+separate, still-open content-accuracy question, already flagged red on the dashboard, entirely
+unaffected by this categorization work.
+
+**No removals resulted from this survey** -- it is purely a categorization/canonicity record, not
+a content-accuracy certification for any of the 32 texts (Book of Jubilees is the sole exception,
+independently verified and closed via its own two 2026-07-16 sessions, unrelated to this survey).
+
+Registry: `data/bible/registry/broader-canon-et-phase0-canonicity-survey-2026-07-16.json`.
+
+**This closes the "Phase 0" step of the ET-AR-SY/Odes sequencing plan.** Next: Phase 1 -- cheap
+mechanical sweeps (structural completeness + the that/the corruption regex, no sourcing needed)
+across the ~30 remaining ET/AR/SY/Odes texts not yet content-verified.

@@ -1,0 +1,49 @@
+{
+    "schema": "broader-canon-et-phase0-canonicity-survey-v1",
+    "id": "broader_canon_et_phase0_canonicity_survey_2026_07_16",
+    "status": "survey_complete_no_removals",
+    "recordedAt": "2026-07-16T00:00:00-07:00",
+    "scope": "Phase 0 canonicity survey of the ET (Ethiopian) backlog, 32 texts, conducted as the first phase of the broader ET-AR-SY/Odes review sequence (Phase 0 canonicity -> Phase 1 mechanical sweeps -> Phase 2 source-availability triage -> Phase 3 full audits -> Phase 4 punt list). Companion to the AR/SY/Odes canonicity survey recorded the same review cycle, which found and removed three fabricated/non-canonical items (Laodiceans, Prayer of Apollonius, four Odes/Canticles stubs -- see their own registry files).",
+    "finding": "Unlike the AR/SY/Odes survey, nothing in the ET backlog is fabricated. Every one of the 32 texts maps to a real, historically attested category. No removals resulted from this survey.",
+    "categorization": {
+        "core81BookCanon": {
+            "description": "Texts belonging to the Ethiopian Orthodox Tewahedo Church's broader 81-book biblical canon.",
+            "texts": ["Book of Jubilees", "1 Meqabyan", "2 Meqabyan", "3 Meqabyan", "Rest of Baruch", "Rest of Jeremiah", "Josippon"],
+            "note": "Rest of Baruch and Rest of Jeremiah together constitute 4 Baruch / Paralipomena of Jeremiah."
+        },
+        "ninefoldBroaderCanonBooks": {
+            "description": "The nine broader-canon books recognized within the wider (not strictly 81-book) Ethiopian tradition.",
+            "texts": ["1 Clement (ET)", "2 Clement (ET)", "3 Clement (ET)", "4 Clement (ET)", "5 Clement (ET)", "6 Clement (ET)", "7 Clement (ET)", "8 Clement (ET)", "Didaskalia", "Sirate Tsion", "Tizaz", "Admonitions", "Abtilis"],
+            "note": "The 8 Clement/Qalemcentos files together represent a single canonical work, 'Ethiopic Clement,' divided into 7-8 parts. Sirate Tsion, Tizaz, Admonitions, and Abtilis together constitute the complete Sinodos. 'Admonitions' self-identifies internally as 'Gitsiw' -- name recorded for cross-reference, not a discrepancy.",
+            "openQuestion": "This category determination is about the TEXT TYPE being real and attested -- it does NOT resolve whether this specific corpus's content is an authentic rendering of that text type. That is a separate, still-open content-accuracy question, already flagged red on the dashboard and unaffected by this survey."
+        },
+        "churchOrderLegalCode": {
+            "description": "Broader-canon-adjacent Church Order text -- historically significant, not scripture.",
+            "texts": ["Fetha Nagast"],
+            "note": "A legal code, historically functioning as Ethiopia's constitution -- same category as the Kebra Nagast."
+        },
+        "misidentifiedTitle": {
+            "description": "Text whose stored title was misleading relative to its actual content.",
+            "texts": ["Guba'ekana"],
+            "note": "Self-identifies internally (per its own metadata) as the proceedings/canons of the Council of Nicaea. Title corrected in understanding, not renamed in this survey -- a Phase 2/3 item if renaming is warranted."
+        },
+        "historicallyCanonicalKeptByDecision": {
+            "description": "Texts historically claimed as canonical within parts of the Ethiopian tradition, but not included in the current strict 81-book list per modern scholarship (Cowley 1974).",
+            "texts": ["Ascension of Isaiah", "Shepherd of Hermas"],
+            "decision": {
+                "decidedBy": "Josh",
+                "action": "KEEP, labeled honestly as historically-claimed-but-not-strict-81-book rather than removed.",
+                "precedent": "Same basis this project already keeps Odes of Solomon (SY) -- genuine historical/theological significance with real, verified or verifiable content is sufficient grounds to keep, provided the canonical status is stated accurately rather than glossed over."
+            }
+        },
+        "devotionalLiturgicalNotScripture": {
+            "description": "Devotional or liturgical texts, real and attested, but not scripture in any sense -- kept as devotional/liturgical content, not miscategorized as biblical.",
+            "texts": ["Miracles of Mary (Ta'amra Maryam)", "3 Malke'a hymns"],
+            "flaggedForPhase2": {
+                "texts": ["Mazaheta"],
+                "reason": "Title not yet independently confirmed as of this survey. Devotional/liturgical categorization is a working assumption pending Phase 2 source-availability triage, not a settled finding."
+            }
+        }
+    },
+    "note": "This is a canonicity-and-categorization survey only -- it does not certify content accuracy for any of these 32 texts. Content-accuracy verification (Phase 3 of the sequencing plan) remains entirely separate and, as of this recording, not yet begun for any text in this list except Book of Jubilees (see its own GREEN_NOTES entry and the two 2026-07-16 remediation ledger entries, unrelated to and independent of this canonicity survey)."
+}
