@@ -2525,3 +2525,60 @@ chapters in order, then commit the full Jubilees fix together with the Phase 0 c
 write-up (per Josh's instruction to fold them into one commit) — updating
 AUDIT_GOVERNANCE_LEDGER.md and the dashboard GREEN_SEED in the same commit. After that, move
 to Phase 1 sweeps across the remaining 30+ texts.
+
+## Session 2026-07-16 — Jubilees: 77 that/the corruptions fixed + chapters 6-9 inserted, COMMITTED (`66b4428`)
+
+**Picked up the prior session's Jubilees work and closed most of it out.** Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s "Jubilees remediation, session 2026-07-16" entry — summary here
+for quick orientation.
+
+- **that/the corruption sweep, existing chapters — DONE.** Not ~74 as previously estimated; 77
+  genuine instances found and fixed, each individually verified in context (not fixed on regex
+  match alone). Two matches ("the will of Him," "the rule of the sun") confirmed as legitimate
+  English and deliberately left unchanged — same false-positive class as 1 Enoch's "the might."
+  **Lesson for future sweeps of this bug on a new book:** the first "clean" pass is not
+  reliable — two more genuine instances turned up on a second, broader pass after the first
+  pass had already been treated as complete. Run at least two passes with an expanding word
+  list before considering a book's sweep finished.
+- **Chapters 6, 7, 8, 9 — DONE, inserted (122 verses).** Sourced from messianiclearning.org,
+  each chapter swept clean before insertion. Chapter 8's source-page verse-numbering defect
+  (duplicate "17," missing "16") resolved by cross-checking a second source
+  (yahwehswordarchives.org) and renumbering correctly before insertion — not a real content gap,
+  just a source-side HTML labeling error.
+- **Formatting lesson, worth remembering for any future edit to this file (or similarly
+  formatted files):** never use `json.dump()`/full re-serialization to make edits — it reformats
+  the *entire* file (compact one-line verses become multi-line), turning a handful of real
+  changes into a multi-thousand-line diff. This happened once this session and was reverted.
+  The working method: read the raw file as text, build the exact replacement text matching the
+  file's existing compact style, and do targeted string replacement (`str.replace()` on an
+  exact, uniqueness-checked substring, or Python's `json.dumps()` on just the *value* being
+  swapped in, not the whole file).
+- **Committed and pushed:** commit `66b4428`, `git am` + `git push` applied successfully by
+  Josh. `AUDIT_GOVERNANCE_LEDGER.md` updated in a follow-up step (this note + the ledger entry
+  above were written after the code commit, not folded into it — differs from the original
+  Phase-0-plus-content-fix single-commit plan, since the Phase 0 canonicity write-up from the
+  prior session is STILL not yet folded in — see below).
+
+**Still open — chapters 26-30 (Jacob obtains the blessing of the firstborn, through the rape of
+Dinah/Shechem).** messianiclearning.org's chapter-26 page did not surface via web search this
+session. Two possible next steps, neither yet tried to completion:
+1. Try direct guesses at the messianiclearning URL pattern
+   (`.../charles/jub26.html`, `jub27.html`, etc.) via `web_fetch` once a URL in that
+   pattern has appeared in *any* search result this session (the fetch tool requires a URL to
+   have appeared in a prior search/fetch result before it can be fetched directly).
+2. sacred-texts.com carries the same Charles 1917 translation and did surface in search this
+   session, but under a different, non-chapter-aligned URL/paging scheme — file names like
+   `jub57.htm` don't map 1:1 to chapter numbers. Would need a mapping session before trusting
+   any verse numbering pulled from it, similar to (but more involved than) the chapter 8
+   cross-check done this session.
+
+**Also still open from the prior session, not addressed this session:** the Phase 0 ET-section
+canonicity survey write-up (32 texts categorized, see above) has still not been folded into a
+commit. Josh's original instruction was to commit it together with the first real Jubilees
+content fix — that didn't happen this session (Jubilees was committed alone). Worth deciding
+next session whether to still fold it in with the chapters 26-30 closure commit, or commit it
+separately now that the "fold together" moment has already passed once.
+
+**Dashboard/GREEN_SEED:** correctly NOT touched — Jubilees remains incomplete (missing chapters
+26-30), so it should not be marked green yet. No SEED_VERSION bump needed for this session's
+work.

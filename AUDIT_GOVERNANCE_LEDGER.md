@@ -2414,3 +2414,60 @@ re-validated with `node --check`.
 automatically update its dashboard status -- always check whether a book's real, already-recorded
 trust state should also move it into `GREEN_SEED` at the same time content or metadata work is
 done, not as an afterthought.
+
+## Jubilees remediation, session 2026-07-16 -- 77 that/the corruptions fixed, chapters 6-9 inserted
+
+Continuing the ET-AR-SY/Odes phase per the governance sequence, picking up the previously-flagged
+Jubilees work: missing chapters 6-9 and 26-30, and the known "that"->"the" corruption bug class
+(first identified and fixed in 1 Enoch) not yet checked against Jubilees.
+
+**"that"->"the" corruption sweep, existing chapters.** Ran the same corruption-pattern regex
+sweep used to close out 1 Enoch against all pre-existing Jubilees chapters (0-5, 10-25, 31-50).
+Found substantially more than the ~74 candidates estimated in the prior session's rough scan --
+the earlier estimate used a narrower pattern set. Each candidate was individually read in context
+before fixing, not fixed on regex match alone. 77 genuine corruptions confirmed and fixed (verses
+like "for God doth know the on the day" -> "that on the day", "the trance fell" -> "that trance
+fell", "her the gives birth" -> "her that gives birth"). Two matches confirmed as legitimate noun
+phrases and deliberately left unchanged: "the will of Him" (21:3) and "the rule of the sun"
+(4:21) -- both genuine English, not corruptions, mirroring the "the might" false-positive class
+already known from 1 Enoch. Applied via targeted string replacement (never full-file JSON
+re-serialization, which was tried once and reverted after producing an unnecessary ~4,400-line
+diff from reformatting alone) to keep the diff surgical: 77 insertions / 77 deletions, nothing
+else touched.
+
+**Chapters 6, 7, 8, 9 inserted (122 verses).** Sourced from messianiclearning.org's mirror of the
+R.H. Charles 1917 translation. Each chapter individually swept for the that/the corruption bug
+before insertion; none found (fresh source text, not previously corrupted). Inserted via targeted
+raw-text insertion at the exact chapter-5/chapter-10 boundary, matching the file's existing
+compact one-line-per-verse formatting exactly -- not `json.dump`, which reformats the whole file.
+
+**Chapter 8 verse-numbering defect found and corrected.** The messianiclearning.org source page
+for chapter 8 duplicates verse label "17" and omits "16" entirely (verse 15 is followed by two
+consecutive "17"s). Cross-checked against a second independent source
+(yahwehswordarchives.org) to confirm standard versification: verse 16 is "And it extends towards
+the east, till it reaches the Garden of Eden..." and verse 17 is "This portion came forth by lot
+for Shem...". Renumbered accordingly before insertion. This is the same category of source-page
+defect chapter-boundary issue class flagged during 1 Enoch verification -- a reminder that
+diff/fetch-only verification has a blind spot for versification errors in the source itself, not
+just for corruption introduced by this app's own data pipeline.
+
+**Governance note:** two additional that/the instances were caught only on a second, broader
+sweep pass after the first "complete" pass had already been verified clean (5:9 "the each should
+slay" -> "that each"; 5:20 "those the move" -> "those that move"; 11:16 "the all went astray" ->
+"that all went astray"). The corruption bug's surface forms are broader than any fixed word list
+fully captures on the first attempt -- future sessions applying this sweep to a new book should
+run at least two passes with an expanding word list, and should not treat a first clean pass as
+final.
+
+**Validated:** valid JSON, `node --check` equivalent passed (`JSON.parse` via node), chapter/verse
+counts confirmed (46 of 51 expected chapters present, 1097 total verses). Committed and pushed as
+`66b4428`.
+
+**Still open:** chapters 26-30 (five chapters, Jacob/Esau narrative through the rape of Dinah).
+messianiclearning.org's chapter-26 page did not surface via web search this session -- unclear
+whether it doesn't exist at that path, isn't indexed, or needs a different query. sacred-texts.com
+carries the same Charles 1917 translation but under a different, non-chapter-aligned URL/paging
+scheme (verse-range-based file names, not one file per chapter), which would need its own mapping
+work and the same kind of cross-check chapter 8 required before trusting its verse numbering.
+Needs a confirmed working source before this phase can close. Jubilees is NOT added to
+`GREEN_SEED` -- correctly still open/amber, since it remains incomplete.
