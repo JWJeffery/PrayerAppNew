@@ -3128,3 +3128,50 @@ source than the badly-OCR'd ethiopianorthodox.org PDF), Miracles of Mary (confir
 paraphrase of real Budge miracles, not fabricated -- open question is whether the app's 100 miracles
 match Budge's 1900 edition or are missing content from the fuller 1933 "110 Miracles" edition;
 untouched this session).
+
+## Miracles of Mary remediation, session 2026-07-17 -- IN PROGRESS, marked AMBER (not GREEN)
+
+Third rebuild this session, after Shepherd of Hermas and Didascalia. Different situation from both:
+checked Miracle 1 ("The Painter") against the real 1923/1933 Budge translation and confirmed it was
+genuine paraphrase, not fabrication -- but the prior 100-miracle file had a confirmed duplicate (an
+identical "Lost Ring" miracle at both #14 and #97) and, more fundamentally, claimed to be "the
+unabridged collection," which is a category error: there is no single canonical Ta'ammera Maryam.
+Per the Princeton PEMM project (the leading academic authority on this text), it is a library
+tradition of 1000+ stories across manuscripts, no two of which share the same set or order.
+
+**Decision, Josh's explicit call:** rebuild specifically as Budge's 1923/1933 "One Hundred and Ten
+Miracles of Our Lady Mary" -- a defined, citable edition, not a claim of completeness. Added a
+deferred governance item to `structure.json`'s `liturgical_research_governance` entries
+(`2026-07-17-miracles-of-mary-post-v1-liturgical-review`) to revisit this corpus's scope and
+liturgical/devotional function once Universal Office v1.0 ships, rather than treating Budge's 110
+as a permanent final answer.
+
+**Source access was a real fight this session.** HathiTrust has this exact scan marked "Public Domain
+in the United States" (Google-digitized copy, mdp.39015034656648) but its reader only permits
+one-page-at-a-time viewing with no bulk export; archive.org's copy of the same edition
+(onehundredtenmir0000budg) is controlled-digital-lending only despite being public domain; Google
+Books blocks scraping. Josh ultimately supplied a full PDF (Internet Archive OCR scan, 568 pages)
+directly, which is what unblocked this. Worth remembering: legitimately public-domain texts are
+routinely locked behind access-control interfaces that have nothing to do with actual copyright
+status -- when fetch tools hit this kind of wall, the person supplying their own copy of a source
+they've obtained is a normal and legitimate way through, not a shortcut to be suspicious of.
+
+**Result: 109 of 110 stories** identified and transcribed from the raw OCR text layer (extracted via
+`pdftotext`), using each story's Ethiopic-manuscript folio citation (e.g. "[A. Fol. 3a, 1; B. Fol. 9a,
+1...]") as the reliable story-boundary marker, since the printed Roman numerals suffered heavy I/l/1
+OCR confusion throughout ("LXVil" for LXVII, "VA" for VI, etc.). One story's boundary marker was not
+locatable by this method after extensive checking (length-anomaly search, duplicate-marker search,
+and direct content reading around the largest suspect gap all came back clean) -- exactly one story
+in the 1-110 sequence is not yet represented in the file.
+
+**Marked AMBER, not GREEN, deliberately.** Two known gaps: (1) one story of 110 not yet located, (2)
+this is raw, unproofread OCR text -- word-level recognition errors are present throughout (confirmed
+examples: "tenowned" for "renowned," "Ney" for "Now," stray inserted characters in proper nouns).
+This is a different and lower bar than the Hermas/Didascalia rebuilds, which came from already-clean
+web transcriptions. **Do not mark GREEN until a full proofreading pass is complete** -- Josh's
+explicit plan is to proofread this file in a follow-up pass before treating it as verified.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast -- confirmed this session that the only
+English translation (Tzadua, 1968, edited Peter Strauss) has a real copyright question of its own
+(post-1928 foreign work, translator died 2003, current commercial reprint edition still in print)
+that was never resolved; untouched.

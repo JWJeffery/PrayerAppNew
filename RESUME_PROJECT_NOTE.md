@@ -501,3 +501,25 @@ decision point, don't split just because work touched multiple files or came tog
 bad OCR; needs a better source found before rebuild can start), Miracles of Mary (confirmed genuine
 paraphrase of real Budge content, not fabricated -- open question is edition completeness, 100
 miracles in the app vs. Budge's fuller 1933 "110 Miracles" compilation; untouched).
+
+## Session 2026-07-17 continued further -- Miracles of Mary: rebuild IN PROGRESS (amber, not closed)
+
+Third book this session, after Shepherd of Hermas and Didascalia. This one is NOT closed out --
+deliberately left amber pending a proofreading pass Josh plans to do in a follow-up session. Full
+detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "Miracles of Mary remediation" entry.
+
+**Key finding, worth remembering for this whole corpus area:** there is no single canonical
+Ta'ammera Maryam (Miracles of Mary) -- it's a library tradition of 1000+ stories with no fixed set
+or order across manuscripts (confirmed via Princeton's PEMM project, the leading academic source).
+Rebuilt specifically to match Budge's 1923/1933 "110 Miracles" edition as a defined, citable source
+instead, and logged a deferred governance item in `structure.json` to revisit this corpus's real
+liturgical function post-v1.0 rather than treating any single edition as final.
+
+**Result: 109 of 110 stories transcribed from raw OCR** (Josh supplied the actual PDF after
+HathiTrust/archive.org/Google Books all blocked bulk access despite the text being confirmed public
+domain -- a real and recurring problem with legitimately PD texts locked behind access-control
+readers). One story boundary not yet located; OCR has real word-level errors throughout, unproofread.
+Marked amber on purpose -- do not promote to green until the proofreading pass happens.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua
+1968) has an unresolved copyright question of its own; untouched this session.

@@ -3804,6 +3804,17 @@
             "Do not use governance-only placeholder work as a substitute for source-backed corpus work when an implementation tranche begins."
           ]
         }
+      },
+      {
+        "id": "2026-07-17-miracles-of-mary-post-v1-liturgical-review",
+        "date": "2026-07-17",
+        "status": "deferred_until_universal_office_v1_ships",
+        "topic": "Miracles of Mary (Ta'ammera Maryam) corpus scope and liturgical/devotional function, post-v1.0 review",
+        "research_summary": {
+          "core_finding": "There is no single canonical Ta'ammera Maryam. It is a library tradition of 1000+ miracle stories across manuscripts; no two manuscripts share the same set or order, and collection size in actual manuscripts ranges from a handful of stories to several hundred. Budge's 110-story compilation (1923 Medici Society edition, reprinted 1933 by Oxford University Press as 'One Hundred and Ten Miracles of Our Lady Mary') is one specific scholarly selection, not 'the complete text' -- a claim the app's prior file made in its own metadata.",
+          "immediate_action_taken": "app file rebuilt to match Budge's 110-miracle edition specifically, as a defined and citable source, replacing a fabricated/padded 100-miracle file (confirmed duplicate content, e.g. an identical 'Lost Ring' miracle appearing twice under different numbers). Rebuild is 109 of 110 stories, marked amber pending a proofreading pass -- see AUDIT_GOVERNANCE_LEDGER.md.",
+          "deferred_question": "Once Universal Office v1.0 ships, revisit this corpus specifically for how Miracles of Mary functions liturgically and devotionally within the churches that receive it canonically (readings tied to feast days, monastic/parish use patterns, which subset(s) of the broader manuscript tradition are actually in living devotional use) rather than treating Budge's 110 as the final scope. This may mean the app's presentation should be reframed as one edition/selection among many rather than implying completeness."
+        }
       }
     ]
   }
