@@ -2854,3 +2854,76 @@ beyond just this book's content.
 
 No file changes made this session. Both Ascension of Isaiah's provenance question and this
 structural question remain open, unresolved Phase 3 findings.
+
+## Phase 3, Rest of Baruch/Jeremiah -- REBUILT as unified synthesis (Option 2), session 2026-07-17 continued
+
+Per Josh's explicit instruction ("Option 2" -- assemble an equivalent synthesis independently using
+free components, rather than purchase the Ethiopian Orthodox Bible Project's own paid edition),
+rebuilt this book from scratch as a single unified file matching the real Ethiopic canonical
+structure identified in the prior entry.
+
+**Structure, following Cowley 1974 and the Ethiopian Orthodox Bible Project's own published
+breakdown, implemented as four labeled sub-books** (using the same `books` array schema this app
+already uses for Josippon -- a precedented pattern for genuinely compound works, not a new
+invention):
+1. **Lamentations** (5 chapters, 154 verses) -- DRB text, reused directly from this app's own
+   already-verified `data/bible/OT/lamentations.json`. No new fetching needed; this translation
+   lane was already independently certified clean elsewhere in this project.
+2. **The Epistle of Jeremiah (to the Captives)** (1 chapter, 72 verses) -- DRB text, reused
+   directly from this app's own already-verified `data/bible/OT/letterofjeremiah.json`. DRB's own
+   versification merges what KJV/NRSV count as a 73rd verse into v.72 -- confirmed as an
+   already-governed translation-structure merge (same class as documented elsewhere in this
+   project for Job, Song of Songs, etc.), not a defect requiring a fix.
+3. **The Prophecy of Jeremiah against Pashhur** (1 chapter, 0 verses) -- **left honestly empty and
+   flagged, not fabricated.** Real, thorough search this session found no free or public-domain
+   English translation of this passage anywhere. It survives only in August Dillmann's 1866
+   Latin/Ge'ez critical edition (Chrestomathia Aethiopica, scanned on archive.org but not
+   translated) and, so far as could be determined, has been rendered into English only once, by
+   the same purchase-only modern edition flagged in the prior entry. Per this project's standing
+   "honest rubric degradation rather than fabricated text" principle, this book's single chapter
+   is present in the file structure (preserving the real, attested position in the canonical
+   sequence) but contains a `contentStatus: "unsourced_pending"` flag and an explanatory note
+   instead of invented verses.
+4. **Paralipomena of Jeremiah (4 Baruch)** (9 chapters, 196 verses) -- Robert Kraft & Ann
+   Elizabeth Purintun's public-domain "Paraleipomena Jeremiou: An English Translation" (SBL,
+   1971/1972 Longer Version, CATSS edition), fetched from ccat.sas.upenn.edu and transcribed in
+   full. **Honest caveat, stated in the file's own metadata:** this section's chapter/verse
+   numbers are Kraft's own (a modern scholarly edition of the Greek textual tradition) and were
+   NOT remapped to match Dillmann's original Ethiopic verse divisions (cited elsewhere as
+   "7:6-11:63"), because Dillmann's specific Ethiopic verse boundaries were not accessible this
+   session -- attempting to force an unverified renumbering would have risked fabricating
+   structure rather than honestly representing what's known. Verse 3:9 is genuinely absent from
+   Kraft's source text (a manuscript gap in the base text itself, confirmed by checking the
+   fetched source directly -- not a transcription error).
+
+**Total: 422 verses across 4 books, 16 chapters.** Swept clean for the that/the corruption bug
+(zero hits) before insertion. Valid JSON, `node --check` equivalent passed.
+
+**File retired:** `data/bible/ET/restofjeremiahET.json` removed (`git rm`) -- its content
+(previously a heavily condensed 14-verse summary, see the earlier finding in this same session)
+is now superseded by this unified reconstruction, which draws on real primary/near-primary sources
+rather than a modern paraphrase. `restofbaruchET.json`'s own prior content (a similarly condensed
+56-verse summary) is likewise fully superseded.
+
+**Registry updated:** removed "Rest of Jeremiah" from `audit-ledger.html`'s `ET_BOOKS` array (now
+a single "Rest of Baruch" entry covering the unified work). Not added to `GREEN_SEED` -- this
+remains an honest partial reconstruction (one of four sub-books unsourced) rather than a
+fully-verified clean text, and should stay amber/unaudited on the dashboard until either a source
+for the Prophecy against Pashhur is found or Josh decides to leave it permanently flagged as an
+acknowledged gap.
+
+**Schema note for future sessions:** this file now uses the `books` -> `chapters` -> `verses`
+nesting (matching Josippon's existing precedent in this corpus) rather than the flat
+`chapters` -> `verses` shape most single-work books use. No renderer in `js/` was found to assume
+one specific shape for this file (neither this book nor Josippon appear wired into
+`reference-parser.js` yet), so this carries low risk to live app functionality, but should be
+kept in mind if/when this book is wired into navigation or rendering code.
+
+**Still open:** the Prophecy of Jeremiah against Pashhur remains genuinely unsourced. If Josh later
+wants to close this small remaining gap, the identified paths are: (1) acquire the Ethiopian
+Orthodox Bible Project's own edition after all, or (2) attempt a direct translation from
+Dillmann's 1866 Latin text (archive.org has a page-image scan of Chrestomathia Aethiopica,
+`chrestomathiaaet00dilluoft`, not yet OCR'd/transcribed this session) -- a 5-verse fragment, small
+enough that a from-scratch Latin translation may be more tractable than it first appears, if
+someone with Latin competency (or careful use of translation tools cross-checked against the
+Ge'ez) takes it on.

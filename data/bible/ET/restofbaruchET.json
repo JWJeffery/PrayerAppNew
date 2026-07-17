@@ -1,105 +1,1814 @@
 {
   "meta": {
     "name": "The Rest of the Words of Baruch",
+    "alternateNames": [
+      "Säqoqawä Eremyas",
+      "The Ethiopic Lamentations of Jeremiah"
+    ],
     "id": "REST_BAR",
-    "version": "Ethiopic (Traditional translation)",
-    "copyright": "Public Domain"
+    "version": "Reconstructed synthesis (this remediation session, 2026-07-17)",
+    "copyright": "Public Domain",
+    "structureSource": "Cowley, R.W. (1974), 'The Biblical Canon of the Ethiopian Orthodox Church Today', confirmed by the Ethiopian Orthodox Bible Project's published structural breakdown (Nov 2025).",
+    "contentSources": {
+      "book1_lamentations": "Douay-Rheims Bible (DRB), reused directly from this app's own already-verified OT/lamentations.json.",
+      "book2_epistleOfJeremiah": "Douay-Rheims Bible (DRB), reused directly from this app's own already-verified OT/letterofjeremiah.json (72 verses; DRB's own versification merges what other translations count as a 73rd verse into v.72 -- a known, already-governed translation-structure merge, not a defect).",
+      "book3_prophecyAgainstPashhur": "UNSOURCED. No free or public-domain English translation located this session. Left empty and flagged rather than fabricated.",
+      "book4_paralipomenaOfJeremiah": "Robert Kraft & Ann Elizabeth Purintun, 'Paraleipomena Jeremiou: An English Translation' (SBL, 1971/1972), Longer Version, public domain, CATSS edition, fetched from ccat.sas.upenn.edu. Chapter/verse numbers are Kraft's own (Greek-tradition, modern scholarly edition) -- NOT a verified match to Dillmann's original Ethiopic verse divisions, which were not accessible this session. Verse 3.9 is genuinely absent from this source text (a manuscript gap in Kraft's base text, not a transcription omission)."
+    },
+    "honestNote": "This file is a modern synthesis assembled from independently-sourced, freely-available components, following the same reconstruction method (though not the same specific edition) as the Ethiopian Orthodox Bible Project's own published synthesis. It is NOT a direct translation of a single primary source, because no single complete English translation of the true Ethiopic Sagoqawa Eremyas is known to exist, per the Ethiopian Orthodox Bible Project's own explicit statement. Book 3 (Prophecy against Pashhur) is left honestly empty rather than fabricated. See AUDIT_GOVERNANCE_LEDGER.md's 2026-07-17 entries for full detail."
   },
-  "chapters": [
+  "books": [
     {
       "num": 1,
-      "verses": [
-        { "num": 1, "text": "It came to pass, when the children of Israel were led captive by the king of the Chaldeans, that God spake to Jeremiah, saying: 'Jeremiah, My chosen one, arise and go out of this city, thou and Baruch, for I will destroy it because of the multitude of the sins of those who dwell in it.'" },
-        { "num": 2, "text": "'For your prayers are as a firm pillar in the midst of it, and your intercessions are as a strong wall surrounding it.'" },
-        { "num": 3, "text": "'Now therefore, arise and depart before the host of the Chaldeans surrounds the city.'" },
-        { "num": 4, "text": "And Jeremiah answered and said: 'I beseech Thee, O Lord, allow Thy servant to speak in Thy presence.' And the Lord said: 'Speak, My chosen Jeremiah.'" },
-        { "num": 5, "text": "And Jeremiah said: 'Lord, wilt Thou deliver this city into the hands of the Chaldeans, so that the king may boast that he hath conquered the holy city of God?'" },
-        { "num": 6, "text": "'Nay, my Lord, but if it be Thy will that it be destroyed, let it be destroyed by Thy hands.'" },
-        { "num": 7, "text": "And the Lord said to Jeremiah: 'Neither the king nor his host shall be able to enter the city until I open the gates thereof.'" },
-        { "num": 8, "text": "'Go therefore and speak to Baruch, and tell him these words. And at the ninth hour of the night, come ye upon the walls of the city, and ye shall see that I will open the gates.'" },
-        { "num": 9, "text": "And Jeremiah went and told Baruch, and they went into the temple and wept, and they rent their clothes and cast dust upon their heads." },
-        { "num": 10, "text": "And when the ninth hour of the night was come, they went upon the walls of the city as the Lord had commanded them." },
-        { "num": 11, "text": "And they saw angels descending from heaven with torches in their hands, and they stood upon the walls of the city." },
-        { "num": 12, "text": "And when Jeremiah and Baruch saw them, they wept and said: 'Now we know that the word which the Lord spake is true.'" }
+      "title": "Lamentations",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            {
+              "num": 1,
+              "text": "How doth the city full of people, sit solitary: how is the lady of the Gentiles become as a widow: the princess of Provinces is made tributary?"
+            },
+            {
+              "num": 2,
+              "text": "Weeping she hath wept in the night, and her tears are on her cheeks: there is none to comfort her of all her dear ones: all her friends have despised her, and are become her enemies."
+            },
+            {
+              "num": 3,
+              "text": "Judas is gone into transmigration because of affliction, and the multitude of bondage: she hath dwelt among the Gentiles, neither hath she found rest: all her persecuters have apprehended her within the straits."
+            },
+            {
+              "num": 4,
+              "text": "The ways of Sion mourn, because there are none that come to the solemnity: all her gates are destroyed: her priests sighing: her virgins loathsome, and herself is oppressed with bitterness."
+            },
+            {
+              "num": 5,
+              "text": "Her adversaries are made in the head, her enemies are enriched: because our Lord hath spoken upon her for the multitude of her iniquities: her little ones are led into captivity, before the face of the afflicter."
+            },
+            {
+              "num": 6,
+              "text": "And from the daughter of Sion all her beauty is departed: her princes are become as rams not finding pastures: and they are gone without strength before the face of the pursuer."
+            },
+            {
+              "num": 7,
+              "text": "Jerusalem hath remembered the days of her affliction, and prevarication of all her things worthy to be desired, which she had from the days of old, when her people fell in the enemy's hand, and there was no helper: the enemies have seen her, and have scorned her sabbaths."
+            },
+            {
+              "num": 8,
+              "text": "Jerusalem hath sinned a sin, therefore is she made unstable: all that did glorify her, have despised her, because they have seen her ignominy: but she sighing is turned backward."
+            },
+            {
+              "num": 9,
+              "text": "Her filthiness is on her feet, neither hath she remembered her end: she is pulled down exceedingly, not having a comforter: see o Lord mine affliction, because the enemy is exalted."
+            },
+            {
+              "num": 10,
+              "text": "The enemy hath thrust his hand to all her things worthy to be desired: because she hath seen the Gentiles enter into her sanctuary, of whom thou gavest commandment that they should not enter into thy church."
+            },
+            {
+              "num": 11,
+              "text": "All her people sighing, and seeking bread: they have given all precious things for meat to refresh the soul, see o Lord and consider, because I am become vile."
+            },
+            {
+              "num": 12,
+              "text": "O all ye that pass by the way, attend, and see if there be sorrow like to my sorrow: because he hath made vintage of me, as our Lord hath spoken in the day of the wrath of his fury."
+            },
+            {
+              "num": 13,
+              "text": "From on high he hath cast a fire in my bones, and hath taught me: he hath spread a net for my feet, he hath turned me backward: he hath made me desolate, all the day consumed with sorrow."
+            },
+            {
+              "num": 14,
+              "text": "The yoke of mine iniquities hath watched: they are folded together in his hand, and put upon my neck: my strength is weakened: our Lord hath given me into the hand, from which I cannot rise."
+            },
+            {
+              "num": 15,
+              "text": "Our Lord hath taken away all my magnifical ones out of the midst of me: he hath called a time against me, to destroy mine elect: our Lord hath trodden the winepress to the virgin the daughter of Juda."
+            },
+            {
+              "num": 16,
+              "text": "Therefore am I weeping, and mine eye shedding tears: because a comforter is made far from me, converting my soul: my children are become desolate because the enemy hath prevailed."
+            },
+            {
+              "num": 17,
+              "text": "Sion hath spread forth her hands, there is none to comfort her: our Lord hath commanded against Jacob, round about him are his enemies: Jerusalem is become as a woman polluted with menstruous flowers among them."
+            },
+            {
+              "num": 18,
+              "text": "Our Lord is just, because I have provoked his mouth to wrath: hear I beseech all ye peoples, and see my sorrow: my virgins, and my young men are gone into captivity."
+            },
+            {
+              "num": 19,
+              "text": "I have called my friends, they have deceived me: my priests and my ancients are consumed in the city: because they have sought meat for themselves, to refresh their soul."
+            },
+            {
+              "num": 20,
+              "text": "See o Lord that I am in tribulation, my belly is troubled: my heart is overturned in myself, because I am full of bitterness: the sword killeth abroad, and at home it is like death."
+            },
+            {
+              "num": 21,
+              "text": "They have heard that I do sigh, and there is none to comfort me: all mine enemies have heard mine evil, they have rejoiced, because thou hast done it: thou hast brought a day of consolation, and they shall be made like to me."
+            },
+            {
+              "num": 22,
+              "text": "Let all their evil enter in before thee: and vintage them, as thou hast vintaged me for all mine iniquities: for my sighings are many, and my heart is sorrowful."
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "verses": [
+            {
+              "num": 1,
+              "text": "How hath our Lord in his fury covered the daughter of Sion with darkness: cast forth the noble one of Israel from heaven to the earth, and hath not remembered the footstool of his feet in the day of his fury."
+            },
+            {
+              "num": 2,
+              "text": "Our Lord hath cast down headlong, and hath not spared, all the beautiful things of Jacob: he hath destroyed in his fury the munitions of the virgin of Juda, and cast it down to the ground: he hath polluted the kingdom, and the princes thereof."
+            },
+            {
+              "num": 3,
+              "text": "He hath broken every horn of Israel in the wrath of fury: he hath turned away his right hand backward from the face of the enemy: and he hath kindled in Jacob as it were the fire of a flame devouring round about."
+            },
+            {
+              "num": 4,
+              "text": "He hath bent his bow as an enemy, he hath fastened his right hand as an adversary: and he hast killed all, that was fair to behold in the tabernacle of the daughter of Sion, he hath poured out his indignation as fire."
+            },
+            {
+              "num": 5,
+              "text": "Our Lord is become as an enemy: he hath cast down Israel headlong, he hath cast down headlong all her walls: he hath destroyed the munitions thereof, and hath replenished in the daughter of Juda the humbled man and humbled woman."
+            },
+            {
+              "num": 6,
+              "text": "And he hath destroyed his tent as a garden, he hath thrown down his tabernacle: our Lord hath brought festivity and sabbath in Sion to oblivion: and king and priest into reproach, and into the indignation of his fury."
+            },
+            {
+              "num": 7,
+              "text": "Our Lord hath rejected, he hath cursed his sanctification: he hath delivered the walls of the towers thereof into the hand of the enemy: they have made a noise in the house of our Lord, as in a solemn day."
+            },
+            {
+              "num": 8,
+              "text": "Our Lord hath meant to destroy the wall of the daughter of Sion: he hath stretched out his cord, and hath not turned away his hand from destruction: and the forewall hath mourned, and the wall is destroyed together."
+            },
+            {
+              "num": 9,
+              "text": "Her gates are fastened in the ground: he hath destroyed, and broken her bars: her king and her princes in the Gentiles: there is no law, and her prophets have not found vision from our Lord."
+            },
+            {
+              "num": 10,
+              "text": "The ancients of the daughter of Sion have sitten on the ground, they have held their peace: they have sprinkled their heads with dust, they are girded with hair cloths, the virgins of Jerusalem have cast down their heads to the ground."
+            },
+            {
+              "num": 11,
+              "text": "Mine eyes have failed for tears, my bowels are troubled: my liver is poured out on the earth, for the destruction of the daughter of my people, when the little one, and the sucking fainted in the streets of the town."
+            },
+            {
+              "num": 12,
+              "text": "They said to their mothers: Where is wheat and wine? When they fainted as the wounded in the streets of the city: when they yielded up the ghosts in the bosom of their mothers."
+            },
+            {
+              "num": 13,
+              "text": "Whereto shall I compare thee? Or whereto shall I liken thee o daughter of Jerusalem: whereto shall I make thee equal, and comfort thee o virgin daughter of Sion? For great is thy destruction as the sea: who shall heal thee?"
+            },
+            {
+              "num": 14,
+              "text": "Thy prophets have seen false and foolish things for thee: neither have they opened thine iniquity, to provoke thee to penance, but they have seen false burdens and banishments for thee."
+            },
+            {
+              "num": 15,
+              "text": "All that passed by the way have clapped their hands upon thee: they have hissed, and moved their head upon the daughter of Jerusalem, saying: Is this the city of perfect beauty, the joy of all the earth?"
+            },
+            {
+              "num": 16,
+              "text": "All thine enemies have opened their mouth upon thee: they have hissed, and gnashed with the teeth, and have said: We will devour: Lo this is the day, which we expected: we have found it, we have seen it."
+            },
+            {
+              "num": 17,
+              "text": "Our Lord hath done the things that he meant, he hath accomplished his word, which he commanded from the days of old: he hath destroyed, and hath not spared, and he hath made the enemy joyful over thee, and hath exalted the horn of thine adversaries."
+            },
+            {
+              "num": 18,
+              "text": "Their heart hath cried to our Lord upon the walls of the daughter of Sion: Shed tears as a torrent by day, and night: give no rest to thyself, neither let the apple of thine eye cease."
+            },
+            {
+              "num": 19,
+              "text": "Arise, praise in the night in the beginning of the watches: pour out thy heart as waters before the sight of our Lord: lift up thy hands to him for the life of thy little ones, which have fainted for famine in the head of all high ways."
+            },
+            {
+              "num": 20,
+              "text": "See o Lord, and consider whom thou hast vintaged thus: shall women then eat their own fruit, little ones of the measure of a span? Is the priest, and the prophet slain in the sanctuary of our Lord?"
+            },
+            {
+              "num": 21,
+              "text": "The child and the old man lay on the ground without: my virgins and my youngmen are fallen by the sword: thou hast killed in the day of thy fury: thou hast strucken, neither hast thou had mercy."
+            },
+            {
+              "num": 22,
+              "text": "Thou hast called as it were to a solemn day, those that should terrify me round about, and there was none in the day of the fury of our Lord, that escaped and was left: whom I brought up, & nourished, mine enemy hath consumed them."
+            }
+          ]
+        },
+        {
+          "num": 3,
+          "verses": [
+            {
+              "num": 1,
+              "text": "The man that see my poverty in the rod of his indignation."
+            },
+            {
+              "num": 2,
+              "text": "He hath led me, and brought me into darkness and not into light."
+            },
+            {
+              "num": 3,
+              "text": "Only against me he hath turned and hath converted his hand all the day."
+            },
+            {
+              "num": 4,
+              "text": "He hath made my skin old and my flesh, he hath broken my bones."
+            },
+            {
+              "num": 5,
+              "text": "He hath built round about me, and he hath compassed me with gall and labour."
+            },
+            {
+              "num": 6,
+              "text": "In dark places he hath placed me as the everlasting dead."
+            },
+            {
+              "num": 7,
+              "text": "He hath built round about against me, that I go not forth: he hath aggravated my fetters."
+            },
+            {
+              "num": 8,
+              "text": "Yea and when I shall cry, and ask, he hath excluded my prayer."
+            },
+            {
+              "num": 9,
+              "text": "He hath shut up my ways with square stones, he hath subverted my paths."
+            },
+            {
+              "num": 10,
+              "text": "He is become unto me a bear lying in wait: a lion in secret places."
+            },
+            {
+              "num": 11,
+              "text": "He hath subverted my paths, and hath broken me, he hath made me desolate."
+            },
+            {
+              "num": 12,
+              "text": "He hath bent his bow, and set me as a mark for the arrow."
+            },
+            {
+              "num": 13,
+              "text": "He hath shot in my reins the daughters of his quiver."
+            },
+            {
+              "num": 14,
+              "text": "I am made a derision to all my people, their song all the day."
+            },
+            {
+              "num": 15,
+              "text": "He hath replenished me with bitterness, he hath inebriated me with wormwood."
+            },
+            {
+              "num": 16,
+              "text": "And he hath broken my teeth by number, he hath fed me with ashes."
+            },
+            {
+              "num": 17,
+              "text": "And my soul is repelled from peace, I have forgotten good things."
+            },
+            {
+              "num": 18,
+              "text": "And I said: Mine end is perished, and mine hope from our Lord."
+            },
+            {
+              "num": 19,
+              "text": "Remember my poverty, and transgression, the wormwood, and the gall."
+            },
+            {
+              "num": 20,
+              "text": "Remembering I will be mindful, and my soul shall languish in me."
+            },
+            {
+              "num": 21,
+              "text": "Recording this thing in my heart, therefore will I hope."
+            },
+            {
+              "num": 22,
+              "text": "The mercies of our Lord that we are not consumed: because his commiserations have not failed."
+            },
+            {
+              "num": 23,
+              "text": "New in the morning, great is thy fidelity."
+            },
+            {
+              "num": 24,
+              "text": "Our Lord is my portion, said my soul: therefore will I expect him."
+            },
+            {
+              "num": 25,
+              "text": "Our Lord is good to them that hope in him, to the soul that seeketh him."
+            },
+            {
+              "num": 26,
+              "text": "It is good to wait with silence for the salvation of God."
+            },
+            {
+              "num": 27,
+              "text": "It is good for a man, when he beareth the yoke from his youth."
+            },
+            {
+              "num": 28,
+              "text": "He shall sit solitary, and hold his peace: because he hath lifted himself above himself."
+            },
+            {
+              "num": 29,
+              "text": "He shall put his mouth in the dust, if perhaps there be hope."
+            },
+            {
+              "num": 30,
+              "text": "He shall give the cheek to him that striketh him, he shall be filled with reproaches."
+            },
+            {
+              "num": 31,
+              "text": "Because our Lord will not reject for ever."
+            },
+            {
+              "num": 32,
+              "text": "Because if he hath rejected, he will also have mercy, according to the multitude of his mercies."
+            },
+            {
+              "num": 33,
+              "text": "For he hath not humbled from his heart, and cast off the children of men."
+            },
+            {
+              "num": 34,
+              "text": "To stamp under his feet all the prisoners of the earth."
+            },
+            {
+              "num": 35,
+              "text": "To avert the judgement of a man before the face of the Highest"
+            },
+            {
+              "num": 36,
+              "text": "To pervert a man in his judgement, our Lord hath not known."
+            },
+            {
+              "num": 37,
+              "text": "Who is this, that hath commanded it to be done, our Lord not commanding it?"
+            },
+            {
+              "num": 38,
+              "text": "Out of the mouth of the Highest, there shall not proceed neither evil things, nor good."
+            },
+            {
+              "num": 39,
+              "text": "What hath the living man murmured, man for his sins?"
+            },
+            {
+              "num": 40,
+              "text": "Let us search our ways, & seek, and return to our Lord."
+            },
+            {
+              "num": 41,
+              "text": "Let us lift up our hearts with our hands to our Lord into the heavens."
+            },
+            {
+              "num": 42,
+              "text": "We have done wickedly, and provoked to wrath: therefore thou art inexorable."
+            },
+            {
+              "num": 43,
+              "text": "Thou hast covered in fury, and hast strucken us: thou hast killed, and not spared."
+            },
+            {
+              "num": 44,
+              "text": "Thou hast set a cloud before thee, that prayer may not pass."
+            },
+            {
+              "num": 45,
+              "text": "Thou hast made me to be rooted out, and abject in the midst of the peoples."
+            },
+            {
+              "num": 46,
+              "text": "All the enemies have opened their mouth upon us."
+            },
+            {
+              "num": 47,
+              "text": "Prophecy is made unto us, fear, and snare, and destruction."
+            },
+            {
+              "num": 48,
+              "text": "Mine eye hath shed streams of waters, in the destruction of the daughter of my people."
+            },
+            {
+              "num": 49,
+              "text": "Mine eye is afflicted, neither hath it been quiet, because there was no rest:"
+            },
+            {
+              "num": 50,
+              "text": "Till our Lord regarded and looked from the heavens."
+            },
+            {
+              "num": 51,
+              "text": "Mine eye hath spoiled my soul for all the daughters of my city."
+            },
+            {
+              "num": 52,
+              "text": "Mine enemies in hunting have caught me as a bird, without cause."
+            },
+            {
+              "num": 53,
+              "text": "My life is fallen into the lake, and they have laid a stone upon me."
+            },
+            {
+              "num": 54,
+              "text": "The waters have flowed over my head: I said: I am undone."
+            },
+            {
+              "num": 55,
+              "text": "I have invocated thy name o Lord from the lowest lake."
+            },
+            {
+              "num": 56,
+              "text": "Thou hast heard my voice: turn not away thine ear from my sobbings, and cries."
+            },
+            {
+              "num": 57,
+              "text": "Thou didst approach in the day, when I invocated thee: thou hast said: Fear not."
+            },
+            {
+              "num": 58,
+              "text": "Thou hast judged o Lord the cause of my soul, redeemer of my life."
+            },
+            {
+              "num": 59,
+              "text": "Thou hast seen o Lord their iniquity against me: judge my judgement."
+            },
+            {
+              "num": 60,
+              "text": "Thou hast seen all their fury, all their cogitations against me."
+            },
+            {
+              "num": 61,
+              "text": "Thou hast heard their reproach o Lord, all their cogitations against me."
+            },
+            {
+              "num": 62,
+              "text": "The lips of them that rise up against me; and their cogitations against me all the day."
+            },
+            {
+              "num": 63,
+              "text": "See their sitting down, and their rising up, I am their psalm."
+            },
+            {
+              "num": 64,
+              "text": "Thou shalt render them a recompense o Lord, according to the works of their hands."
+            },
+            {
+              "num": 65,
+              "text": "Thou shalt give them a shield of heart thy labour."
+            },
+            {
+              "num": 66,
+              "text": "Thou shalt persecute in fury, and shalt destroy them from under the heavens o Lord."
+            }
+          ]
+        },
+        {
+          "num": 4,
+          "verses": [
+            {
+              "num": 1,
+              "text": "How is the gold darkened, the best colour changed, the stones of the sanctuary dispersed in the head of all streets?"
+            },
+            {
+              "num": 2,
+              "text": "The noble children of Sion, & they that were clothed with the principal gold: how are they reputed as earthen vessels, the work of the potter's hands?"
+            },
+            {
+              "num": 3,
+              "text": "Yea even the lamiæs have opened their breast, they have given suck to their young, the daughter of my people is cruel, as the ostrich in the desert."
+            },
+            {
+              "num": 4,
+              "text": "The tongue of the suckling hath cloven to the roof of his mouth for thirst: the little ones have asked bread, and there was none that brake it unto them."
+            },
+            {
+              "num": 5,
+              "text": "They that fed voluptuously, have died in the ways: they that were brought up in scarlet, have embraced the dung."
+            },
+            {
+              "num": 6,
+              "text": "And the iniquity of the daughter of my people is become greater than the sin of Sodom: which was overthrown in a moment, and hands took nothing in her."
+            },
+            {
+              "num": 7,
+              "text": "Her Nazareites whiter than snow, purer than milk, ruddier than the old ivory, fairer than the sapphire."
+            },
+            {
+              "num": 8,
+              "text": "Their face is made blacker than coals, and they are not known in the streets: their skin hath cloven to their bones, it is withered, and is made as wood."
+            },
+            {
+              "num": 9,
+              "text": "It was better with them that were slain with the sword, than with them that were killed by famine: because these pined away consumed by the barrenness of the country."
+            },
+            {
+              "num": 10,
+              "text": "The hands of pitiful women have sodden their own children: they were made their meat in the destruction of the daughter of my people."
+            },
+            {
+              "num": 11,
+              "text": "Our Lord hath accomplished his fury, he hath poured out the wrath of his indignation: and he hath kindled a fire in Sion, and it hath devoured the foundations thereof."
+            },
+            {
+              "num": 12,
+              "text": "The kings of the earth, and all the inhabitants of the world did not believe, that the adversary and the enemy should enter in by the gates of Jerusalem."
+            },
+            {
+              "num": 13,
+              "text": "For the sins of her prophets, and the iniquities of her priests, which have shed the blood of just men in the midst of her."
+            },
+            {
+              "num": 14,
+              "text": "The blind wandered in the streets, they were polluted with blood: and when they could not, they held their skirts."
+            },
+            {
+              "num": 15,
+              "text": "Depart ye polluted, they cried to them: depart, get ye hence, touch not: for they brawled, & were moved: they said among the Gentiles: He will add no more to dwell among them."
+            },
+            {
+              "num": 16,
+              "text": "The face of our Lord hath divided them, he will not add to respect them: they have not reverenced the faces of the priests, neither had they pity on the ancients."
+            },
+            {
+              "num": 17,
+              "text": "Whilst we yet stood, our eyes failed towards our vain help, when we looked attentive to a nation, that was not able to save."
+            },
+            {
+              "num": 18,
+              "text": "Our steps slipped in the way of our streets, our end draweth near: our days are accomplished, because our end is come."
+            },
+            {
+              "num": 19,
+              "text": "Our persecuters were swifter than the eagles of the heaven: upon the mountains they pursued us, in the desert they lay in wait against us."
+            },
+            {
+              "num": 20,
+              "text": "The spirit of our mouth Christ our Lord is taken in our sins: to whom we have said: In thy shadow shall we live among the Gentiles."
+            },
+            {
+              "num": 21,
+              "text": "Rejoice, and be glad o daughter of Edom, which dwellest in the Land of Hus: to thee also shall the cup come, thou shalt be made drunken, and naked."
+            },
+            {
+              "num": 22,
+              "text": "Thine iniquity is accomplished o daughter of Sion, he will add no more to transport thee: he hath visited thine iniquity o daughter of Edom, he hath discovered thy sins."
+            }
+          ]
+        },
+        {
+          "num": 5,
+          "verses": [
+            {
+              "num": 1,
+              "text": "Remember o Lord what is fallen to us: behold, and regard our reproach."
+            },
+            {
+              "num": 2,
+              "text": "Our inheritance is turned to aliens: our houses to strangers."
+            },
+            {
+              "num": 3,
+              "text": "We are made pupils without father: our mothers are as it were widows."
+            },
+            {
+              "num": 4,
+              "text": "Our water we have drunk for money: our wood we have bought for a price."
+            },
+            {
+              "num": 5,
+              "text": "We were led by our necks, no rest was given to the weary."
+            },
+            {
+              "num": 6,
+              "text": "We have given our hand to Ægypt, and to the Assyrians, that we might be filled with bread."
+            },
+            {
+              "num": 7,
+              "text": "Our fathers have sinned, & they are not: and we have borne their iniquities."
+            },
+            {
+              "num": 8,
+              "text": "Servants have ruled over us: there was none that would redeem us out of their hand."
+            },
+            {
+              "num": 9,
+              "text": "In peril of our lives did we fetch us bread, at the face of the sword in the desert."
+            },
+            {
+              "num": 10,
+              "text": "Our skin was burnt as an oven, by reason of the tempests of famine."
+            },
+            {
+              "num": 11,
+              "text": "They humbled the women in Sion, and the virgins in the cities of Juda."
+            },
+            {
+              "num": 12,
+              "text": "The Princes were hanged up by the hand: they did not reverence the faces of the ancients."
+            },
+            {
+              "num": 13,
+              "text": "Young men they abused unchastely: and the children fell in wood."
+            },
+            {
+              "num": 14,
+              "text": "The ancients decayed out of the gates: the youngmen out of the choir of the singers."
+            },
+            {
+              "num": 15,
+              "text": "The joy of our heart hath failed, our choir is turned into mourning."
+            },
+            {
+              "num": 16,
+              "text": "The crown of our head is fallen: woe to us, because we have sinned."
+            },
+            {
+              "num": 17,
+              "text": "Therefore is our heart made sorrowful, therefore are our eyes darkened."
+            },
+            {
+              "num": 18,
+              "text": "For mount Sion, because it is perished, foxes have walked on it."
+            },
+            {
+              "num": 19,
+              "text": "But thou o Lord shalt remain for ever, thy throne in generation and to generation."
+            },
+            {
+              "num": 20,
+              "text": "Why wilt thou for ever be forgetful of us? Wilt thou forsake us in length of days?"
+            },
+            {
+              "num": 21,
+              "text": "Convert us o Lord to thee, and we shall be converted: renew our days, as from the beginning."
+            },
+            {
+              "num": 22,
+              "text": "But rejecting thou hast rejected us, thou art angry against us exceedingly."
+            }
+          ]
+        }
       ]
     },
     {
       "num": 2,
-      "verses": [
-        { "num": 1, "text": "Then the angels sounded their trumpets, and the gates of the city were opened of their own accord." },
-        { "num": 2, "text": "And the angels cried with a loud voice: 'Enter, ye host of the Chaldeans, for the gate is opened for you; for He who guarded the city has departed from it.'" },
-        { "num": 3, "text": "And Jeremiah took the keys of the temple and went out of the city, and he cast them up towards the sun, saying: 'I say unto thee, O sun, take the keys of the temple of God and keep them until the day when the Lord shall require them of thee.'" },
-        { "num": 4, "text": "'For we have not been found worthy to keep them, because we have been unfaithful stewards.'" },
-        { "num": 5, "text": "And Baruch also went out and sat in a tomb, and he mourned for the city." },
-        { "num": 6, "text": "And the Chaldeans entered the city and took all the people captive, and they bound Zedekiah the king and led him away to Babylon." },
-        { "num": 7, "text": "But Jeremiah remained with the people who were left in the land, and he went with them as far as the river." },
-        { "num": 8, "text": "And the Lord said to Jeremiah: 'Go thou with thy people to Babylon, and stay with them until I bring them back; but let Baruch remain here until I speak with him.'" }
+      "title": "The Epistle of Jeremiah (to the Captives)",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            {
+              "num": 1,
+              "text": "For the sins that you have sinned before God, you shall be led away captive into Babylon by Nabuchodonosor the king of Babylon."
+            },
+            {
+              "num": 2,
+              "text": "Being entered therefore into Babylon, you shall be there many years, and long times even unto seven generations: and after this I will bring you forth from thence with peace."
+            },
+            {
+              "num": 3,
+              "text": "But now you shall see in Babylon gods of gold, and of silver, and of stone, and of wood to be carried upon shoulders, shewing fear to the Gentiles."
+            },
+            {
+              "num": 4,
+              "text": "Beware therefore lest you also be like to the doing of strangers, and you be afraid, and fear take you in them."
+            },
+            {
+              "num": 5,
+              "text": "Seeing therefore the multitude adoring behind, and before, say you in your hearts: Thou oughtest to be adored o Lord."
+            },
+            {
+              "num": 6,
+              "text": "For mine Angel is with you: and myself will ask account of your souls."
+            },
+            {
+              "num": 7,
+              "text": "For their tongue polished by the craftsman, themselves also laid over with gold, and silver are false things, and they cannot speak."
+            },
+            {
+              "num": 8,
+              "text": "And as to a virgin that loveth ornaments: so taking gold their gods are forged."
+            },
+            {
+              "num": 9,
+              "text": "Their gods certes have golden crowns upon their heads: whereof the priests secretly convey away from them gold, and silver, and bestow it on themselves."
+            },
+            {
+              "num": 10,
+              "text": "Yea and they give thereof to strumpets, and they deck whores: and again when they receive it of the harlots, they deck their gods."
+            },
+            {
+              "num": 11,
+              "text": "But these are not delivered from the rust, and the moth."
+            },
+            {
+              "num": 12,
+              "text": "And these being covered with a purple garment, they wipe their face for the dust of the house, which is very much among them."
+            },
+            {
+              "num": 13,
+              "text": "And he hath a sceptre as a man, as a judge of the country, that killeth him not that offendeth against him."
+            },
+            {
+              "num": 14,
+              "text": "He hath also in his hand a sword, and an axe, but himself he delivereth not from the sword, and from robbers, whereby be it known to you that they are not gods."
+            },
+            {
+              "num": 15,
+              "text": "Therefore fear them not. For as a man's vessel being broken is made unprofitable: such also are their gods:"
+            },
+            {
+              "num": 16,
+              "text": "they being placed in the house, their eyes are full of dust by the feet of them that go in."
+            },
+            {
+              "num": 17,
+              "text": "And as upon one, that hath offended the king, the gates be shut round about, or as the dead brought to the grave, so do the priests guard the doors with shuttings, and locks, lest they be spoiled of thieves."
+            },
+            {
+              "num": 18,
+              "text": "They light candles to them, and that many, of the which they can see none: but they are as beams in the house."
+            },
+            {
+              "num": 19,
+              "text": "And they say that the serpents which are of the earth, gnaw out their hearts, whiles they eat them and their garment, and they feel not."
+            },
+            {
+              "num": 20,
+              "text": "Their faces are black with the smoke, that is made in the house."
+            },
+            {
+              "num": 21,
+              "text": "The owls, and the swallows fly upon their body, and upon their head, and the birds also, the cats in like manner."
+            },
+            {
+              "num": 22,
+              "text": "Whereby you may know that they are not gods. Therefore fear them not."
+            },
+            {
+              "num": 23,
+              "text": "The gold also which they have, is for beauty, unless a man wipe off the rust, they shall not shine: for neither when they were molten, did they feel."
+            },
+            {
+              "num": 24,
+              "text": "With all price are they bought, whereas there is no breath in them."
+            },
+            {
+              "num": 25,
+              "text": "As being without feet they are carried upon shoulders, shewing their baseness to men. Be they confounded also that worship them."
+            },
+            {
+              "num": 26,
+              "text": "Therefore if they fall to the ground, they rise not up of themselves, nor if a man set him upright, shall he stand by himself, but as to dead men their gifts shall be set before them."
+            },
+            {
+              "num": 27,
+              "text": "Their priests sell their sacrifices, and abuse them: likewise also their wives plucking from them, impart nothing, neither to the sick, nor to the beggar."
+            },
+            {
+              "num": 28,
+              "text": "Of their sacrifices women in childbed, and in flowers do touch: knowing therefore by these things that they are not gods, fear them not."
+            },
+            {
+              "num": 29,
+              "text": "For whence are they called gods? Because women offer to the gods of silver, and gold, and wood."
+            },
+            {
+              "num": 30,
+              "text": "And priests sit in their houses, having their garments rent, and their heads, & beard shaven, whose heads be bare."
+            },
+            {
+              "num": 31,
+              "text": "And they were crying before their gods, as at the supper of the dead."
+            },
+            {
+              "num": 32,
+              "text": "The priests take away their garments, and they clothe their wives & their children."
+            },
+            {
+              "num": 33,
+              "text": "Neither if they suffer any evil, nor if any good of any man, are they able to recompence it: neither can they make a king, nor take him away:"
+            },
+            {
+              "num": 34,
+              "text": "In like manner they can neither give riches, nor requite evil. If a man vow a vow unto them, and perform it not; neither this do they require."
+            },
+            {
+              "num": 35,
+              "text": "They deliver not a man from death, nor save the weak from the mightier."
+            },
+            {
+              "num": 36,
+              "text": "The blind man they restore not to his sight: they shall not deliver a man out of necessity."
+            },
+            {
+              "num": 37,
+              "text": "They shall not pity the widow, nor do good to the fatherless."
+            },
+            {
+              "num": 38,
+              "text": "Like unto the stones of the mountain are their gods, of wood, and of stone, and of gold, and of silver. & they that worship them, shall be confounded:"
+            },
+            {
+              "num": 39,
+              "text": "How then is it to be supposed, or to be said, that they are gods?"
+            },
+            {
+              "num": 40,
+              "text": "Moreover the Chaldees themselves not honoring them: who when they hear that the dumb cannot speak, they offer it to Bel, requesting of him, that it may speak."
+            },
+            {
+              "num": 41,
+              "text": "As though they could feel that have no motion: and they when they shall understand, will leave them: for their gods themselves have no sense."
+            },
+            {
+              "num": 42,
+              "text": "And women compassed with cords, sit in the ways, burning the bones of olives."
+            },
+            {
+              "num": 43,
+              "text": "And when one of them being drawn of some passenger shall lie with him, she upbraideth her neighbour, that she is not counted worthy, as herself, neither is her cord broken."
+            },
+            {
+              "num": 44,
+              "text": "But all things that are done about them are false, how is it then to be thought, or to be said, that they be gods?"
+            },
+            {
+              "num": 45,
+              "text": "And they are made by craftsmen, & by goldsmiths. They shall be nothing else, but that which the priests will have them to be."
+            },
+            {
+              "num": 46,
+              "text": "For the artificers themselves, that make them, are of no long time. Why, can those things then that are made by them, be gods?"
+            },
+            {
+              "num": 47,
+              "text": "But they have left forged things & reproach, to them that shall come after."
+            },
+            {
+              "num": 48,
+              "text": "For when battle cometh upon them, and evils: the priests devise with themselves, where they may hide themselves with them."
+            },
+            {
+              "num": 49,
+              "text": "How then may they be thought, that they are gods, which neither deliver themselves from battle, nor save themselves from evils?"
+            },
+            {
+              "num": 50,
+              "text": "For seeing they be of wood, & laid over with gold, and with silver, it shall be known afterwards that they are false things, of all the Gentiles, and kings: Which are manifest that they are no gods, but the works of men's hands, and no work of God is with them."
+            },
+            {
+              "num": 51,
+              "text": "Whence then is it known, that they are not gods, but the works of men's hands, & no work of God is in them?"
+            },
+            {
+              "num": 52,
+              "text": "Aking to the country they raise not up, neither shall they give rain to men."
+            },
+            {
+              "num": 53,
+              "text": "Judgement also they shall not discern, neither shall they deliver countries from injury: because they can do nothing, as crows between the heaven and the earth."
+            },
+            {
+              "num": 54,
+              "text": "For when fire shall fall into the house of the wooden, and silver, and golden gods, their priests indeed shall flee, and be delivered: but themselves as beams shall be burnt in the midst."
+            },
+            {
+              "num": 55,
+              "text": "And king and battle they shall not resist. How is it then to be supposed, or to be received that they are gods?"
+            },
+            {
+              "num": 56,
+              "text": "Not from thieves, nor from robbers shall the gods of wood, and of stone, and laid over with gold, and with silver deliver themselves, stronger than which are the wicked men."
+            },
+            {
+              "num": 57,
+              "text": "The gold, and silver, and the garment wherewith they are covered, they shall take from them, and shall depart, neither shall they help themselves."
+            },
+            {
+              "num": 58,
+              "text": "Therefore it is better to be a king shewing his strength: or a profitable vessel in the house, wherein he will glory that possesseth it: or a door in the house, which keepeth the things that are therein, than false gods."
+            },
+            {
+              "num": 59,
+              "text": "The sun certes, and the moon, and the stars whereas they are bright, and sent forth for profitable uses, obey."
+            },
+            {
+              "num": 60,
+              "text": "Likewise also the lightning, when it shall appear is perspicuous: and the wind also bloweth the self same in every country."
+            },
+            {
+              "num": 61,
+              "text": "And the clouds, which when God shall command to walk throughout the whole world, they do that which is commanded them."
+            },
+            {
+              "num": 62,
+              "text": "The fire also being sent from above to consume mountains, and woods, doeth that which is commanded it. But these neither in shapes, nor in virtues are like to one of them."
+            },
+            {
+              "num": 63,
+              "text": "Wherefore neither is it to be thought, nor to be said, that they be gods: whereas they can neither judge judgment, nor do any thing for men."
+            },
+            {
+              "num": 64,
+              "text": "Knowing therefore that they are not gods, then fear them not."
+            },
+            {
+              "num": 65,
+              "text": "For neither shall they curse kings, nor bless them."
+            },
+            {
+              "num": 66,
+              "text": "Signs also in the heaven to the Gentiles they shew not, neither shall they shine as the sun, nor give light as the moon."
+            },
+            {
+              "num": 67,
+              "text": "Beasts are better than they, which can fly under the roof, and profit themselves."
+            },
+            {
+              "num": 68,
+              "text": "By no means therefore is it manifest unto us, that they are gods: for which cause fear them not."
+            },
+            {
+              "num": 69,
+              "text": "For as in a garden of cucumbers a scarecrow keepeth nothing, so are their gods of wood, and of silver, and laid over with gold."
+            },
+            {
+              "num": 70,
+              "text": "After the same sort also in a garden the white thorn, upon the which every bird sitteth. In like manner also their gods of wood, and laid over with gold, and with silver, are like to a dead body cast forth in the dark."
+            },
+            {
+              "num": 71,
+              "text": "By the purple also and the murex colour laid upon them, which fadeth, you shall know that they are not gods. At the last also they are consumed, and shall be a reproach in the country."
+            },
+            {
+              "num": 72,
+              "text": "Better is therefore the just man, that hath not idols: for he shall be far from reproaches."
+            }
+          ]
+        }
       ]
     },
     {
       "num": 3,
-      "verses": [
-        { "num": 1, "text": "Now there was a man named Abimelech, who was the servant of the king, and he had done kindness to Jeremiah when he was in the dungeon." },
-        { "num": 2, "text": "And the Lord said to Jeremiah: 'Regarding Abimelech My servant, because he showed mercy to thee, I will not let him see the destruction of this city.'" },
-        { "num": 3, "text": "'Send him therefore to the vineyard of Agrippa, and I will hide him there until I bring the people back.'" },
-        { "num": 4, "text": "And Jeremiah said to Abimelech: 'My son, take a basket and go to the vineyard of Agrippa, and bring us some figs, for the people are hungry.'" },
-        { "num": 5, "text": "And Abimelech went as he was told; and the sun was very hot, and he sat down under a tree to rest." },
-        { "num": 6, "text": "And he fell into a deep sleep, and he slept for sixty-six years." },
-        { "num": 7, "text": "And when he awoke, he said: 'I have slept a little while, and I must haste to bring the figs to Jeremiah.'" },
-        { "num": 8, "text": "And he took the basket and went to the city, but he did not recognize it, for the walls were rebuilt and the houses were different." },
-        { "num": 9, "text": "And he said: 'Is this the city of Jerusalem? Truly I must have lost my way, for this is not the city I knew.'" }
+      "title": "The Prophecy of Jeremiah against Pashhur",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [],
+          "contentStatus": "unsourced_pending",
+          "note": "No free or public-domain English translation of this passage could be located. It survives only in August Dillmann's 1866 Latin/Ge'ez critical edition (Chrestomathia Aethiopica) and has not, to our knowledge, been independently translated into English except by one specific purchase-only modern edition. Left empty rather than fabricated. See AUDIT_GOVERNANCE_LEDGER.md for detail."
+        }
       ]
     },
     {
       "num": 4,
-      "verses": [
-        { "num": 1, "text": "And Abimelech went to an old man who was sitting at the gate, and he said: 'Father, tell me, what city is this?'" },
-        { "num": 2, "text": "The old man said: 'This is the city of Jerusalem, my son.' And Abimelech said: 'Where then is Jeremiah the prophet, and Baruch the scribe?'" },
-        { "num": 3, "text": "The old man was astonished and said: 'Jeremiah and Baruch have been dead these many years; for it is sixty-six years since the people were led captive to Babylon.'" },
-        { "num": 4, "text": "Then Abimelech showed him the figs in his basket, and they were fresh and dripping with milk, as if they had just been gathered." },
-        { "num": 5, "text": "And the old man saw the figs and was amazed, and he said: 'Truly this is a sign from God; for no figs can be found at this season, and these have been kept fresh for many years.'" },
-        { "num": 6, "text": "And the old man led Abimelech to Baruch, who was still living in a cave near the city." },
-        { "num": 7, "text": "And when Baruch saw Abimelech and the fresh figs, he gave thanks to God and said: 'Now I know that the Lord is mindful of His promise, and that He will soon bring His people back from Babylon.'" }
-      ]
-    },
-    {
-      "num": 5,
-      "verses": [
-        { "num": 1, "text": "Then Baruch wrote a letter to Jeremiah in Babylon, and he told him all the things that had happened to Abimelech." },
-        { "num": 2, "text": "And he said: 'Behold, the Lord hath shown us a wonder, for He hath kept Abimelech asleep and his figs fresh for sixty-six years.'" },
-        { "num": 3, "text": "'Rejoice therefore, for the time of our captivity is at an end, and the Lord will visit His people in mercy.'" },
-        { "num": 4, "text": "And Baruch called an eagle and said: 'Take this letter and fly to Babylon, and give it into the hand of Jeremiah.'" },
-        { "num": 5, "text": "And the eagle took the letter and flew away; and he found Jeremiah in the midst of the people by the river of Babylon." },
-        { "num": 6, "text": "And the eagle lit upon a dead man who was being carried to his burial, and the man arose and was restored to life." },
-        { "num": 7, "text": "And all the people saw the miracle and were afraid; and Jeremiah took the letter from the eagle and read it to all the assembly." }
-      ]
-    },
-    {
-      "num": 6,
-      "verses": [
-        { "num": 1, "text": "And when the people heard the words of Baruch, they rejoiced and gave thanks to God." },
-        { "num": 2, "text": "And Jeremiah wrote an answer to Baruch, saying: 'We have received thy letter with great joy, and we are preparing to return to our own land.'" },
-        { "num": 3, "text": "'But tell the people that they must put away the strange wives whom they have taken in Babylon, and they must return to the Lord with all their heart.'" },
-        { "num": 4, "text": "And the eagle took the letter and returned to Baruch; and Baruch read the letter to the people who were in Jerusalem." },
-        { "num": 5, "text": "And it came to pass after a few days, that the people of Israel came up from Babylon with great singing and praise." },
-        { "num": 6, "text": "And they rebuilt the temple and the walls of the city, and they dwelt in the land in peace." }
-      ]
-    },
-    {
-      "num": 7,
-      "verses": [
-        { "num": 1, "text": "But those who would not put away their strange wives were not allowed to enter the city." },
-        { "num": 2, "text": "And they went and dwelt in a place apart, and they called the name of that place Samaria." },
-        { "num": 3, "text": "And Jeremiah and Baruch and Abimelech lived many years in Jerusalem, and they saw the glory of the Lord restored to His house." },
-        { "num": 4, "text": "And when the time of their death was come, they were gathered to their fathers in peace." }
-      ]
-    },
-    {
-      "num": 8,
-      "verses": [
-        { "num": 1, "text": "Now these are the rest of the words of Baruch and the wonders which the Lord wrought for His servants." },
-        { "num": 2, "text": "Blessed be the Lord God of Israel, who performeth all His wonders for those who trust in Him." },
-        { "num": 3, "text": "To Him be glory and power for ever and ever. Amen." }
+      "title": "Paralipomena of Jeremiah (4 Baruch)",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            {
+              "num": 1,
+              "text": "It came to pass, when the children of Israel were taken captive by the king of the Chaldeans, that God spoke to Jeremiah saying: Jeremiah, my chosen one, arise and depart from this city, you and Baruch, since I am going to destroy it because of the multitude of the sins of those who dwell in it."
+            },
+            {
+              "num": 2,
+              "text": "For your prayers are like a solid pillar in its midst, and like an indestructible wall surrounding it."
+            },
+            {
+              "num": 3,
+              "text": "Now, then, arise and depart before the host of the Chaldeans surrounds it."
+            },
+            {
+              "num": 4,
+              "text": "And Jeremiah answered, saying: I beseech you, Lord, permit me, your servant, to speak in your presence."
+            },
+            {
+              "num": 5,
+              "text": "And the Lord said to him: Speak, my chosen one Jeremiah."
+            },
+            {
+              "num": 6,
+              "text": "And Jeremiah spoke, saying: Lord Almighty, would you deliver the chosen city into the hands of the Chaldeans, so that the king with the multitude of his people might boast and say: \"I have prevailed over the holy city of God\"?"
+            },
+            {
+              "num": 7,
+              "text": "No, my Lord, but if it is your will, let it be destroyed by your hands."
+            },
+            {
+              "num": 8,
+              "text": "And the Lord said to Jeremiah: Since you are my chosen one, arise and depart from this city, you and Baruch, for I am going to destroy it because of the multitude of the sins of those who dwell in it."
+            },
+            {
+              "num": 9,
+              "text": "For neither the king nor his host will be able to enter it unless I first open its gates."
+            },
+            {
+              "num": 10,
+              "text": "Arise, then, and go to Baruch, and tell him these words."
+            },
+            {
+              "num": 11,
+              "text": "And when you have arisen at the sixth hour of the night, go out on the city walls and I will show you that unless I first destroy the city, they cannot enter it."
+            },
+            {
+              "num": 12,
+              "text": "When the Lord had said this, he departed from Jeremiah."
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "verses": [
+            {
+              "num": 1,
+              "text": "And Jeremiah ran and told these things to Baruch; and as they went into the temple of God, Jeremiah tore his garments and put dust on his head and entered the holy place of God."
+            },
+            {
+              "num": 2,
+              "text": "And when Baruch saw him with dust sprinkled on his head and his garments torn, he cried out in a loud voice, saying: Father Jeremiah, what are you doing? What sin has the people committed?"
+            },
+            {
+              "num": 3,
+              "text": "(For whenever the people sinned, Jeremiah would sprinkle dust on his head and would pray for the people until their sin was forgiven.)"
+            },
+            {
+              "num": 4,
+              "text": "So Baruch asked him, saying: Father, what is this?"
+            },
+            {
+              "num": 5,
+              "text": "And Jeremiah said to him: Refrain from rending your garments -- rather, let us rend our hearts! And let us not draw water for the trough, but let us weep and fill them with tears! For the Lord will not have mercy on this people."
+            },
+            {
+              "num": 6,
+              "text": "And Baruch said: Father Jeremiah, what has happened?"
+            },
+            {
+              "num": 7,
+              "text": "And Jeremiah said: God is delivering the city into the hands of the king of the Chaldeans, to take the people captive into Babylon."
+            },
+            {
+              "num": 8,
+              "text": "And when Baruch heard these things, he also tore his garments and said: Father Jeremiah, who has made this known to you?"
+            },
+            {
+              "num": 9,
+              "text": "And Jeremiah said to him: Stay with me awhile, until the sixth hour of the night, so that you may know that this word is true."
+            },
+            {
+              "num": 10,
+              "text": "Therefore they both remained in the altar-area weeping, and their garments were torn."
+            }
+          ]
+        },
+        {
+          "num": 3,
+          "verses": [
+            {
+              "num": 1,
+              "text": "And when the hour of the night arrived, as the Lord had told Jeremiah they came up together on the walls of the city, Jeremiah and Baruch."
+            },
+            {
+              "num": 2,
+              "text": "And behold, there came a sound of trumpets; and angels emerged from heaven holding torches in their hands, and they set them on the walls of the city."
+            },
+            {
+              "num": 3,
+              "text": "And when Jeremiah and Baruch saw them, they wept, saying: Now we know that the word is true!"
+            },
+            {
+              "num": 4,
+              "text": "And Jeremiah besought the angels, saying: I beseech you, do not destroy the city yet, until I say something to the Lord."
+            },
+            {
+              "num": 5,
+              "text": "And the Lord spoke to the angels, saying: Do not destroy the city until I speak to my chosen one, Jeremiah."
+            },
+            {
+              "num": 6,
+              "text": "Then Jeremiah spoke, saying: I beg you, Lord, bid me to speak in your presence."
+            },
+            {
+              "num": 7,
+              "text": "And the Lord said: Speak, my chosen one Jeremiah."
+            },
+            {
+              "num": 8,
+              "text": "And Jeremiah said: Behold, Lord, now we know that you are delivering the city into the hands of its enemies, and they will take the people away to Babylon. What do you want me to do with the holy vessels of the temple service?"
+            },
+            {
+              "num": 10,
+              "text": "And the Lord said to him: Take them and consign them to the earth, saying: Hear, Earth, the voice of your creator who formed you in the abundance of waters, who sealed you with seven seals for seven epochs, and after this you will receive your ornaments --"
+            },
+            {
+              "num": 11,
+              "text": "Guard the vessels of the temple service until the gathering of the beloved."
+            },
+            {
+              "num": 12,
+              "text": "And Jeremiah spoke, saying: I beseech you, Lord, show me what I should do for Abimelech the Ethiopian, for he has done many kindnesses to your servant Jeremiah."
+            },
+            {
+              "num": 13,
+              "text": "For he pulled me out of the miry pit; and I do not wish that he should see the destruction and desolation of this city, but that you should be merciful to him and that he should not be grieved."
+            },
+            {
+              "num": 14,
+              "text": "And the Lord said to Jeremiah: Send him to the vineyard of Agrippa, and I will hide him in the shadow of the mountain until I cause the people to return to the city."
+            },
+            {
+              "num": 15,
+              "text": "And you, Jeremiah, go with your people into Babylon and stay with them, preaching to them, until I cause them to return to the city."
+            },
+            {
+              "num": 16,
+              "text": "But leave Baruch here until I speak with him."
+            },
+            {
+              "num": 17,
+              "text": "When he had said these things, the Lord ascended from Jeremiah into heaven."
+            },
+            {
+              "num": 18,
+              "text": "But Jeremiah and Baruch entered the holy place, and taking the vessels of the temple service, they consigned them to the earth as the Lord had told them."
+            },
+            {
+              "num": 19,
+              "text": "And immediately the earth swallowed them."
+            },
+            {
+              "num": 20,
+              "text": "And they both sat down and wept."
+            },
+            {
+              "num": 21,
+              "text": "And when morning came, Jeremiah sent Abimelech, saying: Take a basket and go to the estate of Agrippa by the mountain road, and bring back some figs to give to the sick among the people; for the favor of the Lord is on you and his glory is on your head."
+            },
+            {
+              "num": 22,
+              "text": "And when he had said this, Jeremiah sent him away; and Abimelech went as he told him."
+            }
+          ]
+        },
+        {
+          "num": 4,
+          "verses": [
+            {
+              "num": 1,
+              "text": "And when morning came, behold the host of the Chaldeans surrounded the city."
+            },
+            {
+              "num": 2,
+              "text": "And the great angel trumpeted, saying: Enter the city, host of the Chaldeans; for behold, the gate is opened for you."
+            },
+            {
+              "num": 3,
+              "text": "Therefore let the king enter, with his multitudes, and let him take all the people captive."
+            },
+            {
+              "num": 4,
+              "text": "But taking the keys of the temple, Jeremiah went outside the city and threw them away in the presence of the sun, saying: I say to you, Sun, take the keys of the temple of God and guard them until the day in which the Lord asks you for them."
+            },
+            {
+              "num": 5,
+              "text": "For we have not been found worthy to keep them, for we have become unfaithful guardians."
+            },
+            {
+              "num": 6,
+              "text": "While Jeremiah was still weeping for the people, they brought him out with the people and dragged them into Babylon."
+            },
+            {
+              "num": 7,
+              "text": "But Baruch put dust on his head and sat and wailed this lamentation, saying: Why has Jerusalem been devastated? Because of the sins of the beloved people she was delivered into the hands of enemies -- because of our sins and those of the people."
+            },
+            {
+              "num": 8,
+              "text": "But let not the lawless ones boast and say: \"We were strong enough to take the city of God by our might;\" but it was delivered to you because of our sins."
+            },
+            {
+              "num": 9,
+              "text": "And God will pity us and cause us to return to our city, but you will not survive!"
+            },
+            {
+              "num": 10,
+              "text": "Blessed are our fathers, Abraham, Isaac and Jacob, for they departed from this world and did not see the destruction of this city."
+            },
+            {
+              "num": 11,
+              "text": "When he had said this, Baruch departed from the city, weeping and saying: Grieving because of you, Jerusalem, I went out from you."
+            },
+            {
+              "num": 12,
+              "text": "And he remained sitting in a tomb, while the angels came to him and explained to him everything that the Lord revealed to him through them."
+            }
+          ]
+        },
+        {
+          "num": 5,
+          "verses": [
+            {
+              "num": 1,
+              "text": "But Abimelech took the figs in the burning heat; and coming upon a tree, he sat under its shade to rest a bit."
+            },
+            {
+              "num": 2,
+              "text": "And leaning his head on the basket of figs, he fell asleep and slept for 66 years; and he was not awakened from his slumber."
+            },
+            {
+              "num": 3,
+              "text": "And afterward, when he awoke from his sleep, he said: I slept sweetly for a little while, but my head is heavy because I did not get enough sleep."
+            },
+            {
+              "num": 4,
+              "text": "Then he uncovered the basket of figs and found them dripping milk."
+            },
+            {
+              "num": 5,
+              "text": "And he said: I would like to sleep a little longer, because my head is heavy. But I am afraid that I might fall asleep and be late in awakening and my father Jeremiah would think badly of me; for if he were not in a hurry, he would not have sent me today at daybreak."
+            },
+            {
+              "num": 6,
+              "text": "So I will get up, and proceed in the burning heat; for isn't there heat, isn't there toil every day?"
+            },
+            {
+              "num": 7,
+              "text": "So he got up and took the basket of figs and placed it on his shoulders, and he entered into Jerusalem and did not recognize it -- neither his own house, nor the place -- nor did he find his own family or any of his acquaintances."
+            },
+            {
+              "num": 8,
+              "text": "And he said: The Lord be blessed, for a great trance has come over me today!"
+            },
+            {
+              "num": 9,
+              "text": "This is not the city Jerusalem -- and I have lost my way because I came by the mountain road when I arose from my sleep; and since my head was heavy because I did not get enough sleep, I lost my way."
+            },
+            {
+              "num": 10,
+              "text": "It will seem incredible to Jeremiah that I lost my way!"
+            },
+            {
+              "num": 11,
+              "text": "And he departed from the city; and as he searched he saw the landmarks of the city, and he said: Indeed, this is the city; I lost my way."
+            },
+            {
+              "num": 12,
+              "text": "And again he returned to the city and searched, and found no one of his own people; and he said: The Lord be blessed, for a great trance has come over me!"
+            },
+            {
+              "num": 13,
+              "text": "And again he departed from the city, and he stayed there grieving, not knowing where he should go."
+            },
+            {
+              "num": 14,
+              "text": "And he put down the basket, saying: I will sit here until the Lord takes this trance from me."
+            },
+            {
+              "num": 15,
+              "text": "And as he sat, he saw an old man coming from the field; and Abimelech said to him: I say to you, old man, what city is this?"
+            },
+            {
+              "num": 16,
+              "text": "And he said to him: It is Jerusalem."
+            },
+            {
+              "num": 17,
+              "text": "And Abimelech said to him: Where is Jeremiah the priest, and Baruch the secretary, and all the people of this city, for I could not find them?"
+            },
+            {
+              "num": 18,
+              "text": "And the old man said to him: Are you not from this city, seeing that you remember Jeremiah today, because you are asking about him after such a long time?"
+            },
+            {
+              "num": 19,
+              "text": "For Jeremiah is in Babylon with the people; for they were taken captive by king Nebuchadnezzar, and Jeremiah is with them to preach the good news to them and to teach them the word."
+            },
+            {
+              "num": 20,
+              "text": "As soon as Abimelech heard this from the old man, he said: If you were not an old man, and if it were not for the fact that it is not lawful for a man to upbraid one older than himself, I would laugh at you and say that you are out of your mind -- since you say that the people have been taken captive into Babylon."
+            },
+            {
+              "num": 21,
+              "text": "Even if the heavenly torrents had descended on them, there has not yet been time for them to go into Babylon!"
+            },
+            {
+              "num": 22,
+              "text": "For how much time has passed since my father Jeremiah sent me to the estate of Agrippa to bring a few figs, so that I might give them to the sick among the people?"
+            },
+            {
+              "num": 23,
+              "text": "And I went and got them, and when I came to a certain tree in the burning heat, I sat to rest a little; and I leaned my head on the basket and fell asleep."
+            },
+            {
+              "num": 24,
+              "text": "And when I awoke I uncovered the basket of figs, supposing that I was late; and I found the figs dripping milk, just as I had collected them."
+            },
+            {
+              "num": 25,
+              "text": "But you claim that the people have been taken captive into Babylon."
+            },
+            {
+              "num": 26,
+              "text": "But that you might know, take the figs and see!"
+            },
+            {
+              "num": 27,
+              "text": "And he uncovered the basket of figs for the old man, and he saw them dripping milk."
+            },
+            {
+              "num": 28,
+              "text": "And when the old man saw them, he said: O my son, you are a righteous man, and God did not want you to see the desolation of the city, so he brought this trance upon you."
+            },
+            {
+              "num": 29,
+              "text": "For behold it is 66 years today since the people were taken captive into Babylon."
+            },
+            {
+              "num": 30,
+              "text": "But that you might learn, my son, that what I tell you is true -- look into the field and see that the ripening of the crops has not appeared."
+            },
+            {
+              "num": 31,
+              "text": "And notice that the figs are not in season, and be enlightened."
+            },
+            {
+              "num": 32,
+              "text": "Then Abimelech cried out in a loud voice, saying: I bless you, God of heaven and earth, the Rest of the souls of the righteous in every place!"
+            },
+            {
+              "num": 33,
+              "text": "Then he said to the old man: What month is this?"
+            },
+            {
+              "num": 34,
+              "text": "And he said: Nisan (which is Abib)."
+            },
+            {
+              "num": 35,
+              "text": "And taking some of figs, he gave them to the old man and said to him: May God illumine your way to the city above, Jerusalem."
+            }
+          ]
+        },
+        {
+          "num": 6,
+          "verses": [
+            {
+              "num": 1,
+              "text": "After this, Abimelech went out of the city and prayed to the Lord."
+            },
+            {
+              "num": 2,
+              "text": "And behold, an angel of the Lord came and took him by the right hand and brought him back to where Baruch was sitting, and he found him in a tomb."
+            },
+            {
+              "num": 3,
+              "text": "And when they saw each other, they both wept and kissed each other."
+            },
+            {
+              "num": 4,
+              "text": "But when Baruch looked up he saw with his own eyes the figs that were covered in Abimelech's basket."
+            },
+            {
+              "num": 5,
+              "text": "And lifting his eyes to heaven, he prayed, saying:"
+            },
+            {
+              "num": 6,
+              "text": "You are the God who gives a reward to those who love you. Prepare yourself, my heart, and rejoice and be glad while you are in your tabernacle, saying to your fleshly house, \"your grief has been changed to joy;\" for the Sufficient One is coming and will deliver you in your tabernacle -- for there is no sin in you."
+            },
+            {
+              "num": 7,
+              "text": "Revive in your tabernacle, in your virginal faith, and believe that you will live!"
+            },
+            {
+              "num": 8,
+              "text": "Look at this basket of figs -- for behold, they are 66 years old and have not become shrivelled or rotten, but they are dripping milk."
+            },
+            {
+              "num": 9,
+              "text": "So it will be with you, my flesh, if you do what is commanded you by the angel of righteousness."
+            },
+            {
+              "num": 10,
+              "text": "He who preserved the basket of figs, the same will again preserve you by his power."
+            },
+            {
+              "num": 11,
+              "text": "When Baruch had said this, he said to Abimelech: Stand up and let us pray that the Lord may make known to us how we shall be able to send to Jeremiah in Babylon the report about the shelter provided for you on the way."
+            },
+            {
+              "num": 12,
+              "text": "And Baruch prayed, saying: Lord God, our strength is the elect light which comes forth from your mouth."
+            },
+            {
+              "num": 13,
+              "text": "We beseech and beg of your goodness -- you whose great name no one is able to know -- hear the voice of your servants and let knowledge come into our hearts."
+            },
+            {
+              "num": 14,
+              "text": "What shall we do, and how shall we send this report to Jeremiah in Babylon?"
+            },
+            {
+              "num": 15,
+              "text": "And while Baruch was still praying, behold an angel of the Lord came and said all these words to Baruch: Agent of the light, do not be anxious about how you will send to Jeremiah; for an eagle is coming to you at the hour of light tomorrow, and you will direct him to Jeremiah."
+            },
+            {
+              "num": 16,
+              "text": "Therefore, write in a letter: Say to the children of Israel: Let the stranger who comes among you be set apart and let 15 days go by; and after this I will lead you into your city, says the Lord."
+            },
+            {
+              "num": 17,
+              "text": "He who is not separated from Babylon will not enter into the city; and I will punish them by keeping them from being received back by the Babylonians, says the Lord."
+            },
+            {
+              "num": 18,
+              "text": "And when the angel had said this, he departed from Baruch."
+            },
+            {
+              "num": 19,
+              "text": "And Baruch sent to the market of the gentiles and got papyrus and ink and wrote a letter as follows: Baruch, the servant of God, writes to Jeremiah in the captivity of Babylon:"
+            },
+            {
+              "num": 20,
+              "text": "Greetings! Rejoice, for God has not allowed us to depart from this body grieving for the city which was laid waste and outraged."
+            },
+            {
+              "num": 21,
+              "text": "Wherefore the Lord has had compassion on our tears, and has remembered the covenant which he established with our fathers Abraham, Isaac and Jacob."
+            },
+            {
+              "num": 22,
+              "text": "And he sent his angel to me, and he told me these words which I send to you."
+            },
+            {
+              "num": 23,
+              "text": "These, then, are the words which the Lord, the God of Israel, spoke, who led us out of Egypt, out of the great furnace: Because you did not keep my ordinances, but your heart was lifted up, and you were haughty before me, in anger and wrath I delivered you to the furnace in Babylon."
+            },
+            {
+              "num": 24,
+              "text": "If, therefore, says the Lord, you listen to my voice, from the mouth of Jeremiah my servant, I will bring the one who listens up from Babylon; but the one who does not listen will become a stranger to Jerusalem and to Babylon."
+            },
+            {
+              "num": 25,
+              "text": "And you will test them by means of the water of the Jordan; whoever does not listen will be exposed -- this is the sign of the great seal."
+            }
+          ]
+        },
+        {
+          "num": 7,
+          "verses": [
+            {
+              "num": 1,
+              "text": "And Baruch got up and departed from the tomb and found the eagle sitting outside the tomb."
+            },
+            {
+              "num": 2,
+              "text": "And the eagle said to him in a human voice: Hail, Baruch, steward of the faith."
+            },
+            {
+              "num": 3,
+              "text": "And Baruch said to him: You who speak are chosen from among all the birds of heaven, for this is clear from the gleam of your eyes; tell me, then, what are you doing here?"
+            },
+            {
+              "num": 4,
+              "text": "And the eagle said to him: I was sent here so that you might through me send whatever message you want."
+            },
+            {
+              "num": 5,
+              "text": "And Baruch said to him: Can you carry this message to Jeremiah in Babylon?"
+            },
+            {
+              "num": 6,
+              "text": "And the eagle said to him: Indeed, it was for this reason I was sent."
+            },
+            {
+              "num": 7,
+              "text": "And Baruch took the letter, and 15 figs from Abimelech's basket, and tied them to the eagle's neck and said to him: I say to you, king of the birds, go in peace with good health and carry the message for me."
+            },
+            {
+              "num": 8,
+              "text": "Do not be like the raven which Noah sent out and which never came back to him in the ark; but be like the dove which, the third time, brought a report to the righteous one."
+            },
+            {
+              "num": 9,
+              "text": "So you also, take this good message to Jeremiah and to those in bondage with him, that it may be well with you -- take this papyrus to the people and to the chosen one of God."
+            },
+            {
+              "num": 10,
+              "text": "Even if all the birds of heaven surround you and want to fight with you, struggle -- the Lord will give you strength."
+            },
+            {
+              "num": 11,
+              "text": "And do not turn aside to the right or to the left, but straight as a speeding arrow, go in the power of God, and the glory of the Lord will be with you the entire way."
+            },
+            {
+              "num": 12,
+              "text": "Then the eagle took flight and went away to Babylon, having the letter tied to his neck; and when he arrived he rested on a post outside the city in a desert place."
+            },
+            {
+              "num": 13,
+              "text": "And he kept silent until Jeremiah came along, for he and some of the people were coming out to bury a corpse outside the city."
+            },
+            {
+              "num": 14,
+              "text": "(For Jeremiah had petitioned king Nebuchadnezzar, saying: \"Give me a place where I may bury those of my people who have died;\" and the king gave it to him.)"
+            },
+            {
+              "num": 15,
+              "text": "And as they were coming out with the body, and weeping, they came to where the eagle was."
+            },
+            {
+              "num": 16,
+              "text": "And the eagle cried out in a loud voice, saying: I say to you, Jeremiah the chosen one of God, go and gather together the people and come here so that they may hear a letter which I have brought to you from Baruch and Abimelech."
+            },
+            {
+              "num": 17,
+              "text": "And when Jeremiah heard this, he glorified God; and he went and gathered together the people along with their wives and children, and he came to where the eagle was."
+            },
+            {
+              "num": 18,
+              "text": "And the eagle came down on the corpse, and it revived."
+            },
+            {
+              "num": 19,
+              "text": "(Now this took place so that they might believe.)"
+            },
+            {
+              "num": 20,
+              "text": "And all the people were astounded at what had happened, and said: This is the God who appeared to our fathers in the wilderness through Moses, and now he has appeared to us through the eagle."
+            },
+            {
+              "num": 21,
+              "text": "And the eagle said: I say to you, Jeremiah, come, untie this letter and read it to the people -- So he untied the letter and read it to the people."
+            },
+            {
+              "num": 22,
+              "text": "And when the people heard it, they wept and put dust on their heads, and they said to Jeremiah: Deliver us and tell us what to do that we may once again enter our city."
+            },
+            {
+              "num": 23,
+              "text": "And Jeremiah answered and said to them: Do whatever you heard from the letter, and the Lord will lead us into our city."
+            },
+            {
+              "num": 24,
+              "text": "And Jeremiah wrote a letter to Baruch, saying thus: My beloved son, do not be negligent in your prayers, beseeching God on our behalf, that he might direct our way until we come out of the jurisdiction of this lawless king."
+            },
+            {
+              "num": 25,
+              "text": "For you have been found righteous before God, and he did not let you come here, lest you see the affliction which has come upon the people at the hands of the Babylonians."
+            },
+            {
+              "num": 26,
+              "text": "For it is like a father with an only son, who is given over for punishment; and those who see his father and console him cover his face, lest he see how his son is being punished, and be even more ravaged by grief."
+            },
+            {
+              "num": 27,
+              "text": "For thus God took pity on you and did not let you enter Babylon lest you see the affliction of the people."
+            },
+            {
+              "num": 28,
+              "text": "For since we came here, grief has not left us, for 66 years today."
+            },
+            {
+              "num": 29,
+              "text": "For many times when I went out I found some of the people hung up by king Nebuchadnezzar, crying and saying: \"Have mercy on us, God-ZAR!\""
+            },
+            {
+              "num": 30,
+              "text": "When I heard this, I grieved and cried with two-fold mourning, not only because they were hung up, but because they were calling on a foreign God, saying \"Have mercy on us.\""
+            },
+            {
+              "num": 31,
+              "text": "But I remembered days of festivity which we celebrated in Jerusalem before our captivity; and when I remembered, I groaned, and returned to my house wailing and weeping."
+            },
+            {
+              "num": 32,
+              "text": "Now, then, pray in the place where you are -- you and Abimelech -- for this people, that they may listen to my voice and to the decrees of my mouth, so that we may depart from here."
+            },
+            {
+              "num": 33,
+              "text": "For I tell you that the entire time that we have spent here they have kept us in subjection, saying: Recite for us a song from the songs of Zion -- the song of your God."
+            },
+            {
+              "num": 34,
+              "text": "And we reply to them: How shall we sing for you since we are in a foreign land?"
+            },
+            {
+              "num": 35,
+              "text": "And after this, Jeremiah tied the letter to the eagle's neck, saying: Go in peace, and may the Lord watch over both of us."
+            },
+            {
+              "num": 36,
+              "text": "And the eagle took flight and came to Jerusalem and gave the letter to Baruch; and when he had untied it he read it and kissed it and wept when he heard about the distresses and afflictions of the people."
+            },
+            {
+              "num": 37,
+              "text": "But Jeremiah took the figs and distributed them to the sick among the people, and he kept teaching them to abstain from the pollutions of the gentiles of Babylon."
+            }
+          ]
+        },
+        {
+          "num": 8,
+          "verses": [
+            {
+              "num": 1,
+              "text": "And the day came in which the Lord brought the people out of Babylon."
+            },
+            {
+              "num": 2,
+              "text": "And the Lord said to Jeremiah: Rise up -- you and the people -- and come to the Jordan and say to the people: Let anyone who desires the Lord forsake the works of Babylon."
+            },
+            {
+              "num": 3,
+              "text": "As for the men who took wives from them and the women who took husbands from them -- those who listen to you shall cross over, and you take them into Jerusalem; but those who do not listen to you, do not lead them there."
+            },
+            {
+              "num": 4,
+              "text": "And Jeremiah spoke these words to the people, and they arose and came to the Jordan to cross over."
+            },
+            {
+              "num": 5,
+              "text": "As he told them the words that the Lord had spoken to him, half of those who had taken spouses from them did not wish to listen to Jeremiah, but said to him: We will never forsake our wives, but we will bring them back with us into our city."
+            },
+            {
+              "num": 6,
+              "text": "So they crossed the Jordan and came to Jerusalem."
+            },
+            {
+              "num": 7,
+              "text": "And Jeremiah and Baruch and Abimelech stood up and said: No man joined with Babylonians shall enter this city!"
+            },
+            {
+              "num": 8,
+              "text": "And they said to one another: Let us arise and return to Babylon to our place -- And they departed."
+            },
+            {
+              "num": 9,
+              "text": "But while they were coming to Babylon, the Babylonians came out to meet them, saying: You shall not enter our city, for you hated us and you left us secretly; therefore you cannot come in with us."
+            },
+            {
+              "num": 10,
+              "text": "For we have taken a solemn oath together in the name of our god to receive neither you nor your children, since you left us secretly."
+            },
+            {
+              "num": 11,
+              "text": "And when they heard this, they returned and came to a desert place some distance from Jerusalem and built a city for themselves and named it 'SAMARIA.'"
+            },
+            {
+              "num": 12,
+              "text": "And Jeremiah sent to them, saying: Repent, for the angel of righteousness is coming and will lead you to your exalted place."
+            }
+          ]
+        },
+        {
+          "num": 9,
+          "verses": [
+            {
+              "num": 1,
+              "text": "Now those who were with Jeremiah were rejoicing and offering sacrifices on behalf of the people for nine days."
+            },
+            {
+              "num": 2,
+              "text": "But on the tenth, Jeremiah alone offered sacrifice."
+            },
+            {
+              "num": 3,
+              "text": "And he prayed a prayer, saying: Holy, holy, holy, fragrant aroma of the living trees, true light that enlightens me until I ascend to you;"
+            },
+            {
+              "num": 4,
+              "text": "For your mercy, I beg you -- for the sweet voice of the two seraphim, I beg -- for another fragrant aroma."
+            },
+            {
+              "num": 5,
+              "text": "And may Michael, archangel of righteousness, who opens the gates to the righteous, be my guardian until he causes the righteous to enter."
+            },
+            {
+              "num": 6,
+              "text": "I beg you, almighty Lord of all creation, unbegotten and incomprehensible, in whom all judgment was hidden before these things came into existence."
+            },
+            {
+              "num": 7,
+              "text": "When Jeremiah had said this, and while he was standing in the altar-area with Baruch and Abimelech, he became as one whose soul had departed."
+            },
+            {
+              "num": 8,
+              "text": "And Baruch and Abimelech were weeping and crying out in a loud voice: Woe to us! For our father Jeremiah has left us -- the priest of God has departed!"
+            },
+            {
+              "num": 9,
+              "text": "And all the people heard their weeping and they all ran to them and saw Jeremiah lying on the ground as if dead."
+            },
+            {
+              "num": 10,
+              "text": "And they tore their garments and put dust on their heads and wept bitterly."
+            },
+            {
+              "num": 11,
+              "text": "And after this they prepared to bury him."
+            },
+            {
+              "num": 12,
+              "text": "And behold, there came a voice saying: Do not bury the one who yet lives, for his soul is returning to his body!"
+            },
+            {
+              "num": 13,
+              "text": "And when they heard the voice they did not bury him, but stayed around his tabernacle for three days saying, \"when will he arise?\""
+            },
+            {
+              "num": 14,
+              "text": "And after three days his soul came back into his body and he raised his voice in the midst of them all and said: Glorify God with one voice! All of you glorify God and the son of God who awakens us -- messiah Jesus -- the light of all the ages, the inextinguishable lamp, the life of faith."
+            },
+            {
+              "num": 15,
+              "text": "But after these times there shall be 477 years more and he comes to earth."
+            },
+            {
+              "num": 16,
+              "text": "And the tree of life planted in the midst of paradise will cause all the unfruitful trees to bear fruit, and will grow and sprout forth."
+            },
+            {
+              "num": 17,
+              "text": "And the trees that had sprouted and became haughty and said: \"We have supplied our power to the air,\" he will cause them to wither, with the grandeur of their branches, and he will cause them to be judged -- that firmly rooted tree!"
+            },
+            {
+              "num": 18,
+              "text": "And what is crimson will become white as wool -- the snow will be blackened -- the sweet waters will become salty, and the salty sweet, in the intense light of the joy of God."
+            },
+            {
+              "num": 19,
+              "text": "And he will bless the isles so that they become fruitful by the word of the mouth of his messiah."
+            },
+            {
+              "num": 20,
+              "text": "For he shall come, and he will go out and choose for himself twelve apostles to proclaim the news among the nations -- he whom I have seen adorned by his father and coming into the world on the Mount of Olives -- and he shall fill the hungry souls."
+            },
+            {
+              "num": 21,
+              "text": "When Jeremiah was saying this concerning the son of God -- that he is coming into the world -- the people became very angry and said: This is a repetition of the words spoken by Isaiah son of Amos, when he said: I saw God and the son of God."
+            },
+            {
+              "num": 22,
+              "text": "Come, then, and let us not kill him by the same sort of death with which we killed Isaiah, but let us stone him with stones."
+            },
+            {
+              "num": 23,
+              "text": "And Baruch and Abimelech were greatly grieved because they wanted to hear in full the mysteries that he had seen."
+            },
+            {
+              "num": 24,
+              "text": "But Jeremiah said to them: Be silent and weep not, for they cannot kill me until I describe for you everything I saw."
+            },
+            {
+              "num": 25,
+              "text": "And he said to them: Bring a stone here to me."
+            },
+            {
+              "num": 26,
+              "text": "And he set it up and said: Light of the ages, make this stone to become like me in appearance, until I have described to Baruch and Abimelech everything I saw."
+            },
+            {
+              "num": 27,
+              "text": "Then the stone, by God's command, took on the appearance of Jeremiah."
+            },
+            {
+              "num": 28,
+              "text": "And they were stoning the stone, supposing that it was Jeremiah!"
+            },
+            {
+              "num": 29,
+              "text": "But Jeremiah delivered to Baruch and to Abimelech all the mysteries he had seen, and forthwith he stood in the midst of the people desiring to complete his ministry."
+            },
+            {
+              "num": 30,
+              "text": "Then the stone cried out, saying: O foolish children of Israel, why do you stone me, supposing that I am Jeremiah? Behold, Jeremiah is standing in your midst!"
+            },
+            {
+              "num": 31,
+              "text": "And when they saw him, immediately they rushed upon him with many stones, and his ministry was fulfilled."
+            },
+            {
+              "num": 32,
+              "text": "And when Baruch and Abimelech came, they buried him, and taking the stone they placed it on his tomb and inscribed it thus: This is the stone that was the ally of Jeremiah."
+            }
+          ]
+        }
       ]
     }
   ]
