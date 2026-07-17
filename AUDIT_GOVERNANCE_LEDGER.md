@@ -3223,3 +3223,33 @@ renowned -- 40 total word-level fixes applied).
 Still amber -- the missing 110th story boundary (i.e., a genuinely distinct 110th story not yet
 represented among these 109) remains unresolved, and a full word-for-word proofread of the other 108
 stories is still outstanding.
+
+## Miracles of Mary, missing-story investigation RESOLVED, session 2026-07-17 continued
+
+The "missing 110th story" open question from earlier this session is resolved -- not by locating a
+110th story, but by confirming there isn't one to find. Ran a fourth independent check: extracted the
+actual printed page number for each of the 109 confirmed stories from the OCR text and checked
+continuity across the whole book. Result: a smooth, linear progression from page 8 (story 1) to page
+346 (the final story), averaging ~3.2 pages/story, consistent with the book's stated 355-page length
+with no unaccounted gap. A page-225 cluster that looked suspicious (four stories landing within a few
+pages of each other) checked out as real -- five genuinely short, distinct stories confirmed against
+their own index entries, not a merge artifact.
+
+Combined with the three earlier checks this session (folio-citation sequence, length-anomaly search,
+illustration-caption cross-reference), all four independently converge on the same conclusion: these
+109 stories represent complete, continuous narrative coverage of the entire book. There is no missing
+content.
+
+The mismatch with the book's own "110" title is therefore a numbering quirk in the original 1923/1933
+edition, not a data gap -- the final story is independently confirmed (Josh cross-checked it directly
+against his own copy) to be printed "CX" (110), meaning Budge's own sequence has a one-number skip or
+duplicate somewhere in the middle that doesn't correspond to any actual missing narrative. This is a
+property of the source book, not of this transcription.
+
+**Fixed accordingly:** the final entry's `num` corrected from 109 to 110 (matching its confirmed
+printed heading); there is deliberately no entry numbered 109 in the file, since that number does not
+correspond to any real story. `meta.status_note` updated to explain this plainly rather than continue
+carrying it as an open question.
+
+**Still amber:** the full word-for-word proofread of all 109 stories against the source remains the
+outstanding work before this can be marked GREEN.

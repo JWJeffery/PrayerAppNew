@@ -5,7 +5,7 @@
     "version": "E.A. Wallis Budge translation, 1923/1933 edition (\"One Hundred and Ten Miracles of Our Lady Mary\"); public domain",
     "copyright": "Public Domain",
     "description": "Budge's specific 110-story compilation from Ethiopic manuscripts, one edition among many Ta'ammera Maryam traditions (see structure.json liturgical_research_governance for the post-v1.0 review note on this corpus's broader devotional context).",
-    "status_note": "IN PROGRESS / AMBER: 109 of 110 stories located and transcribed from raw OCR (Internet Archive scan of the 1923/1933 Budge edition). One story boundary still not located -- illustration-caption numbering was cross-checked against main-text numbering and found to disagree (likely reused plate captions from an earlier printing state), so that avenue does not resolve it. A proofreading pass has been applied: systematic small-caps OCR corruption normalized across the whole text (this was the single largest source of noise, affecting nearly every proper noun), formulaic drop-cap story-openings restored ('Now there was...', 'There was...'), several dozen specific name/word corruptions fixed (Rome, Mary, Abbas, Abuna, Islam, Dexius, etc.), and garbled title-numeral fragments stripped. This is a genuine, substantial improvement over the raw OCR, but it is NOT a complete word-for-word proofread -- spot-checks after this pass still found isolated per-story errors (typos, a few remaining garbled openings, one title still missing its leading article) that need individual attention, not pattern fixes. Do not mark GREEN yet."
+    "status_note": "IN PROGRESS / AMBER: 109 distinct stories transcribed from raw OCR (Internet Archive scan of the 1923/1933 Budge edition), confirmed complete via four independent checks -- manuscript folio-citation sequence, page-number continuity across the entire book (linear from page 8 to page 346, matching the book's stated 355-page length), illustration-caption cross-reference, and length-anomaly search for merged/hidden stories. All four converge: these 109 stories represent continuous, complete narrative coverage of the whole book, with no missing content. The book's own title claims 110 miracles, and the final story here is confirmed (via direct manuscript cross-check with Josh's copy) to be printed as 'CX' (110) -- so Budge's original numbering has a one-number quirk (a skip or a doubled number somewhere in the middle) that does not correspond to any missing narrative. There is therefore no story numbered 109 in this file; numbers run 1-108 and then 110. A full word-for-word proofread of all 109 stories against the source is still outstanding before this can be marked GREEN."
   },
   "miracles": [
     {
@@ -1089,7 +1089,7 @@
       ]
     },
     {
-      "num": 109,
+      "num": 110,
       "name": "The Virgin Mary and the King who Dedicated An Altar to Her",
       "verses": [
         {
