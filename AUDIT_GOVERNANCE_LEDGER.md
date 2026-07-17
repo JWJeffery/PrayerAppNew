@@ -3201,3 +3201,25 @@ in individual stories, at least one title still missing its leading article, and
 formulaic openings that don't match the common patterns and remain garbled. A genuine word-for-word
 proofread of all 109 stories (~40,000+ words) is still the outstanding work before this can be marked
 GREEN, along with locating the missing 110th story.
+
+## Miracles of Mary, story 110 verified + more OCR fixes, session 2026-07-17 continued
+
+Josh pasted the full text of Miracle CX (110, "The Virgin Mary and the King who Dedicated an Altar
+to Her") directly from his own copy for cross-check. It matched the stored version word-for-word,
+including shared OCR typos ("att" for "art", "cteature" for "creature", "pute" for "pure") -- useful
+confirmation that these are genuine artifacts of this particular digitization, not something
+introduced by the extraction pipeline.
+
+Two real fixes made from this check: (1) the stored version of story 110 had the entire book's
+back-matter (alphabetical index, colophon, library stamp record) accidentally appended to its body,
+since it's the last story and the segmentation captured everything to end-of-file -- trimmed to end
+at the story's actual "Amen."; a stray leaked running-header ("Miracles of the Virgin Mary") in the
+middle was also removed. (2) Recognizing "att"/"cteature"/"pute" as instances of a second systematic
+OCR pattern (r misread as t) distinct from the small-caps issue fixed earlier, searched the whole
+corpus for the same pattern and fixed 14 more high-confidence instances across all 109 stories (art,
+certain, departed, earth, entreated, marriage, north, right, straightway, Philemon, creature, pure,
+renowned -- 40 total word-level fixes applied).
+
+Still amber -- the missing 110th story boundary (i.e., a genuinely distinct 110th story not yet
+represented among these 109) remains unresolved, and a full word-for-word proofread of the other 108
+stories is still outstanding.
