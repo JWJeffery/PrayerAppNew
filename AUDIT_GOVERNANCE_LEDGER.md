@@ -2667,3 +2667,69 @@ Registry: `data/bible/registry/broader-canon-et-sy-phase2-source-triage-2026-07-
 
 **Recommended next step:** begin Phase 3 verification with the 6-text tractable list, since real
 sources are already in hand and no further sourcing delay is needed there.
+
+## Phase 3, Ascension of Isaiah -- provenance question found, genuine open finding, not resolved this session
+
+Began Phase 3 verification with Ascension of Isaiah (first item on the Phase 2 tractable list).
+Real, substantive finding -- not a quick clean close.
+
+**What was checked:** fetched two independent full-text sources of R.H. Charles' 1900 Ascension of
+Isaiah translation (earlychristianwritings.com, hosting the original monograph text; and
+intertextual.bible, a modernized-pronoun paraphrase of the same underlying 1900 text) and compared
+against the app's file chapter by chapter.
+
+**First apparent problem, resolved:** the app's chapter/verse counts (140 verses across 11
+chapters) are roughly half the source's (~296 verses). Initial concern: major content loss.
+**Investigation showed this is NOT content loss.** The app uses a different, but real and
+independently attested, chapter-division convention -- confirmed by cross-referencing modern
+scholarly citation style (Wikipedia, NASSCAL, and other secondary sources cite the Testament of
+Hezekiah as spanning "3:13-4:22" or "iii.13b-iv.18/22," meaning modern scholarship treats what
+the 1900 monograph calls chapter 3 verses 13-31 as belonging to a DIFFERENT chapter 4). Spot-check
+at the app's chapter 3/4 boundary confirmed: app's chapter 4 verse 1 ("For Beliar was in great
+wrath against Isaiah...") is the same content as the 1900 source's chapter 3 verse 13 -- the app
+is using a chapter break that modern scholarship also recognizes, just not the one either fetched
+online source happens to use. Spot-checked again far into the book (app chapters 9-10 against
+source chapters 9-10) and the same-content, different-numbering pattern held. **No missing
+content found via these spot-checks.**
+
+**Second, unresolved problem:** the app's actual WORDING does not match either fetched source
+verbatim, even accounting for the versification difference. Example: app chapter 9 verse 1 reads
+"And he took me into the seventh heaven, and I saw there a light unutterable and angels without
+number" -- both fetched 1900-translation sources read "...I saw there a wonderful light and angels
+innumerable" (same content, different word choices throughout: "unutterable" vs "wonderful,"
+"without number" vs "innumerable," and this pattern repeats elsewhere). This is NOT the kind of
+difference that comes from OCR noise or a stray typo -- it reads like a genuinely different
+translation or a substantially different revision of Charles' own translation.
+
+**Charles published the Ascension of Isaiah translation twice, in different forms, and neither
+by itself matches:** his full 1900 monograph (the source behind both fetched online texts, all 11
+chapters, ~296 verses in its own numbering) and his later Apocrypha and Pseudepigrapha of the Old
+Testament (APOT) vol. 2 (1913) -- but APOT's "Martyrdom of Isaiah" entry is confirmed (via
+multiple secondary-source citations, e.g. pp. 155-162) to cover ONLY chapters 1-5, not the full
+11-chapter work including the Vision (chs. 6-11) that the app's file has in full. APOT alone
+cannot be the app's sole source. A third Charles edition exists (1917, SPCK, with G.H. Box) that
+was not checked this session -- possibly the actual source, not yet confirmed.
+
+**Where this leaves things:** the app's Ascension of Isaiah appears content-complete (nothing
+found missing across four spot-checked locations spanning the whole book) and uses a real,
+independently-attested versification scheme, but its actual source translation/edition has NOT
+been positively identified, meaning the file's own `meta.version` field ("R.H. Charles Ethiopic
+translation") is unconfirmed as stated -- it may be accurate (an edition of Charles' work not yet
+checked) or it may be a different translator's work mislabeled. This is a genuine open sourcing
+question, not a content-accuracy defect found and fixed.
+
+**Not resolved this session; flagged honestly rather than either falsely certifying it clean or
+spending unlimited further time chasing the exact edition.** Candidate next steps for whoever
+picks this up: (1) check the 1917 Charles/Box SPCK edition (archive.org has page images per the
+Online Books Page listing) against the app's specific wording; (2) check M.A. Knibb's 1983
+translation in Charlesworth's OTP vol. 2 (a completely independent, later translation using two
+Ethiopic manuscripts unknown to Charles) as a live possibility, since the app's wording pattern
+(simpler, less archaic than Charles' 1900 "thee/thou" style) is at least superficially more
+consistent with a later, non-Charles translation than with any Charles edition; (3) if no
+attributed source is ever found to match, this becomes a decision point for Josh: relabel the
+file's stated source honestly as unconfirmed, or treat it as a full rebuild candidate against a
+freshly and confidently sourced translation, the way Letter of Baruch was rebuilt earlier in this
+project.
+
+**No changes made to the file this session.** Moving to a different Phase 3 tractable-list item
+rather than continuing to chase this book's exact source indefinitely in one sitting.
