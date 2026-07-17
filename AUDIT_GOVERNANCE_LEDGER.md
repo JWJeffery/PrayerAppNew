@@ -3068,3 +3068,32 @@ Similitude 9, closing of Similitude 10) with no discrepancies found.
 
 **Still open from the same Phase 2 tractable list:** Fetha Nagast, Didaskalia, Miracles of Mary --
 untouched this session.
+
+## Didaskalia — Phase 3, major content gap confirmed, rebuild blocked on fetch access
+
+Started Phase 3 verification (next tractable-list item after Shepherd of Hermas). Same problem
+class as Hermas: the app's `didaskaliaET.json` (43 chapters, ~2-3 verses each, ~87 verses total,
+suspiciously uniform) is fabricated — checked side-by-side against the real source and found no
+wording overlap at all. This is not a condensation; it's different text.
+
+**Real source confirmed:** J.M. Harden, *The Ethiopic Didascalia* (SPCK/Macmillan, 1920, public
+domain). Full text available two ways: bible.ertale.com/ethiopiancanon/didascalia/ (footnote-marker
+cleaned, one chapter = one verse) and archive.org/stream/cu31924096083336/cu31924096083336_djvu.txt
+(raw OCR, Harden's original footnote apparatus still inline as superscript digits).
+
+**Blocked, not abandoned.** Fetched and verified chapters 1-6 of 43 against real Harden wording this
+session, then hit two walls: (1) the fetch tool capped further requests to bible.ertale.com after a
+handful of chapter fetches: (2) archive.org's raw OCR page hits a hard truncation wall at roughly the
+same point every time regardless of requested size — same class of limit already documented for
+Hermas/Psalms. Chose NOT to retype the remainder from memory of what had been fetched, since that
+risks silent transcription errors on a project where exactness is the whole point.
+
+**No file changes made this session.** Next session should resume by fetching chapters 5 (or wherever
+chapters 1-4 leave off) through 43 directly from bible.ertale.com (preferred — already footnote-clean)
+or archive.org (fallback, needs footnote-digit cleanup), building the same 43-chapter structure the
+app already uses (one chapter per Harden chapter, verses as natural paragraph breaks, matching the
+Hermas precedent of keeping the source's own presentation rather than an external scheme).
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast (separately confirmed blocked this session
+— the identified free source, ethiopianorthodox.org's PDF, has unusably bad OCR; a better source
+still needs to be found), Miracles of Mary — untouched.
