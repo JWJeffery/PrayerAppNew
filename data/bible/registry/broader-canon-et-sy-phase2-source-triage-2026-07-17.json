@@ -1,0 +1,106 @@
+{
+    "schema": "broader-canon-et-sy-phase2-source-triage-v1",
+    "id": "broader_canon_et_sy_phase2_source_triage_2026_07_17",
+    "status": "triage_complete_research_based_not_yet_fetched",
+    "recordedAt": "2026-07-17T00:00:00-07:00",
+    "scope": "Phase 2 of the ET-AR-SY/Odes sequencing plan (Phase 0 canonicity -> Phase 1 mechanical sweeps -> Phase 2 source-availability triage -> Phase 3 full audits -> Phase 4 punt list). Sorts the 29 texts still open after Phase 1 (30 ET-corpus files minus Book of Jubilees, already closed, plus the 2 amber SY files) by how findable a genuine primary source looks, based on real web research this session -- not background knowledge alone. Excludes the 3 RED_SEED Clement files (1/3/7 Clement (ET)), whose open question is corpus authenticity rather than source-findability, and the 2 already-GREEN texts (3 Corinthians (AR), Odes of Solomon (SY)).",
+    "methodology": "For each text or text-family, searched for known scholarly/public-domain English translations and checked whether a genuinely free, fetchable source exists (archive.org, HathiTrust, CCEL, university-hosted PDFs, etc.) versus only paywalled/purchase-only editions versus no known complete translation at all. This is triage-level research -- sources were located and their accessibility assessed, but individual texts have NOT yet been fetched or verified against this app's content. That remains Phase 3 work.",
+    "tractable": {
+        "description": "A genuine, free, fetchable English source was identified this session. Ready for Phase 3 verification without further sourcing work.",
+        "items": [
+            {
+                "text": "Ascension of Isaiah",
+                "source": "R.H. Charles translation, public domain, available via sacred-texts.com and CCEL. Already confirmed fetchable this session during the Phase 1 sweep."
+            },
+            {
+                "text": "Hermas, The Shepherd",
+                "source": "J.B. Lightfoot translation (Apostolic Fathers), public domain, widely mirrored (CCEL, earlychristianwritings.com, newadvent.org). One of the most accessible texts in this entire backlog."
+            },
+            {
+                "text": "Rest of Baruch",
+                "text2": "Rest of Jeremiah",
+                "source": "Together constitute 4 Baruch / Paralipomena of Jeremiah. Free English translation (S.E. Robinson, in Charlesworth's OTP) hosted at ccat.sas.upenn.edu/rak/publics/pseudepig/ParJer-Eng.html. Note the Greek recension is attributed to Jeremiah and the Ethiopian recension to Baruch -- worth confirming this translation's textual base matches the Ethiopian recension specifically before trusting it as primary, per this project's established Vincentian-source-discipline standard."
+            },
+            {
+                "text": "Didaskalia",
+                "source": "Ethiopic Didascalia. Two free PDF scans on archive.org: T.P. Platt's 1834 translation (noted by sources as incomplete) and J.M. Harden's later translation (appears more complete). Harden should be the lead source if both are usable; Platt as cross-check only given its known incompleteness."
+            },
+            {
+                "text": "Fetha Nagast",
+                "source": "Abba Paulos Tzadua's 1968 translation (the standard, most reliable English edition, confirmed by multiple scholarly citations) is freely available as a PDF at ethiopianorthodox.org/biography/01thelawofkings.pdf -- the actual published translation, not a summary or excerpt."
+            },
+            {
+                "text": "Miracles of Mary",
+                "source": "E.A. Wallis Budge's 'One Hundred and Ten Miracles of Our Lady Mary' (1933), translated directly from Ethiopic manuscripts, freely readable on HathiTrust (babel.hathitrust.org, public domain in the US) and likely archive.org. Note per Christie's cataloguing description: Budge's 110 is a partial selection -- the fullest known Ethiopic collection (British Library Or. 643) holds 316, and Cerulli's Italian edition covers 222 -- so this source may not be textually complete relative to whatever count the app's file claims; worth checking the app's own verse/miracle count against Budge's 110 specifically before assuming 1:1 coverage."
+            }
+        ]
+    },
+    "tractableLeaning": {
+        "description": "A plausible source was identified but not fully confirmed as a match for this app's specific text -- likely tractable with a small amount of additional Phase 2/3 work to confirm fit.",
+        "items": [
+            {
+                "text": "Guba'ekana",
+                "source": "Per Phase 0's finding, this self-identifies internally as the Council of Nicaea's proceedings/canons. The genuine 20 Nicene canons are extremely well-translated (NPNF Second Series Vol. 14, free on CCEL/NewAdvent), but Ethiopic canon collections (transmitted via Arabic) commonly include the expanded/'spurious' Arabic Nicene canon tradition (up to 84 canons, including Ethiopia-specific canons like the 36th canon on the Ethiopian patriarchate) rather than the genuine 20 -- confirmed this expanded tradition exists and is itself translated in some editions (found partial evidence via EWTN's Nicaea page, which includes Canon XXXVI 'Of the creation of a patriarch for Ethiopia'). Needs Phase 3 work to determine which canon-count tradition the app's file actually holds before picking the matching source."
+            },
+            {
+                "text": "Malke'a Virgin Mary",
+                "source": "The Malke'a genre (hymns saluting the parts of a saint's body) has at least one confirmed English precedent: Budge's 'Legends of Our Lady Mary' (1922) contains 'Salutations to the Members of the Body of the Virgin Mary' (pp. 236-244), which is structurally the same genre as this file. Worth checking directly against the app's content before assuming it's the same specific hymn."
+            },
+            {
+                "text": "1 Meqabyan",
+                "text2": "2 Meqabyan",
+                "source": "Free (if roughly translated, 'Iyaric'-style) English versions exist via web.archive.org mirrors of a members.aol.com site (Ras Feqade Selassie's translation). Better, more standard-English translations by D.P. Curtin exist for both but are purchase-only (Amazon). The free Iyaric-style versions are usable for a first-pass comparison even if not ideal as a sole source."
+            }
+        ]
+    },
+    "needsDigging": {
+        "description": "No single clean source identified yet; the text type or a partial/adjacent source exists, but real additional research is needed before Phase 3 can begin.",
+        "items": [
+            {
+                "text": "3 Meqabyan",
+                "note": "Only the free Iyaric-style mirror translation was found; unlike 1 and 2 Meqabyan, D.P. Curtin has not (as of this session) published a standard-English translation of 3 Meqabyan specifically. The Feqade Selassie print/PDF edition (Lulu) covers all three but is purchase-only."
+            },
+            {
+                "text": "Statutes of the Apostles (mapped against Sirate Tsion, Tizaz, Admonitions, Abtilis)",
+                "note": "A free 19th/early-20th-century English translation of 'The Statutes of the Apostles' exists on archive.org, and this is part of the broader Sinodos collection this app splits into four files (Sirate Tsion, Tizaz, Admonitions, Abtilis). Real digging needed to determine how the old scholarly edition's internal divisions map onto this app's four-way split -- they may not correspond 1:1 to old critical editions' own section titles."
+            },
+            {
+                "text": "Malke'a Guba'e",
+                "text2": "Malke'a Iyasus",
+                "note": "Same genre as Malke'a Virgin Mary (confirmed tractable-leaning above), but no specific English source was located this session for hymns to these particular subjects. May exist scattered in academic journal articles (e.g., work by Habtemichael Kidane on Ethiopian hymnody) rather than in a single accessible book -- would need targeted academic-literature searching, not general web search, to locate."
+            },
+            {
+                "text": "Mazaheta",
+                "note": "Per Phase 0's survey, this text's title itself was not yet independently confirmed. No sourcing work is possible until the title/identity question is resolved first -- this is a prerequisite blocker, not a parallel Phase 2 task."
+            }
+        ]
+    },
+    "likelyNeedsJosh": {
+        "description": "No free source was found; the only identified English translation is purchase-only, or no complete English translation of the specific Ethiopian-recension text exists at all. Real progress here likely requires either a purchase decision or access Josh may already have (e.g., a personal library, institutional access, or willingness to type/transcribe from a print source).",
+        "items": [
+            {
+                "text": "Josippon",
+                "note": "No complete English translation of the actual Ethiopian-recension Josippon exists anywhere, free or paid -- confirmed directly by the Ethiopian Orthodox Bible Project's own project page, which states this outright. Existing English 'Josippon' translations (e.g., Steven Bowman's Sepher Yosippon) are based on the differing Hebrew recension, not the Ethiopian one, and are not usable as a primary source per this project's standing sourcing discipline. Only a tiny fragment (a few pages) appears translated at all, buried inside Budge's unrelated 'Life and Exploits of Alexander the Great' (pp. 403-428). This may be genuinely unsourceable without new translation work -- worth a direct conversation with Josh about whether to leave this permanently flagged, attempt commissioning/doing original translation work, or find an access route not yet identified."
+            },
+            {
+                "text": "2 Clement (ET)",
+                "text2": "4 Clement (ET)",
+                "text3": "5 Clement (ET)",
+                "text4": "6 Clement (ET) [clement6]",
+                "text5": "8 Clement (ET)",
+                "text6": "Clement, Book of Rolls",
+                "text7": "Clement, Visionary",
+                "text8": "Clement, Statutes",
+                "note": "The only identified complete modern English translation of Ethiopic Clement (Qalementos) is a specific purchase-only Amazon ebook. R.H. Charles' free two-volume APOT (archive.org) may cover some Clementine fragments as part of its broader pseudepigrapha coverage -- worth a targeted Phase 3 check of APOT's own table of contents before assuming the paid edition is the only option, but not confirmed this session. Recall also that this whole text-family's category-level authenticity is already a separate open question per Phase 0 (flagged red on the dashboard for the 3 RED_SEED members specifically) -- sourcing these non-red siblings doesn't resolve that broader question."
+            },
+            {
+                "text": "Sirate Tsion",
+                "text2": "Tizaz",
+                "text3": "Admonitions",
+                "text4": "Abtilis",
+                "note": "Beyond whatever the free 'Statutes of the Apostles' text (see needsDigging above) can cover, the only identified complete, well-regarded modern English edition of the full Sinodos collection (Orders of Zion / Statutes / Canons / Abtilis) is a specific purchase-only Amazon ebook, described by the Ethiopian Orthodox Bible Project itself as 'the best edition of these books we have seen in English.' Real free 19th-century partial translations (e.g., G.W. Horner's Ethiopic church-order work) may exist but were not confirmed this session -- worth a further targeted search in Phase 2 continuation before concluding this needs a purchase."
+            }
+        ]
+    },
+    "note": "This triage is a starting point for prioritization, not a final sourcing decision for any text. Confidence varies by category as stated above -- 'tractable' items have a confirmed free source path; 'likelyNeedsJosh' items reflect what was findable in one session's research and could still turn up a free source with more digging, particularly for the Sinodos texts. Recommended next step: begin Phase 3 verification with the 'tractable' list first (6 texts, real free sources in hand), since that's where the highest volume of real progress can happen without further sourcing delay."
+}

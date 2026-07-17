@@ -2602,3 +2602,68 @@ and without any sourcing/fetching -- exactly per Phase 1's scope in the sequenci
 **Next: Phase 2** -- source-availability triage (tractable / needs digging / likely needs Josh) for
 the texts that will need real Phase 3 audits, prioritizing by how findable a genuine primary source
 looks for each.
+
+## Phase 2 source-availability triage, session 2026-07-17 -- 29 remaining ET/SY texts sorted
+
+Per the sequencing plan (Phase 0 canonicity -> Phase 1 mechanical sweeps -> **Phase 2
+source-availability triage** -> Phase 3 full audits -> Phase 4 punt list). Real web research this
+session, not background-knowledge guessing -- searched for actual scholarly/public-domain English
+translations for each text or text-family and checked genuine free accessibility versus
+purchase-only versus no known complete translation at all.
+
+**Scope:** the 29 texts still open after Phase 1's clean sweep -- 30 ET-corpus files minus Book of
+Jubilees (independently closed), minus the 3 RED_SEED Clement files (1/3/7 Clement (ET), whose
+open question is corpus authenticity not source-findability), plus the 2 amber SY files (Letter of
+Baruch, 2 Baruch).
+
+**Tractable (6 texts/families, real free source confirmed in hand):** Ascension of Isaiah (Charles
+trans., sacred-texts.com/CCEL -- already used this session), Hermas The Shepherd (Lightfoot trans.,
+CCEL/newadvent, one of the most accessible texts in the whole backlog), Rest of Baruch + Rest of
+Jeremiah together (= 4 Baruch/Paralipomena of Jeremiah, free Robinson/Charlesworth OTP translation
+at ccat.sas.upenn.edu), Didaskalia (two free archive.org PDF scans -- Platt 1834, incomplete per
+scholarship, and Harden, apparently more complete), Fetha Nagast (the actual Tzadua 1968
+translation -- not a summary -- freely PDF-hosted at ethiopianorthodox.org), Miracles of Mary
+(Budge's 'One Hundred and Ten Miracles of Our Lady Mary,' freely readable on HathiTrust; noted
+caveat: Budge's 110 is a known partial selection against a fuller manuscript tradition running to
+316+ miracles, so the app's own count needs checking against Budge's specifically before assuming
+full coverage).
+
+**Tractable-leaning (3 texts, plausible source found, needs a confirming check):** Guba'ekana
+(likely the expanded/Arabic-tradition Nicene canons including Ethiopia-specific canons, not the
+genuine 20 -- a source path exists via NPNF Vol. 14 and other editions, but which canon-count
+tradition this app's file actually holds needs confirming first), Malke'a Virgin Mary (Budge's
+'Legends of Our Lady Mary' contains a same-genre 'Salutations to the Members of the Body of the
+Virgin Mary' text, plausibly the same or a related hymn), 1 and 2 Meqabyan (free but rough
+'Iyaric'-style translations exist via archived mirrors; better standard-English Curtin
+translations exist but are purchase-only).
+
+**Needs digging (4 texts/families, real additional research required before sourcing is settled):**
+3 Meqabyan (only the rough free mirror found; no free standard-English translation located, unlike
+1 and 2), the Statutes-of-the-Apostles-vs-Sinodos mapping question (a free old translation of "The
+Statutes of the Apostles" exists but how it maps onto this app's four-way Sirate
+Tsion/Tizaz/Admonitions/Abtilis split isn't yet clear), Malke'a Guba'e and Malke'a Iyasus (same
+hymn genre as the tractable-leaning Malke'a Virgin Mary, but no specific source located --  may
+require academic-literature search rather than general web search), and Mazaheta (blocked entirely
+on the still-unresolved title-identification question flagged back in Phase 0 -- not a sourcing
+problem yet, an identity problem).
+
+**Likely needs Josh (3 text-families, no free source found):** Josippon (confirmed via the
+Ethiopian Orthodox Bible Project's own project page that NO complete English translation of the
+actual Ethiopian-recension text exists anywhere, free or paid -- existing "Josippon" translations
+are from the differing Hebrew recension and don't qualify per this project's sourcing discipline;
+only a few fragmentary pages exist, buried in an unrelated Budge volume on Alexander the Great --
+this may be genuinely unsourceable without new translation work), the 8 non-red Clement/Qalementos
+files (only identified complete modern translation is purchase-only; R.H. Charles' free APOT may
+cover some fragments, worth a Phase 3 check before assuming purchase is required), and the
+remaining three Sinodos books beyond Statutes of the Apostles -- Sirate Tsion, Tizaz, Admonitions,
+Abtilis (best identified edition is purchase-only; free 19th-century partial translations may exist
+but weren't confirmed this session).
+
+**Honest caveat, stated plainly in the registry file itself:** this is triage-level research --
+sources were located and assessed for accessibility, but nothing has been fetched or verified
+against this app's actual content yet. That is Phase 3 work, not done here.
+
+Registry: `data/bible/registry/broader-canon-et-sy-phase2-source-triage-2026-07-17.json`.
+
+**Recommended next step:** begin Phase 3 verification with the 6-text tractable list, since real
+sources are already in hand and no further sourcing delay is needed there.
