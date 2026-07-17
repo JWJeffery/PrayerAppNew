@@ -2986,3 +2986,53 @@ describe the hybrid sourcing (rather than solely crediting Charles) the next tim
 touched, and consider this book eligible for GREEN_SEED on content-completeness grounds once that
 metadata correction is made, since the actual textual content is now confirmed traceable and
 accurate against real primary/critical sources throughout.
+
+## Phase 3, Shepherd of Hermas -- major content-completeness gap confirmed, rebuild started but not finished
+
+Began Phase 3 verification on Shepherd of Hermas (next item on the Phase 2 tractable list). Real,
+large finding -- bigger in scope than any other Phase 3 item this session.
+
+**The app's current file (27 "chapters," 99 verses) drastically under-represents the real text.**
+The real Shepherd of Hermas, in the standard modern citation scheme used by all major scholarly
+editions, runs to 5 Visions + 12 Mandates + 10 Similitudes = a continuous 114-chapter structure
+with roughly 400+ verses (paragraphs). The app's file allocates exactly ONE short "chapter" (2-8
+verses) per each of these 27 traditional sections -- but several of those sections (e.g. real
+Vision 3, which spans modern chapters 9-21; real Similitude 9, which spans modern chapters 78-110
+and is by itself longer than most books in this whole broader-canon backlog) are many times longer
+than the app's single allocated "chapter." Direct content comparison confirms genuine, large-scale
+loss -- not a versification artifact like Ascension of Isaiah turned out to be. What content IS
+present in the app's file is a faithful excerpt (matches real source wording closely, e.g. app's
+Vision 1 = real modern chapter 1 nearly verbatim), just a small fraction of the whole work.
+
+**Sourcing is solid, not a blocker.** Fetched substantial portions of two legitimate public-domain
+translations this session: J.B. Lightfoot's (via earlychristianwritings.com), covering the full
+Visions (1-4:3), all 12 Mandates, and Similitudes 1-6 (through real modern chapter ~62); and the
+Ante-Nicene Fathers translation by F. Crombie (via newadvent.org, revised/hosted by New Advent),
+covering Similitudes 1 through partway into Similitude 9 (through real modern chapter ~92 of the
+standard numbering). Between the two, nearly the entire book has been fetched in some form this
+session -- the remaining unfetched portion is roughly the second half of Similitude 9 (the mountain
+allegories, chapters ~93-110) and all of Similitude 10 (the closing chapters, ~111-114).
+
+**Not completed this session.** Two real translations were fetched in pieces (not one continuous
+source), and assembling them into a single coherent file risks either (a) mixing translation
+voices awkwardly within one book, or (b) needing one more full pass to fetch the remainder in a
+single consistent translation and discard the other. Given the size of what remains and the risk
+of introducing quality problems by rushing a mixed-source assembly, this was deliberately not
+force-completed in the same session as the other three Phase 3 items (Ascension of Isaiah, Rest of
+Baruch/Jeremiah) -- unlike those, this one has no decision-fork or missing-source blocker, it
+simply needs more transcription work than remained practical to do carefully in this sitting.
+
+**Recommended path for whoever picks this up:** standardize on ONE translation for the whole
+rebuild (Lightfoot is the more commonly cited scholarly standard and was already used for roughly
+the first half; the newadvent.org/Crombie ANF text is a reasonable fallback for cross-checking
+specific passages, e.g. resolving the Similitude 9 mountain-allegory chapters most efficiently
+matches its own chapter-by-chapter HTML structure). Fetch the remaining unfetched portion (second
+half of Similitude 9, all of Similitude 10) in the chosen single translation, then rebuild the
+whole file matching the standard modern 114-chapter structure (unlike the app's current
+7-per-section compression), following the same method used for Jubilees/Rest of Baruch (targeted
+raw-text insertion, that/the corruption sweep before insertion, node --check validation).
+
+No file changes made this session. This is the one Phase 3 item from today's tractable list that
+remains genuinely open and unstarted-as-a-rebuild (Fetha Nagast, Didaskalia, Miracles of Mary from
+the same tractable list also remain untouched, but Shepherd of Hermas is the only one where actual
+sourcing/investigation work was done and a confirmed large gap was found this session).
