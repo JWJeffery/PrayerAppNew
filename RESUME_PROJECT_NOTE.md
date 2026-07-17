@@ -83,6 +83,15 @@ always surface the exact terminal commands ready to copy-paste (`git am <patch>`
 main`), with no explanation or walkthrough needed alongside them. Josh has had to ask for this
 multiple times — don't make him ask again.
 
+**Standing rule, added 2026-07-17 after the Shepherd of Hermas session generated three separate
+patches for one piece of work (Josh called this out — rightly, it was ridiculous):** one logical
+unit of work is one patch, even when it spans content + governance-ledger + dashboard + resume-note
+updates. Only split into multiple patches/round-trips when there's a genuine decision point in the
+middle that actually needs Josh's input before the rest can proceed (e.g. the Lightfoot-vs-modern-
+chapter-numbering question that session) — never split just because the work happened to touch
+several files or came together in stages. Batch everything else into the single commit that
+follows the decision.
+
 **Standing methodology, distilled from the OT/NT remediation phase, still applies to any future
 character-for-character audit (including the ET/AR/SY/Odes backlog now underway):**
 - Confirm source edition identity on a landmark verse before trusting anything — don't assume a
@@ -460,3 +469,35 @@ completion.
 
 **Still open, same Phase 2 tractable list:** Fetha Nagast, Didaskalia, Miracles of Mary — sources
 already identified, none touched yet.
+
+## Session 2026-07-17 continued further -- Didascalia: full rebuild, CLOSED (GREEN)
+
+Second rebuild this session, same session as Shepherd of Hermas above. The app's Didascalia file
+turned out to be a different failure mode than Hermas: not a condensation of the real J.M. Harden
+1920 translation, but fabricated text with no wording overlap to the source at all. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s two Didascalia entries.
+
+**Rebuilt complete from Harden 1920** (public domain) as 43 chapters, 43 verses -- one verse per
+chapter, matching how the source site (bible.ertale.com) presents it: Harden's prose has no
+intrinsic verse divisions. Most of the content came from Josh pasting chapters directly from his
+browser after the fetch tool hit both a per-domain cap and the familiar archive.org truncation
+wall; a handful of chapters fetched successfully earlier were cross-checked word-for-word against
+Josh's later paste of the same chapters with no discrepancies, confirming the reconstruction was
+sound.
+
+**Process lesson from this session, worth internalizing for future rebuilds:** when the fetch tool
+is blocked and the person offers to paste source text directly, that's a fully legitimate and
+often more reliable path than fighting the tool -- verbatim browser copy-paste from the person is
+at least as trustworthy as a fetch, and sometimes the only way through. Don't treat "the fetch tool
+won't cooperate" as a reason to stall; ask for a paste and keep building.
+
+Also -- a process correction happened mid-session worth remembering: sending three separate patches
+for one piece of Hermas work (content, governance, resume note) was flagged as excessive. New
+standing rule added directly above in the "Standing rule, still in force" section of this file:
+one logical unit of work is one patch, batch everything into the commit that follows a real
+decision point, don't split just because work touched multiple files or came together in stages.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast (the identified free source has unusably
+bad OCR; needs a better source found before rebuild can start), Miracles of Mary (confirmed genuine
+paraphrase of real Budge content, not fabricated -- open question is edition completeness, 100
+miracles in the app vs. Budge's fuller 1933 "110 Miracles" compilation; untouched).

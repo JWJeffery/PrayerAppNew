@@ -3097,3 +3097,34 @@ Hermas precedent of keeping the source's own presentation rather than an externa
 **Still open, same Phase 2 tractable list:** Fetha Nagast (separately confirmed blocked this session
 — the identified free source, ethiopianorthodox.org's PDF, has unusably bad OCR; a better source
 still needs to be found), Miracles of Mary — untouched.
+
+## Didascalia remediation, session 2026-07-17 -- CLOSED, marked GREEN
+
+Follow-up to the "content gap confirmed, rebuild blocked on fetch access" entry above from earlier
+the same session. The fetch-access blocker did not clear, so the rebuild was completed primarily
+from Josh's own browser pastes (chapters 1 and 5 through 43) rather than from further fetch
+attempts. Chapters 2-4, fetched successfully earlier before the block hit, were cross-verified
+word-for-word against Josh's subsequent paste of the same chapters -- no discrepancies found,
+confirming that reconstruction was accurate.
+
+**Structure:** 43 chapters, 43 verses -- one verse per chapter. This follows the convention used by
+bible.ertale.com, the source site: Harden's discursive 1920 prose has no intrinsic verse divisions,
+so each chapter is rendered as a single verse. Consistent with the same principle established in the
+Hermas rebuild this session -- follow the source's own presentation, not an invented scheme.
+
+**Result:** 43 chapters, 43 verses, replacing a prior file that was outright fabricated (43 chapters,
+~87 verses of modern paraphrase, confirmed to have no wording overlap whatsoever with the real
+Harden translation once checked side-by-side). This is a different failure mode than Hermas
+(condensation of real content) -- worth remembering as a separate pattern to watch for across the
+rest of this backlog: some files may not be condensed originals but invented text with no source
+relationship at all.
+
+Marked GREEN, `SEED_VERSION` bumped. Committed in a single patch together with this ledger entry,
+the dashboard update, and the resume-note update -- per the standing rule added earlier this session
+after three separate patches were sent for one piece of Hermas work. One logical unit, one patch.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast (source quality problem, needs a better
+source than the badly-OCR'd ethiopianorthodox.org PDF), Miracles of Mary (confirmed genuine
+paraphrase of real Budge miracles, not fabricated -- open question is whether the app's 100 miracles
+match Budge's 1900 edition or are missing content from the fuller 1933 "110 Miracles" edition;
+untouched this session).
