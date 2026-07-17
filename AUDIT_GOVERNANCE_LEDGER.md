@@ -3175,3 +3175,29 @@ explicit plan is to proofread this file in a follow-up pass before treating it a
 English translation (Tzadua, 1968, edited Peter Strauss) has a real copyright question of its own
 (post-1928 foreign work, translator died 2003, current commercial reprint edition still in print)
 that was never resolved; untouched.
+
+## Miracles of Mary proofpass, session 2026-07-17 continued -- IMPROVED, STILL AMBER
+
+First proofreading pass on the 109-story rebuild above. Identified that the dominant source of noise
+in the raw OCR was a single systematic pattern: the original 1923/1933 print used small-caps
+typesetting for proper nouns and key terms (e.g. "MARY", "ROME"), which the OCR frequently misread as
+broken mixed-case ("mARY", "rOMé", "apBAs") rather than recognizing it as stylistic capitalization.
+Fixed this pattern-wide across the whole text, restored the formulaic drop-cap story openings
+("Now there was...") that OCR had truncated at nearly every story's first word, corrected several
+dozen specific name/word corruptions (Rome, Mary, Abbas, Abuna, Islam, Dexius, Egypt, Akhmim,
+"renowned" for "tenowned", etc.), and stripped garbled roman-numeral fragments that had leaked into
+titles.
+
+**Also attempted again to locate the missing 110th story** via the book's own "Illustrating Miracle
+No. X" plate captions, which give an independent numbering. Found that this numbering does NOT agree
+with the main-text sequence (e.g. captions label the Painter story as Miracle VII, but its actual
+position in the main narrative sequence is 9) -- most likely these plate captions were carried over
+from an earlier state of the book and were not corrected to match final numbering. This method does
+not resolve the gap and its result should not be trusted for renumbering purposes.
+
+**Still marked amber, deliberately.** This pass caught the majority of noise but is pattern-based, not
+a word-for-word read. Spot-checks after the pass still found isolated per-story issues: leftover typos
+in individual stories, at least one title still missing its leading article, and a small number of
+formulaic openings that don't match the common patterns and remain garbled. A genuine word-for-word
+proofread of all 109 stories (~40,000+ words) is still the outstanding work before this can be marked
+GREEN, along with locating the missing 110th story.
