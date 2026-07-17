@@ -427,3 +427,36 @@ tractable-leaning items (Guba'ekana, Malke'a Virgin Mary, 1-2 Meqabyan) need a q
 check before their own Phase 3 work. The "needs digging" and "likely needs Josh" tiers remain
 genuinely blocked on sourcing, not verification — see the Phase 2 registry file for full detail
 before spending time on those.
+
+## Session 2026-07-17 continued — Shepherd of Hermas: full rebuild from Lightfoot, CLOSED (GREEN)
+
+Picked up the Phase 3 tractable-list item flagged earlier this session as a real content gap, not
+just a sweep target: the app's Shepherd of Hermas file was a heavy condensation (27 "chapters,"
+~99 verses) of the real text, not the full Lightfoot translation it claimed to be. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s "Shepherd of Hermas remediation, session 2026-07-17" entry.
+
+**Rebuilt complete from J.B. Lightfoot's Apostolic Fathers translation** (public domain, via CCEL
+and earlychristianwritings.com, cross-checked against each other) — Vision 1-5, Mandate 1-12,
+Similitude 1-10, verbatim. **27 chapters, 722 verses**, up from 99 — confirms the earlier estimate
+that real Similitude 9 alone (196 verses) is longer than most other books in this backlog.
+
+**Schema decision, Josh's explicit call:** kept the app's existing per-section chapter structure
+(one chapter per Vision/Mandate/Similitude, matching how Lightfoot himself presents the text) —
+NOT the standard modern 114-chapter scholarly citation numbering that had been the earlier
+recommendation. Worth remembering as precedent for any future rebuild of a similarly-structured
+text: follow the translator's own presentation by default, don't impose an external modern
+citation convention, unless Josh says otherwise.
+
+Marked GREEN, `SEED_VERSION` bumped to `v121-2026-07-17-hermas-shepherd-complete`. Committed and
+pushed by Josh across two patches (`5123815`, `97a6659`).
+
+**Lesson on tooling, worth remembering:** both earlychristianwritings.com and CCEL hit an identical
+hard fetch-tool truncation wall partway through Similitude 6, regardless of how large a token
+limit was requested — this is the same class of wall documented for Psalms/Grail1963. When a
+fetch tool truncates a page at a similar point across multiple independent sources, that's a
+tool-side limit, not a source gap — don't conclude the source is incomplete. In this case Josh
+supplied the full text directly (pasted from his own browser), which is what actually unblocked
+completion.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast, Didaskalia, Miracles of Mary — sources
+already identified, none touched yet.
