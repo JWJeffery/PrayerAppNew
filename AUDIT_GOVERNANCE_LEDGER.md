@@ -3036,3 +3036,35 @@ No file changes made this session. This is the one Phase 3 item from today's tra
 remains genuinely open and unstarted-as-a-rebuild (Fetha Nagast, Didaskalia, Miracles of Mary from
 the same tractable list also remain untouched, but Shepherd of Hermas is the only one where actual
 sourcing/investigation work was done and a confirmed large gap was found this session).
+
+## Shepherd of Hermas remediation, session 2026-07-17 -- CLOSED, marked GREEN
+
+Picked up the prior session's "rebuild started but not finished" note above. Standardized on the
+single Lightfoot translation as recommended (via CCEL and earlychristianwritings.com, both public
+domain, cross-checked against each other), and transcribed the complete remaining text: full
+Visions 1-5, Mandates 1-12, and all of Similitude 6 onward through Similitude 10 (the prior session
+had fetched only through roughly the middle of Similitude 6).
+
+**Structure decision, confirmed with Josh, differs from the prior session's recommendation.** The
+prior note recommended rebuilding to the standard modern 114-chapter scholarly citation numbering.
+Instead, at Josh's explicit instruction ("keep it as Lightfoot presents it"), the file keeps the
+app's existing schema: one "chapter" per Vision/Mandate/Similitude (27 total, matching Lightfoot's
+own presentation of the text under those headings), with verses numbered as natural prose
+paragraphs within each section rather than the continuous modern chapter:verse numbering. Content
+is the complete, verbatim Lightfoot text either way -- this was purely an addressing-granularity
+question, not a content question. Worth remembering as precedent: this project follows the
+translator's own presentation structure by default, not an external modern citation convention,
+unless Josh says otherwise.
+
+**Result: 27 chapters, 722 verses** (up from the prior file's 27 chapters, 99 verses -- a ~7x
+content increase, confirming the prior session's estimate that real Similitude 9 alone, at 196
+verses, is longer than most other books in the broader-canon backlog). Committed and pushed by
+Josh (`5123815`).
+
+Marked GREEN on the dashboard; `SEED_VERSION` bumped. No corruption sweep was needed (fresh
+transcription from a single verified source, not an edit to existing corrupted content), but the
+text was spot-checked against both source sites at several points (opening of Vision 1, opening of
+Similitude 9, closing of Similitude 10) with no discrepancies found.
+
+**Still open from the same Phase 2 tractable list:** Fetha Nagast, Didaskalia, Miracles of Mary --
+untouched this session.
