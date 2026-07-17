@@ -2733,3 +2733,53 @@ project.
 
 **No changes made to the file this session.** Moving to a different Phase 3 tractable-list item
 rather than continuing to chase this book's exact source indefinitely in one sitting.
+
+## Phase 3, Rest of Baruch + Rest of Jeremiah -- serious content-completeness finding, not resolved this session
+
+Second Phase 3 item attempted this session. Fetched the real source (Robert Kraft's public-domain
+CATSS edition of the Paraleipomena Jeremiou, hosting both a Longer Version [Kraft/Purintun, from
+Greek, ~9 chapters/230+ verses] and a Shorter Version [Newby], at
+ccat.sas.upenn.edu/rak/publics/pseudepig/ParJer-Eng.html) and compared against the app's two files.
+
+**Serious finding:** the app's content is drastically shorter than the real text and reads like a
+modern condensed summary/retelling rather than a faithful ancient-text translation. Concretely:
+`restofjeremiahET.json` (5 chapters, 14 verses total) covers, in a few terse sentences, what the
+real text spends dozens of verses on -- extended dialogue between Jeremiah and God, Baruch's grief
+and lamentation, the letter exchanges carried by the eagle (a whole extended sequence -- the eagle
+speaking in a human voice, reviving a corpse to prove its divine sending, multiple full letters
+quoted -- reduced in the app to a single sentence: "they sent an eagle with a letter to Jeremiah in
+Babylon... the eagle flew to Babylon and sat upon a dead man... and the man arose"). `
+restofbaruchET.json` (8 chapters, 56 verses) likewise appears heavily compressed relative to the
+real text's 9-chapter, 230+ verse scope, though not checked verse-by-verse this session given time
+constraints.
+
+**Caveat, stated honestly:** the fetched source is the Greek-tradition Paralipomena Jeremiou
+(Kraft/Purintun translation), not a translation of the Ethiopic-specific recension this app claims
+to hold. The Ethiopian Orthodox Bible Project's own page notes the Ethiopic version is
+independently attributed (to Baruch rather than Jeremiah) and may differ in scope from the Greek
+tradition -- so the real Ethiopic "Rest of the Words of Baruch" text may legitimately be shorter or
+structured differently than the Greek ParJer. This is a genuine caveat, not a reason to dismiss the
+finding: even accounting for real recension differences, the app's content is so compressed (single
+paraphrase sentences standing in for what should be extended narrative dialogue, per the pattern
+found in every comparable text in this whole project) that it reads like a modern retelling rather
+than any faithful ancient translation, Ethiopic or otherwise.
+
+**Scale of what a real fix would require:** determining how the app's two-file split (`
+restofbaruchET.json` 8ch/56v + `restofjeremiahET.json` 5ch/14v = 13 chapters, 70 verses total)
+maps onto the unified 9-chapter/230+ verse structure of either fetched version; establishing
+whether a true Ethiopic-specific translation exists anywhere (not confirmed this session --
+Phase 2's triage flagged this book as "tractable" based on the Greek-tradition source's
+availability, without yet confirming Ethiopic-recension fidelity); and then either a full content
+rebuild or a confirmed finding that the app's current short form IS an accurate Ethiopic
+abridgment (unlikely given the pattern, but not yet ruled out). This is full-book-rebuild-scale
+work, comparable to Jubilees' missing-chapters remediation, not a quick verify-and-close task.
+
+**Not resolved this session.** Documented honestly rather than attempted in the same sitting as a
+second unresolved major finding, on top of Ascension of Isaiah's open provenance question above.
+No file changes made.
+
+**Session-level note:** both Phase 3 items attempted this session turned into open,
+larger-than-expected findings rather than quick clean closes. Worth flagging to Josh directly
+rather than continuing to open new fronts unprompted -- the "tractable" label from Phase 2 meant
+"a real source exists," not "verification will be quick." Real character-for-character audits of
+this backlog may all be closer in scale to Jubilees or 1 Enoch than to a single-session task.
