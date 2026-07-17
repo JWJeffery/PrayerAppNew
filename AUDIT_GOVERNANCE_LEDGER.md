@@ -3253,3 +3253,25 @@ carrying it as an open question.
 
 **Still amber:** the full word-for-word proofread of all 109 stories against the source remains the
 outstanding work before this can be marked GREEN.
+
+## Miracles of Mary, systematic OCR proofpass via aspell, session 2026-07-17 continued
+
+Installed aspell (English dictionary) in the working environment and ran it against all 109 stories
+to get a systematic, story-by-story inventory of likely misspellings, rather than continuing to spot-
+check individual stories by eye. This surfaced the remaining error population clearly: a long tail of
+the same r-misread-as-t OCR pattern already identified earlier (vety->very, curist->Christ, teceived
+->received, wete->were, het->her, and ~40 more distinct word-level corruptions), plus lowercase
+"jesus"/"jew" needing capitalization, plus leaked "(Illustrating Miracle No. X)" plate-caption
+fragments that had gotten mixed into a dozen+ story bodies. All fixed: 230 additional corrections
+applied across the corpus (190 word-level typos, 40 capitalization/caption-strip fixes).
+
+Re-running aspell after these fixes shows the remaining flagged-word population is now dominated by
+genuine foreign-language content (the French/Latin comparative-folklore appendices Budge included for
+several stories) and legitimate archaic English verb forms (shouldst, wishest, mayest, etc.) -- not
+further OCR corruption. This is a good signal that the systematic, mechanically-fixable error
+population has now been substantially cleared.
+
+Still amber: this is dictionary-assisted pattern correction, not a line-by-line read against the
+source. Isolated errors that happen to form valid English words (and therefore don't get flagged by a
+spellchecker) would not be caught by this method. A genuine word-for-word read remains the standard
+for GREEN status on this file.
