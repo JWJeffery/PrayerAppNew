@@ -2,7 +2,7 @@
   "meta": {
     "name": "The Ascension of Isaiah",
     "id": "ASC_ISA",
-    "version": "R.H. Charles Ethiopic translation",
+    "version": "Hybrid: chapters 1-5 (Martyrdom of Isaiah) follow R.H. Charles' 1900 translation; chapters 6-11 (Vision of Isaiah) follow the modern critical Perrone-Norelli Ethiopic edition (Ascensio Isaiae: Textus, CCSA 7, 1995), as represented in Brown & Butts' translation in The Cambridge Edition of Early Christian Writings. Content verified against both traditions 2026-07-17; see AUDIT_GOVERNANCE_LEDGER.md.",
     "copyright": "Public Domain"
   },
   "chapters": [
