@@ -2471,3 +2471,45 @@ scheme (verse-range-based file names, not one file per chapter), which would nee
 work and the same kind of cross-check chapter 8 required before trusting its verse numbering.
 Needs a confirmed working source before this phase can close. Jubilees is NOT added to
 `GREEN_SEED` -- correctly still open/amber, since it remains incomplete.
+
+## Jubilees remediation CLOSED, session 2026-07-16 continued -- chapters 26-30 inserted, book complete, marked GREEN
+
+Continuing directly from this session's earlier entry above (77 corruption fixes + chapters 6-9).
+Picked the remaining work back up per Josh's instruction to find a source and finish.
+
+**Chapter 26 fetch problem resolved.** The prior blocker was that `jub26.html` never appeared
+verbatim in any web search result, and the fetch tool requires a URL to have appeared in a prior
+search/fetch result before it can be fetched directly. Solution: fetched the book's own
+chapter-index page (`.../charles/jub_1.html`) first -- its own internal navigation contains
+direct links to every chapter 1-50. Once those links appeared in that page's fetched content,
+each chapter URL became fetchable directly. No new source was needed; the original
+messianiclearning.org mirror was fine all along, this was a tool-usage problem, not a
+sourcing problem.
+
+**Chapters 26, 27, 28, 29, 30 fetched and inserted (163 verses).** Jacob obtains the blessing of
+the firstborn (26); Rebecca sends Jacob to Mesopotamia, Jacob's dream at Bethel (27); Jacob's
+marriage to Leah and Rachel (28); Jacob's flight from Laban, reconciliation with Esau (29); Dinah,
+the slaughter of the Shechemites, laws against intermarriage (30). Each chapter individually swept
+for the that/the corruption bug before insertion -- none found, fresh uncorrupted source text, same
+as chapters 6-9. Inserted via the same targeted raw-text method (matching exact compact
+formatting, never full-file `json.dump()` re-serialization) at the chapter-25/chapter-31 boundary.
+Diff: 163 insertions, 0 deletions, nothing else touched. Commit `ee8d9e3`.
+
+**Book now complete: all 51 chapters (0-50), 1235 verses total.** Final full-corpus corruption
+re-sweep across the whole book (existing chapters + all 9 newly-inserted) found only the one
+previously-confirmed false positive (21:3, "the will of Him") -- zero remaining corruption anywhere
+in the text.
+
+**Marked GREEN on the dashboard.** Added "Book of Jubilees" to `GREEN_SEED` (matching the exact
+name used in `ET_BOOKS`) with a full `GREEN_NOTES` entry documenting the two-session remediation
+and its honest trust model: single-translation source (R.H. Charles 1917, same class as 1 Enoch),
+not cross-checked against multiple translations since only one exists in this app's data model for
+this book. `SEED_VERSION` bumped `v118` -> `v119-2026-07-16-jubilees-complete`. Validated: extracted
+the dashboard's inline `<script>` block and ran `node --check` against it directly (`node --check`
+cannot run against a raw `.html` file). Commit `14ac6f5`.
+
+**This closes the Jubilees line item entirely.** The Phase 0 ET-section canonicity survey write-up
+from the prior session (32 texts categorized) remains separately open -- see the previous ledger
+entry and `RESUME_PROJECT_NOTE.md` for detail. Next work in the ET-AR-SY/Odes phase per the agreed
+sequencing plan: Phase 1 cheap mechanical sweeps (structural completeness + the that/the regex,
+no sourcing needed) across the remaining ~30 texts in the backlog.

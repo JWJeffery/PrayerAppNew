@@ -2582,3 +2582,39 @@ separately now that the "fold together" moment has already passed once.
 **Dashboard/GREEN_SEED:** correctly NOT touched — Jubilees remains incomplete (missing chapters
 26-30), so it should not be marked green yet. No SEED_VERSION bump needed for this session's
 work.
+
+## Session 2026-07-16 continued -- Jubilees CLOSED: chapters 26-30 inserted, book complete, marked GREEN
+
+Picked back up immediately after the prior note in this file (77 fixes + chapters 6-9,
+committed as `66b4428`). Josh's instruction: find a working source for chapters 26-30 and finish.
+
+**The chapter-26 fetch blocker from the last note was a tool-usage problem, not a sourcing
+problem.** Solution: fetch the book's own chapter-index page
+(`messianiclearning.org/commentary/apocrypha/jubilees/charles/jub_1.html`) first -- its internal
+navigation links to every chapter 1-50 directly. Once those links appear in a fetched page's
+content, each chapter becomes fetchable on its own. No new/different source was ever needed.
+**Lesson for any future "can't fetch this specific page" situation with this fetch tool:** try
+fetching the parent index/table-of-contents page first -- its own links often unlock the pages
+that wouldn't fetch directly via search.
+
+**Chapters 26-30 fetched, swept clean, inserted (163 verses).** Same method as chapters 6-9:
+targeted raw-text insertion matching exact compact formatting, never full-file `json.dump()`.
+Committed as `ee8d9e3`.
+
+**Jubilees is now COMPLETE: 51 chapters (0-50), 1235 verses, zero known open defects.** Final
+full-book corruption re-sweep after all insertions found only the one previously-confirmed false
+positive (21:3, "the will of Him"). Marked GREEN on the dashboard -- added to `GREEN_SEED`, full
+`GREEN_NOTES` entry written, `SEED_VERSION` bumped to `v119-2026-07-16-jubilees-complete`.
+Committed as `14ac6f5`. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s "Jubilees remediation CLOSED"
+entry.
+
+**Still genuinely open, not addressed this session:** the Phase 0 ET-section canonicity survey
+write-up (32 texts categorized across two sessions ago) has still not been folded into any commit.
+Worth deciding next session how to handle this -- it's been carried forward across three sessions
+now without landing anywhere.
+
+**Next session, per the agreed ET-AR-SY/Odes sequencing plan:** Phase 1 -- cheap mechanical sweeps
+(structural completeness check + the that/the corruption regex, no sourcing/fetching needed) across
+the remaining ~30 texts in the ET/AR/SY/Odes backlog. This phase doesn't require finding sources
+or doing content verification yet, just identifying which of the remaining texts have the same
+"the" corruption pattern or obvious structural gaps, to prioritize which need real audits first.
