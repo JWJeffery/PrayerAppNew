@@ -2783,3 +2783,74 @@ larger-than-expected findings rather than quick clean closes. Worth flagging to 
 rather than continuing to open new fronts unprompted -- the "tractable" label from Phase 2 meant
 "a real source exists," not "verification will be quick." Real character-for-character audits of
 this backlog may all be closer in scale to Jubilees or 1 Enoch than to a single-session task.
+
+## Phase 3, Rest of Baruch/Jeremiah continued -- major structural finding, needs Josh's decision before proceeding
+
+Continuing the investigation from the entry immediately above. Before attempting a rebuild, checked
+what the real Ethiopic-canon structure of this text actually is, per Cowley 1974 (the authoritative
+source this whole project already treats as the reference for Ethiopian canon structure) and the
+Ethiopian Orthodox Bible Project's own detailed breakdown.
+
+**The real canonical structure is NOT two separate texts.** Per Cowley 1974 directly: "the accepted
+text of Jeremiah 1-52 is followed by Baruch (5 chapters)... and Säqoqawä Eremyas. The latter is made
+up of Lamentations (5 chapters), the epistle to the captives (Lam. 6), the prophecy against Pashhur
+(Lam. 7 v.1-5) and 'the rest of the words of Baruch' (4 Baruch, Lam. 7 v.6-11 v.63)." This is ONE
+continuous work, versified as a direct extension of Lamentations chapters 6-11, not two separate
+canon entries. The Ethiopian Orthodox Bible Project's own detailed structural breakdown (Nov 2025)
+confirms this exactly:
+- Chapters 1-5: Lamentations 1-5 (matches the standard Lamentations text)
+- Chapter 6: the Epistle of Jeremiah (= Baruch 6 in Western numbering)
+- Chapter 7:1-5: the Prophecy of Jeremiah against Pashhur (Dillmann's Latin translation; this
+  passage is NOT independently attested anywhere outside the Ethiopic and Latin witnesses of this
+  specific work)
+- Chapters 7:6-11:63: the 4 Baruch / Paralipomena of Jeremiah content
+
+**This means the app's current two-file split (`restofbaruchET.json`, `restofjeremiahET.json`)
+does not obviously correspond to the real Ethiopic canonical structure at all**, which is one
+continuous 11-chapter work, not two independently-numbered texts.
+
+**No free, complete, structure-matching English translation exists.** The Ethiopian Orthodox Bible
+Project states this outright: the original Dillmann 1866 Geʽez/Latin edition "is not known to exist
+in any complete English translation." Their own solution (announced Nov 2025) is a modern
+scholarly SYNTHESIS they assembled themselves -- not a found primary translation -- combining the
+Douay-Rheims Bible for the Lamentations/Epistle portions, Dillmann's Latin (with an accompanying
+public-domain English rendering) for the Prophecy against Pashhur, and James Charlesworth's 4 Baruch
+translation (harmonized to a modern versification scheme) for the final section. This synthesis is
+sold as a specific Amazon ebook/paperback, not freely available.
+
+**Correction to this session's own Phase 2 triage:** the Phase 2 registry entry categorized "Rest
+of Baruch + Rest of Jeremiah" as jointly TRACTABLE based on the free availability of a
+Greek-tradition Paralipomena Jeremiou translation. That was an incomplete assessment -- it did not
+account for the fact that the real Ethiopic-canon text is a differently-structured, differently-
+versified composite work for which no free complete translation exists. The free Kraft/Purintun
+ParJer translation only covers the final section (roughly corresponding to 7:6-11:63) and does so
+under different, non-Ethiopic versification.
+
+**This is now a decision point, not a sourcing or verification task.** Two paths forward, neither
+completable unilaterally this session:
+1. **Acquire the purpose-built synthesis** (the Ethiopian Orthodox Bible Project's own Amazon
+   title, "The Ethiopic 'Rest of The Words of Baruch'") and use it as the primary source -- the
+   only identified text that actually attempts to match the real Ethiopic structure, though it is
+   itself a modern synthesis rather than a direct primary-source translation, and is purchase-only.
+2. **Assemble an equivalent synthesis independently**, using the same freely-available component
+   parts this project used (Douay-Rheims Bible for Lamentations 1-5 and the Epistle of Jeremiah;
+   Dillmann's Latin Prophecy against Pashhur with its public-domain English rendering, if that
+   specific rendering can be located; the free Kraft/Purintun ParJer translation, remapped onto
+   the 7:6-11:63 versification scheme) -- essentially replicating the same reconstruction method
+   without purchasing their specific edition. This is real, substantial editorial work (harmonizing
+   an independent translation onto someone else's versification scheme), not simple fetch-and-
+   insert, and carries its own risk of introducing errors in the remapping.
+
+Also unresolved: whether the app's existing two-file architecture (`restofbaruchET.json` /
+`restofjeremiahET.json`) should be restructured into one unified 11-chapter file to match the real
+canonical structure, or kept as two files with each remapped to hold its correct portion of the
+unified structure. This touches the app's book registry (`reference-parser.js`,
+`audit-ledger.html`'s `ET_BOOKS` list) and should not be changed without an explicit decision.
+
+**Recommendation:** bring this to Josh directly rather than choosing unilaterally. Both path options
+above are viable; the choice affects cost (option 1) versus effort and independent-error-risk
+(option 2), and the structural question (one file vs. two) affects the app's book architecture
+beyond just this book's content.
+
+No file changes made this session. Both Ascension of Isaiah's provenance question and this
+structural question remain open, unresolved Phase 3 findings.
