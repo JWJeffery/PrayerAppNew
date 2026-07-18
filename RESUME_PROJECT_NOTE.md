@@ -614,3 +614,54 @@ on how to proceed: (a) start a fresh Guidi-based translation, (b) review/replace
 chapters given the rights concern, or (c) shelve this book entirely. Do not use
 `ethiopianorthodox.org/biography/01thelawofkings.pdf` or any other copy of the Tzadua/Strauss text as a
 source going forward.
+
+## Session 2026-07-18 — Fetha Nagast: copyright conclusion re-verified (holds), Guidi source CONFIRMED ACCESSIBLE
+
+Josh pushed back hard on the prior session's copyright conclusion and the "no free English translation"
+framing, and was right to demand it actually be re-checked rather than carried forward on trust — this
+project's own governance rule is never to treat a prior claim as ground truth. Re-verified from scratch
+via fresh web research, not by re-reading the prior session's notes.
+
+**Copyright conclusion holds, but is now actually confirmed rather than asserted.** Every independent
+source checked (Wikipedia, WorldCat, Stanford/Berkeley law library catalog records, the book's own
+front matter, multiple academic citations) agrees: Tzadua/Strauss (1968, Faculty of Law, Haile
+Sellassie I University) is the only complete English translation ever made. All later printings —
+a 2002 Frontline Books reprint and the 2009 Carolina Academic Press second printing — are the same
+translation. The 2009 printing's front matter carries an explicit, current copyright notice
+("Copyright (c) 2009 by the Faculty of Law, Addis Ababa University. All rights reserved"), and it is
+still commercially sold. This is a real, actively-asserted right, not a stale/ambiguous case.
+
+**But the canonicity question was never actually in dispute — worth being explicit about that.** The
+Phase 0 ET canonicity survey already categorized Fetha Nagast as belonging in the corpus (broader-canon-
+adjacent Church Order text, same category as Kebra Nagast, historically Ethiopia's constitution). It
+was never flagged for removal. The open problem has only ever been sourcing a rebuild, not whether the
+book stays.
+
+**Real, concrete good news: Guidi's 1897/1899 Italian edition is confirmed freely and fully accessible**
+— not locked behind an access-control wall the way Miracles of Mary's source was. Both volumes are on
+HathiTrust, full public view, digitized from the University of Michigan copy:
+- Vol. 1 (1897): https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546785
+- Vol. 2 (1899): https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546793
+
+Well past any copyright question at the source. Guidi's translation is independently described in the
+scholarship as the most authoritative edition to date and is the edition Tzadua's own translation was
+principally based on. **Honest caveat carried forward:** these are page images, not machine-readable
+text — OCR/transcription will be needed before translation work can start, the same shape of labor gap
+that Miracles of Mary had. Not yet checked whether HathiTrust exposes a plain-text layer for this item.
+
+**Explicitly deferred, Josh's call: Fetha Nagast work — OCR, translation, everything — is on hold until
+after the app ships.** Do not pick this up proactively in a future session; wait for Josh to reopen it.
+When resumed: OCR/transcribe Guidi's Italian from the two HathiTrust volumes above, then translate
+chapter by chapter into English, flagging every passage with real uncertainty in ecclesiastical or
+Ethiopian civil/criminal legal terminology rather than smoothing over it (same "honest empty over
+fabricated content" standard as the Pashhur gap). Stay amber until a second reader who can check
+against the Italian (or ideally the Ge'ez) has reviewed it — this is not a book Claude can self-certify
+the way a straight transcription-and-compare job can be.
+
+**Governance lesson, added as a standing rule below given how this session went:** a "no free source
+exists" or "this is copyrighted" conclusion is exactly the kind of claim this project's core rule
+already covers — never trust it just because a prior session (including this Claude) already reached
+it. When Josh pushes back on a conclusion like this, the right response is to re-verify from primary
+research immediately, not to defend the prior conclusion or hedge with lawyerly caveats before doing
+the actual work of checking. Treat "I already looked into this" as a reason to look harder, not a
+reason to hold the line.
