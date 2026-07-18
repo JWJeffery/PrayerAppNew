@@ -3386,3 +3386,35 @@ Scope note: this audit covered the Biblical Corpus section's status-matching log
 tonight's work was concentrated) and general dashboard rendering/data-integrity, not a re-verification
 of every claim across all seven sections (Daily Office, Ethiopian, Church of the East, Byzantine, Book
 of Needs, Breviary) -- that would be its own multi-session undertaking.
+
+## Miracles of Mary, real character-for-character audit begun, session 2026-07-17 continued
+
+Correction of standard, per Josh's explicit direction: the earlier "amber pending a human word-for-
+word read" framing was wrong -- every other book in this corpus was certified by Claude doing the
+character-for-character check directly, not by deferring to a human proofreader. That is the actual,
+consistent standard, and it had not yet been applied here despite extensive pattern-based and
+page-scan-assisted correction.
+
+Begun properly: working through all 110 stories in page order, rendering each story's actual source
+pages fresh and comparing word-for-word against the stored text, fixing whatever doesn't match --
+the same method already proven on the worst-affected stories earlier tonight, now applied to every
+story rather than only the ones an automated heuristic happened to flag.
+
+**Stories 1-10 completed this pass.** Real, substantive errors found and fixed in the majority of
+them -- this confirms the automated sweeps used earlier tonight (hyphen-break detection, duplicate-
+word detection, plate-caption pattern matching) caught only some failure modes, not everything:
+- Story 1: entire scholarly Latin appendix was still attached (not trimmed per the established policy);
+  fixed.
+- Story 2: reconstructed and confirmed clean.
+- Story 3: minor residual artifacts (stray underscores, a typo) cleaned.
+- Story 5: leaked running-header text mid-narrative ("...he fell Abbas, Bishop of Rome down on his
+  face..."), a mangled poem line, and the full scholarly appendix still attached -- all fixed.
+- Story 6: title missing its leading "The"; a scrambled sentence ("made When Abba him a deacon...");
+  a badly scrambled sentence in the picture's speech ("Thou art a man ing and hast cut off...");
+  leaked running-header text mid-narrative -- all fixed.
+- Story 7: leaked title mid-narrative; untrimmed scholarly appendix -- fixed.
+- Story 10: leaked page-break/header fragment mid-narrative; untrimmed scholarly appendix -- fixed.
+- Stories 4, 8, 9: confirmed already accurate from earlier tonight's work, no changes needed.
+
+Continuing through the rest of the book in the same manner. This is the real remaining work on this
+file -- amber stays amber until all 110 are done this way.
