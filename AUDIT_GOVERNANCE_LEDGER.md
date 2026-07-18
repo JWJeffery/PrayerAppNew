@@ -3360,3 +3360,29 @@ story titles anywhere in the corpus.
 
 Still amber -- extensive as this remediation was, it remains pattern-based and page-image-assisted
 correction, not a human word-for-word read against the source, which is still the bar for GREEN.
+
+## Dashboard declutter and audit, session 2026-07-17 continued
+
+Josh asked for two things: get the extensive commentary out of the visible dashboard (it had grown
+cluttered over many sessions), and audit the dashboard for accuracy.
+
+**Declutter:** rather than rewrite or relocate the many carefully-recorded audit paragraphs (real risk
+of losing or misstating detail in the process), changed the *rendering* instead: `.section-note`
+paragraphs and office-table `.note-cell` entries are now visually truncated by default (CSS line-clamp)
+and expand on click, matching the convention the bible-book grid already used (hover tooltip). No
+audit content was deleted or moved -- it's all still there, just not dumped onto the page by default
+anymore. Subtitle updated to explain the convention.
+
+**Audit finding, real bug:** `GREEN_SEED` and `GREEN_NOTES` used the spelling "Didascalia" (with a c),
+added earlier this session, but the master `ET_BOOKS` list -- and the actual data file,
+`data/bible/ET/didaskaliaET.json` -- both use "Didaskalia" (with a k). Since the dashboard matches
+status purely by exact string equality, this meant Didaskalia's full rebuild and GREEN certification
+earlier tonight never actually applied -- the book was silently still showing amber (the default) this
+whole time. Fixed by correcting the spelling in both places. Confirmed via a systematic check (every
+`GREEN_SEED`/`RED_SEED` entry cross-referenced against the six master book-list arrays) that no other
+entry has this problem. `SEED_VERSION` bumped so cached client state picks up the corrected status.
+
+Scope note: this audit covered the Biblical Corpus section's status-matching logic specifically (where
+tonight's work was concentrated) and general dashboard rendering/data-integrity, not a re-verification
+of every claim across all seven sections (Daily Office, Ethiopian, Church of the East, Byzantine, Book
+of Needs, Breviary) -- that would be its own multi-session undertaking.

@@ -40,7 +40,12 @@
     margin: 40px 0 4px; color: var(--ink);
     border-bottom: 1px solid var(--rule); padding-bottom: 6px;
   }
-  .section-note{ font-size:12.5px; color:var(--ink-soft); margin: 0 0 14px; font-style:italic;}
+  .section-note{
+    font-size:12.5px; color:var(--ink-soft); margin: 0 0 6px; font-style:italic;
+    cursor:pointer;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .section-note.expanded{ display:block; -webkit-line-clamp:unset; overflow:visible; margin-bottom:14px; }
   table{ width:100%; border-collapse: collapse; font-size: 14px; margin-bottom: 6px;}
   td, th{ padding: 6px 8px; border-bottom: 1px solid var(--vellum-dark); vertical-align: top;}
   th{ text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); font-weight:normal;}
@@ -59,7 +64,12 @@
   .book-cell{ display:flex; flex-direction:column; align-items:center; gap:3px; width:36px; }
   .book-code{ font-family:'Courier New',monospace; font-size:10.5px; letter-spacing:0.02em; }
   .book-code.red{ color:var(--red); } .book-code.green{ color:var(--green); } .book-code.amber{ color:var(--amber); }
-  .note-cell{ font-size:12px; color:var(--ink-soft); font-style:italic; }
+  .note-cell{
+    font-size:12px; color:var(--ink-soft); font-style:italic; cursor:pointer;
+    max-width:340px;
+    display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .note-cell.expanded{ display:block; -webkit-line-clamp:unset; overflow:visible; max-width:none; white-space:normal; }
   .group-header{ font-weight:bold; font-size:13px; margin-top:18px; letter-spacing:0.03em; }
   .indent{ padding-left: 22px !important; }
   .counts{ font-family:'Courier New',monospace; font-size:12px; color:var(--ink-soft); margin-top:6px; }
@@ -72,7 +82,7 @@
 <body>
 <div class="wrap">
   <h1>Universal Office — Audit Ledger</h1>
-  <p class="subtitle">Every yellow is a debt, not a rest. Click a stamp to cycle its status.</p>
+  <p class="subtitle">Every yellow is a debt, not a rest. Click a stamp to cycle its status. Italic notes are truncated — click a note to expand it.</p>
   <div class="legend">
     <span><span class="dot green"></span> Certified accurate</span>
     <span><span class="dot red"></span> Known bad</span>
@@ -160,14 +170,14 @@ const SY_BOOKS = ["Letter of Baruch (SY)","2 Baruch (CE)"];
 const ODES_BOOKS = ["Odes of Solomon (SY)"];
 
 const RED_SEED = new Set(["1 Clement (ET)","3 Clement (ET)","7 Clement (ET)"]);
-const GREEN_SEED = new Set(["Wisdom","Sirach","Baruch","Odes of Solomon (SY)","Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Tobit","Judith","Esther","Esther (Greek)","1 Maccabees","2 Maccabees","Job","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Jeremiah","Ezekiel","Daniel","Daniel (Greek)","Lamentations","Letter of Jeremiah","Prayer of Manasseh","1 Esdras","2 Esdras","4 Maccabees","3 Maccabees","1 Enoch","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation","Psalms","3 Corinthians (AR)","Book of Jubilees","Ascension of Isaiah","Hermas, The Shepherd","Didascalia"]);
+const GREEN_SEED = new Set(["Wisdom","Sirach","Baruch","Odes of Solomon (SY)","Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Tobit","Judith","Esther","Esther (Greek)","1 Maccabees","2 Maccabees","Job","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Jeremiah","Ezekiel","Daniel","Daniel (Greek)","Lamentations","Letter of Jeremiah","Prayer of Manasseh","1 Esdras","2 Esdras","4 Maccabees","3 Maccabees","1 Enoch","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation","Psalms","3 Corinthians (AR)","Book of Jubilees","Ascension of Isaiah","Hermas, The Shepherd","Didaskalia"]);
 const RED_NOTES = {
   "1 Clement (ET)":"See 3/7 Clement (ET) note -- part of the same file family under active provenance question, not itself confirmed corrupted, but grouped red pending the Clement-series provenance question (Installment 14 §7): is this an authentic Ethiopic Qalēmentos tradition or content composed for this project? Not asserted as fabrication, but not independently source-verifiable from content alone either.",
   "3 Clement (ET)":"NEW FINDING, Installment 14 (2026-07-10), independently spot-verified 2026-07-11 by direct grep: chapter 2 verse 4 has a Korean character (그, \"that\"/\"the\") embedded mid-sentence in otherwise-English prose (\"...From 그 day, he shall be the father of the orphans...\"), confirmed present verbatim in data/bible/ET/3clementET.json. Reads as a text-generation artifact. Isolated to this one verse plus 7 Clement 3:1 (only 2 hits across a 46-file scan) -- not systemic, but real, and raises an open provenance question about the whole Clement/Qalēmentos series (see Installment 14 §7) that hasn't been answered.",
   "7 Clement (ET)":"NEW FINDING, Installment 14 (2026-07-10), independently spot-verified 2026-07-11 by direct grep: chapter 3 verse 1 has the same Korean character (그) embedded mid-sentence (\"...In 그 day, the saints shall be clothed...\"), confirmed present verbatim in data/bible/ET/7clementET.json. See 3 Clement (ET)'s note for full detail -- same artifact, same open provenance question."
 };
 const GREEN_NOTES = {
-  "Didascalia":"FULLY CLEAN as of 2026-07-17 -- full rebuild from J.M. Harden's 1920 translation (public domain, via bible.ertale.com and archive.org, cross-checked against Josh's own browser paste for exactness), replacing a fabricated prior file (43 chapters, ~87 verses of modern paraphrase with no wording overlap to the real Harden text at all). Rebuilt as 43 chapters, 43 verses -- one verse per chapter, following the source site's own convention that Harden's discursive prose has no intrinsic verse divisions. Content was primarily transcribed from Josh's direct browser pastes (chapters 1, 5-43) rather than fetched, since the fetch tool hit both a per-domain cap on bible.ertale.com and the familiar hard truncation wall on archive.org's raw OCR; chapters 2-4 were reconstructed from an earlier successful fetch and cross-verified word-for-word against Josh's subsequent paste of the same chapters, with no discrepancies found.",
+  "Didaskalia":"FULLY CLEAN as of 2026-07-17 -- full rebuild from J.M. Harden's 1920 translation (public domain, via bible.ertale.com and archive.org, cross-checked against Josh's own browser paste for exactness), replacing a fabricated prior file (43 chapters, ~87 verses of modern paraphrase with no wording overlap to the real Harden text at all). Rebuilt as 43 chapters, 43 verses -- one verse per chapter, following the source site's own convention that Harden's discursive prose has no intrinsic verse divisions. Content was primarily transcribed from Josh's direct browser pastes (chapters 1, 5-43) rather than fetched, since the fetch tool hit both a per-domain cap on bible.ertale.com and the familiar hard truncation wall on archive.org's raw OCR; chapters 2-4 were reconstructed from an earlier successful fetch and cross-verified word-for-word against Josh's subsequent paste of the same chapters, with no discrepancies found.",
   "Hermas, The Shepherd":"FULLY CLEAN as of 2026-07-17 -- full rebuild from J.B. Lightfoot's Apostolic Fathers translation (public domain, via CCEL and earlychristianwritings.com), replacing a drastically condensed prior file (27 chapters, 99 verses -- roughly one paragraph per Vision/Mandate/Similitude) with the complete text: 27 chapters, 722 verses (Vision 1-5, Mandate 1-12, Similitude 1-10). At Josh's explicit instruction, kept the app's existing per-section chapter schema (one chapter per Vision/Mandate/Similitude, matching Lightfoot's own presentation) rather than the standard modern 114-chapter scholarly citation numbering a prior session had recommended -- content is complete and verbatim either way, this was an addressing-granularity choice only. Fresh transcription from a single verified source rather than an edit to existing corrupted content, so no that/the corruption sweep was needed; spot-checked against both source sites at the opening of Vision 1, the opening of Similitude 9, and the close of Similitude 10, with no discrepancies found.",
   "Ascension of Isaiah":"FULLY CLEAN as of 2026-07-17 -- content-completeness and provenance both resolved this session after real investigation. This book turned out to be a hybrid, not a single-source translation: chapters 1-5 (Martyrdom of Isaiah) closely track R.H. Charles' 1900 translation (near-verbatim in places, e.g. chapter 1); chapters 6-11 (Vision of Isaiah) closely track the modern critical Perrone-Norelli Ethiopic edition (Ascensio Isaiae: Textus, CCSA 7, Brepols 1995) as represented in Brown & Butts' translation in The Cambridge Edition of Early Christian Writings -- confirmed via exact verse-by-verse content correspondence (e.g. 9:1's 'angels without number' is a verbatim match to Brown & Butts' 9:6, versus 'angels innumerable' in both fetched Charles 1900 sources). The app's own wording is an archaizing paraphrase of each tradition (thou/thee register) rather than a verbatim copy of either named publication -- meta.version corrected to describe the real hybrid sourcing rather than crediting Charles alone. The original concern (140 app verses vs. ~296 in an online Charles mirror) is fully explained by this versification difference between the two traditions, not by missing content -- five separate chapters (1, 3, 4, 9, 10) were individually spot-checked against real sources and no gap was found anywhere.",
   "Book of Jubilees":"FULLY CLEAN as of 2026-07-16 -- closes out the last open item in the ET-AR-SY/Odes phase's Jubilees audit. Single-translation broader-canon text (R.H. Charles 1917, same trust model as 1 Enoch), sourced from messianiclearning.org's mirror -- not cross-checked against multiple translations the way OT/NT protocanon books are, since only the one translation exists in this app's data model for this book. Two-part remediation across two sessions (2026-07-16): (1) the known that/the corruption bug (same class first identified and fixed in 1 Enoch) swept and fixed across all pre-existing chapters -- 77 genuine instances found and individually verified in context, not fixed on regex match alone; two matches ('the will of Him' at 21:3, 'the rule of the sun' at 4:21) confirmed as legitimate English and deliberately left unchanged. (2) All 9 missing chapters (6-9, 26-30 -- 285 verses total) fetched and inserted, closing every structural gap; the book previously jumped 5-\u003e10-\u003e25-\u003e31-\u003e50. Chapter 8's source-page verse-numbering defect (duplicate '17', missing '16') caught and corrected by cross-checking a second independent source (yahwehswordarchives.org) before insertion -- a source-side HTML labeling error, not a real content gap. All new chapters individually swept clean before insertion; a final full-book re-sweep after all insertions confirmed only the one known false positive (21:3) remains anywhere in the text. 51 chapters (0-50), 1235 verses total, all present and accounted for.",
@@ -574,6 +584,8 @@ function renderOfficeTable(container, indent, items){
     const tdNote = document.createElement('td');
     tdNote.className = 'note-cell';
     tdNote.textContent = item.note;
+    tdNote.title = 'Click to expand/collapse';
+    tdNote.addEventListener('click', () => tdNote.classList.toggle('expanded'));
     tr.appendChild(tdStamp); tr.appendChild(tdName); tr.appendChild(tdNote);
     table.appendChild(tr);
   });
@@ -581,7 +593,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v122-2026-07-17-didascalia-complete';
+const SEED_VERSION = 'v123-2026-07-17-dashboard-declutter-and-audit';
 
 async function checkSeedVersion(){
   let storedValue = null;
@@ -672,6 +684,10 @@ document.getElementById('resetAll').onclick = async () => {
   }
   location.reload();
 };
+
+document.querySelectorAll('.section-note').forEach(el => {
+  el.addEventListener('click', () => el.classList.toggle('expanded'));
+});
 
 init();
 </script>
