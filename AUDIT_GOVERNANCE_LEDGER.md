@@ -3418,3 +3418,20 @@ word detection, plate-caption pattern matching) caught only some failure modes, 
 
 Continuing through the rest of the book in the same manner. This is the real remaining work on this
 file -- amber stays amber until all 110 are done this way.
+
+## Miracles of Mary, character-for-character audit, stories 14-35, session 2026-07-17 continued
+
+Continuing the real page-by-page audit through stories 14-35 (1-13 done in the prior entry). Every
+story checked required at least minor fixes; most required real ones. Recurring failure modes,
+confirmed now across 35 stories: leaked running-header text ("Miracles of the Virgin Mary") interrupting
+sentences mid-narrative -- by far the most common issue, present in the large majority of stories
+checked so far; garbled title-line prefixes from OCR-mangled roman numerals (14, 16, 18, 22, 31 all had
+this); genuinely scrambled sentence-level word order requiring full reconstruction from the fresh scan
+rather than a patch (5, 6, 18, 22, 27, 28, 31); untrimmed scholarly Latin/French appendices per the
+established policy (11, 16, 17, 27); one instance of a scholarly note in English rather than Latin that
+should be dropped for the same reason (19); missing title words and stray punctuation (6, 20, 24).
+
+Stories 4, 8, 9, 15, 26, 29, 30, 32, 33, 34, 35 were already correct from earlier work tonight and
+required no further changes on this pass.
+
+Continuing sequentially through the remainder of the book.
