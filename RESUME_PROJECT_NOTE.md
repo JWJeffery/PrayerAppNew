@@ -665,3 +665,28 @@ it. When Josh pushes back on a conclusion like this, the right response is to re
 research immediately, not to defend the prior conclusion or hedge with lawyerly caveats before doing
 the actual work of checking. Treat "I already looked into this" as a reason to look harder, not a
 reason to hold the line.
+
+## Session 2026-07-18 continued -- SY corpus audit: real, substantial defects found in 2 Baruch / Letter of Baruch
+
+Audited the three SY-tagged files: `2baruchSY.json`, `letterofbaruchSY.json`, and `odesofsolomonSY.json`
+(already GREEN from a prior session, not re-audited, confirmed still present).
+
+**Real finding, not yet remediated:** `2baruchSY.json` has ~1,939 words of content confirmed missing
+(vs. the Charles/APOT 1913 translation, verified via Wesley Center Online's transcription) across a
+dozen-plus chapters, plus a confirmed real duplication defect (ch.12 vv.6-7 verbatim duplicate ch.13
+vv.1-2), plus ~447 words of unexplained extra content, plus ~373 words of direct wording mismatches
+whose cause (paraphrase vs. 1896-vs-1913 Charles edition mixing) isn't yet resolved. `letterofbaruchSY.
+json` inherits the same defects one-for-one in its chapters 4-5 (= 2 Baruch chs. 81-82), since it was
+built by copying that range verbatim. Full detail, including the discovery that the Wesley Center
+source page itself is genuinely incomplete (stops mid-ch.85, not a fetch-tool wall), is in
+`AUDIT_GOVERNANCE_LEDGER.md`'s "Syriac (SY) corpus audit, session 2026-07-18" entry.
+
+**Assessment: full-rebuild-scale, same category as Hermas/Didascalia's earlier discoveries.** Not
+fixed this session -- flagged to Josh for a direction before starting reconstruction, per the project's
+established pattern for findings at this scale.
+
+**Next session, if resumed:** verify chapters 86-87 against a primary source (yahwehswordarchives.org
+confirmed the content is real/substantive but not yet checked character-for-character); resolve the
+1896-vs-1913 Charles wording question (archive.org has the 1896 `theapocalypseofb00charuoft` scan for
+comparison); triage the ~447 "extra" words individually; then rebuild both files from a confirmed-
+complete source.

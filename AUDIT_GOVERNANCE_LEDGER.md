@@ -3515,3 +3515,69 @@ existing shipped content may itself warrant review. Awaiting Josh's direction: s
 review/replace the existing chapters, or shelve the book. `ethiopianorthodox.org`'s PDF (or any other
 copy of the Tzadua/Strauss text) should not be used as a source going forward regardless of what
 direction is chosen.
+
+## Syriac (SY) corpus audit, session 2026-07-18 -- real, substantial defects found in 2 Baruch and Letter of Baruch
+
+Full audit of the three SY-tagged files in the live corpus: `data/bible/SY/2baruchSY.json`,
+`data/bible/SY/letterofbaruchSY.json`, and `data/bible/ODES/odesofsolomonSY.json` (filed under ODES
+directory but SY tradition). Odes of Solomon was **not** re-audited this session -- it was already
+closed GREEN in a prior session (42 odes, 522 verses, fully verified); this session only confirmed the
+file is still present and intact.
+
+**Methodology.** Both 2 Baruch and Letter of Baruch carry `meta.canonicalStatus`/`contentTrustNote`
+fields inherited from the 2026-07-14 canonicity survey flagging their wording as "not yet confirmed
+exact against the APOT source witness." This session did that confirmation directly: fetched the full
+Wesley Center Online transcription of R.H. Charles' 1913 APOT translation (the same edition the app's
+own `meta.version` claims to be), then did a systematic word-level diff (Python `difflib`, punctuation-
+normalized) against the app's chapters 1-85, rather than spot-checking.
+
+**Real, load-bearing discovery about the source itself: the Wesley Center page is genuinely
+incomplete, not a fetch-tool truncation.** Confirmed by re-fetching at a 100,000-token limit and
+getting an identical cutoff both times -- the page's own content ends mid-chapter-85 verse 2, followed
+by "finish" and the translator's colophon. This is a defect in that specific online transcription, not
+a tool-side wall (contrast the real fetch-tool walls documented for Psalms/Hermas/Didascalia earlier in
+this project) and not a defect in the app. Chapters 86-87 were spot-checked instead against
+yahwehswordarchives.org's parallel chapter-by-chapter transcription, which confirms the app's tail
+content is real and substantive (not padding) -- full character-for-character verification of 86-87
+against a primary witness remains outstanding.
+
+**2baruchSY.json (chapters 1-85 comparable range): substantial, quantified content loss.**
+- **~1,939 words of content confirmed present in the Charles/APOT source but absent from the app file**
+  (roughly 11% of the comparable text), landing in at least a dozen separate chapters including 13, 14,
+  19, 20, 21, 29, 31, 35, 43, 48, 49, and 51 -- not a handful of isolated misses, a pattern across the
+  book. Example: chapter 13 silently skips the entire "Ye who have drunk the strained wine" stanza
+  (verse continuation) between what the app numbers as verses 8 and 9.
+- **A confirmed, real duplication defect at the chapter 12/13 boundary.** The app's chapter 12, verses
+  6-7, verbatim duplicate chapter 13, verses 1-2 ("And it came to pass...Baruch...Stand upon your feet,
+  Baruch, and hear the word of the mighty God" appears twice, once misplaced into chapter 12's close).
+  This is the same general failure class as prior chapter-boundary-shift defects found elsewhere in the
+  corpus, but here it produced duplicated content rather than a silent boundary drift.
+- **~447 words present in the app but not in the Charles source** beyond the confirmed 12/13
+  duplication -- not yet individually triaged verse-by-verse; likely contains more of the same
+  duplication class plus possibly legitimate translation-structure variance.
+- **~373 words in direct wording-mismatch (replace) blocks**, e.g. chapter 48's "hear, Baruch, and
+  hearken to these words... write in your memory" versus the Charles/APOT wording "Hear, Baruch, this
+  word... write in the remembrance of your heart." Not yet resolved whether this reflects genuine
+  paraphrase/corruption or unacknowledged use of Charles' earlier 1896 *Apocalypse of Baruch* wording
+  in places rather than his revised 1913 APOT text the file claims -- worth checking against the 1896
+  edition (archive.org, `theapocalypseofb00charuoft`) before concluding either way.
+
+**letterofbaruchSY.json inherits the same defects, confirmed directly.** Its chapters 4 and 5 map
+exactly onto 2 Baruch's chapters 81 and 82 (per its own `originalChapterIn2Baruch` field) -- precisely
+where this session found real missing stanzas (a consolation passage in 81, a "beauty of their
+gracefulness" passage in 82). Since this file was built by copying 2baruchSY.json's chapters 78-87
+verbatim (per the 2026-07-14 rebuild note), it carries the parent file's defects forward one-for-one in
+that range.
+
+**Assessment: this is a full-rebuild-scale defect, not a light patch** -- comparable in kind (though
+not identical in cause) to Shepherd of Hermas' and Didascalia's earlier discoveries this project, where
+"trust-pending" files turned out to need reconstruction from source rather than incremental fixes.
+Given the volume of missing content and the still-unresolved wording-source question, character-by-
+character reconstruction against a confirmed-complete Charles/APOT witness (Wesley for chs. 1-85 plus a
+second source for 86-87, or a single complete alternate source if one is found) is the right next step
+-- not yet started this session. Flagged to Josh rather than proceeding unilaterally, consistent with
+how similarly-scaled findings (Fetha Nagast, Rest of Baruch) have been handled this project.
+
+**Not yet done, for a follow-up session:** full verification of chapters 86-87 against a primary
+source; individual triage of the ~447 "extra" words beyond the confirmed 12/13 duplication; resolving
+the 1896-vs-1913 Charles wording question; and, pending Josh's direction, the actual rebuild.
