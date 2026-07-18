@@ -3482,3 +3482,36 @@ titles, or leaked header text anywhere in the corpus.
 v124-2026-07-17-miracles-of-mary-complete. This closes out the Miracles of Mary line of work for this
 session -- the only remaining open item for this corpus specifically is the deferred post-v1.0
 liturgical-function review already logged in structure.json.
+
+## Fetha Nagast, copyright status RESOLVED (confirmed problematic), session 2026-07-17
+
+Followed up on the copyright question flagged but left unresolved in earlier sessions regarding this
+book's only English translation. Confirmed via direct research: the Tzadua/Strauss 1968 translation is
+under active copyright, not a stale or ambiguous case. The 2009 Carolina Academic Press reprint
+explicitly states "Copyright (c) 2009 by the Faculty of Law, Addis Ababa University. All rights
+reserved," and the book remains commercially available with an ISBN today. This is categorically
+different from the Hermas (1891/1920), Didascalia (1920), and Miracles of Mary (1899/1923) sources used
+elsewhere this session, all of which are unambiguously public domain by age and lack of any asserted
+current rights claim.
+
+**Serious finding: the app's existing 34 chapters of Fetha Nagast likely derive from this same
+copyrighted translation.** The source previously identified as the (badly-OCR'd) basis for the existing
+content -- `ethiopianorthodox.org/biography/01thelawofkings.pdf` -- is the exact file Wikipedia's own
+citation points to as a copy of the Tzadua/Strauss translation. That hosting appears unauthorized. This
+means the existing app content, not just any prospective rebuild, has a rights question attached to it.
+This is a materially different situation from every other "bad OCR, needs a rebuild" entry in this
+ledger and should not be treated the same way.
+
+**The underlying legal text itself (13th-century Arabic compilation by Ibn al-'Assal, its Ge'ez
+translation, the legal/canonical content) is centuries old and clearly public domain** -- only Tzadua's
+specific 1968 English wording is protected. Two public-domain paths exist for a compliant English
+version: Ignazio Guidi's 1899 Italian translation, or the fragmentary 1841 (Arnold) and 1889 (Bachmann)
+Latin translations. Both require an original English translation (by Claude) rather than
+transcription/verification of an existing English source -- unlike every other book handled this
+session.
+
+**No content work performed.** Flagged directly to Josh rather than proceeding unilaterally, given the
+existing shipped content may itself warrant review. Awaiting Josh's direction: start fresh from Guidi,
+review/replace the existing chapters, or shelve the book. `ethiopianorthodox.org`'s PDF (or any other
+copy of the Tzadua/Strauss text) should not be used as a source going forward regardless of what
+direction is chosen.

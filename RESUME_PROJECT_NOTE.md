@@ -579,3 +579,38 @@ devotional use.
 
 **Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua 1968)
 has an unresolved copyright question; untouched this session.
+
+## Session 2026-07-17, Fetha Nagast copyright question RESOLVED (confirmed, not cleared)
+
+Picked this up as the next item on the tractable list. The "unresolved copyright question" noted in
+earlier entries above is now resolved -- confirmed, not cleared:
+
+**The Tzadua/Strauss 1968 English translation is not public domain.** The 2009 Carolina Academic Press
+second printing carries an explicit, active copyright notice ("Copyright (c) 2009 by the Faculty of
+Law, Addis Ababa University. All rights reserved"), and it is still commercially sold today with an
+ISBN. This is a real, currently-asserted copyright, not a stale or ambiguous case like the 1900s/1920s
+sources used for Hermas, Didascalia, and Miracles of Mary earlier this session.
+
+**More importantly: the app's existing 34 chapters of Fetha Nagast appear to already be built from
+this copyrighted translation.** The badly-OCR'd source identified in earlier sessions
+(`ethiopianorthodox.org/biography/01thelawofkings.pdf`) is the exact same file Wikipedia cites as a
+copy of the Tzadua/Strauss translation. That site appears to be hosting the copyrighted text without
+authorization. This means the app's existing Fetha Nagast content is a likely rights problem in its
+own right, not just a data-quality one -- a different and more serious situation than any other book
+audited this session.
+
+**Underlying work (the Fetha Nagast itself -- the 13th-century Arabic compilation, the Ge'ez text, the
+legal content) is centuries old and clearly public domain.** Only Tzadua's specific 1968 English
+wording is under copyright. Two genuinely public-domain alternatives exist for building an English
+version: Ignazio Guidi's 1899 Italian translation (commissioned by the Italian General Staff), or the
+fragmentary Latin translations by Arnold (1841) and Bachmann (1889). Either would require an original
+translation into English (by Claude, from Italian or Latin) rather than transcription/verification of
+an existing English source -- a fundamentally different kind of task than every other book handled
+this session.
+
+**No content work done this session.** This was flagged to Josh directly rather than proceeding, given
+the existing app content may itself need review. Next session should pick up here with Josh's decision
+on how to proceed: (a) start a fresh Guidi-based translation, (b) review/replace the existing 34
+chapters given the rights concern, or (c) shelve this book entirely. Do not use
+`ethiopianorthodox.org/biography/01thelawofkings.pdf` or any other copy of the Tzadua/Strauss text as a
+source going forward.
