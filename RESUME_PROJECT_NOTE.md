@@ -523,3 +523,36 @@ Marked amber on purpose -- do not promote to green until the proofreading pass h
 
 **Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua
 1968) has an unresolved copyright question of its own; untouched this session.
+
+## Session 2026-07-17 continued much further -- Miracles of Mary: corpus-wide remediation, 110/110
+
+Major continuation of the Miracles of Mary work from earlier in this same session. Two important
+corrections to record:
+
+1. **The "content complete at 109" conclusion recorded earlier this session was wrong.** Found and
+   fixed a genuinely missed story (the 110th story, "The Virgin Mary, the Hunter and the Dog-Face",
+   had been merged into an adjacent story's body during initial extraction rather than being absent).
+   Split it into its own entry and closed up the numbering -- the file now has a clean 110 entries,
+   numbered 1-110, no gaps. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+2. **A much more widespread contamination problem than the original 17 flagged stories was found and
+   fixed**: roughly 90 of 110 stories had some form of cross-story leakage (mostly next-story titles
+   and citations bleeding into the current story's tail). Fixed via a combination of pattern-based
+   bulk truncation, a title-fingerprint detector, and individual fresh page-image re-scans
+   (tesseract) for the harder cases.
+
+**Process lesson from a real mistake made and caught this session:** an early bulk-fix pass truncated
+every story at its first occurrence of the word "Plate," assuming captions only ever trail a story.
+That was wrong for 13 stories where a plate was inserted mid-story with real narrative continuing
+after it -- the bulk fix silently deleted real content. Caught by diffing against the pre-session git
+history before committing. Lesson for future bulk text-mutation work: check how much content sits
+after the match point before trusting a pattern-based fix is safe, don't assume safety from a few
+manual samples.
+
+**Final verified state:** 110 stories, numbered 1-110, zero remaining instances (per automated sweep)
+of hyphen-break scrambling, duplicate consecutive words, plate-caption leakage, or leaked titles.
+Still amber -- this is extensive pattern-based and page-image-assisted correction, not a human
+word-for-word read, which remains the bar for GREEN.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua
+1968) has an unresolved copyright question; untouched this session.

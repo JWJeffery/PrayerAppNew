@@ -3313,3 +3313,50 @@ shouldst, loveth), not corruption.
 Still amber overall (the other 92 of 109 stories have had the mechanical typo-fixing passes applied
 but not this deeper page-image-verified treatment), but this closes out the most serious known quality
 issue in the file.
+
+
+## Miracles of Mary, comprehensive corpus-wide remediation and correction, session 2026-07-17 continued
+
+Major correction to this session's own earlier work: the "content is complete at 109, the book's own
+numbering has an unexplained one-number quirk" conclusion recorded above was wrong. While proofing
+further, story 77's page range turned out to contain TWO separate stories with their own distinct
+manuscript folio citations ("The Virgin Mary and the Muslim who Became a Christian" and "The Virgin
+Mary, the Hunter and the Dog-Face") that had been merged into a single entry during initial
+extraction -- the second story's own citation marker had been missed. Once split into two proper
+entries and the numbering closed up (everything from the split point onward shifted by one), the
+corpus reaches a clean, gap-free 110 entries numbered 1-110. The book's stated total of 110 miracles
+was correct all along; there was no real numbering quirk in Budge's original, only a missed boundary
+in this transcription. Recorded here so the earlier "resolved" entry above is understood in light of
+this correction, not taken as the final word.
+
+**Systematic corpus-wide sweep, beyond the earlier 17-story spot-fix:** a broader automated check
+(duplicate consecutive words, leaked title fragments, illustration-plate captions bleeding into story
+bodies) found this contamination was far more widespread than the original 17 flagged stories --
+roughly 90 of the 110 stories had some form of cross-story leakage at their boundaries, most commonly
+the next story's title and citation bleeding into the current story's tail (a systematic
+segmentation-boundary issue from the original extraction, not random noise). Fixed via a combination
+of: (1) bulk pattern-based truncation for the reliable "leaked next title" signature, validated safe
+on sample cases before applying corpus-wide; (2) a title-fingerprint detector built from all 110
+known titles, to catch OCR-garbled roman-numeral variants the first pass missed; (3) individual fresh
+page-image re-scans (tesseract) for every story where the leaked content turned out to be interleaved
+mid-story rather than cleanly trailing, or where genuine word-order scrambling was present -- stories
+3, 32, 35 (again, more thoroughly), 41, 46, 63, and the split-out Hunter/Dog-Face story all required
+this treatment.
+
+**A process mistake made and caught within this same session, worth remembering:** an early bulk-fix
+attempt truncated every story at its first occurrence of the word "Plate," on the assumption
+illustration captions only ever appear at a story's very end. This was wrong for at least 13 stories,
+where a plate was inserted mid-story (illustrations don't only appear between stories) and real
+narrative continuation followed it -- the bulk fix silently deleted that real content. Caught by
+diffing against the pre-session git history before committing, which is why: any bulk text-mutation
+across many entries should be spot-checked against a "how much content sits after the match point"
+measure before being trusted as safe, not assumed safe from a few manual samples. All 13 affected
+stories (15, 29, 34, 44, 50, 59, 61, 63, 68, 72, 76, 77, 95) were restored from the prior commit and
+re-fixed individually via fresh page scans instead.
+
+**Final state, verified by automated sweep:** 110 stories, numbered 1-110 with no gaps, zero remaining
+instances of hyphen-break scrambling, duplicate consecutive words, plate-caption leakage, or leaked
+story titles anywhere in the corpus.
+
+Still amber -- extensive as this remediation was, it remains pattern-based and page-image-assisted
+correction, not a human word-for-word read against the source, which is still the bar for GREEN.
