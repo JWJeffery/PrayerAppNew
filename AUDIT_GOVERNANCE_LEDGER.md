@@ -3581,3 +3581,104 @@ how similarly-scaled findings (Fetha Nagast, Rest of Baruch) have been handled t
 **Not yet done, for a follow-up session:** full verification of chapters 86-87 against a primary
 source; individual triage of the ~447 "extra" words beyond the confirmed 12/13 duplication; resolving
 the 1896-vs-1913 Charles wording question; and, pending Josh's direction, the actual rebuild.
+
+## ET broader-canon audit, session 2026-07-18 continued -- MAJOR FINDING: 1-3 Meqabyan do not match the real text
+
+Worked through the remaining unaudited ET-corpus items per the 2026-07-17 Phase 2 triage
+(`broader-canon-et-sy-phase2-source-triage-2026-07-17.json`): the tractable-leaning items (Guba'ekana,
+Malke'a Virgin Mary, 1-2 Meqabyan) plus fresh research on the needsDigging/likelyNeedsJosh items (3
+Meqabyan, the Sinodos family, the Malke'a hymns, Mazaheta, Josippon, the non-red Clement files).
+
+**1-3 Meqabyan: the app's content does not match the real Ethiopian Meqabyan narrative at all --
+same fabrication/severe-corruption class as Prayer of Apollonius and pre-rebuild Didascalia.**
+Confirmed via a genuine, high-quality free source not previously known to this project: Wikisource
+carries full community translations (`Translation:1_Meqabyan`, `Translation:2_Meqabyan`, presumably
+`Translation:3_Meqabyan`), independently cross-checked against Wikipedia's own sourced plot summary
+(citing Cowley's "The Biblical Canon of the Ethiopian Orthodox Church Today" and Harden's "Introduction
+to Ethiopic Christian Literature") and a second free chapter-by-chapter mirror
+(apocryphalibrary.weebly.com, using the UBS/Haileyesus Woldemariam translation). All three independent
+sources agree on the real story and disagree sharply with the app's file:
+- **The villain is Tsirutsaydan/Tseerutsaydan, a pagan king of Midian/Moab** -- the app's file names him
+  "Tsur, king of the Chaldeans."
+- **The righteous man is Meqabis (Maccabeus)**, who has **five** sons (Abya, Seela, Fentos, and two
+  others) -- the app gives him **three** sons (Abya, Seila, Pantos) and, more seriously, **conflates the
+  martyr's own name with the book's title**, calling him "Meqa'abyan" rather than Meqabis.
+  "Meqa'abyan"/"Meqabyan" is the Ge'ez word for the book itself (cognate to "Maccabees"), not a
+  personal name in the real text.
+- **This naming confusion propagates across all three files as a fabricated dynastic frame** -- the
+  app's 2 Meqabyan opens with "the death of Meqa'abyan the first king" and introduces "a man... named
+  Meqa'abyan, who was the son of the first Meqa'abyan," and 3 Meqabyan opens with "the word of the Lord
+  came unto Meqa'abyan in the days of his old age" -- none of which corresponds to the real books'
+  actual openings ("There was one man whose name was called Tseerutsaydan..." for 1 Meqabyan; a war
+  waged by "Maccabeus" against Israel for 2 Meqabyan; "And the islands of Egypt shall rejoice" for 3
+  Meqabyan per Wikipedia's summary).
+- Chapter counts happen to match the real books exactly (1 Meqabyan 36 ch., 2 Meqabyan 21 ch., 3
+  Meqabyan 10 ch.) -- worth noting as a reminder that structural completeness alone (confirmed clean in
+  the Phase 1 mechanical sweep) says nothing about content accuracy; this is a case where the numbers
+  looked right and the content was still wrong throughout.
+
+**Confirmed genuinely canonical (core 81-book canon, per the Phase 0 survey), so this is a rebuild
+target, not a removal candidate** -- unlike Prayer of Apollonius, which was fabricated *and* uncanonical
+and was removed outright. Recommend adding all three to RED_SEED with this finding, then a full
+character-for-character rebuild from the Wikisource translations (cross-checked against the
+apocryphalibrary.weebly.com mirror) in a follow-up session. Not rebuilt this session -- flagged given
+the scale, per the project's established pattern for findings at this size.
+
+**Guba'ekana: confirmed severely condensed, same pattern as Hermas/Didascalia before their rebuilds.**
+The file holds only 9 chapters and 23 verses total covering the Nicene Creed, canons regarding clergy,
+patriarchates, penitents, heretics, Pascha, prayer posture, and a closing blessing -- for comparison,
+the genuine 20 Nicene canons alone run to several times that length, and Ethiopic/Arabic canonical
+tradition often transmits an expanded set (up to 84 canons, including a canon specific to the Ethiopian
+patriarchate) rather than the plain 20 -- confirmed CCEL's NPNF2-14 volume contains both "The Canons of
+the ... Council of Nicaea" (genuine 20) and a separate "Captions of the Arabic Canons Attributed to the
+Council of Nice" (the expanded tradition), so a real source exists for either possibility. The app's
+content doesn't mention the Ethiopian-patriarchate canon specifically, suggesting it may loosely track
+the plain-20 tradition, but this needs confirming, not assuming, before a rebuild -- same standing rule
+as everywhere else in this project (confirm source edition identity before trusting it). Not yet
+rebuilt.
+
+**Sinodos family (Sirate Tsion, Tizaz, Admonitions, Abtilis): same condensation signature, sourcing
+still blocked.** All four files are extremely thin -- 14 to 23 verses each -- for texts that represent
+substantial canon-law/church-order material in their real form. This matches the same failure pattern
+found repeatedly in this project's broader-canon backlog. The 2026-07-17 triage's "needs digging"
+finding still holds: a free 19th/20th-century "Statutes of the Apostles" translation exists on
+archive.org, but how its internal divisions map onto this app's four-way split has not been confirmed,
+and the fullest free-vs-purchase-only picture from that triage (only a specific Amazon ebook identified
+as complete and well-regarded) is unchanged by this session's research. Structural thinness alone is
+real evidence of likely content loss even before the mapping question is resolved -- worth treating as
+a probable-defect signal, not proof of a specific defect, until Phase 3 verification actually happens.
+
+**Non-red Clement/Qalementos files (2, 4, 5, 6, 8 Clement, Book of Rolls, Visionary, Statutes): same
+thinness signature.** Ranges from 4 verses (Clement Statutes) to 40 verses (2 Clement) -- all far
+shorter than would be expected for genuine excerpts of this text-family's real scope. Sourcing remains
+per the 2026-07-17 triage: only a purchase-only modern edition identified as complete; R.H. Charles'
+free APOT may cover some Clementine fragments but this was flagged, not confirmed, in that triage and
+still hasn't been checked this session. Recall this text-family's own category-level authenticity is
+already a separate, still-open question (the 3 RED_SEED members' Korean-character artifact and the
+broader Qalementos provenance question from Installment 14 §7) -- this session's finding is about
+content completeness for the non-red siblings specifically, a related but distinct problem.
+
+**Malke'a Virgin Mary: a real, confirmed-accessible source found but not yet checked against it.**
+E.A. Wallis Budge's "Legends of Our Lady Mary" (1922) contains "Salutations to the Members of the body
+of the Virgin Mary" at pp. 202-235 -- confirmed present in the book's table of contents via a full copy
+on archive.org (`LegendsOfOurLadyMary`), the same genre (body-part salutation hymn) as the app's file.
+Not yet fetched or compared line-by-line this session -- stays amber pending that check. Malke'a Guba'e
+and Malke'a Iyasus remain in the same needsDigging state as the 2026-07-17 triage found: same genre,
+no source identified yet, likely requiring targeted academic-literature search (e.g. Habtemichael
+Kidane's work on Ethiopian hymnody) rather than general web search.
+
+**Mazaheta: unchanged, still blocked on its own title/identity question** from the Phase 0 survey --
+no sourcing work is possible until that prerequisite is resolved.
+
+**Josippon: unchanged, confirmed still unsourceable without Josh's direction** -- no complete English
+translation of the actual Ethiopian-recension text exists anywhere, free or paid, per the Ethiopian
+Orthodox Bible Project's own project page.
+
+**Summary of this session's ET work:** one severe, well-documented, previously-unknown defect found
+(1-3 Meqabyan) with a real source now in hand for the eventual rebuild; two condensation-pattern
+findings reinforced with real evidence (Guba'ekana, the Sinodos/Clement families) though sourcing for
+full rebuilds of the latter two families remains blocked pending further digging or Josh's input; one
+real source found and not yet used (Malke'a Virgin Mary); three items unchanged from prior sessions
+(Malke'a Guba'e/Iyasus, Mazaheta, Josippon). Dashboard not yet updated to reflect any of this --
+pending Josh's confirmation before flipping RED_SEED/GREEN_SEED and writing RED_NOTES, per the same
+practice just established for the SY corpus this session.

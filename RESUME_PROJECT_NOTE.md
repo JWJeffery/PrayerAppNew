@@ -690,3 +690,47 @@ confirmed the content is real/substantive but not yet checked character-for-char
 1896-vs-1913 Charles wording question (archive.org has the 1896 `theapocalypseofb00charuoft` scan for
 comparison); triage the ~447 "extra" words individually; then rebuild both files from a confirmed-
 complete source.
+
+## Session 2026-07-18 continued -- ET broader-canon audit: MAJOR FINDING, 1-3 Meqabyan wrong content
+
+Worked through the remaining unaudited ET items from the 2026-07-17 Phase 2 triage. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s "ET broader-canon audit, session 2026-07-18 continued" entry.
+
+**Headline finding: 1-3 Meqabyan's content doesn't match the real text** -- confirmed via Wikisource's
+free community translations plus an independent Wikipedia summary (both agreeing with each other, both
+disagreeing with the app). The app invents a villain ("Tsur, king of the Chaldeans" instead of the real
+Tsirutsaydan, king of Midian/Moab), gives the martyr three sons instead of five, and -- most
+seriously -- turns "Meqa'abyan" (the book's own title, cognate to "Maccabees") into a fabricated
+recurring personal/dynastic name across all three books, which the real narrative doesn't have at all.
+Chapter counts happen to match the real books exactly, a reminder that structural completeness (already
+confirmed clean in the Phase 1 sweep) says nothing about content accuracy. Same fabrication-class defect
+as Prayer of Apollonius and pre-rebuild Didascalia, but these three ARE genuinely canonical (core
+81-book canon per Phase 0), so this is a rebuild target, not a removal candidate. Real free source now
+in hand (Wikisource's Translation:1/2/3_Meqabyan, cross-checkable against apocryphalibrary.weebly.com).
+**Not yet rebuilt this session.**
+
+**Also confirmed, condensation pattern (same class as Hermas/Didascalia pre-rebuild), sourcing still
+partly blocked:** Guba'ekana (23 verses total for the Creed + canons + proceedings -- real source
+exists at CCEL's NPNF2-14 for either the plain-20 or expanded-84 Nicene canon tradition, need to
+determine which the app is loosely tracking before rebuilding); the Sinodos family (Sirate Tsion, Tizaz,
+Admonitions, Abtilis -- 14-23 verses each, sourcing/mapping still needs digging per the 2026-07-17
+triage); the non-red Clement/Qalementos files (2, 4, 5, 6, 8 Clement, Book of Rolls, Visionary,
+Statutes -- 4-40 verses each, sourcing likely still needs Josh per that same triage, though R.H.
+Charles' free APOT hasn't yet been checked for Clementine fragments).
+
+**Real source found, not yet used:** Malke'a Virgin Mary -- Budge's "Legends of Our Lady Mary" (1922)
+has "Salutations to the Members of the body of the Virgin Mary" at pp. 202-235, confirmed present via
+archive.org's full copy. Not yet fetched/compared.
+
+**Unchanged from prior sessions:** Malke'a Guba'e and Malke'a Iyasus (same genre as Malke'a Virgin Mary,
+no source found yet, likely needs academic-literature search); Mazaheta (blocked on its own unresolved
+title/identity question); Josippon (confirmed no free-or-paid complete English translation of the real
+Ethiopian-recension text exists anywhere).
+
+**Dashboard not yet updated for any of this** -- pending Josh's confirmation before flipping any
+RED_SEED/GREEN_SEED entries, per the practice just established for the SY corpus earlier this session.
+
+**Next session, if resumed:** rebuild 1-3 Meqabyan from Wikisource (highest-value target, real source
+in hand, severe confirmed defect); fetch and compare Malke'a Virgin Mary against Budge; determine which
+Nicene-canon tradition Guba'ekana should track and rebuild; continue digging on Sinodos/Clement sourcing
+or take that question to Josh.
