@@ -3275,3 +3275,41 @@ Still amber: this is dictionary-assisted pattern correction, not a line-by-line 
 source. Isolated errors that happen to form valid English words (and therefore don't get flagged by a
 spellchecker) would not be caught by this method. A genuine word-for-word read remains the standard
 for GREEN status on this file.
+
+## Miracles of Mary, structural OCR corruption fixed via page-image re-scan, session 2026-07-17 continued
+
+Discovered a more serious problem than word-level typos while proofreading: several stories had actual
+word-order scrambling (not just misspellings) where the PDF's embedded OCR text layer interleaved
+fragments out of sequence -- confirmed on story 33, where a passage read "...terrified them ex- the
+ceedingly...the people were wellnigh sup- drowned. Then each and every one of them made plication unto
+God..." (word fragments displaced from their correct positions). Confirmed via `pdftotext -layout` that
+this was not a column-reading-order bug in extraction -- the scrambling is baked into the PDF's own text
+layer, likely from marginal/footnote fragments interleaving with the main flow during the original
+scan's OCR pass.
+
+**Fix method:** rendered the affected pages directly from the PDF to images (`pdftoppm`), ran a fresh
+independent OCR pass on each page image with `tesseract` (installed for this purpose), and manually
+reconstructed the correct reading order from the clean output. This resolved the scrambling completely
+-- tesseract's fresh pass on the actual page image reads correctly where the PDF's baked-in text layer
+did not.
+
+**Scope:** all 17 stories flagged for this issue were fixed this way: 4, 8, 9, 26, 33, 35, 45, 47, 49,
+57, 58, 65, 67, 71, 78, 82, 103. Story 35 (Khalifah of Athribis) was the longest, spanning 19 pages of
+narrative.
+
+**Editorial decision made in the process, applied consistently:** several of these stories include, in
+Budge's original book, scholarly appendix material after the English narrative -- parallel Latin and
+Old French versions of the same story from other medieval miracle collections, plus Budge's own
+citation notes on manuscript sources. This is Budge's own comparative-folklore apparatus, not part of
+the Ethiopic miracle text itself. For a devotional app (not a critical edition), only the English
+narrative and any closing prayer-verse were kept; the Latin/French comparanda and citation notes were
+not included. This is a real content decision, not a data-quality fix -- flagging clearly in case a
+future review wants those appendices reinstated for scholarly reference elsewhere in the app.
+
+Verified all 17 stories clean via a repeat aspell pass: remaining flagged words are now only proper
+nouns (Damianus, Athribis, Kustantinya, etc.) and legitimate archaic English verb forms (mayest,
+shouldst, loveth), not corruption.
+
+Still amber overall (the other 92 of 109 stories have had the mechanical typo-fixing passes applied
+but not this deeper page-image-verified treatment), but this closes out the most serious known quality
+issue in the file.
