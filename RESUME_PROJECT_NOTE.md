@@ -556,3 +556,26 @@ word-for-word read, which remains the bar for GREEN.
 
 **Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua
 1968) has an unresolved copyright question; untouched this session.
+
+## Session 2026-07-17, Miracles of Mary FINAL closure -- marked GREEN
+
+Closing out the Miracles of Mary work from this very long session. After Josh corrected the standard
+being applied (this corpus has always been verified by Claude doing character-for-character checks
+directly, not a deferred "human read"), worked through all 110 stories in page order: rendered each
+story's actual source pages fresh, OCR'd independently, and compared word-for-word against stored
+text. Every story needed at least a minor fix; most needed substantial reconstruction. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s closing entry.
+
+**Key structural finding this pass:** story 77 turned out to contain two merged stories (missed during
+original extraction); split into two proper entries, bringing the total from an apparent 109 to a
+correct, gap-free 110 -- matching Budge's own stated count. The earlier session's "numbering quirk"
+theory is superseded by this: it was a missed boundary, not a real quirk in the source.
+
+**Marked GREEN.** This is now a fully verified book in the corpus. The only remaining open item
+specific to this book is the deferred post-v1.0 liturgical-function review already logged in
+`structure.json`'s `liturgical_research_governance` entries -- not a data-quality concern, a scope
+question about which stories in the broader Ta'ammera Maryam tradition are actually in living
+devotional use.
+
+**Still open, same Phase 2 tractable list:** Fetha Nagast -- the only English translation (Tzadua 1968)
+has an unresolved copyright question; untouched this session.

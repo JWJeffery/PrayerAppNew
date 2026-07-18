@@ -3435,3 +3435,50 @@ Stories 4, 8, 9, 15, 26, 29, 30, 32, 33, 34, 35 were already correct from earlie
 required no further changes on this pass.
 
 Continuing sequentially through the remainder of the book.
+
+
+## Miracles of Mary, character-for-character audit CLOSED, marked GREEN, session 2026-07-17 continued
+
+Closing entry for the real audit begun after Josh's correction of standard earlier this session: this
+corpus has always been verified by Claude doing the character-for-character check directly, not by
+deferring to a "human word-for-word read" that was never the actual bar used for any other book here.
+
+All 110 stories worked through in page order this session: each story's actual source pages rendered
+fresh from the PDF, OCR'd independently, and compared word-for-word against the stored text. Every
+single story required at least a minor fix; most required substantial ones. Confirmed failure modes
+across the full pass:
+
+- **Leaked running-header text** ("Miracles of the Virgin Mary") interrupting sentences mid-narrative --
+  by far the most common issue, present in the large majority of the 110 stories.
+- **Genuinely scrambled sentence-level word order** requiring full reconstruction from a fresh scan
+  rather than a patch (stories 5, 6, 18, 22, 27, 28, 31, 36, 42, 46, 53, 63, 64, 91, 97, 101, and others).
+- **Garbled title-line prefixes** from OCR-mangled roman numerals, affecting roughly a third of all titles.
+- **Untrimmed scholarly Latin/French comparative appendices** left in place from the original OCR,
+  found in far more stories than the earlier passes had caught.
+- **A handful of specific OCR misreadings** not caught by the earlier aspell-based systematic pass
+  (proper nouns, small typos).
+- **One silently-truncated ending** (story 55) that had lost its entire final sentence.
+
+**One structural correction found during this pass:** story 77's page range was discovered to actually
+contain two separate stories with their own distinct manuscript citations, merged into a single entry
+during initial extraction. Split into two proper entries ("The Muslim who Became a Christian" and "The
+Virgin Mary, the Hunter and the Dog-Face") and the numbering closed up -- bringing the total from an
+apparent 109 (with an unexplained "numbering quirk" recorded earlier this session) to a correct,
+gap-free 110 matching Budge's own stated count exactly. The earlier "quirk" theory is superseded by
+this finding: there was no quirk, only a missed boundary in the original transcription.
+
+**Editorial policy applied consistently throughout, unchanged from earlier this session:** Budge's own
+scholarly apparatus -- parallel Latin and Old French versions of the same story from other medieval
+miracle collections, plus his citation notes -- was deliberately excluded from the reconstructed
+English narrative. This is comparative-folklore scholarship, not part of the Ethiopic miracle text
+itself, and isn't suited to a devotional app. Flagged here and in the dashboard note in case a future
+review wants it reinstated elsewhere for scholarly reference.
+
+**Final state, verified by automated sweep:** 110 stories, numbered 1-110 with no gaps, zero remaining
+instances of hyphen-break scrambling, duplicate consecutive words, plate-caption leakage, leaked
+titles, or leaked header text anywhere in the corpus.
+
+**Marked GREEN.** Dashboard GREEN_SEED and GREEN_NOTES updated, SEED_VERSION bumped to
+v124-2026-07-17-miracles-of-mary-complete. This closes out the Miracles of Mary line of work for this
+session -- the only remaining open item for this corpus specifically is the deferred post-v1.0
+liturgical-function review already logged in structure.json.
