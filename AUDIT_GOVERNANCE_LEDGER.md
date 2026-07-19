@@ -3682,3 +3682,50 @@ real source found and not yet used (Malke'a Virgin Mary); three items unchanged 
 (Malke'a Guba'e/Iyasus, Mazaheta, Josippon). Dashboard not yet updated to reflect any of this --
 pending Josh's confirmation before flipping RED_SEED/GREEN_SEED and writing RED_NOTES, per the same
 practice just established for the SY corpus this session.
+
+## 1-3 Meqabyan rebuild, session 2026-07-18/19 -- REBUILT from confirmed real sources
+
+Following the MAJOR FINDING logged above (content fabricated character names/plot, same class as
+pre-rebuild Didascalia), all three books were rebuilt from primary sources rather than left flagged
+indefinitely. Sourcing and extraction were done via two custom scripts Josh ran locally (his machine
+has no domain restrictions; this session's fetch tool cannot reach either source site directly):
+`scrape_meqabyan.py` (apocryphalibrary.weebly.com, via multiple rounds of real-sample-driven bug fixes)
+and `fetch_wikisource_meqabyan.py` (Wikisource's `Translation:N_Meqabyan` pages via the MediaWiki API).
+
+**apocryphalibrary.weebly.com turned out to have a genuinely messy, inconsistent DOM** requiring several
+real fixes, each verified against an actual failing page rather than guessed: a two-column verse-number
+convention that varied between a bold-span style and plain `<strong>` tags depending on the chapter; at
+least one chapter (2 Meqabyan ch.18) where the source inconsistently bolds an entire verse instead of
+just its number; genuine duplicate/overlapping verse renderings within a single chapter's page (2
+Meqabyan ch.1, verses 5-13 appearing twice in different DOM shapes -- resolved by keeping whichever
+rendering is longer, since that one consistently reaches the chapter's actual closing line); and,
+most seriously, a recurring ~5,331-character leftover text block (opens "scattar an like unto wiltin
+grass...", closes "...the secand Meqabyan arrived an were fulfilled") that turned up verbatim, byte-
+for-byte identical, embedded in at least two unrelated chapter pages across different books (1 Meqabyan
+ch.1 and 2 Meqabyan ch.6) -- confirmed as site-wide leftover residue, not real chapter content, and
+excluded via chapter-marker scoping (only extracting content that appears after each page's own
+"CHAPTER N" heading).
+
+**1 Meqa'abyan: fully rebuilt and structurally clean.** 36 chapters, 738 verses, single source
+(apocryphalibrary), cross-checked against Wikisource for chapters 1-7 (the only range Wikisource's own
+page covers -- it stops incomplete after ch.7). No missing chapters, no verse-number gaps, no
+duplicates.
+
+**2 Meqa'abyan: rebuilt, two-source, two small honest gaps remaining.** 21 chapters, 479 verses.
+Chapters 6 and 7 are NOT from apocryphalibrary -- that site's own pages for these two are confirmed
+genuinely incomplete (just a "CHAPTER N" heading and a single unfilled verse-1 marker, then the page's
+own site footer immediately follows in the raw HTML -- not an extraction failure, verified by inspecting
+the DOM directly). Wikisource's community translation supplies these two chapters instead. Two verses
+remain honestly absent rather than fabricated: ch.16 v.4 and ch.21 v.4 -- neither source has them, both
+flagged in the file's own `meta.rebuildNote`.
+
+**3 Meqa'abyan: unchanged from the interim rebuild noted above.** 10 chapters, 208 verses,
+Wikisource-only (apocryphalibrary does not host this book at all -- confirmed via that site's own
+navigation index, which has no "3 Meqabyan" section). Single-source, flagged amber.
+
+**All three files replace the previously-fabricated content in `data/bible/ET/`.** None have had an
+individual human read-through against the source yet -- each file's `meta.rebuildNote` says so
+explicitly and stays amber, not GREEN, until that happens. Dashboard RED_SEED entries for these three
+should be reconsidered once that review is complete (currently still RED from the original finding,
+which is now out of date now that real content exists, but premature to mark GREEN before a human
+verification pass).

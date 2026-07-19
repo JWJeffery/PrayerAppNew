@@ -734,3 +734,31 @@ RED_SEED/GREEN_SEED entries, per the practice just established for the SY corpus
 in hand, severe confirmed defect); fetch and compare Malke'a Virgin Mary against Budge; determine which
 Nicene-canon tradition Guba'ekana should track and rebuild; continue digging on Sinodos/Clement sourcing
 or take that question to Josh.
+
+## Session 2026-07-18/19 -- 1-3 Meqabyan REBUILT (was the top item from the prior session's list)
+
+Full detail in AUDIT_GOVERNANCE_LEDGER.md's "1-3 Meqabyan rebuild, session 2026-07-18/19" entry. Short
+version: all three books rebuilt from real sources (apocryphalibrary.weebly.com primary for books 1-2,
+Wikisource primary for book 3 and as a secondary source/fill-in for books 1-2) and committed to
+`data/bible/ET/`, replacing the previously-fabricated content.
+
+Sourcing this required Josh running two scraper scripts locally across many rounds (this session's
+fetch tool can't reach either site), with several real bugs found and fixed against actual failing
+pages along the way -- inconsistent verse-number markup, genuine duplicate verse renderings within
+single chapters, and a recurring ~5,331-character leftover text block embedded identically across
+unrelated pages on different books, which turned out to be site-side residue rather than anything
+wrong with the scraper.
+
+**Status: 1 Meqabyan fully clean (36 ch., 738 verses, no gaps/dupes). 2 Meqabyan rebuilt with two known,
+honestly-flagged single-verse gaps (ch.16 v.4, ch.21 v.4) and two chapters (6-7) sourced from Wikisource
+since apocryphalibrary's own pages for those are genuinely incomplete. 3 Meqabyan unchanged from the
+interim rebuild, Wikisource-only, still amber.** None of the three have had a human read-through against
+source yet -- stay amber, not GREEN, until that happens. Dashboard RED_SEED entries for these three are
+now stale (they reflect the original fabrication finding, not the current rebuilt state) but shouldn't
+be flipped to GREEN before that human verification pass -- worth Josh's explicit call on how to mark
+them in the interim.
+
+**Next session, if resumed:** human verification read-through of all three rebuilt books against source
+(or at least spot-checks); decide dashboard interim status for these three; then return to the
+still-open ET items from the prior list (Malke'a Virgin Mary/Guba'e/Iyasus, Guba'ekana, Sinodos/Clement
+family, Mazaheta, Josippon).
