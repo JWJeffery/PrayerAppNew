@@ -6,7 +6,7 @@
     "copyright": "Public Domain",
     "description": "The Ethiopic recension of the Statutes of the Apostles (Canones Ecclesiastici), part of the Sinodos. Source: George Horner, The Statutes of the Apostles, or Canones Ecclesiastici (London: Williams & Norgate, 1904), Translation of the Ethiopic Text, pp. 127-232. Public domain.",
     "sourceWitness": "Horner 1904, Translation of the Ethiopic Text (pp. 127-232), public domain English translation",
-    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-30 of 72 so far (part 1: 1-20 landed on main; part 2: 21-30 in this patch). Remaining statutes 31-72 to follow in subsequent patches, same incremental method used for Jubilees ch.6-9/26-30."
+    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-40 of 72 so far (parts 1-2: 1-30 landed on main; part 3: 31-40 in this patch, includes the full baptismal liturgy and the water/oil/chrism consecration prayers). Remaining statutes 41-72 to follow in subsequent patches."
   },
   "chapters": [
     {
@@ -550,6 +550,314 @@
         {
           "num": 2,
           "text": "And a man who has a concubine let him desist or marry according to law; and if he is not willing to desist let him be rejected. And if there is aught that we have omitted, decide as is proper, because we all have the Spirit of God."
+        }
+      ]
+    },
+    {
+      "num": 31,
+      "name": "Statute 31. Concerning the time during which they shall hear instruction after they have left off their occupations.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "The catechumens shall remain three years hearing the word of instruction: yet if he was a good scholar and one who knows good conduct, no length of time need be required of him to hear, but the conduct alone shall decide for him."
+        }
+      ]
+    },
+    {
+      "num": 32,
+      "name": "Statute 32. Concerning the prayer of him who hears instruction and his kiss.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "When the teacher has finished the admonition the catechumens shall pray alone, apart from the believers. And the women shall stand in their place in the church; and the women believers shall pray alone and the women catechumens."
+        },
+        {
+          "num": 2,
+          "text": "And if the prayer is finished, the catechumens shall not kiss one another with the believers, because their kiss is not yet pure. And the believers shall kiss one another; man shall kiss man and woman shall kiss woman, and males shall not kiss females. And all the women shall have their heads veiled with a pallium or with a mantle, and not with sindon only, because this is not what is allowed to them."
+        }
+      ]
+    },
+    {
+      "num": 33,
+      "name": "Statute 33. Concerning the laying hand upon the catechumen.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And after the prayer, when the teacher has laid his hand upon the catechumen he shall pray, and dismiss them. And if it was one belonging to the church who teaches, or a layman, he shall do likewise."
+        },
+        {
+          "num": 2,
+          "text": "And if a catechumen was arrested for the name of our Lord Jesus Christ, he shall not be doubtful about the testimony which he gives; because if they overpower and injure him and kill him before he receives baptism for the forgiveness of his sin, he shall be justified; because he was baptised in his own blood."
+        }
+      ]
+    },
+    {
+      "num": 34,
+      "name": "Statute 34. Concerning him who is baptised.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "When one has been chosen or who is ready for baptism they shall examine their life; if they lived in the fear of God before they are baptised, if they honoured the widow, or if they visited the sick, or if they did all good, and if there is witness in their favour from those who bring them; and if they have done thus they shall hear the Gospel from the time that they were set apart, and they shall lay hand upon them and every day instruct them."
+        },
+        {
+          "num": 2,
+          "text": "And when the day draws near on which they shall be baptised, the bishop binds every one of them by oath, that he may know if they are pure. And if one was found who was not pure, they shall put him aside by himself; for he has not hearkened to the word of instruction with faith; because it is not proper to baptise an utter alien."
+        },
+        {
+          "num": 3,
+          "text": "And they shall instruct those who shall be baptised that they should wash and be exorcised on the fifth day of the week; and if there was a menstruous woman among them, she shall be put aside, that she may be baptised on another day. And those who desire to be baptised shall fast on Friday, and the bishop shall assemble all those who shall be baptised on Saturday into one place, and shall command all of them to make prayer and prostration; and when he has laid his hand upon them, let him exorcise the unclean spirit that he may flee away from them and not enter into them again."
+        },
+        {
+          "num": 4,
+          "text": "And when he has finished his exorcising, he shall breathe upon them, and they shall read to them the Scriptures, and exhort them. And they who shall be baptised shall not bring with them any ornament of gold, nor ring nor gem of any kind; but every one of them shall give thanks, and it is fitting for them whom it beseems to bring their Oblations also at the time."
+        }
+      ]
+    },
+    {
+      "num": 35,
+      "name": "Statute 35. Concerning the order of Baptism, and the profession of the Faith, and the confession of sin at baptism and the Oblation; and concerning the milk and honey.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "At the time of cock-crow they shall first pray over the water. And it shall be either such as flows into the tank of baptism or is caused to flow down upon it. And it shall be thus unless there is a scarcity of water; but if there is a scarcity they shall carry water to the tank, having drawn it from a well. And they shall put off their garments and be baptised naked."
+        },
+        {
+          "num": 2,
+          "text": "And they shall baptise the little children first; and if they can speak for themselves, let them speak. But if they cannot, their parents shall answer the word instead of them, or one of their relatives. And afterwards they shall baptise the grown-up men. And afterwards all the women shall loose their hair; and they shall be forbidden to wear their ornaments and their gold, when they are baptised, and none of them shall go down having anything alien with them into the water."
+        },
+        {
+          "num": 3,
+          "text": "And whenever they baptise, the bishop shall give thanks over the oil which is in a vessel, and it is named mystic oil; and he shall take other oil and exorcise Satan in it, and it is named oil which has been exorcised from every unclean spirit. And there shall be a deacon who will carry the oil in which Satan was exorcised, and he shall stand on the left of the presbyter; and another deacon shall take the mystic oil, and shall stand on his right."
+        },
+        {
+          "num": 4,
+          "text": "And let the presbyter, having taken every one of those who shall be baptised, bid them renounce and say: I renounce thee, Satan, and all thine angels and all thine unclean works. And when he has professed this, he shall anoint him with the oil which he made pure from all evil, saying: All unclean spirits shall depart from him."
+        },
+        {
+          "num": 5,
+          "text": "Thus he shall deliver to the bishop him who shall be baptised, naked, or to the presbyter -- to him who stands at the water of baptism. Let the deacon go down with him to the water, and he shall say and instruct him: I believe in one God, the Father almighty, and in his only Son, our Lord and our Saviour Jesus Christ, and the Holy Spirit, giver of life to all creation, the Trinity equal in Godhead, one Lord, and one Kingdom and one Faith and one Baptism, in the holy Church Catholic, and life eternal. Amen."
+        },
+        {
+          "num": 6,
+          "text": "And he who shall be baptised shall also say again thus: Yea, I believe. And thus he shall baptise him and lay his hand upon him, and upon him who answers for him. And he shall dip him three times; and he who is baptised shall make declaration every single time that he is dipped, and afterwards he shall say to him again: Dost thou believe in the name of our Lord Jesus Christ, the only Son of God the Father, that he became man, in an incomprehensible miracle by the Holy Spirit and by our lady Maryam, the virgin, without seed of man, and he was crucified in the time of Pilatos Pantenawi: and he died by his own will for our salvation, and rose from the dead on the third day, and released the captives, and ascended into the heavens, and sat down at the right hand of the Father, and he shall come to judge the living and the dead at his appearing and his kingdom: and dost thou believe in the Holy Spirit, the good and the sanctifier, and in the holy Church: and dost thou believe the resurrection of the body which shall happen to all men, and the kingdom of the heavens, and eternal judgment."
+        },
+        {
+          "num": 7,
+          "text": "And he who is baptised shall answer concerning all this, saying: Yea, I believe in this. And then when he has come up from the water the presbyter shall anoint him with the mystic oil, saying: I anoint thee with holy oil. And afterwards they shall put on their garments. And afterwards they shall enter the church, and the bishop shall lay his hand upon them and pray and say: God, who hast made these worthy of the washing of new birth, and of the forgiveness of sin, make them worthy to be filled with the Holy Spirit; and speed forth and send upon them the grace of the Holy Spirit, that they may serve thy will. Glory to the Father and the Son and the Holy Spirit in the holy Church henceforth unto age of age."
+        },
+        {
+          "num": 8,
+          "text": "And afterwards the presbyter, having poured into his hand the mystic oil, shall pour on the head of them all, saying: I anoint thee with holy oil in the name of God the Father almighty and in Christ Jesus his only Son and the Holy Spirit. And having sealed all in their forehead, he shall kiss them, and say: The Lord be with you all. And he who was signed shall answer again, and say: With thy spirit."
+        },
+        {
+          "num": 9,
+          "text": "And after this, when everything has been finished, let them pray with all the people: and they shall not before pray with the full Christians, but only after they have done the thing which we say. And after they have finished praying they shall give the salutation one to another with their mouths."
+        },
+        {
+          "num": 10,
+          "text": "And the deacons shall bring the Oblation to the bishop, and he shall give thanks over the bread and the cup; and the bread that it may become the Body of our Lord Christ, and the cup, the wine mixed, that it may become the Blood of our Lord Christ, this which was shed for us and for all of us indeed who believe in him."
+        },
+        {
+          "num": 11,
+          "text": "And the milk and honey shall be mingled together, and he shall make them drink of them, because of the fulfilment of the promise which he promised to our fathers, saying: I will give to you the land which floweth with milk and honey: this is the Body of our Lord Christ which he gave to us who believe in him, like food of young children, who were begotten of him, those who believe in him, that he may make every bitter heart sweet as by the sweetness of his word."
+        },
+        {
+          "num": 12,
+          "text": "All this the bishop shall go through to those who are baptised. And the water also of the Oblation he shall show in the bread like the inward part of man, who is soul as well as body. And all this explanation is what the bishop shall give to all who are baptised."
+        },
+        {
+          "num": 13,
+          "text": "And the bishop therefore having broken the bread of life, shall give a piece of it to each one and say: This is heavenly bread, the Body of our Lord Christ. And he who receives shall answer and say: Amen. And if there are not sufficient presbyters the deacons shall take the cups and stand in order; the first he who has the honey, and the second he who has the milk: and he who administers shall say: God, the Father almighty: and the third he who has the wine."
+        },
+        {
+          "num": 14,
+          "text": "He who administers shall say: This is the Blood of our Lord Jesus Christ. And he who receives shall say: Amen and Amen. And when he receives the Body he shall say: Amen; and at the Blood he shall say: Amen and Amen: a trinity this is therefore that it shall be. And each one of them shall be careful to do good works which please God, living in the right way and united to the Church, performing this instruction, and progressing in the service of God."
+        },
+        {
+          "num": 15,
+          "text": "This we have taught you to be said openly concerning Baptism and the ordinance of the Oblation; and behold, we have finished the instruction which we give to you concerning the resurrection of the body, and the rest as it was written."
+        },
+        {
+          "num": 16,
+          "text": "And if there is anything else which is right to be told, then the bishop shall tell it and give it to those who are communicated. And they shall accept it, and none shall know it except the believers, but only after they have communicated. And they shall first receive this holy blessing, which Yuhanes speaks of that there was written upon it a new name which no one knows except him who receives the blessing."
+        },
+        {
+          "num": 17,
+          "text": "And on the sabbath and on the first day of the week if it be possible the bishop himself with his own hand shall deliver to all the people while the deacons break the bread. And the presbyters also shall break the delivered bread. And whenever the deacon approaches the presbyter, he shall hold out his robe, and the presbyter himself shall take the bread and deliver to the people with his hand. And on other days they shall give it according to the commandment of the bishop."
+        }
+      ]
+    },
+    {
+      "num": 36,
+      "name": "Statute 36. Concerning Widows and Virgins, and at what time the bishop should fast.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And they shall do as we have often said. The widows and virgins shall fast, and pray in the church. And the presbyters and the deacons shall fast at any time they will. And likewise shall the people fast. And the bishop ought not to fast, except at the time when all the people fast; because if they bring that which is proper to bring into the church, and no one can be refused; and the man having broken his own bread, he shall taste and eat with the other believers who are with him; and they shall receive from the hand of the bishop a piece of delivered bread before they partake."
+        },
+        {
+          "num": 2,
+          "text": "It is Eulogia -- everyone shall receive the bread which has been offered. For this is bread of blessing, and not the Oblation as the Body of our Lord Christ."
+        }
+      ]
+    },
+    {
+      "num": 37,
+      "name": "Statute 37. Concerning the time at which it is seemly to eat.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "It is not proper for the catechumens to eat with the believers. Before any taste and drink anything whatsoever, it is proper for them to take the cup and give thanks over it, and then drink and eat, for then they are pure. To the catechumens let them give the bread of blessing and the cup."
+        },
+        {
+          "num": 2,
+          "text": "The commandment concerning the impropriety of the catechumens eating with the believers, and of the catechumens sitting down with the believers at the table of the Lord. And it is right for him who eats to remember him who invited him and gave him all the food, every time that he eats; for this cause he asked them to come into his house: for this cause it is seemly that they should eat with caution and moderation what is sufficient and not be drunken."
+        },
+        {
+          "num": 3,
+          "text": "And they shall eat and drink with regularity and not drink until they are drunken; that men may not deride them; and that he who invited them be not pained because of their folly. But rather shall they pray that the holy ones may enter the house. For he said: Ye are the salt of the earth. Behold, he gave to you the last of them all with him, that ye might take from him your portions: but eat with moderation and drink with moderation, that there may be some left; and that that which is left from you may be sent by him who invited you to whom he will; and he shall say that this meat and this drink are the leavings of the holy ones."
+        },
+        {
+          "num": 4,
+          "text": "And they shall rejoice at your going to them; and they shall eat what ye leave, and he shall say this meat is the leavings of the holy ones. And they shall rejoice at your coming as they eat: and further, those who are invited shall eat without conversing, but when the bishop allows, they shall speak, and ask what is suitable, and they shall answer."
+        },
+        {
+          "num": 5,
+          "text": "And when one has finished saying all the things which are suitable which he wished to ask, then again they shall be silent with modesty, until the bishop again asks them at the supper. If the believers shall be without the bishop at the supper, either from the presbyter or the deacon they shall take the Eulogia with the hand. And likewise the catechumens shall receive a piece of the mystic bread."
+        },
+        {
+          "num": 6,
+          "text": "And if there are any laity among them, they shall eat in silence: and the laity are not allowed to make the Eulogia. And having given thanks, every one shall eat in the name of the Lord and drink with moderation, having called upon the name of God. Because thus is it due to God, that we should be zealots among the peoples, all of us equal and quiet and pure and without fault. For God the Father rejoices in his work, and we indeed are his work, if we are pure."
+        }
+      ]
+    },
+    {
+      "num": 38,
+      "name": "Statute 38",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And when the bishop speaks let every one be silent. And if the bishop is not present they shall receive the bread of blessing from the presbyter or from the deacon. And when the bishop speaks let all be silent, nor shall one answer another a word, for the bishop shall ask them."
+        },
+        {
+          "num": 2,
+          "text": "And if not the bishop but only the Faithful are present at the meal, they shall take the Eulogia from the hand of the presbyter if he is there, and if the presbyter is not there, they shall take from the hand of the deacon; and the catechumens also shall take their portion of the mystic bread. And if there are laymen only they shall eat quietly: and for the laymen it is not proper that they should make the Eulogia."
+        }
+      ]
+    },
+    {
+      "num": 39,
+      "name": "Statute 39. Concerning the meal of the widows.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And if there is anyone who desires at any time to invite the widows and those who are aged, he shall satisfy them with food and send them away before it shall be evening. And if it is not possible because of the clergy who have been invited, he shall give to them food and wine, and having given then send them away immediately, and each of them shall do as they wish with it in their houses."
+        }
+      ]
+    },
+    {
+      "num": 40,
+      "name": "Statute 40. Concerning the ordinance of the gift which is of the Apostles, according to the orthodox statement.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "We have written concerning graces so far as God our Lord has granted to us of his own counsel. Formerly he gave grace to man, while bringing near to him that which had gone astray in type; and now he gave the beloved Son who is in all the holy ones."
+        },
+        {
+          "num": 2,
+          "text": "Having come to the source of the proper tradition in the churches, we have attained that men should learn well what has been received until now; they handed them on and kept them as our ordinances: yet, though they knew that they were quite firm concerning that which had been found for them, now unawares they slipped away. And those indeed who knew not, to them the Holy Spirit is giving the perfection of grace. For them who believe rightly as they know, how seemly it is that they should hand on and keep those things which are established in the Church."
+        },
+        {
+          "num": 3,
+          "text": "Concerning the ordinance of baptism. Those who shall be baptised shall do thus. They shall come into the baptistery, and they shall give their names. And then first they shall examine their lives as to whether they are fit for baptism, and if they read the Scriptures, and also if they have learnt the psalm. And likewise there shall be sponsors for him who shall be baptised, and thus he who is sponsor shall know that he shall give account at the day of judgment for it."
+        },
+        {
+          "num": 4,
+          "text": "And they shall cause therefore the prayer to follow after the examination, saying thus: Lover of man and merciful author of blessing, merciful and whose habit is goodness, and the fountain of all blessing, thou who madest that which was not into that which was, with each one which was made thou gavest size and place: thou art able -- remove it and take it away. Now, Lord, take away and remove this thy servant from wickedness into goodness. Grant that he may inherit the blessed sonship which is in the heavens, that he may then no longer be one born of flesh, but may abide truly in thine obedience: through thy only Son our Lord Jesus Christ, through whom to thee with him and with the Holy Spirit be glory and might now, and always and for ever and ever."
+        },
+        {
+          "num": 5,
+          "text": "The prayer for those who gave their names. And again we beseech God the almighty, the Father of the Lord and our Saviour Jesus Christ, for those who gave their names, that he may open the ear of their heart and enlighten the eyes of their mind, and give to them the light of knowledge, he who has authority over mercy, the Lord our God."
+        },
+        {
+          "num": 6,
+          "text": "And the deacon shall say: Pray ye for those who gave their names. And the bishop shall say: God the almighty, thou who calledst thy servants, who gave their names, from darkness into light, and from ignorance into the knowledge of the truth: blot out all the vestige of error from their thought; place thy law and thy commandment within their heart: and give to them knowledge which is seemly, impart to them, both men and women, the washing of regeneration for the forgiveness of sin; make them the temple of the Holy Spirit, through our Lord Christ, through whom to thee with him and with the Holy Spirit be glory and might now, and always and for ever and ever."
+        },
+        {
+          "num": 7,
+          "text": "The prayer of consecration for those who bring the bread and water or oil to be blessed in the holy forty days, after the examination of those who are to be baptised. God, my Lord Jesus Christ, lover of man, who alone hast made oblation. And thou knowest and to them indeed who are able thou speakest the greatness of the honour of the Father and of thy creation. Thou, the Mediator, the Chief Priest for every soul, and the healing for those who are suffering."
+        },
+        {
+          "num": 8,
+          "text": "Thou whose name is sanctified by the holy ones, may the power which enlightens thy name lighten upon the oil and water and bread, and make them to become safety and healing and purification for those who offered in faith, for thy name is restoration to us, and redemption, revelation, and sanctification. And to thee be glory and to thy holy Father now, and always and for ever and ever."
+        },
+        {
+          "num": 9,
+          "text": "And he who comes to baptism shall learn the commandment as he receives it: how seemly it is that he live carefully, as he to whom will be imparted the holy atonement of grace by eating. At early morning the bread and water shall be blessed, and he shall be anointed with the oil, until the time when shall be imparted that holy grace of baptism."
+        },
+        {
+          "num": 10,
+          "text": "When therefore he will come to baptism, he who will baptise him shall take him, and having turned him then to the west, with his right hand or both his hands outstretched, and his face opposite towards the east without fear -- and if he was a full-grown man he shall speak: but for the children who cannot speak, and if it was a weak person, the believing father and believing mother shall speak, or relatives likewise being believing men and believing women."
+        },
+        {
+          "num": 11,
+          "text": "And he shall anathematise, being naked, in the water without fear, saying thus: The first prayer for baptism, over the water: God, my Lord almighty, who madest heaven and earth and sea and all that is in them, who madest man in thine own form and likeness, who mingledst and unitedst the immortal with the mortal, who madest living man a combination of the two, and gavest to that which was made body a soul also, which thou causest to dwell within: stir this water and fill it up with thy Holy Spirit, that it may become water and Spirit for regeneration to those who are to be baptised: work a holy work and make them to become sons and daughters of thy holy name: wash them with water, and instruct them by the Holy Spirit, through the coming of our Lord Christ thy Son, through whom to thee with him be glory and might now and always and with the Holy Spirit for ever and ever. Amen."
+        },
+        {
+          "num": 12,
+          "text": "The prayer of the consecration of the water. Eternal God, who knowest what is secret, we pray and beseech thee, send thy Holy Spirit and his power upon this water and change it and sanctify it and bless it and set it against all that opposes, cause it to be against all divination and potions, both those which are drunk, and those which are sprinkled, or used in any other way; cause it to be for healing and for life to him who shall receive of it in faith, and in the glory of thy only beloved Son, for to thee is glory and might with the Holy Spirit now, and always and for ever and ever."
+        },
+        {
+          "num": 13,
+          "text": "The prayer for the holy waters of the Yurdanos, which are mingled with sweet scent. As the priest stands towards the east with the proper vestment, and while the clergy stand in their several orders of sequence, he shall say, having first finished the ordinary form of prayer: God, my Lord almighty, thou madest heaven and earth and sea and all that is in them; and thou madest man in thy form and in thy likeness; and thou placedst him in the garden, that he might live an immortal life; but he, having fallen into error by Satan, the enemy of our kind, became the cause of death upon us all: yet thy goodness did not therefore desert us, but thou sentest thine only Son our Lord Jesus Christ into the world, and not to judge the world, but to save the world by him."
+        },
+        {
+          "num": 14,
+          "text": "He therefore having come, changed our birth into the new birth which is by this water and Spirit of regeneration. And for this cause I call upon thee, my Lord, maker of all, who mingledst and unitedst mortal with immortal, having made living man a combination of the two, giving movement to the created body, and soul which thou causedst to dwell in it: stir this water and fill it up with that which is of the Holy Spirit, that it may become water and also Spirit of regeneration to those who shall be baptised in it."
+        },
+        {
+          "num": 15,
+          "text": "Cause, my Lord, that they may become little sons and daughters of the holy name; and purify them and wash them with water and instruct them with the Holy Spirit, through the coming of our Lord Christ with the Holy Spirit. May it be to all who shall be baptised in it a washing of regeneration for cleansing from all sin. And prepare thou, whom the Holy Spirit chose, to come upon them; that clothed with incorruptible vesture they may rise at the resurrection of the dead; and may every evil spirit be removed from them, having been expelled according to thy holy infallible promise of our Lord Jesus Christ, through whom to thee with him and with the Holy Spirit be glory and might and greatness from before the age now and always and to generation of infinite generation, and to age of age. Amen."
+        },
+        {
+          "num": 16,
+          "text": "And then the priest shall go down into the water of the Yurdanos, taking hold of the head of him who shall be baptised, and saying to him: I baptise thee in the name of the Father and the Son and the Holy Spirit, and at each of the names of the Holy Trinity, he who is baptised also saying Amen. And then having come up from the water, they who promise for him shall receive him, and he who was baptised shall find then a clean linen cloth, that with it the water may be wiped off, and that he may be kept with great care."
+        },
+        {
+          "num": 17,
+          "text": "And if he who shall be baptised is weak, he shall stand up naked in the early morning as soon as one can see, and thus he who baptises shall pour water upon his head, saying: I baptise thee in the name of the Father and the Son and the Holy Spirit, and at each name of the Holy Trinity he pours forth once, and not afterwards as to all. And after they have clothed him with the baptismal robe, the Chief Priest shall make prayer for the men, and if not, the priest before the unction with the chrism of him who was thus sanctified."
+        },
+        {
+          "num": 18,
+          "text": "The prayer of the holy oil of chrism with which the catechumens are anointed, and for full Christians who are sick. God, my Lord almighty, the Father of our Lord and our Saviour Jesus Christ, stretch out thy hand invisible upon the fruit of this olive with which thou anointedst the Priests and Prophets; and thou hast given power to it with thine own hand, that for those who shall be anointed therewith, it may be for healing and safety and benefit in all diseases and sicknesses, and for extermination of every Satanic adversary; make an unction by thine own grace, really for them to whom it is given, the Holy Spirit, through the name and through the power of our Lord Jesus Christ, through whom to thee with him and with the Holy Spirit be glory and might now, and always and for ever and ever. And breathe on his face thrice."
+        },
+        {
+          "num": 19,
+          "text": "The prayer of the holy oil for anointing him who is to be baptised. God, my Lord almighty, God of hosts, we call upon thy great name and powerful in all things and the Holy Spirit and thy universal name. We pray thee and we beseech thee to send upon this oil spirit and power, and cause it to become a breastplate of the faith against all work of Satan, and make it for the perfection of all piety and knowledge, through the same."
+        },
+        {
+          "num": 20,
+          "text": "The prayer of the holy oil for unction with the chrism of those who are baptised. Thus in giving thanks shall the bishop speak and say: The Lord be with you all. And the people who stand by shall say: With thy spirit. And the bishop shall say: Lift up your hearts. And they who stand by shall say: We have them with the Lord our God. And the bishop shall say: Let us give thanks to the Lord. And those shall say: Right and just, it is meet."
+        },
+        {
+          "num": 21,
+          "text": "And then the Chief Priest, to whom alone it belongs to consecrate the chrism, having taken it, standing rightly, shall offer up the prayer and shall complete the invocation of the coming of the Holy Spirit, and say thus: Right it is and just. We praise thee and glorify thee and confess thee and worship thee and give thanks to thee for all the mercy which thou hast done for us and all thy benefit: when the world was gone astray thou savedst it, having sent thine only Son, our Lord Jesus Christ, not to judge the world, but to save the world, and gather together our dispersion, that we may assemble, and confess thee the one true God who sentest our Lord Jesus Christ."
+        },
+        {
+          "num": 22,
+          "text": "Through whom we offer this chrism which thou hast given to us for healing and for using in other necessities, that thou wilt be willing and wilt send the Holy Spirit upon it, through our Lord Jesus Christ; and that it may become an unction of holiness and seal of the Holy Spirit upon every person of those who receive the washing of regeneration and forgiveness, as far as thou hast given to them: and may it be to them redemption and sure grace and a holy seal of unction and communion of their nature with the Holy Spirit; and cause that they may be named his temple, through the name of our Lord and our Saviour Jesus Christ, through whom to thee with him and with the Holy Spirit be glory and might from before the age and unto the age, now, and always and for ever and ever."
+        },
+        {
+          "num": 23,
+          "text": "The prayer of the holy oil, the oil with which he who is baptised is to be anointed on the place of anointing. My Lord, almighty, who wast to the Prophets God, and to the Apostles God, the Father of our Lord and our Saviour Jesus Christ, who from the beginning by the Prophets preachedst the coming of our Lord Christ, who sentest Yuhanes the Prophet before his coming, give power to this holy oil and bless it for baptism, may it sanctify thy servants and handmaids and prepare them for thee, while they call upon thee; and cause it to destroy all poison and expel every evil and unclean spirit, and may all unclean lust remove away by this unction, through the name of thy only Son; and may it be sanctified by thine own grace, and be to all who are baptised oil of healing and safety and power for planting the good olive tree and for bearing fruit toward thee and to Christ, through the Holy Spirit, by the faith in the name of our Lord and our Saviour Jesus Christ, through whom to thee with him and with, the same."
+        },
+        {
+          "num": 24,
+          "text": "And breathe into the oil thrice. And with it he shall anoint him who is baptised on his breast and on his shoulders and all his body, saying: The oil of holy unction against every adversary, operate for grafting into thine own good olive tree, the Church, and work blessing. And he shall answer and say: Amen. And if it is a man this is done by him who ministers, or by the priest who is there; or if a woman, by a female believer who is perpetually virgin."
+        },
+        {
+          "num": 25,
+          "text": "Further the prayer for the laying hand upon the catechumens. God the almighty, the Father of the Lord and our Saviour Jesus Christ, to thee have humbled their heads thy servants the catechumens, and to thee they have subdued the hardness of heart and flesh, look down from thy worthy dwelling-place, bless them, male and female, and may thine ear hearken to them and hear their prayer. Give them to know the power of the word with which they are instructed as a sure utterance; and in due time impart to them, male and female, the washing of regeneration for the forgiveness of sin; make them the temple of the Holy Spirit through Christ: for to thee is glory and power and might, now, and always and for ever and ever."
         }
       ]
     }

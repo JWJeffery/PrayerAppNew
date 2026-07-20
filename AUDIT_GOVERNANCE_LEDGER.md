@@ -4022,3 +4022,19 @@ renunciation, creed, trine immersion, milk-and-honey communion), the consecratio
 water/oil/chrism (Statute 40, also very long), the hours of prayer, the calendar of non-working
 days, and the closing chapters on Church order and grades of ministry. Dashboard/SEED_VERSION
 bump still deferred until the book is fully closed.
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 3 (Statutes 31-40 of 72), Horner 1904
+
+Continuing the checkpoint rebuild from Horner 1904. This patch adds Statutes 31-40: catechumen
+instruction period and kiss discipline (31-33), baptismal preparation (34), the full baptismal
+liturgy proper (35 -- renunciation of Satan, the creed, trine immersion, post-baptismal chrismation,
+and the milk-and-honey communion for the newly baptised), fasting/meal discipline for widows,
+virgins, and the bishop (36-39), and the long Statute 40 covering the consecration prayers for
+water, oil, and chrism used throughout the baptismal rite.
+
+**Running total: 40 of 72 Statutes, 153 verses.** Wording unaltered from Horner's translation.
+
+**Not yet done:** Statutes 41-72 -- fruit blessing, fasting rules, hours of prayer, the sealing of
+the forehead, grades of ministry and their limits (a substantial closing section), first-fruits
+and tithes, and the closing chapters on apostolic succession. Dashboard/SEED_VERSION bump still
+deferred until the book is fully closed.
