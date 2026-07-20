@@ -615,174 +615,83 @@ chapters given the rights concern, or (c) shelve this book entirely. Do not use
 `ethiopianorthodox.org/biography/01thelawofkings.pdf` or any other copy of the Tzadua/Strauss text as a
 source going forward.
 
-## Session 2026-07-18 — Fetha Nagast: copyright conclusion re-verified (holds), Guidi source CONFIRMED ACCESSIBLE
+## Session 2026-07-18/19 -- SY + ET broader-canon audits, three major rebuilds. Consolidated summary
+(replaces five separate same-session entries; full blow-by-blow detail for each item lives permanently
+in AUDIT_GOVERNANCE_LEDGER.md under its own dated heading -- this is the quick-pickup version.)
 
-Josh pushed back hard on the prior session's copyright conclusion and the "no free English translation"
-framing, and was right to demand it actually be re-checked rather than carried forward on trust — this
-project's own governance rule is never to treat a prior claim as ground truth. Re-verified from scratch
-via fresh web research, not by re-reading the prior session's notes.
+**Fetha Nagast: copyright conclusion re-verified and holds, real source confirmed, deferred by Josh.**
+Josh pushed back on the prior session's "no free translation exists" conclusion; re-verified from fresh
+primary research rather than trusted. Tzadua/Strauss (1968) remains the only complete English
+translation, actively copyrighted (explicit 2009 notice, still sold) -- conclusion confirmed, not just
+repeated. Real path forward found: Guidi's 1897/99 Italian edition (the edition Tzadua was principally
+based on) is freely viewable on HathiTrust, full public view:
+Vol.1 https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546785 ,
+Vol.2 https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546793 -- page images only, needs OCR before
+translation work. **Explicitly on hold until after the app ships, per Josh -- do not pick up
+proactively.** Standing governance lesson from this: a prior "no source exists" conclusion is exactly
+the kind of claim to re-verify on pushback, not defend.
 
-**Copyright conclusion holds, but is now actually confirmed rather than asserted.** Every independent
-source checked (Wikipedia, WorldCat, Stanford/Berkeley law library catalog records, the book's own
-front matter, multiple academic citations) agrees: Tzadua/Strauss (1968, Faculty of Law, Haile
-Sellassie I University) is the only complete English translation ever made. All later printings —
-a 2002 Frontline Books reprint and the 2009 Carolina Academic Press second printing — are the same
-translation. The 2009 printing's front matter carries an explicit, current copyright notice
-("Copyright (c) 2009 by the Faculty of Law, Addis Ababa University. All rights reserved"), and it is
-still commercially sold. This is a real, actively-asserted right, not a stale/ambiguous case.
+**SY corpus audit: real, substantial defects found in 2 Baruch / Letter of Baruch, NOT YET rebuilt.**
+`2baruchSY.json` has ~1,939 words confirmed missing (vs. Charles/APOT 1913, verified via Wesley Center
+Online) across a dozen-plus chapters, a real duplication (ch.12 vv.6-7 = ch.13 vv.1-2 verbatim), ~447
+words of unexplained extra content, ~373 words of unresolved wording mismatches. `letterofbaruchSY.json`
+inherits the same defects in its chs. 4-5 (=2 Baruch 81-82). Wesley's own source page turned out to be
+genuinely incomplete (stops mid-ch.85) -- a real source gap, not a fetch-tool wall. Dashboard: both
+marked RED with detail notes. **Still needs:** verifying chs.86-87 against a primary source, resolving
+the 1896-vs-1913 Charles edition question, then a full rebuild -- full-rebuild scale, same class as
+Hermas/Didascalia's earlier discoveries.
 
-**But the canonicity question was never actually in dispute — worth being explicit about that.** The
-Phase 0 ET canonicity survey already categorized Fetha Nagast as belonging in the corpus (broader-canon-
-adjacent Church Order text, same category as Kebra Nagast, historically Ethiopia's constitution). It
-was never flagged for removal. The open problem has only ever been sourcing a rebuild, not whether the
-book stays.
+**ET broader-canon audit: MAJOR FINDING, 1-3 Meqabyan fabricated -- REBUILT this session.** Confirmed via
+Wikisource + independent Wikipedia summary that the app's 1-3 Meqabyan content didn't match the real
+text at all: invented villain, wrong number of sons, and "Meqa'abyan" (the book's own title) turned into
+a fabricated recurring character name across all three books -- chapter counts matched the real books
+exactly while content didn't, a reminder that structural checks alone don't catch this. Same fabrication
+class as Prayer of Apollonius/pre-rebuild Didascalia, but genuinely canonical, so rebuilt rather than
+removed. **Now rebuilt and committed:** 1 Meqabyan fully clean (36 ch., 738 verses, no gaps/dupes) from
+apocryphalibrary.weebly.com, cross-checked against Wikisource. 2 Meqabyan rebuilt (21 ch., 479 verses)
+with chs.6-7 sourced from Wikisource instead (apocryphalibrary's own pages for those two are genuinely
+incomplete on the site's end) and two small honest gaps left open (ch.16 v.4, ch.21 v.4). 3 Meqabyan
+(10 ch., 208 verses) Wikisource-only, still single-source amber. Getting the raw source data required
+Josh running two scraper scripts locally across many rounds (this session's fetch tool can't reach
+either site) -- real bugs found and fixed against actual failing pages: inconsistent verse-number
+markup across at least three different conventions, genuine duplicate verse renderings within a single
+chapter (resolved by keeping the longer/more complete rendering), and a recurring ~5,331-character
+leftover-content block that turned out to be site-side residue embedded identically across unrelated
+pages on different books, not a scraper bug. Dashboard: all three marked RED with rebuild-status notes
+(deliberately not GREEN -- no human read-through against source has happened yet).
 
-**Real, concrete good news: Guidi's 1897/1899 Italian edition is confirmed freely and fully accessible**
-— not locked behind an access-control wall the way Miracles of Mary's source was. Both volumes are on
-HathiTrust, full public view, digitized from the University of Michigan copy:
-- Vol. 1 (1897): https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546785
-- Vol. 2 (1899): https://babel.hathitrust.org/cgi/pt?id=mdp.35112104546793
+**Malke'a Virgin Mary: REBUILT this session from confirmed real source.** Prior 14-stanza file covered
+roughly a third of the real litany and used a different opening formula than the source ("Peace be unto"
+vs. the real "Salutation to"), suggesting independent composition rather than a trimmed translation.
+Rebuilt as the complete 42-stanza litany from Budge's *Legends of Our Lady Mary* (1922, pp.235-244,
+confirmed public domain), including three minor OCR-artifact corrections (a misread numeral, two
+numerals with stray internal spaces, one mangled drop-cap) all confirmed against surrounding context.
+Hit the same kind of fetch-tool wall on archive.org that showed up elsewhere this session (Wesley's 2
+Baruch, Wikisource) -- resolved the same way, Josh downloaded the source file directly and provided it.
+Dashboard now updated to reflect this: RED with a rebuild-status note, same as the Meqabyan books.
 
-Well past any copyright question at the source. Guidi's translation is independently described in the
-scholarship as the most authoritative edition to date and is the edition Tzadua's own translation was
-principally based on. **Honest caveat carried forward:** these are page images, not machine-readable
-text — OCR/transcription will be needed before translation work can start, the same shape of labor gap
-that Miracles of Mary had. Not yet checked whether HathiTrust exposes a plain-text layer for this item.
+**Cross-cutting technical notes worth remembering:** (1) At least three separate real "hosted source is
+itself incomplete" discoveries this session (Wesley's 2 Baruch page, Wikisource's 1 Meqabyan page,
+apocryphalibrary's 2 Meqabyan chs.6-7) -- a pattern worth expecting, not a fluke. (2) This session's
+fetch tool hit hard, non-negotiable content-length walls on at least two large public-domain sources
+(archive.org full-text streams) -- identical truncation regardless of token limit requested; Josh
+downloading and providing the file directly is the reliable fix. (3) apocryphalibrary.weebly.com's raw
+HTML is genuinely inconsistent page-to-page (at least four different verse-marking conventions found
+across ~50 chapters) -- expect more surprises if this source gets used again.
 
-**Explicitly deferred, Josh's call: Fetha Nagast work — OCR, translation, everything — is on hold until
-after the app ships.** Do not pick this up proactively in a future session; wait for Josh to reopen it.
-When resumed: OCR/transcribe Guidi's Italian from the two HathiTrust volumes above, then translate
-chapter by chapter into English, flagging every passage with real uncertainty in ecclesiastical or
-Ethiopian civil/criminal legal terminology rather than smoothing over it (same "honest empty over
-fabricated content" standard as the Pashhur gap). Stay amber until a second reader who can check
-against the Italian (or ideally the Ge'ez) has reviewed it — this is not a book Claude can self-certify
-the way a straight transcription-and-compare job can be.
+**STILL OPEN, unchanged from before this session:** Malke'a Guba'e and Malke'a Iyasus (same body-
+salutation genre as Malke'a Virgin Mary, no source identified yet -- likely needs academic-literature
+search, e.g. Habtemichael Kidane's work on Ethiopian hymnody, rather than general web search); Guba'ekana
+(real source exists at CCEL's NPNF2-14, but need to determine whether the app is loosely tracking the
+plain-20 or expanded-84 Nicene canon tradition before rebuilding); the Sinodos family -- Sirate Tsion,
+Tizaz, Admonitions, Abtilis (14-23 verses each, condensation pattern confirmed, sourcing/mapping still
+needs digging); the non-red Clement/Qalementos files -- 2,4,5,6,8 Clement, Book of Rolls, Visionary,
+Statutes (4-40 verses each, same pattern, sourcing likely needs Josh, though Charles' free APOT hasn't
+been checked yet for Clementine fragments); Mazaheta (blocked on its own unresolved title/identity
+question); Josippon (confirmed no free-or-paid complete English translation of the real text exists
+anywhere).
 
-**Governance lesson, added as a standing rule below given how this session went:** a "no free source
-exists" or "this is copyrighted" conclusion is exactly the kind of claim this project's core rule
-already covers — never trust it just because a prior session (including this Claude) already reached
-it. When Josh pushes back on a conclusion like this, the right response is to re-verify from primary
-research immediately, not to defend the prior conclusion or hedge with lawyerly caveats before doing
-the actual work of checking. Treat "I already looked into this" as a reason to look harder, not a
-reason to hold the line.
-
-## Session 2026-07-18 continued -- SY corpus audit: real, substantial defects found in 2 Baruch / Letter of Baruch
-
-Audited the three SY-tagged files: `2baruchSY.json`, `letterofbaruchSY.json`, and `odesofsolomonSY.json`
-(already GREEN from a prior session, not re-audited, confirmed still present).
-
-**Real finding, not yet remediated:** `2baruchSY.json` has ~1,939 words of content confirmed missing
-(vs. the Charles/APOT 1913 translation, verified via Wesley Center Online's transcription) across a
-dozen-plus chapters, plus a confirmed real duplication defect (ch.12 vv.6-7 verbatim duplicate ch.13
-vv.1-2), plus ~447 words of unexplained extra content, plus ~373 words of direct wording mismatches
-whose cause (paraphrase vs. 1896-vs-1913 Charles edition mixing) isn't yet resolved. `letterofbaruchSY.
-json` inherits the same defects one-for-one in its chapters 4-5 (= 2 Baruch chs. 81-82), since it was
-built by copying that range verbatim. Full detail, including the discovery that the Wesley Center
-source page itself is genuinely incomplete (stops mid-ch.85, not a fetch-tool wall), is in
-`AUDIT_GOVERNANCE_LEDGER.md`'s "Syriac (SY) corpus audit, session 2026-07-18" entry.
-
-**Assessment: full-rebuild-scale, same category as Hermas/Didascalia's earlier discoveries.** Not
-fixed this session -- flagged to Josh for a direction before starting reconstruction, per the project's
-established pattern for findings at this scale.
-
-**Next session, if resumed:** verify chapters 86-87 against a primary source (yahwehswordarchives.org
-confirmed the content is real/substantive but not yet checked character-for-character); resolve the
-1896-vs-1913 Charles wording question (archive.org has the 1896 `theapocalypseofb00charuoft` scan for
-comparison); triage the ~447 "extra" words individually; then rebuild both files from a confirmed-
-complete source.
-
-## Session 2026-07-18 continued -- ET broader-canon audit: MAJOR FINDING, 1-3 Meqabyan wrong content
-
-Worked through the remaining unaudited ET items from the 2026-07-17 Phase 2 triage. Full detail in
-`AUDIT_GOVERNANCE_LEDGER.md`'s "ET broader-canon audit, session 2026-07-18 continued" entry.
-
-**Headline finding: 1-3 Meqabyan's content doesn't match the real text** -- confirmed via Wikisource's
-free community translations plus an independent Wikipedia summary (both agreeing with each other, both
-disagreeing with the app). The app invents a villain ("Tsur, king of the Chaldeans" instead of the real
-Tsirutsaydan, king of Midian/Moab), gives the martyr three sons instead of five, and -- most
-seriously -- turns "Meqa'abyan" (the book's own title, cognate to "Maccabees") into a fabricated
-recurring personal/dynastic name across all three books, which the real narrative doesn't have at all.
-Chapter counts happen to match the real books exactly, a reminder that structural completeness (already
-confirmed clean in the Phase 1 sweep) says nothing about content accuracy. Same fabrication-class defect
-as Prayer of Apollonius and pre-rebuild Didascalia, but these three ARE genuinely canonical (core
-81-book canon per Phase 0), so this is a rebuild target, not a removal candidate. Real free source now
-in hand (Wikisource's Translation:1/2/3_Meqabyan, cross-checkable against apocryphalibrary.weebly.com).
-**Not yet rebuilt this session.**
-
-**Also confirmed, condensation pattern (same class as Hermas/Didascalia pre-rebuild), sourcing still
-partly blocked:** Guba'ekana (23 verses total for the Creed + canons + proceedings -- real source
-exists at CCEL's NPNF2-14 for either the plain-20 or expanded-84 Nicene canon tradition, need to
-determine which the app is loosely tracking before rebuilding); the Sinodos family (Sirate Tsion, Tizaz,
-Admonitions, Abtilis -- 14-23 verses each, sourcing/mapping still needs digging per the 2026-07-17
-triage); the non-red Clement/Qalementos files (2, 4, 5, 6, 8 Clement, Book of Rolls, Visionary,
-Statutes -- 4-40 verses each, sourcing likely still needs Josh per that same triage, though R.H.
-Charles' free APOT hasn't yet been checked for Clementine fragments).
-
-**Real source found, not yet used:** Malke'a Virgin Mary -- Budge's "Legends of Our Lady Mary" (1922)
-has "Salutations to the Members of the body of the Virgin Mary" at pp. 202-235, confirmed present via
-archive.org's full copy. Not yet fetched/compared.
-
-**Unchanged from prior sessions:** Malke'a Guba'e and Malke'a Iyasus (same genre as Malke'a Virgin Mary,
-no source found yet, likely needs academic-literature search); Mazaheta (blocked on its own unresolved
-title/identity question); Josippon (confirmed no free-or-paid complete English translation of the real
-Ethiopian-recension text exists anywhere).
-
-**Dashboard not yet updated for any of this** -- pending Josh's confirmation before flipping any
-RED_SEED/GREEN_SEED entries, per the practice just established for the SY corpus earlier this session.
-
-**Next session, if resumed:** rebuild 1-3 Meqabyan from Wikisource (highest-value target, real source
-in hand, severe confirmed defect); fetch and compare Malke'a Virgin Mary against Budge; determine which
-Nicene-canon tradition Guba'ekana should track and rebuild; continue digging on Sinodos/Clement sourcing
-or take that question to Josh.
-
-## Session 2026-07-18/19 -- 1-3 Meqabyan REBUILT (was the top item from the prior session's list)
-
-Full detail in AUDIT_GOVERNANCE_LEDGER.md's "1-3 Meqabyan rebuild, session 2026-07-18/19" entry. Short
-version: all three books rebuilt from real sources (apocryphalibrary.weebly.com primary for books 1-2,
-Wikisource primary for book 3 and as a secondary source/fill-in for books 1-2) and committed to
-`data/bible/ET/`, replacing the previously-fabricated content.
-
-Sourcing this required Josh running two scraper scripts locally across many rounds (this session's
-fetch tool can't reach either site), with several real bugs found and fixed against actual failing
-pages along the way -- inconsistent verse-number markup, genuine duplicate verse renderings within
-single chapters, and a recurring ~5,331-character leftover text block embedded identically across
-unrelated pages on different books, which turned out to be site-side residue rather than anything
-wrong with the scraper.
-
-**Status: 1 Meqabyan fully clean (36 ch., 738 verses, no gaps/dupes). 2 Meqabyan rebuilt with two known,
-honestly-flagged single-verse gaps (ch.16 v.4, ch.21 v.4) and two chapters (6-7) sourced from Wikisource
-since apocryphalibrary's own pages for those are genuinely incomplete. 3 Meqabyan unchanged from the
-interim rebuild, Wikisource-only, still amber.** None of the three have had a human read-through against
-source yet -- stay amber, not GREEN, until that happens. Dashboard RED_SEED entries for these three are
-now stale (they reflect the original fabrication finding, not the current rebuilt state) but shouldn't
-be flipped to GREEN before that human verification pass -- worth Josh's explicit call on how to mark
-them in the interim.
-
-**Next session, if resumed:** human verification read-through of all three rebuilt books against source
-(or at least spot-checks); decide dashboard interim status for these three; then return to the
-still-open ET items from the prior list (Malke'a Virgin Mary/Guba'e/Iyasus, Guba'ekana, Sinodos/Clement
-family, Mazaheta, Josippon).
-
-## Session 2026-07-19 -- Malke'a Virgin Mary REBUILT from confirmed real source
-
-Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Malke'a Virgin Mary rebuild, session 2026-07-19" entry.
-Short version: the real source flagged in the prior session (Budge's *Legends of Our Lady Mary*, 1922,
-pp. 235-244) turned out to be a 42-part body salutation litany; the app's prior file only had 14
-stanzas, in a different opening formula than the real text ("Peace be unto" vs. the source's "Salutation
-to"), suggesting independently-composed content rather than a trimmed translation. Rebuilt as a complete
-42-stanza file, sourced directly from Budge, with three minor OCR-artifact corrections along the way
-(a misread numeral, two numerals with stray internal spaces, one badly-mangled drop-cap letter) --
-all confirmed against surrounding context, not guessed.
-
-Hit the same kind of fetch-tool wall on archive.org that's shown up before with other large public-
-domain texts this project has used (Wesley's 2 Baruch page, Wikisource for 1-3 Meqabyan) -- this
-session's fetch tool caps this specific source's full-text stream at a fixed point regardless of token
-limit. Resolved the same way as the Weebly-scraper wall: Josh downloaded the file directly (no such
-restriction on his end) and provided it for processing.
-
-**Not yet done:** human read-through against source; dashboard entry (none currently exists for this
-book at all, unlike the other findings this session which got RED_SEED entries -- worth adding one).
-
-**Next session, if resumed:** dashboard status for Malke'a Virgin Mary; human verification pass on this
-rebuild plus 1-3 Meqabyan; then the remaining ET backlog (Malke'a Guba'e/Iyasus -- same genre, no source
-found yet; Guba'ekana; Sinodos/Clement family; Mazaheta; Josippon).
+**Next session, if resumed:** human verification read-through of the 1-3 Meqabyan and Malke'a Virgin
+Mary rebuilds (or at least spot-checks) before any of them can move from amber to GREEN; then continue
+down the still-open ET list above, or return to the SY corpus rebuild, or take the Sinodos/Clement/
+Mazaheta/Josippon sourcing questions to Josh for a decision.
