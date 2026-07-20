@@ -3980,3 +3980,27 @@ resume-note/ledger update as the rest of this session's work, per Josh's "one lo
 standing rule where reasonable); Tizaz rebuild (large, ~100-page source, deliberately not attempted this
 session -- see resume note); Sirate Tsion and Admonitions/Gitsew remain unsourced (no free English
 translation identified for either).
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 1 (Statutes 1-20 of 72), Horner 1904
+
+**Trigger:** Josh located and pasted the full text of George Horner's 1904 edition (English
+translation of the Ethiopic Statutes of the Apostles, pp. 127-232), resolving the fetch-tool wall
+documented earlier this session that had blocked automated retrieval of this source.
+
+**Confirmed real source, now in use:** Horner 1904, "Translation of the Ethiopic Text." Public
+domain. Content is the genuine Statutes/church-order text (moral instruction section, Statutes 1-13,
+followed by ordination canons for bishop, reader, deacon, widow, and the lay statute, Statutes
+14-19, and the reminder concerning the Oblation, Statute 20) -- confirming this session's earlier
+finding that the prior file content (Didache "Two Ways" material) had no relation to the real text.
+
+**Rebuilt so far: 20 of 72 Statutes, 43 verses.** Verse divisions follow natural sentence/paragraph
+breaks in Horner's translation; wording is unaltered from the source. Committed and pushed this
+session as its own patch, per Josh's request to land this checkpoint before continuing, rather than
+batching the full 72-statute rebuild into one large patch.
+
+**Not yet done:** Statutes 21-72, which include the baptismal liturgy, prayers of consecration for
+oil/chrism/water, the ordination-of-bishop rite in full, the Oblation/Kiddas text, the hours of
+prayer, the calendar of non-working days, and the closing chapters on Church order and grades of
+ministry -- all still to be transcribed from the same source in follow-up patches. Dashboard/
+SEED_VERSION bump deferred until the book is complete, per the project's practice of not marking a
+book GREEN until it is fully closed.

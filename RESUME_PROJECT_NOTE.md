@@ -783,3 +783,17 @@ carried forward from 2026-07-19 remain open and unaffected.
 
 **Patch this session:** one patch covering the Abtilis rebuild + this resume-note entry + the ledger entry
 above, per the "one logical unit, one patch" standing rule.
+
+## Session 2026-07-20 continued -- Tizaz rebuild started (Horner 1904, Statutes 1-20 of 72)
+
+Josh pasted the full text of Horner's 1904 edition, resolving the fetch-tool wall documented
+earlier this session. Rebuilt and patched Statutes 1-20 (of 72) as a checkpoint, per Josh's
+request to land this before continuing -- full detail in AUDIT_GOVERNANCE_LEDGER.md's "Tizaz
+rebuild ... Part 1" entry.
+
+**Next session (or later this session): Statutes 21-72.** This covers the bulk of the book --
+baptismal liturgy, consecration prayers for oil/chrism/water, the full ordination-of-bishop rite,
+the Oblation/Kiddas, hours of prayer, the calendar of non-working days, and the closing chapters
+on Church order and grades of ministry. Continue transcribing from the same source (already in
+hand, no further fetching needed) in the same chapter-by-chapter method. Do not mark Tizaz GREEN
+or bump SEED_VERSION until all 72 Statutes are in.
