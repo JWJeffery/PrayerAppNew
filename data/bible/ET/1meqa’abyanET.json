@@ -2,1008 +2,284 @@
   "meta": {
     "name": "1 Meqa'abyan",
     "id": "1MEQ",
-    "version": "apocryphalibrary.weebly.com, formal register (chs 1,2,7,12,19,22,31,3,4,5,6,8,9,10,11,13); Wikisource Jamaican Patois translation (remaining chapters, formal register unavailable at apocryphalibrary for these)",
-    "copyright": "Public Domain",
+    "version": "Chapters 1-7: Wikisource WikiProject Wiki Bible translation (public domain by project charter). Chapters 8,9,10,11,12,13,19,22,31: STILL SOURCED FROM apocryphalibrary.weebly.com, which is D.P. Curtin's 2018 copyrighted translation -- NOT public domain, pending replacement. Remaining chapters (14-18,20,21,23-30,32-36): Wikisource Jamaican Patois translation.",
+    "copyright": "MIXED -- see version note. Chapters 1-7 confirmed Public Domain 2026-07-20. Chapters 8,9,10,11,12,13,19,22,31 are copyright-encumbered (Curtin, 2018) and must not be distributed as Public Domain until replaced.",
     "rebuildNote": "Rebuilt 2026-07-18/19 after prior content was found to not match the real text (fabricated character names and plot -- see AUDIT_GOVERNANCE_LEDGER.md). Cross-checked against Wikisource's independent community translation for content/plot agreement (chapters 1-7 only, where Wikisource's own page is complete). Structurally clean: all 36 chapters present, no gaps, no duplicate verse numbers. Not yet individually verse-verified by a human reader against the source -- treat as amber pending that review, not GREEN. CORRECTED 2026-07-19: an independent secondary check found this file actually mixed two different English translations chapter-by-chapter -- a formal register (matching this note's claim) in a minority of chapters, and a Jamaican-Patois-register translation (matching Wikisource's Patois translation of the same book, not apocryphalibrary) in the majority. Josh chose to standardize on the formal register. Re-fetched directly from apocryphalibrary.weebly.com's own dual-translation page layout (each verse shown in both Patois and formal English) for chapters 3,4,5,6,8,9,10,11,13 -- confirmed formal text available and verse counts match exactly, now replaced. For the remaining Patois chapters (14-18,20,21,23-30,32-36), apocryphalibrary's own pages host ONLY the Patois translation -- no formal-register alternative exists on this source for those chapters. Chapter 14 additionally has an unresolved verse-boundary question: the site's page for '1 Meqabyan 14' contains 23 verse-numbered lines of content, not the 4 currently in this file -- unclear whether this file's chapter 14 is truncated or whether the site's chapter divisions don't align 1:1 with this file's. Both open questions held for Josh's decision, not resolved by guessing. Chapter 14 investigated 2026-07-19: resolved as a genuine content gap, not a boundary-drift issue -- the site's page for '1 Meqabyan 14' verses 1-4 match this file's prior verses 1-4 exactly (formal/Patois pairs of the same content), confirming correct chapter alignment; verses 5-23, which exist on the source page, were simply missing from this file. Filled in: verses 1-4 formal (3 confirmed paired, verse 4's formal text recovered from an inline-formatted marker my parser initially missed), verses 5-23 Patois (no formal alternative exists on this source, consistent with the rest of this chapter range). Chapter 14 now 23 verses, up from 4."
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        {
-          "num": 1,
-          "text": "A certain man named ᵇ Tseerutsaydan loved his sin. He would often boast of the great profusion of his troops and of the great armies which he held governance over."
-        },
-        {
-          "num": 2,
-          "text": "He had countless priests who served the false gods which he worshiped, and [he would often bow to them and make sacrifices by night and day."
-        },
-        {
-          "num": 3,
-          "text": "In the sightlessness of his own heart, he believed that they granted him power and strength."
-        },
-        {
-          "num": 4,
-          "text": "He believed that they gave him sovereignty over the nations."
-        },
-        {
-          "num": 5,
-          "text": "And as his sway over the nations progressed, he believed that [these false gods] granted him the right to supremacy."
-        },
-        {
-          "num": 6,
-          "text": "[The King] would offer sacrifices to them by night and day,"
-        },
-        {
-          "num": 7,
-          "text": "appointing priests to serve these idols."
-        },
-        {
-          "num": 8,
-          "text": "These priests ᵃ ate from the unclean sacrifices, all the while telling the king that the idols had consumed what was offered."
-        },
-        {
-          "num": 9,
-          "text": "They sought to ᵃ proselytize among the people, so that they might make greater sacrifices to be consumed."
-        },
-        {
-          "num": 10,
-          "text": "The king trusted in these idols, which can grant no favors, nor yield any merit to his welfare."
-        },
-        {
-          "num": 11,
-          "text": "At the time, when his heart was blind to the truth, [the king] believed that they had given him to fate, by placing him with a diadem. It would appear to him that [these idols] had created him, for ᵃ Satan blocked him from knowledge of the true God, who alone grants eternal life. Rather, [Satan] sought to bring him away from life, into the fire of ᵇ Gehenna forever, for he believed the idols to be gods,"
-        },
-        {
-          "num": 12,
-          "text": "but since they do not truly live, they cannot give life."
-        },
-        {
-          "num": 13,
-          "text": "It was Satan’s tyranny that mislead them, which was found within their idolatry. He gave of them false speech, and said he would reveal great truths to them, and for this he was loved. [Therefore, Satan] cast the people’s discernment upon the false gods and those that believe in them, and among all the children of Adam, who’s prayers had become like that of the dust."
-        },
-        {
-          "num": 14,
-          "text": "They gazed upon [the idols] in solemn reverence, and [Satan] filled their mind with their own desires. And the people complied, offering as sacrifice their young girls and young boys, children of their own blood. They spilled the innocent blood of their children."
-        },
-        {
-          "num": 15,
-          "text": "This did not concern [the king], for Satan had savored the sacrifices he made to his gods in order to complete his malicious designs. [Satan ᵃ sought to] bring him down into Gehenna, where he dwells, and where there is no respite for all eternity, and where all will receive chastisement."
-        },
-        {
-          "num": 16,
-          "text": "This king, Tseerutsaydan, was full of conceit; for he had fifty idols made of false gods, and twenty idols of false goddesses."
-        },
-        {
-          "num": 17,
-          "text": "He would often boast about his idolatry, and offered glorification and praise to the idols while he made his daily sacrifices."
-        },
-        {
-          "num": 18,
-          "text": "He commanded the people, that they too might make sacrifices to these idols. [The king] would eat from these unclean sacrifices, and ᵃ ordered that the people do the same, to spread the evil which he created."
-        },
-        {
-          "num": 19,
-          "text": "Now, [the king] had five workshops which were under his command, where he forged the idols out of iron, brass and lead."
-        },
-        {
-          "num": 20,
-          "text": "The king had then adorned in silver and in gold, and had veiled curtains around his palaces for them, each hidden in a tabernacle."
-        },
-        {
-          "num": 21,
-          "text": "He appointed guardians for their care, and would make offerings of meat to these idols from forty creatures—ten fattened oxen and ten fatted ewes, ten barren calves and ten barren goats, along with winged birds of the air."
-        },
-        {
-          "num": 22,
-          "text": "It appeared to [the king] that these idols ate and drank, consuming fifty bunches of grapes and fifty dishes of bread kneaded with oil."
-        },
-        {
-          "num": 23,
-          "text": "The king said to the priests, “Take this, give it to them. Let my gods consume the meat that has been slaughtered on their account. Make them drink from of the wine I have given to them. If this is not enough to quench their desire, I will give them more.”"
-        },
-        {
-          "num": 24,
-          "text": "[The king] then ordered that everyone should eat and drink from that defiling sacrifice."
-        },
-        {
-          "num": 25,
-          "text": "He then, in his corruption, sent out his armies to march on all the nations of his realm, to find one who would neither make sacrifices, nor ᵃ prostrate themselves [before the idols], so that they could be brought before him. He sought to punish them by ᵇ fire and by sword, [for he feared that the gods] might seize his wealth and burn his palaces. [The king] lived in ᶜ terror that they might remove his great fortune and destroy him."
-        },
-        {
-          "num": 26,
-          "text": "“My gods are generous and great, and out of their benevolence I have forged them. Therefore, I will give chastisement on him that does not worship my gods and make sacrifices to them."
-        },
-        {
-          "num": 27,
-          "text": "I will show punish punishment and retribution! For they have created the heavens and the earth, the great wide sea, the moon and sun, the rains and the wind, and all that abide in this world."
-        },
-        {
-          "num": 28,
-          "text": "Those who will not worship shall be punished under the penalty of law, and I shall have no mercy."
-        }
+        {"num": 1, "text": "There was one man whose name was called Tseerutsaydan and he loved sin. He would boast in his horses' abundance and his troops' firmness beneath his authority."},
+        {"num": 2, "text": "He had many priests who served his idols whom he worshipped, and for whom he bowed and sacrificed sacrifices by night and by daylight."},
+        {"num": 3, "text": "But in his heart's dullness, it would seem to him that they gave him firmness and power."},
+        {"num": 4, "text": "And in his heart, it would seem to him that they gave him authority in all his rule."},
+        {"num": 5, "text": "And again, in formation time, it would seem to him that they gave him all the desired authority also."},
+        {"num": 6, "text": "And he would sacrifice sacrifice for them day and night."},
+        {"num": 7, "text": "He appointed priests who served his idols."},
+        {"num": 8, "text": "While they ate from that defiled sacrifice, they would tell him, pretending that the idols eat night and day."},
+        {"num": 9, "text": "Again, they would make other persons diligent like unto them - that they might sacrifice and eat. And again, they would make other persons diligent that they might sacrifice like unto them."},
+        {"num": 10, "text": "But he would trust in his idols that don't profit nor benefit."},
+        {"num": 11, "text": "By his timeframe being small - and in his heart's dullness - it would seem to him that they irked him - that they fed him and crowned him. It would seem to him that they irked him - for Satan had deafened his reasoning lest he know his creator who irked him, bringing him from not living towards living - or lest he with his kindreds know his creator who irked him, bringing him from not living towards living - that they might go toward Gehannem of Fiyah forever - it being judged upon them with him who call them gods without them being gods."},
+        {"num": 12, "text": "As they are never well whenever, it is due that he might call them dead ones."},
+        {"num": 13, "text": "As Satan's authority that misleads them will lodge in that idol image - and as he will tell them their reasoning according - and as he will reveal to them like unto what they loved - he will judge upon the idols wherein they believed and wherein 'Adam childran trust - whose reasoning was like unto ashes."},
+        {"num": 14, "text": "And they will marvel upon the time they sight up that he fulfilled what they thought for them - and they will do him according for him reaching up till they sacrifice their daughter children and their male children birthed from their nature - up till they spill their daughter children and male children's blood that was clean."},
+        {"num": 15, "text": "They were not sad, for Satan had enjoyed their sacrifice to fulfill their evil agreement. He wanted to drag them down to Gehenna with him, where there is no escape for eternity, and where they would receive torment."},
+        {"num": 16, "text": "But that Tseerutsaydan were arrogant. He had fifty idols worked in a males pattern and twenty worked in a females pattern."},
+        {"num": 17, "text": "And he would boast in those idols that were of no benefit. He would totally glorify them while he offered sacrifices morning and evening."},
+        {"num": 18, "text": "And he would command people to offer sacrifices for the idols—and he would eat from that defiled sacrifice—and he would command other people to eat from the sacrifice. He was especially inciting them to evil."},
+        {"num": 19, "text": "They had five houses built for themselves, decorated with idols made of iron, brass, and lead."},
+        {"num": 20, "text": "They adorned them with silver and gold, and covered them with curtains and tents."},
+        {"num": 21, "text": "They appointed keepers for the idols and would continually sacrifice forty animals to them: ten fat oxen, ten barren cows, ten fat sheep, and ten barren goats, along with birds that had wings."},
+        {"num": 22, "text": "They believed that their idols ate, so they presented them with fifty baskets of grapes and fifty dishes of wheat kneaded with oil."},
+        {"num": 23, "text": "They told their priests to take and give the offerings to them, and they would eat what was slaughtered for them and drink the wine presented to them. If it was not enough, they would add more."},
+        {"num": 24, "text": "They commanded all to eat and drink from the defiled sacrifice."},
+        {"num": 25, "text": "But out of their evil malice, they sent troops throughout the kingdom to find anyone who did not offer sacrifices or bow down to the idols. They would capture and punish them with fire and sword before them, plunder their money, burn their homes, and destroy all their possessions."},
+        {"num": 26, "text": "They said, \"For they are merciful and great, and they are angry with us for our wickedness. I will show punishment and tribulation to anyone who does not worship my idols and offer sacrifices to them."},
+        {"num": 27, "text": "And I will show them punishment and tribulation, for they have angered the Earth, the Heaven, the sea, the wide moon, the sun, the stars, the rains, the winds, and all that live in this world to be food and to be satisfied with us.\""},
+        {"num": 28, "text": "But those who worship them will be punished with firm tribulation, and it will not be pleasant for them."}
       ]
     },
     {
       "num": 2,
       "verses": [
-        {
-          "num": 1,
-          "text": "ᵃ There were one man birthed from the tribe of Binyam whose name are called Meqabees;"
-        },
-        {
-          "num": 2,
-          "text": "him had three childran who were handsome an totally warriors ~ them had bein iloved alongside all persons ina that Midyam an Miedon country that are Tseerutsaydan Rule."
-        },
-        {
-          "num": 3,
-          "text": "An like unto the king commanded them pon the time him found them:—\"Don't unu bow fe Tseerutsaydan irators? How about don't unu sacrifice sacrifice?"
-        },
-        {
-          "num": 4,
-          "text": "But if unu refuse—wi will seize an tek unu toward the king—an wi will downstroy all your money like unto the king commanded.\""
-        },
-        {
-          "num": 5,
-          "text": "These youts who were handsome replied fe him sayin—\"As fe Him fe Whom InI bow—there are InI Faada Irator Who Irated Earth an Heaven an what are within she—an the sea—moon an Sun an clouds an stars ~ Him are the True Irator Whom InI worship an ina Whom InI believe.\""
-        },
-        {
-          "num": 6,
-          "text": "An these the king youts are four—an them servants who carry shield an spear are a hundred."
-        },
-        {
-          "num": 7,
-          "text": "An pon the time them loved that them might seize these hola ones—them escaped from them hands and there are none who touched them ~ as those youts are totally warriors ina Power—them went seizin shields an them spears."
-        },
-        {
-          "num": 8,
-          "text": "An there were from them one who strangle an kill panther—an at that time him would strangle it like unto a chicken."
-        },
-        {
-          "num": 9,
-          "text": "An there were one from them who kill a lion with one rock or strikin at one time with a stick."
-        },
-        {
-          "num": 10,
-          "text": "An there were one from them who kill a hundred persons—strikin ina formation time with one sword—an them name an them hunt were thus ~ it were called ina all Babilon an Mo`ab countries."
-        },
-        {
-          "num": 11,
-          "text": "An them were warriors ina Power—an them had a thing bein iloved an comeliness."
-        },
-        {
-          "num": 12,
-          "text": "An again them features comeliness were wondrous—however becau them worshipped JAH an becau them didn't fear death—it are them reasonin comeliness that surpass all."
-        },
-        {
-          "num": 13,
-          "text": "An pon the time them frightened the troops—there are none who could able fe seize them—but them who were warriors escaped proceedin toward a lofty mountain."
-        },
-        {
-          "num": 14,
-          "text": "An those troops returned toward the city an shut the fortress gate ~ them terrorized the people sayin—\"Unless unu brought those warriors the Meqabyans—wi will burn your city ina fiyah—an wi will send toward the king an downstroy your country.\""
-        },
-        {
-          "num": 15,
-          "text": "An at that time the country persons—rich an poor ones an dawtaz an males—a child whose faada an mother dead pon him an old dawtaz—everyone proceeded an shouted together—an them straightened them necks toward the mountain an shouted toward them sayin—\"Don't downstroy InI—an don't downstroy InI country pon InI.\""
-        },
-        {
-          "num": 16,
-          "text": "At that time them wept together—an them feared—arisin from JAH."
-        },
-        {
-          "num": 17,
-          "text": "Returnin them faces Eastward an streachin forth them hands them begged toward JAH together—\"Lord—should InI refuse these men who demolished Thy Command an Thy LAW?"
-        },
-        {
-          "num": 18,
-          "text": "Yet him believed ina silver an gold an ina the stone an wood that a person hands worked—but InI don't love that InI might hear that criminal word—who didn't believe Thy LAW\" them said."
-        },
-        {
-          "num": 19,
-          "text": "\"When Thou are the Irator Who save an Who kill—him mek him ras self like unto them Irated him also ~ as fe him—him are who spill a person blood an who eat a person flesh."
-        },
-        {
-          "num": 20,
-          "text": "But InI don't love that InI might sight up that criminal face nor hear him word\" them said."
-        },
-        {
-          "num": 21,
-          "text": "\"However if Thou commanded InI—InI will go toward him ~ becau InI believe ina Thee-I—InI will pass an give InI bodies fe death—an pon the time him said 'Sacrifice sacrifice fe mi irators'—InI won't hear that criminal word."
-        },
-        {
-          "num": 22,
-          "text": "But InI believed Thee-I—Lord Who examine kidneys an reasonins—InI Faadas Irator—'Abriham an Yis'haq an Ya`iqob who did Thy Accord an lived firmed up ina Thy LAW."
-        },
-        {
-          "num": 23,
-          "text": "Thou examine a person reasonin an help the sinner an the righteous one—an there be none hidden from Thee-I—an him who took refuge are revealed alongside Thee-I."
-        },
-        {
-          "num": 24,
-          "text": "But InI have no other Irator apart from Thee-I."
-        },
-        {
-          "num": 25,
-          "text": "That InI might give InI bodies fe death becau Thy glorified Name—however be Power an Firmness an a Shelter fe InI ina this Work that InI are ruled fe Thee-I."
-        },
-        {
-          "num": 26,
-          "text": "An pon the time 'Isra'iel entered toward Gibts country Thou heard Ya`iqob plea—an now glorified God—InI beg Thee-I.\""
-        },
-        {
-          "num": 27,
-          "text": "An pon the time the two men whose features were quite handsome were sight up fe them standin before them—pon the time fiyah swords that frighten like unto lightnin alit an cut them necks an killed them—at that time them arose bein well like unto formerly."
-        },
-        {
-          "num": 28,
-          "text": "Them features comeliness became totally handsome an them shone more than Sun—an them became more handsome than formerly."
-        }
+        {"num": 1, "text": "There was a man born from the tribe of Benjamin whose name was called Maccabeus."},
+        {"num": 2, "text": "He had three children who were handsome and totally warriors. They had been loved by all the people in the Midian and Median countries that were under the rule of the Seleucid King."},
+        {"num": 3, "text": "And like the king commanded them when he found them: \"Don't you bow to the Seleucid idols? How about not sacrificing?"},
+        {"num": 4, "text": "But if you refuse, we will seize and take you to the king, and we will destroy all your money as the king commanded.\""},
+        {"num": 5, "text": "These handsome youths replied to him, saying, \"As for Him whom we bow, there is our Father Creator who created the Earth and Heaven and everything within it, the sea, moon and sun, clouds, and stars. He is the True Creator whom we worship and in whom we believe.\""},
+        {"num": 6, "text": "And these youths of the king were four, and the servants who carried shields and spears were a hundred."},
+        {"num": 7, "text": "And when they wanted to seize these holy ones, they escaped from their hands, and there were none who could touch them, for these youths were totally warriors in power, seizing shields and spears."},
+        {"num": 8, "text": "And there was one among them who could strangle and kill a panther, and at that time, he would strangle it like a chicken."},
+        {"num": 9, "text": "And there was one among them who killed a lion with one rock or struck it with a stick at one time."},
+        {"num": 10, "text": "And there was one among them who killed a hundred people in formation with one sword, and their name and their deeds were thus. It was called in all Babylon and Moab countries."},
+        {"num": 11, "text": "And they were warriors in power, and they had a thing being loved and comeliness."},
+        {"num": 12, "text": "And again, their features and comeliness were wondrous. However, because they worshiped JAH and did not fear death, it was their reasoning and comeliness that surpassed all."},
+        {"num": 13, "text": "And when they frightened the troops, there were none who could seize them, but those who were warriors escaped, proceeding toward a lofty mountain."},
+        {"num": 14, "text": "And those troops returned to the city and shut the fortress gate. They terrorized the people, saying, \"Unless you bring those warriors, the Maccabees, we will burn your city in fire, and we will send for the king and destroy your country.\""},
+        {"num": 15, "text": "And at that time, the country people - both rich and poor, daughters and sons - a child whose father and mother died upon him and an old daughter, everyone proceeded and shouted togethe, and they straightened their necks toward the mountain and shouted toward them, saying, \"Don't destroy us and don't destroy our country for us.\""},
+        {"num": 16, "text": "At that time, they wept together and they feared, arising from JAH."},
+        {"num": 17, "text": "Returning their faces eastward and stretching forth their hands, they begged toward JAH together, \"Lord, should we refuse these men who demolished Thy command and Thy law?"},
+        {"num": 18, "text": "Yet they believed in silver and gold and in the stone and wood that a person's hands worked. But we don't love that we might hear that criminal word - who didn't believe Thy law.\" they said."},
+        {"num": 19, "text": "\"When Thou art the Creator who saves and who kills, he makes himself like unto the one who creates him also - as if he is the one who spills a person's blood and who eats a person's flesh."},
+        {"num": 20, "text": "But we don't love that we might see that criminal face nor hear his word,\" they said."},
+        {"num": 21, "text": "\"However, if Thou command us, we will go toward him because we believe in Thee. We will pass and give our bodies for death. And on the time he said 'Sacrifice, sacrifice for my creators,' we won't hear that criminal word."},
+        {"num": 22, "text": "But we believe in Thee, Lord who examines kidneys and reasonings - our fathers' Creator - Abraham and Isaac and Jacob who did Thy accord and lived firmly in Thy law."},
+        {"num": 23, "text": "Thou examine a person's reasoning and help the sinner and the righteous one - and there be none hidden from Thee. And he who took refuge is revealed alongside Thee."},
+        {"num": 24, "text": "But we have no other Creator apart from Thee."},
+        {"num": 25, "text": "That we might give our bodies for death because of Thy glorified name - however be power and firmness and a shelter for us in this work that we are ruled for Thee."},
+        {"num": 26, "text": "And on the time 'Israel entered toward Gibeon country, Thou heard Jacob's plea and now glorified God - we beg Thee.\""},
+        {"num": 27, "text": "\"And at that time, two men with handsome features were seen standing before them. And when the fiery swords that were as frightening as lightning descended and cut their necks, they died. But at that time, they arose and were well like they were before.\""},
+        {"num": 28, "text": "Their features' comeliness became totally handsome and they shone more than the sun - and they became more handsome than formerly."}
       ]
     },
     {
       "num": 3,
       "verses": [
-        {
-          "num": 1,
-          "text": "As thou seest before thee, the servants of the Most High Jehovah, Abijah, Seelah, Fentos who were dead and arose, you have that you might likewise arise from the dead, and your faces shall shine like unto the Sun in the Kingdom of Heaven."
-        },
-        {
-          "num": 2,
-          "text": "And they went with those men and received martyrdom there."
-        },
-        {
-          "num": 3,
-          "text": "And at that time they begged, they praised, and they bowed before Jehovah—death did not frighten them and the king's punishment did not frighten them."
-        },
-        {
-          "num": 4,
-          "text": "And they went toward those youths and became like unto a sheep that has no evil, yet they did not frighten them, and upon the time that they arrived, they seized and beat them and bound and whipped them, and they delivered them up to the king and placed them before him."
-        },
-        {
-          "num": 5,
-          "text": "And the king answered them saying, \"Why will ye stubborn ones not sacrifice sacrifices and bow before my creators?\""
-        },
-        {
-          "num": 6,
-          "text": "Those brethren who were cleansed from sin, who were honored and chosen and joyful, and who shined like a jewel of wondrous value, Seelah and Abijah and Fentos answered him in one word."
-        },
-        {
-          "num": 7,
-          "text": "They told that king who was a plague, \"As for us, we will not bow nor sacrifice unto defouled idols that have not knowledge nor heart.\""
-        },
-        {
-          "num": 8,
-          "text": "And again, they told him, \"We will not bow before idols of silver and gold that a man has wrought with his hands, of stone and wood, that have no heart nor soul nor knowledge, that do not benefit their friends nor harm their enemies.\""
-        },
-        {
-          "num": 9,
-          "text": "And the king answered them, saying, \"Why doest thou thus, as they know who insults them and who wrongs them? Why do you insult the glorified creators?"
-        },
-        {
-          "num": 10,
-          "text": "They answered him, saying, \"They are like unto a trifle alongside us; as for us, we will insult them and will not glorify them."
-        },
-        {
-          "num": 11,
-          "text": "And the king answered them, saying, \"I will punish thee with an evil measure according to your works; I will destroy your comeliness with whipping and firm tribulation and fire."
-        },
-        {
-          "num": 12,
-          "text": "And now tell me whether ye will give or not give sacrifice unto my creators, and if ye do not this, I will punish you by the sword and by whipping.\""
-        },
-        {
-          "num": 13,
-          "text": "They answered him, saying, \"As for us, we will not sacrifice nor bow unto defouled idols.\" And the king commanded them that they might beat them with a fat stick, and again, that they might whip them with a whip, and after that, that they might tear their flesh until their innards might be seen."
-        },
-        {
-          "num": 14,
-          "text": "And after this they bound them and kept them in prison until he counseled with money that he might punish and kill them."
-        },
-        {
-          "num": 15,
-          "text": "Without mercy they took them and bound them securely in prison, and they sat in prison for three nights and three days."
-        },
-        {
-          "num": 16,
-          "text": "And after the third day the king commanded that a proclamation speaker might turn, and that counselors and nobles, local elders and officials, might be gathered."
-        },
-        {
-          "num": 17,
-          "text": "And at that time Tseerutsaydan sat in the square; he commanded that they might bring forth those honored ones, Seelah and Abijah and Fentos; they stood before him, wounded and bound."
-        },
-        {
-          "num": 18,
-          "text": "And the king said unto them, \"When you sat (in prison) these three days, will you recall (your words), or will you remain in your former evil?\""
-        },
-        {
-          "num": 19,
-          "text": "And those honored soldiers of Jehovah answered him saying, \"Even with this cruelty, we will not agree to worship the idols filled with sin that thou dost regard."
-        },
-        {
-          "num": 20,
-          "text": "And that man of lawlessness was vexed and commanded them to stand them up in a lofty place and renew their wounds, and their blood flowed upon the Earth."
-        },
-        {
-          "num": 21,
-          "text": "And again he commanded them that they might burn them with a torch lamp and might char their flesh, and his servants did as he commanded them. And those honored men said unto him, \"Thou who didst not remember the Law of Jehovah, behold, our reward shall abound in the measure whereby thou multipliest our punishment.\""
-        },
-        {
-          "num": 22,
-          "text": "And again, he commanded that they might bring and send forth upon them bears and tigers and lions: evil beasts before them to consume them, that they might utterly consume their flesh with their bones."
-        },
-        {
-          "num": 23,
-          "text": "And he commanded the beastkeepers that they might send the beasts upon them, and they did according to his word, and they bound those honored martyrs' feet, and again, they maliciously beat them and bound them with tent-stakes."
-        },
-        {
-          "num": 24,
-          "text": "And those beasts were flung over them while they roared, and when they reached the martyrs they hailed and bowed unto them."
-        },
-        {
-          "num": 25,
-          "text": "They returned unto the keepers while they roared and frightened the keepers. They took them toward the square until they delivered them up before the king."
-        },
-        {
-          "num": 26,
-          "text": "And there they killed seventy-five men from the army of lawless men."
-        },
-        {
-          "num": 27,
-          "text": "Many men panicked, the one in fear and anguish upon the other, until the king fled from his throne; and they seized the beasts with difficulty and took them toward their lodging."
-        },
-        {
-          "num": 28,
-          "text": "And two of the brethren of Seelah and Abijah and Fentos came and released them from prison, they released their bonds and said unto them, \"Come, let us flee lest these unbelievers and lawless ones find us.\""
-        },
-        {
-          "num": 29,
-          "text": "And these martyrs answered their brethren, saying,\" It is not fit that we flee after we are set up for a testimony; if you are afraid, then go and flee."
-        },
-        {
-          "num": 30,
-          "text": "And those their younger brethren said, \"We will stand with you before the king, and if you perish, we will perish with you also.\""
-        },
-        {
-          "num": 31,
-          "text": "And after this the king was upon his lordship hall balcony and saw that these honored men were released, and that all five brethren stood together. Those chiefs of the troops wondered if they were brethren and told the king. And the king was vexed and shouted like unto a wild boar."
-        },
-        {
-          "num": 32,
-          "text": "And until the king offered money for the punishment of the five brethren, he commanded that his men might seize them and cast them into prison. And they cast them into prison and bound them firmly, and without mercy they treated them with a hollow stalk."
-        },
-        {
-          "num": 33,
-          "text": "And the king Tseerutsaydan said, \"These youths who have erred have wearied me. Why should these men harden their hearts? They work evil and are like unto power and firmness; If I say, 'they will return', they will make their hearts evil."
-        },
-        {
-          "num": 34,
-          "text": "And I will bring hardship and an evil measure upon them like unto their works, and I will burn their flesh in the fire that it might be charred ash, and I will scatter their ashes like unto dust upon the mountains."
-        },
-        {
-          "num": 35,
-          "text": "And after he said this he waited three days and commanded them that they might bring those honored men. And when those honored men approached him he commanded that they might be burned in a fire within a great pit oven, and that they might add to it a malicious work that enflames the fire. And thereby they boiled a vat; the fat and soapberries, seafoam and resin and sulfur."
-        },
-        {
-          "num": 36,
-          "text": "And when the fire burned in the pit, the messengers went unto the king and said, \"We have done that which thou commanded us; we send the men who will be cast therein.\""
-        },
-        {
-          "num": 37,
-          "text": "And he commanded them that they might receive them and cast them into the pit of fire, and the youths did as the king commanded them. And when those honored men entered into the fire, they gave their souls to Jehovah."
-        },
-        {
-          "num": 38,
-          "text": "And when the men who cast them therein looked up, they saw that angels received them and took their souls to the Garden where Isaac and Abraham and Jacob are, where the blessed Israelites are found. Previous chapter Next chapter"
-        }
+        {"num": 1, "text": "Like unto you, these were the Most High JAH's slaves, Abya, Seela, and Fentos, who died and arose, so that you may also arise after your death, and your faces shall shine like the sun in the Kingdom of Heaven."},
+        {"num": 2, "text": "And they went with those men and received martyrdom there."},
+        {"num": 3, "text": "At that time, they begged, praised, and bowed to JAH. Death did not frighten them, nor did the king's punishment."},
+        {"num": 4, "text": "They went towards those youths and were as meek as sheep that have no evil. Yet, they were not afraid. When they arrived towards them, they seized, beat, bound, whipped them, and delivered them to the king and stood them before him."},
+        {"num": 5, "text": "The king answered them, saying, \"How can you stubborn ones not sacrifice and bow to my idols?\""},
+        {"num": 6, "text": "The brothers who were cleansed from sin, honoured, chosen, and blessed, and shone like jewels with wondrous value - Seela, Abya, and Fentos - answered him with one word."},
+        {"num": 7, "text": "They told the king, who was a plague, \"As for us, we will not bow nor sacrifice to defiled idols that have no knowledge or reasoning.\""},
+        {"num": 8, "text": "They again told him, \"We will not bow to idols that were silver and gold, that were made by hand, or that were stone and wood, that have no reasoning, soul, or knowledge, and that do not benefit their friends or harm their enemies.\""},
+        {"num": 9, "text": "The king asked them, \"Why do you do this? And as you know who insulted you and who wronged you, why do you insult the glorified idols?\""},
+        {"num": 10, "text": "They answered him, saying, \"As they are like a trifle compared to us, we will insult them and will not glorify them.\""},
+        {"num": 11, "text": "The king said to them, \"I will punish you like your evil works and will destroy your beautiful faces with whipping, firm tribulation, and fire.\""},
+        {"num": 12, "text": "\"Now tell me whether you will give or not give sacrifices to my idols. Otherwise, I will punish you with a sword and whipping.\""},
+        {"num": 13, "text": "They answered him, saying, \"As for us, we will not sacrifice nor bow to defiled idols,\" and the king commanded that they be beaten with a fat stick, whipped with a whip, and splintered until their inner organs were visible."},
+        {"num": 14, "text": "After this, they were bound and held in a jailhouse until the king's council decided to punish and kill them."},
+        {"num": 15, "text": "They were taken without kindness, bound, and held in a firm imprisonment in a prison house, and they sat there for three nights and three days."},
+        {"num": 16, "text": "And after the third day, the king commanded that a proclamation speaker should announce and that counselors, nobles, country elders, and officials should be gathered."},
+        {"num": 17, "text": "And at that time, King Tseerutsaydan sat in a square, and he commanded that the honored ones, Seela, 'Abya, and Fentos, be brought before him, being wounded and bound."},
+        {"num": 18, "text": "And the king told them, \"During these three days that you have sat, have you truly repented and turned away from your former evil ways?\""},
+        {"num": 19, "text": "And the honored Jah soldiers answered him, saying, \"We have not worshiped the idols filled with sin and evil that you have set before us. We will not abandon the laws of JAH.\""},
+        {"num": 20, "text": "And the king, being angry, commanded that they be taken to a high place, their wounds reopened, and their blood flowed on the earth."},
+        {"num": 21, "text": "And he commanded that they be burned with a torch lamp and that their flesh be charred, and his servants did as he commanded. But the honored men said to him, \"You, who have forgotten JAH's law, speak. Our reward shall be as great as the measure of your punishment.\""},
+        {"num": 22, "text": "And he commanded that bears, tigers, and lions, evil beasts, be sent upon them to eat their flesh with their bones."},
+        {"num": 23, "text": "And he commanded those who kept the beasts to release them upon the men, and they did as they were commanded. The honored martyrs' feet were bound, and they were beaten and bound again with tent-stakes."},
+        {"num": 24, "text": "And the beasts were flung upon them while they roared, but as they arrived toward the martyrs, they hailed and bowed to them."},
+        {"num": 25, "text": "They returned towards their keepers while they roared, and they frightened their keepers. Then they were taken towards the square until they were delivered before the king."},
+        {"num": 26, "text": "And seventy-five men from the criminal's army were killed there."},
+        {"num": 27, "text": "Many persons panicked, some in anguish and others in fear, until the king quit his throne and fled. The beasts were seized with difficulty and taken to their lodgings."},
+        {"num": 28, "text": "Seela, 'Abya, and Fentos, two brothers, came and released the prisoners from their bondage. They told them, \"Come, let us flee, lest these skeptics and criminals find us.\""},
+        {"num": 29, "text": "And those martyrs answered their brethren, saying, \"It is not fitting that we might flee after we have set up this testimony, as if you had feared. Go fleeing.\""},
+        {"num": 30, "text": "And those little brethren said, \"We will stand with you before the king, and if you die, we will die with you.\""},
+        {"num": 31, "text": "And after this, the king was on his lordship balcony and saw that these honored men were released and that all the five brethren stood together. Those chiefs who worked and punished the troops questioned whether they were brethren and told the king. The king was angry and shouted like a wild boar in the wilderness."},
+        {"num": 32, "text": "And until the king was counseled by money to punish all the five brethren, he commanded that they might seize and add them to the prison house. They placed them in a prison house, binding them in firm imprisonment without kindness with a hollow stalk."},
+        {"num": 33, "text": "And the king Tseerutsaydan said, \"These youths who erred wearied me. What should these men reason firmly for? And those who work evil are like those with power and firmness. If I say, 'They will return,' they will make their reasoning evil."},
+        {"num": 34, "text": "And I will bring hardship on them like their evil measure. And I will burn their flesh in fire until it is charred ash, and then I will scatter their flesh ash like dust on the mountains.\""},
+        {"num": 35, "text": "And after he spoke this, he waited three days and commanded that those honored men be brought. At the time when those honored men approached him, he commanded that a fire be burned within the great pit oven and that a malice work be added to the flame of the fire, wherein they boiled a cat, the fat and soapberries, sea foam and resin, and sulfur."},
+        {"num": 36, "text": "And at the time the fire flamed in the pit, the messengers went to the king and said, \"We did what you commanded us. Send the men who will be added.\""},
+        {"num": 37, "text": "And he commanded that they might receive and cast them into the fire pit, and the youths did as the king commanded them. At the time when those honored men entered into the fire, they gave their souls to JAH."},
+        {"num": 38, "text": "And when the persons who cast them saw, angels received and took their souls to the Garden where Isaac, Abraham, and Jacob are, where the righteous ones are found."}
       ]
     },
     {
       "num": 4,
       "verses": [
-        {
-          "num": 1,
-          "text": "And when that lawless one saw that they were dead, he commanded them to burn their flesh with fire until they were ash and to scatter them in the wind. But the fire was not able to burn their corpses from their hair to their side, and they sent them forth from the pit."
-        },
-        {
-          "num": 2,
-          "text": "And again they burned fire over them from the morning til the evening—and it didn't burn them—and they said: \"And now come, let us cast their corpses into the sea.\""
-        },
-        {
-          "num": 3,
-          "text": "And they did as the king commanded them—they cast them into the sea—and even if they cast them therein, adding great stones, iron hearthstones, and a millstone whereby a donkey grindeth by turning, it did not sink them, as Jehovah the Spirit of Support was within them; they floated upon the sea, yet they did not sink. He failed to destroy them with all the malice that he exercised upon them."
-        },
-        {
-          "num": 4,
-          "text": "And he said, \"Their death hath wearied me more than their life. I will cast their corpses to the beasts that they may eat them, else what will I do?\""
-        },
-        {
-          "num": 5,
-          "text": "And the youths did as he commanded them, and vultures and beasts did not touch their corpses; birds and vultures protected them from burning in the sun with their wings. And the five martyrs' corpses sat fourteen days."
-        },
-        {
-          "num": 6,
-          "text": "And when they looked upon them, their bodies shone like the sun, and angels encircled about their corpses like light encircling the Tent."
-        },
-        {
-          "num": 7,
-          "text": "And he sought counsel, for he knew not what he should do. After this he dug a grave and buried the five martyrs."
-        },
-        {
-          "num": 8,
-          "text": "And when the king, who had forgotten the Law of Jehovah, reclined upon a bed at night, the five martyrs appeared to him standing before him at night, vexing him and wielding swords."
-        },
-        {
-          "num": 9,
-          "text": "And it seemed to him that they entered into his house by night in a crime; when he awoke from his sleep he was afraid, and he desired to flee from the bedchamber toward the hall. And it seemed to him that they would kill him, as it seemed they committed a crime against him, and he feared and his knees trembled."
-        },
-        {
-          "num": 10,
-          "text": "Because of this thing he said, \"My lords, what do you desire? As for me, what shall I do for you.\""
-        },
-        {
-          "num": 11,
-          "text": "They answered him, saying, \"Are we not they whom thou slayed by burning with fire, and they whom thou commanded that they might be cast into the sea? As Jehovah hath preserved out bodies because we believed in him, thou hast failed to destroy us. As one who believed in Him will not perish—glory and praise is due to Jehovah—so did we and also those who believed in Him not be ashamed in tribulation.\""
-        },
-        {
-          "num": 12,
-          "text": "(And he said unto them,) \"I did not know that a punishment like this would find me, therefore, what reward shall I give unto you for recompense because of the evil thing I have done to you?"
-        },
-        {
-          "num": 13,
-          "text": "And now take from me the reward I shall give unto you; lest ye take my body in death, and lest ye lower my body toward Sheol, while I am yet in life."
-        },
-        {
-          "num": 14,
-          "text": "As I have wronged you, forgive me my sin, because mercy is the Law of thy Father Jehovah.\" Thus he said unto them."
-        },
-        {
-          "num": 15,
-          "text": "And those honored martyrs answered him, saying, \"Because of thy deed wherefore thou dist an evil thing unto us, as for us, we will not reward you with an evil thing, as Jehovah is He Who bringeth hardship upon a soul; as for Him Who will reward thee with hardship, it is Jehovah."
-        },
-        {
-          "num": 16,
-          "text": "However we were shown unto thee, revealing that we are well; for thy timeframe is short and thy heart is deaf; Though it seemed to thee that thou slayed us, thou prepared welfare for us."
-        },
-        {
-          "num": 17,
-          "text": "But thy idols, thy priests, and thou will descend to Gehenna where there is no escape forever."
-        },
-        {
-          "num": 18,
-          "text": "Woe unto thy idols to whom thou dost bow; thou hast ceased to bow to Jehovah Who created thee when thou wast scorned like unto spittle, and unto all of thee who worship them; and ye know not that Jehovah Who created you bringeth forth the living from the non-living. Art thou not they who are seen today as smoke, and he who tomorrow wilt perish?\""
-        },
-        {
-          "num": 19,
-          "text": "And the king answered them, saying, \"What commandest thou me that I might do unto you all that thou desirest?\""
-        },
-        {
-          "num": 20,
-          "text": "\"It is to save thyself lest thou enter toward the Gehenna of Fire, yet it is not to save ourselves who teach thee."
-        },
-        {
-          "num": 21,
-          "text": "For thy idols are silver and gold, stone and wood; that have no heart, nor soul, nor knowledge; which the hand of a man has worked."
-        },
-        {
-          "num": 22,
-          "text": "But they do not kill, they do not save; they do not benefit their friend, they do not harm their enemy; they do not debase, they do not honor; they do not make wealthy, they do not impoverish; they mislead you by the authority of demons, who do not desire that men might be saved; yet they do not uproot nor plant."
-        },
-        {
-          "num": 23,
-          "text": "They especially do not desire that men like unto thee might be saved from death, thou dull-hearted ones to whom it seemth that they created thee, when thou are those who worked them."
-        },
-        {
-          "num": 24,
-          "text": "As Satans' and demons' authority hath lodged in them, they shall return to thee that which thou desired, that they might drown you in the sea of Gehenna."
-        },
-        {
-          "num": 25,
-          "text": "But thou, cease thou this error and let this also be our reward for our death, that we might benefit our souls worshiping our Creator, Jehovah.\" Thus they said unto him."
-        },
-        {
-          "num": 26,
-          "text": "But he was alarmed and utterly astonished, and because he beheld all five of them draw their swords, he was afraid, and because of this thing he bowed unto them."
-        },
-        {
-          "num": 27,
-          "text": "(And he said,) \"Hence I know that after the dead who were dust are dead, they will truly arise; as for me, only a little (time) remaineth before I am dead.\""
-        },
-        {
-          "num": 28,
-          "text": "After this they were hidden before the king's face; from that day onward that Tseerutsaydan was completely arrogant ceased burning their corpses."
-        },
-        {
-          "num": 29,
-          "text": "As they have misled him in various times, he would be happy in his idols, and his heart (would) err. And he misled many people like unto him until he ceased following and worshiped Jehovah Who created him, yet it is not only him who erred."
-        },
-        {
-          "num": 30,
-          "text": "And they would sacrifice their daughters and their sons unto demons, yet they work a seduction and a disturbance according to their reasoning, that which their father Satan taught them that he might work seduction and disturbance that Jehovah doth not love."
-        },
-        {
-          "num": 31,
-          "text": "They marry their mothers, and abuse their aunts and their sisters, they abuse their bodies while they worked all that resembleth this filthy work; as Satan hath reinforced those crooked mens' hearts, they said, \"We will not return.\""
-        },
-        {
-          "num": 32,
-          "text": "But that Tseerutsaydan, who knoweth not his Creator, was completely arrogant, and he would boast in his idols."
-        },
-        {
-          "num": 33,
-          "text": "If they say, \"How will Jehovah give the Kingdom to those men who know Him not in Law nor in Worship?\" they will fully return to Him in repentance. As He trieth them thus, it is because of this."
-        },
-        {
-          "num": 34,
-          "text": "But if they fully return in repentance He will love them, and He will keep their Kingdom, but if they refuse a fire will punish them in the Fire of Gehenna forever."
-        },
-        {
-          "num": 35,
-          "text": "But it would be due to a king who feareth his Creator Jehovah like unto his lordship's fame, and it would be due to a judge to be ruled by his Creator while he judged righteous judgement like unto the fame of his rule's fame."
-        },
-        {
-          "num": 36,
-          "text": "And it would be due to elders and chiefs and envoys and petty kings to be commanded by their Creator like unto their lordships' abundant measure."
-        },
-        {
-          "num": 37,
-          "text": "As He is Lord of Heaven and Earth, Who created all creation, because there is no other Creator in Heaven nor Earth who impoverish and maketh rich; it is He who honoreth and debaseth. Previous chapter Next chapter"
-        }
+        {"num": 1, "text": "When the criminals were sentenced to death, he commanded that their flesh be burned in fire until it turned to ash, and then scattered in the wind. However, the fire could not burn the hair on the side of the corpses. Thus, they were sent away from the pit."},
+        {"num": 2, "text": "Again, they set fire to them from morning until evening, but the fire could not burn them. Then they said, \"Let us cast their corpses into the sea.\""},
+        {"num": 3, "text": "So, they did as the king commanded, and cast them into the sea, even adding great stones, iron hearthstones, and a millstone that a donkey would grind by turning. Yet, the sea did not sink them, for the Spirit of JAH supported them. They floated on the sea, yet did not sink. The malice that was provoked against them failed to destroy them."},
+        {"num": 4, "text": "\"Their death has wearied me more than their life. Let me cast their corpses to the beasts that they may eat them. But what will I do?\" he said."},
+        {"num": 5, "text": "The youths did as he commanded. Vultures and beasts did not touch the corpses. Birds and vultures veiled them with their wings from the burning sun, and the corpses of the five martyrs sat for fourteen days."},
+        {"num": 6, "text": "When they were sighted, their bodies shone like the sun, and angels encircled their corpses like the light encircling the Tent."},
+        {"num": 7, "text": "He sought counsel, but he did not know what to do. Finally, he dug a grave and buried the five martyrs' corpses."},
+        {"num": 8, "text": "Later that night, as the king who had forgotten JAH's law lay in bed, the five martyrs appeared before him, standing and vexing him with swords."},
+        {"num": 9, "text": "He thought they had entered his house at night to commit a crime. When he woke from his slumber, he was afraid and fled from his bedchamber to the hall. He feared that they would kill him for the crime he thought they had committed against him. His knees trembled in fear."},
+        {"num": 10, "text": "\"My lords, what do you want? As for me, what should I do for you?\" he asked."},
+        {"num": 11, "text": "They answered, \"Aren't we the ones you burned in the fire and commanded to be cast into the sea? JAH kept our bodies because we believed in Him. He did not let you destroy us. As those who believe in Him will not perish, let glory and praise be due to JAH. We who believed in Him did not shame in tribulation.\""},
+        {"num": 12, "text": "\"I did not know that punishment like this would find me. What reward should I give you for the evil I did to you?\" he asked."},
+        {"num": 13, "text": "\"And now, separate from me the reward I give you - lest you take my body in death and lower my body toward Sheol while I am still alive."},
+        {"num": 14, "text": "For I have wronged you, forgive my sin, for it was because of JAH's law that I received such kindness,\" he told them."},
+        {"num": 15, "text": "And those honoured martyrs answered him saying, \"Because of the harm you have inflicted upon us, we will not repay you with harm. It is JAH who brings hardship upon a soul, and it is He who will judge you accordingly.\""},
+        {"num": 16, "text": "However, we were spared for your sake, as it seemed to you that you killed us. You showed us kindness despite our small numbers and our inability to reason."},
+        {"num": 17, "text": "But you and the priests of your idols will descend into Gehenna, where there is no escape."},
+        {"num": 18, "text": "Woe to your idols, before which you bowed down, forsaking JAH who was angry with you when you were scorned like spit. Woe to you who worship them, and do not know JAH who was angry with you and brought you from death to life. Are you who are standing here today not like smoke that will vanish tomorrow?"},
+        {"num": 19, "text": "The king asked them, \"What do you command me to do for you, since you have shown me such love?\""},
+        {"num": 20, "text": "They replied, \"Save yourself from entering the Gehenna of Fire, but you cannot save us. We are the ones who teach you.\""},
+        {"num": 21, "text": "\"Your idols are made of silver and gold, stone and wood. They have no understanding or knowledge, and they are the work of human hands.\""},
+        {"num": 22, "text": "\"They do not kill or save, benefit their friends or harm their enemies, exalt or humble, enrich or impoverish. They mislead you by the authority of demons, who do not desire the salvation of anyone, but do not uproot or plant anything.\""},
+        {"num": 23, "text": "\"They especially do not desire the salvation of people like you, who are dull-hearted and who they appear to be angry with, even though you are the one who made them.\""},
+        {"num": 24, "text": "\"As Satan and the demons have made their abode in them, they will repay you with the same love you have shown them, and they will drown you in the sea of Gehenna.\""},
+        {"num": 25, "text": "\"But you, stop this error and let this be our reward instead. Even though we are dead, we will benefit our souls by worshiping our Creator JAH,\" they told him."},
+        {"num": 26, "text": "The king was alarmed and completely astonished. As all five drew their swords, he feared for his life and bowed to them."},
+        {"num": 27, "text": "\"Then I knew that even after death, those who are dust will truly rise. As for me, only a little time remains before my death,\" he said."},
+        {"num": 28, "text": "From that day on, the king no longer burned the corpses of the Tseerutsaydan who were completely arrogant, and they were hidden from his sight."},
+        {"num": 29, "text": "As they have misled many for many eras, the idolaters reasoned in error and misled many others like them until they stopped following JAH's worship. It wasn't only them who erred."},
+        {"num": 30, "text": "They sacrificed their daughters and sons to demons, practicing seduction and disturbances as their rationale. Satan taught them this, so they could practice seduction and disturbances that JAH detests."},
+        {"num": 31, "text": "They married their mothers and abused their aunts and sisters, defiling their bodies while doing all these filthy works. Satan confirmed these perverse people's reasoning, and they said, \"We won't return.\""},
+        {"num": 32, "text": "But the Tseerutsaydan, who didn't know JAH's wrath, were completely arrogant and boasted in their idols."},
+        {"num": 33, "text": "If they say, \"How will JAH give the Kingdom to people who don't know Him in LAW and in Worship?\" They will fully return to Him in repentance, and He tests them for this reason."},
+        {"num": 34, "text": "But if they completely repent, He will love them and keep their Kingdom. However, if they refuse, the fire of Gehenna will punish them forever."},
+        {"num": 35, "text": "It is fitting for a king to fear JAH's wrath like his lordship's reputation, and it is fitting for a judge to be ruled by JAH's wrath while judging righteously, like his Rule's reputation."},
+        {"num": 36, "text": "It is fitting for elders, chiefs, envoys, and petty kings to be commanded by those who fear JAH's wrath according to their lordship's abundance measure."},
+        {"num": 37, "text": "JAH is the Lord of Heaven and Earth, who instills all wrath, for there is no other Lord in Heaven or Earth who impoverishes or enriches. He is the One who honors and debases."}
       ]
     },
     {
       "num": 5,
       "verses": [
-        {
-          "num": 1,
-          "text": "The one warrior from the sixty warriors was proud; Jehovah made his body from his foot to his head to swell with one spoon of sulphur; he died in one plague."
-        },
-        {
-          "num": 2,
-          "text": "And again Keeram who built an iron bed was proud because of his power and abundance, and Jehovah hid him in death."
-        },
-        {
-          "num": 3,
-          "text": "And again Nebuchadnezzar was prideful, saying, \"There is no other king other than me, and I am the creator who maketh the sun arise in this world,\" and the said thus because of his arrogance and abundance"
-        },
-        {
-          "num": 4,
-          "text": "And Jehovah separated him from men and sent him toward a wilderness for seven years, and he made his fortune with birds of Heaven and beasts of the wilderness up until he knew that it was Jehovah Who created him."
-        },
-        {
-          "num": 5,
-          "text": "And at the time he knew Him in worship, He again returned him to his kingdom. Who is it who is not of the Earth, being boldly prideful against Jehovah Who created him?"
-        },
-        {
-          "num": 6,
-          "text": "Or who is it who demolished His Law and His Order whom the Earth did not swallow?"
-        },
-        {
-          "num": 7,
-          "text": "And thou, Tseerutsaydan, desirest that thou might be prideful against thy Creator, and again, thou hast that He might destroy thee like unto them, and might lower thee into thy grave because of thy arrogance."
-        },
-        {
-          "num": 8,
-          "text": "And again, after they entered into Sheol where there is grinding of teeth and mourning, that were there is a fullness of darkness, thou hast that He might lower thee into the deep pit of Gehenna where there is no escape forever."
-        },
-        {
-          "num": 9,
-          "text": "As for thee, thou art a man who will die and be demolished tomorrow like unto the arrogant kings who were like unto thee, who left this world of the living."
-        },
-        {
-          "num": 10,
-          "text": "As for us, we say: \"Thou art demolished ruins, but thou art not not Jehovah, for it is Jehovah who created the Earth and Heaven and thee."
-        },
-        {
-          "num": 11,
-          "text": "He debaseth arrogant ones, He honoreth those who were debased; He giveth forgiveness to men who art wearied."
-        },
-        {
-          "num": 12,
-          "text": "He slayeth them that are well, He raiseth up those who were dust, who died and were buried in the grave."
-        },
-        {
-          "num": 13,
-          "text": "And He sendeth forth slaves free in Life from the rule of sin."
-        },
-        {
-          "num": 14,
-          "text": "O king Tseerutsaydan, why do ye boast in thy defouled idols who have no benefit?"
-        },
-        {
-          "num": 15,
-          "text": "But Jehovah created Earth and Heaven and great seas, He created the moon and the Sun, and He prepared the times."
-        },
-        {
-          "num": 16,
-          "text": "Man grazeth in his field, and all the while he ploweth up until dusk, and the stars of Heaven live securely by His Word."
-        },
-        {
-          "num": 17,
-          "text": "And he calleth all in Heaven; there is nothing done without Jehovah knowing it."
-        },
-        {
-          "num": 18,
-          "text": "He commanded the Angels of Heaven that they might serve Him and might praise His glorified Name, and Angels are sent to all men who inherit Life."
-        },
-        {
-          "num": 19,
-          "text": "ᵃ Rafael who was a servant was sent to Tobit, and he ᵇ saved Tobias from death in Raguel's country."
-        },
-        {
-          "num": 20,
-          "text": "Holy Michael was sent to Gideon that he might draw his attention with money that he destroy the Philistines, and he was sent to the prophet Moses at the time he made Israel cross the Eritrean sea."
-        },
-        {
-          "num": 21,
-          "text": "As only Jehovah has said, He led them; there was no other idol with them"
-        },
-        {
-          "num": 22,
-          "text": "And He sent them forth toward crops apon the earth."
-        },
-        {
-          "num": 23,
-          "text": "And He fed them the grain of His plantation, because He loved them completely, He cherished them, feeding them honey that hardened like a rock."
-        },
-        {
-          "num": 24,
-          "text": "And that thou might completely keep His kindred by what they are due, and that thou might do the Will of Jehovah Who created thee, He crowned thee, giving (thee) authority over the four kingdoms"
-        },
-        {
-          "num": 25,
-          "text": "For He hath crowned thee, making (thee) loftier than all, and thy Creator verily crowned the that thou might love Jehovah."
-        },
-        {
-          "num": 26,
-          "text": "And it is right that thou might love thy Creator Jehovah how He loved thee, how He trusted thee with all the people, and thou, do the Will of Jehovah that thy time may abound in this world and that He might live with thee in support."
-        },
-        {
-          "num": 27,
-          "text": "And do Jehovah's Will that He might stand for thee, being a Guardian upon thine enemies, and that He might seat the upon they throne, and that He might hide thee under His Wing of Support."
-        },
-        {
-          "num": 28,
-          "text": "As for thee, if thou knowest not, Jehovah crowned thee upon Israel like He chose Saul from the children of Israel when he kept his father's donkeys, and He crowned him upon his kindred, Israel, and he sat with Israel upon his throne."
-        },
-        {
-          "num": 29,
-          "text": "And He gave him a lofty fortune, separating him from his kindred; Jehovah crowned thee upon His kindred; as for henceforth and onward, watch, keep His kindred."
-        },
-        {
-          "num": 30,
-          "text": "As Jehovah hath appointed thee over them that thou might ᵃ kill and might save, keep them in evil things, they who work a goodly thing and they who work an evil thing upon a goodly thing.\" Thus he said unto him."
-        },
-        {
-          "num": 31,
-          "text": "\"And as Jehovah hath appointed thee over all that thou might do His Will, be it while thou art whipped or while thou art saved, repay their evil works, they who work goodly works, and they who (both) work goodly works and work evil works."
-        },
-        {
-          "num": 32,
-          "text": "For thou art a servant of Jehovah Who ruleth all in Heaven, and thou, do Jehovah's Will that He might do thy will for thee in all thy thoughts and in all that thou beggedst whil thou wheedled before Him."
-        },
-        {
-          "num": 33,
-          "text": "There is none who ruleth Him, but He ruleth all."
-        },
-        {
-          "num": 34,
-          "text": "There is none who appointeth Him, but He appointeth all."
-        },
-        {
-          "num": 35,
-          "text": "There is none who dismisseth Him, but He dismisseth all."
-        },
-        {
-          "num": 36,
-          "text": "There is non who reproacheth Him, but He reproacheth all."
-        },
-        {
-          "num": 37,
-          "text": "There is non who maketh Him diligent, but He maketh all diligent, for the rulership of Heaven and Earth is for Him. There is none who escapeth from His authority; all is revealed alongside Him, yet there is nothing hidden from His Face."
-        },
-        {
-          "num": 38,
-          "text": "He beholdeth all, but there is none who beholdeth Him, He heareth the prayer of the man who prayeth to Him saying, 'Save me', for He hath created man in His Image, and He accepteth his plea."
-        },
-        {
-          "num": 39,
-          "text": "For He is a King Who liveth until Eternity; He feedeth all from His unchanging Nature. 19a Tob. 3:17 b Tob. 8:1–3 30a 1 Esd. 4:7 Previous chapter Next chapter Powered by Create your own unique website with customizable templates. Get Started Home Site-Moving Info LXX Apocrypha > 1 Esdras > 1 Esdras 1 1 Esdras 2 1 Esdras 3 1 Esdras 4 1 Esdras 5 1 Esdras 6 1 Esdras 7 1 Esdras 8 1 Esdras 9 2 Esdras > 2 Esdras 1 2 Esdras 2 2 Esdras 3 2 Esdras 4 2 Esdras 5 2 Esdras 6 2 Esdras 7 2 Esdras 8 2 Esdras 9 2 Esdras 10 2 Esdras 11 2 Esdras 12 2 Esdras 13 2 Esdras 14 2 Esdras 15 2 Esdras 16 Additions to Esther > Esther Addition A Esther Addition B Esther Addition C Esther Addition D Esther Addition E Esther Addition F Tobit > Tobit 1 Tobit 2 Tobit 3 Tobit 4 Tobit 5 Tobit 6 Tobit 7 Tobit 8 Tobit 9 Tobit 10 Tobit 11 Tobit 12 Tobit 13 Tobit 14 Judith > Judith 1 Judith 2 Judith 3 Judith 4 Judith 5 Judith 6 Judith 7 Judith 8 Judith 9 Judith 10 Judith 11 Judith 12 Judith 13 Judith 14 Judith 15 Judith 16 Prayer of Manasseh Psalm 151 Wisdom of Solomon > Wisdom of Solomon 1 Wisdom of Solomon 2 Wisdom of Solomon 3 Wisdom of Solomon 4 Wisdom of Solomon 5 Wisdom of Solomon 6 Wisdom of Solomon 7 Wisdom of Solomon 8 Wisdom of Solomon 9 Wisdom of Solomon 10 Wisdom of Solomon 11 Wisdom of Solomon 12 Wisdom of Solomon 13 Wisdom of Solomon 14 Wisdom of Solomon 15 Wisdom of Solomon 16 Wisdom of Solomon 17 Wisdom of Solomon 18 Wisdom of Solomon 19 Sirach > Sirach 1 Sirach 2 Sirach 3 Sirach 4 Sirach 5 Sirach 6 Sirach 7 Sirach 8 Sirach 9 Sirach 10 Sirach 11 Sirach 12 Sirach 13 Sirach 14 Sirach 15 Sirach 16 Sirach 17 Sirach 18 Sirach 19 Sirach 20 Sirach 21 Sirach 22 Sirach 23 Sirach 24 Sirach 25 Sirach 26 Sirach 27 Sirach 28 Sirach 29 Sirach 30 Sirach 31 Sirach 32 Sirach 33 Sirach 34 Sirach 35 Sirach 36 Sirach 37 Sirach 38 Sirach 39 Sirach 40 Sirach 41 Sirach 42 Sirach 43 Sirach 44 Sirach 45 Sirach 46 Sirach 47 Sirach 48 Sirach 49 Sirach 50 Sirach 51 1 Baruch > 1 Baruch 1 1 Baruch 2 1 Baruch 3 1 Baruch 4 1 Baruch 5 Epistle of Jeremiah Prayer of Azariah Susanna Bel and the Dragon 1 Maccabees > 1 Maccabees 1 1 Maccabees 2 1 Maccabees 3 1 Maccabees 4 1 Maccabees 5 1 Maccabees 6 1 Maccabees 7 1 Maccabees 8 1 Maccabees 9 1 Maccabees 10 1 Maccabees 11 1 Maccabees 12 1 Maccabees 13 1 Maccabees 14 1 Maccabees 15 1 Maccabees 16 2 Maccabees > 2 Maccabees 1 2 Maccabees 2 2 Maccabees 3 2 Maccabees 4 2 Maccabees 5 2 Maccabees 6 2 Maccabees 7 2 Maccabees 8 2 Maccabees 9 2 Maccabees 10 2 Maccabees 11 2 Maccabees 12 2 Maccabees 13 2 Maccabees 14 2 Maccabees 15 3 Maccabees > 3 Maccabees 1 3 Maccabees 2 3 Maccabees 3 3 Maccabees 4 3 Maccabees 5 3 Maccabees 6 3 Maccabees 7 4 Maccabees > 4 Maccabees 1 4 Maccabees 2 4 Maccabees 3 4 Maccabees 4 4 Maccabees 5 4 Maccabees 6 4 Maccabees 7 4 Maccabees 8 4 Maccabees 9 4 Maccabees 10 4 Maccabees 11 4 Maccabees 12 4 Maccabees 13 4 Maccabees 14 4 Maccabees 15 4 Maccabees 16 4 Maccabees 17 4 Maccabees 18 Psalms of Solomon > Psalm of Solomon 1 Psalm of Solomon 2 Psalm of Solomon 3 Psalm of Solomon 4 Psalm of Solomon 5 Psalm of Solomon 6 Psalm of Solomon 7 Psalm of Solomon 8 Psalm of Solomon 9 Psalm of Solomon 10 Psalm of Solomon 11 Psalm of Solomon 12 Psalm of Solomon 13 Psalm of Solomon 14 Psalm of Solomon 15 Psalm of Solomon 16 Psalm of Solomon 17 Psalm of Solomon 18 Odes Ethiopian Orthodox Deuterocanon > Jubilees > Jubilees 1 Jubilees 2 Jubilees 3 Jubilees 4 Jubilees 5 Jubilees 6 Jubilees 7 Jubilees 8 Jubilees 9 Jubilees 10 Jubilees 11 Jubilees 12 Jubilees 13 Jubilees 14 Jubilees 15 Jubilees 16 Jubilees 17 Jubilees 18 Jubilees 19 Jubilees 20 Jubilees 21 Jubilees 22 Jubilees 23 Jubilees 24 Jubilees 25 Jubilees 26 Jubilees 27 Jubilees 28 Jubilees 29 Jubilees 30 Jubilees 31 Jubilees 32 Jubilees 33 Jubilees 34 Jubilees 35 Jubilees 36 Jubilees 37 Jubilees 38 Jubilees 39 Jubilees 40 Jubilees 41 Jubilees 42 Jubilees 43 Jubilees 44 Jubilees 45 Jubilees 46 Jubilees 47 Jubilees 48 Jubilees 49 Jubilees 50 1 Enoch > 1 Enoch 1 1 Enoch 2 1 Enoch 3 1 Enoch 4 1 Enoch 5 1 Enoch 6 1 Enoch 7 1 Enoch 8 1 Enoch 9 1 Enoch 10 1 Enoch 11 1 Enoch 12 1 Enoch 13 1 Enoch 14 1 Enoch 15 1 Enoch 16 1 Enoch 17 1 Enoch 18 1 Enoch 19 1 Enoch 20 1 Enoch 21 1 Enoch 22 1 Enoch 23 1 Enoch 24 1 Enoch 25 1 Enoch 26 1 Enoch 27 1 Enoch 28 1 Enoch 29 1 Enoch 30 1 Enoch 31 1 Enoch 32 1 Enoch 33 1 Enoch 34 1 Enoch 35 1 Enoch 36 1 Enoch 37 1 Enoch 38 1 Enoch 39 1 Enoch 40 1 Enoch 41 1 Enoch 42 1 Enoch 43 1 Enoch 44 1 Enoch 45 1 Enoch 46 1 Enoch 47 1 Enoch 48 1 Enoch 49 1 Enoch 50 1 Enoch 51 1 Enoch 52 1 Enoch 53 1 Enoch 54 1 Enoch 55 1 Enoch 56 1 Enoch 57 1 Enoch 58 1 Enoch 59 1 Enoch 60 1 Enoch 61 1 Enoch 62 1 Enoch 63 1 Enoch 64 1 Enoch 65 1 Enoch 66 1 Enoch 67 1 Enoch 68 1 Enoch 69 1 Enoch 70 1 Enoch 71 1 Enoch 72 1 Enoch 73 1 Enoch 74 1 Enoch 75 1 Enoch 76 1 Enoch 77 1 Enoch 78 1 Enoch 79 1 Enoch 80 1 Enoch 81 1 Enoch 82 1 Enoch 83 1 Enoch 84 1 Enoch 85 1 Enoch 86 1 Enoch 87 1 Enoch 88 1 Enoch 89 1 Enoch 90 1 Enoch 91 1 Enoch 92 1 Enoch 93 1 Enoch 94 1 Enoch 95 1 Enoch 96 1 Enoch 97 1 Enoch 98 1 Enoch 99 1 Enoch 100 1 Enoch 101 1 Enoch 102 1 Enoch 103 1 Enoch 104 1 Enoch 105 1 Enoch 106 1 Enoch 107 1 Enoch 108 4 Baruch > 4 Baruch 1 4 Baruch 2 4 Baruch 3 4 Baruch 4 4 Baruch 5 4 Baruch 6 4 Baruch 7 4 Baruch 8 4 Baruch 9 1 Meqabyan > 1 Meqabyan 1 1 Meqabyan 2 1 Meqabyan 3 1 Meqabyan 4 1 Meqabyan 5 1 Meqabyan 6 1 Meqabyan 7 1 Meqabyan 8 1 Meqabyan 9 1 Meqabyan 10 1 Meqabyan 11 1 Meqabyan 12 1 Meqabyan 13 Beta Israel Deuterocanon > Testament of Abraham > Testament of Abraham 1 Testament of Abraham 2 Testament of Abraham 3 Testament of Abraham 4 Testament of Abraham 5 Testament of Abraham 6 Testament of Abraham 7 Testament of Abraham 8 Testament of Abraham 9 Testament of Abraham 10 Testament of Abraham 11 Testament of Abraham 12 Testament of Abraham 13 Testament of Abraham 14 Testament of Abraham 15 Testament of Abraham 16 Testament of Abraham 17 Testament of Abraham 18 Testament of Abraham 19 Testament of Abraham 20 Testament of Isaac > Testament of Isaac 1 Testament of Isaac 2 Testament of Isaac 3 Testament of Isaac 4 Testament of Isaac 5 Testament of Isaac 6 Testament of Isaac 7 Testament of Isaac 8 Testament of Isaac 9 Testament of Jacob > Testament of Jacob 1 Testament of Jacob 2 Testament of Jacob 3 Testament of Jacob 4 Testament of Jacob 5 Testament of Jacob 6 Testament of Jacob 7 Testament of Jacob 8 5 Baruch Apocalypses > Apocalypse of Adam > Apocalypse of Adam 1 Apocalypse of Adam 2 Apocalypse of Adam 3 Apocalypse of Adam 4 Apocalypse of Adam 5 Apocalypse of Adam 6 Apocalypse of Adam 7 Apocalypse of Adam 8 2 Enoch > 2 Enoch 1 2 Enoch 2 2 Enoch 3 2 Enoch 4 2 Enoch 5 2 Enoch 6 2 Enoch 7 2 Enoch 8 2 Enoch 9 2 Enoch 10 2 Enoch 11 2 Enoch 12 2 Enoch 13 2 Enoch 14 2 Enoch 15 2 Enoch 16 2 Enoch 17 2 Enoch 18 2 Enoch 19 2 Enoch 20 2 Enoch 21 2 Enoch 22 2 Enoch 23 2 Enoch 24 2 Enoch 25 2 Enoch 26 2 Enoch 27 2 Enoch 28 2 Enoch 29 2 Enoch 30 2 Enoch 31 2 Enoch 32 2 Enoch 33 2 Enoch 34 2 Enoch 35 2 Enoch 36 2 Enoch 37 2 Enoch 38 2 Enoch 39 2 Enoch 40 2 Enoch 41 2 Enoch 42 2 Enoch 43 2 Enoch 44 2 Enoch 45 2 Enoch 46 2 Enoch 47 2 Enoch 48 2 Enoch 49 2 Enoch 50 2 Enoch 51 2 Enoch 52 2 Enoch 53 2 Enoch 54 2 Enoch 55 2 Enoch 56 2 Enoch 57 2 Enoch 58 2 Enoch 59 2 Enoch 60 2 Enoch 61 2 Enoch 62 2 Enoch 63 2 Enoch 64 2 Enoch 65 2 Enoch 66 2 Enoch 67 2 Enoch 68 2 Enoch 69 2 Enoch 70 2 Enoch 71 2 Enoch 72 2 Enoch 73 Coptic Apocryphon of Enoch Apocalypse of Abraham > Apocalypse of Abraham 1 Apocalypse of Abraham 2 Apocalypse of Abraham 3 Apocalypse of Abraham 4 Apocalypse of Abraham 5 Apocalypse of Abraham 6 Apocalypse of Abraham 7 Apocalypse of Abraham 8 Apocalypse of Abraham 9 Apocalypse of Abraham 10 Apocalypse of Abraham 11 Apocalypse of Abraham 12 Apocalypse of Abraham 13 Apocalypse of Abraham 14 Apocalypse of Abraham 15 Apocalypse of Abraham 16 Apocalypse of Abraham 17 Apocalypse of Abraham 18 Apocalypse of Abraham 19 Apocalypse of Abraham 20 Apocalypse of Abraham 21 Apocalypse of Abraham 22 Apocalypse of Abraham 23 Apocalypse of Abraham 24 Apocalypse of Abraham 25 Apocalypse of Abraham 26 Apocalypse of Abraham 27 Apocalypse of Abraham 28 Apocalypse of Abraham 29 Apocalypse of Abraham 30 Apocalypse of Abraham 31 Apocalypse of Abraham 32 Ladder of Jacob > Ladder of Jacob 1 Ladder of Jacob 2 Ladder of Jacob 3 Ladder of Jacob 4 Ladder of Jacob 5 Ladder of Jacob 6 Ladder of Jacob 7 Gad the Seer > Gad the Seer 1 Gad the Seer 2 Gad the Seer 3 Gad the Seer 4 Gad the Seer 5 Gad the Seer 6 Gad the Seer 7 Gad the Seer 8 Gad the Seer 9 Gad the Seer 10 Gad the Seer 11 Gad the Seer 12 Gad the Seer 13 Gad the Seer 14 Gabriel's Revelation 1 Elijah > 1 Elijah 1 1 Elijah 2 1 Elijah 3 1 Elijah 4 1 Elijah 5 Ascension of Isaiah > Ascension of Isaiah 1 Ascension of Isaiah 2 Ascension of Isaiah 3 Ascension of Isaiah 4 Ascension of Isaiah 5 Ascension of Isaiah 6 Ascension of Isaiah 7 Ascension of Isaiah 8 Ascension of Isaiah 9 Ascension of Isaiah 10 Ascension of Isaiah 11 2 Baruch > 2 Baruch 1 2 Baruch 2 2 Baruch 3 2 Baruch 4 2 Baruch 5 2 Baruch 6 2 Baruch 7 2 Baruch 8 2 Baruch 9 2 Baruch 10 2 Baruch 11 2 Baruch 12 2 Baruch 13 2 Baruch 14 2 Baruch 15 2 Baruch 16 2 Baruch 17 2 Baruch 18 2 Baruch 19 2 Baruch 20 2 Baruch 21 2 Baruch 22 2 Baruch 23 2 Baruch 24 2 Baruch 25 2 Baruch 26 2 Baruch 27 2 Baruch 28 2 Baruch 29 2 Baruch 30 2 Baruch 31 2 Baruch 32 2 Baruch 33 2 Baruch 34 2 Baruch 35 2 Baruch 36 2 Baruch 37 2 Baruch 38 2 Baruch 39 2 Baruch 40 2 Baruch 41 2 Baruch 42 2 Baruch 43 2 Baruch 44 2 Baruch 45 2 Baruch 46 2 Baruch 47 2 Baruch 48 2 Baruch 49 2 Baruch 50 2 Baruch 51 2 Baruch 52 2 Baruch 53 2 Baruch 54 2 Baruch 55 2 Baruch 56 2 Baruch 57 2 Baruch 58 2 Baruch 59 2 Baruch 60 2 Baruch 61 2 Baruch 62 2 Baruch 63 2 Baruch 64 2 Baruch 65 2 Baruch 66 2 Baruch 67 2 Baruch 68 2 Baruch 69 2 Baruch 70 2 Baruch 71 2 Baruch 72 2 Baruch 73 2 Baruch 74 2 Baruch 75 2 Baruch 76 2 Baruch 77 2 Baruch 78 2 Baruch 79 2 Baruch 80 2 Baruch 81 2 Baruch 82 2 Baruch 83 2 Baruch 84 2 Baruch 85 2 Baruch 86 2 Baruch 87 3 Baruch > 3 Baruch Prologue 3 Baruch 1 3 Baruch 2 3 Baruch 3 3 Baruch 4 3 Baruch 5 3 Baruch 6 3 Baruch 7 3 Baruch 8 3 Baruch 9 3 Baruch 10 3 Baruch 11 3 Baruch 12 3 Baruch 13 3 Baruch 14 3 Baruch 15 3 Baruch 16 3 Baruch 17 Greek Apocalypse of Daniel > Greek Apocalypse of Daniel 1 Greek Apocalypse of Daniel 2 Greek Apocalypse of Daniel 3 Greek Apocalypse of Daniel 4 Greek Apocalypse of Daniel 5 Greek Apocalypse of Daniel 6 Greek Apocalypse of Daniel 7 Greek Apocalypse of Daniel 8 Greek Apocalypse of Daniel 9 Greek Apocalypse of Daniel 10 Greek Apocalypse of Daniel 11 Greek Apocalypse of Daniel 12 Greek Apocalypse of Daniel 13 Greek Apocalypse of Daniel 14 Apocryphon of Ezekiel > Apocryphon of Ezekiel 1 Apocryphon of Ezekiel 2 Apocryphon of Ezekiel Fragments Greek Apocalypse of Ezra > Greek Apocalypse of Ezra 1 Greek Apocalypse of Ezra 2 Greek Apocalypse of Ezra 3 Greek Apocalypse of Ezra 4 Greek Apocalypse of Ezra 5 Greek Apocalypse of Ezra 6 Greek Apocalypse of Ezra 7 Vision of Ezra Apocalypse of Zephaniah > Apocalypse of Zephaniah Fragments Apocalypse of Zephaniah 1 Apocalypse of Zephaniah 2 Apocalypse of Zephaniah 3 Apocalypse of Zephaniah 4 Apocalypse of Zephaniah 5 Apocalypse of Zephaniah 6 Apocalypse of Zephaniah 7 Apocalypse of Zephaniah 8 Apocalypse of Zephaniah 9 Apocalypse of Zephaniah 10 Apocalypse of Zephaniah 11 Apocalypse of Zephaniah 12 Greek Apocalypse of Peter > Greek Apocalypse of Peter 1 Greek Apocalypse of Peter 2 Greek Apocalypse of Peter 3 Greek Apocalypse of Peter 4 Greek Apocalypse of Peter 5 Greek Apocalypse of Peter 6 Greek Apocalypse of Peter 7 Greek Apocalypse of Peter 8 1 Apocalypse of James 2 Apocalypse of James Coptic Apocalypse of Paul Apocalypse of Sedrach > Apocalypse of Sedrach 1 Apocalypse of Sedrach 2 Apocalypse of Sedrach 3 Apocalypse of Sedrach 4 Apocalypse of Sedrach 5 Apocalypse of Sedrach 6 Apocalypse of Sedrach 7 Apocalypse of Sedrach 8 Apocalypse of Sedrach 9 Apocalypse of Sedrach 10 Apocalypse of Sedrach 11 Apocalypse of Sedrach 12 Apocalypse of Sedrach 13 Apocalypse of Sedrach 14 Apocalypse of Sedrach 15 Apocalypse of Sedrach 16 3 Enoch > 3 Enoch 1 3 Enoch 2 3 Enoch 3 3 Enoch 4 3 Enoch 5 3 Enoch 6 3 Enoch 7 3 Enoch 8 3 Enoch 9 3 Enoch 10 3 Enoch 11 3 Enoch 12 3 Enoch 13 3 Enoch 14 3 Enoch 15 3 Enoch 16 3 Enoch 17 3 Enoch 18 3 Enoch 19 3 Enoch 20 3 Enoch 21 3 Enoch 22 3 Enoch 23 3 Enoch 24 3 Enoch 25 3 Enoch 26 3 Enoch 27 3 Enoch 28 3 Enoch 29 3 Enoch 30 3 Enoch 31 3 Enoch 32 3 Enoch 33 3 Enoch 34 3 Enoch 35 3 Enoch 36 3 Enoch 37 3 Enoch 38 3 Enoch 39 3 Enoch 40 3 Enoch 41 3 Enoch 42 3 Enoch 43 3 Enoch 44 3 Enoch 45 3 Enoch 46 3 Enoch 47 3 Enoch 48 Testaments > Prayer of Joseph > Prayer of Joseph A Prayer of Joseph B Prayer of Joseph C Testament of Reuben > Testament of Reuben 1 Testament of Reuben 2 Testament of Reuben 3 Testament of Reuben 4 Testament of Reuben 5 Testament of Reuben 6 Testament of Reuben 7 Testament of Simeon > Testament of Simeon 1 Testament of Simeon 2 Testament of Simeon 3 Testament of Simeon 4 Testament of Simeon 5 Testament of Simeon 6 Testament of Simeon 7 Testament of Simeon 8 Testament of Simeon 9 Testament of Levi > Testament of Levi 1 Testament of Levi 2 Testament of Levi 3 Testament of Levi 4 Testament of Levi 5 Testament of Levi 6 Testament of Levi 7 Testament of Levi 8 Testament of Levi 9 Testament of Levi 10 Testament of Levi 11 Testament of Levi 12 Testament of Levi 13 Testament of Levi 14 Testament of Levi 15 Testament of Levi 16 Testament of Levi 17 Testament of Levi 18 Testament of Levi 19 Testament of Judah > Testament of Judah 1 Testament of Judah 2 Testament of Judah 3 Testament of Judah 4 Testament of Judah 5 Testament of Judah 6 Testament of Judah 7 Testament of Judah 8 Testament of Judah 9 Testament of Judah 10 Testament of Judah 11 Testament of Judah 12 Testament of Judah 13 Testament of Judah 14 Testament of Judah 15 Testament of Judah 16 Testament of Judah 17 Testament of Judah 18 Testament of Judah 19 Testament of Judah 20 Testament of Judah 21 Testament of Judah 22 Testament of Judah 23 Testament of Judah 24 Testament of Judah 25 Testament of Judah 26 Testament of Issachar > Testament of Issachar 1 Testament of Issachar 2 Testament of Issachar 3 Testament of Issachar 4 Testament of Issachar 5 Testament of Issachar 6 Testament of Issachar 7 Testament of Zebulun > Testament of Zebulun 1 Testament of Zebulun 2 Testament of Zebulun 3 Testament of Zebulun 4 Testament of Zebulun 5 Testament of Zebulun 6 Testament of Zebulun 7 Testament of Zebulun 8 Testament of Zebulun 9 Testament of Zebulun 10 Testament of Dan > Testament of Dan 1 Testament of Dan 2 Testament of Dan 3 Testament of Dan 4 Testament of Dan 5 Testament of Dan 6 Testament of Dan 7 Testament of Naphtali > Testament of Naphtali 1 Testament of Naphtali 2 Testament of Naphtali 3 Testament of Naphtali 4 Testament of Naphtali 5 Testament of Naphtali 6 Testament of Naphtali 7 Testament of Naphtali 8 Testament of Naphtali 9 Testament of Gad > Testament of Gad 1 Testament of Gad 2 Testament of Gad 3 Testament of Gad 4 Testament of Gad 5 Testament of Gad 6 Testament of Gad 7 Testament of Gad 8 Testament of Asher > Testament of Asher 1 Testament of Asher 2 Testament of Asher 3 Testament of Asher 4 Testament of Asher 5 Testament of Asher 6 Testament of Asher 7 Testament of Asher 8 Testament of Joseph > Testament of Joseph 1 Testament of Joseph 2 Testament of Joseph 3 Testament of Joseph 4 Testament of Joseph 5 Testament of Joseph 6 Testament of Joseph 7 Testament of Joseph 8 Testament of Joseph 9 Testament of Joseph 10 Testament of Joseph 11 Testament of Joseph 12 Testament of Joseph 13 Testament of Joseph 14 Testament of Joseph 15 Testament of Joseph 16 Testament of Joseph 17 Testament of Joseph 18 Testament of Joseph 19 Testament of Joseph 20 Testament of Benjamin > Testament of Benjamin 1 Testament of Benjamin 2 Testament of Benjamin 3 Testament of Benjamin 4 Testament of Benjamin 5 Testament of Benjamin 6 Testament of Benjamin 7 Testament of Benjamin 8 Testament of Benjamin 9 Testament of Benjamin 10 Testament of Benjamin 11 Testament of Benjamin 12 Testament of Job > Testament of Job 1 Testament of Job 2 Testament of Job 3 Testament of Job 4 Testament of Job 5 Testament of Job 6 Testament of Job 7 Testament of Job 8 Testament of Job 9 Testament of Job 10 Testament of Job 11 Testament of Job 12 Assumption of Moses > Assumption of Moses 1 Assumption of Moses 2 Assumption of Moses 3 Assumption of Moses 4 Assumption of Moses 5 Assumption of Moses 6 Assumption of Moses 7 Assumption of Moses 8 Assumption of Moses 9 Assumption of Moses 10 Assumption of Moses 11 Assumption of Moses 12 Poetry > Sefer Yetzirah > Sefer Yetzirah 1 Sefer Yetzirah 2 Sefer Yetzirah 3 Sefer Yetzirah 4 Sefer Yetzirah 5 Sefer Yetzirah 6 Sefer Yetzirah 7 Syriac Apocryphal Psalms > Psalm 152 Psalm 153 Psalm 154 Psalm 155 Odes of Solomon > Odes of Solomon 1 Odes of Solomon 2 Odes of Solomon 3 Odes of Solomon 4 Odes of Solomon 5 Odes of Solomon 6 Odes of Solomon 7 Odes of Solomon 8 Odes of Solomon 9 Odes of Solomon 10 Odes of Solomon 11 Odes of Solomon 12 Odes of Solomon 13 Odes of Solomon 14 Odes of Solomon 15 Odes of Solomon 16 Odes of Solomon 17 Odes of Solomon 18 Odes of Solomon 19 Odes of Solomon 20 Odes of Solomon 21 Odes of Solomon 22 Odes of Solomon 23 Odes of Solomon 24 Odes of Solomon 25 Odes of Solomon 26 Odes of Solomon 27 Odes of Solomon 28 Odes of Solomon 29 Odes of Solomon 30 Odes of Solomon 31 Odes of Solomon 32 Odes of Solomon 33 Odes of Solomon 34 Odes of Solomon 35 Odes of Solomon 36 Odes of Solomon 37 Odes of Solomon 38 Odes of Solomon 39 Odes of Solomon 40 Odes of Solomon 41 Odes of Solomon 42 History and Legends > Adam Octipartite Jasher > Jasher 1 Jasher 2 Jasher 3 Jasher 4 Jasher 5 Jasher 6 Jasher 7 Jasher 8 Jasher 9 Jasher 10 Jasher 11 Jasher 12 Jasher 13 Jasher 14 Jasher 15 Jasher 16 Jasher 17 Jasher 18 Jasher 19 Jasher 20 Jasher 21 Jasher 22 Jasher 23 Jasher 24 Jasher 25 Jasher 26 Jasher 27 Jasher 28 Jasher 29 Jasher 30 Jasher 31 Jasher 32 Jasher 33 Jasher 34 Jasher 35 Jasher 36 Jasher 37 Jasher 38 Jasher 39 Jasher 40 Jasher 41 Jasher 42 Jasher 43 Jasher 44 Jasher 45 Jasher 46 Jasher 47 Jasher 48 Jasher 49 Jasher 50 Jasher 51 Jasher 52 Jasher 53 Jasher 54 Jasher 55 Jasher 56 Jasher 57 Jasher 58 Jasher 59 Jasher 60 Jasher 61 Jasher 62 Jasher 63 Jasher 64 Jasher 65 Jasher 66 Jasher 67 Jasher 68 Jasher 69 Jasher 70 Jasher 71 Jasher 72 Jasher 73 Jasher 74 Jasher 75 Jasher 76 Jasher 77 Jasher 78 Jasher 79 Jasher 80 Jasher 81 Jasher 82 Jasher 83 Jasher 84 Jasher 85 Jasher 86 Jasher 87 Jasher 88 Jasher 89 Jasher 90 Jasher 91 1 Adam and Eve > 1 Adam and Eve 1 1 Adam and Eve 2 1 Adam and Eve 3 1 Adam and Eve 4 1 Adam and Eve 5 1 Adam and Eve 6 1 Adam and Eve 7 1 Adam and Eve 8 1 Adam and Eve 9 1 Adam and Eve 10 1 Adam and Eve 11 1 Adam and Eve 12 1 Adam and Eve 13 1 Adam and Eve 14 1 Adam and Eve 15 1 Adam and Eve 16 1 Adam and Eve 17 1 Adam and Eve 18 1 Adam and Eve 19 1 Adam and Eve 20 1 Adam and Eve 21 1 Adam and Eve 22 1 Adam and Eve 23 1 Adam and Eve 24 1 Adam and Eve 25 1 Adam and Eve 26 1 Adam and Eve 27 1 Adam and Eve 28 1 Adam and Eve 29 1 Adam and Eve 30 1 Adam and Eve 31 1 Adam and Eve 32 1 Adam and Eve 33 1 Adam and Eve 34 1 Adam and Eve 35 1 Adam and Eve 36 1 Adam and Eve 37 1 Adam and Eve 38 1 Adam and Eve 39 1 Adam and Eve 40 1 Adam and Eve 41 1 Adam and Eve 42 1 Adam and Eve 43 1 Adam and Eve 44 1 Adam and Eve 45 1 Adam and Eve 46 1 Adam and Eve 47 1 Adam and Eve 48 1 Adam and Eve 49 1 Adam and Eve 50 1 Adam and Eve 51 1 Adam and Eve 52 1 Adam and Eve 53 1 Adam and Eve 54 1 Adam and Eve 55 1 Adam and Eve 56 1 Adam and Eve 57 1 Adam and Eve 58 1 Adam and Eve 59 1 Adam and Eve 60 1 Adam and Eve 61 1 Adam and Eve 62 1 Adam and Eve 63 1 Adam and Eve 64 1 Adam and Eve 65 1 Adam and Eve 66 1 Adam and Eve 67 1 Adam and Eve 68 1 Adam and Eve 69 1 Adam and Eve 70 1 Adam and Eve 71 1 Adam and Eve 72 1 Adam and Eve 73 1 Adam and Eve 74 1 Adam and Eve 75 1 Adam and Eve 76 1 Adam and Eve 77 1 Adam and Eve 78 1 Adam and Eve 79 2 Adam and Eve > 2 Adam and Eve 1 2 Adam and Eve 2 2 Adam and Eve 3 2 Adam and Eve 4 2 Adam and Eve 5 2 Adam and Eve 6 2 Adam and Eve 7 2 Adam and Eve 8 2 Adam and Eve 9 2 Adam and Eve 10 2 Adam and Eve 11 2 Adam and Eve 12 2 Adam and Eve 13 2 Adam and Eve 14 2 Adam and Eve 15 2 Adam and Eve 16 2 Adam and Eve 17 2 Adam and Eve 18 2 Adam and Eve 19 2 Adam and Eve 20 2 Adam and Eve 21 2 Adam and Eve 22 3 Adam and Eve > 3 Adam and Eve 1 3 Adam and Eve 2 3 Adam and Eve 3 3 Adam and Eve 4 3 Adam and Eve 5 3 Adam and Eve 6 3 Adam and Eve 7 3 Adam and Eve 8 3 Adam and Eve 9 3 Adam and Eve 10 3 Adam and Eve 11 3 Adam and Eve 12 3 Adam and Eve 13 3 Adam and Eve 14 3 Adam and Eve 15 3 Adam and Eve 16 3 Adam and Eve 17 3 Adam and Eve 18 3 Adam and Eve 19 3 Adam and Eve 20 3 Adam and Eve 21 3 Adam and Eve 22 3 Adam and Eve 23 3 Adam and Eve 24 3 Adam and Eve 25 4 Adam and Eve > 4 Adam and Eve 1 4 Adam and Eve 2 4 Adam and Eve 3 4 Adam and Eve 4 4 Adam and Eve 5 4 Adam and Eve 6 4 Adam and Eve 7 4 Adam and Eve 8 4 Adam and Eve 9 4 Adam and Eve 10 4 Adam and Eve 11 4 Adam and Eve 12 4 Adam and Eve 13 4 Adam and Eve 14 4 Adam and Eve 15 Cave of Treasures > Cave of Treasures 1 Cave of Treasures 2 Cave of Treasures 3 Cave of Treasures 4 Cave of Treasures 5 Cave of Treasures 6 Joseph and Asenath > Joseph and Asenath 1 Joseph and Asenath 2 Joseph and Asenath 3 Joseph and Asenath 4 Joseph and Asenath 5 Joseph and Asenath 6 Joseph and Asenath 7 Joseph and Asenath 8 Joseph and Asenath 9 Joseph and Asenath 10 Joseph and Asenath 11 Joseph and Asenath 12 Joseph and Asenath 13 Joseph and Asenath 14 Joseph and Asenath 15 Joseph and Asenath 16 Joseph and Asenath 17 Joseph and Asenath 18 Joseph and Asenath 19 Joseph and Asenath 20 Joseph and Asenath 21 Joseph and Asenath 22 Joseph and Asenath 23 Joseph and Asenath 24 Joseph and Asenath 25 Joseph and Asenath 26 Joseph and Asenath 27 Joseph and Asenath 28 Joseph and Asenath 29 Lives of the Prophets > Lives of the Prophets 1 Lives of the Prophets 2 Lives of the Prophets 3 Lives of the Prophets 4 Lives of the Prophets 5 Lives of the Prophets 6 Lives of the Prophets 7 Lives of the Prophets 8 Lives of the Prophets 9 Lives of the Prophets 10 Lives of the Prophets 11 Lives of the Prophets 11 Lives of the Prophets 12 Lives of the Prophets 13 Lives of the Prophets 14 Lives of the Prophets 15 Lives of the Prophets 16 Lives of the Prophets 17 Lives of the Prophets 18 Lives of the Prophets 19 Lives of the Prophets 20 Lives of the Prophets 21 Lives of the Prophets 22 Lives of the Prophets 23 Lives of the Prophets 24 Letter of Aristeas 5 Maccabees > 5 Maccabees 1 5 Maccabees 2 5 Maccabees 3 5 Maccabees 4 5 Maccabees 5 5 Maccabees 6 5 Maccabees 7 5 Maccabees 8 5 Maccabees 9 5 Maccabees 10 5 Maccabees 11 5 Maccabees 12 5 Maccabees 13 5 Maccabees 14 5 Maccabees 15 5 Maccabees 16 5 Maccabees 17 5 Maccabees 18 5 Maccabees 19 5 Maccabees 20 5 Maccabees 21 5 Maccabees 22 5 Maccabees 23 5 Maccabees 24 5 Maccabees 25 5 Maccabees 26 5 Maccabees 27 5 Maccabees 28 5 Maccabees 29 5 Maccabees 30 5 Maccabees 31 5 Maccabees 32 5 Maccabees 33 5 Maccabees 34 5 Maccabees 35 5 Maccabees 36 5 Maccabees 37 5 Maccabees 38 5 Maccabees 39 5 Maccabees 40 5 Maccabees 41 5 Maccabees 42 5 Maccabees 43 5 Maccabees 44 5 Maccabees 45 5 Maccabees 46 5 Maccabees 47 5 Maccabees 48 5 Maccabees 49 5 Maccabees 50 5 Maccabees 51 5 Maccabees 52 5 Maccabees 53 5 Maccabees 54 5 Maccabees 55 5 Maccabees 56 5 Maccabees 57 5 Maccabees 58 5 Maccabees 59 6 Maccabees 7 Maccabees 8 Maccabees Kebra Nagast > Kebra Nagast 1 Kebra Nagast 2 Kebra Nagast 3 Kebra Nagast 4 Kebra Nagast 5 Kebra Nagast 6 Kebra Nagast 7 Kebra Nagast 8 Kebra Nagast 9 Kebra Nagast 10 Kebra Nagast 11 Kebra Nagast 12 Kebra Nagast 13 Kebra Nagast 14 Kebra Nagast 15 Kebra Nagast 16 Kebra Nagast 17 Kebra Nagast 18 Kebra Nagast 19 Kebra Nagast 20 Kebra Nagast 21 Kebra Nagast 22 Kebra Nagast 23 Kebra Nagast 24 Kebra Nagast 25 Kebra Nagast 26 Kebra Nagast 27 Kebra Nagast 28 Kebra Nagast 29 Kebra Nagast 30 Kebra Nagast 31 Kebra Nagast 32 Kebra Nagast 33 Kebra Nagast 34 Kebra Nagast 35 Kebra Nagast 36 Kebra Nagast 37 Kebra Nagast 38 Kebra Nagast 39 Kebra Nagast 40 Kebra Nagast 41 Kebra Nagast 42 Kebra Nagast 43 Kebra Nagast 44 Kebra Nagast 45 Kebra Nagast 46 Kebra Nagast 47 Kebra Nagast 48 Kebra Nagast 49 Kebra Nagast 50 Kebra Nagast 51 Kebra Nagast 52 Kebra Nagast 53 Kebra Nagast 54 Kebra Nagast 55 Kebra Nagast 56 Kebra Nagast 57 Kebra Nagast 58 Kebra Nagast 59 Kebra Nagast 60 Kebra Nagast 61 Kebra Nagast 62 Kebra Nagast 63 Kebra Nagast 62 Kebra Nagast 63 Kebra Nagast 64 Kebra Nagast 65 Kebra Nagast 66 Kebra Nagast 67 Kebra Nagast 68 Kebra Nagast 69 Kebra Nagast 70 Kebra Nagast 71 Kebra Nagast 72 Kebra Nagast 73 Kebra Nagast 74 Kebra Nagast 75 Kebra Nagast 76 Kebra Nagast 77 Kebra Nagast 78 Kebra Nagast 79 Kebra Nagast 80 Kebra Nagast 81 Kebra Nagast 82 Kebra Nagast 83 Kebra Nagast 84 Kebra Nagast 85 Kebra Nagast 86 Kebra Nagast 87 Kebra Nagast 88 Kebra Nagast 89 Kebra Nagast 90 Kebra Nagast 91 Kebra Nagast 92 Kebra Nagast 93 Kebra Nagast 94 Kebra Nagast 95 Kebra Nagast 96 Kebra Nagast 97 Kebra Nagast 98 Kebra Nagast 99 Kebra Nagast 100 Kebra Nagast 101 Kebra Nagast 102 Kebra Nagast 103 Kebra Nagast 104 Kebra Nagast 105 Kebra Nagast 106 Kebra Nagast 107 Kebra Nagast 108 Kebra Nagast 109 Kebra Nagast 110 Kebra Nagast 111 Kebra Nagast 112 Kebra Nagast 113 Kebra Nagast 114 Kebra Nagast 115 Kebra Nagast 116 Kebra Nagast 117 Kebra Nagast Colophon Kebra Nagast Plates New Testament Epistles > Epistle of Peter to Philip Laodiceans Barnabas > Barnabas 1 Barnabas 2 Barnabas 3 Barnabas 4 Barnabas 5 Barnabas 6 Barnabas 7 Barnabas 8 Barnabas 9 Barnabas 10 Barnabas 11 Barnabas 12 Barnabas 13 Barnabas 14 Barnabas 15 Barnabas 16 Barnabas 17 Barnabas 18 Barnabas 19 Barnabas 20 Barnabas 21 1 Clement > 1 Clement 1 1 Clement 2 1 Clement 3 1 Clement 4 1 Clement 5 1 Clement 6 1 Clement 7 1 Clement 8 1 Clement 9 1 Clement 10 1 Clement 11 1 Clement 12 1 Clement 13 1 Clement 14 1 Clement 15 1 Clement 16 1 Clement 17 1 Clement 18 1 Clement 19 1 Clement 20 1 Clement 21 1 Clement 22 1 Clement 23 1 Clement 24 1 Clement 25 1 Clement 26 1 Clement 27 1 Clement 28 1 Clement 29 1 Clement 30 1 Clement 31 1 Clement 32 1 Clement 33 1 Clement 34 1 Clement 35 1 Clement 36 1 Clement 37 1 Clement 38 1 Clement 39 1 Clement 40 1 Clement 41 1 Clement 42 1 Clement 43 1 Clement 44 1 Clement 45 1 Clement 46 1 Clement 47 1 Clement 48 1 Clement 49 1 Clement 50 1 Clement 51 1 Clement 52 1 Clement 53 1 Clement 54 1 Clement 55 1 Clement 56 1 Clement 57 1 Clement 58 1 Clement 59 1 Clement 60 1 Clement 61 1 Clement 62 1 Clement 63 1 Clement 64 1 Clement 65 2 Clement > 2 Clement 1 2 Clement 2 2 Clement 3 2 Clement 4 2 Clement 5 2 Clement 6 2 Clement 7 2 Clement 8 2 Clement 9 2 Clement 10 2 Clement 11 2 Clement 12 2 Clement 13 2 Clement 14 2 Clement 15 2 Clement 16 2 Clement 17 2 Clement 18 2 Clement 19 2 Clement 20 Ignatius Ephesians > Ignatius Ephesians 1 Ignatius Ephesians 2 Ignatius Ephesians 3 Ignatius Ephesians 4 Ignatius Ephesians 5 Ignatius Ephesians 6 Ignatius Ephesians 7 Ignatius Ephesians 8 Ignatius Ephesians 9 Ignatius Ephesians 10 Ignatius Ephesians 11 Ignatius Ephesians 12 Ignatius Ephesians 13 Ignatius Ephesians 14 Ignatius Ephesians 15 Ignatius Ephesians 16 Ignatius Ephesians 17 Ignatius Ephesians 18 Ignatius Ephesians 19 Ignatius Ephesians 20 Ignatius Ephesians 21 Magnesians > Magnesians 1 Magnesians 2 Magnesians 3 Magnesians 4 Magnesians 5 Magnesians 6 Magnesians 7 Magnesians 8 Magnesians 9 Magnesians 10 Magnesians 11 Magnesians 12 Magnesians 13 Magnesians 14 Magnesians 15 Trallians > Trallians 1 Trallians 2 Trallians 3 Trallians 4 Trallians 5 Trallians 6 Trallians 7 Trallians 8 Trallians 9 Trallians 10 Trallians 11 Trallians 12 Trallians 13 Ignatius Romans > Ignatius Romans 1 Ignatius Romans 2 Ignatius Romans 3 Ignatius Romans 4 Ignatius Romans 5 Ignatius Romans 6 Ignatius Romans 7 Ignatius Romans 8 Ignatius Romans 9 Ignatius Romans 10 Philadelphians > Philadelphians 1 Philadelphians 2 Philadelphians 3 Philadelphians 4 Philadelphians 5 Philadelphians 6 Philadelphians 7 Philadelphians 8 Philadelphians 9 Philadelphians 10 Philadelphians 11 Smyrnæans > Smyrnæans 1 Smyrnæans 2 Smyrnæans 3 Smyrnæans 4 Smyrnæans 5 Smyrnæans 6 Smyrnæans 7 Smyrnæans 8 Smyrnæans 9 Smyrnæans 10 Smyrnæans 11 Smyrnæans 12 Smyrnæans 13 Ignatius to Polycarp > Ignatius to Polycarp 1 Ignatius to Polycarp 2 Ignatius to Polycarp 3 Ignatius to Polycarp 4 Ignatius to Polycarp 5 Ignatius to Polycarp 6 Ignatius to Polycarp 7 Ignatius to Polycarp 8 Polycarp Philippians > Polycarp Philippians 1 Polycarp Philippians 2 Polycarp Philippians 3 Polycarp Philippians 4 Polycarp Philippians 5 Polycarp Philippians 6 Polycarp Philippians 7 Polycarp Philippians 8 Polycarp Philippians 9 Polycarp Philippians 10 Polycarp Philippians 11 Polycarp Philippians 12 Polycarp Philippians 13 Polycarp Philippians 14 Gospels > Gospel of Mary > Gospel of Mary 4 Gospel of Mary 5 Gospel of Mary 8 Gospel of Mary 9 Gospel of Thomas Gospel of Philip Gospel of Truth Greek Gospel of the Egyptians Coptic Gospel of the Egyptians Apocryphal Acts > Acts of Peter and the Twelve Apostles Daoism > Sayings of Laozi > Sayings of Laozi 1 Sayings of Laozi 2 Sayings of Laozi 3 Sayings of Laozi 4 Sayings of Laozi 5 Sayings of Laozi 6 Sayings of Laozi 7 Sayings of Laozi 8 Sayings of Laozi 9 Dao De Jing > Dao De Jing 1 Dao De Jing 2 Dao De Jing 3 Dao De Jing 4 Dao De Jing 5 Dao De Jing 6 Dao De Jing 7 Dao De Jing 8 Dao De Jing 9 Dao De Jing 10 Dao De Jing 11 Dao De Jing 12 Dao De Jing 13 Dao De Jing 14 Dao De Jing 15 Dao De Jing 16 Dao De Jing 17 Dao De Jing 18 Dao De Jing 19 Dao De Jing 20 Dao De Jing 21 Dao De Jing 22 Dao De Jing 23 Dao De Jing 24 Dao De Jing 25 Dao De Jing 26 Dao De Jing 27 Dao De Jing 28 Dao De Jing 29 Dao De Jing 30 Dao De Jing 31 Dao De Jing 32 Dao De Jing 33 Dao De Jing 34 Dao De Jing 35 Dao De Jing 36 Dao De Jing 37 Dao De Jing 38 Dao De Jing 39 Dao De Jing 40 Dao De Jing 41 Dao De Jing 42 Dao De Jing 43 Dao De Jing 44 Dao De Jing 45 Dao De Jing 46 Dao De Jing 47 Dao De Jing 48 Dao De Jing 49 Dao De Jing 50 Dao De Jing 51 Dao De Jing 52 Dao De Jing 53 Dao De Jing 54 Dao De Jing 55 Dao De Jing 56 Dao De Jing 57 Dao De Jing 58 Dao De Jing 59 Dao De Jing 60 Dao De Jing 61 Dao De Jing 62 Dao De Jing 63 Dao De Jing 64 Dao De Jing 65 Dao De Jing 66 Dao De Jing 67 Dao De Jing 68 Dao De Jing 69 Dao De Jing 70 Dao De Jing 71 Dao De Jing 72 Dao De Jing 73 Dao De Jing 74 Dao De Jing 75 Dao De Jing 76 Dao De Jing 77 Dao De Jing 78 Dao De Jing 79 Dao De Jing 80 Dao De Jing 81 Study Helps > Abbreviations Books in Alphabetical Order Christian Canons Collections List of Testamentary Literature Information > Changelog"
-        }
+        {"num": 1, "text": "One of the sixty warriors was proud, but JAH made his body swell from his foot up to his head with a spoonful of sulfur, and he died in a plague."},
+        {"num": 2, "text": "And again, Korah, who built an iron bed, was proud of his power and abundance, but JAH hid him in death."},
+        {"num": 3, "text": "And again, Nebuchadnezzar was proud, saying, 'There is no other king besides me, and I am the creator who makes the sun rise in this world.' He spoke thus out of his arrogant abundance."},
+        {"num": 4, "text": "And JAH separated him from people and sent him to the wilderness for seven years, and he made his fortune with the birds of heaven and the beasts of the wilderness until he knew that JAH was the one who had humbled him."},
+        {"num": 5, "text": "And when he knew Him in worship, He returned him to his kingdom. Who is it that was not of the earth and was boldly proud of JAH, who humbled him?"},
+        {"num": 6, "text": "How about those who demolished His law and His order, and whom the earth did not swallow?"},
+        {"num": 7, "text": "And you, Zerubbabel, love that you might be proud of your Creator, but again, you have that He might destroy you like them and might lower you to the grave out of your arrogance."},
+        {"num": 8, "text": "And again, after they entered Sheol, where there is grinding of teeth and mourning, that was the fulfillment of darkness, you have that He might lower you to the deep pit of Gehenna, where there are no exits forever."},
+        {"num": 9, "text": "As for you, you are a man who will die and be destroyed tomorrow, like arrogant kings who were like you, who left this world living."},
+        {"num": 10, "text": "As for me, I say, 'You are demolished ruins, but you are not JAH, for JAH is the one who created the earth and heaven and you.'"},
+        {"num": 11, "text": "He downbases the arrogant ones and honors those who are downbased. He gives firmness to those who are weary."},
+        {"num": 12, "text": "He kills the well ones and raises up the persons who were on the earth, who were dead and buried in a grave."},
+        {"num": 13, "text": "And He sends slaves forth free in life from sin rulership."},
+        {"num": 14, "text": "O King Zerubbabel, why do you boast in your defiled idols who have no benefit?"},
+        {"num": 15, "text": "But JAH created the earth and heaven and the great seas. He created the moon and the sun, and He prepared the eras."},
+        {"num": 16, "text": "Man grazes in his field, and he plows until it is dusk, and the stars of heaven remain firm by His word."},
+        {"num": 17, "text": "And He calls all in heaven. There is nothing done without Jah knowing it."},
+        {"num": 18, "text": "He commanded the angels in heaven to serve Him and to praise His glorified name. And the angels are sent to all persons who inherit life."},
+        {"num": 19, "text": "Raphael, who was a servant, was sent to Tobit, and he saved Tobiah from death in Raguel's country."},
+        {"num": 20, "text": "And Holy Michael was sent to Gideon, that he might draw his attention by money, that he might destroy idolatrous persons. And he was sent to the prophet Moses at the time he made Israel cross the Red Sea."},
+        {"num": 21, "text": "As only JAH has said, He led them. There was no different idol with them."},
+        {"num": 22, "text": "And He sent them forth to crops on the earth."},
+        {"num": 23, "text": "And He fed them His plantation grain. As He totally loved them, He cherished them, feeding them honey that firmed up like a rock."},
+        {"num": 24, "text": "And that you might totally keep His kindreds by what is due, and that you might do JAH's accord, who humbled you, He crowned you, giving you authority over the four kingdoms."},
+        {"num": 25, "text": "For He has crowned you, making you loftier than all, and your Creator totally crowned you that you might love JAH."},
+        {"num": 26, "text": "And it is proper that you might love your Creator JAH like He loved you, like He trusted you over all the people. And you, do JAH's accord that your era might abound in this world, and that He might live with you in support."},
+        {"num": 27, "text": "And do JAH's accord that He might stand for you, being a guardian over your enemies, and that He might seat you on your throne, and that He might hide you in His wing of support."},
+        {"num": 28, "text": "As for you, if you don't know, JAH chose and crowned you over Israel, like He chose Saul from Israel's children when he kept his father's donkeys. And He crowned him over his kindreds in Israel, and he sat with Israel on his throne."},
+        {"num": 29, "text": "And He gave him a lofty fortune, separating him from his kindreds. JAH crowned you over His kindreds. As for henceforth onward, check and keep His kindreds."},
+        {"num": 30, "text": "As JAH has appointed you over them, that you might kill and might save, keep them in evil things, those who work goodly things and those who work evil things on a goodly thing,\" He told him."},
+        {"num": 31, "text": "\"And as JAH has appointed you over all that you might do His accord, be it while you whipped or while you saved, pay them evil work, those who work goodly work and those who work goodly work and evil work."},
+        {"num": 32, "text": "For you are a slave of JAH, who rules all in heaven, and you, do JAH's accord that He might do your accord for you in all you thought and in all you begged while you wheedled before Him."},
+        {"num": 33, "text": "There is none who rules Him, but He rules all."},
+        {"num": 34, "text": "There is none who appointed Him, but He appointed all."},
+        {"num": 35, "text": "There is none who dismisses Him, but He dismisses all."},
+        {"num": 36, "text": "There is none who reproaches Him, but He reproaches all."},
+        {"num": 37, "text": "There is none who makes Him diligent, but He makes all diligent. As heaven and earth rulership are for Him, there is none who escapes from His authority. All are revealed alongside Him, yet there is none hidden from His face."},
+        {"num": 38, "text": "He sees all, but there is none who sees Him. He hears the person's prayer who prays to Him, saying 'Save me,' for He has created man in His pattern, and He accepts his plea."},
+        {"num": 39, "text": "As He is a king who lives until eternity, He feeds all from His unchanging nature."}
       ]
     },
     {
       "num": 6,
       "verses": [
-        {
-          "num": 1,
-          "text": "As He verily crowneth the kings who do His Will, the kings wrote an honest word because of Him."
-        },
-        {
-          "num": 2,
-          "text": "As they have done the Will of Jehovah, He shall with an immeasurable light cause to shine Isaac and Abraham and Jacob, Solomon and David and Hezekiah lodging in the Garden where all beautiful kings whose lodgings were in the light."
-        },
-        {
-          "num": 3,
-          "text": "It is Heaven's Hall that verily shone, yet Earth's halls are not like Heaven's Hall. Its floor, whose features are made of silver and gold and jewels, are clean."
-        },
-        {
-          "num": 4,
-          "text": "And its features that verily shine are unsearchable by human hearts; Heaven's Hall is that which shineth like unto jewels."
-        },
-        {
-          "num": 5,
-          "text": "As Jehovah knew, who is a Knower of Natures, the Hall of Heaven that He created is that which a man's heart doth not comprehend and that which shineth in complete light. Its floor, that was made from silver and gold, from jewels, from white silk and blue silk, is clean."
-        },
-        {
-          "num": 6,
-          "text": "It is verily and completely beautiful like unto this."
-        },
-        {
-          "num": 7,
-          "text": "Righteous men who are made firm in religion and virtue are they who shall inherit it through the Charity and Pardon of Jehovah."
-        },
-        {
-          "num": 8,
-          "text": "And there is healing Water that floweth from it, and it verily shineth like unto the Sun, and there is a great tabernacle of Light within it, and it is encircled about by the perfume of grace."
-        },
-        {
-          "num": 9,
-          "text": "And a Garden of fruit that is beautiful and beloved, whose features and taste are unique, surround the house, and there are oil and grapes placed their, and it is very beautiful, and the fragrance of its fruit is sweet."
-        },
-        {
-          "num": 10,
-          "text": "When a man of flesh and blood enters it, his soul would that he separate from his flesh, and from the abundance of the blessed Israelites that in it, due to its fragrant flavor."
-        },
-        {
-          "num": 11,
-          "text": "Beautiful kings who did the Will of Jehovah shall be blessed there; their honor and their places are known in the Kingdom of Heaven that live steadfastly forever, where welfare is found."
-        },
-        {
-          "num": 12,
-          "text": "He showed that their lordship upon the Earth was famed an honored, and that their lordship in Heaven was famed an honored; They shall be honored and lofty in Heaven as they honored them and bowed to them in this world. If they work good Works in this world then they shall be blessed."
-        },
-        {
-          "num": 13,
-          "text": "But kings who were evil in their rule and their kingdoms that Jehovah gave them, they do not judge honestly according to what is due; as they have heeded not the cries of the destitute and the poor ones, they do not judge Truth and save the refugee and the wronged child whose father and mother have died."
-        },
-        {
-          "num": 14,
-          "text": "They save not the destitute and poor ones from the wealthy hand that robbeth them; they do not divide and give food and rest to them who are hungred, and they divide and give not from their drink and give not drink to those who thirsted, and they did not turn their ears to the poor one's cry."
-        },
-        {
-          "num": 15,
-          "text": "And he shall bring them to Gehenna for a dark ending, when that lofty Day arriveth upon them and when Jehovah shall come; and at that time His wrath will be exercised upon them as David said in his Praises: \"Lord, do not chastise me in Thy Judgement, and do not admonish me in Thy chastisement\"; Their problems and their debasing shall abound like unto fame and abundant measure."
-        },
-        {
-          "num": 16,
-          "text": "When nobles and kings ruleth this world, there are those who keep not Thy law."
-        },
-        {
-          "num": 17,
-          "text": "ABut Jehovah Who ruleth all that there is in Heaven, all mens' souls and all mens' welfare hath been seized by His Authority; It is He Who giveth honor to those who glorify Him—for He verily ruleth all—and He loveth those who love Him."
-        },
-        {
-          "num": 18,
-          "text": "As He is Lord of Earth and Heaven, He examineth and knoweth what the kidneys transport and what the heart thinketh, and to he who beggeth to Him with pure hearts, He shall give him the reward for his pleas."
-        },
-        {
-          "num": 19,
-          "text": "AHe shall destroy the arrogance of the powerful ones, who work evil works upon the child whose mother and father are dead, and upon old women."
-        },
-        {
-          "num": 20,
-          "text": "It is not by thy power that thou hast seized this kingdom—it is not by thine own ability that thou sat upon this throne—He desired to try thee thus that it might be possible for thee to rule like Saul, who ruled his kindreds in that season; and He seated thee upon the throne of a kingdom, yet it is not by thine own power, it is when He tryeth thee like unto Saul, who heeded not the words of the prophet Samuel and the Word of Jehovah, and did not serve his army nor the king of Amalek; yet it is not by thine own ability that thou seized this kingdom."
-        },
-        {
-          "num": 21,
-          "text": "And Jehovah told the prophet Samuel, \"Go, and because they have grievedst me by demolishing the Law, and worshipping idols, and bowing to the idol, and by their synagogues, and by all their hated Works with no benefit; tell Saul, \"Go to the nation of Amalek and destroy their hosts and all their kings from the men to the livestock.\""
-        },
-        {
-          "num": 22,
-          "text": "Upon those who have grieved Jehovah, because of this thing He sent Saul that he might destroy them."
-        },
-        {
-          "num": 23,
-          "text": "But he saved their king from death, and he saved many livestock and beauties and women and handsome youths from death; and he scorned My work and did not hear My Commandment; because of this thing, Jehovah told the prophet Samuel, \"Go and divide his kingdom.\""
-        },
-        {
-          "num": 24,
-          "text": "\"In his stead, anoint David the son of Jesse that he might reign over Israel."
-        },
-        {
-          "num": 25,
-          "text": "But upon him send a demon who will strangle him and cast him out."
-        },
-        {
-          "num": 26,
-          "text": "For he hath that if I gave him a kingdom that he do My Will, when he refused Me to do My Will I dismissed him from the kingdom that was due to him. But thou, go and tell him saying, 'Wilt thou thus heed not Jehovah Who crowned thee over His kindred Israel, Who hath seated the upon His Lordship's Throne?'"
-        },
-        {
-          "num": 27,
-          "text": "But thou, say unto him, 'Thou didst not know Jehovah Who gave thee this honor and fame,'\" He told him."
-        },
-        {
-          "num": 28,
-          "text": "And the prophet Samuel went unto King Saul, and went unto him sitting at a dinnertable; and Agag, king of Amalek, had sat upon his left."
-        },
-        {
-          "num": 29,
-          "text": "\"Why didst thou heed not at all Jehovah Who commanded the that thou might destroy the livestock and the people?\" Thus he said unto him."
-        },
-        {
-          "num": 30,
-          "text": "And at that time the king feared and arose from his throne saying unto Samuel, \"Repent for us\" and he seized his clothes. And Samuel refused to repent, and Samuel's clothes were rent."
-        },
-        {
-          "num": 31,
-          "text": "And Samuel said unto Saul, \"Jehovah hath divided thy kingdom."
-        },
-        {
-          "num": 32,
-          "text": "And again Saul said unto Samuel before the people, \"Honor me and atone for my sin before Jehovah, that He may forgive me,\" and because he feared the Word of Jehovah Who created him, but did not fear the king who was dead, Samuel refused to repent for his words."
-        },
-        {
-          "num": 33,
-          "text": "Because of this thing he pierced Agag the king of Amalek before he had swallowed what he had chewed."
-        },
-        {
-          "num": 34,
-          "text": "And a demon seized that Saul who demolished the Law of Jehovah, and because He is the King of Kings Who ruleth all, Jehovah struck upon the head a king who workedst iniquity, for it doth not shame him (to do so)."
-        },
-        {
-          "num": 35,
-          "text": "For He is Lord of all nations Who dismisseth the authority of all the nobles and Kings who fear him not, but there is none who ruleth Him."
-        },
-        {
-          "num": 36,
-          "text": "Likewise He spoke, saying, David's kindred shall be, as it were, famed and honored, but Saul's kindred shall be, as it were, debased; He destroyed the kingdom Saul and his children."
-        },
-        {
-          "num": 37,
-          "text": "ABecause it grieved Him, and because He destroyed the lawless ones who grievedst Him with their evil works, Jehovah avenged and destroyed Saul's kindred and his children, for he who doth not avenge the enemy of Jehovah, he is His enemy."
-        },
-        {
-          "num": 38,
-          "text": "When it is possible for him to avenge and destroy, and when he hath authority, a man who doth not avenge nor destroy the sinner, and doth not avenge and destroy the man who keepeth not the Law of Jehovah, as he is the enemy of Jehovah, so He destroyed Saul's kindred and his children. Previous chapter Next chapter"
-        }
+        {"num": 1, "text": "As He crowns true kings who do His accord, the kings write a straight thing because of Him."},
+        {"num": 2, "text": "As they have done JAH's accord, He shall shine in a light that isn't examined by Isaac, Abraham, Jacob, Solomon, David, and Hezekiah lodging in the Garden where all the beautiful kings whose lodging was light."},
+        {"num": 3, "text": "Heaven's hall is what totally shines, yet Earth's halls aren't like Heaven's hall. Its floor, with features of silver, gold, and jewel features, is clean."},
+        {"num": 4, "text": "And its totally shining features are unexamined by a person's reasoning. Heaven's hall shines like jewels."},
+        {"num": 5, "text": "Like JAH, who is a nature knower, knew, the Heaven's hall that He created is unexamined by a person's reasoning and shines in total light. Its floor, worked in silver, gold, jewels, white silk, and blue silk, is clean."},
+        {"num": 6, "text": "It is quite totally beautiful like this."},
+        {"num": 7, "text": "Righteous ones who are firm in religion and virtue are those who shall inherit it in JAH's charity and pardon."},
+        {"num": 8, "text": "And there is welfare water that flows from it, and it totally shines like the sun. There is a light tent within it, and it is encircled by graceful perfume."},
+        {"num": 9, "text": "A garden with beautiful and beloved fruit, with different features and tastes, is around the house. There is oil and a grape place there, and it is totally beautiful, and its fruit fragrance is sweet."},
+        {"num": 10, "text": "When a fleshly, bloody person enters it, his soul would separate from his flesh from the irie delights abundance that are in it, arising from its fragrance flavor."},
+        {"num": 11, "text": "Beautiful kings who did JAH's accord shall be irie there. Their honor and place are known in the Kingdom of Heaven that lives firm forever, where welfare is found."},
+        {"num": 12, "text": "He showed that their lordship on Earth was famed and honored, and that their lordship in Heaven was famed and honored. They shall be honored and lofty in Heaven, like those who honor them and bow to them in this world. If they work goodly work in this world, they shall be irie."},
+        {"num": 13, "text": "But kings who were evil in their rule and their kingdoms that JAH gave them, they don't judge true by what is due. They have ignored the destitute and poor ones' cries. They don't judge truth and save the refugee and the wronged child whose father and mother died on him."},
+        {"num": 14, "text": "They don't save the destitute and poor ones from the wealthy hand that robs them. They don't divide and give from their food and satisfy those who hunger. They don't divide and give from their drink and give drink to those who thirst. They didn't turn their ears to the poor one's cry."},
+        {"num": 15, "text": "And He shall take them to Gehenna, which is a dark ending. When the lofty day arrives upon them, when JAH shall come, and when His wrath is done upon them, like David spoke in his praises, \"Lord, don't chastise me in Your judgment, and don't admonish me in Your chastisement,\" their problems and their debasement shall abound like their fame's abundance measure."},
+        {"num": 16, "text": "When nobles and kings who rule this world in this world, there are persons who didn't keep Your law."},
+        {"num": 17, "text": "But JAH, who rules all, is there in Heaven. All persons' souls and all persons' welfare have been seized by His authority. He is the one who gives honor to persons who glorify Him, for He totally rules all, and He loves the persons who love Him."},
+        {"num": 18, "text": "As He is the Earth and Heaven Lord, He examines and knows what kidneys transport and what a reasoning thought. And for a person who begs to Him with a pure reasoning, He shall give him his plea reward."},
+        {"num": 19, "text": "He shall destroy powerful ones' arrogance, who work evil work upon the child whose mother and father died on him, and upon old daughters."},
+        {"num": 20, "text": "It isn't by your power that you seized this kingdom. It isn't by your ability that you sat on this throne. He loved to test you thus, that it be possible for you to rule like Saul, who ruled his kindreds in that season, and He seated you on a kingdom throne. Yet it isn't by your power that you seized this kingdom. It is when He tested you like Saul, who ignored the prophet Samuel's word and JAH's word, and didn't serve His army nor Amalek's king. Yet it isn't by your ability that you seized this kingdom."},
+        {"num": 21, "text": "And JAH told the prophet Samuel, \"Go, and as they have saddened Me by demolishing the law and worshiping the idols and bowing to the idol and by their mosques and by all their hated works without benefit, tell Saul, 'Go to Amalek's country and destroy their hosts and all the kings, from persons up to livestock.'\""},
+        {"num": 22, "text": "Because they saddened JAH, He sent Saul that he might destroy them."},
+        {"num": 23, "text": "But he saved the king from death, and he saved many livestock, beauties, daughters, and handsome youths from death. As he scorned My thing and as he didn't hear My command, JAH told the prophet Samuel, \"Go and divide his kingdom.\""},
+        {"num": 24, "text": "Because he stead, anoint Jesse's child David that he might reign over Israel."},
+        {"num": 25, "text": "But upon him adjourn, a demon who will strangle and cast him."},
+        {"num": 26, "text": "As he refused if I-man gave him a kingdom that he might do My accord, upon the time he refused Me to do My accord, I-man dismissed him from his kingdom that is due to him. But you, go and tell him, saying, \"Will you thus ignore JAH who crowned you over His kindreds Israel, who seated you on His lordship throne?\""},
+        {"num": 27, "text": "But you, tell him, \"You didn't know JAH who gave around this much honor and famousness,\" He told him."},
+        {"num": 28, "text": "And the prophet Samuel went to King Saul and entered, sitting at a dinner table, and when Amalek's king Agag had sat on his left."},
+        {"num": 29, "text": "\"Why did you totally ignore JAH who commanded you that you might destroy the livestock and persons?\" He told him."},
+        {"num": 30, "text": "And at that time, the king feared and arose from his throne and told Samuel, \"Return with him, seized his clothes.\" But Samuel refused to return. Samuel's clothes were torn."},
+        {"num": 31, "text": "And Samuel told Saul, \"JAH divided your kingdom.\""},
+        {"num": 32, "text": "And again Saul told Samuel before the people, \"Honor me and atone my sin before JAH, that He might forgive me.\" And as he feared JAH's word who irated him, but as he didn't fear the king who died, Samuel refused to return in his word."},
+        {"num": 33, "text": "Because of this thing, he pierced Amalek's king Agag before he swallowed what he chewed."},
+        {"num": 34, "text": "Because he demolished JAH's law, and because He was the King of Kings who rules all, JAH struck upon his head a king who worked sin, for it didn't shame him."},
+        {"num": 35, "text": "For He is all the iration Lord who dismisses all the nobles and kings' authority who don't fear Him. But there are none who rule Him."},
+        {"num": 36, "text": "Like He spoke, saying, \"David's kindred shall go while it was famed and honored, but Saul's kindred shall go while it was debased.\" He destroyed the kingdom from his child and from Saul."},
+        {"num": 37, "text": "Because it saddened Him, and because He destroyed the criminals who saddened Him by their evil work, JAH revenged and destroyed Saul's kindred children, for a person who doesn't revenge JAH's enemy, he is JAH's enemy."},
+        {"num": 38, "text": "When it is possible for him to revenge and destroy, and when he has authority, a person who doesn't revenge and destroy the sinner and doesn't revenge and destroy a person who doesn't keep JAH's law, as he is JAH's enemy, He destroyed Saul's kindred children."}
       ]
     },
     {
       "num": 7,
       "verses": [
-        {
-          "num": 1,
-          "text": "An whether thou be a king or a ruler—what important thing are thou?"
-        },
-        {
-          "num": 2,
-          "text": "Aren't it JAH Who Irated thee bringin from not livin toward livin—that thou might do Him Accord an might live firmed up by Him Command an might fear Him Judgemant? Like unto thou vex pon thy slaves an governed over them—all likewise there are also JAH Who vex pon thee an govern over thee."
-        },
-        {
-          "num": 3,
-          "text": "Like unto thou beat without niceness persons who worked sin—all likewise there are also JAH Who will strike thee an lower thee toward Gehannem where are no exits up til Iternity."
-        },
-        {
-          "num": 4,
-          "text": "Like unto thou whip him who weren't ruled fe thee an didn't bring a tribute fe thee—fe what are it that thou don't introduce a tribute fe JAH?"
-        },
-        {
-          "num": 5,
-          "text": "As Him are Who Irated thee in order that thou love that them might fear thee—an Who crowned thee pon all the Iration that thou might keep Him kindreds fe true—fe what are it that thou don't fear thy Irator JAH?"
-        },
-        {
-          "num": 6,
-          "text": "Judge by what are due an fe true like unto JAH Ipointed thee—yet don't sight up a face an favour fe small nor great ~ whom will thou fear without Him? keep Him Worship an the Nine Commands."
-        },
-        {
-          "num": 7,
-          "text": "Like unto Mussie commanded 'Isra'iel childran sayin—'Iman presented Water an fiyah fe thee-I ~ add thy hand toward what thou loved'—don't go neither rightward nor leftward."
-        },
-        {
-          "num": 8,
-          "text": "Hear Him Word that I-man tell thee—that thou might hear Him Word an might do Him Command—lest thou say—'She are beyond the sea or beyond the deep or beyond the river ~ who will bring fe mi that mi might sight she up an might hear Him Word an might do Him Command?'"
-        },
-        {
-          "num": 9,
-          "text": "Lest thou say—'Who will proceed toward Heaven again an lower that JAH Word fe mi that mi might hear an do she?'—JAH Word are what approached—check—fe thou fe teach she with thy mouth an give alms by she with thy hand."
-        },
-        {
-          "num": 10,
-          "text": "An thou didn't hear thy Irator JAH unless thou heard Him Book—an thou didn't love Him nor keep Him Command unless thou kept Him LAW."
-        },
-        {
-          "num": 11,
-          "text": "An thou have that thou might enter toward Gehannem foriva—an unless thou loved Him Command—an unless thou did JAH Accord—Who honoured an famed thee separatin from all thy kindreds that thou might keep them fe true—thou have that thou might enter toward Gehannem foriva."
-        },
-        {
-          "num": 12,
-          "text": "Him made thee above all—an Him crowned thee pon all Him kindreds that thou might rule Him kindreds fe true by what are due while thou thought of thy Irator Name Who Irated thee an gave thee a kingdom."
-        },
-        {
-          "num": 13,
-          "text": "There are them whom thou whip from persons who wronged thee—an there are him whom thou pardon while thou thought of JAH Work—an there are him fe whom thou judge by what are due straightenin up thy reasonin."
-        },
-        {
-          "num": 14,
-          "text": "An don't favour havin sight up a face pon the time them argued before thee ~ as Earth physique are thy money—don't accept a bribe that thou might pardon the sinner person an wrong the clean person."
-        },
-        {
-          "num": 15,
-          "text": "If thou did Him Accord—JAH shall multiply thy era ina this world fe thee—but if thou sadden Him—Him will diminish thy era."
-        },
-        {
-          "num": 16,
-          "text": "Think that thou will rise after thou dead—an that thou will be examined standin before Him pon all the Work thou worked whether it be goodly or evil."
-        },
-        {
-          "num": 17,
-          "text": "If thou work goodly Work—thou will live ina Garden ina the Kingdom of Heaven—ina houses where kind kings live an where Light filled. Fe JAH don't shame thy lordship authority—but if thou work evil Work—thou will live ina See'ol Gehannem where evil kings live."
-        },
-        {
-          "num": 18,
-          "text": "But pon the time thou sight up thy bein feared famousness—thy warriors award—thy hangin shield an spear—an pon the time thou sight up thy horses an thy troops beneath thy authority an them who beat drum an persons who play pon a harp before thee..."
-        },
-        {
-          "num": 19,
-          "text": "But pon the time thou sight up all this—thou mek thy reasonin lofty—an thou firm up thy collar of reasonin—an thou don't think of JAH Who gave thee all this honour—however pon the time Him told thee—Quit all this—thou aren't who quit it."
-        },
-        {
-          "num": 20,
-          "text": "Fe thou have totally neglected the Ipointmant Him Ipointed thee—an Him shall give thy lordship fe another."
-        },
-        {
-          "num": 21,
-          "text": "As death shall suddenly come pon thee—an as Judgemant shall be done ina Resurrection time—an as all man Work shall be examined—Him shall totally investigate an judge pon thee."
-        },
-        {
-          "num": 22,
-          "text": "There are none who will honour this world kings—fe becau Him were Truth Judge—ina Judgemant time poor an wealthy will stand together. This world nobles crowns wherein them boast shall fall."
-        },
-        {
-          "num": 23,
-          "text": "Judgemant are prepared—an a soul shall quake ~ at that time sinners an righteous ones Work shall be examined."
-        },
-        {
-          "num": 24,
-          "text": "An there are none who shall be hidden. Pon the time a dawta arrived fe birthin—an pon the time the fetus ina she belly arrived fe bein birthed—like unto she cyaan prevent she womb—Earth also cyaan prevent she lodgers that are pon she ~ she will return."
-        },
-        {
-          "num": 25,
-          "text": "An like unto clouds cyaan prevent rain lest them tek an rain toward the place JAH commanded them—fe JAH Word have Irated all bringin from not livin toward livin—an fe JAH Word again have introduced all toward a grave; an all likewise—after Resurrection time arrived—it aren't possible fe be that dead persons won't rise."
-        },
-        {
-          "num": 26,
-          "text": "Like unto Mussie spoke sayin—'It are by Words that proceed from JAH Tongue—yet it aren't only by grain that a person are saved'; an JAH Word again shall arouse all persons from graves."
-        },
-        {
-          "num": 27,
-          "text": "Check—it were known that dead persons shall arise by JAH Word."
-        },
-        {
-          "num": 28,
-          "text": "An again JAH said thus ina Repeatin Law becau persons who were nobles an kings who do Him Accord—As the day have arrived when them are counted fe downstruction—I-man shall revenge an downstroy them pon the day when Judgemant are judged an at the time when them feet stumble Him said."
-        },
-        {
-          "num": 29,
-          "text": "An again JAH told persons who know Him Judgemant—Know know that I-man were your Irator JAH—an that I-man kill an I-man save."
-        },
-        {
-          "num": 30,
-          "text": "I-man chastise ina the tribulation an I-man pardon ~ Iman lower toward See'ol an again I-man send forth toward the Garden—an there are none who shall escape from I Itority Him told them."
-        },
-        {
-          "num": 31,
-          "text": "JAH said thus becau nobles an kings who didn't keep Him LAW—As Earthly kingdoms are a passin—an as them pass from mornin up til evenin—keep I Order an I LAW that unu might enter toward the Kingdom of Heaven that live firmed up foriva Him said."
-        },
-        {
-          "num": 32,
-          "text": "Fe JAH callin Righteous ones are fe glory—an sinners fe tribulation ~ Him will mek the sinner wretched but will honour righteous ones."
-        },
-        {
-          "num": 33,
-          "text": "Him will dismiss the person who didn't do Him Accord—but Him will Ipoint the person who did Him Accord."
-        }
+        {"num": 1, "text": "And whether you are a king or a ruler, what important thing are you?"},
+        {"num": 2, "text": "Isn't it JAH who created you, bringing you from not living to living, so that you might do His will and might live strengthened by His command and might fear His judgment? Just as you trouble your slaves and govern over them, so also there is JAH who troubles you and governs over you."},
+        {"num": 3, "text": "Just as you beat without mercy those who committed sin, so also there is JAH who will strike you and lower you toward Gehenna where there are no exits until eternity."},
+        {"num": 4, "text": "Just as you whip him who was not ruled by you and didn't bring a tribute to you, why is it that you don't offer a tribute to JAH?"},
+        {"num": 5, "text": "Since He is the One who created you so that you love those who might fear you, and who crowned you over all creation so that you might keep His people faithful, why is it that you don't fear your Creator JAH?"},
+        {"num": 6, "text": "Judge by what is just and true, just as JAH appointed you; yet do not show partiality or favor to small or great. Whom will you fear besides Him? Keep His worship and the Nine Commandments."},
+        {"num": 7, "text": "Just as Moses commanded the children of Israel, saying, \"I have presented water and fire to you; extend your hand toward what you love,\" do not go either right or left."},
+        {"num": 8, "text": "Hear His word that I tell you, so that you might hear His word and might do His command, lest you say, \"It is beyond the sea or beyond the deep or beyond the river; who will bring it to me so that I might see it and might hear His word and might do His command?\""},
+        {"num": 9, "text": "Lest you say, \"Who will go up to Heaven again and bring down that word of JAH to me so that I might hear and do it?\" The word of JAH is what has approached; behold, for you to teach it with your mouth and give alms by it with your hand."},
+        {"num": 10, "text": "And you did not hear your Creator JAH unless you heard His Book, and you did not love Him nor keep His command unless you kept His Law. And you will enter Gehenna forever if you do not love His command and unless you do the will of JAH, who honored and made you famous, separating you from all your people so that you might keep them faithful; you will enter Gehenna forever."},
+        {"num": 11, "text": "He made you above all, and He crowned you over all His people so that you might rule His people faithfully by what is just, while you remembered the name of your Creator who created you and gave you a kingdom."},
+        {"num": 12, "text": "There are those whom you whip for wronging you, and there are those whom you pardon while you consider the work of JAH, and there are those for whom you judge by what is just, straightening your reasoning."},
+        {"num": 13, "text": "And do not show favor or partiality when they argue before you, for earthly possessions are your wealth. Do not accept a bribe so that you might pardon the sinner and wrong the innocent person."},
+        {"num": 14, "text": "If you do His will, JAH will multiply your days in this world for you; but if you sadden Him, He will diminish your days."},
+        {"num": 15, "text": "Consider that you will rise after you die, and that you will be examined standing before Him for all the work you have done, whether it be good or evil."},
+        {"num": 16, "text": "If you do good work, you will live in a Garden in the Kingdom of Heaven, in houses where kind kings live and where Light fills. For JAH does not shame your lordship or authority; but if you do evil work, you will live in See'ol Gehenna where evil kings live."},
+        {"num": 17, "text": "But when you see your feared fame, your warriors' reward, your hanging shield and spear, and when you see your horses and your troops under your authority and those who beat drums and people who play the harp before you..."},
+        {"num": 18, "text": "But when you see all this, you make your reasoning lofty, and you stiffen your collar of reasoning, and you do not think of JAH who gave you all this honor; however, when He told you, \"Quit all this,\" you are not one who quits it."},
+        {"num": 19, "text": "For you have totally neglected the appointment He appointed you, and He shall give your lordship to another."},
+        {"num": 20, "text": "For death shall suddenly come upon you, and judgment shall be done in the resurrection time, and as all human work shall be examined, He shall totally investigate and judge you."},
+        {"num": 21, "text": "There are none who will honor this world's kings, for because He is the True Judge, in judgment time poor and wealthy will stand together. This world's nobles' crowns in which they boast shall fall."},
+        {"num": 22, "text": "Judgment is prepared, and a soul shall quake; at that time sinners' and righteous ones' work shall be examined."},
+        {"num": 23, "text": "And there are none who shall be hidden. When a daughter arrived for birthing, and when the fetus in her belly arrived for being birthed, just as she cannot prevent her womb, Earth also cannot prevent her lodgers that are upon her; she will return."},
+        {"num": 24, "text": "And just as clouds cannot prevent rain unless they take and rain toward the place JAH commanded them, for JAH's word has created all, bringing them from not living to living, and for JAH's word again has brought all toward a grave; and all likewise - after resurrection time arrived - it is not possible that dead persons will not rise."},
+        {"num": 25, "text": "Just as Moses spoke, saying, \"It is by words that proceed from JAH's tongue; yet it is not only by grain that a person is saved\"; and JAH's word again shall arouse all persons from graves."},
+        {"num": 26, "text": "Behold, it was known that dead persons shall arise by JAH's word."},
+        {"num": 27, "text": "And again JAH said thus in Deuteronomy because of nobles and kings who do His will, \"As the day has arrived when they are counted for destruction, I shall avenge and destroy them on the day when judgment is judged and at the time when their feet stumble,\" He said."},
+        {"num": 28, "text": "And again JAH told those who know His judgment, \"Know that I was your Creator JAH, and that I kill and I save.\""},
+        {"num": 29, "text": "\"I chastise in tribulation and I pardon; I lower toward See'ol and again I send forth toward the Garden, and there are none who shall escape from My authority,\" He told them."},
+        {"num": 30, "text": "JAH said thus because of nobles and kings who did not keep His Law, \"As earthly kingdoms are passing, and as they pass from morning until evening, keep My order and My Law so that you might enter toward the Kingdom of Heaven that lives strengthened forever,\" He said."},
+        {"num": 31, "text": "For JAH's calling of righteous ones is for glory, and of sinners for tribulation; He will make the sinner wretched but will honor righteous ones."},
+        {"num": 32, "text": "He will dismiss the person who did not do His will, but He will appoint the person who did His will."}
       ]
     },
     {
