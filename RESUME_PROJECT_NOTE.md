@@ -797,3 +797,57 @@ the Oblation/Kiddas, hours of prayer, the calendar of non-working days, and the 
 on Church order and grades of ministry. Continue transcribing from the same source (already in
 hand, no further fetching needed) in the same chapter-by-chapter method. Do not mark Tizaz GREEN
 or bump SEED_VERSION until all 72 Statutes are in.
+
+## SESSION HANDOFF 2026-07-20 (end of session, context window closing) -- read this first if picking up fresh
+
+**Session summary, in order:**
+1. Meqabyan copyright correction (see earlier entry above) -- DONE, committed, on main.
+2. Guba'e Kana (Council of Nicaea) investigated per Josh's decision for the expanded 84-canon
+   Arabic/Coptic tradition. **Confirmed unsourceable -- no free English translation exists
+   anywhere** (only critical edition is da Leonessa 1942, Italian, in-copyright). Plain-20
+   tradition (NPNF2-14) IS freely available if Josh wants to revisit that choice. **Not rebuilt,
+   not actionable without a source that doesn't currently exist.**
+3. **Abtilis: REBUILT and CLOSED this session.** Full rebuild from George H. Schodde's 1885 JBL
+   translation (Apostolic Canons, 57 canons, public domain). Prior content was fabricated prose
+   unrelated to the real text. Committed and pushed. One open, flagged-not-fixed identity question:
+   a secondary source disputes whether Schodde's text is really Abtilis vs. Gessew/Admonitions --
+   see the "Abtilis rebuild" ledger entry for the reasoning that favored Abtilis.
+4. **Tizaz: REBUILD IN PROGRESS, 40 of 72 Statutes done and landed on main across 3 patches.**
+   Source: George Horner, *The Statutes of the Apostles* (1904), "Translation of the Ethiopic
+   Text," pp. 127-232, public domain. Prior content was Didache "Two Ways" material, confirmed
+   unrelated to the real text (which is ordination/liturgical church order). Statutes 1-40 cover:
+   the opening moral-instruction section, ordination canons for bishop/reader/deacon/widow, the
+   full bishop-ordination rite with its consecration and Oblation/Kiddas prayers (Statute 22, the
+   longest section so far), presbyter/deacon ordination, confessors, readers/virgins/subdeacons,
+   catechumen occupation rules, and -- the biggest piece -- the complete baptismal liturgy
+   (Statute 35: renunciation, creed, trine immersion, chrismation, milk-and-honey communion) and
+   the water/oil/chrism consecration prayers (Statute 40). Wording is unaltered from Horner's
+   translation throughout; verse divisions follow natural sentence/paragraph breaks in the source.
+   Full detail in AUDIT_GOVERNANCE_LEDGER.md's three "Tizaz rebuild ... Part N" entries.
+
+**CRITICAL DEPENDENCY FOR CONTINUING TIZAZ -- read before attempting Statutes 41-72:**
+The Horner 1904 source text was obtained this session because **Josh pasted the full text directly
+into the chat** -- this was the resolution to a hard fetch-tool wall on archive.org that blocked
+every attempt to retrieve this specific source automatically (documented earlier in this file and
+in the ledger; same failure class as Wesley's 2 Baruch and the Wikisource Meqabyan pages). That
+pasted text is NOT saved anywhere in the repo or on disk that a fresh session can access -- it only
+existed in this chat's context. **A fresh Claude session will NOT be able to fetch this source
+itself and should not waste time retrying archive.org.** Ask Josh to re-paste the remaining portion
+of the text (Statutes 41-72, i.e. from "Statute 41" onward in Horner's translation, roughly pages
+178-232 of the original), or ask if he saved a local copy of the file he can upload directly.
+
+**Next session should:** continue the Tizaz rebuild from Statute 41 onward using the same method --
+transcribe faithfully into `data/bible/ET/tizazET.json` chapters, one manageable chunk (~10
+statutes) per patch, always surfacing `git am` + `git push origin main` commands, always updating
+`AUDIT_GOVERNANCE_LEDGER.md` with a detail entry per chunk. Do NOT mark Tizaz GREEN or bump
+SEED_VERSION until all 72 Statutes are in and the book has had a full re-sweep. Remaining content in
+Statutes 41-72 includes: fruit blessing, fasting rules, hours of prayer, sealing of the forehead,
+a substantial section on the fixed limits between grades of ministry (bishop/presbyter/deacon
+cannot do each other's functions), first-fruits and tithes, and closing chapters on apostolic
+succession and the Order of the Priesthood.
+
+**Also still open, unaffected by this session:** Sirate Tsion and Admonitions/Gitsew remain
+unsourced (no free English translation identified for either); the non-red Clement/Qalementos
+files, Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward from 2026-07-19 remain
+open; human verification read-throughs of the 1-3 Meqabyan and Malke'a Virgin Mary rebuilds are
+still pending before those move from amber to GREEN.
