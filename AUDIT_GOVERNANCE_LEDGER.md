@@ -3869,3 +3869,69 @@ resolution.
 **Not yet done:** the broader question of how to resolve the remaining ~19 Patois-only chapters in 1
 Meqabyan and all 13 in 2 Meqabyan is still open -- Josh has asked for research into a different
 formal-register source next.
+
+## Session 2026-07-20 -- 1 & 2 Meqabyan copyright correction, 2 Meqabyan structural corruption fix
+
+Prompted by Josh flagging that copyrighted material had been added to the corpus. Investigation found
+the problem was broader than one bad merge, and touched work from earlier sessions as well as this one.
+
+**1 Meqabyan:**
+- Chapters 3,4,5,6,8,9,10,11,13 were merged THIS session (before the correction) from
+  apocryphalibrary.weebly.com, formal register. Chapters 1,2,7,12,19,22,31 were already present from an
+  earlier session, same site, same register. All of it turned out to be D.P. Curtin's 2018 published
+  translation -- actively sold, not public domain -- mislabeled "Public Domain" in the file's own metadata.
+- Chapters 1-7 replaced with Wikisource's WikiProject Wiki Bible translation of the same 7 chapters,
+  confirmed public domain by that project's own charter, and matching the book's formal register (no
+  register mismatch introduced). Verse counts differ slightly from the Curtin text since it's a different
+  translation (e.g. ch.7: 33 verses -> 32) -- expected, not an error.
+- Wikisource's page for 1 Meqabyan does not extend past chapter 7.
+- Chapters 15-18,20,21,23-30,32-36, labeled in the file as "Wikisource Jamaican Patois translation," were
+  investigated as a possible source for the remaining chapters and turned out to be Feqade Selassie's
+  self-published 2005 Iyaric translation (confirmed by exact text match against a full copy of that
+  translation Josh provided from pseudepigrapha.com). Selassie's other published Meqabyan editions (Lulu,
+  2008-2011) are explicitly listed "All Rights Reserved -- Standard Copyright License." No open license was
+  ever confirmed for the free 2005 online posting either -- "posted online for free reading" is not the
+  same as public domain or CC-licensed. The file's "Wikisource" attribution for this text could not be
+  verified against an actual Wikisource page and should be treated as an unverified legacy claim.
+- Chapter 14 specifically: verses 1-4 were Curtin (formal register), silently paired ahead of verses 5-23
+  in Patois -- a mixed-source chapter that hadn't been flagged as a copyright issue in either half.
+- Per Josh's standing instruction (recorded this session), Patois/Iyaric register text is not used in this
+  corpus regardless of licensing status -- so even a confirmed-free Selassie text would not have been
+  usable for these chapters.
+- **Resolution:** chapters 8-36 (29 chapters) emptied to `"verses": []` rather than filled with unusable
+  or unwanted content. Chapters 1-7 remain clean and populated. Metadata rewritten to state plainly that
+  ch.8-36 are pending a fresh formal-register translation, and to warn future sessions not to refill them
+  with Curtin or Selassie/Patois text.
+
+**2 Meqabyan:**
+- All 21 chapters except 6-7 were sourced from apocryphalibrary.weebly.com's UBS/Haileyesus Woldemariam
+  translation, formal register, labeled "Public Domain." That translation is displayed on UBS's own
+  platform (translation.bible / TIPs) under a permission grant to UBS specifically -- not a public-domain
+  release. Chapters 6-7 were already correctly sourced from Wikisource in an earlier session (apocryphalibrary's
+  own pages for those two chapters are genuinely incomplete, not an extraction failure).
+- While investigating the copyright question, found an undiagnosed structural bug predating this session:
+  chapter 21's ending verses (26-28, "As Him totally won't separate Him friends...") had been duplicated
+  onto the tail of chapters 1, 12, 16, 20, and likely others -- confirmed by spot-checking several
+  mismatched-verse-count chapters and finding the same tail content in each. Chapter 1 additionally carried
+  a large block of chapter 21's mid-chapter content (verses ~5, 8-28) misplaced under its own chapter
+  number, interleaved with chapter 1's genuine opening verses. This explains verse-count anomalies that had
+  been visible (e.g. old ch.1: 28 verses vs. the real book's 13) but not previously traced to a cause.
+- **Resolution:** full rebuild, all 21 chapters, from Wikisource's WikiProject Wiki Bible / community
+  translation of 2 Meqabyan (CC BY-SA 4.0, confirmed), verified chapter-by-chapter against the source text
+  Josh provided. Corruption resolved as a byproduct of the source replacement. Two verse-number gaps
+  (ch.16 v.9, ch.21 v.4) are native to the Wikisource source page itself and left honestly absent, not
+  introduced by this rebuild and not guessed at. No Patois/Iyaric text involved anywhere in this book --
+  Wikisource's 2 Meqabyan translation is standard English throughout, so the Patois exclusion instruction
+  didn't come into play here.
+
+**Governance note:** this session's findings mean two prior "REBUILT, superseding the MAJOR FINDING" dashboard
+entries (2026-07-18/19) were themselves incomplete -- the content-fabrication problem they fixed was real and
+stayed fixed, but a copyright/licensing problem in the replacement sourcing wasn't caught at the time. Worth
+remembering for any future source-vetting: matching the real text's plot and being freely readable online are
+both necessary but not sufficient for a source to be safely reusable -- copyright/license status needs its own
+explicit check, separate from content-accuracy verification, before a chapter is marked clean.
+
+**Not yet done:** a fresh formal-register translation for 1 Meqabyan chapters 8-36. No source has been
+identified. Options discussed with Josh: leave empty (current state), license Curtin's translation properly,
+commission/write a new translation, or keep searching for another free formal-register source (Wikisource,
+apocryphalibrary/Curtin, UBS/Woldemariam, and Selassie/Iyaric have all been checked and ruled out).

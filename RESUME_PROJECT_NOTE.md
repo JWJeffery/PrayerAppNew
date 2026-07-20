@@ -695,3 +695,56 @@ anywhere).
 Mary rebuilds (or at least spot-checks) before any of them can move from amber to GREEN; then continue
 down the still-open ET list above, or return to the SY corpus rebuild, or take the Sinodos/Clement/
 Mazaheta/Josippon sourcing questions to Josh for a decision.
+
+## Session 2026-07-20 -- Meqabyan copyright correction (1 & 2), 2 Meqabyan structural corruption fix
+
+**Trigger:** Josh reported copyrighted material had been added to the corpus during the previous session.
+Investigation confirmed and expanded on this.
+
+**1 Meqabyan:** the "formal register" text used across chapters 1,2,3,4,5,6,7,8,9,10,11,12,13,19,22,31
+(some from an earlier session, some merged this session before the correction) turned out to be D.P.
+Curtin's 2018 copyrighted translation, mislabeled Public Domain. Chapters 1-7 replaced with Wikisource's
+WikiProject Wiki Bible translation (confirmed public domain, matching formal register) -- CLEAN. Wikisource's
+page doesn't extend past chapter 7. Separately, the file's "Patois" chapters (15-18,20,21,23-30,32-36,
+labeled "Wikisource Jamaican Patois translation") turned out to be Feqade Selassie's self-published,
+still-copyright-asserting Iyaric translation -- confirmed by exact text match against a copy Josh provided.
+Chapter 14 was a mixed case: verses 1-4 Curtin, verses 5-23 Selassie/Patois. Josh gave a standing instruction
+this session that Patois/Iyaric register is excluded from this corpus regardless of licensing status, so
+this text wasn't usable even setting the copyright question aside. **Resolution: chapters 8-36 (29 of 36
+chapters) emptied to `"verses": []`.** Only chapters 1-7 currently have text. A fresh formal-register
+translation is needed for the rest -- no free, non-Patois source currently exists. Sources checked and
+ruled out: Wikisource (covers only ch.1-7), apocryphalibrary/Curtin (copyrighted), UBS/Woldemariam
+(licensed-use, not free), Selassie/Iyaric (copyrighted and excluded by register preference anyway).
+
+**2 Meqabyan:** all 21 chapters except 6-7 were the UBS/Haileyesus Woldemariam translation via
+apocryphalibrary.weebly.com, mislabeled Public Domain -- that translation is displayed on UBS's own
+platform under a permission grant to UBS, not a public release. While investigating this, found an
+undiagnosed structural bug predating this session: chapter 21's ending verses were duplicated onto the
+tail of several other chapters (1, 12, 16, 20, confirmed; likely more), and chapter 1 also carried a large
+misplaced block of chapter 21's own content under its own chapter number. **Resolution: full rebuild, all
+21 chapters, from Wikisource's WikiProject Wiki Bible / community translation (CC BY-SA 4.0), verified
+chapter-by-chapter.** Corruption resolved as a byproduct. Two verse-number gaps (ch.16 v.9, ch.21 v.4) are
+native to the Wikisource source itself, left honestly absent. No Patois involved in this book at all --
+Wikisource's 2 Meqabyan text is standard English.
+
+**Process note:** three patches this session (1 Meqabyan ch.1-7 fix, 2 Meqabyan full rebuild, 1 Meqabyan
+ch.8-36 strip), each `git am` + `git push origin main`'d successfully by Josh, confirmed on origin/main.
+`audit-ledger.html` updated (RED_NOTES for both books rewritten, SEED_VERSION bumped to
+`v125-2026-07-20-meqabyan-copyright-correction`) and `AUDIT_GOVERNANCE_LEDGER.md` updated with full detail
+in the same session but as separate follow-up work after Josh asked whether the resume note and dashboard
+had been written -- they had not been, at first; this entry and the dashboard/ledger updates were written
+afterward to close that gap.
+
+**Governance lesson, worth remembering:** the 2026-07-18/19 Meqabyan rebuilds were marked "REBUILT,
+superseding the MAJOR FINDING" on the dashboard -- the content-fabrication problem they fixed was real
+and stayed fixed, but the replacement sourcing's copyright/license status was never separately verified,
+and turned out to be wrong for both books. Matching the real text's content and being freely readable
+online are both necessary but not sufficient for a source to be safely reusable -- license status needs
+its own explicit, separate check before a chapter is marked clean, not an inference from "the content is
+right" or "it's posted online."
+
+**Next session, if resumed:** 1 Meqabyan chapters 8-36 need a decision from Josh on how to proceed (fresh
+translation, licensing Curtin properly, or continued search for another free formal-register source) before
+any further work on that book. Otherwise, the "Next session" list from the 2026-07-19 entry above (Malke'a
+Guba'e/Iyasus, Guba'ekana, Sinodos family, non-red Clement files, Mazaheta, Josippon, human verification
+read-throughs) remains open and unaffected by this session's work.
