@@ -4,7 +4,7 @@
     "id": "1MEQ",
     "version": "apocryphalibrary.weebly.com, formal register (chs 1,2,7,12,19,22,31,3,4,5,6,8,9,10,11,13); Wikisource Jamaican Patois translation (remaining chapters, formal register unavailable at apocryphalibrary for these)",
     "copyright": "Public Domain",
-    "rebuildNote": "Rebuilt 2026-07-18/19 after prior content was found to not match the real text (fabricated character names and plot -- see AUDIT_GOVERNANCE_LEDGER.md). Cross-checked against Wikisource's independent community translation for content/plot agreement (chapters 1-7 only, where Wikisource's own page is complete). Structurally clean: all 36 chapters present, no gaps, no duplicate verse numbers. Not yet individually verse-verified by a human reader against the source -- treat as amber pending that review, not GREEN. CORRECTED 2026-07-19: an independent secondary check found this file actually mixed two different English translations chapter-by-chapter -- a formal register (matching this note's claim) in a minority of chapters, and a Jamaican-Patois-register translation (matching Wikisource's Patois translation of the same book, not apocryphalibrary) in the majority. Josh chose to standardize on the formal register. Re-fetched directly from apocryphalibrary.weebly.com's own dual-translation page layout (each verse shown in both Patois and formal English) for chapters 3,4,5,6,8,9,10,11,13 -- confirmed formal text available and verse counts match exactly, now replaced. For the remaining Patois chapters (14-18,20,21,23-30,32-36), apocryphalibrary's own pages host ONLY the Patois translation -- no formal-register alternative exists on this source for those chapters. Chapter 14 additionally has an unresolved verse-boundary question: the site's page for '1 Meqabyan 14' contains 23 verse-numbered lines of content, not the 4 currently in this file -- unclear whether this file's chapter 14 is truncated or whether the site's chapter divisions don't align 1:1 with this file's. Both open questions held for Josh's decision, not resolved by guessing."
+    "rebuildNote": "Rebuilt 2026-07-18/19 after prior content was found to not match the real text (fabricated character names and plot -- see AUDIT_GOVERNANCE_LEDGER.md). Cross-checked against Wikisource's independent community translation for content/plot agreement (chapters 1-7 only, where Wikisource's own page is complete). Structurally clean: all 36 chapters present, no gaps, no duplicate verse numbers. Not yet individually verse-verified by a human reader against the source -- treat as amber pending that review, not GREEN. CORRECTED 2026-07-19: an independent secondary check found this file actually mixed two different English translations chapter-by-chapter -- a formal register (matching this note's claim) in a minority of chapters, and a Jamaican-Patois-register translation (matching Wikisource's Patois translation of the same book, not apocryphalibrary) in the majority. Josh chose to standardize on the formal register. Re-fetched directly from apocryphalibrary.weebly.com's own dual-translation page layout (each verse shown in both Patois and formal English) for chapters 3,4,5,6,8,9,10,11,13 -- confirmed formal text available and verse counts match exactly, now replaced. For the remaining Patois chapters (14-18,20,21,23-30,32-36), apocryphalibrary's own pages host ONLY the Patois translation -- no formal-register alternative exists on this source for those chapters. Chapter 14 additionally has an unresolved verse-boundary question: the site's page for '1 Meqabyan 14' contains 23 verse-numbered lines of content, not the 4 currently in this file -- unclear whether this file's chapter 14 is truncated or whether the site's chapter divisions don't align 1:1 with this file's. Both open questions held for Josh's decision, not resolved by guessing. Chapter 14 investigated 2026-07-19: resolved as a genuine content gap, not a boundary-drift issue -- the site's page for '1 Meqabyan 14' verses 1-4 match this file's prior verses 1-4 exactly (formal/Patois pairs of the same content), confirming correct chapter alignment; verses 5-23, which exist on the source page, were simply missing from this file. Filled in: verses 1-4 formal (3 confirmed paired, verse 4's formal text recovered from an inline-formatted marker my parser initially missed), verses 5-23 Patois (no formal alternative exists on this source, consistent with the rest of this chapter range). Chapter 14 now 23 verses, up from 4."
   },
   "chapters": [
     {
@@ -1569,19 +1569,95 @@
       "verses": [
         {
           "num": 1,
-          "text": "An pon the time JAH downstroyed Qayen childran - kindreds who preceded - ina downstruction Water becau them sin - Him baptised Earth ina Water of Downstruction - an Him cleansed she from all Qayel childran sin."
+          "text": "And on the day Jehovah destroyed the children of Cain, the kindred of old, in the destruction of Water because they sinned, He baptized the Earth in the Water of Destruction, and He cleansed her from the sin of all the children of Cain."
         },
         {
           "num": 2,
-          "text": "As Him have said - I-man were sad becau I-man Irated man - Him downstroyed all wrongdoers ~ Him didn't preserve apart from eight persons ~ Him downstroyed all ~ after this Him multiplied them an them filled Earth ~ them shared them faada 'Adam inheritance."
+          "text": "As he hath said, \"I am sorrowful because I created man,\" He destroyed all sinners, He did not preserve (any) besides eight persons, He destroyed all, after this He multiplied them and filled the Earth, they shared their father Adam's inheritance"
         },
         {
           "num": 3,
-          "text": "But Noh swore with JAH a oath ~ them swore a oath with JAH lest JAH again downstroy Earth ina Downstruction Water - an lest Noh childran eat what deceased nor what lodged dead - lest them worship different idols apart from JAH Who Irated them - an that Him might be a Love Faada fe them - an lest Him downstroy them at one time ina them vain sin - an lest Him prevent them the first an the spring rain - an that Him might give fe livestock an persons them food at each time - that Him might give them the grass an the grain fruit an plants - an that them might work goodly Work ina all that JAH love."
+          "text": "But Noah swore with Jehovah an oath, they swore an oath with Jehovah lest he should again destroy the Earth in the Water of Destruction, and lest Noah's children eat what was found dead, lest they worship other idols apart from Jehovah Who created them, and that He might be a loving Father to them, and lest He destroy them (all) at once in their vain iniquities, and lest He keep from them the first and the spring rain, and that He might give to cattle and men their food at every season, and that He might give them grass and the fruit of the grain and plants, and that they might work good Works in all that Jehovah (doth) desire."
         },
         {
           "num": 4,
-          "text": "An after Him gave them this Order - 'Isra'iel childran saddened JAH by them sin ~ them didn't live firmed up ina Him LAW like unto them faadas Yis'haq an 'Abriham an Ya`iqob who didn't demolish them Irator JAH LAW."
+          "text": "And after He gave them this Commandment, the children of Israel saddened Jehovah with their sins, they did not abide steadfastly in His Law like unto their fathers Isaac and Abraham and Jacob, who did not break their Creator Jehovah's Law."
+        },
+        {
+          "num": 5,
+          "text": "An Iginnin from the small up til the great - those 'Isra'iel childran who didn't keep JAH LAW are crooked ina them Work."
+        },
+        {
+          "num": 6,
+          "text": "An whether them be them priests or them chiefs or them scribes - everyone demolish JAH LAW."
+        },
+        {
+          "num": 7,
+          "text": "Them don't live firmed up ina JAH Order an Him LAW that Mussie commanded them ina Repeatin Law sayin - 'Love thy Irator JAH ina thy complete body an thy complete reasonin.'"
+        },
+        {
+          "num": 8,
+          "text": "Them don't firm up ina JAH Order an Him LAW that Mussie commanded them ina book where LAW were written sayin - 'Love thy companion like unto thy body - an don't worship him idols that were different - an don't go toward a youtmon wife ~ don't kill a soul ~ don't steal."
+        },
+        {
+          "num": 9,
+          "text": "An don't witness ina lie - an be it him donkey or be it him ox - don't love thy companion money nor all that thy bredda bought.'"
+        },
+        {
+          "num": 10,
+          "text": "However after him commanded them all this - 'Isra'iel childran who were evil return toward treachery an sin - robbery an iniquity - toward a youtmon wife an toward lies an stealin an worshippin idols."
+        },
+        {
+          "num": 11,
+          "text": "'Isra'iel childran saddened JAH pon Korieb by workin a cow that graze toward grass ~ them bowed sayin - 'Check - these are wi irators who sent wi forth from Gibts.'"
+        },
+        {
+          "num": 12,
+          "text": "An them were Irie ina them hand Work ~ if them ate an drank an satta - them arose fe sing."
+        },
+        {
+          "num": 13,
+          "text": "As JAH have told him sayin - Thy kindreds whom thou sent forth from Gibts country where rulership are - them have proceeded from LAW an wronged - an them worked a cow image an bowed fe the idol - becaudis thing Mussie vexed an alit from Seena mountain."
+        },
+        {
+          "num": 14,
+          "text": "While Mussie vexed pon him kindreds - him alit with him canfidante 'Iyasu - an pon the time 'Iyasu heard - him said - 'Check - I-man hear warriors voice ina 'Isra'iel camp.'"
+        },
+        {
+          "num": 15,
+          "text": "An Mussie told 'Iyasu - 'It are when 'Isra'iel play havin drunk the unboiled wine - yet as fe a warrior voice - it aren't' - an him alit an broke them image an totally crushed it up til it were like unto dust ~ him mixed it within the Water that 'Isra'iel childran drink beside the mountain."
+        },
+        {
+          "num": 16,
+          "text": "An after this him commanded the priests that them might slay one another becau the sin them worked before JAH."
+        },
+        {
+          "num": 17,
+          "text": "Them knew that defyin JAH surpass killin them an killin them faadas - an them did like unto him commanded them."
+        },
+        {
+          "num": 18,
+          "text": "An Mussie told them - 'Becau unu saddened JAH Who fed unu an cherished unu an Who sent unu forth from a rulership house an Who bequeathed fe unu the inheritance that Him swore fe your faadas that Him might give fe them an fe them childran after them - becaudis thing unu made JAH Irie.'"
+        },
+        {
+          "num": 19,
+          "text": "Fe them go toward sin an a evil thing - an them didn't quit saddenin JAH there."
+        },
+        {
+          "num": 20,
+          "text": "Them aren't like unto them faadas Yis'haq an 'Abriham an Ya`iqob who made JAH Irie with them goodly Work that Him might give them what are pon Earth an what Him prepared fe persons who love Him ina Heaven Iginnin from them infancy up til them youthood an up til them age ~ them aren't like unto 'Abriham an Yis'haq an Ya`iqob who made Him Irie with them Work that Him might give them a Earth of inheritance where Irie Ites are found ina this world - an a garden that mek Irie - prepared fe kind persons ina hereafter world - what Him prepared fe 'Abriham an Yis'haq an Ya`iqob who made JAH Irie when them were ina Life an who love Him - Whom a eye didn't sight up nor a ear hear an Who aren't thought of ina reasonin."
+        },
+        {
+          "num": 21,
+          "text": "An them childran who denied JAH an were evil an who live firmed up ina them reasonin accord - them didn't hear JAH Command - Him Who fed them an cherished them an kept them Iginnin from them infancy."
+        },
+        {
+          "num": 22,
+          "text": "Them didn't think of JAH - Who sent them forth from Gibts land an saved them from brick Work an a firm rulership."
+        },
+        {
+          "num": 23,
+          "text": "But them totally saddened Him - an Him would arouse peoples ina them area pon them - an them would arise pon them ina enmity an also tax them like unto them loved."
         }
       ]
     },

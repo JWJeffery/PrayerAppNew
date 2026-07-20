@@ -3848,3 +3848,24 @@ doesn't apply -- options are the same three from before (find a different formal
 re-research, standardize on Patois instead, or document the necessary mix accurately) minus the option
 just exhausted. Chapter 14's verse-count discrepancy also needs a decision. Human verification
 read-through of all four originally-flagged books (1-3 Meqabyan, Malke'a Virgin Mary) still outstanding.
+
+## Session 2026-07-19 (cont'd) -- Chapter 14 discrepancy resolved: real content gap, not boundary drift
+
+Investigated per Josh's request. Confirmed the site's "1 Meqabyan 14" page verses 1-4 match this file's
+prior chapter 14 verses 1-4 exactly (same content, formal vs. Patois pairing) -- chapter alignment is
+correct, not drifted. The real defect: verses 5-23, present on the source page, were simply absent from
+this file -- an ordinary truncation, the same defect class as several other findings this project has
+caught (content silently cut short rather than fabricated or misnumbered). Also caught during this
+investigation: my own parser initially missed verse 4's formal-register pairing because that specific verse
+number was formatted inline with its text on the source page ("4 And after..." rather than "4" alone on
+its own line) rather than the more common standalone-line format -- a fourth verse-marking convention on
+this site, beyond the ones already documented, worth remembering if apocryphalibrary gets scraped again.
+
+**Fixed:** chapter 14 now has all 23 verses (1-4 formal, matching the register of chapters 3-13; 5-23
+Patois, since no formal alternative exists on this source for them, consistent with the rest of the
+Patois-only range). Chapter total: 738 -> 757 verses across the book. `rebuildNote` updated with the
+resolution.
+
+**Not yet done:** the broader question of how to resolve the remaining ~19 Patois-only chapters in 1
+Meqabyan and all 13 in 2 Meqabyan is still open -- Josh has asked for research into a different
+formal-register source next.
