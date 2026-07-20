@@ -3766,3 +3766,45 @@ drop-cap.
 identified yet for this specific work); dashboard status update (currently amber-by-metadata only, no
 RED_SEED/GREEN_SEED entry exists for this book at all -- worth adding one given the scale of the prior
 gap, matching the practice established for the SY corpus and 1-3 Meqabyan this session).
+
+## Session 2026-07-19 -- independent secondary AI check of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds,
+before human verification pass
+
+Josh asked for an independent secondary AI check of the four books rebuilt last session, prior to his own
+human read-through. Findings:
+
+**Malke'a Virgin Mary -- real, unreported defects found and fixed this session.** The prior rebuild's
+`rebuildNote` claimed only three narrow OCR corrections (a numeral, two numerals with stray spaces, one
+mangled drop-cap). A closer pass found the OCR cleanup had actually been incomplete in two further ways,
+neither previously disclosed: (1) ~25 of 42 stanzas still had unrepaired line-break hyphens splitting
+words ("cre- ated", "Cove- nant", "sanctifi- cation", etc.); (2) 8 instances where the scanned source
+book's own running page-header/page-number ("Salutations to the Members of...", "the Body of the Virgin
+Mary", a stray "r 241") had leaked mid-sentence -- and in one case mid-word, splitting "blackness" in
+stanza 36 -- into the verse text. Also found: several isolated OCR misreads ("afe"->"are", "O Mart"->"O
+Mary" x2, "ana"->"and", "thjr"/"thv"->"thy", "ip"->"in", "KuSskuam"->"Kueskuam", a stray apostrophe, a
+stray digit after "nought"), and, most seriously, the opening of an *entirely different composition* --
+"The Vision of Mary... A Homily by John the Son of Zebedee," which follows Malke'a Mariam in Budge's book
+-- had been scraped onto the end of stanza 42 and needed trimming off. None of this was fabrication (no
+invented content, no wrong plot) -- it was incomplete scan-artifact cleanup, all corrections verified
+against the surrounding text rather than guessed. **Fixed this session**, `rebuildNote` updated to
+accurately describe both cleanup passes. Still amber -- not yet individually verified against a second
+source or by a human reader.
+
+**1 Meqabyan and 2 Meqabyan -- real defect found, NOT YET fixed (judgment call, held for Josh).** Both
+files silently mix two completely different English translations chapter-by-chapter: a formal register
+(apocryphalibrary/UBS, matching what the `rebuildNote` claims for the whole book) in a minority of
+chapters, and a Jamaican-Patois-register translation (matching Wikisource's Patois translation of the
+same book, not apocryphalibrary) in the majority of chapters -- even alternating within a few chapters of
+each other. Content itself appears to be a faithful (if dialect-flavored) rendering of the same
+underlying book in the patois chapters -- no fabricated plot found -- but the `rebuildNote`'s claim of
+single-source/formal-register for 1 Meqabyan is inaccurate for 29 of its 36 chapters, and the voice
+whiplash mid-book is a real defect for a devotional app regardless of translation fidelity. 2 Meqabyan's
+two previously-documented honest gaps (ch.16 v.4, ch.21 v.4) were reverified present and correctly
+flagged -- that part of the prior rebuild note holds up. **3 Meqabyan reverified clean** -- all 10
+chapters single-register (Wikisource), no issues found.
+
+**Not yet done:** decision on how to resolve the 1/2 Meqabyan translation-mixing (re-source the patois
+chapters from apocryphalibrary directly -- requires Josh to run a local fetch again, since this session's
+`web_fetch` on apocryphalibrary.weebly.com returned only site navigation, not chapter content; standardize
+on the patois chapters instead; or document the mix as intentional dual-translation) -- held for Josh.
+Human verification read-through of all four books still outstanding regardless of the above.
