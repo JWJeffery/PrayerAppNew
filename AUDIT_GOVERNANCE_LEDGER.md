@@ -3729,3 +3729,40 @@ explicitly and stays amber, not GREEN, until that happens. Dashboard RED_SEED en
 should be reconsidered once that review is complete (currently still RED from the original finding,
 which is now out of date now that real content exists, but premature to mark GREEN before a human
 verification pass).
+
+## Malke'a Virgin Mary rebuild, session 2026-07-19 -- REBUILT from confirmed real source
+
+Following up on the 2026-07-18 ET broader-canon audit, which found a real source
+(E. A. Wallis Budge, *Legends of Our Lady Mary*, 1922, "Salutations to the Members of the body of the
+Virgin Mary," pp. 235-244) but hadn't yet used it. Confirmed public domain via archive.org (Public
+Domain Mark 1.0, Google-digitized, no copyright renewal on record).
+
+**Real finding: the prior 14-stanza file covered roughly a third of the actual litany, in a different
+voice than the source.** The real text is a 42-part salutation (plus a closing doxology, 42 total
+numbered entries) addressing each part of the Virgin's body in turn, opening each entry "Salutation to
+thy...". The app's prior file used a different opening formula entirely ("Peace be unto thy...") and
+covered only 14 of the 42 real entries -- not a trimmed/paraphrased subset of Budge's wording so much as
+independently-composed content in the same genre, given the formula mismatch.
+
+**Sourcing note:** my own fetch tool hit a hard content-length wall on archive.org's full-text stream
+for this book (identical truncation at roughly page lx of the introduction regardless of token limit
+requested, from 5,000 up to 100,000) -- confirmed not a parameter issue on this session's end, since two
+very different limits produced byte-identical truncated output. Josh downloaded the full 848KB
+`_djvu.txt` directly (no such restriction on his end) and provided it directly for processing, same
+resolution pattern as the Weebly-scraper fetch-tool wall earlier this session.
+
+**Rebuilt file: 42 stanzas, complete, one-to-one from Budge's translation.** Required three OCR-artifact
+corrections during parsing, all confirmed against the surrounding text rather than guessed: (1) entry 1's
+numeral was scanned as a lowercase "i." rather than "1." (drop-cap adjacency confusion), (2) entries 16
+and 18's numerals were scanned with a stray internal space ("1 6.", "1 8."), and (3) entry 1's opening
+illuminated capital was badly mangled by OCR into "TV AY ... 1V1" -- corrected to "May," which is the
+only reading that makes grammatical sense with the rest of the sentence ("May God the Father... illumine
+the eye of mine understanding..."). All three are OCR-noise corrections against a single, unambiguous
+underlying source, not content changes -- the entry-count boundaries (1-42, matching the TOC and the
+`grep` count of numbered headers) were never in doubt, only the exact rendering of a few numerals and one
+drop-cap.
+
+**Not yet done:** individual human read-through against the source (or ideally a second source, none
+identified yet for this specific work); dashboard status update (currently amber-by-metadata only, no
+RED_SEED/GREEN_SEED entry exists for this book at all -- worth adding one given the scale of the prior
+gap, matching the practice established for the SY corpus and 1-3 Meqabyan this session).

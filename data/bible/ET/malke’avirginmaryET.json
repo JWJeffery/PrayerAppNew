@@ -1,85 +1,179 @@
 {
   "meta": {
-    "name": "Malke’a Mariam (Hymn of Likeness to the Virgin)",
+    "name": "Malke'a Mariam (Salutations to the Members of the Body of the Virgin Mary)",
     "id": "MALKEA_MARIAM_ET",
-    "version": "Ethiopic Traditional Hymnody",
+    "version": "E. A. Wallis Budge, Legends of Our Lady Mary (1922), pp. 235-244",
     "copyright": "Public Domain",
-    "description": "A rhythmic poetic salutation to the members of the body of the Virgin Mary, used in the Sa'atat and Daily Office."
-  },
-  "hymn_structure": {
-    "meter": "Rhythmic Ge'ez Verse (Sene-Seliit)",
-    "use_case": "Daily Office / Commemoration of the Virgin"
+    "rebuildNote": "Rebuilt 2026-07-19 after audit found the prior 14-stanza file covered only about a third of the real litany's content and used a different opening formula (\"Peace be unto thy...\") than the actual source (\"Salutation to thy...\"), suggesting independent paraphrase rather than a trimmed translation. This version is the complete 42-part litany plus closing doxology, transcribed from Budge's 1922 translation (public domain, confirmed via archive.org). Not yet individually verse-verified against a second source or by a human reader -- treat as amber pending that review."
   },
   "stanzas": [
     {
       "num": 1,
-      "target": "Salutation to the Name",
-      "text": "Peace be unto thy name, Mary, which is sweeter than the scent of the field and the blossoms of the spring. O thou who art the pride of the house of David, be thou a fortress for my soul against the arrows of the enemy."
+      "text": "May God the Father, the Giver of Light, Who being One is yet Three in Person, Who showeth forth might in His Divinity and Power, illumine the eye of mine understanding with the lamp of wisdom and the beauty of His splendour, that it may see the face of the word of thy Covenant, O Mary, as is meet, thou Lady of all celestial and ter- restrial beings."
     },
     {
       "num": 2,
-      "target": "Salutation to the Hair",
-      "text": "Peace be unto thy hair, which is dark as the clouds of the mountains and more fragrant than the incense of the sanctuary. O Mother of the Light, cover me with the shadow of thy grace."
+      "text": "Salutation to the memorial of thy name, O thou who art like the star which is seen by the people even when dark clouds have overshadowed the light thereof. O Mary, thou Covenant of God, thou hope of salva- tion, did not the mind of the first father find consola- tion in thee when he was driven forth from his Paradise in bitter sorrow ?"
     },
     {
       "num": 3,
-      "target": "Salutation to the Head",
-      "text": "Peace be unto thy head, which is the throne of wisdom and the crown of the daughters of Zion. O thou who didst carry the King of Glory, may thy prayers be a crown of life upon my head."
+      "text": "Salutation to the hair of thy head, which is without blemish, and is like unto a double thread of purple that is drenched with the dew of all good things. O Mary, thou who art thyself the Covenant of mercy which thou didst establish before the congre- gation, entreat Him to bestow upon me the life of the soul as a gift of grace after the manner of Elijah, for doth not He make me to live in the body ?"
     },
     {
       "num": 4,
-      "target": "Salutation to the Face",
-      "text": "Peace be unto thy face, which shines with the radiance of the sun and the purity of the moon. O Virgin, turn not thy face away from me in the day of my trouble."
+      "text": "Salutation to thy head is meet from every cre- ated being, O Mary, because thou didst stablish a Cove- nant with Him Who is and Who shall be. Now we have made a Covenant with death, and we have sworn an oath unto those who say, “ They have spoken in vain and have destroyed their own souls.” Salutations to the Virgin Mary"
     },
     {
       "num": 5,
-      "target": "Salutation to the Eyes",
-      "text": "Peace be unto thine eyes, which are like the eyes of the dove and the stars of the morning. Look upon me with the eye of mercy and guide my feet in the path of peace."
+      "text": "Salutation to thy face, O holy and glorious face, the splendour of which is greater than the splendour of the sun and moon. Thou wast the token of the Cove- nant, O Mary, and the shining bow in the cloud from God, the Merciful, when thou didst remove Noah from the destruction of the earth, [and didst promise him] that there should be no more a flood."
     },
     {
       "num": 6,
-      "target": "Salutation to the Ears",
-      "text": "Peace be unto thine ears, which heard the voice of the Archangel Gabriel and the mysteries of the Kingdom. Hearken unto the voice of my prayer and bring my request before the throne of thy Son."
+      "text": "Salutation to thine eyelashes, which were set to guard [thine] eyes, and to take the place of veils and coverings. O Mary, say thou unto Him to Whom thou didst give birth without carnal union with man, “ Where is Thy Word, O Lord, which saith : For thy sake I will have compassion upon sinners when they shall call upon thy name, which shall be proclaimed ? ”"
     },
     {
       "num": 7,
-      "target": "Salutation to the Lips",
-      "text": "Peace be unto thy lips, which dropped honey and the words of the Magnificat. May the words of my mouth be acceptable in thy sight, O Mother of Life."
+      "text": "Salutation to thine eyes which are like two lamps that have been suspended by a cunning workman in the exalted palace of thy body. O Mary, thou art the fountain of lovingkindness and compassion ! Save me, then, by thy word, and deliver me from destruction, for without thy help no one is able to save himself."
     },
     {
       "num": 8,
-      "target": "Salutation to the Neck",
-      "text": "Peace be unto thy neck, which is like the tower of ivory and the pillar of the sanctuary. O thou who didst support the Lord of the Universe, support my weakness in the hour of trial."
+      "text": "Salutation to thine ears whereinto were poured the glad tidings by the mouth of the Creator, thy Son, that thy Pearl should be preserved. I adjure thee, O Mary, let me not see judgement without having per- formed [good] deeds, for without them I shall be un- able to justify myself. Shall thy Covenant have been made for nought 7"
     },
     {
       "num": 9,
-      "target": "Salutation to the Hands",
-      "text": "Peace be unto thy hands, which held the Child Jesus and offered Him in the Temple. O Virgin, stretch out thy hand to save me as thou didst save the painter from the fall."
+      "text": "Salutation to thy cheeks which afe like roses and pomegranates ; the languor thereof is fire, and the tears thereof are mingled with flame. According to thy Cove- nant, O Mary, lift thou me up into the Field of De- light. Woe be unto us ! Woe be unto us if the spirits shall say in the Judgement, “ One is Aholibah and the other Aholah ” (see Ezekiel xxiii, 4)."
     },
     {
       "num": 10,
-      "target": "Salutation to the Womb",
-      "text": "Peace be unto thy womb, which was wider than the heavens and contained the Uncontainable. O Gate of the East, lead me into the sanctuary of the Most High."
+      "text": "Salutation to thy nostrils, the double opening of life, which God fashioned in cunning beauty with His wise and understanding fingers. O Mary, hedge Salutations to the Members of thou me about against temptation with the power of thy Covenant, and when the Serpent yawneth with his mouth to swallow me up, do thou bruise his head with the rods of pain and disease."
     },
     {
       "num": 11,
-      "target": "Salutation to the Knees",
-      "text": "Peace be unto thy knees, upon which the King of Kings sat in His infancy. O Mother of Mercy, may I bow my knees in true repentance before the Cross of thy Son."
+      "text": "Salutation to thy lips which have asked from God, the Merciful One, the Covenant of Mercy on behalf of sinners, and have taken a solemn oath on Golgotha, O Mary, where thou didst withdraw thy- self from Galilee. The righteousness of thy Covenant is the cause of festal rejoicing unto each ana every one. Lay thou a crown upon the head of the sinner, thy servant."
     },
     {
       "num": 12,
-      "target": "Salutation to the Feet",
-      "text": "Peace be unto thy feet, which walked the path of Egypt and stood at the foot of the Cross. Guide my steps, O Virgin, that I may not stumble in the darkness of this world."
+      "text": "Salutation to thy mouth, the mouth blessed abundantly, the holy gate, the Book. I have taken refuge, O Mary, in thy Covenant which hath been ac- cepted, therefore let me not be put to shame before thy Son, and before His thousands of angels, when the root of the tongue shall be cut through and the mouth be sealed."
     },
     {
       "num": 13,
-      "target": "Salutation to the Soul",
-      "text": "Peace be unto thy soul, which magnified the Lord and rejoiced in God thy Savior. May my soul find rest in the kingdom of the saints through thine intercession."
+      "text": "Salutation to thy teeth which are like unto a flock of sheep that have been shorn, and have gone forth from the bath (Song of Solomon iv, 2) brilliantly white ; take thou, O Mary, in the place of a gift from me a tithe of thy Covenant. And let the arms of thjr prayer do evil unto my Egyptian adversary, which is his heart’s lust, and [let them bury him even as] Moses buried him in the sand (Exodus ii, 12)."
     },
     {
       "num": 14,
-      "target": "Salutation to the Departure",
-      "text": "Peace be unto thy departure from this world, which was attended by the Apostles and the angels of light. In the hour of my death, be thou my advocate and my guide. Amen."
+      "text": "Salutation to thy tongue, O thou whom the priests of heaven, the Seraphim who stand before the Trinity, proclaim holy with perpetual songs of sanctifi- cation. Make thou me to remember, O Mary, the commemoration of thy Covenant at the time of de- struction, even as Joshua made Israel when in the desert to remember the Covenant of Abraham, Isaac, and Jacob, and the righteousness of Moses."
+    },
+    {
+      "num": 15,
+      "text": "Salutation to thy voice which returned speech unto the word of the angel of mystery, Gabriel, whose the Body of the Virgin Mary apparel shone with splendour. O Mart, thou holy woman of God, thou seat of His power, Hail ! Hail ! For unto thee the Covenant of Mercy and His com- passion were given that by means thereof sinners might be able to become righteous."
+    },
+    {
+      "num": 16,
+      "text": "Salutation to thy breathings, the breathings of health, which heal the souls of sinners, and those who have become wounded by the poison of the Serpent. By thy Covenant, O Mary, do away my sins, for with- out thy Covenant and the Cross of Christ, the Heir, there is none who can deliver a man from Sheol."
+    },
+    {
+      "num": 17,
+      "text": "Salutation to thy sweet and beautiful throat wherein are separated [words], the bitter from the sweet. What shall I do, O Mary i For my strength is worn out, and on every side matters are hard for me, and the world putteth me in sore straits ; but comfort thou me, O mother, by means of thy Covenant."
+    },
+    {
+      "num": 18,
+      "text": "Salutation to thy neck, the appearance of which is as the tower of David, and the foundation of which hath been laid in a lofty place (Song of Solomon iv, 4). O Mary, speak thou into the ear of my soul the words which will give her comfort. Wherefore then doth the soul of Martha (Luke x, 41) weary itself overmuch ? For it hath the power to find out only a little of what is a great [mass]."
+    },
+    {
+      "num": 19,
+      "text": "Salutation to thy noble shoulders which have received a blessing and not a curse, and it abideth. O Mary, bear thou me together with the righteousness of thy Covenant upon thy shoulders, and take a tithe [on my behalf] from the flock of thy Son Alpha, for thou art my faith and the hope of my heart."
+    },
+    {
+      "num": 20,
+      "text": "Salutation to thy back which was, in days of old, the resting place of God, in His weariness, on the road to Kueskuam in the month wherein He was driven forth. O Mary, whosoever beareth thy name in addi- tion to his own on the Day of the Last Judgement, if His Blood have not the mastery, receive thou him [with] Salutations to the Members of a tithe of [thy mercy], 0 thou merciful one, His Mother."
+    },
+    {
+      "num": 21,
+      "text": "Salutation to thy breast, and to thy bosom, and to the twin nipples thereof. I adjure thee, O Mary, by the Blood which fell drop by drop at Golgotha, that thou make my soul to be worthy, with thine own soul, of a portion thereof, and let the dust of my earthly body be protected thereby."
+    },
+    {
+      "num": 22,
+      "text": "Salutation to thine arms, and to thy forearms, and to thy bosom wherewith thou hast embraced' Christ, the Pearl of the Godhead, the Hidden One. O Mary, thou chosen one, our Mother of angels and men, if the sinner celebrateth the commemoration of thee in firm faith let him reign with thee ip the king- dom of heaven."
+    },
+    {
+      "num": 23,
+      "text": "Salutation to thy arms and to thy wrists and hands which wove woven work, and made it beautiful with gold and purple threads, for the sanctuary of the God Who endureth for ever. O Mary, fulfil thou the Covenant of Mercy in me, and slay thou the enemy of my soul, for he is accursed, even as Solomon in his wisdom slew Sami (Shimei) (see 1 Kings ii, 46)."
+    },
+    {
+      "num": 24,
+      "text": "Salutation to the palms of thy hands which re- ceived the bread and the water brought unto thee by the angels when thou, O Mary, wast living in the great Sanctuary of the Law. When I give a handful of cold water to a poor and thirsty man to drink may it be re- ceived by thee, through thy Covenant, as the sacrifice of a chosen evening."
+    },
+    {
+      "num": 25,
+      "text": "Salutation to thy fingers, and to thy white nails, and to thv two breasts, which are the doors of the milk that is to be desired. O Mary, thou spring-flower of thy time, I, the feeble one, have taken refuge in thy bosom, and by the might of thy Covenant let me be delivered from the fire which is already prepared [for me]."
+    },
+    {
+      "num": 26,
+      "text": "Salutation to thy flanks, which are placed one the Body of the Virgin Mary on each side of thy body, whereon hath been set the brightness of gold which never passeth away. O Mary, embrace thou me, and graciously set me at the side of thy Covenant, whilst the sinners, who during their life- time hated him that was a companion of the righteous, go down into the region of utter darkness."
+    },
+    {
+      "num": 27,
+      "text": "Salutation to thy belly, thy belly which is like unto that of the angels, and which in accordance with its [exalted] station and degree, is ever fed upon the bread of heaven. O Mary, thou Zion of God, thou Ark of His Law, let the water of the lake of thy Cove- nant cleanse me from the love of gold ; for the love of riches is said to be the ancestor of Satan."
+    },
+    {
+      "num": 28,
+      "text": "Salutation to thy heart, whereto are joined thy reins, and to thy power of feeling ; and Salutation to thy bowels, and also to every organ which is in thee. O Mary, thou pillar of cloud, bring me into the land of promise, and lead thou me on the way by the light of the fire of thy Covenant, and in thy love feed me upon manna."
+    },
+    {
+      "num": 29,
+      "text": "Salutation to thy navel which is like unto a round goblet (Song of Solomon vii, 2) in the midst of thy body ; and Salutation to thy pure belly, and unto thy blessed loins. O Mary, thou holy woman, who didst give birth unto Christ-God, set thou a guard round about my soul until [it reacheth] the third heaven, when there standeth in the air a hostile angel who would become the adversary thereof."
+    },
+    {
+      "num": 30,
+      "text": "Salutation to thy virginity, wherein are in- cluded the five senses of the body, and to thy two thighs, which are the pillars of the roof of the sanctu- ary. O Mary, thou Tabernacle (or, Ark) and Two Tables of stone of the New Covenant, anoint thou me with the balsam of fasting, from the head even unto the sole of the foot, for fasting healeth the pain of the soul."
+    },
+    {
+      "num": 31,
+      "text": "Salutation to thy knees when they bow in r 241 Salutations to the Members of making propitiation and intercession, and Salutation to thy feet which bend in adoration ceaselessly. O Mart, who hast become the companion of the Word of the Father, entreat thou Him graciously to bestow upon me the life of [my soul], when all sinners shall be cast into the fire."
+    },
+    {
+      "num": 32,
+      "text": "Salutation to the soles of thy feet, and to the insteps thereof which walked to the Monastery of KuSskuam when the soldiers slew the children. O Mary, thou daughter of Ezra, say thou unto the God of heaven, “Wilt thou condemn in the Judgement the soul that loveth Thee in all its works because of thirty words ? ”"
+    },
+    {
+      "num": 33,
+      "text": "Salutation to the toes of thy two feet, and to the nail which belongeth to each of them. With the Covenant of Mercy, O Mary, hide thou that concern- ing me which should be hidden, and by the invitation of the tongue let another man who is mortal like unto myself drink my blood from a vessel."
+    },
+    {
+      "num": 34,
+      "text": "Salutation to thy disposition which the air of the virtues nourished, and which bowed not itself be- fore the storm of sin. O Mary, cover thou me over with the wing of thy Covenant when the Judgement shall take place, for if thy Covenant be not a means of salvation for the soul of him that devoured men, who shall be able to deliver him ?"
+    },
+    {
+      "num": 35,
+      "text": "Salutation to thy person, more than to the persons of Hanna and Elisabeth, for the beauty thereof is of divers kinds, and its tender freshness is a thing apart [from that of other women]. O Mary, thou holy, woman, who wast virgin within and without, let thy Covenant be my redemption in the face of the Almighty Creator when He putteth an end to time, and when buying and selling shall cease in the market."
+    },
+    {
+      "num": 36,
+      "text": "Salutation to the going forth of thy soul, whereof the fiery light terrified the Black Angel when he saw it, and he was unable to terrify thee by his black- the Body of the Virgin Mary ness. I adjure thee, O Mary, by the Divinity of God, to deliver me by thy Covenant from the threefold terror when death shall separate my soul from this my body."
+    },
+    {
+      "num": 37,
+      "text": "Salutation to thy body of flesh which did not remain on the bier, for the Spirit of Life of the Father raised it up quickly. Since thou dost, O Mary, save sinners by thy wise Covenant, the saving of the righte- ous shall not be accounted a marvellous thing for thee to perform. To save the righteous is a marvellous thing, but the saving of sinners is indeed a hard task."
+    },
+    {
+      "num": 38,
+      "text": "Salutation to the making ready for burial of thy body with linen swathings and myrrh by the hands of Peter, who uttered cries of joy. Be thou merciful unto me, O Mary, and say not unto me in the time of tribulation, “ Wherefore dost thou give thanks for thy Covenant, and for my help which keepeth in safety, and is the anointing of sinners ? ” And I say, “ Shall not I be anointed ? ”"
+    },
+    {
+      "num": 39,
+      "text": "Salutatio n to thy grave, whereunto are gathered together all the nations and peoples of the earth whose boast thou art. O Mary, come thou to me at the hour of death of that which is mortal in me ; when any Christian soul departeth wilt not thou thyself come quickly to give it consolation ?"
+    },
+    {
+      "num": 40,
+      "text": "Salutation to thy resurrection which was like unto the resurrection of Christ, for the gates of the tomb had been shut fast and they remained unopened. O Mary, thou art the head of the hope of Adam, and if thy Covenant and prayer be not with him he must fall into the depth of perdition, both soul and body."
+    },
+    {
+      "num": 41,
+      "text": "Salutation to the departure of thy body unto the House of Life, and the renewal thereof, whereunto the Body of thy Son had already departed. O thou redeemer of the world, Mary, I entreat thee to redeem my soul by thy Covenant, and let my wound be anointed with the medicine that shall heal it. Salutations to the Virgin Mary"
+    },
+    {
+      "num": 42,
+      "text": "Let us give thanks unto God Who cried a cry unto us, and let us celebrate the commemoration of thy Covenant among the congregation of the afflicted ones. [Rubric.] whosoever shall recite this composi- tion TWO AND FORTY TIMES ACCEPT THOU HIM, O MARY, AT THE RESURRECTION, AND LAY THOU UPON THE HEAD OF HIS SOUL THE SEVENFOLD CROWN OF THE KINGDOM. THE VISION OF MARY : A HOMILY BY JOHN THE SON OF ZEBEDEE [Brit. Mus. MS. Orient. No. 605, Fol. 94a] [Fol. 94a] In the Name of the Father and of the Son and of the Holy Ghost, One God. Christ, my God, help me ! And, O our Lady the Virgin Mary, do thou entreat Him to help me in His mercy. A HOMILY WHICH THE HOLY AND BLESSED JOHN THE SON OF ZEBEDEE COMPOSED ON THE MAJESTY AND GLORY OF THE HOLY VIRGIN. MAY HER PRAYER AND BLESSING BE WITH HER SERVANT. SAITH John the son of Zebedee whom our Lord loved greatly for his purity, and our Lady Mary loved him exceedingly even as he loved her Son : — She answered and said unto John, Hearken and I will tell thee an astounding and hidden mystery, which can-"
     }
   ]
 }

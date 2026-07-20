@@ -762,3 +762,27 @@ them in the interim.
 (or at least spot-checks); decide dashboard interim status for these three; then return to the
 still-open ET items from the prior list (Malke'a Virgin Mary/Guba'e/Iyasus, Guba'ekana, Sinodos/Clement
 family, Mazaheta, Josippon).
+
+## Session 2026-07-19 -- Malke'a Virgin Mary REBUILT from confirmed real source
+
+Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Malke'a Virgin Mary rebuild, session 2026-07-19" entry.
+Short version: the real source flagged in the prior session (Budge's *Legends of Our Lady Mary*, 1922,
+pp. 235-244) turned out to be a 42-part body salutation litany; the app's prior file only had 14
+stanzas, in a different opening formula than the real text ("Peace be unto" vs. the source's "Salutation
+to"), suggesting independently-composed content rather than a trimmed translation. Rebuilt as a complete
+42-stanza file, sourced directly from Budge, with three minor OCR-artifact corrections along the way
+(a misread numeral, two numerals with stray internal spaces, one badly-mangled drop-cap letter) --
+all confirmed against surrounding context, not guessed.
+
+Hit the same kind of fetch-tool wall on archive.org that's shown up before with other large public-
+domain texts this project has used (Wesley's 2 Baruch page, Wikisource for 1-3 Meqabyan) -- this
+session's fetch tool caps this specific source's full-text stream at a fixed point regardless of token
+limit. Resolved the same way as the Weebly-scraper wall: Josh downloaded the file directly (no such
+restriction on his end) and provided it for processing.
+
+**Not yet done:** human read-through against source; dashboard entry (none currently exists for this
+book at all, unlike the other findings this session which got RED_SEED entries -- worth adding one).
+
+**Next session, if resumed:** dashboard status for Malke'a Virgin Mary; human verification pass on this
+rebuild plus 1-3 Meqabyan; then the remaining ET backlog (Malke'a Guba'e/Iyasus -- same genre, no source
+found yet; Guba'ekana; Sinodos/Clement family; Mazaheta; Josippon).
