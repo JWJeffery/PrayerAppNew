@@ -3935,3 +3935,48 @@ explicit check, separate from content-accuracy verification, before a chapter is
 identified. Options discussed with Josh: leave empty (current state), license Curtin's translation properly,
 commission/write a new translation, or keep searching for another free formal-register source (Wikisource,
 apocryphalibrary/Curtin, UBS/Woldemariam, and Selassie/Iyaric have all been checked and ruled out).
+
+## Abtilis rebuild, session 2026-07-20 continued -- REBUILT from confirmed real source (Schodde 1885)
+
+**Trigger:** continuing the ET/AR/SY/Odes broader-canon backlog after the Meqabyan copyright correction
+earlier this session. Picked Guba'e Kana (Council of Nicaea) first; that investigation led to discovering
+a real, well-curated companion source list (bible.ertale.com/sources/) which in turn identified free,
+public-domain English sources for two of the four Sinodos family books previously stuck in "needs digging":
+Tizaz (Horner 1904, not yet actioned -- large rebuild, flagged separately below) and Abtilis (Schodde 1885,
+rebuilt this session).
+
+**MAJOR FINDING: Abtilis's prior content did not match the real text at all.** The file held fabricated
+prose "sentences" (bishop discipline, theft, false accusations, sorcery, Sabbath neglect -- 7 chapters,
+16 verses) with no correspondence to the real Ethiopic Apostolic Canons. Same failure class as the
+1-3 Meqabyan MAJOR FINDING (2026-07-18): plausible-sounding invented content standing in for a real,
+identifiable text.
+
+**Real source confirmed and used:** George H. Schodde, "The Apostolic Canons, Translated from the
+Ethiopic," *Journal of the Society of Biblical Literature and Exegesis* 5 (1885), pp. 61-72. Public domain,
+full text confirmed via a clean mirror (agape-biblia.org, matching the JSTOR/archive.org original). 57
+canons plus a preface line, covering clergy ordination discipline, property of the church, fasting,
+Scripture canon (Canons LV-LVI list Old and New Testament books, notably including "three books of Kufale
+[Book of Jubilees]" and Sirach as canonical, and "two letters of Clemens" in the NT list -- consistent with
+Ethiopic canon practice elsewhere in this corpus).
+
+**Rebuilt in full: 58 chapters (preface + Canons I-LVII), 102 verses.** Preface retained as its own chapter;
+each canon numbered as its own chapter with the canon's heading (where the source gives one) as the chapter
+name, verses split at natural sentence/clause breaks within each canon for readability without altering
+wording.
+
+**Open identity question, not fully closed:** a separate secondary source (a modern compiled edition by
+Michael R. Mikhail, cited via Amazon listing) states that Schodde's translation corresponds to the Sinodos's
+**Gessew** (= Gitsew = this app's Admonitions file) rather than Abtilis. ertale's source list states the
+opposite (Schodde = Abtilis). This session did not attempt to resolve the conflict definitively -- there was
+no time to obtain and check Mikhail's compilation directly -- but proceeded on ertale's mapping because it is
+independently supported by a thematic match: Schodde's real content (bishop/clergy ordination discipline,
+deposition, property of the church) matches this app's pre-existing Abtilis file's genre (bishop discipline,
+disciplinary sentences) far better than it matches the pre-existing Admonitions file's genre (general moral
+exhortation against hypocrisy and love of money, unrelated to clergy discipline specifically). Worth a
+dedicated identity check before this is marked fully GREEN.
+
+**Not yet done:** dashboard/SEED_VERSION bump for this specific book (batching into the same
+resume-note/ledger update as the rest of this session's work, per Josh's "one logical unit, one patch"
+standing rule where reasonable); Tizaz rebuild (large, ~100-page source, deliberately not attempted this
+session -- see resume note); Sirate Tsion and Admonitions/Gitsew remain unsourced (no free English
+translation identified for either).

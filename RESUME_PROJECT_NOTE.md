@@ -748,3 +748,38 @@ translation, licensing Curtin properly, or continued search for another free for
 any further work on that book. Otherwise, the "Next session" list from the 2026-07-19 entry above (Malke'a
 Guba'e/Iyasus, Guba'ekana, Sinodos family, non-red Clement files, Mazaheta, Josippon, human verification
 read-throughs) remains open and unaffected by this session's work.
+
+## Session 2026-07-20 continued -- Guba'e Kana investigation + Abtilis REBUILT (Schodde 1885)
+
+**Guba'e Kana (Council of Nicaea):** Josh chose the expanded 84-canon Arabic/Coptic-lineage tradition over
+the plain 20 (NPNF2-14). Confirmed this tradition has **no free English translation anywhere** -- the only
+critical edition (da Leonessa 1942) is in Italian, in a limited academic journal, still in copyright.
+NPNF2-14 itself only gives one-line captions for the 84, not full text. **Not rebuilt, not sourceable as of
+this session.** Revisit if a free English source ever surfaces, or reconsider the plain-20 tradition (which
+*is* fully and freely available).
+
+**Big find while digging:** an existing companion project, bible.ertale.com (specifically its
+/sources/ page), has already done serious public-domain-sourcing legwork across the Ethiopian broader
+canon. It resolved two of the four Sinodos family books that were stuck in "needs digging" since the
+2026-07-17 triage:
+- **Tizaz** = Horner 1904, *Statutes of the Apostles* (pp. 127-232 of that volume). NOT yet rebuilt --
+  confirmed the current file's content is completely wrong (Didache "Two Ways" material, not the real
+  ordination/liturgical church-order text), but the real source is ~100 pages of dense canon-law text.
+  Large-finding-scale job, same tier as Jubilees or the Meqabyan rebuilds. **Next session priority.**
+- **Abtilis** = Schodde 1885 JBL article, 57 canons. **REBUILT this session, full detail in
+  AUDIT_GOVERNANCE_LEDGER.md's "Abtilis rebuild" entry.** Prior content was fabricated prose bearing no
+  relation to the real text -- same failure class as the Meqabyan MAJOR FINDING. There's an unresolved,
+  flagged-not-fixed identity question (a conflicting secondary source claims Schodde's text is actually
+  Gessew/Admonitions, not Abtilis) -- see ledger for the reasoning on why Abtilis was judged the better fit.
+- Sirate Tsion and Admonitions/Gitsew remain unsourced -- no free English translation known for either.
+- Also worth chasing later: M.R. James's 1924 *Apocryphal New Testament* has a public-domain English
+  translation of the Ethiopic Apocalypse of Peter, corresponding to book 2 of Qalementos/Ethiopic Clement --
+  a lead for one of the non-red Clement files, not yet actioned.
+
+**Not yet done:** dashboard/SEED_VERSION bump for Abtilis (batching per Josh's one-patch-per-logical-unit
+rule); Tizaz rebuild; the Guba'e Kana plain-20-vs-expanded-84 tension (Josh may want to revisit given the
+84-canon tradition's total unsourceability); the Sirate Tsion/Admonitions/Clement/Mazaheta/Josippon items
+carried forward from 2026-07-19 remain open and unaffected.
+
+**Patch this session:** one patch covering the Abtilis rebuild + this resume-note entry + the ledger entry
+above, per the "one logical unit, one patch" standing rule.
