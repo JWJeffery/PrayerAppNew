@@ -4004,3 +4004,21 @@ prayer, the calendar of non-working days, and the closing chapters on Church ord
 ministry -- all still to be transcribed from the same source in follow-up patches. Dashboard/
 SEED_VERSION bump deferred until the book is complete, per the project's practice of not marking a
 book GREEN until it is fully closed.
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 2 (Statutes 21-30 of 72), Horner 1904
+
+Continuing the checkpoint-by-checkpoint rebuild from Horner 1904 (see "Part 1" entry above for
+source detail). This patch adds Statutes 21-30: the full ordination-of-bishop rite including the
+consecration prayer and the complete Oblation/Kiddas prayer (Statute 22, the longest and most
+liturgically central section so far); presbyter and deacon ordination rites with their prayers
+(23, 24); confessors (25); ordination of widows (26); readers, virgins, subdeacons, and the grace
+of healing (27); the catechumen occupation/craft exclusion rules (28-29); and concubinage (30).
+
+**Running total: 30 of 72 Statutes, 91 verses.** Wording unaltered from Horner's translation;
+verse divisions follow natural sentence/paragraph breaks in the source.
+
+**Not yet done:** Statutes 31-72 -- the baptismal liturgy proper (Statute 35 is very long: full
+renunciation, creed, trine immersion, milk-and-honey communion), the consecration prayers for
+water/oil/chrism (Statute 40, also very long), the hours of prayer, the calendar of non-working
+days, and the closing chapters on Church order and grades of ministry. Dashboard/SEED_VERSION
+bump still deferred until the book is fully closed.
