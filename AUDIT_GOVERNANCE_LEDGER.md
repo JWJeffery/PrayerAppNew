@@ -3808,3 +3808,43 @@ chapters from apocryphalibrary directly -- requires Josh to run a local fetch ag
 `web_fetch` on apocryphalibrary.weebly.com returned only site navigation, not chapter content; standardize
 on the patois chapters instead; or document the mix as intentional dual-translation) -- held for Josh.
 Human verification read-through of all four books still outstanding regardless of the above.
+
+## Session 2026-07-19 (cont'd) -- Josh chose to standardize 1/2 Meqabyan on formal register; partial fetch
+and merge completed, larger-than-expected limitation found
+
+Josh ran a scraper script (built this session) against apocryphalibrary.weebly.com's own chapter pages for
+all 29 needed chapters in 1 Meqabyan and all 13 needed chapters in 2 Meqabyan, and sent back the raw fetch
+results. Key discovery: **apocryphalibrary.weebly.com does not host a formal-register translation for most
+of these chapters at all** -- it's not a scraping gap, the page genuinely only contains the Patois
+translation for them. The site's dual-translation layout (each verse shown once in Patois, once in formal
+English, verified by the presence of "Jehovah" vs "JAH"/"unu"/"fe" markers) only exists for a subset of
+pages.
+
+**1 Meqabyan: 9 of 29 needed chapters had genuine formal text available and are now fixed** (chapters
+3,4,5,6,8,9,10,11,13 -- verse counts confirmed to match exactly, formal text merged in, `rebuildNote` and
+`version` updated to accurately describe the now-mixed sourcing). The remaining 19 Patois chapters
+(14-18,20,21,23-30,32-36) have no formal alternative on apocryphalibrary -- standardizing fully on formal
+register is not achievable from this source for those.
+
+**Chapter 14 also surfaced a separate, unresolved structural question:** apocryphalibrary's "1 Meqabyan 14"
+page contains 23 verse-numbered lines, not the 4 currently in this file. Not resolved this session --
+could mean this file's chapter 14 is truncated, or that the site's page-to-chapter mapping has drifted
+from this file's chapter divisions (a numbering-drift defect class already seen elsewhere in this project).
+Left exactly as found, flagged for Josh rather than guessed at.
+
+**2 Meqabyan: 0 of 13 needed chapters had formal text available at apocryphalibrary.** Every fetched page
+for this book was confirmed Patois-only (zero "Jehovah" occurrences across all 13). No content changes
+made to `2meqa'abyanET.json` this session -- the translation-mixing there is unresolved and, per this
+finding, cannot be resolved by re-fetching apocryphalibrary alone.
+
+**Standing lesson:** a "no formal source available" finding on a specific chapter/page is a real,
+independently-verified structural fact this session (confirmed by direct marker search on fetched raw
+text, not assumed) -- but per the project's general standing rule, still treat as re-verifiable rather than
+final if a different source turns up later.
+
+**Still open, held for Josh:** how to handle the ~19 remaining Patois-only chapters in 1 Meqabyan and all
+13 in 2 Meqabyan, now that "re-fetch the formal version from apocryphalibrary" has been tried and mostly
+doesn't apply -- options are the same three from before (find a different formal-register source and
+re-research, standardize on Patois instead, or document the necessary mix accurately) minus the option
+just exhausted. Chapter 14's verse-count discrepancy also needs a decision. Human verification
+read-through of all four originally-flagged books (1-3 Meqabyan, Malke'a Virgin Mary) still outstanding.
