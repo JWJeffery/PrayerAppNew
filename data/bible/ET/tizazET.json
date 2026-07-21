@@ -6,7 +6,7 @@
     "copyright": "Public Domain",
     "description": "The Ethiopic recension of the Statutes of the Apostles (Canones Ecclesiastici), part of the Sinodos. Source: George Horner, The Statutes of the Apostles, or Canones Ecclesiastici (London: Williams & Norgate, 1904), Translation of the Ethiopic Text, pp. 127-232. Public domain.",
     "sourceWitness": "Horner 1904, Translation of the Ethiopic Text (pp. 127-232), public domain English translation",
-    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-40 of 72 so far (parts 1-2: 1-30 landed on main; part 3: 31-40 in this patch, includes the full baptismal liturgy and the water/oil/chrism consecration prayers). Remaining statutes 41-72 to follow in subsequent patches."
+    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-50 of 72 so far (parts 1-3: 1-40 landed on main; part 4: 41-50 in this patch, includes fasting/fruit rules, the hours-of-prayer discourse and sealing of the forehead, the long grace/miracles discourse, and the opening of the grades-of-ministry section). Remaining statutes 51-72 to follow in subsequent patches."
   },
   "chapters": [
     {
@@ -858,6 +858,150 @@
         {
           "num": 25,
           "text": "Further the prayer for the laying hand upon the catechumens. God the almighty, the Father of the Lord and our Saviour Jesus Christ, to thee have humbled their heads thy servants the catechumens, and to thee they have subdued the hardness of heart and flesh, look down from thy worthy dwelling-place, bless them, male and female, and may thine ear hearken to them and hear their prayer. Give them to know the power of the word with which they are instructed as a sure utterance; and in due time impart to them, male and female, the washing of regeneration for the forgiveness of sin; make them the temple of the Holy Spirit through Christ: for to thee is glory and power and might, now, and always and for ever and ever."
+        }
+      ]
+    },
+    {
+      "num": 41,
+      "name": "Statute 41. Concerning that it is not fitting for any man to eat during the fasts of the Pascha (Fasika), except at the time in which it is proper to eat.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "For the following persons the fast shall not be reckoned, either the pregnant or the sick. They who cannot fast the two days shall fast on the sabbath, for it is necessary then that they should fast with bread and water. And if there is one on board ship or one who by some mischance mistook the day; being aware of it, after Pentakoste he shall fast in compensation. It is not the Pascha which he keeps, but a likeness of it after it has passed by: therefore in the second month he shall not omit (to fast), and having returned from his journey he shall do it knowing the certainty."
+        }
+      ]
+    },
+    {
+      "num": 42,
+      "name": "Statute 42. Concerning that it is seemly for the deacons to wait upon the bishop.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And every one of the deacons with the subdeacons shall turn to the bishop and tell him concerning the sick, that he may visit them, for if the Chief Priest visits the sick diligently they shall be consoled; for he has remembered them."
+        }
+      ]
+    },
+    {
+      "num": 43,
+      "name": "Statute 43. Concerning the time in which it is proper to pray.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Believers at the time they awake, having risen from sleep, before they do any work, shall wash their hands and pray to God; and after that they shall go to their work. And if there should be the word of instruction delivered, they shall choose to go thither where is the word of instruction, that is, the word of God, which strengthens the soul. And they shall hasten to go to the church, where is the Spirit, and they shall bear fruit there."
+        }
+      ]
+    },
+    {
+      "num": 44,
+      "name": "Statute 44. Concerning that it is seemly to receive of the Eucharist early at the time when they offer (it) up, before that they taste anything.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "All believers shall accept the admonition that they should receive of the Mystery before that they taste anything. And if he who receives has faith, then if one gave to him deadly poison it shall not hurt him."
+        }
+      ]
+    },
+    {
+      "num": 45,
+      "name": "Statute 45. Concerning that it is proper to guard the Mystery carefully.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "It is not seemly that any should be poured from the cup; but everyone shall be most careful lest any beside believers receive of the Mystery; and that none of it fall or be thrown away; because it is the Body of Christ: and all believers shall eat of it, and it is not proper to neglect it: [because] it is not seemly that any should be poured from the cup; because the cup was blessed in the name of our Lord Jesus Christ, that thou shouldst receive of it, because it is the Blood of Christ."
+        },
+        {
+          "num": 2,
+          "text": "But ye shall therefore take the greatest care that none of it be poured out or dropped, lest an alien spirit lick it up, and lest it should be that thou thyself should deny and despise the precious Blood of Christ, with which he redeemed thee, and became to thee the means of his mercy towards thee: and thou shalt be as having denied Christ. If a little of his Body has fallen, or if (any) has dropped from the cup, thou shalt find judgment in that thing with which he redeemed thee."
+        }
+      ]
+    },
+    {
+      "num": 46,
+      "name": "Statute 46. Concerning the Deacons and Presbyters.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "It is seemly that they should assemble every day with the bishop in the place where he is, that he may command them according to order. And the deacons and presbyters shall not neglect to assemble with the bishop every day, unless sickness of body prevents them. And having assembled together they shall instruct those who are in the churches; and likewise having prayed, they shall turn each to their own work."
+        }
+      ]
+    },
+    {
+      "num": 47,
+      "name": "Statute 47. Concerning the grave.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "No man shall compel by his command to bury a man in a grave which is made for all the poor; but they shall give wages to the hired man who digs, and to him who guards that place, and to him who has the care of those things. And the bishop shall sustain him with what they offer to the churches."
+        }
+      ]
+    },
+    {
+      "num": 48,
+      "name": "Statute 48. Concerning the times at which it is seemly to pray, and to hear instruction; and the sealing the forehead with the sign of the Cross.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "All believing men and women, having risen at dawn, before they do any work, should wash their hands and pray to God; and then turn to their works: and if they tell them where is the word of instruction, everyone shall choose to go thither to the place of instruction: and he shall know this in his heart, and consider all which he heard, that God speaks by the mouth of him who instructs, and it is he who dwells in the church, and he shall cause to pass away from him all wickedness in the day; and it shall be reckoned great loss to him who fears God, if he goes not to where is the place of instruction, and especially for him who can read. And if there is an instructor he shall not defer (from going) to the church and the place where is the instruction. Then indeed to him who speaks shall be given the word which he speaks. This is profit for everyone, (viz.) what he shall hear; and thou shalt hear that which thou thought not there, and thou shalt profit by that which the Holy Spirit gave to thee by him who instructs: and thus thy faith shall become firm because of what thou hearest. And further, they shall tell thee in that place what it is proper for thee to do in thy house: and therefore all men shall hasten to go to the church and to the place wherein the Holy Spirit rises (like the sun). And if there is a day on which there is no instruction, every one shall stay in his house, and shall take the holy Scripture and read as well as he can, for it is good."
+        },
+        {
+          "num": 2,
+          "text": "And if thou wast in thy house, pray at the third hour and glorify God: and if thou wast in another place, and if that hour has come to thee, pray in thy heart to God; because in that hour they stripped Jesus Christ and nailed him upon the wood of the cross: and therefore the ancient law commanded to give the bread which they offer at the third hour, as a type of the Body of Christ and his precious Blood; and they sacrificed the lamb which was a type of the perfect Lamb, for Christ is the Shepherd, and he is the Bread which came down from the heavens. And again pray at the sixth hour; for at that hour was the hanging of our Lord Christ upon the wood of the cross, and the day was divided and darkness came: and they shall pray at that hour a strong prayer; and they shall be like the word which our Lord Christ prayed, and made all the world darkness: and the catechumens shall make a great prayer. And at the ninth hour they shall be long in prayer, and a prayer with glorifying, that ye may join in glorifying with the soul of the righteous ones, glorifying the living God who faileth not, who remembered his righteous ones, and sent to them his Son, that is, his Word to enlighten them: because in that hour the side of Christ was pierced, and the blood and water flowed out: and then the rest of the day shone when the evening came. And therefore thou also as thou makest beginning of another day, as a likeness of the Resurrection, pray before thou restest thy body in thy bed. And at midnight having risen from thy bed, and having washed thy hand with water, pray. And if thou hast a wife, both of you pray. And if she has not yet become a believer, go aside from her and pray alone, and return again into thy bed. Because thou art bound by marriage thou shalt not leave off praying; because ye are clean, and it is not for you (to be as) unclean. Those who have been baptised require not to be washed again, because they are clean. And if thou breathedst into thy hands and sealest thee with thy spittle which goes forth from thy mouth, thou wilt be clean all over. This is from the Holy Spirit, and the drop of the water of baptism ascends from the out-gashing which is the heart of the Faithful, and purifies the believers. At this hour, therefore, they shall pray carefully, because the presbyters who handed down to us thus instructed us, that at this hour all creation prays to God. The stars and the plants stand up, and the waters stand up at that hour, and all the hosts of the heavens, the angels, ministering at that hour, with the soul of the righteous, glorify God. And therefore it is seemly for all who believe to be careful to pray at that hour. To this our Lord also is being witness, thus saying: Behold there was a cry (at) midnight, saying, Behold, the bridegroom has come, rise, go forth to meet him. And he repeated it, saying: Watch, because ye know not in what hour your Lord will come. And at the time of the cock-crow, having risen, likewise pray; because at this hour, cock-crow, the children of Esrael denied our Lord Jesus Christ, in whom by faith we know how to trust as the eternal light, and while we hope for the resurrection of the dead. All of you of the Faithful therefore doing all this, and looking forward and reminding one another, teach ye this wisdom to the catechumens, having first built up (their faith); and ye shall not go astray or be lost while ye always remember Christ."
+        },
+        {
+          "num": 3,
+          "text": "And always be careful to seal thy forehead, for this sign then of the Passion is manifest against Satan, and signifies that thou makest it in faith. Not for men alone is it made manifest, but know thou that thou puttest on a breastplate of righteousness, and the adversary sees what is in the heart, the rational strength of the inner man, for he was sealed inwardly and outwardly with the seal of the Word. He trembles and flees away in haste (chased) by the Holy Spirit, who indeed is in the man that makes within him an abiding place. This is that which Muse before taught us of the lamb of the Pascha (Fasika) which was slain, and he commanded to smear the blood on the lintel of the door and the door-posts. And the smearing declared therefore the faith which now we have, which dwells in us, which He gave us in the pure and perfect Lamb. And for this cause, if we have our foreheads thus sealed with the hand, then we shall be safe from those who wish to kill us. And this if ye learn with thanksgiving and with right faith ye will be indeed strengthened, and He will give you eternal life. This is the ordinance for you that ye may keep it, ye who have sense; if ye heard and kept all, He who keeps the teaching of the Apostles will not be hindered by any heretics. Those are the perverse who went astray and corrupted the teaching of the Apostles. And if men come to them they teach them in this manner: and these heretics increased, and of course they who listened to them are not willing to learn the commandment of the Apostles, but do only their own will, that which they chose, and that which sufficed for them as suiting their heart."
+        },
+        {
+          "num": 4,
+          "text": "And if there is any doctrine that we have diminished, brethren, God will reveal (it) to those who are worthy, while he steers the holy Church into quiet and a harbour."
+        }
+      ]
+    },
+    {
+      "num": 49,
+      "name": "Statute 49. Concerning the gift and the office.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "If anyone has obtained a gift and office he shall not glory over anyone. Our God and Saviour Jesus Christ (is) he who gave us this great mystery of the religion of God, calling the Jews and Gentiles that they might know the one God and Father in truth. As he said himself in the Gospel when giving thanks for the salvation of those who believe on him: I have manifested thy Name to the men: the work which thou gavest me I have finished. And concerning himself he said to the Father: Holy Father, the world indeed knoweth thee not, but I know thee, and these also know thee. Since then we have all been thus made perfect, he said concerning the Spirit of grace which should be given from him: This sign, then, to them who believe (is) that which shall be done in my Name. They shall cast out demons, and they shall speak with tongues, and they shall take serpents with their hands, and if they drink any deadly thing it shall not affect them, and upon the sick they shall lay their hand and they shall recover."
+        },
+        {
+          "num": 2,
+          "text": "And this grace, then, was first given to us, the Apostles, that in his name we might preach the Gospel to all creation; and next, to those who believed by us, as is seemly that they should be given to them; not for the sake of benefiting those who work, but for the sake of unbelievers, to make them believe: that those who by the Son did not believe in him, the power of the signs might put to shame. For signs are not for the faithful but for unbelieving, for Jews and Gentiles. Casting out demons is no gain for us, but is done by the working of our Lord Christ. To those who believe this grace shall be given, as the Lord himself teaches and shows us when he said: Rejoice not because the demons submit to you, but rejoice because your names are written in the heavens. Since the power is his, and ours the faith and diligence, it is clear that we work by him."
+        },
+        {
+          "num": 3,
+          "text": "It is not necessary therefore that a believer should cast out demons, and raise the dead, and speak with tongues, but he who gave the grace (gave it) for that which is seemly, for salvation of unbelievers. Though most men are put to shame, not by the demonstration of the word, but by the working of the signs which is connected with salvation, yet all the wicked are not put to shame by a plague. And God himself testified to this, as he said in the Law: With other tongues I will speak to this people and with other lips, and they will not believe. For neither did the Egyptians believe God, when Moses the prophet worked so many signs and miracles, nor did the Jews, through their malice, believe him, though our Lord Christ for the Jews like Moses healed all infirmity and all sickness among them. Nor again did it put those to shame, nor did they believe in it, when the rod became transformed as a serpent, nor the hand when it was made white, nor the river when it became blood, neither by this again did they believe him: nor again were these satisfied when the blind saw and the lame ran and the dead rose."
+        },
+        {
+          "num": 4,
+          "text": "And moreover Iyanes and Iyanbares opposed that one, and this also Hana and Kayafa insulted. But this one was not sufficient for them, and they (yet, he) were not put to shame when he did signs and wonders, but only those of good character with whom God is well pleased, and he only exercises power for them as a wise ordainer, not according to the power of a man, but his own will. This therefore we say that they who received such a grace may not boast over those who received not the grace. I speak therefore about a grace accompanied by a sign, for there is no man who believed in Christ the Son of God, who does not receive a grace of the Holy Spirit. For indeed he who has been transformed from the religion of many evil gods and believed in God the Father and in Christ his Son; this (in itself) is a grace from God. If he believed in God and cast away the unbelief of the Jews, and confesses (that) according to the will of God who was before the world, the only Son in the last days was born of a virgin without intercourse of man, and lived with men without sin, fulfilling all the righteousness of the Law, and that by the will of God he was crucified and was buried and rose the third day, and after the resurrection from the dead (for forty days) having been with the Apostles, and having made an end of all his ordinance (to them), he ascended in their presence to him who sent him, God the Father. To know this in truth then, not vaguely but as certain, he received a grace from God. So also he who has been transformed from all heresy."
+        },
+        {
+          "num": 5,
+          "text": "Let not therefore any who do a sign and miracle despise any of the believers to whom a working was not imparted. His own are the graces of God which are given through Christ. Thou indeed hast received this, and any of thy neighbours that; either the word of wisdom, or knowledge, or discerning of spirits, or the word of prescient instruction, or endurance, or lawful continence."
+        },
+        {
+          "num": 6,
+          "text": "Because Muse the man of God, in Egypt, when he worked signs did not magnify himself above the people Esrael, and though he was named god he did not magnify himself nor boasted over his prophet Aaron. Neither did (the son) of Newe Iyasu when he was leading the people after him, and while he fought with (the people of) the Iyabusewon, and made the sun to stand towards Gabaon and the moon towards the valley of Ailon, because the day was not sufficient for the victory, he did not magnify himself above Fenehas and above Kaleb. Nor did Samuel, though he wrought so many signs, contemn David the beloved of God, both being prophets, the one chief priest and the other king. And the seven thousand who were in Esrael, the holy ones who would not worship Ba'al in bowing the knee, Elyas only amongst them and his assistant Eleseos were workers of a miracle. Neither did Elyassa despise Abdeyu keeping the law and fearing God, and he did no signs. And Elesewon did not neglect his assistant when he was afraid of the enemy, but attended to him. And Daniel again, the wise, who was twice saved from the mouth of the lions; and the three children who went forth from the furnace of fire did not despise the others who were another people, because they knew that by their own power they did not overcome the trial, but by the strength of God they both did a sign, and they were saved from the trouble."
+        },
+        {
+          "num": 7,
+          "text": "Therefore let none of you magnify himself above his brother, if he is a prophet or worker of a miracle. If indeed it was granted that there should not be any who believed not, superfluous then (would be) all working of signs. For the fearing of God is a matter of faith, and the doing of a sign is of him whose power worked. As regards the first indeed we looked to ourselves, and in the second God works, concerning which we have already spoken."
+        }
+      ]
+    },
+    {
+      "num": 50,
+      "name": "Statute 50",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Therefore also let not the king despise any of those who are below him, the magistrates, nor the officers who obey him. For if there were not subjects, magistrates would be useless, and if there were not magistrates, the kingdom would not exist for the king."
+        },
+        {
+          "num": 2,
+          "text": "And let not the bishops magnify themselves above the deacons, nor the presbyters again above the people who are below them, because of them consists the constitution of the assembly; nor shall they say: The bishops and presbyters are taken out of the people. And to be Christians is of ourselves, but (to be) Apostle or bishop or whatever other (order) there may be is not of ourselves but of God who gives grace. As much as this then we ourselves say concerning those who have graces imparted to them, and this further we say, going on in speaking."
         }
       ]
     }

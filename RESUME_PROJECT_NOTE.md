@@ -851,3 +851,33 @@ unsourced (no free English translation identified for either); the non-red Cleme
 files, Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward from 2026-07-19 remain
 open; human verification read-throughs of the 1-3 Meqabyan and Malke'a Virgin Mary rebuilds are
 still pending before those move from amber to GREEN.
+
+## SESSION HANDOFF 2026-07-20 continued -- Tizaz Statutes 41-50 landed
+
+**Tizaz: 50 of 72 Statutes now done and landed (this patch), up from 40.** Source for this patch:
+Josh uploaded the full Google Books OCR scan (RTF) of Horner's 1904 volume, resolving the same
+archive.org fetch wall documented in the prior handoff entry -- this let this session confirm the
+whole remaining source range (Statutes 41-72, pp. 178-232) in one file rather than needing repeated
+re-pastes. That RTF is NOT saved anywhere in the repo or on disk a fresh session can access -- same
+caveat as before, it only exists in this chat's uploads for this session.
+
+Statutes 41-50 cover: fasting rules for Pascha, deacon/bishop visitation of the sick, daily prayer
+and instruction, receiving the Eucharist fasting, careful guarding of the Reserved Sacrament, daily
+assembly of clergy, burial of the poor, the long hours-of-prayer discourse plus sealing of the
+forehead (Statute 48), the long grace/miracles discourse (Statute 49), and the opening of the
+grades-of-ministry section (Statute 50). Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Tizaz rebuild
+... Part 4" entry.
+
+**Next session should:** continue from Statute 51 onward using the same method -- the same source
+range is still available if Josh re-uploads/re-pastes it (see above), same target file
+`data/bible/ET/tizazET.json`, one manageable chunk (~10 statutes) per patch, always surfacing
+`git am` + `git push origin main` commands, always updating AUDIT_GOVERNANCE_LEDGER.md. Do NOT mark
+Tizaz GREEN or bump SEED_VERSION until all 72 Statutes are in. Note from this session's source
+review: Statute 72 (the final one) is longer than a typical closing chapter -- it includes a block
+of intercessory prayers (congregation, Papas/Patriarch, sick, travellers) before the source ends at
+p. 232 -- budget accordingly for the last patch.
+
+**Also still open, unaffected by this session:** same list as the previous handoff entry (Guba'e
+Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clement/Qalementos files,
+Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
+of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).

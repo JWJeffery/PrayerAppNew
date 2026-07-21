@@ -4038,3 +4038,50 @@ water, oil, and chrism used throughout the baptismal rite.
 the forehead, grades of ministry and their limits (a substantial closing section), first-fruits
 and tithes, and the closing chapters on apostolic succession. Dashboard/SEED_VERSION bump still
 deferred until the book is fully closed.
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 4 (Statutes 41-50 of 72), Horner 1904
+
+Continuing the checkpoint rebuild from Horner 1904 (see "Part 1" entry above for source detail).
+This session's source text was obtained via the full Google Books OCR scan of Horner's volume
+(1904, public domain), which Josh uploaded directly as an RTF file after the archive.org fetch
+wall from earlier sessions made automated retrieval impossible again -- confirmed the "Translation
+of the Ethiopic Text" section runs pp. 127-232 exactly as previously documented, ending in a
+"PRAYER FOR THE PAPAS" before the Arabic-text translation begins at p. 233, giving a clean, checkable
+boundary for the whole remaining source range (Statutes 41-72).
+
+This patch adds Statutes 41-50: fasting rules for the Pascha fast (41), deacons attending the
+bishop concerning the sick (42), the time and manner of daily prayer (43), receiving the Eucharist
+fasting (44), careful guarding of the Reserved Sacrament so that nothing is spilled or wasted (45),
+daily assembly of deacons and presbyters with the bishop (46), burial of the poor (47), the long
+Statute 48 covering the full hours-of-prayer discourse (third, sixth, and ninth hour, evening,
+midnight, cock-crow, each tied to an event of the Passion) together with the sealing of the
+forehead with the sign of the Cross as a defense against Satan, the longest single section in this
+range, and closing with the recurring "God will reveal what we have omitted" formula also seen at
+the end of Statute 40; the long Statute 49, a theological discourse on spiritual gifts and miracles
+-- that having them is no ground for boasting, illustrated at length from Moses, Aaron, Joshua,
+Samuel, David, Elijah/Elisha, Daniel, and the three youths in the furnace, none of whom magnified
+themselves over others because of their signs; and the opening of Statute 50 (bare of a formal
+rubric in the source, matching Statute 38's style), which begins the grades-of-ministry section
+proper by drawing a parallel between king/magistrates and bishop/presbyter/deacon: none should
+despise those below him, since the office comes from God, not from human origin.
+
+**Running total: 50 of 72 Statutes, 22 verses added this patch (175 total).** Wording unaltered
+from Horner's translation; verse divisions follow natural sentence/paragraph breaks in the source,
+joining sentences split only by a page-turn and splitting at genuine paragraph/topic breaks.
+Two OCR-clarity fixes made silently as part of ordinary transcription (not content changes): "Iamb"
+-> "lamb" and "g^ce"/"g^ven"/"liot" -> "grace"/"given"/"not" (mechanical scan artifacts, confirmed
+against surrounding sense). Transliterated proper names (e.g. "Iyanes and Iyanbares" for Jannes and
+Jambres, "Muse" alongside "Moses" for the same figure, "Eleseos"/"Elyassa" both apparently for
+Elisha) are preserved exactly as printed rather than normalized, consistent with this book's existing
+practice of keeping Horner's idiosyncratic transliterations (Yuhanes, Petros, Matewos, etc.) rather
+than substituting familiar English forms.
+
+**Not yet done:** Statutes 51-72 -- the rest of the grades-of-ministry section (bishop/presbyter/
+deacon each confined to their own functions), prophets true and false, first-fruits and tithes,
+trades and occupations, the resting on the sabbath and the Lord's day, further hours-of-prayer
+material, the memorial of the departed, those persecuted for the faith, and the closing Statute 72
+("Concerning the Order of the Priesthood"), which based on this session's source review turns out to
+run long and include a substantial block of intercessory prayers (for the congregation, for the
+Papas/Patriarch, for the sick, for travellers) rather than being a short closing chapter -- this
+should be budgeted for in the final patch. Dashboard/SEED_VERSION bump still deferred until the book
+is fully closed.
