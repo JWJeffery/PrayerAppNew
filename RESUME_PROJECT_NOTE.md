@@ -905,3 +905,37 @@ re-obtainable from Josh if a fresh session needs it re-uploaded; the archive.org
 specific source remains unresolved for automated retrieval.
 
 **Also still open, unaffected by this session:** same list as the previous handoff entries.
+
+## SESSION HANDOFF 2026-07-20 continued -- Tizaz COMPLETE (Statutes 62-72 landed, 72/72)
+
+**Tizaz is now content-complete: all 72 of 72 Statutes landed (this patch adds 62-72, up from 61).**
+Same source as the last two handoff entries (Josh's uploaded Google Books OCR scan of Horner 1904),
+using the already-extracted text through the confirmed end of the Ethiopic-text section (p. 232,
+ending "PRAYER FOR THE PAPAS ... Amen" immediately before the Arabic translation begins).
+
+Statutes 62-72 cover: examination before receiving the Mystery, the long trades-and-occupations
+statute (63, incompatible livelihoods and practices), concubinage and lay teaching, hand-washing and
+servants, the sabbath/Lord's-Day rest with its full theological grounding (66), the calendar of
+non-working feast days, the daily hours of prayer restated, praying at home / not praying with
+catechumens or heretics, the memorial of the departed, persecution for the Faith and the
+grades-of-ministry discourse (Korah/Uzziah/Saul), and the closing Statute 72 (36 verses) covering
+apostolic warrant for the threefold ministry plus a full appended set of intercessory prayers
+(morning, sick, travellers, rain, fruit of the earth, rivers, the king, offerings, catechumens, the
+departed, peace, the congregation, the Papas). Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Tizaz
+rebuild ... Part 6" entry, marked BOOK COMPLETE.
+
+**IMPORTANT -- explicit next step, not done this session:** per standing project practice, Tizaz is
+NOT yet marked GREEN and SEED_VERSION has NOT been bumped. This session only edited
+`data/bible/ET/tizazET.json` itself (content + its own `meta.rebuildNote`); it deliberately did not
+touch whatever registry/dashboard file(s) track GREEN status and SEED_VERSION, since the exact
+mechanism for that wasn't reviewed this session and guessing at an unfamiliar governance-file schema
+seemed riskier than flagging it clearly. **Next session (or later this session, if resumed) should:**
+locate the correct file(s) for the GREEN/SEED_VERSION bump (the admin dashboard's Byzantine Release
+Roadmap panel and related registry files may be the right place to look, per pattern from other
+books), do the full re-sweep of all 72 Statutes that standing practice calls for before closing a
+book out, and then mark Tizaz GREEN and bump SEED_VERSION as its own dedicated patch.
+
+**Also still open, unaffected by this session:** same list as the previous handoff entries (Guba'e
+Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clement/Qalementos files,
+Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
+of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).

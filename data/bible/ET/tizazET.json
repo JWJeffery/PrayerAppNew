@@ -6,7 +6,7 @@
     "copyright": "Public Domain",
     "description": "The Ethiopic recension of the Statutes of the Apostles (Canones Ecclesiastici), part of the Sinodos. Source: George Horner, The Statutes of the Apostles, or Canones Ecclesiastici (London: Williams & Norgate, 1904), Translation of the Ethiopic Text, pp. 127-232. Public domain.",
     "sourceWitness": "Horner 1904, Translation of the Ethiopic Text (pp. 127-232), public domain English translation",
-    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-61 of 72 so far (parts 1-4: 1-50 landed on main; part 5: 51-61 in this patch, includes true/false prophets, the full bishop-ordination rite and Oblation/Kuerban liturgy (Statute 53), presbyter/deacon/subdeacon/deaconess ordination, confessors, virgins and widows, and the opening of the first-fruits/tithes and distribution-of-Eulogia rules). Remaining statutes 62-72 to follow in the final patch."
+    "rebuildNote": "REBUILD COMPLETE 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file now covers all 72 of 72 Statutes (parts 1-5: 1-61 landed on main across five checkpoint patches; part 6, this patch: 62-72, closing the book -- trades/occupations, concubinage of unbelievers, sabbath/Lord's-day rest with its theological rationale, the feast-day and hours-of-prayer rules, the memorial of the departed, persecution for the Faith, and the closing Statute 72 on the Order of the Priesthood together with its appended block of intercessory prayers). Wording throughout is unaltered from Horner's 1904 translation. Not yet marked GREEN and SEED_VERSION not yet bumped pending the full re-sweep called for by standing project practice once a book's content rebuild is complete."
   },
   "chapters": [
     {
@@ -1252,6 +1252,428 @@
         {
           "num": 2,
           "text": "This then is good and acceptable before God; everyone shall perform his ordinance. And there is not in the church one who did a sign, except he performed the ordinance in the good and honourable (manner) in which it should be done."
+        }
+      ]
+    },
+    {
+      "num": 62,
+      "name": "Statute 62. Concerning him who desires to partake of the Holy Mystery.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "He who desires to partake of the mysteries of holiness, which are of the service of God, shall be brought by the deacons to the bishop, or by the presbyters: and they shall examine them as to what was the cause by which they were called to stand and hear for the first time the word of God. And they who bring them shall bear testimony to them. And they shall examine them thoroughly with firmness concerning their works."
+        }
+      ]
+    },
+    {
+      "num": 63,
+      "name": "Statute 63. Concerning trades and occupations.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Let them examine them with firmness concerning their works and the life of their men, whether they are slaves or free. And if there is one who is a slave, let them examine his master whether he can bear testimony to him concerning his work. If he can bear good testimony he shall be received, and if he cannot bear testimony to him he shall be sent away, that he may make himself worthy of testimony being borne to him by his master, and if he should bear testimony he shall be received. If there is a slave and a handmaid, let them be taught to live according to the will of their masters, that the word of God should not be blasphemed."
+        },
+        {
+          "num": 2,
+          "text": "If there is one who has wife or husband, they shall be taught not to commit adultery and to abstain (from others)."
+        },
+        {
+          "num": 3,
+          "text": "If there is one who is not married, they shall be taught not to commit adultery, but to be married according to law. If his master is a believer, and if he knows that his slave or his handmaid commits adultery, he shall give them in marriage according to law, and if he does not give in marriage according to law that servant and that handmaid, that master of slaves shall be rejected from the church, because he made them impure."
+        },
+        {
+          "num": 4,
+          "text": "If there is a man who has a devil, let him be taught that he should be cured, and that he should not come into the church to partake of the Mystery until he is purified. If he was at the point of death, they may bring him to receive the Oblation."
+        },
+        {
+          "num": 5,
+          "text": "If there is a man who eats of the house of the heretics and the adulterers and drinks with them, let him leave off and remove from the place of the unclean and wicked, or he shall be rejected."
+        },
+        {
+          "num": 6,
+          "text": "A harlot, if she wishes to come in, shall leave this habit or be rejected."
+        },
+        {
+          "num": 7,
+          "text": "If there is a man who makes idols, if he wishes to come in, he shall leave his former works or be rejected."
+        },
+        {
+          "num": 8,
+          "text": "If there is a man or woman and they come from another people, if they wish to come into our law, they shall leave their former work or be rejected."
+        },
+        {
+          "num": 9,
+          "text": "If there is a man or woman of the people of the games, or providers (of the games), or painter, or drunkard, or diviner with earth and ashes, and fruit of trees, and anything else with which heathen sorcerers work, they shall not do it. Or he who plays the harp, or he who sings to an instrument, or one who teaches singing, or who guides to fornication and the games, let them leave their works or be rejected. Or the circus-men who play in the circus; and in like manner if there is a witch, or woman who guides to fornication, or makes sport, or a piper, or a dancer, or a singer, or teacher of this kind, she shall leave off or be rejected."
+        },
+        {
+          "num": 10,
+          "text": "Or one who inspires men with wickedness and hatred, or slanderers, or one of those who do the like of any of those things, they shall leave off and repudiate and be converted and repent. They shall walk in the way of the believers, or they shall not be accepted."
+        },
+        {
+          "num": 11,
+          "text": "If there is a man of the army, and if he wishes to come in and know (the Faith), and if he came into our law, let him leave his robbery and violence and calumny and transgression and folly, and he shall be content with his pay, and if he left that occupation he shall be received, otherwise he shall be rejected."
+        },
+        {
+          "num": 12,
+          "text": "If there is a man who married a believing woman and did wickedly with his body or adultery, or is a soothsayer and an interpreter of unlucky hours and of good days, wishing to turn the hearts of men by this, and to corrupt their thoughts and their heart, and seduce them from the way of God. Or a shameless man, or a magician, or a charmer, or one who calls together spirits, or a star-gazer, or a fascinator, or lascivious, or drunkard, or who is evil in deed and word, or who speaks with a sign and his face to lead astray, or who divines by a bird, or who seals his hands and feet with a needle, who makes little marks with black and red, and wrote nonsense upon himself, or (who divines) with beans, (or divines) about a noise which he hears or words of men, that might be signs for him, or (divines) by what he sees or hears, or in suspicion he will not do what is known to be good. Because all this is of the profane and fraudulent and impious. And they have writings, and they are like those who know concerning life and death, and they shall not be received into our law, until they have examined them and proved them concerning their occupations, if they repented of their conduct; and if they turned and left (the occupations) they shall be accepted, otherwise they shall be rejected."
+        }
+      ]
+    },
+    {
+      "num": 64,
+      "name": "Statute 64",
+      "verses": [
+        {
+          "num": 1,
+          "text": "If there is a concubine of an unbeliever, if she kept herself to him alone she shall be received, and if she took another she shall be repudiated."
+        },
+        {
+          "num": 2,
+          "text": "And if there is a man who became like us, and if he comes into our law, having a concubine or a handmaid, he shall keep himself, and refrain from her, because he is a Christian, and he shall marry according to law, as we have commanded. If he loves her he shall first write for her a writing of manumission, and afterwards let him marry her. If she is free he shall marry her according to law, and if he does not do thus he shall be rejected."
+        },
+        {
+          "num": 3,
+          "text": "And if there is a man among us, and he did wickedly, or who persuades with the fables of the heathen, and who does like them, let him leave off and turn himself, otherwise he shall be rejected."
+        },
+        {
+          "num": 4,
+          "text": "And he who requests of the believers in Christ that he may be in the number of those who do virtuously, and devote themselves in quietness and purity, shall prove himself in virtue three years. If he was a man who has spiritual gift and goodness and purity, he shall be received (sooner), because this thing shall not be quickly (or slowly) in its time, but it shall be (a matter) of good mind and devotion and prudence."
+        },
+        {
+          "num": 5,
+          "text": "And if there is a layman who teaches men aright, he shall be quiet in word and virtuous in his body. He shall not boast, but be correct in his speech. Then he shall teach men, and afterwards he shall be teacher of all of them by God. The prophet says: They shall be all taught by God."
+        }
+      ]
+    },
+    {
+      "num": 65,
+      "name": "Statute 65. Concerning the washing of their hands at the time of prayer.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Every believing man and woman at daybreak, having risen from sleep, before they do any work, shall wash their hands and pray. And if there is the word of exhortation, they shall prefer above (every) thing the good word of religion."
+        },
+        {
+          "num": 2,
+          "text": "Believing men and women shall keep their servants in fairness of service, as we have already ordered in the Scripture, and we instructed concerning honest slaves."
+        }
+      ]
+    },
+    {
+      "num": 66,
+      "name": "Statute 66. Concerning the resting on both the sabbaths.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Every believing man and woman shall rest on the sabbath and First day."
+        },
+        {
+          "num": 2,
+          "text": "They shall be kindly disposed towards their servants, as we have already taught. And we also commanded thus in our Epistle. Ye and your slaves and your servants, do your works five days. And on the sabbath and First day ye shall not do any work in them; but they shall have opportunity for (going to) church, and for instruction in religion of God, and the teaching of the Holy Spirit, which gives inheritance of the kingdom of the heavens in the world which is to come, and which in the present world keeps them in much honour and blessings, on them who fear God, and those who honour his sabbaths and rest on them."
+        },
+        {
+          "num": 3,
+          "text": "For on the sabbath day God rested from all his work, when he had made and finished the heaven and all that is in it, and the earth and all that is in it, the night and the day, the sun and the moon and the stars, and the times and the quantities; when he had gathered the waters into their receptacles. And having done all this on all the days and finished his work, God rested on the seventh day, and named it the Sabbath, and hallowed it, and magnified it above all the days and blessed it."
+        },
+        {
+          "num": 4,
+          "text": "And see and understand that it is a memorial of his glory and a memorial of his work, and he made it a rest. And he said: God rested from all his work. He revealed it, that he might grant to us, that we also should honour his sabbath and say that when he had created all creation and finished, he rested on it, (even) on the seventh day, and made it the sabbath holy and blessed and honourable and pure. And therefore he said in the (book of the) Law which (is about) the creation: And God blessed the seventh day which is the sabbath, and he hallowed it, because on it he rested from all his work which God began to do."
+        },
+        {
+          "num": 5,
+          "text": "And see that as sacred to God the rest was named Sabbath. Hear and learn the honour of the sabbaths, as that the sabbath was not first honoured by men, but by God, its maker and creator, was it honoured. And he honoured it and blessed it, and it was instituted as a rest for man and beast, and chiefly for a memorial of his glory and his work, that he might be known that he is the maker and creator of all. And he said: Keep my sabbath, because it is my sign between me and you and your children, that ye may know that I am he who sanctifieth you."
+        },
+        {
+          "num": 6,
+          "text": "Then the First day is the day of the Resurrection of our Lord Jesus Christ. And the First (day) was named sabbath, and both were named sabbaths. And in the prophets also he plainly declares that both are sabbaths, and says: Honour my sabbaths and continue in my law and in my statutes. Thus said God to those who gather to him from other people and serve him and love the Name of God: Verily those become to me servants and handmaids. And all of those who honour my sabbaths, and profane them not, and continue in my ordinances, I will bring to my holy mountain, and make them rejoice in my house of prayer; and my sacrifices and my Oblations from them shall be acceptable and pleasing, my house also shall be named the house of prayer for all peoples, saith God. And if they keep my commandments and my sabbaths, and choose that which I wish, and continue in my ordinances, I will give them the house of my sanctuary, and in my court a place which he nameth, and which is better than sons and daughters, and I will give them a name which is for ever, and which shall not pass away nor perish."
+        },
+        {
+          "num": 7,
+          "text": "Attend and understand when he said, My sabbaths, he said (it) of both days. When he said: Those who gathered together from another people, he said (it) of the Christian people and not concerning Esrael alone. And therefore observe both for our Lord Christ and honour both with great care. And having fulfilled all the law, ye shall find honour and glories and blessings which God has prepared for them that love him in this world and in that also which is to come."
+        }
+      ]
+    },
+    {
+      "num": 67,
+      "name": "Statute 67",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And further, they shall not do work in the week (sabu'a) of the Pascha (Fasika). The first week (samun), the great one which is of the Passion, in which our Lord was crucified; and that which comes after it, the week (samun) of Fasika, which is the feast of the Resurrection of our Lord and our Saviour. And the first week (samun) because our Lord and our God was crucified in it; and the second week (samun) because he rose in it from the dead. They shall not do any work on those days, and they shall know that he died and rose again from the dead."
+        },
+        {
+          "num": 2,
+          "text": "And further, they shall not do work on the day of the feast of the fortieth, which is the day of the feast of the Ascension of our Lord Jesus Christ, and he made an end on it."
+        },
+        {
+          "num": 3,
+          "text": "And further, they shall not do work on the day of the feast of the fiftieth, because the Holy Spirit, the Paraklitos, was manifested, he who came down upon the believers in our Lord Christ."
+        },
+        {
+          "num": 4,
+          "text": "And further, they shall not do work on the day of the Nativity, which is of the Birth of our Lord Christ, because the grace of God was given quickly to men, when God was born, the Word, who is our Lord Jesus Christ, of our Lady Mary, the Saviour of the world."
+        },
+        {
+          "num": 5,
+          "text": "And further, they shall not do work on the feast of the day of the Epifanya, because on that day the Divinity of our Lord Christ was shown, and the Father bore testimony to his Son in the baptismal place, and the Holy Spirit descended upon him like the form of a dove, and he was shown before all the people; and those who stood by bore testimony to him, saying: This is God in truth, the Son of God in truth."
+        },
+        {
+          "num": 6,
+          "text": "And further, they shall not do work on the day of the feast of the Apostles, because they are those who became teachers of you to know our Lord Jesus Christ, and made you worthy to partake of the gift of the Holy Spirit."
+        },
+        {
+          "num": 7,
+          "text": "And further, ye shall not do work on the day of Estifanos, the chief deacon and the first of martyrs, and (the days of) the other righteous and holy martyrs, all those who loved Christ our Lord more than their lives, and preferred him, honour them as much as ye can."
+        }
+      ]
+    },
+    {
+      "num": 68,
+      "name": "Statute 68. Concerning the times of prayers.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "When ye rise at daybreak, pray. And pray at the third hour, and pray at the sixth hour, and pray at the ninth hour, and pray in the evening, and pray at the time of sleep, and pray at the time of midnight and at cock-crow."
+        },
+        {
+          "num": 2,
+          "text": "At daybreak let us give thanks because God causes the light to shine upon us, having turned away for us the night, and brought the day. And also at the third hour, because in this hour Pilatos delivered up our Lord. And at the sixth hour our Lord Jesus Christ was crucified. And at the ninth hour he gave up his spirit, and the world was disturbed, and when they pierced his side blood and water came forth from him. And when they crucified our Lord all creation was afraid and trembled before him concerning that which the impious Jews did, and they could not look upon the mocking of the Lord. And also at the time of evening let us give thanks because he has given rest to us at night from the toil of the day. And also at cock-crow, because at that hour he announces the coming of the day to do the work of the day."
+        }
+      ]
+    },
+    {
+      "num": 69,
+      "name": "Statute 69",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And if ye cannot go to the church because of unbelievers, thou, bishop, make prayer in thy house, that the servants of God mingle not with the assembly of the impious; because it is not the place which sanctifies the man, but the man sanctifies the place. And if the impious seize the place, flee from it, because they pollute it. As the pure man sanctifies the church, so it is defiled by the unclean."
+        },
+        {
+          "num": 2,
+          "text": "And if ye cannot assemble together in a house or in the church, each one shall sing psalms where he is by himself, and shall read the Scripture and pray. If there are two and three they shall pray, because our Lord said: Where there are two and three gathered together in my Name, there am I in their midst."
+        },
+        {
+          "num": 3,
+          "text": "And the believers shall not pray with a catechumen in the (same) house, because it is not right that he who partakes of the holy Mystery should be defiled."
+        },
+        {
+          "num": 4,
+          "text": "The servants of God shall not pray with the heretics, nor in the house (of any) -- Who would join light with darkness, and believers with doubters?"
+        },
+        {
+          "num": 5,
+          "text": "Believing men or women, if they live with slaves, shall be excommunicated and go out of the church."
+        }
+      ]
+    },
+    {
+      "num": 70,
+      "name": "Statute 70. Concerning the memorial of those who have fallen asleep.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "The third day shall be observed with psalms and prayers, because of the resurrection of our Lord the third day. Further, they shall observe seven days for a memorial of the living and the dead. And further, they shall observe the completion of a month in likeness of the old ordinance, even as the people mourned for Moses thirty days. And further, they shall observe the completion of forty days; and they shall observe half a year. And further, they shall observe the completion of a year in likeness of their memorial."
+        },
+        {
+          "num": 2,
+          "text": "And they shall give to the poor of the goods of those who die as propitiation for their soul, for their memorial. This we say only concerning the servants of God. As for the wicked indeed, if they gave the riches of all the world to the poor there would be no profit to them: for if being alive he was an enemy of God, the thing (lit. his word) is clear that he was his enemy when he went out of the world. He finds no mercy, because there is no respect of persons with him (sc. God), for God is righteous and loves righteousness, and lo! the man (is judged) from his work, and lo! the man who is good -- they say his work is also (good)."
+        },
+        {
+          "num": 3,
+          "text": "And if ye are invited, eat moderately and in the fear of God, because it is seemly to pray for those who departed from this world."
+        },
+        {
+          "num": 4,
+          "text": "And ye presbyters and deacons who are in our Lord Christ, it is seemly that ye should be temperate at all times, ye and others also, that ye may be able to do what the Scripture says: The strong and angry shall not drink wine, lest they should be drunken and should forget wisdom, and not be able to judge rightly. Because as administrators under God the almighty and the only Son our Lord Jesus Christ are the presbyters and the deacons, and the powers of the church."
+        },
+        {
+          "num": 5,
+          "text": "And we say this, not forbidding them to drink wine, because we cannot despise what God has created for the joy of man, but that they should not drink for drunkenness. And the Scriptures do not say: They shall not drink wine, but they say: They shall not drink wine for drunkenness. And again he says: Drunkenness causeth thorns to spring up in the hand of a man. This which we say is not for the priests alone, but for all Christian people, who are named with the name of our Lord Jesus Christ, who spoke concerning them and said: To whom (shall be) sorrow and indignation and blackness of eyes and fighting and breaking of bones -- to whom shall they be except to those who exceed in drinking wine, and to those who ask and go where there is drinking."
+        }
+      ]
+    },
+    {
+      "num": 71,
+      "name": "Statute 71. Concerning those who are persecuted for the Faith.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And those who flee from city to city for the Faith and in remembrance of the word of our Lord: and they know that the spirit is willing but the flesh is weak, and they flee from place to place, and they patiently endure being spoiled of their goods that they might keep the name of Christ and not deny him; help them and give them all that they desire, and fulfil the commandment of God, our Lord."
+        },
+        {
+          "num": 2,
+          "text": "And all this we command you in common. And everyone shall stay in the Order which was given to him, and shall not step out of the commandment which they ordained for him. And this commandment is not our own, but that of God the Father, for he said: He who heard you heard me, and he who heard me heard him who sent me. And he who rejected you rejected me, and he who rejected me rejected him who sent me."
+        },
+        {
+          "num": 3,
+          "text": "Do not those created things which have no soul keep the commandment which was given to them, day and night, sun and moon and stars and winds and changes of moons and weeks and hours and days? and they perform the work which was ordained to them: as it was spoken at the beginning. And he said: He gave them commandment and they do not transgress. And concerning the sea he said: I have placed for it an ordinance, and I have placed against it a bar and a gate, and I said: Thus far come, and thou shalt not pass beyond. How much more ought ye not to be moved at all in that which is ordained to you according to the will of God. And there are some who make this as nothing, and confuse ordinations, and (yet) offices which have been assigned to each shall not be confused, and ye shall not seize for your own selves an ordination which was not given to you, and ye shall not pass beyond by force to possess that which is not yours, but belongs to others, over which ye have no authority."
+        },
+        {
+          "num": 4,
+          "text": "Because of this (offence) ye provoke God like the children of Kore and king 'Ozyan who grasped the priestly work without the will of God: the former indeed were burnt with fire, and of the latter his face was changed by leprosy. For they provoked God, Jesus Christ, who commanded that it should be thus, and they caused to be pained the heart of the Holy Spirit, and they rejected his testimony, and despised him, and they fear not his judgment which is prepared for them who do this thing, and the carelessness which they commit with regard to the Oblation, and the bread of the Blessing, whenever they are offered by those who are not worthy, who think to do the honourable work of the priesthood, which is in the likeness of the great Chief Priest, Christ; and there are some who make this (work) to be foolishness."
+        },
+        {
+          "num": 5,
+          "text": "And we indeed desired to teach them this, but henceforth we speak of Muse, the servant of God, with whom God spoke face to face, as one speaks with his neighbour; who said: I know thee above all men, with whom God spoke face to face, (not) with signs and miracles and visions and angels and interpretations -- this in the day on which he commanded the holy Law. And he ordained this ordinance, and as was proper that they should fulfil it, concerning the ordination of the priesthood, and what was suitable for the priests, and what was suitable for the levites: and he separated each as was proper for him and as was right for his service; that which the chief priests were commanded to do and which was not proper to be done by the priests, and not by the decree of the law to be done; and that which the priests were commanded, the levites could not approach (to do); but each one should keep to the service of God which he received, and should not step out of it. And when anyone transgressed and stepped out of his service which he received, he should be condemned to death."
+        },
+        {
+          "num": 6,
+          "text": "And this is abundantly plain to us from what happened to Saol, when he thought to offer sacrifice of his own will, before that the prophet and chief priest Samuel came, and caused to come upon himself sin and a curse, for ever. The prophet was not afraid because of the anointing with which he anointed him to be king."
+        },
+        {
+          "num": 7,
+          "text": "And God has made known to us by the declaration of the great thing which happened to king 'Ozyan. Not long tarried the vengeance for the perverseness with which he acted, and made him an alien from his kingdom, because of the ordination of the priesthood to which he aspired."
+        }
+      ]
+    },
+    {
+      "num": 72,
+      "name": "Statute 72. Concerning the Order of the Priesthood.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Each one of you knows what we have ordained for you, and further ye know that there are some whom we name bishops, and others whom we name presbyters, and others are named deacons. With prayer we laid hand upon them, and we appointed to each an Order according to its different name. And among us there is no one who desires a filling of our hand, nor will he receive from us that which he wishes for of priesthood, as the priests of the oxen of Iyurebe'am, which were made as an abomination to God."
+        },
+        {
+          "num": 2,
+          "text": "Unless there had been a special Order for each according to law, one name would have sufficed for all the world; but having been taught by God a guidance for all functions, we have separated for the bishops the ordination of the priesthood, for the presbyters the priesthood, for the deacons the service ..., that the work of the service might be completed withal. It is not seemly for the deacons to offer the Oblation, or to baptise, or to give the Eulogia to small or to great. And the presbyter shall not ordain anyone, because he was not worthy (of anything) beside his Order. For God is not a God of confusion, so that the inferiors may not grasp (at office) with audacity. What work then will be completed by the imperfect? And they make a new law to their own destruction, and do not know that it is a small thing which is in their power (lit. with them); and they kick with their feet in the net. And if thus, they do not oppose us, but they oppose the Bishop of all the world, the Son of God, the Chief Priest Jesus Christ our Lord."
+        },
+        {
+          "num": 3,
+          "text": "A chief priest, priests, and levites were ordained by Muse, the lover of God, and we the twelve Apostles were ordained by our Lord and our Saviour Jesus Christ, and we ordained for us Klementos and Ya'ekob and others with them, that we might send each one of them, and further, we all of us ordained withal presbyters and deacons. And the first Presbyter, the only true Chief Priest, is our Lord Jesus Christ, who did not grasp for himself the honour, but the Father ordained him. And as he is the Chief Priest for us, so he offered spiritual sacrifice to God the Father before he was crucified, and he commanded us to do likewise. And there were others with us who believe in him, but he does not grant to all who believe in him to be priests, nor to obtain the Order of ordination of priesthood like us. And after his Ascension we offered according to the ordinance of the holy bloodless Oblation. And we ordained bishops and presbyters and deacons in number seven, and amongst them Estifanos, the first martyr, who was not the least of us in his love of God: but he showed his service of God by faith and love of Jesus Christ our Lord, so much that he gave his life up for his sake; and the wicked Jews, the murderers of the Lord, stoned him with stones for his name and killed him. But he was a man of such fervent spirit that he saw our Lord Christ at the right hand of God, and he saw the open gates of the heavens. And it is nowhere found that he did what was not suitable for him as deacon, that he offered sacrifice or laid hand upon anyone, but he kept to his Order of deacon unto the end. For thus it was proper for the martyr of our Lord Christ to fulfil the duties of his Order."
+        },
+        {
+          "num": 4,
+          "text": "And if there are any who blame Filepos the deacon and Hananya the faithful brother because the one baptised the eunuch and the other baptised even me, Pawlos, they are deluded as to what we say; for we say that no one should take by force the ordination of priesthood, but he obtained it from God, as Malkasedek and Ya'ekob; or from the chief priest, as Aron from Muse; therefore Filepos and Hananya themselves took not ordination from themselves, but from our Lord Christ. They believed in the Chief Priest of God, with whom there is none to be compared."
+        },
+        {
+          "num": 5,
+          "text": "The prayer of early morning. And again we beseech the almighty God, the Father of our Lord and our Saviour Jesus Christ, while thanking him because he has kept us throughout the night, and brought us from darkness into light, from corruption into that which is incorruptible, and from ignorance into the knowledge of the truth, that throughout the day also he may cause us to be in all peace and health, and protect his people with the power of his angels, who has authority over all work of blessing, the Lord our God."
+        },
+        {
+          "num": 6,
+          "text": "The deacon shall say: Pray. O Lord the almighty, do thou cause us to be in all peace and health throughout the day, for thou hast kept us throughout the night. Thou, Lord, the almighty, send to us thine angel the good guide. And have mercy upon us according to the greatness of thy mercy, and according to the multitude of thy clemency blot out our wickedness. And none of us is an alien and a backslider, put us not away from thy favour, because of thy name which was named over us. Be forgiving to us and forsake us not. Grant us to obtain favour before thee and before Christ thy Son, through, etc."
+        },
+        {
+          "num": 7,
+          "text": "The prayer for the sick. And again we beseech the almighty God, the Father, etc., for the sick brethren, that he may remove all sickness and all suffering from them. Having taken away the spirit of disease, may he who has authority for all healing give to them life, the Lord our God."
+        },
+        {
+          "num": 8,
+          "text": "The deacon shall say: Pray for the sick. God the almighty, the Father, etc., we pray thee and we beseech thee for the sick brethren. Grant to them life. Take away the spirit of sickness. Cause to pass away from them all disease and all suffering. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 9,
+          "text": "The deacon shall say: Let us all say. The people shall say: Have mercy upon us. Physician of the soul and physician of the body, thou art the overseer of all flesh, and of those who are troubled with unclean spirits; deliver every tormented and oppressed soul, give health and give rest, drive away all disease from this house, and from those who call upon thy holy and blessed name. Having healed the disease of all of our souls, grant perfect soundness, through, etc."
+        },
+        {
+          "num": 10,
+          "text": "The prayer for those who make a journey. And again we beseech the almighty God, the Father, etc., for those our brethren who make a journey, and also for those who are about to make a journey, whether by sea, or by rivers, or by the deeps, or by road, in whatever journey they may travel, that he may bring all into the safe harbour, the almighty Lord our God."
+        },
+        {
+          "num": 11,
+          "text": "The deacon shall say: Pray. Lord our God the almighty, we pray thee and we beseech thee for our brethren who make a journey, and also for those who are about to make a journey abroad; direct (them) as fellow (traveller) though we are many. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 12,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon us. Bring them into the safe harbour. Restore them to their people with joy and with peace, rejoicing and causing to rejoice, through, etc."
+        },
+        {
+          "num": 13,
+          "text": "The prayer for rains. And again we beseech the almighty God, the Father, etc., for rains, that he may send his rain into the place where it is needed, the almighty Lord our God."
+        },
+        {
+          "num": 14,
+          "text": "The deacon shall say: Pray. Lord our God the almighty, we pray thee and we beseech thee, send thy rains into the place where they are needed. Make to rejoice the face of the earth, and water its furrows. Bring the sowing and the harvest, and bless the circle of the year with thy goodness. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 15,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon us. For the poor of thy people, and for all those who hope in thee, work with us according to thy clemency, and nourish our mind with the doctrine of the Godhead, and with understanding which is from thee, through, etc."
+        },
+        {
+          "num": 16,
+          "text": "The prayer for the fruit of the earth. And again we beseech the almighty God, the Father etc., for the fruit of the earth, that he may increase the fruit of the earth, and that he may be pleased to bring the sowing and the harvest. May he grant rich favour, the Lord our God."
+        },
+        {
+          "num": 17,
+          "text": "The deacon shall say: Pray for the fruit of the earth. Lord our God the almighty, we pray thee and we beseech thee, increase the fruit of the earth, and be pleased (and) bring the sowing and the harvest, which is from thy goodness. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 18,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon us. For the poor of thy people and for all who call upon thy holy and blessed name, through, etc."
+        },
+        {
+          "num": 19,
+          "text": "The prayer for the waters of the rivers. And again we beseech the almighty God, the Father, etc., for the waters of the rivers, that he may cause (them) to rise up to their (proper) measure. Make to rejoice the face of the earth. May he bring the sowing and the harvest. May he grant rich favour, the Lord our God."
+        },
+        {
+          "num": 20,
+          "text": "The deacon shall say: Pray for the waters of the rivers. God the almighty, we pray thee and we beseech thee, cause to rise the waters of the rivers up to their (proper) measure. Make to rejoice the face of the earth, and water its furrows. Multiply food, and bless the circle of the year with thy goodness. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 21,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon us. For the poor of thy people, and for all who call upon thy holy and blessed name, through, etc."
+        },
+        {
+          "num": 22,
+          "text": "The prayer for the king. And again we beseech the almighty God, the Father, etc., for the lover of God, our king, Iyasu, that he should keep his kingdom without trouble, in peace and righteousness, the almighty Lord our God."
+        },
+        {
+          "num": 23,
+          "text": "The deacon shall say: Pray for the king. Lord our God the almighty, we pray thee and we beseech thee for the king of this land, the lover of God, our king, Iyasu, and grant to him what is useful for him. Cause to submit his enemy, the peoples who are against his walls. And speak in his heart for thy holy Church. Speedily let thy mercy find us, O Lord."
+        },
+        {
+          "num": 24,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon him. Grant him without error to keep (his) understanding concerning the faith in the excellence of thy Godhead, through, etc."
+        },
+        {
+          "num": 25,
+          "text": "The prayer for those who offer an offering. And again we beseech the almighty God, the Father, etc., for those who offer an offering in the holy, one, catholic (lit. which is over all) Church, a sacrifice, first-fruits, tithes, a thanksgiving, a memorial, whether much or little, secret and open. And as for those who have nothing and wish to give, (though) they have nothing to give, accept their desire, and having accepted the longing of every one of them, grant to them the heavenly Spirit. And as for those who have somewhat and do not wish to give, soften their heart to do good, thou (lit. he) who hast authority for all work of blessing, the Lord our God."
+        },
+        {
+          "num": 26,
+          "text": "The deacon shall say: Pray for those who offer an offering. God the almighty, we pray thee and we beseech thee for those who offer an offering to the holy, one, catholic Church, to the honour of thy name, an offering and a thanksgiving of first-fruits and of tithes, of much and of little, of secret and of open. And as for those who have nothing (yet) who wish to give, accept their desire as the offering of Abel: and as the Hebrew woman who offered the two mites, and as the sacrifice of the forefathers. And thus accept into the heavenly altar. Repay them with a reward of blessing, heavenly in return for earthly, and much in return for little, and open in return for secret, and life everlasting in Christ in return for food and drink, through, etc."
+        },
+        {
+          "num": 27,
+          "text": "The prayer for the catechumens. And again we beseech the almighty God, the Father, etc., as regards his servants the catechumens, that he may impart to them in due time the washing of regeneration for the forgiveness of sin, the almighty Lord our God."
+        },
+        {
+          "num": 28,
+          "text": "The deacon shall say: Pray for the catechumens. God the Lord almighty, the Father, etc., we pray thee and we beseech thee, have mercy upon thy servants the catechumens. Be kind, (and) remove from them all the remains of the idols. Impose upon their hearts thy law and thy commandment, and thy righteousness and thine ordinance. Speedily let thy mercy find us."
+        },
+        {
+          "num": 29,
+          "text": "The deacon shall say: Let us all say. The people shall say: O Lord, have mercy upon us. In proper time (impart to them) the washing of regeneration for the forgiveness of sin. Make them the shrine of the Holy Spirit, through our Lord and our Saviour Jesus Christ, through whom, etc."
+        },
+        {
+          "num": 30,
+          "text": "The prayer for those who have fallen asleep. And again we beseech the almighty God, the Father, etc., Lord of the living, Life of the dead, and Hope of the desperate, Helper of the afflicted, Cleanser of sinners, who hast abolished death and burst the bonds of Satan (Sayetan). Thou hast granted life to the race of men, thee we pray and beseech, who wilt not die for ever and ever, with whom is the treasure of life, for those who have fallen asleep and rested in the faith; the forefathers, the bishops (papasat), presbyters and deacons, and readers (anaguenestis), and monks, and virgins, and widows (of the order), infants, widows and orphans (lit. offspring of the dead); and for the soul of thy servant N(egale) and for the soul of all those who are there in that place, whom thou calledst from among thy people in righteousness and in uprightness. Give rest to their soul in the place of pasturage by the water of rest, in the bosom of Abreham, Yeshak, and Ya'ekob, in the garden of joy, among the guides of light, thine angels, having united (them) with thy holy ones. And raise up their body in the day which thou hast appointed, according to thy holy unlying promise of thy heavenly kingdom; for there is no death to thy servants, but rather a passing, and although one has sinned, and the law of man was hidden from them, be indulgent; for thou, God, art good and the lover of man; for there is none pure from uncleanness before thee, even though he lived one hour upon the earth. Do thou grant passings to their soul freely, without hindrance. Send the Spirit of the Comforter, and who gives consolation to their people. Comfort them, cause them to rejoice in Christ, through, etc."
+        },
+        {
+          "num": 31,
+          "text": "The prayer for peace. And again we beseech the almighty God, the Father, etc., for the peace of the holy, one, catholic Church, that he may grant much peace upon all rulers (lit. shepherds) and peoples and upon all flocks, he who has authority for all peace, the Lord our God."
+        },
+        {
+          "num": 32,
+          "text": "The deacon shall say: Pray for peace. Lord our God the almighty, we pray thee and we beseech thee for the peace of the holy, one, catholic Church. King of peace, give to us peace, because thou gavest to us everything. Possess us, God, and reward us, for beside thee there is no other whom we know. And thy holy name we name and we invoke. Do thou impart thy heavenly peace upon us all. Preserve (our) life (lit. soul) and our condition of this world peacefully. Give peace to the king of this land, and through thy holy name give counsel to the rulers of the neighbouring peoples. Guard our coming in and our going out in peace, that living in a quiet and tranquil life we may be found in all piety, in the fear of God and virtue in Christ, through, etc."
+        },
+        {
+          "num": 33,
+          "text": "The prayer for the congregation. And again we beseech the almighty God, the Father, etc., for the congregation, this as well as all our congregations, that he may grant that it may be according to his holy will, the almighty Lord our God."
+        },
+        {
+          "num": 34,
+          "text": "The deacon shall say: Pray for our congregation. God the almighty, we pray thee and we beseech thee for this our congregation as well as all our congregations. Grant that it may be according to thy holy will, where we do this service of our congregation and other congregations also. And make it a house of prayer and a house of blessing. Vouchsafe to bestow upon us, and upon those who (come) after us, the everlasting salvation. Rise up, O Lord, and let all thine enemies be scattered, and let all flee away from before thy face who hate thy holy and blessed name, and make thy people ten thousand of ten thousands and ten thousand times ten thousand, through, etc."
+        },
+        {
+          "num": 35,
+          "text": "The prayer for the Papas. And again we beseech the almighty God, the Father, etc., for the blessed and holy Papas, Aba N(egale), that thou wilt in keeping keep him for us during many years and during times of peace, while he fulfils the priesthood which has been entrusted to him by thee. May the Lord our God grant rich favour."
+        },
+        {
+          "num": 36,
+          "text": "The deacon shall say: Pray for Papas N. Lord our God the almighty, we pray thee and we beseech thee for the blessed Papas N. In keeping keep him for us during many years, during times of peace, while he fulfils the priesthood which was entrusted to him by thee, together with all the bishops, presbyters, and deacons, and with all the fulness of the holy, one, catholic Church. And the prayer which they make for us and for all thy people hear (it), and accept them; and open to them the treasury of thy clemency; and further, pour down upon him abundantly thy grace of thy Holy Spirit, thy heavenly blessing, that he may bless thy people; and moreover, cause to submit every enemy, visible or invisible, and bruise (them) under his feet; and himself indeed keep for thy Church in glory, through thine only Son, through whom to thee with him and with the Holy Spirit (be) glory and might, now and ever and for ever and ever. Amen."
         }
       ]
     }

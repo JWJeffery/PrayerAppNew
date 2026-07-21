@@ -4127,3 +4127,53 @@ Statute 72 ("Concerning the Order of the Priesthood"), which per the Part 4 note
 includes a block of intercessory prayers (congregation, Papas/Patriarch, sick, travellers) -- this
 is the final patch for the book. Dashboard/SEED_VERSION bump still deferred until the book is fully
 closed and re-swept.
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 6 (Statutes 62-72 of 72), Horner 1904 -- BOOK COMPLETE
+
+Continuing and closing out the checkpoint rebuild from Horner 1904 (see "Part 1" entry for source
+detail; source text for this final range came from the same Google Books OCR scan uploaded for
+Parts 4-5, pp. 215-232 of the Ethiopic-text section, running to the exact boundary confirmed in the
+Part 4 entry -- "PRAYER FOR THE PAPAS" ending in "Amen" immediately before the Arabic-text
+translation begins).
+
+This patch adds Statutes 62-72, completing the book: examination of catechumens before admission to
+the Mystery (62); the long Statute 63 on trades and occupations, a detailed list of livelihoods and
+practices incompatible with baptism (idol-making, sorcery/divination in its many forms, the theatre
+and circus, soothsaying, magic) each requiring the person to leave the occupation or be rejected (12
+verses, the longest in this range); concubinage of unbelievers and of converts, and lay teaching
+(64); washing of hands before prayer and fair treatment of servants (65); the long Statute 66 on
+resting on both sabbaths (Saturday and the Lord's Day), with its extended theological grounding in
+the Genesis creation-rest and prophetic texts on honoring "my sabbaths" (67 verses across the whole
+range's longest theological digression after 52); the calendar of days on which no work is done --
+Holy Week, Bright Week, the fortieth-day Ascension, the fiftieth-day Pentecost, the Nativity,
+Epiphany, the feast of the Apostles, and the feast of Estifanos/Stephen (67); the daily hours of
+prayer restated with their Passion associations (68); praying at home when the church is inaccessible,
+and the rule against praying with catechumens, heretics, or slaveholders (69); the memorial
+observances for the departed at 3 days, 7 days, a month, 40 days, half a year, and a year, almsgiving
+for the dead, and temperance rules for clergy (70); those persecuted for the Faith, and a long
+discourse (71) on the fixed limits between grades of ministry illustrated by Korah, Uzziah, and Saul
+usurping priestly functions not their own; and the closing Statute 72 ("Concerning the Order of the
+Priesthood," 36 verses, by far the longest single statute in the book), which gives an apostolic
+warrant for the threefold ministry (citing Moses/Aaron/the Levites as the OT type, and the ordination
+of Klementos, Ya'ekob, and the seven including Stephen as the NT precedent, with a defense of
+Philip's and Ananias's baptisms against the objection that neither held priestly rank), and then
+appends a full set of intercessory prayers -- for early morning, the sick, travellers, rain, the
+fruit of the earth, the rivers, the king (Iyasu), those who bring offerings, catechumens, the
+departed, peace, the congregation, and the Papas/Patriarch -- each in the same rubric-collect-
+bidding-response pattern seen already in Statute 40's baptismal prayers.
+
+**Final total: 72 of 72 Statutes, 89 verses added this patch, 309 verses in the completed book.**
+Wording unaltered from Horner's translation throughout. OCR-clarity fixes made silently, confirmed
+against surrounding sense: "lyurebe am" -> "Iyurebe'am" (Jeroboam, cf. 1 Kings 12, "the priests of
+the high places" and the golden calves) and "Muse"/"Aron" left as the transliterated forms already
+established in this book (see Part 4/5 notes) rather than normalized to "Moses"/"Aaron". Statutes 64
+and 69, like 38, 50, 52, 58, and 59, have no formal "Concerning..." rubric and are named bare per
+this book's established convention.
+
+**TIZAZ REBUILD IS NOW CONTENT-COMPLETE.** All 72 Statutes are transcribed from Horner 1904 with no
+gaps. Per standing project practice, this book is NOT yet marked GREEN and SEED_VERSION has NOT been
+bumped -- that step (plus the full re-sweep called for before closing a book out) still needs to
+happen and was intentionally left undone this session pending confirmation of the correct mechanism
+(the registry/dashboard files that track GREEN status and SEED_VERSION were not touched this session,
+since this rebuild only worked inside `data/bible/ET/tizazET.json` itself). See the corresponding
+RESUME_PROJECT_NOTE.md entry for the explicit next-step flag.
