@@ -939,3 +939,22 @@ book out, and then mark Tizaz GREEN and bump SEED_VERSION as its own dedicated p
 Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clement/Qalementos files,
 Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
 of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).
+
+## SESSION HANDOFF 2026-07-20 continued -- Tizaz marked GREEN, SEED_VERSION bumped -- FULLY CLOSED
+
+Follow-up to the "Tizaz COMPLETE" handoff above. Did the standing full re-sweep (structural check:
+72/72 chapters, no gaps/duplicates, 309 verses, zero empty or duplicate verse content -- all
+confirmed programmatically), then found and used the dashboard's actual GREEN/SEED_VERSION mechanism
+in `audit-ledger.html` (a `GREEN_SEED` set + `GREEN_NOTES` dict feeding `makeBooks()`, gated by a
+client-side `SEED_VERSION` bump that forces a one-time storage reset so the new status actually
+reaches users). Added Tizaz to `GREEN_SEED`, wrote its `GREEN_NOTES` entry, bumped `SEED_VERSION` to
+`v126-2026-07-20-tizaz-green`. Verified via `node --check` and an isolated re-run of the relevant
+constants/function that Tizaz now computes as green with its note attached, before shipping.
+
+**TIZAZ IS FULLY CLOSED.** No further Tizaz work is needed unless a future session finds a defect.
+
+**Also still open, unaffected by this session:** same list as the previous handoff entries (Guba'e
+Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clement/Qalementos files,
+Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
+of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending). Next book/task: wherever Josh
+redirects -- ask before assuming.

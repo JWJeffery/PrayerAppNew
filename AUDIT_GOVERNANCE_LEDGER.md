@@ -4177,3 +4177,32 @@ happen and was intentionally left undone this session pending confirmation of th
 (the registry/dashboard files that track GREEN status and SEED_VERSION were not touched this session,
 since this rebuild only worked inside `data/bible/ET/tizazET.json` itself). See the corresponding
 RESUME_PROJECT_NOTE.md entry for the explicit next-step flag.
+
+## Tizaz marked GREEN, SEED_VERSION bumped (2026-07-20)
+
+Follow-up to the "Part 6 -- BOOK COMPLETE" entry above. Located the dashboard mechanism in
+`audit-ledger.html`: book status is computed by `makeBooks()` from two hardcoded seed sets
+(`RED_SEED`, `GREEN_SEED`) plus matching notes dicts (`RED_NOTES`, `GREEN_NOTES`); anything not in
+either seed set defaults to amber. A client-side `SEED_VERSION` string gates a one-time
+`window.storage` wipe on load so that a bumped seed value actually reaches users who already have
+older per-book statuses cached in storage, rather than the new green staying hidden behind stale
+cached state.
+
+Before flipping the status, ran the structural re-sweep called for by standing practice: all 72
+chapters present in strict 1-72 sequence with no gaps or duplicate chapter numbers; every chapter's
+verse numbering runs 1..N with no gaps; zero empty verse texts; zero duplicate verse content anywhere
+in the 309-verse book (checked programmatically, not by spot sample). No "that/the" corruption-class
+sweep was needed, consistent with the precedent set for Hermas/Didaskalia/Miracles of Mary/Book of
+Jubilees etc.: this was a fresh transcription from a single verified source, not an edit to existing
+corrupted content.
+
+Changes made in `audit-ledger.html`: added `"Tizaz"` to the `GREEN_SEED` set; added a `GREEN_NOTES`
+entry summarizing the full rebuild (source, session method, six-patch checkpoint history, OCR fixes,
+content coverage, and the re-sweep result); bumped `SEED_VERSION` from
+`v125-2026-07-20-meqabyan-copyright-correction` to `v126-2026-07-20-tizaz-green`. Verified the edited
+file is syntactically valid JS (`node --check`) and that `makeBooks()` now computes Tizaz's status as
+`green` with the new note attached, isolated and re-run outside the DOM-dependent parts of the script
+to confirm before shipping.
+
+**TIZAZ IS NOW FULLY CLOSED: content-complete, structurally re-swept, and marked GREEN on the
+dashboard.** No further action needed on this book unless a future defect is found.
