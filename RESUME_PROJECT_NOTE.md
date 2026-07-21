@@ -881,3 +881,27 @@ p. 232 -- budget accordingly for the last patch.
 Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clement/Qalementos files,
 Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
 of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).
+
+## SESSION HANDOFF 2026-07-20 continued -- Tizaz Statutes 51-61 landed
+
+**Tizaz: 61 of 72 Statutes now done and landed (this patch), up from 50.** Same source as the
+previous handoff entry (Josh's uploaded Google Books OCR scan of Horner 1904); this session used the
+already-extracted text for pp. 191-215 without needing a fresh upload.
+
+Statutes 51-61 cover: true/false prophets and the long OT-examples discourse against boasting in
+prophetic gifts (Statute 52, 19 verses), the full bishop-ordination rite and Oblation/Kuerban
+liturgy (Statute 53), presbyter/deacon/deaconess ordination cross-references, confessors, virgins
+and widows, the two-bishops-minimum rule for valid ordination, the distinct blessing/ordaining/
+deposing powers of bishop/presbyter/deacon, deaconesses' door-keeping role, first-fruits and tithes,
+and the Eulogia distribution formula. Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Tizaz rebuild
+... Part 5" entry.
+
+**Next session should:** finish the book with Statutes 62-72 -- this is the FINAL patch for Tizaz.
+Same method, same target file `data/bible/ET/tizazET.json`. Budget extra room for Statute 72, which
+per the Part 4 handoff note is longer than a typical closing chapter (includes a block of
+intercessory prayers). Once 62-72 land: mark Tizaz GREEN, bump SEED_VERSION, and do the full re-sweep
+before closing the book out, per standing practice. Source text (same OCR scan) should still be
+re-obtainable from Josh if a fresh session needs it re-uploaded; the archive.org fetch wall for this
+specific source remains unresolved for automated retrieval.
+
+**Also still open, unaffected by this session:** same list as the previous handoff entries.

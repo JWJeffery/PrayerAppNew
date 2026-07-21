@@ -4085,3 +4085,45 @@ run long and include a substantial block of intercessory prayers (for the congre
 Papas/Patriarch, for the sick, for travellers) rather than being a short closing chapter -- this
 should be budgeted for in the final patch. Dashboard/SEED_VERSION bump still deferred until the book
 is fully closed.
+
+## Tizaz rebuild, session 2026-07-20 continued -- Part 5 (Statutes 51-61 of 72), Horner 1904
+
+Continuing the checkpoint rebuild from Horner 1904 (see "Part 1" entry for source detail; source
+text for this range came from the same Google Books OCR scan uploaded for Part 4, pp. 191-215 of
+the Ethiopic-text section).
+
+This patch adds Statutes 51-61: true and false prophets and the criteria for testing them (51),
+a long discourse (Statute 52, the longest in this range at 19 verses) working through Old Testament
+examples of false priests/prophets punished by God, a warning against boasting in prophetic gifts,
+Apostolic-Fathers-style rules for itinerant apostles and prophets (drawn closely from Didache-type
+material -- worth noting given this book's own earlier content was mistakenly Didache text), church
+seating discipline by rank and sex, and first-fruits/fasting rules; the full bishop-ordination rite
+and the Oblation (Kuerban) liturgy in detail (Statute 53, second only to Statute 22 in length so
+far, covering the threefold congregational examination of the candidate, the kiss of peace, the
+dismissal of catechumens and heretics before the Oblation, the consecration and communion of clergy
+and people in order, and the care of the fragments); presbyter/deacon ordination and a cross-
+reference to the already-covered deaconess/subdeaconess/female-reader material (54); confessors
+(55); virgins and widows, including the widow's-order qualifications modeled on Judith (56); the
+requirement of at least two bishops for a valid episcopal ordination (57); the distinct powers of
+bishop, presbyter, and deacon to bless, ordain, and depose (58); further grade-of-ministry limits,
+including deaconesses confined to guarding the church doors and assisting at women's baptisms (59);
+first-fruits and tithes (60); and the four/three/two/one-part distribution formula for what is left
+of the Eulogia among bishop, presbyter, deacon, and the minor orders (61).
+
+**Running total: 61 of 72 Statutes, 46 verses added this patch (221 total).** Wording unaltered
+from Horner's translation; verse divisions follow natural sentence/paragraph breaks in the source.
+OCR-clarity fixes made silently, all confirmed against surrounding sense and this book's existing
+transliteration conventions: "Bl'or" -> "Be'or" (Balaam's father, cf. Numbers 22:5), "]^ayafas" ->
+"Kayafas" (matching "Kayafa" used elsewhere in the same statute), "Paraklltos" -> "Paraklitos".
+Statutes 58 and 59, like 38, 50, and 52, have no formal "Concerning..." rubric in the source and are
+named bare ("Statute 58", "Statute 59") per this book's established convention for such statutes.
+Statute numbers 60 and 61 were OCR-garbled in the scan ("Statute 6a", "Statute 6i") but unambiguous
+from sequence and page context.
+
+**Not yet done:** Statutes 62-72 -- partaking of first-fruits, trades and occupations, concubinage
+of unbelievers, washing of hands, resting on the sabbath and the Lord's day, further prayer-time and
+work-avoidance rules, the memorial of the departed, those persecuted for the faith, and the closing
+Statute 72 ("Concerning the Order of the Priesthood"), which per the Part 4 note runs long and
+includes a block of intercessory prayers (congregation, Papas/Patriarch, sick, travellers) -- this
+is the final patch for the book. Dashboard/SEED_VERSION bump still deferred until the book is fully
+closed and re-swept.

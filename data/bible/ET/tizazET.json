@@ -6,7 +6,7 @@
     "copyright": "Public Domain",
     "description": "The Ethiopic recension of the Statutes of the Apostles (Canones Ecclesiastici), part of the Sinodos. Source: George Horner, The Statutes of the Apostles, or Canones Ecclesiastici (London: Williams & Norgate, 1904), Translation of the Ethiopic Text, pp. 127-232. Public domain.",
     "sourceWitness": "Horner 1904, Translation of the Ethiopic Text (pp. 127-232), public domain English translation",
-    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-50 of 72 so far (parts 1-3: 1-40 landed on main; part 4: 41-50 in this patch, includes fasting/fruit rules, the hours-of-prayer discourse and sealing of the forehead, the long grace/miracles discourse, and the opening of the grades-of-ministry section). Remaining statutes 51-72 to follow in subsequent patches."
+    "rebuildNote": "REBUILD IN PROGRESS 2026-07-20: prior content was Didache 'Two Ways' material, confirmed unrelated to the real Statutes text. This file covers Statutes 1-61 of 72 so far (parts 1-4: 1-50 landed on main; part 5: 51-61 in this patch, includes true/false prophets, the full bishop-ordination rite and Oblation/Kuerban liturgy (Statute 53), presbyter/deacon/subdeacon/deaconess ordination, confessors, virgins and widows, and the opening of the first-fruits/tithes and distribution-of-Eulogia rules). Remaining statutes 62-72 to follow in the final patch."
   },
   "chapters": [
     {
@@ -1002,6 +1002,256 @@
         {
           "num": 2,
           "text": "And let not the bishops magnify themselves above the deacons, nor the presbyters again above the people who are below them, because of them consists the constitution of the assembly; nor shall they say: The bishops and presbyters are taken out of the people. And to be Christians is of ourselves, but (to be) Apostle or bishop or whatever other (order) there may be is not of ourselves but of God who gives grace. As much as this then we ourselves say concerning those who have graces imparted to them, and this further we say, going on in speaking."
+        }
+      ]
+    },
+    {
+      "num": 51,
+      "name": "Statute 51. That not everyone who prophesies is righteous, nor everyone who casts out demons is holy.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "Because Bala'am even, the son of Be'or, prophesied by divination, (being) wicked, and Kayafas with false name of Chief Priest prophesied. And Satan even foretold, and the demons who are with him, but not on account of this have they so much as a spark of fear of God, in ignorance they are trusting to the will of the malice of their thoughts. It is clear then that the impious if they prophesy do not reveal their wickedness in their prophesying."
+        },
+        {
+          "num": 2,
+          "text": "Nor do those who cast out demons (belong) to the righteous by their casting them out. They lead one another astray: like the teaching of laughter, (they who do it) and they who consort with them go to ruin. And a lawless king was not a king, but is a tyrant."
+        }
+      ]
+    },
+    {
+      "num": 52,
+      "name": "Statute 52",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And the bishop who is persuaded by error or by evil thought is not a bishop, but one with a false name. And he was not ordained by God, but by man. Like Ananyas and Samyas in Israel; and Sedekyas and Akiya, who were false prophets in Babilon. And Bala'am indeed the diviner was punished with punishment for corrupting the people of Israel with Be'el Fegor; and Kayafa at last was a self-murderer; and the sons of Askeva also, devising to expel demons, having been wounded by them, fled away suffering pains. And the kings of Esrael and of Juda when they all sinned were punished with punishment. It is clear then that bishops and presbyters with false names shall not escape from the punishment of God, and therefore it is said to them: Now, O ye priests who disgrace my Name, I will deliver you to the slaughter, as Sadeka and Akiya whom the king of Babilon roasted, as said Eremyas the prophet."
+        },
+        {
+          "num": 2,
+          "text": "This then we say, and we do not despise true prophecy, because we know that for prophecies the mind of God was upon righteous men, working (with them). But we are removing the audacity of the boastful; and we are bringing this near, (that) in the case of those who are such God removes their grace. For God resisteth the boastful, and giveth grace to the humble. Silas and Agabos amongst ourselves, when they prophesied, therefore did not make themselves equal to the Apostles nor overstepped their own measure, though they were lovers of God. And women have prophesied: first, the sister of Muse and sister of Aron, Maryam, and after this, Dobira, and after her, Ela, Aster, and Yudit: the one was with Yusyes and the other with Daryus. And the Mother of our Lord prophesied, and Elesabet also who was of her family, and Hana, and amongst ourselves also the daughters of Filepos; but these did not magnify themselves above men, but they kept their own measure. Therefore amongst you also, whether they are men or women, and they obtained any such grace, let them humble themselves, that God may delight in them, for he indeed said: To whom shall I look except to the humble and gentle and quiet one, and who trembleth at my word."
+        },
+        {
+          "num": 3,
+          "text": "But keep yourselves from the religion of demons and from gods, and from dead things keep, and from blood and things strangled, and further, a bone shall not be broken."
+        },
+        {
+          "num": 4,
+          "text": "But concerning Apostles and Prophets according to the ordinance of the Gospel thus do ye. Every apostle who comes to you shall not remain except one day or the next; and if he has need, the third also; and if he stayed longer he is a false prophet."
+        },
+        {
+          "num": 5,
+          "text": "And every prophet who speaks in the spirit shall be proved, and he shall be examined that there may be no sin (in him). And everyone who speaks in the spirit is a prophet: if he lives the life of God, he is a true prophet: by his life hitherto shall be known every false prophet, or a (true) prophet."
+        },
+        {
+          "num": 6,
+          "text": "And every prophet who orders a table in the spirit shall not eat of it: otherwise he is a false prophet."
+        },
+        {
+          "num": 7,
+          "text": "And every prophet then who teaches, but does not the truth, is a false prophet."
+        },
+        {
+          "num": 8,
+          "text": "And every prophet proved in truth, who acts in the assembly of men and acts unlawfully, shall not be judged by you, for his judgment is from God; because thus did the ancient prophets."
+        },
+        {
+          "num": 9,
+          "text": "And he who says in the spirit, Give to me gold or anything else, ye shall not listen to him. And if he speaks for another, give to him; there is no one who shall examine him."
+        },
+        {
+          "num": 10,
+          "text": "And ye shall receive everyone who comes to you in the name of our Lord, and then having proved him ye shall know, for ye have wisdom, and so (to speak) on the right hand and on the left. If he is a passer-by, help him as much as ye can, and let him not remain with you beyond the next day and the third day. And if he had need and wished, he may remain with you, if he has a trade to work at; but if he works not he shall not be supported, and if he has no trade and works not, according to your wisdom devise for him that he shall not remain with you idle. And if he is unwilling to do thus, he is a seller of the name of Christ, and ye shall beware of such. Every true prophet then who wishes to remain with you is worthy of sustenance, then support him; and therefore all first-fruits of the wine-press and the threshing-floor, of oxen, of sheep, give the first-fruits of it to the prophets, because they are your Chief Priests. And if ye have not a prophet, give to the poor. And if thou makest bread, give the first-fruit of it according to the commandment. And likewise an earthenware vessel of wine or of oil, and of honey, having opened it, having taken the first-fruit of it, give it to the poor. And gold and raiment and everything, having taken the first-fruit of it, which thou wishedst, give it according to the commandment of the Lord."
+        },
+        {
+          "num": 11,
+          "text": "Your fast also shall not be as the hypocrites, because they fast on the second day of the week, and on the fifth. But ye, fast on the fourth and the sixth (lit. the evening). And ye shall not pray as the hypocrites, but as the Lord commanded in the Gospel."
+        },
+        {
+          "num": 12,
+          "text": "And in your churches, ye presbyters and deacons, and all the congregation (on) the sabbaths, make a place for the brethren, having ordered it with all diligence and care. If one is found sitting out of his order he shall be rebuked, because he has spoiled the holy Church, the dwelling of God. And it is like as we see the animals which speak not, oxen and horses and goats and sheep according to the existing kinds, if they are awake, they ruminate, and then do not separate themselves one from another (of their own kinds), thus also in the church the youths shall sit by themselves, if there is room, and if there is not room they shall stand. The elders shall sit by themselves, and if they have children let them hold them in their arms. Further, the virgins also shall sit by themselves; if there is not sufficient room, they shall stand in front of the other women. Those who have children with them and are married shall sit by themselves. Also the widows (of the church) and the (other) widows shall sit by themselves."
+        },
+        {
+          "num": 13,
+          "text": "If brothers or sisters of (other) districts should come in, the deacon having come shall make inquiry. If one has a husband or is a widow, he shall cause them to enter and make them sit in separate places."
+        },
+        {
+          "num": 14,
+          "text": "The presbyters also shall sit in their own several places. And if another presbyter should come of the (other) districts, they shall receive him into the place which is seemly for him."
+        },
+        {
+          "num": 15,
+          "text": "And if any other man or woman comes in lay dress, either a man of the district or from other districts, being brethren, thou, presbyter, while thou speakest the word which is concerning God, or while thou hearest or readest, thou shalt not respect persons, nor leave thy ministering to command places for them, but remain quiet, for the brethren shall receive them, and if they have no place (for them) the lover of brothers or of sisters, having risen, will leave place for them."
+        },
+        {
+          "num": 16,
+          "text": "If (there are) youths, while the elder men remain sitting, having risen up, they shall leave their places. Thou, deacon, hast thou observed among those who sit a young man or a virgin, having risen up, cause to sit down that man or that woman who left (a place), then having made her rise up outside the church, cause her to stand at the door, that others may learn a lesson and leave place for their elders. Desire to make large churches (lit. houses)."
+        },
+        {
+          "num": 17,
+          "text": "And if a poor man or woman either of the district or of the (other) districts should come in and there is no place for them, thou, presbyter, make place for such with all thy heart, even if thou wilt sit on the ground, that there should not be respecting the person of man but of God."
+        },
+        {
+          "num": 18,
+          "text": "And if then we have omitted anything, our brethren, God will reveal (it) to those who are worthy, while he steers the holy Church into quiet and a harbour. And this word shall not be hidden concerning the gifts which God gave to the youths as they wished, and as they acquire the similitude of those who dwell in falsehood, and are moved because of alien spirits. And God appointed impious men to be such as either prophesied or did signs."
+        },
+        {
+          "num": 19,
+          "text": "And now the word will guide us to that which is better for the ordinance of the Church: that ye indeed, the bishops whom we ordained and sent from ourselves by the commandment of our Lord Jesus Christ -- if ye know this ordinance from us -- that ye might do all and not neglect anything, as our Lord Jesus Christ commanded, as the ordinance which we gave to you. And ye know that he who heard from us is he who heard from Christ, and he who heard from Christ heard from God the Father, to whom be glory for ever and ever. Amen."
+        }
+      ]
+    },
+    {
+      "num": 53,
+      "name": "Statute 53. Concerning the ordination of Bishops and the ordinance of the Oblation (Kuerban).",
+      "verses": [
+        {
+          "num": 1,
+          "text": "It is seemly that the bishops should be ordained, as we said before, and we command all the people in common, that he may be a man choice and honest and holy in everything, who has been chosen from the people."
+        },
+        {
+          "num": 2,
+          "text": "When they have named (him) and are content (with him) all the people shall assemble; the presbyters, and the deacons, and the bishops (also), who shall assemble on the day of the sabbath. And he who is greatest shall ask of the presbyters and deacons who are among them, saying: Is this one he who pleased you that he should be your chief? If they say altogether: Yes, he shall ask them again and say to them again: Is this one worthy of the honourable office, and has he done rightly with all honesty, and has he virtue before (lit. from) God, and did he observe justice with man? Is he able to order the men of his own house well, and has he conducted his life in truth? Has nothing been found against him? And if all of them should answer together and say: Yes, thus (it is) in truth and not in partiality, and God the Father and Christ his Son and Holy Spirit, the Spirit of righteousness, the Paraklitos, (being) judge of all; he shall ask them again even a third time, and say: Is this one worthy in truth and in right of this office; from the mouth of two or (lit. and) three every word shall be established. And if they say three times: Yes, he is worthy, they shall all spread forth their hands, and if they do thus with one consent, there shall be silence, and one great one of the great bishops shall rise up, and two other bishops with him, with the rest of the bishops all standing, and the presbyters also at the altar, praying quietly, and the deacons bearing the holy Gospel spread open upon the head of him who is to be ordained. And the bishops shall sit down upon seats and they shall say: He is worthy of it. And then all shall salute him with the kiss of the Lord, and they shall read the Holy Scriptures."
+        },
+        {
+          "num": 3,
+          "text": "And when they have finished the reading from the Gospel, the bishop who was sealed shall salute (lit. kiss) all the Church and say: May the grace of our Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all. And all shall say: With thy spirit. When he has finished saying, then all the people shall say the words of joy, and when it is finished, then he shall give them instruction and speak, (and the deacon) shall go up on a high place, and cry and say: Let not any stand here except the Faithful. Likewise when the bishop has finished all the prayer which it is proper for him to say for the sick (and) the rest, the deacon shall say to them: Kiss one another with a holy kiss. And all the priests shall kiss the bishop: and of the lay people, man shall kiss man, and woman shall kiss woman: and the young children shall stand just below the bema, and another deacon shall stand with them, that they may not quarrel with one another; and other deacons shall go to guard the men and women, that there may be no disturbance among them, and that they may not beckon one to another, nor look about, nor go to sleep. The subdeacons shall stand at the door of the women, and other deacons shall stand at the door of the men; that no one may go out, and that they let not the door be opened at the time of the holy Oblation (Kuerban), nor enter the doors of the Faithful."
+        },
+        {
+          "num": 4,
+          "text": "And the subdeacon shall bring water to the priests, that they may wash their hands as a likeness of those who are holy in their souls, and (that) we lifted (them) up to God. And the deacons shall close the gates, and no other shall come in, and he shall say: Let none of the catechumens stand here, or be here at all, lest they should hear the word and partake of the Mystery, and let there not stand any except the Faithful, nor let any of the heretics stand here. O ye women, guard lest your children should run about here and there, or be disorderly, or lest their days should be few. And let not any bear malice in his heart against another, nor any stand here who is not worthy of God: and they shall stand in fear and trembling, that they may be worthy of this work."
+        },
+        {
+          "num": 5,
+          "text": "And after this the deacon shall bring the bread of the sacrifice to the bishop into the house of the sanctuary, and the presbyters shall stand on the left hand, as the likeness of the Apostles who stood with their Teacher. The deacons shall stand on either side at the altar, and they shall hold the flabella made of anything of beautiful appearance, or of feathers of peacock, or of cotton fabric of beautiful appearance, that they may drive away little flying creatures, lest any of them should fall into the cup. And thus the chief priest shall pray over the sacrifice, that the Holy Spirit may descend and dwell upon them; upon the bread that it may become the Body of Christ, and upon the cup that it may become the Blood of Christ."
+        },
+        {
+          "num": 6,
+          "text": "And then the bishop shall say the coming of the Holy Spirit, and when he has finished the prayer which is proper to be said thus, the bishop himself shall first communicate, and after him the presbyters, and afterwards the deacons, and afterwards likewise the subdeacons, and after them the readers, and after them all the people shall receive."
+        },
+        {
+          "num": 7,
+          "text": "The bishop shall administer, saying: This (is) the bread which came down from the heavens, this is the Body of Christ. And he who receives shall say: Amen. And then the deacon shall administer the cup and say: This is the Blood of Christ, and this is the cup of life. And he who receives shall say: Amen and Amen. They shall sing psalms until all have received the Oblation, and when all the people have received, afterwards they shall administer to the women. And after the singers have finished singing the psalms, then the deacon shall chant, saying: We have received of the precious Body which is the Body of Christ, and we thank him that he makes us worthy to partake of the precious and holy Mystery."
+        },
+        {
+          "num": 8,
+          "text": "After this the bishop shall give thanks and pray for those who have eaten the Body of Christ and for those who have drunk of the Blood of Christ. And when he has finished praying, the deacon shall say: Bow your head before God, that he may bless you. And when further he has done that with which they are blessed, the deacon shall say: Go away in peace. And as for the fragments, if any are left, the presbyters and deacons shall take care that nothing is left of the Oblation, and they shall take great care that not much should be left, lest they be guilty of great error and sin, like the sons of Aaron and the children of Ela whom the Holy Spirit destroyed, because they profaned the sacrifice of God; how much more they who profane the Body of Christ and his precious Blood, and esteem it temporal food of flesh, whereas it is spiritual to those who receive it in purity. And this we command you, bishops, presbyters, and deacons, concerning the service of the holy Mystery."
+        }
+      ]
+    },
+    {
+      "num": 54,
+      "name": "Statute 54. Concerning the ordination of Presbyters and Deacons. Concerning Subdeacons, and concerning Deaconesses and Subdeaconesses and female Readers.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And thou, bishop, ordain the presbyter, and lay hand upon his head, while the presbyters and all the deacons stand by. And pray and ordain. Again, for the deacons, lay hand also upon them, while the presbyters and all the deacons stand by."
+        },
+        {
+          "num": 2,
+          "text": "Concerning the Deaconesses and Subdeaconesses and female Readers, we have already spoken concerning them."
+        }
+      ]
+    },
+    {
+      "num": 55,
+      "name": "Statute 55. Concerning those who confessed.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "The confessor shall not be ordained. This is a thing of his own will. He is worthy of great honour, for he confessed God, and he confessed before peoples and kings. If he had a call for this he shall be ordained bishop; or as presbyter let him be ordained: and likewise this ordination is because of his confession. If he did not finish (his course), but turned back and denied, he shall be deposed; because not only did he deny Christ, but became an enemy as one of the unbelievers."
+        }
+      ]
+    },
+    {
+      "num": 56,
+      "name": "Statute 56. Concerning the Virgins and Widows.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And he shall not lay hand upon virgins, because this thing is not a commandment from God, for it is concerned with the character of a man; and it is not that (the virgin) despises marriage, but that he may have time for the service of God."
+        },
+        {
+          "num": 2,
+          "text": "And concerning Widows. He shall not lay hand upon a widow, but if she lives alone, and her husband has been dead many years, being a widow of long time, and if she has lived industriously, and if no accusation is found against her, and if she was able to order properly the men of her own house like Yudit, and if she loved all good things like Yudit, then she shall be put (lit. ordained) into the Order of Widows. And if her husband was dead a short time, and not long, she shall not be trusted nor put into the Order of Widows, but shall remain a long time, with good works, with fasting and prayer, keeping apart, that she may subdue herself patiently. The horse indeed and the mule are not controlled except by a strong rein."
+        },
+        {
+          "num": 3,
+          "text": "Concerning male Virgins. They shall not ordain male virgins, because this thing is from the will of the heart alone by the grace of God and by the love of Christ Jesus; for when the Holy Spirit makes abode with a man, he obtains grace and healing, being known by the grace which he has, which will be known to all men. And if he had a call for this work (of the ministry), that he should be ordained bishop or presbyter or deacon, they shall lay hand upon him (lit. them)."
+        }
+      ]
+    },
+    {
+      "num": 57,
+      "name": "Statute 57. Concerning that it is seemly that the bishop who is with you should be ordained by bishops.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "It is seemly that a bishop should be ordained by three bishops or by two. If one bishop alone laid hand upon him, he shall be deposed, and he also who ordained him. If it was because of the ferocity of men (that it was done) by a bishop alone, because it was not possible to gather an assembly on account of the ferocity of men, and not through pride and unbelief: if it was thus, he shall take authority from many bishops, and it shall be proper for him, and it shall be by their commandment, and he shall not be deposed, nor he who ordained him."
+        }
+      ]
+    },
+    {
+      "num": 58,
+      "name": "Statute 58",
+      "verses": [
+        {
+          "num": 1,
+          "text": "The bishop shall bless, and they shall not bless him. And (the bishop) shall bless the first-fruits himself. And he shall ordain men. And he shall offer the Oblation, and he shall administer the Eulogia (awlogiya) and take it from a bishop, never from a presbyter."
+        },
+        {
+          "num": 2,
+          "text": "The bishop shall depose all the ordained (clergy) whom it is right to depose, except a bishop, for he alone is not able to do that."
+        },
+        {
+          "num": 3,
+          "text": "The presbyter shall bless and shall be blessed, and he shall take the Blessing (barakat) from the bishop and from a presbyter like himself, and he administers to a presbyter like himself. He shall ordain, but shall not depose. Further, he shall inhibit those who sin, if they are worthy of such punishment."
+        },
+        {
+          "num": 4,
+          "text": "The deacon shall not bless nor give the Blessing. He shall take the Blessing from the bishop or from the presbyter. He shall not baptise or offer (the Oblation), but when the bishop has offered, or the presbyter is alone, then he administers to the people, not as (one of) the priests, but as minister of the priests."
+        }
+      ]
+    },
+    {
+      "num": 59,
+      "name": "Statute 59",
+      "verses": [
+        {
+          "num": 1,
+          "text": "And of the different ordained (clergy), the presbyters shall not do the work of the deacons, nor anything which is not theirs (lit. his)."
+        },
+        {
+          "num": 2,
+          "text": "The deaconesses shall not bless, and they shall not do any work which the presbyters and deacons do, but they shall keep the gates of the church. Except this there is no other work which they do, except the ministering to the presbyters when they baptise the women, for this is that which is proper for them."
+        },
+        {
+          "num": 3,
+          "text": "The deacon shall inhibit the subdeacon and the readers and the singers and the deaconesses. Thus indeed it is suitable for him, if the presbyter is not present. It is not suitable for the subdeacons to inhibit either the readers or the server of the Scripture and the deaconesses, neither those in orders nor the (lay) people, because they are the servants of the deacons."
+        }
+      ]
+    },
+    {
+      "num": 60,
+      "name": "Statute 60. Concerning the first-fruits and tithes.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "All the first-fruits [and tithes] they shall bring to the bishops and presbyters and deacons for their support. But all the tithes they shall bring for the support of the rest of those in orders, and for the virgins and the widows, for those are afflicted by poverty, because the first-fruits are for the priests and their ministers."
+        }
+      ]
+    },
+    {
+      "num": 61,
+      "name": "Statute 61. Concerning that which is left of the Oblations.",
+      "verses": [
+        {
+          "num": 1,
+          "text": "The Eulogia which is left of the Mystery besides (lit. from) that which they offered, the deacons shall distribute among the priests, with the knowledge of the bishop or presbyter. Four parts shall be given to the bishop, and three shall be given to the presbyter, and to the deacon two parts, and to the others, to the subdeacon and to the reader and to the singers and to the deaconesses, one part."
+        },
+        {
+          "num": 2,
+          "text": "This then is good and acceptable before God; everyone shall perform his ordinance. And there is not in the church one who did a sign, except he performed the ordinance in the good and honourable (manner) in which it should be done."
         }
       ]
     }
