@@ -996,3 +996,28 @@ Josippon, Malke'a Guba'e/Iyasus) are intentionally parked, not available to pick
 his say-so. Everything else on the carried-forward list is unchanged from prior handoffs (Guba'e
 Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; human verification read-throughs of
 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).
+
+## SESSION HANDOFF 2026-07-21 continued -- dashboard semantics corrected: audited-blocked books are RED, not amber
+
+Josh caught that Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, and Rest of Baruch -- all
+investigated this session with real findings and decisions recorded -- were sitting in amber, which
+looks identical to "never looked at." That's wrong and hides the audit work. **Corrected: all five
+moved to RED_SEED with full RED_NOTES entries** explaining exactly what's blocked (copyright,
+missing source, or partial gap) and what the recorded decision is. `SEED_VERSION` now
+`v128-2026-07-21-audited-blocked-books-red`.
+
+**Standing rule going forward, worth internalizing for any future session touching this dashboard:**
+amber = genuinely not yet audited. The moment a book has been investigated -- even if the conclusion
+is "blocked, decision deferred" rather than "fixed" -- it must move to red (or green, if it turns out
+clean) with a RED_NOTES/GREEN_NOTES entry explaining the finding. Never leave an audited book in
+amber.
+
+**Corrected ET-corpus status: 7 green (Abtilis, Ascension of Isaiah, Book of Jubilees, Didaskalia,
+Hermas, Miracles of Mary, Tizaz), 12 red (1/3/7 Clement, 1/2/3 Meqabyan, Malke'a Virgin Mary, Fetha
+Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, Rest of Baruch), 12 amber -- genuinely untouched:
+2/4/5/8 Clement (ET), Clement Book of Rolls/Visionary/6/Statutes, Admonitions, Guba'ekana, Sirate
+Tsion, Mazaheta.**
+
+**Next session should:** pick up one of the 12 genuinely-untouched amber books if continuing this
+backlog (Mazaheta or the non-red Clement-family files are probably the most tractable starting
+points), or whatever else Josh redirects to.

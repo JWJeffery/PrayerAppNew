@@ -4287,3 +4287,33 @@ flagged for a pending human-verification read-through, per the carried-forward l
 "Salutations to the Members of the Body of the Virgin Mary" (pp. 236-244) is very likely the actual
 source text for that book. Flagged here for whoever next works Malke'a Virgin Mary; not actioned this
 session since it wasn't what was asked.
+
+## Dashboard semantics correction, session 2026-07-21 continued -- audited-and-blocked books moved to RED
+
+Josh caught a real problem with how the previous session represented status: Fetha Nagast, Josippon,
+Malke'a Guba'e, Malke'a Iyasus, and Rest of Baruch had all been actively investigated this session
+(sources checked, decisions made, in Rest of Baruch's case content actually shipped) but were left
+sitting in plain amber -- which on this dashboard means "not yet looked at." That's wrong: amber
+should mean genuinely unaudited, not "audited, found blocked, decision recorded." Conflating the two
+hides real audit work and makes it look like nothing has happened on these books.
+
+**Correction: all five moved from amber to RED_SEED, each with a full RED_NOTES entry.** Per Josh's
+explicit rule -- "if it is unsourceable, turn it RED" -- confirmed-blocked books get RED regardless of
+whether the block is a copyright problem (Fetha Nagast), a genuinely missing source (Josippon,
+Malke'a Guba'e, Malke'a Iyasus), or a partial gap in an otherwise-solid book (Rest of Baruch, where
+3 of 4 sub-books are fine and shipped, but the 4th has no source and the whole book is marked red to
+reflect that the audit is complete and the gap is understood, not unknown).
+
+This clarifies the real semantics of this dashboard's three-state model for anyone picking it up
+later: **green** = fully verified and complete; **red** = audited, and something specific is
+confirmed wrong or blocked (whether that's corrupted content, a provenance question, a copyright
+problem, or a missing source); **amber** = genuinely not yet looked at. A book should never sit in
+amber once it has actually been investigated, even if the investigation's conclusion is "we can't fix
+this yet" rather than "here's the fix."
+
+`SEED_VERSION` bumped to `v128-2026-07-21-audited-blocked-books-red`.
+
+**Corrected ET-corpus status count: 7 green, 12 red, 12 amber (down from 17 before this correction).**
+The 12 remaining amber books are genuinely untouched: 2/4/5/8 Clement (ET), Clement Book of Rolls,
+Clement Visionary, Clement 6, Clement Statutes, Admonitions, Guba'ekana, Sirate Tsion, and Mazaheta --
+none of these have been investigated yet, unlike the five just moved to red.
