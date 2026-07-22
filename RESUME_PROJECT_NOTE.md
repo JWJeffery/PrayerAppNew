@@ -1021,3 +1021,31 @@ Tsion, Mazaheta.**
 **Next session should:** pick up one of the 12 genuinely-untouched amber books if continuing this
 backlog (Mazaheta or the non-red Clement-family files are probably the most tractable starting
 points), or whatever else Josh redirects to.
+
+## SESSION HANDOFF 2026-07-21 continued -- entire ET corpus now correctly shows red/green, zero amber
+
+Before picking a "next unaudited book" per Josh's instruction, checked ledger history for the 12
+still-amber books and found ALL of them already had documented findings from the 2026-07-16/18/20
+sessions -- the dashboard just was never updated. Same class of error as the five just corrected,
+caught before repeating it by actually reading the history instead of trusting the dashboard's amber
+label. All 12 moved to RED_SEED with notes: 2/4/5/8 Clement + Clement Book of Rolls/Visionary/6/
+Statutes (confirmed thin, non-fabrication content-completeness finding), Admonitions and Sirate Tsion
+(confirmed unsourceable -- checked directly against bible.ertale.com, neither Gessew nor Ser'ata Seyon
+has a PD English translation), Guba'ekana (misidentified title + condensed, but has a real concrete
+source lead: CCEL's NPNF2-14 Nicene canons volume), and Mazaheta (blocked on an unresolved title/
+identity question). `SEED_VERSION` now `v129-2026-07-21-et-corpus-fully-audited-red`.
+
+**Final ET-corpus status: 7 green, 24 red, 0 amber.** There is no more "unaudited" book to pick up --
+every ET book has been looked at at least once. Real next-step categories going forward:
+1. **Rebuild targets with a source lead in hand:** Guba'ekana (CCEL NPNF2-14, most tractable),
+   non-red Clement family (R.H. Charles' APOT, unconfirmed whether it actually covers this material).
+2. **Confirmed-unsourceable, parked for post-v1.0 original translation:** Fetha Nagast, Josippon,
+   Malke'a Guba'e, Malke'a Iyasus, Admonitions, Sirate Tsion.
+3. **Blocked on a prerequisite identity question:** Mazaheta.
+4. **Rebuilt, awaiting a human verification read-through to go green:** 1-3 Meqabyan, Malke'a Virgin
+   Mary (Abtilis and Tizaz also lack a line-by-line human check but were independently confirmed clean
+   via structural re-sweep and cross-source corroboration this session, hence green not red).
+
+**Next session should:** given the above, Guba'ekana is the clearest actionable rebuild target left
+in the ET corpus (real CCEL source, just needs the plain-20-vs-expanded-Arabic-canons edition
+question confirmed before transcribing). Otherwise, ask Josh which category to prioritize.
