@@ -1049,3 +1049,62 @@ every ET book has been looked at at least once. Real next-step categories going 
 **Next session should:** given the above, Guba'ekana is the clearest actionable rebuild target left
 in the ET corpus (real CCEL source, just needs the plain-20-vs-expanded-Arabic-canons edition
 question confirmed before transcribing). Otherwise, ask Josh which category to prioritize.
+
+## SESSION HANDOFF 2026-07-21 continued -- Guba'ekana rebuild STARTED but NOT COMPLETED, no repo changes this session
+
+Picked Guba'ekana as the next rebuild target (per its own RED_NOTES entry: misidentified title,
+severely condensed, but with a real concrete public-domain source lead). This session confirmed the
+source and gathered the real text, but hit repeated tool-call failures partway through assembling the
+rebuild and did not finish it. **No commits were made this session -- `data/bible/ET/guba'ekanaET.json`
+on main is unchanged, still the old fabricated 9-chapter/23-verse content.** Nothing to `git am` or
+push from this session.
+
+**Source confirmed and already fetched, ready for the next session to use directly (no need to
+re-search or re-fetch):** Henry R. Percival's translation in Philip Schaff's *Nicene and Post-Nicene
+Fathers*, Series 2, Vol. 14, *The Seven Ecumenical Councils* (NPNF2-14), public domain, hosted at
+CCEL. Confirmed this is the plain-20-canon tradition (not the expanded 84-canon Arabic/Ethiopic
+tradition) -- the app's existing content doesn't reference the Ethiopian-patriarchate-specific canon,
+consistent with the plain tradition.
+
+**MAJOR FINDING confirmed this session, not previously known:** the app's existing chapter 1 ("The
+Confession of the 318 Holy Fathers") is not actually the 325 Nicene Creed at all -- it's the *later*
+381 Niceno-Constantinopolitan Creed (it includes "the Holy Spirit, the Lord and Giver of Life, who
+proceedeth from the Father," language that postdates Nicaea by 56 years and belongs to the Council of
+Constantinople instead). The real 325 Creed, confirmed directly from CCEL, is shorter and ends in an
+anathema clause against Arian formulas that the app's version omits entirely. This is a second,
+independent confirmation (beyond the "9 chapters/23 verses" thinness already logged) that this file's
+content is invented rather than transcribed.
+
+**Real source text for the full rebuild, fetched and confirmed this session (URLs below still work,
+re-fetch is cheap if needed, but the text is also reproduced in this session's transcript):**
+- The real 325 Creed with its anathema: `https://www.ccel.org/ccel/schaff/npnf214.vii.iii.html`
+- Canon I: `npnf214.vii.vi.i.html`, Canon II: `.iii.html`, Canon III: `.iv.html`, Canon IV: `.v.html`,
+  Canon V: `.vi.html`, Canon VI: `.viii.html`, Canon VII: `.x.html`, Canon VIII: `.xii.html`,
+  Canon IX: `.xiv.html`, Canon X: `.xv.html`, Canon XI: `.xvi.html`, Canon XII: `.xviii.html`,
+  Canon XIII: `.xix.html`, Canon XIV: `.xxi.html`, Canon XV: `.xxii.html`, Canon XVI: `.xxiv.html`,
+  Canon XVII: `.xxv.html`, Canon XVIII: `.xxvii.html`, Canon XIX: `.xxviii.html`, Canon XX: `.xxx.html`
+  (all under the `ccel.org/ccel/schaff/` path; the irregular jump in numbering is because CCEL
+  interleaves each canon with its own separate "Notes"/commentary page in the site's own pagination,
+  which is not part of the canon text itself and should not be transcribed).
+- Each canon page contains the real canon text followed by "Notes." and then extensive Ancient-
+  Epitome/Balsamon/Hefele/etc. scholarly commentary -- **only the text before "Notes." is the actual
+  canon; the commentary is Percival's own apparatus and should be excluded from the transcription**,
+  same principle as stripping Horner's/Schodde's footnotes for Tizaz/Abtilis.
+
+**Planned rebuild structure (not yet built):** Chapter 1 = the real Nicene Creed (2 verses: creed
+text, then the anathema clause). Chapters 2-21 = Canons I through XX, one canon per chapter, verse
+divisions at natural sentence breaks the same way as every other rebuild this project has done. This
+replaces the current fabricated content (a paraphrased "confession," an invented "Unity of the
+Godhead" chapter with no correspondence to any real Nicene canon, canons that don't match the real
+20 canons' actual content or order, and an invented "Final Blessing" -- none of this exists in the
+real source).
+
+**Next session should:** build the chapters JSON from the text already gathered (in this session's
+transcript and/or by re-fetching the URLs above, which are cheap single-page fetches), insert via the
+same string-replacement method used for Tizaz/Abtilis, update `meta` to cite Percival/NPNF2-14 as the
+source, do the standard structural re-sweep, write the ledger entry, generate the `git format-patch`
+file, and surface the `git am` + `git push origin main` commands -- the full checkpoint discipline
+this project uses, none of which happened this session because the rebuild itself was never
+finished. Recommend building it in 2-3 smaller patches (e.g., Creed + Canons I-X, then XI-XX) rather
+than attempting the whole file in one shot, given this session's difficulty assembling one large
+tool call.
