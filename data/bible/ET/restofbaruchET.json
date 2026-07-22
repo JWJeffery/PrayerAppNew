@@ -12,7 +12,7 @@
     "contentSources": {
       "book1_lamentations": "Douay-Rheims Bible (DRB), reused directly from this app's own already-verified OT/lamentations.json.",
       "book2_epistleOfJeremiah": "Douay-Rheims Bible (DRB), reused directly from this app's own already-verified OT/letterofjeremiah.json (72 verses; DRB's own versification merges what other translations count as a 73rd verse into v.72 -- a known, already-governed translation-structure merge, not a defect).",
-      "book3_prophecyAgainstPashhur": "UNSOURCED. No free or public-domain English translation located this session. Left empty and flagged rather than fabricated.",
+      "book3_prophecyAgainstPashhur": "UNSOURCED. No free or public-domain English translation located. Ships as a 'Coming soon...' placeholder per Josh's governance decision (2026-07-21) rather than fabricated content -- see AUDIT_GOVERNANCE_LEDGER.md.",
       "book4_paralipomenaOfJeremiah": "Robert Kraft & Ann Elizabeth Purintun, 'Paraleipomena Jeremiou: An English Translation' (SBL, 1971/1972), Longer Version, public domain, CATSS edition, fetched from ccat.sas.upenn.edu. Chapter/verse numbers are Kraft's own (Greek-tradition, modern scholarly edition) -- NOT a verified match to Dillmann's original Ethiopic verse divisions, which were not accessible this session. Verse 3.9 is genuinely absent from this source text (a manuscript gap in Kraft's base text, not a transcription omission)."
     },
     "honestNote": "This file is a modern synthesis assembled from independently-sourced, freely-available components, following the same reconstruction method (though not the same specific edition) as the Ethiopian Orthodox Bible Project's own published synthesis. It is NOT a direct translation of a single primary source, because no single complete English translation of the true Ethiopic Sagoqawa Eremyas is known to exist, per the Ethiopian Orthodox Bible Project's own explicit statement. Book 3 (Prophecy against Pashhur) is left honestly empty rather than fabricated. See AUDIT_GOVERNANCE_LEDGER.md's 2026-07-17 entries for full detail."
@@ -970,9 +970,14 @@
       "chapters": [
         {
           "num": 1,
-          "verses": [],
+          "verses": [
+            {
+              "num": 1,
+              "text": "Coming soon..."
+            }
+          ],
           "contentStatus": "unsourced_pending",
-          "note": "No free or public-domain English translation of this passage could be located. It survives only in August Dillmann's 1866 Latin/Ge'ez critical edition (Chrestomathia Aethiopica) and has not, to our knowledge, been independently translated into English except by one specific purchase-only modern edition. Left empty rather than fabricated. See AUDIT_GOVERNANCE_LEDGER.md for detail."
+          "note": "No free or public-domain English translation of this passage could be located. It survives only in August Dillmann's 1866 Latin/Ge'ez critical edition (Chrestomathia Aethiopica) and has not, to our knowledge, been independently translated into English except by one specific purchase-only modern edition. Placeholder text shown to the user rather than fabricated content, per Josh's explicit governance decision (2026-07-21): ship books 1, 2, and 4 as accessible now; this book stays a 'Coming soon...' placeholder until a public-domain source is found or an original translation is commissioned. See AUDIT_GOVERNANCE_LEDGER.md for detail."
         }
       ]
     },

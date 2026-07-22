@@ -4206,3 +4206,84 @@ to confirm before shipping.
 
 **TIZAZ IS NOW FULLY CLOSED: content-complete, structurally re-swept, and marked GREEN on the
 dashboard.** No further action needed on this book unless a future defect is found.
+
+## Governance decisions, session 2026-07-21 -- Fetha Nagast, Rest of Baruch, Josippon, Malke'a Guba'e/Iyasus, Abtilis
+
+Follow-up session after Tizaz closed GREEN. Investigated the remaining amber ET-corpus backlog and
+brought back concrete findings for Josh's decision on four blocked/uncertain books, plus resolved one
+open identity question. Recording all decisions here since none of this is a "fix" in the usual
+content-rebuild sense -- it's governance direction that future sessions need to inherit correctly.
+
+**Abtilis -- identity question RESOLVED, marked GREEN.** See the corresponding GREEN_NOTES entry in
+`audit-ledger.html` for full detail. In short: bible.ertale.com's own published sources page
+explicitly states "G. H. Schodde... Public-domain English of the Ethiopic recension of the Apostolic
+Canons (the Abtelis portion of the Sinodos)" and separately states Gessew has no public-domain
+English translation at all -- both facts independently confirm Schodde = Abtelis, not Gessew, closing
+the identity question left open in the initial 2026-07-20 rebuild. `SEED_VERSION` bumped to
+`v127-2026-07-21-abtilis-green`.
+
+**Fetha Nagast -- GOVERNANCE DECISION: fresh translation from Guidi's 1899 Italian, scheduled AFTER
+v1.0 ships.** Josh's explicit call, given the existing 34 chapters likely derive from the
+copyrighted Tzadua/Strauss 1968 translation (confirmed active copyright, see the 2026-07-17 ledger
+entry). No content work performed this session -- this is a scheduling decision, not a content
+decision. Whoever picks this up post-v1.0 should start from Ignazio Guidi's 1899 Italian translation
+(public domain; the underlying 13th-century legal text itself is also public domain) and produce an
+original English translation, per the options laid out in that earlier entry. The existing 34
+chapters remain in the app unchanged in the meantime -- not reviewed, not removed, not flagged to
+the user, since Josh's decision was specifically to defer the work, not to add a user-facing
+disclaimer now.
+
+**Rest of Baruch -- GOVERNANCE DECISION: ship what's sourced, placeholder for what isn't.** Books 1
+(Lamentations, DRB), 2 (Epistle of Jeremiah, DRB), and 4 (Paralipomena of Jeremiah, Kraft & Purintun
+1971/1972) remain as already-shipped, already-sourced content -- no change needed there. Verified
+this session that Book 4's source really is public domain: the CCAT electronic edition explicitly
+labels itself "Public Domain CATSS edition," and Robert Kraft, a co-author/rights-holder of the
+underlying SBL volume, is the one who released it that way -- a genuine rights-holder PD dedication,
+not a third-party unauthorized mirror (a materially different situation from Fetha Nagast's Tzadua
+problem). Book 3 (Prophecy against Pashhur) has no known public-domain English source (survives only
+in Dillmann's 1866 Latin/Ge'ez critical edition); per Josh's decision, this book's single chapter now
+ships with an honest "Coming soon..." placeholder verse instead of an empty verses array, so the user
+sees an intentional message rather than a blank page. `meta.contentSources.book3_prophecyAgainstPashhur`
+updated to reference this decision. This book was NOT added to GREEN_SEED (Book 3 is still genuinely
+incomplete) -- flagging this as a question for Josh: does a book with one deliberately-placeholdered
+sub-book count as green, amber, or does it need its own intermediate status? Left at existing (amber)
+pending his call.
+
+**Josippon -- GOVERNANCE DECISION: same as Fetha Nagast, deferred to post-v1.0.** New finding this
+session: the existing 93 verses across 46 chapters ("the complete history of the Jewish people from
+the division of nations to the fall of Masada") reads as smooth modern paraphrase, not a period
+translation, and is implausibly compressed for what the real Ethiopic Zena Ayhud (the Ethiopic
+translation of Sefer Yosippon) actually is -- a substantial medieval chronicle. Checked directly:
+no free, complete English translation of Zena Ayhud specifically exists. The only complete
+translation found is Murad Kamil's 1938 German translation (*Des Josef Ben Gorion (Josippon)
+Geschichte der Juden: Zēnā Aihūd*), not English; modern academic English work (e.g. an FSU
+dissertation providing English translations of selected passages) is partial and not public-domain-
+released. This is very likely the same "plausible fabricated content standing in for a real,
+identifiable text" failure class already found in 1-3 Meqabyan and Abtilis, but unlike those two,
+there is currently no accessible real source to rebuild from -- an original English translation
+(from Kamil's German, or fresh from the Hebrew Sefer Yosippon with an explicit caveat about content
+differences between the Hebrew and Ethiopic recensions) would be needed. Per Josh's decision, this
+work is deferred to after v1.0 ships, same as Fetha Nagast. Existing content left unchanged in the
+meantime.
+
+**Malke'a Guba'e / Malke'a Iyasus -- Budge lead checked, came back negative for these two specific
+books; GOVERNANCE DECISION: same as Fetha Nagast, deferred to post-v1.0.** Investigated whether
+E. A. Wallis Budge's public-domain translations of Ethiopic Marian literature cover either of these
+two specific Malke'a hymns (Malke'a Guba'e = salutation to the Assembly of Saints; Malke'a Iyasus =
+salutation to the members of Christ's body). Found and confirmed the real, relevant Budge volume is
+*Legends of Our Lady Mary the Perpetual Virgin and Her Mother Hanna* (Oxford University Press/H.
+Milford, 1922; public domain by age) -- but its actual contents are "Salutations to the Members of
+the Body of Hanna" (p. 8) and "Salutations to the Members of the Body of the Virgin Mary" (p. 236),
+plus Covenant-of-Mercy material -- i.e. Malke'a Hanna and Malke'a Maryam, not Malke'a Guba'e or
+Malke'a Iyasus. No English translation of either target book was found in this or any other
+public-domain source checked (malkeagubae.com's own scholarly bibliography for this exact genre lists
+only German/French/Italian academic articles for the Guba'e and related Malke'a texts, no complete
+public-domain English translation). Existing content in both files is unreviewed and left unchanged
+pending post-v1.0 work.
+
+**Bonus finding, not part of what was asked but worth recording:** the Budge 1922 volume found above
+is a real, usable public-domain lead for the already-RED "Malke'a Virgin Mary" file (currently
+flagged for a pending human-verification read-through, per the carried-forward list) -- its
+"Salutations to the Members of the Body of the Virgin Mary" (pp. 236-244) is very likely the actual
+source text for that book. Flagged here for whoever next works Malke'a Virgin Mary; not actioned this
+session since it wasn't what was asked.

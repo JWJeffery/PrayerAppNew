@@ -958,3 +958,41 @@ Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; non-red Clemen
 Malke'a Guba'e/Iyasus, Mazaheta, and Josippon items carried forward; human verification read-throughs
 of 1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending). Next book/task: wherever Josh
 redirects -- ask before assuming.
+
+## SESSION HANDOFF 2026-07-21 -- Abtilis GREEN, four governance decisions recorded
+
+Follow-up to Tizaz closing GREEN. Investigated the remaining amber ET backlog and got explicit
+direction from Josh on four blocked books, plus resolved Abtilis's open identity question.
+
+**Abtilis: RESOLVED and marked GREEN.** Schodde 1885 = Abtelis, confirmed via bible.ertale.com's own
+sources page (explicit statement, plus the independent fact that Gessew has no PD English
+translation at all -- both point the same way). SEED_VERSION now `v127-2026-07-21-abtilis-green`.
+
+**Four governance decisions recorded (see AUDIT_GOVERNANCE_LEDGER.md's "Governance decisions,
+session 2026-07-21" entry for full detail on each):**
+- **Fetha Nagast:** fresh translation from Guidi's 1899 Italian, scheduled for AFTER v1.0 ships.
+  Existing 34 (copyright-tainted) chapters left in place unchanged until then.
+- **Rest of Baruch:** Books 1, 2, 4 (already sourced -- Book 4's Kraft/Purintun source confirmed
+  genuinely public domain this session, a real rights-holder PD dedication, not a Tzadua-style
+  problem) ship as-is. Book 3 (Prophecy against Pashhur, no PD source exists) now shows an honest
+  "Coming soon..." placeholder verse instead of an empty verses array. NOT marked GREEN -- open
+  question for Josh: does a book with one deliberately-placeholdered sub-book count as green, amber,
+  or need its own status? Left amber for now.
+- **Josippon:** same as Fetha Nagast, deferred to post-v1.0. New finding: existing 93-verse content
+  looks like the same "plausible fabrication" pattern as Meqabyan/Abtilis, but no accessible English
+  source for the Ethiopic Zena Ayhud exists (only a 1938 German translation by Kamil) -- an original
+  translation will be needed when this is picked up.
+- **Malke'a Guba'e / Malke'a Iyasus:** Budge lead checked and came back negative for these two
+  specific books (found a real Budge 1922 PD source, but it covers Malke'a Hanna and Malke'a Maryam,
+  not Guba'e or Iyasus). Same as Fetha Nagast, deferred to post-v1.0.
+
+**Bonus lead for later, not actioned:** that same Budge 1922 volume (*Legends of Our Lady Mary*) is
+a real, usable source for the already-RED "Malke'a Virgin Mary" file -- its "Salutations to the
+Members of the Body of the Virgin Mary" (pp. 236-244) very likely IS that book's real text. Worth
+picking up whenever Malke'a Virgin Mary's pending human-verification review happens.
+
+**Next session should:** ask Josh what's next -- the post-v1.0-deferred items (Fetha Nagast,
+Josippon, Malke'a Guba'e/Iyasus) are intentionally parked, not available to pick up early without
+his say-so. Everything else on the carried-forward list is unchanged from prior handoffs (Guba'e
+Kana unsourceable; Sirate Tsion and Admonitions/Gitsew unsourced; human verification read-throughs of
+1-3 Meqabyan and Malke'a Virgin Mary rebuilds still pending).
