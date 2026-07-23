@@ -1155,3 +1155,33 @@ handoff except Guba'ekana moving from category 1 (rebuild target with source lea
 
 **Next session should:** ask Josh which category to prioritize, or pick up the Clement-family lead
 if continuing unassisted.
+
+## SESSION HANDOFF 2026-07-22 continued -- Clement/Qalementos governance call made, deferred to post-v1.0
+
+Investigated the "non-red Clement family via R.H. Charles' APOT" lead flagged in the prior handoff
+before starting any rebuild. **APOT does not cover this material** -- all 11 Clement-family files
+(1-8 Clement, Book of Rolls, Visionary, Statutes) self-identify internally as the Ethiopic
+Qalementos (Peter's revelations to Clement of Rome), an unrelated New-Testament-era work; APOT is
+Old Testament pseudepigrapha. Real PD source is S. Grebaut's French translation (Revue de l'Orient
+Chretien, 1907-1917) -- French, not English. Modern critical edition (Bausi) is Italian, in
+copyright. A 2025 English translation exists (Lumpkin) but is commercial, not PD.
+
+**GOVERNANCE DECISION (Josh, 2026-07-22): Clement/Qalementos deferred to post-v1.0**, same queue as
+Fetha Nagast/Josippon/Malke'a Guba'e/Iyasus/Admonitions/Sirate Tsion. Logged in
+AUDIT_GOVERNANCE_LEDGER.md and the shared "2 Clement (ET)" anchor note in audit-ledger.html. No
+content changes to the 11 files -- scheduling decision only.
+
+**Separately fixed:** the two confirmed stray Korean-character artifacts (3 Clement 2:4, 7 Clement
+3:1, both '그' -> 'that'). Mechanical fix only -- does not resolve the underlying no-source problem,
+just removes a non-English character from otherwise-English prose. RED_NOTES updated on both.
+
+**ET-corpus status unchanged from prior handoff except this closes an open question:** 8 green, 23
+red, 0 amber. Deferred-to-post-v1.0 queue now: Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a
+Iyasus, Admonitions, Sirate Tsion, and now Clement/Qalementos (11 files, one queue item). Remaining
+open items: Mazaheta (identity question), 1-3 Meqabyan + Malke'a Virgin Mary (awaiting human
+verification read-through).
+
+**Next session should:** ask Josh which category to prioritize -- there is no more untouched
+"rebuild target with a source lead in hand" left in the ET corpus; everything remaining either needs
+an original translation (post-v1.0, parked), a human read-through, or Mazaheta's identity question
+resolved first.
