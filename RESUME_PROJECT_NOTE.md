@@ -1108,3 +1108,50 @@ this project uses, none of which happened this session because the rebuild itsel
 finished. Recommend building it in 2-3 smaller patches (e.g., Creed + Canons I-X, then XI-XX) rather
 than attempting the whole file in one shot, given this session's difficulty assembling one large
 tool call.
+
+## SESSION HANDOFF 2026-07-22 -- Guba'ekana rebuild COMPLETE, marked GREEN
+
+Picked up the in-progress Guba'ekana rebuild from the prior session (source already
+confirmed/fetched, no repo changes had been made yet). Diagnosed the prior session's repeated
+tool-call failures as most likely from trying to fetch ccel.org directly via the sandbox's bash
+network egress, which doesn't have ccel.org on its allowlist -- switched to the `web_fetch` tool
+(routes server-side) for all retrieval, and additionally found a single-page plain-text mirror of
+the whole Creed+20-canons document at New Advent (`newadvent.org/fathers/3801.htm`, same Percival
+1900 translation, revised for New Advent by Kevin Knight) instead of hitting CCEL's paginated
+reader 21 separate times -- cut this from ~40 round trips to one fetch.
+
+**Built programmatically, not by hand:** wrote a small Python script to strip the page's inline
+encyclopedia cross-reference links, split Creed/Canons into chapters, and divide each canon into
+verses at sentence breaks -- then did a scripted word-count parity check per canon against the raw
+fetched source (all 21 units matched exactly, zero words dropped or duplicated) before touching the
+repo file, rather than trusting a hand-assembled JSON blob.
+
+**Result:** `data/bible/ET/guba'ekanaET.json` rebuilt as 21 chapters / 52 verses -- Chapter 1 = the
+real 325 Nicene Creed (2 verses: creed statement, then its anathema clause against Arian formulas),
+Chapters 2-21 = Canons I-XX one per chapter. Replaces content that was confirmed fabricated on two
+independent grounds (chapter 1 was actually the 381 Creed, not 325; severe thinness/invented
+material throughout). Wording unaltered from Percival's 1900 translation. Standard structural
+re-sweep clean: no chapter/verse gaps or duplicates, zero empty verses.
+
+Dashboard updated in the same commit per standing rule: Guba'ekana moved RED_SEED -> GREEN_SEED with
+a GREEN_NOTES entry. `SEED_VERSION` now `v130-2026-07-22-gubaekana-green`.
+
+**Commands to apply, commit, and push (already committed locally as `279b2ff` on this session's
+working clone -- if applying the exported patch to a fresh clone instead):**
+```bash
+git am 0001-Rebuild-Guba-ekana-from-Percival-s-1900-Nicaea-trans.patch
+git push origin main
+```
+
+**ET-corpus status update: 8 green, 23 red, 0 amber.** Remaining categories unchanged from the prior
+handoff except Guba'ekana moving from category 1 (rebuild target with source lead) to done:
+1. Non-red Clement family (R.H. Charles' APOT, unconfirmed whether it covers this material) --
+   the next most tractable rebuild target if continuing this backlog.
+2. Confirmed-unsourceable, parked for post-v1.0 original translation: Fetha Nagast, Josippon,
+   Malke'a Guba'e, Malke'a Iyasus, Admonitions, Sirate Tsion.
+3. Blocked on a prerequisite identity question: Mazaheta.
+4. Rebuilt, awaiting a human verification read-through to go green: 1-3 Meqabyan, Malke'a Virgin
+   Mary.
+
+**Next session should:** ask Josh which category to prioritize, or pick up the Clement-family lead
+if continuing unassisted.
