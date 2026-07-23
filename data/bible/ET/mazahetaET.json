@@ -3,106 +3,1005 @@
     "name": "Mazaheta (The Book of Hymns and Prayers)",
     "id": "MAZAHETA_COMPLETE",
     "version": "Ethiopic Liturgical Tradition",
-    "copyright": "Public Domain"
+    "copyright": "Public Domain",
+    "description": "A compilation of five distinct Ethiopian liturgical works: Kidane (Covenant Prayer), Weddase Maryam (Praise of Mary), Anqasa Birhan (Gate of Light), Sa'atat (Horologium/Book of Hours), and Me'erAf (Common Hymns). 'Mazaheta' itself is not attested as a historical title for this specific combination in any scholarly or ecclesiastical source found -- each of the five component works is independently real and well-documented, but their grouping under this single title appears to be an app-internal compilation rather than a traditional single work.",
+    "sourceStatus": "2/5 rebuilt from a confirmed public-domain source (Kidane and Weddase Maryam, both from Budge 1922, the same volume used for Malke'a Virgin Mary in this project). The remaining 3 (Anqasa Birhan, Sa'atat, Me'erAf) are not in Budge's volume and have no confirmed public-domain English source yet -- their content is unchanged and unverified pending further sourcing work or a governance decision on original translation."
   },
   "sections": [
     {
-      "name": "Kidane (Covenant Prayer) - Morning",
-      "id": "KIDANE_MORN",
+      "name": "Kidane (The Covenant of Mercy)",
+      "sourceNote": "Rebuilt 2026-07-22 from Budge 1922 (public domain) -- see this book's own meta if this were a standalone file; kept as a section here since it is one of five works bundled under the app's 'Mazaheta' umbrella label.",
       "chapters": [
         {
           "num": 1,
+          "name": "The Covenant of Mercy (First Account)",
           "verses": [
-            { "num": 1, "text": "Holy, Holy, Holy, Lord God of Hosts; heaven and earth are full of the holiness of Thy glory." },
-            { "num": 2, "text": "We worship Thee, O Christ, with Thy Good Heavenly Father and Thy Holy Spirit, the Life-giver, for Thou hast come and saved us." },
-            { "num": 3, "text": "O Lord, save Thy people and bless Thine inheritance; shepherd them and lift them up for ever." },
-            { "num": 4, "text": "Keep our Church in peace and unity, and preserve our shepherds, the Bishops and the Priests, in righteousness and truth." },
-            { "num": 5, "text": "Grant Thy peace to the world, and turn the hearts of the rulers toward justice, that we may lead a quiet and peaceable life in all godliness." },
-            { "num": 6, "text": "Remember, O Lord, those who are sick and afflicted, those who are in prison and in exile, and all those who have asked us to remember them in our prayers." },
-            { "num": 7, "text": "For Thine is the kingdom, the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and for ever. Amen." }
+            {
+              "num": 1,
+              "text": "Now when the Son of this holy woman Mary, whose pure flesh He had taken upon Himself, went up into heaven, He sat down on the right hand of His Father, having fulfilled all the Law, and taken upon Himself human nature, with the exception of sin, and gained dominion over the pains of the Cross by His own free will which He exercised for our redemption."
+            },
+            {
+              "num": 2,
+              "text": "And He left His mother Mary in the house of John His disciple, whom He loved, and whom He committed unto her protection, saying, \"Behold thy son,\" and also to that disciple He said, \"Behold thy mother.\" And our Lady Mary dwelt there, and she was wont to go unto the grave of her Son, that is to say, to Golgotha, to pray there."
+            },
+            {
+              "num": 3,
+              "text": "And it came to pass that when the Jews saw her they were filled with wrath and jealousy, and they wished to stone her, but God made her to disappear from their sight."
+            },
+            {
+              "num": 4,
+              "text": "Then they took counsel together and appointed guards over His grave, so that she might not be able to come and pray there again; but she ceased not to go there each day."
+            },
+            {
+              "num": 5,
+              "text": "Now the guards never saw her, for the mantle of the glory of her Son made her to be invisible, and angels came unto her at all times to minister unto her, and her Son, our Lord Jesus Christ, watched over her continually, and fulfilled for her all her desires."
+            },
+            {
+              "num": 6,
+              "text": "And after this He made her to ascend into heaven, and He shewed her the place where the righteous rest, and where dwell Abraham, Isaac, and Jacob; and the spirits of all the Fathers who had died from Adam unto Christ received her."
+            },
+            {
+              "num": 7,
+              "text": "And they bowed down before her and said, \"Glory be unto God Who hath created thee for us, flesh of our flesh, and bone of our bone; in thee we have found redemption."
+            },
+            {
+              "num": 8,
+              "text": "And thou hast become the Gate of Life leading away from destruction, through the Incarnation of the Son of God of thee.\" Then the angels lifted her up and carried her unto her beloved Son, Who was seated upon His throne; and flames of fire covered Him round about on the right hand and on the left."
+            },
+            {
+              "num": 9,
+              "text": "Then our Lord took her hand, and He kissed her mouth and said unto her, \"Hast thou come, O My mother?\" Then He made her to ascend His throne of glory, and to sit by His side, and He described unto her the joy and gladness which eye hath never seen, and ear hath never heard, and the heart of man hath never imagined, that He had prepared for her."
+            },
+            {
+              "num": 10,
+              "text": "And below the throne she saw David her father, the King of Israel, together with all the Company of the Prophets and the angels; and the souls of the righteous were standing round about them."
+            },
+            {
+              "num": 11,
+              "text": "And David was singing psalms to his harp, and saying, \"Hearken, O my daughter, see and incline thine ear, forget thy people in thy father's house, for the King hath desired thy beauty, and He is thy Lord.\""
+            },
+            {
+              "num": 12,
+              "text": "And again the angels set her so that she might see the place of judgement, and they brought her unto the place which was the boundary of the darkness that had been prepared for Satan and his angels, and for all those who walked in his ways."
+            },
+            {
+              "num": 13,
+              "text": "Then our Lady Mary said, \"Woe is me!"
+            },
+            {
+              "num": 14,
+              "text": "Who will announce to the children of men that they shall come here?\" And an angel said unto her, \"Fear thou not, O Mary, God is with thee."
+            },
+            {
+              "num": 15,
+              "text": "He is with thee, and He will be with those who shall come after thee.\" Then the angels carried her along and brought her back to her former place."
+            },
+            {
+              "num": 16,
+              "text": "And straightway our Lady Mary sat down, being exceedingly sorrowful for all the sinners."
+            },
+            {
+              "num": 17,
+              "text": "Now that day was the sixteenth day of the month Yakatit, and she stood up on the place of the skull (Golgotha), and she made supplication unto her Son, saying, \"I adjure Thee, O my Son, by God Almighty Thy Father, and by Thy Name Christ, by the Paraclete Thy Spirit, and by my womb which bore Thee, Whom earth is not able to bear, and Whom even the angels are not able to approach, for nine months and five days; I adjure Thee, O my Son, by Thy going forth from me without pain, and by Thy birth; I adjure Thee by my breasts which gave Thee suck, and by my lips which kissed Thee, and by my arms which embraced Thee, and by my feet which walked about with Thee; I adjure Thee by the cradle wherein Thou didst lie, and by the swaddling bands wherewith Thou wast swathed; O my Son, my beloved One, I entreat and make supplication unto Thee that Thou mayest hearken unto the voice of my petition, and mayest come unto me, and mayest fulfil everything which is in my heart.\""
+            },
+            {
+              "num": 18,
+              "text": "And it came to pass that when our Lady, the holy Virgin Mary, the Mother of the Light, had thus spoken, our Lord and Redeemer Jesus Christ came down, and with Him and round about Him were thousands of thousands and tens of thousands of angels."
+            },
+            {
+              "num": 19,
+              "text": "And He said unto her, \"What shall I do for thee, O Mary My Mother?"
+            },
+            {
+              "num": 20,
+              "text": "And what wish is it that thou wishest Me to fulfil for thee?\" Then our Lady, the Holy Virgin Mary, made answer unto her beloved Son, and said unto Him, \"O my Son, my beloved One, my Lord and my Redeemer, my Hope, and my Refuge, in Whom is my trust, in Thee have I my strength, and in Thy asylum do Thou protect me; Thou art He Whom I remember always."
+            },
+            {
+              "num": 21,
+              "text": "And now, hearken Thou unto my prayer and unto my entreaty, and incline Thine ear unto the words of my mouth."
+            },
+            {
+              "num": 22,
+              "text": "I who speak unto Thee am Thy Mother Mary, and I am Thine handmaiden."
+            },
+            {
+              "num": 23,
+              "text": "Whosoever shall celebrate the festival of my commemoration, or shall build a church in my name, or shall clothe the naked, or shall visit the sick, or shall feed the hungry, or shall give drink to him that is athirst, or shall comfort him that is sorrowful, or shall make to rejoice him that is broken in spirit, or shall write a book of my praises, or shall meditate upon the hymns sung to me on the day of my festival, reward Thou him, O Lord, with a good reward from Thyself, the which eye hath not seen, nor ear hath heard, nor mind of man hath conceived."
+            },
+            {
+              "num": 24,
+              "text": "I beseech Thee and I make supplication unto Thee, O Lord, on behalf of all those who shall believe on me, that Thou wilt make them to be free from Sheol; and that Thou wilt remember him that is an hungered and him that is athirst, and all the trials which came upon me with Thee.\""
+            },
+            {
+              "num": 25,
+              "text": "And our Lord Jesus Christ answered and said unto her, \"It shall be even as thou sayest, and I will fulfil for thee all thy petition."
+            },
+            {
+              "num": 26,
+              "text": "Did I not become man through thee?"
+            },
+            {
+              "num": 27,
+              "text": "I swear by Myself that I will not break My Covenant with thee.\""
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "name": "The Covenant of Mercy (Second Account: the Five Sorrows)",
+          "verses": [
+            {
+              "num": 1,
+              "text": "One day our Lord Jesus Christ said unto Mary, \"What sorrow can be greater than that which came upon thee for My sake?\""
+            },
+            {
+              "num": 2,
+              "text": "And our Lady Mary said unto Him, \"O my Lord and God, there were Five Sorrows that came upon me for Thy sake, and they overcame me mightily."
+            },
+            {
+              "num": 3,
+              "text": "The first of them was that which came upon me when Simeon prophesied concerning Thee in the Sanctuary, saying that the Jews would slay Thee."
+            },
+            {
+              "num": 4,
+              "text": "The second was the sorrow I endured when I lost Thee in the Sanctuary, and I was seeking for Thee for three days."
+            },
+            {
+              "num": 5,
+              "text": "The third was the sorrow I endured when I remembered how they had bound Thee hand and foot, and how Pilate's men scourged Thy back."
+            },
+            {
+              "num": 6,
+              "text": "The fourth was the sorrow I endured when they crucified Thee between two thieves on the day of the Eve of the Sabbath, and Thou wast naked, and they drove five nails through Thy flesh."
+            },
+            {
+              "num": 7,
+              "text": "The fifth sorrow I endured when I remembered how Joseph and Nicodemus took Thee down from the Cross, and swathed Thee in fine linen, and laid Thee in the tomb.\""
+            },
+            {
+              "num": 8,
+              "text": "And our Lord said unto her who had given Him birth, \"Thus saith our Father Who is in heaven: Whosoever shall keep in remembrance the sorrows and sufferings which have come upon thee for My sake, and the salutation of Gabriel, I will remit to him his sins."
+            },
+            {
+              "num": 9,
+              "text": "And whosoever shall give an offering for thy name's sake I will remit to him his sins, and I will make him to inherit the kingdom of heaven."
+            },
+            {
+              "num": 10,
+              "text": "And I will come unto him with thee, O thou who didst give Me birth, and I will appear to him three days before his death.\""
+            },
+            {
+              "num": 11,
+              "text": "This was the Covenant which Christ made with His mother, and she told it unto Dexius, who wrote it down, together with her Miracles, so that believers might read it."
+            },
+            {
+              "num": 12,
+              "text": "May her prayer and blessing be with us for ever and ever."
+            }
           ]
         }
       ]
     },
     {
       "name": "Weddase Maryam (Praise of Mary) - Full Week",
-      "id": "WED_MARY_WEEK",
+      "sourceNote": "Rebuilt 2026-07-22 from Budge 1922 (public domain), via Fries' 1892 critical edition of the Ethiopic text.",
       "chapters": [
         {
           "num": 1,
-          "name": "Monday",
+          "name": "Sunday",
           "verses": [
-            { "num": 1, "text": "The gate of the East is Mary the Virgin, the sealed treasure-house of our salvation, the mother of the Light who rose upon us from on high." },
-            { "num": 2, "text": "Thou art the second heaven upon the earth, O daughter of David; for in thee the Sun of Righteousness appeared, healing the wounds of our nature." },
-            { "num": 3, "text": "The Father looked down from heaven and found none like unto thee; He sent His Only-Begotten Son, and He took flesh from thee and became man." },
-            { "num": 4, "text": "O Virgin, thou art the rod of Aaron which budded without being planted; even so didst thou bring forth the Christ without the seed of man." },
-            { "num": 5, "text": "The angels glorify thee in the heights, and the children of men praise thee upon the earth; for thou hast become the bridge that leadeth us from death unto life." },
-            { "num": 6, "text": "Rejoice, O full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus Christ." },
-            { "num": 7, "text": "Intercede for us, O Holy Mother of God, that He may forgive us our sins and grant rest to the souls of our fathers and brothers." }
+            {
+              "num": 1,
+              "text": "Thou wast named \"Beloved Woman,\" O blessed among women."
+            },
+            {
+              "num": 2,
+              "text": "Thou art the second chamber, in that thou wast called \"Holiest of Holies,\" and in it was the table of the Covenant and on it were the Ten Words which were written by the fingers of God."
+            },
+            {
+              "num": 3,
+              "text": "He made known this to us first of all by \"Yawta\" which is the first letter of the Name of our Redeemer Jesus Christ, Who became incarnate of thee without change, and became the Mediator of the New Covenant, and by the shedding of His Holy Blood He purified the believers and the people who were pure."
+            },
+            {
+              "num": 4,
+              "text": "And because of this we all magnify thee, O our Lady, thou ever pure God-bearer."
+            },
+            {
+              "num": 5,
+              "text": "We beseech thee and lift our eyes to thee, so that we may find mercy and compassion with the Lover of Men."
+            },
+            {
+              "num": 6,
+              "text": "Thou art the Tabot which was covered on all its sides with gold, and was made of the wood that never perisheth, and that foreshadowed for us the Word of God, Who became man without separation and change, the pure and undefiled Deity, the equal of the Father."
+            },
+            {
+              "num": 7,
+              "text": "To thee, as the pure woman, Gabriel announced Him without seed."
+            },
+            {
+              "num": 8,
+              "text": "And He became like unto us through the might of His wisdom: He Who was incarnate of thee and He Who was spotless mingled His Divinity without nature."
+            },
+            {
+              "num": 9,
+              "text": "Thou sanctuary which the Cherubim who are fashioned in the likeness of God surround -- the Word, Who was incarnate of thee, O pure woman, without change, hath become the Forgiver of our sins and the Destroyer of our transgressions."
+            },
+            {
+              "num": 10,
+              "text": "Thou art the holy golden pot wherein the manna is hidden, the bread which came down from heaven, the giver of life unto all the world."
+            },
+            {
+              "num": 11,
+              "text": "Thou art the golden candlestick and dost hold the brilliant Light at all times, the Light which is the Light of the world, the Light of Lights which had no beginning, verily God of God, Who became incarnate of thee without change."
+            },
+            {
+              "num": 12,
+              "text": "And by His coming He shed light upon us, upon those of us who were sitting in the shadow and darkness of death, and He set our feet upon the path of peace, through the mystery of His holy wisdom."
+            },
+            {
+              "num": 13,
+              "text": "Thou art the censer of gold because thou didst carry the coals of the blessed fire which He took from the sanctuary -- He Who forgiveth sin and destroyeth wickedness, He Who is the Word of God, Who became incarnate of thee, and Who offered up to His Father incense and precious offerings."
+            },
+            {
+              "num": 14,
+              "text": "Thou art the garden of delight, the garden of joy, which is planted with the trees of Lebanon, and was prepared for the saints before the world was created."
+            },
+            {
+              "num": 15,
+              "text": "On a great chariot, which was guarded by Cherubim and Seraphim that were fashioned out of flame of fire, one of the Seraphim visited her from heaven, and said unto her in the sanctuary, \"Blessed art thou among women."
+            },
+            {
+              "num": 16,
+              "text": "The Holy Spirit shall come upon thee, and the power of the Highest shall overshadow thee, for He Who dwelleth above the Cherubim shall become the Light for all the world.\" Thou art the sweet-scented flower which hath sprung from the root of Jesse."
+            },
+            {
+              "num": 17,
+              "text": "Thou art like unto the rod of Aaron, which, without being planted in the ground and without watering, burst into blossom."
+            },
+            {
+              "num": 18,
+              "text": "In like manner thou, O Bearer of Christ, didst bring forth Christ our God in truth, without seed."
+            },
+            {
+              "num": 19,
+              "text": "He came and delivered us."
+            },
+            {
+              "num": 20,
+              "text": "It is meet for thee, O thou who art full of grace, more than for all the saints to pray on our behalf."
+            },
+            {
+              "num": 21,
+              "text": "Thou art greater than the high-priests, and thou art more honourable than the Prophets; in thee there is majesty of appearance which is greater than the majesty of the Seraphim and Cherubim."
+            },
+            {
+              "num": 22,
+              "text": "Verily thou art the glory of our race, and thou art she who must beg for life for our souls."
+            },
+            {
+              "num": 23,
+              "text": "Pray thou then on our behalf to our Lord and Redeemer Jesus Christ that He may confirm us in the Right Faith, that is to say, faith in Him, and that He may graciously bestow upon us His mercy and compassion, and may in His abundant mercy forgive us our sins for ever and ever."
+            },
+            {
+              "num": 24,
+              "text": "Amen."
+            }
           ]
         },
         {
           "num": 2,
-          "name": "Tuesday",
+          "name": "Monday",
           "verses": [
-            { "num": 1, "text": "The crown of our glory and the beginning of our salvation is Mary the Virgin, who brought forth for us God the Word." },
-            { "num": 2, "text": "After He became man for our sake, He was yet God, and He chose her out of all the world to be His mother." },
-            { "num": 3, "text": "He rested in her womb as a king rests upon his throne; and He was born of her without breaking the seal of her virginity." },
-            { "num": 4, "text": "Ezekiel the prophet witnessed concerning her, saying: 'I saw a closed gate in the East, and the Lord God of Israel entered by it and passed through it, and the gate remained shut.'" },
-            { "num": 5, "text": "This gate is the Virgin who brought forth the Savior; she is the bush that Moses saw in the mount, which burned with fire and was not consumed." },
-            { "num": 6, "text": "The fire is the Godhead, and the bush is Mary; she bore the fire of the Divinity in her womb and was not burned." }
+            {
+              "num": 1,
+              "text": "God wished to set free Adam, who was sad at heart and sorrowful, and in the greatness of His compassion and mercy to bring him back to the state wherein he was formerly."
+            },
+            {
+              "num": 2,
+              "text": "He rose up in flesh of the Virgin without the seed of man."
+            },
+            {
+              "num": 3,
+              "text": "He came, He saved us."
+            },
+            {
+              "num": 4,
+              "text": "God passed the decree of judgement upon Eve whom the serpent led astray, saying, \"I will multiply greatly thy pain and thy suffering.\" Nevertheless, His heart inclined to love for man, and He set him free."
+            },
+            {
+              "num": 5,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 6,
+              "text": "Jesus Christ, the Word Who became incarnate, and He dwelt with us, and we saw His glory like the glory of the Only-begotten of His Father, He hath been pleased to show compassion upon us."
+            },
+            {
+              "num": 7,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 8,
+              "text": "Isaiah the Prophet in the spirit of prophecy saw the mystery of Emmanuel, and therefore he cried out, saying, \"A Child is born unto us, a Son is given unto us.\" He hath appeared."
+            },
+            {
+              "num": 9,
+              "text": "Rejoice and be glad, O race of the children of men, for God hath loved the world, and given His only Son that all who believe in Him may have everlasting life."
+            },
+            {
+              "num": 10,
+              "text": "The Most High hath sent unto us His arm."
+            },
+            {
+              "num": 11,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 12,
+              "text": "He Who was and shall be, He Who came and shall come again, is Jesus Christ, the Word Who became incarnate without any change."
+            },
+            {
+              "num": 13,
+              "text": "He was a perfect man, without division and without separation, in all His work the Only-begotten, but with one form, one being, and one divinity -- God the Word."
+            },
+            {
+              "num": 14,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 15,
+              "text": "Rejoice, O Bethlehem, the town of the Prophets, for in thee was born Christ, the second Adam, so that He might bring the first Adam from the earth into the Garden, and destroy the doom of death."
+            },
+            {
+              "num": 16,
+              "text": "O Adam, dust thou art and to dust shalt thou return."
+            },
+            {
+              "num": 17,
+              "text": "Where sin abounded there the grace of God abounded likewise."
+            },
+            {
+              "num": 18,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 19,
+              "text": "Let all souls of men rejoice and be glad with the angels, and let them praise Christ, the King, and cry out and say, \"Glory to God in the heavens, and peace on the earth, and His good will to men.\" He hath abolished the things of old, and overthrown the plot of the Enemy, and torn in pieces the bill of indictment of Adam and Eve and set them free -- He Who was born for us in the city of David, our Redeemer, Jesus Christ hath done this."
+            },
+            {
+              "num": 20,
+              "text": "He hath appeared."
+            },
+            {
+              "num": 21,
+              "text": "Thou Light, Who in truth illuminest all men who dwell in the world, because of Thy love for man Thou hast come into the world."
+            },
+            {
+              "num": 22,
+              "text": "All created things rejoiced at Thy coming, because Thou didst deliver Adam from his error, and didst set free Eve from the suffering of death, and hast given unto us the soul of prophecy."
+            },
+            {
+              "num": 23,
+              "text": "We bless Thee with Thine angels."
+            }
           ]
         },
         {
           "num": 3,
-          "name": "Wednesday",
+          "name": "Tuesday",
           "verses": [
-            { "num": 1, "text": "Every tongue praises thee, O Mother of the Light, and every heart glorifies thee, for thou art the tabernacle which God prepared for His dwelling." },
-            { "num": 2, "text": "Thou art the golden censer which carried the coal of fire; the coal is the Godhead, and the gold is thy purity." },
-            { "num": 3, "text": "Thou art the ladder which reached from earth to heaven, which Jacob saw in his dream, and the angels of God were ascending and descending upon it." },
-            { "num": 4, "text": "Thou art the fleece of Gideon upon which the dew of heaven descended; for the Word of the Father came down into thee silently like the rain upon the mown grass." },
-            { "num": 5, "text": "We pray thee, O Virgin, to ask for us before the throne of thy Son, that He may grant us mercy and the forgiveness of our sins." }
+            {
+              "num": 1,
+              "text": "The crown of our glory, and the origin of our deliverance and the foundation of our sanctification came into being in Mary the Virgin, who brought for us God the Word, Who became incarnate for our salvation."
+            },
+            {
+              "num": 2,
+              "text": "And after He became man of a certainty He was perfect God."
+            },
+            {
+              "num": 3,
+              "text": "And for this reason she gave birth to Him being a virgin."
+            },
+            {
+              "num": 4,
+              "text": "The power of her bringing forth is a marvellous thing that cannot be described."
+            },
+            {
+              "num": 5,
+              "text": "Of His own free will, and by the good pleasure of His Father and the Holy Spirit, He came forth and hath delivered us."
+            },
+            {
+              "num": 6,
+              "text": "Great is the praise of thy virginity, O Mary, thou perfect virgin."
+            },
+            {
+              "num": 7,
+              "text": "Thou didst receive grace, God was with thee."
+            },
+            {
+              "num": 8,
+              "text": "Thou art the Ladder which Jacob saw reaching from earth to heaven, with the angels of God ascending and descending upon it."
+            },
+            {
+              "num": 9,
+              "text": "Thou art the Bush which Moses saw blazing with fire, and the wood thereof was not consumed."
+            },
+            {
+              "num": 10,
+              "text": "It was the Son of God Who dwelt in thy womb, and the fire of His divinity did not consume thy flesh."
+            },
+            {
+              "num": 11,
+              "text": "Thou art that Field wherein no seed was sown, and yet there went forth from thee the Fruit of Life."
+            },
+            {
+              "num": 12,
+              "text": "Thou art that Treasure-house which Joseph bought, and he found therein a Pearl, a precious gem, that is to say, our Redeemer Jesus Christ."
+            },
+            {
+              "num": 13,
+              "text": "Thou didst carry it in thy womb and didst bring Him forth into the world."
+            },
+            {
+              "num": 14,
+              "text": "Rejoice thou, O God-bearer, thou joy of the angels."
+            },
+            {
+              "num": 15,
+              "text": "Rejoice thou, who wast the woman foretold by the Prophets."
+            },
+            {
+              "num": 16,
+              "text": "Rejoice thou, for thou didst find favour, God was with thee."
+            },
+            {
+              "num": 17,
+              "text": "Rejoice thou, for thou hast received the voice of the Angel Gabriel, the joy of all the world."
+            },
+            {
+              "num": 18,
+              "text": "Rejoice thou, O Bearer of the Creator of all the world."
+            },
+            {
+              "num": 19,
+              "text": "Rejoice thou because it is meet that thou shouldst be called \"Bearer of God.\" Rejoice thou, O thou woman who deliveredst Eve."
+            },
+            {
+              "num": 20,
+              "text": "Rejoice thou, for thou didst suckle Him Who suckleth all creation."
+            },
+            {
+              "num": 21,
+              "text": "Rejoice thou, O holy woman, the mother of all living beings."
+            },
+            {
+              "num": 22,
+              "text": "We lift our eyes to thee with entreaty that thou wilt pray on our behalf."
+            },
+            {
+              "num": 23,
+              "text": "O Virgin, O Saint, O Bearer of God, since thou didst bring forth the King, a marvellous mystery dwelt upon thee for our salvation."
+            },
+            {
+              "num": 24,
+              "text": "We will hold our peace, for we are unable to search into the matter completely, as the greatness thereof requireth, and will describe that Doer of good things, through the exceedingly great wonder of the manifestation."
+            },
+            {
+              "num": 25,
+              "text": "He was the Living Word of the Father Who came down on Mount Sinai, and gave the Law to Moses whilst the top of the mountain was covered with mist, and with smoke, and with darkness, and with storm, and with the terrifying blasts of trumpets."
+            },
+            {
+              "num": 26,
+              "text": "He admonished those who were standing there in fear."
+            },
+            {
+              "num": 27,
+              "text": "It was He Who came down to thee, O rational mountain, in the humility of the Lover of men."
+            },
+            {
+              "num": 28,
+              "text": "Without any change He became incarnate of thee, and took a perfect body, endowed with reason and like unto ourselves, through the spirit of wisdom."
+            },
+            {
+              "num": 29,
+              "text": "God took up His abode on her and became perfect man so that He might deliver Adam, and forgive him his sin, and make him to dwell in heaven, and bring him back to his former state in His abundant compassion and mercy."
+            },
+            {
+              "num": 30,
+              "text": "It is impossible for any to describe the greatness of the Virgin."
+            },
+            {
+              "num": 31,
+              "text": "For God chose her, and He came and dwelt upon her."
+            },
+            {
+              "num": 32,
+              "text": "He Who dwelt in the light, Whom none could approach, was carried in her womb nine months."
+            },
+            {
+              "num": 33,
+              "text": "He Who is invisible, He Who is incomprehensible did Mary bring forth, being a virgin."
+            },
+            {
+              "num": 34,
+              "text": "This is the stone which Daniel the prophet saw, which was hewn from a high mountain, without hands, that is to say, the Word Who went forth from the Father."
+            },
+            {
+              "num": 35,
+              "text": "He came and became incarnate of the Virgin without seed of men, and delivered us."
+            },
+            {
+              "num": 36,
+              "text": "Thou art the pure twig and the right vessel of the True Faith of the saints our Fathers."
+            },
+            {
+              "num": 37,
+              "text": "O thou pure God-bearer, O thou sealed Virgin, thou didst bring forth for us the Word of the Father, Jesus Christ."
+            },
+            {
+              "num": 38,
+              "text": "He came and He hath delivered us."
+            },
+            {
+              "num": 39,
+              "text": "Thou art the Mother of the Glorious Light, O God-bearer."
+            },
+            {
+              "num": 40,
+              "text": "Thou didst carry the Word Who is invisible, and after thou hadst brought Him forth thou didst continue to be a virgin."
+            },
+            {
+              "num": 41,
+              "text": "With praise and blessing shall men magnify thee."
+            },
+            {
+              "num": 42,
+              "text": "What tongue is able to proclaim that which should be declared concerning thee, O thou pure Virgin, Mother of the Light, the Word of the Father?"
+            },
+            {
+              "num": 43,
+              "text": "Thou wast the throne of the King Whom the Cherubim carry."
+            },
+            {
+              "num": 44,
+              "text": "We ascribe blessings unto thee, O blessed woman, and we will remember thy name from generation to generation, O Beautiful Dove, Mother of our Lord Jesus Christ."
+            },
+            {
+              "num": 45,
+              "text": "Rejoice thou, O Mary, Mother and Maid, for unto Him Who is in thy bosom the angels bring praises, and the Cherubim bow down and worship Him in fear, and the Seraphim spread out their wings, and say concerning Him ceaselessly, \"This is the King of Glory.\" He came to forgive the sins of the world in the greatness of His compassion."
+            }
           ]
         },
         {
           "num": 4,
-          "name": "Thursday",
+          "name": "Wednesday",
           "verses": [
-            { "num": 1, "text": "Thou art the bush which Moses saw in the desert, which the fire did not consume; the Son of God dwelt in thee and the fire of His Godhead did not burn thee." },
-            { "num": 2, "text": "Thou art the mountain which Daniel saw, from which a stone was cut without hands, which smote the image of the pride of this world." },
-            { "num": 3, "text": "The stone is our Lord Jesus Christ, and the mountain is the Virgin Mary, who brought Him forth without the seed of man." },
-            { "num": 4, "text": "Thou art the ark which was covered with gold within and without; the gold is thy virginity of soul and body." },
-            { "num": 5, "text": "Blessed art thou among women, for the Lord who created the world chose thee to be His dwelling place." }
+            {
+              "num": 1,
+              "text": "All the hosts of the heavens say, \"Blessed art thou, O thou second heaven upon the earth, Door of the sunrise, Mary the Virgin, thou pure Bride-chamber of the Holy Bridegroom."
+            },
+            {
+              "num": 2,
+              "text": "The Father looked down from heaven, and found none like unto thee; He sent His only One, and He became incarnate of thee."
+            },
+            {
+              "num": 3,
+              "text": "All generations shall ascribe blessings unto thee, thou who alone art our Lady, the Bearer of God.\""
+            },
+            {
+              "num": 4,
+              "text": "Great and wonderful things have the Prophets prophesied concerning thee, O City of God, for thou art the abode of all those who rejoice."
+            },
+            {
+              "num": 5,
+              "text": "All the kings of the earth walk in thy light and all the nations in thy splendour."
+            },
+            {
+              "num": 6,
+              "text": "O Mary, all generations shall ascribe blessings unto thee, and shall worship Him Who was brought forth by thee, and shall magnify Him."
+            },
+            {
+              "num": 7,
+              "text": "Thou art in very truth the Cloud, and thou hast shown us the water of the rain, the sign of the Only-begotten."
+            },
+            {
+              "num": 8,
+              "text": "The Father established thee, the Holy Ghost took up His abode on thee, and the power of the Most High overshadowed thee, O Mary, and verily thou didst bring forth the Word, the Son of God, Who endureth for ever."
+            },
+            {
+              "num": 9,
+              "text": "He came and hath delivered us from sin."
+            },
+            {
+              "num": 10,
+              "text": "Great was the honour that was bestowed upon thee, O Gabriel, the Angel of the Annunciation with the joyful face."
+            },
+            {
+              "num": 11,
+              "text": "Thou didst proclaim unto us the birth of the Lord, Who hath come to us, and thou didst announce Him to Mary, the spotless Virgin, and didst say unto her, \"Rejoice thou, O thou who art full of grace, God is with thee.\""
+            },
+            {
+              "num": 12,
+              "text": "Thou didst find grace, the Holy Spirit dwelt upon thee, and the power of the Most High overshadowed thee, O Mary."
+            },
+            {
+              "num": 13,
+              "text": "Verily thou didst bring forth the Holy Saviour for all the world."
+            },
+            {
+              "num": 14,
+              "text": "He came and He hath delivered us."
+            },
+            {
+              "num": 15,
+              "text": "Our tongue this day praiseth the work of the Virgin."
+            },
+            {
+              "num": 16,
+              "text": "We praise Mary, the God-bearer, because our Lord and Redeemer Jesus Christ was born of her in the city of David."
+            },
+            {
+              "num": 17,
+              "text": "Come, O all ye nations, and let us ascribe blessing unto Mary, for she is at once mother and virgin."
+            },
+            {
+              "num": 18,
+              "text": "Rejoice, O pure Virgin, in whom there is no blemish, to whom came the Word of the Father, Who was incarnate of her."
+            },
+            {
+              "num": 19,
+              "text": "Rejoice, O Vessel unblemished, perfect, and spotless Woman."
+            },
+            {
+              "num": 20,
+              "text": "Rejoice thou, O Garden endowed with reason, thou Abode of Christ, Who became the Second Adam because of the First Adam, the man."
+            },
+            {
+              "num": 21,
+              "text": "Rejoice thou, O woman who borest the Only-begotten, Who, having gone forth from the bosom of His Father, suffered no change."
+            },
+            {
+              "num": 22,
+              "text": "Rejoice, O thou pure Bride-chamber, who art adorned with all the beauty of praise, He came and was incarnate of thee."
+            },
+            {
+              "num": 23,
+              "text": "Rejoice, O Thorn-bush, who wast not consumed by the fire of the Godhead."
+            },
+            {
+              "num": 24,
+              "text": "Rejoice thou, O Mother and Maid, Virgin, thou second heaven, who didst carry in thy body Him Who is borne aloft by the Cherubim and Seraphim."
+            },
+            {
+              "num": 25,
+              "text": "And because of this we rejoice, and we sing with the holy angels with joy and gladness, and we say, \"Glory to God in the heavens, and peace upon earth, His good will to men.\" For He unto Whom belong glory and praise for ever and ever is well-pleased with thee."
+            },
+            {
+              "num": 26,
+              "text": "Amen."
+            },
+            {
+              "num": 27,
+              "text": "The glory of Mary is greater than that of all the saints, for she was worthy to receive the Word of the Father."
+            },
+            {
+              "num": 28,
+              "text": "Him Who maketh the angels to be afraid, Him Whom the Watching Angels in heaven praise, did Mary the Virgin carry in her womb."
+            },
+            {
+              "num": 29,
+              "text": "She is greater than the Cherubim, and superior to the Seraphim, for she was the Ark of One of the Holy Trinity."
+            },
+            {
+              "num": 30,
+              "text": "She is Jerusalem, the city of the Prophets, and she is the habitation of the joy of all the saints."
+            }
           ]
         },
         {
           "num": 5,
-          "name": "Friday",
+          "name": "Thursday",
           "verses": [
-            { "num": 1, "text": "Rejoice, O Mother of God, for thou hast brought forth the Joy of all the world! Rejoice, for thou art the ship that carried the Merchant of the Pearl of Great Price." },
-            { "num": 2, "text": "Rejoice, O mother of the Light, for thy Son hath scattered the darkness of our ignorance and hath given us the light of the knowledge of His glory." },
-            { "num": 3, "text": "Thou art the vessel of gold which held the manna; the manna is the Word of God who came down from heaven to give life unto all." },
-            { "num": 4, "text": "Through thee, the gate of Paradise is opened to us again, and the sword of the cherubim is turned away from the tree of life." }
+            {
+              "num": 1,
+              "text": "The Bush which Moses saw in flaming fire in the desert, the wood of which was not consumed, is a similitude of Mary, the Virgin who was spotless."
+            },
+            {
+              "num": 2,
+              "text": "The Word of the Father became incarnate of her, and the fire of His Godhead did not consume the Virgin, and after she had brought Him forth her virginity was maintained, and His Godhead was unchanged."
+            },
+            {
+              "num": 3,
+              "text": "Our God, Who verily is God, became a man; He came and delivered us."
+            },
+            {
+              "num": 4,
+              "text": "We all magnify thee, O our Lady, the God-bearer, that thy compassion may be over us all."
+            },
+            {
+              "num": 5,
+              "text": "The Virgin Mary, the God-Bearer, hath become the object of the boast of all of us, because through her was destroyed the curse of olden time, which rested upon our race, through the wickedness which the woman committed when she ate of the tree."
+            },
+            {
+              "num": 6,
+              "text": "Through Eve was the door of the Garden shut fast, and because of Mary the Virgin it hath been opened to us again."
+            },
+            {
+              "num": 7,
+              "text": "It is allotted to us to eat of the Tree of Life, that is to say, the Body of Christ and His precious Blood."
+            },
+            {
+              "num": 8,
+              "text": "Because of His love for us He came and delivered us."
+            },
+            {
+              "num": 9,
+              "text": "What understanding, and what language, and what hearing is able to comprehend this mystery, which must be proclaimed to be wonderful, \"God is the lover of men?\" One is He Alone, the Word of the Father, Who existed before the world in His incorruptible Godhead, from One, the Father."
+            },
+            {
+              "num": 10,
+              "text": "The Only-begotten Son came and was incarnate of the holy woman His mother, and after she brought Him forth her virginity perished not, and because of this it became manifest that she was the Bearer of God."
+            },
+            {
+              "num": 11,
+              "text": "O deep is the richness of the wisdom of God!"
+            },
+            {
+              "num": 12,
+              "text": "The womb which He decreed should bring forth children in pain, and suffering, and sorrow of heart, hath become the fountain of life, and hath brought forth without the seed of man Him Who removed the curse from our race."
+            },
+            {
+              "num": 13,
+              "text": "And for this reason we will praise Him, saying, \"Glory be unto Thee, O Thou Good Friend of man, the Redeemer of our souls.\""
+            },
+            {
+              "num": 14,
+              "text": "O how wonderful and mighty in power was the womb of the Virgin, which brought forth God without seed!"
+            },
+            {
+              "num": 15,
+              "text": "And of this the angel who appeared unto Joseph was a witness when he spake, saying, \"That which shall be born of her is of the Holy Spirit.\" It was the Word of God Who became incarnate without change."
+            },
+            {
+              "num": 16,
+              "text": "Mary brought Him forth a second time."
+            },
+            {
+              "num": 17,
+              "text": "And Gabriel rejoiced and said unto her, \"Thou shalt bring forth a Son and shalt call His Name Emmanuel, which is, being interpreted, God with us."
+            },
+            {
+              "num": 18,
+              "text": "And moreover, He shall be called Jesus, Who shall save His people from their sins.\""
+            }
           ]
         },
         {
           "num": 6,
-          "name": "Saturday",
+          "name": "Friday",
           "verses": [
-            { "num": 1, "text": "The holiness of the saints is not like unto thy holiness, O Virgin Mary, for thou art the Mother of the Holy of Holies." },
-            { "num": 2, "text": "Thou art the cloud of light which the prophets foretold; the Sun of Righteousness arose from thee and gave light to those who sat in darkness." },
-            { "num": 3, "text": "The heavens cannot contain Him, yet He was contained in thy womb; the angels serve Him with fear, yet thou didst carry Him in thine arms." },
-            { "num": 4, "text": "O Virgin, thou art the hope of the faithful and the refuge of the weary; intercede for us before thy Son, that He may have mercy upon us." }
+            {
+              "num": 1,
+              "text": "Blessed art thou among women, and blessed is the fruit of thy womb, O Mary the Virgin, the spotless God-bearer."
+            },
+            {
+              "num": 2,
+              "text": "From thee hath risen upon us the Sun of righteousness, and He hath drawn us near to Him under His wings, for He hath created us."
+            },
+            {
+              "num": 3,
+              "text": "Thou thyself alone, O our Lady, the God-bearer, art the Mother of the Light."
+            },
+            {
+              "num": 4,
+              "text": "We will magnify thee with glorifyings and praisings."
+            },
+            {
+              "num": 5,
+              "text": "Blessed art thou!"
+            },
+            {
+              "num": 6,
+              "text": "Thou art greater than heaven, and more glorious than earth, and exalted above the conception of every mind; who is able to declare thy greatness?"
+            },
+            {
+              "num": 7,
+              "text": "There is none who can be compared with thee, O Mary the Virgin."
+            },
+            {
+              "num": 8,
+              "text": "The angels magnify thee, and the Seraphim praise thee, for He Who dwelleth upon the Cherubim and Seraphim came and took up His abode in thy womb."
+            },
+            {
+              "num": 9,
+              "text": "The Lover of men hath brought us nigh unto Himself, the death that belonged to us He hath removed, and hath given unto us the Life that was His."
+            },
+            {
+              "num": 10,
+              "text": "To Him belong glory, and praise."
+            },
+            {
+              "num": 11,
+              "text": "Blessed art thou, Mary, and blessed is the Fruit of thy womb."
+            },
+            {
+              "num": 12,
+              "text": "O virgin God-Bearer, the glory of all virgins; He Who existed before the world became incarnate of thee."
+            },
+            {
+              "num": 13,
+              "text": "The Ancient of days came forth from thy womb, He took our flesh, and gave us His Holy Spirit, and in His abundant goodness made us co-equals with Him."
+            },
+            {
+              "num": 14,
+              "text": "Mary the Virgin is the vessel of priceless ointment, the fountain-head of the water of life."
+            },
+            {
+              "num": 15,
+              "text": "The Fruit of her womb hath saved all the world, and abolished the curse which lay upon us, and made peace to be among us."
+            },
+            {
+              "num": 16,
+              "text": "By His Cross and by His holy Resurrection hath He brought man back again into the Garden."
+            },
+            {
+              "num": 17,
+              "text": "Mary, the pure Virgin, the Bearer of God, prayeth continually with compassion for the children of men."
+            },
+            {
+              "num": 18,
+              "text": "Pray thou for us to thy Son Christ that He may forgive us and have compassion upon us."
+            },
+            {
+              "num": 19,
+              "text": "Mary the Virgin cried out in the Sanctuary, saying, \"God knoweth that I know no one and nothing more than the sound of the voice of the angel, who with honour brought unto me glad tidings, and said unto me, 'Peace be unto thee, O holy Virgin."
+            },
+            {
+              "num": 20,
+              "text": "Thou shalt carry Him Who cannot be carried, and shalt contain Him Who cannot be contained, and Whom nothing can contain.'\" Thy praise shall be abundant, O thou who art full of grace and honour, for thou didst become the dwelling-place of the Word of the Father."
+            },
+            {
+              "num": 21,
+              "text": "Thou art she who bore the Pillar of fire, which Moses saw, that is to say, the Son of God, Who came and dwelt in thy womb."
+            },
+            {
+              "num": 22,
+              "text": "Thou wast the Ark of the Creator of the heavens and the earth."
+            },
+            {
+              "num": 23,
+              "text": "Thou didst carry Him in thy womb nine months."
+            },
+            {
+              "num": 24,
+              "text": "Thou hadst in trust Him Whom the heavens and the earth cannot contain."
+            },
+            {
+              "num": 25,
+              "text": "Thou wast the Ladder whereby man ascended into heaven."
+            },
+            {
+              "num": 26,
+              "text": "Thy light is greater than the light of the sun."
+            },
+            {
+              "num": 27,
+              "text": "Thou art the eastern horizon, whereout came the brilliant star which the saints looked upon with joy and gladness."
+            },
+            {
+              "num": 28,
+              "text": "The decree that God passed upon Eve was, \"Thou shalt bring forth children with toil and suffering,\" but thou didst hear a voice, saying, \"Rejoice, O full of grace, thou hast brought forth for us the Word of the Father, the King, the God of all creation.\" He came and delivered us, for He is the Compassionate Lover of men."
+            },
+            {
+              "num": 29,
+              "text": "And because of this we praise thee, even as did the Angel Gabriel, saying, \"Blessed art thou among women, and blessed is the Fruit of thy womb; rejoice, O thou who art full of grace, God is with thee!\""
+            }
           ]
         },
         {
           "num": 7,
-          "name": "Sunday",
+          "name": "Saturday",
           "verses": [
-            { "num": 1, "text": "Thou art the mother of the King of Glory, and the glory of the saints is through thee; thou art the garden of the Spirit and the fountain of the water of life." },
-            { "num": 2, "text": "The Father chose thee, the Holy Spirit overshadowed thee, and the Son dwelt in thee and took flesh from thee." },
-            { "num": 3, "text": "Therefore, the Church celebrates thy memory in every generation, for thou art the cause of our joy and the mother of our Life." },
-            { "num": 4, "text": "Grant us, O Lord, to follow her example in purity and humility, that we may be found worthy of the kingdom which Thou hast prepared for those who love Thee. Amen." }
+            {
+              "num": 1,
+              "text": "Pure and shining, holy and praiseworthy art thou in everything, O thou who hast clasped the Lord in her hand."
+            },
+            {
+              "num": 2,
+              "text": "All creation rejoiceth with her, and crieth out, saying, \"Rejoice, O full of grace, rejoice thou, for thou hast found favour; rejoice thou, for God is with thee.\""
+            },
+            {
+              "num": 3,
+              "text": "We ascribe blessings to thy greatness, O awesome Virgin, and we send to thee joy with the angel Gabriel, for the Fruit of thy womb hath become the salvation of our race, and hath brought us nigh unto God His Father."
+            },
+            {
+              "num": 4,
+              "text": "As at a marriage undefiled the Holy Ghost took up His abode on thee, and the power of the Most High overshadowed thee."
+            },
+            {
+              "num": 5,
+              "text": "O Mary, verily thou hast brought forth for us the Word, the Son of the Father, Who dwelleth for ever."
+            },
+            {
+              "num": 6,
+              "text": "He came and saved us from sin."
+            },
+            {
+              "num": 7,
+              "text": "Thou art the young Shoot from the root of David."
+            },
+            {
+              "num": 8,
+              "text": "Thou hast brought forth for us in the flesh our Saviour Jesus Christ, the Only-begotten Word, Who was of the Father, Who was hidden before the world, and hiding Himself took from thee the form of a slave."
+            },
+            {
+              "num": 9,
+              "text": "Thou art the Second Heaven over the earth, O spotless God-Bearer."
+            },
+            {
+              "num": 10,
+              "text": "From thee hath risen upon us the Sun of righteousness, and thou didst bring Him forth, according to the prophecy of the Prophets, without seed and without defilement."
+            },
+            {
+              "num": 11,
+              "text": "Thou art that Tabernacle which was called \"Holy of Holies,\" wherein was the Ark which was covered on all sides with plates of gold, and had therein the Table of the Covenant and the pot of gold of the hidden manna, that is to say, the Son of God."
+            },
+            {
+              "num": 12,
+              "text": "He came and dwelt with Mary, the Virgin without blemish."
+            },
+            {
+              "num": 13,
+              "text": "He was incarnate of her, and she brought forth in the world the King of Glory."
+            },
+            {
+              "num": 14,
+              "text": "He came and delivered us."
+            },
+            {
+              "num": 15,
+              "text": "The Garden shall rejoice, for the Lamb that is endowed with reason, the Son of the Father, Who dwelleth for ever, hath come and delivered us from sin."
+            },
+            {
+              "num": 16,
+              "text": "Thou art called the Mother of Christ, the King."
+            },
+            {
+              "num": 17,
+              "text": "After thou didst bring Him forth, thou didst continue in thy spotless virginity through a marvellous mystery."
+            },
+            {
+              "num": 18,
+              "text": "Thou didst bring forth Emmanuel, and because of this thou didst preserve thyself undefiled."
+            },
+            {
+              "num": 19,
+              "text": "Thou art the Ladder on which Jacob saw the Son of God, for thou hast carried in thy sealed womb Him Who could not be touched."
+            },
+            {
+              "num": 20,
+              "text": "Thou hast become for us an intercessor with our Lord Jesus Christ, Who became incarnate of thee for our salvation."
+            },
+            {
+              "num": 21,
+              "text": "Behold, the Lord came forth from thee, O blessed Lady, thou undefiled Bride-chamber, to save the whole world which He had created in His abundant compassion and mercy."
+            },
+            {
+              "num": 22,
+              "text": "We glorify Him and we praise Him, for He is the Beneficent One, the Lover of men."
+            },
+            {
+              "num": 23,
+              "text": "Rejoice thou, O full of grace, Virgin unblemished, Vessel undefiled, Glory of the world, Light which shall never be extinguished, Shrine that shall never be overthrown."
+            },
+            {
+              "num": 24,
+              "text": "Staff of the Faith, thou never-failing support of the saints, pray thou for us to thy Beneficent Son, our Redeemer, that He may have mercy upon us, and show us compassion, and forgive us our sins in His mercy for ever and ever."
+            },
+            {
+              "num": 25,
+              "text": "Amen."
+            }
           ]
         }
       ]
@@ -114,50 +1013,122 @@
         {
           "num": 1,
           "verses": [
-            { "num": 1, "text": "O Holy and blessed, ever-virgin, Mother of God, Mother of Christ, offer up our prayer on high to thy beloved Son, that He may forgive us our sins." },
-            { "num": 2, "text": "Thou art the true Gate of Light, through whom the Sun of Righteousness arose upon the whole world, giving light to those who sat in the shadow of death." },
-            { "num": 3, "text": "The Father in His wisdom looked upon the earth and found none like unto thee; He sent His Word and He took flesh from thee, and the Tabernacle of the Godhead was established in thy womb." },
-            { "num": 4, "text": "Thou art the golden ladder which the patriarch Jacob saw, upon which the Lord of Glory rested, and the angels of God ascended and descended to minister unto the children of men." },
-            { "num": 5, "text": "O Virgin, thou art the spiritual mountain of which the prophet Habakkuk spoke, from which the Holy One came forth to save His people from the hand of the enemy." },
-            { "num": 6, "text": "Thou art the cloud of incense that arose from the desert, carrying the sweet savor of the knowledge of God to all the nations of the earth." },
-            { "num": 7, "text": "We glorify thee, O Mother of God, and we exalt thy name; for through thee the curse was lifted from the earth, and the path to the Tree of Life was made plain to the faithful." }
+            {
+              "num": 1,
+              "text": "O Holy and blessed, ever-virgin, Mother of God, Mother of Christ, offer up our prayer on high to thy beloved Son, that He may forgive us our sins."
+            },
+            {
+              "num": 2,
+              "text": "Thou art the true Gate of Light, through whom the Sun of Righteousness arose upon the whole world, giving light to those who sat in the shadow of death."
+            },
+            {
+              "num": 3,
+              "text": "The Father in His wisdom looked upon the earth and found none like unto thee; He sent His Word and He took flesh from thee, and the Tabernacle of the Godhead was established in thy womb."
+            },
+            {
+              "num": 4,
+              "text": "Thou art the golden ladder which the patriarch Jacob saw, upon which the Lord of Glory rested, and the angels of God ascended and descended to minister unto the children of men."
+            },
+            {
+              "num": 5,
+              "text": "O Virgin, thou art the spiritual mountain of which the prophet Habakkuk spoke, from which the Holy One came forth to save His people from the hand of the enemy."
+            },
+            {
+              "num": 6,
+              "text": "Thou art the cloud of incense that arose from the desert, carrying the sweet savor of the knowledge of God to all the nations of the earth."
+            },
+            {
+              "num": 7,
+              "text": "We glorify thee, O Mother of God, and we exalt thy name; for through thee the curse was lifted from the earth, and the path to the Tree of Life was made plain to the faithful."
+            }
           ]
         },
         {
           "num": 2,
           "verses": [
-            { "num": 1, "text": "Behold, the prophets foretold thy glory in ancient times; David called thee the City of God, and Solomon called thee the Garden of Delights." },
-            { "num": 2, "text": "Isaiah saw thee as the rod that should spring from the root of Jesse, and Ezekiel saw thee as the East Gate that should never be opened." },
-            { "num": 3, "text": "All these mysteries were fulfilled in thee, O Mary, for thou hast brought forth the Savior without the seed of man, and remained a virgin after His birth as thou wast before." },
-            { "num": 4, "text": "Therefore, we fall down before thee and entreat thy mercy; intercede for us, O full of grace, that the Lord may grant us the peace which passeth understanding." },
-            { "num": 5, "text": "Bless our land and our people, and keep the Church in the unity of the Spirit; and may the blessing of the Holy Trinity be upon all who celebrate thy memory in truth." }
+            {
+              "num": 1,
+              "text": "Behold, the prophets foretold thy glory in ancient times; David called thee the City of God, and Solomon called thee the Garden of Delights."
+            },
+            {
+              "num": 2,
+              "text": "Isaiah saw thee as the rod that should spring from the root of Jesse, and Ezekiel saw thee as the East Gate that should never be opened."
+            },
+            {
+              "num": 3,
+              "text": "All these mysteries were fulfilled in thee, O Mary, for thou hast brought forth the Savior without the seed of man, and remained a virgin after His birth as thou wast before."
+            },
+            {
+              "num": 4,
+              "text": "Therefore, we fall down before thee and entreat thy mercy; intercede for us, O full of grace, that the Lord may grant us the peace which passeth understanding."
+            },
+            {
+              "num": 5,
+              "text": "Bless our land and our people, and keep the Church in the unity of the Spirit; and may the blessing of the Holy Trinity be upon all who celebrate thy memory in truth."
+            }
           ]
         },
         {
           "num": 3,
           "verses": [
-            { "num": 1, "text": "O Gate of Life, the angels stand in awe of thy purity, and the cherubim hide their faces from the glory of Him whom thou didst carry in thy womb." },
-            { "num": 2, "text": "Thou art the ship of gold that carried the great Pearl, and the field that brought forth the Bread of Life without being sown." },
-            { "num": 3, "text": "Thou art the spiritual vine that bore the cluster of grapes, the juice of which is the Blood of Christ that redeems the world." },
-            { "num": 4, "text": "Through thee, the lowly are exalted and the proud are brought down; for thou didst bear the King of Kings while yet being the handmaid of the Lord." }
+            {
+              "num": 1,
+              "text": "O Gate of Life, the angels stand in awe of thy purity, and the cherubim hide their faces from the glory of Him whom thou didst carry in thy womb."
+            },
+            {
+              "num": 2,
+              "text": "Thou art the ship of gold that carried the great Pearl, and the field that brought forth the Bread of Life without being sown."
+            },
+            {
+              "num": 3,
+              "text": "Thou art the spiritual vine that bore the cluster of grapes, the juice of which is the Blood of Christ that redeems the world."
+            },
+            {
+              "num": 4,
+              "text": "Through thee, the lowly are exalted and the proud are brought down; for thou didst bear the King of Kings while yet being the handmaid of the Lord."
+            }
           ]
         },
         {
           "num": 4,
           "verses": [
-            { "num": 1, "text": "O Lady, protect the priests who minister at the altar, and the deacons who serve the holy mysteries, and the readers who proclaim the Word of Truth." },
-            { "num": 2, "text": "Grant wisdom to our rulers and peace to our borders; and let the light of thy Son shine in the hearts of those who are in darkness." },
-            { "num": 3, "text": "Remember the orphans and the widows, the sick and the afflicted, and let thy motherly care be a shield to them in their hour of need." },
-            { "num": 4, "text": "For we have no other refuge but thee, and no other hope but in the mercy of Him who was born of thee." }
+            {
+              "num": 1,
+              "text": "O Lady, protect the priests who minister at the altar, and the deacons who serve the holy mysteries, and the readers who proclaim the Word of Truth."
+            },
+            {
+              "num": 2,
+              "text": "Grant wisdom to our rulers and peace to our borders; and let the light of thy Son shine in the hearts of those who are in darkness."
+            },
+            {
+              "num": 3,
+              "text": "Remember the orphans and the widows, the sick and the afflicted, and let thy motherly care be a shield to them in their hour of need."
+            },
+            {
+              "num": 4,
+              "text": "For we have no other refuge but thee, and no other hope but in the mercy of Him who was born of thee."
+            }
           ]
         },
         {
           "num": 5,
           "verses": [
-            { "num": 1, "text": "Holy, Holy, Holy is the Lord God of Hosts, who chose thee to be His dwelling place and magnified thee above the heavens." },
-            { "num": 2, "text": "Glory be to the Father who loved thee, and to the Son who dwelt in thee, and to the Holy Spirit who overshadowed thee." },
-            { "num": 3, "text": "And now, O Mother of God, receive our praise and our petitions, and present them before the throne of the Savior." },
-            { "num": 4, "text": "That we may be found worthy to join with the saints in the kingdom of light, singing praises to the Holy Trinity for ever and ever. Amen." }
+            {
+              "num": 1,
+              "text": "Holy, Holy, Holy is the Lord God of Hosts, who chose thee to be His dwelling place and magnified thee above the heavens."
+            },
+            {
+              "num": 2,
+              "text": "Glory be to the Father who loved thee, and to the Son who dwelt in thee, and to the Holy Spirit who overshadowed thee."
+            },
+            {
+              "num": 3,
+              "text": "And now, O Mother of God, receive our praise and our petitions, and present them before the throne of the Savior."
+            },
+            {
+              "num": 4,
+              "text": "That we may be found worthy to join with the saints in the kingdom of light, singing praises to the Holy Trinity for ever and ever. Amen."
+            }
           ]
         }
       ]
@@ -170,51 +1141,96 @@
           "num": 1,
           "name": "The Night Office (Mahlet)",
           "verses": [
-            { "num": 1, "text": "Arise, ye children of the Light, and let us glorify the Lord who hath kept us during the darkness of the night." },
-            { "num": 2, "text": "O Lord, open my lips, and my mouth shall show forth Thy praise; for Thou art the Light that dispelleth the darkness of our souls." },
-            { "num": 3, "text": "We thank Thee, O King Eternal, for Thou hast brought us to the beginning of this day; grant that we may spend it without sin and without stumbling." },
-            { "num": 4, "text": "Remember Thy Church which Thou hast purchased from of old, and let Thy peace dwell within the walls of Thy sanctuary." }
+            {
+              "num": 1,
+              "text": "Arise, ye children of the Light, and let us glorify the Lord who hath kept us during the darkness of the night."
+            },
+            {
+              "num": 2,
+              "text": "O Lord, open my lips, and my mouth shall show forth Thy praise; for Thou art the Light that dispelleth the darkness of our souls."
+            },
+            {
+              "num": 3,
+              "text": "We thank Thee, O King Eternal, for Thou hast brought us to the beginning of this day; grant that we may spend it without sin and without stumbling."
+            },
+            {
+              "num": 4,
+              "text": "Remember Thy Church which Thou hast purchased from of old, and let Thy peace dwell within the walls of Thy sanctuary."
+            }
           ]
         },
         {
           "num": 2,
           "name": "The First Hour (Neqat)",
           "verses": [
-            { "num": 1, "text": "At the dawn of the day, we offer unto Thee, O Lord, the first-fruits of our thoughts and the labor of our hands." },
-            { "num": 2, "text": "Guide our steps in the path of Thy commandments, and let the light of Thy countenance shine upon us throughout this hour." },
-            { "num": 3, "text": "Blessed art Thou, O God of our fathers, who hast given us the sun to rule the day and the moon to rule the night." }
+            {
+              "num": 1,
+              "text": "At the dawn of the day, we offer unto Thee, O Lord, the first-fruits of our thoughts and the labor of our hands."
+            },
+            {
+              "num": 2,
+              "text": "Guide our steps in the path of Thy commandments, and let the light of Thy countenance shine upon us throughout this hour."
+            },
+            {
+              "num": 3,
+              "text": "Blessed art Thou, O God of our fathers, who hast given us the sun to rule the day and the moon to rule the night."
+            }
           ]
         },
         {
           "num": 3,
           "name": "The Third Hour (Sallest)",
           "verses": [
-            { "num": 1, "text": "O Holy Spirit, who didst descend upon the apostles at the third hour, do not take Thy grace from us, but renew it within our hearts." },
-            { "num": 2, "text": "Cleanse our consciences from dead works, that we may serve the living God with a pure heart and a willing mind." }
+            {
+              "num": 1,
+              "text": "O Holy Spirit, who didst descend upon the apostles at the third hour, do not take Thy grace from us, but renew it within our hearts."
+            },
+            {
+              "num": 2,
+              "text": "Cleanse our consciences from dead works, that we may serve the living God with a pure heart and a willing mind."
+            }
           ]
         },
         {
           "num": 4,
           "name": "The Sixth Hour (Qatru)",
           "verses": [
-            { "num": 1, "text": "Thou who wast nailed to the Cross at the sixth hour for the salvation of the world, nail our sins to Thy Cross and deliver us from the power of the enemy." },
-            { "num": 2, "text": "Let Thy mercy come upon us, O Lord, as we have hoped in Thee; for Thou art our refuge and our strength in the heat of the day." }
+            {
+              "num": 1,
+              "text": "Thou who wast nailed to the Cross at the sixth hour for the salvation of the world, nail our sins to Thy Cross and deliver us from the power of the enemy."
+            },
+            {
+              "num": 2,
+              "text": "Let Thy mercy come upon us, O Lord, as we have hoped in Thee; for Thou art our refuge and our strength in the heat of the day."
+            }
           ]
         },
         {
           "num": 5,
           "name": "The Ninth Hour (Tes'atu)",
           "verses": [
-            { "num": 1, "text": "At the ninth hour, Thou didst taste death in the flesh to give life unto us; kill our earthly members and quicken us by Thy Spirit." },
-            { "num": 2, "text": "Accept our prayers as the evening sacrifice, and let the lifting up of our hands be an incense well-pleasing in Thy sight." }
+            {
+              "num": 1,
+              "text": "At the ninth hour, Thou didst taste death in the flesh to give life unto us; kill our earthly members and quicken us by Thy Spirit."
+            },
+            {
+              "num": 2,
+              "text": "Accept our prayers as the evening sacrifice, and let the lifting up of our hands be an incense well-pleasing in Thy sight."
+            }
           ]
         },
         {
           "num": 6,
           "name": "The Eleventh Hour (Serka)",
           "verses": [
-            { "num": 1, "text": "The day is far spent and the evening is at hand; abide with us, O Lord, for the shadows have lengthened." },
-            { "num": 2, "text": "Forgive us the sins of this day, whether in word, deed, or thought, and grant us a peaceful evening and a night without blemish." }
+            {
+              "num": 1,
+              "text": "The day is far spent and the evening is at hand; abide with us, O Lord, for the shadows have lengthened."
+            },
+            {
+              "num": 2,
+              "text": "Forgive us the sins of this day, whether in word, deed, or thought, and grant us a peaceful evening and a night without blemish."
+            }
           ]
         }
       ]
@@ -227,16 +1243,28 @@
           "num": 1,
           "name": "Hymn for the Resurrection",
           "verses": [
-            { "num": 1, "text": "Christ is risen from the dead! He hath trampled down death by death, and upon those in the tombs He hath bestowed life." },
-            { "num": 2, "text": "The angels in heaven sing for joy, and the earth is filled with the light of His glory; for the Lord of Life hath conquered the grave." }
+            {
+              "num": 1,
+              "text": "Christ is risen from the dead! He hath trampled down death by death, and upon those in the tombs He hath bestowed life."
+            },
+            {
+              "num": 2,
+              "text": "The angels in heaven sing for joy, and the earth is filled with the light of His glory; for the Lord of Life hath conquered the grave."
+            }
           ]
         },
         {
           "num": 2,
           "name": "Hymn of the Archangels",
           "verses": [
-            { "num": 1, "text": "Michael the Archangel, the prince of the heavenly host, pray for us before the throne of the Most High." },
-            { "num": 2, "text": "Gabriel, the messenger of joy, who brought the good news to the Virgin, enlighten our hearts with the knowledge of the Truth." }
+            {
+              "num": 1,
+              "text": "Michael the Archangel, the prince of the heavenly host, pray for us before the throne of the Most High."
+            },
+            {
+              "num": 2,
+              "text": "Gabriel, the messenger of joy, who brought the good news to the Virgin, enlighten our hearts with the knowledge of the Truth."
+            }
           ]
         }
       ]
