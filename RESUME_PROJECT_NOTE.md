@@ -1185,3 +1185,41 @@ verification read-through).
 "rebuild target with a source lead in hand" left in the ET corpus; everything remaining either needs
 an original translation (post-v1.0, parked), a human read-through, or Mazaheta's identity question
 resolved first.
+
+## SESSION HANDOFF 2026-07-22 continued -- Mazaheta identity question resolved, 2/5 sections rebuilt
+
+Picked up Mazaheta next (the last book with a genuine prerequisite blocker rather than a
+sourcing dead-end). Resolved the identity question left open since 2026-07-16/18: **"Mazaheta"
+is not attested anywhere as a real historical title** -- no hits in scholarly, ecclesiastical, or
+manuscript-catalog sources for this specific five-work compilation name. But each of the five
+bundled works is independently real and well-documented (Kidane/Covenant Prayer, Weddase
+Maryam/Praise of Mary, Anqasa Birhan/Gate of Light, Sa'atat/Horologium, Me'erAf/Common Hymns) --
+this reads as an app-internal compilation label, the same pattern as Rest of Baruch's multi-book
+split, not a fabricated single work.
+
+**2 of 5 sections rebuilt** from Josh's own browser paste of pages 54-60 and 279-296 of E.A.
+Wallis Budge's 1922 *Legends of Our Lady Mary* (the same volume already confirmed and used for
+Malke'a Virgin Mary in this project -- automated fetch hit the same archive.org OCR hard-truncation
+wall noted in Tizaz's history, so Josh pasted the pages directly, same fix as last time):
+- **Kidane**: both accounts of the Covenant of Mercy (Budge pp. 54-59), 2 chapters / 39 verses.
+- **Weddase Maryam**: complete week of daily praises (Budge pp. 279-296, via Fries' 1892 critical
+  edition), 7 chapters / 194 verses.
+
+Both verified via scripted word-count parity check against the source (zero words dropped/
+duplicated) before touching the repo, and the standard structural re-sweep is clean across the
+whole file.
+
+**Remaining 3 sections (Anqasa Birhan, Sa'atat, Me'erAf) are NOT in Budge's volume** and have no
+confirmed PD English source located yet -- unchanged, still unverified. Not marked GREEN (3/5
+sections still unsourced). Same open governance question as Rest of Baruch's Book 3: how to treat
+a partially-rebuilt multi-section book on the dashboard. Left RED with a note documenting exactly
+what's done and what's still open.
+
+**ET-corpus status: 8 green, 23 red (unchanged in count, but Mazaheta's red reason is now
+"partially sourced" rather than "identity blocked"), 0 amber.**
+
+**Next session should:** ask Josh whether to pursue sources for Anqasa Birhan/Sa'atat/Me'erAf
+(Anqasa Birhan's real PD-era translation is Grohmann 1919, in German, not English -- same
+original-translation category as the post-v1.0 queue), or move to the human-verification
+read-throughs (1-3 Meqabyan, Malke'a Virgin Mary) which are the last remaining category with no
+open sourcing question at all.
