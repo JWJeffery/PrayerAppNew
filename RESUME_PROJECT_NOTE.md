@@ -1223,3 +1223,45 @@ what's done and what's still open.
 original-translation category as the post-v1.0 queue), or move to the human-verification
 read-throughs (1-3 Meqabyan, Malke'a Virgin Mary) which are the last remaining category with no
 open sourcing question at all.
+
+## SESSION HANDOFF 2026-07-22 continued -- human-verification read-throughs done; 2 Meqabyan found contaminated
+
+Completed the human-equivalent verification read-through for the four remaining "rebuilt but not
+individually checked" books:
+
+**Malke'a Virgin Mary -- GREEN.** Direct stanza-by-stanza comparison against Budge 1922 (already
+in-session from an earlier paste) confirms exact wording match, including inline scriptural
+cross-references (Song of Solomon, Ezekiel, Exodus citations embedded in several stanzas).
+Structural sweep clean: 42/42 stanzas.
+
+**1 Meqabyan -- GREEN.** Structural sweep clean. Scanned for the Patois-register markers that
+turned out to contaminate 2 Meqabyan (see below) -- zero hits, confirming chapters 1-7 really are
+the formal Wikisource translation as claimed, not a mislabeled Patois text. Chapters 8-36 remain
+intentionally empty per the 2026-07-20 governance decision.
+
+**3 Meqabyan -- GREEN.** Structural sweep clean, same Patois-marker scan came back zero. Single-
+source caveat (Wikisource only, apocryphalibrary.weebly.com doesn't host this book) retained.
+
+**2 Meqabyan -- STILL RED, real problem found.** The 2026-07-20 rebuild note explicitly claims "No
+Patois/Iyaric text involved in this book at all," but this session found 20 of 21 chapters are
+actually written in Patois/Iyaric-register English (markers like "ina," "iginnin,"
+"downstroyed," apostrophe-prefixed names throughout). Confirmed against real Wikisource
+search-result text for chapter 1: the actual translation is plain formal English; this file's
+chapter 1 is a Patois paraphrase of the same content. Per standing project policy (already applied
+to 1 Meqabyan), Patois/Iyaric register is excluded from this corpus regardless of licensing status.
+**Root cause not yet determined** -- either the 2026-07-20 rebuild used the wrong source despite
+its own claim, or the file was reverted/corrupted afterward.
+
+**NOT fixed this session:** full-page fetch of Wikisource is blocked (cache-only) in this session's
+tooling -- only fragments of the real translation were retrievable via search snippets, not enough
+to safely rebuild all 21 chapters without risking another sloppy transcription. Left RED with the
+full contradiction logged in `audit-ledger.html`.
+
+**ET-corpus status: 11 green, 20 red, 0 amber.** `SEED_VERSION` now `v131-2026-07-22-meqabyan-mkv-
+verified`.
+
+**Next session should:** get 2 Meqabyan's real Wikisource text into the session -- either via a
+working fetch path, or (the reliable fallback used for Tizaz and Mazaheta when automated fetch
+failed) ask Josh to paste `en.wikisource.org/wiki/Translation:2_Meqabyan` directly -- then do a
+full rebuild of all 21 chapters the same careful way as the other rebuilds this project has done
+(programmatic build + word-count parity check before touching the repo).
