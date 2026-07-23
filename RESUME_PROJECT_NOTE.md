@@ -1265,3 +1265,25 @@ working fetch path, or (the reliable fallback used for Tizaz and Mazaheta when a
 failed) ask Josh to paste `en.wikisource.org/wiki/Translation:2_Meqabyan` directly -- then do a
 full rebuild of all 21 chapters the same careful way as the other rebuilds this project has done
 (programmatic build + word-count parity check before touching the repo).
+
+## SESSION HANDOFF 2026-07-22 continued -- 2 Meqabyan fully rebuilt and GREEN
+
+Josh pasted the real Wikisource translation (`en.wikisource.org/wiki/Translation:2_Meqabyan`)
+after automated fetch failed (cache-only) -- same fallback as Tizaz and Mazaheta. Full rebuild
+of all 21 chapters, replacing the Patois/Iyaric-contaminated content found in the previous
+handoff's verification read-through. Built programmatically (regex-based chapter/verse parse,
+not hand-assembled) and verified via scripted word-count parity check against the source for
+every chapter individually before touching the repo -- zero words dropped or duplicated. 21
+chapters, 421 verses. Two verse-number gaps (ch.16 after v.8, ch.21 after v.8) are native to the
+Wikisource page itself, left honestly absent.
+
+Marked GREEN, `SEED_VERSION` bumped to `v132-2026-07-22-2meqabyan-rebuilt-green`.
+
+**ET-corpus status: 12 green, 19 red, 0 amber.** This closes out the entire "human verification
+read-through" batch from the last handoff -- all four books (Malke'a Virgin Mary, 1/2/3 Meqabyan)
+are now GREEN, with 2 Meqabyan's real contamination found and fixed along the way.
+
+**Next session should:** ask Josh which category to prioritize next -- remaining open items are
+the post-v1.0 deferred queue (Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, Admonitions,
+Sirate Tsion, Clement/Qalementos), Mazaheta's remaining 3 unsourced sections (Anqasa Birhan,
+Sa'atat, Me'erAf), and the non-red Clement family lead is now closed (deferred, see prior handoff).
