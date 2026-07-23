@@ -4365,3 +4365,32 @@ content awaiting a human verification read-through before it can go green (1-3 M
 Virgin Mary, and now also Abtilis and Tizaz per their own rebuild notes -- though Abtilis and Tizaz
 were independently confirmed clean via structural re-sweep and cross-source corroboration this
 session, which is why they're green rather than red despite lacking a line-by-line human check).
+
+## Governance decisions, session 2026-07-22 -- Guba'ekana rebuilt GREEN; Clement/Qalementos deferred
+
+**Guba'ekana -- REBUILT and marked GREEN.** Full detail in the corresponding GREEN_NOTES entry in
+`audit-ledger.html`. Rebuilt from Henry R. Percival's 1900 translation (NPNF2-14), sourced via
+New Advent's single-page edition rather than CCEL's paginated reader (one fetch instead of ~40).
+`SEED_VERSION` bumped to `v130-2026-07-22-gubaekana-green`.
+
+**Clement/Qalementos family -- GOVERNANCE DECISION (Josh, 2026-07-22): deferred to post-v1.0,
+same category as Fetha Nagast/Josippon/Malke'a Guba'e/Malke'a Iyasus/Admonitions/Sirate Tsion.**
+This closes the "non-red Clement family via R.H. Charles' APOT, unconfirmed" open item from the
+2026-07-21 next-steps list -- APOT does NOT cover this material (confirmed via the Lexham Bible
+Dictionary: APOT is Old Testament pseudepigrapha; the Ethiopic Qalëmentos, which all 11
+Clement-family files self-identify as internally, is an unrelated New-Testament-era work with
+"little, if any, relationship to the Pseudo-Clementine literature"). The real PD source is S.
+Grébaut's French translation (Revue de l'Orient Chrétien, 1907-1917) -- French, not English, so
+usable only via an original translation. The modern critical edition (Bausi, Il Qalēmentos
+etiopico) is Italian and in copyright. A 2025 English translation exists (Breandan Lumpkin) but is
+a recent commercial publication, not public domain. Whoever picks this up post-v1.0 should start
+from Grébaut's French text (or fresh from the Ge'ez) and produce an original English translation.
+No content changes made this session -- existing content across all 11 files remains unchanged in
+the meantime, same as the other deferred books.
+
+**Note for the eventual post-v1.0 Clement/Qalementos work:** two of the eleven files (3 Clement,
+7 Clement) additionally carry a confirmed literal Korean-character text-generation artifact
+(see their RED_NOTES entries) -- a symptom consistent with this whole family's content having been
+composed for this project rather than transcribed from any real source, since no real source was
+ever available. The two stray characters were mechanically corrected this session (see commit) but
+the underlying fabricated content across the family is untouched, pending the translation above.
