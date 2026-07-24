@@ -1905,6 +1905,75 @@ chapters 1-3 never checked against any source, plus inherited chapters 4-5 (=2 B
 81-82, which -- per this session's confirmation that the underlying source file is complete through
 ch.87 -- can now actually be verified, contrary to what prior sessions believed was possible).
 
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 13: chapters 15, 44, 64, 80 were
+ALL false alarms (same "merged verse" numbering-gap pattern already documented for chapters 32/44/
+64/80 back in checkpoint 1) -- cosmetically fixed by splitting the merged verse to match the
+source. Chapter 32 confirmed clean too but left as-is (genuinely ambiguous split point). 2 BARUCH
+(CE) CONTENT RESTORATION IS NOW COMPLETE.
+
+**Correcting the record from checkpoint 12's handoff:** that entry described chapters 15, 32, 44,
+64, 80 as "confirmed real gaps" still needing restoration. That was wrong -- checkpoint 1 (very
+early in this effort) had already investigated chapters 32, 44, 64, 80 directly and found them to be
+false alarms (the source's own combined/OCR'd verse markers, not real content loss); this session
+re-confirmed that finding for all four AND found chapter 15 is the same false-alarm class, never
+actually re-verified since the very first handoff of this whole checkpointed effort (which had
+claimed a "real missing clause" in chapter 15 that, on this session's direct check, is not actually
+missing at all -- it was already present in the app's text). The structural sweep kept surfacing
+these five chapters every single checkpoint because a *numbering* gap (skipped verse number) looks
+identical to a *content* gap in an automated scan -- but a numbering gap from a merged verse is
+cosmetic, not a defect. Worth a general lesson: a sweep flagging the same unresolved item across many
+sessions is worth actually re-diagnosing once, rather than continuing to carry it forward as "known,
+real, not yet fixed."
+
+**What was actually done, chapter by chapter:**
+- **Chapter 15:** app's v1 had merged the source's v1+v2 into one verse ("Thou art rightly astonied
+  regarding the departure of man" + "but thou hast not judged well regarding the evils which befall
+  those who sin"). Split into two verses matching the source exactly; verses 5-8 already carried
+  correct numbers by coincidence, so no further renumbering was needed. Confirmed word-for-word: the
+  chapter was already 100% content-complete.
+- **Chapter 44:** same pattern -- v1 had merged source's v1 ("...and I said unto them:") and v2
+  ("'Behold, I go unto my fathers according to the way of all the earth.") into one verse. Split to
+  match source; verses 3 onward were already correctly numbered.
+- **Chapter 64:** same pattern -- v4 had merged source's v4 and v5. Split into two verses (new v4,
+  v5), renumbering the old v5 to v6; verses 7 onward were already correctly numbered.
+- **Chapter 80:** same pattern -- v1 had merged source's v1 and v2. Split into two verses; verses 3
+  onward shifted down by one to fill the gap that had existed at v4 (old v2->new v3, old v3->new v4);
+  verses 5-7 were already correctly numbered and untouched.
+- **Chapter 32:** confirmed clean (no content missing, matches checkpoint 1's original finding
+  exactly), but its merge point sits at a genuine mid-word OCR line-wrap in the source ("it shall
+  pro-\n2 tect you") with no clear semantic sentence boundary to split on -- left as-is rather than
+  guess at an arbitrary split point, consistent with this project's "only restructure when
+  unambiguous" standing rule.
+
+All fixes verified directly against the source before touching the repo; none of them changed any
+actual verse *content*, only verse *numbering* to eliminate cosmetic gaps. Structural re-sweep clean
+across the whole file immediately after -- only chapter 32's confirmed, deliberately-unfixed gap
+remains.
+
+**2 BARUCH (CE) STATUS: every chapter 1-87 has now been directly verified against the primary source
+at least once across this entire checkpointed effort (checkpoints 1-13), and every confirmed real
+content defect has been restored.** The only remaining open item is the deliberate, well-understood
+non-fix in chapter 32's numbering (cosmetic only, not a content gap). **This book is very likely
+ready to be marked GREEN** -- recommend Josh (or the next session) do one final independent
+spot-check or two before flipping the dashboard status, given how many corrections this book needed
+and the seriousness of the chapter 85 MAJOR FINDING earlier this session, but there is no known
+remaining content defect.
+
+**ET/SY-corpus status:** do not bump SEED_VERSION or move 2 Baruch (CE) to GREEN_SEED in this
+session -- that update should happen deliberately, likely bundled with the final spot-check
+mentioned above, not reflexively at the end of a long content-fix session.
+
+**Next session should:** do a final independent verification pass on 2 Baruch (CE) (spot-check
+several chapters at random against the source, confirm the structural sweep is clean, confirm no
+`json.dump()` reformatting crept in across these many patches) before marking it GREEN and bumping
+SEED_VERSION -- this is a natural, low-risk task to start a fresh session with. Then move to Letter
+of Baruch (SY): its own unique chapters 1-3 have never been checked against any source, and its
+inherited chapters 4-5 (=2 Baruch's chapters 81-82) should now be re-verified given how much 2 Baruch
+itself changed this session -- confirm those two chapters were copied over correctly (or copy them
+fresh) before closing out Letter of Baruch. Same methodology throughout: verify before editing,
+distinctive-phrase grep, full untruncated source view, sentence-by-sentence comparison, and re-run
+the structural sweep after every edit.
+
 ## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
 7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
 

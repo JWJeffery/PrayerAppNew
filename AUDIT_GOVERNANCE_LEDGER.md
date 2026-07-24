@@ -4547,20 +4547,37 @@ chapters 15, 32, 44, 64, 80 -- flagged before checkpoint 1 began and carried for
 every session note since (never part of the original 12-chapter list). Letter of Baruch (SY) remains
 completely untouched. Do not mark 2 Baruch (CE) GREEN until those five chapters are resolved.
 
-**Methodology, reconfirmed across all twelve checkpoints, plus a new lesson:** grep the raw source
-for a distinctive phrase from the app's existing verse text; view the full surrounding source text,
-since this source routinely interleaves real verse text with footnote/commentary apparatus
-mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
-content in the source with no corresponding app text (and conversely, verify a flagged chapter
-actually has a gap before editing it); watch for poetic lines/clauses truncated partway through --
-by far the most common defect in this book (chapters 20, 21, 35, 43, 49, 51, 52); when content
-diverges in *substance*, not just length, from the source (chapter 85 vv.7-15), that's a different
-and more serious failure mode than truncation -- cross-check against a second independent source
-before concluding, since this is the same signature as a MAJOR FINDING elsewhere in this project
-(fabricated/wrong-source content, not just incomplete transcription); **verify a prior session's
-claim that a source is incomplete against the actual file in the repo before accepting it and
-spending effort on a replacement search** -- the "chapters 86-87 need a second source" claim had
-been repeated across several handoffs without anyone re-checking the file already in hand; when
-restoring pronouns, match the convention already established by that chapter's own untouched verses;
-only restructure existing verse boundaries when the source's own numbering is unambiguous; re-run
-the structural sweep on the whole file immediately after each chapter's edit.
+**Checkpoint 13 -- 2 BARUCH (CE) CONTENT RESTORATION COMPLETE.** Chapters 15, 44, 64, and 80 were
+all false alarms of the exact same class checkpoint 1 had already identified in chapters 32/44/64/80
+(a merged verse creating a cosmetic numbering gap, not a real content gap) -- checkpoint 12's
+handoff had mischaracterized these as "confirmed real gaps still needing restoration," which this
+session corrected by actually re-diagnosing each one rather than continuing to carry the label
+forward. Chapter 15's specific claimed defect (a "missing clause" from the very first handoff of
+this whole effort) turned out to already be present in the app's text -- the original claim was
+itself a false alarm, never re-checked until now. Fixed by splitting each chapter's merged verse to
+match the source's own verse boundaries (chapters 15, 44, 64, 80); chapter 32 confirmed clean by the
+same standard but left unsplit since its merge point falls at a genuine ambiguous mid-word OCR
+line-wrap with no clear sentence boundary. None of these fixes changed any verse content -- only
+verse numbering, to eliminate gaps that had been flagged as suspicious across every checkpoint's
+structural sweep without ever being individually re-examined.
+
+**Final status: every chapter 1-87 of 2 Baruch (CE) has been directly verified against the primary
+source at least once (checkpoints 1-13), and every confirmed real content defect has been restored.**
+Only chapter 32's deliberate, understood non-fix remains (cosmetic numbering only). This book is very
+likely ready for GREEN, pending one independent spot-check given how many corrections it needed and
+the severity of the chapter 85 finding -- not bumped to GREEN_SEED this session, left for deliberate
+follow-through.
+
+**Methodology, reconfirmed across all thirteen checkpoints, plus a new lesson:** grep the raw source
+for a distinctive phrase from the app's existing verse text; view the full surrounding source text;
+compare sentence-by-sentence, only concluding something is missing when there's real content in the
+source with no corresponding app text (and conversely, verify a flagged chapter actually has a gap
+before editing it); watch for poetic lines/clauses truncated partway through (the dominant real
+defect throughout this book) and for content that diverges in substance rather than length (the
+signature of a MAJOR FINDING, as in chapter 85); verify a prior session's claim -- about a source
+being incomplete, or a gap being "confirmed real" -- against the actual evidence before accepting it
+and carrying it forward uncritically; when a verse-numbering gap turns out to be a merged verse with
+a clear sentence-boundary split point, split it to match the source (cosmetic fix, matches source
+fidelity); when the split point is genuinely ambiguous (mid-word OCR line-wraps with no sentence
+boundary), leave it rather than guess; re-run the structural sweep on the whole file immediately
+after each edit.
