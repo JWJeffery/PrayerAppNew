@@ -1321,3 +1321,42 @@ feature only. ET-corpus status unchanged: 12 green, 19 red, 0 amber.
 reds (2 Baruch, Letter of Baruch) are the most tractable immediate targets since their sources are
 already known; everything striped is waiting on either a v1.0 ship date or a translation-sourcing
 breakthrough.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) duplication fixed; scope on the rest revised upward
+
+Picked up the two "fixable now" reds identified in the last handoff (2 Baruch (CE), Letter of
+Baruch (SY)). Before attempting the full ~1,939-word restoration, fixed the one concrete,
+mechanically-verifiable defect: chapter 12 verses 6-7 verbatim duplicated chapter 13 verses 1-2.
+Chapter 12 now correctly ends at verse 5, using the raw source snapshot already committed to the
+repo (`data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt`,
+R.H. Charles' 1913 APOT translation, public domain) -- no fresh fetch needed.
+
+**Revised the scope assessment on the rest, and it's gone up, not down.** The 1913 OCR source has
+real verse-boundary ambiguity in places -- line breaks split mid-clause, and verse numbers are
+sometimes OCR-mangled onto the wrong word. Confirmed a real missing clause in chapter 15
+("but thou hast not judged well regarding the evils which befall those who sin"), and found the
+same shape of gap in four more chapters beyond what was previously logged (32, 44, 64, 80) --
+meaning the true scope of missing content is larger than the 2026-07-18 finding catalogued.
+
+**Deliberately did not attempt the full restoration this session.** Guessing at ambiguous clause
+boundaries under time pressure is exactly the failure mode this project has learned to avoid (see
+the standing lesson on blind pattern fixes producing near-misses, from the NABRE/1-Enoch corpus
+bugs). This is genuinely full-rebuild-scale work, same category as Hermas/Didascalia -- it should
+get its own checkpointed multi-session effort (patch-by-patch, like Tizaz's six-patch rebuild),
+not be rushed through in one pass.
+
+**Letter of Baruch (SY) untouched this session** -- its chapters 4-5 copy 2 Baruch's chapters 81-82
+verbatim, which are part of the same still-unrestored missing-content problem, not the duplication
+defect that was fixed. It stays exactly where it was.
+
+RED_NOTES for 2 Baruch (CE) updated to record the real fix and the honest revised scope. Neither
+book moved to GREEN -- the duplication was only one of several confirmed problems.
+
+**ET/SY-corpus status unchanged in green/red counts** -- this was a within-red content fix, not a
+status change.
+
+**Next session should:** treat 2 Baruch (CE)'s missing-content restoration as its own dedicated,
+checkpointed project (not a quick pass) -- work chapter by chapter against the raw source snapshot
+already in the repo, verify each chapter's verse boundaries carefully given the OCR ambiguity
+found this session, and only then look at Letter of Baruch (SY), which will inherit whatever gets
+fixed in 2 Baruch's chapters 81-82.
