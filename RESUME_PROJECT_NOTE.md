@@ -1660,3 +1660,34 @@ internally-inconsistent verse numbering, and the "poetic couplet truncated at li
 confirmed in chapter 35 (worth checking for specifically in any remaining poetic passage); only
 restructure verse boundaries when the evidence is unambiguous; re-run the structural sweep after
 every single chapter's edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 7: chapter 43 fixed (v2 missing
+3 of its 4 lines)
+
+**Chapter 43: real missing content confirmed and fixed.** God's address to Baruch telling him of
+his impending translation (not death). v1 and v3 were already correct. v2, a four-line poetic verse,
+was truncated after its first line -- missing "and you shall pass from the regions which are now
+seen by you, and you shall forget whatever is corruptible, and shall not again recall those things
+which happen among mortals" (app had only "For you shall depart from this place,"). Restored using
+this chapter's own already-established modernized "you/your" convention (v1 and v3 were both already
+modernized from the source's "thee/thy," so the newly-restored lines match rather than reverting to
+the source's archaic pronouns -- differs from chapters 31/35's precedent of keeping "thee/thy," since
+those chapters had no surrounding modernized-pronoun convention to match and this one does). Verified
+directly against the source before touching the repo; verse count unchanged (3). Structural re-sweep
+clean immediately after (same five previously-known gaps, unchanged: chapters 15, 32, 44, 64, 80).
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21, 31, 35, 43 fixed;
+chapter 29 confirmed clean (no edit needed). 8 of the original 12-chapter list addressed. Remaining:
+48, 49, 51, plus chapters 86-87 still unverified against any primary source. Letter of Baruch (SY)
+still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 48, same methodology as checkpoints 1-7 -- verify
+before editing; distinctive-phrase grep, full untruncated source view, sentence-by-sentence
+comparison, watch for footnote-apparatus interruptions, internally-inconsistent verse numbering, and
+poetic-line truncation (now confirmed in three different forms across chapters 20/21/35/43); when
+restoring pronouns, match whatever convention (modernized "you/your" vs. source's archaic "thee/thy")
+is already established by the surrounding untouched verses in that specific chapter, rather than
+applying one convention uniformly across the whole book; re-run the structural sweep after every
+single chapter's edit.

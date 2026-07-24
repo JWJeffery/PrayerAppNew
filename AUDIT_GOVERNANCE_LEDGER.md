@@ -4474,14 +4474,25 @@ incense of fragrant odours," v5 missing "and the desire of our soul into sand." 
 single-pattern content loss found in this book so far -- every verse cut at exactly the same
 structural point. v1 was already correct. Verse count unchanged (5).
 
-**Methodology, reconfirmed across all six checkpoints:** grep the raw source for a distinctive
+**Checkpoint 7:** chapter 43 fixed -- God's address to Baruch about his impending translation. v2
+was truncated after its first line, missing three more lines: "and you shall pass from the regions
+which are now seen by you, and you shall forget whatever is corruptible, and shall not again recall
+those things which happen among mortals." Restored using this chapter's own modernized "you/your"
+convention (v1 and v3 were already modernized from the source's "thee/thy"), rather than the
+source's archaic pronouns used for chapters 31/35's restorations -- pronoun choice for restored text
+now follows whatever convention the chapter's own untouched verses already establish, not one fixed
+rule for the whole book. Verse count unchanged (3).
+
+**Methodology, reconfirmed across all seven checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
 mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
 narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
 conversely, verify a flagged chapter actually has a gap before editing it -- chapter 29 did not);
-watch specifically for poetic couplets truncated at their first line (confirmed pattern, chapter
-35); only restructure existing verse boundaries when the source's own numbering is unambiguous;
-re-run the structural sweep on the whole file immediately after each chapter's edit, not batched at
-session end.
+watch specifically for poetic lines/couplets truncated partway through (confirmed in chapters 20,
+21, 35, and now 43); when restoring pronouns, match the convention already established by that
+chapter's own untouched verses (modernized "you/your" vs. source's "thee/thy") rather than a
+book-wide rule; only restructure existing verse boundaries when the source's own numbering is
+unambiguous; re-run the structural sweep on the whole file immediately after each chapter's edit,
+not batched at session end.
