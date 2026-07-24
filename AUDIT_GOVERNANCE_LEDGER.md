@@ -4584,14 +4584,37 @@ been directly checked against the primary source across checkpoints 1-14.** Only
 understood, deliberately-unfixed cosmetic numbering gap remains. Not yet marked GREEN -- reserved for
 a deliberate final spot-check.
 
-**Methodology, reconfirmed across all fourteen checkpoints:** grep the raw source for a distinctive
-phrase from the app's existing verse text; view the full surrounding source text; compare
-sentence-by-sentence, only concluding something is missing when there's real content in the source
-with no corresponding app text (and conversely, verify a flagged chapter actually has a gap before
-editing it); watch for poetic lines/clauses truncated partway through (the dominant real defect
-throughout this book) and for entire parallel-structure verses dropped from a series (chapter 82's
-triplets); word-count parity checks are an efficient way to confirm a chapter is genuinely clean when
-it looks intact at a glance (used successfully on chapters 29, 48, 78, 79); when a chapter was never
-on any flagged list and never individually checked, that's not the same as verified -- check it
-directly rather than assuming clean; re-run the structural sweep on the whole file immediately after
-each edit.
+**Checkpoint 15 -- Letter of Baruch (SY) synced, CLOSES OUT BOTH BOOKS.** Letter of Baruch is
+2 Baruch's chapters 78-87 under independent 1-10 numbering (confirmed via each chapter's own
+`originalChapterIn2Baruch` field). Given checkpoints 1-14 fully verified and, in several cases
+substantially rewrote, 2 Baruch's chapters 78-87, synced Letter of Baruch's verses directly from the
+now-authoritative `2baruchSY.json` rather than re-deriving independently (avoids duplicating work and
+the risk of the two files drifting apart again). 4 of 10 chapters were already identical and needed
+no change; 6 were out of sync and updated to match exactly (verified programmatically, comparing each
+chapter's verse array against its counterpart by `originalChapterIn2Baruch`). Verse count: 76 -> 80
+(net +4, fully explained by chapter 80's cosmetic split and chapter 82's three restored verses).
+Updated the file's `contentTrustNote`, which had explicitly flagged this content as never
+independently verified -- now accurately reflects the verification done this session. Structural
+sweep clean across the whole file.
+
+**FINAL STATUS: both 2 Baruch (CE) and Letter of Baruch (SY) are now fully content-verified.**
+Chapter 32's one understood, deliberately-unfixed cosmetic numbering gap in 2 Baruch (CE) is the only
+known non-issue remaining anywhere. Neither book's dashboard status changed this session -- both stay
+RED pending a deliberate, combined spot-check-and-GREEN-marking pass (recommended as the natural next
+session's opening task, since a single verification pass now covers both files given their shared
+content).
+
+**Methodology, reconfirmed across all fifteen checkpoints of this whole restoration effort:** grep
+the raw source for a distinctive phrase from the app's existing verse text; view the full surrounding
+source text; compare sentence-by-sentence, only concluding something is missing when there's real
+content in the source with no corresponding app text (and conversely, verify a flagged chapter
+actually has a gap before editing it, and verify a chapter that was never flagged is actually clean
+before assuming it is); watch for poetic lines/clauses truncated partway through and for entire
+parallel-structure verses dropped from a series; word-count parity checks are efficient for
+confirming a chapter is genuinely clean; when content diverges in substance rather than length,
+cross-check against a second independent source (MAJOR FINDING signature); verify a prior session's
+claims -- about source completeness, or a gap being "confirmed real" -- against the actual evidence
+rather than carrying them forward uncritically; when two files share the same underlying content
+(like 2baruchSY.json and letterofbaruchSY.json), sync programmatically from the authoritative one
+rather than re-deriving independently; re-run the structural sweep on the whole file immediately
+after each edit.

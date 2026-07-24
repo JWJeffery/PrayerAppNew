@@ -2029,6 +2029,60 @@ Baruch's own content needs to be re-derived or carefully re-checked against the 
 governance note already flagged it as never independently verified, and it predates all of today's
 2 Baruch fixes.
 
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) + Letter of Baruch (SY) checkpoint 15:
+Letter of Baruch synced to match the now-fully-verified 2baruchSY.json chapters 78-87 -- CLOSES OUT
+BOTH BOOKS
+
+**Letter of Baruch (SY) is 2 Baruch's chapters 78-87 under its own independent 1-10 numbering**
+(confirmed via `originalChapterIn2Baruch` field already present on each chapter object) -- its own
+governance note already stated this file "shares its underlying content" with `2baruchSY.json` and
+had never been independently verified. Given checkpoints 1-14 this session fully verified and, in
+several cases substantially rewrote, 2 Baruch's chapters 78-87 (chapters 80, 81, 82, 85, 86, 87 all
+changed; 78, 79, 83, 84 confirmed clean with only chapter 83 getting two tiny typo fixes), the
+correct and safe approach was to sync this file's verses directly from the now-authoritative
+`2baruchSY.json`, rather than independently re-deriving from the source a second time (which would
+just reproduce the same work with a real risk of introducing a fresh inconsistency between the two
+files).
+
+**Compared each of the 10 chapters before syncing:** 4 of 10 (LBA 1/2/7 = 2Baruch 78/79/84) were
+already byte-identical to the corrected source and needed no change. The other 6 (LBA 3/4/5/6/8/9/10
+= 2Baruch 80/81/82/83/85/86/87 -- that's actually 7, since LBA 6=2Bar 83 also needed its two typo
+fixes) were out of sync and updated to match exactly. Total verse count changed from 76 to 80 (net
++4: chapter 80 split +1, chapter 82's three restored verses +3, chapter 51's... no, chapter 81's
+restoration didn't add a verse, just extended two existing ones -- the net change is fully accounted
+for by chapter 80's cosmetic split (+1) and chapter 82's three newly-restored verses (+3)).
+
+**Verified the sync programmatically, not by eye:** wrote a small script comparing each LBA
+chapter's verse array against its `2baruchSY.json` counterpart by `originalChapterIn2Baruch`,
+confirmed all 10 now match exactly post-sync. Structural sweep (chapter/verse gaps, duplicates,
+empties) clean across the whole file -- zero issues, unlike 2baruchSY.json's own file which still
+carries chapter 32's one understood, deliberate cosmetic gap (that gap does not appear in Letter of
+Baruch, since Letter of Baruch only covers chapters 78-87, well past chapter 32).
+
+**Updated the file's `contentTrustNote`** to reflect the real, current verification status (was:
+"not yet independently content-verified against a primary source"; now: confirmed verified,
+verse count corrected from 76 to 80).
+
+**BOTH 2 BARUCH (CE) AND LETTER OF BARUCH (SY) ARE NOW FULLY CONTENT-VERIFIED.** Chapter 32's one
+cosmetic, deliberately-unfixed numbering gap in 2 Baruch (CE) is the only known non-issue remaining
+anywhere across either file. Neither book's dashboard status was changed this session (still RED on
+both, per the "blocked until v1.0" / "fixable now" distinction established earlier) -- recommend
+Josh or a future session do the GREEN-marking spot-check for both together, since they're now
+interdependent (Letter of Baruch is literally a subset of 2 Baruch's verified content) and the
+dashboard update is a deliberate, separate act from the content-restoration work itself.
+
+**ET/SY-corpus status:** 12 green, 19 red (unchanged in count -- both books stay red pending the
+deliberate spot-check/GREEN-marking step). No SEED_VERSION bump this session.
+
+**Next session should:** do the spot-check + GREEN-marking pass for both 2 Baruch (CE) and Letter of
+Baruch (SY) together (they share the same underlying content, so one verification pass covers both);
+update `audit-ledger.html`'s `RED_SEED`/`GREEN_SEED`/`GREEN_NOTES` and bump `SEED_VERSION`. After
+that, the entire ET/SY broader-canon backlog's "fixable now" tier is fully closed -- remaining work
+is exclusively the post-v1.0-deferred queue (Fetha Nagast, Josippon, Malke'a Guba'e/Iyasus,
+Clement/Qalementos, Admonitions, Sirate Tsion) and Mazaheta's 3 still-unsourced sections
+(Anqasa Birhan, Sa'atat, Me'erAf), none of which should be picked up without Josh's explicit
+direction per the standing governance decisions already on record.
+
 ## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
 7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
 
