@@ -1831,6 +1831,80 @@ throughout: verify before editing, distinctive-phrase grep, full untruncated sou
 sentence-by-sentence comparison, watch especially for poetic lines/clauses cut short mid-verse (the
 dominant defect pattern in this entire book), and re-run the structural sweep after every edit.
 
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 12: MAJOR FINDING -- chapters
+86-87 were never actually missing a source (the raw source snapshot already in the repo goes all the
+way to the end of the book); chapter 85 vv.7-15 turned out to be unsourced/fabricated content, now
+rebuilt from Charles
+
+**Correcting a standing (and repeated) misconception carried across many prior handoffs: the raw
+source file already in this repo,
+`data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt`, is NOT
+truncated at chapter 85.** It runs the complete Charles 1913 APOT translation all the way through
+chapter 87 and ends with "HERE ENDS THE BOOK OF BARUCH THE SON OF NERIAH." The "stops mid-chapter-85"
+claim in every prior handoff referred to the Wesley Center Online *mirror* this project had been
+checking against for other purposes -- but the actual working source file in this repo was never
+missing that content. This was never re-checked directly against the file already in hand across
+several sessions; worth a general lesson: when a prior handoff claims a source is incomplete, verify
+against the actual file path in the repo before treating the claim as settled, especially before
+spending effort hunting for a replacement source that may not be needed.
+
+**Chapters 86-87 checked against this source and found content-complete** -- no missing text.
+However, their existing wording did NOT match Charles' translation; it was a fluent modern paraphrase
+of unknown/unverified origin, conveying the same content in different words (confirmed by close
+reading: "Fare you well always" / "Fare ye well," "bound it to the neck of the eagle" / matches,
+etc. -- same events and content throughout, just reworded). Rebuilt both chapters to Charles' own
+wording (lightly modernized, "ye"->"you"), consistent with the character-for-character fidelity
+standard this project has held to for every other legitimately-sourced chapter, and resolving the
+"unverified provenance" concern rather than leaving it open.
+
+**Chapter 85 is the real major finding.** Verses 1-6 were legitimate (if loosely worded) paraphrases
+of Charles' actual content. **Verses 7-15 -- nine of the chapter's fifteen verses -- did not match
+Charles' translation at all**, and a second independent check against a completely different online
+source (yahwehswordarchives.org's "Sacred Name" edition, which itself tracks Charles closely just
+with substituted terminology) confirmed Charles' wording is correct and the app's version diverges
+from both. The app's vv.7-15 expressed different specific content throughout (e.g., v.10 in Charles
+is the well-known "pitcher near to the cistern... ship to the port" passage -- independently
+confirmed as the real v.10 by an outside scholarly source found via web search -- while the app's
+v.10 read "For the end of all things is come; the judgment is at hand," an entirely different
+sentence). This is the same failure class as the Meqabyan MAJOR FINDING from 2026-07-18/19:
+plausible-sounding but unsourced content that doesn't correspond to any real translation. Root cause
+not established (whether this was composed rather than transcribed, like the Meqabyan case, or
+substituted from some other unidentified source) -- not investigated further this session, since the
+fix (rebuild from the confirmed-correct primary source already in hand) doesn't depend on knowing the
+root cause.
+
+**Rebuilt chapter 85 vv.7-15 from Charles' 1913 APOT** (already in the repo, confirmed complete).
+vv.1-6 also re-aligned to Charles' exact wording for full consistency (they were close paraphrases,
+not defects, but this project's standard is source fidelity, not paraphrase). Preserved Charles' own
+editorial bracket in v.12 ("[a place of repentance, nor]," which his footnote explains as a probable
+dittograph he chose to keep in the text rather than silently delete) -- same precedent as chapter
+51's v.11 bracket. 15 verses, unchanged count.
+
+Verified all three chapters directly against the source before touching the repo. Structural
+re-sweep clean immediately after on the whole file (same five previously-known gaps, unchanged:
+chapters 15, 32, 44, 64, 80 -- none of which are part of this chapter 85-87 fix).
+
+**2 Baruch (CE) status after this checkpoint:** every chapter from 1 through 87 has now been
+addressed at least once by this checkpointed effort or an earlier session, EXCEPT the five
+still-open, previously-confirmed-real gaps in chapters 15, 32, 44, 64, 80 (flagged as real defects
+back at the very start of this checkpointed effort, before checkpoint 1, and carried forward
+unaddressed in every session note since -- these were never part of the original 12-chapter flagged
+list and still need their own restoration pass). Letter of Baruch (SY) remains completely untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes. Do NOT mark
+2 Baruch (CE) GREEN yet -- chapters 15, 32, 44, 64, 80 are confirmed, real, unresolved gaps.
+
+**Next session should:** restore chapters 15, 32, 44, 64, and 80 -- these are the last known open
+content gaps in 2 Baruch (CE) itself (chapter 15's gap was already identified: "but thou hast not
+judged well regarding the evils which befall those who sin"; the other four haven't been
+individually diagnosed since being flagged, just confirmed present via the structural sweep's gap
+detection -- they'll need the same distinctive-phrase-grep-and-compare treatment as every other
+chapter in this effort). Once those five are closed, 2 Baruch (CE) can very likely be marked GREEN
+(pending a final full re-sweep). After that: Letter of Baruch (SY), which has its own unique
+chapters 1-3 never checked against any source, plus inherited chapters 4-5 (=2 Baruch chapters
+81-82, which -- per this session's confirmation that the underlying source file is complete through
+ch.87 -- can now actually be verified, contrary to what prior sessions believed was possible).
+
 ## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
 7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
 

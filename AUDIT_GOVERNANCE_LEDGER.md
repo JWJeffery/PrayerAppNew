@@ -4525,16 +4525,42 @@ additional chapters found during this effort (48, 52) have now been addressed. O
 (no primary source identified -- Wesley Center's mirror stops mid-85) and Letter of Baruch (SY),
 which is completely untouched, remain open. Do not mark 2 Baruch (CE) GREEN yet.
 
-**Methodology, reconfirmed across all eleven checkpoints:** grep the raw source for a distinctive
-phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
-roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
-this source routinely interleaves real verse text with pages of footnote/commentary apparatus
+**Checkpoint 12 -- MAJOR FINDING:** the "chapters 86-87 need a second source" belief carried across
+many prior handoffs was based on the Wesley Center Online mirror being incomplete; the raw source
+file already in this repo (`2baruch-charles-apot2-source-snapshot-2026-07-05.txt`) was never
+actually truncated -- it runs the complete Charles 1913 APOT translation through the end of the book
+("HERE ENDS THE BOOK OF BARUCH THE SON OF NERIAH"). Chapters 86-87 were checked against it and found
+content-complete, just worded as an unattributed modern paraphrase rather than Charles' own wording
+-- rebuilt to Charles' exact phrasing for consistency with this project's source-fidelity standard.
+**Chapter 85 vv.7-15 (nine of fifteen verses) were found not to match Charles' translation at all**
+-- confirmed via direct source comparison and cross-checked against a second, independent online
+edition (yahwehswordarchives.org, itself a close paraphrase of Charles), both of which agree with
+each other and disagree with the app's prior text throughout. Same failure class as the 2026-07-18/19
+Meqabyan MAJOR FINDING: plausible but unsourced content not corresponding to any real translation.
+Root cause not established. Rebuilt all 15 verses from Charles (vv.1-6 were close paraphrases, not
+defects, but re-aligned for full fidelity); preserved Charles' own editorial bracket in v.12 per his
+footnote (probable dittograph, kept rather than silently deleted, same precedent as ch.51 v.11).
+
+**2 Baruch (CE) status after checkpoint 12:** every chapter 1-87 has now been addressed at least once
+across this checkpointed effort, except the five still-open, previously-confirmed-real gaps in
+chapters 15, 32, 44, 64, 80 -- flagged before checkpoint 1 began and carried forward unaddressed in
+every session note since (never part of the original 12-chapter list). Letter of Baruch (SY) remains
+completely untouched. Do not mark 2 Baruch (CE) GREEN until those five chapters are resolved.
+
+**Methodology, reconfirmed across all twelve checkpoints, plus a new lesson:** grep the raw source
+for a distinctive phrase from the app's existing verse text; view the full surrounding source text,
+since this source routinely interleaves real verse text with footnote/commentary apparatus
 mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
-narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
-conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48
-mostly did not); watch specifically for poetic lines/clauses truncated partway through -- by far the
-single most common real defect found across this whole effort, present in chapters 20, 21, 35, 43,
-49, 51, and 52; when restoring pronouns, match the convention already established by that chapter's
-own untouched verses rather than a book-wide rule; only restructure existing verse boundaries when
-the source's own numbering is unambiguous; re-run the structural sweep on the whole file immediately
-after each chapter's edit, not batched at session end.
+content in the source with no corresponding app text (and conversely, verify a flagged chapter
+actually has a gap before editing it); watch for poetic lines/clauses truncated partway through --
+by far the most common defect in this book (chapters 20, 21, 35, 43, 49, 51, 52); when content
+diverges in *substance*, not just length, from the source (chapter 85 vv.7-15), that's a different
+and more serious failure mode than truncation -- cross-check against a second independent source
+before concluding, since this is the same signature as a MAJOR FINDING elsewhere in this project
+(fabricated/wrong-source content, not just incomplete transcription); **verify a prior session's
+claim that a source is incomplete against the actual file in the repo before accepting it and
+spending effort on a replacement search** -- the "chapters 86-87 need a second source" claim had
+been repeated across several handoffs without anyone re-checking the file already in hand; when
+restoring pronouns, match the convention already established by that chapter's own untouched verses;
+only restructure existing verse boundaries when the source's own numbering is unambiguous; re-run
+the structural sweep on the whole file immediately after each chapter's edit.
