@@ -1624,3 +1624,39 @@ this session and chapters 32/44/64/80 in checkpoint 1 both turned out clean); di
 grep, full untruncated source view, sentence-by-sentence comparison, watch for footnote-apparatus
 interruptions and internally-inconsistent verse numbering, only restructure verse boundaries when
 the evidence is unambiguous, and re-run the structural sweep after every single chapter's edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 6: chapter 35 fixed (every
+poetic couplet in the chapter was missing its second line)
+
+**Chapter 35: real, systematic missing content confirmed and fixed.** This is Baruch's lament over
+Zion -- four consecutive poetic couplets (vv.2-5), and every single one had been truncated at its
+first line, dropping the parallel second line entirely:
+- v2 was missing "and mine eyelids a fount of tears" (app had only "O that mine eyes were springs,").
+- v3 was missing "and how shall I mourn for Jerusalem?" (app had only "For how shall I lament for
+  Zion,").
+- v4 was missing "of old the high priest offered holy sacrifices, and placed thereon an incense of
+  fragrant odours" (app had only "Because in that place where I am now prostrate,").
+- v5 was missing "and the desire of our soul into sand." (app had only "But now our glorying has
+  been made into dust,").
+
+v1 (the narrative opening, "And I, Baruch, went to the holy place...") was already correct and
+untouched. This is the most consistent single-pattern content loss found in the book so far --
+every verse after the first cut at exactly the same structural point (end of the couplet's first
+line). Verified directly against the source before touching the repo; verse count unchanged (5)
+since each fix extends an existing verse. Structural re-sweep clean immediately after (same five
+previously-known gaps, unchanged: chapters 15, 32, 44, 64, 80).
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21, 31, 35 fixed;
+chapter 29 confirmed clean (no edit needed). 7 of the original 12-chapter list addressed. Remaining:
+43, 48, 49, 51, plus chapters 86-87 still unverified against any primary source. Letter of Baruch
+(SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 43, same methodology as checkpoints 1-6 -- verify
+before editing (not every flagged chapter has a real gap); distinctive-phrase grep, full untruncated
+source view, sentence-by-sentence comparison, watch for footnote-apparatus interruptions,
+internally-inconsistent verse numbering, and the "poetic couplet truncated at line 1" pattern just
+confirmed in chapter 35 (worth checking for specifically in any remaining poetic passage); only
+restructure verse boundaries when the evidence is unambiguous; re-run the structural sweep after
+every single chapter's edit.

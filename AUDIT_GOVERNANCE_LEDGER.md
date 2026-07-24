@@ -4466,13 +4466,22 @@ the prey of corruption and be as though it had not been." Restored using the sou
 wording (not modernized to "you/your"), matching the precedent set by chapter 13's restoration.
 Verse count unchanged (5) since each fix extended an existing verse rather than inserting a new one.
 
-**Methodology, reconfirmed across all five checkpoints:** grep the raw source for a distinctive
+**Checkpoint 6:** chapter 35 fixed -- Baruch's lament over Zion, four consecutive poetic couplets
+(vv.2-5), every single one truncated at its first line with the parallel second line missing
+entirely: v2 missing "and mine eyelids a fount of tears," v3 missing "and how shall I mourn for
+Jerusalem?," v4 missing "of old the high priest offered holy sacrifices, and placed thereon an
+incense of fragrant odours," v5 missing "and the desire of our soul into sand." The most consistent
+single-pattern content loss found in this book so far -- every verse cut at exactly the same
+structural point. v1 was already correct. Verse count unchanged (5).
+
+**Methodology, reconfirmed across all six checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
 mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
 narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
-conversely, verify a flagged chapter actually has a gap before editing it -- chapter 29 this session
-did not); only restructure existing verse boundaries when the source's own numbering is unambiguous;
+conversely, verify a flagged chapter actually has a gap before editing it -- chapter 29 did not);
+watch specifically for poetic couplets truncated at their first line (confirmed pattern, chapter
+35); only restructure existing verse boundaries when the source's own numbering is unambiguous;
 re-run the structural sweep on the whole file immediately after each chapter's edit, not batched at
 session end.
