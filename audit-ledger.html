@@ -35,6 +35,7 @@
   .legend span{ display:inline-flex; align-items:center; gap:6px; }
   .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; border:1px solid var(--ink-soft); }
   .dot.red{background:var(--red);} .dot.green{background:var(--green);} .dot.amber{background:var(--amber);}
+  .dot.red.blocked{ background: repeating-linear-gradient(45deg, var(--red) 0 3px, #fff 3px 6px); }
   h2{
     font-size: 15px; text-transform: uppercase; letter-spacing: 0.12em;
     margin: 40px 0 4px; color: var(--ink);
@@ -60,10 +61,18 @@
   .stamp.red{ background:var(--red); border-color:var(--red); }
   .stamp.green{ background:var(--green); border-color:var(--green); }
   .stamp.amber{ background:var(--amber); border-color:var(--amber); }
+  .stamp.red.blocked{
+    background: repeating-linear-gradient(45deg, var(--red) 0 4px, #fff 4px 8px);
+    border-color:var(--red);
+  }
   .book-grid{ display:flex; flex-wrap:wrap; gap:10px 8px; margin-bottom:18px; }
   .book-cell{ display:flex; flex-direction:column; align-items:center; gap:3px; width:36px; }
   .book-code{ font-family:'Courier New',monospace; font-size:10.5px; letter-spacing:0.02em; }
   .book-code.red{ color:var(--red); } .book-code.green{ color:var(--green); } .book-code.amber{ color:var(--amber); }
+  .book-code.red.blocked{
+    color:#fff; padding:1px 3px; border-radius:3px;
+    background: repeating-linear-gradient(45deg, var(--red) 0 4px, #7a2f2a 4px 8px);
+  }
   .note-cell{
     font-size:12px; color:var(--ink-soft); font-style:italic; cursor:pointer;
     max-width:340px;
@@ -85,7 +94,8 @@
   <p class="subtitle">Every yellow is a debt, not a rest. Click a stamp to cycle its status. Italic notes are truncated — click a note to expand it.</p>
   <div class="legend">
     <span><span class="dot green"></span> Certified accurate</span>
-    <span><span class="dot red"></span> Known bad</span>
+    <span><span class="dot red"></span> Known bad — fixable now</span>
+    <span><span class="dot red blocked"></span> Known bad — blocked until v1.0 ships</span>
     <span><span class="dot amber"></span> Unknown / unverified</span>
     <span class="reset-link" id="resetAll">reset all to seed data</span>
   </div>
@@ -170,6 +180,34 @@ const SY_BOOKS = ["Letter of Baruch (SY)","2 Baruch (CE)"];
 const ODES_BOOKS = ["Odes of Solomon (SY)"];
 
 const RED_SEED = new Set(["1 Clement (ET)","3 Clement (ET)","7 Clement (ET)","2 Baruch (CE)","Letter of Baruch (SY)","Fetha Nagast","Josippon","Malke'a Guba'e","Malke'a Iyasus","Rest of Baruch","2 Clement (ET)","4 Clement (ET)","5 Clement (ET)","8 Clement (ET)","Clement, Book of Rolls","Clement, Visionary","Clement 6","Clement, Statutes","Admonitions","Sirate Tsion","Mazaheta"]);
+
+// Classification pass, 2026-07-24: every RED_SEED item reviewed against its own
+// RED_NOTES entry and sorted into exactly two buckets --
+//   (a) confirmed blocked pending an external constraint (no public-domain source
+//       exists, or a governance decision explicitly defers the real fix until
+//       after v1.0 ships) -- rendered red+white-striped, distinct from a plain
+//       "known bad" red, so it reads as "not actionable right now" at a glance.
+//   (b) everything else -- a real, fixable defect with a known path to fix it
+//       (missing/duplicated content against an already-identified source, or a
+//       rebuild against an attested structure), just not yet done -- stays plain red.
+// 2 Baruch (CE) and Letter of Baruch (SY) are the only two RED_SEED items in
+// bucket (b): both are confirmed, fixable content defects (missing verses,
+// duplication) against a source that's already been identified and used
+// elsewhere in this project (Charles' APOT / Wesley Center Online) -- nothing
+// about them is blocked, they just haven't been fixed yet. Every other current
+// RED_SEED item traces to one of: an explicit "GOVERNANCE DECISION... only
+// AFTER v1.0 ships" (Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus),
+// a confirmed "no public-domain English source exists, an original translation
+// is the only path forward" finding (Admonitions, Sirate Tsion, Rest of
+// Baruch's Book 3, the whole 11-file Clement/Qalementos family, Mazaheta's
+// 3 still-unsourced sections) -- all genuinely blocked on something outside
+// this project's control until that constraint is resolved.
+const POST_V1_BLOCKED = new Set([
+  "1 Clement (ET)","2 Clement (ET)","3 Clement (ET)","4 Clement (ET)","5 Clement (ET)","7 Clement (ET)","8 Clement (ET)",
+  "Clement, Book of Rolls","Clement, Visionary","Clement 6","Clement, Statutes",
+  "Fetha Nagast","Josippon","Malke'a Guba'e","Malke'a Iyasus","Rest of Baruch",
+  "Admonitions","Sirate Tsion","Mazaheta"
+]);
 const GREEN_SEED = new Set(["Wisdom","Sirach","Baruch","Odes of Solomon (SY)","Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Tobit","Judith","Esther","Esther (Greek)","1 Maccabees","2 Maccabees","Job","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Jeremiah","Ezekiel","Daniel","Daniel (Greek)","Lamentations","Letter of Jeremiah","Prayer of Manasseh","1 Esdras","2 Esdras","4 Maccabees","3 Maccabees","1 Enoch","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation","Psalms","3 Corinthians (AR)","Book of Jubilees","Ascension of Isaiah","Hermas, The Shepherd","Didaskalia","Miracles of Mary","Tizaz","Abtilis","Guba'ekana","1 Meqabyan","3 Meqabyan","Malke'a Virgin Mary","2 Meqabyan"]);
 const RED_NOTES = {
   "1 Clement (ET)":"See 3/7 Clement (ET) note -- part of the same file family under active provenance question, not itself confirmed corrupted, but grouped red pending the Clement-series provenance question (Installment 14 §7): is this an authentic Ethiopic Qalēmentos tradition or content composed for this project? Not asserted as fabrication, but not independently source-verifiable from content alone either.",
@@ -298,8 +336,17 @@ function makeBooks(list, corpus){
     let status = 'amber', note = '';
     if (RED_SEED.has(name)) { status = 'red'; note = RED_NOTES[name] || ''; }
     else if (GREEN_SEED.has(name)) { status = 'green'; note = GREEN_NOTES[name] || ''; }
-    return { key: corpus+':'+name, name, status, note };
+    const blocked = POST_V1_BLOCKED.has(name);
+    return { key: corpus+':'+name, name, status, note, blocked };
   });
+}
+
+// A red item only reads as "blocked" while it's actually red — if someone
+// manually cycles its stamp to green/amber, the striped treatment should not
+// follow it there. blocked itself is static classification, not something a
+// status-cycle click should ever change.
+function classFor(item){
+  return item.status + ((item.status === 'red' && item.blocked) ? ' blocked' : '');
 }
 
 // Daily Office Lectionary — audit progress by season file (data/season/*.json).
@@ -525,20 +572,20 @@ async function saveStatus(key, val){
 
 function stampEl(item, onchange){
   const el = document.createElement('span');
-  el.className = 'stamp ' + item.status;
+  el.className = 'stamp ' + classFor(item);
   el.title = 'click to change status';
   el.onclick = async () => {
     const previousStatus = item.status;
     const idx = STATUS_CYCLE.indexOf(item.status);
     item.status = STATUS_CYCLE[(idx+1) % STATUS_CYCLE.length];
-    el.className = 'stamp ' + item.status;
+    el.className = 'stamp ' + classFor(item);
     el.style.opacity = '0.5'; // pending-save indicator
     const saved = await saveStatus(item.key, {status:item.status, note:item.note});
     el.style.opacity = '1';
     if (!saved) {
       // Revert visual state — do not show a color that didn't actually persist.
       item.status = previousStatus;
-      el.className = 'stamp ' + item.status;
+      el.className = 'stamp ' + classFor(item);
       el.title = 'Save failed — change was NOT persisted. Click to retry.';
       el.style.outline = '2px solid var(--red)';
       setTimeout(() => { el.style.outline = ''; }, 3000);
@@ -584,10 +631,10 @@ function renderBookTable(container, groupLabel, items){
     cell.className = 'book-cell';
     cell.title = item.name + (item.note ? ' — ' + item.note : '');
     const stamp = stampEl(item, () => {
-      code.className = 'book-code ' + item.status;
+      code.className = 'book-code ' + classFor(item);
     });
     const code = document.createElement('div');
-    code.className = 'book-code ' + item.status;
+    code.className = 'book-code ' + classFor(item);
     code.textContent = codeFor(item.name);
     cell.appendChild(stamp);
     cell.appendChild(code);
