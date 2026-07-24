@@ -1287,3 +1287,37 @@ are now GREEN, with 2 Meqabyan's real contamination found and fixed along the wa
 the post-v1.0 deferred queue (Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, Admonitions,
 Sirate Tsion, Clement/Qalementos), Mazaheta's remaining 3 unsourced sections (Anqasa Birhan,
 Sa'atat, Me'erAf), and the non-red Clement family lead is now closed (deferred, see prior handoff).
+
+## SESSION HANDOFF 2026-07-24 -- dashboard now distinguishes "blocked until v1.0" reds from "fixable now" reds
+
+Reviewed all 21 current RED_SEED book entries against their own RED_NOTES and sorted into two
+buckets, per Josh's direction: "if it can be fixed simply, keep red; if it's blocked until v1.0
+ships, mark it red and white-striped."
+
+**Fixable now (plain red, 2 items):** 2 Baruch (CE), Letter of Baruch (SY) -- confirmed content
+defects (missing verses, chapter-boundary duplication) against an already-identified source
+(Charles' APOT / Wesley Center Online), nothing blocked, just not yet fixed.
+
+**Blocked until v1.0 (new red+white-striped treatment, 19 items):** the 11-file Clement/Qalementos
+family, Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, Rest of Baruch (Book 3's confirmed
+blocker), Admonitions, Sirate Tsion, Mazaheta. Each traces to an explicit governance deferral or a
+confirmed "no PD English source exists" finding.
+
+New `POST_V1_BLOCKED` set + `classFor(item)` helper, used everywhere a stamp/book-code className is
+set, so the stripe only shows while status is actually red (manually cycling a stamp away from red
+correctly drops it). New CSS (`.stamp.red.blocked`, `.book-code.red.blocked`, `.dot.red.blocked`,
+diagonal red/white stripe) plus a legend entry. Ethiopian/Byzantine red items (Sa'atat shape,
+Senkessar Ginbot, Menaion/Triodion/Pentecostarion) reviewed too -- no explicit blocking constraint
+recorded for any of them, left plain red.
+
+Verified by evaluating the actual script in Node (with a minimal DOM stub), not just inspection:
+confirmed zero POST_V1_BLOCKED entries outside RED_SEED, and classFor()'s output checked directly
+against all three status values.
+
+**No content or ET-corpus status changes this session** -- this was a dashboard-presentation
+feature only. ET-corpus status unchanged: 12 green, 19 red, 0 amber.
+
+**Next session should:** ask Josh which category to prioritize -- the newly-visible "fixable now"
+reds (2 Baruch, Letter of Baruch) are the most tractable immediate targets since their sources are
+already known; everything striped is waiting on either a v1.0 ship date or a translation-sourcing
+breakthrough.
