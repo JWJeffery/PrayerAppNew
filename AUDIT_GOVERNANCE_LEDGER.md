@@ -4568,16 +4568,30 @@ likely ready for GREEN, pending one independent spot-check given how many correc
 the severity of the chapter 85 finding -- not bumped to GREEN_SEED this session, left for deliberate
 follow-through.
 
-**Methodology, reconfirmed across all thirteen checkpoints, plus a new lesson:** grep the raw source
-for a distinctive phrase from the app's existing verse text; view the full surrounding source text;
-compare sentence-by-sentence, only concluding something is missing when there's real content in the
-source with no corresponding app text (and conversely, verify a flagged chapter actually has a gap
-before editing it); watch for poetic lines/clauses truncated partway through (the dominant real
-defect throughout this book) and for content that diverges in substance rather than length (the
-signature of a MAJOR FINDING, as in chapter 85); verify a prior session's claim -- about a source
-being incomplete, or a gap being "confirmed real" -- against the actual evidence before accepting it
-and carrying it forward uncritically; when a verse-numbering gap turns out to be a merged verse with
-a clear sentence-boundary split point, split it to match the source (cosmetic fix, matches source
-fidelity); when the split point is genuinely ambiguous (mid-word OCR line-wraps with no sentence
-boundary), leave it rather than guess; re-run the structural sweep on the whole file immediately
-after each edit.
+**Checkpoint 14:** discovered while starting Letter of Baruch (SY) work that chapters 78, 79, 81, 82,
+83, 84 -- the six 2 Baruch chapters never on the original flagged list and never individually checked
+in checkpoints 1-13 -- needed verification before Letter of Baruch (which is these same chapters,
+78-87, under 1-10 numbering) could be trusted. Checked all six directly: 78, 79, 84 confirmed fully
+clean (word-for-word matches). Chapter 81 had two real defects: v3 missing its second line, v4
+missing five of its six lines. Chapter 82 was missing three entire verses -- a "though X, but Y"
+triplet series about the Gentiles' transient glory, cut short after four of seven parallel stanzas.
+Chapter 83 (22 verses, the longest of the six) needed only two minor confirmed fixes: an OCR-style
+typo ("mail" -> "man") and a missing question mark. All restored/fixed; structural sweep clean
+immediately after.
+
+**This closes the last remaining unverified content in 2 Baruch (CE) -- every chapter 1-87 has now
+been directly checked against the primary source across checkpoints 1-14.** Only chapter 32's
+understood, deliberately-unfixed cosmetic numbering gap remains. Not yet marked GREEN -- reserved for
+a deliberate final spot-check.
+
+**Methodology, reconfirmed across all fourteen checkpoints:** grep the raw source for a distinctive
+phrase from the app's existing verse text; view the full surrounding source text; compare
+sentence-by-sentence, only concluding something is missing when there's real content in the source
+with no corresponding app text (and conversely, verify a flagged chapter actually has a gap before
+editing it); watch for poetic lines/clauses truncated partway through (the dominant real defect
+throughout this book) and for entire parallel-structure verses dropped from a series (chapter 82's
+triplets); word-count parity checks are an efficient way to confirm a chapter is genuinely clean when
+it looks intact at a glance (used successfully on chapters 29, 48, 78, 79); when a chapter was never
+on any flagged list and never individually checked, that's not the same as verified -- check it
+directly rather than assuming clean; re-run the structural sweep on the whole file immediately after
+each edit.

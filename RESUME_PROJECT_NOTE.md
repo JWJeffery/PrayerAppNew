@@ -1974,6 +1974,61 @@ fresh) before closing out Letter of Baruch. Same methodology throughout: verify 
 distinctive-phrase grep, full untruncated source view, sentence-by-sentence comparison, and re-run
 the structural sweep after every edit.
 
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 14: chapters 78, 79, 81, 82, 83,
+84 (never previously checked by this project at all) now verified -- two more real defects found
+and fixed (ch.81, ch.82), two minor typos fixed (ch.83), chapters 78/79/84 confirmed fully clean
+
+**Prompted by starting work on Letter of Baruch (SY):** that file's content is 2 Baruch's chapters
+78-87 under its own 1-10 numbering. Before touching Letter of Baruch itself, checked whether its
+source chapters had actually all been verified -- they had not. Chapters 78, 79, 81, 82, 83, 84 were
+never part of the original 12-chapter flagged list, never surfaced by the structural sweep (no
+verse-count gaps), and were never individually checked in any of checkpoints 1-13. Went through all
+six directly against the source before doing anything with Letter of Baruch.
+
+- **Chapter 78:** confirmed fully clean via word-count parity check (289/289 words, only a
+  legitimate judgment/judgement spelling variant). No edit.
+- **Chapter 79:** confirmed fully clean, word-for-word match. No edit.
+- **Chapter 81:** real defects found. v3 was missing "And will these evils come upon us always?'"
+  (the second line of a couplet). v4 was missing five of its six lines: "and the Most High according
+  to the greatness of His compassion, and He revealed unto me the word, that I might receive
+  consolation, and He showed me visions that I should not again endure anguish, and He made known to
+  me the mystery of the times, and the advent of the hours He showed me" (app had only "And the
+  Mighty One did according to the multitude of His mercies,"). Both restored.
+- **Chapter 82:** a substantial gap -- three entire verses missing. The chapter contains a series of
+  parallel "though X, but Y" triplets about the Gentiles' transient glory (prosperity/vapor,
+  power/drop, might/spittle, greatness/smoke...); the app had only the first four of seven and
+  stopped. Restored the missing three: "we meditate on the beauty of their gracefulness...as grass
+  that withers shall they fade away," "we consider the strength of their cruelty...as a wave that
+  passes shall they be broken," and "we remark the boastfulness of their might...they shall pass away
+  as a passing cloud." Chapter grew from 6 to 9 verses.
+- **Chapter 83:** the longest of the six (22 verses) and almost entirely clean -- only two minor,
+  confirmed corrections: a stray OCR-style typo in v3 ("all the members of mail" -> "man") and a
+  missing question mark in v22 ("does anyone think that they will not be avenged" -> "...avenged?").
+  No content was missing anywhere in this chapter.
+- **Chapter 84:** confirmed fully clean, verified verse-by-verse against the source (11 verses, all
+  match exactly, including the app already correctly resolving a "Jaw"->"law" OCR artifact present in
+  the raw source). No edit.
+
+All fixes verified directly against the source before touching the repo. Structural re-sweep clean
+across the whole file immediately after -- only chapter 32's already-understood, deliberately-left
+cosmetic gap remains.
+
+**This closes the last remaining unverified content in 2 Baruch (CE).** Every chapter 1-87 has now
+been directly checked against the primary source at least once, across checkpoints 1-14 combined.
+
+**ET/SY-corpus status:** still not bumping SEED_VERSION or moving to GREEN_SEED in this session --
+same reasoning as checkpoint 13, this should be a deliberate act with a final spot-check, not
+reflexive.
+
+**Next session should (if not done later this same session):** the deliberate GREEN-marking
+spot-check mentioned above is now the only thing standing between 2 Baruch (CE) and full closure.
+Then: Letter of Baruch (SY) itself -- now that its source chapters (78-87) are fully verified and
+several of them changed substantially this session (81, 82, 85, 86, 87 especially), Letter of
+Baruch's own content needs to be re-derived or carefully re-checked against the now-corrected
+2baruchSY.json (or the primary source directly) rather than assumed still accurate -- its own
+governance note already flagged it as never independently verified, and it predates all of today's
+2 Baruch fixes.
+
 ## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
 7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
 
