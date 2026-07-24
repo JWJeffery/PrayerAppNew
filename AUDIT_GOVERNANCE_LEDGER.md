@@ -4483,16 +4483,27 @@ source's archaic pronouns used for chapters 31/35's restorations -- pronoun choi
 now follows whatever convention the chapter's own untouched verses already establish, not one fixed
 rule for the whole book. Verse count unchanged (3).
 
-**Methodology, reconfirmed across all seven checkpoints:** grep the raw source for a distinctive
+**Checkpoint 8:** chapter 48 (50 verses, the longest checked so far) verified in full sentence-by-
+sentence. Two source-side oddities correctly judged NOT to be content gaps: a scrambled OCR line
+order in vv.4-5 (the app's existing, sensibly-ordered text is correct; the source printout is
+garbled), and the source's own numbering skipping v.44 entirely while the app has a continuous
+43-47 (confirmed via full-text comparison that no words are missing -- just a different, reasonable
+verse-boundary split of the same continuous source text, consistent with this source's documented
+unreliable page-line verse markers). One real, confirmed typo fixed: v.38 "appeal" -> "appear."
+No other missing content found anywhere in the chapter.
+
+**Methodology, reconfirmed across all eight checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
 mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
 narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
-conversely, verify a flagged chapter actually has a gap before editing it -- chapter 29 did not);
-watch specifically for poetic lines/couplets truncated partway through (confirmed in chapters 20,
-21, 35, and now 43); when restoring pronouns, match the convention already established by that
-chapter's own untouched verses (modernized "you/your" vs. source's "thee/thy") rather than a
-book-wide rule; only restructure existing verse boundaries when the source's own numbering is
-unambiguous; re-run the structural sweep on the whole file immediately after each chapter's edit,
-not batched at session end.
+conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48 did
+not, beyond one confirmed typo in the latter); watch specifically for poetic lines/couplets
+truncated partway through (confirmed in chapters 20, 21, 35, 43) and for scrambled OCR line order
+within a couplet (confirmed in chapter 48, vv.4-5 -- check whether the app's existing order already
+makes better sense before assuming it's wrong); when restoring pronouns, match the convention
+already established by that chapter's own untouched verses rather than a book-wide rule; only
+restructure existing verse boundaries when the source's own numbering is unambiguous; re-run the
+structural sweep on the whole file immediately after each chapter's edit, not batched at session
+end.

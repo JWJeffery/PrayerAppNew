@@ -1691,3 +1691,46 @@ restoring pronouns, match whatever convention (modernized "you/your" vs. source'
 is already established by the surrounding untouched verses in that specific chapter, rather than
 applying one convention uniformly across the whole book; re-run the structural sweep after every
 single chapter's edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 8: chapter 48 -- mostly clean,
+one confirmed typo fixed, no missing content found (largest chapter checked so far, 50 verses)
+
+**Chapter 48 verified in full, all 50 verses read sentence-by-sentence against the source.** This
+is the longest chapter checked in this restoration effort so far -- Baruch's prayer and God's long
+reply about the coming woes. Two source-side oddities were found and correctly judged NOT to be
+missing content:
+- vv.4-5: the raw OCR source prints these two couplets' lines in a scrambled, illogical order
+  ("Thou weighest the lightness of the wind" appearing before "Thou makest known the multitude of
+  the fire," breaking the fire/wind, heights/darkness parallelism). The app's existing text already
+  has the sensible, correctly-ordered version -- confirmed this is an OCR artifact in the printed
+  source, not evidence the app is wrong. No edit made.
+- Source's own printed numbering skips from v.43 straight to v.45 with no v.44 at all, while the
+  app has a continuous 43/44/45/46/47. Checked word-for-word: this is not a content gap -- the app's
+  v.44 and v.45 are just a different (reasonable) split of the same continuous text the source
+  presents as one v.45, and the app's v.46 similarly merges what the source's own OCR line-breaks
+  present as v.46 running into v.47 mid-clause ("who have / existed"). Same "OCR page-line breaks
+  don't reliably mark real verse boundaries" caveat already documented for this source. No edit made.
+
+**One real, confirmed defect found and fixed:** v.38 read "shall manifestly appeal to every man" --
+a transcription typo; the source clearly reads "appear." Corrected.
+
+**No other missing content found anywhere in the chapter** after a full sentence-by-sentence read
+of all 50 verses. Structural re-sweep clean immediately after (same five previously-known gaps,
+unchanged: chapters 15, 32, 44, 64, 80).
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21, 31, 35, 43 fixed
+with real content restored; chapters 29 and 48 verified clean (48 needed one typo fix, 29 needed
+none). 9 of the original 12-chapter list addressed. Remaining: 49, 51, plus chapters 86-87 still
+unverified against any primary source. Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 49, same methodology as checkpoints 1-8 -- verify
+before editing rather than assuming every flagged chapter has a real gap (roughly half the
+originally-flagged chapters have turned out to need no content restoration at all: 29 and 48 clean,
+32/44/64/80 clean per checkpoint 1); distinctive-phrase grep, full untruncated source view,
+sentence-by-sentence comparison, watch for footnote-apparatus interruptions, scrambled OCR line
+order within a couplet (new pattern confirmed in ch.48 vv.4-5 -- check the app's version makes better
+sense before assuming it's wrong), and internally-inconsistent verse numbering; only restructure
+verse boundaries when the evidence is unambiguous; re-run the structural sweep after every single
+chapter's edit.
