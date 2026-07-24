@@ -4492,18 +4492,22 @@ verse-boundary split of the same continuous source text, consistent with this so
 unreliable page-line verse markers). One real, confirmed typo fixed: v.38 "appeal" -> "appear."
 No other missing content found anywhere in the chapter.
 
-**Methodology, reconfirmed across all eight checkpoints:** grep the raw source for a distinctive
+**Checkpoint 9:** chapter 49 (3 verses) fixed. v1 was missing an entire clause -- "mercy from Him
+who" -- dropped between "ask" and "made," collapsing "yea, I will ask mercy from Him who made all
+things" into the nonsensical "yea, I will ask made all things." Restored to match the source
+exactly; also fixed a stray capitalization slip ("I Will" -> "I will"). vv.2-3 were already correct.
+
+**Methodology, reconfirmed across all nine checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
 mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
 narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
-conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48 did
-not, beyond one confirmed typo in the latter); watch specifically for poetic lines/couplets
-truncated partway through (confirmed in chapters 20, 21, 35, 43) and for scrambled OCR line order
-within a couplet (confirmed in chapter 48, vv.4-5 -- check whether the app's existing order already
-makes better sense before assuming it's wrong); when restoring pronouns, match the convention
-already established by that chapter's own untouched verses rather than a book-wide rule; only
-restructure existing verse boundaries when the source's own numbering is unambiguous; re-run the
-structural sweep on the whole file immediately after each chapter's edit, not batched at session
-end.
+conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48
+mostly did not); watch specifically for poetic lines/clauses truncated partway through -- the single
+most common real defect found across this whole effort, present in chapters 20, 21, 35, 43, and 49
+-- and for scrambled OCR line order within a couplet (confirmed in chapter 48); when restoring
+pronouns, match the convention already established by that chapter's own untouched verses rather
+than a book-wide rule; only restructure existing verse boundaries when the source's own numbering is
+unambiguous; re-run the structural sweep on the whole file immediately after each chapter's edit,
+not batched at session end.

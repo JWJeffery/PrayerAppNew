@@ -1734,3 +1734,33 @@ order within a couplet (new pattern confirmed in ch.48 vv.4-5 -- check the app's
 sense before assuming it's wrong), and internally-inconsistent verse numbering; only restructure
 verse boundaries when the evidence is unambiguous; re-run the structural sweep after every single
 chapter's edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 9: chapter 49 fixed (v1 missing
+a clause, garbling the sentence into nonsense)
+
+**Chapter 49 (short, only 3 verses -- the opening of Baruch's question about the resurrection body):
+one real defect found and fixed.** v1 read "yea, I will ask made all things" -- missing "mercy from
+Him who" between "ask" and "made," which had collapsed the sentence into something ungrammatical.
+Restored to "yea, I will ask mercy from Him who made all things," matching the source exactly. Also
+corrected a stray capitalization slip ("I Will again ask" -> "I will again ask"). v2 and v3 were
+already correct, verified word-for-word against the source with no other changes needed.
+
+Verified directly against the source before touching the repo. Structural re-sweep clean
+immediately after (same five previously-known gaps, unchanged: chapters 15, 32, 44, 64, 80).
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21, 31, 35, 43, 49
+fixed with real content restored; chapters 29 and 48 verified clean. 10 of the original 12-chapter
+list addressed. Remaining: 51, plus chapters 86-87 still unverified against any primary source.
+Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** finish the originally-flagged 12-chapter list with chapter 51 (the last
+one), same methodology as checkpoints 1-9 -- verify before editing; distinctive-phrase grep, full
+untruncated source view, sentence-by-sentence comparison, watch for footnote-apparatus
+interruptions, poetic-line/clause truncation (now the single most common real defect found across
+this whole effort -- chapters 20, 21, 35, 43, 49 all had this exact failure mode), scrambled OCR
+line order, and internally-inconsistent verse numbering. After chapter 51: tackle chapters 86-87
+(needs a second source -- the Wesley Center mirror this project has used stops mid-chapter-85, not
+yet identified what to use instead), then finally Letter of Baruch (SY), which inherits 2 Baruch's
+chapters 81-82 and hasn't been checked at all yet.
