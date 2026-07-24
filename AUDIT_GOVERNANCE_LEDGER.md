@@ -4497,17 +4497,33 @@ who" -- dropped between "ask" and "made," collapsing "yea, I will ask mercy from
 things" into the nonsensical "yea, I will ask made all things." Restored to match the source
 exactly; also fixed a stray capitalization slip ("I Will" -> "I will"). vv.2-3 were already correct.
 
-**Methodology, reconfirmed across all nine checkpoints:** grep the raw source for a distinctive
-phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
-roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
-this source routinely interleaves real verse text with pages of footnote/commentary apparatus
-mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
-narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
-conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48
-mostly did not); watch specifically for poetic lines/clauses truncated partway through -- the single
-most common real defect found across this whole effort, present in chapters 20, 21, 35, 43, and 49
--- and for scrambled OCR line order within a couplet (confirmed in chapter 48); when restoring
-pronouns, match the convention already established by that chapter's own untouched verses rather
-than a book-wide rule; only restructure existing verse boundaries when the source's own numbering is
-unambiguous; re-run the structural sweep on the whole file immediately after each chapter's edit,
-not batched at session end.
+**Checkpoint 10 -- ORIGINAL 12-CHAPTER LIST NOW COMPLETE:** chapter 51 (16 verses) had the heaviest
+single-chapter content loss found anywhere in this effort. Six verses truncated: v7 missing 4 of 5
+lines, v9 missing its closing clause, v10 missing 5 of 6 lines, v14 and v15 each missing their second
+clause, and v16 (the worst case) missing 6 of its 7 lines. Also fixed a missing opening bracket in
+v11's editorial insertion. All restorations extended existing verses without renumbering (count
+unchanged, 16). Final tally for the original 12-chapter flagged list: chapters 13, 14, 19, 20, 21,
+31, 35, 43, 49, 51 had real content restored (ten chapters); chapters 29 and 48 were false alarms
+(verified clean, 48 needed one typo fix). New finding, not yet fixed: chapter 52 (outside the
+original list) also has confirmed missing content in its first two verses at minimum, spotted while
+confirming the 51/52 boundary -- flagged for the next session, not addressed this session.
+
+**Still open for 2 Baruch (CE) after this checkpoint:** chapter 52 (newly found, unfixed), chapters
+86-87 (no primary source identified yet -- Wesley Center's mirror stops mid-85), and the whole of
+Letter of Baruch (SY), which inherits 2 Baruch's chapters 81-82 verbatim and hasn't been checked at
+all. Neither book should be marked GREEN yet.
+
+**Methodology, reconfirmed across all ten checkpoints of this effort:** grep the raw source for a
+distinctive phrase from the app's existing verse text (chapter-number-alone greps mostly hit
+Charles' own roman-numeral footnote markers, not real verse text); view the full surrounding source
+text, since this source routinely interleaves real verse text with pages of footnote/commentary
+apparatus mid-chapter; compare sentence-by-sentence, only concluding something is missing when
+there's real narrative/poetic content in the source with no corresponding app text anywhere in the
+chapter (and conversely, verify a flagged chapter actually has a gap before editing it -- chapters
+29 and 48 mostly did not); watch specifically for poetic lines/clauses truncated partway through --
+by far the single most common real defect found across this whole effort (chapters 20, 21, 35, 43,
+49, and now 51, sometimes losing the majority of a verse's content) -- and for scrambled OCR line
+order within a couplet (chapter 48); when restoring pronouns, match the convention already
+established by that chapter's own untouched verses rather than a book-wide rule; only restructure
+existing verse boundaries when the source's own numbering is unambiguous; re-run the structural
+sweep on the whole file immediately after each chapter's edit, not batched at session end.

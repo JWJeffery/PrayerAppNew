@@ -1764,3 +1764,69 @@ line order, and internally-inconsistent verse numbering. After chapter 51: tackl
 (needs a second source -- the Wesley Center mirror this project has used stops mid-chapter-85, not
 yet identified what to use instead), then finally Letter of Baruch (SY), which inherits 2 Baruch's
 chapters 81-82 and hasn't been checked at all yet.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 10: chapter 51 fixed (the
+heaviest single-chapter content loss found in this whole restoration effort) -- ORIGINAL 12-CHAPTER
+LIST NOW COMPLETE
+
+**Chapter 51 (16 verses, the resurrection-of-the-righteous discourse) had the most extensive
+truncation found anywhere in this checkpointed effort.** Six of its sixteen verses were cut short,
+several severely:
+- v7 was missing four of its five lines: "and to whom the law has been now a hope, and
+  understanding an expectation, and wisdom a confidence, shall wonders appear in their time" (app
+  had only "But those who have been saved by their works,").
+- v9 was missing its closing clause "and time shall no longer age them."
+- v10 was missing five of its six lines: "and they shall be made like unto the angels, and be made
+  equal to the stars, and they shall be changed into every form they desire, from beauty into
+  loveliness, and from light into the splendor of glory" (app had only "For in the heights of that
+  world shall they dwell,").
+- v14 was missing "and laid down the burthen of anguish."
+- v15 was missing "and for what have those who were on the earth exchanged their soul?"
+- v16 -- the worst single case -- was missing six of its seven lines: "which, beyond the reach of
+  anguish, could not pass away: but they chose for themselves that time, whose issues are full of
+  lamentations and evils, and they denied the world which ages not those who come to it, and they
+  rejected the time of glory, so that they shall not come to the honour of which I told thee before"
+  (app had only "For then they chose (not) for themselves this time,").
+
+Also fixed a minor punctuation defect in v11: the app was missing the opening bracket of the source's
+editorial insertion "[are now held fast by My word, lest they should appear, and]" (had the closing
+bracket but not the opening one).
+
+All restorations extended existing verses rather than inserting new verse numbers or renumbering,
+since the source's own line groupings matched the app's existing verse divisions closely enough that
+no restructuring was needed -- verse count unchanged (16). Kept the source's own "thee" in v16's
+closing clause, since this chapter's untouched text has no established modernized-pronoun precedent
+to match (same logic as chapters 31/35). Verified directly against the source before touching the
+repo. Structural re-sweep clean immediately after (same five previously-known gaps, unchanged:
+chapters 15, 32, 44, 64, 80).
+
+**Worth flagging for later, not part of this checkpoint's scope (chapter 51 was the last of the
+originally-flagged 12, chapter 52 was never on that list):** a quick look at the start of chapter 52
+while confirming the 51/52 boundary showed it also has real missing content of the same shape (v1
+missing "How can we forget those for whom woe is then reserved?", v2 missing "Or why do we weep for
+those who depart to Sheol?"). Not fixed this session -- flagging as a new finding for whoever
+continues this book's restoration next.
+
+**THE ORIGINAL 12-CHAPTER FLAGGED LIST IS NOW FULLY ADDRESSED.** Final tally: chapters 13, 14, 19,
+20, 21, 31, 35, 43, 49, 51 had real content restored; chapters 29 and 48 were verified clean (48
+needed one minor typo fix). Ten of twelve chapters had genuine defects; two were false alarms from
+the original 2026-07-18/19 flagging pass.
+
+**Still open for 2 Baruch (CE):** chapters 86-87 (entirely unverified against any primary source --
+the Wesley Center Online mirror this project has relied on stops mid-chapter-85; no second source
+identified yet), and now also chapter 52 (newly discovered this session, not yet fixed). Letter of
+Baruch (SY) is completely untouched -- it inherits 2 Baruch's chapters 81-82 verbatim, which haven't
+been checked against any source yet either.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes. Neither
+2 Baruch (CE) nor Letter of Baruch (SY) should be marked GREEN yet -- real, confirmed gaps remain
+(chapters 52, 86-87, and all of Letter of Baruch's own inherited content).
+
+**Next session should:** pick up chapter 52 (newly flagged this session, real content confirmed
+missing in its first two verses at minimum -- needs a full read-through, not just the two lines
+spotted so far), then chapters 86-87 (needs sourcing work first -- try Charles' earlier 1896
+translation or another edition, since Wesley Center's mirror doesn't reach that far), then finally
+Letter of Baruch (SY) once 2 Baruch's chapters 81-82 are confirmed clean. Same methodology
+throughout: verify before editing, distinctive-phrase grep, full untruncated source view,
+sentence-by-sentence comparison, watch especially for poetic lines/clauses cut short mid-verse (the
+dominant defect pattern in this entire book), and re-run the structural sweep after every edit.
