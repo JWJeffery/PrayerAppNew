@@ -2175,3 +2175,35 @@ chapters 4-5 (=2 Baruch 81-82) are actually clean now that 2 Baruch itself has h
 restoration pass. Same methodology throughout: verify before editing, distinctive-phrase grep, full
 untruncated source view, sentence-by-sentence comparison, watch for the dominant "poetic line/clause
 cut short mid-verse" defect pattern, and re-run the structural sweep after every edit.
+
+## SESSION HANDOFF 2026-07-25 -- Book of the Covenant (Mashafa Kidan): confirmed genuine gap via
+5-tradition canon research, but GOVERNANCE DECISION: no proxy source, deferred to post-v1.0
+
+**Josh asked for a canonical-completeness check** across five Apostolic traditions, specifically
+re-testing whether "some Ethiopian texts are untranslatable" still held. Found one real, confirmed
+gap: the Ethiopic **Book of the Covenant (Mashafa Kidan)**, two books in the Ethiopian/Eritrean
+broader NT canon, never previously in this corpus at all (distinct from the short "Kidane" prayer
+already in Mazaheta). No English translation of the actual Ge'ez text exists anywhere -- only
+French critical editions (Beylot 1984 for Book 1, Guerrier/Grebaut 1913 for Book 2).
+
+**First attempt this session used the closely-related free Syriac Testamentum Domini translation**
+(Cooper & Maclean, 1902) as an explicitly-caveated proxy -- source was successfully acquired (Josh
+uploaded the full text after the usual archive.org fetch wall blocked automated retrieval), and 18
+of Book 1's 47 chapters were hand-transcribed. **Josh reviewed and declined this approach: he does
+not want a proxy translation used, however clearly labeled.** Nothing from that attempt was ever
+merged to `main` -- the patch was generated but never applied -- so there is nothing to revert in
+the live app.
+
+**GOVERNANCE DECISION (Josh, 2026-07-25): Book of the Covenant joins the post-v1.0
+original-translation queue** (same category as Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a
+Iyasus). Whoever picks this up after v1.0 ships should produce an original English translation from
+Beylot's or Guerrier/Grebaut's Ge'ez-with-French critical editions, not from the Syriac tradition.
+No content should be added for this book before then. Since it was never in the corpus, there's no
+dashboard entry to touch (unlike the other post-v1.0 items, which already have red-tagged files).
+Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Book of the Covenant" entry.
+
+**Next session should:** treat this as closed/parked, same as the rest of the post-v1.0 queue, unless
+Josh explicitly redirects. If picking this back up: the free Syriac Testamentum Domini text (Cooper &
+Maclean 1902) is not currently saved anywhere in this repo (this session's transcription work was
+local and not committed) -- it would need to be re-acquired from Josh if wanted as a cross-reference
+aid, though it must not become the substance of the Ethiopic text itself.

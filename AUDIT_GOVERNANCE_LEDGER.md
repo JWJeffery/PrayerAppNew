@@ -4634,3 +4634,50 @@ especially before a final GREEN-marking decision on a book this large and this h
 a single session. Sample-based final verification is a reasonable, honest way to close out a
 large book when exhaustive verification isn't practical -- but the sample and its limitations should
 be documented plainly, not presented as if it were exhaustive.
+
+## Book of the Covenant (Mashafa Kidan) -- confirmed genuine gap, GOVERNANCE DECISION: no proxy,
+deferred to post-v1.0 pending an actual Ge'ez-based translation
+
+**A 5-tradition canonical-completeness research pass (2026-07-25)**, requested by Josh to re-check
+whether "some Ethiopian texts are untranslatable" still held, confirmed this corpus is very nearly
+complete against the Church of the East, Oriental Orthodoxy, Eastern Orthodoxy, Roman Catholicism,
+and Anglicanism -- with one real, confirmed gap: the Ethiopic **Book of the Covenant (Mashafa
+Kidan)**, counted as two books in the Ethiopian/Eritrean broader New Testament canon (part of the
+same group of 8 church-order books, alongside the 4-book Sinodos, Didascalia, and Clement/Qalementos,
+that bring the broader-canon NT total to 35). This is distinct from the short "Kidane" covenant
+prayer already present in the Mazaheta compilation; the real Mashafa Kidan is a substantial two-part
+work (Book 1: church order; Book 2: a resurrection-discourse in Galilee corresponding to the
+Epistula Apostolorum), and has never been in this corpus in any form.
+
+**No English translation of the actual Ge'ez recension exists anywhere.** The only critical editions
+are Robert Beylot's 1984 *Testamentum Domini ethiopien* (Book 1, Ge'ez with a French translation
+only) and Guerrier & Grebaut's 1913 Patrologia Orientalis edition (Book 2, same situation, French
+only). A commercial 2025 edition marketed by the Ethiopian Orthodox Bible Project ("The 2 Ethiopic
+books of 'Dominos'") was checked and found, on inspection, to repackage the general Syriac/Coptic
+Testamentum Domini and Epistula Apostolorum traditions rather than being a fresh Ge'ez-specific
+translation -- so it would not have solved the recension-fidelity problem even as a purchase.
+
+**A first attempt this session built content from the closely-related free public-domain Syriac
+Testamentum Domini translation** (Cooper & Maclean, 1902) as an explicitly-caveated proxy -- source
+acquisition succeeded (Josh uploaded the full ~659,000-character text directly after the familiar
+archive.org fetch-truncation wall blocked automated retrieval), and 18 of Book 1's 47 chapters were
+hand-transcribed and verified. **This work was not shipped: on review, Josh decided he does not want
+a proxy translation used at all**, regardless of how clearly it's caveated. This reverses the
+approach taken earlier in the same session; nothing from that attempt was ever merged to `main` (the
+patch was generated but never applied), so there is nothing to undo in the live app.
+
+**GOVERNANCE DECISION (Josh, 2026-07-25): Book of the Covenant is deferred to the same post-v1.0
+original-translation queue as Fetha Nagast, Josippon, Malke'a Guba'e, and Malke'a Iyasus.** Whoever
+picks this up after v1.0 ships should produce an original English translation from Beylot's (Book 1)
+or Guerrier & Grebaut's (Book 2) Ge'ez-with-French critical editions, not from the Syriac tradition.
+No content has been added to the corpus for this book, and none should be, until a Ge'ez-based
+translation is available. Unlike the other post-v1.0-deferred items, there is no existing (red-tagged)
+file for this book on the dashboard to correct, since it was never in the corpus to begin with --
+nothing to add to `ET_BOOKS`/`RED_SEED` until the real translation work actually happens.
+
+**For whoever eventually does this translation work:** the free Syriac Testamentum Domini text
+(Cooper & Maclean 1902, confirmed public domain) may still be useful as a cross-reference or aid to
+understanding the parallel structure, even though it must not be used as the substance of the
+Ethiopic text itself -- but it is not currently saved anywhere in this repo (this session's
+transcription work was local to that session and not committed). A future session attempting the
+real Ge'ez-based translation would need to source Beylot 1984 and Guerrier/Grebaut 1913 fresh.
