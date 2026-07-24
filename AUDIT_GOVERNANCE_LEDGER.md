@@ -4446,11 +4446,23 @@ has relied on stops mid-chapter-85; a second source is needed and not yet identi
 Baruch (SY) untouched -- it inherits 2 Baruch's chapters 81-82, which haven't been checked yet either.
 Neither book is marked GREEN; both stay plain-red pending the remaining chapters.
 
-**Methodology, reconfirmed across all three checkpoints:** grep the raw source for a distinctive
+**Checkpoint 4:** chapter 21 restored. One entirely missing verse -- "For the nature of man is
+always changeable. For what we were formerly now we no longer are, and what we now are we shall not
+afterwards remain" -- inserted between old v16/v17, renumbering the rest of the chapter (26 -> 27
+verses). Also corrected a confirmed typo in v9 ("are to righteous" -> "are righteous," matching the
+source's "those who sin, and those who are righteous"). Deliberately left an internally-inconsistent
+verse-numbering span (vv.14-16, where the source's own printed numbers skip "15" while a footnote on
+the same page references "verses 14, 15" as if distinct) unresolved and flagged rather than guessed
+at -- no content is missing there regardless of how it's eventually numbered, and this project's
+standing rule is to resolve verse boundaries only by clear direct evidence.
+
+**Methodology, reconfirmed across all four checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
-mid-chapter (confirmed again in chapter 20); compare sentence-by-sentence, only concluding something
-is missing when there's real narrative/poetic content in the source with no corresponding app text
-anywhere in the chapter; re-run the structural sweep on the whole file immediately after each
+mid-chapter (confirmed again in chapters 20 and 21); compare sentence-by-sentence, only concluding
+something is missing when there's real narrative/poetic content in the source with no corresponding
+app text anywhere in the chapter; only restructure existing verse boundaries when the source's own
+numbering is unambiguous (chapter 20's stanza qualified, chapter 21's vv.14-16 span did not -- left
+alone rather than guessed at); re-run the structural sweep on the whole file immediately after each
 chapter's edit, not batched at session end.

@@ -1534,3 +1534,49 @@ verse text via a distinctive-phrase grep (not the chapter number alone), view th
 source text (never a truncated preview), compare sentence-by-sentence, watch for the same
 "footnote apparatus interrupts real verse text mid-chapter" pattern seen in chapter 20, and
 re-run the structural sweep after every single chapter's edit, not just at session's end.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 4: chapter 21 fixed (1 missing
+verse restored + 1 confirmed typo corrected)
+
+Continued the chapter-by-chapter restoration, same methodology as checkpoints 1-3.
+
+**Chapter 21:** one entire verse was missing -- "For the nature of man is always changeable. For
+what we were formerly now we no longer are, and what we now are we shall not afterwards remain,"
+which belongs between the old v16 ("Or beauty that turns to ugliness.") and old v17 ("For if a
+consummation had not been prepared..."). Confirmed unambiguously missing: this exact content has
+no corresponding text anywhere else in the chapter. Inserted as new v17, renumbering the rest of
+the chapter (old 17-26 -> new 18-27). Chapter now has 27 verses (was 26).
+
+**Also fixed a confirmed typo in v9**, unrelated to the missing-verse question: the app's text read
+"those who are to righteous," which doesn't parse; the source reads "those who sin, and those who
+are righteous" with no "to." Corrected to match.
+
+**Deliberately left alone, flagged as an open ambiguity rather than guessed at:** the source's own
+verse numbering around vv.14-16 is internally inconsistent -- the printed text shows an explicit
+"14" then jumps straight to "16" with no "15" anywhere, while a footnote on the same page refers to
+"verses 14, 15" as if both exist. The three lines currently split across the app's vv.14-16
+("strength that turns to sickness" / "food that turns to famine" / "beauty that turns to ugliness")
+may or may not be the source's real verse-14-through-16 grouping. Did NOT merge or renumber this
+span, since there's no clear evidence either way and this project's standing rule is to resolve
+verse boundaries by direct content comparison, not guesswork -- unlike chapter 20's stanza, which
+had one single unambiguous chapter-line label ("20:") with no competing numbering, this one has
+genuinely conflicting signals in the source itself. No content is missing here regardless of how
+the lines are eventually numbered, so this doesn't block anything -- just worth flagging if a future
+session wants to dig further (e.g. checking a second edition/scan of this same page).
+
+Verified directly against the same raw source snapshot before touching the repo. Structural
+re-sweep run on the whole file immediately after: chapter 21 is now clean (27/27 verses, no gaps/
+dupes/empties). The five previously-known open gaps (chapters 15, 32, 44, 64, 80) are unchanged
+and expected.
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21 done (5 of the
+original 12-chapter list). Remaining: 29, 31, 35, 43, 48, 49, 51, plus chapters 86-87 still
+unverified against any primary source. Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 29, same methodology as checkpoints 1-4 -- distinctive-
+phrase grep, full untruncated source view, sentence-by-sentence comparison, watch for footnote-
+apparatus interruptions and internally-inconsistent verse numbering (both confirmed present in this
+source), only restructure verse boundaries when the evidence is unambiguous, and re-run the
+structural sweep after every single chapter's edit.
