@@ -4456,13 +4456,23 @@ the same page references "verses 14, 15" as if distinct) unresolved and flagged 
 at -- no content is missing there regardless of how it's eventually numbered, and this project's
 standing rule is to resolve verse boundaries only by clear direct evidence.
 
-**Methodology, reconfirmed across all four checkpoints:** grep the raw source for a distinctive
+**Checkpoint 5:** chapter 29 checked and confirmed clean -- scripted word-count parity check (exact,
+248/248 words, zero discrepancy either direction) found no missing content, only a verse-1/2
+boundary difference. No repo edit made; same false-alarm class as chapters 32/44/64/80 from
+checkpoint 1. Chapter 31 fixed: three consecutive verses (3, 4, 5) were each truncated mid-sentence
+in the app, missing their second half -- v3's entire quoted content ("Hear, O Israel..."), v4's
+"but hold in remembrance the anguish of Jerusalem," and v5's "when everything that is shall become
+the prey of corruption and be as though it had not been." Restored using the source's own "thee/thy"
+wording (not modernized to "you/your"), matching the precedent set by chapter 13's restoration.
+Verse count unchanged (5) since each fix extended an existing verse rather than inserting a new one.
+
+**Methodology, reconfirmed across all five checkpoints:** grep the raw source for a distinctive
 phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
 roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
 this source routinely interleaves real verse text with pages of footnote/commentary apparatus
-mid-chapter (confirmed again in chapters 20 and 21); compare sentence-by-sentence, only concluding
-something is missing when there's real narrative/poetic content in the source with no corresponding
-app text anywhere in the chapter; only restructure existing verse boundaries when the source's own
-numbering is unambiguous (chapter 20's stanza qualified, chapter 21's vv.14-16 span did not -- left
-alone rather than guessed at); re-run the structural sweep on the whole file immediately after each
-chapter's edit, not batched at session end.
+mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
+narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
+conversely, verify a flagged chapter actually has a gap before editing it -- chapter 29 this session
+did not); only restructure existing verse boundaries when the source's own numbering is unambiguous;
+re-run the structural sweep on the whole file immediately after each chapter's edit, not batched at
+session end.

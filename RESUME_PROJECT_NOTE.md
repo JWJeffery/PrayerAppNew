@@ -1580,3 +1580,47 @@ phrase grep, full untruncated source view, sentence-by-sentence comparison, watc
 apparatus interruptions and internally-inconsistent verse numbering (both confirmed present in this
 source), only restructure verse boundaries when the evidence is unambiguous, and re-run the
 structural sweep after every single chapter's edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 5: chapter 29 confirmed clean
+(false alarm, no edit), chapter 31 fixed (3 verses with missing content restored)
+
+**Chapter 29: verified against the source and found to have NO missing content.** A scripted
+word-count parity check (normalized word multiset comparison) came back an exact match, 248 words
+both sides, zero words in either direction not in the other. The only difference is where the
+source places its verse-1/verse-2 boundary (the app merges the source's v1 and the first clause of
+its v2 into one verse) -- a numbering-boundary difference, not a content gap. **No repo edit made.**
+This is the same false-alarm pattern already documented for chapters 32, 44, 64, 80 in checkpoint
+1 -- worth remembering that not every chapter on the originally-flagged list turns out to have a
+real defect; verify before assuming.
+
+**Chapter 31: real, substantial missing content confirmed and fixed.** Three consecutive verses
+were each truncated mid-sentence, missing the second half of their content:
+- v3 was missing its entire quoted content: "'Hear, O Israel, and I will speak to thee, and give
+  ear, O seed of Jacob, and I will instruct thee.'" (app had only "And I answered and said unto
+  them:" with nothing after the colon).
+- v4 was missing "but hold in remembrance the anguish of Jerusalem" (app had only "Forget not
+  Zion,").
+- v5 was missing "when everything that is shall become the prey of corruption and be as though it
+  had not been" (app had only "For lo! the days come,").
+
+All three restorations use "thee/thy" rather than this book's more common modernized "you/your,"
+matching the source's own wording exactly for this poetic address -- same precedent as chapter 13's
+restored "Thou wilt say to them," which also kept the source's archaic pronoun rather than
+modernizing newly-inserted text. Verse count unchanged (5) since each fix extends an existing verse
+rather than adding a new one. Verified directly against the source before touching the repo.
+Structural re-sweep clean immediately after (same five previously-known gaps, unchanged: chapters
+15, 32, 44, 64, 80).
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20, 21, 29 (confirmed
+clean, no edit needed), 31 done (6 of the original 12-chapter list addressed, one of which needed no
+fix). Remaining: 35, 43, 48, 49, 51, plus chapters 86-87 still unverified against any primary
+source. Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 35, same methodology as checkpoints 1-5 -- do not
+assume every chapter on the original flagged list has a real defect (verify first, as chapter 29
+this session and chapters 32/44/64/80 in checkpoint 1 both turned out clean); distinctive-phrase
+grep, full untruncated source view, sentence-by-sentence comparison, watch for footnote-apparatus
+interruptions and internally-inconsistent verse numbering, only restructure verse boundaries when
+the evidence is unambiguous, and re-run the structural sweep after every single chapter's edit.
