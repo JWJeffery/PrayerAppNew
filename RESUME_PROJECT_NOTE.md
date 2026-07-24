@@ -1438,3 +1438,62 @@ unverified against any primary source. Letter of Baruch (SY) still untouched.
 actual verse text via a distinctive-phrase grep (not the chapter number alone), view the FULL
 surrounding source text (never a truncated preview), compare sentence-by-sentence, and re-run the
 structural sweep after every single chapter's edit, not just at session's end.
+
+## SESSION HANDOFF 2026-07-24 -- ending here on token limit, mid-checkpoint on 2 Baruch (CE)
+
+Ending this session at ~90% token budget. Everything through checkpoint 2 is committed and pushed
+(commit `95edfcd`). This entry exists so the next session can pick up cold without re-deriving
+context.
+
+**Where things stand right now, in order of what a fresh session needs to know:**
+
+1. **Dashboard now distinguishes "blocked until v1.0" reds from "fixable now" reds.** New
+   `POST_V1_BLOCKED` set + red/white-striped CSS treatment in `audit-ledger.html`. Of the 21
+   RED_SEED book items, 19 are genuinely blocked (Clement/Qalementos family x11, Fetha Nagast,
+   Josippon, Malke'a Guba'e/Iyasus, Rest of Baruch, Admonitions, Sirate Tsion, Mazaheta) and 2 are
+   fixable now (2 Baruch (CE), Letter of Baruch (SY)).
+
+2. **2 Baruch (CE) is mid-restoration, checkpointed.** The chapter 12/13 duplication is fixed.
+   Working chapter-by-chapter through the originally-flagged missing-content list (13, 14, 19, 20,
+   21, 29, 31, 35, 43, 48, 49, 51) against the raw source snapshot already in the repo at
+   `data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt`
+   (R.H. Charles' 1913 APOT translation, public domain). **Done so far: chapters 13, 14, 19** (3 of
+   12). **Remaining: 20, 21, 29, 31, 35, 43, 48, 49, 51**, plus chapters 86-87 which are entirely
+   unverified against any primary source (the source snapshot itself stops mid-chapter-85 -- a
+   second source will be needed for 86-87, not yet identified). Letter of Baruch (SY) is untouched
+   -- it inherits 2 Baruch's chapters 81-82 verbatim, which haven't been checked yet either.
+
+3. **IMPORTANT METHODOLOGY NOTE, learned the hard way this session:** a truncated/quick text
+   comparison produced a false alarm mid-session (wrongly claimed chapters 32, 44, 64, 80 had
+   missing content -- they didn't; the gaps were just the source's own combined verse markers like
+   "4,5" printed as one unit). **Always view the FULL untruncated source text and the FULL current
+   app text before concluding content is missing** -- a verse-number gap alone is not evidence of
+   missing content in this source, since it OCR's combined-verse markers routinely. Also: an
+   off-by-one renumbering slip was self-introduced and caught mid-checkpoint (ch.19) -- **always
+   re-run the structural sweep immediately after each single chapter's edit**, not batched at the
+   end.
+
+**How to work each remaining chapter (repeating this for the next session):**
+1. Pull the chapter's current full verse text from `2baruchSY.json` (not truncated).
+2. `grep` the raw source snapshot for a distinctive phrase from that text (chapter-number-alone
+   greps mostly hit footnote/commentary lines, not the real verse text -- roman numerals like
+   "XIX." are almost always footnote markers).
+3. View the FULL surrounding source text (30-50 lines), including where it flows into the next
+   chapter's footnote apparatus, so nothing is missed.
+4. Compare sentence-by-sentence against the app's current verses. Only conclude something is
+   missing if there's real narrative content in the source with literally no corresponding text
+   anywhere in the app's verses -- not just a verse-number skip.
+5. If something's missing, insert it, renumbering subsequent verses in that chapter only.
+6. Immediately re-run the structural sweep (chapter/verse gaps, empty verses) on the WHOLE file
+   before moving to the next chapter.
+7. Checkpoint (commit + patch) every 2-3 chapters, per Josh's standing rule that every handoff
+   includes exact apply/commit/push commands.
+
+**ET/SY-corpus status:** 12 green, 19 red, 0 amber (unchanged this session -- these are within-red
+content fixes, not status changes).
+
+**Next session should:** continue with chapter 20 using the methodology above, then 21, 29, 31, 35,
+43, 48, 49, 51 in whatever batching makes sense, then tackle chapters 86-87 (needs a source --
+check if Charles' 1896 earlier translation or another edition covers the gap Wesley Center's page
+doesn't reach), then finally Letter of Baruch (SY) once 2 Baruch's chapters 81-82 are confirmed
+clean.
