@@ -1360,3 +1360,49 @@ checkpointed project (not a quick pass) -- work chapter by chapter against the r
 already in the repo, verify each chapter's verse boundaries carefully given the OCR ambiguity
 found this session, and only then look at Letter of Baruch (SY), which will inherit whatever gets
 fixed in 2 Baruch's chapters 81-82.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 1: self-correction + chapter 13 fixed
+
+Began the checkpointed multi-chapter restoration effort for 2 Baruch (CE), one chapter at a time
+against the raw source snapshot already in the repo.
+
+**Self-correction, first:** the immediately preceding handoff claimed 4 additional chapters (32,
+44, 64, 80) had missing content, based on verse-number gaps spotted during a quick pass. That claim
+was wrong -- on careful re-inspection, those gaps are artifacts of the 1913 source's own combined
+verse markers (printed as e.g. "4,5" or "5,6", one unit covering what becomes two verse numbers) --
+the app's existing verse-splitting already captures all the real content there, just grouped
+differently than the source's numbering. Nothing is actually missing in those four chapters.
+Lesson: truncated/quick text comparisons produced a false positive here; full-text comparison
+against the source is required before concluding content is missing, not just spotting a
+verse-number gap.
+
+**Chapter 13 (one of the ORIGINALLY-flagged chapters from 2026-07-18) -- confirmed real and fixed.**
+Found two genuinely missing stanzas: an entire "For how long? ... judgement of the Lofty One who
+has no respect of persons" verse (missing entirely between old v8 and v9), and an entire "Then
+therefore were they chastened that they might be sanctified" verse (missing entirely after old
+v10). Also found and corrected a mis-split: the old v9/v10 boundary had incorrectly split the
+source's real single verse 9 across two verse numbers. Chapter 13 now has 11 verses (was 10), both
+restorations verified directly against the source text before touching the repo.
+
+**Remaining for this checkpointed effort:** chapters 14, 19, 20, 21, 29, 31, 35, 43, 48, 49, 51 (the
+rest of the originally-flagged list) still need the same careful, chapter-by-chapter treatment.
+Chapters 86-87 remain entirely unverified against any primary source (the Wesley Center Online page
+this project has used stops mid-chapter-85). Letter of Baruch (SY) still untouched -- it inherits
+2 Baruch's chapters 81-82, which haven't been checked yet either.
+
+**How to work each remaining chapter (for whoever picks this up next):** find the chapter's actual
+verse text in `data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt`
+(grep for a distinctive phrase from the app's existing text, not the chapter number alone -- roman-
+numeral chapter headers in this source are usually footnote/commentary markers, not the real verse
+text), read the FULL surrounding text (not a truncated preview -- that's exactly what caused this
+session's false alarm), and compare sentence-by-sentence against the app's current verses before
+concluding anything is missing. Combined verse markers (e.g. "4,5") are common in this source and do
+NOT mean content is missing -- only conclude a real gap when there's actual narrative content in the
+source with no corresponding text anywhere in the app's verses.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still a within-red content fix, chapter 13
+of ~12+ chapters done.
+
+**Next session should:** continue chapter-by-chapter through 14, 19, 20, 21, 29, 31, 35, 43, 48, 49,
+51, checkpointing (commit + patch) after each chapter or small batch, the same careful way chapter
+13 was done this session.
