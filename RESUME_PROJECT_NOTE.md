@@ -1830,3 +1830,46 @@ Letter of Baruch (SY) once 2 Baruch's chapters 81-82 are confirmed clean. Same m
 throughout: verify before editing, distinctive-phrase grep, full untruncated source view,
 sentence-by-sentence comparison, watch especially for poetic lines/clauses cut short mid-verse (the
 dominant defect pattern in this entire book), and re-run the structural sweep after every edit.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
+7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
+
+**Chapter 52 (Baruch's reply about lamenting for the wicked and encouraging the righteous) had the
+same pervasive truncation pattern found throughout this restoration effort.** Six of seven verses
+were incomplete:
+- v1 was missing its entire quoted content: "'How can we forget those for whom woe is then
+  reserved?" (app had only "And I answered and said:").
+- v2 was missing "Or why do we weep for those who depart to Sheol?"
+- v3 was missing "and let tears be laid up for the advent of the destruction of that time."
+- v5 was missing its closing question mark (matched content, just an incomplete sentence -- minor,
+  fixed along with the rest).
+- v6 was missing "for why do you look for the decline of your enemies?"
+- v7 was missing "and prepare your souls for the reward which is laid up for you.']" -- the closing
+  bracket confirms this is the end of the discourse section that began back in chapter 48's
+  "Fragment of an Address of Baruch to the People," consistent with the source's own structure.
+
+v4 was already complete and untouched. All restorations extended existing verses without
+renumbering (count unchanged, 7). Verified directly against the source before touching the repo;
+confirmed the chapter genuinely ends at v7 (matching the source's closing bracket) with nothing
+further needed. Structural re-sweep clean immediately after (same five previously-known gaps,
+unchanged: chapters 15, 32, 44, 64, 80).
+
+**2 Baruch (CE) status after this checkpoint:** all originally-flagged chapters (13, 14, 19, 20, 21,
+31, 35, 43, 49, 51) plus the two chapters found during this checkpointed effort (29 -- clean, 48 --
+one typo, 52 -- fixed) have now been addressed. **Only chapters 86-87 remain unverified against any
+primary source**, and Letter of Baruch (SY) is still completely untouched (it inherits 2 Baruch's
+chapters 81-82 verbatim).
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes. Do NOT mark
+2 Baruch (CE) GREEN yet -- chapters 86-87 are a confirmed, real, unresolved gap.
+
+**Next session should:** work on sourcing chapters 86-87 first (the Wesley Center Online mirror this
+project has relied on throughout stops mid-chapter-85 -- try Charles' earlier 1896 translation, a
+different digitization of the 1913 APOT edition, or ask Josh if he can paste/upload the missing
+pages, same fallback used successfully for Tizaz/Mazaheta/2 Meqabyan when automated fetch failed).
+Once 86-87 are sourced and fixed (or confirmed genuinely unsourceable and flagged honestly), move to
+Letter of Baruch (SY) -- check its own unique chapters 1-3 against a source, and verify its inherited
+chapters 4-5 (=2 Baruch 81-82) are actually clean now that 2 Baruch itself has had this extensive
+restoration pass. Same methodology throughout: verify before editing, distinctive-phrase grep, full
+untruncated source view, sentence-by-sentence comparison, watch for the dominant "poetic line/clause
+cut short mid-verse" defect pattern, and re-run the structural sweep after every edit.

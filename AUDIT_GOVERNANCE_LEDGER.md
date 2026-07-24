@@ -4513,17 +4513,28 @@ confirming the 51/52 boundary -- flagged for the next session, not addressed thi
 Letter of Baruch (SY), which inherits 2 Baruch's chapters 81-82 verbatim and hasn't been checked at
 all. Neither book should be marked GREEN yet.
 
-**Methodology, reconfirmed across all ten checkpoints of this effort:** grep the raw source for a
-distinctive phrase from the app's existing verse text (chapter-number-alone greps mostly hit
-Charles' own roman-numeral footnote markers, not real verse text); view the full surrounding source
-text, since this source routinely interleaves real verse text with pages of footnote/commentary
-apparatus mid-chapter; compare sentence-by-sentence, only concluding something is missing when
-there's real narrative/poetic content in the source with no corresponding app text anywhere in the
-chapter (and conversely, verify a flagged chapter actually has a gap before editing it -- chapters
-29 and 48 mostly did not); watch specifically for poetic lines/clauses truncated partway through --
-by far the single most common real defect found across this whole effort (chapters 20, 21, 35, 43,
-49, and now 51, sometimes losing the majority of a verse's content) -- and for scrambled OCR line
-order within a couplet (chapter 48); when restoring pronouns, match the convention already
-established by that chapter's own untouched verses rather than a book-wide rule; only restructure
-existing verse boundaries when the source's own numbering is unambiguous; re-run the structural
-sweep on the whole file immediately after each chapter's edit, not batched at session end.
+**Checkpoint 11:** chapter 52 fixed -- six of its seven verses had missing content (the same
+pervasive mid-verse truncation pattern found throughout this book): v1 missing its entire quoted
+opening, v2 missing its second question, v3 missing its second clause, v5 missing its closing
+punctuation, v6 missing its second question, v7 missing its closing line and the bracket that
+confirms this is the end of the discourse section begun in chapter 48. v4 was already correct.
+Verse count unchanged (7); confirmed the chapter genuinely ends at v7, matching the source.
+
+**2 Baruch (CE) status after checkpoint 11:** every originally-flagged chapter plus the two
+additional chapters found during this effort (48, 52) have now been addressed. Only chapters 86-87
+(no primary source identified -- Wesley Center's mirror stops mid-85) and Letter of Baruch (SY),
+which is completely untouched, remain open. Do not mark 2 Baruch (CE) GREEN yet.
+
+**Methodology, reconfirmed across all eleven checkpoints:** grep the raw source for a distinctive
+phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
+roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
+this source routinely interleaves real verse text with pages of footnote/commentary apparatus
+mid-chapter; compare sentence-by-sentence, only concluding something is missing when there's real
+narrative/poetic content in the source with no corresponding app text anywhere in the chapter (and
+conversely, verify a flagged chapter actually has a gap before editing it -- chapters 29 and 48
+mostly did not); watch specifically for poetic lines/clauses truncated partway through -- by far the
+single most common real defect found across this whole effort, present in chapters 20, 21, 35, 43,
+49, 51, and 52; when restoring pronouns, match the convention already established by that chapter's
+own untouched verses rather than a book-wide rule; only restructure existing verse boundaries when
+the source's own numbering is unambiguous; re-run the structural sweep on the whole file immediately
+after each chapter's edit, not batched at session end.
