@@ -2083,6 +2083,56 @@ Clement/Qalementos, Admonitions, Sirate Tsion) and Mazaheta's 3 still-unsourced 
 (Anqasa Birhan, Sa'atat, Me'erAf), none of which should be picked up without Josh's explicit
 direction per the standing governance decisions already on record.
 
+## SESSION HANDOFF 2026-07-24 continued -- FINAL: 2 Baruch (CE) + Letter of Baruch (SY) spot-checked
+and marked GREEN on the dashboard, closing the whole checkpointed restoration effort (checkpoints
+1-15 plus this closing pass)
+
+**Josh's instruction: "do what needs to be done."** Did the deliberate spot-check-and-GREEN-marking
+pass recommended at the end of checkpoint 15, rather than deferring it.
+
+**Spot-check found one more real defect before marking GREEN.** While independently re-verifying a
+sample of never-flagged chapters, found and fetched a second, cleanly-typeset full transcription of
+Charles' 1913 translation (Wesley Center Online's edited copy -- distinct from this repo's own raw
+OCR snapshot, useful as a second, independent corroborating source). Using it to check chapter 60
+turned up two verses (3, "And the honor of the Most High was defiled..."; 4, "These are the black
+fifth waters which you have seen.") that do not correspond to Charles' translation at all -- neither
+this repo's raw source snapshot nor the Wesley Center transcription has any equivalent content;
+chapter 60 genuinely only has 2 verses in Charles. Removed both. Same failure class as chapter 85's
+MAJOR FINDING, smaller in scope.
+
+**Sample verification, not exhaustive:** checked 17 chapters that were never on any flagged list and
+never individually verified in checkpoints 1-14 (2, 6, 9, 16, 17, 18, 46, 60, 65, 68, 76, plus the
+78/79/81/82/83/84 already checked in checkpoint 14) against the Wesley Center transcription. 14 of 17
+were fully clean; chapter 60 had the defect described above; chapter 16 had a trivial "0"/"O" OCR
+typo (fixed); chapters 81/82 (already caught in checkpoint 14) were re-confirmed fixed. This is a
+representative sample across the book's length, not a chapter-by-chapter re-read of all 87 chapters
+-- worth being honest about in case a future session wants to extend coverage further, though the
+diminishing hit rate (1 real defect in the last 17 chapters checked, versus roughly 1-in-2 in the
+earlier, more targeted checking of chapters 78-84) suggests the remaining unchecked chapters are
+lower-risk than the ones already covered.
+
+**Dashboard updated:** `2 Baruch (CE)` and `Letter of Baruch (SY)` moved from `RED_SEED` to
+`GREEN_SEED` in `audit-ledger.html`; their `RED_NOTES` entries removed and replaced with full
+`GREEN_NOTES` entries summarizing the whole 15-checkpoint restoration history for each. The
+explanatory comment above `POST_V1_BLOCKED` (which had described these two as "the only two RED_SEED
+items in bucket (b)") updated to reflect their closure. `SEED_VERSION` bumped to
+`v133-2026-07-24-2baruch-letterofbaruch-green`. Verified via `node --check` (syntax) and an isolated
+re-run of the actual status-assignment code path (`RED_SEED`/`GREEN_SEED`/`POST_V1_BLOCKED`
+membership plus the real `classFor` logic) against both book names before shipping -- both compute as
+`green`, `blocked: false`, with their notes correctly attached.
+
+**BOTH BOOKS ARE NOW GREEN.** This closes the entire 2 Baruch (CE) / Letter of Baruch (SY)
+restoration effort that ran across this whole session (checkpoints 1-15 plus this closing pass).
+
+**ET/SY-corpus status: 14 green, 17 red, 0 amber** (was 12 green, 19 red -- +2 green, -2 red).
+
+**Next session should:** ask Josh what's next -- the entire "fixable now" tier of the ET/SY backlog
+is closed. Everything remaining in RED_SEED is post-v1.0-deferred per explicit governance decisions
+already on record (Fetha Nagast, Josippon, Malke'a Guba'e, Malke'a Iyasus, the 11-file
+Clement/Qalementos family, Admonitions, Sirate Tsion) or blocked on Mazaheta's 3 still-unsourced
+sections (Anqasa Birhan, Sa'atat, Me'erAf) -- none of it should be picked up without Josh's explicit
+direction.
+
 ## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 11: chapter 52 fixed (6 of its
 7 verses had missing content, same dominant "cut short mid-verse" pattern as the rest of this book)
 

@@ -4604,17 +4604,33 @@ RED pending a deliberate, combined spot-check-and-GREEN-marking pass (recommende
 session's opening task, since a single verification pass now covers both files given their shared
 content).
 
-**Methodology, reconfirmed across all fifteen checkpoints of this whole restoration effort:** grep
-the raw source for a distinctive phrase from the app's existing verse text; view the full surrounding
-source text; compare sentence-by-sentence, only concluding something is missing when there's real
-content in the source with no corresponding app text (and conversely, verify a flagged chapter
-actually has a gap before editing it, and verify a chapter that was never flagged is actually clean
-before assuming it is); watch for poetic lines/clauses truncated partway through and for entire
-parallel-structure verses dropped from a series; word-count parity checks are efficient for
-confirming a chapter is genuinely clean; when content diverges in substance rather than length,
-cross-check against a second independent source (MAJOR FINDING signature); verify a prior session's
-claims -- about source completeness, or a gap being "confirmed real" -- against the actual evidence
-rather than carrying them forward uncritically; when two files share the same underlying content
-(like 2baruchSY.json and letterofbaruchSY.json), sync programmatically from the authoritative one
-rather than re-deriving independently; re-run the structural sweep on the whole file immediately
-after each edit.
+**FINAL CLOSING PASS -- 2 Baruch (CE) and Letter of Baruch (SY) marked GREEN.** Per Josh's
+instruction to complete the deferred spot-check, did an independent verification sample (17 chapters
+never on any flagged list, checked against a second, independently-fetched clean transcription of
+Charles' translation via Wesley Center Online) before updating the dashboard. Found one more real
+defect: chapter 60 carried two verses (3, 4) with no correspondence to Charles' translation at all
+in either this repo's raw source or the Wesley Center transcription -- removed, since the chapter
+genuinely only has 2 verses in the authoritative source. One trivial OCR typo fixed in chapter 16.
+The sample was representative, not an exhaustive re-read of all 87 chapters -- 14 of 17 sampled
+chapters were already fully clean, a lower hit rate than the earlier, more targeted checking, which
+is some evidence (not proof) that the remaining unchecked chapters carry lower risk.
+
+Dashboard updated: both books moved `RED_SEED` -> `GREEN_SEED` in `audit-ledger.html`, `RED_NOTES`
+entries replaced with full `GREEN_NOTES` summaries of the whole restoration history, the explanatory
+comment above `POST_V1_BLOCKED` updated, `SEED_VERSION` bumped to
+`v133-2026-07-24-2baruch-letterofbaruch-green`. Verified via `node --check` and an isolated
+re-run of the real status-assignment code path (`RED_SEED`/`GREEN_SEED`/`POST_V1_BLOCKED` membership
+plus `classFor`) confirming both books compute as green, unblocked, with their notes attached.
+
+**ET/SY-corpus status: 14 green, 17 red, 0 amber.** This closes the entire 2 Baruch (CE) / Letter of
+Baruch (SY) restoration effort. Everything remaining in RED_SEED is post-v1.0-deferred per explicit
+governance decisions already on record, or blocked on Mazaheta's 3 still-unsourced sections -- none
+of it actionable without Josh's direction.
+
+**Methodology, final note for this whole 15-checkpoint-plus-closing-pass effort:** a second,
+independent source (even an amateur transcription, not just an academic edition) is valuable for
+catching defects a single source's own OCR noise can mask, and is worth fetching when available,
+especially before a final GREEN-marking decision on a book this large and this heavily edited across
+a single session. Sample-based final verification is a reasonable, honest way to close out a
+large book when exhaustive verification isn't practical -- but the sample and its limitations should
+be documented plainly, not presented as if it were exhaustive.
