@@ -4394,3 +4394,63 @@ the meantime, same as the other deferred books.
 composed for this project rather than transcribed from any real source, since no real source was
 ever available. The two stray characters were mechanically corrected this session (see commit) but
 the underlying fabricated content across the family is untouched, pending the translation above.
+
+## 2 Baruch (CE) checkpointed restoration, sessions 2026-07-24 (checkpoints 1-3)
+
+Backfilled entry -- the two prior sessions this book was picked up in (dashboard blocked/fixable
+red-striping, then checkpoints 1-2) logged progress in `RESUME_PROJECT_NOTE.md` but not here; this
+entry consolidates all of it plus checkpoint 3 for the permanent record. Full narrative detail for
+each chapter is in `RESUME_PROJECT_NOTE.md`'s dated handoff entries; this is the durable summary.
+
+**Source:** `data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-snapshot-2026-07-05.txt`
+(R.H. Charles' 1913 APOT translation, public domain), already in the repo -- no fresh fetch needed
+for any of this work.
+
+**Dashboard change (2026-07-24):** RED_SEED split into two visual tiers -- 2 items (2 Baruch (CE),
+Letter of Baruch (SY)) shown as plain red ("fixable now, source known, just not yet done"); 19 items
+shown red-with-white-stripe ("blocked until v1.0" -- copyright or no-source findings). New
+`POST_V1_BLOCKED` set + `classFor()` helper in `audit-ledger.html`.
+
+**Checkpoint 1:** fixed the chapter 12/13 verbatim duplication (ch.12 vv.6-7 had exactly repeated
+ch.13 vv.1-2; ch.12 now correctly ends at v.5). Chapter 13 restored: two entirely missing verses
+("For how long? ... judgement of the Lofty One who has no respect of persons" and "Then therefore
+were they chastened that they might be sanctified") plus a mis-split correction (old v9/v10 had
+incorrectly divided the source's real single verse 9). An initial claim that chapters 32, 44, 64, 80
+also had missing content was investigated and found to be a false alarm -- those are the source's own
+combined verse markers (e.g. "4,5" printed as one unit), not real gaps; self-corrected before
+committing.
+
+**Checkpoint 2:** chapter 14 restored (one missing verse, a couplet on God's incomprehensible
+counsel, inserted between old v10/v11). Chapter 19 restored (two missing stanzas: heaven-and-earth
+witness clause, and the back half of what is now v4). An off-by-one renumbering slip self-introduced
+mid-edit on chapter 19 was caught via the standard structural sweep and corrected before committing.
+
+**Checkpoint 3 (this entry, 2026-07-24):** chapter 20 restored. Two entirely missing verses:
+"Therefore have I now taken away Zion, that I may the more speedily visit the world in its season"
+(source's real v2) and "Now therefore hold fast in your heart everything that I command you, and
+seal it in the recesses of your mind. And then I will show you the judgement of My might, and My
+ways which are unsearchable" (source's vv3-4, printed after an intervening block of Charles' own
+footnote/commentary text in the OCR'd source). Also corrected a mis-split: the app's old vv1-4 had
+broken the source's single opening verse (a four-line poetic stanza) into four one-line verses --
+merged into one verse 1, matching the source's actual numbering and this book's established
+sentence-boundary verse convention elsewhere. Net verse count unchanged (6), but two verses' worth of
+real content that was previously absent is now present. Pronouns rendered "you/your" per this book's
+already-established modernization convention (confirmed against chapters 13/14/19, which already
+render the source's "thee/thy" as "you/your"); the untouched verses 5-6 were left exactly as they
+were.
+
+**Cumulative status:** chapters 13, 14, 19, 20 restored (4 of the original 12-chapter flagged list:
+13, 14, 19, 20, 21, 29, 31, 35, 43, 48, 49, 51). Remaining: 21, 29, 31, 35, 43, 48, 49, 51, plus
+chapters 86-87 (unverified against any primary source -- the Wesley Center Online mirror this project
+has relied on stops mid-chapter-85; a second source is needed and not yet identified). Letter of
+Baruch (SY) untouched -- it inherits 2 Baruch's chapters 81-82, which haven't been checked yet either.
+Neither book is marked GREEN; both stay plain-red pending the remaining chapters.
+
+**Methodology, reconfirmed across all three checkpoints:** grep the raw source for a distinctive
+phrase from the app's existing verse text (chapter-number-alone greps mostly hit Charles' own
+roman-numeral footnote markers, not real verse text); view the full surrounding source text, since
+this source routinely interleaves real verse text with pages of footnote/commentary apparatus
+mid-chapter (confirmed again in chapter 20); compare sentence-by-sentence, only concluding something
+is missing when there's real narrative/poetic content in the source with no corresponding app text
+anywhere in the chapter; re-run the structural sweep on the whole file immediately after each
+chapter's edit, not batched at session end.

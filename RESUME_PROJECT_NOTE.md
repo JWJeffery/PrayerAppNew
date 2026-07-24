@@ -1497,3 +1497,40 @@ content fixes, not status changes).
 check if Charles' 1896 earlier translation or another edition covers the gap Wesley Center's page
 doesn't reach), then finally Letter of Baruch (SY) once 2 Baruch's chapters 81-82 are confirmed
 clean.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 3: chapter 20 fixed (2 missing
+verses restored + mis-split stanza merged)
+
+Continued the chapter-by-chapter restoration, same methodology as checkpoints 1-2.
+
+**Chapter 20:** two entire verses were missing -- "Therefore have I now taken away Zion, that I may
+the more speedily visit the world in its season" (the source's real verse 2), and "Now therefore
+hold fast in your heart everything that I command you, and seal it in the recesses of your mind.
+And then I will show you the judgement of My might, and My ways which are unsearchable" (the
+source's verses 3-4, printed after an intervening block of footnote/commentary text in the OCR'd
+source -- same "real content interrupted by footnote apparatus" pattern as other chapters in this
+book). Also found and corrected a mis-split: the app's old verses 1-4 had broken the source's single
+verse 1 (a four-line poetic stanza) into four separate one-line verses -- merged back into one verse
+1, matching the source's own numbering and this book's established sentence/verse-boundary
+convention elsewhere (not a one-line-per-verse style). Net effect: still 6 verses total (3 removed
+by the merge, 3 added by the restoration), but real content is now present that wasn't before.
+Pronouns rendered as "you/your" to match this book's already-established modernized-pronoun
+convention (confirmed by checking chapters 13/14/19, which already render the source's "thee/thy"
+as "you/your" throughout) -- verses 5-6, which were already correct, were left untouched.
+
+Verified directly against `data/bible/translations/2baruch/raw/2baruch-charles-apot2-source-
+snapshot-2026-07-05.txt` before touching the repo. Structural re-sweep run on the whole file
+immediately after: chapter 20 is now clean. The five previously-known open gaps (chapters 15, 32,
+44, 64, 80 -- confirmed real, not yet restored) are unchanged and expected; nothing new introduced.
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19, 20 done (4 of the
+original 12-chapter list). Remaining: 21, 29, 31, 35, 43, 48, 49, 51, plus chapters 86-87 still
+unverified against any primary source. Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 21, same methodology -- find the chapter's actual
+verse text via a distinctive-phrase grep (not the chapter number alone), view the FULL surrounding
+source text (never a truncated preview), compare sentence-by-sentence, watch for the same
+"footnote apparatus interrupts real verse text mid-chapter" pattern seen in chapter 20, and
+re-run the structural sweep after every single chapter's edit, not just at session's end.
