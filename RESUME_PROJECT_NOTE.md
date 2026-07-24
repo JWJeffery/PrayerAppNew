@@ -1406,3 +1406,35 @@ of ~12+ chapters done.
 **Next session should:** continue chapter-by-chapter through 14, 19, 20, 21, 29, 31, 35, 43, 48, 49,
 51, checkpointing (commit + patch) after each chapter or small batch, the same careful way chapter
 13 was done this session.
+
+## SESSION HANDOFF 2026-07-24 continued -- 2 Baruch (CE) checkpoint 2: chapters 14 and 19 fixed
+
+Continued the chapter-by-chapter restoration. Two more chapters done, both verified directly
+against the source before touching the repo:
+
+**Chapter 14:** one entirely missing verse restored -- a couplet on God's incomprehensible counsel
+("Or who will be able to think out Thy incomprehensible counsel? Or who of those that are born has
+ever found the beginning or end of Thy wisdom?"), missing between the old v10 and v11. Now 15
+verses (was 14).
+
+**Chapter 19:** two missing stanzas restored -- an entire clause where God calls heaven and earth
+to witness against Israel, and the back half of what is now verse 4 ("though they knew that they
+had the law reproving them, and the light in which nothing could err, also the spheres which
+testify, and Me"). Now 9 verses (was 8).
+
+**Caught my own mistake mid-checkpoint:** the chapter 19 fix initially introduced an off-by-one
+renumbering slip (a gap at v5) from miscounting how many new verses were inserted vs. how much the
+tail needed to shift. Found via the standard structural re-sweep and corrected before committing --
+worth flagging as a reminder to always re-run the sweep after every verse-insertion, not just at
+the end of a session.
+
+**Total progress so far in this checkpointed effort:** chapters 13, 14, 19 done (3 of the original
+12-chapter list). Remaining: 20, 21, 29, 31, 35, 43, 48, 49, 51, plus chapters 86-87 still
+unverified against any primary source. Letter of Baruch (SY) still untouched.
+
+**ET/SY-corpus status unchanged in green/red counts** -- still within-red content fixes.
+
+**Next session should:** continue with chapter 20, same careful methodology -- find the chapter's
+actual verse text via a distinctive-phrase grep (not the chapter number alone), view the FULL
+surrounding source text (never a truncated preview), compare sentence-by-sentence, and re-run the
+structural sweep after every single chapter's edit, not just at session's end.
