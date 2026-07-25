@@ -4890,3 +4890,27 @@ Verified: brace balance (522/522), Node depth walk (0, never negative), full `np
 build. **Still not visually verified** -- no headless browser in this environment. Asked Josh to
 confirm the specific readability issues are resolved with a follow-up screenshot before considering
 this closed.
+
+## SESSION 2026-07-25 continued -- Sidebar text overflow fix (long labels clipping past sidebar edge)
+
+Josh's second screenshot showed long checkbox labels (the new Lectionary Alternates toggles, plus
+some pre-existing ones like Invitatory Psalm at Evening and the Noonday/Compline lectionary
+toggles) sliding off the sidebar's right edge instead of wrapping. Root cause: `.setting-group
+label` used `display: flex; align-items: center; white-space: nowrap;`, forcing every sidebar
+label onto a single line regardless of length. This was a pre-existing rule, not introduced this
+session -- confirmed by finding a mobile-breakpoint media query that already force-overrides it
+with `white-space: normal !important`, meaning wrapping was already known to be the correct
+behavior; the desktop-width rule simply never got the same fix. 8 labels total were long enough to
+be affected, 4 of them newly added this session (Lectionary Alternates) and 4 pre-existing.
+
+**Fix:** changed `.setting-group label` to `white-space: normal` and `align-items: flex-start`
+(so the checkbox/radio aligns to the top of wrapped multi-line text rather than vertically
+centering against an assumed single line), with `flex-shrink: 0` on the input itself so it doesn't
+get squeezed by long label text. Verified this was the only `white-space: nowrap` rule of its
+kind in the stylesheet (grep confirmed zero remaining). `.app-mode-drawer label` (the other
+offices' sidebars) uses `display: block`, which wraps naturally and was never affected.
+
+Verified: brace balance (523/523), full `npm run release:web` build. The purple highlighting
+visible across much of Josh's second screenshot appears to be an accidental text selection in the
+screenshot itself (matches standard browser ::selection styling), not a CSS defect -- no action
+taken on it; flagged to Josh in case it's something else.

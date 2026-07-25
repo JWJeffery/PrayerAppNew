@@ -2299,3 +2299,17 @@ readability issues are actually resolved before treating dark mode as closed. Al
 similar hardcoded-light-parchment patterns likely exist in the Book of Needs display and the old
 tradition-entry screens (found during the sweep, deliberately not touched -- out of scope for the
 Daily Office pressure test Josh asked for) if either of those ever need the same treatment.
+
+## SESSION HANDOFF 2026-07-25 continued -- Sidebar text-wrapping fix
+
+Josh's second screenshot showed long sidebar labels (Lectionary Alternates + a few pre-existing
+long ones) clipping off the sidebar edge instead of wrapping. Cause: `.setting-group label` forced
+`white-space: nowrap`. Fixed to wrap normally, `align-items: flex-start` so checkboxes align to
+top of multi-line text. Confirmed via an existing mobile-breakpoint override that already forced
+`white-space: normal !important` there -- wrapping was already the known-correct behavior, desktop
+just never got it. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Next session should:** get final confirmation from Josh that dark mode + sidebar layout are both
+now genuinely good before considering the priest-testing prep fully closed. The purple highlighting
+in his second screenshot was treated as likely an accidental text selection, not a bug -- worth
+a quick check if he flags it again.
