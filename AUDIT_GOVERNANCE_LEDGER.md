@@ -4729,14 +4729,18 @@ both `audit-ledger.html`'s current `RED_SEED` and actual file existence on disk.
   Baruch` was already being unwired as RED_SEED regardless, so this is likely superseded/merged
   content rather than a separate loss).
 
-**One finding surfaced, not acted on: `SECOND_BARUCH` ("2 Baruch") is currently wired to a dead
-path.** Its `source_path` in the registry is `data/bible/NT/2baruchCE.json`, which does not exist
--- the actual, just-closed-GREEN 2 Baruch content lives at `data/bible/SY/2baruchSY.json`. This
-means 2 Baruch -- GREEN, freshly restored across 15 checkpoints on 2026-07-24 -- is presently a
-**broken/dead entry in the live Bible Browser**, not a working one. This was left untouched rather
-than silently "fixed" or unwired, since it's neither RED nor a confirmed removal -- it's GREEN
-content that needs its registry path corrected to point at the real file. Flagged to Josh; awaiting
-his direction on whether to repoint it in this same pass or a follow-up.
+**Update, same session: `SECOND_BARUCH` ("2 Baruch") dead-path finding fixed at Josh's request.**
+Its `source_path` in the registry was `data/bible/NT/2baruchCE.json`, which does not exist -- a
+stale leftover from before the 2026-07-24 restoration moved the real content to
+`data/bible/SY/2baruchSY.json`. Two registry records referenced the old path and both were
+corrected: `data/bible/registry/file-manifest.json`'s file entry (`path`, `legacy_folder`,
+`filename`) and `data/bible/registry/identity-adjudications.json`'s `SECOND_BARUCH` record
+(`source_path`, plus its `storage_note` updated to record the correction). Verified end-to-end by
+replicating the real `loadRegistry()` join logic (file-manifest entry → matched by path to its
+adjudication record → candidate flag `true`) against the corrected files: the join now succeeds,
+the path resolves to a real file on disk, and the file itself was spot-checked as genuine content
+(`meta`/`chapters` structure, ~143KB, not empty/malformed). 2 Baruch will now load correctly in
+the Bible Browser rather than 404ing.
 
 **What was NOT touched:** no underlying `data/bible/**` content files were modified, moved, or
 deleted -- this was purely a registry-flag change controlling Bible Browser visibility, fully

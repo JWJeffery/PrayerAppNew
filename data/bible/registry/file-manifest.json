@@ -737,9 +737,9 @@
       }
     },
     {
-      "path": "data/bible/NT/2baruchCE.json",
-      "legacy_folder": "NT",
-      "filename": "2baruchCE.json",
+      "path": "data/bible/SY/2baruchSY.json",
+      "legacy_folder": "SY",
+      "filename": "2baruchSY.json",
       "shape": "book_object",
       "title": "2 Baruch",
       "translations_seen": [

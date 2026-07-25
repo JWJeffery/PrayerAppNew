@@ -2230,13 +2230,14 @@ friend to test the Daily Office.** Two changes made:
    entry of the same date. No content files touched -- registry-flag change only, fully
    reversible.
 
-**Found but not fixed:** `SECOND_BARUCH`'s registry entry points to
-`data/bible/NT/2baruchCE.json`, which doesn't exist -- the real, just-closed-GREEN 2 Baruch
-content is at `data/bible/SY/2baruchSY.json`. So 2 Baruch is currently a **broken entry** in the
-live Bible Browser despite being GREEN. Left as-is and flagged to Josh rather than assumed-fixed,
-since repointing it wasn't part of this session's ask.
+**Found and fixed (Josh asked for it in-session, before the priest tests):** `SECOND_BARUCH`'s
+registry entry pointed to `data/bible/NT/2baruchCE.json`, which doesn't exist -- a stale path left
+over from before the 2026-07-24 restoration moved the real content to
+`data/bible/SY/2baruchSY.json`. Corrected in both `file-manifest.json` and
+`identity-adjudications.json`; verified end-to-end by replicating the real registry join logic
+against the corrected files (resolves to a real, non-empty file on disk). 2 Baruch now loads
+correctly in the Bible Browser. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same
+date.
 
-**Next session should:** ask Josh whether to repoint `SECOND_BARUCH`'s `source_path` to
-`data/bible/SY/2baruchSY.json` (one-line registry fix, same mechanism used in this session).
-Otherwise treat the splash/unwiring work as closed unless Josh reports an issue after the priest's
-testing.
+**Next session should:** treat the splash/unwiring/2-Baruch-path work as closed unless Josh
+reports an issue after the priest's testing.

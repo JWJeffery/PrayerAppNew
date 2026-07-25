@@ -831,13 +831,13 @@
       ]
     },
     {
-      "source_path": "data/bible/NT/2baruchCE.json",
+      "source_path": "data/bible/SY/2baruchSY.json",
       "identity_id": "SECOND_BARUCH",
       "preferred_title": "2 Baruch",
       "work_type": "apocalyptic_broader_canon_or_witness_text",
       "text_form_id": "SECOND_BARUCH_CURRENT_ENGLISH_WITNESS",
       "ordinary_chapter_verse_resolver_candidate": true,
-      "storage_note": "Currently stored under NT, but registry identity is not New Testament.",
+      "storage_note": "Stored under SY (2026-07-24 restoration); registry path corrected 2026-07-25 after being found still pointing at the pre-restoration NT/2baruchCE.json location.",
       "profile_hints": [
         {
           "profile_family": "default",
