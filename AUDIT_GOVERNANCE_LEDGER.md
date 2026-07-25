@@ -4914,3 +4914,49 @@ Verified: brace balance (523/523), full `npm run release:web` build. The purple 
 visible across much of Josh's second screenshot appears to be an accidental text selection in the
 screenshot itself (matches standard browser ::selection styling), not a CSS defect -- no action
 taken on it; flagged to Josh in case it's something else.
+
+## SESSION 2026-07-25 continued -- Six fixes from Josh's third round of live feedback
+
+1. **Noonday/Compline toggles no longer conditionally hidden by office.** Hooked the new
+   Invitatory and Noonday & Compline toggles into the existing `updateSidebarForOffice()`/
+   `setVisible()` mechanism (same pattern already used for Litany/Suffrages/etc.): Noonday-specific
+   toggles show only during Noonday Prayer, Compline-specific toggles only during Compline,
+   Invitatory-group toggles only during Morning/Evening (the only offices where the Invitatory
+   actually has variable content), and the Evening-specific invitatory-psalm toggle only at
+   Evening Prayer specifically.
+
+2. **"Weird box" identified as content clipping.** `#during-office-section` (and its two sibling
+   collapsible sections) had a hardcoded `max-height: 600px; overflow: hidden;` for the BCP-Only
+   collapse animation. Adding two new nested-groups (Invitatory, Noonday & Compline) very likely
+   pushed its natural content height past that cap, silently clipping the tail of the section.
+   Raised to `max-height: 3000px` across all three sections as a generous safety margin.
+
+3. **Info-tip icons jumping to their own line -- a regression from the prior session's own
+   wrap fix.** `.setting-group label` was `display: flex`, which treats a trailing
+   `<span class="info-btn">` as a separate atomic flex item rather than inline text content --
+   it can't share a wrapped line with the preceding words the way normal inline content can, so it
+   gets bumped to its own row when the line is tight. Switched the label to `display: block`
+   (normal inline/text flow) with the checkbox given `vertical-align` instead of flex alignment;
+   the info-btn now wraps as ordinary inline content, attached to the last line of text.
+
+4. **Sidebar narrowed (342px -> 305px)** so long labels wrap across genuine multi-word lines
+   rather than nearly fitting on one line and awkwardly kicking a lone trailing icon to its own row.
+
+5. **Uppercase "I" icons traced to CSS inheritance, not markup.** Every `.info-btn` span in the
+   HTML is authored as lowercase `i` (confirmed via extraction: 29 of 29 instances lowercase).
+   The four that rendered as "I" (Office Mode, Opening Devotions, During the Office, After the
+   Office) are all nested inside a `<strong>` section header, which applies
+   `text-transform: uppercase` for the header styling -- the info-btn inherited it. Fixed by
+   adding `text-transform: none` to `.info-btn` itself so it always renders as-authored regardless
+   of its parent's text-transform.
+
+6. **Section reorder: regular BCP settings now precede optional ecumenical extras.** Moved
+   "Opening Devotions" (Agpeya, Church of the East hours, Marian Element -- all optional
+   non-BCP-proper additions) from its position before "During the Office" to after "After the
+   Office," so the sidebar now presents all core/regular BCP settings first, with the ecumenical
+   extras grouped clearly at the end. Verified nothing depends on DOM order for this section
+   (toggleBcpOnly() and the CSS collapse rules both key off element ID, not position).
+
+Verified: CSS brace balance (523/523), HTML div balance (252/252), JS syntax check, zero duplicate
+toggle ids, zero orphaned JS-referenced ids, zero remaining uppercase info-btn content, full
+`npm run release:web` build. Still not visually verified -- no headless browser in this environment.

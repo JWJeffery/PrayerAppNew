@@ -9,7 +9,7 @@
 #closing-devotions-section {
     transition: opacity 0.3s, max-height 0.3s;
     overflow: hidden;
-    max-height: 600px;
+    max-height: 3000px;
     opacity: 1;
 }
 #ecumenical-devotions-section.bcp-only-hidden,
@@ -432,21 +432,19 @@ body.light-mode .mode-btn:hover {
     font-size: 0.95em;
 }
 .setting-group label {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 6px;
+    display: block;
     margin-bottom: 10px;
     cursor: pointer;
     font-size: 1.1em;
+    line-height: 1.42;
     font-family: 'IM Fell English', serif;
     color: var(--sidebar-label, #b8af98);
     white-space: normal;
 }
 .setting-group label input[type="checkbox"],
 .setting-group label input[type="radio"] {
-    flex-shrink: 0;
-    margin-top: 0.2em;
+    margin-right: 6px;
+    vertical-align: -0.15em;
 }
 .nested-group {
     margin-left: 12px;
@@ -850,6 +848,7 @@ select { width: 100%; padding: 10px; background: #1e1a14; color: #c8bfa8; border
     font-size: 11px;
     font-style: italic;
     font-weight: bold;
+    text-transform: none;
     cursor: help;
     margin-left: 6px;
     vertical-align: middle;
@@ -2420,8 +2419,8 @@ body.office-active .ethiopian-theme .rubric-text {
 
 /* Shared office sidebar normalization pass */
 body.office-active {
-    --app-sidebar-width: 342px;
-    --app-sidebar-pad-x: 24px;
+    --app-sidebar-width: 305px;
+    --app-sidebar-pad-x: 22px;
     --app-sidebar-card-bg: rgba(255, 253, 248, 0.58);
     --app-sidebar-card-border: rgba(103, 58, 31, 0.13);
     --app-sidebar-muted-box: rgba(120, 104, 82, 0.24);
@@ -2699,7 +2698,7 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
 
 @media (max-width: 900px) {
     body.office-active {
-        --app-sidebar-width: min(342px, calc(100vw - 54px));
+        --app-sidebar-width: min(305px, calc(100vw - 54px));
     }
 
     body.office-active #settings-panel.app-mode-drawer,

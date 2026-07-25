@@ -276,30 +276,6 @@
             </div>
         </div>
 
-        <!-- Opening Devotions (ecumenical) -->
-        <div class="setting-group" id="ecumenical-devotions-section">
-            <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
-            <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
-                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
-                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
-                <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
-                <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
-                <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
-                <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
-                <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
-                <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
-                <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
-            </div>
-        </div>
-
         <!-- During the Office -->
         <div class="setting-group" id="during-office-section">
             <strong>During the Office: <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
@@ -336,6 +312,31 @@
             <label><input type="checkbox" id="toggle-rotate-mission-prayer"  onchange="renderOffice(); saveSettings()" checked> Rotate Mission Prayer Daily <span class="info-btn" data-tip="Rotates among the 3 BCP-authorized Morning Prayer mission prayers (p.99-100) by calendar date. Uncheck to always use the first option.">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-weekday-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Second Collect Daily <span class="info-btn" data-tip="BCP p.55-57/98-99 (Morning) and p.68-70/122-124 (Evening) each offer 7 collects after the Collect of the Day (Sundays, Fridays, Saturdays, plus office-specific ones) — previously only one was ever shown. Rotates through all 7 by calendar date; uncheck to always use Grace (Morning) or Peace (Evening).">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-closing-blessing" onchange="renderOffice(); saveSettings()" checked> Rotate Closing Blessing Daily <span class="info-btn" data-tip="BCP p.59-60 offers 3 closing blessings after 'Let us bless the Lord' (2 Corinthians 13:14 / Romans 15:13 / Ephesians 3:20-21) — previously only the first was ever shown. Rotates by calendar date; uncheck to always use the first option.">i</span></label>
+        </div>
+
+        <!-- Opening Devotions (ecumenical) -- placed after all core/regular BCP settings
+             per Josh's rule: regular BCP options before optional extra-prayer additions. -->
+        <div class="setting-group" id="ecumenical-devotions-section">
+            <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
+            <div class="nested-group">
+                <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
+                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
+                <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
+                <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
+                <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
+                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
+                <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
+                <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
+                <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
+                <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
+            </div>
         </div>
     </div><!-- /settings-panel -->
 

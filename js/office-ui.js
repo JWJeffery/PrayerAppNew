@@ -2502,6 +2502,21 @@ function updateSidebarForOffice() {
     setVisible('toggle-litany',                isMpEp);
     setVisible('toggle-general-thanksgiving',  isMpEp);
     setVisible('toggle-chrysostom',            isMpEp);
+
+    // Invitatory group: Venite/Jubilate and Pascha Nostrum only ever render
+    // within the Morning/Evening invitatory branch; the Evening-specific
+    // toggle only does anything at Evening Prayer (Morning always shows the
+    // invitatory psalm regardless of this toggle's state).
+    setVisible('toggle-rotate-invitatory-psalm',    isMpEp);
+    setVisible('toggle-invitatory-psalm-at-evening', isEvening);
+    setVisible('toggle-pascha-nostrum-all-season',  isMpEp);
+
+    // Noonday & Compline group: each toggle only ever affects its own office.
+    setVisible('toggle-noonday-day-collect',        isNoonday);
+    setVisible('toggle-noonday-lesson-dol',         isNoonday);
+    setVisible('toggle-rotate-compline-collect',    isCompline);
+    setVisible('toggle-compline-additional-prayer', isCompline);
+    setVisible('toggle-compline-lesson-dol',        isCompline);
 }
 
 function toggleBcpOnly() {

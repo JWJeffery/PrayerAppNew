@@ -2313,3 +2313,23 @@ just never got it. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
 now genuinely good before considering the priest-testing prep fully closed. The purple highlighting
 in his second screenshot was treated as likely an accidental text selection, not a bug -- worth
 a quick check if he flags it again.
+
+## SESSION HANDOFF 2026-07-25 continued -- Six more fixes from Josh's third feedback round
+
+1. Noonday/Compline/Invitatory toggles now conditionally hidden by active office (hooked into
+   existing setVisible()/updateSidebarForOffice() pattern).
+2. "Weird box" was content clipping from a hardcoded max-height:600px on the collapsible settings
+   sections -- raised to 3000px.
+3. Info-tip icons jumping to their own line was a regression from the prior wrap fix (flex treated
+   the trailing span as an atomic item) -- switched .setting-group label to display:block.
+4. Sidebar narrowed 342px -> 305px for better natural wrapping.
+5. Uppercase "I" icons were a text-transform: uppercase inheritance issue from parent <strong>
+   headers, not a markup problem (all spans are authored lowercase) -- fixed with
+   text-transform: none on .info-btn.
+6. Moved "Opening Devotions" (ecumenical extras) to after "After the Office" so regular/core BCP
+   settings all precede optional extra-prayer additions, per Josh's rule.
+
+Full detail in AUDIT_GOVERNANCE_LEDGER.md. All verified structurally (brace/div balance, JS
+syntax, no duplicate/orphaned ids, zero remaining uppercase info-btn content, full build) but
+**still not visually verified** -- no headless browser in this environment across this entire
+dark-mode/sidebar work. Strongly worth getting Josh's next look before considering this closed.
