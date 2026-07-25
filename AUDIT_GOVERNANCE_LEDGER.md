@@ -4752,3 +4752,36 @@ and regenerating it is a separate, larger housekeeping task.
 Meqabyan, Abtilis, Ascension of Isaiah, Jubilees, Ethiopic Didaskalia, Guba'e Kana, Shepherd of
 Hermas, Tizaz, 1 Enoch, Daniel (Greek), Esther (Greek), Letter of Baruch (SY), plus the full
 canonical OT/NT -- and the currently-broken 2 Baruch entry noted above.
+
+## SESSION 2026-07-25 continued -- web-release export was shipping 253MB of copyrighted audit source material to the public web root; excluded
+
+**Josh caught this during his first real deploy attempt:** `web-release.zip` came out around
+250MB, far larger than expected. Traced to `data/kalendar/source-witnesses/` -- 253MB of raw
+citation/reference material for the calendar audit work (PDFs of the Oxford Dictionary of Saints,
+the Jewish Study Bible, the Book of Saints, the Orthodox Study Bible, plus zipped source corpora
+like the Peshitta and Vulgate). `scripts/prepare-web-release.mjs` copies `data/` wholesale with no
+awareness that this subfolder exists purely for the audit process. Confirmed via grep that nothing
+in the live app (`js/`, `index.html`, `admin/`, `components/`) reads any path under
+`source-witnesses/` -- it was dead weight in every deploy since the script was written in June,
+just never noticed because this was the first real deploy attempt.
+
+**This was a genuine risk, not just bloat:** several of those PDFs are copyrighted reference works.
+Uploading them to a public web root would have meant publicly distributing copyrighted material,
+not just an oversized download.
+
+**Fix:** added `"source-witnesses"` to `prepare-web-release.mjs`'s existing `denyNames` exclusion
+set (same mechanism already used to exclude `scripts/`, `tools/`, `documentation/`, `resources/`).
+This excludes any directory literally named `source-witnesses` at any depth -- confirmed via
+`find` that this is the only directory of that name anywhere in the repo, so no risk of collateral
+exclusion. Verified by actually running `npm run release:web`: output dropped from ~250MB to a
+24MB zip (617 files), with the calendar data the app actually uses (the month-by-month JSON,
+`kalendar-v0.1-*` files, etc.) confirmed still present. A registry file whose *filename* happens to
+contain the substring "source-witnesses"
+(`data/bible/registry/broader-canon-rh-charles-source-witnesses-2026-07-04.json`) was correctly
+left untouched, since the exclusion matches full path segments, not substrings.
+
+**Worth a broader look later, not done this session:** this was found by accident during Josh's
+own deploy test, which raises the question of whether other audit-only material is similarly
+leaking into `data/` (as opposed to being kept under `documentation/`, `scripts/`, or
+`data/bible/registry/`, all of which are already excluded from release). Not swept this session --
+flagging for a future repo-hygiene pass rather than guessing at what else might be affected.

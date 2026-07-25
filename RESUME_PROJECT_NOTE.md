@@ -2241,3 +2241,19 @@ date.
 
 **Next session should:** treat the splash/unwiring/2-Baruch-path work as closed unless Josh
 reports an issue after the priest's testing.
+
+## SESSION HANDOFF 2026-07-25 continued -- web-release export excluded 253MB of copyrighted audit source material (Josh's own deploy test caught a ~250MB zip)
+
+`data/kalendar/source-witnesses/` (Oxford Dictionary of Saints PDF, Jewish Study Bible PDF, other
+copyrighted reference works + zipped source corpora, 253MB total) was being copied wholesale into
+every `web-release.zip` since the export script was written in June -- never noticed until Josh's
+first real deploy attempt produced a ~250MB zip. Nothing in the live app reads this folder
+(confirmed via grep); it exists only for the calendar-audit citation trail. Added
+`"source-witnesses"` to `prepare-web-release.mjs`'s exclusion set. Verified by actually running
+the release script: zip dropped to 24MB (617 files), calendar data the app needs still present.
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Next session should:** consider a broader repo-hygiene sweep for other audit-only material that
+may have similarly leaked into `data/` rather than living under the already-excluded
+`documentation/`, `scripts/`, or `data/bible/registry/`. Not done this session -- this fix only
+addressed the one instance found.

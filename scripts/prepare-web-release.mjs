@@ -39,7 +39,13 @@ const denyNames = new Set([
   "tools",
   "documentation",
   "resources",
-  "web-release"
+  "web-release",
+  // Raw audit/citation source material (reference-book PDFs, zipped source
+  // corpora) for the calendar/synaxarium work. Never read by the live app
+  // at runtime, and much of it is copyrighted reference material that must
+  // not be uploaded to a public web root. See scripts/audit-repo-hygiene.mjs
+  // for the broader repo-hygiene sweep this belongs alongside.
+  "source-witnesses"
 ]);
 
 const denyFilePatterns = [
