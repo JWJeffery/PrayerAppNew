@@ -2333,3 +2333,17 @@ Full detail in AUDIT_GOVERNANCE_LEDGER.md. All verified structurally (brace/div 
 syntax, no duplicate/orphaned ids, zero remaining uppercase info-btn content, full build) but
 **still not visually verified** -- no headless browser in this environment across this entire
 dark-mode/sidebar work. Strongly worth getting Josh's next look before considering this closed.
+
+## SESSION HANDOFF 2026-07-25 continued -- Empty box shells + orphaned tooltip icon (4th feedback round)
+
+1. Split combined "Noonday & Compline" box into two separate boxes ("Noonday", "Compline"), each
+   hidden/shown as a whole (title included) based on active office via a new `setGroupVisible()`
+   helper -- fixes empty titled boxes appearing outside their relevant office. Same fix applied to
+   "The Invitatory" box (had the identical latent bug, unreported until now).
+2. Orphaned info-tip icon (still happening despite prior flex fix) -- root cause is normal inline
+   wrap behavior at tight widths, not the earlier flex bug. Fixed robustly with `&nbsp;` gluing
+   each icon to its preceding word (29 instances) rather than hoping width stays generous enough.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`. Still not visually verified -- no headless browser in
+this environment. This is now the fourth consecutive round of Josh catching real issues only
+visible in a live render; strongly worth a fifth check before treating this as closed.

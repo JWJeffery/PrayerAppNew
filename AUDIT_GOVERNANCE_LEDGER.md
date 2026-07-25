@@ -4960,3 +4960,31 @@ taken on it; flagged to Josh in case it's something else.
 Verified: CSS brace balance (523/523), HTML div balance (252/252), JS syntax check, zero duplicate
 toggle ids, zero orphaned JS-referenced ids, zero remaining uppercase info-btn content, full
 `npm run release:web` build. Still not visually verified -- no headless browser in this environment.
+
+## SESSION 2026-07-25 continued -- Two more fixes from Josh's fourth feedback round
+
+1. **Empty box shells were showing outside their relevant office.** The prior session hid
+   individual toggle rows conditionally (via `setVisible()`), but never hid the surrounding titled
+   box itself -- so "Noonday & Compline" still rendered as an empty bordered box with its header
+   during Morning/Evening Prayer, with nothing inside it. Fixed by splitting the combined box into
+   two separate boxes, "Noonday" and "Compline" (per Josh's naming), each with its own `id`
+   (`noonday-settings-group`, `compline-settings-group`), and adding a `setGroupVisible()` helper
+   in `updateSidebarForOffice()` that hides/shows the whole box -- title included -- based on the
+   active office. Applied the same treatment to "The Invitatory" box
+   (`invitatory-settings-group`), which had the identical latent bug (would show as an empty shell
+   during Noonday/Compline, just not yet reported).
+
+2. **Info-tip icon still orphaning onto its own line** (Church of the East > Prayer of the Hours,
+   confirmed via Josh's second screenshot) despite the prior session's flex-to-block fix. Root
+   cause: normal inline text reflow will still push a trailing inline element (the icon) to a new
+   line by itself if it doesn't fit after the wrapped last word -- this is correct default CSS
+   behavior for inline content, not a repeat of the earlier flex bug, but produces the same
+   visually-orphaned result at tight widths (made more likely by the prior session's own
+   sidebar-narrowing). Fixed robustly rather than per-instance: replaced the literal space before
+   every `<span class="info-btn">` with `&nbsp;` (29 instances, confirmed via diff count matching
+   exactly), gluing each icon to its immediately preceding word so the pair always wraps together
+   as one unit onto whichever line that word lands on -- eliminates the possibility of an orphaned
+   icon regardless of future width changes, rather than just reducing its likelihood.
+
+Verified: HTML div balance (253/253), JS syntax check, each new group id present exactly once,
+CSS brace balance unchanged, full `npm run release:web` build.

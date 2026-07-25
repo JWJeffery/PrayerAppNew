@@ -2517,6 +2517,18 @@ function updateSidebarForOffice() {
     setVisible('toggle-rotate-compline-collect',    isCompline);
     setVisible('toggle-compline-additional-prayer', isCompline);
     setVisible('toggle-compline-lesson-dol',        isCompline);
+
+    // Hide the whole group box (title included) when none of its contents
+    // apply to the current office -- otherwise an empty titled box shell was
+    // left showing (e.g. "Noonday & Compline" during Morning Prayer with
+    // nothing inside it).
+    function setGroupVisible(id, visible) {
+        const el = document.getElementById(id);
+        if (el) el.style.display = visible ? '' : 'none';
+    }
+    setGroupVisible('invitatory-settings-group', isMpEp);
+    setGroupVisible('noonday-settings-group',    isNoonday);
+    setGroupVisible('compline-settings-group',   isCompline);
 }
 
 function toggleBcpOnly() {
