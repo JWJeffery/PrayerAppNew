@@ -34,7 +34,7 @@
       "preferred_title": "The Prayer of Apollonius",
       "work_type": "armenian_prayer_or_apocryphal_witness_text",
       "text_form_id": "PRAYER_OF_APOLLONIUS_ARMENIAN_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under AR because the current witness lane is Armenian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -59,7 +59,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 1",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_1_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -109,7 +109,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 2",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_2_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -159,7 +159,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 3",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_3_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -209,7 +209,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 4",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_4_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -234,7 +234,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 5",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_5_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -259,7 +259,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 7",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_7_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -284,7 +284,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 8",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_8_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -335,7 +335,7 @@
       "preferred_title": "Gitsiw / The Admonitions",
       "work_type": "ethiopian_apostolic_admonition_witness_text",
       "text_form_id": "GITSIW_ADMONITIONS_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -411,7 +411,7 @@
       "preferred_title": "Qalementos / Epistles of Clement, Book 6",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_6_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -436,7 +436,7 @@
       "preferred_title": "Qalementos / Book of the Rolls",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_BOOK_OF_ROLLS_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -461,7 +461,7 @@
       "preferred_title": "Qalementos / The Statutes",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_STATUTES_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -486,7 +486,7 @@
       "preferred_title": "Qalementos / Visionary Revelation",
       "work_type": "ethiopian_qalementos_collection_text",
       "text_form_id": "QALEMENTOS_VISIONARY_REVELATION_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -537,7 +537,7 @@
       "preferred_title": "Fetha Nagast / Law of the Kings",
       "work_type": "ethiopian_canonical_law_witness_text",
       "text_form_id": "FETHA_NAGAST_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -734,7 +734,7 @@
       "preferred_title": "The Rest of the Words of Baruch",
       "work_type": "ethiopian_broader_textual_witness",
       "text_form_id": "REST_OF_BARUCH_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -759,7 +759,7 @@
       "preferred_title": "The Rest of the Words of Jeremiah",
       "work_type": "ethiopian_broader_textual_witness",
       "text_form_id": "REST_OF_JEREMIAH_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -784,7 +784,7 @@
       "preferred_title": "Sirate Tsion / Order of Zion",
       "work_type": "ethiopian_liturgical_order_witness_text",
       "text_form_id": "SIRATE_TSION_ETHIOPIC_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
       "profile_hints": [
         {
@@ -856,7 +856,7 @@
       "preferred_title": "The History of Zosimus / The Rechabites",
       "work_type": "apocryphal_or_broader_tradition_witness_text",
       "text_form_id": "HISTORY_OF_ZOSIMUS_CURRENT_ENGLISH_WITNESS",
-      "ordinary_chapter_verse_resolver_candidate": true,
+      "ordinary_chapter_verse_resolver_candidate": false,
       "storage_note": "Currently stored under NT, but registry identity is not New Testament.",
       "profile_hints": [
         {

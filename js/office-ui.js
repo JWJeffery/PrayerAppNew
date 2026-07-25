@@ -1214,20 +1214,11 @@ function initializeEntryRouting() {
         return;
     }
 
-    const storedDefault = getUserEntryDefault();
-    const mode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[storedDefault];
-
-    if (mode === 'universal') {
-        showUniversalModeSelection(false);
-        return;
-    }
-
-    if (mode) {
-        selectMode(mode);
-        return;
-    }
-
-    showTraditionEntry();
+    // Tradition-picker entry screen bypassed per Josh's direction (2026-07-25,
+    // priest-testing deploy): always land directly on the 3-button mode
+    // selection screen (Daily Office / Book of Needs / Bible Browser),
+    // regardless of any stored per-browser tradition default.
+    showUniversalModeSelection(false);
 }
 
 window.selectTraditionFamily = selectTraditionFamily;

@@ -4681,3 +4681,70 @@ understanding the parallel structure, even though it must not be used as the sub
 Ethiopic text itself -- but it is not currently saved anywhere in this repo (this session's
 transcription work was local to that session and not committed). A future session attempting the
 real Ge'ez-based translation would need to source Beylot 1984 and Guerrier/Grebaut 1913 fresh.
+
+## SESSION 2026-07-25 continued -- Priest-testing deploy prep: splash screen simplified to 3 modes, Bible Browser unwired from RED_SEED + dead-file entries
+
+**Context:** Josh will use the previously-dormant `npm run release:web` static export (built
+pre-Lucy-dismissal, June 2026, never before actually deployed) to put the app in front of a
+priest friend for Daily Office testing. Two changes made to the live app in preparation:
+
+**1. Splash screen collapsed to 3 options.** Per Josh's explicit direction, the two-screen entry
+flow ("Where do you pray?" tradition picker, then the "Universal Office Selector" mode grid) is
+collapsed into one: the app now lands directly on a 3-button screen -- The Daily Office (Anglican/
+BCP 1979), Book of Needs, Bible Browser. Implementation: `initializeEntryRouting()` in
+`js/office-ui.js` now calls `showUniversalModeSelection(false)` unconditionally (instead of
+routing through any stored per-browser tradition default or falling back to `showTraditionEntry()`);
+the Oriental Orthodoxy/Ethiopian, Church of the East, and Eastern Orthodoxy mode buttons were
+removed from the grid in `index.html`, and the remaining Episcopal Church card was relabeled
+"The Daily Office" per Josh's naming. The tradition-entry markup and its supporting functions
+(`showTraditionEntry`, `resolveEntryTraditionRoute`, etc.) were left in place, not deleted --
+they're simply unreachable via the default flow now (`backToSplash()` already routed to
+`showUniversalModeSelection()`, not the tradition picker, so this required no change). Roman
+Breviary (dev) and Admin Console remain hidden behind the existing `data-advanced-only` gate,
+untouched by this change. This is a UI/entry-point change only -- no office engine, mode, or data
+was removed; the Ethiopian Sa'atat, Church of the East, and Eastern Orthodoxy offices remain fully
+functional in the codebase and can be re-exposed by restoring their mode-grid buttons.
+
+**2. Bible Browser unwired from every currently-RED_SEED book, plus two dangling removed-content
+registrations.** The Bible Browser's book list is populated at runtime via
+`js/bible-browser/bible-registry-adapter.js`, which reads
+`data/bible/registry/identity-adjudications.json` and includes any record with
+`ordinary_chapter_verse_resolver_candidate: true`. Swept all 45 adjudication records
+programmatically (not just the reported case) and cross-checked the live candidate set against
+both `audit-ledger.html`'s current `RED_SEED` and actual file existence on disk. Flipped
+`ordinary_chapter_verse_resolver_candidate` from `true` to `false` for 18 records:
+
+- **15 current RED_SEED items** that were still wired into the Bible Browser: the full 11-file
+  Clement/Qalēmentos family (`QALEMENTOS_BOOK_1` through `QALEMENTOS_BOOK_8`, `Book of Rolls`,
+  `Statutes`, `Visionary Revelation`), `FETHA_NAGAST`, `GITSIW_ADMONITIONS`, `REST_OF_BARUCH`,
+  `SIRATE_TSION`. (`JOSIPPON`, `MALKEA_GUBAE`, `MALKEA_IYASUS`, and `MAZAHETA` -- also RED_SEED --
+  were already `false` and needed no change.)
+- **3 dangling registrations pointing at files that no longer exist on disk**, found by sweeping
+  every live candidate's `source_path` against the filesystem: `PRAYER_OF_APOLLONIUS`
+  (`data/bible/AR/prayerofapolloniusAR.json` -- consistent with the 2026-07-14 Apollonius removal
+  already on record), `HISTORY_OF_ZOSIMUS` (`data/bible/NT/historyofzosimus.json` -- no removal
+  record found for this one specifically, but the file is gone and it was never in GREEN_SEED or
+  RED_SEED, so it reads as an earlier, undocumented removal rather than live content), and
+  `REST_OF_JEREMIAH` (`data/bible/ET/restofjeremiahET.json` -- also gone; its parent `Rest of
+  Baruch` was already being unwired as RED_SEED regardless, so this is likely superseded/merged
+  content rather than a separate loss).
+
+**One finding surfaced, not acted on: `SECOND_BARUCH` ("2 Baruch") is currently wired to a dead
+path.** Its `source_path` in the registry is `data/bible/NT/2baruchCE.json`, which does not exist
+-- the actual, just-closed-GREEN 2 Baruch content lives at `data/bible/SY/2baruchSY.json`. This
+means 2 Baruch -- GREEN, freshly restored across 15 checkpoints on 2026-07-24 -- is presently a
+**broken/dead entry in the live Bible Browser**, not a working one. This was left untouched rather
+than silently "fixed" or unwired, since it's neither RED nor a confirmed removal -- it's GREEN
+content that needs its registry path corrected to point at the real file. Flagged to Josh; awaiting
+his direction on whether to repoint it in this same pass or a follow-up.
+
+**What was NOT touched:** no underlying `data/bible/**` content files were modified, moved, or
+deleted -- this was purely a registry-flag change controlling Bible Browser visibility, fully
+reversible by flipping the flags back. `file-manifest.json` still lists the two dead files (a
+stale artifact from before their removal); not regenerated this session since it wasn't the ask
+and regenerating it is a separate, larger housekeeping task.
+
+**Remaining live Bible Browser candidates after this change (16):** 3 Corinthians (AR), 1/2/3
+Meqabyan, Abtilis, Ascension of Isaiah, Jubilees, Ethiopic Didaskalia, Guba'e Kana, Shepherd of
+Hermas, Tizaz, 1 Enoch, Daniel (Greek), Esther (Greek), Letter of Baruch (SY), plus the full
+canonical OT/NT -- and the currently-broken 2 Baruch entry noted above.

@@ -2207,3 +2207,36 @@ Josh explicitly redirects. If picking this back up: the free Syriac Testamentum 
 Maclean 1902) is not currently saved anywhere in this repo (this session's transcription work was
 local and not committed) -- it would need to be re-acquired from Josh if wanted as a cross-reference
 aid, though it must not become the substance of the Ethiopic text itself.
+
+## SESSION HANDOFF 2026-07-25 continued -- Priest-testing deploy prep: splash collapsed to 3 buttons, Bible Browser unwired from RED_SEED + 3 dead-file entries; one broken-path GREEN entry (2 Baruch) flagged, not fixed
+
+**Josh is deploying the app (via the previously-dormant `npm run release:web` export) for a priest
+friend to test the Daily Office.** Two changes made:
+
+1. **Splash simplified.** App now lands directly on 3 buttons -- The Daily Office, Book of Needs,
+   Bible Browser -- skipping the old "Where do you pray?" tradition picker entirely.
+   `initializeEntryRouting()` in `js/office-ui.js` always calls `showUniversalModeSelection(false)`
+   now; the Ethiopian/Church-of-the-East/Eastern-Orthodoxy mode buttons were removed from
+   `index.html`'s mode grid; the Episcopal Church card relabeled "The Daily Office." Nothing
+   deleted -- those offices remain fully functional, just not exposed on this entry screen.
+
+2. **Bible Browser unwired from every current RED_SEED item plus 3 dangling dead-file
+   registrations**, via `data/bible/registry/identity-adjudications.json`'s
+   `ordinary_chapter_verse_resolver_candidate` flag (the actual mechanism controlling what
+   appears in the Bible Browser). 18 flipped `true` → `false`: the 11-file Clement/Qalēmentos
+   family, Fetha Nagast, Admonitions, Rest of Baruch, Sirate Tsion (all current RED_SEED), plus
+   Prayer of Apollonius, History of Zosimus, and Rest of Jeremiah (all pointing to files
+   confirmed gone from disk). Full swept list and reasoning in `AUDIT_GOVERNANCE_LEDGER.md`'s
+   entry of the same date. No content files touched -- registry-flag change only, fully
+   reversible.
+
+**Found but not fixed:** `SECOND_BARUCH`'s registry entry points to
+`data/bible/NT/2baruchCE.json`, which doesn't exist -- the real, just-closed-GREEN 2 Baruch
+content is at `data/bible/SY/2baruchSY.json`. So 2 Baruch is currently a **broken entry** in the
+live Bible Browser despite being GREEN. Left as-is and flagged to Josh rather than assumed-fixed,
+since repointing it wasn't part of this session's ask.
+
+**Next session should:** ask Josh whether to repoint `SECOND_BARUCH`'s `source_path` to
+`data/bible/SY/2baruchSY.json` (one-line registry fix, same mechanism used in this session).
+Otherwise treat the splash/unwiring work as closed unless Josh reports an issue after the priest's
+testing.
