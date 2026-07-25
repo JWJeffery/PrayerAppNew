@@ -4853,3 +4853,40 @@ Prayer Daily, Rotate Second Collect Daily, Rotate Closing Blessing Daily.
 Verified post-move: zero duplicate `toggle-*` ids anywhere in `index.html` (was 12 duplicates
 mid-edit, caught and removed), and zero JS-referenced toggle ids missing from the HTML (nothing
 orphaned). `<div>` tags balanced (252/252). Full `npm run release:web` build passes.
+
+## SESSION 2026-07-25 continued -- Dark mode readability fixes after Josh's live screenshot
+
+Josh confirmed dark mode now applies structurally, but flagged real readability problems from a
+live screenshot: the Noonday/Evening/Compline time-of-day options showed as flat gray boxes with
+near-invisible text, and the "Book of Needs"/"Defaults" pill buttons at the header were low-contrast.
+
+**Root cause, part 1: the original sweep only checked for hardcoded BACKGROUND colors, not
+hardcoded TEXT colors.** A full re-sweep (this time checking both) found `body.office-active
+.setting-group label` (plus `.hor-office-option` and two Ethiopian-specific IDs sharing the same
+rule) forced text to a fixed dark-ink color with `!important`, regardless of dark mode -- this is
+the exact rule governing every sidebar radio/checkbox label, including Morning/Noonday/Evening/
+Compline. A duplicate of the same bug existed in `.app-mode-drawer label` for the other office
+sidebars. Both fixed with dark-mode text-color overrides.
+
+**Root cause, part 2: the original sweep only checked rules already scoped under
+`body.office-active`,** which missed several rules that apply globally but only visually matter
+during an active office: `.shared-office-nav-option` (the exact card class for the time-of-day
+picker -- background, text, hover, and checked states all hardcoded light) and
+`.office-context-action` (the Book of Needs/Defaults pills). Also caught one from the prior
+session's own fix: `.ordo-control` had shared a selector with `.nested-group` but only
+`.nested-group` got a dark counterpart at the time -- `.ordo-control` (the date-nav box) was still
+hardcoded light. All fixed.
+
+**Likely root cause of the flat gray box specifically: `color-scheme` was never declared
+anywhere in the stylesheet.** Without it, browsers render native form controls (radio buttons,
+checkboxes, date-picker popups, select dropdowns) with light-mode chrome by default regardless of
+page theme -- which would show up as exactly the kind of stray light rectangle Josh's screenshot
+showed around the radio-button labels. Added `color-scheme: light` / `color-scheme: dark` to the
+two theme root blocks (`body.light-mode` / `body.dark-mode`) so native controls follow the active
+theme automatically -- this also covers controls not otherwise stylable via CSS (native date-picker
+popup chrome, scrollbar affordances on some browsers).
+
+Verified: brace balance (522/522), Node depth walk (0, never negative), full `npm run release:web`
+build. **Still not visually verified** -- no headless browser in this environment. Asked Josh to
+confirm the specific readability issues are resolved with a follow-up screenshot before considering
+this closed.

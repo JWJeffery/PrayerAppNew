@@ -2281,3 +2281,21 @@ Three real defects found and fixed, full detail in `AUDIT_GOVERNANCE_LEDGER.md`:
 **Next session should:** ask Josh for his call on the General Thanksgiving/Chrysostom default
 state, and ask whether the dark-mode fix actually looks right once he's checked it live (this
 session could not visually verify CSS in a browser).
+
+## SESSION HANDOFF 2026-07-25 continued -- Dark mode readability fixes from Josh's screenshot
+
+Josh's screenshot showed dark mode applying but with real readability problems: gray boxes with
+near-invisible text on the Noonday/Evening/Compline options, low-contrast header pill buttons.
+Two blind spots in the prior fix's sweep methodology: it only checked hardcoded BACKGROUND colors
+(missed hardcoded TEXT colors, e.g. `.setting-group label`'s forced dark-ink `!important`), and it
+only checked rules already scoped under `body.office-active` (missed `.shared-office-nav-option`
+and `.office-context-action`, which apply globally but matter visually during an office). Also
+caught: `color-scheme` was never declared anywhere, which is the likely cause of the flat gray
+box itself -- browsers default native form controls (radio buttons, date pickers, selects) to
+light chrome without it. Fixed all of the above; full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Next session should:** get Josh's confirmation (ideally another screenshot) that the specific
+readability issues are actually resolved before treating dark mode as closed. Also worth noting:
+similar hardcoded-light-parchment patterns likely exist in the Book of Needs display and the old
+tradition-entry screens (found during the sweep, deliberately not touched -- out of scope for the
+Daily Office pressure test Josh asked for) if either of those ever need the same treatment.

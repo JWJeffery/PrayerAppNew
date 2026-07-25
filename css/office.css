@@ -41,6 +41,7 @@
 }
 body.light-mode {
     /* Manuscript mode — warm parchment */
+    color-scheme: light;
     --bg-color: #3d2b1a;
     --text-color: #2a1f14;
     --container-bg: #f5eedc;
@@ -57,6 +58,7 @@ body.light-mode {
 }
 body.dark-mode {
     /* Vespers/Gothic dark mode */
+    color-scheme: dark;
     --bg-color: #0d0b14;
     --text-color: #e8d9b0;
     --container-bg: #1e1608;
@@ -1705,6 +1707,12 @@ body.office-active #eth-active-date-label {
     color: rgba(63, 38, 24, 0.76) !important;
     font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
 }
+body.office-active.dark-mode .setting-group label,
+body.office-active.dark-mode .hor-office-option,
+body.office-active.dark-mode #eth-active-watch-label,
+body.office-active.dark-mode #eth-active-date-label {
+    color: rgba(232, 217, 176, 0.82) !important;
+}
 
 body.office-active .hor-office-option.is-active {
     color: var(--app-rubric, #8f3b30) !important;
@@ -1716,6 +1724,7 @@ body.office-active .nested-group {
     border: 1px solid rgba(103, 58, 31, 0.12);
     border-radius: 16px;
 }
+body.office-active.dark-mode .ordo-control,
 body.office-active.dark-mode .nested-group {
     background: rgba(40, 30, 14, 0.40);
     border: 1px solid rgba(201, 168, 76, 0.14);
@@ -2628,6 +2637,9 @@ body.office-active .app-mode-drawer label {
     line-height: 1.28 !important;
     letter-spacing: 0.005em !important;
 }
+body.office-active.dark-mode .app-mode-drawer label {
+    color: rgba(232, 217, 176, 0.84) !important;
+}
 
 body.office-active .app-mode-drawer input[type="radio"]:checked + span,
 body.office-active .app-mode-drawer input[type="checkbox"]:checked + span,
@@ -2807,10 +2819,19 @@ body.office-active.dark-mode .shared-office-nav-card {
     color: rgba(63, 38, 24, 0.82) !important;
     cursor: pointer;
 }
+body.office-active.dark-mode .shared-office-nav-option {
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    background: rgba(40, 30, 14, 0.45);
+    color: rgba(232, 217, 176, 0.85) !important;
+}
 
 .shared-office-nav-option:hover {
     border-color: rgba(122, 63, 23, 0.24);
     background: rgba(255, 253, 248, 0.62);
+}
+body.office-active.dark-mode .shared-office-nav-option:hover {
+    border-color: rgba(201, 168, 76, 0.30);
+    background: rgba(50, 38, 18, 0.75);
 }
 
 .shared-office-nav-option input[type="radio"] {
@@ -2821,6 +2842,10 @@ body.office-active.dark-mode .shared-office-nav-card {
 .shared-office-nav-option:has(input[type="radio"]:checked) {
     border-color: rgba(143, 59, 48, 0.24);
     background: rgba(143, 59, 48, 0.055);
+}
+body.office-active.dark-mode .shared-office-nav-option:has(input[type="radio"]:checked) {
+    border-color: rgba(192, 57, 43, 0.45);
+    background: rgba(192, 57, 43, 0.16);
 }
 
 .shared-office-nav-option-copy {
@@ -2841,6 +2866,9 @@ body.office-active.dark-mode .shared-office-nav-card {
     font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
     font-size: 0.78rem;
     line-height: 1.18;
+}
+body.office-active.dark-mode .shared-office-nav-option-detail {
+    color: rgba(232, 217, 176, 0.55);
 }
 
 .shared-office-nav-option:has(input[type="radio"]:checked) .shared-office-nav-option-label {
@@ -3026,12 +3054,20 @@ body.office-active.dark-mode .shared-office-nav-card {
     padding: 8px 14px;
     cursor: pointer;
 }
+body.office-active.dark-mode .office-context-action {
+    background: rgba(40, 30, 14, 0.76);
+    border: 1px solid rgba(201, 168, 76, 0.28);
+}
 
 .office-context-action:hover,
 .office-context-action:focus-visible {
     background: rgba(255, 253, 248, 0.96);
     border-color: var(--app-border-strong);
     outline: none;
+}
+body.office-active.dark-mode .office-context-action:hover,
+body.office-active.dark-mode .office-context-action:focus-visible {
+    background: rgba(55, 42, 20, 0.92);
 }
 
 .prayer-option[hidden],
