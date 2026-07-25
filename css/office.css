@@ -1105,6 +1105,34 @@ body.light-mode .ethiopian-theme .rubric-text {
     --app-label: Georgia, 'Times New Roman', serif;
 }
 
+/* Dark-mode variant of the parchment design system above. The parchment pass
+   defined --app-* as fixed light-only values in :root with no dark-mode
+   awareness, so toggling "Vespers Mode (Dark)" had no visible effect on the
+   actual office content area (only the outer body background, which uses
+   the older --bg-color/--ink variable set, ever responded to it). Since
+   every rule below just reads var(--app-ink) etc., overriding the color
+   values here — scoped to when an office is actually open (.office-active)
+   AND dark mode is on (.dark-mode) — restores the toggle's effect
+   everywhere those variables are used, without editing each rule
+   individually. Palette matches the original Vespers/Gothic dark theme
+   variables above (--bg-color, --container-bg, --ink, --rubric, --gold).
+   Radii and fonts are unaffected by theme, so are not overridden here. */
+body.office-active.dark-mode {
+    --app-bg-warm: #1e1608;
+    --app-bg-cream: #241c0e;
+    --app-surface: rgba(30, 22, 8, 0.92);
+    --app-surface-strong: rgba(24, 18, 8, 0.98);
+    --app-border: rgba(201, 168, 76, 0.16);
+    --app-border-strong: rgba(201, 168, 76, 0.26);
+    --app-ink: #e8d9b0;
+    --app-ink-soft: rgba(232, 217, 176, 0.72);
+    --app-rubric: #c0392b;
+    --app-bronze: #c9a84c;
+    --app-gold-soft: #d8bd78;
+    --app-shadow-soft: 0 18px 52px rgba(0, 0, 0, 0.45);
+    --app-shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
 body:not(.office-active) {
     background:
         radial-gradient(circle at 50% 12%, rgba(255, 250, 241, 0.94), rgba(239, 226, 207, 0.86) 46%, rgba(207, 185, 155, 0.78) 100%) !important;
@@ -1501,6 +1529,11 @@ body.office-active #daily-office-section {
         linear-gradient(90deg, rgba(102, 58, 25, 0.10), transparent 24%, transparent 76%, rgba(102, 58, 25, 0.10));
     color: var(--app-ink, #3f2618);
 }
+body.office-active.dark-mode #daily-office-section {
+    background:
+        radial-gradient(circle at 50% 8%, rgba(26, 18, 8, 0.94), rgba(18, 13, 20, 0.90) 48%, rgba(10, 8, 16, 0.85) 100%),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.08), transparent 24%, transparent 76%, rgba(201, 168, 76, 0.08));
+}
 
 body.office-active #main-content {
     padding:
@@ -1512,6 +1545,11 @@ body.office-active #main-content {
         radial-gradient(circle at 50% 0%, rgba(255, 253, 248, 0.78), transparent 46%),
         linear-gradient(180deg, rgba(245, 235, 219, 0.96), rgba(232, 213, 185, 0.90));
     color: var(--app-ink, #3f2618);
+}
+body.office-active.dark-mode #main-content {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(30, 22, 8, 0.70), transparent 46%),
+        linear-gradient(180deg, rgba(20, 15, 8, 0.96), rgba(13, 10, 6, 0.92));
 }
 
 body.office-active #main-content.sidebar-hidden {
@@ -1530,6 +1568,15 @@ body.office-active .office-container {
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.78),
         0 22px 62px rgba(74, 46, 26, 0.16);
+}
+body.office-active.dark-mode .office-container {
+    background:
+        linear-gradient(180deg, rgba(30, 22, 8, 0.98), rgba(24, 18, 8, 0.96)),
+        radial-gradient(circle at 50% 0%, rgba(60, 45, 20, 0.35), transparent 42%);
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 22px 62px rgba(0, 0, 0, 0.55);
 }
 
 body.office-active .office-container::before {
@@ -1591,6 +1638,14 @@ body.office-active #generic-settings {
         inset -1px 0 0 rgba(255, 255, 255, 0.54),
         8px 0 30px rgba(74, 46, 26, 0.12);
 }
+body.office-active.dark-mode #generic-settings {
+    background:
+        linear-gradient(180deg, rgba(18, 13, 6, 0.98), rgba(12, 9, 5, 0.97));
+    border-right: 1px solid rgba(201, 168, 76, 0.18);
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.03),
+        8px 0 30px rgba(0, 0, 0, 0.45);
+}
 
 body.office-active #sidebar-toggle {
     background:
@@ -1599,11 +1654,21 @@ body.office-active #sidebar-toggle {
     box-shadow: 5px 0 22px rgba(74, 46, 26, 0.10);
     opacity: 0.92;
 }
+body.office-active.dark-mode #sidebar-toggle {
+    background:
+        linear-gradient(180deg, rgba(20, 15, 8, 0.96), rgba(12, 9, 5, 0.94));
+    border-right: 1px solid rgba(201, 168, 76, 0.18);
+    box-shadow: 5px 0 22px rgba(0, 0, 0, 0.4);
+}
 
 body.office-active #sidebar-toggle:hover {
     background:
         linear-gradient(180deg, rgba(255, 253, 248, 1), rgba(232, 214, 184, 0.96));
     opacity: 1;
+}
+body.office-active.dark-mode #sidebar-toggle:hover {
+    background:
+        linear-gradient(180deg, rgba(28, 20, 10, 1), rgba(18, 13, 7, 0.96));
 }
 
 body.office-active .toggle-cross,
@@ -1651,6 +1716,10 @@ body.office-active .nested-group {
     border: 1px solid rgba(103, 58, 31, 0.12);
     border-radius: 16px;
 }
+body.office-active.dark-mode .nested-group {
+    background: rgba(40, 30, 14, 0.40);
+    border: 1px solid rgba(201, 168, 76, 0.14);
+}
 
 body.office-active .nested-group {
     padding: 10px 12px;
@@ -1676,10 +1745,18 @@ body.office-active .ordo-btn {
     font-family: var(--app-label, Georgia, 'Times New Roman', serif);
     letter-spacing: 0.045em;
 }
+body.office-active.dark-mode .ordo-btn {
+    background: rgba(40, 30, 14, 0.60);
+    border: 1px solid rgba(201, 168, 76, 0.22);
+}
 
 body.office-active .ordo-btn:hover {
     background: rgba(255, 253, 248, 0.96);
     box-shadow: 0 4px 12px rgba(74, 46, 26, 0.10);
+}
+body.office-active.dark-mode .ordo-btn:hover {
+    background: rgba(50, 38, 18, 0.85);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 body.office-active select,
@@ -1692,6 +1769,11 @@ body.office-active textarea {
     border-radius: 10px !important;
     font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+body.office-active.dark-mode textarea {
+    background: rgba(20, 15, 8, 0.90) !important;
+    border: 1px solid rgba(201, 168, 76, 0.22) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 body.office-active input[type="checkbox"],
@@ -1938,6 +2020,12 @@ body.office-active .app-nav-rail-toggle {
     border-right: 1px solid rgba(103, 58, 31, 0.18);
     box-shadow: 5px 0 22px rgba(74, 46, 26, 0.10);
 }
+body.office-active.dark-mode .app-nav-rail-toggle {
+    background:
+        linear-gradient(180deg, rgba(20, 15, 8, 0.96), rgba(12, 9, 5, 0.94));
+    border-right: 1px solid rgba(201, 168, 76, 0.18);
+    box-shadow: 5px 0 22px rgba(0, 0, 0, 0.4);
+}
 
 body.office-active .app-mode-drawer {
     width: var(--app-drawer-width, 340px);
@@ -1949,6 +2037,14 @@ body.office-active .app-mode-drawer {
     box-shadow:
         inset -1px 0 0 rgba(255, 255, 255, 0.54),
         8px 0 30px rgba(74, 46, 26, 0.12);
+}
+body.office-active.dark-mode .app-mode-drawer {
+    background:
+        linear-gradient(180deg, rgba(18, 13, 6, 0.98), rgba(12, 9, 5, 0.97));
+    border-right: 1px solid rgba(201, 168, 76, 0.18);
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.03),
+        8px 0 30px rgba(0, 0, 0, 0.45);
 }
 
 body.office-active .app-mode-drawer h3 {
@@ -1962,6 +2058,9 @@ body.office-active .app-mode-drawer .setting-group,
 body.office-active .app-mode-drawer .ordo-control,
 body.office-active .app-mode-drawer .nested-group {
     border-color: rgba(103, 58, 31, 0.12);
+}
+body.office-active.dark-mode .app-mode-drawer .nested-group {
+    border-color: rgba(201, 168, 76, 0.16);
 }
 
 body.office-active .app-primary-canvas {
@@ -2314,6 +2413,12 @@ body.office-active {
     --app-sidebar-muted-box: rgba(120, 104, 82, 0.24);
     --app-sidebar-disabled-ink: rgba(122, 63, 23, 0.52);
 }
+body.office-active.dark-mode {
+    --app-sidebar-card-bg: rgba(40, 30, 14, 0.50);
+    --app-sidebar-card-border: rgba(201, 168, 76, 0.16);
+    --app-sidebar-muted-box: rgba(160, 148, 120, 0.20);
+    --app-sidebar-disabled-ink: rgba(201, 168, 76, 0.45);
+}
 
 body.office-active #settings-panel.app-mode-drawer,
 body.office-active #ethiopian-settings.app-mode-drawer,
@@ -2336,6 +2441,18 @@ body.office-active #generic-settings.app-mode-drawer {
     overflow-y: auto !important;
     scrollbar-width: thin;
     scrollbar-color: rgba(122, 63, 23, 0.34) transparent;
+}
+body.office-active.dark-mode #settings-panel.app-mode-drawer,
+body.office-active.dark-mode #ethiopian-settings.app-mode-drawer,
+body.office-active.dark-mode #east-syriac-settings.app-mode-drawer,
+body.office-active.dark-mode #generic-settings.app-mode-drawer {
+    background:
+        linear-gradient(180deg, rgba(18, 13, 6, 0.98), rgba(12, 9, 5, 0.97)) !important;
+    border-right: 1px solid rgba(201, 168, 76, 0.18) !important;
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.03),
+        8px 0 30px rgba(0, 0, 0, 0.45) !important;
+    scrollbar-color: rgba(201, 168, 76, 0.34) transparent;
 }
 
 body.office-active #settings-panel.app-mode-drawer::-webkit-scrollbar,
@@ -2379,6 +2496,13 @@ body.office-active .app-mode-drawer .nested-group {
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.56),
         0 8px 22px rgba(74, 46, 26, 0.045) !important;
+}
+body.office-active.dark-mode .app-mode-drawer .ordo-control,
+body.office-active.dark-mode .app-mode-drawer .setting-group,
+body.office-active.dark-mode .app-mode-drawer .nested-group {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 8px 22px rgba(0, 0, 0, 0.30) !important;
 }
 
 body.office-active .app-mode-drawer .setting-group:last-child,
@@ -2446,11 +2570,21 @@ body.office-active .app-mode-drawer button:not(.app-mode-return) {
     padding: 7px 13px !important;
     box-shadow: 0 4px 12px rgba(74, 46, 26, 0.045) !important;
 }
+body.office-active.dark-mode .app-mode-drawer button:not(.app-mode-return) {
+    border: 1px solid rgba(201, 168, 76, 0.22) !important;
+    background: rgba(40, 30, 14, 0.70) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
 
 body.office-active .app-mode-drawer .ordo-btn:hover,
 body.office-active .app-mode-drawer button:not(.app-mode-return):hover {
     background: rgba(255, 253, 248, 0.96) !important;
     border-color: rgba(122, 63, 23, 0.32) !important;
+}
+body.office-active.dark-mode .app-mode-drawer .ordo-btn:hover,
+body.office-active.dark-mode .app-mode-drawer button:not(.app-mode-return):hover {
+    background: rgba(55, 42, 20, 0.90) !important;
+    border-color: rgba(201, 168, 76, 0.40) !important;
 }
 
 body.office-active .app-mode-drawer input[type="date"],
@@ -2469,6 +2603,13 @@ body.office-active .app-mode-drawer select {
     font-size: 0.88rem !important;
     line-height: 1.2 !important;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56) !important;
+}
+body.office-active.dark-mode .app-mode-drawer input[type="date"],
+body.office-active.dark-mode .app-mode-drawer input[type="text"],
+body.office-active.dark-mode .app-mode-drawer select {
+    border: 1px solid rgba(201, 168, 76, 0.20) !important;
+    background: rgba(24, 18, 8, 0.85) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 
 body.office-active .app-mode-drawer input[type="radio"],
@@ -2571,6 +2712,13 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
         inset 0 1px 0 rgba(255, 255, 255, 0.58),
         0 8px 22px rgba(74, 46, 26, 0.045);
     padding: 16px 17px;
+}
+body.office-active.dark-mode .shared-office-nav-card {
+    border: 1px solid rgba(201, 168, 76, 0.16);
+    background: rgba(40, 30, 14, 0.55);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 8px 22px rgba(0, 0, 0, 0.30);
 }
 
 .shared-office-nav-section-title {

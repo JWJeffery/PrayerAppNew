@@ -4093,6 +4093,44 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // bcp-general-thanksgiving — gated behind General Thanksgiving toggle.
+        // Bug found 2026-07-25: this previously had no explicit handler here and
+        // fell through to the generic component-lookup fallback below, which
+        // renders unconditionally — so General Thanksgiving appeared in every
+        // Morning/Evening Prayer regardless of the sidebar toggle's state. The
+        // toggle itself, saveSettings()/loadSettings(), and its sidebar
+        // show/hide were all working; only the render-time gate was missing.
+        if (item === 'bcp-general-thanksgiving') {
+            if (document.getElementById('toggle-general-thanksgiving')?.checked) {
+                const comp = appData.components.find(c => c.id === 'bcp-general-thanksgiving');
+                if (comp) {
+                    const t = resolveText(comp, rite) || comp.text || '';
+                    officeHtml += `<span class="rubric-text">${comp.title || 'General Thanksgiving'}</span><span class="component-text">${t}</span>`;
+                } else {
+                    console.warn('[renderOffice] bcp-general-thanksgiving: component not found');
+                }
+            }
+            continue;
+        }
+
+        // bcp-chrysostom — gated behind Prayer of St. Chrysostom toggle. Same
+        // missing-handler bug as bcp-general-thanksgiving above, fixed the same
+        // way. (setVisible('toggle-chrysostom', isMpEp) already correctly
+        // showed/hid the toggle itself in the sidebar; it just never gated the
+        // actual render.)
+        if (item === 'bcp-chrysostom') {
+            if (document.getElementById('toggle-chrysostom')?.checked) {
+                const comp = appData.components.find(c => c.id === 'bcp-chrysostom');
+                if (comp) {
+                    const t = resolveText(comp, rite) || comp.text || '';
+                    officeHtml += `<span class="rubric-text">${comp.title || 'Prayer of St. Chrysostom'}</span><span class="component-text">${t}</span>`;
+                } else {
+                    console.warn('[renderOffice] bcp-chrysostom: component not found');
+                }
+            }
+            continue;
+        }
+
         // bcp-phos-hilaron — one of three BCP-authorized alternatives at Evening
         // Prayer (Phos Hilaron / "some other suitable hymn" / an Invitatory Psalm,
         // p.63/117) -- skip it when the Invitatory Psalm toggle is showing the

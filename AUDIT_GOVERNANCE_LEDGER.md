@@ -4785,3 +4785,71 @@ own deploy test, which raises the question of whether other audit-only material 
 leaking into `data/` (as opposed to being kept under `documentation/`, `scripts/`, or
 `data/bible/registry/`, all of which are already excluded from release). Not swept this session --
 flagging for a future repo-hygiene pass rather than guessing at what else might be affected.
+
+## SESSION 2026-07-25 continued -- Daily Office pressure test: 3 real defects found and fixed (dark mode inert, 2 dead toggles, 12 sidebar settings miscategorized)
+
+**Josh reported two things after live-testing the deployed app:** many "After the Office" sidebar
+settings were miscategorized, and "Vespers Mode (Dark)" (the dark/light appearance toggle) did
+nothing visible. Investigation found a third, unreported defect along the way. All three are fixed
+in this session; none required touching any liturgical content, only UI wiring/CSS.
+
+**1. Dark mode was structurally inert for the entire office-reading view.** Root cause: a later
+"App-wide parchment design propagation pass" (`css/office.css`) defined 13 color variables
+(`--app-ink`, `--app-surface`, etc., used in 162 places) as fixed light-only values in `:root`,
+with zero dark-mode awareness anywhere -- confirmed via grep, these variables are defined exactly
+once each, only in `:root`. On top of that, a separate "Daily Office parchment app shell
+propagation pass" hardcoded near-white background/border/shadow values directly (not via
+variables) across 17 more rule blocks covering the office shell, main content pane, sidebar
+drawers, buttons, textareas, and selects -- confirmed via a full sweep of every
+`body.office-active` rule for hardcoded `rgba(2xx,...)` backgrounds. Toggling "Vespers Mode
+(Dark)" only ever affected the outer body background (the older, original --bg-color/--ink
+variable set); the moment an office was actually open, this newer unconditional light system took
+over completely and the toggle had no visible effect on the content itself.
+
+**Fix:** added a `body.office-active.dark-mode` override for all 13 --app-* variables (restores
+the toggle's effect across all 162 downstream usages at once) plus a matching dark counterpart for
+each of the 17 hardcoded blocks, palette-matched to the original Vespers/Gothic dark theme
+(`--bg-color`, `--container-bg`, `--ink`, `--rubric`, `--gold`). One self-caught error during this
+work: an early attempt at one override accidentally split a shared 4-selector rule
+(`#settings-panel`/`#ethiopian-settings`/`#east-syriac-settings`/`#generic-settings`) in half,
+which would have broken scroll styling for all four panels in light mode too -- caught before
+committing and corrected; the shared rule is intact and its dark counterpart now correctly covers
+all four panels. Verified via brace-balance check (514 open / 514 close), a Node syntax/depth
+walk (never went negative, final depth 0), and an actual `npm run release:web` build.
+**Not independently visually verified** (no headless browser available in this environment) --
+Josh should confirm the actual look after deploying.
+
+**2. Two dead toggles found during the investigation, not part of the original report:**
+`toggle-general-thanksgiving` and `toggle-chrysostom` had no explicit handler in the render
+sequence loop (`js/office-ui.js`) and fell through to the generic unconditional-render fallback --
+meaning General Thanksgiving and the Prayer of St. Chrysostom rendered in *every* Morning/Evening
+Prayer regardless of the sidebar checkbox state; the toggles themselves were fully wired
+(sidebar show/hide, save/load) but never actually gated the content. Fixed by adding explicit
+gated handlers matching the working pattern already used for `bcp-litany`. **Behavior change to
+flag:** neither checkbox defaults to `checked` in the HTML, so this fix means both prayers -- which
+have always appeared until now -- will be **hidden by default** once deployed, unless Josh wants
+them defaulted to checked to preserve current visible behavior. Not decided in this session;
+flagged for Josh.
+
+**3. 12 sidebar settings were miscategorized under "After the Office."** Verified actual render
+position against `data/rubrics.json`'s real Morning/Evening Prayer sequence (ground truth, not
+inference) rather than guessing from labels. Moved:
+- Into a new "Lectionary Alternates" group under Liturgical Settings (these are reading-choice
+  toggles, not post-office additions): Saint Mary the Virgin alt, Saint Michael and All Angels alt,
+  Good Friday alt, Easter Day alt.
+- Into a new "Invitatory" nested group under During the Office (render at `bcp-invitatory-full`,
+  near the start of the office): Rotate Venite/Jubilate Daily, Invitatory Psalm at Evening Prayer,
+  Pascha Nostrum All Easter Season.
+- Into a new "Noonday & Compline" nested group under During the Office (render within those
+  offices' own sequences, not after Morning/Evening Prayer): Use the Day's Collect at Noonday, Use
+  the Day's Lectionary Reading at Noonday, Rotate Compline Collect Daily, A Prayer for the Night,
+  Use the Day's Lectionary Reading at Compline.
+
+Left in "After the Office" (verified via `data/rubrics.json` to genuinely fall in the
+Collect-through-Blessing tail of the sequence): The Examen, Kyrie Pantocrator, Suffrages + its
+A/B rotation, The Great Litany, General Thanksgiving, Prayer of St. Chrysostom, Rotate Mission
+Prayer Daily, Rotate Second Collect Daily, Rotate Closing Blessing Daily.
+
+Verified post-move: zero duplicate `toggle-*` ids anywhere in `index.html` (was 12 duplicates
+mid-edit, caught and removed), and zero JS-referenced toggle ids missing from the HTML (nothing
+orphaned). `<div>` tags balanced (252/252). Full `npm run release:web` build passes.

@@ -2257,3 +2257,27 @@ Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
 may have similarly leaked into `data/` rather than living under the already-excluded
 `documentation/`, `scripts/`, or `data/bible/registry/`. Not done this session -- this fix only
 addressed the one instance found.
+
+## SESSION HANDOFF 2026-07-25 continued -- Daily Office pressure test: dark mode fixed, dead-toggle bug fixed, sidebar recategorized
+
+Josh reported "After the Office" had wrongly-categorized settings and dark mode did nothing.
+Three real defects found and fixed, full detail in `AUDIT_GOVERNANCE_LEDGER.md`:
+
+1. **Dark mode was structurally inert for the office-reading view** -- a later CSS redesign
+   ("parchment design propagation pass") never got a dark-mode variant anywhere. Fixed via a
+   `body.office-active.dark-mode` override block (13 variables covering 162 usages) plus 17
+   matching hardcoded-color rule counterparts. Not visually verified (no headless browser in this
+   environment) -- Josh should confirm the actual look post-deploy.
+2. **`General Thanksgiving` and `Prayer of St. Chrysostom` toggles were dead** -- both prayers
+   rendered unconditionally regardless of checkbox state. Fixed with explicit gated handlers.
+   **Flag for Josh:** since neither defaults to checked, this fix means both now default to
+   hidden -- a visible behavior change from what's shipped until now. Not decided whether to
+   default them to checked instead; his call.
+3. **12 settings recategorized** out of "After the Office" into their real positions (verified
+   against `data/rubrics.json`, not guessed): 4 into a new Liturgical Settings > "Lectionary
+   Alternates" group, 3 into During the Office > "Invitatory", 5 into During the Office > "Noonday
+   & Compline". Verified zero duplicate toggle ids and zero orphaned JS references after the move.
+
+**Next session should:** ask Josh for his call on the General Thanksgiving/Chrysostom default
+state, and ask whether the dark-mode fix actually looks right once he's checked it live (this
+session could not visually verify CSS in a browser).
