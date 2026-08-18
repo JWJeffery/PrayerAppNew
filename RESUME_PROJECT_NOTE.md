@@ -2521,3 +2521,33 @@ hour-picker, deferred this session since one hour alone didn't justify it). Afte
 Midnight are done: Phase 2, the Theotokia weekly cycle, and resolve `cop-theotokion`'s sourcing
 at the same time. `SEED_VERSION`/dashboard GREEN status not touched this session -- this is
 mid-build, not ready to mark green.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Third Hour built, hour-picker now live
+
+Second Agpeya checkpoint, same source (O'Leary 1911, pp. 97-98). Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Third Hour (O'Leary's items (1)-(7)) as 3 new components
+(`cop-th-troparion`, `cop-th-second-troparion`, `cop-th-concluding-prayer`) in
+`components/coptic.json` (24 entries total) and the `coptic-third-hour` rubric in
+`components/traditions/coptic/rubrics.json`. Reuses the Trisagion, Lord's Prayer, 41-fold Kyrie,
+and closing formula already built for the Morning Office, per O'Leary's own cross-reference.
+**Left one thing honestly incomplete rather than inventing it:** the concluding prayer's closing
+doxology, which O'Leary himself abbreviates as "...who, &c." -- flagged in `meta`, not guessed at.
+
+**Wired:** `renderCopticAgpeya()` now selects the active hour via a radio group rather than
+hard-coding Morning Office; `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic` added now that two hours
+justify a real picker (deferred at the last checkpoint on purpose); the shared navigator's
+mode-key/active-value/hour-setter functions all got a `coptic` case. `index.html`'s drawer needed
+no structural changes -- its existing markup already matched the pattern the shared navigator
+expects for auto-retiring manual controls.
+
+**Verification:** `node --check` clean, both JSON files parse, index.html div-tag balance
+unchanged (247/247).
+
+**Next session should:** continue with the Sixth Hour, then Ninth, then Eleventh (Vespers),
+Twelfth (Compline), then the Midnight Office -- same method as these two checkpoints. Re-read
+`/tmp/oleary_full.txt`-equivalent via the Google Drive connector (`DO 1-124 small.pdf` /
+`DO 125+ small.pdf`, both already confirmed readable directly, no fetch-tool wall). After all
+hours are done: Phase 2, the Theotokia weekly cycle, and resolve `cop-theotokion`'s sourcing in
+the same phase. `SEED_VERSION`/dashboard GREEN status still not touched -- mid-build.

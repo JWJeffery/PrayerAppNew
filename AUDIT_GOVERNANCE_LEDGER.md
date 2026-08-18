@@ -5226,3 +5226,45 @@ Vespers, Twelfth/Compline) and the Midnight Office, then the Theotokia weekly cy
 the governance decision: hours first, Theotokia second). Once more than one hour exists, revisit the
 shared-navigator decision above and build a real hour picker. `cop-theotokion`'s sourcing remains
 open, deferred to the Theotokia phase.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Third Hour built, hour-picker wired
+
+Second checkpoint in the Coptic Agpeya rebuild, same source (O'Leary 1911, pp. 97-98).
+
+**Content built -- the complete Third Hour, O'Leary's items (1)-(7):**
+- `components/coptic.json`: 3 new entries (`cop-th-troparion`, `cop-th-second-troparion`,
+  `cop-th-concluding-prayer`), 24 total. The Third Hour reuses three Morning Office components
+  directly per O'Leary's own cross-reference ("Trisagion. No. (8) at Morning Office."):
+  `cop-trisagion`, `comm-lords-prayer`, `cop-kyrie-41`, plus the shared `cop-closing-formula`.
+- **Honest incompleteness preserved, not invented:** O'Leary's own text for the Third Hour's
+  concluding prayer ends "...who, &c." -- his standard shorthand elsewhere in the book for a
+  doxology conclusion given in full at another point (the Morning Office's Prayer of
+  Thanksgiving). Left the component ending at "...who..." rather than fabricating the missing
+  words, with a `meta` note explaining why, per the standing project rule against inventing
+  content even to complete an obvious formula.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-third-hour` rubric (9-item
+  sequence, `psalms` field with 10 psalms converted from O'Leary's Septuagint numbering to this
+  app's Hebrew-numbered keys, `lesson` field for John 14:26-15:4).
+
+**Code wiring:**
+- `renderCopticAgpeya()` updated to select the active hour via `input[name="cop-hour"]:checked`
+  (defaulting to Morning Office), rather than hard-coding a single rubric lookup.
+- `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic` added now that a second hour justifies a real picker
+  (deliberately deferred at the Morning-Office-only checkpoint, per that session's own note) --
+  `hideHeadings`/`hideButtonRowsAfterHeadings` set to `["Active Hour"]` so the manually-built
+  drawer display and Prev/Today/Next buttons are automatically retired once the shared navigator
+  takes over, same pattern already used for Church of the East.
+- `_sharedOfficeNavigatorModeKey()`, `_sharedOfficeNavigatorActiveValue()`, and
+  `setSharedOfficeNavHour()` all given a `coptic` case so the hour-picker radio group actually
+  switches which office renders.
+- `index.html`'s `#coptic-settings` drawer markup needed no structural change -- confirmed its
+  existing `.setting-group` ("Active Hour") + `.ordo-buttons` structure already matches what
+  `_sharedOfficeNavigatorHideLegacy()` looks for; only its status paragraph text was updated
+  (no longer says "only the Morning Office").
+
+**Verification:** `node --check` clean. Both JSON files parse. `index.html` div-tag balance
+confirmed unchanged (247/247).
+
+**Still open:** Sixth, Ninth, Eleventh/Vespers, Twelfth/Compline hours + Midnight Office, then the
+Theotokia (Phase 2). `cop-th-concluding-prayer`'s truncated ending and `cop-theotokion`'s sourcing
+both remain open, flagged rather than guessed at.

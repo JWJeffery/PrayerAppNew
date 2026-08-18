@@ -167,5 +167,29 @@
     "meta": {
       "source": "O'Leary 1911, Morning Office item (12), pp. 96-97. Public domain."
     }
+  },
+  {
+    "id": "cop-th-troparion",
+    "title": "Troparion of the Third Hour",
+    "text": "Thy Holy Spirit, O Lord, which thou didst send upon thy Holy Disciples and Blessed Apostles at the third hour, do thou not take from us, O Good One, but let It be renewed within us.\n\nThy Holy Spirit, O Lord, which thou didst send upon thy Holy Disciples and Blessed Apostles at the third hour. A clean heart create within me, O God, and renew a right spirit within me.\n\nThy Holy Spirit, O Lord, which thou didst send upon thy Holy Disciples and Blessed Apostles at the third hour. Cast us not from thy presence, nor take thy Holy Spirit from us.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO Lord, who didst send thy Holy Spirit upon thy Holy Disciples and thy Blessed Apostles at the third hour, take it not from us, O Good One, but we pray thee let It be renewed in our inward parts, O Lord Jesus Christ, Son of God, the Word. A right and quickening Spirit, a prophetic and pure Spirit, a sanctifying and governing Spirit, upon everything. For thou dost give light to our souls; thou who dost enlighten every man who cometh into the world, have mercy on us.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO Mother of God, thou art the true vine-tree, for thou didst bear the grapes of life. To thee we pray, thou full of grace, and to the Apostles, on account of the salvation of our souls. Blessed be the Lord our God, blessed be the Lord daily. May the God of our salvation make our way prosperous to us.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Third Hour item (2), pp. 97-98. Public domain. Weaves in O'Leary's translation of Psalm 51:10-11 ('A clean heart create within me...', 'Cast us not from thy presence...')."
+    }
+  },
+  {
+    "id": "cop-th-second-troparion",
+    "title": "Second Troparion of the Third Hour",
+    "text": "O heavenly King and Paraclete, Spirit of Truth, who art in every place and fillest all. O treasure of good things and giver of life. Graciously come and be within us, purge away every sin, O thou Good One, and save our souls.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nAs thou wast in the midst of thy disciples, O Saviour, and didst give them peace, be with us and save us.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nWhenever we stand in thy holy temple, we consider ourselves as those who stand in heaven. O Mother of God, gate of heaven, open to us the door of mercy.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Third Hour item (5), p. 98. Public domain."
+    }
+  },
+  {
+    "id": "cop-th-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe) of the Third Hour",
+    "text": "O God of every mercy and of all comfort, who hast comforted us at all places and all times. We thank thee that thou hast raised us up to pray at this holy hour, when thou didst pour out the grace of thy Holy Spirit abundantly upon thy Holy Disciples and Blessed Apostles. We pray and beseech thee, O Lover of men, accept our prayer, and send down upon us spiritual benediction, in order that we may walk in the spirit and not fulfil the lusts of the flesh. By the power of thy only-begotten Son Jesus Christ our Lord, who...",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Third Hour item (7), p. 98. Public domain. O'Leary's own text ends '...who, &c.' -- his standard shorthand elsewhere in the book for a trinitarian doxology conclusion given in full at other points (compare the ending of cop-mp-thanksgiving). Left honestly truncated here rather than inventing the exact completion, since O'Leary does not spell it out at this specific point."
+    }
   }
 ]

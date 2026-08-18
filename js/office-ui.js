@@ -1696,6 +1696,19 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "compline-office", label: "Compline", detail: "Night" },
         ],
     },
+    coptic: {
+        panelId: "coptic-settings",
+        heading: "Agpeya Navigation",
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Hour",
+        hideHeadings: ["Active Hour"],
+        hideButtonRowsAfterHeadings: ["Active Hour"],
+        options: [
+            { value: "coptic-morning-office", label: "The Morning Office", detail: "Prime" },
+            { value: "coptic-third-hour", label: "The Third Hour", detail: "Terce" },
+        ],
+    },
     eastSyriac: {
         panelId: "east-syriac-settings",
         heading: "Hudra Navigation",
@@ -1743,6 +1756,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
 };
 
 function _sharedOfficeNavigatorModeKey() {
+    if (selectedMode === "coptic-agpeya") return "coptic";
     if (selectedMode === "east-syriac") return "eastSyriac";
     if (selectedMode === "horologion") return "horologion";
     if (selectedMode === "daily" || !selectedMode) return "daily";
@@ -1778,6 +1792,9 @@ function _sharedOfficeNavigatorEscape(value) {
 function _sharedOfficeNavigatorActiveValue(modeKey) {
     if (modeKey === "daily") {
         return document.querySelector('input[name="office-time"]:checked')?.value || "morning-office";
+    }
+    if (modeKey === "coptic") {
+        return document.querySelector('input[name="cop-hour"]:checked')?.value || "coptic-morning-office";
     }
     if (modeKey === "eastSyriac") {
         return window._esyTemporalOverride?.hourId || getEastSyriacHourInfo().value;
@@ -2031,6 +2048,13 @@ function setSharedOfficeNavHour(modeKey, value) {
         if (radio) radio.checked = true;
         updateSidebarForOffice();
         saveSettings();
+        requestRender();
+        return;
+    }
+
+    if (modeKey === "coptic") {
+        const radio = document.querySelector(`input[name="cop-hour"][value="${CSS.escape(value)}"]`);
+        if (radio) radio.checked = true;
         requestRender();
         return;
     }
@@ -4362,17 +4386,19 @@ async function renderEastSyriac() {
 
 // ── COPTIC AGPEYA RENDERER ─────────────────────────────────────────────────────
 //
-// Replaces the fabricated Ethiopian Sa'atat removed 2026-08-18. Only the
-// Morning Office exists so far (rubric id 'coptic-morning-office' in
-// appData.copticRubrics) -- the remaining 6 hours + Midnight Office are a
-// planned follow-on build. This function is written to generalise once more
-// hours exist (an hour-selector radio will pick which rubric entry to use;
-// for now there is exactly one, so it is used unconditionally).
+// Replaces the fabricated Ethiopian Sa'atat removed 2026-08-18. Two hours
+// built so far -- Morning Office ('coptic-morning-office') and Third Hour
+// ('coptic-third-hour') in appData.copticRubrics -- the remaining hours
+// (Sixth, Ninth, Eleventh/Vespers, Twelfth/Compline) + Midnight Office are a
+// planned follow-on build. Active hour is picked via the
+// input[name="cop-hour"] radio group (shared navigator, see
+// SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic), defaulting to Morning Office.
 //
-// Psalms and the Ephesians 4:1-6 lesson are resolved from this app's own
-// verified Bible corpus via the rubric's `psalms`/`lesson` fields -- O'Leary
-// only cites these by reference, he never gives his own translations of them
-// (confirmed directly against the source before this design was chosen).
+// Psalms and Gospel/Epistle lessons are resolved from this app's own
+// verified Bible corpus via each rubric's `psalms`/`lesson` fields --
+// O'Leary only cites these by reference, he never gives his own
+// translations of them (confirmed directly against the source before this
+// design was chosen).
 //
 async function renderCopticAgpeya() {
     if (!appData || !appData.copticRubrics || !Array.isArray(appData.copticRubrics) || appData.copticRubrics.length === 0) {
@@ -4383,11 +4409,12 @@ async function renderCopticAgpeya() {
 
     const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
 
-    // Only one hour built so far -- always the Morning Office.
-    const activeRubric = appData.copticRubrics.find(r => r.id === 'coptic-morning-office');
+    const selectedHourId = document.querySelector('input[name="cop-hour"]:checked')?.value || 'coptic-morning-office';
+    const activeRubric = appData.copticRubrics.find(r => r.id === selectedHourId)
+                       || appData.copticRubrics.find(r => r.id === 'coptic-morning-office');
     if (!activeRubric) {
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Coptic Agpeya Error</h3><p class="component-text">The Morning Office rubric was not found.</p></div>`;
+            `<div class="office-container"><h3>Coptic Agpeya Error</h3><p class="component-text">No Agpeya rubric was found.</p></div>`;
         return;
     }
 
@@ -4407,6 +4434,7 @@ async function renderCopticAgpeya() {
 
     for (let item of (activeRubric.sequence || [])) {
         item = item.trim();
+
 
         // VARIABLE_COP_LESSON — the scripture reading O'Leary cites by reference only
         if (item === 'VARIABLE_COP_LESSON') {

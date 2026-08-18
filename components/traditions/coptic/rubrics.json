@@ -38,5 +38,31 @@
       "cop-mp-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-third-hour",
+    "officeName": "The Third Hour (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 97-98, public domain. Sequence follows O'Leary's own numbered items (1)-(7). Psalms and the Gospel lection are resolved from this app's own verified Bible corpus (O'Leary cites references only) -- see the rubric's psalms/lesson fields. Reuses the Trisagion (cop-trisagion), Lord's Prayer (comm-lords-prayer), 41-fold Kyrie (cop-kyrie-41), and closing formula (cop-closing-formula) already built for the Morning Office, per O'Leary's own cross-reference ('Trisagion. No. (8) at Morning Office.').",
+    "psalms": {
+      "set": ["20", "23", "24", "26", "29", "34", "41", "43", "45", "47"],
+      "note": "O'Leary p.97: 'Psalms 19 (20), 22 (23), 23 (24), 25 (26), 28 (29), 33 (34), 40 (41), 42 (43), 44 (45), 46 (47).' Numbers here are converted to this app's Hebrew-numbered PSALM keys (O'Leary's Septuagint/Vulgate numbers are given in his own parentheses). No separate fixed psalm at this hour, unlike Morning Office's Psalm 51."
+    },
+    "lesson": {
+      "citation": "JOHN 14:26-15:4",
+      "label": "The Lesson",
+      "note": "O'Leary p.97: 'Lection. S. John xiv. 26-xv. 4.'"
+    },
+    "sequence": [
+      "VARIABLE_COP_PSALMS",
+      "VARIABLE_COP_LESSON",
+      "cop-th-troparion",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-th-second-troparion",
+      "cop-kyrie-41",
+      "cop-th-concluding-prayer",
+      "cop-closing-formula"
+    ]
   }
 ]
