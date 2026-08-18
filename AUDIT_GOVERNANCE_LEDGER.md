@@ -4988,3 +4988,49 @@ toggle ids, zero orphaned JS-referenced ids, zero remaining uppercase info-btn c
 
 Verified: HTML div balance (253/253), JS syntax check, each new group id present exactly once,
 CSS brace balance unchanged, full `npm run release:web` build.
+
+## SESSION 2026-08-18 -- js/office-ui.js (engine:office-ui-core) full read-through completed, marked GREEN
+
+Josh flagged the dashboard's `engine:office-ui-core` row showing amber and asked for investigation,
+then requested the full read-through the prior note's amber status called for. Full detail below;
+short version: read all 5,119 lines end to end, found two cosmetic/dead-code issues (no functional
+defects), fixed both per Josh's direction, marked GREEN.
+
+**Scope of this read, beyond what had already been touched piecemeal via individual content fixes:**
+- `renderOffice()` and `renderBcpOffice()` (~1,080 lines) read as one coherent function rather than
+  only the sections previously touched by specific bug fixes -- the full VARIABLE_READING/psalm/
+  canticle/collect/invitatory resolution chain, the Ethiopian Senkessar commemoration lookup, the
+  generic component-lookup fallback and its DISPLAY_LABELS map.
+- The app-shell/UI portions the prior amber note explicitly said were never examined: entry routing
+  (`initializeEntryRouting`, `selectMode`, `handleTraditionEntryClick`, `resolveEntryTraditionRoute`,
+  `showTraditionEntry`/`showUniversalModeSelection`), settings persistence (`saveSettings`/
+  `loadSettings`), sidebar visibility (`updateSidebarForOffice`, `toggleSidebar`), all date-control
+  functions (`changeDate`/`resetDate`/`setCustomDate`/`updateDatePicker`), and the shared office
+  navigator apparatus (config-driven grammar shared across all four traditions' navigation panels).
+
+**Confirmed sound, no defects:** the office-time radio's `onchange` in `index.html` correctly calls
+`updateSidebarForOffice()` on every office switch, so the toggle-visibility fixes from the priest-
+testing session (General Thanksgiving/Chrysostom gating, Noonday/Compline/Invitatory box-hiding)
+are wired correctly end to end, not just at initial page load. Settings save/load round-trips
+consistently with every toggle checked. Entry-routing matches the documented 2026-07-25 splash
+simplification (always lands on the 3-button mode selection, per Josh's direction).
+
+**Two issues found, both cosmetic/dead-code, neither a functional defect -- both fixed:**
+1. **Dead variable in `renderBcpOffice`:** `dateHeaderText` was computed as
+   `` `Commemorations for ${todayKey}` `` but the very next line set the actual DOM text to the
+   static string `'Commemorations'` instead -- the date-inclusive version was built and discarded.
+   Josh's call: the header should NOT include the date (it's already shown elsewhere on the page).
+   Removed the dead variable cleanly.
+2. **Duplicated comment block** in the invitatory-psalm rotation logic (~line 3882): the same
+   4-line BCP-citation comment was pasted twice in a row, no functional effect. De-duplicated.
+
+Both fixes verified via `node --check js/office-ui.js` (clean) and by re-running the inline-script
+syntax check on `audit-ledger.html` after the dashboard update (also clean -- caught and fixed an
+over-escaping mistake in the new note's apostrophes during this same pass).
+
+**Dashboard: `engine:office-ui-core` moved from amber to GREEN**, with a full note replacing the
+prior partial-read note. `SEED_VERSION` bumped to `v134-2026-08-18-office-ui-core-green`.
+
+**This is a genuinely clean bill of health for the whole file now, not a partial one.** No other
+engine files were in scope for this session (the Ethiopian/East Syriac/Byzantine engines remain
+their own separate amber rows, unaffected, per the project's standing BCP-first scope).

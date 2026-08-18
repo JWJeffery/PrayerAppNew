@@ -3881,8 +3881,6 @@ async function renderBcpOffice() {
                 } else {
                     // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
                     // of the Invitatory Psalms, Venite or Jubilate" -- a genuinely
-                    // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
-                    // of the Invitatory Psalms, Venite or Jubilate" -- a genuinely
                     // free daily choice with no seasonal restriction. (The former
                     // Lent->Jubilate and Lent-Friday->Psalm-95 rules here had no
                     // BCP basis and have been removed.) At Evening Prayer this is
@@ -4277,10 +4275,9 @@ async function renderBcpOffice() {
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-   let dateHeaderText = `Commemorations for ${todayKey}`;
-document.getElementById('date-header').innerText = 'Commemorations';
- // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
-const angComms = await resolveCommemorations(currentDate, 'ANG', { includeEcumenical: true });
+    document.getElementById('date-header').innerText = 'Commemorations';
+    // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
+    const angComms = await resolveCommemorations(currentDate, 'ANG', { includeEcumenical: true });
 
 document.getElementById('saint-display').innerHTML = angComms
     .map(s => {

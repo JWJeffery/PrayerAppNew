@@ -2347,3 +2347,40 @@ dark-mode/sidebar work. Strongly worth getting Josh's next look before consideri
 Full detail in `AUDIT_GOVERNANCE_LEDGER.md`. Still not visually verified -- no headless browser in
 this environment. This is now the fourth consecutive round of Josh catching real issues only
 visible in a live render; strongly worth a fifth check before treating this as closed.
+
+## SESSION HANDOFF 2026-08-18 -- js/office-ui.js full read-through complete, engine:office-ui-core marked GREEN
+
+Josh flagged `engine:office-ui-core` showing amber on the dashboard and asked for a full
+read-through (the prior note had left it amber specifically because the app-shell/UI portions --
+splash screens, entry routing, profile settings -- had never been examined, only the Daily-Office-
+computation portions touched piecemeal by individual content fixes).
+
+**Done: all 5,119 lines read, including `renderOffice()`/`renderBcpOffice()` as one coherent
+~1,080-line function and every previously-unexamined app-shell function** (entry routing, mode
+selection, settings save/load, sidebar visibility, date controls, shared office navigator). No
+functional defects found. Confirmed the priest-testing session's toggle-visibility fixes
+(General Thanksgiving/Chrysostom gating, Noonday/Compline/Invitatory box-hiding) are correctly
+wired to the office-time radio's onchange handler, not just initial page load.
+
+**Two cosmetic/dead-code issues found and fixed, per Josh's direction:**
+1. Dead variable `dateHeaderText` in `renderBcpOffice` (computed a date-inclusive commemorations
+   header string, then discarded it in favor of a static label) -- removed cleanly. Commemorations
+   panel header intentionally does not include the date (Josh's call).
+2. A duplicated 4-line BCP-citation comment block in the invitatory-psalm rotation logic --
+   de-duplicated, no functional effect.
+
+**`engine:office-ui-core` moved amber -> GREEN** on the dashboard, full note replacing the prior
+partial-read note. `SEED_VERSION` bumped to `v134-2026-08-18-office-ui-core-green`. Verified via
+`node --check js/office-ui.js` and a syntax check of `audit-ledger.html`'s inline script (caught
+and fixed an apostrophe over-escaping mistake in the new note text during that check).
+
+**Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.**
+
+**Next session should:** ask Josh what's next -- this closes the specific yellow-status report from
+this session. Everything else carried forward from the 2026-07-25 priest-testing deploy prep
+(dark mode / sidebar visual confirmation still pending Josh's live look) remains open and
+unaffected by this session's work. The other engine rows in the dashboard's OTHER_TRADITION_ENGINES
+list (calendar-ethiopian.js, calendar-east-syriac.js, coe-eligibility.js, calendar-eastern-
+orthodox.js, byzantine-paschalion.js, orthros-eothinon-engine.js, horologion-engine.js,
+menaion-resolver.js, octoechos modules) remain amber, unaudited this session -- out of scope per
+the project's standing BCP-first direction, not touched.
