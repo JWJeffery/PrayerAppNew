@@ -1712,6 +1712,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-eleventh-hour", label: "The Eleventh Hour", detail: "Vespers" },
             { value: "coptic-twelfth-hour", label: "The Twelfth Hour", detail: "Compline" },
             { value: "coptic-midnight-office", label: "The Midnight Office", detail: "Three Nocturns" },
+            { value: "coptic-sunday-theotokia", label: "Sunday Theotokia", detail: "Phase 2" },
         ],
     },
     eastSyriac: {
@@ -4537,6 +4538,32 @@ async function renderCopticAgpeya() {
                 }
             } else {
                 console.warn(`[renderCopticAgpeya] Could not find psalms for ${sourceRubricId} to resolve ${item}`);
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_THEOTOKIA_SECTIONS — the Theotokia's own section/paraphrase/lection
+        // pattern (Phase 2 of the Coptic Agpeya). Each rubric's theotokiaSections array
+        // lists, in order, a component id (the section + its paraphrase, already combined
+        // in that single component) and an optional lessonCitation. Generalized across all
+        // seven days of the week rather than written per-day, since the pattern is
+        // identical throughout O'Leary's Theotokia -- only the content and lesson
+        // citations differ day to day.
+        if (item === 'VARIABLE_COP_THEOTOKIA_SECTIONS') {
+            const sections = Array.isArray(activeRubric.theotokiaSections) ? activeRubric.theotokiaSections : [];
+            for (const section of sections) {
+                const sectionComp = appData.components.find(c => c.id === section.component);
+                if (sectionComp) {
+                    const t = resolveText(sectionComp, rite) || sectionComp.text || '';
+                    officeHtml += `<span class="rubric-text">${sectionComp.title || section.component}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
+                } else {
+                    console.warn(`[renderCopticAgpeya] Theotokia section component not found: ${section.component}`);
+                }
+                if (section.lessonCitation) {
+                    const lessonText = await getScriptureText(section.lessonCitation);
+                    officeHtml += `<h4 class="passage-reference">${section.lessonCitation}</h4>`;
+                    officeHtml += `<div class="reading-text">${formatScriptureAsFlow(lessonText)}</div>`;
+                }
             }
             continue;
         }

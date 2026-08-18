@@ -221,5 +221,28 @@
       "cop-mo-concluding-doxology",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-sunday-theotokia",
+    "officeName": "The Sunday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 117-130, public domain. First day of the weekly Theotokia hymn cycle (Phase 2 of the Coptic Agpeya rebuild, following completion of all seven hours and the Midnight Office). Structure: a Psali ('Our Lord Jesus'), an Alternative (Marian) Psali, then the Theotokia proper -- eight sections, most paired with a paraphrase and a Gospel lection (Luke 1 and 2, the Annunciation/Visitation/Benedictus/Nunc Dimittis cycle), a Conclusion, and a seasonal Hymn on the Resurrection (Easter to the end of Hatur only -- included as its own labeled component since this app does not yet have seasonal on/off logic for Theotokia additions). O'Leary's book also contains extensive 'additional matter' for this day -- secondary and tertiary paraphrases from other manuscript traditions (Types II, III, IV), scholarly variants aimed at textual critics -- deliberately not built here; this office follows only O'Leary's Section A, 'the Coptic text common to all types', which is what an ordinary devotional user would actually pray. IMPORTANT SOURCING NOTE: unlike the seven hours and the Midnight Office (each either cleanly OCR'd or transcribed directly from page images Josh provided), this content came from this app's automated Google Drive text-extraction tool, which has a materially higher OCR-error rate on this particular source scan -- every component here is flagged in its own meta as a lower-confidence tier pending a human read-through against the actual page images, same as any other book in this project awaiting verification before GREEN.",
+    "theotokiaSections": [
+      {"component": "cop-sunday-theotokia-1", "lessonCitation": "LUKE 1:45-50"},
+      {"component": "cop-sunday-theotokia-2", "lessonCitation": "LUKE 1:51-55"},
+      {"component": "cop-sunday-theotokia-3", "lessonCitation": "LUKE 1:68-72"},
+      {"component": "cop-sunday-theotokia-4", "lessonCitation": "LUKE 1:73-77"},
+      {"component": "cop-sunday-theotokia-5", "lessonCitation": "LUKE 1:78-79"},
+      {"component": "cop-sunday-theotokia-6", "lessonCitation": "LUKE 2:29-32"},
+      {"component": "cop-sunday-theotokia-7", "lessonCitation": null},
+      {"component": "cop-sunday-theotokia-8-and-conclusion", "lessonCitation": null}
+    ],
+    "sequence": [
+      "cop-sunday-psali",
+      "cop-sunday-alt-psali",
+      "VARIABLE_COP_THEOTOKIA_SECTIONS",
+      "cop-sunday-resurrection-hymn",
+      "cop-closing-formula"
+    ]
   }
 ]

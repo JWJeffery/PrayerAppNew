@@ -5518,3 +5518,56 @@ Remaining: Phase 2, the Theotokia weekly hymn cycle, and resolving `cop-theotoki
 question in that same phase. None of the eight offices built so far are marked GREEN -- all remain
 amber pending an independent human read-through against source, same bar as every other book in
 this project before promotion.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Phase 2 begins: Sunday Theotokia built
+
+First checkpoint of Phase 2 (the Theotokia weekly hymn cycle), following completion of all seven
+hours and the Midnight Office. Source: O'Leary 1911, pp. 117-130.
+
+**Scope decision, made explicit before building:** O'Leary's book includes, for each day, not just
+the main Psali and Theotokia ("Section A: the Coptic text common to all types") but also extensive
+"additional matter" -- secondary and tertiary paraphrases drawn from other manuscript traditions
+(his Types II, III, IV), aimed at textual critics comparing witnesses, not at someone praying the
+office. This rebuild deliberately builds only Section A (the Psali, Alternative Psali, and the
+eight-section Theotokia with paraphrases and lections) for each day -- the scholarly variant
+material is out of scope for a devotional prayer app and is not being transcribed.
+
+**Content built -- the complete Sunday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 11 new entries (`cop-sunday-psali`, `cop-sunday-alt-psali`,
+  `cop-sunday-theotokia-1` through `-7`, `cop-sunday-theotokia-8-and-conclusion`,
+  `cop-sunday-resurrection-hymn`), 62 total.
+- **No-placeholder rule applied to the Psali's own extensive refrain:** the main Psali repeats "O
+  Lord Jesus help us" roughly 28 times, abbreviated by O'Leary after its first appearance as "O
+  Lord, &c." -- written out in full at every occurrence.
+- **A genuinely different sourcing tier, disclosed explicitly:** unlike the seven hours and the
+  Midnight Office (each either cleanly OCR'd or transcribed directly from page images Josh
+  provided), this content came from this app's automated Google Drive text-extraction tool on a
+  scan with a materially higher OCR-error rate. Every new component's `meta` flags this as a
+  lower-confidence tier pending human verification against the actual page images -- not silently
+  presented at the same confidence as the hand-checked hours. One specific OCR ambiguity (a
+  fragment, "O ye orthodox, in the name of", that didn't fit grammatically either direction) was
+  omitted rather than guessed at, and the omission is disclosed in the component's own meta rather
+  than smoothed over.
+- **A seasonal addition correctly kept separate, not silently merged:** O'Leary's own note marks
+  the Hymn on the Resurrection as added to the Theotokia only "from Easter to the end of Hatur" --
+  this app doesn't yet have seasonal on/off logic for Theotokia additions, so it is included as its
+  own clearly-labeled component (`cop-sunday-resurrection-hymn`) rather than folded silently into
+  the year-round Sunday Theotokia text.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-sunday-theotokia` rubric with a
+  new generalized `theotokiaSections` array (component id + optional lesson citation per section) --
+  designed once to work identically for all seven days as they get built, rather than one-off code
+  per day.
+
+**Code wiring:** new `VARIABLE_COP_THEOTOKIA_SECTIONS` handler in `renderCopticAgpeya()`, iterating
+a rubric's `theotokiaSections` array and resolving each section's lesson citation from this app's
+own Bible corpus, same principle as every other lesson/canticle resolution in this rebuild.
+`SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended with the Sunday Theotokia; `index.html`
+drawer status text updated to reflect Phase 2 now being under way.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Monday through Saturday's Psali, Alternative Psali, and Theotokia (same method,
+same source, `theotokiaSections` mechanism already built and ready to reuse). `cop-theotokion`'s
+open sourcing question remains unresolved, to be handled once the full weekly cycle is built.

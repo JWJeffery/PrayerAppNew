@@ -2748,3 +2748,50 @@ confirmed present in the second uploaded PDF file, starting at "PSALI FOR SUNDAY
 Midnight Office leaves off), and resolve `cop-theotokion`'s open sourcing question in that same
 phase. None of the eight offices built are GREEN yet -- all remain amber pending an independent
 read-through before promotion, same standard as every other book in this project.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Phase 2 begins: Sunday Theotokia built
+
+First checkpoint of Phase 2, following completion of all seven hours and the Midnight Office. Full
+detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Scope decision made explicit, worth remembering for the remaining six days:** O'Leary's book
+includes extensive scholarly "additional matter" per day -- secondary/tertiary paraphrases from
+other manuscript traditions, aimed at textual critics. This rebuild deliberately builds only
+"Section A" (the Psali, Alternative Psali, and the eight-section Theotokia with paraphrases and
+lections) for each day -- the manuscript-variant material is out of scope for this devotional app.
+
+**Built:** the complete Sunday Psali, Alternative Psali, and Theotokia as 11 new components in
+`components/coptic.json` (62 entries total) and the `coptic-sunday-theotokia` rubric, using a new
+generalized `theotokiaSections` mechanism (component id + optional lesson citation per section)
+built once to work identically for all seven days -- **reuse this same mechanism for Monday through
+Saturday rather than writing new code per day.**
+
+**A real, disclosed difference in sourcing confidence:** unlike the hours and Midnight Office (each
+either clean OCR or transcribed directly from Josh's page images), this content came from the
+automated Google Drive text-extraction tool on a scan with noticeably worse OCR quality. Every
+component here is flagged in its own `meta` as a lower-confidence tier pending human verification --
+**this same disclosure practice should continue for the remaining six days**, since the source
+quality issue applies to all of them equally, not just Sunday.
+
+**No-placeholder rule applied to a new pattern:** the Psali's ~28-times-repeated refrain,
+abbreviated by O'Leary as "O Lord, &c." after its first appearance, was written out in full at
+every occurrence.
+
+**A seasonal element correctly kept separate:** the Hymn on the Resurrection (Easter-to-Hatur only,
+per O'Leary's own note) was NOT folded into the year-round Theotokia text -- this app doesn't have
+seasonal on/off logic for Theotokia additions yet, so it's its own clearly-labeled component
+instead. Same treatment should apply to any other seasonal additions found in the remaining days.
+
+**Wired:** `VARIABLE_COP_THEOTOKIA_SECTIONS` handler added to `renderCopticAgpeya()`; navigator now
+has the Sunday Theotokia option; drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with Monday's Psali/Alternative Psali/Theotokia, then Tuesday
+through Saturday, same method -- source text for all six remaining days is already in hand (from
+this session's Google Drive fetch, or can be re-fetched; the content runs from "PSALI FOR MONDAY"
+at roughly p.148 through "THE SATURDAY THEOTOKIA" ending around p.197, plus that day's own
+scholarly appendix material to skip). After all seven days: resolve `cop-theotokion`'s open
+sourcing question, likely by comparing against the now-complete weekly Theotokia cycle for a
+genuine match rather than guessing.
