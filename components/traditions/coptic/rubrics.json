@@ -244,5 +244,18 @@
       "cop-sunday-resurrection-hymn",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-monday-theotokia",
+    "officeName": "The Monday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 148-155, public domain. Second day of the weekly Theotokia hymn cycle. Structure differs from Sunday's: the Monday Theotokia has nine numbered sections (not eight), no separate paraphrase subsection per section, and no Gospel lections -- confirmed by their absence in the source rather than assumed. As with Sunday, O'Leary's extensive scholarly 'additional matter' for this day (manuscript-variant paraphrases) is deliberately not built here -- out of scope for a devotional app.",
+    "sequence": [
+      "cop-monday-psali",
+      "cop-monday-alt-psali",
+      "cop-monday-theotokia",
+      "cop-monday-theotokia-crown",
+      "cop-closing-formula"
+    ]
   }
 ]

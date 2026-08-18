@@ -5599,3 +5599,36 @@ human verification -- was correct and unchanged; only the *stated reason* was wr
 matters for future sessions: the six remaining Theotokia days should expect the same
 layout-driven extraction difficulty (since their pages have the same multi-column structure), not
 assume some files are more reliable sources than others.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Monday built
+
+Second day of Phase 2. Source: O'Leary 1911, pp. 148-155.
+
+**Content built -- the complete Monday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 4 new entries (`cop-monday-psali`, `cop-monday-alt-psali`,
+  `cop-monday-theotokia`, `cop-monday-theotokia-crown`), 66 total.
+- **A real structural difference from Sunday, confirmed not assumed:** Monday's Theotokia has nine
+  numbered sections (not eight), no separate paraphrase subsection per section, and no Gospel
+  lections at all -- checked directly against the source rather than carried over from Sunday's
+  pattern by default. No `lesson`/`theotokiaSections`-with-citations mechanism was needed for this
+  day; the two Theotokia components are simple flowing text.
+- **No-placeholder rule applied again:** the refrain closing each of the nine sections ("He took
+  bodily form, &c.") written out in full at every occurrence.
+- Same sourcing-confidence disclosure as Sunday (automated text extraction, dense page layout) --
+  correctly explained this time from the start, per the correction made earlier this session.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-monday-theotokia` rubric. Simpler
+  sequence than Sunday's -- no `VARIABLE_COP_THEOTOKIA_SECTIONS` needed since there's nothing
+  variable to resolve (no lections), just the Psali, Alternative Psali, Theotokia body, and Crown
+  in a fixed sequence.
+
+**Code wiring:** no new handlers needed -- Monday's simpler structure fits entirely within the
+existing generic component-lookup path. `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended
+with the Monday Theotokia; `index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Tuesday through Saturday's Psali, Alternative Psali, and Theotokia. Structure
+should be confirmed per-day rather than assumed uniform, same as the Sunday/Monday difference just
+found -- some days may have lections and paraphrases (Sunday's pattern), others may not (Monday's).

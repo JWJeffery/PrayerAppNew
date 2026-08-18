@@ -1713,6 +1713,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-twelfth-hour", label: "The Twelfth Hour", detail: "Compline" },
             { value: "coptic-midnight-office", label: "The Midnight Office", detail: "Three Nocturns" },
             { value: "coptic-sunday-theotokia", label: "Sunday Theotokia", detail: "Phase 2" },
+            { value: "coptic-monday-theotokia", label: "Monday Theotokia", detail: "Phase 2" },
         ],
     },
     eastSyriac: {

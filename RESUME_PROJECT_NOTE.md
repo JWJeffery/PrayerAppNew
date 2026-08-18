@@ -2799,3 +2799,30 @@ at roughly p.148 through "THE SATURDAY THEOTOKIA" ending around p.197, plus that
 scholarly appendix material to skip). After all seven days: resolve `cop-theotokion`'s open
 sourcing question, likely by comparing against the now-complete weekly Theotokia cycle for a
 genuine match rather than guessing.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Monday built
+
+Second day of Phase 2. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Real structural lesson for the remaining five days:** don't assume every day's Theotokia matches
+Sunday's pattern (paraphrase per section + Gospel lections). Monday genuinely has neither --
+confirmed directly against the source, not assumed. Nine sections instead of eight, no lections at
+all. **Check each remaining day's actual structure before building it**, rather than reusing
+Sunday's `theotokiaSections` mechanism by default -- Monday didn't need it at all, since there was
+nothing variable (no lesson citations) to resolve.
+
+**Built:** the complete Monday Psali, Alternative Psali, and Theotokia (9 sections + Crown) as 4
+new components in `components/coptic.json` (66 entries total) and the `coptic-monday-theotokia`
+rubric. No-placeholder rule applied to the nine-times-repeated refrain ("He took bodily form,
+&c."). Same sourcing-confidence disclosure as Sunday, explained correctly from the start this time.
+
+**Wired:** no new render-code handlers needed (Monday's simpler structure uses the existing generic
+component lookup); navigator and drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with Tuesday, checking its actual structure first (lections?
+paraphrases? how many sections?) before assuming either Sunday's or Monday's pattern applies.
+Same source, same fetch method. After all seven days: resolve `cop-theotokion`'s open sourcing
+question.
