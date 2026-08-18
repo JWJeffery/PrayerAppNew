@@ -5829,3 +5829,37 @@ promotion. The standing governance rules established or reinforced during this r
 abbreviated/placeholder liturgical text; the Google Drive PDF-extraction tool limitation; the
 "corroborate before completing" method for genuine textual gaps) all apply to any future liturgical
 content work in this project, not just the Coptic Agpeya.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya verification pass begins: Morning Office corrections
+
+First checkpoint of independent verification against source, working through the completed Agpeya
+office by office. Cross-checked every Morning Office component against the raw O'Leary source
+extract, line by line.
+
+**Third Hour: fully verified, zero discrepancies found.**
+
+**Morning Office: four real transcription discrepancies found and corrected, one OCR ambiguity
+newly disclosed:**
+- `cop-mp-thanksgiving`: "deliver us from evil, by the grace and mercy" corrected to "deliver us
+  from evil by thy grace and mercy and the love", matching O'Leary's exact wording (I had paraphrased
+  slightly and dropped a word).
+- `cop-mp-hail-doxology`: "have mercy on us in thy kingdom" corrected to "have mercy on me in thy
+  kingdom" -- O'Leary's primary text (Vatican Cod. Copt. 38) reads "me"; a footnote records "us" as
+  a variant from other manuscripts, which I had used without noting it was the variant.
+- `cop-trisagion`: the first of the Trisagion's three invocations corrected from "have mercy upon
+  us" to "have mercy upon me" -- confirmed O'Leary's actual translation uses "me" only for the first
+  clause, "us" for the second and third, which I had flattened to "us" throughout.
+- `cop-creed`: "begotten of the Father before all ages" corrected to "born of the Father before all
+  ages" -- O'Leary's text avoids repeating "begotten" twice in immediate succession (already used
+  for "only-begotten Son of God"); I had introduced the repetition.
+- `cop-mp-invitatory`: no wording changed, but disclosed for the first time an OCR ambiguity that
+  predates this session's later practice of flagging such things -- the phrase "And on his son
+  Jesus Christ, the Word who became flesh" is transcribed as literally as the source OCR permits,
+  but the underlying grammar is genuinely uncertain (no page image available for this passage).
+
+**Method:** re-extracted the raw O'Leary text for each office from this session's saved source
+files, read every component against it line by line rather than spot-checking, and applied fixes
+only where the discrepancy was clearly confirmable against the actual source text (not guesses).
+
+**Still to verify:** Sixth Hour, Ninth Hour, Eleventh Hour, Twelfth Hour, Midnight Office, and all
+seven Theotokia days. Continuing this pass now.
