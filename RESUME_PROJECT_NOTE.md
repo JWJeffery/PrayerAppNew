@@ -2916,3 +2916,31 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 cycle. Check each day's actual structure first, same discipline as every prior day. After both:
 resolve `cop-theotokion`'s open sourcing question, which closes out the entire Coptic Agpeya
 rebuild's planned scope.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Friday built -- ONE DAY LEFT
+
+Sixth day of Phase 2. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Friday Psali, Alternative Psali, and Theotokia (7 sections + Crown, no
+paraphrases, Tone Batos) as 4 new components in `components/coptic.json` (82 entries total) and
+the `coptic-friday-theotokia` rubric.
+
+**The Tone Batos stock-formula pattern is now well-confirmed, not a one-off:** Wednesday, Thursday,
+and Friday all share the same Psali closing ("Whenever we sing psalms...") and the same Theotokia
+Crown closing ("We pray thee be mindful, O faithful mediator..."). Both of Friday's abbreviated
+endings were completed by cross-reference to the prior two days rather than treated as fresh
+lookups -- this pattern is now solid enough to expect it may extend to Saturday too, though **check
+Saturday's actual tone and text before assuming it does.**
+
+**Wired:** no new render-code handlers needed; navigator and drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** build Saturday -- the last day of the weekly Theotokia cycle. Same
+source, same fetch method (or reuse content already pulled earlier this session if still in
+context). Once Saturday is done: resolve `cop-theotokion`'s open sourcing question, which closes
+out this project's entire planned Coptic Agpeya scope (all seven hours, the Midnight Office, and
+the full seven-day Theotokia cycle). None of the built content is GREEN yet -- everything remains
+amber pending an independent human read-through against source, same bar as every other book in
+this project before promotion.

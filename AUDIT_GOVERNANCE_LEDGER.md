@@ -5738,3 +5738,31 @@ Fifth day of Phase 2. Source: O'Leary 1911, pp. 167-177.
 `index.html` div-tag balance confirmed unchanged.
 
 **Still open:** Friday and Saturday, each checked independently for structure before building.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Friday built
+
+Sixth day of Phase 2, one remains. Source: O'Leary 1911, pp. 177-184.
+
+**Content built -- the complete Friday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 4 new entries (`cop-friday-psali`, `cop-friday-alt-psali`,
+  `cop-friday-theotokia`, `cop-friday-theotokia-crown`), 82 total.
+- **Structure confirmed independently:** seven sections, no paraphrases, a Crown -- same shape as
+  Tuesday and Wednesday, Tone Batos matching Thursday.
+- **Both refrains in this day resolved by cross-reference to the immediately preceding Tone Batos
+  days, not guessed:** the Psali's "Whenever, &c." closing matches Wednesday's and Thursday's Psali
+  endings exactly; the Theotokia Crown's "We pray thee, be mindful, &c." matches Wednesday's and
+  Thursday's Crown endings exactly. Three consecutive Tone Batos days (Wednesday, Thursday, Friday)
+  now confirmed sharing the same two stock formulas -- a clear, well-attested pattern rather than a
+  one-off guess at this point.
+- Third variant Psali ("Another Psali for Friday") again excluded, consistent scope decision.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-friday-theotokia` rubric.
+
+**Code wiring:** no new handlers needed. `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended;
+`index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Saturday -- the last day of the weekly cycle, then `cop-theotokion`'s sourcing
+question closes out this project's entire planned Coptic Agpeya scope.

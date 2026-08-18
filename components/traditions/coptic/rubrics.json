@@ -296,5 +296,18 @@
       "cop-thursday-theotokia-crown",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-friday-theotokia",
+    "officeName": "The Friday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 177-184, public domain. Sixth day of the weekly Theotokia hymn cycle. Structure: seven sections (no paraphrases) plus a Crown -- same shape as Tuesday and Wednesday, Tone Batos matching Thursday. Both this day's Psali and its Crown share stock closing formulas already established in full on the immediately preceding Tone Batos days (Wednesday, Thursday) -- completed by cross-reference rather than guessed. O'Leary's book contains a further, third Psali for this day ('Another Psali for Friday') -- not built, consistent with the scope decision applied to every other day.",
+    "sequence": [
+      "cop-friday-psali",
+      "cop-friday-alt-psali",
+      "cop-friday-theotokia",
+      "cop-friday-theotokia-crown",
+      "cop-closing-formula"
+    ]
   }
 ]
