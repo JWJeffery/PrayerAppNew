@@ -122,5 +122,38 @@
       "cop-nh-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-eleventh-hour",
+    "officeName": "The Eleventh Hour (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 103-106, public domain. Sequence follows O'Leary's own numbered items (1)-(8) -- one more item than the shorter hours, since this office (Vespers) includes the Nunc Dimittis canticle and a longer item (3) prayer. Psalms, the Gospel lection, and the Nunc Dimittis canticle are resolved from this app's own verified Bible corpus (O'Leary cites all three by reference, never his own translations of them) -- see the rubric's psalms/lesson/canticle fields. Reuses the Trisagion, Lord's Prayer, 41-fold Kyrie, and closing formula already built for the Morning Office.",
+    "psalms": {
+      "set": ["117", "118", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129"],
+      "note": "O'Leary p.103: 'Psalms 116 (117), 117 (118), 119 (120), 120 (121), 121 (122), 122 (123), 123 (124), 124 (125), 125 (126), 126 (127), 127 (128), 128 (129).' Numbers converted to this app's Hebrew-numbered PSALM keys."
+    },
+    "lesson": {
+      "citation": "MARK 1:29-34",
+      "label": "The Lesson",
+      "note": "O'Leary p.103: 'Lection. S. Mark i. 29-34.'"
+    },
+    "canticle": {
+      "citation": "LUKE 2:29-32",
+      "label": "Nunc Dimittis",
+      "note": "O'Leary p.104 cites only the opening line and a reference (\"'Lord, now lettest thou thy servant depart in peace,' &c. (S. Luke ii. 29-32)\"), not the canticle in full -- resolved from this app's own corpus per the no-placeholder governance rule."
+    },
+    "sequence": [
+      "VARIABLE_COP_PSALMS",
+      "VARIABLE_COP_LESSON",
+      "cop-eh-troparion",
+      "VARIABLE_COP_CANTICLE",
+      "cop-eh-vouchsafe-prayer",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-eh-second-troparion",
+      "cop-kyrie-41",
+      "cop-eh-concluding-prayer",
+      "cop-closing-formula"
+    ]
   }
 ]

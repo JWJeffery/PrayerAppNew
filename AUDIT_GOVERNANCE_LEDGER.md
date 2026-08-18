@@ -5369,3 +5369,36 @@ Fourth checkpoint in the Coptic Agpeya rebuild, same source (O'Leary 1911, pp. 1
 
 **Still open:** Eleventh (Vespers) and Twelfth (Compline) hours + Midnight Office, then the
 Theotokia (Phase 2). `cop-theotokion`'s sourcing remains open.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Eleventh Hour (Vespers) built (fifth checkpoint)
+
+Fifth checkpoint, same source (O'Leary 1911, pp. 103-106). Longer than the previous hours -- 8
+numbered items instead of 7, since Vespers includes the Nunc Dimittis canticle and a substantial
+item (3) prayer.
+
+**Content built -- the complete Eleventh Hour, O'Leary's items (1)-(8):**
+- `components/coptic.json`: 4 new entries (`cop-eh-troparion`, `cop-eh-vouchsafe-prayer`,
+  `cop-eh-second-troparion`, `cop-eh-concluding-prayer`), 34 total.
+- **New no-placeholder case found and resolved:** item (2)'s troparion ends by citing the Nunc
+  Dimittis as only its opening line plus a reference -- "'Lord, now lettest thou thy servant depart
+  in peace,' &c. (S. Luke ii. 29-32)" -- not given in full. This is a genuine scripture citation
+  (unlike the earlier "&c." refrain cases, which were repeated devotional text), so resolved the
+  same way as the hour's Gospel lection: a new `VARIABLE_COP_CANTICLE` handler in
+  `renderCopticAgpeya()`, reading `activeRubric.canticle` and pulling the full text from this app's
+  own verified Bible corpus.
+- `cop-eh-vouchsafe-prayer` (item 3) and `cop-eh-concluding-prayer` (item 8) are both given in full
+  by O'Leary himself -- no abbreviation to resolve in either.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-eleventh-hour` rubric with the new
+  `canticle` field alongside `psalms`/`lesson`.
+
+**Code wiring:** `VARIABLE_COP_CANTICLE` handler added (mirrors `VARIABLE_COP_LESSON`, distinct
+label for clarity in the rendered office). `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options`
+extended with the Eleventh Hour; `index.html` drawer status text updated (five hours now, only
+Twelfth Hour and Midnight Office remain).
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** the Twelfth Hour (Compline) + Midnight Office, then the Theotokia (Phase 2).
+`cop-theotokion`'s sourcing remains open.

@@ -1709,6 +1709,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-third-hour", label: "The Third Hour", detail: "Terce" },
             { value: "coptic-sixth-hour", label: "The Sixth Hour", detail: "Sext" },
             { value: "coptic-ninth-hour", label: "The Ninth Hour", detail: "None" },
+            { value: "coptic-eleventh-hour", label: "The Eleventh Hour", detail: "Vespers" },
         ],
     },
     eastSyriac: {
@@ -4444,6 +4445,20 @@ async function renderCopticAgpeya() {
             if (lesson && lesson.citation) {
                 const text = await getScriptureText(lesson.citation);
                 officeHtml += `<span class="rubric-text">${lesson.label || 'The Lesson'}</span><h4 class="passage-reference">${lesson.citation}</h4>`;
+                officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_CANTICLE — a canticle O'Leary cites by its opening line and a
+        // scripture reference only (e.g. the Nunc Dimittis, "'Lord, now lettest thou
+        // thy servant depart in peace,' &c. (S. Luke ii. 29-32)") rather than printing
+        // it in full. Resolved from this app's own corpus per the no-placeholder rule.
+        if (item === 'VARIABLE_COP_CANTICLE') {
+            const canticle = activeRubric.canticle;
+            if (canticle && canticle.citation) {
+                const text = await getScriptureText(canticle.citation);
+                officeHtml += `<span class="rubric-text">${canticle.label || 'The Canticle'}</span><h4 class="passage-reference">${canticle.citation}</h4>`;
                 officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
             }
             continue;

@@ -239,5 +239,37 @@
     "meta": {
       "source": "O'Leary 1911, Prayer of the Ninth Hour item (7), pp. 102-103. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
     }
+  },
+  {
+    "id": "cop-eh-troparion",
+    "title": "Troparion of the Eleventh Hour",
+    "text": "I have sinned before thee, O Lord, like the lost son. But receive me, O Father, who repent: O God, have mercy upon me.\n\nTo thee, O Lord, I lift up mine eyes, who dwellest in the heavens. Behold, as the eyes of servants are upon the hands of their masters, and as the eyes of a maid-servant upon the hands of her mistress; even so our eyes are upon thee, O Lord God, until thou have mercy on us.\n\nEarly will I call thee, O Lord my Saviour, with the voice of the publican, saying: O God, forgive me as him, and have mercy upon me.\n\nHave mercy on us, O Lord, have mercy on us. We have been full of reproach, and our soul is filled exceedingly. Make the reproach for the wealthy, and make the reproach for the proud.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nThe athletes who desire not the pleasure of earth have thereby become fit for the pleasure of heaven, and are made fellows with the angels. Through their intercessions, O Lord, deliver us and have mercy upon us.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO Mother of God, preserve the flock from all troubles; we all have recourse to thee after God. Like a strong wall be to us a defence.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Eleventh Hour item (2), pp. 103-104. Public domain. The middle section ('To thee, O Lord, I lift up mine eyes...') is O'Leary's own full quotation of Psalm 123:1-2 -- given here as printed, verbatim from O'Leary rather than swapped for a corpus lookup, since it is presented as part of the troparion's continuous prose, not as a separately-headed reading. 'Glory be, &c.' and 'Both now, &c.' resolved to their standard full forms per the no-placeholder governance rule."
+    }
+  },
+  {
+    "id": "cop-eh-vouchsafe-prayer",
+    "title": "Vouchsafe, O Lord",
+    "text": "Be graciously pleased, O Lord, to grant us that we may be this day without sin. Blessed be thou, Lord God of our fathers. Blessed be thy greatness. May thy holy name be filled with glory for ever. Amen.\n\nMay thy mercy come upon us, O Lord, as we have trusted in thee. For the eyes of all look to thee, for thou dost give them meat in due season. Hear us, God our Saviour, the help of the ends of the earth, and do thou vouchsafe to save us in this generation and for ever. Amen.\n\nBlessed be thou, O Lord: teach me thy truth. Blessed be thou, O Lord: enlighten me with thy truth. O Lord thy mercy is for ever. Cast not the works of thy hands from thee, O Lord, for thou hast been to us a place of refuge from the beginning for ever.\n\nI have said, Lord have mercy on me; save my soul, for I have sinned against thee. O Lord, I flee to thee; save me, teach me, make me turn to thee, for thou art our God.\n\nMay the fountain of life open under thee; in thy mercy, O Lord, let us see mercy. May thy mercy come to those who know thee, and thy truth to those who are right in heart.\n\nPraise befits thee, song befits thee, glory is due to thee, Father, Son, and Holy Spirit, who were from the beginning, and are now, and for ever and ever. Amen.\n\nWe declare, O Lord, the praise of thy exalted name, the proclamation of thy mercy by day, and thy truth by night.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Eleventh Hour item (3), pp. 104-105. Public domain. Given in full by O'Leary himself -- no abbreviation to resolve. Weaves in several psalm-verse echoes (Psalms 33, 25, 86, 36, and others) as part of O'Leary's own continuous translation, not as separately cited readings."
+    }
+  },
+  {
+    "id": "cop-eh-second-troparion",
+    "title": "Second Troparion of the Eleventh Hour",
+    "text": "Hail thou who hast found grace, Holy Mary, Mother of God: blessed art thou amongst women, and blessed is the Fruit of thy womb. Thou hast borne to us the Saviour of our souls.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nHoly John, who baptized Christ, remember our congregations, that we may be set free from our misdeeds. Thou hast received favour to intercede for us.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nOur holy Fathers, the great Abba Antony, the three Abbots Macarius, our Father Abba John, our Father Abba Pishoi, our Father Abba Pakhom, our Father Abba Theodore, and our righteous Father the great Abba Samuel: Intercede for us, that we may be delivered from trouble and distress: we have you as intercessors before Christ.\n\nO Mother of God, we have recourse to the protection of thy mercies: Despise not our prayers in need, but save us from destruction, O thou alone blessed.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Eleventh Hour item (6), p. 105. Public domain. 'Glory be, &c.' and 'Both now, &c.' resolved to their standard full forms."
+    }
+  },
+  {
+    "id": "cop-eh-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe) of the Eleventh Hour",
+    "text": "We thank thee, O Lord the Merciful; for thou hast permitted us to pass this day in peace and brought us to the evening with thanksgiving, and hast allowed us to see the evening light. Receive, O God, our praise made now, and save us from the snares of the adversary, and defeat all his wiles against us. Graciously grant us this coming night peace without trouble or distress or phantasm, that we may spend it in peace and purity; that we may offer to thee hymns and prayers always and in all places. In all things we glorify thy name with the Father the Unconfined, without beginning; and the Holy Ghost, the giver of life, consubstantial with thee now and always and for all eternity. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Eleventh Hour item (8), pp. 105-106. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
   }
 ]

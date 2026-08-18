@@ -2640,3 +2640,29 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 **Next session should:** continue with the Eleventh Hour (Vespers), then Twelfth Hour (Compline),
 then the Midnight Office -- same method, same source already in hand via Google Drive. After all
 hours: Phase 2, the Theotokia weekly cycle, and resolve `cop-theotokion`'s sourcing.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Eleventh Hour (Vespers) built (fifth checkpoint)
+
+Fifth Agpeya checkpoint, same source (O'Leary 1911, pp. 103-106). Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Eleventh Hour/Vespers (O'Leary's items (1)-(8), one more than the earlier
+hours) as 4 new components in `components/coptic.json` (34 entries total) and the
+`coptic-eleventh-hour` rubric.
+
+**New no-placeholder case, resolved with a new pattern:** the troparion cites the Nunc Dimittis by
+its opening line and a scripture reference only, not in full. Since this is a genuine scripture
+citation (not repeated devotional text like the earlier refrain cases), added a new
+`VARIABLE_COP_CANTICLE` handler -- resolves the same way the Gospel lesson does, pulling the full
+canticle from this app's own Bible corpus.
+
+**Wired:** `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` now has five hours; drawer status text
+updated (only Twelfth Hour + Midnight Office remain).
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** finish the Twelfth Hour (Compline), then the Midnight Office -- same
+method, same source already in hand. After both: Phase 2, the Theotokia weekly cycle, and resolve
+`cop-theotokion`'s sourcing in that same phase. This closes out the "hours first" half of the
+governance decision from earlier in this project.
