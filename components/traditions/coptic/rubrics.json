@@ -1,0 +1,42 @@
+[
+  {
+    "id": "coptic-morning-office",
+    "officeName": "The Morning Office (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), public domain. Sequence follows O'Leary's own numbered items (1)-(12) for the Morning Office, framed by the shared opening/closing formulas he documents as common to every hour. Psalms are resolved from this app's own verified Bible corpus (O'Leary cites references only, never his own psalm translations) -- see the rubric's psalms field. The lesson at item (2) (Ephesians 4:1-6) is likewise resolved from the corpus, not transcribed from O'Leary.",
+    "psalms": {
+      "fixed": "51",
+      "set": ["1", "2", "3", "4", "5", "6", "11", "12", "13", "15", "18"],
+      "note": "O'Leary p.89: 'Psalm 50 (51). Morning Psalms 1, 2, 3, 4, 5, 6, 10 (11), 11 (12), 12 (13), 14 (15), 17 (18).' Numbers here are converted to this app's Hebrew-numbered PSALM keys (O'Leary's Septuagint/Vulgate numbers are given in his own parentheses); 'fixed' is read first, then 'set' in order."
+    },
+    "lesson": {
+      "citation": "EPHESIANS 4:1-6",
+      "label": "The Lesson",
+      "note": "O'Leary p.88 cites this only as a footnoted reference ('the prisoner of the Lord, &c.'), not in full."
+    },
+    "sequence": [
+      "cop-mp-thanksgiving",
+      "cop-mp-invitatory",
+      "VARIABLE_COP_LESSON",
+      "VARIABLE_COP_PSALMS",
+      "cop-mp-hail-doxology",
+      "cop-mp-o-true-light",
+      "cop-doxology-virgin",
+      "cop-doxology-angels",
+      "cop-doxology-apostles",
+      "cop-doxology-martyrs",
+      "cop-doxology-antonius",
+      "cop-doxology-paul",
+      "cop-doxology-macarius",
+      "cop-doxology-crossbearers",
+      "cop-doxology-patriarchs",
+      "cop-angelic-song",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-creed",
+      "cop-kyrie-41",
+      "cop-mp-concluding-prayer",
+      "cop-closing-formula"
+    ]
+  }
+]

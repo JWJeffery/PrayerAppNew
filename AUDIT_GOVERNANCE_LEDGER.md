@@ -5162,3 +5162,67 @@ unchanged.
 **Next session should:** begin the Coptic Agpeya build from O'Leary's text (already in Google
 Drive, both halves readable directly via the Google Drive connector). See the resume note entry
 of the same date for the exact build plan.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Morning Office built and wired (first checkpoint)
+
+First real content for the Coptic Agpeya rebuild, replacing the deleted Ethiopian Sa'atat. Source:
+De Lacy O'Leary, *The Daily Office and Theotokia of the Coptic Church* (London: Simpkin, Marshall,
+Hamilton, Kent & Co., 1911), public domain, both halves uploaded to Google Drive by Josh and read
+directly via the Google Drive connector (no fetch-tool wall this time, unlike Tizaz/Fetha Nagast).
+
+**Content built -- the full Morning Office, O'Leary's own items (1)-(12), pp. 87-97:**
+- `components/coptic.json` rebuilt: 21 entries. 19 new components transcribed from O'Leary (Prayer
+  of Thanksgiving, the Invitatory, the "We glorify the Trinity" hail-doxology, "O True Light," all
+  nine saint doxologies (Virgin, Angels, Apostles, Martyrs, Antonius, Paul, Macarius, Cross-bearers,
+  Patriarchs/Prophets), the Angelic Song, the (Coptic, non-Chalcedonian) Trisagion, the Creed without
+  filioque, the 41-fold Kyrie, and the closing Metremhe prayer), plus the shared `cop-closing-formula`
+  (the "Prayer recited after each Office" documented as common to all hours, for reuse when later
+  hours are built). Every entry carries a `meta.source` citation to O'Leary with page numbers.
+- **Confirmed content-verified, not by formula:** O'Leary never gives his own Psalm or Gospel
+  translations -- only citations (e.g. "Psalm 50 (51). Morning Psalms 1, 2, 3, 4, 5, 6, 10 (11),
+  11 (12), 12 (13), 14 (15), 17 (18)," and a footnoted "Lesson, Eph. iv. 1-6"). Confirmed this
+  pattern holds throughout the whole book before designing the build around it -- Psalms and the
+  Ephesians lesson are resolved from this app's own corpus (now correctly Hebrew-numbered, per the
+  earlier session's DRB fix) via the rubric's `psalms`/`lesson` fields, not transcribed from O'Leary.
+- `components/traditions/coptic/rubrics.json` created: the `coptic-morning-office` rubric, 22-item
+  sequence, `psalms` field (fixed Psalm 51 + the 11-psalm morning set) and `lesson` field
+  (Ephesians 4:1-6).
+- **Two pre-existing unsourced stub components found and handled:** `cop-agpeya-opening` (used by
+  a BCP-office toggle, cross-tradition borrowing feature) had text that matched nothing in O'Leary
+  -- corrected to his real Morning Office invitatory wording. `cop-theotokion` (same toggle) is
+  still unsourced -- flagged in its own `meta.status` rather than guessed at, deferred to Phase 2
+  when the Theotokia gets built properly.
+
+**Code wiring, verified with `node --check` after every edit:**
+- `hydrateForCopticAgpeya()` and `renderCopticAgpeya()` added to `js/office-ui.js`, modeled on the
+  East Syriac renderer (the simplest existing pattern). `appData.copticRubrics` mirrors
+  `appData.eastSyriacRubrics`.
+- `renderOffice()` dispatcher, `selectMode()` (new `coptic-agpeya` branch + `copSettings` panel
+  variable), `UNIVERSAL_OFFICE_TRADITION_MODE_MAP`, and `resolveEntryTraditionRoute` all reconnect
+  `oriental-orthodox` to the new `coptic-agpeya` mode (previously fell through to nowhere after the
+  Sa'atat deletion).
+- `OFFICE_MODE_HEADER_LABELS` and `BOOK_OF_NEEDS_MODE_CONTEXTS` given `coptic-agpeya` entries.
+- **Deliberately did NOT add a `SHARED_OFFICE_NAVIGATOR_CONFIGS` entry for Coptic.** That
+  abstraction builds a multi-option hour-picker UI; with only one hour built so far, a picker with
+  nothing real to switch between would misrepresent the app's actual state. Built a plain,
+  honest date-only navigator (`#coptic-settings` drawer: Prev/Today/Next using the existing shared
+  `changeDate`/`resetDate` functions) instead. Revisit once more hours exist.
+- `index.html`: new `#coptic-settings` drawer (replacing the placeholder comment left by the
+  Sa'atat deletion); div-tag balance confirmed unchanged through each edit (242 -> 247 as the
+  drawer content was added, verified balanced at each step).
+- **Real bug found and fixed while wiring, not just new code:** `updateSeasonalTheme('gold')` --
+  the accent color intended for the Coptic office -- matched no case in that function and silently
+  fell back to the default green. Added a real `'gold'` case (`#b8860b`).
+- **Stale UI text found and fixed:** the tradition-entry screen's Oriental Orthodoxy card still
+  described "Ethiopian Sa'atat Book of Hours" after the deletion -- updated to describe the Coptic
+  Agpeya.
+
+**Final verification:** full-repository sweep confirms zero remaining `ethiopian-saatat` references
+anywhere. `node --check` clean on `js/office-ui.js`. Both new JSON files parse. `index.html` div-tag
+balance confirmed (247/247).
+
+**Explicitly not done yet, next checkpoint:** the remaining 6 hours (Third, Sixth, Ninth, Eleventh/
+Vespers, Twelfth/Compline) and the Midnight Office, then the Theotokia weekly cycle as Phase 2 (per
+the governance decision: hours first, Theotokia second). Once more than one hour exists, revisit the
+shared-navigator decision above and build a real hour picker. `cop-theotokion`'s sourcing remains
+open, deferred to the Theotokia phase.

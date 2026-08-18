@@ -2,12 +2,170 @@
   {
     "id": "cop-agpeya-opening",
     "title": "Agpeya Opening",
-    "text": "O come, let us worship. O come, let us worship. O come, let us worship the Holy Trinity, our God and Savior."
+    "text": "O come let us worship, come let us pray to Christ our God. O come let us worship, come let us pray to Christ our King. O come let us worship, come let us pray to Christ our Saviour.",
+    "meta": {
+      "source": "CORRECTED 2026-08-18: previous text was unsourced (did not match any wording in the Coptic Agpeya). Replaced with the real opening of O'Leary 1911's Morning Office item (2), p. 88, public domain."
+    }
   },
   {
     "id": "cop-theotokion",
     "title": "Theotokion",
     "text": "O Mother of the True Light, we glorify thee as the Mother of God, for thou hast borne for us the Savior of all.",
-    "type": "Hymn"
+    "type": "Hymn",
+    "meta": {
+      "status": "FLAGGED 2026-08-18: sourcing unverified, not yet checked against O'Leary or any other primary source. Left unchanged pending Phase 2 of the Coptic Agpeya rebuild (the Theotokia weekly cycle), when this should be replaced with real sourced content or removed."
+    }
+  },
+  {
+    "id": "cop-closing-formula",
+    "title": "Prayer Recited After Each Office",
+    "text": "Lord, have mercy upon us. Lord, have mercy upon us. Lord, have mercy upon us. O Holy Trinity, our God, have mercy upon us. Have mercy on the work of thy hands and save our souls.",
+    "meta": {
+      "source": "De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London: Simpkin, Marshall, Hamilton, Kent & Co., 1911), p. 87 -- 'Prayers recited after each Office.' Public domain."
+    }
+  },
+  {
+    "id": "cop-mp-thanksgiving",
+    "title": "Prayer of Thanksgiving",
+    "text": "Let us give thanks to the benevolent and merciful God, the Father of our Lord and Saviour Jesus Christ. For he has shielded us, helped us, kept us, purchased us to himself, spared us, assisted us, and brought us to this hour. Therefore let us pray him that he the Almighty Lord our God may keep us this holy day and all the days of our life in peace.\n\nO Master, Lord God Almighty, Father of our Lord and God and Saviour Jesus Christ, we give thanks to thee concerning everything, and for everything, and in everything, for thou hast shielded us, helped us, kept us, purchased us to thyself, spared us, assisted us, and brought us to this hour. Wherefore we pray and beseech thy goodness, O Lover of men, grant us to pass this holy day and all the days of our life in all peace and in thy fear. Take away from us and from all thy people and from this holy place all hatred, all temptation, every operation of Satan, the counsel of wicked men and the uprising of enemies concealed or manifest. But do thou vouchsafe to give us those things which are expedient or needful. For thou art he who hast given us power to tread upon serpents and scorpions and all the might of the enemy. And lead us not into temptation, but deliver us from evil, by the grace and mercy and love for men of thy only-begotten Son, our Lord and God and Saviour Jesus Christ, through whom be glory and honour and power and worship due to thee, and to him, and to the Holy Ghost the Life-giver consubstantial with thee; now and always and for ever and ever. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (1), pp. 87-88. Public domain."
+    }
+  },
+  {
+    "id": "cop-mp-invitatory",
+    "title": "O Come, Let Us Worship",
+    "text": "O come let us worship, come let us pray to Christ our God. O come let us worship, come let us pray to Christ our King. O come let us worship, come let us pray to Christ our Saviour.\n\nOur Lord Jesus Christ, Word of God, our God, through the intercessions of the Holy Mary and all thy saints, keep us and let us glorify thy good glory, and have mercy on us according to thy favour, for ever.\n\nThe night has passed, we thank thee, O Lord, and we pray thee to keep us this day without sin and deliver us.\n\nAnd on his son Jesus Christ, the Word who became flesh: he died and rose on the third day; he hath raised us with him. One Holy Spirit, the Paraclete, is the same in Its substance: proceeding from the Father It has hallowed all creation. It teaches us to worship the Holy Trinity in one Godhead and one nature. We praise and bless thee for ever. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (2), pp. 88-89. Public domain. A lesson from Ephesians 4:1-6 is appointed at the marked point in the source and is resolved separately from this component (see the rubric's reading slot)."
+    }
+  },
+  {
+    "id": "cop-mp-hail-doxology",
+    "title": "We Glorify the Trinity",
+    "text": "We glorify Father, and Son, and Holy Spirit, the Holy and Consubstantial Trinity; hail Church, house of the angels. Hail Virgin who didst bear our Saviour; hail Gabriel who broughtest good news to her. Hail Michael the Archangel, hail Raphael the truth divider, hail Souriel and all the angels, ye four beasts without body; hail ye four and twenty elders. Hail Cherubim, hail Seraphim; hail all ye host of heaven. Hail John the great forerunner; hail ye twelve Apostles. Hail Father Mark the Evangelist, destroyer of idols. Hail Stephen the first martyr; hail George the morning star. Hail all ye choir of martyrs; hail Abbot Antony and ye three Abbots Macarius. Hail all ye choir of cross-bearers; hail ye saints who have pleased the Lord.\n\nThrough their prayers, O Christ our King, have mercy on us in thy kingdom.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (4), pp. 89-90. Public domain."
+    }
+  },
+  {
+    "id": "cop-mp-o-true-light",
+    "title": "O True Light",
+    "text": "O true light which enlightens every man coming into the world. Thou didst enter the world through thy love for men; all creation rejoiced at thy coming. Thou didst save Adam from deceit, thou didst deliver Eve from the pains of death. Thou didst give us the spirit of adoption; we praise and bless thee with thy angels.\n\nWhen the hour of morning comes to us, O Christ our God the true Light, may thoughts of light abound in us, and may not the darkness of passion overcloud us. So that we may praise thee reasonably with David as we cry aloud and say: \"My eyes have prevented the hour of dawn in meditating on all thy sayings. Hear my voice according to thy great mercy; save me, O Lord my God, according to thy loving-kindness.\"\n\nO God, who dost regard the well-disposed, who providest for thy elect: strong guide of those who take refuge in thee, who desirest the safety and deliverance of every creature; in thy Christliness thou hast prepared for us the night; grant us this day to be without sin, that we may be worthy to lift up our hands to thee in thy sight, without anger or evil thought. Order our goings in and our goings out this morning in the joy of thy protection; that we may speak of thy righteousness every day and praise thy power with the prophet David: \"In thy peace, O Christ our Saviour, we have slept and arisen and trusted in thee.\"\n\nBehold the excellence, behold the pleasantness that brethren dwell together in unity. They sound together in true love evangelical, after the Apostles. Like the ointment on the head of Christ, that ran down upon his head even to his feet. It anointeth every day, old and young, and youths and servants. These the Holy Ghost has joined together like a harp; they praise God always in psalms and hymns and spiritual songs, day and night with heart unwearied.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (5), pp. 90-91. Public domain. Includes O'Leary's translation of Psalm 119:147-148 and Psalm 4:8 as woven into the hymn text."
+    }
+  },
+  {
+    "id": "cop-doxology-virgin",
+    "title": "Doxology of the Virgin",
+    "text": "Thou art the mother of the Light, the holy mother of God; thou didst contain the unconfined Word. After that thou didst conceive him thou didst remain still a virgin; in songs and praises we exalt thee. He in his favour with the good will of his Father and of the Holy Spirit came and saved us. We ourselves pray that we may obtain mercy through thy intercessions to him the Lover of men.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(i), p. 91. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-angels",
+    "title": "Doxology of the Angels",
+    "text": "Thousands of thousands and ten thousand times ten thousand archangels and holy angels are standing before the throne of the Almighty; they sing and say: \"Holy, holy, holy in truth, glory and honour are due to the Trinity.\" Through the intercessions of the choir of angels, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(ii), p. 91. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-apostles",
+    "title": "Doxology of the Apostles",
+    "text": "Our fathers the Apostles preached amongst the Gentiles about the gospel of Jesus Christ. Their sound went out over all the earth, their words reached to the ends of the world. Our Saviour chose the Twelve, he gave them commandment, and thus he said: \"Go ye not into the way of the Gentiles, nor to the city of the Samaritans; but go ye rather after the lost sheep of the house of Israel. Heal those that are sick; freely have ye received, freely give.\" He said \"among the Gentiles\" because it was for our father to go there with the Holy Spirit. Through the prayers of our lords and fathers the Apostles, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(iii), pp. 91-92. Public domain. Includes O'Leary's translation of Matthew 10:5-8."
+    }
+  },
+  {
+    "id": "cop-doxology-martyrs",
+    "title": "Doxology of the Martyrs",
+    "text": "Crowns unfading hath the Lord placed upon all the choir of the martyrs. He preserved them and granted that they should find refuge in him, and be with him in his kingdom. Through the prayers of the choir of martyrs, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(iv), p. 92. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-antonius",
+    "title": "Doxology of Abbot Antonius",
+    "text": "Blessed be thy name, great Abbot Antonius, it has been glorious in all the land of Egypt. It shines forth in the heart of the faithful like the beams which convey the light of the sun. Thou art the tree bearing fruit sevenfold, according to the word of the prophet. Thou didst bring us good news of life eternal and of good things which eye hath not seen; let us invoke the name of our Lord Jesus, according to the precepts of the great Abbot Antonius; and let us ask the goodness of the Father that he bestow on us the fire of the Holy Spirit. May it burn vehemently, consuming our souls, and may it purge a temple for the Holy Trinity. Through the prayers of the great Abbot Antonius, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(v), p. 92. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-paul",
+    "title": "Doxology of Abbot Paul",
+    "text": "Thou art blessed, O Father Abbot Paul, for thou didst complete thy course well. Thou didst love solitude like Elias, thou wast in the desert like John. Thou didst overcome the powers of the adversary and extinguish the arrows of the evil one. Thou didst climb the steps of the virtues, thou didst become a citizen within the heavens. Thou didst win the crown of righteousness, thy name went forth to all places. Through the prayers of the righteous Abbot Paul, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(vi), pp. 92-93. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-macarius",
+    "title": "Doxology of Abbot Macarius",
+    "text": "To thee only did the God of heaven give great joy, O Abbot Macarius. Thou didst show the way to many souls until thou didst conduct them to Jerusalem in heaven. O God, who wast with our righteous father the great Abbot Macarius, be with us. Through the prayers of the three abbots Macarius, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(vii), p. 93. Public domain."
+    }
+  },
+  {
+    "id": "cop-doxology-crossbearers",
+    "title": "Doxology of the Cross-Bearers",
+    "text": "Thy saints bless thee, they relate the glory of thy kingdom. Thy kingdom, O God, is an everlasting kingdom, and thy dominion is to all generations. Our holy fathers went into the desert, they ate the fruits beneath the trees. The angel of the Lord came to them every Sabbath and every Lord's Day. He consoled them, and strengthened and fortified the beloved brethren. \"I will lay aside your bodies and not cast them out amidst the reptiles and wild beasts, but I will wrap them for burial, for these are bodies which have been pleasing to God.\" They loved seclusion, they had recourse to the desert that they might reach the purity of angels. Those few brethren were despised; they hoped to attain eternal life. Through the prayers of the choir of cross-bearers, O Lord grant to us the pardon of our sins.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(viii), p. 93. Public domain. 'Cross-bearers' here denotes Confessors, per O'Leary's own note."
+    }
+  },
+  {
+    "id": "cop-doxology-patriarchs",
+    "title": "Doxology of the Patriarchs and Prophets",
+    "text": "Hail Elias the wise prophet, and Eliseos his listening disciple. Great was the report in the land of Egypt of Mark the Apostle, its first guide. O Mary the Virgin, thou art the mother of God, pray to Him for us that he may be merciful to our race. O great Patriarch, Abbot Severus, who gave forth holy doctrine to enlighten our minds; our Father the Confessor, Abbot Dioscorus, contended for the faith against heretics. And all our Fathers who pleased the Lord; may their holy praise be to us a protection. Through their prayers may God grant to us pardon for our sins and give us salvation.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (6)(ix), p. 94. Public domain."
+    }
+  },
+  {
+    "id": "cop-angelic-song",
+    "title": "The Angelic Song",
+    "text": "Let us sing with the angels, Glory to God in the highest, and in earth peace, and good will to men. We praise thee, we bless thee, we glorify thee, we confess thee, we declare thy glory, we give thanks to thee because of the greatness of thy glory, O Lord King over heaven; O God the Father Almighty, O Lord the only-begotten Son Jesus Christ, and the Holy Spirit. Lord God, Lamb of God, Son of the Father, who takest away the sins of the world, have mercy upon us: who takest away the sins of the world, receive our prayer. Who sittest at the right hand of the Father, have mercy upon us. Thou alone art holy, thou alone art exalted, Lord Jesus Christ, with the Holy Spirit. Glory to God the Father. Amen.\n\nI will praise thee every day, I will praise thy holy name for ever and ever. Amen. Very early in the morning does my soul arise to thee, O Lord; for thy commandments are lights upon earth. I have meditated on thy ways, for thou art a help. Early in the morning, O Lord, dost thou hear my voice. My morning prayer is to thee, that thou look upon me.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (7), pp. 94-95. Public domain."
+    }
+  },
+  {
+    "id": "cop-trisagion",
+    "title": "The Trisagion",
+    "text": "Holy God, Holy Mighty, Holy Immortal, who wast born of the Virgin, have mercy upon us.\n\nHoly God, Holy Mighty, Holy Immortal, who wast crucified for us, have mercy upon us.\n\nHoly God, Holy Mighty, Holy Immortal, who didst rise from the dead and ascend to the heavens, have mercy upon us.\n\nGlory be to the Father, and to the Son, and to the Holy Spirit; both now and ever, and unto the ages of ages. Amen.\n\nHoly Trinity have mercy upon us. All-Holy Trinity have mercy upon us. Holy Trinity have mercy upon us. O Lord, pardon our sins. O Lord, pardon our transgressions. O Lord, pardon our offences. O Lord, help those who are sick amongst thy people: heal them for the sake of thy holy name. Remember the souls of our fathers and brethren who have pleased the Lord. Kind Lord, have mercy upon us; kind Lord, help us; accept our prayers. For thine is the glory and power and threefold holiness. Lord, have mercy. Lord, have mercy. Lord, have mercy. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (8), p. 95. Public domain. This is the expanded 'Trisagion with the additions' distinctive to Coptic (non-Chalcedonian) use, not the plain Byzantine Trisagion already elsewhere in this app -- kept as its own distinct component rather than reusing ecu-trisagion."
+    }
+  },
+  {
+    "id": "cop-creed",
+    "title": "The Creed",
+    "text": "We believe in one God the Father Almighty, who made heaven and earth, and all things visible and invisible.\n\nWe believe in one Lord Jesus Christ, only-begotten Son of God, begotten of the Father before all ages. Light of Light; True God of True God; Begotten, not made; Consubstantial with the Father, by whom all things were made. Who for us men and for our salvation came down from heaven, and became flesh of the Holy Spirit and of the Virgin Mary, and was made man. He was crucified for us under Pontius Pilate; he suffered and was buried. He rose from the dead on the third day according to the Scriptures. He ascended into the heavens; he sits at the right hand of the Father, and shall come again in his glory to judge the living and the dead; of whose kingdom there is no end.\n\nAnd we believe in the Holy Ghost, the Lord and Life-giver, who proceedeth from the Father; who with the Father and the Son is worshipped and glorified, who spake by the prophets. In one holy Catholic and Apostolic Church. We confess one baptism for the remission of sins. We look for the resurrection of the dead, and the life of the world to come. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (10), pp. 95-96. Public domain. Given here as its own component (cop-creed) rather than reusing the app's existing comm-creed-* components, since Coptic use omits the Filioque clause ('who proceedeth from the Father' only, with no 'and the Son')."
+    }
+  },
+  {
+    "id": "cop-kyrie-41",
+    "title": "The Forty-One-Fold Kyrie",
+    "text": "Lord, have mercy. (Repeated forty-one times, in commemoration of the thirty-nine lashes of Christ's scourging, the crown of thorns, and the spear in his side.)",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (11), p. 96: 'Kyrie eleison forty-one times.' Public domain. The traditional count-explanation given in the rendered text is standard Coptic devotional teaching, not O'Leary's own wording, since he gives only the rubric."
+    }
+  },
+  {
+    "id": "cop-mp-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe)",
+    "text": "O Master, Lord God of hosts, who art from everlasting and endurest for ever, who made the sun for a light of the day, and established the night for rest for all flesh. We thank thee that thou hast caused us to pass this night in peace, and hast brought us to the beginning of the day. Therefore we pray thee, O King eternal, that the light of truth may shine upon us and illuminate us with the light of thy divine knowledge, and make us children of the light, children of the day; that we may pass this day in purity and truth, in good order, and that we may pass the rest of our life blameless. By the grace and the love towards man of thy only-begotten Son, and the gift of the Holy Spirit; both now and ever, and unto the ages of ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Morning Office item (12), pp. 96-97. Public domain."
+    }
   }
 ]

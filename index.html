@@ -87,7 +87,7 @@
             <span class="app-entry-tradition-code">OO</span>
             <span>
                 <strong>Oriental Orthodoxy</strong>
-                <small>Ethiopian Sa’atat Book of Hours.</small>
+                <small>The Coptic Agpeya, Book of Hours.</small>
             </span>
         </button>
     </div>
@@ -343,10 +343,22 @@
         </div>
     </div><!-- /settings-panel -->
 
-    <!-- Oriental Orthodox (Coptic Agpeya) settings drawer: pending rebuild, 2026-08-18.
-         The fabricated Ethiopian Sa'atat console (9-watch override UI, fixed-psalm
-         scheme) was removed here. A new #oriental-settings drawer for the Coptic
-         Agpeya will be added when that office is built. -->
+    <!-- Coptic Agpeya Liturgical Console -->
+    <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic">
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Agpeya Options</h3>
+
+        <div class="setting-group">
+            <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
+            <div id="cop-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">The Morning Office</div>
+            <div id="cop-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
+            <p style="font-size:0.72em; opacity:0.65; margin-top:4px; margin-bottom:0;">Only the Morning Office has been built so far. The remaining hours and the Midnight Office are a planned follow-on build.</p>
+        </div>
+        <div class="ordo-buttons" style="margin-top:10px;">
+            <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+            <button class="ordo-btn" onclick="resetDate()">Today</button>
+            <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+        </div>
+    </div><!-- /coptic-settings -->
 
     <!-- Church of the East Liturgical Console -->
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">

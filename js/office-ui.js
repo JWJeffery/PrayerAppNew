@@ -120,6 +120,7 @@ function updateSeasonalTheme(color) {
     if (color === 'white')  hex = '#c9a84c';
     if (color === 'green')  hex = '#4a7c59';
     if (color === 'red')    hex = '#9b2335';
+    if (color === 'gold')   hex = '#b8860b';
     document.documentElement.style.setProperty('--accent', hex);
 }
 
@@ -333,6 +334,76 @@ async function hydrateForEastSyriac() {
 }
 
 
+// ── COPTIC AGPEYA HYDRATION ───────────────────────────────────────────────────
+//
+// Replaces the fabricated Ethiopian Sa'atat removed 2026-08-18. Sourced from
+// De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (1911,
+// public domain). Only the Morning Office exists so far -- the remaining 6
+// hours + Midnight Office are a planned follow-on build, then the Theotokia
+// weekly cycle as Phase 2. appData.copticRubrics is an array (one entry per
+// hour built so far), mirroring the eastSyriacRubrics pattern.
+//
+async function hydrateForCopticAgpeya() {
+    await loadKernel();
+    if (!appData) return;
+
+    if (appData._loadedTraditions.has('coptic')) {
+        console.log('[hydrate:coptic] Already loaded — skipping.');
+        return;
+    }
+
+    console.log('[hydrate:coptic] Fetching Coptic shard and rubrics in parallel...');
+
+    const [shardResult, rubricsResult] = await Promise.allSettled([
+        fetch('components/coptic.json'),
+        fetch('components/traditions/coptic/rubrics.json')
+    ]);
+
+    if (shardResult.status === 'fulfilled') {
+        const res = shardResult.value;
+        if (res.ok) {
+            try {
+                const text = await res.text();
+                if (text.trim()) {
+                    const data = JSON.parse(text);
+                    appData.components = appData.components.concat(data);
+                    console.log(`[hydrate:coptic] Loaded components/coptic.json — ${data.length} components`);
+                } else {
+                    console.warn('[hydrate:coptic] components/coptic.json is present but empty.');
+                }
+            } catch (e) {
+                console.warn('[hydrate:coptic] Failed to parse coptic.json:', e.message);
+            }
+        } else {
+            console.warn(`[hydrate:coptic] components/coptic.json not found (HTTP ${res.status}).`);
+        }
+    } else {
+        console.warn('[hydrate:coptic] Network error fetching components/coptic.json:', shardResult.reason);
+    }
+
+    if (rubricsResult.status === 'fulfilled') {
+        const res = rubricsResult.value;
+        if (res.ok) {
+            try {
+                const rubrics = await res.json();
+                appData.copticRubrics = rubrics;
+                console.log(`[hydrate:coptic] Loaded Coptic rubrics.json — ${rubrics.length} office(s).`);
+            } catch (e) {
+                console.warn('[hydrate:coptic] Failed to parse Coptic rubrics.json:', e.message);
+            }
+        } else {
+            console.warn('[hydrate:coptic] Coptic rubrics.json not found — Agpeya sequence will be absent.');
+        }
+    } else {
+        console.warn('[hydrate:coptic] Network error fetching Coptic rubrics.json:', rubricsResult.reason);
+    }
+
+    console.log(`[hydrate:coptic] Total components in registry: ${appData.components.length}`);
+    appData._loadedTraditions.add('coptic');
+    console.log('[hydrate:coptic] Coptic Agpeya hydration complete.');
+}
+
+
 // ── REVISED selectMode() ──────────────────────────────────────────────────────
 //
 // selectMode() is now async so it can await the correct hydration function
@@ -462,6 +533,7 @@ function backToSplash() {
     // bleeding into a subsequent Daily Office load)
    const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
+    const copSettings   = document.getElementById('coptic-settings');
     const esySettings   = document.getElementById('east-syriac-settings');
     const genSettings   = document.getElementById('generic-settings');
     const mainContent   = document.getElementById('main-content');
@@ -477,6 +549,10 @@ function backToSplash() {
     if (ethSettings) {
         ethSettings.classList.add('sidebar-hidden');
         ethSettings.classList.add('mode-hidden');
+    }
+    if (copSettings) {
+        copSettings.classList.add('sidebar-hidden');
+        copSettings.classList.add('mode-hidden');
     }
     if (esySettings) {
         esySettings.classList.add('sidebar-hidden');
@@ -510,9 +586,7 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'unknown': 'daily',
     'church-of-the-east': 'east-syriac',
     'eastern-orthodox': 'horologion',
-    // 'oriental-orthodox' intentionally has no mode yet — the fabricated
-    // Ethiopian Sa'atat was removed 2026-08-18 pending the Coptic Agpeya
-    // rebuild. Falls back safely to 'daily' via the callers below.
+    'oriental-orthodox': 'coptic-agpeya',
     'universal': 'universal'
 };
 
@@ -982,9 +1056,8 @@ function resolveEntryTraditionRoute(tradition) {
             return { storedDefault: 'church-of-the-east', mode: 'east-syriac' };
         case 'eastern-orthodox':
             return { storedDefault: 'eastern-orthodox', mode: 'horologion' };
-        // 'oriental-orthodox' intentionally falls through to default (no route
-        // yet) — the fabricated Ethiopian Sa'atat was removed 2026-08-18
-        // pending the Coptic Agpeya rebuild.
+        case 'oriental-orthodox':
+            return { storedDefault: 'oriental-orthodox', mode: 'coptic-agpeya' };
         case 'universal':
             return { storedDefault: 'universal', mode: 'universal' };
         default:
@@ -1104,6 +1177,7 @@ document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 // the selector/project shell, not the title of every tradition page.
 const OFFICE_MODE_HEADER_LABELS = {
     daily: 'The Episcopal Church',
+    'coptic-agpeya': 'Oriental Orthodoxy',
     'east-syriac': 'Church of the East',
     horologion: 'Eastern Orthodoxy',
     'roman-breviary-dev': 'Roman Breviary 1960/1962',
@@ -1120,6 +1194,7 @@ function updateOfficeModeHeader(mode) {
 // ── Book of Needs tradition-context routing ──────────────────────────────────
 const BOOK_OF_NEEDS_MODE_CONTEXTS = {
     daily: 'ANG',
+    'coptic-agpeya': 'OO',
     'east-syriac': 'COE',
     horologion: 'EO'
 };
@@ -1276,6 +1351,7 @@ async function selectMode(mode) {
     // cannot target a stale drawer after cross-tradition navigation.
     const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
+    const copSettings   = document.getElementById('coptic-settings');
     const esySettings   = document.getElementById('east-syriac-settings');
     const genSettings   = document.getElementById('generic-settings');
     const mainContent   = document.getElementById('main-content');
@@ -1298,6 +1374,41 @@ async function selectMode(mode) {
         if (typeof window.applyBookOfNeedsContext === 'function') {
             window.applyBookOfNeedsContext(window._bookOfNeedsContextTradition);
         }
+
+    } else if (mode === 'coptic-agpeya') {
+        // ── Coptic Agpeya ──────────────────────────────────────────────────────
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
+        if (settingsPanel) {
+            settingsPanel.classList.add('sidebar-hidden');
+            settingsPanel.classList.add('mode-hidden');
+        }
+        if (ethSettings) {
+            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.add('mode-hidden');
+        }
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden');
+            esySettings.classList.add('mode-hidden');
+        }
+        if (genSettings) {
+            genSettings.classList.add('sidebar-hidden');
+            genSettings.classList.add('mode-hidden');
+        }
+        if (copSettings) {
+            copSettings.classList.remove('sidebar-hidden');
+            copSettings.classList.remove('mode-hidden');
+        }
+        mainContent.classList.remove('sidebar-hidden');
+
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Preparing the Agpeya...</h3><p>Loading the Coptic Book of Hours.</p></div>`;
+
+        await hydrateForCopticAgpeya();
+        initializeOfficeDefaultsForCurrentDateTime('coptic');
+        isHydrationComplete = true;
+        requestRender();
 
     } else if (mode === 'east-syriac') {
         // ── Church of the East ────────────────────────────────────────────────
@@ -2582,7 +2693,9 @@ async function flushRender() {
 async function renderOffice() {
     if (!isHydrationComplete) return;
 
-    if (selectedMode === 'east-syriac') {
+    if (selectedMode === 'coptic-agpeya') {
+        return renderCopticAgpeya();
+    } else if (selectedMode === 'east-syriac') {
         return renderEastSyriac();
     } else if (selectedMode === 'horologion') {
         return renderHorologionOffice(selectedHorologionOffice);
@@ -4245,6 +4358,105 @@ async function renderEastSyriac() {
         if (dateHeader)   dateHeader.style.display   = 'none';
         if (saintDisplay) saintDisplay.innerHTML      = '';
     }
+}
+
+// ── COPTIC AGPEYA RENDERER ─────────────────────────────────────────────────────
+//
+// Replaces the fabricated Ethiopian Sa'atat removed 2026-08-18. Only the
+// Morning Office exists so far (rubric id 'coptic-morning-office' in
+// appData.copticRubrics) -- the remaining 6 hours + Midnight Office are a
+// planned follow-on build. This function is written to generalise once more
+// hours exist (an hour-selector radio will pick which rubric entry to use;
+// for now there is exactly one, so it is used unconditionally).
+//
+// Psalms and the Ephesians 4:1-6 lesson are resolved from this app's own
+// verified Bible corpus via the rubric's `psalms`/`lesson` fields -- O'Leary
+// only cites these by reference, he never gives his own translations of them
+// (confirmed directly against the source before this design was chosen).
+//
+async function renderCopticAgpeya() {
+    if (!appData || !appData.copticRubrics || !Array.isArray(appData.copticRubrics) || appData.copticRubrics.length === 0) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Loading...</h3><p>Coptic Agpeya data still loading.</p></div>`;
+        return;
+    }
+
+    const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+
+    // Only one hour built so far -- always the Morning Office.
+    const activeRubric = appData.copticRubrics.find(r => r.id === 'coptic-morning-office');
+    if (!activeRubric) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Coptic Agpeya Error</h3><p class="component-text">The Morning Office rubric was not found.</p></div>`;
+        return;
+    }
+
+    updateSeasonalTheme('gold');
+
+    const copActiveLabel = document.getElementById('cop-active-hour-label');
+    const copDateLabel   = document.getElementById('cop-active-date-label');
+    if (copActiveLabel) copActiveLabel.textContent = activeRubric.officeName || 'The Morning Office';
+    if (copDateLabel) {
+        copDateLabel.textContent = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    }
+
+    let officeHtml = `<div class="office-container">`;
+    officeHtml += `<p class="office-book-title">The Coptic Agpeya</p>`;
+    officeHtml += `<h2>${activeRubric.officeName || 'The Morning Office'}</h2>`;
+    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>`;
+
+    for (let item of (activeRubric.sequence || [])) {
+        item = item.trim();
+
+        // VARIABLE_COP_LESSON — the scripture reading O'Leary cites by reference only
+        if (item === 'VARIABLE_COP_LESSON') {
+            const lesson = activeRubric.lesson;
+            if (lesson && lesson.citation) {
+                const text = await getScriptureText(lesson.citation);
+                officeHtml += `<span class="rubric-text">${lesson.label || 'The Lesson'}</span><h4 class="passage-reference">${lesson.citation}</h4>`;
+                officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_PSALMS — the fixed Psalm (51) plus the full Morning Psalm set,
+        // resolved from this app's own corpus (now correctly Hebrew-numbered).
+        if (item === 'VARIABLE_COP_PSALMS') {
+            const psalmsSpec = activeRubric.psalms;
+            if (psalmsSpec) {
+                const psalmNums = [
+                    ...(psalmsSpec.fixed ? [psalmsSpec.fixed] : []),
+                    ...(Array.isArray(psalmsSpec.set) ? psalmsSpec.set : [])
+                ];
+                officeHtml += `<span class="rubric-text">The Psalms</span>`;
+                for (const psNum of psalmNums) {
+                    const fullText = await getScriptureText('PSALM ' + psNum);
+                    officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                }
+            }
+            continue;
+        }
+
+        // Generic component lookup — covers every cop-* fixed-text component
+        // plus shared components like comm-lords-prayer.
+        const comp = appData.components.find(c => c.id === item);
+        if (comp) {
+            const t = resolveText(comp, rite) || comp.text || '';
+            officeHtml += `<span class="rubric-text">${comp.title || item}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
+        } else {
+            console.warn(`[renderCopticAgpeya] Component not found: ${item}`);
+        }
+    }
+
+    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+
+    // Senkessar is intentionally not shown here -- parked separately per
+    // governance decision 2026-08-18, not merged into the Coptic office.
+    document.getElementById('saint-display').innerHTML = '';
+    document.getElementById('date-header').style.display = 'none';
+    const saintSection = document.querySelector('.saint-section');
+    if (saintSection) saintSection.style.display = 'none';
 }
 
 // === UO MOBILE DRAWER REPAIR START ===
