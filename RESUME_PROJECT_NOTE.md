@@ -2397,3 +2397,26 @@ has no headless browser). No code changes -- documentation closure only. Full de
 **Next session should:** ask Josh what's next. The priest-testing deploy-prep thread (splash
 simplification, Bible Browser unwiring, web-release export size fix, dark mode/sidebar) is now
 fully closed end to end.
+
+## SESSION HANDOFF 2026-08-18 continued -- MAJOR FIND & FIX: DRB Psalms mis-keyed to Vulgate numbering (fixed), before starting the Coptic Agpeya rebuild
+
+**Context:** Josh directed removal of the fabricated Ethiopian Sa'atat and rebuild as the Coptic Agpeya, sourced from De Lacy O'Leary's public-domain 1911 *The Daily Office and Theotokia of the Coptic Church* (Josh uploaded both halves of the scanned book to Google Drive). Before starting content work, examined whether the existing Bible corpus (KJV/DRB/etc.) has merit for the Agpeya's Psalm/Gospel citations, since O'Leary himself only cites psalm/gospel references (never his own translations) -- confirmed reuse of the existing corpus is the right call, same principle as the BCP office.
+
+**That examination surfaced a real, previously-undiscovered defect, fixed this session before any Agpeya work began** (full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date): DRB's Psalms were filed under their own native Vulgate/Septuagint numbering rather than the Hebrew-numbered `PSALM N` keys the other seven translations use, for every key from 10 through 146 -- not a wording variant, a genuinely different psalm under the same key. **Fixed and verified**: all three merge/split boundaries (Ps 9/10, Ps 113/114-115, Ps 146/147) content-checked directly against the text before touching anything; verse count preserved exactly (2,527 -> 2,527); zero remaining mismatches across all 150 psalms x 8 translations; `audit-bible-corpus-structure.mjs` clean. 139 of 150 DRB entries changed (wording untouched, only key/verse-numbering); all other 7 translations byte-identical to before.
+
+**Bonus finding:** DRB is now confirmed the natural translation for the Coptic Agpeya's psalm citations (O'Leary cites Septuagint numbering, which DRB already carries correctly now).
+
+**Governance decisions from this session, going into the Agpeya work (full detail in AUDIT_GOVERNANCE_LEDGER.md):**
+1. Mode stays labeled "Oriental Orthodoxy" at the tradition-family level (Coptic Orthodoxy is part of that communion), but the office itself is explicitly identified as the Agpeya, not conflated with Ethiopian content.
+2. The Ethiopian Senkessar is left parked as its own standalone thing for now -- not merged into the new Coptic office, not deleted, just decoupled. Revisit if/when Ethiopian gets its own office again.
+3. Build order: the 7 hours + Midnight Office first (a complete, prayable office on its own); the Theotokia weekly cycle as a follow-on phase.
+4. Psalms and Gospel readings for the Agpeya will be pulled from the existing verified corpus (now that DRB's numbering is fixed), not transcribed from O'Leary -- he doesn't provide his own translations of them anyway. The genuinely new content to transcribe from O'Leary is the hour introductions, Absolution prayers, litanies/troparia, the Prayer of the Veil, and closing prayers.
+
+**Exact deletion scope confirmed for the fabricated Sa'atat, not yet executed (next step):**
+- `components/ethiopian.json` (the 9 fabricated hour-texts + fixed 3-psalm-per-watch scheme)
+- `components/traditions/ethiopian/rubrics.json`'s `ethiopian-saatat` rubric entry
+- `js/office-ui.js`: `hydrateForEthiopianSaatat()` (~line 348), `getEthiopianHourInfo()` (~line 2722), `renderEthiopianSaatat()` (~lines 4293-4574), `ethChangeDate`/`ethToday` (~2474-75), `toggleEthOverridePanel`/`applyEthOverride`/`resetEthOverride` (~72-102)
+- **Bonus dead-code finding while mapping this:** the `eth-saatat-hour-slot`/`eth-mazmur-slot`/`eth-introduction-to-every-hour`/`VARIABLE_READING_ET`/`eth-saints-commemoration` handlers inside `renderBcpOffice()` (~lines 3910-4090) are unreachable dead code -- `renderOffice()` always branches to `renderEthiopianSaatat()` before `renderBcpOffice()` is ever called in that mode. Delete along with the rest.
+- **NOT touched, real and unrelated:** `data/synaxarium/ethiopian/*` (Senkessar), `data/bible/ET/*` (broader canon corpus), `js/calendar-ethiopian.js` (Ethiopian date-conversion engine).
+
+**Next session should:** execute the Sa'atat deletion as its own clean commit, then begin the Agpeya hour-by-hour build from O'Leary's text (already in Google Drive, both halves -- `DO 1-124 small.pdf` and `DO 125+ small.pdf`, readable directly via the Google Drive connector, no repeated paste/upload cycle needed this time). Also worth checking whether Coptic Great Lent/Paschal-season dating can reuse the existing Eastern Orthodox Julian Paschalion (`byzantine-paschalion.js`) rather than building a third Easter calculator, since Coptic Easter tracks the same Alexandrian computus.

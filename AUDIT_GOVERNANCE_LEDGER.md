@@ -5046,3 +5046,28 @@ active Noonday selection. This closes the visual-verification gap that had been 
 readability, sidebar text-wrapping, box-height clipping, info-icon wrapping, empty box shells --
 none of which had been visually confirmed in a live browser, since this environment has no
 headless browser available). No code changes this session; documentation-only closure.
+
+## SESSION 2026-08-18 continued -- MAJOR FINDING & FIX: DRB Psalms were mis-keyed to Vulgate/Septuagint numbering under Hebrew-numbered PSALM IDs across the entire Psalter
+
+**Discovered while researching the Coptic Agpeya rebuild** (O'Leary's 1911 psalm citations forced a direct cross-translation numbering comparison that had never been done). Confirmed via direct content comparison, not assumed from a formula: `data/bible/OT/psalms.json` stores all 150 psalms under Hebrew/Masoretic-numbered `PSALM N` keys, and seven of the eight translations (KJV, Rotherham, NABRE, NRSV, Coverdale, JPS1985, Grail1963) correctly agree under each key. **DRB did not** -- it was filed under its own native Vulgate/Septuagint numbering without conversion, meaning `PSALM 10`'s DRB text was actually Vulgate Psalm 10 (= Hebrew Psalm 11's content), `PSALM 11`'s DRB was Vulgate 11 (= Hebrew 12), and so on -- not a wording variant, a genuinely different psalm under the same key, for every key from 10 through 146. This is real content misalignment in a corpus this project has repeatedly certified "closed, zero known defects."
+
+**Root cause:** DRB (Douay-Rheims) is translated from the Latin Vulgate, which follows the Greek Septuagint's psalm numbering -- one behind Hebrew numbering from Psalm 10 through 146, with three merge/split points (Hebrew 9-10 = one Vulgate psalm; Vulgate 113 = Hebrew 114-115 merged the other direction; Hebrew 147 = two Vulgate psalms). Whoever originally built `psalms.json` filed DRB under its own native numbering rather than converting to the Hebrew-numbered key space the other seven translations use.
+
+**Fix, fully content-verified before touching the file (per standing project rule against formula-only boundary splits):**
+- Confirmed all three merge/split boundaries directly against the DRB text itself (Vulgate 9:21/22, Vulgate 113:8/9, Vulgate 146/147) before writing anything -- each boundary's content was checked to actually correspond to where KJV's own Hebrew-numbered psalm begins/ends, not assumed from the standard Hebrew/Vulgate correspondence table alone.
+- Vulgate 1-8 and 148-150: unchanged (already correctly aligned).
+- Vulgate 9 split into Hebrew 9 (Vulgate vv.1-21) and Hebrew 10 (Vulgate vv.22-39, renumbered 1-18).
+- Vulgate 10-112 each shifted one key forward (Hebrew N = old Vulgate N-1), verse numbers relabeled to match, wording untouched.
+- Vulgate 113 (the "In exitu Israel" Exodus psalm) split into Hebrew 114 (vv.1-8) and Hebrew 115 (vv.9-26, renumbered 1-18).
+- Vulgate 114 + Vulgate 115 merged into Hebrew 116 (19 verses total).
+- Vulgate 116-145 each shifted one key forward, same as the 10-112 block.
+- Vulgate 146 + Vulgate 147 merged into Hebrew 147 (20 verses total).
+- 139 of 150 `PSALM N` entries had their DRB field changed; wording was never altered, only which key it's filed under and verse numbering.
+
+**Verification, not assumption:** total verse count preserved exactly (2,527 before, 2,527 after -- confirms no content dropped or duplicated in the regrouping). Every one of the 150 rebuilt DRB entries has clean sequential verse numbering with no gaps. Cross-checked new verse counts against KJV's Hebrew verse count at every boundary psalm -- all matched exactly except Psalm 9 (21 DRB vs. 20 KJV) and Psalm 11 (8 DRB vs. 7 KJV), both explained by DRB's own title-line verse-1 convention, the same ordinary cross-translation variance already tolerated everywhere else in this corpus. Final full-file sweep: zero remaining key/internal-numbering mismatches across all 150 psalms and all 8 translations. `node scripts/audit-bible-corpus-structure.mjs` shows no new findings (only pre-existing, unrelated registry-metadata warnings).
+
+**No other translation's content was touched** -- KJV, Rotherham, NABRE, NRSV, Coverdale, JPS1985, and Grail1963 fields are byte-identical to before.
+
+**This was a genuinely new discovery, not a known/logged issue** -- it slipped past every previous Psalms audit (including the 2026-07-06 closure that specifically caught a Grail1963 false-certification) because no prior pass did a direct verse-by-verse cross-translation comparison at the same key across the whole Psalter; content-level checks were done per-translation, not across translations at a shared key.
+
+**Not yet done, worth a follow-up:** the same numbering question should be checked for any other Vulgate-tradition translation this project might add later, and it's worth a note that DRB is now the psalm-numbering match for any future Vulgate/Septuagint-tradition liturgical work (e.g. the Coptic Agpeya, whose citations follow Septuagint numbering) -- this is exactly why the defect surfaced now.
