@@ -271,5 +271,45 @@
     "meta": {
       "source": "O'Leary 1911, Prayer of the Eleventh Hour item (8), pp. 105-106. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
     }
+  },
+  {
+    "id": "cop-tw-esaias-prayer",
+    "title": "Prayer of Esaias",
+    "text": "God is with us.\n\nKnow this, all ye Gentiles, that God is with us.\n\nKnow this unto the ends of the earth, that God is with us.\n\nAll ye that devise shall be defeated, and if ye have again made strong your hands, ye shall be made feeble, for God is with us.\n\nAnd every counsel that ye make shall not stand, for God is with us.\n\nAll that ye say shall be made void, for God is with us.\n\nWe fear not your terror, nor are we dismayed in heart, for God is with us.\n\nBut the Lord, him will we praise, for he is our God, he is our strength, for God is with us.\n\nWe have trusted in him, because of him we shall be saved, for God is with us.\n\nBehold, I and the children given me by God, people that walked in darkness, have seen a great light: and they that dwelt in the land and shadow of death, on them hath the light shined, for God is with us.\n\nUnto us a Child is born; unto us a Son is given, for God is with us.\n\nThe government shall be upon his shoulder, he is a mighty Counsellor, for God is with us.\n\nThy Mighty God, the Ruler, for God is with us.\n\nThe Prince of Peace and Father of the world to come, for God is with us.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour item (2), pp. 106-107. Public domain. Woven throughout with O'Leary's own translation of Isaiah 8:8-10 and 9:6."
+    }
+  },
+  {
+    "id": "cop-tw-troparion",
+    "title": "Troparion of the Twelfth Hour",
+    "text": "Behold, the day is passed; we thank thee, O Lord, and pray thee graciously to grant us this evening and this night to be without sin. O Saviour, protect us.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nBehold, the day is passed.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nThe immaterial creatures, the Cherubim, full of eyes, and the Seraphim with six wings, with unceasing cry magnify thee, together with the angels, in the hymn \"Thrice holy before the world, thou the Father without beginning, and the Son consubstantial with thee, and the Holy Ghost the giver of life, Trinity undivided\". Thou hast appeared to us by means of the holy Virgin, through thy Word, that is Christ our Helper. Thou hast called the Athletes and Prophets and Martyrs to everlasting life through thyself, and they assembled pray for the pardon of our offences, because we have turned away from striving through the deceit of the adversary. Deliver us and we shall praise thee with the Angels, saying, \"Holy, Holy, Holy, Lord God of Sabaoth, heaven and earth are full of thy glory.\"",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour item (3), p. 107. Public domain. 'Glory be, &c.', 'Both now, &c.', and the refrain repetition ('Behold, the day is passed.') resolved to their full forms per the no-placeholder governance rule."
+    }
+  },
+  {
+    "id": "cop-tw-litany",
+    "title": "Litany of the Twelfth Hour",
+    "text": "Thou holy Mother of God, intercede for us sinners.\n\nYe powers of heaven, Angels and Archangels, Cherubim and Seraphim, intercede for us sinners.\n\nSaint John, Forerunner, Baptist and Martyr, intercede for us sinners.\n\nHoly Apostles, Preachers and Evangelists, intercede for us sinners.\n\nAll Prophets working signs, Moses and Aaron, Elias and Eliseos, and all the other prophets, intercede for us sinners.\n\nAll ye choir of Martyrs, Confessors, and holy Athletes, intercede for us sinners.\n\nOur holy Fathers, the High Priests who strove for the orthodox faith, intercede for us sinners.\n\nOur holy Fathers, the cross-bearers, bearers of the Spirit, who forsook the world, intercede for us sinners.\n\nThrough the incomprehensible power of the holy Cross remove not thy mercies from us.\n\nLord, forgive me a sinner, and have mercy on me, for blessed art thou unto eternity. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour item (5), p. 107. Public domain. O'Leary abbreviates each intercession line after the first as '...intercede, &c.' -- resolved here per the no-placeholder governance rule by writing out 'intercede for us sinners' in full on every line, exactly as the opening line establishes."
+    }
+  },
+  {
+    "id": "cop-tw-second-troparion",
+    "title": "Second Troparion of the Twelfth Hour",
+    "text": "Thou Lord, who knowest the watching of my enemies and understandest the weakness of my nature, O Creator, behold I commit my spirit into thy hands. Protect me under thy good wings, that I sleep not in death. Open my eyes to the greatness of thy works; raise me up always to praise thee. Thou only art the Good One and Lover of man.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nDreadful in thy judgement, O Lord, when men assemble and the Angels stand round. Then the books will be opened and deeds will be revealed, and recollections will confess. What decree will be pronounced on me who am bound in sin? Who will quench the flaming fire for me? Who will give light to my darkness, unless thou have mercy on me, O God? Thou art the One who showest mercy to men.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO Mother of God, since we trusted in thee we shall not be ashamed, but since we have received help and intercession, O holy, pure, and perfect one, we do not fear; we shall put to flight our foes and disperse them. We take refuge with thee as a shield in all things. We pray and beseech that we may invoke thee, Mother of God, so that thou rescue us by thy prayers. Do thou raise us again from the oblivion of sleep that we may give praise through the power of the God who took flesh in thee.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour item (9), pp. 107-109. Public domain. 'Glory be, &c.' and 'Both now, &c.' resolved to their full forms per the no-placeholder governance rule."
+    }
+  },
+  {
+    "id": "cop-tw-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe) of the Twelfth Hour",
+    "text": "O Master, Lord Jesus Christ our God, grant to us rest in sleep, rest for our bodies and cleanness for our souls; protect us from that darkness which is the shadow of sin. May the movements of lust be quiet, may the swelling of the flesh be stilled: grant us a watching mind and humble recollection, behaviour full of virtue, a bed undefiled and a couch that is clean. Do thou make us to arise for the Night and Morning Praises, and grant us praise throughout the night, that we may bless thy holy name, full of glory and all beauty, with thy good Father and the Holy Ghost the giver of life, now and ever and for all eternity. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour item (11), p. 109. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
   }
 ]

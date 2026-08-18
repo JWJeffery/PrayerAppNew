@@ -155,5 +155,29 @@
       "cop-eh-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-twelfth-hour",
+    "officeName": "The Twelfth Hour (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 106-109, public domain. Sequence follows O'Leary's own numbered items (1)-(11). No Gospel lection is cited by O'Leary for this hour (unlike every other hour), so none is included here. Psalms are resolved from this app's own verified Bible corpus -- see the rubric's psalms field. Item (6) is O'Leary's own cross-reference back to the same 'Vouchsafe, O Lord' prayer already built for the Eleventh Hour ('page 104') -- reused directly as cop-eh-vouchsafe-prayer rather than duplicated.",
+    "psalms": {
+      "set": ["130", "131", "132", "133", "134", "137", "138", "141", "142", "146", "147"],
+      "note": "O'Leary p.106: 'Psalms 129 (130), 130 (131), 131 (132), 132 (133), 133 (134), 136 (137), 137 (138), 140 (141), 141 (142), 145 (146), 146 (147, verses 1-11), 147 (147, verses 12-20).' The last two Vulgate citations (146, 147) are the two halves of this app's Hebrew-numbered Psalm 147 (the same Vulgate/Hebrew boundary already resolved corpus-wide in this session's DRB numbering fix) -- read here as the single whole Psalm 147."
+    },
+    "sequence": [
+      "VARIABLE_COP_PSALMS",
+      "cop-tw-esaias-prayer",
+      "cop-tw-troparion",
+      "cop-creed",
+      "cop-tw-litany",
+      "cop-eh-vouchsafe-prayer",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-tw-second-troparion",
+      "cop-kyrie-41",
+      "cop-tw-concluding-prayer",
+      "cop-closing-formula"
+    ]
   }
 ]

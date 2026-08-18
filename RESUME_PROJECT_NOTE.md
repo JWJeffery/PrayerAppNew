@@ -2666,3 +2666,44 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 method, same source already in hand. After both: Phase 2, the Theotokia weekly cycle, and resolve
 `cop-theotokion`'s sourcing in that same phase. This closes out the "hours first" half of the
 governance decision from earlier in this project.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Twelfth Hour built -- ALL SEVEN HOURS COMPLETE
+
+Sixth and final hour checkpoint. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same
+date.
+
+**Real gap hit and resolved this session, worth remembering:** the first uploaded PDF half
+(`DO 1-124 small.pdf`) cut off mid-sentence partway through the Twelfth Hour's final Metremhe
+prayer. The second half (`DO 125+ small.pdf`) does NOT continue from there -- it jumps straight to
+the Theotokia section, a later part of the book entirely. **Josh pasted the missing page (109)
+directly, which closed the gap.** If a future session needs anything between "roughly page
+109-110" and wherever the Theotokia actually begins in the second file (the Midnight Office is
+still unbuilt and its source has not been located within either uploaded file), the same gap may
+recur -- ask Josh to paste/upload that specific range rather than assuming it's in one of the two
+files already in hand.
+
+**Built:** the complete Twelfth Hour (O'Leary's items (1)-(11)) as 5 new components in
+`components/coptic.json` (39 entries total) and the `coptic-twelfth-hour` rubric. Two governance-
+rule patterns applied: (1) a litany abbreviating "intercede for us sinners" as "&c." on every line
+after the first -- resolved by spelling it out every time; (2) O'Leary's own cross-reference back to
+the Eleventh Hour's "Vouchsafe, O Lord" prayer ("page 104") -- reused as `cop-eh-vouchsafe-prayer`
+rather than re-transcribed, the correct application of "reuse an already-verified component" rather
+than treating every cross-reference as something needing fresh sourcing.
+
+**Confirmed, not assumed:** this is the only one of the seven hours with no Gospel lection cited by
+O'Leary -- checked directly rather than assumed, so `coptic-twelfth-hour` has no `lesson` field.
+
+**Wired:** `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` now has all seven hours; drawer status
+text updated to reflect the full hour-cycle being built.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**ALL SEVEN HOURS OF THE COPTIC AGPEYA ARE NOW BUILT.** Closes the "hours first" half of the
+governance decision from earlier in this project.
+
+**Next session should:** source and build the Midnight Office (genuinely separate from the seven
+day-hours; its text has not yet been located within either uploaded O'Leary file -- may need Josh
+to paste/upload a specific additional page range). After that: Phase 2, the Theotokia weekly hymn
+cycle, and resolve `cop-theotokion`'s open sourcing question in that same phase. None of the seven
+built hours are GREEN yet -- all remain amber pending an independent read-through before promotion.
