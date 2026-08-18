@@ -1707,6 +1707,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         options: [
             { value: "coptic-morning-office", label: "The Morning Office", detail: "Prime" },
             { value: "coptic-third-hour", label: "The Third Hour", detail: "Terce" },
+            { value: "coptic-sixth-hour", label: "The Sixth Hour", detail: "Sext" },
         ],
     },
     eastSyriac: {
@@ -4462,6 +4463,22 @@ async function renderCopticAgpeya() {
                     officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
                     officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
                 }
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_ANTIPHONAL_PSALM — a psalm O'Leary has interleaved verse-by-verse
+        // with a troparion's refrain (currently only the Sixth Hour's Psalm 55). This app
+        // does not yet render true interleaved antiphons, so the full psalm is presented
+        // as its own labeled reading -- no content is omitted, only the precise
+        // interleaving structure is simplified (documented in the rubric's own note).
+        if (item === 'VARIABLE_COP_ANTIPHONAL_PSALM') {
+            const antSpec = activeRubric.antiphonalPsalm;
+            if (antSpec && antSpec.reference) {
+                const fullText = await getScriptureText('PSALM ' + antSpec.reference);
+                officeHtml += `<span class="rubric-text">${antSpec.label || ('Psalm ' + antSpec.reference)}</span>`;
+                officeHtml += `<h4 class="passage-reference">Psalm ${antSpec.reference}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
             }
             continue;
         }

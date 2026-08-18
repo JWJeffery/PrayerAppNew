@@ -2579,3 +2579,36 @@ the Theotokia -- watch specifically for any "&c.", "as before", or similar short
 text, and resolve each one the same way (reuse an already-transcribed component if the formula
 matches something already built; otherwise flag and research properly, never leave it truncated
 in the shipped component). Continue with the Sixth Hour as originally planned.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Sixth Hour built, no-placeholder rule applied throughout
+
+Third Agpeya checkpoint, same source (O'Leary 1911, pp. 99-101). First hour built entirely under
+the no-abbreviated-liturgical-text rule established earlier this session. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Sixth Hour (O'Leary's items (1)-(7)) as 3 new components
+(`cop-sh-troparion`, `cop-sh-second-troparion`, `cop-sh-concluding-prayer`) in
+`components/coptic.json` (27 entries total) and the `coptic-sixth-hour` rubric. The troparion's
+refrain, which O'Leary prints once then abbreviates ("O thou who, &c.") before each of its three
+further appearances, was written out in full every time -- applying the new governance rule
+directly during transcription, not as an afterthought fix.
+
+**One honest structural simplification, documented not hidden:** O'Leary's troparion is genuinely
+antiphonal (the refrain interleaves verse-by-verse with Psalm 55), which this app doesn't yet
+render. The full psalm is presented as its own labeled reading instead -- nothing is omitted or
+abbreviated, only the precise interleaving structure is simplified, and this is spelled out in the
+rubric's own note rather than silently flattened. New `VARIABLE_COP_ANTIPHONAL_PSALM` handler
+added to `renderCopticAgpeya()` for this.
+
+**Wired:** `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` now has all three hours;
+`index.html`'s drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining "&c."/truncation-style placeholders in actual prayer text, div-tag balance
+unchanged (247/247).
+
+**Next session should:** continue with the Ninth Hour, then Eleventh (Vespers), Twelfth (Compline),
+then the Midnight Office -- same method, and keep applying the no-placeholder rule live during
+transcription rather than as a follow-up pass. After all hours: Phase 2, the Theotokia weekly
+cycle, and resolve `cop-theotokion`'s sourcing. True interleaved-antiphon rendering (currently
+simplified for the Sixth Hour) is a worthwhile future enhancement, not an open defect.

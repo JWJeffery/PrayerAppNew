@@ -64,5 +64,37 @@
       "cop-th-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-sixth-hour",
+    "officeName": "The Sixth Hour (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 99-101, public domain. Sequence follows O'Leary's own numbered items (1)-(7). Psalms and the Gospel lection are resolved from this app's own verified Bible corpus (O'Leary cites references only) -- see the rubric's psalms/lesson/antiphonalPsalm fields. Reuses the Trisagion, Lord's Prayer, 41-fold Kyrie, and closing formula already built for the Morning Office, per O'Leary's own cross-reference ('Trisagion. No. (8) at Morning Office.'). Item (2)'s troparion is properly antiphonal in O'Leary (the refrain interleaves verse-by-verse with Psalm liv/55) -- this app does not yet have interleaved-refrain rendering, so the full psalm is presented as its own labeled reading alongside the troparion rather than interleaved verse-by-verse. No content is omitted, only the precise interleaving structure is simplified; documented honestly rather than silently flattened.",
+    "psalms": {
+      "set": ["54", "57", "61", "63", "64", "67", "70", "84", "85", "86", "87", "91", "93"],
+      "note": "O'Leary p.99: 'Psalms 53 (54), 56 (57), 60 (61), 62 (63), 63 (64), 66 (67), 69 (70), 83 (84), 84 (85), 85 (86), 86 (87), 90 (91), 92 (93).' Numbers converted to this app's Hebrew-numbered PSALM keys."
+    },
+    "antiphonalPsalm": {
+      "reference": "55",
+      "label": "Psalm 55 (with the Troparion's Refrain)",
+      "note": "O'Leary p.99: 'Psalm liv. 1-17' then 'Psalm liv. 18, &c.' -- Vulgate Psalm 54 = this app's Hebrew-numbered Psalm 55. O'Leary's rubric has this psalm read antiphonally, interleaved verse-by-verse with the troparion's refrain (see cop-sh-troparion) -- presented here as a single full reading since interleaved rendering is not yet built."
+    },
+    "lesson": {
+      "citation": "MATTHEW 5:3-12",
+      "label": "The Lesson",
+      "note": "O'Leary p.99: 'Lection. S. Matt. v. 3-12.'"
+    },
+    "sequence": [
+      "VARIABLE_COP_PSALMS",
+      "VARIABLE_COP_LESSON",
+      "cop-sh-troparion",
+      "VARIABLE_COP_ANTIPHONAL_PSALM",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-sh-second-troparion",
+      "cop-kyrie-41",
+      "cop-sh-concluding-prayer",
+      "cop-closing-formula"
+    ]
   }
 ]

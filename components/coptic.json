@@ -191,5 +191,29 @@
     "meta": {
       "source": "O'Leary 1911, Prayer of the Third Hour item (7), p. 98. Public domain. O'Leary's own printed text ends '...who, &c.' -- his shorthand for a doxology conclusion he does not spell out again at this specific point. CORRECTED 2026-08-18 per governance rule (no abbreviated/placeholder liturgical text): completed using the doxology O'Leary himself gives in full at the end of the Morning Office's Prayer of Thanksgiving (cop-mp-thanksgiving) -- 'through whom be glory and honour and power...consubstantial with thee; now and always and for ever and ever. Amen.' Confirmed via independent cross-check against several other English editions of this same traditional prayer (contemporary, copyrighted, not quoted here) that this is in fact the standard formula this prayer concludes with -- not a guess, and no new wording invented; only O'Leary's own already-transcribed translation reused."
     }
+  },
+  {
+    "id": "cop-sh-troparion",
+    "title": "Troparion of the Sixth Hour",
+    "text": "O thou who on the sixth day and at the sixth hour wast nailed to the cross on account of the sin which Adam dared in paradise. Take away the handwriting of our sins, O Christ our God, and save us.\n\nO thou who on the sixth day and at the sixth hour wast nailed to the cross on account of the sin which Adam dared in paradise. But I have called upon God and the Lord hath heard me. O God, hear my prayer, and turn not thy face from me and hear me.\n\nO thou who on the sixth day and at the sixth hour wast nailed to the cross on account of the sin which Adam dared in paradise. At even and at morn and at noon will I utter my words and he will hear my voice, he will save my soul in peace.\n\nO thou who on the sixth day and at the sixth hour wast nailed to the cross on account of the sin which Adam dared in paradise.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO Jesus Christ our God, who wast nailed to the cross at the sixth hour, thou hast destroyed sin by the wood and hast given life to the dead by thy death, to man whom thou didst make by thy hands and who died by sin. Destroy our passions by thy sufferings and by the nails wherewith thou wast nailed. Purge our minds from evil, in our works and lusts, in accordance with thy pity.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nAs we have no excuse by reason of the multitude of our sins, through thee, O Mother of God, we have access to him whom thou didst bear. Great is thy intercession, mighty and acceptable to our Saviour. O pure Mother, cast not out us sinners from thy intercessions to him whom thou didst bear. For he is merciful and mighty towards us, for he suffered on our account that he might save us. Let thy mercies come quickly to us, for we are greatly in need. Help us, O God our Saviour. For the glory of thy name, O Lord, save us. Forgive us our sins for the sake of thy holy name.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Sixth Hour item (2), pp. 99-100. Public domain. O'Leary prints the refrain once ('O thou who...') then abbreviates its repetitions as 'O thou who, &c.' before each different paired verse of Psalm liv (=55) -- resolved here per the no-placeholder governance rule by writing the refrain out in full before each of its three appearances, exactly as O'Leary's own rubric indicates it is to be repeated. 'Glory be, &c.' and 'Both now, &c.' likewise resolved to their standard full forms."
+    }
+  },
+  {
+    "id": "cop-sh-second-troparion",
+    "title": "Second Troparion of the Sixth Hour",
+    "text": "Thou hast caused salvation in the midst of the earth, O Christ our God; by stretching forth thy hands upon the cross. Therefore all nations cry aloud, Glory to thee, O Lord.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nWe adore thine incorrupt form, O Good One; we ask for forgiveness of our sins, O Christ our God. For thou didst consent in thy good will to ascend the cross, that thou mightest deliver from bondage to the enemy those whom thou didst make. We cry to thee, we give thee thanks. Thou hast filled all with joy, O Saviour, thou who didst come to help the world. To thee, O Lord, be glory.\n\nBoth now and ever, and unto the ages of ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Sixth Hour item (5), p. 100. Public domain. No separate Theotokion follows this troparion in O'Leary's text -- the source moves directly to item (6), the 41-fold Kyrie."
+    }
+  },
+  {
+    "id": "cop-sh-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe) of the Sixth Hour",
+    "text": "We thank thee, O our Lord, the Almighty, Father of our Lord, God and Saviour, Jesus Christ, and we glorify thee. For thou hast ordained the hours of the passion of thy only-begotten Son to be times of prayer and supplication. Accept our prayers, and blot out the handwriting of our sins written against us, even as thou hast broken it down during these holy hours, upon the cross of thy only-begotten Son, Jesus Christ our Lord, and Saviour of our souls, by whom thou hast dissipated all the might of the adversary, and hast given us a season of light and pure life and peaceful being, that we may praise thy name, holy and reverend; and may stand before the dread and just tribunal of thy only-begotten Son, Jesus Christ our Lord; and with the saints may glorify thee, the Father without beginning, and the Son consubstantial with thee, and the Holy Ghost the giver of life, now and always and unto all ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Sixth Hour item (7), pp. 100-101. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
   }
 ]

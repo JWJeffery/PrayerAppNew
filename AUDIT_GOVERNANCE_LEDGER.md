@@ -5295,3 +5295,46 @@ flagged and resolved deliberately (a second source, a documented cross-hour form
 provenance disclosed, or a direct decision from Josh) -- never silently guessed at, and never left
 half-finished in the shipped app either. "Flag it, don't fake it" and "don't ship a placeholder"
 apply together, not as alternatives.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Sixth Hour built, no-placeholder rule applied throughout
+
+Third checkpoint in the Coptic Agpeya rebuild, same source (O'Leary 1911, pp. 99-101). First hour
+built entirely under the new no-abbreviated-liturgical-text governance rule from this session.
+
+**Content built -- the complete Sixth Hour, O'Leary's items (1)-(7):**
+- `components/coptic.json`: 3 new entries (`cop-sh-troparion`, `cop-sh-second-troparion`,
+  `cop-sh-concluding-prayer`), 27 total.
+- **Governance rule applied directly, not just checked afterward:** item (2)'s troparion has a
+  refrain O'Leary prints once then abbreviates as "O thou who, &c." before each of its three
+  further appearances (each paired with a different quoted line of Psalm 55). Resolved by writing
+  the refrain out in full every time, exactly as O'Leary's own rubric indicates it repeats --
+  no ellipsis, no cross-reference, the whole thing said in place. Same treatment for "Glory be,
+  &c." and "Both now, &c." throughout (resolved to their standard full forms, as already
+  established in the Morning/Third Hour components).
+- `cop-sh-concluding-prayer`: O'Leary gives this one in full himself, no abbreviation to resolve.
+- **A structural honesty note, not a content gap:** O'Leary's item (2) is genuinely antiphonal --
+  the refrain is meant to interleave verse-by-verse with Psalm 55 (his "Psalm liv. 1-17" then
+  "Psalm liv. 18, &c." citation). This app doesn't yet render true interleaved antiphons, so the
+  full psalm is presented as its own labeled reading alongside the troparion rather than woven
+  through it verse-by-verse. No text is omitted or abbreviated -- the entire psalm is there in
+  full -- only the precise interleaving structure is simplified, and this is documented explicitly
+  in the rubric's own `note` field rather than silently flattened.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-sixth-hour` rubric, including a
+  new `antiphonalPsalm` field (Psalm 55, converted from O'Leary's Vulgate "Psalm liv" citation) and
+  the ordinary `psalms`/`lesson` fields (13-psalm fixed set, Matthew 5:3-12).
+
+**Code wiring:**
+- New `VARIABLE_COP_ANTIPHONAL_PSALM` handler in `renderCopticAgpeya()`, resolving a rubric's
+  `antiphonalPsalm` field the same way `VARIABLE_COP_PSALMS` resolves the ordinary set.
+- `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended with the Sixth Hour entry.
+- `index.html`'s drawer status text updated (three hours now, not two).
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of `components/coptic.json`
+for any remaining "&c." or truncation-style placeholder in actual prayer text (as opposed to a
+`meta.source` note documenting what was resolved) -- zero found. `index.html` div-tag balance
+confirmed unchanged (247/247).
+
+**Still open:** Ninth, Eleventh/Vespers, Twelfth/Compline hours + Midnight Office, then the
+Theotokia (Phase 2). `cop-theotokion`'s sourcing remains open. True interleaved-antiphon rendering
+remains a known simplification for `coptic-sixth-hour` -- worth a future enhancement, not a defect
+in the sense of missing content.
