@@ -2420,3 +2420,57 @@ fully closed end to end.
 - **NOT touched, real and unrelated:** `data/synaxarium/ethiopian/*` (Senkessar), `data/bible/ET/*` (broader canon corpus), `js/calendar-ethiopian.js` (Ethiopian date-conversion engine).
 
 **Next session should:** execute the Sa'atat deletion as its own clean commit, then begin the Agpeya hour-by-hour build from O'Leary's text (already in Google Drive, both halves -- `DO 1-124 small.pdf` and `DO 125+ small.pdf`, readable directly via the Google Drive connector, no repeated paste/upload cycle needed this time). Also worth checking whether Coptic Great Lent/Paschal-season dating can reuse the existing Eastern Orthodox Julian Paschalion (`byzantine-paschalion.js`) rather than building a third Easter calculator, since Coptic Easter tracks the same Alexandrian computus.
+
+## SESSION HANDOFF 2026-08-18 continued -- Fabricated Ethiopian Sa'atat FULLY REMOVED, ready to begin Coptic Agpeya build
+
+**The fabricated Sa'atat is entirely gone from the codebase**, not repaired -- confirmed via a
+full-repository grep sweep after every deletion, zero remaining references anywhere in live code,
+markup, or QC scripts. Full deletion scope and verification detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date; short version:
+
+- Deleted `components/ethiopian.json` and `components/traditions/ethiopian/rubrics.json` entirely.
+- Removed from `js/office-ui.js`: `hydrateForEthiopianSaatat()`, `getEthiopianHourInfo()`,
+  `renderEthiopianSaatat()`, the three override functions, `ethChangeDate`/`ethToday`, every
+  `ethiopian-saatat`/`'ethiopian'` reference across mode-routing tables and the shared office
+  navigator (six separate dead branches once `_sharedOfficeNavigatorModeKey()` stopped returning
+  `"ethiopian"`), and the ~180-line dead-code `eth-*` handler block inside `renderBcpOffice()`
+  (confirmed unreachable even before this deletion, per the prior session's full read-through).
+- **Caught a real bug while deleting, not just cleanup:** `renderOffice()`'s dispatcher still
+  called the now-deleted `renderEthiopianSaatat()` -- would have thrown at runtime. Fixed.
+- Removed the `#ethiopian-settings` drawer from `index.html` (~55 lines); div-tag balance confirmed
+  unchanged (242/242).
+- `documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md` replaced with a short deprecation notice
+  (was 590 lines claiming "Production Status: OPERATIONAL," now false) rather than silently
+  deleted -- consistent with this project's practice of logging removals, not erasing history.
+- `audit-ledger.html`'s `ETHIOPIAN` dashboard section: four stale `eth:saatat:*` rows replaced
+  with one row documenting the removal; the two `eth:senk:*` Senkessar rows untouched.
+
+**Confirmed NOT touched -- still real, still there:** the Ethiopian Senkessar
+(`data/synaxarium/ethiopian/*`), the entire ET broader-canon Bible corpus (`data/bible/ET/*`,
+14 green books), and `js/calendar-ethiopian.js` (the date-conversion engine). `structure.json` and
+two `documentation/structure-archive*` files were checked directly and left untouched -- pure
+historical/append-only logs with zero live-section Sa'atat references, consistent with this
+project's standing practice of never rewriting history.
+
+**Governance decisions locked in for the Coptic Agpeya build, going forward:**
+1. Tradition-family label stays "Oriental Orthodoxy" (Coptic is part of that communion); the
+   office itself will be explicitly identified as the Agpeya.
+2. Senkessar stays parked, standalone, not merged into the new office.
+3. Build order: 7 hours + Midnight Office first (complete, prayable on its own), Theotokia weekly
+   cycle second.
+4. Psalms and Gospel readings pull from the existing (now correctly Hebrew-numbered) Bible corpus,
+   not transcribed from O'Leary -- he only cites references, never his own translations. The
+   genuinely new content to transcribe is the hour introductions, Absolution prayers, litanies/
+   troparia, the Prayer of the Veil, and closing prayers.
+
+**Next session should:** begin the Coptic Agpeya build. Source is already in Google Drive --
+`DO 1-124 small.pdf` and `DO 125+ small.pdf`, both readable directly via the Google Drive
+connector (no repeated paste/upload cycle needed, unlike Tizaz/Fetha Nagast/etc.). Recommend
+starting with the Morning Office (O'Leary's own first chapter) as a single checkpointed patch,
+same discipline as the Tizaz six-patch rebuild -- read the source, build the JSON structurally
+matching the app's existing rubric/component pattern (fixed prayers as components, Psalm/Gospel
+citations resolved via the existing scripture-resolver), verify, patch, then move to the next
+hour. Also worth checking early whether Coptic Great Lent/Paschal-season dating can reuse the
+existing Eastern Orthodox Julian Paschalion (`byzantine-paschalion.js`) rather than building a
+third Easter calculator, since Coptic Easter tracks the same Alexandrian computus as Eastern
+Orthodox Easter.

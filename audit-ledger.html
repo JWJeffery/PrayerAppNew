@@ -491,12 +491,9 @@ const DAILY_OFFICE = [
 
 
 const ETHIOPIAN = [
-  {key:'eth:saatat:shape', name:"Sa'atat — overall shape", status:'red', note:"9-watch/3-psalm schema built does not match attested Giyorgis structure (Taft: lesson-based, not fixed-psalm-per-watch)"},
-  {key:'eth:saatat:nocturns', name:"Sa'atat — Nocturns (real structure: 4 lessons + responsorial psalm + gospel)", status:'amber', note:'needs full rebuild-or-reaudit decision'},
-  {key:'eth:saatat:eleventh', name:"Sa'atat — Eleventh Hour / Vespers", status:'amber', note:'same lesson-based structure per Taft'},
-  {key:'eth:saatat:twelfth', name:"Sa'atat — Twelfth Hour (Marian devotional office)", status:'amber', note:'distinct office, not currently represented at all'},
+  {key:'eth:saatat:removed', name:"Sa'atat — REMOVED 2026-08-18", status:'red', note:"The fabricated 9-watch/3-psalm schema (never matched the attested Giyorgis structure -- Taft: lesson-based, not fixed-psalm-per-watch) was deleted entirely rather than rebuilt, after no adequate free English source for the real Giyorgis Sa'atat could be found. This slot is being rebuilt as the Coptic Agpeya instead (source: De Lacy O'Leary's 1911 The Daily Office and Theotokia of the Coptic Church, public domain) -- see engine/office rows once that work begins. Full detail in AUDIT_GOVERNANCE_LEDGER.md and documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md (now a deprecation notice, not a spec)."},
   {key:'eth:senk:ginbot', name:"Senkessar — Ginbot", status:'red', note:"days 1–17 audited vs Budge; hallucinated + displaced saints found"},
-  {key:'eth:senk:other', name:"Senkessar — other 12 months", status:'amber', note:'not yet audited'}
+  {key:'eth:senk:other', name:"Senkessar — other 12 months", status:'amber', note:'not yet audited. Parked 2026-08-18 pending a future Ethiopian office -- not merged into the new Coptic Agpeya, data untouched.'}
 ];
 
 const COE_HOURS = ["Ramsha — Evening (6pm)","Suba'a — Compline (9pm, rarely used)","Lelya — Night Vigil (midnight)",

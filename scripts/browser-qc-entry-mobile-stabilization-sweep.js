@@ -90,7 +90,6 @@
 
     const MODE_CASES = [
         { label: "BCP Daily Office", mode: "daily", panelId: "settings-panel", navKey: "daily" },
-        { label: "Oriental Orthodoxy / Ethiopian Sa'atat", mode: "ethiopian-saatat", panelId: "ethiopian-settings", navKey: "ethiopian" },
         { label: "Church of the East", mode: "east-syriac", panelId: "east-syriac-settings", navKey: "eastSyriac" },
         { label: "Eastern Orthodoxy / Horologion", mode: "horologion", panelId: "generic-settings", navKey: "horologion" }
     ];

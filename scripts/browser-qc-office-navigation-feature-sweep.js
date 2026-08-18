@@ -104,26 +104,6 @@
         return "small-compline";
     }
 
-    function expectedEthiopianHour(now = new Date()) {
-        if (typeof window.getEthiopianHourInfo === "function") {
-            const info = window.getEthiopianHourInfo();
-            if (info?.hourId) return info.hourId;
-        }
-
-        const minutes = now.getHours() * 60 + now.getMinutes();
-        const hourMap = [
-            { from: 6 * 60, to: 9 * 60, value: "eth-nigatu-hour-text" },
-            { from: 9 * 60, to: 12 * 60, value: "eth-meserk-hour-text" },
-            { from: 12 * 60, to: 15 * 60, value: "eth-lika-hour-text" },
-            { from: 15 * 60, to: 17 * 60, value: "eth-terk-hour-text" },
-            { from: 17 * 60, to: 18 * 60, value: "eth-serkh-hour-text" },
-            { from: 18 * 60, to: 21 * 60, value: "eth-nome-hour-text" },
-            { from: 21 * 60, to: 24 * 60, value: "eth-hour-7" },
-            { from: 0 * 60, to: 3 * 60, value: "eth-lelit-hour-text" },
-            { from: 3 * 60, to: 6 * 60, value: "eth-mahlet-hour-text" }
-        ];
-        return hourMap.find(item => minutes >= item.from && minutes < item.to)?.value || "eth-nigatu-hour-text";
-    }
 
     function expectedEastSyriacHour(now = new Date()) {
         if (typeof window.getEastSyriacHourInfo === "function") {
@@ -153,14 +133,6 @@
             panelId: "settings-panel",
             expectedActive: expectedDailyOffice,
             alternateValue: active => active === "morning-office" ? "evening-office" : "morning-office"
-        },
-        {
-            label: "Ethiopian Sa'atat",
-            selectModeArg: "ethiopian-saatat",
-            navKey: "ethiopian",
-            panelId: "ethiopian-settings",
-            expectedActive: expectedEthiopianHour,
-            alternateValue: active => active === "eth-nigatu-hour-text" ? "eth-lika-hour-text" : "eth-nigatu-hour-text"
         },
         {
             label: "Church of the East",

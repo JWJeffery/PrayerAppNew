@@ -2587,7 +2587,6 @@ async function initializeBibleBrowser() {
         if (bible) bible.style.display = "flex";
 
         document.body.classList.add("office-active");
-        document.body.classList.remove("ethiopian-theme");
 
         const state = loadLastState();
         const input = $("bible-reference-input");

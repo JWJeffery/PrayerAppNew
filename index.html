@@ -343,60 +343,10 @@
         </div>
     </div><!-- /settings-panel -->
 
-    <!-- Ethiopian Sa'atat Liturgical Console -->
-    <div id="ethiopian-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-ethiopian">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Sa'atat Options</h3>
-
-        <!-- Active Watch display -->
-        <div class="setting-group">
-            <strong style="display:block; margin-bottom:4px;">Active Watch</strong>
-            <div id="eth-active-watch-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
-            <div id="eth-active-date-label"  style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-            <a href="#" id="eth-override-toggle" onclick="toggleEthOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
-        </div>
-        <div class="ordo-buttons" style="margin-top:10px;">
-         <button class="ordo-btn" onclick="ethChangeDate(-1)">Prev</button>
-        <button class="ordo-btn" onclick="ethToday()">Today</button>
-         <button class="ordo-btn" onclick="ethChangeDate(1)">Next</button>
-        </div>
-        <!-- Override selection panel (hidden by default) -->
-        <div id="eth-override-panel" style="display:none;">
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Date</strong>
-                <input type="date" id="eth-override-date" onchange="applyEthOverride()"
-                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Canonical Watch</strong>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nigatu-hour-text"  onchange="applyEthOverride()"> Nigatu — ንጋቱ (06:00–09:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-meserk-hour-text"  onchange="applyEthOverride()"> Mese'rk — መሠርቅ (09:00–12:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lika-hour-text"    onchange="applyEthOverride()"> Lika — ሊካ (12:00–15:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-terk-hour-text"    onchange="applyEthOverride()"> Tese'at — ተሰዓት (15:00–17:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-serkh-hour-text"   onchange="applyEthOverride()"> Serkh — ሠርክ (17:00–18:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nome-hour-text"    onchange="applyEthOverride()"> Nime — ኖሜ (18:00–21:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-hour-7"            onchange="applyEthOverride()"> Le'lit — First Night Watch (21:00–00:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lelit-hour-text"   onchange="applyEthOverride()"> Le'lit — ሌሊት (00:00–03:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-mahlet-hour-text"  onchange="applyEthOverride()"> Mahlet — ማህሌት (03:00–06:00)</label>
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <button onclick="resetEthOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
-            </div>
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Edition:</strong>
-            <select id="eth-length-select" onchange="renderOffice()" style="margin-top:6px; width:100%; padding:8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif;">
-                <option value="abbreviated">Abbreviated (Horologium)</option>
-                <option value="full">Full (Metsihafe Sa'atat)</option>
-            </select>
-        </div>
-        <div class="setting-group" style="margin-top:10px;">
-            <label>
-                <input type="checkbox" id="eth-include-marian" onchange="renderOffice()">
-                Include Weddase Maryam
-            </label>
-        </div>
-    </div><!-- /ethiopian-settings -->
+    <!-- Oriental Orthodox (Coptic Agpeya) settings drawer: pending rebuild, 2026-08-18.
+         The fabricated Ethiopian Sa'atat console (9-watch override UI, fixed-psalm
+         scheme) was removed here. A new #oriental-settings drawer for the Coptic
+         Agpeya will be added when that office is built. -->
 
     <!-- Church of the East Liturgical Console -->
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">

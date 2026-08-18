@@ -5071,3 +5071,94 @@ headless browser available). No code changes this session; documentation-only cl
 **This was a genuinely new discovery, not a known/logged issue** -- it slipped past every previous Psalms audit (including the 2026-07-06 closure that specifically caught a Grail1963 false-certification) because no prior pass did a direct verse-by-verse cross-translation comparison at the same key across the whole Psalter; content-level checks were done per-translation, not across translations at a shared key.
 
 **Not yet done, worth a follow-up:** the same numbering question should be checked for any other Vulgate-tradition translation this project might add later, and it's worth a note that DRB is now the psalm-numbering match for any future Vulgate/Septuagint-tradition liturgical work (e.g. the Coptic Agpeya, whose citations follow Septuagint numbering) -- this is exactly why the defect surfaced now.
+
+## SESSION 2026-08-18 continued -- Fabricated Ethiopian Sa'atat REMOVED entirely (not repaired)
+
+Josh's decision: rather than attempt a rebuild of the real Abba Giyorgis Sa'atat (no adequate free
+English source was ever found for it -- only commercial devotional compilations, nothing citable),
+remove the fabricated 9-watch/3-psalm construction entirely and rebuild the Oriental Orthodox
+office slot as the Coptic Agpeya instead, sourced from De Lacy O'Leary's 1911 public-domain
+*The Daily Office and Theotokia of the Coptic Church*.
+
+**Governance decisions confirmed before deletion began:**
+1. The tradition-family label stays "Oriental Orthodoxy" (the Coptic Orthodox Church is part of
+   that communion) -- but the office itself is now explicitly identified as the Agpeya, not
+   conflated with Ethiopian content.
+2. The Ethiopian Senkessar (saints calendar) is left parked as its own standalone thing -- not
+   merged into the new Coptic office, not deleted. Revisit if/when Ethiopian gets its own office
+   again.
+3. Build order for the Agpeya: the 7 hours + Midnight Office first, Theotokia weekly cycle second.
+
+**Full deletion scope, executed and verified (`node --check` after every edit):**
+- `components/ethiopian.json` and `components/traditions/ethiopian/rubrics.json` deleted entirely
+  via `git rm`. The latter's `morning-office`/`evening-office` entries were confirmed dead/
+  unreachable duplicates before deletion (Array.find always matches the real BCP entries loaded
+  first in `data/rubrics.json`; the ethiopian file's copies are concatenated after and can never
+  be reached) -- safe to remove the whole file, not just the `ethiopian-saatat` entry.
+- `js/office-ui.js`: removed `hydrateForEthiopianSaatat()`, `getEthiopianHourInfo()` (the
+  fabricated 9-watch time-map), `renderEthiopianSaatat()` (~280 lines), `ethChangeDate`/`ethToday`,
+  `toggleEthOverridePanel`/`applyEthOverride`/`resetEthOverride`, the `window._temporalOverride`
+  init, and every reference in `UNIVERSAL_OFFICE_TRADITION_MODE_MAP`, `resolveEntryTraditionRoute`,
+  `OFFICE_MODE_HEADER_LABELS`, `BOOK_OF_NEEDS_MODE_CONTEXTS`, `SHARED_OFFICE_NAVIGATOR_CONFIGS`,
+  the `ethiopian-saatat` branch in `selectMode()`, and five separate dead `modeKey === "ethiopian"`
+  branches across the shared office navigator functions (`_sharedOfficeNavigatorActiveValue`,
+  `_sharedOfficeNavigatorCurrentLine`, `setSharedOfficeNavHour`, `setSharedOfficeNavDate`,
+  `todaySharedOfficeNavDate`, `initializeOfficeDefaultsForCurrentDateTime`) -- all unreachable
+  once `_sharedOfficeNavigatorModeKey()` no longer returns `"ethiopian"`.
+- **Real bug caught and fixed, not just cleanup:** `renderOffice()`'s dispatcher still had
+  `if (selectedMode === 'ethiopian-saatat') return renderEthiopianSaatat();` -- since
+  `renderEthiopianSaatat` no longer exists, this branch would have thrown at runtime if ever
+  reached. Removed along with the rest.
+- **Also removed as confirmed dead code** (found during the prior session's full read-through,
+  deleted now that its last reason to exist is gone): the `eth-saatat-hour-slot`/`eth-mazmur-slot`/
+  `eth-introduction-to-every-hour`/`VARIABLE_READING_ET`/`eth-saints-commemoration` handler block
+  inside `renderBcpOffice()` (~180 lines) -- `renderOffice()` always branched away to
+  `renderEthiopianSaatat()` before `renderBcpOffice()` could ever be reached in that mode, so this
+  block was unreachable even before deletion.
+- `index.html`: removed the entire `#ethiopian-settings` drawer (9-watch override radio UI, the
+  abbreviated/full "Edition" selector, the Weddase Maryam checkbox) -- ~55 lines. Left a comment
+  marking where the future Coptic Agpeya settings drawer will go. Div-tag balance confirmed
+  unchanged (242/242) after removal.
+- `js/bible-browser/bible-browser.js` and four call sites in `js/office-ui.js`: removed now-dead
+  `document.body.classList.remove('ethiopian-theme')` calls (harmless no-ops once the class is
+  never added anywhere, removed for tidiness).
+- `scripts/browser-qc-entry-mobile-stabilization-sweep.js` and
+  `scripts/browser-qc-office-navigation-feature-sweep.js`: removed the Ethiopian Sa'atat test
+  cases and the now-orphaned `expectedEthiopianHour()` helper (which itself called the deleted
+  `window.getEthiopianHourInfo`).
+
+**Documentation handled honestly, not silently deleted:** `documentation/ETHIOPIAN_SAATAT_
+DOCUMENTATION.md` (590 lines, claimed "Production Status: OPERATIONAL") replaced with a short
+deprecation notice explaining what was removed, why, what replaced it, and what was NOT touched
+-- consistent with this project's standing practice of logging removal decisions rather than
+erasing the record (same pattern as the Laodiceans/Apollonius/Odes-stub removals). The dashboard's
+`ETHIOPIAN` section (`audit-ledger.html`) had its four stale `eth:saatat:*` rows (tracking a
+rebuild-or-reaudit decision that is no longer happening) replaced with a single row documenting
+the removal and pointing to the Coptic Agpeya as the replacement plan; the two `eth:senk:*`
+Senkessar rows are untouched (that content is parked, not deleted, and remains real).
+
+**Explicitly NOT touched, confirmed still real and unrelated:**
+- `data/synaxarium/ethiopian/*` + `senkessar-index.json` (the Senkessar) -- Budge-sourced,
+  substantially audited, parked per governance decision #2 above.
+- `data/bible/ET/*` -- the entire ET broader-canon Bible corpus (14 green books) -- unrelated to
+  the Sa'atat's structural problem.
+- `js/calendar-ethiopian.js` -- the Ethiopian date-conversion engine -- never proven wrong,
+  orthogonal to this deletion (Ethiopian and Coptic calendars have different epochs/month names,
+  so this engine doesn't transfer to the Agpeya work either).
+- `structure.json` and the two `documentation/structure-archive*`/`structure-reference.json`
+  files -- pure historical/append-only project logs. Checked directly: `structure.json`'s live
+  sections (`admin.todos`, `audit_findings`, `paused_work`) contain zero Sa'atat references;
+  only its historical changelog narrative does, which per this project's standing practice is
+  never rewritten to erase what was true at the time.
+
+**Final verification before commit:** full-repository grep sweep for every fabricated-Sa'atat
+identifier (`ethiopian-saatat`, `eth-override*`, `getEthiopianHourInfo`, `hydrateForEthiopianSaatat`,
+`renderEthiopianSaatat`, `ethiopian-theme`, the three override functions, `ethChangeDate`/
+`ethToday`) returns zero hits in any live code, markup, or QC script -- only the three confirmed-
+historical files listed above. `node --check` clean on every touched `.js` file; audit-ledger.html's
+inline script re-verified with `new Function()` after every edit; index.html div-tag balance
+unchanged.
+
+**Next session should:** begin the Coptic Agpeya build from O'Leary's text (already in Google
+Drive, both halves readable directly via the Google Drive connector). See the resume note entry
+of the same date for the exact build plan.
