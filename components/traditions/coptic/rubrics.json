@@ -309,5 +309,19 @@
       "cop-friday-theotokia-crown",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-saturday-theotokia",
+    "officeName": "The Saturday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 184-191, public domain. Seventh and final day of the weekly Theotokia hymn cycle -- completes Phase 2. Structure: nine sections (no paraphrases) plus TWO Crowns, unique among the week (every other day has one) -- confirmed by the source itself, not a duplication introduced here. Both Crowns end with the shorter abbreviation 'We pray, &c.' rather than the fuller 'We pray thee be mindful, &c.' seen on the three preceding Tone Batos days; completed using that same Tone Batos formula as the best-supported reading, but disclosed in both Crown components' own meta as the least certain of this build's several cross-reference completions, since the abbreviation here is not an exact match to the days it was drawn from. O'Leary's book also contains a large 'Primary paraphrases' and 'Secondary paraphrases' appendix for this day specifically (the Saturday Theotokia has by far the most manuscript-variant material of any day in the book) -- deliberately not built here, consistent with the scope decision applied to every day this week.",
+    "sequence": [
+      "cop-saturday-psali",
+      "cop-saturday-alt-psali",
+      "cop-saturday-theotokia",
+      "cop-saturday-theotokia-crown-1",
+      "cop-saturday-theotokia-crown-2",
+      "cop-closing-formula"
+    ]
   }
 ]

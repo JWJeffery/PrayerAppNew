@@ -5766,3 +5766,66 @@ Sixth day of Phase 2, one remains. Source: O'Leary 1911, pp. 177-184.
 
 **Still open:** Saturday -- the last day of the weekly cycle, then `cop-theotokion`'s sourcing
 question closes out this project's entire planned Coptic Agpeya scope.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Saturday built -- ENTIRE PLANNED SCOPE COMPLETE
+
+Seventh and final day of Phase 2. Source: O'Leary 1911, pp. 184-191. This completes the entire
+planned content-build for the Coptic Agpeya: all seven hours, the Midnight Office, and the full
+seven-day Theotokia weekly cycle.
+
+**Content built -- the complete Saturday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 5 new entries (`cop-saturday-psali`, `cop-saturday-alt-psali`,
+  `cop-saturday-theotokia`, `cop-saturday-theotokia-crown-1`, `cop-saturday-theotokia-crown-2`),
+  87 total.
+- **Genuinely unique structure among the week, confirmed by the source itself:** Saturday has two
+  Crowns, not one -- every other day this week has exactly one. Represented as two distinct
+  components rather than merged or treated as a duplication error.
+- **No-placeholder rule applied to a ~30-times-repeated refrain** in the main Psali ("O Lord, &c."
+  after its first full statement), written out in full every time.
+- **Careful non-assumption of cross-day wording:** the Alternative Psali's closing line was
+  completed using Saturday's *own* distinct closing formula ("Whenever we sing, let us say with
+  sweetness, 'O Lord Jesus Christ, be merciful to our souls'") rather than the slightly different
+  wording ("Whenever we sing psalms... have mercy on our souls") already established on Wednesday/
+  Thursday/Friday -- confirmed the two phrasings differ and used the one Saturday's own text
+  actually gives.
+- **The least certain of this session's several cross-reference completions, disclosed honestly as
+  such:** both Crowns end with the shorter "We pray, &c." rather than the exact "We pray thee be
+  mindful, &c." confirmed identically on the three preceding Tone Batos days. Completed using that
+  Tone Batos formula as the best-supported reading (Saturday shares the same tone heading), but
+  flagged explicitly in both components' `meta` as a judgement call rather than an exact match,
+  should a fuller source later confirm or correct it -- distinguished plainly from the higher-
+  confidence exact-match completions found earlier this session.
+- O'Leary's large "Primary paraphrases" and "Secondary paraphrases" appendix for this day (by far
+  the most extensive manuscript-variant material of any day in the book) deliberately excluded,
+  consistent with the scope decision applied to every day this week.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-saturday-theotokia` rubric.
+
+**`cop-theotokion` finally resolved, closing a gap flagged since the Morning Office checkpoint at
+the start of this rebuild:** confirmed on inspection that its old text ("O Mother of the True
+Light, we glorify thee as the Mother of God, for thou hast borne for us the Savior of all") matches
+nothing anywhere in O'Leary's actual text -- it was fabricated, same as the deleted Sa'atat. Fixed
+by pointing it to O'Leary's own Doxology of the Virgin (Morning Office item (6)(i), already
+independently transcribed and cited as `cop-doxology-virgin` back at this rebuild's first
+checkpoint) -- reused rather than duplicated, since that component already is exactly the kind of
+short, complete, standalone Marian doxology this slot needs.
+
+**Code wiring:** no new handlers needed for Saturday's content itself (two Crowns simply both
+appear in the sequence array). `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended with the
+Saturday Theotokia -- the full seven-day cycle is now selectable alongside all seven hours and the
+Midnight Office (fifteen offices total in the Coptic Agpeya navigator). `index.html` drawer status
+text rewritten to reflect the complete build.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of the entire
+`components/coptic.json` (now 87 entries, covering the complete Agpeya) for any remaining
+placeholder text in actual prayer content -- zero found anywhere in the whole file.
+`index.html` div-tag balance confirmed unchanged.
+
+**THE ENTIRE PLANNED COPTIC AGPEYA REBUILD IS NOW CONTENT-COMPLETE:** all seven hours (Morning,
+Third, Sixth, Ninth, Eleventh, Twelfth), the Midnight Office (three nocturns), and the full
+seven-day Theotokia cycle (Sunday through Saturday, each with its Psali, Alternative Psali, and
+Theotokia). None of this is marked GREEN -- every book in this rebuild remains amber pending an
+independent human read-through against source, same bar as every other book in this project before
+promotion. The standing governance rules established or reinforced during this rebuild (no
+abbreviated/placeholder liturgical text; the Google Drive PDF-extraction tool limitation; the
+"corroborate before completing" method for genuine textual gaps) all apply to any future liturgical
+content work in this project, not just the Coptic Agpeya.

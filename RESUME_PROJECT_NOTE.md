@@ -2944,3 +2944,46 @@ out this project's entire planned Coptic Agpeya scope (all seven hours, the Midn
 the full seven-day Theotokia cycle). None of the built content is GREEN yet -- everything remains
 amber pending an independent human read-through against source, same bar as every other book in
 this project before promotion.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Saturday built -- ENTIRE REBUILD CONTENT-COMPLETE
+
+Seventh and final day of Phase 2. This completes the entire planned Coptic Agpeya rebuild: all
+seven hours, the Midnight Office, and the full seven-day Theotokia cycle. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Saturday Psali, Alternative Psali, and Theotokia (9 sections + two Crowns
+-- the only day this week with two, confirmed by the source itself) as 5 new components in
+`components/coptic.json` (87 entries total) and the `coptic-saturday-theotokia` rubric.
+
+**One completion honestly flagged as the least certain of the whole session:** both of Saturday's
+Crowns end "We pray, &c." -- shorter than the exact "We pray thee be mindful, &c." confirmed on
+Wednesday/Thursday/Friday. Completed using that Tone Batos formula as the best-supported reading,
+but disclosed explicitly as a judgement call rather than an exact match in both components' own
+meta -- **if a future session gets access to a cleaner source or page images for this specific
+passage, check this first** among anything needing re-verification.
+
+**`cop-theotokion` finally resolved** -- the stub flagged all the way back at this rebuild's very
+first checkpoint (the Morning Office). Its old text matched nothing in O'Leary anywhere, confirming
+fabrication. Fixed by pointing it to `cop-doxology-virgin` (already properly sourced from the
+Morning Office), since that's exactly the kind of short standalone Marian doxology this slot needs
+-- reused, not duplicated.
+
+**THE ENTIRE PLANNED COPTIC AGPEYA REBUILD IS NOW CONTENT-COMPLETE.** All seven hours, the Midnight
+Office, and the full seven-day Theotokia cycle -- fifteen offices total, all selectable in the
+navigator. Nothing is GREEN yet; everything remains amber pending an independent human
+read-through against source, same as every other book in this project.
+
+**What a future session should do next, in rough priority order:**
+1. **Independent read-through verification** of all 87 Coptic components against O'Leary's actual
+   pages (ideally page images, given the Theotokia days' known lower-confidence OCR sourcing) --
+   this is what would actually move any of this from amber to green.
+2. Revisit the one lower-confidence completion flagged above (Saturday's Crown refrain) if better
+   source access becomes available.
+3. Consider whether true interleaved-antiphon rendering (deferred at the Sixth Hour checkpoint) is
+   worth building now that the whole office exists.
+4. The standing governance rules from this rebuild -- no abbreviated/placeholder liturgical text,
+   the Google Drive PDF-extraction tool limitation, the "corroborate before completing" method for
+   genuine textual gaps -- apply to any future liturgical content work in this project, not just
+   the Coptic Agpeya. Keep applying them.
+5. Longer-term, deferred items already on record elsewhere in this file (Fetha Nagast, Josippon,
+   remaining ET backlog, etc.) remain untouched and out of scope until Josh raises them.

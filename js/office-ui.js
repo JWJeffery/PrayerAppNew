@@ -1718,6 +1718,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-wednesday-theotokia", label: "Wednesday Theotokia", detail: "Phase 2" },
             { value: "coptic-thursday-theotokia", label: "Thursday Theotokia", detail: "Phase 2" },
             { value: "coptic-friday-theotokia", label: "Friday Theotokia", detail: "Phase 2" },
+            { value: "coptic-saturday-theotokia", label: "Saturday Theotokia", detail: "Phase 2" },
         ],
     },
     eastSyriac: {
