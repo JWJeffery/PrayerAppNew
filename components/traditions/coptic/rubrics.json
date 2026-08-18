@@ -257,5 +257,18 @@
       "cop-monday-theotokia-crown",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-tuesday-theotokia",
+    "officeName": "The Tuesday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 155-161, public domain. Third day of the weekly Theotokia hymn cycle. Structure: seven numbered sections (no paraphrases, confirmed by their absence in the source) plus a Crown -- closer to Monday's shape than Sunday's, though with a different section count. Two footnotes mark that one manuscript witness ('O') inserts Gospel lections at two points -- textual-critical apparatus, not part of the main text, deliberately not built here (same scope decision as the manuscript-variant paraphrase material excluded from every day). As with Sunday and Monday, O'Leary's extensive scholarly 'additional matter' for this day is out of scope for a devotional app.",
+    "sequence": [
+      "cop-tuesday-psali",
+      "cop-tuesday-alt-psali",
+      "cop-tuesday-theotokia",
+      "cop-tuesday-theotokia-crown",
+      "cop-closing-formula"
+    ]
   }
 ]

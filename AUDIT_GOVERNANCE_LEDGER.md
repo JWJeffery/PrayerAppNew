@@ -5632,3 +5632,44 @@ with the Monday Theotokia; `index.html` drawer status text updated.
 **Still open:** Tuesday through Saturday's Psali, Alternative Psali, and Theotokia. Structure
 should be confirmed per-day rather than assumed uniform, same as the Sunday/Monday difference just
 found -- some days may have lections and paraphrases (Sunday's pattern), others may not (Monday's).
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Tuesday built
+
+Third day of Phase 2. Source: O'Leary 1911, pp. 155-161.
+
+**Content built -- the complete Tuesday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 4 new entries (`cop-tuesday-psali`, `cop-tuesday-alt-psali`,
+  `cop-tuesday-theotokia`, `cop-tuesday-theotokia-crown`), 70 total.
+- **Structure confirmed independently, not assumed from either prior day:** seven sections (not
+  Sunday's eight or Monday's nine), no paraphrases, a Crown -- closer to Monday's shape than
+  Sunday's but its own distinct count. Two footnotes mark that a single manuscript witness ('O')
+  inserts Gospel lections at two points -- correctly identified as textual-critical apparatus about
+  one manuscript's variant reading, not part of O'Leary's main text, and excluded on the same
+  grounds as the manuscript-variant paraphrase material already out of scope for every day.
+- **No-placeholder rule applied to two separate refrains:** the Alternative Psali's "Hail to thee,
+  Mary" (established once in full, then abbreviated as '"Hail," &c.' for the rest) and the
+  Theotokia's "For he in his [desire...], &c." refrain -- both written out in full at every
+  occurrence. Deliberately did NOT treat the Alternative Psali's refrain as interchangeable with
+  the different, longer Marian refrain ("Hail, thou greatly favoured, the Lord is with thee")
+  O'Leary explicitly footnotes for a different Psali later in the week (Friday) -- each day's
+  refrain is taken only from what that day's own text actually establishes, not borrowed across
+  days without evidence.
+- **A second application of the "corroborate before completing" method** first used for the Third
+  Hour's concluding doxology: the Crown ends "We ourselves pray, &c." with no fuller statement
+  anywhere in Tuesday's own text. Unlike the Third Hour case, this exact formula ("We [also/
+  ourselves] pray that we may obtain mercy through [her/thy] [prayers/intercessions] to him the
+  Lover of men") is independently attested in full multiple times elsewhere in this same book (the
+  refrain closing every Sunday Theotokia section, and the Sunday Theotokia's own Conclusion) --
+  completed using that already-established wording, disclosed in the component's own meta as a
+  reasoned completion rather than left as a citation or invented fresh.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-tuesday-theotokia` rubric.
+
+**Code wiring:** no new handlers needed -- same simple sequence pattern as Monday.
+`SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended; `index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Wednesday through Saturday, each checked independently for its own structure before
+building, same discipline as Sunday/Monday/Tuesday.

@@ -2826,3 +2826,37 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 paraphrases? how many sections?) before assuming either Sunday's or Monday's pattern applies.
 Same source, same fetch method. After all seven days: resolve `cop-theotokion`'s open sourcing
 question.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Tuesday built
+
+Third day of Phase 2. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Tuesday Psali, Alternative Psali, and Theotokia (7 sections + Crown, no
+paraphrases -- its own distinct structure, confirmed independently rather than assumed from Sunday
+or Monday) as 4 new components in `components/coptic.json` (70 entries total) and the
+`coptic-tuesday-theotokia` rubric.
+
+**Two refrain-resolution cases worth remembering for the remaining days:**
+1. The Alternative Psali's short refrain ("Hail to thee, Mary") was kept distinct from a different,
+   longer Marian refrain O'Leary footnotes for a *different* Psali later in the week (Friday) --
+   don't assume refrains are interchangeable across days without the text actually saying so.
+2. The Theotokia Crown's "We ourselves pray, &c." had no fuller statement anywhere in Tuesday's own
+   text, but the same formula is independently attested in full multiple times elsewhere in this
+   book (Sunday's per-section refrain and its own Conclusion) -- completed using that
+   already-established wording, disclosed as a reasoned completion in the component's meta. This is
+   the second use of the "corroborate from elsewhere in the same book before completing" method
+   first applied to the Third Hour's concluding doxology -- **keep using this approach** for any
+   similar gaps in the remaining four days, rather than either guessing or leaving a citation.
+
+**Also correctly excluded:** two footnotes marking that a single manuscript witness inserts Gospel
+lections -- identified as textual-critical apparatus, not main text, same scope decision already
+applied to every other day's manuscript-variant material.
+
+**Wired:** no new render-code handlers needed; navigator and drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with Wednesday, checking its actual structure first (same
+discipline as the last three days) before building. Same source, same fetch method. After all
+seven days: resolve `cop-theotokion`'s open sourcing question.
