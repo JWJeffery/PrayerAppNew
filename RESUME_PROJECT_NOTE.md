@@ -2612,3 +2612,31 @@ then the Midnight Office -- same method, and keep applying the no-placeholder ru
 transcription rather than as a follow-up pass. After all hours: Phase 2, the Theotokia weekly
 cycle, and resolve `cop-theotokion`'s sourcing. True interleaved-antiphon rendering (currently
 simplified for the Sixth Hour) is a worthwhile future enhancement, not an open defect.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Ninth Hour built (fourth checkpoint)
+
+Fourth Agpeya checkpoint, same source (O'Leary 1911, pp. 101-103). Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Ninth Hour (O'Leary's items (1)-(7)) as 3 new components
+(`cop-nh-troparion`, `cop-nh-second-troparion`, `cop-nh-concluding-prayer`) in
+`components/coptic.json` (30 entries total) and the `coptic-ninth-hour` rubric. Applied the
+no-placeholder rule again: the troparion's "(repeated)" instruction resolved to the full refrain
+both times. Unlike the Sixth Hour, this troparion's interleaved psalm verses (Psalm 119:169-170)
+are given by O'Leary in full directly in the text, not cited by reference, so no separate
+antiphonal-psalm handling was needed here.
+
+**Real cross-check worth remembering:** O'Leary's psalm citation for this hour ("114 (116, verses
+1-9), 115 (116, verses 10-19)") lines up exactly with the Vulgate-113-splits-into-Hebrew-114/115
+boundary already resolved corpus-wide in this session's earlier DRB numbering fix -- confirmed
+directly rather than assumed, and read here as the single whole Hebrew Psalm 116.
+
+**Wired:** `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` now has all four hours; drawer status
+text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with the Eleventh Hour (Vespers), then Twelfth Hour (Compline),
+then the Midnight Office -- same method, same source already in hand via Google Drive. After all
+hours: Phase 2, the Theotokia weekly cycle, and resolve `cop-theotokion`'s sourcing.

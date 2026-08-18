@@ -96,5 +96,31 @@
       "cop-sh-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-ninth-hour",
+    "officeName": "The Ninth Hour (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 101-103, public domain. Sequence follows O'Leary's own numbered items (1)-(7). Psalms and the Gospel lection are resolved from this app's own verified Bible corpus (O'Leary cites references only) -- see the rubric's psalms/lesson fields. Reuses the Trisagion, Lord's Prayer, 41-fold Kyrie, and closing formula already built for the Morning Office. Unlike the Sixth Hour, item (2)'s troparion here quotes its interleaved psalm verses (Psalm 119:169-170) directly in O'Leary's own full translation rather than citing them by reference, so no separate antiphonalPsalm field or VARIABLE resolution is needed for those two lines -- they are simply part of cop-nh-troparion's text.",
+    "psalms": {
+      "set": ["96", "97", "98", "99", "100", "101", "110", "111", "112", "113", "116"],
+      "note": "O'Leary p.101: 'Psalms 95 (96), 96 (97), 97 (98), 98 (99), 99 (100), 100 (101), 109 (110), 110 (111), 111 (112), 112 (113), 114 (116, verses 1-9), 115 (116, verses 10-19).' The last two Vulgate citations (114, 115) are the two halves of this app's Hebrew-numbered Psalm 116 (confirmed by the same Vulgate/Hebrew correspondence resolved corpus-wide earlier this project) -- read here as the single whole Psalm 116 rather than two separate partial readings."
+    },
+    "lesson": {
+      "citation": "LUKE 9:10-17",
+      "label": "The Lesson",
+      "note": "O'Leary p.101: 'Lection. S. Luke ix. 10-17.'"
+    },
+    "sequence": [
+      "VARIABLE_COP_PSALMS",
+      "VARIABLE_COP_LESSON",
+      "cop-nh-troparion",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "cop-nh-second-troparion",
+      "cop-kyrie-41",
+      "cop-nh-concluding-prayer",
+      "cop-closing-formula"
+    ]
   }
 ]

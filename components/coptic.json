@@ -215,5 +215,29 @@
     "meta": {
       "source": "O'Leary 1911, Prayer of the Sixth Hour item (7), pp. 100-101. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
     }
+  },
+  {
+    "id": "cop-nh-troparion",
+    "title": "Troparion of the Ninth Hour",
+    "text": "O thou who didst taste death in the flesh at the ninth hour for our sakes, destroy our bodily lusts, O Christ our God, and save us.\n\nLet my cry come before thee, O Lord; give me understanding, O Lord, according to thy word.\n\nO thou who didst taste death in the flesh at the ninth hour for our sakes, destroy our bodily lusts, O Christ our God, and save us.\n\nLet my prayer come before thee according to thy word and quicken me.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO thou who didst give up the spirit to the hands of the Father, who didst hang upon the cross at the ninth hour: who didst lead into paradise the thief who hung beside thee, forget me not, O Good One, nor cast me off, but purge my soul and illuminate my understanding. And bestow upon me the favour of thy immortal mysteries. So that when I have tasted thy loving-kindness I may offer to thee song unending. I long for thy beauty above everything, O Christ our God, and do thou save us.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO thou who wast born for us of the Virgin, and didst bear the Cross, thou Good One. By thy death thou didst slay death and didst show forth thy resurrection. O God, reject not those whom thou hast made by thy hand; show forth thy love for man, O Good One; and accept the prayers of thy Mother for us. O our Saviour, save the lowly people; cast us not away for ever, nor leave us; do not revoke thy promise. From us remove not thy mercies, for the sake of thy friend Abraham, thy servant Isaac, and thy holy one Israel.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Ninth Hour item (2), pp. 101-102. Public domain. O'Leary directs the refrain to be said again with '(repeated)' rather than reprinting it -- resolved here per the no-placeholder governance rule by writing the refrain out in full both times. 'Glory be, &c.' and 'Both now, &c.' likewise resolved to their standard full forms. The two verses paired with the refrain ('Let my cry come before thee...', 'Let my prayer come before thee...') are O'Leary's own full translation of Psalm 119:169-170, given by him in full at this point -- no resolution needed for those."
+    }
+  },
+  {
+    "id": "cop-nh-second-troparion",
+    "title": "Second Troparion of the Ninth Hour",
+    "text": "When the thief saw the Author of Life hung upon the cross, he said: If he who is now crucified with us were not a god in the flesh, the sun would not have become dark nor would earth be shaken and quake.\n\nO thou who hast power in all things, and who holdest all, do thou be mindful of me, O Lord, when thou comest into thy kingdom.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO thou who didst receive the confession of the thief upon the cross; purchase us to thyself, O Good One, though we have incurred death by our sins. We acknowledge our sins with him, we confess thy Deity. With him we cry to thee: Remember us, O Lord, when thou comest into thy kingdom.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nWhen the Mother saw the Lamb, the Shepherd and Saviour of the world hanging upon the cross, weeping she said: The world indeed rejoices, it receives salvation. My bowels are inflamed, I behold thy hanging, thou who hast suffered for all, my Son and my God.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Ninth Hour item (5), p. 102. Public domain."
+    }
+  },
+  {
+    "id": "cop-nh-concluding-prayer",
+    "title": "Concluding Prayer (Metremhe) of the Ninth Hour",
+    "text": "O God, Father of our Lord God and Saviour, Jesus Christ: who by his appearing has redeemed us and delivered us from the bondage of the adversary: in his blessed and great name we pray thee turn away our minds from the cares of life and the desires of the world to the recollection of thy heavenly judgements. In us complete thy love to man, O Good One; and let the prayer of the ninth hour be always acceptable in thy sight. Grant that we may walk worthy of the calling whereunto thou dost call us, so that when we go forth from the body we may be reckoned amongst the true worshippers of the passion of thy only-begotten Son our Lord Jesus Christ; and may receive mercy and pardon of our sins and salvation and the dwelling of the saints who have done thy will in truth from all eternity. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Prayer of the Ninth Hour item (7), pp. 102-103. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
   }
 ]

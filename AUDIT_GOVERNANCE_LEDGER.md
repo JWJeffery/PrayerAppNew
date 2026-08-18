@@ -5338,3 +5338,34 @@ confirmed unchanged (247/247).
 Theotokia (Phase 2). `cop-theotokion`'s sourcing remains open. True interleaved-antiphon rendering
 remains a known simplification for `coptic-sixth-hour` -- worth a future enhancement, not a defect
 in the sense of missing content.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Ninth Hour built (fourth checkpoint)
+
+Fourth checkpoint in the Coptic Agpeya rebuild, same source (O'Leary 1911, pp. 101-103).
+
+**Content built -- the complete Ninth Hour, O'Leary's items (1)-(7):**
+- `components/coptic.json`: 3 new entries (`cop-nh-troparion`, `cop-nh-second-troparion`,
+  `cop-nh-concluding-prayer`), 30 total.
+- **No-placeholder rule applied again:** item (2)'s troparion directs "O thou who didst taste,
+  &c. (repeated)" rather than reprinting the refrain -- resolved by writing the refrain out in
+  full both times it occurs. Unlike the Sixth Hour, the two psalm verses interleaved with this
+  refrain (O'Leary's own translation of Psalm 119:169-170) are given by him in full directly in
+  the troparion text, not cited by reference -- no separate `antiphonalPsalm` field or VARIABLE
+  resolution was needed for those two lines.
+- `cop-nh-concluding-prayer`: given in full by O'Leary himself, no abbreviation to resolve.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-ninth-hour` rubric. Its `psalms`
+  set includes a real cross-check worth recording: O'Leary's citation "114 (116, verses 1-9), 115
+  (116, verses 10-19)" is the same Vulgate-113-splits-into-Hebrew-114/115 boundary already resolved
+  corpus-wide in this session's earlier DRB numbering fix -- confirmed the two Vulgate citations are
+  the two halves of this app's single Hebrew-numbered Psalm 116, read here as one whole psalm
+  rather than two partial readings.
+
+**Code wiring:** `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended with the Ninth Hour;
+`index.html` drawer status text updated (four hours now).
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Eleventh (Vespers) and Twelfth (Compline) hours + Midnight Office, then the
+Theotokia (Phase 2). `cop-theotokion`'s sourcing remains open.
