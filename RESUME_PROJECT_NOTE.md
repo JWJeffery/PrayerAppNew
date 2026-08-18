@@ -2384,3 +2384,16 @@ list (calendar-ethiopian.js, calendar-east-syriac.js, coe-eligibility.js, calend
 orthodox.js, byzantine-paschalion.js, orthros-eothinon-engine.js, horologion-engine.js,
 menaion-resolver.js, octoechos modules) remain amber, unaudited this session -- out of scope per
 the project's standing BCP-first direction, not touched.
+
+## SESSION HANDOFF 2026-08-18 continued -- Dark mode / sidebar visual confirmation CLOSED (Josh confirmed via screenshot)
+
+Josh sent light + dark mode screenshots of Noonday Prayer. **Dark mode confirmed good** -- fully
+legible sidebar and office content, no gray-box/invisible-text problems, correct office-specific
+sidebar rendering. **This closes the visual-confirmation thread open since 2026-07-25** (five
+rounds of dark-mode/sidebar fixes had gone unverified in a live browser, since this environment
+has no headless browser). No code changes -- documentation closure only. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Next session should:** ask Josh what's next. The priest-testing deploy-prep thread (splash
+simplification, Bible Browser unwiring, web-release export size fix, dark mode/sidebar) is now
+fully closed end to end.

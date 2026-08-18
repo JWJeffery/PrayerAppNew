@@ -5034,3 +5034,15 @@ prior partial-read note. `SEED_VERSION` bumped to `v134-2026-08-18-office-ui-cor
 **This is a genuinely clean bill of health for the whole file now, not a partial one.** No other
 engine files were in scope for this session (the Ethiopian/East Syriac/Byzantine engines remain
 their own separate amber rows, unaffected, per the project's standing BCP-first scope).
+
+## SESSION 2026-08-18 continued -- Dark mode / sidebar visual confirmation CLOSED
+
+Josh sent light-mode and dark-mode screenshots of Noonday Prayer (desktop, GitHub Codespaces
+dev-server preview). Dark mode confirmed good: no gray boxes with invisible text, no low-contrast
+header pills, sidebar and office-content areas both fully legible (gold/red rubric headers, white
+body text on dark brown background), correct office-specific sidebar content showing for the
+active Noonday selection. This closes the visual-verification gap that had been open since the
+2026-07-25 priest-testing deploy prep began (five rounds of fixes -- dark-mode CSS variables,
+readability, sidebar text-wrapping, box-height clipping, info-icon wrapping, empty box shells --
+none of which had been visually confirmed in a live browser, since this environment has no
+headless browser available). No code changes this session; documentation-only closure.
