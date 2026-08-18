@@ -179,5 +179,47 @@
       "cop-tw-concluding-prayer",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-midnight-office",
+    "officeName": "The Midnight Office (Agpeya)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 110-117, public domain. This office is genuinely separate from the seven day-hours -- it has its own three-part structure (First, Second, and Third Nocturns) rather than the fixed 7-12 item pattern of the hours. Josh confirmed this text is present in the source and pasted the relevant pages directly after this app's automated PDF-extraction tool repeatedly truncated before reaching them (documented as a known tool limitation -- see AUDIT_GOVERNANCE_LEDGER.md). Sequence follows O'Leary's own numbered items (1)-(18) across the three nocturns, exactly as his own cross-references direct: item (4) is his own reference to the Third Hour's Second Troparion ('As at the Third Hour, no. (5)') -- reused as cop-th-second-troparion rather than duplicated; the Second Nocturn's items (4)-(7) are his explicit instruction 'as before in the first nocturn' -- reused identically; item (8)'s psalms are 'repeated from the Office of the Eleventh Hour', and item (10)'s psalms are 'used in the Office of the Twelfth Hour' -- both reused directly from those hours' own psalms fields rather than re-specified. Item (12), the Prayer of Ezekias, is cited by O'Leary as only its opening words and a reference ('I said in the cutting off, &c. Isaiah xxxviii. 10-20 inclusive') -- resolved from this app's own corpus per the no-placeholder governance rule, same as the other hours' canticles.",
+    "firstNocturnPsalm": {
+      "reference": "119",
+      "note": "O'Leary p.110: 'Psalm 118 (119).' The longest psalm in the Bible; read here in full as this app's Hebrew-numbered Psalm 119."
+    },
+    "canticle": {
+      "citation": "ISAIAH 38:10-20",
+      "label": "Prayer of Ezekias the King",
+      "note": "O'Leary p.113 cites this only as 'I said in the cutting off, &c. Isaiah xxxviii. 10-20 inclusive', not in full -- resolved from this app's own corpus."
+    },
+    "sequence": [
+      "cop-mo-opening",
+      "VARIABLE_COP_MO_FIRST_NOCTURN_PSALM",
+      "cop-mo-doxology-after-psalm",
+      "cop-mo-let-god-arise",
+      "cop-mo-troparion-first-nocturn",
+      "cop-th-second-troparion",
+      "cop-kyrie-41",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "VARIABLE_COP_MO_SECOND_NOCTURN_PSALMS",
+      "cop-mo-troparion-second-nocturn",
+      "cop-th-second-troparion",
+      "cop-kyrie-41",
+      "cop-trisagion",
+      "comm-lords-prayer",
+      "VARIABLE_COP_MO_THIRD_NOCTURN_PSALMS",
+      "cop-mo-troparion-third-nocturn",
+      "VARIABLE_COP_CANTICLE",
+      "cop-mo-prayer-13",
+      "cop-mo-simeon-stylites-prayer",
+      "cop-mo-repeated-prayer",
+      "cop-mo-ephraem-prayer",
+      "cop-mo-sanctus",
+      "cop-mo-concluding-doxology",
+      "cop-closing-formula"
+    ]
   }
 ]

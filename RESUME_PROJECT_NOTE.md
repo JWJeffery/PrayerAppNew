@@ -2707,3 +2707,44 @@ day-hours; its text has not yet been located within either uploaded O'Leary file
 to paste/upload a specific additional page range). After that: Phase 2, the Theotokia weekly hymn
 cycle, and resolve `cop-theotokion`'s open sourcing question in that same phase. None of the seven
 built hours are GREEN yet -- all remain amber pending an independent read-through before promotion.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: Midnight Office built -- ALL PLANNED CONTENT COMPLETE
+
+Final content checkpoint of this phase. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entries of
+the same date (both the tool-limitation note and the build itself).
+
+**New standing tool limitation, worth remembering:** `Google Drive:read_file_content` truncates
+large PDF extractions (confirmed: two separate fetches of the same 124-page source both stopped at
+the identical point, well short of the actual end). If a future large-PDF fetch seems to cut off
+mid-sentence or well short of where the source's own pagination says it should, don't assume the
+content is genuinely missing -- ask the person to confirm what's in the file and paste the specific
+missing range directly (text or page images both work fine) rather than retrying the same fetch.
+
+**Built:** the complete Midnight Office (O'Leary's items (1)-(18) across three nocturns) as 12 new
+components in `components/coptic.json` (51 entries total) and the `coptic-midnight-office` rubric.
+This office has real structural differences from the seven hours worth knowing for future work:
+three nocturns instead of one fixed sequence, its own distinct prayers (Ezekias/Isaiah 38,
+S. Simeon Stylites, Abba Ephraem), and heavy internal cross-referencing that O'Leary states
+explicitly rather than leaving ambiguous -- each cross-reference here was resolved by reuse, not
+re-transcription: item (4) reuses the Third Hour's Second Troparion, the Second Nocturn repeats
+items (4)-(7) from the First Nocturn, and the Second/Third Nocturns' psalms are pulled live from
+the Eleventh/Twelfth Hours' own rubric fields via two new VARIABLE handlers rather than duplicated.
+
+**No-placeholder rule applied once more, correctly distinguishing two cases:** the Prayer of
+Ezekias (Isaiah 38:10-20) was cited by reference only -- resolved via the same canticle mechanism
+built for the Eleventh Hour's Nunc Dimittis. A "repeated three times" rubric on a *fully-given*
+prayer was correctly left as a repetition note, not treated as missing content -- same pattern
+already established for the 41-fold Kyrie.
+
+**Wired:** three new VARIABLE handlers in `renderCopticAgpeya()`; navigator now has all eight
+offices; drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**THIS CLOSES ALL PLANNED CONTENT-BUILD WORK FOR THIS PHASE.** Next session should move to Phase 2:
+the Theotokia weekly hymn cycle (Psali and Theotokia for each day of the week -- source already
+confirmed present in the second uploaded PDF file, starting at "PSALI FOR SUNDAY" right where the
+Midnight Office leaves off), and resolve `cop-theotokion`'s open sourcing question in that same
+phase. None of the eight offices built are GREEN yet -- all remain amber pending an independent
+read-through before promotion, same standard as every other book in this project.

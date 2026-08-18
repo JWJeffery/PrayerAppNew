@@ -1711,6 +1711,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-ninth-hour", label: "The Ninth Hour", detail: "None" },
             { value: "coptic-eleventh-hour", label: "The Eleventh Hour", detail: "Vespers" },
             { value: "coptic-twelfth-hour", label: "The Twelfth Hour", detail: "Compline" },
+            { value: "coptic-midnight-office", label: "The Midnight Office", detail: "Three Nocturns" },
         ],
     },
     eastSyriac: {
@@ -4496,6 +4497,46 @@ async function renderCopticAgpeya() {
                 officeHtml += `<span class="rubric-text">${antSpec.label || ('Psalm ' + antSpec.reference)}</span>`;
                 officeHtml += `<h4 class="passage-reference">Psalm ${antSpec.reference}</h4>`;
                 officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_MO_FIRST_NOCTURN_PSALM — the Midnight Office's own single-psalm
+        // reading (Psalm 119) at the head of the First Nocturn.
+        if (item === 'VARIABLE_COP_MO_FIRST_NOCTURN_PSALM') {
+            const spec = activeRubric.firstNocturnPsalm;
+            if (spec && spec.reference) {
+                const fullText = await getScriptureText('PSALM ' + spec.reference);
+                officeHtml += `<span class="rubric-text">The Psalm</span>`;
+                officeHtml += `<h4 class="passage-reference">Psalm ${spec.reference}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        // VARIABLE_COP_MO_SECOND_NOCTURN_PSALMS / VARIABLE_COP_MO_THIRD_NOCTURN_PSALMS —
+        // O'Leary directs these nocturns to repeat the psalm sets already appointed for
+        // the Eleventh and Twelfth Hours respectively ("Psalms repeated from the Office
+        // of the Eleventh Hour", "The Psalms used in the Office of the Twelfth Hour are
+        // repeated") rather than specifying new ones. Reused directly from those hours'
+        // own rubric entries -- not re-transcribed.
+        if (item === 'VARIABLE_COP_MO_SECOND_NOCTURN_PSALMS' || item === 'VARIABLE_COP_MO_THIRD_NOCTURN_PSALMS') {
+            const sourceRubricId = item === 'VARIABLE_COP_MO_SECOND_NOCTURN_PSALMS' ? 'coptic-eleventh-hour' : 'coptic-twelfth-hour';
+            const sourceRubric = appData.copticRubrics.find(r => r.id === sourceRubricId);
+            const psalmsSpec = sourceRubric && sourceRubric.psalms;
+            if (psalmsSpec) {
+                const psalmNums = [
+                    ...(psalmsSpec.fixed ? [psalmsSpec.fixed] : []),
+                    ...(Array.isArray(psalmsSpec.set) ? psalmsSpec.set : [])
+                ];
+                officeHtml += `<span class="rubric-text">The Psalms</span>`;
+                for (const psNum of psalmNums) {
+                    const fullText = await getScriptureText('PSALM ' + psNum);
+                    officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                }
+            } else {
+                console.warn(`[renderCopticAgpeya] Could not find psalms for ${sourceRubricId} to resolve ${item}`);
             }
             continue;
         }

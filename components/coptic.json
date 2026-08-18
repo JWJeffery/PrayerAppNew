@@ -311,5 +311,101 @@
     "meta": {
       "source": "O'Leary 1911, Prayer of the Twelfth Hour item (11), p. 109. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
     }
+  },
+  {
+    "id": "cop-mo-opening",
+    "title": "Beginning of the Midnight Office",
+    "text": "Arise and be the children of the light. Let us sing to the Lord of hosts, that he vouchsafe to us salvation from our sins. Whilst we stand before thee in body remove from our mind the sleep of ignorance. Grant us, O Lord, to be children of the bride-chamber, that we may be wise and stand before thee at the hour of prayer. And that we may offer thee the praise which is seemly, and may obtain remission of our sins which are many. Glory to thee, O Lover of men.\n\n\"Behold now praise the Lord, ye servants of the Lord. Ye who stand in the courts of the house of our God. In the night lift up your hands to the sanctuary: bless the Lord.\"\n\nGlory to the Father, and to the Son, and to the Holy Spirit; both now and ever, and unto the ages of ages. Amen.\n\n\"The Lord bless thee out of Sion, who made heaven and earth.\"\n\nGlory to the Father, and to the Son, and to the Holy Spirit; both now and ever, and unto the ages of ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (1), p. 110. Public domain. O'Leary notes this is a choir or Deacon's portion found in almost all copies of the Psalmodia. 'Glory be, &c.' resolved to full form (twice) per the no-placeholder governance rule."
+    }
+  },
+  {
+    "id": "cop-mo-doxology-after-psalm",
+    "title": "Doxology After the Psalm",
+    "text": "Glory to thee, good Lover of men. Glory to thy virgin Mother and all thy saints. Glory to thee, Lover of men. Glory to thee, only-begotten. Holy Trinity, have mercy upon us.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (2), p. 110. Public domain. Said after Psalm 119, following the Gloria Patri (given in Greek, then Coptic, in the manuscript -- O'Leary does not translate the Gloria Patri itself here since it is the same universal doxology already given in full elsewhere in this app, e.g. within cop-mo-opening)."
+    }
+  },
+  {
+    "id": "cop-mo-let-god-arise",
+    "title": "Let God Arise",
+    "text": "Let God arise and all his enemies be scattered. Let every creature that hates his Holy Name flee before him. But let thy people be in blessings, thousands of times and ten thousands of times. Let them all do thy will. O Lord thou dost open my lips, and my mouth showeth forth thy praise.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office, p. 111 (unnumbered, between items (2) and (3)). Public domain. Draws on O'Leary's translation of Psalm 68:1-3 and Psalm 51:15."
+    }
+  },
+  {
+    "id": "cop-mo-troparion-first-nocturn",
+    "title": "Troparion of the First Nocturn",
+    "text": "Behold the bridegroom cometh in the middle of the night. Blessed the servant whom he findeth waking. But he whom he findeth sleeping is not ready to go with him. See, my soul, that thou art not heavy with sleep, lest thou find thyself outside the kingdom. But watch and cry Holy, Holy, Holy, art thou, O God. For the sake of the mother of God have mercy on us.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO my soul consider the dread day, and await the bridegroom and light thy lamp with the oil of joy, for behold the bridegroom. See, my soul, that thou do not sleep, lest thou find thyself outside the door, like the five foolish virgins. But keep the watch of prayer, so as to meet the Lord Christ with rich oil, and may he grant thee the true marriage of his deity.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO Virgin Mother, impregnable fortress, defeat the devices of the adversaries and turn thy servants' trouble of heart to joy. Be the defence of our city, and contend for our kings and intercede for the peace of the world. For thou art our help, O Mother of God.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (3), p. 111. Public domain. 'Glory be, &c.' and 'Both now, &c.' resolved to their full forms per the no-placeholder governance rule. The closing Theotokion is O'Leary's own note (n.1): a Greek Theotokion following this Troparion in the Greek office."
+    }
+  },
+  {
+    "id": "cop-mo-troparion-second-nocturn",
+    "title": "Troparion of the Second Nocturn",
+    "text": "Grant to me, Lord, fountains of many tears, as thou didst grant long ago to the woman who was a sinner; and make me worthy to wash thy feet which have made freedom in place of the way of error. And I will bring to thee ointment of sweet savour; and I shall secure a pure life through penitence, so that I may hear the voice full of great joy, \"thy faith hath made thee whole.\"\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nWhen I contemplate the multitude of my evil deeds, and there enters into my heart the memory of that fearful judgement, trembling seizes upon me. I will flee to thee, O God, thou Lover of man. Turn not away thy face from me, I pray thee, for thou alone art without sin. Vouchsafe to my unhappy soul a right fear before the end come and save me.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nThe heavens praise thee, thou full of grace, thou unwedded bride. And we ourselves glorify thy unspeakable child-bearing. O Mother of God, intercede for the salvation of our souls.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (9), p. 112. Public domain. 'Glory be, &c.' and 'Both now, &c.' resolved to their full forms. The closing Theotokion is O'Leary's own note (n.1): the Greek Theotokion following this Troparion."
+    }
+  },
+  {
+    "id": "cop-mo-troparion-third-nocturn",
+    "title": "Troparion of the Third Nocturn",
+    "text": "Look, O Lord, with an eye of pity upon my distress, for my life has almost come to an end, and in my works is no safety. Wherefore I pray thee that with an eye of mercy, O Lord, thou look upon my littleness and save me.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nAs though the Judge were before thee watch, O my soul, and await the bridegroom. And consider the dread hour, for in judgement there is none who will have pity. Wherefore forgive me, O my Saviour, for thou alone art the Lover of men.\n\nBoth now and ever, and unto the ages of ages. Amen.\n\nO gate of reasonable life, noble Mother of God, save them from troubles who have recourse to thee with faith: that we may glorify thy holy child-bearing in everything, for the salvation of our souls.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (11), pp. 112-113. Public domain. 'Glory be, &c.' and 'Both now, &c.' resolved to their full forms."
+    }
+  },
+  {
+    "id": "cop-mo-prayer-13",
+    "title": "Prayer",
+    "text": "Remember, O Lord, all the saints who have pleased thee from the beginning, and grant to me also that I may lay aside everything that does not please thy goodness. I know in truth that thou wouldest that I should not be a sinner, but I myself do evil by the will that is in me. Grant me, O Lord, that I may reject evil works and my numerous sins; in order that I may find mercy for the rest of my life, as long as I am in this dwelling-place: and when thou biddest me come forth from the body I may present myself before thee without confusion, and may find mercy and confidence with thee, in thy judgement which is faithful and full of glory. For thou art God of mercy, and blessing is due to thee always, henceforth and for ever. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (13), p. 113. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
+  },
+  {
+    "id": "cop-mo-simeon-stylites-prayer",
+    "title": "Prayer of S. Simeon Stylites",
+    "text": "O Lord, grant me a prayer without error, with recollection of my thoughts; in order that I may ask in faith in thy promises which thou hast vouchsafed to me. Grant me power of seeing in my thoughts and mind. May my heart receive light so that my intelligence may grasp that which is pure, that I may hear thy eternal mysteries, the things which thou hast prepared for the human race by the grace of Christ. Concede to me, O Lord, a pure heart, that I may pray to thee uninterruptedly. O Master, remove my thoughts from deeds which are contrary to nature, that I may give thanks with understanding for the grace of thy mercy, and that I may give thanks with ready understanding for the good things which thou hast promised to me: things which eye hath not seen nor ear heard, nor have they entered into the heart of man, which thou hast made ready for them that love thy holy name. Give me, O Lord, the love of thy Holy Spirit that may impel my intelligence so that I may love thee with all my heart and all my soul, and all my strength as thou hast told me. And the love of my neighbour even as myself; this is the fulfilment of the law and the prophet. Grant me to control my thoughts so that I may regard nothing save thee; nor ever pray to thee with my lips alone whilst my attention is astray, that evil comes into the innermost part of my heart. For it is written that my light and salvation is the Lord. O my Lord God, draw me towards thee, for thou art the true God and One that has pity and compassion, and that teachest good things, and a Righteous King. For thou art my treasure-house and treasury, and my precious stone and crown of my praise. For thou in truth art my bridegroom, and my paradise and my tree of life. Thou dost put round me my armour and my might and strength and readiness in words. For I am without heart and portion upon earth. But thou art he who pities every creature which thou hast created and made from that which was not. And thy pity directs our race into thy kingdom. And I myself, O Lord, may I love thee as is fitting, and do not thou reject the promises thou didst promise to me through thy Christ, that there may not anything in my life prevent my eyes and my heart, but let them see them as the plants of the earth. By the power and the mercy of thy only-begotten Son and the gifts of thy Holy Spirit.\n\nNow and ever, and unto the ages of ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (14), pp. 113-115. Public domain. 'Now, &c.' resolved to its full form per the no-placeholder governance rule."
+    }
+  },
+  {
+    "id": "cop-mo-repeated-prayer",
+    "title": "Prayer (Repeated Three Times)",
+    "text": "I glorify thee, O Lord Jesus Christ the merciful, and I pray thy goodness, O Lover of men, have mercy upon me according to thy great kindness, and forgive all my sins, and vouchsafe to me a pure repentance and deliver me from every sin to death.\n\n(Said three times.)",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (15), p. 115: 'The following prayer is repeated three times.' Public domain. The repetition instruction is retained as a plain rubric note (parallel to how this app already presents the 41-fold Kyrie), not as an abbreviation of missing text -- the full prayer text itself is given in full by O'Leary, nothing is omitted here."
+    }
+  },
+  {
+    "id": "cop-mo-ephraem-prayer",
+    "title": "Prayer of Abba Ephraem",
+    "text": "O Lord, I have remembered thee now in this place. I believe, and pray thy Christliness do not give me into the hands of my enemies, that they may not boast themselves over thy servant nor gnash with their teeth upon me nor consume my unhappy life nor say \"thou hast come into our hands and art delivered to us, this is the day we have expected\". Do not forget me, O Lord, in thy mercy, and do not deal with me according to my sins nor turn thy face from me nor say to me \"I know thee not\". Thou, O Lord, through thy kindness didst draw me to thee; let not my enemies exult over me but extinguish their boastings and stop their works; and grant me, O Lord, thy mercy, that I may walk in thy way in innocence. And let my prayer come unto thee for I am not good, but for the sake of thy mercy and many kindnesses deliver my unhappy soul from death. And remember me, O Lord, for I have sinned and borne the condemnation of death. I cry to no physician save thee, nor to any other to loose my fetters; there is no God but thee. But I have fled to thy mercy, O Lord. O God of all things. Thou who dost give life by thy power, thou, O Lord, hast said, seek and ye shall find, ask and ye shall receive, knock and it shall be opened to you. Purge me, O Lord, from every sin that is to death, and do not reject my prayer, for I have turned myself to thee. For my heart is not pure, and my soul is unclean with sin. Hear me, O Lord, in thy mercy, for thou dost not reject the prayer of those who repent truly. But I have repented. Yet I am not clean, for I have repented at one hour and sinned the next hour. O strengthen me, Lord, in thy righteousness, set my feet upon the rock of repentance. Bestow goodness, O Lover of men, overcome those things which are within. As thou didst open the eyes of the blind, open the eyes of my dark heart: and as thou didst cleanse the leper by thy word, cleanse the impurities of my soul. Let thy mercy, O Lord, be as first in my inward parts, may it consume every polluting thought: for thou alone art merciful. O Light surpassing every light, O Joy surpassing every joy, O Rest exalted above all rest: thou art the true life, the power uncreated from eternity. And I pour out my soul before thee, O Merciful, and I pray thee that thou wilt forgive all my sins. For I am deserving of all punishment and torment: but I beseech thee do not forsake me, nor deliver me to my enemies, lest at any time they mock me in the desolation of my soul. Thou, O Lord, art pitiful and of loving-kindness, thou dost open thy heart to those who have sinned against thee. Raise up my songs, which sin has cast down in me. Revive my soul and mind which transgression has slain. Lighten the eyes of my heart which have been in darkness, that is the evil passion upon them. And deliver me from everything, for thine is the glory for ever and for all ages. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (16), pp. 115-116. Public domain. Given in full by O'Leary himself, no abbreviation to resolve."
+    }
+  },
+  {
+    "id": "cop-mo-sanctus",
+    "title": "The Sanctus",
+    "text": "Holy, Holy, Holy, Lord of Sabaoth. Heaven and earth are full of thy glory.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (17), p. 116. Public domain."
+    }
+  },
+  {
+    "id": "cop-mo-concluding-doxology",
+    "title": "Concluding Doxology of the Midnight Office",
+    "text": "O thou begotten of the Father before all ages, Light of Light, Very God of Very God, Begotten, not created, Consubstantial with the Father, of whom is everything, and without whom was made nothing that was made: we thank thee, Lord Jesus Christ, and pray to thy goodness, O Lover of men. Through the intercessions of our Lady, the glory of our race, the Holy ever Virgin Mary, who was alone worthy to be thy mother in the latter times, and the prayers of our holy father the Evangelist Mark the Apostle, and the prayers of the Saints, have mercy upon us according to thy great mercy, and forgive all our sins and remove all our transgressions which have been and which are; and save us, protect us, and guard us against falls in our experiences. And may the grace of thy Holy Spirit the Paraclete renew the things that are within us, and strengthen us inwardly in this present and in the time that is to come.\n\nGlory to the Father, and to the Son, and to the Holy Spirit; both now and ever, and unto the ages of ages. Amen.\n\nMay consolation come to us quickly, O Christ our God; grant it to thy servants, whilst our spirits are feeble within us. Cast not away our souls, nor leave our minds in tribulation, but come to us always and be near us, O thou who art everywhere; as thou wast with thy disciples always and didst teach them as they desired thee; guard us, O thou Merciful, so that we may praise thee perpetually and glorify thee for ever. Amen.",
+    "meta": {
+      "source": "O'Leary 1911, Midnight Office item (18), pp. 116-117. Public domain. 'Glory be, &c.' resolved to its full form per the no-placeholder governance rule."
+    }
   }
 ]

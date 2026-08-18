@@ -5447,3 +5447,74 @@ sourcing/building), then Phase 2 -- the Theotokia weekly hymn cycle -- and resol
 `cop-theotokion`'s open sourcing question in that same phase. None of the seven hours are marked
 GREEN yet -- all remain amber pending an independent read-through, same bar as every other book in
 this project before promotion.
+
+## KNOWN TOOL LIMITATION, documented 2026-08-18 -- Google Drive read_file_content truncates large PDF extractions
+
+**The problem:** `Google Drive:read_file_content` on a large scanned/OCR'd PDF does not reliably
+return the full document. Confirmed on `DO 1-124 small.pdf` (the first half of O'Leary's 1911
+Agpeya source, uploaded to Google Drive): two independent fetches, at different points in this
+session, both returned content that cut off at the same point (12,416 lines / ~198-200k
+characters) -- well short of the file's actual end, mid-sentence in the Twelfth Hour's final
+prayer. Josh confirmed directly that no content was cut when he split the book into two PDF
+halves, and that the missing material (the rest of the Twelfth Hour plus the entire Midnight
+Office, roughly PDF pages 110-124) genuinely is present in the file Claude cannot fully retrieve.
+
+**Workaround used this session:** Josh pasted the missing pages directly as text (page 109) and
+then as page images (pages 110-117, covering the full Midnight Office) when the gap turned out to
+be larger than a single page. Both worked immediately.
+
+**Standing guidance for future sessions:** this joins the existing list of known tool limitations
+(archive.org `_djvu.txt` truncation, Wikisource cache-only fetching, apocryphalibrary.weebly.com's
+navigation-sidebar problem). When a Google Drive PDF fetch is needed for a large source (100+
+pages) and content appears to end mid-sentence or well short of where the book's own pagination or
+table of contents says it should, do not assume the source itself is incomplete or that the gap is
+unrecoverable -- ask the person to confirm what's actually in the file, and if confirmed present,
+ask them to paste the specific missing range directly (text or page images both work) rather than
+retrying the same fetch, which reproduces the same truncation.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: Midnight Office built (final content checkpoint of this phase)
+
+Final content checkpoint before the Theotokia (Phase 2). Source: O'Leary 1911, pp. 110-117,
+provided directly by Josh as page images after the tool limitation documented above blocked
+automated retrieval.
+
+**Content built -- the complete Midnight Office, O'Leary's items (1)-(18) across three nocturns:**
+- `components/coptic.json`: 12 new entries, 51 total. This office has a genuinely different
+  structure from the seven hours -- three nocturns rather than a single fixed sequence, and its own
+  distinct set of prayers (the Prayer of Ezekias/Isaiah 38:10-20, the Prayer of S. Simeon Stylites,
+  the Prayer of Abba Ephraem, a thrice-repeated prayer, and a closing doxology) not found in any
+  hour.
+- **Correct reuse, confirmed by O'Leary's own explicit cross-references, not re-transcribed:**
+  item (4) ("As at the Third Hour, no. (5)") reuses `cop-th-second-troparion`; the Second Nocturn's
+  items (4)-(7) ("as before in the first nocturn") reuse the same four components again; item (8)'s
+  psalms ("repeated from the Office of the Eleventh Hour") and item (10)'s psalms ("used in the
+  Office of the Twelfth Hour are repeated") are pulled live from those hours' own rubric `psalms`
+  fields via two new VARIABLE handlers, not re-specified.
+- **No-placeholder rule applied:** item (12), the Prayer of Ezekias, is cited by O'Leary as only its
+  opening words plus a reference ("I said in the cutting off, &c. Isaiah xxxviii. 10-20
+  inclusive") -- resolved via the same `canticle`/`VARIABLE_COP_CANTICLE` mechanism already built
+  for the Eleventh Hour's Nunc Dimittis. All "Glory be, &c." and "Both now, &c." instances across
+  the three nocturns' troparia resolved to full form.
+- **A repetition rubric correctly NOT treated as a placeholder:** item (15) is a short prayer
+  O'Leary directs to be "repeated three times" -- the prayer text itself is given in full; only the
+  repetition count is a rubric instruction, not missing content, so it is retained as a plain note
+  (`(Said three times.)`), the same treatment already established for the 41-fold Kyrie.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-midnight-office` rubric with new
+  `firstNocturnPsalm` and `canticle` fields alongside the sequence.
+
+**Code wiring:** three new VARIABLE handlers in `renderCopticAgpeya()` --
+`VARIABLE_COP_MO_FIRST_NOCTURN_PSALM` (Psalm 119 alone), and
+`VARIABLE_COP_MO_SECOND_NOCTURN_PSALMS`/`VARIABLE_COP_MO_THIRD_NOCTURN_PSALMS` (both look up the
+Eleventh/Twelfth Hour rubrics' own `psalms` fields live from `appData.copticRubrics` rather than
+duplicating the psalm lists). `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended with the
+Midnight Office (eight offices now selectable); `index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**This closes all content-build work planned for this phase of the Coptic Agpeya rebuild.**
+Remaining: Phase 2, the Theotokia weekly hymn cycle, and resolving `cop-theotokion`'s open sourcing
+question in that same phase. None of the eight offices built so far are marked GREEN -- all remain
+amber pending an independent human read-through against source, same bar as every other book in
+this project before promotion.
