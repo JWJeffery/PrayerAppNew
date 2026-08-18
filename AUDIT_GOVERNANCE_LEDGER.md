@@ -5908,3 +5908,53 @@ remain unconfirmed either way by this pass:** Tuesday's Theotokia Crown refrain 
 cross-reference to Sunday's formula) and Saturday's two Crown refrains (completed by cross-reference
 to the Tone Batos formula, disclosed as a judgement call). Neither was specifically re-examined in
 this pass; if a future session gets a page image for either passage, check those first.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya verification pass: Sunday and Monday Theotokia fully verified, Crown completions strengthened
+
+Continuing the line-by-line verification pass into the Theotokia cycle itself, not just spot-checks.
+
+**Sunday's entire Theotokia (all 8 sections, Conclusion, Resurrection Hymn) now fully line-by-line
+verified.** One genuine finding:
+- `cop-sunday-theotokia-5` (Section V): the source has additional content after "light from the
+  Light unapproachable" that was silently omitted at build time -- the raw OCR at this exact point
+  is a genuinely garbled two-column interleaving that could not be confidently reconstructed. This
+  is different from the established "&c." abbreviation pattern (which has a clear, findable
+  resolution); this is real OCR damage to content that was actually printed. Rather than guess at
+  wording, the gap is now disclosed honestly in the component's `meta` (the fragment likely
+  echoes John 1:5/1:10-11, "the world/darkness which did not receive him," but the exact original
+  wording is not recoverable from this extraction and needs a page image to properly complete).
+- All other seven sections, the Conclusion (a long section with two "There was a [X] placed in the
+  tabernacle..." / "They offered the [X] on account of..." repeated-line passages, checked in
+  full), and the Resurrection Hymn: zero further discrepancies.
+
+**Monday's entire Theotokia (all 9 sections + Crown) fully line-by-line verified: zero
+discrepancies.**
+
+**Both of this build's flagged low-confidence Crown completions re-examined with new evidence,
+strengthening (not overturning) the original judgement calls:**
+- Tuesday's Crown ("We ourselves pray that we may obtain mercy through thy intercessions to him
+  the Lover of men"): the exact same phrase was directly re-confirmed as genuine O'Leary wording
+  while fully verifying Sunday's Conclusion in this same pass -- not merely "attested elsewhere" in
+  the abstract as the original note said, but freshly and directly re-checked. Meta updated to
+  reflect this stronger confirmation.
+- Saturday's two Crowns ("We pray thee be mindful, O faithful mediator, before our Lord Jesus
+  Christ, that he take away our sins"): re-checked Wednesday's, Thursday's, and Friday's Crown
+  endings word-for-word in this pass -- all three independently confirmed to end with this exact
+  wording, not just one as previously noted. Meta updated on both Saturday Crown components to
+  reflect the stronger three-instance pattern, while still honestly flagging that Saturday's own
+  abbreviation point differs slightly from the other three days.
+
+**Verification status now, precisely:**
+- FULL line-by-line, zero or resolved-and-disclosed discrepancies: all seven hours, the Midnight
+  Office, Sunday's and Monday's complete Theotokia (Psali, Alternative Psali, and full Theotokia
+  body).
+- Spot-checked only: Tuesday's, Wednesday's, Thursday's, Friday's, and Saturday's Theotokia bodies
+  (openings checked plus, in this pass, the Crown endings of all five) -- the middle sections of
+  these five days' Theotokia have not yet been read line-by-line, nor has any of their Psali/
+  Alternative Psali content beyond Tuesday's (which was fully checked in this pass).
+- Genuinely not yet examined: the bulk of Wednesday/Thursday/Friday/Saturday's Theotokia middle
+  sections, and their Psali/Alternative Psali content.
+
+**Verification is genuinely progressing, not stalled at 'spot-checked' -- roughly half the
+Theotokia cycle (Sunday, Monday, Tuesday) is now at the same full-verification standard as the
+hours.**

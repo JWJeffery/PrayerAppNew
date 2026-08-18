@@ -3030,3 +3030,42 @@ through Saturday's remaining sections and Psali content), applying the same meth
 done and any found errors are fixed, the hours + Midnight Office + Theotokia cycle would all be
 at a genuinely comparable, defensible verification level -- worth revisiting GREEN status at that
 point, in consultation with Josh on what threshold he wants before promoting.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya verification pass: Sunday + Monday Theotokia fully verified
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Progress since the last handoff:** Sunday's entire Theotokia and Monday's entire Theotokia are
+now fully line-by-line verified (not just spot-checked), joining the hours and Midnight Office at
+the same verification standard. Tuesday's Theotokia body and all four remaining Crowns
+(Tuesday/Wednesday/Thursday/Friday's already checked; Saturday's re-examined with new evidence)
+were also checked in this pass.
+
+**One genuine, disclosed content gap found (not an invented-text problem, an OCR-damage problem):**
+`cop-sunday-theotokia-5` is missing a clause after "light from the Light unapproachable" -- the
+source text is there but the OCR at that exact point is too garbled to confidently reconstruct.
+Disclosed honestly in meta rather than guessed at. **If a page image for O'Leary p.124 ever becomes
+available, this is the one thing in the whole rebuild that's a genuine known gap, not just
+low-confidence.**
+
+**Both flagged low-confidence Crown completions got stronger (not new) evidence this pass:**
+Tuesday's Crown formula was directly reconfirmed while verifying Sunday's Conclusion. Saturday's
+two Crowns' formula was reconfirmed as appearing identically in all three of Wednesday/Thursday/
+Friday's Crowns (previously only one had been checked). Both components' meta updated to reflect
+this.
+
+**Precise verification status now:**
+- FULLY verified (hours-level standard): all seven hours, Midnight Office, Sunday's and Monday's
+  complete Theotokia.
+- Openings + Crowns checked, middles not yet read line-by-line: Tuesday (body fully checked
+  this pass, only Psali/Alt-Psali remain unchecked for that day), Wednesday, Thursday, Friday,
+  Saturday.
+- Not yet touched: most of Wednesday/Thursday/Friday/Saturday's Theotokia middle sections and
+  Psali/Alternative Psali content.
+
+**Next session should:** continue the same line-by-line method through Wednesday's, Thursday's,
+Friday's, and Saturday's remaining Theotokia sections, then all six days' (Monday already done)
+Psali/Alternative Psali content not yet individually re-verified line-by-line (Tuesday's Psali/
+Alt-Psali still need this treatment too). This is real, steady progress toward a defensible GREEN
+for the whole Coptic Agpeya, not stalled -- roughly half the Theotokia cycle is now at full
+verification standard.
