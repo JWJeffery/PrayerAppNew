@@ -283,5 +283,18 @@
       "cop-wednesday-theotokia-crown",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-thursday-theotokia",
+    "officeName": "The Thursday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 167-177, public domain. Fifth day of the weekly Theotokia hymn cycle. Structure: nine sections (no paraphrases) plus a Crown -- same section count as Monday, though a different tone (Batos, not Adam) and entirely different content. O'Leary's book contains a further, third Psali for this day ('Another Psali for Thursday') -- consistent with the scope decision applied to every other day, this additional variant is not built here. As with every prior day, O'Leary's scholarly manuscript-variant material is deliberately out of scope for this devotional build.",
+    "sequence": [
+      "cop-thursday-psali",
+      "cop-thursday-alt-psali",
+      "cop-thursday-theotokia",
+      "cop-thursday-theotokia-crown",
+      "cop-closing-formula"
+    ]
   }
 ]

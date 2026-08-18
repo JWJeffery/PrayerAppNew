@@ -2887,3 +2887,32 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 **Next session should:** continue with Thursday, checking its actual structure first, same
 discipline as every prior day. Same source, same fetch method. After all seven days: resolve
 `cop-theotokion`'s open sourcing question.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Thursday built
+
+Fifth day of Phase 2, two remain. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same
+date.
+
+**Built:** the complete Thursday Psali, Alternative Psali, and Theotokia (9 sections + Crown, no
+paraphrases, Tone Batos) as 4 new components in `components/coptic.json` (78 entries total) and
+the `coptic-thursday-theotokia` rubric.
+
+**Scope decision applied consistently:** O'Leary includes a third Psali for this day ("Another
+Psali for Thursday") -- not built, same grounds as every other day's excluded variants.
+
+**Third use of the cross-book refrain-completion method:** the Crown's "We pray thee be mindful,
+&c." had no fuller statement in Thursday's own text, but matches exactly the closing formula
+O'Leary gives in full at the end of Wednesday's Crown (both Tone Batos days) -- completed from
+that, not guessed. **Keep watching for this Adam/Batos tone grouping** as a useful signal for the
+remaining days: days sharing a tone may share stock refrains/conclusions even when a given day's
+own text doesn't spell one out in full.
+
+**Wired:** no new render-code handlers needed; navigator and drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with Friday, then Saturday -- last two days of Phase 2's weekly
+cycle. Check each day's actual structure first, same discipline as every prior day. After both:
+resolve `cop-theotokion`'s open sourcing question, which closes out the entire Coptic Agpeya
+rebuild's planned scope.

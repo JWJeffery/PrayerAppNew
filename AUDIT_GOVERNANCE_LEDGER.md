@@ -5707,3 +5707,34 @@ Fourth day of Phase 2. Source: O'Leary 1911, pp. 161-167.
 
 **Still open:** Thursday through Saturday, each checked independently for its own structure before
 building.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Thursday built
+
+Fifth day of Phase 2. Source: O'Leary 1911, pp. 167-177.
+
+**Content built -- the complete Thursday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 4 new entries (`cop-thursday-psali`, `cop-thursday-alt-psali`,
+  `cop-thursday-theotokia`, `cop-thursday-theotokia-crown`), 78 total.
+- **Structure confirmed independently:** nine sections (same count as Monday, but Tone Batos not
+  Adam, and entirely different content), no paraphrases, a Crown.
+- **Scope decision applied consistently:** O'Leary's book includes a third Psali for this day
+  ("Another Psali for Thursday") -- not built, on the same grounds as every other day's excluded
+  additional variants (this project builds one main Psali + one Alternative Psali + the Theotokia
+  per day, not every variant O'Leary records).
+- **No-placeholder rule applied to two refrains:** the Theotokia's "He who dwelt, &c." (resolved
+  from Section I's full statement) and the Crown's "We pray thee be mindful, &c." The Crown's
+  refrain had no full statement within Thursday's own text, but matches exactly the closing formula
+  O'Leary gives in full at the end of the immediately preceding day's Crown (Wednesday) -- both are
+  Tone Batos days, confirming this as their shared stock conclusion rather than a guess. Third use
+  of the cross-reference-within-the-book completion method (after the Third Hour and Tuesday's
+  Crown).
+- `components/traditions/coptic/rubrics.json`: added the `coptic-thursday-theotokia` rubric.
+
+**Code wiring:** no new handlers needed. `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended;
+`index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Friday and Saturday, each checked independently for structure before building.
