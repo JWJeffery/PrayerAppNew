@@ -5268,3 +5268,30 @@ confirmed unchanged (247/247).
 **Still open:** Sixth, Ninth, Eleventh/Vespers, Twelfth/Compline hours + Midnight Office, then the
 Theotokia (Phase 2). `cop-th-concluding-prayer`'s truncated ending and `cop-theotokion`'s sourcing
 both remain open, flagged rather than guessed at.
+
+## GOVERNANCE RULE, added 2026-08-18 (Josh's directive) -- no abbreviated/placeholder liturgical text, ever
+
+**Standing rule, binding on all future content work:** the app must never present a prayer, hymn,
+canticle, or any other liturgical text as an abbreviation, cross-reference, or placeholder that
+requires the person praying to already know or supply the missing words from memory. If a rubric
+or source says "say the Gloria" (or any equivalent shorthand -- "&c.", "as before", "the usual
+ending", etc.), the app must render the complete text of that Gloria (or whatever is referenced)
+in place, not a citation or truncation.
+
+This applies regardless of how the *source* itself is formatted. Primary liturgical sources
+routinely abbreviate repeated material for print economy (this project has seen it in O'Leary's
+Coptic Daily Office, and it appears throughout classical liturgical books generally) -- that
+convention is fine for a printed reference book aimed at people who already know the office by
+heart, but is not acceptable for this app, whose purpose is to let someone actually pray the
+office without needing outside knowledge.
+
+**Practical effect on the standing "never fabricate" rule:** this does not license inventing
+wording. When a source abbreviates something the app has *already transcribed in full elsewhere*
+(e.g. a shared Gloria Patri, a Trisagion, a Kyrie), the fix is a reference to that already-verified
+component -- no new content is invented, the existing verified text is simply reused. When a
+source abbreviates something that is *not* given in full anywhere else in that same source (a real
+gap, not just a formatting convenience), that is a genuine open sourcing question and must be
+flagged and resolved deliberately (a second source, a documented cross-hour formula reuse with its
+provenance disclosed, or a direct decision from Josh) -- never silently guessed at, and never left
+half-finished in the shipped app either. "Flag it, don't fake it" and "don't ship a placeholder"
+apply together, not as alternatives.

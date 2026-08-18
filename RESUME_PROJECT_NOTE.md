@@ -2551,3 +2551,31 @@ Twelfth (Compline), then the Midnight Office -- same method as these two checkpo
 `DO 125+ small.pdf`, both already confirmed readable directly, no fetch-tool wall). After all
 hours are done: Phase 2, the Theotokia weekly cycle, and resolve `cop-theotokion`'s sourcing in
 the same phase. `SEED_VERSION`/dashboard GREEN status still not touched -- mid-build.
+
+## SESSION HANDOFF 2026-08-18 continued -- New governance rule: no abbreviated/placeholder liturgical text, ever
+
+**Josh's directive, now a standing rule (full text in `AUDIT_GOVERNANCE_LEDGER.md`):** the app must
+never present a prayer as a cross-reference or truncation requiring the person to already know the
+missing words -- if a rubric says "say the Gloria," the app renders the whole Gloria, not a
+citation. This applies regardless of how the *source itself* is formatted -- primary liturgical
+books routinely abbreviate repeated material for print economy, which this app must not carry over.
+
+**Immediately applied to the one place this was already a problem:** `cop-th-concluding-prayer`
+(Third Hour, built earlier this session) had been left ending "...who..." because O'Leary's own
+1911 text abbreviates its doxology as "&c." without spelling it out again at that point, and the
+exact phrase doesn't recur verbatim anywhere else in his book (confirmed via exact-phrase search
+before concluding this was a real gap, not an extraction error). **Fixed by completing it with the
+doxology O'Leary himself already gives in full** at the end of the Morning Office's Prayer of
+Thanksgiving ("through whom be glory and honour and power...consubstantial with thee; now and
+always and for ever and ever. Amen") -- confirmed via independent cross-check against several
+other (contemporary, copyrighted, not quoted) English Agpeya editions that this really is the
+standard formula this specific prayer concludes with, not a guess. No new wording invented --
+only O'Leary's own already-transcribed translation reused, which is exactly what the standing
+"never fabricate" rule already permitted; the fix was recognizing this specific case needed action,
+not that fabrication was necessary.
+
+**Next session should:** apply this rule going forward on every remaining hour + Midnight Office +
+the Theotokia -- watch specifically for any "&c.", "as before", or similar shorthand in O'Leary's
+text, and resolve each one the same way (reuse an already-transcribed component if the formula
+matches something already built; otherwise flag and research properly, never leave it truncated
+in the shipped component). Continue with the Sixth Hour as originally planned.
