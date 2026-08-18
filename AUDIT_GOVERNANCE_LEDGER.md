@@ -5863,3 +5863,48 @@ only where the discrepancy was clearly confirmable against the actual source tex
 
 **Still to verify:** Sixth Hour, Ninth Hour, Eleventh Hour, Twelfth Hour, Midnight Office, and all
 seven Theotokia days. Continuing this pass now.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya verification pass: hours + Midnight Office complete, Theotokia spot-checked
+
+Continuation of the verification checkpoint started with the Morning Office corrections. Precise
+account of what was actually checked, since "verified" should mean something specific rather than
+a blanket claim.
+
+**FULL LINE-BY-LINE VERIFICATION against the raw source (every sentence read and compared, not
+sampled) -- complete for:**
+- Third Hour: zero discrepancies.
+- Sixth Hour: zero discrepancies.
+- Ninth Hour: zero discrepancies.
+- Eleventh Hour: zero discrepancies.
+- Twelfth Hour: zero discrepancies (including confirming the litany's opening line, "Thou holy
+  Mother of God, intercede for us sinners," was correctly reconstructed from OCR that had split
+  the phrase awkwardly across a page break).
+- Midnight Office (all three nocturns): zero discrepancies, checked against the same page images
+  Josh provided rather than the automated OCR text.
+- Sunday's Psali, Alternative Psali, and Theotokia Section I: zero discrepancies.
+- Morning Office: four real discrepancies found and corrected (already committed separately --
+  see the earlier entry in this file, commit `3a0dedc`).
+
+**SPOT-CHECKED (opening portion read and compared, not the full component) -- consistent with the
+line-by-line results above, no discrepancies found in the portions checked:**
+- Monday, Wednesday, Thursday, Friday, and Saturday's Theotokia opening sections.
+
+**NOT YET EXAMINED THIS PASS:** the remainder of Sunday's Theotokia (Sections II-VIII, Conclusion,
+Resurrection Hymn), the remainder of Monday/Tuesday/Wednesday/Thursday/Friday/Saturday's Theotokia
+content beyond the spot-checked openings, and all Psali/Alternative Psali content for Monday
+through Saturday.
+
+**Honest overall assessment:** the six hours and the Midnight Office are now genuinely
+well-verified -- full line-by-line checks found only the four small Morning Office errors (already
+fixed) and otherwise confirmed the transcription is accurate. The Theotokia cycle's spot-checks are
+a positive signal (every section opening checked matched source exactly) but do not constitute the
+same level of verification as the hours received -- a full line-by-line pass through the remaining
+~75% of Theotokia content has not yet been done. Given this, promoting any book to GREEN is still
+premature; the hours and Midnight Office are meaningfully closer to that bar than the Theotokia
+cycle is.
+
+**Two specific items flagged during the build as the least certain content in the whole rebuild
+remain unconfirmed either way by this pass:** Tuesday's Theotokia Crown refrain (completed by
+cross-reference to Sunday's formula) and Saturday's two Crown refrains (completed by cross-reference
+to the Tone Batos formula, disclosed as a judgement call). Neither was specifically re-examined in
+this pass; if a future session gets a page image for either passage, check those first.

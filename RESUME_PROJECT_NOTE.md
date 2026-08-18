@@ -2987,3 +2987,46 @@ read-through against source, same as every other book in this project.
    the Coptic Agpeya. Keep applying them.
 5. Longer-term, deferred items already on record elsewhere in this file (Fetha Nagast, Josippon,
    remaining ET backlog, etc.) remain untouched and out of scope until Josh raises them.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya verification pass: hours + Midnight Office done, Theotokia spot-checked
+
+Continuation of the verification checkpoint. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s two
+entries of the same date (the Morning Office corrections, and this broader status entry).
+
+**What "verified" actually means here, precisely, not as a blanket claim:**
+
+FULL line-by-line (every sentence read and compared against source) -- done and clean:
+- Third, Sixth, Ninth, Eleventh, Twelfth Hours
+- Midnight Office (all three nocturns, checked against Josh's actual page images)
+- Sunday's Psali, Alternative Psali, and Theotokia Section I
+- Morning Office -- NOT clean on first pass; four real errors found and corrected (see the
+  dedicated ledger entry, commit `3a0dedc`, already pushed).
+
+SPOT-CHECKED (opening portion only) -- consistent, clean, but not exhaustive:
+- Monday, Wednesday, Thursday, Friday, Saturday's Theotokia opening sections.
+
+NOT YET EXAMINED: the bulk of the Theotokia cycle's actual content -- Sunday's remaining sections,
+and essentially all of Monday through Saturday beyond the spot-checked openings.
+
+**Honest bottom line:** the hours and Midnight Office are now genuinely well-verified and much
+closer to a defensible GREEN than they were. The Theotokia cycle's spot-checks are a good sign
+(every single thing checked matched source exactly) but do not amount to the same level of
+scrutiny -- treat the hours/Midnight-Office and the Theotokia cycle as being at different
+verification maturity levels, not the same.
+
+**Two things worth flagging for whoever continues this:**
+1. The two lowest-confidence completions in the whole build (Tuesday's Theotokia Crown refrain,
+   Saturday's two Crown refrains -- both completed by cross-reference rather than exact source
+   match, disclosed as judgement calls at build time) were not specifically re-examined in this
+   pass. If better source access turns up, check those first.
+2. This verification method -- re-extracting the raw source for each office/day and reading every
+   component against it line by line, only fixing what's clearly confirmable, not guessing -- is
+   what actually moves content toward GREEN. Spot-checking openings is a useful sanity signal but
+   is not a substitute for it.
+
+**Next session should:** continue the full line-by-line pass through the remaining ~75% of
+Theotokia content (Sunday's Sections II-VIII/Conclusion/Resurrection Hymn, then all of Monday
+through Saturday's remaining sections and Psali content), applying the same method. Once that's
+done and any found errors are fixed, the hours + Midnight Office + Theotokia cycle would all be
+at a genuinely comparable, defensible verification level -- worth revisiting GREEN status at that
+point, in consultation with Josh on what threshold he wants before promoting.
