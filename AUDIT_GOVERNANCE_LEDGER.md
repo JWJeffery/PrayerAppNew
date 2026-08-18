@@ -5539,15 +5539,19 @@ material is out of scope for a devotional prayer app and is not being transcribe
 - **No-placeholder rule applied to the Psali's own extensive refrain:** the main Psali repeats "O
   Lord Jesus help us" roughly 28 times, abbreviated by O'Leary after its first appearance as "O
   Lord, &c." -- written out in full at every occurrence.
-- **A genuinely different sourcing tier, disclosed explicitly:** unlike the seven hours and the
-  Midnight Office (each either cleanly OCR'd or transcribed directly from page images Josh
-  provided), this content came from this app's automated Google Drive text-extraction tool on a
-  scan with a materially higher OCR-error rate. Every new component's `meta` flags this as a
+- **A genuinely different sourcing tier, disclosed explicitly -- CORRECTED 2026-08-18, Josh caught
+  an imprecise explanation here:** this content came from this app's automated Google Drive
+  text-extraction tool rather than transcribed directly from page images. It is the *same book and
+  scan* as the seven hours (Josh split one PDF into two files, not two separate sources) -- the
+  actual difference is page layout, not scan quality: the Theotokia's pages interleave multiple
+  manuscript-witness columns (Text A, Text Q, Text K), marginal folio references, and footnotes
+  inline with the main text, which is far harder for automated linearization to get right than the
+  hours' simple continuous-prose pages. Every new component's `meta` flags this as a
   lower-confidence tier pending human verification against the actual page images -- not silently
-  presented at the same confidence as the hand-checked hours. One specific OCR ambiguity (a
-  fragment, "O ye orthodox, in the name of", that didn't fit grammatically either direction) was
-  omitted rather than guessed at, and the omission is disclosed in the component's own meta rather
-  than smoothed over.
+  presented at the same confidence as the hand-checked hours. One specific ambiguity (a fragment,
+  "O ye orthodox, in the name of", that didn't fit grammatically either direction) was omitted
+  rather than guessed at, and the omission is disclosed in the component's own meta rather than
+  smoothed over.
 - **A seasonal addition correctly kept separate, not silently merged:** O'Leary's own note marks
   the Hymn on the Resurrection as added to the Theotokia only "from Easter to the end of Hatur" --
   this app doesn't yet have seasonal on/off logic for Theotokia additions, so it is included as its
@@ -5571,3 +5575,27 @@ drawer status text updated to reflect Phase 2 now being under way.
 **Still open:** Monday through Saturday's Psali, Alternative Psali, and Theotokia (same method,
 same source, `theotokiaSections` mechanism already built and ready to reuse). `cop-theotokion`'s
 open sourcing question remains unresolved, to be handled once the full weekly cycle is built.
+
+## CORRECTION, 2026-08-18 -- Sunday Theotokia sourcing note was imprecise about why it's lower-confidence
+
+Josh caught this directly: the earlier note in this session's Sunday Theotokia entry (and in the
+component/rubric `meta` fields themselves) attributed the lower sourcing confidence to "this
+particular source scan" or "the second PDF," implying the file Josh split off had worse scan/OCR
+quality than the first. That's wrong -- it's the same book, same scan, just split into two files;
+no content was cut or degraded in the split.
+
+**The actual reason the Theotokia content is lower-confidence:** page layout complexity, not scan
+quality. The Theotokia's pages interleave multiple manuscript-witness columns (O'Leary presents
+several textual traditions side by side, labeled Text A, Text Q, Text K, etc.), marginal folio
+references, and footnotes inline with the main devotional text. Automated text extraction
+linearizes a two-dimensional page into a one-dimensional stream, and this kind of dense,
+multi-column layout is far more likely to interleave fragments out of order than the hours' simple
+continuous-prose pages, regardless of which half of the split PDF a given page happens to fall in.
+
+Corrected in `components/coptic.json` (all affected `meta.source` fields), the
+`coptic-sunday-theotokia` rubric's note, this session's earlier ledger entry, and
+`RESUME_PROJECT_NOTE.md`. The underlying decision -- flag this content as lower-confidence pending
+human verification -- was correct and unchanged; only the *stated reason* was wrong, and that
+matters for future sessions: the six remaining Theotokia days should expect the same
+layout-driven extraction difficulty (since their pages have the same multi-column structure), not
+assume some files are more reliable sources than others.

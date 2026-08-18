@@ -2766,12 +2766,16 @@ generalized `theotokiaSections` mechanism (component id + optional lesson citati
 built once to work identically for all seven days -- **reuse this same mechanism for Monday through
 Saturday rather than writing new code per day.**
 
-**A real, disclosed difference in sourcing confidence:** unlike the hours and Midnight Office (each
-either clean OCR or transcribed directly from Josh's page images), this content came from the
-automated Google Drive text-extraction tool on a scan with noticeably worse OCR quality. Every
-component here is flagged in its own `meta` as a lower-confidence tier pending human verification --
-**this same disclosure practice should continue for the remaining six days**, since the source
-quality issue applies to all of them equally, not just Sunday.
+**A real, disclosed difference in sourcing confidence -- CORRECTED 2026-08-18, Josh caught an
+imprecise explanation:** this content came from the automated Google Drive text-extraction tool
+rather than transcribed directly from page images. It is the *same book and scan* as the seven
+hours (Josh split one PDF into two files, not two different sources) -- the actual difference is
+page layout, not scan quality: the Theotokia's pages interleave multiple manuscript-witness
+columns (Text A, Text Q, Text K), marginal folio references, and footnotes inline with the main
+text, which automated linearization handles far worse than the hours' simple continuous-prose
+pages. Every component here is flagged in its own `meta` as a lower-confidence tier pending human
+verification -- **this same disclosure practice, correctly explained, should continue for the
+remaining six days**, since the same layout-complexity issue applies to all of them equally.
 
 **No-placeholder rule applied to a new pattern:** the Psali's ~28-times-repeated refrain,
 abbreviated by O'Leary as "O Lord, &c." after its first appearance, was written out in full at
