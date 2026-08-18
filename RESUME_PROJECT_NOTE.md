@@ -2860,3 +2860,30 @@ zero remaining placeholder text in actual prayer content, div-tag balance unchan
 **Next session should:** continue with Wednesday, checking its actual structure first (same
 discipline as the last three days) before building. Same source, same fetch method. After all
 seven days: resolve `cop-theotokion`'s open sourcing question.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya Theotokia: Wednesday built
+
+Fourth day of Phase 2. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Built:** the complete Wednesday Psali, Alternative Psali, and Theotokia (7 sections + Crown, no
+paraphrases -- same shape as Tuesday, confirmed not assumed) as 4 new components in
+`components/coptic.json` (74 entries total) and the `coptic-wednesday-theotokia` rubric.
+
+**A genuine unresolved textual question preserved, not smoothed over:** O'Leary's own footnote
+flags the "Adam" tone heading given for Wednesday as likely an error (several manuscripts read
+"Batos" instead) -- recorded in the component's meta exactly as O'Leary leaves it unsettled, since
+picking one on this app's own authority would misrepresent what the source actually says.
+
+**Refrain resolution was simpler than the last two days:** both the Psali's and Alternative Psali's
+abbreviated closing line ("Whenever we sing psalms, &c.") could be completed directly from the full
+statement already given at the end of this same day's own main Psali -- no need for the
+cross-book corroboration method used for the Third Hour and Tuesday's Crown.
+
+**Wired:** no new render-code handlers needed; navigator and drawer status text updated.
+
+**Verification:** `node --check` clean, both JSON files parse, full sweep of `coptic.json` found
+zero remaining placeholder text in actual prayer content, div-tag balance unchanged.
+
+**Next session should:** continue with Thursday, checking its actual structure first, same
+discipline as every prior day. Same source, same fetch method. After all seven days: resolve
+`cop-theotokion`'s open sourcing question.

@@ -5673,3 +5673,37 @@ Third day of Phase 2. Source: O'Leary 1911, pp. 155-161.
 
 **Still open:** Wednesday through Saturday, each checked independently for its own structure before
 building, same discipline as Sunday/Monday/Tuesday.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya Theotokia: Wednesday built
+
+Fourth day of Phase 2. Source: O'Leary 1911, pp. 161-167.
+
+**Content built -- the complete Wednesday Psali, Alternative Psali, and Theotokia:**
+- `components/coptic.json`: 4 new entries (`cop-wednesday-psali`, `cop-wednesday-alt-psali`,
+  `cop-wednesday-theotokia`, `cop-wednesday-theotokia-crown`), 74 total.
+- **Structure confirmed independently:** seven sections, no paraphrases, a Crown -- same shape as
+  Tuesday, checked rather than assumed.
+- **A genuine textual note preserved rather than silently resolved:** O'Leary's own footnote flags
+  that the "Adam" tone heading given for this day is likely an error (several manuscripts head it
+  "Batos" instead) -- recorded in the component's `meta` exactly as O'Leary leaves it unsettled,
+  not picked one way or the other on this app's own authority.
+- **No-placeholder rule applied to the recurring refrains:** the Psali's closing "Whenever we sing
+  psalms, &c." (in both the main Psali and the Alternative Psali) and the Theotokia's "The Father
+  looked down, &c." refrain -- both written out in full at every occurrence. The Alternative
+  Psali's abbreviated closing line was completed using the identical full statement already given
+  at the end of this same day's own main Psali, confirming it as Wednesday's standard formula
+  rather than needing outside corroboration (unlike the Third Hour and Tuesday Crown cases, which
+  needed cross-referencing elsewhere in the book).
+- Two footnotes marking manuscript-specific insertions in the Crown ('Q' and 'O' witnesses) were
+  correctly excluded as textual apparatus, not main text, same scope decision applied throughout.
+- `components/traditions/coptic/rubrics.json`: added the `coptic-wednesday-theotokia` rubric.
+
+**Code wiring:** no new handlers needed. `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` extended;
+`index.html` drawer status text updated.
+
+**Verification:** `node --check` clean. Both JSON files parse. Full sweep of
+`components/coptic.json` for any remaining placeholder text in actual prayer content -- zero found.
+`index.html` div-tag balance confirmed unchanged.
+
+**Still open:** Thursday through Saturday, each checked independently for its own structure before
+building.

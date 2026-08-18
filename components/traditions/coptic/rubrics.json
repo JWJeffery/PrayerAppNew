@@ -270,5 +270,18 @@
       "cop-tuesday-theotokia-crown",
       "cop-closing-formula"
     ]
+  },
+  {
+    "id": "coptic-wednesday-theotokia",
+    "officeName": "The Wednesday Theotokia (Agpeya, Phase 2)",
+    "tradition": "Coptic Orthodox",
+    "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 161-167, public domain. Fourth day of the weekly Theotokia hymn cycle. Structure: seven sections (no paraphrases, confirmed by their absence in the source) plus a Crown -- same shape as Tuesday. O'Leary's own footnote flags the tone heading ('Adam') as likely an error (several manuscripts head it 'Batos' instead) -- recorded as O'Leary leaves it, not silently resolved. As with every other day, O'Leary's scholarly manuscript-variant material is deliberately out of scope for this devotional build.",
+    "sequence": [
+      "cop-wednesday-psali",
+      "cop-wednesday-alt-psali",
+      "cop-wednesday-theotokia",
+      "cop-wednesday-theotokia-crown",
+      "cop-closing-formula"
+    ]
   }
 ]
