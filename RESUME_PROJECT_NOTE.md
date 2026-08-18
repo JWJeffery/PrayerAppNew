@@ -3069,3 +3069,39 @@ Psali/Alternative Psali content not yet individually re-verified line-by-line (T
 Alt-Psali still need this treatment too). This is real, steady progress toward a defensible GREEN
 for the whole Coptic Agpeya, not stalled -- roughly half the Theotokia cycle is now at full
 verification standard.
+
+## SESSION HANDOFF 2026-08-18 continued -- Sunday Theotokia Section V gap closed with the actual page
+
+The one genuine content gap in the whole rebuild (`cop-sunday-theotokia-5`, disclosed a few
+handoffs ago as unrecoverable from OCR) is now actually fixed, not just documented as a
+limitation. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**What happened:** rather than treat "the OCR is too garbled" as a final answer, downloaded the
+source PDF via Google Drive, used `pdftoppm` (available in this environment) to attempt a direct
+page-image extraction, hit a real wall (both O'Leary PDFs are over the 10MB cap on
+`Google Drive:download_file_content` -- confirmed, not assumed), then asked Josh for just the one
+specific page (O'Leary p.124) the same way the Twelfth Hour and Midnight Office gaps got resolved
+earlier in this session. He provided it directly as an image.
+
+**The actual correction:** the original transcription had inverted a sentence -- "He who gave
+light to the world was light from the Light unapproachable" should have been "He gave light to the
+world which did not receive him, he who was from the Light unapproachable" (a John 1:5/1:10-11
+echo). Fixed. Section VI, visible on the same page image, was confirmed already correct as a
+bonus.
+
+**Standing lesson for future sessions, worth remembering explicitly:** `pdftoppm`/`pdfimages`/
+`pdftotext` are available in this environment. Both O'Leary PDF files are too large for the direct
+Drive download tool (30MB and 40MB, both over the 10MB cap). When OCR text is inadequate for a
+specific passage, the right move is to identify the exact page and ask for just that page directly
+-- not to present a "needs a page image" disclosure as if it were a dead end when the actual
+source is sitting right there and the ask is small.
+
+**This closes the one known genuine content gap in the entire Coptic Agpeya rebuild.** Everything
+else remaining is either fully verified, spot-checked clean, or an explicitly-disclosed reasoned
+completion (not a hole in the text) -- see the verification-progress entries in
+`AUDIT_GOVERNANCE_LEDGER.md` for exactly what's been checked at what level of rigor.
+
+**Next session should:** continue the verification pass into Wednesday/Thursday/Friday/Saturday's
+remaining Theotokia sections and the not-yet-individually-checked Psali/Alternative Psali content,
+same line-by-line method, using page-image requests (not just OCR text) whenever something looks
+uncertain rather than defaulting to a disclosure.

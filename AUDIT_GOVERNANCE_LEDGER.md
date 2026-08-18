@@ -5958,3 +5958,36 @@ strengthening (not overturning) the original judgement calls:**
 **Verification is genuinely progressing, not stalled at 'spot-checked' -- roughly half the
 Theotokia cycle (Sunday, Monday, Tuesday) is now at the same full-verification standard as the
 hours.**
+
+## SESSION 2026-08-18 continued -- Sunday Theotokia Section V gap actually closed, not just disclosed
+
+The genuine content gap flagged in `cop-sunday-theotokia-5` (missing clause after "light from the
+Light unapproachable") was resolved properly this session, not left as a disclosed limitation.
+Rather than accepting the automated OCR extraction as a ceiling, downloaded the source PDF via
+Google Drive, converted the relevant page to an image with `pdftoppm` (available in this
+environment), and had Josh view/paste the actual printed page (O'Leary p.124) directly.
+
+**Correction confirmed against the real page:** "He who gave light to the world was light from the
+Light unapproachable" was a genuinely inverted transcription of the original OCR garbling. The
+actual printed text reads "He gave light to the world which did not receive him, he who was from
+the Light unapproachable" (echoing John 1:5/1:10-11, "the world knew him not"). Fixed in
+`cop-sunday-theotokia-5`, with the correction and its source (the page image, not a guess)
+documented in the component's `meta`.
+
+**Bonus confirmation from the same page:** `cop-sunday-theotokia-6` (Section VI) was independently
+verified accurate as already transcribed -- the same page image happened to contain the start of
+that section too, and it matched the existing transcription exactly with no changes needed.
+
+**Standing note for future sessions:** this environment has `pdftoppm`/`pdfimages`/`pdftotext`
+available via bash, and this session confirmed both O'Leary PDF files exceed the 10MB cap on
+`Google Drive:download_file_content`, blocking a fully-automated page-image extraction. When a
+specific page needs direct verification and the automated OCR text is inadequate, the working
+path is: identify the exact page number, ask the person to paste or screenshot that one page
+directly (as already established for the Twelfth Hour and Midnight Office gaps earlier this
+session) -- not to treat OCR limitations as an unrecoverable ceiling when the actual source is
+available and the ask is genuinely small (one page, not a re-upload of the whole book).
+
+**This closes the one known genuine content gap in the entire Coptic Agpeya rebuild.** Every
+remaining open item in this project is now either fully verified, spot-checked with no
+discrepancies found, or an explicitly-disclosed judgement call on a completion (not a hole in the
+text).
