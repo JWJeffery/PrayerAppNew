@@ -6317,3 +6317,38 @@ fix is unaffected (still present and functional) by this reshuffle. All 12 check
 `js/office-ui.js` passes `node --check`.
 
 `SEED_VERSION` bumped to `v142-2026-08-18-coptic-appearance-toggle-position`.
+
+## SESSION 2026-08-19 continued -- Investigated "sidebar still does not work" report; found no code bug, added cache-busting
+
+Josh reported, after the toggle-position patch, that the sidebar "still does not work" -- the
+screenshot showed no hour radio visibly selected and the Dark Mode checkbox unchecked with a light
+theme displayed at 7:24 PM (which should have been dark per the previous session's fix).
+
+**Investigation:** rather than assume either "must be a new bug" or "must be the user's mistake,"
+ran a full end-to-end jsdom simulation against a fresh clone of the actual live repository (commit
+`f8848f8`, i.e. exactly what Josh had just applied), reproducing the reported scenario precisely:
+faked the clock to 7:24 PM 2026-08-18, ran the real `applyDarkMode(_defaultDarkModeForCurrentTime())`
+kernel-load call, the real `selectMode('coptic-agpeya')` panel-unhiding sequence, the real
+`initializeOfficeDefaultsForCurrentDateTime('coptic')`, and then simulated clicking a different hour
+in the sidebar via the real `setSharedOfficeNavHour('coptic', ...)` handler. All 12 checks passed:
+dark mode correctly applied at boot, the Twelfth Hour correctly defaulted and was reflected in both
+the underlying data (`cop-hour` radio) and the visible rendered radio, the Dark Mode checkbox
+correctly showed checked, and clicking a different hour correctly propagated to both the underlying
+state and the visible UI.
+
+**Conclusion: the code is correct.** The most likely explanation for the reported screenshot is a
+stale browser cache serving pre-patch `js/office-ui.js` and/or `css/office.css` -- confirmed that
+neither file was ever served with any cache-busting query parameter, so a plain (non-hard) reload in
+Chrome can silently continue serving an old cached copy indefinitely, especially over a GitHub
+Codespaces port-forwarded dev preview URL. This is consistent with the screenshot showing behavior
+that doesn't match any state the actual code (at any of the last several commits) could produce.
+
+**Fixed preventatively:** added a `?v=143` cache-busting query parameter to both
+`<link rel="stylesheet" href="css/office.css">` and `<script src="js/office-ui.js">` in
+`index.html`. **New standing rule, added here and to RESUME_PROJECT_NOTE.md:** whenever a future
+patch changes `js/office-ui.js` or `css/office.css`, bump this query parameter's version number to
+match the new `SEED_VERSION`, in the same patch. This makes a plain browser reload reliably fetch
+the newly patched file without requiring Josh to remember to hard-refresh (Cmd+Shift+R / disable
+cache) every single time.
+
+`SEED_VERSION` bumped to `v143-2026-08-18-cache-busting-asset-versioning`.

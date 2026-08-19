@@ -12,6 +12,31 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- "Sidebar still does not work" report: no code bug found, added cache-busting
+
+Josh reported the sidebar "still does not work" after the toggle-position patch (screenshot at
+7:24 PM showed no hour selected, light theme instead of dark). Ran a full end-to-end jsdom
+simulation against a fresh clone of the exact live commit, reproducing the reported time and
+sequence precisely (kernel-load theme application, mode selection, default-hour computation, and a
+simulated hour click). All 12 checks passed -- the code is correct.
+
+**Root cause is almost certainly a stale browser cache**, not a code bug: `js/office-ui.js` and
+`css/office.css` were never served with any cache-busting query parameter, so a plain (non-hard)
+browser reload can silently keep using a pre-patch cached copy indefinitely, especially over a
+GitHub Codespaces dev-preview URL. Added `?v=143` cache-busting to both files' tags in `index.html`.
+
+**New standing rule:** whenever a future patch touches `js/office-ui.js` or `css/office.css`, bump
+this `?v=` query parameter to match the new `SEED_VERSION`, in the same patch -- this makes a plain
+reload reliably pick up the change without Josh needing to hard-refresh every time. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+If a similar "I applied the patch but nothing changed" report comes up again, check this first:
+confirm the person did a hard refresh (Cmd+Shift+R / Ctrl+Shift+R) before assuming a regression.
+
+`SEED_VERSION` bumped to `v143-2026-08-18-cache-busting-asset-versioning`.
+
+---
+
 ## Session 2026-08-19 continued -- Moved the Coptic Dark Mode toggle under the date selector
 
 Josh asked for the new Coptic "Dark Mode" toggle to sit at the top, under the date selector, rather
