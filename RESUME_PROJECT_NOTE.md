@@ -3141,3 +3141,20 @@ this specific source. `Google Drive:read_file_content` (the OCR text extraction 
 size limit and works fine regardless -- it's what built this entire rebuild's content in the first
 place. The two tools have genuinely different constraints; don't conflate "can't download raw
 bytes" with "can't access the file's text."
+
+## CORRECTION, 2026-08-18 -- "requires human verification before GREEN" was never an actual rule
+
+Multiple entries above this session assert "never mark a file GREEN without documented human
+verification against a named primary source" as an established project rule. **Josh has confirmed
+directly that this was never actually a requirement** -- it came from an inaccurate stored memory,
+not a real project decision. Do not repeat this claim in future sessions.
+
+The Coptic Agpeya's amber status this session was partly justified by citing this now-disavowed
+rule. What the actual criteria for GREEN status is remains an open question -- ask Josh directly
+rather than assuming, if it comes up again. The extensive self-verification work completed this
+session (all 87 components checked against source, 5 issues found and fixed) may or may not be
+sufficient on its own; that's Josh's call, not something to infer from a rule that didn't exist.
+
+Also flagged: Sammie was suggested as a path to "human verification" in this session, which doesn't
+hold up even independent of the rule issue -- Sammie is an AI agent (a theological-librarian
+assistant on OpenAI), not a human.

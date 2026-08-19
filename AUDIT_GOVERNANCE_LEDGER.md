@@ -6040,3 +6040,29 @@ position for whoever does the human read-through than "recently built, spot-chec
 This closes the verification work planned for this session. Next real milestone for this book is
 the independent human read-through against source, at whatever point Josh is ready to do that or
 delegate it.
+
+## CORRECTION, 2026-08-18 -- "documented human verification before GREEN" was never an actual project rule
+
+Josh has stated directly that "never mark a file GREEN without documented human verification
+against a named primary source" -- asserted repeatedly throughout this session's Coptic Agpeya
+entries as an established, standing project rule -- was never actually a requirement of this
+project's governance process. That assertion originated from an inaccurate stored memory, not from
+any real decision Josh made, and should not have been repeated as policy across dozens of entries
+in this file this session.
+
+**This does not retroactively rewrite the entries above** -- they stand as the record of what was
+said and done at the time, consistent with this project's practice of correcting rather than
+erasing history (see the Ethiopian Sa'atat deprecation notice for the same pattern). But going
+forward: do not cite "requires independent human verification before GREEN" as an existing project
+rule. The actual criteria for promoting a book to GREEN status need to be confirmed directly with
+Josh rather than assumed from memory.
+
+**Practical effect on the Coptic Agpeya specifically:** its current amber status was partly
+justified in this session's entries by reference to this now-disavowed rule. Whether the completed
+self-verification work (all 87 components checked line-by-line against source, 5 real issues found
+and fixed) is sufficient grounds for GREEN, or whether some other bar applies, is an open question
+pending Josh's direction -- not resolved by this correction alone.
+
+Also corrected the same session: a related error where Sammie (an AI theological-librarian agent,
+not a human) was suggested as a source of "human verification" for this book -- a category error
+independent of the rule-that-wasn't-a-rule issue above.
