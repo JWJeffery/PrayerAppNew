@@ -12,6 +12,35 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Ramsha 100% COMPLETE; full Lelya text and start of Sapra in hand
+
+Josh supplied Maclean pp.65-105, closing both remaining Ramsha gaps (Friday-Wathar's tail,
+Saturday-Qdham entirely) and delivering far more: the complete Ferial Night Service (Lelya) and the
+opening of the Ferial Morning Service (Sapra).
+
+**Ramsha is now complete for all 14 possible ferial day/cycle combinations.** 117 components, 12
+sequences (no ferial Sunday Ramsha -- that's Festival, separate section/scope). One nuance worth
+remembering: Second Saturday (Qdham) uses an actual Letter Psalm, unlike First Saturday (Wathar)
+which uses a Shuraya substitute -- confirmed from source, not assumed symmetric. Verified end-to-end
+with real Playwright across a full two-week span: all 12 ferial slots correct, both Sundays correctly
+"not yet rebuilt", 11 spot-checks all passed. **This closes out the Evening Office entirely.**
+
+**Full Lelya (Night Service) text now in hand** (Maclean p.85-102) but NOT YET BUILT: fixed opening,
+all 21 Hulali with individual prayers (grouped Mon/Thu=1-7, Tue/Fri=8-14, Wed/Sat=15-21), weekday
+Qaltha table, Motwa intro/close (close NOT said Wednesdays -- special anthems substitute), named
+per-weekday Tishbukhta (Monday: Mar Abraham the Doctor; Tuesday: Mar Awa/Mar Thomas of Urhai;
+Wednesday: Mar Abimelek; Thursday & Saturday: Mar Ephraim; Friday: Mar Abraham of Nithpar/Mar John of
+Beith-raban), and the Night Karuzutha. This is the next phase of work.
+
+**Start of Sapra (Morning Service) also in hand**, not yet built: farced Ps.100 opening, Ps.91,
+Ps.104(1-16, farced), Ps.113(farced), four fixed psalms (93,148,149,150,117) under one Gloria,
+Morning Lakhumara, Ps.51:1-18, start of the Morning Tishbukhta (Mar Ephraim/Mar Awa).
+
+`SEED_VERSION` bumped to `v152-2026-08-19-east-syriac-ramsha-complete`. Clean resume point: Evening
+Office done and verified; next is building Lelya (full text already in hand), then continuing Sapra.
+
+---
+
 ## Session 2026-08-19 continued -- East Syriac rebuild Phase 3: Friday/Saturday complete, both cycles of Monday-Thursday done, a second attribution error caught
 
 Josh supplied Maclean pp.41-65 directly (uploaded PDF) after every fetch route hit a hard truncation

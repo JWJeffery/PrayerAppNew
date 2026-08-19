@@ -6815,3 +6815,56 @@ section (Maclean p.68 onward), not the ferial cycle this phase covers.
 Dashboard's `COE` section fully updated: six new GREEN entries, the Wednesday entry corrected to
 document the prayer-attribution fix, and the remaining-gaps entry narrowed to the two specific
 pieces still missing. `SEED_VERSION` bumped to `v151-2026-08-19-east-syriac-rebuild-phase3`.
+
+## SESSION 2026-08-19 continued -- Ramsha (Evening Prayer) 100% complete; full Lelya text and start of Sapra obtained
+
+Josh supplied Maclean pp.65-105 (uploaded PDF), closing both remaining Ramsha gaps in one pass and
+also delivering the entire Ferial Night Service and the opening of the Ferial Morning Service --
+far more than needed just to finish Ramsha.
+
+**Friday-Wathar ("Last Friday") completed.** Built its own First and Second Shuraya, First and
+Second Anthem (unique poetry, transcribed verbatim), and the Evening Anthem, then closed the gap
+from the prior session with the closing prayer (reusing First Friday's "Quicken, O my Lord, our
+departed..." per Maclean's own "as on First Friday" rubric), a Shuraya in place of the Letter Psalm
+(Psalm 31:21-24), and the Martyrs' Anthem (reusing First Friday's in full, again per explicit source
+rubric).
+
+**Saturday-Qdham ("Second Saturday") completed.** A structural nuance confirmed directly from source
+rather than assumed: Second Saturday uses an ACTUAL Letter Psalm (119:161-end), unlike First Saturday
+(Wathar), which uses a Shuraya substitute. Rather than assume both Saturdays behave the same way,
+the specific rubric for each was followed as written.
+
+**Ramsha (Evening Prayer) is now complete for all 14 possible ferial day/cycle combinations** -- every
+weekday in both the Qdham and Wathar forms. 117 components, 12 sequences (Sunday has no ferial
+Ramsha; its evening service is Festival, a separate section of the source with separate scope).
+Verified end-to-end with real Playwright across a full two-week span from the anchor Sunday: all 12
+ferial combinations render correctly with the right cycle labels, both Sundays correctly show "not
+yet rebuilt" (expected -- out of scope, not a bug), and 11 spot-checked phrases across the two final
+day/cycle forms all matched. `js/office-ui.js` passes `node --check`; both JSON files valid;
+`audit-ledger.html`'s inline script passes `node --check`.
+
+**Full text of the Ferial Night Service (Lelya) obtained** (Maclean p.85-102): the fixed opening
+sequence (three-stage prayer progression with Hallelujah responses between each), the complete set
+of 21 Hulali (psalm-groupings) with their individual proper prayers -- each Hulala's prayer text
+given individually, not just a psalm-number table -- grouped by weekday (Monday/Thursday use Hulali
+1-7; Tuesday/Friday use Hulali 8-14; Wednesday/Saturday use Hulali 15-21), the weekday Qaltha table
+(one distinct short antiphon per day, used only "on days when the liturgy is to be said"), the fixed
+Motwa introduction and its fixed close (with the close itself explicitly NOT said on Wednesdays, when
+special anthems are substituted instead -- matching the "Motwa for Wednesdays at the Night Service"
+table-of-contents entry noted back in Phase 1's initial source survey), the per-weekday Tishbukhta
+with named authorship attributed in the source itself (Monday: Mar Abraham the Doctor; Tuesday: Mar
+Awa the Catholicos, or by some accounts Mar Thomas of Urhai; Wednesday: Mar Abimelek; Thursday: Mar
+Ephraim; Friday: Mar Abraham of Nithpar, or by some accounts Mar John of Beith-raban; Saturday: Mar
+Ephraim again), and the Karuzutha for the Night Service. None of this is built into components yet --
+this is the next phase of work, tracked as `coe:lelya:milestone` on the dashboard.
+
+**Start of the Ferial Morning Service (Sapra) also obtained** (Maclean p.103 onward): the farced
+Psalm 100 opening, Psalm 91, Psalm 104 (1-16, farced), Psalm 113 (farced), the four fixed invariable
+psalms (93, 148, 149, 150, 117) said under one Gloria, the Morning Lakhumara, Psalm 51:1-18, and the
+opening of the Morning Tishbukhta (again attributed to Mar Ephraim, alternatively Mar Awa the
+Catholicos). Tracked as `coe:sapra:milestone` on the dashboard, also not yet built.
+
+`SEED_VERSION` bumped to `v152-2026-08-19-east-syriac-ramsha-complete`. This is a clean stopping/
+resuming point: the Evening Office is finished and verified; the next work is building out Lelya
+(all source text already in hand) and then Sapra (opening text in hand, more still needed for the
+rest of the office).

@@ -1130,5 +1130,171 @@
     },
     "text": "<p class=\"rubric-text\">Letter Psalm, Psalm 119:145-161.</p>",
     "psalmRef": "119:145-161"
+  },
+  {
+    "id": "esy-friday-wathar-shuraya-instead-of-letter-psalm",
+    "title": "Shuraya (in place of a Letter Psalm)",
+    "meta": {
+      "source": "Maclean 1894, p.66 (\"Last Friday\").",
+      "cycle": "wathar",
+      "day": "friday"
+    },
+    "text": "<p class=\"rubric-text\">Shuraya [in place of a Letter Psalm], if there is no special one in the Kashkul. Psalm 31:21-24.</p>",
+    "psalmRef": "31:21-24"
+  },
+  {
+    "id": "esy-saturday-qdham-first-marmitha",
+    "title": "First Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.66 (\"Second Saturday\").",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "As on First Saturday."
+    },
+    "text": "<p class=\"rubric-text\">First Marmitha. Psalms 145, 146, 147:1-12, as on First Saturday.</p>",
+    "psalms": [
+      "145",
+      "146",
+      "147:1-12"
+    ]
+  },
+  {
+    "id": "esy-saturday-qdham-second-marmitha",
+    "title": "Second Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.66.",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "As on First Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Second Marmitha. Psalm 147:12, Psalms 148, 149, 150, as on First Saturday.</p>",
+    "psalms": [
+      "147:12",
+      "148",
+      "149",
+      "150"
+    ]
+  },
+  {
+    "id": "esy-saturday-qdham-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.66.",
+      "cycle": "qdham",
+      "day": "saturday"
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 124:1-6.</p>",
+    "psalmRef": "124:1-6"
+  },
+  {
+    "id": "esy-saturday-qdham-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.66.",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "To the tune \"O King, the Quickener.\""
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"O King, the Quickener.\"</p><p class=\"component-text\"><em>And our heart shall rejoice in him.</em> May thy cross, O our Saviour, which made peace between the height and the depth. By its great, adorable, and glorious power. Make peace in the world, which is disturbed and confused by its sins. And do thou make thy peace to dwell in (its) four quarters.</p><p class=\"component-text\"><em>Because we have hoped in his holy Name.</em> May thy cross, etc., as above.</p><p class=\"component-text\">Glory be, etc. Keep thy holy Church from harm. O Lord Christ, who didst come to save us. And make thy worshippers worthy in fear and trembling. To lift up praise to thy Godhead.</p><p class=\"component-text\">From everlasting to everlasting. Give us, O our Lifegiver, that which thou knowest will help us. For we know not what we ask. But for one thing we make request, that thy will may be fulfilled in us. And that thy mercies may intercede for all of us.</p>"
+  },
+  {
+    "id": "esy-saturday-qdham-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.67.",
+      "cycle": "qdham",
+      "day": "saturday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 125:1-3.</p>",
+    "psalmRef": "125:1-3"
+  },
+  {
+    "id": "esy-saturday-qdham-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.67.",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "To the tune \"Every breath.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"Every breath.\"</p><p class=\"component-text\"><em>That he might shew forth his power.</em> O Cross, which didst shew wonderful miracles to the sons of men. Keep harm away from the souls which are signed with thee.</p><p class=\"component-text\"><em>Shew thy strength, and come and save us.</em> O Cross, etc., as above.</p><p class=\"component-text\">Glory be, etc. O my Lord, be a wall to the Churches in every land. And make thy truth to be a fence and strong bulwark before them.</p><p class=\"component-text\">From everlasting to everlasting. O our Lord, help (us), send peace, scatter the Evil ones. Keep thy Church, make free her children from harm.</p>"
+  },
+  {
+    "id": "esy-saturday-qdham-evening-anthem",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.67.",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "\"To its own tune\" -- invariable alternative to the seasonal Kashkul form."
+    },
+    "text": "<p class=\"rubric-text\">Or this: to its own tune.</p><p class=\"component-text\"><em>I will alway bless the Lord.</em> Blessed is the High Priest who hath pardoned our trespasses. By the sacrifice of himself. And blessed be the Name of his Majesty for ever.</p><p class=\"component-text\"><em>Blessed is, etc.</em>, as above.</p><p class=\"component-text\">Glory be, etc. Glory and confession. Let us raise to the Son, who hath saved us by his cross.</p><p class=\"component-text\">From everlasting to everlasting. May our prayer, O my Lord. Please thy good will, all our days.</p>"
+  },
+  {
+    "id": "esy-saturday-qdham-letter-psalm",
+    "title": "Letter Psalm",
+    "meta": {
+      "source": "Maclean 1894, p.67.",
+      "cycle": "qdham",
+      "day": "saturday",
+      "note": "Unlike First Saturday (Wathar), which uses a Shuraya in place of the Letter Psalm, Second Saturday (Qdham) uses an actual Letter Psalm -- confirmed directly from source, not assumed consistent with the other Saturday form."
+    },
+    "text": "<p class=\"rubric-text\">Letter Psalm, Psalm 119:161-end.</p>",
+    "psalmRef": "119:161-176"
+  },
+  {
+    "id": "esy-friday-wathar-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.64 (\"Last Friday\").",
+      "cycle": "wathar",
+      "day": "friday"
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 145:1-7, \"to kindness.\"</p>",
+    "psalmRef": "145:1-7"
+  },
+  {
+    "id": "esy-friday-wathar-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.64.",
+      "cycle": "wathar",
+      "day": "friday",
+      "note": "To the tune \"Blessed be thy Spirit.\""
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"Blessed be thy Spirit.\"</p><p class=\"component-text\"><em>I will magnify thee, O my Lord the King.</em> Christ the King, our Saviour. In the day of thy coming quicken me. And raise me to thy right hand. In the day when thy majesty shineth forth.</p><p class=\"component-text\"><em>My God, I have put my trust in thee, let me not be confounded.</em> We venerate thy cross, O my Lord. By it do we stand upright, and by it are we quickened. And by it are our departed quickened. And their bodies put on glory.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. God the Father, give me life. Christ the Son, quicken me who am dead. O Holy Ghost the Paraclete. Bring me to the land of light.</p>"
+  },
+  {
+    "id": "esy-friday-wathar-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.65.",
+      "cycle": "wathar",
+      "day": "friday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 145:18-end.</p>",
+    "psalmRef": "145:18-21"
+  },
+  {
+    "id": "esy-friday-wathar-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.65.",
+      "cycle": "wathar",
+      "day": "friday",
+      "note": "To the tune \"Let us be ready in fear.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"Let us be ready in fear.\"</p><p class=\"component-text\"><em>His salvation is nigh them that fear him.</em> The time of this world which passeth away is nigh. And all its desires are destroyed and come to nought. Hear, O mortals, and offer repentance. Before the day of remembrance come. And every man is recompensed according as he hath done, in the terrible judgment.</p><p class=\"component-text\"><em>As it were a ramping and a roaring lion.</em> When Death, overtaking every man and devouring him. Came unto me, I was greatly moved and disturbed. For I am persuaded of my trespasses that they are not as other men's. But that he saw that I was his portion. Thou art my help, my Saviour, and on thee I wait.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. Glory to thee, Jesus, our victorious King. Who by thy cross didst save our race from error. May thy great power renew our being. And may death be brought to nought and the quickening reign. And may we be made worthy of mercies by thy will, O King, the Quickener.</p>"
+  },
+  {
+    "id": "esy-friday-wathar-evening-anthem",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.65-66.",
+      "cycle": "wathar",
+      "day": "friday",
+      "note": "Royal Anthem, to the tune \"The great mystery\" -- invariable alternative to the seasonal Kashkul form."
+    },
+    "text": "<p class=\"rubric-text\">Or this: Royal Anthem, to the tune \"The great mystery.\"</p><p class=\"component-text\"><em>Be telling of his salvation from day to day.</em> The gospel of peace and love in mercy hath been preached to us. By the glorious birth of Christ. And by it have we learnt that the Creator is reconciled to us. And hath restored and given to us his glorious image which we had destroyed. By taking firstfruits of us. And making our nature to partake. With his majesty in honour.</p><p class=\"component-text\"><em>The hope of all the ends of the earth.</em> The gospel, etc., as above.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. The gospel, etc., as above.</p>"
   }
 ]
