@@ -12,6 +12,50 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- East Syriac rebuild Phase 3: Friday/Saturday complete, both cycles of Monday-Thursday done, a second attribution error caught
+
+Josh supplied Maclean pp.41-65 directly (uploaded PDF) after every fetch route hit a hard truncation
+wall right at that range. This closed the Friday gap and turned out to also contain the entire
+"Week 'After'" section -- the alternate (opposite-cycle) forms of Monday through Friday -- plus
+"First Saturday". Far more than the minimum needed.
+
+**A second attribution error caught and corrected same-day.** Wednesday's replacement prayer
+("Arm us, O our Lord and God...") had been assumed shared with Friday, based on reading Maclean's
+general summary ("distinct ones for Wed. and Fri.") as implying a shared pair. Friday's actual text
+gives a completely different prayer ("Quicken, O my Lord, our departed..."). Caught before Friday was
+built, so no user-facing content was ever wrong -- but corrected the Wednesday component's id and
+note rather than leave the mistaken assumption undocumented. Worth remembering: Maclean's
+Introduction gives structural summaries that are sometimes too compressed to trust without checking
+the actual per-day rubric -- confirmed twice now (the Qdham/Wathar alternation in Phase 2, this
+prayer-sharing assumption in Phase 3).
+
+**Built and verified: Friday (Qdham) complete including full Martyrs' Anthem, Saturday (Wathar)
+complete (confirmed it explicitly reuses Friday's prayer and Martyrs' Anthem per source), and the
+alternate cycle for Monday/Tuesday/Wednesday/Thursday** (Wathar-Monday, Qdham-Tuesday, Wathar-
+Wednesday, Qdham-Thursday). 103 components total, 10 sequences covering 12 of 14 possible ferial
+Ramsha day/cycle slots.
+
+**A nuance preserved rather than smoothed over:** Wathar-Monday's source rubric doesn't redefine the
+Marmitha (unlike every other alternate-cycle day) -- rather than assume this was an oversight, it
+correctly reuses Qdham-Monday's Marmitha unchanged, confirmed by the end-to-end test.
+
+**Added `scriptureRef` support** to the renderer for Wednesday-Wathar's Exodus 15:20-21 canticle
+citation (not a psalm), resolving through the same `getScriptureText()` call already used for psalms.
+
+**Verified with real Playwright across a full two-week span**: all 12 built combinations render
+correctly with the right cycle label, the 2 still-missing combinations (Friday-Wathar, Saturday-
+Qdham) correctly say so, and 27 spot-checked phrases all matched. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Remaining gap:** Saturday-Qdham (no source text yet) and Friday-Wathar/"Last Friday" (text obtained
+through the Evening Anthem but cuts off before the closing prayer/Shuraya/Martyrs' Anthem -- same
+kind of truncation as before). Sunday's evening service is Festival, not ferial, and out of scope for
+this phase (Maclean p.68 onward).
+
+`SEED_VERSION` bumped to `v151-2026-08-19-east-syriac-rebuild-phase3`.
+
+---
+
 ## Session 2026-08-19 continued -- East Syriac rebuild Phase 2: Tuesday-Thursday Ramsha; a real cycle-logic bug caught before shipping
 
 Continued the Church of the East rebuild same-session per Josh's "get as much done as possible."

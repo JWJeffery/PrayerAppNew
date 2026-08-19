@@ -4210,6 +4210,13 @@ async function renderEastSyriac() {
             const fullText = await getScriptureText('PSALM ' + comp.psalmRef);
             officeHtml += `<h4 class="passage-reference">Psalm ${comp.psalmRef}</h4>`;
             officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+        } else if (comp.scriptureRef) {
+            // Non-Psalm scripture citation (e.g. the Exodus 15 canticle used as a
+            // Shuraya substitute) -- comp.scriptureRef already carries the full
+            // "BOOK chapter:verse" citation getScriptureText expects.
+            const fullText = await getScriptureText(comp.scriptureRef);
+            officeHtml += `<h4 class="passage-reference">${comp.scriptureRef}</h4>`;
+            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
         }
     }
 
