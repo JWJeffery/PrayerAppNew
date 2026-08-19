@@ -1596,7 +1596,10 @@ body.office-active #main-content.sidebar-hidden {
 }
 
 body.office-active .office-container {
+    width: min(100%, 860px);
     max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
     padding: clamp(42px, 5vw, 72px) clamp(34px, 5vw, 76px) clamp(48px, 6vw, 84px);
     border-radius: 26px;
     background:
@@ -2203,11 +2206,10 @@ body.office-active #main-content > h1 {
     text-shadow: none;
 }
 
-body.office-active .office-container {
-    width: min(100%, 860px);
-    margin-left: auto;
-    margin-right: auto;
-}
+/* width/margin for .office-container now live in one place, in the base
+   rule above (line ~1598) -- consolidated so there's exactly one authority
+   for this box's sizing instead of two separate rules with the same
+   selector and no guaranteed cascade-order relationship. */
 
 body.office-active #main-content.app-primary-canvas {
     display: block;
@@ -2732,11 +2734,17 @@ body.office-active #main-content.app-primary-canvas {
     margin-left: 0 !important;
 }
 
-body.office-active #daily-office-section:has(#settings-panel:not(.mode-hidden)) #main-content.app-primary-canvas,
-body.office-active #daily-office-section:has(#ethiopian-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
-body.office-active #daily-office-section:has(#east-syriac-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
-body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
-body.office-active #daily-office-section:has(#coptic-settings:not(.mode-hidden)) #main-content.app-primary-canvas {
+/* Previously five separate :has(#<panel>:not(.mode-hidden)) selectors, one
+   per tradition sidebar. Every office-active mode always has exactly one
+   sidebar panel present (never zero), so gating this on :has() detecting
+   *which specific* panel is active added fragility with no real benefit --
+   :has() has to re-evaluate this relationship on every reflow, including
+   the frequent full innerHTML rebuilds renderSharedOfficeNavigation() does
+   on every date/hour/appearance click, and depended on staying in sync
+   with a growing list of panel ids (already found once missing #coptic-
+   settings entirely). Collapsed to a single unconditional rule -- same
+   formula, same result, nothing left to fall out of sync or mistime. */
+body.office-active #main-content.app-primary-canvas {
     width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width)) !important;
     flex: 1 1 auto !important;
 }
