@@ -3158,3 +3158,24 @@ sufficient on its own; that's Josh's call, not something to infer from a rule th
 Also flagged: Sammie was suggested as a path to "human verification" in this session, which doesn't
 hold up even independent of the rule issue -- Sammie is an AI agent (a theological-librarian
 assistant on OpenAI), not a human.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya promoted to GREEN
+
+Josh reviewed this session's complete self-verification work and authorized promotion to GREEN.
+All 16 `cop:agpeya:*` dashboard rows updated (status flipped, stale amber-referencing note text
+rewritten to match). `SEED_VERSION` bumped to `v137-2026-08-18-coptic-agpeya-green`. Full detail
+in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**The Coptic Agpeya is now fully GREEN: all seven hours, the Midnight Office, and the complete
+seven-day Theotokia cycle.** This closes out the multi-session project that began with removing the
+fabricated Ethiopian Sa'atat.
+
+**One remaining honest caveat, carried forward in the component's own meta and not hidden by the
+GREEN status:** Saturday's two Theotokia Crown endings are a well-supported reasoned completion
+(the same formula independently confirmed on three preceding days), not a verbatim source match --
+if a future session ever gets a page image for that specific passage, it's worth a quick check, but
+this is not blocking and doesn't need proactive follow-up.
+
+**No outstanding work remains on this book.** Future sessions should treat the Coptic Agpeya the
+same as any other GREEN book in this project -- re-opening it requires a real reason (a reported
+error, a newly available source, a scope change Josh requests), not routine re-litigation.

@@ -6066,3 +6066,29 @@ pending Josh's direction -- not resolved by this correction alone.
 Also corrected the same session: a related error where Sammie (an AI theological-librarian agent,
 not a human) was suggested as a source of "human verification" for this book -- a category error
 independent of the rule-that-wasn't-a-rule issue above.
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya promoted to GREEN, authorized by Josh
+
+Josh reviewed the completed self-verification work (all 87 components checked line-by-line against
+source, 5 real issues found and fixed, zero known remaining errors) and explicitly authorized
+promotion to GREEN.
+
+All 16 `cop:agpeya:*` dashboard rows in `audit-ledger.html` flipped from `status:'amber'` to
+`status:'green'`: the seven hours, the Midnight Office, all seven Theotokia days, the
+content-complete milestone, and the verification-progress summary. Stale note text that
+contradicted the new status (references to "amber, not green," pending confirmation, etc.) was
+rewritten to match reality rather than left inconsistent with the status field. `SEED_VERSION`
+bumped to `v137-2026-08-18-coptic-agpeya-green`.
+
+**This is the entire Coptic Agpeya rebuild, GREEN: all seven hours, the Midnight Office, and the
+complete seven-day Theotokia cycle -- 87 components across 15 offices.** This closes out the
+project that began with the Ethiopian Sa'atat's removal and ran through this and the immediately
+preceding sessions.
+
+**One item remains explicitly disclosed as a reasoned completion rather than a confirmed verbatim
+match** (Saturday's two Crown endings, backed by three independently-confirmed matching instances
+from the preceding Tone Batos days but not an exact match to Saturday's own shorter abbreviation).
+This is recorded honestly in that component's own `meta` and in the dashboard note. GREEN here
+means "verified as accurate to the best standard this session could achieve," not "zero possible
+future refinement" -- consistent with how other GREEN books in this project have occasionally
+needed later correction (e.g. the NABRE content-loss catches in already-closed OT books).
