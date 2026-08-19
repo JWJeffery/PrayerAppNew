@@ -224,7 +224,7 @@
   },
   {
     "id": "coptic-sunday-theotokia",
-    "officeName": "The Sunday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Sunday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 117-130, public domain. First day of the weekly Theotokia hymn cycle (Phase 2 of the Coptic Agpeya rebuild, following completion of all seven hours and the Midnight Office). Structure: a Psali ('Our Lord Jesus'), an Alternative (Marian) Psali, then the Theotokia proper -- eight sections, most paired with a paraphrase and a Gospel lection (Luke 1 and 2, the Annunciation/Visitation/Benedictus/Nunc Dimittis cycle), a Conclusion, and a seasonal Hymn on the Resurrection (Easter to the end of Hatur only -- included as its own labeled component since this app does not yet have seasonal on/off logic for Theotokia additions). O'Leary's book also contains extensive 'additional matter' for this day -- secondary and tertiary paraphrases from other manuscript traditions (Types II, III, IV), scholarly variants aimed at textual critics -- deliberately not built here; this office follows only O'Leary's Section A, 'the Coptic text common to all types', which is what an ordinary devotional user would actually pray. IMPORTANT SOURCING NOTE: this content came from this app's automated Google Drive text-extraction tool rather than transcribed directly from page images. This is the same underlying book and scan as the seven hours (Josh split it into two PDF files, not two different sources) -- the difference is page layout, not scan quality: the Theotokia's pages interleave multiple manuscript-witness columns (Text A, Text Q, Text K), marginal folio references, and footnotes inline with the main text, which is far harder for automated linearization to get right than the hours' simple continuous-prose pages. Every component here is flagged in its own meta as a lower-confidence tier pending a human read-through against the actual page images, same as any other book in this project awaiting verification before GREEN.",
     "theotokiaSections": [
@@ -247,7 +247,7 @@
   },
   {
     "id": "coptic-monday-theotokia",
-    "officeName": "The Monday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Monday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 148-155, public domain. Second day of the weekly Theotokia hymn cycle. Structure differs from Sunday's: the Monday Theotokia has nine numbered sections (not eight), no separate paraphrase subsection per section, and no Gospel lections -- confirmed by their absence in the source rather than assumed. As with Sunday, O'Leary's extensive scholarly 'additional matter' for this day (manuscript-variant paraphrases) is deliberately not built here -- out of scope for a devotional app.",
     "sequence": [
@@ -260,7 +260,7 @@
   },
   {
     "id": "coptic-tuesday-theotokia",
-    "officeName": "The Tuesday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Tuesday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 155-161, public domain. Third day of the weekly Theotokia hymn cycle. Structure: seven numbered sections (no paraphrases, confirmed by their absence in the source) plus a Crown -- closer to Monday's shape than Sunday's, though with a different section count. Two footnotes mark that one manuscript witness ('O') inserts Gospel lections at two points -- textual-critical apparatus, not part of the main text, deliberately not built here (same scope decision as the manuscript-variant paraphrase material excluded from every day). As with Sunday and Monday, O'Leary's extensive scholarly 'additional matter' for this day is out of scope for a devotional app.",
     "sequence": [
@@ -273,7 +273,7 @@
   },
   {
     "id": "coptic-wednesday-theotokia",
-    "officeName": "The Wednesday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Wednesday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 161-167, public domain. Fourth day of the weekly Theotokia hymn cycle. Structure: seven sections (no paraphrases, confirmed by their absence in the source) plus a Crown -- same shape as Tuesday. O'Leary's own footnote flags the tone heading ('Adam') as likely an error (several manuscripts head it 'Batos' instead) -- recorded as O'Leary leaves it, not silently resolved. As with every other day, O'Leary's scholarly manuscript-variant material is deliberately out of scope for this devotional build.",
     "sequence": [
@@ -286,7 +286,7 @@
   },
   {
     "id": "coptic-thursday-theotokia",
-    "officeName": "The Thursday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Thursday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 167-177, public domain. Fifth day of the weekly Theotokia hymn cycle. Structure: nine sections (no paraphrases) plus a Crown -- same section count as Monday, though a different tone (Batos, not Adam) and entirely different content. O'Leary's book contains a further, third Psali for this day ('Another Psali for Thursday') -- consistent with the scope decision applied to every other day, this additional variant is not built here. As with every prior day, O'Leary's scholarly manuscript-variant material is deliberately out of scope for this devotional build.",
     "sequence": [
@@ -299,7 +299,7 @@
   },
   {
     "id": "coptic-friday-theotokia",
-    "officeName": "The Friday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Friday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 177-184, public domain. Sixth day of the weekly Theotokia hymn cycle. Structure: seven sections (no paraphrases) plus a Crown -- same shape as Tuesday and Wednesday, Tone Batos matching Thursday. Both this day's Psali and its Crown share stock closing formulas already established in full on the immediately preceding Tone Batos days (Wednesday, Thursday) -- completed by cross-reference rather than guessed. O'Leary's book contains a further, third Psali for this day ('Another Psali for Friday') -- not built, consistent with the scope decision applied to every other day.",
     "sequence": [
@@ -312,7 +312,7 @@
   },
   {
     "id": "coptic-saturday-theotokia",
-    "officeName": "The Saturday Theotokia (Agpeya, Phase 2)",
+    "officeName": "The Saturday Theotokia (Agpeya)",
     "tradition": "Coptic Orthodox",
     "note": "Source: De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London, 1911), pp. 184-191, public domain. Seventh and final day of the weekly Theotokia hymn cycle -- completes Phase 2. Structure: nine sections (no paraphrases) plus TWO Crowns, unique among the week (every other day has one) -- confirmed by the source itself, not a duplication introduced here. Both Crowns end with the shorter abbreviation 'We pray, &c.' rather than the fuller 'We pray thee be mindful, &c.' seen on the three preceding Tone Batos days; completed using that same Tone Batos formula as the best-supported reading, but disclosed in both Crown components' own meta as the least certain of this build's several cross-reference completions, since the abbreviation here is not an exact match to the days it was drawn from. O'Leary's book also contains a large 'Primary paraphrases' and 'Secondary paraphrases' appendix for this day specifically (the Saturday Theotokia has by far the most manuscript-variant material of any day in the book) -- deliberately not built here, consistent with the scope decision applied to every day this week.",
     "sequence": [

@@ -1714,13 +1714,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "coptic-eleventh-hour", label: "The Eleventh Hour", detail: "Vespers" },
             { value: "coptic-twelfth-hour", label: "The Twelfth Hour", detail: "Compline" },
             { value: "coptic-midnight-office", label: "The Midnight Office", detail: "Three Nocturns" },
-            { value: "coptic-sunday-theotokia", label: "Sunday Theotokia", detail: "Phase 2" },
-            { value: "coptic-monday-theotokia", label: "Monday Theotokia", detail: "Phase 2" },
-            { value: "coptic-tuesday-theotokia", label: "Tuesday Theotokia", detail: "Phase 2" },
-            { value: "coptic-wednesday-theotokia", label: "Wednesday Theotokia", detail: "Phase 2" },
-            { value: "coptic-thursday-theotokia", label: "Thursday Theotokia", detail: "Phase 2" },
-            { value: "coptic-friday-theotokia", label: "Friday Theotokia", detail: "Phase 2" },
-            { value: "coptic-saturday-theotokia", label: "Saturday Theotokia", detail: "Phase 2" },
+            { value: "coptic-theotokia", label: "Theotokia", detail: "" },
         ],
     },
     eastSyriac: {
@@ -2017,6 +2011,13 @@ function renderSharedOfficeNavigation() {
 
     const optionHtml = config.options.map(option => {
         const checked = option.value === activeValue ? "checked" : "";
+        // The Theotokia option's detail is computed live from the currently
+        // selected date, not authored statically -- it always names the
+        // actual day/tune that will show, since the day itself isn't a
+        // manual choice (see _copticTheotokiaIdForDate).
+        const detail = option.value === "coptic-theotokia"
+            ? `${_sharedOfficeNavigatorReadableDate().split(",")[0]} \u00b7 ${_copticTheotokiaToneForDate(currentDate)}`
+            : (option.detail || "");
         return `
             <label class="shared-office-nav-option">
                 <input type="radio"
@@ -2026,7 +2027,7 @@ function renderSharedOfficeNavigation() {
                     onchange="setSharedOfficeNavHour('${modeKey}', this.value)">
                 <span class="shared-office-nav-option-copy">
                     <span class="shared-office-nav-option-label">${_sharedOfficeNavigatorEscape(option.label)}</span>
-                    <span class="shared-office-nav-option-detail">${_sharedOfficeNavigatorEscape(option.detail || "")}</span>
+                    <span class="shared-office-nav-option-detail">${_sharedOfficeNavigatorEscape(detail)}</span>
                 </span>
             </label>`;
     }).join("");
@@ -2111,7 +2112,7 @@ function _sharedOfficeNavigatorDateFromIso(dateValue) {
 function setSharedOfficeNavDate(modeKey, dateValue) {
     if (!dateValue) return;
 
-    if (modeKey === "daily" || modeKey === "horologion") {
+    if (modeKey === "daily" || modeKey === "horologion" || modeKey === "coptic") {
         setCustomDate(dateValue);
         renderSharedOfficeNavigation();
         return;
@@ -2223,6 +2224,34 @@ function _defaultCopticHourForCurrentTime(now = new Date()) {
     if (hour >= 15 && hour < 17) return "coptic-ninth-hour";
     if (hour >= 17 && hour < 19) return "coptic-eleventh-hour";
     return "coptic-twelfth-hour";
+}
+
+// Map a date to its Coptic Theotokia rubric id. Unlike the canonical hours
+// above (a real, time-of-day choice), the Theotokia is not something a
+// person picks -- for each day of the week there is exactly one correct
+// Theotokia, prayed on that day and no other (confirmed against multiple
+// independent Coptic liturgical sources). This function is the single
+// source of truth for that mapping; nothing about which day's Theotokia is
+// "active" should ever be a manual UI selection.
+const COPTIC_THEOTOKIA_WEEKDAY_IDS = [
+    "coptic-sunday-theotokia",    // Date.getDay() === 0
+    "coptic-monday-theotokia",    // 1
+    "coptic-tuesday-theotokia",   // 2
+    "coptic-wednesday-theotokia", // 3
+    "coptic-thursday-theotokia",  // 4
+    "coptic-friday-theotokia",    // 5
+    "coptic-saturday-theotokia",  // 6
+];
+function _copticTheotokiaIdForDate(date = new Date()) {
+    const d = date instanceof Date && !Number.isNaN(date.getTime()) ? date : new Date();
+    return COPTIC_THEOTOKIA_WEEKDAY_IDS[d.getDay()];
+}
+// The two Coptic melody families: Adam (Sunday-Tuesday) and Batos/Watos
+// (Wednesday-Saturday) -- shown as a small, genuinely informative detail
+// line rather than the old "Phase 2" build-jargon leftover.
+function _copticTheotokiaToneForDate(date = new Date()) {
+    const d = date instanceof Date && !Number.isNaN(date.getTime()) ? date : new Date();
+    return d.getDay() <= 2 ? "Adam Tune" : "Batos Tune";
 }
 
 // ── App-wide color theme (dark/light), driven by real time ──────────────────
@@ -4491,7 +4520,13 @@ async function renderCopticAgpeya() {
 
     const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
 
-    const selectedHourId = document.querySelector('input[name="cop-hour"]:checked')?.value || 'coptic-morning-office';
+    const rawSelectedHourId = document.querySelector('input[name="cop-hour"]:checked')?.value || 'coptic-morning-office';
+    // "coptic-theotokia" is a UI-level generic selection, not a real rubric id
+    // -- it always resolves to the specific weekday's Theotokia based on
+    // currentDate (see _copticTheotokiaIdForDate), never a manual sub-choice.
+    const selectedHourId = rawSelectedHourId === 'coptic-theotokia'
+        ? _copticTheotokiaIdForDate(currentDate)
+        : rawSelectedHourId;
     const activeRubric = appData.copticRubrics.find(r => r.id === selectedHourId)
                        || appData.copticRubrics.find(r => r.id === 'coptic-morning-office');
     if (!activeRubric) {

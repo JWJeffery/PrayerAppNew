@@ -12,6 +12,35 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Theotokia: fixed "Phase 2" label leak, made day auto-selected
+
+Josh flagged two Theotokia problems: every weekday entry showed "Phase 2" as its label (internal
+build-phase jargon leaked into user-facing text -- both the sidebar detail AND the actual page
+title, since it was baked into `rubrics.json`'s `officeName` field), and the Theotokia should be
+auto-selected by actual weekday, not manually picked.
+
+Researched actual Coptic liturgical practice first: confirmed there's exactly one correct Theotokia
+per weekday (not a preference like the canonical hours), and confirmed the Adam (Sun-Tue) / Batos
+(Wed-Sat) melody split already referenced correctly elsewhere in this project's own rubric notes.
+
+Collapsed the seven individual weekday Theotokia entries into a single `coptic-theotokia` entry
+(both in the JS config and `index.html`'s legacy radios). Added `_copticTheotokiaIdForDate()` as the
+single source of truth mapping the current date's weekday to the correct rubric id --
+`renderCopticAgpeya()` now resolves the generic selection through this before lookup. Fixed all 7
+`officeName` values in `rubrics.json` (removed the ", Phase 2" suffix). Bonus find: `Prev/Today/
+Next` and the date picker did nothing at all in Coptic mode (`setSharedOfficeNavDate()` had no
+`"coptic"` branch) -- fixed as part of the same patch, since the Theotokia redesign depends on
+working date navigation.
+
+Verified with two rounds of real-source jsdom simulation (19 + 7 checks, all passed), including
+checking resolved `officeName` values directly against the real `rubrics.json`. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v144-2026-08-18-coptic-theotokia-auto-select`; `js/office-ui.js` cache-bust
+bumped to `?v=144`.
+
+---
+
 ## Session 2026-08-19 continued -- "Sidebar still does not work" report: no code bug found, added cache-busting
 
 Josh reported the sidebar "still does not work" after the toggle-position patch (screenshot at

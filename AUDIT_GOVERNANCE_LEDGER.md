@@ -6352,3 +6352,77 @@ the newly patched file without requiring Josh to remember to hard-refresh (Cmd+S
 cache) every single time.
 
 `SEED_VERSION` bumped to `v143-2026-08-18-cache-busting-asset-versioning`.
+
+## SESSION 2026-08-19 continued -- Theotokia: fixed "Phase 2" label leak, made day auto-selected instead of manually picked
+
+Josh flagged two problems with the Theotokia section of the Coptic Agpeya sidebar: every one of the
+seven weekday entries showed "Phase 2" as its detail label, and the Theotokia should be selected
+automatically (by the actual day of the week) rather than requiring the person to pick a day
+themselves.
+
+**"Phase 2" investigation:** traced this to two places. In `js/office-ui.js`'s
+`SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options`, all seven Theotokia entries had `detail: "Phase
+2"` hardcoded -- literally leftover internal build-phase terminology (the Theotokia cycle was built
+as a second phase of the Coptic Agpeya project, after the seven canonical hours) that leaked into
+user-facing text. Worse, the SAME phrase was baked into `components/traditions/coptic/rubrics.json`
+itself, in each Theotokia rubric's `officeName` field (e.g. `"The Tuesday Theotokia (Agpeya, Phase
+2)"`) -- meaning it was also rendering as the literal page H2 title when viewing that office, not
+just a sidebar label. Fixed both: removed `", Phase 2"` from all 7 `officeName` values in
+`rubrics.json` (now matching the same `"The X (Agpeya)"` pattern every other office uses), and
+removed the config-level `detail: "Phase 2"` values entirely as part of the redesign below. The
+`note` fields in `rubrics.json` (internal build documentation, not user-facing) still legitimately
+reference "Phase 2" and were left untouched.
+
+**"Should be automatic, not self-selected" -- researched before redesigning, per standing practice.**
+Checked actual Coptic liturgical practice (multiple independent sources: Coptic Orthodox Diocese of
+LA, Coptic Heritage, St. Verena Coptic Orthodox Church, Wikipedia, tasbeha.org community references)
+before touching anything. Confirmed: unlike the seven canonical hours (a genuine time-of-day choice
+someone might reasonably want to browse or override), the Theotokia has exactly one correct entry
+per calendar weekday -- it is not a matter of preference. Sources also confirmed the two melody
+families this maps onto: **Adam tune** for Sunday-Tuesday, **Batos/Watos tune** for
+Wednesday-Saturday (both spellings are attested; this app's existing rubric `note` fields already
+used "Tone Batos", confirming the terminology was already correct elsewhere in the project).
+
+**Redesigned, not just relabeled:**
+- Collapsed the seven individual `coptic-{day}-theotokia` entries in
+  `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` down to a single `coptic-theotokia` entry. The
+  Hour list now has 8 options (7 canonical hours/Midnight Office + 1 Theotokia), down from 14.
+- Added `COPTIC_THEOTOKIA_WEEKDAY_IDS` + `_copticTheotokiaIdForDate(date)`: the single source of
+  truth mapping `Date.getDay()` to the correct specific rubric id. Added
+  `_copticTheotokiaToneForDate(date)` for the Adam/Batos tune name.
+- `renderCopticAgpeya()` now resolves the generic `coptic-theotokia` selection to the actual
+  weekday-specific rubric via `_copticTheotokiaIdForDate(currentDate)` before doing the rubric
+  lookup -- the underlying `rubrics.json` entries and their ids are unchanged; only the UI selection
+  layer changed. `activeRubric.officeName` (and therefore the page title, the sidebar's active-hour
+  label, everything downstream) naturally comes out correct with no further changes needed, since it
+  now always resolves to the real per-day rubric object.
+- The rendered "Theotokia" option's detail text is computed live at render time from `currentDate`
+  (e.g. "Tuesday · Adam Tune"), not authored statically, so it always names whichever day/tune will
+  actually display -- verified this updates correctly when the date changes (see below).
+- Updated `index.html`'s legacy `cop-hour` radio group to match: one `coptic-theotokia` radio
+  instead of seven day-specific ones.
+
+**Bug found and fixed in the same patch, surfaced by testing date navigation for this redesign:**
+`setSharedOfficeNavDate()` had no `"coptic"` branch at all -- meaning Prev/Today/Next and the date
+picker did **nothing** when in Coptic Agpeya mode, for any office, not just Theotokia. This had gone
+undetected until now because prior testing focused on hour selection and the time-of-day default,
+never on actually changing the date while in Coptic mode. Fixed by adding `"coptic"` alongside
+`"daily"`/`"horologion"` in the working branch (Coptic doesn't need East Syriac's separate
+"temporal override" tracking -- it uses `currentDate` directly, same as Daily/Horologion).
+
+**Verified with real-source jsdom simulations** (two rounds, 19 + 7 checks, all passed): the
+weekday-to-rubric-id mapping is correct for multiple sample dates including boundary days (Tuesday,
+Wednesday, Saturday, Sunday); the Adam/Batos tune mapping is correct on both sides of the boundary;
+the config now has exactly 8 options with no individual weekday entries remaining; selecting
+Theotokia and re-rendering shows the correct day in both the underlying radio and the visible
+rendered radio; the live detail text correctly updates when the date changes via the (newly fixed)
+date-navigation path; and -- checked directly against the real `rubrics.json` file, not a mock --
+the resolved `officeName` for Tuesday, Saturday, and Sunday all come out as the clean
+`"The {Day} Theotokia (Agpeya)"` form with no "Phase 2" text, and all 7 weekday ids the mapping
+function can produce actually exist in the data file. `js/office-ui.js` passes `node --check`;
+`rubrics.json` is valid JSON.
+
+Bumped the `js/office-ui.js` cache-busting query parameter to `?v=144` per the standing rule from
+the previous session.
+
+`SEED_VERSION` bumped to `v144-2026-08-18-coptic-theotokia-auto-select`.
