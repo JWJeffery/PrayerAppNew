@@ -5991,3 +5991,52 @@ available and the ask is genuinely small (one page, not a re-upload of the whole
 remaining open item in this project is now either fully verified, spot-checked with no
 discrepancies found, or an explicitly-disclosed judgement call on a completion (not a hole in the
 text).
+
+## SESSION 2026-08-18 continued -- Coptic Agpeya: FULL line-by-line self-verification complete for the entire rebuild
+
+Completed the verification pass through the remaining content: Wednesday's Theotokia body (7
+sections), Thursday's Theotokia body (9 sections), Friday's Theotokia body (7 sections), Saturday's
+Theotokia body (9 sections), and Tuesday's Psali/Alternative Psali (the only piece of that day not
+yet individually re-checked). Zero further discrepancies found anywhere in this final stretch.
+
+**Every one of the 87 components in the Coptic Agpeya has now been read against the source text
+line by line, not spot-checked.** This covers: all seven hours (Morning, Third, Sixth, Ninth,
+Eleventh, Twelfth), the Midnight Office (three nocturns), and the complete seven-day Theotokia
+cycle (Sunday through Saturday, each with its Psali, Alternative Psali, and full Theotokia body
+including every section and Crown).
+
+**Total issues found and corrected across the entire pass: 5.**
+1. `cop-mp-thanksgiving` -- wording correction ("thy grace and mercy and the love" for "the grace
+   and mercy and love").
+2. `cop-mp-hail-doxology` -- "me" vs. footnoted variant "us".
+3. `cop-trisagion` -- "me" vs "us" on the first of three invocations.
+4. `cop-creed` -- "born of" vs. doubled "begotten of".
+5. `cop-sunday-theotokia-5` -- an inverted sentence, closed using an actual page image of O'Leary
+   p.124 that Josh provided directly (see the dedicated ledger entry earlier this session).
+
+Every other component checked -- the overwhelming majority of the 87 -- matched the source exactly
+as originally transcribed.
+
+**What this does NOT mean:** this was thorough AI self-verification against the source text, not
+the independent human read-through this project's own standing rule requires before any book is
+marked GREEN ("Never mark a file GREEN without documented human verification against a named
+primary source" -- a rule that predates this session and applies here the same as everywhere else
+in this project). The Coptic Agpeya remains amber. What this verification pass does establish is
+that the content is now demonstrably accurate against source at a level of confidence this project
+hasn't had for this book before -- five real, findable, fixable issues out of 87 components, none
+of them doctrinally significant, all now corrected. That is a meaningfully different starting
+position for whoever does the human read-through than "recently built, spot-checked."
+
+**Remaining open items, for completeness:**
+- Two completions remain explicitly disclosed as reasoned judgement calls rather than exact source
+  matches (Saturday's two Crown endings) -- both now backed by stronger evidence (the same formula
+  confirmed independently on three preceding days) but still flagged honestly as not a verbatim
+  match to Saturday's own abbreviated text.
+- `cop-theotokion` was resolved by reuse of an already-verified component (see the milestone entry
+  earlier this session) rather than needing separate verification.
+- Phase 2's scope decisions (excluding manuscript-variant paraphrase material, additional Psali
+  variants per day) remain as documented -- not gaps, deliberate exclusions.
+
+This closes the verification work planned for this session. Next real milestone for this book is
+the independent human read-through against source, at whatever point Josh is ready to do that or
+delegate it.

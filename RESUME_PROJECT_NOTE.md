@@ -3105,3 +3105,39 @@ completion (not a hole in the text) -- see the verification-progress entries in
 remaining Theotokia sections and the not-yet-individually-checked Psali/Alternative Psali content,
 same line-by-line method, using page-image requests (not just OCR text) whenever something looks
 uncertain rather than defaulting to a disclosure.
+
+## SESSION HANDOFF 2026-08-18 continued -- Coptic Agpeya: FULL line-by-line self-verification complete
+
+Every single one of the 87 components in the Coptic Agpeya has now been checked against source
+line by line -- all seven hours, the Midnight Office, and the complete seven-day Theotokia cycle.
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the same date.
+
+**Total real issues found and fixed across the whole rebuild: 5** -- four small wording corrections
+in the Morning Office, plus one inverted sentence in Sunday's Theotokia Section V (closed using an
+actual page image, not left as a disclosed gap). Everything else checked matched the source exactly
+as already transcribed.
+
+**Important distinction to carry forward, stated precisely so it doesn't get rounded up over
+time:** this was rigorous AI self-verification, not the independent human read-through this
+project's standing rule requires before GREEN. The Coptic Agpeya is NOT green. What changed is the
+starting confidence level for whoever does that human read-through -- this is now "extensively
+self-checked, five small issues found and fixed" rather than "recently built, spot-checked."
+
+**What's left, if anyone wants to push this further before the human read-through:**
+- Saturday's two Crown endings remain the only content in the whole build still flagged as a
+  reasoned completion rather than a confirmed exact match (though now backed by three independent
+  confirming instances from the preceding days, not just one).
+- The deliberate Phase 2 scope exclusions (manuscript-variant paraphrases, extra Psali variants per
+  day) are documented decisions, not gaps -- no further action needed unless Josh wants that scope
+  expanded.
+
+**Next real milestone for this book:** the independent human read-through against source. Nothing
+else in the planned Coptic Agpeya rebuild remains outstanding on the AI-verification side.
+
+**A tooling note worth remembering for future sessions on this or other books:** both O'Leary PDF
+files exceed the 10MB cap on `Google Drive:download_file_content` (confirmed: 30MB and 40MB), which
+blocks a fully-automated page-image extraction via `pdftoppm` (available in this environment) for
+this specific source. `Google Drive:read_file_content` (the OCR text extraction tool) has no such
+size limit and works fine regardless -- it's what built this entire rebuild's content in the first
+place. The two tools have genuinely different constraints; don't conflate "can't download raw
+bytes" with "can't access the file's text."
