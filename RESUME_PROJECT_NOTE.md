@@ -12,6 +12,26 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Sapra opening prepared (not publishable yet); Josh flagged image-upload budget
+
+Josh noted we're nearing his limit on page-image uploads this session. Built what was already fully
+in hand rather than requesting more right away: 14 components covering Sapra's fixed opening
+(Maclean's own Introduction describes the Morning Service as invariable throughout the year) --
+Psalm 100/91/104:1-16/113 all farced, the five fixed psalms under one Gloria, the Morning Lakhumara
+(own proper verse, distinct from Evening's), Psalm 51:1-18, and the full Tishbukhta by Mar Ephraim
+(or Mar Awa per a manuscript variant Maclean notes).
+
+**Deliberately not wired into a sequence, not selectable yet.** Sapra still needs its day-specific
+Morning Anthem, farced-psalms conclusion, and per-weekday Martyrs' Anthem (Maclean p.105-129, not yet
+obtained) before it's a complete office -- publishing the opening alone would present an incomplete
+office as finished. Confirmed with Playwright that Sapra still correctly shows "not yet rebuilt."
+
+179 components total, 18 sequences (unchanged this pass). `SEED_VERSION` bumped to
+`v154-2026-08-19-east-syriac-sapra-opening`. Natural pause point: Ramsha and Lelya both complete and
+verified; Sapra needs roughly Maclean pp.105-130 to finish, scoped and ready whenever that's available.
+
+---
+
 ## Session 2026-08-19 continued -- Lelya (Night Office) fully built and verified: all six ferial weekdays
 
 Built out the Ferial Night Service using the full text obtained earlier this session (Maclean

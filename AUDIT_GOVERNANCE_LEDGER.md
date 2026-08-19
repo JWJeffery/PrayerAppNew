@@ -6920,3 +6920,34 @@ files valid; `audit-ledger.html`'s inline script passes `node --check`.
 `SEED_VERSION` bumped to `v153-2026-08-19-east-syriac-lelya-complete`. Two of the Church of the
 East's three principal ferial services (Ramsha and Lelya) are now complete and verified. Sapra
 (Morning Service) has its opening obtained but is not yet built -- the clear next phase.
+
+## SESSION 2026-08-19 continued -- Sapra opening prepared (not yet publishable); noted Josh's image-upload budget constraint
+
+Josh flagged that we're nearing his limit on how many page images he can upload this session. Built
+what was already fully in hand from the earlier upload rather than requesting more immediately.
+
+**Built: 14 components** covering the fixed opening of the Ferial Morning Service that Maclean's own
+Introduction (p.xvi-xvii) explicitly describes as invariable throughout the year: Psalm 100 farced,
+Psalm 91 farced, Psalm 104:1-16 farced, Psalm 113 farced, the five fixed psalms (93, 148, 149, 150,
+117) under one Gloria, the Morning Lakhumara (its own proper verse -- "My voice shalt thou hear in
+the morning..." -- distinct from the Evening Lakhumara's "I was glad when they said unto me..."),
+Psalm 51:1-18, and the full Tishbukhta by Mar Ephraim (or, per a manuscript variant Maclean himself
+notes, Mar Awa the Catholicos).
+
+**Deliberately NOT wired into a rubrics sequence, and NOT selectable in the app yet.** The Ferial
+Morning Service still needs its day-specific Morning Anthem, the farced-psalms conclusion, and the
+per-weekday Martyrs' Anthem for Mornings (Maclean p.105-129, not yet obtained) before it would be a
+genuinely complete, publishable office -- wiring the opening alone into a selectable sequence would
+present an incomplete office as if it were finished, the same reasoning already applied earlier this
+session to Friday's original partial Martyrs' Anthem. Confirmed with a direct Playwright check that
+selecting Sapra still correctly shows "not yet rebuilt" with these 14 components sitting unused in
+the corpus, ready for the day the rest of the office is built.
+
+179 components total (18 sequences unchanged -- no new sequences this pass). `SEED_VERSION` bumped
+to `v154-2026-08-19-east-syriac-sapra-opening`.
+
+**Status for continuing:** Sapra needs approximately Maclean pp.105-130 to complete (the day-specific
+Morning Anthems and Martyrs' Anthems for each weekday morning, roughly parallel in scope to what
+Ramsha's Martyrs' Anthems needed). Given the image-upload constraint raised this session, this is a
+natural pause point in the rebuild -- Ramsha and Lelya are both complete and verified; Sapra has real,
+verified prep work done and a clearly scoped remainder.

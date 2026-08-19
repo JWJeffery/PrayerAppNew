@@ -2260,5 +2260,137 @@
       "note": "The Night Service's own, shorter form of the general litany -- distinct from the fuller Evening Service Karuzutha."
     },
     "text": "<p class=\"rubric-text\">They rise up, and the deacon says the Karuzutha.</p><p class=\"component-text\">Let us all stand up, as is right, in sorrow and care. Let us make request and say, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">The people answer, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">He proceeds.</p><p class=\"component-text\">O mighty Lord, Eternal Being, who dwellest in the highest heights, we make request. <em>Answer. O our Lord, etc., and so after each clause.</em><br>O thou who, in thy great love with which thou didst love us, didst honour the fashioning of our race by the image of thy glory, we, etc.<br>O thou who didst promise to faithful Abraham good things to them that love thee, and by the revelation of Christ wast made known to thy Church, we, etc.<br>O thou who wilt not that our nature should perish, but that it should repent (and turn) from the error of darkness to the knowledge of the truth, we, etc.<br>O thou who alone art the Maker and Fashioner of created things, and dwellest in the excellent light, we, etc.<br>For the welfare of our holy fathers, and all those who serve under them, we, etc.<br>O merciful God, who in mercies governest all, we, etc.<br>O thou who art glorified in heaven and worshipped on earth, we, etc.</p><p class=\"component-text\">Give us the victory, O Christ our Lord, in thy coming, and give peace to thy Church, saved by thy precious blood, and have mercy upon us.</p>"
+  },
+  {
+    "id": "esy-sapra-opening-prayer",
+    "title": "Prayer before the Morning Psalms",
+    "meta": {
+      "source": "Maclean 1894, p.103.",
+      "note": "Follows the Night Service without a break."
+    },
+    "text": "<p class=\"component-text\">O Compassionate, Merciful, and Pitiful one, whose door is open to them that repent, and who ever callest sinners to come near to thee in penitence; open, O our Lord and our God, the door of mercies to our prayer; and receive our request, and return an answer in thy mercies to our petitions, from thy rich and overflowing treasury, O thou who art good and who stayest not thy mercies and gifts to the needy and afflicted, thy servants, who call on thee and beseech thee, at all seasons and times, Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p><p class=\"rubric-text\">They answer, Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-sapra-second-opening-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.103."
+    },
+    "text": "<p class=\"component-text\">O my Lord, all creatures whom thou hast created, who have been fashioned by thy purpose, who by thy will have come into being, the cause of whose being thou art, and the breath and inspiration of our life, hasten to kneel and worship thee, sing and chant Hallelujah to thee, are glad and rejoice in thee, ask and entreat thee, make request and beseech thee, confess and glorify thee, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-sapra-psalm-100",
+    "title": "Psalm 100, farced",
+    "meta": {
+      "source": "Maclean 1894, p.103."
+    },
+    "text": "<p class=\"rubric-text\">The Psalms. Psalm 100, farced thus.</p><p class=\"component-text\"><em>Glorify the Lord, all the whole earth.</em> O Giver of light, O Lord, we lift up glory to thee. Glorify the Lord all the whole earth. Serve the Lord, etc., to the end of the Psalm. Glory be, etc. From everlasting to everlasting. Amen. Glorify the Lord, all the whole earth. O Giver of light, etc.</p><p class=\"rubric-text\">Let us pray. Peace be with us.</p>",
+    "psalmRef": "100"
+  },
+  {
+    "id": "esy-sapra-psalm-100-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.103."
+    },
+    "text": "<p class=\"component-text\">To thee, O my Lord, we lift up glory and confession, and continually offer worship and thanksgiving to thy living and holy Name, for thou art the Lord and Creator of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
+  },
+  {
+    "id": "esy-sapra-psalm-91",
+    "title": "Psalm 91, farced",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "Farced 'as before, with Glorious is thy confident hope, O Christ our Saviour' -- following the same farcing pattern as Psalm 100."
+    },
+    "text": "<p class=\"rubric-text\">Psalm 91 and Gloria, farced, as before, with \"Glorious is thy confident hope, O Christ our Saviour.\"</p><p class=\"rubric-text\">Deacon. Let us pray. Peace be with us.</p>",
+    "psalmRef": "91"
+  },
+  {
+    "id": "esy-sapra-psalm-91-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.104."
+    },
+    "text": "<p class=\"component-text\">Glorious, O my Lord, is the great and confident hope of thy Godhead, and high and exalted is the wondrous refuge of thy Majesty, and all who hope in thee, and trust in thee, and call on thy holy Name, and beseech thee, at all seasons and times, shall not be ashamed, O Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-sapra-psalm-104",
+    "title": "Psalm 104:1-16, farced",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "\"To full of sap\" -- Maclean's marker for the endpoint of this farced portion (v.16). No Gloria."
+    },
+    "text": "<p class=\"rubric-text\">Psalm 104 (vv. 1-16, \"to full of sap\"), farced with \"Glory becometh thee, O God.\" No Gloria. Add \"Glory becometh,\" etc.</p>",
+    "psalmRef": "104:1-16"
+  },
+  {
+    "id": "esy-sapra-psalm-113",
+    "title": "Psalm 113, farced",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "No Gloria."
+    },
+    "text": "<p class=\"rubric-text\">Psalm 113, farced with \"Glory to him who created the light.\" No Gloria. Add \"Glory to him,\" etc.</p>",
+    "psalmRef": "113"
+  },
+  {
+    "id": "esy-sapra-fixed-psalms",
+    "title": "The Fixed Psalms",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "Said without farcing, all five under one Gloria."
+    },
+    "text": "<p class=\"rubric-text\">Psalms 93, 148, 149, 150, 117, said without farcing, and all under one Gloria. Add \"Glorify the Lord, all the whole earth. O Giver of light, O Lord, even to thee do we lift up glory.\"</p><p class=\"rubric-text\">Deacon. Let us pray. Peace be with us.</p>",
+    "psalms": [
+      "93",
+      "148",
+      "149",
+      "150",
+      "117"
+    ]
+  },
+  {
+    "id": "esy-sapra-lakhumara-prayer-before",
+    "title": "Prayer of the Lakhumara",
+    "meta": {
+      "source": "Maclean 1894, p.104."
+    },
+    "text": "<p class=\"component-text\">Thee, O my Lord, we are bound, heaven and earth and all that is in them, to confess, worship, and glorify, for all thy helps and graces towards us, the greatness of which cannot be repaid, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-sapra-laku-mara",
+    "title": "The Lakhumara",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "The Morning form of the Lakhumara, with its own proper verse ('My voice shalt thou hear in the morning...') distinct from the Evening form's ('I was glad when they said unto me...')."
+    },
+    "text": "<p class=\"rubric-text\">They all say the Lakhumara.</p><p class=\"component-text\">Thee, Lord of all, we confess. And thee, Jesus Christ, we glorify. For thou art the Quickener of our bodies. And thou art the Saviour of our souls. <em>My voice shalt thou hear in the morning, O Lord, and in the morning I will be prepared, and will appear before thee.</em> Thee, Lord of all. Glory be. From everlasting. Thee, Lord of all.</p><p class=\"rubric-text\">Let us pray. Peace be with us.</p>"
+  },
+  {
+    "id": "esy-sapra-lakhumara-prayer-after",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.104-105."
+    },
+    "text": "<p class=\"component-text\">Thee, who quickenest our bodies in thy compassion, and answerest (us), and savest our souls by the mild purpose of thy will, great King of glory, Being who art from everlasting, we confess, worship, and glorify, at all seasons and times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-sapra-psalm-51",
+    "title": "Psalm 51:1-18, farced",
+    "meta": {
+      "source": "Maclean 1894, p.105.",
+      "note": "Each choir says two clauses at a time."
+    },
+    "text": "<p class=\"rubric-text\">Psalm 51 (vv. 1-18).</p><p class=\"component-text\"><em>Have mercy upon me, O God, after thy goodness.</em> And according to the multitude of thy mercies do away mine offences. Have mercy upon me, O Lord. Have mercy upon me, O God, after ... not despise. Have mercy upon me, O Lord. Glory be. From everlasting. Have mercy upon me, O Lord. Have mercy upon me, O God, after thy goodness. And according to the multitude of thy mercies do away mine offences.</p><p class=\"component-text\"><em>O Christ the King, have mercy upon me.</em> O Christ the King, glory to thy Name.</p>",
+    "psalmRef": "51:1-18"
+  },
+  {
+    "id": "esy-sapra-tishbukhta",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.105.",
+      "note": "By Mar Ephraim, or, as some say, by Mar Awa, Catholicos. Repeated three times from the marked point, per Maclean's rubric."
+    },
+    "text": "<p class=\"rubric-text\">Tishbukhta, by Mar Ephraim, or, as some say, by Mar Awa, Catholicos.</p><p class=\"component-text\">To thee be glory, O our God. And to thee be praise, O our Maker. We bless thee, who didst form us. O compassionate Lord. O merciful God. Pitiful Creator. O Saviour, who dost preserve us. Who dost help and aid us. We worship thee, O our Lord. For thou art long-suffering, and thy lovingkindness is great. O Merciful one, pity us and have mercy upon us. Turn to us in the multitude of thy mercies. Our confident hope and strong refuge. O Lord our God, make thy face to shine, and we shall be saved. O thou who receivest the penitent in mercy. Receive our prayer and service. O thou who hearest the voice of thy worshippers. Let our request come before thee, and have mercy upon us. O thou who forgivest the trespasses of mortals in thy compassion. Forgive us our trespasses and sins in thy compassion. O thou who pardonest the sins of the sons of men in thy lovingkindness. Pardon our many sins, and have mercy upon us.<em> O good Hope of the sons of men, give us peace and tranquillity. That we may confess thy Trinity, O Lord of all, for ever. Amen.</em></p><p class=\"rubric-text\">Repeat thrice from the asterisk.</p>"
   }
 ]
