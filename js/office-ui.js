@@ -4106,15 +4106,25 @@ async function renderEastSyriac() {
     const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const dayName  = dayNames[currentDate.getDay()];
 
-    // Qdham ("before") / Wathar ("after") week alternation, per Maclean's own
-    // rule (Introduction, p.xvi): if Sunday is "before", so are Monday,
-    // Wednesday, Friday; Tuesday, Thursday, Saturday are "after" -- and this
-    // flips every week. Anchored to a known Qdham Sunday; ISO week parity
-    // from that anchor determines the current week's cycle.
+    // Qdham ("before") / Wathar ("after") alternation, per Maclean's own rule
+    // (Introduction, p.xvi): "If Sunday is 'before,' so also are Monday,
+    // Wednesday, and Friday, but Tuesday, Thursday, and Saturday are
+    // 'after'; and vice versa." This is NOT a single label applied uniformly
+    // to every day of a calendar week -- it alternates BY WEEKDAY within
+    // whichever cycle that week's Sunday carries. Content printed under
+    // Maclean's "Week Before" section heading (pp.1-65) gives Monday,
+    // Wednesday, and Friday's Qdham forms AND Tuesday, Thursday, and
+    // Saturday's Wathar forms, side by side -- e.g. "First Tuesday" in that
+    // section is the Wathar Tuesday, not a Qdham one. First computes which
+    // cycle this week's SUNDAY carries, then applies the day-of-week flip.
     const QDHAM_ANCHOR_SUNDAY = new Date(2026, 0, 4); // a confirmed Qdham Sunday
     const msPerWeek = 7 * 24 * 60 * 60 * 1000;
-    const weeksSinceAnchor = Math.floor((currentDate.getTime() - QDHAM_ANCHOR_SUNDAY.getTime()) / msPerWeek);
-    const cycle = (((weeksSinceAnchor % 2) + 2) % 2) === 0 ? 'qdham' : 'wathar';
+    const daysSinceAnchorSunday = Math.floor((currentDate.getTime() - QDHAM_ANCHOR_SUNDAY.getTime()) / (24 * 60 * 60 * 1000));
+    const weeksSinceAnchor = Math.floor(daysSinceAnchorSunday / 7);
+    const sundayCycle = (((weeksSinceAnchor % 2) + 2) % 2) === 0 ? 'qdham' : 'wathar';
+    const dow = currentDate.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
+    const matchesSunday = [0, 1, 3, 5].includes(dow); // Sun, Mon, Wed, Fri share Sunday's cycle
+    const cycle = matchesSunday ? sundayCycle : (sundayCycle === 'qdham' ? 'wathar' : 'qdham');
     const cycleLabel = cycle === 'qdham' ? "Qdham (\u2018Before\u2019 Week)" : "Wathar (\u2018After\u2019 Week)";
 
     // Honour whatever hour is actually selected in the sidebar (or the

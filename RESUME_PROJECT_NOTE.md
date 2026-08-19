@@ -12,6 +12,41 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- East Syriac rebuild Phase 2: Tuesday-Thursday Ramsha; a real cycle-logic bug caught before shipping
+
+Continued the Church of the East rebuild same-session per Josh's "get as much done as possible."
+Found a much higher-bandwidth source route: the Assyrian Church of the East's own Diocese of
+California hosts the full Maclean PDF directly
+(acoecalifornia.org/files/East-Syrian-Daily-Offices---Maclean.pdf), which returned far more text per
+fetch than archive.org's djvu.txt stream -- covered First Tuesday through most of First Friday in one
+pass. Worth trying this route first in future sessions before falling back to archive.org.
+
+**Real bug caught before shipping, not after:** re-examined Maclean's actual Qdham/Wathar
+alternation rule before building Tuesday and realized Phase 1's cycle logic was wrong -- it applied
+one label uniformly to a whole calendar week, when the real rule alternates BY WEEKDAY (Sun/Mon/Wed/
+Fri share one designation, Tue/Thu/Sat share the opposite, flipping every week). Monday's Phase 1
+build happened to look correct by coincidence (Monday always matches Sunday's own designation).
+Rewrote the cycle computation to correctly compute the week's Sunday designation first, then apply
+the per-weekday flip -- verified against the whole week with real Playwright before trusting it.
+
+**Built and verified: Tuesday (Wathar), Wednesday (Qdham), Thursday (Wathar) Ramsha, complete.** 28
+new components (61 total), each cited to a specific Maclean page. Confirmed two Wednesday/Friday-
+specific rubric substitutions directly from source (a distinct post-Evening-Anthem prayer, and a
+Shuraya instead of the Letter Psalm) rather than assuming Monday's pattern held.
+
+**Deliberately did not build Friday**, despite having most of its text -- the fetch truncated
+mid-Martyrs'-Anthem, and publishing an incomplete anthem would violate the no-placeholder-text rule.
+Flagged for a follow-up fetch, not patched over.
+
+**Verified end-to-end across the whole week** with real Playwright: every built day's cycle label
+lands correctly per the alternation rule, unbuilt days (Fri/Sat/Sun) correctly say so with their own
+correctly-computed cycle label, and 15 spot-checked phrases across the three new days all matched.
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v150-2026-08-19-east-syriac-rebuild-phase2`.
+
+---
+
 ## Session 2026-08-19 continued -- Church of the East: entire prior build deleted, rebuild started
 
 Josh asked to evaluate the Church of the East's office content -- architect it in advance, find

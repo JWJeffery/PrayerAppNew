@@ -6696,3 +6696,58 @@ to span many sessions.
 `SEED_VERSION` bumped to `v149-2026-08-19-east-syriac-rebuild-phase1`. Dashboard's `COE` section
 rewritten to reflect actual current status (one GREEN entry, the rest RED with specific notes on
 what's needed) rather than the stale uniform-amber placeholder it had before.
+
+## SESSION 2026-08-19 continued -- East Syriac rebuild Phase 2: Tuesday, Wednesday, Thursday Ramsha; a genuine cycle-logic bug caught and fixed before shipping
+
+Continuing the Church of the East rebuild in the same session, at Josh's direction to get as much
+done as possible. Found a second, higher-bandwidth access route to Maclean 1894 -- the Assyrian
+Church of the East's own Diocese of California hosts the full PDF directly
+(acoecalifornia.org/files/East-Syrian-Daily-Offices---Maclean.pdf) -- which returned substantially
+more text per fetch than the archive.org djvu.txt stream had, covering First Tuesday through most of
+First Friday in one pass.
+
+**A real bug caught before any content shipped, not after:** while preparing to build Tuesday's
+content, re-examined Maclean's actual alternation rule (Introduction, p.xvi: "If Sunday is
+'before,' so also are Monday, Wednesday, and Friday, but Tuesday, Thursday, and Saturday are
+'after'; and vice versa") and realized the Phase 1 renderer's cycle computation was wrong: it
+applied a single Qdham/Wathar label uniformly to every day of a calendar week, when the real rule
+alternates BY WEEKDAY within whichever cycle that week's Sunday carries. Content printed under
+Maclean's "Week Before" section heading is not uniformly Qdham -- "First Tuesday" there is actually
+the WATHAR form for Tuesday, since Tuesday always opposes Sunday's designation. Monday's Phase 1
+build happened to not expose this bug (Monday always matches Sunday's cycle, so it looked correct by
+coincidence), but it would have mislabeled every Tuesday, Thursday, and Saturday going forward.
+Rewrote the cycle-computation logic in `renderEastSyriac()` to first compute the current week's
+Sunday designation from the anchor date, then apply the day-of-week flip rule, before building any
+of the new day content on top of it.
+
+**Built and verified, Phase 2: Tuesday (Wathar), Wednesday (Qdham), Thursday (Wathar) Ramsha,
+complete.** 28 new components (61 total now), each cited to a specific Maclean page range. Confirmed
+two Wednesday/Friday-specific structural substitutions directly from source rather than assuming
+consistency with Monday: a distinct fixed prayer ("Arm us, O our Lord and God, with strong and
+invincible armour...") replaces the usual post-Evening-Anthem prayer on Wednesdays and Fridays, and
+a Shuraya is used in place of the Letter Psalm on those two days -- both confirmed against Maclean's
+own structural summary (Introduction p.xiv: "Letter psalm... (M., T., Th., Sa.), or Third Shuraya
+(Sun., W., F., feasts, mem.)"), not guessed at from Monday's pattern.
+
+**Deliberately did not build Friday**, despite having most of its text: the source fetch truncated
+mid-way through Friday's Martyrs' Anthem and before its closing prayer, and publishing an
+incomplete Martyrs' Anthem would violate the project's standing "no abbreviated or placeholder
+liturgical text" rule. Flagged as needing one more source fetch, not silently patched over with a
+partial anthem.
+
+**Verified end-to-end with real Playwright, testing the whole week at once** (not just the new days
+in isolation): set the date to each day from the anchor Sunday through the following Saturday,
+confirmed every built day's cycle label lands on the correct side of the alternation rule (Monday
+Qdham, Tuesday Wathar, Wednesday Qdham, Thursday Wathar -- matching the rule exactly), and confirmed
+unbuilt days (Sunday, Friday, Saturday) correctly show the "not yet rebuilt" message with their own
+correctly-computed cycle label rather than silently rendering Monday's or any other day's content.
+Also spot-checked 15 specific expected phrases across the three new days (tune names, psalm
+citations, and distinctive verse text) directly against the rendered output -- all 15 passed.
+`js/office-ui.js` passes `node --check`; both JSON files valid; `audit-ledger.html`'s inline script
+passes `node --check`.
+
+Dashboard's `COE` section updated: three new GREEN entries (Tuesday, Wednesday, Thursday), the
+remaining-days entry narrowed to reflect only Friday/Saturday/Sunday are still outstanding, with
+Friday's specific gap (truncated mid-anthem) documented rather than left vague.
+
+`SEED_VERSION` bumped to `v150-2026-08-19-east-syriac-rebuild-phase2`.

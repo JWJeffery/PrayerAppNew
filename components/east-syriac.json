@@ -44,7 +44,12 @@
       "day": "monday"
     },
     "text": "<p class=\"rubric-text\">First Marmitha. Psalms 11, 12, 13, 14. After the first clause of the first psalm of each Marmitha say, Hallelujah, Hallelujah, yea Hallelujah, and repeat the first clause. After each Marmitha, Glory be to the Father, and to the Son, and to the Holy Ghost. From everlasting to everlasting. Amen.</p>",
-    "psalms": ["11", "12", "13", "14"]
+    "psalms": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
   },
   {
     "id": "esy-monday-second-marmitha",
@@ -56,7 +61,11 @@
       "note": "Second Marmitha is ferias only (not said on Sundays/feasts). Ends with Gloria, then either 'Hallelujah, Glory to thee, O God, thrice. O Lord, have mercy upon us' or the shorter 'Hallelujah, Hallelujah, yea Hallelujah' form -- both given by Maclean as alternatives (U. vs R.C. editions)."
     },
     "text": "<p class=\"rubric-text\">Second Marmitha. Psalms 15, 16, 17. Gloria. Then, Hallelujah, Glory to thee, O God, thrice. O Lord, have mercy upon us.</p><p class=\"rubric-text\">Deacon. Peace be with us.</p>",
-    "psalms": ["15", "16", "17"]
+    "psalms": [
+      "15",
+      "16",
+      "17"
+    ]
   },
   {
     "id": "esy-lakhumara-prayer-before",
@@ -123,7 +132,12 @@
       "note": "Farced with 'Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer' after the first clause; the farcing is not repeated for every clause (R.C. edition omits two of the farced clauses per Maclean's note). Gloria said at the end of Psalm 117, followed by the opening farce line once more."
     },
     "text": "<p class=\"component-text\"><em>Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer.</em> Lord, I have called upon thee, answer thou me. Hearken to my words and receive. My prayer as the incense before thee, etc.</p><p class=\"rubric-text\">At the end of Psalm 117 say the Gloria. Then, Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer.</p><p class=\"rubric-text\">They say, Let us pray. Peace be with us.</p>",
-    "psalms": ["141", "142", "119:105-113", "117"]
+    "psalms": [
+      "141",
+      "142",
+      "119:105-113",
+      "117"
+    ]
   },
   {
     "id": "esy-evening-incense-prayer",
@@ -312,5 +326,332 @@
       "note": "As given in the East Syriac daily office (not identical in wording to the Western form -- e.g. 'the firstborn of all creatures', 'Very God of very God. Son of the nature of his Father', 'the third day he rose again, as it is written' with no 'and ascended into heaven' clause split differently). Transcribed exactly as Maclean gives it; his footnote records that the R.C. (Roman Catholic/Chaldean) edition inserts 'he died' after Pontius Pilate and 'and the Son' after 'proceedeth from the Father' -- those insertions are NOT part of this (Assyrian Church of the East) text and are correctly omitted here."
     },
     "text": "<p class=\"component-text\">We believe in one God the Father Almighty, Maker of all things visible and invisible. And in one Lord Jesus Christ, the Son of God, the only begotten, the firstborn of all creatures. Begotten of his Father before all worlds and not made. Very God of very God. Son of the nature of his Father. By whose hands the worlds were fashioned and everything was created. Who for us sons of men and for our salvation came down from heaven, and was incarnate by the Holy Ghost, and became son of man, and was conceived and born of the Virgin Mary. He suffered and was crucified in the days of Pontius Pilate. And he was buried, and the third day he rose again, as it is written, and ascended unto heaven, and sat down on the right hand of his Father. And furthermore, he is ready to come to judge the dead and the quick. And in one Holy Ghost, the Spirit of truth, who proceedeth from the Father, the life-giving Spirit. And in one holy Apostolick and Catholick Church. And we confess one baptism for the forgiveness of sins, and the resurrection of our bodies, and the life for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-tuesday-first-marmitha",
+    "title": "First Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.23 (\"First Tuesday\").",
+      "cycle": "wathar",
+      "day": "tuesday",
+      "note": "Given under Maclean's 'Week Before' section heading, but Tuesday always carries the opposite cycle from that week's Sunday per the alternation rule (Introduction p.xvi) -- this is the Wathar form. 'All as on Monday except the following' governs the fixed elements; only the day-specific variable pieces are given here."
+    },
+    "text": "<p class=\"rubric-text\">First Marmitha. Psalms 25, 26, 27.</p>",
+    "psalms": [
+      "25",
+      "26",
+      "27"
+    ]
+  },
+  {
+    "id": "esy-tuesday-second-marmitha",
+    "title": "Second Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.23.",
+      "cycle": "wathar",
+      "day": "tuesday"
+    },
+    "text": "<p class=\"rubric-text\">Second Marmitha. Psalms 28, 29, 30.</p>",
+    "psalms": [
+      "28",
+      "29",
+      "30"
+    ]
+  },
+  {
+    "id": "esy-tuesday-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.23.",
+      "cycle": "wathar",
+      "day": "tuesday"
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 17:1-6, \"to hear me.\"</p>",
+    "psalmRef": "17:1-6"
+  },
+  {
+    "id": "esy-tuesday-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.23.",
+      "cycle": "wathar",
+      "day": "tuesday",
+      "note": "To the tune \"Light and the Son of light.\""
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"Light and the Son of light.\"</p><p class=\"component-text\"><em>Hear, O God, and have mercy upon me.</em> O thou that hearest and delayest not. And answerest, and savest, and rescuest. Hear, O my Lord, our request. And return an answer in thy mercies to our petitions.</p><p class=\"component-text\"><em>Faithful is the Lord in his words.</em> O our Lord, thou hast said. For every one that knocketh at the door of my majesty. The door is opened. And his petitions are answered.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. May the prayer of the Virgin. Mary the Mother of Christ. Be a wall to us. And keep us from the Evil one.</p><p class=\"component-text\">From everlasting to everlasting. O prophets and apostles. And martyrs and priests and teachers. May your prayer be to us. A wall by night and by day.</p><p class=\"component-text\">And let all the people say Amen and Amen. Our holy father, the friend of the heavenly bridegroom. Beg for us mercies. From thy Lord whose love thou didst desire.</p>"
+  },
+  {
+    "id": "esy-tuesday-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.24.",
+      "cycle": "wathar",
+      "day": "tuesday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 21:1-5.</p>",
+    "psalmRef": "21:1-5"
+  },
+  {
+    "id": "esy-tuesday-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.24.",
+      "cycle": "wathar",
+      "day": "tuesday",
+      "note": "To the tune \"Now is the night.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"Now is the night.\"</p><p class=\"component-text\"><em>Hear my prayer, O Lord.</em> We make request to thee, O our Lord. And we beseech thy majesty. As thou hast created me in thy compassion. Give us life by thy coming. For thou hast compassion on sinners. And mercy on them that repent. And causest the multitude of sins to pass away. In the mercies of thy lovingkindness.</p><p class=\"component-text\"><em>Hearken to my words and receive [them].</em> O God, who didst accept the lamb. Of Abel, a perfect lamb. And the offering of righteous Noah. And of faithful Abraham. Receive, O our Lord, our request. And return an answer in thy mercies to our petitions. And make thy peace to dwell among us. All our days.</p><p class=\"component-text\">Glory be, etc. O Mary, the holy Virgin. Mother of Jesus our Saviour. May thy prayer be a refuge. To the company of the faithful. And through thee may our prayers be answered. As a help to our feebleness. And with thee may we see Christ. In the day of his revelation.</p><p class=\"component-text\">From everlasting to everlasting. We keep the memorial of the just. And in their prayers we take refuge. And through them we call on thee. O our Lord, pity us. Make firm in us thy love as it is in them. And let our mouth preach their truth. And confirm their faith in us. O Hope of thy true (disciples).</p><p class=\"component-text\">Let all the people say Amen and Amen. How excellent art thou, O blessed one. And desired is the crown of thy victories. Which by virtuous deeds. Thou didst gain in heaven. Thou didst convict the adversary. Who fought with thee in the contest. And, lo, thy memorial is celebrated. In heaven and earth.</p>"
+  },
+  {
+    "id": "esy-tuesday-evening-anthem",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.24-25.",
+      "cycle": "wathar",
+      "day": "tuesday",
+      "note": "Maclean gives both a seasonal form (in the Kashkul, out of this book's scope) and this invariable alternative -- the invariable form is used here, same approach as Monday."
+    },
+    "text": "<p class=\"rubric-text\">Or this: Our help is in the Name of the Lord.</p><p class=\"component-text\"><em>Our help is in the Name of the Lord.</em> Our help is from God. Who by means of his mercies chastiseth us. Yet he is not a giver of our life. The hope of the salvation of our souls shall never more be cut off. But let us cry and say. Keep us, O my Lord, in thy compassion, and have mercy upon us.</p><p class=\"component-text\"><em>And our helper in times of trouble.</em> Our help, etc., as above.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. O Christ, who didst reconcile at thy coming all creation with him who sent thee. Pity thy Church, saved by thy blood. And bring to an end within it strifeful divisions. Which allow the devil to enter. To the wonderful dispensation of thy manhood. And raise up in it priests to preach the sound faith.</p>"
+  },
+  {
+    "id": "esy-tuesday-letter-psalm",
+    "title": "Letter Psalm",
+    "meta": {
+      "source": "Maclean 1894, p.25.",
+      "cycle": "wathar",
+      "day": "tuesday"
+    },
+    "text": "<p class=\"rubric-text\">Letter Psalm, Psalm 119:17-33.</p>",
+    "psalmRef": "119:17-33"
+  },
+  {
+    "id": "esy-tuesday-martyrs-anthem-evening",
+    "title": "The Martyrs' Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.25-29.",
+      "day": "tuesday",
+      "note": "One for each morning and evening of the week (in practice, ferias only). This is Tuesday's."
+    },
+    "text": "<p class=\"component-text\"><em>The righteous shall have an everlasting memorial.</em> Stephen trod the way. And the martyrs walked in his footsteps. And with the bridegroom have joy. In the bridechamber of light that passeth not away.</p><p class=\"component-text\"><em>He will not be afraid of any evil tidings.</em> Stephen when he was stoned. Saw the glory of his Lord on high. And the Holy Ghost weaving. A crown for the head of the faithful.</p><p class=\"component-text\"><em>He asked life of thee and thou gavest it him.</em> Stephen asked for mercy. For the people who drew near to stone him. Pardon, O our Lord, and forgive them. For they know not what they do.</p><p class=\"component-text\"><em>Against the unmerciful people.</em> Stephen when he was being killed. Asked mercy for them that killed him. Like his Lord when he was crucified. By the cruel Jews.</p><p class=\"component-text\"><em>And sing lustily with your voice.</em> With a loud voice the martyrs cried. Before the judges and said. We will not deny Christ. Who tasted death for us.</p><p class=\"component-text\"><em>Help us, O God our Saviour.</em> O Christ, who didst descend among the martyrs. And didst help them in their contest. Be to us an armour that is not conquered. And a high wall that is not overcome.</p><p class=\"component-text\"><em>There is none like unto thee, O Lord my God; and there is nothing like thy works.</em> There is no distress with which we have been afflicted. (So great) that we should deny and flee from thy worship. For the gods of the heathen come to nought. And thou alone art not moved.</p><p class=\"component-text\"><em>Such as are planted in the house of the Lord.</em> As trees in a garden. The martyrs are placed in the temple. And over them is placed the altar. And the Holy Ghost ministereth to them.</p><p class=\"component-text\"><em>Ye servants of his that do his pleasure.</em> The watchful ones descend from their place. And sing glory in their canticles. Over the bones of the faithful. Who have performed the will of their Creator.</p><p class=\"component-text\"><em>Offer unto him the sacrifices of glory.</em> The martyrs who were burnt were incense. And fell like (fragrant) roots in the fire. And the smell of their burning was sweet. As spices in the temple.</p><p class=\"component-text\"><em>Even the cedars of Lebanon which thou hast planted.</em> The martyrs are cedars which stood. And bowed not down before the judges. And on their graves kings worshipped. That from their bones they might have help.</p><p class=\"component-text\"><em>As a city that is surrounded by a wall.</em> The martyrs are walls that fall not down. And blessed fountains that fail not. By your prayers beg for mercies. For the world from the Compassionate one.</p><p class=\"component-text\"><em>Bow down thine ear, O Lord, and answer me.</em> Moses prayed, (and) the sea divided. Simon prayed and conquered the Evil one. Our Lord prayed and tasted death. And gave life to Adam who had perished.</p><p class=\"component-text\"><em>Who is he in the heaven of heavens that can be compared unto the Lord?</em> The sufferings of (this) time are not to be compared. To the kingdom which is prepared. From the foundation (of the world) for the faithful. Who have walked after thy Name.</p><p class=\"component-text\"><em>How good and beautiful.</em> How sweet is the smell of that garden. Which is placed in the temple of Jerusalem. And the martyrs enter and have joy. Under the shadow of its branches.</p><p class=\"component-text\"><em>Blessed are those that are blameless in the way.</em> Blessed are the martyrs when they hear. The voice of the Father saying to them. Come, enter, and inherit the kingdom. Which awaiteth you from the foundation (of the world).</p><p class=\"component-text\">And walk in the law of the Lord. A great blessing that passeth not away. Hath our Lord Jesus promised. To those who have loved him and believed in him. And have kept all his commandments.</p><p class=\"component-text\">Come, let us kneel and worship Him. Come, let us be blessed by the martyrs. Come, let us be blessed by the priests. May the prayer of the martyrs and priests. Be a wall to our souls.</p><p class=\"component-text\">O God, who is like unto Thee? The death of the athletes is like. To the death which our Lord died. His (death) was to hang on the cross. And theirs the sword and stoning.</p><p class=\"component-text\">Those that are true of heart. To desired blessings which end not. Are the holy martyrs invited. And instead of the sufferings which they endured here. They inherit the kingdom on high.</p><p class=\"component-text\">He flew on the wings of the wind. The chariot sped and descended. The same which bore Elijah. And in it the saints ascend. To meet our Lord when he cometh.</p><p class=\"component-text\">How good and beautiful. How beautiful are the companies. Of martyrs who stand in prayer. And sweet is the sound of their songs. When they ask mercy for the world.</p><p class=\"component-text\">Righteous and upright. O glorious and holy martyr. St. Cyriac the illustrious. Beg mercy for us from thy Lord. That we may be worthy of forgiveness of trespasses.</p><p class=\"component-text\">From the rising up of the sun unto the going down of the same. Lo, in all quarters of the world is celebrated with processions. The glorious day of the memorials. Of Mar Sergis and Mar Bakus. May their prayers be a wall to us.</p><p class=\"component-text\">And I spake of peace. Peace to thee, O martyr Mar Pithiun. Athlete of Christ the King. Who didst endure stripes and afflictions. From the hands of the impure Astrologer.</p><p class=\"component-text\">And thy prayers be on all of us. Peace to thee, Mar Pithiun the martyr. Spiritual treasurer. Supply wealth to the needy. Who take refuge in thy prayers.</p><p class=\"component-text\">Both small and great. Let us take refuge in St. George. That by the strength of his prayers. Our Lord may make straight our ways. And lighten the weight of our limbs.</p><p class=\"component-text\">And I will speak peace of thee. Peace to thee, full of grace. Said the watchful one to Mary. My Lord be with thee, daughter of mortals. From whom the Saviour doth shine forth.</p><p class=\"component-text\">Glory be, etc. Peace with the architects. Who built a citadel that falleth not down. And in the name of Jesus adorned and built. A bridechamber on high that is not moved.</p><p class=\"component-text\">From everlasting to everlasting. A crown of victory in thy contest. Is laid up on high, O our father. Which at the last day thou wilt take. From the right hand of thy Lord who exalted thee.</p><p class=\"component-text\">And let all the people say Amen and Amen. O thou who dost complete the course of the day. And givest the night for rest. Fulfil in us thy lovingkindness. O Lord, by night and day. O Christ, who hast kept us by day. And brought us to the evening in thy lovingkindness. Give us a restful night. That we may confess thee for thy lovingkindness. O our Lord, give peace in our country. And bless all our work. That we may be worthy of mercy and compassion. And confidence in the judgment. Give by the mercy of thy lovingkindness. A restful night and sleep. To all the sick and afflicted. Who call on thee in their affliction.</p>"
+  },
+  {
+    "id": "esy-wednesday-first-marmitha",
+    "title": "First Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.29 (\"First Wednesday\").",
+      "cycle": "qdham",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"rubric-text\">First Marmitha. Psalms 62, 63, 64.</p>",
+    "psalms": [
+      "62",
+      "63",
+      "64"
+    ]
+  },
+  {
+    "id": "esy-wednesday-second-marmitha",
+    "title": "Second Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.29.",
+      "cycle": "qdham",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"rubric-text\">Second Marmitha. Psalms 65, 66, 67.</p>",
+    "psalms": [
+      "65",
+      "66",
+      "67"
+    ]
+  },
+  {
+    "id": "esy-wednesday-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.29.",
+      "cycle": "qdham",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 23:1-5.</p>",
+    "psalmRef": "23:1-5"
+  },
+  {
+    "id": "esy-wednesday-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.29.",
+      "cycle": "qdham",
+      "day": "wednesday",
+      "note": "To the tune \"Compassionate and full.\""
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"Compassionate and full.\"</p><p class=\"component-text\"><em>Day and night.</em> May the prayer of the Virgin Mary. The Mother of Jesus our Saviour. Be to us continually. A wall by night and day.</p><p class=\"component-text\"><em>At all seasons and times.</em> May the prayer, etc., as above.</p><p class=\"component-text\">Glory be, etc. Prophets, pray for peace. Apostles, for tranquillity. And martyrs and priests and teachers. May your prayers be a wall to us.</p><p class=\"component-text\">From everlasting to everlasting. Beg and beseech. O our illustrious father. Of Christ whose love thou didst desire. That the congregation which celebrateth thy memorial. May be helped by thy prayers.</p><p class=\"component-text\">And let all the people say Amen and Amen. O thou who hearest the prayers of thy servants. Who answerest the petitions of thy worshippers. Hear our prayer and the voice of our request. And return answer to our petitions in thy mercies.</p>"
+  },
+  {
+    "id": "esy-wednesday-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.30.",
+      "cycle": "qdham",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 24:1-6.</p>",
+    "psalmRef": "24:1-6"
+  },
+  {
+    "id": "esy-wednesday-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.30.",
+      "cycle": "qdham",
+      "day": "wednesday",
+      "note": "To the tune \"Every breath.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"Every breath.\"</p><p class=\"component-text\"><em>And the land was filled with it.</em> Mary, who didst bear the medicine of life to the children of Adam. By thy petition may we find mercies in the day of the quickening. And deliver the children from death.</p><p class=\"component-text\">Mary, etc., as above.</p><p class=\"component-text\">Glory be, etc. A fount of life, O Lord, for us thou didst make. All the true sons of thy mysteries who loved thy Name.</p><p class=\"component-text\">From everlasting to everlasting. Our illustrious and holy father, the friend of the Son. Beg from thy Lord compassion and mercies for our souls.</p><p class=\"component-text\">And let all the people say Amen and Amen. O our Lord, help us, send peace, scatter the evil ones. Keep thy Church, free its children from harm.</p>"
+  },
+  {
+    "id": "esy-wednesday-evening-anthem",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.30-31.",
+      "cycle": "qdham",
+      "day": "wednesday",
+      "note": "To the tune \"We are not put to shame.\" Unlike Monday and Tuesday's, this is not marked as an alternative to a seasonal form -- it is the direct evening anthem given for Wednesday."
+    },
+    "text": "<p class=\"rubric-text\">Evening Anthem: to the tune \"We are not put to shame.\"</p><p class=\"component-text\"><em>Holy is the tabernacle of the most Highest.</em> The temple of God the Word. With great glory Mary carried in her bosom. And was mother and handmaid. To Jesus the Saviour of all. And therefore all creatures. Rejoice in the day of her festival. And are bidden to the bridechamber of light. To endless joy. And we all, with all generations. Will call her most blessed. And give glory to him who chose her. As the abode of his glorious brightness.</p><p class=\"component-text\"><em>I will glorify the Word of God.</em> The temple, etc., as above.</p><p class=\"component-text\">Glory be, etc. To goodly pearls. Are the bones of the saints like. Fixed in the crown of the King. And their beauty shineth in creation. Come, let us all with perfect love. Honour the day of their memorial with songs of the Holy Ghost. From morn until even. And let us beg for mercies from their Lord. That he may make his peace to dwell in creation. And by their prayers. May the Church and its children be kept.</p><p class=\"component-text\">From everlasting to everlasting. Blessed is thy memorial, O our illustrious father. For because of the truth thou wast persecuted. And didst endure sufferings and afflictions. That thou mightest be an inheritor of the kingdom. And who can tell. The dispensation of thy spiritual deeds? For thou wast adorned with virtue. With vigil, fast, and prayer. May thy prayer be a refuge. To sinners who take refuge in thee. And may we be worthy to raise. Glory to thy Lord who exalted thee.</p><p class=\"component-text\">And let all the people say Amen and Amen. As the censer which Aaron offered. May the sweet fragrance of our congregation please thee. And like the petition of the Ninevites. Receive the prayer of thy servants, O my Lord. And return an answer to our petitions in thy mercies. From thy rich treasury. And as thou didst answer Daniel. From the den of lions. Answer, O my Lord, and help thy worshippers. In these times of affliction. For in thee is our confident hope. O Lord, who dost love thy servants.</p>"
+  },
+  {
+    "id": "esy-wednesday-friday-prayer-instead-of-pity-us",
+    "title": "Prayer (instead of Pity us, thou Compassionate one)",
+    "meta": {
+      "source": "Maclean 1894, p.31.",
+      "note": "Maclean's rubric: 'Prayer instead of Pity us, thou Compassionate one (page 11)' -- this fixed prayer replaces the usual post-Evening-Anthem prayer specifically on Wednesdays and Fridays, per Maclean's structural summary (Introduction p.xiv: 'Collect, (a) on ferias fixed, but distinct ones for Wed. and Fri.'). Used for both days rather than being day-specific text."
+    },
+    "text": "<p class=\"component-text\">Arm us, O our Lord and God, with strong and invincible armour, by the prayers of thy blessed Mother. And give us with her a portion and share in thy heavenly bridechamber, Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
+  },
+  {
+    "id": "esy-wednesday-shuraya-instead-of-letter-psalm",
+    "title": "Shuraya (in place of a Letter Psalm)",
+    "meta": {
+      "source": "Maclean 1894, p.31.",
+      "cycle": "qdham",
+      "day": "wednesday",
+      "note": "Per Maclean's structural summary (Introduction p.xiv): the Letter Psalm (portion of Ps.119) is used Mon/Tue/Thu/Sat; Wed/Fri/Sun/feasts/memorials use a Third Shuraya instead. This is Wednesday's."
+    },
+    "text": "<p class=\"rubric-text\">Shuraya [in place of a Letter Psalm]. Psalm 45:14-17.</p>",
+    "psalmRef": "45:14-17"
+  },
+  {
+    "id": "esy-wednesday-martyrs-anthem-evening",
+    "title": "The Martyrs' Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.32-35.",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"component-text\"><em>For thy sake have we been killed every day.</em> O holy martyrs who were killed. For the love of Christ. We beseech you for all of us. Beg mercy of God. In heaven and in earth.</p><p class=\"component-text\">Your deeds conquer, and make us to rejoice. In the commemoration of your contests. For Christ's sake were ye killed. And with him will ye reign on high.</p><p class=\"component-text\"><em>Seek the Lord and be strong.</em> O martyrs, beg mercy for the world. Which taketh refuge in your bones. That by your request and prayers. We may find mercy in the day of judgment.</p><p class=\"component-text\"><em>How good and beautiful.</em> With peace and tranquillity and concord. Is the country filled where ye dwell. And may we be kept from all harm. By your prayers, blessed ones.</p><p class=\"component-text\"><em>I will alway bless the Lord.</em> Blessed is he who made you, blessed ones. True physicians. And your bones pour forth help. To him that taketh refuge in them.</p><p class=\"component-text\">The camp of the angels of the Lord. In many companies, enter. The martyrs before their persecutors, crying and saying, Lord, help. Thy servants in times of affliction.</p><p class=\"component-text\"><em>Look to Him and trust in Him.</em> They saw Christ and desired his love. Who tasted death for the sake of his Church. And they ran and gave up their souls. To be with him when he is revealed.</p><p class=\"component-text\"><em>Offer to him sacrifices of praise.</em> Propitiatory censers and pure. Offerings were ye, blessed ones. In whom the Father rejoiced, whom the Son accepted. And the Holy Ghost crowned.</p><p class=\"component-text\">The Lord on high is glorious. Above on high is preserved glory. Which the martyrs put on at the quickening. In the glorious country full of blessings. Where life is high above all danger.</p><p class=\"component-text\"><em>And more to be desired are they than gold and than precious stones.</em> Crowns better than gold. And sardonyx stones and pearls. Christ placeth on your heads. And giveth you joy in his bridechamber.</p><p class=\"component-text\">Be strong, and your heart shall be established. O martyrs, ye did not fear the fire. And the terrible swords of the judges. For ye were clothed with the love of Christ, And despised all torments.</p><p class=\"component-text\">Sing unto him a new song. With a new song doth Christ clothe. The friends whom he hath chosen to himself. And in place of the afflictions which they endured. He maketh them to inherit the bridechamber on high.</p><p class=\"component-text\">Open me the gates of righteousness. Open your treasures, blessed ones. And give help to the needy. Who look and wait for your prayer. That by it they may be protected from the Evil one.</p><p class=\"component-text\"><em>Blessed are those that are blameless in the way.</em> Blessed are ye, holy martyrs. Friends of the heavenly bridegroom. For lo, ye are invited to the kingdom. And life and blessings without end.</p><p class=\"component-text\">And walk in the law of the Lord. An unending blessing. And an unending and unperishing kingdom. Hath our Saviour promised to his saints. Who have loved him and have kept his commandments.</p><p class=\"component-text\">Joseph was sold to be a bondservant. The bones of illustrious Joseph. Made a hedge for the Egyptians. And your bones, holy martyrs. Brought compassion to all creation.</p><p class=\"component-text\">Thou hast set a glorious crown upon his head. A beautiful and honourable crown. Did the Lord of glory place. On the illustrious St. Cyriac. Who bore sufferings for the truth.</p><p class=\"component-text\">And I will speak peace of thee. Peace to thee, illustrious Mar Babai. Who didst fill every house with blessings. And lo, the tears of our eyes flow. Before thy tomb which hath brought us pardon.</p><p class=\"component-text\">Righteous and upright. May the prayer of the martyr Mar Sergis, who by his strength. Confounded the Evil one and his servants. Keep our congregation. From the Evil one and his hosts.</p><p class=\"component-text\">Beg of the Lord and pray before him. Beseech, illustrious Mar Ishu. Our God Jesus Christ. That when he raiseth the children of dust. He may cause us to enter his glorious bridechamber.</p><p class=\"component-text\">And thy prayers be on all of us. Peace to thee, illustrious Mar Pithiun. Who didst endure sufferings and afflictions. From the persecutors of the truth. For the love of Christ.</p><p class=\"component-text\">The Lord shall give strength unto his people. May the power which descended to the contest. And gave the martyr St. George the victory. Be our guardian. From the Evil one and his hosts.</p><p class=\"component-text\">Choice silver which in the earth is tried. A storehouse of help to us is. Thy pure body, O Mary. Which by its many helps. Doth make us rich in our need.</p><p class=\"component-text\">Glory be, etc. Glory to the Lord who exalted you. And made you a storehouse of life. For the afflicted and distressed. In you take refuge, by you are saved.</p><p class=\"component-text\">From everlasting to everlasting. O armed and illustrious athlete. Our father, inheritor of the kingdom. Beseech Christ that in his mercies. He may make his peace to dwell in creation.</p><p class=\"component-text\">And let all the people say Amen and Amen. The evening praise we lift up. To thee, O Lord God. And ask that we may receive. Forgiveness of trespasses from thee. Give us life without sin, O my Lord. And love and peace and concord. And may all our petitions be answered. As seemeth good to thy Godhead. Sow in us, O my Lord, a desire for prayer. And may our request ascend to thee. And give us twofold health. The sustenance of body and of spirit.</p>"
+  },
+  {
+    "id": "esy-thursday-first-marmitha",
+    "title": "First Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.35 (\"First Thursday\").",
+      "cycle": "wathar",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">First Marmitha. Psalms 96, 97, 98.</p>",
+    "psalms": [
+      "96",
+      "97",
+      "98"
+    ]
+  },
+  {
+    "id": "esy-thursday-second-marmitha",
+    "title": "Second Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.35.",
+      "cycle": "wathar",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">Second Marmitha. Psalms 99, 100, 101.</p>",
+    "psalms": [
+      "99",
+      "100",
+      "101"
+    ]
+  },
+  {
+    "id": "esy-thursday-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.35.",
+      "cycle": "wathar",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 25:1-5.</p>",
+    "psalmRef": "25:1-5"
+  },
+  {
+    "id": "esy-thursday-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.35.",
+      "cycle": "wathar",
+      "day": "thursday",
+      "note": "To the tune \"Thou art the Light.\""
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"Thou art the Light.\"</p><p class=\"component-text\"><em>Lord, thou knowest.</em> More than all thou knowest. O Lord, what doth help us. In thy lovingkindness supply our life. And may thy mercies pity our trespasses. May thy compassion be a physician to us. And thy love a master and teacher. To thee be glory, and on us be thy mercies.</p><p class=\"component-text\"><em>Thy mercy, O Lord, endureth for ever.</em> To the overflowing mercies of thy lovingkindness. O King Christ, we call. For assistance to our weakness. Because of the times, which are disturbed. And the world, which is in confusion with its sins. Give us immoveable peace. That having it we may confess thee at all times.</p><p class=\"component-text\">Glory be, etc. O Mary, the holy Virgin. Mother of Jesus our Saviour. Beseech and beg for mercy. For sinners, that they be not destroyed. For in thy prayers they take refuge. May thy prayer be a wall to us. In this world and in that to come.</p><p class=\"component-text\">From everlasting to everlasting. By the prayer of the just who propitiated thee. And the righteous who were approved before thee. The prophets and apostles and teachers. And martyrs and priests and monks. Keep the assembly of thy worshippers. That they may raise to thee a new song. Father, Son, and Holy Ghost.</p><p class=\"component-text\">And let all the people say Amen and Amen. Let us all diligently honour. The glorious day of the memorial. Of our illustrious and holy father. Who was a vessel full of mercies. Worthy of the service of his Lord. And day by day his lamp shineth. May his prayer be a wall to us.</p>"
+  },
+  {
+    "id": "esy-thursday-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.36.",
+      "cycle": "wathar",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 28:1-8.</p>",
+    "psalmRef": "28:1-8"
+  },
+  {
+    "id": "esy-thursday-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.36.",
+      "cycle": "wathar",
+      "day": "thursday",
+      "note": "To the tune \"They are not oppressed.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"They are not oppressed.\"</p><p class=\"component-text\"><em>Lord, I have called daily upon thee.</em> To thee cry the afflicted, O Compassionate one. And in thee the distressed take refuge, O Friend of men. Be a guardian to their life in thy compassion. And rescue them from the Evil one, for on thee they wait.</p><p class=\"component-text\">In the deep of his heart. Jonah called to thee from within the fish, and thou didst answer him. The company of Ananias in the furnace, and thou didst deliver them. And all creation calls to thee with sighing. Pity it and have mercy on it, as thou art wont.</p><p class=\"component-text\">Glory be, etc. O Mary, Mother of the King, the King of kings. Offer with us a petition to the Son, who is of thee. That he make his peace and tranquillity to dwell in creation. And that the Church and her children be kept from harm.</p><p class=\"component-text\">From everlasting to everlasting. Peace with your company, blessed ones. Merchants bearing life to the sons of men. Open the treasury of your prayers to the needy. And keep the country where ye dwelt from harm.</p><p class=\"component-text\">And let all the people say Amen and Amen. Make request for us all to thy Lord. O our illustrious and holy father, the friend of the Son. For by thy prayers shall be helped and saved. All who are afflicted and distressed, and who take refuge in thee.</p>"
+  },
+  {
+    "id": "esy-thursday-evening-anthem-invariable",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.37.",
+      "cycle": "wathar",
+      "day": "thursday",
+      "note": "Invariable alternative to the seasonal Kashkul form, same approach as Monday and Tuesday."
+    },
+    "text": "<p class=\"rubric-text\">Or this: We shall give thee thanks for ever.</p><p class=\"component-text\"><em>We shall give thee thanks for ever.</em> We give thee thanks, our Creator, for thou hast mercy on all creation. Thou hast brought into being both the good and the evil in thy compassion. And copiously givest help to the sons of men. O thou who hast abundant mercy, praise to thee.</p><p class=\"component-text\"><em>For thy loving mercy and for thy truth's sake.</em> We give thee thanks, etc., as above.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. Open to us, our Lord, the great treasury of thy mercy. That we may receive mercies and salvation for our poor race. And heal the pains of our sins by the great medicine of thy compassion. That our weak race by thy mercies may receive compassion.</p>"
+  },
+  {
+    "id": "esy-thursday-letter-psalm",
+    "title": "Letter Psalm",
+    "meta": {
+      "source": "Maclean 1894, p.37.",
+      "cycle": "wathar",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">Letter Psalm, Psalm 119:49-65.</p>",
+    "psalmRef": "119:49-65"
+  },
+  {
+    "id": "esy-thursday-martyrs-anthem-evening",
+    "title": "The Martyrs' Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.37-41.",
+      "day": "thursday"
+    },
+    "text": "<p class=\"component-text\"><em>Ye are the blessed of the Lord.</em> The blessed martyrs counted death. As a great gain. And like honours and gifts. Accepted stripes and torments. And now after their deaths. They bestow on the world benefits. And storehouses full of helps.</p><p class=\"component-text\">Yea, they thought scorn of the pleasant land. The martyrs who saw the world passing away. And truth abiding. Left buildings and riches. And possessions, which are vanity. And desired the fear of God. And gave their necks to the sword. And lo, they are about to inherit the kingdom.</p><p class=\"component-text\"><em>And sing lustily with the voice.</em> The martyrs say, Our crown is fixed. And our recompense laid up. And Christ the King, whom we have loved. Maketh us to enter his kingdom. And because we have suffered with fire and sword. Christ comforts our afflictions. In Paradise, which is full of joys.</p><p class=\"component-text\">Thy kingdom is an everlasting kingdom. The martyrs are invited. To the kingdom on high, and to life without end. That which ear hath not heard. And eye hath not seen, as it is written. And to the heart of the sons of men. Hath not gone up the blessing in which abide. The illustrious ones who loved Christ.</p><p class=\"component-text\">Lay hand upon the shield and buckler, and stand up to help me. With the shield of the Spirit were the true martyrs armed. When they went down to the contest. And young men and boys were assembled. To see an unaccustomed sight. Men fighting with death. And conquering it though they were killed. A wonder greater than words can tell.</p><p class=\"component-text\"><em>Look on him and trust in him.</em> O holy martyrs, ye saw Christ. In the kingdom which is above. And (departing) from temporal life. Ye have reached perfection. And have been counted worthy to glorify. With the spiritual companies. God the Lord of (all) creatures.</p><p class=\"component-text\">The eyes of the Lord are over the righteous. With the eye of the Spirit was Christ seen. By the holy martyrs. Who imitated him by their sufferings. For they heard that voice. Every one that beareth sufferings for my sake. Here on earth from men. Hath joy in the bridechamber of the kingdom.</p><p class=\"component-text\">He spread out a cloud and overshadowed them. Clouds of light bear up the saints. In the day of resurrection. When is revealed the greatness. Of the heavenly King of kings. And above, on high, they have joy. On the right hand of Christ. All who have loved him and have kept his commandments.</p><p class=\"component-text\">They knew not and understood not. The king bade them cast. The three children into the furnace. And Another among them. Sprinkled their faces with dew. And the more the fire was kindled. The more their faces shone. Blessed be the Lord who hath exalted his saints.</p><p class=\"component-text\">In the sight of all the people. The martyrs say, We will not deny. The Son of God. For we are the seed of Abraham. And sons of the inheritance of Isaak. For the God of our fathers. We offer a temporal death. And inherit life without end.</p><p class=\"component-text\">Out of the hand of the unrighteous and evil man. The unrighteous king enraged. With anger and envy. Brought sharp wooden nails. And fixed them in the body of the boy. And Christ helped him and aided him. St. Cyriac the illustrious. May his prayers be a wall to us.</p><p class=\"component-text\">Come, let us rejoice and be glad in it. In the day of thy crowning, O martyr Mar Sergis. The watchful ones and men rejoiced. Angels carried thy soul. Sons of men bore thy body in procession. The crown which the Holy Ghost wove. Our Saviour placed on thy head. Beg mercies for us from thy Lord.</p><p class=\"component-text\">His heart is established and feareth not. The martyr Mar Pithiun stood prepared. Before the heathen Magi. And reproved their arrogance. Worship not idols. But worship the one God. For heaven and earth are his. And his dominion endureth for ever.</p><p class=\"component-text\">Against the unmerciful people. Dire sufferings and bitter torments. And many kinds of death. The holy martyr bore. St. George the illustrious. For the love of Christ. Because he loved him more than his life. Blessed is he who crowned the martyr with victory.</p><p class=\"component-text\">The Lord preserveth them that are faithful. By the prayers of the Virgin Mary. The blessed Mother. May thy worshippers, O my Lord, be kept. From the wiles of the Crafty one. And grant us to fulfil thy will. Both in words and deeds. And to sing to thee glory at all times.</p><p class=\"component-text\">Glory be, etc. Peace to you, holy martyrs. Friends of Christ. Who conquered and overcame and were crowned. And confounded the Evil one in the contest. Blessed are ye in the day of the Son. When the greatness of his glory shineth forth. And ye enter with him to the bridechamber.</p><p class=\"component-text\">From everlasting to everlasting. A garment of grace woven by the Holy Ghost. Art thou, our father. A fountain of heavenly blessings. Hast thou caused to flow forth by thy steadfast deeds. And thou hast given the flock of thy pasture to drink. Of the word of heavenly life. And lo, a crown of victory is woven for thee.</p><p class=\"component-text\">And let all the people say Amen and Amen. By sea and by land they call to thee, our Lord. That thou mayest come to help them. Him that calleth by sea thou answerest. And (him that calleth) by land thou dost not neglect. And to us, O my Lord, who call on thee. Come, and help us, and save us. And deliver us from the Evil one and his host.</p><p class=\"component-text\">O Christ, who didst make peace with thine own blood. Between the height and the depth. Make peace, O my Lord, between priests and kings. And raise up thy Church in thy compassion. And let the one sign of faith. Reign in the whole inhabited world. In thy lovingkindness, O merciful Lord.</p><p class=\"component-text\">By thy lovingkindness, O merciful Lord. Bless and keep. This country and its inhabitants. From devils and evil men. And increase in it moderate weather. And love and peace and concord. And health of body and of soul.</p><p class=\"component-text\">By the angels the house. Of our father Abraham was blessed. And by the Lord of the angels. The house of Zacchaeus was blessed. And in the house into which thy worshippers have entered. May the Trinity dwell. And may it be blessed in the generation of the righteous.</p><p class=\"component-text\">Drive away Satan, who is the enemy. Of all righteousness. From the house where we dwell. And let him not enter and have dominion in it. And establish, O our Lord, its foundations. On the rock of faith. And increase in us life without end.</p>"
   }
 ]
