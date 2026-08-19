@@ -6092,3 +6092,34 @@ This is recorded honestly in that component's own `meta` and in the dashboard no
 means "verified as accurate to the best standard this session could achieve," not "zero possible
 future refinement" -- consistent with how other GREEN books in this project have occasionally
 needed later correction (e.g. the NABRE content-loss catches in already-closed OT books).
+
+## SESSION 2026-08-18 continued -- Dashboard reorganized: Coptic Agpeya split into its own section
+
+Josh asked for the dashboard cleaned up: the Ethiopian Sa'atat should no longer be listed as if it
+were still "the office," and the remaining un-deleted material (Senkessar) should move to a
+different section.
+
+**Root problem found while doing this:** the Coptic Agpeya's 16 dashboard rows had been living
+inside the `ETHIOPIAN` JS array and rendering under "III. The Ethiopian Office" the whole time --
+not because Coptic and Ethiopian are the same tradition (they aren't), but because the Coptic
+Agpeya was built to fill the slot the fabricated Sa'atat used to occupy, and its rows were simply
+appended to the same array without ever being given their own section.
+
+**Fixed properly, not just relabeled:**
+- Split the single `ETHIOPIAN` array into two: `ETHIOPIAN` (now just the two Senkessar rows) and a
+  new `COPTIC_AGPEYA` array (all 16 Coptic Agpeya rows, unchanged content).
+- The `eth:saatat:removed` row itself is now deleted from the dashboard entirely, not just moved --
+  its full history remains in this ledger and in `documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md`
+  (a deprecation notice), so nothing is lost, but the dashboard no longer lists Sa'atat as a
+  current or recent office at all.
+- New HTML section "IV. The Coptic Agpeya" added with its own intro note and a `copticAgpeyaSection`
+  div; the JS render call added alongside the existing pattern (`hydrateAndRender(COPTIC_AGPEYA,
+  renderOfficeTable, ...)`, identical shape to every other flat-array section).
+- "III. The Ethiopian Office" section note rewritten to describe Senkessar's actual status without
+  implying Sa'atat is still part of the office, and to point to the Coptic Agpeya's own section
+  for anyone looking for what replaced it.
+- All subsequent section numerals renumbered (Church of the East IV->V, Byzantine V->VI, Book of
+  Needs VI->VII, Roman Breviary VII->VIII) since a new section was inserted.
+
+**Verified:** JS syntax parses clean, all 16 `cop:agpeya:*` keys present and unique under the new
+section, both `eth:senk:*` keys present under Ethiopian, zero `eth:saatat` keys remaining anywhere.

@@ -3179,3 +3179,22 @@ this is not blocking and doesn't need proactive follow-up.
 **No outstanding work remains on this book.** Future sessions should treat the Coptic Agpeya the
 same as any other GREEN book in this project -- re-opening it requires a real reason (a reported
 error, a newly available source, a scope change Josh requests), not routine re-litigation.
+
+## SESSION HANDOFF 2026-08-18 continued -- Dashboard: Coptic Agpeya split into its own section
+
+Josh asked for the dashboard cleaned up so Sa'atat is no longer listed as an office, with the
+remaining material moved elsewhere. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s entry of the
+same date.
+
+**What was actually wrong:** the Coptic Agpeya's 16 rows had been rendering under "III. The
+Ethiopian Office" this whole time, an artifact of Coptic being built into the slot Sa'atat used to
+occupy rather than ever getting its own section.
+
+**Fixed:** new standalone "IV. The Coptic Agpeya" section (own `COPTIC_AGPEYA` JS array, own HTML
+section, own render call). Ethiopian Office section now contains only the two genuine Senkessar
+rows. The `eth:saatat:removed` row is deleted from the dashboard entirely (its history remains in
+this ledger and the deprecation doc). Subsequent section numerals (Church of the East, Byzantine,
+Book of Needs, Roman Breviary) bumped up by one since a section was inserted.
+
+If a future session needs to add rows to either section, they now go in the correct
+`ETHIOPIAN`/`COPTIC_AGPEYA` array respectively -- don't recombine them.
