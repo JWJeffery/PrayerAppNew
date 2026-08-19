@@ -364,6 +364,35 @@ body.light-mode .mode-btn:hover {
     display: none !important;
 }
 
+/* ── Coptic Agpeya Sidebar ── */
+#coptic-settings {
+    position: fixed;
+    top: 0;
+    left: 36px;
+    width: 300px;
+    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
+    color: var(--sidebar-text);
+    font-size: 17px;
+    padding: 28px 20px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid rgba(201,168,76,0.3);
+    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    text-align: left;
+    box-sizing: border-box;
+}
+#coptic-settings.sidebar-hidden {
+    transform: translateX(-336px);
+    pointer-events: none;
+}
+/* Completely remove from flex flow when the other mode is active */
+#coptic-settings.mode-hidden {
+    display: none !important;
+}
+
 /* ── Horologion office selector radio list ──────────────────────────────── */
 .hor-office-list {
     display: flex;
@@ -929,7 +958,8 @@ body.light-mode .ethiopian-theme .rubric-text {
     #settings-panel,
     #ethiopian-settings,
     #east-syriac-settings,
-    #generic-settings {
+    #generic-settings,
+    #coptic-settings {
         position: fixed !important;
         top: 0;
         left: 0;
@@ -941,7 +971,8 @@ body.light-mode .ethiopian-theme .rubric-text {
     #settings-panel.sidebar-hidden,
     #ethiopian-settings.sidebar-hidden,
     #east-syriac-settings.sidebar-hidden,
-    #generic-settings.sidebar-hidden {
+    #generic-settings.sidebar-hidden,
+    #coptic-settings.sidebar-hidden {
         transform: translateX(-300px);
         margin-left: 0 !important;
     }
@@ -1012,7 +1043,8 @@ body.light-mode .ethiopian-theme .rubric-text {
     #daily-office-section:has(#settings-panel:not(.sidebar-hidden))::after,
     #daily-office-section:has(#ethiopian-settings:not(.sidebar-hidden))::after,
     #daily-office-section:has(#east-syriac-settings:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after {
+    #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after,
+    #daily-office-section:has(#coptic-settings:not(.sidebar-hidden))::after {
         content: '';
         position: fixed;
         inset: 0;
@@ -1039,6 +1071,7 @@ body.light-mode .ethiopian-theme .rubric-text {
     #ethiopian-settings,
     #east-syriac-settings,
     #generic-settings,
+    #coptic-settings,
     .mode-btn,
     .ordo-control,
     .setting-group,
@@ -1635,7 +1668,8 @@ body.office-active .verse-num {
 body.office-active #settings-panel,
 body.office-active #ethiopian-settings,
 body.office-active #east-syriac-settings,
-body.office-active #generic-settings {
+body.office-active #generic-settings,
+body.office-active #coptic-settings {
     background:
         linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(241, 229, 210, 0.96));
     color: var(--app-ink, #3f2618);
@@ -1644,7 +1678,8 @@ body.office-active #generic-settings {
         inset -1px 0 0 rgba(255, 255, 255, 0.54),
         8px 0 30px rgba(74, 46, 26, 0.12);
 }
-body.office-active.dark-mode #generic-settings {
+body.office-active.dark-mode #generic-settings,
+body.office-active.dark-mode #coptic-settings {
     background:
         linear-gradient(180deg, rgba(18, 13, 6, 0.98), rgba(12, 9, 5, 0.97));
     border-right: 1px solid rgba(201, 168, 76, 0.18);
@@ -1697,7 +1732,8 @@ body.office-active .nested-group strong,
 body.office-active #settings-panel h3,
 body.office-active #ethiopian-settings h3,
 body.office-active #east-syriac-settings h3,
-body.office-active #generic-settings h3 {
+body.office-active #generic-settings h3,
+body.office-active #coptic-settings h3 {
     color: var(--app-bronze, #7a3f17) !important;
     font-family: var(--app-label, Georgia, 'Times New Roman', serif) !important;
     letter-spacing: 0.08em !important;
@@ -1798,7 +1834,8 @@ body.office-active #main-content::-webkit-scrollbar-thumb,
 body.office-active #settings-panel::-webkit-scrollbar-thumb,
 body.office-active #ethiopian-settings::-webkit-scrollbar-thumb,
 body.office-active #east-syriac-settings::-webkit-scrollbar-thumb,
-body.office-active #generic-settings::-webkit-scrollbar-thumb {
+body.office-active #generic-settings::-webkit-scrollbar-thumb,
+body.office-active #coptic-settings::-webkit-scrollbar-thumb {
     background: rgba(122, 63, 23, 0.34);
 }
 
@@ -2217,14 +2254,16 @@ body.office-active .app-mode-drawer input[type="text"] {
 body.office-active #settings-panel.app-mode-drawer,
 body.office-active #ethiopian-settings.app-mode-drawer,
 body.office-active #east-syriac-settings.app-mode-drawer,
-body.office-active #generic-settings.app-mode-drawer {
+body.office-active #generic-settings.app-mode-drawer,
+body.office-active #coptic-settings.app-mode-drawer {
     padding-top: clamp(30px, 4vw, 58px);
 }
 
 body.office-active #settings-panel.app-mode-drawer h3,
 body.office-active #ethiopian-settings.app-mode-drawer h3,
 body.office-active #east-syriac-settings.app-mode-drawer h3,
-body.office-active #generic-settings.app-mode-drawer h3 {
+body.office-active #generic-settings.app-mode-drawer h3,
+body.office-active #coptic-settings.app-mode-drawer h3 {
     margin-top: 0;
     margin-bottom: 22px;
     font-size: clamp(1rem, 1.65vw, 1.28rem) !important;
@@ -2234,7 +2273,8 @@ body.office-active #generic-settings.app-mode-drawer h3 {
 body.office-active #settings-panel.app-mode-drawer .setting-group > strong,
 body.office-active #ethiopian-settings.app-mode-drawer .setting-group > strong,
 body.office-active #east-syriac-settings.app-mode-drawer .setting-group > strong,
-body.office-active #generic-settings.app-mode-drawer .setting-group > strong {
+body.office-active #generic-settings.app-mode-drawer .setting-group > strong,
+body.office-active #coptic-settings.app-mode-drawer .setting-group > strong {
     display: block;
     margin-bottom: 8px;
 }
@@ -2436,7 +2476,8 @@ body.office-active.dark-mode {
 body.office-active #settings-panel.app-mode-drawer,
 body.office-active #ethiopian-settings.app-mode-drawer,
 body.office-active #east-syriac-settings.app-mode-drawer,
-body.office-active #generic-settings.app-mode-drawer {
+body.office-active #generic-settings.app-mode-drawer,
+body.office-active #coptic-settings.app-mode-drawer {
     width: var(--app-sidebar-width) !important;
     flex: 0 0 var(--app-sidebar-width) !important;
     padding: 34px var(--app-sidebar-pad-x) 46px !important;
@@ -2458,7 +2499,8 @@ body.office-active #generic-settings.app-mode-drawer {
 body.office-active.dark-mode #settings-panel.app-mode-drawer,
 body.office-active.dark-mode #ethiopian-settings.app-mode-drawer,
 body.office-active.dark-mode #east-syriac-settings.app-mode-drawer,
-body.office-active.dark-mode #generic-settings.app-mode-drawer {
+body.office-active.dark-mode #generic-settings.app-mode-drawer,
+body.office-active.dark-mode #coptic-settings.app-mode-drawer {
     background:
         linear-gradient(180deg, rgba(18, 13, 6, 0.98), rgba(12, 9, 5, 0.97)) !important;
     border-right: 1px solid rgba(201, 168, 76, 0.18) !important;
@@ -2471,14 +2513,16 @@ body.office-active.dark-mode #generic-settings.app-mode-drawer {
 body.office-active #settings-panel.app-mode-drawer::-webkit-scrollbar,
 body.office-active #ethiopian-settings.app-mode-drawer::-webkit-scrollbar,
 body.office-active #east-syriac-settings.app-mode-drawer::-webkit-scrollbar,
-body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar {
+body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar,
+body.office-active #coptic-settings.app-mode-drawer::-webkit-scrollbar {
     width: 8px;
 }
 
 body.office-active #settings-panel.app-mode-drawer::-webkit-scrollbar-thumb,
 body.office-active #ethiopian-settings.app-mode-drawer::-webkit-scrollbar-thumb,
 body.office-active #east-syriac-settings.app-mode-drawer::-webkit-scrollbar-thumb,
-body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar-thumb {
+body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar-thumb,
+body.office-active #coptic-settings.app-mode-drawer::-webkit-scrollbar-thumb {
     background: rgba(122, 63, 23, 0.34);
     border-radius: 999px;
 }
@@ -2691,7 +2735,8 @@ body.office-active #main-content.app-primary-canvas {
 body.office-active #daily-office-section:has(#settings-panel:not(.mode-hidden)) #main-content.app-primary-canvas,
 body.office-active #daily-office-section:has(#ethiopian-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
 body.office-active #daily-office-section:has(#east-syriac-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
-body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content.app-primary-canvas {
+body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
+body.office-active #daily-office-section:has(#coptic-settings:not(.mode-hidden)) #main-content.app-primary-canvas {
     width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width)) !important;
     flex: 1 1 auto !important;
 }
@@ -2704,7 +2749,8 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
     body.office-active #settings-panel.app-mode-drawer,
     body.office-active #ethiopian-settings.app-mode-drawer,
     body.office-active #east-syriac-settings.app-mode-drawer,
-    body.office-active #generic-settings.app-mode-drawer {
+    body.office-active #generic-settings.app-mode-drawer,
+    body.office-active #coptic-settings.app-mode-drawer {
         width: var(--app-sidebar-width) !important;
         flex-basis: var(--app-sidebar-width) !important;
         padding-left: 20px !important;
@@ -3462,7 +3508,8 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     body.office-active #settings-panel.app-mode-drawer,
     body.office-active #ethiopian-settings.app-mode-drawer,
     body.office-active #east-syriac-settings.app-mode-drawer,
-    body.office-active #generic-settings.app-mode-drawer {
+    body.office-active #generic-settings.app-mode-drawer,
+    body.office-active #coptic-settings.app-mode-drawer {
         left: 42px !important;
     }
 }
@@ -3546,7 +3593,8 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     #settings-panel,
     #ethiopian-settings,
     #east-syriac-settings,
-    #generic-settings {
+    #generic-settings,
+    #coptic-settings {
         position: fixed !important;
         top: 0 !important;
         left: 44px !important;
@@ -3569,14 +3617,16 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     #settings-panel.mode-hidden,
     #ethiopian-settings.mode-hidden,
     #east-syriac-settings.mode-hidden,
-    #generic-settings.mode-hidden {
+    #generic-settings.mode-hidden,
+    #coptic-settings.mode-hidden {
         display: none !important;
     }
 
     body.mobile-sidebar-open #settings-panel:not(.mode-hidden),
     body.mobile-sidebar-open #ethiopian-settings:not(.mode-hidden),
     body.mobile-sidebar-open #east-syriac-settings:not(.mode-hidden),
-    body.mobile-sidebar-open #generic-settings:not(.mode-hidden) {
+    body.mobile-sidebar-open #generic-settings:not(.mode-hidden),
+    body.mobile-sidebar-open #coptic-settings:not(.mode-hidden) {
         display: block !important;
         transform: translateX(0) !important;
         pointer-events: auto !important;
@@ -3585,7 +3635,8 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     body:not(.mobile-sidebar-open) #settings-panel:not(.mode-hidden),
     body:not(.mobile-sidebar-open) #ethiopian-settings:not(.mode-hidden),
     body:not(.mobile-sidebar-open) #east-syriac-settings:not(.mode-hidden),
-    body:not(.mobile-sidebar-open) #generic-settings:not(.mode-hidden) {
+    body:not(.mobile-sidebar-open) #generic-settings:not(.mode-hidden),
+    body:not(.mobile-sidebar-open) #coptic-settings:not(.mode-hidden) {
         transform: translateX(calc(-100% - 48px)) !important;
         pointer-events: none !important;
     }
@@ -3649,7 +3700,9 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     #east-syriac-settings input,
     #east-syriac-settings select,
     #generic-settings input,
-    #generic-settings select {
+    #generic-settings select,
+    #coptic-settings input,
+    #coptic-settings select {
         max-width: 100% !important;
         box-sizing: border-box !important;
     }

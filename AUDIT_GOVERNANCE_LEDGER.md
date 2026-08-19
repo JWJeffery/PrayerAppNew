@@ -6123,3 +6123,50 @@ appended to the same array without ever being given their own section.
 
 **Verified:** JS syntax parses clean, all 16 `cop:agpeya:*` keys present and unique under the new
 section, both `eth:senk:*` keys present under Ethiopian, zero `eth:saatat` keys remaining anywhere.
+
+## SESSION 2026-08-19 -- Coptic Agpeya UI fixes: splash card, sidebar CSS bug
+
+Josh reported two UI problems from screenshots: (1) the Coptic Agpeya had no entry point on the
+"Universal Office Selector" splash screen (`#mode-selection`) alongside Daily Office / Book of
+Needs / Bible Browser, and (2) the Agpeya's own "Agpeya Options" settings sidebar was rendering
+behind other page content with visibly wrong proportions when opened from within the office.
+
+**Splash screen:** added a fourth card to `#mode-selection` in `index.html`, matching the existing
+card markup pattern, wired to `selectMode('coptic-agpeya')` -- confirmed as the correct entry
+point by checking `js/office-ui.js`'s existing mode-dispatch logic (line ~1378 handles
+`mode === 'coptic-agpeya'` already; this was purely a missing UI entry point, not a missing
+feature).
+
+**Sidebar bug -- root cause:** `#coptic-settings` (the Agpeya's settings drawer, present in
+`index.html` since the Coptic build) had never been added to `css/office.css`. Every other office
+sidebar (`#settings-panel`, `#ethiopian-settings`, `#east-syriac-settings`, `#generic-settings`)
+has ~30 matching rule blocks across the stylesheet -- base fixed positioning, dark-mode theming,
+the `.app-mode-drawer` skin layer that sets the actual width/padding/font-size, the main-content
+width calc that makes room for an open sidebar, and two separate mobile breakpoints.
+`#coptic-settings` was missing from literally all of them. It was falling back only to the generic
+class-level `.app-mode-drawer` rules (background/color/box-shadow theming with no `position`,
+`z-index`, or the width/padding overrides), which is exactly why it rendered without proper fixed
+positioning or stacking and looked visually wrong.
+
+**Fix:** added `#coptic-settings` to every one of those shared rule groups, mirroring
+`#generic-settings` exactly, across: the standalone base positioning block; the desktop background/
+theming rules; the `.app-mode-drawer` width/padding/font-size rules (the actual proportions fix);
+the main-content width calc; the `@media (max-width: 900px)` and nav-rail-active adjustments; and
+both mobile drawer breakpoints (`@media (max-width: 768px)` and the smaller mobile repair block).
+
+**Deliberately excluded:** the "Horologion mobile stacked shell repair" pattern
+(`#daily-office-section:has(#generic-settings:not(.mode-hidden)) ...`), which makes the generic
+(Horologion) sidebar behave as a full-page stacked selector on mobile instead of an off-canvas
+drawer. That's a Horologion-specific accommodation, not a shared sidebar behavior -- Coptic Agpeya
+now gets the same off-canvas drawer treatment as Ethiopian/Church of the East/generic on mobile,
+which is the correct behavior for a normal settings sidebar.
+
+**Also fixed in passing:** the "Agpeya Options" sidebar copy still read "cop-theotokion's sourcing
+is still an open question, and nothing here is independently verified yet" -- stale text left over
+from before the Coptic Agpeya was completed and promoted to GREEN (see the 2026-08-18 entries
+above). Updated to state the actual current status.
+
+**Verified:** `css/office.css` brace-balanced (526 open / 526 close) and parses with zero errors
+under `tinycss2`. `js/office-ui.js` passes `node --check`. `audit-ledger.html`'s inline `<script>`
+passes `node --check` via extraction. `SEED_VERSION` bumped to
+`v139-2026-08-18-coptic-sidebar-css-splash-fix`.

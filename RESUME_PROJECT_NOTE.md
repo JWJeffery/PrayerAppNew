@@ -12,6 +12,33 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Coptic Agpeya UI fixes
+
+Two UI bugs reported and fixed this session, both purely front-end (no content/data changes):
+
+1. **Splash screen missing an Agpeya entry point.** Added a fourth card to the "Universal Office
+   Selector" (`#mode-selection` in `index.html`), matching the existing three cards, wired to
+   `selectMode('coptic-agpeya')`.
+2. **Agpeya settings sidebar rendering behind content / wrong proportions.** Root cause:
+   `#coptic-settings` had never been added to `css/office.css`'s ~30 shared sidebar rule groups
+   (base positioning, theming, the `.app-mode-drawer` width/padding layer, main-content width calc,
+   two mobile breakpoints) that every other office sidebar has. It was only getting generic
+   `.app-mode-drawer` class styling with no `position: fixed` or `z-index`. Fixed by adding
+   `#coptic-settings` to every one of those groups, mirroring `#generic-settings`. Deliberately did
+   *not* add it to the Horologion-only mobile "stacked full-page selector" pattern -- Coptic now
+   gets the same off-canvas drawer behavior as Ethiopian/Church of the East on mobile, which is
+   correct for a normal sidebar. Also fixed stale sidebar copy that predated the Agpeya's GREEN
+   promotion. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-19.
+
+`SEED_VERSION` bumped to `v139-2026-08-18-coptic-sidebar-css-splash-fix`.
+
+**If similar UI bugs turn up for other sidebars/modes in future:** the pattern to check first is
+whether a given `#<mode>-settings` ID is actually present in *every* shared rule group in
+`css/office.css`, not just some of them -- `grep -n "#generic-settings" css/office.css` and compare
+counts against whichever ID is misbehaving.
+
+---
+
 ## Where things stand right now (as of 2026-08-19)
 
 **Biblical corpus (OT/NT, five translations):** fully remediated, zero known defects, closed.
@@ -148,7 +175,8 @@ of the rule issue above. Sammie is an AI, not a human.
 
 ## What's actually next
 
-Nothing is currently in progress. The Coptic Agpeya rebuild that occupied most of this session is
-done, verified, GREEN, and the dashboard is clean. Next steps depend entirely on what Josh wants to
-pick up -- could be continuing the Ethiopian broader-canon backlog (Tizaz, Fetha Nagast, remaining
-ET books), the 10 unaudited other-tradition engines, or something new. Ask, don't assume.
+Nothing is currently in progress. The Coptic Agpeya rebuild is done, verified, GREEN, the dashboard
+is clean, and this session's splash-screen/sidebar UI bugs are fixed and patched. Next steps depend
+entirely on what Josh wants to pick up -- could be continuing the Ethiopian broader-canon backlog
+(Tizaz, Fetha Nagast, remaining ET books), the 10 unaudited other-tradition engines, further UI
+polish, or something new. Ask, don't assume.
