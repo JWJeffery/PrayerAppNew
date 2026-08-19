@@ -183,7 +183,7 @@ async function loadKernel() {
         }
 
         appData.isKernelLoaded = true;
-        updateUI();
+        applyDarkMode(_defaultDarkModeForCurrentTime());
 
     } catch (err) {
         appData = null; // Reset so a retry attempt can succeed.
@@ -2210,6 +2210,31 @@ function _defaultCopticHourForCurrentTime(now = new Date()) {
     return "coptic-twelfth-hour";
 }
 
+// ── App-wide color theme (dark/light), driven by real time ──────────────────
+// Light 06:00–18:00, dark 18:00–06:00. This is a global app appearance
+// setting -- independent of any specific tradition's canonical-hour naming
+// (the "Vespers" in the old checkbox label referred to nothing but this
+// light/dark toggle and was routinely mistaken for actual liturgical Vespers,
+// e.g. the Coptic Agpeya's Eleventh Hour or BCP Evening Prayer).
+function _defaultDarkModeForCurrentTime(now = new Date()) {
+    const hour = now.getHours();
+    return !(hour >= 6 && hour < 18);
+}
+
+// Single source of truth for applying the color theme: sets the body classes
+// and keeps every dark-mode checkbox across every tradition's sidebar in
+// sync with each other, regardless of which one the person actually clicked.
+function applyDarkMode(isDark) {
+    document.body.classList.toggle('dark-mode', isDark);
+    document.body.classList.toggle('light-mode', !isDark);
+    ['toggle-dark', 'toggle-dark-coptic'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.checked = isDark;
+    });
+}
+window.applyDarkMode = applyDarkMode;
+window._defaultDarkModeForCurrentTime = _defaultDarkModeForCurrentTime;
+
 function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
     const now = new Date();
     currentDate = now;
@@ -2463,21 +2488,23 @@ function toggleBcpOnly() {
 }
 
 // ── Appearance ───────────────────────────────────────────────────────────────
-function updateUI() {
-    const isDark = document.getElementById('toggle-dark')?.checked !== false;
-    if (isDark) {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-    } else {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
-    }
+function updateUI(explicitIsDark) {
+    const isDark = typeof explicitIsDark === 'boolean'
+        ? explicitIsDark
+        : (document.getElementById('toggle-dark')?.checked !== false);
+    applyDarkMode(isDark);
 }
 
 // ── Settings Persistence ─────────────────────────────────────────────────────
+// darkMode is intentionally NOT persisted here: the color theme is now
+// recomputed fresh from real time on every load (see applyDarkMode /
+// _defaultDarkModeForCurrentTime), the same way every other "what's the
+// right default right now" setting in this app works (canonical hour,
+// office time, etc.). A manual toggle during a session is a same-session
+// override only, not a sticky forever-preference -- that was the source of
+// the "always opens in dark mode regardless of the time" bug.
 function saveSettings() {
     const settings = {
-        darkMode:            document.getElementById('toggle-dark')?.checked || false,
         bcpOnly:             document.getElementById('toggle-bcp-only')?.checked || false,
         officeTime:          document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',
         angOfficeMode:       document.querySelector('input[name="ang-office-mode"]:checked')?.value || 'full',
@@ -2519,10 +2546,11 @@ function loadSettings() {
         if (!saved) return;
         const s = JSON.parse(saved);
 
-        if (document.getElementById('toggle-dark')) {
-            document.getElementById('toggle-dark').checked = s.darkMode;
-            updateUI();
-        }
+        // darkMode is deliberately not restored from storage here -- see the
+        // comment above saveSettings(). The color theme for this session was
+        // already set from real time at kernel load, before any mode was
+        // even chosen; loading an old saved daily-office settings blob must
+        // not silently override that.
         if (s.bcpOnly && document.getElementById('toggle-bcp-only')) {
             document.getElementById('toggle-bcp-only').checked = true;
             toggleBcpOnly();

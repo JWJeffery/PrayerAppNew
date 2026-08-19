@@ -12,6 +12,29 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Color theme: renamed, added to Coptic sidebar, made time-based
+
+After the hour-selection fix, Josh reported the app was "still opening in Vespers mode as far as
+color is concerned." This turned out to be unrelated to the Coptic hour entirely: the app's single
+dark/light theme toggle was labeled "Vespers Mode (Dark)" purely as flavor text, lived only in the
+Daily Office sidebar (unreachable from Coptic), and was hardcoded to dark with no time-of-day logic
+at all. Asked Josh to clarify what he wanted; he asked for all three: add the toggle to the Coptic
+sidebar, rename the confusing label, and make the theme auto-switch with real time.
+
+**Fixed:** renamed the label to "Dark Mode"; added a matching, synced checkbox to the Coptic
+sidebar; added `applyDarkMode()`/`_defaultDarkModeForCurrentTime()` (light 06:00-18:00, dark
+otherwise) and moved theme init to kernel-load time so it's correct regardless of which tradition
+is opened first. **Design change worth knowing about:** stopped persisting the dark-mode preference
+to `localStorage` -- it's now recomputed fresh from real time every load, the same pattern already
+used for canonical-hour defaults, with a manual toggle acting as a same-session-only override. If
+Josh would rather a manual choice stick across reloads instead, that's a small follow-up. Verified
+with a 16-check jsdom simulation (all passed) plus `node --check`/`tinycss2` validation. Full detail
+in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v141-2026-08-18-theme-time-based-coptic-toggle`.
+
+---
+
 ## Session 2026-08-19 continued -- Coptic Agpeya hour selection was never wired up at all
 
 Josh tested the previous fix live and reported two more problems: at 6:56 PM the app showed the

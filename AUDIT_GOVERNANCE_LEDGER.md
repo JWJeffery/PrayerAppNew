@@ -6222,3 +6222,55 @@ what the legacy-hide mechanism does to them once the visible shared-nav UI takes
 checks passed. `js/office-ui.js` also passes `node --check`.
 
 `SEED_VERSION` bumped to `v140-2026-08-18-coptic-hour-selection-fix`.
+
+## SESSION 2026-08-19 continued -- Color theme: renamed, added to Coptic sidebar, made time-based
+
+Josh reported that after the hour-selection fix, the app was "still opening in Vespers mode as far
+as color is concerned." Investigation found this had nothing to do with the Coptic hour: the app's
+one dark/light theme toggle (id `toggle-dark`, in the Daily Office sidebar only) was labeled
+"Vespers Mode (Dark)" as flavor text, unrelated to any actual liturgical hour, and was hardcoded
+`checked` (dark) by default with no way to reach it at all from the Coptic Agpeya sidebar. Asked
+Josh to disambiguate what he actually wanted changed; he asked for all three of: (1) add the same
+toggle to the Coptic sidebar, (2) rename the confusing label, (3) make the theme switch
+automatically with real time.
+
+**Also found in the process:** `loadSettings()` -- which restores a saved dark-mode preference from
+`localStorage` -- was only ever called from the `daily` branch of `selectMode()`. Anyone entering
+the app through Coptic Agpeya (or any other tradition) first never had their saved preference
+restored at all; the theme was whatever `updateUI()` set at kernel-load time, which read the
+`toggle-dark` checkbox's hardcoded HTML default (checked/dark) with no path to override it via
+saved settings or real time. This was a second, independent contributor to the same symptom.
+
+**Fixed:**
+- Renamed the checkbox label "Vespers Mode (Dark)" -> "Dark Mode" in `index.html` (id unchanged, so
+  no other code needed to change).
+- Added a matching `#toggle-dark-coptic` checkbox to the Coptic Agpeya sidebar's new "Appearance"
+  group, placed after the (retired/hidden) legacy Active Hour block so it isn't swept up by the
+  existing `hideHeadings`/`hideButtonRowsAfterHeadings` retirement logic and stays visible.
+- Added `applyDarkMode(isDark)` as the single source of truth for theme state: sets both
+  `body.dark-mode`/`body.light-mode` classes and keeps both checkboxes (`toggle-dark`,
+  `toggle-dark-coptic`) in sync with each other regardless of which one was actually clicked.
+- Added `_defaultDarkModeForCurrentTime(now)`: light 06:00-18:00, dark otherwise -- the same
+  "compute fresh from real time" pattern already used for canonical-hour defaults elsewhere in the
+  app.
+- Moved theme initialization to kernel-load time (`loadKernel()`, before any specific tradition is
+  selected) rather than leaving it tucked inside the `daily` mode branch, so it applies correctly
+  regardless of which tradition the person opens first.
+- Deliberately stopped persisting `darkMode` to `localStorage` as a sticky forever-preference
+  (removed from both `saveSettings()` and `loadSettings()`, with comments explaining why). The
+  theme is now recomputed fresh from real time on every load, exactly like hour-of-day selection
+  already works; a manual toggle mid-session is a same-session override only, not a persisted
+  setting that fights the automatic default on the next reload. **This is a deliberate design
+  change Josh should be aware of** -- if he'd rather the toggle *stay* sticky across sessions (i.e.
+  a manual choice should override the time-based default on reload too), that's a small follow-up,
+  not a redesign, but it wasn't what "automatically switch based on real time" was read to mean.
+
+**Verified with an isolated jsdom simulation** (16 checks, all passed): boot-time theme correct at
+both an evening and a daytime timestamp; both checkboxes stay in sync with the body classes and
+with each other in both directions; the 06:00/18:00 boundaries land on the correct side in both
+directions; a simulated click on the Coptic sidebar's checkbox correctly overrides the theme and
+stays synced back to the Daily Office checkbox. `js/office-ui.js` passes `node --check`;
+`css/office.css` parses clean under `tinycss2` (0 errors); `audit-ledger.html`'s inline script
+passes `node --check`.
+
+`SEED_VERSION` bumped to `v141-2026-08-18-theme-time-based-coptic-toggle`.

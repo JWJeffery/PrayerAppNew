@@ -1146,7 +1146,7 @@ body.light-mode .ethiopian-theme .rubric-text {
 
 /* Dark-mode variant of the parchment design system above. The parchment pass
    defined --app-* as fixed light-only values in :root with no dark-mode
-   awareness, so toggling "Vespers Mode (Dark)" had no visible effect on the
+   awareness, so toggling "Dark Mode" had no visible effect on the
    actual office content area (only the outer body background, which uses
    the older --bg-color/--ink variable set, ever responded to it). Since
    every rule below just reads var(--app-ink) etc., overriding the color
