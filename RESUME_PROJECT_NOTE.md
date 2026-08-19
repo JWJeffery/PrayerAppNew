@@ -12,6 +12,33 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- The real, final cause of the shift: two independent layout paradigms both reacting to .sidebar-hidden
+
+After the getActiveOfficeDrawer() fix made #sidebar-toggle correctly identify and collapse
+#coptic-settings, Josh confirmed the toggle works but the prayer box now visibly shifts on every
+toggle -- and correctly recognized this as a bug class the project has hit before.
+
+**Real root cause:** two independent layout systems both react to `.sidebar-hidden` on
+`#main-content`. The old base `#main-content` rule reserves sidebar room via *padding*
+(340px open / 80px closed). The newer `.app-primary-canvas` system (from earlier this session's
+sidebar-CSS work) reserves it via *width* (a fixed calc(), unconditional regardless of open/closed).
+Both were active at once -- `#main-content`'s own outer box never moved, but its padding-left kept
+swinging 340px->80px on every toggle, and `.office-container` (centered via `margin: auto` inside
+that padded box) re-centered every time, which is the visible "shift."
+
+**Fixed:** pinned `#main-content.app-primary-canvas`'s `padding-left` to one constant value in both
+open and `.sidebar-hidden` states. Verified with Playwright across 16 real interaction states,
+including 4 repeated clicks on the actual toggle -- `.office-container`'s position is now
+bit-for-bit identical every time. Also verified mobile (390px) layout stays sane. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`, including a standing lesson about neutralizing *every* property an
+older layout system touches when a newer one takes over the same state class, not just adding a
+rule alongside it.
+
+`SEED_VERSION` bumped to `v147-2026-08-19-coptic-canvas-padding-toggle-fix`; `css/office.css`
+cache-bust bumped to `?v=147`.
+
+---
+
 ## Session 2026-08-19 continued -- Found the real "sidebar shift" bug: #sidebar-toggle
 
 After several rounds of investigation that ruled out caching, scroll position, and every control

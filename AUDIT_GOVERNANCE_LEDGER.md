@@ -6491,3 +6491,57 @@ hardcoded list of sidebar panel IDs (`settings-panel`, `ethiopian-settings`, `ea
 `generic-settings`, `coptic-settings`) and confirm the new panel is added to all of them -- these
 lists are NOT centralized in one place, and each omission produces a real, hard-to-diagnose bug that
 falls back silently to the wrong (usually Daily Office) panel rather than erroring visibly.
+
+## SESSION 2026-08-19 continued -- The real, final cause of the shift: two independent layout paradigms both reacting to .sidebar-hidden
+
+After the getActiveOfficeDrawer() fix (previous entry) made the #sidebar-toggle strip correctly
+identify and collapse #coptic-settings, Josh confirmed the toggle itself now works -- but reported
+the prayer content box now visibly shifts position every time the sidebar toggles, and noted this
+exact class of bug ("we've fixed that in the past too") pointing at prior sidebar work.
+
+**Root cause, found by direct measurement with real Playwright, not guessing:** two independent,
+non-communicating layout systems both react to the `.sidebar-hidden` class on `#main-content`:
+
+1. The base `#main-content` rule (line ~485, predates the Coptic Agpeya and the `.app-primary-canvas`
+   system entirely) reserves room for the sidebar via **padding**: `padding-left: 340px` when open,
+   dropping to `80px` via `#main-content.sidebar-hidden`. This is the OLD "main content box stays
+   full width, sidebar overlaps into its padding" architecture.
+2. The `.app-primary-canvas` system (added when the Coptic Agpeya's sidebar CSS was normalized
+   earlier this session) reserves room for the sidebar via **width**: `width: calc(100vw - nav-rail
+   - sidebar-width) !important`, unconditionally, regardless of open/closed state -- a "main content
+   box shrinks, sidebar has its own dedicated lane" architecture.
+
+Both were active simultaneously. `#main-content`'s own *outer* box genuinely never moved (confirmed
+by measurement -- constant `left`/`width` throughout), but its *padding-left* was still swinging
+340px -> 80px on every toggle, courtesy of the older system that was never told the newer system had
+taken over. `.office-container`, centered via `margin: auto` inside that padded box, re-centered
+every time the padding changed -- visibly shifting even though nothing about `.app-primary-canvas`
+or `#coptic-settings` itself was doing anything wrong anymore.
+
+**Fixed:** pinned `#main-content.app-primary-canvas`'s `padding-left` to one constant value
+(`var(--app-nav-rail-width, 42px)`) in both the open and `.sidebar-hidden` states, with `!important`
+so it can't be re-toggled by the older rule. The `.app-primary-canvas` width formula was already
+correctly unconditional (from the prior consolidation commit); now its padding is too. Confirmed
+this doesn't collide with the pre-existing `@media (max-width: 900px)` mobile padding rule (which
+already independently avoided this shift pattern by using the *same* padding value for both states
+-- my rule's `!important` now wins there too, with a different but still-constant value, and mobile
+layout was reverified sane at 390px width with no overlap and no shift).
+
+**Verified with Playwright across 16 real interaction states** at desktop width, including 4 repeated
+clicks on the actual `#sidebar-toggle` element (the precise action Josh performed): `.office-container`
+left position and width are bit-for-bit identical across all 16 -- `left=763.5`, `width=880`, zero
+variance. Also verified at 390px mobile width: sidebar toggle produces zero shift, content sits
+flush against the 42px nav rail with no overlap. `css/office.css` parses clean under `tinycss2` (0
+errors); `audit:shared-office-sidebars` and `audit:mode-chrome-normalization` both still pass;
+`js/office-ui.js` passes `node --check`.
+
+Bumped `css/office.css` cache-busting to `?v=147`.
+
+`SEED_VERSION` bumped to `v147-2026-08-19-coptic-canvas-padding-toggle-fix`.
+
+**Standing lesson for future sidebar/canvas work:** when introducing a new layout paradigm (like
+`.app-primary-canvas`'s width-based approach) alongside an older one (the base `#main-content`
+padding-based approach) that both key off the same state class (`.sidebar-hidden`), the newer
+paradigm must explicitly neutralize *every* property the older one touches for that state, not just
+add its own rule alongside it -- otherwise both fire, and the visible symptom (something shifts on
+toggle) won't be traceable to either system in isolation; it only appears from their combination.

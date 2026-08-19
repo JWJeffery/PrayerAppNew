@@ -2213,6 +2213,23 @@ body.office-active #main-content > h1 {
 
 body.office-active #main-content.app-primary-canvas {
     display: block;
+    /* The base #main-content rule (line ~485) swaps padding-left between
+       340px and 80px via the .sidebar-hidden class -- a layout paradigm
+       from before .app-primary-canvas existed, back when main-content's
+       own box grew/shrank to make room for the sidebar via padding. This
+       mode uses a fixed-width canvas instead (see the width: calc(...)
+       rule below) with the sidebar visually overlapping/clipping via its
+       own position, so main-content's padding must NOT also react to
+       sidebar state -- otherwise .office-container (centered via
+       margin: auto inside this padded box) visibly re-centers and shifts
+       every time the sidebar toggles, even though main-content's own
+       outer box never moves. Pinned to one constant value, in both the
+       open and .sidebar-hidden states, below. */
+    padding-left: var(--app-nav-rail-width, 42px) !important;
+}
+
+body.office-active #main-content.app-primary-canvas.sidebar-hidden {
+    padding-left: var(--app-nav-rail-width, 42px) !important;
 }
 
 body.office-active #main-content.app-primary-canvas .office-container h1:first-child,
