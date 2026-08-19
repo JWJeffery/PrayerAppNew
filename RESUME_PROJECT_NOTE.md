@@ -12,6 +12,31 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Overcorrected the shift fix, then broke mobile fixing that; both resolved
+
+Josh confirmed the shift-on-toggle was gone but the open sidebar now covered the content's left
+edge -- caused by the previous fix's constant padding-left matching only the *collapsed* sidebar's
+footprint, not the open one. Corrected the constant to reserve the full open-sidebar clearance
+always (so it can never be covered, and still never shifts), and adjusted the paired width formula
+to account for the box's own right padding.
+
+**Caught before delivering:** the corrected rule, left unscoped, applied at mobile widths too, where
+the sidebar-width variable gets redefined to nearly the full viewport for the off-canvas drawer
+system -- reserving a full desktop sidebar's worth of padding there collapsed the content box to
+~38px wide. Scoped both rules to `@media (min-width: 901px)`, leaving mobile's own already-correct
+smaller padding untouched.
+
+Verified with Playwright checking all three properties together this time (position, overlap, and
+overflow, not just position): stable across sidebar open/closed at desktop width with zero overlap
+and zero page overflow, and sane at 390px mobile width both before and after toggling. Full detail
+and a sharpened standing lesson about verifying every dimension a constant-value fix touches, not
+just the one that prompted it, in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v148-2026-08-19-coptic-sidebar-overlap-fix`; `css/office.css` cache-bust
+bumped to `?v=148`.
+
+---
+
 ## Session 2026-08-19 continued -- The real, final cause of the shift: two independent layout paradigms both reacting to .sidebar-hidden
 
 After the getActiveOfficeDrawer() fix made #sidebar-toggle correctly identify and collapse

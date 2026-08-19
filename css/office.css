@@ -2213,23 +2213,32 @@ body.office-active #main-content > h1 {
 
 body.office-active #main-content.app-primary-canvas {
     display: block;
-    /* The base #main-content rule (line ~485) swaps padding-left between
-       340px and 80px via the .sidebar-hidden class -- a layout paradigm
-       from before .app-primary-canvas existed, back when main-content's
-       own box grew/shrank to make room for the sidebar via padding. This
-       mode uses a fixed-width canvas instead (see the width: calc(...)
-       rule below) with the sidebar visually overlapping/clipping via its
-       own position, so main-content's padding must NOT also react to
-       sidebar state -- otherwise .office-container (centered via
-       margin: auto inside this padded box) visibly re-centers and shifts
-       every time the sidebar toggles, even though main-content's own
-       outer box never moves. Pinned to one constant value, in both the
-       open and .sidebar-hidden states, below. */
-    padding-left: var(--app-nav-rail-width, 42px) !important;
 }
 
-body.office-active #main-content.app-primary-canvas.sidebar-hidden {
-    padding-left: var(--app-nav-rail-width, 42px) !important;
+/* Constant sidebar-clearance padding-left (desktop only -- see media query
+   below for why). The base #main-content rule (line ~485) swaps
+   padding-left between 340px and 80px via .sidebar-hidden -- a layout
+   paradigm from before .app-primary-canvas existed. Rather than making
+   this constant at the *collapsed* width (which let the open sidebar,
+   ~341px including its own left offset, visually cover the left edge of
+   .office-container), reserve the full open-sidebar clearance ALWAYS, in
+   both states. Content sits a little right-of-center while the sidebar is
+   collapsed as a result -- a minor, acceptable trade-off against either
+   shifting on every toggle or being covered by the sidebar when open.
+   Scoped to min-width: 901px: on narrow/mobile screens the sidebar is an
+   off-canvas overlay drawer (see the existing @media (max-width: 900px)
+   rule elsewhere in this file), not a permanent side-by-side column --
+   reserving a full desktop sidebar-width's worth of padding there would
+   eat nearly the entire viewport. Mobile already avoids the shift bug on
+   its own, using the same (much smaller) padding value in both states. */
+@media (min-width: 901px) {
+    body.office-active #main-content.app-primary-canvas {
+        padding-left: calc(var(--app-nav-rail-width, 42px) + var(--app-sidebar-width)) !important;
+    }
+
+    body.office-active #main-content.app-primary-canvas.sidebar-hidden {
+        padding-left: calc(var(--app-nav-rail-width, 42px) + var(--app-sidebar-width)) !important;
+    }
 }
 
 body.office-active #main-content.app-primary-canvas .office-container h1:first-child,
@@ -2760,10 +2769,23 @@ body.office-active #main-content.app-primary-canvas {
    on every date/hour/appearance click, and depended on staying in sync
    with a growing list of panel ids (already found once missing #coptic-
    settings entirely). Collapsed to a single unconditional rule -- same
-   formula, same result, nothing left to fall out of sync or mistime. */
-body.office-active #main-content.app-primary-canvas {
-    width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width)) !important;
-    flex: 1 1 auto !important;
+   formula, same result, nothing left to fall out of sync or mistime.
+   Content width also subtracts the box's own 40px right padding: with
+   padding-left constant at (nav-rail + sidebar-width) above, the content
+   box (content-box sizing, no explicit box-sizing override on
+   #main-content) needs width = 100vw - padding-left - padding-right so
+   the outer box lands exactly at 100vw, not 100vw + padding-right.
+   Scoped to min-width: 901px for the same reason the padding-left rule
+   above is -- at mobile widths --app-sidebar-width is redefined to nearly
+   the full viewport (see the max-width: 900px block below), so this same
+   formula would compute a near-zero or negative width there. Mobile
+   relies on flex: 1 1 auto sizing itself naturally with no explicit
+   width, same as before any of this session's width-formula work. */
+@media (min-width: 901px) {
+    body.office-active #main-content.app-primary-canvas {
+        width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width) - 40px) !important;
+        flex: 1 1 auto !important;
+    }
 }
 
 @media (max-width: 900px) {

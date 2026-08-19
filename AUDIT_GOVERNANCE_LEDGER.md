@@ -6545,3 +6545,52 @@ padding-based approach) that both key off the same state class (`.sidebar-hidden
 paradigm must explicitly neutralize *every* property the older one touches for that state, not just
 add its own rule alongside it -- otherwise both fire, and the visible symptom (something shifts on
 toggle) won't be traceable to either system in isolation; it only appears from their combination.
+
+## SESSION 2026-08-19 continued -- Overcorrected the shift fix: sidebar now covered the content's left edge; then broke mobile fixing that; both now resolved
+
+Josh confirmed the shift-on-toggle was gone, but reported the open sidebar now visually covers the
+left edge of the prayer box. Traced this to my own previous fix: pinning `#main-content.app-primary-
+canvas`'s `padding-left` to a single constant (`var(--app-nav-rail-width, 42px)`) removed the shift,
+but that constant matched only the *collapsed* sidebar's footprint (~42px), not the *open* sidebar's
+real footprint (~341px, including its own left offset) -- so with the sidebar open, content started
+rendering underneath it.
+
+**Fixed correctly this time:** changed the constant to reserve the *full open-sidebar* clearance
+always (`calc(nav-rail-width + sidebar-width)`), in both the open and `.sidebar-hidden` states. This
+guarantees the sidebar can never cover content when open, and the box still never shifts on toggle
+(same constant either way) -- the only cost is a bit of unused space to the left when the sidebar is
+collapsed, which is a minor, acceptable trade-off. Also had to correct the paired width formula
+(`#main-content.app-primary-canvas`'s `width: calc(...)`) to additionally subtract the box's own
+40px right padding, since with `padding-left` now also reserving that space, the un-adjusted width
+formula would have made the box's total footprint 40px wider than the viewport.
+
+**Caught before delivering, via the same Playwright verification discipline:** the corrected rule,
+if left unscoped, applies at ALL widths -- including mobile, where `--app-sidebar-width` gets
+redefined (by the pre-existing `@media (max-width: 900px)` block) to nearly the full viewport width
+for the off-canvas drawer system. Reserving a full *desktop* sidebar-width's worth of padding on a
+390px phone screen left almost nothing for content (measured: office-container collapsed to
+`width: 38px`). Scoped both the padding-left and width-formula rules to `@media (min-width: 901px)`,
+leaving mobile's own pre-existing (and already correct, non-shifting) smaller padding untouched.
+
+**Verified with Playwright, all three properties checked together this time** (not just position,
+which was the earlier session's blind spot): confirmed at desktop width across sidebar open/closed/
+open-again that `.office-container` never overlaps the sidebar's actual rendered right edge, never
+shifts position, and produces no horizontal page overflow; re-ran the full 12-state interaction
+stability sweep (unchanged, still stable); and separately verified at 390px mobile width that the
+content box is a sane, non-collapsed size (`left=58, width=318`) both before and after the sidebar
+toggle, with no overflow. `css/office.css` parses clean under `tinycss2` (0 errors).
+`audit:shared-office-sidebars` needed its own hardcoded formula-text marker updated to match the
+new (legitimately changed) width formula -- updated rather than left stale, so it keeps guarding the
+real current formula rather than a fossil of the old one. `audit:mode-chrome-normalization` and
+`js/office-ui.js`'s `node --check` both still pass.
+
+Bumped `css/office.css` cache-busting to `?v=148`.
+
+`SEED_VERSION` bumped to `v148-2026-08-19-coptic-sidebar-overlap-fix`.
+
+**Standing lesson, sharpening the one from the previous entry:** fixing a layout-shift bug by pinning
+a property to a constant value is only correct if that constant is chosen for the *worst-case*
+(largest-footprint) state, not the state that happens to look simplest -- and any such fix needs to
+be explicitly re-verified against every *other* dimension the property affects (here: does the new
+constant still leave room for the sidebar when it's genuinely open? does it break at the other end of
+the responsive range?), not just the one dimension (shift) that prompted the fix in the first place.

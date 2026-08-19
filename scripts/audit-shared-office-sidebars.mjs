@@ -33,7 +33,7 @@ requireIncludes("shared office sidebar controls", css, [
 ]);
 
 requireIncludes("shared office sidebar layout", css, [
-  "width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width))",
+  "width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width) - 40px)",
   "scrollbar-color",
   "accent-color",
   "border-radius: 16px"
