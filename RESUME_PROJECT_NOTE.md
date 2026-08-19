@@ -12,6 +12,35 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Lelya (Night Office) fully built and verified: all six ferial weekdays
+
+Built out the Ferial Night Service using the full text obtained earlier this session (Maclean
+p.85-102). 48 new components: fixed opening, all 21 Hulali (each with internal proper-prayer-then-
+psalms sections -- new `sections` rendering path added), weekday Qaltha table, Motwa intro (a
+documented, disclosed gap -- the Motwa proper lives in the out-of-scope Kashkul) plus its fixed
+close, all 6 named per-weekday Tishbukhta (authorship exactly as source attributes it, including
+manuscript-variant alternates), and the Night Service's own (shorter, distinct) Karuzutha.
+
+**Confirmed from source before building anything:** the Qdham/Wathar cycle is specific to the Evening
+Service per Maclean's own Introduction -- Lelya has no cycle variation, only per-weekday. Renderer
+extended to look up sequences without a cycle suffix for non-Ramsha offices rather than inventing a
+14-combination structure that doesn't exist in the source.
+
+**A rubric followed rather than smoothed over:** Wednesday's Motwa close is explicitly NOT said per
+Maclean (special anthems substitute) -- Wednesday's sequence correctly omits it, verified with a
+dedicated Playwright check confirming genuine absence, not just a correct-looking sequence definition.
+
+165 components total, 18 sequences (12 Ramsha + 6 Lelya). Verified end-to-end across a full week: all
+6 ferial weekdays render (79,000-98,000 chars each, since each night recites ~1/3 of the entire
+Psalter -- expected, not padding), both Sundays correctly "not yet rebuilt" (Festival, separate
+scope), 12 spot-checks all passed. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v153-2026-08-19-east-syriac-lelya-complete`. Two of three principal ferial
+services (Ramsha, Lelya) now complete and verified. Sapra's opening is in hand but not yet built --
+clear next phase.
+
+---
+
 ## Session 2026-08-19 continued -- Ramsha 100% COMPLETE; full Lelya text and start of Sapra in hand
 
 Josh supplied Maclean pp.65-105, closing both remaining Ramsha gaps (Friday-Wathar's tail,

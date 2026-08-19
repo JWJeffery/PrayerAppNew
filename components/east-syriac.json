@@ -1296,5 +1296,969 @@
       "note": "Royal Anthem, to the tune \"The great mystery\" -- invariable alternative to the seasonal Kashkul form."
     },
     "text": "<p class=\"rubric-text\">Or this: Royal Anthem, to the tune \"The great mystery.\"</p><p class=\"component-text\"><em>Be telling of his salvation from day to day.</em> The gospel of peace and love in mercy hath been preached to us. By the glorious birth of Christ. And by it have we learnt that the Creator is reconciled to us. And hath restored and given to us his glorious image which we had destroyed. By taking firstfruits of us. And making our nature to partake. With his majesty in honour.</p><p class=\"component-text\"><em>The hope of all the ends of the earth.</em> The gospel, etc., as above.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. The gospel, etc., as above.</p>"
+  },
+  {
+    "id": "esy-lelya-opening-formula",
+    "title": "The Opening",
+    "meta": {
+      "source": "Maclean 1894, p.85."
+    },
+    "text": "<p class=\"rubric-text\">Priest.</p><p class=\"component-text\">Glory be to God in the highest, thrice. And on earth peace and a good hope to men, at all times and for ever.</p><p class=\"rubric-text\">Answer, Amen. Bless, O my Lord. They give the kiss of peace.</p>"
+  },
+  {
+    "id": "esy-lelya-arise-collect",
+    "title": "The Evening Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.85."
+    },
+    "text": "<p class=\"rubric-text\">Deacon. Let us arise to prayer. Let us pray. Peace be with us.</p><p class=\"component-text\">Let us arise, O my Lord, in thy power, and be confirmed in thy hope, and be lifted up and strengthened by the high arm of thy might; and may we be worthy, by the help of thy lovingkindness, to lift up to thee praise, and honour, and confession, and worship at all times, Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p><p class=\"rubric-text\">They answer, Hallelujah, Glory be to thee, O God, thrice. O Lord, have mercy upon us. Let us arise to prayer. Let us pray. Peace be with us.</p>"
+  },
+  {
+    "id": "esy-lelya-strengthen-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.85-86."
+    },
+    "text": "<p class=\"component-text\">Strengthen, O our Lord and our God, our weakness in thy compassion, and comfort and help the wants of our soul in thy lovingkindness; waken the sleep of our thoughts and lighten the weight of our limbs; wash and cleanse the filth of our trespasses and of our sins. Illumine the darkness of our minds, and stretch forth (thine arm) and confirm us, and give us strength and a helping hand, that thereby we may arise and confess thee and glorify thee, without ceasing, all the days of our life, Lord of all, etc.</p><p class=\"rubric-text\">They say, Hallelujah, etc., as above.</p>"
+  },
+  {
+    "id": "esy-lelya-secret-strength-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.86."
+    },
+    "text": "<p class=\"component-text\">May the secret strength, O my Lord, of thy Godhead, and the wondrous help of thy Majesty, and the great aid of thy Mercy, strengthen the weakness of our feeble nature to lift up to thee praise and honour, confession and worship, at all times, Lord of all, etc.</p><p class=\"rubric-text\">They say, Hallelujah, etc., as above.</p>"
+  },
+  {
+    "id": "esy-hulala-1",
+    "title": "Hulala I",
+    "meta": {
+      "source": "Maclean 1894, p.86-87.",
+      "note": "Psalms 1-10, in three sections each with its own proper prayer, the Gloria said after each. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala I.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 1, 2, 3, 4. Make us worthy, O our Lord and God, to go on in virtuous deeds which please and propitiate thy majesty, that our will may be in thy law, and that we may meditate in it day and night, Lord of all, etc.",
+        "psalms": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 5, 6, 7. Hear the words of our prayer, O my Lord, and incline thine ear to the sound of our crying; and turn not thy face from the sound of our beseeching, O thou in whose goodness is our confident hope, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 8, 9, 10. Thee, O Lord our Lord, hidden in thy being, who from the mouth of boys and children hast perfected thy praise, are we bound to confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "8",
+          "9",
+          "10"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-2",
+    "title": "Hulala II",
+    "meta": {
+      "source": "Maclean 1894, p.87.",
+      "note": "Psalms 11-21. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala II.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 11, 12, 13, 14. Confirm, O my Lord, thy hope in us, and fill our soul with thy help; and may thy lovingkindness pardon our sins, and the eternal mercies of thy glorious Trinity come to the assistance of thy worshippers who call upon thee and beseech thee, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 15, 16, 17. Make us worthy, O our Lord and our God, with consciences pure and sanctified by thy truth, to dwell in thy holy tabernacle and walk in thy way blameless, all the days of our life, Lord of all, etc.",
+        "psalms": [
+          "15",
+          "16",
+          "17"
+        ]
+      },
+      {
+        "prayer": "Of Psalm 18. Thee, O glorious strength of thy servants, and strong hope of thy worshippers, and mighty refuge of them that fear thee, helper and exalter of the horn of their salvation, we are bound to confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "18"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 19, 20, 21. Thee, who art hidden from all in thy being, and art revealed and shinest forth in wondrous deeds of thy dispensation, the power of whose might heaven and earth declare, we are bound, etc.",
+        "psalms": [
+          "19",
+          "20",
+          "21"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-3",
+    "title": "Hulala III",
+    "meta": {
+      "source": "Maclean 1894, p.87-88.",
+      "note": "Psalms 22-30. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala III.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 22, 23, 24. Thy glorious Godhead, full of mercies and compassion, and hope, life, and salvation for all creatures, we are bound, etc.",
+        "psalms": [
+          "22",
+          "23",
+          "24"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 25, 26, 27. Lo, on thee, O our Lord and our God, hangeth the eye of our souls; in thee is our hope and confident trust; and of thee we ask forgiveness of our offences. Grant (this) in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "25",
+          "26",
+          "27"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 28, 29, 30. Unto thee, O my Lord, do we cry, and in thee we take refuge, and of thee we ask forgiveness of trespasses and sins. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "28",
+          "29",
+          "30"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-4",
+    "title": "Hulala IV",
+    "meta": {
+      "source": "Maclean 1894, p.88.",
+      "note": "Psalms 31-36. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala IV.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 31, 32. We beseech thee, who art our trust and confident hope, our help and our protection, and the great refuge of our weakness, turn, O my Lord, and pity us and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "31",
+          "32"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 33, 34. Thee, who art glorified by the righteous, and worshipped by the upright in heart, and confessed and blessed in heaven and in earth, are we bound to confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "33",
+          "34"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 35, 36. We beseech thee, who judgest right judgment, and whose searching is full of justice, whose vengeance is full of mercy and pity, turn, O my Lord, and pity us and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "35",
+          "36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-5",
+    "title": "Hulala V",
+    "meta": {
+      "source": "Maclean 1894, p.88.",
+      "note": "Psalms 37-40. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala V.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 37. Thee, who art good and kind, compassionate and full of mercies, great King of glory, O Being who art from everlasting, we confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "37"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 38, 39, 40. Chasten us not, O my Lord, in thine anger and wrath. Recompense us not as our offences deserve, but in thy mercies and pity turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "38",
+          "39",
+          "40"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-6",
+    "title": "Hulala VI",
+    "meta": {
+      "source": "Maclean 1894, p.88-89.",
+      "note": "Psalms 41-49. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala VI.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 41, 42, 43. Thee, who art rich in thy love and overflowing with thy compassion, kind in thy goodness, unspeakable in thy glory, great King of glory, Being who art from everlasting, we confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "41",
+          "42",
+          "43"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 44, 45, 46. Thee, O our Creator, who givest us benefits, and holdest and rulest our souls by the mild purpose of thy will, great King of glory, etc.",
+        "psalms": [
+          "44",
+          "45",
+          "46"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 47, 48, 49. Thee, O excellent and glorious King, whose majesty the nations and peoples, clapping their hands, do worship, are we bound to confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "47",
+          "48",
+          "49"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-7",
+    "title": "Hulala VII",
+    "meta": {
+      "source": "Maclean 1894, p.89.",
+      "note": "Psalms 50-58. Used Monday and Thursday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala VII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 50, 51, 52. Thee, O God of gods and Lord of lords, great King of glory, Being who art from eternity, we confess, worship, and glorify, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "50",
+          "51",
+          "52"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 53, 54, 55. We beseech thee, who destroyest the ungodly, and scatterest the proud, and overthrowest the strong, who ever raisest in (thy) lovingkindness them that fear thy holy Name, turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "53",
+          "54",
+          "55"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 56, 57, 58. Have mercy upon us, O our Lord and our God, and pardon, wipe out, and take away our offences in the overflowing mercies of thy lovingkindness, O thou Merciful one, who forgivest trespasses and sins, Lord of all, etc.",
+        "psalms": [
+          "56",
+          "57",
+          "58"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-8",
+    "title": "Hulala VIII",
+    "meta": {
+      "source": "Maclean 1894, p.89.",
+      "note": "Psalms 59-67. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala VIII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 59, 60, 61. Deliver us, O our Lord and our God, from the wiles and snares of the apostate Enemy by thy great and strong power, and by thy high and invincible arm, O thou who art good, and on whom is placed our confident hope, at all times and seasons, Lord of all, etc.",
+        "psalms": [
+          "59",
+          "60",
+          "61"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 62, 63, 64. On thee, O my Lord, our souls wait, and to thy compassion the eyes of our hearts look, and of thee we ask forgiveness of our offences. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "62",
+          "63",
+          "64"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 65, 66, 67. Thee beseemeth praise in thy chosen Church, and to thee is owed confession in glorious Zion; thee becometh worship in thine exalted dwelling-place, Lord of all, etc.",
+        "psalms": [
+          "65",
+          "66",
+          "67"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-9",
+    "title": "Hulala IX",
+    "meta": {
+      "source": "Maclean 1894, p.90.",
+      "note": "Psalms 68-70. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala IX.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 68. May the eternal mercies of thy glorious Trinity, O our Lord and our God, protect thy sinful and weak servants, who call on thee and beseech thee, at all times, Lord of all, etc.",
+        "psalms": [
+          "68"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 69, 70. Save, O my Lord, thy people from the flood of destruction, and draw our souls out of the tempests of sin. And may thy truth support us, and make us to walk in the paths of righteousness, all the days of our life, Lord of all, etc.",
+        "psalms": [
+          "69",
+          "70"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-10",
+    "title": "Hulala X",
+    "meta": {
+      "source": "Maclean 1894, p.90.",
+      "note": "Psalms 71-77. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala X.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 71, 72. In thee, O my Lord, do we put our hope, and in thy mercies do we place our confident trust, and of thy lovingkindness we make request; be, O my Lord, a helper to our weakness and a refuge to our confusion, a saviour to our affliction and a pardoner to our sinfulness, a gatherer together of our scattered state and an equipper of our need. And turn not thy face from the sound of our beseeching, O thou who art good, and in whom is placed our confident trust, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "71",
+          "72"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 73, 74. Thee, who art patient in spirit in thy lovingkindness and a two-fold avenger in thy justice, great King of glory, etc., as before.",
+        "psalms": [
+          "73",
+          "74"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 75, 76, 77. We confess, O our Lord and our God, the mercy of thy lovingkindness to us, and worship the care of thy goodwill towards us, and lift up to thee praise, and honour, and confession, and worship, at all times, Lord of all, etc.",
+        "psalms": [
+          "75",
+          "76",
+          "77"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-11",
+    "title": "Hulala XI",
+    "meta": {
+      "source": "Maclean 1894, p.90.",
+      "note": "Psalms 78-81. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XI.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 78. We beseech thee, O wise Ruler and wondrous Governor of thy household, great Treasure who pourest forth all helps and benefits in thy mercy, turn, O my Lord, and pity, etc., as before.",
+        "psalms": [
+          "78"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 79, 80, 81. Save, O my Lord, thy people, and bless thine inheritance, and make thy glory to dwell in the temple which is set apart for thy honour, all the days of the world, Lord of all, etc.",
+        "psalms": [
+          "79",
+          "80",
+          "81"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-12",
+    "title": "Hulala XII",
+    "meta": {
+      "source": "Maclean 1894, p.91.",
+      "note": "Psalms 82-88. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 82, 83, 84. Thee, O King whom kings worship, and the adorable honour of whose majesty companies and ten thousands of angels and archangels, standing with great fear and trembling, serve and celebrate, we are bound, etc.",
+        "psalms": [
+          "82",
+          "83",
+          "84"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 85, 86. Be gracious, O my Lord, to the prayer of thy servants, and be pleased with the service of thy worshippers; pardon the trespasses of them that glorify thee, and take away the heat of thine anger from them of thy household, O thou who art good and carest for our lives, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "85",
+          "86"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 87, 88. Confirm, O my Lord, the foundations of thy Church in thy compassion, and strengthen her bars in thy lovingkindness, and make thy glory to dwell in the temple which is set apart for the honour of thy service, all the days of the world, Lord of all, etc.",
+        "psalms": [
+          "87",
+          "88"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-13",
+    "title": "Hulala XIII",
+    "meta": {
+      "source": "Maclean 1894, p.91.",
+      "note": "Psalms 89-92. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XIII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 89. Pour forth on us, O my Lord, thy graces, and multiply thy helps to us, and strengthen us; as thou art wont, to please thee according to thy will, and to walk after thy commandments and propitiate thy Godhead in good deeds of righteousness, all the days of our life, Lord of all, etc.",
+        "psalms": [
+          "89"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 90, 91, 92. Thee, who holdest all by the power of thy word, and rulest the worlds and creatures by the mild purpose of thy will, great King of glory, etc., as before.",
+        "psalms": [
+          "90",
+          "91",
+          "92"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-14",
+    "title": "Hulala XIV",
+    "meta": {
+      "source": "Maclean 1894, p.91.",
+      "note": "Psalms 93-101. Used Tuesday and Friday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XIV.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 93, 94, 95. Thee, adorable and glorious, excellent and magnifical, exalted above all in thy being, great King of glory, etc.",
+        "psalms": [
+          "93",
+          "94",
+          "95"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 96, 97, 98. A new praise, O my Lord, and exalted confession, suppliant worship, and continual thanksgiving are we bound to lift up to thy glorious Trinity, at all times, Lord of all, etc.",
+        "psalms": [
+          "96",
+          "97",
+          "98"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 99, 100, 101. Thee, who sittest on the chariot of the cherubim, and art celebrated by the bands of angels, whose purpose moveth the earth, and whose commandment maketh the whole world to tremble, are we bound, etc.",
+        "psalms": [
+          "99",
+          "100",
+          "101"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-15",
+    "title": "Hulala XV",
+    "meta": {
+      "source": "Maclean 1894, p.92.",
+      "note": "Psalms 102-105. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XV.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 102, 103. O thou who hast compassion on the trespasses of sins in the multitude of thy longsuffering, have compassion, O our Lord and our God, on the misery, desolation, and error of our feeble nature, in the overflowing mercies of thy lovingkindness, O Merciful one, who forgivest trespasses and sins, Lord of all, etc.",
+        "psalms": [
+          "102",
+          "103"
+        ]
+      },
+      {
+        "prayer": "Of Psalm 104. Thee, who art clothed with excellence and splendour and decked with unspeakable light, by whose purpose the worlds were created and created things set fast, are we bound, etc.",
+        "psalms": [
+          "104"
+        ]
+      },
+      {
+        "prayer": "Of Psalm 105. Let us confess thee, O our good God, and call on thy Name to help us; and let our lips speak of thy glory, for thou art the Lord who art good to thy worshippers, and hast mercy on all, Lord of all, etc.",
+        "psalms": [
+          "105"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-16",
+    "title": "Hulala XVI",
+    "meta": {
+      "source": "Maclean 1894, p.92.",
+      "note": "Psalms 106-111. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XVI.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 106. Grant us, O my Lord, to confess thy lovingkindness, and make us worthy to relate thy wonders; and strengthen us to confess, worship, and glorify the hidden and glorious strength of thy glorious Trinity, at all times, Lord of all, etc.",
+        "psalms": [
+          "106"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 107, 108. Thy lovingkindness, O my Lord, is everlasting, and in it both high and low take refuge. May it stand before our trespasses, and keep us from the Evil one and his hosts, at all seasons and times, Lord of all, etc.",
+        "psalms": [
+          "107",
+          "108"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 109, 110, 111. O my Lord, save thy people from the wicked, and deliver thy flock from the crafty; rescue thy Church from the haters and enemies of thy Name. For thou art the praise of our strength and the crown of our boasting, Lord of all, etc.",
+        "psalms": [
+          "109",
+          "110",
+          "111"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-17",
+    "title": "Hulala XVII",
+    "meta": {
+      "source": "Maclean 1894, p.92-93.",
+      "note": "Psalms 112-118. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XVII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 112, 113, 114, 115. Grant us, O my Lord, to be thine and to fear thee; to be moved by thy word and to dread thy decree, to take heed to thy commandments and to appease thy Godhead with good deeds of righteousness, all the days of our life, Lord of all, etc.",
+        "psalms": [
+          "112",
+          "113",
+          "114",
+          "115"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 116, 117, 118. May the overflowing, blessed, and unspeakable mercies of thy glorious Trinity come to the assistance of thy worshippers who call on thee and beseech thee, at all times, Lord of all, etc.",
+        "psalms": [
+          "116",
+          "117",
+          "118"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-18",
+    "title": "Hulala XVIII",
+    "meta": {
+      "source": "Maclean 1894, p.93.",
+      "note": "Psalm 119, split into two portions. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XVIII.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalm 119 (vv. 1-89). We beseech thee, who art good and givest good things to them that are good; who art just and lovest them that are just; who art holy and dwellest in the holy, and whose will is appeased (by them), turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "119:1-88"
+        ]
+      },
+      {
+        "prayer": "Of Psalm 119 (from v. 89). Thee, O Being who hast neither beginning nor end, hidden and incomprehensible nature, everlasting and unbounded, Creator, Maker, and Ruler of all, are we bound, etc.",
+        "psalms": [
+          "119:89-176"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-19",
+    "title": "Hulala XIX",
+    "meta": {
+      "source": "Maclean 1894, p.93.",
+      "note": "Psalms 120-135. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XIX.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 120, 121, 122, 123, 124, 125. To thee we cry in our afflictions, in thee we take refuge in our distresses, of thee we ask forgiveness of our offences. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "120",
+          "121",
+          "122",
+          "123",
+          "124",
+          "125"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 126, 127, 128, 129, 130, 131. Turn us towards thee in thy compassion, and receive us into thy household, O good Shepherd, who didst go out to seek us, and didst find us when we were lost, and wiliest that we should return in thy lovingkindness and mercies, Lord of all, etc.",
+        "psalms": [
+          "126",
+          "127",
+          "128",
+          "129",
+          "130",
+          "131"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 132, 133, 134, 135. We beseech thee, who art the hope of the just, the confident trust of the righteous, the great refuge of the distressed, the help of them that call on thy holy Name, turn, O my Lord, and pity us and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "132",
+          "133",
+          "134",
+          "135"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-20",
+    "title": "Hulala XX",
+    "meta": {
+      "source": "Maclean 1894, p.94.",
+      "note": "Psalms 136-144. Used Wednesday and Saturday."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XX.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 136, 137, 138. Thee, our good God and King full of mercies, who didst order lights for the joy of our service, that in their light we might rejoice and have joy all the days of our life, are we bound, etc.",
+        "psalms": [
+          "136",
+          "137",
+          "138"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 139, 140, 141. To thee, O Searcher of our thoughts and Investigator of our hearts, who dost know our secrets and dost furnish us with blessings, who dost establish the heights and the depths in thy lovingkindness and mercies, we lift up praise, and honour, and confession, and worship, at all times, Lord of all, etc.",
+        "psalms": [
+          "139",
+          "140",
+          "141"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 142, 143, 144. To thee, O my Lord, we cry, that thou mayest come to assist us; in thee we take refuge, that thou mayest be found to help us; and of thee we beg that thou mayest aid our weakness, that we may keep thy lifegiving and divine commandments. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "142",
+          "143",
+          "144"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-21",
+    "title": "Hulala XXI",
+    "meta": {
+      "source": "Maclean 1894, p.94.",
+      "note": "Psalms 145-150 plus three Old Testament canticles (Exodus 15:1-22, Isaiah 42:10-14/45:8, Deuteronomy 32:1-44) -- 'a twenty-first is added, made up of certain Old Testament canticles' per Maclean's own Introduction (p.xvii). Used Wednesday and Saturday. Deuteronomy's split point (v.21) preserved exactly as Maclean gives it, not rounded to a cleaner boundary."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XXI.</p>",
+    "sections": [
+      {
+        "prayer": "Of Psalms 145, 146, 147 (vv. 1-12). Thee, O King of kings and Lord of lords, the power of whose majesty holdeth and ruleth heaven and earth and all that is in them, are we bound, etc.",
+        "psalms": [
+          "145",
+          "146",
+          "147:1-11"
+        ]
+      },
+      {
+        "prayer": "Of Psalms 147 (from v. 12), 148, 149, 150. O my Lord, answer thy Church, which calleth to thee with contrition, and receive the beseeching of thy flock, which knocketh at the door of thy majesty. Fulfil in her the promise which (thou madest) to her, that the doors of Sheol and its tyrants should not prevail against her for ever. Confirm in her thy only begotten word, (spoken) to Peter, who planted her, in Jerusalem which is above, Lord of all, etc.",
+        "psalms": [
+          "147:12-20",
+          "148",
+          "149",
+          "150"
+        ]
+      },
+      {
+        "prayer": "Of Exodus 15:1-22 and Isaiah 42:10-14 and 45:8. Thee, excellent and magnifical, strong and glorious, mighty and warlike, powerful and full of mercies, great King of glory, etc., as before.",
+        "scriptureRefs": [
+          "EXODUS 15:1-22",
+          "ISAIAH 42:10-14",
+          "ISAIAH 45:8"
+        ]
+      },
+      {
+        "prayer": "Of Deuteronomy 32:1-21. Pour into our hearts, O my Lord, the good seed of thy doctrine, and cause to descend on us the dew of thy lovingkindness, that we may grow according to thy will, and bring forth fruits which please thy majesty, all the days of our life, Lord of all, etc.",
+        "scriptureRefs": [
+          "DEUTERONOMY 32:1-21"
+        ]
+      },
+      {
+        "prayer": "Of Deuteronomy 32:21-44. We beseech thee, O jealous and just one, who in thy jealousy destroyest the wicked, and in thy wrath rootest out the evildoers, and keepest (thy) promise and lovingkindness to them that fear thy holy Name, turn, O my Lord, and pity and have mercy on us, as thou art wont, at all times, Lord of all, etc.",
+        "scriptureRefs": [
+          "DEUTERONOMY 32:21-44"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esy-lelya-monday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.95.",
+      "day": "monday",
+      "note": "Said on days when the Liturgy is to be celebrated, preceded by a fixed collect (Maclean's structural summary, Introduction p.xv). Each side says two clauses at a time."
+    },
+    "text": "<p class=\"component-text\">The habitation that is apart amidst the woods floateth and passeth by. And the overflowings of water convey it to the mountains of Qardu.</p>",
+    "psalms": [
+      "15",
+      "16",
+      "17"
+    ]
+  },
+  {
+    "id": "esy-lelya-tuesday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.95.",
+      "day": "tuesday"
+    },
+    "text": "<p class=\"component-text\">O thou who cultivatest the earth and makest the mountains to hang with richness. Cultivate our minds, that they may bear (thy) kindly yoke.</p>",
+    "psalms": [
+      "25",
+      "26",
+      "27"
+    ]
+  },
+  {
+    "id": "esy-lelya-wednesday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.95.",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"component-text\">By the prayers of thy Mother, O our Lord, have pity on our lives. And by the request of the just and chaste, answer those who call on thy Name.</p>",
+    "psalmRef": "45"
+  },
+  {
+    "id": "esy-lelya-thursday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.95.",
+      "day": "thursday"
+    },
+    "text": "<p class=\"component-text\">What is this that the nations have left their gods. And swear in the name of a man, who is not as thou sayest?</p>",
+    "psalms": [
+      "96",
+      "97",
+      "98"
+    ]
+  },
+  {
+    "id": "esy-lelya-friday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.95-96.",
+      "day": "friday"
+    },
+    "text": "<p class=\"component-text\">In the bonds of mortality is man bound. And he hath not the desire to depart from it even by death.</p>",
+    "psalmRef": "88"
+  },
+  {
+    "id": "esy-lelya-saturday-qaltha",
+    "title": "Qaltha",
+    "meta": {
+      "source": "Maclean 1894, p.96.",
+      "day": "saturday"
+    },
+    "text": "<p class=\"component-text\">Dost thou not know that our iniquity hath hung us on the Cross. And our audacity hath made us to die without remedy?</p>",
+    "psalms": [
+      "147:12-20",
+      "148",
+      "149",
+      "150"
+    ]
+  },
+  {
+    "id": "esy-lelya-motwa-prayer",
+    "title": "Prayer before the Motwa",
+    "meta": {
+      "source": "Maclean 1894, p.96."
+    },
+    "text": "<p class=\"component-text\">May the prayer of our feebleness please thee, O our Lord and our God, and may the request of our weakness enter before thee, and may thy mercies greatly intercede for our sinfulness; and from the great treasury of thy compassion may the petitions of our need be answered, at all seasons and times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-lelya-motwa-note",
+    "title": "The Motwa",
+    "meta": {
+      "source": "Maclean 1894, p.96.",
+      "note": "The Motwa proper (an anthem sung sitting, from which the choirs' names for the section derive) is found in the Kashkul, outside the scope of Maclean's translation and therefore outside the scope of this rebuild -- documented as a gap, not guessed at, same approach as the Coptic Agpeya's excluded paraphrase appendices. On Mondays it begins with the Sunday evening Royal Anthem; Tuesdays with the Sunday Night Anthem; Thursdays with the Sunday Morning Anthem; Saturdays with the Sunday Anthem of the Mysteries as used at the Liturgy. Wednesdays use special anthems instead (see the separate 'Motwa for Wednesdays' section of Maclean, not yet obtained). The fixed closing verses that follow ARE given by Maclean and are included here."
+    },
+    "text": "<p class=\"rubric-text\">The Motwa, an anthem which varies according to the season, is proper to the Kashkul and not given in this translation.</p>"
+  },
+  {
+    "id": "esy-lelya-motwa-close",
+    "title": "Motwa: Closing Verses",
+    "meta": {
+      "source": "Maclean 1894, p.96-97.",
+      "note": "Fixed close to the Motwa on ferias, EXCEPT Wednesdays (when special anthems are used throughout instead) and except in the Fast and the Rogation of the Ninevites, per Maclean's own rubric."
+    },
+    "text": "<p class=\"component-text\"><em>From everlasting to everlasting.</em> O merciful God, pity thy people. And make not thine inheritance a scorn and mockery to the nations. Look from thine abode and see the oppression. Which we suffer from the enemies. And let thy lovingkindness quickly shine forth upon us. That the nations say not, Where is their God? O merciful God, keep thy servants. From them that hate (us) without a cause, and wish to seize that which is not their own. Fence us round with thy strong truth. That they which hate us may see and be confounded. Surround us with thy care as with a wall. That we may be protected within it and confess thy lovingkindness.</p><p class=\"component-text\">By the prayer of her who bore thee, O our Lord Jesus. Give peace to all the world, which is disturbed and confused by its sins. And bring to nought wars and enmities on earth. Make peace between priests and kings. That in concord and love may be celebrated. The memorial of her who bore thee, all (our) days. May the righteous who pleased thee, O our Lord Jesus. The prophets, apostles, and martyrs. And teachers in every country. Beseech thee for our souls. That thou have mercy on us all. And make us worthy with them to confess thee. In the day when they receive the reward of their deeds.</p><p class=\"component-text\">Blessed art thou, O our famous and holy father. Who didst finish thy course in victory. And didst work in the vineyard of Christ. And didst receive a reward for thy deeds. The penny of the good things of heaven. May thy prayers be on all of us. And may we be worthy to inherit the kingdom with thee.</p><p class=\"rubric-text\">Deacon. Let us pray. Peace be with us.</p>"
+  },
+  {
+    "id": "esy-lelya-shubakha-prayer",
+    "title": "Prayer of the Shubakha",
+    "meta": {
+      "source": "Maclean 1894, p.97."
+    },
+    "text": "<p class=\"component-text\">To thee be glory from those on high, and confession from those below; and worship and praise and exaltation from all whom thou hast created and fashioned in heaven and earth, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-lelya-monday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.97.",
+      "day": "monday",
+      "note": "Farced with the refrain given in full here; the same farcing pattern applies on the other days, substituting each day's own psalm."
+    },
+    "text": "<p class=\"rubric-text\">Monday. Psalm 13.</p><p class=\"component-text\"><em>How long wilt thou forget me, O Lord, for ever?</em> Glory be to thee, O God (thrice). How long wilt thou hide thy face from me? (to the end). Glory be to the Father, and to the Son, and to the Holy Ghost. Glory be to thee, O God (thrice). From everlasting to everlasting. Amen. Glory be to thee, O God (thrice). How long wilt thou forget me, O Lord, for ever? Glory be to thee, O God (thrice).</p>",
+    "psalmRef": "13"
+  },
+  {
+    "id": "esy-lelya-tuesday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.97.",
+      "day": "tuesday",
+      "note": "Farced the same way as Monday's, substituting this psalm's own text."
+    },
+    "text": "<p class=\"rubric-text\">Tuesday. Psalm 28. Farced as on Monday.</p>",
+    "psalmRef": "28"
+  },
+  {
+    "id": "esy-lelya-wednesday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.97.",
+      "day": "wednesday"
+    },
+    "text": "<p class=\"rubric-text\">Wednesday. Psalm 67. Farced as on Monday.</p>",
+    "psalmRef": "67"
+  },
+  {
+    "id": "esy-lelya-thursday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.97.",
+      "day": "thursday"
+    },
+    "text": "<p class=\"rubric-text\">Thursday. Psalm 54. Farced as on Monday.</p>",
+    "psalmRef": "54"
+  },
+  {
+    "id": "esy-lelya-friday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.98.",
+      "day": "friday",
+      "note": "\"Unless there is a special one in the Kashkul.\""
+    },
+    "text": "<p class=\"rubric-text\">Friday. Psalm 95:1-8 (unless there is a special one in the Kashkul). Farced as on Monday.</p>",
+    "psalmRef": "95:1-8"
+  },
+  {
+    "id": "esy-lelya-saturday-shubakha",
+    "title": "Shubakha (Psalm of Glory)",
+    "meta": {
+      "source": "Maclean 1894, p.98.",
+      "day": "saturday"
+    },
+    "text": "<p class=\"rubric-text\">Saturday. Psalm 150. All farced as above.</p>",
+    "psalmRef": "150"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-monday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.98.",
+      "day": "monday",
+      "note": "By Mar Abraham, Doctor."
+    },
+    "text": "<p class=\"rubric-text\">Monday, by Mar Abraham, Doctor.</p><p class=\"component-text\">Turn to the prayer of thy servants, O our Saviour. And receive our request and return answer to our petitions. Because thou art the refuge and hope of the weak. By thy help may we conquer the wiles of the Evil one. For lo, he at all times setteth snares for our souls. And wisheth, in his cunning, to defile us with his wickedness. Send, O my Lord, thy strength, and let it destroy his enticements. That he may not pursue after us, and that we fall not into the gulf of sin. May the strength of thy lovingkindness strengthen our weakness. That we may be approved before thee in our deeds, O Compassionate one. And make us worthy to sing to thee in the day of thy coming. The praise that ceaseth not for ever and ever, Amen.</p>"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-tuesday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.98.",
+      "day": "tuesday",
+      "note": "By Mar Awa, Catholicos, or, as some say, by Mar Thomas of Urhai (the Apostle)."
+    },
+    "text": "<p class=\"rubric-text\">Tuesday, by Mar Awa, Catholicos, or, as some say, by Mar Thomas of Urhai.</p><p class=\"component-text\">The heights and the depths, and all that is in them, are not sufficient. To confess thine Essence, O Being who fashionest all. They are too small to tell thy love towards us. And the greatness of thy lovingkindness and thy manifold mercies. Which thou didst grant to our race, unworthy though we were. O thou who art good and kind, and didst put on our nature. And didst save it from death and raise it to heaven. And didst make it higher than every lord and ruler. And lo, the assemblies of angels worship before thee. And cry without ceasing, all with one accord. Holy art thou, Father, Son, and Holy Ghost. To thee be glory from all, for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-wednesday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.99.",
+      "day": "wednesday",
+      "note": "By Mar Abimelek."
+    },
+    "text": "<p class=\"rubric-text\">Wednesday, by Mar Abimelek.</p><p class=\"component-text\">May thy mercies be on our trespasses. O Christ, who lovest the voice of the penitent. Hear our request (and) heal us, for thou art good. And remove from us the canker of our wickedness. Because thou knowest the suffering of our race. With thy good medicine heal our wounds. Bestow thy compassion on our scars. And heal us, O our Lord, as thou art wont. And with the dew of thy lovingkindness. Let us cleanse our stains according to thy will. And grant us with one accord to confess thy Name. Father, Son, and Holy Ghost. Father, Son, and Holy Ghost. For ever and ever. Amen and Amen.</p>"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-thursday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.99.",
+      "day": "thursday",
+      "note": "By Mar Ephraim."
+    },
+    "text": "<p class=\"rubric-text\">Thursday, by Mar Ephraim.</p><p class=\"component-text\">Receive, O our Lord, the request of us all. Who make our offerings to thee with beseeching. Hear, O God, the voice of thy servants. And the entreaty of them that glorify thee. For thou art our King, and in thy great Name. We have hope and confidence. Grant us to gain unanimity. Without doubting, in the faith. While we confess that by thy will. All things were fashioned from nought. The nature of thine existence cannot be understood. By creatures, O hidden Being. Who dwellest in light, and like whom there is none. And whom men cannot approach. By thy fashionings, O my Lord, is made known. The greatness of thy wealth, to the work of thy hands. For thou art Lord and Maker. Who art all-powerful and suppliest all. We earnestly desire forgiveness of trespasses. Bestow (it) on us, as thou art wont. And grant us from our souls. To apply medicines to our wounds. We ask for mercies, O Lord of all. Supply thy wealth to our need. And if any waver and go astray. In the error of the wile of the enemy. May thy compassion be their guide. And tread out the way for their consciences. That they may know that it is by thy care. That our captive nature hath gained freedom. And that with one, perfect, and pure heart. We may serve before thee according to thy will. And diligently do at all times. That which pleaseth thy Godhead. And with one accord raise glory. To Father, Son, and Holy Ghost. Who saved us by the firstfruits which (were taken) from us. And hath not recompensed us according to our wickedness. To him be praise from his worshippers. For ever and ever, Amen and Amen.</p>"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-friday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.99-100.",
+      "day": "friday",
+      "note": "By Mar Abraham of Nithpar, or, as some say, by Mar John of Beith-raban."
+    },
+    "text": "<p class=\"rubric-text\">Friday, by Mar Abraham of Nithpar, or, as some say, by Mar John of Beith-raban.</p><p class=\"component-text\">Glory to him who in his goodness and love. Revealed his praise to the sons of men. He created a dumb nature from dust. And adorned it with a soul endowed with treasures. He placed praise in a lowly body. That all creation might sing his glory. Come, ye who can speak, sing glory to him. Before we lie down in the sleep of death. In the long night let us remember death. Which shutteth our mouth and putteth us to silence. The just who glorified him by night. Even when dead are alive. And the wicked who did evil against his great glory. Even while living are dead. Let us awake our body by prayers. And by Hallelujahs of hidden power. That we may be companions of the wise. Virgins whom our Lord praised. And that in the night when he maketh the worlds to tremble. We may be watching and see the Son. That we be not sunk in (evil) desires. But that we may see his glory in the day when he shineth forth. And that we may be before him as watchful servants. In the hour when he directeth the children of his bridechamber. And the wicked remain in torture. And suddenly the door of mercies is shut. While we live we shall labour somewhat. For after our death is the day of recompense. The body which giveth itself earnestly to prayers. In the day of the quickening flieth in the air. And seeth our Lord, without shame. And entereth with him into the house of the kingdom. The watchful ones and the just love him. They who have kept vigil and laboured in prayer. Blessed is he who hath made us vessels of his glory. And hath placed his praise in the mouth of (creatures of) dust. And glory to his mercies who hath united. Men of clay with the spiritual ones. That they may sing all the nights. And at all times, Holy to his name. And let us all give him praise. For ever and ever, Amen and Amen.</p>"
+  },
+  {
+    "id": "esy-lelya-tishbukhta-saturday",
+    "title": "Tishbukhta",
+    "meta": {
+      "source": "Maclean 1894, p.101.",
+      "day": "saturday",
+      "note": "By Mar Ephraim."
+    },
+    "text": "<p class=\"rubric-text\">Saturday, by Mar Ephraim.</p><p class=\"component-text\">Blessed is the Being who hath created us and saved us by his Christ. And brought us to the knowledge of the Trinity. O God the Word, the Only-begotten of the Father. Thee alone may I please in our manhood which thou didst put on. And may I not stay nor cease, O Christ our Saviour. From confessing thy Name at all times.</p>"
+  },
+  {
+    "id": "esy-lelya-karozutha",
+    "title": "The Karuzutha",
+    "meta": {
+      "source": "Maclean 1894, p.101-102.",
+      "note": "The Night Service's own, shorter form of the general litany -- distinct from the fuller Evening Service Karuzutha."
+    },
+    "text": "<p class=\"rubric-text\">They rise up, and the deacon says the Karuzutha.</p><p class=\"component-text\">Let us all stand up, as is right, in sorrow and care. Let us make request and say, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">The people answer, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">He proceeds.</p><p class=\"component-text\">O mighty Lord, Eternal Being, who dwellest in the highest heights, we make request. <em>Answer. O our Lord, etc., and so after each clause.</em><br>O thou who, in thy great love with which thou didst love us, didst honour the fashioning of our race by the image of thy glory, we, etc.<br>O thou who didst promise to faithful Abraham good things to them that love thee, and by the revelation of Christ wast made known to thy Church, we, etc.<br>O thou who wilt not that our nature should perish, but that it should repent (and turn) from the error of darkness to the knowledge of the truth, we, etc.<br>O thou who alone art the Maker and Fashioner of created things, and dwellest in the excellent light, we, etc.<br>For the welfare of our holy fathers, and all those who serve under them, we, etc.<br>O merciful God, who in mercies governest all, we, etc.<br>O thou who art glorified in heaven and worshipped on earth, we, etc.</p><p class=\"component-text\">Give us the victory, O Christ our Lord, in thy coming, and give peace to thy Church, saved by thy precious blood, and have mercy upon us.</p>"
   }
 ]

@@ -4151,17 +4151,31 @@ async function renderEastSyriac() {
     };
     const officeTitle = officeTitleMap[officeKey] || 'Ramsha \u2014 Evening Prayer';
 
-    const sequenceKey = `${dayName}-${officeKey}-${cycle}-sequence`;
-    const sequence     = appData.eastSyriacRubrics?.[sequenceKey];
+    // Only Ramsha varies by Qdham/Wathar cycle (Maclean's own Introduction,
+    // p.xvi-xvii: this alternation is "the special feature of the Evening
+    // Service" specifically -- the Night and Morning Services are not
+    // described as varying this way, only by day of week). So Lelya (and,
+    // once built, Sapra) look up a sequence with no cycle suffix at all,
+    // rather than a cycle-specific one that doesn't exist for those offices.
+    const cycleVaryingOffices = ['ramsha'];
+    const sequenceKey = cycleVaryingOffices.includes(officeKey)
+        ? `${dayName}-${officeKey}-${cycle}-sequence`
+        : `${dayName}-${officeKey}-sequence`;
+    const sequence = appData.eastSyriacRubrics?.[sequenceKey];
 
     updateSeasonalTheme('purple');
+
+    // Cycle label is only meaningful for Ramsha; showing "Qdham"/"Wathar"
+    // next to Lelya or Sapra would be inventing a distinction the source
+    // doesn't draw for those offices.
+    const cycleSuffix = cycleVaryingOffices.includes(officeKey) ? ` \u00b7 ${cycleLabel}` : '';
 
     const esyActiveLabel = document.getElementById('esy-active-hour-label');
     const esyDateLabel   = document.getElementById('esy-active-date-label');
     if (esyActiveLabel) esyActiveLabel.textContent = officeTitle;
     if (esyDateLabel) {
         const gregDateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        esyDateLabel.textContent = `${gregDateStr} | ${cycleLabel}`
+        esyDateLabel.textContent = `${gregDateStr}` + (cycleVaryingOffices.includes(officeKey) ? ` | ${cycleLabel}` : '')
                                  + (window._esyTemporalOverride.active ? ' \u2726 override' : '');
     }
 
@@ -4170,12 +4184,12 @@ async function renderEastSyriac() {
             `<div class="office-container">`
             + `<p class="office-book-title">The Hudra</p>`
             + `<h2>${officeTitle}</h2>`
-            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} \u00b7 ${cycleLabel}</p>`
+            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
             + `<p class="rubric-text">Not yet rebuilt</p>`
             + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
             + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
-            + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${cycleLabel} ${officeTitle} hasn't been `
-            + `built yet -- Monday's Qdham Ramsha is the only one complete so far. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`
+            + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
+            + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`
             + `</div>`;
         return;
     }
@@ -4183,7 +4197,7 @@ async function renderEastSyriac() {
     let officeHtml = `<div class="office-container">`;
     officeHtml += `<p class="office-book-title">The Hudra</p>`;
     officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} \u00b7 ${cycleLabel}</p>`;
+    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`;
 
     for (const itemId of sequence) {
         const comp = appData.components.find(c => c.id === itemId);
@@ -4200,7 +4214,27 @@ async function renderEastSyriac() {
         // appended after the rubric text already embedded in `text`.
         officeHtml += `<span class="component-text">${comp.text || ''}</span>`;
 
-        if (Array.isArray(comp.psalms)) {
+        if (Array.isArray(comp.sections)) {
+            // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs.
+            // Each section's own proper prayer is rendered, followed by its
+            // psalm(s) or canticle(s) resolved from the corpus, mirroring
+            // Maclean's actual structure (a proper prayer before each
+            // subdivision of psalms within a Hulala, not one prayer for the
+            // whole Hulala).
+            for (const section of comp.sections) {
+                if (section.prayer) {
+                    officeHtml += `<p class="component-text">${section.prayer}</p>`;
+                }
+                const refs = Array.isArray(section.psalms) ? section.psalms.map(p => ({ label: `Psalm ${p}`, query: 'PSALM ' + p }))
+                           : Array.isArray(section.scriptureRefs) ? section.scriptureRefs.map(r => ({ label: r, query: r }))
+                           : [];
+                for (const ref of refs) {
+                    const fullText = await getScriptureText(ref.query);
+                    officeHtml += `<h4 class="passage-reference">${ref.label}</h4>`;
+                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                }
+            }
+        } else if (Array.isArray(comp.psalms)) {
             for (const psRef of comp.psalms) {
                 const fullText = await getScriptureText('PSALM ' + psRef);
                 officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;

@@ -6868,3 +6868,55 @@ Catholicos). Tracked as `coe:sapra:milestone` on the dashboard, also not yet bui
 resuming point: the Evening Office is finished and verified; the next work is building out Lelya
 (all source text already in hand) and then Sapra (opening text in hand, more still needed for the
 rest of the office).
+
+## SESSION 2026-08-19 continued -- Lelya (Night Office) fully built and verified: all six ferial weekdays
+
+Continuing the same session's momentum, built out the Ferial Night Service using the full text
+obtained earlier this session (Maclean p.85-102).
+
+**Architecture decision, confirmed from source before building anything:** Maclean's Introduction
+states plainly that the Qdham/Wathar before-and-after alternation is "the special feature of the
+Evening Service" specifically -- it is not attributed to the Night or Morning Services anywhere in
+the source. Rather than assume Lelya needed the same 14-combination treatment Ramsha did, the
+renderer was extended to look up sequences without a cycle suffix for non-Ramsha offices, and the
+cycle label is no longer shown in the header for those offices either -- avoiding inventing a
+distinction the source doesn't draw.
+
+**Built: 48 new components.** The fixed opening (a three-stage "arising" prayer progression with
+Hallelujah responses between each stage, reusing the already-verified farced Lord's Prayer component
+from Ramsha rather than re-transcribing it, since Maclean's own rubric says "Our Father, farced (page
+1)" -- explicitly the same text). All 21 Hulali, each containing multiple internal sections (a proper
+prayer followed by its specific psalms) -- required a new `sections` rendering path in
+`renderEastSyriac()`, since a single Hulala can have two to five internally-prayed subdivisions, not
+one prayer for the whole Hulala. The weekday Qaltha table (one short antiphon per day). The Motwa
+introduction -- documented as a genuine, disclosed gap: the Motwa proper (the substantial anthem
+itself) lives in the Kashkul, which is explicitly outside Maclean's stated scope, the same treatment
+already given to other out-of-scope seasonal material (Coptic's paraphrase appendices, Ethiopian
+Guba'e Kana) rather than guessed at or silently omitted without a note. The Motwa's fixed closing
+verses, which Maclean does give in full, were built. All 6 named per-weekday Tishbukhta, with
+authorship exactly as the source attributes it (Monday: Mar Abraham the Doctor; Tuesday: Mar Awa the
+Catholicos, or by some accounts Mar Thomas of Urhai; Wednesday: Mar Abimelek; Thursday and Saturday:
+Mar Ephraim; Friday: Mar Abraham of Nithpar, or by some accounts Mar John of Beith-raban) -- these
+alternate-attribution notes are Maclean's own manuscript-variant footnotes, not editorial guesses.
+The Night Service's own Karuzutha (shorter and structurally distinct from the Evening Service's).
+
+**A rubric explicitly followed rather than smoothed over:** Maclean states the Motwa's fixed close is
+NOT said on Wednesdays (special anthems substitute throughout instead) and is also omitted during the
+Fast and the Rogation of the Ninevites. Wednesday's Lelya sequence correctly omits the Motwa-close
+component; the other five weekdays include it. Verified directly with a dedicated Playwright check
+confirming the close text is genuinely absent from Wednesday's rendered output, not just assumed
+correct from the sequence definition.
+
+**165 components total, 18 sequences** (12 Ramsha + 6 Lelya). Verified end-to-end with real
+Playwright across a full week: all 6 ferial weekdays render successfully, each producing
+79,000-98,000 characters of output (each night recites roughly one-third of the entire 150-psalm
+Psalter, per Maclean's own structural description of the Night Service -- so the output length is a
+direct, expected consequence of following the source, not padding), both Sundays correctly show "not
+yet rebuilt" (Sunday's Night Service is Festival, a separate section with separate scope, matching
+the same pattern already established for Ramsha), and 12 spot-checked phrases -- including the
+Wednesday Motwa-close exclusion -- all passed. `js/office-ui.js` passes `node --check`; both JSON
+files valid; `audit-ledger.html`'s inline script passes `node --check`.
+
+`SEED_VERSION` bumped to `v153-2026-08-19-east-syriac-lelya-complete`. Two of the Church of the
+East's three principal ferial services (Ramsha and Lelya) are now complete and verified. Sapra
+(Morning Service) has its opening obtained but is not yet built -- the clear next phase.
