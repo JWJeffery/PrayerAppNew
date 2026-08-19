@@ -2189,6 +2189,27 @@ function _defaultHorologionOfficeForCurrentTime(now = new Date()) {
     return "small-compline";
 }
 
+// Map clock time to the canonical Coptic Agpeya hour. Traditional Roman-style
+// hour names (the Agpeya's own naming convention -- Prime, Terce, Sext, None,
+// the Eleventh Hour, the Twelfth Hour) anchor these windows:
+//   Morning Office (Prime)     04:00–09:00
+//   Third Hour (Terce)         09:00–12:00
+//   Sixth Hour (Sext)          12:00–15:00
+//   Ninth Hour (None)          15:00–17:00
+//   Eleventh Hour (Vespers)    17:00–19:00
+//   Twelfth Hour (Compline)    19:00–21:00
+//   Midnight Office            21:00–04:00 (wraps past midnight)
+function _defaultCopticHourForCurrentTime(now = new Date()) {
+    const hour = now.getHours();
+    if (hour >= 21 || hour < 4) return "coptic-midnight-office";
+    if (hour >= 4 && hour < 9) return "coptic-morning-office";
+    if (hour >= 9 && hour < 12) return "coptic-third-hour";
+    if (hour >= 12 && hour < 15) return "coptic-sixth-hour";
+    if (hour >= 15 && hour < 17) return "coptic-ninth-hour";
+    if (hour >= 17 && hour < 19) return "coptic-eleventh-hour";
+    return "coptic-twelfth-hour";
+}
+
 function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
     const now = new Date();
     currentDate = now;
@@ -2208,6 +2229,12 @@ function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
         const radio = document.querySelector(`input[name="office-time"][value="${CSS.escape(office)}"]`);
         if (radio) radio.checked = true;
         updateSidebarForOffice();
+    }
+
+    if (modeKey === "coptic") {
+        const hourId = _defaultCopticHourForCurrentTime(now);
+        const radio = document.querySelector(`input[name="cop-hour"][value="${CSS.escape(hourId)}"]`);
+        if (radio) radio.checked = true;
     }
 
     if (modeKey === "eastSyriac") {

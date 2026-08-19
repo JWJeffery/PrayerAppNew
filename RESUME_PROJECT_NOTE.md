@@ -12,6 +12,40 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Coptic Agpeya hour selection was never wired up at all
+
+Josh tested the previous fix live and reported two more problems: at 6:56 PM the app showed the
+Morning Office instead of something evening-appropriate, and the sidebar's hour controls had no
+effect when clicked.
+
+**Root cause:** the Coptic Agpeya's hour selection relies on a hidden "legacy" `input[name="cop-
+hour"]` radio group that the visible shared-nav UI proxies onto -- exactly the same pattern Daily
+Office and Church of the East use. That legacy radio group genuinely exists for those two
+traditions in `index.html`. **It never existed for Coptic at all**, despite `js/office-ui.js`'s own
+code comments describing it as if it did. Every function that reads `input[name="cop-hour"]:checked`
+found nothing and silently fell back to the hardcoded Morning Office default -- permanently,
+regardless of clicks or time of day. Separately, `initializeOfficeDefaultsForCurrentDateTime()` had
+no `coptic` branch at all (Daily/East Syriac/Horologion each have their own clock-time-to-hour
+mapping; Coptic had none).
+
+**Fixed:** added the missing 14-value `cop-hour` radio group to `index.html` (verified to exactly
+match both `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic.options` and the 14 rubric ids in
+`components/traditions/coptic/rubrics.json`), and added `_defaultCopticHourForCurrentTime()` plus a
+`coptic` branch in `initializeOfficeDefaultsForCurrentDateTime()`, using the Agpeya's own
+traditional hour-name time windows (Prime, Terce, Sext, None, the Eleventh Hour/Vespers, the
+Twelfth Hour/Compline, Midnight Office).
+
+**Verified with an isolated jsdom simulation**, not just read-through: loaded the actual sidebar
+HTML fragment in a real DOM and confirmed the 6:56 PM default resolves to the Eleventh Hour, a
+simulated sidebar click actually changes the active hour, exactly one radio is checked at a time,
+and all 14 values remain correctly selectable after being disabled (which is what happens once the
+visible shared-nav UI takes over). All four checks passed. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v140-2026-08-18-coptic-hour-selection-fix`.
+
+---
+
 ## Session 2026-08-19 continued -- Coptic Agpeya UI fixes
 
 Two UI bugs reported and fixed this session, both purely front-end (no content/data changes):

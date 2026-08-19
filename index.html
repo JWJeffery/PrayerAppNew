@@ -360,6 +360,20 @@
             <div id="cop-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">The Morning Office</div>
             <div id="cop-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
             <p style="font-size:0.72em; opacity:0.65; margin-top:4px; margin-bottom:0;">All seven hours, the Midnight Office, and the full seven-day Theotokia hymn cycle are complete and verified. See the audit dashboard for details.</p>
+            <label><input type="radio" name="cop-hour" value="coptic-morning-office" onchange="renderOffice()" checked> The Morning Office (Prime)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-third-hour" onchange="renderOffice()"> The Third Hour (Terce)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-sixth-hour" onchange="renderOffice()"> The Sixth Hour (Sext)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-ninth-hour" onchange="renderOffice()"> The Ninth Hour (None)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-eleventh-hour" onchange="renderOffice()"> The Eleventh Hour (Vespers)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-twelfth-hour" onchange="renderOffice()"> The Twelfth Hour (Compline)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-midnight-office" onchange="renderOffice()"> The Midnight Office (Three Nocturns)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-sunday-theotokia" onchange="renderOffice()"> Sunday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-monday-theotokia" onchange="renderOffice()"> Monday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-tuesday-theotokia" onchange="renderOffice()"> Tuesday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-wednesday-theotokia" onchange="renderOffice()"> Wednesday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-thursday-theotokia" onchange="renderOffice()"> Thursday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-friday-theotokia" onchange="renderOffice()"> Friday Theotokia</label>
+            <label><input type="radio" name="cop-hour" value="coptic-saturday-theotokia" onchange="renderOffice()"> Saturday Theotokia</label>
         </div>
         <div class="ordo-buttons" style="margin-top:10px;">
             <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>

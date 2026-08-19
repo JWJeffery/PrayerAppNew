@@ -6170,3 +6170,55 @@ above). Updated to state the actual current status.
 under `tinycss2`. `js/office-ui.js` passes `node --check`. `audit-ledger.html`'s inline `<script>`
 passes `node --check` via extraction. `SEED_VERSION` bumped to
 `v139-2026-08-18-coptic-sidebar-css-splash-fix`.
+
+## SESSION 2026-08-19 continued -- Coptic Agpeya hour selection was never wired up at all
+
+After the splash-card/sidebar-CSS fix above, Josh tested the live app at 6:56 PM and reported two
+things: the visual theme read as evening ("vespers... for color") but the actual office displayed
+was the Morning Office, and the hour-selection controls in the sidebar had no effect at all when
+clicked.
+
+**Root cause, found by tracing the data flow rather than guessing:** the Coptic Agpeya's hour
+selection was built on the same "shared office navigator" pattern used by the Daily Office, Church
+of the East, and Horologion -- a visible radio list rendered by `renderSharedOfficeNavigation()`
+that proxies its selections onto a hidden "legacy" `<input type="radio">` group via
+`setSharedOfficeNavHour()`, which is what the actual office renderer reads from. For Daily Office
+(`name="office-time"`) and Church of the East (`name="esy-hour-override"`), that legacy radio group
+genuinely exists in `index.html`. **For Coptic, it never did.** The code even documents the intent
+directly (`js/office-ui.js` comment above `renderCopticAgpeya()`: "Active hour is picked via the
+`input[name="cop-hour"]` radio group") -- but no such element existed anywhere in `index.html`.
+Every read of `document.querySelector('input[name="cop-hour"]:checked')` across the codebase
+(`_sharedOfficeNavigatorActiveValue`, `setSharedOfficeNavHour`,
+`initializeOfficeDefaultsForCurrentDateTime`, `renderCopticAgpeya`) silently found nothing and fell
+back to the hardcoded `'coptic-morning-office'` default -- permanently, regardless of what the user
+clicked or what time it was.
+
+**Separately, and compounding it:** `initializeOfficeDefaultsForCurrentDateTime()` (the function
+that sets the time-appropriate default office on first entry) has real branches for `daily`,
+`eastSyriac`, and `horologion`, each backed by its own clock-time-to-canonical-hour mapping
+function. There was no `coptic` branch at all -- so even if the missing radios above hadn't existed,
+Coptic still had zero notion of "what hour is it right now."
+
+**Fixed, both pieces:**
+- Added the missing `input[name="cop-hour"]` radio group (all 14 values -- the seven hours plus the
+  seven Theotokia days) to the "Active Hour" `.setting-group` in `index.html`'s `#coptic-settings`
+  panel. Confirmed programmatically that all 14 values match `SHARED_OFFICE_NAVIGATOR_CONFIGS
+  .coptic.options` exactly (same order, same 14 ids) and that all 14 also exist as rubric ids in
+  `components/traditions/coptic/rubrics.json` -- no dangling/missing IDs on either side.
+- Added `_defaultCopticHourForCurrentTime(now)`, a clock-time-to-hour mapping matching the Agpeya's
+  own traditional hour names (Prime 04:00-09:00, Terce 09:00-12:00, Sext 12:00-15:00, None
+  15:00-17:00, the Eleventh Hour/Vespers 17:00-19:00, the Twelfth Hour/Compline 19:00-21:00,
+  Midnight Office 21:00-04:00 wrapping past midnight), and wired it into a new `coptic` branch of
+  `initializeOfficeDefaultsForCurrentDateTime()`, matching the existing pattern for the other three
+  traditions.
+
+**Verified with an isolated jsdom simulation** (not just static read-through): extracted the actual
+`#coptic-settings` HTML fragment, loaded it in a real DOM, and confirmed (1) at a simulated 6:56 PM
+the default resolves to `coptic-eleventh-hour` and a matching radio exists and gets checked, (2)
+simulating a sidebar click (`setSharedOfficeNavHour`'s coptic branch) actually finds and checks the
+target radio and the "active value" read-back reflects it, (3) exactly one radio is checked at a
+time, (4) all 14 values remain correctly selectable/readable even after being `disabled` (which is
+what the legacy-hide mechanism does to them once the visible shared-nav UI takes over). All four
+checks passed. `js/office-ui.js` also passes `node --check`.
+
+`SEED_VERSION` bumped to `v140-2026-08-18-coptic-hour-selection-fix`.
