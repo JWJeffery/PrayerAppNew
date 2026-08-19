@@ -6426,3 +6426,68 @@ Bumped the `js/office-ui.js` cache-busting query parameter to `?v=144` per the s
 the previous session.
 
 `SEED_VERSION` bumped to `v144-2026-08-18-coptic-theotokia-auto-select`.
+
+## SESSION 2026-08-19 continued -- Found the real "sidebar shift" bug: #sidebar-toggle was never taught about Coptic, and this session's tooling gap is now closed too
+
+After several rounds of investigation that ruled out caching, scroll position, hour-selection state,
+and the shared date/hour/appearance controls (all verified correct via jsdom simulation), Josh sent
+a screenshot identifying the actual control causing the reported shift: `#sidebar-toggle`, the
+cross/hamburger-lines/cross icon stack on the far-left edge of the screen that collapses/expands the
+entire options sidebar -- not any control inside the Agpeya Options panel itself. This had been
+essentially unfalsifiable from static screenshots and code review alone; the identification came
+directly from Josh recognizing the element in a follow-up screenshot.
+
+**This session, real browser automation became available and was used for verification going
+forward.** Confirmed via `python3 -c "from playwright.sync_api import sync_playwright; ..."` that
+Playwright's bundled Chromium launches successfully in this environment (no network dependency
+needed -- it was already installed). This is a significant capability upgrade for this project: past
+sessions relied on jsdom (DOM structure and JS logic only, no real CSS layout/paint) for
+verification. From this point forward, layout/geometry bugs like this one can be reproduced and
+fixed with actual measured pixel geometry from a real rendered page, not just inference from
+screenshots or static CSS reading.
+
+**Root cause, confirmed by direct reproduction:** `toggleSidebar()` -- and more importantly, the
+"UO MOBILE DRAWER REPAIR" end-of-file IIFE that overrides it at runtime via `getActiveOfficeDrawer()`
+-- both maintain a hardcoded list of the office sidebar panels (`east-syriac-settings`,
+`ethiopian-settings`, `generic-settings`, `settings-panel`) to determine which one is currently
+active and should be shown/hidden. **`coptic-settings` was never added to either list.** So while in
+Coptic Agpeya mode, clicking the toggle button always fell through to the final fallback
+(`settings-panel`, the *hidden, irrelevant* Daily Office sidebar) -- toggling a `sidebar-hidden`
+class on that invisible element (no visible effect on it) while *also* unconditionally toggling
+`sidebar-hidden` on `#main-content` (`#main-content.sidebar-hidden { padding-left: 80px; }`). Net
+effect: the actual Coptic sidebar never collapsed or expanded at all, while the main content area's
+left padding silently flipped on and off with every click -- exactly matching Josh's description
+("stays shifted until I click the sidebar selector again"). Confirmed with Playwright measurements
+that the office content box's left edge moved from 933.5px to 790.5px and back on alternating clicks,
+entirely independent of anything inside the sidebar itself (hour clicks, date nav, Dark Mode toggle
+-- all separately confirmed via the same tooling to have zero effect on this geometry).
+
+**Fixed:** added `coptic-settings` to `getActiveOfficeDrawer()`'s panel list (the function actually
+in effect at runtime, since the mobile-drawer-repair IIFE overrides the original `toggleSidebar`).
+Left the original (now fully shadowed) `toggleSidebar()` function as it was, per this codebase's own
+documented convention at the top of the repair IIFE ("This end-of-file override avoids brittle edits
+inside the legacy drawer code") -- the real fix belongs only in the override layer.
+
+**Verified directly, both desktop and mobile paths, via Playwright measuring real DOM state before
+and after actual clicks (not simulation):**
+- Desktop (2380px viewport): before toggle, `coptic-settings` and `main-content` both correctly
+  un-hidden; after one click, `coptic-settings.sidebar-hidden` and `main-content.sidebar-hidden` both
+  correctly *true* and the office content visibly shifts to fill the freed space (933.5px -> 790.5px);
+  after a second click, both correctly revert.
+- Mobile (390px viewport, iPhone-sized): sidebar correctly starts collapsed by default (matching the
+  existing mobile-shell auto-collapse behavior), one click correctly opens it
+  (`mobile-sidebar-open` true, both `sidebar-hidden` flags false), a second click correctly closes it
+  again.
+
+`js/office-ui.js` passes `node --check`. Bumped `js/office-ui.js` cache-busting query param to
+`?v=145` per the standing rule.
+
+`SEED_VERSION` bumped to `v145-2026-08-18-coptic-sidebar-toggle-fix`.
+
+**Standing note for future sessions:** this codebase has at least one other tradition-specific gap
+of the same shape already found and fixed this session (`setSharedOfficeNavDate` missing a `coptic`
+branch). When adding a new tradition/mode in the future, grep for every function that maintains a
+hardcoded list of sidebar panel IDs (`settings-panel`, `ethiopian-settings`, `east-syriac-settings`,
+`generic-settings`, `coptic-settings`) and confirm the new panel is added to all of them -- these
+lists are NOT centralized in one place, and each omission produces a real, hard-to-diagnose bug that
+falls back silently to the wrong (usually Daily Office) panel rather than erroring visibly.

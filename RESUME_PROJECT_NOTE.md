@@ -12,6 +12,42 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Found the real "sidebar shift" bug: #sidebar-toggle
+
+After several rounds of investigation that ruled out caching, scroll position, and every control
+inside the Agpeya Options panel itself (all verified correct), Josh identified the actual culprit
+from a screenshot: `#sidebar-toggle`, the collapse/expand icon stack on the far-left edge of the
+screen -- a completely different control than anything tested before.
+
+**Playwright (real headless Chromium) is available in this environment and was used for direct
+verification from this point on** -- a capability upgrade over jsdom, which only checks DOM
+structure/JS logic, not real CSS layout. Confirmed with `sync_playwright()` that
+`p.chromium.launch()` works with zero setup.
+
+**Root cause:** the "UO MOBILE DRAWER REPAIR" end-of-file IIFE overrides `toggleSidebar()` at
+runtime via `getActiveOfficeDrawer()`, which maintains its own hardcoded panel list -- and
+`coptic-settings` was never added to it. In Coptic mode, every click fell through to the wrong,
+hidden panel (`settings-panel`) while still unconditionally toggling `sidebar-hidden` on
+`#main-content` (`padding-left: 80px`), producing exactly the alternating shift Josh described, with
+the actual Coptic sidebar never opening or closing at all.
+
+**Fixed:** added `coptic-settings` to `getActiveOfficeDrawer()`'s panel list (the function actually
+in effect). Left the original, now fully-shadowed `toggleSidebar()` untouched, per this codebase's
+own documented convention ("avoid brittle edits inside the legacy drawer code, use the override").
+Verified directly with Playwright on both desktop (2380px) and mobile (390px) viewports: sidebar and
+main-content classes now toggle correctly and in sync on every click, both platforms.
+
+**Standing note:** grepped for every other hardcoded panel-ID list in the file to check for the same
+gap elsewhere -- none found. But this is the second time this exact shape of bug has appeared
+(after `setSharedOfficeNavDate` earlier this session). When adding a future tradition/mode, check
+every function maintaining a panel-ID list, since these aren't centralized and each omission fails
+silently to the wrong panel rather than erroring.
+
+`js/office-ui.js` passes `node --check`. `SEED_VERSION` bumped to
+`v145-2026-08-18-coptic-sidebar-toggle-fix`; cache-bust bumped to `?v=145`.
+
+---
+
 ## Session 2026-08-19 continued -- Theotokia: fixed "Phase 2" label leak, made day auto-selected
 
 Josh flagged two Theotokia problems: every weekday entry showed "Phase 2" as its label (internal

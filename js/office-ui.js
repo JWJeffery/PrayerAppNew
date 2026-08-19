@@ -4708,6 +4708,7 @@ async function renderCopticAgpeya() {
             document.getElementById('east-syriac-settings'),
             document.getElementById('ethiopian-settings'),
             document.getElementById('generic-settings'),
+            document.getElementById('coptic-settings'),
             document.getElementById('settings-panel')
         ];
 
