@@ -12,6 +12,26 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Moved the Coptic Dark Mode toggle under the date selector
+
+Josh asked for the new Coptic "Dark Mode" toggle to sit at the top, under the date selector, rather
+than below the hour list. This needed a code change rather than a markup move: the Date and Hour
+cards are generated together as one HTML blob by `renderSharedOfficeNavigation()`, not two separate
+static elements. Added a config-gated "Appearance" section to that generator (config-scoped to
+Coptic only, via `showAppearanceToggle`/`appearanceToggleId` on `SHARED_OFFICE_NAVIGATOR_CONFIGS
+.coptic`), positioned between the date section and the hour section, and removed the old static
+block from `index.html`. Added matching checkbox styling alongside the existing radio-option CSS.
+
+Verified with a full-source jsdom simulation (loaded the real `js/office-ui.js`, not a
+reimplementation, with only the unrelated `SaintsResolver` dependency stubbed): 12/12 checks passed,
+confirming DOM order is date -> appearance -> hour, the checkbox tracks the real theme state
+correctly across renders, and the previous session's `cop-hour` fix is unaffected. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+`SEED_VERSION` bumped to `v142-2026-08-18-coptic-appearance-toggle-position`.
+
+---
+
 ## Session 2026-08-19 continued -- Color theme: renamed, added to Coptic sidebar, made time-based
 
 After the hour-selection fix, Josh reported the app was "still opening in Vespers mode as far as

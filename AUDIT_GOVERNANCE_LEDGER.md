@@ -6274,3 +6274,46 @@ stays synced back to the Daily Office checkbox. `js/office-ui.js` passes `node -
 passes `node --check`.
 
 `SEED_VERSION` bumped to `v141-2026-08-18-theme-time-based-coptic-toggle`.
+
+## SESSION 2026-08-19 continued -- Moved the Coptic Dark Mode toggle under the date selector
+
+Josh asked for the new Coptic Agpeya "Dark Mode" toggle to move to the top, under the date selector,
+rather than sitting below the (potentially long) hour list at the bottom of the sidebar.
+
+**Why this needed a code change, not just a markup move:** the visible Date card and Hour card in
+the Coptic sidebar aren't two independent DOM elements Josh's static HTML controls -- they're both
+generated together as one combined HTML blob by `renderSharedOfficeNavigation()` in
+`js/office-ui.js`, inserted as a single unit immediately after the sidebar's `<h3>` heading. The
+previous "Appearance" block lived as a separate, statically-authored element further down in
+`index.html`, entirely outside that generated blob -- which is exactly why it always ended up below
+the whole (variable-length) hour list rather than between two sections that are generated as one
+unit. Moving it required inserting a third section into that generated template, not just
+reordering static HTML.
+
+**Fixed:**
+- Removed the static `#toggle-dark-coptic` "Appearance" block from `index.html` entirely.
+- Added a `showAppearanceToggle` / `appearanceToggleId` pair to
+  `SHARED_OFFICE_NAVIGATOR_CONFIGS.coptic`, and taught `renderSharedOfficeNavigation()` to build an
+  optional "Appearance" `<section>` (config-gated, so this doesn't affect Daily/East Syriac/
+  Horologion, none of which requested it) and insert it between the date section and the hour
+  section in the generated markup.
+- The checkbox's `checked` state is computed fresh from `document.body.classList.contains('dark-
+  mode')` on every render, so it always reflects the actual current theme -- including immediately
+  after a manual toggle, a re-render triggered by a date/hour change, etc.
+- Added matching CSS (`.shared-office-nav-option input[type="checkbox"]`,
+  `:has(input[type="checkbox"]:checked)` highlight rules) alongside the existing radio-specific
+  rules, so the checkbox gets the same visual polish as the hour radio options rather than looking
+  like an unstyled outlier.
+
+**Verified with a full-source jsdom simulation** (not a hand-reimplemented approximation this time
+-- the actual `js/office-ui.js` was loaded and `renderSharedOfficeNavigation()` was invoked for
+real, with `SaintsResolver` stubbed out since it's an unrelated dependency loaded from a separate
+script file in production): confirmed the generated nav contains exactly 3 sections in DOM order
+date -> appearance -> hour (checked two independent ways: `querySelectorAll('section...')` order
+and raw `.children` order), the checkbox exists with the correct id, its checked state matches the
+body's actual theme class both before and after `applyDarkMode()`, a simulated click still correctly
+flips the body theme via `updateUI()`, and the `cop-hour` radio group from the previous session's
+fix is unaffected (still present and functional) by this reshuffle. All 12 checks passed.
+`js/office-ui.js` passes `node --check`.
+
+`SEED_VERSION` bumped to `v142-2026-08-18-coptic-appearance-toggle-position`.

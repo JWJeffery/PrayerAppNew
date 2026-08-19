@@ -1704,6 +1704,8 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         officeTitle: "Hour",
         hideHeadings: ["Active Hour"],
         hideButtonRowsAfterHeadings: ["Active Hour"],
+        showAppearanceToggle: true,
+        appearanceToggleId: "toggle-dark-coptic",
         options: [
             { value: "coptic-morning-office", label: "The Morning Office", detail: "Prime" },
             { value: "coptic-third-hour", label: "The Third Hour", detail: "Terce" },
@@ -2029,6 +2031,19 @@ function renderSharedOfficeNavigation() {
             </label>`;
     }).join("");
 
+    const appearanceHtml = config.showAppearanceToggle ? `
+        <section class="shared-office-nav-card shared-office-nav-appearance-card">
+            <div class="shared-office-nav-section-title">Appearance</div>
+            <label class="shared-office-nav-option" style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                <input type="checkbox" id="${_sharedOfficeNavigatorEscape(config.appearanceToggleId)}"
+                    ${document.body.classList.contains('dark-mode') ? 'checked' : ''}
+                    onchange="updateUI(this.checked); saveSettings()">
+                <span class="shared-office-nav-option-copy">
+                    <span class="shared-office-nav-option-label">Dark Mode</span>
+                </span>
+            </label>
+        </section>` : '';
+
     nav.dataset.sharedOfficeNav = modeKey;
     nav.innerHTML = `
         <section class="shared-office-nav-card shared-office-nav-date-card">
@@ -2045,7 +2060,7 @@ function renderSharedOfficeNavigation() {
                     value="${isoDate}"
                     onchange="setSharedOfficeNavDate('${modeKey}', this.value)">
             </label>
-        </section>
+        </section>${appearanceHtml}
         <section class="shared-office-nav-card shared-office-nav-hour-card">
             <div class="shared-office-nav-section-title">${_sharedOfficeNavigatorEscape(config.officeTitle)}</div>
             <div class="shared-office-nav-options" role="radiogroup" aria-label="${_sharedOfficeNavigatorEscape(config.officeTitle)}">

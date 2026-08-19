@@ -2889,11 +2889,25 @@ body.office-active.dark-mode .shared-office-nav-option:hover {
     accent-color: var(--app-bronze, #7a3f17);
 }
 
+.shared-office-nav-option input[type="checkbox"] {
+    margin: 2px 0 0 !important;
+    accent-color: var(--app-bronze, #7a3f17);
+}
+
 .shared-office-nav-option:has(input[type="radio"]:checked) {
     border-color: rgba(143, 59, 48, 0.24);
     background: rgba(143, 59, 48, 0.055);
 }
 body.office-active.dark-mode .shared-office-nav-option:has(input[type="radio"]:checked) {
+    border-color: rgba(192, 57, 43, 0.45);
+    background: rgba(192, 57, 43, 0.16);
+}
+
+.shared-office-nav-option:has(input[type="checkbox"]:checked) {
+    border-color: rgba(143, 59, 48, 0.24);
+    background: rgba(143, 59, 48, 0.055);
+}
+body.office-active.dark-mode .shared-office-nav-option:has(input[type="checkbox"]:checked) {
     border-color: rgba(192, 57, 43, 0.45);
     background: rgba(192, 57, 43, 0.16);
 }
@@ -2922,6 +2936,10 @@ body.office-active.dark-mode .shared-office-nav-option-detail {
 }
 
 .shared-office-nav-option:has(input[type="radio"]:checked) .shared-office-nav-option-label {
+    color: var(--app-rubric, #8f3b30);
+}
+
+.shared-office-nav-option:has(input[type="checkbox"]:checked) .shared-office-nav-option-label {
     color: var(--app-rubric, #8f3b30);
 }
 
