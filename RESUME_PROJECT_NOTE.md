@@ -12,6 +12,56 @@ memory across sessions is not.
 
 ---
 
+## Session 2026-08-19 continued -- Church of the East: entire prior build deleted, rebuild started
+
+Josh asked to evaluate the Church of the East's office content -- architect it in advance, find
+reliable sources first, per his standing preference for researching before building. Found the same
+fabrication pattern as prior traditions: zero source citations anywhere in the 76-component build,
+and confirmed directly (not assumed) that the psalm assignments were mechanically invented -- the
+deleted `marmithaMap` gave Monday's First Marmitha as Psalms 4,5,6 (a generic "sequential blocks of
+3" pattern); the real source's actual Monday First Marmitha is Psalms 11-14.
+
+**Primary source found and confirmed public domain:** A.J. Maclean, *East Syrian Daily Offices*
+(1894) -- archive.org's own copyright review states `NOT_IN_COPYRIGHT` (item
+`eastsyriandailyo00macluoft`). A complete scholarly translation of the ferial and festival daily
+offices. Structural finding worth remembering: per Maclean's own Introduction (citing the Church of
+the East's Book of Canon Law), the normal daily cycle is FOUR offices -- Evening, Compline, Night,
+Morning -- not seven; the minor hours are monastic-only and appear in Maclean only as fragmentary
+"relics" during the Great Fast. The deleted build's "seven hours in both Cathedral and Monastic
+modes" framing has no basis in this source.
+
+**Deleted, per Josh's explicit direction** (same full-replacement precedent as Coptic Agpeya /
+Ethiopian Sa'atat): `components/east-syriac.json` and `components/traditions/east-syriac/rubrics.json`
+in their entirety.
+
+**Rebuilt, Phase 1: Monday (Qdham/"before" week) Ramsha, complete.** 33 new components, every one
+cited to a specific Maclean page range, covering the REAL ~30-element ferial Evening Service
+structure (Maclean's actual structure, not the deleted build's ~10-item skeleton) -- both Marmithas,
+the Lakhumara, both Shuraya/Anthem pairs with real unique poetry transcribed verbatim, the full
+Karuzutha litany (previously entirely absent), Monday's Martyrs' Anthem (~30 verses, previously
+absent), the concluding-prayer pool, and the Nicene Creed in its actual East Syriac form. Rewrote
+`renderEastSyriac()` entirely to look up an exact `{day}-{office}-{cycle}-sequence` key; anything not
+yet built says so plainly instead of falling back to placeholder content, and it honours whatever
+hour is actually selected rather than silently substituting Ramsha.
+
+**Verified end-to-end with real Playwright browser automation:** loaded the live app, forced a
+confirmed Monday/Qdham date, selected Ramsha, confirmed all 33 components render in order with every
+psalm citation correctly resolved to real text from this app's own Bible corpus -- 36,726 characters
+of correct output, zero console/page errors.
+
+**Known gap, flagged not silently resolved:** `index.html`'s Cathedral/Monastic toggle is now a dead
+control (new renderer doesn't read it) -- needs Josh's input on whether/how to rebuild that axis,
+since Maclean's book doesn't actually describe two parallel Cathedral/Monastic forms the way the
+deleted build assumed. Dashboard's `COE` section rewritten to reflect real current status.
+
+**Scope ahead:** this rebuild will span many sessions -- Maclean is 380 pages (vs. O'Leary's ~190 for
+Coptic), and the Qdham/Wathar week-cycle multiplication alone means 14 distinct Evening Service
+variations before Night, Morning, and Compline are even started. Full remaining scope tracked in the
+`_rebuild_todo` block inside the new rubrics.json and on the dashboard. `SEED_VERSION` bumped to
+`v149-2026-08-19-east-syriac-rebuild-phase1`.
+
+---
+
 ## Session 2026-08-19 continued -- Overcorrected the shift fix, then broke mobile fixing that; both resolved
 
 Josh confirmed the shift-on-toggle was gone but the open sidebar now covered the content's left

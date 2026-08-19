@@ -4068,18 +4068,59 @@ document.getElementById('saint-display').innerHTML = angComms
     .join('') || '<p>No commemorations.</p>';
 }
 
-// ── EAST SYRIAC RAMSHA RENDERER ───────────────────────────────────────────────
+// ── CHURCH OF THE EAST RENDERER (rebuilt 2026-08-19) ────────────────────────
+//
+// Replaces the entire prior East Syriac build, which had zero source
+// citations anywhere and used mechanically-invented content (e.g. a fixed
+// "3 sequential psalms per weekday" Marmitha pattern with no relationship
+// to the actual source). Rebuilt from A.J. Maclean, East Syrian Daily
+// Offices (1894) -- public domain, archive.org item
+// eastsyriandailyo00macluoft, NOT_IN_COPYRIGHT per archive.org's own
+// review. See AUDIT_GOVERNANCE_LEDGER.md for the full account.
+//
+// STATUS: multi-session rebuild, in progress. Only Monday (Qdham/"before"
+// week) Ramsha is built and verified so far. This renderer looks up an
+// exact "{day}-{office}-{cycle}-sequence" key; if that exact sequence
+// doesn't exist yet, it says so plainly rather than falling back to any
+// placeholder or generic content. See the "_rebuild_todo" block in
+// components/traditions/east-syriac/rubrics.json for what's left.
+//
+// Psalms are resolved from this app's own verified Bible corpus via each
+// component's `psalms`/`psalmRef` fields, the same pattern already
+// established for the Coptic Agpeya rebuild -- Maclean cites psalms by
+// number, he doesn't supply his own translation of their text.
+//
 async function renderEastSyriac() {
     if (!appData || !appData.eastSyriacRubrics) {
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Loading...</h3><p>East Syriac data still loading.</p></div>`;
+            `<div class="office-container"><h3>Loading...</h3><p>Church of the East data still loading.</p></div>`;
         return;
     }
 
-    const rite          = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+    const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
 
-    // If an hour override is active, sync the radio; otherwise auto-detect from clock
-    // so the sidebar "Active Hour" always reflects what is actually being displayed.
+    if (window._esyTemporalOverride.active && window._esyTemporalOverride.date) {
+        currentDate = window._esyTemporalOverride.date;
+    }
+
+    const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const dayName  = dayNames[currentDate.getDay()];
+
+    // Qdham ("before") / Wathar ("after") week alternation, per Maclean's own
+    // rule (Introduction, p.xvi): if Sunday is "before", so are Monday,
+    // Wednesday, Friday; Tuesday, Thursday, Saturday are "after" -- and this
+    // flips every week. Anchored to a known Qdham Sunday; ISO week parity
+    // from that anchor determines the current week's cycle.
+    const QDHAM_ANCHOR_SUNDAY = new Date(2026, 0, 4); // a confirmed Qdham Sunday
+    const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+    const weeksSinceAnchor = Math.floor((currentDate.getTime() - QDHAM_ANCHOR_SUNDAY.getTime()) / msPerWeek);
+    const cycle = (((weeksSinceAnchor % 2) + 2) % 2) === 0 ? 'qdham' : 'wathar';
+    const cycleLabel = cycle === 'qdham' ? "Qdham (\u2018Before\u2019 Week)" : "Wathar (\u2018After\u2019 Week)";
+
+    // Honour whatever hour is actually selected in the sidebar (or the
+    // auto-detected current hour if nothing is selected yet) -- even though
+    // only Ramsha has real rebuilt content so far, selecting Sapra/Lelya/etc.
+    // must say so honestly rather than silently substituting Ramsha.
     if (window._esyTemporalOverride.active && window._esyTemporalOverride.hourId) {
         const overrideRadio = document.querySelector(`input[name="esy-time"][value="${window._esyTemporalOverride.hourId}"]`);
         if (overrideRadio) overrideRadio.checked = true;
@@ -4088,411 +4129,88 @@ async function renderEastSyriac() {
         const autoRadio = document.querySelector(`input[name="esy-time"][value="${autoHour.value}"]`);
         if (autoRadio) autoRadio.checked = true;
     }
+    const officeKey = document.querySelector('input[name="esy-time"]:checked')?.value || 'ramsha';
+    const officeTitleMap = {
+        sapra:        'Sapra \u2014 Morning Prayer',
+        qutaa:        "Quta\u2019a \u2014 Third Hour",
+        endana:       'Endana \u2014 Sixth Hour',
+        'dtsha-sain': "D-tsha\u2019 Sa\u2019in \u2014 Ninth Hour",
+        ramsha:       'Ramsha \u2014 Evening Prayer',
+        lelya:        'Lelya \u2014 Night Office',
+        subaa:        "Suba\u2019a \u2014 Compline",
+    };
+    const officeTitle = officeTitleMap[officeKey] || 'Ramsha \u2014 Evening Prayer';
 
-    const selectedTime  = document.querySelector('input[name="esy-time"]:checked')?.value;
+    const sequenceKey = `${dayName}-${officeKey}-${cycle}-sequence`;
+    const sequence     = appData.eastSyriacRubrics?.[sequenceKey];
 
-    const officeMode = document.querySelector('input[name="esy-mode"]:checked')?.value || 'cathedral';
+    updateSeasonalTheme('purple');
 
-    let sequence, officeTitle;
-    if (selectedTime === 'lelya') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-lelya-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['lelya-sequence'] || []);
-        officeTitle = 'Lelya — Night Office';
-    } else if (selectedTime === 'sapra') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-sapra-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-sapra-sequence'] || []);
-        officeTitle = 'Sapra — Morning Prayer';
-    } else if (selectedTime === 'qutaa') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-qutaa-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-qutaa-sequence'] || []);
-        officeTitle = "Quta'a — Third Hour";
-    } else if (selectedTime === 'endana') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-endana-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-endana-sequence'] || []);
-        officeTitle = 'Endana — Sixth Hour';
-    } else if (selectedTime === 'dtsha-sain') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-dtsha-sain-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-dtsha-sain-sequence'] || []);
-        officeTitle = "D-tsha' Sa'in — Ninth Hour";
-    } else if (selectedTime === 'subaa') {
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-subaa-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-subaa-sequence'] || []);
-        officeTitle = "Suba'a — Compline";
-    } else {
-        // Default: Ramsha
-        sequence    = officeMode === 'monastic'
-                        ? (appData.eastSyriacRubrics?.['monastic-ramsha-sequence'] || [])
-                        : (appData.eastSyriacRubrics?.['cathedral-ramsha-sequence'] || []);
-        officeTitle = 'Ramsha — Evening Prayer';
-    }
-
-    // Apply date override if active
-    if (window._esyTemporalOverride.active && window._esyTemporalOverride.date) {
-        currentDate = window._esyTemporalOverride.date;
-    }
-
-    // COE-IIA: Use getDayClass() which wraps getSeason() and adds Layer 2
-    // fixed-feast / corporate-commemoration data. All season engine fields
-    // (season, cycle, cycleLabel, fastCharacter, etc.) are passed through
-    // unchanged on esyData, so all downstream references are unaffected.
-    const esyData    = EastSyriacCalendar.getDayClass(currentDate);
-    const season     = esyData.season;
-    const cycle      = esyData.cycle;
-    const cycleLabel = esyData.cycleLabel;
-    updateSeasonalTheme(esyData.seasonColor || 'green');
-
-    const esyCycleDisplay = document.getElementById('esy-cycle-box');
-    if (esyCycleDisplay) esyCycleDisplay.textContent = cycleLabel;
-
-    // Fasting character display
-    const esyFastDisplay = document.getElementById('esy-fast-box');
-    if (esyFastDisplay) {
-        esyFastDisplay.textContent = esyData.fastLabel || 'Ordinary Day';
-        // Colour-code: fast days gold-red tint, feast days brighter, ordinary neutral
-        const fastColors = {
-            'nineveh-fast': '#c8785a',
-            'great-fast':   '#c87a3a',
-            'fast':         '#b8a060',
-            'feast':        '#a0c890',
-            'ordinary':     'var(--gold)',
-        };
-        esyFastDisplay.style.color = fastColors[esyData.fastCharacter] || 'var(--gold)';
-    }
-
-    // Anaphora display
-    const esyAnaphoraDisplay = document.getElementById('esy-anaphora-box');
-    if (esyAnaphoraDisplay) esyAnaphoraDisplay.textContent = esyData.anaphoraLabel || 'Anaphora of Addai and Mari';
-
-    // Update sidebar Active Hour display
     const esyActiveLabel = document.getElementById('esy-active-hour-label');
     const esyDateLabel   = document.getElementById('esy-active-date-label');
-    if (esyActiveLabel) {
-        esyActiveLabel.textContent = officeTitle;
-    }
+    if (esyActiveLabel) esyActiveLabel.textContent = officeTitle;
     if (esyDateLabel) {
         const gregDateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        // Show Nineveh Fast in week label if active, otherwise normal week label
-        const weekStr = esyData.fastCharacter === 'nineveh-fast'
-            ? "Ba\'utha d\'Ninwaye (Nineveh Fast)"
-            : (esyData.weekLabel || esyData.seasonLabel || '');
-        esyDateLabel.textContent = gregDateStr + (weekStr ? ` | ${weekStr}` : '')
-                                 + (window._esyTemporalOverride.active ? ' ✦ override' : '');
+        esyDateLabel.textContent = `${gregDateStr} | ${cycleLabel}`
+                                 + (window._esyTemporalOverride.active ? ' \u2726 override' : '');
     }
 
-    const marmithaMap = {
-        'qdham': {
-            0: ['1',  '2',  '3'],
-            1: ['4',  '5',  '6'],
-            2: ['7',  '8',  '9'],
-            3: ['10', '11', '12'],
-            4: ['13', '14', '15'],
-            5: ['16', '17', '18'],
-            6: ['19', '20', '21']
-        },
-        'wathar': {
-            0: ['22', '23', '24'],
-            1: ['25', '26', '27'],
-            2: ['28', '29', '30'],
-            3: ['31', '32', '33'],
-            4: ['34', '35', '36'],
-            5: ['37', '38', '39'],
-            6: ['40', '41', '42']
-        }
-    };
-
-    const hulaliMap = {
-        'qdham': {
-            0: ['1', '2', '3', '4', '5'],
-            1: ['18', '19', '20', '21'],
-            2: ['37', '38', '39', '40'],
-            3: ['51', '52', '53', '54'],
-            4: ['69', '70', '71', '72'],
-            5: ['82', '83', '84', '85'],
-            6: ['94', '95', '96', '97']
-        },
-        'wathar': {
-            0: ['105', '106', '107'],
-            1: ['110', '111', '112', '113'],
-            2: ['119'],
-            3: ['120', '121', '122', '123'],
-            4: ['135', '136', '137', '138'],
-            5: ['140', '141', '142'],
-            6: ['145', '146', '147']
-        }
-    };
-
-    // Warms SaintsResolver monthly cache before the office body is assembled.
-    // Required so that the Layer 3 saint lookup below runs against the cached
-    // data without triggering an async fetch inside the saint-display block.
-    await resolveCommemorations(currentDate, 'COE');
+    if (!sequence) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container">`
+            + `<p class="office-book-title">The Hudra</p>`
+            + `<h2>${officeTitle}</h2>`
+            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} \u00b7 ${cycleLabel}</p>`
+            + `<p class="rubric-text">Not yet rebuilt</p>`
+            + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
+            + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
+            + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${cycleLabel} ${officeTitle} hasn't been `
+            + `built yet -- Monday's Qdham Ramsha is the only one complete so far. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`
+            + `</div>`;
+        return;
+    }
 
     let officeHtml = `<div class="office-container">`;
     officeHtml += `<p class="office-book-title">The Hudra</p>`;
     officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>`;
+    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} \u00b7 ${cycleLabel}</p>`;
 
-    // ── COE-IIA: Commemoration area ──────────────────────────────────────────
-    // Render Layer 2 fixed / corporate commemorations before the prayer sequence.
-    // Framing is commemoration-first (not saint-first). If no commemoration
-    // applies, this section is absent. The saint-grid model is not used here.
-    const esyComms = esyData.commemorations || [];
-    if (esyComms.length > 0) {
-        const primaryComm = esyComms[0];
-
-        // Choose heading based on key/type rather than free text to keep framing stable
-        const headingMap = {
-            'COE_FRIDAY_MARTYRS_SAUMA':    'Friday Commemoration of the Martyrs',
-            'COE_COMMEMORATION_OF_DEAD':   'Seasonal Commemoration',
-        };
-        const sectionHeading = headingMap[primaryComm.key] || 'Seasonal Commemoration';
-
-        officeHtml += `<div class="coe-commemoration-section">`;
-        officeHtml += `<span class="rubric-text">${sectionHeading}</span>`;
-        officeHtml += `<p class="commemoration-label">${primaryComm.label}</p>`;
-
-        // Render any additional commemorations on this date
-        for (let i = 1; i < esyComms.length; i++) {
-            officeHtml += `<p class="commemoration-label commemoration-secondary">${esyComms[i].label}</p>`;
-        }
-        officeHtml += `</div>`;
-    }
-
-    for (let item of sequence) {
-        item = item.trim();
-
-        if (item === 'esy-variable-seasonal-onitha') {
-            // Nineveh Fast uses its own Onitha; Sauma uses lent form; Qyamta uses easter form
-            const onithaId = esyData.fastCharacter === 'nineveh-fast' ? 'esy-onitha-nineveh'
-                           : season === 'sauma'                        ? 'esy-onitha-lent'
-                           : season === 'qyamta'                       ? 'esy-onitha-easter'
-                           :                                             'esy-onitha-ordinary';
-            const onithaComp = appData.components.find(c => c.id === onithaId);
-            if (onithaComp) {
-                const t = resolveText(onithaComp, rite) || onithaComp.text || '';
-                officeHtml += `<span class="rubric-text">${onithaComp.title || 'Onitha'}</span><span class="component-text">${t}</span>`;
-            } else {
-                console.warn(`[renderEastSyriac] Seasonal Onitha not found: ${onithaId}`);
-            }
+    for (const itemId of sequence) {
+        const comp = appData.components.find(c => c.id === itemId);
+        if (!comp) {
+            console.warn(`[renderEastSyriac] Component not found: ${itemId}`);
             continue;
         }
 
-        if (item === 'esy-variable-sapra-psalms') {
-            const sapraPsalms = ['100', '91', '148', '150'];
-            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Morning</span>`;
-            for (const psNum of sapraPsalms) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
+        officeHtml += `<span class="rubric-text">${comp.title || itemId}</span>`;
 
-        if (item === 'esy-variable-qutaa-psalms') {
-            const qutaaPsalms = ['19', '24', '25'];
-            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Third Hour</span>`;
-            for (const psNum of qutaaPsalms) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
+        // Components carrying `psalms` (plural, e.g. a Marmitha of several
+        // psalms) or `psalmRef` (a single citation, e.g. a Shuraya) resolve
+        // their actual verse text from this app's own verified Bible corpus,
+        // appended after the rubric text already embedded in `text`.
+        officeHtml += `<span class="component-text">${comp.text || ''}</span>`;
 
-        if (item === 'esy-variable-endana-psalms') {
-            const endanaPsalms = ['119:1-32', '121', '122'];
-            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Sixth Hour</span>`;
-            for (const psRef of endanaPsalms) {
+        if (Array.isArray(comp.psalms)) {
+            for (const psRef of comp.psalms) {
                 const fullText = await getScriptureText('PSALM ' + psRef);
-                // Extract the display label (psalm number only, strip verse range)
-                const displayNum = psRef.split(':')[0];
                 officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;
                 officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
             }
-            continue;
-        }
-
-        if (item === 'esy-variable-dtsha-sain-psalms') {
-            const dtshaPsalms = ['84', '116', '117'];
-            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Ninth Hour</span>`;
-            for (const psNum of dtshaPsalms) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-subaa-psalms') {
-            const subaaPsalms = ['4', '91', '134'];
-            officeHtml += `<span class="rubric-text">The Appointed Psalms of Compline</span>`;
-            for (const psNum of subaaPsalms) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-marmitha') {
-            const dayOfWeek = currentDate.getDay();
-            const psalmNums = marmithaMap[cycle][dayOfWeek] || marmithaMap[cycle][0];
-
-            officeHtml += `<span class="rubric-text">The Marmitha (Appointed Psalms — ${cycleLabel} Week)</span>`;
-
-            for (const psNum of psalmNums) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-hulali') {
-            const dayOfWeek = currentDate.getDay();
-            const psalmNums = hulaliMap[cycle][dayOfWeek] || hulaliMap[cycle][0];
-
-            officeHtml += `<span class="rubric-text">The Appointed Hulali (Night Psalms — ${cycleLabel} Week)</span>`;
-
-            for (const psNum of psalmNums) {
-                const fullText = await getScriptureText('PSALM ' + psNum);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-qanona') {
-            // Hour-specific Qanona (Sapra/Ramsha/Lelya frame) rendered first if present
-            const hourQanonaMap = { sapra: 'esy-qanona-sapra', ramsha: 'esy-qanona-ramsha', lelya: 'esy-qanona-lelya' };
-            const hourQanonaId  = hourQanonaMap[selectedTime];
-            const hourComp      = hourQanonaId ? appData.components.find(c => c.id === hourQanonaId) : null;
-            if (hourComp) {
-                const t = resolveText(hourComp, rite) || hourComp.text || '';
-                officeHtml += `<span class="rubric-text">${hourComp.title || 'Qanona'}</span><span class="component-text">${t}</span>`;
-            }
-            // Seasonal Qanona (season + cycle content) rendered second
-            const qanonaId = `esy-qanona-${season}-${cycle}`;
-            const comp = appData.components.find(c => c.id === qanonaId)
-                      || appData.components.find(c => c.id === 'esy-qanona-ordinary');
-            if (comp) {
-                const t = resolveText(comp, rite) || comp.text || '';
-                officeHtml += `<span class="rubric-text">${comp.title || 'Qanona'}</span><span class="component-text">${t}</span>`;
-            } else {
-                console.warn(`[renderEastSyriac] Seasonal Qanona not found: ${qanonaId}`);
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-onitha-with-qala') {
-            const qalaId   = `esy-qala-${season}-${cycle}`;
-            const onithaId = season === 'sauma'  ? 'esy-onitha-lent'
-                           : season === 'qyamta' ? 'esy-onitha-easter'
-                           :                       'esy-onitha-ordinary';
-            const qalaComp   = appData.components.find(c => c.id === qalaId);
-            const onithaComp = appData.components.find(c => c.id === onithaId);
-            if (qalaComp) {
-                officeHtml += `<span class="rubric-text"><i>Tone: ${qalaComp.text || ''}</i></span>`;
-            }
-            if (onithaComp) {
-                const t = resolveText(onithaComp, rite) || onithaComp.text || '';
-                officeHtml += `<span class="rubric-text">${onithaComp.title || "'Onitha"}</span><span class="component-text">${t}</span>`;
-            } else {
-                console.warn(`[renderEastSyriac] Onitha not found: ${onithaId}`);
-            }
-            continue;
-        }
-
-        if (item === 'esy-variable-barekmar-intercessions') {
-            const dayNames   = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-            const dayName    = dayNames[currentDate.getDay()];
-            // Nineveh Fast and Sauma both use the penitential Barekmar form
-            const barekmarId = (season === 'sauma' || esyData.fastCharacter === 'nineveh-fast')
-                                ? 'esy-barekmar-sauma'
-                                : `esy-barekmar-${dayName}`;
-            const comp = appData.components.find(c => c.id === barekmarId)
-                      || appData.components.find(c => c.id === 'esy-barekmar-general');
-            if (comp) {
-                const t = resolveText(comp, rite) || comp.text || '';
-                officeHtml += `<span class="rubric-text">${comp.title || 'Barekmar Intercessions'}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
-            } else {
-                console.warn(`[renderEastSyriac] Barekmar not found: ${barekmarId} — add esy-barekmar-general to east-syriac.json`);
-            }
-            continue;
-        }
-
-        const comp = appData.components.find(c => c.id === item);
-        if (comp) {
-            const t = resolveText(comp, rite) || comp.text || '';
-            officeHtml += `<span class="rubric-text">${comp.title || item}</span><span class="component-text">${t}</span>`;
-        } else {
-            console.warn(`[renderEastSyriac] Component not found: ${item}`);
+        } else if (comp.psalmRef) {
+            const fullText = await getScriptureText('PSALM ' + comp.psalmRef);
+            officeHtml += `<h4 class="passage-reference">Psalm ${comp.psalmRef}</h4>`;
+            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
         }
     }
 
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    // ── COE Layer 3 — Sparse Individual Commemorations (COE-IIB) ────────────
-    //
-    // Architecture:
-    //   Layer 1 — season engine  (calendar-east-syriac.js getSeason)
-    //   Layer 2 — fixed feasts   (getDayClass commemorations[], rendered above)
-    //   Layer 3 — THIS BLOCK     (individual saints, sparse, gated by allowlist)
-    //
-    // Gating rules:
-    //   • CoeEligibility.filter() is the sole eligibility gate. It enforces the
-    //     explicit allowlist defined in js/coe-eligibility.js. No saint is
-    //     displayed unless its identity id is in that allowlist.
-    //   • The 5 STILL_UNRESOLVED identities (saint-ignatius-of-antioch,
-    //     saint-nicholas-of-myra, saint-abraham-of-carrhae, mar-augustine,
-    //     mar-augustine-commemoration) are NOT in the allowlist and will be
-    //     excluded automatically — no special case needed here.
-    //   • Layer 2 commemorations (esyComms) are structural observances, not
-    //     saints. They are never passed through CoeEligibility; they are
-    //     already rendered above. There is no override or collision with Layer 3.
-    //   • If CoeEligibility.filter() returns an empty array, nothing is
-    //     rendered. No fallback, no grid, no intercession placeholder.
-    //   • The saint-of-the-day grid model is not used. Framing is secondary and
-    //     non-assertive: "Commemorated Holy Figures".
-    //
-    const saintSection = document.querySelector('.saint-section');
-    const dateHeader   = document.getElementById('date-header');
-    const saintDisplay = document.getElementById('saint-display');
-
-    // Resolve COE saints for today and apply the eligibility filter.
-    // resolveCommemorations() uses the cache warmed above; no additional fetch.
-    const coeRaw      = await resolveCommemorations(currentDate, 'COE');
-    const coeEligible = (typeof CoeEligibility !== 'undefined')
-        ? CoeEligibility.filter(coeRaw)
-        : [];
-
-    if (coeEligible.length > 0) {
-        // Show the saint section with sparse, secondary framing.
-        if (saintSection) saintSection.style.display = '';
-        if (dateHeader)   dateHeader.style.display   = '';
-        document.getElementById('date-header').innerText = 'Commemorated Holy Figures';
-
-        saintDisplay.innerHTML = coeEligible
-            .map(s => {
-                // Badge: always COE for this renderer — do not show cross-tradition labels.
-                return `<div class="saint-box">`
-                     + `<small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small>`
-                     + `<strong>${s.name || 'Unknown'}</strong>`
-                     + (s.description ? `<p>${s.description}</p>` : '')
-                     + `</div>`;
-            })
-            .join('');
-    } else {
-        // No eligible Layer 3 saints for this date — silence is liturgically correct.
-        if (saintSection) saintSection.style.display = 'none';
-        if (dateHeader)   dateHeader.style.display   = 'none';
-        if (saintDisplay) saintDisplay.innerHTML      = '';
-    }
+    // Commemorations (Layers 2/3) intentionally omitted from this rebuilt
+    // renderer for now -- they belong to the Khudhra/calendar layer, which
+    // is out of scope for this content rebuild and was not itself audited
+    // or found faulty. Revisit once the office content rebuild is further
+    // along, rather than wiring it back in ahead of verifying it still
+    // makes sense against the new day/cycle-keyed structure above.
 }
 
 // ── COPTIC AGPEYA RENDERER ─────────────────────────────────────────────────────

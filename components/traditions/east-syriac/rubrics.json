@@ -1,279 +1,52 @@
 {
-  "_comment": "Church of the East — Hudra Sequence Definitions. Sixteen sequences total: two legacy sequences (ramsha-sequence, sapra-sequence, preserved for backward compatibility), and fourteen active sequences covering all seven canonical hours in both Cathedral and Monastic modes. Dynamic tokens prefixed 'esy-variable-' are resolved at render time by renderEastSyriac() in office-ui.js. NOTE: Minor hours (Quta'a, Endana, D-tsha' Sa'in, Suba'a) in Monastic mode render only the seasonal Qanona (esy-qanona-{season}-{cycle}); no hour-specific frame Qanona is defined for minor hours, consistent with Hudra tradition where hour-frame Qanona are proper to the three major hours (Sapra, Ramsha, Lelya) only.",
-  "ramsha-sequence": [
+  "_comment": "Church of the East -- rebuilt from A.J. Maclean, East Syrian Daily Offices (London: Rivington, Percival & Co., 1894). Public domain: archive.org item eastsyriandailyo00macluoft, copyright status NOT_IN_COPYRIGHT per archive.org's own review. This REPLACES the entire prior East Syriac build (deleted 2026-08-19), which had zero source citations anywhere and used mechanically-invented psalm sequences (e.g. 'Monday = Psalms 4,5,6') with no relationship to Maclean's actual documented assignments (real Monday First Marmitha = Psalms 11-14). See AUDIT_GOVERNANCE_LEDGER.md for the full account. STATUS: Phase 1 of a multi-session rebuild. Monday (Qdham/'before' week) Ramsha (Evening Prayer) is complete and verified against source. All other days, cycles, and hours (Lelya, Sapra, Suba'a, and the Fast-season minor-hour 'relics' Maclean documents) remain to be built the same way, one day/service at a time. Per Maclean's own structural summary (Introduction, p.xii-xiii, citing the Sunhadus/Book of Canon Law): the normal daily cycle for the whole Church is FOUR services -- Evening, Compline, Night, Morning. The minor hours (Third/Sixth/Ninth) are ordered for monks only, and appear in Maclean's translation only as fragmentary 'relics' during the Great Fast, not as a routine daily observance in either Cathedral or Monastic use. The previous build's 'seven hours in both Cathedral and Monastic modes' framing does not match this primary source and needs to be reconciled -- not yet resolved, flagged here rather than silently carried forward.",
+
+  "monday-ramsha-qdham-sequence": [
     "esy-opening-formula",
-    "esy-gloria-patri",
     "esy-lords-prayer-farced",
     "esy-gloria-patri",
-    "esy-variable-marmitha",
-    "esy-variable-seasonal-onitha",
-    "esy-suraya",
+    "esy-evening-prayer-opening-collect",
+    "esy-monday-first-marmitha",
+    "esy-monday-second-marmitha",
+    "esy-lakhumara-prayer-before",
     "esy-laku-mara",
-    "esy-trisagion",
+    "esy-lakhumara-prayer-after",
+    "esy-monday-first-shuraya",
+    "esy-monday-first-anthem",
+    "esy-first-anthem-prayer",
+    "esy-evening-incense-psalms",
+    "esy-evening-incense-prayer",
+    "esy-monday-second-shuraya",
+    "esy-monday-second-anthem",
     "esy-karozutha",
-    "esy-concluding-blessing"
-  ],
-  "sapra-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-sapra-morning-hymn",
-    "esy-variable-sapra-psalms",
-    "esy-variable-seasonal-onitha",
+    "esy-karozutha-prayer",
     "esy-trisagion",
-    "esy-karozutha-morning",
-    "esy-concluding-blessing"
+    "esy-trisagion-prayer",
+    "esy-laying-on-of-hands-prayer",
+    "esy-monday-evening-anthem-invariable",
+    "esy-evening-anthem-prayer",
+    "esy-monday-letter-psalm",
+    "esy-letter-psalm-prayer",
+    "esy-monday-martyrs-anthem-evening",
+    "esy-martyrs-anthem-prayer",
+    "esy-prayer-for-help",
+    "esy-of-mary-prayer",
+    "esy-of-apostles-prayer",
+    "esy-of-our-father-prayer",
+    "esy-concluding-blessing",
+    "esy-nicene-creed"
   ],
-  "lelya-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-lelya-opening-prayer",
-    "esy-variable-hulali",
-    "esy-lelya-hymn",
-    "esy-trisagion",
-    "esy-karozutha",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-sapra-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-sapra-morning-hymn",
-    "esy-variable-sapra-psalms",
-    "esy-variable-seasonal-onitha",
-    "esy-trisagion",
-    "esy-karozutha-morning",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-ramsha-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-variable-marmitha",
-    "esy-variable-seasonal-onitha",
-    "esy-suraya",
-    "esy-laku-mara",
-    "esy-trisagion",
-    "esy-karozutha",
-    "esy-concluding-blessing"
-  ],
-  "monastic-sapra-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-sapra-morning-hymn",
-    "esy-variable-marmitha",
-    "esy-variable-qanona",
-    "esy-variable-onitha-with-qala",
-    "esy-laku-mara",
-    "esy-trisagion",
-    "esy-karozutha-morning",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "monastic-ramsha-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-variable-marmitha",
-    "esy-variable-qanona",
-    "esy-variable-onitha-with-qala",
-    "esy-suraya",
-    "esy-laku-mara",
-    "esy-trisagion",
-    "esy-karozutha",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "monastic-lelya-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-lelya-opening-prayer",
-    "esy-variable-hulali",
-    "esy-variable-qanona",
-    "esy-lelya-hymn",
-    "esy-variable-onitha-with-qala",
-    "esy-trisagion",
-    "esy-karozutha",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-qutaa-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-qutaa-hymn",
-    "esy-variable-qutaa-psalms",
-    "esy-variable-seasonal-onitha",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-concluding-blessing"
-  ],
-  "monastic-qutaa-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-qutaa-hymn",
-    "esy-variable-marmitha",
-    "esy-variable-qanona",
-    "esy-variable-onitha-with-qala",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-endana-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-endana-hymn",
-    "esy-variable-endana-psalms",
-    "esy-variable-seasonal-onitha",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-concluding-blessing"
-  ],
-  "monastic-endana-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-endana-hymn",
-    "esy-variable-marmitha",
-    "esy-variable-qanona",
-    "esy-variable-onitha-with-qala",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-dtsha-sain-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-dtsha-sain-hymn",
-    "esy-variable-dtsha-sain-psalms",
-    "esy-variable-seasonal-onitha",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-concluding-blessing"
-  ],
-  "monastic-dtsha-sain-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-dtsha-sain-hymn",
-    "esy-variable-marmitha",
-    "esy-variable-qanona",
-    "esy-variable-onitha-with-qala",
-    "esy-trisagion",
-    "esy-karozutha-daytime",
-    "esy-variable-barekmar-intercessions",
-    "esy-lords-prayer-farced",
-    "esy-concluding-blessing"
-  ],
-  "cathedral-subaa-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-variable-subaa-psalms",
-    "esy-subaa-hymn",
-    "esy-trisagion",
-    "esy-subaa-examination",
-    "esy-subaa-nunc-dimittis",
-    "esy-subaa-blessing"
-  ],
-  "monastic-subaa-sequence": [
-    "esy-opening-formula",
-    "esy-gloria-patri",
-    "esy-lords-prayer-farced",
-    "esy-gloria-patri",
-    "esy-variable-subaa-psalms",
-    "esy-variable-qanona",
-    "esy-subaa-hymn",
-    "esy-variable-onitha-with-qala",
-    "esy-trisagion",
-    "esy-subaa-examination",
-    "esy-variable-barekmar-intercessions",
-    "esy-subaa-nunc-dimittis",
-    "esy-subaa-blessing"
-  ],
-  "_dynamic_token_registry": {
-    "esy-variable-marmitha": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Selects 3 psalms from marmithaMap[cycle][dayOfWeek]. Qdham weeks 1–7 cover Psalms 1–21; Wathar weeks 1–7 cover Psalms 22–42.",
-      "status": "implemented",
-      "note": "The static placeholder component esy-variable-marmitha has been removed from east-syriac.json. This token is resolved entirely at render time by the marmithaMap in renderEastSyriac() and never falls through to the generic component lookup."
-    },
-    "esy-variable-hulali": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Selects psalms from hulaliMap[cycle][dayOfWeek]. Night office psalmody covering the full Psalter across the two-week cycle.",
-      "status": "implemented"
-    },
-    "esy-variable-sapra-psalms": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Fixed morning selection: Psalms 100, 91, 148, 150. Does not rotate.",
-      "status": "implemented"
-    },
-    "esy-variable-seasonal-onitha": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Selects from esy-onitha-lent (sauma), esy-onitha-easter (qyamta), or esy-onitha-ordinary. Season name from EastSyriacCalendar.getSeason().",
-      "status": "implemented"
-    },
-    "esy-variable-qanona": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "The Qanona is a metrical office hymn that rotates by season and by the Qdham/Wathar cycle. Component IDs follow the pattern esy-qanona-{season}-{cycle}, e.g. esy-qanona-subara-qdham, esy-qanona-qyamta-wathar. Fallback: esy-qanona-ordinary.",
-      "status": "implemented"
-    },
-    "esy-variable-onitha-with-qala": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Extended Onitha rendering used in monastic sequences. Unlike esy-variable-seasonal-onitha (which picks a single seasonal text), this token renders the Onitha together with its appointed Qala (tone/mode indicator). Component IDs: esy-onitha-{season} for text, esy-qala-{season}-{cycle} for tone. The Qala is displayed as a rubric before the Onitha text.",
-      "status": "implemented"
-    },
-    "esy-variable-barekmar-intercessions": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "The Barekmar ('Bless, O Lord') is a series of intercessory dyptichs...",
-      "status": "implemented"
-    },
-    "esy-variable-qutaa-psalms": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Fixed Third Hour selection: Psalms 19, 24, 25. Does not rotate.",
-      "status": "implemented"
-    },
-    "esy-variable-endana-psalms": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Fixed Sixth Hour selection: Psalms 119:1-32, 121, 122. Does not rotate.",
-      "status": "implemented"
-    },
-    "esy-variable-dtsha-sain-psalms": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Fixed Ninth Hour selection: Psalms 84, 116, 117. Does not rotate.",
-      "status": "implemented"
-    },
-    "esy-variable-subaa-psalms": {
-      "handled_by": "renderEastSyriac()",
-      "resolution": "Fixed Compline selection: Psalms 4, 91, 134. Does not rotate.",
-      "status": "implemented"
-    }
+
+  "_rebuild_todo": {
+    "note": "Tracking list for continuing this rebuild in future sessions -- not consumed by the app, reference only.",
+    "remaining_ferial_evening": "Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday -- each in both Qdham ('before') and Wathar ('after') forms per Maclean's own alternation rule (Introduction, p.xvi: if Sunday is 'before', so are Monday, Wednesday, Friday; Tuesday, Thursday, Saturday are 'after', and vice versa). Maclean gives Tuesday and Wednesday's variations from Monday already partially transcribed in this session's research; remaining days start at approximately Maclean p.29 onward.",
+    "festival_evening": "Maclean p.68 onward -- distinct from ferial, used Sundays/feasts/memorials.",
+    "night_service_lelya": "Maclean p.85 onward (ferial), p.151 onward (festival).",
+    "morning_service_sapra": "Maclean p.103 onward (ferial), p.165 onward (festival).",
+    "compline_subaa": "Maclean p.185 onward -- Maclean notes Compline is 'now almost obsolete, except on certain days of the year, when it is usually joined on to the Evening Service' (Introduction, p.xii-xiii). Worth confirming with Josh whether to build this as a standalone office or documented as a rare joined-on addition, matching what the source actually says about its use.",
+    "minor_hours": "Maclean documents these only as 'relics of Terce and Sext in the Fast' (p.219, 224, 'Prayer at noon') -- NOT a routine daily set of texts. The current app's cathedral/monastic Third/Sixth/Ninth Hour sequences (all deleted this session) had no basis in Maclean at all. Needs a decision from Josh: keep minor hours out of scope entirely (matching how Maclean scopes them), or find a separate source for full monastic minor-hour texts if that's wanted (Maclean's own stated scope excludes the full Khudhra/Geza/Kashkul, which is where any fuller monastic-hour material would live).",
+    "cathedral_vs_monastic": "Maclean's book does not describe two parallel 'Cathedral' and 'Monastic' forms of each hour the way the deleted build assumed -- it describes ONE ferial form and, separately, festival/Sunday/memorial forms. Where the historical Cathedral/monastic distinction actually shows up in Church of the East practice (if at all, in the sources available) needs to be researched properly before rebuilding this axis, not assumed.",
+    "of_our_father_prayer": "Maclean's original names the reigning Catholicos and a patron saint explicitly (Mar Awa at the time of writing, 1894). Currently rendered generically pending a decision on how -- or whether -- to handle a living officeholder's name, which the app has no existing mechanism for keeping current.",
+    "seasonal_material": "Anything proper to the Khudhra/Geza/Kashkul (the three large cyclical books covering seasons and specific holy days) is explicitly OUTSIDE Maclean's stated scope (Introduction, p.xi) and will need a separate source if wanted -- flagged as a gap, not guessed at."
   }
 }

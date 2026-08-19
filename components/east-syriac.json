@@ -2,385 +2,315 @@
   {
     "id": "esy-opening-formula",
     "title": "The Opening",
-    "text": "<p class=\"rubric-text\">The Priest begins:</p><p class=\"component-text\">In the name of the Father, and of the Son, and of the Holy Spirit for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+    "meta": {
+      "source": "Maclean, A.J., East Syrian Daily Offices (London: Rivington, Percival & Co., 1894), p.1.",
+      "note": "First Monday, the template all ferial evening services follow. Verified verbatim against archive.org item eastsyriandailyo00macluoft (public domain, NOT_IN_COPYRIGHT per archive.org's own copyright review)."
+    },
+    "text": "<p class=\"rubric-text\">Priest.</p><p class=\"component-text\">Glory be to God in the highest, thrice. And on earth peace and a good hope to men, at all times and for ever. Amen.</p><p class=\"rubric-text\">They answer, Bless, O my Lord.</p><p class=\"rubric-text\">They give the kiss of peace.</p>"
+  },
+  {
+    "id": "esy-lords-prayer-farced",
+    "title": "The Lord's Prayer (farced with the Qanona)",
+    "meta": {
+      "source": "Maclean 1894, p.1-2.",
+      "note": "\"Farced\" = interpolated with the refrain \"Holy, holy, holy art thou, Our Father which art in heaven...\" after the opening line, then said through in full a second time. This exact farced form (opening line + refrain, then the whole prayer) recurs at every ferial service (Evening, Night, Morning) per Maclean's structural summary in the Introduction, p.xiii."
+    },
+    "text": "<p class=\"component-text\">Our Father which art in heaven, Hallowed be thy Name. Thy kingdom come.<br><em>Holy, holy, holy art thou. Our Father which art in heaven. Heaven and earth are full of the greatness of thy glory. The watchful ones and men cry to thee. Holy, holy, holy art thou.</em><br>Our Father which art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done in earth, As it is in heaven. Give us this day the bread of our need. And forgive us our debts. As we forgive our debtors. And lead us not into temptation. But deliver us from the Evil one. For thine is the kingdom, and the power, and the glory, for ever and ever. Amen.</p>"
   },
   {
     "id": "esy-gloria-patri",
     "title": "Glory be to the Father",
-    "text": "<p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Spirit;<br>From everlasting to everlasting. Amen and Amen.</p>"
+    "meta": {
+      "source": "Maclean 1894, p.2.",
+      "note": "Follows the farced Lord's Prayer, then the farced opening line and refrain repeat once more before the Evening Prayer proper begins."
+    },
+    "text": "<p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. From everlasting to everlasting. Amen.</p><p class=\"component-text\"><em>Our Father which art in heaven. Hallowed be thy Name. Thy kingdom come. Holy, holy, holy art thou. Our Father which art in heaven. Heaven and earth are full of the greatness of thy glory. The watchful ones and men cry to thee. Holy, holy, holy art thou.</em></p>"
   },
   {
-    "id": "esy-lords-prayer-farced",
-    "title": "The Lord's Prayer (with Qanona)",
-    "text": "<p class=\"rubric-text\">The Lord's Prayer is said, farced with the Qanona (the refrain):</p><p class=\"component-text\">Our Father in heaven, hallowed be your name. Your kingdom come.<br><em>Holy, holy, holy are you, our Father in heaven. Heaven and earth are full of the greatness of your glory. Angels and men cry out to you: Holy, holy, holy are you.</em><br>Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done on earth as in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from the evil one. For yours is the kingdom, and the power, and the glory, for ever and ever. Amen.</p>"
+    "id": "esy-evening-prayer-opening-collect",
+    "title": "The Evening Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.2.",
+      "note": "Deacon's bidding + the fixed opening collect of the ferial Evening Service."
+    },
+    "text": "<p class=\"rubric-text\">Deacon. Let us pray. Peace be with us.</p><p class=\"component-text\">Evening prayer. Let us confess, O my Lord, thy Godhead, and worship thy Majesty, and lift up perpetual praise without ceasing to thy glorious Trinity, at all times. Lord of all, Father, Son, and Holy Ghost, for ever.</p><p class=\"rubric-text\">They answer, Amen.</p>"
+  },
+  {
+    "id": "esy-monday-first-marmitha",
+    "title": "First Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.2.",
+      "cycle": "qdham",
+      "day": "monday"
+    },
+    "text": "<p class=\"rubric-text\">First Marmitha. Psalms 11, 12, 13, 14. After the first clause of the first psalm of each Marmitha say, Hallelujah, Hallelujah, yea Hallelujah, and repeat the first clause. After each Marmitha, Glory be to the Father, and to the Son, and to the Holy Ghost. From everlasting to everlasting. Amen.</p>",
+    "psalms": ["11", "12", "13", "14"]
+  },
+  {
+    "id": "esy-monday-second-marmitha",
+    "title": "Second Marmitha",
+    "meta": {
+      "source": "Maclean 1894, p.2.",
+      "cycle": "qdham",
+      "day": "monday",
+      "note": "Second Marmitha is ferias only (not said on Sundays/feasts). Ends with Gloria, then either 'Hallelujah, Glory to thee, O God, thrice. O Lord, have mercy upon us' or the shorter 'Hallelujah, Hallelujah, yea Hallelujah' form -- both given by Maclean as alternatives (U. vs R.C. editions)."
+    },
+    "text": "<p class=\"rubric-text\">Second Marmitha. Psalms 15, 16, 17. Gloria. Then, Hallelujah, Glory to thee, O God, thrice. O Lord, have mercy upon us.</p><p class=\"rubric-text\">Deacon. Peace be with us.</p>",
+    "psalms": ["15", "16", "17"]
+  },
+  {
+    "id": "esy-lakhumara-prayer-before",
+    "title": "Prayer of the Lakhumara",
+    "meta": {
+      "source": "Maclean 1894, p.3."
+    },
+    "text": "<p class=\"component-text\">For all thy helps and graces (given) to us, which cannot be repaid, let us confess and glorify thee without ceasing in thy crowned Church, which is full of all helps and all blessings. For thou art the Lord, and Creator of all. Father, Son, and Holy Ghost, for ever. Amen.</p>"
   },
   {
     "id": "esy-laku-mara",
-    "title": "Laku Mara (To You, Lord)",
-    "text": "<p class=\"rubric-text\">The Laku Mara, the Hymn of the Resurrection, is chanted:</p><p class=\"component-text\">To you, Lord of all, we give thanks;<br>And you, Jesus Christ, we glorify;<br>For you are the restorer of our bodies,<br>And you are the savior of our souls.</p>"
+    "title": "The Lakhumara",
+    "meta": {
+      "source": "Maclean 1894, p.3.",
+      "note": "Said by all. In a private house, the verse 'I was glad...' is replaced with 'In every place art thou, O God. Receive our petition' per the Urmi edition."
+    },
+    "text": "<p class=\"rubric-text\">They all say the Lakhumara.</p><p class=\"component-text\">Thee, Lord of all, we confess. And thee, Jesus Christ, we glorify. For thou art the Quickener of our bodies. And thou art the Saviour of our souls. <em>I was glad when they said unto me, We go into the house of the Lord.</em> Thee, Lord of all, etc. Glory be, etc. From everlasting, etc. Thee, Lord of all, etc.</p><p class=\"rubric-text\">They say, Let us pray. Peace be with us.</p>"
   },
   {
-    "id": "esy-trisagion",
-    "title": "The Trisagion",
-    "text": "<p class=\"rubric-text\">The Trisagion is chanted three times:</p><p class=\"component-text\">Holy God,<br>Holy Mighty,<br>Holy Immortal,<br>Have mercy on us.</p>"
+    "id": "esy-lakhumara-prayer-after",
+    "title": "Prayer after the Lakhumara",
+    "meta": {
+      "source": "Maclean 1894, p.3."
+    },
+    "text": "<p class=\"component-text\">Thou, O my Lord, art in truth the Quickener of our bodies; And thou art the good Saviour of our souls, and the perpetual Keeper of our life. And thee we are bound to confess, worship, and glorify at all times. Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
   },
   {
-    "id": "esy-suraya",
-    "title": "The Suraya",
-    "text": "<p class=\"rubric-text\">The Suraya is chanted:</p><p class=\"component-text\">Your word is a lamp to my feet and a light to my path.<br>I have sworn an oath and confirmed it, to observe your righteous ordinances.<br>I am severely afflicted; give me life, O Lord, according to your word.</p>"
+    "id": "esy-monday-first-shuraya",
+    "title": "First Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.3.",
+      "cycle": "qdham",
+      "day": "monday",
+      "note": "The Shuraya (short psalm) begins and ends with the fixed opening/closing clause given here; the psalm portion between is the variable part."
+    },
+    "text": "<p class=\"rubric-text\">First Shuraya. Psalm 12:1-7.</p><p class=\"component-text\"><em>Save, Lord, for the godly are come to an end.</em> Hallelujah, Hallelujah, yea Hallelujah. Save, Lord, for the godly are come to an end. And the faithful, etc. Glory be, etc. From everlasting, etc. Hallelujah, Hallelujah, yea Hallelujah.</p>",
+    "psalmRef": "12:1-7"
+  },
+  {
+    "id": "esy-monday-first-anthem",
+    "title": "First Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.3-5.",
+      "cycle": "qdham",
+      "day": "monday",
+      "note": "\"To the tune Lo, he hath led me captive\" -- per Maclean's introduction, an asterisk in the original marks where the two choirs alternate; rendered here as paragraph breaks between verses. The tune names are traditional and were never written down (Maclean, Introduction, p.xviii)."
+    },
+    "text": "<p class=\"rubric-text\">First Anthem: to the tune \"Lo, he hath led me captive.\"</p><p class=\"component-text\"><em>Save, Lord, for the godly are come to an end.</em> Lo, the godly are come to an end, and the faithful is diminished, and the just is destroyed. And there is none good among men. With a double heart every man speaketh, and with dissembling lips. Each man with his neighbour. Of envy and guile and slander. Is our whole humanity full. Love, the chief of the commandments. Is rooted out from our thoughts. There is great fear lest we all be destroyed in thy anger. For thy justice is silent with us. And hath given place to thy lovingkindness. O our Lord, have pity on us.</p><p class=\"component-text\"><em>The Lord is faithful in his words.</em> Our Saviour gave the promise of life to those that desire his love. And made them rich in his knowledge. And filled them with the wisdom of his power. And taught them to pray at all times. Our Father which art in heaven, hallowed be thy Name. And thy kingdom come to us. And thy will be done on earth, as it is in heaven. Give us the bread of our need. And lead us not into temptation. But deliver us from the Evil one. For thine is the kingdom. And the power and the glory.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. O Mary, who didst bear the medicine of life to the children of Adam. In thy petition we will take refuge. And in the confident hope of the prayers of St. John. We will conquer the Evil one and his host. And by the prayer of the prophets, apostles, and martyrs. And fathers and teachers. And by the prayer of our holy father. And of the confessors, and of St. George. And the great power of the Cross. And the hallowing of the holy Church. We will beseech Christ to have mercy and compassion. Upon our souls.</p><p class=\"rubric-text\">They say, Let us pray. Peace be with us.</p>"
+  },
+  {
+    "id": "esy-first-anthem-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.5.",
+      "note": "Follows the First Anthem on every ferial day (fixed text, not day-variable)."
+    },
+    "text": "<p class=\"component-text\">Thy mercy, O our Lord and our God, and the care of thy good will towards us are we bound to confess, worship, and glorify at all times. Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
+  },
+  {
+    "id": "esy-evening-incense-psalms",
+    "title": "Psalms 141, 142, 119:105-113, 117",
+    "meta": {
+      "source": "Maclean 1894, p.5.",
+      "note": "Farced with 'Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer' after the first clause; the farcing is not repeated for every clause (R.C. edition omits two of the farced clauses per Maclean's note). Gloria said at the end of Psalm 117, followed by the opening farce line once more."
+    },
+    "text": "<p class=\"component-text\"><em>Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer.</em> Lord, I have called upon thee, answer thou me. Hearken to my words and receive. My prayer as the incense before thee, etc.</p><p class=\"rubric-text\">At the end of Psalm 117 say the Gloria. Then, Lord, I have called upon thee, answer thou me. Hearken to my words and receive my prayer.</p><p class=\"rubric-text\">They say, Let us pray. Peace be with us.</p>",
+    "psalms": ["141", "142", "119:105-113", "117"]
+  },
+  {
+    "id": "esy-evening-incense-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.5.",
+      "note": "Fixed text, follows the incense psalms on every ferial day."
+    },
+    "text": "<p class=\"component-text\">Hear, O our Lord and our God, the prayer of thy servants in thy compassion, and receive the petition of thy worshippers in thy mercy; and have compassion on our sinfulness in thy lovingkindness and mercies, O Physician of our bodies, and good Hope of our souls, Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
+  },
+  {
+    "id": "esy-monday-second-shuraya",
+    "title": "Second Shuraya",
+    "meta": {
+      "source": "Maclean 1894, p.5.",
+      "cycle": "qdham",
+      "day": "monday"
+    },
+    "text": "<p class=\"rubric-text\">Second Shuraya. Psalm 15:1-5.</p>",
+    "psalmRef": "15:1-5"
+  },
+  {
+    "id": "esy-monday-second-anthem",
+    "title": "Second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.5-6.",
+      "cycle": "qdham",
+      "day": "monday",
+      "note": "\"To the tune He knoweth the thoughts.\""
+    },
+    "text": "<p class=\"rubric-text\">Second Anthem: to the tune \"He knoweth the thoughts.\"</p><p class=\"component-text\">He that is before the worlds. O compassionate Father and merciful Son. And pitiful Spirit, the Sanctifier of the unclean. Sanctify our bodies and our souls, and have mercy upon us.</p><p class=\"component-text\">Holy and terrible is his Name. May the praises and singing of Hallelujahs of the heavenly hosts. And the petition of the Son on the right hand of the Father. Beseech for us of thy righteousness, and do thou have mercy upon us.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. O Mary, Mother of the King, the King of kings. Beseech Christ, who shone forth from thy bosom. That he may pity us in his lovingkindness, and make us worthy of his kingdom.</p><p class=\"component-text\">From everlasting to everlasting. O Christ our Saviour, by the prayer of thy saints. The prophets and apostles and martyrs, and all the just. Keep the company of thy worshippers from all harm.</p><p class=\"component-text\">Let all the people say Amen and Amen. Our holy father, be a guide to us. In good deeds which propitiate thy Lord. That by thy prayers we may be helped, and with thee have joy.</p>"
   },
   {
     "id": "esy-karozutha",
-    "title": "The Karozutha (Litany)",
-    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand well in sorrow and care and say: <em>Lord, have mercy.</em><br>Father of mercies and God of all comfort, we beseech you: <em>Lord, have mercy.</em><br>For the peace, harmony, and well-being of the whole world and of all churches, we beseech you: <em>Lord, have mercy.</em><br>For our country and for all countries, and for those who dwell in them in faith, we beseech you: <em>Lord, have mercy.</em></p>"
+    "title": "The Karuzutha",
+    "meta": {
+      "source": "Maclean 1894, p.6-10.",
+      "note": "The general litany, also used at the Liturgy and at Baptism (Maclean's note, p.6 fn.5). Fixed text for ferial use -- Maclean notes special suffrages are added on Sundays/feasts/memorials, not included here. Two parts: the deacon's first litany (short responses), then a second, fuller litany beginning 'Let us pray. Peace be with us.'"
+    },
+    "text": "<p class=\"rubric-text\">The deacon puts on stole and girdle, and standing just below the bema, says the Karuzutha.</p><p class=\"component-text\">Let us all stand up, as is right, in sorrow and care. Let us make request and say, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">The people answer, O our Lord, have mercy upon us.</p><p class=\"rubric-text\">He proceeds:</p><p class=\"component-text\">Father of mercies and God of all comfort, we make request. <em>Answer. O our Lord, have mercy upon us.</em> And so after each clause.<br>O our Saviour, who carest for us and suppliest all things, we, etc.<br>For the peace, safety, and security of all the world and all the Churches, we, etc.<br>For (this) our land and all lands, and those who live therein in faith, we, etc.<br>For a moderate climate and a rich year, the fruits and produce (of the earth), and the prosperity of all the world, we, etc.<br>For the welfare of our holy fathers, and all those who serve under them, we, etc.<br>O merciful God, who in mercy governest all, we, etc.<br>O thou who art rich in mercies, and overflowing with compassion, we, etc.<br>O thou who art by nature good, and the giver of all good things, we, etc.<br>O thou who art glorified in heaven, and worshipped on earth, we, etc.<br>O thou who by nature hast immortality, and dwellest in the excellent light, we, etc.<br>Save us all, O Christ our Lord, in thy lovingkindness; and increase in us thy peace and tranquillity, and have mercy upon us.</p><p class=\"rubric-text\">Another litany.</p><p class=\"component-text\">Let us pray. Peace be with us. Let us pray and make request of God the Lord of all. <em>They answer, Amen (so for every clause).</em> That he may hear the voice of our prayer, and receive our petition, and have mercy upon us.<br>And for the holy catholick Church here and in every place, let us pray, etc. That his peace and tranquillity may abide in it until the end of the world.<br>For our fathers the bishops, let us pray, etc. That they may stand at the head of their dioceses without blame or stain all the days of their life.<br>And especially for the welfare of our holy fathers, let us pray, etc. That he may keep and raise them at the head of all their dioceses; that they may feed, and serve, and make ready for the Lord, a perfect people zealous of good and beautiful works.<br>For presbyters and deacons who are in this service of the truth, let us pray, etc. That with a good heart and pure thoughts they may serve before him.<br>For all the discreet and holy congregation, children of the holy catholick Church, let us pray, etc. That they may accomplish their good and holy course, and receive from the Lord a good hope and promise in the land of life.<br>For the memorial of blessed St. Mary the holy Virgin, Mother of Christ our Saviour and Lifegiver, let us pray, etc. That the Holy Ghost who dwelt in her may sanctify us in his lovingkindness, and perfect his work in us, and seal in us his truth all the days of our life.<br>For the memorial of the prophets and apostles, martyrs and confessors, let us pray, etc. That by their prayers and sufferings he may give us with them a good hope and salvation, and make us worthy of their blessed memorial and their living and true promise in the kingdom of heaven.<br>For the memorial of our holy fathers and teachers of the truth, and all the holy, ancient, and true teachers, let us pray, etc. That by their prayers and petitions the pure truth of the doctrine of their religion and of their faith may be kept in all the holy catholick Church till the end of the world.<br>For the memorial of our fathers and brothers, faithful and true, who have departed and gone from this world in the true faith and orthodox religion, let us pray, etc. That he may loose and forgive their transgressions and offences, and make them worthy to have joy with the just and righteous who were approved by thy will.<br>For this country and its inhabitants, for this house and those who care for it, for this village and those that dwell in it, and especially for this congregation, let us pray, etc. That he may take away from us in his lovingkindness, the sword, captivity, robbery, earthquakes, hail, famine, pestilence, and all evil plagues which are against the body.<br>For those who err from this true faith and are held in the snares of Satan, let us pray, etc. That he may turn the hardness of their hearts and make them to know that God is one, the Father of truth, and his Son Jesus Christ our Lord.<br>For those who are grievously sick and tempted by evil spirits, let us pray, etc. That our Lord and our God may send to them his Angel of mercy and healing, to visit, cure, heal, help, and comfort them in the multitude of his lovingkindness and mercies.<br>For the poor and afflicted, orphans and widows, the harassed, troubled, and grieved in spirit in this world, let us pray, etc. That he may give them what they need in his lovingkindness, supply them in his mercy, comfort them in his compassion, and deliver them from him who despitefully useth them.</p><p class=\"component-text\">Pray and make request to God the Lord of all. That ye may be to him a kingdom, holy priests, and people. Cry to the mighty Lord God with all your heart and all your soul. For he is God the Father of compassion, merciful and pitiful, who willeth not that those whom he hath fashioned should perish, but repent and live before him. And especially must we pray to, confess, worship, glorify, honour, and exalt the one God, the adorable Father, Lord of all, who by his Christ gave a good hope and salvation to our souls, that he may fulfil in us his lovingkindness, mercies, and compassion until the end. <em>They answer, Amen.</em></p><p class=\"rubric-text\">He proceeds:</p><p class=\"component-text\">With request and beseeching we ask for the Angel of peace and mercy. <em>Answer. From thee, O Lord.</em><br>Night and day, throughout our life, we ask for continual peace for thy Church, and life without sin. <em>Answer. From thee, O Lord.</em><br>We ask continual love, which is the bond of perfectness, with the confirmation of the Holy Ghost. <em>Answer. From thee, O Lord.</em><br>We ask for forgiveness of sins, and those things which help our lives and please thy Godhead. <em>Answer. From thee, O Lord.</em><br>We ask the mercy and compassion of the Lord continually and at all times. <em>Answer. From thee, O Lord.</em></p><p class=\"component-text\">Let us commit our own souls, and one another's souls, to the Father, Son, and Holy Ghost.</p>"
+  },
+  {
+    "id": "esy-karozutha-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.10.",
+      "note": "Fixed text, closes the Karuzutha."
+    },
+    "text": "<p class=\"component-text\">To thee, O Lord, mighty God, we entrust our bodies and souls; and of thee, O our Lord and our God, we ask forgiveness of trespasses and sins. Give us this in thy lovingkindness and mercies, as thou art wont, at all times. Lord of all, Father, Son, and Holy Ghost, for ever. Amen.</p>"
+  },
+  {
+    "id": "esy-trisagion",
+    "title": "Holy God",
+    "meta": {
+      "source": "Maclean 1894, p.10.",
+      "note": "The Trisagion, farced with Gloria. Fixed text across all ferial services."
+    },
+    "text": "<p class=\"rubric-text\">Deacon. Lift up your voices and glorify the living God, all ye people.</p><p class=\"component-text\">They all say, Holy God, Holy Mighty, Holy Immortal, have mercy upon us. Glory be. Holy God. From everlasting. Holy God.</p><p class=\"rubric-text\">They add, Let us pray. Peace be with us.</p>"
+  },
+  {
+    "id": "esy-trisagion-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.10.",
+      "note": "Fixed text, follows the Trisagion."
+    },
+    "text": "<p class=\"component-text\">Holy and glorious, mighty and immortal, who dwellest in the saints, and whose will is pleased with them, we beseech thee, turn, O my Lord, and pity us, and have mercy upon us, as thou art wont, at all times. Lord of all, etc. Amen.</p><p class=\"rubric-text\">Deacon. Bless, O my Lord. Bow your heads for the laying on of hands and receive a blessing.</p><p class=\"rubric-text\">Priest. May Christ make thy service glorious in the kingdom of heaven.</p>"
+  },
+  {
+    "id": "esy-laying-on-of-hands-prayer",
+    "title": "Prayer (Laying on of Hands)",
+    "meta": {
+      "source": "Maclean 1894, p.11.",
+      "note": "Fixed text."
+    },
+    "text": "<p class=\"component-text\">May our souls be perfected in the one complete faith of thy glorious Trinity, and may we all in one union of love be worthy to raise to thee glory and honour, confession and worship, at all times, Lord of all, etc. Amen.</p>"
+  },
+  {
+    "id": "esy-monday-evening-anthem-invariable",
+    "title": "Evening Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.11.",
+      "note": "Maclean gives an 'invariable anthem' here (to the tune 'Blessed martyrs') as an alternative to the seasonal anthems proper to the Kashkul, which he states are outside this book's scope. Using the invariable form for this rebuild's ordinary-time default; seasonal Kashkul anthems remain a documented gap, same as Coptic's approach to out-of-scope material."
+    },
+    "text": "<p class=\"rubric-text\">Or this invariable anthem: to the tune \"Blessed martyrs.\"</p><p class=\"component-text\"><em>I waited patiently for the Lord.</em> The body of Christ and his precious blood. Are on the holy altar. In fear and love. Let us all approach to it. And with the angels chant to him. Holy, holy, holy. Lord God.</p><p class=\"component-text\"><em>The poor shall eat and be satisfied.</em> The body of Christ, etc., as above.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. Christ the refuge and true hope of the afflicted. Be, O my Lord, a wall to thy worshippers. And keep them from the Evil one. And heal and salve their pains. In the compassion of thy Godhead. O Merciful one and Forgiver of sins.</p>"
+  },
+  {
+    "id": "esy-evening-anthem-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.11.",
+      "note": "Fixed text, follows the Evening Anthem."
+    },
+    "text": "<p class=\"component-text\">Pity us, O thou Compassionate one, in thy lovingkindness, and turn to us, O thou who art full of mercies, and delay not to look on us and care for us, O my Lord. For in thee is our hope and confident trust at all seasons and times, Lord of all, etc. Amen.</p>"
+  },
+  {
+    "id": "esy-monday-letter-psalm",
+    "title": "Letter Psalm",
+    "meta": {
+      "source": "Maclean 1894, p.11.",
+      "cycle": "qdham",
+      "day": "monday",
+      "note": "Portion of Psalm 119, recited like the Shurayi."
+    },
+    "text": "<p class=\"rubric-text\">Letter Psalm, Psalm 119:1-17.</p>",
+    "psalmRef": "119:1-17"
+  },
+  {
+    "id": "esy-letter-psalm-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.11-12.",
+      "note": "Two alternative fixed prayers follow the Letter Psalm and Lord's Prayer (farced) -- Maclean gives both."
+    },
+    "text": "<p class=\"component-text\">May thy Name, O our holy Lord and God, be glorified, and thy Godhead worshipped, and thy Majesty honoured, and thy Greatness celebrated, and thy Being exalted. And may the eternal mercies of thy glorious Trinity protect thy people and the sheep of thy pasture at all times, Lord of all, etc. Amen. Bless, O my Lord.</p><p class=\"rubric-text\">Another.</p><p class=\"component-text\">In heaven and on earth, O my Lord, thy Godhead is blessed and thy Majesty worshipped. Holy and glorious, and glorified and high and exalted, is the adorable and glorious Name of thy glorious Trinity at all times, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-monday-martyrs-anthem-evening",
+    "title": "The Martyrs' Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.12-16.",
+      "day": "monday",
+      "note": "One for each morning and evening of the week (in practice, ferias only). Attributed in the Urmi edition to Mar Marutha, Bishop of Miaparqat. This is Monday's."
+    },
+    "text": "<p class=\"component-text\"><em>Glorify the Lord, O ye righteous.</em> Holy martyrs, pray for peace. That we may celebrate your festivals with joy.</p><p class=\"component-text\"><em>For praise becometh well the just.</em> The martyrs who longed to see Christ. Obtained wings through the sword and flew to heaven.</p><p class=\"component-text\"><em>Sing lustily with the voice.</em> The martyrs in their love say to Christ. For thee we die daily.</p><p class=\"component-text\"><em>Seek the Lord and be strong.</em> O ye martyrs, ask mercy for the world which taketh. True refuge in the strength of your bones.</p><p class=\"component-text\"><em>Who called upon the Lord, and he heard them.</em> Let us call on the martyrs and take refuge in them. That they may pray for us.</p><p class=\"component-text\"><em>As a city surrounded with a wall.</em> Ye fence in the breaches. Before the persecutors in the times of affliction.</p><p class=\"component-text\"><em>From this time forth for evermore.</em> May the prayers of the martyrs be a wall to us. And drive away from us the attacks of the crafty.</p><p class=\"component-text\"><em>Offer to Him the sacrifices of praise.</em> O ye martyrs who were sacrifices to the high priests. May your prayer be a wall to our souls.</p><p class=\"component-text\"><em>I will alway bless the Lord.</em> Blessed is your contest, O holy martyrs. For by the blood of your necks ye gained the kingdom.</p><p class=\"component-text\"><em>His praises shall ever be in my mouth.</em> Blessed is Christ, who strengthened his saints. Here on earth and above in heaven.</p><p class=\"component-text\"><em>They that love the Lord hate the thing which is evil.</em> Ye martyrs of the Son, that love the Only Begotten. Pray that there may be peace in creation.</p><p class=\"component-text\"><em>Look on him and trust in him.</em> The martyrs saw the Son crucified on the tree. And lowered their necks to the sword, and were crowned.</p><p class=\"component-text\"><em>Bow down thine ear, O Lord, and answer me.</em> The cross of our Lord was stained with blood. The martyrs saw it and lowered their necks.</p><p class=\"component-text\"><em>He divided the sea and let them go through.</em> The cross of Christ was a bridge to the martyrs. And the just passed over by it to the country where there is no fear.</p><p class=\"component-text\"><em>And more to be desired are they than gold, and than precious stones.</em> The martyrs are like pearls. For their images are fixed in the King's crown.</p><p class=\"component-text\"><em>The King's daughter stood in glory.</em> The faithful Church is a pearl. And the martyrs in it are propitiatory sacrifices.</p><p class=\"component-text\"><em>Within the ports of the daughter of Sion.</em> The martyrs saw a pearl in Sion. And ran and bought it with the blood of their necks.</p><p class=\"component-text\"><em>Fairer to look on than the children of men.</em> The rose in the gardens is beautiful to behold. But more (beautiful) were the martyrs when they were killed.</p><p class=\"component-text\"><em>How good and beautiful.</em> Precious stones and beryls. Are ye, O martyrs, in the crown of the Son of the King.</p><p class=\"component-text\"><em>Sing to the Lord with harps, and with the sound of singing.</em> I heard the voice of the martyrs singing praises. With the harps of David (going) round Paradise.</p><p class=\"component-text\"><em>His praise is in earth and in heaven.</em> Praise to that voice which said to the martyrs. Mingle your blood with my blood, and my life with your life.</p><p class=\"component-text\"><em>O hear ye this, all ye people.</em> The martyrs were ears of corn, and the kings reaped them. And the Lord placed them in the garner of his kingdom.</p><p class=\"component-text\"><em>He doubtless cometh with joy.</em> The holy martyrs and priests go out. To meet our Lord in the day of his coming.</p><p class=\"component-text\"><em>The Lord shall give strength unto his people.</em> May the strength which strengthened the martyr St. James. Be with us by night and by day. And your prayers be on all of us. Holy martyrs, ask mercy for us. That by your prayers we may receive forgiveness.</p><p class=\"component-text\"><em>And I spake of peace.</em> Peace to thee, Mar Pithiun, the chosen of Christ. Who didst bear all sufferings for the truth of thy Lord.</p><p class=\"component-text\">He reproved kings for their sakes. How fitting it is for the boy Cyriac. When for him (God) reproveth the unjust king.</p><p class=\"component-text\">And a joyful mother of children. The faithful Shmuni encourageth her sons. O my beloved sons, depart in peace.</p><p class=\"component-text\"><em>Beg of the Lord and pray before him.</em> Ask for us from thy Lord, O martyr George. Compassion and mercy, and forgiveness of trespasses.</p><p class=\"component-text\"><em>Kings of the earth and all peoples.</em> All races call blessed. The Virgin Mary, Mother of Christ.</p><p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Ghost. Peace be with you, holy martyrs. Sowers of peace in the four quarters (of the world).</p><p class=\"component-text\">From everlasting to everlasting. Thy memorial, O our father, is on the holy altar. With the just who conquered and the martyrs who were crowned.</p><p class=\"component-text\">Let all the people say Amen and Amen. By thee, O God, whose mercies are great. Let us be corrected, and not by men. Come, O my Lord, to help us and strengthen our weakness. For in thee is our hope by night and by day. O Christ, who neglectest not any who call on thee. In thy mercy reject not the request of them that worship thee. For on thee their eyes hang and on thee they look. That thou mayest forgive their trespasses and wipe out their sins. O our Lord, by thy right hand overthrow Satan. Who inebriateth without wine and causeth to slip without mud. With the Publican we ask mercy. Pity us and have mercy upon us. Thy Cross hath saved us, thy Cross doth save us. May thy Cross be a wall to our souls. May wars be brought to nought, and disputes laid to rest. And may thy peace rule in the four quarters (of the world). O our Lord, keep us, for we are as sheep. Among serpents who are worse than wolves. O our Lord, sow thy peace and tranquillity in the world. And take from us the rod of correction. O our Lord, bless and keep our congregation. And make thy peace and tranquillity to dwell in it. O our Lord, give peace in the four quarters (of the world). And bring to nought the persecutors who oppose (us). O our Lord, shut the mouth of the unjust. That they speak not evil against the sons of the Church.</p>"
+  },
+  {
+    "id": "esy-martyrs-anthem-prayer",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.16.",
+      "note": "Fixed text, follows the Martyrs' Anthem."
+    },
+    "text": "<p class=\"component-text\">We beseech thee, who dost make thy Church to grow, and crownest those who love thee, and makest thy athletes to triumph, and helpest thy saints in their glorious, holy, life-giving, and divine contests; turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc. Amen.</p><p class=\"rubric-text\">Another.</p><p class=\"component-text\">By the prayer of thy saints, O our Lord and our God, be reconciled to us. And by the request of thy true (disciples) make our sins to pass away and pardon that which is wanting in us; make our enemies peaceful, quicken our departed; and make us worthy of the excellent glory of thy kingdom, with the just and righteous who fulfil thy will in Jerusalem which is above. Lord of all, etc. Amen.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help",
+    "title": "Prayer for Help",
+    "meta": {
+      "source": "Maclean 1894, p.16-19.",
+      "note": "Each priest present says one of the sequence of 'help' prayers Maclean lists; if more than one priest, more than one is said, in order, up to the fixed 'Of Mary' prayer. This component gives the first (always said)."
+    },
+    "text": "<p class=\"component-text\">Make, O my Lord, the help of thy mercies, and the great aid of thy lovingkindness, and the hidden and glorious strength of thy glorious Trinity, and thy right hand full of mercies and compassion, to overshadow and be joined with the weakness of thy worshippers, from thy holy house which is full of all helps and all blessings, by the prayer of all the saints who propitiate thee, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-of-mary-prayer",
+    "title": "Of Mary",
+    "meta": {
+      "source": "Maclean 1894, p.19.",
+      "note": "Always said, per Maclean's note (p.19 fn.2: 'the following three prayers are always said')."
+    },
+    "text": "<p class=\"rubric-text\">Of Mary.</p><p class=\"component-text\">May the prayer, O my Lord, of the holy Virgin, and the request of the blessed Mother, and the beseeching and entreating of her who is full of grace, St. Mary the blessed, and the great power of the conquering cross and divine help, and the request of St. John the Baptist, be with us continually, at all seasons and times. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-of-apostles-prayer",
+    "title": "Of the Apostles",
+    "meta": {
+      "source": "Maclean 1894, p.19.",
+      "note": "Always said."
+    },
+    "text": "<p class=\"rubric-text\">Of the Apostles.</p><p class=\"component-text\">May the prayer, O my Lord, of the holy apostles, and the request of the true preachers, and the beseeching and entreating of the illustrious athletes, the proclaimers of righteousness, sowers of peace in creation, be with us continually, at all seasons and times, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-of-our-father-prayer",
+    "title": "Of Our Father",
+    "meta": {
+      "source": "Maclean 1894, p.19.",
+      "note": "Always said. Maclean's text names the Catholicos (Mar Awa at time of writing, 1894) and the patron saint by name; rendered generically here pending a decision on how to handle this in the app (living Catholicos changes; app has no mechanism yet for current officeholder names). Flagged as an open item, not silently resolved."
+    },
+    "text": "<p class=\"rubric-text\">Of our father.</p><p class=\"component-text\">May the prayer and request, and beseeching and entreating of our famous and holy father the Catholicos, and St. Stephen the firstborn of the martyrs, and of the giant of strength, St. George the illustrious martyr, and of all the martyrs and saints of our Lord, be with us continually, a high wall and strong house of refuge, to save, deliver, rescue, and guard our bodies and souls from the Evil one and his hosts, at all seasons and times. Lord of all, etc. Amen. Bless, O my Lord.</p>"
   },
   {
     "id": "esy-concluding-blessing",
-    "title": "The Concluding Blessing",
-    "text": "<p class=\"rubric-text\">The Priest blesses the congregation:</p><p class=\"component-text\">May God, the Lord of all, bless us. May He keep our days in peace, and establish our lives in His grace and mercy, now and always, and for ever and ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
-  },
-  {
-    "id": "esy-sapra-morning-hymn",
-    "title": "The Morning Hymn",
-    "text": "<p class=\"rubric-text\">The Morning Hymn is chanted:</p><p class=\"component-text\">Light has dawned for the righteous, and joy for the upright in heart.<br>Christ our hope has risen from the dead; He has delivered us from darkness and given us light.</p>"
-  },
-  {
-    "id": "esy-karozutha-morning",
-    "title": "The Karozutha (Morning Litany)",
-    "text": "<p class=\"rubric-text\">The Deacon intones the Morning Karozutha:</p><p class=\"component-text\">Let us all stand well in joy and gladness and say: <em>Lord, have mercy.</em><br>For the peace of the whole world and the preservation of the holy churches, we beseech you: <em>Lord, have mercy.</em><br>O Christ, who are the true light, shine in our hearts that we may walk in your truth: <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-onitha-ordinary",
-    "title": "The 'Onitha (Anthem)",
-    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Blessed is Christ, who has magnified His holy Church, and established her upon the rock of faith. By His grace, she sings praise to His name.</p>"
-  },
-  {
-    "id": "esy-onitha-lent",
-    "title": "The 'Onitha (Anthem for the Great Fast)",
-    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">O Lord, open the door of your mercy to our prayers, and accept our fasting and our tears. Forgive our debts, O good and merciful God.</p>"
-  },
-  {
-    "id": "esy-onitha-easter",
-    "title": "The 'Onitha (Anthem for the Resurrection)",
-    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Christ is risen from the dead! He has overthrown the power of death and raised all of creation with Him. Let the heavens and the earth rejoice!</p>"
-  },
-  {
-    "id": "esy-lelya-opening-prayer",
-    "title": "The Night Prayer",
-    "text": "<p class=\"rubric-text\">The Priest prays:</p><p class=\"component-text\">Strengthen us, O our Lord and God, that we may be vigilant before You in pure prayer during the night watches. May we sing Your praises with the heavenly hosts, now and always, and for ever and ever.</p>"
-  },
-  {
-    "id": "esy-lelya-hymn",
-    "title": "The Tishbohta (Hymn of Praise)",
-    "text": "<p class=\"rubric-text\">The Tishbohta is sung:</p><p class=\"component-text\">Blessed is the glorious honor of the Lord from His place.<br>From everlasting to everlasting, You alone are God.<br>Let all creation praise Your holy name.</p>"
-  },
-  {
-    "id": "esy-barekmar-general",
-    "title": "Barekmar Intercessions (General)",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. After each petition the Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who minister at Your holy altar. <em>Lord, have mercy.</em><br>Bless, O Lord, this holy congregation gathered here; keep us in the true faith and grant us growth in holiness. <em>Lord, have mercy.</em><br>Bless, O Lord, the sick and the suffering, the poor and the oppressed, and all who call upon Your name in their need. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who have fallen asleep in the hope of the resurrection; grant them rest in Your kingdom. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em><br>Cause Your mercy to rise upon us, O Lord, as the sun at its rising, and let not the darkness of sin overcome us. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-sunday",
-    "title": "Barekmar — Sunday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Lord's Day. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who serve at the altar of Your glory. <em>Lord, have mercy.</em><br>On this day of the Resurrection, we commemorate our holy father Mar Shimun Bar Sabbae and all the martyrs of the East, who sealed their witness with their blood. Grant them a glorious crown in Your kingdom. <em>Lord, have mercy.</em><br>Bless, O Lord, this assembly of Your people who have gathered on the first day of the week to break the bread of life and drink the cup of salvation. <em>Lord, have mercy.</em><br>Bless the children who are baptized into Your death and resurrection; let them grow in the knowledge and fear of Your name. <em>Lord, have mercy.</em><br>Remember, O Lord, all the faithful departed, from the righteous Adam until this day; grant them rest with the saints in the light of Your countenance. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy Church throughout all the earth, and for the union of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-monday",
-    "title": "Barekmar — Monday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the deacons and ministers of Your holy Church. <em>Lord, have mercy.</em><br>On this day we commemorate the holy angels and archangels, the cherubim and seraphim, and all the heavenly hosts who stand before Your throne and cry: Holy, holy, holy. Unite our voices with theirs as we offer this prayer. <em>Lord, have mercy.</em><br>Bless, O Lord, the rulers of the nations; incline their hearts toward justice, mercy, and the protection of the innocent. <em>Lord, have mercy.</em><br>Bless those who labor and are heavy-laden; refresh them with Your rest, and let their work be found pleasing before You. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who served You in this life; number them with Your saints in the land of the living. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-tuesday",
-    "title": "Barekmar — Tuesday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the orders of Your Church from the greatest to the least. <em>Lord, have mercy.</em><br>On this day we commemorate the holy prophets who foretold Your coming; their words were fire and their lives a flame that consumed them with love for Your name. Grant us a portion of their zeal. <em>Lord, have mercy.</em><br>Bless, O Lord, the monasteries and communities of prayer throughout the world; preserve them from all temptation and strengthen them in their vocation. <em>Lord, have mercy.</em><br>Bless the students and the scholars; open their minds to truth and let all learning lead them to the source of all wisdom. <em>Lord, have mercy.</em><br>Remember, O Lord, those who died without the comfort of the sacraments or the prayers of the faithful; have mercy on them, for You alone know the secrets of all hearts. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-wednesday",
-    "title": "Barekmar — Wednesday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the faithful people of the East who keep the ancient way. <em>Lord, have mercy.</em><br>On this day, the day of Your betrayal, O Lord, we remember the night in which You were handed over, and we give thanks that You gave Yourself willingly for our salvation. May we never betray You by our deeds or our silence. <em>Lord, have mercy.</em><br>Bless, O Lord, those who are persecuted for righteousness' sake; be their shield and their strong tower in the day of trial. <em>Lord, have mercy.</em><br>Bless the strangers and the exiles, those far from their homelands and their families; let them find a dwelling place in the house of Your love. <em>Lord, have mercy.</em><br>Remember, O Lord, those who have fallen asleep in foreign lands, far from the graves of their fathers; gather them from every corner of the earth on the day of resurrection. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-thursday",
-    "title": "Barekmar — Thursday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and the entire body of the holy Apostolic Church of the East. <em>Lord, have mercy.</em><br>On this day we commemorate the holy Apostles, and especially Mar Addai and Mar Mari who brought the Gospel to our fathers in the East; let their intercessions guard us and their example inflame us. <em>Lord, have mercy.</em><br>Bless, O Lord, those who preach the Gospel in distant places and among hostile peoples; let Your word go forth and not return empty. <em>Lord, have mercy.</em><br>Bless the families gathered in their homes this day; let every household be a little church, and let peace rule within its walls. <em>Lord, have mercy.</em><br>Remember, O Lord, the bishops and patriarchs who have fallen asleep in the faith, who guarded the deposit of true teaching; let them intercede for us before Your throne. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-friday",
-    "title": "Barekmar — Friday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Holy Cross. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who carry their cross daily in Your service. <em>Lord, have mercy.</em><br>On this day of the Holy Cross, we stand before You in penitence, knowing that our sins nailed You to the wood. By the wood of the Cross, O Lord, heal the wounds that sin has made in our souls. <em>Lord, have mercy.</em><br>Bless, O Lord, those who are suffering this day in body or in spirit; let the Cross of Christ be their consolation and their medicine. <em>Lord, have mercy.</em><br>Bless the prisoners and those unjustly condemned; free them from their chains as You freed the thief on the cross by a word of mercy. <em>Lord, have mercy.</em><br>Remember, O Lord, those who died on this day throughout the ages in the faith of the Cross; let the sign of the Son of Man be their glory at the last day. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-saturday",
-    "title": "Barekmar — Saturday",
-    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Departed. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the holy souls who await the resurrection in the peace of Your rest. <em>Lord, have mercy.</em><br>On this day of holy rest we commemorate all the faithful departed: the patriarchs and prophets, the apostles and martyrs, the confessors and virgins, and every soul who died in the hope of the resurrection. <em>Lord, have mercy.</em><br>Remember, O Lord, our fathers and mothers, our brothers and sisters, our friends and neighbors who have fallen asleep; grant them light, refreshment, and peace. <em>Lord, have mercy.</em><br>Remember those who died young, those who died in war, those who died in poverty, and all who had none to pray for them; let Your mercy be their portion. <em>Lord, have mercy.</em><br>Hasten, O Lord, the day of the resurrection, when all who sleep in the dust shall awaken and the whole creation shall be made new in Your glory. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-barekmar-sauma",
-    "title": "Barekmar — Season of the Great Fast (Sauma)",
-    "text": "<p class=\"rubric-text\">During the Great Fast, the Barekmar takes a penitential form. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all Your people who fast and pray in this holy season. <em>Lord, have mercy.</em><br>We have sinned against You, O Lord, in thought and word and deed, by what we have done and by what we have left undone; we turn to You now with fasting and prayer. <em>Lord, have mercy.</em><br>Do not remember, O Lord, the offenses of our youth or the trespasses of our ignorance; remember us according to Your steadfast love and for the sake of Your goodness. <em>Lord, have mercy.</em><br>Accept our fasting as an offering of the will, and our tears as the incense of a broken spirit; for You will not despise a humble and a contrite heart. <em>Lord, have mercy.</em><br>Bless, O Lord, those who journey through this fast in weakness of body; let Your grace be made perfect in their infirmity. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who kept this fast in hope of the Resurrection; grant them a portion in that joy which no fasting precedes and no sorrow follows. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-qanona-ordinary",
-    "title": "Qanona (Ordinary)",
-    "text": "<p class=\"rubric-text\">The Qanona, the office refrain, is chanted:</p><p class=\"component-text\">Glory to God in the highest,<br>and on earth peace, good will among all peoples.<br>We praise You, we bless You, we worship You,<br>we glorify You, we give thanks to You for Your great glory.<br>O Lord God, heavenly King,<br>God the Father Almighty;<br>O Lord, the only-begotten Son, Jesus Christ;<br>O Lord God, Lamb of God, Son of the Father,<br>who takes away the sin of the world, have mercy on us;<br>who takes away the sin of the world, receive our prayer;<br>who sits at the right hand of the Father, have mercy on us.<br>For You alone are holy, You alone are Lord,<br>You alone are most high, Jesus Christ,<br>with the Holy Spirit, in the glory of God the Father. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-sapra",
-    "title": "Qanona of the Morning (Sapra)",
-    "text": "<p class=\"rubric-text\">The Morning Qanona is chanted:</p><p class=\"component-text\">At the breaking of this day, O Lord,<br>let Your light arise upon us as the sun arises upon the earth.<br>Drive far from us the darkness of sin<br>and every counsel of the enemy.<br>As the morning stars sang together at the dawn of creation,<br>so let our lips offer You a worthy sacrifice of praise.<br>Worthy are You, O Lord, to receive glory and honor and blessing,<br>from the rising of the sun until its going down,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-ramsha",
-    "title": "Qanona of the Evening (Ramsha)",
-    "text": "<p class=\"rubric-text\">The Evening Qanona is chanted:</p><p class=\"component-text\">As the evening light fades, O Lord,<br>and the day draws toward its rest,<br>we offer You the incense of our evening prayer.<br>Let our prayer rise before You as incense,<br>the lifting up of our hands as an evening sacrifice.<br>Guard us through the hours of darkness<br>and let no evil approach our dwelling.<br>You who neither slumber nor sleep,<br>watch over Your servants this night<br>and bring us to the morning of the resurrection,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-lelya",
-    "title": "Qanona of the Night (Lelya)",
-    "text": "<p class=\"rubric-text\">The Night Qanona is chanted:</p><p class=\"component-text\">In the watches of the night, O Lord,<br>when all creation is still before You,<br>let our hearts keep vigil even as our bodies rest.<br>You who spoke to the prophets in the night,<br>speak also to Your servants.<br>You who called Samuel in the dark hours,<br>call us by name to arise and serve You.<br>Let this night be filled with Your holy presence,<br>and let the darkness itself proclaim Your glory,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-madrashe",
-    "title": "Madrashe (Didactic Hymn)",
-    "text": "<p class=\"rubric-text\">A Madrashe, a teaching hymn after the manner of Mar Ephrem, is chanted:</p><p class=\"component-text\">The treasury of Your mercies, O Lord,<br>is open and none can close it;<br>the gate of Your compassion stands wide,<br>and none shall be turned away who knocks in truth.<br>Mar Ephrem, the harp of the Spirit,<br>sang of Your mysteries in hymns of fire;<br>the loom of his tongue wove garments of praise<br>from the undying threads of Your word.<br>We are poor weavers, O Lord,<br>yet accept our offering;<br>for the silk of the worm is not despised<br>when it is laid before the altar of the King.<br><em>Refrain: Praise to You, O Lord, in the assembly of the just.</em></p>"
-  },
-  {
-    "id": "esy-teshbohta",
-    "title": "Teshbohta (Doxology)",
-    "text": "<p class=\"rubric-text\">The Teshbohta, the great doxology, is sung:</p><p class=\"component-text\">Glory to the Father who sent His Son into the world for our salvation.<br>Glory to the Son who came and redeemed us by His precious blood.<br>Glory to the Holy Spirit who descended at the Jordan and abides in His Church.<br>Glory to the Trinity undivided, one God, one Lord, one Holy Spirit,<br>whose kingdom shall have no end,<br>whose glory fills the heaven and the earth,<br>whose mercy endures from generation to generation.<br>To Him be glory and honor and dominion<br>from all mouths, from all tongues, from all creatures,<br>now and always, and unto ages of ages. Amen.<br><em>Holy, holy, holy, Lord God of hosts;<br>heaven and earth are full of the greatness of Your glory.<br>Hosanna in the highest.</em></p>"
-  },
-  {
-    "id": "esy-qanona-subara-qdham",
-    "title": "Qanona of Subara — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Annunciation season is chanted:</p><p class=\"component-text\">The voice of the angel has gone forth into all the earth,<br>and his word to the ends of the world:<br>Behold, the Virgin shall conceive and bear a Son,<br>and His name shall be called Emmanuel, God with us.<br>The heavens bowed down and the Word descended;<br>He who fills all things emptied Himself<br>and took up His dwelling in the womb of the Virgin.<br>Make us ready, O Lord, to receive You;<br>let our hearts be the manger where You find Your rest,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-subara-wathar",
-    "title": "Qanona of Subara — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Annunciation season is chanted:</p><p class=\"component-text\">She said: Behold the handmaid of the Lord;<br>let it be to me according to Your word.<br>And in that moment of her yes,<br>the eternal Word put on our mortality<br>as a man puts on a garment.<br>O mystery hidden from ages and generations,<br>revealed at last to us in the fullness of time:<br>that God should be born of a woman,<br>that the Maker of all things should be made,<br>that Life itself should enter the house of death to conquer it.<br>Glory to the Father who sent;<br>glory to the Son who came;<br>glory to the Spirit who overshadowed the Holy Virgin,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-denkha-qdham",
-    "title": "Qanona of Denkha — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Epiphany season is chanted:</p><p class=\"component-text\">The voice of the Father was heard above the waters:<br>This is My beloved Son, in whom I am well pleased.<br>The Spirit descended in the form of a dove<br>and rested upon Him whom the waters could not contain.<br>The Trinity was made manifest at the Jordan:<br>the Father speaking, the Son baptized, the Spirit descending.<br>Wash us, O Lord, in the waters of Your mercy;<br>let the voice that named You Son<br>name us also as children of the Most High,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-denkha-wathar",
-    "title": "Qanona of Denkha — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Epiphany season is chanted:</p><p class=\"component-text\">A star arose in the East and the Magi followed it;<br>they brought gold and frankincense and myrrh<br>to the One who is King, and God, and the sacrifice of our salvation.<br>Light has dawned upon those who sat in darkness;<br>the nations that did not know Your name<br>have come to bow before Your cradle.<br>You are the Denkha, the rising of the true Sun,<br>whose rays reach to the ends of the earth<br>and whose warmth no winter can extinguish.<br>Shine upon us who walk in the shadow of the world,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-sauma-qdham",
-    "title": "Qanona of Sauma — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Great Fast is chanted:</p><p class=\"component-text\">We have wandered far from Your house, O Father,<br>and spent our inheritance in the country of our passions.<br>We arise now and turn toward You,<br>not as sons worthy of Your table<br>but as servants who have remembered Your mercy.<br>Accept our fasting as the voice of our hunger for You;<br>accept our prayer as the cry of those who are lost<br>and have begun at last to find their way home.<br>Meet us while we are yet a great way off,<br>and let Your embrace be our absolution,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-sauma-wathar",
-    "title": "Qanona of Sauma — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Great Fast is chanted:</p><p class=\"component-text\">You fasted forty days in the wilderness, O Lord,<br>and overcame the one who overcame our first father.<br>Where Adam fell by food, You conquered by hunger;<br>where he grasped at divinity, You emptied Yourself of glory.<br>We fast in the shadow of Your fast;<br>our hunger is a sign of the hunger You bear for our salvation.<br>Let this season be for us a wilderness of meeting,<br>where we hear Your voice in the silence<br>and find in our poverty the riches of Your grace,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qyamta-qdham",
-    "title": "Qanona of Qyamta — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Resurrection is chanted:</p><p class=\"component-text\">The tomb is empty and death is despoiled;<br>He who descended into the house of the dead<br>has broken its gates and led captivity captive.<br>The seal is broken, the stone is rolled away,<br>and the angels sit where the body had lain<br>and say: He is not here; He is risen as He said.<br>O death, where is your victory?<br>O Sheol, where is your sting?<br>Christ is risen and you are abolished,<br>Christ is risen and the angels rejoice,<br>Christ is risen and life reigns everywhere,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qyamta-wathar",
-    "title": "Qanona of Qyamta — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Resurrection is chanted:</p><p class=\"component-text\">Mary came weeping to the tomb in the early morning<br>and found the gardener standing in the garden.<br>She did not know that the one who tended Eden<br>had come to tend the garden of the new creation.<br>He called her by her name, and she knew Him;<br>for the Shepherd calls His own sheep by name<br>and they hear His voice and follow.<br>We are those who have not seen and yet have believed;<br>blessed are we among the nations,<br>for the Risen One has breathed on us His Spirit<br>and made us witnesses of His resurrection,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-shlihe-qdham",
-    "title": "Qanona of Shlihe — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Apostles is chanted:</p><p class=\"component-text\">They were gathered in one place when the rushing wind came<br>and divided tongues of fire rested upon each of them.<br>They who had been fishermen became fishers of all peoples;<br>they who had hidden behind locked doors<br>went out into the streets and proclaimed what they had seen.<br>The Spirit whom the Father sent in the name of the Son<br>has not been withdrawn; He abides with His Church.<br>Pour out upon us, O Lord, that same Spirit;<br>let His fire burn in our lips and His wind fill our sails<br>as we carry Your name to those who have not heard it,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-shlihe-wathar",
-    "title": "Qanona of Shlihe — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Apostles is chanted:</p><p class=\"component-text\">Mar Addai came to Edessa bearing the image of Your face;<br>Mar Mari went into the land between the rivers<br>and planted the seed of the Gospel in our fathers' soil.<br>They did not go in their own strength<br>but in the power of the One who sent them,<br>who promised: Lo, I am with you always,<br>even to the end of the age.<br>We are the fruit of their labor and their suffering;<br>let us not make their sacrifice void<br>by living as those who have forgotten the price of the faith.<br>Make us worthy of the apostolic inheritance we have received,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qayta-qdham",
-    "title": "Qanona of Qayta — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Summer season is chanted:</p><p class=\"component-text\">The sower went out to sow,<br>and the seed fell into the good earth of the nations.<br>What was planted in tears by the Apostles<br>is now ripe for the harvest in the heat of the summer sun.<br>The field is the world, O Lord,<br>and You are the Lord of the harvest.<br>Send laborers into Your harvest;<br>let none who are hungry go without bread,<br>and let the abundance of Your summer<br>be a foretaste of the eternal feast,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qayta-wathar",
-    "title": "Qanona of Qayta — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Summer season is chanted:</p><p class=\"component-text\">The vine is heavy with fruit<br>and the fig tree spreads its shade;<br>every tree planted by the river of the Spirit<br>bears fruit in its season and its leaf does not wither.<br>We are Your planting, O Lord;<br>the vinedresser has pruned us that we might bear more fruit.<br>Let the summer of Your grace not pass<br>before we have returned to You the harvest You are owed;<br>let every act of mercy, every word of truth,<br>be a cluster laid at the feet of the Master of the feast,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-eliya-sliwa-qdham",
-    "title": "Qanona of Eliya-Sliwa — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of Elijah and the Holy Cross is chanted:</p><p class=\"component-text\">He stood on the mountain and the fire of God came down;<br>he called down rain upon a land parched by apostasy<br>and the people fell on their faces and cried:<br>The Lord, He is God; the Lord, He is God.<br>Elijah the Tishbite did not see death<br>but was taken up in a chariot of fire<br>as a sign of the One who would ascend in glory.<br>Send the fire of Your Spirit upon our cold altars, O Lord;<br>let it consume our sacrifice<br>and warm the hearts that the world has left cold,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-eliya-sliwa-wathar",
-    "title": "Qanona of Eliya-Sliwa — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of Elijah and the Holy Cross is chanted:</p><p class=\"component-text\">The wood of the Cross is the new tree of life<br>planted at the center of the new creation.<br>What was a tree of shame in the hands of the empire<br>has become the throne of the King of kings.<br>Helena sought the true wood and found it;<br>the Church exalts it on this day<br>and the faithful bow before the sign of their redemption.<br>O Cross, you are more beautiful than all the cedars of Lebanon;<br>in your shadow we find our healing,<br>in your outstretched arms the embrace of the eternal Father,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-muse-qdham",
-    "title": "Qanona of Muse — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of Moses is chanted:</p><p class=\"component-text\">Moses stood before the burning bush<br>and the ground beneath his feet was holy ground.<br>He led the people through the sea on dry land<br>and gave them water from the rock in the wilderness.<br>The rock was Christ, says the Apostle;<br>the sea was baptism, the manna was the Eucharist.<br>All the Law was a shadow of the body of Christ;<br>all the prophets were lanterns lit from His flame.<br>Now the shadow has given way to substance;<br>let us receive the fulfillment with the faith that Moses had in the promise,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-muse-wathar",
-    "title": "Qanona of Muse — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of Moses is chanted:</p><p class=\"component-text\">On the mountain of the Transfiguration<br>Moses stood again beside the One he had served from afar,<br>and Elijah the prophet stood with him,<br>and the voice of the Father spoke again as at the Jordan:<br>This is My beloved Son; hear Him.<br>The Law and the Prophets bear witness to Christ;<br>their testimony is complete in His Person.<br>We are those who live after the fulfillment;<br>let us not be like those who hold the husk<br>after the grain has been given,<br>but receive the fullness of the One to whom all things pointed,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qudash-idta-qdham",
-    "title": "Qanona of Qudash 'Idta — Qdham (Before)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Dedication of the Church is chanted:</p><p class=\"component-text\">Solomon built a house of cedar and stone<br>and the glory of the Lord filled it at its dedication,<br>so that the priests could not stand to minister<br>for the cloud of the divine presence.<br>But You, O Lord, have built a living temple<br>not of wood and stone but of souls redeemed by Your blood.<br>Every baptized heart is a stone in this building,<br>every assembly of the faithful a manifestation of Your glory.<br>Consecrate this house of Your Church anew;<br>let Your Shekinah rest upon the altars of the East<br>and upon every place where Your name is called upon,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qanona-qudash-idta-wathar",
-    "title": "Qanona of Qudash 'Idta — Wathar (After)",
-    "text": "<p class=\"rubric-text\">The Qanona of the Dedication of the Church is chanted:</p><p class=\"component-text\">I saw the holy city, new Jerusalem,<br>coming down from God out of heaven,<br>prepared as a bride adorned for her husband.<br>The Bride of Christ is the Church,<br>and her adornment is the righteousness of the saints.<br>We are those who are betrothed to the eternal Bridegroom;<br>let us keep our lamps burning and our garments clean,<br>for we do not know the day or the hour<br>when the cry will go out: Behold, the Bridegroom comes.<br>Make us ready, O Lord, to enter the feast,<br>now and always, and unto ages of ages. Amen.</p>"
-  },
-  {
-    "id": "esy-qala-subara-qdham",
-    "title": "Qala — Subara, Qdham Cycle",
-    "text": "Mode Five (Qala Hamishaya) — The tone of longing and expectation."
-  },
-  {
-    "id": "esy-qala-subara-wathar",
-    "title": "Qala — Subara, Wathar Cycle",
-    "text": "Mode Six (Qala Shtitaya) — The tone of the mystery of the Incarnation."
-  },
-  {
-    "id": "esy-qala-denkha-qdham",
-    "title": "Qala — Denkha, Qdham Cycle",
-    "text": "Mode Three (Qala Tlitaya) — The tone of revelation and festal light."
-  },
-  {
-    "id": "esy-qala-denkha-wathar",
-    "title": "Qala — Denkha, Wathar Cycle",
-    "text": "Mode Four (Qala Rbi'aya) — The tone of the nations drawn to the light."
-  },
-  {
-    "id": "esy-qala-sauma-qdham",
-    "title": "Qala — Sauma, Qdham Cycle",
-    "text": "Mode One (Qala Qadmaya) — The solemn tone of penitence and fasting."
-  },
-  {
-    "id": "esy-qala-sauma-wathar",
-    "title": "Qala — Sauma, Wathar Cycle",
-    "text": "Mode Two (Qala Trayyana) — The tone of lamentation and compunction."
-  },
-  {
-    "id": "esy-qala-qyamta-qdham",
-    "title": "Qala — Qyamta, Qdham Cycle",
-    "text": "Mode One (Qala Qadmaya) — The triumphant tone of the Resurrection proclamation."
-  },
-  {
-    "id": "esy-qala-qyamta-wathar",
-    "title": "Qala — Qyamta, Wathar Cycle",
-    "text": "Mode Two (Qala Trayyana) — The tone of the resurrection appearances and the new creation."
-  },
-  {
-    "id": "esy-qala-shlihe-qdham",
-    "title": "Qala — Shlihe, Qdham Cycle",
-    "text": "Mode Four (Qala Rbi'aya) — The tone of the Spirit's descent and apostolic proclamation."
-  },
-  {
-    "id": "esy-qala-shlihe-wathar",
-    "title": "Qala — Shlihe, Wathar Cycle",
-    "text": "Mode Three (Qala Tlitaya) — The tone of the apostolic mission and the spread of the Gospel."
-  },
-  {
-    "id": "esy-qala-qayta-qdham",
-    "title": "Qala — Qayta, Qdham Cycle",
-    "text": "Mode Six (Qala Shtitaya) — The tone of summer abundance and the growth of the Church."
-  },
-  {
-    "id": "esy-qala-qayta-wathar",
-    "title": "Qala — Qayta, Wathar Cycle",
-    "text": "Mode Five (Qala Hamishaya) — The contemplative tone of the harvest and the coming autumn."
-  },
-  {
-    "id": "esy-qala-eliya-sliwa-qdham",
-    "title": "Qala — Eliya-Sliwa, Qdham Cycle",
-    "text": "Mode Seven (Qala Shbi'aya) — The processional tone of the prophet's fire and the exaltation of the Cross."
-  },
-  {
-    "id": "esy-qala-eliya-sliwa-wathar",
-    "title": "Qala — Eliya-Sliwa, Wathar Cycle",
-    "text": "Mode Eight (Qala Tminya) — The doxological tone of the victory of the Cross over death."
-  },
-  {
-    "id": "esy-qala-muse-qdham",
-    "title": "Qala — Muse, Qdham Cycle",
-    "text": "Mode Five (Qala Hamishaya) — The contemplative tone of the Law fulfilled in Christ."
-  },
-  {
-    "id": "esy-qala-muse-wathar",
-    "title": "Qala — Muse, Wathar Cycle",
-    "text": "Mode Six (Qala Shtitaya) — The tone of the Transfiguration and the glory hidden in the Law."
-  },
-  {
-    "id": "esy-qala-qudash-idta-qdham",
-    "title": "Qala — Qudash 'Idta, Qdham Cycle",
-    "text": "Mode Seven (Qala Shbi'aya) — The processional tone of the Church's dedication and the new temple."
-  },
-  {
-    "id": "esy-qala-qudash-idta-wathar",
-    "title": "Qala — Qudash 'Idta, Wathar Cycle",
-    "text": "Mode Eight (Qala Tminya) — The bridal tone of the Church as the Bride awaiting her Lord."
-  },
-  {
-    "id": "esy-qutaa-hymn",
-    "title": "The Third Hour Hymn",
-    "text": "<p class=\"rubric-text\">The Hymn of the Third Hour is chanted:</p><p class=\"component-text\">O Lord, who at the third hour of this day did send down the Holy Spirit upon Your apostles and disciples, do not take Him away from us, but renew Him within us, who pray to You, O God. Make us worthy that we may glorify You, and the Father who sent You, and Your Holy Spirit, now and always, and for ever and ever. Amen.</p>"
-  },
-  {
-    "id": "esy-endana-hymn",
-    "title": "The Sixth Hour Hymn",
-    "text": "<p class=\"rubric-text\">The Hymn of the Sixth Hour is chanted:</p><p class=\"component-text\">O Christ God, who at the sixth hour did stretch out Your pure hands upon the Cross for the salvation of the world: Let the radiance of Your countenance illuminate us, and do not turn away the light of Your knowledge from those who praise You. For You are the light of the world, and the true day that knows no setting. Accept our prayers and our praise, O Merciful One, now and always, and for ever and ever. Amen.</p>"
-  },
-  {
-    "id": "esy-dtsha-sain-hymn",
-    "title": "The Ninth Hour Hymn",
-    "text": "<p class=\"rubric-text\">The Hymn of the Ninth Hour is chanted:</p><p class=\"component-text\">O Lord God, at the ninth hour You tasted death in the flesh for our sake, and You silenced the power of death. Hear our prayer at this hour, as You heard the thief who cried to You from the cross, and grant us in Your mercy a place in Your Kingdom. For You are good and the Lover of mankind, and to You we give glory, to the Father, to the Son, and to the Holy Spirit, now and always, and for ever and ever. Amen.</p>"
-  },
-  {
-    "id": "esy-subaa-hymn",
-    "title": "The Compline Hymn (Shubha Mara)",
-    "text": "<p class=\"rubric-text\">The Shubha Mara is chanted:</p><p class=\"component-text\">Glory to You, O Lord God, who stretched out the heavens and laid the foundation of the earth. You created the sun to rule by day and the moon to rule by night. Grant us, O Lord, to pass through this night in peace, that at the dawn of morning we may praise You with thankful hearts. For You are blessed for ever and ever. Amen.</p>"
-  },
-  {
-    "id": "esy-subaa-examination",
-    "title": "The Examination of Conscience",
-    "text": "<p class=\"rubric-text\">The Officiant leads the brief examination. A moment of silence is kept.</p><p class=\"component-text\">Let us call to mind the sins of this day: sins of speech, of thought, and of deed. Let us lay them before the Lord in penitence.<br><em>A silence is observed.</em><br>O Lord, forgive us the transgressions of this day. Have mercy on us and renew a right spirit within us, that we may rest in Your peace and rise to serve You at the coming dawn.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Lord, have mercy. Lord, have mercy. Lord, have mercy.</p>"
-  },
-  {
-    "id": "esy-subaa-nunc-dimittis",
-    "title": "The Hullala d-Sham'un (Song of Simeon)",
-    "text": "<p class=\"rubric-text\">The Hullala d-Sham'un is chanted as the office draws to its close:</p><p class=\"component-text\">Lord, now let Your servant depart in peace, according to Your word;<br>For my eyes have seen Your salvation,<br>Which You have prepared before the face of all peoples,<br>A light to lighten the Gentiles, and the glory of Your people Israel.</p><p class=\"rubric-text\">Glory be to the Father, and to the Son, and to the Holy Spirit; from everlasting to everlasting. Amen.</p>"
-  },
-  {
-    "id": "esy-subaa-blessing",
-    "title": "The Compline Blessing",
-    "text": "<p class=\"rubric-text\">The Priest or Officiant gives the blessing:</p><p class=\"component-text\">May the Lord of peace Himself give you peace at all times and in every way. May the holy angels stand watch over your rest, and may the blessing of the Father, and of the Son, and of the Holy Spirit be upon you now and through the night and for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen. And with your spirit.</p><p class=\"rubric-text\">The office is concluded.</p>"
-  },
-  {
-    "id": "esy-karozutha-daytime",
-    "title": "The Daytime Karozutha",
-    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha for the Daytime Hours. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand and pray with attentive hearts: <em>Lord, have mercy.</em><br>For the gift of this hour, for the light that sustains us, and for all the works of Your hands, we give You thanks: <em>Lord, have mercy.</em><br>Grant wisdom and peace to all who labour this day in field, home, church, and city: <em>Lord, have mercy.</em><br>Protect, O Lord, the children, the aged, and all who are without shelter or comfort: <em>Lord, have mercy.</em><br>Remember those who even now suffer persecution for Your name's sake: <em>Lord, have mercy.</em><br>That this hour and all our hours may be acceptable before Your throne, we beseech You: <em>Lord, have mercy.</em></p>"
-  },
-  {
-    "id": "esy-onitha-nineveh",
-    "title": "The 'Onitha of the Nineveh Fast",
-    "tradition": "Church of the East",
-    "note": "The seasonal Onitha appointed for the three days of the Ba'utha d'Ninwaye (Rogation of the Ninevites). This fast, unique to the Church of the East, commemorates the repentance of Nineveh at the preaching of Jonah. It falls on the Monday, Tuesday, and Wednesday three weeks before the start of Sauma.",
-    "text": "<p class=\"component-text\">The city of Nineveh heard the voice of Jonah,<br>and repented in sackcloth and ashes;<br>it turned from its evil way,<br>and the Lord relented of the calamity he had spoken.<br><br>Have mercy on us, O Lord, as on the Ninevites of old;<br>receive our fasting and our prayer,<br>turn away your wrath from us,<br>and number us among those who have found grace before you.<br><br>For you are a God slow to anger and abounding in mercy,<br>who desires not the death of the sinner<br>but that he turn and live.<br>To you be glory for ever and ever. Amen.</p>"
-  },
-  {
-    "id": "esy-nineveh-fast-proclamation",
-    "title": "The Proclamation of the Nineveh Fast",
-    "tradition": "Church of the East",
-    "note": "The opening proclamation read at the beginning of the Ba'utha d'Ninwaye, announcing the three-day fast of the Ninevites. Traditionally read at the Ramsha (Evening Prayer) opening the fast on Sunday evening.",
-    "text": "<p class=\"rubric-text\">The Deacon proclaims:</p><p class=\"component-text\">Hear, O children of the holy Church: the three days of the Fast of the Ninevites are upon us. Let us fast as the Ninevites fasted — in humility, in prayer, and in repentance — that as God heard the cry of that great city and turned aside his wrath, so he may hear our cry also, and remember his mercy toward us.</p><p class=\"rubric-text\">The Priest continues:</p><p class=\"component-text\">O Lord our God, who sent your prophet Jonah to Nineveh and received their repentance, receive also ours: the fasting of our bodies, the contrition of our hearts, and the prayer of our lips. Turn your face toward us, O Merciful One, and let us not be put to shame. Amen.</p>"
+    "title": "Conclusion",
+    "meta": {
+      "source": "Maclean 1894, p.20-22.",
+      "note": "The priest takes the cross, blesses the people, and one of several alternative concluding prayers is said (Maclean gives seven alternatives, marked 'these are alternatives'); the first is given here as the default. Followed by the kiss of peace and the Nicene Creed on ferial days."
+    },
+    "text": "<p class=\"rubric-text\">The priest takes the cross in his hand, and turning to the people says, Bless, O my Lord. By your command.</p><p class=\"rubric-text\">They answer, By the command of Christ, and glory to his holy Name. And they bow their heads.</p><p class=\"component-text\">Glory to thee, Jesus our conquering King, the brightness of the eternal Father, begotten without beginning, before all times and things which came into being; we have no hope and expectation unless it be thou, the Creator. By the prayer of the just and elect who have been approved by thee from the beginning, pardon our sins and forgive our offences, deliver us from our afflictions, answer our requests and bring us to the excellent light, and deliver us by thy living sign from all harm, hidden and open, Christ the hope of our nature, now and at all times, and for ever and ever. Amen.</p><p class=\"rubric-text\">He makes the sign of the cross over the people. They answer, May Christ hear thy prayers. May Christ make thy priesthood famous in the kingdom of heaven.</p><p class=\"rubric-text\">They give the kiss of peace and say the Nicene Creed.</p>"
+  },
+  {
+    "id": "esy-nicene-creed",
+    "title": "The Nicene Creed",
+    "meta": {
+      "source": "Maclean 1894, p.22-23.",
+      "note": "As given in the East Syriac daily office (not identical in wording to the Western form -- e.g. 'the firstborn of all creatures', 'Very God of very God. Son of the nature of his Father', 'the third day he rose again, as it is written' with no 'and ascended into heaven' clause split differently). Transcribed exactly as Maclean gives it; his footnote records that the R.C. (Roman Catholic/Chaldean) edition inserts 'he died' after Pontius Pilate and 'and the Son' after 'proceedeth from the Father' -- those insertions are NOT part of this (Assyrian Church of the East) text and are correctly omitted here."
+    },
+    "text": "<p class=\"component-text\">We believe in one God the Father Almighty, Maker of all things visible and invisible. And in one Lord Jesus Christ, the Son of God, the only begotten, the firstborn of all creatures. Begotten of his Father before all worlds and not made. Very God of very God. Son of the nature of his Father. By whose hands the worlds were fashioned and everything was created. Who for us sons of men and for our salvation came down from heaven, and was incarnate by the Holy Ghost, and became son of man, and was conceived and born of the Virgin Mary. He suffered and was crucified in the days of Pontius Pilate. And he was buried, and the third day he rose again, as it is written, and ascended unto heaven, and sat down on the right hand of his Father. And furthermore, he is ready to come to judge the dead and the quick. And in one Holy Ghost, the Spirit of truth, who proceedeth from the Father, the life-giving Spirit. And in one holy Apostolick and Catholick Church. And we confess one baptism for the forgiveness of sins, and the resurrection of our bodies, and the life for ever and ever. Amen.</p>"
   }
 ]
