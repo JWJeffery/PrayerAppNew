@@ -1,5 +1,51 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-19 continued -- Festival Evening Service: fixed content built from Maclean pp.68-84, NOT wired, one real gap disclosed
+
+Josh supplied Maclean pp.68-84 (Festival Evening Service, for Sundays/Feasts of our
+Lord/Memorials). Built 20 new components covering every fixed/invariable element the source
+actually gives: Sunday/Festival opening prayer (sung, not said), the censer prayer's three real
+farced antiphon sets (Sundays/Festivals/Memorials, built on Ps. 84), First and Second Anthems in
+full (four commemoration-of-the-departed forms each -- Sons of the Church, Laymen, Women/Men,
+Children), the Sunday/Feast Karuzutha additions, the Suyakhi's two prefacing prayers, six seasonal
+Royal Anthem endings plus a shared "O Mary" refrain (extracted into its own component rather than
+left as Maclean's internal "as above" abbreviation, so rendered text is always complete, never
+shorthand), the full nine-occasion prayer-after-the-Royal-Anthem pool, and Suba'a (Compline)
+appended on Memorials.
+
+**One real, disclosed gap:** the Royal Anthem's own proper body -- the day-specific centerpiece of
+the whole service -- is Khudhra content Maclean's book doesn't contain. Extensive research this
+session (web search, an academic dictionary of Syriac liturgical terminology, a dissertation
+bibliography) found no public-domain English translation of it anywhere. The one credible source
+found, John Moolan's 1985 doctoral dissertation (which contains a full translation of the
+Subara/Nativity season's propers specifically), is itself still under copyright -- a 1985 academic
+work, nowhere near old enough to be public domain, and Moolan's translation is his own protected
+creative work distinct from the ancient underlying Syriac. It cannot be transcribed into this
+project without a license from the rights holder (OIRSI, Kottayam). That's a live option for Josh
+to pursue separately; it isn't resolved in this session. The gap is marked with its own component
+(`esy-festival-royal-anthem-rubric`) transcribing Maclean's own instruction verbatim -- not filled
+with guessed or paraphrased text.
+
+**Deliberately not wired into a rubrics.json sequence and not selectable in the app.** Per explicit
+instruction this session, content was written first; wiring (a Sunday/Feast/Memorial calendar-day-
+type axis, distinct from the day-of-week axis Ramsha/Lelya/Sapra use, likely building on the
+not-yet-audited `js/calendar-east-syriac.js` season/week engine) is deferred to a separate pass.
+Selecting a Sunday or Feast in the app still correctly falls through to "not yet rebuilt" until
+that wiring exists.
+
+**A verification catch worth recording:** while assembling this session's draft components, a
+transcription error was caught before it reached the repo -- an early draft of the First Anthem's
+"For men" section had substituted the text of an unrelated footnote (an alternate reading attached
+to the "For Laymen" section) in place of the actual "For men" text. Caught by diffing two
+independently-drafted versions of the same component against each other and against the source
+before merging, not by trusting either draft on its own -- consistent with this project's standing
+"per-instance re-verification is mandatory every time" practice.
+
+210 components total (190 + 20); sequence count unchanged at 24 pending the wiring pass.
+`SEED_VERSION` bumped to `v156-2026-08-19-east-syriac-festival-evening-content`.
+
+---
+
 ## Session 2026-08-19 continued -- Sapra (Morning Office) COMPLETE: all six ferial weekdays, closes out all three principal offices
 
 Josh supplied Maclean pp.105-130 directly. Closed out Sapra using the 14-component fixed opening
