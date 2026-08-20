@@ -1,5 +1,57 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-19 continued -- Sapra (Morning Office) COMPLETE: all six ferial weekdays, closes out all three principal offices
+
+Josh supplied Maclean pp.105-130 directly. Closed out Sapra using the 14-component fixed opening
+already in hand from earlier this session: added the prayer after the Tishbukhta, the two-part
+prayer before the Martyrs' Anthem, the fixed Daily Anthem (said every morning regardless of
+weekday), all six day-specific Morning Martyrs' Anthems (Monday-Saturday, each independently
+transcribed), the prayer for help, and Sapra's own Conclusion -- 11 new components. The Trisagion,
+farced Lord's Prayer, and Of Mary/Of the Apostles/Of our father prayers are reused unchanged from
+the existing Ramsha components, confirmed from Maclean's own text to be the identical fixed forms
+at these points in Sapra, not distinct wording needing separate transcription.
+
+**One structural detail confirmed against the primary source, not left as inference:** after
+delivering the first draft of this work, Josh asked for the ordering of the day-specific Martyrs'
+Anthem relative to the fixed Daily Anthem to be checked rather than assumed from page layout alone.
+Fetched Maclean's own Introduction (p.xvi), which gives an explicit structural summary of the
+Morning Service: "The Martyrs' Anthem, one for each morning of the week... Two fixed Morning
+Anthems." This confirms day-specific-anthem-then-Daily-Anthem was correct -- and also surfaces a
+genuine, source-stated asymmetry worth remembering: the Evening Service puts its fixed anthem
+*before* the day's Martyrs' Anthem (Introduction p.xiv, matching the already-built and verified
+Ramsha sequences), while the Morning Service puts it *after*. Not a copy-paste inconsistency between
+the two offices -- Maclean states both orders explicitly, and they differ.
+
+**No code changes were needed.** `renderEastSyriac()` already looks up Sapra sequences generically
+via the same day-keyed pattern (`{day}-sapra-sequence`) used for Lelya -- this was a pure
+content/data addition to `components/east-syriac.json` and
+`components/traditions/east-syriac/rubrics.json`.
+
+190 components total, 24 sequences (12 Ramsha + 6 Lelya + 6 Sapra). Verified end-to-end with real
+Playwright across all six ferial weekdays: every day renders in full with no "not yet rebuilt"
+fallback, correct Tishbukhta/Daily Anthem/Nicene Creed content present, output length in the
+expected range (all six comfortably over 15,000 characters), a phrase distinctive to that day's own
+Martyrs' Anthem present, and zero console/page errors (one unrelated 403 on a blocked Google Fonts
+request in this sandbox environment, not a code issue). 36/37 automated checks passed; the one
+non-pass was that unrelated network block, confirmed unrelated by inspecting the actual failed
+request.
+
+**This closes out all three principal ferial services** -- Ramsha, Lelya, and Sapra are now all
+complete and verified. Not yet marked GREEN on the dashboard pending Josh's review and explicit
+authorization, per the actual GREEN-promotion precedent recorded below (AI self-verification plus
+Josh's sign-off, not a fixed rule) -- currently shown as a complete, verified milestone row.
+
+**Remaining scope for the Church of the East:** Compline (Suba'a) and the three minor hours
+(Quta'a/Third, Endana/Sixth, D-tsha' Sa'in/Ninth) are still unbuilt -- Maclean describes these as
+monastic-only "relics" appearing only fragmentarily during the Great Fast, per his own Introduction,
+so their scope and priority need Josh's direction before starting. Festival-day forms (Sunday) for
+all offices remain out of scope, as before.
+
+`SEED_VERSION` bumped to `v155-2026-08-19-east-syriac-sapra-complete`.
+
+---
+
+
 **Read this file in full via bash (not the view tool) before starting any work, and read to the
 actual end -- not just until the first "DONE" marker.** Verify actual pushed state against a fresh
 clone before beginning. Full historical detail for everything summarized below lives in
@@ -601,8 +653,9 @@ of the rule issue above. Sammie is an AI, not a human.
 
 ## What's actually next
 
-Nothing is currently in progress. The Coptic Agpeya rebuild is done, verified, GREEN, the dashboard
-is clean, and this session's splash-screen/sidebar UI bugs are fixed and patched. Next steps depend
-entirely on what Josh wants to pick up -- could be continuing the Ethiopian broader-canon backlog
-(Tizaz, Fetha Nagast, remaining ET books), the 10 unaudited other-tradition engines, further UI
-polish, or something new. Ask, don't assume.
+Nothing is currently in progress. The Coptic Agpeya rebuild is done, verified, GREEN. The Church of
+the East's three principal ferial services -- Ramsha, Lelya, and Sapra -- are now all built and
+verified, closing out that phase of the rebuild. Next steps depend entirely on what Josh wants to
+pick up: Compline (Suba'a) and the minor hours for the Church of the East, continuing the Ethiopian
+broader-canon backlog (Tizaz, Fetha Nagast, remaining ET books), the 10 unaudited other-tradition
+engines, further UI polish, or something new. Ask, don't assume.
