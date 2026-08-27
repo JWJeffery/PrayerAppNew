@@ -4271,17 +4271,42 @@ async function renderEastSyriac() {
     // 'qudash-idta' = Hallowing of the Church) rather than assumed; no
     // new date-computation logic was needed; the substitution only swaps
     // which already-built component renders in that one slot.
+    //
+    // Palm Sunday is a further, higher-priority special case (it can never
+    // coincide with Advent or the Hallowing of the Church, both outside
+    // the Great Fast, so there is no real conflict between the two
+    // branches below). Maclean's own rubric (p.156): "Ps. xcvi., xcvii.,
+    // xcviii., then cxxi., etc., as on Sundays 'before.'" -- Palm Sunday
+    // gets its own opening psalms (Ps.96-98; a disclosed gap, since
+    // Maclean cites them by number only here, with no farced text given)
+    // followed by the SAME "before"-form continuation (Ps.121/88/138)
+    // already built into esy-sunday-lelya-psalms-before-ordinary,
+    // regardless of which Qdham/Wathar cycle the calendar's own weekly
+    // alternation would otherwise assign that Sunday -- so both pieces
+    // are inserted together rather than the ordinary component being
+    // fully replaced. isPalmSunday is exposed directly by the calendar
+    // engine (EastSyriacCalendar.getDayClass), which already computed
+    // Palm Sunday's date internally for anaphora assignment; no new
+    // date-computation logic was needed here either.
     if (officeKey === 'lelya' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const season = EastSyriacCalendar.getDayClass(currentDate).season;
+        const dayClass = EastSyriacCalendar.getDayClass(currentDate);
         const ordinaryId = cycle === 'qdham' ? 'esy-sunday-lelya-psalms-before-ordinary' : 'esy-sunday-lelya-psalms-after-ordinary';
-        let substituteId = null;
-        if (season === 'subara') {
-            substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-advent-before' : 'esy-sunday-lelya-advent-after';
-        } else if (season === 'qudash-idta') {
-            substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-hallowing-before' : 'esy-sunday-lelya-hallowing-after';
-        }
-        if (substituteId) {
-            sequence = sequence.map(id => id === ordinaryId ? substituteId : id);
+
+        if (dayClass.isPalmSunday) {
+            sequence = sequence.flatMap(id => id === ordinaryId
+                ? ['esy-sunday-lelya-palm-sunday', 'esy-sunday-lelya-psalms-before-ordinary']
+                : [id]);
+        } else {
+            const season = dayClass.season;
+            let substituteId = null;
+            if (season === 'subara') {
+                substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-advent-before' : 'esy-sunday-lelya-advent-after';
+            } else if (season === 'qudash-idta') {
+                substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-hallowing-before' : 'esy-sunday-lelya-hallowing-after';
+            }
+            if (substituteId) {
+                sequence = sequence.map(id => id === ordinaryId ? substituteId : id);
+            }
         }
     }
 

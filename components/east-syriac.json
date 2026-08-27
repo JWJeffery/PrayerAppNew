@@ -3530,8 +3530,8 @@
     "text": "<p class=\"component-text\">Ps. xcvi., xcvii., xcviii., then cxxi., etc., as on Sundays 'before.'</p>",
     "meta": {
       "source": "Maclean 1894, p.156.",
-      "note": "Palm Sunday has its own opening psalms, distinct from both the ordinary and the Advent/Hallowing forms. Built and cited but not yet wired into rendering logic -- this project's calendar engine has not yet been checked for a direct Palm Sunday flag (the last Sunday of Sauma before Qyamta), so wiring this is deferred rather than guessed at.",
-      "wired": false
+      "note": "Palm Sunday has its own opening psalms, distinct from both the ordinary and the Advent/Hallowing forms. Wired this session: js/office-ui.js now uses the calendar engine's EastSyriacCalendar.getDayClass(date).isPalmSunday flag (exposed this same session -- the date itself was already computed internally for anaphora assignment, just not previously surfaced) to insert this component followed by the reused 'before'-form continuation (esy-sunday-lelya-psalms-before-ordinary), regardless of which Qdham/Wathar cycle the week would otherwise carry, per Maclean's own rubric ('then cxxi., etc., as on Sundays before'). The Ps.96-98 farced text itself remains a disclosed gap -- Maclean cites the psalm numbers here without giving their farcing.",
+      "wired": true
     }
   },
   {

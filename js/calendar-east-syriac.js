@@ -464,6 +464,7 @@ const EastSyriacCalendar = (() => {
             fastLabel,
             anaphora,
             anaphoraLabel,
+            palmSunday,
         };
     }
 
@@ -708,6 +709,7 @@ const EastSyriacCalendar = (() => {
             isFriday,
             isSunday,
             isLenten,
+            isPalmSunday:      d.getTime() === seasonData.palmSunday.getTime(),
             isNinevehFast:     isNineveh,
             dayClass,
 
@@ -726,6 +728,7 @@ const EastSyriacCalendar = (() => {
             easter:            seasonData.easter,
             subaraStart:       seasonData.subaraStart,
             ninevehFast:       seasonData.ninevehFast,
+            palmSunday:        seasonData.palmSunday,
 
             // Layer 2
             commemorations,
