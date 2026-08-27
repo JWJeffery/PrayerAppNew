@@ -1290,7 +1290,7 @@
   ],
   "sunday-ramsha-qdham-sequence": [
     "esy-festival-evening-prayer-sundays",
-    "esy-festival-marmitha-table",
+    "__MARMITHA_GROUP__",
     "esy-festival-censer-prayer",
     "esy-lakhumara-prayer-before",
     "esy-laku-mara",
@@ -1315,7 +1315,7 @@
   ],
   "sunday-ramsha-wathar-sequence": [
     "esy-festival-evening-prayer-sundays",
-    "esy-festival-marmitha-table",
+    "__MARMITHA_GROUP__",
     "esy-festival-censer-prayer",
     "esy-lakhumara-prayer-before",
     "esy-laku-mara",

@@ -1,5 +1,15 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-21 continued (3) -- Marmitha group auto-selection fixed for Sunday/Feast Ramsha
+
+Josh asked which open items were actually fixable. Identified the Marmitha table's group selection as a small, genuine fix -- not a content gap, just a static citation that should have been an automatic season check, matching the note already recorded on esy-festival-marmitha-table.
+
+Maclean gives four Marmitha psalm groups: (a) Advent-to-Epiphany Festivals/Sundays, Ps.87-88; (b) other Festivals/Sundays, Ps.65-67; (c) Memorials on a Friday, Ps.85-86; (d) Memorials on any other day, Ps.15-17. Split (a) and (b) into their own components and wired automatic season-based selection into Sunday Ramsha -- Subara/Denkha resolve to (a), every other season to (b). Groups (c)/(d) stay unselectable (no individual-memorial tracking exists), but since this sequence only ever fires for a Sunday or a Feast of our Lord, those groups never actually apply here anyway, so nothing is lost. The original full four-group transcription stays in the corpus as historical record.
+
+Verified against three real dates (Advent Sunday, Epiphany-season Sunday, Summer Sunday), each resolving to the correct group. `SEED_VERSION` bumped to `v164-2026-08-21-east-syriac-marmitha-auto-selection`.
+
+---
+
 ## Session 2026-08-21 continued (2) -- Fixed Feast-of-our-Lord calendar tracking built, delivered clean this time
 
 The first attempt at delivering this feature was built against a stale assumption that the Sunday Ramsha wiring from earlier the same day hadn't actually been applied to the repo. It had -- Josh's first `git am` succeeded. Claude's claim that it "never happened" was wrong and caused an unnecessary failed patch attempt. This entry documents the corrected delivery: a fresh clone was pulled, the actual current state confirmed directly, and only the genuinely new work was built on top of it.

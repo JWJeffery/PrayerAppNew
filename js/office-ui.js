@@ -4365,7 +4365,22 @@ async function renderEastSyriac() {
                 : ['esy-laying-on-of-hands-prayer'])
             : [id]);
 
+        // Marmitha group selection: Maclean gives four psalm groups (p.68),
+        // two of which are resolvable from calendar data alone -- (a)
+        // Advent-to-Epiphany, (b) every other Festival/Sunday -- and two of
+        // which need individual-memorial tracking this project doesn't have
+        // (Memorials falling on a Friday vs. any other day). Since this
+        // sequence only ever renders for a Sunday or a Feast of our Lord,
+        // groups (c)/(d) never actually apply here, so only (a)/(b) need to
+        // be chosen between. esy-festival-marmitha-table (the original,
+        // full four-group transcription) is kept as the historical record;
+        // the season-selected component replaces it in the live sequence.
         const season = dayClass.season;
+        const marmithaId = (season === 'subara' || season === 'denkha')
+            ? 'esy-festival-marmitha-advent-epiphany'
+            : 'esy-festival-marmitha-other-sundays';
+        sequence = sequence.map(id => id === '__MARMITHA_GROUP__' ? marmithaId : id);
+
         const endingBySeasonKey = {
             'subara':      { ending: 'esy-festival-royal-anthem-ending-advent-epiphany', maryRefrain: false },
             'denkha':      { ending: 'esy-festival-royal-anthem-ending-epiphany-shawua',  maryRefrain: false }, // embedded already

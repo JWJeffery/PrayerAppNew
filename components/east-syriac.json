@@ -3965,5 +3965,23 @@
       "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. Built and cited but not wired into any sequence -- this project has not yet built a Nativity-specific office structure to place it in.",
       "wired": false
     }
+  },
+  {
+    "id": "esy-festival-marmitha-advent-epiphany",
+    "title": "Marmitha (Festivals and Sundays from Advent to Epiphany)",
+    "text": "<p class=\"rubric-text\">Marmitha. On Festivals and Sundays from Advent to Epiphany, Ps. 87, 88.</p><p class=\"rubric-text\">They say the Gloria; then Hallelujah, Hallelujah, yea Hallelujah. Deacon. Let us pray. Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.68.",
+      "note": "One of four Marmitha psalm-groups Maclean gives (esy-festival-marmitha-table has all four, kept as the historical full transcription); this is group (a), used on Festivals and Sundays during Advent and Epiphany specifically (the Subara and Denkha seasons in this project's calendar engine). Auto-selected at render time by season rather than shown alongside the other three groups that never apply in the same context. The psalms are farced on feasts and memorials per Maclean's own footnote (citing the Urmi edition), but the farcing text itself is Khudhra content and not given here -- disclosed, not guessed at."
+    }
+  },
+  {
+    "id": "esy-festival-marmitha-other-sundays",
+    "title": "Marmitha (other Festivals and Sundays)",
+    "text": "<p class=\"rubric-text\">Marmitha. On other Festivals and Sundays, Ps. 65, 66, 67.</p><p class=\"rubric-text\">They say the Gloria; then Hallelujah, Hallelujah, yea Hallelujah. Deacon. Let us pray. Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.68.",
+      "note": "Group (b) of the four Marmitha psalm-groups (see esy-festival-marmitha-advent-epiphany's note for the others). Used on every Festival or Sunday outside Advent-to-Epiphany -- i.e. every season this project's calendar engine resolves other than Subara and Denkha. Auto-selected at render time by season. The farcing text is a disclosed Khudhra gap, as with group (a)."
+    }
   }
 ]
