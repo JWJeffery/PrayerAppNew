@@ -4167,13 +4167,20 @@ async function renderEastSyriac() {
     };
     const officeTitle = officeTitleMap[officeKey] || 'Ramsha \u2014 Evening Prayer';
 
-    // Only Ramsha varies by Qdham/Wathar cycle (Maclean's own Introduction,
-    // p.xvi-xvii: this alternation is "the special feature of the Evening
-    // Service" specifically -- the Night and Morning Services are not
-    // described as varying this way, only by day of week). So Lelya (and,
-    // once built, Sapra) look up a sequence with no cycle suffix at all,
-    // rather than a cycle-specific one that doesn't exist for those offices.
-    const cycleVaryingOffices = ['ramsha'];
+    // Ramsha varies by Qdham/Wathar cycle on every day of the week
+    // (Maclean's own Introduction, p.xvi-xvii: this alternation is "the
+    // special feature of the Evening Service"). Lelya and Sapra do NOT
+    // vary by cycle on ferial weekdays -- but on Sundays specifically,
+    // Maclean's Festival Night and Morning Services explicitly do carry
+    // their own "Before"/"After" forms (distinct opening psalms, and for
+    // Sapra a distinct Martyrs' Anthem), confirmed directly from the
+    // Festival Night/Morning Service source text (pp.155-184), not
+    // assumed by analogy with Ramsha. So Sunday is a second, narrower
+    // case where Lelya/Sapra do carry a cycle suffix, without changing
+    // their behaviour on any other day.
+    const cycleVaryingOffices = (dayName === 'sunday')
+        ? ['ramsha', 'lelya', 'sapra']
+        : ['ramsha'];
     let sequenceKey = cycleVaryingOffices.includes(officeKey)
         ? `${dayName}-${officeKey}-${cycle}-sequence`
         : `${dayName}-${officeKey}-sequence`;
@@ -4203,6 +4210,27 @@ async function renderEastSyriac() {
     if (officeKey === 'sapra' && isGreatFast && dayName !== 'sunday' && sequence) {
         const addendum = appData.eastSyriacRubrics?.['quta-a-addendum-sequence'];
         if (addendum) sequence = [...sequence, ...addendum];
+    }
+
+    // Sunday Lelya's opening psalm (Ps.86 "before" / Ps.91 "after") is
+    // substituted during Advent and during the Hallowing of the Church,
+    // per Maclean's own explicit rubric (p.156) -- confirmed against the
+    // calendar engine's existing season keys ('subara' = Advent,
+    // 'qudash-idta' = Hallowing of the Church) rather than assumed; no
+    // new date-computation logic was needed; the substitution only swaps
+    // which already-built component renders in that one slot.
+    if (officeKey === 'lelya' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const season = EastSyriacCalendar.getDayClass(currentDate).season;
+        const ordinaryId = cycle === 'qdham' ? 'esy-sunday-lelya-psalms-before-ordinary' : 'esy-sunday-lelya-psalms-after-ordinary';
+        let substituteId = null;
+        if (season === 'subara') {
+            substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-advent-before' : 'esy-sunday-lelya-advent-after';
+        } else if (season === 'qudash-idta') {
+            substituteId = cycle === 'qdham' ? 'esy-sunday-lelya-hallowing-before' : 'esy-sunday-lelya-hallowing-after';
+        }
+        if (substituteId) {
+            sequence = sequence.map(id => id === ordinaryId ? substituteId : id);
+        }
     }
 
     updateSeasonalTheme('purple');

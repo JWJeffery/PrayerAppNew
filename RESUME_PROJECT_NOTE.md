@@ -1,5 +1,23 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-20 continued (3) -- Sunday Festival Night Service (Lelya) and Morning Service (Sapra) built COMPLETE, Before and After, with Advent/Hallowing-of-the-Church substitutions
+
+Following the Compline build, Josh gave two scoping decisions for the Sunday Festival material flagged as received-but-not-built: (1) include the Martyrs' Anthem on Sundays by default, same as weekdays, and (2) build the Advent/Hallowing-of-the-Church substitutions now rather than deferring them.
+
+**Built: Sunday Lelya and Sunday Sapra, complete, Before and After.** Four new sequences (`sunday-lelya-qdham-sequence`, `sunday-lelya-wathar-sequence`, `sunday-sapra-qdham-sequence`, `sunday-sapra-wathar-sequence`). Sundays now render fully across all three principal offices for the first time in this project -- Ramsha (Festival Evening) was already built in an earlier session, and Lelya/Sapra close out the set.
+
+- Sunday Night Service: fixed Qaltha/Motwa cross-references, three full Tishbukhtas (Mar Babai the Great for Advent-Epiphany, Mar Babai of Nisibis for all Sundays, Mar George of Nisibis for the Hallowing of the Church), and the Night Service's own Karuzutha.
+- Sunday Morning Service: its own opening prayers, a farced Ps.100/91/civ/cxiii/xciii/cxlviii-cxlix-cl-cxvii set, the Gloria in excelsis text, the Holy God prayers, and -- per Josh's decision -- the full Sunday Martyrs' Anthem (Before or After, transcribed as single block components, ~20 short anthems each).
+- **Code change:** `renderEastSyriac()`'s `cycleVaryingOffices` list, previously hard-coded to `['ramsha']`, now resolves to `['ramsha','lelya','sapra']` specifically when `dayName === 'sunday'` -- confirmed directly from the source that Lelya and Sapra genuinely carry their own Before/After forms on Sundays (weekdays are unaffected).
+- **Advent/Hallowing-of-the-Church substitutions: built and wired, not deferred**, per Josh's second decision. Sunday Lelya's opening psalm swaps automatically based on the calendar engine's existing season keys (`subara` = Advent, `qudash-idta` = Hallowing of the Church) -- confirmed these keys already existed in `EastSyriacCalendar.SEASON_META` before building rather than assumed, so no new date-computation logic was needed. Spot-checked against two 2026 Sundays (one Advent, one ordinary).
+- **Gap filled:** this session's text for "To thee, O my Lord, all creatures" (p.165) fills a gap the Great Fast Sapra build had explicitly disclosed as unavailable -- the earlier disclosure component was left as-is rather than retroactively rewritten, per standing practice of not editing a prior honest gap disclosure after the fact.
+- **Remaining disclosed gaps, not filled:** the Hulali/Marmitha/Motwa-proper/Shubakha-Continuation/Madrasha/Night-Anthem/Morning-Anthem text is consistently "as in the Khudhra" throughout and not given in this source -- built as rubric-only citations, same pattern as the Royal Anthem gap. Palm Sunday's distinct opening psalms were transcribed but not wired (no verified Palm Sunday calendar flag yet). A few cross-references to pages still outside this project's holdings remain (p.6, p.36, p.95, p.111-112, p.153, p.154).
+- 50 new components (346 total, was 296). `SEED_VERSION` bumped to `v159-2026-08-20-east-syriac-sunday-festival-complete`.
+
+**Where this leaves the project:** all three principal East Syriac offices (Ramsha, Lelya, Sapra) now render fully on every day of the week, ferial and Sunday alike. Compline is complete for all seven days. The Great Fast has its own Sapra variant plus the two minor-hour add-ons (Quta'a, Endana). Remaining open items: Compline's own Fast-season variant hasn't been checked for whether it differs from the ordinary form built this session; the Royal Anthem gap for Sunday/Feast material remains the one significant unresolved content gap; Cathedral/Monastic toggle decision still pending; Weeks-of-the-Mysteries-specific farced psalm variants (both Fast and ordinary Sunday forms) are transcribed but not wired pending a finer calendar distinction this project doesn't yet compute.
+
+---
+
 ## Session 2026-08-20 continued (2) -- Suba'a (Compline) built COMPLETE, all seven days; Sunday Festival Night/Morning Service received but not yet built (flagged for a future scoping pass)
 
 Josh uploaded Maclean pp.155-206 in one large PDF, asked for a read-through of the whole book and "build out everything." This single upload turned out to contain almost the entire remaining gap identified at the end of the prior session: the rest of the Festival Night Service, the complete Festival Morning Service (including full Sunday Martyrs' Anthems), and the entire Compline (Suba'a) office.

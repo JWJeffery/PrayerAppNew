@@ -3425,5 +3425,435 @@
     "meta": {
       "source": "Maclean 1894, p.204."
     }
+  },
+  {
+    "id": "esy-sunday-lelya-title",
+    "title": "The Night Service on Sundays",
+    "text": "<p class=\"component-text\">The Festival Night Service, said on Sundays throughout the year, with its own Hulali, Qaltha, Motwa, Tishbukhta, and Karuzutha, distinct from the ferial weekday Lelya.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.155."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-hulali-before-rubric",
+    "title": "The Hulali (Sundays 'Before')",
+    "text": "<p class=\"component-text\">On Sundays 'before' they say Hulali 5 to 11 inclusive (Ps. xxxvii. to lxxxi. incl.), without farcings or prayers of the Marmyatha, but the prayers of the Hulali are said, as on ferias. Between each Hulala they sing slowly, Hallelujah, Hallelujah, yea Hallelujah. Glory be to thee, O God, twice. Hallelujah, Hallelujah, yea Hallelujah. O Lord, have mercy upon us. Let us pray, Peace be with us. Ps. lxxviii. and lxxxi. are farced with Hallelujah between each clause; these are sung slowly.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.155.",
+      "note": "GAP, disclosed rather than filled: Maclean cites this Hulali (Ps.37-81) by number only; the prayers 'as on ferias' cross-reference the already-built ferial Lelya Hulali material, but the specific selection and farcing pattern for this Sunday form is not given in full here."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-hulali-after-rubric",
+    "title": "The Hulali (Sundays 'After')",
+    "text": "<p class=\"component-text\">On Sundays 'after' they say Hulali 12 to 18 inclusive (Ps. lxxxii. to cxxxi. incl.), as before, farcing Ps. cxix. v. 89 to the end, and Ps. cxxx., with Hallelujah between each clause. These are sung slowly.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.155.",
+      "note": "GAP, disclosed rather than filled, same pattern as the 'before' form above."
+    }
+  },
+  {
+    "id": "esy-sunday-qaltha-prayer-rubric",
+    "title": "Prayer of the Qaltha",
+    "text": "<p class=\"component-text\">For thy nature, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.95, 155.",
+      "note": "GAP, disclosed rather than filled: cross-referenced to p.95 (not yet obtained by this project), same cross-reference already disclosed for Compline (esy-compline-prayer-thy-nature-rubric)."
+    }
+  },
+  {
+    "id": "esy-sunday-qaltha-rubric",
+    "title": "The Qaltha",
+    "text": "<p class=\"component-text\">They sing the Qaltha of the day, as in the Khudhra, and the Psalms that follow.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.155.",
+      "note": "GAP, disclosed rather than filled: directed to the Khudhra, not given in this source. Maclean notes there is no Qaltha at all on Feasts and Memorials (p.156)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-psalms-before-ordinary",
+    "title": "Psalms 86, 121, 88 (vv.10-11), 138 (vv.7-8) -- Sundays 'Before' (ordinary)",
+    "text": "<p class=\"component-text\">Ps. lxxxvi. farced after the first clause, and then after every second clause, with Hallelujah. Then Ps. cxxi.; then lxxxviii. 10, 11; then cxxxviii. 7, 8, from Stretch forth thy hand and save me -- each psalm farced as above, and so all that follow. Then Glory be, etc. Hallelujah, Hallelujah, yea Hallelujah. From everlasting, etc. Repeat the first two clauses of Ps. lxxxvi., with Hallelujah, Hallelujah, yea Hallelujah between them. So on all Sundays.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "This is the ordinary form, used on Sundays throughout the year outside Advent and the Hallowing of the Church, which each substitute a different opening psalm (see esy-sunday-lelya-advent-before and esy-sunday-lelya-hallowing-before)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-psalms-after-ordinary",
+    "title": "Psalms 91, 123 (vv.1-4), 102 (vv.26-27), 138 (part of vv.7-8) -- Sundays 'After' (ordinary)",
+    "text": "<p class=\"component-text\">Ps. xci., cxxiii. 1-4 (omitting the last clause of v. 3), cii. 26, 27, cxxxviii. part of 7, 8, as above (ending as above).</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "This is the ordinary form; Advent and the Hallowing of the Church each substitute a different opening psalm (see esy-sunday-lelya-advent-after and esy-sunday-lelya-hallowing-after)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-advent-before",
+    "title": "Sundays of Advent 'Before'",
+    "text": "<p class=\"component-text\">Substitute Ps. xl. 1-15 for Ps. lxxxvi. above.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "Used in place of esy-sunday-lelya-psalms-before-ordinary's opening psalm during Advent (Subara)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-advent-after",
+    "title": "Sundays of Advent 'After'",
+    "text": "<p class=\"component-text\">Substitute Ps. xlviii. 1-11 for Ps. xci. above.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "Used in place of esy-sunday-lelya-psalms-after-ordinary's opening psalm during Advent (Subara)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-hallowing-before",
+    "title": "Sundays of the Hallowing of the Church 'Before'",
+    "text": "<p class=\"component-text\">Substitute Ps. xlv. for Ps. lxxxvi. above.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "Used in place of esy-sunday-lelya-psalms-before-ordinary's opening psalm during the Hallowing of the Church (Qudash 'Idta)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-hallowing-after",
+    "title": "Sundays of the Hallowing of the Church 'After'",
+    "text": "<p class=\"component-text\">Substitute Ps. lxxxiv. for Ps. xci. above.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "Used in place of esy-sunday-lelya-psalms-after-ordinary's opening psalm during the Hallowing of the Church (Qudash 'Idta)."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-palm-sunday",
+    "title": "Palm Sunday",
+    "text": "<p class=\"component-text\">Ps. xcvi., xcvii., xcviii., then cxxi., etc., as on Sundays 'before.'</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "Palm Sunday has its own opening psalms, distinct from both the ordinary and the Advent/Hallowing forms. Built and cited but not yet wired into rendering logic -- this project's calendar engine has not yet been checked for a direct Palm Sunday flag (the last Sunday of Sauma before Qyamta), so wiring this is deferred rather than guessed at.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-sunday-motwa-prayer",
+    "title": "Prayer before the Motwa for Sundays",
+    "text": "<p class=\"component-text\">May our prayer, O my Lord, please thee, and may our request come before thee, and from the great treasury of thy compassion may our petitions be answered in our need, at all seasons and times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156."
+    }
+  },
+  {
+    "id": "esy-sunday-motwa-rubric",
+    "title": "The Motwa",
+    "text": "<p class=\"component-text\">They say the proper Motwa as given in the Khudhra; then the prayer for the season as at the Evening Prayer (Prayers after the Royal Anthem, page 80).</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156.",
+      "note": "The Motwa proper is a GAP, disclosed rather than filled (directed to the Khudhra, same pattern as the ferial Motwa gap already on record). The prayer for the season is already built -- see esy-festival-prayer-after-royal-anthem, cross-referenced here rather than re-transcribed."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-tishbukhta-mar-babai-great",
+    "title": "Tishbukhta of the Night Service, by Mar Babai the Great (Sundays from Advent to Epiphany)",
+    "text": "<p class=\"component-text\">Blessed is the Compassionate one, who in his lovingkindness hath supplied our life in prophecy. With the eye of the Spirit Isaiah saw the wondrous Child of the Virgin. For Mary without union bore Emmanuel, the son of God. From her the Holy Ghost fashioned the body which was united (with him), as it is written, that it might be an adorable habitation and temple. For the Brightness of the Father in one Sonship, and at the beginning of his marvellous conception united it with him in one honour, that he might fulfil in him all things that were his, for the salvation of the world, as seemed good to him. In the day of his Annunciation [or Nativity] the watchful ones glorified him, with their hallelujahs in the heights above, and also the earthly ones offered him worship, with their offerings in one honour. One is Christ the Son of God, worshipped by all in two natures; in his Godhead begotten of the Father, without beginning, before all time; in his manhood born of Mary, in the end of times, in the body which was united (with him). His Godhead was not of the nature of (his) mother, and his manhood not of the nature of the Father; the natures are preserved in their qnumi, in one person of one Sonship. And as the Godhead is three qnumi (but) one essence, so the sonship of the Son is in one person two natures; so the holy Church hath learnt to confess the Son who is Christ. We worship, O my Lord, thy Godhead, and thy manhood without division. (Say this verse thrice.) One is the power, one the majesty, one the will, and one the glory, of Father, Son, and Holy Ghost. For ever and ever. Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.156-157.",
+      "note": "'Annunciation' is glossed in the source's own footnote as the Syriac word also meaning Nativity, i.e. this text serves both."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-tishbukhta-mar-babai-nisibis",
+    "title": "Another, for all Sundays of the year, by Mar Babai of Nisibis",
+    "text": "<p class=\"component-text\">Glory to thy mercies, which sent thee to us, O Christ the Sun of righteousness. The brightness which shone from the house of David, and called the nations to repentance. Come near, ye penitent, and ask for mercies, while there is time for repentance. Let every man leave that which is in his heart, and ask for mercies with openness of face. Hear our request and grant our petitions, O Christ, who lovest the voice of the penitent. Neglect not, O my Lord, our entreaty, which we offer to thee in penitence of soul. Thou knowest, O my Lord, that our iniquity is great; stretch out to us the hand which is full of mercies. We are like unto the younger son in thy sight, who scattered the goods of the house of his fathers. We have sinned and provoked thee, pity and have mercy, O good and merciful Lord. Let thy mercies pity our trespasses, for by thy living blood thou hast bought us. With the widow we beseech thee, the Judge, who aboundest in mercies. Pardon our trespasses and wipe out our sins, O thou who art good, and bearest the burden of our sin. May thy cross be a house of refuge to us, and drive away from us the power of the Evil one. And in that day when the children of Adam are shaken together from the dust, and every man is awakened from the sleep of mortality for the Questioning, in that judgment when good and bad are repaid according to their deeds, may thy compassion intercede for us, and may we not be condemned in thy just judgment. And in that hour when thy mercies shine forth, may we go forth to meet thee according to thy will, and with the saints and just men who loved thee may we sing glory to thy Godhead. And may we all together lift up glory to Father, Son, and Holy Ghost, to whom be praise from his worshippers, for ever and ever. Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.157-158."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-tishbukhta-mar-george",
+    "title": "Another, for the Hallowing of the Church, by Mar George, Metropolitan of Nisibis",
+    "text": "<p class=\"component-text\">Glory to thy mercies, O Christ our King, O Son of God, worshipped by all; for thou art our Lord, and thou art our God, and the head of our life and our blessed hope. And thee the companies on high glorify, and the assemblies below with one accord, confessing thee that thou art hidden, and wast revealed in our flesh in the latter times. When thy mercies pitied (us), thou wast well pleased in thy love to come to save us and make free our race. Thou didst heal our pains and didst pardon our trespasses; thou didst quicken our deadness in thy mercies. And didst raise up on earth a holy Church, after the type of that which is above, in heaven. By a type thou didst foreordain her, in love thou didst espouse her; in mercies thou didst receive her, by suffering thou didst perfect her. And lo, the Enemy of man troubleth her, with his arrogant pertinacity through his ministers. O my Lord, neglect not the holy Church, and let not the promise of thy word be made false. Let not her desirable beauty be disfigured, and her great wealth be made poor. Remember thy promise to Peter; fulfil in deed that which thou hast spoken. Make firm her gates and make strong her bars; exalt her horn and lift up her walls. Bless her sons and preserve her children, and give peace to her priests and confound them that hate her. And make thy peace to dwell in her, and bring to naught divisions and schisms in her. And grant us to be a peaceful habitation, without controversy in the faith, while we keep our faith, in a good hope and perfect love. May our actions also be approved before thee, and may we find mercies in the day of recompense, that without ceasing we may lift up glory to thy Father, and to the Holy Ghost, through thee, to whom be praise in all generations, for ever and ever. Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.158-159."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-closing-verse",
+    "title": "And let all the people say Amen and Amen",
+    "text": "<p class=\"component-text\">O Mary, the holy Virgin, Mother of Jesus our Saviour, beseech with us of Christ, that he make his peace to dwell among us, and keep us from all harm by night and by day.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.161.",
+      "note": "From the Fast to Pentecost, these verses are not said; in Advent, the verse 'And let all the people' is not said."
+    }
+  },
+  {
+    "id": "esy-sunday-shubakha-prayer",
+    "title": "Prayer of the Shubakha on Sundays",
+    "text": "<p class=\"component-text\">Glory to thee from all mouths, and confession from all tongues, and worship and honour and exaltation from all creatures, O secret and glorious Being, who dwellest in the exalted heights, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.161."
+    }
+  },
+  {
+    "id": "esy-sunday-shubakha-rubric",
+    "title": "The Shubakha",
+    "text": "<p class=\"component-text\">They say the proper Shubakha, two verses at a time, farced with Glory, ingah, ahingah, ahingah, to thee, O Lord. They say the proper Continuation from the Khudhra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.161.",
+      "note": "GAP, disclosed rather than filled: both the proper Shubakha and its Continuation are directed to the Khudhra. The farcing syllables 'ingah, ahingah' are noted by Maclean himself as having no independent meaning."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-tishbukhta-mar-narsai",
+    "title": "Tishbukhta, by Mar Narsai",
+    "text": "<p class=\"component-text\">Praise to him who in his goodness hath made our race free, from the slavery of the Evil one and of death. And hath made peace between us and the companies of those on high, who were angry, because of our iniquity. Blessed is the Compassionate one, who, when we sought him not, came forth to seek us, and rejoiced in (giving) us life. And showed a type of our being lost, and returning again, in the sheep that went astray. The heir, the Son, hath called our nature, which went astray and returned, and was dead and is quickened again. And hath made glad the spiritual companies, with our repentance and quickening. Unspeakable is the great love which the Friend of our race hath showed to us. Who of our race hath made a Mediator, and reconciled the world with his greatness. It is a thing too great for us and for all creatures; it is a new thing which he hath done to our humanity. That he hath made our body a holy temple, that he might perfect in it the adoration of all. Come, ye earthly and heavenly ones, wonder and be astonished at the greatness of the step, by which our race hath come to the great heights of the incomprehensible Godhead. Let heaven and earth, and all that is in them, confess with us, him who exalteth our race. Who hath renewed our image, and wiped out our iniquity, and hath called us by his Name, and hath made all things subject to us. He is worthy of glory from all mouths, who hath lifted us up above all; and let us all give praise to him, for ever and ever. Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.161-162."
+    }
+  },
+  {
+    "id": "esy-sunday-lelya-karuzutha",
+    "title": "Karuzutha, as appointed in the Khudhra; or say, Father of mercies (the first part) as above, page 6; or the following",
+    "text": "<p class=\"component-text\">Let us all stand up, etc. (page 6). O thou who didst teach us to pray and not to be slothful, we make request. (Answer.) O our Lord, have mercy upon us. (And so after each clause.) O thou who didst spend the night in prayer to God for the salvation of our race, we, etc. O thou who didst give us a proof of thy mercy through our earthly fathers, we, etc. O thou who didst save us from mighty Death, and in whom we trust to save us, we, etc. O thou who didst save us from the power of darkness, and hast brought us to the kingdom of thy well-beloved Son, we, etc. O thou who saidst, Ask and it shall be given you, Seek and ye shall find, Knock and the treasure of mercies shall be opened to you, we, etc. For the welfare of our holy fathers NN, and all those who serve under them, we, etc. O merciful God, who in mercy governest all, we, etc. O thou who art glorified in heaven and worshipped on earth, we, etc. Give us the victory, O Christ our Lord, in thy coming, and give peace to thy Church, saved by thy precious blood, and have mercy upon us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.162-163.",
+      "note": "GAP for the Khudhra-appointed form is disclosed by the rubric's own wording ('as appointed in the Khudhra; or say ... or the following') -- this component transcribes the two given alternatives ('Father of mercies' is itself a further cross-reference to p.6, already built as part of the ferial material) in full."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-title",
+    "title": "Morning Service for Sundays, Feasts of our Lord, and Memorials of Saints",
+    "text": "<p class=\"component-text\">The Festival Morning Service, said on Sundays throughout the year (following the Night Service without a break), with its own opening prayers, farced psalm set, three Tishbukhtas, and Martyrs' Anthem, distinct from the ferial weekday Sapra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.164."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-make-us-worthy",
+    "title": "Prayer before the Morning Psalms",
+    "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, according to the will of thy Godhead and thy glorious Majesty, to serve before thee purely and diligently, wakefully and earnestly, justly and uprightly, honestly and in holiness, and without blame. And may our service, O my Lord, please thee, and our prayer and vigil persuade thee, and our request propitiate thee, our beseeching honour thee, and our entreaty appease thee. And may the mercies and compassion of thy Godhead be for the pardon of the trespasses of thy people, and for the forgiveness of the sins of all the sheep of thy pasture, whom thou hast chosen for thyself in thy lovingkindness and mercies, O thou good Friend of the sons of men, Lord of all, etc. They answer, Amen. Bless, O my Lord.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.164."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-enlighten-us",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Enlighten us, O my Lord, with thy light, and gladden us by thy coming; cause us to rejoice in thy salvation, and make us partakers of thy mysteries. And grant and vouchsafe that, together with the heavenly companies clothed in light, and the bands of angels, with voices full of confession, we may sing praise to thy glorious Trinity, O Creator who rulest all, O Creator who needest not the service of creatures, who didst create light in thy lovingkindness, and didst order darkness in thy mercy, and gavest light to creation in thy wisdom and knowledge and Godhead which cannot be comprehended by spiritual or earthly beings, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.164-165.",
+      "note": "Maclean notes an alternative: 'Or they use two prayers in the book Abukhalim.' They say 'In the beginning' as in the Khudhra (a GAP, disclosed rather than filled -- a verse proper to each Sunday/Feast/Memorial dealing with the creation of the world)."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalm-100-farced-rubric",
+    "title": "Psalm 100 (farced with 'In the beginning')",
+    "text": "<p class=\"component-text\">Ps. c. farced with 'In the beginning,' if noted in the Khudhra. If not, as on ferias, but the farcing is said after the second as well as after the first clause.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.165.",
+      "note": "GAP for the day-specific 'In the beginning' verse itself (Khudhra); the ferial fallback farcing reuses the already-built esy-sapra-psalm-100."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-to-thee-all-creatures",
+    "title": "Prayer, on Sundays and Feasts",
+    "text": "<p class=\"component-text\">To thee, O my Lord, all creatures whom thou hast created lift up glory and praise. For thou alone art their true light, and dost enlighten the worlds and (all) creatures in thy lovingkindness and mercy, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.165.",
+      "note": "This fills a gap this project had previously disclosed as unavailable (esy-fast-sapra-prayer-all-creatures-rubric, built during the Great Fast session, cross-referenced this same page 165 as not-yet-obtained). Now that the text is in hand, it is transcribed here in full; the earlier Fast-season component remains as a historical record of the gap at the time it was built and is not altered, since correcting a live gap disclosure rather than the underlying component is the project's standing practice for this kind of update."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalm-91-farced",
+    "title": "Psalm 91 (farced)",
+    "text": "<p class=\"component-text\">[If it be a day on which 'In the beginning' is not said, the psalm is sung in the order of the ferial service; otherwise thus.] Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>When the Creator established the light the angels wondered at it. And when it shineth forth each morning let them and us give him glory.</em> Whoso dwelleth . . . and show him my salvation. <em>When the Creator established, etc.</em> Glory be. From everlasting. <em>When thou didst create the light which is poured forth, the spiritual ones glorified thee. And it was made known to them that he who created the light, created them also.</em> Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>By angels thou art glorified, and by the sons of men thou art praised. And all together with one accord cry and say, Blessed is thy Annunciation [or Nativity, or Baptism, or Ascension, or Descent of thy Holy Spirit], O Christ our Saviour.</em> Let us pray, Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.165-166.",
+      "note": "The bracketed occasion-name in the final farcing (Annunciation, Nativity, Baptism, Ascension, or Descent of the Holy Spirit) is chosen according to the specific feast; for an ordinary Sunday, Maclean's own text implies 'Annunciation' as the default recurring theme (matching the parallel Night Service Tishbukhta by Mar Babai the Great, already built)."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-glorious",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Glorious, O my Lord, is the great and confident hope of thy Godhead, and high and exalted is the wondrous refuge of thy Majesty, and all who hope in thee, and trust in thee, shall not be ashamed nor confounded, but shall obtain their requests from thy rich and overflowing treasury, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.166.",
+      "note": "Reused from the already-built esy-sapra-psalm-91-prayer / esy-fast-sapra-prayer-glorious, which this exact prayer opening matches verbatim."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalm-civ-farced",
+    "title": "Psalm 104:1-16a (farced)",
+    "text": "<p class=\"component-text\">Bless the Lord, O my soul. <em>Glory becometh thee, O God.</em> Bless the Lord, O my soul . . . full of sap. (No Gloria.) Add, <em>Glory becometh, etc.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.166."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalm-cxiii-farced",
+    "title": "Psalm 113 (farced)",
+    "text": "<p class=\"component-text\">Praise the Lord ye his servants. O praise the Name of the Lord. <em>Glory becometh thee, O God, for thou art the Creator of the light.</em> Praise the Lord ye his servants . . . mother of children. Glory be. From everlasting. <em>Praise the Lord ye his servants.</em> Glory becometh, etc. Praise the Lord ye his servants. O praise the Name of the Lord. <em>Glory becometh, etc.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.166."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-on-sundays-memorials",
+    "title": "Prayer on Sundays and Memorials",
+    "text": "<p class=\"component-text\">Thou, O my Lord, art the Creator of light in thy lovingkindness, and thou orderest the darkness in thy wisdom, and enlightenest creation with thy glorious light. And thee, O my Lord, continual praise without ceasing becometh, and to thy Name is due confession and worship in heaven and earth, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.166."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-on-feasts",
+    "title": "Prayer on Feasts of our Lord",
+    "text": "<p class=\"component-text\">Thou, O my Lord, art alone the Creator of light, and thou orderest the darkness in thy wisdom and by thy judgments, and enlightenest creation with thy glorious light, by the instrumentality of the sun and moon, thy luminaries. And from thy bright light resplendent with rays shine all lights by night and by day, the work of thy hands. And to thee is due worship, for thee is praise fitting, for there is none other God but thee, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.166."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalm-xciii",
+    "title": "Psalm 93",
+    "text": "<p class=\"component-text\">The Lord is King and hath put on glorious apparel. <em>We worship thee, O everlasting Being.</em> The Lord is King . . . becometh thine house, O Lord for ever. <em>We worship thee, O everlasting Being.</em> No Gloria.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.166."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-psalms-cxlviii-cxlix-cl-cxvii",
+    "title": "Psalms 148, 149, 150, 117 (unfarced, one Gloria)",
+    "text": "<p class=\"component-text\">Ps. cxlviii., cxlix., cl., cxvii., without farcing and all under one Gloria. Add, Glorify the Lord, all the whole earth. O Giver of light, O Lord, even to thee do we lift up glory. Let us pray, Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.167.",
+      "note": "Maclean notes cxlix. is used on Memorials only, in some manuscript traditions."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-morning-anthem",
+    "title": "Prayer of the Morning Anthem",
+    "text": "<p class=\"component-text\">To thee, O Christ, the true Light, the glorious Brightness who art of the Father, who wast revealed and didst shine forth in the world, for the renewal and salvation of our nature, in the firstfruits which are of us, we lift up praise, and honour, and confession, and worship, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.167."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-morning-anthem-rubric",
+    "title": "Morning Anthem",
+    "text": "<p class=\"component-text\">Morning Anthem for the day, as in the Khudhra or Geza. They repeat it, and say the verse, Glory be, etc. The last verses are invariable, and are as follows: From everlasting to everlasting. At the early dawn . . . sons of men (three verses), as at the ferial service, page 106. They add, Let us pray, Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.167.",
+      "note": "GAP for the day-specific Morning Anthem itself, disclosed rather than filled (directed to the Khudhra or Geza). The invariable closing reuses already-built ferial material."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-in-the-glorious-light",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">In the glorious light, O my Lord, of thy revelation, and in the joyful Epiphany of thy coming, which all creatures whom thou hast created look for, and hope for, and expect, make us all in thy lovingkindness and mercies worthy to be glad and have joy, with the true sons of thy mysteries in Jerusalem above, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.167."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-tishbukhta-mar-ephraim",
+    "title": "Tishbukhta, by Mar Ephraim the Syrian doctor",
+    "text": "<p class=\"component-text\">A light hath shone forth to the righteous, and gladness to them that are true of heart. <em>Yudh.</em> Jesus our Lord the Christ hath shone forth to us from the bosom of his Father. He hath come and taken us out of darkness, and hath enlightened us with his excellent light. <em>Alap.</em> The day hath shone forth on the sons of men, and the power of darkness hath fled. A light hath shone forth for us from his light, and hath enlightened our eyes which were darkened. <em>Shin.</em> He hath caused his glory to shine forth in the world, and hath enlightened the lowest depths. Death is extinguished and darkness hath fled, and the gates of Sheol are broken. <em>Wau.</em> And he hath enlightened all creatures who of old were in darkness, and the dead who lay in the dust arose, and glorified (him) because salvation had come to them. <em>'E.</em> He gave salvation and granted us life, and was exalted to his Father on high, and furthermore he cometh in his great glory, and enlighteneth the eyes of all who have waited for him. <em>Mim.</em> Our King cometh in his great glory; let us light our lamps and go forth to meet him, and let us be glad in him as he hath been glad in us, and maketh us glad by his excellent light. <em>Shin.</em> Let us lift up glory to his Majesty, and let us all confess his high Father, whose mercies are many, and who sent him to us, and hath given us hope and salvation. <em>Yudh.</em> His day suddenly shineth forth, and his saints go forth to meet him, and light their torches, all who have laboured and been wearied and have made themselves ready. <em>Kheith.</em> The angels and watchful ones of heaven are glad, in the glory of the just and righteous, and place crowns on their heads, and with one accord sing praises and hallelujahs. <em>Alap.</em> My brethren arise and prepare yourselves, that we may confess our King and our Saviour, who cometh in his glory and maketh us glad, in his excellent light in the kingdom.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.167-168.",
+      "note": "This Tishbukhta is acrostic, its initial letters spelling Ishu Mshikha (Jesus Christ) -- though, as Maclean notes, Ishu is not now spelt with an Alap. If there be a Sugitha (a special anthem from the Khudhra or Geza) it is here added -- a further disclosed gap."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-tishbukhta-mar-narsai",
+    "title": "Another, by Mar Narsai",
+    "text": "<p class=\"component-text\">The light of Christ's Epiphany hath made glad earth and heaven. Error, like darkness, had spread over (all) created things, and the light of Christ hath shone forth, and the world hath gotten comfort. The night is like unto the time from Adam till now, and the day of Christ's revelation unto the course of hours of the day time. Our Lord also hath named the morning the beginning of his preaching, and the evening time, the end, which giveth the world rest from its labour. For this hope were looking priests and kings and prophets, and the Creator hath given them rest in the haven of the day of his revelation. In his revelation (all) created things rested, which were troubled by sin, and the world began to meditate on the consideration of things to come. He delivered a new Testament to them that received his teaching, and impressed it with his own blood, that his promises should not lie. With promises of the kingdom on high he fixed the course of reasoning beings, and lo, they wait for his revelation, earthly and heavenly ones. Now the revelation hath drawn nigh, of the king who reigneth (and is) of our race; come let us be ready to see him, with the companies of heavenly beings. Let us take to ourselves love as oil, for that day which is full of fear; lest we hear that voice, I know not your deeds. With the talent of the word of doctrine may we be paid while we live, that we may be worthy to hear that voice, Come, receive the things promised you. In the hope of life to come let us make fast the ship of our mind, and in love and faith may we reach the haven of joys. (They say,) A light hath shone forth to the righteous, and gladness to them that are true of heart.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.168-169."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-tishbukhta-company-of-ananias",
+    "title": "Another, of the Company of Ananias",
+    "text": "<p class=\"component-text\">O all ye works of the Lord, bless ye the Lord. O ye heavens of the Lord, bless ye the Lord. (Say the first proper farcing from the Khudhra; then repeat the above; or,) Praise him and magnify him for ever. O ye angels of the Lord, bless ye the Lord. O ye waters that be above the heavens, bless, etc. O all ye powers of the Lord, bless, etc. O ye sun and moon, bless, etc. O ye stars in heaven, bless, etc. O ye rain and dew, bless, etc. O all ye winds, bless, etc. O ye fire and heat, bless, etc. O ye night and day, bless, etc. O ye light and darkness, bless, etc. O ye cold and heat, bless, etc. O ye snow and ice, bless, etc. O ye lightnings and clouds, bless, etc. O all the earth, bless, etc. O ye mountains and hills, bless, etc. O all that bring forth upon the earth, bless, etc. O ye seas and rivers, bless, etc. O ye springs of water, bless, etc. O ye fishes and all that moveth in the waters, bless, etc. O all ye fowls of heaven, bless, etc. O all ye beasts and cattle, bless, etc. O ye sons of men, bless, etc. O ye sons of men, bless, etc. O ye house of Israel, bless, etc. O ye priests of the Lord, bless, etc. O ye servants of the Lord, bless, etc. O all ye spirits and souls of the righteous, bless, etc. O ye perfect and humble men of heart, bless, etc. O Ananias, Azarias, and Misael, bless, etc. O ye apostles and prophets, bless, etc. O ye martyrs of the Lord, bless, etc. O all that stand in the house of the Lord, bless, etc. We praise and exalt (him) for ever and ever. (Or, We bless Father, Son, and Holy Ghost, for ever and ever. Amen and Amen.) (Repeat the first farcing.) Then, Glory be, etc., and From everlasting, with the second farcing. Repeat O all ye works, etc., O ye heavens, etc., and say the third farcing.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.169-170.",
+      "note": "A Benedicite-form canticle (compare the Song of the Three Holy Children). GAP for the specific proper farcings themselves, disclosed rather than filled (directed to the Khudhra); the fixed refrain structure is transcribed in full."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-gloria-in-excelsis",
+    "title": "Prayer of the Gloria in excelsis, on Sundays and Feasts of our Lord",
+    "text": "<p class=\"component-text\">We glorify, and exalt, and sing hallelujahs and praises to the hidden and sacred Nature, blessed and incomprehensible, of thy glorious Trinity, and thy lovingkindness to our race we are bound to confess, worship, and glorify at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.170."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-tishbukhta-gloria-in-excelsis",
+    "title": "Tishbukhta (Gloria in excelsis)",
+    "text": "<p class=\"component-text\">Glory to God in the highest (thrice). And on earth peace. And a good hope to men. We worship thee. We glorify thee. We exalt thee. Being who art from eternity. Hidden and incomprehensible Nature. Father, Son, and Holy Ghost. King of kings. And Lord of lords. Who dwellest in the excellent light. Whom no son of man hath seen. Nor can see. Who alone art holy. (And) alone mighty. (And) alone immortal. We confess thee. Through the Mediator of our blessings. Jesus Christ. The Saviour of the world. And the Son of the Highest. O Lamb of the living God. Who takest away the sins of the world. Have mercy upon us. Thou who sittest at the right hand of thy Father. Receive our request. For thou art our God. And thou art our Lord. And thou art our King. And thou art our Saviour. And thou art the forgiver of our sins. The eyes of all men hang on thee. Jesus Christ. Glory to God thy Father. And to thee and to the Holy Ghost, for ever, Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.170-171.",
+      "note": "On Memorials a proper Tishbukhta from the Khudhra is said instead, with the prayer before it being that of the season, as at evening service, page 80 -- a disclosed gap for the Memorial-specific case, not built here."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-holy-god-sundays",
+    "title": "Prayer of Holy God on Sundays and Feasts",
+    "text": "<p class=\"component-text\">To thee, O my Lord, and to thy Christ, and to thy living holy, lifegiving and divine Spirit, we lift up praise, honour, confession, and worship, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.171."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-holy-god-rubric",
+    "title": "Holy God",
+    "text": "<p class=\"component-text\">The deacon sings, Lift up your voices, etc. And they reply, Holy God, etc., as on ferias, page 106, but sung slowly. Then, Let us pray, Peace be with us. Our Father farced (page 1). They give the kiss of peace.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.171.",
+      "note": "Reuses the already-built esy-trisagion and esy-lords-prayer-farced."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-compassionate-one-holy",
+    "title": "Prayer, on Sundays and feasts",
+    "text": "<p class=\"component-text\">O Compassionate one, whose Name is holy, and whose dwelling-place is holy, the place of whose tabernacle is holy; and holy are the exalted hosts who praise thee with holy hallelujahs; who art called holy by spiritual and by earthly beings, with holy voices which cease not; Make holy, O our Lord and our God, the temple of our souls, and purify our thoughts; pardon our trespasses, make white our defilements; and make us, O my Lord, pure sanctuaries for thine exalted Godhead, and temples adorned and befitting the honour of the service of thy love, O thou who makest all holy by the power of thy Word, and of thy Spirit, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.171-172."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-prayer-holy-art-thou-another",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Holy art thou, O my Lord, continually, and everlastingly glorious. Thou art high and exalted above all, incomprehensibly; thou art worshipped by the watchful ones and men, as Three in One, O great King of glory. O Being who art from everlasting, we confess, worship, and glorify (thee) at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.172."
+    }
+  },
+  {
+    "id": "esy-sunday-sapra-martyrs-anthem-prayer-sundays",
+    "title": "If the Martyrs' Anthem is said, this prayer is added on Sundays",
+    "text": "<p class=\"component-text\">By the prayer, O my Lord, of the martyrs who desired thee, and the confessors who loved thy Name, and the just who kept thy commandments, and the prophets who announced thy mysteries, and the apostles who preached thy gospel, and the martyrs who suffered for thee, and offered not incense to idols, but to thy holy Name, may the beloved flock of thy pasture be kept from all harm, hidden and open, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.172."
+    }
+  },
+  {
+    "id": "esy-sunday-martyrs-anthem-before",
+    "title": "Martyrs' Anthem: Sunday Morning 'Before'",
+    "text": "<p class=\"component-text\">And ye are all the children of the most Highest. (Or, Ye are the martyrs of the Son and his chosen ones.) The martyrs of the holy Son, in a good course were crowned, by the preaching of the truth, and with the angels in heaven rejoice and glorify God, being made intercessors on our behalf. And praise becometh well the just. Famed and holy martyrs, athletes of the faith, beg for mercies from God, that he may send us help, and strengthen our weakness, by the overflowing mercies of his lovingkindness. And sing lustily with the voice. Tell me, martyrs, for whom ye endure torments and stripes, and have reckoned death but as sleep? We heard that our Saviour said, He who shall love his life for my sake hath everlasting life. Let thy merciful kindness, O Lord, be upon us. May that lovingkindness which preserved the boy David from Saul keep the Church and its children; may priests have concord, among kings may reconciliation prevail, and may martyrs have the crown of (their) confession. He divided the rock and the water gushed out. Moses the Captain of the Hebrews caused water to gush out from the stone, and gave the rebellious people to drink; how much (more) then shall the bones of the martyrs which are placed in the Churches cause help to gush out to the sons of men? Open me the gates of righteousness. Open is the gate of Paradise, and the righteous enter in and dwell; by the fountain of help, and the Right hand receiveth them, which planted Paradise, and placeth crowns on their heads. Unto the godly hath shone forth light in the darkness. With light which shone from the sun, as with a garment brighter than snow, are the righteous clothed in Eden, and are glad and rejoice and exult among the trees of Paradise, when they hear the voice of the Son. The light which shone forth for the righteous. Lamps of resplendent light the martyrs hold in their hands, and wait for the Bridegroom of the Highest, that they may go in with him to the bridechamber, and their lamps go not out, on which their necks sprinkle blood. Look unto him and trust in him. Ye martyrs saw Christ bearing his cross on his shoulder, and ye bore your crosses (and) went out to the four quarters (of the world), and made disciples of (all) creation in the name of the Trinity. They are not in the labours of other folk. The just who lay down in thy hope sleep and are in peace, and at rest, and the watchful ones keep their bodies, and power descendeth from on high, and ever visiteth their bones until the day of resurrection. For at the head of the book it is written of me. The company of Ananias in the furnace wrote an epistle to Daniel, Come, arise with us in prayer. Daniel wrote its answer, Fear ye not the fire which the persecutors have kindled for you. O come, hearken, and I will tell you. Tell us, O Daniel, Child beloved of God, how thou didst see the Son. I saw him flying on the clouds, and like unto the Ancient of days, and his dominion is heaven and earth. His tongue talketh of judgment. Tell us, O Robber, of the brightness of Paradise, and show us the tree of life, that we may pluck a benefit from it, love, and hope, and salvation, an offering to the King of kings. The king's daughter stood in glory. The Church is like unto Paradise, and the martyrs within her to trees, and their deaths to precious buds; and blessed is he who hath drawn near to the bones of the saints, and hath received help from them. And the queen on her right hand. The Church went forth with hosannas, to meet the heavenly Bridegroom, and spake with him and said unto him, Come to me, for I have loved thee, and cast off Sion which hath hated thee, and I and my children will worship thee. How good and beautiful. How seemly it is to sing praises in this holy house, in which are prophets and apostles, and martyrs, and priests, and teachers, and in which is set up the Holy Table, for the pardon of the children of Adam. As an eagle that flieth over his nest. Ye martyrs are like eagles, and more harmless than doves, and lighter than air; when on the sea he calleth, ye answer, and when on dry land, ye neglect (him) not; may your prayer be a wall to us. Stretch forth thy hand and save me. O our Lord, our Lord, was the cry of Simon Peter in the waves, Deliver me, O my Lord, for lo, I sink. Our Saviour stretched forth his right hand, and held him by the hand, and said unto him, Be strong, and be not in doubt. In the days of old. A cherub with a sword and spear went around Paradise, lest Adam, who had sinned, should enter in; and our Lord opened it by his cross, and prophets and apostles entered in, and Adam entered in as the son of the King. Give ear, O Lord, unto my prayer. On the mount of Horeb, Elijah prayed before God for the people who had trodden down the law, and he bound the doors of heaven, that rain should not come down in its season, on a people who had offended and done wickedly. He spread on them a cloud, and overshadowed them. A cloud of fire went before the rebellious people, when they went out of Egypt; and while they rejected Christ, the holy martyrs received him, and lo, their memorial is in creation. How good and beautiful. How beautiful are the companies, and how sweet the voices of the choirs, of the martyrs who are laid in the churches, and who ask for mercies and compassion, and forgiveness of trespasses and sins, for the children of Adam (who was) of dust. For he hath done a marvellous thing. That which was wrought, etc., as above. O hear ye this, all ye people. In the morning faithful Shmuni, etc., as above. And your prayers be on all of us. Gadai and Maccabaeus, etc., as above. Like as the arrow in the hand of the giant. How hard was the arrow, etc., as above. There shall I make the horn to spring forth for David. From the house of David and Abraham the Creator chose a Virgin, and caused his hidden power to dwell in her; and by the power of the Holy Ghost she conceived and bore Christ, the Judge of the heights and the depths. Glory be, etc. Glory be to thee, O my Lord, for that thou wast pleased with the fragrance of the death of thy saints; the martyrs who suffered for thee, and because they loved thee on the earth, thou didst exalt them in heaven; glory be to thee, who exaltest thy servants. From everlasting to everlasting. Above in the heights among the watchful ones is appointed thy memorial, O our father, with the just who prevailed and conquered, and also with the martyrs who were crowned; Christ the King, whom thou didst love, maketh thee an heir of the bridechamber on high.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.172-176.",
+      "note": "From U. (not given in R.C. or A.). Rarely used in practice on Sundays and festivals, but found in some fuller manuscripts of the 'Before and after,' and given here on that basis. Four anthems ('For he hath done a marvellous thing,' 'O hear ye this, all ye people,' 'And your prayers be on all of us,' 'Like as the arrow in the hand of the giant') are cross-referenced by Maclean to page 111 and page 112 of the already-built ferial Sapra Martyrs' Anthem material rather than given fresh text here -- reused by cross-reference, not a gap, though the exact matching ferial component has not been individually re-verified line-by-line in this session."
+    }
+  },
+  {
+    "id": "esy-sunday-martyrs-anthem-after",
+    "title": "Martyrs' Anthem: Sunday Morning 'After'",
+    "text": "<p class=\"component-text\">He executeth judgment for them that are despised. (Or, Verily, verily I say unto you, He that heareth you, heareth me; and he that despiseth you, despiseth me; and he that despiseth me, despiseth him that sent me.) Your labours are not despised, O martyrs, and Christ the King, whom ye loved, passeth not away; on the earth are laid your bones, for ye have conquered, and in the book of life are your names, O friends of the Son. For the glory of thy name. (Or, Because they saw that the world passeth away and is destroyed, and that its desirable things are as vanity, and are destroyed and come to naught and are lost, they all said to one another, Provide neither gold, nor silver, nor brass in your purses.) Not for the wealth of the world have we loved thee, say the martyrs to Christ with openness of face; but because we have truly learnt that thy kingdom and Godhead may not be fathomed. And sing lustily with the voice. (Or, Because we have a God who helpeth us, and in the name of his authority we work mighty deeds and signs, and in his Name we throw down high walls.) The martyrs say one to another, Come, let us go forth, and bring to naught the error which hath waxed strong in the four quarters (of the world); and in the Name of Jesus we will reprove Satan, and like the walls of Jericho he will fall before us. They sing among the mountains. (Or, A report went forth and a decree was heard, Whoso is a Christian, and secretly worshippeth God, shall have his limbs cut off one by one, and shall be cast out to the mountains and hills and seas and islands.) Among the mountains and hills the king commanded that the limbs of the blessed martyrs should be cut off; and the Holy Ghost entered with them to the contest, and gave them the victory in the judgment before the persecutors. The land shall give her increase. (Or, In the beginning the Lord blessed the earth, which was cursed by the blood of Abel; and when the blood of the saints was shed, it was blessed that it might give good fruits to God.) The earth which was drunken with the blood of the martyrs shall give fruits thirtyfold, and sixtyfold, and an hundredfold; and in the Church, which hath carried their bones in processions with honour, may the peace of our Lord reign for ever. The righteous cried, and the Lord heard them and delivered them. (Or, And they fixed their gaze above, and worshipped the living Father, and lifted up praise to the Son, and entreated the Holy Ghost to weave a crown and place it on their heads.) The martyrs cried from the fire to God, For thy sake we die, come thou and help us, and send a watcher from on high to us; the fire saw the spiritual one, and sprinkled dew. Look unto him and trust in him. (Or, They cease not from fighting with us, and give no sleep to our eyes; and we put not our armour off from us, and deny not Christ the Son, who suffered for us, and we fear not the fire nor the sword, until the evening of death come.) The martyrs saw the terrible swords glittering, and the slayers threatening them, and thus they spoke: By the power which came down and abode on Mount Sinai, and the staff that divided the sea in the hands of Moses, and by him who said, Eli, Eli, lama sabachthani, we will not deny Christ, who suffered for us. For thy sake we have been killed daily. (Or, Who shall tell your victories, and relate your deeds, O famous martyrs, who stood mightily in the contest, and conquered the Evil one valiantly, and endured bitter torments?) O martyrs killed for the hope of innocence, may your prayer be a wall to us at all times; and by that power by which ye conquered in the contest, may we conquer the Enemy who fighteth with us. His salvation is nigh them that fear him. (Or, The saints heard that voice, and the martyrs hearkened: Whoso confesseth me before the judges of this world, and beareth his cross, and followeth me uprightly, I (will) confess him before God and them that minister to him.) The martyrs drew near to entreat God, and this entreaty the just offered to him who is good; by the right hand which divided the sea before the people, and made firm the waves under the feet of Simon Peter, by the majesty which was buffeted in the judgment-hall, send not the rod of wrath on the inhabited (world). I will speak peace of thee. (Or, Thine is the sword, and dire sufferings and torments for a season, and ours are our necks, and the blood of our lives, until the evening of death come.) Peace to the Company that was crowned in the days of Sapor, the king of the city of Lidan; in tens they came in (to be slain) by the sword, and their mouth ceased not (to sing) praise. Peace be in thy strength. (Or, The heathen king deceived himself, and trusted that by shedding the conquering blood of the famous martyrs the power of Christ the King would be conquered, and his (own) name magnified; and he began to put to death the famous martyrs for the Name of their Lord.) Peace to the Company that was crowned in the days of Chosroes, the king in the country of Persia; and the blessed ones were led as lambs to the slaughter, for their Lord, whose love they desired and whose Name they confessed. And I spake of peace. (Or, My peace I give unto you, my peace I leave with you.) Peace to the Company that was crowned in the days of Mar Tahmazgard, in the city of Seleucia; one hundred and fifty thousand were they in number, who received the testimony and were given the crown. He sent a man before them. (Or, Behold, I send you forth as lambs in the midst of wolves; be ye therefore wise as serpents and harmless as doves.) As the herald who is sent before a king, his Lord sent Mar Adai to the country of Persia; and like ravening wolves they went out to meet him, and became harmless lambs at his prayers. For thou art my hope from the womb. (Or, My soul is exceeding sorrowful, even unto death; tarry ye here, and watch with me. And give me peace, and go ye in peace.) How sad was holy Mar Shimun when he said farewell to his city: By God I adjure you, my beloved, gain ye your lives by fasting and prayers. And from the deep of his heart. (Or, The light of his countenance was darkened, and he was disfigured by sadness, for that he was scarcely delivered from the snares of the Evil one, and his eyes were fixed on high, as he asked for salvation in his prayer.) How sad was the firstborn Christopher when the prison-house detained him amidst the harlots; and he fixed his eyes on heaven, saying, Grant me, O my Lord, a terrible appearance, that they look not on me. He shall be like a tree planted by the streams of water. (Or, This is he who was chosen from the belly, and sanctified from the womb, and was filled with the grace of the Holy Ghost.) Cyriac is like a sweet cluster of grapes, and his mother is like the vine which bare it; whose root is in earth and whose branches are in heaven, and its fruit giveth help to the sons of men. How good and beautiful. (Or, How fitting and beautiful it is when the golden mouth reproveth the heathen king. Thy kingdom and thy dominion abide not, but pass away, and thy diadem and thy crown are destroyed, and thy authority cometh to naught.) How fitting it was when the faithful Julitta bare her beloved Mar Cyriac; when he reproved the heathen king, and said unto him, Thy diadem and thy dominion come to naught, and thy hope is destroyed. When brethren dwell together in unity. (Or, Behold me and the sons which thou hast given me; I offer them as propitiatory sacrifices to thy honour, and as sweet clusters of the vine to thy glory.) How fitting was it when faithful Shmuni took the seven clusters, the sons of the kingdom, and encouraged them one by one, saying, Draw near and accept the terrible sword, and take to thyself a crown. Let them rejoice in his joy. (Or, Lay up for yourselves a treasure in heaven, where moth doth not corrupt, and where thieves do not break through and steal.) Lo, everlasting joy is laid up on high, for the just who have served and have wrought well in the vineyard of the Son; come, my brethren, let us walk in love towards them, and reach their habitations by faith. Out of the hand of the ungodly and evil man. (Or, He was brought as a lamb to the slaughter, and as a sheep before her shearer he was dumb, and opened not his mouth in his humiliation.) Killed through envy by his wicked brother, was Abel, the firstborn of old of the martyrs; and his blood crieth out on the earth with groaning, and cried like thunder when he was slain; and lo, his Lord, who saw his open oppression, giveth him joy alway in his kingdom. He rode upon the cherubims, and did fly. (Or, They are laid in the earth, and their eyes are fixed on high, and they wait for Jesus their Lord coming on the clouds of heaven, that he may give a resurrection to the departed.) Above the splendour of the clouds, is borne in procession the Son of the King, who cometh to make the dead alive again; and the just hear the sound of the trumpet that (goeth) before him, and they are clothed with a vesture of glory, and go forth to meet him. The Lord upholdeth the righteous. (Or, As the fragrance of sweet incense and spices the savour of their deeds is wafted on, and help welleth forth from the bones of the saints who loved their Lord.) A pillar full of compassion was Mar Augin, and a tree whose smell was pleasant was Mar Kudhahwai, and an olive tree with beauteous branches was Mar Babai; may their prayer be a wall to us at all times. He flew upon the wings of the wind. (Or, Hail to the athlete of righteousness, for that he endured, and was not made careless by the snares of the Evil one, who thirsteth for blood.) Like a swift deer ran St. George the illustrious before the persecutors, and the blessed one walked on nails of iron, that by his prayers he might give peace to the world which was in confusion. For that he is thy Lord, worship thou him. (Or, Heaven and earth rejoice in him, and Bethlehem, and the Wise men and the shepherds, and Mary his mother, and St. John who preached his Epiphany from one end of the world to the other.) O Mary, mother, etc., page 36. The hope of all the ends of the earth. (Or, And O thou Hope of all creatures, of the nations far and near, bless thy servants, and keep them from harm, and pour forth on them from thy gift the dew of thy mercies.) O Christ, the hope and boast of our nature, turn to us by the prayer of Mary who bare thee, and by the prayer of the prophets, and apostles, and teachers, make to pass away from us the destruction which threateneth us. From the rising up of the sun unto the going down thereof. (Or, As the fragrance, etc.) As a pure pearl without spot shone the beauty of Mar Saurishu in the four quarters (of the world); and as the fragrance of sweet incense and spices, the savour of Raban Hurmizd is wafted through all countries. Let thy servants praise thee, O Lord. (Or, How good and beautiful and becoming it is when brethren dwell in unity, and order their wills in concord before God.) Let both the brothers praise thee, O Lord: Mar Akha and Mar Yukhanan, the blessed pair, who in one yoke wrought well and served; may their prayer be a wall for us at all seasons. And we were counted as sheep appointed to be slain. First with the sword the proud men killed him. And secondly he was fried in the fire by the wicked. And thirdly the impious ones ground him in the mill. And fourthly he was boiled in oil by the oppressors. And fifthly the blood-shedders fried him in the pan. And sixthly he was stoned with stones by the accursed ones. And seventhly they crushed his bones and cast him out. May our Lord make us worthy to have joy among their companies. Righteous and upright. The king Constantine went forth to war, and spake thus in his prayer before God: When I return in conquest and victory, I will reverence the cross of Christ the King. As a city surrounded by a wall. As a merchant our Lord entered creation, and bought therein a holy Church, and dwelt within it, and raised up in it four wondrous scribes: the altar, and the priesthood, and the cross, and baptism. In the seas and in all deep places. I passed through the seas and trode on the waves; yet my eyes have seen naught like the ship of Mar Anthony, which bare prophets and guided apostles, which bare martyrs and confessors, and went to Eden. From the mouth of young men and boys. Peace to thee, O martyr Mar Pithiun, who wast a father to many in the faith; peace to thee, who didst love Christ, with a pure and true heart and perfect love. My spirit hath rejoiced in God my Saviour. Mary, who bare Christ, rejoiced, and John when he baptized him in the river Jordan; heaven and earth and all that is in them rejoice, in the Star which shone forth out of Jacob for the salvation of all. Glory be, etc. Peace to your camp, O blessed ones, merchants bearing life to the sons of men; open the treasure of your prayers to the needy, and preserve the country where ye dwell from harm. From everlasting to everlasting. Beg for us all of thy Lord, O our famous and holy father, the friend of the Son, that by thy prayers may be helped and saved all who are afflicted and distressed, and who take refuge in thee. And let all the people say Amen and Amen. O God, who didst have pity on Nineveh, have pity on us, and cease not to look on our evil generation. For if thou shuttest thy door in the face of us sinners, to whose door shall we go and knock, O thou Friend of men? Let the voice of our prayer, O Lord, be as the fragrance of sweet incense before thy greatness, and may our request be the key of the heavenly treasure, to open and bring forth help to the sons of men. On the first day there is no affliction or torment, for the wicked who have transgressed and wrought wickedness in their deeds; the fire and flame of Gehenna is extinguished, and every one remaineth at ease, and confesseth the Lord. Blessed is the first and holy day, for on it our Lord rose from the grave in great glory, and on it the departed arise in the quickening, and put off mortality and put on glory.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.176-184.",
+      "note": "From U. (not given in R.C. or A.). Alternative headings marked 'Or' in the source are not from the Psalter -- they are headed 'Of the text,' i.e. taken from elsewhere in the Bible, but many are not biblical at all; Maclean notes the style of these two Sunday anthems differs markedly from the ferial Martyrs' Anthems and they seem to be of a later date. One line ('O Mary, mother, etc., page 36') is a cross-reference to material outside this project's current holdings, left as Maclean gives it rather than filled in."
+    }
   }
 ]
