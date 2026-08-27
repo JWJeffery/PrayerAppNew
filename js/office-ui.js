@@ -443,11 +443,14 @@ function getEastSyriacHourInfo() {
     const now          = new Date();
     const totalMinutes = now.getHours() * 60 + now.getMinutes();
 
+    // No Quta'a or D-tsha' Sa'in entries here: confirmed against Maclean's
+    // source that only two minor-hour relics exist at all (Quta'a, appended
+    // automatically to Sapra during the Great Fast rather than separately
+    // timed; and Endana/"Prayer at Noon", Great-Fast-only) -- there is no
+    // Ninth Hour content in this source whatsoever.
     const hourMap = [
-        { from:  6 * 60, to:  9 * 60, value: 'sapra',     label: 'Sapra — Morning Prayer' },
-        { from:  9 * 60, to: 12 * 60, value: 'qutaa',     label: "Quta\'a — Third Hour" },
-        { from: 12 * 60, to: 15 * 60, value: 'endana',    label: 'Endana — Sixth Hour' },
-        { from: 15 * 60, to: 18 * 60, value: 'dtsha-sain',label: "D-tsha\' Sa\'in — Ninth Hour" },
+        { from:  6 * 60, to: 12 * 60, value: 'sapra',     label: 'Sapra — Morning Prayer' },
+        { from: 12 * 60, to: 18 * 60, value: 'endana',    label: 'Endana — Prayer at Noon (Great Fast only)' },
         { from: 18 * 60, to: 21 * 60, value: 'ramsha',    label: 'Ramsha — Evening Prayer' },
         { from: 21 * 60, to: 24 * 60, value: 'lelya',     label: 'Lelya — Night Office' },
         { from:  0 * 60, to:  3 * 60, value: 'lelya',     label: 'Lelya — Night Office' },
@@ -1727,10 +1730,8 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         hideHeadings: ["Active Hour"],
         hideButtonRowsAfterHeadings: ["Active Hour"],
         options: [
-            { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00" },
-            { value: "qutaa", label: "Quta'a", detail: "Third Hour · 09:00–12:00" },
-            { value: "endana", label: "Endana", detail: "Sixth Hour · 12:00–15:00" },
-            { value: "dtsha-sain", label: "D-tsha' Sa'in", detail: "Ninth Hour · 15:00–18:00" },
+            { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00 (includes Quta'a automatically during the Great Fast)" },
+            { value: "endana", label: "Endana", detail: "Prayer at Noon, Great Fast only · 12:00–18:00" },
             { value: "ramsha", label: "Ramsha", detail: "Evening Prayer · 18:00–21:00" },
             { value: "lelya", label: "Lelya", detail: "Night Office · 21:00–03:00" },
             { value: "subaa", label: "Suba'a", detail: "Pre-dawn · 03:00–06:00" },
@@ -4140,14 +4141,29 @@ async function renderEastSyriac() {
         if (autoRadio) autoRadio.checked = true;
     }
     const officeKey = document.querySelector('input[name="esy-time"]:checked')?.value || 'ramsha';
+
+    // Great Fast (Sauma) detection, via the already-existing calendar engine
+    // -- no new date-computation logic needed here. Confirmed against
+    // Maclean's own source (Introduction, and the "Services of the Great
+    // Fast" section, pp.205-235): only TWO minor-hour relics exist in this
+    // source -- Quta'a (Terce) and the "Prayer at Noon" (Sext, called
+    // Endana here) -- there is no Ninth Hour (D-tsha' Sa'in/None) content
+    // anywhere in Maclean. Quta'a is not a separately-timed office by 1894
+    // (Maclean's own footnote: "Formerly that which follows was said as a
+    // separate service three hours after the Morning Service") -- it is an
+    // appendage to the tail of the Fast-season Morning Service, so it is
+    // appended automatically to Sapra below rather than offered as its own
+    // selectable hour.
+    const isGreatFast = (typeof EastSyriacCalendar !== 'undefined')
+        ? EastSyriacCalendar.getDayClass(currentDate).isLenten
+        : false;
+
     const officeTitleMap = {
-        sapra:        'Sapra \u2014 Morning Prayer',
-        qutaa:        "Quta\u2019a \u2014 Third Hour",
-        endana:       'Endana \u2014 Sixth Hour',
-        'dtsha-sain': "D-tsha\u2019 Sa\u2019in \u2014 Ninth Hour",
-        ramsha:       'Ramsha \u2014 Evening Prayer',
-        lelya:        'Lelya \u2014 Night Office',
-        subaa:        "Suba\u2019a \u2014 Compline",
+        sapra:  'Sapra \u2014 Morning Prayer',
+        endana: "Endana \u2014 Prayer at Noon (Great Fast only)",
+        ramsha: 'Ramsha \u2014 Evening Prayer',
+        lelya:  'Lelya \u2014 Night Office',
+        subaa:  "Suba\u2019a \u2014 Compline",
     };
     const officeTitle = officeTitleMap[officeKey] || 'Ramsha \u2014 Evening Prayer';
 
@@ -4158,10 +4174,36 @@ async function renderEastSyriac() {
     // once built, Sapra) look up a sequence with no cycle suffix at all,
     // rather than a cycle-specific one that doesn't exist for those offices.
     const cycleVaryingOffices = ['ramsha'];
-    const sequenceKey = cycleVaryingOffices.includes(officeKey)
+    let sequenceKey = cycleVaryingOffices.includes(officeKey)
         ? `${dayName}-${officeKey}-${cycle}-sequence`
         : `${dayName}-${officeKey}-sequence`;
-    const sequence = appData.eastSyriacRubrics?.[sequenceKey];
+
+    // During the Great Fast, ferial Sapra (weekdays only -- Sunday's Fast
+    // Morning Service is Festival, out of scope here as elsewhere) uses a
+    // structurally distinct sequence per Maclean's own Fast-season Morning
+    // Service rubric (different opening prayers, different psalms, no
+    // Martyrs' Anthem), not the ordinary ferial one.
+    if (officeKey === 'sapra' && isGreatFast && dayName !== 'sunday') {
+        sequenceKey = `${dayName}-sapra-fast-sequence`;
+    }
+
+    // Endana ("Prayer at Noon in the Fast") has no content outside the
+    // Great Fast -- Maclean gives it no existence there, so it is not a
+    // "not yet rebuilt" gap outside the Fast, but genuinely not part of
+    // this office on non-Fast days.
+    let sequence = (officeKey === 'endana' && !isGreatFast)
+        ? null
+        : appData.eastSyriacRubrics?.[sequenceKey];
+
+    // Quta'a (Terce) is not a separately-timed office by Maclean's own day
+    // (see esy-quta-a-title's meta note) -- it is appended to the tail of
+    // the Fast-season Morning Service. Splice its addendum sequence onto
+    // Sapra automatically whenever the Great Fast applies, rather than
+    // requiring the person to select it separately.
+    if (officeKey === 'sapra' && isGreatFast && dayName !== 'sunday' && sequence) {
+        const addendum = appData.eastSyriacRubrics?.['quta-a-addendum-sequence'];
+        if (addendum) sequence = [...sequence, ...addendum];
+    }
 
     updateSeasonalTheme('purple');
 
@@ -4180,16 +4222,24 @@ async function renderEastSyriac() {
     }
 
     if (!sequence) {
+        const isEndanaOutsideFast = (officeKey === 'endana' && !isGreatFast);
+        const fallbackBody = isEndanaOutsideFast
+            ? `<p class="rubric-text">Not observed outside the Great Fast</p>`
+              + `<p class="component-text">Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
+              + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
+              + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
+              + `non-Fast days, per the primary source itself.</p>`
+            : `<p class="rubric-text">Not yet rebuilt</p>`
+              + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
+              + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
+              + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
+              + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`;
         document.getElementById('office-display').innerHTML =
             `<div class="office-container">`
             + `<p class="office-book-title">The Hudra</p>`
             + `<h2>${officeTitle}</h2>`
             + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
-            + `<p class="rubric-text">Not yet rebuilt</p>`
-            + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
-            + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
-            + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
-            + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`
+            + fallbackBody
             + `</div>`;
         return;
     }

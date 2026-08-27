@@ -2676,5 +2676,363 @@
       "source": "Maclean 1894, p.82-84.",
       "note": "This is the Compline element Maclean's own Introduction (p.xiv) describes: 'Suba‘a (Compline), on memorials and in the fast, with one collect preceding and two following' -- appended to the Festival Evening Service specifically on Memorials, not a standalone office. The main Karuzutha body and the closing prayers-for-help / Of Mary / Of the Apostles / Of our father / Conclusion / kiss of peace / Nicene Creed all reuse the exact fixed components already built for ferial Ramsha, per Maclean's own 'as on ferias' cross-reference -- not duplicated here."
     }
+  },
+  {
+    "id": "esy-sext-title",
+    "title": "Prayer at Noon in the Fast",
+    "text": "<p class=\"rubric-text\">Said only during the Great Fast (Sauma), on ferial weekdays.</p><p class=\"component-text\">A short office said at midday throughout the Great Fast, distinct from Ramsha, Lelya, and Sapra. Maclean's rubric directs this office almost entirely by cross-reference to material said elsewhere in the daily offices, rather than giving it independent content of its own.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.224.",
+      "note": "Traditionally called Endana (the Sixth Hour) in the East Syriac naming of the canonical hours. Maclean's own heading for this office is simply ‘Prayer at Noon in the Fast’; it is one of only two minor-hour relics his source contains (the other being Quta’a/Terce, appended to the Fast-season Morning Service) — there is no Ninth Hour (D-tsha’ Sa’in/None) office anywhere in this source."
+    }
+  },
+  {
+    "id": "esy-sext-opening-rubric",
+    "title": "Opening",
+    "text": "<p class=\"component-text\">They begin in the usual manner, and say three Hulali as noted in the Khudhra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.224.",
+      "note": "GAP, disclosed rather than filled: Maclean directs the officiant to the Khudhra for which three Hulali (psalm-groupings) are said at this office — he does not specify them himself, the same way he does not give the Motwa proper or the Royal Anthem's body. ‘They begin in the usual manner’ refers to the standard opening formula (Glory be to God in the highest / Our Father, farced) already built as esy-opening-formula and esy-lords-prayer-farced."
+    }
+  },
+  {
+    "id": "esy-sext-glorious-art-thou",
+    "title": "Glorious art thou, our Lord",
+    "text": "<p class=\"component-text\">Glorious art thou, our Lord, and it is meet that we should lift up glory to thee. Every day, for ever and ever. Amen. Glory to Christ, and confession to him who hath opened our mouth, and hath granted us to chant hallelujahs in his praises. Glory to Christ, and confession to him who hath opened our mouth, and granted us to sing in his praises. Glory to Christ and confession to him who hath opened our mouth, and granted us to glorify (him) in his praises. To Father, Son, and Holy Ghost, let us lift up glory, for ever, Amen. <em>Repeat thrice.</em> Our mouth is not sufficient to confess thee, O our Lord, all the days of our life, for thy lovingkindness. Our mouth is not sufficient to praise thee, O our Lord, all the days of our life, for thy lovingkindness. Our mouth is not sufficient to glorify thee, O our Lord, all the days of our life, for thy lovingkindness. O Lord, who art merciful to mortals, have compassion on us in thy lovingkindness, and have mercy on us; for none that liveth among (thy) creatures is justified before thee. Thou, O my Lord, hast turned us from all error, for thou art God, and for thee glory is fitting, for ever and ever, Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.211, 224.",
+      "note": "Cross-referenced by the Prayer-at-Noon rubric (p.224: ‘as at Evening Service of the Fast, page 211’) to the fixed opening formula of the Fast-season Evening Service, transcribed here verbatim from that page."
+    }
+  },
+  {
+    "id": "esy-sext-night-anthem-canon-rubric",
+    "title": "Night Anthem, Canon, and Tishbukhta",
+    "text": "<p class=\"component-text\">Then the Night Anthem with its Prayer and Canon, and the proper Tishbukhta.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.224.",
+      "note": "GAP, disclosed rather than filled: the Night Anthem, Canon, and the day's proper Tishbukhta at this office are the day-specific ferial ones — for a fuller build these would need to be confirmed against the already-built Lelya Tishbukhta set for consistency, which has not yet been done. Left as an honest rubric marker rather than silently assumed identical to Lelya's own Tishbukhta usage."
+    }
+  },
+  {
+    "id": "esy-sext-karuzutha-rubric",
+    "title": "Karuzutha",
+    "text": "<p class=\"component-text\">O thou who didst teach us...</p>",
+    "meta": {
+      "source": "Maclean 1894, p.162, 224.",
+      "note": "GAP, disclosed rather than filled: this Karuzutha is cross-referenced to p.162, which falls within the Festival Night/Morning Service section of Maclean's book (pp.151-185) that has not yet been obtained or built in this project. Left as an honest rubric marker rather than substituted with a different Karuzutha."
+    }
+  },
+  {
+    "id": "esy-sext-prayers-for-help-rubric",
+    "title": "Prayers for Help and Conclusion",
+    "text": "<p class=\"component-text\">They say, Holy God, and Our Father, farced. Prayers: O thou who openest thy door, and O thou who hearest. Prayers for help, and the rest as at Evening Service throughout the year.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.224.",
+      "note": "‘O thou who openest thy door’ and ‘O thou who hearest’ (p.83) are already built as part of the Festival Evening Service Suba’a component (esy-festival-suba-a-compline, covering pp.82-84); reused here by cross-reference rather than re-transcribed, per Maclean's own direction. The Trisagion and farced Lord's Prayer reuse esy-trisagion and esy-lords-prayer-farced already built for the ordinary ferial offices. ‘The rest as at Evening Service throughout the year’ reuses the already-built esy-prayer-for-help, esy-concluding-blessing, and esy-nicene-creed."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-vouchsafe",
+    "title": "Prayer before the Morning Psalms (in the Fast)",
+    "text": "<p class=\"component-text\">Vouchsafe, O our Lord and our God, that our services and prayers may be joined with those of the monks who pleased thee in their fasts, and of the Nazarites who propitiated thee by their life, and caused the will of thy majesty to be well pleased with their services, and prayers, and supplications. Receive our little fast, and our scanty prayers and weak requests; and return answer to our petitions in thy mercies from thy rich and overflowing treasury. And may the service of our weakness, O my Lord, please thee, and the prayer of our poverty persuade thee, and the fast of our sinfulness propitiate thee; and may the mercies and compassion of thy Godhead grant the pardon of the trespasses of thy people, and the forgiveness of the sins of all the sheep of thy pasture, which thou hast chosen to thyself, in thy lovingkindness and mercies, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.216.",
+      "note": "Replaces the ordinary ferial Sapra opening prayer during the Great Fast, per Maclean's own Fast-season Morning Service rubric."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-true-light",
+    "title": "Another (Prayer before the Morning Psalms in the Fast)",
+    "text": "<p class=\"component-text\">Thee, O Christ, the true Light of all lights, who feedest lights from thy light, and dwellest in the excellent light, which no son of man hath seen nor can approach unto, we beseech and ask thee, even we who are weak and sinful, to enlighten the darkness of our minds by the brightness of thine unspeakable light; so that the lamps of our souls being enlightened with the oil of mercy and pity, we may also be enlightened with the light of thy light which enlighteneth all, and may rejoice in the joy of thy countenance which delighteth all, and may desire to meet (thee at) thy manifestation which reneweth all, O thou who didst create the light in thy lovingkindness, and dost order the darkness in thy wisdom, and in the knowledge of thy Godhead, which cannot be fathomed by spiritual ones or by those that are in the body, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.216-217.",
+      "note": "An alternate to esy-fast-sapra-prayer-vouchsafe, said in place of it at the officiant's discretion, per the source's own ‘Another’ pattern used throughout the daily offices."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-friday-blessed",
+    "title": "Prayer before the Morning Psalms on Fridays of the Fast",
+    "text": "<p class=\"component-text\">Blessed art thou who art worshipped in thy Church on earth by earthly worshippers; and glorious art thou who art to be worshipped in thy Church in heaven by heavenly worshippers; and adorable is the nature of thy Being, one in essence, and three in attributes, by all intelligences and minds of beings of fire and spirit, who around the appointed place of the Shechinah of thy greatness, in noiseless cries, sing Holy and Hallelujah with mouths of fire, and in the mountains where they meditate on thy glory, kneel and worship continually without inclining, O thou, who art worshipped by true worshippers, who worship thy majesty in spirit and in truth. And may the service of our weakness, etc., as in the former of the above prayers.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.217.",
+      "note": "Used in place of esy-fast-sapra-prayer-vouchsafe / esy-fast-sapra-prayer-true-light specifically on Fridays of the Fast."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-friday-hear",
+    "title": "Another for the same (Fridays of the Fast)",
+    "text": "<p class=\"component-text\">Hear, O our Lord and our God, the prayer of thy people who wait for thee; and receive the supplication of (the sheep of) thy pasture which knock at the door of thy majesty, and pity and have mercy on thine offending servants. Bring back, O my Lord, the erring and the lost, save the captives and the persecuted; have mercy on the oppressed and tormented; turn to the miserable and poor, and pity the strangers and exiles; provide for the orphans and give sustenance to the widows; loosen (the bonds of) those that are bound and are held in the grasp of iniquity; and protect those that journey by sea or by land; for thou art our God who helpest (from) above in thy mercy, O thou who didst create the light, etc., as in the latter of the above prayers.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.217-218.",
+      "note": "An alternate Friday-of-the-Fast opening prayer to esy-fast-sapra-prayer-friday-blessed."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-psalm-91-farced",
+    "title": "Psalm 91 (farced, in the Fast)",
+    "text": "<p class=\"component-text\">Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>Thou art my confident hope: O Christ, may I never be confounded.</em> Whoso dwelleth ... and show him my salvation (two clauses by each side). <em>Thou art my confident hope, etc.</em> Glory be. From everlasting. <em>When thou didst create the light which is poured forth, the spiritual ones glorified thee. And it was made known to them that he who created the light, created them also.</em> Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>By angels thou art glorified. And by the sons of men thou art praised. And all together with one accord cry and say, Blessed is thy fast, O Christ our Saviour.</em> Let us pray, Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.208-209.",
+      "note": "Replaces the ordinary ferial Psalm 91 farcing (esy-sapra-psalm-91) during the Great Fast — Maclean's Fast-season Morning Service rubric (p.216, p.223) directs the psalms to be ‘as noted under Sundays in the Fast, page 208,’ which carries this distinct set of farcings."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-glorious",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Glorious, O my Lord, is the great and confident hope of thy Godhead, and high and exalted is the wondrous refuge of thy Majesty, and all who hope in thee, and trust in thee, shall not be ashamed nor confounded, but shall obtain their requests from thy rich and overflowing treasury, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.104.",
+      "note": "Reused from the already-built esy-sapra-psalm-91-prayer, which this exact prayer opening (‘Glorious, O my Lord...’) matches verbatim; cross-referenced by the Fast Sunday Psalms rubric (p.209: ‘Prayer. Glorious, O my Lord, page 104’). Not a new transcription — verified against the already-built component's stored text before reuse."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-psalm-civ-farced",
+    "title": "Psalm 104:1-15a (farced, in the Fast)",
+    "text": "<p class=\"component-text\">Bless the Lord, O my soul. O Lord my God, thou art become exceeding great. <em>The glory of the Lord shall be for ever.</em> Bless the Lord, O my soul ... out of the earth (two clauses at a time). <em>The glory, etc.</em> Glory be. From everlasting. <em>The glory of the Lord shall be for ever.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.209.",
+      "note": "Replaces the ordinary ferial Psalm 104 farcing (esy-sapra-psalm-104, which covers verses 1-16) during the Great Fast; this Fast-season farcing covers verses 1-15a specifically, per Maclean's own citation."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-creator",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">To thee, O Creator of all natures, and Maker of all beings, Fashioner of the height and depth in thy lovingkindness and mercies, we lift up praise, and honour, and confession, and worship, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.209."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-mysteries-psalm-block",
+    "title": "Psalms 113, 93, 148, 149, 150, 117 (farced, Weeks of the Mysteries)",
+    "text": "<p class=\"component-text\">Ps. cxiii. Praise the Lord, ye his servants. O praise the Name of the Lord. <em>Glory to him who created the light.</em> Praise the Lord, ye his servants ... joyful mother of children. (No Gloria.) <em>Glory to him who created the light.</em> Ps. xciii. The Lord is King, and hath put on glorious apparel. The Lord hath put on strength and hath waxed strong. <em>We worship thy Godhead, O my Lord.</em> The Lord is King ... becometh thine house. O Lord, for ever. (No Gloria.) <em>We worship, etc.</em> Ps. cxlviii. 1-7. O praise the Lord of heaven. Praise him in the height. <em>Let them praise God.</em> O praise the Lord of heaven ... shall not be broken. (No Gloria.) <em>Let them praise God.</em> Ps. cxlviii. 7—end. Praise the Lord upon earth. Ye dragons and all deeps. <em>Give praise to God.</em> Praise the Lord upon earth ... even the people that draweth near to him. (No Gloria.) <em>Give praise to God.</em> Ps. cxlix. O praise the Lord with a new song of praise. His song of praise in the congregation of the saints. <em>For him praise is meet.</em> O praise the Lord with a new song of praise ... all his saints. (No Gloria.) <em>O Son of God, have pity on us.</em> Ps. cl. O praise the Lord in his holiness. Praise him in the firmament of his power. <em>Father, Son, and Holy Ghost.</em> O praise the Lord in his holiness ... praise the Lord. (No Gloria.) <em>Father, Son, and Holy Ghost.</em> Ps. cxvii. O praise the Lord, all ye heathen. Praise him, all ye nations. <em>O Christ the Light, we praise thee.</em> O praise the Lord, all ye heathen. Praise him, all ye nations. For his merciful kindness is strong upon us. Truly he is the Lord for ever. <em>O Christ the Light, we praise thee.</em> Glory be, etc. From everlasting, etc. <em>O Christ the Light, we praise thee.</em> They add, Glorify the Lord, all the whole earth. O Giver of light, O Lord, even to thee do we lift up glory.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.209-210.",
+      "note": "Used specifically in the three Weeks of the Mysteries within the Fast, said two clauses at a time with these farcings. In the Fast's other (‘ordinary’) weeks, Maclean directs the ferial fixed-psalm set to be used instead — already built as esy-sapra-fixed-psalms (Ps 93, 148, 149, 150, 117 under one Gloria). This project does not yet distinguish Weeks-of-the-Mysteries from ordinary Fast weeks in its calendar engine, so esy-sapra-fixed-psalms is used uniformly across the whole Fast for now; this component is built and cited but not yet wired into a sequence, pending that calendar refinement.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-fast-sapra-prayer-all-creatures-rubric",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">To thee, O my Lord, all creatures...</p>",
+    "meta": {
+      "source": "Maclean 1894, p.165, 208.",
+      "note": "GAP, disclosed rather than filled: cross-referenced to p.165, which falls in the Festival Morning Service section of Maclean (pp.165-185) not yet obtained or built in this project."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-karuzutha-rubric",
+    "title": "Karuzutha",
+    "text": "<p class=\"component-text\">He that openeth the gate of repentance...</p>",
+    "meta": {
+      "source": "Maclean 1894, p.218, 223.",
+      "note": "GAP, disclosed rather than filled: Maclean directs this Karuzutha 'From the Khudhra' — he does not give its text himself, the same pattern as the Motwa proper and the Royal Anthem's body."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-morning-anthem-rubric",
+    "title": "Verses of the Morning Anthem",
+    "text": "<p class=\"component-text\">And they go on to the Verses [of the Morning Anthem] in the Khudhra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.218.",
+      "note": "GAP, disclosed rather than filled: these verses are directed to the Khudhra and not given in this source."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-tishbukhta-rubric",
+    "title": "Tishbukhta",
+    "text": "<p class=\"component-text\">Tishbukhta, as in the Khudhra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.219, 223.",
+      "note": "GAP, disclosed rather than filled: the day's proper Tishbukhta for the Fast-season Morning Service is directed to the Khudhra and not given in this source."
+    }
+  },
+  {
+    "id": "esy-fast-sapra-no-martyrs-anthem-note",
+    "title": "No Martyrs' Anthem in the Fast",
+    "text": "<p class=\"component-text\">The Martyrs' Anthem is not said in the Fast.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.212.",
+      "note": "Explicit source rubric (stated for the Evening Service's parallel structure, and consistently applied here): the ferial Martyrs' Anthem, otherwise a fixed feature of ordinary Sapra, is correctly omitted during the Great Fast rather than included as usual."
+    }
+  },
+  {
+    "id": "esy-quta-a-title",
+    "title": "Quta'a (Terce)",
+    "text": "<p class=\"component-text\">An extra Hulala, appended to the end of the Fast-season Morning Service.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.219.",
+      "note": "Traditionally called Quta’a (the Third Hour, Terce) in the East Syriac naming of the canonical hours. Maclean's footnote: ‘Formerly that which follows was said as a separate service three hours after the Morning Service.’ By the time of this source (1894), it had become an appendage to the end of the Fast-season Sapra rather than a separately-timed office — hence this project appends it automatically to Sapra during the Great Fast rather than offering it as a separately selectable hour."
+    }
+  },
+  {
+    "id": "esy-quta-a-hulala-rubric",
+    "title": "The Hulala of Quta'a",
+    "text": "<p class=\"component-text\">They then say an extra Hulala, called Quta'a.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.219.",
+      "note": "GAP, disclosed rather than filled: Maclean names this extra Hulala but does not specify which psalms constitute it or give its text — the only content he gives for Quta'a itself is the brief conclusion that follows (transcribed in esy-quta-a-conclusion-prayer and esy-quta-a-glorious-art-thou)."
+    }
+  },
+  {
+    "id": "esy-quta-a-conclusion-prayer",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thy glorious Godhead, full of mercies and compassion, the hope and life and salvation of all creatures, are we bound to confess, worship, and glorify, at all seasons and times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.219."
+    }
+  },
+  {
+    "id": "esy-quta-a-glorious-art-thou",
+    "title": "Glorious art thou, our Lord",
+    "text": "<p class=\"component-text\">Glorious art thou, O our Lord ... glory for ever, Amen. <em>Repeat thrice.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.211, 219.",
+      "note": "Maclean directs this by cross-reference: ‘As at the Evening Service in the Fast, page 211.’ Full text already transcribed above as esy-sext-glorious-art-thou; reused here rather than duplicated."
+    }
+  },
+  {
+    "id": "esy-occasional-karuzutha",
+    "title": "An Occasional Karuzutha",
+    "text": "<p class=\"rubric-text\">Let us all stand up, etc., page 6.</p><p class=\"component-text\">O our God, abounding in mercies, who justifiest sinners without recompense, we, etc. O good Shepherd, who wentest forth to seek our race, and didst give thyself for us, we, etc. O Physician of our nature, who didst come, and wast revealed in the flesh, and didst pardon our trespasses and heal our wounds, we, etc. O true Judge, who art not alway angry, but art longsuffering with us, in the hope that we may repent, we, etc. O Lord, who didst grant to the penitent hope and comfort, by (the example of) the publicans and harlots whom thou didst receive and pardon. For the welfare of our holy fathers NN, and all those who serve under them, we, etc. O merciful God, who in mercy governest all, we, etc. O thou who art glorified in heaven and worshipped on earth, we, etc. For sinners, that they may repent, and for the penitent, that they may be made righteous, and for the righteous, that they may be perfected, we, etc. Have compassion on us, and pardon our trespasses in thy lovingkindness, and pour out thy compassion on our souls, and be reconciled to us all, and have mercy upon us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.225.",
+      "note": "A general-purpose Karuzutha (litany) for occasional use, distinct from the fixed daily-office Karuzutha texts. Built and cited but not yet wired into any sequence, since its occasions of use are not specified by Maclean beyond its heading.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-nineveh-tishbukhta-mar-john",
+    "title": "Tishbukhta for Monday of the Rogation (also for Fridays of the Great Fast)",
+    "text": "<p class=\"component-text\">In suffering, and with tears and entreaty, we call to thee, O good Lord. Be to us Physician and Guide, for bitter is our suffering, and our pain is hard (to bear). There are not among us just men who may propitiate thee, for our iniquity hath waxed strong and our trespasses have increased. They have stirred up and disturbed the sea and the dry land, and all that is in them, with our evil deeds. In our time that which is written is come to pass, for the end of the worlds hath come upon us. Save us in thy mercies from storms, which have confused and shaken the heights and the depths. O good Shepherd, feed thy flock, for whose sake thou hast borne suffering. Vouchsafe to priests and kings alike to dwell in peace and quietness. And may we be thine according to thy will, Father, Son, and Holy Ghost. Father, Son, and Holy Ghost, for ever and ever, Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.226.",
+      "note": "By Mar John, or as some say by Mar Bar Soma. Said on the Monday of the Rogation of the Ninevites, and also on Fridays of the Great Fast.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-nineveh-tishbukhta-mar-khnana",
+    "title": "Another, by Mar Khnana of Khdhaiwa",
+    "text": "<p class=\"component-text\">In suffering and with tears, come, let us draw near, come, let us draw near to penitence. For our iniquity hath waxed strong, and without number are our offences. The crafty foe hath found a place, and lo, he spoileth us. Blessed be he that hath fought and conquered him, hath fought and conquered him by diligence. The Lord of our race, by the Son of our race, hath honoured our race. And through our slackness the evil demons have laughed at our weakness. Our wounds are corrupted and putrid, and putrid to those that pass on the way. Come, let us draw near to that Physician, to that Physician who healeth without price. In penitence of soul let us come to him, let us come to him, to Jesus our King. For he in his lovingkindness will cleanse us, will cleanse us from the stains of our soul. And let us all give him praise, for ever and ever, Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.226-227.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-nineveh-tishbukhta-wednesday",
+    "title": "Another for Wednesday of the Rogation",
+    "text": "<p class=\"component-text\">In suffering and with tears it is meet that all men should weep and lament for their infirmity, and more than all it is meet that I should weep and lament without ceasing. For the watchful ones and men recoil from my wickedness, and I cannot show my wounds. Body and soul are corrupted and defiled with the scars of lusts. For I desired the world with its hateful deeds, and the prince of the world hath gotten domination over me. He hath overthrown me and cast me out without pity, like a lion ready for (his) prey. He hath robbed me and humbled me and mocked me, like Adam among the trees. He saw that I was careless like Eve, and he had no pity on me, for he slayeth men. To thee I cry, who in thy goodness didst form me; cover my nakedness and heal my wounds. Seek me when I am lost, and take hold of my life, for thou alone hast compassion without reward. In the day of thy revelation make me glad, O our Lord, that I may see thy face without shame. Pity me both here and hereafter, for thou alone art the Friend of men. Blessed is the Compassionate one, who aboundeth in mercies, for in (his) lovingkindness he hath compassion on those who are not worthy. And let us all give him praise, for ever and ever, Amen and Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.227.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-nineveh-hallelujah-rubric",
+    "title": "Hallelujah between the Hulali (Rogation of the Ninevites)",
+    "text": "<p class=\"component-text\">Hallelujah. Halle-ingih-lujah, yea Hallelujah. Glory be to thee, O God. Halle-ingih-lujah, yea Hallelujah. In thy mercies have compassion on us, O God. Halle-ingih-lujah, yea Hallelujah. O thou who art full of mercies, have mercy upon us. <em>The other side answers,</em> O our Lord, have mercy upon us. O our Lord, receive our request. O our Lord, be reconciled to thy servants.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.227-228.",
+      "note": "A distinctive extended form of Hallelujah (with an inserted meaningless syllable, per Maclean's own note) said between the Hulali specifically during the Rogation of the Ninevites.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-nineveh-qaltha-suba-a-note",
+    "title": "Qaltha and Suba'a during the Rogation",
+    "text": "<p class=\"component-text\">The Qaltha at the Night Service is the same as on ordinary Sundays 'after'. The Suba'a (Compline) is said at the Evening Service as in the Fast.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.228.",
+      "note": "Cross-references: the ordinary Sundays-‘after’ Qaltha has not yet been built in this project (part of the not-yet-obtained Festival Night Service, pp.151-165); the Fast-season Suba’a placement references the already-transcribed esy-fast-... Evening Service material and the Compline text itself, which remains unbuilt (Maclean pp.185-206, not yet obtained).",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-title",
+    "title": "Blessing of the Months",
+    "text": "<p class=\"component-text\">A set of anthems said at the Evening Service of the first day of each month (February excepted — i.e. on what in the West would be the evening of the last day of the preceding month).</p>",
+    "meta": {
+      "source": "Maclean 1894, p.229.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-anthem-1",
+    "title": "Anthem for the Blessing of the Months (i)",
+    "text": "<p class=\"component-text\">The Lord of the whole earth: order the month, and bless it, to be the crown of the year, in thy lovingkindness; and make the month blessed, even [name of month] joyful in thy compassion. May our request enter before thee, O Lord of months and of years; prayer is the key of creation, may it open for us the door of mercies. Bless, O my Lord, this month, and order it with all fruits, and give in it mercy and compassion, and increase in it peace and tranquillity. And keep, O my Lord, in thy compassion, this country and its inhabiters from the harm and opposition of the Devil, the Apostate. Bless, O my Lord, this year, and its crown likewise, and let there not be in it fear, neither commotion nor terror; let [name of month] come in joy, and be accepted like the request of Elijah and the son of Amram — may their prayer be a wall to us. Bless, O my Lord, the months of the year, the seasons and weeks and days; bless the vineyards and things planted, bless the crops and fields. Bless, O my Lord, [name of month] which hath come, and may it be enriched with all blessings, and let there not be in it punishments, nor sufferings nor distresses. Bless, O my Lord, this year, and the months and the days, and priests and the children of the Church, and this country and city, and make distresses to pass away from us, and give us times of joy, by the prayer of the fathers, until the end of days. Bless, O my Lord, this month, by the prayer of them that keep thy commandments, and make the plague to pass away from us, and grant us mercy and compassion. By the prayer of the blessed one, Mar N. the confessor, may we be delivered from Gehenna, and enter with thee into the bridechamber.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.229-230.",
+      "note": "[Name of month] marks a spoken insertion of the current month's name, per Maclean's own bracketed convention.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-anthem-2",
+    "title": "Anthem for the Blessing of the Months (ii), by Mar Abraham of Slukh",
+    "text": "<p class=\"component-text\">Bless the crown of the year with thy lovingkindness, O God, make the year to be blessed; may spring burst forth with fruits, may abundance be multiplied in every year, be it leap year or an ordinary year. Raise up, O Ahiyah, in the Church, men to keep vigil by night in (thy) service; may times of quietness come to us; may Augustus arise with victory; may Theologus, head of the priesthood, put on healing and grace; may the threshing-floors be filled, O my Lord, with blessing; pour forth thy mercies on creation. Hear my voice, O God, when I beseech thee: hear the voice of the crying of mankind, O Christ, thou Sea of mercy; send the rain of blessings, make the herbs of the fields to sprout forth, satisfy the orphans and widows, give peace in all quarters (of the world), appease tumults and contentions, give concord to all kingdoms. Merciful art thou, O Lord, and righteous, O Compassionate one, overflowing with goodness, O Depth full of kindness; may our prayer be heard before thee, as the request of Nineveh; have compassion on us as thou hadst on the sinful woman; answer us speedily as thou answeredst the Canaanitish woman; show us thy glory in the day of the resurrection, and make us glad with thine elect in the kingdom.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.230.",
+      "note": "This anthem's third stanza is built as an acrostic on the Syriac letters, per Maclean's marginal notation (transcribed here without the letter-labels, as continuous English text).",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-anthem-3",
+    "title": "Anthem for the Blessing of the Months (iii), by Mar Gabriel, A.D. 1599",
+    "text": "<p class=\"component-text\">And shall glorify thy name, for thou art great, O our Lord, bless this year, and its crown with perfection, and grant a moderate climate, temperate, quiet in goodness. Bless also with abundance the months and weeks and days; bless October with the wine-press, and the ingathering of all fruits; in November grant a blessing, and fill it with benefits and good things; in December, by thy lovingkindness, satisfy the lands with rain; in January continually sow thou peace and concord, that (men) may sow in security the seeds that are needed; in February, the month of distresses, let there not be chastisement, and bless March with a blessing, that it may bring gentle rain as it is wont; and may April come with joy, and fill the earth with rejoicing; in May preserve the fields from hail and injurious drought; in June give plenty to orphans as well as to widows, a store without end, to all the year alike; in July bestow an overflowing of all good things and blessings; in August decree for mankind great rejoicing and joy; in September all creatures lift up praise to thy name, and thanksgiving and confession, yea and Amen, with rejoicing.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.231.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-litany-el",
+    "title": "El, El, haste thee to help me (acrostic litany)",
+    "text": "<p class=\"component-text\">El, compassionate God, bless this month, O mighty and pitiful one; guide us as is best for us; grant us health in thy mercies, and pour forth a supply on us, O my Lord; provide us with temporal blessings; have compassion on us, O merciful Lord; give us grace in thy compassion; give us this day such a store, abundant and unfailing, that it take away from us want of corn. O our Lord, bless this day; the sheep and the cattle alike increase among us in plenty and peace; and riches without loss; save us from the hand of the calumniator; may thy cross rescue us; make us holy at all times; O High and Boundless one, increase among us every kind of food, O Depth that cannot be filled, glory which cannot be diminished, will we lift up to thee with (every) breath that we breathe.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.231-232.",
+      "note": "A litany built as an acrostic on the letters of the Syriac alphabet, transcribed here as continuous English text without the individual letter-labels Maclean prints alongside each clause.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-prayer-have-mercy",
+    "title": "Have mercy upon us, O Lord, have mercy upon us",
+    "text": "<p class=\"component-text\">O our Lord, we stand before thee, and ask mercy of thee, and make request of thy lovingkindness, that food may be multiplied to us with blessings. And give us the bread of our need, as thou didst promise us, O my Lord, and give us a supply of all good things continually, at all times. Bless with thy mercies the crown of the year, and grant in it rain for our sustenance, the former (rains) that we may sow our corn, the latter that it may grow and ripen. And let not locust and young locust spread over us, and make the caterpillar to pass away from us; let not the corn-worm be seen in our land, and cast out the white locust from our country. Let not the blight hurt our crops, and deliver us, O El, from burning winds, and let there be no palmer-worm in our time, and let not the plague overcome us. For thou knowest well that our nature is weak, and cannot bear famine and distress and affliction; do thou in thy mercies visit our race. Give us bread that faileth not, wheat and herbs for our sustenance, with all good gifts of food, in abundance, for in thee is our hope. And purify us from our defilements, and cleanse that in us which is blameworthy and hateful, and wash us from our foulness, and make clean our bodies and our souls. Have compassion on us, and pardon our trespasses; remember not our offences against us; in (thy) lovingkindness make us worthy of forgiveness, that we may confess thee both here and above.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.232-233.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-litany-audishu",
+    "title": "Litany by Mar Audishu",
+    "text": "<p class=\"component-text\">He that is before the worlds, O Creator of created things, who dost grant all petitions, drive away from us all chastisements. Bless us with all blessings, feed the hungry and the widows, give peace in all quarters (of the world), rebuke the enemies that provoke strife, perfect us in all knowledge. Hear my prayer, O God, O El, the compassionate God, bless this month, perfect our assembly in all victory, that we may conquer the Evil one, the slanderer; give plenty in every dominion, and quiet peace and tranquillity; give us food continually; have compassion on us in the day of searching; grant us the grace of compassion, O Sea of mercies and pity; and set us on the right hand of thy greatness, O Merciful one.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.233.",
+      "note": "Also built as a Syriac-alphabet acrostic in the source, transcribed here as continuous English text.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-city-wall",
+    "title": "As a city surrounded with a wall",
+    "text": "<p class=\"component-text\">From this city of wrath may the hidden Being cause to pass away every wrathful enemy, and robbery, with the rod of wrath; and may its king be strong, and enter into treaties with (other) kings, and gain a storehouse and treasure, abiding and not wasting. May his city be preserved by the will of the Lord from every robber. And when this creation is consumed, and destroyed, as is fore-determined, may it be worthy to behold and see the blessing which man hath not seen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.233.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-blessing-months-thou-hast-formed",
+    "title": "Thou hast formed the earth and set it fast",
+    "text": "<p class=\"component-text\">In the thought of the mind of thy greatness, on the first day of the week thou didst form to thyself creatures in countless numbers; on the seventh (day) thou didst complete thy work. Bless our month with thy blessings, and enrich our year with thy good things, and give us joy here with thy gladness, and above number us among thy companies. We shall confess thee for ever; let us confess thy Unity, and worship thy Trinity, and ask mercy of thee, and lasting peace for thy Churches. Bless our month in thy compassion, and fill our year with thy store, and give us rest in this thy world, and in that which is to come show us thine Image. Let thy merciful kindness, O Lord, be upon us, by the holy angels, and by mortal sons of men. May this village be blessed, and may this country and its inhabiters be blessed with all blessings, and made rich with all good things, and may blessed times come to them, and may all lands be made prosperous. The Lord shall give his people the blessing of peace; bless our assembly, O our Saviour, and make thy lovingkindness to dwell in it, and grant us the power to glorify thee, the assemblies above and those below. And all to love one another, and to gain love and concord, as the spiritual ones have gained one will, that they may be approved by thee. Thou art compassionate from all eternity, and merciful for ever; what is the wickedness of creation compared with the overflowing mercies of thy lovingkindness? Sprinkle the face of our nature with the dew of mercy and pity, and rescue us from the hand of the Evil one, and from the tares, the sons of error. May Adam and the camp of the just, and Moses and the chain of the prophets, and Peter and the company of the apostles, Stephen and all the martyrs, and Ephraim and the assembly of teachers, and Antony and the hermits, beseech thee, O our Lord Jesus, that thou have mercy on the world. The departed, who clothed themselves with thee, O our Lord, in the water of baptism, by thee may their bodies be cleansed from the defilements of sin. To the departed who have eaten of thy body, and have had joy in thy living blood, grant, O our Lord, a memorial in the country where the just abide.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.234-235.",
+      "wired": false
+    }
   }
 ]

@@ -1,5 +1,33 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-20 continued -- Quta'a and Endana built as automatic Great-Fast add-ons; full Fast-season Sapra variant built; Rogation of the Ninevites and Blessing of the Months transcribed (not wired); still missing from the book to build "everything"
+
+Josh supplied Maclean pp.205-235 across two uploads (pp.205-219, pp.220-235) and asked for research on the minor hours, followed by "build them as add-ons during the seasons when they are used, and then have them automatically used," followed by "read through all of McClean's book and build out everything."
+
+**Scope correction, confirmed from Maclean's own Introduction before building anything:** only TWO minor-hour relics exist in this source -- Quta'a (Terce) and a "Prayer at Noon" (Sext, called Endana here) -- not three. There is no Ninth Hour (D-tsha' Sa'in/None) content anywhere in Maclean. The project's prior stated scope ("three minor hours: Quta'a/Third, Endana/Sixth, D-tsha' Sa'in/Ninth") was incorrect and is corrected in the dashboard (`coe:minor-hours:quta-a-endana`).
+
+**Built, verified, and wired (249 components, was 210):**
+- A full Fast-season Morning Service (Sapra) variant, one sequence per ferial weekday, with its own opening prayers (including Friday-specific alternates), its own farced Psalm 91/104 set, and the explicit omission of the Martyrs' Anthem (Maclean states plainly it is not said in the Fast). Reuses already-built p.104-106 Sapra prayers where Maclean's own cross-references matched -- confirmed by direct comparison of stored text against the cross-reference wording before reusing, not assumed by title similarity.
+- Quta'a itself: not separately timed by 1894 per Maclean's own footnote ("Formerly that which follows was said as a separate service three hours after the Morning Service") -- built as an addendum automatically appended to the tail of Sapra whenever the Great Fast applies, not as a separately selectable hour.
+- Endana ("Prayer at Noon in the Fast"): a genuine standalone office, built and selectable only during the Great Fast -- it does not exist outside it. Reuses the Festival Evening Service's already-built Compline prayers (confirmed by direct text match, not assumed) for its two page-83 prayers.
+- Wiring uses the calendar engine's existing `EastSyriacCalendar.getDayClass(date).isLenten` -- no new date-computation logic was needed; the calendar engine already modeled the Great Fast correctly. Spot-checked against three 2027 dates (inside Sauma, inside Qyamta, and Easter Sunday itself) to confirm `isLenten` fires only when it should.
+- Removed the phantom D-tsha' Sa'in / Ninth Hour option from the hour selector, override panel, and auto-detected-hour logic (`index.html`, `js/office-ui.js`) -- it represented content that doesn't exist in the source, not content merely unbuilt.
+
+**Three honest gaps, disclosed in the components themselves rather than filled:** the Fast-season Karuzutha and Morning Anthem verses (both "from the Khudhra" per Maclean, same pattern as the Motwa and Royal Anthem gaps already on record), the Fast-season Tishbukhta (also Khudhra-only), and one prayer cross-referenced to p.165 (Festival Morning Service, not yet obtained). A Weeks-of-the-Mysteries-specific farced psalm block was transcribed in full (Ps.113/93/148/149/150/117, pp.209-210) but is not yet wired into a sequence, since this project doesn't yet distinguish Weeks-of-the-Mysteries from ordinary Fast weeks in its calendar engine -- the ordinary ferial fixed-psalm set is reused uniformly across the whole Fast in the meantime, a disclosed simplification, not a silent one.
+
+**Also transcribed from the same upload, built but not yet wired (occasional/movable observances -- wiring is a separate decision):** An Occasional Karuzutha (p.225); the three Rogation of the Ninevites Tishbukhta texts plus its distinctive Hallelujah rubric (pp.226-228); and the complete nine-anthem/litany Blessing of the Months cycle (pp.229-235).
+
+**On "build out everything" -- what's actually still needed and why it can't happen from fetching alone:** Maclean's book is 380 pages. This project now has, in one form or another, pp.1-130 (all three principal ferial offices, complete) and pp.205-235 (the entire Fast section, Rogation, Blessing of Months). **Still missing, and not obtainable by this session's own fetch tools** (confirmed again this session -- a direct `web_fetch` of the ACOE California mirror of this same book returns only the front matter and pp.1-45 before truncating, the same wall documented in earlier sessions for archive.org's djvu stream):
+- **pp.151-165** -- Festival Night Service (Feasts of our Lord, Sundays, Memorials)
+- **pp.165-185** -- Festival Morning Service, Martyrs' Anthem for Sunday Mornings
+- **pp.185-206** -- Compline (Suba'a) itself, the actual office text (distinct from the Fast-season Suba'a placement note already in hand)
+
+Completing "everything" in this book means these three ranges (~55 pages) need to come from Josh directly, the same way pp.1-130 and pp.205-235 did. Until then, Sunday/Feast material remains unbuilt beyond the Festival Evening Service already in hand, and Compline remains entirely unbuilt.
+
+`SEED_VERSION` bumped to `v157-2026-08-20-east-syriac-minor-hours-and-fast-content`.
+
+---
+
 ## Session 2026-08-20 -- Royal Anthem: Bedjan machine-translation stopgap recorded in governance (NOT authorized, NOT started); OIRSI permission request confirmed but deferred
 
 Josh asked what the "disclosed machine-translation stopgap from Bedjan's public-domain Syriac"
