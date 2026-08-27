@@ -6981,3 +6981,59 @@ deferred sending that request to a later session. Not sent yet.
 
 No `SEED_VERSION` bump -- this session made no changes to app content, code, or the dashboard, only
 a governance-ledger entry recording a research option and a deferred action.
+
+## SESSION 2026-08-20 continued (4) -- Royal Anthem sourcing: new lead recorded -- Abouna Robert Matheus's English Breviarium Chaldaicum (NOT authorized, NOT used; outreach to translator initiated by Josh personally)
+
+Josh independently researched and identified a new, substantially more promising lead for the
+Royal Anthem gap than any previously logged: Abouna Robert Matheus, a priest of the Syro-Malabar
+Diocese of Thuckalay (India, M.Th. in Syriac Theology), has produced and is actively maintaining a
+complete modern English translation of Paul Bedjan's three-volume Breviarium Chaldaicum
+(1886-87; Rome reissues 1938, 2000), published in installments since November 2023, with the
+archive showing revisions extending into 2026.
+
+**Why this is different from every prior lead:** unlike Maclean (which explicitly omits the proper
+Royal Anthem text and directs the reader to the Khudra) and unlike Moolan/Pathikulangara (dead
+ends -- in-copyright, no accessible copy), Abouna Robert's translation includes the actual proper
+Royal Anthem texts (the 'Onyata d-Basaliqe / d-Wasaliqe) for the relevant seasons -- e.g. the
+Summer volume gives the complete text for the First Sunday of Summer; the Apostles and
+Eliya-Cross volumes cover their respective seasons. This appears to be the first readily
+accessible, substantially complete English rendering of this specific missing material.
+
+**Two things that must not be glossed over, per this project's standing sourcing-verification
+discipline:**
+
+1. **NOT public domain, NOT authorized for use.** The underlying Bedjan Syriac is public domain,
+   but Abouna Robert's English translation is recent, actively maintained, and explicitly marked
+   "All rights reserved." Free download access does not constitute permission to incorporate into
+   Universal Office. No text has been fetched, copied, or used from this source. Nothing from this
+   lead may be used until permission is explicitly granted by the translator.
+
+2. **Textual recension mismatch, requiring disclosure if ever used.** This is a translation of
+   Bedjan's Breviarium Chaldaicum, the CHALDEAN CATHOLIC recension of the East Syriac office --
+   NOT a translation of Thoma Darmo's 1960-62 Assyrian Church of the East Hudra, which is the
+   tradition this project is otherwise building. Bedjan's edition contains documented Catholic
+   editorial changes from the Assyrian Church of the East text, including substitutions involving
+   the treatment of Nestorius/Theodore/Diodore/Narsai, "Mother of God" vs. "Mother of Christ"
+   phrasing, certain Christological formulations, and passages on the intermediate state and the
+   reward of the saints. The bulk of Royal Anthem material is likely shared East Syriac patrimony
+   largely unaffected by these differences, but this must be verified rather than assumed, and if
+   any text from this source is ever incorporated, its component metadata must disclose plainly
+   that it derives from the Chaldean recension rather than being presented as equivalent to this
+   project's Assyrian-tradition sourcing elsewhere in the app. Josh confirmed this disclosure
+   requirement explicitly this session.
+
+**Status: Josh is personally writing to Abouna Robert Matheus to request permission.** This
+outreach is being handled directly by Josh, not by Claude, and no draft was produced by Claude for
+this purpose. Outcome not yet known. If permission is granted, the recension-disclosure
+requirement above applies to any resulting content, and the usual practice of verifying source
+identity and copyright status before building applies as it always has.
+
+**Standing Royal Anthem options, for reference, now three in total:**
+1. OIRSI/Moolan non-commercial permission request -- confirmed intent, not yet sent (see prior
+   session entry).
+2. Bedjan machine-translation stopgap -- NOT authorized, NOT started (see prior session entry).
+3. Abouna Robert Matheus's Breviarium Chaldaicum translation -- permission request in progress,
+   initiated by Josh; Chaldean-recension disclosure required if ever used.
+
+No `SEED_VERSION` bump -- this session made no changes to app content, code, or the dashboard,
+only a governance-ledger entry recording a new sourcing lead and a disclosure requirement.
