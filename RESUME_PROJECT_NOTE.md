@@ -1,5 +1,24 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-20 -- Royal Anthem: Bedjan machine-translation stopgap recorded in governance (NOT authorized, NOT started); OIRSI permission request confirmed but deferred
+
+Josh asked what the "disclosed machine-translation stopgap from Bedjan's public-domain Syriac"
+option (mentioned in passing at the end of the prior session's entry) actually meant. Explained and
+recorded properly in `AUDIT_GOVERNANCE_LEDGER.md` as a possible option for the still-unresolved
+Royal Anthem gap -- Bedjan's Syriac critical editions are public domain but untranslated; the
+stopgap would be a disclosed machine translation of the Royal Anthem's proper text from that Syriac,
+distinct from and not a substitute for a real scholarly source. **No Syriac has been located, no
+translation attempted, no component built.** Requires Josh's explicit sign-off before any work
+starts.
+
+Josh also confirmed he intends to request non-commercial permission from OIRSI (Moolan's 1985
+dissertation's rights holder) but wants that deferred to a later session -- not sent yet.
+
+No code, content, or dashboard changes this session; no `SEED_VERSION` bump. Full detail in
+`AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-20.
+
+---
+
 ## Session 2026-08-19/20 -- Festival Evening Service applied; Royal Anthem sourcing dead-ended on three separate leads; a real conduct failure this session, recorded for continuity
 
 **Status: the commit below is confirmed applied and pushed to `main`** (`8b9aed5`). 210 components

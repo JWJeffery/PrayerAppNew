@@ -6951,3 +6951,33 @@ Morning Anthems and Martyrs' Anthems for each weekday morning, roughly parallel 
 Ramsha's Martyrs' Anthems needed). Given the image-upload constraint raised this session, this is a
 natural pause point in the rebuild -- Ramsha and Lelya are both complete and verified; Sapra has real,
 verified prep work done and a clearly scoped remainder.
+
+## SESSION 2026-08-20 -- Royal Anthem sourcing: new option recorded (not authorized, not started) -- disclosed machine-translation stopgap from Bedjan's public-domain Syriac
+
+Raised for the first time this session, following Josh's question about what the option (mentioned
+in passing in the prior session's resume note) actually meant. Recorded here as a possible option
+for the still-unresolved Royal Anthem gap, not as work performed or authorized.
+
+**The option:** Paul Bedjan's critical editions of Syriac liturgical texts, including Khudhra
+material, are public domain (Bedjan died in 1920; editions old enough to be out of copyright). They
+are the original Syriac only, not an English translation -- distinct from Moolan's and
+Pathikulangara's in-copyright English translations, which are unusable regardless of this option.
+The stopgap would be: locate Bedjan's Syriac text for the Royal Anthem (Onitha d'wasaliqe), and
+produce a machine translation into English as a disclosed, clearly-labeled stopgap rather than a
+verified scholarly source.
+
+**Status: NOT authorized, NOT started.** No Syriac text has been located or fetched for this
+purpose, no translation has been attempted, no component exists. This is one entry in a list of
+unresolved options for the Royal Anthem gap, alongside requesting permission from OIRSI/Moolan
+(below). If pursued in a future session, it must be clearly disclosed as machine-translated in the
+component's own `meta` and not presented as equivalent in reliability to this project's sourced
+liturgical content, per the project's standing content-integrity rules. Requires Josh's explicit,
+informed sign-off before any work begins, given the real accuracy risk for liturgical text noted in
+the prior session's entry.
+
+**Also recorded this session:** Josh confirmed intent to request non-commercial permission from
+OIRSI (rights holder for Moolan's 1985 dissertation translation) for use of that translation, but
+deferred sending that request to a later session. Not sent yet.
+
+No `SEED_VERSION` bump -- this session made no changes to app content, code, or the dashboard, only
+a governance-ledger entry recording a research option and a deferred action.
