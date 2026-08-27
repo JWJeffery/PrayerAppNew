@@ -1,5 +1,23 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-21 continued (4) -- Weeks-of-the-Mysteries deep research: three weeks confirmed from Maclean's own Introduction; third week's identity still open; next step identified
+
+This entry exists specifically so the research below survives into the next session -- it was done entirely in chat and, until now, was never written to a project file. A new chat was about to start (image-upload cap reached in this one, 100 images/conversation), which would have lost all of it otherwise.
+
+**Confirmed, from Maclean's own 1894 Introduction directly (not a secondary source):** "We notice also... the selection of three weeks of the Fast as 'weeks of the mysteries,' each day of which, except the Saturday, has special lections." This settles the count at **three** -- a firmer answer than an earlier pass in this same session, which had only found two from a modern diocesan calendar and flagged real uncertainty about whether that matched Maclean's own usage. It does.
+
+**Two of the three identified,** from the Assyrian Church of the East Diocese of Western Europe's own current lectionary page (acote.church/propers), which lists specific lectionary readings under these exact headings:
+- **First Week of the Mysteries** -- the week immediately following the Sunday entering the Fast (week 1 of 7).
+- **Middle Week of the Mysteries** -- falls between the Fourth and Fifth Sundays of the Great Fast (week 4 of 7).
+
+**The third remains unidentified despite substantial additional effort this session:** re-read the acote.church propers page in full again, specifically hunting for a third labeled week between the 4th and 7th Sundays -- it isn't there; that source only ever names two. Tried several different search phrasings, tried fetching an alternate transcription host (docshare.tips -- blocked by bot detection), tried archive.org's book-search-inside feature directly (blocked, URL not from a prior search result). This project's own already-transcribed text (pp.209-210, esy-fast-sapra-mysteries-psalm-block's note) independently says "the three Weeks of the Mysteries" -- consistent with Maclean's Introduction, but doesn't name which three either.
+
+**Most promising concrete next step, not yet tried because we don't have the pages:** Maclean's book has an appendix, "The Kalendar and Lectionary" (pp.264-283), which this project has never had a single page of. A week-by-week Kalendar-and-Lectionary table is exactly the kind of place a specific week-numbering would be spelled out -- it's structurally the same kind of content as the modern ACOE lectionary page that already named two of the three. **Josh is getting these pages now, to be uploaded in a fresh chat** (this one hit its image cap).
+
+**Not yet wired, and shouldn't be until the third week is confirmed:** esy-fast-sapra-mysteries-psalm-block and the broader Weeks-of-the-Mysteries vs. Ordinary-Weeks distinction in the Fast Sapra sequence. Wiring only two of three confirmed weeks risks praying the wrong content on the (currently unknown) third week -- holding off is the right call until pp.264-283 resolve it, not a stall.
+
+---
+
 ## Session 2026-08-21 continued (3) -- Marmitha group auto-selection fixed for Sunday/Feast Ramsha
 
 Josh asked which open items were actually fixable. Identified the Marmitha table's group selection as a small, genuine fix -- not a content gap, just a static citation that should have been an automatic season check, matching the note already recorded on esy-festival-marmitha-table.
