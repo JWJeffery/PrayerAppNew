@@ -4310,6 +4310,57 @@ async function renderEastSyriac() {
         }
     }
 
+    // Sunday Ramsha (the Festival Evening Service, including the Royal
+    // Anthem) resolves its season-specific ending here. Six endings are
+    // transcribed in full from Maclean (pp.78-80); which one applies is
+    // confirmed directly against the calendar engine's own documented
+    // season boundaries (js/calendar-east-syriac.js's getLiturgicalYear),
+    // not assumed:
+    //   - qayta (Summer) and eliya-sliwa (which this engine defines as
+    //     running only up to Cross Sunday) together are exactly Maclean's
+    //     own "Summer and till Holy Cross Day" -- both use the same ending.
+    //   - muse begins exactly at Cross Sunday in this engine, matching
+    //     Maclean's "From Holy Cross Day to the Hallowing of the Church"
+    //     ending precisely.
+    // The Mary refrain (esy-festival-royal-anthem-mary-refrain) is spliced
+    // in afterward except: the Epiphany-Shawu'a ending already has it
+    // embedded in its own text (so it is not duplicated), and the
+    // Advent-to-Epiphany ending's own rubric explicitly says the refrain is
+    // NOT said in that period at all.
+    //
+    // Two things are deliberately out of scope here, not silently guessed:
+    // the Great Fast (Sauma) has its own distinct Sunday Evening Service
+    // structure that has not been built as a live sequence yet, so Sauma
+    // Sundays fall through to "not yet rebuilt" for Ramsha rather than
+    // using this ordinary/Festival structure; and the Resurrection season
+    // (Qyamta) has no transcribed Royal Anthem ending in this project's
+    // holdings at all -- a real, disclosed gap, catalogued in the Khudhra
+    // gaps spreadsheet, not filled by reusing a different season's ending.
+    if (officeKey === 'ramsha' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const season = EastSyriacCalendar.getDayClass(currentDate).season;
+        const endingBySeasonKey = {
+            'subara':      { ending: 'esy-festival-royal-anthem-ending-advent-epiphany', maryRefrain: false },
+            'denkha':      { ending: 'esy-festival-royal-anthem-ending-epiphany-shawua',  maryRefrain: false }, // embedded already
+            'shlihe':      { ending: 'esy-festival-royal-anthem-ending-apostles',         maryRefrain: true  },
+            'qayta':       { ending: 'esy-festival-royal-anthem-ending-summer-cross',     maryRefrain: true  },
+            'eliya-sliwa': { ending: 'esy-festival-royal-anthem-ending-summer-cross',     maryRefrain: true  },
+            'muse':        { ending: 'esy-festival-royal-anthem-ending-cross-hallowing',  maryRefrain: true  },
+            'qudash-idta': { ending: 'esy-festival-royal-anthem-ending-dedication',       maryRefrain: true  },
+        };
+        const resolved = endingBySeasonKey[season];
+        if (resolved) {
+            const endingIds = resolved.maryRefrain
+                ? [resolved.ending, 'esy-festival-royal-anthem-mary-refrain']
+                : [resolved.ending];
+            sequence = sequence.flatMap(id => id === '__ROYAL_ANTHEM_ENDING__' ? endingIds : [id]);
+        } else {
+            // Sauma or Qyamta: no ending available for this build. Rather
+            // than render an incomplete Royal Anthem section, fall through
+            // to the honest "not yet rebuilt" state for the whole office.
+            sequence = null;
+        }
+    }
+
     updateSeasonalTheme('purple');
 
     // Cycle label is only meaningful for Ramsha; showing "Qdham"/"Wathar"

@@ -1,5 +1,22 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-21 -- Complete Khudhra-gap catalog delivered as a spreadsheet; discovered and fixed a real build gap (Sunday Ramsha had no live sequence at all)
+
+Josh asked for a spreadsheet catalog of the Khudhra-only content gaps, separate from the Royal Anthem, followed by wiring whatever was found to be actually fixable. Delivered `khudhra_gaps_catalog.xlsx` (also committed to the repo root for permanence, not just a chat attachment) cataloguing every disclosed Khudhra gap across the East Syriac build, cross-checked against which components are actually referenced in a live, built sequence today (not just mentioned in a note somewhere).
+
+**While compiling the catalog, found something more serious than a content gap: Sunday evening (Ramsha) had NO live sequence in the app at all.** Festival Evening components (Royal Anthem structure, Suyakhi prayers, Marmitha table, anthems for the dead) were built in an earlier session but never assembled into a sequence or wired into `renderEastSyriac()`. Every real Sunday evening was showing "not yet rebuilt" despite real content sitting unused since that earlier session. This was a build-completion mistake on my part, not a sourcing problem, and I fixed it the same session it was found rather than just flagging it.
+
+**Built and wired: `sunday-ramsha-qdham-sequence` and `sunday-ramsha-wathar-sequence`**, covering the ordinary (non-Fast) Sunday Evening Service.
+
+- Deliberately excludes three elements Maclean ties to conditions this calendar engine doesn't model, rather than including them as if they applied every Sunday: the First/Second Anthem (tied to a specific individual's memorial being kept that evening), the Suyakhi (Maclean's own rubric: feasts and memorials only), and Suba'a (Maclean's own rubric: memorials only). All three remain built and cited for whenever Feast/Memorial-specific Sunday handling exists.
+- The Royal Anthem's season-appropriate ending is now resolved automatically from six transcribed endings, mapped against the calendar engine's own documented season boundaries (confirmed by reading the engine's source directly, not assumed) -- verified against real dates spanning every season, including a year with a non-empty Muse season, since most years' Muse season has zero weeks.
+- Two gaps surfaced while wiring this, both added to the spreadsheet: no Royal Anthem ending exists in this project's holdings for the Resurrection (Qyamta) season, and the Great Fast's own distinct Sunday Evening Service structure hasn't been built as a live sequence yet. Both seasons fall through to "not yet rebuilt" honestly rather than reusing a mismatched ending.
+- `SEED_VERSION` bumped to `v162-2026-08-21-east-syriac-sunday-ramsha-wired`.
+
+**Where this leaves things:** all three principal offices now render on every day of the week including ordinary Sundays, for the first time. The spreadsheet is the standing reference for every remaining Khudhra-only content gap -- it should be treated as the current source of truth over any prose summary of gaps in this file, since it was compiled by a systematic cross-check rather than from memory.
+
+---
+
 ## Session 2026-08-20 continued (6) -- Palm Sunday wired; researched Weeks-of-the-Mysteries calendar distinction; researched Khudhra sourcing beyond Maclean
 
 Josh asked for three things: (1) finish the Palm Sunday wiring that was blocked on a calendar flag, (2) research which weeks within the Great Fast count as "Weeks of the Mysteries," (3) look for sources that could fill the remaining Khudhra-only content gaps. Josh also noted the Abouna Robert Matheus lead doesn't need to keep coming up in every update -- it's a slow process on his end.
