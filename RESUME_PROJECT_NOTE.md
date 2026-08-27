@@ -1,5 +1,22 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-21 continued (2) -- Fixed Feast-of-our-Lord calendar tracking built, delivered clean this time
+
+The first attempt at delivering this feature was built against a stale assumption that the Sunday Ramsha wiring from earlier the same day hadn't actually been applied to the repo. It had -- Josh's first `git am` succeeded. Claude's claim that it "never happened" was wrong and caused an unnecessary failed patch attempt. This entry documents the corrected delivery: a fresh clone was pulled, the actual current state confirmed directly, and only the genuinely new work was built on top of it.
+
+**What's new:** fixed-date Feast-of-our-Lord tracking in the calendar engine, at Josh's direction, after he pointed out that excluding Suyakhi/Suba'a/First-Second-Anthem from ordinary Sunday Ramsha because "the calendar doesn't track feasts/memorials" was describing a real limitation passively rather than treating it as buildable.
+
+- Checked the calendar engine's own architecture before building anything: it's explicitly documented as a three-layer model (season engine / fixed corporate commemorations / individual saints), with Layer 3 (named saints) marked not-yet-built -- and, more significantly, there was no fixed-date Feast tracking of any kind. The only "feast"-adjacent flag was a generic "fasting suspended this season" marker for the whole Resurrection season, not a per-day identifier.
+- Built `getFixedCommemorationsForDate()`'s new layer covering seven feasts verified against real sources this session (not claimed exhaustive): Nativity, Epiphany, Resurrection, Ascension, Pentecost, Transfiguration, Holy Cross Day.
+- Per Josh's explicit direction ("stay consistent, and make sure there is translation for that in the app"): Nativity and Transfiguration (the two needing a Julian-to-Gregorian conversion) use the same +13-day offset already established for Denkha/Epiphany and Holy Cross Day, for internal consistency -- Nativity lands on Gregorian Jan 7, Transfiguration on Aug 19. Every commemoration's own note states both the Julian and Gregorian dates plainly, since real ACOE practice is genuinely split on Nativity specifically (confirmed by search, not assumed) -- disclosed as a documented convention choice, not presented as the only correct practice.
+- This makes `dayClass === 'feast'` a live code path for the first time -- it existed in the type signature from the start but nothing had ever produced a `'feast'`-typed commemoration until now.
+- **Wired into Sunday Ramsha:** on a Feast of our Lord falling on Sunday, Suyakhi (the two prefacing prayers Maclean gives) and the Feast-specific "Prayer before the Royal Anthem" now switch on correctly, per Maclean's own rubrics. Suba'a was deliberately NOT switched on -- rechecked its rubric directly and confirmed it says "on Memorials" specifically, not feasts, so excluding it was correct, not an oversight to fix. First/Second Anthem remains excluded for the same reason (tied to an individual's memorial, not a Feast of our Lord).
+- Weekday occurrences of these Feasts are out of scope for this pass -- only Sunday Ramsha branches on Feast status so far; ferial Lelya/Sapra/Compline don't yet.
+- Verified: all seven feasts spot-checked against real 2027 dates confirming correct resolution and correct `dayClass`; both ordinary and Feast-on-Sunday sequence resolution simulated end-to-end.
+- `SEED_VERSION` bumped to `v163-2026-08-21-east-syriac-feast-of-our-lord-layer`.
+
+---
+
 ## Session 2026-08-21 -- Complete Khudhra-gap catalog delivered as a spreadsheet; discovered and fixed a real build gap (Sunday Ramsha had no live sequence at all)
 
 Josh asked for a spreadsheet catalog of the Khudhra-only content gaps, separate from the Royal Anthem, followed by wiring whatever was found to be actually fixable. Delivered `khudhra_gaps_catalog.xlsx` (also committed to the repo root for permanence, not just a chat attachment) cataloguing every disclosed Khudhra gap across the East Syriac build, cross-checked against which components are actually referenced in a live, built sequence today (not just mentioned in a note somewhere).

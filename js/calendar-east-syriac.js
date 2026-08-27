@@ -319,7 +319,7 @@ const EastSyriacCalendar = (() => {
 
         seasons.push(  { name: 'qudash-idta', start: qudashIdtaStart, end: addDays(nextSubara,      -1) });
 
-        return { subaraStart, saumaStart, easter, nextSubara, seasons };
+        return { subaraStart, saumaStart, easter, nextSubara, seasons, crossDay };
     }
 
     // ── Public: getSeason ─────────────────────────────────────────────────────
@@ -465,6 +465,7 @@ const EastSyriacCalendar = (() => {
             anaphora,
             anaphoraLabel,
             palmSunday,
+            epiphanyGreg,
         };
     }
 
@@ -629,6 +630,60 @@ const EastSyriacCalendar = (() => {
                 label: 'Commemoration of the Faithful Departed',
                 note:  'Friday before Sauma. General Commemoration of the Dead in the East Syriac tradition.',
             });
+        }
+
+        // ── Fixed Feasts of our Lord ────────────────────────────────────────
+        // A new tracking layer, added 2026-08-21 at Josh's direction, after
+        // noticing this engine had no fixed-date Feast-of-our-Lord tracking
+        // at all (the pre-existing fastCharacter === 'feast' only marks the
+        // whole Qyamta season as fast-free, not any specific Feast day).
+        //
+        // Every date below follows the SAME convention already established
+        // and tested in this engine for Denkha/Epiphany (Julian Jan 6 = Greg
+        // Jan 19) and Holy Cross Day (Julian Sep 14 = Greg Sep 27): a fixed
+        // +13-day Julian-to-Gregorian offset, for internal consistency
+        // across the whole calendar engine -- not because every ACOE parish
+        // observes these dates this way today. Real practice varies (most
+        // Assyrians now keep Nativity on plain Gregorian Dec 25; a smaller
+        // number keep the Julian-offset Jan 7 -- confirmed by search this
+        // session, not assumed), so every label below states BOTH the
+        // traditional Julian calendar date and the actual Gregorian date
+        // this engine computes, rather than showing only one and leaving
+        // the other to be inferred.
+        //
+        // This list is NOT claimed to be exhaustive -- only feasts verified
+        // against a real source this session are included. Movable feasts
+        // (Resurrection, Ascension, Pentecost) need no Julian/Gregorian
+        // translation at all, since they are computed directly from Easter
+        // itself, which this engine already computes on the Gregorian
+        // calendar throughout.
+        const { crossDay } = getLiturgicalYear(d);
+        const { easter, epiphanyGreg } = seasonData;
+        const ascensionDay  = addDays(easter, 39);  // Thursday, 40th day counting Easter as day 1
+        const pentecostDay  = addDays(easter, 49);
+        const nativityGreg      = new Date(d.getFullYear(), 0, 7);   // Julian Dec 25 + 13 = Greg Jan 7
+        const transfigurationGreg = new Date(d.getFullYear(), 7, 19); // Julian Aug 6 + 13 = Greg Aug 19
+
+        const fixedFeasts = [
+            { date: nativityGreg,        key: 'COE_FEAST_NATIVITY',       label: 'Nativity of our Lord',
+              note: "Julian Dec. 25 = Gregorian Jan. 7, per this engine's established Julian+13 convention. Many parishes today keep Gregorian Dec. 25 directly instead -- see project notes." },
+            { date: epiphanyGreg,        key: 'COE_FEAST_EPIPHANY',       label: 'Epiphany (Denkha)',
+              note: 'Julian Jan. 6 = Gregorian Jan. 19. Marks the fixed Feast day itself, distinct from the Denkha season, which begins the following Sunday.' },
+            { date: easter,              key: 'COE_FEAST_RESURRECTION',   label: 'Resurrection of our Lord (Qyamta)',
+              note: 'Movable; computed directly from the Easter date already used throughout this engine. No Julian/Gregorian translation applies.' },
+            { date: ascensionDay,        key: 'COE_FEAST_ASCENSION',      label: 'Ascension of our Lord',
+              note: 'Movable: Thursday of the sixth week after Easter (Easter + 39 days). No Julian/Gregorian translation applies.' },
+            { date: pentecostDay,        key: 'COE_FEAST_PENTECOST',      label: 'Pentecost',
+              note: 'Movable: Easter + 49 days, already computed elsewhere in this engine as the start of Shlihe season. No Julian/Gregorian translation applies.' },
+            { date: transfigurationGreg, key: 'COE_FEAST_TRANSFIGURATION',label: 'Transfiguration of our Lord',
+              note: 'Julian Aug. 6 = Gregorian Aug. 19, per this engine\u2019s established Julian+13 convention.' },
+            { date: crossDay,            key: 'COE_FEAST_HOLY_CROSS',     label: 'Holy Cross Day',
+              note: 'Julian Sep. 14 = Gregorian Sep. 27, already computed elsewhere in this engine as the boundary marking the start of Muse season.' },
+        ];
+        for (const feast of fixedFeasts) {
+            if (d.getTime() === toMidnight(feast.date).getTime()) {
+                results.push({ type: 'feast', key: feast.key, label: feast.label, note: feast.note });
+            }
         }
 
         return results;

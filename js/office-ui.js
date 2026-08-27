@@ -4311,7 +4311,23 @@ async function renderEastSyriac() {
     }
 
     // Sunday Ramsha (the Festival Evening Service, including the Royal
-    // Anthem) resolves its season-specific ending here. Six endings are
+    // Anthem) resolves two things here. Both use the calendar engine's own
+    // computed data rather than anything invented for this render step.
+    //
+    // (1) Whether the date is also a Feast of our Lord (added 2026-08-21,
+    // via EastSyriacCalendar's new fixed-feast tracking). Per Maclean's own
+    // rubrics: the Suyakhi ("on feasts and memorials") is added, preceded
+    // by the Feast-specific "Prayer before the Royal Anthem on Feasts of
+    // our Lord," replacing the ordinary Sunday's ferial reuse of "May our
+    // souls be perfected." Suba'a is deliberately NOT added on Feast days
+    // -- Maclean's own rubric for it reads "on Memorials" specifically, not
+    // feasts, and this project has no individual-memorial tracking yet
+    // (Layer 3 of the calendar engine's own documented model) to know when
+    // a Memorial is being kept. Likewise the First/Second Anthem (tied to a
+    // specific person's memorial, not a Feast of our Lord) remains excluded
+    // regardless of Feast status.
+    //
+    // (2) The season-specific Royal Anthem ending. Six endings are
     // transcribed in full from Maclean (pp.78-80); which one applies is
     // confirmed directly against the calendar engine's own documented
     // season boundaries (js/calendar-east-syriac.js's getLiturgicalYear),
@@ -4336,8 +4352,20 @@ async function renderEastSyriac() {
     // (Qyamta) has no transcribed Royal Anthem ending in this project's
     // holdings at all -- a real, disclosed gap, catalogued in the Khudhra
     // gaps spreadsheet, not filled by reusing a different season's ending.
+    // Feasts of our Lord falling on a WEEKDAY (not Sunday) are also out of
+    // scope for this pass -- only Sunday Ramsha is wired to check Feast
+    // status so far; ferial Lelya/Sapra/Compline do not yet branch on it.
     if (officeKey === 'ramsha' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const season = EastSyriacCalendar.getDayClass(currentDate).season;
+        const dayClass = EastSyriacCalendar.getDayClass(currentDate);
+        const isFeast  = dayClass.commemorations.some(c => c.type === 'feast');
+
+        sequence = sequence.flatMap(id => id === '__PRAYER_BEFORE_ROYAL_ANTHEM__'
+            ? (isFeast
+                ? ['esy-festival-suyakhi-prayer', 'esy-festival-prayer-before-royal-anthem']
+                : ['esy-laying-on-of-hands-prayer'])
+            : [id]);
+
+        const season = dayClass.season;
         const endingBySeasonKey = {
             'subara':      { ending: 'esy-festival-royal-anthem-ending-advent-epiphany', maryRefrain: false },
             'denkha':      { ending: 'esy-festival-royal-anthem-ending-epiphany-shawua',  maryRefrain: false }, // embedded already
