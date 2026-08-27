@@ -1,5 +1,23 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-20 continued (5) -- Cathedral/Monastic toggle fixed; several long-standing gaps closed from a new upload covering pp.6, 36, 95, 111-112, 153-154
+
+**Cathedral/Monastic toggle:** Josh gave a two-word instruction ("Fix the toggle") with no further specification. Rather than stall on the ambiguity, built and implemented a source-grounded interpretation, clearly flagged in the response as an interpretation Josh should correct if it's not what he had in mind, rather than presented as a settled decision.
+
+- **Grounding:** Maclean's own Introduction states Ramsha and Sapra carry "the greatest authority" and a fixed shape "not to be added to or taken from," while Lelya and Suba'a are kept "according to the rule of the monastery."
+- **Implementation:** Cathedral mode now restricts selectable/auto-suggested hours to Ramsha and Sapra only; Monastic mode offers the full set unchanged. Three code changes in `js/office-ui.js`: a new `isEastSyriacCathedralMode()` helper; `getEastSyriacHourInfo()` falls back to the nearer of Sapra/Ramsha by clock time in Cathedral mode; `renderSharedOfficeNavigation()` filters the hour-selector options accordingly. `renderEastSyriac()` gracefully falls back with a visible note (not a silent substitution) for stale selections from before a mode switch. The mode radios' `onchange` now also refreshes the option list immediately.
+- Quta'a's automatic Fast-season append to Sapra is unaffected by this toggle in either mode -- out of scope for this fix, since Maclean doesn't frame it as part of the cathedral/monastic distinction.
+
+**Cross-reference gaps:** Josh uploaded a PDF covering exactly the handful of pages this project's own notes had flagged as missing (pp.6, 36, 95, 111-112, 153-154). Checked each by direct text comparison against the existing corpus before building anything, per standing practice.
+
+- **Confirmed already built, no new work:** p.6 (ferial Evening Karuzutha -- exact match, built early under an alternate spelling "karozutha"), p.36 (Thursday Second Anthem -- exact match), p.111-112 (ferial Sapra Monday/Tuesday Martyrs' Anthems -- exact match, which also retroactively verifies the four cross-referenced reuses in the Sunday Martyrs' Anthem component built last session, previously flagged as "not individually re-verified" -- now confirmed).
+- **Newly filled:** p.95's Eucharist prayer ("For thy nature...") closes the gap disclosed in both Compline and Sunday Lelya's Qaltha-prayer components. p.153's "Blessed and adorable" closes the Compline gap. p.153-154 supplied the three Qali d'Shahra prayers and the first two Night Anthem prayers, none previously transcribed.
+- **Real omission caught and fixed, not just a disclosed gap:** while resolving these cross-references, discovered the Sunday Night Service build from last session never actually included the First/Second Suyakha, Qali d'Shahra, or Night Anthem section in the built sequence at all. Corrected this session -- both `sunday-lelya` sequences now include the two already-built Suyakha prayers (reused from Compline, confirmed matching), a citation-only rubric for the Hulala/Marmitha selections (still a genuine Khudhra gap), and the newly-transcribed Qala and Night Anthem prayers.
+- Also transcribed but not wired: a Third Motwa structural note, a general Qali d'Shahra-for-Feasts rubric, a Feast-specific third Night Anthem prayer, and a Nativity-specific "Prayer after the Night Anthem" (no Nativity-specific office structure exists yet to place it in).
+- 12 new components (358 total, was 346). `SEED_VERSION` bumped to `v160-2026-08-20-east-syriac-toggle-fixed-gaps-closed`.
+
+---
+
 ## Session 2026-08-20 continued (3) -- Sunday Festival Night Service (Lelya) and Morning Service (Sapra) built COMPLETE, Before and After, with Advent/Hallowing-of-the-Church substitutions
 
 Following the Compline build, Josh gave two scoping decisions for the Sunday Festival material flagged as received-but-not-built: (1) include the Martyrs' Anthem on Sundays by default, same as weekdays, and (2) build the Advent/Hallowing-of-the-Church substitutions now rather than deferring them.

@@ -457,10 +457,41 @@ function getEastSyriacHourInfo() {
         { from:  3 * 60, to:  6 * 60, value: 'subaa',     label: "Suba\'a — Compline" },
     ];
 
+    let match = null;
     for (const entry of hourMap) {
-        if (totalMinutes >= entry.from && totalMinutes < entry.to) return entry;
+        if (totalMinutes >= entry.from && totalMinutes < entry.to) { match = entry; break; }
     }
-    return { value: 'sapra', label: 'Sapra — Morning Prayer' };
+    if (!match) match = { value: 'sapra', label: 'Sapra — Morning Prayer' };
+
+    // Cathedral mode (per Maclean's own Introduction: only Ramsha and Sapra
+    // carry "the greatest authority" and a fixed shape "not to be added to
+    // or taken from" for all people; Lelya, Suba'a, and the Fast-only Endana
+    // are each described as observed "according to the rule of the
+    // monastery") only ever auto-suggests Ramsha or Sapra. Monastic mode is
+    // unaffected and keeps the full time-based suggestion above.
+    if (isEastSyriacCathedralMode() && !['sapra', 'ramsha'].includes(match.value)) {
+        // Fall back to whichever of the two Cathedral hours is nearer in
+        // clock time, rather than always defaulting to one of them.
+        const distTo = (h) => Math.min(Math.abs(totalMinutes - h * 60), 24 * 60 - Math.abs(totalMinutes - h * 60));
+        match = distTo(7) <= distTo(19)
+            ? { value: 'sapra',  label: 'Sapra — Morning Prayer' }
+            : { value: 'ramsha', label: 'Ramsha — Evening Prayer' };
+    }
+
+    return match;
+}
+
+// Cathedral mode restricts the East Syriac offices offered to Ramsha and
+// Sapra -- the two "greatest authority" fixed daily services per Maclean's
+// own Introduction (p.xii-xiii). Lelya (Night), Suba'a (Compline), and the
+// Fast-only Endana are each explicitly described there as kept "according
+// to the rule of the monastery" rather than obligatory in fixed shape for
+// all people, so Monastic mode is the one that offers the fuller cycle.
+// Defaults to Cathedral (the HTML radio's own default) if the control isn't
+// present in the DOM for any reason.
+function isEastSyriacCathedralMode() {
+    const checked = document.querySelector('input[name="esy-mode"]:checked');
+    return !checked || checked.value !== 'monastic';
 }
 
 function toggleEsyOverridePanel(e) {
@@ -2010,7 +2041,14 @@ function renderSharedOfficeNavigation() {
     const currentLine = _sharedOfficeNavigatorCurrentLine(modeKey);
     const isoDate = _sharedOfficeNavigatorIsoDate(currentDate);
 
-    const optionHtml = config.options.map(option => {
+    // Cathedral mode only offers Ramsha and Sapra as selectable hours (see
+    // isEastSyriacCathedralMode's own comment for the source grounding);
+    // Monastic mode offers the full set unchanged.
+    const visibleOptions = (modeKey === 'eastSyriac' && isEastSyriacCathedralMode())
+        ? config.options.filter(o => ['sapra', 'ramsha'].includes(o.value))
+        : config.options;
+
+    const optionHtml = visibleOptions.map(option => {
         const checked = option.value === activeValue ? "checked" : "";
         // The Theotokia option's detail is computed live from the currently
         // selected date, not authored statically -- it always names the
@@ -4140,7 +4178,21 @@ async function renderEastSyriac() {
         const autoRadio = document.querySelector(`input[name="esy-time"][value="${autoHour.value}"]`);
         if (autoRadio) autoRadio.checked = true;
     }
-    const officeKey = document.querySelector('input[name="esy-time"]:checked')?.value || 'ramsha';
+    let officeKey = document.querySelector('input[name="esy-time"]:checked')?.value || 'ramsha';
+
+    // If Cathedral mode is active but the currently selected hour is one
+    // Cathedral mode doesn't offer (most often a stale selection carried
+    // over from switching out of Monastic mode), fall back to Ramsha or
+    // Sapra rather than silently rendering an hour the mode says shouldn't
+    // be offered. A short note is shown explaining why, rather than the
+    // switch happening invisibly.
+    let esyModeFallbackNote = null;
+    if (isEastSyriacCathedralMode() && !['sapra', 'ramsha'].includes(officeKey)) {
+        const priorOfficeKey = officeKey;
+        officeKey = getEastSyriacHourInfo().value; // already Cathedral-aware
+        const priorLabel = { lelya: "Lelya", subaa: "Suba\u2019a", endana: "Endana" }[priorOfficeKey] || priorOfficeKey;
+        esyModeFallbackNote = `${priorLabel} is offered in Monastic mode. Showing the nearest Cathedral-mode hour instead.`;
+    }
 
     // Great Fast (Sauma) detection, via the already-existing calendar engine
     // -- no new date-computation logic needed here. Confirmed against
@@ -4267,6 +4319,7 @@ async function renderEastSyriac() {
             + `<p class="office-book-title">The Hudra</p>`
             + `<h2>${officeTitle}</h2>`
             + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
+            + (esyModeFallbackNote ? `<p class="rubric-text">${esyModeFallbackNote}</p>` : '')
             + fallbackBody
             + `</div>`;
         return;
@@ -4276,6 +4329,7 @@ async function renderEastSyriac() {
     officeHtml += `<p class="office-book-title">The Hudra</p>`;
     officeHtml += `<h2>${officeTitle}</h2>`;
     officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`;
+    if (esyModeFallbackNote) officeHtml += `<p class="rubric-text">${esyModeFallbackNote}</p>`;
 
     for (const itemId of sequence) {
         const comp = appData.components.find(c => c.id === itemId);

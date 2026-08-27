@@ -3855,5 +3855,115 @@
       "source": "Maclean 1894, p.176-184.",
       "note": "From U. (not given in R.C. or A.). Alternative headings marked 'Or' in the source are not from the Psalter -- they are headed 'Of the text,' i.e. taken from elsewhere in the Bible, but many are not biblical at all; Maclean notes the style of these two Sunday anthems differs markedly from the ferial Martyrs' Anthems and they seem to be of a later date. One line ('O Mary, mother, etc., page 36') is a cross-reference to material outside this project's current holdings, left as Maclean gives it rather than filled in."
     }
+  },
+  {
+    "id": "esy-prayer-eucharist-for-thy-nature",
+    "title": "Prayer for all days when the Eucharist is to be celebrated",
+    "text": "<p class=\"component-text\">For thy nature, which is hidden and incomprehensible, and unbounded by the thought and folly of all creatures, O my Lord, glory is fitting and the sound of praise is right. Worship is seemly and due from all whom thou hast created and formed in heaven and in earth, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.95.",
+      "note": "Fills a gap previously disclosed as unavailable in two places: esy-compline-prayer-thy-nature-rubric and esy-sunday-qaltha-prayer-rubric, both of which cross-referenced this exact page. Those two rubric-only components are left as-is (historical record of the gap at the time it was disclosed); this real component is used in their place in the live Compline and Sunday Lelya sequences from this session onward."
+    }
+  },
+  {
+    "id": "esy-blessed-and-adorable",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Blessed and adorable, high and exalted and incomprehensible, are the eternal mercies of thy glorious Trinity, which freely have compassion on sinners, O our good Hope and Refuge full of mercies, who forgivest trespasses and sins, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "Fills the gap previously disclosed in esy-compline-blessed-adorable-rubric (Compline) as unavailable at this cross-referenced page. That rubric-only component is left as-is; this real component is used in its place in the live Compline sequences from this session onward."
+    }
+  },
+  {
+    "id": "esy-third-motwa-note",
+    "title": "The Third Motwa, of the Company of the Catholici",
+    "text": "<p class=\"component-text\">In the Third Motwa of The Company of the Catholici they say the rest of the Psalter, but Deut. xxxii. 21a-44 is said with proper farcings from the Khudhra.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "A structural note on Feast-day Motwa forms; the farcings themselves remain a disclosed Khudhra gap.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-qali-dshahra-prayer-first",
+    "title": "Prayer of the First Qala",
+    "text": "<p class=\"component-text\">May the sounds of our Hallelujahs please thee, O our Lord and our God, and the melodies of our songs; and accept from us in thy lovingkindness the spoken fruits of our lips, which with praise we offer to thy glorious Trinity, night and day, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "Fills a gap in this project's Sunday Night Service build: the First Qala prayer was cross-referenced to this page in Maclean's own text but had not yet been transcribed or included in the built sunday-lelya sequences. Added to those sequences in this session."
+    }
+  },
+  {
+    "id": "esy-qali-dshahra-prayer-second",
+    "title": "Prayer of the Second Qala",
+    "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, with the watchful ones and the companies of angels, with voices full of confession to sing praise to thy glorious Trinity, night and day, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "Companion to esy-qali-dshahra-prayer-first; see its note."
+    }
+  },
+  {
+    "id": "esy-qali-dshahra-prayer-third",
+    "title": "Prayer of the Third Qala",
+    "text": "<p class=\"component-text\">Continual glory, O my Lord, and unceasing Hallelujahs and endless praises, and voices full of confession, every nature of rational beings whom thou hast created is bound to raise to thy glorious Trinity, night and day, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153-154.",
+      "note": "Companion to esy-qali-dshahra-prayer-first; see its note."
+    }
+  },
+  {
+    "id": "esy-qali-dshahra-hulali-marmitha-rubric",
+    "title": "The Qali d'Shahra",
+    "text": "<p class=\"component-text\">They say another Hulala, with the following prayers. First Suyakha: on Sundays 'before,' Hulala 12 (Ps. lxxxii. to lxxxviii. incl.); on Sundays 'after,' Hulala 19 (Ps. cxxxii. to cxli. incl.). Second Suyakha: on Sundays 'before,' Hulala 13 (Ps. lxxxix. to xcii. incl.); on Sundays 'after,' Hulala 20 (Ps. cxlii. to cl. incl.). On Sundays 'before' they sing Hulala 14, Marmitha 1-3 (Ps. xciii.-ci.); on Sundays 'after,' Hulala 21, Marmitha 1-3 (Ex. xv. 1-22; Is. xlii. 10-14 and xlv. 8; Deut. xxxii. 1-44). After each Marmitha, Glory be, From everlasting, Hallelujah thrice, Let us pray, Peace be with us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.160.",
+      "note": "GAP for the Hulala/Marmitha psalm and canticle TEXT itself, disclosed rather than filled -- Maclean cites these by number and reference only. The two Suyakha prayers ('Thee who art hidden from all in thy being' and 'Thee who art hidden in thy being') are already built and reused from Compline (esy-compline-prayer-hidden-from-all, esy-compline-prayer-hidden-in-being), confirmed matching this same page's cross-reference. The three prayers of the Qala itself are built in full as esy-qali-dshahra-prayer-first/second/third."
+    }
+  },
+  {
+    "id": "esy-qali-dshahra-feasts-note",
+    "title": "The Qali d'Shahra for Feasts",
+    "text": "<p class=\"component-text\">The Qali d'Shahra for Feasts are found in the Geza. Two clauses are said at a time by each side, and Hallelujah between the clauses of each pair; some say Hallelujah twice, some thrice. They say the Gloria in the same way. If the Feast does not fall on a Sunday, they kneel down between the Qali.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-night-anthem-prayer-first",
+    "title": "Prayer of the first Night Anthem",
+    "text": "<p class=\"component-text\">By the speaking mouths, O my Lord, which thou hast created, and by the glorifying tongues which thou hast appointed, and by all the companies on high and below, may the Name of thy Godhead and of thy majesty be worshipped, glorified, honoured, exalted, confessed, and blessed in heaven and earth, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "Fills a gap previously disclosed in this project's ferial Lelya build and the Sunday Night Service build alike (both cross-referenced 'By the speaking mouths, as above, page 154' without the text being in hand). Added to the built sequences in this session."
+    }
+  },
+  {
+    "id": "esy-night-anthem-prayer-second",
+    "title": "Prayer of the second Anthem",
+    "text": "<p class=\"component-text\">May thy Godhead, O my Lord, be pleased with our service, and may our prayers be received before thee, and may thy mercies greatly intercede for our wickedness, and from thy great treasury may our petitions be answered in our need, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.154."
+    }
+  },
+  {
+    "id": "esy-night-anthem-prayer-third",
+    "title": "Prayer of the third Anthem",
+    "text": "<p class=\"component-text\">Come, O my Lord, to the help of thy worshippers, who keep vigil on the festival of N; and reveal thyself to us in thy mercy, and hearken to the words of our prayers, which on thy holy festival we offer to thee, Lord of all.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "'N' marks a spoken insertion of the specific feast's name, per Maclean's own convention. Proper to Feasts specifically rather than ordinary Sundays; built and cited but not wired into the ordinary Sunday sequence, which uses the invariable closing verses instead.",
+      "wired": false
+    }
+  },
+  {
+    "id": "esy-night-anthem-prayer-after-nativity",
+    "title": "Prayer after the Night Anthem (Nativity)",
+    "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, by pure thoughts and sweet and holy melodies, with the heavenly hosts and the Wise Men and the Shepherds, to celebrate the holy festival of the Nativity of Christ our Lord and Saviour, in thy lovingkindness and mercy, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. Built and cited but not wired into any sequence -- this project has not yet built a Nativity-specific office structure to place it in.",
+      "wired": false
+    }
   }
 ]
