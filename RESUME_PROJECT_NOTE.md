@@ -1,5 +1,28 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-20 continued (2) -- Suba'a (Compline) built COMPLETE, all seven days; Sunday Festival Night/Morning Service received but not yet built (flagged for a future scoping pass)
+
+Josh uploaded Maclean pp.155-206 in one large PDF, asked for a read-through of the whole book and "build out everything." This single upload turned out to contain almost the entire remaining gap identified at the end of the prior session: the rest of the Festival Night Service, the complete Festival Morning Service (including full Sunday Martyrs' Anthems), and the entire Compline (Suba'a) office.
+
+**Built this session: Compline (Suba'a), complete, all seven days of the week.** This closes out a gap that has existed since the rebuild began -- Compline was previously entirely unbuilt. Chose Compline over the Festival Sunday material as the priority for this session because it's a complete, self-contained office; the Festival Sunday material is bigger and touches how Sundays render across Ramsha, Lelya, and Sapra all at once, which felt like it deserved its own scoping conversation rather than being rushed through in the same session as everything else.
+
+- Fixed shared structure (opening Hulala/psalms, Canon, a Tishbukhta, the Karuzutha, and a long closing sequence of farced psalms and prayers/Tishbukhtas) plus day-specific Anthems of the Departed and a Madrasha for each of Sunday through Saturday, all transcribed in full and wired into seven new `{day}-subaa-sequence` sequences.
+- Two of the reused Tishbukhtas ("Glory to thee, O my Lord" by Mar Shimun Bar Saba'i/Mar Ephraim, and "Glory be to thee, O God" by Mar Abraham of Izla) weren't previously their own components even though their full text was already sitting in this project's own PDF holdings from the Great Fast build -- transcribed into standalone components now rather than re-sourced.
+- **No code changes were needed.** `subaa` was already a wired office key in `renderEastSyriac()` -- it had simply never had any sequences behind it, falling through to "not yet rebuilt." The existing day-keyed sequence lookup picked up the new content automatically.
+- Two honest gaps, disclosed rather than filled: the actual text underlying several psalm-farcing rubrics (the opening Hulala's Ps.22-30, and the farcing text for Ps.91/150+117/121/51 in the closing sequence) is cited by Maclean but not printed in full at this point in the source -- built as rubric-only components, not reconstructed. Two further cross-references ("For thy nature," p.95; "Blessed and adorable," p.153) point to Festival material not yet obtained.
+- 47 new components (296 total, was 249). `SEED_VERSION` bumped to `v158-2026-08-20-east-syriac-compline-complete`.
+
+**Received this session, NOT yet built -- flagged for a future session's scoping decision, not silently deferred:**
+- The rest of the Festival Night Service (pp.155-163): Sunday Hulali rules (which of Ps.37-131 are said "before" vs "after," with their own farcing rules), the Qaltha, Motwa placement notes, three Tishbukhtas (including one by Mar Babai the Great for Advent-Epiphany Sundays), the Night Service's own Karuzutha, and Madrasha/Suyakha prayers.
+- Memorials (p.163) -- a short standalone section.
+- The complete Festival Morning Service (pp.164-184): fixed opening prayers, a farced Ps.100/91/civ/cxiii/xciii/cxlviii-cxlix-cl-cxvii set, the Morning Anthem prayer, three full Tishbukhtas (Mar Ephraim's acrostic "A light hath shone forth," Mar Narsai's, and a Benedicite-based one), the Gloria in excelsis text, the Holy God prayers, and both complete sets of Sunday Martyrs' Anthems (Before and After -- roughly 20 anthems each, with their psalm/canticle citations, distinct in style from the ferial weekday Martyrs' Anthems already built).
+
+This Festival Sunday material is genuinely bigger than the Compline build was, and building it means deciding how Sunday's Ramsha/Lelya/Sapra should actually render -- right now all three simply say "not yet rebuilt" on Sundays. That's a real architecture question (single Festival sequence per office reused every Sunday? Before/After Sunday cycle logic like Qdham/Wathar? something else?) worth Josh's explicit direction before building, rather than guessing at a structure.
+
+**Still missing from the book after this session:** pp.185-206 within this same upload turned out to BE the Compline text (now built) -- so the three ranges flagged as missing at the end of the prior session are now fully in hand. The only remaining unbuilt-but-in-hand material is the Festival Night/Morning Service above. Beyond that, "everything" in Maclean's book is now essentially received; what remains is building what's already been transcribed into hand, not further fetching.
+
+---
+
 ## Session 2026-08-20 continued -- Quta'a and Endana built as automatic Great-Fast add-ons; full Fast-season Sapra variant built; Rogation of the Ninevites and Blessing of the Months transcribed (not wired); still missing from the book to build "everything"
 
 Josh supplied Maclean pp.205-235 across two uploads (pp.205-219, pp.220-235) and asked for research on the minor hours, followed by "build them as add-ons during the seasons when they are used, and then have them automatically used," followed by "read through all of McClean's book and build out everything."

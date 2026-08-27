@@ -3034,5 +3034,396 @@
       "source": "Maclean 1894, p.234-235.",
       "wired": false
     }
+  },
+  {
+    "id": "esy-compline-title",
+    "title": "Suba'a (Compline)",
+    "text": "<p class=\"component-text\">The fixed order for Compline, said before retiring, with anthems of the departed and a Madrasha proper to each day of the week.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185.",
+      "note": "This is described in the source itself as an extremely rare separate service historically; by 1894 it was more often said combined with the Evening Service (see the already-built esy-festival-suba-a-compline for its Festival/Memorial placement, and the Fast-season placement note esy-fast-sapra-no-martyrs-anthem-note's companion material). Built here as a genuine standalone office for the first time in this project."
+    }
+  },
+  {
+    "id": "esy-compline-hulala-rubric",
+    "title": "Hulala",
+    "text": "<p class=\"component-text\">Hulala 3 (Ps. xxii to xxx inclusive).</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185.",
+      "note": "GAP, disclosed rather than filled: the specific farcings and prayers of this Hulala are not given by Maclean here -- he cites it only by number, directing the reader to the Khudhra for the full text, the same pattern as other Hulala cross-references throughout this source."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-thy-nature-rubric",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">For thy nature, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.95, 185.",
+      "note": "GAP, disclosed rather than filled: cross-referenced twice in this source (here and at the Sunday Qaltha, p.155) to p.95, which falls within Festival material this project has not yet obtained."
+    }
+  },
+  {
+    "id": "esy-compline-psalm-88-rubric",
+    "title": "Psalm 88",
+    "text": "<p class=\"component-text\">Ps. lxxxviii. No Gloria or farcing.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-hidden-in-being",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thee, who art hidden in thy being, and secret in thy Godhead, and unspeakable in thy glory, great King of glory, Being who art from everlasting, we confess, worship, and glorify, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.160, 185.",
+      "note": "Full text already available from this project's own upload of p.160 (Festival Night Service, Prayer of the second Suyakha); cross-referenced by Compline's own rubric rather than re-sourced."
+    }
+  },
+  {
+    "id": "esy-compline-psalm-90-rubric",
+    "title": "Psalm 90",
+    "text": "<p class=\"component-text\">Ps. xc. No Gloria or farcing.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-hidden-from-all",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thee, who art hidden from all in thy being, and who art revealed and who shinest forth by the wonderful deeds of thy dispensation, the power of whose might heaven and earth proclaim, we are bound to confess, worship, and glorify, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.159, 185.",
+      "note": "Full text already available from this project's own upload of p.159 (Festival Night Service, Prayer of the first Suyakha); cross-referenced by Compline's own rubric rather than re-sourced."
+    }
+  },
+  {
+    "id": "esy-compline-psalms-130-143-rubric",
+    "title": "Psalms 130 and 143",
+    "text": "<p class=\"component-text\">Ps. cxxx. and cxliii. No Gloria or farcing.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-form-us",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thee, who dost form us in thy lovingkindness, and dost cause us to die in thy justice, and dost quicken us in the overflowing multitude of thy mercy, we confess, worship, and glorify, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185."
+    }
+  },
+  {
+    "id": "esy-compline-anthem-departed-rubric",
+    "title": "Anthem of the Departed",
+    "text": "<p class=\"component-text\">He says one of the Anthems of the Departed, proper to the day of the week.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185.",
+      "note": "Resolved by day of the week -- see esy-compline-anthems-sunday through esy-compline-anthems-saturday."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-may-thy-compassion",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">May thy compassion, O my Lord, rise before us, and may thy lovingkindness pardon our sins, and may the everlasting mercies of thy glorious Trinity come to the assistance of thy worshippers who call (on thee) and beseech thee, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185."
+    }
+  },
+  {
+    "id": "esy-compline-canon",
+    "title": "Canon",
+    "text": "<p class=\"component-text\">Bow down thine ear, O Lord, and answer me. In that thy judgment, O Greatest of judges. When thy justice hath dominion over all. May thy compassion intercede for us. And thy lovingkindness stand before us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.185-186.",
+      "note": "Said to the tune ‘God is worshipped.’"
+    }
+  },
+  {
+    "id": "esy-compline-glory-at-the-door",
+    "title": "Glory be to the Father",
+    "text": "<p class=\"component-text\">At the door of thy mercies, O our Lord Jesus, thy servants knock, beseeching, and asking of thee compassion, and mercies, and forgiveness of trespasses. Return answer to them when they pray. By the prayer of Mary the blessed mother, and John, who baptized his Lord. The apostles, who made disciples of all nations, and the teachers, who preached the truth. And the martyrs, who endured all afflictions, for the love of Christ the King. May thy worshippers be preserved.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.186."
+    }
+  },
+  {
+    "id": "esy-compline-tishbukhta-at-that-hour",
+    "title": "Tishbukhta",
+    "text": "<p class=\"component-text\">At that hour when thy judgment-seat instituteth the searching, enter not, O Lord, into judgment with thy servants. At that hour when thy will visiteth them that have lain down, cast us not out, O Lord, into outer darkness. O Christ, who forsakest not any who cry to thee, in thy mercy reject not the request of thy worshippers.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.186."
+    }
+  },
+  {
+    "id": "esy-compline-karuzutha",
+    "title": "Karuzutha",
+    "text": "<p class=\"rubric-text\">Let us all stand up, etc. (page 6).</p><p class=\"component-text\">O Living one, who didst descend among the dead, and didst preach a good hope to the souls that were held in Sheol, we, etc. O thou by whose wounds our scars have been healed, and who by thy death didst slay the Slayer, we, etc. O thou at whose passion the lights (of heaven) were darkened, and all creatures clothed themselves with weeping and sorrow, we, etc. O thou at whose crucifixion the spiritual beings groaned, when the will of thy Father restrained them, that they should not destroy them that crucified thee, we, etc. O thou who by thy death didst burst the graves, and didst quicken the dead, to reprove them that crucified thee, we, etc. O thou who didst mingle thy blood with our blood, and didst redeem our trespasses with the sacrifice of thyself on Golgotha, we, etc. For the welfare of our holy fathers NN, and all those who serve under them, we, etc. O merciful God, who in mercy governest all, we, etc. O thou whom the angels of light glorified in heaven at thy death, and at whose slaying the earth was sad, and in whose resurrection it rejoiced, we, etc. O thou good Shepherd, who didst give up thy life for thy sheep, and didst save them from death by thy blood, save, O my Lord, our life from the Evil one, and have mercy upon us.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.186-187."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-forgive",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Forgive, O my Lord, our trespasses in thy compassion, wipe out our offences and make them to pass away in the overflowing multitude of thy mercy, O thou who forgivest trespasses and sins, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187."
+    }
+  },
+  {
+    "id": "esy-compline-blessed-adorable-rubric",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Blessed and adorable...</p>",
+    "meta": {
+      "source": "Maclean 1894, p.153, 187.",
+      "note": "GAP, disclosed rather than filled: cross-referenced to p.153 (Festival material), not yet obtained by this project."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-rubric",
+    "title": "Madrasha",
+    "text": "<p class=\"component-text\">He says the Madrasha, proper to the day of the week.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187.",
+      "note": "Resolved by day of the week -- see esy-compline-madrasha-sunday through esy-compline-madrasha-saturday."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-quickener-of-dead",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thee, the Quickener of the dead, and the good Hope of them that are buried, we confess, and worship, and glorify, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187."
+    }
+  },
+  {
+    "id": "esy-compline-psalm-91-farced",
+    "title": "Psalm 91 (farced)",
+    "text": "<p class=\"component-text\"><em>Protect me, O God, and From the Evil one and his hosts</em> -- farced alternately after each clause.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187.",
+      "note": "No Gloria. Maclean gives the farcing refrain but not the full interleaved psalm text in this section -- disclosed here rather than reconstructed by assumption."
+    }
+  },
+  {
+    "id": "esy-compline-psalms-150-117-farced",
+    "title": "Psalms 150 and 117 (farced)",
+    "text": "<p class=\"component-text\">Both farced after each clause with <em>Glory be to thee, O God.</em> They say, Glory be to the Father, etc. <em>Glory be to thee, O God.</em> From everlasting to everlasting, Amen. <em>Glory be to thee, O God.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.187.",
+      "note": "No Gloria (the farcing itself substitutes). As with Psalm 91 above, the full interleaved psalm text is not given in this section of the source."
+    }
+  },
+  {
+    "id": "esy-compline-tishbukhta-glory-to-thee-mar-shimun",
+    "title": "Tishbukhta, by Mar Shimun Bar Saba'i (or Mar Ephraim)",
+    "text": "<p class=\"component-text\">Glory to thee, O my Lord, who didst create us, though not moved thereto by any from the beginning. Glory to thee, O my Lord, who didst call us, thy living image and likeness. Glory to thee, O my Lord, who didst nurture us, in freedom and as reasonable beings. Glory to thee, O just Father, whose love was pleased to fashion us. Glory to thee, O holy Son, who didst put on our flesh, and didst save us. Glory to thee, O living Spirit, who didst enrich us with thy gifts. Glory to thee, O hidden Nature, who didst reveal thy Person in our manhood. Glory to thee, O my Lord, who didst draw us from the error of idols. Glory to thee, O my Lord, who didst bring us to the knowledge of thy Godhead. Glory to thee, O my Lord, who didst make us reasonable instruments for thy service. Glory to thee, O my Lord, who didst invite us to the exalted habitation of heaven. Glory to thee, O my Lord, who didst teach us the orders of the heavenly beings. Glory to thee, O my Lord, who didst make us worthy to glorify thee with the angels. Glory to thee from all mouths, Father, Son, and Holy Ghost, from those that are above and those that are below. Glory to thy Trinity, in both worlds glory to thee, from the spiritual beings and from them that are in the body, from everlasting to everlasting, and for ever and ever, Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.221.",
+      "note": "Already present in this project's own PDF holdings from an earlier upload (Ordinary Weeks of the Fast, Night Service) but not previously made into its own component; transcribed here for reuse, cross-referenced by Compline's rubric ('Tishbukhta, Glory to thee, O my Lord, page 221')."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-giver-of-our-life",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">Thee, O Giver of our life, and good Hope of our souls, we confess, and worship, and glorify, at all seasons and times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187."
+    }
+  },
+  {
+    "id": "esy-compline-psalm-121-farced",
+    "title": "Psalm 121 (farced)",
+    "text": "<p class=\"component-text\">Farced after each clause with <em>Preserve me, O God.</em></p>",
+    "meta": {
+      "source": "Maclean 1894, p.187.",
+      "note": "No Gloria. As above, the full interleaved psalm text is not given in this section of the source."
+    }
+  },
+  {
+    "id": "esy-compline-tishbukhta-glory-be-to-thee-mar-abraham",
+    "title": "Tishbukhta, by Mar Abraham of Izla",
+    "text": "<p class=\"component-text\">Glory be to thee, O God. Repeat. By day and by night, glory be to thee, O God. At all seasons and times, in thy mercy have compassion on us, O God, we ask mercy of thee, and forgiveness of sins. Remove from us the Evil one, who alway layeth snares for us; keep us by thy living sign, that the Evil one may see (it) and depart. Make thy right hand which is full of mercies, O Lord, to overshadow us; O Lord, thy mercies are everlasting, forsake not the work of thy hands. May thy cross be a wall to us, O Christ, who by it hast saved us; glory to thee, O our Lord Jesus, and praise to the Father who sent thee. And to the Holy Ghost be sung hallelujahs, for ever and ever, for ever and ever, and for evermore, Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.215.",
+      "note": "Already present in this project's own PDF holdings from an earlier upload (Weeks of the Mysteries in the Fast, Night Service) but not previously made into its own component; transcribed here for reuse, cross-referenced by Compline's rubric ('Tishbukhta, Glory be to thee, O God, page 215')."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-may-mercies-formed-me",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">May the mercies, O my Lord, which formed me without entreaty, beg and beseech for me of thy justice in the great and glorious day when thy greatness is revealed from heaven, O just Judge, who art full of mercy, and who forgivest trespasses and sins, Lord of our death and of our life, Father, Son, and Holy Ghost, for ever. Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.187."
+    }
+  },
+  {
+    "id": "esy-compline-psalm-51-farced-christ-the-king",
+    "title": "Psalm 51 (farced)",
+    "text": "<p class=\"component-text\">Farced alternately, after each clause, with <em>O Christ the King, have mercy upon us,</em> and <em>O Christ the King, glory to thy Name.</em> (In the last clause substitute offerings for young bullocks.)</p>",
+    "meta": {
+      "source": "Maclean 1894, p.188.",
+      "note": "No Gloria. As above, the full interleaved psalm text is not given in this section of the source."
+    }
+  },
+  {
+    "id": "esy-compline-tishbukhta-christ-who-in-thy-mercies",
+    "title": "Tishbukhta",
+    "text": "<p class=\"component-text\">O Christ, who in thy mercies hast compassion on sinners, turn to the prayer of thy weak servants. And as thou hast kept us in the day which is past, may thy lovingkindness keep us in the night which is full of terror. And drive away from us the Evil one, our Enemy, and may thy cross be a wall to our souls. And waken us when we sleep in the multitude of thy compassion, that we may stand and glorify thee, who in thy goodness dost preserve us. Let us kneel and worship thee. For ever and ever, Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.188."
+    }
+  },
+  {
+    "id": "esy-compline-they-proceed-in-thy-cross",
+    "title": "They proceed",
+    "text": "<p class=\"component-text\">In thy cross I have taken refuge, O our Saviour; under its wings protect me from the Evil one and his host. With the publican we ask mercy; have compassion on us, and have mercy upon us. O our Lord, with thy right hand overthrow Satan, who maketh (men) drunken without wine, and causeth them to slip without mud. At thy hands, O God, whose mercies are manifold, may our correction be, and not at the hands of man. O Christ, who forsakest not any who call to thee, in thy mercies reject not the request of thy worshippers.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.188."
+    }
+  },
+  {
+    "id": "esy-compline-tishbukhta-mar-ephraim-grant-me",
+    "title": "Tishbukhta, by the holy Mar Ephraim",
+    "text": "<p class=\"component-text\">Grant me, O my Lord, that if I wake, I may stand watchfully before thee, and that if I lie down, my sleep may be without sin. And if I grow slothful in watching, may I be pardoned by thy lovingkindness, and if I sin in lying down, may thy compassion forgive me. And by the cross of thy humiliation grant me restful sleep, and deliver me from evil dreams, and from abominable phantoms. And in peaceful sleep lead me all the night, and let not the Evil ones have dominion over me, and thoughts full of wickedness. And from hateful desires may I be delivered by thy body with which thou hast fed me, and may I lie down and rest in quietness, and may sleep be my preserver. And make the wall of thy mercies to surround the soul which is thy image, and may thy right hand overshadow the body which thy hands have fashioned. And surround me with the wall of thy mercies, as with a mighty shield, that when (my) body is at rest and in quiet, thy power may be its preserver. And as the fragrance of incense may my sleep be before thy greatness, and let not the Evil one approach my bed, by the supplication of her who bare thee. And by thy sacrifice for us stay Satan, that he harm us not, and fulfil in me thy promise, and by thy cross preserve my life. That when I wake I may confess thee, for that thou hast shown thy love to my feebleness, and that I may lift up glory to thee and to thy Father, and to the Holy Ghost who sanctifieth. Both now and always, for ever and ever.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.189."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-living-voice-lazarus",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">May thy living and life-giving voice, O my Lord, which called and raised Lazarus unto a resurrection for a season, call and raise thy servants (to be) on thy right hand, in the great and glorious day when thy justice is revealed from heaven, O just Judge, who art full of mercy, and who forgivest trespasses and sins, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.189."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-quicken-them-that-fallen-asleep",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Quicken them that have fallen asleep, in thy compassion, and preserve them that are alive, in the overflowing abundance of thy mercy; and grant a good resurrection to the departed who have fallen asleep in the hope of the quickening, that they may lift up to thee praise, and honour, and confession, and worship, at all times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.190."
+    }
+  },
+  {
+    "id": "esy-compline-prayer-be-with-us-continually",
+    "title": "Or this",
+    "text": "<p class=\"component-text\">Be with us, O my Lord, continually, in thy mercies, and lead us according to the goodwill of thy Godhead, and protect and help our life under the wings of thy care; and save and rescue our bodies and our souls from the Evil one and his hosts, at all seasons and times, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.190."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-sunday",
+    "title": "Anthems of the Departed at Compline: Sunday",
+    "text": "<p class=\"component-text\">Bow down thine ear, O Lord, and answer me. O Christ the Son, who didst come for our salvation, that thou mightest renew the image of Adam which was destroyed, and didst put on our flesh, and in it didst save our race, and didst give us a good expectation of the resurrection of the dead. In thy lovingkindness pardon thy servants in the day of thy coming. For thy lovingkindness, O God. In thy lovingkindness thou didst create our race in the beginning, and didst clothe it with excellent glory in Paradise. And because it did foolishly, and sinned and fell from glory, thou didst send thy beloved Son to us, and he gave us in his compassion the promised life which hath no end. For I put my trust in thee. In the abundance of thy mercy I put my trust, O God, and beseech thy lovingkindness; give me in thy mercies forgiveness of (my) trespasses, by which I offend before thee, and (may) peace and tranquillity lead me all (my) days. Give ear, O Lord, unto my prayer. At the time when thou callest the dead from the graves, that thou mayest pay to every man according to his deeds. The books are opened to bear witness to (men's) works, and he that openeth (his) mouth fleeth, and is hidden; let thy mercies pity thy servant, that he may not utterly perish. Until thou have mercy upon us. At the door of thy mercy I knocked, that I might enter, but thy justice answereth me not; in thy mercies have pity on me, for as the prophet I cry, that if thou judgest justly, O my God, our humanity cannot be justified in the terrible judgment. Let us go before him with praise. Let us all offer praise to God in the memorial of Mary, the mother of Christ, and in her name let us take refuge, that we may receive help, and by her prayers may our congregation be preserved from the harm (wrought by) the Apostate, who hateth our nature. Seek the Lord and be strong. O saints, prophets, apostles, and teachers, and confessors, and martyrs, and priests, and monks, beseech for us all of Christ, who gave you the victory, that by your prayers we may receive from his treasury an answer to all our petitions in the way that may best help us. Glory be, etc. Glory to thee, Jesus, our victorious King, who by thy cross hast saved our race from error; may thy great power renew our nature, and may death be brought to naught, and the quickening reign, and may we be worthy of mercies by thy will, O King the Quickener. From everlasting, etc. O Compassionate one, whose door is open to the penitent, and who careth that sinners should repent; pardon my trespasses and make my offences to pass away, and grant and vouchsafe that I may inherit the kingdom, in the great day when thou comest with all thy saints.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.190-191."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-sunday",
+    "title": "Madrasha at Compline: Sunday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> O just Judge, who hast no respect of persons, make me worthy in thy mercies to see thee in the day of judgment. <em>Verses.</em> O thou who helpest me, and art full of mercies, have compassion on me when I am lost, and grant me to have a share among the companies of the saints. In lovingkindness thou hast fashioned our dust, and hast called us thine image; in thy mercies mingle our lives with the life which endeth not.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.192."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-monday",
+    "title": "Anthems of the Departed at Compline: Monday",
+    "text": "<p class=\"component-text\">Praise the Lord, O ye righteous. The souls of the righteous are in the hands of the Lord, for they loved him, and believed him, and kept his commandments. O glorify him with a new song of praise. Because thou didst please Christ, he hath taken thee from the world, that thou mightest go and have joy in the bridechamber of the kingdom. God is my hope, even from my youth. My hope from my youth is he who quickeneth me, that in the day of thy coming I may stand and confess thee. These pass away, but thou endurest. This world now passeth away; come, let us beg for mercies and forgiveness of trespasses. Both behind and before. All generations and families of the house of Adam look to, and wait for the Epiphany of thy coming. Both small and great. Lo, all the departed have lain down in thy hope, that by thy glorious resurrection thou mayest raise them in glory. O hear ye this, all ye peoples. Adam among the dead was made subject to death, for eating of the tree took away his independence of it. He lifted up his voice, and the earth was moved. Adam among the dead heard a voice saying, Be of good courage, for the penalty is taken away by the Son. Blessed is he in whom thou art well pleased. Blessed is he whose countenance shineth, in the hour when the judgment seat of the kingdom is set. All ye servants of God. Famous priests and holy nation, pray for me, that I may go (hence) and be accepted. Turn thee unto me and have mercy upon me. At that hour when thy judgment seat is set for the searching, enter not into judgment, O Lord, with thy servants. And show some token upon me for good. In that hour when thy will visiteth them that have lain down, cast us not out, O Lord, into outer darkness. Open me the gates of righteousness. O Gate of truth, which art open to them that are lost, call us to enter into thy treasury above. Unto the godly hath shone forth a light in the darkness. Make thy light, O our Lord, to dwell in our souls, and bring to naught among us the wars of the Crafty one. By day and by night. May the prayer of the Virgin be a wall to us, and drive away from us the wars of the Crafty one. Seek the Lord and be strengthened. Prophets and apostles and martyrs and teachers seek of God mercies for the world. At all seasons and times. O our holy father, beseech Christ, that he may make his peace to dwell in the four quarters (of the world). Beg of the Lord, and pray before him. Ask of thy Lord for us, O martyr George, compassion and mercies and forgiveness of trespasses. Glory be to the Father, and to the Son, and to the Holy Ghost. Praise to thee, Jesus our Saviour, for death is in thy hands, and life at thy will.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.192-194."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-monday",
+    "title": "Madrasha at Compline: Monday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> May our Lord, whose cross thou didst confess, give rest to thy spirit, O our brother, and when he cometh in great glory, may he give thee joy with him in the kingdom. <em>Verses.</em> O our brother, go thou in peace; may our Lord be with thee, may the cherub who keepeth Paradise open the door before thee. In the service wherein I have served with you, let not my love be forgotten by your love, and when ye stand in the sanctuary, remember me in prayer.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.194."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-tuesday",
+    "title": "Anthems of the Departed at Compline: Tuesday",
+    "text": "<p class=\"component-text\">O Lord God of my salvation. O Lord God, the Lord of death and mortality, may thy sweet Spirit lead me in the way of life, when thou comest in thy kingdom. I will alway bless the Lord. Blessed is Christ, who condescended and tasted death, and gave us his body and his blood, and gave life to Adam, and saved his children by his cross. Ascribe ye praise unto God. The children of Adam lauded the Son with hosannas, and with voices of praise glorified him and sang to him, for he is the Quickener of our departed. And I have stretched forth my hands unto thee. Grant and vouchsafe to me that in the day when thy mercies shine forth I may go forth to meet thee with hosannas, and with all thy saints make me worthy to inherit the kingdom. He lifted up his voice, and the earth was moved. O Voice, which saidst to the sinful woman, Thy trespasses are forgiven, forgive me my trespasses in thy judgment, that I may stand and confess thee, with the just who were approved before thee. How good and beautiful. The Voice, which called Lazarus from the grave, calleth thee and quickeneth thee, and placeth thee at his right hand, in the day when his greatness shineth forth. Thou hast brought me down to the lowest pit. Death hath brought me and cast me into devouring Sheol, and hath caused me to tremble exceedingly, and hath terrified my mind, and hath separated (my) soul from (my) body. As the embers of an oak tree. Bitter is death, and dire is the day of departure, which divideth brother from brother, and parents also, from speech with their loved ones. Both small and great. Pray for me, all ye my friends and beloved ones, that I may be worthy of Abraham's bosom, and with Lazarus have joy there in the kingdom. Verse of Prayer. And sinners shall be converted unto thee. Pardon and save all sinners, for thou art merciful and canst forgive trespasses, and takest away the offences of the sons of men, who come to thee in repentance. Glory be, etc. O Mary, the holy Virgin, mother of Jesus our Saviour, beseech and beg for mercies for sinners that they perish not, for they take refuge in thy prayers; may thy prayer be a wall to us in this world and in that which is to come. From everlasting, etc. By the prayer of the just, who propitiated thee, and the righteous, who were approved before thee. The prophets, and apostles, and teachers, and martyrs, and priests and monks, keep the congregation of thy worshippers, that they may lift up to thee a new (song of) glory. Father, Son, and Holy Ghost.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.194-195."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-tuesday",
+    "title": "Madrasha at Compline: Tuesday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> Blessed is he, who, in (his) lovingkindness, created our nature in the beginning, and in his love accomplished our renewal in the end of times. <em>Verses.</em> Remain in peace, O habitation which is but for a season, (and is) full of distresses, for lo, the weight of my trespasses hindereth me from the kingdom. In the morning when all creatures rise for the searching of the judgment, let me not be confounded, O my Lord, (but let me stand) among the congregations that are clothed with light.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.195-196."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-wednesday",
+    "title": "Anthems of the Departed at Compline: Wednesday",
+    "text": "<p class=\"component-text\">From this time forth for evermore. Remain in peace, O habitation which is but for a season, which cannot save them that possess it, for I will depart and see the country of light, where the just who have laboured, do dwell. For there is no salvation in his hand. Remain in peace, O transitory world, whose pride cometh to naught, and whose glory vanisheth away, for I will depart and see the city of the just, Jerusalem which is above. And all my bones shall say. Blessed is thy day, O Son of the Lord of all, who comest and rendest the bosom of Sheol; glorious is thy quickening, which is looked for, by the generations who have passed away, and (by those) which remain. They pass away, but thou abidest. Lo, this world passeth away, and all its desires come to naught, and blessed is he who hath prepared for himself provision for the world which passeth not away. Praise him with the voice and with crying. At the sound of the horn and of the trumpet, all the departed rise, and lift up glory to the Father, and to the Son, and to the Holy Ghost, for he quickeneth us. Both small and great. All men tread the way of death, and not even the just remain behind, and each of them runneth that he may obtain, according to his deeds in this world. My lovers and my neighbours did stand looking upon my trouble. My lovers have left me, and have gone far from me, and also my possessions have remained for others; and my trespasses alone surround me, and (their) penalty maketh me tremble. The hope of all the ends of the earth. We have no hope in which we can boast, but thy cross which pardoneth our trespasses, for it is a high wall to us, and delivereth us from harm. Excellency and glory are before him. In the day when Christ the King shineth forth, he giveth life to the dead and changeth the living, and the just fly to meet him in the air; pray for me that I may be with them. And I sought him, but I found him not. I saw that the world faded away and perished through this wickedness which reigned in it, and I ran and took refuge in the living cross of the Son of the Lord of all. From this time forth for evermore. Remain in peace, my brethren and my companions; our Lord recompense (you) with a reward for your love, and when ye stand in the sanctuary, remember me in your prayers. Glory be, etc. The archangel flew and came down to the holy one, the daughter of David, and gave her the message by which was typified peace and tranquillity to the race of man. From everlasting, etc. May the prayers of the apostles, who were blessed fountains, in the thirsty and distressed world, and who gave the world to drink of a spiritual drink, be a wall to our race.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.196-197."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-wednesday",
+    "title": "Madrasha at Compline: Wednesday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> Glory to the voice which cried on the tree, and took away the penalty of the transgression of the commandment. <em>Verses.</em> May that voice which called Lazarus call thee, and make thee to dwell in the country where the just dwell; may the voice of the horn call thee, may the trumpet waken thee, may the Holy Ghost join thee to the ranks of the Saints.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.197-198."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-thursday",
+    "title": "Anthems of the Departed at Compline: Thursday",
+    "text": "<p class=\"component-text\">Unto thee, O Lord, I lifted up my soul. O Christ the King, our Saviour, in the day of thy coming quicken us, and raise us to thy right hand, in the day when thy greatness shineth forth. O God, in thee have I trusted, let me not be confounded. We venerate thy cross, O my Lord, by which we are raised and quickened, and by which our departed are quickened, and their bodies are clothed with glory. Such as are gentle, them doth he learn his way. Lo, in the prophets is our quickening, and in the apostles our recompense, and in the gospel of our Lord is the way which leadeth to the kingdom. He lifted up his voice, and the earth was moved. The voice of the Son quickeneth Adam, who lay in sorrow, and instead of the promised land giveth him a bride-chamber on high for an inheritance. How good and beautiful. The voice, which called Lazarus, and the maiden, the daughter of Jairus, calleth and quickeneth thee, and placeth thee at his right hand. Mine eyes have looked for thy salvation, and for the word of thy righteousness. Mine eyes have looked for thy salvation, and the word of thy righteousness; leave thou me not in Sheol, O thou good Hope of them that are in the graves. And let my soul be joyful in God. And let my soul be joyful in God, and have pleasure in his salvation, and all my bones shall say, O Lord, in thy lovingkindness give me life. Because I am in trouble answer me speedily. Because I am in trouble answer me speedily; bring my soul near to thy salvation. When I have lain down, may thy voice awaken me, from the grave (to enter) the kingdom. They shall rejoice and sing. May the bodies of the departed, who have clothed themselves with thee, O our Lord, in the waters of baptism, be made clean by thee from the stains of sin. Let them be glad in his joy. To the departed, who have eaten thy body, and have had joy in thy living blood, grant, O our Lord, memorials, in the land where the just dwell. The heavens are thine, the earth also is thine. Both worlds are thine, O my Lord; this world and that hereafter alike, preserve the living in thy compassion, and grant a quickening to the dead. The Lord is faithful in his words. May our departed, O my Lord, who have confessed thy Trinity, receive the promise which the robber received from thee on Golgotha. Fear hath fallen upon me. It is not an (earthly) judgment that I fear, nor am I troubled that I have fallen asleep, but I fear thy judgment, O my Lord, for God judgeth by fire. Verses of Prayer. O Lord, heal me, for my bones are vexed. In dire sickness of body am I tormented, O Lord; heal my pain in thy compassion, as (thou didst heal) just Hezekiah, on whom the prophet placed a cake of figs and he was healed; so place on me, O my Lord, the medicine of thy mercies. Give ear to my words and receive (them). As the censer which Aaron offered, may the savour of our assembly please thee; and as the request of the Ninevites, receive the prayer of thy servants, O my Lord, and as thou didst answer Daniel in the pit, answer, O my Lord, and help thy worshippers. Glory be, etc. Blessed art thou, O holy Virgin, blessed art thou, Mother of Christ, blessed art thou, whom all generations and peoples call blessed, and because of thy Child thy name is exalted in creation, as the prophet said. From everlasting, etc. By the prayer of the just, who propitiated thee, O Christ our King and our Lifegiver, rescue thy Church from the evil ones, and preserve her children by thy cross, and bring to naught in her wars, and strifes, and divisions, for she hath been bought by thy living blood.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.198-200."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-thursday",
+    "title": "Madrasha at Compline: Thursday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> Flee from the world, flee from its riches, and also from its wickedness, and look and find out how bitter is the way of death. <em>Verses.</em> Look on me, my brethren (and see), that though I have run my course and have worked, yet lo, I depart, and none of my possessions have accompanied me. The wealth of the world saveth not the race of men, and not even that which clotheth him entereth with him into the kingdom.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.200."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-friday",
+    "title": "Anthems of the Departed at Compline: Friday",
+    "text": "<p class=\"component-text\">He that is before the worlds. The Father, who formed Adam, called him also his image, and because he rebelled and transgressed the commandment, he brought him in his turn under death, over which he had had dominion. In the days of old. In the beginning thou didst fashion our image, O Creator, and because (man) sinned and broke thy law, thou didst dissolve his form, and he turned again to his earth. Thou hast fashioned me, and laid thine hand upon me. Thy command hath fashioned us and brought us into being, and thou hast set us in Eden, in Paradise, and because we have transgressed thy word, we have inherited a land of thorns. Thou hast brought me down to the lowest pit. Lo, death hath taken me and hidden me in his clefts; bring thou my soul out of the house of bondage, that I may confess and praise thee, O Quickener of the dead. We have sinned with our fathers and have done amiss and dealt wickedly. We have trodden down thy commandment, and have transgressed thy word; and have been condemned because we sinned and dealt wickedly, and now we beseech (thee), in thy mercies forgive our trespasses. Thou art merciful, O Lord, and righteous. O just Judge, Creator of the world, Quickener of all the departed, quicken us who are dead, in thy great mercies. O come, let us praise the Lord. Life that is not destroyed and blessings that fade not, and joy that lasteth for all generations, do the righteous inherit, in the day of thy coming. Verses of Prayer. Our God is our strong refuge. O Christ, the true refuge and hope, neglect us not at any time, and pardon our trespasses, and cleanse our stains. Hear my voice, O God, when I beseech thee. O thou that hearest, and neglectest not, and savest, and rescuest, hear, O my Lord, the request of thy worshippers, and return answer to our requests, from the treasure of thy mercies. In the evening, and morning, and at noonday. Thou hast called us to the vineyard of thy Gospel, O Lord of all; strengthen us, that we may do thy will, and may thy mercies preserve us, by night and by day. Glory be, etc. By the prayer of her who bare thee, O Christ our Saviour, pardon our trespasses in thy lovingkindness, and forgive our offences, according to the multitude of thy mercies. From everlasting, etc. O prophets and apostles and martyrs and teachers, beseech and make requests for us all, that we may be worthy of forgiveness of trespasses, in the judgment.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.200-202."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-friday",
+    "title": "Madrasha at Compline: Friday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> O El, O God, hear our request, which is audible to thee, and in thy mercies return answer to the petition of our soul by which thou art persuaded. <em>Verses.</em> At the door of thy mercies thy servants knock, O thou who wiliest that we should live; open to us that we may enter and receive an alms as poor men. O thou who art overflowing with compassion, show thy love as thou art wont, lest the hater of man mock the work of thy hands. O thou who art mighty in the worlds, support that which thou hast fashioned by the force of thy power, for lo, it is disturbed by evil sufferings and by demons.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.202."
+    }
+  },
+  {
+    "id": "esy-compline-anthems-saturday",
+    "title": "Anthems of the Departed at Compline: Saturday",
+    "text": "<p class=\"component-text\">I was glad when they said unto me. Our Lord cometh and quickeneth the dead, and giveth hope to all the departed. I will alway bless the Lord. Blessed is he who made death to come but once, which taketh both good and bad alike. And let my soul be joyful in God. Let my soul, which hath taken refuge in thy cross, see thy compassion in the day of thy coming. Thou hast fashioned me, and laid thine hand upon me. When I was not thou didst fashion me from the dust, and, now that I have lain down, give me life that I may confess thee. I will magnify thee, O my Lord the King. Christ our King shineth forth from on high, and giveth life to the dead, and raiseth them that are in the graves. Turn thee unto me and have mercy upon me. O Son of God, quicken our departed, and clothe them with glory in thy kingdom. He lifted up his voice, and the earth was moved. At the voice of the Son the graves are rent, and the dead rise and give glory. Unto the godly hath shone forth light in the darkness. A new sun shineth forth on them that are in the graves, and from their graves they shall confess thy majesty. Turn thee unto me and have mercy upon me. Have compassion on me and give me life, and forgive me my trespasses, that I may see thy compassion in the day of thy coming. And show a token upon me for good. Thy will is accomplished, and thy commandment hath led me; in thy mercies give me life, that I may stand and confess thee. Both small and great. At the mouth of the graves stand the souls, and look on the Son, who shineth forth from on high. Blessed be the Name of the Lord. Blessed is Christ, who quickened us when we were dead, and hath promised hope and life to the departed. From this time forth for ever more. Remain in peace, O Church with thy children; may our Lord be a wall to thy flock. And they shall bear thee in their arms. Moses and Elijah go forth to meet thee, and receive thee in tabernacles of fire. For ever and ever. Remain in peace, O habitation, and ye that dwell therein; may peace increase in thee from whom I have gone out. There shall be thy habitation and thy rest. Among the desirable trees of Paradise shall be thy habitation and thy rest. Glory be, etc. Glory to the Father, and confession to the Son, and to the Holy Ghost who quickeneth us. From everlasting, etc. Praise to thee, Jesu our Saviour, in whose hands is death, and at whose will is life.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.202-204."
+    }
+  },
+  {
+    "id": "esy-compline-madrasha-saturday",
+    "title": "Madrasha at Compline: Saturday",
+    "text": "<p class=\"component-text\"><em>Antiphon.</em> Where is Adam, whom the Lord formed from dust, and called him his image, and made heaven and earth subject to him? <em>Verses.</em> Where is Moses, who on the Mount of Sinai saw his Maker, and the power of the Lord spake with him face to face? Where is David, the prophet and king, the heart of the Lord, of whom the Lord who chose him bore witness, that there was none like him.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.204."
+    }
   }
 ]
