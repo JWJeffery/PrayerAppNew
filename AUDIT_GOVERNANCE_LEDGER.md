@@ -7106,3 +7106,115 @@ Logged as a new dashboard backlog item (`coe:pre-fast-sunday-folding-rule`, yell
 built this session — it's new scope needing Josh's prioritization call, not a fix to something
 already broken, and the standing rule that architectural/build-order decisions are Josh's to make
 still applies even to self-surfaced findings.
+
+---
+
+## Session 2026-08-27 continued -- Wired everything transcribed-but-unwired: Rogation of the Ninevites, Blessing of the Months, Sunday Lelya Feast-of-our-Lord extras
+
+Josh asked to wire everything not yet wired, then begin work on the calendar engine gaps. This
+entry covers the wiring pass; engine-gap work is a separate entry below (or in a following session
+if not completed in this one).
+
+**Reviewed the actual remaining unwired content first**, rather than working from the summary given
+verbally earlier in the conversation, to avoid compounding an earlier misstatement in this same
+session (see the conversation record: the Cathedral/Monastic toggle had incorrectly been implied
+still-open when it was already fixed). Confirmed directly against the live repo and component
+`meta.wired` flags which content was genuinely unwired before starting.
+
+**Rogation of the Ninevites** (Maclean pp.226-228, transcribed in an earlier session, four
+components: two Tishbukhtas for Monday and Wednesday, an extended Hallelujah rubric, and a
+Qaltha/Suba'a cross-reference note). Wired into weekday Lelya in `js/office-ui.js`, gated on
+`EastSyriacCalendar.getDayClass(currentDate).isNinevehFast` -- already computed by the calendar
+engine for fasting-character labeling elsewhere, reused rather than recomputed:
+- Monday's and Wednesday's ordinary ferial Tishbukhtas are swapped for their Rogation-specific
+  texts. Tuesday's ordinary Tishbukhta is left in place -- Maclean gives no Tuesday-specific
+  Rogation text in the transcribed source, and none was invented to fill the gap.
+- All three days' ordinary ferial Qaltha is replaced by the "ordinary Sundays 'after'" Qaltha and
+  psalms (`esy-sunday-qaltha-rubric` + `esy-sunday-lelya-psalms-after-ordinary`), per Maclean's own
+  p.228 rubric. This cross-reference had been recorded as unresolvable when the Rogation content
+  was first transcribed (before the Sunday Festival Night Service existed to supply it); it
+  resolves cleanly now that that content exists.
+- The extended Rogation Hallelujah is inserted once, after each day's final Hulala (Hulala 7/14/21
+  for Monday/Tuesday/Wednesday respectively) and before the Qaltha. Maclean's own text states only
+  that it is said "between the Hulali," without specifying a repeat count across the day's seven
+  Hulala -- a single insertion at that boundary is the most defensible reading of the source as
+  transcribed, and is disclosed as an interpretive choice in both the code comment and the
+  component's own `meta.note`, not presented as a verified repeat pattern.
+- Suba'a needed no code change: it is already a complete, always-selectable office for all seven
+  days of the week, so its own p.228 note ("said at the Evening Service as in the Fast") is purely
+  informational -- the person already has access to the same Suba'a office on these three days as
+  on any other.
+
+**Blessing of the Months** (Maclean pp.229-235, nine components: a title/rubric, three anthems, two
+litanies, a prayer, and two further prayers, transcribed but never sequenced). Maclean's own rubric
+component states the placement rule plainly: "said at the Evening Service of the first day of each
+month (February excepted...)." Added a new `blessing-of-months-sequence` to `rubrics.json`, all nine
+components in the source's own page order (confirmed by checking each component's `meta.source`
+page citation before ordering, not assumed from component-array order), and wired it into
+`renderEastSyriac()`'s Ramsha branch: appended to that day's sequence whenever
+`currentDate.getDate() === 1 && currentDate.getMonth() !== 1` (February). Applies on every day of
+the week the first of the month falls on, not Sundays only, matching Maclean's date-only
+restriction rather than inventing a day-of-week restriction the source doesn't state. Uses the
+Gregorian calendar date directly, consistent with every other date-driven substitution already in
+this renderer (Sunday, Palm Sunday, the fixed Feasts of our Lord) -- no sunset-anticipation logic
+exists anywhere else in this codebase, so none was introduced here either.
+
+**Sunday Lelya Feast-of-our-Lord extras** (Maclean pp.153-154, three components transcribed during
+the p.6/36/95/111-153-154 cross-reference session but left unwired pending the Feast-of-our-Lord
+calendar layer, which has since been built). Wired using that existing layer
+(`EastSyriacCalendar.getDayClass(currentDate).commemorations`), parallel to the Feast-of-our-Lord
+wiring already built into Sunday Ramsha:
+- `esy-qali-dshahra-feasts-note` (a chanting-practice note -- two clauses at a time, Hallelujah
+  between, kneeling if the Feast doesn't fall on a Sunday) is inserted alongside, not replacing, the
+  ordinary Qali d'Shahra rubric whenever a Feast of our Lord falls on that Sunday.
+- `esy-night-anthem-prayer-third` ("Proper to Feasts specifically rather than ordinary Sundays" per
+  its own prior `meta.note`) is inserted after the ordinary first and second Night Anthem prayers
+  under the same condition.
+- `esy-night-anthem-prayer-after-nativity` is inserted further, specifically when the feast's own
+  commemoration key is `COE_FEAST_NATIVITY` (not merely `type === 'feast'`), since Maclean marks
+  this prayer "Nativity" only. This reuses the existing Feast-of-our-Lord layer rather than building
+  a dedicated Nativity office structure, which this project still does not have and did not need to
+  build to satisfy Maclean's own placement of this one prayer.
+
+**Deliberately left unwired, disclosed rather than guessed:**
+- `esy-third-motwa-note` ("The Third Motwa, of the Company of the Catholici," p.153): its single
+  transcribed sentence does not state clearly what occasion triggers a "Third Motwa" form. It may
+  denote a Feast-day form, or a position within a separate rotating commemoration cycle this project
+  doesn't model at all. Gating it on a guessed date condition risks reciting the wrong content on
+  the wrong occasion -- exactly the failure mode this project's standing practice on ambiguous
+  rubrics exists to prevent. Remains built, cited, and flagged unwired in its own `meta.note`
+  pending clarification, not silently wired to the nearest plausible trigger.
+- **Memorials (Maclean p.163):** checked during this pass and found to have never actually been
+  transcribed into any component at all, despite being listed in an earlier session's "received but
+  not built" summary as though the text existed and only wiring remained. There is nothing to wire
+  here -- this is a transcription gap, not a wiring gap, and needs new source material from Josh
+  before any further work is possible. Recorded plainly rather than silently dropped from scope.
+
+**Verified with a full Node.js regression suite against the actual committed files, not just the
+edited diff:**
+- All three real 2027 Rogation days (confirmed via `EastSyriacCalendar.getSeason` to fall Feb 22-24,
+  20 days before that year's Sauma start) resolve every substituted component ID correctly, and an
+  ordinary non-Rogation Monday correctly shows `isNinevehFast: false`.
+- Three real month-boundary dates (March 1 2027, February 1 2027, March 2 2027) correctly
+  include/exclude the Blessing of the Months sequence.
+- A real Resurrection Sunday (May 2, 2027) and the real 2029 Nativity Sunday (January 7) both
+  correctly receive the general Feast extras, with the Nativity-specific closing prayer appearing
+  only on the latter; an ordinary non-feast Sunday correctly receives neither.
+- Every component ID referenced by every new sequence and every new substitution branch was checked
+  against the actual component corpus and confirmed to exist -- no dangling references.
+- `js/office-ui.js` passes `node --check`; both `components/east-syriac.json` and
+  `components/traditions/east-syriac/rubrics.json` remain valid JSON after all edits.
+
+**Component metadata:** all 16 affected components (4 Rogation, 9 Blessing of the Months, 3 Sunday
+Lelya extras) had their `meta.wired` flag flipped from `false` to `true`, with notes updated to
+describe the actual wiring rather than left describing the prior pending state.
+
+**Dashboard cleanup, done in the same pass:** three dashboard rows (`coe:subaa`, `coe:minor-hours`,
+`coe:cathedral-monastic-distinction`) were found to be stale RED entries directly contradicted by
+later GREEN rows recording the same content as complete (Compline, Quta'a/Endana, and the
+Cathedral/Monastic toggle respectively) -- leftover from earlier in the rebuild and never removed
+when the corresponding work was finished. Removed rather than left to confuse a future session
+reading the dashboard. A new GREEN row, `coe:rogation-blessing-feast-extras:wired`, records this
+session's work in full.
+
+`SEED_VERSION` bumped to `v166-2026-08-27-east-syriac-remaining-content-wired`.

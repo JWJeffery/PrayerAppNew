@@ -747,6 +747,17 @@
     "esy-concluding-blessing",
     "esy-nicene-creed"
   ],
+  "blessing-of-months-sequence": [
+    "esy-blessing-months-title",
+    "esy-blessing-months-anthem-1",
+    "esy-blessing-months-anthem-2",
+    "esy-blessing-months-anthem-3",
+    "esy-blessing-months-litany-el",
+    "esy-blessing-months-prayer-have-mercy",
+    "esy-blessing-months-litany-audishu",
+    "esy-blessing-months-city-wall",
+    "esy-blessing-months-thou-hast-formed"
+  ],
   "quta-a-addendum-sequence": [
     "esy-quta-a-title",
     "esy-quta-a-hulala-rubric",

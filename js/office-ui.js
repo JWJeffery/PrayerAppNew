@@ -4276,6 +4276,93 @@ async function renderEastSyriac() {
         }
     }
 
+    // Rogation of the Ninevites (Ba'utha d'Ninwaye): three days (Monday
+    // through Wednesday), three weeks before the Great Fast, per Maclean
+    // pp.226-228. The calendar engine already computes this window
+    // (isNinevehFast, ninevehFast) for fasting-character labeling
+    // elsewhere -- reused here rather than recomputed. Applies to Lelya
+    // only; nothing transcribed so far touches Ramsha, Sapra, or Suba'a
+    // for these three days (Suba'a's own rubric here, p.228 -- "said at
+    // the Evening Service as in the Fast" -- is informational, not a
+    // structural change: the already-complete, always-selectable Suba'a
+    // office applies on these days exactly as on any other, so no new
+    // wiring is needed for it).
+    if (officeKey === 'lelya' && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const isNineveh = EastSyriacCalendar.getDayClass(currentDate).isNinevehFast;
+        if (isNineveh) {
+            // Qaltha: Maclean's own rubric (p.228) directs the same Qaltha
+            // and psalms "as on ordinary Sundays 'after'" on all three
+            // Rogation days -- esy-sunday-qaltha-rubric plus
+            // esy-sunday-lelya-psalms-after-ordinary, both of which exist
+            // now that the Sunday Festival Night Service has been built
+            // (this cross-reference was originally disclosed as
+            // unresolvable when the Rogation content was first
+            // transcribed, before that Sunday material existed).
+            const weekdayQalthaIds = {
+                monday:    'esy-lelya-monday-qaltha',
+                tuesday:   'esy-lelya-tuesday-qaltha',
+                wednesday: 'esy-lelya-wednesday-qaltha',
+            };
+            const weekdayQalthaId = weekdayQalthaIds[dayName];
+            if (weekdayQalthaId) {
+                sequence = sequence.flatMap(id => id === weekdayQalthaId
+                    ? ['esy-sunday-qaltha-rubric', 'esy-sunday-lelya-psalms-after-ordinary']
+                    : [id]);
+            }
+
+            // Tishbukhta: Maclean gives distinct texts for Monday and
+            // Wednesday of the Rogation (pp.226-227). No Tuesday-specific
+            // text is given anywhere in the transcribed source, so
+            // Tuesday's ordinary ferial Tishbukhta is left in place rather
+            // than guessed at -- a disclosed gap, not a silent one.
+            const tishbukhtaSwap = {
+                monday:    ['esy-lelya-tishbukhta-monday',    'esy-nineveh-tishbukhta-mar-john'],
+                wednesday: ['esy-lelya-tishbukhta-wednesday', 'esy-nineveh-tishbukhta-wednesday'],
+            };
+            const swap = tishbukhtaSwap[dayName];
+            if (swap) {
+                sequence = sequence.map(id => id === swap[0] ? swap[1] : id);
+            }
+
+            // Hallelujah between the Hulali: a distinctive extended form
+            // said during the Rogation (pp.227-228). Maclean's own text
+            // states only that it is said "between the Hulali," without
+            // stating how many times across the day's seven Hulala --
+            // inserted once, after the day's final Hulala and before the
+            // Qaltha, as the most defensible single reading of the source.
+            // Disclosed here and in the component's own meta rather than
+            // assumed to repeat between every pair without textual basis.
+            const lastHulalaOfDay = {
+                monday:    'esy-hulala-7',
+                tuesday:   'esy-hulala-14',
+                wednesday: 'esy-hulala-21',
+            };
+            const lastHulala = lastHulalaOfDay[dayName];
+            if (lastHulala) {
+                sequence = sequence.flatMap(id => id === lastHulala
+                    ? [id, 'esy-nineveh-hallelujah-rubric']
+                    : [id]);
+            }
+        }
+    }
+
+    // Blessing of the Months: a set of anthems said at the Evening Service
+    // of the first day of each month, February excepted, per Maclean's own
+    // rubric (esy-blessing-months-title, p.229). Appended to the end of
+    // that day's Ramsha sequence on every day-of-week, not just Sunday --
+    // Maclean gives no day-of-week restriction, only a date one. Uses the
+    // Gregorian calendar date directly, matching how every other
+    // date-driven substitution in this renderer already treats the
+    // Gregorian date as authoritative (Sunday, Palm Sunday, the fixed
+    // Feasts of our Lord), rather than a sunset-anticipated liturgical day.
+    if (officeKey === 'ramsha' && sequence) {
+        const isFirstOfMonth = currentDate.getDate() === 1 && currentDate.getMonth() !== 1; // February = month index 1
+        if (isFirstOfMonth) {
+            const blessingOfMonths = appData.eastSyriacRubrics?.['blessing-of-months-sequence'];
+            if (blessingOfMonths) sequence = [...sequence, ...blessingOfMonths];
+        }
+    }
+
     // Quta'a (Terce) is not a separately-timed office by Maclean's own day
     // (see esy-quta-a-title's meta note) -- it is appended to the tail of
     // the Fast-season Morning Service. Splice its addendum sequence onto
@@ -4329,6 +4416,48 @@ async function renderEastSyriac() {
             if (substituteId) {
                 sequence = sequence.map(id => id === ordinaryId ? substituteId : id);
             }
+        }
+
+        // Feast-of-our-Lord additions to Sunday Lelya (pp.153-154),
+        // parallel to the Feast-of-our-Lord wiring already built into
+        // Sunday Ramsha below -- both use the same
+        // EastSyriacCalendar.getDayClass(...).commemorations feast check.
+        //   - esy-qali-dshahra-feasts-note: Maclean's own performance-
+        //     practice note for how the Qali d'Shahra are chanted on
+        //     Feasts specifically (two clauses at a time, Hallelujah
+        //     between, kneeling if the Feast doesn't fall on a Sunday).
+        //     Inserted alongside (not replacing) the ordinary Qali
+        //     d'Shahra rubric, since the ordinary text describes what is
+        //     said and this note describes how, on a Feast, it differs in
+        //     performance.
+        //   - esy-night-anthem-prayer-third: "Proper to Feasts
+        //     specifically rather than ordinary Sundays" per its own meta
+        //     -- added after the first and second Night Anthem prayers,
+        //     which alone are used on an ordinary Sunday.
+        //   - esy-night-anthem-prayer-after-nativity: further restricted
+        //     to the Nativity specifically among the seven Feasts of our
+        //     Lord (checked against the commemoration's own key,
+        //     COE_FEAST_NATIVITY, not just its type), since Maclean marks
+        //     it "Nativity" only, not general to every Feast.
+        //   esy-third-motwa-note ("The Third Motwa, of the Company of the
+        //   Catholici", p.153) is deliberately NOT wired here: its single
+        //   transcribed sentence does not state what triggers a "Third
+        //   Motwa" occasion clearly enough to gate it safely against a
+        //   date condition -- it may denote a Feast-day form, or a
+        //   position within an unrelated rotating commemoration cycle this
+        //   project doesn't yet model. Wiring it on a guess risks reciting
+        //   it on the wrong occasion; it remains built, cited, and
+        //   disclosed as unwired pending clarification.
+        const feastCommem = dayClass.commemorations.find(c => c.type === 'feast');
+        if (feastCommem) {
+            sequence = sequence.flatMap(id => id === 'esy-qali-dshahra-hulali-marmitha-rubric'
+                ? [id, 'esy-qali-dshahra-feasts-note']
+                : [id]);
+            sequence = sequence.flatMap(id => id === 'esy-night-anthem-prayer-second'
+                ? (feastCommem.key === 'COE_FEAST_NATIVITY'
+                    ? [id, 'esy-night-anthem-prayer-third', 'esy-night-anthem-prayer-after-nativity']
+                    : [id, 'esy-night-anthem-prayer-third'])
+                : [id]);
         }
     }
 

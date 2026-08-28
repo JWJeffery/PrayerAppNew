@@ -1,5 +1,48 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-27 continued -- Wired everything transcribed-but-unwired (Rogation of the Ninevites, Blessing of the Months, Sunday Lelya Feast extras); engine-gap work begins next
+
+Josh asked to wire everything not yet wired, then move to the calendar engine gaps.
+
+**Wired this pass, all verified against real dates:**
+- **Rogation of the Ninevites** (weekday Lelya, via existing `isNinevehFast`): Monday/Wednesday
+  Tishbukhtas swapped in; all three days get the "ordinary Sundays after" Qaltha/psalms (now
+  resolvable since the Sunday Festival Night Service exists); the extended Rogation Hallelujah
+  inserted once after each day's final Hulala. Tuesday's Tishbukhta deliberately left ordinary --
+  no Tuesday-specific text exists in the source. Suba'a needed no code change (already always
+  selectable).
+- **Blessing of the Months** (Ramsha, new `blessing-of-months-sequence`, 9 components): appended
+  whenever `currentDate.getDate() === 1` and the month isn't February, per Maclean's own stated
+  rule, using the Gregorian date directly.
+- **Sunday Lelya Feast-of-our-Lord extras**: the Qali d'Shahra feast-practice note and the third
+  Night Anthem prayer now appear on any Feast-of-our-Lord Sunday; the Nativity-specific closing
+  prayer appears additionally when that feast is specifically Nativity. Reuses the existing
+  Feast-of-our-Lord calendar layer.
+
+**Deliberately left unwired, disclosed:** `esy-third-motwa-note` -- its one sentence doesn't state
+clearly what triggers it, so gating it on a guess risked reciting it on the wrong occasion.
+**Memorials (p.163)** -- discovered during this pass to have never actually been transcribed at
+all, despite an earlier session listing it as "received but not built." Nothing to wire; needs new
+source material from Josh, not code.
+
+**Verified** with a full Node regression suite against real 2027 Rogation dates, real month-boundary
+dates, a real Resurrection Sunday, and the real 2029 Nativity Sunday -- all component IDs resolve,
+`node --check` passes, both JSON files remain valid. All 16 affected components' `meta.wired`
+flipped true with updated notes. Dashboard: three stale RED rows contradicted by later GREEN work
+removed (`coe:subaa`, `coe:minor-hours`, `coe:cathedral-monastic-distinction`); one new GREEN row
+added. `SEED_VERSION` bumped to `v166-2026-08-27-east-syriac-remaining-content-wired`.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-27 continued.
+
+**Next in this same session, per Josh's direction:** begin the calendar engine gaps -- pre-Fast
+Sunday folding rule, weekday Feast-of-our-Lord tracking (currently Sunday Ramsha only), Layer 3
+(individual saints), and the Great Fast's own distinct Sunday Evening Service structure. See the
+"On the horizon" list further down this file for what was already known before this session: that
+list is now stale where it references the Rogation/Blessing-of-Months/Sunday-Lelya-extras items
+above as unwired -- they are wired as of this session.
+
+---
+
 ## Session 2026-08-27 -- Weeks-of-the-Mysteries resolved and wired; new standing practice on footnotes
 
 Josh supplied Maclean pp.264-283 (the Kalendar appendix), closing the gap left at the end of the

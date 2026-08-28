@@ -2908,8 +2908,8 @@
     "text": "<p class=\"component-text\">In suffering, and with tears and entreaty, we call to thee, O good Lord. Be to us Physician and Guide, for bitter is our suffering, and our pain is hard (to bear). There are not among us just men who may propitiate thee, for our iniquity hath waxed strong and our trespasses have increased. They have stirred up and disturbed the sea and the dry land, and all that is in them, with our evil deeds. In our time that which is written is come to pass, for the end of the worlds hath come upon us. Save us in thy mercies from storms, which have confused and shaken the heights and the depths. O good Shepherd, feed thy flock, for whose sake thou hast borne suffering. Vouchsafe to priests and kings alike to dwell in peace and quietness. And may we be thine according to thy will, Father, Son, and Holy Ghost. Father, Son, and Holy Ghost, for ever and ever, Amen and Amen.</p>",
     "meta": {
       "source": "Maclean 1894, p.226.",
-      "note": "By Mar John, or as some say by Mar Bar Soma. Said on the Monday of the Rogation of the Ninevites, and also on Fridays of the Great Fast.",
-      "wired": false
+      "note": "By Mar John, or as some say by Mar Bar Soma. Said on the Monday of the Rogation of the Ninevites, and also on Fridays of the Great Fast. Wired into weekday Lelya: renderEastSyriac() swaps this in for esy-lelya-tishbukhta-monday whenever EastSyriacCalendar.getDayClass().isNinevehFast is true and the day is Monday.",
+      "wired": true
     }
   },
   {
@@ -2927,7 +2927,8 @@
     "text": "<p class=\"component-text\">In suffering and with tears it is meet that all men should weep and lament for their infirmity, and more than all it is meet that I should weep and lament without ceasing. For the watchful ones and men recoil from my wickedness, and I cannot show my wounds. Body and soul are corrupted and defiled with the scars of lusts. For I desired the world with its hateful deeds, and the prince of the world hath gotten domination over me. He hath overthrown me and cast me out without pity, like a lion ready for (his) prey. He hath robbed me and humbled me and mocked me, like Adam among the trees. He saw that I was careless like Eve, and he had no pity on me, for he slayeth men. To thee I cry, who in thy goodness didst form me; cover my nakedness and heal my wounds. Seek me when I am lost, and take hold of my life, for thou alone hast compassion without reward. In the day of thy revelation make me glad, O our Lord, that I may see thy face without shame. Pity me both here and hereafter, for thou alone art the Friend of men. Blessed is the Compassionate one, who aboundeth in mercies, for in (his) lovingkindness he hath compassion on those who are not worthy. And let us all give him praise, for ever and ever, Amen and Amen.</p>",
     "meta": {
       "source": "Maclean 1894, p.227.",
-      "wired": false
+      "note": "Wired into weekday Lelya: renderEastSyriac() swaps this in for esy-lelya-tishbukhta-wednesday whenever EastSyriacCalendar.getDayClass().isNinevehFast is true and the day is Wednesday.",
+      "wired": true
     }
   },
   {
@@ -2936,8 +2937,8 @@
     "text": "<p class=\"component-text\">Hallelujah. Halle-ingih-lujah, yea Hallelujah. Glory be to thee, O God. Halle-ingih-lujah, yea Hallelujah. In thy mercies have compassion on us, O God. Halle-ingih-lujah, yea Hallelujah. O thou who art full of mercies, have mercy upon us. <em>The other side answers,</em> O our Lord, have mercy upon us. O our Lord, receive our request. O our Lord, be reconciled to thy servants.</p>",
     "meta": {
       "source": "Maclean 1894, p.227-228.",
-      "note": "A distinctive extended form of Hallelujah (with an inserted meaningless syllable, per Maclean's own note) said between the Hulali specifically during the Rogation of the Ninevites.",
-      "wired": false
+      "note": "A distinctive extended form of Hallelujah (with an inserted meaningless syllable, per Maclean's own note) said between the Hulali specifically during the Rogation of the Ninevites. Wired into weekday Lelya for all three Rogation days (Monday-Wednesday, via isNinevehFast): the source states only that it is said 'between the Hulali' without specifying how many times across the day's seven Hulala, so it is inserted once, after the day's final Hulala and before the Qaltha, as the most defensible single reading rather than assumed to repeat between every pair.",
+      "wired": true
     }
   },
   {
@@ -2946,8 +2947,8 @@
     "text": "<p class=\"component-text\">The Qaltha at the Night Service is the same as on ordinary Sundays 'after'. The Suba'a (Compline) is said at the Evening Service as in the Fast.</p>",
     "meta": {
       "source": "Maclean 1894, p.228.",
-      "note": "Cross-references: the ordinary Sundays-‘after’ Qaltha has not yet been built in this project (part of the not-yet-obtained Festival Night Service, pp.151-165); the Fast-season Suba’a placement references the already-transcribed esy-fast-... Evening Service material and the Compline text itself, which remains unbuilt (Maclean pp.185-206, not yet obtained).",
-      "wired": false
+      "note": "Cross-references now resolved: esy-sunday-qaltha-rubric plus esy-sunday-lelya-psalms-after-ordinary (the ‘ordinary Sundays after’ Qaltha and psalms this note points to) were built in the later Sunday Festival Night Service session and are now wired into all three Rogation days’ Lelya, replacing the day’s ordinary ferial Qaltha. The Suba’a half of this note remains informational only: Suba’a is already a complete, always-selectable office for all seven days, so ‘said at the Evening Service as in the Fast’ needs no additional wiring -- the person simply selects the existing Suba’a office after Ramsha on these days as on any other.",
+      "wired": true
     }
   },
   {
@@ -2956,7 +2957,8 @@
     "text": "<p class=\"component-text\">A set of anthems said at the Evening Service of the first day of each month (February excepted — i.e. on what in the West would be the evening of the last day of the preceding month).</p>",
     "meta": {
       "source": "Maclean 1894, p.229.",
-      "wired": false
+      "note": "Wired: renderEastSyriac() appends the full blessing-of-months-sequence to that day's Ramsha whenever currentDate.getDate() === 1 and the month is not February, per this rubric's own date restriction.",
+      "wired": true
     }
   },
   {
@@ -2965,8 +2967,8 @@
     "text": "<p class=\"component-text\">The Lord of the whole earth: order the month, and bless it, to be the crown of the year, in thy lovingkindness; and make the month blessed, even [name of month] joyful in thy compassion. May our request enter before thee, O Lord of months and of years; prayer is the key of creation, may it open for us the door of mercies. Bless, O my Lord, this month, and order it with all fruits, and give in it mercy and compassion, and increase in it peace and tranquillity. And keep, O my Lord, in thy compassion, this country and its inhabiters from the harm and opposition of the Devil, the Apostate. Bless, O my Lord, this year, and its crown likewise, and let there not be in it fear, neither commotion nor terror; let [name of month] come in joy, and be accepted like the request of Elijah and the son of Amram — may their prayer be a wall to us. Bless, O my Lord, the months of the year, the seasons and weeks and days; bless the vineyards and things planted, bless the crops and fields. Bless, O my Lord, [name of month] which hath come, and may it be enriched with all blessings, and let there not be in it punishments, nor sufferings nor distresses. Bless, O my Lord, this year, and the months and the days, and priests and the children of the Church, and this country and city, and make distresses to pass away from us, and give us times of joy, by the prayer of the fathers, until the end of days. Bless, O my Lord, this month, by the prayer of them that keep thy commandments, and make the plague to pass away from us, and grant us mercy and compassion. By the prayer of the blessed one, Mar N. the confessor, may we be delivered from Gehenna, and enter with thee into the bridechamber.</p>",
     "meta": {
       "source": "Maclean 1894, p.229-230.",
-      "note": "[Name of month] marks a spoken insertion of the current month's name, per Maclean's own bracketed convention.",
-      "wired": false
+      "note": "[Name of month] marks a spoken insertion of the current month's name, per Maclean's own bracketed convention. Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha (see esy-blessing-months-title's note for the trigger condition).",
+      "wired": true
     }
   },
   {
@@ -2975,8 +2977,8 @@
     "text": "<p class=\"component-text\">Bless the crown of the year with thy lovingkindness, O God, make the year to be blessed; may spring burst forth with fruits, may abundance be multiplied in every year, be it leap year or an ordinary year. Raise up, O Ahiyah, in the Church, men to keep vigil by night in (thy) service; may times of quietness come to us; may Augustus arise with victory; may Theologus, head of the priesthood, put on healing and grace; may the threshing-floors be filled, O my Lord, with blessing; pour forth thy mercies on creation. Hear my voice, O God, when I beseech thee: hear the voice of the crying of mankind, O Christ, thou Sea of mercy; send the rain of blessings, make the herbs of the fields to sprout forth, satisfy the orphans and widows, give peace in all quarters (of the world), appease tumults and contentions, give concord to all kingdoms. Merciful art thou, O Lord, and righteous, O Compassionate one, overflowing with goodness, O Depth full of kindness; may our prayer be heard before thee, as the request of Nineveh; have compassion on us as thou hadst on the sinful woman; answer us speedily as thou answeredst the Canaanitish woman; show us thy glory in the day of the resurrection, and make us glad with thine elect in the kingdom.</p>",
     "meta": {
       "source": "Maclean 1894, p.230.",
-      "note": "This anthem's third stanza is built as an acrostic on the Syriac letters, per Maclean's marginal notation (transcribed here without the letter-labels, as continuous English text).",
-      "wired": false
+      "note": "This anthem's third stanza is built as an acrostic on the Syriac letters, per Maclean's marginal notation (transcribed here without the letter-labels, as continuous English text). Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -2985,7 +2987,8 @@
     "text": "<p class=\"component-text\">And shall glorify thy name, for thou art great, O our Lord, bless this year, and its crown with perfection, and grant a moderate climate, temperate, quiet in goodness. Bless also with abundance the months and weeks and days; bless October with the wine-press, and the ingathering of all fruits; in November grant a blessing, and fill it with benefits and good things; in December, by thy lovingkindness, satisfy the lands with rain; in January continually sow thou peace and concord, that (men) may sow in security the seeds that are needed; in February, the month of distresses, let there not be chastisement, and bless March with a blessing, that it may bring gentle rain as it is wont; and may April come with joy, and fill the earth with rejoicing; in May preserve the fields from hail and injurious drought; in June give plenty to orphans as well as to widows, a store without end, to all the year alike; in July bestow an overflowing of all good things and blessings; in August decree for mankind great rejoicing and joy; in September all creatures lift up praise to thy name, and thanksgiving and confession, yea and Amen, with rejoicing.</p>",
     "meta": {
       "source": "Maclean 1894, p.231.",
-      "wired": false
+      "note": "Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -2994,8 +2997,8 @@
     "text": "<p class=\"component-text\">El, compassionate God, bless this month, O mighty and pitiful one; guide us as is best for us; grant us health in thy mercies, and pour forth a supply on us, O my Lord; provide us with temporal blessings; have compassion on us, O merciful Lord; give us grace in thy compassion; give us this day such a store, abundant and unfailing, that it take away from us want of corn. O our Lord, bless this day; the sheep and the cattle alike increase among us in plenty and peace; and riches without loss; save us from the hand of the calumniator; may thy cross rescue us; make us holy at all times; O High and Boundless one, increase among us every kind of food, O Depth that cannot be filled, glory which cannot be diminished, will we lift up to thee with (every) breath that we breathe.</p>",
     "meta": {
       "source": "Maclean 1894, p.231-232.",
-      "note": "A litany built as an acrostic on the letters of the Syriac alphabet, transcribed here as continuous English text without the individual letter-labels Maclean prints alongside each clause.",
-      "wired": false
+      "note": "A litany built as an acrostic on the letters of the Syriac alphabet, transcribed here as continuous English text without the individual letter-labels Maclean prints alongside each clause. Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -3004,7 +3007,8 @@
     "text": "<p class=\"component-text\">O our Lord, we stand before thee, and ask mercy of thee, and make request of thy lovingkindness, that food may be multiplied to us with blessings. And give us the bread of our need, as thou didst promise us, O my Lord, and give us a supply of all good things continually, at all times. Bless with thy mercies the crown of the year, and grant in it rain for our sustenance, the former (rains) that we may sow our corn, the latter that it may grow and ripen. And let not locust and young locust spread over us, and make the caterpillar to pass away from us; let not the corn-worm be seen in our land, and cast out the white locust from our country. Let not the blight hurt our crops, and deliver us, O El, from burning winds, and let there be no palmer-worm in our time, and let not the plague overcome us. For thou knowest well that our nature is weak, and cannot bear famine and distress and affliction; do thou in thy mercies visit our race. Give us bread that faileth not, wheat and herbs for our sustenance, with all good gifts of food, in abundance, for in thee is our hope. And purify us from our defilements, and cleanse that in us which is blameworthy and hateful, and wash us from our foulness, and make clean our bodies and our souls. Have compassion on us, and pardon our trespasses; remember not our offences against us; in (thy) lovingkindness make us worthy of forgiveness, that we may confess thee both here and above.</p>",
     "meta": {
       "source": "Maclean 1894, p.232-233.",
-      "wired": false
+      "note": "Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -3013,8 +3017,8 @@
     "text": "<p class=\"component-text\">He that is before the worlds, O Creator of created things, who dost grant all petitions, drive away from us all chastisements. Bless us with all blessings, feed the hungry and the widows, give peace in all quarters (of the world), rebuke the enemies that provoke strife, perfect us in all knowledge. Hear my prayer, O God, O El, the compassionate God, bless this month, perfect our assembly in all victory, that we may conquer the Evil one, the slanderer; give plenty in every dominion, and quiet peace and tranquillity; give us food continually; have compassion on us in the day of searching; grant us the grace of compassion, O Sea of mercies and pity; and set us on the right hand of thy greatness, O Merciful one.</p>",
     "meta": {
       "source": "Maclean 1894, p.233.",
-      "note": "Also built as a Syriac-alphabet acrostic in the source, transcribed here as continuous English text.",
-      "wired": false
+      "note": "Also built as a Syriac-alphabet acrostic in the source, transcribed here as continuous English text. Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -3023,7 +3027,8 @@
     "text": "<p class=\"component-text\">From this city of wrath may the hidden Being cause to pass away every wrathful enemy, and robbery, with the rod of wrath; and may its king be strong, and enter into treaties with (other) kings, and gain a storehouse and treasure, abiding and not wasting. May his city be preserved by the will of the Lord from every robber. And when this creation is consumed, and destroyed, as is fore-determined, may it be worthy to behold and see the blessing which man hath not seen.</p>",
     "meta": {
       "source": "Maclean 1894, p.233.",
-      "wired": false
+      "note": "Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -3032,7 +3037,8 @@
     "text": "<p class=\"component-text\">In the thought of the mind of thy greatness, on the first day of the week thou didst form to thyself creatures in countless numbers; on the seventh (day) thou didst complete thy work. Bless our month with thy blessings, and enrich our year with thy good things, and give us joy here with thy gladness, and above number us among thy companies. We shall confess thee for ever; let us confess thy Unity, and worship thy Trinity, and ask mercy of thee, and lasting peace for thy Churches. Bless our month in thy compassion, and fill our year with thy store, and give us rest in this thy world, and in that which is to come show us thine Image. Let thy merciful kindness, O Lord, be upon us, by the holy angels, and by mortal sons of men. May this village be blessed, and may this country and its inhabiters be blessed with all blessings, and made rich with all good things, and may blessed times come to them, and may all lands be made prosperous. The Lord shall give his people the blessing of peace; bless our assembly, O our Saviour, and make thy lovingkindness to dwell in it, and grant us the power to glorify thee, the assemblies above and those below. And all to love one another, and to gain love and concord, as the spiritual ones have gained one will, that they may be approved by thee. Thou art compassionate from all eternity, and merciful for ever; what is the wickedness of creation compared with the overflowing mercies of thy lovingkindness? Sprinkle the face of our nature with the dew of mercy and pity, and rescue us from the hand of the Evil one, and from the tares, the sons of error. May Adam and the camp of the just, and Moses and the chain of the prophets, and Peter and the company of the apostles, Stephen and all the martyrs, and Ephraim and the assembly of teachers, and Antony and the hermits, beseech thee, O our Lord Jesus, that thou have mercy on the world. The departed, who clothed themselves with thee, O our Lord, in the water of baptism, by thee may their bodies be cleansed from the defilements of sin. To the departed who have eaten of thy body, and have had joy in thy living blood, grant, O our Lord, a memorial in the country where the just abide.</p>",
     "meta": {
       "source": "Maclean 1894, p.234-235.",
-      "wired": false
+      "note": "Wired: appended as part of blessing-of-months-sequence to the first-of-month Ramsha.",
+      "wired": true
     }
   },
   {
@@ -3926,7 +3932,8 @@
     "text": "<p class=\"component-text\">The Qali d'Shahra for Feasts are found in the Geza. Two clauses are said at a time by each side, and Hallelujah between the clauses of each pair; some say Hallelujah twice, some thrice. They say the Gloria in the same way. If the Feast does not fall on a Sunday, they kneel down between the Qali.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "wired": false
+      "note": "Wired into Sunday Lelya: inserted alongside (not replacing) esy-qali-dshahra-hulali-marmitha-rubric whenever EastSyriacCalendar.getDayClass().commemorations includes a type:'feast' entry.",
+      "wired": true
     }
   },
   {
@@ -3952,8 +3959,8 @@
     "text": "<p class=\"component-text\">Come, O my Lord, to the help of thy worshippers, who keep vigil on the festival of N; and reveal thyself to us in thy mercy, and hearken to the words of our prayers, which on thy holy festival we offer to thee, Lord of all.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "'N' marks a spoken insertion of the specific feast's name, per Maclean's own convention. Proper to Feasts specifically rather than ordinary Sundays; built and cited but not wired into the ordinary Sunday sequence, which uses the invariable closing verses instead.",
-      "wired": false
+      "note": "'N' marks a spoken insertion of the specific feast's name, per Maclean's own convention. Proper to Feasts specifically rather than ordinary Sundays; built and cited but not wired into the ordinary Sunday sequence, which uses the invariable closing verses instead. Wired into Sunday Lelya: inserted after esy-night-anthem-prayer-second whenever a Feast of our Lord falls on that Sunday.",
+      "wired": true
     }
   },
   {
@@ -3962,8 +3969,8 @@
     "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, by pure thoughts and sweet and holy melodies, with the heavenly hosts and the Wise Men and the Shepherds, to celebrate the holy festival of the Nativity of Christ our Lord and Saviour, in thy lovingkindness and mercy, Lord of all, etc.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. Built and cited but not wired into any sequence -- this project has not yet built a Nativity-specific office structure to place it in.",
-      "wired": false
+      "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. Built and cited but not wired into any sequence -- this project has not yet built a Nativity-specific office structure to place it in. Wired into Sunday Lelya: inserted after esy-night-anthem-prayer-third specifically when the Feast is Nativity (commemoration key COE_FEAST_NATIVITY), using the already-built Feast-of-our-Lord calendar layer rather than a new Nativity-specific office structure.",
+      "wired": true
     }
   },
   {
