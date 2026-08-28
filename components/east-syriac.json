@@ -3434,8 +3434,8 @@
   },
   {
     "id": "esy-sunday-lelya-title",
-    "title": "The Night Service on Sundays",
-    "text": "<p class=\"component-text\">The Festival Night Service, said on Sundays throughout the year, with its own Hulali, Qaltha, Motwa, Tishbukhta, and Karuzutha, distinct from the ferial weekday Lelya.</p>",
+    "title": "Night Service for Sundays, Feasts of our Lord, and Memorials of Saints",
+    "text": "<p class=\"component-text\">The Festival Night Service, said on Sundays throughout the year and on Feasts of our Lord and Memorials of Saints whenever they fall, with its own Hulali, Qaltha, Motwa, Tishbukhta, and Karuzutha, distinct from the ferial weekday Lelya.</p>",
     "meta": {
       "source": "Maclean 1894, p.155."
     }
@@ -3628,7 +3628,7 @@
   {
     "id": "esy-sunday-sapra-title",
     "title": "Morning Service for Sundays, Feasts of our Lord, and Memorials of Saints",
-    "text": "<p class=\"component-text\">The Festival Morning Service, said on Sundays throughout the year (following the Night Service without a break), with its own opening prayers, farced psalm set, three Tishbukhtas, and Martyrs' Anthem, distinct from the ferial weekday Sapra.</p>",
+    "text": "<p class=\"component-text\">The Festival Morning Service, said on Sundays throughout the year and on Feasts of our Lord and Memorials of Saints whenever they fall (following the Night Service without a break), with its own opening prayers, farced psalm set, three Tishbukhtas, and Martyrs' Anthem, distinct from the ferial weekday Sapra.</p>",
     "meta": {
       "source": "Maclean 1894, p.164."
     }

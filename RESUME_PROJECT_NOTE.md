@@ -1,5 +1,49 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-27 continued -- Weekday Feasts of our Lord wired; engine-gap scoping (pre-Fast Sunday folding, Layer 3, Fast Sunday Ramsha location)
+
+Josh gave the go-ahead on the weekday-Feast plan, with an added instruction to fix the "said on
+Sundays throughout the year" cosmetic wording rather than just disclose it.
+
+**Weekday Feasts of our Lord now use the Festival structure**, matching what Maclean's own material
+already covers (`esy-sunday-sapra-title` itself says "Sundays, Feasts of our Lord, and Memorials of
+Saints"). New `isFeastDay` flag; `cycleVaryingOffices` and both Sunday-gated content blocks (Lelya,
+Ramsha) now fire on `dayName === 'sunday' || isFeastDay`; a weekday Feast reuses the existing
+`sunday-{office}-{cycle}-sequence` content via a new `festivalSequenceDayKey`, rather than needing
+separate weekday-Feast sequences that don't exist. Suba'a stays keyed to the real day-of-week,
+unaffected (its rubric ties it to Memorials, not Feasts). Cosmetic fix: `esy-sunday-lelya-title` and
+`esy-sunday-sapra-title`'s body text updated to state the Feast/Memorial scope explicitly. Verified:
+no Feast/Sauma date conflict across 2025-2035; real 2026 Wednesday Nativity end-to-end simulation
+across all four offices; an ordinary Wednesday unaffected. `SEED_VERSION` bumped to
+`v167-2026-08-27-east-syriac-weekday-feasts-wired`. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Engine-gap scoping for the remaining three items, per Josh's direction:**
+- **Pre-Fast Sunday folding rule:** proceeding. The Kalendar appendix (pp.264-283, already in hand)
+  gives the commemoration NAMES and Scripture-lesson citations for each Epiphany-season Friday/
+  Sunday, but no unique liturgical office text for any of them beyond that -- this is Khudhra-only
+  content by the same pattern as the Royal Anthem and other disclosed gaps. What's genuinely
+  buildable now is the structured data layer: the commemoration labels plus the full Lections table,
+  and the fold/drop logic itself (footnote 1's 8/7/6/5/4-Sunday rule). This won't change any
+  rendered prayer text yet -- neither existing Layer 2 commemoration (`COE_FRIDAY_MARTYRS_SAUMA`,
+  `COE_COMMEMORATION_OF_DEAD`) is even read anywhere in `office-ui.js` today -- but it's real,
+  correct groundwork for a future lectionary-display feature, not just inert metadata.
+- **Layer 3 (individual saints), "needs to be done before we ship":** acknowledged. This is a whole
+  new content tradition, not a small engine fix -- there is no saints calendar transcribed anywhere
+  in this project for the Church of the East. One genuine partial source is already in hand, though:
+  the Kalendar appendix's own "Days for which no special lessons are appointed" list (pp.282-283) is
+  a real, dated, fixed-date list of individual named saints (month + day + name), which is exactly
+  Layer 3 material and needs no Sunday-relative computation, unlike the pre-Fast commemorations
+  above. Starting there.
+- **Great Fast's own Sunday Evening Service structure, "where do we find it?":** the only unrequested
+  page range that could hold it, given everything already obtained (pp.1-130 ferial offices,
+  pp.151-235 Festival + Fast material, pp.264-283 Kalendar appendix), is **pp.236-263** -- the gap
+  between the end of the Fast section and the start of the Kalendar appendix. This is the next range
+  to request.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-27 continued.
+
+---
+
 ## Session 2026-08-27 continued -- Wired everything transcribed-but-unwired (Rogation of the Ninevites, Blessing of the Months, Sunday Lelya Feast extras); engine-gap work begins next
 
 Josh asked to wire everything not yet wired, then move to the calendar engine gaps.

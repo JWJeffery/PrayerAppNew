@@ -7218,3 +7218,58 @@ reading the dashboard. A new GREEN row, `coe:rogation-blessing-feast-extras:wire
 session's work in full.
 
 `SEED_VERSION` bumped to `v166-2026-08-27-east-syriac-remaining-content-wired`.
+
+---
+
+## Session 2026-08-27 continued -- Weekday Feasts of our Lord now use the Festival structure; cosmetic text fix
+
+Josh gave the go-ahead on the weekday-Feast plan proposed earlier in this session, with one added
+instruction: fix the "said on Sundays throughout the year" wording that would read oddly on a
+weekday Feast, rather than just disclosing it as a known minor issue.
+
+**Finding that justified the change:** `esy-sunday-sapra-title`'s own component text already reads
+"Morning Service for **Sundays, Feasts of our Lord, and Memorials of Saints**" -- Maclean's Festival
+structure was never Sunday-exclusive. The code, however, only triggered the Festival sequences when
+`dayName === 'sunday'`, so a Feast of our Lord landing on a weekday previously fell through to the
+plain ferial office -- understating what Maclean's own material already covers.
+
+**Code changes in `js/office-ui.js`:**
+- A new `isFeastDay` flag, computed once via `EastSyriacCalendar.getDayClass(currentDate)
+  .commemorations.some(c => c.type === 'feast')`, alongside the existing `isGreatFast` check.
+- `cycleVaryingOffices` now includes Lelya and Sapra whenever `dayName === 'sunday' || isFeastDay`,
+  not Sunday only.
+- A new `festivalSequenceDayKey` resolves to `'sunday'` whenever `isFeastDay` is true and the actual
+  day isn't already Sunday, so a weekday Feast reuses the existing `sunday-{office}-{cycle}-sequence`
+  content directly rather than looking for weekday-keyed Festival sequences that were never built
+  and were never meant to exist separately -- Maclean gives one Festival structure for Sundays,
+  Feasts, and Memorials together.
+- The two Sunday-gated content-substitution blocks (Sunday Lelya's Advent/Hallowing/Palm-Sunday/
+  Feast-extras logic, and Sunday Ramsha's Suyakhi/Marmitha/Royal-Anthem-ending logic) both now fire
+  on `dayName === 'sunday' || isFeastDay`.
+- Suba'a deliberately left unchanged, still keyed strictly to the real day-of-week: its own rubric
+  ties it to Memorials specifically, not Feasts of our Lord, confirmed against the existing build
+  note before leaving it alone rather than assumed.
+
+**Cosmetic fix, per explicit instruction rather than left disclosed-only:** `esy-sunday-lelya-title`
+and `esy-sunday-sapra-title`'s own text said "said on Sundays throughout the year" without further
+qualification -- both updated to state the Feast/Memorial scope explicitly, matching the phrasing
+Sapra's own title already used in its `title` field (though not, until now, in its body text).
+
+**Verified before shipping:**
+- Confirmed programmatically that no fixed Feast of our Lord and the Great Fast (Sauma) date range
+  ever overlap across 2025-2035 (11 years checked), so there is no unresolved conflict between the
+  new `isFeastDay` branch and the existing `isGreatFast` branch for Sapra.
+- Simulated the real 2026 Wednesday Nativity (January 7) end-to-end for all four offices:
+  Ramsha/Lelya/Sapra correctly resolve to `sunday-{office}-qdham-sequence` with every substituted
+  component ID valid (Suyakhi, the Advent-Epiphany Marmitha group, and the Nativity-specific Night
+  Anthem prayer all correctly present); Suba'a correctly stays on `wednesday-subaa-sequence`,
+  unaffected.
+- A genuinely ordinary, non-Feast, non-Fast Wednesday (June 10, 2026) correctly shows
+  `isFeastDay: false` and renders the plain ferial sequences exactly as before -- confirming the
+  change is additive and doesn't alter behavior on ordinary days.
+- `js/office-ui.js` passes `node --check`; both `components/east-syriac.json` and
+  `components/traditions/east-syriac/rubrics.json` remain valid JSON.
+
+**Dashboard:** `coe:feast-of-our-lord-layer:built` updated to note it's superseded by a new row,
+`coe:feast-of-our-lord-weekdays:wired`, recording this extension. `SEED_VERSION` bumped to
+`v167-2026-08-27-east-syriac-weekday-feasts-wired`.

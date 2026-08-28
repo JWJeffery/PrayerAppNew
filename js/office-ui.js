@@ -4210,6 +4210,18 @@ async function renderEastSyriac() {
         ? EastSyriacCalendar.getDayClass(currentDate).isLenten
         : false;
 
+    // Fixed Feasts of our Lord can fall on any day of the week, not just
+    // Sunday. Maclean's own Festival material is titled for exactly this
+    // ("Morning Service for Sundays, Feasts of our Lord, and Memorials of
+    // Saints," esy-sunday-sapra-title) -- it was never a Sunday-exclusive
+    // structure. Previously only Sunday itself triggered the Festival
+    // sequences, so a Feast landing on a weekday fell through to the plain
+    // ferial office, which understated Maclean's own stated scope. Checked
+    // here once, reused below wherever the Sunday-only gates used to be.
+    const isFeastDay = (typeof EastSyriacCalendar !== 'undefined')
+        ? EastSyriacCalendar.getDayClass(currentDate).commemorations.some(c => c.type === 'feast')
+        : false;
+
     const officeTitleMap = {
         sapra:  'Sapra \u2014 Morning Prayer',
         endana: "Endana \u2014 Prayer at Noon (Great Fast only)",
@@ -4222,19 +4234,30 @@ async function renderEastSyriac() {
     // Ramsha varies by Qdham/Wathar cycle on every day of the week
     // (Maclean's own Introduction, p.xvi-xvii: this alternation is "the
     // special feature of the Evening Service"). Lelya and Sapra do NOT
-    // vary by cycle on ferial weekdays -- but on Sundays specifically,
-    // Maclean's Festival Night and Morning Services explicitly do carry
-    // their own "Before"/"After" forms (distinct opening psalms, and for
-    // Sapra a distinct Martyrs' Anthem), confirmed directly from the
-    // Festival Night/Morning Service source text (pp.155-184), not
-    // assumed by analogy with Ramsha. So Sunday is a second, narrower
-    // case where Lelya/Sapra do carry a cycle suffix, without changing
-    // their behaviour on any other day.
-    const cycleVaryingOffices = (dayName === 'sunday')
+    // vary by cycle on ferial weekdays -- but on Sundays, and now also on
+    // any weekday Feast of our Lord, Maclean's Festival Night and Morning
+    // Services explicitly do carry their own "Before"/"After" forms
+    // (distinct opening psalms, and for Sapra a distinct Martyrs' Anthem),
+    // confirmed directly from the Festival Night/Morning Service source
+    // text (pp.155-184), not assumed by analogy with Ramsha. Suba'a is
+    // deliberately NOT included here even on a Feast day: its own rubric
+    // (see esy-sunday-lelya-title's Feast-extras block, and the earlier
+    // Feast-of-our-Lord build note) says "on Memorials" specifically, not
+    // Feasts, so it stays keyed to the real day-of-week regardless.
+    const cycleVaryingOffices = (dayName === 'sunday' || isFeastDay)
         ? ['ramsha', 'lelya', 'sapra']
         : ['ramsha'];
+
+    // A weekday Feast reuses the Sunday-named Festival sequences directly
+    // (sunday-ramsha-qdham-sequence, etc.) rather than sequences keyed to
+    // the real weekday name, which don't exist and were never meant to --
+    // Maclean gives one Festival structure for Sundays, Feasts, and
+    // Memorials alike, not a separate weekday-Feast variant. Suba'a and
+    // Endana are unaffected: they stay keyed to the real dayName since
+    // cycleVaryingOffices never includes them.
+    const festivalSequenceDayKey = (isFeastDay && dayName !== 'sunday') ? 'sunday' : dayName;
     let sequenceKey = cycleVaryingOffices.includes(officeKey)
-        ? `${dayName}-${officeKey}-${cycle}-sequence`
+        ? `${festivalSequenceDayKey}-${officeKey}-${cycle}-sequence`
         : `${dayName}-${officeKey}-sequence`;
 
     // During the Great Fast, ferial Sapra (weekdays only -- Sunday's Fast
@@ -4397,7 +4420,7 @@ async function renderEastSyriac() {
     // engine (EastSyriacCalendar.getDayClass), which already computed
     // Palm Sunday's date internally for anaphora assignment; no new
     // date-computation logic was needed here either.
-    if (officeKey === 'lelya' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+    if (officeKey === 'lelya' && (dayName === 'sunday' || isFeastDay) && sequence && typeof EastSyriacCalendar !== 'undefined') {
         const dayClass = EastSyriacCalendar.getDayClass(currentDate);
         const ordinaryId = cycle === 'qdham' ? 'esy-sunday-lelya-psalms-before-ordinary' : 'esy-sunday-lelya-psalms-after-ordinary';
 
@@ -4503,10 +4526,18 @@ async function renderEastSyriac() {
     // (Qyamta) has no transcribed Royal Anthem ending in this project's
     // holdings at all -- a real, disclosed gap, catalogued in the Khudhra
     // gaps spreadsheet, not filled by reusing a different season's ending.
-    // Feasts of our Lord falling on a WEEKDAY (not Sunday) are also out of
-    // scope for this pass -- only Sunday Ramsha is wired to check Feast
-    // status so far; ferial Lelya/Sapra/Compline do not yet branch on it.
-    if (officeKey === 'ramsha' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+    // Weekday Feasts of our Lord are now in scope here (2026-08-27): this
+    // block, and the parallel Sunday Lelya block above, both fire whenever
+    // isFeastDay is true regardless of dayName, reusing the Sunday-named
+    // Festival sequences directly (see festivalSequenceDayKey above) -- no
+    // separate weekday-Feast content exists in Maclean, nor is any needed,
+    // since the Festival Evening/Night/Morning Service was always titled
+    // for "Sundays, Feasts of our Lord, and Memorials of Saints" together,
+    // not Sundays exclusively. Compline (Suba'a) is the one office that
+    // does NOT follow suit: its own rubric ties it to Memorials
+    // specifically, not Feasts of our Lord, so it remains keyed to the
+    // real day-of-week regardless of Feast status, unchanged by this.
+    if (officeKey === 'ramsha' && (dayName === 'sunday' || isFeastDay) && sequence && typeof EastSyriacCalendar !== 'undefined') {
         const dayClass = EastSyriacCalendar.getDayClass(currentDate);
         const isFeast  = dayClass.commemorations.some(c => c.type === 'feast');
 
