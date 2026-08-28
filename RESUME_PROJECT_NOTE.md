@@ -1,5 +1,40 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-27 -- Weeks-of-the-Mysteries resolved and wired; new standing practice on footnotes
+
+Josh supplied Maclean pp.264-283 (the Kalendar appendix), closing the gap left at the end of the
+2026-08-21 session below.
+
+**Resolved from the primary source itself:** p.271, footnote 2, states plainly: "The first, fourth,
+and seventh weeks of the Fast are called the 'Weeks of the Mysteries' (sacrament)." This settles the
+third week (previously unidentified) as **week 7** — matching both the two weeks already confirmed
+from a modern ACOE lectionary (week 1, week 4) and Maclean's own Introduction's count of three.
+
+**Wired the same session** (Josh's explicit direction, not deferred further): `js/office-ui.js`'s
+`renderEastSyriac()` now computes `EastSyriacCalendar.getDayClass(currentDate).weekInSeason`
+(already exposed by the calendar engine, no new date logic needed) and swaps
+`esy-sapra-fixed-psalms` for `esy-fast-sapra-mysteries-psalm-block` on weeks 1, 4, and 7 of the
+Great Fast, ferial days only (Sunday Fast Sapra is Festival, out of scope as elsewhere). Verified
+with a real Node simulation across all seven weeks of the 2027 Sauma season plus the week-6/week-7
+boundary, confirming correct behavior on both sides. `esy-fast-sapra-mysteries-psalm-block`'s own
+`meta.note`/`meta.wired` updated to match. `js/office-ui.js` passes `node --check`; both
+`east-syriac.json` and `rubrics.json` remain valid JSON. Dashboard row flipped yellow→green.
+`SEED_VERSION` bumped to `v165-2026-08-27-east-syriac-weeks-of-mysteries-wired`.
+
+**New standing practice, per Josh's instruction this session:** read and flag footnotes/marginal
+material encountered incidentally while sourcing something else, not just the one fact being looked
+up — surface anything relevant unprompted rather than leaving it for a future session to stumble
+onto separately. Acted on immediately: p.270, footnote 1, of this same appendix (found while reading
+toward the Mysteries footnote) gives the Khudhra's rule for how the pre-Fast Sunday/commemoration
+cycle compresses depending on how many Sundays fall after Epiphany in a given year — not modeled by
+this project's calendar engine, and the engine's own documented Denkha range (4-8 weeks) confirms
+this is a routine case, not rare. Logged as a new backlog item (`coe:pre-fast-sunday-folding-rule`,
+yellow) rather than built — new scope needing Josh's prioritization, not a fix to something broken.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-27.
+
+---
+
 ## Session 2026-08-21 continued (4) -- Weeks-of-the-Mysteries deep research: three weeks confirmed from Maclean's own Introduction; third week's identity still open; next step identified
 
 This entry exists specifically so the research below survives into the next session -- it was done entirely in chat and, until now, was never written to a project file. A new chat was about to start (image-upload cap reached in this one, 100 images/conversation), which would have lost all of it otherwise.

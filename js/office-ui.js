@@ -4254,6 +4254,28 @@ async function renderEastSyriac() {
         ? null
         : appData.eastSyriacRubrics?.[sequenceKey];
 
+    // Weeks of the Mysteries: confirmed directly from Maclean's own 1894
+    // Kalendar appendix (p.271, footnote 2 -- not a secondary source):
+    // "The first, fourth, and seventh weeks of the Fast are called the
+    // 'Weeks of the Mysteries' (sacrament)." This settles all three weeks
+    // by number, matching the two already independently confirmed from the
+    // modern ACOE Diocese of Western Europe lectionary (First Week = week 1,
+    // Middle Week = week 4) and resolving the previously-unidentified third
+    // week as week 7 (the last week of the Fast, ending in Hosannas/Palm
+    // Sunday). On these weeks Maclean directs a distinct farced psalm block
+    // (Ps.113/93/148/149/150/117, transcribed as esy-fast-sapra-mysteries-
+    // psalm-block) in place of the ordinary Fast-season fixed-psalm set
+    // (esy-sapra-fixed-psalms) at the same point in ferial Fast Sapra.
+    // weekInSeason is already computed by the calendar engine (1-based,
+    // reset every Sauma) -- no new date-computation logic is needed here.
+    if (officeKey === 'sapra' && isGreatFast && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
+        const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
+        if (isMysteriesWeek) {
+            sequence = sequence.map(id => id === 'esy-sapra-fixed-psalms' ? 'esy-fast-sapra-mysteries-psalm-block' : id);
+        }
+    }
+
     // Quta'a (Terce) is not a separately-timed office by Maclean's own day
     // (see esy-quta-a-title's meta note) -- it is appended to the tail of
     // the Fast-season Morning Service. Splice its addendum sequence onto

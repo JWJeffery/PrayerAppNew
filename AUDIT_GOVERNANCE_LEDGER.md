@@ -7037,3 +7037,72 @@ identity and copyright status before building applies as it always has.
 
 No `SEED_VERSION` bump -- this session made no changes to app content, code, or the dashboard,
 only a governance-ledger entry recording a new sourcing lead and a disclosure requirement.
+
+---
+
+## Session 2026-08-27 -- Weeks-of-the-Mysteries resolved from Maclean's own Kalendar appendix and wired into weekday Fast Sapra
+
+Josh supplied Maclean pp.264-283 (the "Kalendar and Lectionary" appendix), the source range
+identified as the next step at the end of the 2026-08-21 research session, which had confirmed
+three Weeks of the Mysteries from Maclean's own Introduction and identified two of the three
+(First Week = week 1, Middle Week = week 4) from a modern ACOE diocesan lectionary, but left the
+third week open.
+
+**Resolved directly from the primary source, not inferred.** p.271, footnote 2, of Maclean's own
+Kalendar appendix states plainly: "The first, fourth, and seventh weeks of the Fast are called the
+'Weeks of the Mysteries' (sacrament)." This is Maclean's own text, not a secondary or modern source
+— a firmer confirmation than the acote.church lectionary used for the first two weeks. It resolves
+the previously-unidentified third week as **week 7** (the last week of the Fast, ending in the
+Feast of Hosannas / Palm Sunday), and the set of three (weeks 1, 4, 7) matches exactly against both
+the two weeks already independently confirmed from the modern diocesan source and Maclean's
+Introduction's separate statement that there are three such weeks in total. Two independent lines
+of evidence converging on the same three weeks closes this out with real confidence, not just
+enough to proceed cautiously.
+
+**Wired the same session**, per Josh's explicit direction not to stop at research this time:
+- `js/office-ui.js`, in `renderEastSyriac()`'s Sapra branch: after the existing Great-Fast Sapra
+  sequence lookup and before the Quta'a addendum splice, a new block computes
+  `EastSyriacCalendar.getDayClass(currentDate).weekInSeason` (already exposed by the calendar
+  engine — confirmed by reading its own JSDoc and return object before writing this, not assumed)
+  and, when `isGreatFast && dayName !== 'sunday'` and `weekInSeason` is 1, 4, or 7, swaps
+  `esy-sapra-fixed-psalms` for `esy-fast-sapra-mysteries-psalm-block` in the rendered sequence
+  array via `.map()`, following the exact same pattern already used elsewhere in this file for the
+  Palm Sunday and Advent/Hallowing-of-the-Church substitutions (never mutating the shared rubrics
+  array directly).
+- `components/east-syriac.json`: `esy-fast-sapra-mysteries-psalm-block`'s own `meta.note` rewritten
+  to state the resolved week numbering and the wiring, and `meta.wired` flipped from `false` to
+  `true`, rather than left describing the old pending state after the code changed under it.
+
+**Verified with a full-source Node simulation before shipping, not just read-through:** loaded the
+real `js/calendar-east-syriac.js` and `components/traditions/east-syriac/rubrics.json` directly (no
+reimplementation), then (1) walked all seven weeks of the real 2027 Sauma season confirming
+`weekInSeason` resolves 1 through 7 in order with no engine changes needed; (2) ran the actual new
+sequence-selection logic against real dates in weeks 1, 2, 4, and a boundary pair (week 6 Saturday
+vs. week 7 Monday) confirming the mysteries block swaps in only on weeks 1/4/7 and the ordinary
+fixed-psalm set is retained on weeks 2/3/5/6, with the week-6/week-7 boundary landing correctly on
+each side. `js/office-ui.js` passes `node --check`; both `components/east-syriac.json` and
+`components/traditions/east-syriac/rubrics.json` remain valid JSON after the edits (checked with
+`python3 -m json.tool` equivalent, not assumed from the diff alone). `audit-ledger.html`'s inline
+`<script>` block re-validated via `new Function()` after the dashboard edit, per standing practice.
+
+**Dashboard:** `coe:weeks-of-mysteries:research-in-progress` (yellow) replaced with
+`coe:weeks-of-mysteries:wired` (green), full resolution and verification recorded. `SEED_VERSION`
+bumped to `v165-2026-08-27-east-syriac-weeks-of-mysteries-wired`.
+
+**New standing practice, per Josh's explicit instruction this session:** footnotes and marginal
+material encountered incidentally while sourcing something else should be read and flagged, not
+just skimmed past for the one fact being looked up. This is not a new sourcing-verification rule
+(the existing "verify before presenting as viable" standard is unchanged) — it's a broader
+attentiveness expectation: when a primary source is open for one purpose, anything else in it that
+bears on this project's accuracy or completeness should be surfaced, even unprompted, rather than
+left for a future session to stumble onto separately. Acted on the same session it was given:
+p.270, footnote 1, of this same Kalendar appendix — encountered while reading toward the
+Weeks-of-the-Mysteries footnote, not separately searched for — gives the Khudhra's own rule for how
+the pre-Fast Sunday/commemoration cycle compresses depending on how many Sundays fall after
+Epiphany in a given year (an 8/7/6/5/4-Sunday variant table, each dropping or merging a different
+fixed commemoration). This is not modeled anywhere in the calendar engine today, and the engine's
+own documented Denkha season range (4-8 weeks) confirms the compression case is routine, not rare.
+Logged as a new dashboard backlog item (`coe:pre-fast-sunday-folding-rule`, yellow) rather than
+built this session — it's new scope needing Josh's prioritization call, not a fix to something
+already broken, and the standing rule that architectural/build-order decisions are Josh's to make
+still applies even to self-surfaced findings.
