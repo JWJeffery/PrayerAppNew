@@ -7332,3 +7332,76 @@ it is not "read more carefully" but "never claim to have read what was not actua
 **No further action was taken on pp.236-263 following this correction.** The page range remains
 genuinely unobtained. If Josh wants to pursue it, or wants the Great Fast's Sunday Evening Service
 location question answered at all, the actual pages need to be supplied.
+
+## Session 2026-08-27 continued -- Real pp.236-263 received; Hulala XVII-XXI content bug found and fixed
+
+Josh supplied the actual Maclean pp.236-263 PDF, following the conduct incident logged immediately
+above in which its contents had been fabricated. This entry records the real work done with the
+real document -- see the CONDUCT INCIDENT entry for the fabrication itself.
+
+**What's actually on these pages:** Farcings of the Psalms (pp.236-248, full farcing text for
+Psalms 1-150 plus Exodus 15, Isaiah 42/45, and Deuteronomy 32 in two parts); Prayers on Various
+Occasions (pp.249-258, occasional prayers -- rain, a troubled generation, crops, the sick, one
+tempted by a devil, infants, wine, healing oil, a reader, the faithful, a house, kissing the cross,
+kissing the Gospel, kissing a saint's tomb, a journey, a boat, two prayers of a man for himself, a
+priest's handwashing at the Creed, fevers, two graces, hallowing unclean water, a bride entering
+church forty days after marriage, a boy and mother forty days after birth, and new altar cloths and
+vessels in two versions); Index I (p.259, Table of the Divisions of the Psalter -- which Hulala
+covers which psalms); and Index II (pp.260-263, Table of the Psalms showing when each is said across
+the Daily Offices, including the Night Office Canon during the Fast).
+
+Per Josh's instruction ("examine the entirety of the book"), Index I was checked directly against
+this project's actual built Hulala components rather than only skimmed for the one detail sought.
+This surfaced a real, previously undisclosed content-correctness bug, not a wiring gap:
+
+**The bug.** Hulala XVII-XXI, as built, did not match Maclean's own Index I:
+- Hulala XVII was missing its third section (Psalm 119:1-89) entirely.
+- Hulala XVIII, as a direct consequence, held only the two halves of Psalm 119 (1-88 and 89-176),
+  instead of the second half of Psalm 119 plus Psalms 120-131 as Index I directs.
+- Hulala XIX held Psalms 120-135, not the correct 132-141.
+- Hulala XX held Psalms 136-144, not the correct 142-150.
+- Hulala XXI held Psalms 145-150 duplicated alongside its three canticles, when both Index I and
+  this component's own pre-existing `meta.note` (citing Maclean's Introduction, p.xvii: "a
+  twenty-first is added, made up of certain Old Testament canticles") already independently agreed
+  it should be canticles only -- the component's own documentation contradicted its own content, and
+  neither had been checked against the other before now.
+
+This is a real bug reaching real recitation, not a latent one: Hulala XVII-XXI are the psalm content
+for Wednesday's and Saturday's ferial Night Office, already live and selectable in the deployed app.
+
+**The fix.** All five components (`esy-hulala-17` through `esy-hulala-21`) were rebuilt with the
+correct psalm/canticle assignment per Index I. Critically, no prayer text was altered, rewritten, or
+re-translated -- every proper prayer transcribed from Maclean pp.92-94 was moved intact to its
+correct Hulala, still paired with its own original psalm range. The bug was entirely in which Hulala
+number each already-correctly-transcribed prayer-and-psalms pairing had been filed under, not in the
+transcription of any individual prayer. One further small correction fell out of the same pass:
+Hulala XX's second section had an internal inconsistency in the original transcription between its
+own prayer text ("Of Psalms 145, 146, 147 (vv. 1-12)") and its psalms array ("147:1-11") -- corrected
+to "147:1-12," matching both the prayer's own stated range and Index I's printed citation exactly.
+
+**Verified before writing any code:** all five components' correct content was worked out by hand
+against the printed Index I table line by line first, then implemented. **Verified after writing
+the fix:** `git diff --stat` and a manual scan for unexpectedly-touched component ids confirmed the
+resulting diff touches only `esy-hulala-17` through `esy-hulala-21`, with no incidental reformatting
+elsewhere in the 360-component file (the fix was applied via a Python script operating on the parsed
+JSON structure, but the five replaced objects were verified afterward to produce a scoped diff, not
+assumed safe merely because `json.dump()` was avoided in the abstract -- this project's own standing
+rule against `json.dump()` exists specifically to prevent whole-file reformatting noise, and that
+outcome was checked for directly rather than taken on faith). The scripture-citation string format
+used for the moved and corrected ranges (e.g. `"119:1-89"`, `"147:1-12"`) is unchanged from the
+format already functioning elsewhere in this same corpus for the same kind of citation, so there was
+no parser-compatibility risk to separately verify. `js/office-ui.js` passes `node --check`; both
+`components/east-syriac.json` and `components/traditions/east-syriac/rubrics.json` remain valid
+JSON.
+
+**Not yet done, from the same source document, per session time constraints:** a systematic
+cross-reference of the Farcings of the Psalms (pp.236-248) against every place in the existing
+corpus that currently discloses "farcing not given in Maclean's main body" as a gap; scoping and
+transcription of the Prayers on Various Occasions (pp.249-258) into a Book of Needs category for
+the Church of the East (Josh's direction; this project's existing infrastructure for such a category
+has not yet been checked); and cross-checking Index II's Night Office Canon citations against the
+calendar engine, which surfaced in passing that this project currently has no Fast-season Lelya
+(Night Office) content at all -- Lelya does not vary during the Great Fast the way Sapra does, a real
+gap distinct from and larger than the Hulala XVII-XXI bug fixed in this entry.
+
+`SEED_VERSION` bumped to `v168-2026-08-27-east-syriac-hulala-17-21-corrected`.

@@ -1846,7 +1846,7 @@
     "title": "Hulala XVII",
     "meta": {
       "source": "Maclean 1894, p.92-93.",
-      "note": "Psalms 112-118. Used Wednesday and Saturday."
+      "note": "Psalms 112-119:89. Used Wednesday and Saturday. Section boundaries corrected 2026-08-27 against Maclean's own Index I (p.259, ‘Table of the Divisions of the Psalter’), supplied directly by Josh: the third section (Psalm 119:1-89) was previously missing from this Hulala and its content wrongly confined entirely within Hulala XVIII instead. No prayer text was altered -- each prayer remains paired with its own psalms exactly as transcribed; only the Hulala-number assignment was wrong."
     },
     "text": "<p class=\"rubric-text\">Hulala XVII.</p>",
     "sections": [
@@ -1866,6 +1866,12 @@
           "117",
           "118"
         ]
+      },
+      {
+        "prayer": "Of Psalm 119 (vv. 1-89). We beseech thee, who art good and givest good things to them that are good; who art just and lovest them that are just; who art holy and dwellest in the holy, and whose will is appeased (by them), turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
+        "psalms": [
+          "119:1-89"
+        ]
       }
     ]
   },
@@ -1874,33 +1880,16 @@
     "title": "Hulala XVIII",
     "meta": {
       "source": "Maclean 1894, p.93.",
-      "note": "Psalm 119, split into two portions. Used Wednesday and Saturday."
+      "note": "Psalm 119:89-end, plus Psalms 120-131. Used Wednesday and Saturday. Corrected 2026-08-27 against Maclean's own Index I: this Hulala previously held only the second half of Psalm 119 alone; Psalms 120-131, which Index I places here, had been wrongly shifted down into Hulala XIX instead. No prayer text was altered."
     },
     "text": "<p class=\"rubric-text\">Hulala XVIII.</p>",
     "sections": [
-      {
-        "prayer": "Of Psalm 119 (vv. 1-89). We beseech thee, who art good and givest good things to them that are good; who art just and lovest them that are just; who art holy and dwellest in the holy, and whose will is appeased (by them), turn, O my Lord, and pity and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
-        "psalms": [
-          "119:1-88"
-        ]
-      },
       {
         "prayer": "Of Psalm 119 (from v. 89). Thee, O Being who hast neither beginning nor end, hidden and incomprehensible nature, everlasting and unbounded, Creator, Maker, and Ruler of all, are we bound, etc.",
         "psalms": [
           "119:89-176"
         ]
-      }
-    ]
-  },
-  {
-    "id": "esy-hulala-19",
-    "title": "Hulala XIX",
-    "meta": {
-      "source": "Maclean 1894, p.93.",
-      "note": "Psalms 120-135. Used Wednesday and Saturday."
-    },
-    "text": "<p class=\"rubric-text\">Hulala XIX.</p>",
-    "sections": [
+      },
       {
         "prayer": "Of Psalms 120, 121, 122, 123, 124, 125. To thee we cry in our afflictions, in thee we take refuge in our distresses, of thee we ask forgiveness of our offences. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
         "psalms": [
@@ -1922,7 +1911,18 @@
           "130",
           "131"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-19",
+    "title": "Hulala XIX",
+    "meta": {
+      "source": "Maclean 1894, p.93.",
+      "note": "Psalms 132-141. Used Wednesday and Saturday. Corrected 2026-08-27 against Maclean's own Index I: this Hulala previously held Psalms 120-135 (wrongly shifted down from Hulala XVIII); it now correctly holds 132-141, with 136-138 and 139-141 moved in from what had been mislabeled as Hulala XX. No prayer text was altered."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XIX.</p>",
+    "sections": [
       {
         "prayer": "Of Psalms 132, 133, 134, 135. We beseech thee, who art the hope of the just, the confident trust of the righteous, the great refuge of the distressed, the help of them that call on thy holy Name, turn, O my Lord, and pity us and have mercy upon us, as thou art wont, at all times, Lord of all, etc.",
         "psalms": [
@@ -1931,18 +1931,7 @@
           "134",
           "135"
         ]
-      }
-    ]
-  },
-  {
-    "id": "esy-hulala-20",
-    "title": "Hulala XX",
-    "meta": {
-      "source": "Maclean 1894, p.94.",
-      "note": "Psalms 136-144. Used Wednesday and Saturday."
-    },
-    "text": "<p class=\"rubric-text\">Hulala XX.</p>",
-    "sections": [
+      },
       {
         "prayer": "Of Psalms 136, 137, 138. Thee, our good God and King full of mercies, who didst order lights for the joy of our service, that in their light we might rejoice and have joy all the days of our life, are we bound, etc.",
         "psalms": [
@@ -1958,7 +1947,18 @@
           "140",
           "141"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-20",
+    "title": "Hulala XX",
+    "meta": {
+      "source": "Maclean 1894, p.94.",
+      "note": "Psalms 142-150. Used Wednesday and Saturday. Corrected 2026-08-27 against Maclean's own Index I: this Hulala previously held Psalms 136-144 (wrongly shifted down from Hulala XIX); Psalms 145-150 had been wrongly stranded inside Hulala XXI alongside the canticles instead of grouped here as Index I directs. The 147:1-12 boundary also corrected from '147:1-11' to '147:1-12', matching both the prayer's own text ('vv. 1-12') and Index I's citation exactly -- the original transcription had an internal inconsistency between the prayer's stated range and its psalms array. No prayer text was altered."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XX.</p>",
+    "sections": [
       {
         "prayer": "Of Psalms 142, 143, 144. To thee, O my Lord, we cry, that thou mayest come to assist us; in thee we take refuge, that thou mayest be found to help us; and of thee we beg that thou mayest aid our weakness, that we may keep thy lifegiving and divine commandments. Grant this in thy lovingkindness and mercies, as thou art wont, at all times, Lord of all, etc.",
         "psalms": [
@@ -1966,24 +1966,13 @@
           "143",
           "144"
         ]
-      }
-    ]
-  },
-  {
-    "id": "esy-hulala-21",
-    "title": "Hulala XXI",
-    "meta": {
-      "source": "Maclean 1894, p.94.",
-      "note": "Psalms 145-150 plus three Old Testament canticles (Exodus 15:1-22, Isaiah 42:10-14/45:8, Deuteronomy 32:1-44) -- 'a twenty-first is added, made up of certain Old Testament canticles' per Maclean's own Introduction (p.xvii). Used Wednesday and Saturday. Deuteronomy's split point (v.21) preserved exactly as Maclean gives it, not rounded to a cleaner boundary."
-    },
-    "text": "<p class=\"rubric-text\">Hulala XXI.</p>",
-    "sections": [
+      },
       {
         "prayer": "Of Psalms 145, 146, 147 (vv. 1-12). Thee, O King of kings and Lord of lords, the power of whose majesty holdeth and ruleth heaven and earth and all that is in them, are we bound, etc.",
         "psalms": [
           "145",
           "146",
-          "147:1-11"
+          "147:1-12"
         ]
       },
       {
@@ -1994,7 +1983,18 @@
           "149",
           "150"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "esy-hulala-21",
+    "title": "Hulala XXI",
+    "meta": {
+      "source": "Maclean 1894, p.94.",
+      "note": "Three Old Testament canticles only (Exodus 15:1-22, Isaiah 42:10-14/45:8, Deuteronomy 32:1-44 in two parts) -- ‘a twenty-first is added, made up of certain Old Testament canticles’ per Maclean's own Introduction (p.xvii). Used Wednesday and Saturday. Corrected 2026-08-27 against Maclean's own Index I, which places this Hulala's content as canticles alone, with no psalms: the two psalm sections (145-147:12, 147:12-150) previously included here were removed and correctly relocated to Hulala XX, resolving what had been an internal contradiction between this component's own meta note (citing the Introduction's 'canticles only' description) and its actual section content (which had also included psalms). Deuteronomy's split point (v.21) preserved exactly as Maclean gives it, not rounded to a cleaner boundary. No canticle prayer text was altered."
+    },
+    "text": "<p class=\"rubric-text\">Hulala XXI.</p>",
+    "sections": [
       {
         "prayer": "Of Exodus 15:1-22 and Isaiah 42:10-14 and 45:8. Thee, excellent and magnifical, strong and glorious, mighty and warlike, powerful and full of mercies, great King of glory, etc., as before.",
         "scriptureRefs": [

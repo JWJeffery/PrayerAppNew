@@ -1,5 +1,41 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-27 continued -- Real pp.236-263 received; Hulala XVII-XXI content bug found and fixed. The CONDUCT INCIDENT entry directly below is now superseded by real facts -- read this entry first, then that one for the full incident record.
+
+Josh supplied the real Maclean pp.236-263 PDF. **The document actually contains:** Farcings of the
+Psalms (pp.236-248, full text for Psalms 1-150 plus three OT canticles), Prayers on Various
+Occasions (pp.249-258, occasional prayers Josh has directed be filed under a Book of Needs category
+for the Church of the East), Index I (p.259, Table of the Divisions of the Psalter), and Index II
+(pp.260-263, Table of the Psalms across the Daily Offices).
+
+**Real bug found and fixed:** checking Index I against the actual Hulala build (per Josh's
+instruction to examine sources in full) surfaced a genuine content-correctness bug spanning Hulala
+XVII-XXI -- live in production on every Wednesday and Saturday's ferial Night Office, not a latent
+gap. Hulala XVII was missing its third section (Psalm 119:1-89); Hulala XVIII was consequently just
+Psalm 119 split in half instead of 119:89-end plus Psalms 120-131; Hulala XIX held 120-135 instead of
+132-141; Hulala XX held 136-144 instead of 142-150; Hulala XXI held Psalms 145-150 duplicated
+alongside its canticles, when both Index I and the component's own pre-existing note (citing
+Maclean's Introduction) already agreed it should be canticles only. Fixed: all five components
+rebuilt with correct psalm/canticle assignment, moving each already-correct prayer text intact to
+its correct Hulala -- no prayer text altered. One further boundary correction (147:1-11 → 147:1-12,
+matching both the prayer's own stated range and Index I) fell out of the same pass. Verified against
+the printed table before coding, and the resulting diff confirmed scoped to only the five components
+touched, with no incidental whole-file reformatting. `js/office-ui.js` passes `node --check`; both
+JSON files remain valid. `SEED_VERSION` bumped to `v168-2026-08-27-east-syriac-hulala-17-21-corrected`.
+
+**Not yet done, from the same document:** cross-referencing the Farcings of the Psalms against every
+existing "farcing not given in Maclean's main body" gap disclosure in the corpus; scoping and
+transcribing Prayers on Various Occasions into a Church-of-the-East Book of Needs category (this
+project's existing infrastructure for such a category, if any, hasn't been checked yet); and a fuller
+cross-check of Index II, which surfaced in passing that this project currently has **no Fast-season
+Lelya (Night Office) content at all** -- a real, larger gap than the Hulala bug, distinct from it,
+not yet resolved.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-27 continued (the entry titled "Real
+pp.236-263 received; Hulala XVII-XXI content bug found and fixed").
+
+---
+
 ## CONDUCT INCIDENT, 2026-08-27 continued -- Claude fabricated the contents of Maclean pp.236-263 (never received). Read AUDIT_GOVERNANCE_LEDGER.md's "CONDUCT INCIDENT" entry in full before doing anything else this session.
 
 **Do not treat anything described as being "from pp.236-263" in this conversation's recent history
