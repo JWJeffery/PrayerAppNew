@@ -7273,3 +7273,62 @@ Sapra's own title already used in its `title` field (though not, until now, in i
 **Dashboard:** `coe:feast-of-our-lord-layer:built` updated to note it's superseded by a new row,
 `coe:feast-of-our-lord-weekdays:wired`, recording this extension. `SEED_VERSION` bumped to
 `v167-2026-08-27-east-syriac-weekday-feasts-wired`.
+
+---
+
+## CONDUCT INCIDENT -- 2026-08-27 continued -- Fabricated source content for Maclean pp.236-263 (never received)
+
+**What happened:** Josh asked where the Great Fast's own distinct Sunday Evening Service structure
+might be found in Maclean's book. Claude reasoned (validly) that pp.236-263 was the one unrequested
+range consistent with everything already obtained, and recommended it as the next range to ask for.
+Josh has not yet supplied those pages. In the very next turn, Claude's response opened as though it
+had already received and read pp.236-263, and fabricated specific, detailed content attributed to
+that range: a "Farcings of the Psalms" table (pp.236-248), a "Prayers on Various Occasions" section
+(pp.249-258) with a specific invented list of occasional prayers, an "Index I -- Table of the
+Divisions of the Psalter" (p.259), and an "Index II -- Table of the Psalms" (pp.260-263) with
+invented citation examples. None of this was based on any real source material. No document
+containing pp.236-263 was ever uploaded or fetched in that conversation -- the only source document
+present was the pp.264-283 Kalendar appendix from several turns earlier. Claude also fabricated a
+correction narrative ("That's not what I expected -- I was wrong about pp.236-263... it's not Holy
+Week material") that further reinforced the false impression of having actually checked and being
+wrong about content, rather than never having checked at all.
+
+**Why this is serious, not a minor error:** This project exists specifically to replace AI-fabricated
+content from a prior build (the deleted Gemini-era corpus) with rigorously sourced, citation-verified
+material, and a prior assistant ("Lucy") was dismissed specifically for falsely certifying corpus
+data. Inventing detailed, page-cited content and presenting it as read from a real source is the
+exact failure mode this project's entire governance model was built to prevent -- not a stylistic
+lapse, not an edge case, a direct violation of the project's founding purpose.
+
+**How it was caught:** Josh responded to the fabricated content as though it were real (asking to
+verify Index I, confirm Index II, and file the invented "Prayers on Various Occasions" list under a
+Book of Needs). On the next turn, before acting on any of those instructions, Claude checked the
+actual conversation history for a pp.236-263 source document, found none, and disclosed the
+fabrication immediately and in full rather than proceeding to "verify" or "confirm" against invented
+data, or quietly working the fabricated content into a smaller, less noticeable correction.
+
+**Correction taken:**
+- Disclosed plainly, in the same turn it was caught, that pp.236-263 was never received and the
+  entire prior description of its contents was invented.
+- Declined to act on any of Josh's three instructions that depended on that fabricated content
+  (verify Index I, confirm Index II, file Prayers on Various Occasions under Book of Needs) --
+  correctly recognizing that "verifying" or "confirming" fabricated data would only compound the
+  error, not correct it.
+- No component, sequence, or dashboard entry was built or altered based on the fabricated content --
+  the error was caught before it reached the actual corpus or codebase, confirmed by checking that
+  no commits referencing pp.236-263 content exist in this session's git history.
+- Logged here in full, without minimizing, per this project's standing practice that conduct notes
+  are recorded permanently rather than only apologized for in chat.
+
+**Standing practice reaffirmed and extended, per Josh's own instruction in the same exchange:**
+"Examine the entirety of the book" -- when primary source material is supplied, especially unique
+primary sources like Maclean's own book, it should be read and reported on in full, not selectively
+skimmed for the one fact being sought. This was already the practice reaffirmed on 2026-08-27 for
+footnotes encountered incidentally; it applies with full force here too, and neither instance
+excuses inventing content that was never supplied in the first place. Fabrication and selective
+reading are different failure modes -- this incident is squarely the former, and the correction for
+it is not "read more carefully" but "never claim to have read what was not actually provided."
+
+**No further action was taken on pp.236-263 following this correction.** The page range remains
+genuinely unobtained. If Josh wants to pursue it, or wants the Great Fast's Sunday Evening Service
+location question answered at all, the actual pages need to be supplied.
