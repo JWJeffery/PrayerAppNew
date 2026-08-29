@@ -1,6 +1,179 @@
 # RESUME_PROJECT_NOTE.md
 
-## Session 2026-08-27 continued -- Great Fast Lelya (Night Office) Canon planned and built
+## Session 2026-08-29 -- Full source-verification audit of every East Syriac component
+## against Maclean 1894; remediation begun. IN PROGRESS -- read this whole entry before
+## doing anything else this session.
+
+**Context.** Josh's standing instruction from the start of this project was a full audit
+against the real Maclean text; this had never actually been carried out until this session.
+Josh's rule for the session: "finish what we start before beginning other work" -- complete
+sections fully, in book order, before moving on; record every finding in the same session it's
+found, not deferred to memory.
+
+### The audit (complete for everything with rendered content; see AUDIT_SOURCE_VERIFICATION.md)
+
+**`AUDIT_SOURCE_VERIFICATION.md` is the full, durable, itemized record -- read it, don't rely
+on this summary alone.** It contains a section-by-section progress checklist (pp.1-235: all
+complete; the appendix material pp.236-301: confirmed to have no corpus footprint beyond
+reference use already made correctly) and a full Findings Log with exact source quotes,
+component IDs, and severity for every discrepancy found.
+
+**Two real, self-corrected errors happened during the audit itself, and both are preserved in
+the record rather than quietly fixed:**
+1. Initially flagged the Tuesday/Thursday/Saturday `qdham`/`wathar` content-selection pattern
+   as a "MAJOR, systematic" mislabeling bug. This was **wrong** -- it is correct, deliberate
+   architecture compensating for a real mismatch between the calendar engine's week-level
+   `qdham`/`wathar` cycle and Maclean's own rubric (p.1 footnote) that Tuesday/Thursday/
+   Saturday run opposite the rest of the week within a single liturgical week. Corrected
+   within the same session.
+2. Nearly reported that the whole Weeks-of-the-Mysteries Evening Service was unbuilt; a
+   closer search found its opening declaration ("Glorious art thou...") is in fact present,
+   filed as `esy-sext-glorious-art-thou` since Prayer at Noon's own rubric cross-references it
+   rather than duplicating it. Corrected before it was reported as fact.
+
+**Summary of what the audit actually found**, gathered fully in `AUDIT_SOURCE_VERIFICATION.md`'s
+own "Audit Summary" section at the end of that file:
+- 8 real content discrepancies (6 now fixed -- see Remediation below; 2 still open)
+- 5 substantial missing-content items (build work, not fidelity bugs in what exists) --
+  largest by far is the Motwa for Wednesday 'Before'/'After' (pp.130-150, ~20 unbuilt pages)
+- The overwhelming majority of the corpus (several hundred components, including very long
+  farced anthems checked in full or at both ends, some over 14,000 characters) matches source
+  exactly
+
+**Audit coverage gap, honestly recorded:** Monday-Saturday of the Compline Anthems/Madrashi
+sub-section (six of seven days) were never individually checked, only Sunday.
+
+### Remediation begun this session -- 7 fixes committed and pushed to main
+
+All verified against source already confirmed during this session's own audit before fixing;
+full detail and reasoning for each in the git log (commits `eba6a28`, `11ff060`, `d616283`) and
+in `AUDIT_SOURCE_VERIFICATION.md`.
+
+1. `esy-sunday-sapra-prayer-glorious` and `esy-fast-sapra-prayer-glorious` -- both restored to
+   actually match the ferial prayer they were always supposed to reuse verbatim. Both
+   components' own prior meta notes falsely claimed this verification had already been done.
+2. `esy-karozutha` -- the six teachers' names (Diodorus, Theodore, Nestorius, Ephraim, Narsai,
+   Abraham) restored; previously dropped to a generic phrase with no disclosure.
+3. `esy-lelya-tishbukhta-wednesday` -- attribution corrected from "Mar Abimelek" to "Mar
+   Ahimelek" (a different name in this tradition, not a spelling variant).
+4. `esy-of-our-father-prayer` -- **per Josh's explicit direction**, both the Catholicos and
+   patron-saint references now use the "Mar N." fill-in-the-blank convention (matching the
+   1979 BCP's own "N our Bishop" pattern, and matching how this corpus already handles the
+   identical situation correctly in `esy-festival-prayer-after-royal-anthem`), rather than
+   hardcoding the name of the specific man who held the Catholicos office in 1894 or dropping
+   the placeholder silently (the prior state).
+5. `esy-lelya-wednesday-shubakha` -- psalm number corrected 67 → 73. The source's OCR reads
+   "Ps. lxxni.", not a valid Roman numeral on its own; given the heavy OCR corruption
+   throughout that exact passage, this is almost certainly a corrupted "lxxiii" (73), not a
+   corruption of "lxvii" (67) -- there's no plausible OCR path from "lxvii" to "lxxni".
+6. Four missing "Or this" alternate Hulali prayers added (Hulala II Ps.15-17, Hulala X
+   Ps.73-74, Hulala XVI Ps.107-108, Hulala XVII Ps.116-118 -- note this last one was
+   originally mis-logged during the audit as "Hulala XVI"; corrected when actually locating it
+   to add the fix). Appended as continuous text within the existing `prayer` string ("...Lord
+   of all, etc. Or this. ..."), matching how "Or this" alternates are already handled
+   correctly elsewhere in this corpus -- no renderer changes needed.
+
+**Two audit-list items investigated during remediation and found to be false alarms, not
+touched:** the six Qaltha "missing citation" flags (the renderer already generates citations
+and resolves full psalm text automatically from each component's `psalms`/`psalmRef` fields;
+nothing was actually missing from rendered output -- checked the actual renderer code, not
+assumed) and the `esy-sunday-lelya-closing-verse` "missing Amen and Amen" flag (not yet
+re-checked this session, still genuinely open, listed below).
+
+**One item deliberately held, not a mechanical fix -- correctly resolved above (#4), included
+here so the reasoning survives):** the Catholicos/patron-saint placeholder question needed an
+actual judgment call about whether the app should hardcode a name from 1894, and Josh's answer
+(the BCP "N our Bishop" model) is now applied.
+
+### IN PROGRESS when this note was written -- read carefully before continuing
+
+Working on the **Sunday-in-Fast Night Service Canon** (Great Fast Sundays sub-section,
+pp.205-210) when a second, larger, previously-undiscovered problem surfaced. Josh's direction
+for both: **"Build the content, then build the engine."** -- i.e. write and verify the JSON
+components first, commit them, *then* write the renderer wiring as a separate, deliberate step,
+same discipline as the existing correctly-wired Fast Lelya Canon (`esy-lelya-fast-canon-*`,
+built 2026-08-27, useful as a model for both halves of this).
+
+**Item A -- Sunday-in-Fast Canon (the original task, content not yet written):**
+Maclean gives, in full, and nothing in the corpus currently has:
+- The Night Service Canon said five times before the Priest's prayer on the five Sundays of
+  the Fast ("In the middle of the night I have arisen to confess thee for thy judgments, O
+  Righteous one..." through "...Lord of all, etc.", pp.205-206) plus the Priest's own prayer
+  after it ("In the middle of the night we arise, O my Lord, wakefully to serve thee...").
+- The Tishbukhta by Mar Saurishu Catholicos, said after the Motwa on all Sundays of the Fast
+  ("Our Father which art in heaven. Holy in thy nature...", an Our-Father paraphrase, full
+  text recorded in this session's chat history and in the audit file's Great Fast findings).
+- Two Fast-specific Morning Service opening prayers ("Grant us, O our Lord and our God,
+  although we are not worthy..." and "Receive, O our Lord and our God, the pure fast of thy
+  servants...", pp.207-208).
+
+Exact source text for all of the above was read and transcribed during this session's audit
+and is preserved in the chat history; if this session's transcript isn't available, these will
+need re-sourcing from Maclean pp.205-208 directly (Google Drive fileId
+`1NU36XV6xcBKUdozsOFoLjNLFYevIN727`, or the full-text `.txt` Josh has previously supplied via
+`fetch_maclean.py`).
+
+**Item B -- newly discovered, larger in scope, NOT YET REPORTED TO JOSH FOR PRIORITIZATION AT
+THE TIME OF COMPACTION -- surface this explicitly at the start of the next session:**
+While tracing how to wire Item A, checked how the **four Sunday Night Service Tishbukhta**
+(`esy-sunday-lelya-tishbukhta-mar-babai-great`, `-mar-babai-nisibis`, `-mar-george`,
+`-mar-narsai`) are currently selected. **Confirmed: they are not.** All four sit as static,
+unconditional entries in the base `sunday-lelya-qdham-sequence`/`-wathar-sequence` arrays
+(positions 15-17 and 21) with **zero seasonal-selection logic anywhere in the renderer** --
+grepped for their component IDs directly in `js/office-ui.js` and found no matches at all, then
+confirmed the sequence key itself isn't hardcoded anywhere (must be built dynamically), and
+that no generic season-filter touches these four IDs by any other mechanism. This means **all
+four currently render on every single Sunday of the year**, regardless of season, even though
+Maclean's own headings restrict each of the first three to a specific season and describe the
+fourth as the general default:
+- Mar Babai the Great -- "on Sundays from Advent to Epiphany" (season-restricted)
+- Mar Babai of Nisibis -- "for all Sundays of the year" (the year-round default)
+- Mar George, Metropolitan of Nisibis -- "for the Hallowing of the Church" (season-restricted)
+- Mar Narsai -- heading/restriction not yet re-confirmed this session; needs checking
+
+This is a real fidelity problem affecting **every Sunday Night Service, all year**, not just
+Fast Sundays -- larger in scope than Item A, though very likely fixable using the exact pattern
+already correctly built and working elsewhere in this same function for the Ps.86/Ps.91
+Advent/Hallowing-of-the-Church substitution (`js/office-ui.js`, inside the
+`officeKey === 'lelya' && (dayName === 'sunday' || isFeastDay)` block) -- read that existing,
+working code first as the model before writing anything new.
+
+**Sequencing directive from Josh, to apply to both Item A and Item B: content first, engine
+second.** For each: write and commit the JSON text, verified against source, as its own step;
+only then write and commit the renderer wiring as a separate step. Do not conflate the two
+into one commit, and do not guess at renderer logic before the content it depends on actually
+exists and is verified.
+
+### Not yet done, carried forward
+
+- Complete the Sunday-in-Fast Canon build (content, then engine) -- Item A above.
+- Investigate and fix the four-Tishbukhta seasonal-selection gap (content status: text already
+  exists and is already verified correct against source from the audit; only the engine/wiring
+  is missing) -- Item B above. Confirm Mar Narsai's actual seasonal restriction (or lack of
+  one) before wiring.
+- The Motwa for Wednesday 'Before'/'After' (pp.130-150) -- largest remaining content gap,
+  ~20 pages, not yet started.
+- The Weeks-of-the-Mysteries and Ordinary-Weeks Fast Night Service Canons, plus two named
+  Tishbukhta (Mar Abraham of Izla; Mar Shimun Bar Saba'i/Mar Ephraim) -- unbuilt, smaller in
+  scope than the Wednesday Motwa.
+- Roughly 19 alternate "Prayer for help" texts (pp.16-19) -- possibly intentionally unbuilt
+  per the source's own single-priest rubric; needs a decision from Josh either way, not an
+  assumption.
+- `esy-sunday-lelya-closing-verse` -- flagged as possibly missing its "Amen and Amen" lead-in
+  rubric; not yet checked against the actual render sequence to confirm it's a real gap.
+- Monday-Saturday of the Compline Anthems/Madrashi sub-section (six of seven days) --
+  genuinely unaudited, not just unbuilt.
+- The Feast-of-our-Lord farced full-Psalter Night Office recitation (identified 2026-08-27,
+  reconfirmed present-and-unbuilt during this session's audit) -- unbuilt.
+
+**SEED_VERSION and audit-ledger.html have not yet been updated to reflect this session's six
+committed fixes or the four Hulali alternates** -- do this as part of the next commit, per
+standing practice that the ledger, dashboard, and SEED_VERSION update in the same commit as any
+significant fix. Current SEED_VERSION: `v169-2026-08-27-east-syriac-fast-lelya-canon-wired`.
+
+---
+
+
 
 Josh directed "plan and then build out Lelya" -- the larger of two items surfaced while reading the
 real Maclean pp.236-263 (Index II showed a Fast-specific Night Office Canon; the actual build had
