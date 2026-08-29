@@ -1,5 +1,55 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Motwa for Wednesday 'Before'/'After' (pp.130-150) built and
+## wired, closing the largest disclosed content gap on record. Read this whole entry before
+## doing anything else this session; the entry below it (full audit) is still accurate for
+## everything else.
+
+Josh re-supplied the full OCR text of Maclean 1894, this time including pp.130-150 -- the
+Motwa for Wednesday 'Before' and 'After', flagged in the "Not yet done" list below as the
+single largest gap (~20 unbuilt pages).
+
+**Built:** four new components -- `esy-lelya-wednesday-qdham-motwa` (the main 'Before' anthem,
+pp.130-139, including its Verses of Prayer subsection and an extended coda naming Mar George,
+Mar Awa Catholicos, Mar Augin and the Mount Izla monastic community, and Mar Pithiun's
+martyrdom -- all one continuous heading in the source), `esy-lelya-wednesday-qdham-motwa-amidh`
+(a second anthem explicitly bracketed in the source, "[Another, composed by Mar Shimun (Sinwn),
+Metropolitan of the city of Amidh]", naming a distinct group of Kurdish-mountain monastic
+saints), `esy-lelya-wednesday-wathar-motwa` (the 'After' anthem, pp.140-150, with its own
+distinct Verses of Prayer including two occasional insertions the source itself heads "For a
+Journey" and "For Rain"), and `esy-lelya-wednesday-wathar-motwa-close-rubric` (citation-only --
+Maclean ends 'After' with a cross-reference to 'the other verses as on Wednesday before (page
+134)' rather than reprinting them; **how much of 'Before's own coda is meant to be repeated is
+genuinely unclear from the source and is disclosed as such, not guessed at** -- if this is ever
+revisited, that ambiguity is still open).
+
+**A real engine gap surfaced while scoping the wiring, not assumed from the content alone:**
+Maclean's Introduction (p.xv) states the Motwa itself "varies with the season and day, except on
+Wednesdays, when special anthems are said, one for weeks 'before,' one for weeks 'after'" --
+confirmed directly from the two Motwa headings themselves. This means Wednesday Lelya carries
+its own qdham/wathar cycle split even though no other ferial weekday's Lelya does (the standing
+note that "Lelya has no cycle variation, only per-weekday" still holds for every other day).
+**Wired:** `wednesday-lelya-sequence` split into `wednesday-lelya-qdham-sequence` and
+`wednesday-lelya-wathar-sequence` in rubrics.json; `js/office-ui.js`'s `cycleVaryingOffices` now
+resolves to `['ramsha','lelya']` specifically when `dayName==='wednesday'` on a ferial day,
+using the exact `sequenceKey` construction already in place for every other cycle-varying
+office -- no new date-computation logic needed, since `cycle` (qdham/wathar) was already computed
+generically for every day of the week.
+
+**Verified:** both JSON files remain valid; new component ids checked against both new sequence
+arrays directly (zero missing); `js/office-ui.js` passes `node --check`; the cycle computation
+was simulated against four real Wednesdays across two different years (2026-01-07, 2026-01-14,
+2027-03-03, 2027-03-10), correctly alternating qdham/wathar/qdham/wathar. `SEED_VERSION` bumped
+to `v171-2026-08-29-east-syriac-wednesday-motwa-built-wired`; `js/office-ui.js` cache-bust bumped
+to `?v=171` in index.html.
+
+Full detail in `audit-ledger.html`'s `coe:wednesday-motwa:built-wired` entry.
+
+**Still open from the "Not yet done" list below, now that item 1 is closed:** items 2-7 are
+unchanged -- see that list. Item 1 itself is done; strike it when next updating that list in full.
+
+---
+
 ## Session 2026-08-29 -- Full source-verification audit of every East Syriac component
 ## against Maclean 1894; remediation and Sunday-in-Fast engine work complete. Read this
 ## whole entry before doing anything else this session.

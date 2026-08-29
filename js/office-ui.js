@@ -4244,9 +4244,18 @@ async function renderEastSyriac() {
     // (see esy-sunday-lelya-title's Feast-extras block, and the earlier
     // Feast-of-our-Lord build note) says "on Memorials" specifically, not
     // Feasts, so it stays keyed to the real day-of-week regardless.
+    // Wednesday Lelya is a further, narrower exception on top of the above:
+    // Maclean's own Introduction (p.xv) states the Motwa itself "varies with
+    // the season and day, except on Wednesdays, when special anthems are
+    // said, one for weeks 'before,' one for weeks 'after'" -- confirmed
+    // directly from the two Wednesday Motwa texts themselves (pp.130-150),
+    // which are headed "WEDNESDAY 'BEFORE'" and "WEDNESDAY 'AFTER'"
+    // respectively. So on a ferial (non-Feast) Wednesday specifically,
+    // Lelya also needs the qdham/wathar suffix, even though no other
+    // ferial weekday's Lelya varies by cycle.
     const cycleVaryingOffices = (dayName === 'sunday' || isFeastDay)
         ? ['ramsha', 'lelya', 'sapra']
-        : ['ramsha'];
+        : (dayName === 'wednesday' ? ['ramsha', 'lelya'] : ['ramsha']);
 
     // A weekday Feast reuses the Sunday-named Festival sequences directly
     // (sunday-ramsha-qdham-sequence, etc.) rather than sequences keyed to
