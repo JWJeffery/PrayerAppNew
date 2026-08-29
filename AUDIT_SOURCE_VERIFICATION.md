@@ -115,8 +115,8 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] Prayer at Noon / Sext (p.224) — **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Other Fast-adjacent material
-- [ ] An Occasional Karuzutha (p.225)
-- [ ] Rogation of the Ninevites (pp.226-228)
+- [x] An Occasional Karuzutha (p.225) — **COMPLETE, 2026-08-29**
+- [x] Rogation of the Ninevites (pp.226-228) — **COMPLETE, 2026-08-29**
 - [ ] Blessing of the Months (pp.229-235)
 
 ### Appendices
@@ -771,4 +771,31 @@ Mysteries and Ordinary-Weeks Night Service Canons, and both named Tishbukhta (Ma
 Izla; Mar Shimun Bar Saba'i/Mar Ephraim). All are build items for later, not fidelity problems
 in what does exist -- everything checked against source in this whole Great Fast section
 matched, apart from the two `prayer-glorious` divergences already recorded.
+
+### An Occasional Karuzutha (p.225) and Rogation of the Ninevites (pp.226-228) --
+audited 2026-08-29
+
+Both sections fully checked, every component confirmed exact against source.
+
+`esy-occasional-karuzutha`: full text, all ten petitions, correctly preserves "NN" -- a
+fourth confirmation of that placeholder being handled correctly outside the isolated First
+Monday ferial Karuzutha finding.
+
+`esy-nineveh-tishbukhta-mar-john` (also used Fridays of the Great Fast, per source),
+`esy-nineveh-tishbukhta-mar-khnana`, `esy-nineveh-tishbukhta-wednesday`: all three full texts
+confirmed exact, word for word.
+
+`esy-nineveh-hallelujah-rubric`: confirmed exact, including the correctly-preserved
+"Halle-ingih-lujah" nonsense-syllable chant pattern (same category as the Sunday Shubakha's
+"ingah, ahingah," already noted as meaningless per Maclean's own admission rather than an
+error).
+
+`esy-nineveh-qaltha-suba-a-note`: confirmed exact cross-reference to ordinary Sunday 'after'
+Qaltha and Fast-season Compline placement.
+
+**Section status: both fully audited and clean, no discrepancies found.** This cross-checks
+cleanly against the wiring-logic work already done on 2026-08-27 (Monday/Wednesday Tishbukhta
+assignment, extended Hallelujah insertion, Sunday-after Qaltha/psalms for all three days) --
+that session verified the *logic* was correct; this session verifies the underlying *text* is
+correct too.
 
