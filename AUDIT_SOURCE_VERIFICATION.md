@@ -91,7 +91,7 @@ updated the moment a section's audit is complete, in the same commit as the find
       see Findings Log for one cross-reference note
 
 ### Festival Morning Service (pp.164-172)
-- [ ] Not started
+- [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Sunday Martyrs' Anthems, Before/After (pp.172-184)
 - [ ] Not started
@@ -566,4 +566,37 @@ whoever eventually builds Memorial Night Service wiring.
 
 **Section status: Festival Night Service is now fully audited**, with the Feasts-of-our-Lord
 gap already tracked from 2026-08-27 and one new FLAG on the Sunday closing verse.
+
+### Festival Morning Service (pp.164-172) -- audited 2026-08-29
+
+Every component in this section checked against source. Confirmed exact:
+`esy-sunday-sapra-prayer-make-us-worthy`, `esy-sunday-sapra-prayer-enlighten-us`,
+`esy-sunday-sapra-psalm-100-farced-rubric`, `esy-sunday-sapra-prayer-to-thee-all-creatures`,
+`esy-sunday-sapra-psalm-91-farced` (full farced text, including the seasonal
+Nativity/Baptism/Ascension/Descent bracket), `esy-sunday-sapra-prayer-on-sundays-memorials`,
+`esy-sunday-sapra-prayer-on-feasts`, `esy-sunday-sapra-psalm-civ-farced`,
+`esy-sunday-sapra-psalm-cxiii-farced`, `esy-sunday-sapra-psalm-xciii`,
+`esy-sunday-sapra-psalms-cxlviii-cxlix-cl-cxvii`, `esy-sunday-sapra-morning-anthem-rubric`
+(correctly cross-references the ferial page-106 Daily Anthem, already verified),
+`esy-sunday-sapra-prayer-morning-anthem`, `esy-sunday-sapra-prayer-in-the-glorious-light`, all
+four Tishbukhta (`-mar-ephraim` the acrostic "Ishu Mshikha" hymn, `-mar-narsai`,
+`-company-of-ananias` the Benedicite-style canticle, `-gloria-in-excelsis`),
+`esy-sunday-sapra-prayer-gloria-in-excelsis`, `esy-sunday-sapra-holy-god-rubric`,
+`esy-sunday-sapra-prayer-holy-god-sundays`, `esy-sunday-sapra-prayer-compassionate-one-holy`,
+`esy-sunday-sapra-prayer-holy-art-thou-another`, `esy-sunday-sapra-martyrs-anthem-prayer-sundays`.
+
+**Discrepancy -- `esy-sunday-sapra-prayer-glorious`.** The source does not print new text at
+this point at all -- it reads simply "Prayer. Glorious, O my Lord, page 104," an explicit
+cross-reference telling the reader this prayer is identical to the ferial Morning Service's
+prayer already given at page 104 (`esy-sapra-psalm-91-prayer`, confirmed exact earlier in this
+audit: "...and call on thy holy Name, and beseech thee, at all seasons and times, shall not be
+ashamed, O Lord of all, etc."). The built component instead has different wording: "...shall
+not be ashamed nor confounded, but shall obtain their requests from thy rich and overflowing
+treasury, Lord of all, etc." Not a wildly different meaning, but where the source explicitly
+calls for verbatim reuse of an already-correct prayer, the corpus has altered phrasing instead
+-- a real fidelity issue, distinct in kind from a missing citation or an unavailable
+Khudhra-sourced gap.
+
+**Section status: Festival Morning Service is now fully audited**, with one discrepancy found
+and recorded.
 
