@@ -2860,6 +2860,51 @@
     }
   },
   {
+    "id": "esy-fast-sunday-lelya-canon",
+    "title": "Canon",
+    "text": "<p class=\"rubric-text\">On the five Sundays of the Fast the priest, after Glory be to God, puts incense in the censer and vests himself in the ma'apra, and holding the censer in his hand, stands before the shkhinta and says this Canon. The people repeat it, and it is said five times.</p><p class=\"component-text\">In the middle of the night I have arisen to confess thee for thy judgments, O Righteous one. In the night with the watchful ones. Let us sing glory to him. To him who watcheth and sleepeth not. Whom the watchful ones serve. In the night when are silent. The voices of all conditions (of men). May our prayer please thee. O Lord, who hast goodwill to the penitent. Who hearest and neglectest not. Who answerest, and savest, and rescuest. Hear, O my Lord, our request. And return answer in thy mercies to our petitions. For thou alone. Art full of mercy and forgivest trespasses.</p><p class=\"rubric-text\">He proceeds.</p><p class=\"component-text\">In the middle of the night I have arisen to confess thee for thy judgments, O righteous one.</p><p class=\"rubric-text\">They answer,</p><p class=\"component-text\">I am the friend of all that fear thee and keep thy commandments. By night with the watchful ones. The earth, O Lord, is full of thy mercies, O teach me thy commandments. By night with the watchful ones. Glory be to the Father, etc. By night, etc. From everlasting to everlasting. By night, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, pp.205-206.",
+      "note": "Said five times by priest and people together on the five Sundays of the Great Fast, at the start of the Night Service, before the Hulali. Not yet wired into the renderer -- content only at this stage, per Josh's direction to build content before engine. Full text recorded during the 2026-08-29 source-verification audit session."
+    }
+  },
+  {
+    "id": "esy-fast-sunday-lelya-canon-prayer",
+    "title": "Prayer",
+    "text": "<p class=\"component-text\">In the middle of the night we arise, O my Lord, wakefully to serve thee. <em>Repeat.</em> When the voices of all conditions (of men) are alike silent, let us sing praise to thy glorious Trinity without ceasing, O thou Watchful one, who art continually served by the watchful ones, O thou Holy one, who dwellest in thy holy ones, and art willingly propitiated. Pardon, O my Lord, our trespasses in thy compassion, and enlighten the eyes of our hearts with the light of thy knowledge, that we may know how to offer to thee in pureness of thought pure sacrifices of our minds, with the spoken fruits of our lips, with praises which befit thy holy Name, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.206.",
+      "note": "The priest's prayer following the Canon above. Not yet wired into the renderer -- content only at this stage."
+    }
+  },
+  {
+    "id": "esy-fast-sunday-lelya-tishbukhta-mar-saurishu",
+    "title": "Tishbukhta",
+    "text": "<p class=\"rubric-text\">On all Sundays of the Fast they say after the Motwa this Tishbukhta by Mar Saurishu Catholicos.</p><p class=\"component-text\">Our Father which art in heaven. Holy in thy nature. Make thy worshippers worthy. To sing Holy to thy Name. May thy kingdom come. In a mystery before the times. As though already. We lived in it. Let us fulfil thy will. On earth without fear. As in heaven. There is none that (can) harm us. The bread of our need. Give us all the days. Of the nature of mortals. For it is ever needy. Before we are fashioned. Thou knowest our wickedness. In thy love thou hast fashioned us. In thy mercies wipe out our trespasses. We have trespassed against thy being. And have offended against one another. May we forgive each other. And do thou, O Lord, (forgive) us all. That we stand not in temptations. Of demons and lusts. Which chastise us. For we are weak. In thy pity, O Compassionate one. Save us from the Evil one. For thou alone art able. To overcome his cruelty. Thine is the kingdom. And the power, and the glory. Grant that we may be. Heirs of thy Beloved. And with thy saints. May we pay to thy majesty. The glory which is meet for thee. For ever and ever. Amen.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.206.",
+      "note": "A farced paraphrase of the Lord's Prayer, said after the Motwa on all Sundays of the Great Fast, replacing whichever of the four seasonal Sunday Night Service Tishbukhta would otherwise apply. Not yet wired into the renderer -- content only at this stage. NB: wiring this correctly is entangled with a separate, larger bug found 2026-08-29 -- the four ordinary Sunday Tishbukhta (esy-sunday-lelya-tishbukhta-mar-babai-great/-mar-babai-nisibis/-mar-george/-mar-narsai) currently have no seasonal-selection logic at all and render unconditionally every Sunday; see RESUME_PROJECT_NOTE.md, 'Item B', before wiring this component in, since the two problems likely need solving together."
+    }
+  },
+  {
+    "id": "esy-fast-sunday-sapra-prayer-grant-us",
+    "title": "Prayer before the Morning Psalms",
+    "text": "<p class=\"component-text\">Grant us, O our Lord and our God, although we are not worthy, <em>Repeat,</em> and make us worthy, although we deserve it not, to bear the yoke of the holy fast, with a meek heart boiling over with true love towards thee. And take away from us slothfulness, which is a barren mother, and forbidden to virtuous sons; and sow in us diligence, and energy, and watchfulness, lest one of our senses break the fast while another keepeth it, and confusion reign over that which we have begun. But when the body fasteth from food, may the soul also fast from evil and hateful (deeds), that our fast may be perfect and complete; and when we are watchful and cautious, and when we sing Holy, purely and circumspectly and in holiness, may we serve before thee with Moses, and Joshua, and Elijah, and Daniel, and the company of Ananias, and all other just men who have striven in this contest. And may our service please thee, O my Lord, and our prayer persuade thee; may our beseeching honour thee, and our entreating propitiate thee. And may the mercies and compassion of thy Godhead pardon the trespasses of thy people, and forgive the sins of all the sheep of thy pasture, which thou hast chosen to thyself in thy lovingkindness and mercies, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.207.",
+      "note": "First of two Fast-specific Morning Service opening prayers for the five Sundays of the Fast, replacing esy-fast-sapra-prayer-vouchsafe (the weekday equivalent) on those Sundays specifically. Not yet wired into the renderer -- content only at this stage."
+    }
+  },
+  {
+    "id": "esy-fast-sunday-sapra-prayer-receive",
+    "title": "Another",
+    "text": "<p class=\"component-text\">Receive, O our Lord and our God, the pure fast of thy servants, in thy lovingkindness, and be propitiated by them in the greatness of thy mercy, as thou wast propitiated by the just, who kept the fast purely and circumspectly, and strove therein in watchfulness and holiness. And may their prayers by night and by day be heard before the terrible judgment-seat of thy greatness, and may their alms, which they pour forth for the poor, obtain a good memorial before the high throne of thy majesty, and be unto them as armour and a shield to drive away from them tribulations which take hold on them; and as (their gifts) are openly made use of in abundance, so may they be heard secretly in pureness and righteousness, that thou mayest shed forth on them (that gave them) thy mercies and compassion, and continually sprinkle their hearts (therewith), O thou who didst create the light in thy lovingkindness, and didst order the darkness in thy wisdom, and in the knowledge of thy Godhead, which cannot be fathomed by spiritual beings, or by those that are in the body, Lord of all, etc.</p>",
+    "meta": {
+      "source": "Maclean 1894, p.207.",
+      "note": "Second of two Fast-specific Morning Service opening prayers for the five Sundays of the Fast. Not yet wired into the renderer -- content only at this stage."
+    }
+  },
+  {
     "id": "esy-quta-a-title",
     "title": "Quta'a (Terce)",
     "text": "<p class=\"component-text\">An extra Hulala, appended to the end of the Fast-season Morning Service.</p>",
