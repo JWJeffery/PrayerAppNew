@@ -97,16 +97,16 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Compline (pp.185-190)
-- [ ] Not started
+- [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Anthems of the Departed and Madrashi at Compline, Sunday-Saturday (pp.190-204)
-- [ ] Sunday
-- [ ] Monday
-- [ ] Tuesday
-- [ ] Wednesday
-- [ ] Thursday
-- [ ] Friday
-- [ ] Saturday
+- [x] Sunday — **COMPLETE, 2026-08-29** — full text checked, exact
+- [~] Monday — not individually checked, see note in Findings Log
+- [~] Tuesday — not individually checked, see note in Findings Log
+- [~] Wednesday — not individually checked, see note in Findings Log
+- [~] Thursday — not individually checked, see note in Findings Log
+- [~] Friday — not individually checked, see note in Findings Log
+- [~] Saturday — not individually checked, see note in Findings Log
 
 ### Services of the Great Fast (pp.205-224)
 - [ ] On Sundays (pp.205-210)
@@ -619,4 +619,47 @@ the lighter check standard already applied to the other day-specific Martyrs' An
 
 **Section status: complete**, both anthems confirmed correct at the same standard applied to
 other long farced anthems throughout this audit.
+
+### Compline (pp.185-190) and Anthems of the Departed/Madrashi at Compline
+(pp.190-204) -- audited 2026-08-29
+
+These two book sections are wired together as one continuous unit in the corpus (all
+components share the `esy-compline-*` prefix), which is reasonable architecture given
+Compline uses one Anthem-of-the-departed/Madrasha pair per day -- noted here since it isn't
+obvious from the Table of Contents alone.
+
+**Compline proper: every fixed component checked, all confirmed exact.**
+`esy-compline-hulala-rubric`, `esy-compline-prayer-thy-nature-rubric`,
+`esy-compline-psalm-88-rubric`, `esy-compline-prayer-hidden-in-being`,
+`esy-compline-psalm-90-rubric`, `esy-compline-prayer-hidden-from-all`,
+`esy-compline-psalms-130-143-rubric`, `esy-compline-prayer-form-us`,
+`esy-compline-anthem-departed-rubric`, `esy-compline-prayer-may-thy-compassion`,
+`esy-compline-canon` (content exact; missing the "to the tune God is worshipped" tune label,
+minor), `esy-compline-tishbukhta-at-that-hour`, `esy-compline-karuzutha` (full text, all ten
+petitions, correctly preserves "NN" -- a third confirmation of that placeholder pattern being
+handled correctly elsewhere, alongside the two Festival Evening Service confirmations above),
+`esy-compline-prayer-forgive`, `esy-compline-blessed-adorable-rubric`,
+`esy-compline-madrasha-rubric`, `esy-compline-prayer-quickener-of-dead`,
+`esy-compline-psalm-91-farced`, `esy-compline-psalms-150-117-farced`,
+`esy-compline-prayer-giver-of-our-life`, `esy-compline-psalm-121-farced`,
+`esy-compline-prayer-may-mercies-formed-me`, `esy-compline-psalm-51-farced-christ-the-king`,
+`esy-compline-tishbukhta-christ-who-in-thy-mercies`, `esy-compline-they-proceed-in-thy-cross`,
+`esy-compline-tishbukhta-mar-ephraim-grant-me` (the long "Grant me, O my Lord, that if I
+wake..." night prayer), `esy-compline-prayer-living-voice-lazarus`,
+`esy-compline-prayer-quicken-them-that-fallen-asleep`,
+`esy-compline-prayer-be-with-us-continually`.
+
+**Anthems of the Departed and Madrashi: Sunday checked in full, all confirmed exact**
+(`esy-compline-anthems-sunday`, 2,720 characters; `esy-compline-madrasha-sunday`).
+Monday-Saturday's equivalent components exist (`esy-compline-anthems-monday` through
+`-saturday`, `esy-compline-madrasha-monday` through `-saturday`) but were not individually
+checked in this pass, given time constraints and the very consistent accuracy found across
+every other component in this section (roughly 30 components checked with only one trivial
+omission -- the Canon's tune label). This is a genuine gap in audit coverage, not a
+"confirmed correct" claim for those twelve components -- noted explicitly so it isn't mistaken
+for verification that didn't happen.
+
+**Section status:** Compline proper is fully audited and clean. The Anthems/Madrashi
+sub-section is partially audited (Sunday only); Monday through Saturday remain to be checked
+in a future pass before this sub-section can be marked complete.
 
