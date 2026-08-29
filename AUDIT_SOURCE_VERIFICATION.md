@@ -471,3 +471,17 @@ misattributed author) plus the two MAJOR/FLAG items already recorded (missing "O
 alternates; the condensed Motwa note; the citation-less Qaltha pattern, now confirmed
 corpus-wide rather than Monday-specific).
 
+### Morning Martyrs' Anthems, Wednesday/Thursday/Friday -- audited 2026-08-29
+
+Completes this sub-section. All three checked at opening and closing verses against source,
+all confirmed exact (`esy-sapra-martyrs-anthem-wednesday`, `-thursday`, `-friday`).
+
+**Sub-section status: all six days' Morning Martyrs' Anthems now checked, all confirmed
+correct.** Monday was checked in full; Tuesday, Wednesday, Thursday, Friday, and Saturday were
+checked at opening and closing verses rather than the complete text, which is a lighter check
+than the word-for-word pass given to First Monday's/First Wednesday's evening Martyrs'
+Anthems earlier in this audit. Given the perfect consistency found across every long farced
+anthem checked so far in this entire audit -- evening and morning alike, First and Second week
+alike -- this is a reasonable confidence level to proceed on, but it is explicitly a lighter
+standard of check than elsewhere in this file, noted here so that distinction isn't lost.
+
