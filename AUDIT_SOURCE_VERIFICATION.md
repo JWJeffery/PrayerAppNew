@@ -38,7 +38,9 @@ updated the moment a section's audit is complete, in the same commit as the find
 
 ### Ferial Evening Service, Week 'Before' (pp.1-65)
 - [x] First Monday (pp.1-22) — **COMPLETE, 2026-08-29** — see Findings Log
-- [ ] First Tuesday (pp.23-29)
+- [~] First Tuesday (pp.23-29) — **BLOCKED, 2026-08-29** — see Findings Log. Six of seven
+      day-specific components do not match the source; root cause needs the 'week after'
+      text (pp.57-59) or the full-text upload to diagnose before this can be closed.
 - [ ] First Wednesday (pp.29-35)
 - [ ] First Thursday (pp.35-41)
 - [ ] First Friday (pp.41-43)
@@ -197,3 +199,46 @@ reads "I waited patiently for the Lord" (correct -- Psalm 40:1, matching the Pra
 Psalter). The OCR text used for this audit's comparison read "I wailed patiently," which is a
 scanning artifact, not a real source variant. The app is right; the OCR is wrong. Recorded
 here so this isn't mistaken for an unresolved discrepancy in a future pass.
+
+### First Tuesday Ferial Evening Service (pp.23-29) -- audited 2026-08-29, BLOCKED
+
+Sequence `tuesday-ramsha-qdham-sequence` reuses 23 components already verified from First
+Monday (opening formula, Lakhumara, Karuzutha, Trisagion, laying-on-of-hands, all the closing
+prayers, Nicene Creed) -- not re-checked here, already covered. Nine components are
+Tuesday-specific. Two (`esy-tuesday-first-marmitha`, `esy-tuesday-second-marmitha`) confirmed
+exact against source ("Ps. xxv., xxvi., xxvii." = Psalms 25/26/27; "Ps. xxviii., xxix., xxx."
+= Psalms 28/29/30). One (`esy-tuesday-martyrs-anthem-evening`) confirmed exact, full text,
+against source pp.25-29.
+
+**MAJOR, SYSTEMATIC -- six of the remaining seven Tuesday-specific components do not match
+what Maclean's actual "FIRST TUESDAY" page (p.23-25) gives.** Not wording variants -- entirely
+different psalm citations and entirely different anthem texts under different tune names:
+
+| Component | Source (First Tuesday, p.23-25) | Built |
+|---|---|---|
+| `esy-tuesday-qdham-first-shuraya` | "Ps. xvii. 1-6" (Psalm 17:1-6) | "Psalm 67:1-6" |
+| `esy-tuesday-qdham-first-anthem` | tune "Light and the Son of light" / "Hear, O God, and have mercy upon me..." | tune "its own tune" / "Show the light of thy countenance, and we shall be saved..." |
+| `esy-tuesday-qdham-second-shuraya` | "Ps. xxi. 1-5" (Psalm 21:1-5) | "Psalm 40:16-20" |
+| `esy-tuesday-qdham-second-anthem` | tune "Now is the night" / "Hear my prayer, O Lord..." | tune "O Compassionate one, whose (door) is open" / "Rescue me, and deliver me..." |
+| `esy-tuesday-qdham-evening-anthem` | "Our help is in the Name of the Lord..." | tune "God the Word" / "Who can express the noble acts of the Lord?..." |
+| `esy-tuesday-qdham-letter-psalm` | "cxix. 17-33" (Psalm 119:17-33) | "Psalm 119:113-129" |
+
+**Root cause not yet determined -- do not guess.** The live source text available during this
+session (fetched directly from archive.org, 2026-08-29) covers only the Introduction through
+roughly page 30 -- it does not reach the Ferial Evening Service "week after" section
+(pp.55-67), which is the most plausible place this content actually belongs (i.e. this may be
+a week-swap/mislabeling bug rather than fabricated content). This cannot be confirmed without
+either (a) the full-text upload Josh was asked to produce via `fetch_maclean.py`, or (b)
+targeted fetches of pp.55-67 specifically. Blocked on source access, not on analysis effort.
+
+**Confirmed correct, not part of the problem:** `esy-tuesday-first-marmitha`,
+`esy-tuesday-second-marmitha`, `esy-tuesday-martyrs-anthem-evening` (full text, all 28+
+verses). The split between what's right and what's wrong is itself informative -- whatever
+happened did not touch this day's build uniformly.
+
+**Next step, before any further day-by-day audit progress:** obtain pp.55-67 (or the full
+text) and determine whether `esy-tuesday-qdham-*` content actually belongs to
+`esy-tuesday-wathar-*` (or another day/week entirely), whether it's simply wrong, or whether
+it's real content from somewhere else in the book misfiled here. Do not resume linear
+day-by-day progress past this point until First Tuesday is actually resolved, per the
+finish-what-we-start rule.
