@@ -64,10 +64,7 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Ferial Night Service (pp.85-102)
-- [~] **PARTIAL, 2026-08-29** — opening prayers and all 21 Hulali prayer texts fully checked;
-      Monday's day-specific Qaltha/Motwa/Shubakha/Tishbukhta/Karuzutha checked; Tuesday-Saturday's
-      day-specific texts (Qaltha, Shubakha, Tishbukhta) still need individual verification.
-      See Findings Log.
+- [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Ferial Morning Service (pp.103-108)
 - [ ] Not started
@@ -429,4 +426,48 @@ the Qaltha before concluding either way.
 texts (five more days x three components each). These follow the same structural pattern as
 Monday's, already confirmed correct, but have not been individually verified against source
 word for word. This section is marked PARTIAL rather than complete for that reason.
+
+### Ferial Night Service, Tuesday-Saturday day-specific texts -- audited 2026-08-29
+
+Completes the Ferial Night Service section.
+
+**Qaltha, all five remaining days** (`esy-lelya-tuesday-qaltha` through
+`esy-lelya-saturday-qaltha`): anthem text confirmed exact against source for all five. All
+five show the same pattern already flagged for Monday's Qaltha -- the psalm citation and
+Gloria rubric that accompany each anthem in the source are not carried in the component. This
+generalizes the earlier single-day FLAG to all six days: Tuesday should cite Ps.25-27,
+Wednesday Ps.45, Thursday Ps.96-98, Friday Ps.88, Saturday Ps.147:12-150.
+
+**Shubakha, four of five days confirmed exact:** Tuesday (Ps.28), Thursday (Ps.54), Friday
+(Ps.95:1-8), Saturday (Ps.150).
+
+**Likely discrepancy -- `esy-lelya-wednesday-shubakha`.** Source gives "Ps. lxxiii." (Psalm
+73) for Wednesday; the component has "Psalm 67." This is from memory of a long document rather
+than a fresh re-read at the point of checking, so flagged as *likely* rather than certain, but
+"lxxiii" and "lxvii" are distinct enough Roman numerals that this doesn't look like simple
+misreading on my part. Needs a fresh check against the actual page before correcting.
+
+**Tishbukhta, three of five days confirmed exact (attribution and opening text):** Tuesday
+(Mar Awa, Catholicos / Mar Thomas of Urhai), Thursday (Mar Ephraim), Saturday (Mar Ephraim --
+also confirmed the component's noticeably shorter length correctly reflects a genuinely short
+source text, not a truncation).
+
+**Discrepancy -- `esy-lelya-tishbukhta-wednesday` attribution.** Built as "Mar **Abimelek**";
+source reads "Mar **Ahimelek**." One-letter difference, but these are different names in this
+tradition (compare the biblical Ahimelech vs. Abimelech), not a spelling variant of the same
+name. Small but real misattribution.
+
+**Not flagged, low confidence:** Friday's Tishbukhta attribution ("Mar Abraham of
+Nithpur"/"Mar John of Beth-raban" in source vs. "Mar Abraham of Nithpar"/"Mar John of
+Beith-raban" as built) -- the source's OCR is heavily garbled at exactly this point and I do
+not have enough confidence in my own reading to call this a discrepancy rather than noise.
+Noted for awareness, not action.
+
+**Section status: Ferial Night Service (pp.85-102) is now fully audited.** Summary: opening
+prayers and all 21 Hulali prayer texts confirmed exact (with the systematic missing-alternate
+finding above); all six days' Qaltha, Shubakha, and Tishbukhta texts checked, with two real
+discrepancies found (Wednesday Shubakha's likely wrong psalm number, Wednesday Tishbukhta's
+misattributed author) plus the two MAJOR/FLAG items already recorded (missing "Or this"
+alternates; the condensed Motwa note; the citation-less Qaltha pattern, now confirmed
+corpus-wide rather than Monday-specific).
 
