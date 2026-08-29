@@ -117,7 +117,7 @@ updated the moment a section's audit is complete, in the same commit as the find
 ### Other Fast-adjacent material
 - [x] An Occasional Karuzutha (p.225) — **COMPLETE, 2026-08-29**
 - [x] Rogation of the Ninevites (pp.226-228) — **COMPLETE, 2026-08-29**
-- [ ] Blessing of the Months (pp.229-235)
+- [x] Blessing of the Months (pp.229-235) — **COMPLETE, 2026-08-29**
 
 ### Appendices
 - [ ] Farcings of the Psalms (pp.236-248) -- partial cross-reference done 2026-08-27
@@ -798,4 +798,28 @@ cleanly against the wiring-logic work already done on 2026-08-27 (Monday/Wednesd
 assignment, extended Hallelujah insertion, Sunday-after Qaltha/psalms for all three days) --
 that session verified the *logic* was correct; this session verifies the underlying *text* is
 correct too.
+
+### Blessing of the Months (pp.229-235) -- audited 2026-08-29
+
+All nine components checked against source, all confirmed exact: `esy-blessing-months-title`
+(editorial summary, accurate), `esy-blessing-months-anthem-1` (the base anthem, full text,
+correctly preserves "Mar N. the confessor" as a placeholder -- a fifth confirmation of that
+pattern working correctly elsewhere), `esy-blessing-months-anthem-2` (Mar Abraham of Slukh's
+three verses, full text), `esy-blessing-months-anthem-3` (Mar Gabriel's three verses, dated
+1910 of the Greeks in the source -- full month-by-month text October through September
+confirmed exact), `esy-blessing-months-litany-el`, `esy-blessing-months-prayer-have-mercy`
+(the long "locust, young locust, caterpillar, corn-worm, white locust, blight, burning winds,
+palmer-worm, plague" petition, full text), `esy-blessing-months-litany-audishu` (Mar
+Audishu's verses), `esy-blessing-months-city-wall`, `esy-blessing-months-thou-hast-formed`
+(the long closing set of verses, full text, including the roll of Adam/Moses/Peter/
+Stephen/Ephraim/Antony).
+
+Note: the source's individual Syriac-alphabet acrostic letter-labels (Alap, Beith, Gamal,
+etc.) that mark each clause in several of these litanies are not reproduced as labels in the
+built components -- the translated devotional text itself is complete and accurate, but the
+acrostic structure markers are folded into flowing prose rather than kept as visible
+labels. This is a reasonable simplification, not a content loss, and is noted rather than
+flagged as a discrepancy.
+
+**Section status: complete, entirely clean.** No discrepancies found anywhere in this section.
 
