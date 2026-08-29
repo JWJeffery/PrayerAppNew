@@ -1,5 +1,43 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-27 continued -- Great Fast Lelya (Night Office) Canon planned and built
+
+Josh directed "plan and then build out Lelya" -- the larger of two items surfaced while reading the
+real Maclean pp.236-263 (Index II showed a Fast-specific Night Office Canon; the actual build had
+no Fast-season Lelya content at all).
+
+**Planned first:** confirmed ordinary ferial Lelya has no Night Anthem/Canon slot at all; found an
+existing but never-wired rubric (`esy-sext-night-anthem-canon-rubric`, Maclean p.224) stating the
+order directly -- Night Anthem, then Canon, then that day's Tishbukhta; confirmed Index II's real
+Canon citations (Psalm 3:5-end and Psalm 134 for Weeks of the Mysteries; Psalm 92:1-2 for ordinary
+weeks); disclosed two genuine ambiguities up front rather than guessing through them -- whether the
+two Mysteries-week citations are said together or differ some other way, and where the Night Anthem
+falls relative to Qaltha/Motwa/Shubakha (only its adjacency to the Tishbukhta is stated directly).
+
+**Built:** two new citation-only components (`esy-lelya-fast-canon-mysteries`,
+`esy-lelya-fast-canon-ordinary`); wired into `renderEastSyriac()` to insert
+`[esy-sext-night-anthem-canon-rubric, <canon>]` immediately before that day's Tishbukhta whenever
+`isGreatFast && dayName !== 'sunday'`, selecting the correct Canon via the calendar engine's existing
+`weekInSeason` data (no new date logic needed). The Night Anthem's own proper text remains a
+disclosed, unbuilt gap -- only the Canon that follows it was added, since only the Canon has a real
+citation to build from.
+
+**Verified:** confirmed no date overlap between the Rogation of the Ninevites and the Great Fast
+across 2025-2035; simulated the real 2027 Fast season end-to-end for a Mysteries week, an ordinary
+week, and a non-Fast date, all resolving correctly. `js/office-ui.js` passes `node --check`; both
+JSON files remain valid. `SEED_VERSION` bumped to `v169-2026-08-27-east-syriac-fast-lelya-canon-wired`.
+
+Full detail in `AUDIT_GOVERNANCE_LEDGER.md`, session 2026-08-27 continued ("Great Fast Lelya (Night
+Office) Canon planned and built").
+
+**Still open, from the same pp.236-263 document:** Prayers on Various Occasions (pp.249-258), which
+Josh has directed be filed under a Book of Needs category for the Church of the East -- not yet
+scoped, this project's existing Book-of-Needs infrastructure (if any) hasn't been checked. Also still
+open: a systematic cross-reference of the Farcings of the Psalms (pp.236-248) against every existing
+"farcing not given in Maclean's main body" gap disclosure already in the corpus.
+
+---
+
 ## Session 2026-08-27 continued -- Real pp.236-263 received; Hulala XVII-XXI content bug found and fixed. The CONDUCT INCIDENT entry directly below is now superseded by real facts -- read this entry first, then that one for the full incident record.
 
 Josh supplied the real Maclean pp.236-263 PDF. **The document actually contains:** Farcings of the

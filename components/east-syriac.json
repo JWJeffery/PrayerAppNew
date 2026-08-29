@@ -2710,7 +2710,8 @@
     "text": "<p class=\"component-text\">Then the Night Anthem with its Prayer and Canon, and the proper Tishbukhta.</p>",
     "meta": {
       "source": "Maclean 1894, p.224.",
-      "note": "GAP, disclosed rather than filled: the Night Anthem, Canon, and the day's proper Tishbukhta at this office are the day-specific ferial ones — for a fuller build these would need to be confirmed against the already-built Lelya Tishbukhta set for consistency, which has not yet been done. Left as an honest rubric marker rather than silently assumed identical to Lelya's own Tishbukhta usage."
+      "note": "GAP, still partly disclosed rather than filled: the Night Anthem's own proper text is not transcribed anywhere in this project's holdings. Wired 2026-08-27 into weekday Fast Lelya, immediately before that day's Tishbukhta (the placement this rubric's own wording states directly: Night Anthem, then Canon, then the proper Tishbukhta) -- confirmed the Tishbukhta used at this point is the same already-built ferial Lelya Tishbukhta, resolving the cross-reference this note previously left open. The Canon immediately following this rubric is now real content (esy-lelya-fast-canon-mysteries / esy-lelya-fast-canon-ordinary, citing Index II); the Night Anthem's own prayer remains unbuilt.",
+      "wired": true
     }
   },
   {
@@ -3989,6 +3990,45 @@
     "meta": {
       "source": "Maclean 1894, p.68.",
       "note": "Group (b) of the four Marmitha psalm-groups (see esy-festival-marmitha-advent-epiphany's note for the others). Used on every Festival or Sunday outside Advent-to-Epiphany -- i.e. every season this project's calendar engine resolves other than Subara and Denkha. Auto-selected at render time by season. The farcing text is a disclosed Khudhra gap, as with group (a)."
+    }
+  },
+  {
+    "id": "esy-lelya-fast-canon-mysteries",
+    "title": "Canon in the Fast (weeks of the mysteries)",
+    "text": "<p class=\"rubric-text\">Canon: Psalm 3:5-end; and Psalm 134.</p>",
+    "sections": [
+      {
+        "psalms": [
+          "3:5-end"
+        ]
+      },
+      {
+        "psalms": [
+          "134"
+        ]
+      }
+    ],
+    "meta": {
+      "source": "Maclean 1894, Index II (p.260), citation only.",
+      "note": "Used on weeks 1, 4, and 7 of Sauma (the Weeks of the Mysteries, per p.271 n.2). Index II gives two separate citations for the Canon on these weeks -- Psalm 3:5-end, and, in a separate table row, Psalm 134 -- both explicitly labeled 'N. Canon in the Fast (weeks of the mysteries)'. Whether these are said together, alternate by specific week or day, or serve some other distinction is not stated anywhere in the source as transcribed; both are presented here rather than arbitrarily selecting one. No farcing or additional prayer text is given for this citation anywhere in the source obtained so far -- this is a citation-only entry, structurally comparable to other disclosed Khudhra-style citation gaps elsewhere in this corpus, not a proper text.",
+      "wired": true
+    }
+  },
+  {
+    "id": "esy-lelya-fast-canon-ordinary",
+    "title": "Canon in the Fast (ordinary weeks)",
+    "text": "<p class=\"rubric-text\">Canon: Psalm 92:1-2.</p>",
+    "sections": [
+      {
+        "psalms": [
+          "92:1-2"
+        ]
+      }
+    ],
+    "meta": {
+      "source": "Maclean 1894, Index II (p.261), citation only.",
+      "note": "Used on weeks 2, 3, 5, and 6 of Sauma (the ordinary, non-Mysteries weeks). Citation-only, per Index II ('N. Canon in the Fast (ordinary weeks)') -- no farcing or additional prayer text is given for it anywhere in the source obtained so far.",
+      "wired": true
     }
   }
 ]

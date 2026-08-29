@@ -4369,6 +4369,36 @@ async function renderEastSyriac() {
         }
     }
 
+    // Great Fast Lelya (Night Office) Canon: ferial (weekday) Lelya has no
+    // Night Anthem or Canon at all on ordinary days -- confirmed by
+    // checking the actual sequence data before writing this, not assumed
+    // by analogy with Sapra's own Fast additions (Quta'a, the Mysteries-
+    // week psalm swap). A rubric already in this corpus (Maclean p.224,
+    // inside the Fast section) states the order literally: "Then the Night
+    // Anthem with its Prayer and Canon, and the proper Tishbukhta" -- Night
+    // Anthem, then Canon, then that day's Tishbukhta, which the ordinary
+    // sequence already ends with. The rubric's own note discloses that the
+    // Night Anthem's proper text was never transcribed anywhere in this
+    // project's holdings; that gap is NOT filled here -- only the Canon,
+    // which Index II (p.260-261) gives real citations for, is inserted.
+    // Where exactly this falls relative to Qaltha/Motwa/Shubakha is not
+    // separately confirmed by the source as transcribed; placing it
+    // immediately before the Tishbukhta is the one placement the rubric's
+    // own wording states directly, so nothing beyond that wording is
+    // assumed. Reuses the same weekInSeason data already established for
+    // Sapra's Weeks-of-the-Mysteries swap -- no new date logic needed.
+    if (officeKey === 'lelya' && isGreatFast && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
+        const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
+        const canonId = isMysteriesWeek ? 'esy-lelya-fast-canon-mysteries' : 'esy-lelya-fast-canon-ordinary';
+        const tishbukhtaId = `esy-lelya-tishbukhta-${dayName}`;
+        if (sequence.includes(tishbukhtaId)) {
+            sequence = sequence.flatMap(id => id === tishbukhtaId
+                ? ['esy-sext-night-anthem-canon-rubric', canonId, id]
+                : [id]);
+        }
+    }
+
     // Blessing of the Months: a set of anthems said at the Evening Service
     // of the first day of each month, February excepted, per Maclean's own
     // rubric (esy-blessing-months-title, p.229). Appended to the end of

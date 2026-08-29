@@ -7405,3 +7405,70 @@ calendar engine, which surfaced in passing that this project currently has no Fa
 gap distinct from and larger than the Hulala XVII-XXI bug fixed in this entry.
 
 `SEED_VERSION` bumped to `v168-2026-08-27-east-syriac-hulala-17-21-corrected`.
+
+---
+
+## Session 2026-08-27 continued -- Great Fast Lelya (Night Office) Canon planned and built
+
+Josh directed "plan and then build out Lelya," picking up the larger of the two items surfaced while
+reading the real Maclean pp.236-263: Index II showed a distinct Night Office Canon for the Fast, and
+checking the actual build confirmed weekday Lelya did not vary during Sauma at all, unlike Sapra
+(which already has the Quta'a addendum and the Weeks-of-the-Mysteries psalm swap).
+
+**Planned before any code was written**, per standing practice and Josh's explicit instruction on
+this task specifically:
+- Confirmed directly, by reading the actual sequence data, that ordinary ferial Lelya has no Night
+  Anthem or Canon slot at all -- this is genuinely new Fast-only content, not a variant of something
+  already present.
+- Found that a rubric already existed in this corpus but had never been wired:
+  `esy-sext-night-anthem-canon-rubric` (Maclean p.224, inside the Fast section), which states the
+  structural order directly in its own text: "Then the Night Anthem with its Prayer and Canon, and
+  the proper Tishbukhta." This gives Night Anthem, then Canon, then that day's Tishbukhta -- which
+  the ordinary ferial sequence already ends with.
+- Confirmed Index II's actual Canon citations: Psalm 3:5-end and, in a separate table row, Psalm 134,
+  both labeled "N. Canon in the Fast (weeks of the mysteries)"; and Psalm 92:1-2, labeled "N. Canon
+  in the Fast (ordinary weeks)."
+- Identified, and disclosed rather than resolved by guessing, two genuine ambiguities before writing
+  any code: (1) Index II's two "weeks of the mysteries" citations don't state whether they're said
+  together, alternate by specific week, or differ some other way; (2) the rubric doesn't state where
+  the Night Anthem falls relative to Qaltha, Motwa, or Shubakha earlier in the sequence -- only its
+  direct adjacency to the Tishbukhta is stated in the source as transcribed.
+
+**Built, on that basis:**
+- Two new citation-only components: `esy-lelya-fast-canon-mysteries` (both Psalm 3:5-end and Psalm
+  134, presented together with the ambiguity about their relationship disclosed in the component's
+  own `meta.note` rather than picked arbitrarily) and `esy-lelya-fast-canon-ordinary` (Psalm 92:1-2).
+  Neither invents any farcing or additional prayer text -- both are citation-only, structurally
+  comparable to other disclosed Khudhra-style citation gaps already in this corpus.
+- Wired in `js/office-ui.js`: whenever `officeKey === 'lelya' && isGreatFast && dayName !== 'sunday'`,
+  the sequence now inserts `[esy-sext-night-anthem-canon-rubric, <canon component>]` immediately
+  before that day's Tishbukhta -- the one placement the source rubric states directly -- selecting
+  the Mysteries-week or ordinary-week Canon via the calendar engine's existing `weekInSeason` data,
+  already established for Sapra's own Weeks-of-the-Mysteries swap. No new date-computation logic was
+  needed.
+- `esy-sext-night-anthem-canon-rubric`'s own `meta.note` and `meta.wired` flag updated to reflect
+  that it is now wired, while continuing to disclose plainly that the Night Anthem's own proper
+  prayer text remains unbuilt -- only the Canon that follows it, for which real citations exist, was
+  added. This sub-gap was not filled and is not implied to be resolved.
+
+**Verified before shipping:**
+- Confirmed programmatically that the Rogation of the Ninevites date window and the Great Fast date
+  window never overlap across 2025-2035 (11 years checked, 0 overlaps), so this new Fast Lelya
+  addition and the earlier Rogation-week Lelya substitutions built in an earlier session never
+  collide with each other.
+- Simulated the real 2027 Fast season end-to-end for three cases: a Mysteries week (week 1), an
+  ordinary week (week 2), and a non-Fast date. Confirmed the correct Canon component is selected in
+  each Fast case, correctly inserted immediately before that day's Tishbukhta, and the non-Fast date
+  is left completely unchanged from its ordinary sequence -- confirming the change is additive and
+  doesn't alter behavior outside the Fast.
+- `js/office-ui.js` passes `node --check`; both `components/east-syriac.json` and
+  `components/traditions/east-syriac/rubrics.json` remain valid JSON.
+
+**Dashboard:** new GREEN row, `coe:fast-lelya-canon:wired`, records this work in full. `SEED_VERSION`
+bumped to `v169-2026-08-27-east-syriac-fast-lelya-canon-wired`.
+
+**Remaining from the same pp.236-263 document, still not started:** Prayers on Various Occasions
+(pp.249-258), which Josh has directed be filed under a Book of Needs category for the Church of the
+East -- this project's existing infrastructure for such a category, if any, has not yet been checked.
+Also still open: a systematic cross-reference of the Farcings of the Psalms (pp.236-248) against
+every existing "farcing not given in Maclean's main body" gap disclosure already in the corpus.
