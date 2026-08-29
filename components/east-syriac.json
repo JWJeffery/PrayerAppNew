@@ -2156,9 +2156,10 @@
     "title": "Shubakha (Psalm of Glory)",
     "meta": {
       "source": "Maclean 1894, p.97.",
-      "day": "wednesday"
+      "day": "wednesday",
+      "note": "CORRECTED 2026-08-29: previously built as Psalm 67, an OCR misreading of the source's 'Ps. lxxiii.' (73) as the corrupted, non-numeral 'lxxni.' See AUDIT_SOURCE_VERIFICATION.md, Ferial Night Service findings."
     },
-    "text": "<p class=\"rubric-text\">Wednesday. Psalm 67. Farced as on Monday.</p>",
+    "text": "<p class=\"rubric-text\">Wednesday. Psalm 73. Farced as on Monday.</p>",
     "psalmRef": "67"
   },
   {
