@@ -78,10 +78,10 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [ ] Saturday
 
 ### Motwa for Wednesday 'Before' (pp.130-140)
-- [ ] Not started
+- [x] **AUDITED, 2026-08-29 — FOUND MISSING ENTIRELY.** See Findings Log.
 
 ### Motwa for Wednesday 'After' (pp.140-150)
-- [ ] Not started
+- [x] **AUDITED, 2026-08-29 — FOUND MISSING ENTIRELY.** See Findings Log.
 
 ### Festival Night Service (pp.151-163)
 - [ ] Feasts of our Lord (pp.152-154)
@@ -484,4 +484,46 @@ Anthems earlier in this audit. Given the perfect consistency found across every 
 anthem checked so far in this entire audit -- evening and morning alike, First and Second week
 alike -- this is a reasonable confidence level to proceed on, but it is explicitly a lighter
 standard of check than elsewhere in this file, noted here so that distinction isn't lost.
+
+### Motwa for Wednesday 'Before' and 'After' (pp.130-150) -- audited 2026-08-29
+
+**MAJOR -- this entire section does not exist anywhere in the corpus.** Searched for every
+component with "motwa" in its id (six exist: `esy-lelya-motwa-close`, `esy-lelya-motwa-note`,
+`esy-lelya-motwa-prayer`, `esy-sunday-motwa-prayer`, `esy-sunday-motwa-rubric`,
+`esy-third-motwa-note` -- none of these are the Wednesday-specific content), then searched
+the full text of every component in the corpus for several distinctive phrases and names
+unique to this section (the "Mount Izla" monks narrative, "Metropolitan of the city of
+Amidh," "Saurishu" in the specific Kurdish-mountains-monks context). No matches found other
+than coincidental reuse of common liturgical phrases and saint names (e.g. "Mar Pithiun,"
+"Kings of the earth and all peoples") in already-verified Martyrs' Anthems elsewhere, which
+are separate content that happens to share phrasing.
+
+**Why this is more significant than most gaps found so far.** The ordinary ferial Night
+Service rubric (already audited, see `esy-lelya-motwa-note` finding above) correctly states
+that the Motwa is "proper to the Kashkul and not given in this translation" for ordinary days
+-- that gap is real but unavoidable, since Maclean genuinely doesn't print that content.
+Wednesday is the explicit exception: Maclean's own rubric (p.85, and repeated in the
+Introduction) states the Motwa varies by season "except on Wednesdays, when the Special
+Anthems are said," and then Maclean prints those Special Anthems in full -- two complete,
+lengthy Motwa texts (pp.130-140 and pp.140-150), each roughly 900+ lines including farced
+verses citing Mary, John the Baptist, the Apostles, Stephen, the "three teachers" (Diodorus,
+Theodore, Nestorius), Ephraim/Narsai/Abraham, the Passover/Resurrection/Ascension cycle, the
+Cross, George, and (in the 'Before' Motwa) an extensive roll of East Syrian monastic saints --
+Augin, Kudahwi, Babai, Andrew, Ulugh, John the Arab, Abraham of Kashkar, and, in a final
+section explicitly attributed to "Mar Shimun (Simon), Metropolitan of the city of Amidh," a
+further list of monks associated with the Kurdish mountains (Saurishu, Hurmizd, Joseph the
+Seer, Isaac, John the Egyptian, Akha, Guria, James). None of this is Kashkul-only or
+otherwise unavailable -- it is real, available, fully-printed primary source text that was
+simply never transcribed into this project.
+
+**Given the content's density of named persons** (exactly the category where this session
+already found two real, undisclosed alterations -- the Karuzutha's dropped six-name list and
+the Of-our-father-prayer's dropped Mar Awa/Mar N placeholder), this section deserves particular
+care when it is eventually built: names should be transcribed exactly as given, with any
+editorial decision to abbreviate or generalize disclosed explicitly rather than made silently.
+
+**Not yet remediated.** Per standing practice, this is a build decision and a large one --
+flagging it clearly here rather than starting the transcription mid-audit. Given the length
+and the number of named persons involved, this is likely to be one of the more labor-intensive
+single build items to come out of this whole audit.
 
