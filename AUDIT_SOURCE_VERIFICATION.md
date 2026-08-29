@@ -84,9 +84,11 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **AUDITED, 2026-08-29 — FOUND MISSING ENTIRELY.** See Findings Log.
 
 ### Festival Night Service (pp.151-163)
-- [ ] Feasts of our Lord (pp.152-154)
-- [ ] Sundays (pp.155-162)
-- [ ] Memorials (p.163)
+- [x] Feasts of our Lord (pp.152-154) — **AUDITED, 2026-08-29** — no dedicated components exist;
+      consistent with the Feast-farced-Psalter gap already identified 2026-08-27, not a new finding
+- [x] Sundays (pp.155-162) — **COMPLETE, 2026-08-29** — see Findings Log
+- [x] Memorials (p.163) — **AUDITED, 2026-08-29** — mostly genuinely Khudhra-sourced/unavailable;
+      see Findings Log for one cross-reference note
 
 ### Festival Morning Service (pp.164-172)
 - [ ] Not started
@@ -526,4 +528,42 @@ editorial decision to abbreviate or generalize disclosed explicitly rather than 
 flagging it clearly here rather than starting the transcription mid-audit. Given the length
 and the number of named persons involved, this is likely to be one of the more labor-intensive
 single build items to come out of this whole audit.
+
+### Festival Night Service (pp.151-163) -- audited 2026-08-29
+
+**Feasts of our Lord (pp.152-154):** no dedicated components exist for this sub-section
+(the farced full-Psalter recitation, Qali d'Shahra, Night Anthem, etc. proper to Feasts).
+This is consistent with, not a new instance of, the gap already identified during the
+2026-08-27 Farcings-of-the-Psalms cross-reference: Feasts of our Lord require the Night
+Office to recite Hulali 1-11 (Ps. i-lxxxi) *with* the individual-psalm farcings from that
+appendix, and that content has never been built. Recorded here for completeness of this
+audit's coverage, not re-investigated further since the earlier finding already covers it.
+
+**Sundays (pp.155-162): fully checked, all confirmed exact.** `esy-sunday-lelya-hulali-before-rubric`,
+`esy-prayer-eucharist-for-thy-nature` (correctly cross-referenced from the ferial Night Service
+page-95 prayer), `esy-sunday-qaltha-rubric`, `esy-sunday-lelya-psalms-before-ordinary`,
+`esy-sunday-motwa-prayer`, `esy-sunday-motwa-rubric`, all four Tishbukhta
+(`esy-sunday-lelya-tishbukhta-mar-babai-great`, `-mar-babai-nisibis`, `-mar-george`,
+`-mar-narsai` -- opening text and attribution confirmed exact for each),
+`esy-sunday-shubakha-rubric` (correctly preserves the "ingah, ahingah" nonsense syllables,
+consistent with the 2026-08-27 note that these are meaningless per Maclean's own admission),
+`esy-sunday-shubakha-prayer`, `esy-sunday-lelya-karuzutha`.
+
+**FLAG -- `esy-sunday-lelya-closing-verse`.** Missing the "And let all the people say Amen and
+Amen" rubric line that precedes this verse in the source. May be supplied by an adjacent
+component in the actual render sequence rather than this one -- needs checking against the
+sequence/renderer before treating as a real omission.
+
+**Memorials (p.163):** no dedicated components exist, but this is largely expected -- most of
+this sub-section's content is explicitly cited to the Khudhra in the source itself (genuinely
+unavailable, same category as most other Memorial/Feast proper content throughout the book),
+not omitted available content. One specific note: the source's Tishbukhta rubric for Memorials
+reads "as on Fridays in the ferial service" -- pointing directly at `esy-lelya-tishbukhta-friday`,
+which was checked and confirmed correct earlier in this audit (Ferial Night Service section).
+That content is technically already present and correct in the corpus; it simply isn't wired
+as the Memorial Night Service's Tishbukhta via any rubric component. Minor, worth noting for
+whoever eventually builds Memorial Night Service wiring.
+
+**Section status: Festival Night Service is now fully audited**, with the Feasts-of-our-Lord
+gap already tracked from 2026-08-27 and one new FLAG on the Sunday closing verse.
 
