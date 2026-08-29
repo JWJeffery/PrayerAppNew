@@ -109,10 +109,11 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [~] Saturday — not individually checked, see note in Findings Log
 
 ### Services of the Great Fast (pp.205-224)
-- [ ] On Sundays (pp.205-210)
-- [ ] Weeks of the Mysteries (pp.211-219)
-- [ ] Ordinary Weeks (pp.220-223)
-- [ ] Prayer at Noon (p.224)
+- [~] On Sundays (pp.205-210) — **PARTIAL, 2026-08-29** — see Findings Log
+- [ ] Weeks of the Mysteries (pp.211-219) — not yet audited this session (built 2026-08-27,
+      not re-verified against full prose text)
+- [ ] Ordinary Weeks (pp.220-223) — not yet audited
+- [ ] Prayer at Noon (p.224) — not yet audited
 
 ### Other Fast-adjacent material
 - [ ] An Occasional Karuzutha (p.225)
@@ -662,4 +663,55 @@ for verification that didn't happen.
 **Section status:** Compline proper is fully audited and clean. The Anthems/Madrashi
 sub-section is partially audited (Sunday only); Monday through Saturday remain to be checked
 in a future pass before this sub-section can be marked complete.
+
+### Services of the Great Fast, Sundays sub-section (pp.205-210) -- audited 2026-08-29, PARTIAL
+
+**MAJOR -- the Sunday-in-Fast Night Service Canon and both Fast-specific Morning Service
+opening prayers do not exist anywhere in the corpus.** Searched the full text of every
+component for three distinctive phrases: "In the middle of the night I have arisen" (the
+Canon said five times before the Priest's prayer, unique to the five Sundays of the Fast),
+"Grant us, O our Lord and our God, although we are not worthy" (first Fast-Sunday Morning
+prayer), and "bear the yoke of the holy fast" (from the same prayer). No matches anywhere.
+This is a real, specific gap -- smaller in scope than the Wednesday Motwa finding, but the
+same category: real, available, fully-printed primary source text (not Kashkul-sourced) that
+was never transcribed.
+
+Much of the rest of the Sunday-in-Fast Morning Service legitimately cross-references the
+ordinary Festival Morning Service already audited above (Ps.100, the "To thee, O my Lord, all
+creatures" prayer, the farced Ps.91, etc.), and those shared components are already confirmed
+correct -- so this is not a claim that the whole Sunday-in-Fast service is missing, only the
+Canon and the two Fast-specific opening prayers that have no equivalent elsewhere in the book.
+
+**Confirms the systematic nature of the earlier "prayer-glorious" finding.**
+`esy-fast-sapra-prayer-glorious` (weekday Fast Morning Service) has the identical altered
+wording already flagged in `esy-sunday-sapra-prayer-glorious` (Festival Morning Service) --
+both should be verbatim reuses of the ferial page-104 prayer and both instead read "...shall
+not be ashamed nor confounded, but shall obtain their requests from thy rich and overflowing
+treasury..." instead of the source's actual "...and call on thy holy Name, and beseech thee,
+at all seasons and times, shall not be ashamed, O Lord of all, etc." This is now confirmed in
+two separate places, which changes it from an isolated slip to a real pattern -- worth
+checking for a third occurrence if this prayer is cross-referenced anywhere else in the book
+(it may well be, since Maclean cross-references it by page number rather than repeating it
+in full each time).
+
+**Also checked and confirmed exact (weekday Fast Morning Service, not Sunday-specific but
+found while investigating this section):** `esy-fast-sapra-prayer-vouchsafe` (the "monks who
+pleased thee in their fasts" opening prayer), `esy-fast-sapra-prayer-creator`,
+`esy-fast-sapra-prayer-true-light`.
+
+**Status: this sub-section is not complete.** The Canon and two Morning prayers need building
+(a Josh decision, per standing practice); the remainder of the Sundays-in-Fast material that
+legitimately cross-references already-audited content is fine as is. The bulk of
+`esy-fast-sapra-*` (which appears to be the weekday, not Sunday, Fast Morning Service) has not
+been systematically checked against source in this pass beyond the four components above --
+flagged as remaining work, not claimed complete.
+
+**Given the size of what remains in the Great Fast section as a whole** (Weeks of the
+Mysteries, Ordinary Weeks, and Prayer at Noon each have their own Evening/Night/Morning
+services on top of this Sundays material), and the length of this audit session already,
+these three sub-sections are recorded as not yet audited this session rather than rushed.
+Weeks of the Mysteries was built with real care on 2026-08-27 (verified against Index I/II at
+that time) but has not been re-checked against the full prose text of pp.211-219 the way
+every other section in this file has been -- that distinction matters and is preserved in the
+checklist above.
 
