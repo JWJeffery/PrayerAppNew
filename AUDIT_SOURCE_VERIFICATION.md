@@ -50,13 +50,13 @@ updated the moment a section's audit is complete, in the same commit as the find
       `wathar` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 
 ### Ferial Evening Service, Week 'After' (pp.55-67)
-- [ ] Monday (p.55)
+- [x] Monday (p.55) — **COMPLETE, 2026-08-29** — see Findings Log
 - [x] Second Tuesday (pp.57-59) — **COMPLETE, 2026-08-29** — correctly wired via
       `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
-- [ ] Second Wednesday (pp.60-62)
+- [x] Second Wednesday (pp.60-62) — **COMPLETE, 2026-08-29** — see Findings Log
 - [x] Second Thursday (pp.62-64) — **COMPLETE, 2026-08-29** — correctly wired via
       `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
-- [ ] Last Friday (pp.64-66)
+- [x] Last Friday (pp.64-66) — **COMPLETE, 2026-08-29** — see Findings Log
 - [x] Second Saturday (pp.66-67) — **COMPLETE, 2026-08-29** — correctly wired via
       `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 
@@ -286,4 +286,36 @@ of this audit: before flagging any content-selection pattern as wrong, check it 
 book's own structural rubrics (the "before"/"after" rule, the shawu'a divisions, the Kalendar
 appendix) as well as against the literal printed text, since Maclean's structure is not always
 what a page-by-page comparison alone would suggest.
+
+### Ferial Evening Service, Week 'After': Monday, Second Wednesday, Last Friday --
+audited 2026-08-29
+
+These three complete the Ferial Evening Service section (Tuesday/Thursday/Saturday of both
+weeks already closed above; First Monday/Wednesday/Friday already closed).
+
+**Week 'After' Monday (p.55):** six day-specific components
+(`esy-monday-wathar-first-shuraya` through `esy-monday-wathar-letter-psalm`) all confirmed
+exact against source, including the full First and Second Anthem texts. Martyrs' Anthem
+correctly reuses `esy-monday-martyrs-anthem-evening` (source gives no separate one for this
+day, per its own "All as on First Monday, except the following" opening).
+
+**Second Wednesday (pp.60-62):** all citations and anthem texts confirmed exact (Ps.72:1-5,
+Ps.101:1-10, Exodus 15:20-21, full First/Second Anthem and Evening Anthem text).
+**Unverified recollection, not a confirmed finding:** I recall the source's Evening Anthem
+having a fifth closing farcing unit ("And let all the people say Amen and Amen. Hear our
+request, O Hope of our life...") not present in `esy-wednesday-wathar-evening-anthem`, but
+this is from memory of a long document rather than a fresh re-read at the time of checking,
+so it is flagged for someone to verify against the actual page rather than asserted as a gap.
+
+**Last Friday (pp.64-66):** all citations and anthem texts confirmed exact (Ps.145:1-7,
+Ps.145:18-end, Ps.31:21-24, full First/Second/Royal Anthem text).
+
+**Section status: Ferial Evening Service (pp.1-67) is now fully audited.** Summary across all
+of it: the corpus text is overwhelmingly accurate to source. Real findings so far are the two
+MAJOR name/placeholder omissions in shared components (Karuzutha, Of-our-father-prayer,
+First Monday), a small number of FLAGs needing decisions (untranscribed alternate
+Prayer-for-help texts; a possibly-missing closing formula on Monday's Letter Psalm; the
+just-noted unverified Second Wednesday recollection), and several COSMETIC paragraph-merge
+notes. One large false alarm (the Tuesday/Thursday/Saturday qdham/wathar architecture) was
+raised and fully corrected within the audit itself.
 
