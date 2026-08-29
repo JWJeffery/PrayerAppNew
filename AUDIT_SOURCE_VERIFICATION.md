@@ -64,9 +64,10 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Ferial Night Service (pp.85-102)
-- [ ] Not started (Hulali 1-21 prayer texts already checked once during the 2026-08-27
-      Hulala XVII-XXI fix, against Index I only, not against the full prose text here --
-      still needs a full pass)
+- [~] **PARTIAL, 2026-08-29** — opening prayers and all 21 Hulali prayer texts fully checked;
+      Monday's day-specific Qaltha/Motwa/Shubakha/Tishbukhta/Karuzutha checked; Tuesday-Saturday's
+      day-specific texts (Qaltha, Shubakha, Tishbukhta) still need individual verification.
+      See Findings Log.
 
 ### Ferial Morning Service (pp.103-108)
 - [ ] Not started
@@ -365,4 +366,67 @@ in the built text). Recorded so it isn't mistaken for a discrepancy later.
 the book's actual season-selection rules -- this needs renderer-code review, not just text
 comparison, and should be picked up as a distinct follow-up task rather than blocking the rest
 of this linear audit.
+
+### Ferial Night Service (pp.85-102) -- audited 2026-08-29, PARTIAL
+
+**Opening prayers** (`esy-lelya-opening-formula`, `esy-lelya-arise-collect`,
+`esy-lelya-strengthen-prayer`, `esy-lelya-secret-strength-prayer`): all confirmed exact.
+
+**All 21 Hulali prayer texts checked in full** (`esy-hulala-1` through `esy-hulala-21`,
+stored as `sections` arrays with `prayer` and `psalms`/`scriptureRefs` fields rather than in
+the `text` field). Psalm groupings, citations, and every primary prayer text confirmed exact
+against source. The 2026-08-27 section-boundary corrections to Hulali XVII-XXI (documented in
+each component's own `meta.note`) remain intact and correct on this fresh check.
+
+**MAJOR, SYSTEMATIC -- every "Or this" alternate prayer in the Hulali section is missing.**
+Maclean gives a second, alternate prayer text for several psalm-groups, introduced "Or this."
+Four such alternates are confirmed present in the source and confirmed absent from the built
+corpus:
+
+| Hulala | Psalms | Alternate prayer given in source, missing from corpus |
+|---|---|---|
+| II | 15-17 | "Or this. Grant us, O our Lord and our God, with a pure heart and good and beautiful deeds, to dwell in thy holy tabernacle, and to walk (therein)..." |
+| X | 73-74 | "Or this. Thee, O our good God and King, who art full of mercies, the power of whose majesty reigneth over all, whose mercies and compassion overflow, are we bound, etc." |
+| XVI | 107-108 | "Or this. May thy lovingkindness, O my Lord, hear the words with which we cry in our afflictions; and do thou rescue us from persecutors, and protect us under thy wings from the Evil one and his hosts, at all seasons and times, Lord of all, etc." |
+| XVI | 116-118 | "Or this. Have mercy on us, O our Lord and our God, and hear our prayers and receive our request; turn not thy face from the sound of our beseeching, O thou who art good, and on whom rests our confident trust at all seasons and times, Lord of all, etc." |
+
+This is 4 for 4 -- every known instance checked is missing its alternate. Not yet checked
+against the source page by page specifically hunting for every "Or this" occurrence (this list
+is drawn from what was noted during earlier close readings of this section this session), so
+there may be more than these four. Given the Hulali prayers are usually said as a fixed choice
+(not necessarily alternated week to week), the liturgical impact of the missing alternates may
+be minor, but the corpus is not currently capturing text Maclean actually gives -- a real gap,
+not a phrasing issue. Needs a decision on whether to add these as alternate text within each
+`section`, and a proper page-by-page sweep for any further missed alternates before considering
+this section closed.
+
+**MAJOR -- `esy-lelya-motwa-note` drops real structural information.** The component reads:
+"The Motwa, an anthem which varies according to the season, is proper to the Kashkul and not
+given in this translation." The source's actual rubric (p.96) is far more specific and is
+liturgically load-bearing: "The Motwa... varies according to the season, except on Wednesdays,
+when the Special Anthems are said. The Motwa... begins on Mondays with the Sunday evening
+Royal Anthem; on Tuesdays with the Sunday Night Anthem; on Thursdays with the Sunday Morning
+Anthem; on Saturdays with the Sunday Anthem of the Mysteries, as used at the Liturgy." The
+built note correctly conveys that the Motwa's proper text is unavailable (Kashkul-sourced,
+consistent with how the rest of the project handles this gap), but silently drops the
+day-by-day structural rule for what the Motwa's *opening* is keyed to, which is real,
+checkable information Maclean does give in this book. Needs restoring, not just re-wording.
+
+**Confirmed exact, Monday's day-specific texts:** `esy-lelya-motwa-prayer`,
+`esy-lelya-motwa-close` (full farced ending text), `esy-lelya-shubakha-prayer`,
+`esy-lelya-monday-shubakha` (Psalm 13, correctly completing the source's "(to the end)"
+ellipsis with the Psalter's actual text), `esy-lelya-tishbukhta-monday` (opening confirmed
+against Mar Abraham's Monday Tishbukhta), `esy-lelya-karozutha` (opening confirmed).
+
+**FLAG -- `esy-lelya-monday-qaltha`.** The anthem text itself ("The habitation that is apart
+amidst the woods...") matches source exactly, but the component doesn't carry the psalm
+citation ("Ps. xv., xvi., xvii., under one Gloria") or the rubric ("Each side says two clauses
+at a time") that accompany it in the source. May be handled by a separate rubric component not
+checked here, or may be a real omission -- needs checking against how the renderer assembles
+the Qaltha before concluding either way.
+
+**Not yet checked:** Tuesday through Saturday's day-specific Qaltha, Shubakha, and Tishbukhta
+texts (five more days x three components each). These follow the same structural pattern as
+Monday's, already confirmed correct, but have not been individually verified against source
+word for word. This section is marked PARTIAL rather than complete for that reason.
 
