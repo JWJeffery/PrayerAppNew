@@ -61,7 +61,7 @@ updated the moment a section's audit is complete, in the same commit as the find
       `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 
 ### Festival Evening Service -- Sundays, Feasts of our Lord, Memorials (pp.68-84)
-- [ ] Not started
+- [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Ferial Night Service (pp.85-102)
 - [ ] Not started (Hulali 1-21 prayer texts already checked once during the 2026-08-27
@@ -318,4 +318,51 @@ Prayer-for-help texts; a possibly-missing closing formula on Monday's Letter Psa
 just-noted unverified Second Wednesday recollection), and several COSMETIC paragraph-merge
 notes. One large false alarm (the Tuesday/Thursday/Saturday qdham/wathar architecture) was
 raised and fully corrected within the audit itself.
+
+### Festival Evening Service -- Sundays, Feasts of our Lord, Memorials (pp.68-84) --
+audited 2026-08-29
+
+This section has a different structure from the Ferial Evening Service: much of its content
+is proper to specific seasons/festivals and drawn from the Khudhra (not printed in this book),
+represented in the corpus by dynamic placeholder markers (`__MARMITHA_GROUP__`,
+`__PRAYER_BEFORE_ROYAL_ANTHEM__`, `__ROYAL_ANTHEM_ENDING__`) rather than static text. Those
+placeholders were not checked here -- they require verifying renderer logic against the
+book's season-selection rules, not a text comparison, and are noted as a follow-up.
+
+All statically-printed content in this section -- everything Maclean actually gives in full in
+this book, as opposed to citing to the Khudhra -- was checked and confirmed exact:
+
+- `esy-festival-evening-prayer-sundays`, `esy-festival-censer-prayer` (including the full
+  Sundays/Festivals/Memorials three-way table), `esy-festival-lakhumara-note`,
+  `esy-festival-first-shuraya-note` (all seven Sunday psalm citations exact),
+  `esy-festival-karuzutha-additions`, `esy-festival-royal-anthem-rubric`.
+- `esy-festival-prayer-after-royal-anthem` -- the full nine-season/occasion prayer set (Advent
+  through St. John Baptist), all confirmed exact.
+- `esy-festival-marmitha-table` / `-advent-epiphany` / `-other-sundays` -- citations exact.
+- `esy-festival-prayer-before-royal-anthem`, `esy-festival-royal-anthem-mary-refrain`.
+- `esy-festival-first-anthem` and `esy-festival-second-anthem` -- the full memorial-of-the-
+  departed anthem sets (For Sons of the Church / For Laymen / For men / For women / For
+  Children), confirmed exact word for word, a substantial and complex piece of text.
+- All six `esy-festival-royal-anthem-ending-*` seasonal variants (Advent-Epiphany, Epiphany
+  shawu'a, Apostles, Summer-to-Cross, Cross-to-Hallowing, Dedication) -- confirmed exact,
+  including correct per-season attachment/omission of the Mary refrain and the seasonal notes
+  ("not said from Advent to St. Mary's Day," "not said from the Great Fast to Pentecost").
+- `esy-festival-suyakhi-prayer`, `esy-festival-suba-a-compline`.
+
+**Two positive confirmations, worth recording precisely because of the earlier First Monday
+finding.** Both `esy-festival-prayer-after-royal-anthem` ("Mar N the illustrious") and
+`esy-festival-suba-a-compline` ("our holy fathers NN") correctly preserve the source's own
+customization placeholders. This means the placeholder-dropping found in First Monday's
+`esy-karozutha` and `esy-of-our-father-prayer` is a localized occurrence in those specific
+components, not a corpus-wide pattern -- useful to know before deciding how to remediate.
+
+**Also noted:** the app's text is, in a couple of spots, more accurate than my own OCR source
+of this session (a spurious mid-sentence break in "to the companies of them that fulfil thy
+will" in the Second Anthem, which is an OCR line-wrap artifact, correctly read as one clause
+in the built text). Recorded so it isn't mistaken for a discrepancy later.
+
+**Not yet done:** verifying the dynamic placeholder logic (`__MARMITHA_GROUP__` etc.) against
+the book's actual season-selection rules -- this needs renderer-code review, not just text
+comparison, and should be picked up as a distinct follow-up task rather than blocking the rest
+of this linear audit.
 
