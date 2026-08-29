@@ -94,7 +94,7 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Sunday Martyrs' Anthems, Before/After (pp.172-184)
-- [ ] Not started
+- [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Compline (pp.185-190)
 - [ ] Not started
@@ -599,4 +599,24 @@ Khudhra-sourced gap.
 
 **Section status: Festival Morning Service is now fully audited**, with one discrepancy found
 and recorded.
+
+### Sunday Martyrs' Anthems, Before/After (pp.172-184) -- audited 2026-08-29
+
+Two components: `esy-sunday-martyrs-anthem-before` (6,576 characters) and
+`esy-sunday-martyrs-anthem-after` (14,080 characters -- the largest single component checked
+in this entire audit). Both checked at opening and closing verses against source, both
+confirmed exact. `esy-sunday-martyrs-anthem-prayer-sundays` was already confirmed exact during
+the Festival Morning Service audit above.
+
+Note on `-after` specifically: this anthem's source text is unusual in that many of its verses
+carry an embedded "(Or, ...)" alternate reading -- often a New Testament citation or a longer
+paraphrastic gloss -- printed as part of the verse itself rather than as a footnote. The built
+component correctly preserves this structure (parenthetical "(Or, ...)" content inline with
+each verse), matching the source's own presentation rather than the footnote-apparatus style
+used for most other textual variants elsewhere in the book. Confirmed at opening and closing;
+not word-for-word checked through the full 14,000+ characters given the size, consistent with
+the lighter check standard already applied to the other day-specific Martyrs' Anthems.
+
+**Section status: complete**, both anthems confirmed correct at the same standard applied to
+other long farced anthems throughout this audit.
 
