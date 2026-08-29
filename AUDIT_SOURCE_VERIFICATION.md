@@ -110,10 +110,9 @@ updated the moment a section's audit is complete, in the same commit as the find
 
 ### Services of the Great Fast (pp.205-224)
 - [~] On Sundays (pp.205-210) — **PARTIAL, 2026-08-29** — see Findings Log
-- [ ] Weeks of the Mysteries (pp.211-219) — not yet audited this session (built 2026-08-27,
-      not re-verified against full prose text)
-- [ ] Ordinary Weeks (pp.220-223) — not yet audited
-- [ ] Prayer at Noon (p.224) — not yet audited
+- [x] Weeks of the Mysteries (pp.211-219) — **PARTIAL, 2026-08-29** — see Findings Log
+- [x] Ordinary Weeks (pp.220-223) — **PARTIAL, 2026-08-29** — see Findings Log
+- [x] Prayer at Noon / Sext (p.224) — **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Other Fast-adjacent material
 - [ ] An Occasional Karuzutha (p.225)
@@ -714,4 +713,62 @@ Weeks of the Mysteries was built with real care on 2026-08-27 (verified against 
 that time) but has not been re-checked against the full prose text of pp.211-219 the way
 every other section in this file has been -- that distinction matters and is preserved in the
 checklist above.
+
+### Weeks of the Mysteries, Ordinary Weeks, and Prayer at Noon (pp.211-224) --
+audited 2026-08-29
+
+**Correction to my own search, recorded precisely because getting this wrong the first time
+matters.** Searching for "Glorious art thou, O our Lord, and it is meet that we should lift
+up glory to thee" (the opening declaration of the Weeks-of-the-Mysteries Evening Service,
+p.211) initially appeared to return nothing, leading to a draft conclusion that the whole
+Evening Service was unbuilt. On closer search this text is in fact present in full, word for
+word, as `esy-sext-glorious-art-thou` -- filed there because Prayer at Noon's own rubric
+(p.224) cross-references back to page 211 for this exact text ("Glorious art thou, etc., as
+at Evening Service of the Fast, page 211"), and the corpus reuses the same component for both
+call sites rather than duplicating it under an Evening-Service-specific id. This is
+reasonable architecture, not a fidelity problem -- but my first pass at this search
+undercounted what exists, and the correction is recorded here rather than left silently
+folded into a clean final summary.
+
+**What is genuinely confirmed missing, after that correction:**
+- **The Weeks-of-the-Mysteries Night Service Canon** ("I laid me down and slept, and rose up
+  again. For the Lord sustained me...", p.213-214) -- searched for directly, not found
+  anywhere in the corpus.
+- **The Tishbukhta by Mar Abraham of Izla** ("Glory be to thee, O God... By day and by
+  night...", p.215) -- searched for directly, not found anywhere.
+- **The Ordinary-Weeks Night Service Canon** (Ps.cxix.57-65 and Ps.xcii.1-2 farced, "In the
+  portion of the Lord I have resolved to keep thy statutes...", "It is a good thing to confess
+  the Lord...", p.220) -- searched for directly, not found. A separate match on "Glory to thee,
+  O my Lord, who didst create us" turned out to be Compline's already-verified Mar Shimun
+  Tishbukhta (coincidental phrase overlap, not this content).
+- **The Ordinary-Weeks Tishbukhta by Mar Shimun Bar Saba'i (or, as some say, by Mar Ephraim)**
+  ("Glory to thee, O my Lord, who didst create us. Though not moved thereto by any from the
+  beginning...", p.221-222) -- not found under any Fast-specific naming.
+
+These four are all real, available, fully-printed primary source text (not Kashkul-sourced),
+in the same category as the Wednesday Motwa and Sunday-in-Fast Canon findings above -- smaller
+in scope than either of those, but genuine gaps, not citations to unavailable material.
+
+**Confirmed present and accurate, correcting the overstatement above:** the shared "Glorious
+art thou" declaration (`esy-sext-glorious-art-thou`), the Fast Lelya Canon for both Mysteries
+and Ordinary weeks (`esy-lelya-fast-canon-mysteries`, `esy-lelya-fast-canon-ordinary`, built
+and verified against Index II on 2026-08-27), the Sapra mysteries-psalm-block wiring, all
+`esy-fast-sapra-*` Morning Service prayers and rubrics (checked individually above, all
+correct), the Quta'a extra-Hulala components (`esy-quta-a-*`, all four checked and correct),
+and all six `esy-sext-*` Prayer-at-Noon components (checked individually, all correct,
+including the full "Glorious art thou..." text and accurate cross-reference rubrics for the
+Karuzutha, Night Anthem, and closing prayers).
+
+**Also noted in passing:** the rubrics file (`rubrics.json`) carries a pre-existing note,
+not from this session, recording that a prior cleanup already removed fabricated Third/
+Sixth/Ninth Hour "minor hours" content that had no basis in Maclean at all (Maclean documents
+these only as "relics of Terce and Sext in the Fast," not a routine daily set of texts). That
+decision is already made and documented; nothing to re-open here.
+
+**Section status: Great Fast (pp.205-224) is now audited to the extent time in this session
+allowed.** Real, confirmed gaps: Sunday-in-Fast Canon and two Morning prayers (above), the
+Mysteries and Ordinary-Weeks Night Service Canons, and both named Tishbukhta (Mar Abraham of
+Izla; Mar Shimun Bar Saba'i/Mar Ephraim). All are build items for later, not fidelity problems
+in what does exist -- everything checked against source in this whole Great Fast section
+matched, apart from the two `prayer-glorious` divergences already recorded.
 
