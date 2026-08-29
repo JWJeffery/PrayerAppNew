@@ -4514,6 +4514,100 @@ async function renderEastSyriac() {
         }
     }
 
+    // Sunday Night Service Tishbukhta seasonal selection, and the
+    // Sunday-in-Fast Canon (pp.205-206) -- content built 2026-08-29,
+    // wired here as a separate step per Josh's direction.
+    //
+    // BUG FOUND AND FIXED HERE: the three Motwa-following Tishbukhta
+    // (esy-sunday-lelya-tishbukhta-mar-babai-great, -mar-babai-nisibis,
+    // -mar-george) previously had NO seasonal-selection logic anywhere in
+    // this renderer and all three rendered unconditionally, every Sunday
+    // of the year, despite Maclean's own headings explicitly restricting
+    // each: Mar Babai the Great "on Sundays from Advent to Epiphany"
+    // (season 'subara'), Mar George "for the Hallowing of the Church"
+    // (season 'qudash-idta'), and Mar Babai of Nisibis "for all Sundays
+    // of the year" (the year-round default, used whenever neither more
+    // specific season applies). Fixed using the exact same season-check
+    // pattern already working above for the Ps.86/91 Advent/Hallowing
+    // substitution -- no new date logic needed, just applying the
+    // existing pattern to content it had never been applied to.
+    //
+    // On the five Sundays of the Great Fast specifically, Maclean directs
+    // that the Tishbukhta by Mar Saurishu Catholicos is said after the
+    // Motwa instead -- so isGreatFast takes priority over the ordinary
+    // three-way seasonal selection above.
+    //
+    // esy-sunday-lelya-tishbukhta-mar-narsai is deliberately left
+    // untouched and unconditional. Its position in the base sequence,
+    // separated from the other three by the closing verse and Shubakha
+    // rubric/prayer, suggests it is structurally distinct -- tied to the
+    // Night Anthem/Qali d'Shahra portion of the office rather than a
+    // fourth competing seasonal alternative to the Motwa's three. This is
+    // a judgment call, not a confirmed fact from source: Mar Narsai's own
+    // heading/restriction (if it has one) was not captured during the
+    // 2026-08-29 audit and needs re-verification against Maclean directly
+    // before this can be considered settled either way.
+    //
+    // Palm Sunday is excluded from all of the Fast-specific substitutions
+    // below (Canon, Mar Saurishu's Tishbukhta): Maclean gives Palm Sunday
+    // its own distinct opening (Ps.96-98, already handled above) rather
+    // than grouping it with "the five Sundays of the Fast" the Canon
+    // rubric names, and nothing in this session's source review found
+    // Palm-Sunday-specific text for either the Canon or Mar Saurishu's
+    // Tishbukhta -- excluding it here is a disclosed assumption based on
+    // its already-established special treatment elsewhere in this same
+    // function, not a confirmed source citation.
+    if (officeKey === 'lelya' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const dayClass2 = EastSyriacCalendar.getDayClass(currentDate);
+        const isFastSundayProper = isGreatFast && !dayClass2.isPalmSunday;
+        const season2 = dayClass2.season;
+        const motwaTishbukhtaIds = [
+            'esy-sunday-lelya-tishbukhta-mar-babai-great',
+            'esy-sunday-lelya-tishbukhta-mar-babai-nisibis',
+            'esy-sunday-lelya-tishbukhta-mar-george'
+        ];
+        let selectedTishbukhtaId;
+        if (isFastSundayProper) {
+            selectedTishbukhtaId = 'esy-fast-sunday-lelya-tishbukhta-mar-saurishu';
+        } else if (season2 === 'subara') {
+            selectedTishbukhtaId = 'esy-sunday-lelya-tishbukhta-mar-babai-great';
+        } else if (season2 === 'qudash-idta') {
+            selectedTishbukhtaId = 'esy-sunday-lelya-tishbukhta-mar-george';
+        } else {
+            selectedTishbukhtaId = 'esy-sunday-lelya-tishbukhta-mar-babai-nisibis';
+        }
+        let insertedMotwaTishbukhta = false;
+        sequence = sequence.flatMap(id => {
+            if (motwaTishbukhtaIds.includes(id)) {
+                if (insertedMotwaTishbukhta) return [];
+                insertedMotwaTishbukhta = true;
+                return [selectedTishbukhtaId];
+            }
+            return [id];
+        });
+
+        if (isFastSundayProper) {
+            sequence = sequence.flatMap(id => id === 'esy-sunday-lelya-hulali-before-rubric'
+                ? ['esy-fast-sunday-lelya-canon', 'esy-fast-sunday-lelya-canon-prayer', id]
+                : [id]);
+        }
+    }
+
+    // Sunday-in-Fast Morning Service opening prayers (p.207), replacing
+    // the two ordinary Sunday opening prayers on the five Sundays of the
+    // Fast. Same Palm Sunday exclusion and same disclosed-assumption
+    // reasoning as the Lelya block above.
+    if (officeKey === 'sapra' && dayName === 'sunday' && isGreatFast && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        const isFastSundayProperSapra = !EastSyriacCalendar.getDayClass(currentDate).isPalmSunday;
+        if (isFastSundayProperSapra) {
+            sequence = sequence.map(id => {
+                if (id === 'esy-sunday-sapra-prayer-make-us-worthy') return 'esy-fast-sunday-sapra-prayer-grant-us';
+                if (id === 'esy-sunday-sapra-prayer-enlighten-us') return 'esy-fast-sunday-sapra-prayer-receive';
+                return id;
+            });
+        }
+    }
+
     // Sunday Ramsha (the Festival Evening Service, including the Royal
     // Anthem) resolves two things here. Both use the calendar engine's own
     // computed data rather than anything invented for this render step.
