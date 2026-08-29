@@ -41,19 +41,24 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [~] First Tuesday (pp.23-29) — **BLOCKED, 2026-08-29** — see Findings Log. Six of seven
       day-specific components do not match the source; root cause needs the 'week after'
       text (pp.57-59) or the full-text upload to diagnose before this can be closed.
-- [ ] First Wednesday (pp.29-35)
-- [ ] First Thursday (pp.35-41)
+- [x] First Wednesday (pp.29-35) — **COMPLETE, 2026-08-29** — see Findings Log
+- [x] First Thursday (pp.35-41) — **COMPLETE, 2026-08-29** — correctly wired via
+      `wathar` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 - [ ] First Friday (pp.41-43)
-- [ ] Middle Friday (pp.48-49)
-- [ ] First Saturday (pp.49-54)
+- [ ] Middle Friday (pp.48-49) -- not yet audited
+- [x] First Saturday (pp.49-54) — **COMPLETE, 2026-08-29** — correctly wired via
+      `wathar` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 
 ### Ferial Evening Service, Week 'After' (pp.55-67)
 - [ ] Monday (p.55)
-- [ ] Second Tuesday (pp.57-59)
+- [x] Second Tuesday (pp.57-59) — **COMPLETE, 2026-08-29** — correctly wired via
+      `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 - [ ] Second Wednesday (pp.60-62)
-- [ ] Second Thursday (pp.62-64)
+- [x] Second Thursday (pp.62-64) — **COMPLETE, 2026-08-29** — correctly wired via
+      `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 - [ ] Last Friday (pp.64-66)
-- [ ] Second Saturday (pp.66-67)
+- [x] Second Saturday (pp.66-67) — **COMPLETE, 2026-08-29** — correctly wired via
+      `qdham` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
 
 ### Festival Evening Service -- Sundays, Feasts of our Lord, Memorials (pp.68-84)
 - [ ] Not started
@@ -200,62 +205,85 @@ Psalter). The OCR text used for this audit's comparison read "I wailed patiently
 scanning artifact, not a real source variant. The app is right; the OCR is wrong. Recorded
 here so this isn't mistaken for an unresolved discrepancy in a future pass.
 
-### First Tuesday Ferial Evening Service (pp.23-29) -- audited 2026-08-29, DIAGNOSED
+### First Wednesday Ferial Evening Service (pp.29-35) -- audited 2026-08-29
 
-Sequence `tuesday-ramsha-qdham-sequence` reuses 23 components already verified from First
-Monday (opening formula, Lakhumara, Karuzutha, Trisagion, laying-on-of-hands, all the closing
-prayers, Nicene Creed) -- not re-checked here, already covered. Nine components are
-Tuesday-specific. Two (`esy-tuesday-first-marmitha`, `esy-tuesday-second-marmitha`) confirmed
-exact against source ("Ps. xxv., xxvi., xxvii." = Psalms 25/26/27; "Ps. xxviii., xxix., xxx."
-= Psalms 28/29/30). One (`esy-tuesday-martyrs-anthem-evening`) confirmed exact, full text,
-against source pp.25-29.
+Sequence `wednesday-ramsha-qdham-sequence` reuses 23 components already verified. Ten
+Wednesday-specific components checked. Nine confirmed exact against source, including the
+full 27-verse farced Martyrs' Anthem word for word (pp.32-34) -- correctly follows the primary
+manuscript tradition ("St. Cyriac") rather than the Roman Catholic edition's variant reading
+("Hurmizd"), consistent with how the rest of the corpus handles footnoted R.C. variants
+elsewhere.
 
-**MAJOR, SYSTEMATIC -- six of the remaining seven Tuesday-specific components do not match
-what Maclean's actual "FIRST TUESDAY" page (p.23-25) gives.** Not wording variants -- entirely
-different psalm citations and entirely different anthem texts under different tune names:
+**COSMETIC -- `esy-wednesday-second-anthem`.** Source has two separate farcing units, each
+with its own introductory clause: "And the land was filled with it. [verse]" then, separately,
+"And deliver the children from death. O Mary, etc., as above." The built component runs the
+second clause onto the end of the first paragraph instead of starting the second paragraph
+with it -- all words present, but "And deliver the children from death" ends up trailing the
+first verse instead of introducing the repeat. Same class of issue as the Monday Martyrs'
+Anthem paragraph-merge (see above) -- content intact, structure/attribution of clause to verse
+slightly off. No content loss.
 
-| Component | Source (First Tuesday, p.23-25) | Built |
-|---|---|---|
-| `esy-tuesday-qdham-first-shuraya` | "Ps. xvii. 1-6" (Psalm 17:1-6) | "Psalm 67:1-6" |
-| `esy-tuesday-qdham-first-anthem` | tune "Light and the Son of light" / "Hear, O God, and have mercy upon me..." | tune "its own tune" / "Show the light of thy countenance, and we shall be saved..." |
-| `esy-tuesday-qdham-second-shuraya` | "Ps. xxi. 1-5" (Psalm 21:1-5) | "Psalm 40:16-20" |
-| `esy-tuesday-qdham-second-anthem` | tune "Now is the night" / "Hear my prayer, O Lord..." | tune "O Compassionate one, whose (door) is open" / "Rescue me, and deliver me..." |
-| `esy-tuesday-qdham-evening-anthem` | "Our help is in the Name of the Lord..." | tune "God the Word" / "Who can express the noble acts of the Lord?..." |
-| `esy-tuesday-qdham-letter-psalm` | "cxix. 17-33" (Psalm 119:17-33) | "Psalm 119:113-129" |
+**Confirmed exact, no notes needed:** `esy-wednesday-first-marmitha`,
+`esy-wednesday-second-marmitha`, `esy-wednesday-first-shuraya`, `esy-wednesday-first-anthem`
+(full text), `esy-wednesday-second-shuraya`, `esy-wednesday-evening-anthem` (full text),
+`esy-wednesday-prayer-instead-of-pity-us`, `esy-wednesday-shuraya-instead-of-letter-psalm`,
+`esy-wednesday-martyrs-anthem-evening` (full text, 27 verses).
 
-**ROOT CAUSE CONFIRMED, 2026-08-29: this is a week-swap mislabeling, not fabrication.** The
-full text Josh had already supplied earlier in the same session (and which was not re-checked
-before this was first reported as blocked -- a real process failure, corrected the same
-session) contains the "SECOND TUESDAY" page (p.57, week 'after'). Every one of the six
-mismatched components is an exact match to Second Tuesday, not First Tuesday:
 
-| Component | Built content | Matches Second Tuesday (p.57) |
-|---|---|---|
-| `esy-tuesday-qdham-first-shuraya` | "Psalm 67:1-6" | "Ps. lxvii. 1-6" -- exact |
-| `esy-tuesday-qdham-first-anthem` | "to its own tune" / "Show the light of thy countenance..." | exact, including tune label |
-| `esy-tuesday-qdham-second-shuraya` | "Psalm 40:16-20" | "Ps. xl. 16-20" -- exact |
-| `esy-tuesday-qdham-second-anthem` | tune "O Compassionate one, whose (door) is open" / "Rescue me, and deliver me..." | exact |
-| `esy-tuesday-qdham-evening-anthem` | tune "God the Word" / "Who can express the noble acts of the Lord?..." | exact |
-| `esy-tuesday-qdham-letter-psalm` | "Psalm 119:113-129" | "cxix. 113-129" -- exact |
+### First Tuesday, First Thursday, First Saturday Ferial Evening Service -- audited
+2026-08-29, CORRECTED after an initial wrong finding
 
-This also explains why the Martyrs' Anthem was correct: Second Tuesday's own rubric reads
-"Martyrs' Anthem, as on First Tuesday" -- it is genuinely shared content, not a coincidental
-match.
+**This section documents a real error I made during the audit itself, corrected within the
+same session. Read this in full before trusting any prior summary of Tuesday/Thursday/Saturday.**
 
-**Actual state of the corpus, now confirmed:**
-- `esy-tuesday-qdham-*` (six components above) contain real, accurately-transcribed Maclean
-  text -- but it is Second Tuesday's (week 'after') content, mislabeled as First Tuesday's
-  (week 'before').
-- First Tuesday's actual content -- "Ps. xvii. 1-6" First Shuraya, the "Hear, O God, and have
-  mercy upon me" First Anthem (tune "Light and the Son of light"), "Ps. xxi. 1-5" Second
-  Shuraya, the "Hear my prayer, O Lord" Second Anthem (tune "Now is the night"), the "Our help
-  is in the Name of the Lord" Evening Anthem, and the "cxix. 17-33" Letter Psalm citation --
-  does not exist anywhere in the corpus and needs to be built from scratch.
-- `esy-tuesday-first-marmitha`, `esy-tuesday-second-marmitha`, and
-  `esy-tuesday-martyrs-anthem-evening` are correctly First Tuesday content and unaffected.
+**What I initially reported (WRONG):** that `esy-tuesday-qdham-*`, `esy-thursday-qdham-*`, and
+`esy-saturday-qdham-*` were a "MAJOR, systematic" bug -- Second [Day]'s (week 'after') content
+mislabeled as First [Day]'s (week 'before'). I based this on a direct page-by-page comparison
+against Maclean's "FIRST TUESDAY" / "FIRST THURSDAY" / "FIRST SATURDAY" pages, where the
+psalm citations and anthem texts genuinely do not match.
 
-**Not yet remediated.** This is now a build decision (create the missing First Tuesday
-content; relabel or duplicate the existing mislabeled components as Second Tuesday's real
-`wathar` sequence) rather than an open audit question, and per standing project practice that
-decision and its build order belong to Josh, not to be made unilaterally. Holding here pending
-direction before making any corpus changes.
+**Why that was the wrong conclusion.** I had missed the book's own rubric, printed as a
+footnote at the very start of the Ferial Evening Service (p.1): "The weeks are alternately
+'before' and 'after,' as determined by the Khudhra. If Sunday is 'before,' so also are Monday,
+Wednesday, and Friday, but Tuesday, Thursday, and Saturday are 'after'; and vice versa."
+Tuesday, Thursday, and Saturday run **opposite** to the rest of the week, not aligned with it.
+
+The calendar engine (`js/calendar-east-syriac.js`) computes a single `cycle` value
+('qdham'/'wathar') per week, from `weeksSinceSubara % 2`, and applies it uniformly to every
+day of that week -- it does not implement the day-level alternation the rubric actually
+requires. For the app to be liturgically correct on Tuesday/Thursday/Saturday given that
+week-level-only engine, the sequence keyed to the week's "qdham" designation has to serve the
+*opposite*-printed text (i.e. Second Tuesday's content) on those three days specifically, and
+the "wathar"-keyed sequence has to serve the *first*-printed text. That is exactly what is
+built:
+
+- `esy-tuesday-qdham-first-shuraya` etc. (used in `tuesday-ramsha-qdham-sequence`) = Second
+  Tuesday's real content, confirmed exact against p.57.
+- `esy-tuesday-first-shuraya` etc., no "qdham" infix (used in `tuesday-ramsha-wathar-sequence`)
+  = First Tuesday's real content, confirmed exact against p.23-25.
+- The identical pattern holds for Thursday (`esy-thursday-qdham-*` = Second Thursday, p.59;
+  plain `esy-thursday-*` = First Thursday, p.35-37) and Saturday (`esy-saturday-qdham-*` =
+  Second Saturday, p.66-67; plain `esy-saturday-*` = First Saturday, p.49-54).
+
+This is not a coincidental match. It is a deliberate, correct, and non-obvious piece of
+architecture compensating for a real mismatch between the week-level calendar engine and the
+book's day-level alternation rule. **No bug exists here.** Monday, Wednesday, and Friday
+correctly need no such compensation, because for those three days the week-level and
+day-level designations always agree per the same rubric -- which is also why the separate
+audits of First Monday and First Wednesday (see above) found those `qdham` sequences
+straightforwardly correct with no swap needed.
+
+**Status: CLOSED, no remediation needed.** First Tuesday, First Thursday, and First Saturday
+(and by the same logic, Second Tuesday, Second Thursday, and Second Saturday) are all present,
+accurate, and correctly wired.
+
+**Process note, for the record.** This was a real analytical error, not a source-fidelity
+problem in the corpus -- I built a confident "MAJOR bug" finding on an incomplete reading of
+the very rubric that governs the content I was checking, committed it to the durable audit
+file, and only caught it by continuing to the next day's check (Saturday) and happening to
+re-read the opening rubric closely enough to notice the contradiction. The lesson for the rest
+of this audit: before flagging any content-selection pattern as wrong, check it against the
+book's own structural rubrics (the "before"/"after" rule, the shawu'a divisions, the Kalendar
+appendix) as well as against the literal printed text, since Maclean's structure is not always
+what a page-by-page comparison alone would suggest.
+
