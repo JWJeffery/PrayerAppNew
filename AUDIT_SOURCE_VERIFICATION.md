@@ -200,7 +200,7 @@ Psalter). The OCR text used for this audit's comparison read "I wailed patiently
 scanning artifact, not a real source variant. The app is right; the OCR is wrong. Recorded
 here so this isn't mistaken for an unresolved discrepancy in a future pass.
 
-### First Tuesday Ferial Evening Service (pp.23-29) -- audited 2026-08-29, BLOCKED
+### First Tuesday Ferial Evening Service (pp.23-29) -- audited 2026-08-29, DIAGNOSED
 
 Sequence `tuesday-ramsha-qdham-sequence` reuses 23 components already verified from First
 Monday (opening formula, Lakhumara, Karuzutha, Trisagion, laying-on-of-hands, all the closing
@@ -223,22 +223,39 @@ different psalm citations and entirely different anthem texts under different tu
 | `esy-tuesday-qdham-evening-anthem` | "Our help is in the Name of the Lord..." | tune "God the Word" / "Who can express the noble acts of the Lord?..." |
 | `esy-tuesday-qdham-letter-psalm` | "cxix. 17-33" (Psalm 119:17-33) | "Psalm 119:113-129" |
 
-**Root cause not yet determined -- do not guess.** The live source text available during this
-session (fetched directly from archive.org, 2026-08-29) covers only the Introduction through
-roughly page 30 -- it does not reach the Ferial Evening Service "week after" section
-(pp.55-67), which is the most plausible place this content actually belongs (i.e. this may be
-a week-swap/mislabeling bug rather than fabricated content). This cannot be confirmed without
-either (a) the full-text upload Josh was asked to produce via `fetch_maclean.py`, or (b)
-targeted fetches of pp.55-67 specifically. Blocked on source access, not on analysis effort.
+**ROOT CAUSE CONFIRMED, 2026-08-29: this is a week-swap mislabeling, not fabrication.** The
+full text Josh had already supplied earlier in the same session (and which was not re-checked
+before this was first reported as blocked -- a real process failure, corrected the same
+session) contains the "SECOND TUESDAY" page (p.57, week 'after'). Every one of the six
+mismatched components is an exact match to Second Tuesday, not First Tuesday:
 
-**Confirmed correct, not part of the problem:** `esy-tuesday-first-marmitha`,
-`esy-tuesday-second-marmitha`, `esy-tuesday-martyrs-anthem-evening` (full text, all 28+
-verses). The split between what's right and what's wrong is itself informative -- whatever
-happened did not touch this day's build uniformly.
+| Component | Built content | Matches Second Tuesday (p.57) |
+|---|---|---|
+| `esy-tuesday-qdham-first-shuraya` | "Psalm 67:1-6" | "Ps. lxvii. 1-6" -- exact |
+| `esy-tuesday-qdham-first-anthem` | "to its own tune" / "Show the light of thy countenance..." | exact, including tune label |
+| `esy-tuesday-qdham-second-shuraya` | "Psalm 40:16-20" | "Ps. xl. 16-20" -- exact |
+| `esy-tuesday-qdham-second-anthem` | tune "O Compassionate one, whose (door) is open" / "Rescue me, and deliver me..." | exact |
+| `esy-tuesday-qdham-evening-anthem` | tune "God the Word" / "Who can express the noble acts of the Lord?..." | exact |
+| `esy-tuesday-qdham-letter-psalm` | "Psalm 119:113-129" | "cxix. 113-129" -- exact |
 
-**Next step, before any further day-by-day audit progress:** obtain pp.55-67 (or the full
-text) and determine whether `esy-tuesday-qdham-*` content actually belongs to
-`esy-tuesday-wathar-*` (or another day/week entirely), whether it's simply wrong, or whether
-it's real content from somewhere else in the book misfiled here. Do not resume linear
-day-by-day progress past this point until First Tuesday is actually resolved, per the
-finish-what-we-start rule.
+This also explains why the Martyrs' Anthem was correct: Second Tuesday's own rubric reads
+"Martyrs' Anthem, as on First Tuesday" -- it is genuinely shared content, not a coincidental
+match.
+
+**Actual state of the corpus, now confirmed:**
+- `esy-tuesday-qdham-*` (six components above) contain real, accurately-transcribed Maclean
+  text -- but it is Second Tuesday's (week 'after') content, mislabeled as First Tuesday's
+  (week 'before').
+- First Tuesday's actual content -- "Ps. xvii. 1-6" First Shuraya, the "Hear, O God, and have
+  mercy upon me" First Anthem (tune "Light and the Son of light"), "Ps. xxi. 1-5" Second
+  Shuraya, the "Hear my prayer, O Lord" Second Anthem (tune "Now is the night"), the "Our help
+  is in the Name of the Lord" Evening Anthem, and the "cxix. 17-33" Letter Psalm citation --
+  does not exist anywhere in the corpus and needs to be built from scratch.
+- `esy-tuesday-first-marmitha`, `esy-tuesday-second-marmitha`, and
+  `esy-tuesday-martyrs-anthem-evening` are correctly First Tuesday content and unaffected.
+
+**Not yet remediated.** This is now a build decision (create the missing First Tuesday
+content; relabel or duplicate the existing mislabeled components as Second Tuesday's real
+`wathar` sequence) rather than an open audit question, and per standing project practice that
+decision and its build order belong to Josh, not to be made unilaterally. Holding here pending
+direction before making any corpus changes.
