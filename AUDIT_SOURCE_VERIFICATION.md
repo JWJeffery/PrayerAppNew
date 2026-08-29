@@ -120,18 +120,27 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] Blessing of the Months (pp.229-235) — **COMPLETE, 2026-08-29**
 
 ### Appendices
-- [ ] Farcings of the Psalms (pp.236-248) -- partial cross-reference done 2026-08-27
-      (checked against 12 disclosed corpus gaps only; not yet checked as a full transcription
-      audit of the farcing text itself against what would be needed for the Feast-of-our-Lord
-      farced Psalter recitation identified that session)
-- [ ] Prayers on Various Occasions (pp.249-258) -- not yet transcribed into the corpus at all
-      (Book of Needs category, still pending scoping per Josh's 2026-08-27 direction)
-- [ ] Index I (p.259) -- used correctly for the Hulala XVII-XXI fix, 2026-08-27
-- [ ] Index II (pp.260-263) -- used correctly for the Fast Lelya Canon build, 2026-08-27
-- [ ] Kalendar and Lectionary appendix (pp.264-283) -- used correctly for Weeks-of-the-Mysteries
-      and pre-Fast folding-rule scoping, 2026-08-27
-- [ ] Index to the Lectionary (pp.284-290) -- not yet used for anything in this project
-- [ ] Glossary (pp.291-301) -- not yet used for anything in this project
+- [x] Farcings of the Psalms (pp.236-248) — **AS COMPLETE AS POSSIBLE, 2026-08-29.**
+      Cross-referenced against the 12 disclosed corpus gaps on 2026-08-27 (resolved none of
+      them, but surfaced the still-unbuilt Feast-of-our-Lord farced-Psalter gap). No corpus
+      component renders this content directly, so there is no built text to fidelity-check
+      against source beyond that cross-reference. Will need a real word-for-word audit once
+      the Feast-of-our-Lord farcing is eventually built.
+- [x] Prayers on Various Occasions (pp.249-258) — **CONFIRMED EMPTY, 2026-08-29.** Zero
+      components exist. Nothing to audit; pure build-work, already tracked as pending scoping.
+- [x] Index I (p.259) — **CONFIRMED, 2026-08-29.** No corpus component renders this table
+      directly; it exists only as reference material correctly consulted for the Hulala
+      XVII-XXI fix on 2026-08-27. Nothing further to check.
+- [x] Index II (pp.260-263) — **CONFIRMED, 2026-08-29.** Same as Index I -- reference-only,
+      correctly consulted for the Fast Lelya Canon build on 2026-08-27.
+- [x] Kalendar and Lectionary appendix (pp.264-283) — **CONFIRMED, 2026-08-29.** Reference-only,
+      correctly consulted for Weeks-of-the-Mysteries and pre-Fast folding-rule scoping on
+      2026-08-27. Not rendered as its own corpus content, so not fidelity-checkable beyond
+      confirming those specific prior uses were correct (which they were).
+- [x] Index to the Lectionary (pp.284-290) — **CONFIRMED, 2026-08-29.** Never used by this
+      project for anything. Nothing to audit.
+- [x] Glossary (pp.291-301) — **CONFIRMED, 2026-08-29.** Never used by this project for
+      anything. Nothing to audit.
 
 ---
 
@@ -822,4 +831,66 @@ labels. This is a reasonable simplification, not a content loss, and is noted ra
 flagged as a discrepancy.
 
 **Section status: complete, entirely clean.** No discrepancies found anywhere in this section.
+
+## Audit Summary -- 2026-08-29 session
+
+Every section of the book containing rendered liturgical content in the corpus (pp.1-235:
+Ferial and Festival Evening Service, Ferial and Festival Night Service, Ferial and Festival
+Morning Service, Morning and Sunday Martyrs' Anthems, Compline and its Anthems/Madrashi
+(Sunday only of seven days), the Great Fast material, the Occasional Karuzutha, Rogation of
+the Ninevites, and Blessing of the Months) has now been checked against Maclean's actual text,
+component by component. The appendix material (pp.236-301) has no corpus footprint beyond
+reference use already made and already correct, so there is nothing further to check there
+until it is built.
+
+**What this audit found, gathered in one place:**
+
+*Real content discrepancies (not yet remediated):*
+1. `esy-karozutha` (First Monday Evening, shared) -- six named teachers dropped to a generic
+   phrase, undisclosed.
+2. `esy-of-our-father-prayer` (First Monday Evening, shared) -- "Mar Awa, Catholicos" and the
+   "Mar N." placeholder dropped to "the Catholicos," undisclosed.
+3. Systematic missing "Or this" alternate prayers throughout the Hulali (4 confirmed:
+   Hulala II/X/XVI-a/XVI-b).
+4. `esy-lelya-monday-qaltha` and its five sibling days -- missing psalm citation and Gloria
+   rubric (present in source, absent from all six built components).
+5. `esy-lelya-wednesday-shubakha` -- likely wrong psalm number (built as 67, source gives 73),
+   flagged pending a fresh source check.
+6. `esy-lelya-tishbukhta-wednesday` -- misattributed author ("Mar Abimelek" built vs "Mar
+   Ahimelek" in source).
+7. `esy-sunday-sapra-prayer-glorious` and `esy-fast-sapra-prayer-glorious` -- both diverge
+   from the ferial prayer they are supposed to reuse verbatim; confirmed in two locations.
+8. `esy-sunday-lelya-closing-verse` -- missing its "Amen and Amen" lead-in rubric, needs
+   checking against the render sequence before treating as a real gap.
+
+*Substantial missing content (build items, not fidelity problems):*
+9. The Motwa for Wednesday 'Before' and 'After' (pp.130-150) -- ~20 pages, entirely unbuilt.
+   The single largest gap found.
+10. The Sunday-in-Fast Night Service Canon and both Fast-specific Morning Service opening
+    prayers (pp.205-208) -- unbuilt.
+11. The Weeks-of-the-Mysteries and Ordinary-Weeks Fast Night Service Canons, plus two named
+    Tishbukhta (Mar Abraham of Izla; Mar Shimun Bar Saba'i/Mar Ephraim) (pp.213-222) --
+    unbuilt.
+12. The Feast-of-our-Lord farced full-Psalter Night Office recitation (identified 2026-08-27,
+    reconfirmed this session) -- unbuilt.
+13. Roughly 19 alternate "Prayer for help" texts (pp.16-19) -- possibly intentionally
+    unbuilt per the source's own single-priest rubric, needs a decision either way.
+
+*A significant self-correction, made and recorded transparently within the audit itself:*
+14. The Tuesday/Thursday/Saturday qdham/wathar content-selection pattern was initially flagged
+    as a "MAJOR, systematic" mislabeling bug. On further investigation this was wrong -- it is
+    correct, deliberate architecture. Both the wrong initial finding and the correction are
+    preserved in the Findings Log rather than quietly overwritten.
+
+*What is confirmed clean:* the overwhelming majority of the corpus -- several hundred
+components across every ferial and festival office, both weekly cycles, all Great Fast
+material actually built, the Rogation of the Ninevites, and the Blessing of the Months --
+matches Maclean's text exactly, including very long farced anthems (up to 14,000+ characters)
+checked in full or at both ends. Several placeholder-preservation checks ("NN," "Mar N.")
+came back correct in five separate locations outside the two flagged exceptions above,
+indicating those two are genuinely localized rather than symptomatic of a wider policy.
+
+**Not yet done, for the record:** Monday-Saturday's Anthems/Madrashi at Compline (six of
+seven days), and a handful of lighter-touch spot-checks (rather than full-text checks) on
+some of the longer day-specific anthems, noted individually above where they occurred.
 
