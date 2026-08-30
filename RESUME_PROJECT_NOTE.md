@@ -1,5 +1,37 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 -- "Revelation" resolved to Transfiguration with good lexicographic
+## evidence; "Entrance" understood (Presentation of Christ in the Temple) but not wired, since
+## that feast isn't tracked by this calendar engine at all. Read this whole entry before doing
+## anything else; the entries below it are still accurate for everything else.
+
+Josh asked for further internet research on the two unresolved feast-name terms.
+
+**"Revelation" resolved:** the Semantics of Ancient Hebrew Database (sahd-online.com), an
+academic Syriac lexicon, glosses *gelyana* (revelation/manifestation) and states directly that
+*'ida dgelyana* ("Feast of Revelation") is a designation for the Feast of the Transfiguration
+-- a sourced confirmation, not a guess. Added `'COE_FEAST_TRANSFIGURATION': 'the Revelation'`
+to `FEAST_PS78_TERMS` in `js/office-ui.js`. Both farcing locations now resolve seven of the
+eight terms.
+
+**"Entrance" understood, but still not wired:** multiple independent Syriac Christian sources
+confirm *ma'altho*/*macalto* ("entrance") names the Feast of the Presentation of Christ in the
+Temple (Candlemas) -- not Palm Sunday or the Hallowing of the Church, Maclean's own footnote's
+two guesses. But every source found is West Syriac (Syriac Orthodox/Malankara) usage, not
+confirmed for Maclean's own East Syriac tradition; and Presentation isn't one of the seven
+Feasts of our Lord this calendar engine tracks at all. Wiring it would mean adding an eighth
+tracked feast first -- a bigger change than a table entry, left undone. No wrong answers
+result from leaving it out; only the same disclosed fallback as before.
+
+**Verified:** `js/office-ui.js` passes `node --check`; the new mapping simulated against a
+real 2027 Transfiguration date across both farcing templates, both reading grammatically.
+`SEED_VERSION` bumped to `v182-2026-08-29-east-syriac-transfiguration-revelation-term-resolved`.
+
+Full detail in `audit-ledger.html`'s `coe:feast-name-entrance-revelation:further-researched`
+entry.
+
+---
+
 ## Session 2026-08-29 continued -- Sunday/Festival Ramsha's missing Psalms 141/142/119:105-
 ## 113/117 block (pp.70-76) built and wired, closing the gap Josh asked about directly. A
 ## second duplication mistake happened during this build -- caught and fixed BEFORE any patch

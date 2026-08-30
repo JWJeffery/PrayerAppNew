@@ -4231,38 +4231,52 @@ async function renderEastSyriac() {
         ? EastSyriacCalendar.getDayClass(currentDate).commemorations.find(c => c.type === 'feast')
         : null;
 
-    // Researched 2026-08-29, at Josh's request, beyond Maclean himself:
-    // the modern Assyrian Church of the East's own published Feasts-of-
-    // our-Lord list (acote.church/holy-feasts) gives exactly the same
-    // seven feasts this project's calendar engine already tracks --
+    // Researched 2026-08-29, at Josh's request, beyond Maclean himself.
+    // First pass: the modern Assyrian Church of the East's own published
+    // Feasts-of-our-Lord list (acote.church/holy-feasts) gives exactly the
+    // same seven feasts this project's calendar engine already tracks --
     // Nativity, Epiphany, Resurrection, Ascension, Pentecost,
-    // Transfiguration, Cross -- confirming those seven names themselves.
-    // But Maclean's own Psalm 78 farcing (esy-feast-lelya-ps78-farcing-
-    // gap) names EIGHT terms, not seven -- "Nativity of Christ, or
-    // Baptism, or Entrance, or Resurrection, or Ascension, or Descent, or
-    // Revelation, or Cross" -- and two of them resist confident mapping
-    // even after that research:
-    //   - "Entrance" matches none of the seven modern feasts, and
-    //     Maclean's OWN footnote on this exact word says "Palm Sunday, or
-    //     the Hallowing of the Church?" -- he wasn't sure either.
-    //   - "Revelation" could plausibly be Transfiguration (which has no
-    //     other obvious match in this eight-term list) or a synonym for
-    //     Epiphany/Denha (which literally means "dawning" or "revealing"
-    //     and gets applied to more than one feast in different sources);
-    //     nothing found settles it.
-    // The other six map with real confidence, and ONLY those six are
-    // included below -- Transfiguration is deliberately left OUT of this
-    // table (not guessed into either "Entrance" or "Revelation"), so a
-    // Transfiguration feast day correctly falls back to the full
-    // disclosed bracket-list text in esy-feast-lelya-ps78-farcing-gap's
-    // own component text, unresolved, exactly as before.
+    // Transfiguration, Cross. But Maclean's own Psalm 78 farcing (esy-
+    // feast-lelya-ps78-farcing-gap) names EIGHT terms, not seven --
+    // "Nativity of Christ, or Baptism, or Entrance, or Resurrection, or
+    // Ascension, or Descent, or Revelation, or Cross" -- leaving two
+    // unmatched at that point: "Entrance" and "Revelation."
+    //
+    // Second pass, requested again 2026-08-29 with instructions to keep
+    // digging:
+    //   - "Revelation" is now RESOLVED with good evidence: the Semantics
+    //     of Ancient Hebrew Database (sahd-online.com), an academic
+    //     Syriac lexicon, glosses gelyana (ܓܠܝܢܐ, "revelation, appearance,
+    //     manifestation") and states directly that ‘ida dgelyana ("Feast
+    //     of Revelation") is a designation for the Feast of the
+    //     Transfiguration. Added to the table below.
+    //   - "Entrance" is now UNDERSTOOD but still not wired. Multiple
+    //     independent Syriac Christian sources (Malankara Orthodox,
+    //     Syriac Orthodox parish sites) confirm ma'altho/macalto
+    //     ("entrance") names the Feast of the Presentation of Christ in
+    //     the Temple (Candlemas, 40 days after the Nativity) -- not Palm
+    //     Sunday or the Hallowing of the Church, the two guesses in
+    //     Maclean's own footnote. But every source found for this is
+    //     WEST Syriac (Syriac Orthodox/Malankara) usage specifically, not
+    //     confirmed for the East Syriac tradition Maclean himself
+    //     documents; and more concretely, Presentation is not one of the
+    //     seven Feasts of our Lord this project's calendar engine tracks
+    //     at all -- unlike "Revelation," where the target feast
+    //     (Transfiguration) was already tracked and only the TERM needed
+    //     resolving, "Entrance" would need a new tracked feast added to
+    //     EastSyriacCalendar first, a larger change than this table. Left
+    //     out of FEAST_PS78_TERMS for now; a Feast Maclean would call
+    //     "Entrance" isn't currently representable by this engine at all,
+    //     so there's no case where this term's absence causes a wrong
+    //     answer -- only ever the same disclosed bracket-list fallback.
     const FEAST_PS78_TERMS = {
-        'COE_FEAST_NATIVITY':     'the Nativity of Christ',
-        'COE_FEAST_EPIPHANY':     'the Baptism',
-        'COE_FEAST_RESURRECTION': 'the Resurrection',
-        'COE_FEAST_ASCENSION':    'the Ascension',
-        'COE_FEAST_PENTECOST':    'the Descent of the Holy Ghost',
-        'COE_FEAST_HOLY_CROSS':   'the Cross',
+        'COE_FEAST_NATIVITY':        'the Nativity of Christ',
+        'COE_FEAST_EPIPHANY':        'the Baptism',
+        'COE_FEAST_RESURRECTION':    'the Resurrection',
+        'COE_FEAST_ASCENSION':       'the Ascension',
+        'COE_FEAST_PENTECOST':       'the Descent of the Holy Ghost',
+        'COE_FEAST_TRANSFIGURATION': 'the Revelation',
+        'COE_FEAST_HOLY_CROSS':      'the Cross',
     };
 
     const officeTitleMap = {
