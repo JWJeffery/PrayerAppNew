@@ -7472,3 +7472,180 @@ bumped to `v169-2026-08-27-east-syriac-fast-lelya-canon-wired`.
 East -- this project's existing infrastructure for such a category, if any, has not yet been checked.
 Also still open: a systematic cross-reference of the Farcings of the Psalms (pp.236-248) against
 every existing "farcing not given in Maclean's main body" gap disclosure already in the corpus.
+
+## Session 2026-08-29 continued -- East Syriac: audit checklist reconciled against source of
+## truth; five prior "Not yet done" items fully closed (Wednesday Motwa, Fast Night Service,
+## Mar Narsai's Tishbukhta, all 18 Prayers for Help, Compline Mon-Sat audit); Sunday Lelya's
+## Tishbukhta ordering corrected against Maclean's actual printed sequence; the Feast-of-our-
+## Lord Night Service, feast-name substitution mechanism, and Sunday/Festival Ramsha incense-
+## psalm block all built and wired; Memorials and the Farcings of the Psalms retrieved,
+## transcribed, and (after an initial version was correctly rejected) rebuilt to a real
+## page-by-page verification standard, then cross-referenced against the corpus's own disclosed
+## gaps. SEED_VERSION v169 -> v185.
+
+This entry closes a real documentation gap: this ledger's last entry (immediately above) is
+dated 2026-08-27 and ends by describing two items as "still not started" -- filing Prayers on
+Various Occasions under a Book of Needs category, and cross-referencing the Farcings of the
+Psalms against existing gap disclosures. Both were fully resolved across the work below and in
+the following session's entry, but this ledger was never updated to say so across 16 SEED
+versions of intervening work (v170 through v185). Recorded now, in full, rather than left
+stale -- see the standing instruction at the top of this file about append-only, complete
+recording of decisions and corrections. Each item below has its own detailed GREEN dashboard
+row in `audit-ledger.html`, referenced by key; this entry summarizes rather than duplicates
+that detail.
+
+**Reconciliation pass (`coe:audit-checklist:reconciled`):** `AUDIT_SOURCE_VERIFICATION.md`'s
+own checklist had gone stale relative to the Findings Log within the same session it was
+written -- a retracted "BLOCKED" finding on First Tuesday was never propagated, all six Morning
+Martyrs' Anthems showed unaudited despite the Findings Log recording all six checked, and the
+Ferial Night Service showed plain "COMPLETE" against a Findings Log entry titled "PARTIAL."
+Corrected directly against the live corpus, not against prose summaries -- confirmed the four
+"Or this" alternate Hulala prayers were genuinely present, and found two real remaining gaps
+(`esy-lelya-motwa-note`'s day-by-day structural rule, `esy-lelya-monday-qaltha`'s missing psalm
+citation) that a prior session's audit had flagged but never actually fixed. Both fixed here.
+
+**Five prior "Not yet done" items closed:**
+- Wednesday Motwa 'Before'/'After' (`coe:wed-motwa:built-wired`, `coe:wed-motwa-shared-
+  ending:resolved`) -- pp.130-150 transcribed from Josh's re-supplied OCR text; a further engine
+  gap found in the process (Lelya had no qdham/wathar cycle split on ferial Wednesdays) fixed
+  alongside it; the disclosed "shared ending" ambiguity researched and resolved as a genuine
+  verbatim reuse across both weeks, not a placeholder citation.
+- Full Fast Night Service (`coe:fast-lelya-night-service:built-wired`) -- built for both Weeks
+  of the Mysteries and Ordinary Weeks (pp.211-223), superseding an earlier, narrower Canon-only
+  fix; both named Tishbukhta (Mar Abraham of Izla; Mar Shimun Bar Saba'i/Mar Ephraim) wired into
+  their real home office.
+- Mar Narsai's Sunday Night Service Tishbukhta (`coe:mar-narsai-tishbukhta:confirmed`) --
+  seasonal restriction (or lack of one) confirmed directly from source, resolving a disclosed
+  judgment call rather than leaving it standing on inference.
+- All 18 evening-service "Prayer for help" texts (`coe:prayers-for-help:full-set-built`) --
+  built in full (pp.16-19) at Josh's explicit decision; live default rendering deliberately
+  left unchanged (first only), the rest available for whenever a rotation mechanism exists.
+- Compline Anthems and Madrashi, Monday through Saturday (`coe:compline-mon-sat:audited`) --
+  audited line-by-line, the first time any day besides Sunday had been individually checked.
+  Verse content confirmed correct throughout; four missing tune-name rubric headers found and
+  restored.
+
+**Sunday Lelya closing-verse and Tishbukhta ordering
+(`coe:sunday-lelya-closing-verse:lead-in-fixed`, `coe:sunday-lelya-tishbukhta-order:fixed`):**
+a narrowly-scoped check (a possibly-missing "And let all the people say Amen and Amen" lead-in)
+confirmed and fixed the immediate ask, but surfaced a larger structural question while doing
+it -- the three seasonal Tishbukhta-of-the-Night-Service alternatives were sitting near the END
+of the sequence rather than right after the Motwa, where Maclean actually prints them. Flagged
+rather than fixed unilaterally, since reordering an established, tested sequence is a bigger
+change than the item asked for -- Josh's call to make. Re-verified and corrected in a later
+turn: the ordering was wrong, and two further components Maclean prints in between (a
+Karuzutha, a Madrasha) were missing entirely, not just misplaced. Both built.
+
+**Feast-of-our-Lord Night Service and feast-name substitution
+(`coe:feast-lelya:built-wired`, `coe:feast-name-substitution:built-and-dedup`):** built and
+wired (pp.152-155) -- full-Psalter recitation across all 21 Hulali, previously silently
+substituted with Sunday's own shorter Night Service on every weekday Feast. A feast-name
+substitution mechanism was built for six confidently-mapped terms, researched beyond Maclean at
+Josh's request; a real duplication bug from the same build was found and fixed in the process
+(six components had duplicated pre-existing ones from an earlier session, now deduplicated, and
+the dead code that had wired the originals into Sunday Lelya removed).
+
+**Sunday/Festival Ramsha incense-psalm block
+(`coe:sunday-ramsha-incense-psalms:built-wired`):** Psalms 141, 142, 119:105-113, and 117
+confirmed missing from both Ramsha sequences and added (pp.70-76).
+
+**Farcings of the Psalms, twice
+(`coe:farcings-of-the-psalms:transcribed`, `coe:farcings-reverified-and-crossreferenced`):**
+first transcribed as a reference component after the actual page text proved unrecoverable
+from an earlier session's own saved transcript and Josh re-supplied the full book directly
+(McClean.rtf, converted with `striprtf`). That first version was built with a disclosed
+confidence limit -- programmatic footnote cleanup and spot-checking, not full verification --
+and Josh correctly rejected it outright ("This is not acceptable") and asked what pages it came
+from. Answer: pp.236-248, all 13 pages, rebuilt by reading and transcribing every one by hand.
+This surfaced real content the shortcut had silently dropped: seven "Or" alternate farcings,
+Maclean's own footnotes restricting some alternates to feasts/memorials or to the Rogation of
+the Ninevites specifically, six "Canon for Christmas" insertions also used at other Feasts, a
+Memorial-specific insertion at Psalm 101, and Psalm 119's farcing given as 22 separate
+alphabet-ordered clauses rather than one entry. Cross-referenced against every disclosed
+"farcing not given" gap in the whole corpus (a full sweep, not partial): two real, direct
+resolutions found and applied (`esy-third-motwa-note`'s Deuteronomy 32 gap; the two live
+Marmitha psalm groups), roughly ten other candidates checked and correctly ruled out with
+stated reasons, two left genuinely open rather than forced to a conclusion.
+
+**Memorials (`coe:memorials-and-farcings:built`):** built and wired precisely from the same
+re-supplied text -- zero new prose content beyond one rubric line ("There is no Qaltha on
+Memorials"); every other element resolves to either already-built content (reused directly,
+confirming the one cross-reference an earlier, less precise finding had already correctly
+noted) or a genuine, disclosed Khudhra-only gap. Not hooked into the live renderer -- no
+per-Memorial calendar tracking exists yet (Layer 3, unbuilt).
+
+**Delivery note, recorded here since it happened during this arc and matters for future
+sessions:** a full patch (Memorials + first Farcings version) applied successfully by Josh's
+own terminal output was later confirmed, via fresh clone, to have never actually reached
+origin. The cause was never identified. Standing practice adopted from this point forward:
+verify actual origin state with a fresh clone before building on top of "the last patch," even
+when a prior turn's own commit message or the person's terminal output describes it as
+delivered.
+
+**Verified throughout:** `components/east-syriac.json` and
+`components/traditions/east-syriac/rubrics.json` remain valid JSON at every step; `js/office-
+ui.js` passes `node --check` after every change; duplicate-component checks run before wiring
+(the established rule, violated twice earlier in this same broader arc, held correctly this
+time -- two flagged near-matches during the Memorials/Farcings work were confirmed false
+positives on direct inspection, not real duplicates).
+
+SEED_VERSION at the close of this entry: `v185-2026-08-29-east-syriac-farcings-reverified-and-
+cross-referenced`.
+
+---
+
+## Session 2026-08-30 -- Book of Needs: Church of the East prayers built from Maclean's
+## "Prayers on Various Occasions"; a new profile.ministryRole setting added at Josh's direction
+## so role-restricted content can be safely wired live instead of withheld; a dashboard color
+## bug (invalid status:'yellow') found and fixed. SEED_VERSION v185 -> v187.
+
+**Prayers on Various Occasions (`coe:book-of-needs:maclean-prayers-built`):** all 27 distinct
+headed prayers transcribed from pp.249-258 (all 10 pages read directly), condensed into 25
+component entries. Found, while starting this, that a governance document's own note claiming
+"COE Book of Needs remains empty only because no prayer entry has been added yet" was false --
+four real prayers already existed from a different, modern source (*The Beginner's Prayerbook*,
+ACOE Diocese of California, 2019). Corrected that note rather than build on top of a wrong
+premise. First pass wired only the 6 prayers Maclean's own footnote explicitly marks sayable by
+a layman, holding the other 19 back entirely -- several are priestly, sacramental, or
+exorcistic-toned content this project's own `book-of-needs-role-access-governance.json` says
+shouldn't reach the default lay dropdown, and no access-tier enforcement existed in the live
+code at all, only tradition filtering.
+
+**ministryRole setting (`coe:book-of-needs:ministry-role-setting-and-full-wiring`):** Josh
+confirmed the hold-back judgement call was right and asked for the real fix: "we need to add an
+option into settings at some point where a person can indicate they are ordained (or override
+to just have access)." Built the same session. A new `profile.ministryRole` field in
+`js/office-ui.js` (`lay` default, `clergy` self-identified, `all` blunt override), following
+the exact pattern of the existing `bookOfNeedsScope` field; a new `BOOK_OF_NEEDS_OPTION_
+CLERGY_TIER` set and role-check in `js/prayers.js`, wired into the one function every prayer-
+visibility check already funnels through -- which also fixed a real bug where the Universal
+Book of Needs selector bypassed all filtering entirely. Reclassified the 19 held-back prayers
+now that partial visibility was possible: 6 moved to lay-open (general petitions and table
+graces, no priestly stage direction), 13 stay clergy-gated on a direct reading of each prayer's
+own rubrics. Result: 16 lay-open by default, 29 total with the role set -- up from 4 before
+this thread. This is a first, deliberately coarser step toward the fuller order-specific ladder
+`book-of-needs-role-access-governance.json` describes (layperson/reader/subdeacon/deacon/
+priest/bishop/monastic/research-reference), not that full system -- disclosed as such in the
+code's own comments.
+
+**Delivery confusion, recorded for the same reason as the note in the entry above:** across
+this short arc, Josh's terminal applied an earlier, already-superseded patch version at one
+point (not the final one from the same conversation turn), and a separate consolidated patch
+drafted afterward never reached origin at all. Both delta patches that followed were rebuilt
+directly against a freshly-cloned, confirmed-actual origin state each time, not assumed.
+
+**Dashboard color bug (no separate dashboard key -- a fix to the dashboard's own data, logged
+here directly):** two dashboard entries used `status:'yellow'`, which the ledger's own CSS has
+never defined a color for (only `.stamp.red`, `.stamp.green`, `.stamp.amber` exist) -- both
+rendered with no fill at all rather than any color, reported by Josh as looking "black." Fixed
+to the correct value, `'amber'`; the whole file checked for any other instance of the same
+mistake (none found) and for any other non-authorized status value anywhere in the file (none
+found -- only red/green/amber remain).
+
+**Verified throughout:** `data/prayers.json` valid at 103 entries; `js/office-ui.js` and
+`js/prayers.js` pass `node --check`; the profile get/set/normalize functions and the full live
+taxonomy resolution were both actually simulated in a minimal Node harness against the real
+repo state at each step, not just syntax-checked or assumed.
+
+SEED_VERSION at the close of this entry: `v187-2026-08-30-book-of-needs-ministry-role-setting-
+and-full-wiring`.

@@ -1,5 +1,111 @@
 # RESUME_PROJECT_NOTE.md
 
+## CONSOLIDATED, 2026-08-30 -- current state as of SEED_VERSION v187. Written because prior
+## entries had gone stale relative to actual repo state, and the governance ledger had gone 16
+## SEED versions without an update -- both now caught up in the same pass. Read this entry in
+## full before doing anything else. Entries below it are historical detail, preserved but
+## superseded as the first thing to read.
+
+### Where things actually stand right now
+
+**SEED_VERSION:** `v187-2026-08-30-book-of-needs-ministry-role-setting-and-full-wiring`
+**HEAD commit:** `5a0a727` (confirmed via fresh clone, not assumed from terminal output --
+see the delivery-confusion notes below)
+**East Syriac corpus:** `components/east-syriac.json`, 428 components, zero duplicate ids
+**Book of Needs:** `data/prayers.json`, 103 entries total (25 of them Church-of-the-East
+prayers added this week from Maclean's "Prayers on Various Occasions")
+
+### What actually got done, accurately, in one place
+
+**East Syriac audit reconciliation and build-out (v170-v185, 2026-08-29):** the audit
+checklist was reconciled against the Findings Log and live corpus after real staleness was
+found (a retracted finding never propagated, six audited items shown unaudited, a "PARTIAL"
+item shown "COMPLETE"). Five items from an old "Not yet done" list were closed: the full
+Wednesday Motwa, the full Fast Night Service for both Mysteries and Ordinary weeks, Mar
+Narsai's Tishbukhta seasonal status, all 18 evening "Prayer for help" texts, and a Monday-
+Saturday Compline audit. Sunday Lelya's Tishbukhta ordering was corrected to match Maclean's
+actual printed sequence, with two missing components (a Karuzutha, a Madrasha) built in the
+process. The Feast-of-our-Lord Night Service, a feast-name substitution mechanism, and the
+Sunday/Festival Ramsha incense-psalm block were all built and wired. Memorials and the
+Farcings of the Psalms were retrieved from the full book Josh re-supplied (McClean.rtf) and
+transcribed -- the Farcings work specifically went through two passes: a first version Josh
+correctly rejected as under-verified ("This is not acceptable"), then a full page-by-page
+rebuild that surfaced real content the shortcut had silently dropped (seven "Or" alternates,
+several feast/memorial/Rogation-specific restrictions, Psalm 119 as 22 separate clauses), then
+a full cross-reference against the corpus's own disclosed gaps that found and fixed two real
+resolutions. **Full detail: `AUDIT_GOVERNANCE_LEDGER.md`'s "Session 2026-08-29 continued --
+East Syriac: audit checklist reconciled..." entry, and the individual dashboard rows it cites.**
+
+**Book of Needs and the ministryRole setting (v186-v187, 2026-08-30):** Maclean's "Prayers on
+Various Occasions" (pp.249-258) transcribed into 25 Church-of-the-East Book of Needs entries,
+fulfilling a standing direction from 2026-08-27. Found and corrected a governance-doc claim
+that this category was still empty -- it already had 4 prayers from a different, modern 2019
+source. Josh confirmed a judgement call to hold priestly/sacramental content back from the
+default lay view, then asked for the real fix rather than a permanent hold: a new
+`profile.ministryRole` setting (`lay` / `clergy` / `all`), built the same session, with real
+gating wired into `js/prayers.js` -- including a fix to the Universal Book of Needs selector,
+which had been bypassing all filtering entirely. Result: 16 lay-open Church-of-the-East
+prayers by default, 29 total with the role set, up from 4 at the start of the thread. **Full
+detail: `AUDIT_GOVERNANCE_LEDGER.md`'s "Session 2026-08-30 -- Book of Needs..." entry, and
+`coe:book-of-needs:ministry-role-setting-and-full-wiring` on the dashboard.**
+
+**A dashboard bug (2026-08-30):** two dashboard entries used `status:'yellow'`, a value the
+ledger's CSS has never defined a color for -- both rendered with no fill, reported by Josh as
+looking black. Fixed to `'amber'`; the whole file checked for the same mistake elsewhere (none
+found) and confirmed via screenshot after the fix that both now render correctly.
+
+**Documentation catch-up, this same pass (2026-08-30):** `AUDIT_GOVERNANCE_LEDGER.md` had not
+been updated since `v169` (2026-08-27) despite 18 versions of work since -- two consolidated
+entries appended covering the full v170-v187 arc, rather than left silently stale.
+`documentation/book-of-needs-role-access-governance.json` (an aspirational design doc for a
+full eight-role access ladder) gets a new `implementationStatus2026_08_30` field noting that a
+first, coarser three-value implementation now exists, so it doesn't read as if nothing has
+been built toward it. `documentation/book-of-needs-source-intake-inventory.json` had a
+dead cross-reference to a dashboard key that was never actually used
+(`coe:book-of-needs:maclean-prayers-role-gated` instead of the real
+`coe:book-of-needs:ministry-role-setting-and-full-wiring`) -- fixed.
+
+### A standing practice worth restating, since it was learned the hard way twice this week
+
+**Always verify actual origin state with a fresh clone before building on top of "the last
+patch,"** even when a prior turn's own commit message, or the person's own terminal output,
+describes it as delivered. This session alone: one full patch was applied successfully per
+Josh's terminal output but never actually reached origin (cause never identified); separately,
+an earlier, already-superseded patch got applied instead of the final one from the same
+conversation turn, because it was still sitting in the terminal from before the final one was
+generated. Every delta patch since has been built directly against a freshly-cloned, actually-
+confirmed origin state, not assumed from any prior turn's report of success.
+
+### Open items, current and accurate as of this entry
+
+1. **First Friday (pp.41-43)** and **Middle Friday (pp.48-49)** -- not yet audited.
+2. **Ferial Morning Service (pp.103-108)** -- no dedicated audit pass has been done.
+3. **Pre-Fast Sunday folding rule** -- flagged from Maclean's Kalendar appendix (p.270,
+   footnote), governs how the fixed pre-Fast commemoration cycle compresses in short-Denkha-
+   season years. Not modeled anywhere; new scope, needs Josh's go-ahead on priority.
+4. **Layer 3 (individual saints calendar)** -- not started.
+5. **Two loose ends from the Farcings work:** `esy-sunday-sapra-psalm-100-farced-rubric` needs
+   a specific "In the beginning" variant not present in the Farcings appendix; `esy-sunday-
+   lelya-palm-sunday`'s Ps.96-98 citation has base farcings available but thematic fit (and
+   whether it's even meant to carry farcing at all) is genuinely unclear.
+6. **The fuller Book of Needs access-tier ladder** -- `book-of-needs-role-access-governance.
+   json` describes eight order-specific roles (layperson/reader/subdeacon/deacon/priest/bishop/
+   monastic/research-reference); what's built is a coarse three-value lay/clergy/all split.
+   Whether and how far to build the fuller system is Josh's call.
+7. **Farcings-of-the-Psalms integration** -- the new farcing layer confirmed distinct from the
+   existing per-Hulala "collect" prayers has only been cross-referenced against previously-
+   *disclosed* gaps, not swept against the whole corpus for every place a psalm citation exists
+   without any farcing note at all. Larger, not scoped, flagged only.
+8. **Great Fast's own Sunday Evening Service, `ordinary1/2/3.json` architecture review, the
+   Cathedral/Monastic toggle** (dead control in `index.html`, pending Josh's input), **Royal
+   Anthem sourcing** (Khudhra content not in Maclean; the one identified English translation is
+   in-copyright), and the broader Ethiopic/Coptic backlog items from earlier sessions all
+   remain open and untouched by this week's work -- see `AUDIT_GOVERNANCE_LEDGER.md`'s earlier
+   entries for their own detail; not re-summarized here to avoid the same staleness problem
+   this entry exists to fix.
+
+---
+
 ## Session 2026-08-30 continued -- profile.ministryRole setting built; all 25 Maclean Book of
 ## Needs prayers now wired live, role-gated instead of partly withheld. Read this whole entry
 ## before doing anything else; the entry below it (same day) is still accurate for its own
