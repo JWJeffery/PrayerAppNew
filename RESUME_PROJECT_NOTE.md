@@ -1,5 +1,46 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- esy-sunday-lelya-closing-verse's missing "Amen and Amen"
+## lead-in confirmed and fixed (item 5). A SEPARATE, larger structural question about the
+## whole Sunday Night Service's sequence order surfaced while checking it -- DISCLOSED, NOT
+## fixed, awaiting Josh's decision. Read this whole entry before doing anything else; the
+## entry below it is still accurate for everything else.
+
+Item 5: "esy-sunday-lelya-closing-verse possibly missing its 'Amen and Amen' lead-in; not yet
+checked against the actual render sequence."
+
+**Confirmed, not just possible.** The component's title correctly named the incipit, but its
+text field started directly with "O Mary, the holy Virgin...", omitting the literal spoken
+lead-in "And let all the people say Amen and Amen." Confirmed as a real omission by comparing
+against its own sibling, `esy-festival-royal-anthem-mary-refrain` (same title, same pattern
+elsewhere in Maclean), which correctly carries the lead-in. **Fixed.**
+
+**A separate, bigger finding, deliberately left untouched:** re-reading the full Sunday Night
+Service (pp.155-162) to place this verse in context, Maclean's printed order is: Motwa -> the
+three seasonal "TISHBUKHTA OF THE NIGHT SERVICE" alternatives -> a Karuzutha -> Madrasha ->
+two Suyakha prayers -> three Qali d'Shahra prayers -> Night Anthem -> **these two closing
+verses** -> Shubakha -> Tishbukhta by Mar Narsai -> the final Karuzutha. The **live sequence**
+currently places the three seasonal Tishbukhta immediately before the closing verse and
+Shubakha -- near the *end* of this block, not near its *start* right after the Motwa, where
+Maclean actually prints them.
+
+This predates this session's work and was never checked at this granularity before (the
+2026-08-29 Mar Narsai confirmation noted the seasonal Tishbukhta's adjacent position as an
+observation, not a re-verified fact). **Not fixed here** -- reordering an established, tested
+sequence is a bigger change than this item's narrow ask, and it's Josh's call, not mine to
+fold in unilaterally under the same ticket.
+
+`SEED_VERSION` bumped to `v176-2026-08-29-east-syriac-sunday-lelya-closing-verse-lead-in-fixed`.
+Full detail in `audit-ledger.html`'s `coe:sunday-lelya-closing-verse:lead-in-fixed` entry
+(status yellow, reflecting the open structural question).
+
+**"Not yet done" list, updated:** item 5's own scope is done. A new, undocketed question is
+open: should the Sunday Lelya sequence's Tishbukhta-of-the-Night-Service ordering be
+corrected to match Maclean's actual printed order? Awaiting Josh's decision before touching
+it. Items 6 and 7 remain as before.
+
+---
+
 ## Session 2026-08-29 continued -- All 18 Evening-Service "Prayer for help" texts built in
 ## full (pp.16-19), at Josh's explicit decision (item 4 on the list). Live default rendering
 ## deliberately unchanged. Read this whole entry before doing anything else; the entry below
