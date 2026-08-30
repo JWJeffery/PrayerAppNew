@@ -38,9 +38,12 @@ updated the moment a section's audit is complete, in the same commit as the find
 
 ### Ferial Evening Service, Week 'Before' (pp.1-65)
 - [x] First Monday (pp.1-22) — **COMPLETE, 2026-08-29** — see Findings Log
-- [~] First Tuesday (pp.23-29) — **BLOCKED, 2026-08-29** — see Findings Log. Six of seven
-      day-specific components do not match the source; root cause needs the 'week after'
-      text (pp.57-59) or the full-text upload to diagnose before this can be closed.
+- [x] First Tuesday (pp.23-29) — **COMPLETE, 2026-08-29.** An initial "MAJOR bug" finding
+      here was itself wrong and was corrected within the same audit session (see Findings
+      Log, "First Tuesday, First Thursday, First Saturday... CORRECTED after an initial wrong
+      finding") -- this checklist line was never updated after that correction, leaving it
+      showing the retracted BLOCKED status. Fixed 2026-08-29 continued, in a later session,
+      while reconciling this whole file against the Findings Log at Josh's direction.
 - [x] First Wednesday (pp.29-35) — **COMPLETE, 2026-08-29** — see Findings Log
 - [x] First Thursday (pp.35-41) — **COMPLETE, 2026-08-29** — correctly wired via
       `wathar` sequence; see corrected First Tuesday/Thursday/Saturday finding in Findings Log
@@ -64,18 +67,39 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Ferial Night Service (pp.85-102)
-- [x] **COMPLETE, 2026-08-29** — see Findings Log
+- [x] **COMPLETE, 2026-08-29 continued** (later session). Of the three findings this section's
+      Findings Log entry recorded: the four missing "Or this" alternate Hulali prayers (Hulala
+      II, X, XVI, XVII) were confirmed genuinely fixed via direct check against the live
+      component file, not just trusted from the remediation summary; `esy-lelya-motwa-note`'s
+      dropped day-by-day structural rule and `esy-lelya-monday-qaltha`'s missing psalm
+      citation were both still genuinely missing on direct check and have now been fixed. This
+      checklist line previously read plain "[x] COMPLETE" while the Findings Log entry below
+      it was titled "PARTIAL" and listed two of these three items as still open -- reconciled
+      here rather than left contradicting itself.
 
 ### Ferial Morning Service (pp.103-108)
 - [ ] Not started
 
 ### Morning Martyrs' Anthems, Monday-Saturday (pp.109-130)
-- [ ] Monday
-- [ ] Tuesday
-- [ ] Wednesday
-- [ ] Thursday
-- [ ] Friday
-- [ ] Saturday
+- [x] Monday — **COMPLETE, 2026-08-29** — full word-for-word check
+- [x] Tuesday — **COMPLETE, 2026-08-29** — opening/closing verses only, disclosed lighter
+      standard (see Findings Log)
+- [x] Wednesday — **COMPLETE, 2026-08-29** — opening/closing verses only, disclosed lighter
+      standard (see Findings Log)
+- [x] Thursday — **COMPLETE, 2026-08-29** — opening/closing verses only, disclosed lighter
+      standard (see Findings Log)
+- [x] Friday — **COMPLETE, 2026-08-29** — opening/closing verses only, disclosed lighter
+      standard (see Findings Log)
+- [x] Saturday — **COMPLETE, 2026-08-29** — opening/closing verses only, disclosed lighter
+      standard (see Findings Log)
+
+Fixed 2026-08-29 continued: this checklist showed all six days as "[ ]" unaudited, directly
+contradicting the Findings Log's own "Morning Martyrs' Anthems, Wednesday/Thursday/Friday"
+entry, which states plainly "all six days' Morning Martyrs' Anthems now checked, all confirmed
+correct." The checklist was simply never updated after that entry was written. Corrected here
+while reconciling this whole file against the Findings Log at Josh's direction -- the
+underlying finding (all six correct, five at a lighter check standard than Monday's) is
+unchanged, only the checklist's own bookkeeping was wrong.
 
 ### Motwa for Wednesday 'Before' (pp.130-140)
 - [x] **AUDITED, 2026-08-29 — FOUND MISSING ENTIRELY.** See Findings Log.
@@ -84,11 +108,23 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] **AUDITED, 2026-08-29 — FOUND MISSING ENTIRELY.** See Findings Log.
 
 ### Festival Night Service (pp.151-163)
-- [x] Feasts of our Lord (pp.152-154) — **AUDITED, 2026-08-29** — no dedicated components exist;
-      consistent with the Feast-farced-Psalter gap already identified 2026-08-27, not a new finding
+- [x] Feasts of our Lord (pp.152-154) — **GAP CLOSED, 2026-08-29 continued** (a later session
+      than this file's original audit date). The full-Psalter Feast Night Service structure
+      identified as missing here on 2026-08-27 has since been built and wired
+      (`feast-lelya-sequence`, 54 items, 20 new components). Built from this same session's
+      own reading of Maclean pp.152-155 -- not re-verified against a freshly re-supplied copy
+      of that page range, so it has not yet had the same word-for-word audit pass the rest of
+      this file documents. Flagged for that pass, not claimed to already have received it.
 - [x] Sundays (pp.155-162) — **COMPLETE, 2026-08-29** — see Findings Log
-- [x] Memorials (p.163) — **AUDITED, 2026-08-29** — mostly genuinely Khudhra-sourced/unavailable;
-      see Findings Log for one cross-reference note
+- [~] Memorials (p.163) — **IMPRECISE, flagged rather than left as-is, 2026-08-29 continued.**
+      The original finding here ("mostly genuinely Khudhra-sourced/unavailable") is not
+      precise enough to stand as a dashboard-quality claim -- "mostly" was never resolved into
+      an exact accounting of which specific lines are Khudhra-cited versus which (if any)
+      beyond the one Tishbukhta cross-reference already noted are real, available, untranscribed
+      text. Doing that precisely requires the actual page 163 text back in hand, which is not
+      currently recoverable in this session (see the note at the top of this session's work in
+      RESUME_PROJECT_NOTE.md) -- requested from Josh for re-supply. Until then this line stays
+      open rather than closed on an unverified "mostly."
 
 ### Festival Morning Service (pp.164-172)
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
@@ -101,17 +137,36 @@ updated the moment a section's audit is complete, in the same commit as the find
 
 ### Anthems of the Departed and Madrashi at Compline, Sunday-Saturday (pp.190-204)
 - [x] Sunday — **COMPLETE, 2026-08-29** — full text checked, exact
-- [~] Monday — not individually checked, see note in Findings Log
-- [~] Tuesday — not individually checked, see note in Findings Log
-- [~] Wednesday — not individually checked, see note in Findings Log
-- [~] Thursday — not individually checked, see note in Findings Log
-- [~] Friday — not individually checked, see note in Findings Log
-- [~] Saturday — not individually checked, see note in Findings Log
+- [x] Monday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+- [x] Tuesday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+- [x] Wednesday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+- [x] Thursday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+- [x] Friday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+- [x] Saturday — **COMPLETE, 2026-08-29 continued** (later session) — see Findings Log
+
+Monday-Saturday audited in a later session than this file's original date, closing the gap
+this checklist itself flagged. Verse content confirmed word-for-word correct across all
+twelve components (six Anthems + six Madrashi); four missing tune-name rubric headers found
+and restored (Friday's Anthem; Thursday's and Saturday's Madrasha, both "to the tune Blessed
+is he who in lovingkindness"; Friday's Madrasha, "to the tune At the door of thy mercies").
+Full detail in `audit-ledger.html`'s `coe:compline-monday-saturday:audited` entry.
 
 ### Services of the Great Fast (pp.205-224)
-- [~] On Sundays (pp.205-210) — **PARTIAL, 2026-08-29** — see Findings Log
-- [x] Weeks of the Mysteries (pp.211-219) — **PARTIAL, 2026-08-29** — see Findings Log
-- [x] Ordinary Weeks (pp.220-223) — **PARTIAL, 2026-08-29** — see Findings Log
+- [x] On Sundays (pp.205-210) — **CANON AND TWO MORNING PRAYERS BUILT, 2026-08-29** (same
+      original session, Item A) — the specific gap this section's Findings Log entry
+      identified (the Sunday-in-Fast Night Service Canon and its two Morning Service opening
+      prayers) is closed; see `audit-ledger.html`'s `coe:sunday-fast-canon-and-tishbukhta-fix`
+      entry. The broader caveat in that same Findings Log entry stands unchanged: "the bulk of
+      `esy-fast-sapra-*`... has not been systematically checked against source... beyond the
+      four components above" -- that remains genuinely open, not resolved by Item A.
+- [x] Weeks of the Mysteries (pp.211-219) — **ALL FOUR IDENTIFIED GAPS CLOSED, 2026-08-29
+      continued** (later session) — the Findings Log's four confirmed-missing items for this
+      sub-section (the Night Service Canon, and the Tishbukhta by Mar Abraham of Izla) are
+      built and wired; see `coe:fast-lelya-night-service:built-wired` on the dashboard.
+- [x] Ordinary Weeks (pp.220-223) — **ALL IDENTIFIED GAPS CLOSED, 2026-08-29 continued**
+      (later session) — the other two of the Findings Log's four confirmed-missing items (the
+      Ordinary-Weeks Night Service Canon, and the Tishbukhta by Mar Shimun Bar Saba'i/Mar
+      Ephraim) are built and wired in the same pass as Weeks of the Mysteries above.
 - [x] Prayer at Noon / Sext (p.224) — **COMPLETE, 2026-08-29** — see Findings Log
 
 ### Other Fast-adjacent material
@@ -120,12 +175,16 @@ updated the moment a section's audit is complete, in the same commit as the find
 - [x] Blessing of the Months (pp.229-235) — **COMPLETE, 2026-08-29**
 
 ### Appendices
-- [x] Farcings of the Psalms (pp.236-248) — **AS COMPLETE AS POSSIBLE, 2026-08-29.**
-      Cross-referenced against the 12 disclosed corpus gaps on 2026-08-27 (resolved none of
-      them, but surfaced the still-unbuilt Feast-of-our-Lord farced-Psalter gap). No corpus
-      component renders this content directly, so there is no built text to fidelity-check
-      against source beyond that cross-reference. Will need a real word-for-word audit once
-      the Feast-of-our-Lord farcing is eventually built.
+- [~] Farcings of the Psalms (pp.236-248) — **WORD-FOR-WORD AUDIT NOW DUE, BLOCKED, 2026-08-29
+      continued** (later session). This entry's own prior note said the Feast-of-our-Lord
+      farced-Psalter gap it identified would need "a real word-for-word audit once the
+      Feast-of-our-Lord farcing is eventually built" -- it has been (see the Feasts of our
+      Lord entry above). That audit is accordingly now due, but is blocked: the actual text of
+      this page range is not currently recoverable in this session (checked directly --
+      searched this session's own saved transcript for verbatim content from this range and
+      found none, only prior summaries of it; see RESUME_PROJECT_NOTE.md for the full
+      explanation). Requested from Josh for re-supply. Downgraded from "AS COMPLETE AS
+      POSSIBLE" to reflect that real, scoped work is now blocked on it, not merely deferred.
 - [x] Prayers on Various Occasions (pp.249-258) — **CONFIRMED EMPTY, 2026-08-29.** Zero
       components exist. Nothing to audit; pure build-work, already tracked as pending scoping.
 - [x] Index I (p.259) — **CONFIRMED, 2026-08-29.** No corpus component renders this table

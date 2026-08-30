@@ -1,5 +1,60 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- AUDIT_SOURCE_VERIFICATION.md's checklist reconciled against
+## its own Findings Log and the live corpus. Multiple stale entries found and fixed; two real
+## content gaps found and closed in the process. Read this whole entry before doing anything
+## else; the entries below it are still accurate for everything else.
+
+Josh, correctly, didn't accept "mostly genuinely Khudhra-sourced" (the Memorials p.163
+finding) as good enough, and asked for a careful pass reconciling the whole audit checklist
+plus a dashboard update.
+
+**Went through the checklist against its own Findings Log, not trusted at face value.** Found
+real staleness: **First Tuesday** still showed a retracted "BLOCKED" finding -- the correction
+("no bug, correct architecture") was written to the Findings Log within the same original
+audit session but never propagated to the checklist line above it. **All six Morning Martyrs'
+Anthems** showed "[ ]" unaudited, directly contradicting the Findings Log's own "all six...
+now checked, all confirmed correct." **Ferial Night Service** showed plain "COMPLETE" while
+its own Findings Log entry was titled "PARTIAL" with three open items.
+
+**Confirmed directly against the live corpus, not trusted from prose:** the four "Or this"
+alternate Hulali prayers (Hulala II/X/XVI/XVII) were genuinely present -- real fix, verified.
+`esy-lelya-motwa-note`'s dropped day-by-day structural rule and `esy-lelya-monday-qaltha`'s
+missing psalm citation were genuinely **still missing**, despite other parts of this file
+implying otherwise. **Both fixed now.**
+
+**Checklist updated to reflect this session's own earlier work**, precisely rather than as a
+stale gap: the Sunday-in-Fast Canon/prayers, all four Weeks-of-the-Mysteries/Ordinary-Weeks
+gaps, the Feasts-of-our-Lord Night Service, and Compline Anthems Monday-Saturday are now all
+marked resolved, each pointing at the specific dashboard entry that did the work.
+
+**Left honestly imprecise rather than closed on a hedge:** Memorials (p.163) stays open.
+"Mostly genuinely Khudhra-sourced" was never resolved into an exact accounting, and isn't
+being asserted as more precise than it is. **Why the text isn't available:** searched this
+session's own saved conversation transcript for verbatim content from both the Memorials and
+Farcings-of-the-Psalms ranges, using several distinctive phrases and properly decoding the
+file's escaping (not a shallow grep) -- found only prior paraphrased summaries, never the
+verbatim text. Most likely explanation: the original document-upload turn was summarized
+rather than preserved verbatim when this session's history was compacted into a transcript,
+even though Josh did genuinely supply the full book this session. **Requested from Josh:**
+re-supply of Farcings of the Psalms (pp.236-248) and Memorials (p.163) specifically, so the
+now-due word-for-word Farcings audit and a precise Memorials accounting can actually happen.
+
+**Confirmed still genuinely open, not stale:** First Friday and Middle Friday unaudited;
+Ferial Morning Service (pp.103-108) has no dedicated audit pass; the `__MARMITHA_GROUP__` etc.
+placeholder-logic follow-up; the bulk of `esy-fast-sapra-*` beyond four checked components;
+Prayers on Various Occasions (confirmed zero components); pre-Fast Sunday folding rule; Layer
+3 saints calendar.
+
+**Verified:** `components/east-syriac.json` remains valid; `js/office-ui.js` unaffected, still
+passes `node --check`; every claim above checked directly, not asserted from memory.
+`SEED_VERSION` bumped to `v183-2026-08-29-east-syriac-audit-checklist-reconciled`.
+
+Full detail in `audit-ledger.html`'s `coe:audit-checklist:reconciled` entry and in
+`AUDIT_SOURCE_VERIFICATION.md` itself, which is now the accurate, reconciled record.
+
+---
+
 ## Session 2026-08-29 -- "Revelation" resolved to Transfiguration with good lexicographic
 ## evidence; "Entrance" understood (Presentation of Christ in the Temple) but not wired, since
 ## that feast isn't tracked by this calendar engine at all. Read this whole entry before doing

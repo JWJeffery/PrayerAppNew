@@ -2023,9 +2023,9 @@
     "meta": {
       "source": "Maclean 1894, p.95.",
       "day": "monday",
-      "note": "Said on days when the Liturgy is to be celebrated, preceded by a fixed collect (Maclean's structural summary, Introduction p.xv). Each side says two clauses at a time."
+      "note": "Said on days when the Liturgy is to be celebrated, preceded by a fixed collect (Maclean's structural summary, Introduction p.xv). Each side says two clauses at a time. FIXED 2026-08-29 continued: restored the psalm citation and performance rubric ('Ps. xv., xvi., xvii., under one Gloria... Each side says two clauses at a time') that precede this anthem in the source but were missing from this component's own text -- found while reconciling AUDIT_SOURCE_VERIFICATION.md against the live corpus at Josh's direction. The meta.note already carried the 'two clauses at a time' rubric but not the actual psalm citation; both are now in the rendered text itself, matching how citations are handled elsewhere in this corpus."
     },
-    "text": "<p class=\"component-text\">The habitation that is apart amidst the woods floateth and passeth by. And the overflowings of water convey it to the mountains of Qardu.</p>",
+    "text": "<p class=\"rubric-text\">Psalms 15, 16, 17, under one Gloria. Each side says two clauses at a time.</p><p class=\"component-text\">The habitation that is apart amidst the woods floateth and passeth by. And the overflowings of water convey it to the mountains of Qardu.</p>",
     "psalms": [
       "15",
       "16",
@@ -2108,9 +2108,9 @@
     "title": "The Motwa",
     "meta": {
       "source": "Maclean 1894, p.96.",
-      "note": "The Motwa proper (an anthem sung sitting, from which the choirs' names for the section derive) is found in the Kashkul, outside the scope of Maclean's translation and therefore outside the scope of this rebuild -- documented as a gap, not guessed at, same approach as the Coptic Agpeya's excluded paraphrase appendices. On Mondays it begins with the Sunday evening Royal Anthem; Tuesdays with the Sunday Night Anthem; Thursdays with the Sunday Morning Anthem; Saturdays with the Sunday Anthem of the Mysteries as used at the Liturgy. Wednesdays use special anthems instead (see the separate 'Motwa for Wednesdays' section of Maclean, pp.130-150) -- UPDATE 2026-08-29: now transcribed and wired, see esy-lelya-wednesday-qdham-motwa and esy-lelya-wednesday-wathar-motwa; this component itself is no longer used on Wednesdays. The fixed closing verses that follow ARE given by Maclean and are included here."
+      "note": "The Motwa proper (an anthem sung sitting, from which the choirs' names for the section derive) is found in the Kashkul, outside the scope of Maclean's translation and therefore outside the scope of this rebuild -- documented as a gap, not guessed at, same approach as the Coptic Agpeya's excluded paraphrase appendices. On Mondays it begins with the Sunday evening Royal Anthem; Tuesdays with the Sunday Night Anthem; Thursdays with the Sunday Morning Anthem; Saturdays with the Sunday Anthem of the Mysteries as used at the Liturgy. Wednesdays use special anthems instead (see the separate 'Motwa for Wednesdays' section of Maclean, pp.130-150) -- UPDATE 2026-08-29: now transcribed and wired, see esy-lelya-wednesday-qdham-motwa and esy-lelya-wednesday-wathar-motwa; this component itself is no longer used on Wednesdays. The fixed closing verses that follow ARE given by Maclean and are included here. RESTORED 2026-08-29 continued: the day-by-day structural rule for what the Motwa's opening is keyed to (Maclean p.96) had been silently dropped from this component's text, leaving only the generic 'not given in this translation' gap-disclosure -- found while reconciling AUDIT_SOURCE_VERIFICATION.md against the live corpus at Josh's direction. This is real, checkable structural information Maclean does give, distinct from the Motwa's own proper (Kashkul-sourced, still a genuine unfilled gap)."
     },
-    "text": "<p class=\"rubric-text\">The Motwa, an anthem which varies according to the season, is proper to the Kashkul and not given in this translation.</p>"
+    "text": "<p class=\"rubric-text\">The Motwa, an anthem which varies according to the season, is proper to the Kashkul and not given in this translation. It begins on Mondays with the Sunday evening Royal Anthem; on Tuesdays with the Sunday Night Anthem; on Thursdays with the Sunday Morning Anthem; and on Saturdays with the Sunday Anthem of the Mysteries, as used at the Liturgy.</p>"
   },
   {
     "id": "esy-lelya-motwa-close",
