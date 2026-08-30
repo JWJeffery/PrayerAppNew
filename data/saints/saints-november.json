@@ -1126,5 +1126,15 @@
       "EOR",
       "OOR"
     ]
+  },
+  {
+    "id": "mar-augin-saint-eugene",
+    "day": "November 6",
+    "name": "Mar Augin (Saint Eugene) and his friends",
+    "description": "Traditionally called the 'Father of Egyptian Monasticism in the East' -- founder of the monastery on Mt. Izla, from which East Syriac monasticism is traditionally said to spread. ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026, as 'St. Eugene and his friends.'",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

@@ -8145,3 +8145,59 @@ Sauma Sundays no longer null out the entire Ramsha sequence and fall through to 
   internal self-tests in the calendar engine still pass (untouched by this session's edits).
 
 SEED_VERSION at the close of this entry: `v195-2026-08-30-east-syriac-sauma-qyamta-ramsha-wired`.
+
+---
+
+## Session 2026-08-30 continued -- Layer 3 saints expansion: 5 more identities sourced (16 total,
+## was 11). Two prior "open items" also confirmed already resolved (Cathedral/Monastic toggle,
+## ordinary1/2/3.json split) before picking this one -- a stale-list check paid off immediately.
+## SEED_VERSION v195 -> v196.
+
+Josh: "Keep going." Before picking the next item, checked the actual repo state against the
+running open-items list rather than trusting it -- found two of six listed items were already
+done: the Cathedral/Monastic toggle was fixed back on 2026-08-20 (dashboard confirms, status
+green), and the `ordinary1/2/3.json` three-file split was already deleted and replaced with a
+single `ordinary.json` in an earlier BCP session. Both crossed off the list rather than re-worked.
+Of the four genuinely remaining items, two need Josh's own decision (Book of Needs access-tier
+scope, whether Gregorian Easter becomes the COE default) and one is still blocked (Royal Anthem,
+copyright). Picked the fourth: expanding Layer 3's sourced-saint count beyond the 11 confirmed in
+the earlier audit session.
+
+**Re-matched the 84 still-unsourced allowlisted identities against the existing 73-entry Maclean +
+diocesan dataset with more careful logic** (the original fuzzy matcher missed several real hits by
+only comparing a name's first word-cluster). Found five genuine matches:
+- `saint-ephrem-the-syrian` -- June 9, already present in the corpus with other traditions'
+  tags; added COE rather than creating a duplicate entry. (Two other id variants for the same
+  person, `saint-ephraim-the-syrian` and `saint-ephrem-of-edessa`, already flagged in
+  `coe-eligibility.js`'s own comments as "pending Phase 4 consolidation" -- left unsourced
+  deliberately, so as not to recreate a three-way duplicate display for one person.)
+- `mar-papa-bar-aggai` -- new entry, Sept.4 (ACOTE diocesan). Maclean's own list (p.282-283) gives
+  Oct.2 instead for the same figure -- not reconciled, disclosed in the entry's own description,
+  same treatment already established for `mar-shimon-bar-sabbae`'s equivalent conflict (diocesan
+  date preferred as the more current, living-practice source).
+- `saint-john-the-baptist` -- new entry, Jan.9 (diocesan). Distinct from this corpus's existing
+  Nativity/Martyrdom/Conception/Synaxis commemorations of the same figure on other dates --
+  multiple annual commemorations of one person is normal practice here, not duplication.
+- `mar-zaia` -- new entry, Jan.7 (diocesan). A separate Rogation for the same saint (Jan.5) and a
+  joint commemoration (Sept.14) already exist as distinct dated entries.
+- `mar-augin-saint-eugene` -- new entry, Nov.6 (diocesan, "St. Eugene and his friends" -- the id
+  itself names both forms of his name, confirming the match).
+
+**Researched Mar Narsai specifically** (heavily referenced elsewhere in this project's own built
+liturgical content, as an attributed Tishbukhta author) via web search and Qadishe. Found exactly
+one specific date claim, Feb.13, from a single low-authority blog -- not corroborated by Qadishe
+(whose own entry for Narsai is marked "draft," no commemoration date given) or any other source
+checked. **Not used.** One citation from an unvetted source doesn't meet this project's sourcing
+bar; left unsourced rather than asserted on weak grounds.
+
+**Result: 16 of 95 allowlisted identities now have a real, cited date** (was 11). The remaining 79
+are real, disclosed future work -- most will need dedicated per-figure research (checking Qadishe
+entries individually for completed, non-draft records; cross-referencing Fiey citations already
+used elsewhere; or further diocesan-calendar cross-checking) rather than quick batch web searches,
+which mostly surfaced general biographical pages without liturgical calendar dates.
+
+**Verified:** all 12 monthly `saints-*.json` files remain valid JSON. Full resolve-and-filter
+pipeline simulated against the real repo files for all 5 new/newly-tagged dates plus the 5 already
+confirmed from the prior session -- all 10 resolve and pass the eligibility filter correctly.
+
+SEED_VERSION at the close of this entry: `v196-2026-08-30-east-syriac-layer3-five-more-sourced`.

@@ -1248,5 +1248,15 @@
     "tags": [
       "OOR"
     ]
+  },
+  {
+    "id": "mar-papa-bar-aggai",
+    "day": "September 4",
+    "name": "Mar Papa bar Aggai",
+    "description": "Early Catholicos of the Church of the East, associated with establishing the primacy of the See of Seleucia-Ctesiphon. ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026 gives this date; Maclean 1894 (p.282-283, Kashkul MS list) gives Oct.2 instead for the same figure -- not reconciled, disclosed rather than silently picked. Diocesan date used here as the more current, living-practice source, matching how the same conflict was already resolved for mar-shimon-bar-sabbae.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

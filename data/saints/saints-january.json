@@ -1226,5 +1226,25 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "saint-john-the-baptist",
+    "day": "January 9",
+    "name": "St. John the Baptist",
+    "description": "Forerunner of Christ. ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026. Distinct from this file's own Jan.7 'Synaxis of John the Baptist' and the June/August/September commemorations of specific events in his life (Nativity, Martyrdom, Conception) already present elsewhere in this corpus -- multiple distinct annual commemorations of the same figure are normal practice, not duplication.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-zaia",
+    "day": "January 7",
+    "name": "St. Zaia the Blessed",
+    "description": "ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026. A Rogation (preparatory commemoration) for the same saint is kept Jan.5, and he is commemorated again jointly with others Sept.14.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

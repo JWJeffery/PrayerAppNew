@@ -1,5 +1,48 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Layer 3 saints expansion: 5 more identities sourced (16 total,
+## was 11). Two prior "open items" also confirmed already resolved (Cathedral/Monastic toggle,
+## ordinary1/2/3.json split) before picking this one -- a stale-list check paid off immediately.
+## SEED_VERSION v195 -> v196. Read this entry, then the v195/v194/v193/v192/v191/v190/v189/v188
+## entries below it, then the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "Keep going." **Checked the actual repo state against the running open-items list before
+picking the next item, rather than trusting it** -- found two of six listed items were already
+done: the Cathedral/Monastic toggle was fixed back on 2026-08-20 (dashboard confirms, status
+green), and the `ordinary1/2/3.json` three-file split was already deleted and replaced with a
+single `ordinary.json` in an earlier BCP session. Both crossed off rather than re-worked. Of the
+four genuinely remaining items, two need Josh's own decision (Book of Needs ladder scope, whether
+Gregorian Easter becomes the COE default) and one is still blocked (Royal Anthem, copyright).
+Picked the fourth: expanding Layer 3's sourced-saint count.
+
+**Re-matched the 84 still-unsourced allowlisted identities against the existing 73-entry Maclean +
+diocesan dataset with more careful logic** -- the original fuzzy matcher missed real hits. Found
+five genuine matches: `saint-ephrem-the-syrian` (June 9, added COE to the existing entry rather
+than duplicating), `mar-papa-bar-aggai` (new, Sept.4 diocesan; Maclean gives Oct.2 for the same
+figure, disclosed, same treatment as the already-established Mar Shimon Bar Sabbae conflict),
+`saint-john-the-baptist` (new, Jan.9), `mar-zaia` (new, Jan.7), `mar-augin-saint-eugene` (new,
+Nov.6).
+
+**Researched Mar Narsai specifically** (heavily referenced elsewhere in this project's own built
+content). Found one date claim (Feb.13) from a single low-authority blog, not corroborated by
+Qadishe (whose own entry is a "draft" with no date) or anything else. **Not used** -- doesn't meet
+this project's sourcing bar.
+
+**Result: 16 of 95 allowlisted identities now sourced** (was 11). Remaining 79 are real, disclosed
+future work needing dedicated per-figure research, not quick batch searches.
+
+**Verified:** all 12 monthly saints files remain valid JSON; full resolve-and-filter pipeline
+simulated for all 5 new/updated dates plus the 5 already confirmed prior -- all 10 resolve and
+pass the eligibility filter correctly.
+
+**Open items, updated:** items 1-6 from the v187 list are done, plus this Layer 3 expansion.
+Genuinely remaining: Royal Anthem sourcing (still copyright-blocked), the fuller Book of Needs
+access-tier ladder (needs Josh's scope decision), the rest of the ~79 unsourced Layer 3 identities
+(dedicated future research), and a decision on whether Gregorian Easter should become the COE
+default.
+
+---
+
 ## Session 2026-08-30 continued -- Great Fast's own Sunday Evening Service resolved: it doesn't
 ## exist separately, and a real, distinct bug (wrong Prayer after the Royal Anthem for most of the
 ## year) found and fixed along the way. Sauma/Qyamta Ramsha now wired and rendering. SEED_VERSION

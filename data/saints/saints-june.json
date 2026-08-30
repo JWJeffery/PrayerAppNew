@@ -297,13 +297,14 @@
     "id": "saint-ephrem-the-syrian",
     "day": "June 9",
     "name": "Saint Ephrem the Syrian",
-    "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
+    "description": "Deacon, hymnographer, and Doctor of the Church, died 373. (Also ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026, as 'St. Ephrem the Teacher.')",
     "type": "saint",
     "tags": [
       "ANG",
       "LAT",
       "EOR",
-      "OOR"
+      "OOR",
+      "COE"
     ]
   },
   {
