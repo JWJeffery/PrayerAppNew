@@ -1,5 +1,54 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Sunday/Festival Ramsha's missing Psalms 141/142/119:105-
+## 113/117 block (pp.70-76) built and wired, closing the gap Josh asked about directly. A
+## second duplication mistake happened during this build -- caught and fixed BEFORE any patch
+## went out this time. Read this whole entry before doing anything else; the entry below it is
+## still accurate for everything else.
+
+Josh asked directly whether content existed for the Ramsha Ps.141 feast-name farcing. It did
+not -- confirmed nothing existed for it at all. Checking further found the real gap was
+bigger: the live Sunday/Festival Ramsha sequence skipped an entire block Maclean places
+between the First Shuraya and the Karuzutha -- the First Anthem (Memorial-of-the-departed
+forms), the Psalms 141/142/119:105-113/117 recitation itself, the Second Shuraya, and the
+Second Anthem. Reported this and asked before building; Josh's answer: build the whole thing.
+
+**A second duplication mistake happened, caught this time before it went out.** 7 of the 9
+components drafted for the Anthem sets turned out to duplicate `esy-festival-first-anthem`
+and `esy-festival-second-anthem` -- two already-existing components (from an earlier session)
+that already carried the full Anthem text, the Second Shuraya citations, and the closing
+transition into the Karuzutha. This time, the corpus was checked for duplicates *before*
+wiring anything, applying the lesson from the first duplication mistake (found two turns ago,
+in the Feast Lelya build) deliberately rather than repeating it blind. The 7 duplicate drafts
+were deleted before ever being wired into a sequence or committed.
+
+**Actually new and kept:** `esy-festival-incense-psalms-rubric` (citing the ordinary farcing,
+reusing `esy-evening-incense-psalms` directly) and `esy-festival-incense-psalms-feast-farcing`
+(the genuinely unbuilt Feast-specific addition). **Reused:** `esy-festival-first-anthem`,
+`esy-first-anthem-prayer`, `esy-evening-incense-psalms`, `esy-evening-incense-prayer`,
+`esy-festival-second-anthem`.
+
+**Wired:** both `sunday-ramsha-*-sequence` now insert this six-item block between
+`esy-festival-first-shuraya-note` and `esy-karozutha`, matching Maclean's own order.
+
+**The feast-name mechanism was extended, and its own simulation caught a real grammar bug
+before it shipped:** this Ramsha farcing uses a possessive template ("glorious is thy ___"),
+different from the Night Service's "Hallelujah in ___" -- inserting `FEAST_PS78_TERMS`'s
+values unchanged produced "thy the Nativity of Christ" (doubled article). Caught by running
+the substitution against a real date and reading the actual output before finalizing, not by
+inspection alone. Fixed by stripping the leading "the" for this specific template.
+
+**Verified:** both JSON files remain valid, 420 total components, zero duplicate ids; both
+Sunday Ramsha sequences (29 items each, up from 23) resolve fully; `js/office-ui.js` passes
+`node --check`; the corrected substitution simulated against all six confident feast keys,
+each now reading grammatically, and against Transfiguration to confirm the disclosed
+bracket-list fallback still renders unresolved. `SEED_VERSION` bumped to
+`v181-2026-08-29-east-syriac-sunday-ramsha-incense-psalms-built-wired`.
+
+Full detail in `audit-ledger.html`'s `coe:sunday-ramsha-incense-psalms:built-wired` entry.
+
+---
+
 ## Session 2026-08-29 continued -- Feast-name substitution mechanism built for the 6
 ## confidently-mapped terms, researched beyond Maclean at Josh's request. Found and fixed a
 ## real duplication bug from the item-7 build in the process. Read this whole entry before

@@ -4547,5 +4547,23 @@
       "note": "GAP, disclosed rather than filled: 'Then the proper Karuzutha' -- text not given by Maclean, day-specific and Geza/Khudhra-sourced. Distinguish from the Sunday Night Service's own final Karuzutha (esy-sunday-lelya-karuzutha, for which Maclean gives full alternate text at page 162) -- that text belongs to the Sunday office specifically and is not reused here, since this office's own closing Karuzutha is left to the Geza rather than given in full."
     },
     "text": "<p class=\"rubric-text\">Then the proper Karuzutha.</p>"
+  },
+  {
+    "id": "esy-festival-incense-psalms-rubric",
+    "title": "Psalms 141, 142, 119:105-113, 117",
+    "meta": {
+      "source": "Maclean 1894, p.72-73.",
+      "note": "'Farced as on page 5' -- reuses esy-evening-incense-psalms directly for the ordinary farcing on Sundays and Memorials; no new text needed for that part. On Feasts of our Lord specifically, Maclean adds further farcing clauses on top of the ordinary ones, between each clause of each of the four psalms -- see esy-festival-incense-psalms-feast-farcing for that addition, resolved dynamically by feast (the same FEAST_PS78_TERMS mechanism and research already applied to the Night Service's Psalm 78 farcing, 2026-08-29 -- Transfiguration and any feast outside the six confidently-mapped terms falls back to the disclosed bracket list there too, unresolved rather than guessed)."
+    },
+    "text": "<p class=\"rubric-text\">They say Psalms 141, 142, 119:105-113, and 117, under one Gloria, farced as before.</p>"
+  },
+  {
+    "id": "esy-festival-incense-psalms-feast-farcing",
+    "title": "The same, further farced on Feasts of our Lord",
+    "meta": {
+      "source": "Maclean 1894, p.72-73.",
+      "note": "GENUINE, DISCLOSED AMBIGUITY where six of the eight terms resolve dynamically: same eight-term list already researched for esy-feast-lelya-ps78-farcing-gap (Nativity, Epiphany/Baptism, Entrance, Resurrection, Ascension, Descent, Revelation, Cross) -- see that component's own note for the research (the modern Assyrian Church of the East's own seven Feasts of our Lord confirmed against this project's calendar engine; 'Entrance' and 'Revelation' left unresolved, Maclean's own footnote on 'Entrance' shows he wasn't sure either). The wording pattern here differs from the Night Service's ('glorious is thy X' rather than 'Hallelujah in X'), so this is its own component and its own render-time substitution using the FEAST_PS78_TERMS table already built, not a duplicate of the Night Service one."
+    },
+    "text": "<p class=\"rubric-text\">But on Feasts of our Lord: between each clause of Psalm 141 is said, ‘Glory to thee: glorious is thy [Nativity, or Epiphany, or Entrance, or Resurrection, or Ascension, or Descent, or Revelation, or Cross].’ Between each clause of Psalm 142 is said, ‘Glorious art thou, and glorious is thy [the feast].’ Of Psalm 119:105-113, ‘Glorious is thy [the feast], which maketh all to rejoice.’ Of Psalm 117, ‘Let the nation and nations glorify thee.’ Then, Glory be to the Father, etc.; add, ‘By all mouths shalt thou be glorified.’ Then, From everlasting, etc.; add, ‘Glory be to thee, O God.’</p>"
   }
 ]

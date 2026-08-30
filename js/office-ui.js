@@ -4871,6 +4871,19 @@ async function renderEastSyriac() {
             // name," and this calendar engine already has a correct label
             // for all seven Feasts of our Lord, not just the six above.
             componentText = componentText.replace('the festival of N', `the festival of ${feastCommem.label}`);
+        } else if (itemId === 'esy-festival-incense-psalms-feast-farcing' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
+            // Same six-term table as Psalm 78 above, reused rather than
+            // duplicated -- this is the Ramsha sibling of that farcing,
+            // researched together (see FEAST_PS78_TERMS's own note). This
+            // template is possessive ("glorious is thy ___"), unlike the
+            // Night Service's "Hallelujah in ___" -- FEAST_PS78_TERMS's
+            // own values carry a leading "the" for that other template
+            // ("the Nativity of Christ"), which would double up here
+            // ("thy the Nativity of Christ"); stripped for this one.
+            const resolved = FEAST_PS78_TERMS[feastCommem.key].replace(/^the /, '');
+            componentText = componentText
+                .replace('[Nativity, or Epiphany, or Entrance, or Resurrection, or Ascension, or Descent, or Revelation, or Cross]', resolved)
+                .split('[the feast]').join(resolved);
         }
 
         // Components carrying `psalms` (plural, e.g. a Marmitha of several
