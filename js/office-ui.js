@@ -4278,6 +4278,31 @@ async function renderEastSyriac() {
         sequenceKey = `${dayName}-sapra-fast-sequence`;
     }
 
+    // During the Great Fast, ferial Lelya (weekdays only -- Sunday's Fast
+    // Night Service is Festival, out of scope here as elsewhere) is its
+    // own distinct office, not the ordinary ferial one with a Canon
+    // spliced in. Confirmed 2026-08-29 by re-checking the complete Fast
+    // Night Service text directly (pp.211-223): it has its own opening
+    // Canon, its own fixed seasonal Tishbukhta (Mar Abraham of Izla on
+    // Weeks of the Mysteries; Mar Shimun Bar Saba'i/Mar Ephraim on
+    // Ordinary weeks -- both already built for Compline reuse, now reused
+    // here too), and only reconverges with the ordinary ferial office at
+    // its very end, where it explicitly cites "Tishbukhta for the day"
+    // (that weekday's own already-built ferial Tishbukhta) and that
+    // weekday's own Shubakha (Maclean: "the Shubakha (page 97) to a sad
+    // tone" -- same day-keyed Shubakha table used every day, not new
+    // text). This supersedes the narrower fix from 2026-08-27, which
+    // (correctly, given what was in hand at the time) only spliced a bare
+    // Canon citation into the ordinary sequence before that day's
+    // Tishbukhta, since the fuller structure hadn't been obtained yet.
+    let lelyaFastSequenceName = null;
+    if (officeKey === 'lelya' && isGreatFast && dayName !== 'sunday' && typeof EastSyriacCalendar !== 'undefined') {
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
+        const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
+        lelyaFastSequenceName = isMysteriesWeek ? 'lelya-fast-mysteries-sequence' : 'lelya-fast-ordinary-sequence';
+        sequenceKey = lelyaFastSequenceName;
+    }
+
     // Endana ("Prayer at Noon in the Fast") has no content outside the
     // Great Fast -- Maclean gives it no existence there, so it is not a
     // "not yet rebuilt" gap outside the Fast, but genuinely not part of
@@ -4378,34 +4403,19 @@ async function renderEastSyriac() {
         }
     }
 
-    // Great Fast Lelya (Night Office) Canon: ferial (weekday) Lelya has no
-    // Night Anthem or Canon at all on ordinary days -- confirmed by
-    // checking the actual sequence data before writing this, not assumed
-    // by analogy with Sapra's own Fast additions (Quta'a, the Mysteries-
-    // week psalm swap). A rubric already in this corpus (Maclean p.224,
-    // inside the Fast section) states the order literally: "Then the Night
-    // Anthem with its Prayer and Canon, and the proper Tishbukhta" -- Night
-    // Anthem, then Canon, then that day's Tishbukhta, which the ordinary
-    // sequence already ends with. The rubric's own note discloses that the
-    // Night Anthem's proper text was never transcribed anywhere in this
-    // project's holdings; that gap is NOT filled here -- only the Canon,
-    // which Index II (p.260-261) gives real citations for, is inserted.
-    // Where exactly this falls relative to Qaltha/Motwa/Shubakha is not
-    // separately confirmed by the source as transcribed; placing it
-    // immediately before the Tishbukhta is the one placement the rubric's
-    // own wording states directly, so nothing beyond that wording is
-    // assumed. Reuses the same weekInSeason data already established for
-    // Sapra's Weeks-of-the-Mysteries swap -- no new date logic needed.
-    if (officeKey === 'lelya' && isGreatFast && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
-        const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
-        const canonId = isMysteriesWeek ? 'esy-lelya-fast-canon-mysteries' : 'esy-lelya-fast-canon-ordinary';
-        const tishbukhtaId = `esy-lelya-tishbukhta-${dayName}`;
-        if (sequence.includes(tishbukhtaId)) {
-            sequence = sequence.flatMap(id => id === tishbukhtaId
-                ? ['esy-sext-night-anthem-canon-rubric', canonId, id]
-                : [id]);
-        }
+    // Resolve this new sequence's two day-specific placeholders: the
+    // Shubakha said "to a sad tone" is that weekday's own already-built
+    // ferial Shubakha (Maclean directs the reader back to the ordinary
+    // per-weekday table at page 97, not new text), and the Tishbukhta "for
+    // the day" at the very end of the office is that weekday's own
+    // already-built ferial Tishbukhta -- both confirmed directly from the
+    // source text, not assumed by analogy with Sapra's Fast handling.
+    if (lelyaFastSequenceName && sequence) {
+        sequence = sequence.map(id => {
+            if (id === '__DAY_SHUBAKHA__') return `esy-lelya-${dayName}-shubakha`;
+            if (id === '__DAY_TISHBUKHTA__') return `esy-lelya-tishbukhta-${dayName}`;
+            return id;
+        });
     }
 
     // Blessing of the Months: a set of anthems said at the Evening Service

@@ -1,5 +1,62 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Full Fast Night Service built and wired (Weeks of the
+## Mysteries + Ordinary Weeks), superseding the narrower 2026-08-27 fix; both named
+## Tishbukhta reused from Compline into their real home office. Read this whole entry
+## before doing anything else; the entry below it is still accurate for everything else.
+
+Proceeding through the "Not yet done" list in order, item 2: "Weeks-of-the-Mysteries and
+Ordinary-Weeks Fast Night Service Canons, plus two named Tishbukhta." With the full source
+now in hand (pp.211-223), this turned out to be a bigger item than its own description
+suggested -- not just two bare Canons, but two complete, distinct Night Service structures.
+
+**What the 2026-08-27 fix actually did, correctly for what was available then:** spliced a
+bare Canon citation into the *ordinary ferial* Lelya sequence, immediately before that day's
+own Tishbukhta. Reasonable at the time -- only Index II's psalm references were in hand, not
+the actual office text.
+
+**What the real source shows:** the Fast Night Service is its own office, diverging from the
+ferial one right at the start (its own opening Canon -- confirmed to be two farced psalms plus
+a Gloria, not the single bare citation previously recorded, and the Ordinary-weeks version
+turned out to combine Psalm 119:57-65 AND Psalm 92:1-2, not Psalm 92:1-2 alone as previously
+disclosed) and reconverging with the ferial office only at its very end (that weekday's own
+Shubakha and Tishbukhta, which Maclean himself cites rather than reprints).
+
+**Built:** `esy-lelya-fast-canon-mysteries`/`-ordinary` upgraded from citation-only to full
+text; the priest's doorway prayer (Weeks of the Mysteries only -- confirmed Ordinary Weeks has
+no equivalent); a missing page-152 prayer that only half of a cross-referenced pair had ever
+been transcribed for; Ordinary Weeks' own two full Suyakhi prayers and alternate Night Anthem
+prayer; and disclosed Khudhra-citation gaps for the Hulali, Motwa (including Maclean's own
+recorded rubric variance -- "some say the Motwa; but some omit it, and say the Night Anthem
+only"), Madrasha, Qali d'Shahra, Night Anthem text, and the second "proper Canon" near the
+office's end.
+
+**Reused, not retyped:** `esy-compline-tishbukhta-glory-be-to-thee-mar-abraham` (Mar Abraham
+of Izla) and `esy-compline-tishbukhta-glory-to-thee-mar-shimun` (Mar Shimun Bar Saba'i/Mar
+Ephraim) -- both already built during the 2026-08-20 Compline session (their text happened to
+already be in hand then), but only ever wired into Compline. Now wired into the actual office
+Maclean prints them for too.
+
+**Wired:** two new sequences, `lelya-fast-mysteries-sequence` and `lelya-fast-ordinary-
+sequence`, each ending with `__DAY_SHUBAKHA__`/`__DAY_TISHBUKHTA__` placeholders that
+`js/office-ui.js` resolves to that real weekday's own components. The 2026-08-27 Canon-splice
+block is removed entirely, replaced by direct `sequenceKey` selection (mirroring how Sapra's
+own `{day}-sapra-fast-sequence` already works) -- same `weekInSeason`/Mysteries-week logic
+already established for Sapra, no new date computation.
+
+**Verified:** both JSON files remain valid; every component id checked for all six weekdays x
+both week-types (twelve combinations, zero missing); `js/office-ui.js` passes `node --check`;
+simulated real 2027 dates across all seven weeks of Sauma (weeks 1/4/7 correctly Mysteries,
+2/3/5/6 correctly Ordinary), plus a real non-Fast Wednesday confirmed unaffected.
+`SEED_VERSION` bumped to `v173-2026-08-29-east-syriac-fast-lelya-night-service-built-wired`.
+
+Full detail in `audit-ledger.html`'s `coe:fast-lelya-night-service:built-wired` entry.
+
+**"Not yet done" list, updated:** item 2 is now done. Proceeding to item 3 next (confirming
+Mar Narsai's Sunday Night Service Tishbukhta's seasonal restriction, pp.155-162).
+
+---
+
 ## Session 2026-08-29 continued -- Wednesday Motwa's disclosed 'shared ending' ambiguity
 ## researched and resolved. Read this whole entry before doing anything else; the entry below
 ## it (the initial Wednesday Motwa build) is still accurate for everything else.
