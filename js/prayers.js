@@ -134,7 +134,13 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'coe-prayer-for-a-journey': ['COE'],
     'coe-prayer-while-travelling': ['COE'],
     'coe-prayer-of-repentance': ['COE'],
-    'coe-prayer-for-students': ['COE']
+    'coe-prayer-for-students': ['COE'],
+    'coe-maclean-prayer-kissing-cross': ['COE'],
+    'coe-maclean-prayer-kissing-gospel': ['COE'],
+    'coe-maclean-prayer-kissing-tomb': ['COE'],
+    'coe-maclean-prayer-for-a-journey': ['COE'],
+    'coe-maclean-prayer-boat-or-ship': ['COE'],
+    'coe-maclean-prayer-for-himself': ['COE']
 };
 
 function normalizeBookOfNeedsContext(context) {

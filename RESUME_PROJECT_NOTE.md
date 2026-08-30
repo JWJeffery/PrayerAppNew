@@ -1,5 +1,61 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 -- Prayers on Various Occasions (Maclean pp.249-258) added to the Church
+## of the East Book of Needs. Found and corrected a stale claim that this category was still
+## empty -- it already had 4 prayers from a different, modern source. Read this whole entry
+## before doing anything else; the entries below it are still accurate for everything else.
+
+Continuing open-items work with the full book now in hand (McClean.rtf). Transcribed Maclean's
+"Prayers on Various Occasions" (pp.249-258), all 10 pages read directly -- 27 distinct headed
+prayers, condensed into 25 component entries where an alternate ("Another"/"Or this") shares
+its parent's heading in the source.
+
+**Found while starting this:** this project already has real Book of Needs infrastructure --
+role-aware access-tier governance (documented, not yet code-enforced), a tradition taxonomy in
+`js/prayers.js` with a full COE entry already wired, and a real `data/prayers.json` schema.
+**More significantly:** the governance documentation's own note claimed "COE Book of Needs
+remains empty only because no prayer entry has been added yet" -- checked directly and found
+this false. Four real prayers already existed, sourced from *The Beginner's Prayerbook, ACOE
+Diocese of California, 2019* -- a different, modern source. Corrected the stale note in the
+same commit rather than leaving it. (Notably, the modern "Prayer for a Journey" turns out to
+be a modernized paraphrase of the same underlying prayer Maclean's 1894 translation gives
+under the same heading -- confirmed by direct comparison; both now sit side by side as
+genuinely distinct texts, not a duplicate.)
+
+**Built:** 25 new components in `data/prayers.json` under a `coe-maclean-` id prefix, each
+citing the exact Maclean page(s).
+
+**Wired live, deliberately limited:** only the 6 entries Maclean's own footnote explicitly
+marks as sayable by a layman (kissing the cross, kissing the Gospel, kissing the tomb of the
+saints, a journey, a boat or ship, a man praying for himself) are in the live public taxonomy
+map -- the COE dropdown goes from 4 prayers to 10. **The remaining 19** (rain, crops, the
+sick, one tempted by a devil, infants, wine, oil of healing, a reader, the faithful, a house,
+a priest washing his hands at the liturgy, fevers, grace before/after meat, hallowing water, a
+bride, a newborn boy and his mother, a woman seeking the Church's prayers, and new altar
+cloths/vessels) are built and cited but **deliberately not added to the live map** -- several
+are priestly, sacramental, exorcistic-toned, or administered by one person over another,
+matching categories this project's own governance says shouldn't appear in the default lay
+dropdown, and the live code doesn't enforce access tiers at all yet (only tradition
+filtering). Held back until real tier enforcement exists, not forgotten -- each entry's
+presence in `data/prayers.json` is itself the disclosure.
+
+**Verified:** `data/prayers.json` remains valid, 103 total entries; `js/prayers.js` passes
+`node --check`; the live taxonomy resolution simulated directly, confirming exactly 10
+COE-tagged ids resolve and exactly 19 `coe-maclean-` ids are correctly absent from the live
+map. `documentation/book-of-needs-source-intake-inventory.json`'s stale note corrected.
+`SEED_VERSION` bumped to `v186-2026-08-30-book-of-needs-coe-maclean-prayers-built`.
+
+Full detail in `audit-ledger.html`'s `coe:book-of-needs:maclean-prayers-built` entry.
+
+**Open items remaining, updated:** First Friday and Middle Friday audits (pp.41-43, 48-49),
+Ferial Morning Service dedicated audit (pp.103-108), pre-Fast Sunday folding rule, Layer 3
+saints calendar, the two loose Farcings ends (Ps.100's "In the beginning" variant; Palm
+Sunday's Ps.96-98 fit), and now: whether/how to build real access-tier enforcement into
+`js/prayers.js` so the 19 held-back prayers (and similar future content) can be safely wired
+live -- a genuine architecture decision, not started here, flagged for Josh's direction.
+
+---
+
 ## Session 2026-08-29 continued -- Farcings of the Psalms rebuilt to a real verification
 ## standard (the earlier version was correctly rejected); cross-referenced against the whole
 ## corpus's disclosed farcing gaps, finding and fixing two real ones. Read this whole entry
