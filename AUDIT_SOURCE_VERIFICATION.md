@@ -116,15 +116,17 @@ unchanged, only the checklist's own bookkeeping was wrong.
       of that page range, so it has not yet had the same word-for-word audit pass the rest of
       this file documents. Flagged for that pass, not claimed to already have received it.
 - [x] Sundays (pp.155-162) — **COMPLETE, 2026-08-29** — see Findings Log
-- [~] Memorials (p.163) — **IMPRECISE, flagged rather than left as-is, 2026-08-29 continued.**
-      The original finding here ("mostly genuinely Khudhra-sourced/unavailable") is not
-      precise enough to stand as a dashboard-quality claim -- "mostly" was never resolved into
-      an exact accounting of which specific lines are Khudhra-cited versus which (if any)
-      beyond the one Tishbukhta cross-reference already noted are real, available, untranscribed
-      text. Doing that precisely requires the actual page 163 text back in hand, which is not
-      currently recoverable in this session (see the note at the top of this session's work in
-      RESUME_PROJECT_NOTE.md) -- requested from Josh for re-supply. Until then this line stays
-      open rather than closed on an unverified "mostly."
+- [x] Memorials (p.163) — **PRECISELY RESOLVED, 2026-08-29 continued** (later session), after
+      the earlier "mostly genuinely Khudhra-sourced" language was correctly rejected as too
+      imprecise. Josh re-supplied the actual page text directly. Exact breakdown, not a hedge:
+      this office has ZERO new prose content beyond one rubric line ("There is no Qaltha on
+      Memorials") -- every other element is a citation, and every citation resolves cleanly to
+      either (a) content already built elsewhere in this corpus, now reused and wired as a real
+      `memorials-lelya-sequence`, or (b) a genuine, disclosed Khudhra-only gap (the proper
+      Motwa/collect/Canon/Tishbukhta-selection/Karuzutha/Madrasha/Qali-d'Shahra-text/Night-
+      Anthem-text), in the same category as dozens of other disclosed gaps already on record.
+      Not wired into the live renderer -- no per-Memorial calendar tracking exists yet (Layer 3,
+      unbuilt) -- but built, cited, and ready for whenever that trigger condition exists.
 
 ### Festival Morning Service (pp.164-172)
 - [x] **COMPLETE, 2026-08-29** — see Findings Log
@@ -175,16 +177,22 @@ Full detail in `audit-ledger.html`'s `coe:compline-monday-saturday:audited` entr
 - [x] Blessing of the Months (pp.229-235) — **COMPLETE, 2026-08-29**
 
 ### Appendices
-- [~] Farcings of the Psalms (pp.236-248) — **WORD-FOR-WORD AUDIT NOW DUE, BLOCKED, 2026-08-29
-      continued** (later session). This entry's own prior note said the Feast-of-our-Lord
-      farced-Psalter gap it identified would need "a real word-for-word audit once the
-      Feast-of-our-Lord farcing is eventually built" -- it has been (see the Feasts of our
-      Lord entry above). That audit is accordingly now due, but is blocked: the actual text of
-      this page range is not currently recoverable in this session (checked directly --
-      searched this session's own saved transcript for verbatim content from this range and
-      found none, only prior summaries of it; see RESUME_PROJECT_NOTE.md for the full
-      explanation). Requested from Josh for re-supply. Downgraded from "AS COMPLETE AS
-      POSSIBLE" to reflect that real, scoped work is now blocked on it, not merely deferred.
+- [x] Farcings of the Psalms (pp.236-248) — **PROPERLY VERIFIED AND CROSS-REFERENCED,
+      2026-08-29 continued** (later session), after the first transcription pass was correctly
+      rejected as not good enough ("This is not acceptable") and rebuilt to this file's normal
+      standard -- all 13 pages read and transcribed by hand, not programmatically cleaned and
+      spot-checked. This surfaced real content the first pass had silently dropped: seven "Or"
+      alternate farcings, several Feast/Memorial/Rogation-specific restrictions disclosed by
+      Maclean's own footnotes, six "Canon for Christmas" insertions, a Memorial-specific
+      insertion at Psalm 101, and Psalm 119's farcing given as 22 separate alphabet-ordered
+      clauses. Cross-referenced against every disclosed "farcing not given"/Khudhra-only gap in
+      the corpus (full sweep, not partial): two real, direct resolutions found and applied
+      (esy-third-motwa-note; the two live Marmitha psalm groups); the rest checked and
+      correctly found not applicable, already resolved by reuse, or already carrying their own
+      distinct correct farcing. Two items left genuinely open rather than forced to a
+      conclusion: esy-sunday-sapra-psalm-100-farced-rubric's specific "In the beginning"
+      variant (not in this appendix) and esy-sunday-lelya-palm-sunday's Ps.96-98 citation
+      (thematic fit and whether it's even meant to carry farcing both genuinely unclear).
 - [x] Prayers on Various Occasions (pp.249-258) — **CONFIRMED EMPTY, 2026-08-29.** Zero
       components exist. Nothing to audit; pure build-work, already tracked as pending scoping.
 - [x] Index I (p.259) — **CONFIRMED, 2026-08-29.** No corpus component renders this table

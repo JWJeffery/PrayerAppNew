@@ -1506,5 +1506,25 @@
     "esy-feast-closing-canon-continuation-rubric",
     "esy-sunday-lelya-tishbukhta-mar-narsai",
     "esy-feast-closing-karuzutha-rubric"
+  ],
+  "memorials-lelya-sequence": [
+    "esy-memorials-title",
+    "esy-memorials-no-qaltha",
+    "esy-memorials-hulali-rubric",
+    "esy-hulala-12",
+    "esy-hulala-13",
+    "esy-hulala-14",
+    "esy-memorials-motwa-rubric",
+    "esy-feast-motwa-prayer-treasure-of-helps",
+    "esy-memorials-qali-dshahra-night-anthem-rubric",
+    "esy-qali-dshahra-prayer-first",
+    "esy-qali-dshahra-prayer-second",
+    "esy-qali-dshahra-prayer-third",
+    "esy-night-anthem-prayer-first",
+    "esy-festival-prayer-after-royal-anthem",
+    "esy-memorials-tishbukhta",
+    "esy-lelya-tishbukhta-friday",
+    "esy-memorials-karuzutha-rubric",
+    "esy-sunday-lelya-karuzutha"
   ]
 }

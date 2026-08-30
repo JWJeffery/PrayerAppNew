@@ -1,5 +1,109 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Farcings of the Psalms rebuilt to a real verification
+## standard (the earlier version was correctly rejected); cross-referenced against the whole
+## corpus's disclosed farcing gaps, finding and fixing two real ones. Read this whole entry
+## before doing anything else; the entries below it are still accurate for everything else.
+
+Josh rejected the earlier confidence disclosure outright ("This is not acceptable") and asked
+what pages this was on. **Answer: Maclean 1894, pp.236-248** -- traced to the exact 13
+page-header markers in the source, including two badly mangled ones (p.245's header misreads
+as "PARCINGS OF THE PSALMS 245", p.246's as "246 PARCINfJS OF THE PSALMS") confirmed by their
+position relative to the clean pages either side.
+
+**Rebuilt properly:** read and transcribed all 13 pages by hand, one at a time -- not the
+earlier pattern-substitution-plus-spot-check approach. **This surfaced real content the first
+pass had silently dropped**, confirming the rejection was right, not just cautious: seven "Or"
+alternate farcings (Ps.72, 82, 85, 87, 89, 90, 102-105); Maclean's own footnote restricting the
+Ps.82 alternate and five that follow to "feasts and memorials," with a regional note that
+Kurdistan practice differs; a footnote identifying the Ps.102-104 alternates as specifically
+"for the Rogation of the Ninevites" (already built elsewhere in this corpus); six "Canon for
+Christmas" insertions, each disclosed as also used for Epiphany, other Feasts, and possibly
+Memorials; a Memorial-specific "At the end of the Psalm" insertion at Ps.101 naming the saint
+by "N"; two "At verse N" mid-psalm insertions; and Psalm 119's farcing as 22 separate
+alphabet-ordered clauses. None of this was in the first version.
+
+**Cross-referenced against the whole corpus, as promised:** swept every disclosed "farcing not
+given"/Khudhra-only gap (meta.note and rendered text both, not a partial search). **Found and
+fixed two real, direct resolutions:** `esy-third-motwa-note`'s Deut.32:21a-44 gap matches the
+appendix's own Deut.32:21b-44 citation exactly (a half-verse boundary difference, not a
+different passage) -- farcing added directly. The two currently-live Marmitha psalm groups
+(`esy-festival-marmitha-advent-epiphany`, Ps.87-88; `esy-festival-marmitha-other-sundays`,
+Ps.65-67) now carry their actual farcing text.
+
+**Checked and correctly found not applicable** (disclosed, not silently skipped): several
+components asking a different kind of question than this appendix answers (which Hulali, not
+what's its farcing); one explicitly "without farcings" per Maclean's own rubric; several
+outside this appendix's scope (not numbered Psalms); the Feast-name-dependent farcing layer
+already handled by its own mechanism this session (confirmed genuinely distinct, not a
+duplicate); a few already correctly resolved by reuse or already carrying their own distinct,
+correct office-specific farcing.
+
+**Left genuinely open rather than forced:** `esy-sunday-sapra-psalm-100-farced-rubric` needs a
+specific "In the beginning" variant not in this appendix; `esy-sunday-lelya-palm-sunday`'s
+Ps.96-98 citation has base farcings available but thematic fit (and whether it's even meant to
+carry farcing at all) is genuinely unclear from what's in hand.
+
+**Verified:** `components/east-syriac.json` remains valid, 428 total components, zero
+duplicate ids; `js/office-ui.js` unaffected, still passes `node --check`.
+`AUDIT_SOURCE_VERIFICATION.md` updated to reflect the real verification standard.
+`SEED_VERSION` bumped to `v185-2026-08-29-east-syriac-farcings-reverified-and-cross-referenced`.
+
+Full detail in `audit-ledger.html`'s `coe:farcings-reverified-and-crossreferenced` entry.
+
+---
+
+## Session 2026-08-29 continued -- Memorials built and wired precisely; Farcings of the Psalms
+## retrieved and transcribed, revealing a genuinely distinct textual layer this corpus never
+## had. Josh re-supplied the full book directly after the earlier transcript-truncation issue.
+## Read this whole entry before doing anything else; the entries below it are still accurate.
+
+Josh re-supplied the full book directly as `McClean.rtf` (769KB, converted cleanly with
+`striprtf`, installed this session -- 744KB of plain text, confirmed to be the whole book by
+checking the front matter).
+
+**Memorials (p.163), resolved precisely:** the earlier "mostly genuinely Khudhra-sourced"
+finding -- correctly rejected by Josh as an unverified hedge -- is replaced with an exact
+breakdown. This office has **zero new prose content** beyond one rubric line ("There is no
+Qaltha on Memorials"). Every other element is a citation, and every citation resolves cleanly
+to either content already built elsewhere in this corpus (reused directly: the page-152 Motwa
+prayer, the three Qali d'Shahra prayers, the Night Anthem prayer, the page-80 seasonal prayer,
+`esy-lelya-tishbukhta-friday` -- confirmed as the exact target of Maclean's "as on Fridays"
+citation, the one cross-reference the earlier finding had already correctly noted -- and the
+Sunday Karuzutha) or a genuine, disclosed Khudhra-only gap, same category as dozens already on
+record. Built: 7 new components, wired into `memorials-lelya-sequence` (18 items). Not hooked
+into the live renderer yet -- no per-Memorial calendar tracking exists (Layer 3, unbuilt).
+
+**Farcings of the Psalms (pp.236-248), retrieved and transcribed:** all 150 psalm farcings
+plus the four canticle farcings, built as `esy-farcings-of-the-psalms-reference`. **A real
+structural finding, not just a citation resolved:** Maclean's own Introduction (p.xvii) names
+two separate features of East Syriac psalm recitation -- the "collect" before each Hulala
+subdivision (already built into every `esy-hulala-N` component) and, distinctly, the "giyuri,
+or farcings," of each psalm, verse-level clauses. This appendix is that second layer, and it
+was never captured anywhere in this corpus before. **Transcribed with a disclosed confidence
+limit**, not the full word-for-word standard used elsewhere: footnotes and manuscript-variant
+markers were cleaned programmatically given the volume (150+ entries), a handful of confirmed
+digit-OCR errors were fixed by checking context (not guessed), and the result was spot-checked
+across the range rather than verified entry-by-entry against the source image. Flagged for
+correction if any specific line is found wrong. **Not undertaken:** cross-referencing this new
+layer against the corpus's existing "farcing not given" gaps -- flagged as separate, larger
+scoping work, since it could touch many components across the whole build.
+
+**Duplicate check done before wiring this time**, learning from two earlier mistakes this
+session: both flagged near-matches for the new components were confirmed false positives on
+inspection (generic short-snippet overlap; a genuinely different Karuzutha citation), not real
+duplicates.
+
+**Verified:** `components/east-syriac.json` remains valid, 428 total components, zero
+duplicate ids; `memorials-lelya-sequence`'s 18 items all resolve; `js/office-ui.js` unaffected,
+still passes `node --check`. `AUDIT_SOURCE_VERIFICATION.md`'s checklist updated to reflect
+both findings precisely, replacing the earlier hedged/blocked language.
+`SEED_VERSION` bumped to `v184-2026-08-29-east-syriac-memorials-and-farcings-built`.
+
+Full detail in `audit-ledger.html`'s `coe:memorials-and-farcings:built` entry.
+
+---
+
 ## Session 2026-08-29 continued -- AUDIT_SOURCE_VERIFICATION.md's checklist reconciled against
 ## its own Findings Log and the live corpus. Multiple stale entries found and fixed; two real
 ## content gaps found and closed in the process. Read this whole entry before doing anything
