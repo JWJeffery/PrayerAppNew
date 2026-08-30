@@ -612,7 +612,8 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     version: 1,
     entryPageDefault: 'ask',
     traditionDefault: null,
-    bookOfNeedsScope: 'tradition'
+    bookOfNeedsScope: 'tradition',
+    ministryRole: 'lay'
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -634,6 +635,22 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
+// Self-identified role, used to gate Book of Needs content this project's own
+// governance says shouldn't reach a default lay view (priestly, sacramental,
+// or administered-by-one-person-over-another material) -- see
+// documentation/book-of-needs-role-access-governance.json. Deliberately a
+// coarse three-value honor-system field, not the full ten-tier ladder that
+// document describes: 'lay' (default) sees only content with no role
+// requirement; 'clergy' is a self-identified "I am ordained or monastic"
+// declaration; 'all' is a blunt no-questions-asked override, for anyone who
+// wants everything regardless of role, matching how bookOfNeedsScope's own
+// 'universal' option already works as an unchallenged override elsewhere in
+// this same profile. 'clergy' and 'all' are functionally equivalent for
+// content gating today (both satisfy a 'clergy'-tier requirement) -- kept as
+// two distinct values so the UI can honestly distinguish "I attest I'm
+// ordained" from "just show me everything," per Josh's own framing of this
+// feature (2026-08-30) rather than collapsing them into one meaning.
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES = new Set(['lay', 'clergy', 'all']);
 
 
 function isUniversalOfficeAdvancedToolsEnabled() {
@@ -694,6 +711,10 @@ function normalizeUserProfileDefaults(raw) {
 
     if (!UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(profile.bookOfNeedsScope)) {
         profile.bookOfNeedsScope = 'tradition';
+    }
+
+    if (!UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES.has(profile.ministryRole)) {
+        profile.ministryRole = 'lay';
     }
 
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
@@ -872,6 +893,15 @@ function setUserProfileBookOfNeedsScope(value) {
     persistUserProfileDefaults(profile);
 }
 
+function setUserProfileMinistryRole(value) {
+    const profile = getUserProfileDefaults();
+    profile.ministryRole = UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES.has(value)
+        ? value
+        : 'lay';
+
+    persistUserProfileDefaults(profile);
+}
+
 function resetUniversalOfficeUserProfile() {
     clearUserEntryDefault();
     showTraditionEntry();
@@ -911,6 +941,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const entrySelect = document.getElementById('profile-entry-default');
     const traditionSelect = document.getElementById('profile-tradition-default');
     const bookNeedsSelect = document.getElementById('profile-book-needs-scope');
+    const ministryRoleSelect = document.getElementById('profile-ministry-role');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -925,6 +956,10 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
         bookNeedsSelect.value = normalized.bookOfNeedsScope;
     }
 
+    if (ministryRoleSelect) {
+        ministryRoleSelect.value = normalized.ministryRole;
+    }
+
     if (summary) {
         const entryLabel = normalized.entryPageDefault === 'universal'
             ? 'opens to the Universal Office selector'
@@ -936,7 +971,13 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             ? 'Book of Needs office access shows all prayers'
             : 'Book of Needs office access stays tradition-filtered';
 
-        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}.`;
+        const roleLabel = normalized.ministryRole === 'lay'
+            ? 'showing lay-appropriate Book of Needs content only'
+            : normalized.ministryRole === 'clergy'
+                ? 'showing content appropriate for ordained/monastic use'
+                : 'showing all Book of Needs content regardless of role';
+
+        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}.`;
     }
 }
 
@@ -1198,6 +1239,7 @@ window.getUniversalOfficeUserProfile = getUserProfileDefaults;
 window.setUserProfileEntryPageDefault = setUserProfileEntryPageDefault;
 window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
 window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
+window.setUserProfileMinistryRole = setUserProfileMinistryRole;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
 window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;

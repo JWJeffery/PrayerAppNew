@@ -184,6 +184,15 @@
                     <option value="universal">Show all prayers</option>
                 </select>
             </label>
+
+            <label class="app-profile-default-field" for="profile-ministry-role">
+                <span>Book of Needs role</span>
+                <select id="profile-ministry-role" onchange="setUserProfileMinistryRole(this.value)">
+                    <option value="lay">Lay use (default)</option>
+                    <option value="clergy">I am ordained clergy or a monastic</option>
+                    <option value="all">Show everything, regardless of role</option>
+                </select>
+            </label>
         </div>
 
         <div class="app-profile-defaults-actions">
@@ -1030,8 +1039,8 @@
 <script src="js/bible-browser/bible-source-lane-ui-hook.js"></script>
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
-<script src="js/office-ui.js?v=171" defer></script>
-<script src="js/prayers.js"></script>
+<script src="js/office-ui.js?v=186" defer></script>
+<script src="js/prayers.js?v=186"></script>
 <script src="js/tooltip.js"></script>
 
 </body>

@@ -1,5 +1,75 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- profile.ministryRole setting built; all 25 Maclean Book of
+## Needs prayers now wired live, role-gated instead of partly withheld. Read this whole entry
+## before doing anything else; the entry below it (same day) is still accurate for its own
+## history but describes an intermediate state this entry has since moved past.
+
+**Important standing note on patch delivery, confirmed the hard way this session:** always
+verify actual origin state with a fresh clone before building on top of "the last patch,"
+even when a prior turn's own commit message describes it as delivered. This session, Josh
+applied an earlier, already-superseded patch (the 6-prayers-wired-live version) rather than
+the final consolidated one from the same conversation turn, because the final one was
+generated after he'd already run the older file still sitting in his terminal. A second,
+larger consolidated patch was drafted locally afterward but never actually reached origin
+either. This entry's changes were built as a direct delta on top of the real, confirmed
+current origin state (re-cloned and checked directly each time, not assumed) -- not on top of
+either superseded draft.
+
+Josh confirmed the earlier hold-back judgement call was right, and asked for the real fix:
+"we need to add an option into settings at some point where a person can indicate they are
+ordained (or override to just have access)." Built the same session, not deferred.
+
+**New setting:** `profile.ministryRole` (`js/office-ui.js`), following the exact pattern of
+the existing `bookOfNeedsScope` field -- `lay` (default), `clergy` (self-identified
+ordained/monastic), `all` (blunt override, matching how `bookOfNeedsScope`'s own `universal`
+value already works). Full plumbing: schema default, validation set, normalization, a setter
+matching the existing setter's shape, sync into the settings-panel summary text, window
+export, and a third `<select>` in `index.html`'s settings panel alongside the two existing
+profile controls.
+
+**New gating:** `js/prayers.js` gets a `BOOK_OF_NEEDS_OPTION_CLERGY_TIER` set (13 prayer ids)
+and a `prayerOptionMeetsRoleRequirement()` check wired into `prayerOptionAppliesToContext()`
+-- the one function every prayer-visibility check already funnels through, including the
+Universal Book of Needs selector, which previously bypassed all filtering for
+`context==='UNIVERSAL'` and needed an actual fix so gated content stays gated there too.
+
+**Reclassified the 19 previously-held-back prayers**, now that partial visibility is possible:
+6 moved to lay-open (rain, crops, the sick, infants, grace before/after meat -- general
+petitions and table graces, no priestly stage direction). The other 13 stay clergy-gated on a
+direct reading of each prayer's own rubrics (explicit "he makes the sign of the cross on..."
+performed-by-another stage directions, explicit priestly headings, or first-person exorcistic
+address to a third party) -- full reasoning in the clergy-tier set's own inline comments.
+
+**Result:** the live COE Book of Needs is 16 prayers by default, 29 total for anyone who sets
+`clergy` or `all` -- up from 4 at the start of this thread, and from the 10 the previously-
+applied patch had already delivered. This is a first, coarser step toward the fuller
+access-tier ladder `book-of-needs-role-access-governance.json` documents
+(lay-devotional/reader/subdeacon/deacon/priest/bishop/monastic/clergy-reference/
+research-hidden), not that full system -- disclosed as such, not presented as complete.
+
+**Verified:** `data/prayers.json` untouched by this entry and still valid, 103 entries (the
+prior applied patch already added all 25 Maclean entries); both touched JS files pass
+`node --check`; the profile functions were actually simulated in a minimal Node harness
+against this exact repo state (not just syntax-checked); the full live taxonomy resolution
+simulated directly against this exact repo state, confirming exactly 16 lay-open and 13
+clergy-gated ids, nothing missing or double-covered. Cache-bust bumped on both
+`js/office-ui.js` and `js/prayers.js` (the latter never had one -- added).
+`documentation/book-of-needs-source-intake-inventory.json`'s note updated again to describe
+this final state rather than the intermediate one. `SEED_VERSION` bumped to
+`v187-2026-08-30-book-of-needs-ministry-role-setting-and-full-wiring`.
+
+Full detail in `audit-ledger.html`'s `coe:book-of-needs:ministry-role-setting-and-full-wiring`
+entry.
+
+**Open items remaining, unchanged:** First Friday and Middle Friday audits (pp.41-43,
+48-49), Ferial Morning Service dedicated audit (pp.103-108), pre-Fast Sunday folding rule,
+Layer 3 saints calendar, the two loose Farcings ends (Ps.100's "In the beginning" variant;
+Palm Sunday's Ps.96-98 fit), and the fuller access-tier ladder beyond this first lay/clergy
+split, if Josh wants it built out further.
+
+---
+
 ## Session 2026-08-30 -- Prayers on Various Occasions (Maclean pp.249-258) added to the Church
 ## of the East Book of Needs. Found and corrected a stale claim that this category was still
 ## empty -- it already had 4 prayers from a different, modern source. Read this whole entry

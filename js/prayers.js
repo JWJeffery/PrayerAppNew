@@ -140,8 +140,81 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'coe-maclean-prayer-kissing-tomb': ['COE'],
     'coe-maclean-prayer-for-a-journey': ['COE'],
     'coe-maclean-prayer-boat-or-ship': ['COE'],
-    'coe-maclean-prayer-for-himself': ['COE']
+    'coe-maclean-prayer-for-himself': ['COE'],
+    'coe-maclean-prayer-for-rain': ['COE'],
+    'coe-maclean-prayer-for-crops': ['COE'],
+    'coe-maclean-prayer-for-the-sick': ['COE'],
+    'coe-maclean-prayer-for-infants': ['COE'],
+    'coe-maclean-grace-before-meat': ['COE'],
+    'coe-maclean-grace-after-meat': ['COE'],
+    'coe-maclean-prayer-for-one-tempted': ['COE'],
+    'coe-maclean-prayer-over-wine': ['COE'],
+    'coe-maclean-prayer-oil-of-healing': ['COE'],
+    'coe-maclean-prayer-for-a-reader': ['COE'],
+    'coe-maclean-prayer-for-the-faithful': ['COE'],
+    'coe-maclean-prayer-for-a-house': ['COE'],
+    'coe-maclean-prayer-priest-washes-hands': ['COE'],
+    'coe-maclean-prayer-in-fevers': ['COE'],
+    'coe-maclean-prayer-hallowing-water': ['COE'],
+    'coe-maclean-prayer-bride-forty-days': ['COE'],
+    'coe-maclean-blessing-boy-forty-days': ['COE'],
+    'coe-maclean-prayer-woman-seeking-prayers': ['COE'],
+    'coe-maclean-prayer-new-cloths-vessels': ['COE']
 };
+
+// Real role gating, added 2026-08-30 at Josh's direction, following the
+// profile.ministryRole field added the same day in js/office-ui.js. Only
+// prayers listed here require anything beyond the default lay view --
+// everything else in BOOK_OF_NEEDS_OPTION_TRADITIONS above is lay-open with
+// no entry here at all, which is the common case and needs no per-prayer
+// bookkeeping. 'clergy' here means: visible only when the profile's
+// ministryRole is 'clergy' (self-identified ordained/monastic) or 'all' (the
+// blunt override) -- 'lay' alone does not show it. Classified directly from
+// each prayer's own text and stage directions, not by category alone: a
+// prayer explicitly performed by one person over another (a rubric like "He
+// makes the sign of the cross on..."), explicitly named as priestly/liturgical
+// in its own heading, or matching this project's own governance categories
+// for what shouldn't reach a default lay view (sacramental, exorcistic,
+// absolutional, blessing-of-an-object-or-person) is gated; a personal
+// petition or common table grace, even one not individually footnoted by
+// Maclean as lay-appropriate, is not. See
+// documentation/book-of-needs-role-access-governance.json for the fuller,
+// still-only-partially-implemented tier framework this is a first, coarser
+// step toward -- this map only distinguishes "needs a role declaration" from
+// "doesn't," not the full lay-devotional/reader/subdeacon/deacon/priest/
+// bishop/monastic/clergy-reference/research-hidden ladder documented there.
+const BOOK_OF_NEEDS_OPTION_CLERGY_TIER = new Set([
+    'coe-maclean-prayer-for-one-tempted',       // exorcistic address to an afflicted person
+    'coe-maclean-prayer-over-wine',             // blessing of an object
+    'coe-maclean-prayer-oil-of-healing',        // sacramental unction-adjacent blessing
+    'coe-maclean-prayer-for-a-reader',          // clerical blessing of a minor-order office-holder
+    'coe-maclean-prayer-for-the-faithful',      // benediction pronounced over an assembly
+    'coe-maclean-prayer-for-a-house',           // clergy-administered house blessing
+    'coe-maclean-prayer-priest-washes-hands',   // explicitly "when a priest... at the liturgy"
+    'coe-maclean-prayer-in-fevers',             // first-person exorcistic address over another
+    'coe-maclean-prayer-hallowing-water',       // explicit "He makes the sign of the cross on the water"
+    'coe-maclean-prayer-bride-forty-days',      // explicit "He makes the sign of the cross on her head"
+    'coe-maclean-blessing-boy-forty-days',      // explicitly modelled on the priestly Presentation rite
+    'coe-maclean-prayer-woman-seeking-prayers', // explicitly "given though the priesthood"
+    'coe-maclean-prayer-new-cloths-vessels'     // explicitly "for priestly use", altar furnishings
+]);
+
+function getUserMinistryRole() {
+    try {
+        if (typeof getUserProfileDefaults === 'function') {
+            return getUserProfileDefaults().ministryRole || 'lay';
+        }
+    } catch (_error) {
+        // fall through to default below
+    }
+    return 'lay';
+}
+
+function prayerOptionMeetsRoleRequirement(prayerId) {
+    if (!BOOK_OF_NEEDS_OPTION_CLERGY_TIER.has(prayerId)) return true;
+    const role = getUserMinistryRole();
+    return role === 'clergy' || role === 'all';
+}
 
 function normalizeBookOfNeedsContext(context) {
     return BOOK_OF_NEEDS_CONTEXTS[context] ? context : 'UNIVERSAL';
@@ -167,13 +240,15 @@ function getBookOfNeedsTraditionsForPrayer(prayerId) {
 }
 
 function prayerOptionAppliesToContext(option, context) {
-    if (context === 'UNIVERSAL') return true;
+    if (context !== 'UNIVERSAL') {
+        const prayerId = option.dataset.value;
+        const traditions = getBookOfNeedsTraditionsForPrayer(prayerId);
+        option.dataset.traditions = traditions.join(' ');
 
-    const prayerId = option.dataset.value;
-    const traditions = getBookOfNeedsTraditionsForPrayer(prayerId);
-    option.dataset.traditions = traditions.join(' ');
+        if (!traditions.includes(context)) return false;
+    }
 
-    return traditions.includes(context);
+    return prayerOptionMeetsRoleRequirement(option.dataset.value);
 }
 
 function updatePrayerGroupVisibility() {
