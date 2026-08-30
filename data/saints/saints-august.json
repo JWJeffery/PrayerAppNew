@@ -15,9 +15,7 @@
     "name": "Mar Mari",
     "description": "Apostle of the East and disciple of Addai.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "procession-of-the-holy-cross",
@@ -65,9 +63,7 @@
     "name": "Saint Pethion",
     "description": "Martyr under the Sassanids.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-stephen-the-first-martyr",
@@ -96,9 +92,7 @@
     "name": "Mar Addai",
     "description": "One of the Seventy Disciples and Apostle to Edessa.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-lydia",
@@ -146,9 +140,7 @@
     "name": "Mar Shalita",
     "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-john-vianney",
@@ -206,9 +198,7 @@
     "name": "Mar Augin (Saint Eugene)",
     "description": "The 'Father of Egyptian Monasticism' in the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "oswald-of-northumbria",
@@ -256,9 +246,7 @@
     "name": "Saint Hardut",
     "description": "Martyr and witness to the faith.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-hormisdas",
@@ -280,8 +268,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -310,9 +297,7 @@
     "name": "Mar Abda",
     "description": "Bishop and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-sixtus-ii-and-companions",
@@ -340,9 +325,7 @@
     "name": "Mar Papa bar Aggai",
     "description": "Early Catholicos of Seleucia-Ctesiphon.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-dominic",
@@ -372,9 +355,7 @@
     "name": "Mar Qardagh",
     "description": "Governor and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "mary-sumner",
@@ -424,9 +405,7 @@
     "name": "Mar Shimon Bar Sabbae",
     "description": "Catholicos and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-lawrence",
@@ -447,9 +426,7 @@
     "name": "Mar Mari the Apostle",
     "description": "Commemoration of the teacher of the East.",
     "type": "apostle",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-clare",
@@ -528,9 +505,7 @@
     "name": "Mar Isaac of Nineveh",
     "description": "Mystic and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-maximus-the-confessor",
@@ -569,9 +544,7 @@
     "name": "Mar Awa",
     "description": "Catholicos and scholar.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-micah",
@@ -623,8 +596,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -643,9 +615,7 @@
     "name": "Saint Shamuni and Sons",
     "description": "The Maccabean martyrs.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-tarcisius",
@@ -673,9 +643,7 @@
     "name": "Mar Saba",
     "description": "Monk and miracle worker.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-stephen-of-hungary",
@@ -704,9 +672,7 @@
     "name": "Mar Zeia",
     "description": "The traveler and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-hyacinth",
@@ -754,9 +720,7 @@
     "name": "Mar Shalita",
     "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-florus-and-laurus",
@@ -785,9 +749,7 @@
     "name": "Mar Yohannan",
     "description": "Bishop and confessor.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-andrew-stratelates",
@@ -835,9 +797,7 @@
     "name": "Mar Sabrisho",
     "description": "Catholicos and monk.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-samuel",
@@ -877,9 +837,7 @@
     "name": "Mar Narsai",
     "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-bartholomew-eve",
@@ -917,9 +875,7 @@
     "name": "Mar Babai the Great",
     "description": "Pillar of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyr-agathonicus-and-companions",
@@ -967,9 +923,7 @@
     "name": "Mar Abraham",
     "description": "Catholicos and missionary.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-lupus",
@@ -1022,8 +976,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1052,9 +1005,7 @@
     "name": "Saint Ya'qub (James) of Nisibis",
     "description": "Bishop and spiritual father.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "mar-dadisho",
@@ -1062,9 +1013,7 @@
     "name": "Mar Dadisho",
     "description": "Catholicos and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "return-of-the-relics-of-the-apostle-bartholomew",
@@ -1122,9 +1071,7 @@
     "name": "Mar Shimon",
     "description": "Bishop and witness.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-adrian-and-natalia",
@@ -1162,9 +1109,7 @@
     "name": "Mar Giwargis",
     "description": "Martyr and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-monica",
@@ -1193,9 +1138,7 @@
     "name": "Mar Mushi",
     "description": "Monk and writer.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-augustine",
@@ -1247,9 +1190,7 @@
     "name": "Mar Shimun Bar Sabbae",
     "description": "Catholicos and martyr (Secondary commemoration).",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrdom-of-saint-john-the-baptist",
@@ -1261,8 +1202,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1301,9 +1241,7 @@
     "name": "Mar Sliwa",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-alexander-of-constantinople",
@@ -1361,9 +1299,7 @@
     "name": "Mar Toma (Apostle Thomas)",
     "description": "Apostle of the East (Feast of the return of relics).",
     "type": "apostle",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-aidan",
@@ -1383,6 +1319,36 @@
     "type": "saint",
     "tags": [
       "LAT"
+    ]
+  },
+  {
+    "id": "mar-shalita",
+    "day": "August 10",
+    "name": "St. Shalita",
+    "description": "Disciple of Mar Augin, East Syriac monastic founder. (Maclean 1894, Kashkul MS list, p.282-283.)",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-qardagh",
+    "day": "August 28",
+    "name": "St. Qardagh",
+    "description": "East Syriac martyr venerated in the region of Arbela (Erbil). (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-shimon-bar-sabbae",
+    "day": "August 21",
+    "name": "Mar Shimon Bar Sabbae",
+    "description": "4th-century Catholicos-Patriarch martyred under Shapur II. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
     ]
   }
 ]

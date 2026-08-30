@@ -6,7 +6,6 @@
     "description": "Old Testament prophet known for his lamentations.",
     "type": "prophet",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -48,9 +47,7 @@
     "name": "Saint Addai the Apostle",
     "description": "Apostle and missionary to Edessa.",
     "type": "apostle",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-joseph-the-worker",
@@ -101,9 +98,7 @@
     "name": "Martyrs of the East",
     "description": "Early martyrs, shared commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-timothy-and-maura",
@@ -193,9 +188,7 @@
     "name": "Saint Sawrisho of Beth Garmi",
     "description": "Monk and ascetic, 6th century.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "righteous-job-the-long-suffering",
@@ -213,9 +206,7 @@
     "name": "Saint Awa Catholicos",
     "description": "Patriarch and leader, died 6th century.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-evodius-of-antioch",
@@ -284,9 +275,7 @@
     "name": "Saint John Bar Malkeh",
     "description": "Bishop and theologian, 8th century.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrdom-of-st-mark-the-evangelist",
@@ -334,9 +323,7 @@
     "name": "Feast of the Ascension",
     "description": "Commemoration of Christ's Ascension (if falling on this date).",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "gregory-of-nazianzus",
@@ -396,7 +383,6 @@
     "description": "Apostle martyred in Persia.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -427,9 +413,7 @@
     "name": "Saint Mocius",
     "description": "Martyr under Diocletian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saints-cyril-and-methodius",
@@ -504,9 +488,7 @@
     "name": "Saint Isaac of Nineveh",
     "description": "Mystic and bishop, 7th century.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-isaac-the-syrian",
@@ -545,7 +527,6 @@
     "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
     "type": "apostle",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -710,9 +691,7 @@
     "name": "Pentecost Sunday",
     "description": "Commemoration of the descent of the Holy Spirit.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-celestine-v",
@@ -902,7 +881,6 @@
     "description": "Martyr under Maximian, died 308 AD.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -1068,9 +1046,7 @@
     "name": "Second Sunday of the Apostles",
     "description": "Post-Pentecost commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "hieromartyr-therapon-of-sardis",
@@ -1194,9 +1170,7 @@
     "name": "Saint Ahudemmeh",
     "description": "Bishop and missionary to the Arabs.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "visitation-of-the-blessed-virgin-mary",
@@ -1217,6 +1191,16 @@
     "type": "saint",
     "tags": [
       "OOR"
+    ]
+  },
+  {
+    "id": "saint-andrew-the-apostle",
+    "day": "May 17",
+    "name": "St. Andrew the Apostle",
+    "description": "One of the Twelve Apostles. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
     ]
   }
 ]

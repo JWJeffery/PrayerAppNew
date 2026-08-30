@@ -5,9 +5,7 @@
     "name": "5th Epiphany Sunday",
     "description": "Liturgical commemoration in the season of Epiphany.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyr-tryphon-of-lampsacus",
@@ -40,8 +38,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -70,9 +67,7 @@
     "name": "Saint Simeon the Elder",
     "description": "Righteous elder who received Christ in the temple.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-theodosius-of-chernigov",
@@ -141,9 +136,7 @@
     "name": "Commemoration of St. Sawrisho of Beth Garmi",
     "description": "Saint and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-john-de-britto",
@@ -172,9 +165,7 @@
     "name": "Commemoration of St. Awa Catholicos",
     "description": "Patriarch of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-agatha",
@@ -319,9 +310,7 @@
     "name": "Commemoration of Mar Benyamin Shimun XXI",
     "description": "Modern martyr and patriarch.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "hieromartyr-charalampus-of-magnesia",
@@ -432,9 +421,7 @@
     "name": "Friday of the Deceased",
     "description": "Commemoration for the faithful departed.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-catherine-de-ricci",
@@ -556,9 +543,7 @@
     "name": "First Sunday of Great Fast",
     "description": "Beginning of the Lenten season.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-claude-de-la-colombi-re",
@@ -616,9 +601,7 @@
     "name": "Monday of Great Lent",
     "description": "Lenten observance.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-juliana-of-nicomedia",
@@ -676,9 +659,7 @@
     "name": "Ash Wednesday",
     "description": "Beginning of Lent.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrdom-of-saint-fabian-pope-of-rome",
@@ -766,9 +747,7 @@
     "name": "Friday of the Deceased",
     "description": "Commemoration for the faithful departed.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-leo-of-catania",
@@ -877,9 +856,7 @@
     "name": "Second Sunday of Great Lent",
     "description": "Liturgical Sunday.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-polycarp-of-smyrna",
@@ -904,8 +881,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -945,9 +921,7 @@
     "name": "Wednesday of Mid-Lent",
     "description": "Mid-point of Lent.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-porphyry-of-gaza",

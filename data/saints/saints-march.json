@@ -36,9 +36,7 @@
     "name": "Third Sunday of Great Lent",
     "description": "Liturgical Sunday.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "hieromartyr-theodotus-bishop-of-cyrenia",
@@ -56,9 +54,7 @@
     "name": "Monday of Great Lent",
     "description": "Lenten observance.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-chad-of-lichfield",
@@ -209,9 +205,7 @@
     "name": "Fourth Sunday of Great Lent",
     "description": "Liturgical Sunday.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-john-of-god",
@@ -552,8 +546,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -562,9 +555,7 @@
     "name": "St. Mari the Bishop",
     "description": "Early bishop and disciple of Addai.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-cuthbert-of-lindisfarne",
@@ -701,8 +692,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -712,7 +702,6 @@
     "description": "The Penitent Thief crucified alongside Christ (Luke 23:39–43).",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -724,9 +713,7 @@
     "name": "St. Mari the Bishop",
     "description": "Early bishop and disciple of Addai.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "harriet-monsell",
@@ -745,7 +732,6 @@
     "description": "Commemoration of Gabriel (shared with Eastern).",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT",
       "OOR"
     ]
@@ -788,9 +774,7 @@
     "name": "Holy Thursday of the Passover",
     "description": "Commemoration of the Last Supper.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-hesychius-of-jerusalem",
@@ -894,9 +878,28 @@
     "description": "Bishop and martyr, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
+    ]
+  },
+  {
+    "id": "mar-michael",
+    "day": "March 22",
+    "name": "St. Michael",
+    "description": "Archangel, venerated in the Church of the East as 'Friend of the Angels.' (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-george-the-martyr",
+    "day": "March 4",
+    "name": "St. George the Martyr",
+    "description": "Martyr venerated in the Church of the East; kept on multiple dates through the year in current practice (see also April 24 in the diocesan calendar). (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
     ]
   }
 ]

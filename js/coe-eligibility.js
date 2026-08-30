@@ -14,6 +14,23 @@
  * This file's allowlist is the authoritative eligibility gate and requires no
  * further structural changes at this time.
  *
+ * UPDATE 2026-08-30: the identity-eligibility logic in this file (the
+ * allowlist below) was NOT changed, but the underlying data it filters
+ * (data/saints/saints-{month}.json, COE-tagged rows) was found to have the
+ * same fabrication signature as the original deleted East Syriac office
+ * content -- zero source citations, and 35 identities scattered across 2-5
+ * different, essentially arbitrary dates each. 234 of 235 COE-tagged rows
+ * were corrected: most had the COE tag removed for lack of any real source;
+ * 11 were confirmed against Maclean 1894 p.282-283 and/or the ACOTE Diocese
+ * of Western Europe's 2026 Ecclesiastical Calendar and kept, moved to their
+ * sourced date. This means most identities in the allowlist below -- whose
+ * PERSON was legitimately vetted by the original COE-IIB audit -- currently
+ * have NO sourced date and will not appear in Layer 3 display until a real
+ * date is found and re-added to the saints data. That is a data gap, not a
+ * flaw in this file's own logic. See AUDIT_GOVERNANCE_LEDGER.md, session
+ * 2026-08-30 ("Layer 3"), for the full account and the corrected/removed
+ * entry list.
+ *
  * One external-research holdout remains:
  *   mar-augustine / mar-augustine-commemoration
  *   These two identities carry COE tags (8/12, 9/19, 7/27) but cannot be

@@ -5,9 +5,7 @@
     "name": "Mar Mari the Apostle",
     "description": "Commemoration of the teacher of the East.",
     "type": "apostle",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-jun-pero-serra",
@@ -55,9 +53,7 @@
     "name": "Mar Addai",
     "description": "One of the Seventy Disciples and Apostle to Edessa.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-moses-the-black",
@@ -107,9 +103,7 @@
     "name": "Mar Papa bar Aggai",
     "description": "Early Catholicos of Seleucia-Ctesiphon.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-andrew-of-crete",
@@ -148,9 +142,7 @@
     "name": "Mar Shalita",
     "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anthony-mary-zaccaria",
@@ -228,9 +220,7 @@
     "name": "Mar Augin (Commemoration)",
     "description": "Founder of the Egyptian monastic tradition in Mesopotamia.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-kyriaki-cyriaca-of-nicomedia",
@@ -289,9 +279,7 @@
     "name": "Mar Pethion",
     "description": "Martyr and evangelist of the Persian interior.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saints-adrian-iii",
@@ -330,9 +318,7 @@
     "name": "Mar Shimon Bar Sabbae (Commemoration)",
     "description": "Relics and witness of the Catholicos.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-augustine-zhao-rong-and-companions",
@@ -350,9 +336,7 @@
     "name": "Mar Babai the Great",
     "description": "Pillar of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-benedict-of-nursia-eve",
@@ -410,9 +394,7 @@
     "name": "Mar Isaac of Nineveh",
     "description": "Mystic and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-benedict-of-nursia",
@@ -441,9 +423,7 @@
     "name": "Mar Abraham of Kashkar",
     "description": "Reviver of the community and abbot.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-proclus-and-hilary",
@@ -492,9 +472,7 @@
     "name": "Mar Narsai",
     "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-henry",
@@ -522,9 +500,7 @@
     "name": "Mar Awa",
     "description": "Catholicos and scholar.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-aquila",
@@ -563,9 +539,7 @@
     "name": "Mar Saba",
     "description": "Monk and miracle worker.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-bonaventure",
@@ -623,9 +597,7 @@
     "name": "Mar Zeia",
     "description": "The traveler and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "our-lady-of-mount-carmel",
@@ -654,9 +626,7 @@
     "name": "Mar Yohannan",
     "description": "Bishop and confessor.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-leo-iv",
@@ -705,9 +675,7 @@
     "name": "Mar Sabrisho",
     "description": "Catholicos and monk.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-camillus-de-lellis",
@@ -736,9 +704,7 @@
     "name": "Mar Mushi",
     "description": "Monk and writer.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-arsenius-the-great",
@@ -769,7 +735,6 @@
     "description": "Old Testament prophet taken up in the chariot.",
     "type": "prophet",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -790,9 +755,7 @@
     "name": "Mar Sliwa",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-ezekiel",
@@ -821,9 +784,7 @@
     "name": "Mar Mari (Translation of Relics)",
     "description": "Commemoration of the Apostle.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-mary-magdalene",
@@ -844,9 +805,7 @@
     "name": "Mar Qardagh",
     "description": "Governor and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-bridget-of-sweden",
@@ -886,9 +845,7 @@
     "name": "Mar Addai (Secondary Feast)",
     "description": "Commemoration of the teacher.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-christina",
@@ -937,9 +894,7 @@
     "name": "Mar Ya'qub (Saint James)",
     "description": "The Apostle.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-james-the-apostle",
@@ -959,9 +914,7 @@
     "name": "Mar Mari (Synaxis)",
     "description": "Assembly in honor of the Apostle.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-joachim-and-saint-anne",
@@ -1024,9 +977,7 @@
     "name": "Mar Papa (Commemoration)",
     "description": "Catholicos.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-samson-of-dol",
@@ -1044,9 +995,7 @@
     "name": "Mar Addai and Mar Mari",
     "description": "General commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saints-mary-martha-and-lazarus-of-bethany",
@@ -1067,9 +1016,7 @@
     "name": "Mar Shimun Bar Sabbae",
     "description": "Catholicos and martyr (Secondary commemoration).",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-peter-chrysologus",
@@ -1108,9 +1055,7 @@
     "name": "Mar Toma (Feast of Relics)",
     "description": "Commemoration of the Apostle.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-eudocimus",
@@ -1132,6 +1077,26 @@
     "tags": [
       "ANG",
       "LAT"
+    ]
+  },
+  {
+    "id": "mar-mari-the-apostle",
+    "day": "July 24",
+    "name": "St. Mari the Apostle",
+    "description": "Disciple of Mar Addai (Thaddeus), traditional founder of the church at Seleucia-Ctesiphon. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-jacob-of-nisibis",
+    "day": "July 17",
+    "name": "St. Jacob of Nisibis",
+    "description": "4th-century bishop of Nisibis, teacher of Mar Ephraim. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
     ]
   }
 ]

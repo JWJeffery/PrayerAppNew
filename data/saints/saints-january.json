@@ -9,8 +9,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -226,8 +225,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -529,9 +527,7 @@
     "name": "Commemoration of All the Saints",
     "description": "Commemoration of all saints.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-paul-of-thebes-in-egypt",
@@ -632,7 +628,6 @@
     "description": "Founder of Christian monasticism.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -663,9 +658,7 @@
     "name": "Mar Narsai",
     "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-bashnouna",
@@ -703,9 +696,7 @@
     "name": "Saint Jacob of Nisibis",
     "description": "Bishop and confessor.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-macarius-the-great",
@@ -857,7 +848,6 @@
     "description": "Apostle (shared commemoration).",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -899,9 +889,7 @@
     "name": "Rogation of the Ninevites",
     "description": "Fasting period commemorating Jonah.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-clement-of-ancyra",
@@ -949,9 +937,7 @@
     "name": "Rogation of the Ninevites",
     "description": "Fasting period commemorating Jonah.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-francis-de-sales",
@@ -1000,9 +986,7 @@
     "name": "Mar Babai the Great",
     "description": "Pillar of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gregory-the-theologian",
@@ -1022,7 +1006,6 @@
     "description": "Bishops and companions of Paul.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -1084,9 +1067,7 @@
     "name": "Saint Ephraim the Syrian",
     "description": "Deacon and Doctor of the Church.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-isaac-the-syrian",
@@ -1135,9 +1116,7 @@
     "name": "Commemoration of St. John Daylimaya",
     "description": "Monk and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gildas-the-wise",
@@ -1206,9 +1185,7 @@
     "name": "The Holy Feast of the Epiphany",
     "description": "Commemoration of the manifestation of Christ.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "commemoration-of-st-sawrisho-of-beth-garmi",
@@ -1216,9 +1193,7 @@
     "name": "Commemoration of St. Sawrisho of Beth Garmi",
     "description": "Saint and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "holy-wonderworkers-cyrus-and-john",
@@ -1240,6 +1215,16 @@
     "tags": [
       "ANG",
       "LAT"
+    ]
+  },
+  {
+    "id": "mar-isaac-of-nineveh",
+    "day": "January 28",
+    "name": "St. Isaac of Nineveh",
+    "description": "7th-century East Syriac bishop and ascetical writer, author of homilies on the spiritual life still widely read across Christian traditions. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+    "type": "saint",
+    "tags": [
+      "COE"
     ]
   }
 ]

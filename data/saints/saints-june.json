@@ -69,9 +69,7 @@
     "name": "Third Sunday of the Apostles",
     "description": "Liturgical commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-loukilianos-claudius-hypatius-paul-dionysius-and-paula",
@@ -89,9 +87,7 @@
     "name": "Martyrs of the East",
     "description": "Early martyrs, shared commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-elijah",
@@ -307,8 +303,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -371,8 +366,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -444,7 +438,6 @@
     "description": "Old Testament prophet and successor to Elijah.",
     "type": "prophet",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -517,7 +510,6 @@
     "description": "Bishop of Cyprus and wonderworker.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -570,7 +562,6 @@
     "description": "Deacon, Confessor, Doctor, 373.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -614,8 +605,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -729,7 +719,6 @@
     "description": "Virgin martyr, died 260 AD.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -763,8 +752,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -785,7 +773,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -877,8 +864,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -898,7 +884,6 @@
     "description": "A collective feast celebrating the Twelve chosen by Christ.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]

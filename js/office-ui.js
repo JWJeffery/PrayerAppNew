@@ -4990,12 +4990,51 @@ async function renderEastSyriac() {
 
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    // Commemorations (Layers 2/3) intentionally omitted from this rebuilt
-    // renderer for now -- they belong to the Khudhra/calendar layer, which
-    // is out of scope for this content rebuild and was not itself audited
-    // or found faulty. Revisit once the office content rebuild is further
-    // along, rather than wiring it back in ahead of verifying it still
-    // makes sense against the new day/cycle-keyed structure above.
+    // ── Commemorations (Layer 3: individual saints) ─────────────────────────
+    // Wired 2026-08-30, per Josh's direction, after Layer 3's existing
+    // cross-tradition infrastructure (SaintsResolver + CoeEligibility, first
+    // built 2026-03-06 per documentation/COE_LAYER3_REINTRODUCTION.md) was
+    // found still present but disconnected from this rebuilt renderer -- the
+    // full office rebuild that replaced this function 2026-08-19 never
+    // re-added the two-block hook the March session had put in place.
+    //
+    // Before re-wiring, the underlying data this hook reads from
+    // (data/saints/saints-{month}.json, COE-tagged rows) was itself audited
+    // and found to have the same fabrication signature as the original
+    // deleted office content: zero source citations, and at least 35
+    // identities scattered across 2-5 different, essentially arbitrary dates
+    // each (e.g. "mar-shalita" tagged COE on five separate dates spanning
+    // three different months, when Maclean and the current ACOTE diocesan
+    // calendar agree on exactly one, Sept.19). 234 of 235 COE-tagged rows
+    // were corrected this session -- most had their COE tag removed outright
+    // for lack of any real source; a small number were confirmed against
+    // Maclean 1894 p.282-283 and/or the ACOTE Diocese of Western Europe's
+    // 2026 Ecclesiastical Calendar and kept, moved to their sourced date.
+    // Full detail: AUDIT_GOVERNANCE_LEDGER.md, session 2026-08-30 (Layer 3).
+    //
+    // Silence when nothing is eligible is correct -- no fallback text, no
+    // placeholder grid. Most days will now correctly show nothing here,
+    // since the fabricated majority of the old data no longer carries a COE
+    // tag at all pending real re-sourcing (documented as future work, not
+    // silently dropped).
+    const coeRaw      = await resolveCommemorations(currentDate, 'COE');
+    const coeEligible = (typeof CoeEligibility !== 'undefined')
+        ? CoeEligibility.filter(coeRaw)
+        : [];
+
+    const saintSection = document.querySelector('.saint-section');
+    if (coeEligible.length > 0) {
+        document.getElementById('date-header').innerText = 'Commemorated Holy Figures';
+        document.getElementById('date-header').style.display = '';
+        if (saintSection) saintSection.style.display = '';
+        document.getElementById('saint-display').innerHTML = coeEligible
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .join('');
+    } else {
+        document.getElementById('saint-display').innerHTML = '';
+        document.getElementById('date-header').style.display = 'none';
+        if (saintSection) saintSection.style.display = 'none';
+    }
 }
 
 // ── COPTIC AGPEYA RENDERER ─────────────────────────────────────────────────────

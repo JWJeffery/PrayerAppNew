@@ -15,9 +15,7 @@
     "name": "Mar Mari",
     "description": "Apostle of the East and disciple of Addai.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-giles",
@@ -55,9 +53,7 @@
     "name": "Mar Papa bar Aggai",
     "description": "Early Catholicos of Seleucia-Ctesiphon.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-agricola-of-avignon",
@@ -115,9 +111,7 @@
     "name": "Mar Babai the Great",
     "description": "Pillar of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anba-ruwais",
@@ -165,9 +159,7 @@
     "name": "Mar Shalita",
     "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "paul-jones",
@@ -215,9 +207,7 @@
     "name": "Mar Narsai",
     "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-zachariah",
@@ -265,9 +255,7 @@
     "name": "Mar Addai",
     "description": "One of the Seventy Disciples and Apostle to Edessa.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "miracle-of-archangel-michael-at-colossae",
@@ -305,9 +293,7 @@
     "name": "Mar Awa I",
     "description": "Catholicos and reformer of the 6th century.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-cloud",
@@ -349,8 +335,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -379,9 +364,7 @@
     "name": "Mar Saba",
     "description": "Monk and miracle worker.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-peter-claver",
@@ -419,9 +402,7 @@
     "name": "Mar Zeia",
     "description": "The traveler and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-menodora-metrodora-and-nymphodora",
@@ -469,9 +450,7 @@
     "name": "Mar Yohannan",
     "description": "Bishop and confessor.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-macarius-of-alexandria",
@@ -529,9 +508,7 @@
     "name": "Mar Sabrisho",
     "description": "Catholicos and monk.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-samuel-the-confessor",
@@ -569,9 +546,7 @@
     "name": "Mar Mushi",
     "description": "Monk and writer.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-basil-of-caesarea",
@@ -613,8 +588,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -633,9 +607,7 @@
     "name": "Mar Sliwa",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "our-lady-of-sorrows",
@@ -673,9 +645,7 @@
     "name": "Mar Qardagh",
     "description": "Governor and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-cornelius",
@@ -713,9 +683,7 @@
     "name": "Mar Addai (Relics)",
     "description": "Translation of the Apostle's remains.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-hildegard-of-bingen",
@@ -773,9 +741,7 @@
     "name": "Mar Mari (Synaxis)",
     "description": "Assembly in honor of the Apostle.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-eumenius-of-gortyna",
@@ -873,9 +839,7 @@
     "name": "Mar Papa (Secondary)",
     "description": "Feast of the foundations of the See.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-andrew-kim-taegon",
@@ -907,8 +871,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -927,9 +890,7 @@
     "name": "Mar Addai and Mar Mari",
     "description": "General commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "philander-chase",
@@ -977,9 +938,7 @@
     "name": "Mar Shimun Bar Sabbae",
     "description": "Catholicos and martyr (Secondary commemoration).",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-jacob-of-nisibis",
@@ -1017,9 +976,7 @@
     "name": "Mar Toma (Relics)",
     "description": "Commemoration of the relics of Thomas.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "our-lady-of-walsingham",
@@ -1047,9 +1004,7 @@
     "name": "Mar Mari the Evangelist",
     "description": "Apostolic laborer in the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anthony-the-great-relics",
@@ -1127,9 +1082,7 @@
     "name": "Mar Augin",
     "description": "The Pearl of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-barsoum-the-naked",
@@ -1167,9 +1120,7 @@
     "name": "Mar Pethion",
     "description": "Martyr and evangelist of the Persian interior.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "richard-rolle",
@@ -1217,9 +1168,7 @@
     "name": "Mar Gabriel Archangel",
     "description": "The holy messenger and protector.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gregory-the-illuminator-main",
@@ -1277,9 +1226,7 @@
     "name": "Mar Shimun Bar Sabbae (Secondary)",
     "description": "Martyrs of Seleucia.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-jerome",

@@ -9,8 +9,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -45,8 +44,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -75,9 +73,7 @@
     "name": "Friday of the Dead",
     "description": "Commemoration of the faithful departed.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-acindynus-pegasius-aphthonius-elpidephorus-anempodistus",
@@ -105,9 +101,7 @@
     "name": "Mar Zaia",
     "description": "The 'Traveler' and wonderworker of the East Syriac tradition.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "richard-hooker",
@@ -155,9 +149,7 @@
     "name": "Mar Adar",
     "description": "Abbot and miracle worker.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-charles-borromeo",
@@ -248,9 +240,7 @@
     "name": "Mar Ishaia",
     "description": "Monk and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-felix-and-saint-eusebius",
@@ -298,9 +288,7 @@
     "name": "Mar George the Martyr",
     "description": "Persian commemoration of the Great Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-george-of-alexandria",
@@ -392,8 +380,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -412,9 +399,7 @@
     "name": "Mar Awgin and his Disciples",
     "description": "Brought monasticism to Mesopotamia.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "margery-kempe",
@@ -465,9 +450,7 @@
     "name": "Mar Menas",
     "description": "The Great Martyr and soldier.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-martin-of-tours",
@@ -524,8 +507,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -545,9 +527,7 @@
     "name": "Mar Pethion",
     "description": "Martyr and evangelist of the Persian interior.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-albert-the-great",
@@ -575,9 +555,7 @@
     "name": "Mar Balai",
     "description": "East Syriac hymnographer.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gertrude-shared",
@@ -617,7 +595,6 @@
     "description": "Apostle, tax collector, and author of the first Gospel.",
     "type": "apostle",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -629,9 +606,7 @@
     "name": "Mar Gregory the Wonderworker",
     "description": "East Syriac feast.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-elizabeth-of-hungary",
@@ -690,9 +665,7 @@
     "name": "Mar Yakob of Nisibis",
     "description": "Spiritual father.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-hilda-of-whitby",
@@ -730,9 +703,7 @@
     "name": "Mar Abda",
     "description": "Bishop and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-agnes-of-assisi",
@@ -770,9 +741,7 @@
     "name": "Mar Papa bar Aggai (See Foundation)",
     "description": "Primary commemoration of the See.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "priscilla-lydia-sellon",
@@ -821,7 +790,6 @@
     "description": "Feast.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -845,8 +813,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -911,9 +878,7 @@
     "name": "Mar Abraham of Kashkar",
     "description": "Reviver of the community and abbot.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-andrew-dung-lac-and-companions",
@@ -952,7 +917,6 @@
     "description": "Great Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -974,9 +938,7 @@
     "name": "Mar George the Martyr (Secondary)",
     "description": "Persian Rite.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-alypius-the-stylite",
@@ -1014,9 +976,7 @@
     "name": "Mar Pinhas",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-francesco-antonio-fasani",
@@ -1074,9 +1034,7 @@
     "name": "Mar Abraham of Kashkar (Secondary)",
     "description": "Theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-james-of-the-march",
@@ -1124,9 +1082,7 @@
     "name": "Mar Isaac of Nineveh",
     "description": "Mystic and bishop.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyr-paramon",
@@ -1168,8 +1124,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   }
 ]

@@ -190,7 +190,6 @@
     "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
     "type": "apostle",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -250,9 +249,7 @@
     "name": "Saints Sergius and Bacchus",
     "description": "Martyrs.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-pelagia",
@@ -321,7 +318,6 @@
     "description": "Apostle.",
     "type": "apostle",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -412,7 +408,6 @@
     "description": "One of the Seven.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -629,8 +624,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -660,7 +654,6 @@
     "description": "Old Testament prophet.",
     "type": "prophet",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -774,7 +767,6 @@
     "description": "Bishop.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -808,8 +800,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -839,7 +830,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -970,9 +960,7 @@
     "name": "Saint Faraj of Shiraz",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-simon-the-apostle",
@@ -1004,8 +992,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {

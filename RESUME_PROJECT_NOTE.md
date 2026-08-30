@@ -1,5 +1,56 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Layer 3 (individual saints): scoped, sourced, a real
+## fabrication finding in shared cross-tradition data corrected within its COE-only scope, wired
+## into renderEastSyriac(). SEED_VERSION v191 -> v192. Read this entry, then the v191/v190/v189/
+## v188 entries below it, then the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Fifth item off the open-items list. Josh asked to scope Layer 3 and find sources before building.
+
+**Sources:** Maclean's own p.282-283 list (~30 entries); the ACOTE Diocese of Western Europe's
+official 2026 Ecclesiastical Calendar (free, English, current -- confirmed to use **Gregorian**
+Easter reckoning, a significant separate finding disclosed below, not yet acted on); Qadishe: A
+Guide to the Syriac Saints (Syriaca.org, CC-BY 4.0, built from Fiey's *Saints syriaques* -- Josh
+correctly pointed out that facts aren't copyrighted even when the source book is; Qadishe already
+did that extraction properly). Built a 73-entry Maclean+diocesan dataset.
+
+**Major discovery: Layer 3 infrastructure already existed** (`js/coe-eligibility.js`, a real
+March-2026-audited ~95-identity allowlist; `js/saints-resolver.js`; `data/saints/saints-{month}.json`,
+1,264 entries, 235 tagged COE) but was disconnected from `renderEastSyriac()` since the whole
+East Syriac office was deleted and rebuilt in August -- the March work predates and didn't
+survive that rebuild.
+
+**Checked the data before trusting it -- found real fabrication.** Same signature as the original
+deleted office content: zero source citations anywhere; 35 identity ids scattered across 2-5
+essentially arbitrary dates each (e.g. `mar-shalita` on five dates across three months, when
+Maclean and the diocesan calendar agree on exactly one). **Corrected, scoped strictly to COE**
+(per Josh: audit COE, leave other traditions' tags alone): 234 of 235 COE-tagged rows corrected,
+11 identities kept and moved to their sourced date, everything else had the COE tag removed for
+lack of a source. `coe-eligibility.js`'s allowlist logic untouched (separate, still-valid work);
+its header updated to disclose the data gap.
+
+**Wired:** `renderEastSyriac()` now calls the existing `resolveCommemorations`/`CoeEligibility`
+pipeline, restoring the pattern documented in `COE_LAYER3_REINTRODUCTION.md`. Verified end-to-end
+with a real fetch-stub simulation against the actual repo files.
+
+**Separate significant finding, disclosed but not acted on:** the ACOTE Diocese of Western
+Europe's 2026 calendar uses **Gregorian** Easter (April 5, 2026), not the Julian Easter (April 12,
+2026) this project's calendar engine assumes throughout (`js/calendar-east-syriac.js`'s own header:
+"observes d'Qyamta using the Julian calendar"). This affects six of the engine's nine seasons
+(Sauma, Qyamta, Shlihe, Qayta, Eliya-Sliwa, Muse all anchor to Easter), not just one fixed feast
+like the earlier-disclosed Nativity split. Whether this is a real, current practice-wide shift or
+specific to this one diocese needs research and Josh's direction before any engine change --
+flagged here so it isn't lost, not touched this session.
+
+**Open items, updated:** items 1-5 from the v187 list are done. Remaining: the longer-standing
+items unchanged (Great Fast's own Sunday Evening Service, `ordinary1/2/3.json` architecture
+review, Cathedral/Monastic toggle, Royal Anthem sourcing, the fuller Book of Needs access-tier
+ladder), plus two new items from this session: the Julian/Gregorian Easter-reckoning question
+above, and cross-referencing the ~85 still-unsourced allowlisted Layer 3 identities against
+Qadishe for real dates (large, separate research task).
+
+---
+
 ## Session 2026-08-30 continued -- Pre-Fast Sunday folding rule built as a data-layer function,
 ## deliberately not wired into any render path. SEED_VERSION v190 -> v191. Read this entry, then
 ## the v190/v189/v188 entries below it, then the CONSOLIDATED v187 entry, still accurate for

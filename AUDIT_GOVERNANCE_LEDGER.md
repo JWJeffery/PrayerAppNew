@@ -7809,3 +7809,83 @@ its own 20 internal self-tests still pass on load, confirming no regression. `js
 untouched, still passes `node --check`.
 
 SEED_VERSION at the close of this entry: `v191-2026-08-30-east-syriac-prefast-fold-rule-built`.
+
+---
+
+## Session 2026-08-30 continued -- Layer 3 (individual saints): scoped, sourced, audited, and
+## wired. A real fabrication finding in shared cross-tradition saints data, corrected within its
+## own stated scope (COE only, per Josh's direction). SEED_VERSION v191 -> v192.
+
+Fifth item off the open-items list: "Layer 3 saints calendar." Josh asked for scoping and sources
+first, then to build.
+
+**Sources found and evaluated:** Maclean's own "Days for which no special lessons are appointed"
+list (p.282-283, ~30 entries, already in hand); the ACOTE Diocese of Western Europe's official
+2026 Ecclesiastical Calendar (acote.church, free, English, current, ~70 dated commemorations
+including movable pre-Fast Fridays resolved to real 2026 dates); Wikipedia's Category:Assyrian
+Church of the East saints (cross-reference only); Fiey's *Saints syriaques* (2004, copyrighted,
+French, 470 entries) -- initially set aside as unusable, then correctly challenged by Josh: the
+book's *facts* (names, dates) aren't copyrightable, only Fiey's prose is. Found that Syriaca.org's
+*Qadishe: A Guide to the Syriac Saints* database already did exactly that extraction -- used Fiey
+as its starting point, republished the facts (names in multiple scripts, dates, cross-references)
+under CC-BY 4.0 with original English abstracts, properly cited back to Fiey's entry numbers.
+Confirmed by pulling a real sample entry directly. Built a 73-entry dataset merging Maclean's list
+and the diocesan calendar, cross-referenced where the two overlap.
+
+**A major discovery while preparing to build the actual dataset: Layer 3 infrastructure already
+existed, disconnected from the rebuilt East Syriac renderer.** `js/coe-eligibility.js`
+(~95-identity allowlist, the product of a real March 2026 audit -- `documentation/COE_IIB_AUDIT.md`,
+`COE_LAYER3_REINTRODUCTION.md`, etc.), a cross-tradition `js/saints-resolver.js`, and real data at
+`data/saints/saints-{month}.json` (1,264 entries, 235 tagged COE) -- all still present, still
+functional, still used by other traditions (confirmed ANG/BCP calls it directly), but never
+re-wired into `renderEastSyriac()` after the whole East Syriac office was deleted and rebuilt in
+August. The March reintroduction pass predates that rebuild and didn't survive it.
+
+**Checked the underlying COE-tagged data before trusting it, per standing practice -- found the
+same fabrication signature as the original deleted office content.** Zero source citations
+anywhere in any of the 235 COE-tagged rows. Confirmed by direct count: 35 identity ids appear
+scattered across 2-5 different dates each, spanning multiple months with no liturgical logic --
+e.g. `mar-shalita` tagged COE on five separate dates across three different months, when both
+Maclean and the current diocesan calendar agree on exactly one (Sept.19); `mar-isaac-of-nineveh`
+on five dates, only one (Jan.28) actually correct. This is not noise -- it's the identical
+"mechanically distributed, zero citation" pattern that triggered the original 2026-08-19 office
+deletion, now found in a different, shared file.
+
+**Corrected, scoped strictly to COE per Josh's explicit direction (other traditions' tags in the
+same files were not touched):**
+- 234 of 235 COE-tagged rows corrected. 11 distinct identities (12 rows before a duplicate-id
+  cleanup) confirmed against Maclean and/or the ACOTE 2026 calendar, kept and moved to their
+  sourced date, with a short source citation appended to each description. All other COE tags
+  removed outright -- no source, no assertion, consistent with how every other gap in this
+  project is handled.
+- One duplicate cleanup: `mar-isaac-of-nineveh` and `saint-isaac-of-nineveh` had both matched the
+  same sourced date (Jan.28) as two separate identity ids for the same person -- both carried only
+  the COE tag, so `saint-isaac-of-nineveh` was removed entirely rather than left as a duplicate.
+- 169 entries that previously carried COE as their only tag are now left with an empty tags array
+  rather than deleted -- preserves the identity/name/description for future re-sourcing rather
+  than discarding it, consistent with this project's practice of disclosing gaps rather than
+  erasing them.
+- `js/coe-eligibility.js`'s allowlist logic was NOT changed (it's real, separate identity-vetting
+  work from March 2026, still valid) -- only its header comment was updated to disclose that most
+  allowlisted identities currently have no sourced date and won't display until one is found.
+
+**Wired:** `renderEastSyriac()` now calls `resolveCommemorations(currentDate, 'COE')` ->
+`CoeEligibility.filter()` -> renders `.saint-section`/`#saint-display` when eligible, hides it
+otherwise -- restoring the exact pattern `COE_LAYER3_REINTRODUCTION.md` documented in March,
+lost in the August rebuild. Silence when empty is correct; no fallback text.
+
+**Verified:** all 12 monthly `saints-*.json` files remain valid JSON. `js/office-ui.js`,
+`js/coe-eligibility.js`, and `js/saints-resolver.js` all pass `node --check`. Simulated the full
+resolve-and-filter pipeline directly with a minimal fetch stub against the real repo files (not
+just syntax-checked): all 11 sourced identities resolve on their correct date and pass the
+eligibility filter; a real ordinary day (no commemoration) correctly resolves to an empty array
+and the section stays hidden.
+
+**Deliberately out of scope, disclosed:** cross-referencing the ~85 still-untouched allowlisted
+identities (Mar Ephraim, Mar Narsai, Mar Babai the Great, and others already well-attested
+elsewhere in this project's own built liturgical text) against Qadishe/Fiey for real dates was not
+attempted this session -- a large, separate research task, not part of what was asked ("just
+COE," scoped to the audit-and-wire pass). Auditing the non-COE tags in the same shared files
+(ANG/LAT/EOR/OOR) was explicitly ruled out of scope by Josh and not touched.
+
+SEED_VERSION at the close of this entry: `v192-2026-08-30-east-syriac-layer3-saints-audited-and-wired`.

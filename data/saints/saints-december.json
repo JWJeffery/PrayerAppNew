@@ -5,9 +5,7 @@
     "name": "Mar Pethion",
     "description": "Martyr and evangelist of the Persian interior.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-nahum",
@@ -55,9 +53,7 @@
     "name": "Mar Shmon",
     "description": "Bishop and martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-habakkuk",
@@ -95,9 +91,7 @@
     "name": "Mar Babai the Great",
     "description": "Pillar of the Church of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-zephaniah",
@@ -136,9 +130,7 @@
     "name": "Mar Shalita",
     "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-barbara-of-nicomedia",
@@ -249,9 +241,7 @@
     "name": "Mar Abdisho",
     "description": "Metropolitan and author.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "nicholas-ferrar",
@@ -310,9 +300,7 @@
     "name": "Mar Isaac of Nineveh (Secondary)",
     "description": "Spiritual writings.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophets-of-the-old-testament",
@@ -350,9 +338,7 @@
     "name": "Mar Behnam and Sarah",
     "description": "Martyred royal siblings.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyrs-menas-hermogenes-and-eugraphus",
@@ -400,9 +386,7 @@
     "name": "Mar Barsabba",
     "description": "Abbot.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anba-hadra",
@@ -440,9 +424,7 @@
     "name": "Mar Kardagh",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "our-lady-of-guadalupe",
@@ -490,9 +472,7 @@
     "name": "Mar Addai and Mar Mari",
     "description": "General commemoration.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-lucy",
@@ -523,9 +503,7 @@
     "name": "Mar Timothy I",
     "description": "Catholicos.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-dioscorus-ii",
@@ -564,9 +542,7 @@
     "name": "Mar Abraham the Great",
     "description": "Monastic reformer.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gregentios",
@@ -604,9 +580,7 @@
     "name": "Mar Narsai",
     "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-haggai",
@@ -664,9 +638,7 @@
     "name": "Mar Elias",
     "description": "Monk.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "prophet-daniel",
@@ -688,8 +660,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -718,9 +689,7 @@
     "name": "Mar Yakob of Nisibis",
     "description": "Spiritual father.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-sebastian",
@@ -758,9 +727,7 @@
     "name": "Mar Michael",
     "description": "Abbot.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anastasius-i",
@@ -798,9 +765,7 @@
     "name": "Mar Papa bar Aggai (See Foundation)",
     "description": "Primary commemoration of the See.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-dominic-of-silos",
@@ -854,8 +819,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -874,9 +838,7 @@
     "name": "Mar Awgin (Departure)",
     "description": "Great Saint of the East.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-anastasia",
@@ -906,9 +868,7 @@
     "name": "Mar Yohannan (Vigil)",
     "description": "Baptist.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-barnabas",
@@ -951,8 +911,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -965,8 +924,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -975,9 +933,7 @@
     "name": "Mar Archelaus",
     "description": "Martyr.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-stephen-protomartyr",
@@ -989,8 +945,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1000,7 +955,6 @@
     "description": "Feast of the Mother of God; recognized in Eastern and Western contexts.",
     "type": "marian_feast",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -1026,8 +980,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1046,9 +999,7 @@
     "name": "Mar Simon the Stylite",
     "description": "Pillar saint.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gaspar-del-bufalo",
@@ -1080,8 +1031,7 @@
       "ANG",
       "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1131,9 +1081,7 @@
     "name": "Mar Shmon the Second",
     "description": "Patriarch.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "martyr-anysia",
@@ -1171,9 +1119,7 @@
     "name": "Saint Ephrem the Syrian",
     "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
     "type": "saint",
-    "tags": [
-      "COE"
-    ]
+    "tags": []
   },
   {
     "id": "saint-gregory-of-nyssa",
