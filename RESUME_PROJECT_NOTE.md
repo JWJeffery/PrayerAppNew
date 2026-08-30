@@ -1,5 +1,39 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- All 18 Evening-Service "Prayer for help" texts built in
+## full (pp.16-19), at Josh's explicit decision (item 4 on the list). Live default rendering
+## deliberately unchanged. Read this whole entry before doing anything else; the entry below
+## it is still accurate for everything else.
+
+Item 4 was flagged as a decision for Josh, not a fidelity fix: only the first of Maclean's
+~19 alternate "Prayer for help" texts had ever been transcribed (esy-prayer-for-help,
+disclosed as "the first, always said"). Asked; Josh's answer: build them.
+
+**Built:** the remaining 17 texts in full -- `esy-prayer-for-help-2` through
+`esy-prayer-for-help-18` (18 total) -- each cited to pp.16-19, each carrying Maclean's own
+footnote in its meta.note: "Each priest who is present says one of these prayers, and the
+rest after the first two are omitted, up to the prayer Of Mary: U."
+
+**Deliberately not wired into the live default sequence:** this project has no "number of
+priests present" input, and Maclean distributes these one-per-concelebrating-priest --
+inventing a selection mechanism or silently rendering more than one would be adding
+functionality Josh didn't ask for, not fixing a content gap. The live Evening Service default
+is unchanged (`esy-prayer-for-help` alone, the documented single-priest baseline). This is a
+pure content addition -- zero engine or sequence changes, so `js/office-ui.js` and
+`rubrics.json` needed no re-validation.
+
+Brief cross-reference notes added to `esy-sapra-prayer-for-help` and
+`esy-sext-prayers-for-help-rubric` pointing to the fuller set now available.
+`SEED_VERSION` bumped to `v175-2026-08-29-east-syriac-prayers-for-help-full-set-built`.
+
+Full detail in `audit-ledger.html`'s `coe:prayers-for-help:full-set-built` entry.
+
+**"Not yet done" list, updated:** item 4 is now done. Proceeding to item 5 next --
+`esy-sunday-lelya-closing-verse`'s possibly missing "Amen and Amen" lead-in; not yet checked
+against the actual render sequence.
+
+---
+
 ## Session 2026-08-29 continued -- Mar Narsai's Sunday Night Service Tishbukhta's seasonal
 ## restriction confirmed directly from source (item 3 on the list); it has none. Read this
 ## whole entry before doing anything else; the entry below it is still accurate for

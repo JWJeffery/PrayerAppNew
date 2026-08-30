@@ -278,7 +278,7 @@
     "title": "Prayer for Help",
     "meta": {
       "source": "Maclean 1894, p.16-19.",
-      "note": "Each priest present says one of the sequence of 'help' prayers Maclean lists; if more than one priest, more than one is said, in order, up to the fixed 'Of Mary' prayer. This component gives the first (always said)."
+      "note": "Each priest present says one of the sequence of 'help' prayers Maclean lists (18 in total, pp.16-19); if more than one priest, more than one is said, in order, up to the fixed 'Of Mary' prayer. This component gives the first (the documented single-priest baseline, and the only one currently in the live default sequence). The remaining 17 -- esy-prayer-for-help-2 through esy-prayer-for-help-18 -- are now built in full too (2026-08-29, at Josh's direction), available for reference even though the live rendering still defaults to this one, since this project has no 'number of priests present' input to select among them."
     },
     "text": "<p class=\"component-text\">Make, O my Lord, the help of thy mercies, and the great aid of thy lovingkindness, and the hidden and glorious strength of thy glorious Trinity, and thy right hand full of mercies and compassion, to overshadow and be joined with the weakness of thy worshippers, from thy holy house which is full of all helps and all blessings, by the prayer of all the saints who propitiate thee, Lord of all, etc. Amen. Bless, O my Lord.</p>"
   },
@@ -2486,7 +2486,7 @@
     "title": "Prayer for Help",
     "meta": {
       "source": "Maclean 1894, p.107-108.",
-      "note": "Follows the day-specific Martyrs’ Anthem and the fixed Daily Anthem -- corresponds to 'Two collects when the Martyrs’ Anthem has been said' in Maclean's own Introduction structural summary (p.xvi). Maclean's rubric here reads: ‘Then follow the prayers for help, one or more for each priest who is present, the prayers Of Mary, Of the Apostles, and Of our father, with the Conclusion, as at the Evening Service (page 16).’ Those three prayers are the same fixed, always-said texts already built for Ramsha (esy-of-mary-prayer, esy-of-apostles-prayer, esy-of-our-father-prayer) and are reused here rather than duplicated."
+      "note": "Follows the day-specific Martyrs’ Anthem and the fixed Daily Anthem -- corresponds to 'Two collects when the Martyrs’ Anthem has been said' in Maclean's own Introduction structural summary (p.xvi). Maclean's rubric here reads: ‘Then follow the prayers for help, one or more for each priest who is present, the prayers Of Mary, Of the Apostles, and Of our father, with the Conclusion, as at the Evening Service (page 16).’ Those three prayers are the same fixed, always-said texts already built for Ramsha (esy-of-mary-prayer, esy-of-apostles-prayer, esy-of-our-father-prayer) and are reused here rather than duplicated. The full set of 18 Evening-Service 'help' prayers (esy-prayer-for-help through esy-prayer-for-help-18) was built in full 2026-08-29; this component's own cross-reference to 'the prayers for help ... as at the Evening Service' still resolves to the same live default (esy-prayer-for-help alone), unchanged."
     },
     "text": "<p class=\"rubric-text\">They say, Let us pray, Peace be with us.</p><p class=\"component-text\">Prayer. Of thee, O great and true Hope, for whom the just and the prophets waited in their generations, whom the righteous pleased by their labours, and the holy martyrs propitiated by the precious blood which poured forth from their necks, we beseech and ask, Grant us, O our Lord and our God, that we may take refuge in the power hidden in their bones, and be helped by their prayers, and with them and among them, and in their companies, and around their tombs, and in the glorious temples set apart for the honour of their service, be made worthy to lift up to thee praise, honour, confession, and worship, at all times, O Lord of all, etc.</p><p class=\"rubric-text\">Another.</p><p class=\"component-text\">May the martyrs, O our Lord and our God, who by thy power and help overcame, humiliated, and brought to nought the error of heathenism, and exalted and raised the true faith of thy Name, make request, O my Lord, and beseech for us of thy justice, in the great and glorious day when thy justice is revealed from heaven, O just Judge, full of mercies, who forgivest offences and sins, O Lord of all, etc.</p><p class=\"rubric-text\">Then follow the prayers for help, one or more for each priest who is present, the prayers Of Mary, Of the Apostles, and Of our father, with the Conclusion, as at the Evening Service.</p>"
   },
@@ -2730,7 +2730,7 @@
     "text": "<p class=\"component-text\">They say, Holy God, and Our Father, farced. Prayers: O thou who openest thy door, and O thou who hearest. Prayers for help, and the rest as at Evening Service throughout the year.</p>",
     "meta": {
       "source": "Maclean 1894, p.224.",
-      "note": "‘O thou who openest thy door’ and ‘O thou who hearest’ (p.83) are already built as part of the Festival Evening Service Suba’a component (esy-festival-suba-a-compline, covering pp.82-84); reused here by cross-reference rather than re-transcribed, per Maclean's own direction. The Trisagion and farced Lord's Prayer reuse esy-trisagion and esy-lords-prayer-farced already built for the ordinary ferial offices. ‘The rest as at Evening Service throughout the year’ reuses the already-built esy-prayer-for-help, esy-concluding-blessing, and esy-nicene-creed."
+      "note": "‘O thou who openest thy door’ and ‘O thou who hearest’ (p.83) are already built as part of the Festival Evening Service Suba’a component (esy-festival-suba-a-compline, covering pp.82-84); reused here by cross-reference rather than re-transcribed, per Maclean's own direction. The Trisagion and farced Lord's Prayer reuse esy-trisagion and esy-lords-prayer-farced already built for the ordinary ferial offices. ‘The rest as at Evening Service throughout the year’ reuses the already-built esy-prayer-for-help, esy-concluding-blessing, and esy-nicene-creed. The full set of 18 Evening-Service 'help' prayers (esy-prayer-for-help through esy-prayer-for-help-18) was built in full 2026-08-29; this component's own reuse of esy-prayer-for-help as the live default is unchanged."
     }
   },
   {
@@ -4236,5 +4236,158 @@
       "note": "GAP, disclosed rather than filled: 'They say the Night Anthem' -- its own proper text is not transcribed anywhere in this project's holdings, the same disclosed gap already on record for the ordinary ferial Night Anthem generally (see esy-sext-night-anthem-canon-rubric's own note)."
     },
     "text": "<p class=\"rubric-text\">They say the Night Anthem.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-2",
+    "title": "Prayer for Help (2 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">With thy blessing, O our Lord and our God, may thy servants be blessed, and by the care of thy good will may thy worshippers be kept; and may the perpetual peace, O my Lord, of thy Godhead, and the long-enduring tranquillity of thy Majesty, rule among thy people and in thy Church, all the days of the world. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-3",
+    "title": "Prayer for Help (3 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May the blessing of him who blesseth all, and the peace of him who maketh all things peaceful, and the compassion of him who hath compassion on all, and the guardianship of our adorable God, be with us and among us and around us, and keep us from the Evil one and his hosts, at all seasons and times. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-4",
+    "title": "Prayer for Help (4 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May we be blessed, O our Lord and our God, with thy blessing, and preserved by thy care; and may thy power come to our assistance, and thy help be joined to us, and thy right hand overshadow us, and thy peace rule among us, and thy cross be a high wall and house of refuge to us, and under its wings may we be protected from the Evil one and his hosts, at all seasons and times, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-5",
+    "title": "Prayer for Help (5 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Blessed, O my Lord, are the mercies of thy lovingkindness, and adorable are the promises of thy majesty, which teach us at all times to look to thee and to glory in thee, and not to cease from our hope in thee all the days of our life. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-6",
+    "title": "Prayer for Help (6 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May thy blessing, O our Lord and our God, rest on thy people, and may thy compassion be continually on us, weak and sinful though we be; O thou that art our good hope and house of refuge, full of mercies, and that forgivest trespasses and sins. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-7",
+    "title": "Prayer for Help (7 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May the peace of the Father be with us, and the love of the Son among us; and may the Holy Ghost direct us according to his will, and on us be his mercies and compassion, at all seasons and times. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-8",
+    "title": "Prayer for Help (8 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May thy peace, O my Lord, dwell in us, and thy tranquillity rule in us, and thy love increase among us all the days of our life. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-9",
+    "title": "Prayer for Help (9 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Keep us, O my Lord, with thy right hand, and protect us beneath thy wings; and may thy help be joined to us all the days of our life, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-10",
+    "title": "Prayer for Help (10 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Give us, O my Lord, perpetual peace, and love and desire for instruction, and life and blessings and joys, and unfailing sustenance, all the days of our life, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-11",
+    "title": "Prayer for Help (11 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Be the guardian who doth not sleep to the stronghold where thy sheep dwell, that they be not hurt by wolves that thirst for the blood of thy flock, for thou art an inexhaustible sea, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-12",
+    "title": "Prayer for Help (12 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Bless us with thy blessing, O our Lord, and surround us with the wall of thy care; deprive us not of good things, and make us to lie down in the bridechamber of light. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-13",
+    "title": "Prayer for Help (13 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Come, O my Lord, to our assistance in thy compassion, and reveal thyself for our salvation in thy mercy, and cause us to walk in the ways of righteousness all the days of our life. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-14",
+    "title": "Prayer for Help (14 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">O my Lord, may thy lovingkindness shine forth on us when thy justice judgeth us, and may thy mercies come to our assistance in the day when thy greatness shineth forth. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-15",
+    "title": "Prayer for Help (15 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Make thy blessing and lovingkindness, and thy right hand full of mercies and compassion, to overshadow and be joined to the company of thy worshippers who call on thee and beseech thee, at all seasons and times, Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-16",
+    "title": "Prayer for Help (16 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Bless, O my Lord, in thy lovingkindness, and keep in thy mercy, the company of the faithful who trust in thee, and call on thy holy Name, and beseech thee, at all times. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-17",
+    "title": "Prayer for Help (17 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">Be with us, O my Lord, in thy mercies continually, and direct us according to the will of thy Godhead, all the days of our life. Lord of all, etc. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-prayer-for-help-18",
+    "title": "Prayer for Help (18 of 18)",
+    "meta": {
+      "source": "Maclean 1894, pp.16-19.",
+      "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May the blessing of mercies, O my Lord, be sent from the treasury of mercies, by the angel of mercies, from the presence of God who aboundeth in mercies, and overflow on the companies of those who ever glorify thee, and call on thy holy Name, and look and wait for mercies and for salvation, which is from thee. Lord of all. Amen. Bless, O my Lord.</p>"
   }
 ]
