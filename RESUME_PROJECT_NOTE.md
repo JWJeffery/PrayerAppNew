@@ -1,5 +1,61 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- First Friday audited (clean); Middle Friday built (did not
+## exist); a real content-misattribution bug found and fixed spanning First and Second Saturday.
+## SEED_VERSION v187 -> v188. Read this entry, then the CONSOLIDATED v187 entry below it, which
+## is still accurate for everything else.
+
+Worked the first item off the v187 open-items list: "First Friday (pp.41-43) and Middle Friday
+(pp.48-49) -- not yet audited."
+
+**First Friday: audited word-for-word against McClean.rtf, clean.** No fix needed.
+
+**Middle Friday: did not exist.** Maclean gives Friday three forms (First/Middle/Last) where
+every other ferial weekday has only two (Qdham/Wathar) -- built Middle Friday's own First/Second
+Shuraya and Anthem (full text), reusing First-Friday-identical Marmitha/Prayer/Martyrs'-Anthem
+citations directly per Maclean's own "as on First Friday" rubric.
+
+**Real bug found: First Saturday's real content had never been built -- Middle Friday's tail-end
+material was filed under its id by mistake, because both sit under the same printed running
+page-header ("FIRST SATURDAY 49"), which an earlier session mistook for the section boundary.**
+Fixed: `esy-saturday-evening-anthem` now holds First Saturday's real text (was Middle Friday's);
+Middle Friday's real text moved to new `esy-middle-friday-*` components; new
+`esy-saturday-letter-psalm` (119:65-89 -- First Saturday uses a real Letter Psalm, not a Shuraya
+substitute, confirmed by direct reading and independently corroborated by the corpus's own
+continuous Ps.119 division across the week); new `esy-saturday-martyrs-anthem-evening` (First
+Saturday's own, previously-untranscribed, full Martyrs' Anthem -- both Saturday sequences had
+been wrongly reusing Friday's, when Second Saturday's own rubric explicitly says "as on First
+Saturday"); both Saturday sequences' prayer slot corrected from Friday's special substitute to
+the generic default (`esy-evening-anthem-prayer`), since neither Saturday states a substitute.
+
+**This also corrected `AUDIT_SOURCE_VERIFICATION.md`'s own record** -- it had marked First/Second
+Saturday "COMPLETE" from an earlier session, but that check only ever verified the qdham/wathar
+week-cycle *id mapping*, never the actual content word-for-word.
+
+**Deliberately not wired:** nothing in the source states what triggers Middle Friday as opposed
+to First or Last. Built, fully cited, collected into `middle-friday-ramsha-sequence-NOT-YET-
+WIRED` in rubrics.json, but `js/office-ui.js` was not touched -- wiring on a guess risks reciting
+the wrong Friday content on the wrong day.
+
+**Verified:** `components/east-syriac.json` valid, 435 components (was 428), zero duplicate ids.
+Every id in both Friday sequences, both Saturday sequences, and the new unwired Middle Friday
+sequence confirmed programmatically to resolve. `js/office-ui.js` untouched, still passes
+`node --check`. SEED_VERSION bumped to `v188-2026-08-30-east-syriac-friday-saturday-audit-and-fix`.
+
+Full detail in `audit-ledger.html`'s `coe:friday-saturday-audit:fixed` entry and in
+`AUDIT_SOURCE_VERIFICATION.md`'s "First Friday, Middle Friday, First Saturday -- audited
+2026-08-30" section.
+
+**Open items, updated from the v187 list:** item 1 is done. Remaining: First/Middle Friday audits
+-- wait, both now done; Ferial Morning Service audit (pp.103-108), pre-Fast Sunday folding rule,
+Layer 3 saints calendar, the two loose Farcings ends (Ps.100 "In the beginning" variant; Palm
+Sunday Ps.96-98 fit), the new open question of what triggers Middle Friday, and the longer-
+standing items unchanged: Great Fast's own Sunday Evening Service, ordinary1/2/3.json
+architecture review, Cathedral/Monastic toggle, Royal Anthem sourcing (still copyright-blocked),
+and the fuller Book of Needs access-tier ladder if Josh wants it built further.
+
+---
+
 ## CONSOLIDATED, 2026-08-30 -- current state as of SEED_VERSION v187. Written because prior
 ## entries had gone stale relative to actual repo state, and the governance ledger had gone 16
 ## SEED versions without an update -- both now caught up in the same pass. Read this entry in

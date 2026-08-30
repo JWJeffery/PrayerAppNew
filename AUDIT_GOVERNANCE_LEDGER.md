@@ -7649,3 +7649,71 @@ repo state at each step, not just syntax-checked or assumed.
 
 SEED_VERSION at the close of this entry: `v187-2026-08-30-book-of-needs-ministry-role-setting-
 and-full-wiring`.
+
+---
+
+## Session 2026-08-30 continued -- First Friday audited (clean); Middle Friday built (didn't
+## exist); a real content-misattribution bug found and fixed in First/Second Saturday. SEED_VERSION
+## v187 -> v188.
+
+Working through the open-items list from `RESUME_PROJECT_NOTE.md` v187, item 1: "First Friday
+(pp.41-43) and Middle Friday (pp.48-49) -- not yet audited."
+
+**First Friday (pp.41-47): audited word-for-word against `McClean.rtf`, clean.** Every component
+matches source exactly. No fix needed.
+
+**Middle Friday: did not exist.** Maclean gives Friday three distinct forms (First/Middle/Last)
+where every other ferial weekday has only two (Qdham/Wathar). Built Middle Friday's own First/
+Second Shuraya and Anthem (full text, pp.48), reusing First-Friday-identical Marmitha/Prayer/
+Martyrs'-Anthem citations directly per Maclean's own "as on First Friday" rubric, not retyped.
+
+**Real bug found while sourcing Middle Friday's tail-end content: it had already been "built" --
+under First Saturday's id, by mistake.** Middle Friday's own Royal Anthem and Shuraya-instead-of-
+Letter-Psalm sit on the same printed page as Maclean's running header "FIRST SATURDAY 49" (a page
+header, not the section boundary -- the actual "FIRST SATURDAY" heading doesn't appear until
+several paragraphs later). An earlier build session mistook the header for the boundary and filed
+Middle Friday's material as `esy-saturday-evening-anthem` / `esy-saturday-shuraya-instead-of-
+letter-psalm`. First Saturday's own real content in this position -- a different Evening Anthem
+("Lord, I have called daily upon thee...") and a genuine Letter Psalm (119:65-89, not a Shuraya
+substitute at all) -- had never been built. Independently confirmed by the corpus's own existing
+Letter Psalm citations forming a continuous division of Psalm 119 across the week: Thursday
+(Qdham) ends at 65, Monday (Wathar) begins at 89 -- 65-89 is exactly the missing piece.
+
+**A second, related bug caught by checking Second Saturday's own rubric rather than assuming
+symmetry:** both Saturday sequences reused Friday's Martyrs' Anthem and Friday's special prayer.
+Second Saturday's own printed text says "Martyrs' Anthem, as on First Saturday (page 51)" --
+not First Friday. First Saturday has its own complete, previously-untranscribed Martyrs' Anthem
+(~20 stanzas, pp.51-54), built now as `esy-saturday-martyrs-anthem-evening`. Neither Saturday
+states any prayer citation between Evening Anthem and Letter Psalm at all, meaning both take the
+generic default (`esy-evening-anthem-prayer`, used by Monday/Tuesday/Thursday) rather than
+Friday's special substitute -- both sequences corrected.
+
+**This closes a real gap in the project's own audit record, not just the corpus:**
+`AUDIT_SOURCE_VERIFICATION.md` had marked First Saturday and Second Saturday "COMPLETE" from an
+earlier session, but that entry only ever verified the qdham/wathar week-cycle *id mapping*
+(confirming which JSON array each lives in is architecturally correct) -- it never actually
+checked the printed content of those arrays against Maclean word-for-word. Corrected in the same
+file this session, with the false "COMPLETE" claim's actual scope now stated explicitly so it
+isn't repeated.
+
+**Fixed:** `esy-saturday-evening-anthem` (text replaced), `esy-saturday-shuraya-instead-of-letter-
+psalm` (retired, content moved to `esy-middle-friday-shuraya-instead-of-letter-psalm`), new
+`esy-saturday-letter-psalm` (119:65-89), new `esy-saturday-martyrs-anthem-evening` (full text),
+`esy-saturday-qdham-letter-psalm`'s misleading meta.note corrected, both `saturday-ramsha-*-
+sequence` arrays in rubrics.json corrected (prayer, Martyrs' Anthem, and wathar's Letter-Psalm
+slot). New, built but unwired: `esy-middle-friday-first-shuraya`, `-first-anthem`, `-second-
+shuraya`, `-second-anthem`, `-evening-anthem`, `-shuraya-instead-of-letter-psalm`, and
+`middle-friday-ramsha-sequence-NOT-YET-WIRED` in rubrics.json.
+
+**Deliberately not wired:** nothing in the surrounding source states what triggers Middle Friday
+as opposed to First or Last -- disclosed as an open question in both the component's own
+meta.note and `AUDIT_SOURCE_VERIFICATION.md`, not guessed at. `js/office-ui.js` was not touched
+this session.
+
+**Verified:** `components/east-syriac.json` remains valid, 435 total components (was 428), zero
+duplicate ids. Every id referenced in both Saturday sequences, both Friday sequences, and the new
+unwired Middle Friday sequence confirmed programmatically to resolve. `js/office-ui.js` untouched,
+still passes `node --check`. Duplicate-check performed before writing new content per standing
+rule -- two coincidental phrase overlaps found and confirmed genuinely different, not duplicates.
+
+SEED_VERSION at the close of this entry: `v188-2026-08-30-east-syriac-friday-saturday-audit-and-fix`.
