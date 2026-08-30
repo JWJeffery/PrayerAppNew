@@ -1,5 +1,78 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Julian/Gregorian Easter-reckoning mode added, THEN put through
+## a genuinely rigorous 100-year test at Josh's explicit request (the original verification fell
+## well short of this project's own established standard). Julian remains the default; confirmed
+## byte-identical to the pre-change engine across all 36,524 days in 2024-2123. Two real,
+## pre-existing/adjacent bugs found and quantified, not fixed. SEED_VERSION v192 -> v193.
+
+Josh asked to investigate the Julian/Gregorian finding from the Layer 3 session, flagged that
+multi-calendar support should already exist, and separately flagged that recent sessions have
+been getting caught off guard by how much of the repo already exists rather than investigating
+thoroughly first. **Both points taken.** Did a full repo sweep before writing any code this time
+-- `grep -rl` for julian/gregorian across the whole repo, not just East Syriac files.
+
+**Found the precedent:** `js/calendar-eastern-orthodox.js` already has a real, shipped `eoMode`
+('new_calendar'/'old_calendar'), persisted setting, UI dropdown, the whole pattern. **Important
+nuance, not just copy-paste:** EO's `eoMode` only changes which calendar *fixed feasts* use --
+Pascha itself is always Julian either way. The COE finding is a different, bigger axis -- a
+genuinely different Easter *algorithm*, shifting all six Easter-anchored COE seasons, not a
+handful of fixed dates.
+
+**Built the same class of solution, adapted to that real difference:** `computeGregorianEaster()`
+(standard algorithm); `getEaster(year, easterMode)` defaulting to `'julian'`, unchanged for every
+existing caller; `easterMode`/`options` threaded through the full chain
+(`getLiturgicalYear`->`getSeason`->`getDayClass`->`getFixedCommemorationsForDate`, plus the
+pre-Fast fold function); `selectCoeEasterMode()` in office-ui.js mirroring `selectEoMode`; all 10
+`getDayClass(currentDate)` call sites updated; new "Easter Reckoning" dropdown in the East Syriac
+settings panel.
+
+**First-pass verification was too light -- Josh caught this and asked for the same rigor already
+established elsewhere in this project (the BCP Holy Day transfer fix's "100-year sweep, 2024-2123,
+282 checks, 0 errors," per `AUDIT_GOVERNANCE_LEDGER.md`). Redone properly:**
+- **Every single day, 2024-2123 (36,524 days), checked against the pre-change engine** in default
+  mode, explicit Julian mode, and the untouched pre-change file -- **zero mismatches, all three,
+  every day**, including across the 2100 century boundary.
+- **Structural invariants across all 36,524 days, both modes:** zero crashes, zero NaN dates, zero
+  missing season assignments, Easter always a Sunday, Easter always astronomically valid.
+- **External ground-truth cross-checks** (this engine had only ever been validated against 5 known
+  years internally before this): 2037's Julian Easter confirmed via independent web search to the
+  day; the 2100 century-offset transition confirmed externally; several Gregorian-mode years
+  cross-validated. **One of my own hand-typed reference values (2123) turned out to be wrong, not
+  the code** -- caught by writing an independent from-scratch Python implementation of the same
+  algorithm, which confirmed the JS engine's answer was right all along. Recorded honestly rather
+  than left unmentioned.
+- **Pre-Fast fold-schedule N-range quantified across the full 100 years, both modes** (the
+  original v191/v192 work only checked 2024-2035): **Julian -- 2 of 100 years fall outside
+  Maclean's documented 4-8 range** (2037, 2105, both confirmed genuinely rare early-Easter years)
+  -- a real gap in the already-shipped work's verification claim, now corrected in the record.
+  **Gregorian -- 37 of 100 years fall outside the range**, not a rare edge case at all in that
+  mode.
+
+**A second, separate real bug found by this same rigor pass -- pre-existing, unrelated to which
+easterMode is selected:** four fixed dates (Denkha start, Epiphany, Nativity, Transfiguration) all
+hardcode a literal "+13 days" Julian offset instead of using this file's own century-aware JDN
+conversion already used for Easter itself. Wrong from 2100 onward (externally confirmed). Of the
+24 affected years in 2024-2123, **3 (2110, 2116, 2121) produce a Denkha start a full week off** --
+not fixed this session, logged as a new, quantified, real backlog item.
+
+**Confirmed Gregorian mode's real-world correctness once more:** 2026's pre-Fast Sunday still
+lands on Feb.15 in Gregorian mode, exactly matching the diocesan calendar entry that started this
+whole investigation.
+
+**Not decided, left to Josh:** whether Gregorian should become the default, whether it's one
+diocese or a wider shift, whether other feasts need similar disclosure. Julian remains default.
+
+**Open items, updated:** items 1-5 from the v187 list, plus the Easter-reckoning work, are done.
+New from this session: the +13/+14 hardcoded-offset bug (4 fixed dates, 3 confirmed-wrong years
+in range), and the Julian-mode fold-rule gap for 2037/2105. Remaining unchanged: the longer-
+standing items (Great Fast's own Sunday Evening Service, `ordinary1/2/3.json` architecture review,
+Cathedral/Monastic toggle, Royal Anthem sourcing, the fuller Book of Needs access-tier ladder),
+plus cross-referencing the ~85 still-unsourced allowlisted Layer 3 identities against Qadishe,
+plus a decision on whether Gregorian Easter should become the COE default.
+
+---
+
 ## Session 2026-08-30 continued -- Layer 3 (individual saints): scoped, sourced, a real
 ## fabrication finding in shared cross-tradition data corrected within its COE-only scope, wired
 ## into renderEastSyriac(). SEED_VERSION v191 -> v192. Read this entry, then the v191/v190/v189/

@@ -201,13 +201,61 @@ const EastSyriacCalendar = (() => {
     }
 
     /**
+     * Return the Gregorian JS Date of the Western/Gregorian Easter for a
+     * given Gregorian year. Anonymous Gregorian algorithm (Meeus,
+     * "Astronomical Algorithms", Ch. 8) -- the standard algorithm used by
+     * Western/Catholic/Protestant churches, and confirmed 2026-08-30 to be
+     * what the ACOTE Diocese of Western Europe's own published 2026
+     * Ecclesiastical Calendar actually uses for d'Qyamta (its April 5, 2026
+     * entry is Gregorian Easter, not the April 12, 2026 Julian Easter this
+     * engine's own getEaster() computes by default).
+     *
+     * @param  {number} year — Gregorian year
+     * @return {Date}
+     */
+    function computeGregorianEaster(year) {
+        const y = year;
+        const a = y % 19;
+        const b = Math.floor(y / 100);
+        const c = y % 100;
+        const d2 = Math.floor(b / 4);
+        const e = b % 4;
+        const f = Math.floor((b + 8) / 25);
+        const g = Math.floor((b - f + 1) / 3);
+        const h = (19 * a + b - d2 - g + 15) % 30;
+        const i = Math.floor(c / 4);
+        const k = c % 4;
+        const l = (32 + 2 * e + 2 * i - h - k) % 7;
+        const m = Math.floor((a + 11 * h + 22 * l) / 451);
+        const month = Math.floor((h + l - 7 * m + 114) / 31); // 3 = March, 4 = April
+        const day   = ((h + l - 7 * m + 114) % 31) + 1;
+        return new Date(y, month - 1, day);
+    }
+
+    /**
      * Return the Gregorian JS Date of d'Qyamta (East Syriac Easter)
      * for a given Gregorian year.
      *
      * @param  {number} year  — Gregorian year
+     * @param  {'julian'|'gregorian'} [easterMode='julian'] — which Easter
+     *   algorithm to use. Defaults to 'julian', this engine's original and
+     *   still-primary basis (matches Maclean 1894 and every date this
+     *   engine's self-tests were originally verified against). 'gregorian'
+     *   matches current practice in at least the ACOTE Diocese of Western
+     *   Europe (confirmed 2026-08-30, see documentation/AUDIT_GOVERNANCE_LEDGER.md).
+     *   Real ACOE practice on this point is genuinely split, the same shape
+     *   of disclosed variation already noted for Nativity elsewhere in this
+     *   file -- this parameter exists so both can be modeled rather than
+     *   forcing one, exactly as js/calendar-eastern-orthodox.js's eoMode
+     *   already does for its own (different, fixed-feast-only) Julian/
+     *   Gregorian split.
      * @return {Date}
      */
-    function getEaster(year) {
+    function getEaster(year, easterMode) {
+        const mode = (easterMode === 'gregorian') ? 'gregorian' : 'julian';
+        if (mode === 'gregorian') {
+            return computeGregorianEaster(year);
+        }
         const jE = julianEasterDate(year);
         return julianToGregorian(jE.year, jE.month, jE.day);
     }
@@ -230,7 +278,8 @@ const EastSyriacCalendar = (() => {
      *   seasons:     Array<{ name: string, start: Date, end: Date }>
      * }}
      */
-    function getLiturgicalYear(date) {
+    function getLiturgicalYear(date, options) {
+        const easterMode = (options && options.easterMode === 'gregorian') ? 'gregorian' : 'julian';
         const d = toMidnight(date);
 
         // Find the Subara Sunday that opens the liturgical year containing `date`.
@@ -256,7 +305,7 @@ const EastSyriacCalendar = (() => {
 
         // Easter falls in the year after Subara starts
         const easterYear = subaraYear + 1;
-        const easter     = getEaster(easterYear);
+        const easter     = getEaster(easterYear, easterMode);
 
         // Next Subara (= end boundary, exclusive)
         const nextSubara = subaraSundayFor(subaraYear + 1);
@@ -340,9 +389,9 @@ const EastSyriacCalendar = (() => {
      *   subaraStart:  Date,     — first day of current liturgical year
      * }}
      */
-    function getSeason(gregorianDate) {
+    function getSeason(gregorianDate, options) {
         const d = toMidnight(gregorianDate);
-        const { subaraStart, saumaStart, easter, seasons } = getLiturgicalYear(d);
+        const { subaraStart, saumaStart, easter, seasons } = getLiturgicalYear(d, options);
         // Find which season contains this date
         let currentSeason = null;
         for (const s of seasons) {
@@ -564,6 +613,40 @@ const EastSyriacCalendar = (() => {
             }
         });
 
+        // Gregorian-mode Easter spot-checks -- added 2026-08-30 alongside the
+        // easterMode parameter. Confirms getEaster(year, 'gregorian') returns
+        // real Western/Gregorian Easter, distinct from the Julian default
+        // above, and that omitting the mode still defaults to Julian
+        // (backward compatibility with every already-shipped call site).
+        const gregorianEasterChecks = [
+            { year: 2024, expected: '2024-03-31', note: "2024 Gregorian Easter" },
+            { year: 2025, expected: '2025-04-20', note: "2025 Gregorian Easter (coincides with Julian this year)" },
+            { year: 2026, expected: '2026-04-05', note: "2026 Gregorian Easter" },
+            { year: 2027, expected: '2027-03-28', note: "2027 Gregorian Easter" },
+            { year: 2028, expected: '2028-04-16', note: "2028 Gregorian Easter (coincides with Julian this year)" },
+        ];
+        gregorianEasterChecks.forEach(({ year, expected, note }) => {
+            const e   = getEaster(year, 'gregorian');
+            const got = e.toISOString().slice(0, 10);
+            if (got === expected) {
+                pass++;
+            } else {
+                fail++;
+                console.warn(`[EastSyriacCalendar] FAIL [${note}]: expected ${expected}, got ${got}`);
+            }
+        });
+        // Default (no mode argument) must still equal explicit 'julian'.
+        [2024, 2025, 2026, 2027, 2028].forEach(year => {
+            const withDefault = getEaster(year).getTime();
+            const withJulian  = getEaster(year, 'julian').getTime();
+            if (withDefault === withJulian) {
+                pass++;
+            } else {
+                fail++;
+                console.warn(`[EastSyriacCalendar] FAIL [${year} default-mode regression]: getEaster(year) no longer matches getEaster(year, 'julian')`);
+            }
+        });
+
         if (fail === 0) {
             console.log(`[EastSyriacCalendar] All ${pass} self-tests passed.`);
         } else {
@@ -594,7 +677,7 @@ const EastSyriacCalendar = (() => {
      *   note:  string,
      * }>}
      */
-    function getFixedCommemorationsForDate(date, seasonData) {
+    function getFixedCommemorationsForDate(date, seasonData, options) {
         const d          = toMidnight(date);
         const season     = seasonData.season;
         const isFriday   = d.getDay() === 5;
@@ -621,7 +704,7 @@ const EastSyriacCalendar = (() => {
         // the Friday two days prior is saumaStart − 2.
         // This is a fixed structural observance anchored to the season boundary;
         // it takes priority over the generic Great Fast Friday label on that date.
-        const { saumaStart } = getLiturgicalYear(d);
+        const { saumaStart } = getLiturgicalYear(d, options);
         const commemorationOfDead = addDays(saumaStart, -2);
         if (d.getTime() === commemorationOfDead.getTime()) {
             results.unshift({
@@ -657,7 +740,7 @@ const EastSyriacCalendar = (() => {
         // translation at all, since they are computed directly from Easter
         // itself, which this engine already computes on the Gregorian
         // calendar throughout.
-        const { crossDay } = getLiturgicalYear(d);
+        const { crossDay } = getLiturgicalYear(d, options);
         const { easter, epiphanyGreg } = seasonData;
         const ascensionDay  = addDays(easter, 39);  // Thursday, 40th day counting Easter as day 1
         const pentecostDay  = addDays(easter, 49);
@@ -732,15 +815,15 @@ const EastSyriacCalendar = (() => {
      *   commemorationName: string | null,
      * }}
      */
-    function getDayClass(gregorianDate) {
+    function getDayClass(gregorianDate, options) {
         const d          = toMidnight(gregorianDate);
-        const seasonData = getSeason(d);
+        const seasonData = getSeason(d, options);
         const isFriday   = d.getDay() === 5;
         const isSunday   = d.getDay() === 0;
         const isLenten   = seasonData.season === 'sauma';
         const isNineveh  = seasonData.fastCharacter === 'nineveh-fast';
 
-        const commemorations = getFixedCommemorationsForDate(d, seasonData);
+        const commemorations = getFixedCommemorationsForDate(d, seasonData, options);
 
         // dayClass: if any feast-typed commemoration exists, elevate to 'feast';
         // if any commemoration-typed exists, 'commemoration'; otherwise fall back
@@ -828,9 +911,9 @@ const EastSyriacCalendar = (() => {
      *   sundayBeforeTheFast: { date: Date, label: string },
      * }}
      */
-    function getPreFastSundayFoldSchedule(gregorianDate) {
+    function getPreFastSundayFoldSchedule(gregorianDate, options) {
         const d = toMidnight(gregorianDate);
-        const { seasons, saumaStart } = getLiturgicalYear(d);
+        const { seasons, saumaStart } = getLiturgicalYear(d, options);
         const denkha = seasons.find(s => s.name === 'denkha');
         const msPerWeek = 7 * 24 * 60 * 60 * 1000;
         const n = Math.round((toMidnight(saumaStart) - toMidnight(denkha.start)) / msPerWeek);
@@ -908,6 +991,7 @@ const EastSyriacCalendar = (() => {
     return {
         getSeason,
         getEaster,
+        computeGregorianEaster,
         getLiturgicalYear,
         getDayClass,
         getFixedCommemorationsForDate,

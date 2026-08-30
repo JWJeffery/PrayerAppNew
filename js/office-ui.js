@@ -4,6 +4,7 @@ let selectedMode = null;
 let isHydrationComplete        = false;
 let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
 let selectedEoMode = 'new_calendar'; // 'new_calendar' | 'old_calendar' — persisted in universalOfficeSettings
+let selectedCoeEasterMode = 'julian'; // 'julian' | 'gregorian' — persisted in universalOfficeSettings
 
 // ── v5.4: Horologion diagnostics toggle ──────────────────────────────────────
 // Off by default. Enable via the sidebar toggle button or from the console:
@@ -43,6 +44,33 @@ function selectEoMode(mode) {
     saveSettings();
     if (selectedMode === 'horologion') {
         _updateGenericCalendarInfo();
+        requestRender();
+    }
+}
+
+// ── COE Easter-reckoning mode selector ──────────────────────────────────────
+// Added 2026-08-30. Real ACOE practice is genuinely split on which Easter
+// algorithm to use -- confirmed by direct comparison against the ACOTE
+// Diocese of Western Europe's own published 2026 calendar, which uses
+// Gregorian Easter (Apr 5, 2026), not the Julian Easter (Apr 12, 2026) this
+// engine defaults to and was originally built/verified against (matching
+// Maclean 1894). Mirrors js/calendar-eastern-orthodox.js's eoMode pattern,
+// though note the two are NOT the same axis: eoMode only changes which
+// calendar FIXED feasts use, Pascha itself is always Julian for EO either
+// way. For COE, this setting changes the Easter algorithm itself, which
+// shifts every movable season boundary (Sauma, Qyamta, Shlihe, Qayta,
+// Eliya-Sliwa, Muse all key off Easter) -- a bigger effect, disclosed as
+// such in documentation/AUDIT_GOVERNANCE_LEDGER.md.
+function selectCoeEasterMode(mode) {
+    if (mode !== 'julian' && mode !== 'gregorian') {
+        console.warn('[selectCoeEasterMode] Invalid mode:', mode, '— defaulting to julian.');
+        mode = 'julian';
+    }
+    selectedCoeEasterMode = mode;
+    const sel = document.getElementById('coe-easter-mode-select');
+    if (sel && sel.value !== mode) sel.value = mode;
+    saveSettings();
+    if (selectedMode === 'east-syriac') {
         requestRender();
     }
 }
@@ -2655,6 +2683,7 @@ function saveSettings() {
         kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false,
         studyMode:                     appSettings.studyMode,
         eoMode:                        selectedEoMode,
+        coeEasterMode:                 selectedCoeEasterMode,
         horologionReductionProfile:    selectedHorologionReductionProfile
     };
     try {
@@ -2719,6 +2748,14 @@ function loadSettings() {
             selectedEoMode = s.eoMode;
             const eoSelLoad = document.getElementById('hor-eo-calendar-select');
             if (eoSelLoad) eoSelLoad.value = selectedEoMode;
+        }
+
+        // Restore COE Easter-reckoning mode (added 2026-08-30)
+        if (typeof s.coeEasterMode === 'string' &&
+            (s.coeEasterMode === 'julian' || s.coeEasterMode === 'gregorian')) {
+            selectedCoeEasterMode = s.coeEasterMode;
+            const coeSelLoad = document.getElementById('coe-easter-mode-select');
+            if (coeSelLoad) coeSelLoad.value = selectedCoeEasterMode;
         }
 
         // v8.0: restore Horologion display-depth profile
@@ -4249,7 +4286,7 @@ async function renderEastSyriac() {
     // appended automatically to Sapra below rather than offered as its own
     // selectable hour.
     const isGreatFast = (typeof EastSyriacCalendar !== 'undefined')
-        ? EastSyriacCalendar.getDayClass(currentDate).isLenten
+        ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).isLenten
         : false;
 
     // Fixed Feasts of our Lord can fall on any day of the week, not just
@@ -4261,7 +4298,7 @@ async function renderEastSyriac() {
     // ferial office, which understated Maclean's own stated scope. Checked
     // here once, reused below wherever the Sunday-only gates used to be.
     const isFeastDay = (typeof EastSyriacCalendar !== 'undefined')
-        ? EastSyriacCalendar.getDayClass(currentDate).commemorations.some(c => c.type === 'feast')
+        ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).commemorations.some(c => c.type === 'feast')
         : false;
 
     // The actual feast commemoration object (not just the boolean above),
@@ -4270,7 +4307,7 @@ async function renderEastSyriac() {
     // rather than giving fixed wording -- the "N" placeholder in the
     // third Night Anthem prayer, and the farced refrain on Psalm 78.
     const feastCommem = isFeastDay && typeof EastSyriacCalendar !== 'undefined'
-        ? EastSyriacCalendar.getDayClass(currentDate).commemorations.find(c => c.type === 'feast')
+        ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).commemorations.find(c => c.type === 'feast')
         : null;
 
     // Researched 2026-08-29, at Josh's request, beyond Maclean himself.
@@ -4407,7 +4444,7 @@ async function renderEastSyriac() {
     // Tishbukhta, since the fuller structure hadn't been obtained yet.
     let lelyaFastSequenceName = null;
     if (officeKey === 'lelya' && isGreatFast && dayName !== 'sunday' && typeof EastSyriacCalendar !== 'undefined') {
-        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).weekInSeason;
         const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
         lelyaFastSequenceName = isMysteriesWeek ? 'lelya-fast-mysteries-sequence' : 'lelya-fast-ordinary-sequence';
         sequenceKey = lelyaFastSequenceName;
@@ -4460,7 +4497,7 @@ async function renderEastSyriac() {
     // weekInSeason is already computed by the calendar engine (1-based,
     // reset every Sauma) -- no new date-computation logic is needed here.
     if (officeKey === 'sapra' && isGreatFast && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate).weekInSeason;
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).weekInSeason;
         const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
         if (isMysteriesWeek) {
             sequence = sequence.map(id => id === 'esy-sapra-fixed-psalms' ? 'esy-fast-sapra-mysteries-psalm-block' : id);
@@ -4479,7 +4516,7 @@ async function renderEastSyriac() {
     // office applies on these days exactly as on any other, so no new
     // wiring is needed for it).
     if (officeKey === 'lelya' && dayName !== 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const isNineveh = EastSyriacCalendar.getDayClass(currentDate).isNinevehFast;
+        const isNineveh = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).isNinevehFast;
         if (isNineveh) {
             // Qaltha: Maclean's own rubric (p.228) directs the same Qaltha
             // and psalms "as on ordinary Sundays 'after'" on all three
@@ -4613,7 +4650,7 @@ async function renderEastSyriac() {
         // for Feast days, not a functional bug, just now-unnecessary work.
         // Left as-is rather than narrowed further, to avoid touching more
         // of this block than the specific dead code Josh asked about.
-        const dayClass = EastSyriacCalendar.getDayClass(currentDate);
+        const dayClass = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode });
         const ordinaryId = cycle === 'qdham' ? 'esy-sunday-lelya-psalms-before-ordinary' : 'esy-sunday-lelya-psalms-after-ordinary';
 
         if (dayClass.isPalmSunday) {
@@ -4705,7 +4742,7 @@ async function renderEastSyriac() {
     // its already-established special treatment elsewhere in this same
     // function, not a confirmed source citation.
     if (officeKey === 'lelya' && dayName === 'sunday' && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const dayClass2 = EastSyriacCalendar.getDayClass(currentDate);
+        const dayClass2 = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode });
         const isFastSundayProper = isGreatFast && !dayClass2.isPalmSunday;
         const season2 = dayClass2.season;
         const motwaTishbukhtaIds = [
@@ -4745,7 +4782,7 @@ async function renderEastSyriac() {
     // Fast. Same Palm Sunday exclusion and same disclosed-assumption
     // reasoning as the Lelya block above.
     if (officeKey === 'sapra' && dayName === 'sunday' && isGreatFast && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const isFastSundayProperSapra = !EastSyriacCalendar.getDayClass(currentDate).isPalmSunday;
+        const isFastSundayProperSapra = !EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).isPalmSunday;
         if (isFastSundayProperSapra) {
             sequence = sequence.map(id => {
                 if (id === 'esy-sunday-sapra-prayer-make-us-worthy') return 'esy-fast-sunday-sapra-prayer-grant-us';
@@ -4809,7 +4846,7 @@ async function renderEastSyriac() {
     // specifically, not Feasts of our Lord, so it remains keyed to the
     // real day-of-week regardless of Feast status, unchanged by this.
     if (officeKey === 'ramsha' && (dayName === 'sunday' || isFeastDay) && sequence && typeof EastSyriacCalendar !== 'undefined') {
-        const dayClass = EastSyriacCalendar.getDayClass(currentDate);
+        const dayClass = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode });
         const isFeast  = dayClass.commemorations.some(c => c.type === 'feast');
 
         sequence = sequence.flatMap(id => id === '__PRAYER_BEFORE_ROYAL_ANTHEM__'
