@@ -312,8 +312,13 @@ const EastSyriacCalendar = (() => {
 
         // ── Fixed-offset seasons ─────────────────────────────────────────────
         //
-        // Denkha: Sunday on or after Jan 19 (= Julian Epiphany Jan 6 +13)
-        const denkhaStart = nextSundayOnOrAfter(new Date(easterYear, 0, 19));
+        // Denkha: Sunday on or after Julian Epiphany (Jan 6), converted via the
+        // century-aware julianToGregorian() -- FIXED 2026-08-30. Previously
+        // hardcoded as "new Date(easterYear, 0, 19)" (a bare +13-day offset),
+        // wrong from 2100 onward when the true offset becomes +14. Found by a
+        // 100-year rigor sweep (2024-2123) at Josh's request; see
+        // AUDIT_GOVERNANCE_LEDGER.md session 2026-08-30 for the full account.
+        const denkhaStart = nextSundayOnOrAfter(julianToGregorian(easterYear, 1, 6));
 
         // Sauma: exactly 7 weeks (49 days) before Easter — always a Sunday
         const saumaStart = addDays(easter, -49);
@@ -330,11 +335,13 @@ const EastSyriacCalendar = (() => {
         // ── Variable seasons ─────────────────────────────────────────────────
         //
         // Eliya-Sliwa: 7 fixed weeks of Qayta, then runs until Cross Sunday
-        // The Holy Cross feast (Sliwa) is Sep 14 Julian = Sep 27 Gregorian.
-        // The season begins the Sunday that opens the week of Sep 27.
+        // The Holy Cross feast (Sliwa) is Julian Sep 14, converted via
+        // julianToGregorian() -- FIXED 2026-08-30, same reason and same
+        // century-boundary bug as denkhaStart above (was hardcoded Sep 27).
+        // The season begins the Sunday that opens that week.
         const eliyaSliwaStart = addDays(qaytaStart, 49); // 7 × 7
 
-        const crossDay    = new Date(easterYear, 8, 27); // Sep 27 Gregorian
+        const crossDay    = julianToGregorian(easterYear, 9, 14);
         const crossSunday = nextSundayOnOrAfter(crossDay);
 
         // Muse: begins on the Cross Sunday.
@@ -473,11 +480,21 @@ const EastSyriacCalendar = (() => {
         //   Addai-Mari: All other occasions (the ordinary anaphora)
         const palmSunday    = addDays(easter, -7);
         const maundyThurs   = addDays(easter, -3);
-        const epiphanyGreg  = new Date(d.getFullYear(), 0, 19); // Jan 19
+        // FIXED 2026-08-30: was hardcoded "new Date(d.getFullYear(), 0, 19)" (a bare
+        // +13-day offset on Julian Jan 6), wrong from 2100 onward. Now uses the same
+        // century-aware julianToGregorian() conversion as denkhaStart above, on the
+        // same Julian year basis (Epiphany falls in January of the liturgical year's
+        // own Easter year, not necessarily d's own calendar year).
+        const epiphanyGreg  = julianToGregorian(easter.getFullYear(), 1, 6);
 
         let anaphora, anaphoraLabel;
         const isNestoriusFeast = (
-            (d.getMonth() === 0 && d.getDate() === 19) || // Epiphany
+            // FIXED 2026-08-30: was its own separate hardcoded "d.getMonth()===0 &&
+            // d.getDate()===19" check (a THIRD, independent instance of the same
+            // +13-day-offset bug, not even using epiphanyGreg above) -- wrong from
+            // 2100 onward. Now compares against epiphanyGreg directly, consistent
+            // with every other date comparison in this function.
+            d.getTime() === epiphanyGreg.getTime()       || // Epiphany
             d.getTime() === palmSunday.getTime()         ||
             d.getTime() === maundyThurs.getTime()        ||
             d.getTime() === easter.getTime()             ||
@@ -721,18 +738,20 @@ const EastSyriacCalendar = (() => {
         // at all (the pre-existing fastCharacter === 'feast' only marks the
         // whole Qyamta season as fast-free, not any specific Feast day).
         //
-        // Every date below follows the SAME convention already established
-        // and tested in this engine for Denkha/Epiphany (Julian Jan 6 = Greg
-        // Jan 19) and Holy Cross Day (Julian Sep 14 = Greg Sep 27): a fixed
-        // +13-day Julian-to-Gregorian offset, for internal consistency
-        // across the whole calendar engine -- not because every ACOE parish
-        // observes these dates this way today. Real practice varies (most
-        // Assyrians now keep Nativity on plain Gregorian Dec 25; a smaller
-        // number keep the Julian-offset Jan 7 -- confirmed by search this
-        // session, not assumed), so every label below states BOTH the
-        // traditional Julian calendar date and the actual Gregorian date
-        // this engine computes, rather than showing only one and leaving
-        // the other to be inferred.
+        // FIXED 2026-08-30: this block's fixed dates previously used a hardcoded
+        // +13-day Julian-to-Gregorian offset (wrong from 2100 onward -- the true
+        // offset becomes +14 then). Found by a 100-year rigor sweep (2024-2123)
+        // at Josh's request; see AUDIT_GOVERNANCE_LEDGER.md, session 2026-08-30,
+        // for the full account. Now uses this file's own century-aware
+        // julianToGregorian() JDN conversion throughout, the same one already
+        // used for Easter itself -- correct for any year, not just 1900-2099.
+        //
+        // Real ACOE practice on WHICH calendar to use is still genuinely split
+        // (most Assyrians now keep Nativity on plain Gregorian Dec 25; a smaller
+        // number keep the Julian-offset date -- confirmed by search, not
+        // assumed), so every label below states BOTH the traditional Julian
+        // calendar date and the actual Gregorian date this engine computes,
+        // rather than showing only one and leaving the other to be inferred.
         //
         // This list is NOT claimed to be exhaustive -- only feasts verified
         // against a real source this session are included. Movable feasts
@@ -744,14 +763,17 @@ const EastSyriacCalendar = (() => {
         const { easter, epiphanyGreg } = seasonData;
         const ascensionDay  = addDays(easter, 39);  // Thursday, 40th day counting Easter as day 1
         const pentecostDay  = addDays(easter, 49);
-        const nativityGreg      = new Date(d.getFullYear(), 0, 7);   // Julian Dec 25 + 13 = Greg Jan 7
-        const transfigurationGreg = new Date(d.getFullYear(), 7, 19); // Julian Aug 6 + 13 = Greg Aug 19
+        // Nativity (Julian Dec 25) falls in the December BEFORE the liturgical
+        // year's own Easter year -- lands in January of easter.getFullYear()
+        // after conversion, same as Denkha/Epiphany above.
+        const nativityGreg      = julianToGregorian(easter.getFullYear() - 1, 12, 25);
+        const transfigurationGreg = julianToGregorian(easter.getFullYear(), 8, 6);
 
         const fixedFeasts = [
             { date: nativityGreg,        key: 'COE_FEAST_NATIVITY',       label: 'Nativity of our Lord',
-              note: "Julian Dec. 25 = Gregorian Jan. 7, per this engine's established Julian+13 convention. Many parishes today keep Gregorian Dec. 25 directly instead -- see project notes." },
+              note: "Julian Dec. 25, converted via this engine's century-aware Julian-to-Gregorian conversion. Many parishes today keep Gregorian Dec. 25 directly instead -- see project notes." },
             { date: epiphanyGreg,        key: 'COE_FEAST_EPIPHANY',       label: 'Epiphany (Denkha)',
-              note: 'Julian Jan. 6 = Gregorian Jan. 19. Marks the fixed Feast day itself, distinct from the Denkha season, which begins the following Sunday.' },
+              note: 'Julian Jan. 6, converted via this engine\u2019s century-aware Julian-to-Gregorian conversion. Marks the fixed Feast day itself, distinct from the Denkha season, which begins the following Sunday.' },
             { date: easter,              key: 'COE_FEAST_RESURRECTION',   label: 'Resurrection of our Lord (Qyamta)',
               note: 'Movable; computed directly from the Easter date already used throughout this engine. No Julian/Gregorian translation applies.' },
             { date: ascensionDay,        key: 'COE_FEAST_ASCENSION',      label: 'Ascension of our Lord',
@@ -759,9 +781,9 @@ const EastSyriacCalendar = (() => {
             { date: pentecostDay,        key: 'COE_FEAST_PENTECOST',      label: 'Pentecost',
               note: 'Movable: Easter + 49 days, already computed elsewhere in this engine as the start of Shlihe season. No Julian/Gregorian translation applies.' },
             { date: transfigurationGreg, key: 'COE_FEAST_TRANSFIGURATION',label: 'Transfiguration of our Lord',
-              note: 'Julian Aug. 6 = Gregorian Aug. 19, per this engine\u2019s established Julian+13 convention.' },
+              note: 'Julian Aug. 6, converted via this engine\u2019s century-aware Julian-to-Gregorian conversion.' },
             { date: crossDay,            key: 'COE_FEAST_HOLY_CROSS',     label: 'Holy Cross Day',
-              note: 'Julian Sep. 14 = Gregorian Sep. 27, already computed elsewhere in this engine as the boundary marking the start of Muse season.' },
+              note: 'Julian Sep. 14, converted via this engine\u2019s century-aware Julian-to-Gregorian conversion, already computed elsewhere in this engine as the boundary marking the start of Muse season.' },
         ];
         for (const feast of fixedFeasts) {
             if (d.getTime() === toMidnight(feast.date).getTime()) {
@@ -896,19 +918,24 @@ const EastSyriacCalendar = (() => {
      *   partly of the one and partly of the other. The Sundays are joined in the
      *   same way."
      *
-     * This engine's own Denkha season is already documented and verified (2024-
-     * 2028) to run 4-8 weeks, matching Maclean's stated range exactly -- because
-     * Denkha begins the Sunday on/after Jan 19 and runs until the Sunday before
-     * the Fast (saumaStart), the number of weeks in Denkha for a given liturgical
-     * year IS the "number of Sundays after Epiphany" the footnote counts. No new
-     * date arithmetic was needed to find N; it falls straight out of the season
-     * boundaries already computed in getLiturgicalYear().
+     * This engine's own Denkha season is normally 4-8 weeks (matching Maclean's
+     * stated range) but a 100-year rigor sweep (2024-2123, done 2026-08-30 at
+     * Josh's request) found real exceptions: N=3 in 2 of 100 years under Julian
+     * reckoning (2037, 2105 -- both confirmed genuinely early Easters), and N as
+     * low as 2 in 37 of 100 years under Gregorian reckoning. Below, N is computed
+     * directly from Denkha's actual week count each time, and the fold logic
+     * discloses rather than guesses when N falls outside Maclean's documented
+     * range -- see the `documentedRange`/`rangeNote` fields below.
      *
      * @param  {Date} gregorianDate — any date; only its liturgical year matters
      * @return {{
-     *   sundaysAfterEpiphany: number,       — N, 4-8 (Denkha's week count)
+     *   sundaysAfterEpiphany: number,       — N, Denkha's week count this year
      *   fridays: Array<{ weekInSeason: number, label: string, note?: string }>,
      *   sundayBeforeTheFast: { date: Date, label: string },
+     *   documentedRange: boolean,           — false if N fell outside Maclean's
+     *                                          stated 4-8 range (see rangeNote)
+     *   rangeNote: string|null,             — explains the gap when documentedRange
+     *                                          is false; null otherwise
      * }}
      */
     function getPreFastSundayFoldSchedule(gregorianDate, options) {
@@ -934,8 +961,26 @@ const EastSyriacCalendar = (() => {
         ];
 
         let schedule;
+        let documentedRange = true;
+        let rangeNote = null;
         if (n >= 8) {
             schedule = base.slice();
+            if (n > 8) {
+                // FIXED 2026-08-30: previously this whole branch (originally "n > 8"
+                // wasn't even distinguished from "n === 8") had no distinct handling.
+                // Never observed in a 100-year sweep (2024-2123, either Easter mode),
+                // but kept defensive rather than assumed impossible. Maclean's source
+                // names exactly eight Fridays; it gives no guidance for a ninth, so
+                // the extra week(s) are disclosed as undocumented rather than
+                // guessed at, using the unfolded 8-item list as the closest sourced
+                // approximation (all eight commemorations still occur; this engine
+                // just can't say which Friday carries which beyond the eighth).
+                documentedRange = false;
+                rangeNote = `${n} Sundays after Epiphany exceeds the eight Maclean names explicitly (p.266-269). ` +
+                    'The source gives no commemoration for a ninth or later week; this schedule lists all eight ' +
+                    'named Fridays unfolded, but does not claim to say which calendar Friday each one falls on ' +
+                    'beyond the eighth week.';
+            }
         } else if (n === 7) {
             schedule = base.filter(c => c.week !== 7); // Forty Martyrs dropped entirely
         } else if (n === 6) {
@@ -946,17 +991,40 @@ const EastSyriacCalendar = (() => {
             let merged = mergeByWeek(withoutMartyrs, [1, 2]);
             merged = mergeByWeek(merged, [4, 5]); // also Greek + Syrian Doctors joined
             schedule = merged;
-        } else if (n === 4) {
+        } else {
+            // n <= 4. Apply every fold step Maclean's footnote actually states
+            // (down to its documented floor of four items), regardless of
+            // whether n itself is 4 or lower.
             const withoutMartyrs = base.filter(c => c.week !== 7);
             let merged = mergeByWeek(withoutMartyrs, [1, 2]);
             merged = mergeByWeek(merged, [4, 5]);
-            merged = mergeByWeek(merged, [3, 6]); // also St. Stephen + Mar Awa joined
+            merged = mergeByWeek(merged, [3, 6]); // also St. Stephen + Mar Awa joined -- Maclean's stated floor
             schedule = merged;
-        } else {
-            // Outside Maclean's documented 4-8 range and this engine's own verified
-            // Denkha length range. Disclosed rather than guessed at: return the
-            // unfolded base list with a flag, since no rule covers this case.
-            schedule = base.slice();
+
+            if (n < 4) {
+                // FIXED 2026-08-30: previously this branch returned the UNFOLDED
+                // 8-item base list for any n < 4 -- factually wrong (claims eight
+                // distinct commemorations exist when as few as two real Fridays
+                // are available that year), found by a 100-year rigor sweep at
+                // Josh's request (2024-2123, either Easter mode: n=3 occurs in 2
+                // of 100 years under Julian reckoning -- 2037, 2105, both
+                // confirmed genuinely early Easters; n drops as low as 2 in 37 of
+                // 100 years under Gregorian reckoning). Maclean's footnote states
+                // no fold rule below four items, so there is no sourced answer
+                // for how to compress further -- the fix is to stop there rather
+                // than invent an unsourced fifth merge or assert eight items that
+                // don't fit. Returns the deepest sourced fold (Maclean's own
+                // four-item floor) with this flag and note making the gap
+                // explicit, rather than silently presenting four items as if they
+                // were the correct count for this year.
+                documentedRange = false;
+                rangeNote = `Only ${n} Sunday${n === 1 ? '' : 's'} after Epiphany this year -- below Maclean\u2019s ` +
+                    'documented fold floor of four. The source states no rule for compressing further than the ' +
+                    'four-item schedule below (p.270 footnote\u2019s deepest stated fold: Peter&Paul+Evangelists, ' +
+                    'Greek+Syrian Doctors, and Stephen+Mar Awa each joined, Forty Martyrs dropped). This schedule ' +
+                    'is Maclean\u2019s own floor, not a claim that it fits this year\u2019s actual number of Fridays -- ' +
+                    'how the remaining compression should work is not stated in the source and is not guessed at here.';
+            }
         }
 
         // Helper: merge two week-numbered entries in `list` into a single slot,
@@ -983,6 +1051,8 @@ const EastSyriacCalendar = (() => {
                 date: toMidnight(saumaStart),
                 label: 'Sunday before (entering) the Great Fast',
             },
+            documentedRange, // false when n fell outside Maclean's stated 4-8 range
+            rangeNote,       // null when documentedRange is true; explains the gap otherwise
         };
     }
 

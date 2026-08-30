@@ -8023,3 +8023,59 @@ already got. Julian remains the default pending Josh's direction, exactly as Old
 un-defaulted for EO.
 
 SEED_VERSION at the close of this entry: `v193-2026-08-30-east-syriac-easter-reckoning-mode-added`.
+
+---
+
+## Session 2026-08-30 continued -- both bugs found by the 100-year rigor pass fixed. Verified
+## with the same rigor that found them. SEED_VERSION v193 -> v194.
+
+Josh: "Thank you. Now, please fix them." Both real, quantified bugs from the previous entry.
+
+**Fix 1: the hardcoded +13-day Julian offset (Denkha start, Epiphany, Nativity, Transfiguration,
+Cross Day).** Found a THIRD, previously-undiscovered instance of the same bug while fixing the
+other two: `isNestoriusFeast`'s Epiphany check used its own separate hardcoded `d.getMonth()===0
+&& d.getDate()===19` comparison, not even referencing the `epiphanyGreg` variable sitting right
+above it -- five total occurrences of the same underlying defect, not four. All five replaced with
+calls to this file's own `julianToGregorian()` (the century-aware JDN conversion already used for
+Easter itself), removing the separate hardcoded offset entirely rather than patching it with a
+second, parallel century table that could drift out of sync with the first. Nativity and
+Transfiguration's Julian-year basis corrected too (`easter.getFullYear()` / `easter.getFullYear()
+- 1`, matching how Denkha/Epiphany/Cross Day already anchor to the liturgical year's own Easter
+year rather than the caller's incidental calendar year).
+
+**Fix 2: the pre-Fast fold schedule's wrong fallback for N outside 4-8.** Previously returned the
+unfolded 8-item base list for any N below 4 -- factually wrong, since it claims eight distinct
+commemorations exist in a year with as few as two real pre-Fast Fridays. Replaced with: apply
+every fold step Maclean's own footnote actually states (down to its documented floor of four
+items) regardless of how far below 4 the actual N is, then disclose explicitly via new
+`documentedRange`/`rangeNote` fields that the source gives no rule for compressing further --
+returning Maclean's own stated floor rather than either a wrong item count or an invented fifth
+merge. Also added defensive handling (same disclosure pattern) for N > 8, never observed in the
+100-year sweep but not assumed impossible either.
+
+**Verified with the same rigor that found these bugs, not a lighter pass:**
+- **Fix 1, full 100-year sweep, functionally-meaningful fields only (cosmetic note-rewording
+  excluded from the diff on purpose, since the notes were deliberately reworded as part of the
+  fix):** zero changes before 2100, 328 real changes from 2100 onward, every one of them a clean
+  single-day shift in a fixed feast's Gregorian date, exactly matching the +13->+14 transition.
+  Directly confirmed the three previously-flagged years: 2110, 2116, 2121 -- Denkha's start date
+  now lands a day later than before in each, correcting the full-week-off error previously found.
+- **Fix 2, full 100-year sweep, both Easter modes:** every single year with N in [4,8] still
+  produces `documentedRange: true` with the exact same fold pattern as before (spot-checked
+  against N=8/7/6/5/4 individually, byte-identical to the original verified output). Every year
+  with N outside that range now produces `documentedRange: false`, a populated `rangeNote`, and
+  Maclean's own four-item floor (not the previous wrong 8-item list) -- confirmed for all
+  out-of-range years in both modes (2/100 Julian, ~37-39/100 Gregorian depending on probe date),
+  zero crashes, zero flag/count inconsistencies.
+- All 30 internal self-tests still pass. `node --check` passes.
+
+**One thing worth recording honestly:** partway through writing Fix 1, a `\u2019` (curly-apostrophe
+Unicode escape) in my own new code briefly looked, via two layers of tool-output escaping (Python
+`repr()` and Node's `JSON.stringify()`, both of which double literal backslashes for their own
+display purposes), like a doubled backslash -- i.e., like a real bug. Verified directly by loading
+the file as actual JS and reading the resulting string's character codes before touching anything:
+the escape was correct all along, in both the new code and the pre-existing code it was compared
+against. No fix was needed and none was made; recorded here so the false alarm doesn't get
+mistaken for a fix that happened.
+
+SEED_VERSION at the close of this entry: `v194-2026-08-30-east-syriac-easter-reckoning-bugs-fixed`.

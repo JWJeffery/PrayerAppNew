@@ -1,5 +1,49 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- both bugs found by the 100-year rigor pass fixed, verified
+## with the same rigor that found them. SEED_VERSION v193 -> v194. Read this entry, then the
+## v193/v192/v191/v190/v189/v188 entries below it, then the CONSOLIDATED v187 entry, still
+## accurate for everything else.
+
+Josh: "Thank you. Now, please fix them." Both real, quantified bugs from the previous session.
+
+**Fix 1: the hardcoded +13-day Julian offset.** While fixing the four known instances (Denkha
+start, Epiphany, Nativity, Transfiguration, Cross Day), found a **fifth, previously undiscovered
+occurrence** of the same bug: `isNestoriusFeast`'s Epiphany check had its own separate hardcoded
+"Jan 19" comparison, not even referencing the `epiphanyGreg` variable next to it. All five now go
+through this file's own century-aware `julianToGregorian()` conversion (already used correctly for
+Easter itself) instead of a hardcoded offset. Nativity/Transfiguration's Julian-year basis
+corrected too.
+
+**Fix 2: the fold schedule's wrong out-of-range fallback.** Previously returned a fabricated
+8-item list for years with only 2-3 real pre-Fast Fridays. Now applies every fold step Maclean's
+footnote actually states (down to his documented floor of four items), then explicitly discloses
+via new `documentedRange`/`rangeNote` fields that the source has no rule below that -- rather than
+asserting something false or inventing an unsourced merge.
+
+**Verified with the same 100-year rigor that found these bugs:** zero unintended changes before
+2100 (functionally-meaningful fields only; cosmetic note-text was deliberately reworded as part of
+the fix); all 328 real changes from 2100 onward are clean single-day shifts exactly matching the
+correct offset transition; directly confirmed 2110/2116/2121 now compute correctly. Fold-schedule
+fix confirmed correct across every in-range and out-of-range year in both Easter modes -- zero
+crashes, zero flag/count inconsistencies. All 30 self-tests pass, `node --check` passes.
+
+**One honest note for the record:** partway through, a `\u2019` escape briefly looked like a real
+doubled-backslash bug, but only because two layers of debugging-tool display (Python `repr()`,
+Node `JSON.stringify()`) both double literal backslashes for their own display purposes. Verified
+directly against the actual runtime string before touching anything -- it was correct all along,
+in both the new code and the pre-existing code it was compared against. No fix was needed and none
+was made. Recorded so the false alarm isn't mistaken for a fix that happened.
+
+**Open items, updated:** the two bugs disclosed at the end of the previous session are now fixed.
+Remaining: the longer-standing items unchanged (Great Fast's own Sunday Evening Service,
+`ordinary1/2/3.json` architecture review, Cathedral/Monastic toggle, Royal Anthem sourcing, the
+fuller Book of Needs access-tier ladder), cross-referencing the ~85 still-unsourced allowlisted
+Layer 3 identities against Qadishe, and a decision on whether Gregorian Easter should become the
+COE default.
+
+---
+
 ## Session 2026-08-30 continued -- Julian/Gregorian Easter-reckoning mode added, THEN put through
 ## a genuinely rigorous 100-year test at Josh's explicit request (the original verification fell
 ## well short of this project's own established standard). Julian remains the default; confirmed
