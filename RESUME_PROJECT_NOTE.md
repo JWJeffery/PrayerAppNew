@@ -1,5 +1,63 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Feast-of-our-Lord Night Service built and wired (item 7,
+## the last item on the list). Every item on the 2026-08-29 "Not yet done" list is now closed.
+## Read this whole entry before doing anything else; the entry below it is still accurate for
+## everything else.
+
+Item 7: "the Feast-of-our-Lord farced full-Psalter Night Office recitation" -- identified
+2026-08-27, reconfirmed unbuilt at the 2026-08-29 audit.
+
+**Researched first:** confirmed directly from Maclean's Introduction (p.xvii) that this office
+is categorically different from the Sunday Night Service it had been standing in for -- "on
+feasts of our Lord it [the Psalter] is said complete... on Sundays and other holy days
+selections are made." The live app had no `feast-lelya` sequence at all; every weekday Feast
+silently fell through to Sunday's shorter Night Service. **A real, previously undiagnosed
+content gap**, not just an unbuilt stub.
+
+**Built:** 20 new components from pp.152-155 covering the office's full structure -- the
+psalter-recitation rubric, a disclosed gap for Psalm 78's feast-name-dependent farcing (same
+unresolved "name of the feast" variable already sitting unaddressed in Ramsha's Ps.cxli
+farcing -- not new, not guessed at), three Motwa-block rubrics completing the Psalter, a
+Madrasha rubric, two prayers newly extracted from `esy-festival-suba-a-compline` into their
+own reusable components, the Qali d'Shahra rubric and its disclosed text gap, three distinct
+Night Anthem prayers (Sunday's Night Service has only one), and the closing Canon/Karuzutha
+rubrics -- including Maclean's Nativity-specific "Prayer after the Night Anthem," reproduced
+exactly as printed rather than generalised.
+
+**Reused, not retyped:** all 21 already-built Hulali components directly satisfy "the
+Psalter... said complete" -- no new psalm content needed, only wiring. Also reused:
+`esy-festival-prayer-after-royal-anthem`, `esy-festival-prayer-full-of-mercies-and-
+compassion`, `esy-blessed-and-adorable`, the three `esy-qali-dshahra-prayer-*` components, and
+`esy-sunday-lelya-tishbukhta-mar-narsai` (confirmed to be the Tishbukhta Maclean cites here
+only by its opening words).
+
+**Wired:** new `feast-lelya-sequence` (54 items); `js/office-ui.js` routes
+`officeKey==='lelya' && isFeastDay` to it directly, ahead of the Sunday-borrowing path (which
+still correctly governs Ramsha/Sapra on Feast days) and behind the Great Fast's own handling
+if both were somehow true (disclosed, unresearched edge case -- Annunciation-in-Lent).
+`cycleVaryingOffices` corrected too: Feast Lelya doesn't cycle (confirmed -- no "before"/
+"after" anywhere in this text), so a stray Qdham/Wathar label no longer appears for it.
+
+**This is a real behaviour change, disclosed rather than left implicit:** a weekday Feast used
+to render Sunday's Night Service; it now renders its own, taking priority even when the Feast
+falls on a Sunday, since Maclean's "said complete" rule has no Sunday exception.
+
+**Verified:** both JSON files remain valid; `js/office-ui.js` passes `node --check`; the full
+54-item sequence checked against the component file, zero missing; end-to-end logic simulated
+against four real fixed Feast dates across different weekdays and years, each resolving
+correctly with cycling excluded and zero missing components; a plain non-Feast Sunday
+confirmed unaffected. `SEED_VERSION` bumped to `v179-2026-08-29-east-syriac-feast-lelya-built-wired`.
+
+Full detail in `audit-ledger.html`'s `coe:feast-lelya:built-wired` entry.
+
+**"Not yet done" list: every item is now closed.** Items 1-7 all done. The only remaining open
+thread from this session is the disclosed, unresolved "feast-name substitution" gap (Psalm 78
+here, Ps.cxli in Ramsha) -- not on the original list, and not something to pick up without
+Josh's direction, since it would mean designing a new per-feast-name mechanism from scratch.
+
+---
+
 ## Session 2026-08-29 continued -- Sunday Lelya's Tishbukhta-of-the-Night-Service ordering
 ## re-verified and fixed, at Josh's direction. Two disclosed Khudhra gaps (a Karuzutha, a
 ## Madrasha) built in the process. Resolves the open question from item 5. Read this whole

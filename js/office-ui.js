@@ -4234,16 +4234,27 @@ async function renderEastSyriac() {
     // Ramsha varies by Qdham/Wathar cycle on every day of the week
     // (Maclean's own Introduction, p.xvi-xvii: this alternation is "the
     // special feature of the Evening Service"). Lelya and Sapra do NOT
-    // vary by cycle on ferial weekdays -- but on Sundays, and now also on
-    // any weekday Feast of our Lord, Maclean's Festival Night and Morning
-    // Services explicitly do carry their own "Before"/"After" forms
-    // (distinct opening psalms, and for Sapra a distinct Martyrs' Anthem),
-    // confirmed directly from the Festival Night/Morning Service source
-    // text (pp.155-184), not assumed by analogy with Ramsha. Suba'a is
-    // deliberately NOT included here even on a Feast day: its own rubric
-    // (see esy-sunday-lelya-title's Feast-extras block, and the earlier
-    // Feast-of-our-Lord build note) says "on Memorials" specifically, not
-    // Feasts, so it stays keyed to the real day-of-week regardless.
+    // vary by cycle on ferial weekdays -- but on Sundays, Maclean's
+    // Festival Night and Morning Services explicitly do carry their own
+    // "Before"/"After" forms (distinct opening psalms, and for Sapra a
+    // distinct Martyrs' Anthem), confirmed directly from the Festival
+    // Night/Morning Service source text (pp.155-184).
+    //
+    // UPDATED 2026-08-29: a weekday Feast of our Lord is NOT the same case
+    // as Sunday, now that Lelya has its own real Feast-of-our-Lord content
+    // (feast-lelya-sequence, built from pp.152-155) rather than borrowing
+    // Sunday's. That text recites the Psalter uniformly across all 21
+    // Hulali with no "before"/"after" distinction anywhere in it -- so
+    // Feast Lelya specifically does not cycle, even though Feast Ramsha
+    // and Sapra still do (both still reuse the Sunday-named Festival
+    // sequences via festivalSequenceDayKey below, unchanged by this
+    // session's work, since neither was in scope here).
+    //
+    // Suba'a is deliberately NOT included here even on a Feast day: its
+    // own rubric (see esy-sunday-lelya-title's Feast-extras block, and the
+    // earlier Feast-of-our-Lord build note) says "on Memorials"
+    // specifically, not Feasts, so it stays keyed to the real day-of-week
+    // regardless.
     // Wednesday Lelya is a further, narrower exception on top of the above:
     // Maclean's own Introduction (p.xv) states the Motwa itself "varies with
     // the season and day, except on Wednesdays, when special anthems are
@@ -4254,7 +4265,7 @@ async function renderEastSyriac() {
     // Lelya also needs the qdham/wathar suffix, even though no other
     // ferial weekday's Lelya varies by cycle.
     const cycleVaryingOffices = (dayName === 'sunday' || isFeastDay)
-        ? ['ramsha', 'lelya', 'sapra']
+        ? ['ramsha', 'lelya', 'sapra'].filter(k => !(isFeastDay && k === 'lelya'))
         : (dayName === 'wednesday' ? ['ramsha', 'lelya'] : ['ramsha']);
 
     // A weekday Feast reuses the Sunday-named Festival sequences directly
@@ -4301,6 +4312,30 @@ async function renderEastSyriac() {
         const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
         lelyaFastSequenceName = isMysteriesWeek ? 'lelya-fast-mysteries-sequence' : 'lelya-fast-ordinary-sequence';
         sequenceKey = lelyaFastSequenceName;
+    }
+
+    // Feasts of our Lord: Lelya is its own distinct office, not the Sunday
+    // Night Service borrowed via festivalSequenceDayKey. Maclean's own
+    // Introduction (p.xvii) draws this exact line: "on feasts of our Lord
+    // it [the Psalter] is said complete... on Sundays and other holy days
+    // selections are made" -- the Sunday Night Service Maclean gives is
+    // one of those "selections," genuinely shorter than what a Feast gets,
+    // not a stand-in for it. Confirmed directly from the Feasts-of-our-
+    // Lord Night Service text itself (pp.152-155), which recites the
+    // entire Psalter across all 21 Hulali in three Motwa-separated blocks,
+    // against a sequence that previously fell through to Sunday's partial
+    // one for any Feast landing on a weekday. Takes priority even over a
+    // Feast that happens to land on a Sunday, since Maclean's "said
+    // complete" rule for feasts has no Sunday exception in the source --
+    // this is a real behaviour change from before (a weekday Feast used
+    // to get Sunday's Lelya; now every Feast gets its own), disclosed
+    // here rather than left implicit. Excluded from isGreatFast, which
+    // takes priority above if both are somehow true (Annunciation can
+    // fall within Lent in some years; Maclean's treatment of that overlap
+    // was not found during this session's source review, so the existing,
+    // already-verified Fast handling is left to win rather than guessing).
+    if (officeKey === 'lelya' && isFeastDay && !lelyaFastSequenceName) {
+        sequenceKey = 'feast-lelya-sequence';
     }
 
     // Endana ("Prayer at Noon in the Fast") has no content outside the

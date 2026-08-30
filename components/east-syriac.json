@@ -4411,5 +4411,194 @@
       "note": "GAP, disclosed rather than filled: 'Madrasha for the day, from the Khudhra' -- the doctrinal hymn's own text is not given by Maclean, same pattern as other Khudhra-sourced citation gaps. The two PRAYERS said with it, by contrast, ARE given by Maclean in full ('Prayers of the Madrasha. Of thee who art full of mercies, and Blessed and adorable, as above, page 152') and are reused directly -- esy-festival-prayer-full-of-mercies-and-compassion and esy-blessed-and-adorable, both already built from that same page-152 Festival material. Added 2026-08-29 when the sequence's ordering was corrected."
     },
     "text": "<p class=\"rubric-text\">Madrasha for the day, from the Khudhra.</p>"
+  },
+  {
+    "id": "esy-feast-lelya-title",
+    "title": "Feasts of our Lord",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "Heading for the Feast-of-our-Lord Night Service, distinct from the Sunday Night Service it had previously been substituted for on weekday Feasts. Built 2026-08-29 -- item 7 on the 'Not yet done' list, 'the Feast-of-our-Lord farced full-Psalter Night Office recitation', identified 2026-08-27 and reconfirmed unbuilt during the 2026-08-29 audit."
+    },
+    "text": "<p class=\"rubric-text\">Feasts of our Lord.</p>"
+  },
+  {
+    "id": "esy-feast-lelya-psalter-rubric",
+    "title": "The Hulali and Motwi",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "The defining feature of this office, per Maclean's own Introduction (p.xvii): 'on feasts of our Lord it is said complete' -- i.e. the entire Psalter, farced, across all 21 Hulali, unlike ferias (one-third) and Sundays/memorials (partial selections). All 21 Hulali components (esy-hulala-1 through esy-hulala-21) were already fully built from earlier sessions' work on the ferial and Fast Night Services, and are reused here directly -- no new psalm-prayer content was needed, only the wiring. The performance directions in this rubric (no Hallelujah between Hulali; two clauses per side, not one) apply throughout but are not separately encoded per-Hulala; they are recorded here once."
+    },
+    "text": "<p class=\"rubric-text\">On Feasts of our Lord they recite the Psalter from the beginning, and say eleven Hulali (Ps. i. to lxxxi. incl.), with farcings and the proper prayers before each Hulala and each Marmitha. But they do not say Hallelujah between each Hulala; and each side says two clauses at a time.</p>"
+  },
+  {
+    "id": "esy-feast-lelya-ps78-farcing-gap",
+    "title": "Psalm 78, farced for the feast",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "GAP, disclosed rather than guessed at: 'They say Ps. lxxviii., farced thus: between each pair of clauses Hallelu, four times, Hallelujah in the Nativity of Christ [or Baptism, etc.]' -- the bracketed name of the feast is a genuine variable in the source itself, and this project has no existing mechanism anywhere for substituting a feast's own name into farcing text (the same unresolved gap already sits, unaddressed, in the Ramsha farcing for Ps.cxli -- 'glorious is thy Nativity, or Epiphany, or Entrance, or Resurrection...' -- so this is not a new problem introduced here, but the same systemic one surfacing again). Not invented or guessed at for any single feast; left as a disclosed citation only. Psalm 78 itself is already correctly included within esy-hulala-11's first section, farced with its own ordinary prayer ('We beseech thee, O wise Ruler...') -- only this additional feast-specific refrain is missing."
+    },
+    "text": "<p class=\"rubric-text\">They say Psalm 78, farced thus: between each pair of clauses, ‘Hallelu’ four times, ‘Hallelujah in the [Nativity of Christ, or Baptism, or Entrance, or Resurrection, or Ascension, or Descent, or Revelation, or Cross]’ -- the name of the feast varying with the day.</p>"
+  },
+  {
+    "id": "esy-feast-motwa-prayer-treasure-of-helps",
+    "title": "Prayer before the Motwa on Feasts",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "The first of the two Motwa-introducing prayers for this office (distinguish from esy-lelya-fast-mysteries-doorway-prayer and other Fast-season prayers, which are for a different office entirely)."
+    },
+    "text": "<p class=\"component-text\">We beseech thee, O Treasure of helps and Fountain of all benefits, overflowing Sea of compassion and mercy, great Abyss of pardon and pity, turn, O my Lord, and have pity and mercy upon us, as thou art wont, at all times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-first-motwa-rubric",
+    "title": "The First Motwa",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "GAP, disclosed rather than filled: 'They say the First Motwa as in the Geza' -- text not given by Maclean, same pattern as other Geza/Khudhra-sourced citation gaps already on record. Followed by the reused Evening Service prayer 'To thy wonderful and unspeakable dispensation' (esy-festival-prayer-after-royal-anthem, page 80), which Maclean cites directly rather than reprinting."
+    },
+    "text": "<p class=\"rubric-text\">They say the First Motwa as in the Geza.</p><p class=\"rubric-text\">At the end of the Motwa they pray, as at the Evening Service (page 80).</p>"
+  },
+  {
+    "id": "esy-feast-canon-tishbukhta-karuzutha-rubric",
+    "title": "The proper Canon, Tishbukhta, and Karuzutha for the day",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "GAP, disclosed rather than filled: text not given by Maclean, day-specific and Geza/Khudhra-sourced. Followed by the two Madrasha prayers, which Maclean DOES give in full and which are reused here (esy-festival-prayer-full-of-mercies-and-compassion and esy-blessed-and-adorable, both already built from this same page-152 material)."
+    },
+    "text": "<p class=\"rubric-text\">They say the proper Canon, Tishbukhta, and Karuzutha for the day.</p>"
+  },
+  {
+    "id": "esy-feast-madrasha-rubric-first",
+    "title": "The Madrasha for the day",
+    "meta": {
+      "source": "Maclean 1894, p.152.",
+      "note": "GAP, disclosed rather than filled: 'Madrasha for the day' -- the doctrinal hymn's own text is not given by Maclean, same pattern as the other Madrasha gaps already on record in this corpus (e.g. esy-sunday-lelya-madrasha-rubric). Followed by six further Hulali (esy-hulala-12 through esy-hulala-17, Ps.82 to 119:89) 'in the same manner as before.'"
+    },
+    "text": "<p class=\"rubric-text\">Madrasha for the day. They say six Hulali (Ps. lxxxii. to cxix. 89 incl.) in the same manner as before.</p>"
+  },
+  {
+    "id": "esy-feast-second-motwa-rubric",
+    "title": "The Second Motwa",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "GAP, disclosed rather than filled: 'Second Motwa and Canons from the Geza' -- text not given by Maclean. Followed by two further prayers Maclean cites rather than reprints ('O thou who openest thy door' and 'O thou who hearest the voice', both as at the Evening Service, page 83) -- reused here as esy-suba-a-prayer-openest-door and esy-suba-a-prayer-hearest-voice, both newly extracted 2026-08-29 from within esy-festival-suba-a-compline, where their full text already existed but had not previously been split out into standalone reusable components."
+    },
+    "text": "<p class=\"rubric-text\">Second Motwa and Canons from the Geza.</p>"
+  },
+  {
+    "id": "esy-suba-a-prayer-openest-door",
+    "title": "Prayer",
+    "meta": {
+      "source": "Maclean 1894, p.83.",
+      "note": "Extracted 2026-08-29 from esy-festival-suba-a-compline (where the full text already existed as part of the Suba'a's own 'Prayers after the Suba'a' block) into its own standalone component, so it can be reused directly here as Maclean's own Feast Night Service rubric cites it to do ('O thou who openest thy door, etc. ... as at the Evening Service, page 83')."
+    },
+    "text": "<p class=\"component-text\">O thou who openest thy door to them that knock at it, and returnest answer to the petitions of them that ask of thee, open, O our Lord and our God, the door of mercies to our prayer; and receive our request, and return answer in thy mercies to our petitions from thy rich and overflowing treasury, O thou who art good, and stayest not thy mercies and gifts to the needy and afflicted, thy servants who call on thee and beseech thee, at all seasons and times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-suba-a-prayer-hearest-voice",
+    "title": "Another",
+    "meta": {
+      "source": "Maclean 1894, p.83.",
+      "note": "Extracted 2026-08-29 from esy-festival-suba-a-compline (where the full text already existed) into its own standalone component; see esy-suba-a-prayer-openest-door's note for the same reasoning."
+    },
+    "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">O thou who hearest the voice of the just and righteous who propitiate thee continually, and who grantest the wish of them that fear thee, hear, O my Lord, the prayer of thy servants in thy compassion, and receive the request of thy worshippers in thy mercy, and have compassion on the afflicted and tormented, thy servants who call on thee and beseech thee, at all seasons and times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-third-motwa-rubric",
+    "title": "The Third Motwa (of the Company of the Catholici)",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "GAP, disclosed rather than filled: text not given by Maclean; day-specific and Geza-sourced. This Motwa introduces the remainder of the Psalter -- the last four Hulali (esy-hulala-18 through esy-hulala-21, Ps.119:89 to the end, plus the Old Testament canticles), completing the 'said complete' recitation the office opened with. Maclean adds one specific note: within Hulala 21, Deut.xxxii.21a-44 is said 'with proper farcings from the Khudhra' rather than the ordinary farcing already built into esy-hulala-21 -- disclosed as a further, narrower gap rather than silently overridden."
+    },
+    "text": "<p class=\"rubric-text\">In the Third Motwa of The Company of the Catholici they say the rest of the Psalter, but Deuteronomy xxxii. 21a-44 is said with proper farcings from the Khudhra (not the ordinary farcing given below).</p>"
+  },
+  {
+    "id": "esy-feast-qali-dshahra-hulala-rubric",
+    "title": "Qali d’Shahra",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "Introduces an additional (22nd, unnumbered) Hulala sung to a chant, with its own three prayers -- reuses esy-qali-dshahra-prayer-first/-second/-third directly, since Maclean's text here is identical to the Festival material those were already built from ('May the sounds of our Hallelujahs...', 'Make us worthy...', 'Continual glory...'). The Qali d’Shahra TEXT itself is a disclosed gap -- see esy-feast-qali-dshahra-text-gap."
+    },
+    "text": "<p class=\"rubric-text\">They say another Hulala, with the following prayers.</p>"
+  },
+  {
+    "id": "esy-feast-qali-dshahra-text-gap",
+    "title": "The Qali d’Shahra for Feasts",
+    "meta": {
+      "source": "Maclean 1894, p.153.",
+      "note": "GAP, disclosed rather than filled: 'The Qali d’Shahra for Feasts are found in the Geza' -- text not given by Maclean. The performance direction that follows IS given in full and is preserved here as rubric: two clauses at a time, with Hallelujah between each pair (some say it twice, some thrice), the Gloria said the same way; and if the Feast does not fall on a Sunday, they kneel between the Qali (on Sundays themselves, by the standing custom already established elsewhere in this corpus for Sunday worship, kneeling is not the ordinary posture)."
+    },
+    "text": "<p class=\"rubric-text\">The Qali d’Shahra for Feasts are found in the Geza. Two clauses are said at a time by each side, and Hallelujah between the clauses of each pair; some say Hallelujah twice, some thrice. They say the Gloria in the same way. If the Feast does not fall on a Sunday, they kneel down between the Qali.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-prayer-first",
+    "title": "Prayer of the first Night Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.153-154.",
+      "note": "The first of three Night Anthem prayers for this office (contrast the Sunday Night Service, which has only one, 'By the speaking mouths...', reused here at esy-night-anthem-prayer-first for that different office -- this Feast text, though it opens with the same words, continues differently and is kept as its own component)."
+    },
+    "text": "<p class=\"component-text\">By the speaking mouths, O my Lord, which thou hast created, and by the glorifying tongues which thou hast appointed, and by all the companies on high and below, may the Name of thy Godhead and of thy majesty be worshipped, glorified, honoured, exalted, confessed, and blessed in heaven and earth, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-prayer-second",
+    "title": "Prayer of the second Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "The second of three Night Anthem prayers for this office."
+    },
+    "text": "<p class=\"component-text\">May thy Godhead, O my Lord, be pleased with our service, and may our prayers be received before thee, and may thy mercies greatly intercede for our wickedness, and from thy great treasury may our petitions be answered in our need, at all times, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-prayer-third",
+    "title": "Prayer of the third Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "The third of three Night Anthem prayers for this office. Names the feast generically as 'N' in the source, like the Suyakha/Karuzutha 'NN' placeholders already handled elsewhere in this corpus for names left blank for local insertion -- not resolved to a specific feast name here, matching the same disclosed-variable treatment as esy-feast-lelya-ps78-farcing-gap."
+    },
+    "text": "<p class=\"component-text\">Come, O my Lord, to the help of thy worshippers, who keep vigil on the festival of N; and reveal thyself to us in thy mercy, and hearken to the words of our prayers, which on thy holy festival we offer to thee, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-text-gap",
+    "title": "The Night Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "GAP, disclosed rather than filled: the Night Anthem's own proper text is not transcribed anywhere in this project's holdings, the same disclosed gap already on record for the ordinary ferial Night Anthem generally (see esy-sext-night-anthem-canon-rubric's note)."
+    },
+    "text": "<p class=\"rubric-text\">They say the Night Anthem.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-prayer-after",
+    "title": "Prayer after the Night Anthem",
+    "meta": {
+      "source": "Maclean 1894, p.154.",
+      "note": "Given by Maclean using the Nativity as its worked example ('the holy festival of the Nativity of Christ') rather than a blank 'N' -- reproduced exactly as printed, not generalised or altered for other feasts, since doing so would mean inventing wording Maclean did not write. Whether this specific wording is meant only for Christmas, or stands as the general form with 'Nativity' simply being the printed example, is not stated by the source and is left disclosed rather than guessed at. An alternative, genuinely feast-generic prayer follows immediately in the source ('Or this') -- see esy-feast-night-anthem-prayer-after-alt."
+    },
+    "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, by pure thoughts and sweet and holy melodies, with the heavenly hosts and the Wise Men and the Shepherds, to celebrate the holy festival of the Nativity of Christ our Lord and Saviour, in thy lovingkindness and mercy, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-night-anthem-prayer-after-alt",
+    "title": "Or this",
+    "meta": {
+      "source": "Maclean 1894, p.154-155.",
+      "note": "The feast-generic alternative to esy-feast-night-anthem-prayer-after, using 'N' rather than naming a specific feast."
+    },
+    "text": "<p class=\"rubric-text\">Or this.</p><p class=\"component-text\">Answer, O my Lord, them that keep vigil in thy holy festival of N, in thy compassion. And wash the filth of our sins by thy gift; multiply like water the flocks of them that believe in thy salvation, and make firm thy Church, the faithful vine which thou hast planted, Lord of all, etc.</p>"
+  },
+  {
+    "id": "esy-feast-closing-canon-continuation-rubric",
+    "title": "The proper Canon and its Continuation",
+    "meta": {
+      "source": "Maclean 1894, p.155.",
+      "note": "GAP, disclosed rather than filled: text not given by Maclean. Followed directly by the Tishbukhta, which Maclean identifies only by its opening words and a page cross-reference -- 'the Tishbukhta, Praise to him who is good, as below (page 161)' -- confirmed to be Mar Narsai's Tishbukhta from the Sunday Night Service (already built as esy-sunday-lelya-tishbukhta-mar-narsai, opening 'Praise to him who in his goodness hath made our race free'), reused directly here rather than retyped."
+    },
+    "text": "<p class=\"rubric-text\">They say the proper Canon and its Continuation.</p>"
+  },
+  {
+    "id": "esy-feast-closing-karuzutha-rubric",
+    "title": "The proper Karuzutha",
+    "meta": {
+      "source": "Maclean 1894, p.155.",
+      "note": "GAP, disclosed rather than filled: 'Then the proper Karuzutha' -- text not given by Maclean, day-specific and Geza/Khudhra-sourced. Distinguish from the Sunday Night Service's own final Karuzutha (esy-sunday-lelya-karuzutha, for which Maclean gives full alternate text at page 162) -- that text belongs to the Sunday office specifically and is not reused here, since this office's own closing Karuzutha is left to the Geza rather than given in full."
+    },
+    "text": "<p class=\"rubric-text\">Then the proper Karuzutha.</p>"
   }
 ]
