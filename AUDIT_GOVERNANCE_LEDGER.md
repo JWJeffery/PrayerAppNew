@@ -7758,3 +7758,54 @@ edits were to existing components), zero duplicate ids. Both Sunday Lelya sequen
 resolve. `js/office-ui.js` untouched, still passes `node --check`.
 
 SEED_VERSION at the close of this entry: `v190-2026-08-30-east-syriac-farcings-loose-ends-resolved`.
+
+---
+
+## Session 2026-08-30 continued -- Pre-Fast Sunday folding rule built as a data-layer function,
+## NOT wired into any render path. SEED_VERSION v190 -> v191.
+
+Fourth item off the open-items list, flagged 2026-08-27 and left as new scope pending priority.
+Proceeding on it now as part of the methodical open-items pass.
+
+**Source, read in full from `McClean.rtf`'s Kalendar appendix (pp.266-270):** eight named
+Fridays of commemoration across the Denkha (Epiphany) season, one per week (SS. Peter and Paul;
+The Four Evangelists; St. Stephen; The Greek Doctors; The Syrian Doctors, coinciding with the end
+of the Rogation-of-the-Ninevites week; Mar Awa Catholicos/the Patron Saint; the Forty Martyrs of
+Sebaste; Friday of the Departed), followed by "Sunday before (entering) the Great Fast." A
+footnote on that Sunday gives the exact compression rule for years where Denkha runs short: drop
+the Forty Martyrs first (8->7 Sundays), then join Evangelists with Peter&Paul (->6), then join
+the Greek and Syrian Doctors (->5), then join St. Stephen with Mar Awa (->4).
+
+**A genuine shortcut found, not assumed:** this engine's own Denkha season is already documented
+and verified (2024-2028) to run 4-8 weeks -- exactly Maclean's stated range -- because Denkha
+starts the Sunday on/after Jan 19 and runs until the Sunday before the Fast (`saumaStart`), so
+Denkha's week count for a given liturgical year already IS the "number of Sundays after Epiphany"
+the footnote counts. No new date arithmetic was needed to find N; `getLiturgicalYear()`'s
+existing season boundaries give it directly.
+
+**Built:** `getPreFastSundayFoldSchedule(gregorianDate)` in `js/calendar-east-syriac.js`,
+computing N and applying the fold rule in the source's own stated priority order, returning the
+resulting list of Friday commemorations (merged entries carry both labels and a note explaining
+the merge, rather than silently picking one) plus the Sunday-before-the-Fast date itself.
+
+**DATA-LAYER ONLY, explicitly not wired anywhere** -- nothing in `js/office-ui.js` calls this
+function, and no rendered prayer or office text is affected. This is groundwork for a future
+lectionary-display feature, matching the framing this item was flagged under in 2026-08-27.
+
+**Deliberately out of scope for this pass, disclosed rather than silently included:** the full
+Lections table (Law/Prophecy/Acts/Apostle/Gospel citations for each of these Sundays and
+Fridays, also given in the same Kalendar appendix) was not transcribed -- a substantial separate
+data-entry task, not part of what was flagged as "genuinely buildable now" in the original
+scoping note.
+
+**Verified:** simulated against all twelve years 2024-2035 -- N correctly resolves to 4-8 in
+every year (matching this engine's own already-verified Denkha range, no year fell outside it,
+so the function's defensive out-of-range fallback was never exercised in practice); five years
+spanning all five fold scenarios (N=8/7/6/5/4) individually checked to confirm the exact merge
+pattern and priority order match the footnote precisely, including that "Friday of the Departed"
+(week 8) is never merged or dropped in any scenario, consistent with its structural position
+immediately before the pre-Fast Sunday. `js/calendar-east-syriac.js` passes `node --check` and
+its own 20 internal self-tests still pass on load, confirming no regression. `js/office-ui.js`
+untouched, still passes `node --check`.
+
+SEED_VERSION at the close of this entry: `v191-2026-08-30-east-syriac-prefast-fold-rule-built`.

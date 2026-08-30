@@ -1,5 +1,40 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Pre-Fast Sunday folding rule built as a data-layer function,
+## deliberately not wired into any render path. SEED_VERSION v190 -> v191. Read this entry, then
+## the v190/v189/v188 entries below it, then the CONSOLIDATED v187 entry, still accurate for
+## everything else.
+
+Fourth item off the open-items list, flagged 2026-08-27, built now.
+
+Maclean's Kalendar appendix (pp.266-270) gives eight named Fridays of commemoration across the
+Denkha season plus "Sunday before the Great Fast," with a footnote rule for how they compress
+(drop, then merge) in years where Denkha runs short (4-8 weeks, already this engine's own
+documented and verified range). Found that Denkha's own week count already IS the "Sundays after
+Epiphany" count the footnote uses -- no new date arithmetic needed.
+
+**Built:** `getPreFastSundayFoldSchedule(gregorianDate)` in `js/calendar-east-syriac.js`,
+computing N and applying the fold rule in the source's own priority order. **Data-layer only,
+deliberately not wired** into `js/office-ui.js` or any render path -- groundwork for a future
+lectionary-display feature. The full Lections table (scripture citations) was not built this
+pass -- a substantial separate data-entry task, disclosed as out of scope.
+
+**Verified:** simulated against 2024-2035 (N resolves 4-8 every year), five years individually
+checked across all five fold scenarios, exact merge pattern and priority order confirmed against
+the footnote. `js/calendar-east-syriac.js` passes `node --check`, 20 internal self-tests still
+pass. `js/office-ui.js` untouched. SEED_VERSION bumped to
+`v191-2026-08-30-east-syriac-prefast-fold-rule-built`.
+
+**Open items, updated:** items 1-4 from the v187 list are done. Remaining: Layer 3 saints
+calendar (large, new content tradition), and the longer-standing items unchanged (Great Fast's
+own Sunday Evening Service, `ordinary1/2/3.json` architecture review, Cathedral/Monastic toggle,
+Royal Anthem sourcing -- still copyright-blocked, the fuller Book of Needs access-tier ladder).
+Layer 3 is the largest remaining item on the original list and is a genuinely new content
+tradition (no saints calendar transcribed anywhere in this project yet) -- worth checking with
+Josh on priority/scope before diving in unprompted, rather than assuming how far to take it.
+
+---
+
 ## Session 2026-08-30 continued -- the two loose Farcings ends resolved/closed. SEED_VERSION
 ## v189 -> v190. Read this entry, then the v189/v188 entries below it, then the CONSOLIDATED v187
 ## entry, which is still accurate for everything else.

@@ -792,6 +792,117 @@ const EastSyriacCalendar = (() => {
         };
     }
 
+    // ── COE-IIB: Pre-Fast Sunday folding rule (Kalendar appendix, p.270 footnote) ──
+
+    /**
+     * DATA-LAYER ONLY, NOT WIRED INTO ANY RENDER PATH. Flagged 2026-08-27, built
+     * 2026-08-30 as structured groundwork for a future lectionary-display feature.
+     * No rendered prayer or office text depends on this function; nothing calls it
+     * from renderEastSyriac() or anywhere else in js/office-ui.js.
+     *
+     * Maclean's Kalendar appendix (pp.266-270) lists eight named Fridays of
+     * commemoration across the Denkha (Epiphany) season, one per week, followed by
+     * "Sunday before [lit. entering] the Great Fast." A footnote attached to that
+     * Sunday (p.270) states the compression rule verbatim:
+     *
+     *   "This Sunday is always fifty days before Easter. If there are eight
+     *   Sundays after Epiphany, the above order is followed; if seven, the
+     *   Memorial of the Forty Martyrs is dropped; if six, the Evangelists and
+     *   St. Peter and St. Paul are joined together; if five, also the Greek and
+     *   Syrian Doctors; if four, also St. Stephen and Mar Awa; the service being
+     *   partly of the one and partly of the other. The Sundays are joined in the
+     *   same way."
+     *
+     * This engine's own Denkha season is already documented and verified (2024-
+     * 2028) to run 4-8 weeks, matching Maclean's stated range exactly -- because
+     * Denkha begins the Sunday on/after Jan 19 and runs until the Sunday before
+     * the Fast (saumaStart), the number of weeks in Denkha for a given liturgical
+     * year IS the "number of Sundays after Epiphany" the footnote counts. No new
+     * date arithmetic was needed to find N; it falls straight out of the season
+     * boundaries already computed in getLiturgicalYear().
+     *
+     * @param  {Date} gregorianDate — any date; only its liturgical year matters
+     * @return {{
+     *   sundaysAfterEpiphany: number,       — N, 4-8 (Denkha's week count)
+     *   fridays: Array<{ weekInSeason: number, label: string, note?: string }>,
+     *   sundayBeforeTheFast: { date: Date, label: string },
+     * }}
+     */
+    function getPreFastSundayFoldSchedule(gregorianDate) {
+        const d = toMidnight(gregorianDate);
+        const { seasons, saumaStart } = getLiturgicalYear(d);
+        const denkha = seasons.find(s => s.name === 'denkha');
+        const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+        const n = Math.round((toMidnight(saumaStart) - toMidnight(denkha.start)) / msPerWeek);
+
+        // The eight base commemorations, in Maclean's own printed order (p.266-269).
+        // Each carries the week number (1-8) of the Sunday whose Friday it falls on,
+        // used only to build the fold below -- not a claim about which Gregorian
+        // Sunday it lands on in a given year, since that's exactly what folds away.
+        const base = [
+            { week: 1, label: 'SS. Peter and Paul (Patrus-Polus)' },
+            { week: 2, label: 'The Four Evangelists', note: 'Also, in some sources, the memorial of the 150 Bishops who excommunicated Macedonius.' },
+            { week: 3, label: 'St. Stephen (Mar Istaphanus)' },
+            { week: 4, label: 'The Greek Doctors', note: 'Especially Diodorus of Tarsus, Nestorius, and Theodore the Interpreter.' },
+            { week: 5, label: 'The Syrian Doctors', note: 'Mar Ephraim and Mar Narsai. Also, Memorial of Mar Saurishu of Beith Garmai. This Friday closes the week of the Rogation of the Ninevites (Mon-Thu of the same week).' },
+            { week: 6, label: "Mar Awa, Catholicos, or \u2018One Person\u2019 (the Patron Saint)" },
+            { week: 7, label: 'The Forty Martyrs of Sebaste, who were frozen to death' },
+            { week: 8, label: 'Friday of the Departed', note: 'The Sunday itself also carries, in some sources, the Memorial of all the Eastern (Syrian) Catholici.' },
+        ];
+
+        let schedule;
+        if (n >= 8) {
+            schedule = base.slice();
+        } else if (n === 7) {
+            schedule = base.filter(c => c.week !== 7); // Forty Martyrs dropped entirely
+        } else if (n === 6) {
+            const withoutMartyrs = base.filter(c => c.week !== 7);
+            schedule = mergeByWeek(withoutMartyrs, [1, 2]); // Peter&Paul + Evangelists joined
+        } else if (n === 5) {
+            const withoutMartyrs = base.filter(c => c.week !== 7);
+            let merged = mergeByWeek(withoutMartyrs, [1, 2]);
+            merged = mergeByWeek(merged, [4, 5]); // also Greek + Syrian Doctors joined
+            schedule = merged;
+        } else if (n === 4) {
+            const withoutMartyrs = base.filter(c => c.week !== 7);
+            let merged = mergeByWeek(withoutMartyrs, [1, 2]);
+            merged = mergeByWeek(merged, [4, 5]);
+            merged = mergeByWeek(merged, [3, 6]); // also St. Stephen + Mar Awa joined
+            schedule = merged;
+        } else {
+            // Outside Maclean's documented 4-8 range and this engine's own verified
+            // Denkha length range. Disclosed rather than guessed at: return the
+            // unfolded base list with a flag, since no rule covers this case.
+            schedule = base.slice();
+        }
+
+        // Helper: merge two week-numbered entries in `list` into a single slot,
+        // per the footnote's "joined together... partly of the one and partly of
+        // the other" instruction. Assumes both weeks are present in `list`.
+        function mergeByWeek(list, weeks) {
+            const [wa, wb] = weeks;
+            const a = list.find(c => c.week === wa);
+            const b = list.find(c => c.week === wb);
+            if (!a || !b) return list; // already merged/absent from a prior fold step
+            const combined = {
+                week: wa,
+                label: `${a.label} (joined with ${b.label})`,
+                note: 'Joined per Maclean\u2019s own fold rule (p.270 footnote): "the service being partly of the one and partly of the other." This engine does not attempt to split which parts of the office belong to which commemoration -- that split is not stated in the source.',
+            };
+            return list.filter(c => c.week !== wa && c.week !== wb).concat([combined])
+                       .sort((x, y) => x.week - y.week);
+        }
+
+        return {
+            sundaysAfterEpiphany: n,
+            fridays: schedule.map(c => ({ weekInSeason: c.week, label: c.label, note: c.note || null })),
+            sundayBeforeTheFast: {
+                date: toMidnight(saumaStart),
+                label: 'Sunday before (entering) the Great Fast',
+            },
+        };
+    }
+
     // ── Public API ────────────────────────────────────────────────────────────
 
     return {
@@ -800,6 +911,7 @@ const EastSyriacCalendar = (() => {
         getLiturgicalYear,
         getDayClass,
         getFixedCommemorationsForDate,
+        getPreFastSundayFoldSchedule,
         SEASON_META,
     };
 
