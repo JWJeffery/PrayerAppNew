@@ -1,5 +1,48 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Wednesday Motwa's disclosed 'shared ending' ambiguity
+## researched and resolved. Read this whole entry before doing anything else; the entry below
+## it (the initial Wednesday Motwa build) is still accurate for everything else.
+
+Josh asked for further research into the one open question flagged when the Wednesday Motwa
+was delivered: how much of week 'before's coda is meant by 'after's own closing cross-reference
+-- "Glory be, etc. By the prayer of the Blessed one. May peace reign in creation, etc. And the
+other verses as on Wednesday 'before' (page 134)."
+
+**Resolved, not left open.** Two lines of evidence converge: (1) the restated incipit before
+the page citation is Maclean's own standard locator convention for full-content reuse elsewhere
+in this same book -- confirmed by checking the actual parallel cross-references directly
+("Martyrs' Anthem, as on First Friday"; "Second Anthem, as on First Thursday (page 37)"), both
+of which reuse the named text in full; (2) "the other verses" (plural) matches that same
+convention. The Introduction's phrase "the ending is the same for both weeks" was checked as a
+possible narrower counter-reading and found consistent rather than contradictory -- "the
+ending" reads as the whole coda being cited, not some shorter formula near its close.
+**Conclusion:** the full coda from "Glory be, etc." through the end of 'before's printed Motwa
+text (through Mar Pithiun's martyrdom) is shared verbatim by both weeks. The bracketed "[Another,
+composed by Mar Shimun of Amidh]" anthem is NOT part of this -- the source marks it as a
+distinct second anthem, not "the other verses" of the same one.
+
+**Rebuilt to match:** `esy-lelya-wednesday-qdham-motwa` now holds only week 'before's own unique
+opening anthem and Verses of Prayer (pp.130-134); the shared coda was extracted into a new
+`esy-lelya-wednesday-motwa-shared-ending` (pp.134-139), referenced directly by both
+`wednesday-lelya-qdham-sequence` and `wednesday-lelya-wathar-sequence`. The earlier placeholder,
+`esy-lelya-wednesday-wathar-motwa-close-rubric` (which had only reproduced Maclean's citation
+sentence rather than resolving it), is retired and removed from both the component file and the
+wathar sequence -- replaced by the real shared component, matching this corpus's standing
+convention of reusing one component id for identical text rather than retyping it under a
+second heading.
+
+**Verified:** both JSON files remain valid; the retired placeholder id confirmed absent from the
+component file; both sequence arrays checked against the component file directly, zero missing
+(`wednesday-lelya-qdham-sequence` now 21 items, `wednesday-lelya-wathar-sequence` now 20 items);
+`js/office-ui.js` passes `node --check`; `audit-ledger.html`'s inline script re-validated via
+`new Function()`. `SEED_VERSION` bumped to
+`v172-2026-08-29-east-syriac-wednesday-motwa-shared-ending-resolved`.
+
+Full detail in `audit-ledger.html`'s `coe:wednesday-motwa:shared-ending-resolved` entry.
+
+---
+
 ## Session 2026-08-29 continued -- Motwa for Wednesday 'Before'/'After' (pp.130-150) built and
 ## wired, closing the largest disclosed content gap on record. Read this whole entry before
 ## doing anything else this session; the entry below it (full audit) is still accurate for
