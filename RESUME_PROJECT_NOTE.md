@@ -1,5 +1,48 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Great Fast's own Sunday Evening Service resolved: it doesn't
+## exist separately, and a real, distinct bug (wrong Prayer after the Royal Anthem for most of the
+## year) found and fixed along the way. Sauma/Qyamta Ramsha now wired and rendering. SEED_VERSION
+## v194 -> v195. Read this entry, then the v194/v193/v192/v191/v190/v189/v188 entries below it,
+## then the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Sixth item off the open-items list, open since 2026-08-27. Josh: finish today if possible, quality
+over speed. Picked this deliberately -- concrete, sourced, no external blocker.
+
+**Read Maclean's "SUNDAYS IN THE FAST" section (pp.206-210) in full.** It modifies only the Night
+Service and Morning Service -- its own opening line cites the ordinary Festival Night Service
+(pp.151, 155) as the baseline, and never mentions the Evening Service. Cross-checked against the
+book's own Table of Contents: Festival Evening Service is a separate section (p.68), never
+referenced here. **There is no distinct Great Fast Sunday Evening Service in the source.** Fast
+Sundays use the ordinary Festival Evening Service (already built) unmodified, except one thing the
+source states explicitly (p.79): "From the Great Fast to Pentecost these concluding verses are not
+said" -- the Royal Anthem's ending is omitted entirely during Sauma and Qyamta. This resolves the
+previously-separate "Qyamta has no ending" disclosure too, same reason.
+
+**A real, distinct bug found while resolving this:** the "Prayer after the Royal Anthem" was
+already fully transcribed for every occasion Maclean gives, but wired as a single static block
+reused unchanged for every season -- when the source gives four different prayers for four
+different groups of seasons. Every Sunday outside Advent/Epiphany/Feasts had been rendering the
+wrong prayer here since this sequence was first built. Fixed: split into four season-selectable
+components, reusing the ferial "Pity us" prayer for Fast/Summer/Elijah per Maclean's own citation.
+
+**Wired:** `sauma`/`qyamta` added to `endingBySeasonKey` with `ending: null` (known, deliberately
+empty). Sauma Sundays no longer null out the whole Ramsha sequence -- the office now genuinely
+renders for every season.
+
+**Verified:** all new component ids resolve, zero duplicates (439, was 435). Both Sunday Ramsha
+sequences fully resolve for every placeholder combination, checked programmatically. Real Sundays
+found and checked in all nine seasons across 2024-2030. A direct simulation of a real Sauma
+Sunday's full sequence resolves with zero missing ids. `node --check` passes; all 30 self-tests
+still pass.
+
+**Open items, updated:** items 1-6 from the v187 list are done. Remaining: `ordinary1/2/3.json`
+architecture review, Cathedral/Monastic toggle, Royal Anthem sourcing (still copyright-blocked),
+the fuller Book of Needs access-tier ladder, cross-referencing ~85 unsourced Layer 3 identities
+against Qadishe, and a decision on whether Gregorian Easter should become the COE default.
+
+---
+
 ## Session 2026-08-30 continued -- both bugs found by the 100-year rigor pass fixed, verified
 ## with the same rigor that found them. SEED_VERSION v193 -> v194. Read this entry, then the
 ## v193/v192/v191/v190/v189/v188 entries below it, then the CONSOLIDATED v187 entry, still

@@ -1132,3 +1132,41 @@ Still needs a further Khudhra source; nothing to build without one.
 both edits were to existing components, not new ones), zero duplicate ids. Both `sunday-lelya-
 qdham-sequence` and `sunday-lelya-wathar-sequence` confirmed to still resolve. `js/office-ui.js`
 untouched, still passes `node --check`.
+### Great Fast's own Sunday Evening Service -- resolved 2026-08-30 (it doesn't exist separately)
+
+Sixth item off the open-items list, open since 2026-08-27 ("where do we find it?"). Located and
+read Maclean's "SUNDAYS IN THE FAST" section (pp.206-210) in full. It gives special provisions for
+the Night Service ("AT THE NIGHT SERVICE") and Morning Service ("AT THE MORNING SERVICE") only --
+its own opening line cites the ordinary Festival Night Service (pp.151, 155) as the baseline being
+modified, and never once mentions the Evening Service. Confirmed against the book's own Table of
+Contents: Festival Evening Service is a separate section entirely (p.68), never referenced by
+"Sundays in the Fast" at all.
+
+**Conclusion: there is no distinct Great Fast Sunday Evening Service in Maclean.** Fast Sundays
+use the ordinary Festival Evening Service (already built, `sunday-ramsha-qdham/wathar-sequence`)
+completely unmodified, with one exception, which the source states explicitly (p.79): "From the
+Great Fast to Pentecost these concluding verses are not said" -- the Royal Anthem's season-varying
+"last verses" (concluding refrain) are omitted entirely during Sauma and Qyamta. This is the same
+underlying fact behind the previously-separate "Qyamta has no Royal Anthem ending" disclosure --
+both seasons were never missing a transcription; Maclean says outright that neither uses one.
+
+Also found and fixed a real, distinct error while resolving this: the "Prayer after the Royal
+Anthem" (`esy-festival-prayer-after-royal-anthem`, p.80-82, already fully transcribed for every
+occasion Maclean gives) was wired as a single static component reused unchanged for every season,
+when the source actually gives four different prayers for four different groups of seasons. Split
+into season-selected components (`-wonderful-dispensation`, `-apostles`, `-cross`, `-hallowing`,
+plus a reuse of the ferial `esy-evening-anthem-prayer` for the Fast/Summer/Elijah group per
+Maclean's own "as on ferias" cross-reference) and wired with a new `__PRAYER_AFTER_ROYAL_ANTHEM__`
+placeholder, mirroring the existing `__ROYAL_ANTHEM_ENDING__` pattern.
+
+**Fixed:** `js/office-ui.js`'s Sunday Ramsha season-resolution block -- `sauma`/`qyamta` added to
+`endingBySeasonKey` with `ending: null` (known, deliberately empty, not "unresolved"); Sauma
+Sundays no longer null out the whole sequence and fall through to "not yet rebuilt." New
+`prayerAfterBySeasonKey` covering all nine seasons. Four new components; the original full
+reference component kept as historical record, no longer directly rendered.
+
+**Verified:** all four component ids resolve; both `sunday-ramsha-qdham/wathar-sequence` fully
+resolve for every placeholder combination, checked programmatically; real Sundays found and
+checked in all nine calendar seasons across 2024-2030 (Muse needed a wider year search -- it can
+be a very short season with no Sunday in some years, confirmed not a bug); `node --check` passes
+on both `office-ui.js` and `calendar-east-syriac.js`; all 30 internal self-tests still pass.

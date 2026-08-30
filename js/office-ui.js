@@ -4826,15 +4826,24 @@ async function renderEastSyriac() {
     // Advent-to-Epiphany ending's own rubric explicitly says the refrain is
     // NOT said in that period at all.
     //
-    // Two things are deliberately out of scope here, not silently guessed:
-    // the Great Fast (Sauma) has its own distinct Sunday Evening Service
-    // structure that has not been built as a live sequence yet, so Sauma
-    // Sundays fall through to "not yet rebuilt" for Ramsha rather than
-    // using this ordinary/Festival structure; and the Resurrection season
-    // (Qyamta) has no transcribed Royal Anthem ending in this project's
-    // holdings at all -- a real, disclosed gap, catalogued in the Khudhra
-    // gaps spreadsheet, not filled by reusing a different season's ending.
-    // Weekday Feasts of our Lord are now in scope here (2026-08-27): this
+    // RESOLVED 2026-08-30, per Josh's direction, after finding the actual
+    // answer in Maclean's own text rather than continuing to treat this as
+    // an open gap: the "Great Fast's own distinct Sunday Evening Service"
+    // does not exist as a separate structure at all. Maclean's "SUNDAYS IN
+    // THE FAST" section (pp.206-210) gives special provisions for the Night
+    // Service and Morning Service only -- it cites the ordinary Festival
+    // Night Service (pp.151, 155) as its baseline and never once mentions
+    // the Evening Service, confirming Sauma Sundays simply use this same
+    // ordinary Festival Evening Service unmodified. The one genuinely
+    // variable piece, the Royal Anthem's concluding "last verses," is
+    // covered by an explicit rubric on p.79: "From the Great Fast to
+    // Pentecost these concluding verses are not said" -- i.e. Sauma and
+    // Qyamta are not gaps needing a transcription that was never given;
+    // Maclean states outright that no ending is used in either season.
+    // This also resolves the previously-separate "Qyamta has no ending"
+    // disclosure the same way, for the same reason.
+    //
+    // Weekday Feasts of our Lord are in scope here (2026-08-27): this
     // block, and the parallel Sunday Lelya block above, both fire whenever
     // isFeastDay is true regardless of dayName, reusing the Sunday-named
     // Festival sequences directly (see festivalSequenceDayKey above) -- no
@@ -4879,18 +4888,61 @@ async function renderEastSyriac() {
             'eliya-sliwa': { ending: 'esy-festival-royal-anthem-ending-summer-cross',     maryRefrain: true  },
             'muse':        { ending: 'esy-festival-royal-anthem-ending-cross-hallowing',  maryRefrain: true  },
             'qudash-idta': { ending: 'esy-festival-royal-anthem-ending-dedication',       maryRefrain: true  },
+            // FIXED 2026-08-30: sauma and qyamta are not missing data -- p.79's
+            // own rubric ("From the Great Fast to Pentecost these concluding
+            // verses are not said") confirms no ending applies in either
+            // season. `ending: null` means "known, deliberately empty," not
+            // "unresolved" -- distinct from the defensive fallback below.
+            'sauma':       { ending: null, maryRefrain: false },
+            'qyamta':      { ending: null, maryRefrain: false },
         };
         const resolved = endingBySeasonKey[season];
-        if (resolved) {
+        if (resolved && resolved.ending) {
             const endingIds = resolved.maryRefrain
                 ? [resolved.ending, 'esy-festival-royal-anthem-mary-refrain']
                 : [resolved.ending];
             sequence = sequence.flatMap(id => id === '__ROYAL_ANTHEM_ENDING__' ? endingIds : [id]);
+        } else if (resolved) {
+            // sauma or qyamta: known season, deliberately no ending text.
+            sequence = sequence.flatMap(id => id === '__ROYAL_ANTHEM_ENDING__' ? [] : [id]);
         } else {
-            // Sauma or Qyamta: no ending available for this build. Rather
-            // than render an incomplete Royal Anthem section, fall through
-            // to the honest "not yet rebuilt" state for the whole office.
+            // Defensive only -- every season getLiturgicalYear can return is
+            // now covered above. Should never trigger; if this engine ever
+            // adds a tenth season this is where a new gap would surface.
+            console.warn(`[renderEastSyriac] Unrecognised season "${season}" for Royal Anthem ending -- falling through to not-yet-rebuilt rather than guessing.`);
             sequence = null;
+        }
+
+        // Prayer after the Royal Anthem, added 2026-08-30 alongside the
+        // ending fix above -- previously a single static component
+        // (esy-festival-prayer-after-royal-anthem) was reused unchanged for
+        // every season, which was simply wrong: Maclean's own text (p.80-81)
+        // gives a DIFFERENT prayer for four groups of seasons. All four
+        // texts were already fully transcribed in that one reference
+        // component; this only needed season-selection, not new source
+        // research. The Fast/Summer/Elijah group's own prayer is a direct
+        // cross-reference to the ferial p.11 prayer ("Pity us, O thou
+        // Compassionate one"), reused rather than duplicated, matching how
+        // this project already treats every other "as on ferias" citation.
+        if (sequence) {
+            const prayerAfterBySeasonKey = {
+                'subara':      'esy-festival-prayer-after-royal-anthem-wonderful-dispensation',
+                'denkha':      'esy-festival-prayer-after-royal-anthem-wonderful-dispensation',
+                'qyamta':      'esy-festival-prayer-after-royal-anthem-wonderful-dispensation',
+                'sauma':       'esy-evening-anthem-prayer',
+                'qayta':       'esy-evening-anthem-prayer',
+                'eliya-sliwa': 'esy-evening-anthem-prayer',
+                'shlihe':      'esy-festival-prayer-after-royal-anthem-apostles',
+                'muse':        'esy-festival-prayer-after-royal-anthem-cross',
+                'qudash-idta': 'esy-festival-prayer-after-royal-anthem-hallowing',
+            };
+            const prayerAfterId = prayerAfterBySeasonKey[season];
+            if (prayerAfterId) {
+                sequence = sequence.map(id => id === '__PRAYER_AFTER_ROYAL_ANTHEM__' ? prayerAfterId : id);
+            } else {
+                console.warn(`[renderEastSyriac] Unrecognised season "${season}" for Prayer after the Royal Anthem -- falling through to not-yet-rebuilt rather than guessing.`);
+                sequence = null;
+            }
         }
     }
 

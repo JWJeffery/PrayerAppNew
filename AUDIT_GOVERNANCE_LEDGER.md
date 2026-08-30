@@ -8079,3 +8079,69 @@ against. No fix was needed and none was made; recorded here so the false alarm d
 mistaken for a fix that happened.
 
 SEED_VERSION at the close of this entry: `v194-2026-08-30-east-syriac-easter-reckoning-bugs-fixed`.
+
+---
+
+## Session 2026-08-30 continued -- Great Fast's own Sunday Evening Service resolved: it doesn't
+## exist separately, and a real, distinct bug (wrong Prayer after the Royal Anthem for most of the
+## year) found and fixed along the way. Sauma/Qyamta Ramsha now wired and rendering. SEED_VERSION
+## v194 -> v195.
+
+Sixth item off the open-items list, open since 2026-08-27's "where do we find it?" question and a
+conduct incident in the same session (fabricated pp.236-263 content, logged separately, never
+touching this specific question). Picked this item deliberately: concrete content resolution, no
+external blocker, matches Josh's request to finish today with quality over speed.
+
+**Read Maclean's "SUNDAYS IN THE FAST" section (pp.206-210) in full.** It gives special provisions
+for the Night Service and, via "AT THE MORNING SERVICE," the Morning Service -- its own opening
+line cites the ordinary Festival Night Service (pp.151, 155) as the baseline being modified, and
+never mentions the Evening Service anywhere in the section. Cross-checked against the book's own
+Table of Contents: Festival Evening Service is a separate section (p.68), never referenced here.
+**There is no distinct Great Fast Sunday Evening Service in the source.** Fast Sundays use the
+ordinary Festival Evening Service (already built) unmodified, except for one thing the source
+states explicitly (p.79): "From the Great Fast to Pentecost these concluding verses are not said"
+-- the Royal Anthem's season-varying ending is omitted entirely during Sauma and Qyamta. This
+resolves the previously-separate "Qyamta Royal Anthem ending" disclosure too, for the identical
+reason: neither season was ever missing a transcription that should have existed; Maclean says
+outright that no ending is used in either.
+
+**A real, distinct bug found while resolving this, not part of the original question:** the
+"Prayer after the Royal Anthem" component (`esy-festival-prayer-after-royal-anthem`, p.80-82) was
+already fully transcribed for every occasion Maclean gives -- but wired into both `sunday-ramsha`
+sequences as a single static block reused unchanged for every season, when the source actually
+gives four distinct prayers for four distinct groups of seasons (Advent/Epiphany/Resurrection/
+Feasts share one; Fast/Summer/Elijah share the ferial "Pity us" via explicit cross-reference;
+Apostles, Cross, and Hallowing each have their own). This means every Sunday outside Advent/
+Epiphany/Feasts had been rendering the wrong prayer here since this sequence was first built --
+not a fabrication (the text was genuinely Maclean's own, just the wrong season's portion of it),
+but a real content-accuracy bug, now fixed.
+
+**Built:** four new components splitting the reference table into season-selectable pieces
+(`esy-festival-prayer-after-royal-anthem-wonderful-dispensation` / `-apostles` / `-cross` /
+`-hallowing`); the Fast/Summer/Elijah group reuses the already-built ferial `esy-evening-anthem-
+prayer` directly, per Maclean's own "as on ferias" citation, rather than duplicating it. New
+`__PRAYER_AFTER_ROYAL_ANTHEM__` placeholder in both `sunday-ramsha-qdham/wathar-sequence`,
+mirroring the existing `__ROYAL_ANTHEM_ENDING__` pattern exactly.
+
+**Fixed in `js/office-ui.js`:** `endingBySeasonKey` now includes `sauma`/`qyamta` with
+`ending: null` -- explicitly "known season, deliberately empty," distinct from the defensive
+fallback for a genuinely unrecognised season (which now has its own warning and null-out, kept for
+safety though it should never fire, since all nine seasons this engine can return are covered).
+Sauma Sundays no longer null out the entire Ramsha sequence and fall through to "not yet rebuilt"
+-- the office now renders in full for every season.
+
+**Verified:**
+- All four new component ids resolve; zero duplicate ids in the corpus (439 total, was 435).
+- Both `sunday-ramsha-qdham-sequence` and `sunday-ramsha-wathar-sequence` fully resolve for every
+  placeholder combination a real render could produce, checked programmatically rather than by
+  eye.
+- Real Sundays found and checked against the actual calendar engine in all nine seasons across
+  2024-2030 (Muse needed a wider year search since it can be a very short season with no Sunday
+  landing in it some years -- confirmed this is a real calendar fact, not a bug, by finding real
+  Muse Sundays in five other years).
+- A direct simulation of a real Sauma Sunday's full Ramsha sequence resolves with zero missing
+  component ids -- the office genuinely renders now, not just passes a syntax check.
+- `node --check` passes on both `js/office-ui.js` and `js/calendar-east-syriac.js`. All 30
+  internal self-tests in the calendar engine still pass (untouched by this session's edits).
+
+SEED_VERSION at the close of this entry: `v195-2026-08-30-east-syriac-sauma-qyamta-ramsha-wired`.
