@@ -7731,3 +7731,30 @@ source exactly. No content changes made this session -- audit-only, confirming r
 correcting.
 
 SEED_VERSION at the close of this entry: `v189-2026-08-30-east-syriac-ferial-morning-service-audited`.
+
+---
+
+## Session 2026-08-30 continued -- the two loose Farcings ends resolved/closed. SEED_VERSION
+## v189 -> v190.
+
+Third item off the open-items list.
+
+**Palm Sunday's Ps.96-98 farcing: resolved.** Maclean's own text gives no farcing at this point.
+Confirmed no nearby rule forbids farcing here (the one candidate rule covers a different psalm
+block entirely) and that the ordinary equivalent position IS farced as a matter of course.
+Applied the general per-psalm farcing already on file (`esy-farcings-of-the-psalms-reference`)
+for Psalms 96/97/98, deliberately excluding each entry's "Canon for Christmas" insertion -- out
+of season, and Maclean's own footnote ties it to tracked Feasts of our Lord, which Palm Sunday
+isn't among. Disclosed in the component's own note as an editorial completion, not a direct
+citation, superseded if a Palm-Sunday-specific source is ever found.
+
+**Sunday Sapra's "In the beginning" Psalm 100 variant: confirmed still genuinely unresolvable,
+not just unchecked.** The general Farcings reference's own Psalm 100 entry is the same default
+text already in use ferially -- no "In the beginning" variant anywhere in it. Remains open,
+needs a further Khudhra source.
+
+**Verified:** `components/east-syriac.json` remains valid, 435 components (unchanged -- both
+edits were to existing components), zero duplicate ids. Both Sunday Lelya sequences confirmed to
+resolve. `js/office-ui.js` untouched, still passes `node --check`.
+
+SEED_VERSION at the close of this entry: `v190-2026-08-30-east-syriac-farcings-loose-ends-resolved`.

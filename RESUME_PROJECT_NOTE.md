@@ -1,5 +1,36 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- the two loose Farcings ends resolved/closed. SEED_VERSION
+## v189 -> v190. Read this entry, then the v189/v188 entries below it, then the CONSOLIDATED v187
+## entry, which is still accurate for everything else.
+
+Third item off the open-items list.
+
+**Palm Sunday's Ps.96-98 farcing (`esy-sunday-lelya-palm-sunday`): resolved.** Applied the
+general per-psalm farcing already on file for Psalms 96/97/98, deliberately excluding each
+entry's "Canon for Christmas" insertion (out of season, tied by Maclean's own footnote to tracked
+Feasts of our Lord, which Palm Sunday isn't among). Disclosed as an editorial completion, not a
+direct citation, in the component's own note.
+
+**Sunday Sapra's "In the beginning" Psalm 100 variant (`esy-sunday-sapra-psalm-100-farced-
+rubric`): confirmed still genuinely unresolvable, not just unchecked.** Checked directly against
+the general Farcings reference -- it's the same default text already used ferially, no "In the
+beginning" variant present. Remains open, needs a further Khudhra source.
+
+**Verified:** `components/east-syriac.json` valid, 435 components (unchanged -- both edits were
+to existing components). Both Sunday Lelya sequences resolve. `js/office-ui.js` untouched.
+SEED_VERSION bumped to `v190-2026-08-30-east-syriac-farcings-loose-ends-resolved`.
+
+**Open items, updated:** items 1-3 from the v187 list are done. Remaining: pre-Fast Sunday
+folding rule, Layer 3 saints calendar, what triggers Middle Friday, and the longer-standing items
+unchanged (Great Fast's own Sunday Evening Service, `ordinary1/2/3.json` architecture review,
+Cathedral/Monastic toggle, Royal Anthem sourcing, the fuller Book of Needs access-tier ladder).
+Of these, Layer 3 and the pre-Fast folding rule are the two most substantial -- both are new
+content/scope, not fidelity fixes, and may warrant checking with Josh on priority before diving
+in unprompted.
+
+---
+
 ## Session 2026-08-30 continued -- Ferial Morning Service (pp.103-108) audited, clean, no fix
 ## needed. SEED_VERSION v188 -> v189. Read this entry, then the v188 entry below it, then the
 ## CONSOLIDATED v187 entry, which is still accurate for everything else.

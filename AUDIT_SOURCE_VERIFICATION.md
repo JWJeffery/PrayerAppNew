@@ -1101,3 +1101,34 @@ fix needed anywhere in this range.
 
 **Verified:** no changes made to `components/east-syriac.json` or `rubrics.json` this pass --
 audit-only, confirming existing content rather than correcting it.
+### The two loose Farcings ends -- resolved/closed 2026-08-30
+
+Third item off the open-items list: the two loose ends left by the Farcings-of-the-Psalms
+cross-reference work (2026-08-29 continued).
+
+**`esy-sunday-lelya-palm-sunday` (Ps.96-98 farcing, Maclean p.156): resolved.** Maclean's own
+text gives no farcing for these three psalms at this point. Checked whether any nearby rule
+forbids farcing here at all (the one candidate, `esy-sunday-lelya-hulali-before-rubric`, only
+covers a different block, Hulali 5-11/Ps.37-81) and confirmed the ordinary (non-Palm-Sunday)
+equivalent of this same position (`esy-sunday-lelya-psalms-before-ordinary`) IS farced as a
+matter of course. Applied the general per-psalm farcing from `esy-farcings-of-the-psalms-
+reference` for Psalms 96, 97, and 98, deliberately excluding each entry's bracketed "Canon for
+Christmas" insertion -- Maclean's own footnote extends that insertion only to tracked Feasts of
+our Lord "with the necessary alteration," Palm Sunday isn't one of the seven this calendar engine
+tracks, and the insertion's Nativity/Epiphany birth-or-baptism content has no Palm Sunday
+relevance. Disclosed in the component's own meta.note as an editorial completion from the general
+reference layer, not a direct citation at this exact point in Maclean's main text -- superseded if
+a Palm-Sunday-specific Khudhra farcing is ever located.
+
+**`esy-sunday-sapra-psalm-100-farced-rubric` ("In the beginning" variant, Maclean p.165):
+remains genuinely open, now confirmed rather than merely assumed unavailable.** Checked directly
+against `esy-farcings-of-the-psalms-reference`'s own Psalm 100 entry -- it is the same general/
+default farcing already reused by the ferial `esy-sapra-psalm-100`, with no "In the beginning"
+variant anywhere in it. This confirms "In the beginning" is a distinct, Khudhra-specific Sunday/
+Festival variant genuinely outside both of this project's current sources, not an unchecked gap.
+Still needs a further Khudhra source; nothing to build without one.
+
+**Verified:** `components/east-syriac.json` remains valid, 435 total components (unchanged --
+both edits were to existing components, not new ones), zero duplicate ids. Both `sunday-lelya-
+qdham-sequence` and `sunday-lelya-wathar-sequence` confirmed to still resolve. `js/office-ui.js`
+untouched, still passes `node --check`.
