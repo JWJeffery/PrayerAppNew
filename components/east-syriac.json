@@ -4393,5 +4393,23 @@
       "note": "One of 17 further 'Another' prayers for help following the first (esy-prayer-for-help), all under Maclean's own footnote: 'Each priest who is present says one of these prayers, and the rest after the first two are omitted, up to the prayer Of Mary: U.' -- i.e. the prayers are distributed one per concelebrating priest, in this printed order, until the fixed 'Of Mary' prayer that always follows. This project has no concept of 'number of priests present,' so the live default rendering still uses only the first prayer (the documented single-priest baseline); this component is built in full for reference and possible future use, not currently included in the live sequence. Built at Josh's explicit direction (2026-08-29) after being flagged as a decision rather than a fidelity fix."
     },
     "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">May the blessing of mercies, O my Lord, be sent from the treasury of mercies, by the angel of mercies, from the presence of God who aboundeth in mercies, and overflow on the companies of those who ever glorify thee, and call on thy holy Name, and look and wait for mercies and for salvation, which is from thee. Lord of all. Amen. Bless, O my Lord.</p>"
+  },
+  {
+    "id": "esy-sunday-lelya-karuzutha-first",
+    "title": "Karuzutha",
+    "meta": {
+      "source": "Maclean 1894, p.159.",
+      "note": "GAP, disclosed rather than filled: 'They say the Karuzutha appointed in the Khudhra' -- text not given by Maclean, same pattern as other Khudhra-sourced citation gaps already on record. Distinct from esy-sunday-lelya-karuzutha, which is the FINAL Karuzutha of this same office (p.162, 'as appointed in the Khudhra; or say, Father of mercies... or the following', for which Maclean does give a full alternate text). This first Karuzutha comes immediately after the three seasonal Tishbukhta-of-the-Night-Service alternatives, before the Madrasha -- added 2026-08-29 when the sequence's ordering was corrected."
+    },
+    "text": "<p class=\"rubric-text\">They say the Karuzutha appointed in the Khudhra.</p>"
+  },
+  {
+    "id": "esy-sunday-lelya-madrasha-rubric",
+    "title": "The Madrasha",
+    "meta": {
+      "source": "Maclean 1894, p.159.",
+      "note": "GAP, disclosed rather than filled: 'Madrasha for the day, from the Khudhra' -- the doctrinal hymn's own text is not given by Maclean, same pattern as other Khudhra-sourced citation gaps. The two PRAYERS said with it, by contrast, ARE given by Maclean in full ('Prayers of the Madrasha. Of thee who art full of mercies, and Blessed and adorable, as above, page 152') and are reused directly -- esy-festival-prayer-full-of-mercies-and-compassion and esy-blessed-and-adorable, both already built from that same page-152 Festival material. Added 2026-08-29 when the sequence's ordering was corrected."
+    },
+    "text": "<p class=\"rubric-text\">Madrasha for the day, from the Khudhra.</p>"
   }
 ]

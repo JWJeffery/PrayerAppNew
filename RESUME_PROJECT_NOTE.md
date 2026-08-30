@@ -1,5 +1,51 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Sunday Lelya's Tishbukhta-of-the-Night-Service ordering
+## re-verified and fixed, at Josh's direction. Two disclosed Khudhra gaps (a Karuzutha, a
+## Madrasha) built in the process. Resolves the open question from item 5. Read this whole
+## entry before doing anything else; the entry below it is still accurate for everything else.
+
+Josh asked for the ordering question (disclosed yellow, coe:sunday-lelya-closing-verse:
+lead-in-fixed) to be re-verified and, if confirmed, fixed.
+
+**Re-verified independently against Maclean pp.155-162 a second time**, reaching the same
+conclusion as the first pass: Motwa -> the three seasonal Tishbukhta alternatives -> a
+Karuzutha -> Madrasha prayers and the Madrasha itself -> two Suyakha prayers -> three Qali
+d'Shahra prayers -> Night Anthem -> the two closing verses -> Shubakha -> Tishbukhta by Mar
+Narsai -> the final Karuzutha.
+
+**Confirmed broken, more precisely than the first pass showed:** the live sequence didn't
+just have the three seasonal Tishbukhta out of place -- the intervening Karuzutha and
+Madrasha material was **missing from the build entirely**, not merely misordered.
+
+**Built:** `esy-sunday-lelya-karuzutha-first` (the Khudhra-cited Karuzutha, disclosed gap --
+distinct from `esy-sunday-lelya-karuzutha`, the *final* Karuzutha of this same office, for
+which Maclean does give full text) and `esy-sunday-lelya-madrasha-rubric` (the Khudhra-cited
+Madrasha text, disclosed gap). **Reused** for the Madrasha's own prayers:
+`esy-festival-prayer-full-of-mercies-and-compassion` and `esy-blessed-and-adorable`, both
+already built from the same page-152 material Maclean cites here by name.
+
+**Wired:** both `sunday-lelya-*-sequence` arrays corrected -- the three seasonal Tishbukhta
+relocated from immediately before the closing verse to immediately after the Motwa, with the
+two new components and two reused prayers inserted alongside them.
+
+**No engine change needed:** the existing seasonal-selection swap logic in
+`js/office-ui.js` scans for the three Tishbukhta ids wherever they occur in the sequence --
+entirely position-independent, so the JS file needed zero edits.
+
+**Verified:** both JSON files remain valid; every id in both corrected sequences (27 items
+each, up from 23) checked directly, zero missing; `js/office-ui.js` passes `node --check`;
+the seasonal swap simulated for all three cases (Advent, Hallowing of the Church, ordinary
+Sunday) directly against the corrected data, confirming correct placement in each.
+`SEED_VERSION` bumped to `v178-2026-08-29-east-syriac-sunday-lelya-tishbukhta-order-fixed`.
+
+Full detail in `audit-ledger.html`'s `coe:sunday-lelya-tishbukhta-order:fixed` entry.
+
+**"Not yet done" list, updated:** item 5's ordering question is now closed. Only item 7
+remains: the Feast-of-our-Lord farced full-Psalter Night Office recitation.
+
+---
+
 ## Session 2026-08-29 continued -- Compline Anthems/Madrashi audited line-by-line for
 ## Monday-Saturday (item 6); verse content confirmed correct throughout, four missing
 ## tune-name headers found and restored. Read this whole entry before doing anything else;
