@@ -4557,15 +4557,17 @@ async function renderEastSyriac() {
     // three-way seasonal selection above.
     //
     // esy-sunday-lelya-tishbukhta-mar-narsai is deliberately left
-    // untouched and unconditional. Its position in the base sequence,
-    // separated from the other three by the closing verse and Shubakha
-    // rubric/prayer, suggests it is structurally distinct -- tied to the
-    // Night Anthem/Qali d'Shahra portion of the office rather than a
-    // fourth competing seasonal alternative to the Motwa's three. This is
-    // a judgment call, not a confirmed fact from source: Mar Narsai's own
-    // heading/restriction (if it has one) was not captured during the
-    // 2026-08-29 audit and needs re-verification against Maclean directly
-    // before this can be considered settled either way.
+    // untouched and unconditional. CONFIRMED 2026-08-29 (previously a
+    // disclosed judgment call, not a checked fact): re-read directly
+    // against the source, its heading is printed simply as "TISHBUKHTA by
+    // Mar Narsai" -- none of the restrictive phrasing Maclean uses for the
+    // genuinely restricted alternatives above it ("... on Sundays from
+    // Advent to Epiphany"; "... for the Hallowing of the Church"; contrast
+    // the third alternative there, explicitly headed "for all Sundays of
+    // the year"). It is also structurally separate from that earlier
+    // three-way set, falling after the Shubakha and its Continuation
+    // rather than among the Motwa-adjacent alternatives. No restriction is
+    // stated for it anywhere in the source -- said every Sunday.
     //
     // Palm Sunday is excluded from all of the Fast-specific substitutions
     // below (Canon, Mar Saurishu's Tishbukhta): Maclean gives Palm Sunday

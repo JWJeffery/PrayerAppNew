@@ -1,5 +1,37 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Mar Narsai's Sunday Night Service Tishbukhta's seasonal
+## restriction confirmed directly from source (item 3 on the list); it has none. Read this
+## whole entry before doing anything else; the entry below it is still accurate for
+## everything else.
+
+Item 3: "Confirm whether Mar Narsai's Sunday Night Service Tishbukhta actually has its own
+seasonal restriction (Maclean pp.155-162) -- last session's fix deliberately left it
+unconditional as a disclosed, unverified judgment call, not a confirmed fact."
+
+**Confirmed, not just re-asserted:** re-checked directly against the source (pp.161-162). The
+heading is printed simply as "TISHBUKHTA by Mar Narsai" -- none of the restrictive phrasing
+Maclean uses immediately above it for the genuinely seasonal alternatives ("TISHBUKHTA OF THE
+NIGHT SERVICE ... on Sundays from Advent to Epiphany" for Mar Babai the Great; "... for the
+Hallowing of the Church" for Mar George; contrast the explicitly *un*restricted third
+alternative there, headed "for all Sundays of the year" for Mar Babai of Nisibis). Mar
+Narsai's own Tishbukhta carries none of this. **It is unconditional, said every Sunday** --
+the prior judgment call was correct.
+
+**No wiring change needed:** `esy-sunday-lelya-tishbukhta-mar-narsai` was already included
+unconditionally in both `sunday-lelya-*-sequence` arrays. Only the component's own meta.note
+and the matching code comment in `js/office-ui.js` were updated, moving the record from
+"disclosed, unverified" to "confirmed by direct source check." `SEED_VERSION` bumped to
+`v174-2026-08-29-east-syriac-mar-narsai-tishbukhta-confirmed`.
+
+Full detail in `audit-ledger.html`'s `coe:mar-narsai-tishbukhta:confirmed` entry.
+
+**"Not yet done" list, updated:** item 3 is now done. Proceeding to item 4 next -- a decision
+needed from Josh, not a fidelity fix: the ~19 alternate "Prayer for help" texts (pp.16-19),
+possibly intentionally unbuilt per the source's own single-priest rubric.
+
+---
+
 ## Session 2026-08-29 continued -- Full Fast Night Service built and wired (Weeks of the
 ## Mysteries + Ordinary Weeks), superseding the narrower 2026-08-27 fix; both named
 ## Tishbukhta reused from Compline into their real home office. Read this whole entry
