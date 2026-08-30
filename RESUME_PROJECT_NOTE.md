@@ -1,5 +1,42 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Compline Anthems/Madrashi audited line-by-line for
+## Monday-Saturday (item 6); verse content confirmed correct throughout, four missing
+## tune-name headers found and restored. Read this whole entry before doing anything else;
+## the entry below it is still accurate for everything else.
+
+Item 6: "Monday-Saturday of the Compline Anthems/Madrashi sub-section (six of seven days) --
+never individually audited, only Sunday was."
+
+All six days were already built and wired; checked each one's full text verse-by-verse
+directly against Maclean pp.192-204, same standard as Sunday's earlier audit.
+
+**Result: the verse content is word-for-word correct across all twelve components** (six
+Anthems + six Madrashi, Monday through Saturday) -- no wording, ordering, or attribution
+errors in the actual prayer text.
+
+**Four real omissions found and fixed** -- all the same class of error, a missing tune-name
+rubric line, not a content error:
+- `esy-compline-anthems-friday` was missing "Tune: Thou hast named thy vineyard" (p.200)
+- `esy-compline-madrasha-thursday` and `esy-compline-madrasha-saturday` were each missing "to
+  the tune Blessed is he who in lovingkindness" (pp.200, 204 -- same tune reused both days,
+  confirmed by checking each independently rather than assuming the second matched)
+- `esy-compline-madrasha-friday` was missing "to the tune At the door of thy mercies" (p.202)
+
+Monday/Tuesday/Wednesday carry no tune name in the source at all -- confirmed by checking
+each, not assumed. Fixed to match the established tune-header convention already used
+throughout this corpus (`esy-monday-first-anthem` and its many siblings).
+
+`SEED_VERSION` bumped to `v177-2026-08-29-east-syriac-compline-monday-saturday-audited`.
+Full detail in `audit-ledger.html`'s `coe:compline-monday-saturday:audited` entry.
+
+**"Not yet done" list, updated:** item 6 is now done. Item 7 remains: the Feast-of-our-Lord
+farced full-Psalter Night Office recitation. **The undocketed Sunday Lelya Tishbukhta-
+ordering question from item 5 is still open and unanswered** -- Josh has not yet said whether
+to fix it.
+
+---
+
 ## Session 2026-08-29 continued -- esy-sunday-lelya-closing-verse's missing "Amen and Amen"
 ## lead-in confirmed and fixed (item 5). A SEPARATE, larger structural question about the
 ## whole Sunday Night Service's sequence order surfaced while checking it -- DISCLOSED, NOT
