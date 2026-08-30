@@ -4222,6 +4222,49 @@ async function renderEastSyriac() {
         ? EastSyriacCalendar.getDayClass(currentDate).commemorations.some(c => c.type === 'feast')
         : false;
 
+    // The actual feast commemoration object (not just the boolean above),
+    // reused below to resolve the two places in the Feast-of-our-Lord
+    // Night Service where Maclean's own text names the specific feast
+    // rather than giving fixed wording -- the "N" placeholder in the
+    // third Night Anthem prayer, and the farced refrain on Psalm 78.
+    const feastCommem = isFeastDay && typeof EastSyriacCalendar !== 'undefined'
+        ? EastSyriacCalendar.getDayClass(currentDate).commemorations.find(c => c.type === 'feast')
+        : null;
+
+    // Researched 2026-08-29, at Josh's request, beyond Maclean himself:
+    // the modern Assyrian Church of the East's own published Feasts-of-
+    // our-Lord list (acote.church/holy-feasts) gives exactly the same
+    // seven feasts this project's calendar engine already tracks --
+    // Nativity, Epiphany, Resurrection, Ascension, Pentecost,
+    // Transfiguration, Cross -- confirming those seven names themselves.
+    // But Maclean's own Psalm 78 farcing (esy-feast-lelya-ps78-farcing-
+    // gap) names EIGHT terms, not seven -- "Nativity of Christ, or
+    // Baptism, or Entrance, or Resurrection, or Ascension, or Descent, or
+    // Revelation, or Cross" -- and two of them resist confident mapping
+    // even after that research:
+    //   - "Entrance" matches none of the seven modern feasts, and
+    //     Maclean's OWN footnote on this exact word says "Palm Sunday, or
+    //     the Hallowing of the Church?" -- he wasn't sure either.
+    //   - "Revelation" could plausibly be Transfiguration (which has no
+    //     other obvious match in this eight-term list) or a synonym for
+    //     Epiphany/Denha (which literally means "dawning" or "revealing"
+    //     and gets applied to more than one feast in different sources);
+    //     nothing found settles it.
+    // The other six map with real confidence, and ONLY those six are
+    // included below -- Transfiguration is deliberately left OUT of this
+    // table (not guessed into either "Entrance" or "Revelation"), so a
+    // Transfiguration feast day correctly falls back to the full
+    // disclosed bracket-list text in esy-feast-lelya-ps78-farcing-gap's
+    // own component text, unresolved, exactly as before.
+    const FEAST_PS78_TERMS = {
+        'COE_FEAST_NATIVITY':     'the Nativity of Christ',
+        'COE_FEAST_EPIPHANY':     'the Baptism',
+        'COE_FEAST_RESURRECTION': 'the Resurrection',
+        'COE_FEAST_ASCENSION':    'the Ascension',
+        'COE_FEAST_PENTECOST':    'the Descent of the Holy Ghost',
+        'COE_FEAST_HOLY_CROSS':   'the Cross',
+    };
+
     const officeTitleMap = {
         sapra:  'Sapra \u2014 Morning Prayer',
         endana: "Endana \u2014 Prayer at Noon (Great Fast only)",
@@ -4505,6 +4548,15 @@ async function renderEastSyriac() {
     // Palm Sunday's date internally for anaphora assignment; no new
     // date-computation logic was needed here either.
     if (officeKey === 'lelya' && (dayName === 'sunday' || isFeastDay) && sequence && typeof EastSyriacCalendar !== 'undefined') {
+        // NOTE 2026-08-29: isFeastDay is included in this condition from
+        // when Feasts of our Lord still borrowed Sunday's own Lelya
+        // sequence. Now that they have their own (feast-lelya-sequence),
+        // `sequence` here holds that content instead on a Feast day, and
+        // none of ordinaryId/Palm-Sunday/Advent/Hallowing ids below occur
+        // in it -- so every operation in this block is a harmless no-op
+        // for Feast days, not a functional bug, just now-unnecessary work.
+        // Left as-is rather than narrowed further, to avoid touching more
+        // of this block than the specific dead code Josh asked about.
         const dayClass = EastSyriacCalendar.getDayClass(currentDate);
         const ordinaryId = cycle === 'qdham' ? 'esy-sunday-lelya-psalms-before-ordinary' : 'esy-sunday-lelya-psalms-after-ordinary';
 
@@ -4525,47 +4577,30 @@ async function renderEastSyriac() {
             }
         }
 
-        // Feast-of-our-Lord additions to Sunday Lelya (pp.153-154),
-        // parallel to the Feast-of-our-Lord wiring already built into
-        // Sunday Ramsha below -- both use the same
-        // EastSyriacCalendar.getDayClass(...).commemorations feast check.
-        //   - esy-qali-dshahra-feasts-note: Maclean's own performance-
-        //     practice note for how the Qali d'Shahra are chanted on
-        //     Feasts specifically (two clauses at a time, Hallelujah
-        //     between, kneeling if the Feast doesn't fall on a Sunday).
-        //     Inserted alongside (not replacing) the ordinary Qali
-        //     d'Shahra rubric, since the ordinary text describes what is
-        //     said and this note describes how, on a Feast, it differs in
-        //     performance.
-        //   - esy-night-anthem-prayer-third: "Proper to Feasts
-        //     specifically rather than ordinary Sundays" per its own meta
-        //     -- added after the first and second Night Anthem prayers,
-        //     which alone are used on an ordinary Sunday.
-        //   - esy-night-anthem-prayer-after-nativity: further restricted
-        //     to the Nativity specifically among the seven Feasts of our
-        //     Lord (checked against the commemoration's own key,
-        //     COE_FEAST_NATIVITY, not just its type), since Maclean marks
-        //     it "Nativity" only, not general to every Feast.
-        //   esy-third-motwa-note ("The Third Motwa, of the Company of the
-        //   Catholici", p.153) is deliberately NOT wired here: its single
-        //   transcribed sentence does not state what triggers a "Third
-        //   Motwa" occasion clearly enough to gate it safely against a
-        //   date condition -- it may denote a Feast-day form, or a
-        //   position within an unrelated rotating commemoration cycle this
-        //   project doesn't yet model. Wiring it on a guess risks reciting
-        //   it on the wrong occasion; it remains built, cited, and
-        //   disclosed as unwired pending clarification.
-        const feastCommem = dayClass.commemorations.find(c => c.type === 'feast');
-        if (feastCommem) {
-            sequence = sequence.flatMap(id => id === 'esy-qali-dshahra-hulali-marmitha-rubric'
-                ? [id, 'esy-qali-dshahra-feasts-note']
-                : [id]);
-            sequence = sequence.flatMap(id => id === 'esy-night-anthem-prayer-second'
-                ? (feastCommem.key === 'COE_FEAST_NATIVITY'
-                    ? [id, 'esy-night-anthem-prayer-third', 'esy-night-anthem-prayer-after-nativity']
-                    : [id, 'esy-night-anthem-prayer-third'])
-                : [id]);
-        }
+        // NOTE 2026-08-29: a block previously lived here that spliced
+        // Feast-of-our-Lord content (esy-qali-dshahra-feasts-note,
+        // esy-night-anthem-prayer-third, esy-night-anthem-prayer-after-
+        // nativity) into the Sunday Lelya sequence whenever a Feast of
+        // our Lord fell on a Sunday. It is removed: this session built
+        // the real Feast-of-our-Lord Night Service (feast-lelya-sequence,
+        // pp.152-155), and the sequenceKey override above now routes
+        // every Feast of our Lord's Lelya there directly -- including a
+        // Feast that happens to fall on a Sunday, which no longer reaches
+        // this Sunday-specific code path at all. All three components
+        // that block used to insert are preserved and now wired directly
+        // into feast-lelya-sequence instead (see that sequence in
+        // rubrics.json). The one piece of that block's own reasoning
+        // worth keeping on record: esy-third-motwa-note ("The Third
+        // Motwa, of the Company of the Catholici", p.153) was
+        // deliberately left unwired for a long time because its single
+        // transcribed sentence doesn't state clearly enough what triggers
+        // a "Third Motwa" occasion to gate it safely against a date
+        // condition. That concern no longer applies here: feast-lelya-
+        // sequence includes it unconditionally as a fixed rubric within
+        // the Feast Night Service structure itself, not gated against any
+        // date condition of its own -- it always occurs at the same fixed
+        // point in that one office, so the original worry (wiring it "on
+        // a guess" against an unclear date trigger) doesn't arise.
     }
 
     // Sunday Night Service Tishbukhta seasonal selection, and the
@@ -4821,11 +4856,28 @@ async function renderEastSyriac() {
 
         officeHtml += `<span class="rubric-text">${comp.title || itemId}</span>`;
 
+        // Feast-name substitution (see FEAST_PS78_TERMS above for the
+        // research this is based on, and its two deliberately-unresolved
+        // terms). Resolved at render time, not baked into the component's
+        // own stored text, so both the disclosed-gap fallback and the
+        // resolved forms stay backed by the same single component.
+        let componentText = comp.text || '';
+        if (itemId === 'esy-feast-lelya-ps78-farcing-gap' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
+            componentText = `<p class="rubric-text">They say Psalm 78, farced thus: between each pair of clauses, `
+                + `\u2018Hallelu\u2019 four times, \u2018Hallelujah in ${FEAST_PS78_TERMS[feastCommem.key]}.\u2019</p>`;
+        } else if (itemId === 'esy-night-anthem-prayer-third' && feastCommem) {
+            // "N" here carries none of the Psalm 78 farcing's ambiguity --
+            // Maclean's own convention is simply "insert the feast's
+            // name," and this calendar engine already has a correct label
+            // for all seven Feasts of our Lord, not just the six above.
+            componentText = componentText.replace('the festival of N', `the festival of ${feastCommem.label}`);
+        }
+
         // Components carrying `psalms` (plural, e.g. a Marmitha of several
         // psalms) or `psalmRef` (a single citation, e.g. a Shuraya) resolve
         // their actual verse text from this app's own verified Bible corpus,
         // appended after the rubric text already embedded in `text`.
-        officeHtml += `<span class="component-text">${comp.text || ''}</span>`;
+        officeHtml += `<span class="component-text">${componentText}</span>`;
 
         if (Array.isArray(comp.sections)) {
             // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs.

@@ -1,5 +1,60 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-29 continued -- Feast-name substitution mechanism built for the 6
+## confidently-mapped terms, researched beyond Maclean at Josh's request. Found and fixed a
+## real duplication bug from the item-7 build in the process. Read this whole entry before
+## doing anything else; the entry below it is still accurate for everything else.
+
+Josh asked for research beyond Maclean into the Psalm 78 feast-name farcing gap, and to build
+a partial substitution mechanism if the research supported one.
+
+**Researched:** the modern Assyrian Church of the East's own published Feasts-of-our-Lord list
+(acote.church/holy-feasts) confirms the same seven feasts already tracked in this project's
+calendar engine. But Maclean's Ps.78 farcing names EIGHT terms, and two resist confident
+mapping even after this research: "Entrance" (Maclean's own footnote: "Palm Sunday, or the
+Hallowing of the Church?" -- unresolved even to him) and "Revelation" (plausibly
+Transfiguration, plausibly a Denha/Epiphany synonym, nothing found settles it). Reported this
+honestly rather than guessing; built the mechanism for the six confident terms only, at Josh's
+direction.
+
+**A significant duplication bug was found in the process, disclosed rather than folded in
+quietly:** six of the twenty components built for item 7 (this same session) turned out to be
+duplicates of components an EARLIER session had already built and partially wired --
+`esy-night-anthem-prayer-first/-second/-third`, `esy-night-anthem-prayer-after-nativity`,
+`esy-third-motwa-note`, and `esy-qali-dshahra-feasts-note`. Item 7's build should have found
+and reused these and didn't. Direct text comparison (4 of 6 pairs byte-for-byte identical, the
+other 2 differing only trivially, with the older version the more literal match in both cases)
+confirmed this rather than assuming from title similarity.
+
+**Fixed:** the 6 duplicates created this session are deleted; `feast-lelya-sequence` now
+references the original ids; those originals' meta.notes updated to record their real wiring.
+The JS block that had spliced three of them into Sunday Lelya for a Feast-on-Sunday is now
+genuinely dead code (superseded by this session's earlier `feast-lelya-sequence` routing,
+which already covers that case) and is removed, with its still-useful reasoning preserved in
+a comment. One deliberate departure from the old logic is disclosed: the removed code
+restricted the Nativity-worded "Prayer after the Night Anthem" to Nativity specifically; this
+session presents it alongside Maclean's own generic alternative unconditionally instead,
+since independent review reached the same disclosed uncertainty rather than a firmer answer.
+
+**Built:** the substitution mechanism -- a `FEAST_PS78_TERMS` lookup and a `feastCommem`
+variable, applied at render time in two places. `esy-feast-lelya-ps78-farcing-gap` resolves
+for the six confident feast keys and falls back to the disclosed bracket-list otherwise
+(confirmed for Transfiguration, deliberately excluded from the table). `esy-night-anthem-
+prayer-third`'s "N" placeholder resolves for all seven feasts, since a plain feast name there
+carries none of the Ps.78 farcing's ambiguity.
+
+**Verified:** both JSON files remain valid, 418 total components, zero duplicate ids (down
+from 424 immediately after item 7); `feast-lelya-sequence`'s 54 items all resolve; `js/office-
+ui.js` passes `node --check`; the mechanism simulated against three real feast dates (Nativity,
+Epiphany, Transfiguration), correctly resolving the confident terms and correctly leaving
+Transfiguration's Ps.78 farcing unresolved while still resolving its "N" placeholder.
+`SEED_VERSION` bumped to `v180-2026-08-29-east-syriac-feast-name-substitution-and-dedup`.
+
+Full detail in `audit-ledger.html`'s `coe:feast-name-substitution:built-and-duplication-fixed`
+entry.
+
+---
+
 ## Session 2026-08-29 continued -- Feast-of-our-Lord Night Service built and wired (item 7,
 ## the last item on the list). Every item on the 2026-08-29 "Not yet done" list is now closed.
 ## Read this whole entry before doing anything else; the entry below it is still accurate for

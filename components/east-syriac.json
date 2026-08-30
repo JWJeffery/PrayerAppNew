@@ -3938,8 +3938,8 @@
     "text": "<p class=\"component-text\">In the Third Motwa of The Company of the Catholici they say the rest of the Psalter, but Deut. xxxii. 21a-44 is said with proper farcings from the Khudhra.</p>",
     "meta": {
       "source": "Maclean 1894, p.153.",
-      "note": "A structural note on Feast-day Motwa forms; the farcings themselves remain a disclosed Khudhra gap.",
-      "wired": false
+      "note": "A structural note on Feast-day Motwa forms; the farcings themselves remain a disclosed Khudhra gap. UPDATED 2026-08-29: now wired into feast-lelya-sequence, the full Feast-of-our-Lord Night Service -- the earlier 'wired: false' reflected that this project had not yet built the office this note belongs to; it now has.",
+      "wired": true
     }
   },
   {
@@ -3984,7 +3984,7 @@
     "text": "<p class=\"component-text\">The Qali d'Shahra for Feasts are found in the Geza. Two clauses are said at a time by each side, and Hallelujah between the clauses of each pair; some say Hallelujah twice, some thrice. They say the Gloria in the same way. If the Feast does not fall on a Sunday, they kneel down between the Qali.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "Wired into Sunday Lelya: inserted alongside (not replacing) esy-qali-dshahra-hulali-marmitha-rubric whenever EastSyriacCalendar.getDayClass().commemorations includes a type:'feast' entry.",
+      "note": "UPDATED 2026-08-29: now wired into feast-lelya-sequence, the full Feast-of-our-Lord Night Service, directly -- superseding its earlier, narrower wiring into Sunday Lelya (inserted alongside esy-qali-dshahra-hulali-marmitha-rubric whenever a Feast fell on a Sunday), which is dead code after this session's work (Feasts no longer borrow Sunday's sequence) and has been removed from js/office-ui.js.",
       "wired": true
     }
   },
@@ -3994,7 +3994,7 @@
     "text": "<p class=\"component-text\">By the speaking mouths, O my Lord, which thou hast created, and by the glorifying tongues which thou hast appointed, and by all the companies on high and below, may the Name of thy Godhead and of thy majesty be worshipped, glorified, honoured, exalted, confessed, and blessed in heaven and earth, Lord of all, etc.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "Fills a gap previously disclosed in this project's ferial Lelya build and the Sunday Night Service build alike (both cross-referenced 'By the speaking mouths, as above, page 154' without the text being in hand). Added to the built sequences in this session."
+      "note": "Fills a gap previously disclosed in this project's ferial Lelya build and the Sunday Night Service build alike (both cross-referenced 'By the speaking mouths, as above, page 154' without the text being in hand). Added to the built sequences in this session. Now wired into feast-lelya-sequence (2026-08-29) as 'Prayer of the first Night Anthem' for the full Feast-of-our-Lord Night Service, in addition to its earlier ferial/Sunday Night Service reuse."
     }
   },
   {
@@ -4002,7 +4002,8 @@
     "title": "Prayer of the second Anthem",
     "text": "<p class=\"component-text\">May thy Godhead, O my Lord, be pleased with our service, and may our prayers be received before thee, and may thy mercies greatly intercede for our wickedness, and from thy great treasury may our petitions be answered in our need, at all times, Lord of all, etc.</p>",
     "meta": {
-      "source": "Maclean 1894, p.154."
+      "source": "Maclean 1894, p.154.",
+      "note": " Now wired into feast-lelya-sequence (2026-08-29) as 'Prayer of the second Anthem' for the full Feast-of-our-Lord Night Service."
     }
   },
   {
@@ -4011,7 +4012,7 @@
     "text": "<p class=\"component-text\">Come, O my Lord, to the help of thy worshippers, who keep vigil on the festival of N; and reveal thyself to us in thy mercy, and hearken to the words of our prayers, which on thy holy festival we offer to thee, Lord of all.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "'N' marks a spoken insertion of the specific feast's name, per Maclean's own convention. Proper to Feasts specifically rather than ordinary Sundays; built and cited but not wired into the ordinary Sunday sequence, which uses the invariable closing verses instead. Wired into Sunday Lelya: inserted after esy-night-anthem-prayer-second whenever a Feast of our Lord falls on that Sunday.",
+      "note": "'N' marks a spoken insertion of the specific feast's name, per Maclean's own convention. UPDATED 2026-08-29: this office (the full Feast-of-our-Lord Night Service, feast-lelya-sequence) is now built and wired directly -- the earlier note describing this component as 'not wired into the ordinary Sunday sequence... wired into Sunday Lelya: inserted after esy-night-anthem-prayer-second whenever a Feast of our Lord falls on that Sunday' described a narrower, now-superseded accommodation (a Feast landing on a Sunday used to borrow Sunday's own sequence with this and related components spliced in; Feasts now get their own real sequence instead, so that splice is dead code and has been removed from js/office-ui.js). The 'N' placeholder is now resolved dynamically at render time to the actual feast's own label (e.g. 'Nativity of our Lord') for every Feast of our Lord this calendar engine knows, which is all seven -- unlike the Psalm 78 farcing gap (esy-feast-lelya-ps78-farcing-gap), inserting a feast's plain name here carries none of the term-matching ambiguity Maclean's own footnotes flag for that different, fixed 8-term list, so no term was left unresolved.",
       "wired": true
     }
   },
@@ -4021,7 +4022,7 @@
     "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, by pure thoughts and sweet and holy melodies, with the heavenly hosts and the Wise Men and the Shepherds, to celebrate the holy festival of the Nativity of Christ our Lord and Saviour, in thy lovingkindness and mercy, Lord of all, etc.</p>",
     "meta": {
       "source": "Maclean 1894, p.154.",
-      "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. Built and cited but not wired into any sequence -- this project has not yet built a Nativity-specific office structure to place it in. Wired into Sunday Lelya: inserted after esy-night-anthem-prayer-third specifically when the Feast is Nativity (commemoration key COE_FEAST_NATIVITY), using the already-built Feast-of-our-Lord calendar layer rather than a new Nativity-specific office structure.",
+      "note": "Specific to the Nativity (Christmas) among the Feasts of our Lord; not used on ordinary Sundays. UPDATED 2026-08-29: now wired into feast-lelya-sequence, the full Feast-of-our-Lord Night Service, alongside esy-feast-night-anthem-prayer-after-alt (Maclean's own generic 'Or this' alternative) -- both are included together, in the order Maclean prints them, rather than the app silently choosing one over the other by feast type. This is a deliberate departure from this component's earlier, narrower wiring (into Sunday Lelya, restricted to COE_FEAST_NATIVITY specifically): that restriction had good textual support (Maclean's wording names the Nativity specifically, unlike the generic 'N' alternative), but this session's independent review reached only the same disclosed uncertainty rather than a stronger conclusion, so presenting both as the alternatives Maclean himself gives, rather than the app picking one, is the more disclosure-honest choice for now. That narrower Sunday-splice wiring is dead code after this session's Feast Lelya work (Feasts no longer borrow Sunday's sequence) and has been removed from js/office-ui.js.",
       "wired": true
     }
   },
@@ -4503,15 +4504,6 @@
     "text": "<p class=\"rubric-text\">Another.</p><p class=\"component-text\">O thou who hearest the voice of the just and righteous who propitiate thee continually, and who grantest the wish of them that fear thee, hear, O my Lord, the prayer of thy servants in thy compassion, and receive the request of thy worshippers in thy mercy, and have compassion on the afflicted and tormented, thy servants who call on thee and beseech thee, at all seasons and times, Lord of all, etc.</p>"
   },
   {
-    "id": "esy-feast-third-motwa-rubric",
-    "title": "The Third Motwa (of the Company of the Catholici)",
-    "meta": {
-      "source": "Maclean 1894, p.153.",
-      "note": "GAP, disclosed rather than filled: text not given by Maclean; day-specific and Geza-sourced. This Motwa introduces the remainder of the Psalter -- the last four Hulali (esy-hulala-18 through esy-hulala-21, Ps.119:89 to the end, plus the Old Testament canticles), completing the 'said complete' recitation the office opened with. Maclean adds one specific note: within Hulala 21, Deut.xxxii.21a-44 is said 'with proper farcings from the Khudhra' rather than the ordinary farcing already built into esy-hulala-21 -- disclosed as a further, narrower gap rather than silently overridden."
-    },
-    "text": "<p class=\"rubric-text\">In the Third Motwa of The Company of the Catholici they say the rest of the Psalter, but Deuteronomy xxxii. 21a-44 is said with proper farcings from the Khudhra (not the ordinary farcing given below).</p>"
-  },
-  {
     "id": "esy-feast-qali-dshahra-hulala-rubric",
     "title": "Qali d’Shahra",
     "meta": {
@@ -4521,42 +4513,6 @@
     "text": "<p class=\"rubric-text\">They say another Hulala, with the following prayers.</p>"
   },
   {
-    "id": "esy-feast-qali-dshahra-text-gap",
-    "title": "The Qali d’Shahra for Feasts",
-    "meta": {
-      "source": "Maclean 1894, p.153.",
-      "note": "GAP, disclosed rather than filled: 'The Qali d’Shahra for Feasts are found in the Geza' -- text not given by Maclean. The performance direction that follows IS given in full and is preserved here as rubric: two clauses at a time, with Hallelujah between each pair (some say it twice, some thrice), the Gloria said the same way; and if the Feast does not fall on a Sunday, they kneel between the Qali (on Sundays themselves, by the standing custom already established elsewhere in this corpus for Sunday worship, kneeling is not the ordinary posture)."
-    },
-    "text": "<p class=\"rubric-text\">The Qali d’Shahra for Feasts are found in the Geza. Two clauses are said at a time by each side, and Hallelujah between the clauses of each pair; some say Hallelujah twice, some thrice. They say the Gloria in the same way. If the Feast does not fall on a Sunday, they kneel down between the Qali.</p>"
-  },
-  {
-    "id": "esy-feast-night-anthem-prayer-first",
-    "title": "Prayer of the first Night Anthem",
-    "meta": {
-      "source": "Maclean 1894, p.153-154.",
-      "note": "The first of three Night Anthem prayers for this office (contrast the Sunday Night Service, which has only one, 'By the speaking mouths...', reused here at esy-night-anthem-prayer-first for that different office -- this Feast text, though it opens with the same words, continues differently and is kept as its own component)."
-    },
-    "text": "<p class=\"component-text\">By the speaking mouths, O my Lord, which thou hast created, and by the glorifying tongues which thou hast appointed, and by all the companies on high and below, may the Name of thy Godhead and of thy majesty be worshipped, glorified, honoured, exalted, confessed, and blessed in heaven and earth, Lord of all, etc.</p>"
-  },
-  {
-    "id": "esy-feast-night-anthem-prayer-second",
-    "title": "Prayer of the second Anthem",
-    "meta": {
-      "source": "Maclean 1894, p.154.",
-      "note": "The second of three Night Anthem prayers for this office."
-    },
-    "text": "<p class=\"component-text\">May thy Godhead, O my Lord, be pleased with our service, and may our prayers be received before thee, and may thy mercies greatly intercede for our wickedness, and from thy great treasury may our petitions be answered in our need, at all times, Lord of all, etc.</p>"
-  },
-  {
-    "id": "esy-feast-night-anthem-prayer-third",
-    "title": "Prayer of the third Anthem",
-    "meta": {
-      "source": "Maclean 1894, p.154.",
-      "note": "The third of three Night Anthem prayers for this office. Names the feast generically as 'N' in the source, like the Suyakha/Karuzutha 'NN' placeholders already handled elsewhere in this corpus for names left blank for local insertion -- not resolved to a specific feast name here, matching the same disclosed-variable treatment as esy-feast-lelya-ps78-farcing-gap."
-    },
-    "text": "<p class=\"component-text\">Come, O my Lord, to the help of thy worshippers, who keep vigil on the festival of N; and reveal thyself to us in thy mercy, and hearken to the words of our prayers, which on thy holy festival we offer to thee, Lord of all, etc.</p>"
-  },
-  {
     "id": "esy-feast-night-anthem-text-gap",
     "title": "The Night Anthem",
     "meta": {
@@ -4564,15 +4520,6 @@
       "note": "GAP, disclosed rather than filled: the Night Anthem's own proper text is not transcribed anywhere in this project's holdings, the same disclosed gap already on record for the ordinary ferial Night Anthem generally (see esy-sext-night-anthem-canon-rubric's note)."
     },
     "text": "<p class=\"rubric-text\">They say the Night Anthem.</p>"
-  },
-  {
-    "id": "esy-feast-night-anthem-prayer-after",
-    "title": "Prayer after the Night Anthem",
-    "meta": {
-      "source": "Maclean 1894, p.154.",
-      "note": "Given by Maclean using the Nativity as its worked example ('the holy festival of the Nativity of Christ') rather than a blank 'N' -- reproduced exactly as printed, not generalised or altered for other feasts, since doing so would mean inventing wording Maclean did not write. Whether this specific wording is meant only for Christmas, or stands as the general form with 'Nativity' simply being the printed example, is not stated by the source and is left disclosed rather than guessed at. An alternative, genuinely feast-generic prayer follows immediately in the source ('Or this') -- see esy-feast-night-anthem-prayer-after-alt."
-    },
-    "text": "<p class=\"component-text\">Make us worthy, O our Lord and our God, by pure thoughts and sweet and holy melodies, with the heavenly hosts and the Wise Men and the Shepherds, to celebrate the holy festival of the Nativity of Christ our Lord and Saviour, in thy lovingkindness and mercy, Lord of all, etc.</p>"
   },
   {
     "id": "esy-feast-night-anthem-prayer-after-alt",
