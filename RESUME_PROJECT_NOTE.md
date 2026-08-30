@@ -1,5 +1,24 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Ferial Morning Service (pp.103-108) audited, clean, no fix
+## needed. SEED_VERSION v188 -> v189. Read this entry, then the v188 entry below it, then the
+## CONSOLIDATED v187 entry, which is still accurate for everything else.
+
+Second item off the open-items list. All nineteen fixed-opening Sapra components (the material
+shared by every ferial weekday before that day's own Morning Martyrs' Anthem) checked word-for-
+word against `McClean.rtf`. Every component, including all four "Another" alternate forms,
+matches source exactly. No content or code changes -- audit-only. `AUDIT_SOURCE_VERIFICATION.md`
+updated from "Not started" to COMPLETE. SEED_VERSION bumped to
+`v189-2026-08-30-east-syriac-ferial-morning-service-audited`.
+
+**Open items, updated:** items 1 and 2 from the v187 list are both done. Remaining: pre-Fast
+Sunday folding rule, Layer 3 saints calendar, the two loose Farcings ends, what triggers Middle
+Friday (new, from the item-1 session), and the longer-standing items unchanged (Great Fast's own
+Sunday Evening Service, ordinary1/2/3.json architecture review, Cathedral/Monastic toggle, Royal
+Anthem sourcing, the fuller Book of Needs access-tier ladder).
+
+---
+
 ## Session 2026-08-30 continued -- First Friday audited (clean); Middle Friday built (did not
 ## exist); a real content-misattribution bug found and fixed spanning First and Second Saturday.
 ## SEED_VERSION v187 -> v188. Read this entry, then the CONSOLIDATED v187 entry below it, which

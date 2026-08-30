@@ -94,7 +94,12 @@ updated the moment a section's audit is complete, in the same commit as the find
       here rather than left contradicting itself.
 
 ### Ferial Morning Service (pp.103-108)
-- [ ] Not started
+- [x] **COMPLETE, 2026-08-30** — full word-for-word audit against source: both opening prayers,
+      farced Psalm 100/91/104/113, fixed Psalms 93/148/149/150/117, both Lakhumara prayers, the
+      Lakhumara itself, Psalm 51, the Tishbukhta, the prayer of peace, the prayer before the
+      Martyrs' Anthem (both forms), the Daily Anthem (both forms), the two-part Prayer for Help,
+      and the Conclusion. Zero discrepancies found. See Findings Log, "Ferial Morning Service
+      (pp.103-108) -- audited 2026-08-30."
 
 ### Morning Martyrs' Anthems, Monday-Saturday (pp.109-130)
 - [x] Monday — **COMPLETE, 2026-08-29** — full word-for-word check
@@ -1072,3 +1077,27 @@ established. `esy-middle-friday-*` components exist, are fully cited, and are co
 references that sequence key. Needs either a further source (the Kalendar appendix, or an
 explanatory rubric elsewhere not yet located) or Josh's direction before wiring.
 
+### Ferial Morning Service (pp.103-108) -- audited 2026-08-30
+
+Second item off the open-items list: "Ferial Morning Service audit (pp.103-108)." This is the
+fixed, invariable opening of Sapra shared by every ferial weekday, before the day-specific
+Morning Martyrs' Anthems begin (pp.109-130, already individually audited in an earlier session).
+
+Checked all nineteen components word-for-word against `McClean.rtf`: `esy-sapra-opening-prayer`,
+`esy-sapra-second-opening-prayer`, `esy-sapra-psalm-100`, `esy-sapra-psalm-100-prayer`,
+`esy-sapra-psalm-91`, `esy-sapra-psalm-91-prayer`, `esy-sapra-psalm-104`, `esy-sapra-psalm-113`,
+`esy-sapra-fixed-psalms`, `esy-sapra-lakhumara-prayer-before`, `esy-sapra-laku-mara`,
+`esy-sapra-lakhumara-prayer-after`, `esy-sapra-psalm-51`, `esy-sapra-tishbukhta`,
+`esy-sapra-prayer-of-peace`, `esy-sapra-prayer-before-martyrs-anthem`, `esy-sapra-daily-anthem`,
+`esy-sapra-prayer-for-help`, `esy-sapra-conclusion`.
+
+**Result: clean.** Every component matches source exactly, including both alternate forms where
+Maclean gives one ("Another"): the second opening prayer, the second prayer before the Martyrs'
+Anthem, the second Daily Anthem, and the second Prayer for Help. The cross-reference rubric
+directing reuse of the Evening Service's "Of Mary / Of the Apostles / Of our father" prayers and
+Conclusion pattern (p.108, "as at the Evening Service") is correctly reflected in the existing
+reuse of the Ramsha components, confirmed already correct from an earlier session's own note. No
+fix needed anywhere in this range.
+
+**Verified:** no changes made to `components/east-syriac.json` or `rubrics.json` this pass --
+audit-only, confirming existing content rather than correcting it.

@@ -7717,3 +7717,17 @@ still passes `node --check`. Duplicate-check performed before writing new conten
 rule -- two coincidental phrase overlaps found and confirmed genuinely different, not duplicates.
 
 SEED_VERSION at the close of this entry: `v188-2026-08-30-east-syriac-friday-saturday-audit-and-fix`.
+
+---
+
+## Session 2026-08-30 continued -- Ferial Morning Service (pp.103-108) audited, clean. No fix
+## needed. SEED_VERSION v188 -> v189.
+
+Second item off the open-items list. Checked all nineteen fixed-opening Sapra components
+(`esy-sapra-opening-prayer` through `esy-sapra-conclusion`, the shared material every ferial
+weekday uses before its own day-specific Morning Martyrs' Anthem begins at p.109) word-for-word
+against `McClean.rtf`. Every component, including all four "Another" alternate forms, matches
+source exactly. No content changes made this session -- audit-only, confirming rather than
+correcting.
+
+SEED_VERSION at the close of this entry: `v189-2026-08-30-east-syriac-ferial-morning-service-audited`.
