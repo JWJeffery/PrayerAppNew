@@ -187,6 +187,52 @@
         'saint-ephrem-the-syrian',
         'saint-ephraim-the-syrian',
         'saint-ephrem-of-edessa',
+
+        // Added 2026-08-30: identities found directly in the real ACOE Diocese of California and
+        // ACOTE Diocese of Western Europe 2026 calendars (or Maclean 1894 itself) while rebuilding
+        // Layer 3 from these primary sources, per Josh's direction, rather than continuing to be
+        // constrained by the March-2026 KEEP_CANDIDATE list above -- being cited from an official
+        // diocesan calendar or Maclean's own list IS the eligibility bar now, the same standard
+        // already applied to every entry above. See AUDIT_GOVERNANCE_LEDGER.md, session
+        // 2026-08-30, for the full account of why the March audit undercounted real coverage.
+        'mar-athqin-of-shish',
+        'mar-yokhannan-zaroqa',
+        'mar-yokhannan-the-dailomite',
+        'mar-benyamin-shimun',
+        'mar-yonan',
+        'mar-hurmizd',
+        'mar-sargis-and-bacchus',
+        'mar-timotheus-malabar',
+        'mar-daniel-the-physician',
+        'abgar-ukkama',
+        'mar-meelis-tel-khesh',
+        'mart-anahid',
+        'mar-abba-serapion',
+        'mar-ezekiel-of-daqoq',
+        'mar-yosip-khnanisho',
+        'mar-cyriacus-and-julitta',
+        'mar-yosip-busnaya',
+        'mar-moses-of-beth-sayyare',
+        'mar-sawa-the-physician',
+        'mar-bisho-of-kmol',
+        'constantine-the-victorious-king',
+        'mar-gawra-the-martyr',
+        'mar-khanania-ananias',
+        'saint-jacob-the-recluse',
+        'mar-tahmazgard-the-martyr',
+        'rabban-mar-yareth-of-alexandria',
+        'mar-micha',
+        'mar-youkhanan-the-arab',
+        'mar-jacob-the-mutilated',
+        'rabban-mar-bar-edta',
+        'mar-abraham-of-qidun',
+        'mar-shallita-of-anitus',
+        'saint-christopher',
+        'yuwakhir-and-khana',
+        'mar-cyprian',
+        'mar-ignatius',
+        'mar-basil',
+        'mar-diodorus-of-tarsus',
     ]);
 
     const _APOSTOLIC = new Set([

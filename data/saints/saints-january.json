@@ -1256,5 +1256,45 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-athqin-of-shish",
+    "day": "January 4",
+    "name": "Mar Athqin Of Shish",
+    "description": "Mar Athqin of Shish.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-yokhannan-zaroqa",
+    "day": "January 15",
+    "name": "Mar Yokhannan Zaroqa",
+    "description": "Mar Yokhannan Zaroqa ('the Blue').",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-yokhannan-the-dailomite",
+    "day": "January 18",
+    "name": "Mar Yokhannan The Dailomite",
+    "description": "Mar Yokhannan the Dailomite (John of Dailam).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-shallita-of-anitus",
+    "day": "January 1",
+    "name": "Mar Shallita Of Anitus",
+    "description": "Mar Shallita of the village of Anitus -- distinct from mar-shalita (disciple of Mar Augin, sourced Aug.10/Sept.19 elsewhere in this corpus). Maclean’s own list keeps these as two separate persons.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

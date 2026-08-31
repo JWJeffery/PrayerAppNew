@@ -1134,5 +1134,63 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-khanania-ananias",
+    "day": "October 1",
+    "name": "Mar Khanania Ananias",
+    "description": "Ananias (Khanania), who baptized St. Paul and became the first Metropolitan of Damascus. Confirmed by both the ACOE Diocese of California 2026 calendar and Maclean 1894.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-jacob-the-recluse",
+    "day": "October 23",
+    "name": "Saint Jacob The Recluse",
+    "description": "St. Jacob the Recluse -- distinct from Jacob of Nisibis and Jacob the Mutilated, both separately commemorated elsewhere in this corpus.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-tahmazgard-the-martyr",
+    "day": "October 25",
+    "name": "Mar Tahmazgard The Martyr",
+    "description": "Mar Tahmazgard the Martyr, of Beth Slokh (Kirkuk).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "rabban-mar-yareth-of-alexandria",
+    "day": "October 27",
+    "name": "Rabban Mar Yareth Of Alexandria",
+    "description": "Rabban Mar Yareth of Alexandria.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-john-the-evangelist",
+    "day": "October 13",
+    "name": "Saint John The Evangelist",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-john-the-apostle (October 13) -- deliberately left without a COE tag on this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
+    "type": "saint",
+    "tags": []
+  },
+  {
+    "id": "saint-john-the-apostle",
+    "day": "October 13",
+    "name": "Saint John the Apostle",
+    "description": "The Evangelist and Apostle John. A distinct, fixed commemoration from the movable 'Four Evangelists' Friday of the pre-Fast cycle (see the December 27 entry for that season's own separate note) -- Maclean 1894 (p.282-283, Kashkul MS list) gives this as its own fixed day.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

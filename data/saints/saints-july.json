@@ -1108,5 +1108,35 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-ezekiel-of-daqoq",
+    "day": "July 5",
+    "name": "Mar Ezekiel Of Daqoq",
+    "description": "Mar Ezekiel of Daqoq.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-yosip-khnanisho",
+    "day": "July 12",
+    "name": "Mar Yosip Khnanisho",
+    "description": "Mar Yosip Khnanisho, Metropolitan (1893-1977). Commemorated at the Feast of Nusardeil.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-cyriacus-and-julitta",
+    "day": "July 15",
+    "name": "Mar Cyriacus And Julitta",
+    "description": "Mar Cyriacus (Quriaqus) and his mother Julitta, illustrious martyrs.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

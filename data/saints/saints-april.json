@@ -529,5 +529,25 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-yonan",
+    "day": "April 19",
+    "name": "Mar Yonan",
+    "description": "Mar Yonan.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-christopher",
+    "day": "April 27",
+    "name": "Saint Christopher",
+    "description": "St. Christopher, martyr, commemorated jointly with St. George.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

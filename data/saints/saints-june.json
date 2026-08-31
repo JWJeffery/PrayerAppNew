@@ -888,5 +888,35 @@
       "EOR",
       "OOR"
     ]
+  },
+  {
+    "id": "mar-meelis-tel-khesh",
+    "day": "June 14",
+    "name": "Mar Meelis Tel Khesh",
+    "description": "Mar Meelis of Tel-Khesh, commemorated with Bar Qusre. Source: ACOTE Diocese of Western Europe 2026 calendar (the ACOE Diocese of California 2026 calendar gives the same pairing on May.27 instead -- not reconciled).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mart-anahid",
+    "day": "June 18",
+    "name": "Mart Anahid",
+    "description": "Mart Anahid, virgin and martyr, disciple of Rabban Pethyon, martyred under Yazdegerd II.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-abba-serapion",
+    "day": "June 21",
+    "name": "Mar Abba Serapion",
+    "description": "Mar Abba Serapion.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

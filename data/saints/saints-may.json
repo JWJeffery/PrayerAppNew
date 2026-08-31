@@ -1220,5 +1220,45 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-sargis-and-bacchus",
+    "day": "May 8",
+    "name": "Mar Sargis And Bacchus",
+    "description": "Martyr-soldiers of the Diocletianic persecution. Source: ACOTE Diocese of Western Europe 2026 calendar (also given Oct.17 in the same calendar, and May.1/Nov.1 in the ACOE Diocese of California 2026 calendar -- multiple annual commemorations, consistent with other multi-date figures already in this corpus).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-timotheus-malabar",
+    "day": "May 1",
+    "name": "Mar Timotheus Malabar",
+    "description": "Mar Abimalek Timotheus, Metropolitan of Malabar (1878-1945). Distinct from the ancient Catholicos Timothy I.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-daniel-the-physician",
+    "day": "May 3",
+    "name": "Mar Daniel The Physician",
+    "description": "Commemorated jointly with Mar Addai the Apostle.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "abgar-ukkama",
+    "day": "May 8",
+    "name": "Abgar Ukkama",
+    "description": "Abgar Ukkama ('the Black'), King of Edessa, traditionally the first Christian king, correspondent of Christ in East Syriac legend.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

@@ -8669,3 +8669,93 @@ general web search.
 **Verified:** all 12 monthly saints files remain valid JSON.
 
 SEED_VERSION at the close of this entry: `v201-2026-08-30-east-syriac-layer3-push-toward-100pct`.
+
+---
+
+## Session 2026-08-30 continued -- rebuilt Layer 3 from the real diocesan calendars directly,
+## rather than continuing to be constrained by the March-2026 allowlist. Josh's question ("are
+## you pulling data for people not already in the system?") surfaced a real, significant gap: the
+## answer was no. 39 new identities added straight from the two calendars already in hand (28 of
+## them entirely new to the allowlist itself, not just newly sourced), plus a real correction to
+## an earlier finding (John the Apostle does have a fixed date, Oct.13, per Maclean -- the
+## "structurally movable" claim was too broad). Sourced coverage jumped from 28/95 (29%) to 67/133
+## (50%). SEED_VERSION v201 -> v202.
+
+Josh: "I do wonder if we should just delete everything and completely rebuild using these
+calendars. Are you pulling the data for folks not already in the system?"
+
+**The honest answer was no.** Every research pass this session checked the diocesan calendars
+against the pre-existing 95-identity allowlist and acted only on matches -- any calendar name
+without a matching allowlist id was silently skipped, even when the calendar gave it a real,
+citable date. Reviewing the California calendar alone turned up over two dozen skipped names:
+Mar Athqin of Shish, Mar Yokhannan Zaroqa, Mar Yokhannan the Dailomite, Mar Tawor, Abgar Ukkama,
+Mart Anahid, Mar Abba Serapion, Constantine the Victorious King, Rabban Mar Yareth, and more.
+
+**Why this happened, and why it's the same root problem as the original office-content
+fabrication:** the March-2026 allowlist was built by auditing the *existing*, largely fabricated
+`data/saints/` dataset for plausibility -- never by reading a real source and taking whatever
+names that source actually contains. It could only ever contain identities that happened to
+already be sitting in the (mostly fabricated) seed data. A real name like "Mar Tawor" was never
+going to appear in the allowlist, not because it isn't real, but because it was never in the seed
+data to begin with. Continuing to cross-reference against that list, however carefully, could
+never close this gap -- the ceiling was baked in from the start.
+
+**Rebuilt directly from the primary sources instead**, the same correction already applied once
+to the whole East Syriac office (delete the fabricated content, rebuild from Maclean). Re-fetched
+both diocesan calendars fresh and read every named commemoration in each, not just the ones with
+an existing allowlist match. 39 new/corrected identities added:
+
+- 28 identities entirely new to the allowlist, added directly to `js/coe-eligibility.js`'s
+  `_COE_NATIVE` set with a dated, cited entry in the corpus: Mar Athqin of Shish, Mar Yokhannan
+  Zaroqa, Mar Yokhannan the Dailomite, Mar Benyamin Shimun (cross-confirmed by both calendars),
+  Mar Yonan, Mar Hurmizd, Mar Sargis and Bacchus, Mar Timotheus of Malabar, Mar Daniel the
+  Physician, Abgar Ukkama, Mar Meelis of Tel-Khesh, Mart Anahid, Mar Abba Serapion, Mar Ezekiel of
+  Daqoq, Mar Yosip Khnanisho, Mar Cyriacus and Julitta, Mar Yosip Busnaya, Mar Moses of Beth
+  Sayyare, Mar Sawa the Physician, Mar Bisho of Kmol, Constantine the Victorious King, Mar Gawra
+  the Martyr, Mar Khanania (Ananias, cross-confirmed by Maclean and the California calendar),
+  Saint Jacob the Recluse, Mar Tahmazgard the Martyr, Rabban Mar Yareth of Alexandria, Mar Micha,
+  Mar Youkhanan the Arab.
+- 11 more added directly from Maclean's own list, checked freshly rather than from memory: Mar
+  Jacob the Mutilated (cross-confirmed by both Maclean and the California calendar), Rabban Mar
+  Bar 'Edta, Mar Abraham of Qidun, Mar Shallita of Anitus (distinct from the already-sourced Mar
+  Shalita, disciple of Mar Augin -- Maclean keeps these as two separate persons), Saint
+  Christopher, Yuwakhir and Khana (Joachim and Anna, parents of Mary), Mar Cyprian, Mar Ignatius,
+  Mar Basil, Mar Diodorus of Tarsus.
+
+**A real correction to a finding from earlier this session, caught while rebuilding rather than
+left standing:** the "structurally movable, no fixed date exists" annotation applied to
+`saint-john-the-apostle` was too broad. Maclean's own list gives October 13 as John's own
+separate, fixed commemoration, distinct from the movable "Four Evangelists" Friday of the
+pre-Fast cycle -- both facts are real (the *group* commemoration is movable; John *individually*
+also has his own fixed day). Sourced a proper October 13 entry and corrected the December 27
+entry's description rather than leaving the earlier overclaim uncorrected.
+
+**A near-miss caught before it shipped, not after:** while adding John's new Oct.13 entry, nearly
+created it under a fresh id (`saint-john-the-evangelist`) rather than the allowlist's own
+`saint-john-the-apostle` -- which would have displayed the same person twice on the same date.
+Caught immediately by checking for an existing allowlist id representing the same figure before
+finalizing; the stray id was resolved as a duplicate (empty tags, cross-referenced) rather than
+left live.
+
+**Also found and left alone, correctly:** two more data files, `data/saints/identities.json`
+(1,226 rows) and `data/saints/commemorations.json` (1,748 rows), exist in the same directory and
+are *not* part of any live code path -- confirmed by direct inspection of `js/saints-resolver.js`,
+which only ever reads `saints-{month}.json`. The one reference to `commemorations.json` found
+anywhere in the codebase is a stale comment in `js/coe-eligibility.js`, not a real dependency.
+Not touched -- flagged as a likely orphaned-file cleanup candidate for a future session, out of
+tonight's scope.
+
+**Result: sourced coverage jumped from 28 of 95 (29%) to 67 of the now-133-identity allowlist
+(50%)**, with 85 of 133 (64%) resolved one way or another (sourced, a known duplicate-id form, or
+structurally movable). The 49 identities still genuinely open are the same 49 already disclosed
+in the prior entry -- every new identity added this pass came with a real, sourced date, so none
+of the rebuild's additions landed in "still open."
+
+**Verified:** `node --check` passes on `js/coe-eligibility.js`. All 12 monthly saints files remain
+valid JSON. The full resolve-and-filter pipeline was run end-to-end (not spot-checked) against
+all 39 new/corrected dates plus the John the Apostle correction -- every one resolves and passes
+eligibility, multiple co-located commemorations (e.g. three separate identities sharing Aug.21,
+two sharing Sept.14) correctly display together rather than clobbering each other, and the
+John duplication fix confirmed showing exactly one entry, not two.
+
+SEED_VERSION at the close of this entry: `v202-2026-08-30-east-syriac-layer3-rebuilt-from-calendars`.

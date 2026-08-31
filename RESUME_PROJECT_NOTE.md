@@ -1,5 +1,53 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- rebuilt Layer 3 from the real diocesan calendars directly,
+## rather than continuing to be constrained by the March-2026 allowlist. Josh's question surfaced
+## a real gap: dozens of real, sourceable names were being silently skipped. Sourced coverage
+## jumped from 28/95 (29%) to 67/133 (50%). SEED_VERSION v201 -> v202. Read this entry, then the
+## v201/v200/v199/v198/v197/v196/v195/v194/v193/v192/v191/v190/v189/v188 entries below it, then
+## the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "I do wonder if we should just delete everything and completely rebuild using these
+calendars. Are you pulling the data for folks not already in the system?" Honest answer: no.
+
+**Why:** every research pass this session checked the diocesan calendars against the pre-existing
+95-identity allowlist and acted only on matches -- any calendar name without a matching id was
+silently skipped, even with a real citable date. The California calendar alone had over two dozen
+skipped real names. The allowlist itself was built by auditing the existing, largely fabricated
+`data/saints/` dataset for plausibility, never by reading a real source and taking whatever names
+it actually contains -- it could only ever contain names that happened to already be in the bad
+seed data.
+
+**Rebuilt directly from the primary sources instead** -- the same correction already applied once
+to the whole East Syriac office. Re-fetched both calendars fresh, read every named commemoration.
+**39 new/corrected identities added**, 28 entirely new to the allowlist itself, 11 more from
+Maclean's own list checked freshly. Full list in the ledger entry of the same name.
+
+**A real correction caught while rebuilding:** the earlier "structurally movable, no fixed date"
+claim on `saint-john-the-apostle` was too broad -- Maclean gives October 13 as John's own separate
+fixed day, distinct from the movable Four-Evangelists Friday. Both facts are real.
+
+**A near-miss caught before shipping:** nearly created a duplicate id (`saint-john-the-evangelist`)
+for the same person the allowlist already represents as `saint-john-the-apostle` -- caught by
+checking for an existing match before finalizing, not after.
+
+**Also found, correctly left alone:** two more data files, `identities.json` and
+`commemorations.json`, sit in the same directory and are confirmed not part of any live code
+path -- flagged as an orphaned-file cleanup candidate for later, out of scope tonight.
+
+**Result: 28/95 (29%) -> 67/133 (50%) sourced**, 85/133 (64%) resolved one way or another.
+
+**Verified:** `node --check` passes; all 12 monthly files valid JSON; full resolve-and-filter
+pipeline run end-to-end against all 39 new/corrected dates, every one resolves and passes
+eligibility, co-located commemorations group correctly, John fix confirmed exactly one entry.
+
+**Open items, updated:** 49 identities remain genuinely open (same 49 already disclosed --
+this pass's additions all came with real sourced dates). Genuinely remaining work: those 49, plus
+the `identities.json`/`commemorations.json` orphaned-file question, plus everything else already
+on the list.
+
+---
+
 ## Session 2026-08-30 continued -- pushed toward 100% Layer 3 coverage per Josh's explicit
 ## instruction that 67/95 was too low. Resolved 18 more identities (13 duplicate-id forms, 5
 ## structurally movable), hit a real diminishing-returns wall on further diocesan calendars, and

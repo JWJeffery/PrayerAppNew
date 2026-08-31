@@ -1137,5 +1137,85 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-micha",
+    "day": "November 1",
+    "name": "Mar Micha",
+    "description": "Mar Micha, commemorated alongside Mar Sargis and Mar Bacchus.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-youkhanan-the-arab",
+    "day": "November 8",
+    "name": "Mar Youkhanan The Arab",
+    "description": "Mar Youkhanan the Arab, of Al-Hira.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-jacob-the-mutilated",
+    "day": "November 19",
+    "name": "Mar Jacob The Mutilated",
+    "description": "Mar James (Jacob) the mutilated/dismembered. Confirmed by both the ACOE Diocese of California 2026 calendar and Maclean 1894.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "rabban-mar-bar-edta",
+    "day": "November 27",
+    "name": "Rabban Mar Bar Edta",
+    "description": "Rabban Mar Bar 'Edta.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-cyprian",
+    "day": "November 1",
+    "name": "Mar Cyprian",
+    "description": "Mar Cyprian, martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-ignatius",
+    "day": "November 17",
+    "name": "Mar Ignatius",
+    "description": "Mar Ignatius, disciple of the sons of thunder.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-basil",
+    "day": "November 17",
+    "name": "Mar Basil",
+    "description": "Mar Basil, commemorated alongside Mar Ignatius and Mar George.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-diodorus-of-tarsus",
+    "day": "November 22",
+    "name": "Mar Diodorus Of Tarsus",
+    "description": "Mar Diodorus, Bishop of Tarsus, commemorated with twelve thousand martyrs.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

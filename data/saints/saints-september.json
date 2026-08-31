@@ -1258,5 +1258,65 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-hurmizd",
+    "day": "September 1",
+    "name": "Mar Hurmizd",
+    "description": "Rabban Hurmizd of Shiraz, 7th-century monastic founder, associated with the monastery near Alqosh, Iraq. Source: ACOTE Diocese of Western Europe 2026 calendar. The ACOE Diocese of California 2026 calendar also commemorates a 'Rabban Hurmizd the Persian' on April 20 -- likely the same figure under a different date and epithet, not reconciled, disclosed rather than silently merged.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-sawa-the-physician",
+    "day": "September 14",
+    "name": "Mar Sawa The Physician",
+    "description": "Mar Sawa the Physician.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-bisho-of-kmol",
+    "day": "September 14",
+    "name": "Mar Bisho Of Kmol",
+    "description": "Mar Bisho of Kmol.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "constantine-the-victorious-king",
+    "day": "September 18",
+    "name": "Constantine The Victorious King",
+    "description": "Constantine the Victorious King -- the Roman Emperor Constantine I, commemorated as a civil/imperial figure in this calendar rather than a saint in the strict sense, included here as the source itself lists him among the year’s named commemorations.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-gawra-the-martyr",
+    "day": "September 20",
+    "name": "Mar Gawra The Martyr",
+    "description": "Mar Gawra the Martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "yuwakhir-and-khana",
+    "day": "September 8",
+    "name": "Yuwakhir And Khana",
+    "description": "Yuwakhir and Khana (Joachim and Anna in Western usage), parents of St. Mary, commemorated at her Nativity.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]
