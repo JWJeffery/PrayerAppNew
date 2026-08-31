@@ -1,5 +1,45 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- ACOE/Ancient Church of the East split built into the entry
+## flow. Default Easter reckoning swapped to Gregorian (real ACOE practice since 1964), Ancient
+## Church of the East's Julian reckoning as the labeled alternative. SEED_VERSION v196 -> v197.
+## Read this entry, then the v196/v195/v194/v193/v192/v191/v190/v189/v188 entries below it, then
+## the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh had a real, understandable misunderstanding: he believed the 1968 split was about episcopal
+succession, not the calendar. Researched properly before building anything.
+
+**Sourced:** GEDSH (the standard Syriac-studies encyclopedia) states the 1964 Gregorian calendar
+reform was the "immediate cause" of the 1968 schism. Succession was a real, related factor, but
+GEDSH is explicit it "no longer divides the two Church bodies" -- moot since the hereditary
+patriarchal line ended in 1975. The calendar remains a live difference today: Assyrian Church of
+the East = Gregorian, Ancient Church of the East = Julian, confirmed across multiple independent
+sources. Both share the same East Syriac liturgy and theology -- no separate prayer texts exist to
+build for either body.
+
+**Built, per Josh's explicit instruction:** a new third-level entry step -- clicking "Church of
+the East" now opens a panel naming both bodies directly, each with a one-line description, plus a
+note that the office text is identical either way. `selectedCoeEasterMode`'s standing default
+swapped `julian` -> `gregorian`, matching the Assyrian Church of the East's actual current
+practice. Settings-panel dropdown relabeled with the real church names.
+
+**Deliberately not changed:** the calendar engine's own internal bare-call default remains Julian
+(every live call site passes `easterMode` explicitly, so this is never actually exercised) --
+documented directly in the module's own header rather than left unexplained.
+
+**Verified:** `node --check` passes on both touched files; all 30 internal engine self-tests still
+pass (engine itself unaffected, only the UI layer and entry flow changed); `index.html`
+spot-checked for correct structure and no duplicate ids; both calendar modes directly simulated
+against a real date, confirmed genuinely different and correct.
+
+**Open items, updated:** items 1-6 from the v187 list, the Layer 3 expansion, and this ACOE/ACE
+entry-flow work are all done. Genuinely remaining: the fuller Book of Needs access-tier ladder
+(scope clarified with Josh -- 5 of 8 tiers are real ordained ranks, the other 3 are layperson/
+monastic/research-reference, awaiting his direction on whether to build it), and the rest of the
+~79 unsourced Layer 3 identities (dedicated future research).
+
+---
+
 ## Session 2026-08-30 continued -- Layer 3 saints expansion: 5 more identities sourced (16 total,
 ## was 11). Two prior "open items" also confirmed already resolved (Cathedral/Monastic toggle,
 ## ordinary1/2/3.json split) before picking this one -- a stale-list check paid off immediately.

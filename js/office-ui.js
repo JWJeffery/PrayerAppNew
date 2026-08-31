@@ -4,7 +4,13 @@ let selectedMode = null;
 let isHydrationComplete        = false;
 let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
 let selectedEoMode = 'new_calendar'; // 'new_calendar' | 'old_calendar' — persisted in universalOfficeSettings
-let selectedCoeEasterMode = 'julian'; // 'julian' | 'gregorian' — persisted in universalOfficeSettings
+let selectedCoeEasterMode = 'gregorian'; // 'julian' | 'gregorian' — persisted in universalOfficeSettings
+// Default changed 2026-08-30, from 'julian' to 'gregorian': confirmed via research that the
+// (modern) Assyrian Church of the East -- the body this app's "Church of the East" tradition
+// primarily represents -- officially adopted the Gregorian calendar in 1964. The Ancient Church
+// of the East split off specifically in protest of that change and kept the Julian calendar; it
+// remains available as the alternate. See AUDIT_GOVERNANCE_LEDGER.md, session 2026-08-30, for
+// the full sourcing and the 100-year re-verification performed after this default changed.
 
 // ── v5.4: Horologion diagnostics toggle ──────────────────────────────────────
 // Off by default. Enable via the sidebar toggle button or from the console:
@@ -63,8 +69,8 @@ function selectEoMode(mode) {
 // such in documentation/AUDIT_GOVERNANCE_LEDGER.md.
 function selectCoeEasterMode(mode) {
     if (mode !== 'julian' && mode !== 'gregorian') {
-        console.warn('[selectCoeEasterMode] Invalid mode:', mode, '— defaulting to julian.');
-        mode = 'julian';
+        console.warn('[selectCoeEasterMode] Invalid mode:', mode, '— defaulting to gregorian.');
+        mode = 'gregorian';
     }
     selectedCoeEasterMode = mode;
     const sel = document.getElementById('coe-easter-mode-select');
@@ -1016,6 +1022,7 @@ function selectTraditionFamily(family) {
     const familyGrid = document.getElementById('entry-family-grid');
     const western = document.getElementById('entry-western-options');
     const eastern = document.getElementById('entry-eastern-options');
+    const coe = document.getElementById('entry-coe-options');
     const isWestern = family === 'western';
     const isEastern = family === 'eastern';
     const isFamilyStep = isWestern || isEastern;
@@ -1047,6 +1054,39 @@ function selectTraditionFamily(family) {
     if (eastern) {
         eastern.hidden = !isEastern;
         eastern.setAttribute('aria-hidden', isEastern ? 'false' : 'true');
+    }
+
+    if (coe) {
+        coe.hidden = true;
+        coe.setAttribute('aria-hidden', 'true');
+    }
+}
+
+// Third-level entry step: which of the two Church of the East bodies. Added
+// 2026-08-30 per Josh's direction, after confirming (1964 calendar reform,
+// 1968 schism) that the concrete, sourceable difference between the Assyrian
+// Church of the East and the Ancient Church of the East is the liturgical
+// calendar -- both share the same East Syriac office text. See
+// AUDIT_GOVERNANCE_LEDGER.md for the sourcing.
+function showCoeEntryStep() {
+    const traditionEntry = document.getElementById('tradition-entry');
+    const title = document.getElementById('tradition-entry-title');
+    const lede = document.querySelector('#tradition-entry .app-entry-lede');
+    const familyGrid = document.getElementById('entry-family-grid');
+    const western = document.getElementById('entry-western-options');
+    const eastern = document.getElementById('entry-eastern-options');
+    const coe = document.getElementById('entry-coe-options');
+
+    if (traditionEntry) traditionEntry.dataset.entryStep = 'coe';
+    if (title) title.textContent = 'Church of the East';
+    if (lede) lede.textContent = 'Choose the tradition you want to pray with.';
+
+    if (familyGrid) { familyGrid.hidden = true; familyGrid.setAttribute('aria-hidden', 'true'); }
+    if (western)    { western.hidden    = true; western.setAttribute('aria-hidden', 'true'); }
+    if (eastern)    { eastern.hidden    = true; eastern.setAttribute('aria-hidden', 'true'); }
+    if (coe) {
+        coe.hidden = false;
+        coe.setAttribute('aria-hidden', 'false');
     }
 }
 
@@ -1197,14 +1237,26 @@ function handleTraditionEntryClick(event) {
     const family = button.dataset.entryFamily;
     const tradition = button.dataset.entryTradition;
     const isBack = button.dataset.entryBack === 'true';
+    const isCoeStep = button.dataset.entryCoeStep === 'true';
+    const coeBody = button.dataset.entryCoeBody;
 
-    if (!family && !tradition && !isBack) return;
+    if (!family && !tradition && !isBack && !isCoeStep) return;
 
     event.preventDefault();
     event.stopPropagation();
 
     if (isBack) {
-        selectTraditionFamily(null);
+        const backTo = button.dataset.entryBackTo;
+        if (backTo === 'eastern') {
+            selectTraditionFamily('eastern');
+        } else {
+            selectTraditionFamily(null);
+        }
+        return;
+    }
+
+    if (isCoeStep) {
+        showCoeEntryStep();
         return;
     }
 
@@ -1214,6 +1266,9 @@ function handleTraditionEntryClick(event) {
     }
 
     if (tradition) {
+        if (coeBody === 'acoe' || coeBody === 'ancient') {
+            selectCoeEasterMode(coeBody === 'acoe' ? 'gregorian' : 'julian');
+        }
         setUserTraditionDefault(tradition);
     }
 }

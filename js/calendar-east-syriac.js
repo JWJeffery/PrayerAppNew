@@ -22,11 +22,26 @@
  *   9. Qudash 'Idta (Dedication)          — 1st Sunday of October, variable
  *
  * Easter Calculation:
- *   The Church of the East observes d'Qyamta using the Julian calendar.
- *   This module uses the Meeus algorithm for Julian Easter, then converts
- *   the resulting Julian date to a Gregorian Date object via JDN.
- *   For modern dates (1900–2099), the Julian calendar runs 13 days behind
- *   Gregorian; the JDN conversion handles this exactly.
+ *   Historically the Church of the East observed d'Qyamta using the Julian
+ *   calendar, matching Maclean 1894 (this module's primary source) and this
+ *   engine's own original algorithm below. UPDATED 2026-08-30: confirmed via
+ *   research that the modern Assyrian Church of the East officially adopted
+ *   the Gregorian calendar in 1964; the Ancient Church of the East split off
+ *   the same period specifically over that change and retains the Julian
+ *   reckoning. Both are real, live options -- see getEaster()'s `easterMode`
+ *   parameter. This module's own bare-call default (no options passed)
+ *   remains Julian, matching its original source basis; the live app's
+ *   user-facing default is Gregorian, set in js/office-ui.js, matching
+ *   current Assyrian Church of the East practice -- every call site there
+ *   passes `easterMode` explicitly, so this module's bare default is never
+ *   actually exercised in the running app. See AUDIT_GOVERNANCE_LEDGER.md,
+ *   session 2026-08-30, for the full sourcing and the entry-flow UI that
+ *   lets a user pick which of the two church bodies they belong to.
+ *   This module uses the Meeus algorithm for Julian Easter (and a separate
+ *   Meeus algorithm for Gregorian Easter), then converts the resulting
+ *   Julian date to a Gregorian Date object via JDN. For modern dates
+ *   (1900–2099), the Julian calendar runs 13 days behind Gregorian; the JDN
+ *   conversion handles this exactly, and correctly for other centuries too.
  *
  * Qdham/Wathar Cycle (the seam fix):
  *   The even/odd Psalter cycle is anchored to weeks elapsed since Subara

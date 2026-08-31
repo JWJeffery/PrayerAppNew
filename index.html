@@ -69,7 +69,7 @@
     <div id="entry-eastern-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Eastern Christian</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east">
+        <button class="app-entry-tradition-card" type="button" data-entry-coe-step="true">
             <span class="app-entry-tradition-code">COE</span>
             <span>
                 <strong>Church of the East</strong>
@@ -90,6 +90,36 @@
                 <small>The Coptic Agpeya, Book of Hours.</small>
             </span>
         </button>
+    </div>
+
+    <div id="entry-coe-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
+        <button class="app-entry-back" type="button" data-entry-back="true" data-entry-back-to="eastern">Back</button>
+        <div class="app-entry-panel-title">Church of the East</div>
+        <p class="app-entry-lede" style="margin:4px 0 14px;">
+            The Church of the East has been divided into two bodies since 1968. Both share the
+            same East Syriac liturgy and theology -- the office text in this app is identical
+            either way. The concrete difference is the liturgical calendar: which one applies to
+            you determines when Easter, the Great Fast, and every date that follows from them
+            fall in a given year.
+        </p>
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="acoe">
+            <span class="app-entry-tradition-code">ACOE</span>
+            <span>
+                <strong>Assyrian Church of the East</strong>
+                <small>Gregorian calendar, adopted 1964. Headed by the Catholicos-Patriarch in Erbil, Iraq.</small>
+            </span>
+        </button>
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="ancient">
+            <span class="app-entry-tradition-code">ACE</span>
+            <span>
+                <strong>Ancient Church of the East</strong>
+                <small>Julian calendar, the traditional reckoning kept since the 1968 schism. Headquartered in Baghdad.</small>
+            </span>
+        </button>
+        <p class="app-entry-lede" style="margin:14px 0 0; font-size:0.85em; opacity:0.75;">
+            Not sure, or praying informally rather than as a member of either body? Either choice
+            works -- you can change this later in Settings, and the office text will be the same.
+        </p>
     </div>
 
     </section>
@@ -459,17 +489,18 @@
         </div>
 
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="color:#aaa; font-size:1em;">Easter Reckoning</strong>
+            <strong style="color:#aaa; font-size:1em;">Church Body / Easter Reckoning</strong>
             <div style="font-size:0.7em; color:#888; margin:4px 0 6px;">
-                Real practice varies. Julian matches Maclean's own 1894 source and this app's
-                original build; Gregorian matches the ACOTE Diocese of Western Europe's current
-                published calendar. Changes every movable season boundary below.
+                The Church of the East has been divided into two bodies since 1968; both share
+                the same office text below. The Assyrian Church of the East adopted the Gregorian
+                calendar in 1964; the Ancient Church of the East split off in protest and kept
+                the traditional Julian reckoning. Changes every movable season boundary below.
             </div>
             <select id="coe-easter-mode-select"
                 onchange="selectCoeEasterMode(this.value)"
                 style="width:100%; padding:5px 8px; background:#333; color:var(--gold); border:1px solid rgba(201,168,76,0.5); border-radius:2px; font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.04em; cursor:pointer;">
-                <option value="julian">Julian (traditional reckoning)</option>
-                <option value="gregorian">Gregorian (current ACOTE W. Europe practice)</option>
+                <option value="gregorian">Assyrian Church of the East (Gregorian, since 1964)</option>
+                <option value="julian">Ancient Church of the East (Julian, traditional reckoning)</option>
             </select>
         </div>
     </div><!-- /east-syriac-settings -->

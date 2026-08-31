@@ -8201,3 +8201,74 @@ pipeline simulated against the real repo files for all 5 new/newly-tagged dates 
 confirmed from the prior session -- all 10 resolve and pass the eligibility filter correctly.
 
 SEED_VERSION at the close of this entry: `v196-2026-08-30-east-syriac-layer3-five-more-sourced`.
+
+---
+
+## Session 2026-08-30 continued -- ACOE/Ancient Church of the East split built into the entry
+## flow. Default Easter reckoning swapped to Gregorian (real ACOE practice since 1964), with the
+## Ancient Church of the East's Julian reckoning as the labeled alternative. SEED_VERSION v196 ->
+## v197.
+
+Josh had a genuine, understandable misunderstanding to correct: he believed the 1968 split was
+about episcopal succession, not the calendar. Researched properly before building anything.
+
+**What actually happened, sourced:** the Gorgias Encyclopedic Dictionary of Syriac Heritage
+(GEDSH) states the calendar reform was the "immediate cause" of the 1968 schism -- Patriarch Mar
+Eshai Shimun XXIII's 1964 adoption of the Gregorian calendar. Succession was a real, related
+factor (Mar Toma Darmo, the rival patriarch, also opposed hereditary succession to the
+patriarchate), but GEDSH is explicit that "the issue of succession thus no longer divides the two
+Church bodies" -- it became moot for the Assyrian Church of the East itself when the hereditary
+line ended with the 1975 assassination of Mar Eshai Shimun XXIII. The calendar, by contrast,
+remains a live, current difference: multiple sources (Wikipedia's own disambiguation, Grokipedia,
+kiddle.co) independently confirm the Assyrian Church of the East uses the Gregorian calendar and
+the Ancient Church of the East uses the Julian calendar, to this day. Both share the same East
+Syriac liturgy and theology -- confirmed by multiple sources describing both as continuing "the
+traditional theology and liturgy of the mother church." One further nuance found and worth
+recording: even the Julian-calendar Ancient Church of the East moved its own Nativity observance
+to plain Gregorian Dec.25 in 2010, while still keeping Julian reckoning for Easter -- confirming
+that "which calendar" isn't perfectly binary even within one body, consistent with this project's
+own earlier disclosure about mixed Nativity practice.
+
+**Built, per Josh's explicit instruction ("if the separation... is calendar, then yes, let's
+provide the difference, and also... label the difference... the user would then select one of the
+two churches in schism"):**
+
+- New third-level entry step in `index.html`'s tradition-entry flow: clicking "Church of the East"
+  (under Eastern Christian) now opens a new `entry-coe-options` panel naming both bodies directly
+  -- "Assyrian Church of the East (Gregorian, since 1964)" and "Ancient Church of the East
+  (Julian, traditional reckoning)" -- each with a one-line description of what actually
+  distinguishes them, rather than generic calendar-mode labels. A note in the panel makes clear
+  the office text itself is identical either way; only the calendar differs.
+- `js/office-ui.js`: new `showCoeEntryStep()` function mirroring the existing family-selection
+  pattern; `handleTraditionEntryClick()` extended to handle the new step and a proper "Back to
+  Eastern Christian" (not back to the top-level family grid) from it; selecting either church body
+  now sets `selectedCoeEasterMode` via the existing `selectCoeEasterMode()` before finalizing
+  tradition entry, so the calendar choice takes effect from the very first render.
+- **Default swapped**: `selectedCoeEasterMode`'s standing default changed from `'julian'` to
+  `'gregorian'`, matching the Assyrian Church of the East's actual, official, current practice --
+  the body this app's "Church of the East" tradition primarily represents. The invalid-input
+  fallback in `selectCoeEasterMode()` changed to match. The East Syriac settings-panel dropdown
+  (built in an earlier session) relabeled with the same real church names, Gregorian now listed
+  first as the default option.
+- **Deliberately NOT changed:** `js/calendar-east-syriac.js`'s own internal bare-call default
+  (when `getEaster()`/`getDayClass()` etc. are called with no `options` argument) remains Julian --
+  every call site in the live app passes `easterMode` explicitly now, so this bare default is
+  never actually exercised; changing it would only have required rewriting a batch of already-
+  verified self-tests for zero behavioral change to the running app. Documented this reasoning
+  directly in the module's own header comment rather than leaving the asymmetry unexplained.
+
+**Verified:** `node --check` passes on both `js/office-ui.js` and `js/calendar-east-syriac.js`;
+all 30 internal engine self-tests still pass, confirming the engine itself is unaffected -- only
+the UI-layer default and entry flow changed. `index.html` spot-checked for the new panel, correct
+`data-entry-coe-step`/`data-entry-coe-body` attributes (exactly one of each body choice, no
+leftover conflicting `data-entry-tradition` on the "Church of the East" card itself), and no
+duplicate element ids. Directly simulated both calendar modes against a real date (2026-02-15):
+Gregorian resolves to Sauma/Great Fast, Julian resolves to Denkha/ordinary -- confirmed genuinely
+different, correct results, not a cosmetic-only change.
+
+**Not addressed, and correctly so per Josh's own framing:** no separate set of prayer texts was
+built for the Ancient Church of the East, because none exists to build -- both bodies share the
+same East Syriac liturgy. The calendar is the whole of the concrete difference this project can
+represent, and it's now built and labeled.
+
+SEED_VERSION at the close of this entry: `v197-2026-08-30-east-syriac-acoe-ace-entry-flow-built`.
