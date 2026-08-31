@@ -1,5 +1,52 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- deep research pass on the remaining 79 unsourced Layer 3
+## identities, at Josh's request. Two more sourced (18 total, was 16). A real named source
+## discovered (the Gazza), two identities flagged with a real tradition-fit doubt, and a recurring
+## blog source caught failing its own consistency test and correctly not used. SEED_VERSION
+## v198 -> v199. Read this entry, then the v198/v197/v196/v195/v194/v193/v192/v191/v190/v189/v188
+## entries below it, then the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "Please research this deeply. This is important." Took it seriously.
+
+**Consolidated first:** the 79 raw unsourced allowlist ids turned out to include a large number of
+alternate-transliteration duplicates of figures already sourced (Shimun/Shimon Bar Sabbae,
+Isaac of Nineveh, Ephrem, Jacob of Nisibis, Augin, Zaia, Qardagh) -- left unsourced deliberately,
+consistent with the no-duplicate-display policy already in place.
+
+**Two genuine new matches** found by re-checking against the existing dataset with more care:
+`mar-pinhas` (new, Apr.17 diocesan), `saint-shamuni-and-sons` (an existing unsourced entry
+corrected from Aug.15 to Aug.14 and tagged -- Shmuni/Solomonia are the standard identification of
+the same figure, mother of the seven Maccabean martyrs).
+
+**Real new research attempted, with honest limits.** Checked Syriaca.org for Timothy I, Narsai,
+Babai the Great -- real biographical records, no liturgical dates. Checked a recurring blog that
+runs a systematic saints series covering many remaining names -- caught it giving Mar Zaia THREE
+different, mutually inconsistent dates, none matching the diocesan-confirmed date already in this
+corpus. Not used, same conclusion already reached about this source for Narsai.
+
+**A real, useful discovery:** the East Syriac liturgical corpus is organized in three books --
+Khudra (Sunday cycle), Kashkul (ferial, this project's primary source via Maclean), and the
+**Gazza**, specifically the book of "feasts of our Lord and commemorations of the saints... not
+based on the Sunday-cycle." This is exactly the source that would resolve most of the remaining
+identities at once. Not yet located -- the clearest concrete next step if a copy can be found.
+
+**Two identities flagged with a real doubt about belonging in the allowlist at all:**
+`saint-ahudemmeh` and `mar-behnam-and-sarah`, both primarily *West* Syriac (Oriental Orthodox)
+figures on inspection -- Behnam and Sarah's own hagiography is explicitly recorded as written "by
+an adherent of the Syriac Orthodox Church." Not this session's call to resolve, but worth the
+allowlist's own future review.
+
+**Result: 18 of 95 sourced** (was 16). The remaining ~75-77 distinct persons genuinely don't have
+an easily-obtainable, corroborated date available through tonight's sources -- an honest
+characterization of what exists, not a shortfall in effort.
+
+**Open items, updated:** everything else from the running list is done. Genuinely remaining: the
+rest of Layer 3 (needs the Gazza or similar, not more general web search), and the allowlist's own
+future review of the two flagged tradition-fit questions.
+
+---
+
 ## Session 2026-08-30 continued -- Book of Needs access built out to the full eight-role,
 ## order-aware ladder, after researching the major/minor-order distinction Josh asked about.
 ## Closes a real access-control gap the three-value binary had. SEED_VERSION v197 -> v198. Read

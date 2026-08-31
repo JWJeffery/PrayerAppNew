@@ -611,11 +611,13 @@
   },
   {
     "id": "saint-shamuni-and-sons",
-    "day": "August 15",
+    "day": "August 14",
     "name": "Saint Shamuni and Sons",
-    "description": "The Maccabean martyrs.",
+    "description": "Mother of the seven Maccabean martyrs (2 Macc. 7); called Shmuni/Shamuni in Syriac tradition, Solomonia in Greek -- the same figure, per the standard scholarly identification. ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026 gives this date as 'St. Solomonia and her sons'; the same diocesan calendar also keeps a separate annual commemoration May 5, not represented as a second dated entry here since no distinct id exists in the allowlist for it -- noted for the record rather than silently dropped.",
     "type": "saint",
-    "tags": []
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-tarcisius",

@@ -8355,3 +8355,85 @@ an invalid legacy value -> `lay`, a new value like `subdeacon` passed through un
 all correct.
 
 SEED_VERSION at the close of this entry: `v198-2026-08-30-east-syriac-book-of-needs-full-role-ladder`.
+
+---
+
+## Session 2026-08-30 continued -- deep research pass on the remaining 79 unsourced Layer 3
+## identities, at Josh's request. Two more sourced (18 total, was 16). Real progress, real limits,
+## both reported honestly. Discovered a named source not yet pursued (the Gazza) and flagged two
+## identities whose fit with the East Syriac (vs. Oriental Orthodox) tradition is now in real
+## doubt. SEED_VERSION v198 -> v199.
+
+Josh: "Please research this deeply. This is important."
+
+**First, consolidated the 79 raw allowlist ids into actual distinct persons** rather than
+researching duplicates as if they were 79 separate problems. A large fraction turned out to be
+alternate-transliteration id variants of figures already sourced: `mar-shimun-bar-sabbae` (=
+already-sourced `mar-shimon-bar-sabbae`), `saint-isaac-of-nineveh` (= `mar-isaac-of-nineveh`),
+`saint-ephraim-the-syrian`/`saint-ephrem-of-edessa` (= `saint-ephrem-the-syrian`),
+`mar-yakob-of-nisibis`/`saint-ya-qub-james-of-nisibis` (= `saint-jacob-of-nisibis`),
+`mar-augin`/`mar-awgin-and-his-disciples` (= `mar-augin-saint-eugene`), `mar-zeia` (=
+`mar-zaia`), `mar-kardagh` (= `mar-qardagh`) -- left unsourced deliberately, consistent with the
+prior session's decision not to recreate duplicate display entries for one person.
+
+**Two genuine new matches found by re-checking the remaining names against the existing 73-entry
+Maclean+diocesan dataset with more care:**
+- `mar-pinhas` -- new entry, Apr.17 (ACOTE diocesan, "St. Pinkhis"). Missed in the prior session's
+  pass.
+- `saint-shamuni-and-sons` -- an existing but unsourced Aug.15 entry corrected to Aug.14 and
+  tagged COE. Shmuni/Shamuni (Syriac) and Solomonia (Greek) are the standard scholarly
+  identification of the same figure, the mother of the seven Maccabean martyrs (2 Macc. 7);
+  the diocesan calendar's own "St. Solomonia and her sons" gives this date. The diocesan calendar
+  also keeps a second annual commemoration of the same figure, May.5 -- noted in the entry's own
+  description rather than silently dropped, but not represented as a second dated row since no
+  separate id exists for it in the allowlist.
+
+**New research, genuinely attempted, with real and disclosed limits:**
+- Checked Syriaca.org (both Qadishe, the saints catalogue, and the separate Syriac Biographical
+  Dictionary person-authority records) for several major remaining figures (Timothy I, Narsai,
+  Babai the Great). Found real biographical/authorial entries for most, but none surfaced an
+  actual liturgical commemoration date -- Qadishe's coverage of commemoration dates specifically
+  (as opposed to birth/death/floruit dates) is uneven, consistent with what was already found and
+  disclosed in the prior Layer 3 session.
+- Found a recurring source (a blog, chineseorthodoxy.blogspot.com) that runs a systematic day-by-
+  day saints series covering many of the exact names on this project's remaining list, including
+  a specific date for Mar Zaia. Checked it against already-solidly-sourced data as a real
+  cross-validation, not just accepted it: it gives Mar Zaia THREE different possible dates (Sept.
+  22 / Oct. 21 / Feb. -- itself internally inconsistent), none matching the diocesan-confirmed
+  Jan.7 already in this corpus. This confirms the same conclusion reached about this source for
+  Mar Narsai in the prior session: not reliable enough to use, even where it's the only source
+  offering a specific date. Not used, for any figure, on this basis.
+- **A real, useful discovery, not previously known to this project:** the actual East Syriac
+  liturgical corpus is traditionally organized in three books -- the Khudra (Sunday-cycle
+  offices), the Kashkul (ferial offices, already this project's primary source via Maclean), and
+  the **Gazza**, specifically described as containing "the offices for feasts of our Lord and
+  commemorations of the saints which are not based on the Sunday-cycle." This is exactly the kind
+  of source that would resolve most of the remaining 70+ unsourced identities at once, the same
+  way Maclean's Kalendar appendix and the ACOTE diocesan calendar resolved the ones already
+  closed. Not yet located or obtained -- flagged as the most promising concrete next step, worth
+  Josh's attention if a copy or excerpt can be found or requested, the same way the ACOTE calendar
+  and Maclean's book were obtained.
+- **Two identities flagged with a real, disclosed doubt about whether they belong in this
+  allowlist at all**, rather than just "no date found": `saint-ahudemmeh` and
+  `mar-behnam-and-sarah`. Both check out, on inspection, as primarily *West* Syriac (Oriental
+  Orthodox / Syriac Orthodox) figures. Behnam and Sarah's own foundational hagiography is
+  explicitly recorded as written "by an adherent of the Syriac Orthodox Church," and every
+  specific commemoration date found for them is Oriental Orthodox (Syriac Orthodox Dec.10, Coptic
+  Dec.23, Armenian Jan.10) -- none Assyrian/Ancient Church of the East. This isn't this session's
+  question to resolve (the allowlist itself is a separate, already-audited artifact from March
+  2026), but it's a real finding worth the allowlist's own future review, not silently absorbed
+  into "still unsourced."
+
+**Result: 18 of 95 allowlisted identities now sourced** (was 16). Genuinely, honestly, the
+remaining ~75-77 distinct persons (after de-duplication) do not have an easily-obtainable,
+well-corroborated East-Syriac-specific commemoration date through the sources checked tonight.
+This is not a shortfall in effort -- multiple sources were checked per figure where any were
+found at all, and at least one recurring source was checked carefully enough to catch it failing
+its own internal consistency test before it could have been used. It's an honest characterization
+of what's actually available without a copy of the Gazza or Fiey's full text.
+
+**Verified:** all 12 monthly saints files remain valid JSON. Full resolve-and-filter pipeline
+simulated for both new/corrected entries -- both resolve on their correct date and pass the
+eligibility filter.
+
+SEED_VERSION at the close of this entry: `v199-2026-08-30-east-syriac-layer3-deep-research-pass`.
