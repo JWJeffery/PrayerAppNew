@@ -8532,3 +8532,67 @@ new/corrected dates plus the corrected-away May.17 Andrew date -- every new date
 passes the eligibility filter; May.17 correctly resolves to nothing.
 
 SEED_VERSION at the close of this entry: `v200-2026-08-30-east-syriac-layer3-california-calendar-batch`.
+
+---
+
+## Session 2026-08-30 continued -- disclosure: the underlying fabrication in data/saints/ likely
+## extends beyond what the COE audit covered, into entries never tagged for any tradition. Flagged
+## precisely, not touched -- out of this session's COE-only scope. No SEED_VERSION change
+## (documentation only).
+
+Josh: "I thought you said these were all audited." Fair question, and the honest answer needed
+more precision than a quick reassurance.
+
+**What the original Layer 3 audit actually covered:** the 235 rows tagged `COE` at the time.
+That audit was real and complete for what it covered -- every one of those 235 had zero
+citations, many scattered across arbitrary dates, all fixed (11 kept with real sources, the rest
+stripped).
+
+**What surfaced tonight, working the California-calendar batch, was different in kind:**
+identities like `mar-pethion`, `mar-addai`, `mar-sabrisho` were already sitting in the shared
+`data/saints/` files at multiple dates -- but with **empty tag arrays, never tagged `COE` at
+all**. The original COE-only audit could not have found these; they were outside its scope by
+construction, not missed within it.
+
+**Quantified precisely, to avoid either understating or overstating this:** across all 12 monthly
+files (1,289 total rows), 90 identity ids appear more than once at different dates. Most of that
+90 is completely legitimate -- different traditions genuinely commemorate the same saint on
+different days, which is exactly what this shared file is designed to represent (e.g. `saint-
+matthias-the-apostle` at three different dates, each carrying real tradition tags: Feb.24 for
+ANG/LAT/EOR/OOR, Aug.9 for EOR/OOR, May.14 for LAT -- ordinary, correct cross-tradition variance,
+not a defect).
+
+**The real concern is narrower and precisely bounded: 20 identities are duplicated across
+multiple dates with *zero tags of any kind* on *any* occurrence** -- no legitimate "different
+traditions, different dates" explanation is available for an entry nobody has claimed for any
+tradition yet. This is the same fabrication signature already found and fixed in the COE-tagged
+subset, now visible in identities that happen to overlap with the Layer 3 allowlist but were never
+tagged COE:
+
+```
+commemoration-of-st-sawrisho-of-beth-garmi, friday-of-the-deceased, mar-abda,
+mar-addai-and-mar-mari, mar-awa, mar-babai-the-great (5 dates), mar-mari,
+mar-mari-synaxis, mar-narsai (5 dates), mar-papa-bar-aggai-see-foundation,
+mar-saba (3 dates), mar-shimun-bar-sabbae (3 dates, a duplicate id form of the
+already-corrected mar-shimon-bar-sabbae), mar-sliwa (3 dates), mar-yakob-of-nisibis,
+mar-yohannan (3 dates), mar-zeia (3 dates), martyrs-of-the-east, monday-of-great-lent,
+rogation-of-the-ninevites, st-mari-the-bishop
+```
+
+Several of these are figures this session already tried and failed to source (`mar-narsai`,
+`mar-babai-the-great`) -- this confirms, rather than contradicts, the earlier finding that no
+real date is available for them through the sources checked; it does not mean a real date was
+sitting in the corpus all along and was missed.
+
+**Not touched, deliberately, and disclosed rather than silently left implicit:** whether this same
+untagged-scattering pattern extends further, into identities that happen to carry a legitimate
+`ANG`/`LAT`/`EOR`/`OOR` tag at one date and could ALSO be scattered incorrectly at others under
+that same tag, is a real open question this session did not check and was not asked to check.
+Josh's instruction has been consistently COE-only; this entry flags the shape of the wider
+problem for whoever eventually audits those traditions, without taking any action on data outside
+this session's scope. If the same generation process produced all of `data/saints/`, as the file's
+own scale and pattern suggest, the same defect likely exists there too -- but that is a finding to
+flag, not a scope to expand into unasked.
+
+No code or data changes made in this entry -- documentation only, recording an honest correction
+to how the earlier "audited" claim should be understood.

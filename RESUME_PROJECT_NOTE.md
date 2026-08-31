@@ -53,6 +53,18 @@ May.17 date.
 work, now with a proven source type (more diocesan calendars: Canada, Australia, India, Iraq) to
 pursue rather than raw manuscript research.
 
+**A correction, added after Josh asked "I thought you said these were all audited":** the
+original Layer 3 audit covered the 235 rows tagged `COE` at the time -- real and complete for
+that scope. Working the California-calendar batch surfaced a different thing: identities already
+sitting in `data/saints/` at multiple dates with **empty tags, never tagged COE at all**, so
+invisible to that audit by construction. Quantified precisely: of 1,289 total rows, 90 identity
+ids repeat at different dates -- most legitimately (real cross-tradition calendar variance), but
+**20 repeat with zero tags of any kind on any occurrence**, the same unsourced-scattering pattern
+already found and fixed in the COE-tagged subset. Not touched -- flagged for whoever eventually
+audits the other traditions, since the same generation process likely produced the same defect
+there too, but that's outside this session's COE-only scope. Full list in the ledger entry of the
+same name.
+
 ---
 
 ## Session 2026-08-30 continued -- deep research pass on the remaining 79 unsourced Layer 3
