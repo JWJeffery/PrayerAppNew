@@ -1199,6 +1199,24 @@
     "name": "St. Andrew the Apostle",
     "description": "One of the Twelve Apostles. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
     "type": "saint",
+    "tags": []
+  },
+  {
+    "id": "mar-addai",
+    "day": "May 3",
+    "name": "Mar Addai",
+    "description": "Addai (Thaddeus), one of the Seventy, apostle to Edessa and traditional founder of the East Syriac church. Commemorated jointly with Mar Daniel the Physician. Confirmed at this date by two independent sources giving the same day and the same companion under different name-forms: the ACOTE Diocese of Western Europe 2026 calendar ('St. Thaddeus the Apostle and St. Daniel the Physician') and the ACOE Diocese of California 2026 calendar ('Mar Addai the Apostle of the East, and of Mar Daniel the Physician') -- confirming Addai and Thaddeus are the same figure in this tradition's calendar. The identity id was previously scattered across four different unsourced dates (Jul.2, Aug.3, Sept.6, and a separate saint-addai-the-apostle entry at May.1) with no citation for any of them -- all stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-abraham-of-kashkar",
+    "day": "May 2",
+    "name": "Mar Abraham Of Kashkar",
+    "description": "Abraham of Kashkar, founder of the Great Monastery on Mt. Izla, foundational figure for East Syriac monasticism. Source: the ACOE Diocese of California 2026 calendar ('Mar Abraham of Kashkar'). The identity id was previously scattered across two different unsourced dates (Jul.12, Nov.24) with no citation for either -- both stripped.",
+    "type": "saint",
     "tags": [
       "COE"
     ]

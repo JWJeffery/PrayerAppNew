@@ -1098,5 +1098,15 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "saints-peter-and-paul-apostles",
+    "day": "July 29",
+    "name": "Saints Peter And Paul Apostles",
+    "description": "SS. Peter and Paul. Source: Maclean 1894 (p.282-283, Kashkul MS list) and the ACOTE Diocese of Western Europe 2026 calendar, both independently giving this date -- already gathered in this project's own earlier research but never actually entered into the corpus until now. Distinct from the movable pre-Fast Friday joint commemoration of Peter&Paul with the Four Evangelists (deliberately not sourced here, since that date shifts year to year with the Denkha season length -- see the pre-Fast fold-schedule work).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

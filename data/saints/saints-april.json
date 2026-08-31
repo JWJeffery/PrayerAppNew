@@ -519,5 +519,15 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-elias",
+    "day": "April 24",
+    "name": "Mar Elias",
+    "description": "Read as Mar Elia III, Catholicos-Patriarch (d. 1190, known as Abu Halim, author of a liturgical prayer collection bearing his name) rather than the Old Testament prophet Elijah, since this allowlist already carries a separate id (prophet-elias-elijah, sourced Oct.16) for that figure specifically. Source: the ACOE Diocese of California 2026 calendar ('St. George the Triumphant Martyr, and of Mar Elia III Catholicos-Patriarch, known as Abu-Khalim'). The identity id was previously at an unsourced December 17 with no citation -- stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

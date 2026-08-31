@@ -8437,3 +8437,98 @@ simulated for both new/corrected entries -- both resolve on their correct date a
 eligibility filter.
 
 SEED_VERSION at the close of this entry: `v199-2026-08-30-east-syriac-layer3-deep-research-pass`.
+
+---
+
+## Session 2026-08-30 continued -- Josh pushed back correctly on two points (Fiey/facts-vs-
+## copyright applies to the Gazza too; "how does the church know who to commemorate" pointed at
+## the wrong document). Found the actual printed Khudra (real, on archive.org, but in
+## untranslatable Syriac script) and, more usefully, the ACOE Diocese of California's full 2026
+## calendar -- English, complete, and far larger than the one calendar this project already had.
+## 10 more Layer 3 identities sourced plus one real correction (28 total, was 18), and the same
+## scattered-date fabrication pattern found and fixed across a fresh batch of names. SEED_VERSION
+## v199 -> v200.
+
+Josh corrected two things this session, both fairly.
+
+**First:** he pointed out I had already agreed, for Fiey's book, that facts (names, dates) aren't
+copyrighted even when the compiling work is -- and that the same principle applies to the Gazza
+manuscripts, which are centuries older than any copyright term regardless. My hesitation there
+wasn't really a copyright question at all; the actual constraint is narrower (HMML's terms
+restrict redistributing their own digital photographs, not the facts recorded in them). Provided
+the vHMML registration link (https://www.vhmml.org/registration, free, one-time) and specific
+manuscript shelfmarks already found (Irbil MS 40-42, explicitly titled "the Book of the Treasure
+of all the Commemorations and the Feasts of our Lord"; Trichur MS 13, containing the Behnam and
+Sarah story within an East-Syriac-lineage manuscript, which also softens the earlier tradition-fit
+doubt about that identity).
+
+**Second, and more productive:** Josh asked how the church actually knows who to commemorate,
+correctly sensing this shouldn't be as hard as it was turning out to be. Found the real printed
+Khudra (T. Darmo, 1960-62) directly on archive.org -- a genuine primary source, freely available.
+But it's Modern Syriac script; the item's own OCR metadata detected the document's language as
+Chinese at 100% confidence, confirming the automated text layer is unusable, and reading the raw
+page images reliably is not something this session can do without real risk of misreading a
+script it doesn't have confident command of -- the same standard already applied to declining a
+Syriac Royal Anthem machine-translation without explicit, informed sign-off.
+
+**The actually useful answer to Josh's question:** no parish uses the raw Khudra/Gazza day to day
+-- they use a distilled annual calendar, exactly like the one already in hand from the ACOTE
+Diocese of Western Europe. That pointed straight at the fix: get more of them. Found the ACOE
+Diocese of California's full 2026 calendar (acoecalifornia.org/files/2026cal.pdf) -- English,
+complete, and substantially larger than the Western Europe one, including specific named figures
+(the Four Evangelists by name, Addai paired with Daniel the Physician, Mar Elia III, multiple
+distinct historical Abrahams) the first calendar didn't give.
+
+**Cross-referenced the California calendar against the remaining unsourced allowlist, excluding
+movable pre-Fast Friday commemorations per the established precedent** (the same reasoning already
+applied to the Western Europe calendar's own Jan.16/23/30 entries -- dates that shift year to year
+with the Denkha season length aren't safe to fix-date in this corpus's flat month/day model).
+
+**Found the same scattered-date fabrication signature in a fresh batch of names, and fixed it the
+same way as before:** cross-checking the newly-confirmed dates against the corpus turned up
+`mar-pethion` sitting at five different unsourced dates, `mar-addai` at four, `mar-sabrisho` and
+`mar-mushi` at three each, `mar-abraham-of-kashkar` at two -- none matching the two-source-
+confirmed dates now in hand. All wrong occurrences' COE tags stripped (none had actually been
+tagged COE yet, so no visible regression, just latent wrong data corrected before it could ever
+display); the correct date now holds the citation.
+
+**Ten new/corrected sourcings, several cross-confirmed by two or three independent sources
+rather than one:**
+- `mar-pethion` -- Oct.25, confirmed by Maclean 1894 *and* both diocesan calendars (three-way)
+- `mar-addai` -- May.3, confirmed by both diocesan calendars, which also resolves the earlier
+  open question of whether Addai and Thaddeus are the same figure in this tradition (they are --
+  both give the same date, same companion, Daniel the Physician, under the two different names)
+- `mar-sabrisho` -- Oct.4, confirmed by both diocesan calendars
+- `prophet-elias-elijah` -- Oct.16, confirmed by both diocesan calendars
+- `mar-mushi` -- Oct.18, single-sourced (California), read as the Old Testament Moses rather than
+  a later monastic of the same name, disclosed as the best-supported but not independently
+  cross-confirmed reading
+- `mar-abraham-of-kashkar` -- May.2, single-sourced (California)
+- `mar-abraham` -- Dec.18 ("Doctor of the School of Nisibis"), kept deliberately distinct from
+  `mar-abraham-of-kashkar` rather than conflated -- different institutions named in each source
+- `mar-elias` -- Apr.24, read as Mar Elia III Catholicos-Patriarch (d.1190, "Abu Halim") rather
+  than the Old Testament prophet, since a separate id already exists for that figure
+- `saint-james-the-brother-of-the-lord` -- Jan.2, the Church of the East's own distinct date for
+  this figure, left alongside (not replacing) the existing Apr.30/Oct.23 dates already in this
+  corpus for other traditions
+- `saints-peter-and-paul-apostles` -- Jul.29, confirmed by Maclean and the Western Europe
+  calendar, gathered in the very first Layer 3 research pass but never actually entered into the
+  corpus until now
+
+**One real correction, not just an addition:** `saint-andrew-the-apostle`'s COE tag moved from
+May.17 (the only date the original, single-source sourcing pass had found) to Nov.30, once a
+second entry for the same identity turned up already present in the corpus at Nov.30 for other
+traditions -- the near-universal date across Christian traditions generally, and a stronger,
+independently corroborated date than the one originally sourced.
+
+**Result: 28 of 95 allowlisted identities now sourced** (was 18), a 55% increase in a single
+targeted pass once the right kind of source was found. Confirms Josh's instinct that this
+shouldn't have been as hard as the earlier raw-manuscript research made it look -- it wasn't the
+information that was scarce, it was the source type.
+
+**Verified:** all 12 monthly saints files remain valid JSON. Zero duplicate (id, date) pairs among
+sourced entries, confirmed programmatically. Full resolve-and-filter pipeline simulated for all 10
+new/corrected dates plus the corrected-away May.17 Andrew date -- every new date resolves and
+passes the eligibility filter; May.17 correctly resolves to nothing.
+
+SEED_VERSION at the close of this entry: `v200-2026-08-30-east-syriac-layer3-california-calendar-batch`.

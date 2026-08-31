@@ -1094,5 +1094,45 @@
     "tags": [
       "LAT"
     ]
+  },
+  {
+    "id": "mar-pethion",
+    "day": "October 25",
+    "name": "Mar Pethion",
+    "description": "East Syriac martyr, opponent of the Magi, per Maclean's own description. Confirmed at this date by three independent sources: Maclean 1894 ('Raban Pithiun, martyr, opponent of the Magi'), the ACOTE Diocese of Western Europe 2026 calendar ('St. Pithyon'), and the ACOE Diocese of California 2026 calendar ('Mar Rabban Pethyon the Martyr, with Mar Tahmazgard of Beth Slokh'). The identity id was previously scattered across five different unsourced dates (Aug.2, Jul.8, Sept.28, Nov.15, Dec.1) with no citation for any of them -- all stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-sabrisho",
+    "day": "October 4",
+    "name": "Mar Sabrisho",
+    "description": "Sabrisho of Beth Qoqa (or Beth Garmai). Confirmed at this date by two independent sources: the ACOTE Diocese of Western Europe 2026 calendar ('St. Sawrisho of Beth Qoqa, St. Steven, St. Khnana') and the ACOE Diocese of California 2026 calendar ('Mar Sabrisho of Bet-Qoqa'). The identity id was previously scattered across three different unsourced dates (Jul.18, Aug.20, Sept.12) with no citation for any of them -- all stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "prophet-elias-elijah",
+    "day": "October 16",
+    "name": "Prophet Elias Elijah",
+    "description": "The Old Testament prophet Elijah the Tishbite. Confirmed at this date by two independent sources: the ACOTE Diocese of Western Europe 2026 calendar ('St. Elijah the Tishbite') and the ACOE Diocese of California 2026 calendar ('Prophet Mar Elijah the Teshbite'). The identity id previously carried other traditions' tags (EOR, OOR) at July 20 with no COE tag or citation -- COE not added there, since the Church of the East's own calendar gives a different date.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-mushi",
+    "day": "October 18",
+    "name": "Mar Mushi",
+    "description": "The Old Testament figure Moses -- 'the Firstborn of the Prophets,' per the ACOE Diocese of California 2026 calendar, the only source found giving this identity a specific commemoration day. Disclosed rather than asserted with full confidence: the allowlist also carries other, more specific historical 'Mar Moses' figures elsewhere (of Chalek, of Beth Sayyare) not connected to this generic id, and Mushi/Mushe is the standard Syriac form of Moses -- this reading (the biblical Moses, not a later monastic of the same name) is the best-supported one available but not independently cross-confirmed by a second source. The identity id was previously scattered across three different unsourced dates (Jul.19, Aug.28, Sept.13) with no citation for any of them -- all stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

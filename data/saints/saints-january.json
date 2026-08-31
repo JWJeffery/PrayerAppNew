@@ -1246,5 +1246,15 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "saint-james-the-brother-of-the-lord",
+    "day": "January 2",
+    "name": "Saint James The Brother Of The Lord",
+    "description": "James, brother of the Lord, first Bishop of Jerusalem -- commemorated jointly with the Blessed Virgin Mary. Source: the ACOE Diocese of California 2026 calendar. This is the Church of the East's own distinct commemoration date for this figure, different from (and not intended to replace) the separate Apr.30 and Oct.23 dates already present in this corpus for other traditions -- different traditions commemorating the same figure on different days is normal practice throughout this corpus, not an inconsistency to resolve.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

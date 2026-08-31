@@ -1162,5 +1162,15 @@
     "tags": [
       "ANG"
     ]
+  },
+  {
+    "id": "mar-abraham",
+    "day": "December 18",
+    "name": "Mar Abraham",
+    "description": "Abraham, Doctor of the School of Nisibis -- per the ACOE Diocese of California 2026 calendar, the only source found giving this specific identity a date. Kept deliberately distinct from mar-abraham-of-kashkar (a different historical Abraham, founder of the Great Monastery, sourced separately at May 2) rather than conflated, since the two calendar entries name different institutions (the School of Nisibis vs. the Monastery of Kashkar). The identity id was previously at an unsourced August 23 with no citation -- stripped.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

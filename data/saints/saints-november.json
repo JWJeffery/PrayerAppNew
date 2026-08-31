@@ -1118,13 +1118,14 @@
     "id": "saint-andrew-the-apostle",
     "day": "November 30",
     "name": "Saint Andrew the Apostle",
-    "description": "The First-Called Apostle.",
+    "description": "One of the Twelve Apostles. CORRECTED 2026-08-30: the ACOE Diocese of California 2026 calendar gives Nov.30 for this figure -- the near-universal date across Christian traditions generally, and a stronger, more independently corroborated date than the May.17 date this project had originally sourced from the ACOTE Diocese of Western Europe 2026 calendar alone. COE tag moved from the May.17 entry to this one.",
     "type": "apostle",
     "tags": [
       "ANG",
       "LAT",
       "EOR",
-      "OOR"
+      "OOR",
+      "COE"
     ]
   },
   {

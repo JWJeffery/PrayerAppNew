@@ -1,5 +1,60 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- found the ACOE Diocese of California's full 2026 calendar
+## after Josh correctly pushed back on two points. 10 more Layer 3 identities sourced plus one
+## real correction (28 total, was 18). SEED_VERSION v199 -> v200. Read this entry, then the
+## v199/v198/v197/v196/v195/v194/v193/v192/v191/v190/v189/v188 entries below it, then the
+## CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh corrected two things, both fairly.
+
+**First:** the facts-not-copyright principle already agreed for Fiey's book applies to the Gazza
+manuscripts too -- centuries older than any copyright term regardless. The real constraint is
+narrower: HMML's terms restrict redistributing their own digital photographs, not the facts
+recorded in them. Provided the vHMML registration link (vhmml.org/registration, free) and specific
+manuscript shelfmarks already found.
+
+**Second, more productive:** Josh asked how the church actually knows who to commemorate,
+correctly sensing this shouldn't be this hard. Found the real printed Khudra (1960-62) on
+archive.org -- genuine, but Modern Syriac script; its own OCR detected the document's language as
+Chinese at 100% confidence, confirming the text layer is unusable, and reading raw page images
+isn't something to attempt without real risk of misreading a script not confidently commanded.
+
+**The actually useful answer:** no parish uses the raw Khudra/Gazza day to day -- they use a
+distilled annual calendar, like the one already in hand. Found the **ACOE Diocese of California's
+full 2026 calendar** -- English, complete, substantially larger than the Western Europe one.
+
+**Cross-referenced against the remaining unsourced allowlist, excluding movable pre-Fast Friday
+commemorations** per established precedent. **Found the same scattered-date fabrication signature
+in a fresh batch of names**: `mar-pethion` at five unsourced dates, `mar-addai` at four,
+`mar-sabrisho`/`mar-mushi` at three each, `mar-abraham-of-kashkar` at two -- none matching the
+newly two-source-confirmed dates. All wrong occurrences stripped.
+
+**Ten new/corrected sourcings, several cross-confirmed by two or three sources:** `mar-pethion`
+(Oct.25, three-way), `mar-addai` (May.3, also resolving whether Addai=Thaddeus in this tradition --
+yes), `mar-sabrisho` (Oct.4), `prophet-elias-elijah` (Oct.16), `mar-mushi` (Oct.18, disclosed as
+best-supported not cross-confirmed), `mar-abraham-of-kashkar` (May.2), `mar-abraham` (Dec.18, kept
+distinct from -of-kashkar), `mar-elias` (Apr.24, Elia III not the OT prophet), `saint-james-the-
+brother-of-the-lord` (Jan.2), `saints-peter-and-paul-apostles` (Jul.29, gathered in the very first
+pass but never entered until now).
+
+**One real correction:** `saint-andrew-the-apostle` moved from May.17 to Nov.30 -- the
+near-universal cross-tradition date, once a second existing entry turned up in the corpus.
+
+**Result: 28 of 95 sourced** (was 18), a 55% jump in one pass once the right source type was
+found -- confirming Josh's instinct that this was a source-type problem, not an information-
+scarcity one.
+
+**Verified:** all 12 monthly saints files valid JSON, zero duplicate (id, date) pairs, full
+resolve-and-filter pipeline simulated for all 10 new/corrected dates plus the corrected-away
+May.17 date.
+
+**Open items, updated:** 67 of 95 Layer 3 identities remain unsourced -- real, bounded future
+work, now with a proven source type (more diocesan calendars: Canada, Australia, India, Iraq) to
+pursue rather than raw manuscript research.
+
+---
+
 ## Session 2026-08-30 continued -- deep research pass on the remaining 79 unsourced Layer 3
 ## identities, at Josh's request. Two more sourced (18 total, was 16). A real named source
 ## discovered (the Gazza), two identities flagged with a real tradition-fit doubt, and a recurring
