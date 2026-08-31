@@ -1,5 +1,54 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- Book of Needs access built out to the full eight-role,
+## order-aware ladder, after researching the major/minor-order distinction Josh asked about.
+## Closes a real access-control gap the three-value binary had. SEED_VERSION v197 -> v198. Read
+## this entry, then the v197/v196/v195/v194/v193/v192/v191/v190/v189/v188 entries below it, then
+## the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "Most traditions have viewed below sub-deacon as not fully ordained. Let us research this
+in the tradition and then make a decision." Researched before building.
+
+**Confirmed, generally and for the Church of the East specifically:** major orders (bishop,
+priest, deacon) are conferred by cheirotonia, within the altar during the Divine Liturgy. Minor
+orders (subdeacon, reader) by cheirothesia, a blessing outside the Liturgy and the altar -- a
+subdeacon "is not ordained during Divine Liturgy" and "never [assists with] the administration of
+the sacraments." The Catholic Encyclopedia's East Syrian Rite account confirms this ladder; a
+source specifically on the Assyrian Church of the East confirms subdeacon is "a minor order...
+ranking below the deacon and above the reader." Full sourcing now in `documentation/book-of-
+needs-role-access-governance.json`'s new `majorOrderClassification` block.
+
+**A real gap found while checking the old binary against this research:** a self-identified
+"clergy" deacon (a real major order, but not a priest) would see every priest-tier item under the
+old system -- directly violating this project's own pre-existing principle that subdeacon access
+must not unlock priestly material. The binary had no way to express the distinction; the new
+ladder does.
+
+**Built:** governance doc's `majorOrderClassification`/`roleMajorOrderMap`. `js/office-ui.js`'s
+`UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES` expanded 3->9 with a new rank-order table (`monastic` at
+rank 0 alongside `lay` -- a state of life, not an ordination rank; `research-reference` at the
+ceiling). `js/prayers.js`'s binary Set replaced with a per-prayer minimum-role Map and rank
+comparison. `index.html`'s role select expanded to all 9 real options.
+
+**A real backward-compatibility issue found and fixed before it could silently break existing
+users:** a previously-saved `ministryRole:'clergy'` would have hit the new value set's rejection
+check and been silently reset to `'lay'`, quietly taking away access the user had already granted
+themselves. Added an explicit migration: `'clergy'` -> `'priest'`, preserving exactly what a
+migrated user could already see.
+
+**Verified:** governance JSON valid, `node --check` passes on both touched files, `index.html`
+spot-checked. The actual gating logic extracted and run in isolation across all 9 roles x all 13
+gated prayers -- confirmed consistent, not spot-checked. The motivating fix (deacon no longer
+sees priest-tier material) and the monastic-alone-is-not-ordination case both directly confirmed.
+Migration path simulated against representative inputs, all correct.
+
+**Open items, updated:** everything from the v187 list, the Layer 3 expansion, the ACOE/ACE work,
+and this Book of Needs ladder are all done. Genuinely remaining: the rest of the ~79 unsourced
+Layer 3 identities (dedicated future research). Royal Anthem sourcing status not repeated here per
+Josh's standing instruction not to surface licensing questions in "what remains" framing.
+
+---
+
 ## Session 2026-08-30 continued -- ACOE/Ancient Church of the East split built into the entry
 ## flow. Default Easter reckoning swapped to Gregorian (real ACOE practice since 1964), Ancient
 ## Church of the East's Julian reckoning as the labeled alternative. SEED_VERSION v196 -> v197.

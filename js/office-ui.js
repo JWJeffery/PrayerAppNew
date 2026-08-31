@@ -669,22 +669,47 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
-// Self-identified role, used to gate Book of Needs content this project's own
-// governance says shouldn't reach a default lay view (priestly, sacramental,
-// or administered-by-one-person-over-another material) -- see
-// documentation/book-of-needs-role-access-governance.json. Deliberately a
-// coarse three-value honor-system field, not the full ten-tier ladder that
-// document describes: 'lay' (default) sees only content with no role
-// requirement; 'clergy' is a self-identified "I am ordained or monastic"
-// declaration; 'all' is a blunt no-questions-asked override, for anyone who
-// wants everything regardless of role, matching how bookOfNeedsScope's own
-// 'universal' option already works as an unchallenged override elsewhere in
-// this same profile. 'clergy' and 'all' are functionally equivalent for
-// content gating today (both satisfy a 'clergy'-tier requirement) -- kept as
-// two distinct values so the UI can honestly distinguish "I attest I'm
-// ordained" from "just show me everything," per Josh's own framing of this
-// feature (2026-08-30) rather than collapsing them into one meaning.
-const UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES = new Set(['lay', 'clergy', 'all']);
+// Self-identified liturgical role, used to gate Book of Needs content this
+// project's own governance says shouldn't reach a default lay view
+// (priestly, sacramental, or administered-by-one-person-over-another
+// material) -- see documentation/book-of-needs-role-access-governance.json.
+//
+// UPDATED 2026-08-30: replaced the original three-value (lay/clergy/all)
+// field with the full eight-role, order-aware ladder that governance
+// document specifies, after researching and confirming (with Josh) that
+// reader and subdeacon are minor orders -- not fully/sacramentally
+// ordained -- while deacon, priest, and bishop are the major orders, both
+// generally in Eastern Christian tradition and specifically for the Church
+// of the East. The old binary let a self-identified "clergy" deacon or
+// subdeacon see full priest-tier material, which directly violated this
+// same governance document's own stated principle ("Subdeacon access must
+// not unlock deaconal, priestly, or episcopal material merely because the
+// user is not a layperson") -- this ladder closes that gap.
+//
+// UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER gives each role's rank on the major-
+// order ladder for comparison in js/prayers.js: higher-numbered roles see
+// everything lower-numbered roles see, plus their own tier. 'monastic' is
+// deliberately NOT placed on this linear ladder -- it's a state of life, not
+// an ordination rank (a monastic may be lay or separately ordained), so a
+// self-identified monastic is treated at the layperson rank (0) for
+// major-order-gated material rather than assumed to be a priest. 'all' and
+// 'research-reference' both see everything (research-reference is
+// semantically distinct -- study access, not an attestation of fitness to
+// perform the rite -- but not narrower in what it reveals).
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES = new Set([
+    'lay', 'reader', 'subdeacon', 'deacon', 'priest', 'bishop', 'monastic', 'research-reference', 'all'
+]);
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER = Object.freeze({
+    'lay': 0,
+    'reader': 1,
+    'subdeacon': 2,
+    'deacon': 3,
+    'priest': 4,
+    'bishop': 5,
+    'monastic': 0,       // state of life, not an ordination rank -- see note above
+    'research-reference': 5, // sees everything, same ceiling as 'all'/'bishop'
+    'all': 5,             // blunt override, sees everything
+});
 
 
 function isUniversalOfficeAdvancedToolsEnabled() {
@@ -745,6 +770,19 @@ function normalizeUserProfileDefaults(raw) {
 
     if (!UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(profile.bookOfNeedsScope)) {
         profile.bookOfNeedsScope = 'tradition';
+    }
+
+    // Migrate the old three-value field (lay/clergy/all), replaced 2026-08-30
+    // by the eight-role ladder above, so existing saved preferences aren't
+    // silently reset to 'lay' and existing access silently taken away.
+    // 'clergy' maps to 'priest': every prayer 'clergy' used to unlock was,
+    // on inspection, priest-tier material (see js/prayers.js's own
+    // BOOK_OF_NEEDS_OPTION_MINIMUM_TIER comment) -- so this preserves exactly
+    // what a migrated user could already see, rather than guessing their
+    // actual rank or dropping them to lay. They can pick a more precise
+    // role afterward if 'priest' overstates their actual order.
+    if (profile.ministryRole === 'clergy') {
+        profile.ministryRole = 'priest';
     }
 
     if (!UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES.has(profile.ministryRole)) {
@@ -1005,11 +1043,18 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             ? 'Book of Needs office access shows all prayers'
             : 'Book of Needs office access stays tradition-filtered';
 
-        const roleLabel = normalized.ministryRole === 'lay'
-            ? 'showing lay-appropriate Book of Needs content only'
-            : normalized.ministryRole === 'clergy'
-                ? 'showing content appropriate for ordained/monastic use'
-                : 'showing all Book of Needs content regardless of role';
+        const roleLabels = {
+            'lay':                'showing lay-appropriate Book of Needs content only',
+            'reader':             "showing lay content plus material for a reader's own use (a minor order -- not priestly or diaconal material)",
+            'subdeacon':          "showing lay content plus material for a subdeacon's own use (a minor order -- not priestly or diaconal material)",
+            'deacon':             'showing content appropriate for a deacon (a major order -- not priestly or episcopal material)',
+            'priest':             'showing content appropriate for a priest (not episcopal-only material)',
+            'bishop':             'showing all role-gated content, including episcopal material',
+            'monastic':           'showing lay-appropriate Book of Needs content, plus material for monastic use',
+            'research-reference': 'showing all role-gated content for study and reference, not as an attestation of fitness to perform it',
+            'all':                'showing all Book of Needs content regardless of role',
+        };
+        const roleLabel = roleLabels[normalized.ministryRole] || roleLabels['lay'];
 
         summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}.`;
     }

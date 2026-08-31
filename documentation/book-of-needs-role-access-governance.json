@@ -32,7 +32,25 @@
       "bishop",
       "monastic",
       "research-reference"
-    ]
+    ],
+    "majorOrderClassification": {
+      "researched": "2026-08-30",
+      "finding": "Reader and subdeacon are minor orders, not fully/sacramentally ordained. Deacon, priest, and bishop are the major orders. This holds both generally in Eastern Christian tradition and specifically for the Church of the East.",
+      "generalBasis": "Major orders (bishop, priest, deacon) are conferred by cheirotonia -- hands laid on within the altar, during the Divine Liturgy itself, a sacramental ordination. Minor orders (subdeacon, reader) are conferred by cheirothesia -- a blessing given outside the Liturgy and outside the altar. A subdeacon is not ordained during the Divine Liturgy and never administers the sacraments.",
+      "churchOfTheEastBasis": "The Catholic Encyclopedia's account of the East Syrian Rite gives the ladder as reader (Qaruya), subdeacon (Hiupathiaqna), deacon (Shamasha), priest (Qashisha), archdeacon (Arkidhyaquna), bishop (Apisqupa) -- archdeacon explicitly noted as not a separate order above the priesthood, only 'a degree of the presbyterate.' A source specifically on the Assyrian Church of the East states the subdeacon 'occupies a position as a minor order... ranking below the deacon and above the reader.'",
+      "roleMajorOrderMap": {
+        "layperson": false,
+        "reader": false,
+        "subdeacon": false,
+        "deacon": true,
+        "priest": true,
+        "bishop": true,
+        "monastic": null,
+        "research-reference": null
+      },
+      "monasticNote": "Monastic is a state of life, not a rank on the ordination ladder -- a monastic may be lay or ordained (a 'monastic priest' is common). Major-order status for a monastic user therefore depends on whether they are also separately ordained, not on the monastic identity alone. Absent further information, a self-identified monastic is treated the same as a layperson for major-order-gated material -- a monastic is not assumed to be a priest.",
+      "researchReferenceNote": "Research/reference access is not a rank at all -- it exposes material for study without implying permission or appropriateness for liturgical performance, per this document's own existing principle above. It is functionally equivalent to the top of the ladder for display purposes, distinct in meaning, not in access breadth."
+    }
   },
   "roleAccessPrinciples": [
     "Role access is order-specific. Reader, subdeacon, deacon, priest, and bishop access are not interchangeable.",
@@ -85,5 +103,5 @@
     "Silent or secret prayers may be included when source-governed and role-appropriate, but must not be surfaced as general lay devotional prayers."
   ],
   "relatedDecision": "Some Eastern Book of Needs/Euchologion material is not appropriate for lay self-use. The app may include such material in the corpus, but display must be role-aware and tradition-honest.",
-  "implementationStatus2026_08_30": "A first, deliberately coarser implementation of this document's role-access vision now exists, added 2026-08-30 at Josh's direction: profile.ministryRole (js/office-ui.js) is a three-value field (lay / clergy / all), not the eight-role order-specific ladder described above (layperson/reader/subdeacon/deacon/priest/bishop/monastic/research-reference), and js/prayers.js's BOOK_OF_NEEDS_OPTION_CLERGY_TIER gates individual prayers as either open or 'needs clergy or all' -- a binary, not the accessTiers list this document defines. This is a real step toward the design here, not a substitute for it -- the order-specific distinctions this document insists on (reader access must not unlock deaconal material, etc.) are not yet enforced anywhere. See AUDIT_GOVERNANCE_LEDGER.md's 2026-08-30 entry and the coe:book-of-needs:ministry-role-setting-and-full-wiring dashboard row for full detail."
+  "implementationStatus2026_08_30": "SUPERSEDED, same day: the coarser three-value profile.ministryRole (lay/clergy/all) described below was replaced with the full eight-role, order-aware ladder this document specifies, after Josh confirmed the majorOrderClassification research above. js/office-ui.js's profile.ministryRole now accepts all eight roleDiscernment.easternChristianRoles values; js/prayers.js's BOOK_OF_NEEDS_OPTION_CLERGY_TIER (a binary Set) was replaced with BOOK_OF_NEEDS_OPTION_MINIMUM_TIER (a per-prayer minimum-role map) and rank-based comparison logic, so a deacon or subdeacon no longer sees priest-tier material merely for self-identifying as clergy -- closing the exact gap roleAccessPrinciples above warned against. See AUDIT_GOVERNANCE_LEDGER.md's 2026-08-30 entry for full detail. Historical note, no longer current: \"A first, deliberately coarser implementation of this document's role-access vision now exists, added 2026-08-30 at Josh's direction: profile.ministryRole (js/office-ui.js) is a three-value field (lay / clergy / all)...\""
 }

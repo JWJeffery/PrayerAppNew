@@ -8272,3 +8272,86 @@ same East Syriac liturgy. The calendar is the whole of the concrete difference t
 represent, and it's now built and labeled.
 
 SEED_VERSION at the close of this entry: `v197-2026-08-30-east-syriac-acoe-ace-entry-flow-built`.
+
+---
+
+## Session 2026-08-30 continued -- Book of Needs access built out to the full eight-role,
+## order-aware ladder, after researching and confirming the major/minor-order distinction Josh
+## asked about. Closes a real access-control gap the three-value binary had. SEED_VERSION v197 ->
+## v198.
+
+Josh: "Most traditions have viewed below sub-deacon as not fully ordained. Let us research this
+in the tradition and then make a decision." Researched before building anything.
+
+**Confirmed, both generally and specifically for the Church of the East:** major orders (bishop,
+priest, deacon) are conferred by cheirotonia -- hands laid on within the altar, during the Divine
+Liturgy itself. Minor orders (subdeacon, reader) are conferred by cheirothesia -- a blessing given
+outside the Liturgy, outside the altar; a subdeacon "is not ordained during Divine Liturgy" and
+"never [assists with] the administration of the sacraments." The Catholic Encyclopedia's own
+account of the East Syrian Rite lists reader, subdeacon, deacon, priest, archdeacon, bishop --
+archdeacon explicitly noted as not a separate order, only "a degree of the presbyterate." A source
+specifically on the Assyrian Church of the East confirms the subdeacon "occupies a position as a
+minor order... ranking below the deacon and above the reader." Recorded in full, with sources, in
+`documentation/book-of-needs-role-access-governance.json`'s new `majorOrderClassification` block.
+
+**A real, concrete gap this closes, found while checking the existing binary against the
+research:** under the old three-value `profile.ministryRole` (lay/clergy/all), a self-identified
+"clergy" DEACON -- a real major order, but not a priest -- would see every priest-tier Book of
+Needs item, including sacramental and exorcistic material proper to the priesthood specifically.
+That directly violates this same governance document's own existing principle, written before
+today's session: "Subdeacon access must not unlock deaconal, priestly, or episcopal material
+merely because the user is not a layperson." The binary had no way to express that distinction;
+the ladder does.
+
+**Checked each of the 13 currently-gated prayers against its own text before retagging, not
+re-guessed from the old category names:** all 13 turned out to be priest-tier material on
+inspection -- none is deacon-, subdeacon-, or reader-specific. Worth noting one nuance caught in
+the process: `coe-maclean-prayer-for-a-reader`'s title names a reader, but its text is a blessing
+spoken OVER a reader by whoever presides -- the minimum rank required to *say* a prayer and who it
+concerns are different questions, checked separately for each entry rather than assumed to match.
+
+**Built:**
+- `documentation/book-of-needs-role-access-governance.json`: new `majorOrderClassification` block
+  with the full research and a `roleMajorOrderMap` (deacon/priest/bishop: true; layperson/reader/
+  subdeacon: false; monastic/research-reference: null, explained below). Superseded the prior
+  `implementationStatus2026_08_30` note.
+- `js/office-ui.js`: `UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES` expanded from 3 to the full 9 values
+  (the 8 roles the governance document names, plus the existing `all` override). New
+  `UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER` rank table for comparison -- `monastic` deliberately
+  placed at rank 0 alongside `lay`, since monastic is a state of life, not an ordination rank (a
+  monastic may be lay or separately ordained; a self-identified monastic is not assumed to be a
+  priest). `research-reference` placed at the ceiling (rank 5, same as `bishop`/`all`) since it
+  sees everything for study purposes without being an attestation of fitness to perform the rite.
+  Settings-summary text (`roleLabel`) rewritten to describe all 9 values honestly instead of
+  collapsing them to two sentences.
+- `js/prayers.js`: `BOOK_OF_NEEDS_OPTION_CLERGY_TIER` (a binary Set) replaced with
+  `BOOK_OF_NEEDS_OPTION_MINIMUM_TIER` (a per-prayer minimum-role Map, all 13 entries now `priest`)
+  and a mirrored `BOOK_OF_NEEDS_ROLE_ORDER` rank table. `prayerOptionMeetsRoleRequirement()`
+  rewritten from a binary check to a rank comparison: a role sees a prayer if its rank meets or
+  exceeds the prayer's required rank.
+- `index.html`: the Book of Needs role `<select>` expanded from 3 options to all 9, each with a
+  real label (e.g. "I am a subdeacon (minor order)"), not generic tier numbers.
+- **Backward-compatibility migration, found and fixed before it could silently break existing
+  users:** any browser with a previously-saved `ministryRole: 'clergy'` would otherwise have
+  hit the new value set's rejection check and been silently reset to `'lay'` on next load --
+  quietly taking away access the user had already granted themselves, with no explanation. Added
+  an explicit migration step: `'clergy'` maps to `'priest'`, since every prayer the old binary
+  unlocked for `'clergy'` was confirmed priest-tier material -- this preserves exactly what a
+  migrated user could already see rather than guessing their real rank or dropping them to lay.
+
+**Verified:** governance JSON valid. `node --check` passes on both touched JS files. `index.html`
+spot-checked: exactly one role `<select>`, all 9 option values present, no stray old `'clergy'`
+references left anywhere in the file. Ran the actual gating logic in isolation (extracted and
+executed, not just read) across all 9 roles against all 13 gated prayers: lay/reader/subdeacon/
+deacon/monastic correctly do NOT see priest-tier material; priest/bishop/research-reference/all
+correctly DO -- confirmed consistent across every one of the 13 entries, not just spot-checked.
+Directly confirmed the specific fix that motivated this work: a self-identified deacon no longer
+sees `coe-maclean-prayer-priest-washes-hands` (or any other priest-tier item), where the old
+binary would have shown it. Directly confirmed a self-identified monastic (with no separate
+ordination declared) also does not see priest-tier material, consistent with monastic being a
+state of life rather than an ordination rank. Directly simulated the `'clergy'`-to-`'priest'`
+migration path against representative inputs (`clergy`->`priest`, `lay`->`lay`, `all`->`all`,
+an invalid legacy value -> `lay`, a new value like `subdeacon` passed through unchanged) --
+all correct.
+
+SEED_VERSION at the close of this entry: `v198-2026-08-30-east-syriac-book-of-needs-full-role-ladder`.

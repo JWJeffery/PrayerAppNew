@@ -163,41 +163,59 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
 };
 
 // Real role gating, added 2026-08-30 at Josh's direction, following the
-// profile.ministryRole field added the same day in js/office-ui.js. Only
-// prayers listed here require anything beyond the default lay view --
-// everything else in BOOK_OF_NEEDS_OPTION_TRADITIONS above is lay-open with
+// profile.ministryRole field added the same day in js/office-ui.js.
+//
+// UPDATED 2026-08-30, same day: replaced the original binary Set (a prayer
+// either needed no role, or needed "clergy or all") with a per-prayer
+// minimum-tier map, after Josh asked for the major/minor-order distinction
+// to be researched and then built. Confirmed (see documentation/book-of-
+// needs-role-access-governance.json's majorOrderClassification) that reader
+// and subdeacon are minor orders -- not fully/sacramentally ordained --
+// while deacon, priest, and bishop are the major orders, both generally in
+// Eastern Christian tradition and specifically for the Church of the East.
+// The old binary let a self-identified "clergy" deacon or subdeacon see
+// full priest-tier material, directly violating this same governance
+// document's own principle ("Subdeacon access must not unlock deaconal,
+// priestly, or episcopal material merely because the user is not a
+// layperson"). Checked every one of the 13 prayers below against its own
+// text and rubric rather than re-guessing: all 13 are performed BY a priest
+// (over an object, a person, or the assembly) -- none is deacon-, subdeacon-,
+// or reader-specific material -- so all map to 'priest'. That is a real
+// finding, not an assumption: e.g. coe-maclean-prayer-priest-washes-hands is
+// explicitly titled "when a Priest washes his hands," and coe-maclean-
+// prayer-for-a-reader, despite its title, is a blessing spoken OVER a reader
+// by whoever presides, not a prayer a reader says of himself -- the
+// beneficiary of a prayer and the minimum rank required to say it are not
+// the same question, and were checked separately for each entry.
+//
+// Everything else in BOOK_OF_NEEDS_OPTION_TRADITIONS above is lay-open with
 // no entry here at all, which is the common case and needs no per-prayer
-// bookkeeping. 'clergy' here means: visible only when the profile's
-// ministryRole is 'clergy' (self-identified ordained/monastic) or 'all' (the
-// blunt override) -- 'lay' alone does not show it. Classified directly from
-// each prayer's own text and stage directions, not by category alone: a
-// prayer explicitly performed by one person over another (a rubric like "He
-// makes the sign of the cross on..."), explicitly named as priestly/liturgical
-// in its own heading, or matching this project's own governance categories
-// for what shouldn't reach a default lay view (sacramental, exorcistic,
-// absolutional, blessing-of-an-object-or-person) is gated; a personal
-// petition or common table grace, even one not individually footnoted by
-// Maclean as lay-appropriate, is not. See
-// documentation/book-of-needs-role-access-governance.json for the fuller,
-// still-only-partially-implemented tier framework this is a first, coarser
-// step toward -- this map only distinguishes "needs a role declaration" from
-// "doesn't," not the full lay-devotional/reader/subdeacon/deacon/priest/
-// bishop/monastic/clergy-reference/research-hidden ladder documented there.
-const BOOK_OF_NEEDS_OPTION_CLERGY_TIER = new Set([
-    'coe-maclean-prayer-for-one-tempted',       // exorcistic address to an afflicted person
-    'coe-maclean-prayer-over-wine',             // blessing of an object
-    'coe-maclean-prayer-oil-of-healing',        // sacramental unction-adjacent blessing
-    'coe-maclean-prayer-for-a-reader',          // clerical blessing of a minor-order office-holder
-    'coe-maclean-prayer-for-the-faithful',      // benediction pronounced over an assembly
-    'coe-maclean-prayer-for-a-house',           // clergy-administered house blessing
-    'coe-maclean-prayer-priest-washes-hands',   // explicitly "when a priest... at the liturgy"
-    'coe-maclean-prayer-in-fevers',             // first-person exorcistic address over another
-    'coe-maclean-prayer-hallowing-water',       // explicit "He makes the sign of the cross on the water"
-    'coe-maclean-prayer-bride-forty-days',      // explicit "He makes the sign of the cross on her head"
-    'coe-maclean-blessing-boy-forty-days',      // explicitly modelled on the priestly Presentation rite
-    'coe-maclean-prayer-woman-seeking-prayers', // explicitly "given though the priesthood"
-    'coe-maclean-prayer-new-cloths-vessels'     // explicitly "for priestly use", altar furnishings
+// bookkeeping.
+const BOOK_OF_NEEDS_OPTION_MINIMUM_TIER = new Map([
+    ['coe-maclean-prayer-for-one-tempted',       'priest'], // first-person exorcistic address over another
+    ['coe-maclean-prayer-over-wine',             'priest'], // blessing of an object
+    ['coe-maclean-prayer-oil-of-healing',        'priest'], // sacramental unction-adjacent blessing
+    ['coe-maclean-prayer-for-a-reader',          'priest'], // blessing spoken OVER a reader by the one presiding, not by the reader himself
+    ['coe-maclean-prayer-for-the-faithful',      'priest'], // benediction pronounced over an assembly
+    ['coe-maclean-prayer-for-a-house',           'priest'], // clergy-administered house blessing
+    ['coe-maclean-prayer-priest-washes-hands',   'priest'], // explicitly "when a priest... at the liturgy"
+    ['coe-maclean-prayer-in-fevers',             'priest'], // first-person exorcistic address over another
+    ['coe-maclean-prayer-hallowing-water',       'priest'], // explicit "He makes the sign of the cross on the water"
+    ['coe-maclean-prayer-bride-forty-days',      'priest'], // explicit "He makes the sign of the cross on her head"
+    ['coe-maclean-blessing-boy-forty-days',      'priest'], // explicitly modelled on the priestly Presentation rite
+    ['coe-maclean-prayer-woman-seeking-prayers', 'priest'], // explicitly "given though the priesthood"
+    ['coe-maclean-prayer-new-cloths-vessels',    'priest'], // explicitly "for priestly use", altar furnishings
 ]);
+
+// Rank order for the major-order ladder, mirrored from
+// UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER in js/office-ui.js so this file does
+// not have to depend on load order to read it. Kept in sync manually --
+// both are small and change rarely; see that file's own comment for the
+// full reasoning on why 'monastic' sits at 0 and 'research-reference' at 5.
+const BOOK_OF_NEEDS_ROLE_ORDER = {
+    'lay': 0, 'reader': 1, 'subdeacon': 2, 'deacon': 3, 'priest': 4, 'bishop': 5,
+    'monastic': 0, 'research-reference': 5, 'all': 5,
+};
 
 function getUserMinistryRole() {
     try {
@@ -211,9 +229,12 @@ function getUserMinistryRole() {
 }
 
 function prayerOptionMeetsRoleRequirement(prayerId) {
-    if (!BOOK_OF_NEEDS_OPTION_CLERGY_TIER.has(prayerId)) return true;
+    const requiredTier = BOOK_OF_NEEDS_OPTION_MINIMUM_TIER.get(prayerId);
+    if (!requiredTier) return true; // no entry here at all -- the common, lay-open case
     const role = getUserMinistryRole();
-    return role === 'clergy' || role === 'all';
+    const userRank = BOOK_OF_NEEDS_ROLE_ORDER[role] ?? 0;
+    const requiredRank = BOOK_OF_NEEDS_ROLE_ORDER[requiredTier] ?? 99;
+    return userRank >= requiredRank;
 }
 
 function normalizeBookOfNeedsContext(context) {
