@@ -88,6 +88,12 @@ Phase 13 keeps the pipeline read-only and extends `coverageSummary` with registe
 
 The summary now shows registered active cells without inherited evidence by file scope and lane, and by lane and file scope. This makes later source-collation planning more precise without changing text, trust, release status, or placement decisions.
 
+## Phase 14
+
+Phase 14 keeps the pipeline read-only and extends `classificationBreakdowns.fileScopeBreakdowns` with active untyped text cross-tabs by file scope and source shape.
+
+The summary now shows untyped active text by file scope and source shape, and by source shape and file scope. This separates chapter/verse single-text inventory from fallback text leaves before any source, shape, or placement decision is made.
+
 ## Runtime reports
 
 Full generated reports should stay outside the repository. The default output path is:

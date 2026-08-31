@@ -203,6 +203,8 @@ function buildFileScopeBreakdowns(records) {
   return {
     activeTextUntypedByCorpusRoot: topRecordCounts(activeTextUntyped, record => corpusRoot(record.file)),
     activeTextUntypedByFileScope: topRecordCounts(activeTextUntyped, record => fileScope(record.file)),
+    activeTextUntypedByFileScopeAndShape: groupedCounts(activeTextUntyped, record => fileScope(record.file), record => record.sourceShape),
+    activeTextUntypedByShapeAndFileScope: groupedCounts(activeTextUntyped, record => record.sourceShape, record => fileScope(record.file)),
     activeTextUntypedTopFilesByFileScope: groupTopFilesByScope(activeTextUntyped),
     unresolvedByCorpusRoot: topRecordCounts(unresolved, record => corpusRoot(record.file)),
     unresolvedByFileScope: topRecordCounts(unresolved, record => fileScope(record.file)),
