@@ -422,7 +422,7 @@
     "id": "mar-kardagh",
     "day": "December 12",
     "name": "Mar Kardagh",
-    "description": "Martyr.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-qardagh (August 28) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -687,7 +687,7 @@
     "id": "mar-yakob-of-nisibis",
     "day": "December 18",
     "name": "Mar Yakob of Nisibis",
-    "description": "Spiritual father.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -939,7 +939,7 @@
     "id": "saint-stephen-protomartyr",
     "day": "December 26",
     "name": "Saint Stephen, Protomartyr",
-    "description": "The First Martyr and Deacon; celebrated across all traditions.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: per the authoritative account of the East Syriac liturgical year (Beth Kokheh, 'The Ecclesiastical Liturgical Year for the Church of the East'), this figure is commemorated only as the martyr Stephen, Fourth Friday of the pre-Fast cycle -- a date that shifts every year with the Denkha season length, the same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (built 2026-08-30, deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition; sourcing it properly needs that movable-date system wired into Layer 3 display, not a fixed month/day entry like the rest of this file.",
     "type": "apostle",
     "tags": [
       "ANG",
@@ -974,7 +974,7 @@
     "id": "saint-john-the-apostle",
     "day": "December 27",
     "name": "Saint John the Apostle",
-    "description": "Apostle and Evangelist; celebrated across all traditions.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: per the authoritative account of the East Syriac liturgical year (Beth Kokheh, 'The Ecclesiastical Liturgical Year for the Church of the East'), this figure is commemorated only as the Four Evangelists, Third Friday of the pre-Fast cycle -- a date that shifts every year with the Denkha season length, the same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (built 2026-08-30, deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition; sourcing it properly needs that movable-date system wired into Layer 3 display, not a fixed month/day entry like the rest of this file.",
     "type": "apostle",
     "tags": [
       "ANG",

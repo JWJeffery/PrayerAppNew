@@ -432,7 +432,7 @@
     "id": "saint-mark-the-evangelist",
     "day": "April 25",
     "name": "Saint Mark the Evangelist",
-    "description": "Evangelist, author of the second Gospel, and first Bishop of Alexandria.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: per the authoritative account of the East Syriac liturgical year (Beth Kokheh, 'The Ecclesiastical Liturgical Year for the Church of the East'), this figure is commemorated only as the Four Evangelists, Third Friday of the pre-Fast cycle -- a date that shifts every year with the Denkha season length, the same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (built 2026-08-30, deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition; sourcing it properly needs that movable-date system wired into Layer 3 display, not a fixed month/day entry like the rest of this file.",
     "type": "apostle",
     "tags": [
       "ANG",

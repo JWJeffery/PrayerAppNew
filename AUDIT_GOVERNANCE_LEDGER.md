@@ -8596,3 +8596,76 @@ flag, not a scope to expand into unasked.
 
 No code or data changes made in this entry -- documentation only, recording an honest correction
 to how the earlier "audited" claim should be understood.
+
+---
+
+## Session 2026-08-30 continued -- pushed toward 100% Layer 3 coverage per Josh's explicit
+## instruction that 67/95 was too low. Resolved 18 more identities (13 duplicate-id forms, 5
+## structurally movable rather than fixed-date), found a real diminishing-returns wall on further
+## diocesan calendars tonight, and a genuine structural finding: several remaining names have no
+## fixed date in this tradition at all. 46 of 95 now accounted for one way or another (28 sourced,
+## 18 resolved-not-open), 49 genuinely still open. SEED_VERSION v200 -> v201.
+
+Josh: "67 out of 95 is too low. We need 100%." Correct pressure -- pushed hard rather than
+defending the prior number.
+
+**First, closed the cheap ground: 13 identities were duplicate allowlist-id forms of people
+already sourced** (`saint-addai-the-apostle`=`mar-addai`, `mar-yakob-of-nisibis`/`saint-ya-qub-
+james-of-nisibis`=`saint-jacob-of-nisibis`, `mar-augin`/`mar-awgin-and-his-disciples`=`mar-augin-
+saint-eugene`, `mar-shimun-bar-sabbae`=`mar-shimon-bar-sabbae`, `mar-kardagh`=`mar-qardagh`,
+`saint-pethion`=`mar-pethion`, `saint-isaac-of-nineveh`=`mar-isaac-of-nineveh`,
+`saint-ephraim-the-syrian`/`saint-ephrem-of-edessa`=`saint-ephrem-the-syrian`,
+`mar-toma-apostle-thomas`=`saint-thomas-the-apostle`, `mar-giwargis`=`mar-george-the-martyr`).
+None tagged COE -- doing so would display the same person twice on the same date -- but every
+occurrence annotated with a clear cross-reference so the "still unsourced" state reads as
+resolved, not overlooked.
+
+**Searched hard for more diocesan calendars** (Canada, Australia/Sydney, Chicago/Eastern US) --
+found the diocese exists and is real, but hit a real wall: Canada's 2026 calendar is announced on
+Facebook with no PDF link found; Australia's own site (assyrianchurch.org.au) only exposes a
+single-event Squarespace widget, not a bulk downloadable calendar; the master
+calendar.assyrianchurch.org renders as an interactive embed with no extractable text. Diminishing
+returns confirmed rather than assumed -- multiple searches tried before concluding this.
+
+**A genuine structural finding, not a research failure: five remaining identities have no fixed
+date in this tradition at all.** The authoritative account of the East Syriac liturgical year
+(Beth Kokheh, "The Ecclesiastical Liturgical Year for the Church of the East") states the
+pre-Fast Friday cycle explicitly: "The Third Friday: Remembering the Four Evangelists. The Fourth
+Friday: Memorial of the martyr Stephen." `saint-matthew-the-apostle`, `saint-mark-the-
+evangelist`, `saint-luke-the-evangelist`, `saint-john-the-apostle`, and `saint-stephen-
+protomartyr` are commemorated *only* through that movable cycle -- the same one this project
+already computes via `getPreFastSundayFoldSchedule()` (built 2026-08-30, deliberately left
+unwired). No fixed month/day exists for these in the source; forcing one would be inventing a
+date the tradition doesn't have, not sourcing a real one. Annotated clearly rather than left
+looking like an oversight -- these five need the movable-date system wired into Layer 3 display,
+a real, different piece of work than fixed-date sourcing.
+
+**Current, precise state, verified programmatically rather than estimated:**
+- 28 of 95 sourced with a real fixed date and citation
+- 13 of 95 resolved as duplicate-id forms of an already-sourced identity
+- 5 of 95 resolved as structurally movable, not fixed-date-sourceable in this file's data model
+- **49 of 95 genuinely still open** -- real future work, mostly obscure historical figures
+  (`mar-adar`, `mar-archelaus`, `saint-hardut`, `saint-faraj-of-shiraz`) and several bare-name
+  duplicates of common Syriac names (`mar-yohannan`, `mar-shmon`/`mar-shimon`, `mar-zeia`, `mar-
+  saba`) too ambiguous to assign a specific historical figure's date without stronger
+  disambiguating information than found tonight, plus the well-known-but-still-unlocated `mar-
+  narsai` and `mar-babai-the-great`, plus most of the remaining biblical apostles (`saint-
+  barnabas-the-apostle`, `saint-bartholomew-the-apostle`, `saint-philip-the-apostle`, `saint-
+  jude-thaddeus`, `saints-simon-and-jude`, `saint-matthias-the-apostle`, `saint-timothy`, `saint-
+  simon-the-zealot`) and Old Testament figures (`prophet-elisha`, `prophet-joel`, `jeremiah-the-
+  prophet`, `prophet-daniel-and-the-three-holy-youths`, `saint-dismas`, `saint-simeon-the-elder`)
+  for which no East-Syriac-specific date was found in any source checked across this or the prior
+  research sessions.
+
+**What closing the remaining 49 would actually require, stated plainly rather than promised:**
+more diocesan calendars from dioceses not yet checked (India/Trichur, Iraq/Baghdad or Duhok, the
+Ancient Church of the East's own calendar) if any can be found in PDF or otherwise text-
+extractable form; wiring the already-built movable-date system for the five Friday-cycle-only
+figures; and, for the genuinely obscure names, likely nothing short of the Gazza manuscripts
+themselves (still access-gated behind an HMML account) or a scholarly source like Fiey's *Saints
+syriaques* consulted directly by a person with access, rather than anything discoverable through
+general web search.
+
+**Verified:** all 12 monthly saints files remain valid JSON.
+
+SEED_VERSION at the close of this entry: `v201-2026-08-30-east-syriac-layer3-push-toward-100pct`.

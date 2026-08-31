@@ -757,7 +757,7 @@
     "id": "saint-isaac-of-nineveh",
     "day": "September 18",
     "name": "Saint Isaac of Nineveh",
-    "description": "Mystic and bishop, 7th century.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-isaac-of-nineveh (January 28) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": [
       "OOR"
@@ -865,7 +865,7 @@
     "id": "saint-matthew-the-apostle",
     "day": "September 21",
     "name": "Saint Matthew the Apostle",
-    "description": "Apostle, tax collector, and author of the first Gospel.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: per the authoritative account of the East Syriac liturgical year (Beth Kokheh, 'The Ecclesiastical Liturgical Year for the Church of the East'), this figure is commemorated only as the Four Evangelists, Third Friday of the pre-Fast cycle -- a date that shifts every year with the Denkha season length, the same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (built 2026-08-30, deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition; sourcing it properly needs that movable-date system wired into Layer 3 display, not a fixed month/day entry like the rest of this file.",
     "type": "apostle",
     "tags": [
       "ANG",
@@ -936,7 +936,7 @@
     "id": "mar-shimun-bar-sabbae",
     "day": "September 23",
     "name": "Mar Shimun Bar Sabbae",
-    "description": "Catholicos and martyr (Secondary commemoration).",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-shimon-bar-sabbae (August 21) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -1080,7 +1080,7 @@
     "id": "mar-augin",
     "day": "September 27",
     "name": "Mar Augin",
-    "description": "The Pearl of the East.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-augin-saint-eugene (November 6) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },

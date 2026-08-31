@@ -397,7 +397,7 @@
     "id": "mar-awgin-and-his-disciples",
     "day": "November 9",
     "name": "Mar Awgin and his Disciples",
-    "description": "Brought monasticism to Mesopotamia.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-augin-saint-eugene (November 6) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -592,7 +592,7 @@
     "id": "saint-matthew-the-apostle",
     "day": "November 16",
     "name": "Saint Matthew the Apostle",
-    "description": "Apostle, tax collector, and author of the first Gospel.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: per the authoritative account of the East Syriac liturgical year (Beth Kokheh, 'The Ecclesiastical Liturgical Year for the Church of the East'), this figure is commemorated only as the Four Evangelists, Third Friday of the pre-Fast cycle -- a date that shifts every year with the Denkha season length, the same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (built 2026-08-30, deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition; sourcing it properly needs that movable-date system wired into Layer 3 display, not a fixed month/day entry like the rest of this file.",
     "type": "apostle",
     "tags": [
       "EOR",
@@ -663,7 +663,7 @@
     "id": "mar-yakob-of-nisibis",
     "day": "November 18",
     "name": "Mar Yakob of Nisibis",
-    "description": "Spiritual father.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },

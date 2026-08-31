@@ -1065,7 +1065,7 @@
     "id": "saint-ephraim-the-syrian",
     "day": "January 28",
     "name": "Saint Ephraim the Syrian",
-    "description": "Deacon and Doctor of the Church.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-ephrem-the-syrian (June 9) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },

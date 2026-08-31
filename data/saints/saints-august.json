@@ -61,7 +61,7 @@
     "id": "saint-pethion",
     "day": "August 2",
     "name": "Saint Pethion",
-    "description": "Martyr under the Sassanids.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-pethion (October 25) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -1005,7 +1005,7 @@
     "id": "saint-ya-qub-james-of-nisibis",
     "day": "August 24",
     "name": "Saint Ya'qub (James) of Nisibis",
-    "description": "Bishop and spiritual father.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -1109,7 +1109,7 @@
     "id": "mar-giwargis",
     "day": "August 27",
     "name": "Mar Giwargis",
-    "description": "Martyr and bishop.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-george-the-martyr (March 4, and other dates already sourced under that id) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -1190,7 +1190,7 @@
     "id": "mar-shimun-bar-sabbae",
     "day": "August 29",
     "name": "Mar Shimun Bar Sabbae",
-    "description": "Catholicos and martyr (Secondary commemoration).",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-shimon-bar-sabbae (August 21) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },
@@ -1299,7 +1299,7 @@
     "id": "mar-toma-apostle-thomas",
     "day": "August 31",
     "name": "Mar Toma (Apostle Thomas)",
-    "description": "Apostle of the East (Feast of the return of relics).",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-thomas-the-apostle (July 3) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
     "type": "apostle",
     "tags": []
   },

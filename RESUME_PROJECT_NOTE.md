@@ -1,5 +1,53 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-30 continued -- pushed toward 100% Layer 3 coverage per Josh's explicit
+## instruction that 67/95 was too low. Resolved 18 more identities (13 duplicate-id forms, 5
+## structurally movable), hit a real diminishing-returns wall on further diocesan calendars, and
+## found a genuine structural finding: several remaining names have no fixed date in this
+## tradition at all. 46 of 95 now accounted for (28 sourced, 18 resolved-not-open), 49 genuinely
+## still open. SEED_VERSION v200 -> v201. Read this entry, then the v200/v199/v198/v197/v196/
+## v195/v194/v193/v192/v191/v190/v189/v188 entries below it, then the CONSOLIDATED v187 entry,
+## still accurate for everything else.
+
+Josh: "67 out of 95 is too low. We need 100%." Pushed hard rather than defending the prior number.
+
+**Closed the cheap ground first:** 13 identities were duplicate allowlist-id forms of people
+already sourced (Addai, Jacob of Nisibis, Augin, Shimon Bar Sabbae, Qardagh, Pethion, Isaac of
+Nineveh, Ephrem, Thomas, George -- each under a second id form). None tagged COE (would display
+the same person twice), but every occurrence annotated with a clear cross-reference so this reads
+as resolved, not overlooked.
+
+**Searched hard for more diocesan calendars** (Canada, Australia, Chicago/Eastern US) -- found
+real dioceses, hit a real wall: no PDF found for Canada, Australia's site only exposes a
+single-event widget, the master calendar.assyrianchurch.org renders as an unreadable embed.
+Diminishing returns confirmed, not assumed.
+
+**A genuine structural finding, not a research failure:** five remaining identities have no
+fixed date in this tradition at all. The authoritative account of the East Syriac liturgical year
+states the pre-Fast Friday cycle explicitly: Third Friday = the Four Evangelists, Fourth Friday =
+St. Stephen. `saint-matthew-the-apostle`, `-mark-`, `-luke-`, `-john-the-apostle`, and `saint-
+stephen-protomartyr` are commemorated *only* through that movable cycle -- the same one already
+computed by `getPreFastSundayFoldSchedule()` (built earlier this session, deliberately unwired).
+No fixed month/day exists for these; forcing one would invent a date the tradition doesn't have.
+Annotated as structurally movable rather than left looking like an oversight.
+
+**Precise current state:** 28 sourced, 13 duplicate-resolved, 5 movable-resolved, **49 genuinely
+still open** -- mostly obscure historical figures, several bare-name duplicates too ambiguous to
+assign without stronger disambiguation, the still-unlocated Mar Narsai and Mar Babai the Great,
+and most remaining biblical apostles/OT figures with no East-Syriac-specific date found anywhere
+checked.
+
+**What closing the remaining 49 would actually require, stated plainly:** more diocesan calendars
+(India/Trichur, Iraq, the Ancient Church of the East's own calendar) if findable in readable form;
+wiring the movable-date system for the five Friday-cycle figures; and for the genuinely obscure
+names, likely nothing short of the Gazza manuscripts (still access-gated) or Fiey's book consulted
+directly by someone with access.
+
+**Open items, updated:** Layer 3 is at 46/95 resolved (28 sourced + 18 explained), 49 genuinely
+open -- real, bounded, but not closeable through general web search alone from here.
+
+---
+
 ## Session 2026-08-30 continued -- found the ACOE Diocese of California's full 2026 calendar
 ## after Josh correctly pushed back on two points. 10 more Layer 3 identities sourced plus one
 ## real correction (28 total, was 18). SEED_VERSION v199 -> v200. Read this entry, then the
