@@ -1,5 +1,16 @@
 # RESUME_PROJECT_NOTE.md
 
+## ROADMAP NOTE, flagged 2026-08-31: Josh's vision for daily collects once the saints layer is
+## built out across the whole Universal Office (COE, Byzantine/EO, Coptic/OO, BCP/Anglican), not
+## just COE/Layer 3. `Lesser Feasts and Fasts` (2024 TEC edition) is already a tracked source
+## witness in this project (`data/kalendar/source-witnesses/source-index.json`, key `LFF`) for the
+## existing BCP kalendar work -- likely the most tractable tradition to build collects for first,
+## since the source is already in hand and not entangled in any fabricated-data cleanup. No
+## equivalent single source yet identified for COE, Byzantine, or Coptic. Not started tonight --
+## COE Layer 3 date-sourcing remains the active task, and a collect is only meaningful once the
+## date and identity behind it are solid. Full account in AUDIT_GOVERNANCE_LEDGER.md's own
+## same-titled roadmap note.
+
 ## RESOURCE NOTE, flagged 2026-08-31 at Josh's explicit request: `acote.church/propers` -- the
 ## ACOTE Diocese of Western Europe's full Eucharistic lectionary, organized by season and by every
 ## named commemoration across the whole liturgical year, already fetched and recorded in full in

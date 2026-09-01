@@ -8890,3 +8890,40 @@ against the Layer 3 open-identities list -- **real, likely future value beyond t
   by-season lection map from a second, independent diocese.
 
 Recorded here specifically so this isn't lost inside a routine research-log entry.
+
+---
+
+## ROADMAP NOTE, flagged 2026-08-31 -- Josh's vision for collects when the saints layer is built
+## out across the whole Universal Office, not just COE/Layer 3. Recorded prominently, not acted on
+## yet -- a future initiative, not today's task.
+
+Josh: "LFF has a collect daily for the saint of the day, and when we start really building out
+the full saint layer across the entire universal office, collects would be amazing to add on."
+
+**The connection is real and already has infrastructure to build from.** `Lesser Feasts and Fasts`
+(2024 TEC edition) is already a tracked source witness in this project
+(`data/kalendar/source-witnesses/source-index.json`, key `LFF`) for the existing BCP/Anglican
+kalendar work -- this isn't a new source to find, it's one already in hand for at least one
+tradition. LFF gives a proper daily collect for its own sanctoral calendar, distinct from (but the
+same shape of resource as) what a fully-built-out saints layer for every tradition this app
+supports -- COE, Byzantine/EO, Coptic/OO, BCP/Anglican -- would eventually need: not just a name
+and a date (what Layer 3 sourcing has been doing all session), but a short proper prayer for that
+day, in each tradition's own idiom.
+
+**What this would concretely require, sketched here so a future session has a starting point,
+not because any of it is being built now:**
+- For BCP/Anglican: LFF's own collects are already the obvious, in-hand source -- likely the most
+  tractable of the four traditions to build first, given the source is already tracked and (unlike
+  the COE Layer 3 work) not entangled in any fabricated-data cleanup.
+- For COE: no equivalent single source has been found yet. The Khudra/Gazza tradition may carry
+  saint-specific prayers analogous to a collect, but this is genuinely unknown -- worth checking
+  once (or if) COE Layer 3 sourcing is further along, since building collects before the dates
+  themselves are solid would be building on an unstable foundation.
+- For Byzantine/EO and Coptic/OO: not investigated at all yet; each tradition's own liturgical
+  books (Menaion for Byzantine, Synaxarium/related for Coptic) would need their own source
+  identification pass, the same kind of work this session did for COE's diocesan calendars.
+
+**Deliberately not started tonight** -- COE Layer 3 date-sourcing is still the active task, and a
+collect is only meaningful once the date and identity behind it are solid. Recorded here so this
+vision isn't lost, and so whoever picks it up later doesn't have to rediscover that LFF is already
+in hand for one tradition.
