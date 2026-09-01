@@ -8858,3 +8858,35 @@ documented, confirmed finding rather than sitting as unexplained gaps, even thou
 received a COE tag.
 
 **Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
+## RESOURCE NOTE, flagged 2026-08-31 at Josh's explicit request -- "keep track of the fact that
+## you found that list of 'propers,' that may be very helpful later." Recorded here prominently,
+## as its own entry, rather than left inside the research-log entry where it was first found.
+
+**`acote.church/propers`** -- the ACOTE Diocese of Western Europe's own full Eucharistic lectionary,
+organized by season and by every named commemoration across the entire liturgical year (Holy
+Feasts, Annunciation/Nativity, Epiphany, both Rogations, Lenten, Holy Week, Resurrection,
+Apostles', Summer, Elijah and Cross, Moses, Hallowing of the Church, and a final "Commemorations"
+section listing every named saint's day with its own three lections + Gospel). Already fetched and
+recorded in full in this session's transcript. Not yet exploited beyond a one-time cross-check
+against the Layer 3 open-identities list -- **real, likely future value beyond that single use**:
+
+- It gives the exact scripture readings (Lectionaries, Apostle, Gospel) already assigned to every
+  named commemoration -- directly useful if this project ever builds out actual propers/lection
+  content for the Book of Needs or a lectionary feature, not just Layer 3 dates.
+- Its season-by-season structure is a clean, authoritative map of the whole liturgical year's
+  commemoration structure in one page -- useful as a cross-check against this engine's own season
+  boundaries (`js/calendar-east-syriac.js`) independent of Maclean.
+- Its "Commemorations" section pairs each named Friday of the movable pre-Fast cycle with real
+  scripture readings -- directly relevant if `getPreFastSundayFoldSchedule()` (built earlier this
+  session, still unwired) is ever extended to also carry the correct lections for each Friday, not
+  just the correct saint's name.
+- **The ACOE Diocese of California has a parallel resource** -- its own site links a "Lectionary:
+  Readings and Propers for Upcoming Sunday or Feast Day" page with separate "Assyrian Readings"
+  and "English Readings and Propers" sub-pages. Not yet located at a specific URL or fetched; a
+  real, concrete next step for whoever picks this up, likely to surface the same kind of season-
+  by-season lection map from a second, independent diocese.
+
+Recorded here specifically so this isn't lost inside a routine research-log entry.

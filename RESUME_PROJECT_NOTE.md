@@ -1,5 +1,17 @@
 # RESUME_PROJECT_NOTE.md
 
+## RESOURCE NOTE, flagged 2026-08-31 at Josh's explicit request: `acote.church/propers` -- the
+## ACOTE Diocese of Western Europe's full Eucharistic lectionary, organized by season and by every
+## named commemoration across the whole liturgical year, already fetched and recorded in full in
+## this session's transcript. Real likely future value: exact scripture readings already assigned
+## to every named commemoration (useful for propers/lection content, not just Layer 3 dates); a
+## clean season-by-season map to cross-check against this engine's own season boundaries; and
+## readings paired with each Friday of the movable pre-Fast cycle, relevant if
+## getPreFastSundayFoldSchedule() is ever extended beyond just the saint's name. The ACOE Diocese
+## of California has a parallel "Lectionary: Readings and Propers" resource too, not yet located
+## at a specific URL -- a real next step. Full account in AUDIT_GOVERNANCE_LEDGER.md's own
+## same-titled resource note.
+
 ## Session 2026-08-31 continued -- "our rule is we continue until we are finished." Resolved 6
 ## more Layer 3 identities as structurally movable (Mar Awa, Mar Mari), found and mined a new
 ## comprehensive cross-validation source, and two more confirmed negative findings (Timothy I,
