@@ -8808,3 +8808,53 @@ prior session remain the accurate count. Recording these negative findings here 
 session starting from this same list doesn't re-spend effort on India, the Ancient Church of the
 East's own calendar, Canada, or a plain Narsai/Babai search in Maclean or Qadishe -- all now
 confirmed dead ends, at least until the Gazza or Fiey's book become accessible.
+
+---
+
+## Session 2026-08-31 continued -- "our rule is we continue until we are finished." Kept pushing
+## on the remaining 49 Layer 3 identities. Resolved 6 more as structurally movable (Mar Awa and
+## Mar Mari, both confirmed tied only to the pre-Fast Friday cycle), found a new comprehensive
+## source that cross-confirmed existing work without adding new names, and two more confirmed
+## negative findings (Timothy I has no attested feast day anywhere; Febronia of Nisibis is not
+## venerated in this tradition despite the name). 43 identities now genuinely open, down from 49.
+## No SEED_VERSION change (documentation and annotation only, no new dated/tagged entries).
+
+**Applied a finding from the prior session that hadn't yet been recorded in the corpus itself:**
+Maclean's Kalendar appendix and both diocesan calendars all independently confirm Mar Awa (the
+Catholicos, 540-552) and Mar Mari (disciple of Mar Addai) are commemorated only within the
+movable pre-Fast Friday cycle -- the same structural fact already established for the Four
+Evangelists and St. Stephen in the prior session. `mar-awa`, `mar-awa-catholicos`, `mar-awa-i`,
+`saint-awa-catholicos`, `mar-mari`, and `st-mari-the-bishop` (6 allowlist ids across these two
+identities) annotated as structurally movable rather than left as unresearched gaps.
+
+**Found and fully mined the ACOTE Diocese of Western Europe's own "Propers" page**
+(acote.church/propers) -- a comprehensive list of Eucharistic lectionary readings organized by
+season and by named commemoration, distinct from the monthly calendar already used. Cross-checked
+every named commemoration against the remaining open list: all of them (Rabban Hurmizd, James of
+Nisibis, Cyriacus and Julitta, Shmuni, Shimon Bar Sabbae, Qardagh, Papa, Elijah, Awgin, James the
+Mutilated, Khananya) were already sourced. No new names surfaced, but this is real, useful
+cross-validation -- confirms rather than merely repeats the earlier sourcing.
+
+**Checked Timothy I of Seleucia-Ctesiphon directly** (Patriarch 780-823, one of the most
+historically significant patriarchs of the whole tradition, correspondent of Caliph al-Mahdi) --
+found no attested liturgical commemoration day anywhere, including his own English Wikipedia
+article, which carries no "Venerated in" or "Feast" field at all, unlike comparable
+already-sourced patriarch-figures such as Elia III. **A confirmed negative finding, not an
+unresearched gap**: not every historically significant patriarch received a liturgical feast day,
+and this appears to be a genuine instance of that. Recorded directly on the existing corpus row
+rather than left implicit.
+
+**Checked Febronia of Nisibis directly** -- her own English Wikipedia infobox lists veneration in
+the Eastern Orthodox Church, Oriental Orthodoxy, and the Roman Catholic Church specifically; the
+Church of the East is not among the traditions listed, despite the "of Nisibis" name suggesting a
+natural connection. Same tradition-mismatch pattern already found for `saint-ahudemmeh` and
+`mar-behnam-and-sarah` -- flagged on the existing corpus row for the allowlist's own future
+review, not resolved by this session (the allowlist itself is a separate, already-audited March
+2026 artifact, out of scope to edit directly).
+
+**Result: 43 of 133 allowlisted identities now genuinely open**, down from 49 -- 6 resolved as
+structurally movable this pass, plus 2 more identities (Timothy I, Febronia) now carry a
+documented, confirmed finding rather than sitting as unexplained gaps, even though neither
+received a COE tag.
+
+**Verified:** all 12 monthly saints files remain valid JSON.

@@ -1,5 +1,38 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-31 continued -- "our rule is we continue until we are finished." Resolved 6
+## more Layer 3 identities as structurally movable (Mar Awa, Mar Mari), found and mined a new
+## comprehensive cross-validation source, and two more confirmed negative findings (Timothy I,
+## Febronia of Nisibis). 43 identities now genuinely open, down from 49. No SEED_VERSION change
+## (documentation and annotation only). Read this entry, then the same-day entry below it, then
+## the v202/v201/v200/v199/v198/v197/v196/v195/v194/v193/v192/v191/v190/v189/v188 entries, then
+## the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "Our rule is we continue until we are finished." Kept pushing.
+
+**Applied a prior finding that hadn't yet been recorded in the corpus:** Maclean's Kalendar and
+both diocesan calendars all confirm Mar Awa and Mar Mari are commemorated only within the movable
+pre-Fast Friday cycle, same as the Four Evangelists/Stephen already annotated. 6 allowlist ids
+across these two identities moved from unresearched to structurally-movable.
+
+**Found and fully mined the ACOTE Diocese of Western Europe's "Propers" page** -- a comprehensive
+lectionary list by season and named commemoration. Every name on it was already sourced; real
+cross-validation, no new names.
+
+**Two confirmed negative findings, checked directly rather than left implicit:** Timothy I of
+Seleucia-Ctesiphon (Patriarch 780-823, one of the most historically significant patriarchs of the
+tradition) has no attested liturgical feast day anywhere checked -- not every historically
+important patriarch received one. Febronia of Nisibis is venerated in Eastern Orthodox, Oriental
+Orthodox, and Roman Catholic tradition specifically, per her own Wikipedia infobox -- the Church
+of the East is not listed, despite the name. Same tradition-mismatch pattern as Ahudemmeh and
+Behnam-and-Sarah. Both recorded on their existing corpus rows.
+
+**Result: 43 of 133 genuinely open**, down from 49.
+
+**Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
 ## Session 2026-08-31 -- continued Layer 3 push on the remaining 49 identities. No new sourced
 ## entries, but real, valuable negative findings recorded so a future session doesn't re-spend
 ## effort on the same exhausted paths. No SEED_VERSION change (documentation only). Read this

@@ -204,7 +204,7 @@
     "id": "saint-awa-catholicos",
     "day": "May 6",
     "name": "Saint Awa Catholicos",
-    "description": "Patriarch and leader, died 6th century.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
     "type": "saint",
     "tags": []
   },

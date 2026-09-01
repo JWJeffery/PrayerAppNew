@@ -770,7 +770,7 @@
     "id": "virgin-martyr-febronia-of-nisibis",
     "day": "June 25",
     "name": "Virgin Martyr Febronia of Nisibis",
-    "description": "Martyr, died 304 AD.",
+    "description": "Martyr, died 304 AD. CHECKED 2026-08-31: this figure's own English Wikipedia infobox lists veneration in the Eastern Orthodox Church, Oriental Orthodoxy, and the Roman Catholic Church specifically -- the Church of the East is not among the traditions listed, despite the 'of Nisibis' name suggesting a natural connection. No COE tag added on this basis, same reasoning already applied to saint-ahudemmeh and mar-behnam-and-sarah elsewhere in this corpus -- a real doubt about whether this identity belongs on the COE allowlist at all, not an unresourced gap. Not this session's call to resolve (the allowlist is a separate, already-audited March 2026 artifact); flagged for that allowlist's own future review.",
     "type": "saint",
     "tags": [
       "ANG",
