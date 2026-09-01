@@ -8759,3 +8759,52 @@ two sharing Sept.14) correctly display together rather than clobbering each othe
 John duplication fix confirmed showing exactly one entry, not two.
 
 SEED_VERSION at the close of this entry: `v202-2026-08-30-east-syriac-layer3-rebuilt-from-calendars`.
+
+---
+
+## Session 2026-08-31 -- continued Layer 3 push on the remaining 49 identities. No new sourced
+## entries this pass, but real, valuable negative findings that should be recorded so a future
+## session doesn't waste time re-checking already-exhausted paths. No SEED_VERSION change
+## (documentation only).
+
+Josh: "It is a new day. Keep going." Continued the Layer 3 work.
+
+**Checked three more diocesan-calendar leads, all genuine dead ends:**
+- India (Chaldean Syrian Church, Thrissur): the church's own website (churchoftheeastindia.org)
+  is stale -- copyright dated 2009, still names Mar Dinkha IV as the current Catholicos-Patriarch
+  (he died in 2015; Mar Awa III has held the office since 2021). No calendar link found.
+- The Ancient Church of the East itself (the other body this project's entry flow now
+  distinguishes): no official calendar site found in any readable form. Given its much smaller
+  size (~75,000 members total per Wikipedia, vs. the Assyrian Church of the East's larger
+  worldwide presence), this may simply not exist in a form searchable tonight.
+- Canada (Diocese of Canada, Toronto): confirmed again -- the 2026 calendar's existence is
+  announced on the diocese's Facebook page, no PDF or readable link found.
+
+**Exhausted Maclean's own Kalendar appendix directly** (pp.264-283, the dated primary-source
+section, distinct from the office texts elsewhere in the book where names appear only as text
+authors) rather than relying on the earlier extraction pass. Searched the full appendix text for
+every remaining name. Found: Mar Awa and Mar Mari both appear, but only tied to the movable
+pre-Fast Friday cycle already excluded per established precedent -- no new fixed dates. Narsai and
+Babai the Great appear only as authors cited in footnotes about which liturgical texts originate
+from which tradition, never as the subject of a dated Kalendar entry. Confirms, rather than
+merely repeats, the earlier finding that this source does not give either of them a commemoration
+day.
+
+**Re-checked Qadishe for Narsai specifically, and caught a real trap rather than falling into
+it:** Qadishe does have "Narsai" entries -- but for two different, earlier figures: "Narsai,
+bishop of Sharqart (d. 344)," martyred with his disciple Joseph, and "Narsai, son of the covenant
+(d. 421)," a monk and martyr who was decapitated. **Neither is Narsai of Nisibis**, the
+5th-century theologian-poet (c. 399-502) this project actually needs -- the one whose Tishbukhta
+hymns are already used elsewhere in this project's own built East Syriac content. Confirmed by
+date range alone (344 and 421 both predate the theologian's own lifetime). Using either entry
+would have been a real misattribution, not a resolution -- not used, for this reason specifically,
+recorded so a future pass doesn't make this mistake.
+
+**Result: no new sourced entries this session.** This reflects genuinely exhausted search paths
+for the highest-priority remaining names, not reduced effort -- three more diocesan-calendar leads
+checked and ruled out, Maclean's own Kalendar checked directly rather than from memory, and a real
+misattribution trap caught and avoided rather than walked into. The 49 identities disclosed in the
+prior session remain the accurate count. Recording these negative findings here so a future
+session starting from this same list doesn't re-spend effort on India, the Ancient Church of the
+East's own calendar, Canada, or a plain Narsai/Babai search in Maclean or Qadishe -- all now
+confirmed dead ends, at least until the Gazza or Fiey's book become accessible.

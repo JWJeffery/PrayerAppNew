@@ -1,5 +1,24 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-08-31 -- continued Layer 3 push on the remaining 49 identities. No new sourced
+## entries, but real, valuable negative findings recorded so a future session doesn't re-spend
+## effort on the same exhausted paths. No SEED_VERSION change (documentation only). Read this
+## entry, then the v202/v201/v200/v199/v198/v197/v196/v195/v194/v193/v192/v191/v190/v189/v188
+## entries below it, then the CONSOLIDATED v187 entry, still accurate for everything else.
+
+Josh: "It is a new day. Keep going." Continued the Layer 3 push -- checked India, the Ancient
+Church of the East's own calendar, and Canada again, all confirmed dead ends (no readable calendar
+found for any). Exhausted Maclean's own Kalendar appendix directly (pp.264-283) rather than from
+memory -- Mar Awa and Mar Mari both appear but only movable-Friday-tied, no new fixed dates;
+Narsai and Babai the Great appear only as cited authors, never as dated Kalendar subjects.
+Re-checked Qadishe for Narsai and caught a real trap: it has entries for two other, earlier
+Narsais (d.344, d.421), neither the 5th-century theologian this project actually needs -- would
+have been a real misattribution, not used. No new sourced entries this pass; the 49 open
+identities from the prior session remain the accurate count. Full account in
+AUDIT_GOVERNANCE_LEDGER.md's session-2026-08-31 entry.
+
+---
+
 ## Session 2026-08-30 continued -- rebuilt Layer 3 from the real diocesan calendars directly,
 ## rather than continuing to be constrained by the March-2026 allowlist. Josh's question surfaced
 ## a real gap: dozens of real, sourceable names were being silently skipped. Sourced coverage
