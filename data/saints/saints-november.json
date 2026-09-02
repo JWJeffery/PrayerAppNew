@@ -604,7 +604,7 @@
     "id": "mar-gregory-the-wonderworker",
     "day": "November 17",
     "name": "Mar Gregory the Wonderworker",
-    "description": "East Syriac feast.",
+    "description": "CHECKED 2026-08-31, tradition mismatch found: Gregory Thaumaturgus (c.213-270), Bishop of Neocaesarea, 'the Wonder-worker.' His own Wikipedia infobox lists 'Venerated in: Catholic Church, Eastern Orthodox Church, Oriental Orthodoxy' -- the Church of the East is not among the traditions listed. Same pattern already found for saint-ahudemmeh, mar-behnam-and-sarah, and virgin-martyr-febronia-of-nisibis. Not this session's call to resolve (the allowlist is a separate, already-audited March 2026 artifact); flagged for that allowlist's own future review.",
     "type": "saint",
     "tags": []
   },

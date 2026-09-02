@@ -8883,11 +8883,15 @@ against the Layer 3 open-identities list -- **real, likely future value beyond t
   scripture readings -- directly relevant if `getPreFastSundayFoldSchedule()` (built earlier this
   session, still unwired) is ever extended to also carry the correct lections for each Friday, not
   just the correct saint's name.
-- **The ACOE Diocese of California has a parallel resource** -- its own site links a "Lectionary:
-  Readings and Propers for Upcoming Sunday or Feast Day" page with separate "Assyrian Readings"
-  and "English Readings and Propers" sub-pages. Not yet located at a specific URL or fetched; a
-  real, concrete next step for whoever picks this up, likely to surface the same kind of season-
-  by-season lection map from a second, independent diocese.
+- **CHECKED 2026-08-31, ruled out:** the ACOE Diocese of California's own "Lectionary" page was
+  initially flagged as a parallel resource worth locating. Found and fetched
+  (acoecalifornia.org/news_210815_1): it turns out to be a **rotating single-week bulletin
+  insert**, not a comprehensive year-round resource like Western Europe's `/propers` page --
+  three PDFs (Assyrian readings, Syriac propers, English readings and propers) for one specific
+  upcoming Sunday, replaced weekly. The cached copy found is from August 2021, one week's content
+  only. Different kind of resource entirely; not useful for Layer 3 date-sourcing. Not a dead
+  end from lack of effort -- located and fetched, then correctly ruled out on inspection rather
+  than left as an open lead.
 
 Recorded here specifically so this isn't lost inside a routine research-log entry.
 
@@ -9010,3 +9014,26 @@ and 20 August per the Martyrology of Rabban Saliba -- itself a West Syriac (Syri
 source, not East Syriac. Neither is confirmed as this tradition's own date. Recorded as a real,
 checked finding rather than forcing either non-COE date onto the entry -- the same discipline
 already applied to Ahudemmeh and Behnam-and-Sarah.
+
+---
+
+## Session 2026-08-31 continued -- checked the California Propers lead flagged earlier (ruled
+## out on inspection), and found one more tradition-mismatch. No SEED_VERSION change (annotation
+## and resource-note correction only).
+
+**Followed up on the previously-flagged California "Lectionary" resource note.** Located and
+fetched the actual page (acoecalifornia.org/news_210815_1). On inspection, it's a **rotating
+single-week bulletin insert** -- three PDFs (Assyrian readings, Syriac propers, English readings
+and propers) for one specific upcoming Sunday, replaced weekly. The cached copy found dates from
+August 2021, one week's content only. A fundamentally different kind of resource from Western
+Europe's comprehensive, static `/propers` page -- not useful for Layer 3 date-sourcing. Corrected
+the resource note in both this file and `RESUME_PROJECT_NOTE.md` so this lead isn't chased again;
+recorded as checked-and-ruled-out rather than left open.
+
+**Checked Gregory Thaumaturgus** (`mar-gregory-the-wonderworker`) -- his own Wikipedia infobox
+lists "Venerated in: Catholic Church, Eastern Orthodox Church, Oriental Orthodoxy." The Church of
+the East is not among them. Same tradition-mismatch pattern as `saint-ahudemmeh`,
+`mar-behnam-and-sarah`, and `virgin-martyr-febronia-of-nisibis` -- flagged for the allowlist's own
+future review, not resolved here.
+
+**Verified:** all 12 monthly saints files remain valid JSON.

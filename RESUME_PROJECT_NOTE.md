@@ -18,10 +18,11 @@
 ## to every named commemoration (useful for propers/lection content, not just Layer 3 dates); a
 ## clean season-by-season map to cross-check against this engine's own season boundaries; and
 ## readings paired with each Friday of the movable pre-Fast cycle, relevant if
-## getPreFastSundayFoldSchedule() is ever extended beyond just the saint's name. The ACOE Diocese
-## of California has a parallel "Lectionary: Readings and Propers" resource too, not yet located
-## at a specific URL -- a real next step. Full account in AUDIT_GOVERNANCE_LEDGER.md's own
-## same-titled resource note.
+## getPreFastSundayFoldSchedule() is ever extended beyond just the saint's name. CHECKED and RULED
+## OUT: the ACOE Diocese of California's own "Lectionary" page (found 2026-08-31) turns out to be
+## a rotating single-week bulletin insert, not a comprehensive year-round resource like this one --
+## different kind of source, not useful for Layer 3. Full account in AUDIT_GOVERNANCE_LEDGER.md's
+## own same-titled resource note.
 
 ## Session 2026-08-31 continued -- found and mined a new productive source: Wikipedia's curated
 ## "Category:Assyrian Church of the East saints" (27 real entries), several citing Holweck's 1924
