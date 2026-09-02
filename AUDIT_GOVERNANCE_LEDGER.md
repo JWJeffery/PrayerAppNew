@@ -9179,3 +9179,97 @@ Layer 3 identities would mean reintroducing exactly the uncited, scattered-date 
 whole project's Layer 3 work has spent multiple sessions finding and removing. Confirmed dead end,
 not touched further; the files themselves remain flagged as a real cleanup candidate for whoever
 eventually audits the codebase for orphaned artifacts, out of this session's own scope to act on.
+
+---
+
+## Session 2026-09-02 -- removed the Lucy-era saints generator/CI-gate architecture entirely, per
+## Josh's direct instruction, after he correctly called out a real repo-reading failure. Confirmed
+## commemorations.json/identities.json (and the tooling and CI workflow built around them) were a
+## Lucy creation, predating her 2026-07-05 dismissal, never audited for COE, and actively diverging
+## from months of real sourcing work sitting in a live CI gate configured to silently overwrite it.
+## Deleted rather than reconciled. SEED_VERSION unaffected (no East Syriac calendar/office code
+## touched; this is a data-architecture and tooling change).
+
+**The failure, stated plainly, not minimized:** this project's own standing directive -- read the
+whole repo before starting work, so sessions don't get "caught off guard" by what already exists
+-- was violated again, this time with real consequences rather than just wasted effort. Multiple
+sessions across 2026-08-27 through 2026-08-31 hand-edited `data/saints/saints-{month}.json`
+directly, sourcing dozens of real COE identities with real citations, without ever discovering
+that: (1) those files were documented (`documentation/saints-data-rules.md`) as *generated
+artifacts* that "must never be edited manually"; (2) a real two-file source-of-truth system
+(`identities.json`, `commemorations.json`) existed alongside them, last correctly used for the
+ANG sanctoral cleanup as recently as 2026-07-07; and (3) a live GitHub Actions workflow
+(`.github/workflows/saints-gate.yml`) ran on every push touching `data/saints/**`, regenerated the
+cache from that source, and would fail the build -- or, if ever force-applied, silently overwrite
+every hour of that real sourcing work -- because the COE portion of `commemorations.json` was
+never cleaned and still carried the exact same 235-row fabrication signature already found and
+fixed in the cache files. This was discoverable from directory listings and `git log` alone,
+without any of today's forensic digging, the first time any session touched `data/saints/`. It
+wasn't done.
+
+**Verified Josh's hypothesis before acting on it, not assumed:** checked file introduction dates
+against the documented Lucy-dismissal date (`AUDIT_GOVERNANCE_LEDGER.md`, "2026-07-05 -- Lucy...
+falsely certifying... Dismissed"). `identities.json`, `commemorations.json`, and the generator
+were introduced 2026-03-01 through 2026-03-07 -- squarely within Lucy's tenure as "prior project
+architect/QA lead," four months before her dismissal. `commemorations.json` was seeded on
+2026-03-01 by importing the *already-fabricated* legacy `saints-{month}.json` data wholesale
+(`tools/import_legacy_saints.js`'s own docstring confirms this), explaining precisely why its
+235 COE-tagged rows exactly matched the count already found and cleaned elsewhere. The one
+legitimate post-dismissal use of this system (2026-07-07, the ANG sanctoral cleanup) only ever
+touched ANG-tagged rows; COE's portion was never independently audited and sat exactly as Lucy
+originally left it. Confirmed, not assumed: this was a Lucy creation.
+
+**Removed rather than reconciled, per Josh's direction:**
+- `data/saints/identities.json`, `data/saints/commemorations.json`
+- `data/saints/readme.md` (described the removed architecture; replaced with an accurate one --
+  see below)
+- `data/saints/saints_audit.json` (empty array), `data/saints/saints_audit.csv` (header row only,
+  zero data) -- unused output artifacts of the removed toolchain
+- `tools/build_saints_cache.js`, `tools/import_legacy_saints.js`, `tools/validate_saints_sources.js`,
+  `tools/fix_commemorations_calendar.js`, `tools/rank_identity_frequency.js`
+- `.github/workflows/saints-gate.yml`
+- The `saints:validate`/`saints:build`/`saints:regen`/`saints:rank` scripts in `package.json`
+
+**Checked thoroughly before removing anything, not assumed safe:** confirmed via direct search
+that no live code path referenced any of the removed files beyond two purely textual mentions (a
+comment in `js/coe-eligibility.js`, dashboard note text in `audit-ledger.html`, both corrected or
+left as accurate historical record respectively) -- `js/saints-resolver.js`, the only real runtime
+consumer, has only ever read `saints-{month}.json` directly and is completely unaffected. Ran the
+full resolve-and-filter pipeline end-to-end after the removal against four real dates spanning
+four different sourcing sessions (Zaia, Jacob of Nisibis, Papa bar Aggai, Pethion) -- all four
+still resolve correctly.
+
+**Wrote a new, accurate `data/saints/readme.md`** documenting the real current model (direct
+hand-edited monthly files, no generation layer) and explaining plainly why the old one was
+removed, specifically so a future session reading this directory first -- as it should -- gets the
+correct picture immediately rather than the stale, actively-misleading one that caused this.
+
+**Corrected stale claims in three other documentation files that described the removed
+architecture as current** rather than deleting them outright, since they retain some value as
+historical record of Lucy's original design: `structure.json` (its "architectural_debt" item 4,
+which actively claimed "identities.json + commemorations.json are the canonical source-of-truth"
+and described a planned future migration toward reading them directly at runtime -- now marked
+revised, with that migration explicitly noted as reversed, not completed), `documentation/
+SAINTS_DATA_MODEL.md`, `documentation/saints-data-rules.md` (the exact document containing the
+"must never be edited manually" rule that, if read, would have prevented this entire incident),
+and `documentation/saints-cleanup-queue.md` -- each given a clear superseded-notice header rather
+than silently left to mislead the next reader.
+
+**Verified:** all 12 monthly saints files remain valid JSON, unchanged in content. `package.json`
+and `structure.json` remain valid JSON after edits. `js/coe-eligibility.js` and `js/saints-
+resolver.js` pass `node --check`. Full resolve-and-filter pipeline confirmed functional end-to-end
+post-removal against four real, previously-sourced dates.
+
+**What this does not do:** it does not touch, re-source, or re-verify any of the actual COE
+identity data already sourced across this project's many Layer 3 sessions -- that work stands
+exactly as documented, now on solid ground instead of a diverging fork.
+
+**The July 7 ANG cleanup is confirmed safe, checked directly rather than assumed:** every one of
+that session's commits states "Cache regenerated and verified" -- meaning its real, sourced fixes
+were already written through to `saints-{month}.json` at the time, the same files this removal
+left completely untouched. Nothing from that legitimate work was lost by deleting
+`commemorations.json`; its corrections already live in the files that remain the actual source of
+truth. What *is* gone is `commemorations.json`'s own copy of those fixes, and whatever else it may
+have carried for ANG/LAT/EOR/OOR beyond what that cleanup addressed -- unaudited, uncited, and
+carrying the same fabrication signature as the COE portion, so not a real loss to recover, just
+worth stating plainly rather than glossing over.

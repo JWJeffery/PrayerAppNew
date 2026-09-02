@@ -1,5 +1,41 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-02 -- removed the Lucy-era saints generator/CI-gate architecture entirely,
+## per Josh's direct instruction. `identities.json`/`commemorations.json` (built 2026-03-01/07,
+## before Lucy's 2026-07-05 dismissal, never audited for COE) and a live CI gate configured to
+## silently regenerate `saints-{month}.json` from that fabricated source were confirmed and
+## deleted. `saints-{month}.json` are now the direct, hand-edited source of truth -- no generation
+## layer. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-02 entry; current model documented
+## in `data/saints/readme.md`.
+
+**The failure, stated plainly:** this project's standing directive to read the whole repo before
+starting work was violated again, this time with real consequences. Multiple sessions across
+2026-08-27 through 2026-08-31 hand-edited the cache files directly, never discovering they were
+documented as generated artifacts that "must never be edited manually," or that a live CI gate
+existed that would fail the build -- or silently overwrite months of real sourcing -- the next time
+anyone touched `data/saints/`. This was discoverable from a directory listing and `git log` alone.
+
+**Verified before acting:** the two-file system was introduced 2026-03-01/07, squarely within
+Lucy's tenure, four months before her 2026-07-05 dismissal. `commemorations.json` was seeded by
+importing the already-fabricated legacy cache data wholesale -- explaining why its 235 COE rows
+exactly matched the count already found and cleaned elsewhere. Confirmed, not assumed.
+
+**Removed:** `identities.json`, `commemorations.json`, `data/saints/readme.md` (replaced with an
+accurate one), the empty audit-output files, the whole generator toolchain, the CI workflow, and
+the related npm scripts. Checked thoroughly first -- no live code path referenced any of it beyond
+two textual mentions, both corrected. Full resolve-and-filter pipeline confirmed functional
+end-to-end post-removal against four real dates.
+
+**The July 7 ANG cleanup is confirmed safe** -- its fixes were already written through to
+`saints-{month}.json` at the time ("Cache regenerated and verified" on every commit), the files
+this removal left untouched. Nothing real was lost.
+
+**Corrected, not deleted, three other stale documents** that described the removed architecture as
+current (`structure.json`, `SAINTS_DATA_MODEL.md`, `saints-data-rules.md`,
+`saints-cleanup-queue.md`) -- each given a clear superseded notice, kept as historical record.
+
+---
+
 ## ROADMAP NOTE, flagged 2026-08-31: Josh's vision for daily collects once the saints layer is
 ## built out across the whole Universal Office (COE, Byzantine/EO, Coptic/OO, BCP/Anglican), not
 ## just COE/Layer 3. `Lesser Feasts and Fasts` (2024 TEC edition) is already a tracked source

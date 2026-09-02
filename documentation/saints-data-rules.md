@@ -1,6 +1,14 @@
 Saints Data Rules
 
-Last Realigned: 2026-03-06
+> SUPERSEDED 2026-09-02 -- the two-file architecture and "never edit the monthly cache files
+> manually" rule this document describes were removed and reversed, respectively. That system was
+> confirmed as a Lucy-era creation (built 2026-03-01/07, before her 2026-07-05 dismissal for false
+> certification) and deleted. data/saints/saints-{month}.json ARE now the direct, hand-edited
+> source of truth -- editing them manually is the correct, only workflow. See
+> data/saints/readme.md for the current model and AUDIT_GOVERNANCE_LEDGER.md's 2026-09-02 entry
+> for the full account. Kept below as historical record, not as current guidance.
+
+Last Realigned: 2026-03-06 (Lucy-era, superseded -- see notice above)
 
 This document defines the authoritative structure, editing rules, and workflow for saints data.
 Its purpose is to prevent semantic drift, reduce merge conflicts, and ensure deterministic builds.

@@ -1,8 +1,16 @@
 # Saints Data Model (Internal)
 
-**Status:** Active  
-**Last Realigned:** 2026-03-06  
-**Source of truth:** `data/saints/identities.json` + `data/saints/commemorations.json` (declared in `structure.json`)
+> **SUPERSEDED 2026-09-02 — the architecture this document describes was removed.**
+> `identities.json`, `commemorations.json`, the generator, and the CI gate built around them were
+> confirmed as a Lucy-era creation (built 2026-03-01/07, before her 2026-07-05 dismissal for false
+> certification) and deleted. `data/saints/saints-{month}.json` are now the direct, hand-edited
+> source of truth with no generation layer. See `data/saints/readme.md` for the current model and
+> `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-02 entry for the full account. Kept below as historical
+> record of the removed design, not as current guidance.
+
+**Status:** ~~Active~~ SUPERSEDED, see above
+**Last Realigned:** 2026-03-06 (Lucy-era)
+**Source of truth:** ~~`data/saints/identities.json` + `data/saints/commemorations.json`~~ now `data/saints/saints-{month}.json` directly
 
 ---
 

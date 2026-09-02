@@ -1,6 +1,15 @@
 Saints Cleanup Queue — Phase 1
 
-Generated from data/saints/commemorations.json and data/saints/identities.json using tools/rank_identity_frequency.js.
+> SUPERSEDED 2026-09-02 -- generated from a Lucy-era architecture (identities.json,
+> commemorations.json, tools/rank_identity_frequency.js) that was confirmed as her creation (built
+> 2026-03-01/07, before her 2026-07-05 dismissal for false certification) and deleted. The "do not
+> edit generated saints-<month>.json files manually" rule below is reversed -- direct hand-editing
+> of those files is now the correct, only workflow. See data/saints/readme.md and
+> AUDIT_GOVERNANCE_LEDGER.md's 2026-09-02 entry. Kept below as historical record, not current
+> guidance; any ids still listed as unresolved below may be worth independent re-checking, not
+> assumed still accurate.
+
+Generated from data/saints/commemorations.json and data/saints/identities.json using tools/rank_identity_frequency.js. (Lucy-era, superseded -- see notice above)
 
 Rules:
 

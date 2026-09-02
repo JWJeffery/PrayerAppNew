@@ -48,7 +48,13 @@
  * removed. A further 21% belong in Layer 2 (fixed feasts, corporate
  * commemorations, calendar structure) rather than Layer 3.
  * Source-data corrections are complete: 133 unique identity IDs (136 rows)
- * have had their COE tags removed from commemorations.json.
+ * had their COE tags removed. REMOVED 2026-09-02: this file's own former
+ * source of truth (commemorations.json/identities.json, plus the generator
+ * and CI gate built around them) was confirmed as a Lucy-era creation
+ * (built 2026-03-01/07, before her 2026-07-05 dismissal, never independently
+ * audited for COE) and deleted -- data/saints/saints-{month}.json are now
+ * the direct, hand-edited source of truth, no generation layer. See
+ * AUDIT_GOVERNANCE_LEDGER.md, session 2026-09-02, for the full account.
  *
  * Architecture
  * ------------
