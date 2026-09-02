@@ -371,11 +371,12 @@
     "id": "saint-matthias-the-apostle",
     "day": "August 9",
     "name": "Saint Matthias the Apostle",
-    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
+    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26). Confirmed for the Church of the East specifically: this figure's own Wikipedia infobox lists this date explicitly for 'Eastern Orthodox Church and Assyrian Church of the East.'",
     "type": "apostle",
     "tags": [
       "EOR",
-      "OOR"
+      "OOR",
+      "COE"
     ]
   },
   {

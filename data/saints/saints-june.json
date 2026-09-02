@@ -928,5 +928,15 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "saint-bartholomew-the-apostle",
+    "day": "June 13",
+    "name": "Saint Bartholomew the Apostle",
+    "description": "One of the Twelve Apostles. Single-sourced, disclosed rather than treated as fully corroborated: a liturgical-calendar-focused source ('For All the Saints,' citing the standard pattern of Eastern commemoration alongside Barnabas on June 11) states 'the Church of the East in Persia commemorated him on June 13' specifically, distinct from the Eastern Orthodox June 11 date. Not independently cross-confirmed by a second source; recorded with this caveat rather than presented with the same confidence as multi-source entries elsewhere in this corpus.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

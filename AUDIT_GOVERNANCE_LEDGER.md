@@ -9037,3 +9037,33 @@ the East is not among them. Same tradition-mismatch pattern as `saint-ahudemmeh`
 future review, not resolved here.
 
 **Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
+## Session 2026-08-31 continued -- 2 more Layer 3 identities sourced (72 total, was 70), checking
+## the remaining NT apostles individually. Diminishing but real returns -- checked Barnabas,
+## Bartholomew, Matthias, Philip, Simon the Zealot; two confirmed, three came up genuinely empty.
+## No SEED_VERSION change (annotation and small additions, consolidated into the next commit's
+## version bump).
+
+**Matthias, confirmed cleanly:** his own Wikipedia infobox explicitly lists "9 August (Eastern "
+Orthodox Church and Assyrian Church of the East)" -- the Church of the East named directly, not
+inferred. An existing Aug.9 row already sat in this corpus (tagged EOR/OOR); added COE rather than
+creating a duplicate.
+
+**Bartholomew, sourced with an explicit single-source caveat:** a liturgical-calendar-focused
+source ("For All the Saints") states "the Church of the East in Persia commemorated him on June
+13," distinct from the Eastern Orthodox June 11 date his own Wikipedia infobox gives generically.
+Not independently cross-confirmed by a second source -- recorded with that caveat directly in the
+entry rather than presented with the same confidence as multi-source finds.
+
+**Checked and came up genuinely empty:** Barnabas (own infobox lists Catholic/EO/Oriental
+Orthodox/Anglican/Lutheran veneration, no Church of the East), Philip (both "Philip the Apostle"
+and "Philip the Evangelist" articles checked -- neither mentions Church of the East veneration),
+Simon the Zealot (own infobox gives Western/Byzantine/Coptic/Ethiopian dates only; a secondary
+source confirms he has "significance in Church of the East" scholarship generally but gives no
+specific date). None forced onto a date without real support.
+
+**Result: 72 of 135 allowlisted identities now sourced** (was 70).
+
+**Verified:** all 12 monthly saints files remain valid JSON.
