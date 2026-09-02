@@ -9153,3 +9153,29 @@ plausibly close to the practical ceiling of what general web research can resolv
 allowlist -- the remaining gap is now genuinely a Gazza-or-Fiey problem, not a search-effort one.
 
 **Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
+## RESOURCE NOTE, confirmed 2026-08-31: identities.json/commemorations.json are stale, orphaned
+## snapshots of the ORIGINAL fabricated dataset -- not a hidden source of usable data. No
+## SEED_VERSION change (investigation only, no data touched).
+
+Flagged as a possible orphaned-file cleanup candidate in an earlier entry this session, not
+touched. Checked directly today, in case it held real, previously-missed sourcing for the
+remaining Layer 3 identities -- it does not.
+
+**Confirmed precisely:** `commemorations.json` carries 235 rows tagged `COE` -- the exact same
+count as the original fabricated COE-tagged batch found and cleaned in `data/saints/saints-
+{month}.json` at the very start of this project's Layer 3 work. Zero of the 235 rows carry any
+`source` field. 35 distinct identity ids repeat across multiple dates within this one file alone
+(e.g. `mar-narsai` alone sits at five different dates -- Jan.18, Jul.13, Aug.21, Sept.5, Dec.16 --
+with no citation for any of them). This is not a coincidence: `commemorations.json` is almost
+certainly a stale snapshot of the *original*, pre-cleanup fabricated dataset, left behind when the
+live resolution code (`js/saints-resolver.js`) moved to the per-month `saints-{month}.json` files
+and never removed.
+
+**Not a hidden source of usable sourcing** -- using anything from this file for the remaining
+Layer 3 identities would mean reintroducing exactly the uncited, scattered-date fabrication this
+whole project's Layer 3 work has spent multiple sessions finding and removing. Confirmed dead end,
+not touched further; the files themselves remain flagged as a real cleanup candidate for whoever
+eventually audits the codebase for orphaned artifacts, out of this session's own scope to act on.
