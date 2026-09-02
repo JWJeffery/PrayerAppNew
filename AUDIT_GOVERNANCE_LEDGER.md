@@ -9273,3 +9273,61 @@ truth. What *is* gone is `commemorations.json`'s own copy of those fixes, and wh
 have carried for ANG/LAT/EOR/OOR beyond what that cleanup addressed -- unaudited, uncited, and
 carrying the same fabrication signature as the COE portion, so not a real loss to recover, just
 worth stating plainly rather than glossing over.
+
+---
+
+## Session 2026-09-02 continued -- rewired East Syriac back into the tradition-entry splash flow,
+## and audited the East Syriac settings sidebar for the same class of dead-control bug already
+## found once (Cathedral/Monastic toggle) -- found and fixed a real one: three sidebar boxes
+## (Current Cycle, Fasting Character, Anaphora) had sat on static placeholder text since they were
+## built, never once written to by any code. No SEED_VERSION change (UI/entry-flow fix, not
+## calendar or office content).
+
+Josh: "If you believe that it is ready to ship, then we need to rewire it back into the splash
+page. You also need to ensure that you double check the sidebars for functionality so that we
+catch the same type of errors that have existed in the other sidebars."
+
+**Splash-page rewire, done carefully rather than by just deleting the override.** The
+tradition-entry screen was deliberately bypassed on 2026-07-25 for a specific priest-testing
+deploy phase -- `initializeEntryRouting()` unconditionally called `showUniversalModeSelection(false)`,
+skipping the splash for every visitor regardless of any stored preference. Rather than simply
+delete that override, checked first for the actual intended routing logic underneath it: a
+complete, already-built `getUserEntryDefault()` function existed, returning `'universal'`, a
+specific stored tradition, or `null` (meaning "ask") -- exactly the three-way branch the entry flow
+needs, sitting unused the whole time the bypass was in place. Restored `initializeEntryRouting()`
+to call it: `'universal'` -> the 3-button mode-selection screen; a stored tradition -> routes
+straight there via the same `setUserTraditionDefault()` used by the entry cards themselves; `null`
+(first-time visitors, the default) -> `showTraditionEntry()`, the real splash, including the
+ACOE/Ancient Church of the East sub-selector built 2026-08-30. Verified the full round-trip:
+`resolveEntryTraditionRoute()`'s `storedDefault` values are the exact vocabulary
+`getUserEntryDefault()` reads back, confirmed by tracing where `profile.traditionDefault` gets
+written (`route.storedDefault`, in two places) against what `setUserTraditionDefault()` expects as
+input.
+
+**Sidebar functionality audit, the second part of the request, done systematically rather than a
+quick glance.** Every interactive control and every display target in `#east-syriac-settings`
+checked against the actual JS: the override panel (`toggleEsyOverridePanel`, `applyEsyOverride`,
+`resetEsyOverride`), the Cathedral/Monastic radios (re-confirmed `isEastSyriacCathedralMode()` is
+still genuinely called in three real places, not a regression from any of this session's other
+edits), the Easter Reckoning select, and the five display targets.
+
+**Found a real bug, the same class already fixed once for Cathedral/Monastic:** `#esy-cycle-box`,
+`#esy-fast-box`, and `#esy-anaphora-box` (labeled "Current Cycle," "Fasting Character," and
+"Anaphora" in the sidebar) had zero references anywhere in `js/office-ui.js` -- confirmed by
+direct search, not a near-miss. They had sat on their static HTML placeholder text ("Calculating...",
+"—", "—") unconditionally since the sidebar was built, regardless of what the office actually
+displayed. The underlying data was never missing -- `EastSyriacCalendar.getDayClass()` already
+computes and returns exactly these three values as ready-to-display strings
+(`seasonLabel`/`fastLabel`/`anaphoraLabel`), confirmed by checking `calendar-east-syriac.js`
+directly; the calling code in `office-ui.js` simply never read them into the DOM. Fixed by adding
+one `getDayClass()` call near the top of `renderEastSyriac()` (reusing the exact same call
+pattern already used ten other times in that function) and writing its labels to the three boxes.
+
+**Verified:** `node --check` passes on `js/office-ui.js`. `index.html` spot-checked for the
+splash's ACOE/ACE sub-panel and exactly one instance of each of the three sidebar box ids. Checked
+`getDayClass()`'s output directly against four real dates spanning four different seasons --
+`seasonLabel`, `fastLabel`, and `anaphoraLabel` all produce sensible, correctly-formatted text
+("Denkha", "Sauma — the Great Fast", "Anaphora of Addai and Mari," etc.), not placeholder or
+malformed values. Traced the full entry-routing chain by reading the actual code end to end
+(`getUserEntryDefault()` -> `setUserTraditionDefault()` -> `resolveEntryTraditionRoute()` ->
+`selectMode()`) rather than assuming it would work from the pieces looking individually correct.

@@ -1351,11 +1351,24 @@ function initializeEntryRouting() {
         return;
     }
 
-    // Tradition-picker entry screen bypassed per Josh's direction (2026-07-25,
-    // priest-testing deploy): always land directly on the 3-button mode
-    // selection screen (Daily Office / Book of Needs / Bible Browser),
-    // regardless of any stored per-browser tradition default.
-    showUniversalModeSelection(false);
+    // RESTORED 2026-09-02, per Josh's direction: the tradition-picker entry screen was
+    // bypassed 2026-07-25 for a specific priest-testing deploy phase, always landing on
+    // the 3-button mode-selection screen regardless of any stored preference. That phase
+    // is over -- East Syriac (including the ACOE/Ancient Church of the East split built
+    // 2026-08-30) is confirmed ready to ship, and needs to be reachable through the real
+    // entry flow, not just via a directly-set profile default from a prior visit. Routes
+    // through getUserEntryDefault() -- the already-built, already-correct logic this
+    // bypass was silently overriding -- instead of unconditionally skipping it.
+    const storedDefault = getUserEntryDefault();
+    if (storedDefault === 'universal') {
+        showUniversalModeSelection(false);
+        return;
+    }
+    if (storedDefault) {
+        setUserTraditionDefault(storedDefault);
+        return;
+    }
+    showTraditionEntry();
 }
 
 window.selectTraditionFamily = selectTraditionFamily;
@@ -4344,6 +4357,24 @@ async function renderEastSyriac() {
     const matchesSunday = [0, 1, 3, 5].includes(dow); // Sun, Mon, Wed, Fri share Sunday's cycle
     const cycle = matchesSunday ? sundayCycle : (sundayCycle === 'qdham' ? 'wathar' : 'qdham');
     const cycleLabel = cycle === 'qdham' ? "Qdham (\u2018Before\u2019 Week)" : "Wathar (\u2018After\u2019 Week)";
+
+    // FIXED 2026-09-02: the sidebar's Current Cycle / Fasting Character / Anaphora
+    // boxes (#esy-cycle-box, #esy-fast-box, #esy-anaphora-box) existed in
+    // index.html but were never written to by any code -- found during a
+    // sidebar functionality audit requested by Josh, the same class of dead-
+    // control bug already found and fixed once for the Cathedral/Monastic
+    // toggle. getDayClass() already computes and exposes exactly these three
+    // values as ready-to-display labels (seasonLabel, fastLabel,
+    // anaphoraLabel) -- they simply were never read into the DOM.
+    {
+        const sidebarDayClass = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode });
+        const cycleBox    = document.getElementById('esy-cycle-box');
+        const fastBox     = document.getElementById('esy-fast-box');
+        const anaphoraBox = document.getElementById('esy-anaphora-box');
+        if (cycleBox)    cycleBox.textContent    = `${sidebarDayClass.seasonLabel || cycleLabel} \u2014 ${cycleLabel}`;
+        if (fastBox)     fastBox.textContent     = sidebarDayClass.fastLabel || 'No fast observed';
+        if (anaphoraBox) anaphoraBox.textContent = sidebarDayClass.anaphoraLabel || '\u2014';
+    }
 
     // Honour whatever hour is actually selected in the sidebar (or the
     // auto-detected current hour if nothing is selected yet) -- even though

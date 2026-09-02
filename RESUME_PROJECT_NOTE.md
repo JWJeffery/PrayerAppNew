@@ -1,5 +1,33 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-02 continued -- rewired East Syriac back into the tradition-entry splash flow
+## (deliberately bypassed since 2026-07-25 for a priest-testing deploy), and audited the East
+## Syriac settings sidebar for the same class of dead-control bug already found once
+## (Cathedral/Monastic) -- found and fixed a real one: three sidebar boxes (Current Cycle, Fasting
+## Character, Anaphora) had sat on static placeholder text since they were built. No SEED_VERSION
+## change. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s same-date entry.
+
+Josh: "If you believe that it is ready to ship, then we need to rewire it back into the splash
+page. You also need to ensure that you double check the sidebars for functionality."
+
+**Splash rewire, done by finding the existing intended logic, not by deleting the override
+blindly.** `getUserEntryDefault()` already existed, fully built, returning 'universal'/a stored
+tradition/null -- exactly the routing this needed. `initializeEntryRouting()` now calls it instead
+of unconditionally bypassing to the 3-button screen. Verified the full round-trip vocabulary
+matches between what gets stored and what gets read back.
+
+**Sidebar audit found a real bug:** `#esy-cycle-box`/`#esy-fast-box`/`#esy-anaphora-box` had zero
+references anywhere in the JS -- confirmed by direct search. The data was never missing;
+`getDayClass()` already returns `seasonLabel`/`fastLabel`/`anaphoraLabel` as ready-to-display
+strings, just never read into the DOM. Fixed with one `getDayClass()` call, reusing the same
+pattern already used ten times elsewhere in `renderEastSyriac()`.
+
+**Verified:** `node --check` passes; `index.html` spot-checked; `getDayClass()` output checked
+directly against four real dates across four seasons, all sensible; full entry-routing chain
+traced end to end by reading the actual code, not assumed from pieces looking correct individually.
+
+---
+
 ## Session 2026-09-02 -- removed the Lucy-era saints generator/CI-gate architecture entirely,
 ## per Josh's direct instruction. `identities.json`/`commemorations.json` (built 2026-03-01/07,
 ## before Lucy's 2026-07-05 dismissal, never audited for COE) and a live CI gate configured to
