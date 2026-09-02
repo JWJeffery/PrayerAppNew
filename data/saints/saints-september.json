@@ -400,7 +400,7 @@
     "id": "mar-zeia",
     "day": "September 10",
     "name": "Mar Zeia",
-    "description": "The traveler and ascetic.",
+    "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Zeia' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
     "type": "saint",
     "tags": []
   },
@@ -448,7 +448,7 @@
     "id": "mar-yohannan",
     "day": "September 11",
     "name": "Mar Yohannan",
-    "description": "Bishop and confessor.",
+    "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Yohannan (John)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
     "type": "saint",
     "tags": []
   },

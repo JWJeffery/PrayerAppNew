@@ -51,7 +51,7 @@
     "id": "mar-shmon",
     "day": "December 2",
     "name": "Mar Shmon",
-    "description": "Bishop and martyr.",
+    "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Shmon (Simon)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
     "type": "saint",
     "tags": []
   },
@@ -654,7 +654,7 @@
     "id": "prophet-daniel-and-the-three-holy-youths",
     "day": "December 17",
     "name": "Prophet Daniel and the Three Holy Youths",
-    "description": "Ananias, Azarias, and Misael; celebrated across traditions.",
+    "description": "CHECKED 2026-08-31: Daniel and the Three Holy Youths (Ananias, Azarias, Misael). December 17 is a real, well-attested date, but explicitly for the Eastern Orthodox liturgical calendar specifically -- no source checked confirms Church of the East veneration or gives a distinct COE date. Not sourced on that basis.",
     "type": "prophet",
     "tags": [
       "ANG",
@@ -1079,7 +1079,7 @@
     "id": "mar-shmon-the-second",
     "day": "December 30",
     "name": "Mar Shmon the Second",
-    "description": "Patriarch.",
+    "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Shmon the Second (Simon)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
     "type": "saint",
     "tags": []
   },

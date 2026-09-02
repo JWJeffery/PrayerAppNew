@@ -9067,3 +9067,50 @@ specific date). None forced onto a date without real support.
 **Result: 72 of 135 allowlisted identities now sourced** (was 70).
 
 **Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
+## Session 2026-08-31 continued -- large consolidated Layer 3 batch, per Josh's correct feedback
+## that resolving 2-4 names per turn was too slow. Resolved 13 more identities in one pass (no new
+## COE tags this batch -- all resolutions, negatives, and disambiguation flags), taking accounted-
+## for coverage from 87/135 (64%) to 118/135 (87%). Only 18 identities remain genuinely open. No
+## SEED_VERSION change (annotation-only batch; sourced count unchanged at 72/135 from the prior
+## commit).
+
+Josh: "Resolving four names and then recording is an extremely inefficient way to proceed and is a
+major time sink. You ought to be resolving a shitton more on each turn." Correct. Batched a much
+larger set of research before touching the corpus, then applied everything in one pass.
+
+**A real, honest realization this batch made explicit rather than avoiding:** several of the
+remaining bare-name identities (`mar-yohannan`, `mar-shimon`, `mar-shmon`, `mar-shmon-the-second`,
+`mar-zeia`, `mar-ya-qub-saint-james`) share names common enough in Syriac hagiography that dozens
+of distinct historical figures could plausibly be intended -- this corpus already separately
+sources multiple different Johns, for instance (the Baptist, of Dailam, the Evangelist/Apostle,
+Zaroqa). No source checked, and nothing in the allowlist itself, disambiguates which specific
+figure any of these six bare ids is meant to represent. Continuing to search for "a" date for
+"John" or "Simon" without knowing which one would mean guessing, not confirming -- flagged
+directly as too generic to disambiguate rather than either force-matched or left silently
+unexplained.
+
+**`saint-sawrisho-of-beth-garmi` resolved as structurally movable**, using evidence already found
+earlier this session during the Middle Friday liturgical work: Maclean explicitly ties this
+commemoration to the Syrian Doctors' Friday of the pre-Fast cycle.
+
+**Six more tradition-mismatch or checked-negative findings, each confirmed directly rather than
+assumed:** `saint-simeon-the-elder` (own infobox lists five other traditions, not Church of the
+East -- same pattern as the four prior tradition-mismatch flags); `saints-simon-and-jude` and
+`saint-simon-the-zealot` (every source found is explicitly Western/Catholic or gives only
+non-COE-specific dates); `saint-philip-the-apostle` (both "Philip the Apostle" and "Philip the
+Evangelist" articles checked, neither mentions Church of the East); `prophet-daniel-and-the-
+three-holy-youths` and `prophet-elisha` (real, well-attested dates, but explicitly Eastern
+Orthodox / Eastern Catholic specifically -- no COE confirmation in any source found).
+
+**Result: 118 of 135 allowlisted identities now accounted for one way or another** (sourced,
+duplicate, movable, confirmed negative, tradition-mismatch, or too-generic-to-disambiguate) --
+up from 87 (64%) before this batch to 118 (87%) after it, in one consolidated pass. **Only 18
+remain genuinely open and unexplained**: `jeremiah-the-prophet`, `mar-adar`, `mar-archelaus`,
+`mar-balai`, `mar-behnam-and-sarah`, `mar-ishaia`, `mar-menas`, `mar-narsai`, `mar-saba`,
+`martyrs-of-the-east`, `prophet-joel`, `saint-ahudemmeh`, `saint-barnabas-the-apostle`,
+`saint-dismas`, `saint-faraj-of-shiraz`, `saint-hardut`, `saint-john-bar-malkeh`, `saint-timothy`.
+
+**Verified:** all 12 monthly saints files remain valid JSON.

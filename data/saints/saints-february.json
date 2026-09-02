@@ -65,7 +65,7 @@
     "id": "saint-simeon-the-elder",
     "day": "February 2",
     "name": "Saint Simeon the Elder",
-    "description": "Righteous elder who received Christ in the temple.",
+    "description": "CHECKED 2026-08-31, tradition mismatch found: Simeon who received the infant Christ at the Presentation (Luke 2). His own Wikipedia infobox lists 'Venerated in: Eastern Orthodox Church, Oriental Orthodox Church, Catholic Church, Anglican Communion, Lutheranism' -- the Church of the East is not among them. Same pattern as saint-ahudemmeh, mar-behnam-and-sarah, virgin-martyr-febronia-of-nisibis, and mar-gregory-the-wonderworker. Flagged for the allowlist's own future review.",
     "type": "saint",
     "tags": []
   },

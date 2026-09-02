@@ -186,7 +186,7 @@
     "id": "saint-sawrisho-of-beth-garmi",
     "day": "May 5",
     "name": "Saint Sawrisho of Beth Garmi",
-    "description": "Monk and ascetic, 6th century.",
+    "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own text, found during this project's earlier Middle Friday liturgical work, ties 'Memorial of Mar Saurishu of Beith Garmai' explicitly to the Syrian Doctors' Friday of the pre-Fast cycle (the Sixth Friday) -- the same movable cycle already computed by getPreFastSundayFoldSchedule() (deliberately unwired). Distinct from the already-sourced mar-sabrisho (Oct.4, of Beth Qoqa), a different historical Sawrisho. No fixed Gregorian date exists for this specific commemoration.",
     "type": "saint",
     "tags": []
   },
@@ -380,7 +380,7 @@
     "id": "saint-simon-the-zealot",
     "day": "May 10",
     "name": "Saint Simon the Zealot",
-    "description": "Apostle martyred in Persia.",
+    "description": "Apostle martyred in Persia. CHECKED 2026-08-31: this figure's own Wikipedia infobox gives only Western, Byzantine, Coptic, and Ethiopian dates -- no Church of the East veneration or date confirmed in any source checked.",
     "type": "saint",
     "tags": [
       "EOR",
