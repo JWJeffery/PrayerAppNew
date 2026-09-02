@@ -1260,5 +1260,15 @@
     "tags": [
       "COE"
     ]
+  },
+  {
+    "id": "mar-abda",
+    "day": "May 16",
+    "name": "Mar Abda",
+    "description": "Abda, bishop of Kashkar, martyred with his predecessor Abdisho and 38 companions in 376. Source: Wikipedia, citing Holweck, F.G., A Biographical Dictionary of the Saints (St. Louis: B. Herder Book Co., 1924), s.v. 'Abda and Abdisho.'",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   }
 ]

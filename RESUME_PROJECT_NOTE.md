@@ -23,6 +23,28 @@
 ## at a specific URL -- a real next step. Full account in AUDIT_GOVERNANCE_LEDGER.md's own
 ## same-titled resource note.
 
+## Session 2026-08-31 continued -- found and mined a new productive source: Wikipedia's curated
+## "Category:Assyrian Church of the East saints" (27 real entries), several citing Holweck's 1924
+## Biographical Dictionary of the Saints for actual feast dates. 3 new sourced entries, 3 duplicate
+## resolutions, 3 more confirmed negatives, 1 likely-mistaken identity flagged. 70/135 sourced (was
+## 67); 100/135 (74%) have some documented resolution, up from 85 (63%). Only 35 remain genuinely
+## bare. SEED_VERSION v202 -> v203. Full account in AUDIT_GOVERNANCE_LEDGER.md's same-titled entry.
+
+Applied the Mar Awa/Mar Mari movable finding from earlier this session (10 movable-resolved
+total). Found Wikipedia's own curated saints category, several articles citing Holweck's 1924
+dictionary. Three new identities sourced fresh into the allowlist: Mar Abraham of Nethpra
+(Mar.13), Mar Abda (May.16, resolving the ambiguous `mar-abda` id to the bishop of Kashkar
+martyred with Abdisho in 376, chosen over two other candidate Abdas since Holweck states plainly
+no feast day exists for one of them), Hor/Besoy/Daydara (Jun.23). Three more duplicates resolved:
+`saint-jude-thaddeus` to the already-sourced `mar-addai`, `mar-abraham-the-great` to
+`mar-abraham-of-kashkar`. Two more confirmed negatives: Babai the Great (no Feast field on his own
+article, same pattern as Timothy I), Dadisho (checked both candidates, neither has a date). One
+likely-mistaken identity flagged: `mar-sliwa` -- "Sliwa" is just the Syriac word for Cross, no
+distinct saint by that name found anywhere.
+
+**Verified:** `node --check` passes, all 12 monthly files valid JSON, full pipeline run
+end-to-end for all three new entries.
+
 ## Session 2026-08-31 continued -- "our rule is we continue until we are finished." Resolved 6
 ## more Layer 3 identities as structurally movable (Mar Awa, Mar Mari), found and mined a new
 ## comprehensive cross-validation source, and two more confirmed negative findings (Timothy I,

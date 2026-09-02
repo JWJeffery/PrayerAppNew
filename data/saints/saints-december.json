@@ -540,7 +540,7 @@
     "id": "mar-abraham-the-great",
     "day": "December 15",
     "name": "Mar Abraham the Great",
-    "description": "Monastic reformer.",
+    "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-abraham-of-kashkar (May 2) -- deliberately left without a COE tag, since tagging both would display the same person twice on the same date. Wikipedia's own article for this figure is titled 'Abraham the Great of Kashkar,' combining both epithets as one person, not two -- confirming this allowlist id and mar-abraham-of-kashkar represent the same historical founder of the Great Monastery. Not an unresearched gap.",
     "type": "saint",
     "tags": []
   },

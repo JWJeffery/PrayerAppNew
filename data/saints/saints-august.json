@@ -1013,7 +1013,7 @@
     "id": "mar-dadisho",
     "day": "August 25",
     "name": "Mar Dadisho",
-    "description": "Catholicos and ascetic.",
+    "description": "CONFIRMED NEGATIVE FINDING, 2026-08-31, not an unresearched gap: checked both plausible historical figures this id could represent -- Dadisho, Catholicos-Patriarch 421-456, first to hold the title after the Church of the East's 424 declaration of independence; and Dadisho of Mount Izla (528-604), second abbot of the Great Monastery after Abraham of Kashkar. Neither has an attested liturgical feast date in any source checked, including their own Wikipedia articles. Not every historically significant figure of the tradition was given a liturgical feast day.",
     "type": "saint",
     "tags": []
   },
@@ -1241,7 +1241,7 @@
     "id": "mar-sliwa",
     "day": "August 30",
     "name": "Mar Sliwa",
-    "description": "Martyr.",
+    "description": "LIKELY NOT A DISTINCT VENERATED FIGURE, 2026-08-31: 'Sliwa' is simply the Syriac word for 'Cross' -- it appears throughout Church of the East sources as part of personal names (e.g. the recent Patriarch-Emeritus Mar Gewargis III Sliwa) and as the Feast of the Holy Cross itself (already covered separately in this corpus as a Layer 2 feast, not an individual saint), but no search turned up a distinct historical martyr or saint named simply 'Sliwa' with his own commemoration day. Possibly a mistaken entry carried over from the original fabricated dataset rather than a real gap -- flagged for the allowlist's own future review rather than silently dated.",
     "type": "saint",
     "tags": []
   },

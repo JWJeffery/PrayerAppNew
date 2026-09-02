@@ -233,6 +233,12 @@
         'mar-ignatius',
         'mar-basil',
         'mar-diodorus-of-tarsus',
+
+        // Added 2026-08-31: found via Wikipedia's "Category:Assyrian Church of the East saints"
+        // (a curated, real category, not a search-engine guess) citing Holweck's 1924 Biographical
+        // Dictionary of the Saints for the actual feast date.
+        'mar-abraham-of-nethpra',
+        'hor-besoy-and-daydara',
     ]);
 
     const _APOSTOLIC = new Set([

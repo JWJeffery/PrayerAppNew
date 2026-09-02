@@ -8927,3 +8927,71 @@ not because any of it is being built now:**
 collect is only meaningful once the date and identity behind it are solid. Recorded here so this
 vision isn't lost, and so whoever picks it up later doesn't have to rediscover that LFF is already
 in hand for one tradition.
+
+---
+
+## Session 2026-08-31 continued -- "our rule is we continue until we are finished." Found and
+## mined a new, productive source: Wikipedia's curated "Category:Assyrian Church of the East
+## saints" (27 real entries), several citing Holweck's 1924 Biographical Dictionary of the Saints
+## for actual feast dates. 3 new sourced entries, 3 duplicate resolutions, 3 more confirmed
+## negatives, 1 likely-mistaken identity flagged. 70 of 135 now sourced (was 67); 100 of 135 (74%)
+## have some documented resolution, up from 85 (63%). Only 35 remain genuinely bare. SEED_VERSION
+## v202 -> v203.
+
+Applied a finding from earlier this session that hadn't yet been recorded in the corpus: Mar Awa
+and Mar Mari, both confirmed movable-only via Maclean's own Kalendar and both diocesan calendars.
+6 allowlist ids moved from unresearched to structurally-movable, bringing that category to 10
+total.
+
+**Found a new, genuinely productive source: Wikipedia's own curated
+`Category:Assyrian_Church_of_the_East_saints`** -- a real, maintained category page (27 entries,
+not a search-engine artifact), several of whose articles cite Holweck, F.G., *A Biographical
+Dictionary of the Saints* (St. Louis: B. Herder Book Co., 1924) -- a genuine, public-domain
+scholarly reference with systematic feast-date coverage for exactly this kind of figure.
+
+**Three new identities sourced directly from this category and Holweck's dictionary**, added to
+`js/coe-eligibility.js`'s allowlist fresh (not previously in the 133-identity list at all, the
+same pattern as the diocesan-calendar rebuild): Mar Abraham of Nethpra (March 13, a 6th-century
+monk credited with distinguishing Church of the East monastic habit from Miaphysite practice),
+Mar Abda (May 16, resolving the ambiguous `mar-abda` id specifically to the bishop of Kashkar
+martyred with Abdisho and 38 companions in 376 -- chosen over two other candidate Abdas in the
+same category, Abda of Dair-Koni and Abda of Hira, since this one carries an explicit,
+cross-tradition-confirmed date including the Church of the East specifically, while Holweck's own
+entry for Abda of Dair-Koni states plainly "No feast day commemorating this saint has been found
+to have existed"), and Hor, Besoy, and Daydara (June 23, 4th-century Alexandrian martyrs venerated
+jointly by the Coptic Orthodox Church and the Assyrian Church of the East).
+
+**Three more duplicate-id resolutions, caught by cross-checking this same category against
+already-sourced identities:** `saint-jude-thaddeus` resolved to the already-sourced `mar-addai`
+(May 3) -- Wikipedia's own dedicated Jude Thaddeus article gives no Church-of-the-East-specific
+date, and the identification of Addai with Thaddeus in this tradition was already independently
+confirmed earlier this session by two diocesan calendars agreeing on the same date and companion
+under both names. `mar-abraham-the-great` resolved to the already-sourced `mar-abraham-of-kashkar`
+(May 2) -- Wikipedia's own article for this figure is titled "Abraham the Great of Kashkar,"
+combining both epithets as one person, not two.
+
+**Two more confirmed negative findings, checked directly rather than assumed:** Babai the Great
+(c.551-628), the Church of the East's own foundational Christological theologian -- his Wikipedia
+infobox lists "Venerated in: Church of the East" but carries no "Feast" field at all, the same
+pattern already found for Timothy I. Dadisho -- checked both plausible candidates this id could
+represent (the 5th-century Catholicos-Patriarch and the 6th-century second abbot of Mount Izla),
+neither has an attested feast date in any source found.
+
+**One likely-mistaken identity flagged rather than force-dated:** `mar-sliwa` -- "Sliwa" is simply
+the Syriac word for "Cross." It appears throughout Church of the East sources as part of personal
+names (the recent Patriarch-Emeritus Mar Gewargis III Sliwa) and as the Feast of the Holy Cross
+itself (already covered separately in this corpus as a Layer 2 feast), but no search turned up a
+distinct historical saint named simply "Sliwa" with his own commemoration day. Possibly a mistaken
+entry carried over from the original fabricated dataset rather than a real gap in research --
+flagged for the allowlist's own future review, not silently dated.
+
+**Result: 70 of 135 allowlisted identities now sourced** (was 67), and **100 of 135 (74%) carry
+some documented resolution** -- sourced, a known duplicate-id form, structurally movable, a
+confirmed negative finding, or a flagged likely-mistaken entry -- up from 85 (63%). Only 35 remain
+genuinely bare and unexplained.
+
+**Verified:** `node --check` passes on `js/coe-eligibility.js`. All 12 monthly saints files remain
+valid JSON. Full resolve-and-filter pipeline run end-to-end for all three new dated entries -- all
+three resolve and pass eligibility correctly.
+
+SEED_VERSION at the close of this entry: `v203-2026-08-31-east-syriac-layer3-holweck-wikipedia-category`.
