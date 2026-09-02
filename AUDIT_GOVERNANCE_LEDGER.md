@@ -9114,3 +9114,42 @@ remain genuinely open and unexplained**: `jeremiah-the-prophet`, `mar-adar`, `ma
 `saint-dismas`, `saint-faraj-of-shiraz`, `saint-hardut`, `saint-john-bar-malkeh`, `saint-timothy`.
 
 **Verified:** all 12 monthly saints files remain valid JSON.
+
+---
+
+## Session 2026-08-31 continued -- second consolidated Layer 3 batch. Resolved 2 more identities
+## (mar-saba, saint-timothy), checked several more obscure remaining names and genuinely found
+## nothing for them. 120 of 135 now accounted for (89%), up from 118 (87%). Only 16 remain
+## genuinely open. No SEED_VERSION change (annotation only; sourced count unchanged at 72/135).
+
+**`saint-timothy` checked and confirmed negative:** Timothy, companion of Paul and first Bishop of
+Ephesus -- his own infobox lists five other traditions, no Church of the East, checked across
+multiple independent sources. Distinct from `mar-timothy-i` (the ancient Catholicos-Patriarch,
+already found in an earlier session to have no attested feast day either) and the already-sourced
+`mar-timotheus-malabar` (a modern Metropolitan) -- three different historical Timothys this
+allowlist tracks separately, now all three resolved one way or another.
+
+**`mar-saba` checked and found genuinely ambiguous**, the same pattern as the bare-name ids
+resolved in the prior batch: three candidate historical figures share this name (Sabbas the
+Sanctified, founder of the Mar Saba monastery in Palestine, Eastern Orthodox/Catholic only; "Abda
+and Sabas," a martyr pair per Holweck's dictionary, no Church of the East mention; Julian Sabas, a
+Syrian hermit, Roman/Greek church dates only) -- none confirmed for the Church of the East, and
+nothing disambiguates which one the bare id represents.
+
+**Searched directly for the remaining most obscure names** (`mar-adar`, `mar-archelaus`,
+`mar-balai`, `mar-ishaia`) -- genuinely came up empty. No Wikipedia articles, Holweck citations, or
+any other source found for any of these four specifically. Recording the negative search here
+rather than silently leaving these to look unattempted.
+
+**Result: 120 of 135 allowlisted identities now accounted for** (89%, up from 118/87%). The 16
+remaining -- `jeremiah-the-prophet`, `mar-adar`, `mar-archelaus`, `mar-balai`,
+`mar-behnam-and-sarah`, `mar-ishaia`, `mar-menas`, `mar-narsai`, `martyrs-of-the-east`,
+`prophet-joel`, `saint-ahudemmeh`, `saint-barnabas-the-apostle`, `saint-dismas`,
+`saint-faraj-of-shiraz`, `saint-hardut`, `saint-john-bar-malkeh` -- represent either genuinely
+obscure figures with no discoverable online presence, generic Old Testament lectionary references
+rather than distinct feast days (consistent with the earlier finding for Joel), or names already
+checked and found ambiguous/tradition-mismatched (Ahudemmeh, Behnam-and-Sarah). This is very
+plausibly close to the practical ceiling of what general web research can resolve for this
+allowlist -- the remaining gap is now genuinely a Gazza-or-Fiey problem, not a search-effort one.
+
+**Verified:** all 12 monthly saints files remain valid JSON.
