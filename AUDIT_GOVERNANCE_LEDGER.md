@@ -8995,3 +8995,18 @@ valid JSON. Full resolve-and-filter pipeline run end-to-end for all three new da
 three resolve and pass eligibility correctly.
 
 SEED_VERSION at the close of this entry: `v203-2026-08-31-east-syriac-layer3-holweck-wikipedia-category`.
+
+---
+
+## Session 2026-08-31 continued -- checked mar-barsabba, a real, well-documented historical
+## figure. No SEED_VERSION change (annotation only, no new tagged/dated entry).
+
+Barshabba ("son of the deportation"), first recorded East Syriac bishop of Merv, attended the
+synod of Patriarch Dadisho in 424 -- a real, well-attested historical figure, unlike some of the
+allowlist's more obscure remaining names. His own Wikipedia article confirms he "was venerated
+both in the Church of the East... and among the Melkites," but the only two specific dates given
+are explicitly attributed to *other* traditions: 21 June per the Melkites of Khwarazm (al-Biruni),
+and 20 August per the Martyrology of Rabban Saliba -- itself a West Syriac (Syriac Orthodox)
+source, not East Syriac. Neither is confirmed as this tradition's own date. Recorded as a real,
+checked finding rather than forcing either non-COE date onto the entry -- the same discipline
+already applied to Ahudemmeh and Behnam-and-Sarah.
