@@ -9359,3 +9359,49 @@ sub-panel.
 **Verified:** `index.html` spot-checked for the new card, the correct onclick chain, and exactly
 one `entry-coe-options` panel (no duplication). `js/office-ui.js` unaffected, still passes
 `node --check`.
+
+---
+
+## Session 2026-09-02 continued -- fixed the real broken-splash bug Josh reported (narrow panel,
+## Bible Reader content bleeding through), and corrected an imprecise claim about why the
+## mode-selection cards were originally reduced. No SEED_VERSION change.
+
+**Corrected the history, checked against the actual commit rather than trusted Josh's paraphrase
+or my own assumption:** commit `c851fb0` (2026-07-25, "Simplify splash to 3 modes") explicitly
+states "Ethiopian/Church-of-the-East/Eastern-Orthodoxy modes remain fully functional in the
+codebase, just not exposed on this screen" -- the removal was a deliberate simplification for the
+same priest-testing deploy already documented elsewhere this session, not a quality judgment on
+COE/EO. Worth the precision, since it directly bears on whether re-adding the card was the right
+call (it was).
+
+**Found and fixed the real bug, checked properly rather than assumed away.** Josh forced
+`showTraditionEntry()` (via the new East Syriac mode-selection card, and separately via the
+`resetUserTraditionDefault()` console command already recommended earlier this session as a
+general "return to entry" diagnostic) while the Bible Browser tool was active, and got a broken,
+narrow splash with the Bible Reader's own content still visible behind it -- confirmed by
+screenshot. Root cause, traced through the actual code rather than guessed at: `showTraditionEntry()`
+and `showUniversalModeSelection()` both ever only managed their own two sibling entry screens
+(`#mode-selection`, `#tradition-entry`) -- neither ever hid the actual office/tool view containers
+(`#daily-office-section`, shared by Daily Office/Coptic Agpeya/EO/East Syriac via `selectMode()`;
+`#individual-prayers-section`, Book of Needs; `#bible-browser-section`, its own separate system in
+`js/bible-browser/bible-browser.js`) that get shown when entering those views. This worked fine as
+long as both functions were only ever called from `mode-selection` itself -- the only path that
+existed before today -- but broke the instant either was called from inside an active tool view,
+exactly the scenario both the new card and the recommended console command created.
+
+**Fixed with one shared helper** (`hideAllActiveOfficeViews()`) called from both
+`showTraditionEntry()` and `showUniversalModeSelection()`, rather than two separate patches that
+could drift out of sync with each other over time.
+
+**Verified with an actual simulation of the reported scenario, not just a syntax check:** built a
+minimal DOM stub reproducing the exact broken state (`bible-browser-section` visible/`flex`,
+`splash-bg`/`mode-selection` hidden, matching `openBibleBrowser()`'s own real state-setting code),
+called the actual extracted `showTraditionEntry()` function against it, and confirmed
+`bible-browser-section` is correctly hidden and `tradition-entry` correctly becomes visible
+afterward. `node --check` passes on `js/office-ui.js`.
+
+**Not expanded further:** `openBibleBrowser()`'s own code was not touched to also hide
+`#tradition-entry` on entry, since no currently-reachable navigation path calls it while
+`tradition-entry` is visible (Bible Browser is only reachable via its `mode-selection` card, and
+reaching `mode-selection` itself already hides `tradition-entry`) -- a theoretical symmetrical gap,
+not a confirmed reachable one, left alone rather than fixed speculatively.

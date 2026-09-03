@@ -1179,6 +1179,7 @@ function showTraditionEntry() {
     const traditionEntry = document.getElementById('tradition-entry');
     const modeSelection = document.getElementById('mode-selection');
 
+    hideAllActiveOfficeViews();
     if (splashBg) splashBg.style.display = '';
     showEntrySurface(traditionEntry);
     hideEntrySurface(modeSelection);
@@ -1189,6 +1190,29 @@ function showTraditionEntry() {
     selectTraditionFamily(null);
 }
 
+// FIXED 2026-09-02, found while diagnosing a real report: Josh forced showTraditionEntry()
+// (via the new East-Syriac mode-selection card, and separately via the resetUserTraditionDefault()
+// console command already recommended as a general-purpose "return to entry" diagnostic) while
+// the Bible Browser tool was active, and got a broken, narrow splash with the Bible Reader's own
+// content still visible behind it. Root cause: showTraditionEntry() and showUniversalModeSelection()
+// both only ever managed their own two sibling entry screens (#mode-selection, #tradition-entry)
+// -- neither ever hid the actual office/tool view containers (#daily-office-section, shared by
+// Daily Office/Coptic Agpeya/EO/East Syriac; #individual-prayers-section, Book of Needs;
+// #bible-browser-section, its own separate system in js/bible-browser/bible-browser.js) that
+// selectMode()/openBibleBrowser() show when entering those views. This worked fine as long as
+// these functions were only ever called from mode-selection itself (the only path that existed
+// before today), but broke the instant either was called from inside an active tool view --
+// exactly the scenario both my new card and my own suggested console command created. Shared
+// helper so both entry functions hide the same complete set, not two copies that could drift.
+function hideAllActiveOfficeViews() {
+    const daily   = document.getElementById('daily-office-section');
+    const prayers = document.getElementById('individual-prayers-section');
+    const bible   = document.getElementById('bible-browser-section');
+    if (daily)   daily.style.display   = 'none';
+    if (prayers) prayers.style.display = 'none';
+    if (bible)   bible.style.display   = 'none';
+}
+
 function showUniversalModeSelection(persistDefault = false) {
     if (persistDefault) persistUserEntryDefault('universal');
     syncUniversalOfficeAdvancedToolsVisibility();
@@ -1197,6 +1221,7 @@ function showUniversalModeSelection(persistDefault = false) {
     const traditionEntry = document.getElementById('tradition-entry');
     const modeSelection = document.getElementById('mode-selection');
 
+    hideAllActiveOfficeViews();
     if (splashBg) splashBg.style.display = '';
     hideEntrySurface(traditionEntry);
     showEntrySurface(modeSelection);
