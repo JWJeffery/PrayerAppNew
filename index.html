@@ -443,7 +443,7 @@
             </div>
             <div class="setting-group" style="margin-top:10px;">
                 <strong style="display:block; margin-bottom:6px;">Canonical Hour</strong>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00) &mdash; includes Quta'a automatically during the Great Fast</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="endana"    onchange="applyEsyOverride()"> Endana &mdash; Prayer at Noon, Great Fast only (12:00–15:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="ramsha"    onchange="applyEsyOverride()"> Ramsha (18:00–21:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="lelya"     onchange="applyEsyOverride()"> Lelya (21:00–03:00)</label>
@@ -489,22 +489,6 @@
             <div id="esy-anaphora-box" style="font-family:'Cinzel',serif; font-size:0.85em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
                 —
             </div>
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="color:#aaa; font-size:1em;">Church Body / Easter Reckoning</strong>
-            <div style="font-size:0.7em; color:#888; margin:4px 0 6px;">
-                The Church of the East has been divided into two bodies since 1968; both share
-                the same office text below. The Assyrian Church of the East adopted the Gregorian
-                calendar in 1964; the Ancient Church of the East split off in protest and kept
-                the traditional Julian reckoning. Changes every movable season boundary below.
-            </div>
-            <select id="coe-easter-mode-select"
-                onchange="selectCoeEasterMode(this.value)"
-                style="width:100%; padding:5px 8px; background:#333; color:var(--gold); border:1px solid rgba(201,168,76,0.5); border-radius:2px; font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.04em; cursor:pointer;">
-                <option value="gregorian">Assyrian Church of the East (Gregorian, since 1964)</option>
-                <option value="julian">Ancient Church of the East (Julian, traditional reckoning)</option>
-            </select>
         </div>
     </div><!-- /east-syriac-settings -->
 

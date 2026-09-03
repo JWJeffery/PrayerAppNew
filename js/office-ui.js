@@ -1998,7 +1998,7 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         showAppearanceToggle: true,
         appearanceToggleId: "toggle-dark-east-syriac",
         options: [
-            { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00 (includes Quta'a automatically during the Great Fast)" },
+            { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00" },
             { value: "endana", label: "Endana", detail: "Prayer at Noon, Great Fast only · 12:00–18:00" },
             { value: "ramsha", label: "Ramsha", detail: "Evening Prayer · 18:00–21:00" },
             { value: "lelya", label: "Lelya", detail: "Night Office · 21:00–03:00" },

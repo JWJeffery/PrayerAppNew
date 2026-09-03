@@ -9616,3 +9616,44 @@ manual override is an intentional act, different in character from incidental Pr
 `_sharedOfficeNavigatorDateFromIso()`) and ran it against two real scenarios: picking today's own
 actual date via the picker (correctly resolves to `active:false`) and navigating to a genuinely
 different date, tomorrow (correctly resolves to `active:true`). `node --check` passes.
+
+---
+
+## Session 2026-09-03 continued -- removed the East Syriac sidebar's "Church Body / Easter
+## Reckoning" selector entirely (a real architectural mistake, not a width bug), and fixed a wrong
+## Sapra description appearing in two places. No SEED_VERSION change.
+
+Josh: "You didn't fix the width problem here for the church selection... and honestly, this needs
+to be removed. You don't switch between, here. You select a tradition and then stay in it unless
+you reset it or hit a flag in settings (which we haven't wired yet)."
+
+**Removed rather than resized.** The prior session's width investigation targeted the entry-flow's
+ACOE badge as the most likely candidate, since no screenshot of this specific sidebar control had
+been seen yet. This session's screenshot showed the actual problem: an in-office "Church Body /
+Easter Reckoning" dropdown, sitting inside `#east-syriac-settings`, letting a user silently
+re-select which Church of the East body they belong to *while already inside the office* -- the
+wrong architecture entirely, not a rendering bug. The real, established model (already correctly
+built into the entry flow on 2026-08-30) is a one-time choice made at entry, persisted, with any
+future in-office reset going through an explicit settings flag not yet wired -- not a
+freestanding dropdown a user could bump into accidentally mid-office.
+
+**Verified safe to remove outright before removing it**, not assumed: `selectCoeEasterMode()` and
+the settings-load restoration code both already guard every reference to
+`#coe-easter-mode-select` with `if (element) ...` -- removing the element doesn't break either
+path, confirmed by direct inspection. The entry flow's own call to `selectCoeEasterMode()`
+(`handleTraditionEntryClick`, reading `data-entry-coe-body` off the clicked card) is completely
+independent of this sidebar control and continues to work exactly as before.
+
+**Removed:** the whole `<div class="setting-group">` block (heading, explanatory paragraph, and
+the `<select>` itself) from `#east-syriac-settings`.
+
+**Fixed the Sapra description Josh flagged, in both places it appeared** -- the shared-navigator
+config's own `eastSyriac.options` entry in `js/office-ui.js` (feeding the "Canonical Hour" sidebar
+box) and a second, separate occurrence in the dedicated override panel's own radio label in
+`index.html` that the first search hadn't covered. Both no longer claim Sapra "includes Quta'a
+automatically during the Great Fast."
+
+**Verified:** `node --check` passes. Confirmed by direct search that `coe-easter-mode-select`,
+"Church Body," the removed explanatory paragraph, and the Quta'a claim no longer appear anywhere
+in `index.html`; the only remaining references to the removed select id in `office-ui.js` are the
+two already-guarded lookups, confirmed harmless.
