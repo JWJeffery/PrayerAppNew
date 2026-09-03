@@ -9331,3 +9331,31 @@ splash's ACOE/ACE sub-panel and exactly one instance of each of the three sideba
 malformed values. Traced the full entry-routing chain by reading the actual code end to end
 (`getUserEntryDefault()` -> `setUserTraditionDefault()` -> `resolveEntryTraditionRoute()` ->
 `selectMode()`) rather than assuming it would work from the pieces looking individually correct.
+
+---
+
+## Session 2026-09-02 continued -- added a direct "Church of the East" card to the mode-selection
+## screen ("Universal Office Selector"). No SEED_VERSION change (UI fix, not calendar/office
+## content).
+
+Josh reported East Syriac still missing after the splash rewire, and correctly called out a wrong
+claim I made about `#mode-selection` -- I'd said it "intentionally never lists individual
+traditions," which was false on inspection: it explicitly lists two, The Daily Office (BCP) and
+The Coptic Agpeya, as direct `selectMode(...)` shortcuts, hardcoded as a curated 4-card list. East
+Syriac was never one of the four cards -- not a routing or cached-preference bug at all, a real,
+simple gap in this screen's own card list. (Byzantine/EO is missing from this same screen too,
+same gap, not addressed here -- flagged, not fixed, since Josh's report was specifically about
+COE.)
+
+**Fixed by adding a fifth card**, styled identically to the existing Coptic Agpeya card, positioned
+directly after it. Wired to `showTraditionEntry(); showCoeEntryStep();` rather than a bare
+`selectMode('east-syriac')` -- chaining the two already-built, already-tested functions so the
+card opens straight into the ACOE/Ancient Church of the East choice (built 2026-08-30) instead of
+silently defaulting to Gregorian without asking which body the user belongs to. Verified the
+chain is synchronous with no intermediate paint -- `showTraditionEntry()`'s own family-grid reset
+never becomes visible before `showCoeEntryStep()` immediately overrides it to the COE-specific
+sub-panel.
+
+**Verified:** `index.html` spot-checked for the new card, the correct onclick chain, and exactly
+one `entry-coe-options` panel (no duplication). `js/office-ui.js` unaffected, still passes
+`node --check`.
