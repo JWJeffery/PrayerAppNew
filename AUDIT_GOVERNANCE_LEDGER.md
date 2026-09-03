@@ -9586,3 +9586,33 @@ whether it's worth a future, more careful redesign of when "override" should gen
 **Verified:** `node --check` passes. Simulated the exact reported sequence (a stale
 `active:true` override, then the reset now present at both `backToSplash()` and `selectMode()`) --
 confirms the flag correctly returns to its default inactive state.
+
+---
+
+## Session 2026-09-03 continued -- fixed the deeper "override" issue flagged (not fixed) in the
+## prior entry, per Josh's follow-up "Fix it..." No SEED_VERSION change.
+
+**`setSharedOfficeNavDate()` (Prev/Next buttons and the raw date picker) previously set
+`_esyTemporalOverride.active = true` unconditionally on every use**, regardless of whether the
+result actually differed from the natural, real-time default -- meaning clicking Next then Prev to
+land back on today, or manually picking today's own date from the picker, still showed "override"
+for no real reason.
+
+**Fixed by comparing the result against the natural default before deciding whether it's a
+genuine override:** a real override now requires either the target date to differ from today's
+actual calendar date, or (when the date is today) the selected hour to differ from what
+`getEastSyriacHourInfo()` would naturally return right now. Landing back on the genuine current
+moment is now treated identically to never having navigated away, matching what
+`todaySharedOfficeNavDate()` already does explicitly for its own "Today" button.
+
+**`applyEsyOverride()` (the separate, dedicated override panel's own "Apply" action) deliberately
+left unconditional, not touched:** clicking Apply in a panel whose entire purpose is setting a
+manual override is an intentional act, different in character from incidental Prev/Next browsing
+-- unconditional `active:true` there is arguably correct as-is, not the same bug.
+
+**Verified with an actual functional test, not just a syntax check:** extracted the real
+`setSharedOfficeNavDate()` function (plus its real dependencies -- `getEastSyriacHourInfo()`,
+`_sharedOfficeNavigatorIsoDate()`, `_sharedOfficeNavigatorActiveValue()`,
+`_sharedOfficeNavigatorDateFromIso()`) and ran it against two real scenarios: picking today's own
+actual date via the picker (correctly resolves to `active:false`) and navigating to a genuinely
+different date, tomorrow (correctly resolves to `active:true`). `node --check` passes.

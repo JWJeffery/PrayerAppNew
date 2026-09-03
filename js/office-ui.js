@@ -2408,7 +2408,21 @@ function setSharedOfficeNavDate(modeKey, dateValue) {
         const radio = document.querySelector(`input[name="esy-hour-override"][value="${CSS.escape(hourId)}"]`);
         if (radio) radio.checked = true;
 
-        window._esyTemporalOverride = { active: true, date: targetDate, hourId };
+        // FIXED 2026-09-03, per Josh's follow-up: previously this set active:true
+        // unconditionally on every use of Prev/Next or the date picker, even when the result
+        // happened to land back on today's actual date and the naturally-current hour --
+        // meaning Next-then-Prev, or picking today's own date from the picker, would still show
+        // "override" for no real reason. Now only true "override" states (a different day, or
+        // today but a different hour than would naturally be showing right now) are marked as
+        // such; landing back on the genuine current moment is treated the same as never having
+        // navigated away, matching what todaySharedOfficeNavDate() already does explicitly.
+        const isActualToday = _sharedOfficeNavigatorIsoDate(targetDate) === _sharedOfficeNavigatorIsoDate(new Date());
+        const isNaturalHour = hourId === getEastSyriacHourInfo().value;
+        const isGenuineOverride = !(isActualToday && isNaturalHour);
+
+        window._esyTemporalOverride = isGenuineOverride
+            ? { active: true, date: targetDate, hourId }
+            : { active: false, date: null, hourId: null };
         requestRender();
         renderSharedOfficeNavigation();
     }
