@@ -1,3 +1,95 @@
+# Session 2026-09-03 continued -- sidebar uniformity work begun, dark mode brought to
+# parity across every screen, a real date-card bug found from a screenshot and fixed,
+# and the Prayer of the Veil recorded as a disclosed source gap. SEED_VERSION v204 -> v205.
+
+**Context.** Josh directed a full sidebar analysis across the wired parts of the project, then
+corrected this session for having failed -- again -- to read the governance documentation before
+producing it. That correction was right. `documentation/universal-office-navigation-architecture.md`
+(recorded 2026-06-05, marked "canonical app-wide design direction") already states that the office
+drawer "should not use a completely different interaction model from one office tradition to
+another," and lists "Unify office sidebars into a common drawer grammar" as step 4 of its own
+implementation sequence. Sidebar uniformity was never a new idea to be discovered by inspection;
+it was standing direction that had gone unexecuted. The charter's own section 11 (Liturgical
+Education Layer) likewise already requires three explanatory depths -- micro, structural, and
+tradition-level -- as a first-class architectural layer; what actually exists is micro-explanation
+in the Anglican panel only, and nothing at all in the other three.
+
+**A governance conflict surfaced and is recorded rather than resolved silently.** The navigation
+architecture doc explicitly permits local naming ("Daily Office may say Office Settings, Church of
+the East may say Hudra, Cycle, Station, or Anaphora"). Josh has now directed uniform headings. The
+headings were made uniform per that direction, and this note exists so the doc's own text can be
+amended deliberately rather than left contradicting the shipped UI.
+
+**A real bug, found from Josh's screenshot, diagnosed and fixed.** The date card read one day
+behind the date picker (card "September 15, 2026", picker "09/16/2026"). Cause, confirmed by
+reading the actual call chain rather than guessed: `requestRender()` calls
+`renderSharedOfficeNavigation()` synchronously, but `#display-date`, `#generic-display-date` and
+`#esy-active-*-label` are only written later, inside the deferred office render on a microtask.
+`_sharedOfficeNavigatorCurrentLine()` scraped those nodes, so it always returned the PREVIOUS
+render's text. Affected Daily, Horologion and Church of the East alike. Fixed by deriving the line
+from `currentDate` and the navigator config directly, so it cannot lag behind the picker by
+construction. Verified across six dates including both sides of the reported case, two year
+boundaries, and a leap day -- picker and card agree on every one.
+
+**Sidebar changes made.** The redundant "DATE" section title sitting directly above the date
+itself was removed from the date card in all four office panels (the `dateTitle` value is retained
+solely as the card's accessible name). All four static panel headings were made uniform. The
+Agpeya sidebar's self-certifying "complete and verified" sentence was removed -- it was the only
+instance of a panel asserting its own audit status anywhere in the app.
+
+**Dark mode brought to parity, and its boot rule changed.** Per Josh's direction, boot now honours
+the operating system's own `prefers-color-scheme` setting first, falling back to the pre-existing
+clock rule (light 06:00-18:00) only where the OS expresses no preference or the browser lacks
+`matchMedia`. This is a boot default only: a manual toggle overrides it for the session, and no
+listener re-imposes the OS value afterwards, so an OS theme change mid-session cannot silently
+undo a deliberate choice. Verified across all seven cases (OS dark, OS light, no preference at
+both clock extremes, unsupported `matchMedia`, and a throwing `matchMedia`). The Horologion panel
+gained the appearance toggle its config had simply never set. New toggles were added to the mode
+selector, the Book of Needs, and the Bible Reader.
+
+**A hardcoded-list defect fixed at the class level, not the instance level.** `applyDarkMode()`
+synced a literal `['toggle-dark', 'toggle-dark-coptic']`, silently omitting each new tradition's
+toggle as it was added -- including `toggle-dark-east-syriac`, added earlier the same day. This is
+the third recorded instance of this exact shape of bug in this codebase (see the
+`getActiveOfficeDrawer` and `setSharedOfficeNavDate` entries). Rather than append the missing ids,
+the sync now selects on a shared `data-app-dark-toggle` attribute, so any future toggle is covered
+the moment it exists and there is no list left to forget.
+
+**The Prayer of the Veil: a real gap, disclosed rather than filled.** The Agpeya consists of the
+seven canonical hours plus an additional Prayer of the Veil, ordinarily recited by bishops,
+priests and monks. It is entirely absent from this project (zero occurrences of the string in
+either Coptic data file). Checked against the source rather than assumed: O'Leary 1911 does not
+contain it either -- its contents list runs Morning, Third, Sixth, Ninth, Eleventh, Twelfth and
+Midnight and stops, and a full-text search of the volume returns exactly one instance of "veil",
+an OCR corruption of "as well" in a paragraph on Alexandrian monasticism. O'Leary's own Preface
+states he describes the office "as used in the monasteries of Egypt." So the build is faithful to
+its source and the gap is in the source. Recorded on the dashboard as
+`cop:agpeya:prayer-of-the-veil` (amber). Closing it requires a different Coptic edition, not yet
+identified. Worth noting the Veil's role-restricted character maps directly onto the eight-role
+ministry ladder already built in `js/prayers.js`.
+
+**Also found, not acted on:** `config.heading` in `SHARED_OFFICE_NAVIGATOR_CONFIGS` ("Office
+Navigation", "Hudra Navigation", and so on) is dead -- `renderSharedOfficeNavigation()` never
+reads it. `#generic-tradition-label`'s id is likewise vestigial; nothing writes to it. Neither was
+removed this pass. The admin console (`admin/admin.html`) is a separate page with its own styling
+and did not receive a dark mode toggle; it is the one remaining surface without one.
+
+**A stale-record correction:** `RESUME_PROJECT_NOTE.md` described the current SEED_VERSION as
+v203. The actual value in `audit-ledger.html` was v204. Deferring to the file, as standing
+practice requires; bumped to v205.
+
+**Verified:** `js/office-ui.js` passes `node --check`; `audit-ledger.html`'s inline script
+extracted and syntax-checked after editing; all four Coptic and East Syriac JSON files remain
+valid; the date-card fix and the dark-mode boot rule each driven directly against the real source
+rather than inspected. Cache-bust parameters bumped on `css/office.css` (which was still on ?v=148,
+badly stale), `js/office-ui.js` and `js/prayers.js`.
+
+**Not done, and deliberately so:** the explanatory-depth gap (charter section 11) is real,
+substantial, and needs sources for the Coptic, East Syriac and Byzantine offices before any
+tooltip text can be written. Nothing was written from memory. This remains open.
+
+---
+
 # Audit Governance Ledger
 
 **Purpose:** This file is the durable record of every workflow, methodology, and governance decision made in the v1.0 audit-and-rebuild effort. It is not a memory aid for any AI assistant — it is the actual source of truth, read fresh at the start of every session, so that decisions do not have to be re-explained or re-enforced fifteen turns later.

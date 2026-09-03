@@ -4022,3 +4022,38 @@ body.roman-breviary-dev-mode #main-content.sidebar-hidden {
     letter-spacing: 0.06em;
 }
 
+
+/* ── Shared dark-mode toggle ─────────────────────────────────────────────────
+   Added 2026-09-03 per Josh's direction that every screen carry its own dark
+   mode control, not just the office sidebars. One class is used on the mode
+   selector, the Book of Needs, and the Bible Reader so the control looks and
+   behaves identically wherever it appears. The office sidebars keep their own
+   Appearance card, which the shared navigator generates. */
+.app-dark-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0 0 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.app-dark-toggle:hover {
+    opacity: 1;
+}
+
+.app-dark-toggle input {
+    accent-color: var(--gold);
+    cursor: pointer;
+    margin: 0;
+}
+
+.bible-design-header-actions .app-dark-toggle {
+    margin: 0;
+}

@@ -2013,6 +2013,8 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         officeTitle: "Office",
         hideSelectors: [".ordo-control"],
         hideNestedHeadings: ["Office"],
+        showAppearanceToggle: true,
+        appearanceToggleId: "toggle-dark-horologion",
         options: [
             { value: "vespers", label: "Vespers", detail: "Evening" },
             { value: "small-compline", label: "Small Compline", detail: "Night" },
@@ -2088,16 +2090,24 @@ function _sharedOfficeNavigatorCleanLine(value) {
     return text;
 }
 
+// FIXED 2026-09-03, found from a real screenshot: the date card read one day
+// behind the date picker. Cause: requestRender() calls renderSharedOfficeNavigation()
+// synchronously, but #display-date / #generic-display-date / #esy-active-*-label
+// are only written later, inside the deferred office render -- so scraping those
+// nodes always returned the PREVIOUS render's text. This now derives the line
+// from currentDate and the config directly, so it cannot lag behind the picker.
 function _sharedOfficeNavigatorCurrentLine(modeKey) {
     if (modeKey === "eastSyriac") {
-        const hour = _sharedOfficeNavigatorCleanLine(document.getElementById("esy-active-hour-label")?.textContent);
-        const date = _sharedOfficeNavigatorCleanLine(document.getElementById("esy-active-date-label")?.textContent);
-        return [hour, date].filter(Boolean).join(" · ") || _sharedOfficeNavigatorReadableDate();
+        const config = SHARED_OFFICE_NAVIGATOR_CONFIGS.eastSyriac;
+        const activeValue = _sharedOfficeNavigatorActiveValue("eastSyriac");
+        const option = config.options.find(o => o.value === activeValue);
+        // The detail field is "<English gloss> · <clock range>"; only the gloss
+        // belongs in this line, not the clock range.
+        const gloss = option ? String(option.detail || "").split("\u00b7")[0].trim() : "";
+        const hour = option ? [option.label, gloss].filter(Boolean).join(" \u2014 ") : "";
+        return [hour, _sharedOfficeNavigatorReadableDate()].filter(Boolean).join(" \u00b7 ");
     }
-    if (modeKey === "horologion") {
-        return _sharedOfficeNavigatorCleanLine(document.getElementById("generic-display-date")?.textContent) || _sharedOfficeNavigatorReadableDate();
-    }
-    return _sharedOfficeNavigatorCleanLine(document.getElementById("display-date")?.textContent) || _sharedOfficeNavigatorReadableDate();
+    return _sharedOfficeNavigatorReadableDate();
 }
 
 function _sharedOfficeNavigatorRestoreLegacyElement(el) {
@@ -2313,6 +2323,7 @@ function renderSharedOfficeNavigation() {
             <div class="shared-office-nav-section-title">Appearance</div>
             <label class="shared-office-nav-option" style="display:flex; align-items:center; gap:8px; cursor:pointer;">
                 <input type="checkbox" id="${_sharedOfficeNavigatorEscape(config.appearanceToggleId)}"
+                    data-app-dark-toggle
                     ${document.body.classList.contains('dark-mode') ? 'checked' : ''}
                     onchange="updateUI(this.checked); saveSettings()">
                 <span class="shared-office-nav-option-copy">
@@ -2323,8 +2334,7 @@ function renderSharedOfficeNavigation() {
 
     nav.dataset.sharedOfficeNav = modeKey;
     nav.innerHTML = `
-        <section class="shared-office-nav-card shared-office-nav-date-card">
-            <div class="shared-office-nav-section-title">${_sharedOfficeNavigatorEscape(config.dateTitle)}</div>
+        <section class="shared-office-nav-card shared-office-nav-date-card" aria-label="${_sharedOfficeNavigatorEscape(config.dateTitle)}">
             <div class="shared-office-nav-current">${_sharedOfficeNavigatorEscape(currentLine)}</div>
             <div class="shared-office-nav-actions" aria-label="${_sharedOfficeNavigatorEscape(config.dateTitle)} navigation">
                 <button type="button" onclick="changeSharedOfficeNavDate('${modeKey}', -1)">Prev</button>
@@ -2550,7 +2560,24 @@ function _copticTheotokiaToneForDate(date = new Date()) {
 // (the "Vespers" in the old checkbox label referred to nothing but this
 // light/dark toggle and was routinely mistaken for actual liturgical Vespers,
 // e.g. the Coptic Agpeya's Eleventh Hour or BCP Evening Prayer).
+// Boot order, per Josh's direction 2026-09-03: honour the operating system's
+// own colour-scheme preference first, since that is the setting the person has
+// already deliberately made for every other app they use. Only when the OS
+// expresses no preference (or the browser doesn't support the query) does this
+// fall back to the older clock rule (light 06:00-18:00, dark otherwise).
+//
+// This is a BOOT default only. A manual toggle in any sidebar overrides it for
+// the session, and no listener re-imposes the OS value afterwards -- an OS
+// theme change mid-session must not silently undo a deliberate choice.
 function _defaultDarkModeForCurrentTime(now = new Date()) {
+    if (typeof window !== "undefined" && typeof window.matchMedia === "function") {
+        try {
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) return true;
+            if (window.matchMedia("(prefers-color-scheme: light)").matches) return false;
+        } catch (_) {
+            // Fall through to the clock rule below.
+        }
+    }
     const hour = now.getHours();
     return !(hour >= 6 && hour < 18);
 }
@@ -2561,9 +2588,14 @@ function _defaultDarkModeForCurrentTime(now = new Date()) {
 function applyDarkMode(isDark) {
     document.body.classList.toggle('dark-mode', isDark);
     document.body.classList.toggle('light-mode', !isDark);
-    ['toggle-dark', 'toggle-dark-coptic'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.checked = isDark;
+    // Every dark-mode checkbox in the app, not a hardcoded subset. This list
+    // was previously ['toggle-dark', 'toggle-dark-coptic'] and silently missed
+    // each new tradition's toggle as it was added -- the same hardcoded-list
+    // omission already recorded twice in RESUME_PROJECT_NOTE.md. Selecting by
+    // a shared attribute instead means a new surface's toggle is covered the
+    // moment it exists, with no list to remember to update.
+    document.querySelectorAll('input[type="checkbox"][data-app-dark-toggle]').forEach(el => {
+        el.checked = isDark;
     });
 }
 window.applyDarkMode = applyDarkMode;

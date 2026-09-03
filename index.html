@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=148">
+    <link rel="stylesheet" href="css/office.css?v=205">
     <link rel="stylesheet" href="css/bible-browser.css">
 </head>
 <body id="app-body" class="dark-mode">
@@ -116,6 +116,7 @@
 <div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">
     <div class="app-mode-kicker">Universal Office Selector</div>
     <h1>The Universal Office</h1>
+    <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
     <div class="app-mode-grid" aria-label="Choose a mode">
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
             <span class="app-mode-icon">☩</span>
@@ -286,7 +287,7 @@
         <!-- Appearance -->
         <div class="setting-group">
             <strong>Appearance:</strong>
-            <label><input type="checkbox" id="toggle-dark"     onchange="updateUI(); saveSettings()" checked> Dark Mode</label>
+            <label><input type="checkbox" id="toggle-dark" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()" checked> Dark Mode</label>
             <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
         </div>
 
@@ -395,13 +396,12 @@
 
     <!-- Coptic Agpeya Liturgical Console -->
     <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Agpeya Options</h3>
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
         <div class="setting-group">
             <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
             <div id="cop-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">The Morning Office</div>
             <div id="cop-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-            <p style="font-size:0.72em; opacity:0.65; margin-top:4px; margin-bottom:0;">All seven hours, the Midnight Office, and the full seven-day Theotokia hymn cycle are complete and verified. See the audit dashboard for details.</p>
             <label><input type="radio" name="cop-hour" value="coptic-morning-office" onchange="renderOffice()" checked> The Morning Office (Prime)</label>
             <label><input type="radio" name="cop-hour" value="coptic-third-hour" onchange="renderOffice()"> The Third Hour (Terce)</label>
             <label><input type="radio" name="cop-hour" value="coptic-sixth-hour" onchange="renderOffice()"> The Sixth Hour (Sext)</label>
@@ -420,7 +420,7 @@
 
     <!-- Church of the East Liturgical Console -->
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Church of the East</h3>
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
         <!-- Active Hour display -->
         <div class="setting-group">
@@ -496,7 +496,7 @@
     <!-- Do not add BCP-specific controls here. This is the reusable neutral   -->
     <!-- path for any tradition without its own dedicated settings panel.       -->
     <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">The Horologion</h3>
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">Office Settings</h3>
 
         <!-- Liturgical Ordo (date navigator) -->
         <div class="ordo-control">
@@ -645,6 +645,7 @@
         <div class="app-mode-kicker" id="book-needs-context-label">Book of Needs</div>
         <h1 class="app-book-needs-title">The Book of Needs</h1>
         <p class="app-book-needs-subtitle" id="book-needs-scope-note">Select a prayer, devotion, or occasional office.</p>
+        <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-book-of-needs" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
 
         <div class="prayer-select-wrapper" id="prayer-select-wrapper">
             <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
@@ -798,6 +799,7 @@
             </div>
             <div class="bible-design-header-actions">
                 <span class="bible-design-chip">Design Pilot</span>
+                <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-bible" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
                 <button class="bible-tool-btn" onclick="closeBibleBrowser()">Back to Modes</button>
             </div>
         </div>
@@ -1072,8 +1074,8 @@
 <script src="js/bible-browser/bible-source-lane-ui-hook.js"></script>
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
-<script src="js/office-ui.js?v=186" defer></script>
-<script src="js/prayers.js?v=186"></script>
+<script src="js/office-ui.js?v=205" defer></script>
+<script src="js/prayers.js?v=205"></script>
 <script src="js/tooltip.js"></script>
 
 </body>

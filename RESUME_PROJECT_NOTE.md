@@ -1,5 +1,71 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- sidebar uniformity begun, dark mode at parity across every
+## screen, a real date-card off-by-one found from a screenshot and fixed, and the Prayer of the
+## Veil recorded as a disclosed source gap. SEED_VERSION v204 -> v205. Full account in
+## `AUDIT_GOVERNANCE_LEDGER.md`'s same-titled entry.
+
+**Read the governance docs before touching the UI.** This session produced a sidebar analysis
+before reading them and was corrected for it. What they actually say matters and was being
+rediscovered by inspection: `documentation/universal-office-navigation-architecture.md`
+(2026-06-05, "canonical app-wide design direction") already requires that the office drawer "not
+use a completely different interaction model from one office tradition to another," and lists
+"Unify office sidebars into a common drawer grammar" as step 4 of its own sequence. The charter's
+section 11 already makes explanatory depth (micro / structural / tradition-level) a first-class
+architectural layer. Neither had been executed.
+
+**One live governance conflict, recorded not resolved:** the navigation doc explicitly permits
+local panel naming; Josh has now directed uniform headings. The headings are uniform as of this
+commit. The doc's own text should be amended deliberately rather than left contradicting the UI.
+
+**A real bug fixed, found from a screenshot.** The date card read one day behind the date picker.
+`requestRender()` runs `renderSharedOfficeNavigation()` synchronously while `#display-date`,
+`#generic-display-date` and `#esy-active-*-label` are written later inside the deferred office
+render -- so the card scraped the previous render's text. Affected Daily, Horologion and Church of
+the East. The line is now derived from `currentDate` and the navigator config directly. Verified
+across six dates including both sides of the reported case, two year boundaries and a leap day.
+
+**Sidebar changes:** the "DATE" title above the date itself removed from all four panels; all four
+static headings made uniform; the Agpeya panel's self-certifying "complete and verified" sentence
+removed.
+
+**Dark mode:** boot now follows the OS `prefers-color-scheme` setting, falling back to the old
+clock rule only when the OS states no preference or `matchMedia` is unavailable. Boot default
+only -- a manual toggle overrides for the session and nothing re-imposes the OS value afterwards.
+Verified across all seven cases. The Horologion panel gained the toggle its config never set;
+new toggles added to the mode selector, Book of Needs, and Bible Reader. `applyDarkMode()`'s
+hardcoded `['toggle-dark','toggle-dark-coptic']` sync list -- the third recorded instance of this
+exact hardcoded-panel-list bug shape in this codebase -- was replaced with a
+`data-app-dark-toggle` attribute selector, so there is no list left to forget.
+
+**Prayer of the Veil -- disclosed, not filled.** The Agpeya is the seven canonical hours plus the
+Prayer of the Veil (ordinarily bishops, priests and monks). It is absent from this project
+entirely. Checked against the source rather than assumed: O'Leary 1911 doesn't contain it either
+-- his contents list stops at the Midnight Office, and the volume's single "veil" hit is OCR noise
+for "as well". His Preface says he describes the office "as used in the monasteries of Egypt."
+The build is faithful to its source; the gap is in the source. Dashboard row
+`cop:agpeya:prayer-of-the-veil` (amber). Closing it needs a different Coptic edition, not yet
+identified. Its role-restricted character maps onto the eight-role ladder already in
+`js/prayers.js`.
+
+**Found, not acted on:** `config.heading` in `SHARED_OFFICE_NAVIGATOR_CONFIGS` is dead code --
+`renderSharedOfficeNavigation()` never reads it. `#generic-tradition-label` is vestigial; nothing
+writes to it. `admin/admin.html` is the one surface still without a dark mode toggle.
+
+**Stale-record correction:** this file previously described SEED_VERSION as v203; the real value
+in `audit-ledger.html` was v204. Deferred to the file, bumped to v205.
+
+**Still open, unchanged and explicitly not started here:** the explanatory-depth gap. Charter
+section 11 requires three depths across every tradition; only the Anglican panel has depth 1, and
+the other three have nothing. Writing Coptic, East Syriac or Byzantine tooltips requires sources
+for each, and nothing was written from memory. Also still open: Layer 3's genuinely bare entries
+(Josh's standing direction -- if an identity cannot be verified through the ACOE/ACE diocesan
+calendars or sanctoral books, the content is removed, not left bare), and the fixability pass over
+the open-items list.
+
+---
+
+
 ## Session 2026-09-03 -- ended by Josh mid-task, over a failure that repeated across multiple
 ## turns and multiple corrections: asked to "analyze the content" of the sidebar, meaning examine
 ## it and describe what's there, this session repeatedly substituted something else instead --
