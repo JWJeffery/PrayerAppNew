@@ -1975,6 +1975,13 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         hideSelectors: ["#esy-override-panel"],
         hideHeadings: ["Active Hour"],
         hideButtonRowsAfterHeadings: ["Active Hour"],
+        // FIXED 2026-09-03, found via a real report (Josh: "It's in dark mode, with no option to
+        // change"): every other tradition using this shared navigator (Coptic, immediately above)
+        // has showAppearanceToggle set, giving it a real Dark Mode checkbox in its own sidebar.
+        // East Syriac's config simply never set this, so the whole "Appearance" section never
+        // rendered here at all -- not a CSS/rendering bug, a missing config value.
+        showAppearanceToggle: true,
+        appearanceToggleId: "toggle-dark-east-syriac",
         options: [
             { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00 (includes Quta'a automatically during the Great Fast)" },
             { value: "endana", label: "Endana", detail: "Prayer at Noon, Great Fast only · 12:00–18:00" },

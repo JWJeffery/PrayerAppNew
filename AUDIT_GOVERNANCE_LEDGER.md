@@ -9507,3 +9507,42 @@ how that panel already explains its other controls. Not what was reported, not t
 **Verified:** `node --check` passes. `index.html` spot-checked for exactly one `entry-coe-options`
 panel, exactly one of each church-body card, and confirmed the removed prose no longer appears
 within that panel's markup specifically.
+
+---
+
+## Session 2026-09-03 continued -- fixed a real missing dark-mode toggle for East Syriac, and a
+## real badge-overflow issue on the Assyrian Church of the East entry card. No SEED_VERSION change.
+
+Josh: "It's in dark mode, with no option to change. Tradition selector text is too wide for the
+screen."
+
+**Dark mode toggle, confirmed and fixed precisely.** East Syriac's shared-navigator config
+(`js/office-ui.js`, the `eastSyriac` object used by `renderSharedOfficeNavigation()`) simply never
+set `showAppearanceToggle`/`appearanceToggleId` -- the exact two properties that gate whether the
+whole "Appearance" section (containing the only Dark Mode checkbox this sidebar has) renders at
+all. Not a CSS or rendering bug: the property was absent, so the section never generated. Coptic's
+config, immediately above it in the same file, has both set correctly -- confirmed by direct
+comparison, not assumed. Added the same two properties to East Syriac's config, matching Coptic's
+pattern exactly. **Checked the other traditions using this same shared navigator while at it:**
+Byzantine/EO's `horologion` config has the identical gap -- flagged, not fixed, since Josh's report
+was specifically about East Syriac.
+
+**"Tradition selector text too wide," addressed on the strongest available candidate, disclosed
+as inference rather than a confirmed pixel match.** The screenshot showed the office itself, not
+the entry-flow splash, so the exact location of the reported overflow isn't fully certain from
+what was visible. The clearest, most concrete candidate found: `.app-entry-tradition-code`, the
+circular code-badge shared by every tradition card in the entry flow, is a fixed 50px circle sized
+for the 2-3 letter codes every other tradition uses (ANG, LAT, EOR, OOR, COE). "ACOE" is 4
+characters -- the only 4-letter code in the whole app -- and would be the one badge most likely to
+visually overflow its circle at the shared class's default font-size. Fixed narrowly, with an
+inline font-size reduction on just the ACOE badge specifically, rather than altering the shared
+`.app-entry-tradition-code` class that every other, already-correctly-sized badge depends on.
+
+**Verified:** `node --check` passes. `index.html` confirmed to carry the reduced font-size on the
+ACOE badge specifically. `showAppearanceToggle: true` confirmed present for both `coptic` and
+`eastSyriac` configs by direct search, absent for `horologion`.
+
+**Flagged for Josh, not assumed resolved:** if the reported width issue isn't the ACOE badge
+specifically, the actual location needs a screenshot of the entry-flow splash itself (not the
+office) to pin down precisely -- this fix addresses the strongest candidate found, not a confirmed
+diagnosis from a direct screenshot of the affected element.
