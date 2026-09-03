@@ -278,7 +278,7 @@
         </div>
 
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Office Mode&nbsp;<span class="info-btn" data-tip="Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter form of each office, intended for use without a priest or when the fuller form isn't practical.">i</span></strong>
+            <strong>Office Mode:&nbsp;<span class="info-btn" data-tip="Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter form of each office, intended for use without a priest or when the fuller form isn't practical.">i</span></strong>
             <label><input type="radio" name="ang-office-mode" value="full" checked onchange="renderOffice(); saveSettings()"> Full Office</label>
             <label><input type="radio" name="ang-office-mode" value="devotion" onchange="renderOffice(); saveSettings()"> Daily Devotion (Short Form)</label>
         </div>
@@ -357,11 +357,11 @@
             <strong>After the Office:&nbsp;<span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
             <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen&nbsp;<span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
             <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator&nbsp;<span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
-            <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
+            <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages&nbsp;<span class="info-btn" data-tip="BCP p.54/96 — a short set of versicles and responses said after the Apostles' Creed, before the Collects. This checkbox controls whether the whole set appears; see 'Rotate Suffrages A/B Daily' below to choose which of the two BCP-authorized sets is used.">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-suffrages" onchange="renderOffice(); saveSettings()" checked> Rotate Suffrages A/B Daily&nbsp;<span class="info-btn" data-tip="BCP p.54/96 offers two equally-authorized sets of Suffrages, A and B — previously only A existed. Rotates between them by calendar date; uncheck to always use Suffrages A.">i</span></label>
-            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany</label>
-            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
-            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
+            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany&nbsp;<span class="info-btn" data-tip="BCP p.148. A longer, separate penitential litany, especially appropriate for Ash Wednesday, Rogation Days, and other days of solemn entreaty. The BCP permits it at the end of Morning or Evening Prayer, or as a separate devotion — offered here as an occasional addition, not routine daily content.">i</span></label>
+            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving&nbsp;<span class="info-btn" data-tip="BCP p.101 (Rite II; the equivalent point in Rite I). Conventionally, the Officiant closes with this prayer or with the Prayer of St. Chrysostom below, not routinely both — most Daily Office guides describe them as alternatives rather than a pair to use together.">i</span></label>
+            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom&nbsp;<span class="info-btn" data-tip="BCP p.102 (Rite II; the equivalent point in Rite I). Conventionally used as an alternative to the General Thanksgiving above, not routinely alongside it.">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-mission-prayer"  onchange="renderOffice(); saveSettings()" checked> Rotate Mission Prayer Daily&nbsp;<span class="info-btn" data-tip="Rotates among the 3 BCP-authorized Morning Prayer mission prayers (p.99-100) by calendar date. Uncheck to always use the first option.">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-weekday-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Second Collect Daily&nbsp;<span class="info-btn" data-tip="BCP p.55-57/98-99 (Morning) and p.68-70/122-124 (Evening) each offer 7 collects after the Collect of the Day (Sundays, Fridays, Saturdays, plus office-specific ones) — previously only one was ever shown. Rotates through all 7 by calendar date; uncheck to always use Grace (Morning) or Peace (Evening).">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-closing-blessing" onchange="renderOffice(); saveSettings()" checked> Rotate Closing Blessing Daily&nbsp;<span class="info-btn" data-tip="BCP p.59-60 offers 3 closing blessings after 'Let us bless the Lord' (2 Corinthians 13:14 / Romans 15:13 / Ephesians 3:20-21) — previously only the first was ever shown. Rotates by calendar date; uncheck to always use the first option.">i</span></label>
@@ -409,7 +409,7 @@
             <label><input type="radio" name="cop-hour" value="coptic-eleventh-hour" onchange="renderOffice()"> The Eleventh Hour (Vespers)</label>
             <label><input type="radio" name="cop-hour" value="coptic-twelfth-hour" onchange="renderOffice()"> The Twelfth Hour (Compline)</label>
             <label><input type="radio" name="cop-hour" value="coptic-midnight-office" onchange="renderOffice()"> The Midnight Office (Three Nocturns)</label>
-            <label><input type="radio" name="cop-hour" value="coptic-theotokia" onchange="renderOffice()"> Theotokia (today's day, automatic)</label>
+            <label><input type="radio" name="cop-hour" value="coptic-theotokia" onchange="renderOffice()"> Theotokia (automatically follows today's weekday tune)</label>
         </div>
         <div class="ordo-buttons" style="margin-top:10px;">
             <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>

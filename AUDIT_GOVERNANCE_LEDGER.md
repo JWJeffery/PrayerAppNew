@@ -9736,3 +9736,38 @@ factual error confirmed against the engine, was fixed outright.
 
 **Verified:** `index.html` confirmed to read 12:00–18:00 for Endana, with no remaining 12:00–15:00
 occurrence anywhere in the file.
+
+---
+
+## Session 2026-09-03 continued -- fixed all four content issues from the prior entry directly,
+## per Josh's explicit instruction to fix rather than describe. No SEED_VERSION change.
+
+**Added tooltips to the four items that had none**, verified against real sources rather than
+written from memory:
+- **Suffrages** (BCP p.54/96) -- explains it's the versicles-and-responses set said after the
+  Apostles' Creed, and clarifies this checkbox controls the whole set while the existing "Rotate
+  Suffrages A/B Daily" toggle below it picks which authorized set.
+- **The Great Litany** (BCP p.148, confirmed via direct search) -- "especially appropriate for
+  Ash Wednesday, Rogation Days, and other days of solemn entreaty," permitted "at the end of
+  Morning or Evening Prayer, or as a separate devotion" per the BCP's own rubric -- explains why
+  it's offered as an occasional addition rather than routine content.
+- **General Thanksgiving** (BCP p.101, Rite II, confirmed via search) and **Prayer of St.
+  Chrysostom** (BCP p.102, Rite II, confirmed via search) -- both now note the either/or
+  convention between them, matching how multiple independent sources describe their normal use
+  ("you only need either... or"), the same way this sidebar already documents other genuine BCP
+  alternatives (e.g. the Invitatory's "three alternatives — pick one"). Rite I page numbers not
+  independently confirmed and not invented; described as "the equivalent point in Rite I" rather
+  than a specific unverified number.
+
+**Fixed the punctuation inconsistency**: "Office Mode" was the sole top-level BCP sidebar header
+without the trailing colon its siblings ("Time of Day:", "Appearance:", "Liturgical Settings:")
+all carry -- added the colon. Checked the other two sidebars before treating this as a
+project-wide fix: East Syriac's own headers are uniformly colon-free throughout, a different but
+internally consistent style, not the same defect -- left alone.
+
+**Fixed the ambiguous Coptic Agpeya label**: "Theotokia (today's day, automatic)" -- unclear what
+"automatic" modifies without already knowing the feature -- changed to "Theotokia (automatically
+follows today's weekday tune)," stating plainly what the automatic behavior actually is.
+
+**Verified:** all four items confirmed present in `index.html`, no duplicate ids introduced.
+`js/office-ui.js` unaffected, `node --check` still passes.
