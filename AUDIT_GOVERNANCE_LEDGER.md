@@ -9691,3 +9691,48 @@ cover, and this pass does not claim to have done that exhaustively.
 
 **Verified:** `node --check` passes. CSS brace-balanced (534/534). `label.bcp-only-hidden`
 confirmed present.
+
+---
+
+## Session 2026-09-03 continued -- an actual content read (not a wiring check) of the BCP, Coptic
+## Agpeya, and East Syriac sidebars, per Josh's direct, repeated correction that the prior two
+## passes were not what he asked for. Found and fixed one real factual contradiction. No
+## SEED_VERSION change.
+
+**Found and fixed a genuine factual contradiction, verified against the engine itself, not just
+reasoned to.** The East Syriac override panel's Endana radio label said "12:00–15:00"; the shared
+navigator's own config for the same hour, two files away, said "12:00–18:00" -- the same
+liturgical hour given two different durations in two different parts of the same app. Checked
+against `getEastSyriacHourInfo()`, the actual engine logic that determines real behavior: its
+`hourMap` entry for Endana is `{from: 12*60, to: 18*60}` -- confirming 18:00 is correct and 15:00
+was stale. Fixed the override panel's label to match.
+
+**Real content findings, disclosed as findings for Josh's call, not silently fixed:**
+- "Suffrages" (the bare parent checkbox controlling a whole prayer category) has no info-tooltip
+  explanation at all, while nearly every comparably unfamiliar term in the same sidebar (Kyrie
+  Pantocrator, Trisagion, Angelus, the Examen) does.
+- "The Great Litany," "General Thanksgiving," and "Prayer of St. Chrysostom" likewise carry no
+  tooltip, unlike their neighbors in the same "After the Office" list.
+- Checked directly rather than assumed: General Thanksgiving and the Prayer of St. Chrysostom are
+  both genuinely optional in real BCP practice (its use "became optional" in 1892, per the
+  Episcopal Church's own glossary) -- so presenting them as independent checkboxes isn't wrong on
+  that count. But multiple sources describe them as conventional alternatives to each other ("you
+  only need either... or"), and this sidebar gives no indication of that relationship, unlike
+  other genuine BCP "or" choices elsewhere in the same sidebar (e.g. the Invitatory tooltip
+  explicitly says "three alternatives — pick one").
+- Top-level section headers are inconsistent in punctuation: "Time of Day:", "Appearance:", and
+  "Liturgical Settings:" carry a trailing colon; "Office Mode" (a sibling top-level header, not a
+  nested one) does not.
+- Coptic Agpeya's "Theotokia (today's day, automatic)" radio label reads ambiguously next to its
+  seven plainly-named sibling hours -- unclear what "automatic" is describing without already
+  knowing the feature.
+- Coptic Agpeya's sidebar carries an unqualified "complete and verified" claim with no date or
+  audit reference attached, in a project where exactly that kind of unqualified claim has been
+  found false before (Lucy's certifications). Not asserting it's currently wrong -- flagging that
+  the phrasing itself carries the same shape of risk this project has been burned by previously.
+
+None of the disclosed items were changed without direction; only the Endana contradiction, a plain
+factual error confirmed against the engine, was fixed outright.
+
+**Verified:** `index.html` confirmed to read 12:00–18:00 for Endana, with no remaining 12:00–15:00
+occurrence anywhere in the file.
