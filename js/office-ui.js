@@ -596,6 +596,15 @@ function backToSplash() {
     // Clear any forced office override
     window._forcedOfficeId = undefined;
 
+    // FIXED 2026-09-03, found via a real report (Josh: "why does it say override" after simply
+    // navigating to BCP and back): _esyTemporalOverride is a persistent global set by the Prev/
+    // Next buttons and the date picker in East Syriac's own sidebar -- but unlike _forcedOfficeId
+    // right above, nothing ever reset it on navigating away, so a stale override from any earlier
+    // point in the session (testing, or just clicking Next once) would keep silently showing
+    // "override" every time East Syriac was reopened, with no relationship to what the user was
+    // currently doing.
+    window._esyTemporalOverride = { active: false, date: null, hourId: null };
+
     // Reset all settings panels to their default hidden states so the next
     // mode selection starts clean (avoids e.g. East Syriac settings panel
     // bleeding into a subsequent Daily Office load)
@@ -1594,6 +1603,12 @@ async function selectMode(mode) {
 
     document.body.classList.toggle('roman-breviary-dev-mode', mode === 'roman-breviary-dev');
     window._forcedOfficeId = undefined;
+
+    // FIXED 2026-09-03, same reason as the identical fix in backToSplash() above: a stale
+    // East-Syriac-specific date/hour override (set by that tradition's own Prev/Next buttons or
+    // date picker) must not silently persist into whatever mode/tradition is being switched to.
+    window._esyTemporalOverride = { active: false, date: null, hourId: null };
+
 
     // Mode transition invariant: exactly one office drawer is active for the selected mode.
     // All non-active drawers must be both mode-hidden and sidebar-hidden so toggleSidebar()

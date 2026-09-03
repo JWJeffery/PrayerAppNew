@@ -9546,3 +9546,43 @@ ACOE badge specifically. `showAppearanceToggle: true` confirmed present for both
 specifically, the actual location needs a screenshot of the entry-flow splash itself (not the
 office) to pin down precisely -- this fix addresses the strongest candidate found, not a confirmed
 diagnosis from a direct screenshot of the affected element.
+
+---
+
+## Session 2026-09-03 continued -- fixed a stale-override bug Josh reported: East Syriac kept
+## showing "override" after simply navigating to BCP and back, with no override intentionally set.
+## No SEED_VERSION change.
+
+Josh: "I was able to go into Book of Common Prayer and toggle to light mode, then come back. Why
+does it say 'override'?"
+
+**Traced precisely, not guessed at.** The "✦ override" text comes from a single line in
+`renderEastSyriac()` that appends it to `#esy-active-date-label` whenever
+`window._esyTemporalOverride.active` is true. That flag is a persistent global, set by East
+Syriac's own Prev/Next buttons and its date picker (`setSharedOfficeNavDate()` /
+`changeSharedOfficeNavDate()`) -- legitimate when the user is actually looking at a different
+date. The bug: unlike its sibling `window._forcedOfficeId`, which both `backToSplash()` (the
+function behind the actual "Back to Modes" button visible in Josh's own screenshot) and
+`selectMode()` already reset on every mode transition, `_esyTemporalOverride` was never reset by
+either. Once set true at any point in a session -- by deliberate testing, or even just clicking
+Next once -- it stayed true indefinitely, silently resurfacing every time East Syriac was reopened
+regardless of what the user was currently doing, with zero relationship to the actual current
+navigation.
+
+**Fixed at both reset points**, matching the existing `_forcedOfficeId` pattern exactly rather than
+inventing a new mechanism: `backToSplash()` and `selectMode()` both now also reset
+`_esyTemporalOverride` to its default inactive state.
+
+**A deeper, related issue found while tracing this, disclosed rather than fixed unprompted:**
+`setSharedOfficeNavDate()`/`changeSharedOfficeNavDate()` (the Prev/Next buttons and the raw date
+picker) set `active: true` unconditionally on every use, regardless of whether the resulting
+date/hour actually differs from what the natural, real-time default would be -- meaning clicking
+Next then Prev to land back on today's actual date and hour would still show "override," since
+nothing compares the result against the natural default before setting the flag. This is a
+different behavior than what was reported (which was specifically about the flag persisting
+*across tradition switches*, now fixed) and wasn't touched here -- flagged for Josh's own call on
+whether it's worth a future, more careful redesign of when "override" should genuinely display.
+
+**Verified:** `node --check` passes. Simulated the exact reported sequence (a stale
+`active:true` override, then the reset now present at both `backToSplash()` and `selectMode()`) --
+confirms the flag correctly returns to its default inactive state.
