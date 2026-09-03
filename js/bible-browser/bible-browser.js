@@ -2568,7 +2568,21 @@ async function initializeBibleBrowser() {
             await populateChapterSelect(state.bookKey, state.chapter || "");
         }
 
-        if (location.pathname === "/tools/bible") {
+        // FIXED 2026-09-03, found via a real report (Josh: "unfuck the splash screen"): this
+        // restoration previously ran unconditionally whenever the URL path was /tools/bible,
+        // completely independent of js/office-ui.js's initializeEntryRouting() -- which runs on
+        // its own separate DOMContentLoaded listener and could, in the same page load, decide the
+        // user should see the tradition-entry splash instead (e.g. after a stored preference was
+        // cleared). Neither listener knew about the other, so both could show themselves on the
+        // same load: the splash correctly appeared on top, but Bible Reader was never told to stay
+        // hidden and rendered in full underneath it. Both scripts load with `defer`, so by the time
+        // either DOMContentLoaded handler runs, office-ui.js has already executed and
+        // getUserEntryDefault() -- the same function initializeEntryRouting() itself now uses -- is
+        // safely callable here. Only auto-restore Bible Browser from the URL if the user's own
+        // stored entry default agrees the splash should be skipped; if it would show the splash
+        // instead (returns null/'ask'), defer to that instead of overriding it.
+        const entryDefault = (typeof getUserEntryDefault === 'function') ? getUserEntryDefault() : 'universal';
+        if (location.pathname === "/tools/bible" && entryDefault) {
             openBibleBrowser({ restore: true });
         }
     }

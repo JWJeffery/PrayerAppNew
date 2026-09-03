@@ -9405,3 +9405,50 @@ afterward. `node --check` passes on `js/office-ui.js`.
 `tradition-entry` is visible (Bible Browser is only reachable via its `mode-selection` card, and
 reaching `mode-selection` itself already hides `tradition-entry`) -- a theoretical symmetrical gap,
 not a confirmed reachable one, left alone rather than fixed speculatively.
+
+---
+
+## Session 2026-09-03 -- fixed the actual root cause of the broken splash Josh reported: two
+## fully independent DOMContentLoaded bootstrap systems (entry-routing in js/office-ui.js, and
+## Bible Browser's own URL-based session restoration in js/bible-browser/bible-browser.js) with
+## zero coordination between them. No SEED_VERSION change.
+
+**The prior fix (same-day, earlier) was real but incomplete.** `hideAllActiveOfficeViews()` fixed
+the case where `showTraditionEntry()` was called *while* Bible Browser was already visibly active
+in the same JS execution -- confirmed working, still correct. But Josh's follow-up screenshot
+showed the bug persisting on a **fresh page load** at `/tools/bible`, which is a different
+mechanism entirely: `js/bible-browser/bible-browser.js` registers its own, completely separate
+`DOMContentLoaded` listener (`initializeBibleBrowser`) that unconditionally calls
+`openBibleBrowser({restore:true})` whenever `location.pathname === "/tools/bible"` -- with zero
+awareness of `initializeEntryRouting()`'s own, independent decision on the very same page load.
+Traced precisely: `bible-browser.js` loads before `office-ui.js` in `index.html` (both `defer`),
+so its listener registers first and fires first on `DOMContentLoaded` -- restoring Bible Browser
+unconditionally, before `initializeEntryRouting()` has even run its own routing decision. Neither
+listener has ever known the other exists.
+
+**Fixed at the actual point of conflict**, not by re-patching the symptom again:
+`initializeBibleBrowser()`'s restoration check now calls `getUserEntryDefault()` -- the same
+function `initializeEntryRouting()` itself uses -- before restoring Bible Browser from the URL.
+Confirmed safe to call across files: both scripts load with `defer`, so by the time either
+`DOMContentLoaded` handler runs, `office-ui.js` has already executed in full and
+`getUserEntryDefault` is a real, callable, hoisted function regardless of which listener fires
+first. Bible Browser now only auto-restores from the URL if the user's own stored preference
+agrees the splash should be skipped; if the stored default says "ask" (returns null), it defers
+instead of overriding what entry-routing is about to show.
+
+**Found and closed a matching gap in the other direction while at it, not left for a third
+report:** `selectMode()` -- the authoritative dispatcher for every real tradition/office view --
+had the identical blind spot: it never accounted for Bible Browser possibly already being shown,
+so switching into an actual office view (e.g. a user with a stored tradition default landing
+directly in BCP) could leave Bible Browser's content rendered underneath it too. Closed with the
+same shared `hideAllActiveOfficeViews()` helper, called once from `selectMode()` as well, rather
+than three independent one-off patches that could drift out of sync with each other.
+
+**Verified against the actual reported scenario, not a synthetic one:** simulated the real
+DOMContentLoaded registration order (Bible Browser's listener firing first, matching the actual
+`<script>` tag order in `index.html`), with a cleared stored entry default (Josh's exact
+situation) and the real `/tools/bible` URL. Confirmed Bible Browser's restoration is correctly
+skipped, `showTraditionEntry()` then correctly shows the splash, and the final state has
+`tradition-entry` visible and `bible-browser-section` hidden -- not just individually checked, the
+full two-listener sequence run together. `node --check` passes on both `js/office-ui.js` and
+`js/bible-browser/bible-browser.js`.

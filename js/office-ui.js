@@ -1574,6 +1574,13 @@ async function selectMode(mode) {
     const modeSelection = document.getElementById('mode-selection');
     const traditionEntry = document.getElementById('tradition-entry');
 
+    // FIXED 2026-09-03, same root cause as the showTraditionEntry()/showUniversalModeSelection()
+    // fix earlier this session: selectMode() had the identical gap in the other direction -- it
+    // never accounted for Bible Browser (a separate system with its own independent
+    // DOMContentLoaded bootstrap in js/bible-browser/bible-browser.js) possibly already being
+    // shown, so switching into a real tradition/office view could leave Bible Browser's own
+    // content rendered underneath it. Same shared helper closes this uniformly.
+    hideAllActiveOfficeViews();
     if (splashBg) splashBg.style.display = 'none';
     hideEntrySurface(modeSelection);
     hideEntrySurface(traditionEntry);
