@@ -9452,3 +9452,58 @@ skipped, `showTraditionEntry()` then correctly shows the splash, and the final s
 `tradition-entry` visible and `bible-browser-section` hidden -- not just individually checked, the
 full two-listener sequence run together. `node --check` passes on both `js/office-ui.js` and
 `js/bible-browser/bible-browser.js`.
+
+---
+
+## Session 2026-09-03 continued -- stripped the Church of the East entry sub-panel down to match
+## the app's established minimal card pattern, and confirmed the "Anglican Forward" default this
+## app is built around. No SEED_VERSION change.
+
+Josh: "This app is Anglican Forward in that if a person 'doesn't know,' we guide them towards the
+Anglican tradition. You don't take up all that space explaining the two traditions. Review the
+logic behind the splash screen and REVIEW THE CONTEXT." Correct on both counts.
+
+**Verified "Anglican Forward" directly rather than taking it on faith:** `data-entry-tradition=
+"unknown"` (the "I'm not sure / Help me begin" card on the very first screen) resolves through
+`resolveEntryTraditionRoute('unknown')` straight to `{storedDefault: 'anglican', mode: 'daily'}` --
+one click, zero further questions, no explanation shown. The persisted-profile normalization logic
+independently reinforces the same default (`if (profile.traditionDefault === 'unknown')
+profile.traditionDefault = 'anglican';`). This is real, already-correct, already-established
+behavior -- confirmed, not assumed.
+
+**Compared every other card in the entry flow against what I'd built for Church of the East, and
+the mismatch was obvious once actually looked at side by side.** Every existing tradition card,
+at every level of the flow (Western/Eastern family cards, the individual tradition cards inside
+each), is exactly three lines: a short code badge, a bold name, one short descriptive line. None
+of them carry a lede paragraph of their own -- the *shared* top-level lede text
+(`#tradition-entry .app-entry-lede`) gets dynamically rewritten by `selectTraditionFamily()`
+depending on which step is showing, and that's the only lede any sub-panel ever gets. My Church of
+the East sub-panel broke this pattern in two places: a full paragraph explaining the 1968 schism
+above the two cards, and a second paragraph below them suggesting the user might not be sure and
+that either choice was fine -- both genuinely new additions inconsistent with how every other card
+in this exact flow already works, and the second one didn't even make sense in context, since a
+user reaching this screen has already passed the one place in the flow where "I'm not sure" is a
+real option.
+
+**Fixed by stripping both paragraphs entirely**, leaving exactly the established shape: Back
+button, panel title, two cards. Each card's own description line tightened to one short fact
+(the calendar and its adoption date) rather than the longer two-sentence versions with historical
+detail that had crept in.
+
+**Checked, not assumed, that `showCoeEntryStep()`'s own lede-handling still works correctly with
+this simplification:** it uses the exact same `document.querySelector('#tradition-entry
+.app-entry-lede')` + dynamic-rewrite mechanism already used by `selectTraditionFamily()` for the
+other two sub-panels -- the paragraph I removed was never actually the element that code was
+targeting (document order means the shared, top-level lede was always what `querySelector` found
+first, regardless of whether my panel-specific paragraph existed) -- so removing it doesn't touch
+that mechanism at all, it just removes orphaned static text that was never wired to anything.
+
+**Left alone, deliberately, since it's a different context with its own established norms:** the
+East Syriac settings sidebar (`#east-syriac-settings`) still carries a short explanatory note under
+its own Easter Reckoning control -- a genuinely different part of the app (an in-office settings
+panel, not the entry splash), already styled and sized as a settings-description, consistent with
+how that panel already explains its other controls. Not what was reported, not touched.
+
+**Verified:** `node --check` passes. `index.html` spot-checked for exactly one `entry-coe-options`
+panel, exactly one of each church-body card, and confirmed the removed prose no longer appears
+within that panel's markup specifically.
