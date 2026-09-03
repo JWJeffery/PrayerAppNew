@@ -128,6 +128,27 @@ const EastSyriacCalendar = (() => {
     }
 
     /**
+     * Resolve a fixed-date feast to a Gregorian JS Date under a given reckoning.
+     *
+     * ADDED 2026-09-03. Previously every fixed-date anchor in this module was
+     * hardcoded to julianToGregorian() regardless of which church body the user
+     * had selected, so even in Gregorian mode the engine placed the Nativity on
+     * 7 January and Epiphany on 19 January. The Assyrian Church of the East's own
+     * published diocesan calendars put them on 25 December and 6 January. See
+     * AUDIT_GOVERNANCE_LEDGER.md, session 2026-09-03, for the research behind this.
+     *
+     * @param  {number} year   - Gregorian year the feast is resolved into
+     * @param  {number} month  - 1-12
+     * @param  {number} day    - 1-31
+     * @param  {'julian'|'gregorian'} mode
+     * @return {Date}
+     */
+    function fixedFeastDate(year, month, day, mode) {
+        if (mode === 'julian') return julianToGregorian(year, month, day);
+        return toMidnight(new Date(year, month - 1, day));
+    }
+
+    /**
      * Whole weeks elapsed from start to date (floor).
      * Used to calculate weekInSeason and Qdham/Wathar parity.
      * @param  {Date} start  — must be a Sunday
@@ -295,6 +316,13 @@ const EastSyriacCalendar = (() => {
      */
     function getLiturgicalYear(date, options) {
         const easterMode = (options && options.easterMode === 'gregorian') ? 'gregorian' : 'julian';
+        // Fixed-date feasts are reckoned separately from Easter. They are NOT the
+        // same switch: the Ancient Church of the East has kept the Nativity on the
+        // Gregorian 25 December since 2010 while retaining the Julian Paschalion,
+        // so a single flag cannot express current practice. Defaults to Gregorian
+        // because that is what BOTH bodies currently do; the julian path is kept
+        // for completeness and is not currently selected by any caller.
+        const fixedFeastMode = (options && options.fixedFeastMode === 'julian') ? 'julian' : 'gregorian';
         const d = toMidnight(date);
 
         // Find the Subara Sunday that opens the liturgical year containing `date`.
@@ -305,8 +333,16 @@ const EastSyriacCalendar = (() => {
         // Strategy: check the Subara that starts in d.getFullYear() - 1,
         // then the one in d.getFullYear(), and pick the correct bracket.
 
+        // FIXED 2026-09-03: was Nov 28. Verified against the Assyrian Church of
+        // the East, Diocese of Western Europe published calendars for 2020-2026:
+        // Subara Sunday is 29 Nov 2020, 28 Nov 2021, 27 Nov 2022, 3 Dec 2023,
+        // 1 Dec 2024, 30 Nov 2025, 29 Nov 2026. "Sunday on or after Nov 27"
+        // reproduces all seven; "on or after Nov 28" reproduces six, missing 2022
+        // (27 Nov 2022 was itself a Sunday). The one-day error shifts the ENTIRE
+        // liturgical year by a week whenever 27 November falls on a Sunday --
+        // next in 2033. See scripts/coe-calendar/ and the governance ledger.
         function subaraSundayFor(y) {
-            return nextSundayOnOrAfter(new Date(y, 10, 28)); // Nov 28
+            return nextSundayOnOrAfter(new Date(y, 10, 27)); // Nov 27
         }
 
         let subaraYear = d.getFullYear();
@@ -333,7 +369,7 @@ const EastSyriacCalendar = (() => {
         // wrong from 2100 onward when the true offset becomes +14. Found by a
         // 100-year rigor sweep (2024-2123) at Josh's request; see
         // AUDIT_GOVERNANCE_LEDGER.md session 2026-08-30 for the full account.
-        const denkhaStart = nextSundayOnOrAfter(julianToGregorian(easterYear, 1, 6));
+        const denkhaStart = nextSundayOnOrAfter(fixedFeastDate(easterYear, 1, 6, fixedFeastMode));
 
         // Sauma: exactly 7 weeks (49 days) before Easter — always a Sunday
         const saumaStart = addDays(easter, -49);
@@ -356,17 +392,26 @@ const EastSyriacCalendar = (() => {
         // The season begins the Sunday that opens that week.
         const eliyaSliwaStart = addDays(qaytaStart, 49); // 7 × 7
 
-        const crossDay    = julianToGregorian(easterYear, 9, 14);
+        const crossDay    = fixedFeastDate(easterYear, 9, 13, fixedFeastMode);
         const crossSunday = nextSundayOnOrAfter(crossDay);
 
-        // Muse: begins on the Cross Sunday.
-        // In years where Cross Sunday falls on or after the first Sunday of
-        // October, Muse has 0 weeks — those days are absorbed by Qudash 'Idta.
-        const museStart = crossSunday;
+        // Muse: begins when Eliya's SEVEN weeks are complete, not on Cross
+        // Sunday. FIXED 2026-09-03. The Cross does not end the Eliya season --
+        // in the printed diocesan calendars the Cross weeks are numbered as an
+        // OVERLAY on top of the continuing Eliya count ("Third Week of Cross and
+        // Sixth Week of Elijah"), so treating Cross Sunday as a season boundary
+        // made Muse swallow the back half of Eliya. Eliya runs 7 weeks; Muse
+        // then fills whatever remains before Qudash 'Idta, and may be 0 weeks
+        // long (as in 2022). Verified against the 2020-2026 diocesan calendars:
+        // printed Moses starts 25 Oct 2020, 17 Oct 2021, [none] 2022,
+        // 22 Oct 2023, 13 Oct 2024, 18 Oct 2026 -- each exactly Eliya + 49 days.
+        const museStart = addDays(eliyaSliwaStart, 49);
 
-        // Qudash 'Idta: first Sunday of October
-        const oct1             = new Date(easterYear, 9, 1);
-        const qudashIdtaStart  = nextSundayOnOrAfter(oct1);
+        // Qudash 'Idta: the FOUR WEEKS immediately preceding Subara.
+        // FIXED 2026-09-03: was "first Sunday of October", which is out by 28
+        // days in most years. Subara minus 28 reproduces the printed Hallowing
+        // start in all seven diocesan calendars 2020-2026 exactly.
+        const qudashIdtaStart  = addDays(nextSubara, -28);
 
         // ── Build season list in calendar order ──────────────────────────────
         //
@@ -390,7 +435,7 @@ const EastSyriacCalendar = (() => {
 
         seasons.push(  { name: 'qudash-idta', start: qudashIdtaStart, end: addDays(nextSubara,      -1) });
 
-        return { subaraStart, saumaStart, easter, nextSubara, seasons, crossDay };
+        return { subaraStart, saumaStart, easter, nextSubara, seasons, crossDay, fixedFeastMode };
     }
 
     // ── Public: getSeason ─────────────────────────────────────────────────────
@@ -413,7 +458,7 @@ const EastSyriacCalendar = (() => {
      */
     function getSeason(gregorianDate, options) {
         const d = toMidnight(gregorianDate);
-        const { subaraStart, saumaStart, easter, seasons } = getLiturgicalYear(d, options);
+        const { subaraStart, saumaStart, easter, seasons, fixedFeastMode } = getLiturgicalYear(d, options);
         // Find which season contains this date
         let currentSeason = null;
         for (const s of seasons) {
@@ -500,7 +545,7 @@ const EastSyriacCalendar = (() => {
         // century-aware julianToGregorian() conversion as denkhaStart above, on the
         // same Julian year basis (Epiphany falls in January of the liturgical year's
         // own Easter year, not necessarily d's own calendar year).
-        const epiphanyGreg  = julianToGregorian(easter.getFullYear(), 1, 6);
+        const epiphanyGreg  = fixedFeastDate(easter.getFullYear(), 1, 6, fixedFeastMode);
 
         let anaphora, anaphoraLabel;
         const isNestoriusFeast = (
@@ -547,6 +592,7 @@ const EastSyriacCalendar = (() => {
             anaphoraLabel,
             palmSunday,
             epiphanyGreg,
+            fixedFeastMode,
         };
     }
 
@@ -605,7 +651,17 @@ const EastSyriacCalendar = (() => {
             { date: new Date(2025,  0, 19), season: 'denkha',      cycle: 'wathar', note: "2025 Denkha start Jan 19 (wk7 = Wathar)" },
 
             // ── Qudash 'Idta: week 44 from Subara Nov 30 2025 = Qdham ──
-            { date: new Date(2025,  9,  5), season: 'qudash-idta', cycle: 'qdham',  note: "2025 Qudash 'Idta start Oct 5 (wk44 = Qdham)" },
+            // REPLACED 2026-09-03. This previously asserted that Qudash 'Idta
+            // began on 5 Oct 2025, which encoded the old "first Sunday of
+            // October" rule. The Assyrian Church of the East, Diocese of Western
+            // Europe printed calendar for 2025 gives Hallowing of the Church as
+            // beginning 2 Nov 2025. The self-tests in this block were written
+            // from the engine's own assumptions rather than from the published
+            // calendars, which is why all 30 passed while the engine disagreed
+            // with the printed calendar on a third of the year. These two cases
+            // are taken from the printed calendars directly.
+            { date: new Date(2025, 10,  2), season: 'qudash-idta', cycle: 'qdham', note: "2025 Hallowing of the Church begins Nov 2 (printed diocesan calendar)" },
+            { date: new Date(2025,  9,  5), season: 'eliya-sliwa', cycle: 'qdham', note: "2025 Oct 5 is still Eliya-Sliwa, not Qudash 'Idta (printed diocesan calendar)" },
         ];
 
         let pass = 0, fail = 0;
@@ -776,19 +832,20 @@ const EastSyriacCalendar = (() => {
         // calendar throughout.
         const { crossDay } = getLiturgicalYear(d, options);
         const { easter, epiphanyGreg } = seasonData;
+        const fixedFeastMode = seasonData.fixedFeastMode || 'gregorian';
         const ascensionDay  = addDays(easter, 39);  // Thursday, 40th day counting Easter as day 1
         const pentecostDay  = addDays(easter, 49);
         // Nativity (Julian Dec 25) falls in the December BEFORE the liturgical
         // year's own Easter year -- lands in January of easter.getFullYear()
         // after conversion, same as Denkha/Epiphany above.
-        const nativityGreg      = julianToGregorian(easter.getFullYear() - 1, 12, 25);
-        const transfigurationGreg = julianToGregorian(easter.getFullYear(), 8, 6);
+        const nativityGreg      = fixedFeastDate(easter.getFullYear() - 1, 12, 25, fixedFeastMode);
+        const transfigurationGreg = fixedFeastDate(easter.getFullYear(), 8, 6, fixedFeastMode);
 
         const fixedFeasts = [
             { date: nativityGreg,        key: 'COE_FEAST_NATIVITY',       label: 'Nativity of our Lord',
-              note: "Julian Dec. 25, converted via this engine's century-aware Julian-to-Gregorian conversion. Many parishes today keep Gregorian Dec. 25 directly instead -- see project notes." },
+              note: "Reckoned under the church body's fixed-feast setting, which currently resolves to Gregorian 25 December for both the Assyrian Church of the East and the Ancient Church of the East. The ACE moved the Nativity to the Gregorian date by synodal decision in June 2010 while retaining the Julian Paschalion." },
             { date: epiphanyGreg,        key: 'COE_FEAST_EPIPHANY',       label: 'Epiphany (Denkha)',
-              note: 'Julian Jan. 6, converted via this engine\u2019s century-aware Julian-to-Gregorian conversion. Marks the fixed Feast day itself, distinct from the Denkha season, which begins the following Sunday.' },
+              note: 'Reckoned under the church body\u2019s fixed-feast setting, which currently resolves to Gregorian 6 January -- the date given in the Assyrian Church of the East\u2019s own published diocesan calendars. Marks the fixed Feast day itself, distinct from the Denkha season, which begins the following Sunday. Whether the Ancient Church of the East moved Denkha to the Gregorian date alongside the Nativity in 2010 is NOT established; see the audit dashboard.' },
             { date: easter,              key: 'COE_FEAST_RESURRECTION',   label: 'Resurrection of our Lord (Qyamta)',
               note: 'Movable; computed directly from the Easter date already used throughout this engine. No Julian/Gregorian translation applies.' },
             { date: ascensionDay,        key: 'COE_FEAST_ASCENSION',      label: 'Ascension of our Lord',

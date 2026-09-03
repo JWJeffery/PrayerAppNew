@@ -1,3 +1,95 @@
+# Session 2026-09-03 continued -- East Syriac engine season boundaries corrected against the
+# printed diocesan calendars (66.4% -> 90.4%); fixed-feast reckoning separated from the Paschal
+# reckoning. SEED_VERSION v207 -> v208.
+
+**How this was found.** Josh authorised the week-anchored saints schema ("go with C"). Before
+building saint rules on top of `js/calendar-east-syriac.js`, the engine was tested against the week
+structure actually printed in the seven diocesan calendars. It agreed on 215 of 324 season-weeks,
+66.4%. The Easter half was flawless -- Fast 49/49, Resurrection 42/42, Apostles 49/49, Summer 48/48
+-- and everything anchored elsewhere was wrong: Epiphany 0/41, Elijah 21/49, Moses 0/11, Hallowing
+0/28. Building the schema first would have produced resolved dates that were wrong for a third of
+the year while carrying citations saying they had been verified against the diocesan calendar.
+
+**This was live, not merely a blocker.** The Church of the East panel's Current Cycle box has been
+showing the wrong season and week for roughly a third of the year.
+
+**The engine's own 30 self-tests passed the whole time**, because they were written from the
+engine's assumptions rather than from the published calendars. That is the same self-referential
+verification failure already on record from the 1 Enoch chapter 24/25 case. A test written from the
+thing it is testing proves nothing.
+
+**Three corrections, each verified against all seven printed calendars.**
+
+1. Subara opens on the Sunday on or after **27 November**, not 28. Nov 27 reproduces all seven
+   printed Subara Sundays; Nov 28 reproduces six, missing 2022. The one-day error shifts the entire
+   liturgical year by a week whenever 27 November is itself a Sunday -- next in 2033.
+2. Qudash 'Idta is the **four weeks immediately preceding Subara**, not "the first Sunday of
+   October", which is out by 28 days in most years. Subara minus 28 days reproduces the printed
+   Hallowing start 7/7. This establishes that the East Syriac autumn is fitted BACKWARD from Subara
+   rather than forward from Easter, which is why Muse's length varies.
+3. Muse begins when Eliya's seven weeks are complete, **not on Cross Sunday**. The Cross does not
+   end Eliya -- the printed calendars number the Cross weeks as an overlay on a continuing Eliya
+   count ("Third Week of Cross and Sixth Week of Elijah"), so treating Cross Sunday as a boundary
+   made Muse swallow the back half of Eliya.
+
+**Result: 293/324, 90.4%.** Hallowing 0/28 -> 28/28, Moses 0/11 -> 10/11, Annunciation 6/7 -> 7/7,
+Elijah 21/49 -> 39/49, Epiphany 0/41 -> 21/41.
+
+**The residue is not engine error, and that claim was tested rather than assumed.** The structural
+test is whether season START dates land in the right season: 60/62. Both failures are 2025, where
+the diocese merged the Sixth and Seventh Weeks of Summer into one calendar week, pulling Elijah a
+week early and cascading into Moses. The remaining week-number drift is that same editorial
+compression, which cannot be computed forward from Easter; it needs that year's published calendar.
+
+**Fixed-feast reckoning separated from the Paschal reckoning.** Five anchors were hardcoded to
+`julianToGregorian()` regardless of church body: the Denkha season start, the Cross, Epiphany, the
+NATIVITY, and the Transfiguration. In Gregorian mode -- the ACOE mode -- the engine put Christmas on
+7 January and Epiphany on 19 January while the ACOE's own calendars put them on 25 December and
+6 January. Wrong on the two largest feasts of the year. Added `fixedFeastDate()` and a
+`fixedFeastMode` option defaulting to Gregorian. The Cross also moved from Julian 14 September to
+13 September, the date printed in all seven calendars.
+
+**Two switches are required, and not because of history.** Josh's ruling is that the app models
+CURRENT practice only; historical reckoning is not modelled. Even so, one flag cannot work, because
+the Ancient Church of the East is a live hybrid today: by synodal decision of June 2010 it moved the
+Nativity to the Gregorian 25 December while explicitly retaining the Julian Paschalion.
+
+**A research correction worth recording against this session's own reasoning.** Fides' 2022 obituary
+of Mar Addai II states that the ACOE resumed Julian Easter in 2006. This session dismissed that on
+the strength of seven diocesan calendars -- all of which are 2020-2026 and therefore postdate the
+reversion, so they could not speak to 2006-2015 at all. That was a reasoning error, not merely a
+wrong call: "primary source beats secondary" was applied to a question the primary source had no
+bearing on. Josh found the contemporaneous evidence: the ACOE's 2012 Resurrection epistle is dated
+12 April 2012 and its Holy Week coverage 17 April 2012, while Gregorian Easter was 8 April and
+Julian 15 April. Verified independently this session by fetching both pages. Fides is right about
+2006 and incomplete about the return to Gregorian, which had occurred by 2019 at the latest. The
+synodal act effecting that return has NOT been located and is not asserted.
+
+**A self-test was replaced, not deleted.** The case asserting Qudash 'Idta began 5 Oct 2025 encoded
+the old wrong rule. It is replaced by two cases taken from the printed calendar, with the Qdham
+parity computed from weeks-since-Subara rather than copied from the engine's own output -- copying
+the engine's answer into its own test is how the original 30 came to be worthless. All 31 pass.
+
+**A provenance note, recorded because it matters more than the code.** Partway through this work the
+working tree was found to contain edits -- `fixedFeastDate`, the Subara fix, the Cross date change --
+that match this session's stated design but that could not be attributed to any execution on record;
+the comment text differed from what the visible script had attempted to write. Rather than assume
+authorship and continue, the changes were measured against the printed calendars and adopted only on
+the evidence. They are correct. But the standing rule to verify actual state before building on top
+of a prior patch exists precisely for this, and unexplained provenance should be disclosed rather
+than quietly absorbed.
+
+**Tooling committed.** `scripts/coe-calendar/engine_vs_printed.js` plus `printed-week-tables.json`.
+Any future change to season boundary logic must be measured with it, against the primary source
+rather than against the engine's own assumptions.
+
+**Still open.** The week-anchored saints schema (option C) is now unblocked but NOT built. The
+autumn compression cases remain uncomputable without each year's published calendar. Whether the ACE
+moved Denkha and the Cross to Gregorian alongside the Nativity is unresolved; the Gregorian default
+for those is an inference from season structure, not a citation, and is recorded as such.
+
+---
+
 # Session 2026-09-03 continued -- week-anchoring confirmed across all seven diocesan
 # calendars; absence check for the 26 removed identities re-run against seven years.
 # SEED_VERSION v206 -> v207.

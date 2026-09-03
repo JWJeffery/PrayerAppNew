@@ -1,5 +1,50 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- East Syriac engine season boundaries CORRECTED against the
+## printed diocesan calendars (66.4% -> 90.4%). Fixed-feast reckoning split from the Paschal
+## reckoning. SEED_VERSION v207 -> v208. Full account in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Do not build saint rules on the engine without re-running the check.** Before starting the
+week-anchored schema, `js/calendar-east-syriac.js` was tested against the seven printed diocesan
+calendars and agreed on only 66.4% of season-weeks. The Easter half was perfect; Epiphany, Elijah,
+Moses and Hallowing were wrong. It was also live: the Current Cycle box showed the wrong season and
+week for about a third of the year. The engine's own 30 self-tests passed throughout because they
+were written from its own assumptions -- the 1 Enoch failure mode again.
+
+**Three fixes, each 7/7 against the printed calendars:**
+1. Subara = Sunday on or after **27 November** (was 28). Shifts the whole year by a week whenever
+   27 Nov is a Sunday -- 2022 did, next is 2033.
+2. Qudash 'Idta = the **four weeks before Subara** (was "first Sunday of October", out by 28 days).
+3. Muse begins when Eliya's seven weeks finish, **not on Cross Sunday** -- the Cross weeks are an
+   overlay on a continuing Eliya count, not a season boundary.
+
+**Now 293/324 (90.4%). Season starts, the structural test, are 60/62.** Both misses are 2025, the
+year the diocese merged the Sixth and Seventh Weeks of Summer. The residue is editorial compression,
+which cannot be computed forward from Easter.
+
+**Fixed feasts now follow their own reckoning.** Five anchors were hardcoded Julian regardless of
+church body -- Denkha start, Cross, Epiphany, **Nativity**, Transfiguration -- so in ACOE mode the
+app put Christmas on 7 Jan and Epiphany on 19 Jan against the ACOE's own 25 Dec and 6 Jan. Added
+`fixedFeastDate()` / `fixedFeastMode`, defaulting Gregorian. Cross moved to 13 September.
+
+**Two reckoning switches are needed even though we model current practice only** (Josh's ruling:
+current practice reigns; history is interesting but not what this app is for). The Ancient Church of
+the East is a live hybrid TODAY -- Gregorian Nativity since June 2010, Julian Paschalion retained.
+
+**UNRESOLVED, disclosed:** whether the ACE moved Denkha and the Cross to Gregorian alongside the
+Nativity. Sources say Christmas only; no ACE calendar located. The Gregorian default for those is an
+inference from season structure, not a citation. Close it by asking the ACE directly.
+
+**Tooling:** `scripts/coe-calendar/engine_vs_printed.js` + `printed-week-tables.json`. Re-run it
+after ANY change to season boundary logic. Do not add self-tests by copying the engine's own output.
+
+**NEXT: the week-anchored saints schema (option C) is unblocked but not built.** Flat
+`data/saints/sanctoral.json`, three rule types (cycle-anchored, fixed Gregorian, ordinal weekday of
+month), resolver computes dates instead of matching a `day` string.
+
+---
+
+
 ## Session 2026-09-03 continued -- week-anchoring CONFIRMED across all seven diocesan calendars
 ## (164/166, 98.8%); absence check for the 26 removals re-run against seven years, all clear.
 ## SEED_VERSION v206 -> v207. Full account in `AUDIT_GOVERNANCE_LEDGER.md`.
