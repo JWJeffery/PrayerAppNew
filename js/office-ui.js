@@ -2804,19 +2804,39 @@ function updateSidebarForOffice() {
 }
 
 function toggleBcpOnly() {
-    const bcpOnly  = document.getElementById('toggle-bcp-only')?.checked || false;
-    const sections = ['ecumenical-devotions-section','during-office-section','closing-devotions-section']
-        .map(id => document.getElementById(id)).filter(Boolean);
+    const bcpOnly = document.getElementById('toggle-bcp-only')?.checked || false;
+
+    // FIXED 2026-09-03, found during a real content audit: 'ecumenical-devotions-section' is
+    // entirely optional/non-BCP content (Agpeya, Church of the East hours, Marian Element), so
+    // hiding the whole section is correct. But 'during-office-section' and
+    // 'closing-devotions-section' each mix genuine BCP-authorized settings (Gloria Patri, the
+    // Invitatory/Noonday/Compline rotation options, Suffrages, the second Collect, the closing
+    // blessing -- all citing real BCP page numbers) together with a handful of ecumenical
+    // additions (Angelus, Trisagion, Prayer Before Reading, the Examen, Kyrie Pantocrator).
+    // Hiding those whole containers meant BCP Only Mode also hid legitimate BCP controls that
+    // have nothing to do with staying BCP-only. Now only the specific ecumenical toggles' own
+    // <label> rows are hidden, leaving every genuine BCP setting visible and adjustable.
+    const wholeSection = document.getElementById('ecumenical-devotions-section');
+    const ecumenicalToggleIds = ['toggle-angelus', 'toggle-trisagion', 'toggle-east-syriac-hours',
+        'toggle-agpeya-opening', 'toggle-prayer-before-reading', 'toggle-examen', 'toggle-kyrie-pantocrator'];
 
     if (bcpOnly) {
-        sections.forEach(s => s.classList.add('bcp-only-hidden'));
-        ['toggle-angelus','toggle-trisagion','toggle-east-syriac-hours','toggle-agpeya-opening',
-         'toggle-prayer-before-reading','toggle-examen','toggle-kyrie-pantocrator'].forEach(id => {
+        if (wholeSection) wholeSection.classList.add('bcp-only-hidden');
+        ecumenicalToggleIds.forEach(id => {
             const el = document.getElementById(id);
-            if (el) el.checked = false;
+            if (el) {
+                el.checked = false;
+                const label = el.closest('label');
+                if (label) label.classList.add('bcp-only-hidden');
+            }
         });
     } else {
-        sections.forEach(s => s.classList.remove('bcp-only-hidden'));
+        if (wholeSection) wholeSection.classList.remove('bcp-only-hidden');
+        ecumenicalToggleIds.forEach(id => {
+            const el = document.getElementById(id);
+            const label = el?.closest('label');
+            if (label) label.classList.remove('bcp-only-hidden');
+        });
     }
     requestRender();
 }

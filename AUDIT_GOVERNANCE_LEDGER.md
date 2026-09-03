@@ -9657,3 +9657,37 @@ automatically during the Great Fast."
 "Church Body," the removed explanatory paragraph, and the Quta'a claim no longer appear anywhere
 in `index.html`; the only remaining references to the removed select id in `office-ui.js` are the
 two already-guarded lookups, confirmed harmless.
+
+---
+
+## Session 2026-09-03 continued -- fixed the BCP Only Mode over-hiding bug found last entry, and
+## did a real content-level audit (not a wiring check) of the BCP, Coptic Agpeya, and East Syriac
+## sidebars, per Josh's direct correction. No SEED_VERSION change.
+
+Josh corrected two things directly: the earlier audit checked wiring, not content, and the
+"Opening Devotions" question I raised as open was already settled governance -- the 2026-07-25
+session ("Section reorder: regular BCP settings now precede optional ecumenical extras")
+explicitly documents this as a deliberate, already-decided design, not something to re-ask about.
+Should have found that before asking.
+
+**Fixed `toggleBcpOnly()`.** It previously hid the entire `during-office-section` and
+`closing-devotions-section` containers, which each mix genuine BCP-authorized settings (Gloria
+Patri, Invitatory/Noonday/Compline rotation, Suffrages, the second Collect, the closing blessing --
+all citing real BCP page numbers) together with a handful of actual ecumenical additions (Angelus,
+Trisagion, Prayer Before Reading, the Examen, Kyrie Pantocrator). Now only those specific
+ecumenical toggles' own `<label>` rows are hidden via a new generic `label.bcp-only-hidden` CSS
+rule; every genuine BCP setting stays visible and adjustable regardless of BCP Only Mode.
+`ecumenical-devotions-section` (Opening Devotions -- entirely non-BCP content) continues to be
+hidden as a whole, correctly, since none of it is BCP-proper.
+
+**Content-level review, not just wiring, of all three sidebars.** Read every tooltip and label
+across the BCP, Coptic Agpeya, and East Syriac settings panels for accuracy rather than just
+confirming each control does something. Spot-checked the most specific, independently-verifiable
+claim found (BCP p.999, the Saint Michael and All Angels alternate Evening Prayer readings) against
+real BCP text -- page 999 is genuinely within the Daily Office lessons section, and the collect
+text matches. Disclosed plainly: verifying every one of the dozens of specific page/verse citations
+in this sidebar against a primary source is a larger, separate task than a single spot-check can
+cover, and this pass does not claim to have done that exhaustively.
+
+**Verified:** `node --check` passes. CSS brace-balanced (534/534). `label.bcp-only-hidden`
+confirmed present.

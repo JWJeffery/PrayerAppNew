@@ -22,6 +22,14 @@
     pointer-events: none;
 }
 
+/* FIXED 2026-09-03: generic rule so individual ecumenical <label> rows inside
+   #during-office-section / #closing-devotions-section can be hidden by BCP Only Mode
+   without hiding the whole section -- those sections also contain genuine BCP-authorized
+   settings that must stay visible and adjustable. See toggleBcpOnly() in js/office-ui.js. */
+label.bcp-only-hidden {
+    display: none;
+}
+
 /* ── CSS Custom Properties ── */
 :root {
     /* Default: Vespers/Gothic dark mode */
