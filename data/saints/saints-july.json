@@ -89,7 +89,7 @@
     "id": "saint-thomas-the-apostle",
     "day": "July 3",
     "name": "Saint Thomas the Apostle",
-    "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
+    "description": "The Apostle Thomas, who confessed 'My Lord and my God'. FIXED DATE: listed at 3 July in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "apostle",
     "tags": [
       "COE",
@@ -1113,7 +1113,7 @@
     "id": "mar-ezekiel-of-daqoq",
     "day": "July 5",
     "name": "Mar Ezekiel Of Daqoq",
-    "description": "Mar Ezekiel of Daqoq.",
+    "description": "Mar Ezekiel of Daqoq. Identity verified. NOT A FIXED DATE: falls on the Sunday of the Seventh Week of the Apostles (5 Jul 2026, 20 Jul 2025). The date stored here is the 2026 date and is wrong for other years. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
@@ -1123,7 +1123,7 @@
     "id": "mar-yosip-khnanisho",
     "day": "July 12",
     "name": "Mar Yosip Khnanisho",
-    "description": "Mar Yosip Khnanisho, Metropolitan (1893-1977). Commemorated at the Feast of Nusardeil.",
+    "description": "Mar Yosip Khnanisho, Metropolitan of Shemsdin (1893-1977). Identity verified. NOT A FIXED DATE: kept on the second Sunday of July (12 Jul 2026, 13 Jul 2025); in 2026 this coincided with the Feast of Nusardel, in 2025 it did not. The date stored here is the 2026 date. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
@@ -1133,7 +1133,7 @@
     "id": "mar-cyriacus-and-julitta",
     "day": "July 15",
     "name": "Mar Cyriacus And Julitta",
-    "description": "Mar Cyriacus (Quriaqus) and his mother Julitta, illustrious martyrs.",
+    "description": "Mar Cyriacus (Quriaqus) and his mother Julitta, martyrs. FIXED DATE: listed at 15 July in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"

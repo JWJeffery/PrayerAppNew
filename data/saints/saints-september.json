@@ -1273,7 +1273,7 @@
     "id": "mar-sawa-the-physician",
     "day": "September 14",
     "name": "Mar Sawa The Physician",
-    "description": "Mar Sawa the Physician.",
+    "description": "Mar Sawa the Physician, commemorated together with Mar Abdisho, Mar Zaia, Mar Bisho and all the Saints. FIXED DATE: listed at 14 September in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
@@ -1283,40 +1283,10 @@
     "id": "mar-bisho-of-kmol",
     "day": "September 14",
     "name": "Mar Bisho Of Kmol",
-    "description": "Mar Bisho of Kmol.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "constantine-the-victorious-king",
-    "day": "September 18",
-    "name": "Constantine The Victorious King",
-    "description": "Constantine the Victorious King -- the Roman Emperor Constantine I, commemorated as a civil/imperial figure in this calendar rather than a saint in the strict sense, included here as the source itself lists him among the year’s named commemorations.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-gawra-the-martyr",
-    "day": "September 20",
-    "name": "Mar Gawra The Martyr",
-    "description": "Mar Gawra the Martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "yuwakhir-and-khana",
-    "day": "September 8",
-    "name": "Yuwakhir And Khana",
-    "description": "Yuwakhir and Khana (Joachim and Anna in Western usage), parents of St. Mary, commemorated at her Nativity.",
+    "description": "Mar Bisho, commemorated together with Mar Sawa the Physician, Mar Abdisho, Mar Zaia and all the Saints. FIXED DATE: listed at 14 September in both the 2025 and 2026 editions. The epithet 'of Kmol' is not used by the diocesan calendar, which names him simply as Mar Bisho. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
     ]
   }
-]
+  ]

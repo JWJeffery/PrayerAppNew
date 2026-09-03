@@ -1,5 +1,50 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- COE Layer 3 bare entries removed; COE commemorations found to be
+## WEEK-ANCHORED, not fixed-date, which makes the saints schema structurally wrong for most of them.
+## SEED_VERSION v205 -> v206. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s same-titled entry.
+
+**Layer 3 is no longer bare.** 72 COE rows -> 46, zero uncited. 26 removed as unverifiable against
+the ACOE Diocese of Western Europe diocesan calendar (2025 and 2026 editions, read in full from
+acote.church/ecclesiastical-calendar); St Matthias kept its row and lost only its COE tag; the
+eleven survivors of the bare set now carry explicit citations. Evidence base is two years, not
+seven -- the 2020-2024 editions are posted but the fetch tooling refused them. If those get
+uploaded, re-run the absence check.
+
+**READ THIS BEFORE TOUCHING THE SAINTS DATA AGAIN.** Most East Syriac commemorations are not on
+fixed Gregorian dates. Across the 2025 and 2026 calendars (Easters 15 days apart), 22 of 22
+testable commemorations sit on the identical (cycle, week, weekday) slot while landing on
+different dates. `data/saints/saints-{month}.json` stores a fixed `"day"` string, so for these it
+is right for one year and wrong for every other -- including for rows already marked sourced.
+Verifying a commemoration against one year's calendar and writing that date down creates a defect
+that looks like a citation. Do not do it.
+
+Categories: week-anchored (most; computable from `js/calendar-east-syriac.js`, which already derives
+all twelve cycles); genuinely fixed (St Ephrem 9 Jun, St Thomas 3 Jul, Cyricus and Julitta 15 Jul,
+Timotheus 1 May, the 14 Sep group, Shallita 19 Sep, Rabban Hurmizd 1 Sep, Pithyon 25 Oct, Akha and
+Mikha 1 Nov, Abdisho of Urmia 15 Nov, Jacob the dismembered 19 Nov); and editorial-annual (a
+compressed season makes the diocese merge two commemorations onto one day).
+
+**OPEN, AWAITING JOSH:** whether to move the week-anchored entries to a week-anchored schema
+(`{cycle, week, weekday}` resolved by the existing engine) or keep fixed dates and disclose the
+inaccuracy. This is a schema change and Charter 6.2 puts it under his approval.
+
+**Another ACOE source now in play:** two existing entries cite the ACOE Diocese of California 2026
+calendar. That is a second diocesan witness and should be pulled in when the week-anchoring work is
+done, both to cross-check Western Europe and to widen coverage.
+
+**Noted, not acted on:** `js/coe-eligibility.js`'s allowlist deliberately untouched (identity
+eligibility is a separate question from date sourcing, and its own note requires justification for
+KEEP_IDS changes). The corpus also holds rows with an empty `tags` array -- residue of the
+2026-08-30 stripping pass -- which render for nobody; two `mar-abda` rows are in this state.
+
+**Still open from earlier in this session:** the explanatory-depth gap (Charter section 11 requires
+micro, structural and tradition-level explanation across every tradition; only the Anglican panel
+has any, and only depth 1). Needs sources per tradition; nothing to be written from memory.
+
+---
+
+
 ## Session 2026-09-03 continued -- sidebar uniformity begun, dark mode at parity across every
 ## screen, a real date-card off-by-one found from a screenshot and fixed, and the Prayer of the
 ## Veil recorded as a disclosed source gap. SEED_VERSION v204 -> v205. Full account in

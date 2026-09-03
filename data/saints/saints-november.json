@@ -1142,22 +1142,13 @@
     "id": "mar-micha",
     "day": "November 1",
     "name": "Mar Micha",
-    "description": "Mar Micha, commemorated alongside Mar Sargis and Mar Bacchus.",
+    "description": "Mar Mikha, commemorated together with Mar Akha. FIXED DATE: listed at 1 November in both the 2025 and 2026 editions. CORRECTED 2026-09-03: this entry previously stated he was commemorated alongside Mar Sargis and Mar Bacchus; both diocesan calendars pair him with Mar Akha and place Sergius and Bacchus at 17 October. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
     ]
   },
-  {
-    "id": "mar-youkhanan-the-arab",
-    "day": "November 8",
-    "name": "Mar Youkhanan The Arab",
-    "description": "Mar Youkhanan the Arab, of Al-Hira.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
+  
   {
     "id": "mar-jacob-the-mutilated",
     "day": "November 19",
@@ -1167,55 +1158,9 @@
     "tags": [
       "COE"
     ]
-  },
-  {
-    "id": "rabban-mar-bar-edta",
-    "day": "November 27",
-    "name": "Rabban Mar Bar Edta",
-    "description": "Rabban Mar Bar 'Edta.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-cyprian",
-    "day": "November 1",
-    "name": "Mar Cyprian",
-    "description": "Mar Cyprian, martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-ignatius",
-    "day": "November 17",
-    "name": "Mar Ignatius",
-    "description": "Mar Ignatius, disciple of the sons of thunder.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-basil",
-    "day": "November 17",
-    "name": "Mar Basil",
-    "description": "Mar Basil, commemorated alongside Mar Ignatius and Mar George.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-diodorus-of-tarsus",
-    "day": "November 22",
-    "name": "Mar Diodorus Of Tarsus",
-    "description": "Mar Diodorus, Bishop of Tarsus, commemorated with twelve thousand martyrs.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
   }
-]
+  
+  
+  
+  
+  ]

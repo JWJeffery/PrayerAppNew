@@ -1235,7 +1235,7 @@
     "id": "mar-timotheus-malabar",
     "day": "May 1",
     "name": "Mar Timotheus Malabar",
-    "description": "Mar Abimalek Timotheus, Metropolitan of Malabar (1878-1945). Distinct from the ancient Catholicos Timothy I.",
+    "description": "Mar Abimalek Timotheus, Metropolitan of Malabar (1878-1945). Distinct from the ancient Catholicos Timothy I. FIXED DATE: listed at 1 May in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
@@ -1245,30 +1245,11 @@
     "id": "mar-daniel-the-physician",
     "day": "May 3",
     "name": "Mar Daniel The Physician",
-    "description": "Commemorated jointly with Mar Addai the Apostle.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "abgar-ukkama",
-    "day": "May 8",
-    "name": "Abgar Ukkama",
-    "description": "Abgar Ukkama ('the Black'), King of Edessa, traditionally the first Christian king, correspondent of Christ in East Syriac legend.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-abda",
-    "day": "May 16",
-    "name": "Mar Abda",
-    "description": "Abda, bishop of Kashkar, martyred with his predecessor Abdisho and 38 companions in 376. Source: Wikipedia, citing Holweck, F.G., A Biographical Dictionary of the Saints (St. Louis: B. Herder Book Co., 1924), s.v. 'Abda and Abdisho.'",
+    "description": "Mar Daniel the Physician. Identity verified. NOT A FIXED DATE, and its grouping also varies: the 2026 edition commemorates him with Mar Addai (Thaddeus) the Apostle on 3 May, while the 2025 edition commemorates him on 4 May with Mar Abdisho, Mar Jonah the Ascetic and Mar Ananias. The date stored here is the 2026 date. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
     ]
   }
-]
+  
+  ]

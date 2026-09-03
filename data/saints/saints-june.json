@@ -898,45 +898,8 @@
     "tags": [
       "COE"
     ]
-  },
-  {
-    "id": "mart-anahid",
-    "day": "June 18",
-    "name": "Mart Anahid",
-    "description": "Mart Anahid, virgin and martyr, disciple of Rabban Pethyon, martyred under Yazdegerd II.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-abba-serapion",
-    "day": "June 21",
-    "name": "Mar Abba Serapion",
-    "description": "Mar Abba Serapion.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "hor-besoy-and-daydara",
-    "day": "June 23",
-    "name": "Hor, Besoy, and Daydara",
-    "description": "4th-century martyrs of Alexandria -- the soldier-brothers Hor and Besoy, and their mother Daydara, martyred under the Diocletianic Persecution. Venerated jointly by the Coptic Orthodox Church and the Assyrian Church of the East. Source: Wikipedia, citing Holweck, F.G., A Biographical Dictionary of the Saints (St. Louis: B. Herder Book Co., 1924).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "saint-bartholomew-the-apostle",
-    "day": "June 13",
-    "name": "Saint Bartholomew the Apostle",
-    "description": "One of the Twelve Apostles. Single-sourced, disclosed rather than treated as fully corroborated: a liturgical-calendar-focused source ('For All the Saints,' citing the standard pattern of Eastern commemoration alongside Barnabas on June 11) states 'the Church of the East in Persia commemorated him on June 13' specifically, distinct from the Eastern Orthodox June 11 date. Not independently cross-confirmed by a second source; recorded with this caveat rather than presented with the same confidence as multi-source entries elsewhere in this corpus.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
   }
-]
+  
+  
+  
+  ]

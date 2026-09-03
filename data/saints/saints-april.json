@@ -534,20 +534,10 @@
     "id": "mar-yonan",
     "day": "April 19",
     "name": "Mar Yonan",
-    "description": "Mar Yonan.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "saint-christopher",
-    "day": "April 27",
-    "name": "Saint Christopher",
-    "description": "St. Christopher, martyr, commemorated jointly with St. George.",
+    "description": "Mar Yonan (St Jonah the Ascetic), commemorated with Mar Abdisho and Mar Ananias. Identity verified. NOT A FIXED DATE: falls on the Sunday of the Third Week of Resurrection (19 Apr 2026, 4 May 2025). The date stored here is the 2026 date and is wrong for other years. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
     "type": "saint",
     "tags": [
       "COE"
     ]
   }
-]
+  ]

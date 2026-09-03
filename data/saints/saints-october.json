@@ -1145,36 +1145,9 @@
       "COE"
     ]
   },
-  {
-    "id": "saint-jacob-the-recluse",
-    "day": "October 23",
-    "name": "Saint Jacob The Recluse",
-    "description": "St. Jacob the Recluse -- distinct from Jacob of Nisibis and Jacob the Mutilated, both separately commemorated elsewhere in this corpus.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-tahmazgard-the-martyr",
-    "day": "October 25",
-    "name": "Mar Tahmazgard The Martyr",
-    "description": "Mar Tahmazgard the Martyr, of Beth Slokh (Kirkuk).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "rabban-mar-yareth-of-alexandria",
-    "day": "October 27",
-    "name": "Rabban Mar Yareth Of Alexandria",
-    "description": "Rabban Mar Yareth of Alexandria.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
+  
+  
+  
   {
     "id": "saint-john-the-evangelist",
     "day": "October 13",

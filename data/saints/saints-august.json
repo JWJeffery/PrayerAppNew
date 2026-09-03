@@ -375,8 +375,7 @@
     "type": "apostle",
     "tags": [
       "EOR",
-      "OOR",
-      "COE"
+      "OOR"
     ]
   },
   {
@@ -1353,25 +1352,6 @@
     "tags": [
       "COE"
     ]
-  },
-  {
-    "id": "mar-yosip-busnaya",
-    "day": "August 21",
-    "name": "Mar Yosip Busnaya",
-    "description": "Mar Yosip Busnaya, commemorated alongside Mar Shimun Bar Sabbae's own day.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
-    "id": "mar-moses-of-beth-sayyare",
-    "day": "August 21",
-    "name": "Mar Moses Of Beth Sayyare",
-    "description": "Mar Moses of the Monastery of Beth Sayyare, commemorated alongside Mar Shimun Bar Sabbae's own day.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
   }
-]
+  
+  ]

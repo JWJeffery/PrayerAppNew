@@ -1,3 +1,81 @@
+# Session 2026-09-03 continued -- COE Layer 3 bare entries removed on Josh's direction,
+# and the discovery that most COE commemorations are week-anchored rather than fixed-date.
+# SEED_VERSION v205 -> v206.
+
+**Direction.** Josh: "there should be NOTHING BARE. If you can't verify the saint through the
+Assyrian/Ancient Church of the East diocesan calendars and/or sanctoral books, remove the content."
+
+**Source used.** The Assyrian Church of the East, Diocese of Western Europe Diocesan
+Ecclesiastical Calendar (English), 2025 and 2026 editions, downloaded in full from
+acote.church/ecclesiastical-calendar and read end to end. The 2020-2024 editions are posted at the
+same address but the fetch tooling available this session refused them, so the absence evidence
+rests on two years rather than seven. Stated plainly rather than dressed up as a full sweep; if
+Josh downloads and uploads the older editions the absence check can be re-run against all of them.
+
+**Removals.** Starting state was 72 COE-tagged rows, 35 of them carrying no citation of any kind.
+26 rows removed: 23 COE-only rows whose subject appears in neither calendar on any date; the June
+13 St Bartholomew row, whose own description already disclosed that it rested on a single Anglican
+devotional resource rather than any ACOE source; and the September 18 Constantine row, which
+claimed "the source itself lists him" while naming no source and appearing in neither calendar.
+St Matthias (August 9) kept its row and lost only its COE tag, since EOR and OOR also claim it.
+The eleven survivors of the bare set now carry explicit diocesan-calendar citations. Final state:
+46 COE rows, zero uncited.
+
+**A near miss worth recording.** The first pass at this surgery matched on identity id alone. Three
+rows share the id `mar-abda` and three share `saint-matthias-the-apostle`, on different dates and
+with different tags -- the scattered-duplicate signature `js/coe-eligibility.js` already documents.
+That pass would have deleted two non-COE Mar Abda rows and mis-edited two non-COE Matthias rows.
+It was caught before commit by diffing the old and new corpora rather than trusting the script's own
+success count, and the corrected pass keys on id AND day AND the presence of the COE tag together.
+Verified afterwards that of 26 removed rows zero were non-COE, and that no non-COE row anywhere in
+the 1,333-row corpus changed. This is the second time this session that a plausible-looking
+operation had to be checked against reality rather than believed.
+
+**THE STRUCTURAL FINDING.** Verifying against two years instead of one showed that most East
+Syriac commemorations are not on fixed Gregorian dates at all. The 2025 and 2026 Easters are 15
+days apart, and across that shift 22 of 22 testable commemorations land on the IDENTICAL
+(cycle, week, weekday) slot while falling on different calendar dates. St Ezekiel of Daqoq is the
+Sunday of the Seventh Week of the Apostles. St Jacob of Nisibis is the Friday of the First Week of
+Summer. Mar Papa Catholicos is the Friday of the First Week of Elijah. St Elijah Khirtaya is the
+Wednesday of the First Week of Moses. The test was run programmatically against week tables
+transcribed from both calendars, not judged by eye.
+
+`data/saints/saints-{month}.json` stores every commemoration as a fixed `"day": "July 5"` string.
+For a week-anchored commemoration that value is right for exactly one year and wrong for every
+other -- and this affects rows already marked sourced, not only the bare ones. Verifying against a
+single year and writing the date down produces a defect that looks like a citation.
+
+Three categories now established: week-anchored (the large majority, computable from
+`js/calendar-east-syriac.js`, which already derives all twelve cycles and the Julian/Gregorian
+split); genuinely fixed Gregorian (St Ephrem 9 Jun, St Thomas 3 Jul, Sts Cyricus and Julitta 15
+Jul, Mar Abimalek Timotheus 1 May, the 14 Sep group, St Shallita 19 Sep, Rabban Hurmizd 1 Sep,
+St Pithyon 25 Oct, Sts Akha and Mikha 1 Nov, St Abdisho of Urmia 15 Nov, St Jacob the dismembered
+19 Nov); and genuinely editorial (a compressed season forces the diocese to merge two
+commemorations onto one day -- 2026 folded the Four Evangelists into the Peter and Paul entry,
+2025 folded the Catholicos-Patriarchs into St Andrew's day). Only the third needs annual attention.
+
+**Not acted on.** Moving the week-anchored entries to a week-anchored representation is a schema
+change, which Charter section 6.2 places under the Lead Architect's approval. The five week-anchored
+survivors of the bare set are cited with their identity verified and their stored date explicitly
+flagged as the 2026 date and wrong for other years, rather than being carried as though fixed.
+
+**One outright error fixed in passing.** `mar-micha` claimed he is commemorated alongside Mar Sargis
+and Mar Bacchus. Both calendars pair 1 November with Mar Akha and place Sergius and Bacchus at 17
+October.
+
+**Also noted, not acted on.** `js/coe-eligibility.js`'s allowlist was deliberately left untouched --
+it gates identity eligibility (whether the person belongs in COE Layer 3 at all), which is a
+separate question from whether a sourced date exists, and the file's own governance note requires
+justification for changes to KEEP_IDS. Separately, the corpus contains rows with an empty `tags`
+array -- residue of the 2026-08-30 tag-stripping pass -- which render for nobody and are invisible
+dead weight. Two `mar-abda` rows are in this state. Not cleaned up here; flagged.
+
+**Verified.** All twelve saints files remain valid JSON; every edit made by targeted string surgery,
+never `json.dump`; `audit-ledger.html`'s inline script extracted and syntax-checked after editing;
+old-vs-new corpus diffed row by row to confirm zero collateral change.
+
+---
+
 # Session 2026-09-03 continued -- sidebar uniformity work begun, dark mode brought to
 # parity across every screen, a real date-card bug found from a screenshot and fixed,
 # and the Prayer of the Veil recorded as a disclosed source gap. SEED_VERSION v204 -> v205.
