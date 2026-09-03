@@ -1,3 +1,53 @@
+# Session 2026-09-03 continued -- week-anchoring confirmed across all seven diocesan
+# calendars; absence check for the 26 removed identities re-run against seven years.
+# SEED_VERSION v206 -> v207.
+
+**What changed.** Earlier this session the fetch tooling would only open the 2025 and 2026
+diocesan calendars, so both the removal decision and the week-anchoring finding rested on two
+years. Josh uploaded all seven editions (2020-2026) to Drive. All seven have now been read in full.
+
+**Absence check, seven years.** None of the 26 identities removed earlier today appears in any of
+the seven calendars, on any date. The removals stand on a seven-year evidence base rather than two.
+
+**Week-anchoring, confirmed.** The test now covers 24 commemorations across seven years -- 166
+year-instances, Easter dates spanning 31 March to 20 April. **164 of 166 (98.8%)** land on the same
+(cycle, week, weekday) slot. Seventeen commemorations are 7/7 exact: St John Zaroqa (Thursday,
+Epiphany wk1), Rogation of the Virgins (Monday, Epiphany wk1), Mar Awa Catholicos (Friday, Epiphany
+wk6), Mar Benyamin Shimun XXI (Sunday, Epiphany wk7), St Michael (Sunday, Fast wk6), New Sunday and
+St Moses (Sunday, Resurrection wk2), St Abraham the Mede (Monday, Resurrection wk2), St Pinkhis
+(Friday, Resurrection wk2), St Abdisho/Jonah/Ananias (Sunday, Resurrection wk3), Rabban Hurmizd
+(Monday, Resurrection wk3), Sts Sergius and Bacchus in spring (Friday, Resurrection wk5), St Andrew
+(Sunday, Week After Ascension), St Meelis and Bar Qusre (Sunday, Apostles wk4), St Ezekiel of Daqoq
+(Sunday, Apostles wk7), the 72 Apostles (Friday, Apostles wk7), Nusardel and the 12 Disciples
+(Sunday, Summer wk1), St Jacob of Nisibis (Friday, Summer wk1), Mar Shimun Bar Sabbae (Friday,
+Summer wk6), Mar Papa Catholicos (Friday, Elijah wk1), St Elijah the Tishbite (Friday, Elijah wk7),
+St Eugene (Friday, Hallowing wk1). St Elijah Khirtaya is 5/5 on the years that list him
+(Wednesday, Moses wk1).
+
+**The two misses both confirm the model rather than dent it.** St Mari and St Qardagh each miss in
+2025 and only in 2025, and both trace to a single cause: the 2025 calendar merged the Sixth and
+Seventh Weeks of Summer into one week, which forced Bar Sabbae and Qardagh onto the same Friday.
+That is precisely the editorial-compression category already identified as the one part of the
+system that is genuinely a bishop's annual decision.
+
+**Additional rules found that are neither week-anchored nor fixed-date.** Three commemorations
+follow an ordinal-weekday-of-month rule, confirmed across all seven years: St George in spring is
+the first Wednesday of March; St Shmuni and her sons in spring is the first Tuesday of May; St
+George in autumn is the first Monday of November. Mar Yosip Khnanisho is the second Sunday of July.
+These are computable but need their own rule type, distinct from both the cycle anchor and a fixed
+date.
+
+**Tooling committed.** `scripts/coe-calendar/week_anchor_test.py` plus a README, following the
+existing `scripts/bible-audit/` pattern. The week tables are hand-transcribed from the printed
+calendars on purpose: OCR of these PDFs interleaves four languages per row and is not reliable
+enough to parse automatically. Any future session can re-run it and extend it by adding a year.
+
+**Unchanged and still open:** whether to move the week-anchored entries to a week-anchored schema
+is a schema change and Charter 6.2 puts it with the Lead Architect. Nothing in the saints data was
+altered in this commit.
+
+---
+
 # Session 2026-09-03 continued -- COE Layer 3 bare entries removed on Josh's direction,
 # and the discovery that most COE commemorations are week-anchored rather than fixed-date.
 # SEED_VERSION v205 -> v206.

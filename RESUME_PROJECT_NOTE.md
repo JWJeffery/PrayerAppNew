@@ -1,5 +1,46 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- week-anchoring CONFIRMED across all seven diocesan calendars
+## (164/166, 98.8%); absence check for the 26 removals re-run against seven years, all clear.
+## SEED_VERSION v206 -> v207. Full account in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+Josh uploaded all seven ACOTE Diocese of Western Europe English calendars (2020-2026) to Drive
+after the fetch tooling refused the older PDFs. All seven read in full.
+
+**Absence check now seven years.** None of the 26 identities removed earlier today appears in any
+of the seven calendars, on any date.
+
+**The rule is established.** 24 commemorations x seven years = 166 year-instances, Easter dates
+spanning 31 March to 20 April. 164 of 166 land on the same (cycle, week, weekday) slot. Seventeen
+are 7/7 exact. The two misses are both 2025 and both come from the 2025 calendar merging the Sixth
+and Seventh Weeks of Summer into one week -- the editorial-compression case, not a rule failure.
+
+**Three rule types now identified, not two:**
+1. **Cycle-anchored** -- (cycle, week, weekday). The large majority. `js/calendar-east-syriac.js`
+   already computes every cycle.
+2. **Fixed Gregorian** -- St Ephrem 9 Jun, St Thomas 3 Jul, Cyricus and Julitta 15 Jul, Timotheus
+   1 May, the 14 Sep group, Shallita 19 Sep, Rabban Hurmizd 1 Sep, Pithyon 25 Oct, Sergius and
+   Bacchus 17 Oct, John Aghotaya and Michael 15 Oct, Akha and Mikha 1 Nov, Abdisho of Urmia
+   15 Nov, Jacob the dismembered 19 Nov, Assyrian Martyr Day 7 Aug.
+3. **Ordinal weekday of month** -- NEW, confirmed 7/7: St George (spring) = first Wednesday of
+   March; St Shmuni (spring) = first Tuesday of May; St George (autumn) = first Monday of November;
+   Mar Yosip Khnanisho = second Sunday of July. This type needs its own representation.
+
+Plus the editorial residue: when a season is compressed, the diocese merges two commemorations onto
+one day. That is the only part needing the new calendar each year.
+
+**Tooling:** `scripts/coe-calendar/week_anchor_test.py` + README. Re-runnable, extensible by adding
+a year. Week tables hand-transcribed on purpose -- OCR of these PDFs interleaves four languages per
+row and cannot be parsed reliably.
+
+**STILL OPEN, AWAITING JOSH:** whether to move to a week-anchored schema. Charter 6.2 puts schema
+changes with him. No saints data was touched in this commit.
+
+**Also still open:** the explanatory-depth gap (Charter section 11) -- needs sources per tradition.
+
+---
+
+
 ## Session 2026-09-03 continued -- COE Layer 3 bare entries removed; COE commemorations found to be
 ## WEEK-ANCHORED, not fixed-date, which makes the saints schema structurally wrong for most of them.
 ## SEED_VERSION v205 -> v206. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s same-titled entry.
