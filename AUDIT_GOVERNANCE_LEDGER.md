@@ -1,3 +1,47 @@
+# Session 2026-09-03 continued -- COE sanctoral verified against ALL SEVEN diocesan editions.
+# Reading 2020 broke a rule that had matched five consecutive years. SEED_VERSION v211 -> v212.
+
+**Why this pass happened.** The previous commit rested on five editions and said so. Josh asked why
+the other two were unread. There was no obstacle -- both were in the same Drive folder with known
+file ids, and the honest answer was that the session had run long. That is not a reason.
+
+**THE FINDING THAT JUSTIFIES IT.** The rule derived for Mar Zaia from five editions -- "the Wednesday
+nearest the Epiphany" -- is wrong. It matched 2021, 2022, 2023, 2024 and 2026, five consecutive
+years, and breaks on 2020, where the commemoration falls on 1 January while the nearest Wednesday to
+the Epiphany is 8 January. The correct rule is simpler and holds in every year that carries the
+commemoration: **the first Wednesday of January**. 1 Jan 2020, 6 Jan 2021, 5 Jan 2022, 4 Jan 2023,
+3 Jan 2024, 7 Jan 2026.
+
+A coincidence that survives five consecutive years and dies on the sixth is precisely what a partial
+evidence base cannot detect. It would have shipped as a cited, verified rule with a `ruleSource`
+naming five editions. This is the concrete answer to why "five of seven" was not good enough, and it
+belongs in the record as such.
+
+**Everything else confirmed and promoted to 7/7.** St John the Baptist (first Friday after the
+Epiphany), Sts Peter and Paul (second Friday after, exactly one week later in all seven), Mar Addai
+(Sunday of Resurrection week 5), Mar Sawrisho (first Sunday of October). The seventh year
+strengthens the case against a cycle rule for Sawrisho: the same day now falls in FOUR different
+Cross/Elijah week combinations. St Shmuni holds at 6/7, the miss being 2025's compression.
+
+**Mar Daniel the Physician is now definitively unruleable.** Across seven editions he occupies four
+different slots: Resurrection week 4 in 2020 alone, week 5 in 2021, 2023 and 2026 with Mar Addai,
+week 3 in 2022 and 2025 with Mar Abdisho and company, week 6 in 2024 alone. More data made the
+absence of a rule clearer rather than resolving it. This needs a judgement about which commemoration
+the entry tracks, not more sources.
+
+**St Isaac of Nineveh** is confirmed absent from all five earlier editions and present only in 2025
+and 2026. A recent addition, so fixed 28 January is the right shape, on two consecutive years.
+
+**Result.** Acceptance 176/181 (97.2%) across 26 rule-based entries, 21 of them at a clean 7/7. All
+five remaining misses are 2025's merged Summer weeks. The COE sanctoral now rests on the complete
+published record of this diocese.
+
+**Still open.** Mar Daniel (a judgement, not a research task). The 2038/2095 season collision. The
+explanatory-depth gap (Charter section 11). Whether the ACE moved Denkha and the Cross to Gregorian
+alongside the Nativity. The two entries resting on the ACOE Diocese of California calendar alone.
+
+---
+
 # Session 2026-09-03 continued -- the eight PARTIAL COE entries resolved against five editions.
 # A fourth rule type added for commemorations anchored to the Epiphany. SEED_VERSION v210 -> v211.
 

@@ -1,5 +1,38 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- COE sanctoral verified against ALL SEVEN diocesan editions
+## (2020-2026). Reading 2020 broke a rule that had matched five straight years.
+## SEED_VERSION v211 -> v212. Full account in the ledger.
+
+**READ THIS BEFORE DERIVING ANY RULE FROM A PARTIAL SET.** The Mar Zaia rule derived from five
+editions -- "the Wednesday nearest the Epiphany" -- matched 2021-2024 and 2026 and is WRONG. It
+breaks on 2020, where the commemoration is 1 January and the nearest Wednesday to the Epiphany is
+8 January. The real rule is the FIRST WEDNESDAY OF JANUARY, 6/6 in the years that carry it. A
+coincidence held for five consecutive years. It would have shipped cited and verified.
+
+**Now 7/7:** St John the Baptist (first Friday after Epiphany), Sts Peter and Paul (second Friday
+after, always one week later), Mar Addai (Sunday of Resurrection wk5), Mar Sawrisho (first Sunday of
+October -- the seventh year puts the same day in FOUR different Cross/Elijah combinations, which is
+why it is ordinal and not cycle). St Shmuni 6/7 (Friday of Summer wk5; 2025 compression).
+
+**Acceptance 176/181 (97.2%)**, 26 rule-based entries, 21 at a clean 7/7. All five misses are 2025's
+merged Summer weeks. The COE sanctoral now rests on this diocese's complete published record.
+
+**MAR DANIEL IS UNRULEABLE AND NEEDS A DECISION, NOT MORE DATA.** Four different slots across seven
+editions: Resurrection wk4 in 2020 alone, wk5 in 2021/2023/2026 with Mar Addai, wk3 in 2022/2025
+with Mar Abdisho and company, wk6 in 2024 alone. Someone has to decide which commemoration the entry
+is actually tracking.
+
+**St Isaac of Nineveh** is absent from 2020-2024 entirely and present in 2025-2026 at 28 January. A
+recent addition; fixed is right, on two years.
+
+**Still open:** Mar Daniel; the 2038/2095 season collision; the explanatory-depth gap (Charter
+section 11); whether the ACE moved Denkha and the Cross to Gregorian; and the two entries resting on
+the ACOE Diocese of California calendar alone (Mar Mushi, Mar Abraham).
+
+---
+
+
 ## Session 2026-09-03 continued -- the eight PARTIAL COE entries resolved against five editions.
 ## Fourth rule type (`relative`) added. SEED_VERSION v210 -> v211. Full account in the ledger.
 
