@@ -93,15 +93,12 @@
       ],
       "dayLegacy": "January 2",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 2
-          }
-        ]
+        "type": "relative",
+        "anchor": "epiphany",
+        "weekday": 5,
+        "n": -1
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there with the Blessed Virgin Mary; named as the first Bishop of Jerusalem. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "The LAST FRIDAY BEFORE the Epiphany, commemorated with the Blessed Virgin Mary and named as the first Bishop of Jerusalem: 5 Jan 2024, 2 Jan 2026. 2/2. Expressed with a negative n (count backward from the anchor). A first attempt used a forward count from Epiphany minus seven days; that resolved to NOTHING in three years of twenty and to TWO days in four others, because the forward count can overshoot the feast. Caught by the resolvability sweep. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "saint-seraphim-of-sarov",
@@ -1298,15 +1295,12 @@
       ],
       "dayLegacy": "January 18",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 18
-          }
-        ]
+        "type": "cycle",
+        "cycle": "denkha",
+        "week": 2,
+        "weekday": 0
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Sunday of the Second Week of Epiphany: 14 Jan 2024, 18 Jan 2026. 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saint-bashnouna",
@@ -7011,7 +7005,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "2 May in 2024 and 2026 -- 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saint-athanasius",
@@ -10255,7 +10249,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there as the illustrious virgin and martyr, disciple of Rabban Pethyon, martyred under Yazdegerd II. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "18 June in 2021, 2024 and 2026 -- 3/3, genuinely fixed. Named as the illustrious virgin and martyr, disciple of Rabban Pethyon, martyred under Yazdegerd II. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "martyr-leontius-at-tripoli",
@@ -10461,15 +10455,12 @@
       ],
       "dayLegacy": "June 21",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 6,
-            "day": 21
-          }
-        ]
+        "type": "cycle",
+        "cycle": "shlihe",
+        "week": 5,
+        "weekday": 0
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Sunday of the Fifth Week of the Apostles: 20 Jun 2021, 16 Jun 2024, 21 Jun 2026. 3/3. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "martyr-julian-of-tarsus",
@@ -14589,15 +14580,12 @@
       ],
       "dayLegacy": "August 21",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 21
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qayta",
+        "week": 6,
+        "weekday": 5
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there with Mar Shimun bar Sabbae and Mar Yosip Busnaya. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Friday of the Sixth Week of Summer, commemorated with Mar Shimun bar Sabbae and Mar Yosip Busnaya: 20 Aug 2021, 16 Aug 2024, 21 Aug 2026. 3/3. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-narsai",
@@ -14626,15 +14614,12 @@
       ],
       "dayLegacy": "August 21",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 21
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qayta",
+        "week": 6,
+        "weekday": 5
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there with Mar Shimun bar Sabbae and Mar Moses of the Monastery of Beth Sayyare. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Friday of the Sixth Week of Summer, commemorated with Mar Shimun bar Sabbae and Mar Moses of Beth Sayyare: 20 Aug 2021, 16 Aug 2024, 21 Aug 2026. 3/3. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saint-bartholomew-eve",
@@ -17030,15 +17015,12 @@
       ],
       "dayLegacy": "September 18",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 18
-          }
-        ]
+        "type": "cycle",
+        "cycle": "eliya-sliwa",
+        "week": 3,
+        "weekday": 5
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Friday of the Third Week of Elijah: 17 Sep 2021 (there with his mother Helena) and 18 Sep 2026. 2/2. ABSENT from the 2024 edition entirely, so this is 2 of the 2 years that carry it. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "edward-bouverie-pusey",
@@ -17277,15 +17259,12 @@
       ],
       "dayLegacy": "September 20",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 20
-          }
-        ]
+        "type": "cycle",
+        "cycle": "eliya-sliwa",
+        "week": 4,
+        "weekday": 0
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Sunday of the Fourth Week of Elijah (First of the Holy Cross): 19 Sep 2021, 15 Sep 2024, 20 Sep 2026. 3/3. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-papa-secondary",
@@ -19289,7 +19268,7 @@
           }
         ]
       },
-      "ruleSource": "Mar Mushi (Moses, 'Firstborn of the Prophets'). Sourced to the ACOE Diocese of CALIFORNIA 2026 calendar, which is a diocesan calendar of the same church and therefore within the accepted evidence standard. CHECKED AND ABSENT from all seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, so the date has been confirmed against one diocesan witness only and its fixity across years has not been established. Retained rather than removed because the source is legitimate; flagged rather than promoted because a single year of a single diocese cannot show whether the date moves."
+      "ruleSource": "Mar Moses, the Firstborn of the Prophets. THE CORRECT RULE IS KNOWN BUT CANNOT CURRENTLY BE EXPRESSED. California places this in the FIRST WEEK OF MOSES -- Mar Mushi on its Sunday (17 Oct 2021, 13 Oct 2024, 18 Oct 2026) and St Jacob the Recluse on its Friday (22 Oct 2021, 18 Oct 2024, 23 Oct 2026), both 3/3. Encoding that as a cycle rule was tried and REVERTED: js/calendar-east-syriac.js fails to produce a Muse week 1 in 5 years out of 20, because Muse is squeezed between an Eliya season built forward from Easter and a Hallowing season fitted backward from Subara, and can collapse to zero weeks. A rule that resolves to nothing makes the commemoration DISAPPEAR from the app, which is worse than a wrong date. Held as a fixed date (the 2026 value) until the season-collision defect is fixed -- see the dashboard row coe:engine:season-collision-2038, whose scope is far wider than the 2 years in 81 first measured. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "saint-luke-the-evangelist",
@@ -19638,7 +19617,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "St Jacob the Recluse. THE CORRECT RULE IS KNOWN BUT CANNOT CURRENTLY BE EXPRESSED. California places this in the FIRST WEEK OF MOSES -- Mar Mushi on its Sunday (17 Oct 2021, 13 Oct 2024, 18 Oct 2026) and St Jacob the Recluse on its Friday (22 Oct 2021, 18 Oct 2024, 23 Oct 2026), both 3/3. Encoding that as a cycle rule was tried and REVERTED: js/calendar-east-syriac.js fails to produce a Muse week 1 in 5 years out of 20, because Muse is squeezed between an Eliya season built forward from Easter and a Hallowing season fitted backward from Subara, and can collapse to zero weeks. A rule that resolves to nothing makes the commemoration DISAPPEAR from the app, which is worse than a wrong date. Held as a fixed date (the 2026 value) until the season-collision defect is fixed -- see the dashboard row coe:engine:season-collision-2038, whose scope is far wider than the 2 years in 81 first measured. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "saint-james-the-brother-of-the-lord",
@@ -19795,7 +19774,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there of Beth Slokh (Kirkuk), with Mar Rabban Pethyon the Martyr. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Fixed 25 October in California 2024 and 2026, but 24 October in 2021. 2/3. Retained as fixed on the two most recent editions, with the 2021 divergence recorded. Commemorated with Mar Rabban Pethyon in 2026 and named 'of Beth Slokh (Kirkuk)' throughout. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "martyrs-marcian-and-martyrius",
@@ -19967,7 +19946,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "27 October in 2021, 2024 and 2026 -- 3/3, genuinely fixed. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saint-frumentius",
@@ -20327,15 +20306,12 @@
       ],
       "dayLegacy": "November 1",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 1
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qudash-idta",
+        "week": 1,
+        "weekday": 0
       },
-      "ruleSource": "PARTIALLY REVERTED 2026-09-03. Earlier the same day this entry's description was 'corrected' for claiming Mar Micha is commemorated alongside Mar Sargis and Mar Bacchus, on the grounds that both Western Europe editions pair 1 November with Mar Akha. The original was RIGHT for this corpus: the Assyrian Church of the East, Diocese of California 2026 Ecclesiastical Calendar (acoecalifornia.org). commemorates on 1 November 'Mar Sargis and Mar Bacchus the Illustrious Martyrs, and Mar Micha' -- exactly as the entry originally said. Western Europe pairs the day with Mar Akha instead; the two dioceses differ. 1 November is fixed in both. The date stands; the 'correction' to the description did not."
+      "ruleSource": "CORRECTED 2026-09-03. This was a fixed 1 November. It is NOT fixed in California: Mar Micha is commemorated with Mar Sargis and Mar Bacchus on the SUNDAY OF HALLOWING WEEK 1 -- 3 Nov 2024 and 1 Nov 2026, 2/2. The 2026 coincidence with 1 November is what made it look fixed when only one year was held. California names him 'Mar Micha of Nohadra' in 2024. Western Europe pairs 1 November with Mar Akha instead; the dioceses differ on the companion as well as the anchor. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saints-cosmas-and-damian",
@@ -20990,15 +20966,12 @@
       ],
       "dayLegacy": "November 8",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 8
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qudash-idta",
+        "week": 2,
+        "weekday": 0
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. Commemorated there as Mar Youkhanan the Arab, of Al-Hira. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Sunday of the Second Week of the Hallowing of the Church: 10 Nov 2024, 8 Nov 2026. 2/2. Named 'of Al-Hira'. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saints-and-martyrs-of-the-anglican-communion",
@@ -22197,15 +22170,12 @@
       ],
       "dayLegacy": "November 27",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 27
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qudash-idta",
+        "week": 4,
+        "weekday": 5
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "Friday of the Fourth Week of the Hallowing of the Church: 29 Nov 2024 and 27 Nov 2026. 2/2. Was a fixed 27 November, which is the 2026 date only. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "saint-francesco-antonio-fasani",
@@ -23435,7 +23405,7 @@
           }
         ]
       },
-      "ruleSource": "RESTORED 2026-09-03. This entry was removed earlier the same day as 'absent from every diocesan calendar', on the strength of the Diocese of Western Europe editions 2020-2026 ALONE. That was wrong: the criterion is the Assyrian/Ancient Church of the East diocesan calendars, PLURAL, and this commemoration is present in the Diocese of California calendar. Present in the Assyrian Church of the East, DIOCESE OF CALIFORNIA 2026 Ecclesiastical Calendar (acoecalifornia.org/files/2026cal.pdf), on this exact date. NOTE: the date stored here matches California exactly, which is evidence that this corpus was compiled from the California calendar rather than Western Europe. Fixity across years is NOT established -- only the 2026 California edition is published online. Do not promote without further California editions."
+      "ruleSource": "14 December in 2024 and 2026 -- 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-timothy-i",
@@ -23804,15 +23774,12 @@
       ],
       "dayLegacy": "December 18",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 12,
-            "day": 18
-          }
-        ]
+        "type": "cycle",
+        "cycle": "subara",
+        "week": 3,
+        "weekday": 5
       },
-      "ruleSource": "Mar Abraham, Doctor of the School of Nisibis. Sourced to the ACOE Diocese of CALIFORNIA 2026 calendar, which is a diocesan calendar of the same church and therefore within the accepted evidence standard. CHECKED AND ABSENT from all seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, so the date has been confirmed against one diocesan witness only and its fixity across years has not been established. Retained rather than removed because the source is legitimate; flagged rather than promoted because a single year of a single diocese cannot show whether the date moves."
+      "ruleSource": "Mar Abraham, Doctor of the School of Nisibis: Friday of the Third Week of the Annunciation, 20 Dec 2024 and 18 Dec 2026. 2/2. SUPERSEDES the earlier note that this entry rested on a single California year -- a second year is now held, and it shows the date MOVES rather than being fixed. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-yakob-of-nisibis",
@@ -24812,12 +24779,15 @@
       ],
       "dayLegacy": "March 4",
       "observance": {
-        "type": "ordinal",
-        "month": 3,
-        "weekday": 3,
-        "n": 1
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 4,
+            "day": 24
+          }
+        ]
       },
-      "ruleSource": "The first Wednesday of March. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (7/7: 6 Mar 2024, 5 Mar 2025, 4 Mar 2026 and so on). NOTE: the calendars also keep St George on the FIXED 24 April and on the first Monday of November."
+      "ruleSource": "RE-ANCHORED TO CALIFORNIA 2026-09-03. This entry previously carried 'the first Wednesday of March', verified 7/7 against Western Europe. CALIFORNIA HAS NO MARCH COMMEMORATION OF ST GEORGE AT ALL -- neither the 2024 nor the 2026 edition lists one. California keeps St George the Triumphant Martyr on the FIXED 24 April (2024 and 2026, 2/2, with Mar Elia III in 2026), a second commemoration on the first Monday of November (4 Nov 2024, 2 Nov 2026 -- the Monday of Hallowing week 1), and a three-day Rogation in late October. The fixed April date is used here as the principal commemoration. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-khanania-ananias",
@@ -24837,7 +24807,7 @@
           }
         ]
       },
-      "ruleSource": "REVERTED 2026-09-03, and the reason matters. Earlier the same day this entry was moved from a fixed 1 October to the Sunday of Resurrection week 3, on the reasoning that Mar Khanania is commemorated with Mar Abdisho and Mar Yonan in the Western Europe calendars. That CONFLATED TWO DIFFERENT SAINTS. The Assyrian Church of the East, Diocese of California 2026 Ecclesiastical Calendar (acoecalifornia.org). commemorates on 1 October 'Mar Khanania (Ananias) who baptized St. Paul and became the first Metropolitan of Damascus' -- the Ananias of Acts 9, a distinct person from the Mar Ananias commemorated in the Resurrection weeks alongside Mar Abdisho and Mar Yonan the Ascetic. The original 1 October date was correct and is restored. Fixity across years not established; only the 2026 California edition is online."
+      "ruleSource": "1 October in 2021, 2024 and 2026 -- 3/3, genuinely fixed. CONFIRMS the earlier revert: California names him 'Mar Khanania (Ananias) who baptized St Paul and became the first Metropolitan of Damascus', a different saint from the Mar Ananias of the Resurrection weeks. Moving this entry to Resurrection week 3 was wrong and the revert was right. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-mari-the-apostle",
@@ -24868,10 +24838,10 @@
       "observance": {
         "type": "cycle",
         "cycle": "shlihe",
-        "week": 4,
-        "weekday": 0
+        "week": 1,
+        "weekday": 3
       },
-      "ruleSource": "Sunday of the Fourth Week of the Apostles, with Mar Bar Qusre. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (7/7)."
+      "ruleSource": "CORRECTED TO CALIFORNIA 2026-09-03. The previous rule (Sunday of Apostles week 4) came from Western Europe. California commemorates Mar Meelis of Tel-Khesh with Bar Qosreh on the WEDNESDAY of Apostles week ONE: 22 May 2024 and 27 May 2026, 2/2. A different weekday AND a different week from Western Europe. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-michael",
@@ -24956,7 +24926,7 @@
         "weekday": 0,
         "n": 1
       },
-      "ruleSource": "Mar Sawrisho of Beth Qoqa, the first Sunday of October: 4 Oct 2020, 3 Oct 2021, 2 Oct 2022, 1 Oct 2023, 6 Oct 2024, 5 Oct 2025, 4 Oct 2026. 7/7. NOT cycle-anchored -- the same day falls in four different Cross/Elijah week combinations across those years, so a cycle rule would have looked principled and been wrong. Commemorated with St Steven and St Khnana in 2024, 2025 and 2026. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars, ALL SEVEN editions 2020-2026 read in full."
+      "ruleSource": "Mar Sawrisho of Beth Qoqa. NOT CLEANLY RULED. California gives 6 Oct 2024 and 4 Oct 2026 (both the first Sunday of October) but 2 Oct 2021, which is a SATURDAY and the day before that year's first Sunday. The ordinal rule holds 2/3 in California. Western Europe gives the first Sunday of October 7/7, so the rule is right and 2021 California looks like a local variation or a printing slip. Kept as the ordinal rule with the discrepancy disclosed rather than smoothed away. Assyrian Church of the East, Diocese of California ecclesiastical calendars (2026 and 2024 in full, plus the June, August, September and October pages of 2021)."
     },
     {
       "id": "mar-sargis-and-bacchus",
@@ -24970,10 +24940,10 @@
       "observance": {
         "type": "cycle",
         "cycle": "qyamta",
-        "week": 5,
+        "week": 4,
         "weekday": 5
       },
-      "ruleSource": "Friday of the Fifth Week of the Resurrection. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (7/7). NOTE: the calendars also keep a second, FIXED commemoration of these martyrs on 17 October; this entry is the spring one."
+      "ruleSource": "CORRECTED TO CALIFORNIA 2026-09-03. The rule previously here (Friday of Resurrection week 5) was derived from the WESTERN EUROPE calendars. California places the spring commemoration of Mar Sargis and Mar Bacchus on the Friday of Resurrection week FOUR: 26 Apr 2024 and 1 May 2026, 2/2. The two dioceses differ by a week. Since this project follows California, the California rule governs. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "mar-shimon-bar-sabbae",
@@ -25099,7 +25069,7 @@
           }
         ]
       },
-      "ruleSource": "REVERTED 2026-09-03. Earlier the same day this was moved from a fixed 30 November to the Sunday of the Week After Ascension, because 30 November appears in none of the seven Western Europe editions and was assumed to be an imported Western date. It is not: the Assyrian Church of the East, Diocese of California 2026 Ecclesiastical Calendar (acoecalifornia.org). places St Andrew the Apostle on 30 NOVEMBER. THE TWO DIOCESES OF THE SAME CHURCH GENUINELY DIFFER -- Western Europe keeps him on the Sunday of the Week After Ascension (24 May 2020 through 17 May 2026, 7/7), California on the fixed 30 November. This is a real divergence in practice, not an error in either. The California date is restored because the surrounding evidence shows this corpus was compiled from the California calendar. AWAITING A DECISION from the Lead Architect on which diocese this project follows, and whether the sanctoral needs a per-diocese dimension at all."
+      "ruleSource": "30 November in 2024 and 2026 -- 2/2. CONFIRMS the earlier revert. Western Europe keeps St Andrew on the Sunday of the Week After Ascension; California keeps the fixed 30 November. A genuine divergence between two dioceses of the same church, and this project follows California. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
       "id": "saint-jacob-of-nisibis",

@@ -143,13 +143,23 @@
                 const o = (opts && opts.eastSyriacOptions) || _eastSyriacOptions;
                 const anchor = cal.getSeason(date, o).epiphanyGreg;
                 if (!anchor) return false;
-                // Start counting from anchor + offsetDays, then take the Nth
-                // occurrence of the target weekday on or after that point.
-                const from = new Date(anchor.getFullYear(), anchor.getMonth(),
-                                      anchor.getDate() + (obs.offsetDays || 0));
-                let d = new Date(from);
-                while (d.getDay() !== obs.weekday) d.setDate(d.getDate() + 1);
-                d.setDate(d.getDate() + 7 * ((obs.n || 1) - 1));
+                // n > 0: the Nth occurrence of the weekday on or after
+                //        anchor + offsetDays (counting forward).
+                // n < 0: the |n|th occurrence STRICTLY BEFORE the anchor
+                //        (counting backward). Needed for commemorations kept on
+                //        the Friday BEFORE the Epiphany, which cannot be
+                //        expressed by counting forward from an offset without
+                //        the count spilling past the feast in some years.
+                const n = obs.n || 1;
+                let d = new Date(anchor.getFullYear(), anchor.getMonth(),
+                                 anchor.getDate() + (n < 0 ? 0 : (obs.offsetDays || 0)));
+                if (n < 0) {
+                    do { d.setDate(d.getDate() - 1); } while (d.getDay() !== obs.weekday);
+                    d.setDate(d.getDate() - 7 * (Math.abs(n) - 1));
+                } else {
+                    while (d.getDay() !== obs.weekday) d.setDate(d.getDate() + 1);
+                    d.setDate(d.getDate() + 7 * (n - 1));
+                }
                 return d.getFullYear() === date.getFullYear()
                     && d.getMonth() === date.getMonth()
                     && d.getDate() === date.getDate();

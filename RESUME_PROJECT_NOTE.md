@@ -1,5 +1,47 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 -- sanctoral RE-ANCHORED TO THE DIOCESE OF CALIFORNIA (Josh's ruling).
+## Six Western Europe rules were wrong for it. SEED_VERSION v213 -> v214. Full account in the ledger.
+
+**CALIFORNIA IS THE AUTHORITY FOR THIS PROJECT.** Western Europe is a derivation aid only -- its
+seven consecutive years make it far better for working out a rule, but it can NEVER be the
+acceptance authority. The two dioceses genuinely differ. `verify_sanctoral.js` now checks California
+by default; pass `we` for the secondary check.
+
+**Sources now held:** California 2026 and 2024 in full, plus June/August/September/October 2021.
+Western Europe 2020-2026, all seven.
+
+**Six rules corrected because California differs:** Sargis and Bacchus (Res wk4 Friday, not wk5);
+Mar Meelis (Apostles wk1 WEDNESDAY, not wk4 Sunday); St George in spring (California has NO March
+George -- re-anchored to the fixed 24 April); Mar Micha (Hallowing wk1 Sunday, not fixed 1 Nov);
+Rabban Mar Bar 'Edta (Hallowing wk4 Friday, not fixed); Mar Abraham of Nisibis and Mar Mushi both
+move rather than being fixed.
+
+**Confirmed by a third year:** Mar Khanania fixed 1 Oct 3/3 -- California names him as the Ananias
+of Acts 9 who baptised St Paul, a DIFFERENT saint from the Resurrection-weeks Ananias. St Andrew
+fixed 30 Nov 2/2.
+
+**New:** the `relative` rule type supports a negative `n` (count backward from the anchor), needed
+for "the Friday before the Epiphany".
+
+**ENGINE DEFECT IS MUCH WORSE THAN MEASURED.** The season collision blocks Muse week 1 in **5 years
+out of 20**, not 2 in 81. Mar Mushi and St Jacob the Recluse have correct, 3/3-verified Moses week 1
+rules that CANNOT be encoded until it is fixed; both are held as fixed dates with the real rule
+recorded. Fixing the Eliya/Muse/Qudash-Idta fitting would unblock them.
+
+**Acceptance: California 117/124 (94.4%).**
+
+**Lesson recorded:** the sweep reported three phantom failures for St James because it counted
+occurrences per CALENDAR year; an Epiphany-anchored commemoration falls in December for one
+liturgical year and January for another. The rule was right and the TEST was wrong. Check which
+before changing data.
+
+**Still open:** the season-collision defect (now the highest-value fix); Mar Daniel; the
+explanatory-depth gap (Charter section 11).
+
+---
+
+
 ## Session 2026-09-03 -- SERIOUS ERROR CORRECTED. 18 COE entries were wrongly deleted earlier today
 ## because only the Western Europe diocese was checked. All restored, plus three reverted
 ## "corrections". SEED_VERSION v212 -> v213. Full account in the ledger.

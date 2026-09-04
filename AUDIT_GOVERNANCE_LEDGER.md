@@ -1,3 +1,58 @@
+# Session 2026-09-03 -- sanctoral re-anchored to the Diocese of CALIFORNIA. Six rules derived
+# from Western Europe were wrong for it. SEED_VERSION v213 -> v214.
+
+**Josh ruled that this project follows the Diocese of California**, then supplied the California 2024
+calendar in full and four month-pages of 2021, joining 2026. Three years makes it possible to test
+FIXITY in California for the first time, rather than only presence.
+
+**Six rules derived from Western Europe were wrong for California.**
+1. Sts Sargis and Bacchus (spring): Western Europe keeps the Friday of Resurrection week 5,
+   California the Friday of week FOUR. A whole week apart.
+2. Mar Meelis of Tel-Khesh: Western Europe the Sunday of Apostles week 4, California the WEDNESDAY
+   of Apostles week ONE. Different weekday and different week.
+3. St George in spring: "the first Wednesday of March" held 7/7 in Western Europe, and California
+   has NO March commemoration of St George at all. Re-anchored to the fixed 24 April.
+4. Mar Micha: held as fixed 1 November, which is the 2026 date only. California gives the Sunday of
+   Hallowing week 1, with Sargis and Bacchus, and names him "of Nohadra".
+5. Rabban Mar Bar 'Edta: held as fixed 27 November; California gives the Friday of Hallowing week 4.
+6. Mar Abraham of Nisibis and Mar Mushi were recorded as resting on one California year; further
+   years show both MOVE.
+
+**Two earlier reverts confirmed by a third year.** Mar Khanania is fixed 1 October 3/3, and
+California names him explicitly as the Ananias of Acts 9 who baptised St Paul -- a different saint
+from the Mar Ananias of the Resurrection weeks, so the conflation was real. St Andrew is fixed
+30 November 2/2.
+
+**Nine restored entries now carry derived rules** rather than inherited dates, including Mar Abba
+Serapion (3/3), Mar Gawra (3/3), Constantine (2/2, absent from 2024 entirely), and St James the
+Brother of our Lord, kept on the last Friday BEFORE the Epiphany.
+
+**New capability:** the `relative` rule type now supports a negative `n`, counting backward from the
+anchor, which is what "the Friday before the Epiphany" actually requires.
+
+**Three failures caught by the sweep before commit, all mine.**
+- A first attempt at St James counted FORWARD from Epiphany minus seven days. It resolved to nothing
+  in 3 years of 20 and to two days in 4 others, because a forward count can overshoot the feast.
+- The Moses week 1 rules for Mar Mushi and St Jacob the Recluse are CORRECT but the engine cannot
+  resolve them: it fails to produce a Muse week 1 in **5 years out of 20**. That is the season
+  collision already recorded, and its true scope is a quarter of years, not the 2-in-81 first
+  measured. Both were reverted to fixed dates rather than shipped as vanishing commemorations, with
+  the correct rule recorded against the day the engine is fixed.
+- The sweep itself was wrong about St James: it counted per CALENDAR year, but an Epiphany-anchored
+  commemoration legitimately falls in December for one liturgical year and January for another. It
+  now counts per liturgical year for relative rules. The rule was right and the test was wrong --
+  worth recording, because the previous instinct would have been to change the data.
+
+**Acceptance against California: 117/124 (94.4%).** The verifier's primary authority is now
+California. Western Europe is retained as a secondary, informational check, because its seven
+consecutive years make it far better for DERIVING a rule -- but it can never be the acceptance
+authority, and it now scores 141/167 precisely because the dioceses genuinely differ.
+
+**Still open.** The season-collision defect, now known to affect a quarter of years rather than 2 in
+81, and blocking two otherwise-derived rules. Mar Daniel. The explanatory-depth gap.
+
+---
+
 # Session 2026-09-03 -- SERIOUS ERROR. Eighteen entries were wrongly deleted earlier today
 # because only ONE diocese's calendar was checked. All restored. SEED_VERSION v212 -> v213.
 
