@@ -37,11 +37,12 @@
         "type": "fixed",
         "dates": [
           {
-            "month": 1,
-            "day": 1
+            "month": 9,
+            "day": 19
           }
         ]
-      }
+      },
+      "ruleSource": "CORRECTED 2026-09-03. Was a fixed 1 January, where every edition has New Year's Day and no commemoration of Shallita. All seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars place St Shallita on 19 September, the same date in every year. A second entry, mar-shalita at 10 August, was a duplicate of the same saint on another unsupported date and has been removed."
     },
     {
       "id": "mary-mother-of-god",
@@ -90,25 +91,6 @@
       "type": "saint",
       "tags": [
         "OOR"
-      ],
-      "dayLegacy": "January 2",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 2
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-james-the-brother-of-the-lord",
-      "name": "Saint James The Brother Of The Lord",
-      "description": "James, brother of the Lord, first Bishop of Jerusalem -- commemorated jointly with the Blessed Virgin Mary. Source: the ACOE Diocese of California 2026 calendar. This is the Church of the East's own distinct commemoration date for this figure, different from (and not intended to replace) the separate Apr.30 and Oct.23 dates already present in this corpus for other traditions -- different traditions commemorating the same figure on different days is normal practice throughout this corpus, not an inconsistency to resolve.",
-      "type": "saint",
-      "tags": [
-        "COE"
       ],
       "dayLegacy": "January 2",
       "observance": {
@@ -484,7 +466,8 @@
             "day": 7
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 7 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "saint-raymond-of-penyafort",
@@ -694,7 +677,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 9 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "fifth-day-of-the-nativity",
@@ -2102,7 +2086,8 @@
             "day": 28
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 28 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "saint-ephraim-the-syrian",
@@ -6709,25 +6694,6 @@
       }
     },
     {
-      "id": "mar-elias",
-      "name": "Mar Elias",
-      "description": "Read as Mar Elia III, Catholicos-Patriarch (d. 1190, known as Abu Halim, author of a liturgical prayer collection bearing his name) rather than the Old Testament prophet Elijah, since this allowlist already carries a separate id (prophet-elias-elijah, sourced Oct.16) for that figure specifically. Source: the ACOE Diocese of California 2026 calendar ('St. George the Triumphant Martyr, and of Mar Elia III Catholicos-Patriarch, known as Abu-Khalim'). The identity id was previously at an unsourced December 17 with no citation -- stripped.",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "April 24",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 4,
-            "day": 24
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-fidelis-of-sigmaringen",
       "name": "Saint Fidelis of Sigmaringen",
       "description": "Capuchin priest and martyr, venerated in Catholic and Oriental Orthodox traditions.",
@@ -7008,25 +6974,6 @@
       }
     },
     {
-      "id": "mar-abraham-of-kashkar",
-      "name": "Mar Abraham Of Kashkar",
-      "description": "Abraham of Kashkar, founder of the Great Monastery on Mt. Izla, foundational figure for East Syriac monasticism. Source: the ACOE Diocese of California 2026 calendar ('Mar Abraham of Kashkar'). The identity id was previously scattered across two different unsourced dates (Jul.12, Nov.24) with no citation for either -- both stripped.",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "May 2",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 2
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-athanasius",
       "name": "Saint Athanasius",
       "description": "Bishop of Alexandria and Teacher of the Faith, died 373 AD.",
@@ -7103,7 +7050,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 3 May (with Mar Daniel the Physician), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "mar-daniel-the-physician",
@@ -7122,7 +7070,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 3 May (with Mar Addai), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "martyrs-of-the-east",
@@ -12855,7 +12804,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "ruleSource": "CONTRADICTED, retained pending derivation. The stored date of 29 July appears in no edition. The 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars commemorates Sts Peter and Paul, with the Four Evangelists, on 16 JANUARY -- within the Epiphany weeks, which are week-anchored and move between years. The correct rule is therefore almost certainly cycle-anchored in Denkha, but deriving it needs the dates from all seven editions, which has not been done. Flagged rather than silently corrected to a single year's date, which would repeat the defect this whole schema exists to remove."
     },
     {
       "id": "mar-shimun-bar-sabbae",
@@ -13759,25 +13709,6 @@
       }
     },
     {
-      "id": "mar-shalita",
-      "name": "St. Shalita",
-      "description": "Disciple of Mar Augin, East Syriac monastic founder. (Maclean 1894, Kashkul MS list, p.282-283.)",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "August 10",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 10
-          }
-        ]
-      }
-    },
-    {
       "id": "mar-shimon-bar-sabbae",
       "name": "Mar Shimon Bar Sabbae",
       "description": "Catholicos and martyr.",
@@ -14114,7 +14045,8 @@
             "day": 14
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 14 August, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "vigil-of-the-assumption",
@@ -18066,14 +17998,12 @@
       ],
       "dayLegacy": "October 1",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 1
-          }
-        ]
-      }
+        "type": "cycle",
+        "cycle": "qyamta",
+        "week": 3,
+        "weekday": 0
+      },
+      "ruleSource": "CORRECTED 2026-09-03. Was a fixed 1 October, which appears in none of the seven calendars. Mar Khanania (Ananias) is commemorated on the Sunday of the Third Week of the Resurrection together with Mar Abdisho and Mar Yonan the Ascetic -- the three are named in a single entry in every edition. Same slot as mar-abdisho and mar-yonan, verified 7/7 against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars."
     },
     {
       "id": "saint-th-r-se-of-lisieux",
@@ -18246,7 +18176,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 4 October (with St Steven and St Khnana), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
     },
     {
       "id": "saint-francis-of-assisi",
@@ -18953,25 +18884,6 @@
       }
     },
     {
-      "id": "saint-john-the-apostle",
-      "name": "Saint John the Apostle",
-      "description": "The Evangelist and Apostle John. A distinct, fixed commemoration from the movable 'Four Evangelists' Friday of the pre-Fast cycle (see the December 27 entry for that season's own separate note) -- Maclean 1894 (p.282-283, Kashkul MS list) gives this as its own fixed day.",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "October 13",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 13
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-john-the-evangelist",
       "name": "Saint John The Evangelist",
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-john-the-apostle (October 13) -- deliberately left without a COE tag on this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
@@ -19273,7 +19185,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "ruleSource": "Mar Mushi (Moses, 'Firstborn of the Prophets'). Sourced to the ACOE Diocese of CALIFORNIA 2026 calendar, which is a diocesan calendar of the same church and therefore within the accepted evidence standard. CHECKED AND ABSENT from all seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, so the date has been confirmed against one diocesan witness only and its fixity across years has not been established. Retained rather than removed because the source is legitimate; flagged rather than promoted because a single year of a single diocese cannot show whether the date moves."
     },
     {
       "id": "saint-luke-the-evangelist",
@@ -22367,14 +22280,12 @@
       ],
       "dayLegacy": "November 30",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 30
-          }
-        ]
-      }
+        "type": "cycle",
+        "cycle": "qyamta",
+        "week": 7,
+        "weekday": 0
+      },
+      "ruleSource": "CORRECTED 2026-09-03. Was a fixed 30 November -- the WESTERN date, which appears in none of the seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026. Those place St Andrew on the Sunday of the Week After Ascension: 24 May 2020, 16 May 2021, 29 May 2022, 21 May 2023, 12 May 2024, 1 Jun 2025, 17 May 2026. That week is Resurrection week 7 in this engine's numbering, and the slot holds 7/7."
     },
     {
       "id": "mar-pethion",
@@ -23698,7 +23609,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "ruleSource": "Mar Abraham, Doctor of the School of Nisibis. Sourced to the ACOE Diocese of CALIFORNIA 2026 calendar, which is a diocesan calendar of the same church and therefore within the accepted evidence standard. CHECKED AND ABSENT from all seven Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, so the date has been confirmed against one diocesan witness only and its fixity across years has not been established. Retained rather than removed because the source is legitimate; flagged rather than promoted because a single year of a single diocese cannot show whether the date moves."
     },
     {
       "id": "mar-yakob-of-nisibis",

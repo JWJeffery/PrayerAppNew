@@ -1,3 +1,53 @@
+# Session 2026-09-03 continued -- every COE sanctoral entry now carries a ruleSource.
+# Three wrong dates corrected to verified rules, five removed, eight flagged partial.
+# SEED_VERSION v209 -> v210.
+
+**A correction to this session's own reporting first.** The previous handoff told Josh there were
+"28 COE entries without a ruleSource". That was backwards: 28 was the number WITH one. The real
+backlog was 18. Recorded because a miscounted backlog quietly sets the wrong scope for the next
+session, and this project has been burned by inherited numbers before.
+
+**Method.** The 2026 Diocese of Western Europe calendar was re-read in full from Drive rather than
+recalled, and each of the 18 checked against it. Nothing here rests on memory of earlier reads.
+
+**Three entries had the wrong date and are corrected to verified rules.**
+- St Andrew the Apostle sat on a fixed 30 November -- the WESTERN date, present in none of the seven
+  editions. The ACOE keeps him on the Sunday of the Week After Ascension (24 May 2020 through
+  17 May 2026), which this engine numbers as Resurrection week 7. Verified 7/7.
+- Mar Khanania (Ananias) sat on a fixed 1 October, present in no edition. He is commemorated on the
+  Sunday of the Third Week of the Resurrection with Mar Abdisho and Mar Yonan -- all three named in
+  a single entry in every edition. Same slot, verified 7/7.
+- Mar Shallita sat on 1 January, where every edition has New Year's Day and nothing else. All seven
+  place him on 19 September, unmoved.
+
+**Five removed** as absent from every edition with no other diocesan witness: St James the Brother
+of the Lord (2 Jan), Mar Elias (24 Apr, which is St George in every edition), Mar Abraham of Kashkar
+(2 May), St John the Apostle (13 Oct -- the 15 Oct entry is St John AGHOTAYA, a different person),
+and `mar-shalita` (10 Aug), a duplicate of Shallita on a second unsupported date.
+
+**Two retained with provenance recorded.** Mar Mushi and Mar Abraham are sourced to the ACOE Diocese
+of CALIFORNIA calendar -- a diocesan calendar of the same church, so inside the evidence standard --
+but absent from all seven Western Europe editions. One diocesan witness, one year, fixity
+unestablished. Legitimate enough to keep, not strong enough to promote.
+
+**Eight flagged PARTIAL rather than promoted.** Seven are present in the 2026 edition on exactly the
+stored date, but only 2026 was checked, and neighbouring commemorations in the same seasons move by
+up to a fortnight between years. Marking them confirmed on one year is exactly the defect this
+schema was built to remove. The eighth, Sts Peter and Paul, is CONTRADICTED: the stored 29 July
+appears in no edition, and 2026 commemorates them with the Four Evangelists on 16 JANUARY, inside
+the week-anchored Epiphany weeks. The rule is almost certainly cycle-anchored in Denkha, but
+deriving it needs all seven editions. Flagged, not silently pinned to one year's date.
+
+**Result.** 46 COE entries -> 41. Zero now lack a `ruleSource`. Acceptance against the printed
+calendars rises to 136/140 (97.1%) with Andrew and Khanania added to the test. The four remaining
+misses are still 2025's merged Summer weeks.
+
+**Open.** The eight PARTIAL entries need the other six editions. The 2038/2095 season collision.
+The explanatory-depth gap (Charter section 11). Whether the ACE moved Denkha and the Cross to
+Gregorian alongside the Nativity.
+
+---
+
 # Session 2026-09-03 continued -- saints migrated to a flat sanctoral with week-anchored
 # observance rules (option C). SEED_VERSION v208 -> v209.
 

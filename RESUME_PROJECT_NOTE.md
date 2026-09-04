@@ -1,5 +1,39 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- every COE sanctoral entry now carries a ruleSource.
+## SEED_VERSION v209 -> v210. Full account in the ledger.
+
+**Correction to the previous handoff:** it said "28 COE entries without a ruleSource". Backwards --
+28 was the number WITH one. The real backlog was 18, and it is now zero.
+
+**Three wrong dates corrected to rules verified 7/7:** St Andrew was on the WESTERN 30 November and
+is now the Sunday of the Week After Ascension (Resurrection week 7). Mar Khanania was on 1 October
+and is now the Sunday of Resurrection week 3, with Mar Abdisho and Mar Yonan. Mar Shallita was on
+1 January and is now the fixed 19 September.
+
+**Five removed** (absent from all seven editions, no other diocesan witness): St James the Brother
+of the Lord, Mar Elias, Mar Abraham of Kashkar, St John the Apostle, and `mar-shalita` (a duplicate
+of Shallita).
+
+**COE entries 46 -> 41. Acceptance 136/140 (97.1%).**
+
+**EIGHT ENTRIES ARE MARKED PARTIAL AND MUST NOT BE PROMOTED WITHOUT MORE WORK.** Seven (Mar Zaia,
+St John the Baptist, St Isaac of Nineveh, Mar Addai, Mar Daniel, St Shamuni, Mar Sabrisho) were
+checked against the 2026 edition ONLY. Their neighbours in the same seasons move by up to a
+fortnight between years, so a single year proves nothing about fixity. The eighth, Sts Peter and
+Paul, is CONTRADICTED -- stored at 29 July, but the calendar has them on 16 January inside the
+week-anchored Epiphany weeks. Deriving that rule needs all seven editions.
+
+**Two entries (Mar Mushi, Mar Abraham) rest on the ACOE Diocese of CALIFORNIA calendar** -- a valid
+diocesan witness, but a single one, and absent from Western Europe entirely.
+
+**NEXT:** re-read the 2020-2025 editions and resolve the eight PARTIAL entries. Also open: the
+2038/2095 season collision, the explanatory-depth gap (Charter section 11), and whether the ACE
+moved Denkha and the Cross to Gregorian alongside the Nativity.
+
+---
+
+
 ## Session 2026-09-03 continued -- SAINTS MIGRATED to a flat sanctoral with week-anchored
 ## observance rules (option C). SEED_VERSION v208 -> v209. Full account in the ledger.
 
