@@ -123,6 +123,42 @@
             return Math.ceil(date.getDate() / 7) === obs.n;
         }
 
+        // "relative": the Nth given weekday counted from a fixed feast plus an
+        // offset. ADDED 2026-09-03. Needed because part of the Church of the
+        // East sanctoral is anchored neither to a week of a season nor to an
+        // ordinal weekday of a month, but to the Epiphany:
+        //   Mar Zaia            - the Wednesday nearest 6 January
+        //   St John the Baptist - the first Friday after 6 January
+        //   Sts Peter and Paul  - the second Friday after 6 January
+        // The Epiphany itself is read from the calendar engine so that it
+        // follows the church body's fixed-feast reckoning rather than being
+        // hardcoded to a Gregorian date.
+        if (obs.type === 'relative') {
+            if (date.getDay() !== obs.weekday) return false;
+            const cal = global.EastSyriacCalendar;
+            if (!cal || typeof cal.getSeason !== 'function') {
+                return saintOccursOnDate(entry.dayLegacy || entry.day, date);
+            }
+            try {
+                const o = (opts && opts.eastSyriacOptions) || _eastSyriacOptions;
+                const anchor = cal.getSeason(date, o).epiphanyGreg;
+                if (!anchor) return false;
+                // Start counting from anchor + offsetDays, then take the Nth
+                // occurrence of the target weekday on or after that point.
+                const from = new Date(anchor.getFullYear(), anchor.getMonth(),
+                                      anchor.getDate() + (obs.offsetDays || 0));
+                let d = new Date(from);
+                while (d.getDay() !== obs.weekday) d.setDate(d.getDate() + 1);
+                d.setDate(d.getDate() + 7 * ((obs.n || 1) - 1));
+                return d.getFullYear() === date.getFullYear()
+                    && d.getMonth() === date.getMonth()
+                    && d.getDate() === date.getDate();
+            } catch (err) {
+                console.error('[SaintsResolver] relative resolution failed for', entry.id, err);
+                return false;
+            }
+        }
+
         if (obs.type === 'cycle') {
             // Needs the East Syriac engine. If it is not loaded (for example on
             // the admin page), degrade to the legacy date rather than throwing

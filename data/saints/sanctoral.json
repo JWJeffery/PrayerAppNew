@@ -459,15 +459,13 @@
       ],
       "dayLegacy": "January 7",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 7
-          }
-        ]
+        "type": "relative",
+        "anchor": "epiphany",
+        "offsetDays": -3,
+        "weekday": 3,
+        "n": 1
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 7 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "The Wednesday nearest the Epiphany (equivalently, the first Wednesday on or after 3 January): 5 Jan 2022, 4 Jan 2023, 3 Jan 2024, 7 Jan 2026 -- a Wednesday every time while the Gregorian date moves across five days. 4/4 in the years that carry the commemoration. NOTE: the 2025 edition has the optional Rogation of St Zaia on 1 January but NO commemoration at all, so this is 4 of the 4 years that have it, not 5 of 5. Distinct from the fixed 14 September commemoration, where St Zaia is named with St Sawa and others. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "saint-raymond-of-penyafort",
@@ -670,15 +668,13 @@
       ],
       "dayLegacy": "January 9",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 9
-          }
-        ]
+        "type": "relative",
+        "anchor": "epiphany",
+        "offsetDays": 1,
+        "weekday": 5,
+        "n": 1
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 9 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "The first Friday after the Epiphany: 7 Jan 2022 (Epiphany a Thursday), 13 Jan 2023 (Epiphany itself a Friday, so the following one), 12 Jan 2024, 10 Jan 2025, 9 Jan 2026. 5/5. Anchored to the Epiphany, not to a week of a season -- the same date falls in the Nativity weeks in some years and the Epiphany weeks in others. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "fifth-day-of-the-nativity",
@@ -2087,7 +2083,7 @@
           }
         ]
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 28 January, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "Fixed 28 January, confirmed in the 2025 and 2026 editions. GENUINELY ABSENT from the 2022, 2023 and 2024 editions, which carry no commemoration of St Isaac on any date -- so this appears to be a recent addition to the diocesan calendar rather than a moving date. Fixed is therefore the right shape, but it rests on two consecutive years. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "saint-ephraim-the-syrian",
@@ -7043,15 +7039,12 @@
       ],
       "dayLegacy": "May 3",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 3
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qyamta",
+        "week": 5,
+        "weekday": 0
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 3 May (with Mar Daniel the Physician), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "Mar Addai (St Thaddeus the Apostle), the Sunday of the Fifth Week of the Resurrection: 15 May 2022, 7 May 2023, 28 Apr 2024, 18 May 2025, 3 May 2026 -- the same slot in all five while the Gregorian date moves across three weeks. 5/5. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "mar-daniel-the-physician",
@@ -7071,7 +7064,7 @@
           }
         ]
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 3 May (with Mar Addai), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "UNSTABLE, deliberately left as a fixed date and flagged. Mar Daniel the Physician moves AND changes company between years, with no slot holding: Sunday of Resurrection week 3 in 2022 (with Mar Abdisho, Mar Yonan, Mar Khanania and Mar Abimalek Timotheus) and again in 2025; Sunday of week 5 in 2023 and 2026 (with Mar Addai); Sunday of week 6 in 2024, alone. Two years at week 3, two at week 5, one at week 6 -- there is no majority and no derivable rule. Assigning one would be inventing a pattern the source does not support. The stored 3 May is the 2026 date and is wrong in four of the five years checked. Needs a judgement about which commemoration this entry is actually tracking. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "martyrs-of-the-east",
@@ -12797,15 +12790,13 @@
       ],
       "dayLegacy": "July 29",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 7,
-            "day": 29
-          }
-        ]
+        "type": "relative",
+        "anchor": "epiphany",
+        "offsetDays": 1,
+        "weekday": 5,
+        "n": 2
       },
-      "ruleSource": "CONTRADICTED, retained pending derivation. The stored date of 29 July appears in no edition. The 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars commemorates Sts Peter and Paul, with the Four Evangelists, on 16 JANUARY -- within the Epiphany weeks, which are week-anchored and move between years. The correct rule is therefore almost certainly cycle-anchored in Denkha, but deriving it needs the dates from all seven editions, which has not been done. Flagged rather than silently corrected to a single year's date, which would repeat the defect this whole schema exists to remove."
+      "ruleSource": "CORRECTED 2026-09-03. Was a fixed 29 July, which appears in no edition -- the commemoration is in JANUARY. The second Friday after the Epiphany: 14 Jan 2022, 20 Jan 2023, 19 Jan 2024, 17 Jan 2025, 16 Jan 2026. 5/5, one week after St John the Baptist every year. The Four Evangelists are commemorated with them in 2023, 2024 and 2026 and separately on the third Friday in 2022 and 2025 -- that grouping is editorial and varies. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "mar-shimun-bar-sabbae",
@@ -14038,15 +14029,12 @@
       ],
       "dayLegacy": "August 14",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 14
-          }
-        ]
+        "type": "cycle",
+        "cycle": "qayta",
+        "week": 5,
+        "weekday": 5
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 14 August, matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "St Shmuni (Solomonia) and her sons, the Friday of the Fifth Week of Summer: 26 Aug 2022, 18 Aug 2023, 9 Aug 2024, 14 Aug 2026. 4/5. The single miss is 2025, which places her on Saturday 16 August in the third week of Summer -- the same compression year in which the diocese merged the Sixth and Seventh Weeks of Summer. NOTE: a SECOND commemoration of the same saint falls in spring, on the first Tuesday of May (3 May 2022, 2 May 2023, 7 May 2024, 6 May 2025, 5 May 2026, 5/5). Only the August one is modelled here; the spring one is not in this corpus at all. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "vigil-of-the-assumption",
@@ -18169,15 +18157,12 @@
       ],
       "dayLegacy": "October 4",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 4
-          }
-        ]
+        "type": "ordinal",
+        "month": 10,
+        "weekday": 0,
+        "n": 1
       },
-      "ruleSource": "PARTIAL. Present in the 2026 Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars at 4 October (with St Steven and St Khnana), matching the date stored here. NOT CONFIRMED FIXED: only the 2026 edition has been checked for this entry, and several neighbouring commemorations in the same seasons are week-anchored and move by up to a fortnight between years. Treated as a fixed date pending a check against the other six editions. Do not promote on the strength of one year."
+      "ruleSource": "Mar Sawrisho of Beth Qoqa, the first Sunday of October: 2 Oct 2022, 1 Oct 2023, 6 Oct 2024, 5 Oct 2025, 4 Oct 2026. 5/5. NOT cycle-anchored -- the same day falls in three different Cross/Elijah week combinations across those years, which is why an ordinal rule is right here and a cycle rule would be wrong. Commemorated with St Steven and St Khnana in 2024, 2025 and 2026. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars. Derived from the 2022, 2023, 2024, 2025 and 2026 editions, read in full. The 2020 and 2021 editions have NOT yet been checked for this entry, so the evidence base is five years, not seven."
     },
     {
       "id": "saint-francis-of-assisi",

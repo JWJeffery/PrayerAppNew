@@ -1,3 +1,58 @@
+# Session 2026-09-03 continued -- the eight PARTIAL COE entries resolved against five editions.
+# A fourth rule type added for commemorations anchored to the Epiphany. SEED_VERSION v210 -> v211.
+
+**Method.** The 2022, 2023, 2024 and 2025 Diocese of Western Europe calendars were read in full,
+joining 2026. Five editions, spanning Easters from 31 March to 20 April.
+
+**The headline finding: all eight entries MOVE.** None of them was a fixed date, so all eight were
+wrong in most years, including the seven that happened to match 2026 exactly.
+
+**Six now carry derived rules.**
+- Mar Addai (St Thaddeus): Sunday of the Fifth Week of the Resurrection. 5/5, while the Gregorian
+  date moves across three weeks.
+- Mar Sawrisho of Beth Qoqa: the first Sunday of October. 5/5 -- and deliberately NOT cycle-anchored,
+  because the same day lands in three different Cross/Elijah week combinations across those years.
+  A cycle rule would have looked principled and been wrong.
+- St Shmuni and her sons: Friday of the Fifth Week of Summer. 4/5; the miss is 2025's merged weeks.
+- Mar Zaia: the Wednesday nearest the Epiphany. 4/4 in the years that carry it -- 2025 has the
+  optional Rogation on 1 January and no commemoration at all.
+- St John the Baptist: the first Friday after the Epiphany. 5/5.
+- Sts Peter and Paul: the second Friday after the Epiphany. 5/5, always one week after St John.
+
+**A fourth rule type was required.** Three of these anchor to the Epiphany rather than to a week of
+a season or an ordinal weekday of a month. St John the Baptist falls inside the Nativity weeks in
+some years and the Epiphany weeks in others, so no cycle rule can hold him. Added `relative`: the
+Nth given weekday counted from a fixed feast plus an offset, reading the Epiphany from the calendar
+engine so it follows the church body's fixed-feast reckoning rather than a hardcoded date.
+
+**Sts Peter and Paul were flatly wrong** -- stored at 29 July, actually in January every year.
+
+**One entry left unresolved on purpose.** Mar Daniel the Physician moves AND changes company, with
+no slot holding: Resurrection week 3 in 2022 and 2025 (with Mar Abdisho, Mar Yonan and Mar
+Khanania), week 5 in 2023 and 2026 (with Mar Addai), week 6 in 2024 alone. Two, two and one. There
+is no majority and no derivable rule, and assigning one would be inventing a pattern the source does
+not support. It stays fixed and flagged, needing a judgement about which commemoration the entry is
+actually tracking.
+
+**One genuine absence.** St Isaac of Nineveh is in the 2025 and 2026 editions at 28 January and
+absent from 2022, 2023 and 2024 on any date. A recent addition rather than a moving date, so fixed
+is the right shape -- resting on two consecutive years.
+
+**Verified.** Acceptance 164/169 (97.0%) across 26 rule-based entries; all five remaining misses are
+2025's compression. The resolvability sweep still shows only the known 2038 collision.
+
+**A verification note.** The first check that only COE entries had changed keyed the comparison on
+`id` and reported 4 changed entries when 8 had been edited -- this corpus contains duplicate ids and
+an id-keyed diff silently collapses them. Redone positionally: exactly 8 changed, zero non-COE. This
+is the second time in this session that an id-keyed operation on the saints data has misled, and the
+lesson is the same one already recorded when a delete pass nearly removed two non-COE Mar Abda rows.
+
+**Evidence base: five editions, not seven.** The 2020 and 2021 calendars have not been read. That is
+the remaining work on this thread, along with the 2038/2095 season collision, Mar Daniel, and the
+explanatory-depth gap (Charter section 11).
+
+---
+
 # Session 2026-09-03 continued -- every COE sanctoral entry now carries a ruleSource.
 # Three wrong dates corrected to verified rules, five removed, eight flagged partial.
 # SEED_VERSION v209 -> v210.

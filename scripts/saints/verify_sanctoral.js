@@ -70,7 +70,9 @@ for (const [id, years] of Object.entries(PRINTED)) {
     marks.push(m ? '.' : 'X');
     if (!m) misses.push(`   ${id} ${y}: printed ${want}, computed ${got}`);
   }
-  console.log(`   ${id.padEnd(26)} ${marks.join('')}  ${marks.filter(x=>x==='.').length}/7`);
+  // Denominator is the number of years of printed data held for THIS entry,
+  // not a hardcoded 7 -- not every commemoration appears in every edition.
+  console.log(`   ${id.padEnd(30)} ${marks.join('')}  ${marks.filter(x=>x==='.').length}/${marks.length}`);
 }
 console.log(`\n   match: ${ok}/${ok+bad} (${(100*ok/(ok+bad)).toFixed(1)}%)`);
 if (misses.length) { console.log('\n   misses:'); misses.forEach(m => console.log(m)); }

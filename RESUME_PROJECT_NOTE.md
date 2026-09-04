@@ -1,5 +1,43 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- the eight PARTIAL COE entries resolved against five editions.
+## Fourth rule type (`relative`) added. SEED_VERSION v210 -> v211. Full account in the ledger.
+
+**ALL EIGHT MOVED.** None was a fixed date. Read the 2022-2025 editions in full, joining 2026.
+
+**Six now have rules:** Mar Addai = Sunday of Resurrection wk5 (5/5). Mar Sawrisho = first Sunday of
+October (5/5, ordinal NOT cycle -- the same day falls in three different Cross/Elijah combinations).
+St Shmuni = Friday of Summer wk5 (4/5, 2025 compression). Mar Zaia = Wednesday nearest Epiphany
+(4/4; 2025 has only the optional Rogation). St John the Baptist = first Friday after Epiphany (5/5).
+Sts Peter and Paul = second Friday after Epiphany (5/5) -- they were stored at 29 July and are
+actually in JANUARY every year.
+
+**FOURTH RULE TYPE `relative`:** Nth weekday counted from a fixed feast plus an offset. Needed
+because St John the Baptist falls in the Nativity weeks some years and the Epiphany weeks others, so
+no cycle rule can hold him. The Epiphany is read from the engine so it follows the fixed-feast
+reckoning.
+
+**Mar Daniel the Physician deliberately NOT given a rule.** He moves and changes company: Resurrection
+wk3 in 2022 and 2025, wk5 in 2023 and 2026, wk6 in 2024. No majority, no rule. Needs a judgement about
+which commemoration the entry tracks.
+
+**St Isaac of Nineveh** is fixed 28 January but only appears in 2025 and 2026 -- absent from 2022-2024
+entirely. A recent addition.
+
+**Acceptance 164/169 (97.0%)** across 26 rule-based entries. All five misses are 2025's compression.
+
+**EVIDENCE BASE IS FIVE EDITIONS, NOT SEVEN.** 2020 and 2021 are unread. Drive folder "UO" holds all
+seven PDFs.
+
+**Reminder recorded twice now:** never diff or key operations on this corpus by `id` alone. It has
+duplicate ids and an id-keyed comparison collapses them silently. Use position, or (id, dayLegacy).
+
+**Still open:** 2020/2021 for full confirmation; Mar Daniel; the 2038/2095 season collision; the
+explanatory-depth gap (Charter section 11); whether the ACE moved Denkha and the Cross to Gregorian.
+
+---
+
+
 ## Session 2026-09-03 continued -- every COE sanctoral entry now carries a ruleSource.
 ## SEED_VERSION v209 -> v210. Full account in the ledger.
 
