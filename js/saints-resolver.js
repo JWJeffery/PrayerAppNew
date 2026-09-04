@@ -58,6 +58,17 @@
 
     let _cache = null;
 
+    // Whole-file sanctoral cache. Shape: { entries: Array } | null
+    // Replaces the month-keyed cache: a commemoration whose date moves between
+    // months from year to year cannot live in a month-keyed file at all.
+    let _sanctoral = null;
+
+    // Reckoning used when resolving cycle-anchored (East Syriac) entries.
+    // Defaults to the Assyrian Church of the East's current practice; override
+    // via configure({ eastSyriacOptions: { easterMode: 'julian' } }) for the
+    // Ancient Church of the East, which retains the Julian Paschalion.
+    let _eastSyriacOptions = { easterMode: 'gregorian' };
+
     // ── Helpers ───────────────────────────────────────────────────────────────
 
     /**
@@ -82,6 +93,72 @@
         return parts.some(p => normalize(p) === target);
     }
 
+    /**
+     * Does `entry` fall on `date`, according to its observance rule?
+     *
+     * Three rule types (see data/saints/sanctoral.json and
+     * scripts/saints/migrate_to_sanctoral.py):
+     *   fixed   - one or more fixed Gregorian month/day pairs
+     *   cycle   - a (cycle, week, weekday) slot in the East Syriac week
+     *             structure, resolved through EastSyriacCalendar
+     *   ordinal - the nth given weekday of a month
+     *
+     * Entries with no `observance` fall back to the legacy `day`/`dayLegacy`
+     * string, so a partially migrated file still resolves rather than vanishing.
+     */
+    function occursOn(entry, date, opts) {
+        if (!entry || !(date instanceof Date)) return false;
+        const obs = entry.observance;
+        if (!obs) return saintOccursOnDate(entry.day || entry.dayLegacy, date);
+
+        if (obs.type === 'fixed') {
+            const m = date.getMonth() + 1, d = date.getDate();
+            return Array.isArray(obs.dates) && obs.dates.some(x => x.month === m && x.day === d);
+        }
+
+        if (obs.type === 'ordinal') {
+            if ((date.getMonth() + 1) !== obs.month) return false;
+            if (date.getDay() !== obs.weekday) return false;
+            // Which occurrence of this weekday within the month is it?
+            return Math.ceil(date.getDate() / 7) === obs.n;
+        }
+
+        if (obs.type === 'cycle') {
+            // Needs the East Syriac engine. If it is not loaded (for example on
+            // the admin page), degrade to the legacy date rather than throwing
+            // or silently dropping the commemoration.
+            const cal = global.EastSyriacCalendar;
+            if (!cal || typeof cal.getSeason !== 'function') {
+                return saintOccursOnDate(entry.dayLegacy || entry.day, date);
+            }
+            if (date.getDay() !== obs.weekday) return false;
+            try {
+                const o = (opts && opts.eastSyriacOptions) || _eastSyriacOptions;
+                const s = cal.getSeason(date, o);
+                if (!s || s.season !== obs.cycle) return false;
+
+                // week: "last" -- the final week of a season whose LENGTH VARIES
+                // year to year. Needed because the diocese compresses Epiphany
+                // ("Seventh and Eighth Weeks of Epiphany" on one row), so a rule
+                // naming a fixed week number resolves to NOTHING in years where
+                // the season never reaches it, and the commemoration disappears
+                // from the app entirely. A date is in the final week when the
+                // same weekday seven days later has left the season.
+                if (obs.week === 'last') {
+                    const next = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
+                    const sn = cal.getSeason(next, o);
+                    return !sn || sn.season !== obs.cycle;
+                }
+                return s.weekInSeason === obs.week;
+            } catch (err) {
+                console.error('[SaintsResolver] cycle resolution failed for', entry.id, err);
+                return false;
+            }
+        }
+
+        return false;
+    }
+
     function isDerivedEcumenical(tags) {
         return TRADITION_CODES.every(c => tags.includes(c));
     }
@@ -104,20 +181,36 @@
 
     // ── Fetch / cache ─────────────────────────────────────────────────────────
 
-    async function _loadMonth(month) {
-        if (_cache && _cache.month === month) return _cache.records;
-
+    /**
+     * Load the whole sanctoral once and hold it for the session.
+     *
+     * Replaced the previous per-month fetch on 2026-09-03. The month-keyed
+     * layout could not house a commemoration whose Gregorian date moves between
+     * months from year to year, and 11 of the 24 Church of the East
+     * commemorations tested against the printed diocesan calendars do exactly
+     * that. One file also means one fetch per session instead of one per month
+     * navigated.
+     */
+    async function _loadSanctoral() {
+        if (_sanctoral) return _sanctoral.entries;
         try {
-            const url = `${_dataBasePath}saints-${month.toLowerCase()}.json`;
-            const res = await fetch(url);
-            const records = res.ok ? await res.json() : [];
-            _cache = { month, records: Array.isArray(records) ? records : [] };
+            const res  = await fetch(`${_dataBasePath}sanctoral.json`);
+            const doc  = res.ok ? await res.json() : null;
+            const list = doc && Array.isArray(doc.entries) ? doc.entries : [];
+            _sanctoral = { entries: list };
         } catch (err) {
-            console.error('[SaintsResolver] Failed to load saints for', month, err);
-            _cache = { month, records: [] };
+            console.error('[SaintsResolver] Failed to load sanctoral.json', err);
+            _sanctoral = { entries: [] };
         }
+        return _sanctoral.entries;
+    }
 
-        return _cache.records;
+    /**
+     * Entries falling on `date`, before any tradition filter.
+     * Kept as the single place the observance rule is applied.
+     */
+    function _entriesOn(entries, date, opts) {
+        return entries.filter(e => occursOn(e, date, opts));
     }
 
     // ── Public API ────────────────────────────────────────────────────────────
@@ -131,9 +224,8 @@
      * @returns {Promise<Array>}
      */
     async function loadSaintsForDate(date) {
-        const month = MONTH_NAMES[date.getMonth()];
-        const records = await _loadMonth(month);
-        return records.filter(s => saintOccursOnDate(s.day, date));
+        const entries = await _loadSanctoral();
+        return _entriesOn(entries, date);
     }
 
     /**
@@ -150,13 +242,9 @@
      */
     async function resolveCommemorations(date, tradition, opts) {
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
-        const month = MONTH_NAMES[date.getMonth()];
-        const records = await _loadMonth(month);
+        const entries = await _loadSanctoral();
         const ctx = { tradition, includeEcumenical };
-        return records.filter(s => {
-            if (!saintOccursOnDate(s.day, date)) return false;
-            return saintAppliesToContext(s, ctx).ok;
-        });
+        return _entriesOn(entries, date, opts).filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
     /**
@@ -172,8 +260,19 @@
      * @returns {Array|null}
      */
     function getMonthRecords(month) {
-        if (_cache && _cache.month === month) return _cache.records;
-        return null;
+        if (!_sanctoral) return null;
+        const idx = MONTH_NAMES.indexOf(month);
+        if (idx < 0) return null;
+        const m = idx + 1;
+        return _sanctoral.entries.filter(e => {
+            const obs = e.observance;
+            if (!obs) return saintOccursOnDate(e.day || e.dayLegacy, new Date(2000, idx, 1)) || true;
+            if (obs.type === 'fixed')   return obs.dates.some(x => x.month === m);
+            if (obs.type === 'ordinal') return obs.month === m;
+            // cycle-anchored: which month it lands in depends on the year, so it
+            // cannot be excluded from any month on the strength of the rule alone.
+            return true;
+        });
     }
 
     /**
@@ -196,14 +295,10 @@
      * @returns {Array}
      */
     function filterCachedByTradition(date, tradition, opts) {
-        const month = MONTH_NAMES[date.getMonth()];
-        const records = (_cache && _cache.month === month) ? _cache.records : [];
+        const entries = _sanctoral ? _sanctoral.entries : [];
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
         const ctx = { tradition, includeEcumenical };
-        return records.filter(s => {
-            if (!saintOccursOnDate(s.day, date)) return false;
-            return saintAppliesToContext(s, ctx).ok;
-        });
+        return _entriesOn(entries, date, opts).filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
     /**
@@ -218,6 +313,9 @@
         if (opts && typeof opts.dataBasePath === 'string') {
             _dataBasePath = opts.dataBasePath;
         }
+        if (opts && opts.eastSyriacOptions && typeof opts.eastSyriacOptions === 'object') {
+            _eastSyriacOptions = opts.eastSyriacOptions;
+        }
     }
 
     // ── Export ────────────────────────────────────────────────────────────────
@@ -230,6 +328,7 @@
         filterCachedByTradition,
         // Helpers exposed for callers that use them directly
         saintOccursOnDate,
+        occursOn,
         saintAppliesToContext,
         isDerivedEcumenical,
     };

@@ -1,5 +1,45 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 continued -- SAINTS MIGRATED to a flat sanctoral with week-anchored
+## observance rules (option C). SEED_VERSION v208 -> v209. Full account in the ledger.
+
+**`data/saints/saints-{month}.json` NO LONGER EXISTS.** One flat `data/saints/sanctoral.json`,
+1,308 entries keyed by identity, each with an explicit `observance` rule. Git retains the old files
+at commit b272526.
+
+**Four rule types:** `fixed` (1,290), `cycle` (16, a cycle/week/weekday slot resolved through
+`js/calendar-east-syriac.js`), `ordinal` (2, the nth weekday of a month), and `cycle` with
+`week: "last"` for seasons whose length varies year to year. `dayLegacy` preserves the old string;
+`ruleSource` cites evidence for any non-default rule. **An entry with no `ruleSource` is an
+inherited fixed date that has NOT been confirmed against a printed calendar.**
+
+**Verified:** ANG/LAT/EOR/OOR identical to the old resolver on all 2,557 days of 2020-2026 -- the
+audited Anglican calendar is untouched. COE computed dates match the printed diocesan calendars
+122/126 (96.8%); all four misses are 2025's merged Summer weeks.
+
+**RUN `node scripts/saints/verify_sanctoral.js` AFTER ANY RULE OR ENGINE-BOUNDARY CHANGE.** It does
+a 20-year resolvability sweep plus the acceptance check. The sweep exists because a rule naming a
+week its season does not reach resolves to NOTHING and the saint vanishes from the app -- which a
+single-year check cannot see. That happened to Mar Benyamin Shimun and was caught this way.
+
+**KNOWN DEFECT, disclosed not fixed:** in late-Easter years Eliya-Sliwa (built forward from Easter)
+collides with Qudash 'Idta (fitted backward from Subara) and Qudash 'Idta week 1 is swallowed. 2038
+and 2095 in 2020-2100. St Eugene disappears in those years. Which season gives way is a liturgical
+question and no printed calendar we hold is a collision year. Dashboard row
+`coe:engine:season-collision-2038`.
+
+**Two testing lessons from this session, both the hard way:** a fetch shim on the global object does
+not shadow a bare `fetch()` call, so the first regression harness compared empty to empty and
+reported a perfect pass. And do not reimplement the logic under test in its own verifier -- the
+first `verify_sanctoral.js` did, and reported a failure that did not exist.
+
+**NEXT:** the 28 COE entries with no `ruleSource` are unconfirmed inherited dates. The schema now
+makes them visible; confirming them against the printed calendars is the obvious next pass. Also
+still open: the explanatory-depth gap (Charter section 11).
+
+---
+
+
 ## Session 2026-09-03 continued -- East Syriac engine season boundaries CORRECTED against the
 ## printed diocesan calendars (66.4% -> 90.4%). Fixed-feast reckoning split from the Paschal
 ## reckoning. SEED_VERSION v207 -> v208. Full account in `AUDIT_GOVERNANCE_LEDGER.md`.

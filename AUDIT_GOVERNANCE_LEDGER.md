@@ -1,3 +1,65 @@
+# Session 2026-09-03 continued -- saints migrated to a flat sanctoral with week-anchored
+# observance rules (option C). SEED_VERSION v208 -> v209.
+
+**Josh's decision was option C**, taken after the East Syriac engine was corrected against the
+printed diocesan calendars in the previous commit. The twelve month-keyed files are replaced by a
+single `data/saints/sanctoral.json` keyed by identity, and every entry carries an explicit
+`observance` rule instead of a fixed `day` string.
+
+**Why the month layout had to go:** it cannot house a commemoration whose Gregorian date moves
+between months from year to year, and 11 of the 24 Church of the East commemorations tested do
+exactly that. Mar Ezekiel of Daqoq falls in June in 2024 and July in the other six years.
+
+**Four rule types.** `fixed` (1,290 entries), `cycle` (16), `ordinal` (2), and `cycle` with
+`week: "last"` for a season whose length varies. Every entry keeps `dayLegacy`; any non-default rule
+carries `ruleSource` citing its evidence. An entry without one is an inherited fixed date that has
+NOT been independently confirmed, and that distinction is deliberate.
+
+**Regression gate.** Old and new resolvers run against every day of 2020-2026 for all five
+traditions. ANG, LAT, EOR and OOR identical on all 2,557 days -- the audited Anglican calendar is
+untouched. COE differs on 189 days, which is the point.
+
+**Acceptance: 122/126 (96.8%)** against the seven printed calendars. All four misses are 2025's
+merged Summer weeks, which cannot be computed forward from Easter.
+
+**Two failures caught before commit. Both matter more than the feature.**
+
+1. The first regression harness reported a clean pass that was worthless. Its `fetch` shim was
+   installed on the global object, but the resolver calls bare `fetch()`, which resolves lexically
+   to Node's real global. Both resolvers loaded nothing and the test compared empty to empty. It was
+   caught only because "0 differing days" for COE was implausible -- week-anchoring was supposed to
+   change COE. Rewritten to pass `fetch` as a function parameter, with a sanity gate that aborts if
+   a probe returns zero records. A green test that proves nothing is worse than a red one.
+2. The first rule for Mar Benyamin Shimun said "Epiphany week 7". Because the diocese compresses the
+   Epiphany weeks, week 7 does not exist in most years, and he resolved to NOTHING in 5 of 7 -- the
+   commemoration would have disappeared from the app entirely. A single-year spot check would have
+   passed. Replaced with `week: "last"` (the Sunday immediately before the Great Fast), verified
+   7/7, and a sweep of ALL rule-based entries across 20 years was added to catch the class.
+
+**That sweep then found a genuine structural defect**, recorded on the dashboard as
+`coe:engine:season-collision-2038` and NOT fixed. Eliya-Sliwa is built forward from Easter while
+Qudash 'Idta is fitted backward from Subara; in late-Easter years they collide and Qudash 'Idta's
+first week is swallowed entirely. 2038 and 2095 between 2020 and 2100 -- 2 years in 81. St Eugene
+disappears in those years. Which season should give way is a liturgical question, and none of the
+seven printed calendars is a collision year, so there is no evidence to decide it. Inventing a
+truncation rule and calling it verified is the failure this project exists to avoid.
+
+**A verification-hygiene note.** The first version of `verify_sanctoral.js` reimplemented the
+matching logic inline and then disagreed with the resolver about `week: "last"`, reporting a failure
+that did not exist. It now drives the real resolver. Do not reimplement the thing under test.
+
+**Tooling committed.** `scripts/saints/migrate_to_sanctoral.py` (one-time, run against the month
+files as they stood at commit b272526, which git retains) and `scripts/saints/verify_sanctoral.js`
+with `printed-commemoration-dates.json`. Run the verifier after any change to a rule or to the
+engine's season boundaries.
+
+**Still open.** The explanatory-depth gap (Charter section 11). The 2038/2095 season collision.
+Whether the ACE moved Denkha and the Cross to Gregorian alongside the Nativity. The 28 COE entries
+without a `ruleSource` are inherited fixed dates and have not been confirmed against a printed
+calendar -- that is the next verification pass, and the data now makes the distinction visible.
+
+---
+
 # Session 2026-09-03 continued -- East Syriac engine season boundaries corrected against the
 # printed diocesan calendars (66.4% -> 90.4%); fixed-feast reckoning separated from the Paschal
 # reckoning. SEED_VERSION v207 -> v208.
