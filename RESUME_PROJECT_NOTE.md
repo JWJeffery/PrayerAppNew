@@ -1,5 +1,270 @@
 # RESUME_PROJECT_NOTE.md
 
+# ============================================================================
+# SESSION SUMMARY - 2026-09-03. SEED_VERSION v203 -> v215. HEAD 3374b46.
+# This block consolidates eleven commits made in one long session. The
+# individual per-commit entries follow below and remain authoritative on
+# detail; this is the brief. READ THIS WHOLE BLOCK BEFORE TOUCHING ANYTHING.
+# ============================================================================
+
+## 0. HOW THIS SESSION STARTED, AND THE RULE IT PROVES
+
+The previous session ended because Claude was asked three times to ANALYSE the content of the
+sidebars -- meaning examine the text that is actually there and describe it -- and instead produced
+a wiring audit, then a citation spot-check, then a fix list. This session then repeated the
+underlying failure by producing a sidebar analysis WITHOUT first reading the repo and the governance
+documentation, and had to be corrected again.
+
+**The standing directive is: read the whole repo AND `documentation/` before any analysis or build
+work. Not the resume note. The repo.** Everything that went wrong at the start of this session was
+downstream of skipping that. `documentation/universal-office-navigation-architecture.md` already
+contained the sidebar-uniformity direction that was being "discovered" by inspection, and Charter
+section 11 already required the explanatory-depth layer that was being reported as a new finding.
+
+## 1. WHERE THE PROJECT IS NOW
+
+- **HEAD 3374b46, SEED_VERSION v215.**
+- `data/saints/saints-{month}.json` **NO LONGER EXISTS.** Replaced by one flat
+  `data/saints/sanctoral.json`: 1,321 entries, each carrying an explicit `observance` rule.
+  Git retains the old month files at commit b272526.
+- 59 COE entries. **Zero lack a `ruleSource`.** By rule type: 28 cycle, 25 fixed, 3 relative,
+  3 ordinal.
+- Corpus-wide: 1,287 fixed, 28 cycle, 3 relative, 3 ordinal.
+- Four office sidebars are wired: Daily Office, Coptic Agpeya, Church of the East, Horologion.
+  The Horologion is still off the splash screen.
+
+## 2. THE SINGLE MOST IMPORTANT FACT ESTABLISHED THIS SESSION
+
+**THIS PROJECT FOLLOWS THE ASSYRIAN CHURCH OF THE EAST, DIOCESE OF CALIFORNIA.** Josh ruled this
+explicitly. The saints corpus was originally compiled from the California calendar, which was not
+realised until very late in the session.
+
+The **Diocese of Western Europe** is a DERIVATION AID ONLY. Its seven consecutive published years
+make it far better for working out what rule governs a commemoration, but **it can never be the
+acceptance authority**, and absence from it is never grounds to delete anything. The two dioceses
+genuinely differ on real commemorations -- not wording, dates and companions.
+
+Known divergences between the two dioceses:
+| Commemoration | Western Europe | California |
+|---|---|---|
+| Sts Sargis and Bacchus (spring) | Friday, Resurrection wk5 | Friday, Resurrection wk**4** |
+| Mar Meelis of Tel-Khesh | Sunday, Apostles wk4 | **Wednesday**, Apostles wk**1** |
+| St George (spring) | first Wednesday of March, 7/7 | **no March commemoration at all** |
+| 1 November | Mar Akha and Mar Mikha | Mar Sargis, Mar Bacchus and Mar Micha of Nohadra |
+| St Andrew | Sunday, Week After Ascension | fixed **30 November** |
+| Mar Khanania | in the Resurrection weeks | fixed **1 October**, and a DIFFERENT SAINT (see below) |
+| St Ephrem | fixed 9 June, 7/7 | absent from California 2026 |
+
+## 3. THE SERIOUS ERROR OF THIS SESSION - READ THIS BEFORE DELETING ANYTHING, EVER
+
+**18 Church of the East entries were deleted on the strength of ONE diocese's calendars, and had to
+be restored.** Josh's instruction said "the Assyrian/Ancient Church of the East diocesan calendars"
+-- PLURAL. Only Western Europe was checked. California was known to exist (two surviving entries
+cited it by name, and that fact had already been written into the ledger twice) and was not opened
+before deleting 26 rows.
+
+Three "corrections" were also wrong and were reverted:
+- **Mar Khanania** was moved from 1 October to Resurrection week 3 because Western Europe
+  commemorates a Mar Ananias there. That **conflated two different saints**. California's 1 October
+  is the Ananias of Acts 9 who baptised St Paul, first Metropolitan of Damascus.
+- **St Andrew** was moved off 30 November on the assumption it was an imported Western date. It is
+  California's date.
+- **Mar Micha's** description was "corrected" for saying he is commemorated with Sargis and Bacchus.
+  California says exactly that.
+
+**The shape of the mistake matters more than the mistake.** A verification tool was built, run to
+97%, and its output used as authority to destroy content. The tool checked one diocese. Every
+deletion went out with a citation attached. **A rigorous check against the wrong reference is worse
+than no check, because it produces confident, well-documented, cited destruction.**
+`scripts/saints/verify_sanctoral.js` now carries that warning in its header.
+
+## 4. WORK COMPLETED, BY AREA
+
+### 4.1 UI (v205, commit 64646c7)
+- Removed the redundant "DATE" label above the date in all four office panels.
+- Made all four static sidebar headings uniform ("Office Settings").
+- Removed the Agpeya panel's self-certifying "complete and verified" sentence.
+- **Fixed a real date bug found from a screenshot:** the date card read one render behind the
+  picker on Daily, Horologion and Church of the East. `requestRender()` calls
+  `renderSharedOfficeNavigation()` synchronously while `#display-date` and the East Syriac labels
+  are written later in the deferred office render, so the card scraped stale text. The line is now
+  derived from `currentDate` and the navigator config directly.
+- Dark mode now boots from the OS `prefers-color-scheme` setting, falling back to the clock rule
+  only where no preference is expressed. Boot default only; a manual toggle wins for the session.
+- Dark mode toggles added to the Horologion panel, the mode selector, the Book of Needs and the
+  Bible Reader. `admin/admin.html` is the one surface still without one.
+- `applyDarkMode()`'s hardcoded id list replaced with a `data-app-dark-toggle` attribute selector --
+  the third instance of that bug shape in this codebase.
+
+### 4.2 East Syriac calendar engine (v208, commit b272526)
+Before building saint rules, the engine was tested against the week structure printed in the seven
+Western Europe calendars. It agreed on only **215/324 season-weeks (66.4%)**. The Easter half was
+flawless; everything anchored elsewhere was wrong. This was live: the Current Cycle box showed the
+wrong season and week for about a third of the year. **The engine's own 30 self-tests passed
+throughout, because they were written from the engine's assumptions rather than the printed source.**
+
+Three fixes, each verified 7/7:
+- **Subara opens the Sunday on or after 27 November, not 28.** The one-day error shifts the entire
+  liturgical year by a week whenever 27 November is itself a Sunday (2022; next 2033).
+- **Qudash 'Idta is the four weeks immediately before Subara**, not "the first Sunday of October",
+  which was out by 28 days in most years. This established that the East Syriac autumn is fitted
+  BACKWARD from Subara, not forward from Easter.
+- **Muse begins when Eliya's seven weeks end, not on Cross Sunday.** The Cross weeks are an OVERLAY
+  on a continuing Eliya count ("Third Week of Cross and Sixth Week of Elijah"), not a boundary.
+
+Result **293/324 (90.4%)**; season starts, the structural test, 60/62. Both misses are 2025's
+compressed Summer weeks.
+
+Also: five fixed-date anchors were hardcoded to Julian conversion regardless of church body -- the
+Denkha start, the Cross, Epiphany, **the Nativity** and the Transfiguration. In Gregorian mode the
+app placed Christmas on 7 January and Epiphany on 19 January. Added `fixedFeastDate()` and a
+`fixedFeastMode` option, defaulting Gregorian, separate from `easterMode`.
+
+### 4.3 The saints schema - option C (v209, commit 97f89bf)
+Twelve month files replaced by one flat `sanctoral.json`. The month layout could not house a
+commemoration whose date moves between months year to year, and 11 of 24 COE commemorations do.
+
+**Four observance rule types:**
+- `fixed` - one or more Gregorian month/day pairs.
+- `cycle` - `{cycle, week, weekday}` in the East Syriac week structure. `week` may be the string
+  `"last"` for a season whose length varies.
+- `ordinal` - the Nth given weekday of a month.
+- `relative` - the Nth given weekday counted from a fixed feast. **`n` may be NEGATIVE**, counting
+  backward, which is what "the Friday before the Epiphany" requires.
+
+Every entry keeps `dayLegacy` for audit. `ruleSource` cites the evidence for any non-default rule.
+
+**Regression gate:** old and new resolvers run over every day of 2020-2026 for all five traditions.
+ANG, LAT, EOR and OOR **identical on all 2,557 days** -- the audited Anglican calendar is untouched.
+
+### 4.4 COE sanctoral content (v206, v210-v215)
+72 COE rows -> 59, all with a `ruleSource`. Removals stand only where a commemoration is absent from
+**both** dioceses. Rules derived and verified against printed calendars; acceptance against
+California is **117/124 (94.4%)**, against Western Europe 141/167 (the gap being the genuine
+diocesan divergences listed in section 2).
+
+## 5. EVERY ERROR MADE THIS SESSION, AND WHAT EACH TEACHES
+
+1. **Deleted 18 entries on one diocese's evidence.** (Section 3.) Never treat absence from one
+   source as absence, and never let a passing tool authorise destruction.
+2. **Conflated two saints named Ananias.** Same name, different person, different date. Check the
+   epithet and the companions, not just the name.
+3. **A regression harness reported a perfect pass that was worthless.** The `fetch` shim was
+   installed on the global object, but the resolver calls bare `fetch()`, which resolves lexically
+   to Node's real global. Both resolvers loaded nothing and the test compared empty to empty. Caught
+   only because "0 differing days" for COE was implausible. **Every harness now needs a sanity gate
+   that aborts if a probe returns zero records.**
+4. **A rule that made a saint vanish.** Mar Benyamin Shimun was given "Epiphany week 7"; the diocese
+   compresses those weeks, so week 7 often does not exist and he resolved to NOTHING in 5 of 7
+   years. A single-year spot check would have passed. Fixed with `week: "last"`. **A rule that
+   resolves to nothing is worse than a wrong date, and is invisible without a multi-year sweep.**
+5. **Same class, again, later.** Moses week 1 rules for Mar Mushi and St Jacob the Recluse were
+   correct but unresolvable in some years; reverted to fixed rather than shipped.
+6. **A verifier that reimplemented the logic under test** and then disagreed with the resolver about
+   `week: "last"`, reporting a failure that did not exist. It now drives the real resolver.
+7. **An id-keyed diff under-reported a change set**, because this corpus contains duplicate ids that
+   collapse silently. It reported 4 changed entries when 8 were edited. **Never key an operation or
+   a diff on `id` alone -- use position, or `(id, dayLegacy)`.** An earlier id-keyed delete pass
+   nearly removed two non-COE Mar Abda rows.
+8. **A rule derived from five years that broke on the sixth.** Mar Zaia was given "the Wednesday
+   nearest the Epiphany", which matched 2021-2024 and 2026 -- five consecutive years -- and fails
+   for 2020. The real rule is the first Wednesday of January. **A coincidence can survive five
+   straight years.**
+9. **The test was wrong and the rule was right.** The sweep reported three phantom failures for
+   St James because it counted occurrences per CALENDAR year; an Epiphany-anchored commemoration
+   falls in December for one liturgical year and January for the next. **Check which of the two is
+   wrong before changing data.**
+10. **Overstated a defect's scope.** Claimed the season collision affected a quarter of years; it is
+    2 in 81. The wrong metric was used -- it asked whether Moses had weeks (legitimately zero in
+    some years) rather than whether two seasons overlapped.
+11. **Dismissed a source on evidence that could not speak to it.** Fides' claim that the ACOE
+    resumed Julian Easter in 2006 was rejected on the strength of seven calendars all dated
+    2020-2026, which postdate the reversion entirely. Josh supplied contemporaneous evidence that
+    Fides was right. **"Primary beats secondary" is meaningless if the primary source does not cover
+    the period in question.**
+
+## 6. SOURCES HELD
+
+**Assyrian Church of the East, Diocese of CALIFORNIA (PRIMARY):**
+- 2026 and 2024 full calendars, plus June/August/September/October pages of 2021.
+- Online: `acoecalifornia.org/files/2026cal.pdf` (2026 only; earlier years are not posted).
+- **California 2022 is NOT obtainable** -- the Internet Archive captured that page once, without the
+  calendar attached.
+
+**Diocese of WESTERN EUROPE (derivation aid, seven years):**
+- 2020-2026, all seven, in Josh's Drive folder "UO". Also at `acote.church/ecclesiastical-calendar`,
+  though only the 2025 and 2026 links resolve through the fetch tooling.
+
+**Not obtainable / not useful:**
+- The official church-wide calendar at `calendar.assyrianchurch.org` exists in English/Assyrian,
+  Arabic and Persian and **would outrank both dioceses**. It renders via JavaScript and returns an
+  empty page to the fetch tool. **This is the most valuable unread source.**
+- Diocese of Canada announces "the 2026 Ecclesiastical Calendar of the Assyrian Church of the East",
+  i.e. redistributes the church-wide one rather than publishing its own.
+- Australia/NZ/Lebanon publishes lections for Sundays and Lordly Feasts only, explicitly not the
+  complete lectionary.
+- Western USA, Eastern USA, Scandinavia/Germany, Iraq, India: no published calendar found.
+
+**Coptic:** De Lacy O'Leary 1911 in Drive. Contains Morning, Third, Sixth, Ninth, Eleventh, Twelfth
+and Midnight only. **The Prayer of the Veil is absent from the source**, verified by full-text
+search; the single "veil" hit in the volume is OCR noise for "as well".
+
+## 7. TOOLING
+
+- `scripts/saints/verify_sanctoral.js` - **run after ANY rule change.** Two checks: a 20-year
+  resolvability sweep (catches vanishing saints) and acceptance against printed calendars. Defaults
+  to CALIFORNIA; pass `we` for the Western Europe secondary check.
+- `scripts/saints/printed-commemoration-dates-california.json` - 53 commemorations, 124
+  year-instances. The acceptance authority.
+- `scripts/saints/printed-commemoration-dates.json` - Western Europe, 24 commemorations x 7 years.
+- `scripts/saints/migrate_to_sanctoral.py` - the one-time migration, run against the month files as
+  they stood at b272526.
+- `scripts/coe-calendar/engine_vs_printed.js` + `printed-week-tables.json` - **run after ANY change
+  to season boundary logic.** Measures the engine against the printed week structure.
+- `scripts/coe-calendar/week_anchor_test.py` - the original week-anchoring proof, 164/166.
+
+## 8. OPEN ITEMS, IN PRIORITY ORDER
+
+1. **The explanatory-depth gap (Charter section 11).** THE LARGEST OPEN ITEM AND UNTOUCHED ALL
+   SESSION. The charter requires three depths -- micro (tooltip), structural (expandable), and
+   tradition (comparative) -- as a first-class architectural layer. What exists: about 25 tooltips
+   in the Anglican panel and NOTHING in the other three. Depths 2 and 3 do not exist anywhere in the
+   app. This needs sources per tradition before a word is written; nothing may be written from
+   memory.
+2. **Mar Daniel the Physician.** Unruleable across seven Western Europe years -- four different
+   slots, no majority. Needs a judgement about which commemoration the entry is actually tracking.
+   Not a research task.
+3. **Mar Mushi and St Jacob the Recluse.** Correct Moses week 1 rules, verified 3/3, that cannot be
+   encoded until it is known what the diocese does in a zero-Moses year. Needs California 2022 or
+   2030, or an answer from `info@acoecalifornia.org`. Both stay FIXED meanwhile -- the safer failure.
+4. **The 2038/2095 season overlap.** Real but rare. Eliya runs past the Hallowing start and Qudash
+   'Idta week 1 is swallowed; St Eugene and Mar Micha disappear in those years. Which season gives
+   way is a liturgical question and no printed calendar we hold is a collision year.
+5. **Whether the Ancient Church of the East moved Denkha and the Cross to Gregorian** alongside the
+   Nativity in 2010. Every source says Christmas only. The Gregorian default for Denkha and the
+   Cross is an INFERENCE from season structure, not a citation. Close it by asking the ACE.
+6. **The Coptic Prayer of the Veil.** A real part of the Agpeya, absent from O'Leary and therefore
+   from this project. Needs a different Coptic edition. Its role-restricted character maps onto the
+   eight-role ladder already built in `js/prayers.js`.
+7. **Governance conflict, recorded not resolved.**
+   `documentation/universal-office-navigation-architecture.md` explicitly permits local panel naming
+   ("Church of the East may say Hudra, Cycle, Station, or Anaphora"). Josh has directed uniform
+   headings and they are now uniform. **The doc still contradicts the shipped UI and should be
+   amended deliberately.**
+8. Horologion wiring into the splash (only after it clears audit). `admin/admin.html` has no dark
+   mode toggle. `config.heading` in `SHARED_OFFICE_NAVIGATOR_CONFIGS` is dead code;
+   `#generic-tradition-label` is vestigial. The corpus contains rows with an empty `tags` array --
+   residue of the 2026-08-30 stripping pass -- which render for nobody.
+
+## 9. WHAT THE NEXT SESSION SHOULD DO FIRST
+
+Read the repo and `documentation/` in full. Then confirm with Josh whether to start on the
+explanatory-depth gap (item 1), which is the largest remaining architectural debt and the one thing
+in this list that changes what users actually see.
+
+---
+
+
 ## Session 2026-09-03 -- CORRECTION: the season-collision defect is 2 years in 81, NOT a quarter of
 ## years. The previous entry overstated it. SEED_VERSION v214 -> v215.
 
