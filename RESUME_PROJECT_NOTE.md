@@ -1,5 +1,50 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 -- SERIOUS ERROR CORRECTED. 18 COE entries were wrongly deleted earlier today
+## because only the Western Europe diocese was checked. All restored, plus three reverted
+## "corrections". SEED_VERSION v212 -> v213. Full account in the ledger.
+
+**THIS CORPUS WAS BUILT FROM THE ACOE DIOCESE OF CALIFORNIA CALENDAR, NOT WESTERN EUROPE.** Every
+one of the 18 wrongly-deleted entries sits on the exact date the California 2026 calendar gives.
+An entire session audited this data against the wrong diocese and read the mismatches as defects.
+
+**Restored (18):** St James the Brother of our Lord (2 Jan), Mar Athqin of Shish (4 Jan), Mar
+Yokhannan the Dailomite (18 Jan), Mar Elia III (24 Apr), Mar Abraham of Kashkar (2 May), Abgar
+Ukkama (8 May), Mart Anahid (18 Jun), Mar Abba Serapion (21 Jun), Mar Yosip Busnaya and Mar Moses of
+Beth Sayyare (21 Aug), Constantine (18 Sep), Mar Gawra (20 Sep), St Jacob the Recluse (23 Oct), Mar
+Tahmazgard (25 Oct), Rabban Mar Yareth (27 Oct), Mar Youkhanan the Arab (8 Nov), Rabban Mar Bar
+'Edta (27 Nov), Mar Abraham of Qidun (14 Dec).
+
+**Three reverts:** Mar Khanania back to 1 October -- moving him to Resurrection wk3 CONFLATED TWO
+DIFFERENT SAINTS (the Ananias of Acts 9 who baptised Paul, vs the Mar Ananias of the Resurrection
+weeks). St Andrew back to 30 November -- California has him there, Western Europe has him on the
+Sunday after Ascension; THE TWO DIOCESES GENUINELY DIFFER. Mar Micha's description restored --
+California does pair him with Mar Sargis and Mar Bacchus.
+
+**Still removed (13), now on two dioceses:** Mar Abda, Mar Abraham of Nethpra, St Christopher,
+Hor/Besoy/Daydara, Yuwakhir and Khana, St Bartholomew, St John the Apostle (13 Oct), Mar Shalita
+(10 Aug duplicate), Mar Cyprian, Mar Ignatius, Mar Basil, Mar Diodorus, and the COE tag on Matthias.
+
+**COE entries 41 -> 59.** All carry a ruleSource.
+
+**THE LESSON, AND IT IS THE IMPORTANT PART OF THIS ENTRY.** A verification tool was built, run to
+97%, and its output was used as authority to delete content. It checked ONE diocese. Passing it
+means "agrees with Western Europe", NOT "correct". `scripts/saints/verify_sanctoral.js` now carries
+that warning in its header. NEVER use absence from that test as grounds to remove an entry. A
+rigorous check against the wrong reference is worse than no check, because it produces confident,
+cited, destructive output.
+
+**DECISION NEEDED FROM JOSH:** which diocese does this project follow, and does the sanctoral need a
+per-diocese dimension? The two ACOE dioceses differ on real commemorations. Only the 2026 California
+edition is published online (acoecalifornia.org/files/2026cal.pdf), so fixity across years is
+unestablished for all 18 restored entries.
+
+**Still open:** the above decision; Mar Daniel; the 2038/2095 season collision; the explanatory-depth
+gap (Charter section 11).
+
+---
+
+
 ## Session 2026-09-03 continued -- COE sanctoral verified against ALL SEVEN diocesan editions
 ## (2020-2026). Reading 2020 broke a rule that had matched five straight years.
 ## SEED_VERSION v211 -> v212. Full account in the ledger.

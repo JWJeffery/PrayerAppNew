@@ -11,8 +11,19 @@
  *    single-year spot check will not catch. This is why `week: "last"` exists.
  *
  * 2. ACCEPTANCE. Computed dates are compared against the dates actually printed
- *    in the Assyrian Church of the East, Diocese of Western Europe calendars
+ *    in the Assyrian Church of the East, Diocese of WESTERN EUROPE calendars
  *    2020-2026.
+ *
+ *    SCOPE WARNING, added 2026-09-03: this checks ONE diocese. The Diocese of
+ *    California publishes its own calendar and the two genuinely differ -- St
+ *    Andrew is the Sunday of the Week After Ascension in Western Europe and a
+ *    fixed 30 November in California; 1 November is Mar Akha in Western Europe
+ *    and Mar Sargis, Mar Bacchus and Mar Micha in California. Evidence in the
+ *    corpus indicates it was compiled from the CALIFORNIA calendar. Entries that
+ *    follow California are deliberately excluded from this test rather than
+ *    recorded as failures. Passing here means "agrees with Western Europe", NOT
+ *    "correct" -- do not use absence from this set as grounds to delete an
+ *    entry. That mistake was made on 2026-09-03 and cost 18 wrongful removals.
  *
  * Both checks drive the REAL resolver rather than reimplementing its matching
  * logic. An earlier version of this script reimplemented it inline and then

@@ -1,3 +1,58 @@
+# Session 2026-09-03 -- SERIOUS ERROR. Eighteen entries were wrongly deleted earlier today
+# because only ONE diocese's calendar was checked. All restored. SEED_VERSION v212 -> v213.
+
+**What went wrong.** Earlier today 31 Church of the East entries were deleted and three more
+"corrected", on the stated grounds that they were absent from every diocesan calendar. They were
+absent from the Diocese of WESTERN EUROPE calendars. That is not the same thing. Josh's instruction
+named "the Assyrian/Ancient Church of the East diocesan calendars" -- plural. The Diocese of
+California publishes its own. This was known: two surviving entries cite it by name, and that fact
+was written into the ledger. It was not checked before deleting.
+
+**Eighteen of the thirty-one removals are in the California 2026 calendar**, on the exact dates that
+were stored. St James the Brother of our Lord (2 Jan), Mar Athqin of Shish (4 Jan), Mar Yokhannan
+the Dailomite (18 Jan), Mar Elia III (24 Apr), Mar Abraham of Kashkar (2 May), Abgar Ukkama (8 May),
+Mart Anahid (18 Jun), Mar Abba Serapion (21 Jun), Mar Yosip Busnaya and Mar Moses of Beth Sayyare
+(21 Aug), Constantine the Victorious King (18 Sep), Mar Gawra (20 Sep), St Jacob the Recluse
+(23 Oct), Mar Tahmazgard (25 Oct), Rabban Mar Yareth (27 Oct), Mar Youkhanan the Arab (8 Nov),
+Rabban Mar Bar 'Edta (27 Nov), Mar Abraham of Qidun (14 Dec). All restored.
+
+**The compounding realisation.** Every restored date matches California exactly. This corpus was
+compiled from the CALIFORNIA calendar. It was audited against a different diocese for an entire
+session, and the mismatches that audit produced were read as defects in the data rather than as
+evidence that the wrong yardstick was being used.
+
+**Three "corrections" were also wrong and are reverted.**
+1. Mar Khanania was moved from 1 October to Resurrection week 3 because he is commemorated with Mar
+   Abdisho and Mar Yonan in Western Europe. That **conflated two different saints**. California
+   commemorates on 1 October "Mar Khanania (Ananias) who baptized St Paul and became the first
+   Metropolitan of Damascus" -- the Ananias of Acts 9, not the Mar Ananias of the Resurrection weeks.
+2. St Andrew was moved from 30 November to the Sunday of the Week After Ascension, on the assumption
+   that 30 November was an imported Western date. California places him on 30 November. The two
+   dioceses genuinely differ and neither is in error.
+3. Mar Micha's description was "corrected" for saying he is commemorated with Mar Sargis and Mar
+   Bacchus. California says exactly that. Western Europe pairs the day with Mar Akha.
+
+**What remains removed, now on two dioceses rather than one:** Mar Abda, Mar Abraham of Nethpra,
+St Christopher, Hor/Besoy/Daydara, Yuwakhir and Khana, St Bartholomew (13 Jun, single Anglican
+devotional source by its own admission), St John the Apostle (13 Oct), Mar Shalita (10 Aug, a
+duplicate of the 19 Sep Shallita), Mar Cyprian, Mar Ignatius, Mar Basil, Mar Diodorus of Tarsus, and
+the COE tag on St Matthias.
+
+**The methodological failure, stated plainly.** A verification tool was built, run to 97%, and its
+output was treated as authority to delete. The tool checked one diocese. Passing it means "agrees
+with Western Europe", not "correct", and absence from it is not evidence of anything. The script now
+carries that warning in its header. Building a rigorous check against the wrong reference and then
+trusting it is worse than having no check, because it produces confident, well-documented,
+irreversible-looking destruction -- and every deletion carried a citation.
+
+**Result.** COE entries 41 -> 59. All 59 carry a ruleSource.
+
+**Open and needing a decision:** which diocese this project follows, and whether the sanctoral needs
+a per-diocese dimension. Only the 2026 California edition is published online, so fixity across
+years is unestablished for all 18 restored entries and for the three reverted ones.
+
+---
+
 # Session 2026-09-03 continued -- COE sanctoral verified against ALL SEVEN diocesan editions.
 # Reading 2020 broke a rule that had matched five consecutive years. SEED_VERSION v211 -> v212.
 
