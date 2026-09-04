@@ -1,5 +1,35 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-03 -- CORRECTION: the season-collision defect is 2 years in 81, NOT a quarter of
+## years. The previous entry overstated it. SEED_VERSION v214 -> v215.
+
+**Do not act on the "5 years in 20" figure in the v214 entry. It is wrong.** The engine's Moses week
+counts match the printed calendars in 6 of 7 years, including 2022 where it correctly produces ZERO
+Moses weeks. The only miss is 2025, caused by that year's Summer compression.
+
+**Two things were conflated and must not be again:**
+1. **Zero-length Moses is LEGITIMATE.** Eliya's seven weeks can end exactly at the Hallowing start,
+   leaving Moses with no weeks. That is the liturgy. 2022 printed confirms it.
+2. **The overlap bug is separate and rare.** Eliya running PAST the Hallowing start, swallowing
+   Qudash 'Idta week 1: 2038 and 2095 only, 2 years in 81.
+
+Of the five zero-Moses years 2020-2039, only 2038 is an overlap. 2022, 2030 and 2033 abut cleanly.
+
+**Mar Mushi and St Jacob the Recluse:** their First Week of Moses rule is CORRECT, verified 3/3
+against California 2021/2024/2026. The blocker is not the engine -- it is the liturgical question of
+what the diocese does in a zero-Moses year. California 2022 is not obtainable (Internet Archive has
+one capture of that page, without the calendar) and Western Europe carries neither commemoration.
+Both stay FIXED, which is the safer failure: a fixed date is always shown; a rule that resolves to
+nothing makes the saint vanish.
+
+**To close:** a California 2022 or 2030 calendar, or ask info@acoecalifornia.org.
+
+**Still open:** the 2038/2095 overlap (real but rare); Mar Daniel; the explanatory-depth gap
+(Charter section 11).
+
+---
+
+
 ## Session 2026-09-03 -- sanctoral RE-ANCHORED TO THE DIOCESE OF CALIFORNIA (Josh's ruling).
 ## Six Western Europe rules were wrong for it. SEED_VERSION v213 -> v214. Full account in the ledger.
 

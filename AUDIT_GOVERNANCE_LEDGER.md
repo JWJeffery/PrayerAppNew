@@ -1,3 +1,42 @@
+# Session 2026-09-03 -- CORRECTION to this session's own claim. The season-collision defect is
+# 2 years in 81, not a quarter of years. SEED_VERSION v214 -> v215.
+
+**The previous commit overstated a defect and this corrects it.** It said the engine "cannot resolve
+Muse week 1 in 5 years out of 20" and framed that as roughly 25% scope. That is wrong.
+
+**What the evidence shows.** Tested against the printed calendars, the engine's Moses week counts
+are right in 6 of 7 years: 2020 (1 week), 2021 (2), 2022 (ZERO), 2023 (2), 2024 (3), 2026 (2) all
+match exactly. The only disagreement is 2025, where the printed calendar has one Moses week and the
+engine none -- and that traces entirely to the Summer compression already on record, where the
+diocese pulled Elijah a week early. No forward computation from Easter can derive that.
+
+**Two different things were conflated.**
+1. **Legitimate zero-length Moses.** Eliya's seven weeks end exactly at the Hallowing start and
+   Moses genuinely has no weeks. This is the liturgy. The 2022 printed calendar has no Moses weeks
+   and the engine correctly produces none.
+2. **A genuine overlap bug.** Eliya runs PAST the Hallowing start, two seasons claim the same days,
+   and Qudash 'Idta week 1 is swallowed. The 81-year sweep found this in 2038 and 2095 only.
+
+Of the five zero-Moses years in 2020-2039, only 2038 is an overlap. In 2022, 2030 and 2033 the
+seasons abut cleanly and Qudash 'Idta week 1 exists. **The collision defect is 2 years in 81, exactly
+as first measured.** A correct figure was replaced with a wrong one because the new metric counted
+the wrong thing -- it asked whether Moses had weeks rather than whether two seasons overlapped.
+
+**What this means for Mar Mushi and St Jacob the Recluse.** Their First Week of Moses rule is correct
+and verified 3/3 against California 2021, 2024 and 2026. What blocks encoding it is not an engine
+defect but a liturgical question: what does the diocese do in a year when Moses has no weeks? 2022 is
+such a year. The California 2022 calendar is not obtainable -- the Internet Archive captured that page
+once, without the calendar attached -- and Western Europe carries neither commemoration.
+
+Both entries remain FIXED DATES, deliberately. A fixed date is always shown and may be wrong in some
+years; a rule that resolves to nothing makes the commemoration disappear. The conservative failure is
+the right one while this is open.
+
+**To close it:** a California 2022 or 2030 calendar, or a direct answer from the diocese
+(info@acoecalifornia.org).
+
+---
+
 # Session 2026-09-03 -- sanctoral re-anchored to the Diocese of CALIFORNIA. Six rules derived
 # from Western Europe were wrong for it. SEED_VERSION v213 -> v214.
 
