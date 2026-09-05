@@ -1,5 +1,70 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- FERIAL MORNING SERVICE AUDITED against Maclean pp.103-108,
+## which Josh supplied hours after the item was recorded as blocked. SEED_VERSION v221 -> v222.
+
+### Content result: the corpus is COMPLETE for these pages
+
+Four texts I initially flagged as missing are all present, **bundled inside neighbouring components**
+rather than split out under Maclean's own printed headings: "Another. Bless, O my Lord, thy
+servants", "Another. At morning time we all arise", "Another. May the martyrs", and the deacon's
+"Lift up your voices". The components are coarser-grained than the source's headings; nothing is
+absent. My first pass listing them as gaps was wrong, and checking the component bodies rather than
+their titles is what corrected it.
+
+Also verified correct: the Lakhumara carries the **morning** psalm-verse (Ps. v.3, "My voice shalt
+thou hear in the morning") and not the Evening one (Ps. 122) — a real trap, since the two offices
+share the same hymn; the fixed psalms are 93, 148, 149, 150, 117 under one Gloria; and psalm
+numbering follows the English Prayer Book version, as Maclean states in his front matter.
+
+### Two real defects, found and fixed
+
+**1. A misnamed component.** `esy-sapra-prayer-for-help` was titled "Prayer for Help" but holds the
+**two collects said after the Martyrs' Anthem** — "Of thee, O great and true Hope" and "Another. May
+the martyrs". Maclean's Introduction p.xvi distinguishes them explicitly: *"Two collects when the
+Martyrs' Anthem has been said. One or more fixed collects for help, and the rest as at the Evening
+Service."* The component's **own closing rubric** reads "Then follow the prayers for help" — so the
+title contradicted its own text, and two different components carried the title "Prayer for Help".
+Title corrected to "Two Collects after the Martyrs' Anthem". The id is retained as a legacy
+identifier because 14 sequences reference it, and its meta now records that the id does not describe
+the contents.
+
+**2. Something genuinely missing from the rendered office.** The actual prayers for help were never
+rendered in the morning at all. Maclean p.108 directs *"Then follow the prayers for help, one or more
+for each priest who is present ... as at the Evening Service (page 16)"*, and `esy-prayer-for-help`
+(Maclean pp.16–19) already existed and was already used in the **evening** sequences. The morning
+went straight from the misnamed component to Of Mary. Inserted into the **six ferial weekday sapra
+sequences**, which now match the evening pattern exactly.
+
+### Scope held deliberately — the part worth reading
+
+Eight further sapra sequences (six fast, two Sunday) also lack the prayers for help, and were
+**left alone**. They are not governed by pp.103–108: the fast services are pp.211–224 and the Sunday
+sapra is the Festival Morning Service p.165, neither of which was supplied. Sweeping the ferial rule
+across them would have been exactly the assumption this project forbids — and would have looked like
+diligence. They need their own page ranges and their own audits.
+
+### Nicene Creed at the morning close — warrant recorded, not assumed
+
+Retained. Its basis: Introduction p.xvi ends the Morning table "and the rest as at the Evening
+Service"; p.108 cross-refers to the Evening Service; and the Evening Service closes with kiss of
+peace and Nicene Creed. The **Kiss of peace is correctly not rendered on ferias**, matching Maclean's
+own "Kiss of peace (not ferias ?)" — his question mark, so it is neither included nor asserted
+against.
+
+### Verification
+
+Zero dangling component refs across all sequences, zero duplicate ids, 439 components intact, one
+component now titled "Prayer for Help" instead of two. All JSON valid; explanations harness 67/0,
+unaffected. Targeted string replacement only — no `json.dump` reformatting.
+
+`OPEN_ITEMS_FIXABILITY.md` updated: this row is struck through as done, and the recommended next ask
+is now the Festival Morning Service (p.165) and the Fast services (pp.211–224), since the audit
+established that eight sequences carry a structure pp.103–108 does not govern.
+
+---
+
+
 ## Session 2026-09-04 continued -- OPEN-ITEMS FIXABILITY PASS. No code or content changed.
 ## SEED_VERSION v220 -> v221.
 

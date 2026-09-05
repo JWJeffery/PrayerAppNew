@@ -46,15 +46,20 @@ the corpus is in place, the audit method is established, and the work would proc
 
 | Item | Pages needed | Notes |
 |---|---|---|
-| Ferial Morning Service dedicated audit | pp.103–108 | 20 components already cite these pages; audit is comparison against source |
+| ~~Ferial Morning Service dedicated audit~~ **DONE 2026-09-04** | pp.103–108 | Josh supplied the pages; audit complete, two defects found and fixed. See dashboard `esy:sapra:ferial-morning-audit`. |
 | First/Middle Friday audits | pp.41–43, 48–49 | p.41–43 is just past the mirror boundary |
 | Great Fast's own Sunday Evening Service | pp.206–211 | |
 | Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
 | Pre-Fast Sunday folding rule | Kalendar appendix, pp.264–283 | Flagged from the appendix, never modelled |
 | Layer 3 East Syriac saints calendar | pp.264–283 | Kalendar appendix |
 
-**Recommended ask, if Josh wants these moved:** pp.103–108 first. It is the smallest range, it
-unblocks the most structurally central office, and 20 components already depend on it.
+**Precedent, 2026-09-04:** Josh supplied pp.103–108 within hours of this file being written and the
+Ferial Morning Service audit ran to completion the same day, finding and fixing two real defects.
+The upload route works and is the way to move any of the remaining rows.
+
+**Recommended next ask:** the Festival Morning Service (p.165) and the Fast services (pp.211–224).
+The Ferial audit established that eight sapra sequences — six fast, two Sunday — carry a structure
+that pp.103–108 does not govern, so they cannot be audited or corrected without those ranges.
 
 ---
 
