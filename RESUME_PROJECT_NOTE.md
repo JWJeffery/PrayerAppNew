@@ -38,11 +38,21 @@ existing role check would have passed whether or not the amendment actually reac
 asserts the creed entry carries role `creed`, Gloria Patri carries `doxology`, and that **zero**
 entries remain parked in `other`.
 
-**A correction to the record.** The rule was attributed in conversation to Lucy. It is not hers:
-`git log` shows `documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` has exactly one commit, `08b888b`,
-2026-06-20, authored by JWJeffery. It is Josh's own document. The gap was in the initial role list,
-not in the guard rule -- which is worth keeping, since it is what surfaced the gap for review instead
-of letting it be papered over.
+**A PROVENANCE CLAIM MADE HERE WAS WRONG AND IS WITHDRAWN.** This entry originally said the guard
+rule "is not hers," citing `git log` showing `UNIVERSAL_OFFICE_CORE_CONTRACT.md` authored by
+JWJeffery. **That inference is invalid.** Git authorship in this repo distinguishes nothing -- Josh
+applies all work himself, and the known Lucy-era `data/saints/identities.json` is committed as
+JWJeffery too (`95ffc00`, 2026-03-01). The document's date, 2026-06-20, falls *inside* Lucy's tenure
+(dismissed 2026-07-05). **Provenance of section 7's role list is unknown and cannot be established
+from this repository.** Full account in the CORRECTION entry at the top of
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+**DO NOT USE GIT AUTHORSHIP AS PROVENANCE EVIDENCE IN THIS REPO.** It cannot discriminate. Check
+whether a field can discriminate at all before offering it as proof.
+
+What is not withdrawn: the gap was in the initial role list rather than in the guard rule, and the
+guard rule is worth keeping -- it is what surfaced the gap for review instead of letting it be
+papered over.
 
 ---
 

@@ -1,3 +1,41 @@
+## CORRECTION, 2026-09-04 -- a provenance claim in the entry below was asserted without valid
+## evidence and is withdrawn. No SEED_VERSION change; this entry is about the false claim, not
+## about new content.
+
+**What was claimed.** In the section 7 taxonomy-amendment entry below, and in conversation, I stated
+that the `other`-fallback guard rule was not Lucy's work, on the grounds that `git log` shows
+`documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` with a single commit `08b888b` (2026-06-20)
+authored by JWJeffery. I presented that as settling the question.
+
+**Why it was wrong.** Josh pointed out that a filename and a git log prove nothing about who
+originated the content. He is right, and checking properly makes it worse than merely unproven:
+
+- **Git authorship in this repository cannot distinguish anyone's work.** Josh applies every change
+  himself. `data/saints/identities.json` -- confirmed Lucy-era, built 2026-03-01, and removed on
+  2026-09-02 specifically *as* Lucy-era architecture -- is committed as `JWJeffery` (`95ffc00`).
+  Author distribution across the whole history is 1,221 commits as JWJeffery against a scattering of
+  session-assistant names. The field is not evidence of drafting.
+- **The date cuts the other way.** 2026-06-20 falls *inside* Lucy's tenure, which ended with her
+  dismissal on 2026-07-05. If anything the timing is consistent with Josh's suspicion, not with my
+  denial.
+
+**The honest position: the provenance of section 7's role list is unknown, and I have no way to
+establish it from this repository.** It may be Josh's, it may be Lucy's, it may be mixed.
+
+**Why this is logged rather than quietly edited.** This project exists because a prior assistant
+falsely certified things as established. Asserting an unproven negative and writing it into the
+permanent record is the same failure in miniature, regardless of how small the stake was. The
+original wording is corrected in place below and marked as withdrawn rather than deleted.
+
+**The standing lesson, restated because I did not apply it here:** metadata about a file is not
+evidence about its content. This is the same shape as the already-recorded rule that a source being
+freely readable online does not establish its licence, and that a rigorous check against the wrong
+reference is worse than no check. Before offering provenance as settled, establish that the field
+being cited can discriminate at all -- here, one command against a known Lucy-era file would have
+shown in seconds that it cannot.
+
+---
+
 ## Session 2026-09-04 continued -- Core Contract section 7 AMENDED: `creed` and `doxology` added to
 ## the shared block role taxonomy, on Josh's approval. SEED_VERSION v216 -> v217.
 
@@ -36,11 +74,16 @@ existing role check would have passed whether or not the amendment actually reac
 asserts the creed entry carries role `creed`, Gloria Patri carries `doxology`, and that **zero**
 entries remain parked in `other`.
 
-**A correction to the record.** The rule was attributed in conversation to Lucy. It is not hers:
-`git log` shows `documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` has exactly one commit, `08b888b`,
-2026-06-20, authored by JWJeffery. It is Josh's own document. The gap was in the initial role list,
-not in the guard rule -- which is worth keeping, since it is what surfaced the gap for review instead
-of letting it be papered over.
+**A claim about provenance, WITHDRAWN -- see the correction entry immediately above this one in the
+ledger.** This entry originally stated that the guard rule "is not hers" and that
+`documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` being authored by JWJeffery in `git log` showed it
+was Josh's own work rather than Lucy-era. **That inference was invalid and the claim is withdrawn.**
+Git authorship in this repository does not distinguish who drafted anything: Josh applies all work
+himself, and the known Lucy-era `data/saints/identities.json` is committed as JWJeffery too. The
+document's date, 2026-06-20, falls *inside* Lucy's tenure (dismissed 2026-07-05). The honest position
+is that provenance is unknown. What remains true and is not withdrawn: the gap was in the initial
+role list rather than in the guard rule, and the guard rule is worth keeping, since it is what
+surfaced the gap for review instead of letting it be papered over.
 
 ---
 
