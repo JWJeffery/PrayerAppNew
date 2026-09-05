@@ -1,3 +1,64 @@
+## Session 2026-09-05 -- SEASONAL-RUBRIC SWEEP CLOSED against Maclean pp.37-67.
+## SEED_VERSION v228 -> v229.
+
+Josh supplied Maclean pp.37-67, which is exactly the range the 2026-09-04 sweep recorded as blocking
+its seven remaining components. The precedent held again: the upload route unblocked the item the
+same day it was named.
+
+### The hypothesis is confirmed from the pages, not adopted by analogy
+
+All seven pages print `Evening Anthem. [Varies ... the season.]` immediately before the `Or this`
+alternative. Each was checked on its own page rather than inferred from its siblings:
+
+| Component | Page | Alternative it introduces |
+|---|---|---|
+| `esy-thursday-evening-anthem-invariable` | p.37 | "We shall give thee thanks for ever" |
+| `esy-saturday-evening-anthem` | p.50 | tune "The mysteries of Friday" |
+| `esy-monday-wathar-evening-anthem` | p.57 | to its own tune |
+| `esy-tuesday-qdham-evening-anthem` | p.59 | tune "God the Word" |
+| `esy-thursday-qdham-evening-anthem` | p.63 | tune "Blessed martyrs" |
+| `esy-friday-wathar-evening-anthem` | p.65 | Royal Anthem, tune "The great mystery" |
+| `esy-saturday-qdham-evening-anthem` | p.67 | to its own tune |
+
+The rubric was restored on all seven. The seasonal proper from the Kashkul is primary; each of these
+texts is the fallback, and the user can now tell that from the page.
+
+### A variant that a blind sweep would have flattened
+
+**p.57 alone prints "Evening Anthem. [Varies *according to* the season.]"** where the other six print
+"Varies *with* the season." That wording is preserved verbatim rather than normalised to match its
+siblings. It is the third distinct form in the corpus, alongside p.11's fuller "Varies according to
+the season: these anthems are contained in the Kashkul."
+
+This is the second time in two sessions that reading the actual page produced something the pattern
+would not have. The restraint the 2026-09-04 sweep exercised was correct and is **not** retired:
+Wednesday (pp.30-31) still genuinely prints its Evening Anthem directly, with no bracket and no
+"Or this", and was left alone again here.
+
+### Earlier work independently re-confirmed
+
+The same upload covers p.42 and p.49, whose components were restored on 2026-09-04. Both were
+re-checked against the supplied pages as a control on that session's work; both print the rubric
+exactly as recorded. Nothing was changed.
+
+### Royal Anthem -- NOT unblocked
+
+p.65 prints an anthem headed "Royal Anthem" for Last Friday, exactly as p.49 does for Middle Friday.
+Both are **ferial weekday alternatives**. The open Royal Anthem item concerns the Sunday/festival
+Royal Anthems proper to each Sunday of a shawu'a, which live in the Khudhra and lie outside Maclean's
+stated scope. These pages do not touch that item, and a future session should not read them as
+touching it.
+
+### Verification
+
+`json.loads` validated before writing, per standing rule. 448 components intact, zero duplicate ids,
+zero dangling refs across 57 sequences. `git diff` confined to 14 lines across exactly the seven
+intended components, no incidental reformatting. `js/office-ui.js` passes `node --check`;
+`audit-ledger.html`'s inline script re-validated via `new Function()`. Text and `meta.source` only --
+no sequence, rubric or engine change, so no cache-bust bump was required.
+
+---
+
 ## Session 2026-09-04 continued -- RESUME NOTE REWRITTEN as a handoff document; the old note
 ## archived verbatim. SEED_VERSION v227 -> v228.
 

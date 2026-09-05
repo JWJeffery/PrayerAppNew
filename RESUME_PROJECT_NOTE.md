@@ -10,8 +10,11 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-04:** HEAD `c3afba9`, `SEED_VERSION v227`, East Syriac corpus 448 components /
-54 sequences, explanations harness 67 checks passing.
+**State as of 2026-09-05:** `SEED_VERSION v229`, East Syriac corpus 448 components / 57 sequences,
+explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
+bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
+and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
+session. Run `git log --oneline -1` against a fresh clone instead.
 
 ---
 
@@ -103,8 +106,8 @@ gets it supplied, usually within minutes. Read pushback as an instruction to wor
 | **Lambertsen Octoechos** | In copyright to ~2087; citable, not reproducible |
 
 **Any item needing Maclean past p.45 is blocked on Josh supplying pages.** Retrying will not change
-it. Uploading works and is fast — pp.41–49, 103–108, 164–184, 211–224 and 264–283 were all supplied
-this way on 2026-09-04 and each unblocked real work the same day.
+it. Uploading works and is fast — pp.41–49, 103–108, 164–184, 211–224 and 264–283 were supplied this
+way on 2026-09-04, and **pp.37–67 on 2026-09-05**; each unblocked real work the same day.
 
 ---
 
@@ -113,9 +116,9 @@ this way on 2026-09-04 and each unblocked real work the same day.
 ### Blocked on Maclean pages not yet held
 - **Great Fast's own Sunday Evening Service** — pp.206–211
 - **Farcings loose ends** (Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit) — pp.236–248
-- **Seasonal-rubric sweep, 7 components** — pp.37, 50–51, 57, 59, 63, 65–66, 67. Each already carries
-  a disclosed-gap note naming its page. **Not fixable by analogy** — see the Wednesday
-  counter-example in §4.
+
+*(The seasonal-rubric sweep closed 2026-09-05 — Josh supplied pp.37–67 and all seven pages confirmed
+the rubric. See §8.)*
 
 ### Unblocked — startable now
 - **Layer 3 East Syriac saints calendar.** The Kalendar appendix (pp.264–283) is now held. Josh's
@@ -175,6 +178,13 @@ this way on 2026-09-04 and each unblocked real work the same day.
   forbidden.
 - **Do not use git authorship as provenance evidence** in this repo — Josh applies every change, so
   authorship cannot discriminate.
+- **Seasonal-rubric sweep is CLOSED** (2026-09-05). All seven remaining Evening Anthems carry
+  Maclean's `[Varies ... the season.]` rubric, restored from pp.37–67 directly. **p.57 prints
+  "Varies *according to* the season"** where the other six print "Varies *with*" — that is a real
+  variant, kept verbatim; do not normalise it. Wednesday (pp.30-31) genuinely has no such rubric and
+  stays without one.
+- **p.49 and p.65 "Royal Anthem" do NOT unblock the Royal Anthem item.** Both are ferial weekday
+  alternatives; the open item is the Sunday/festival Royal Anthems in the Khudhra, outside Maclean.
 
 ---
 

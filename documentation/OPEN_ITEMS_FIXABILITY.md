@@ -48,7 +48,7 @@ the corpus is in place, the audit method is established, and the work would proc
 |---|---|---|
 | ~~Ferial Morning Service dedicated audit~~ **DONE 2026-09-04** | pp.103–108 | Josh supplied the pages; audit complete, two defects found and fixed. See dashboard `esy:sapra:ferial-morning-audit`. |
 | ~~First/Middle Friday audits~~ **DONE 2026-09-04** | pp.41–49 | Content exact; a systemic seasonal-rubric defect was found and partly swept. Middle Friday remains unwired — needs the Kalendar appendix, not these pages. |
-| **NEW** — seasonal-rubric sweep, 7 components | pp.37, 50–51, 57, 59, 63, 65–66, 67 | Each carries a disclosed-gap note. Not fixable by analogy: Wednesday genuinely differs. |
+| ~~seasonal-rubric sweep, 7 components~~ **DONE 2026-09-05** | pp.37–67 **supplied** | All seven pages confirm the rubric; restored from the pages, not by analogy. p.57 prints a genuine variant (“Varies *according to* the season”), preserved verbatim. Wednesday still correctly excluded. |
 | Great Fast's own Sunday Evening Service | pp.206–211 | |
 | Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
 | ~~Pre-Fast Sunday folding rule~~ **RULE RESOLVED 2026-09-04** | — | The complete cascade is now recorded in `rubrics.json`. Implementation remains open: needs the count of Sundays after Epiphany per year plus Node simulation. No longer source-blocked. |
@@ -63,9 +63,11 @@ The upload route works and is the way to move any of the remaining rows.
 Services were audited the same day and three corrections made across the eight sequences. See
 dashboard `esy:sapra:fast-and-festival-morning-audit`.
 
-**Remaining Maclean-dependent rows** are the First/Middle Friday audits (pp.41–43, 48–49), the
-Great Fast's own Sunday Evening Service (pp.206–211), the two Farcings loose ends (pp.236–248), and
-the Pre-Fast folding rule plus the Layer 3 saints calendar (both pp.264–283).
+**Remaining Maclean-dependent rows** (updated 2026-09-05, after pp.37–67 were supplied and the
+seasonal-rubric sweep closed) are the
+Great Fast's own Sunday Evening Service (pp.206–211) and the two Farcings loose ends (pp.236–248).
+The Pre-Fast folding rule and the Layer 3 saints calendar are no longer source-blocked — pp.264–283
+are held.
 
 ---
 
