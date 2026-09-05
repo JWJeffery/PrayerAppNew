@@ -726,7 +726,8 @@
             "day": 11
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 529, the death at a very old age, of Theodosius, the “cenobiarch”. Born in Cappadocia, he was trained as a monk, and then started a monastery near Bethlehem. The emperor Theodosius made him overseer of all the cenobitic communi…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-theodosius-the-cenobiarch",
@@ -803,7 +804,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “About 529, at Arles, St. Caesaria, a nun, and sister of St. Caesarius, who wrote a rule for her convent. In 689, St. Benedict Biscop, abbot. He became a monk at Lérins, then journeyed from Rome to England with Theodore of Tarsus a…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "benedict-biscop",
@@ -919,7 +921,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “At Poitiers in 367, St. Hilary, the bishop of that city and doctor of the church. For his loyalty to the teaching of the Council of Nicaea, he spent three years in exile in Phrygia, during which he wrote an important treatise On t…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "kentigern-mungo",
@@ -1213,7 +1216,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 356, in Egypt, St. Antony, who is well known from the Life which St. Athanasius wrote about him and from his own letters and sayings. He was born of Christian parents, orphaned young, and then felt called to leave everything to…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-anthony-the-abbot",
@@ -1519,7 +1523,8 @@
             "day": 20
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In the third century, at Rome, St. Fabian, pope, martyred under Decius, and Sebastian, a soldier, martyred under Diocletian. A late legend said Sebastian was tortured by being shot full of arrows. He was invoked as a protector aga…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-euthymius-the-great",
@@ -2289,7 +2294,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 680, at the monastery of Chelles, St. Bathild. She was an Anglo-Saxon girl, sold into slavery in France, who eventually married King Clovis II and bore him three sons. When she became regent after the death of King Clovis, she …” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Charles I, King and Martyr, 1649”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-hyacintha-of-mariscotti",
@@ -2585,7 +2591,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 316, at Sebastea in Armenia, the death of St. Blaise, bishop. A ritual blessing of the throats with two crossed candles occurs on his feast day. Two miracles attributed to him account for this: While he was being taken to trial…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-blaise",
@@ -2900,7 +2907,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 1537, St. Jerome Emiliani, founder of the Somaschi Congregation, who were dedicated to the care of needy children. He was perhaps the first person to write a catechism in question and answer form. At Whitby, in 714, St. Elfleda…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "cyril-and-methodius",
@@ -5186,7 +5194,8 @@
             "day": 19
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “The solemnity of St. Joseph, husband of the Virgin Mary, a just man of David’s lineage, who was the foster- father of the son of God, Christ Jesus, who chose to be called the son of Joseph and to be subject to him as a son to his …” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Joseph of Nazareth, Husband of Mary”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "st-mari-the-bishop",
@@ -6963,7 +6972,8 @@
             "day": 2
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “This day is set aside to remember all who witnessed to their Christian faith during the conflicts in church and state in England, which lasted from the fourteenth to the seventeenth centuries but were at their most intense in the …” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Athanasius, Bishop and Teacher of the Faith, 373”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "mar-daniel-the-physician",
@@ -8678,7 +8688,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “On this day in 1738, John Wesley had a profound spiritual experience, often referred to as his ‘conversion’. He famously recorded in his Journal: “About a quarter before nine while [the speaker] was describing the change which God…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "bede-the-venerable",
@@ -9312,7 +9323,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 308, at Sisak in Croatia, Quirinus, bishop and martyr. After a spirited defense of his faith before a magistrate, Quirinus was beaten. According to contemporary accounts, he said: “I am exercising my priesthood here and now by …”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-francis-caracciolo",
@@ -9905,7 +9917,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “Evagrius Ponticus, a monk and spiritual master of the Egyptian desert, died on the feast of the Epiphany in the year 399. Ordained a lector by St Basil, he became a member of the clergy of Caesarea, where he remained faithful to h…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "prophet-elisha",
@@ -10477,7 +10490,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “At Ely, in 679, St. Etheldreda (or Audrey), abbess. The daughter of the king of East Anglia, and the sister of three saints, she was married to a prince named Tonbert. When he died shortly thereafter, she retired to the Isle of El…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "martyr-agrippina-of-rome",
@@ -11974,7 +11988,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “Swithun was Bishop of Winchester in the ninth century, though little is known of his life. He was bishop for ten years and appears to have been the trusted adviser of Egbert, his king in Wessex. He had asked to be buried 'humbly' …”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "anne-askew",
@@ -12264,7 +12279,8 @@
             "day": 19
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “The Church of England remembers on this day St Gregory of Nyssa and his sister Saint Macrina. In Cappadocia, in 397, St. Macrina the Younger. She was the eldest of the ten children of St. Basil the Elder and St. Emmelia. When her …”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "prophet-elias-elijah",
@@ -13684,7 +13700,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 1942. St. Teresa Benedicta of the Cross (Edith Stein). She was born in Breslau into a large Jewish family. She became an atheist when she was fourteen. She studied psychology, literature and philosophy. Edmund Husserl was one o…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-matthias-the-apostle",
@@ -13724,7 +13741,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 1942. St. Teresa Benedicta of the Cross (Edith Stein). She was born in Breslau into a large Jewish family. She became an atheist when she was fourteen. She studied psychology, literature and philosophy. Edmund Husserl was one o…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "holy-martyr-lawrence-the-archdeacon",
@@ -13784,7 +13802,8 @@
             "day": 10
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 258, in Rome, the martyrdom of St. Lawrence. He was one of the seven deacons in charge of the church’s goods and alms. He was martyred under Valerian four days after the martyrdom of Pope St. Sixtus. Later legend adds several c…” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Lawrence, Deacon and Martyr, 258”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "mar-mari-the-apostle",
@@ -21068,7 +21087,8 @@
             "day": 7
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 739, at the monastery of Echternach, St. Willibrord. When Willibrord was seven, his father decided to become a hermit, and Willibrord was sent to St. Wilfrid’s monastery at Ripon to be raised. He studied in Ireland for twelve y…” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Willibrord, Bishop and Missionary, 739”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "archangels-michael-and-gabriel",
@@ -21161,7 +21181,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “Around 300, the Four Holy Crowned Martyrs, to whom a church on the Coelian Hill is dedicated. Their legend indicates that they were Pannonian stonemasons who were martyred under Diocletian. At the Abbey of Einsiedeln, in 996, St. …”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "synaxis-of-the-archangel-michael-and-all-angels",
@@ -21642,7 +21663,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “At Whitby, in 680, St Hilda, abbess. She was baptised by St. Paulinus, archbishop of York. When she decided to become a nun, St. Aidan gave her some land for a convent. She was successively abbess of the double monasteries at Hart…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-gertrude-the-great",
@@ -22069,7 +22091,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In Rome, probably in the third century, the martyrdom of St. Cecilia. There is no solid historical information about this revered saint. Her legend says that before her wedding to Valerian, a pagan, she sat quietly, singing to God…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "saint-amphilochius-of-iconium",
@@ -23621,7 +23644,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “About 304, in Sicily, St. Lucy. Her legend recounts that she was born in Syracuse of well-to-do parents and raised a Christian. She wanted to devote her life to God and give her possessions to the poor. When she resisted a Roman s…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "mar-abraham-of-qidun",
@@ -23908,7 +23932,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 779, St. Sturm, the first German known to have become a Benedictine monk. He was entrusted to St. Boniface, who had him educated at the monastery of Fritzlar. He was ordained and then became a hermit. At Boniface’s suggestion, …”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "mar-elias",
@@ -24429,7 +24454,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day: “In 250, ten martyrs of Crete, who were tortured and executed by the sword at the order of the governor of Gortyna. At Skalholt in Iceland, St.Thorlac, bishop. He was ordained at twenty, and studied abroad before returning to Icela…”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "ten-martyrs-of-crete",
@@ -24775,7 +24801,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Josephine Butler, Social reformer, 1906”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
       "id": "mar-shmon-the-second",

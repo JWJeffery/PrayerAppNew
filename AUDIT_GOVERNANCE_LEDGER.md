@@ -1,3 +1,51 @@
+## Session 2026-09-05 continued -- Anglican Martyrology and SEC master calendar parsed; 27 further
+## Anglican dates confirmed. SEED_VERSION v240 -> v241.
+
+Two witnesses that had never been parsed.
+
+- **The Anglican Martyrology** (`martyrology-12-09-19.pdf`) -- date-organised prose, 365 day
+  headings each followed by biographical readings. Parsed on those headings.
+- **The SEC master calendar 2025-2026** -- a CSV of 364 rows. 146 fixed commemorations extracted
+  after excluding temporal rows and, deliberately, **the 34 rows the SEC marks "transferred"**. A
+  transferred keeping is not evidence of the proper date; admitting those would have manufactured
+  confirmations on the wrong days.
+
+**27 confirmed** -- 21 on the martyrology alone, 1 on SEC alone, 5 on both. Confirmed rows
+514 -> 541; ANG 263 -> 290, leaving 39.
+
+### What the SEC yield says about the remainder
+
+Only 6 of 66 matched. That is not a parsing failure: the SEC calendar is a small Scottish provincial
+calendar of 146 fixed days, and most rows still open are Anglican-communion-wide figures belonging
+to **Holy Women Holy Men** and **Great Cloud of Witnesses**, neither of which has been parsed yet.
+
+### Two more temporal rows filed as fixed-date saints
+
+The same defect as the 20 deleted earlier today, found by classifying what would not match:
+
+| Row | Filed at |
+|---|---|
+| Easter Sunday (The Resurrection of Our Lord) | fixed **April 12** |
+| Day of Intercession for Missions | fixed **November 29** |
+
+Easter is not a fixed date and the app computes it. **Not deleted in this pass** -- the earlier
+deletion was a coherent block of 20 identified together and reviewed as a set, and these two deserve
+the same treatment rather than being swept up mid-pass.
+
+### Four derived rows
+
+The Eves of Benedict, Bernard and Bartholomew, and Elizabeth of Hungary (Transferred), are correct
+**by construction rather than by witness**. An Eve is the day before its feast; a transfer is a
+displacement. Neither is confirmable against a calendar that prints only the proper day. They need a
+rule, not a citation.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; 1,301 entries throughout;
+every untouched row asserted byte-identical; no row gained a second `ruleSource`. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- all six OCA Desk Calendars parsed and cross-validated; 158 further
 ## Eastern Orthodox dates confirmed. SEED_VERSION v239 -> v240.
 
