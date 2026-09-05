@@ -1,5 +1,71 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- FIRST and MIDDLE FRIDAY audited (Maclean pp.41-49).
+## A systemic seasonal-rubric defect found by sweeping the class. SEED_VERSION v223 -> v224.
+
+### Content result: both Fridays are exact
+
+Every psalm, tune name and page citation matches. First Friday: Marmyatha Ps.85/86 and 87/88, First
+Shuraya Ps.75:1-5, Second Shuraya Ps.82:1-5, Shuraya substitute Ps.116:11-13, tunes "The disciples of
+Christ" and "Remain in peace", Martyrs' Anthem pp.43-47. Middle Friday: First Shuraya Ps.95:1-8,
+Second Shuraya Ps.139:1-5, Shuraya substitute Ps.40:7-10, tunes "Holy apostles", "Being, who by thy
+will", and the Royal Anthem "We are not confounded".
+
+**A prior correction independently confirmed.** The 2026-08-30 fix that moved Middle Friday's Royal
+Anthem out of `esy-saturday-evening-anthem` is vindicated by the supplied page: p.49 carries the
+running head "FIRST SATURDAY 49" while the Middle Friday material occupies the top half — exactly
+the trap that note described. The earlier session read it right.
+
+### The systemic defect
+
+Maclean prints **"Evening Anthem. [Varies with the season.]"** before every "Or this" alternative:
+the seasonal proper from the Kashkul is *primary*, and what follows is the fallback. That rubric had
+been dropped, so the fallback was rendering as though it were the appointed anthem. This is a
+disclosure defect — the user could not tell that a seasonal proper exists and takes precedence.
+
+**Restored** on the four whose pages are held: `esy-monday-evening-anthem-invariable` (p.11, which
+uses the fuller wording "Varies according to the season: these anthems are contained in the
+Kashkul"), `esy-tuesday-evening-anthem` (p.24), `esy-friday-evening-anthem` (p.42),
+`esy-middle-friday-evening-anthem` (p.49).
+
+**Seven further components** open with "Or this" the same way and probably need it — pp.37, 50-51,
+57, 59, 63, 65-66, 67 — but those pages are not held, so the rubric was **not** added by analogy.
+Each now carries a disclosed-gap note naming the exact page required.
+
+**The counter-example that makes the restraint necessary:** Wednesday (pp.30-31) genuinely differs —
+its Evening Anthem is printed directly, with no "Varies" bracket and no "Or this" — and the corpus is
+already correct there. A blind sweep would have introduced an error.
+
+**Second defect, same class:** `esy-friday-shuraya-instead-of-letter-psalm` dropped p.43's conditional
+"if there is no special one in the Kashkul". Restored. Checked across the class: `friday-wathar`
+already carried it; Middle Friday (p.49) and Wednesday (p.31) genuinely lack it in the source and are
+correct as they stand.
+
+### Middle Friday remains unwired, and these pages do not unblock it
+
+`middle-friday-ramsha-sequence-NOT-YET-WIRED` is complete and correct, but pp.48-49 give the office's
+*content* without defining which Friday is "Middle". Friday uniquely has three forms — First
+(pp.41-47), Middle (pp.48-49), Last (pp.61-65) — where every other weekday has two, and what selects
+the third is a Kalendar question: the appendix, pp.264-283, not held. Wiring it would mean guessing a
+calendar predicate.
+
+### Royal Anthem — NOT unblocked
+
+Stated plainly so a future session does not misread it. p.49 does print an anthem headed "Royal
+Anthem" in a public-domain source, but it is a **ferial Middle Friday alternative**, and Maclean's own
+footnote records that U. omits the name. The open Royal Anthem item concerns the **Sunday/festival**
+Royal Anthems proper to each Sunday of a shawu'a, which live in the Khudhra and lie outside Maclean's
+stated scope. This page does not touch that item.
+
+### Verification
+
+439 components intact, zero duplicate ids, zero dangling refs, harness 67/0. One JSON edit threw on
+validation **before** writing — a regex that stopped at an escaped quote — caught by validating prior
+to write and redone with escape-aware matching. The file was never left corrupt.
+
+---
+
+
 ## Session 2026-09-04 continued -- FAST and FESTIVAL MORNING SERVICES audited against Maclean
 ## pp.164-184 and pp.211-224. SEED_VERSION v222 -> v223.
 

@@ -47,7 +47,8 @@ the corpus is in place, the audit method is established, and the work would proc
 | Item | Pages needed | Notes |
 |---|---|---|
 | ~~Ferial Morning Service dedicated audit~~ **DONE 2026-09-04** | pp.103–108 | Josh supplied the pages; audit complete, two defects found and fixed. See dashboard `esy:sapra:ferial-morning-audit`. |
-| First/Middle Friday audits | pp.41–43, 48–49 | p.41–43 is just past the mirror boundary |
+| ~~First/Middle Friday audits~~ **DONE 2026-09-04** | pp.41–49 | Content exact; a systemic seasonal-rubric defect was found and partly swept. Middle Friday remains unwired — needs the Kalendar appendix, not these pages. |
+| **NEW** — seasonal-rubric sweep, 7 components | pp.37, 50–51, 57, 59, 63, 65–66, 67 | Each carries a disclosed-gap note. Not fixable by analogy: Wednesday genuinely differs. |
 | Great Fast's own Sunday Evening Service | pp.206–211 | |
 | Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
 | Pre-Fast Sunday folding rule | Kalendar appendix, pp.264–283 | Flagged from the appendix, never modelled |
