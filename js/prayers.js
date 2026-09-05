@@ -228,9 +228,27 @@ function getUserMinistryRole() {
     return 'lay';
 }
 
+// CHANGED 2026-09-05, at Josh's direction: this is a FILTER, not a BAR.
+// Previously an access control -- a lay profile could not reach priestly
+// material by any route. Josh: "It isn't that we do not want a lay person
+// being able to see Priestly prayers... we don't need to bar them. But we
+// don't need to show them unnecessary content that they do not want to see."
+// The role now decides what is shown BY DEFAULT; one toggle shows the rest.
+let bookOfNeedsShowAboveRole = false;
+
+function setBookOfNeedsShowAboveRole(show) {
+    bookOfNeedsShowAboveRole = !!show;
+    // Re-apply the current context so newly visible options, their group
+    // labels and any now-invalid selection are recomputed by the one
+    // function that already owns that logic.
+    try { applyBookOfNeedsContext(currentBookOfNeedsContext || 'UNIVERSAL'); }
+    catch (_error) { /* caller re-renders */ }
+}
+
 function prayerOptionMeetsRoleRequirement(prayerId) {
     const requiredTier = BOOK_OF_NEEDS_OPTION_MINIMUM_TIER.get(prayerId);
     if (!requiredTier) return true; // no entry here at all -- the common, lay-open case
+    if (bookOfNeedsShowAboveRole) return true; // the user has asked to see everything
     const role = getUserMinistryRole();
     const userRank = BOOK_OF_NEEDS_ROLE_ORDER[role] ?? 0;
     const requiredRank = BOOK_OF_NEEDS_ROLE_ORDER[requiredTier] ?? 99;
@@ -306,8 +324,11 @@ function resetPrayerSelectionIfHidden() {
     }
 }
 
+let currentBookOfNeedsContext = 'UNIVERSAL';
+
 function applyBookOfNeedsContext(context = 'UNIVERSAL') {
     const normalizedContext = normalizeBookOfNeedsContext(context);
+    currentBookOfNeedsContext = normalizedContext;
     const config = BOOK_OF_NEEDS_CONTEXTS[normalizedContext];
 
     document.getElementById('book-needs-context-label').textContent = config.label;
@@ -468,3 +489,5 @@ function backToPrayerDropdown() {
     document.getElementById('individual-prayers-section').style.paddingTop     = '0';
     document.getElementById('prayer-selection').style.display      = 'block';
 }
+
+window.setBookOfNeedsShowAboveRole = setBookOfNeedsShowAboveRole;

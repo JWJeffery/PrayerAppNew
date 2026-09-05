@@ -17,6 +17,7 @@
 <div id="splash-bg"></div>
 
 <section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title">
+    <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-entry" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
     <div class="app-entry-kicker">The Universal Office</div>
     <h1 id="tradition-entry-title">Where do you pray?</h1>
     <p class="app-entry-lede">Choose the Christian family you pray within. The app will remember your path and open there by default.</p>
@@ -647,6 +648,8 @@
         <p class="app-book-needs-subtitle" id="book-needs-scope-note">Select a prayer, devotion, or occasional office.</p>
         <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-book-of-needs" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
 
+        <label class="app-book-needs-show-all"><input type="checkbox" id="book-needs-show-above-role" onchange="setBookOfNeedsShowAboveRole(this.checked)"> Show prayers for other ministries</label>
+
         <div class="prayer-select-wrapper" id="prayer-select-wrapper">
             <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
                 <span id="prayer-select-label">— Choose a Prayer —</span>
@@ -1081,8 +1084,8 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=220" defer></script>
-<script src="js/prayers.js?v=206"></script>
+<script src="js/office-ui.js?v=221" defer></script>
+<script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 
 </body>

@@ -1,3 +1,82 @@
+## Session 2026-09-05 continued -- 188 ANGLICAN DATES CONFIRMED; dating authority and inclusion
+## policy set; splash dark mode fixed; Book of Needs role gate made a filter. SEED_VERSION v232 -> v233.
+
+### The confirmation debt, and why it existed
+
+Of 1,301 sanctoral entries, **59 carried a `ruleSource`** — all 59 Church of the East, from the
+2026-09-03 pass. Every other date came across from the old month-keyed data and was never checked
+against a printed calendar.
+
+**Josh's correction is recorded as he made it, not softened:** when the BCP audit was first run the
+instruction was to inspect *everything that touches it*, and the sanctoral was not inspected. That
+is why this went uncounted for months.
+
+### Dating authority (Josh, 2026-09-05)
+
+> For TEC, LFF controls dates. If someone is not in LFF, then the other docs can control their date.
+
+Applied in exactly that order:
+
+| Authority | Rows confirmed |
+|---|---|
+| LFF 2024, Calendar of the Church Year (pp.6-18) | 182 |
+| Prayer Book calendar (pp.19-30), where LFF is silent | 7 |
+
+**188 written. Confirmed rows 59 -> 247.** Each `ruleSource` names the file, the pages, the exact
+line printed for that day, and which authority controlled. Matching is on distinctive name tokens
+**with the day held fixed**, so a match means the printed calendar keeps that identity on that date,
+not that the name occurs somewhere in the book.
+
+### Retraction: the Prayer Book PDF is fine
+
+The previous session flagged `data/kalendar/source-witnesses/book_of_common_prayer.pdf` as suspect
+because its calendar prints Óscar Romero (d. 1980) under a Custodian's certificate dated 2007. **Josh
+has confirmed the file is accurate:** the Prayer Book is reprinted periodically, the calendar is
+updated by General Convention, and the certificate attests the Standard Book text. The caution is
+withdrawn and the calendar is used as a witness here.
+
+### Inclusion policy (Josh, 2026-09-05)
+
+Figures such as **Martin Luther are not admitted to this Kalendar** even where a witness carries
+them. Checked: Luther is **not** in the sanctoral, and nothing in this pass added anyone — only
+existing rows were annotated. But the Prayer Book calendar does print him at 18 February, so this
+governs the remaining work rather than being a historical note.
+
+### What remains, and the right instrument for it
+
+121 ANG rows appear in neither calendar. They need Holy Women Holy Men, For All The Saints, Great
+Cloud of Witnesses and the Anglican martyrology — all already in the repo, and all already
+cross-referenced per day in the **Synaxarium applet's own candidate matrices**
+(`data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`): 1,194 ranked candidates across 366 days,
+each carrying its SIN, source witnesses and source tier, with 280 of the 366 rank-1 candidates
+LFF-witnessed. Every row is still `decision_status: Pending`. That matrix, not another ad-hoc
+matcher, is the instrument for the remainder.
+
+### Splash dark mode never worked
+
+The 2026-09-03 parity claim was wrong. The `--app-*` dark palette was scoped to
+`body.office-active.dark-mode`, so it applied **only once an office was open**, while both splash
+screens are `body:not(.office-active)` whose background is a hardcoded light gradient carrying
+`!important`. Scope widened to `body.dark-mode`; dark variants added for `#splash-bg`,
+`#tradition-entry` and `#mode-selection`. The first screen the user actually meets — "Where do you
+pray?" — had no toggle at all and now has one. The control was a bare checkbox floating between the
+title and the mode grid; it is now a pill pinned to the card corner.
+
+### Book of Needs: a filter, not a bar
+
+`prayerOptionMeetsRoleRequirement()` gains a session flag; the panel gains one checkbox, "Show
+prayers for other ministries." Verified across all six roles: 13 priest-tier prayers hidden by
+default for lay, reader, subdeacon and deacon; all 13 visible when ticked; hidden again when
+unticked; priest and bishop unaffected.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own original text blocks, never `json.dump`, every untouched row
+asserted byte-identical. `node --check` passes on `office-ui.js` and `prayers.js`. Harness 67/0.
+Cache-bust `office-ui.js` v220 -> v221, `prayers.js` v206 -> v221.
+
+---
+
 ## Session 2026-09-05 continued -- FORMATION LAYER was dead on arrival; sanctoral corrected;
 ## navigation conflict resolved. SEED_VERSION v231 -> v232.
 

@@ -10,12 +10,12 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v232`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v233`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
 session. Run `git log --oneline -1` against a fresh clone instead. Cache-bust params are currently
-`office-ui.js?v=220`, `explanations.js?v=220`, `prayers.js?v=206`.
+`office-ui.js?v=221`, `explanations.js?v=220`, `prayers.js?v=221`.
 
 ---
 
@@ -154,12 +154,42 @@ never was a Maclean question.
 - ACE Denkha/Cross Gregorian question; Mar Daniel the Physician; Mar Mushi / St Jacob (pending
   zero-Moses-year).
 
+### The sanctoral confirmation debt -- the largest open item on the project
+1,301 entries; **247 carry a `ruleSource`** (59 COE + 188 Anglican). **1,054 dates are still
+inherited and unconfirmed.**
+
+**Dating authority (Josh, 2026-09-05): for TEC, LFF controls. Where LFF is silent, the other
+Anglican witnesses control.** The Prayer Book calendar in
+`data/kalendar/source-witnesses/book_of_common_prayer.pdf` **is accurate** -- it is a later
+reprint whose calendar carries General Convention's additions under a 2007 certificate. An earlier
+session wrongly flagged it; do not re-raise that.
+
+**Inclusion policy: figures such as Martin Luther are NOT admitted**, even where a witness carries
+them (the Prayer Book calendar prints him at 18 February). Luther is not currently in the sanctoral.
+
+| Tag | Confirmed | Remaining |
+|---|---|---|
+| ANG | 188 | 141 |
+| COE | 59 | 0 |
+| EOR | 2 | 408 |
+| LAT | 3 | 398 |
+| OOR | 3 | 362 |
+| untagged | 0 | 150 |
+
+**The instrument for the rest is already built.** `data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`
+holds 1,194 ranked candidates across all 366 days, each with its SIN, source witnesses (BCP; LFF;
+HWHM; GCW; FAS; SEC; AM) and source tier. `synaxarium-review/` is the review UI over it. Every row
+is still `decision_status: Pending`. Use that, not another ad-hoc matcher.
+
 ### Awaiting Josh's decision
 - **Whether to collapse the 27 multi-date untagged sanctoral identities.** Not a cleanup: 48 live
   tagged identities sit on multiple dates too, 41 across different traditions. Collapsing asserts a
   date.
-- **Whether to separate "Options" from "Settings"** in the office drawer, and how that interacts
-  with the Book of Needs access ladder. Raised 2026-09-05, not yet specified.
+- **Whether to separate "Options" from "Settings"** in the office drawer. Josh's shape,
+  2026-09-05: it is **profile vs session**. Profile is asked once at the splash ("Where do you
+  pray?" West/East/idk, then "layperson or ordained?", idk => lay, ordained => a decision tree) and
+  shapes what is shown. Session is what you touch while praying. The first question is already
+  built as `#tradition-entry`; the ordination question is not.
 - **The Formation card's appearance in the drawer.** Josh: it looks awful. Not yet redesigned.
 - **Book of Needs** — whether to extend to the full 8-role access ladder.
 

@@ -1164,7 +1164,12 @@ body.light-mode .ethiopian-theme .rubric-text {
    individually. Palette matches the original Vespers/Gothic dark theme
    variables above (--bg-color, --container-bg, --ink, --rubric, --gold).
    Radii and fonts are unaffected by theme, so are not overridden here. */
-body.office-active.dark-mode {
+/* SCOPE WIDENED 2026-09-05. These dark values were scoped to
+   body.office-active.dark-mode, so they applied ONLY once an office was
+   open. Both splash screens (#tradition-entry, #mode-selection) are
+   body:not(.office-active), so dark mode was a no-op there by construction:
+   the checkbox flipped body classes and nothing visible was keyed to them. */
+body.dark-mode {
     --app-bg-warm: #1e1608;
     --app-bg-cream: #241c0e;
     --app-surface: rgba(30, 22, 8, 0.92);
@@ -1185,6 +1190,26 @@ body:not(.office-active) {
         radial-gradient(circle at 50% 12%, rgba(255, 250, 241, 0.94), rgba(239, 226, 207, 0.86) 46%, rgba(207, 185, 155, 0.78) 100%) !important;
 }
 
+body:not(.office-active).dark-mode {
+    background:
+        radial-gradient(circle at 50% 12%, rgba(38, 29, 14, 0.96), rgba(24, 18, 9, 0.92) 46%, rgba(12, 9, 5, 0.90) 100%) !important;
+}
+
+body.dark-mode #splash-bg {
+    filter: blur(3px) saturate(0.55) brightness(0.42);
+    opacity: 0.55;
+}
+
+body.dark-mode #tradition-entry.app-tradition-entry,
+body.dark-mode #mode-selection.app-mode-shell {
+    background:
+        linear-gradient(180deg, rgba(32, 24, 11, 0.94), rgba(24, 18, 9, 0.90)),
+        radial-gradient(circle at 18% 0%, rgba(201, 168, 76, 0.10), transparent 38%);
+}
+
+body.dark-mode .app-entry-kicker,
+body.dark-mode .app-mode-kicker { color: var(--app-gold-soft); }
+
 #splash-bg {
     background:
         radial-gradient(circle at 50% 14%, rgba(255, 253, 248, 0.78), rgba(239, 226, 207, 0.72) 48%, rgba(169, 139, 101, 0.58) 100%),
@@ -1198,6 +1223,7 @@ body:not(.office-active) {
 }
 
 #mode-selection.app-mode-shell {
+    position: relative;          /* anchors the pinned .app-dark-toggle */
     width: min(1080px, calc(100vw - 40px));
     max-width: 1080px;
     max-height: calc(100vh - 40px);
@@ -4029,11 +4055,21 @@ body.roman-breviary-dev-mode #main-content.sidebar-hidden {
    selector, the Book of Needs, and the Bible Reader so the control looks and
    behaves identically wherever it appears. The office sidebars keep their own
    Appearance card, which the shared navigator generates. */
+/* RESTYLED 2026-09-05. This was a bare checkbox floating between the title
+   and the mode grid on a ceremonial splash. It now sits as a quiet pill
+   pinned to the card's top corner, out of the reading line. */
 .app-dark-toggle {
+    position: absolute;
+    top: clamp(14px, 2.2vw, 22px);
+    right: clamp(14px, 2.2vw, 26px);
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
-    margin: 0 0 1.1rem;
+    padding: 0.34em 0.72em;
+    border: 1px solid var(--app-border);
+    border-radius: 999px;
+    background: var(--app-surface);
+    margin: 0;
     font-family: 'Cinzel', serif;
     font-size: 0.72rem;
     letter-spacing: 0.1em;
@@ -4187,3 +4223,19 @@ body.dark-mode .uo-tradition-explanation-inner {
     .uo-tradition-explanation-inner { padding: 26px 20px 22px; }
     #uo-tradition-explanation { padding: 3vh 10px; }
 }
+
+/* Book of Needs: the ministry role is a default filter, not a bar. This is
+   the escape hatch that makes that true. Deliberately quiet -- it is not a
+   permission prompt and nothing is being unlocked. */
+.app-book-needs-show-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0 0 1.1rem;
+    font-family: var(--app-label);
+    font-size: 0.82rem;
+    color: var(--app-ink-soft);
+    cursor: pointer;
+}
+
+.app-book-needs-show-all input { accent-color: var(--app-bronze); cursor: pointer; margin: 0; }
