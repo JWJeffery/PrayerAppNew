@@ -1,3 +1,33 @@
+## Session 2026-09-04 continued -- RESUME NOTE REWRITTEN as a handoff document; the old note
+## archived verbatim. SEED_VERSION v227 -> v228.
+
+`RESUME_PROJECT_NOTE.md` had accumulated 94 session entries over ~4,700 lines and had stopped
+functioning as a handoff — a new session would have had to read a full project history to find the
+current state. Replaced with a 192-line document covering: what to read first, the workflow, standing
+content rules, how Josh communicates, probed source reachability, what is open (split by what
+actually blocks it), what is settled and must not be reopened, and useful specifics.
+
+### Nothing was discarded, and this mattered
+
+Before replacing the file, its contents were checked against `AUDIT_GOVERNANCE_LEDGER.md` — on
+normalised text, not exact heading match, since line wrapping differs between the two files.
+
+**59 of the 94 entries existed only in the resume note.** Among them: the record of a serious error
+(18 Church of the East entries wrongly deleted on 2026-09-03 and then restored) and the Diocese of
+California sanctoral re-anchoring. Had the note simply been overwritten — which was the obvious move
+and the one I nearly made — that history would have been lost with no trace.
+
+The entire old note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`, with
+a header explaining why it exists, and the new note cross-references it. Preservation was verified
+programmatically: the old file's full text is confirmed present inside the archive.
+
+The ledger remains the permanent decision record and `OPEN_ITEMS_FIXABILITY.md` remains the
+blocked/unblocked classification. The resume note now points at both rather than duplicating them.
+
+Harness 67/0.
+
+---
+
 ## Session 2026-09-04 continued -- SUBA'A BUNDLE SPLIT. The Fast Evening Service now renders p.212's
 ## order exactly, and two texts it should never have said are gone. SEED_VERSION v226 -> v227.
 
