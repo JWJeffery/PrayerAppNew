@@ -194,8 +194,15 @@ ANG -> LFF 2024, then the other Anglican witnesses. COE -> ACOE diocesan calenda
 Oriental tradition; **the Ethiopian Synaxarium must not be used for OOR generally.**
 **Rome is out of scope** — that lane is not built, so the 228 LAT rows are not a live question.
 
-**The EOR/OOR bulk is blocked on two files Josh holds and this repo does not:**
-a modern Eastern Orthodox machine-readable calendar (**none is yet identified**) and
+**EOR is unblocked.** Josh put six **OCA Desk Calendars (2021-2026)** in Google Drive at
+`Agent/OCA Sanctoral`. They read cleanly through the Drive connector and carry the whole year.
+January and February 2026 are done -- 45 rows confirmed. **The desk calendar is SELECTIVE**: one or
+two commemorations a day, not the full synaxis, so it confirms a date when it names an identity but
+its silence proves nothing. Use `oca.org/saints/lives` to adjudicate a single disputed day; it
+cannot do bulk. **Ask: put the six PDFs in `data/kalendar/source-witnesses/`** so they can be
+processed directly instead of one large Drive read at a time.
+
+**OOR is still blocked on a file Josh holds and this repo does not:**
 `coptic-synaxarium.json.txt`. **Do not repeat the "366 days, 702 entries" figure** — it came from a
 ChatGPT message, was never verified here, and was wrongly written into this project's records on
 2026-09-05. Nobody has opened that file.

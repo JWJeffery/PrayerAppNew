@@ -1,3 +1,68 @@
+## Session 2026-09-05 continued -- OCA Desk Calendars located; 45 Eastern Orthodox dates confirmed
+## from the 2026 edition. SEED_VERSION v238 -> v239.
+
+Josh worked around the URL restriction himself and put **six OCA Desk Calendars, 2021 through 2026**,
+into Google Drive at `Agent/OCA Sanctoral`. They read cleanly through the Drive connector -- the 2026
+edition carries the whole year, one to two commemorations per day, in the OCA's own publication.
+
+### First tranche
+
+January and February transcribed verbatim from the 2026 calendar into a fixed day-to-commemoration
+index, then matched mechanically against the 67 unconfirmed EOR rows in those months.
+
+**45 confirmed and written. Confirmed rows 311 -> 356.**
+
+Matching holds the day fixed and applies a light transliteration fold, without which
+Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus all miss. That fold was added **after**
+seeing those three misses, not assumed in advance.
+
+### A property of this witness that limits what its silence means
+
+The desk calendar is **selective**. It prints one or two commemorations per day, not the full daily
+synaxis. So it confirms a date when it names the identity, but **its silence is not evidence against
+one** -- which is why the 22 unmatched January/February rows are left unconfirmed rather than treated
+as wrong. Most are simply minor commemorations the desk calendar does not carry: Gordius,
+Theopemptus, Syncletica, Polyeuctus, Inna/Pinna/Rimma.
+
+This sentence is written into every `ruleSource` the pass produced, so a future session cannot read
+a confirmation as stronger than it is.
+
+### Two genuine discrepancies, surfaced and not fixed
+
+A date change is a different act from a date confirmation, so these are recorded for adjudication:
+
+| Row | App | OCA Desk Calendar 2026 |
+|---|---|---|
+| St Bucolus of Smyrna | 19 February | **6 February** |
+| Great Martyr Theodore Stratelates | 8 February | prints Prophet Zachariah on that day |
+
+The app also carries a **second** Bucolus row at 6 February, so one of the two is likely a
+duplicate. Both cases want `oca.org`'s full daily listing for those specific days -- exactly the job
+the per-day website is good for, as against the desk calendar's bulk role.
+
+### The two forms of this witness
+
+Recorded in `source-index.json` because the difference decides which to use:
+
+- **The desk calendars** -- readable in bulk, selective in content. The instrument for the mass of
+  the work.
+- **`oca.org/saints/lives`** -- the full daily listing, one civil day per URL, and unreachable in
+  bulk here. The instrument for adjudicating one disputed day.
+
+### Next
+
+The remaining ten months. The blocker is now **mechanical rather than evidential**: each Drive read
+is large, so the efficient path is for the six PDFs to sit in
+`data/kalendar/source-witnesses/` where they can be processed directly.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; 1,301 entries throughout;
+every untouched row asserted byte-identical; no row gained a second `ruleSource`.
+`source-index.json` revalidated with `json.loads`. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- SYN_CP registry entry REMOVED at Josh's direction.
 ## SEED_VERSION v237 -> v238.
 
