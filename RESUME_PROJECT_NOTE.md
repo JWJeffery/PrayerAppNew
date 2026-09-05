@@ -10,12 +10,12 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v230`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v231`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
 session. Run `git log --oneline -1` against a fresh clone instead. Cache-bust params are currently
-`office-ui.js?v=218`, `prayers.js?v=206`.
+`office-ui.js?v=219`, `prayers.js?v=206`.
 
 ---
 
@@ -130,8 +130,9 @@ never was a Maclean question.
 - **Pre-Fast Sunday folding rule — implementation.** The complete cascade is recorded in
   `components/traditions/east-syriac/rubrics.json` under `kalendar-rules-maclean-264-283`. Needs the
   count of Sundays after Epiphany per year plus Node simulation.
-- **2038/2095 season overlap**; **`ordinary1/2/3.json` architecture review**; **admin dark-mode
-  toggle**; **dead `config.heading`**; **empty-`tags` rows**.
+- **2038/2095 season overlap**; **`ordinary1/2/3.json` architecture review**.
+  *(Dead `config.heading`, `#generic-tradition-label`, the untagged sanctoral rows and dark-mode
+  parity were all cleared 2026-09-05 — see §8.)*
 - **Education-layer coverage extension** — currently ~49% of Coptic titles to ~57% of East Syriac
   components. Generic headings and individual psalm citations are deliberately unmatched.
 
@@ -196,6 +197,12 @@ never was a Maclean question.
   end against a clean scan of pp.236–248 on 2026-09-05 — all 150 psalms, four canticles, twelve
   "Or" alternatives and all twenty-two Ps.119 clauses correct. Despite being transcribed in the same
   session as the fabrication incident, it is sound.
+- **Dark mode is on every surface.** `index.html`, `admin/admin.html`, `audit-ledger.html` and
+  `synaxarium-review/index.html` all carry a `data-app-dark-toggle` control. The three standalone
+  pages cannot call `applyDarkMode()` and reproduce the 2026-09-03 boot rule inline. **Boot must
+  never write to storage** — it passes `persist=false` so the OS preference is re-read each visit.
+- **The 170 untagged sanctoral rows are deliberate, not debris.** Each carries a `tagsGap` field
+  explaining it is a retained-but-unsourced Layer 3 identity. Do not sweep them.
 - **A documented rule is not an enforced rule.** The Motwa close carried its own "except in the Fast
   and the Rogation of the Ninevites" note from the day it was built, and the Rogation half was
   enforced nowhere for months. When a component's metadata states a condition, check the renderer

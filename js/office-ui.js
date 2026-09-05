@@ -1976,7 +1976,6 @@ function setCustomDate(dateStr) {
 const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     daily: {
         panelId: "settings-panel",
-        heading: "Office Navigation",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Time of Day",
@@ -1991,7 +1990,6 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     },
     coptic: {
         panelId: "coptic-settings",
-        heading: "Agpeya Navigation",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Hour",
@@ -2012,7 +2010,6 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     },
     eastSyriac: {
         panelId: "east-syriac-settings",
-        heading: "Hudra Navigation",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Canonical Hour",
@@ -2036,7 +2033,6 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     },
     horologion: {
         panelId: "generic-settings",
-        heading: "Horologion Navigation",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Office",

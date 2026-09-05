@@ -42,6 +42,53 @@
   --serif: 'Cinzel', serif;
 }
 
+/* Light appearance. The console was dark-only until 2026-09-05; every colour
+   above is a token, so light mode is a token override rather than a restyle.
+   Season, severity and status hues are re-darkened for contrast on a light
+   ground -- the same hue, not a different vocabulary. */
+html[data-theme="light"] {
+  --bg:           #f4f2ee;
+  --surface:      #ffffff;
+  --surface-2:    #eae7e1;
+  --border:       rgba(0,0,0,0.10);
+  --border-bright:rgba(0,0,0,0.22);
+  --text:         #23211e;
+  --text-dim:     #6b675f;
+  --text-muted:   #a29d94;
+
+  --season-purple: #5d2b78;
+  --season-white:  #8a6f22;
+  --season-green:  #2f5a3c;
+  --season-red:    #7d1a29;
+  --season-rose:   #7c2c48;
+  --season-gold:   #8a6f22;
+
+  --sev-high:   #b62f2f;
+  --sev-med:    #9a6420;
+  --sev-low:    #3d6b4c;
+
+  --status-open:        #b62f2f;
+  --status-in-progress: #9a6420;
+  --status-done:        #2f5a3c;
+
+  --accent:      #8a6f22;
+}
+
+/* Appearance toggle. Matches the main app's control: a checkbox carrying
+   data-app-dark-toggle, checked = dark. */
+.app-dark-toggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  color: var(--text-dim);
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+}
+.app-dark-toggle input { accent-color: var(--accent); cursor: pointer; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; }
 
@@ -1083,6 +1130,7 @@ header {
   <span style="color:var(--border-bright); font-size:1.2em">／</span>
   <span class="header-title" style="color:var(--text-dim)">Admin Dashboard</span>
   <span class="header-badge">DEV ONLY</span>
+  <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-admin" data-app-dark-toggle onchange="setAdminDark(this.checked)"> Dark Mode</label>
 </header>
 
 <div id="workspace" class="app-mode-workspace">
@@ -2559,6 +2607,45 @@ renderRepoHygiene();
 
   // Load version
   loadVersion();
+})();
+</script>
+<script>
+/* Appearance for the admin console. This page does not load js/office-ui.js,
+   so it cannot use applyDarkMode(); the boot rule is reproduced deliberately
+   rather than approximated, matching the rule set for the main app on
+   2026-09-03: honour the OS prefers-color-scheme first, fall back to the
+   clock rule (light 06:00-18:00) where the OS expresses no preference or the
+   browser lacks matchMedia, and let a stored manual choice override both.
+   Nothing re-imposes the OS value mid-session, so an OS theme change cannot
+   silently undo a deliberate choice. */
+function setAdminDark(dark, persist) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    const box = document.getElementById('toggle-dark-admin');
+    if (box) box.checked = dark;
+    // Only a deliberate choice is stored. Boot passes persist=false, so the
+    // OS preference is re-read on every visit rather than being frozen into
+    // storage the first time the page is opened.
+    if (persist === false) return;
+    try { localStorage.setItem('uo-admin-dark', dark ? '1' : '0'); } catch (e) {}
+}
+(function bootAdminAppearance() {
+    let stored = null;
+    try { stored = localStorage.getItem('uo-admin-dark'); } catch (e) {}
+    if (stored === '1' || stored === '0') { setAdminDark(stored === '1', false); return; }
+
+    let dark = null;
+    try {
+        if (window.matchMedia) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) dark = true;
+            else if (window.matchMedia('(prefers-color-scheme: light)').matches) dark = false;
+        }
+    } catch (e) { dark = null; }
+
+    if (dark === null) {
+        const h = new Date().getHours();
+        dark = !(h >= 6 && h < 18);
+    }
+    setAdminDark(dark, false);
 })();
 </script>
 </body>

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar.",
+  "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced.",
   "entries": [
     {
       "id": "holy-name-of-jesus-circumcision-of-christ",
@@ -1026,6 +1026,7 @@
       "description": "Commemoration of all saints.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 15",
       "observance": {
         "type": "fixed",
@@ -1274,6 +1275,7 @@
       "description": "The 'Harp of the Spirit' and poet-theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 18",
       "observance": {
         "type": "fixed",
@@ -1365,6 +1367,7 @@
       "description": "Bishop and confessor.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 19",
       "observance": {
         "type": "fixed",
@@ -1729,6 +1732,7 @@
       "description": "Fasting period commemorating Jonah.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 23",
       "observance": {
         "type": "fixed",
@@ -1822,6 +1826,7 @@
       "description": "Fasting period commemorating Jonah.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 24",
       "observance": {
         "type": "fixed",
@@ -1916,6 +1921,7 @@
       "description": "Pillar of the Church of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 25",
       "observance": {
         "type": "fixed",
@@ -2089,6 +2095,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-ephrem-the-syrian (June 9) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 28",
       "observance": {
         "type": "fixed",
@@ -2183,6 +2190,7 @@
       "description": "Monk and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 29",
       "observance": {
         "type": "fixed",
@@ -2315,6 +2323,7 @@
       "description": "Commemoration of the manifestation of Christ.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 30",
       "observance": {
         "type": "fixed",
@@ -2332,6 +2341,7 @@
       "description": "Saint and bishop.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "January 31",
       "observance": {
         "type": "fixed",
@@ -2389,6 +2399,7 @@
       "description": "Liturgical commemoration in the season of Epiphany.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 1",
       "observance": {
         "type": "fixed",
@@ -2505,6 +2516,7 @@
       "description": "CHECKED 2026-08-31, tradition mismatch found: Simeon who received the infant Christ at the Presentation (Luke 2). His own Wikipedia infobox lists 'Venerated in: Eastern Orthodox Church, Oriental Orthodox Church, Catholic Church, Anglican Communion, Lutheranism' -- the Church of the East is not among them. Same pattern as saint-ahudemmeh, mar-behnam-and-sarah, virgin-martyr-febronia-of-nisibis, and mar-gregory-the-wonderworker. Flagged for the allowlist's own future review.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 2",
       "observance": {
         "type": "fixed",
@@ -2637,6 +2649,7 @@
       "description": "Saint and bishop.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 4",
       "observance": {
         "type": "fixed",
@@ -2693,6 +2706,7 @@
       "description": "Patriarch of the Church of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 5",
       "observance": {
         "type": "fixed",
@@ -2964,6 +2978,7 @@
       "description": "Modern martyr and patriarch.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 10",
       "observance": {
         "type": "fixed",
@@ -3174,6 +3189,7 @@
       "description": "Commemoration for the faithful departed.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 13",
       "observance": {
         "type": "fixed",
@@ -3404,6 +3420,7 @@
       "description": "Beginning of the Lenten season.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 15",
       "observance": {
         "type": "fixed",
@@ -3516,6 +3533,7 @@
       "description": "Lenten observance.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 16",
       "observance": {
         "type": "fixed",
@@ -3628,6 +3646,7 @@
       "description": "Beginning of Lent.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 18",
       "observance": {
         "type": "fixed",
@@ -3797,6 +3816,7 @@
       "description": "Commemoration for the faithful departed.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 20",
       "observance": {
         "type": "fixed",
@@ -4005,6 +4025,7 @@
       "description": "Liturgical Sunday.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 22",
       "observance": {
         "type": "fixed",
@@ -4124,6 +4145,7 @@
       "description": "Mid-point of Lent.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "February 25",
       "observance": {
         "type": "fixed",
@@ -4334,6 +4356,7 @@
       "description": "Liturgical Sunday.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 1",
       "observance": {
         "type": "fixed",
@@ -4370,6 +4393,7 @@
       "description": "Lenten observance.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 2",
       "observance": {
         "type": "fixed",
@@ -4656,6 +4680,7 @@
       "description": "Liturgical Sunday.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 8",
       "observance": {
         "type": "fixed",
@@ -5303,6 +5328,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Mari, disciple of Mar Addai tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 19",
       "observance": {
         "type": "fixed",
@@ -5596,6 +5622,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Mari, disciple of Mar Addai tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 25",
       "observance": {
         "type": "fixed",
@@ -5711,6 +5738,7 @@
       "description": "Commemoration of the Last Supper.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "March 28",
       "observance": {
         "type": "fixed",
@@ -5943,6 +5971,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "April 1",
       "observance": {
         "type": "fixed",
@@ -6194,6 +6223,7 @@
       "description": "The Great Vigil for the Resurrection.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "April 6",
       "observance": {
         "type": "fixed",
@@ -6329,6 +6359,7 @@
       "description": "Commemoration of the Crucifixion and Death of Christ.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "April 10",
       "observance": {
         "type": "fixed",
@@ -6957,6 +6988,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-addai (May 3) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "apostle",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 1",
       "observance": {
         "type": "fixed",
@@ -7093,6 +7125,7 @@
       "description": "Early martyrs, shared commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 3",
       "observance": {
         "type": "fixed",
@@ -7264,6 +7297,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own text, found during this project's earlier Middle Friday liturgical work, ties 'Memorial of Mar Saurishu of Beith Garmai' explicitly to the Syrian Doctors' Friday of the pre-Fast cycle (the Sixth Friday) -- the same movable cycle already computed by getPreFastSundayFoldSchedule() (deliberately unwired). Distinct from the already-sourced mar-sabrisho (Oct.4, of Beth Qoqa), a different historical Sawrisho. No fixed Gregorian date exists for this specific commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 5",
       "observance": {
         "type": "fixed",
@@ -7300,6 +7334,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 6",
       "observance": {
         "type": "fixed",
@@ -7432,6 +7467,7 @@
       "description": "Bishop and theologian, 8th century.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 7",
       "observance": {
         "type": "fixed",
@@ -7545,6 +7581,7 @@
       "description": "Commemoration of Christ's Ascension (if falling on this date).",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 9",
       "observance": {
         "type": "fixed",
@@ -7716,6 +7753,7 @@
       "description": "Martyr under Diocletian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 11",
       "observance": {
         "type": "fixed",
@@ -7854,6 +7892,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-isaac-of-nineveh (January 28) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 13",
       "observance": {
         "type": "fixed",
@@ -8121,6 +8160,7 @@
       "description": "One of the Twelve Apostles. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 17",
       "observance": {
         "type": "fixed",
@@ -8254,6 +8294,7 @@
       "description": "Commemoration of the descent of the Holy Spirit.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 19",
       "observance": {
         "type": "fixed",
@@ -8924,6 +8965,7 @@
       "description": "Post-Pentecost commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 26",
       "observance": {
         "type": "fixed",
@@ -9156,6 +9198,7 @@
       "description": "Bishop and missionary to the Arabs.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "May 31",
       "observance": {
         "type": "fixed",
@@ -9330,6 +9373,7 @@
       "description": "Liturgical commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "June 2",
       "observance": {
         "type": "fixed",
@@ -9366,6 +9410,7 @@
       "description": "Early martyrs, shared commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "June 3",
       "observance": {
         "type": "fixed",
@@ -10905,6 +10950,7 @@
       "description": "Commemoration of the teacher of the East.",
       "type": "apostle",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 1",
       "observance": {
         "type": "fixed",
@@ -10998,6 +11044,7 @@
       "description": "One of the Seventy Disciples and Apostle to Edessa.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 2",
       "observance": {
         "type": "fixed",
@@ -11094,6 +11141,7 @@
       "description": "Early Catholicos of Seleucia-Ctesiphon.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 4",
       "observance": {
         "type": "fixed",
@@ -11169,6 +11217,7 @@
       "description": "Disciple of Mar Augin and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 5",
       "observance": {
         "type": "fixed",
@@ -11319,6 +11368,7 @@
       "description": "Founder of the Egyptian monastic tradition in Mesopotamia.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 7",
       "observance": {
         "type": "fixed",
@@ -11432,6 +11482,7 @@
       "description": "Martyr and evangelist of the Persian interior.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 8",
       "observance": {
         "type": "fixed",
@@ -11507,6 +11558,7 @@
       "description": "Relics and witness of the Catholicos.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 9",
       "observance": {
         "type": "fixed",
@@ -11543,6 +11595,7 @@
       "description": "CONFIRMED NEGATIVE FINDING, 2026-08-31, not an unresearched gap: Babai the Great (c.551-628), the Church of the East's own foundational Christological theologian and effective head of the church 604-628 -- checked directly and confirmed to have no attested liturgical commemoration day. His own English Wikipedia infobox lists 'Venerated in: Church of the East' but carries no 'Feast' field at all, the same pattern already found for mar-timothy-i. Not every historically foundational figure of the tradition was given a liturgical feast day -- a genuine instance of that, not a gap in the search.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 10",
       "observance": {
         "type": "fixed",
@@ -11655,6 +11708,7 @@
       "description": "Mystic and bishop.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 11",
       "observance": {
         "type": "fixed",
@@ -11711,6 +11765,7 @@
       "description": "Reviver of the community and abbot.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 12",
       "observance": {
         "type": "fixed",
@@ -11805,6 +11860,7 @@
       "description": "The 'Harp of the Spirit' and poet-theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 13",
       "observance": {
         "type": "fixed",
@@ -11860,6 +11916,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 14",
       "observance": {
         "type": "fixed",
@@ -11955,6 +12012,7 @@
       "description": "CHECKED 2026-08-31, genuinely ambiguous: multiple candidate historical figures share this name, none confirmed as Church of the East veneration -- Sabbas the Sanctified (founder of Mar Saba monastery, Palestine, 'Venerated in: Eastern Orthodox Church, Catholic Church' only); 'Abda and Sabas' (a martyr pair per Holweck's dictionary, no Church of the East mention); Julian Sabas (a Syrian hermit, Roman/Greek church dates only). No source checked disambiguates which figure this bare id represents, or confirms Church of the East veneration for any of the candidates.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 15",
       "observance": {
         "type": "fixed",
@@ -12067,6 +12125,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Zeia' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 16",
       "observance": {
         "type": "fixed",
@@ -12123,6 +12182,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Yohannan (John)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 17",
       "observance": {
         "type": "fixed",
@@ -12217,6 +12277,7 @@
       "description": "Catholicos and monk.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 18",
       "observance": {
         "type": "fixed",
@@ -12273,6 +12334,7 @@
       "description": "Monk and writer.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 19",
       "observance": {
         "type": "fixed",
@@ -12369,6 +12431,7 @@
       "description": "Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 21",
       "observance": {
         "type": "fixed",
@@ -12425,6 +12488,7 @@
       "description": "Commemoration of the Apostle.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 22",
       "observance": {
         "type": "fixed",
@@ -12464,6 +12528,7 @@
       "description": "Governor and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 23",
       "observance": {
         "type": "fixed",
@@ -12540,6 +12605,7 @@
       "description": "Commemoration of the teacher.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 24",
       "observance": {
         "type": "fixed",
@@ -12634,6 +12700,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Ya'qub (James)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 25",
       "observance": {
         "type": "fixed",
@@ -12672,6 +12739,7 @@
       "description": "Assembly in honor of the Apostle.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 26",
       "observance": {
         "type": "fixed",
@@ -12789,6 +12857,7 @@
       "description": "Catholicos.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 28",
       "observance": {
         "type": "fixed",
@@ -12825,6 +12894,7 @@
       "description": "General commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 29",
       "observance": {
         "type": "fixed",
@@ -12864,6 +12934,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-shimon-bar-sabbae (August 21) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 30",
       "observance": {
         "type": "fixed",
@@ -12939,6 +13010,7 @@
       "description": "Commemoration of the Apostle.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "July 31",
       "observance": {
         "type": "fixed",
@@ -13015,6 +13087,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Mari, disciple of Mar Addai tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 1",
       "observance": {
         "type": "fixed",
@@ -13108,6 +13181,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-pethion (October 25) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 2",
       "observance": {
         "type": "fixed",
@@ -13164,6 +13238,7 @@
       "description": "One of the Seventy Disciples and Apostle to Edessa.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 3",
       "observance": {
         "type": "fixed",
@@ -13257,6 +13332,7 @@
       "description": "Disciple of Mar Augin and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 4",
       "observance": {
         "type": "fixed",
@@ -13369,6 +13445,7 @@
       "description": "The 'Father of Egyptian Monasticism' in the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 5",
       "observance": {
         "type": "fixed",
@@ -13462,6 +13539,7 @@
       "description": "Martyr and witness to the faith.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 6",
       "observance": {
         "type": "fixed",
@@ -13558,6 +13636,7 @@
       "description": "Bishop and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 7",
       "observance": {
         "type": "fixed",
@@ -13613,6 +13692,7 @@
       "description": "Early Catholicos of Seleucia-Ctesiphon.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 8",
       "observance": {
         "type": "fixed",
@@ -13670,6 +13750,7 @@
       "description": "Governor and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 9",
       "observance": {
         "type": "fixed",
@@ -13765,6 +13846,7 @@
       "description": "Catholicos and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 10",
       "observance": {
         "type": "fixed",
@@ -13804,6 +13886,7 @@
       "description": "Commemoration of the teacher of the East.",
       "type": "apostle",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 11",
       "observance": {
         "type": "fixed",
@@ -13955,6 +14038,7 @@
       "description": "Mystic and bishop.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 13",
       "observance": {
         "type": "fixed",
@@ -14030,6 +14114,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 14",
       "observance": {
         "type": "fixed",
@@ -14202,6 +14287,7 @@
       "description": "CHECKED 2026-08-31, genuinely ambiguous: multiple candidate historical figures share this name, none confirmed as Church of the East veneration -- Sabbas the Sanctified (founder of Mar Saba monastery, Palestine, 'Venerated in: Eastern Orthodox Church, Catholic Church' only); 'Abda and Sabas' (a martyr pair per Holweck's dictionary, no Church of the East mention); Julian Sabas (a Syrian hermit, Roman/Greek church dates only). No source checked disambiguates which figure this bare id represents, or confirms Church of the East veneration for any of the candidates.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 16",
       "observance": {
         "type": "fixed",
@@ -14258,6 +14344,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Zeia' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 17",
       "observance": {
         "type": "fixed",
@@ -14351,6 +14438,7 @@
       "description": "Disciple of Mar Augin and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 18",
       "observance": {
         "type": "fixed",
@@ -14407,6 +14495,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Yohannan (John)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 19",
       "observance": {
         "type": "fixed",
@@ -14500,6 +14589,7 @@
       "description": "Catholicos and monk.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 20",
       "observance": {
         "type": "fixed",
@@ -14593,6 +14683,7 @@
       "description": "The 'Harp of the Spirit' and poet-theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 21",
       "observance": {
         "type": "fixed",
@@ -14684,6 +14775,7 @@
       "description": "Pillar of the Church of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 22",
       "observance": {
         "type": "fixed",
@@ -14777,6 +14869,7 @@
       "description": "Catholicos and missionary.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 23",
       "observance": {
         "type": "fixed",
@@ -14931,6 +15024,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 24",
       "observance": {
         "type": "fixed",
@@ -14948,6 +15042,7 @@
       "description": "CONFIRMED NEGATIVE FINDING, 2026-08-31, not an unresearched gap: checked both plausible historical figures this id could represent -- Dadisho, Catholicos-Patriarch 421-456, first to hold the title after the Church of the East's 424 declaration of independence; and Dadisho of Mount Izla (528-604), second abbot of the Great Monastery after Abraham of Kashkar. Neither has an attested liturgical feast date in any source checked, including their own Wikipedia articles. Not every historically significant figure of the tradition was given a liturgical feast day.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 25",
       "observance": {
         "type": "fixed",
@@ -15060,6 +15155,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Shimon (Simon)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 26",
       "observance": {
         "type": "fixed",
@@ -15134,6 +15230,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-george-the-martyr (March 4, and other dates already sourced under that id) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 27",
       "observance": {
         "type": "fixed",
@@ -15190,6 +15287,7 @@
       "description": "Monk and writer.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 28",
       "observance": {
         "type": "fixed",
@@ -15287,6 +15385,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-shimon-bar-sabbae (August 21) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 29",
       "observance": {
         "type": "fixed",
@@ -15383,6 +15482,7 @@
       "description": "LIKELY NOT A DISTINCT VENERATED FIGURE, 2026-08-31: 'Sliwa' is simply the Syriac word for 'Cross' -- it appears throughout Church of the East sources as part of personal names (e.g. the recent Patriarch-Emeritus Mar Gewargis III Sliwa) and as the Feast of the Holy Cross itself (already covered separately in this corpus as a Layer 2 feast, not an individual saint), but no search turned up a distinct historical martyr or saint named simply 'Sliwa' with his own commemoration day. Possibly a mistaken entry carried over from the original fabricated dataset rather than a real gap -- flagged for the allowlist's own future review rather than silently dated.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 30",
       "observance": {
         "type": "fixed",
@@ -15495,6 +15595,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-thomas-the-apostle (July 3) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "apostle",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "August 31",
       "observance": {
         "type": "fixed",
@@ -15589,6 +15690,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Mari, disciple of Mar Addai tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 1",
       "observance": {
         "type": "fixed",
@@ -15663,6 +15765,7 @@
       "description": "Early Catholicos of Seleucia-Ctesiphon.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 2",
       "observance": {
         "type": "fixed",
@@ -15775,6 +15878,7 @@
       "description": "Pillar of the Church of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 3",
       "observance": {
         "type": "fixed",
@@ -15868,6 +15972,7 @@
       "description": "Disciple of Mar Augin and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 4",
       "observance": {
         "type": "fixed",
@@ -15961,6 +16066,7 @@
       "description": "The 'Harp of the Spirit' and poet-theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 5",
       "observance": {
         "type": "fixed",
@@ -16054,6 +16160,7 @@
       "description": "One of the Seventy Disciples and Apostle to Edessa.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 6",
       "observance": {
         "type": "fixed",
@@ -16128,6 +16235,7 @@
       "description": "STRUCTURALLY MOVABLE, not an unresearched gap: Maclean's own Kalendar appendix (p.264-283) gives Mar Aba/Awa the Great, Catholicos (540-552) tied only to the movable pre-Fast Friday cycle -- confirmed independently by both the ACOE Diocese of California and ACOTE Diocese of Western Europe 2026 calendars, which both place this same commemoration on a Friday that shifts year to year (Feb.6 in 2026 specifically). The same cycle already computed by getPreFastSundayFoldSchedule() in js/calendar-east-syriac.js (deliberately unwired). No fixed Gregorian date exists for this commemoration in this tradition. Distinct from mar-mari-the-apostle (already sourced, July 24, Maclean's own separate, fixed entry for the apostolic founder figure) where the id refers to Mari the disciple of Addai specifically.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 7",
       "observance": {
         "type": "fixed",
@@ -16262,6 +16370,7 @@
       "description": "CHECKED 2026-08-31, genuinely ambiguous: multiple candidate historical figures share this name, none confirmed as Church of the East veneration -- Sabbas the Sanctified (founder of Mar Saba monastery, Palestine, 'Venerated in: Eastern Orthodox Church, Catholic Church' only); 'Abda and Sabas' (a martyr pair per Holweck's dictionary, no Church of the East mention); Julian Sabas (a Syrian hermit, Roman/Greek church dates only). No source checked disambiguates which figure this bare id represents, or confirms Church of the East veneration for any of the candidates.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 9",
       "observance": {
         "type": "fixed",
@@ -16336,6 +16445,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Zeia' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 10",
       "observance": {
         "type": "fixed",
@@ -16429,6 +16539,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Yohannan (John)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 11",
       "observance": {
         "type": "fixed",
@@ -16541,6 +16652,7 @@
       "description": "Catholicos and monk.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 12",
       "observance": {
         "type": "fixed",
@@ -16615,6 +16727,7 @@
       "description": "Monk and writer.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 13",
       "observance": {
         "type": "fixed",
@@ -16770,6 +16883,7 @@
       "description": "Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 15",
       "observance": {
         "type": "fixed",
@@ -16844,6 +16958,7 @@
       "description": "Governor and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 16",
       "observance": {
         "type": "fixed",
@@ -16918,6 +17033,7 @@
       "description": "Translation of the Apostle's remains.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 17",
       "observance": {
         "type": "fixed",
@@ -17047,6 +17163,7 @@
       "description": "Assembly in honor of the Apostle.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 18",
       "observance": {
         "type": "fixed",
@@ -17272,6 +17389,7 @@
       "description": "Feast of the foundations of the See.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 20",
       "observance": {
         "type": "fixed",
@@ -17368,6 +17486,7 @@
       "description": "General commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 22",
       "observance": {
         "type": "fixed",
@@ -17461,6 +17580,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-shimon-bar-sabbae (August 21) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 23",
       "observance": {
         "type": "fixed",
@@ -17535,6 +17655,7 @@
       "description": "Commemoration of the relics of Thomas.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 24",
       "observance": {
         "type": "fixed",
@@ -17590,6 +17711,7 @@
       "description": "Apostolic laborer in the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 25",
       "observance": {
         "type": "fixed",
@@ -17740,6 +17862,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-augin-saint-eugene (November 6) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 27",
       "observance": {
         "type": "fixed",
@@ -17814,6 +17937,7 @@
       "description": "Martyr and evangelist of the Persian interior.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 28",
       "observance": {
         "type": "fixed",
@@ -17907,6 +18031,7 @@
       "description": "The holy messenger and protector.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 29",
       "observance": {
         "type": "fixed",
@@ -18019,6 +18144,7 @@
       "description": "Martyrs of Seleucia.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "September 30",
       "observance": {
         "type": "fixed",
@@ -18535,6 +18661,7 @@
       "description": "Martyrs.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "October 7",
       "observance": {
         "type": "fixed",
@@ -18971,6 +19098,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-john-the-apostle (October 13) -- deliberately left without a COE tag on this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "October 13",
       "observance": {
         "type": "fixed",
@@ -19993,6 +20121,7 @@
       "description": "Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "October 28",
       "observance": {
         "type": "fixed",
@@ -20399,6 +20528,7 @@
       "description": "Commemoration of the faithful departed.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 2",
       "observance": {
         "type": "fixed",
@@ -20454,6 +20584,7 @@
       "description": "The 'Traveler' and wonderworker of the East Syriac tradition.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 3",
       "observance": {
         "type": "fixed",
@@ -20547,6 +20678,7 @@
       "description": "Abbot and miracle worker.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 4",
       "observance": {
         "type": "fixed",
@@ -20719,6 +20851,7 @@
       "description": "Monk and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 6",
       "observance": {
         "type": "fixed",
@@ -20812,6 +20945,7 @@
       "description": "Persian commemoration of the Great Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 7",
       "observance": {
         "type": "fixed",
@@ -21039,6 +21173,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-augin-saint-eugene (November 6) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 9",
       "observance": {
         "type": "fixed",
@@ -21135,6 +21270,7 @@
       "description": "The Great Martyr and soldier.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 11",
       "observance": {
         "type": "fixed",
@@ -21275,6 +21411,7 @@
       "description": "Martyr and evangelist of the Persian interior.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 15",
       "observance": {
         "type": "fixed",
@@ -21330,6 +21467,7 @@
       "description": "East Syriac hymnographer.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 16",
       "observance": {
         "type": "fixed",
@@ -21426,6 +21564,7 @@
       "description": "CHECKED 2026-08-31, tradition mismatch found: Gregory Thaumaturgus (c.213-270), Bishop of Neocaesarea, 'the Wonder-worker.' His own Wikipedia infobox lists 'Venerated in: Catholic Church, Eastern Orthodox Church, Oriental Orthodoxy' -- the Church of the East is not among the traditions listed. Same pattern already found for saint-ahudemmeh, mar-behnam-and-sarah, and virgin-martyr-febronia-of-nisibis. Not this session's call to resolve (the allowlist is a separate, already-audited March 2026 artifact); flagged for that allowlist's own future review.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 17",
       "observance": {
         "type": "fixed",
@@ -21539,6 +21678,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 18",
       "observance": {
         "type": "fixed",
@@ -21613,6 +21753,7 @@
       "description": "Bishop and martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 19",
       "observance": {
         "type": "fixed",
@@ -21707,6 +21848,7 @@
       "description": "Primary commemoration of the See.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 20",
       "observance": {
         "type": "fixed",
@@ -21961,6 +22103,7 @@
       "description": "Reviver of the community and abbot.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 24",
       "observance": {
         "type": "fixed",
@@ -22075,6 +22218,7 @@
       "description": "Persian Rite.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 26",
       "observance": {
         "type": "fixed",
@@ -22149,6 +22293,7 @@
       "description": "Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 27",
       "observance": {
         "type": "fixed",
@@ -22278,6 +22423,7 @@
       "description": "Theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 28",
       "observance": {
         "type": "fixed",
@@ -22371,6 +22517,7 @@
       "description": "Mystic and bishop.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "November 29",
       "observance": {
         "type": "fixed",
@@ -22445,6 +22592,7 @@
       "description": "Martyr and evangelist of the Persian interior.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 1",
       "observance": {
         "type": "fixed",
@@ -22538,6 +22686,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Shmon (Simon)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 2",
       "observance": {
         "type": "fixed",
@@ -22612,6 +22761,7 @@
       "description": "Pillar of the Church of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 3",
       "observance": {
         "type": "fixed",
@@ -22687,6 +22837,7 @@
       "description": "Disciple of Mar Augin and ascetic.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 4",
       "observance": {
         "type": "fixed",
@@ -22888,6 +23039,7 @@
       "description": "Metropolitan and author.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 8",
       "observance": {
         "type": "fixed",
@@ -23001,6 +23153,7 @@
       "description": "Spiritual writings.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 9",
       "observance": {
         "type": "fixed",
@@ -23075,6 +23228,7 @@
       "description": "Martyred royal siblings.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 10",
       "observance": {
         "type": "fixed",
@@ -23168,6 +23322,7 @@
       "description": "CHECKED 2026-08-31, real figure, no COE-specific date confirmed: Barshabba ('son of the deportation'), first recorded East Syriac bishop of Merv, attended the synod of Patriarch Dadisho in 424. His own Wikipedia article confirms veneration 'both in the Church of the East... and among the Melkites' but gives only non-COE-specific dates: 21 June per the Melkites of Khwarazm (al-Biruni), and 20 August per the Martyrology of Rabban Saliba -- itself a West Syriac (Syriac Orthodox) source, not East Syriac. Neither date is attributed to Church-of-the-East practice specifically, so neither is used here -- a real commemoration, not resolved to a confirmed date rather than forced onto an unconfirmed one.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 11",
       "observance": {
         "type": "fixed",
@@ -23242,6 +23397,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-qardagh (August 28) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 12",
       "observance": {
         "type": "fixed",
@@ -23335,6 +23491,7 @@
       "description": "General commemoration.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 13",
       "observance": {
         "type": "fixed",
@@ -23413,6 +23570,7 @@
       "description": "CONFIRMED NEGATIVE FINDING, 2026-08-31, not an unresearched gap: Timothy I of Seleucia-Ctesiphon (c.740-823), Patriarch of the Church of the East 780-823 and one of its most historically significant patriarchs (correspondent of Caliph al-Mahdi, reformer of the metropolitan administration) -- checked directly and confirmed to have no attested liturgical commemoration day in any source checked. His own English Wikipedia article carries no 'Venerated in' or 'Feast' field at all, unlike comparable patriarch-figures already sourced elsewhere in this corpus (e.g. Elia III, Apr.24). Not every historically significant patriarch was given a liturgical feast day -- this appears to be a genuine instance of that, not a gap in the search.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 14",
       "observance": {
         "type": "fixed",
@@ -23488,6 +23646,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, mar-abraham-of-kashkar (May 2) -- deliberately left without a COE tag, since tagging both would display the same person twice on the same date. Wikipedia's own article for this figure is titled 'Abraham the Great of Kashkar,' combining both epithets as one person, not two -- confirming this allowlist id and mar-abraham-of-kashkar represent the same historical founder of the Great Monastery. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 15",
       "observance": {
         "type": "fixed",
@@ -23562,6 +23721,7 @@
       "description": "The 'Harp of the Spirit' and poet-theologian.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 16",
       "observance": {
         "type": "fixed",
@@ -23674,6 +23834,7 @@
       "description": "Monk.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 17",
       "observance": {
         "type": "fixed",
@@ -23787,6 +23948,7 @@
       "description": "RESOLVED as a duplicate allowlist id for an already-sourced identity, saint-jacob-of-nisibis (July 17) -- deliberately left without a COE tag on any occurrence of this id, since tagging both would display the same person twice on the same date. Not an unresearched gap.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 18",
       "observance": {
         "type": "fixed",
@@ -23861,6 +24023,7 @@
       "description": "Abbot.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 19",
       "observance": {
         "type": "fixed",
@@ -23935,6 +24098,7 @@
       "description": "Primary commemoration of the See.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 20",
       "observance": {
         "type": "fixed",
@@ -24071,6 +24235,7 @@
       "description": "Great Saint of the East.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 22",
       "observance": {
         "type": "fixed",
@@ -24128,6 +24293,7 @@
       "description": "Baptist.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 23",
       "observance": {
         "type": "fixed",
@@ -24247,6 +24413,7 @@
       "description": "Martyr.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 26",
       "observance": {
         "type": "fixed",
@@ -24367,6 +24534,7 @@
       "description": "Pillar saint.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 28",
       "observance": {
         "type": "fixed",
@@ -24521,6 +24689,7 @@
       "description": "TOO GENERIC TO DISAMBIGUATE, 2026-08-31, not an unresearched gap in the ordinary sense: 'Shmon the Second (Simon)' is one of the most common names in Syriac hagiography -- multiple distinct historical figures share it (for example this corpus already separately sources John the Baptist, John of Dailam, John the Evangelist/Apostle, and John Zaroqa under their own disambiguated ids). Nothing in the allowlist itself, its March 2026 audit notes, or any source checked this session specifies which particular historical figure this bare id is meant to represent. Sourcing a date here would mean guessing which figure is intended, not confirming a real one -- left open rather than force-matched to an arbitrary candidate.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 30",
       "observance": {
         "type": "fixed",
@@ -24595,6 +24764,7 @@
       "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
       "type": "saint",
       "tags": [],
+      "tagsGap": "Retained deliberately with no tradition tag. These entries carried COE as their only tag and were stripped in the 2026-09-03 Layer 3 sourcing pass because no printed calendar or sanctoral could be found for them; the identity, name and description are kept so the entry can be re-sourced rather than re-researched from nothing. An entry in this state never resolves and never displays, by design.",
       "dayLegacy": "December 31",
       "observance": {
         "type": "fixed",

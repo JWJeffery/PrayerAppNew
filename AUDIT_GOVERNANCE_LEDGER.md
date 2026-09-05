@@ -1,3 +1,80 @@
+## Session 2026-09-05 continued -- three unblocked items cleared: dead identifiers removed, the 170
+## untagged sanctoral rows disclosed, dark-mode parity extended to every surface.
+## SEED_VERSION v230 -> v231.
+
+Josh's direction: do all three.
+
+### 1. Dead identifiers
+
+`config.heading` was defined four times in `SHARED_OFFICE_NAVIGATOR_CONFIGS` and read nowhere.
+Confirmed by auditing every occurrence of `heading` in `js/`: the only live reads are
+`hideHeadings` / `hideNestedHeadings` / `hideButtonRowsAfterHeadings` (different fields) and a DOM
+`panel.querySelector("h3")`. All four removed.
+
+**Swept the class, not the instance.** The same 2026-09-03 entry that recorded `config.heading` also
+recorded `#generic-tradition-label` as vestigial and left it in place. Checked: the id appears once
+in `index.html` and in no JS or CSS anywhere. The id attribute is removed; the "Office Settings"
+heading itself is untouched.
+
+**For Josh, stated rather than assumed:** this does **not** resolve the logged navigation governance
+conflict. It removes the last per-tradition heading strings from code, which points the same way as
+your uniform-headings directive, but `universal-office-navigation-architecture.md` still permits
+local panel naming. That is still your decision.
+
+### 2. The 170 untagged sanctoral rows
+
+The record said 169. It is **170** -- the count had drifted.
+
+Checked how they behave before touching them. `saintAppliesToContext()` returns `ok:false` for an
+empty `tags` array, so they correctly never resolve and never display. **They are not dead data to be
+swept.** The 2026-09-03 Layer 3 pass kept them deliberately, so unsourced identities could be
+re-sourced later rather than re-researched from nothing.
+
+The actual defect was that a bare `[]` says none of that and reads like a bug. Each of the 170 now
+carries a `tagsGap` field stating why it is untagged; the file-level `note` documents the convention
+and the count. Verified field-by-field that nothing else in any of the 1,321 entries changed.
+
+### 3. Dark-mode parity -- three surfaces, not one
+
+The record named `admin/admin.html` as "the one remaining surface without one." That was wrong.
+Sweeping every HTML surface in the repo found **three**:
+
+| Surface | Was | Now |
+|---|---|---|
+| `admin/admin.html` | dark-only | light palette + toggle |
+| `audit-ledger.html` | dark-only | light palette + toggle |
+| `synaxarium-review/index.html` | light-only | dark palette + toggle |
+
+Each is token-based, so each gained a token-override palette rather than a restyle, and each keeps
+its own colour vocabulary: the ledger's and the console's status hues are darkened for contrast on a
+light ground rather than replaced, and the Synaxarium's illuminated-ledger palette is lightened
+against a dark ground rather than swapped out.
+
+None of the three loads `js/office-ui.js`, so none can call `applyDarkMode()`. The 2026-09-03 boot
+rule is reproduced explicitly in each rather than approximated: OS `prefers-color-scheme` first,
+clock rule (light 06:00-18:00) as fallback, stored manual choice overriding both, nothing
+re-imposing the OS value mid-session. All three use the shared `data-app-dark-toggle` attribute, so
+they fall under the attribute-selector pattern rather than any list.
+
+**A real bug caught in this session's own work, before commit.** The first version persisted the
+boot-derived value to `localStorage`. That would have frozen the OS preference into storage on the
+first visit and broken the documented "boot default only" contract from the second visit onward.
+Boot now passes `persist=false`; only a deliberate toggle writes.
+
+### Verification
+
+All seven boot cases -- OS dark, OS light, no preference at both clock extremes, absent
+`matchMedia`, throwing `matchMedia`, and a stored manual choice contradicting the OS -- exercised
+headlessly against the real extracted page scripts for all three surfaces. 21 cases, all correct,
+and only the manual case writes to storage.
+
+`sanctoral.json`, `east-syriac.json` and `rubrics.json` all revalidated with `json.loads` before
+writing. `js/office-ui.js` passes `node --check`; every inline script in all three pages parses via
+`new Function()`; explanations harness 67/0; the Rogation controls from v230 re-run and still hold.
+Cache-bust bumped, `office-ui.js?v=218` -> `v219`.
+
+---
+
 ## Session 2026-09-05 continued -- ROGATION MOTWA CLOSE fixed; Farcings reference verified clean;
 ## both remaining "blocked" rows found already resolved. SEED_VERSION v229 -> v230.
 

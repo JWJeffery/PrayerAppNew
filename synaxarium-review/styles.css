@@ -29,6 +29,45 @@
   --font-mono: 'IBM Plex Mono', monospace;
 }
 
+/* Dark appearance, added 2026-09-05. This page was light-only. Every colour
+   above is a token, so dark mode is a token override rather than a restyle.
+   The illuminated-ledger vocabulary is kept: vellum becomes a dark ground,
+   ink becomes the light text on it, and rubric/prussian/ochre/moss are
+   lightened to hold their meaning against it rather than replaced. */
+html[data-theme="dark"]{
+  --vellum: #191b20;
+  --vellum-dim: #212429;
+  --vellum-card: #23262c;
+  --ink: #E4E0D6;
+  --ink-soft: #B0AEA6;
+  --ink-faint: #7C7A72;
+  --rule: #383B42;
+  --rubric: #E08A76;
+  --rubric-soft: #432A25;
+  --prussian: #9DB4D6;
+  --prussian-soft: #24303F;
+  --ochre: #D6AA6A;
+  --ochre-soft: #3B3021;
+  --moss: #9BB483;
+  --moss-soft: #29321F;
+  --shadow: 0 1px 2px rgba(0,0,0,0.40), 0 4px 16px rgba(0,0,0,0.34);
+}
+
+/* Appearance toggle. Matches the main app's control: a checkbox carrying
+   data-app-dark-toggle, checked = dark. */
+.app-dark-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+}
+.app-dark-toggle input{ accent-color: var(--ochre); cursor: pointer; }
+
 *{ box-sizing: border-box; }
 
 html{ -webkit-font-smoothing: antialiased; }

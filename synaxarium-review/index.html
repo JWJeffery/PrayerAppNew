@@ -26,6 +26,7 @@
     <button class="btn btn-ghost" id="btnImport" title="Load a previously exported decisions file">Import decisions</button>
     <input type="file" id="fileImport" accept=".json" hidden>
     <button class="btn btn-primary" id="btnExport" title="Download all recorded decisions">Export decisions</button>
+    <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-synaxarium" data-app-dark-toggle onchange="setSynaxariumDark(this.checked)"> Dark Mode</label>
   </div>
 </header>
 
@@ -51,5 +52,43 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="app.js"></script>
+<script>
+/* Appearance for the Synaxarium review tool. This page does not load
+   js/office-ui.js, so it cannot use applyDarkMode(); the boot rule is
+   reproduced deliberately rather than approximated, matching the rule set for
+   the main app on 2026-09-03: honour the OS prefers-color-scheme first, fall
+   back to the clock rule (light 06:00-18:00) where the OS expresses no
+   preference or the browser lacks matchMedia, and let a stored manual choice
+   override both. Nothing re-imposes the OS value mid-session. */
+function setSynaxariumDark(dark, persist) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    const box = document.getElementById('toggle-dark-synaxarium');
+    if (box) box.checked = dark;
+    // Only a deliberate choice is stored. Boot passes persist=false, so the
+    // OS preference is re-read on every visit rather than being frozen into
+    // storage the first time the page is opened.
+    if (persist === false) return;
+    try { localStorage.setItem('uo-synaxarium-dark', dark ? '1' : '0'); } catch (e) {}
+}
+(function bootSynaxariumAppearance() {
+    let stored = null;
+    try { stored = localStorage.getItem('uo-synaxarium-dark'); } catch (e) {}
+    if (stored === '1' || stored === '0') { setSynaxariumDark(stored === '1', false); return; }
+
+    let dark = null;
+    try {
+        if (window.matchMedia) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) dark = true;
+            else if (window.matchMedia('(prefers-color-scheme: light)').matches) dark = false;
+        }
+    } catch (e) { dark = null; }
+
+    if (dark === null) {
+        const h = new Date().getHours();
+        dark = !(h >= 6 && h < 18);
+    }
+    setSynaxariumDark(dark, false);
+})();
+</script>
 </body>
 </html>
