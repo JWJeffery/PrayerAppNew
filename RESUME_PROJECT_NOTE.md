@@ -202,8 +202,8 @@ ChatGPT message, was never verified here, and was wrongly written into this proj
 
 `Synaxarium-Constantinople.txt` was supplied 2026-09-05 and **is not the EOR baseline.** It is
 Delehaye's 1902 Bollandist edition of a tenth-century Byzantine synaxarion — 82% Greek, rough OCR,
-and a witness to what Constantinople kept then, not what the OCA keeps now. Useful as a historical
-corroborating witness under OCA; useless as a bulk date source. **Web-fetching OCA cannot carry
+and a witness to what Constantinople kept then, not what the OCA keeps now. Josh's ruling: it is not a witness on this
+project and is not to be registered as one. Do not re-add it. **Web-fetching OCA cannot carry
 the bulk** — 356 EOR rows across 326 distinct days, one day per URL, and this environment refuses
 any URL not already seen in a prior result, so arbitrary dates are only reachable by walking OCA's
 own day-to-day links. Measured, not assumed. **Do not attempt a 326-fetch pass.**

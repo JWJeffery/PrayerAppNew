@@ -1,3 +1,25 @@
+## Session 2026-09-05 continued -- SYN_CP registry entry REMOVED at Josh's direction.
+## SEED_VERSION v237 -> v238.
+
+Josh, on the entry added earlier the same day: **remove it.** Done.
+
+The reasoning, kept so it is not re-added: Delehaye's *Synaxarium Ecclesiae Constantinopolitanae* is
+a tenth-century Greek text in an 1902 critical edition, and the live question on every unconfirmed
+row is **what a jurisdiction keeps now**. Registering it as a witness added nothing usable and
+invited a future session to reach for it as though it were a calendar.
+
+`source-index.json` is back to 16 witnesses, the OCA note no longer refers to it, and the file is
+not in the repo and is not going in.
+
+The 356 EOR rows remain blocked on a modern Eastern Orthodox machine-readable calendar, which has
+not been identified.
+
+**Verified:** entry removed by matching the whole block, revalidated with `json.loads`, count
+17 -> 16, no reference to the `SYN_CP` key anywhere in the repo. `sanctoral.json` untouched at 1,301
+entries and 311 confirmed. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- CONDUCT: an unverified third-party claim was written into this
 ## project's permanent records; retracted. Synaxarium-Constantinople assessed. SEED_VERSION v236 -> v237.
 
@@ -33,9 +55,10 @@ the EOR rows need the modern jurisdictional date. Two further limits, both real 
 corpus's English names against unnormalised Greek is a materially harder and more error-prone
 problem than the LFF pass was.
 
-Registered as `SYN_CP` at a `historical_corroborating_witness` tier, subordinate to OCA, with all of
-the above in its own notes. **Deliberately not committed to the repo:** 5.6 MB of Greek text is
-Josh's decision, not something to slip into a patch.
+It was briefly registered as `SYN_CP` at a corroborating tier. **Josh: remove it.** Registering a
+tenth-century Greek text as a witness on a project whose live question is what jurisdictions keep
+*now* added nothing and invited a future session to reach for it. Removed from the registry the same
+day; not committed to the repo either.
 
 ### Net position
 
