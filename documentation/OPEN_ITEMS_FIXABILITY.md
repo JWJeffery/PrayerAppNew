@@ -52,7 +52,7 @@ the corpus is in place, the audit method is established, and the work would proc
 | Great Fast's own Sunday Evening Service | pp.206–211 | |
 | Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
 | ~~Pre-Fast Sunday folding rule~~ **RULE RESOLVED 2026-09-04** | — | The complete cascade is now recorded in `rubrics.json`. Implementation remains open: needs the count of Sundays after Epiphany per year plus Node simulation. No longer source-blocked. |
-| **NEW** — Fast Evening Service not built | — **pages already held** | `ramsha` has no Fast sequence; Fast evenings render the ordinary ferial one. Maclean pp.211–219. Blocks Middle Friday wiring. Buildable now. |
+| ~~Fast Evening Service not built~~ **BUILT 2026-09-04** | — | Two sequences from pp.211-213 and p.220. Middle Friday wired with it; no `NOT-YET-WIRED` sequence remains. |
 | Layer 3 East Syriac saints calendar | pp.264–283 **now held** | No longer source-blocked. The appendix is in hand; the folding rule above governs how its Epiphany-season memorials collapse in short years. |
 
 **Precedent, 2026-09-04:** Josh supplied pp.103–108 within hours of this file being written and the

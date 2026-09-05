@@ -4892,6 +4892,44 @@ async function renderEastSyriac() {
     // (correctly, given what was in hand at the time) only spliced a bare
     // Canon citation into the ordinary sequence before that day's
     // Tishbukhta, since the fuller structure hadn't been obtained yet.
+    // During the Great Fast, ferial Ramsha (weekdays only) is its own office,
+    // not the ordinary ferial evening service. Maclean gives it in full at
+    // pp.211-213 under "Weeks of the Mysteries in the Fast", and p.220 directs
+    // that Ordinary Weeks follow the same order "except that before the Suba'a
+    // they always say the Lord's Prayer and its collects (page 212)" -- i.e.
+    // restoring exactly what the Mysteries rubric says is omitted there. Until
+    // 2026-09-04 Ramsha had no Fast branch at all, so every weekday evening of
+    // the Fast rendered the ordinary ferial sequence.
+    //
+    // Three slots are day-specific. Maclean does not reprint them: he sends the
+    // reader back to that weekday's own ferial text ("the First Shuraya for the
+    // day (page 3, etc.)", "the Evening Anthem (page 11, etc.)"). They are
+    // therefore resolved by reading the day's OWN ordinary Ramsha sequence and
+    // lifting the matching component out of it, rather than by hardcoding a
+    // day-to-id map -- the per-day/per-cycle ids are not uniformly named, and a
+    // map would silently rot if any were renamed.
+    let ramshaFastSequenceName = null;
+    let ramshaFastDaySourceKey = null;
+    if (officeKey === 'ramsha' && isGreatFast && dayName !== 'sunday' && typeof EastSyriacCalendar !== 'undefined') {
+        const weekInSeason = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).weekInSeason;
+        const isMysteriesWeek = [1, 4, 7].includes(weekInSeason);
+        ramshaFastSequenceName = isMysteriesWeek ? 'ramsha-fast-mysteries-sequence' : 'ramsha-fast-ordinary-sequence';
+
+        // MIDDLE FRIDAY. Resolved from the Kalendar (Maclean pp.270-272), which
+        // lists "Middle (Fourth) Monday of the Fast" ... "Middle Friday of the
+        // Fast" between the Fourth and Fifth Sundays -- the parenthetical is
+        // Maclean's own, so Middle = the fourth week of the Great Fast. Friday
+        // uniquely has a third set of propers (pp.48-49) alongside First
+        // (pp.41-47) and Last (pp.61-65). Those propers feed the day-specific
+        // slots of the Fast evening structure; they are not a substitute for it.
+        const isMiddleFriday = (dayName === 'friday' && weekInSeason === 4);
+        ramshaFastDaySourceKey = isMiddleFriday
+            ? 'middle-friday-ramsha-sequence'
+            : `${dayName}-ramsha-${cycle}-sequence`;
+
+        sequenceKey = ramshaFastSequenceName;
+    }
+
     let lelyaFastSequenceName = null;
     if (officeKey === 'lelya' && isGreatFast && dayName !== 'sunday' && typeof EastSyriacCalendar !== 'undefined') {
         const weekInSeason = EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).weekInSeason;
@@ -5037,6 +5075,24 @@ async function renderEastSyriac() {
             if (id === '__DAY_TISHBUKHTA__') return `esy-lelya-tishbukhta-${dayName}`;
             return id;
         });
+    }
+
+    // Resolve the Fast Ramsha day-specific slots out of the day's own ordinary
+    // Ramsha sequence (or Middle Friday's, on the fourth Friday of the Fast).
+    // Matching is by id substring against that real sequence, so a renamed
+    // component fails loudly as an unresolved marker rather than silently
+    // rendering the wrong day's text.
+    if (ramshaFastSequenceName && sequence) {
+        const daySeq = appData.eastSyriacRubrics?.[ramshaFastDaySourceKey] || [];
+        const pick = (needle) => daySeq.find(id => id.includes(needle)) || null;
+        const slots = {
+            '__DAY_FIRST_SHURAYA__':  pick('first-shuraya'),
+            '__DAY_SECOND_SHURAYA__': pick('second-shuraya'),
+            '__DAY_EVENING_ANTHEM__': pick('evening-anthem')
+        };
+        sequence = sequence
+            .map(id => (id in slots) ? slots[id] : id)
+            .filter(Boolean);
     }
 
     // Blessing of the Months: a set of anthems said at the Evening Service

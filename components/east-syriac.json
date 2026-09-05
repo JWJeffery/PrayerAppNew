@@ -1,4 +1,28 @@
 [
+    {
+      "id": "esy-ramsha-fast-hulala-rubric",
+      "title": "Hulala",
+      "text": "<p class=\"rubric-text\">They say the proper Hulala, with its prayer (pp. 86 to 95).</p>",
+      "meta": { "source": "Maclean 1894, p.211 (Weeks of the Mysteries in the Fast, Evening Service)." }
+    },
+    {
+      "id": "esy-ramsha-fast-no-anthems-note",
+      "title": "The Anthems in the Fast",
+      "text": "<p class=\"rubric-text\">They say the First Shuraya for the day. The First and Second Anthems are not said in the Fast.</p>",
+      "meta": { "source": "Maclean 1894, p.212 and its footnote 1: 'The First and Second Anthems are not said in the Fast.'" }
+    },
+    {
+      "id": "esy-ramsha-fast-third-shuraya-suba-rubric",
+      "title": "Third Shuraya and the Suba'a",
+      "text": "<p class=\"rubric-text\">Third Shuraya from the Khudhra, and the Suba‘a (Compline) if it is said here, with its proper collect, but <em>without</em> Our Father and its collects “May thy Name” and “In heaven and on earth” (as on Memorials in the Festival Service, p.82). The Martyrs’ Anthem is not said in the Fast.</p><p class=\"rubric-text\">Maclean’s note on custom: the practice is usually to say Compline here, in the middle of the Evening Service; but some say it directly after the Evening Service, in which case U. directs Our Father and the rest to be said directly after the Shuraya. The former custom was to separate the services by an interval and to say Compline at bedtime.</p>",
+      "meta": { "source": "Maclean 1894, p.212, with its footnotes 5 and 6." }
+    },
+    {
+      "id": "esy-ramsha-fast-khudhra-verses-rubric",
+      "title": "Verses, Canon and Tishbukhta from the Khudhra",
+      "text": "<p class=\"rubric-text\">They say the verses appointed in the Khudhra; then the prayer of the Shuraya, and the Canon and Tishbukhta in the Khudhra.</p>",
+      "meta": { "source": "Maclean 1894, p.212. ORDERING CAVEAT, disclosed rather than silently resolved: in the source this rubric stands between the prayer 'Make us worthy' (p.82) and the Karuzutha 'O mighty Lord, Almighty' (p.82). Both of those, together with the Suba'a itself, are bundled inside the single shared component esy-festival-suba-a-compline, which was built for the Festival service. This rubric is therefore placed AFTER that bundle, which puts the Khudhra verses after the Karuzutha rather than before it. Splitting esy-festival-suba-a-compline into its three parts is the proper fix, but that component is shared with the Festival service and re-cutting it is a scope decision for Josh, not a unilateral change made while building a different office." }
+    },
   {
     "id": "esy-opening-formula",
     "title": "The Opening",

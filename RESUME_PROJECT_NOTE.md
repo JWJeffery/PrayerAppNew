@@ -1,5 +1,67 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- FAST EVENING SERVICE BUILT and MIDDLE FRIDAY WIRED.
+## SEED_VERSION v225 -> v226.
+
+Closes the gap found earlier the same day: `ramsha` had no Fast branch at all. `sapra` and `lelya`
+were special-cased for `isGreatFast`; `ramsha` was not, so **every weekday evening of the Great Fast
+was rendering the ordinary ferial service**.
+
+### Built
+
+From Maclean pp.211-213 (Weeks of the Mysteries, Evening Service) and p.220, which directs that
+Ordinary Weeks follow the same order *"except that before the Suba'a they always say the Lord's
+Prayer and its collects (page 212)"* — restoring exactly what the Mysteries rubric says is omitted
+there. Two sequences: `ramsha-fast-mysteries-sequence` (35 items) and `ramsha-fast-ordinary-sequence`
+(37), differing only by that pair.
+
+**Four new rubric components, all cited:** the proper Hulala with its prayer (p.211); the note that
+the First and Second Anthems are not said in the Fast (p.212 fn.1); the Third Shuraya and Suba'a
+rubric, carrying Maclean's own footnotes on where custom places Compline (p.212 fns.5-6); and the
+Khudhra verses, Canon and Tishbukhta rubric (p.212). Corpus 439 -> 443, zero duplicate ids.
+
+### Middle Friday wired
+
+Using the trigger resolved from the Kalendar earlier today: Middle = the **fourth** week of the Fast
+(pp.270-272, "Middle **(Fourth)** Monday of the Fast" ... "Middle Friday of the Fast"). The
+`NOT-YET-WIRED` marker is retired, and no sequence in the repo carries one.
+
+**The architectural point — this is what blocked wiring yesterday.** Middle Friday's propers are not
+a *substitute* for the Fast evening structure; they **feed** it. Maclean never reprints day-specific
+material in the Fast office — he sends the reader back to that weekday's own ferial text ("the First
+Shuraya for the day (page 3, etc.)", "the Evening Anthem (page 11, etc.)"). So the Fast sequences
+carry three placeholders — `__DAY_FIRST_SHURAYA__`, `__DAY_SECOND_SHURAYA__`,
+`__DAY_EVENING_ANTHEM__` — which the engine resolves by reading the day's **own** ordinary ramsha
+sequence and lifting the matching component out of it, or Middle Friday's sequence on the fourth
+Friday.
+
+**Resolution is by id substring against a real sequence, not a hardcoded day-to-id map, deliberately.**
+The per-day/per-cycle ids are *not* uniformly named — `monday`/qdham is `esy-monday-first-shuraya`
+but `tuesday`/qdham is `esy-tuesday-qdham-first-shuraya` — so a map would have been wrong on day one
+and would rot silently on any rename. An unresolvable marker now fails loudly rather than quietly
+rendering another day's text.
+
+**Simulated before commit**, per standing practice: all twelve day/cycle combinations resolve to real
+existing components, and Middle Friday resolves to its own three propers.
+
+### A disclosed ordering caveat
+
+At p.212 the Khudhra-verses rubric stands between the prayer "Make us worthy" and the Karuzutha
+"O mighty Lord, Almighty" — but all three of those, with the Suba'a itself, are bundled inside the
+single shared component `esy-festival-suba-a-compline`, built for the Festival service. The rubric is
+therefore placed after that bundle, putting the verses after the Karuzutha rather than before.
+Splitting that component into its three parts is the correct fix, but it is shared with the Festival
+service and re-cutting it is a scope decision for Josh, not something to do unilaterally while
+building a different office. The caveat is written into the new component's own meta.
+
+### Verification
+
+54 sequences, zero dangling refs, all JSON valid, `node --check` clean on `office-ui.js`, harness
+67/0. Cache-bust bumped manually as required: `office-ui.js` v216 -> v217, `prayers.js` v205 -> v206.
+
+---
+
+
 ## Session 2026-09-04 continued -- KALENDAR APPENDIX (Maclean pp.264-283). Two long-open questions
 ## RESOLVED with exact source warrant. Nothing wired. SEED_VERSION v224 -> v225.
 
