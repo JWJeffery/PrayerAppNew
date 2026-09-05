@@ -10,11 +10,12 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v229`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v230`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
-session. Run `git log --oneline -1` against a fresh clone instead.
+session. Run `git log --oneline -1` against a fresh clone instead. Cache-bust params are currently
+`office-ui.js?v=218`, `prayers.js?v=206`.
 
 ---
 
@@ -27,7 +28,10 @@ particular read `AUDIT_GOVERNANCE_LEDGER.md`, `documentation/OPEN_ITEMS_FIXABILI
 
 **Do not trust this note, or any stored memory, about whether something is blocked.** That question
 was answered wrongly twice in one session from recollection. `OPEN_ITEMS_FIXABILITY.md` exists
-because of it. Check there first.
+because of it. Check there first — **and check it against the ledger.** On 2026-09-05 that file was
+found carrying two rows as "blocked" which the ledger had closed five days earlier, and the
+2026-09-04 rewrite of this note copied the error forward. The fixability file records what blocks an
+item; it is not proof the item is still open.
 
 ---
 
@@ -113,12 +117,11 @@ way on 2026-09-04, and **pp.37–67 on 2026-09-05**; each unblocked real work th
 
 ## 7. What is open
 
-### Blocked on Maclean pages not yet held
-- **Great Fast's own Sunday Evening Service** — pp.206–211
-- **Farcings loose ends** (Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit) — pp.236–248
-
-*(The seasonal-rubric sweep closed 2026-09-05 — Josh supplied pp.37–67 and all seven pages confirmed
-the rubric. See §8.)*
+### Blocked on Maclean pages
+**Nothing.** As of 2026-09-05 no open item is waiting on a Maclean page. Josh supplied pp.37–67 and
+pp.96–98 / 206–211 / 236–248 the same day, which closed the last three rows. The one surviving
+Farcings item — the Ps.100 "In the beginning" variant — needs the **Khudhra**, not Maclean, and
+never was a Maclean question.
 
 ### Unblocked — startable now
 - **Layer 3 East Syriac saints calendar.** The Kalendar appendix (pp.264–283) is now held. Josh's
@@ -185,6 +188,18 @@ the rubric. See §8.)*
   stays without one.
 - **p.49 and p.65 "Royal Anthem" do NOT unblock the Royal Anthem item.** Both are ferial weekday
   alternatives; the open item is the Sunday/festival Royal Anthems in the Khudhra, outside Maclean.
+- **There is no separate Great Fast Sunday Evening Service.** Settled 2026-08-30, re-confirmed from
+  the page 2026-09-05: p.211 opens "WEEKS OF THE MYSTERIES IN THE FAST **[On Week Days]**" straight
+  after the Sunday Morning Service. Fast Sundays use the ordinary Festival Evening Service. Do not
+  reopen this as a missing-content question.
+- **The Farcings reference is verified.** `esy-farcings-of-the-psalms-reference` was checked end to
+  end against a clean scan of pp.236–248 on 2026-09-05 — all 150 psalms, four canticles, twelve
+  "Or" alternatives and all twenty-two Ps.119 clauses correct. Despite being transcribed in the same
+  session as the fabrication incident, it is sound.
+- **A documented rule is not an enforced rule.** The Motwa close carried its own "except in the Fast
+  and the Rogation of the Ninevites" note from the day it was built, and the Rogation half was
+  enforced nowhere for months. When a component's metadata states a condition, check the renderer
+  actually applies it.
 
 ---
 

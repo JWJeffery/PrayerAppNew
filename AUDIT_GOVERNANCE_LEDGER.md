@@ -1,3 +1,89 @@
+## Session 2026-09-05 continued -- ROGATION MOTWA CLOSE fixed; Farcings reference verified clean;
+## both remaining "blocked" rows found already resolved. SEED_VERSION v229 -> v230.
+
+Josh supplied Maclean pp.96-98, 206-211 and 236-248 -- the page ranges behind the two rows still
+listed as blocked on Maclean.
+
+### First finding: both rows were stale, not blocked
+
+**Neither row was actually open.** Both were resolved on 2026-08-30 and carried forward stale ever
+since, into `documentation/OPEN_ITEMS_FIXABILITY.md` and then into the resume note rewritten
+2026-09-04:
+
+- **Great Fast's own Sunday Evening Service** -- closed 2026-08-30 as *not existing separately in
+  the source*. The upload independently confirms it: p.207 runs from the Sunday-in-Fast Night
+  Service material straight into "AT THE MORNING SERVICE", and p.211 opens the next section headed
+  **"WEEKS OF THE MYSTERIES IN THE FAST [On Week Days]"** -- the bracket is Maclean's own. There is
+  no Sunday Fast Evening Service between them.
+- **Farcings loose ends** -- both closed 2026-08-30. Palm Sunday's Ps.96-98 by disclosed editorial
+  completion; the Ps.100 "In the beginning" variant confirmed genuinely absent from the Farcings
+  appendix and still needing a Khudhra source. That second one is a real open item, but it is **not**
+  blocked on these pages, which are now held and do not contain it.
+
+Worth naming plainly: `OPEN_ITEMS_FIXABILITY.md` exists precisely so blocked/unblocked questions are
+not answered from recollection, and it had itself gone stale. It has to be checked **against the
+ledger**, not merely consulted.
+
+### Second finding: a real live defect, from a rule that was written down and never applied
+
+pp.96-97 print the rubric governing the Motwa's fixed close:
+
+> It ends daily on ferias as follows, except on Wednesdays, and except in the Fast and the Rogation
+> of the Ninevites.
+
+`esy-lelya-motwa-close`'s own `meta.note` had recorded that rule in full since the component was
+built. Only two thirds of it were ever enforced, and both of those only structurally, as a
+by-product of how sequences were laid out rather than as a deliberate rule:
+
+| Clause | Enforced? | How |
+|---|---|---|
+| except on Wednesdays | yes | Wednesday's Lelya sequences never held the id |
+| except in the Fast | yes | the Fast routes to `lelya-fast-{mysteries,ordinary}-sequence` |
+| except in the Rogation | **no** | nothing anywhere removed it |
+
+So **Rogation Monday and Tuesday rendered the close against Maclean's explicit direction.** Rogation
+Wednesday was unaffected, having never carried the id.
+
+Fixed in `js/office-ui.js`, inside the existing `isNineveh` block. The rubric is now also **rendered**
+on the component, so the reader can see the close is conditional -- the same disclosure principle
+behind the seasonal-rubric sweep closed earlier today.
+
+**Swept the class, not the instance.** Every component whose metadata states a Fast or Rogation
+exception was checked for enforcement. `esy-suba-a-memorial-rubric` is memorial-only and lives solely
+in `endana-sequence`, so it is structurally correct; `esy-ramsha-fast-no-anthems-note` is itself
+Fast-only and lives in the Fast sequences. `esy-lelya-motwa-close` was the only unenforced one.
+
+### Third: a verification that came back clean
+
+`esy-farcings-of-the-psalms-reference` was transcribed on 2026-08-29 from OCR, in the same session as
+the confirmed fabrication incident about this exact page range. The clean scan of pp.236-248 was used
+to check it end to end.
+
+All 150 psalm farcings match, with 115 and 116 correctly carried as a single entry per Maclean's own
+footnote that they are one psalm in the Syriac. All four canticle farcings, all twelve "Or"
+alternatives, all six "Canon for Christmas" insertions, both "At the end of the Psalm" verses, all
+three "At verse N" insertions and all twenty-two alphabet clauses of Psalm 119 are present and in
+order. **No content defect.**
+
+One deviation is disclosed rather than quietly corrected: four Psalm 119 clause labels are normalised
+-- Kheth, Teth, 'E (Ain), Sadhe -- where Maclean prints Kheith, Teith, 'E and Sadhi. The clause texts
+themselves are exact.
+
+pp.96-98's other components (`esy-lelya-motwa-prayer`, the Shubakha prayer and all six weekday
+Shubakha, `esy-lelya-tishbukhta-monday` and `-tuesday`) were checked against the scan in the same
+pass and are exact.
+
+### Verification
+
+`json.loads` validated before writing. 448 components, zero duplicate ids, zero dangling refs across
+57 sequences. `node --check` passes; explanations harness 67/0; `audit-ledger.html`'s inline script
+re-validated via `new Function()`. Node simulation over the real Rogation triduum of 2026, 2027 and
+2028 confirms the close is dropped on Monday and Tuesday and that an ordinary Monday still keeps it;
+48 Rogation days across 2025-2040 confirmed never to overlap the Great Fast, so the new filter and
+the Fast routing cannot collide. Cache-bust bumped, `office-ui.js?v=217` -> `v218`.
+
+---
+
 ## Session 2026-09-05 -- SEASONAL-RUBRIC SWEEP CLOSED against Maclean pp.37-67.
 ## SEED_VERSION v228 -> v229.
 

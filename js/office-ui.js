@@ -5040,6 +5040,21 @@ async function renderEastSyriac() {
                 sequence = sequence.map(id => id === swap[0] ? swap[1] : id);
             }
 
+            // Motwa close: Maclean's own rubric at p.96 states the fixed
+            // close "ends daily on ferias as follows, except on Wednesdays,
+            // and except in the Fast and the Rogation of the Ninevites."
+            // The Wednesday and Fast halves of that rule were already
+            // enforced structurally -- Wednesday's own Lelya sequences never
+            // contained esy-lelya-motwa-close, and the Fast routes to
+            // lelya-fast-{mysteries,ordinary}-sequence, which do not contain
+            // it either -- but the Rogation half was never enforced anywhere,
+            // so Rogation Monday and Tuesday were still rendering it. The
+            // component's own meta.note had recorded the full rule since it
+            // was built; this was a documented condition that the engine
+            // never applied. Wednesday of the Rogation is unaffected, having
+            // never carried the id in the first place.
+            sequence = sequence.filter(id => id !== 'esy-lelya-motwa-close');
+
             // Hallelujah between the Hulali: a distinctive extended form
             // said during the Rogation (pp.227-228). Maclean's own text
             // states only that it is said "between the Hulali," without

@@ -49,8 +49,8 @@ the corpus is in place, the audit method is established, and the work would proc
 | ~~Ferial Morning Service dedicated audit~~ **DONE 2026-09-04** | pp.103–108 | Josh supplied the pages; audit complete, two defects found and fixed. See dashboard `esy:sapra:ferial-morning-audit`. |
 | ~~First/Middle Friday audits~~ **DONE 2026-09-04** | pp.41–49 | Content exact; a systemic seasonal-rubric defect was found and partly swept. Middle Friday remains unwired — needs the Kalendar appendix, not these pages. |
 | ~~seasonal-rubric sweep, 7 components~~ **DONE 2026-09-05** | pp.37–67 **supplied** | All seven pages confirm the rubric; restored from the pages, not by analogy. p.57 prints a genuine variant (“Varies *according to* the season”), preserved verbatim. Wednesday still correctly excluded. |
-| Great Fast's own Sunday Evening Service | pp.206–211 | |
-| Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
+| ~~Great Fast's own Sunday Evening Service~~ **WAS NEVER OPEN — resolved 2026-08-30** | pp.206–211 **supplied 2026-09-05** | There is no separate Sunday Fast Evening Service in Maclean. Confirmed independently by the upload: p.211 opens “WEEKS OF THE MYSTERIES IN THE FAST **[On Week Days]**” directly after the Sunday Morning Service. This row was stale. |
+| ~~Farcings loose ends~~ **RESOLVED 2026-08-30** | pp.236–248 **supplied 2026-09-05** | Palm Sunday closed by disclosed editorial completion. The Ps.100 “In the beginning” variant is genuinely absent from the Farcings appendix and needs a **Khudhra** source — it was never blocked on these pages. This row was stale. |
 | ~~Pre-Fast Sunday folding rule~~ **RULE RESOLVED 2026-09-04** | — | The complete cascade is now recorded in `rubrics.json`. Implementation remains open: needs the count of Sundays after Epiphany per year plus Node simulation. No longer source-blocked. |
 | ~~Fast Evening Service not built~~ **BUILT 2026-09-04** | — | Two sequences from pp.211-213 and p.220. Middle Friday wired with it; no `NOT-YET-WIRED` sequence remains. |
 | Layer 3 East Syriac saints calendar | pp.264–283 **now held** | No longer source-blocked. The appendix is in hand; the folding rule above governs how its Epiphany-season memorials collapse in short years. |
@@ -65,7 +65,8 @@ dashboard `esy:sapra:fast-and-festival-morning-audit`.
 
 **Remaining Maclean-dependent rows** (updated 2026-09-05, after pp.37–67 were supplied and the
 seasonal-rubric sweep closed) are the
-Great Fast's own Sunday Evening Service (pp.206–211) and the two Farcings loose ends (pp.236–248).
+**none.** Every Maclean-dependent row above has been closed. The one genuinely open Farcings item
+(the Ps.100 “In the beginning” variant) needs the **Khudhra**, not Maclean.
 The Pre-Fast folding rule and the Layer 3 saints calendar are no longer source-blocked — pp.264–283
 are held.
 
@@ -121,3 +122,13 @@ These need no new source and no decision from Josh. They can be started at any t
 3. **When the repo and a stored note disagree about whether something is blocked, the repo wins.**
    The Cathedral/Monastic axis is the worked example: the note said dead control, the repo said
    deliberately deleted pending research, and the repo was right.
+
+
+---
+
+## Caution, added 2026-09-05
+
+This file went stale. Two rows sat here as “blocked on Maclean pages” for five days after the
+ledger had already closed them, and the resume note rewritten 2026-09-04 copied the error forward.
+**Check a row against `AUDIT_GOVERNANCE_LEDGER.md` before reporting it as open.** This file records
+what blocks an item; it is not itself proof the item is still open.
