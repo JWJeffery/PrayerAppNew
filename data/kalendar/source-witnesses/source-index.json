@@ -76,12 +76,12 @@
     "authority_tier": "great_church_supplement",
     "notes": "Great Church / Oriental Orthodox source witness."
   },
-  "COFE_2026": {
-    "label": "English Calendar 2026",
+  "ACOE_WE_2026": {
+    "label": "Assyrian Church of the East, Diocese of Western Europe \u2014 Ecclesiastical Calendar 2026",
     "path": "data/kalendar/source-witnesses/English_2026_2.pdf",
-    "kind": "anglican_calendar_reference",
-    "authority_tier": "anglican_calendar_reference",
-    "notes": "English Anglican calendar/reference witness; exact source label to be refined if used."
+    "kind": "church_of_the_east_diocesan_calendar",
+    "authority_tier": "church_of_the_east_diocesan",
+    "notes": "MISLABELLED UNTIL 2026-09-05. Registered as COFE_2026, \"English Calendar 2026\", an \"anglican_calendar_reference\" -- on the strength of the filename alone, its own note conceding \"exact source label to be refined if used.\" The file is not an English Anglican calendar. Its title page reads \"Holy Apostolic Catholic Assyrian Church of the East, Diocese of Western Europe -- Ecclesiastical Calendar 2026\", with the Syriac heading above it and Mar Awa III and Mar Awraham Youkhanis named on the following pages. It is a Church of the East DIOCESAN calendar, the same kind of witness as the ACOE Diocese of California calendars that carried the 59 COE confirmations on 2026-09-03. No confirmation ever rested on it under the wrong label, but a future session looking for an Anglican witness would have found it and cited it."
   },
   "HAPGOOD": {
     "label": "Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church, 1906",

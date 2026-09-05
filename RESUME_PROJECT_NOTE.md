@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v234`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v235`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
@@ -179,7 +179,15 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 | OOR | 63 | 305 |
 | untagged | 0 | 150 |
 
-**The instrument for the rest is already built.** `data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`
+**Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
+worked example. **The repo holds no Eastern Orthodox jurisdictional calendar, no Roman calendar or
+martyrology, and for Oriental Orthodox only the Ethiopian Synaxarium.** ODS / ODCC / BOS are
+reference works and are marked in `source-index.json` as *not* calendar authorities; Hapgood is
+Byzantine explanatory apparatus, not a calendar. A Roman calendar plus one EOR jurisdictional
+calendar would reach 528 rows directly. **Which jurisdiction controls for EOR, and which Roman
+calendar, are Josh's decisions and are not yet made.**
+
+**The instrument for the Anglican remainder is already built.** `data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`
 holds 1,194 ranked candidates across all 366 days, each with its SIN, source witnesses (BCP; LFF;
 HWHM; GCW; FAS; SEC; AM) and source tier. `synaxarium-review/` is the review UI over it. Every row
 is still `decision_status: Pending`. Use that, not another ad-hoc matcher.

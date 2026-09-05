@@ -1,3 +1,75 @@
+## Session 2026-09-05 continued -- a witness registered as an Anglican calendar turned out to be a
+## Church of the East diocesan calendar; the EOR/LAT/OOR sourcing gap scoped. SEED_VERSION v234 -> v235.
+
+Josh's method statement -- *"just like with the Church of the East, communion and diocesan calendars
+are going to give us dates"* -- is right, and the COE tranche proves it: 59 dates confirmed from ACOE
+Diocese of California calendars.
+
+So: which such calendars does the repo already hold for the other three traditions? **None. And one
+registry entry is wrong.**
+
+### The mislabelled witness
+
+`source-index.json` registered `English_2026_2.pdf` as **`COFE_2026`, "English Calendar 2026", kind
+`anglican_calendar_reference`** -- assigned from the filename, the entry's own note conceding *"exact
+source label to be refined if used."*
+
+Opened it. The title page reads **"Holy Apostolic Catholic Assyrian Church of the East, Diocese of
+Western Europe — Ecclesiastical Calendar 2026"**, Syriac heading above, Mar Awa III and Mar Awraham
+Youkhanis on the following pages. It is a **Church of the East diocesan calendar** -- the same class
+of witness as the California calendars already used.
+
+Re-registered as `ACOE_WE_2026` with the correct label, kind and tier, the error kept in its own
+notes rather than quietly overwritten. No confirmation had ever rested on it under the wrong label
+-- checked -- but a future session hunting an Anglican witness would have found it and cited it.
+
+### The actual sourcing position
+
+Of the 14 registered witnesses:
+
+| Kind | Witnesses |
+|---|---|
+| Anglican calendars / martyrology | LFF, GCW, HWHM, BCP, SEC, FAS, AM |
+| Reference works, explicitly *not* calendar authorities | ODS, ODCC, BOS |
+| Byzantine **explanatory** apparatus, not a calendar | HAPGOOD |
+| Church of the East diocesan calendar | ACOE_WE_2026 |
+| Oriental Orthodox synaxarial witness | ETH (Ethiopian only) |
+| Compressed text witness | LOTS |
+
+**No Eastern Orthodox jurisdictional calendar. No Roman calendar or martyrology. For Oriental
+Orthodox, only Ethiopian -- one of four churches.**
+
+### The 992 unconfirmed rows, by exact tag combination
+
+| Tags | Rows |
+|---|---|
+| EOR only | 241 |
+| LAT only | 228 |
+| OOR only | 186 |
+| untagged | 150 |
+| EOR+OOR | 63 |
+| ANG only | 47 |
+| EOR+LAT+OOR | 28 |
+| ANG+EOR+LAT+OOR | 13 |
+| LAT+OOR | 13 |
+| ANG+LAT | 12 |
+| EOR+LAT | 6 |
+| ANG+EOR | 3 |
+
+A Roman calendar plus one Eastern Orthodox jurisdictional calendar would reach **528 rows directly**
+and contribute to a further 123 multi-tagged ones.
+
+**Recorded rather than guessed at:** which jurisdiction controls for EOR, and which Roman calendar,
+are Josh's decisions.
+
+### Verification
+
+`source-index.json` edited by targeted string replacement, revalidated with `json.loads`, entry
+count unchanged at 14. `grep` confirms no remaining reference to the `COFE_2026` key anywhere in the
+repo. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- 62 further dates confirmed from the project's own Kalendar v0.1
 ## candidate matrix. SEED_VERSION v233 -> v234.
 
