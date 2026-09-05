@@ -1,3 +1,64 @@
+## Session 2026-09-05 continued -- all six OCA Desk Calendars parsed and cross-validated; 158 further
+## Eastern Orthodox dates confirmed. SEED_VERSION v239 -> v240.
+
+Josh committed the six editions (2021-2026) to `data/kalendar/source-witnesses/`, so they can be
+processed directly instead of one large Drive read at a time.
+
+### Parsing a multi-column spread
+
+The desk calendar is a column layout, so naive extraction interleaves days. The parser locates each
+day-number row, records its column boundaries, and slices the following lines by those columns.
+
+**Two OCR traps, found by checking rather than anticipated:**
+
+1. Every page carries **Title-Case mini-calendars** for the adjacent months in its corners. A
+   case-insensitive month match therefore assigned February's saints to January. Fixed by matching
+   the **ALL-CAPS page heading only**, which the mini-calendars never use.
+2. Several left-hand pages **lose their heading entirely** in OCR. Their month is inferred from the
+   next labelled page.
+
+Coverage after both fixes: **361 of 366 days** carried by at least one edition, **94 days by all
+six**.
+
+### Why six years matters
+
+A fixed commemoration must fall on the same month and day every year. Agreement across editions is
+therefore independent confirmation, and disagreement is a signal. **Each `ruleSource` records how
+many editions agree and names them**, so the strength of a row is visible rather than flattened into
+a single assertion:
+
+| Editions agreeing | Rows |
+|---|---|
+| 6 | 12 |
+| 5 | 16 |
+| 4 | 12 |
+| 3 | 34 |
+| 2 | 36 |
+| **1 only** | **48** |
+
+That last group is marked as single-edition in its own citation rather than presented as equal to
+the rest.
+
+**Confirmed rows 356 -> 514, of 1,301. EOR alone goes 103 -> 261.**
+
+### The two limits, written into every citation
+
+- The desk calendar is **selective** -- one or two commemorations a day, not the full daily synaxis
+  -- so its silence is not evidence against a date.
+- The text is **OCR'd from a multi-column layout**, which is why agreement is recorded rather than a
+  single reading trusted.
+
+151 EOR rows remain unmatched, most of them minor commemorations the desk calendar does not carry.
+Those need `oca.org`'s full daily listing, one day at a time -- which is exactly what that source is
+good for.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; 1,301 entries throughout;
+every untouched row asserted byte-identical; no row gained a second `ruleSource`. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- OCA Desk Calendars located; 45 Eastern Orthodox dates confirmed
 ## from the 2026 edition. SEED_VERSION v238 -> v239.
 

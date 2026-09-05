@@ -155,7 +155,7 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,301 entries; **309 carry a `ruleSource`**. **992 dates are still inherited and unconfirmed.**
+1,301 entries; **514 carry a `ruleSource`**. **787 dates are still inherited and unconfirmed.**
 
 **252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
@@ -172,11 +172,11 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 
 | Tag | Confirmed | Remaining |
 |---|---|---|
-| ANG | 252 | 77 |
+| ANG | 263 | 66 |
 | COE | 59 | 0 |
-| EOR | 56 | 356 |
-| LAT | 104 | 300 |
-| OOR | 63 | 305 |
+| EOR | 261 | 151 |
+| LAT | 126 | 278 |
+| OOR | 123 | 245 |
 | untagged | 0 | 150 |
 
 **Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
