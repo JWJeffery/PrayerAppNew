@@ -1,5 +1,61 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- SUBA'A BUNDLE SPLIT. The Fast Evening Service now renders p.212's
+## order exactly, and two texts it should never have said are gone. SEED_VERSION v226 -> v227.
+
+`esy-festival-suba-a-compline` bundled the whole of Maclean pp.82-84 into one component. Split
+losslessly — the parts reconstruct the original text exactly, asserted in code before writing.
+
+### This fixed more than the ordering caveat it was raised for
+
+Reading the bundle in full showed it was **also carrying two things the Fast Evening Service must not
+say**:
+
+- the opening rubric *"Here follows the Suba'a on Memorials (from the Kudhra)"*, which names
+  Memorials specifically; and
+- **the two prayers after the Suba'a at p.83** — because p.212 directs the Fast to use "Of thee who
+  art full of mercies" (p.152) and "Blessed and adorable" (p.153) **instead**.
+
+While bundled, both were being said in the Fast. They are now correctly absent there and correctly
+present in the Memorial office.
+
+### A duplication caught mid-split and recut in the same pass
+
+The two p.83 prayers **already existed** as `esy-suba-a-prayer-openest-door` and
+`esy-suba-a-prayer-hearest-voice`, used by `feast-lelya-sequence`. Carrying them inside the split
+would have put a second copy of that text in the corpus. The affected part was recut into
+rubric-only components — `esy-suba-a-holy-god-rubric` and `esy-suba-a-closing-rubric` — with the
+sequence referencing the existing prayer components between them. One source of truth preserved.
+
+### The result
+
+The Fast evening tail now renders p.212 exactly as printed:
+
+    Third Shuraya and Suba'a rubric
+    "Make us worthy"            (p.82)
+    The Suba'a
+    Verses, Canon, Tishbukhta from the Khudhra
+    Karuzutha "O mighty Lord, Almighty"   (p.82)
+    Holy God
+    Our Father
+    "Of thee who art full of mercies"     (p.152)
+    "Blessed and adorable"                (p.153)
+
+The Khudhra-verses rubric sits between "Make us worthy" and the Karuzutha — where the source puts it,
+and what the bundle made impossible. Endana (Compline on Memorials) renders the full pp.82-84 order,
+unchanged in effect.
+
+The old bundle id is **removed entirely** rather than left as an alias, so there is no second source
+of truth. It is referenced nowhere in any sequence or in JS.
+
+### Verification
+
+Corpus 443 -> 448, zero duplicate ids, zero dangling refs, all JSON valid, `node --check` clean,
+harness 67/0. Split losslessness asserted programmatically, not eyeballed.
+
+---
+
+
 ## Session 2026-09-04 continued -- FAST EVENING SERVICE BUILT and MIDDLE FRIDAY WIRED.
 ## SEED_VERSION v225 -> v226.
 
