@@ -1,3 +1,148 @@
+## Session 2026-09-04 -- The Liturgical Education Layer (Architectural Charter section 11) BUILT.
+## The largest open architectural debt on the list, untouched since the charter first required it.
+## Anglican populated in full from the in-repo BCP; the other three disclosed as scaffolds.
+## SEED_VERSION v215 -> v216. HEAD at session start: 830850a.
+
+**Read the repo and `documentation/` in full first, per the standing directive.** That is what
+surfaced most of what follows; none of it came from the resume note.
+
+### The gap is worse than the handoff recorded
+
+The v215 handoff described item 1 as "about 25 tooltips in the Anglican panel and NOTHING in the
+other three." The real state, counted directly:
+
+- **33** `data-tip` tooltips exist, all of them in `index.html`, all of them inside settings
+  sidebars: 31 Anglican, 1 Coptic (Theotokia), 1 East Syriac (Hudra).
+- **Every one of them explains a checkbox**, not a liturgical element. Charter 11.1 asks "what is
+  this?" about the thing being prayed. Nothing in the app answered that for any tradition,
+  **including Anglican**.
+- Depths 2 and 3 existed in no form anywhere.
+
+So the honest description is not "one tradition has depth 1." It is that depth 1 as the charter
+defines it had never been built for anyone, and the tooltips that exist answer a different question.
+
+### Architecture, and why the attachment point matters
+
+All four office renderers emit the same markup shape:
+`<span class="rubric-text">LABEL</span><span class="component-text">TEXT</span>`.
+
+The layer therefore decorates labels **in the DOM, after `innerHTML` is set** — one call at the end
+of each renderer. The alternative was editing every emission site, of which `renderBcpOffice()`
+alone has roughly ninety. That function's `innerHTML` string building is already recorded as
+architectural debt (`OFFICE_UI_DOCUMENTATION.md` section 3, `admin.todos -> innerHTML-architecture`);
+this layer was deliberately written not to add to it.
+
+Failure mode is silence: an unknown label, a corpus that failed to load, or depth 0 each produce an
+office byte-identical to the one rendered before this layer existed. Verified, not assumed.
+
+**One file per tradition**, never a shared store — `UNIVERSAL_OFFICE_CORE_CONTRACT.md` section 2
+(non-flattening) and section 3 (resolver separation) both forbid it. Entries are keyed by the closed
+block-role taxonomy of section 7. **Null-sentinel per Charter section 13**: a null `micro` or
+`structural` renders nothing — never a placeholder, never a guess, never another tradition's text.
+
+Depth 1 reuses the existing `.info-btn` / `#uo-tooltip` system in `js/tooltip.js`; no second tooltip
+implementation was introduced. Depth 2 uses a `<details>` disclosure, the pattern already proven in
+`_horologionBodyWrap()`. Depth 3 is a separately-opened panel rather than a per-item depth — "how
+does this tradition differ from others" is asked once, not at every versicle.
+
+**Built:** `data/explanations/{schema,anglican,east-syriac,coptic,byzantine}.json`;
+`js/explanations.js`; `applyExplanationLayer()`, `openTraditionExplanation()`,
+`setExplanationDepth()` and the depth state/persistence in `js/office-ui.js`; a Formation card in
+`renderSharedOfficeNavigation()` so all four sidebars get the control uniformly (the navigation
+architecture doc's section 4 already names "display depth" as an expected office drawer control);
+`#uo-tradition-explanation` host in `index.html`; CSS.
+
+### A product decision made in Josh's absence, flagged rather than buried
+
+**Default is depth 1 (glosses on), depth 2 off.** Josh was asked and answered "Continue" without
+picking, so rather than stall a second time a defensible default was chosen: the charter makes
+formation first-class, and the info marker is this app's existing unobtrusive affordance. **One
+literal in `js/office-ui.js` (`let selectedExplanationDepth = 1`) flips the entire layer to
+opt-in.** If that is the wrong call it is a one-line change, and it is Josh's call to make.
+
+### Anglican: populated in full, from a source that was in the repo the whole time
+
+`data/kalendar/source-witnesses/book_of_common_prayer.pdf` — public domain, **full text layer**, and
+**PDF page number equals printed page number**, confirmed against the printed running footers rather
+than assumed. 23 entries across all three depths, 46 distinct pages cited, pp.36-148. Every page was
+read directly before anything was written from it.
+
+**Two defects in my own output, caught by re-reading it against the source and recorded rather than
+quietly fixed:** a stray CJK character survived into the Noonday entry; and that same entry claimed
+"three psalm options" without verification — p.103 actually prints a section of Ps.119 plus Ps.121
+and 126 alongside a wider permission, and the text was rewritten to match.
+
+**A governance finding for Josh, not a decision taken:** the Core Contract section 7 role taxonomy
+is closed by governance and has **no role for a creed or a doxology**. Section 7's own rule says use
+`other` rather than stretch a role, so the Apostles' Creed and the Gloria Patri are both filed as
+`other`. Correct under the rule as written; whether the taxonomy should say something else is his.
+
+### The other three traditions: scaffolds, disclosed, deliberately empty
+
+All three load correctly and are entirely null. The harness asserts this — a scaffold that quietly
+acquired content without a source would fail the run.
+
+- **East Syriac** — Maclean 1894 is **not in this repo** (confirmed by filename search across the
+  whole tree). But all 439 components carry exact Maclean page citations and 324 carry substantial
+  cited `meta.note`s including verbatim Introduction quotation. Best-placed of the three.
+  Introduction pp.xiii-xxii is the natural basis for depth 3.
+- **Coptic** — O'Leary 1911 not in repo. All 87 components carry exact page citations but **none
+  carries a `meta.note`**, so unlike East Syriac there is no cited structural detail already sitting
+  in the repo to work from. Any depth-3 text must disclose that O'Leary contains seven hours only
+  and omits the Prayer of the Veil.
+- **Byzantine** — genuinely the weakest; `sourceStatus` is `unsourced`, not `cited-not-in-repo`.
+  `data/horologion/*.json` already holds **14 office descriptions and 71 section notes** that read
+  like structural explanation and are currently invisible to users. **All uncited.** They must not
+  be promoted into this layer on the strength of sounding right: an uncited string does not become
+  citable by being moved into a new file.
+
+### A source vetted and ruled out, recorded so nobody re-proposes it
+
+**The Oxford Dictionary of the Christian Church is in this repo** (87MB, 1822 pages) and would have
+been the obvious cross-tradition substrate for depth-1 glosses in all four lanes at once. **It has
+no text layer at all** — `pdftotext` returns zero characters on every page tested. A pure image
+scan. Tesseract is installed so OCR is technically possible, but ODCC is a copyrighted reference
+work and the project's own `source-index.json` already classes it `reference`, not a content source.
+Not proposed. Recorded per the standing rule that vetting happens *before* a source is mentioned.
+
+**A related finding from the same pass:** `components/anglican.json` is the **only** tradition shard
+with no `meta` at all — no source, no note, on any of its 245 components — while East Syriac and
+Coptic carry exact page citations on every single one. The sourcing asymmetry across this corpus is
+the exact inverse of the explanatory asymmetry.
+
+### Verification
+
+`scripts/explanations/verify_explanations.js` — **43 checks, 0 failures**. Run against the real
+corpus files and the real `applyExplanationLayer()` extracted out of `js/office-ui.js` by
+brace-depth parsing. It does **not** reimplement the logic under test, after the recorded lesson
+from `verify_sanctoral.js`'s first version.
+
+It carries a **sanity gate** that aborts if the Anglican corpus loads zero entries, and assigns
+`fetch` to **both** `global` and `globalThis` — directly addressing the 2026-09-03 incident where a
+shim on the global object failed to shadow a bare `fetch()` call and a harness compared empty to
+empty while reporting a perfect pass.
+
+**One phantom failure occurred and the test was wrong, not the code.** The depth-0 no-op check
+originally reconstructed an "expected" HTML string by stripping the `.office-container` div that
+`#office-display`'s `innerHTML` legitimately keeps. It failed against correct code. Diagnosed by
+capturing the real before/after DOM and confirming they were byte-identical, *then* fixing the
+assertion. This is the same shape as the St James phantom failure of 2026-09-03: check which of the
+two is wrong before changing either. The fixed check now compares the DOM to itself, and the
+reasoning is recorded in the script's own header so it is not re-introduced.
+
+Also verified: `node --check` on both JS files; all five JSON files valid; `css/office.css` parses
+with 0 errors through `tinycss2` (1094 rules); the `audit-ledger.html` inline script extracted and
+`node --check`ed; cache-bust bumped to `?v=216` on both `js/office-ui.js` and `css/office.css`.
+
+### Still open on item 1
+
+The layer exists and one tradition is populated. **Three-quarters of the charter's requirement is
+still unmet** — East Syriac, Coptic, and Byzantine all need their governing sources read before a
+word is written. That is a sourcing task, not a build task; the architecture is no longer the
+blocker. Items 2-8 from the v215 list are untouched.
+
+---
+
 # Session 2026-09-03 -- CORRECTION to this session's own claim. The season-collision defect is
 # 2 years in 81, not a quarter of years. SEED_VERSION v214 -> v215.
 

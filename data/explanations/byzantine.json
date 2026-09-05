@@ -1,0 +1,15 @@
+{
+  "tradition": "BYZC",
+  "traditionLabel": "Byzantine — The Horologion",
+  "primarySource": null,
+  "sourceStatus": "unsourced",
+
+  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, and this file's sourceStatus is 'unsourced' rather than 'cited-not-in-repo' because the Byzantine lane's position is genuinely weaker than the other three. The Horologion office skeletons in data/horologion/ already contain 14 office-level `description` strings and 71 section-level `notes` strings which read as structural explanation -- for example vespers.json's description of Hesperinos as following the standard order of Great Vespers in the Constantinopolitan rite, and its opening section's note that the Usual Beginning precedes all Byzantine offices. NONE of these carries a source. They are currently invisible to users. They must NOT be promoted into this file as explanatory content on the strength of sounding right: this project's standing rule is that content is cited to a specific source page or it is not shipped, and an uncited string does not become citable by being moved to a new file. Closing this gap means naming a governing source edition for the Byzantine lane and reading it, the same way the Anglican file was written. The hymnographic corpora already cite Lambertsen, The Octoechos (see documentation/architectural_charter.md section 13), which is a real, named, already-accepted source witness for this lane and is the obvious place to start -- but it is a hymnographic collection, not necessarily an account of the office's structure, and that needs checking rather than assuming.",
+
+  "traditionExplanation": {
+    "text": null,
+    "source": null
+  },
+
+  "entries": {}
+}

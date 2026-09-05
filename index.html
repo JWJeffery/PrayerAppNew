@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=205">
+    <link rel="stylesheet" href="css/office.css?v=216">
     <link rel="stylesheet" href="css/bible-browser.css">
 </head>
 <body id="app-body" class="dark-mode">
@@ -1037,6 +1037,12 @@
 
 <!-- ── Tooltip ───────────────────────────────────────────────────────────── -->
 <div id="uo-tooltip"></div>
+<!-- Liturgical Education Layer, depth 3 (Architectural Charter section 11.3).
+     Host only; all content is injected by openTraditionExplanation() in
+     js/office-ui.js from data/explanations/<tradition>.json. Empty and
+     display:none until opened. -->
+<div id="uo-tradition-explanation" role="dialog" aria-modal="true"
+     aria-label="About this tradition" style="display:none;"></div>
 
 <!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js" defer></script>
@@ -1074,7 +1080,8 @@
 <script src="js/bible-browser/bible-source-lane-ui-hook.js"></script>
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
-<script src="js/office-ui.js?v=205" defer></script>
+<script src="js/explanations.js?v=216" defer></script>
+<script src="js/office-ui.js?v=216" defer></script>
 <script src="js/prayers.js?v=205"></script>
 <script src="js/tooltip.js"></script>
 

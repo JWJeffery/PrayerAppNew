@@ -1,0 +1,36 @@
+{
+  "_comment": "Explanatory-depth corpus schema v1. Implements Architectural Charter section 11 (Liturgical Education Layer), which makes educational explanation a first-class architectural layer with three depths. One file per tradition -- NOT one shared file -- per UNIVERSAL_OFFICE_CORE_CONTRACT.md section 2 (non-flattening rule) and section 3 (resolver separation). No tradition's explanatory content may be written from another tradition's.",
+  "version": "1.0",
+
+  "fileShape": {
+    "tradition":        { "type": "string", "required": true,  "note": "Tradition code, matching data/horologion/schema.json's traditionCodes: ANG, COE, BYZC, ETH, LAT. Coptic uses OOR-COP." },
+    "traditionLabel":   { "type": "string", "required": true,  "note": "Human-readable tradition label as shown to the user." },
+    "primarySource":    { "type": "string", "required": true,  "note": "The governing source edition for this file's explanatory content. Every entry's own `source` cites a specific page within it (or names a different source explicitly)." },
+    "sourceStatus":     { "type": "string", "required": true,  "values": ["in-repo", "cited-not-in-repo", "unsourced"], "note": "Honest statement of whether the governing source is actually held in this repository. 'unsourced' files must carry only nulls." },
+    "traditionExplanation": { "type": "object", "required": true, "note": "Depth 3. See traditionExplanationShape." },
+    "entries":          { "type": "object", "required": true,  "note": "Map of explanation key -> entry. See entryShape." }
+  },
+
+  "traditionExplanationShape": {
+    "_comment": "DEPTH 3 -- Charter section 11.3: 'broader comparative explanation answering how does this tradition work, and how does it differ from others?'",
+    "text":    { "type": "string", "required": false, "note": "null when not yet sourced. Null-sentinel per Charter section 13: the resolver treats null as 'not yet written' and the UI shows nothing, never a placeholder or a guess." },
+    "source":  { "type": "string", "required": false, "note": "Specific page citation. Required whenever `text` is non-null." }
+  },
+
+  "entryShape": {
+    "label":       { "type": "string", "required": true,  "note": "The lane-native name of this element. Per Core Contract section 6, the shell shows the lane's own label and does not translate it." },
+    "role":        { "type": "string", "required": true,  "values": ["opening","psalmody","reading","canticle","hymn","prayer","intercession","antiphon","rubric","dismissal","other"], "note": "From the shared block role taxonomy, UNIVERSAL_OFFICE_CORE_CONTRACT.md section 7. Closed by governance -- a lane may not invent a role. Structural category only; never encodes rank, season, or theology." },
+    "matchLabels": { "type": "array",  "required": true,  "note": "Rendered label strings that resolve to this entry. Matching is case-insensitive on the normalized label text emitted inside <span class='rubric-text'>. This is how the layer attaches without rewriting the renderers' string building." },
+    "micro":       { "type": "string", "required": false, "note": "DEPTH 1 -- Charter section 11.1: 'short tooltip or inline gloss answering what is this?'. One or two sentences. null = not yet sourced." },
+    "structural":  { "type": "string", "required": false, "note": "DEPTH 2 -- Charter section 11.2: 'short expandable explanation answering how does this fit into the office?'. A short paragraph. null = not yet sourced." },
+    "source":      { "type": "string", "required": false, "note": "Specific page citation for this entry's content. Required whenever `micro` or `structural` is non-null. An entry with content and no source is a governance violation." }
+  },
+
+  "rules": [
+    "Nothing in this corpus may be written from memory. Every non-null string is written from a source read directly, and cites the page it was read from.",
+    "null is the correct value for anything not yet sourced. The resolver renders nothing for null -- it never substitutes a placeholder, a guess, or another tradition's explanation.",
+    "Explanatory content must preserve tradition-specific logic and must not flatten distinctions between traditions for convenience (Charter section 11, final clause).",
+    "The `role` field exists so the shell can treat structurally similar parts consistently. It is never a licence to reuse one tradition's explanation for another tradition's element.",
+    "Adding a tradition file whose governing source is not held requires sourceStatus 'unsourced' or 'cited-not-in-repo' and all-null content until the source is actually read."
+  ]
+}

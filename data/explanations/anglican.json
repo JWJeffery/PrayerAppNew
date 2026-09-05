@@ -1,0 +1,222 @@
+{
+  "tradition": "ANG",
+  "traditionLabel": "Anglican — The Book of Common Prayer (1979)",
+  "primarySource": "The Book of Common Prayer (1979), The Episcopal Church. Public domain. Held in this repository at data/kalendar/source-witnesses/book_of_common_prayer.pdf (1001 pages; PDF page number equals printed page number, confirmed against the printed running footers).",
+  "sourceStatus": "in-repo",
+
+  "_provenanceNote": "Every string in this file was written from the cited page read directly out of the in-repo PDF during the session that created this file, not from memory. Page citations were verified individually, not inferred from a table of contents. Where the 1979 book gives Rite I and Rite II forms at different pages, both are cited.",
+
+  "traditionExplanation": {
+    "text": "The Anglican Daily Office in the 1979 Book of Common Prayer is built out of four services — Morning Prayer, Noonday, Evening Prayer, and Compline — each of which is a fixed frame filled by a lectionary that changes daily. The frame is stable: an opening, confession, psalmody, one or two lessons each answered by a canticle, the Creed, the Lord's Prayer, suffrages, collects, and a dismissal. What moves is the appointed content poured into it.\n\nTwo features shape how the book is meant to be used. The first is breadth of permission: a great deal of the office is explicitly optional or alternative. The Confession may be said or the office may begin at once with the opening versicle; the Apostles' Creed may be omitted when the Eucharist follows, or at one of the weekday offices; the Lord's Prayer may be omitted when the Litany or Eucharist follows immediately; a hymn may replace a canticle in special circumstances. The Additional Directions gather these permissions in one place.\n\nThe second is that leadership is not reserved to clergy. The book uses the term Officiant for whoever leads, and states plainly that this person may be lay or ordained. Only a few acts — the absolution in its priestly form, a bishop's blessing — are reserved. This is why the office works as well for one person praying alone as for a congregation, and why this app can present it without assuming a priest is present.",
+    "source": "BCP 1979: 'Concerning the Service', p.36 (Officiant defined as 'the person, clerical or lay, who leads the Office'); Additional Directions, pp.141-142 (Creed and Lord's Prayer omissions, hymn in place of a Canticle, discretion over opening sentences); Confession rubric, pp.41 and 79; absolution rubric, pp.80 and 117; office structures, pp.37-60 (Rite I), pp.75-102 (Rite II), pp.103-107 (Noonday), pp.127-135 (Compline)."
+  },
+
+  "entries": {
+    "opening-sentence": {
+      "label": "Opening Sentence",
+      "role": "opening",
+      "matchLabels": ["Opening Sentence"],
+      "micro": "A short verse of Scripture that opens the office, usually chosen to suit the season or the day.",
+      "structural": "The office begins here, before anything is confessed or sung. The book prints sentences grouped by season and by occasion, but the Additional Directions widen that considerably: any of them may be used at any time, at the officiant's discretion, whatever the season. The officiant may also use more than one. Alternatively the sentence may be skipped altogether and the office begun directly at the opening versicle.",
+      "source": "BCP 1979 pp.37-40 (Rite I) and pp.75-78 (Rite II); Additional Directions p.141."
+    },
+
+    "confession": {
+      "label": "Confession of Sin",
+      "role": "prayer",
+      "matchLabels": ["Confession of Sin", "Confession", "The Confession"],
+      "micro": "A general confession said together before the office proper begins. It is optional.",
+      "structural": "The rubric offers a genuine choice: the Confession may be said here, or the office may go straight on to the opening versicle. It sits deliberately before the Invitatory — the point is to prepare for worship rather than to interrupt it. Rite II also supplies a shorter bidding as an alternative to the longer exhortation.",
+      "source": "BCP 1979 p.41 (Rite I) and p.79 (Rite II)."
+    },
+
+    "absolution": {
+      "label": "Absolution",
+      "role": "prayer",
+      "matchLabels": ["Absolution", "The Absolution", "Prayer for Forgiveness"],
+      "micro": "The declaration of forgiveness that answers the Confession. Its form changes depending on who is leading.",
+      "structural": "This is one of the few places in the Daily Office where it matters whether the officiant is ordained. A priest stands and pronounces the absolution in the second person — forgive you. A deacon or lay person remains kneeling and says the same words in the first person plural, substituting us for you and our for your. The office is not diminished by the lay form; the book simply supplies both.",
+      "source": "BCP 1979 p.80 (Rite I form printed at p.42; Rite II at p.117)."
+    },
+
+    "invitatory": {
+      "label": "The Invitatory",
+      "role": "psalmody",
+      "matchLabels": ["The Invitatory", "Invitatory", "Venite", "Jubilate"],
+      "micro": "A psalm of invitation — Venite (Psalm 95) or Jubilate (Psalm 100) — sung to open the psalmody.",
+      "structural": "After the opening versicle the office turns to the Psalter, and the Invitatory is the door into it. The rubric names two options and does not restrict either by season, so the choice between Venite and Jubilate is genuinely free day to day. Psalm 95 also appears in a traditional-language version later in the book for use with Rite I. In Easter Season, Christ our Passover may take this position instead.",
+      "source": "BCP 1979 p.42 (Rite I) and p.80 (Rite II); traditional Venite at p.146; Additional Directions p.141 (metrical versions permitted)."
+    },
+
+    "invitatory-antiphon": {
+      "label": "Antiphon",
+      "role": "antiphon",
+      "matchLabels": ["Antiphon"],
+      "micro": "A short refrain sung with the Invitatory Psalm, marking the season or the feast.",
+      "structural": "The book prints proper antiphons for the seasons and for major feasts, to be used as refrains with either Invitatory Psalm. The Additional Directions go further and permit antiphons drawn from the psalms themselves, from the opening sentences, or from any other passage of Scripture — so the printed set is a provision, not a limit. The Alleluias attached to several of them belong to Easter Season only.",
+      "source": "BCP 1979 pp.43-44 (Rite I) and pp.80-82 (Rite II); Additional Directions p.141."
+    },
+
+    "pascha-nostrum": {
+      "label": "Christ our Passover",
+      "role": "canticle",
+      "matchLabels": ["Christ Our Passover", "Christ our Passover", "Pascha Nostrum"],
+      "micro": "An Easter canticle assembled from Paul's resurrection passages, used in place of the Invitatory Psalm.",
+      "structural": "Pascha nostrum is stitched together from 1 Corinthians 5, Romans 6, and 1 Corinthians 15, and stands where the Venite or Jubilate would otherwise stand. It is appointed for Easter Week; through the rest of the Great Fifty Days it remains permitted, but so does the ordinary Invitatory rotation.",
+      "source": "BCP 1979 p.46 (Rite I) and p.83 (Rite II)."
+    },
+
+    "psalter": {
+      "label": "The Psalm or Psalms Appointed",
+      "role": "psalmody",
+      "matchLabels": ["The Psalm", "The Psalms", "The Psalm or Psalms Appointed", "Psalter"],
+      "micro": "The psalms appointed for the day in the Daily Office Lectionary, prayed as the main body of psalmody.",
+      "structural": "The Invitatory opens the psalmody; this is the psalmody itself, appointed by the lectionary rather than chosen. The Gloria Patri is always said at the end of the whole portion, and may in addition be used after the Invitatory, after each individual psalm, and after each section of Psalm 119 — so the doxology can punctuate the psalms as lightly or as heavily as the community prefers.",
+      "source": "BCP 1979 p.118 (Rite II heading and closing rubric; Rite I equivalent at p.65); Additional Directions p.141."
+    },
+
+    "gloria-patri": {
+      "label": "Gloria Patri",
+      "role": "other",
+      "matchLabels": ["Gloria Patri", "Glory to the Father"],
+      "micro": "The lesser doxology, said to close psalmody by referring it to the Trinity.",
+      "structural": "Its one fixed position is at the end of the entire portion of the Psalter, where it is always said. Everywhere else it is optional: after the Invitatory or Christ our Passover, after each psalm, and after each section of Psalm 119. The Gloria printed at the end of certain canticles may be dropped when desired. Rite One services may use the traditional-language form.",
+      "source": "BCP 1979 Additional Directions p.141."
+    },
+
+    "lesson": {
+      "label": "The Lessons",
+      "role": "reading",
+      "matchLabels": ["The Lessons", "The Lesson", "First Lesson", "Second Lesson", "A Reading"],
+      "micro": "The scripture readings appointed for the day, announced by book and, if desired, chapter and verse.",
+      "structural": "One or two lessons are read as appointed, each introduced simply by naming the book. Silence may be kept after each. A canticle answers each reading, so lesson and canticle move as a pair. Where three lessons are used, the Gospel comes after the second canticle rather than being read straight through with the others. At the officiant's discretion a reading from non-biblical Christian literature may follow the biblical readings — it does not replace them.",
+      "source": "BCP 1979 p.47 (Rite I) and p.84 (Rite II); Additional Directions p.142."
+    },
+
+    "canticle": {
+      "label": "Canticle",
+      "role": "canticle",
+      "matchLabels": ["Canticle", "The Song of Moses", "The First Song of Isaiah", "The Second Song of Isaiah", "The Third Song of Isaiah", "A Song of Penitence", "Benedictus es, Domine", "Benedictus Dominus Deus", "The Magnificat", "Magnificat", "Nunc dimittis", "The Song of Simeon", "Te Deum laudamus", "A Song of Creation", "Benedicite, omnia opera Domini"],
+      "micro": "A scriptural song sung in answer to a reading — the office's way of responding to what has just been heard.",
+      "structural": "A canticle follows each lesson. The book supplies twenty-one, drawn mostly from Scripture, and prints tables of suggestions assigning particular canticles to particular weekdays and seasons — but these are suggestions, and any of Canticles 8-21 may be used after any reading. In special circumstances a hymn may be sung in place of a canticle.",
+      "source": "BCP 1979 p.47 (Rite I) and p.84 (Rite II); suggested canticle tables pp.144-145; Additional Directions p.142."
+    },
+
+    "creed": {
+      "label": "The Apostles' Creed",
+      "role": "other",
+      "matchLabels": ["The Apostles' Creed", "Apostles' Creed", "The Nicene Creed", "Nicene Creed", "The Creed"],
+      "micro": "The baptismal creed, said by all standing, as the office turns from hearing Scripture to prayer.",
+      "structural": "The Creed marks the hinge of the office: what has been read is confessed, and the prayers follow. Officiant and people say it together, standing. It is omitted when the Eucharist with its own Creed is to follow, and it may also be omitted at one of the two offices on weekdays. When Morning or Evening Prayer serves as the Liturgy of the Word at a Eucharist, the Nicene Creed may take its place.",
+      "source": "BCP 1979 p.53 (Rite I) and p.96 (Rite II); Additional Directions p.142."
+    },
+
+    "lords-prayer": {
+      "label": "The Lord's Prayer",
+      "role": "prayer",
+      "matchLabels": ["The Lord's Prayer", "Lord's Prayer"],
+      "micro": "The prayer Christ taught, said by all as the prayers of the office begin.",
+      "structural": "It opens the prayers, after the salutation and before the Suffrages. The book permits it to be omitted when the Litany or the Eucharist is to follow immediately, on the reasoning that it will be prayed there instead rather than twice over.",
+      "source": "BCP 1979 p.54 (Rite I) and p.97 (Rite II); Additional Directions p.142."
+    },
+
+    "suffrages": {
+      "label": "The Suffrages",
+      "role": "intercession",
+      "matchLabels": ["The Suffrages", "Suffrages", "Suffrages A", "Suffrages B"],
+      "micro": "A short exchange of versicles and responses between officiant and people, after the Lord's Prayer.",
+      "structural": "Two sets are printed, A and B, and the rubric treats them as equal alternatives — one of these sets follows, not a preferred one with a fallback. Set A is largely woven from psalm verses; set B is a single continuous petition. They sit between the Lord's Prayer and the Collects, carrying the office from the prayer all Christians share into the prayers proper to this day.",
+      "source": "BCP 1979 p.54 (Rite I) and p.97 (Rite II)."
+    },
+
+    "collect": {
+      "label": "The Collect",
+      "role": "prayer",
+      "matchLabels": ["A Collect", "The Collect", "The Collect of the Day", "Collect of the Day"],
+      "micro": "A short appointed prayer that gathers the day's petition into one sentence.",
+      "structural": "The rubric permits one or more of the following collects — so this is a pool, not a single slot. Morning and Evening Prayer each print a set of seven: the Collect of the Day, collects for Sundays, Fridays and Saturdays, and further collects proper to that office. The Noonday office has its own four, and permits the Collect of the Day to be used instead if desired.",
+      "source": "BCP 1979 p.55 (Rite I) and p.98 (Rite II); Noonday collects p.107."
+    },
+
+    "mission-prayer": {
+      "label": "A Prayer for Mission",
+      "role": "prayer",
+      "matchLabels": ["A Prayer for Mission", "Prayer for Mission"],
+      "micro": "A prayer that the Church's life would reach beyond the room it is prayed in.",
+      "structural": "It follows the collects, turning the office outward before it closes. Three are printed for Morning Prayer and three for Evening Prayer. After it, a hymn or anthem may be sung, and authorized intercessions and thanksgivings may follow — the point in the office where a community's own prayers belong.",
+      "source": "BCP 1979 pp.57-58 (Rite I) and pp.100-101 (Rite II)."
+    },
+
+    "general-thanksgiving": {
+      "label": "The General Thanksgiving",
+      "role": "prayer",
+      "matchLabels": ["The General Thanksgiving", "General Thanksgiving"],
+      "micro": "A thanksgiving for creation, redemption, and the means of grace, said by officiant and people together.",
+      "structural": "The rubric places this and the Prayer of St. Chrysostom together before the close of the office, and permits one or both. Conventionally the officiant uses one of the two rather than routinely both. It is said by all, not by the officiant alone.",
+      "source": "BCP 1979 p.58 (Rite I) and p.101 (Rite II)."
+    },
+
+    "chrysostom": {
+      "label": "A Prayer of St. Chrysostom",
+      "role": "prayer",
+      "matchLabels": ["A Prayer of St. Chrysostom", "Prayer of St. Chrysostom"],
+      "micro": "A prayer resting on Christ's promise to be present where two or three gather in his Name.",
+      "structural": "It stands with the General Thanksgiving at the close of the prayers, and the rubric permits one or both. Its logic is corporate: it asks God to fulfil the petitions just made, on the ground of the promise it quotes. It comes from the Byzantine tradition and reached the English office through Cranmer's Litany.",
+      "source": "BCP 1979 p.59 (Rite I) and p.102 (Rite II)."
+    },
+
+    "dismissal": {
+      "label": "The Dismissal",
+      "role": "dismissal",
+      "matchLabels": ["The Dismissal", "Dismissal", "Let us bless the Lord", "The Closing", "Closing"],
+      "micro": "The versicle that ends the office, optionally followed by a closing sentence of Scripture.",
+      "structural": "The office closes plainly: Let us bless the Lord, answered by Thanks be to God. From Easter Day through Pentecost, Alleluia, alleluia may be added to both. The officiant may then conclude with one of three scriptural sentences — from 2 Corinthians 13, Romans 15, or Ephesians 3. When a bishop is present it is appropriate that the bishop conclude the office with a blessing instead.",
+      "source": "BCP 1979 p.59 (Rite I) and p.102 (Rite II); 'Concerning the Service' p.36."
+    },
+
+    "phos-hilaron": {
+      "label": "O Gracious Light",
+      "role": "hymn",
+      "matchLabels": ["O Gracious Light", "Phos Hilaron", "Phos hilaron"],
+      "micro": "An ancient evening hymn greeting the lamplight at sunset as an image of Christ.",
+      "structural": "It stands at the opening of Evening Prayer, where Morning Prayer has its Invitatory. The rubric frames three alternatives and asks for one: this hymn, some other suitable hymn, or an Invitatory Psalm. Phos hilaron is among the oldest Christian hymns still in use, and its logic is the lighting of the evening lamp — which is also why the Order of Worship for the Evening places the lighting of candles around it.",
+      "source": "BCP 1979 p.64 (Rite I) and p.118 (Rite II); Order of Worship for the Evening rubric on incense, p.143."
+    },
+
+    "great-litany": {
+      "label": "The Great Litany",
+      "role": "intercession",
+      "matchLabels": ["The Great Litany", "Great Litany", "The Litany"],
+      "micro": "A long processional litany of petition, especially used in Lent and on Rogation days.",
+      "structural": "The Litany is not part of the daily frame — it is an occasional addition with unusually free placement. The rubric permits it kneeling, standing, or in procession; before the Eucharist, after the Collects of Morning or Evening Prayer, or as a service on its own. It is the oldest English-language liturgical text in continuous use, and in the 1979 book it retains traditional language.",
+      "source": "BCP 1979 p.148."
+    },
+
+    "noonday-psalms": {
+      "label": "The Psalms at Noonday",
+      "role": "psalmody",
+      "matchLabels": ["The Psalms at Noonday"],
+      "micro": "A short selection of psalmody appointed for the Noonday office.",
+      "structural": "Noonday is deliberately brief. The office prints a section of Psalm 119 together with Psalms 121 and 126, and asks for one or more of them; it then widens the choice, naming Psalm 19, Psalm 67, any section of Psalm 119, and any of the Songs of Ascents (Psalms 120-133) as equally suitable. A hymn may be sung before them.",
+      "source": "BCP 1979 p.103."
+    },
+
+    "noonday-short-lesson": {
+      "label": "The Short Lesson",
+      "role": "reading",
+      "matchLabels": ["The Short Lesson", "Short Lesson"],
+      "micro": "A brief scripture reading — a verse or two — in place of the fuller lessons of the longer offices.",
+      "structural": "Noonday and Compline each read one short passage rather than the appointed lectionary lessons. Three texts are printed for Noonday and four for Compline, and in both cases the rubric explicitly allows some other suitable passage of Scripture instead — so the printed set is a provision rather than a closed list.",
+      "source": "BCP 1979 p.105 (Noonday) and p.130 (Compline)."
+    },
+
+    "compline-opening": {
+      "label": "Compline",
+      "role": "opening",
+      "matchLabels": ["Compline", "An Order for Compline"],
+      "micro": "The night office, prayed last thing, asking for a peaceful night and a perfect end.",
+      "structural": "Compline opens with the officiant asking for a peaceful night and a perfect end, and then, unusually, offers confession right at the start rather than as a preliminary to the office proper — the day is being closed out, not begun. It is short, largely fixed, and printed in one form only rather than in two rites.",
+      "source": "BCP 1979 p.127."
+    }
+  }
+}

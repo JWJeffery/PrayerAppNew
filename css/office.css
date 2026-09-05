@@ -4057,3 +4057,133 @@ body.roman-breviary-dev-mode #main-content.sidebar-hidden {
 .bible-design-header-actions .app-dark-toggle {
     margin: 0;
 }
+
+/* ── Liturgical Education Layer — Architectural Charter section 11 ──────────
+   Depth 1 markers reuse the existing .info-btn / #uo-tooltip system defined
+   above; only the small overrides needed inside the office canvas are added
+   here. Depth 2 uses a <details> disclosure, matching the .hor-depth-disclosure
+   pattern already used by _horologionBodyWrap(). Depth 3 is a centred panel.
+   Nothing here changes the office's own typography — the explanatory layer is
+   deliberately quieter than the prayer it annotates. */
+
+.uo-explanation-marker {
+    /* Slightly smaller than the sidebar's info buttons: inside the prayer
+       canvas the marker must not compete with the liturgical text. */
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    margin-left: 4px;
+    opacity: 0.65;
+    transition: opacity 0.15s ease;
+}
+.uo-explanation-marker:hover,
+.uo-explanation-marker:focus {
+    opacity: 1;
+    outline: none;
+}
+
+.uo-explanation-structural {
+    margin: 4px 0 14px 0;
+    padding: 0;
+    border-left: 2px solid rgba(201,168,76,0.28);
+    padding-left: 12px;
+}
+.uo-explanation-structural > summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rubric);
+    opacity: 0.75;
+    padding: 2px 0;
+}
+.uo-explanation-structural > summary::-webkit-details-marker { display: none; }
+.uo-explanation-structural > summary::before {
+    content: "\203A";
+    display: inline-block;
+    margin-right: 7px;
+    transition: transform 0.15s ease;
+}
+.uo-explanation-structural[open] > summary::before { transform: rotate(90deg); }
+.uo-explanation-structural > summary:hover { opacity: 1; }
+
+.uo-explanation-body {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 0.92em;
+    line-height: 1.65;
+    opacity: 0.9;
+    margin: 6px 0 4px 0;
+}
+.uo-explanation-body p { margin: 0 0 0.8em 0; }
+.uo-explanation-body p:last-child { margin-bottom: 0; }
+
+/* Every explanatory string in this layer carries the page it was written from.
+   The citation is shown, not hidden behind a toggle: this project's standing
+   rule is that content is cited to a specific source page, and the citation is
+   part of the content rather than metadata about it. */
+.uo-explanation-source {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66em;
+    letter-spacing: 0.03em;
+    color: var(--rubric);
+    opacity: 0.6;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(201,168,76,0.16);
+}
+
+#uo-tradition-explanation {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,0.55);
+    overflow-y: auto;
+    padding: 6vh 16px;
+    box-sizing: border-box;
+}
+.uo-tradition-explanation-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--parchment, #f4ecd8);
+    color: var(--ink, #2b2118);
+    border: 1px solid rgba(201,168,76,0.5);
+    border-radius: 5px;
+    padding: 30px 34px 26px;
+    box-shadow: 4px 4px 26px rgba(0,0,0,0.6);
+}
+body.dark-mode .uo-tradition-explanation-inner {
+    background: #1a1208;
+    color: #e8d9b0;
+}
+.uo-tradition-explanation-inner h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05em;
+    letter-spacing: 0.07em;
+    color: var(--gold);
+    margin: 0 0 16px 0;
+    padding-right: 32px;
+}
+.uo-tradition-explanation-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--rubric);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    opacity: 0.7;
+}
+.uo-tradition-explanation-close:hover { opacity: 1; }
+
+.shared-office-nav-formation-card select { width: 100%; }
+
+@media (max-width: 768px) {
+    .uo-tradition-explanation-inner { padding: 26px 20px 22px; }
+    #uo-tradition-explanation { padding: 3vh 10px; }
+}

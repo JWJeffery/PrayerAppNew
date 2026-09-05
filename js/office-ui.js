@@ -21,6 +21,25 @@ let selectedCoeEasterMode = 'gregorian'; // 'julian' | 'gregorian' — persisted
 let _horDiagnosticsEnabled = false;
 let selectedHorologionReductionProfile = 'full'; // 'full' | 'reader' | 'educational' — display-layer only, never passed to HorologionEngine
 
+// ── Liturgical Education Layer — Architectural Charter section 11 ────────────
+// 0 = prayer only (no explanation)
+// 1 = + micro-explanations   (charter 11.1 — inline gloss, "what is this?")
+// 2 = + structural notes     (charter 11.2 — expandable, "how does this fit?")
+// Depth 3 (charter 11.3, tradition-level) is a separate panel, not a per-item
+// depth, so it is not on this scale — it is opened deliberately, not layered
+// onto every element.
+//
+// NOTE, distinct from the above and easy to confuse: selectedHorologionReductionProfile
+// also has a value literally named 'educational', but that is a COLLAPSE
+// setting controlling how much body text is folded into <details> in the
+// Horologion — it is about display density, not explanation. The two are
+// unrelated and must not be merged.
+//
+// Default 1: the charter makes formation a first-class layer, and the info
+// marker is the app's existing unobtrusive affordance. Change this one literal
+// to 0 to make the whole layer opt-in.
+let selectedExplanationDepth = 1; // 0 | 1 | 2 — display-layer only, never reaches any resolver
+
 function toggleHorologionDiagnostics() {
     _horDiagnosticsEnabled = !_horDiagnosticsEnabled;
     const btn = document.getElementById('hor-btn-diag');
@@ -194,6 +213,16 @@ async function loadKernel() {
         senkessarIndex:    null, // Lazy-loaded on first Ethiopian saints render
         senkessarCache:    {}    // Keyed by month slug; populated on first access per month
     };
+
+    // Liturgical Education Layer (Charter section 11). Preloaded here because
+    // applyExplanationLayer() runs synchronously at the end of each render and
+    // needs the corpus already in hand. Deliberately NOT awaited into the
+    // kernel's own critical path and deliberately not allowed to reject: this
+    // is a soft dependency, and an office must render in full whether or not
+    // its explanations are available.
+    if (typeof Explanations !== 'undefined') {
+        Explanations.loadAll().catch(() => { /* soft dependency — see above */ });
+    }
 
     try {
         const [rubricsRes, commonRes] = await Promise.all([
@@ -2332,6 +2361,27 @@ function renderSharedOfficeNavigation() {
             </label>
         </section>` : '';
 
+    // Liturgical Education Layer control (Charter section 11). Rendered for
+    // every mode without a config flag, deliberately: the standing sidebar
+    // directive is uniform headings and a common drawer grammar across all four
+    // offices, and universal-office-navigation-architecture.md section 4 already
+    // names "display depth" as one of the drawer's expected office controls.
+    const depthHtml = `
+        <section class="shared-office-nav-card shared-office-nav-formation-card">
+            <div class="shared-office-nav-section-title">Formation</div>
+            <label class="shared-office-nav-date-picker">
+                <span>Explanations</span>
+                <select onchange="setExplanationDepth(this.value)">
+                    <option value="0" ${selectedExplanationDepth === 0 ? 'selected' : ''}>Prayer only</option>
+                    <option value="1" ${selectedExplanationDepth === 1 ? 'selected' : ''}>Brief glosses</option>
+                    <option value="2" ${selectedExplanationDepth === 2 ? 'selected' : ''}>Glosses and structure</option>
+                </select>
+            </label>
+            <div class="shared-office-nav-actions">
+                <button type="button" onclick="openTraditionExplanation()">About this tradition</button>
+            </div>
+        </section>`;
+
     nav.dataset.sharedOfficeNav = modeKey;
     nav.innerHTML = `
         <section class="shared-office-nav-card shared-office-nav-date-card" aria-label="${_sharedOfficeNavigatorEscape(config.dateTitle)}">
@@ -2353,7 +2403,7 @@ function renderSharedOfficeNavigation() {
             <div class="shared-office-nav-options" role="radiogroup" aria-label="${_sharedOfficeNavigatorEscape(config.officeTitle)}">
                 ${optionHtml}
             </div>
-        </section>`;
+        </section>${depthHtml}`;
 }
 
 function setSharedOfficeNavHour(modeKey, value) {
@@ -2917,7 +2967,8 @@ function saveSettings() {
         studyMode:                     appSettings.studyMode,
         eoMode:                        selectedEoMode,
         coeEasterMode:                 selectedCoeEasterMode,
-        horologionReductionProfile:    selectedHorologionReductionProfile
+        horologionReductionProfile:    selectedHorologionReductionProfile,
+        explanationDepth:              selectedExplanationDepth
     };
     try {
         localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
@@ -2997,6 +3048,13 @@ function loadSettings() {
             selectedHorologionReductionProfile = s.horologionReductionProfile;
             const _depthSelLoad = document.getElementById('hor-depth-select');
             if (_depthSelLoad) _depthSelLoad.value = selectedHorologionReductionProfile;
+        }
+
+        // Liturgical Education Layer depth (Charter section 11). Validated
+        // against the same closed set the setter uses; anything else falls back
+        // to the default rather than being trusted from storage.
+        if (typeof s.explanationDepth === 'number' && [0, 1, 2].includes(s.explanationDepth)) {
+            selectedExplanationDepth = s.explanationDepth;
         }
 
         if (document.getElementById('creed-type'))
@@ -3258,6 +3316,7 @@ async function renderHorologionOffice(officeKey) {
 
     html += `</div>`;
     display.innerHTML = html;
+    applyExplanationLayer('office-display');
 }
 
 // Renders a single Horologion item as HTML.
@@ -3528,6 +3587,145 @@ function getDailyRotationIndex(date, optionCount) {
     const dayOfYear = Math.floor((utcDate - startOfYear) / 86400000) + 1; // 1-366
     return (dayOfYear - 1) % optionCount;
 }
+
+// ── Liturgical Education Layer — render attachment (Charter section 11) ──────
+//
+// Runs AFTER a renderer has set #office-display.innerHTML, and decorates the
+// labels already in the DOM. This is deliberate: all four office renderers emit
+// the same markup shape (`<span class="rubric-text">LABEL</span>` followed by
+// the text), so decorating afterwards gives one integration point per renderer
+// instead of editing the ~90 separate string-concatenation sites inside
+// renderBcpOffice() alone. That function's innerHTML string building is already
+// on record as architectural debt (OFFICE_UI_DOCUMENTATION.md section 3); this
+// layer is written not to add to it.
+//
+// Failure mode is silence, not breakage: a label with no registry entry, a
+// corpus that failed to load, or depth 0 all produce an office identical to the
+// one rendered before this layer existed.
+function applyExplanationLayer(rootId) {
+    if (typeof Explanations === 'undefined') return;
+    if (!selectedExplanationDepth) return;
+
+    const root = document.getElementById(rootId || 'office-display');
+    if (!root) return;
+
+    const tradition = Explanations.traditionForMode(selectedMode);
+    if (!tradition) return;
+
+    const escapeAttr = (s) => String(s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+    // .rubric-text is the per-element label in all four renderers.
+    // .rubric-heading is the Horologion's section heading — a structural label,
+    // so it takes structural notes but not per-element glosses.
+    const labels = root.querySelectorAll('.rubric-text, .rubric-heading');
+
+    labels.forEach((el) => {
+        if (el.dataset.explanationApplied === '1') return;
+
+        // Only ever read the label's own text. Some rubric-text spans in this
+        // codebase carry a whole sentence of rubric prose rather than a short
+        // label; those simply will not match the registry, which is correct.
+        const raw = (el.textContent || '').trim();
+        if (!raw || raw.length > 80) return;
+
+        const entry = Explanations.lookup(tradition, raw);
+        if (!entry) return;
+
+        el.dataset.explanationApplied = '1';
+
+        // Depth 1 — micro-explanation, via the existing .info-btn/data-tip
+        // system in js/tooltip.js. No second tooltip implementation.
+        if (entry.micro) {
+            const btn = document.createElement('span');
+            btn.className = 'info-btn uo-explanation-marker';
+            btn.setAttribute('data-tip', entry.micro + '  [' + entry.source + ']');
+            btn.setAttribute('tabindex', '0');
+            btn.setAttribute('role', 'button');
+            btn.setAttribute('aria-label', 'About ' + raw);
+            btn.textContent = 'i';
+            el.appendChild(document.createTextNode('\u00a0'));
+            el.appendChild(btn);
+        }
+
+        // Depth 2 — structural explanation, as a <details> disclosure. Same
+        // pattern already proven in _horologionBodyWrap().
+        if (selectedExplanationDepth >= 2 && entry.structural) {
+            const det = document.createElement('details');
+            det.className = 'uo-explanation-structural';
+            det.innerHTML =
+                '<summary>How this fits into the office</summary>' +
+                '<div class="uo-explanation-body">' +
+                escapeAttr(entry.structural).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') +
+                '</div>' +
+                '<div class="uo-explanation-source">' + escapeAttr(entry.source) + '</div>';
+            // Insert after the label, before the text it heads, so the note
+            // reads as belonging to that element rather than to the next one.
+            if (el.parentNode) el.parentNode.insertBefore(det, el.nextSibling);
+        }
+    });
+}
+
+// Depth 3 — tradition explanation (Charter section 11.3). A deliberate,
+// separately-opened panel rather than something layered onto every element:
+// "how does this tradition work, and how does it differ from others?" is a
+// question asked once, not at every versicle.
+function openTraditionExplanation() {
+    if (typeof Explanations === 'undefined') return;
+    const tradition = Explanations.traditionForMode(selectedMode);
+    const data = tradition ? Explanations.traditionExplanation(tradition) : null;
+
+    const host = document.getElementById('uo-tradition-explanation');
+    if (!host) return;
+
+    if (!data) {
+        // Mechanical honesty (charter 0.2): an unwritten explanation says so
+        // plainly. It is never filled with another tradition's text, and never
+        // silently does nothing when the user asks for it.
+        host.innerHTML =
+            '<div class="uo-tradition-explanation-inner">' +
+            '<button type="button" class="uo-tradition-explanation-close" ' +
+            'onclick="closeTraditionExplanation()" aria-label="Close">&times;</button>' +
+            '<h3>About this tradition</h3>' +
+            '<p class="uo-explanation-body">No tradition-level explanation has been written for ' +
+            'this office yet. This layer only carries text written from that tradition\u2019s own ' +
+            'governing source, cited to the page it came from \u2014 so it is left empty rather ' +
+            'than filled in from elsewhere.</p>' +
+            '</div>';
+    } else {
+        const esc = (s) => String(s)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        host.innerHTML =
+            '<div class="uo-tradition-explanation-inner">' +
+            '<button type="button" class="uo-tradition-explanation-close" ' +
+            'onclick="closeTraditionExplanation()" aria-label="Close">&times;</button>' +
+            '<h3>' + esc(data.label) + '</h3>' +
+            '<div class="uo-explanation-body"><p>' +
+            esc(data.text).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') +
+            '</p></div>' +
+            '<div class="uo-explanation-source">' + esc(data.source) + '</div>' +
+            '</div>';
+    }
+    host.style.display = 'block';
+}
+
+function closeTraditionExplanation() {
+    const host = document.getElementById('uo-tradition-explanation');
+    if (host) { host.style.display = 'none'; host.innerHTML = ''; }
+}
+
+function setExplanationDepth(value) {
+    const depth = parseInt(value, 10);
+    selectedExplanationDepth = [0, 1, 2].includes(depth) ? depth : 1;
+    try { saveSettings(); } catch (e) { /* persistence is best-effort */ }
+    if (typeof renderOffice === 'function') renderOffice();
+}
+
+window.applyExplanationLayer      = applyExplanationLayer;
+window.openTraditionExplanation   = openTraditionExplanation;
+window.closeTraditionExplanation  = closeTraditionExplanation;
+window.setExplanationDepth        = setExplanationDepth;
 
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
@@ -4404,6 +4602,7 @@ async function renderBcpOffice() {
 
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    applyExplanationLayer('office-display');
 
     document.getElementById('date-header').innerText = 'Commemorations';
     // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
@@ -5329,6 +5528,7 @@ async function renderEastSyriac() {
     }
 
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    applyExplanationLayer('office-display');
 
     // ── Commemorations (Layer 3: individual saints) ─────────────────────────
     // Wired 2026-08-30, per Josh's direction, after Layer 3's existing
@@ -5573,6 +5773,7 @@ async function renderCopticAgpeya() {
     }
 
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    applyExplanationLayer('office-display');
 
     // Senkessar is intentionally not shown here -- parked separately per
     // governance decision 2026-08-18, not merged into the Coptic office.

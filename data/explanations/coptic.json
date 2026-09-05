@@ -1,0 +1,15 @@
+{
+  "tradition": "OOR-COP",
+  "traditionLabel": "Coptic Orthodox — The Agpeya",
+  "primarySource": "De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London: Simpkin, Marshall, Hamilton, Kent & Co., 1911). Public domain.",
+  "sourceStatus": "cited-not-in-repo",
+
+  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, deliberately. O'Leary 1911 is NOT held in this repository. All 87 components in components/coptic.json carry an exact O'Leary page citation in meta.source, but none carries a meta.note, so unlike the East Syriac corpus there is no cited structural detail already sitting in the repo to work from. O'Leary's Preface and Introduction are the natural basis for the depth-3 tradition explanation and would need to be read directly. The volume is reachable through Josh's Google Drive (file id 1kH_ODEaI7Bdvz_XL3XEx28Ikx1ZXlEEo, ~40MB) via Google Drive:read_file_content, which has no size limit; Google Drive:download_file_content caps at 10MB and cannot open it. One disclosure that belongs in any eventual depth-3 text: O'Leary's volume contains the Morning, Third, Sixth, Ninth, Eleventh, Twelfth and Midnight offices only. The Prayer of the Veil is a real part of the Agpeya and is absent from this source, verified by full-text search -- see dashboard row cop:agpeya:prayer-of-the-veil. Any tradition-level account of the Agpeya written from O'Leary alone must say so rather than describe seven hours as the whole.",
+
+  "traditionExplanation": {
+    "text": null,
+    "source": null
+  },
+
+  "entries": {}
+}

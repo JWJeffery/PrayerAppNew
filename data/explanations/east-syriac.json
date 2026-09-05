@@ -1,0 +1,15 @@
+{
+  "tradition": "COE",
+  "traditionLabel": "Church of the East — The Hudra (East Syriac)",
+  "primarySource": "A.J. Maclean, East Syrian Daily Offices (London: Rivington, Percival & Co., 1894). Public domain (archive.org item eastsyriandailyo00macluoft, reviewed NOT_IN_COPYRIGHT).",
+  "sourceStatus": "cited-not-in-repo",
+
+  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, deliberately. Maclean 1894 is NOT held in this repository (confirmed by a filename search across the whole tree during the session that created this file). What the repo does hold is every one of the 439 components in components/east-syriac.json carrying an exact Maclean page citation in meta.source, and 324 of them carrying a meta.note with substantial cited detail, including verbatim quotation from Maclean's own Introduction. That is enough to write this file from -- but it must be written from the source pages read directly, in the manner the Anglican file was, not assembled out of internal audit notes written for a different purpose. Maclean's Introduction, pp.xiii-xxii, is the natural basis for the depth-3 tradition explanation: it is the source's own structural account of the East Syriac office, and it is already quoted in several places in this repository. Josh supplies Maclean page ranges by upload; direct fetch from the ACOE California mirror hard-truncates at ~p.45 regardless of approach and must not be retried.",
+
+  "traditionExplanation": {
+    "text": null,
+    "source": null
+  },
+
+  "entries": {}
+}
