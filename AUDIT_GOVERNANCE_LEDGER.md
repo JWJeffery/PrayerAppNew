@@ -1,3 +1,61 @@
+## Session 2026-09-05 continued -- OCA and Coptic Reader set as the governing calendars for EOR and
+## OOR; Rome out of scope. SEED_VERSION v235 -> v236.
+
+### The two remaining governing calendars, set by Josh
+
+| Tag | Governing calendar |
+|---|---|
+| EOR | **Orthodox Church in America**, `oca.org/saints/lives` |
+| OOR | **Coptic Reader**, Coptic Orthodox Metropolis of the Southern United States |
+
+The Coptic Church is this project's first Oriental Orthodox tradition. **The Ethiopian Synaxarium is
+scoped out** of general OOR use and its registry note now says so: it speaks for Ethiopia only and
+must not be used to date Coptic, Armenian or Syriac commemorations. The registry now holds 16
+witnesses.
+
+**Rome is out of scope.** Josh: the Roman lane is not built. The 228 LAT-only rows are not a live
+question and the earlier request for a Roman calendar decision is withdrawn.
+
+### Method validated on the two days that could be read
+
+| Sanctoral row | OCA prints |
+|---|---|
+| Holy Prophet Moses (Sept 4) | Holy Prophet and God-seer Moses |
+| Prophet Zachariah (Sept 5) | Holy Prophet Zachariah and Righteous Elizabeth |
+
+Both written, citing the fetched URL and the printed line. **Confirmed rows 309 -> 311.**
+
+### A throughput limit that decides the approach
+
+Measured, not assumed. The 356 unconfirmed EOR rows sit on **326 distinct days**. OCA serves one
+civil day per URL. This environment refuses any URL that has not already appeared in a prior fetch
+or search result, so reaching an arbitrary date means walking OCA's own Backward/Forward links one
+day at a time.
+
+**326 sequential page fetches is not a viable bulk pass.**
+
+So OCA is the **adjudicating** authority, and the bulk needs a machine-readable baseline audited
+against it -- exactly the shape Josh described for Coptic, where `coptic-synaxarium.json.txt` (366
+days, 702 entries) is the baseline and Coptic Reader governs. Josh already holds
+`Synaxarium-Constantinople.txt`, the obvious EOR equivalent.
+
+**Neither file is in this repo. That is the single blocker on 542 rows.**
+
+### A tagging question, recorded not acted on
+
+5 September carries **"Prophet Zachariah" tagged EOR and "Righteous Elizabeth" tagged OOR as two
+separate rows**, where OCA has one joint commemoration of both. Either a real difference between the
+calendars or an artefact of the old month-file data. Needs Coptic Reader before either row is
+trusted.
+
+### Verification
+
+`source-index.json` and `sanctoral.json` both edited by targeted string replacement and revalidated
+with `json.loads`. The registry gained exactly two entries; sanctoral entry count unchanged at
+1,301; every untouched row asserted byte-identical. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- a witness registered as an Anglican calendar turned out to be a
 ## Church of the East diocesan calendar; the EOR/LAT/OOR sourcing gap scoped. SEED_VERSION v234 -> v235.
 

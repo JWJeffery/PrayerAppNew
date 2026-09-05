@@ -69,12 +69,26 @@
     "authority_tier": "reference",
     "notes": "Reference source; not an Anglican calendar authority."
   },
+  "OCA": {
+    "label": "Orthodox Church in America \u2014 Lives of the Saints",
+    "path": "https://www.oca.org/saints/lives/{YYYY}/{MM}/{DD} \u2014 not in repo; web-addressable per day",
+    "kind": "eastern_orthodox_jurisdictional_calendar",
+    "authority_tier": "governing_source_eastern_orthodox",
+    "notes": "GOVERNING CALENDAR FOR THE EOR TAG, set by Josh 2026-09-05, on the same principle as the Church of the East: a communion/jurisdictional calendar decides the date. Fetchable and date-addressable, one civil day per URL. THROUGHPUT LIMIT, measured not assumed: the 356 unconfirmed EOR rows sit on 326 distinct days, so a full pass is 326 separate page fetches, and this environment can only reach a URL already linked from a page it has already fetched -- i.e. walking the Backward/Forward chain a day at a time. That is not a viable bulk pass. OCA is therefore the ADJUDICATING authority; a machine-readable baseline is needed to carry the bulk, audited against OCA the way Coptic Reader audits the Coptic JSON. Josh holds Synaxarium-Constantinople.txt, the obvious candidate, not yet in this repo."
+  },
+  "COPTIC_READER": {
+    "label": "Coptic Reader \u2014 Coptic Orthodox Metropolis of the Southern United States",
+    "path": "https://copticreader.org \u2014 not in repo; app-distributed",
+    "kind": "oriental_orthodox_diocesan_calendar",
+    "authority_tier": "governing_source_coptic",
+    "notes": "GOVERNING CALENDAR FOR THE OOR TAG, set by Josh 2026-09-05. The Coptic Church is this project's first Oriental Orthodox tradition; Coptic Reader's Synaxarion Calendar, used with the Antiphonary/Difnar, is the fullest current U.S. diocesan source. Josh also holds coptic-synaxarium.json.txt -- 366 days, 702 entries -- to serve as the machine-readable BASELINE, audited and supplemented against Coptic Reader, since it omits later additions including the New Martyrs of Libya and St Maurice. Neither file is in this repo yet."
+  },
   "ETH": {
     "label": "Ethiopian Synaxarium",
     "path": "data/kalendar/source-witnesses/ethiopian-synaxarium.pdf",
     "kind": "oriental_orthodox_synaxarial_witness",
     "authority_tier": "great_church_supplement",
-    "notes": "Great Church / Oriental Orthodox source witness."
+    "notes": "Great Church / Oriental Orthodox source witness. SCOPED 2026-09-05: Ethiopian only, and Ethiopia is NOT this project's first Oriental Orthodox tradition -- the Coptic Church is (Josh, 2026-09-05). This witness does not speak for the OOR tag generally and must not be used to date Coptic, Armenian or Syriac commemorations."
   },
   "ACOE_WE_2026": {
     "label": "Assyrian Church of the East, Diocese of Western Europe \u2014 Ecclesiastical Calendar 2026",

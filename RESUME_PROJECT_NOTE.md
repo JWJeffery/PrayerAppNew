@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v235`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v236`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
@@ -186,6 +186,20 @@ reference works and are marked in `source-index.json` as *not* calendar authorit
 Byzantine explanatory apparatus, not a calendar. A Roman calendar plus one EOR jurisdictional
 calendar would reach 528 rows directly. **Which jurisdiction controls for EOR, and which Roman
 calendar, are Josh's decisions and are not yet made.**
+
+**Governing calendars are set for every live tradition** (Josh, 2026-09-05):
+ANG -> LFF 2024, then the other Anglican witnesses. COE -> ACOE diocesan calendars.
+**EOR -> the Orthodox Church in America** (`oca.org/saints/lives`).
+**OOR -> Coptic Reader** (Coptic Metropolis of the Southern US). The Coptic Church is the first
+Oriental tradition; **the Ethiopian Synaxarium must not be used for OOR generally.**
+**Rome is out of scope** — that lane is not built, so the 228 LAT rows are not a live question.
+
+**The EOR/OOR bulk is blocked on two files Josh holds and this repo does not:**
+`Synaxarium-Constantinople.txt` and `coptic-synaxarium.json.txt` (366 days, 702 entries). They are
+the machine-readable baselines; OCA and Coptic Reader adjudicate. **Web-fetching OCA cannot carry
+the bulk** — 356 EOR rows across 326 distinct days, one day per URL, and this environment refuses
+any URL not already seen in a prior result, so arbitrary dates are only reachable by walking OCA's
+own day-to-day links. Measured, not assumed. **Do not attempt a 326-fetch pass.**
 
 **The instrument for the Anglican remainder is already built.** `data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`
 holds 1,194 ranked candidates across all 366 days, each with its SIN, source witnesses (BCP; LFF;
