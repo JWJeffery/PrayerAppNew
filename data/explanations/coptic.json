@@ -1,15 +1,267 @@
 {
   "tradition": "OOR-COP",
   "traditionLabel": "Coptic Orthodox — The Agpeya",
-  "primarySource": "De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London: Simpkin, Marshall, Hamilton, Kent & Co., 1911). Public domain.",
+  "primarySource": "De Lacy O'Leary, The Daily Office and Theotokia of the Coptic Church (London: Simpkin, Marshall, Hamilton, Kent & Co., 1911). Public domain. Depth-2 and depth-3 content is written from O'Leary's own Introduction, sections I-XV, pp.1-86, which is his account of how the Coptic office came to have the shape it has.",
   "sourceStatus": "cited-not-in-repo",
 
-  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, deliberately. O'Leary 1911 is NOT held in this repository. All 87 components in components/coptic.json carry an exact O'Leary page citation in meta.source, but none carries a meta.note, so unlike the East Syriac corpus there is no cited structural detail already sitting in the repo to work from. O'Leary's Preface and Introduction are the natural basis for the depth-3 tradition explanation and would need to be read directly. The volume is reachable through Josh's Google Drive (file id 1kH_ODEaI7Bdvz_XL3XEx28Ikx1ZXlEEo, ~40MB) via Google Drive:read_file_content, which has no size limit; Google Drive:download_file_content caps at 10MB and cannot open it. One disclosure that belongs in any eventual depth-3 text: O'Leary's volume contains the Morning, Third, Sixth, Ninth, Eleventh, Twelfth and Midnight offices only. The Prayer of the Veil is a real part of the Agpeya and is absent from this source, verified by full-text search -- see dashboard row cop:agpeya:prayer-of-the-veil. Any tradition-level account of the Agpeya written from O'Leary alone must say so rather than describe seven hours as the whole.",
+  "_provenanceNote": "O'Leary is already the governing source for this lane's office content, so no new source approval was required for this file; it is the same edition read at its Introduction rather than its office texts. The volume is in Josh's Drive as 'DO 1-124 small.pdf' (40MB) and must be read via Google Drive read_file_content -- download_file_content hard-caps at 10MB and this file exceeds it. The Introduction was retrieved in full on 2026-09-04.\n\nTHE DISCLOSURE THIS SOURCE REQUIRES, in O'Leary's own words rather than paraphrased away. His Preface states that the following pages deal with the daily offices as used in the MONASTERIES of Egypt, for the Coptic Office has not been introduced into the Parish Churches; and section II repeats that the extension of the office to the parish church has never taken place in the Coptic Church. Section VII adds that because the Divine Office in Egypt has not passed outside the monastic choir, no occasion ever arose for compiling a single comprehensive manual. Every depth-3 statement in this file is therefore a statement about monastic use as O'Leary found it, not about what a Coptic parish does.\n\nHe is also candid about the limits of his own work: he says it by no means claims to be a final and complete treatment, that it has the necessary defects of a first effort, that very few Coptic liturgical MSS are earlier than the 13th-14th centuries, and that where he had to rely on later manuscripts -- written when Coptic was no longer a spoken language and full of orthographical errors -- he can only trust that his translation is generally correct. Where this file rests on something he flags as uncertain, it says so.\n\nKNOWN GAP, ALREADY ON THE DASHBOARD: O'Leary gives seven hours and does not contain the Prayer of the Veil. That remains a disclosed gap (cop:agpeya:prayer-of-the-veil, amber) and this file does not attempt to fill it from another edition.",
 
   "traditionExplanation": {
-    "text": null,
-    "source": null
+    "text": "The Agpeya is a monastic office, and O'Leary is emphatic about it. His Preface says the pages deal with the daily offices as used in the monasteries of Egypt, because the Coptic Office has not been introduced into the parish churches; later he repeats that the extension of the office to the parish church has never taken place in the Coptic Church. He thought this mattered beyond Egypt: Egypt is the original cradle of monasticism, which is responsible for the form of the regular daily office everywhere, so the Coptic office is a witness to how the whole idea began.\n\nThe seven hours are built on a verse. O'Leary explains that in the extant Egyptian service-books the offices are seven in number, and that this number rests on the words of Psalm 119, 'seven times a day do I praise thee' — a reckoning generally recognised in the fourth and fifth centuries and cited by Ambrose, Augustine and Hilary.\n\nBut they did not all arrive together, and the order in which they accumulated is visible in the office itself. Two came first. From Cassian's account of the monks of Lower Egypt, O'Leary reports that there were only two public offices, one in the evening and one in the morning, with twelve psalms recited at each; the third, sixth and ninth hours were kept, but privately, by each monk as he worked in his cell. Public offices at those three hours came later, from Syria. A Midnight office was added, based on the vigils kept in the great churches. And a twelfth-hour office, 'of sleep' — Compline — arose because the Pakhomian Rule split the evening office in two: the community said six prayers together, then dispersed to their houses and said six more before sleeping. O'Leary calls that division the real origin of Compline, and notes it places it earlier than is usually supposed.\n\nOne mark of the older layer survives. Because only the two original offices had lessons attached, and the other five did not, the reading of scripture eventually detached itself from the office altogether and became the two Offices of Incense. Those, unlike the office proper, did pass into general use — and O'Leary explains why: after the Muslim conquest, during outbreaks of persecution, it was often difficult to attend the Eucharist, and since the Divine Office had never left the monasteries, lay people took to reading the appointed lessons at home and censing the book as priest and deacon do at the altar. The Office of Incense arose as a substitute for the Liturgy.\n\nThe psalms are the bulk of it, and they are said in a distinctive way. O'Leary notes that the Coptic Church kept what was called the Alexandrian method in a still severer form than anyone else: in the Divine Office the psalms are recited solo, without responsories and without antiphons — no two choirs answering each other, as in the Syrian and Greek manner. He is also honest about the psalter's coverage: as the office stands, it omits seventy-two psalms altogether, while those for Evening and Compline are said twice over.\n\nOne last thing worth knowing before praying it. The psalm numbers here follow the Septuagint, not the Hebrew, so from Psalm 9 onward they run one behind the numbering in most English Bibles.",
+    "source": "O'Leary 1911: Preface p.iii (the office as used in the monasteries of Egypt, not introduced into the parish churches; Egypt as the cradle of monasticism responsible for the form of the daily office); Introduction II p.13 (the extension to the parish church never having taken place in the Coptic Church); II pp.15-16 (Cassian on the two public offices and twelve psalms; the day-hours as private devotion in the cell); II p.24 (the seven offices resting on Psalm 119.164, recognised in the fourth and fifth centuries and cited by Ambrose, Augustine and Hilary; the day-hours as private devotion); II p.23 (the Pakhomian division of the evening office as the real origin of Compline, placed earlier than generally supposed); II p.25 (the Midnight office based on vigils; the Twelfth Hour or 'of sleep'; lessons attached only to the two original offices, later becoming the Offices of Incense); XIII p.70 (the Offices of Incense arising as a substitute for the Liturgy after the conquest); IV p.40 (the psalms recited solo, without responsories or antiphons); III p.36 (seventy-two psalms omitted, Evening and Compline said twice over); III p.28 (the Septuagint numeration)."
   },
 
-  "entries": {}
+  "entries": {
+    "agpeya-opening": {
+      "label": "Agpeya Opening",
+      "role": "opening",
+      "matchLabels": ["Agpeya Opening", "Introductory Prayers"],
+      "micro": "The fixed prayers said before every one of the seven hours.",
+      "structural": "The same short block opens each hour: the invocation in the name of the Trinity, the Gloria in Greek, and the Lord's Prayer. O'Leary notes that reciting the Lord's Prayer here, as a preparation for the office, is a more recent addition — the office's own use of it is the one that comes later in each service, after the psalmody.",
+      "source": "O'Leary 1911, Introduction VI p.47, and the text of the Introductory Prayers, p.87."
+    },
+
+    "prayer-after-office": {
+      "label": "Prayer Recited After Each Office",
+      "role": "prayer",
+      "matchLabels": ["Prayer Recited After Each Office"],
+      "micro": "A short closing invocation said at the end of every hour.",
+      "structural": "It closes each hour as the opening block begins it, so the seven offices are bracketed identically however much their contents differ. O'Leary prints it once at the head of the offices rather than repeating it seven times, which is itself a reminder that this is a monastic book assuming a reader who already knows the shape.",
+      "source": "O'Leary 1911, the Prayers recited after each Office, p.87."
+    },
+
+    "prayer-of-thanksgiving": {
+      "label": "Prayer of Thanksgiving",
+      "role": "prayer",
+      "matchLabels": ["Prayer of Thanksgiving"],
+      "micro": "The great thanksgiving that opens the Morning Office — and also opens the Liturgy.",
+      "structural": "This prayer does double duty, and O'Leary is careful about which way the borrowing ran. It is used before the psalms in the Morning Office and also forms the chief part of the Enarxis in the Greek Liturgy of St Mark, in the Coptic Liturgy and in the Ethiopic. He states the direction plainly: this prayer has passed into the Eucharistic liturgy from the Office, not the other way about. The Enarxis itself appears in Byzantine sources in the ninth century, and its presence in the Coptic rite is a trace of Greek influence.",
+      "source": "O'Leary 1911, Morning Office p.87 n.2."
+    },
+
+    "come-let-us-worship": {
+      "label": "O Come, Let Us Worship",
+      "role": "opening",
+      "matchLabels": ["O Come, Let Us Worship"],
+      "micro": "A threefold invitation to worship Christ as God, King and Saviour.",
+      "structural": "It follows the Prayer of Thanksgiving in the Morning Office, before the psalmody, and it names Christ three times under three titles — God, King, Saviour. The passage continues by asking that through the intercessions of Holy Mary and all the saints we may glorify God's glory, so it also introduces the intercessory pattern the office returns to at every hour.",
+      "source": "O'Leary 1911, Morning Office (2), pp.88-89."
+    },
+
+    "we-glorify-trinity": {
+      "label": "We Glorify the Trinity",
+      "role": "doxology",
+      "matchLabels": ["We Glorify the Trinity"],
+      "micro": "A long salutation greeting the Church, the Virgin, the angels and the saints in turn.",
+      "structural": "It is a roll-call: the Church, the Virgin, Gabriel, Michael, the archangels, the four living creatures, the twenty-four elders, the Cherubim and Seraphim, John the Forerunner, the Twelve Apostles, Mark the Evangelist, Stephen, George, the martyrs, Antony and the three Macarii, and the cross-bearers. O'Leary notes it is found only in copies of the Psalmodia, the deacon's or choir book, rather than in the Psalterion which holds the reader's part — so it belongs to the sung layer of the office, not the recited one.",
+      "source": "O'Leary 1911, Morning Office (4), pp.89-90, and Introduction VII pp.49-50 (the division between the Psalterion and the Psalmodia)."
+    },
+
+    "o-true-light": {
+      "label": "O True Light",
+      "role": "hymn",
+      "matchLabels": ["O True Light"],
+      "micro": "The morning Psali, addressing Christ as the true light that enlightens everyone.",
+      "structural": "This is a Psali, one of the metrical hymns — O'Leary describes the Psali as either metrical paraphrases based on canticles or hymns built on that model, composed in four-line stanzas. Its theme is the daybreak: it asks that thoughts of light may abound and that the darkness of passion may not overcloud, quoting Psalm 119 on eyes that anticipate the dawn. He records it as given in copies of both the Horologion and the Psalmodia, which is unusual — most material sits in one book or the other.",
+      "source": "O'Leary 1911, Morning Office (5), pp.90-91 and p.90 n.2; Introduction V p.45 (the Psali as metrical hymns in four-line stanzas)."
+    },
+
+    "doxology-virgin": {
+      "label": "Doxology of the Virgin",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Virgin"],
+      "micro": "A short hymn to the Mother of God, first of the series said at the Morning Office.",
+      "structural": "O'Leary describes the Doxologies as shorter metrical hymns on the feasts of saints, standing alongside the Psali and the Theotokias as the three kinds of metrical composition in this office. The series at the Morning Office runs in a fixed order of rank — the Virgin, the angels, the apostles, the martyrs, the monastic fathers, the cross-bearers, and the patriarchs and prophets — and each ends with the same petition, that through their intercessions God may grant pardon of sins.",
+      "source": "O'Leary 1911, Introduction V p.45 (the Doxologies as shorter hymns on the feasts of saints); Morning Office (6), pp.91-94."
+    },
+
+    "doxology-angels": {
+      "label": "Doxology of the Angels",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Angels"],
+      "micro": "Thousands of archangels standing before the throne, singing the Thrice-Holy.",
+      "structural": "It places the one praying inside the heavenly liturgy rather than merely describing it: the angels stand before the throne of the Almighty and sing 'Holy, holy, holy', and the doxology then asks that through the intercessions of the choir of angels God would grant pardon of sins. Its position, second in the Morning series after the Virgin, follows the same descending order of rank the whole sequence keeps.",
+      "source": "O'Leary 1911, Morning Office (6) ii, p.91."
+    },
+
+    "doxology-apostles": {
+      "label": "Doxology of the Apostles",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Apostles"],
+      "micro": "The apostles' preaching among the nations, with Christ's charge to the Twelve.",
+      "structural": "This one carries a textual note worth having. The longer form quotes Christ's charge to the Twelve from Matthew 10 and then adds a gloss explaining that he said 'among the Gentiles' because it fell to 'our father' — meaning St Mark, founder of the Egyptian Church — to go there with the Holy Spirit. O'Leary records that several manuscripts, including Oxford Bodleian Huntingdon 256 and 603, omit that whole passage. So its presence or absence is a real variant between witnesses, not a printing accident.",
+      "source": "O'Leary 1911, Morning Office (6) iii, pp.91-92, with n.2 and n.3."
+    },
+
+    "doxology-martyrs": {
+      "label": "Doxology of the Martyrs",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Martyrs"],
+      "micro": "Unfading crowns placed by the Lord on the whole choir of the martyrs.",
+      "structural": "It stands after the apostles in the Morning series and is the shortest of the set — the crowns, the refuge, and the petition. Like every doxology in the sequence it ends with the same formula, asking that through the prayers of the martyrs God would grant pardon of sins.",
+      "source": "O'Leary 1911, Morning Office (6) iv, p.92."
+    },
+
+    "doxology-antonius": {
+      "label": "Doxology of Abbot Antonius",
+      "role": "doxology",
+      "matchLabels": ["Doxology of Abbot Antonius"],
+      "micro": "A hymn to St Antony the Great, whose name is called glorious in all the land of Egypt.",
+      "structural": "The monastic doxologies are where this office is most itself, and Antony comes first because, as O'Leary's Introduction has it, he is justly regarded as the founder of Christian cenobitic life: he left his hermit cave and began a community about the year 305, and from his disciples came the monastic life of the Nitrian desert. One textual note: O'Leary records that Oxford Bodleian Huntingdon 256 and 603 and many other manuscripts omit this doxology altogether, so it is not universal across the witnesses.",
+      "source": "O'Leary 1911, Morning Office (6) v, p.92 with n.4; Introduction II p.14 (Antony and the beginning of cenobitic life)."
+    },
+
+    "doxology-paul": {
+      "label": "Doxology of Abbot Paul",
+      "role": "doxology",
+      "matchLabels": ["Doxology of Abbot Paul"],
+      "micro": "A hymn to St Paul the Hermit, who loved solitude like Elias and was in the desert like John.",
+      "structural": "It follows Antony in the monastic series, and its images are drawn from the two great scriptural solitaries — Elias and John the Baptist. O'Leary records that this doxology, like Antony's and Macarius's, is absent from Oxford Bodleian Huntingdon 256 and 603 and other manuscripts, which suggests the monastic block as a whole varied between houses.",
+      "source": "O'Leary 1911, Morning Office (6) vi, pp.92-93 with n.5."
+    },
+
+    "doxology-macarius": {
+      "label": "Doxology of Abbot Macarius",
+      "role": "doxology",
+      "matchLabels": ["Doxology of Abbot Macarius"],
+      "micro": "A hymn to Macarius, closing with a prayer through the three abbots of that name.",
+      "structural": "The hymn addresses one Macarius but ends by invoking three — a distinction the Coptic tradition keeps and which O'Leary's Introduction supplies the background for: Macarius settled in Sketis shortly after Ammon settled in Nitria, in the earliest generation of the Egyptian communities. Like the two preceding monastic doxologies, it is absent from several of his manuscripts.",
+      "source": "O'Leary 1911, Morning Office (6) vii, p.93 with n.1; Introduction II p.14 (Ammon in Nitria and Macarius in Sketis)."
+    },
+
+    "doxology-cross-bearers": {
+      "label": "Doxology of the Cross-Bearers",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Cross-Bearers"],
+      "micro": "A hymn to the confessors — 'cross-bearers' is O'Leary's rendering of the term.",
+      "structural": "O'Leary glosses the title in a footnote: cross-bearers means confessors. The longer form tells of the fathers who went into the desert, ate the fruit beneath the trees, and were visited by the angel of the Lord every Sabbath and every Lord's Day — and he records that Huntingdon 256 and 603 and other manuscripts omit that whole narrative section, keeping only the opening and the petition.",
+      "source": "O'Leary 1911, Morning Office (6) viii, p.93 with n.2 and n.3."
+    },
+
+    "doxology-patriarchs": {
+      "label": "Doxology of the Patriarchs and Prophets",
+      "role": "doxology",
+      "matchLabels": ["Doxology of the Patriarchs and Prophets"],
+      "micro": "The last of the Morning doxologies, gathering prophets, evangelist, Virgin and patriarchs.",
+      "structural": "It closes the series by drawing the whole company together — Elias and Eliseos, Mark the Apostle as first guide of the Church in Egypt, the Virgin, Severus and Dioscorus, and all the fathers who pleased the Lord. Severus and Dioscorus are named as teachers and confessors of the faith, which places this doxology firmly within the non-Chalcedonian tradition rather than in a shared inheritance.",
+      "source": "O'Leary 1911, Morning Office (6) ix, p.94."
+    },
+
+    "angelic-song": {
+      "label": "The Angelic Song",
+      "role": "canticle",
+      "matchLabels": ["The Angelic Song", "Gloria in Excelsis"],
+      "micro": "The Gloria in Excelsis, used at the Morning Office only.",
+      "structural": "O'Leary classes it among the psalmi idiotici — canticles composed in imitation of the psalms, the older of the two kinds of hymn, of which the Te Deum is the other famous example. He judges its presence here to be Syrian influence: it appears in the Apostolic Constitutions headed as a morning prayer, and in the fifth-century Codex Alexandrinus among the Byzantine odes headed as a morning hymn, which suggests use at Antioch in the fourth to fifth century. It is recited at Lauds in the Greek Church, and it is used in the Coptic office at the Morning Office alone.",
+      "source": "O'Leary 1911, Introduction V p.41 and p.94 n.1."
+    },
+
+    "trisagion": {
+      "label": "The Trisagion",
+      "role": "hymn",
+      "matchLabels": ["The Trisagion"],
+      "micro": "The Thrice-Holy, said at every office except Compline — with a clause not found in the Greek.",
+      "structural": "The Coptic form carries a datable addition. O'Leary explains that the Trisagion dates from the pontificate of Proclus of Byzantium (434-46), and that Peter the Fuller of Antioch (471-88) added the clause 'who wast crucified for us' — an addition retained in the Jacobite churches of Syria and Egypt but not in the Greek. Where the Syrian Jacobites repeat the clause three times, the Copts and Ethiopians vary the three acclamations instead: born of the Virgin, crucified for us, risen and ascended. He notes it is said at every office of the day except Compline, and at each of the three Nocturns.",
+      "source": "O'Leary 1911, Introduction V p.42, and Morning Office (8) p.95 with n.1."
+    },
+
+    "creed": {
+      "label": "The Creed",
+      "role": "creed",
+      "matchLabels": ["The Creed"],
+      "micro": "The Nicene Creed, said at the Morning Office, at Compline, and at the last Nocturn.",
+      "structural": "Its placement is specific rather than universal. O'Leary's comparative table of the offices shows the Creed at the Morning Office, at Compline, and at the third Nocturn of the Midnight Office — and at those points the forty-one-fold Kyrie follows it, where at the other hours the Kyrie follows the second Troparion instead. So the Creed's presence marks out which offices carry the fuller shape.",
+      "source": "O'Leary 1911, Introduction VI pp.47-48 (the arrangement and the comparative table); the creed text at Morning Office (10), pp.95-96."
+    },
+
+    "kyrie": {
+      "label": "The Forty-One-Fold Kyrie",
+      "role": "intercession",
+      "matchLabels": ["The Forty-One-Fold Kyrie"],
+      "micro": "'Lord, have mercy' said forty-one times, at every one of the seven hours.",
+      "structural": "O'Leary records the number exactly: at every office, usually after the Lord's Prayer but separated from it, the Kyrie eleison is repeated forty-one times. What varies is what stands immediately before it. At the Third, Sixth and Ninth Hours, at Vespers and at Compline the second Troparion comes between it and the Lord's Prayer; at the first two Nocturns it likewise follows the second Troparion, but there the Trisagion and Lord's Prayer come after it; and at the Morning Office and the last Nocturn it is preceded by the Creed.",
+      "source": "O'Leary 1911, Introduction VI p.47."
+    },
+
+    "metremhe": {
+      "label": "Concluding Prayer (Metremhe)",
+      "role": "prayer",
+      "matchLabels": ["Concluding Prayer (Metremhe)", "Concluding Prayer (Metremhe) of the Third Hour", "Concluding Prayer (Metremhe) of the Sixth Hour", "Concluding Prayer (Metremhe) of the Ninth Hour", "Concluding Prayer (Metremhe) of the Eleventh Hour", "Concluding Prayer (Metremhe) of the Twelfth Hour", "Metremhe"],
+      "micro": "The absolution that ends each hour. The name means 'a setting free'.",
+      "structural": "O'Leary gives the etymology and the parallel. Metremhe means 'a setting free' — the word occurs in the Bohairic version of Leviticus 19.20 — and the name is applied in the office to the prayer which closes the service. He endorses the Marquess of Bute's comparison with the Latin 'absolutio', which is likewise a closing prayer in the Roman Breviary. The Metremhe is usually a prayer ascribed to St Basil the Great and taken from the corresponding office in the Greek Horologion, each based on a numbered section of Basil's Rule; but he adds that in each case the Coptic is not a translation from the Greek so much as a loose paraphrase.",
+      "source": "O'Leary 1911, Introduction VI pp.48-49."
+    },
+
+    "troparion": {
+      "label": "Troparion",
+      "role": "hymn",
+      "matchLabels": ["Troparion of the Third Hour", "Troparion of the Sixth Hour", "Troparion of the Ninth Hour", "Troparion of the Eleventh Hour", "Troparion of the Twelfth Hour", "Troparion of the First Nocturn", "Troparion of the Second Nocturn", "Troparion of the Third Nocturn", "Troparion"],
+      "micro": "A short office hymn naming what the hour commemorates. Each has three parts.",
+      "structural": "The troparia are what give each hour its subject: the Third the descent of the Spirit, the Sixth the Crucifixion, the Ninth the death of Christ. O'Leary sets out their construction precisely. Each consists of three parts — the first closing with the first half of the Gloria Patri, the second with its second half, and the third usually the Theotokion which follows the troparion in the Greek. Both of the first two parts are taken from the corresponding troparia of the Greek Office. There are sixteen troparia in the Coptic office altogether: two at every office except the Morning, which has none, and two in each of the first two Nocturns with one at the last.",
+      "source": "O'Leary 1911, Introduction V p.43."
+    },
+
+    "second-troparion": {
+      "label": "Second Troparion",
+      "role": "hymn",
+      "matchLabels": ["Second Troparion of the Third Hour", "Second Troparion of the Sixth Hour", "Second Troparion of the Ninth Hour", "Second Troparion of the Eleventh Hour", "Second Troparion of the Twelfth Hour", "Second Troparion"],
+      "micro": "The second of the pair at each hour, drawn from the Greek 'mesorion' or inter-hour.",
+      "structural": "O'Leary identifies its source exactly: in the day-hours the Coptic troparia are always two, the first taken from the corresponding Greek hour and the second from its mesorion — the inter-hour office of the Greek rite. Its position also matters structurally: at the Third, Sixth and Ninth Hours, at Vespers and at Compline, the second Troparion stands between the Lord's Prayer and the forty-one-fold Kyrie.",
+      "source": "O'Leary 1911, Introduction V p.43 and VI p.47."
+    },
+
+    "theotokion": {
+      "label": "Theotokion",
+      "role": "hymn",
+      "matchLabels": ["Theotokion"],
+      "micro": "The closing portion of a troparion, addressed to the Mother of God.",
+      "structural": "In this office a Theotokion is not free-standing: it is the third part of a troparion, following the second half of the Gloria Patri, and O'Leary notes it usually corresponds to the Theotokion which follows the troparion in the Greek. It should not be confused with the Theotokia, the long metrical compositions in honour of the Virgin which are a separate genre altogether and belong to the Psalmodia rather than to the hours.",
+      "source": "O'Leary 1911, Introduction V p.43, and X p.53 (the Theotokia as a distinct genre used after the Evening and Midnight Offices)."
+    },
+
+    "vouchsafe": {
+      "label": "Vouchsafe, O Lord",
+      "role": "prayer",
+      "matchLabels": ["Vouchsafe, O Lord"],
+      "micro": "A chain of scriptural petitions said at the Eleventh Hour and at Compline.",
+      "structural": "It is built almost entirely of verses — the prayer that this day be without sin, the blessing of the God of our fathers, the eyes of all waiting on God, and the plea not to cast away the works of his hands. O'Leary's text places it at the Eleventh Hour, before the Trisagion, and directs that it be repeated at the Twelfth, so it belongs to the two evening offices rather than to the day-hours.",
+      "source": "O'Leary 1911, Prayer of the Eleventh Hour (3), pp.104-105, and Prayer of the Twelfth Hour (6), p.108."
+    },
+
+    "prayer-of-esaias": {
+      "label": "Prayer of Esaias",
+      "role": "canticle",
+      "matchLabels": ["Prayer of Esaias"],
+      "micro": "Verses from Isaiah farced with the refrain 'God is with us'. Compline only.",
+      "structural": "O'Leary classes it with the psalmi idiotici but with a qualification: it is rather a farced canticle than an original composition. It consists of passages based on Isaiah 8 and 9, interleaved with the antiphon 'God is with us' taken from Isaiah 8.10, so that the refrain answers each verse in turn. He records that it is used at Compline only, and that it too is taken from the Greek Office.",
+      "source": "O'Leary 1911, Introduction V pp.42-43, and Prayer of the Twelfth Hour (2), pp.106-107."
+    },
+
+    "litany-twelfth-hour": {
+      "label": "Litany of the Twelfth Hour",
+      "role": "intercession",
+      "matchLabels": ["Litany of the Twelfth Hour"],
+      "micro": "A litany of intercessions before sleep, invoking each rank of the saints in turn.",
+      "structural": "It runs down the same hierarchy the Morning doxologies climb — the Mother of God, the powers of heaven, John the Forerunner, the apostles, the prophets, the martyrs and confessors, the high priests who strove for the orthodox faith, and the cross-bearers who forsook the world — each answered with 'intercede for us sinners'. It stands after the Creed at Compline, in the position the forty-one-fold Kyrie occupies at the other hours.",
+      "source": "O'Leary 1911, Prayer of the Twelfth Hour (5), pp.107-108, and Introduction VI p.47 (the arrangement of the closing block)."
+    },
+
+    "psali": {
+      "label": "Psali",
+      "role": "hymn",
+      "matchLabels": ["Psali", "Absaliyah"],
+      "micro": "A metrical hymn varying with the day, sung to one of two tones named from the Theotokia.",
+      "structural": "O'Leary describes the Psali as either metrical paraphrases based on canticles or hymns built on that model, and notes the name is given more widely to any poetical composition in the common four-line metre. They vary according to the day -- feast, fast, or ordinary weekday -- and are usually found in the Psalmodia, which takes its name from them. The tone is given at the head of each: either the more joyful Adam or the more solemn Batos, the lines being somewhat longer in the latter. Adam is used on Sunday, Monday and Tuesday, Batos on the other days. The two names are themselves taken from the Theotokias -- Adam is the opening word of the Monday Theotokia, Batos of the Thursday -- and O'Leary draws the conclusion that the Theotokia is therefore the prototype of Coptic metrical hymnody. The later Psali sometimes rhyme, usually between the second and fourth lines.",
+      "source": "O'Leary 1911, Introduction V pp.45-46 (the metrical hymns, the stanza form, the rhyme schemes, and the two tones with their derivation from the Theotokias) and IX pp.51-52 (the Psali varying with the day and belonging to the Psalmodia)."
+    },
+
+    "midnight-office": {
+      "label": "Midnight Office",
+      "role": "opening",
+      "matchLabels": ["Beginning of the Midnight Office", "Midnight Office"],
+      "micro": "The night office, in three Nocturns — the latest of the seven hours to be added.",
+      "structural": "The Midnight Office is a later addition to the Egyptian scheme, and O'Leary says where it came from: it was added to the two original offices and the three day-hours, based probably on the vigils observed in the great churches. Its three-Nocturn shape is later still — he takes the repetition of the Evening and Compline psalms at Midnight as marking the threefold Nocturn system as a later development in Egypt. Each of the first two Nocturns has two troparia and the third has one. Psalm 133 stands in its introduction, chosen for its words about those who by night stand in the house of the Lord.",
+      "source": "O'Leary 1911, Introduction II p.25 (the Midnight office based on the vigils), III p.36 (the repetition marking the threefold Nocturn as later, and Psalm 133 in the introduction), III pp.37-38 (the reason for Psalm 133), V p.43 (the troparia at the Nocturns)."
+    }
+  }
 }

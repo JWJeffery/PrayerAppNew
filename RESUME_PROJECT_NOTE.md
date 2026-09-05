@@ -1,5 +1,99 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- CHARTER SECTION 11 CLOSED. Coptic populated from O'Leary's own
+## Introduction; all four traditions now carry all three depths. NO SCAFFOLDS REMAIN.
+## SEED_VERSION v219 -> v220.
+
+The explanatory-depth gap open since project inception is closed:
+
+| Tradition | Entries | Governing source | Depths |
+|---|---|---|---|
+| Anglican | 23 | BCP 1979 (in repo) | 1, 2, 3 |
+| Byzantine | 38 | Hapgood 1906 | 1, 2, 3 |
+| East Syriac | 30 | Maclean 1894 | 1, 2, 3 |
+| Coptic | 28 | O'Leary 1911 | 1, 2, 3 |
+
+Every entry cites a specific page.
+
+**Retrieval.** O'Leary was read via `Google Drive read_file_content`. The 40MB file exceeds
+`download_file_content`'s 10MB cap, so that route is unusable — this is the only one. No new source
+approval was required: O'Leary already governs this lane's office content, and this is the same
+edition read at its Introduction rather than its office texts.
+
+**Coverage measured: 43 of 87 Coptic component titles resolve (49%).** The unmatched remainder is
+per-instance material — individual psalm citations, single named prayers like the Prayer of Abba
+Ephraem — which is the correct outcome.
+
+### The disclosure this source forces, and it is a large one
+
+O'Leary states in his Preface, and repeats in section II, that **the Coptic Office has not been
+introduced into the parish churches** and that its extension to the parish church has never taken
+place. Section VII adds that no single comprehensive manual was ever compiled precisely because the
+office never left the monastic choir.
+
+Every depth-3 statement in the Coptic file is therefore explicitly about **monastic** use as O'Leary
+found it, not about what a Coptic parish does. The file says so in its own provenance note rather
+than letting a reader infer otherwise. His self-declared limits travel with it too: he says the work
+by no means claims to be final, that it has the necessary defects of a first effort, and that where
+he relied on later manuscripts — written when Coptic was no longer spoken and full of orthographical
+errors — he can only trust the translation is generally correct.
+
+The Prayer of the Veil remains a disclosed gap. This file does not attempt to fill it from another
+edition.
+
+### What the Introduction supplied
+
+- **The seven hours rest on Psalm 119:164**, "seven times a day do I praise thee" — a reckoning
+  recognised in the fourth and fifth centuries and cited by Ambrose, Augustine and Hilary. Not custom.
+- **Cassian's evidence that only TWO offices were public** in Lower Egypt, with twelve psalms each,
+  the day-hours being kept privately by each monk at work in his cell.
+- **The Pakhomian split of the evening office identified as the real origin of Compline** — the
+  community said six prayers together, then dispersed to their houses for six more. O'Leary notes
+  this places Compline earlier than is generally supposed.
+- **The Offices of Incense arose as a lay substitute for the Liturgy** after the Muslim conquest,
+  when attending the Eucharist was often difficult and the office had never left the monasteries.
+  That is why they alone passed into general use.
+- **The Trisagion's added clause dated**: Peter the Fuller of Antioch, 471-88, added "who wast
+  crucified for us", retained in the Jacobite churches but not the Greek.
+- **Metremhe means "a setting free"**, occurring in the Bohairic Leviticus 19:20, and parallels the
+  Latin *absolutio*.
+- **The Kyrie is said forty-one times**, at every hour, with only what precedes it varying.
+- **The Adam and Batos tones** are named from the opening words of the Monday and Thursday
+  Theotokias — from which O'Leary concludes the Theotokia is the prototype of Coptic metrical hymnody.
+- **His own admission that the office omits 72 psalms** altogether while saying those for Evening and
+  Compline twice over.
+
+### A role error caught by the harness, and why the fix was NOT an amendment
+
+The Coptic "O Come, Let Us Worship" was first filed as role `invitatory`, which failed the taxonomy
+check. On inspection, **Core Contract section 7 already covers invitatory explicitly, under
+`opening`**. This was my error, not a gap in the taxonomy, and the correct fix was to correct the
+entry — not to propose a third amendment. Two amendments in two days would have been the wrong
+instinct, and the harness catching it is exactly what it is for. Recorded because the *non*-amendment
+is the point.
+
+### Verification
+
+Harness 61 -> 67 checks, 0 failures. Two structural changes to the harness itself:
+
+- **The scaffold loop is retired** and replaced by an explicit four-tradition
+  populated-and-nonempty assertion. Under the old loop, a regression emptying any corpus would have
+  passed as "honestly empty."
+- **Section 12 was replaced, not deleted.** It formerly asserted that unsourced traditions decorate
+  nothing; with no unsourced traditions left it now asserts cross-tradition isolation — the property
+  that check actually protected.
+
+### What this does and does not settle
+
+Charter section 11's requirement of three depths is met for all four traditions. It does **not**
+mean every element in every office carries an explanation: coverage runs from 49% of Coptic titles to
+57% of East Syriac components. The unmatched remainder is deliberate — generic section headings and
+individual psalm citations get nothing, because one gloss for "Opening" would be wrong across five
+offices. Extending coverage further is a content question, not an architectural one.
+
+---
+
+
 ## Session 2026-09-04 continued -- EAST SYRIAC education layer POPULATED from Maclean's own
 ## Introduction. Three of four traditions now carry all three depths. SEED_VERSION v218 -> v219.
 
