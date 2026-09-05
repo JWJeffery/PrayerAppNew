@@ -195,8 +195,15 @@ Oriental tradition; **the Ethiopian Synaxarium must not be used for OOR generall
 **Rome is out of scope** — that lane is not built, so the 228 LAT rows are not a live question.
 
 **The EOR/OOR bulk is blocked on two files Josh holds and this repo does not:**
-`Synaxarium-Constantinople.txt` and `coptic-synaxarium.json.txt` (366 days, 702 entries). They are
-the machine-readable baselines; OCA and Coptic Reader adjudicate. **Web-fetching OCA cannot carry
+a modern Eastern Orthodox machine-readable calendar (**none is yet identified**) and
+`coptic-synaxarium.json.txt`. **Do not repeat the "366 days, 702 entries" figure** — it came from a
+ChatGPT message, was never verified here, and was wrongly written into this project's records on
+2026-09-05. Nobody has opened that file.
+
+`Synaxarium-Constantinople.txt` was supplied 2026-09-05 and **is not the EOR baseline.** It is
+Delehaye's 1902 Bollandist edition of a tenth-century Byzantine synaxarion — 82% Greek, rough OCR,
+and a witness to what Constantinople kept then, not what the OCA keeps now. Useful as a historical
+corroborating witness under OCA; useless as a bulk date source. **Web-fetching OCA cannot carry
 the bulk** — 356 EOR rows across 326 distinct days, one day per URL, and this environment refuses
 any URL not already seen in a prior result, so arbitrary dates are only reachable by walking OCA's
 own day-to-day links. Measured, not assumed. **Do not attempt a 326-fetch pass.**

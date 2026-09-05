@@ -1,3 +1,55 @@
+## Session 2026-09-05 continued -- CONDUCT: an unverified third-party claim was written into this
+## project's permanent records; retracted. Synaxarium-Constantinople assessed. SEED_VERSION v236 -> v237.
+
+### The conduct note
+
+Josh asked how I knew `coptic-synaxarium.json.txt` contains "366 days, 702 entries" when I have
+never had the file.
+
+**I didn't know.** That figure, and the claim that the file omits the New Martyrs of Libya and St
+Maurice, came from a **ChatGPT message Josh pasted into the conversation**. I repeated another
+model's unverified assertion as established fact and wrote it into three permanent records --
+`source-index.json`, `AUDIT_GOVERNANCE_LEDGER.md` and `RESUME_PROJECT_NOTE.md` -- in the same breath
+as insisting every date carry a named source.
+
+This is the exact failure this project's governance exists to prevent. Logged, not quietly edited
+out. Josh does not know where that file came from either. **Retracted from all three records.**
+Nothing may be built on those numbers until the file is in hand and read.
+
+### Synaxarium-Constantinople, assessed by opening it
+
+Josh supplied `14-Synaxarium-Constantinople.txt`, 5.6 MB. It is **Delehaye, *Synaxarium Ecclesiae
+Constantinopolitanae e codice Sirmondiano*, Propylaeum ad Acta Sanctorum Novembris, Bollandists 1902**
+(1954 anastatic reprint), public domain. 3.37M characters over 97,864 OCR'd lines, structured by
+`MENSIS` running heads with numbered entries per day.
+
+Measured: **82% of its characters are Greek**, the apparatus Latin.
+
+**It is not the EOR baseline**, and the previous session's claim that it was "the obvious EOR
+equivalent" was made before the file had been seen. It is a critical edition of a **tenth-century**
+Byzantine synaxarion: it witnesses what Constantinople kept *then*, not what the OCA keeps now, and
+the EOR rows need the modern jurisdictional date. Two further limits, both real -- the OCR is rough
+(the title page alone yields SYMAARIUM, ODONSTANTINOPOLITANAE, AUTA SANCTORUM), and matching this
+corpus's English names against unnormalised Greek is a materially harder and more error-prone
+problem than the LFF pass was.
+
+Registered as `SYN_CP` at a `historical_corroborating_witness` tier, subordinate to OCA, with all of
+the above in its own notes. **Deliberately not committed to the repo:** 5.6 MB of Greek text is
+Josh's decision, not something to slip into a patch.
+
+### Net position
+
+No modern Eastern Orthodox machine-readable calendar has been identified, so the **356 EOR rows
+remain blocked**. The Coptic baseline's existence is asserted but unverified. The registry holds 17
+witnesses.
+
+### Verification
+
+`source-index.json` edited by targeted string replacement and revalidated with `json.loads`.
+`sanctoral.json` untouched -- still 1,301 entries, 311 confirmed. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- OCA and Coptic Reader set as the governing calendars for EOR and
 ## OOR; Rome out of scope. SEED_VERSION v235 -> v236.
 
@@ -36,8 +88,8 @@ day at a time.
 
 So OCA is the **adjudicating** authority, and the bulk needs a machine-readable baseline audited
 against it -- exactly the shape Josh described for Coptic, where `coptic-synaxarium.json.txt` (366
-days, 702 entries) is the baseline and Coptic Reader governs. Josh already holds
-`Synaxarium-Constantinople.txt`, the obvious EOR equivalent.
+days, 702 entries -- **a figure later found to be unverified, see the correction entry of the same
+date**) is the baseline and Coptic Reader governs.
 
 **Neither file is in this repo. That is the single blocker on 542 rows.**
 
