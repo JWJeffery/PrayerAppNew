@@ -1,5 +1,58 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- OPEN-ITEMS FIXABILITY PASS. No code or content changed.
+## SEED_VERSION v220 -> v221.
+
+**Why this was the right item to take.** "Is this blocked?" was answered wrongly **twice in this one
+session**, both times from recollection rather than checking:
+
+1. **Cathedral/Monastic toggle.** Flagged as a ready dead control on the strength of a stored note.
+   The repo already said otherwise: `components/traditions/east-syriac/rubrics.json` records that the
+   axis was **deleted** because Maclean does not describe two parallel Cathedral and Monastic forms
+   of each hour the way the old build assumed — he describes one ferial form and, separately,
+   festival/Sunday/memorial forms — and that the distinction must be researched before rebuilding,
+   not assumed. **The repo was right and the note was wrong.** Had I built from the Sunhadus material
+   found earlier the same day, I would have recreated precisely the error already caught and removed:
+   that material is about which offices are obligatory and at what length, not a per-hour variant axis.
+2. **Ferial Morning Service audit.** Called unblocked on the assumption that Maclean being in Drive
+   meant any page was reachable. A direct probe showed the Drive read truncates at printed **p.34** —
+   the same class of wall as the ACOE mirror (~p.45) and archive.org.
+
+### The reachability boundary, now recorded so it is not re-probed
+
+Maclean is reachable only through **printed p.34 via Drive** and **~p.45 via the mirror**. Therefore
+**any item needing Maclean past p.45 is blocked on Josh supplying pages**, and retrying will not
+change that. The Hapgood Appendix B upload is the working precedent for unblocking this class.
+
+### The classification
+
+- **Six items** blocked on exactly that page-supply boundary, otherwise ready to run: Ferial Morning
+  Service (pp.103–108), First/Middle Friday (pp.41–43, 48–49), Great Fast Sunday Evening
+  (pp.206–211), the two Farcings loose ends (pp.236–248), the Pre-Fast folding rule and the Layer 3
+  saints calendar (both the Kalendar appendix, pp.264–283).
+  **Recommended first ask: pp.103–108** — smallest range, most structurally central office, and 20
+  components already cite it.
+- **Seven items** blocked on something other than page supply — Royal Anthem (Josh's decision between
+  two unauthorised routes), Cathedral/Monastic (research), Prayer of the Veil (a different Coptic
+  edition), Horologion (full audit per Josh), and three calendar items on authority or judgement.
+- **Seven items** genuinely unblocked, startable at any time: 2038/2095 season overlap, ordinary1/2/3
+  architecture review, admin dark toggle, dead `config.heading`, empty-`tags` rows, the navigation
+  governance conflict, and education-layer coverage extension.
+- **Four items** awaiting a decision from Josh, with no work possible until then.
+
+### Standing lessons the file encodes
+
+1. Reachability is a property to be **probed, not recalled**. The probe costs one tool call.
+2. A source being in Drive does **not** mean an arbitrary page of it is reachable. Maclean is fully
+   present in Drive and still truncates at p.34.
+3. Where a stored note and the repo disagree about blocked status, **the repo wins**.
+
+`documentation/OPEN_ITEMS_FIXABILITY.md` is the artefact. It is a statement of what stands in the way
+of each item — not a priority order and not a plan.
+
+---
+
+
 ## Session 2026-09-04 continued -- CHARTER SECTION 11 CLOSED. Coptic populated from O'Leary's own
 ## Introduction; all four traditions now carry all three depths. NO SCAFFOLDS REMAIN.
 ## SEED_VERSION v219 -> v220.
