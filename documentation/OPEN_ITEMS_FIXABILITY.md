@@ -51,8 +51,9 @@ the corpus is in place, the audit method is established, and the work would proc
 | **NEW** — seasonal-rubric sweep, 7 components | pp.37, 50–51, 57, 59, 63, 65–66, 67 | Each carries a disclosed-gap note. Not fixable by analogy: Wednesday genuinely differs. |
 | Great Fast's own Sunday Evening Service | pp.206–211 | |
 | Farcings loose ends — Ps.100 "In the beginning" variant; Palm Sunday Ps.96–98 fit | pp.236–248 | |
-| Pre-Fast Sunday folding rule | Kalendar appendix, pp.264–283 | Flagged from the appendix, never modelled |
-| Layer 3 East Syriac saints calendar | pp.264–283 | Kalendar appendix |
+| ~~Pre-Fast Sunday folding rule~~ **RULE RESOLVED 2026-09-04** | — | The complete cascade is now recorded in `rubrics.json`. Implementation remains open: needs the count of Sundays after Epiphany per year plus Node simulation. No longer source-blocked. |
+| **NEW** — Fast Evening Service not built | — **pages already held** | `ramsha` has no Fast sequence; Fast evenings render the ordinary ferial one. Maclean pp.211–219. Blocks Middle Friday wiring. Buildable now. |
+| Layer 3 East Syriac saints calendar | pp.264–283 **now held** | No longer source-blocked. The appendix is in hand; the folding rule above governs how its Epiphany-season memorials collapse in short years. |
 
 **Precedent, 2026-09-04:** Josh supplied pp.103–108 within hours of this file being written and the
 Ferial Morning Service audit ran to completion the same day, finding and fixing two real defects.

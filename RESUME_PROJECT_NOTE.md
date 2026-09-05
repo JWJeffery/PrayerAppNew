@@ -1,5 +1,66 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- KALENDAR APPENDIX (Maclean pp.264-283). Two long-open questions
+## RESOLVED with exact source warrant. Nothing wired. SEED_VERSION v224 -> v225.
+
+Both answers are recorded in `components/traditions/east-syriac/rubrics.json` under
+`kalendar-rules-maclean-264-283`, so neither has to be re-derived by a future session.
+
+### 1. Middle Friday is the Friday of the FOURTH week of the Great Fast
+
+The Kalendar lists the Fast in order (pp.270-272): First Monday through First Friday, Second Sunday,
+Second Friday, Third Sunday, Third Friday, Fourth Sunday, then explicitly **"Middle (Fourth) Monday
+of the Fast"**, "Middle Tuesday", "Middle Wednesday of the Fast, or the Division of the Fast",
+"Middle Thursday", "Middle Friday of the Fast", then Fifth Sunday. The parenthetical "(Fourth)" is
+Maclean's own. A footnote adds that the first, fourth and seventh weeks are the "Weeks of the
+Mysteries (sacrament)".
+
+**The engine already has the predicate.** `office-ui.js` computes `weekInSeason` and already tests
+`[1, 4, 7].includes(weekInSeason)`.
+
+### 2. The Pre-Fast Sunday folding rule, complete
+
+Footnote 1, p.270. The Sunday before the Fast is always fifty days before Easter, so the number of
+Sundays after Epiphany varies, and the memorials fold in a fixed cascade:
+
+- **8** Sundays after Epiphany — the printed order stands
+- **7** — the Memorial of the Forty Martyrs is **dropped**
+- **6** — additionally the Four Evangelists and Ss. Peter and Paul are **joined**
+- **5** — additionally the Greek and Syrian Doctors
+- **4** — additionally St. Stephen and Mar Awa
+
+Maclean defines joining explicitly — *"the service being partly of the one and partly of the other"* —
+so it is a **combined service, not a transfer and not a suppression**. Only the Forty Martyrs are
+dropped outright, and only at seven. He adds *"The Sundays are joined in the same way"*, so the
+cascade governs the Sundays after Epiphany as well, not only the Friday memorials.
+
+**Recorded, not implemented.** Modelling it needs the count of Sundays after Epiphany per year plus
+Node simulation against real dates before any commit.
+
+### Resolving the trigger did NOT unblock wiring — the blocker moved, and is now named
+
+**A new finding, not previously on the open-items list: `ramsha` has no Fast-specific sequence.**
+`office-ui.js` special-cases `sapra` and `lelya` for `isGreatFast` but not `ramsha`, so during the
+Great Fast **every weekday evening currently renders the ordinary ferial sequence** — while Maclean
+gives a distinct Fast Evening Service at pp.211-219, with p.220 directing that Ordinary Weeks follow
+it save that the Lord's Prayer and its collects always precede the Suba'a.
+
+Middle Friday's pp.48-49 propers are the day's proper material a Fast evening structure would draw
+on. Wiring the sequence directly would place ferial-structured material where the Fast structure
+belongs. So Middle Friday now waits on **building the Fast Evening Service** — which is a correctness
+gap in its own right for every weekday evening of the Fast.
+
+**It is buildable now.** pp.211-224 were supplied earlier today and are in hand. This is scoped work,
+not a sourcing problem.
+
+### Nothing was wired this pass
+
+The rules are recorded as sourced fact and the gap is named, rather than guessing at an architecture.
+Harness 67/0; all JSON valid.
+
+---
+
+
 ## Session 2026-09-04 continued -- FIRST and MIDDLE FRIDAY audited (Maclean pp.41-49).
 ## A systemic seasonal-rubric defect found by sweeping the class. SEED_VERSION v223 -> v224.
 

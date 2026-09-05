@@ -1,4 +1,37 @@
 {
+  "kalendar-rules-maclean-264-283": {
+    "_source": "A.J. Maclean, East Syrian Daily Offices (1894), Appendix: The Kalendar and Lectionary, pp.264-283. Supplied by Josh 2026-09-04 and read directly. Recorded here as sourced fact so that neither rule has to be re-derived.",
+
+    "middle-friday-trigger": {
+      "answer": "Middle Friday is the Friday of the FOURTH week of the Great Fast.",
+      "warrant": "The Kalendar lists the Fast in order (pp.270-272): First Monday/Tuesday/Wednesday/Thursday/Friday of the Fast, Second Sunday, Second Friday, Third Sunday, Third Friday, Fourth Sunday, then -- explicitly -- 'Middle (Fourth) Monday of the Fast', 'Middle Tuesday of the Fast', 'Middle Wednesday of the Fast, or the Division of the Fast', 'Middle Thursday of the Fast', 'Middle Friday of the Fast', then Fifth Sunday, Fifth Friday. The parenthetical '(Fourth)' is Maclean's own. A footnote adds: 'The first, fourth, and seventh weeks of the Fast are called the Weeks of the Mysteries (sacrament).' So Middle week = fourth week = a week of the mysteries.",
+      "engine_note": "The predicate already exists. js/office-ui.js computes EastSyriacCalendar.getDayClass(...).weekInSeason and already tests [1,4,7].includes(weekInSeason) for mysteries weeks. Middle Friday is weekInSeason === 4 && dayName === 'friday' && isGreatFast.",
+      "STILL_NOT_WIRED_AND_WHY": "Resolving the trigger did NOT unblock wiring, and the blocker has moved rather than cleared. Ramsha has NO Fast-specific sequence: sapra and lelya are both special-cased for the Great Fast in office-ui.js, ramsha is not, so during the Fast the evening service currently falls through to the ordinary ferial Qdham/Wathar sequence. But Maclean pp.211-219 give a DISTINCT Fast Evening Service. Middle Friday's propers (pp.48-49) are the day's proper material that a Fast evening structure would draw on -- wiring the sequence directly would place ferial-structured material where the Fast structure belongs. The real prerequisite is building the Fast Evening Service; see fast-evening-service-not-built below."
+    },
+
+    "pre-fast-sunday-folding-rule": {
+      "answer": "The Sunday before the Great Fast is always fifty days before Easter. The number of Sundays after Epiphany therefore varies, and the Kalendar folds memorials together in a fixed cascade as that number shrinks.",
+      "warrant_verbatim_structure": "Kalendar footnote 1, p.270: 'Rule in the Khudhra. This Sunday is always fifty days before Easter. If there are eight Sundays after Epiphany, the above order is followed; if seven, the Memorial of the Forty Martyrs is dropped; if six, the Evangelists and St. Peter and St. Paul are joined together; if five, also the Greek and Syrian Doctors; if four, also St. Stephen and Mar Awa -- the service being partly of the one and partly of the other. The Sundays are joined in the same way.'",
+      "cascade": [
+        "8 Sundays after Epiphany -- the printed order is followed unchanged",
+        "7 -- the Memorial of the Forty Martyrs [of Sebaste] is DROPPED",
+        "6 -- additionally, the Four Evangelists and St. Peter and St. Paul are JOINED",
+        "5 -- additionally, the Greek Doctors and the Syrian Doctors are JOINED",
+        "4 -- additionally, St. Stephen and Mar Awa are JOINED"
+      ],
+      "joining_semantics": "Maclean defines 'joined' explicitly: 'the service being partly of the one and partly of the other'. It is a combined service, NOT a transfer and NOT a suppression. Only the Forty Martyrs are dropped outright, and only at seven.",
+      "also_applies_to": "'The Sundays are joined in the same way.' The same folding applies to the Sundays after Epiphany, not only to the Friday memorials.",
+      "not_yet_modelled": "This rule is recorded, not implemented. Modelling it requires computing the number of Sundays after Epiphany for a given year and then applying the cascade to the Epiphany-season memorial resolver. Node simulation against real dates is required before any commit, per standing practice."
+    },
+
+    "fast-evening-service-not-built": {
+      "finding": "NEW, found 2026-09-04 while investigating the Middle Friday trigger; was not previously on the open-items list.",
+      "detail": "Maclean gives a distinct Evening Service for the Fast at pp.211-219 (Weeks of the Mysteries) and p.220 (Ordinary Weeks: 'This is as in the weeks of the mysteries (page 211), except that before the Suba'a they always say the Lord's Prayer and its collects'). The app does not implement it. office-ui.js special-cases sapra and lelya for isGreatFast but not ramsha, so Fast evenings currently render the ordinary ferial sequence.",
+      "consequence": "This blocks Middle Friday wiring, and is a larger correctness gap in its own right for every weekday evening of the Great Fast.",
+      "pages_held": "pp.211-224 were supplied 2026-09-04 and ARE in hand, so this is buildable -- it is scoped work, not a sourcing problem."
+    }
+  },
+
   "_comment": "Church of the East -- rebuilt from A.J. Maclean, East Syrian Daily Offices (London: Rivington, Percival & Co., 1894). Public domain: archive.org item eastsyriandailyo00macluoft, copyright status NOT_IN_COPYRIGHT per archive.org's own review. This REPLACES the entire prior East Syriac build (deleted 2026-08-19), which had zero source citations anywhere and used mechanically-invented psalm sequences (e.g. 'Monday = Psalms 4,5,6') with no relationship to Maclean's actual documented assignments (real Monday First Marmitha = Psalms 11-14). See AUDIT_GOVERNANCE_LEDGER.md for the full account. STATUS: Phase 1 of a multi-session rebuild. Monday (Qdham/'before' week) Ramsha (Evening Prayer) is complete and verified against source. All other days, cycles, and hours (Lelya, Sapra, Suba'a, and the Fast-season minor-hour 'relics' Maclean documents) remain to be built the same way, one day/service at a time. Per Maclean's own structural summary (Introduction, p.xii-xiii, citing the Sunhadus/Book of Canon Law): the normal daily cycle for the whole Church is FOUR services -- Evening, Compline, Night, Morning. The minor hours (Third/Sixth/Ninth) are ordered for monks only, and appear in Maclean's translation only as fragmentary 'relics' during the Great Fast, not as a routine daily observance in either Cathedral or Monastic use. The previous build's 'seven hours in both Cathedral and Monastic modes' framing does not match this primary source and needs to be reconciled -- not yet resolved, flagged here rather than silently carried forward.",
   "monday-ramsha-qdham-sequence": [
     "esy-opening-formula",
