@@ -57,9 +57,13 @@ the corpus is in place, the audit method is established, and the work would proc
 Ferial Morning Service audit ran to completion the same day, finding and fixing two real defects.
 The upload route works and is the way to move any of the remaining rows.
 
-**Recommended next ask:** the Festival Morning Service (p.165) and the Fast services (pp.211–224).
-The Ferial audit established that eight sapra sequences — six fast, two Sunday — carry a structure
-that pp.103–108 does not govern, so they cannot be audited or corrected without those ranges.
+**DONE 2026-09-04:** Josh supplied pp.164–184 and pp.211–224; the Fast and Festival Morning
+Services were audited the same day and three corrections made across the eight sequences. See
+dashboard `esy:sapra:fast-and-festival-morning-audit`.
+
+**Remaining Maclean-dependent rows** are the First/Middle Friday audits (pp.41–43, 48–49), the
+Great Fast's own Sunday Evening Service (pp.206–211), the two Farcings loose ends (pp.236–248), and
+the Pre-Fast folding rule plus the Layer 3 saints calendar (both pp.264–283).
 
 ---
 

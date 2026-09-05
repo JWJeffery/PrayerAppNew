@@ -1,3 +1,64 @@
+## Session 2026-09-04 continued -- FAST and FESTIVAL MORNING SERVICES audited against Maclean
+## pp.164-184 and pp.211-224. SEED_VERSION v222 -> v223.
+
+Josh supplied both ranges, unblocking the eight sapra sequences the ferial audit deliberately left
+alone hours earlier for lack of them. **That restraint is now vindicated**: the correct treatment
+differs between the two groups, so sweeping the ferial rule across them would have introduced a real
+error, not merely an unwarranted one.
+
+### The governing rubrics
+
+- **Festival Morning, p.172:** "Then follow the Martyrs' Anthem and prayers, the prayers for help,
+  and the rest as at the ferial service, pages 107, 108, 16."
+- **Weeks of the Mysteries, Morning, p.219:** "Prayers. O Compassionate one, whose Name, and Bless,
+  O my Lord, thy servants, page 106. They say the prayers for help, and the rest as on ordinary
+  ferias, pages 16, 108."
+- **Ordinary Weeks of the Fast, Morning, p.223:** "And they conclude as on page 219."
+
+### Three corrections
+
+**1. All eight sequences were missing the prayers for help and the whole p.108 block** — Of Mary, Of
+the Apostles, Of our father. Both rubrics direct them explicitly. Inserted into all eight. All
+fourteen sapra sequences now close consistently.
+
+**2. The six fast sequences were saying something they should not.** `esy-sapra-prayer-for-help`
+holds the two collects said *after* the Martyrs' Anthem. Three source statements converge: the
+Introduction p.xvi conditions them on the Anthem having been said — "Two collects when the Martyrs'
+Anthem has been said"; p.212 states plainly that "the Martyrs' Anthem is not said in the Fast"; and
+p.219's list of the fast morning close omits them entirely. Removed from all six. The **two Sunday
+sequences correctly keep them**, because p.172 cites pages 107 and 108 — exactly where those collects
+are printed.
+
+**3. The six fast sequences were missing the two prayers p.219 names by incipit** — "O Compassionate
+one, whose Name" and "Bless, O my Lord, thy servants", both bundled in
+`esy-sapra-prayer-before-martyrs-anthem`. Inserted. Note these *are* said in the Fast even though the
+Anthem they normally precede is not; the source names them by their p.106 location regardless.
+
+### Already correct — verified, not assumed
+
+The fast sequences carry `esy-fast-sapra-no-martyrs-anthem-note`, matching p.212. The Sunday
+sequences carry `esy-sunday-sapra-martyrs-anthem-prayer-sundays`, matching p.172's "If the Martyrs'
+Anthem is said, this prayer is added on Sundays."
+
+### A display question for Josh — not decided here
+
+In a fast office the user will now see a component titled "Prayer before the Martyrs' Anthem"
+immediately followed by a note saying the Martyrs' Anthem is not said in the Fast. That is what the
+source does, but it reads oddly. Whether to give that component a fast-specific display title is
+Josh's call — not a unilateral rename, since the existing title is correct in six of the eight places
+it appears.
+
+### Verification
+
+Zero dangling refs, all JSON valid, explanations harness 67/0. Targeted line editing only, no
+`json.dump`.
+
+`OPEN_ITEMS_FIXABILITY.md` updated. Remaining Maclean-dependent rows: First/Middle Friday
+(pp.41-43, 48-49), the Great Fast's own Sunday Evening Service (pp.206-211), the two Farcings loose
+ends (pp.236-248), and the Pre-Fast folding rule plus the Layer 3 saints calendar (both pp.264-283).
+
+---
+
 ## Session 2026-09-04 continued -- FERIAL MORNING SERVICE AUDITED against Maclean pp.103-108,
 ## which Josh supplied hours after the item was recorded as blocked. SEED_VERSION v221 -> v222.
 
