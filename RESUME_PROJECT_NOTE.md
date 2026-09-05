@@ -1,5 +1,52 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- Core Contract section 7 AMENDED: `creed` and `doxology` added to
+## the shared block role taxonomy, on Josh's approval. SEED_VERSION v216 -> v217.
+
+**Why this needed his approval and not mine.** Building the education layer forced every entry to
+carry a role from section 7's taxonomy. There is no role there for a creed or a doxology, so both
+fell to `other` under section 7's own rule 1 -- a lane may not invent a top-level role; it uses
+`other` and proposes an addition through governance. That rule worked exactly as designed: it
+stopped a role being invented unilaterally and put the decision in front of Josh. `other` was still
+the wrong resting place.
+
+**Evidence gathered before proposing it, not asserted from impression:** creeds are present in the
+shared corpus (`comm-creed-apostles`, `comm-creed-nicene`) *and* independently in East Syriac
+(`esy-nicene-creed`) and Coptic (`cop-creed`). Doxologies likewise -- `comm-gloria-patri`, plus at
+least six distinct Coptic ones (of the Virgin, the angels, the apostles, the martyrs, Antonius,
+Paul). Two genuinely structural, genuinely cross-tradition categories were filed as miscellaneous,
+which defeats the stated purpose of section 7: a creed in the Anglican office and a creed in the
+Hudra could not be recognised as the same kind of thing.
+
+**Approved by Josh 2026-09-04**, amended per section 15 item 4 (a genuinely new shared role requires
+governance review and an edit to section 7).
+
+**Changed in exactly three places** -- confirmed by search to be the only places the taxonomy lives,
+and nothing else in the repo consumes it:
+1. `documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` section 7's table, plus a dated amendment
+   record kept **in the document itself** rather than only here, so the next reader of section 7
+   sees why it changed.
+2. `data/explanations/schema.json`'s role enum.
+3. The `ROLES` set in `scripts/explanations/verify_explanations.js`, now carrying a comment naming
+   all three locations so a future amendment does not miss one.
+
+**Data updated:** the Creed entry moves `other` -> `creed` and Gloria Patri moves `other` ->
+`doxology` in `data/explanations/anglican.json`, by targeted string replacement, never `json.dump`.
+
+**Verified: 46 checks, 0 failures** (was 43). Three new assertions added deliberately, because the
+existing role check would have passed whether or not the amendment actually reached the data: it now
+asserts the creed entry carries role `creed`, Gloria Patri carries `doxology`, and that **zero**
+entries remain parked in `other`.
+
+**A correction to the record.** The rule was attributed in conversation to Lucy. It is not hers:
+`git log` shows `documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md` has exactly one commit, `08b888b`,
+2026-06-20, authored by JWJeffery. It is Josh's own document. The gap was in the initial role list,
+not in the guard rule -- which is worth keeping, since it is what surfaced the gap for review instead
+of letting it be papered over.
+
+---
+
+
 ## Session 2026-09-04 -- LITURGICAL EDUCATION LAYER BUILT (Charter section 11), the largest open
 ## architectural debt on the v215 list. Anglican populated in full from the in-repo BCP 1979;
 ## East Syriac, Coptic and Byzantine disclosed as deliberately-empty scaffolds.

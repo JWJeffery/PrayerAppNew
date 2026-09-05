@@ -207,11 +207,26 @@ function decoratorTests() {
     check('no populated entry lacks a source', uncited.length === 0, uncited.join(', '));
 
     console.log('\n=== 7. Roles inside the closed Core Contract taxonomy ===');
-    const ROLES = new Set(['opening', 'psalmody', 'reading', 'canticle', 'hymn', 'prayer',
-        'intercession', 'antiphon', 'rubric', 'dismissal', 'other']);
+    // Mirrors UNIVERSAL_OFFICE_CORE_CONTRACT.md section 7. `creed` and `doxology`
+    // added by amendment 2026-09-04. If section 7 changes again, change this too
+    // -- the taxonomy lives in three places (that doc, data/explanations/schema.json,
+    // and here) and nothing else in the repo consumes it.
+    const ROLES = new Set(['opening', 'psalmody', 'reading', 'canticle', 'hymn', 'creed',
+        'doxology', 'prayer', 'intercession', 'antiphon', 'rubric', 'dismissal', 'other']);
     const badRoles = Object.entries(ang.entries)
         .filter(([, e]) => !ROLES.has(e.role)).map(([k, e]) => `${k}=${e.role}`);
     check('all roles in taxonomy', badRoles.length === 0, badRoles.join(', '));
+    // The check above would still pass if the creed and doxology entries had been
+    // left as 'other', so assert the 2026-09-04 amendment actually landed in the
+    // data rather than only in the taxonomy document.
+    check('creed entry uses the creed role', ang.entries.creed && ang.entries.creed.role === 'creed',
+        ang.entries.creed ? ang.entries.creed.role : 'entry missing');
+    check('Gloria Patri uses the doxology role',
+        ang.entries['gloria-patri'] && ang.entries['gloria-patri'].role === 'doxology',
+        ang.entries['gloria-patri'] ? ang.entries['gloria-patri'].role : 'entry missing');
+    check('nothing is left parked in other',
+        Object.values(ang.entries).filter(e => e.role === 'other').length === 0,
+        Object.entries(ang.entries).filter(([, e]) => e.role === 'other').map(([k]) => k).join(', '));
 
     console.log('\n=== 8. Cited BCP pages exist in the in-repo PDF page range ===');
     const pages = new Set();

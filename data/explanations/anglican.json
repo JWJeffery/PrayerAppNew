@@ -77,7 +77,7 @@
 
     "gloria-patri": {
       "label": "Gloria Patri",
-      "role": "other",
+      "role": "doxology",
       "matchLabels": ["Gloria Patri", "Glory to the Father"],
       "micro": "The lesser doxology, said to close psalmody by referring it to the Trinity.",
       "structural": "Its one fixed position is at the end of the entire portion of the Psalter, where it is always said. Everywhere else it is optional: after the Invitatory or Christ our Passover, after each psalm, and after each section of Psalm 119. The Gloria printed at the end of certain canticles may be dropped when desired. Rite One services may use the traditional-language form.",
@@ -104,7 +104,7 @@
 
     "creed": {
       "label": "The Apostles' Creed",
-      "role": "other",
+      "role": "creed",
       "matchLabels": ["The Apostles' Creed", "Apostles' Creed", "The Nicene Creed", "Nicene Creed", "The Creed"],
       "micro": "The baptismal creed, said by all standing, as the office turns from hearing Scripture to prayer.",
       "structural": "The Creed marks the hinge of the office: what has been read is confessed, and the prayers follow. Officiant and people say it together, standing. It is omitted when the Eucharist with its own Creed is to follow, and it may also be omitted at one of the two offices on weekdays. When Morning or Evening Prayer serves as the Liturgy of the Word at a Eucharist, the Nicene Creed may take its place.",

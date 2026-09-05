@@ -130,6 +130,8 @@ The shared roles are intentionally few and structural:
 | `reading` | A scripture lesson or appointed reading |
 | `canticle` | A canticle or appointed song |
 | `hymn` | A hymn, troparion, or appointed sung text in a hymn role |
+| `creed` | A creed or symbol of faith said or sung by the assembly |
+| `doxology` | A doxology or ascription of glory attached to other material or standing alone |
 | `prayer` | Collect, oration, or appointed prayer |
 | `intercession` | Litany / intercession / supplication section |
 | `antiphon` | An antiphon or refrain attached to other material |
@@ -142,6 +144,19 @@ Rules:
 1. The taxonomy is **closed by governance** (§15). A lane may not invent a new top-level role on its own; it uses `other` and, if a genuine new structural category is needed across traditions, proposes an addition through governance.
 2. A role is a *structural* category only. It never encodes tradition-specific rank, season, or theology. Those stay in the lane's native fields and labels.
 3. Overloading an existing role to smuggle in tradition-specific meaning is forbidden. If it does not fit, it is `other` plus a native label, not a stretched role.
+
+**Amendment, 2026-09-04 — `creed` and `doxology` added.** The taxonomy as first written had no
+role for either, so both fell to `other` under rule 1. That was correct procedure and it worked as
+designed — it surfaced the gap for governance review rather than letting a role be invented ad hoc
+— but `other` was the wrong resting place for two categories that are genuinely structural and
+genuinely cross-tradition. Evidence checked before proposing the change: creeds are present in the
+shared corpus (`comm-creed-apostles`, `comm-creed-nicene`) and independently in the East Syriac
+(`esy-nicene-creed`) and Coptic (`cop-creed`) corpora; doxologies likewise (`comm-gloria-patri`,
+plus at least six distinct Coptic doxologies — of the Virgin, the angels, the apostles, the
+martyrs, and others). Filing these under `other` meant the shell could not recognise a creed in the
+Anglican office and a creed in the Hudra as the same kind of thing, which is precisely what §7
+exists to make possible. Approved by the Lead Architect. Both roles remain structural only and
+carry no rank, season, or theological content, per rule 2.
 
 ---
 
