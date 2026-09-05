@@ -1,3 +1,91 @@
+## Session 2026-09-05 continued -- FORMATION LAYER was dead on arrival; sanctoral corrected;
+## navigation conflict resolved. SEED_VERSION v231 -> v232.
+
+### The formation layer: a load race, not a content gap
+
+Josh: formation does not work at all on the BCP side -- no tooltips, no glosses, and an "About this
+tradition" panel showing filler.
+
+**Root cause, and it is not the Anglican corpus.** `Explanations.loadAll()` is fire-and-forget at
+boot. `applyExplanationLayer()` is synchronous at the end of each render. **Nothing re-ran when the
+fetch resolved.** Any render that completed before the corpus arrived produced no markers and no
+error.
+
+Proved rather than guessed: a jsdom harness against the real `anglican.json` matched **12 of 12**
+labels the BCP renderer actually emits, and `coverage()` reported 23/23 entries at depths 1 and 2
+with depth 3 present. The data was never the problem.
+
+`loadAll()` now re-decorates what is already on screen when it resolves -- not a re-render, which
+would scroll the reader back to the top.
+
+**The filler text was a false statement, not a cosmetic one.** The depth-3 panel's "no
+tradition-level explanation has been written for this office yet" branch fired whenever the corpus
+had not loaded yet. It asserted the text was unwritten when it was complete. "Not written" and "not
+loaded" are now distinguished; the panel says it is loading and reopens itself.
+
+### Sources removed from everything the reader sees
+
+Josh's words: someone learning the prayer does not care what a long-dead academic has to say. They
+want the facts.
+
+The depth-1 tooltip was literally appending `[Maclean 1894, p.96]` to every gloss. Gone, along with
+the source lines on the depth-2 disclosure and the depth-3 panel. **Provenance is unchanged in the
+corpus files and still enforced** -- the harness still refuses to serve an entry carrying content
+without a source -- it simply no longer reaches the reader. Two harness checks that asserted the
+source *was* rendered were inverted rather than deleted, and now assert that no page citation leaks
+into a tip or a disclosure.
+
+**Still outstanding, deliberately not attempted here.** 88 explanation fields across Byzantine,
+Coptic and East Syriac name the editor in the prose itself -- "Hapgood explains...", "O'Leary
+records...", "Maclean's table shows..." -- 91 sentences in total. Each needs rewriting so the fact
+survives and the attribution goes. Rushing 91 liturgical rewrites in the same pass as everything
+else is how prose gets garbled. Next pass, with before/after shown.
+
+### The sanctoral: one blanket sentence over three different situations
+
+Yesterday's `tagsGap` text was stamped on 170 heterogeneous rows and was wrong for most of them.
+Reading the rows properly found three:
+
+| Class | Rows | Action |
+|---|---|---|
+| Not saints at all | 20 | **Deleted** |
+| One identity, 2-5 unconfirmed dates | 77 (27 identities) | Kept, each row naming every date claimed |
+| Single inherited, unconfirmed date | 73 | Kept, stated as inherited and unconfirmed |
+
+The first class was Ash Wednesday, Good Friday, the Sundays of Great Lent, Easter Vigil, Pentecost,
+the Rogation of the Ninevites and others -- **moveable observances filed as `type: "saint"` with a
+fixed date valid for one year only**, every one of them already computed by the calendar engine.
+Entries 1321 -> 1301.
+
+**The second class was NOT collapsed, and the reason matters.** The same shape is legitimate in the
+live tagged data: 48 live identities sit on multiple dates, 41 of them across different traditions.
+Basil the Great is 1 January in the East and 14 June for Anglicans. Collapsing is therefore a
+sourcing decision, not a cleanup, and it is Josh's call. Each row now names every date the identity
+claims in this file and states that none is asserted.
+
+Every tagged row verified byte-identical before and after.
+
+### Navigation conflict -- resolved on Josh's decision
+
+`universal-office-navigation-architecture.md` ran two things together. Now explicit:
+
+- **The drawer heading is uniform.** "Office Settings", every mode, not open to local naming.
+- **Control labels inside stay local.** Cycle, Station, Tone, Anaphora carry liturgical meaning that
+  generic words lose.
+
+The doc records the test: a word naming *what a control does* may be local; a word naming *where the
+user is* is uniform.
+
+### Verification
+
+`sanctoral.json` was rebuilt from its own original text blocks -- never `json.dump` -- with each
+block round-tripped against its parsed entry before editing, and revalidated with `json.loads`
+before writing. `node --check` passes on `office-ui.js` and `saints-resolver.js`. Harness 67/0 with
+the two inverted checks. Cache-bust `office-ui.js?v=219` -> `v220`, `explanations.js?v=216` ->
+`v220`.
+
+---
+
 ## Session 2026-09-05 continued -- three unblocked items cleared: dead identifiers removed, the 170
 ## untagged sanctoral rows disclosed, dark-mode parity extended to every surface.
 ## SEED_VERSION v230 -> v231.

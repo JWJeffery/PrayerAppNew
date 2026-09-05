@@ -58,11 +58,19 @@ The following modes must eventually share this navigation architecture:
 - Book of Needs
 - Admin Dashboard
 
-## Local language is allowed
+## The drawer heading is uniform; local language is allowed inside it
 
-Shared navigation architecture does not mean identical labels. Examples:
+Two different things were run together in the original wording of this section, and the
+distinction is now explicit (Josh's decision, 2026-09-05).
 
-- Daily Office may say Office Settings.
+**The drawer heading is uniform.** Every office drawer, in every mode, is headed
+**"Office Settings"**. This is not a per-tradition choice and is not open to local naming. It is
+the one label a user meets in the same place in every mode, so it is the one that must not move.
+
+**Control labels inside the drawer stay local.** Tradition-specific vocabulary carries liturgical
+meaning that generic alternatives lose, and it is kept. Examples:
+
+- Daily Office may say Office Mode, Rite, or Lectionary Alternates.
 - Ethiopian Sa'atat may say Sa'atat Options or Active Watch.
 - Church of the East may say Hudra, Cycle, Station, or Anaphora.
 - Horologion may say Office, Calendar, Display Depth, or Tone when relevant.
@@ -71,6 +79,11 @@ Shared navigation architecture does not mean identical labels. Examples:
 - Admin may say Corpus Tools, Release Tools, Audits, or Registry.
 
 The underlying navigation affordances should still feel like the same app.
+
+The test to apply: a word that names **what the control does** may be local (Cycle, Station, Tone,
+Anaphora, Reading Plan). A word that names **where the user is** is uniform (the drawer heading).
+Renaming a control because another tradition uses a different word is a mistranslation, not
+consistency.
 
 ## Implementation sequence
 

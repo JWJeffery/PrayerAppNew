@@ -109,7 +109,12 @@ function decoratorTests() {
     check('unknown label gets no marker', !/A Wholly Unknown Label<\/span>\u00a0<span/.test(el.innerHTML));
     check('long rubric prose (>80 chars) is skipped', !/discretion<\/span>\u00a0<span/.test(el.innerHTML));
     check('every marker carries a data-tip', [...m1].every(b => (b.getAttribute('data-tip') || '').length > 20));
-    check('every tip cites its source', [...m1].every(b => /BCP 1979/.test(b.getAttribute('data-tip'))));
+    // INVERTED 2026-09-05, per Josh: a reader learning the office wants the fact,
+    // not the editor and page it came from. The source must still be present in
+    // the corpus (section 6 below still enforces that) but must NOT reach the
+    // reader's tooltip.
+    check('no tip leaks a page citation to the reader',
+        [...m1].every(b => !/BCP 1979|Maclean|O.Leary|Hapgood|pp?\.\s?\d/.test(b.getAttribute('data-tip'))));
     check('liturgical text is untouched', el.innerHTML.includes('Lord, open our lips...'));
 
     console.log('\n=== 11. Depth 2: glosses + structure ===');
@@ -118,7 +123,9 @@ function decoratorTests() {
     const d2 = el.querySelectorAll('.uo-explanation-structural');
     check('disclosures added', d2.length === 3, `got ${d2.length}`);
     check('disclosures collapsed by default', [...d2].every(d => !d.hasAttribute('open')));
-    check('each disclosure shows its source', [...d2].every(d => d.querySelector('.uo-explanation-source')));
+    // INVERTED 2026-09-05, same reason as the depth-1 check above.
+    check('no disclosure shows a source line to the reader',
+        [...d2].every(d => !d.querySelector('.uo-explanation-source')));
     check('disclosure sits immediately after its label',
         el.innerHTML.indexOf('Opening Sentence</span>') < el.innerHTML.indexOf('uo-explanation-structural'));
 

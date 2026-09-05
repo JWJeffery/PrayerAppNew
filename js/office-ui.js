@@ -221,7 +221,20 @@ async function loadKernel() {
     // is a soft dependency, and an office must render in full whether or not
     // its explanations are available.
     if (typeof Explanations !== 'undefined') {
-        Explanations.loadAll().catch(() => { /* soft dependency — see above */ });
+        Explanations.loadAll()
+            .then(() => {
+                // The corpus arriving AFTER the first render was the whole
+                // reason the formation layer appeared dead: loadAll() is
+                // fire-and-forget, applyExplanationLayer() is synchronous, and
+                // nothing re-ran once the fetch resolved. On a fast render the
+                // user saw no markers at all and no error. Re-decorate what is
+                // already on screen rather than re-rendering the office, which
+                // would be wasteful and would scroll the reader back to the top.
+                if (typeof applyExplanationLayer === 'function') {
+                    applyExplanationLayer('office-display');
+                }
+            })
+            .catch(() => { /* soft dependency — see above */ });
     }
 
     try {
@@ -3636,7 +3649,10 @@ function applyExplanationLayer(rootId) {
         if (entry.micro) {
             const btn = document.createElement('span');
             btn.className = 'info-btn uo-explanation-marker';
-            btn.setAttribute('data-tip', entry.micro + '  [' + entry.source + ']');
+            // The gloss only. A reader learning the office wants the fact, not
+            // the editor and page it was taken from; provenance lives in the
+            // corpus file and on the dashboard, not in the reader's tooltip.
+            btn.setAttribute('data-tip', entry.micro);
             btn.setAttribute('tabindex', '0');
             btn.setAttribute('role', 'button');
             btn.setAttribute('aria-label', 'About ' + raw);
@@ -3654,8 +3670,7 @@ function applyExplanationLayer(rootId) {
                 '<summary>How this fits into the office</summary>' +
                 '<div class="uo-explanation-body">' +
                 escapeAttr(entry.structural).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') +
-                '</div>' +
-                '<div class="uo-explanation-source">' + escapeAttr(entry.source) + '</div>';
+                '</div>';
             // Insert after the label, before the text it heads, so the note
             // reads as belonging to that element rather than to the next one.
             if (el.parentNode) el.parentNode.insertBefore(det, el.nextSibling);
@@ -3679,6 +3694,26 @@ function openTraditionExplanation() {
         // Mechanical honesty (charter 0.2): an unwritten explanation says so
         // plainly. It is never filled with another tradition's text, and never
         // silently does nothing when the user asks for it.
+        //
+        // But "not written" and "not loaded yet" are different claims, and this
+        // branch used to make the first when the second was true: the corpus
+        // loads asynchronously, so opening the panel early produced a flat
+        // assertion that nothing had been written for a tradition whose text
+        // was in fact complete. Distinguish them.
+        const state = (Explanations.coverage()[tradition] || {}).state;
+        if (tradition && state !== 'loaded' && state !== 'missing' && state !== 'error') {
+            host.innerHTML =
+                '<div class="uo-tradition-explanation-inner">' +
+                '<button type="button" class="uo-tradition-explanation-close" ' +
+                'onclick="closeTraditionExplanation()" aria-label="Close">&times;</button>' +
+                '<h3>About this tradition</h3>' +
+                '<p class="uo-explanation-body">Still loading\u2026</p>' +
+                '</div>';
+            host.style.display = 'block';
+            Explanations.loadAll().then(function () { openTraditionExplanation(); })
+                                  .catch(function () { /* falls through on reopen */ });
+            return;
+        }
         host.innerHTML =
             '<div class="uo-tradition-explanation-inner">' +
             '<button type="button" class="uo-tradition-explanation-close" ' +
@@ -3700,7 +3735,6 @@ function openTraditionExplanation() {
             '<div class="uo-explanation-body"><p>' +
             esc(data.text).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') +
             '</p></div>' +
-            '<div class="uo-explanation-source">' + esc(data.source) + '</div>' +
             '</div>';
     }
     host.style.display = 'block';

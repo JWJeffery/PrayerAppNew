@@ -10,12 +10,12 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v231`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v232`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
 session. Run `git log --oneline -1` against a fresh clone instead. Cache-bust params are currently
-`office-ui.js?v=219`, `prayers.js?v=206`.
+`office-ui.js?v=220`, `explanations.js?v=220`, `prayers.js?v=206`.
 
 ---
 
@@ -133,6 +133,10 @@ never was a Maclean question.
 - **2038/2095 season overlap**; **`ordinary1/2/3.json` architecture review**.
   *(Dead `config.heading`, `#generic-tradition-label`, the untagged sanctoral rows and dark-mode
   parity were all cleared 2026-09-05 — see §8.)*
+- **Formation prose: strip the editor's name from 88 fields / 91 sentences** (Byzantine, Coptic,
+  East Syriac). Josh, 2026-09-05: sources must not appear in formation at all. The rendered output
+  is already clean; the prose still says "Hapgood explains", "O'Leary records", "Maclean's table
+  shows". Rewrite so the fact survives and the attribution goes.
 - **Education-layer coverage extension** — currently ~49% of Coptic titles to ~57% of East Syriac
   components. Generic headings and individual psalm citations are deliberately unmatched.
 
@@ -151,9 +155,14 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### Awaiting Josh's decision
+- **Whether to collapse the 27 multi-date untagged sanctoral identities.** Not a cleanup: 48 live
+  tagged identities sit on multiple dates too, 41 across different traditions. Collapsing asserts a
+  date.
+- **Whether to separate "Options" from "Settings"** in the office drawer, and how that interacts
+  with the Book of Needs access ladder. Raised 2026-09-05, not yet specified.
+- **The Formation card's appearance in the drawer.** Josh: it looks awful. Not yet redesigned.
 - **Book of Needs** — whether to extend to the full 8-role access ladder.
-- **Navigation governance conflict** — the navigation doc permits local panel naming; Josh has
-  directed uniform "Office Settings" headings. Logged, unresolved.
+
 - **Minor hours scope (East Syriac)** — keep out of scope, matching Maclean, or find a separate
   source for full monastic minor-hour texts.
 - **Fast display title** — in a fast office a component titled "Prayer before the Martyrs' Anthem"
