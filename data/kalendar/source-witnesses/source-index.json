@@ -83,6 +83,13 @@
     "authority_tier": "anglican_calendar_reference",
     "notes": "English Anglican calendar/reference witness; exact source label to be refined if used."
   },
+  "HAPGOOD": {
+    "label": "Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church, 1906",
+    "path": "NOT IN REPO -- archive.org item ServiceBookOfHolyOrthodoxChurchByHapgood; Appendix B pp.592-615 supplied by Josh as an upload 2026-09-04",
+    "kind": "byzantine_service_book_with_explanatory_appendix",
+    "authority_tier": "governing_source_byzantine_explanatory",
+    "notes": "Public domain (Emory/Pitts digitisation states the online edition is not protected by copyright). Slavic recension, matching Charter section 9's implemented baseline. Approved by Josh 2026-09-04 as the governing source for Byzantine explanatory content in data/explanations/byzantine.json. Appendix B is the book's own numbered explanation apparatus. LIMITS, from Hapgood's own Preface: she omitted even the skeleton of the Midnight Service and Little Vespers, and left Vespers largely in skeleton form -- so Appendix B does not explain the Midnight Office or either Compline. Not a hymnographic source; Lambertsen remains the governing source for this lane's hymnography."
+  },
   "LOTS": {
     "label": "LOTS compressed text witness",
     "path": "data/kalendar/source-witnesses/lots.txt.gz",

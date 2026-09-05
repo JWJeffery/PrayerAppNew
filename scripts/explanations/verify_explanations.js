@@ -123,7 +123,9 @@ function decoratorTests() {
         el.innerHTML.indexOf('Opening Sentence</span>') < el.innerHTML.indexOf('uo-explanation-structural'));
 
     console.log('\n=== 12. Unsourced traditions must decorate NOTHING ===');
-    for (const mode of ['east-syriac', 'coptic-agpeya', 'horologion']) {
+    // horologion deliberately dropped from this list on 2026-09-04: it is now
+    // sourced from Hapgood and SHOULD decorate. COE and Coptic remain scaffolds.
+    for (const mode of ['east-syriac', 'coptic-agpeya']) {
         render(mode, 2);
         check(`${mode}: honest empty, no markers or disclosures`,
             el.querySelectorAll('.uo-explanation-marker').length === 0 &&
@@ -159,10 +161,18 @@ function decoratorTests() {
     check('Anglican depth 1 populated', cov.ANG.depth1 > 0, String(cov.ANG.depth1));
     check('Anglican depth 2 populated', cov.ANG.depth2 > 0, String(cov.ANG.depth2));
     check('Anglican depth 3 present', cov.ANG.depth3 === true);
-    for (const code of ['COE', 'OOR-COP', 'BYZC']) {
+    for (const code of ['COE', 'OOR-COP']) {
         check(`${code} scaffold loads and is honestly empty`,
             cov[code] && cov[code].state === 'loaded' && cov[code].entries === 0 && cov[code].depth3 === false);
     }
+    // Byzantine was populated from Hapgood 1906 on 2026-09-04. Asserted explicitly
+    // rather than left in the scaffold loop, so that a regression which silently
+    // emptied this file would fail rather than pass as "honestly empty".
+    check('Byzantine corpus loaded', cov.BYZC && cov.BYZC.state === 'loaded');
+    check('Byzantine has entries', cov.BYZC && cov.BYZC.entries > 0, String(cov.BYZC && cov.BYZC.entries));
+    check('Byzantine depth 1 populated', cov.BYZC && cov.BYZC.depth1 > 0, String(cov.BYZC && cov.BYZC.depth1));
+    check('Byzantine depth 2 populated', cov.BYZC && cov.BYZC.depth2 > 0, String(cov.BYZC && cov.BYZC.depth2));
+    check('Byzantine depth 3 present', cov.BYZC && cov.BYZC.depth3 === true);
 
     console.log('\n=== 2. Mode -> tradition routing ===');
     check('daily-office -> ANG', Explanations.traditionForMode('daily-office') === 'ANG');
@@ -195,16 +205,22 @@ function decoratorTests() {
 
     console.log('\n=== 5. Null-sentinel behaviour ===');
     check('COE depth 3 is null', Explanations.traditionExplanation('COE') === null);
-    check('BYZC depth 3 is null', Explanations.traditionExplanation('BYZC') === null);
+    check('OOR-COP depth 3 is null', Explanations.traditionExplanation('OOR-COP') === null);
     check('ANG depth 3 resolves', Explanations.traditionExplanation('ANG') !== null);
+    check('BYZC depth 3 resolves', Explanations.traditionExplanation('BYZC') !== null);
     check('unknown label returns null, never a guess', Explanations.lookup('ANG', 'Zzz Not A Real Label') === null);
     check('no cross-tradition bleed into COE', Explanations.lookup('COE', 'Opening Sentence') === null);
 
     console.log('\n=== 6. Every populated entry carries a source ===');
     const ang = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/anglican.json'), 'utf8'));
-    const uncited = Object.entries(ang.entries)
-        .filter(([, e]) => (e.micro || e.structural) && !e.source).map(([k]) => k);
-    check('no populated entry lacks a source', uncited.length === 0, uncited.join(', '));
+    const byz = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/byzantine.json'), 'utf8'));
+    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz]]) {
+        const uncited = Object.entries(corpus.entries)
+            .filter(([, e]) => (e.micro || e.structural) && !e.source).map(([k]) => k);
+        check(`${name}: no populated entry lacks a source`, uncited.length === 0, uncited.join(', '));
+        check(`${name}: depth-3 text carries a source`,
+            !corpus.traditionExplanation.text || !!corpus.traditionExplanation.source);
+    }
 
     console.log('\n=== 7. Roles inside the closed Core Contract taxonomy ===');
     // Mirrors UNIVERSAL_OFFICE_CORE_CONTRACT.md section 7. `creed` and `doxology`
@@ -213,9 +229,11 @@ function decoratorTests() {
     // and here) and nothing else in the repo consumes it.
     const ROLES = new Set(['opening', 'psalmody', 'reading', 'canticle', 'hymn', 'creed',
         'doxology', 'prayer', 'intercession', 'antiphon', 'rubric', 'dismissal', 'other']);
-    const badRoles = Object.entries(ang.entries)
-        .filter(([, e]) => !ROLES.has(e.role)).map(([k, e]) => `${k}=${e.role}`);
-    check('all roles in taxonomy', badRoles.length === 0, badRoles.join(', '));
+    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz]]) {
+        const badRoles = Object.entries(corpus.entries)
+            .filter(([, e]) => !ROLES.has(e.role)).map(([k, e]) => `${k}=${e.role}`);
+        check(`${name}: all roles in taxonomy`, badRoles.length === 0, badRoles.join(', '));
+    }
     // The check above would still pass if the creed and doxology entries had been
     // left as 'other', so assert the 2026-09-04 amendment actually landed in the
     // data rather than only in the taxonomy document.

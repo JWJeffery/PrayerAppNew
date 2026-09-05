@@ -1,15 +1,357 @@
 {
   "tradition": "BYZC",
-  "traditionLabel": "Byzantine — The Horologion",
-  "primarySource": null,
-  "sourceStatus": "unsourced",
+  "traditionLabel": "Byzantine — The Horologion (Slavic recension)",
+  "primarySource": "Isabel Florence Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church, compiled, translated and arranged from the Old Church-Slavonic service books of the Russian Church and collated with the service books of the Greek Church (Boston and New York: Houghton, Mifflin and Company, The Riverside Press, Cambridge, 1906). Public domain. Depth-2 and depth-3 content is written from Appendix B, the book's own numbered explanations of the services, together with the front matter.",
+  "sourceStatus": "cited-not-in-repo",
 
-  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, and this file's sourceStatus is 'unsourced' rather than 'cited-not-in-repo' because the Byzantine lane's position is genuinely weaker than the other three. The Horologion office skeletons in data/horologion/ already contain 14 office-level `description` strings and 71 section-level `notes` strings which read as structural explanation -- for example vespers.json's description of Hesperinos as following the standard order of Great Vespers in the Constantinopolitan rite, and its opening section's note that the Usual Beginning precedes all Byzantine offices. NONE of these carries a source. They are currently invisible to users. They must NOT be promoted into this file as explanatory content on the strength of sounding right: this project's standing rule is that content is cited to a specific source page or it is not shipped, and an uncited string does not become citable by being moved to a new file. Closing this gap means naming a governing source edition for the Byzantine lane and reading it, the same way the Anglican file was written. The hymnographic corpora already cite Lambertsen, The Octoechos (see documentation/architectural_charter.md section 13), which is a real, named, already-accepted source witness for this lane and is the obvious place to start -- but it is a hymnographic collection, not necessarily an account of the office's structure, and that needs checking rather than assuming.",
+  "_provenanceNote": "Governing source edition approved by Josh 2026-09-04, per Charter section 13 (no transcription may begin without explicit approval of the governing source edition) and UNIVERSAL_OFFICE_CORE_CONTRACT.md section 15. Appendix B pp.592-615 was supplied by Josh as an upload after archive.org's text stream proved to truncate long before that point -- the same wall already documented for Maclean. WHY HAPGOOD AND NOT LAMBERTSEN: Lambertsen's Octoechos remains the governing source for this lane's HYMNOGRAPHY and is unaffected by this file. It is a hymn collection and gives no account of how the offices are structured, so it cannot answer 'how does this fit into the office'. Hapgood is a service book carrying its own rubrics and, in Appendix B, an explicit numbered explanation apparatus keyed to points in each service -- a depth-2 layer already written, in 1906. It is also the Slavic recension, which Charter section 9 names as this project's implemented baseline, so it is not a recension mismatch being worked around. TWO LIMITS OF THIS SOURCE, from Hapgood's own Preface, which must not be papered over: she states outright that she omitted even the skeleton of the Midnight Service (Polunoshtchnitza) and of Little Vespers, and that she left Vespers largely in skeleton form because of its very great flexibility. This app builds a Midnight Office, a Small Compline and a Great Compline. Appendix B covers the All-Night Vigil (Great Vespers and Matins), the Hours, the Typika and the Liturgies, and does NOT explain the Midnight Office or either Compline. Those are left unwritten here rather than filled by analogy from the offices she does explain. A NOTE ON REGISTER: Hapgood is a 1906 Russian-Church service book prepared for the Russian Church in North America; her explanations describe that recension's practice at that date. Where she describes something as customary or as present usage, this file says so rather than presenting it as timeless.",
 
   "traditionExplanation": {
-    "text": null,
-    "source": null
+    "text": "The Byzantine office runs on a day that begins at sunset, not at midnight. Hapgood puts the reason first: the Church of the East reckons its day after the pattern of the Jewish Church, from sunset, so the worship of God begins with the Evening Service. That single fact organises everything else. Vespers opens the liturgical day, Matins closes the night, and the Divine Liturgy of the morning follows from what was begun the evening before.\n\nThe services also carry a scheme of meaning. Hapgood explains that the Evening Service typifies the Old Testament era, foreshadowing Christ and his life on earth, and that it precedes the Divine Liturgy of the morning, in which the life of our Lord as set forth in the New Testament, and his life in heaven, are typified. The movement from evening to morning is not merely a clock; it is a movement from promise to fulfilment.\n\nOn ordinary evenings, Great or Lesser Vespers is used. On Saturday evening and on the eves of the Great Feasts, the Vigil Service is celebrated, made of portions of Great Vespers combined with Matins. In the early Church that vigil genuinely lasted all night, as its name says, and Hapgood notes that in the monasteries of the East, where the service is read and chanted slowly and in its completeness, it still does. At the Saturday evening Vigil the Resurrection is particularly commemorated. On Christmas Eve, on the Eve of the Epiphany and sometimes of the Annunciation, the Vigil is instead made of Great Compline and Matins.\n\nWhat varies day to day is governed by the eight tones. Hapgood describes the Oktoikh, the Book of the Eight Tones, as containing the canons and certain of the hymns used at Vespers, Compline, the Midnight Service and Matins, with eight complete sets for each service and for every day of the week, all of one week being sung in the same tone. On top of that sit the twelve volumes of the Menaion for the fixed days of the year, the Triodion for the Great Fast, and the Pentecostarion for Eastertide. To navigate all of it the clergy use the Typikon, the Rule, which provides regulations for all possible contingencies.\n\nThe practical consequence is worth saying plainly to anyone arriving from a Western office: this tradition has no single book you open at today's page. The fixed frame and the movable parts live in different volumes, and assembling them is itself a skill.",
+    "source": "Hapgood 1906, Appendix B I, p.592 (sunset reckoning; the Evening Service as typifying Old Testament times and preceding the Liturgy; Great and Lesser Vespers; the Vigil as Great Vespers combined with Matins; its length in the monasteries of the East; the Saturday evening commemoration of the Resurrection; Great Compline and Matins on Christmas Eve and the Eve of the Epiphany); Preface pp.iv-vi (the Oktoikh, the Monthly Mineya, the Triodion, the Pentecostarion, and the Typikon or Rule)."
   },
 
-  "entries": {}
+  "entries": {
+    "vespers-office": {
+      "label": "Vespers",
+      "role": "opening",
+      "matchLabels": ["Vespers", "Great Vespers"],
+      "micro": "The evening office, and the first service of the Byzantine liturgical day, which begins at sunset.",
+      "structural": "Because the day is reckoned from sunset, Vespers is not the end of one day but the opening of the next. Hapgood explains that it typifies the Old Testament era, foreshadowing Christ and his life on earth, and that it stands before the Divine Liturgy of the following morning, in which his life as set out in the New Testament, and his life in heaven, are typified. On ordinary evenings Great or Lesser Vespers is used on its own; on Saturday evenings and the eves of Great Feasts it is joined to Matins as the All-Night Vigil.",
+      "source": "Hapgood 1906, Appendix B I, p.592."
+    },
+
+    "usual-beginning": {
+      "label": "The Usual Beginning",
+      "role": "opening",
+      "matchLabels": ["The Usual Beginning"],
+      "micro": "The fixed opening prayers with which the Byzantine offices begin.",
+      "structural": "Hapgood records that the opening exclamation is uttered by the priest after the deacon has said to the assembled brethren, who are seated, 'Stand,' and has asked a blessing on the service with the words 'Bless, Master.' The exclamations the priest makes after the litanies are not detached formulas either: they bear a close relation to the litany just said, to the prayers the priest has read secretly, or to what the singers have chanted.",
+      "source": "Hapgood 1906, Appendix B I (2) and (5), pp.592-593."
+    },
+
+    "introductory-psalmody": {
+      "label": "Introductory Psalmody",
+      "role": "psalmody",
+      "matchLabels": ["Introductory Psalmody", "Psalm 103 (LXX) — Bless the Lord, O My Soul"],
+      "micro": "The opening psalm of Vespers, recalling the creation of the world.",
+      "structural": "Hapgood reads this opening as carrying the worshipper back to the creation of the world and the first state of our first parents. The censing during it recalls Genesis: at the Creation the Spirit of God moved over the face of the waters. The opening of the Holy Doors signifies that from the creation man was appointed to dwell in Paradise — and their closing after the censing is deliberate, marking that the blissful condition was brief and that men were banished from Paradise after the Fall.",
+      "source": "Hapgood 1906, Appendix B I (3), p.592."
+    },
+
+    "prayers-of-light": {
+      "label": "The Prayers of Light",
+      "role": "prayer",
+      "matchLabels": ["The Prayers of Light", "Prayers of Light"],
+      "micro": "Prayers the priest reads quietly before the closed Holy Doors, bare-headed.",
+      "structural": "Their position is the point. Hapgood explains that the priest stands before the closed doors and reads them secretly, thereby typifying Adam sorrowing in repentance before the gates of Paradise, and that he reads them with uncovered head in token of penitence and humility. The name comes from their content: the service books call them the Prayers of Light because in them the priest glorifies the Lord who dwells in light ineffable, gives thanks for the gift of material light, and prays for illumination of soul.",
+      "source": "Hapgood 1906, Appendix B I (4), p.593."
+    },
+
+    "great-litany": {
+      "label": "The Great Litany",
+      "role": "intercession",
+      "matchLabels": ["The Great Litany (Mirnaya Ektenia)", "The Great Litany"],
+      "micro": "The long opening litany of petitions, each answered by the people with 'Lord, have mercy.'",
+      "structural": "The exclamation the priest makes at its end belongs to it: Hapgood notes that all the exclamations pronounced after the litanies bear a close relation either to the litany preceding, to the prayers the priest has read secretly, or to the chants of the singers. The petitions for rulers were not always so brief. In the early Church all who had brought or sent offerings were prayed for individually by name, and as the Church grew this became burdensome and rendered the services oppressively long, so the present abbreviated and representative form was adopted.",
+      "source": "Hapgood 1906, Appendix B I (5), p.593, and Appendix B IV (4), pp.597-598."
+    },
+
+    "kathisma": {
+      "label": "Kathisma",
+      "role": "psalmody",
+      "matchLabels": ["Kathisma Reading", "Kathisma / Lamp-Lighting Psalms", "Psalter Kathismata", "First Kathisma", "Second Kathisma", "Third Kathisma", "Kathisma"],
+      "micro": "A division of the Psalter. The name means 'sitting' — the people may sit while it is read.",
+      "structural": "Hapgood gives the etymology directly: Kafisma signifies sitting, and the term may have arisen because sitting was appointed while certain parts were read verse by verse, though at some points standing was enjoined; in ancient times these verses were chanted. She also reads the opening verses theologically: they express two thoughts, Adam's repentance for his sins with his regret for the Paradise he has lost, and the exhortation from Adam's mouth to his posterity that they utterly obey the will of God.",
+      "source": "Hapgood 1906, Appendix B I (6) and (7), p.593."
+    },
+
+    "lord-i-have-cried": {
+      "label": "Lord, I Have Cried",
+      "role": "psalmody",
+      "matchLabels": ["Stichera at 'Lord, I Have Cried'", "Lord, I Have Cried"],
+      "micro": "The evening psalms of incense, with proper verses sung between their closing lines.",
+      "structural": "The psalms here are fixed; what changes daily are the stichera sung between the verses, drawn from the Octoechos for the tone of the week and from the Menaion for the day's saint or feast. Hapgood's account of the books explains why the psalm stays while the verses move: the Octoechos holds eight complete sets of hymns, one for each tone, covering every day of the week, while the twelve volumes of the Menaion supply the proper hymns for the saint of each fixed day.",
+      "source": "Hapgood 1906, Preface pp.iv-v (the Oktoikh and the Monthly Mineya)."
+    },
+
+    "theotokion": {
+      "label": "Theotokion",
+      "role": "hymn",
+      "matchLabels": ["Theotokion", "Theotokion (Matins)", "Theotokion of the First Hour", "Theotokion of the Third Hour", "Theotokion of the Sixth Hour", "Theotokion of the Ninth Hour", "Dogmatikon"],
+      "micro": "A hymn to the Mother of God closing a set of verses. At Vespers it also carries doctrine.",
+      "structural": "The Theotokia at Great Vespers are also called Dogmatiki, from the Greek word for doctrine, and Hapgood explains why: together with the praise of the Birth-giver of God they contain dogmatic teaching about the person of Jesus Christ, and in particular about the Incarnation and the union in his person of two natures, the divine and the human. It is sung at this point to recall that she was the Mediatrix through whom, by the birth of her Son, the life of those under the dispensation of the law was assuaged. A Theotokion here is therefore never only a devotional coda — it is where the office states its Christology.",
+      "source": "Hapgood 1906, Appendix B I (8), p.593."
+    },
+
+    "entrance": {
+      "label": "The Evening Entrance",
+      "role": "other",
+      "matchLabels": ["Evening Entrance and O Gladsome Light", "The Evening Entrance", "The Entrance"],
+      "micro": "The procession of the clergy through the Holy Doors, made while 'O Gladsome Light' is sung.",
+      "structural": "Hapgood reads the Entrance as acting out what the hymn says: the Gladsome Radiance has shone for men in the person of the Saviour, who for the sake of men's infirmities humbled the immortal glory of the heavenly Father and came down from heaven. The Holy Doors are opened in token that with the coming of the Lord the Paradise of God was opened to men — answering their closing earlier in the service. Each element carries a role: the priest comes forth standing erect with his chasuble hanging straight, to typify humility and majesty; the deacon precedes him as if he were the Forerunner, holding the censer, whose incense signifies that through the mediation of the Lord our prayers are borne upward like incense and that the Holy Spirit is present in the Temple; and the deacon is himself preceded by a taper, denoting the spiritual light brought by the Lord to earth.",
+      "source": "Hapgood 1906, Appendix B I (9), p.593."
+    },
+
+    "phos-hilaron": {
+      "label": "O Gladsome Light",
+      "role": "hymn",
+      "matchLabels": ["O Gladsome Light (Phos Hilaron)", "O Gladsome Light", "Phos Hilaron"],
+      "micro": "The ancient evening hymn to Christ as the gladsome light of the Father's glory.",
+      "structural": "It is sung at the Entrance, and the two interpret each other: the procession enacts in action what the hymn expresses in words — that the Gladsome Radiance has shone for men in the person of the Saviour, who humbled the immortal glory of the heavenly Father and came down from heaven. Hapgood attributes the hymn to Sophronius, Patriarch of Jerusalem.",
+      "source": "Hapgood 1906, Appendix B I (9), p.593; attribution at Great Vespers, p.8."
+    },
+
+    "prokeimenon": {
+      "label": "The Prokeimenon",
+      "role": "psalmody",
+      "matchLabels": ["Prokeimenon", "Evening Prokeimenon", "The Prokeimenon"],
+      "micro": "A verse, usually from the Psalms, sung immediately before the scripture readings.",
+      "structural": "The name is functional. Hapgood explains that Prokimen comes from the Greek for that which precedes: it is the verse which precedes the lessons from Holy Scripture — the Paremiae, the Epistle and the Gospel — and serves as a preface to the lesson. Generally in the words of Holy Writ, it expresses either the contents and application of the lesson that follows, or the significance of the day, that is, of the prayers and hymns relating to that day. It has its own manner of singing: the reader reads it, the choir sings it, the reader reads the verse or verses while the choir repeats the prokeimenon proper, and then the reader reads the first half and the choir sings the last half.",
+      "source": "Hapgood 1906, Appendix B I (10), pp.593-594, and Appendix B IV (12), p.599."
+    },
+
+    "paremiae": {
+      "label": "The Paremiae",
+      "role": "reading",
+      "matchLabels": ["Vesperal Reading (Paremiae)", "The Paremiae", "Paremiae"],
+      "micro": "Old Testament readings appointed at Vespers on feasts, called 'Parables.'",
+      "structural": "These are the lessons from Holy Scripture of the Old Testament, and sometimes from the New, which Hapgood says are called Parables. She gives three things they do: they contain the prophecies of the event commemorated on the day; or they explain the force of the Feast and the intent with which it was established; or they set forth the praise of the saint whose festival it is. They are read only on certain feasts and appointed days, not daily.",
+      "source": "Hapgood 1906, Appendix B I (11), p.594."
+    },
+
+    "litiya": {
+      "label": "The Litiya",
+      "role": "intercession",
+      "matchLabels": ["The Litiya", "Litiya"],
+      "micro": "A fervent litany, often said in the porch of the church, with 'Lord, have mercy' many times repeated.",
+      "structural": "The name is from the Greek for a fervent prayer, and the fervency is expressed in the repetition. Hapgood explains that it is sometimes performed in the porch of the temple or on the steps, sometimes inside, and that it recalls the ancient processions of the Cross through the streets, especially by night, and the fervent petitions early Christians offered during those processions in times of public calamity. The going out into the porch works two ways at once: for those already standing there, the penitents, it typifies what the Entrance typifies for those inside — that Christ the Gladsome Radiance came down to us here below, so that those in the porch may expect mercy and the remission of sins; and for the faithful who go out to join them, it denotes profound humility, in that they are ready to put themselves in the place of the learners and penitents and pray in company with them.",
+      "source": "Hapgood 1906, Appendix B I (12), p.594."
+    },
+
+    "blessing-of-loaves": {
+      "label": "The Blessing of the Loaves",
+      "role": "prayer",
+      "matchLabels": ["The Blessing of the Loaves", "Blessing of the Loaves"],
+      "micro": "Bread, wheat, wine and oil blessed at the Vigil, asking God's blessing on the fertility of the earth.",
+      "structural": "This is the survival of something practical. Hapgood explains that God's blessing is asked here on the fertility of the earth for the nourishment of men, and that in the early Church, when the All-Night Vigil really did last until morning, it was customary to distribute the common offerings of bread, wine and oil after Vespers so that the faithful who intended to remain throughout the service might be strengthened and refreshed. After the final benediction the priest and deacon came down from the sanctuary and ate with the people, while selections from the Acts of the Apostles or the Epistles were read aloud. She records that the custom was still observed in certain monasteries, notably those on Mount Athos, and that in ordinary churches the distribution of blessed bread during Matins commemorates it.",
+      "source": "Hapgood 1906, Appendix B I (13), p.594."
+    },
+
+    "matins-office": {
+      "label": "Matins",
+      "role": "opening",
+      "matchLabels": ["Matins", "Orthros"],
+      "micro": "The morning office, joined to Vespers in the Vigil, and shaped throughout by the Resurrection.",
+      "structural": "Matins is where the Resurrection is proclaimed. Hapgood explains that because our Lord, after he was risen, speedily manifested himself to his disciples, the Church by reading the Gospel after the Song of the Holy Women announces to the people one of the manifestations of the risen Saviour — and that all eleven Matins Gospels, read in rotation, refer to the Resurrection on the third day. Its structure moves from darkness to light: the Six Psalms at the start represent the wretched condition of the human race in Old Testament days and the hope of a Saviour from on high, and the office ends at the Great Doxology, the singing of the Canon having in ancient times lasted until the dawn.",
+      "source": "Hapgood 1906, Appendix B II (2), (7) and (12), pp.595-596."
+    },
+
+    "six-psalms": {
+      "label": "The Six Psalms",
+      "role": "psalmody",
+      "matchLabels": ["Six Psalms (Hexapsalmos)", "The Six Psalms", "Hexapsalmos"],
+      "micro": "Six psalms read at the start of Matins, in near darkness and without interruption.",
+      "structural": "Hapgood explains their placement: they represent the wretched condition of the human race in Old Testament days, which the offices preceding the Divine Liturgy chiefly set forth, and the hope of a Saviour from on high. That is why they come first, and why the office grows brighter after them.",
+      "source": "Hapgood 1906, Appendix B II (2), p.595."
+    },
+
+    "god-is-the-lord": {
+      "label": "God is the Lord",
+      "role": "psalmody",
+      "matchLabels": ["God is the Lord (or Alleluia in Great Lent)", "God is the Lord / Alleluia", "God is the Lord"],
+      "micro": "A joyful proclamation after the Six Psalms — replaced by a fourfold Alleluia during fasts.",
+      "structural": "Hapgood connects the proclamation to the Jordan: when our Lord revealed himself to the people assembled beside the Jordan, John the Baptist hailed him with joy and reverence, and therefore the priest or deacon now solemnly makes proclamation, beholding as it were our Lord himself come to minister to the world. The substitution is the marker of the fast — during fasts, Alleluia is sung four times instead of 'God is the Lord and hath revealed himself unto us.' Which of the two you hear tells you at once what kind of day it is.",
+      "source": "Hapgood 1906, Appendix B II (3) and (4), p.595."
+    },
+
+    "polyeleos": {
+      "label": "The Polyeleos",
+      "role": "psalmody",
+      "matchLabels": ["The Polyeleos", "Polyeleos"],
+      "micro": "Festal psalms sung at Matins with the lamps lit; the name puns on 'much mercy' and 'much oil.'",
+      "structural": "Hapgood gives both halves of the name: it is so called from the Greek words poli, much, and elea, oil or mercy — because the word mercy is frequently repeated in these psalms, and from the lighting of the shrine-lamps filled with pure oil while the psalms are being sung. The lighting is not decoration; it is what the name records.",
+      "source": "Hapgood 1906, Appendix B II (6), p.595."
+    },
+
+    "matins-gospel": {
+      "label": "The Matins Gospel",
+      "role": "reading",
+      "matchLabels": ["The Matins Gospel", "Matins Gospel"],
+      "micro": "One of eleven resurrection Gospels, read in rotation at Sunday Matins.",
+      "structural": "Hapgood explains that because our Lord, after he was risen from the dead, speedily manifested himself to his disciples, the Church by reading the Gospel after the Song of the Holy Women announces to the people one of the manifestations of the risen Saviour, and that all eleven lessons, appointed to be read in rotation, refer to the Resurrection on the third day. What surrounds the reading is read symbolically too: the incense typifies the sweet spices the women brought to the tomb, the taper the light and joy of the glad tidings, and the priest's procession about the temple the return of the Holy Women and the disciples from the sepulchre, bringing the tidings to the remaining disciples. Afterwards the priest and deacon salute the Gospel Book first, and then the people do homage to it as to Christ himself, in that it contains the redeeming tidings of the Resurrection.",
+      "source": "Hapgood 1906, Appendix B II (5), (7) and (8), p.595."
+    },
+
+    "canon": {
+      "label": "The Canon",
+      "role": "hymn",
+      "matchLabels": ["The Canon (Nine Odes)", "The Canon", "Canon"],
+      "micro": "Nine odes of hymnody sung at Matins, each built on a scriptural song.",
+      "structural": "Hapgood explains that as joy expresses itself in song, the Church appointed the Nine Songs of the Canon to be sung after the salutation of the Gospel Book, representing the hymns of praise of the nine ranks of the heavenly hierarchy at the Resurrection. The canon also contains the hymns of those godly persons of the Old Testament, from Moses to Zacharias, who magnified God in spiritual songs — in conformity with our Lord's own expounding to his disciples, after the Resurrection, of the things in all the Scriptures concerning himself. Each ode is inspired by the scripture hymn appointed to precede it, though these scripture hymns are now generally omitted, except the Song of the Birth-giver of God which precedes Ode IX. The second ode is normally absent for a stated reason: Deuteronomy 32 is not properly a hymn so much as a denunciation of God's judgments upon the Israelites, and is said only on the Tuesdays of the Great Fast, so in imitation of this the Second Song of every canon likewise consists of denunciations and is also omitted.",
+      "source": "Hapgood 1906, Appendix B II (10), p.596."
+    },
+
+    "exapostilarion": {
+      "label": "The Exapostilarion",
+      "role": "hymn",
+      "matchLabels": ["Exapostilarion (Svetilen)", "The Exapostilarion", "Exapostilarion", "Svetilen"],
+      "micro": "A short hymn after the Canon, also called the Hymn of Light, sung as day approaches.",
+      "structural": "Hapgood gives both names and both reasons. The Hymns of Light are so called because their subject is chiefly the illumination of the soul from on high, and because their singing at Matins precedes the break of day and the Gloria in excelsis. The name Exapostilarion is from the Greek for one who is sent forth, because in ancient times a chanter was sent out into the centre of the church to sing them.",
+      "source": "Hapgood 1906, Appendix B II (11), p.596."
+    },
+
+    "praises": {
+      "label": "The Praises",
+      "role": "psalmody",
+      "matchLabels": ["Praises (Ainoi) / Lauds", "Psalms of Praise (148–150 LXX)", "The Praises", "Praises"],
+      "micro": "Psalms 148-150, the psalms of praise, sung towards the end of Matins with proper verses.",
+      "structural": "These are among the invariable morning psalms. As at 'Lord, I have cried' in the evening, the psalms are fixed and what changes are the stichera sung between their closing verses, drawn from the Octoechos for the tone and from the Menaion for the day. Hapgood notes in passing that the Byzantine and East Syriac rites agree here: both say Psalms 148, 149 and 150 in the morning.",
+      "source": "Hapgood 1906, Introduction, p.xxiii (the shared morning psalms); Preface pp.iv-v (the Oktoikh and the Monthly Mineya)."
+    },
+
+    "great-doxology": {
+      "label": "The Great Doxology",
+      "role": "doxology",
+      "matchLabels": ["Great Doxology and Dismissal", "The Great Doxology", "Great Doxology", "Gloria in excelsis"],
+      "micro": "The morning hymn of glory, sung at the close of Matins as the day breaks.",
+      "structural": "Its position is tied to the dawn. Hapgood explains that in ancient times the singing of the Canon lasted until daybreak, and that it is therefore still the custom for the priest, shortly after the Canon is finished, to make the exclamation here in an outburst of joy and thanksgiving, beholding as it were the dawn of day. The Hymns of Light immediately before it stand where they do for the same reason — their singing precedes the break of day and the Gloria in excelsis.",
+      "source": "Hapgood 1906, Appendix B II (11) and (12), p.596."
+    },
+
+    "first-hour": {
+      "label": "The First Hour",
+      "role": "opening",
+      "matchLabels": ["The First Hour", "First Hour", "Prayer of the First Hour", "Prayer of the First Hour and Dismissal"],
+      "micro": "The office of the first hour of the day, about seven in the morning.",
+      "structural": "Hapgood states its theme plainly: in the First Hour we thank God for the light of day which he has given us, and pray that we may pass the day without sin. According to the ecclesiastical reckoning it corresponds with the present seven o'clock in the morning. It is customarily joined to the end of Matins rather than said separately.",
+      "source": "Hapgood 1906, Appendix B III, p.596."
+    },
+
+    "third-hour": {
+      "label": "The Third Hour",
+      "role": "opening",
+      "matchLabels": ["The Third Hour", "Third Hour", "Prayer of the Third Hour", "Prayer of the Third Hour and Dismissal"],
+      "micro": "The office of the third hour, mid-morning, commemorating the descent of the Holy Spirit.",
+      "structural": "Each of the four Hours fixes on one event, and the Third Hour's is Pentecost: in it we commemorate the descent of the Holy Spirit upon the Apostles. It corresponds to the present nine o'clock in the morning.",
+      "source": "Hapgood 1906, Appendix B III, p.596."
+    },
+
+    "sixth-hour": {
+      "label": "The Sixth Hour",
+      "role": "opening",
+      "matchLabels": ["The Sixth Hour", "Sixth Hour", "Prayer of the Sixth Hour", "Prayer of the Sixth Hour and Dismissal"],
+      "micro": "The office of the sixth hour, noon, commemorating the Crucifixion.",
+      "structural": "The Sixth Hour corresponds to twelve o'clock, noon, and in it the Crucifixion of Jesus Christ is commemorated. It is commonly joined with the Third Hour before the Liturgy.",
+      "source": "Hapgood 1906, Appendix B III, p.596."
+    },
+
+    "ninth-hour": {
+      "label": "The Ninth Hour",
+      "role": "opening",
+      "matchLabels": ["The Ninth Hour", "Ninth Hour", "Prayer of the Ninth Hour", "Prayer of the Ninth Hour and Dismissal"],
+      "micro": "The office of the ninth hour, mid-afternoon, commemorating the death of Christ.",
+      "structural": "The Ninth Hour corresponds to three o'clock in the afternoon and commemorates the death of Jesus Christ, our Lord. Because the liturgical day begins at sunset, it is often read immediately before Vespers, so that it closes the day now ending rather than opening the one about to begin.",
+      "source": "Hapgood 1906, Appendix B III, pp.596-597."
+    },
+
+    "typika": {
+      "label": "The Typika",
+      "role": "other",
+      "matchLabels": ["The Typika", "Typika", "Typical Psalms"],
+      "micro": "A reader's service whose prayers and songs typify the Divine Liturgy, and may stand in its place.",
+      "structural": "Hapgood explains that the Typical Psalms in their prayers and songs typify the Divine Liturgy, that they are sometimes used in place of the Liturgy, and that they are also used as the continuation and conclusion of the Hours during the Great Fast, and of the Imperial Hours. That is what the office is for: it lets a community keep the shape of the Liturgy on a day when the Liturgy is not served, or when no priest is present.",
+      "source": "Hapgood 1906, Appendix B III, p.597."
+    },
+
+    "beatitudes": {
+      "label": "The Beatitudes",
+      "role": "reading",
+      "matchLabels": ["The Beatitudes (Matthew 5:3–12)", "The Beatitudes", "Beatitudes"],
+      "micro": "Christ's beatitudes from the Sermon on the Mount, sung near the opening of the Typika.",
+      "structural": "They stand within the Typika, the office whose prayers and songs typify the Divine Liturgy and which is sometimes used in place of it, or as the continuation and conclusion of the Hours during the Great Fast. In the Liturgy itself the Beatitudes occupy the corresponding position, which is why the Typika can stand in for it.",
+      "source": "Hapgood 1906, Appendix B III, p.597."
+    },
+
+    "trisagion-prayers": {
+      "label": "The Trisagion Prayers",
+      "role": "prayer",
+      "matchLabels": ["Trisagion Prayers", "The Trisagion Prayers", "Trisagion"],
+      "micro": "A short fixed block — the Thrice-Holy, Glory, the Lord's Prayer — recurring throughout the offices.",
+      "structural": "This block recurs at the same structural point in nearly every office, which is why it grows familiar long before it is deliberately learned. Hapgood describes how the Thrice-Holy itself is sung: first the choir sings the whole hymn three times, then 'Glory ... now, and ever ... Holy Immortal One, have mercy upon us,' and then the whole hymn again, very slowly.",
+      "source": "Hapgood 1906, Appendix B IV (9), p.598."
+    },
+
+    "troparion": {
+      "label": "The Troparion",
+      "role": "hymn",
+      "matchLabels": ["Troparion of the Day", "Troparion / Apolytikion of the Day", "Troparion(s) / Apolytikion", "The Troparion", "Troparion", "Troparia"],
+      "micro": "A short hymn naming the day's feast or saint — the most compact statement of what is kept today.",
+      "structural": "The troparion is the hinge between the fixed office and the calendar: the frame around it does not change, but this hymn does, drawn from the Octoechos for the tone of the week or from the Menaion for the day. Hapgood's account of the books explains the mechanism — the Octoechos carries eight complete sets of hymns, one per tone, covering each day of the week, and the hymn for the day together with the collect-hymn from the canons is used again at the Liturgy the following morning; the twelve volumes of the Menaion supply the proper hymns for the saint of each fixed day.",
+      "source": "Hapgood 1906, Preface pp.iv-v (the Oktoikh and the Monthly Mineya)."
+    },
+
+    "kontakion": {
+      "label": "The Kontakion",
+      "role": "hymn",
+      "matchLabels": ["Kontakion", "The Kontakion"],
+      "micro": "A short hymn paired with the troparion, drawn from the canon of the day.",
+      "structural": "Hapgood calls it the collect-hymn from the canons, and notes that it travels with the hymn for the day out of the Octoechos into the Liturgy on the following morning — so the pair heard at Matins returns at the Liturgy, binding the office and the Liturgy of one day together.",
+      "source": "Hapgood 1906, Preface p.iv (the Oktoikh)."
+    },
+
+    "psalm-50": {
+      "label": "Psalm 50",
+      "role": "psalmody",
+      "matchLabels": ["Psalm 50 (LXX) — Have mercy on me, O God", "Psalm 50"],
+      "micro": "The great penitential psalm, recurring at several points across the offices.",
+      "structural": "This is the psalm the Byzantine offices return to most often, appearing in Matins, in Compline, in the Midnight Office and elsewhere. Its numbering is a common source of confusion: the Byzantine books follow the Septuagint, where this is Psalm 50; in Hebrew and in most English Bibles the same psalm is numbered 51. Hapgood used the Psalter contained in the Book of Common Prayer for the psalms and verses, with occasional exceptions where the Slavonic version or a particular service required a slight change.",
+      "source": "Hapgood 1906, Preface p.vi (the Psalter used); Septuagint numbering throughout the service texts."
+    },
+
+    "creed": {
+      "label": "The Symbol of Faith",
+      "role": "creed",
+      "matchLabels": ["The Symbol of Faith (Nicene-Constantinopolitan Creed)", "The Symbol of Faith", "Symbol of Faith", "The Creed", "Nicene Creed"],
+      "micro": "The Nicene-Constantinopolitan Creed, called in this tradition the Symbol of the Faith.",
+      "structural": "The Byzantine name is not decorative — Hapgood uses 'the Symbol of the Faith' as the ordinary term, and it is what is required as the answer at the third catechizing in Baptism. At the Liturgy the deacon proclaims 'The Doors!' before it: in the early Church the deacons, sub-deacons and sacristans guarded the doors so that no unworthy person might enter and none go out during the celebration, and at the present day the words warn the faithful to guard the doors of their souls against all evil thoughts as they prepare to confess the faith by the Creed.",
+      "source": "Hapgood 1906, Appendix B IV (18), p.599, and Appendix B VI (1), p.602."
+    },
+
+    "lords-prayer": {
+      "label": "The Lord's Prayer",
+      "role": "prayer",
+      "matchLabels": ["The Lord's Prayer", "Lord's Prayer and Dismissal"],
+      "micro": "The prayer Christ taught, said near the close of each office.",
+      "structural": "It stands within the Trisagion Prayers block that recurs across the offices, closing the sequence of fixed prayers before the dismissal.",
+      "source": "Hapgood 1906, Appendix B IV (9), p.598 (the Trisagion sequence in which it stands)."
+    },
+
+    "nunc-dimittis": {
+      "label": "The Song of Simeon",
+      "role": "canticle",
+      "matchLabels": ["Song of Simeon (Nunc Dimittis)", "The Song of Simeon", "Nunc Dimittis"],
+      "micro": "Simeon's words at the presentation of Christ, sung near the end of Vespers.",
+      "structural": "It sits at the close of Vespers, where the light is going and the words 'now lettest thou thy servant depart in peace' answer the office's own movement into night. It is the canticle of the Meeting of the Lord, which Hapgood lists among the Twelve Great Feasts, on 2 February.",
+      "source": "Hapgood 1906, The Feasts and Fasts of the Church, p.xiii; text and rubric at Great Vespers, p.13."
+    },
+
+    "dismissal": {
+      "label": "The Dismissal",
+      "role": "dismissal",
+      "matchLabels": ["Dismissal", "The Dismissal"],
+      "micro": "The blessing that closes the office, naming the saints commemorated that day.",
+      "structural": "The dismissal names whom the day has kept — the Theotokos, the saint of the temple, the saint of the day — so it works as a summary of the commemoration. Hapgood records the form of blessing the priest gives, and notes that bishops and priests hold the fingers so as to represent the Greek letters IC XC, the first and last letters of Jesus Christ.",
+      "source": "Hapgood 1906, The Symbolism of the Church, p.xxxiv (the form of the benediction); Great Vespers, pp.14-15."
+    },
+
+    "great-compline": {
+      "label": "Great Compline",
+      "role": "opening",
+      "matchLabels": ["Great Compline", "Grand Compline"],
+      "micro": "The long form of the night office, used in Lent and on the eves of certain Great Feasts.",
+      "structural": "Hapgood calls it Great Later Evensong and records two things about its use: in the monasteries both the Great and Lesser forms are used, along with the various midnight services; and on Christmas Eve, on the Eve of the Epiphany and sometimes of the Annunciation, the All-Night Vigil Office consists of Great Compline and Matins rather than of Vespers and Matins. A LIMIT OF THE SOURCE, disclosed rather than hidden: Hapgood states in her Preface that she omitted even the skeleton of the Midnight Service and of Little Vespers, and Appendix B carries no numbered explanation of either Compline. What is given here comes from her account of the Vigil, not from an explanation of the Compline office itself, which this source does not supply.",
+      "source": "Hapgood 1906, Appendix B I, p.592; the omissions are stated in the Preface, p.iii."
+    }
+  }
 }

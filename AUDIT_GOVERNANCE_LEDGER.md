@@ -1,3 +1,102 @@
+## Session 2026-09-04 continued -- BYZANTINE education layer POPULATED from Hapgood 1906, on Josh's
+## approval of the governing source edition. Two governance decisions recorded where the rules live.
+## SEED_VERSION v217 -> v218.
+
+**The blocker was never which Lambertsen edition.** Josh asked which edition of Lambertsen's
+Octoechos governs, and the answer was already in the repo, stated consistently in
+`documentation/data_README.md`, Charter section 13, and roughly a hundred `source:` fields across
+`js/octoechos/`: Isaac Lambertsen, *The Octoechos*, Vols. I-IV, St. John of Kronstadt Press, 1999.
+He did not need to decide it. **The question I put to him was the wrong one**, and settling it would
+not have unblocked anything, for two independent reasons:
+
+1. **The Octoechos is a hymn collection.** It supplies texts by tone and day. It gives no account of
+   how an office is assembled, so it cannot answer depth 2's question at all. It remains this lane's
+   governing source for hymnography, entirely unaffected by this work.
+2. **The protocol licensed it for the one use the layer cannot make.**
+   `HOROLOGION_TESTING_PROTOCOL.md` permitted copyrighted witnesses like Lambertsen for
+   transcription, under "No paraphrase. No reconstruction. No synthesis." An education layer is
+   nothing but paraphrase and synthesis.
+
+**Is Lambertsen copyrighted? Yes.** Published 1999-2000 by St. John of Kronstadt Press; the
+translator, later Monk Joseph, reposed in January 2017; a translation is its own protected work.
+Parishes publishing these texts state they do so by permission of translator and publisher.
+
+### Two governance decisions by Josh, both recorded where the rules actually live
+
+1. **The three transcription constraints scope to transcription, not to educational content.**
+   Recorded in `HOROLOGION_TESTING_PROTOCOL.md` itself, not only here. Two limits written alongside
+   it so the scope is not later over-read: it does not change copyright (Lambertsen may be consulted
+   and cited, not reproduced -- what makes educational use workable is the ordinary position that an
+   explanation in one's own words is scholarship, not the rule change), and it does not make a hymn
+   book into a structural source.
+2. **Hapgood 1906 approved as the governing source edition for Byzantine explanatory content**, per
+   Charter section 13. Added to `source-index.json` under key `HAPGOOD`, with its `path` field
+   stating honestly that the volume is not in the repo and that Appendix B came as an upload.
+
+### Why Hapgood, and how it was vetted
+
+Public-domain status was verified before the source was proposed, not assumed: the Emory/Pitts
+digitisation states outright that the online edition is not protected by copyright. It is a service
+book carrying its own rubrics **and, in Appendix B, a numbered explanation apparatus keyed to points
+in each service** -- effectively a depth-2 layer already written, in 1906. It is also the **Slavic
+recension**, which Charter section 9 names as this project's implemented baseline, so it is not a
+recension mismatch being worked around.
+
+Josh supplied Appendix B pp.592-615 as an upload after archive.org's text stream proved to truncate
+long before that page -- the same wall already documented for Maclean.
+
+### What was built
+
+30 entries across all three depths in `data/explanations/byzantine.json`.
+
+**Coverage measured, not asserted: 56 of the 159 distinct labels the Horologion renderer actually
+emits now resolve.** The unmatched majority are individual psalm labels and generic section headings
+-- `Opening`, `Fixed Psalmody` -- which are **deliberately** left unmatched. A single gloss for
+"Opening" would be wrong across five different offices, and writing one would be the flattening the
+Core Contract exists to prevent.
+
+**Two source limits disclosed in the file itself, from Hapgood's own Preface:** she omitted even the
+skeleton of the Midnight Service and of Little Vespers, and left Vespers largely in skeleton form.
+This app builds a Midnight Office, a Small Compline and a Great Compline; Appendix B explains none of
+them. The Great Compline entry says so in its own structural text rather than filling the gap by
+analogy from the offices she does explain, and the Midnight Office and Small Compline get no entry at
+all. Also recorded: Hapgood is a 1906 Russian-Church book for North America, so where she describes
+something as customary the file says so rather than presenting it as timeless.
+
+Both roles added by yesterday's section 7 amendment are in live use here: `creed` for the Symbol of
+Faith, `doxology` for the Great Doxology.
+
+### A licensing lead, recorded and NOT confirmed
+
+The Lambertsen Foundation (est. 2021, publishing as Damascene Press, a 501(c)(3) engaged in
+educational activities) is steward of Lambertsen's complete works and states it is developing a
+freely accessible electronic library of English liturgical texts. In August 2025 it announced that,
+alongside a 2026 print edition of the Octoechos, it intended to release the text **under a free
+public license**, date to be announced in early 2026. **Whether that has landed was not confirmed on
+2026-09-04.** If it has, it changes the standing of this project's entire Octoechos corpus. Contact
+route: damascenepress.org. Recorded in the protocol file as well as here.
+
+### Verification
+
+Harness 46 -> 54 checks, 0 failures. The new assertions cover Byzantine **explicitly** rather than
+through the scaffold loop, deliberately: under the old loop a regression that silently emptied this
+file would have passed as "honestly empty." Source and role checks now run over both populated
+corpora. One stale assertion of my own -- "BYZC depth 3 is null," true when it was a scaffold -- was
+caught by the run and fixed in the test, not the code.
+
+`node --check` passes on all touched JS; all JSON valid; the dashboard's inline script extracted and
+checked. The `edu:layer:three-traditions-unsourced` row is amended rather than deleted: its Byzantine
+third is marked superseded and its original text preserved beneath.
+
+### Still open on Charter section 11
+
+**East Syriac and Coptic.** Both are now unblocked and need nothing from Josh: Maclean's Introduction
+(pp.xi-xxx) has been retrieved in full from Drive and covers the structural account this layer needs,
+and O'Leary is reachable in the same Drive folder via `read_file_content` (the file exceeds
+`download_file_content`'s 10MB cap). That is the next work, and it is writing, not sourcing.
+
+---
+
 ## CORRECTION, 2026-09-04 -- a provenance claim in the entry below was asserted without valid
 ## evidence and is withdrawn. No SEED_VERSION change; this entry is about the false claim, not
 ## about new content.
