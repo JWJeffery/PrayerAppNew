@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v233`, East Syriac corpus 448 components / 57 sequences,
+**State as of 2026-09-05:** `SEED_VERSION v234`, East Syriac corpus 448 components / 57 sequences,
 explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
@@ -155,8 +155,11 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,301 entries; **247 carry a `ruleSource`** (59 COE + 188 Anglican). **1,054 dates are still
-inherited and unconfirmed.**
+1,301 entries; **309 carry a `ruleSource`**. **992 dates are still inherited and unconfirmed.**
+
+**252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
+settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
+that Rome or the Eastern churches keep that date. Read the per-tag table with that in mind.
 
 **Dating authority (Josh, 2026-09-05): for TEC, LFF controls. Where LFF is silent, the other
 Anglican witnesses control.** The Prayer Book calendar in
@@ -169,17 +172,22 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 
 | Tag | Confirmed | Remaining |
 |---|---|---|
-| ANG | 188 | 141 |
+| ANG | 252 | 77 |
 | COE | 59 | 0 |
-| EOR | 2 | 408 |
-| LAT | 3 | 398 |
-| OOR | 3 | 362 |
+| EOR | 56 | 356 |
+| LAT | 104 | 300 |
+| OOR | 63 | 305 |
 | untagged | 0 | 150 |
 
 **The instrument for the rest is already built.** `data/kalendar/{month}/kalendar-v0.1-*-candidates.csv`
 holds 1,194 ranked candidates across all 366 days, each with its SIN, source witnesses (BCP; LFF;
 HWHM; GCW; FAS; SEC; AM) and source tier. `synaxarium-review/` is the review UI over it. Every row
 is still `decision_status: Pending`. Use that, not another ad-hoc matcher.
+
+**Rank in that matrix is precedence, not placement.** It orders which candidate wins a shared day;
+it does not decide whether an identity belongs on the date. A rank-2 candidate is still placed
+there by its witnesses. Rows whose `review_flags` mention date harmonization are the exception and
+must be adjudicated individually — 9 are currently held back on exactly that.
 
 ### Awaiting Josh's decision
 - **Whether to collapse the 27 multi-date untagged sanctoral identities.** Not a cleanup: 48 live

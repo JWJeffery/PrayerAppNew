@@ -156,7 +156,8 @@
             "day": 2
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-02 rank 1), which places “Vedanayagam Samuel Azariah” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "fifth-day-of-the-fast-of-the-nativity",
@@ -811,7 +812,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-12 rank 2), which places “Benedict Biscop” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / English calendar witness). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "martyr-tatiana-of-rome",
@@ -925,7 +927,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-13 rank 2), which places “Kentigern / Mungo” on this day on the witness of: SEC; AM; Oxford Dictionary of Saints (tier: Provincial Anglican / Anglican martyrology / Scottish witness). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "martyrs-hermylus-and-stratonicus",
@@ -1079,7 +1082,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-15 rank 2), which places “Paul the Hermit” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "tenth-day-of-the-nativity",
@@ -2163,7 +2167,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-29 rank 2), which places “Andrei Rublev” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "commemoration-of-st-john-daylimaya",
@@ -2354,7 +2359,8 @@
             "day": 31
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/january/kalendar-v0.1-january-candidates.csv, row 01-31 rank 2), which places “John Bosco” on this day on the witness of: HWHM; GCW; AM; Oxford Dictionary of Saints (tier: TEC secondary / Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "martyr-tryphon-of-lampsacus",
@@ -2997,7 +3003,8 @@
             "day": 11
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/february/kalendar-v0.1-february-candidates.csv, row 02-11 rank 2), which places “Fanny Crosby” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "hieromartyr-blaise-of-sebaste",
@@ -3073,7 +3080,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/february/kalendar-v0.1-february-candidates.csv, row 02-12 rank 2), which places “Charles Freer Andrews” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-julian-the-hospitaller",
@@ -3423,7 +3431,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/february/kalendar-v0.1-february-candidates.csv, row 02-16 rank 1), which places “Charles Todd Quintard” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "holy-martyrs-pamphilus-and-companions",
@@ -3768,7 +3777,8 @@
             "day": 21
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/february/kalendar-v0.1-february-candidates.csv, row 02-21 rank 1), which places “John Henry Newman” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-eustathius-of-antioch",
@@ -3845,7 +3855,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/february/kalendar-v0.1-february-candidates.csv, row 02-22 rank 3), which places “Chair of Saint Peter” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "finding-of-the-relics-of-the-holy-martyrs-at-eugenius",
@@ -4301,7 +4312,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/march/kalendar-v0.1-march-candidates.csv, row 03-04 rank 2), which places “Paul Cuffee” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-casimir",
@@ -4453,7 +4465,8 @@
             "day": 6
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/march/kalendar-v0.1-march-candidates.csv, row 03-06 rank 2), which places “William W. Mayo, Charles Menninger and Their Sons” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saints-perpetua-and-felicity",
@@ -5631,7 +5644,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/march/kalendar-v0.1-march-candidates.csv, row 03-30 rank 2), which places “Innocent of Alaska” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-john-climacus",
@@ -6044,7 +6058,8 @@
             "day": 7
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-07 rank 1), which places “Tikhon of Moscow” on this day on the witness of: BCP bracketed; LFF; HWHM; GCW; AM (tier: Current TEC/LFF / TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "apostles-herodion-and-agabus",
@@ -6246,7 +6261,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-13 rank 1), which places “Martin I” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church reference). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-tiburtius",
@@ -6493,7 +6509,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-24 rank 2), which places “Genocide Remembrance” on this day on the witness of: HWHM/GCW context (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-elias",
@@ -6617,7 +6634,8 @@
             "day": 28
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-28 rank 1), which places “Peter Chanel” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church reference). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-catherine-of-siena",
@@ -7435,7 +7453,8 @@
             "day": 10
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-10 rank 1), which places “Comgall of Bangor” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Irish monastic witness). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-john-of-avila",
@@ -7632,7 +7651,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-12 rank 2), which places “Nereus and Achilleus” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "our-lady-of-fatima",
@@ -7879,7 +7899,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-16 rank 3), which places “Brendan the Navigator” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "venerable-theodore-the-sanctified",
@@ -8015,7 +8036,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-18 rank 3), which places “Felix of Cantalice” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "dunstan",
@@ -8770,7 +8792,8 @@
             "day": 28
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-28 rank 2), which places “Lanfranc of Canterbury” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-ignatius-of-rostov",
@@ -8810,7 +8833,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-29 rank 1), which places “Maximinus of Trier” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church reference). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-ursula-ledochowska",
@@ -8888,7 +8912,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/may/kalendar-v0.1-may-candidates.csv, row 05-30 rank 2), which places “Joan of Arc” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "venerable-isaac-of-dalmatia",
@@ -9180,7 +9205,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/june/kalendar-v0.1-june-candidates.csv, row 06-03 rank 2), which places “Charles Lwanga and Companions” on this day on the witness of: AM; Oxford Dictionary of Saints; SEC source form (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "petroc",
@@ -9334,7 +9360,8 @@
             "day": 6
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/june/kalendar-v0.1-june-candidates.csv, row 06-06 rank 1), which places “Ini Kopuria” on this day on the witness of: AM; Anglican Communion witness (tier: Anglican martyrology / Anglican Communion witness). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-norbert",
@@ -9469,7 +9496,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/june/kalendar-v0.1-june-candidates.csv, row 06-08 rank 2), which places “William of York” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "translation-of-the-relics-of-saint-theodore-the-commander",
@@ -10273,7 +10301,8 @@
             "day": 21
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/june/kalendar-v0.1-june-candidates.csv, row 06-21 rank 1), which places “Aloysius Gonzaga” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church reference). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "hieromartyr-eusebius-of-samosata",
@@ -10551,7 +10580,8 @@
             "day": 27
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/june/kalendar-v0.1-june-candidates.csv, row 06-27 rank 2), which places “Cyril of Alexandria” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-irenaeus-of-lyons",
@@ -11093,7 +11123,8 @@
             "day": 6
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-06 rank 4), which places “Thomas More” on this day on the witness of: FAS (tier: Provincial Anglican). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-augin-commemoration",
@@ -11643,7 +11674,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-13 rank 3), which places “Silas / Silvanus” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-awa",
@@ -11719,7 +11751,8 @@
             "day": 14
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-14 rank 2), which places “Samson Occom” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-cyriacus-and-julitta",
@@ -12005,7 +12038,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-18 rank 2), which places “Elizabeth Ferard” on this day on the witness of: AM (tier: Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-sabrisho",
@@ -12295,7 +12329,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-23 rank 2), which places “Bridget of Sweden” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-john-cassian",
@@ -12511,7 +12546,8 @@
             "day": 26
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-26 rank 1), which places “Joachim and Anne” on this day on the witness of: BCP; LFF; HWHM; GCW; FAS; SEC; AM (tier: BCP / Current TEC / Broad Anglican). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-pantaleon",
@@ -12975,7 +13011,8 @@
             "day": 2
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/august/kalendar-v0.1-august-candidates.csv, row 08-02 rank 1), which places “Samuel Ferguson” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-addai",
@@ -13219,7 +13256,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/august/kalendar-v0.1-august-candidates.csv, row 08-05 rank 1), which places “Oswald of Northumbria” on this day on the witness of: SEC; AM (tier: Provincial Anglican / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-eusignius-of-antioch",
@@ -14069,7 +14107,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/august/kalendar-v0.1-august-candidates.csv, row 08-16 rank 4), which places “Stephen of Hungary” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "the-image-of-christ-not-made-by-hands",
@@ -14690,7 +14729,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/august/kalendar-v0.1-august-candidates.csv, row 08-23 rank 2), which places “Rose of Lima” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "hieromartyr-eutychius",
@@ -15231,7 +15271,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/august/kalendar-v0.1-august-candidates.csv, row 08-30 rank 2), which places “Charles Chapman Grafton” on this day on the witness of: HWHM; GCW; AM (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-sliwa",
@@ -15820,7 +15861,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/september/kalendar-v0.1-september-candidates.csv, row 09-05 rank 3), which places “Gregorio Aglipay” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-narsai",
@@ -16297,7 +16339,8 @@
             "day": 11
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/september/kalendar-v0.1-september-candidates.csv, row 09-11 rank 2), which places “Harry Thacker Burleigh” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-yohannan",
@@ -18129,7 +18172,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-03 rank 2), which places “George Kennedy Allen Bell” on this day on the witness of: HWHM; AM (tier: TEC secondary / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mother-th-odore-gu-rin",
@@ -18285,7 +18329,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-05 rank 1), which places “Faustina Kowalska” on this day on the witness of: AM (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "holy-apostle-thomas",
@@ -18648,7 +18693,8 @@
             "day": 10
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-10 rank 2), which places “Paulinus of York” on this day on the witness of: FAS; AM (tier: Provincial Anglican / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-eulampia",
@@ -18840,7 +18886,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-13 rank 1), which places “Edward the Confessor” on this day on the witness of: FAS; AM; Oxford Dictionary of Saints (tier: Provincial Anglican / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "martyrs-carpus-papylus-agathodorus-and-agathonica",
@@ -19406,7 +19453,8 @@
             "day": 21
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-21 rank 3), which places “Ursula and Companions” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "venerable-hilarion-the-great",
@@ -19444,7 +19492,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-22 rank 4), which places “Donatus of Fiesole” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "equal-to-the-apostles-abercius",
@@ -19658,7 +19707,8 @@
             "day": 25
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-25 rank 3), which places “Crispin and Crispinian” on this day on the witness of: Oxford Dictionary of Saints (tier: Great Church reference). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-pethion",
@@ -19891,7 +19941,8 @@
             "day": 27
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-27 rank 2), which places “Frumentius” on this day on the witness of: Great Church reference candidate (tier: Great Church supplement). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-nestor",
@@ -20568,7 +20619,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-04 rank 2), which places “Saints of the Old Testament” on this day on the witness of: FAS (tier: Provincial Anglican). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "elizabeth-and-zechariah",
@@ -20587,7 +20639,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-05 rank 1), which places “Zechariah and Elizabeth” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "martyrs-galaction-and-epistemis",
@@ -20628,7 +20681,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-05 rank 1), which places “Zechariah and Elizabeth” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-galaction",
@@ -21688,7 +21742,8 @@
             "day": 20
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-20 rank 2), which places “Priscilla Lydia Sellon” on this day on the witness of: AM (tier: Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-anianus",
@@ -21805,7 +21860,8 @@
             "day": 21
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-21 rank 2), which places “The Presentation of the Blessed Virgin Mary” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-cecilia",
@@ -22851,7 +22907,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-08 rank 3), which places “The Conception of the Blessed Virgin Mary” on this day on the witness of: FAS; AM; Oxford Dictionary of Saints (tier: Provincial Anglican / Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-abdisho",
@@ -23135,7 +23192,8 @@
             "day": 10
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-10 rank 1), which places “Thomas Merton” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-barsabba",
@@ -23709,7 +23767,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-17 rank 4), which places “Daniel and the Three Holy Youths” on this day on the witness of: AM (tier: Anglican martyrology / biblical commemoration). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "saint-lazarus-of-bethany",
@@ -23839,7 +23898,8 @@
             "day": 19
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-19 rank 1), which places “Lillian Trasher” on this day on the witness of: HWHM; GCW (tier: TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-michael",
@@ -24207,7 +24267,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-24 rank 1), which places “The Eve of the Nativity” on this day on the witness of: BCP; LFF; FAS; AM (tier: BCP / Current TEC / Broad Anglican). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "the-nativity-of-our-lord",
@@ -24680,7 +24741,8 @@
             "day": 31
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/december/kalendar-v0.1-december-candidates.csv, row 12-31 rank 2), which places “Samuel Ajayi Crowther” on this day on the witness of: HWHM; GCW; FAS; AM (tier: TEC secondary / Provincial Anglican / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
       "id": "mar-abdisho",

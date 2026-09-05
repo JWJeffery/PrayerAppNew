@@ -1,3 +1,65 @@
+## Session 2026-09-05 continued -- 62 further dates confirmed from the project's own Kalendar v0.1
+## candidate matrix. SEED_VERSION v233 -> v234.
+
+Used the instrument that already existed rather than writing another matcher.
+`data/kalendar/{month}/kalendar-v0.1-*-candidates.csv` holds 1,194 ranked candidates across all 366
+days, each with its SIN, source witnesses and source tier. Of the 139 ANG rows still unconfirmed
+after the LFF and Prayer Book pass, **71 match a candidate placed on the same day.**
+
+### Rank is precedence, not placement
+
+This decides how the matrix may be read. Rank orders which candidate takes **precedence** when
+several share a day. It does not decide whether the identity belongs on the date. A rank-2 "Strong
+alternate" such as Benedict Biscop is still placed on his day by the witnesses named; what is
+unsettled — and still `decision_status: Pending` for all 1,194 rows — is which candidate is primary.
+
+So rank does not block date confirmation, and each `ruleSource` says so explicitly rather than
+leaving a future reader to infer it.
+
+### 62 written, 9 held back
+
+Nine were excluded because **the matrix itself flags a date problem on them**:
+
+| Row | The matrix's own flag |
+|---|---|
+| Richard Rolle (x2) | date harmonization with Sep/Nov entries |
+| Elizabeth of Hungary | witness column reads "AM; BCP/LFF on Nov 19" against the app's Nov 17 |
+| Cecilia | SEC transfer to Nov 25 |
+| Samuel Johnson | harmonization with the Aug 17 group form |
+| Isaac Watts | AM date variant |
+| Petroc, Etheldreda, John Roberts | date harmonization / source verification |
+
+Those need adjudication, not a bulk write. **Confirmed rows 247 -> 309.**
+
+### What this establishes, and what it does not
+
+Stated because the per-tag table would otherwise overstate it. **252 of the 309 confirmations rest
+on an Anglican witness.** 141 of those rows are ANG-only, so for them the confirmation is complete.
+The other **111 also carry EOR, LAT or OOR tags** — and an Anglican calendar confirms that *TEC*
+keeps that identity on that date. It does **not** independently confirm that Rome or the Eastern
+churches keep it there. Those rows still need their own tradition's witness before their
+non-Anglican tags can be called confirmed.
+
+| Tag | Confirmed | Remaining |
+|---|---|---|
+| ANG | 252 | 77 |
+| COE | 59 | 0 |
+| EOR | 56 | 356 |
+| LAT | 104 | 300 |
+| OOR | 63 | 305 |
+| untagged | 0 | 150 |
+
+77 ANG rows remain: 68 have no candidate on their day in the matrix at all, and 9 are the held-back
+flagged rows.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`. Every untouched row asserted
+byte-identical; no row gained a second `ruleSource`; 1,301 entries throughout. Martin Luther
+confirmed still absent. No code touched, so no cache-bust bump.
+
+---
+
 ## Session 2026-09-05 continued -- 188 ANGLICAN DATES CONFIRMED; dating authority and inclusion
 ## policy set; splash dark mode fixed; Book of Needs role gate made a filter. SEED_VERSION v232 -> v233.
 
