@@ -1,5 +1,87 @@
 # RESUME_PROJECT_NOTE.md
 
+## Session 2026-09-04 continued -- EAST SYRIAC education layer POPULATED from Maclean's own
+## Introduction. Three of four traditions now carry all three depths. SEED_VERSION v218 -> v219.
+
+**A correction to this file's own prior claim first.** Both the v215 handoff and this session's
+earlier entry stated that Josh would need to supply Maclean pages before the East Syriac layer could
+be written. **That was wrong.** The volume was already in his Drive, in the same folder as the
+diocesan calendars, and the entire Introduction (pp.xi-xxx) was retrieved through
+`Google Drive read_file_content` in one call. Nothing was needed from him. The standing note about
+the ACOE California mirror remains true and unchanged: direct fetch still hard-truncates at ~p.45 and
+must not be retried.
+
+**No new source approval was required.** Maclean is already the governing source for this lane's
+office content — all 439 components in `components/east-syriac.json` cite him by page. This is the
+same edition, read at its Introduction rather than at its office texts.
+
+### What the Introduction supplied that could not have been written otherwise
+
+- **The Sunhadus ordering four daily services**, with the Evening and Morning Services recognised as
+  having the greatest authority and a length not to be added to or taken from, while the Night
+  Service and Compline are kept 'according to the rule of the monastery' with no limit for laymen.
+  **This is the actual source grounding for this app's Cathedral/Monastic toggle**, in the source's
+  own words rather than the reconstructed interpretation recorded when that toggle was fixed.
+- **That collects and blessings may be said by priests only, and are entirely omitted if none is
+  present.** This reframes what a layman is doing when praying the office alone: passing over them is
+  not an abbreviation, it is the tradition's own instruction.
+- **The distinction between the collects and the farcings.** Maclean names two features of psalm
+  recitation as beautiful and keeps them separate — the collects before each subdivision of the
+  hulali, and the giyuri or farcings introduced into the psalm itself. This corpus had already been
+  treating them as distinct layers; the Introduction is where that distinction is stated.
+- **The keynote clause.** Before each verse of an anthem stands a clause, usually from the psalter,
+  sung in monotone, which he says seems to be a unique feature of the rite. This explains what lines
+  like "And let all the people say Amen and Amen" actually are — not rubrics directing a response,
+  but part of the anthem's construction.
+- **Motwa corresponding exactly to the Greek kathisma**, and his wider set of East Syriac/Greek
+  resemblances, including the karuzutha beside the Greek ectenes.
+- **His caution that the anthems are poetry** and must be judged as poetry, not by the strict laws of
+  logic, and that one should not press every phrase home.
+
+### One entry worth flagging
+
+`Prayer` is the single most common component title in this corpus — 33 instances — and would normally
+be far too generic to gloss. But Maclean has three specific things to say about the collects that
+hold across all of them: they may be said by priests only; they almost always end 'Father, Son, and
+Holy Ghost, for ever' without pleading the merits of our Saviour; and they show a marked love of
+tautology which he calls no little difficulty to the English translator. So the entry is accurate
+across all 33 rather than vague across them.
+
+### Coverage, measured
+
+**74 of 258 distinct component titles resolve, which is 251 of 439 components by instance — 57% of
+the corpus now carries an explanation.** The unmatched remainder is mostly specific psalm citations
+("Psalm 91 (farced)", "Psalms 141, 142, 119:105-113, 117") and one-off titles. That is the right
+outcome, not a shortfall: a generic gloss attached to a specific psalm citation would say nothing.
+
+### Register
+
+Maclean writes in 1894 as an Anglican describing a tradition he had lived among at Urmi, and he is
+explicit where he is uncertain. Where he records something as present practice, or as varying between
+districts, the file says so rather than presenting it as fixed. His own terms — Nestorian, Eastern
+Syrians — are of their date; the file uses Church of the East and East Syriac and does not put his
+period vocabulary in front of a person praying, while preserving his substance.
+
+### Verification
+
+Harness 54 -> 61 checks, 0 failures. East Syriac is asserted explicitly rather than through the
+scaffold loop, for the same reason Byzantine was: under the loop, a regression that silently emptied
+the file would have passed as "honestly empty." A no-cross-tradition-bleed assertion was added for
+BYZC alongside the existing one for COE. All JSON valid; `node --check` passes; the dashboard's inline
+script extracted and checked.
+
+### Charter section 11: three of four
+
+Anglican, Byzantine and East Syriac now carry all three depths. **Coptic is the only remaining
+scaffold**, and it needs nothing from Josh either: O'Leary 1911 is in the same Drive folder
+(`DO 1-124 small.pdf`), the Preface has already been read, and the Introduction sits in the same file.
+It must go through `read_file_content`, since the file exceeds `download_file_content`'s 10MB cap. One
+disclosure any Coptic depth-3 text will have to carry: O'Leary describes the office as used in the
+monasteries of Egypt, contains seven hours only, and omits the Prayer of the Veil.
+
+---
+
+
 ## Session 2026-09-04 continued -- BYZANTINE education layer POPULATED from Hapgood 1906, on Josh's
 ## approval of the governing source edition. Two governance decisions recorded where the rules live.
 ## SEED_VERSION v217 -> v218.

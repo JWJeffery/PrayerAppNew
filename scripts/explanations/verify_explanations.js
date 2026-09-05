@@ -125,7 +125,8 @@ function decoratorTests() {
     console.log('\n=== 12. Unsourced traditions must decorate NOTHING ===');
     // horologion deliberately dropped from this list on 2026-09-04: it is now
     // sourced from Hapgood and SHOULD decorate. COE and Coptic remain scaffolds.
-    for (const mode of ['east-syriac', 'coptic-agpeya']) {
+    // Only Coptic remains a scaffold; east-syriac was populated 2026-09-04.
+    for (const mode of ['coptic-agpeya']) {
         render(mode, 2);
         check(`${mode}: honest empty, no markers or disclosures`,
             el.querySelectorAll('.uo-explanation-marker').length === 0 &&
@@ -161,10 +162,9 @@ function decoratorTests() {
     check('Anglican depth 1 populated', cov.ANG.depth1 > 0, String(cov.ANG.depth1));
     check('Anglican depth 2 populated', cov.ANG.depth2 > 0, String(cov.ANG.depth2));
     check('Anglican depth 3 present', cov.ANG.depth3 === true);
-    for (const code of ['COE', 'OOR-COP']) {
-        check(`${code} scaffold loads and is honestly empty`,
-            cov[code] && cov[code].state === 'loaded' && cov[code].entries === 0 && cov[code].depth3 === false);
-    }
+    check('OOR-COP scaffold loads and is honestly empty',
+        cov['OOR-COP'] && cov['OOR-COP'].state === 'loaded' &&
+        cov['OOR-COP'].entries === 0 && cov['OOR-COP'].depth3 === false);
     // Byzantine was populated from Hapgood 1906 on 2026-09-04. Asserted explicitly
     // rather than left in the scaffold loop, so that a regression which silently
     // emptied this file would fail rather than pass as "honestly empty".
@@ -173,6 +173,12 @@ function decoratorTests() {
     check('Byzantine depth 1 populated', cov.BYZC && cov.BYZC.depth1 > 0, String(cov.BYZC && cov.BYZC.depth1));
     check('Byzantine depth 2 populated', cov.BYZC && cov.BYZC.depth2 > 0, String(cov.BYZC && cov.BYZC.depth2));
     check('Byzantine depth 3 present', cov.BYZC && cov.BYZC.depth3 === true);
+    // East Syriac populated from Maclean's Introduction 2026-09-04, same reasoning.
+    check('East Syriac corpus loaded', cov.COE && cov.COE.state === 'loaded');
+    check('East Syriac has entries', cov.COE && cov.COE.entries > 0, String(cov.COE && cov.COE.entries));
+    check('East Syriac depth 1 populated', cov.COE && cov.COE.depth1 > 0, String(cov.COE && cov.COE.depth1));
+    check('East Syriac depth 2 populated', cov.COE && cov.COE.depth2 > 0, String(cov.COE && cov.COE.depth2));
+    check('East Syriac depth 3 present', cov.COE && cov.COE.depth3 === true);
 
     console.log('\n=== 2. Mode -> tradition routing ===');
     check('daily-office -> ANG', Explanations.traditionForMode('daily-office') === 'ANG');
@@ -204,17 +210,19 @@ function decoratorTests() {
     check('straight and curly apostrophes resolve to the same entry', !!straight && straight === curly);
 
     console.log('\n=== 5. Null-sentinel behaviour ===');
-    check('COE depth 3 is null', Explanations.traditionExplanation('COE') === null);
     check('OOR-COP depth 3 is null', Explanations.traditionExplanation('OOR-COP') === null);
+    check('COE depth 3 resolves', Explanations.traditionExplanation('COE') !== null);
     check('ANG depth 3 resolves', Explanations.traditionExplanation('ANG') !== null);
     check('BYZC depth 3 resolves', Explanations.traditionExplanation('BYZC') !== null);
     check('unknown label returns null, never a guess', Explanations.lookup('ANG', 'Zzz Not A Real Label') === null);
     check('no cross-tradition bleed into COE', Explanations.lookup('COE', 'Opening Sentence') === null);
+    check('no cross-tradition bleed into BYZC', Explanations.lookup('BYZC', 'Opening Sentence') === null);
 
     console.log('\n=== 6. Every populated entry carries a source ===');
     const ang = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/anglican.json'), 'utf8'));
     const byz = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/byzantine.json'), 'utf8'));
-    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz]]) {
+    const esy = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/east-syriac.json'), 'utf8'));
+    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz], ['east-syriac', esy]]) {
         const uncited = Object.entries(corpus.entries)
             .filter(([, e]) => (e.micro || e.structural) && !e.source).map(([k]) => k);
         check(`${name}: no populated entry lacks a source`, uncited.length === 0, uncited.join(', '));
@@ -229,7 +237,7 @@ function decoratorTests() {
     // and here) and nothing else in the repo consumes it.
     const ROLES = new Set(['opening', 'psalmody', 'reading', 'canticle', 'hymn', 'creed',
         'doxology', 'prayer', 'intercession', 'antiphon', 'rubric', 'dismissal', 'other']);
-    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz]]) {
+    for (const [name, corpus] of [['anglican', ang], ['byzantine', byz], ['east-syriac', esy]]) {
         const badRoles = Object.entries(corpus.entries)
             .filter(([, e]) => !ROLES.has(e.role)).map(([k, e]) => `${k}=${e.role}`);
         check(`${name}: all roles in taxonomy`, badRoles.length === 0, badRoles.join(', '));

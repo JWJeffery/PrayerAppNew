@@ -1,15 +1,285 @@
 {
   "tradition": "COE",
   "traditionLabel": "Church of the East — The Hudra (East Syriac)",
-  "primarySource": "A.J. Maclean, East Syrian Daily Offices (London: Rivington, Percival & Co., 1894). Public domain (archive.org item eastsyriandailyo00macluoft, reviewed NOT_IN_COPYRIGHT).",
+  "primarySource": "A.J. Maclean, East Syrian Daily Offices, translated from the Syriac with Introduction, Notes and Indices (London: Rivington, Percival & Co., for the Eastern Church Association, 1894). Public domain (archive.org item eastsyriandailyo00macluoft, reviewed NOT_IN_COPYRIGHT). Depth-2 and depth-3 content is written from Maclean's own Introduction, pp.xi-xxx, which is his structural account of the East Syriac office.",
   "sourceStatus": "cited-not-in-repo",
 
-  "_provenanceNote": "SCAFFOLD ONLY -- every content field is null, deliberately. Maclean 1894 is NOT held in this repository (confirmed by a filename search across the whole tree during the session that created this file). What the repo does hold is every one of the 439 components in components/east-syriac.json carrying an exact Maclean page citation in meta.source, and 324 of them carrying a meta.note with substantial cited detail, including verbatim quotation from Maclean's own Introduction. That is enough to write this file from -- but it must be written from the source pages read directly, in the manner the Anglican file was, not assembled out of internal audit notes written for a different purpose. Maclean's Introduction, pp.xiii-xxii, is the natural basis for the depth-3 tradition explanation: it is the source's own structural account of the East Syriac office, and it is already quoted in several places in this repository. Josh supplies Maclean page ranges by upload; direct fetch from the ACOE California mirror hard-truncates at ~p.45 regardless of approach and must not be retried.",
+  "_provenanceNote": "The Introduction was read in full from Josh's Drive copy (East-Syrian-Daily-Offices---Maclean.pdf) on 2026-09-04 via Google Drive read_file_content, after a prior handoff wrongly stated Josh would need to supply these pages. He did not; the volume was already in the same Drive folder as the diocesan calendars. Direct fetch from the ACOE California mirror hard-truncates at ~p.45 and must not be retried. Maclean is already the governing source for this lane's office CONTENT -- all 439 components in components/east-syriac.json carry exact page citations to him -- so no new source approval was required for this file; it is the same edition, read at its Introduction rather than its office texts. WHY THE INTRODUCTION SPECIFICALLY: it is Maclean's own account of how the East Syriac office is put together, including structural tables for all three principal services (pp.xiii-xvi), the Qdham/Wathar rule (pp.xvi-xvii), the psalter arrangement and the two features he singles out as beautiful (p.xvii), the character of the anthems (pp.xvii-xviii), who may say what (p.xviii), and the peculiarities of the kalendar (p.xxiv). REGISTER: Maclean writes in 1894 as an Anglican describing a living tradition he had lived among at Urmi, and he is explicit where he is uncertain. Where he records something as present practice, or as varying between districts, this file says so rather than presenting it as fixed. Several of his own terms -- Nestorian, Eastern Syrians -- are of their date; this file uses Church of the East and East Syriac, and does not put his period vocabulary in front of a person praying.",
 
   "traditionExplanation": {
-    "text": null,
-    "source": null
+    "text": "The East Syriac office is not arranged the way a Western office is, and Maclean says so at the outset. Eastern office books differ greatly from Western in having no 'Order of Morning and Evening Prayer': there is no arrangement, there are very few rubrics, the different parts of the service have to be sought in different books, and the best-known parts are traditional — carried in memory rather than printed. What you are reading here is the traditional arrangement, reconstructed by Maclean from printed editions and from asking people at Urmi how it was actually done.\n\nThe daily cycle is four offices, not seven. The Sunhadus, the Book of Canon Law, orders four services in the day for all people: the Evening Service, Compline, the Night Service and the Morning Service. Of these it recognises the first and last as having the greatest authority, and says their length is not to be added to or taken from; the other two are to be kept 'according to the rule of the monastery,' with no limit of length or shortness for laymen. That distinction is why this app offers a Cathedral and a Monastic mode. Seven hours are ordered for monks, and Maclean notes relics of Terce and Sext surviving in the Great Fast. Compline he describes as almost obsolete by his day except on certain days of the year, when it is usually joined to the Evening Service.\n\nThree things give the office its particular character. The first is the alternation of weeks. Maclean calls it the special feature of the Evening Service: each week is called either 'before' or 'after,' according to which of the two choirs begins, and there is a different Evening Service for each day of each of those two weeks. The Morning Service, by contrast, is in the main invariable throughout the year.\n\nThe second is the psalter. The Night Service, which is very long, recites it: a third on each weekday, so that the whole is said twice a week; complete on feasts of our Lord; and in selections on Sundays and other holy days. It is divided into twenty hulali, with a twenty-first made up of Old Testament canticles. Maclean singles out two features of the recitation as beautiful: the appropriate collects before each subdivision of the hulali, which gather up the thoughts of the psalms, and the giyuri or farcings of each psalm — clauses introduced after the opening clauses and at the end, usually giving the psalm a Christian application.\n\nThe third is the anthems, which he considers the most Eastern part of the whole. They are in metre, divided into verses of equal length, and before each verse or group of verses stands a clause, usually from the psalter, sung in monotone, which gives the verse its keynote — a feature he says seems to be unique to this rite. The two choirs sing the verses alternately. The chants themselves are purely traditional and not written down; the books give names of tunes, but, as he puts it, these are not more than names.\n\nOne thing is worth knowing before praying any of this alone. The office is strongly congregational — the anthems are sung by everyone who can read Old Syriac, and the Lord's Prayer, the Lakhumara, the Holy God and the Nicene Creed are said by all, including those who cannot read. But the collects and the conclusions, or blessings, can be said by priests only, and if no priest is present they are entirely omitted. A layman praying this office is not performing a reduced version of it; omitting those parts is the tradition's own instruction.",
+    "source": "Maclean 1894, Introduction: p.xii (no 'Order of Morning and Evening Prayer'; no arrangement, very few rubrics, parts in different books, best-known parts traditional; the Sunhadus ordering four services, the authority and fixed length of Evening and Morning, the other two per the rule of the monastery, seven hours for monks, relics of Terce and Sext in the Fast); p.xiii (Compline almost obsolete except on certain days, usually joined to the Evening Service); pp.xvi-xvii (the 'before'/'after' alternation as the special feature of the Evening Service, and the Morning Service as in the main invariable); p.xvii (the psalter said complete twice a week, complete on feasts of our Lord, selections on Sundays and holy days; twenty hulali plus a twenty-first of canticles; the collects before each subdivision and the giyuri or farcings); pp.xvii-xviii (the anthems, their metre, the keynote clause before each verse, the alternating choirs, and the tunes being names only); p.xviii (the congregational character; what all may say; and that collects and blessings are for priests only and are entirely omitted if none is present)."
   },
 
-  "entries": {}
+  "entries": {
+    "opening": {
+      "label": "The Opening",
+      "role": "opening",
+      "matchLabels": ["The Opening", "Opening"],
+      "micro": "The fixed beginning of every East Syriac office: the Gloria, the kiss of peace, and the farced Lord's Prayer.",
+      "structural": "All three principal services open the same way — Maclean's structural tables give 'Glory be to God, etc.', the kiss of peace, and the farced Lord's Prayer at the head of the Evening, Night and Morning Services alike. Because there is no printed 'Order' in the Eastern books, this recurring opening is one of the traditional parts carried in memory rather than found on a page, and it is a large part of what makes the offices recognisable to each other.",
+      "source": "Maclean 1894, Introduction pp.xiii-xvi (the structural tables of the three services) and p.xii (the absence of a printed Order)."
+    },
+
+    "lords-prayer": {
+      "label": "The Lord's Prayer",
+      "role": "prayer",
+      "matchLabels": ["The Lord's Prayer (farced with the Qanona)", "The Lord's Prayer", "Lord's Prayer"],
+      "micro": "The prayer Christ taught, farced — with a refrain woven in between its clauses.",
+      "structural": "It stands at the opening of each of the three principal services. Here it is farced: the petitions are interleaved with a refrain, in the same manner as the psalms are farced elsewhere in the office. It is also one of the few parts Maclean names as belonging to everyone — along with the Lakhumara, the Holy God and the Nicene Creed, it is said by all, including those who cannot read Old Syriac and so cannot join in the anthems.",
+      "source": "Maclean 1894, Introduction pp.xiii-xvi (its position in all three services) and p.xviii (what all may say)."
+    },
+
+    "marmitha": {
+      "label": "Marmitha",
+      "role": "psalmody",
+      "matchLabels": ["First Marmitha", "Second Marmitha", "Marmitha"],
+      "micro": "A group of psalms said at the Evening Service, varying with the day of the week.",
+      "structural": "Maclean's table shows the First Marmitha varying five ways: with the day of the week, one for each; for memorials falling on Fridays; for other memorials; for feasts and Sundays from Advent to Epiphany; and for other feasts and Sundays. The Second Marmitha is for ferias only and varies with the weekday. So the same slot carries a different set of psalms depending on both what day of the week it is and what kind of day it is — which is why a Marmitha cannot simply be looked up by date.",
+      "source": "Maclean 1894, Introduction p.xiii (the Evening Service table)."
+    },
+
+    "lakhumara": {
+      "label": "The Lakhumara",
+      "role": "hymn",
+      "matchLabels": ["The Lakhumara", "Lakhumara", "Prayer of the Lakhumara", "Prayer after the Lakhumara"],
+      "micro": "An ascription of praise said by everyone, farced, with a collect before and after it.",
+      "structural": "Maclean's table describes it as an ascription of praise said by all, farced, with a collect preceding and following. That 'said by all' is the significant part: he lists the Lakhumara with the Lord's Prayer, the Holy God and the Nicene Creed as the portions of the service which everyone can say, including those unable to read Old Syriac and therefore unable to join in the anthems. It appears in the Morning Service too, where on ferias it takes the place the Morning Anthem occupies on Sundays and feasts.",
+      "source": "Maclean 1894, Introduction p.xiii (the Evening Service table), p.xvi (the Morning Service table), and p.xviii (what all may say)."
+    },
+
+    "shuraya": {
+      "label": "Shuraya",
+      "role": "psalmody",
+      "matchLabels": ["First Shuraya", "Second Shuraya", "Shuraya (in place of a Letter Psalm)", "Shuraya", "Third Shuraya"],
+      "micro": "A short psalm, varying by weekday and by whether the week is 'before' or 'after'.",
+      "structural": "The Shuraya is where the week's alternation shows most plainly. Maclean's table has the First Shuraya varying on ferias with the day of the week and according as the week is 'before' or 'after', and on Sundays with the number of the Sunday within the shawu'a, the roughly seven-week division of the year. The Second Shuraya varies in the same way. A Third Shuraya stands later in the service on Sundays, Wednesdays, Fridays, feasts and memorials, where the other weekdays have a Letter Psalm instead.",
+      "source": "Maclean 1894, Introduction pp.xiii-xiv (the Evening Service table) and p.xxiv (the shawu'i as periods of about seven weeks)."
+    },
+
+    "letter-psalm": {
+      "label": "Letter Psalm",
+      "role": "psalmody",
+      "matchLabels": ["Letter Psalm"],
+      "micro": "A portion of Psalm 119, said on Mondays, Tuesdays, Thursdays and Saturdays in place of a third Shuraya.",
+      "structural": "Maclean's table pairs the two: a Letter Psalm, a portion of Psalm 119, is said on Monday, Tuesday, Thursday and Saturday, while a Third Shuraya stands in the same position on Sunday, Wednesday, Friday, feasts and memorials. The name comes from the psalm's alphabetic structure. On ferias which portion is said varies with the day of the week and with whether the week is 'before' or 'after'; otherwise it varies with the season.",
+      "source": "Maclean 1894, Introduction p.xiv (the Evening Service table)."
+    },
+
+    "anthem": {
+      "label": "Anthem",
+      "role": "hymn",
+      "matchLabels": ["First Anthem", "Second Anthem", "Evening Anthem", "Anthem"],
+      "micro": "A metrical hymn sung by the two choirs alternately, each verse preceded by a keynote clause.",
+      "structural": "The anthems are the part of the office Maclean considers the most Eastern in tone, and he describes their construction closely. They are in metre, divided into verses or stanzas each with the same number of lines — as few as two, as many as fourteen — and the lines roughly scan and occasionally rhyme. Before each verse, or each group of verses, stands a clause usually taken from the psalter, sung in monotone, which gives the verse its keynote; this, he says, seems to be a unique feature of the rite. The two choirs sing the verses alternately to a chant. In the printed text an asterisk marks where the choirs change and a full stop marks the end of a line. The chants themselves are purely traditional and not written down: the books give names of tunes, but these are not more than names. He adds a caution worth keeping: these are poetry and must be judged as poetry, not by the strict laws of logic, and one should not press every phrase home.",
+      "source": "Maclean 1894, Introduction pp.xvii-xviii (the construction of the anthems, the keynote clause, the alternating choirs, the asterisks and full stops, and the tunes being names only) and p.xix (judging them as poetry)."
+    },
+
+    "martyrs-anthem": {
+      "label": "The Martyrs' Anthem",
+      "role": "hymn",
+      "matchLabels": ["The Martyrs' Anthem", "Martyrs' Anthem"],
+      "micro": "An anthem in honour of the martyrs, one for each day of the week, in practice said on ferias.",
+      "structural": "There is one for each day of the week, and Maclean notes that in practice they are said on ferias only. His tables place the Evening and Morning ones differently, and the difference is stated rather than incidental: at the Evening Service the fixed anthem comes before the day's Martyrs' Anthem, while at the Morning Service the Martyrs' Anthem comes first and the two fixed Morning Anthems follow it. Two collects accompany it. The Urmi edition attributes them all to Mar Marutha, Bishop of Maiperqat.",
+      "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xvi (the Morning Service table, and the extra collect on Sundays when the Martyrs' Anthem is said)."
+    },
+
+    "karuzutha": {
+      "label": "The Karuzutha",
+      "role": "intercession",
+      "matchLabels": ["The Karuzutha", "Karuzutha"],
+      "micro": "The litany, said by the deacon, with the people answering each petition.",
+      "structural": "Maclean's table gives it in two parts, said by the deacon, with special suffrages on Sundays, feasts and memorials. He draws a direct comparison with the Greek rite: the general karuzutha and the other litanies show great similarity to the Greek ectenes, both in the structure of the petitions and in the practice of using a general litany at almost all services, liturgical and non-liturgical alike. He sets the two side by side in the Introduction to make the resemblance visible. On some days a special Karuzutha is appointed.",
+      "source": "Maclean 1894, Introduction p.xiv (the Evening Service table), p.xv (the Night Service table), and p.xxii (the comparison with the Greek ectenes)."
+    },
+
+    "holy-god": {
+      "label": "Holy God",
+      "role": "hymn",
+      "matchLabels": ["Holy God"],
+      "micro": "The Trisagion, said by all and farced with the Gloria.",
+      "structural": "Maclean's table gives it as said by all, farced with the Gloria. Like the Lord's Prayer, the Lakhumara and the Nicene Creed, it belongs to the whole assembly rather than to the singers: he names these four as the portions everyone can say, in contrast to the anthems, which are sung only by those able to read Old Syriac.",
+      "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xviii (what all may say)."
+    },
+
+    "collect": {
+      "label": "Prayer",
+      "role": "prayer",
+      "matchLabels": ["Prayer", "The Evening Prayer", "Prayer before the Morning Psalms", "Prayer for Help", "Prayer (Laying on of Hands)", "Prayer (instead of Pity us, thou Compassionate one)"],
+      "micro": "A collect. These may be said by a priest only, and are omitted entirely if none is present.",
+      "structural": "This is the one point in the office where it matters most whether a priest is present. Maclean states it plainly: the collects and the conclusions, or blessings, can be said by priests only, and if none are present they are entirely omitted. A layman praying the office and passing over them is not abbreviating it — that is the tradition's own instruction. Two further things he notes about their style. They almost always end with the words 'Father, Son, and Holy Ghost, for ever,' without pleading the merits of our Saviour, which he observes is also frequent among the Greeks. And they show a marked love of tautology: the same epithet is repeated again and again where a Western writer would have chosen a distinct one — an exuberance of epithets and synonyms common to all Eastern offices, and, he adds, no little difficulty to the English translator.",
+      "source": "Maclean 1894, Introduction p.xviii (collects and blessings for priests only, omitted if none is present), p.xxiii (the ending of the collects, compared with the Greek), and pp.xxiii-xxiv (the love of tautology)."
+    },
+
+    "conclusion": {
+      "label": "Conclusion",
+      "role": "dismissal",
+      "matchLabels": ["Conclusion", "The Conclusion"],
+      "micro": "The closing blessing. Like the collects, it may be given by a priest only.",
+      "structural": "Maclean groups the conclusions with the collects when he sets out who may say what: both can be said by priests only, and if none are present they are entirely omitted. His Evening Service table ends with the blessing, the kiss of peace and the Nicene Creed together, so the office closes with an act of the whole assembly even where the blessing itself is reserved.",
+      "source": "Maclean 1894, Introduction p.xviii (priests only, omitted if none present) and p.xiv (the close of the Evening Service)."
+    },
+
+    "nicene-creed": {
+      "label": "The Nicene Creed",
+      "role": "creed",
+      "matchLabels": ["The Nicene Creed", "Nicene Creed"],
+      "micro": "The Creed, in its East Syriac form, said by all at the close of the Evening Service.",
+      "structural": "It closes the Evening Service, after the blessing and the kiss of peace, and it is one of the four parts Maclean names as said by all rather than by the singers alone. Two textual notes he records: the Roman Catholic printed edition used by the Uniat Chaldeans adds the words 'he died' and 'and from the Son,' neither of which has manuscript authority in this tradition; and the same edition substitutes other names for those of Diodorus, Theodore, Nestorius and Narsai where they occur elsewhere in the offices.",
+      "source": "Maclean 1894, Introduction p.xviii (what all may say) and pp.xxix-xxx (the alterations in the Roman Catholic print); the creed text itself at p.22."
+    },
+
+    "hulala": {
+      "label": "Hulala",
+      "role": "psalmody",
+      "matchLabels": ["Hulala I", "Hulala II", "Hulala III", "Hulala IV", "Hulala V", "Hulala VI", "Hulala VII", "Hulala VIII", "Hulala IX", "Hulala X", "Hulala XI", "Hulala XII", "Hulala XIII", "Hulala XIV", "Hulala XV", "Hulala XVI", "Hulala XVII", "Hulala XVIII", "Hulala XIX", "Hulala XX", "Hulala XXI", "Hulala"],
+      "micro": "One of the twenty divisions of the Psalter, each with its own proper collects. A twenty-first is made of canticles.",
+      "structural": "The Night Service is where the psalter is recited, and the hulali are how it is divided: twenty of them, with a twenty-first added made up of certain Old Testament canticles. Maclean notes this recalls the twenty kathismata of the Greeks. A third of the psalter is said on each weekday, so the whole is said twice a week; on feasts of our Lord it is said complete; on Sundays and other holy days selections are made. Each hulala is further subdivided, and before each subdivision comes an appropriate collect gathering up the thoughts of the psalms — one of the two features he calls beautiful. On weekdays the psalms are said in monotone and antiphonally, one person on each side taking each clause, not necessarily a priest or deacon, and recited very rapidly; on Sundays and festivals several are sung.",
+      "source": "Maclean 1894, Introduction p.xvii (the recitation of the psalter, the twenty hulali and the twenty-first of canticles, the comparison with the Greek kathismata, the collects before each subdivision, and the manner of recitation)."
+    },
+
+    "farcing": {
+      "label": "Farcing",
+      "role": "antiphon",
+      "matchLabels": ["Farcing", "Farcings", "The Farcings of the Psalms", "Giyura"],
+      "micro": "A short clause inserted into a psalm — after its opening clauses and at the end — usually giving it a Christian application.",
+      "structural": "Maclean names the giyuri, or farcings, as one of the two beautiful features of East Syriac psalm recitation, and he is careful to distinguish them from the other. The collects come before each subdivision of the hulali and gather up the thoughts of the psalms; the farcings are something else — clauses introduced after the first, or the first and second, clauses of a psalm and at its end, usually giving the psalm a Christian application. So a psalm here is not simply read: it is punctuated with the Church's reading of it.",
+      "source": "Maclean 1894, Introduction p.xvii."
+    },
+
+    "qaltha": {
+      "label": "Qaltha",
+      "role": "psalmody",
+      "matchLabels": ["Qaltha", "The Qaltha"],
+      "micro": "A short psalm at the Night Service, said on days when the liturgy is to be celebrated.",
+      "structural": "Its presence is a signal about the day. Maclean's Night Service table gives the Qaltha as a short psalm said on days when the liturgy is to be said, preceded by a fixed collect, but not on feasts and memorials. So the Qaltha appearing in the Night Office tells you that the Eucharist is expected later that day.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table)."
+    },
+
+    "motwa": {
+      "label": "The Motwa",
+      "role": "hymn",
+      "matchLabels": ["The Motwa", "Motwa"],
+      "micro": "An anthem sung sitting. The name corresponds exactly to the Greek kathisma.",
+      "structural": "Maclean makes the Greek connection explicit: Motwa, the name of an anthem at the Night Service sung sitting, corresponds exactly to the Greek kathisma, one meaning of which is an anthem sung while the people sit. It varies with the season and the day, with one stated exception — on Wednesdays special anthems are said, one for weeks 'before' and one for weeks 'after', though the ending is the same for both weeks. On other ferias the last verse is invariable.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table and the Wednesday exception) and p.xxiii (the correspondence with the Greek kathisma)."
+    },
+
+    "tishbukhta": {
+      "label": "Tishbukhta",
+      "role": "hymn",
+      "matchLabels": ["Tishbukhta", "The Tishbukhta"],
+      "micro": "A hymn of praise, differing by day and by the kind of day being kept.",
+      "structural": "Maclean's Night Service table sets out the variation compactly: on Sundays the Tishbukhta is fixed; on feasts it is proper to the feast; on memorials it is as on ferial Fridays; and on ferias there is one for each weekday. The Morning Service has its own — a fixed Tishbukhta, differing between ferias on one hand and Sundays, feasts and memorials on the other, with a second Tishbukhta on Sundays, feasts and memorials only. Several are attributed to named authors, and this corpus keeps those attributions exactly as the source gives them.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table) and p.xvi (the Morning Service table)."
+    },
+
+    "shubakha": {
+      "label": "Shubakha",
+      "role": "psalmody",
+      "matchLabels": ["Shubakha (Psalm of Glory)", "Shubakha", "The Shubakha"],
+      "micro": "A short psalm of glory near the end of the Night Service, proper to the day.",
+      "structural": "Maclean's table pairs it with alternatives according to the kind of day: a collect and Shubakha, a short psalm proper for the day, on Sundays; a collect and Canon proper for the day on feasts and memorials; and a collect and Shubakha on ferias, one for each weekday. So the same position in the office is filled by a Shubakha or a Canon depending on what is being kept.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table)."
+    },
+
+    "madrasha": {
+      "label": "The Madrasha",
+      "role": "hymn",
+      "matchLabels": ["The Madrasha", "Madrasha"],
+      "micro": "A doctrinal hymn, said with its own collects on Sundays, feasts and memorials.",
+      "structural": "Maclean glosses it in his table as a doctrinal hymn. It appears at the Night Service with proper collects on Sundays and memorials, and on feasts it stands within the sequence sung between the three portions of the psalter, alongside a proper Canon, Tishbukhta and Karuzutha. It is one of the pieces whose text is not printed in this volume but carried in the Khudhra, which is why several Madrasha components in this corpus are citations rather than text.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table) and p.xi (the seasonal and holy-day parts being contained in the Khudhra, Geza and Kashkul rather than in the books this volume translates)."
+    },
+
+    "night-anthem": {
+      "label": "The Night Anthem",
+      "role": "hymn",
+      "matchLabels": ["The Night Anthem", "Night Anthem"],
+      "micro": "An anthem near the close of the Night Service, proper to the day, with collects.",
+      "structural": "Maclean's table gives it with collects on Sundays, feasts and memorials, proper for the day, and notes that on Sundays the two last verses are invariable. It sits after the Qali d'Shahra and before the Shubakha or Canon that closes the office.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table)."
+    },
+
+    "qali-dshahra": {
+      "label": "Qali d'Shahra",
+      "role": "psalmody",
+      "matchLabels": ["Qali d'Shahra", "Qali d'Shahra (Vigil Anthems)", "The Qali d'Shahra"],
+      "micro": "An additional hulala at the Night Service on Sundays, feasts and memorials, with collects.",
+      "structural": "Maclean's table describes it as an additional hulala said on Sundays, feasts and memorials as noted in the Geza, with collects prefixed to each Marmitha. It is one of the additions that lengthen the Night Service on days of higher rank, alongside the Suyakhi.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table)."
+    },
+
+    "suyakhi": {
+      "label": "Suyakhi",
+      "role": "psalmody",
+      "matchLabels": ["Suyakhi", "The Suyakhi", "Suyakha", "First Suyakha", "Second Suyakha"],
+      "micro": "Additional psalms with collects, said on feasts and memorials.",
+      "structural": "The Suyakhi mark a day out as a feast or memorial rather than an ordinary one. Maclean's Evening Service table gives them as additional psalms with two collects, for feasts and memorials only; his Night Service table gives two additional hulali with collects on Sundays. Their presence or absence is one of the clearest signals in the office of what kind of day is being kept.",
+      "source": "Maclean 1894, Introduction pp.xiv-xv (the Evening and Night Service tables)."
+    },
+
+    "royal-anthem": {
+      "label": "The Royal Anthem",
+      "role": "hymn",
+      "matchLabels": ["The Royal Anthem", "Royal Anthem", "Prayer after the Royal Anthem", "Prayer before the Royal Anthem"],
+      "micro": "The proper anthem of Sundays, feasts and memorials at the Evening Service, in place of the ferial Evening Anthem.",
+      "structural": "Maclean's table sets the two as alternatives in one position: the Royal Anthem on Sundays, feasts and memorials, proper for the day, with the last two verses the same for each Sunday of a shawu'a; or the Evening Anthem on ferias, varying with the season or only with the day of the week. Its proper body belongs to the Khudhra rather than to the books this volume translates, which is why it is a disclosed gap in this corpus while its endings and surrounding prayers are present.",
+      "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xi (the seasonal propers being contained in the Khudhra, Geza and Kashkul)."
+    },
+
+    "subaa": {
+      "label": "Suba'a",
+      "role": "opening",
+      "matchLabels": ["Suba'a (Compline)", "Suba'a", "Compline"],
+      "micro": "Compline. By 1894 almost obsolete, kept on certain days and usually joined to the Evening Service.",
+      "structural": "Compline is one of the four services the Sunhadus orders daily, but Maclean records that it was already almost obsolete in his day except on certain days of the year, when it is usually joined on to the Evening Service. His Evening Service table reflects that: Suba'a appears there on memorials and in the Great Fast, with one collect preceding and two following. It is also one of the two offices the Sunhadus leaves to the rule of the monastery, with no fixed length required of laymen — the reason this app treats it differently in Cathedral and Monastic modes.",
+      "source": "Maclean 1894, Introduction p.xiii (Compline almost obsolete, joined to the Evening Service), p.xiv (its position in the Evening Service table), and p.xii (the Sunhadus on the four services)."
+    },
+
+    "canon": {
+      "label": "Canon",
+      "role": "hymn",
+      "matchLabels": ["Canon", "The Canon"],
+      "micro": "A proper hymn at the Night Service on feasts and memorials, standing where ferias have a Shubakha.",
+      "structural": "Maclean's Night Service table places it as one of a set of alternatives: a collect and Shubakha proper for the day on Sundays; a collect and Canon proper for the day on feasts and memorials; a collect and Shubakha on ferias, one for each weekday. On feasts of our Lord a proper Canon also appears earlier, among the material said between the three portions of the psalter.",
+      "source": "Maclean 1894, Introduction p.xv (the Night Service table)."
+    },
+
+    "alternate": {
+      "label": "Another",
+      "role": "rubric",
+      "matchLabels": ["Another", "Or this"],
+      "micro": "An alternative form for the same slot — a genuine choice, not a replacement.",
+      "structural": "Where the source heads a text 'Another' or 'Or this', it is offering a second authorised form for the same position, not correcting the first. This corpus preserves both rather than picking one, in keeping with the source's own presentation. Maclean's edition also records where his witnesses differ from one another — the manuscript, the Urmi printed edition, the Psalter, the Takhsa and the Roman Catholic print — and notes those differences rather than silently harmonising them.",
+      "source": "Maclean 1894, Introduction pp.xxv-xxx (the texts used and the noting of their differences)."
+    },
+
+    "amen-and-amen": {
+      "label": "And let all the people say Amen and Amen",
+      "role": "rubric",
+      "matchLabels": ["And let all the people say Amen and Amen"],
+      "micro": "A keynote clause from the psalter, sung in monotone before the verse it introduces.",
+      "structural": "This is not a rubric telling the people to answer; it is one of the keynote clauses Maclean describes as a distinctive feature of the rite. Before each verse, or each collection of verses, of an anthem is placed a clause usually taken from the psalter, sung in monotone, which gives the verse its keynote — a feature he says seems to be unique to this tradition. Lines like this one are those clauses, and they belong to the anthem's construction rather than standing apart from it.",
+      "source": "Maclean 1894, Introduction pp.xvii-xviii."
+    },
+
+    "of-mary": {
+      "label": "Of Mary",
+      "role": "prayer",
+      "matchLabels": ["Of Mary"],
+      "micro": "A prayer invoking the Virgin's intercession, always said among the prayers for help.",
+      "structural": "Maclean is careful about how this tradition speaks to the saints, and singles the point out. Their addresses to St Mary — in devotion to whom, he says, they yield to none — and their invocations of saints are remarkably staid, and most carefully distinguish 'pray for us' from prayers which may be addressed to God alone. The invocations take three forms: prayers to God that the saints may pray for us, indirect wishes that they may, and direct requests that they pray for us. As he puts it, the East Syrian says 'Mary, pray for us; in thy prayers we take refuge,' but never 'Mary, grant our request.'",
+      "source": "Maclean 1894, Introduction p.xix."
+    },
+
+    "of-our-father": {
+      "label": "Of Our Father",
+      "role": "prayer",
+      "matchLabels": ["Of Our Father", "Of the Apostles"],
+      "micro": "Prayers invoking the patron saint and the apostles, said among the prayers for help.",
+      "structural": "These stand with the prayer 'Of Mary' at the close of the office, and follow the same restraint: the saints are asked to pray, not to grant. The patron saint is named here, which is why this corpus uses a 'Mar N.' fill-in rather than the name of any particular man — the source itself expects the name to change with the church.",
+      "source": "Maclean 1894, Introduction p.xix (the form of invocation) and p.xiv (the prayers for help at the close of the Evening Service)."
+    }
+  }
 }
