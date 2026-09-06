@@ -1,3 +1,63 @@
+## Session 2026-09-05 continued -- Eves derived; Bartholomew's Eve found three days out; all 26
+## martyrology citations corrected. SEED_VERSION v241 -> v242.
+
+Josh: do the derivation work rather than defer it.
+
+### Eves are derived, not cited
+
+No calendar prints an Eve as a separate commemoration, so there is nothing to match those rows
+against. An Eve is **by definition** the day before its feast, and its correctness is entirely a
+function of the principal's confirmed date plus the minus-one-day rule. Three rows now carry that
+derivation explicitly, each naming the principal it depends on and stating it must move if the
+principal's date is revised:
+
+| Eve | Derived from |
+|---|---|
+| Benedict of Nursia (Eve) | 11 July |
+| Bernard of Clairvaux (Eve) | 20 August |
+| Bartholomew (Eve) | 24 August |
+
+### A real defect fell out of actually doing it
+
+**Saint Bartholomew (Eve) was filed at 21 August** -- three days from the Apostle's feast on 24
+August. An Eve cannot sit three days from its feast.
+
+The error was invisible to every calendar-matching pass **precisely because no calendar prints
+Eves**. It surfaced only when the derivation was attempted. Corrected to 23 August in both
+`dayLegacy` and the observance object, with the correction stated in the row's own `ruleSource`.
+
+### Elizabeth of Hungary (Transferred) is left unconfirmed, deliberately
+
+A transfer is a displacement caused by an impediment, not a fixed offset, so there is no rule to
+derive it from. It also sits at 18 November while the principal is kept at 17 November and LFF 2024
+keeps Elizabeth at 19 November -- a three-way disagreement that is a question for Josh, not
+something to resolve by inventing a rule.
+
+### A citation defect in this session's own work
+
+Every one of the 26 martyrology confirmations written an hour earlier **quoted the opening lines of
+its day rather than the passage that actually matched**. The martyrology prints many biographies
+under a single date, so the opening routinely names a different saint: **Elizabeth of Hungary's
+citation quoted St Hilda of Whitby.** That reads exactly like a fabricated source attribution, even
+though the underlying match was correct.
+
+All 26 were re-audited against the printed text. **Zero were false positives** -- every figure
+genuinely appears on its stated day; two successive detector designs produced false alarms before
+direct inspection settled it. 20 citations now quote the sentence naming their own figure and can be
+checked on their face. The remaining 6, where the passage could not be isolated automatically, say
+so explicitly and warn the reader to verify against the printed day, rather than silently keeping a
+quotation about someone else.
+
+**Confirmed rows 541 -> 544; ANG 290 -> 293, leaving 36.**
+
+### Verification
+
+`sanctoral.json` edited by targeted string replacement throughout, never `json.dump`; 1,301 entries;
+no misleading "which reads on this day" quotation remains anywhere in the file; the Bartholomew
+correction verified in both the `dayLegacy` string and the observance object. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- Anglican Martyrology and SEC master calendar parsed; 27 further
 ## Anglican dates confirmed. SEED_VERSION v240 -> v241.
 

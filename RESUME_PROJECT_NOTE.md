@@ -155,7 +155,7 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,301 entries; **541 carry a `ruleSource`**. **760 dates are still inherited and unconfirmed.**
+1,301 entries; **544 carry a `ruleSource`**. **757 dates are still inherited and unconfirmed.**
 
 **252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
@@ -172,7 +172,7 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 
 | Tag | Confirmed | Remaining |
 |---|---|---|
-| ANG | 290 | 39 |
+| ANG | 293 | 36 |
 | COE | 59 | 0 |
 | EOR | 266 | 146 |
 | LAT | 135 | 269 |
@@ -183,6 +183,15 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 OCA Desk Calendars, the Anglican Martyrology, the SEC master calendar.
 **Not yet parsed and the obvious next step for ANG:** Holy Women Holy Men, Great Cloud of Witnesses,
 For All The Saints — all in `data/kalendar/source-witnesses/`.
+
+**When citing the Anglican Martyrology, quote the passage that matched, never the day's opening.**
+It prints many biographies under one date, so the opening usually names a different saint. That
+mistake was made and corrected on 2026-09-05.
+
+**Eves are derived, not cited** — an Eve is the day before its feast and no calendar prints them
+separately. Deriving them found Bartholomew's Eve filed three days from its feast.
+**Elizabeth of Hungary (Transferred) is unresolved:** the row sits at 18 Nov, the principal at 17
+Nov, and LFF at 19 Nov. Josh's call.
 
 **Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
 worked example. **The repo holds no Eastern Orthodox jurisdictional calendar, no Roman calendar or
