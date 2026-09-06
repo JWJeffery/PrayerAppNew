@@ -198,9 +198,12 @@ separately. Deriving them found Bartholomew's Eve filed three days from its feas
 were deleted on 2026-09-05 that way. Two rows sharing an LFF day are only correct when they are two
 different people (Vincent de Paul and Louise de Marillac; Rolle and Margery Kempe).
 
-**Open TAGGING question, not a dating one:** “Venerable Benedict of Nursia” sits at 14 March
-carrying ANG/EOR/LAT/OOR. 14 March is the Eastern commemoration; LFF puts Benedict at 11 July. Should
-the ANG tag come off that row? Josh's call — left rather than silently stripped.
+**One identity, different days per tradition: use `traditionObservance`.** Added to the schema
+2026-09-05. A row may carry an optional map of tradition code to observance rule; the resolver uses
+it when asked on behalf of that tradition, and the shared `observance` otherwise. **Never solve a
+per-tradition date difference by duplicating the row** — that is the thing being deleted. And never
+ask whether an ANG tag should come off a row because LFF disagrees with its date: give ANG its LFF
+date.
 
 **Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
 worked example. **The repo holds no Eastern Orthodox jurisdictional calendar, no Roman calendar or

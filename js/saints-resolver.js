@@ -106,9 +106,33 @@
      * Entries with no `observance` fall back to the legacy `day`/`dayLegacy`
      * string, so a partially migrated file still resolves rather than vanishing.
      */
+    /**
+     * The observance rule that applies to `entry` for a given tradition.
+     *
+     * ADDED 2026-09-05. One identity is frequently kept on DIFFERENT DAYS by
+     * different traditions -- Benedict of Nursia is 11 July for the Episcopal
+     * Church and 14 March in the East; Basil the Great is 1 January in the East
+     * and 14 June for Anglicans. The schema already let one row carry several
+     * tradition tags but gave it only ONE date, which forced a false choice:
+     * either state a date that is wrong for some of its own tags, or split the
+     * identity across duplicate rows.
+     *
+     * `traditionObservance` resolves that. It is an optional map of tradition
+     * code to observance rule; when the caller asks on behalf of a tradition
+     * that has an entry there, that rule is used instead of the shared
+     * `observance`. Rows without the field behave exactly as before, so this is
+     * additive and every existing entry keeps working untouched.
+     */
+    function observanceFor(entry, tradition) {
+        if (tradition && entry.traditionObservance && entry.traditionObservance[tradition]) {
+            return entry.traditionObservance[tradition];
+        }
+        return entry.observance;
+    }
+
     function occursOn(entry, date, opts) {
         if (!entry || !(date instanceof Date)) return false;
-        const obs = entry.observance;
+        const obs = observanceFor(entry, opts && opts.tradition);
         if (!obs) return saintOccursOnDate(entry.day || entry.dayLegacy, date);
 
         if (obs.type === 'fixed') {
@@ -311,10 +335,17 @@
         if (idx < 0) return null;
         const m = idx + 1;
         return _sanctoral.entries.filter(e => {
-            const obs = e.observance;
-            if (!obs) return saintOccursOnDate(e.day || e.dayLegacy, new Date(2000, idx, 1)) || true;
-            if (obs.type === 'fixed')   return obs.dates.some(x => x.month === m);
-            if (obs.type === 'ordinal') return obs.month === m;
+            // every rule this row can resolve under, shared and per-tradition,
+            // so a month view never drops a row kept in this month by only one
+            // of its traditions
+            const rules = [e.observance].concat(
+                e.traditionObservance ? Object.keys(e.traditionObservance).map(k => e.traditionObservance[k]) : []
+            ).filter(Boolean);
+            if (!rules.length) return saintOccursOnDate(e.day || e.dayLegacy, new Date(2000, idx, 1)) || true;
+            if (rules.some(o => o.type === 'fixed'   && o.dates.some(x => x.month === m))) return true;
+            if (rules.some(o => o.type === 'ordinal' && o.month === m)) return true;
+            const obs = e.observance || rules[0];
+            if (obs.type === 'fixed' || obs.type === 'ordinal') return false;
             // cycle-anchored: which month it lands in depends on the year, so it
             // cannot be excluded from any month on the strength of the rule alone.
             return true;
@@ -344,7 +375,10 @@
         const entries = _sanctoral ? _sanctoral.entries : [];
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
         const ctx = { tradition, includeEcumenical };
-        return _entriesOn(entries, date, opts).filter(s => saintAppliesToContext(s, ctx).ok);
+        // tradition is threaded into the date rule too, so a row kept on a
+        // different day by this tradition resolves on ITS day, not the shared one
+        return _entriesOn(entries, date, Object.assign({}, opts, { tradition }))
+            .filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
     /**
@@ -368,6 +402,7 @@
 
     global.SaintsResolver = {
         configure,
+        observanceFor,
         loadSaintsForDate,
         resolveCommemorations,
         getMonthRecords,

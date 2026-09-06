@@ -1,3 +1,60 @@
+## Session 2026-09-05 -- the schema forced a wrong Anglican date; extended for per-tradition dates.
+## SEED_VERSION v244 -> v245.
+
+Josh, on being asked whether the ANG tag should come off "Venerable Benedict of Nursia": **put him at
+LFF. LFF controls precedence for the Episcopal Church** -- which had been said repeatedly.
+
+The question should never have been asked, and asking it exposed the real fault, which was
+**structural, not per-row**.
+
+### The schema forced the wrong answer
+
+A row could carry several tradition tags but only **one date**. One identity is routinely kept on
+different days by different traditions -- Benedict of Nursia is 11 July for the Episcopal Church and
+14 March in the East. With one date per row the only options were:
+
+- state a date that is wrong for some of the row's own tags, or
+- split the identity into duplicate rows -- which is exactly what was being deleted an hour earlier.
+
+Josh: if the schema does not support multiple dates, fix it.
+
+### Fixed
+
+Entries may now carry an optional **`traditionObservance`** map of tradition code to observance rule.
+When a resolver asks on behalf of a tradition listed there, that rule applies; otherwise the shared
+`observance` does. The field is optional and additive, so all 1,291 rows without it behave exactly as
+before.
+
+`js/saints-resolver.js` gains `observanceFor()`; the tradition is threaded into `occursOn()` through
+`filterCachedByTradition()`. **`getMonthRecords()` was corrected in the same pass** -- it read only
+the shared rule, and would otherwise have dropped a row from the month one of its own traditions
+keeps it in.
+
+### Swept the class, properly this time
+
+Every ANG row sharing a tag with another tradition, checked against LFF for a differing day. Three
+found, each now carrying its own Anglican date while the other traditions keep the shared one:
+
+| Row | Shared date | ANG date (LFF) |
+|---|---|---|
+| Most Holy Name of Jesus | 3 January | **1 January** |
+| Venerable Benedict of Nursia | 14 March | **11 July** |
+| Synaxis of the Archangel Michael | 8 November | **29 September** |
+
+Each records why in an `angDateNote`.
+
+### Verified by running the resolver, not by inspection
+
+Benedict resolves on 11 July for ANG and **not** on 14 March; resolves on 14 March for EOR and
+**not** on 11 July; falls back to 14 March when no tradition is given. A control row without
+`traditionObservance` resolves identically for ANG, EOR and no tradition.
+
+`node --check` passes on `saints-resolver.js`. `sanctoral.json` rebuilt from its own text blocks,
+never `json.dump`, 1,294 entries, shared `observance` objects verified untouched. The schema change
+is documented in the file's own note.
+
+---
+
 ## Session 2026-09-05 -- LFF resolves seven duplicate Anglican rows. SEED_VERSION v243 -> v244.
 
 Josh, on the previous entry: I was vague about what I was asking. On Richard Rolle he asked the
