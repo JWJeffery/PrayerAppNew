@@ -1,3 +1,61 @@
+## Session 2026-09-06 -- the 150 untagged rows were not unsourced, they were modelled in the wrong
+## kind. 28 identities re-derived from the California calendars. SEED_VERSION v246 -> v247.
+
+Josh recovered the **Assyrian Church of the East, Diocese of California** calendars from the Internet
+Archive and committed them: 2024 and 2026 in full, plus the June, August, September and October 2021
+pages as images. These are the witness that carried the original 59 COE confirmations on 2026-09-03,
+and they now live in the repo rather than only in a past session.
+
+### The diagnosis was wrong, and the wrongness mattered
+
+Those 150 rows were **not** unsourced. They carried **fixed dates for moveable commemorations.**
+
+The California calendars print Mar Abdisho on 26 April, 18 April, 1 May, 23 April, 14 April, 4 May
+and 19 April across seven printed years. A row carrying a fixed date can never match a commemoration
+that walks four weeks -- so every calendar match run against these rows failed, and each failure was
+read as absence of evidence when it was a modelling fault. **Deleting them, as proposed yesterday,
+would have destroyed sourceable data.**
+
+### What was derived
+
+32 of the 100 identities were located across the three California years. **28 resolved to a rule that
+reproduces every printed date it came from:**
+
+| Kind | Count | Example |
+|---|---|---|
+| Fixed | 6 | Mar Shalita, 19 September in 2021 and 2026 |
+| Ordinal | 13 | Mar Qardagh, 4th Friday of August -- holds in 2021, 2024 and 2026 |
+| Relative to the Resurrection | 9 | Mar Addai at Easter+28; Mar Papa at Easter+152 |
+
+Four remained unresolved and came out with the rest.
+
+### The resolver needed extending, and the limit surfaced by writing the rules
+
+`relative` was **hard-wired to `epiphanyGreg`**, so an Easter-anchored rule could not be expressed at
+all. It now takes an explicit `anchor` -- defaulting to Epiphany, so every pre-existing rule is
+unchanged -- and supports a pure day offset with no weekday to land on.
+
+### Verified by replay, not by inspection
+
+Each derived rule was run through the real resolver against the exact printed dates it was derived
+from: **15 date/year pairs across six identities, including all three of the three-year cases. 15
+hits, 0 misses.**
+
+### What came out
+
+122 rows whose identity appears in none of the California years were removed, under Josh's rule that
+unsourced entries come out. Their names remain listed in the ledger.
+
+**Entries 1,294 -> 1,172. COE confirmed 59 -> 87, and the COE tag now has zero unconfirmed rows.
+Total confirmed 541 -> 569.** The empty-tags row class no longer exists.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; `node --check` passes on
+`saints-resolver.js`.
+
+---
+
 ## Session 2026-09-05 -- what the schema change invalidates, audited. SEED_VERSION v245 -> v246.
 
 Josh asked how much earlier work needs unfucking. Audited against the actual pre-change files rather

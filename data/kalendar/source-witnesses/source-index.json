@@ -83,6 +83,13 @@
     "authority_tier": "governing_source_coptic",
     "notes": "GOVERNING CALENDAR FOR THE OOR TAG, set by Josh 2026-09-05. The Coptic Church is this project's first Oriental Orthodox tradition; Coptic Reader's Synaxarion Calendar, used with the Antiphonary/Difnar, is the fullest current U.S. diocesan source. A file named coptic-synaxarium.json.txt is said to exist and to be usable as the machine-readable baseline. CORRECTION 2026-09-05: an earlier version of this note stated that file contains \"366 days, 702 entries\" and omits the New Martyrs of Libya and St Maurice. THOSE FIGURES AND THAT GAP LIST WERE NEVER VERIFIED HERE. They came from a ChatGPT message Josh pasted into the conversation, and were repeated as though they were established fact. Nobody on this project has opened the file; Josh does not know where it came from. Nothing may be built on those numbers until the file is in hand and inspected."
   },
+  "ACOE_CA": {
+    "label": "Assyrian Church of the East, Diocese of California \u2014 Ecclesiastical Calendars 2021, 2024, 2026",
+    "path": "data/kalendar/source-witnesses/2024 full.pdf; 2026cal.pdf; June21.jpg; Aug21.jpg; Sept21.jpg; oct21.jpg",
+    "kind": "church_of_the_east_diocesan_calendar",
+    "authority_tier": "governing_source_church_of_the_east",
+    "notes": "Assyrian Church of the East, Diocese of California \u2014 printed ecclesiastical calendars. 2024 and 2026 in full (2024 full.pdf, 2026cal.pdf, 12 pages each, text layer present) plus the June, August, September and October 2021 pages as images (June21.jpg, Aug21.jpg, Sept21.jpg, oct21.jpg), read by OCR. Josh recovered these from the Internet Archive; they are the witness that carried the original 59 COE confirmations on 2026-09-03 and they now live in the repo rather than only in a past session. GOVERNING CALENDAR FOR THE COE TAG. Note that these calendars print MOVEABLE commemorations: a saint can shift five days between years, so a date read from one year is not a fixed date and must not be stored as one. Two years pin a candidate rule and a third tests it."
+  },
   "ETH": {
     "label": "Ethiopian Synaxarium",
     "path": "data/kalendar/source-witnesses/ethiopian-synaxarium.pdf",

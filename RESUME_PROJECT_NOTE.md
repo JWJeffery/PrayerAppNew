@@ -155,7 +155,7 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,294 entries; **541 carry a `ruleSource`**. **753 dates are still inherited and unconfirmed.**
+1,172 entries; **569 carry a `ruleSource`**. **603 dates are still inherited and unconfirmed.**
 
 **252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
@@ -176,12 +176,17 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 
 | Tag | Confirmed | Remaining |
 |---|---|---|
-| ANG | 293 | 36 |
-| COE | 59 | 0 |
+| ANG | 290 | 32 |
+| COE | 87 | **0 — complete** |
 | EOR | 266 | 146 |
-| LAT | 135 | 269 |
+| LAT | 134 | 269 |
 | OOR | 128 | 240 |
-| untagged | 0 | 150 |
+
+**A fixed date is a claim about the KIND of commemoration, not just its day.** The 150 untagged rows
+looked unsourceable for weeks because they stored fixed dates for MOVEABLE commemorations — the
+California calendars print Mar Abdisho across a four-week spread. Every matcher failed and the
+failure was read as missing evidence. When a row will not match any calendar, check the rule type
+before concluding there is no source.
 
 **Parsed so far:** LFF 2024, the Prayer Book calendar, the Kalendar v0.1 candidate matrices, the six
 OCA Desk Calendars, the Anglican Martyrology, the SEC master calendar.

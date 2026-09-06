@@ -158,15 +158,35 @@
         // follows the church body's fixed-feast reckoning rather than being
         // hardcoded to a Gregorian date.
         if (obs.type === 'relative') {
-            if (date.getDay() !== obs.weekday) return false;
+            if (obs.weekday !== null && obs.weekday !== undefined
+                && date.getDay() !== obs.weekday) return false;
             const cal = global.EastSyriacCalendar;
             if (!cal || typeof cal.getSeason !== 'function') {
                 return saintOccursOnDate(entry.dayLegacy || entry.day, date);
             }
             try {
                 const o = (opts && opts.eastSyriacOptions) || _eastSyriacOptions;
-                const anchor = cal.getSeason(date, o).epiphanyGreg;
+                const season = cal.getSeason(date, o);
+                // ANCHOR MADE EXPLICIT 2026-09-06. This was hard-wired to
+                // epiphanyGreg, which silently limited the rule to one anchor.
+                // Church of the East commemorations are anchored to the
+                // Resurrection at least as often -- the Diocese of California
+                // calendars for 2021, 2024 and 2026 place Mar Addai a fixed 28
+                // days after Easter and Mar Papa a fixed 152 days after it, on
+                // dates that move up to five days between years. Rules written
+                // before this change carry no `anchor` and default to Epiphany,
+                // so their behaviour is unchanged.
+                const anchorName = obs.anchor || 'epiphany';
+                const anchor = anchorName === 'easter' ? season.easter : season.epiphanyGreg;
                 if (!anchor) return false;
+                // A pure day-offset from the anchor, with no weekday to land on.
+                if (obs.weekday === null || obs.weekday === undefined) {
+                    const t = new Date(anchor.getFullYear(), anchor.getMonth(),
+                                       anchor.getDate() + (obs.offsetDays || 0));
+                    return t.getFullYear() === date.getFullYear()
+                        && t.getMonth() === date.getMonth()
+                        && t.getDate() === date.getDate();
+                }
                 // n > 0: the Nth occurrence of the weekday on or after
                 //        anchor + offsetDays (counting forward).
                 // n < 0: the |n|th occurrence STRICTLY BEFORE the anchor
