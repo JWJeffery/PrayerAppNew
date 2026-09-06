@@ -198,6 +198,16 @@ separately. Deriving them found Bartholomew's Eve filed three days from its feas
 were deleted on 2026-09-05 that way. Two rows sharing an LFF day are only correct when they are two
 different people (Vincent de Paul and Louise de Marillac; Rolle and Margery Kempe).
 
+**24 identities are still duplicated across traditions purely to hold two dates** — Basil the
+Great, Catherine of Alexandria, Mary of Egypt, Gregory of Nyssa and 20 more, 49 rows in total. They
+**resolve correctly**; they are redundant, not broken. Merging them under `traditionObservance` is
+an open improvement. Do NOT merge the 33 identities that involve an untagged row — those are
+unsourced COE candidate dates and merging would assert one.
+
+**Before moving any date, check the row's tags.** Moving a shared date on one tradition's authority
+moves it for every tradition on that row. That happened once, to Elizabeth of Hungary, and was
+caught and fixed the same day.
+
 **One identity, different days per tradition: use `traditionObservance`.** Added to the schema
 2026-09-05. A row may carry an optional map of tradition code to observance rule; the resolver uses
 it when asked on behalf of that tradition, and the shared `observance` otherwise. **Never solve a

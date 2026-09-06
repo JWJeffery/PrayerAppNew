@@ -1,3 +1,55 @@
+## Session 2026-09-05 -- what the schema change invalidates, audited. SEED_VERSION v245 -> v246.
+
+Josh asked how much earlier work needs unfucking. Audited against the actual pre-change files rather
+than estimated.
+
+### One row was genuinely broken
+
+**Saint Elizabeth of Hungary.** Earlier today her *shared* date moved from 17 to 19 November because
+LFF keeps her on the 19th and LFF controls for the Episcopal Church. Right for ANG, **wrong for
+LAT** -- the row carries both tags, the schema then allowed one date, and moving it silently moved
+**Rome's** date too. Rome keeps her on 17 November.
+
+Shared date restored to the 17th; ANG carries the 19th through `traditionObservance`. Verified by
+running the resolver: ANG resolves on 19 November and not the 17th; LAT on the 17th and not the 19th.
+
+### Everything else checked out
+
+- **The three date moves from v243:** Charles Gore and Richard Rolle of Hampole are ANG-only, so
+  moving them touched nothing else. Elizabeth was the only multi-tagged one.
+- **The seven deletions from v244**, checked against the actual pre-deletion file at `01bab20`: six
+  were ANG-only rows. The seventh, All Saints' Day (ANG, LAT), was deleted in favour of a row on the
+  **same day** carrying a superset of its tags, so no tradition lost a date.
+
+### A larger finding that is not a defect
+
+The corpus has been solving cross-tradition date differences by **duplicating the identity** all
+along:
+
+| Identity | Rows |
+|---|---|
+| Basil the Great | 1 Jan (EOR/LAT/OOR) and 14 Jun (ANG) |
+| Catherine of Alexandria | 24 Nov (ANG) and 25 Nov (EOR/LAT/OOR) |
+| Mary of Egypt | 30 Mar (ANG) and 1 Apr (EOR/LAT/OOR) |
+| Gregory of Nyssa | 10 Jan, 9 Mar, 31 Dec across three tag sets |
+
+**24 identities across 49 rows.** These **resolve correctly today** -- each carries its own tags and
+its own date, and the resolver filters by tradition. They are redundant, not wrong. Merging them
+under `traditionObservance` is an improvement to take deliberately, not a repair to rush. Counted
+here so the scale is on record.
+
+**Deliberately excluded:** 33 further identities on multiple dates involve an *untagged* row. Those
+are the 150 unsourced Church of the East entries already disclosed -- one identity carrying several
+**candidate** dates, none confirmed. Merging those would assert a date. Their fix is sourcing, not
+schema.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; 1,294 entries; the deletion
+audit run against the real pre-deletion file rather than from memory. No code touched this pass.
+
+---
+
 ## Session 2026-09-05 -- the schema forced a wrong Anglican date; extended for per-tradition dates.
 ## SEED_VERSION v244 -> v245.
 

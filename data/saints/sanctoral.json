@@ -21575,17 +21575,29 @@
         "ANG",
         "LAT"
       ],
-      "dayLegacy": "November 19",
+      "dayLegacy": "November 17",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 11,
-            "day": 19
+            "day": 17
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Elizabeth of Hungary, Princess, 1231”. DATE CHANGED from November 17 to November 19 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Elizabeth of Hungary, Princess, 1231”. DATE CHANGED from November 17 to November 19 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row.",
+      "traditionObservance": {
+          "ANG": {
+            "type": "fixed",
+            "dates": [
+              {
+                "month": 11,
+                "day": 19
+              }
+            ]
+          }
+        },
+      "angDateNote": "CORRECTION OF THIS SESSION'S OWN WORK, 2026-09-05. Earlier today this row's SHARED date was moved from 17 to 19 November because LFF keeps Elizabeth on the 19th and LFF controls for the Episcopal Church. That was right for ANG and WRONG for LAT: the row carries both tags, the schema then allowed only one date, and moving it silently moved Rome's date too — Rome keeps her on 17 November. Found by auditing this session's three date moves for rows carrying more than one tradition tag; it was the only one. The shared date is restored to 17 November and ANG now carries 19 November through traditionObservance, which is what the schema extension exists for."
     },
     {
       "id": "saint-gertrude-the-great",
