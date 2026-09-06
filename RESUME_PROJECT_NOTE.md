@@ -155,7 +155,7 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,301 entries; **544 carry a `ruleSource`**. **757 dates are still inherited and unconfirmed.**
+1,294 entries; **541 carry a `ruleSource`**. **753 dates are still inherited and unconfirmed.**
 
 **252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
@@ -194,9 +194,13 @@ mistake was made and corrected on 2026-09-05.
 
 **Eves are derived, not cited** — an Eve is the day before its feast and no calendar prints them
 separately. Deriving them found Bartholomew's Eve filed three days from its feast.
-**Elizabeth of Hungary (Transferred) is unresolved and carries a `dateGap`:** the principal moved to
-19 Nov on LFF's authority, so this transfer row at 18 Nov now falls *before* the feast it transfers.
-Delete it as an artefact, or re-date it relative to the 19th? Josh's call.
+**When two Anglican rows resolve to one LFF day, LFF settles it — do not ask.** Seven duplicates
+were deleted on 2026-09-05 that way. Two rows sharing an LFF day are only correct when they are two
+different people (Vincent de Paul and Louise de Marillac; Rolle and Margery Kempe).
+
+**Open TAGGING question, not a dating one:** “Venerable Benedict of Nursia” sits at 14 March
+carrying ANG/EOR/LAT/OOR. 14 March is the Eastern commemoration; LFF puts Benedict at 11 July. Should
+the ANG tag come off that row? Josh's call — left rather than silently stripped.
 
 **Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
 worked example. **The repo holds no Eastern Orthodox jurisdictional calendar, no Roman calendar or

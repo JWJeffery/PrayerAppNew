@@ -2911,25 +2911,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which carries this figure on this day. THE MATCHING PASSAGE COULD NOT BE ISOLATED AUTOMATICALLY for this row, so no excerpt is quoted rather than quoting the day’s opening lines, which name a different saint. Verify against the printed day before relying on this row.. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
-      "id": "cyril-and-methodius",
-      "name": "Cyril and Methodius",
-      "description": "Missionaries to the Slavs, 869 and 885.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "February 9",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 2,
-            "day": 9
-          }
-        ]
-      }
-    },
-    {
       "id": "martyr-nicephorus-of-antioch",
       "name": "Martyr Nicephorus of Antioch",
       "description": "Martyr who reconciled with a friend, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
@@ -4192,26 +4173,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Ven. Basil the Confessor, Companion of Ven. March 2025 Procopius at Decapolis”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "david-of-wales-dewi-sant",
-      "name": "David of Wales (Dewi Sant)",
-      "description": "Bishop of Menevia and patron of Wales, venerated in Anglican Communion, Catholic, and Eastern Orthodox traditions.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "March 1",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 3,
-            "day": 1
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “David of Wales, Bishop, c. 544”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
       "id": "martyr-eudocia-of-heliopolis",
@@ -7273,25 +7234,6 @@
       "type": "saint",
       "tags": [
         "EOR"
-      ],
-      "dayLegacy": "May 7",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 7
-          }
-        ]
-      }
-    },
-    {
-      "id": "dame-julian-of-norwich",
-      "name": "Dame Julian of Norwich",
-      "description": "English mystic and author of 'Revelations of Divine Love'.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "May 7",
       "observance": {
@@ -17941,25 +17883,6 @@
       }
     },
     {
-      "id": "richard-rolle",
-      "name": "Richard Rolle",
-      "description": "Mystic and hermit.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "September 28",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 28
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-abba-pishoy-relics",
       "name": "Saint Abba Pishoy (Relics)",
       "description": "The Star of the Desert.",
@@ -20451,27 +20374,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “All Saints”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
-      "id": "all-saints-day",
-      "name": "All Saints' Day",
-      "description": "Solemnity honoring all saints.",
-      "type": "saint",
-      "tags": [
-        "ANG",
-        "LAT"
-      ],
-      "dayLegacy": "November 1",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 1
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “All Saints”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
       "id": "mar-micha",
       "name": "Mar Micha",
       "description": "Mar Mikha, commemorated together with Mar Akha. FIXED DATE: listed at 1 November in both the 2025 and 2026 editions. CORRECTED 2026-09-03: this entry previously stated he was commemorated alongside Mar Sargis and Mar Bacchus; both diocesan calendars pair him with Mar Akha and place Sergius and Bacchus at 17 October. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
@@ -20550,26 +20452,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "commemoration-of-the-faithful-departed",
-      "name": "Commemoration of the Faithful Departed",
-      "description": "All Souls' Day.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "November 2",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 2
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “All Souls / All the Faithful Departed”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
       "id": "friday-of-the-dead",
@@ -21726,26 +21608,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "elizabeth-of-hungary-transferred",
-      "name": "Elizabeth of Hungary (Transferred)",
-      "description": "Commemoration.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "November 18",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 18
-          }
-        ]
-      },
-      "dateGap": "UNRESOLVED 2026-09-05, and deliberately left unconfirmed. This row sits at November 18 as a transfer of Elizabeth of Hungary. Her principal feast moved in this same edit from November 17 to November 19, because LFF controls in TEC and LFF keeps her on the 19th. A transfer that falls BEFORE the feast it transfers is incoherent, so this row cannot simply be shifted with the principal. It also cannot be derived: a transfer is a displacement caused by an impediment, not a fixed offset, and no impediment rule exists here. It needs Josh's decision — whether the row should be deleted as an artefact of the old November 17 dating, or re-dated relative to the 19th."
     },
     {
       "id": "mar-yakob-of-nisibis",

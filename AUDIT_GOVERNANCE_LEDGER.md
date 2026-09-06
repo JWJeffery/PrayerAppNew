@@ -1,3 +1,62 @@
+## Session 2026-09-05 -- LFF resolves seven duplicate Anglican rows. SEED_VERSION v243 -> v244.
+
+Josh, on the previous entry: I was vague about what I was asking. On Richard Rolle he asked the
+obvious question -- **is he in LFF? If so, go with LFF.** He is: 9 November, with Walter Hilton and
+Margery Kempe. The rule already answered it. Asking was the error.
+
+So instead of raising two rows for adjudication, the whole class was swept: for every Anglican row,
+the LFF day that unambiguously carries that identity was computed, and every LFF day holding **more
+than one** Anglican row was listed. 156 Anglican rows resolve to exactly one LFF day; 14 LFF days
+carried more than one.
+
+### Seven genuine duplicates, deleted
+
+Each because LFF carries the identity once and the corpus already holds it on the LFF day.
+
+**On a day LFF does not use:**
+
+| Deleted | LFF keeps it on |
+|---|---|
+| Cyril and Methodius, 9 February | 14 February (already held, with EOR/LAT/OOR tags) |
+| Dame Julian of Norwich, 7 May | 8 May (already held) |
+| Richard Rolle, 28 September | 9 November (already held) |
+| Elizabeth of Hungary (Transferred), 18 November | -- |
+
+That last is **settled rather than referred**: with the principal moved to the 19th it would fall the
+day *before* the feast it transfers, which is incoherent, and no impediment rule exists to derive a
+transfer from. It is an artefact of the superseded 17 November dating.
+
+**Same-day duplicates where the surviving row carries a superset of tags, so nothing is lost:**
+
+| Deleted | Survivor |
+|---|---|
+| All Saints' Day, 1 Nov | All Saints (ANG/LAT/EOR/OOR) |
+| Commemoration of the Faithful Departed, 2 Nov | All Souls (ANG/LAT/EOR/OOR) |
+| David of Wales (Dewi Sant), 1 Mar | Saint David of Wales (ANG/OOR) |
+
+### What was left alone, and why -- these look similar at a glance
+
+- **Vincent de Paul and Louise de Marillac** share LFF's 15 March but are two people. Two rows is
+  correct.
+- **Richard Rolle of Hampole and Margery Kempe** share 9 November for the same reason.
+- **The Eves of Benedict and Bernard** resolve to their principals' LFF days by derivation.
+- **Saint Gregory the Great, 3 September** is LAT-only. That is Rome's date, not an Anglican
+  duplicate.
+- **"Venerable Benedict of Nursia", 14 March** is the Eastern commemoration carrying four tradition
+  tags. Its ANG tag on a day LFF does not use is a **tagging** question, not a dating one, and is
+  left for Josh rather than silently stripped.
+
+Entries **1,301 -> 1,294**; confirmed **544 -> 541**, the drop being the three deleted rows that had
+carried confirmations.
+
+### Verification
+
+`sanctoral.json` rebuilt from its own text blocks, never `json.dump`; every deletion checked to have
+a named surviving row still present in the file afterwards; all remaining rows byte-identical. No
+code touched.
+
+---
+
 ## Session 2026-09-05 -- LFF set as CONTROLLING for TEC; every secondary-witness confirmation audited
 ## against it. SEED_VERSION v242 -> v243.
 
