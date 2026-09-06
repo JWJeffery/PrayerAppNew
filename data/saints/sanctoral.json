@@ -1207,17 +1207,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "January 17",
+      "dayLegacy": "January 14",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 1,
-            "day": 17
+            "day": 14
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “At Kensington in London, in 1932, Charles Gore, Bishop and founder.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Richard Meux Benson, Priest, and Charles Gore, Bishop, 1915 and 1932”. DATE CHANGED from January 17 to January 14 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row."
     },
     {
       "id": "saint-anthony-the-abbot",
@@ -1514,17 +1514,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "January 20",
+      "dayLegacy": "November 9",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 1,
-            "day": 20
+            "month": 11,
+            "day": 9
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “At Hampole in Yorkshire, Richard Rolle, hermit , in 1349.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Richard Rolle, Walter Hilton, and Margery Kempe, Mystics, 1349, 1396, and c. 1440”. DATE CHANGED from January 20 to November 9 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row."
     },
     {
       "id": "saint-euthymius-the-great",
@@ -21657,17 +21657,17 @@
         "ANG",
         "LAT"
       ],
-      "dayLegacy": "November 17",
+      "dayLegacy": "November 19",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 11,
-            "day": 17
+            "day": 19
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Elizabeth gave away many of their possessions; Ludwig told those who criticised her that Elizabeths generosity would bring Gods blessings on them all.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Elizabeth of Hungary, Princess, 1231”. DATE CHANGED from November 17 to November 19 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row."
     },
     {
       "id": "saint-gertrude-the-great",
@@ -21744,7 +21744,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "dateGap": "UNRESOLVED 2026-09-05, and deliberately left unconfirmed. This row sits at November 18 as a transfer of Elizabeth of Hungary. Her principal feast moved in this same edit from November 17 to November 19, because LFF controls in TEC and LFF keeps her on the 19th. A transfer that falls BEFORE the feast it transfers is incoherent, so this row cannot simply be shifted with the principal. It also cannot be derived: a transfer is a displacement caused by an impediment, not a fixed offset, and no impediment rule exists here. It needs Josh's decision — whether the row should be deleted as an artefact of the old November 17 dating, or re-dated relative to the 19th."
     },
     {
       "id": "mar-yakob-of-nisibis",

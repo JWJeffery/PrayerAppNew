@@ -1,3 +1,58 @@
+## Session 2026-09-05 -- LFF set as CONTROLLING for TEC; every secondary-witness confirmation audited
+## against it. SEED_VERSION v242 -> v243.
+
+Josh, stating the Anglican authority rule plainly:
+
+> LFF is controlling in TEC. All other anglican sources are secondary witnesses (in order to include
+> as many saints as possible)
+
+That has teeth for work already done, so it was applied **retrospectively**, not only forward. Every
+existing ANG confirmation resting on a secondary witness -- the Anglican Martyrology, the SEC
+calendar, the Kalendar v0.1 matrix, the Prayer Book calendar -- was audited against the LFF calendar
+to find rows LFF carries on a **different day**.
+
+Seven flagged. **Four were matcher artifacts** and are recorded as such rather than acted on: John
+Henry Newman had matched John Henry Hobart; the Saints and Martyrs of the Anglican Communion had
+matched the consecration of Barbara Clementine Harris; the Presentation and the Immaculate
+Conception had both matched the Annunciation on the strength of "Blessed Virgin Mary".
+
+### Three were genuine, and are corrected
+
+| Row | Was | Now | LFF prints |
+|---|---|---|---|
+| Charles Gore | 17 January | **14 January** | Richard Meux Benson, Priest, and Charles Gore, Bishop |
+| Richard Rolle of Hampole | 20 January | **9 November** | Richard Rolle, Walter Hilton, and Margery Kempe |
+| Elizabeth of Hungary | 17 November | **19 November** | Elizabeth of Hungary, Princess, 1231 |
+
+Each row's `ruleSource` states the move, the old date, and that a secondary witness had kept the old
+day.
+
+### A cascade that cannot be resolved mechanically
+
+**"Elizabeth of Hungary (Transferred)" sits at 18 November** -- the day after her old feast, and now
+the day *before* her new one. A transfer falling before the feast it transfers is incoherent, and a
+transfer cannot be derived: it is a displacement caused by an impediment, not a fixed offset, and no
+impediment rule exists here.
+
+The row carries a `dateGap` saying exactly that, and asking whether it should be deleted as an
+artefact of the old dating or re-dated relative to the 19th. **Josh's call.**
+
+### Richard Rolle, noted not merged
+
+A separate `richard-rolle` row already sits at 28 September, unconfirmed, and was among the nine held
+back on date-harmonization flags earlier today. With Hampole now at 9 November on LFF's authority,
+those two are very likely the same identity across three candidate dates. **Not merged** -- merging
+identities is a different act from dating them.
+
+### Verification
+
+Confirmed count unchanged at **544**: this pass corrected dates and citations, it did not add
+confirmations. `sanctoral.json` edited by targeted string replacement, never `json.dump`; 1,301
+entries; all three moves verified in both `dayLegacy` and the observance object; `source-index.json`
+revalidated. No code touched.
+
+---
+
 ## Session 2026-09-05 continued -- Eves derived; Bartholomew's Eve found three days out; all 26
 ## martyrology citations corrected. SEED_VERSION v241 -> v242.
 

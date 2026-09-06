@@ -4,7 +4,7 @@
     "path": "data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf",
     "kind": "official_tec_calendar_hagiography",
     "authority_tier": "current_tec",
-    "notes": "Current TEC Lesser Feasts and Fasts source witness."
+    "notes": "Current TEC Lesser Feasts and Fasts source witness. AUTHORITY, set by Josh 2026-09-05: LFF IS CONTROLLING IN TEC. Every other Anglican source in this registry -- the Prayer Book calendar, HWHM, GCW, FAS, SEC and the Anglican Martyrology -- is a SECONDARY WITNESS, admitted so that as many saints as possible can be included, never to override LFF. Operationally that means: where LFF carries an identity, LFF decides its date and no secondary witness may contradict it; where LFF is silent, the secondary witnesses control. Applied retrospectively the day the rule was given: every existing secondary-witness confirmation was audited against the LFF calendar, which found three rows dated against LFF and moved them."
   },
   "GCW": {
     "label": "A Great Cloud of Witnesses",

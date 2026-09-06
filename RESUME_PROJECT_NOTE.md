@@ -161,8 +161,12 @@ never was a Maclean question.
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
 that Rome or the Eastern churches keep that date. Read the per-tag table with that in mind.
 
-**Dating authority (Josh, 2026-09-05): for TEC, LFF controls. Where LFF is silent, the other
-Anglican witnesses control.** The Prayer Book calendar in
+**Dating authority (Josh, 2026-09-05): LFF IS CONTROLLING IN TEC.** Every other Anglican source —
+the Prayer Book calendar, HWHM, GCW, FAS, SEC, the Anglican Martyrology — is a **secondary
+witness**, admitted so as to include as many saints as possible, **never to override LFF**. Where LFF
+carries an identity, LFF decides the date. Where LFF is silent, the secondary witnesses control.
+Any new secondary-witness confirmation must be checked against LFF first — doing that
+retrospectively on 2026-09-05 found three rows dated against LFF. The Prayer Book calendar in
 `data/kalendar/source-witnesses/book_of_common_prayer.pdf` **is accurate** -- it is a later
 reprint whose calendar carries General Convention's additions under a 2007 certificate. An earlier
 session wrongly flagged it; do not re-raise that.
@@ -190,8 +194,9 @@ mistake was made and corrected on 2026-09-05.
 
 **Eves are derived, not cited** — an Eve is the day before its feast and no calendar prints them
 separately. Deriving them found Bartholomew's Eve filed three days from its feast.
-**Elizabeth of Hungary (Transferred) is unresolved:** the row sits at 18 Nov, the principal at 17
-Nov, and LFF at 19 Nov. Josh's call.
+**Elizabeth of Hungary (Transferred) is unresolved and carries a `dateGap`:** the principal moved to
+19 Nov on LFF's authority, so this transfer row at 18 Nov now falls *before* the feast it transfers.
+Delete it as an artefact, or re-date it relative to the 19th? Josh's call.
 
 **Dates come from communion and diocesan calendars** (Josh, 2026-09-05) -- the COE tranche is the
 worked example. **The repo holds no Eastern Orthodox jurisdictional calendar, no Roman calendar or
