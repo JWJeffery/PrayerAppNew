@@ -1,3 +1,57 @@
+## Session 2026-09-06 -- the Anglican remainder worked against Holy Women, Holy Men.
+## SEED_VERSION v248 -> v249.
+
+### A parsing failure caught before it reached the data
+
+Recorded because the output looked plausible at a glance. The calendar parser was run over all three
+unparsed witnesses at once and produced **31 September, 31 April and 31 February**, and matched
+almost every identity to **1 December**.
+
+The cause: **Great Cloud of Witnesses and For All The Saints are prose, not calendars.** They have no
+day grid, so the parser invented structure out of page numbers and running text. Holy Women, Holy Men
+*does* have a calendar, on twelve pages; restricting the parse to exactly those yields 233 clean days.
+The whole first pass was discarded rather than filtered.
+
+### Result, from HWHM alone
+
+**Confirmed on the day they already held:** Isaac Watts (26 November), Henry Budd (22 December).
+
+**Moved to the day HWHM keeps them** -- their stored dates were inherited from the old data and used
+by no Anglican witness:
+
+| Row | Was | Now |
+|---|---|---|
+| John Roberts | 25 February | **25 March** |
+| William Porcher DuBose | 17 August | **18 August** |
+| Thomas Traherne | 20 December | **27 October** |
+
+**Resolved as duplicates rather than dated:**
+
+- **Oakerhater (Making Medicine), 11 March** -- removed. The corpus already carries David Pendleton
+  Oakerhater at 1 September, HWHM's day.
+- **Elizabeth Ann Seton (Commemoration), 26 August** -- removed, and the ANG tag added to the
+  existing Saint Elizabeth Ann Seton row at 4 January, HWHM's day. The Anglican commemoration now
+  sits on the Anglican date instead of a day no witness uses.
+- **Most Holy Name of Jesus, 3 January** -- ANG tag removed; the row is now purely Roman. The
+  Anglican Holy Name is 1 January and the corpus already carries it there. Yesterday this row was
+  given a per-tradition Anglican date of 1 January, which was **the wrong instrument**: a row does not
+  need its own Anglican date when an Anglican row for that day already exists. The
+  `traditionObservance` entry went with the tag.
+
+Entries **1,172 -> 1,170**; ANG **290 -> 296** confirmed, 24 remaining.
+
+### Verified through the resolver, not by reading JSON
+
+All five confirmed or moved rows resolve on their new day for ANG. Elizabeth Ann Seton resolves 4
+January for ANG. The Holy Name resolves 1 January for ANG on the surviving row. Most Holy Name is
+LAT-only with no per-tradition date left. Zero duplicate id/day pairs.
+
+An initial test reported the Holy Name as **not** resolving for Anglicans -- which would have meant
+the tag removal had deleted the Anglican Holy Name outright. That was the test using a wrong id, and
+it was checked before anything was changed on the strength of it.
+
+---
+
 ## Session 2026-09-06 -- a second diocese shows the derived Church of the East rules are Californian,
 ## not universal. SEED_VERSION v247 -> v248.
 

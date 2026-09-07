@@ -205,7 +205,6 @@
       "description": "Feast honoring the name of Jesus.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "January 3",
@@ -218,18 +217,8 @@
           }
         ]
       },
-      "traditionObservance": {
-          "ANG": {
-            "type": "fixed",
-            "dates": [
-              {
-                "month": 1,
-                "day": 1
-              }
-            ]
-          }
-        },
-      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “The Holy Name of Our Lord Jesus Christ” on January 1, against the shared January 3. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable."
+      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “The Holy Name of Our Lord Jesus Christ” on January 1, against the shared January 3. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable.",
+      "tagNote": "ANG TAG REMOVED 2026-09-06. This row is the Roman 'Most Holy Name of Jesus' on 3 January. The Anglican keeping of the Holy Name is 1 January, and the corpus already carries it there on holy-name-of-jesus-circumcision, tagged ANG/LAT/EOR/OOR — both LFF and Holy Women, Holy Men print 'THE HOLY NAME OF OUR LORD JESUS CHRIST' on the 1st. Yesterday this row was given a per-tradition Anglican date of 1 January, which was the wrong instrument: the row did not need its own Anglican date because an Anglican row for that day already existed. The tag and the traditionObservance entry are both removed and the row is now purely Roman."
     },
     {
       "id": "prophet-malachias",
@@ -297,6 +286,7 @@
       "description": "First native-born citizen of the United States to be canonized.",
       "type": "saint",
       "tags": [
+        "ANG",
         "LAT"
       ],
       "dayLegacy": "January 4",
@@ -308,7 +298,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “Elizabeth Seton, Founder of the American Sisters of Charity,”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used. The ANG tag was added to this row in the same edit and the separate 'Elizabeth Ann Seton (Commemoration)' row at 26 August removed: Holy Women, Holy Men keeps her on 4 January, the day this row already held, so the August row was a second Anglican commemoration on a day no Anglican witness uses."
     },
     {
       "id": "saint-theoctistus",
@@ -3854,16 +3845,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "February 25",
+      "dayLegacy": "March 25",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 2,
+            "month": 3,
             "day": 25
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “John Roberts, Priest, 1949”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used. DATE CHANGED from February 25 to March 25 in this same edit: the stored day was inherited from the old data and no Anglican witness keeps this figure on it."
     },
     {
       "id": "saint-tarasius-of-constantinople",
@@ -4537,25 +4529,6 @@
           {
             "month": 3,
             "day": 10
-          }
-        ]
-      }
-    },
-    {
-      "id": "oakerhater-making-medicine",
-      "name": "Oakerhater (Making Medicine)",
-      "description": "Deacon and missionary, 1931.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "March 11",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 3,
-            "day": 11
           }
         ]
       }
@@ -13508,16 +13481,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "August 17",
+      "dayLegacy": "August 18",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 8,
-            "day": 17
+            "day": 18
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “William Porcher DuBose, Priest, 1918”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used. DATE CHANGED from August 17 to August 18 in this same edit: the stored day was inherited from the old data and no Anglican witness keeps this figure on it."
     },
     {
       "id": "martyrs-florus-and-laurus",
@@ -14099,25 +14073,6 @@
           {
             "month": 8,
             "day": 25
-          }
-        ]
-      }
-    },
-    {
-      "id": "elizabeth-ann-seton-commemoration",
-      "name": "Elizabeth Ann Seton (Commemoration)",
-      "description": "Founder of the American Sisters of Charity.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "August 26",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 26
           }
         ]
       }
@@ -20453,7 +20408,8 @@
             "day": 26
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “Isaac Watts, Hymnwriter, 1748”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used."
     },
     {
       "id": "saint-alypius-the-stylite",
@@ -22094,16 +22050,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "December 20",
+      "dayLegacy": "October 27",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 12,
-            "day": 20
+            "month": 10,
+            "day": 27
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “Vincent de Paul, Religious, and Prophetic Witness, 1660 Thomas Traherne, Priest, 1674”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used. DATE CHANGED from December 20 to October 27 in this same edit: the stored day was inherited from the old data and no Anglican witness keeps this figure on it."
     },
     {
       "id": "saint-peter-canisius",
@@ -22164,7 +22121,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Holy Women, Holy Men (data/kalendar/source-witnesses/book_holy_women_holy_men_for_web.pdf, calendar pp.19-32), which keeps on this day: “Henry Budd, Priest, 1875 Charlotte Diggs (Lottie) Moon, Missionary in China, 1912”. Used because LFF and the Prayer Book calendar are both silent on this figure, and where LFF is silent the other Anglican witnesses control (Josh, 2026-09-05). PARSING NOTE: only the twelve calendar pages were read. An earlier attempt ran the calendar parser over the whole book and over Great Cloud of Witnesses and For All The Saints, which are prose, and it manufactured impossible dates like 31 September and matched almost every identity to 1 December. That output was discarded rather than used."
     },
     {
       "id": "saint-anastasia",
