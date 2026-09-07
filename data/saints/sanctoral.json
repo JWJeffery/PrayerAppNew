@@ -5246,7 +5246,8 @@
       "description": "The Penitent Thief crucified alongside Christ (Luke 23:39–43).",
       "type": "saint",
       "tags": [
-        "LAT"
+        "LAT",
+        "EOR"
       ],
       "dayLegacy": "March 25",
       "observance": {
@@ -5258,7 +5259,7 @@
           }
         ]
       },
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: The Penitent Thief; not found as a discrete fixed commemoration in orthocal.info under any phrasing tried. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: The Penitent Thief; not found as a discrete fixed commemoration in orthocal.info under any phrasing tried. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried. EOR TAG ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Mar 25, which lists 'Dismas the Good Thief' -- this project's earlier OOR-pass note that stripped EOR from this row (during the EOR pass, on an orthocal-adjacent search) was based on incomplete checking; the Byzantine tradition does keep him, on the same date already stored."
     },
     {
       "id": "harriet-monsell",
@@ -21769,6 +21770,86 @@
         ]
       },
       "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Feb 26. A major, universally-known Gospel figure (the Samaritan Woman at the Well, John 4) with no entry at all in this corpus previously -- a genuine gap, not a minor local figure. Date corrected to Mar 20 per OCA (oca.org/saints/lives) -- Feb 26 is specifically the Greek-tradition date; this project's governing EOR source is the Slavic/OCA reckoning (established 2026-09-05). She is also kept on the moveable 'Sunday of the Samaritan Woman' (5th Sunday of Pascha) in all traditions -- a separate, not-yet-built moveable observance this row does not attempt to represent."
+    },
+    {
+      "id": "righteous-aaron-high-priest",
+      "name": "Righteous Aaron the High Priest",
+      "description": "Brother of the Prophet Moses and first High Priest of Israel (Exodus/Numbers).",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "March 12",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 3,
+            "day": 12
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Mar 12. A major Old Testament figure (brother of Moses, first High Priest) with no entry at all in this corpus previously. Needs direct confirmation against orthocal.info or OCA before being marked fully CONFIRMED."
+    },
+    {
+      "id": "saint-eudokia-of-heliopolis",
+      "name": "Venerable Martyr Eudokia of Heliopolis",
+      "description": "Reformed courtesan and martyr of Heliopolis in Phoenicia (2nd century).",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "March 1",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 3,
+            "day": 1
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Mar 1, citing Pravoslavie.ru. A well-attested and reasonably well-known Byzantine venerable-martyr with no entry at all in this corpus previously. Needs direct confirmation against orthocal.info or OCA before being marked fully CONFIRMED."
+    },
+    {
+      "id": "venerable-paul-the-simple",
+      "name": "Venerable Paul the Simple",
+      "description": "Disciple of St. Anthony the Great in Egypt (4th century), known from the Sayings of the Desert Fathers.",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "March 7",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 3,
+            "day": 7
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Mar 7, citing Pravoslavie.ru. A well-known figure from the desert-fathers tradition (Sayings of the Desert Fathers) with no entry at all in this corpus previously. Needs direct confirmation against orthocal.info or OCA before being marked fully CONFIRMED."
+    },
+    {
+      "id": "righteous-joseph-the-fair",
+      "name": "Righteous Joseph the Fair",
+      "description": "Joseph the Patriarch, son of Jacob, sold into slavery in Egypt by his brothers (Genesis 37-50) -- distinct from Joseph the Betrothed, spouse of the Virgin Mary.",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "March 31",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 3,
+            "day": 31
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Mar 31, which lists him under this fixed civil date (distinct from his separate liturgical prominence in the moveable Holy Monday Gospel readings, which this row does not attempt to represent). A major Old Testament figure with no entry at all in this corpus previously. Needs direct confirmation against orthocal.info or OCA before being marked fully CONFIRMED."
     }
   ]
 }
