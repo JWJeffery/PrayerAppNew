@@ -7515,7 +7515,19 @@
           }
         ]
       },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 November 30, 2026 November 30. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
+      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 November 30, 2026 November 30. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 12,
+              "day": 13
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 30) is ANG/LAT/EOR/COE's. CONFIRMED against coptic.io: \"The Martyrdom of St. Andrew the Apostle, the Brother of St. Peter\" falls Dec 13 (4 Kiahk)."
     },
     {
       "id": "saint-paschal-baylon",
@@ -17681,8 +17693,7 @@
       "type": "commemoration",
       "tags": [
         "ANG",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 1",
       "observance": {
@@ -17695,7 +17706,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “All Saints”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07 -- checked against orthocal.info: no fixed November 1 observance found. Orthodox tradition keeps the Sunday of All Saints as a moveable feast (the Sunday after Pentecost), not a fixed date -- this row's schema (fixed month/day) can't represent that without a moveable-observance mechanism this project doesn't yet have for this identity. Per this project's tag-withdrawal convention: exhausted, not merely unconfirmed, so the tag comes off rather than sitting open indefinitely. Restore if a witness naming this exact identity on this exact date is ever found."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07 -- checked against orthocal.info: no fixed November 1 observance found. Orthodox tradition keeps the Sunday of All Saints as a moveable feast (the Sunday after Pentecost), not a fixed date -- this row's schema (fixed month/day) can't represent that without a moveable-observance mechanism this project doesn't yet have for this identity. Per this project's tag-withdrawal convention: exhausted, not merely unconfirmed, so the tag comes off rather than sitting open indefinitely. Restore if a witness naming this exact identity on this exact date is ever found. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "mar-micha",
@@ -17733,7 +17744,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Cosmas & Damian, & Theodota, their Mother”. Confirmed by 2 of the six editions (2024, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Cosmas & Damian, & Theodota, their Mother”. Confirmed by 2 of the six editions (2024, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 12,
+              "day": 1
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 1) is EOR's, unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of Saints Cosmas, Damian, Their Brothers and Their Mother\" falls Dec 1 (22 Hator)."
     },
     {
       "id": "all-souls-commemoration-of-the-dead",
@@ -17742,8 +17765,7 @@
       "type": "commemoration",
       "tags": [
         "ANG",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 2",
       "observance": {
@@ -17756,7 +17778,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “All Souls / All the Faithful Departed”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07 -- checked against orthocal.info: no fixed November 2 observance found. Orthodox tradition keeps several moveable 'Soul Saturdays' instead of a single fixed date. Per this project's tag-withdrawal convention: exhausted, not merely unconfirmed, so the tag comes off rather than sitting open indefinitely. Restore if a witness naming this exact identity on this exact date is ever found."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07 -- checked against orthocal.info: no fixed November 2 observance found. Orthodox tradition keeps several moveable 'Soul Saturdays' instead of a single fixed date. Per this project's tag-withdrawal convention: exhausted, not merely unconfirmed, so the tag comes off rather than sitting open indefinitely. Restore if a witness naming this exact identity on this exact date is ever found. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "all-souls-day",
@@ -17805,16 +17827,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 2",
+      "dayLegacy": "February 2",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 11,
+            "month": 2,
             "day": 2
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Peter, the Worshipper\" falls Feb 2 (25 Toba). OOR is this row's only tag."
     },
     {
       "id": "richard-hooker",
@@ -17853,7 +17876,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: coptic.io's Nov 12 entry pairs 'St. Athanasius and His Sister, Irene' with Cyriacus, not 'Athanasius' alone as this row's title suggests -- a partial/uncertain match. Left unconfirmed rather than force it."
     },
     {
       "id": "saint-martin-de-porres",
@@ -18021,8 +18045,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 5",
       "observance": {
@@ -18046,45 +18069,8 @@
           ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 5) is ANG/LAT's (Elizabeth, mother of the Forerunner). CONFIRMED against orthocal.info: her Orthodox commemoration is jointly with Zacharias on Sept 6."
-    },
-    {
-      "id": "saint-galaction",
-      "name": "Saint Galaction",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 5",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 5
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-felix-and-saint-eusebius",
-      "name": "Saint Felix and Saint Eusebius",
-      "description": "Martyrs in the Coptic tradition.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 6",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 6
-          }
-        ]
-      }
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 5) is ANG/LAT's (Elizabeth, mother of the Forerunner). CONFIRMED against orthocal.info: her Orthodox commemoration is jointly with Zacharias on Sept 6.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-leonard-of-noblac",
@@ -18144,25 +18130,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “William Temple, Archbishop of Canterbury, 1944”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
-      "id": "saint-george-of-alexandria",
-      "name": "Saint George of Alexandria",
-      "description": "Coptic martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 7",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 7
-          }
-        ]
-      }
     },
     {
       "id": "saint-willibrord",
@@ -18279,7 +18246,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: Archangel Michael is commemorated on the 12th of EVERY Coptic month (a recurring monthly commemoration, confirmed across all twelve months), not a single annual date -- this row's fixed-date schema cannot represent that structurally, same class of issue as Great Lent's start and Joseph the Betrothed. Left unconfirmed pending a real recurring-date engine rule, not a lookup fix."
     },
     {
       "id": "mar-youkhanan-the-arab",
@@ -18351,7 +18319,8 @@
           ]
         }
       },
-      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “Saint Michael and All Angels” on September 29, against the shared November 8. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable."
+      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “Saint Michael and All Angels” on September 29, against the shared November 8. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable.",
+      "tagNote": "OOR NOTE 2026-09-07: same structural issue as the row above -- Michael is commemorated the 12th of every Coptic month, not a single fixed annual date."
     },
     {
       "id": "dedication-of-the-lateran-basilica",
@@ -18440,8 +18409,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 10",
       "observance": {
@@ -18465,7 +18433,8 @@
           ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 10) is ANG/LAT's. CONFIRMED against orthocal.info: Leo the Great's Orthodox commemoration is Feb 18."
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 10) is ANG/LAT's. CONFIRMED against orthocal.info: Leo the Great's Orthodox commemoration is Feb 18.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-martin-of-tours",
@@ -18498,9 +18467,19 @@
               "day": 12
             }
           ]
+        },
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 23
+            }
+          ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 11) is ANG/LAT's. CONFIRMED against orthocal.info: Martin of Tours falls Nov 12 in the Orthodox calendar (one day after the Western date)."
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 11) is ANG/LAT's. CONFIRMED against orthocal.info: Martin of Tours falls Nov 12 in the Orthodox calendar (one day after the Western date).",
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 11) is ANG/EOR/LAT's (EOR already separately corrected to Nov 12). CONFIRMED against coptic.io: \"The Departure of St. Martinus (Martin) Bishop of Tours\" falls Nov 23 (14 Hator)."
     },
     {
       "id": "saint-josaphat",
@@ -18541,7 +18520,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “St. John Chrysostom”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “St. John Chrysostom”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 26
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 13) is EOR/LAT's, unconfirmed. CONFIRMED against coptic.io: \"The Departure of Saint John Chrysostom\" falls Nov 26 (17 Hator)."
     },
     {
       "id": "saint-gregory-palamas",
@@ -18584,7 +18575,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Apostle Philip St. Gregory Palamas”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Apostle Philip St. Gregory Palamas”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 27
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 14) is ANG/LAT/EOR's. CONFIRMED against coptic.io: \"The Martyrdom of Saint Philip the Apostle\" falls Nov 27 (18 Hator) -- the same date as the separate 'saint-philip-the-apostle-coptic' row."
     },
     {
       "id": "herman-of-alaska",
@@ -18655,26 +18658,8 @@
             "day": 15
           }
         ]
-      }
-    },
-    {
-      "id": "saint-gertrude-shared",
-      "name": "Saint Gertrude (Shared)",
-      "description": "Commemoration of the mystic.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 16",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 16
-          }
-        ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: only 'The Martyrdom of St. Mina (Menas), the Monk' found (17 Amshir, ~Feb), a different Menas and not a relics-specific occasion. Left unconfirmed rather than force a match."
     },
     {
       "id": "saint-margaret-of-scotland",
@@ -18774,25 +18759,6 @@
       "angDateNote": "CORRECTION OF THIS SESSION'S OWN WORK, 2026-09-05. Earlier today this row's SHARED date was moved from 17 to 19 November because LFF keeps Elizabeth on the 19th and LFF controls for the Episcopal Church. That was right for ANG and WRONG for LAT: the row carries both tags, the schema then allowed only one date, and moving it silently moved Rome's date too — Rome keeps her on 17 November. Found by auditing this session's three date moves for rows carrying more than one tradition tag; it was the only one. The shared date is restored to 17 November and ANG now carries 19 November through traditionObservance, which is what the schema extension exists for."
     },
     {
-      "id": "saint-gertrude-the-great",
-      "name": "Saint Gertrude the Great",
-      "description": "Commemoration.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 17",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 17
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-gregory-of-neocaesarea",
       "name": "Saint Gregory of Neocaesarea",
       "description": "The Wonderworker.",
@@ -18859,16 +18825,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 18",
+      "dayLegacy": "November 27",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 11,
-            "day": 18
+            "day": 27
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of Saint Philip the Apostle\" falls Nov 27 (18 Hator). OOR is this row's only tag."
     },
     {
       "id": "saints-plato-and-romanus",
@@ -18950,25 +18917,6 @@
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Our Holy Father Philaret, Metropolitan of Moscow” on this date."
     },
     {
-      "id": "saints-dedyaqus-and-theodore",
-      "name": "Saints Dedyaqus and Theodore",
-      "description": "Coptic martyrs.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 19",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 19
-          }
-        ]
-      }
-    },
-    {
       "id": "priscilla-lydia-sellon",
       "name": "Priscilla Lydia Sellon",
       "description": "Restorer of religious life.",
@@ -18996,16 +18944,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 20",
+      "dayLegacy": "November 29",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 11,
-            "day": 20
+            "day": 29
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Anianus, 2nd Pope of Alexandria\" falls on this date exactly (20 Hator), matching the stored day. OOR is this row's only tag."
     },
     {
       "id": "saint-edmund-the-martyr",
@@ -19047,25 +18996,6 @@
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Our Holy Father Gregory of Decapolis” on this date."
     },
     {
-      "id": "entrance-of-the-theotokos",
-      "name": "Entrance of the Theotokos",
-      "description": "Feast.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 21",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 21
-          }
-        ]
-      }
-    },
-    {
       "id": "entrance-of-the-theotokos-into-the-temple",
       "name": "Entrance of the Theotokos into the Temple",
       "description": "Great feast.",
@@ -19093,8 +19023,7 @@
       "tags": [
         "ANG",
         "LAT",
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "November 21",
       "observance": {
@@ -19106,7 +19035,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-21 rank 2), which places “The Presentation of the Blessed Virgin Mary” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Entry of the Most Holy Theotokos into the Temple in Jerusalem” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/november/kalendar-v0.1-november-candidates.csv, row 11-21 rank 2), which places “The Presentation of the Blessed Virgin Mary” on this day on the witness of: AM; Oxford Dictionary of Saints (tier: Anglican martyrology / Great Church). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Entry of the Most Holy Theotokos into the Temple in Jerusalem” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-cecilia",
@@ -19116,8 +19046,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 22",
       "observance": {
@@ -19129,7 +19058,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which carries this figure on this day. THE MATCHING PASSAGE COULD NOT BE ISOLATED AUTOMATICALLY for this row, so no excerpt is quoted rather than quoting the day’s opening lines, which name a different saint. Verify against the printed day before relying on this row.. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Martyrs Cecilia, Valerian, Tiburtius and Maximus, at Rome” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which carries this figure on this day. THE MATCHING PASSAGE COULD NOT BE ISOLATED AUTOMATICALLY for this row, so no excerpt is quoted rather than quoting the day’s opening lines, which name a different saint. Verify against the printed day before relying on this row.. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Martyrs Cecilia, Valerian, Tiburtius and Maximus, at Rome” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-amphilochius-of-iconium",
@@ -19172,7 +19102,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Clement of Rome, Bishop, c. 100”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Clement of Rome, Bishop, c. 100”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 12,
+              "day": 8
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 23) is ANG/EOR/LAT's, unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Clement, Pope of Rome\" falls Dec 8 (29 Hator) -- same date as the separately-confirmed Peter of Alexandria row. Note: this RESOLVES the EOR-pass's earlier 'likely source gap, not a real absence' flag for Clement of Rome -- coptic.io does carry him after all, under a different search term than tried during that pass."
     },
     {
       "id": "saint-columban",
@@ -19232,25 +19174,6 @@
       }
     },
     {
-      "id": "saint-catherine-coptic",
-      "name": "Saint Catherine (Coptic)",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "November 24",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 24
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-catherine-of-alexandria",
       "name": "Saint Catherine of Alexandria",
       "description": "Great Martyr.",
@@ -19277,8 +19200,7 @@
       "type": "saint",
       "tags": [
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "November 25",
       "observance": {
@@ -19301,7 +19223,8 @@
           ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 25) is LAT/OOR's, unconfirmed. CONFIRMED against orthocal.info: Catherine of Alexandria falls Nov 24 in the Orthodox calendar -- one day earlier, and coincidentally the same day this project's separate ANG row for her already sits at (Nov 24, confirmed against LFF)."
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 25) is LAT/OOR's, unconfirmed. CONFIRMED against orthocal.info: Catherine of Alexandria falls Nov 24 in the Orthodox calendar -- one day earlier, and coincidentally the same day this project's separate ANG row for her already sits at (Nov 24, confirmed against LFF).",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "isaac-watts",
@@ -19350,25 +19273,6 @@
       "type": "saint",
       "tags": [
         "LAT"
-      ],
-      "dayLegacy": "November 26",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 26
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-valerius",
-      "name": "Saint Valerius",
-      "description": "Bishop and martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
       ],
       "dayLegacy": "November 26",
       "observance": {
@@ -19454,7 +19358,8 @@
             "day": 27
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: only a church-consecration occasion found (16 Kiahk, ~Dec 25), not his martyrdom, and it's unclear if this is the same James. Left unconfirmed rather than force a match."
     },
     {
       "id": "kamehameha-and-emma",
@@ -19523,16 +19428,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 28",
+      "dayLegacy": "December 7",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 11,
-            "day": 28
+            "month": 12,
+            "day": 7
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Sarapamon, Bishop of Niku\" falls Dec 7 (28 Hator). OOR is this row's only tag."
     },
     {
       "id": "saint-stephen-the-new",
@@ -19582,16 +19488,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 29",
+      "dayLegacy": "December 8",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 11,
-            "day": 29
+            "month": 12,
+            "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Peter, the Seal of the Martyrs, 17th Pope of Alexandria\" falls Dec 8 (29 Hator). OOR is this row's only tag."
     },
     {
       "id": "saint-saturninus",
