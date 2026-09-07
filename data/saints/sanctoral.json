@@ -13852,25 +13852,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Church New Year (Indiction) Ven. Anthony & Theodosius St. Simeon the Stylite of the Kiev Caves (the Elder) & his Mother, Martyr Mamas of Caesarea Ven. Martha”. Confirmed by 3 of the six editions (2021, 2022, 2023). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "saint-verena",
-      "name": "Saint Verena",
-      "description": "Virgin and healer from the Theban Legion.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 1",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 1
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-agricola-of-avignon",
       "name": "Saint Agricola of Avignon",
       "description": "Bishop known for his charity and protection against misfortune.",
@@ -13908,25 +13889,6 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St John IV, Patriarch of Constantinople, known as John the Faster” on this date."
-    },
-    {
-      "id": "saint-mammas",
-      "name": "Saint Mammas",
-      "description": "A shepherd martyr who lived among wild beasts.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 2",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 2
-          }
-        ]
-      }
     },
     {
       "id": "the-martyrs-of-new-guinea",
@@ -13967,25 +13929,6 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Hieromartyr Anthimos, bishop of Nicomedia” on this date."
-    },
-    {
-      "id": "saint-anba-ruwais",
-      "name": "Saint Anba Ruwais",
-      "description": "Coptic mystic who lived in extreme poverty and humility.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 3",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 3
-          }
-        ]
-      }
     },
     {
       "id": "saint-gregory-the-great",
@@ -14067,25 +14010,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Paul Jones, Bishop, 1941”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
-      "id": "saint-isaac-of-sadmant",
-      "name": "Saint Isaac of Sadmant",
-      "description": "Coptic writer and monk of the 13th century.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 4",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 4
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-rosalia",
       "name": "Saint Rosalia",
       "description": "Hermitess and patroness against plagues.",
@@ -14143,25 +14067,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Orthodox Church in America's Lives of the Saints, https://www.oca.org/saints/lives/2026/09/05, which commemorates on this day: “Holy Prophet Zachariah and Righteous Elizabeth, parents of Saint John the Baptist”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05), on the same principle already applied to the Church of the East: a communion or jurisdictional calendar decides the date. Fetched and read directly, not inferred from a reference work."
-    },
-    {
-      "id": "righteous-elizabeth",
-      "name": "Righteous Elizabeth",
-      "description": "Mother of John the Baptist.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 5",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 5
-          }
-        ]
-      }
     },
     {
       "id": "saint-teresa-of-calcutta",
@@ -14249,16 +14154,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 6",
+      "dayLegacy": "September 17",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 9,
-            "day": 6
+            "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Dioscorus, 25th Pope of Alexandria\" falls Sep 17 (7 Tout). OOR is this row's only tag."
     },
     {
       "id": "saint-cloud",
@@ -14267,25 +14173,6 @@
       "type": "saint",
       "tags": [
         "LAT"
-      ],
-      "dayLegacy": "September 7",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 7
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-john-the-little",
-      "name": "Saint John the Little",
-      "description": "Famous Desert Father of Scetis.",
-      "type": "saint",
-      "tags": [
-        "OOR"
       ],
       "dayLegacy": "September 7",
       "observance": {
@@ -14339,7 +14226,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Nativity of the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Nativity of the Most Holy Theotokos” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Nativity of the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Nativity of the Most Holy Theotokos” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 5,
+              "day": 9
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Sep 8) is ANG/LAT/EOR's. CONFIRMED against coptic.io: \"The Nativity of the Blessed Virgin Mary The Mother of God\" falls May 9 (1 Bashans) in the Coptic calendar."
     },
     {
       "id": "constance-and-her-companions",
@@ -14417,7 +14316,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: coptic.io gives conflicting departure dates for St. Severus of Antioch across source editions (9 and 14 Amshir, ~Feb) with no way to adjudicate which is authoritative. Left unconfirmed rather than guess."
     },
     {
       "id": "alexander-crummell",
@@ -14467,16 +14367,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 10",
+      "dayLegacy": "November 12",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 9,
-            "day": 10
+            "month": 11,
+            "day": 12
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Cyriacus\" falls Nov 12 (3 Hator). OOR is this row's only tag."
     },
     {
       "id": "saint-nicholas-of-tolentino",
@@ -14525,16 +14426,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 11",
+      "dayLegacy": "May 14",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 9,
-            "day": 11
+            "month": 5,
+            "day": 14
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Macarius of Alexandria\" falls May 14 (6 Bashans). OOR is this row's only tag."
     },
     {
       "id": "saint-paphnutius",
@@ -14623,16 +14525,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 12",
+      "dayLegacy": "December 17",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 9,
-            "day": 12
+            "month": 12,
+            "day": 17
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Samuel the Abbot of El-Qualamon Monastery (Abba Samuel the Confessor)\" falls Dec 17 (8 Kiahk). OOR is this row's only tag."
     },
     {
       "id": "the-holy-name-of-mary",
@@ -14690,7 +14593,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-07 against coptic.io: \"The Commemoration of the Miracle performed by St. Basilius (Basil), Bishop of Caesarea, Cappadocia\" falls on this date (13 Tout), matching the stored day exactly."
     },
     {
       "id": "saint-cyprian-of-carthage",
@@ -14752,7 +14656,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Holy Cross Day”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Universal Exaltation of the Precious and Life-giving Cross, confirmed as a Major Feast via Orthocal's day lookup for 2026-09-14” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Holy Cross Day”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “The Universal Exaltation of the Precious and Life-giving Cross, confirmed as a Major Feast via Orthocal's day lookup for 2026-09-14” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "OOR NOTE 2026-09-07: the Coptic calendar keeps a 'Feast of the Consecration of the Church of the Honorable Cross' (Sep 27/28, 17-18 Tout) rather than a separately-framed 'Exaltation' -- conceptually related but not confirmed as the same occasion, and the date doesn't match the stored Sep 14. Left unconfirmed rather than force a match."
     },
     {
       "id": "mar-bisho-of-kmol",
@@ -15083,7 +14988,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: this row is already documented elsewhere in the corpus as 'RESOLVED as a duplicate allowlist id for mar-isaac-of-nineveh (COE, Jan 28)' -- Isaac of Nineveh is a Church of the East figure, not genuinely Oriental Orthodox. Left as-is per that existing resolution; not re-litigated this pass."
     },
     {
       "id": "saint-joseph-of-cupertino",
@@ -15171,16 +15077,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 19",
+      "dayLegacy": "July 20",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 9,
-            "day": 19
+            "month": 7,
+            "day": 20
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Pisentius, Bishop of Qift\" falls Jul 20 (13 Epep). OOR is this row's only tag."
     },
     {
       "id": "theodore-of-tarsus",
@@ -15406,16 +15313,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 22",
+      "dayLegacy": "July 14",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 9,
-            "day": 22
+            "month": 7,
+            "day": 14
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Shenouda (Shenoute), the Archimandrite\" falls Jul 14 (7 Epep). OOR is this row's only tag."
     },
     {
       "id": "conception-of-saint-john-the-baptist",
@@ -15436,25 +15344,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-07 against orthocal.info (Greek/Antiochian tradition): \"The Conception of John the Baptist\" falls on this date, matching the stored day exactly."
-    },
-    {
-      "id": "saint-jacob-of-nisibis",
-      "name": "Saint Jacob of Nisibis",
-      "description": "Bishop and confessor.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 23",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 23
-          }
-        ]
-      }
     },
     {
       "id": "saint-pius-of-pietrelcina",
@@ -15551,7 +15440,8 @@
             "day": 25
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: only a 'Consecration of the Church of the Great St. Anthony' occasion found (Aug 10, 4 Mesra), conceptually adjacent but not a relics-specific occasion, and the date doesn't match the stored Sep 25. Left unconfirmed rather than force a match."
     },
     {
       "id": "saint-euphrosyne-of-alexandria",
@@ -15679,16 +15569,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "September 27",
+      "dayLegacy": "September 10",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 9,
-            "day": 27
+            "day": 10
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Barsoma, the 'Naked'\" falls Sep 10 (5 Nasie) -- the same date already established this session for the Prophet Amos row. OOR is this row's only tag."
     },
     {
       "id": "saint-callistratus",
@@ -15725,25 +15616,6 @@
           {
             "month": 9,
             "day": 27
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-abba-pishoy-relics",
-      "name": "Saint Abba Pishoy (Relics)",
-      "description": "The Star of the Desert.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "September 28",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 9,
-            "day": 28
           }
         ]
       }
@@ -15804,7 +15676,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-kyriakos",
@@ -15940,7 +15813,8 @@
             "day": 30
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "holy-protection-of-the-theotokos",
