@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-07:** `SEED_VERSION v254-2026-09-07-eor-second-pass`, East Syriac corpus
+**State as of 2026-09-07:** `SEED_VERSION v255-2026-09-07-coptic-mcp-added`, East Syriac corpus
 448 components / 57 sequences, explanations harness 67 checks passing. **This header itself went stale
 for three days** — it still read v236/2026-09-05 after the 09-06 COE-diocese-scoping and 09-07
 Anglican-completion commits, even though the lower sections (§7/§8, the sanctoral table) were kept
@@ -201,6 +201,30 @@ returns everything for a single date. No fetch-restriction problems at all throu
 `search_saints` first for anything with a name, `get_day` to check what a specific date actually
 holds. This is the way to keep working this list, not day-walking or raw fetches.
 
+**coptic.io has the same MCP setup now, for OOR — but it needs a step orthocal.info didn't.**
+orthocal.info runs its own public MCP server; coptic.io only exposes a plain REST API
+(`api.coptic.io`), no MCP endpoint anywhere (checked thoroughly 2026-09-07 — not in its docs, repo,
+blog post, or any MCP registry). So a wrapper was written: `scripts/coptic-mcp-server.py`, a small
+Python MCP server that calls coptic.io's REST endpoints and exposes the same two-tool shape as
+Orthocal (`search_saints`, `get_day`, plus `get_day_coptic` for a native Coptic-calendar date like
+"7 Toba"). **Confirmed working end-to-end 2026-09-07**, run from Josh's Codespace and connected via
+port-forward. Read the file's own docstring before touching it again — it documents a real `mcp<2`
+version-pin gotcha and a multi-Python-environment gotcha that both actually happened and cost real
+time to diagnose. Short version: **this process is not persistent.** It has to be running for the
+connector to work, does not survive a Codespace restart on its own, and the forwarded port's
+visibility (must be Public) can reset too. If coptic.io tools aren't responding in a future session,
+check whether this needs restarting before assuming something else is wrong:
+```
+/workspaces/PrayerAppNew/.venv/bin/python -m pip install "mcp[cli]>=1.10.1,<2.0.0" httpx
+/workspaces/PrayerAppNew/.venv/bin/python scripts/coptic-mcp-server.py
+```
+then re-forward port 8000 as Public and confirm the connector URL still ends in `/mcp` (not a typo
+like `/mpc`, which happened once already). **Also note: coptic.io's Synaxarium data is sourced from
+CopticChurch.net**, not from Coptic Reader (Southern US Metropolis) — the source this project
+originally named as OOR's governing calendar. Same kind of source-identity question orthocal.info
+raised for EOR (mirrors OCA/ROCOR rather than being OCA itself) — treat as authorized pending Josh's
+explicit call the way orthocal.info was, not as automatically equivalent to Coptic Reader.
+
 **This session's work, one pass through the 61 rows that had only an Anglican-sourced `ruleSource`,
 plus a few incidental finds in the untouched 145:**
 - **32 confirmed** — clean date match against orthocal.info, `ruleSource` extended (existing
@@ -352,7 +376,11 @@ would unblock this far faster than continuing to search name-by-name from in her
 **OOR is still blocked on a file Josh holds and this repo does not:**
 `coptic-synaxarium.json.txt`. **Do not repeat the "366 days, 702 entries" figure** — it came from a
 ChatGPT message, was never verified here, and was wrongly written into this project's records on
-2026-09-05. Nobody has opened that file.
+2026-09-05. Nobody has opened that file. **This is a separate question from OOR sourcing generally**
+— see the coptic.io MCP tool note earlier in this document (§ EOR status, 2026-09-07): a live,
+queryable Synaxarium source now exists via `scripts/coptic-mcp-server.py`, independent of whether
+that specific file ever surfaces. It doesn't resolve whatever that file was for, but it does mean OOR
+confirmation work doesn't have to wait on it.
 
 `Synaxarium-Constantinople.txt` was supplied 2026-09-05 and **is not the EOR baseline.** It is
 Delehaye's 1902 Bollandist edition of a tenth-century Byzantine synaxarion — 82% Greek, rough OCR,

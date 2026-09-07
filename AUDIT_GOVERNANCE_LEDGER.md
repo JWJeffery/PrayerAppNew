@@ -12939,3 +12939,44 @@ Photius, Lupus of Thessalonica, the Deposition of the Cincture, Phocas the Garde
 **EOR confirmed: 205 -> 292 today. 111 EOR rows remain** (19 flagged after the first pass, roughly 20
 more mismatches from this pass, the rest genuinely untouched).
 SEED_VERSION v253 -> v254-2026-09-07-eor-second-pass.
+
+## Session 2026-09-07 (cont'd 3) -- coptic.io MCP wrapper built, tested, connected; committed so it isn't lost
+
+No MCP server exists for coptic.io (checked thoroughly -- not in its docs, GitHub repo, blog post, or
+any MCP registry/directory). Tried adding `api.coptic.io` directly as a custom connector on the
+chance it exposed something undocumented; it didn't. So a wrapper was written:
+`scripts/coptic-mcp-server.py`, a small Python MCP server (Streamable HTTP transport) that calls
+coptic.io's real REST endpoints (`/api/synaxarium/:date`, `/api/synaxarium/search/query`,
+`/api/synaxarium/coptic/:copticDate`) and exposes them as three tools matching Orthocal's shape:
+`search_saints`, `get_day`, `get_day_coptic`.
+
+**Two real problems hit getting it running, both now documented in the script's own docstring so
+they aren't rediscovered:**
+1. The `mcp` Python SDK released a 2.x line (July 2026) that renamed `FastMCP` to `MCPServer` and
+   moved the module; an unpinned `pip install "mcp[cli]"` grabs 2.x and this script's v1-API code
+   fails at import. Fix: pin `mcp[cli]>=1.10.1,<2.0.0`.
+2. Josh's Codespace had 2-3 different Python installs in play at once; installing into one and
+   running with a bare `python` picked up a different one that still had 2.x installed, reproducing
+   the same failure after the "fix." Fix: use the same explicit interpreter path for both the
+   install and the run.
+
+**Verified working end-to-end 2026-09-07**, connected via Codespace port-forward
+(`https://<codespace-name>-8000.app.github.dev/mcp` -- note the path, a `/mpc` typo briefly blocked
+the connector setup). `search_saints("Mark the Evangelist")` and `get_day("2026-01-01")` both
+returned real, correct Synaxarium data cross-checked against copticchurch.net. One call failed with
+"No approval received"; an immediate retry succeeded, cause not identified.
+
+**This process is not persistent** -- it must be running for the connector to work, does not survive
+a Codespace restart on its own, and the forwarded port's Public visibility can reset too. Documented
+in both this entry and the script's own docstring so a future session checks this before assuming
+something else broke.
+
+**Source-identity note, same shape as orthocal.info/OCA:** coptic.io's Synaxarium data comes from
+CopticChurch.net, not from Coptic Reader (Southern US Metropolis), which is what this project
+originally named as OOR's governing calendar. Authorized for use the same way orthocal.info was, not
+assumed automatically equivalent.
+
+No OOR confirmation work done yet with this tool -- Josh asked to hold that for a separate session.
+This entry exists so the tool itself isn't lost between now and then.
+
+SEED_VERSION v254 -> v255-2026-09-07-coptic-mcp-added.
