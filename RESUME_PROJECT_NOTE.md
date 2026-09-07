@@ -74,6 +74,14 @@ Josh to repeat it.
   `git log --oneline -1` first.
 - If `git am` fails, the usual cause is re-running an already-applied patch. Clear with
   `git am --abort 2>/dev/null; rm -rf .git/rebase-apply`, then check whether origin already has it.
+  **If `git am` fails with "Patch format detection failed" on a patch that Claude confirms parses
+  fine on its own end (`git apply --check` passes clean), the mbox envelope likely got mangled in
+  transit, not the diff content.** Fall back to `git apply <patch>` (applies the diff without
+  needing the mbox format) followed by a manual `git add` and `git commit` -- but scope the `git add`
+  to exactly the files the patch touches (`git add data/saints/sanctoral.json`, not `git add -A`).
+  This bit once, 2026-09-07: `git add -A` swept in an unrelated batch of untracked files sitting in
+  the working directory (the live `coptic_mcp_server.py` connector and its data) into a commit that
+  was only supposed to touch the sanctoral JSON. No data was lost, but always name the exact path(s).
 - **Never use `json.dump()` on a huge file without version-controlled review** — prefer targeted
   edits. **Validate JSON before writing**, not after.
 - **When scripting a bulk edit against `data/saints/sanctoral.json`, key on `(id, month, day)`, never
@@ -141,7 +149,7 @@ doubt about whether something already exists in the repo, check before assuming 
 | **ODCC** | In repo but **no text layer at all**. Do not re-propose. |
 | **Lambertsen Octoechos** | In copyright to ~2087; citable, not reproducible |
 | **orthocal.info** (EOR, Slavic/OCA + Greek/Antiochian beta) | Direct MCP tools `search_saints` / `get_day` -- **connector has been flaky across sessions**, sometimes simply absent from the tool list for a whole turn with no error beyond "not available in this turn." When that happens: do not retry in the same turn; fall back to Wikipedia's compiled "Month Day (Eastern Orthodox liturgics)" pages (see §7) rather than stalling. |
-| **coptic.io** (OOR, Coptic) | Direct MCP tools `search_saints` / `get_day` / `get_day_coptic`, same flakiness pattern as orthocal.info. The old `scripts/coptic-mcp-server.py` wrapper is **superseded** -- the tool is now connected directly, no wrapper/Codespace-port-forwarding dance needed. Fallback when the tool drops: Wikipedia's per-Coptic-day pages (e.g. `Thout 18`, `Paremhat 21`), sourced from copticchurch.net/st-takla.org. |
+| **coptic.io** (OOR, Coptic) | MCP tools `search_saints` / `get_day` / `get_day_coptic`, same flakiness pattern as orthocal.info -- **and now understood why**: `coptic_mcp_server.py` (repo root) is a live wrapper Josh must keep running and port-forwarded in his Codespace for this connector to work at all (2026-09-07 correction -- an earlier version of this note wrongly called this wrapper "superseded"; it is not). Not persistent -- does not survive a Codespace restart on its own, and the forwarded port's visibility (must be Public) can reset too. If the tool drops mid-session, that is the first thing to check/ask about, not a reason to assume something is broken on Claude's end. Fallback when it's down: Wikipedia's per-Coptic-day pages (e.g. `Thout 18`, `Paremhat 21`), sourced from copticchurch.net/st-takla.org. |
 
 **Any item needing Maclean past p.45 is blocked on Josh supplying pages.** Retrying will not change
 it.
