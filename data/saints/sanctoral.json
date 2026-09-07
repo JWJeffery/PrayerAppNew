@@ -1150,7 +1150,6 @@
       "description": "Franciscan martyrs.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "January 16",
@@ -1162,7 +1161,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "veneration-of-the-precious-chains-of-saint-peter",
@@ -4342,7 +4342,6 @@
       "description": "Founder of the Brothers Hospitallers, venerated in Catholic and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "March 8",
@@ -4354,7 +4353,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saint-theophylact-the-confessor",
@@ -5800,7 +5800,6 @@
       "description": "Patriarch (shared commemoration).",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "April 6",
@@ -5812,7 +5811,8 @@
             "day": 6
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saint-eutychius-patriarch-of-constantinople",
@@ -6118,25 +6118,6 @@
       }
     },
     {
-      "id": "molly-brant-konwatsijayenni",
-      "name": "Molly Brant (Konwatsijayenni)",
-      "description": "Mohawk leader and witness to the Faith, 1796.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "April 16",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 4,
-            "day": 16
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-bernadette-soubirous",
       "name": "Saint Bernadette Soubirous",
       "description": "Visionary of the Grotto of Lourdes.",
@@ -6229,7 +6210,6 @@
       "description": "Bishop and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "ANG",
         "EOR",
         "LAT",
         "OOR"
@@ -6243,7 +6223,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saint-george",
@@ -7293,7 +7274,6 @@
       "description": "Young Roman martyr beheaded for his faith around 304 AD. Patron of children, jobs, and health.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "May 12",
@@ -7305,7 +7285,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saints-nereus-and-achilleus",
@@ -7452,25 +7433,6 @@
       "type": "saint",
       "tags": [
         "OOR"
-      ],
-      "dayLegacy": "May 15",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 15
-          }
-        ]
-      }
-    },
-    {
-      "id": "junia",
-      "name": "Junia",
-      "description": "Apostle mentioned by St. Paul in Romans.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "May 15",
       "observance": {
@@ -8173,7 +8135,6 @@
       "description": "Priest known for charity to the poor, died 1764 AD.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "May 23",
@@ -8185,7 +8146,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saint-michael-the-confessor-of-synnada",
@@ -9364,25 +9326,6 @@
       }
     },
     {
-      "id": "saint-peter-of-mount-athos",
-      "name": "Saint Peter of Mount Athos",
-      "description": "Hermit, 8th century.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "June 12",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 6,
-            "day": 12
-          }
-        ]
-      }
-    },
-    {
       "id": "venerable-onuphrius-the-great",
       "name": "Venerable Onuphrius the Great",
       "description": "Early Egyptian desert hermit.",
@@ -9865,25 +9808,6 @@
       "type": "saint",
       "tags": [
         "LAT"
-      ],
-      "dayLegacy": "June 20",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 6,
-            "day": 20
-          }
-        ]
-      }
-    },
-    {
-      "id": "translation-of-edward-king-of-the-west-saxons",
-      "name": "Translation of Edward, King of the West Saxons",
-      "description": "Martyr, 979.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "June 20",
       "observance": {
@@ -11428,25 +11352,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Swithun was Bishop of Winchester in the ninth century, though little is known of his life.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
     },
     {
-      "id": "anne-askew",
-      "name": "Anne Askew",
-      "description": "Poet and martyr, 1546.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "July 16",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 7,
-            "day": 16
-          }
-        ]
-      }
-    },
-    {
       "id": "our-lady-of-mount-carmel",
       "name": "Our Lady of Mount Carmel",
       "description": "Patroness of the Carmelite Order.",
@@ -12505,25 +12410,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Martyr Lucillian, & those who suffered with him, at Byzantium Hieromartyr Philip, Metropolitan of Moscow Ss. Isaac, Dalmatus & Faustus”. Confirmed by 5 of the six editions (2021, 2022, 2023, 2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "charles-clingman",
-      "name": "Charles Clingman",
-      "description": "Bishop of Kentucky, 1968.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "August 4",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 4
-          }
-        ]
-      }
     },
     {
       "id": "saint-john-vianney",
@@ -13770,25 +13656,6 @@
       "type": "saint",
       "tags": [
         "OOR"
-      ],
-      "dayLegacy": "August 22",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 22
-          }
-        ]
-      }
-    },
-    {
-      "id": "saints-pontian-and-hippolytus",
-      "name": "Saints Pontian and Hippolytus",
-      "description": "Commemoration of the early Roman martyrs.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "August 22",
       "observance": {
@@ -17143,25 +17010,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Ven. Pelagia the Penitent Ven. Tryphon, Abbot of Vyatka”. Confirmed by 2 of the six editions (2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "denys",
-      "name": "Denys",
-      "description": "Bishop of Paris, Martyrs, c.250.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "October 9",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 9
-          }
-        ]
-      }
-    },
-    {
       "id": "holy-apostle-james-son-of-alphaeus",
       "name": "Holy Apostle James, son of Alphaeus",
       "description": "Apostle and martyr.",
@@ -17974,7 +17822,6 @@
       "description": "Founder of the Passionists.",
       "type": "saint",
       "tags": [
-        "ANG",
         "LAT"
       ],
       "dayLegacy": "October 20",
@@ -17986,7 +17833,8 @@
             "day": 20
           }
         ]
-      }
+      },
+      "tagNote": "ANG TAG REMOVED 2026-09-06. No Anglican witness held in this repo carries this figure on any day — checked against LFF 2024, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the Scottish Episcopal Church master calendar and the Kalendar v0.1 candidate matrices. Josh's rule: if we don't have sources, they come out. THE ROW ITSELF IS KEPT because it carries other traditions' tags, whose dates are unconfirmed for want of a Roman or Eastern calendar rather than exhausted; deleting the row would have removed their commemoration too. Only the Anglican claim is withdrawn. If an Anglican witness for this figure is ever added, restore the tag rather than creating a second row."
     },
     {
       "id": "saint-hilarion",
@@ -18233,25 +18081,6 @@
       "type": "saint",
       "tags": [
         "OOR"
-      ],
-      "dayLegacy": "October 24",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 24
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-magloire",
-      "name": "Saint Magloire",
-      "description": "Bishop of Dol, 575.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "October 24",
       "observance": {
@@ -20504,25 +20333,6 @@
       }
     },
     {
-      "id": "saints-of-india",
-      "name": "Saints of India",
-      "description": "Commemoration.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "November 27",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 27
-          }
-        ]
-      }
-    },
-    {
       "id": "kamehameha-and-emma",
       "name": "Kamehameha and Emma",
       "description": "Hawaii.",
@@ -20619,25 +20429,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Monk Martyr Stephen”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "day-of-intercession-for-missions",
-      "name": "Day of Intercession for Missions",
-      "description": "Commemoration.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "November 29",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 29
-          }
-        ]
-      }
     },
     {
       "id": "martyr-paramon",
@@ -21183,25 +20974,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Conception of the Theotokos Prophetess Hannah, mother of the Prophet Samuel”. Confirmed by ONE edition only (2021); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "prophets-of-the-old-testament",
-      "name": "Prophets of the Old Testament",
-      "description": "General commemoration.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "December 9",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 12,
-            "day": 9
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-juan-diego",
       "name": "Saint Juan Diego",
       "description": "Visionary of Guadalupe.",
@@ -21615,25 +21387,6 @@
       }
     },
     {
-      "id": "simon-gibbons",
-      "name": "Simon Gibbons",
-      "description": "Priest.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "December 15",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 12,
-            "day": 15
-          }
-        ]
-      }
-    },
-    {
       "id": "prophet-haggai",
       "name": "Prophet Haggai",
       "description": "Minor Prophet.",
@@ -21660,25 +21413,6 @@
       "type": "saint",
       "tags": [
         "LAT"
-      ],
-      "dayLegacy": "December 16",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 12,
-            "day": 16
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-bean",
-      "name": "Saint Bean",
-      "description": "Bishop.",
-      "type": "saint",
-      "tags": [
-        "ANG"
       ],
       "dayLegacy": "December 16",
       "observance": {

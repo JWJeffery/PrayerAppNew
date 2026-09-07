@@ -1,3 +1,58 @@
+## Session 2026-09-06 -- the Anglican tag is complete. SEED_VERSION v250 -> v251.
+
+Josh, on the 21 rows no Anglican witness in this repo carries: **remove them.**
+
+Removed -- but **not uniformly**, because seven of the twenty-one were not Anglican-only.
+
+### A row is not the same as a claim
+
+Fourteen rows were tagged `ANG` and nothing else. Those are **deleted outright**.
+
+The other seven carry Latin and Eastern tags as well -- Berard, John of God, Eutychius, Pancras,
+Giovanni Battista Rossi, Paul of the Cross, and Theodore of Sykeon (ANG/EOR/LAT/OOR). Deleting those
+rows would have destroyed **Rome's and the East's** commemorations along with the Anglican one, and
+those tags are **not exhausted**: they are unconfirmed for want of a Roman or Eastern calendar this
+repo does not hold, which is a different condition from having been checked against six witnesses and
+found absent.
+
+So on those seven, **only the ANG tag is withdrawn** and the row is kept. Each carries a `tagNote`
+naming the six witnesses checked, stating why the row survives, and instructing that if an Anglican
+witness is ever added the tag should be **restored rather than a second row created**.
+
+### Verified through the tag filter, not the date rule
+
+`saintAppliesToContext` returns `ok:false` for ANG on all seven and `ok:true` for their own
+traditions.
+
+That distinction mattered. An initial test used `occursOn`, which evaluates **only the date rule** and
+knows nothing about tags -- it reported all seven as still showing for Anglicans. Reading that as a
+failure would have been wrong; so would trusting it.
+
+### The Anglican tag is complete
+
+**297 confirmed, zero unconfirmed.** The second tradition finished, after the Church of the East.
+
+Entries **1,168 -> 1,154**. No row is left with an empty `tags` array.
+
+### The fourteen deleted identities
+
+  - Anne Askew
+  - Charles Clingman
+  - Day of Intercession for Missions
+  - Denys
+  - Junia
+  - Molly Brant (Konwatsijayenni)
+  - Prophets of the Old Testament
+  - Saint Bean
+  - Saint Magloire
+  - Saint Peter of Mount Athos
+  - Saints Pontian and Hippolytus
+  - Saints of India
+  - Simon Gibbons
+  - Translation of Edward, King of the West Saxons
+
+---
+
 ## Session 2026-09-06 -- Cranmer restored to LFF's day; duplicate Cuthbert and the fixed-date Easter
 ## Sunday row removed. SEED_VERSION v249 -> v250.
 
