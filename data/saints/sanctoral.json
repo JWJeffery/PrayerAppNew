@@ -1424,9 +1424,7 @@
       "name": "Saint Mark of Ephesus",
       "description": "Defender of Orthodoxy.",
       "type": "saint",
-      "tags": [
-        "OOR"
-      ],
+      "tags": [],
       "dayLegacy": "January 19",
       "observance": {
         "type": "fixed",
@@ -1436,7 +1434,8 @@
             "day": 19
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried; this is 15th-c. Byzantine anti-unionist content (Council of Ferrara-Florence), not part of Coptic tradition."
     },
     {
       "id": "saint-wulfstan",
@@ -1865,17 +1864,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "January 24",
+      "dayLegacy": "January 25",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 1,
-            "day": 24
+            "day": 25
           }
         ]
       },
-      "oorSubtradition": "Armenian"
+      "ruleSource": "Date CONFIRMED 2026-09-07 against coptic.io: \"The Departure of St. Maximus and St. Domatius (Domadius)\" falls on this date (13 Toba). CORRECTED from the stored Jan 24 (one day off). Note: this identity IS attested in the Coptic Synaxarium, so the earlier oorSubtradition:Armenian tag applied this session was a mistake -- removed."
     },
     {
       "id": "saint-xenia-of-rome",
@@ -1924,8 +1923,7 @@
       "description": "Archbishop of Constantinople.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "January 25",
       "observance": {
@@ -1937,7 +1935,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Gregory the Theologian”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Gregory the Theologian”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saints-timothy-and-titus",
@@ -1984,8 +1983,7 @@
       "description": "Monks of Constantinople.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "January 26",
       "observance": {
@@ -1997,7 +1995,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Ven. Xenophon, and Mary his wife, and their two sons, Arcadius and John”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Ven. Xenophon, and Mary his wife, and their two sons, Arcadius and John”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-angela-merici",
@@ -2078,25 +2077,6 @@
         ]
       },
       "ruleSource": "Fixed 28 January, confirmed in the 2025 and 2026 editions. GENUINELY ABSENT from 2020, 2021, 2022, 2023 and 2024, none of which carries any commemoration of St Isaac on any date. A recent addition to the diocesan calendar rather than a moving date, so a fixed date is the right shape -- but it rests on two consecutive years only. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars, ALL SEVEN editions 2020-2026 read in full."
-    },
-    {
-      "id": "saint-isaac-the-syrian",
-      "name": "Saint Isaac the Syrian",
-      "description": "Bishop of Nineveh.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "January 28",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 28
-          }
-        ]
-      }
     },
     {
       "id": "thomas-aquinas",
@@ -2183,9 +2163,7 @@
       "name": "Saints Sarbelus and Barbea",
       "description": "Brother and sister martyrs.",
       "type": "saint",
-      "tags": [
-        "OOR"
-      ],
+      "tags": [],
       "dayLegacy": "January 29",
       "observance": {
         "type": "fixed",
@@ -2195,7 +2173,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "translation-of-the-relics-of-hieromartyr-ignatius",
@@ -2262,8 +2241,7 @@
       "description": "Basil, Gregory, and John.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "January 30",
       "observance": {
@@ -2275,7 +2253,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Three Holy Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Three Holy Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried; this is a Byzantine-specific joint commemoration (Basil, Gregory, John), not paralleled in the Coptic Synaxarium under this framing."
     },
     {
       "id": "holy-wonderworkers-cyrus-and-john",
@@ -2283,8 +2262,7 @@
       "description": "Unmercenaries and martyrs.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "January 31",
       "observance": {
@@ -2296,7 +2274,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Holy Unmercenaries Cyrus and John”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Holy Unmercenaries Cyrus and John”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried, including the Coptic-style rendering 'Abu Kir'."
     },
     {
       "id": "saint-john-bosco",
@@ -7360,25 +7339,6 @@
       }
     },
     {
-      "id": "saint-isaac-the-syrian",
-      "name": "Saint Isaac the Syrian",
-      "description": "Bishop of Nineveh.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "May 13",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 13
-          }
-        ]
-      }
-    },
-    {
       "id": "virgin-martyr-glyceria",
       "name": "Virgin Martyr Glyceria",
       "description": "Martyr at Heraclea, died 177 AD.",
@@ -8488,25 +8448,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Virgin Martyr Theodosia of Tyre”. Confirmed by 3 of the six editions (2021, 2022, 2023). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "saint-isaac-the-syrian",
-      "name": "Saint Isaac the Syrian",
-      "description": "Bishop of Nineveh.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "May 30",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 30
-          }
-        ]
-      }
     },
     {
       "id": "saint-joan-of-arc",
