@@ -3732,7 +3732,7 @@
     },
     {
      "rank": "2",
-     "candidate": "Fanny Crosby",
+     "candidate": "Fanny J. Crosby",
      "designation": "Hymnwriter",
      "year_or_period": "1915",
      "tradition": "Anglican-received Methodist/Baptist",
@@ -3747,12 +3747,12 @@
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000855",
-      "normalized_name": "Fanny Crosby",
+      "normalized_name": "Fanny J. Crosby",
       "entity_type": "person",
-      "source_candidate_name": "Fanny Crosby",
+      "source_candidate_name": "Fanny J. Crosby",
       "identity_note": "",
       "source": "alternate",
-      "canonical_name": "Fanny Crosby"
+      "canonical_name": "Fanny J. Crosby"
      },
      "harmonization": null
     },
@@ -33705,19 +33705,19 @@
      "source_witnesses": "BCP; LFF; HWHM; GCW; FAS; AM; Oxford Dictionary of Saints",
      "source_tier": "BCP / Current TEC / Broad Anglican",
      "preliminary_status": "Strong candidate",
-     "ranking_rationale": "Prayer Book/LFF apostolic feast; likely controls over July 3 provincial date for this project.",
-     "review_flags": "apostle-date harmonization with July 3",
+     "ranking_rationale": "Prayer Book/LFF apostolic feast; governs this project's fixed commemoration of Thomas after the July 3 placement was reassigned to Joshua the Prophet.",
+     "review_flags": "none",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Governed 2026-09-07: Thomas remains on December 21; July 3 is Joshua the Prophet.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000003",
       "canonical_name": "Thomas the Apostle",
       "entity_type": "person",
       "audit_status": "rank1_controlled",
-      "audit_result": "rank preserved pending apostle-date harmonization",
-      "sin_review_flags": "apostle-date harmonization with 07-03",
+      "audit_result": "rank preserved after apostle-date harmonization",
+      "sin_review_flags": "",
       "source": "rank1"
      },
      "harmonization": [
