@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-07:** `SEED_VERSION v256-2026-09-07-eor-third-pass`, East Syriac corpus
+**State as of 2026-09-07:** `SEED_VERSION v257-2026-09-07-eor-fourth-pass`, East Syriac corpus
 448 components / 57 sequences, explanations harness 67 checks passing. **This header itself went stale
 for three days** — it still read v236/2026-09-05 after the 09-06 COE-diocese-scoping and 09-07
 Anglican-completion commits, even though the lower sections (§7/§8, the sanctoral table) were kept
@@ -183,7 +183,7 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 |---|---|---|
 | ANG | 297 | **0 — complete** |
 | COE | 87 | **0 — complete** |
-| EOR | 314 | 89 |
+| EOR | 316 | 87 |
 | LAT | 134 | 269 |
 | OOR | 128 | 240 |
 
@@ -278,21 +278,36 @@ check hasn't caught these, or duplicate ids are being tolerated for genuinely-di
 share a slug. Not investigated further this session; flagging so it isn't lost. A str_replace-based
 patch script needs `(id, month, day)` as the real key here, not `id` alone, until this is resolved.
 
-Confirmed total after several sessions today: **314**, up from 205 at the start of the day. **89 EOR
-rows remain.** New mismatches found in the third pass, not yet in the list above, needing the same
-kind of governance call: Sylvester I (stored Dec 31, real date is Jan 2), Catherine of Alexandria
-(stored Nov 25, real Nov 24 -- one day off), Marinus the Martyr (stored Oct 18, real Jul 6 or Aug 7),
-Saint Innocent of Alaska (stored Mar 19 on the not-yet-confirmed row specifically, real Mar 31 or
-Oct 6 -- note a second "Saint Innocent of Alaska" row at Mar 30 already carries a ruleSource from
-earlier COE work; check before assuming these are the same claim). St. Pachomius of Patmos (May 21)
-has a plausible but unconfirmed match: a "Holy New Martyr Pachomius (1730)" also appears on May 21,
-described as buried on Patmos in the Church of St John the Theologian -- same person, most likely,
-but the name/title doesn't match cleanly enough to write as CONFIRMED without a closer look. The
-other four May 21 rows (Polyeuctus/Victorinus/Donatus, Agapitus of Markushev, Cassian the Greek,
+Confirmed total after several sessions today: **316**, up from 205 at the start of the day. **87 EOR
+rows remain.** Mismatches on record needing your governance call (stored date vs. the real Orthodox
+date, not yet resolved): Sylvester I (stored Dec 31, real Jan 2), Catherine of Alexandria (stored
+Nov 25, real Nov 24 -- one day off), Marinus the Martyr (stored Oct 18, real Jul 6 or Aug 7), Saint
+Innocent of Alaska (the not-yet-confirmed row is stored Mar 19; real date Mar 31 or Oct 6 -- note a
+*second*, already-confirmed "Saint Innocent of Alaska" row exists at Mar 30 from earlier COE work;
+don't conflate the two), St. Cassian the Greek (stored May 21, real Oct 2). St. Pachomius of Patmos
+(May 21) has a plausible but unconfirmed match: a "Holy New Martyr Pachomius (1730)" also appears on
+May 21, buried on Patmos at the Church of St John the Theologian per the same source -- likely the
+same person, but the title doesn't match closely enough to write as CONFIRMED without closer
+verification. Terence and Eunice (Oct 28) similarly plausible-but-unconfirmed: a "Martyrs Terence,
+Neonila and Children" falls on the same date, likely the same identity under a different rendering
+of the wife's name. The other four May 21 rows (Polyeuctus/Victorinus/Donatus, Agapitus of Markushev,
 Vladimir Icon) found no match on that date at all -- May 21 in this Orthodox calendar is Ascension
-and Sts. Constantine & Helen, nothing resembling these four. No tag withdrawals done this pass
-(lower confidence than the first session's withdrawals — this was a faster sweep under real time
-pressure, so treat "no match found" here as provisional, not exhausted, until re-checked).
+and Sts. Constantine & Helen, nothing resembling these three.
+
+This pass found only 3 new confirmations (Martyr Lucillian and companions, June 3 -- found only after
+retrying with that spelling instead of "Loukilianos"; the Holy Seven Maccabean Martyrs, Aug 1;
+Dometius of Persia was *attempted* but turned out to be a mismatch, see below) after a much larger
+share of no-matches than earlier passes -- the easy, well-known identities are mostly cleared; what's
+left skews toward genuinely obscure figures or ones this corpus may have sourced without a clean
+Orthodox-calendar counterpart. **One real mistake caught and reverted before it left this session**:
+Dometius of Persia was initially written as CONFIRMED against a search result, but the result's date
+(Aug 7) didn't actually match the row's stored date (Aug 6) -- copied over without checking closely
+enough. Reverted before commit. Worth restating: check the date in the tool result against the row's
+stored date every single time, not just whether the name matched -- this is exactly the kind of slip
+the project's own "row is not the same as a claim" discipline exists to catch, and it very nearly
+went out uncaught. No tag withdrawals done in this or the prior pass (lower confidence than the first
+session's withdrawals, both done under real time pressure) -- treat "no match found" in these two
+passes as provisional, not exhausted, until re-checked.
 
 **Church of the East dates are DIOCESAN, not universal.** The Diocese of California and the Diocese
 of Australia and New Zealand keep the same 2026 differently: fixed feasts are 13 days apart (Julian

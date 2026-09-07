@@ -13017,3 +13017,31 @@ any tagNote withdrawal based on this pass alone.
 
 **EOR confirmed: 205 -> 314 across today's sessions. 89 rows remain.**
 SEED_VERSION v255 -> v256-2026-09-07-eor-third-pass.
+
+## Session 2026-09-07 (cont'd 5) -- fourth EOR pass: 3 more confirmed, one mistake caught and reverted
+
+Continued the untouched-row sweep. **3 more confirmed**: Martyr Lucillian and those with him (June 3
+-- found only on retry with that spelling; "Loukilianos," the corpus's own transliteration, returned
+nothing), the Holy Seven Maccabean Martyrs (Aug 1). New mismatch found: St. Cassian the Greek (stored
+May 21, real date Oct 2).
+
+**A real mistake was caught before it reached the committed data.** Dometius of Persia was searched,
+returned a result dated Aug 7, and was written to the file as CONFIRMED -- but the row's own stored
+date is Aug 6, one day off. The date wasn't actually checked against the row before writing; only the
+name match was. Caught on the tally-verification step (cross-checking the file after applying),
+reverted before commit. This is exactly the "row is not the same as a claim" failure mode this project
+has repeatedly named for other reasons (the Anglican-tag and EOR-count corrections earlier today) --
+here it nearly happened from the inside, in a script meant to prevent it. Going forward: verify the
+tool result's date against the row's stored date explicitly, every time, not just the name.
+
+Most of the remainder of the untouched rows returned no match under several name variants tried
+(Basilides of Rome, Isidore of Seville, Eudocimus, Timothy of Prusa, Isaurus and companions, the
+relics of Cyrus and John, Kyriaki of Nicomedia, Thallelaios, Agapitus of Markushev). Two came back
+with plausible-but-not-confirmed matches worth a closer look rather than either confirming or
+withdrawing: St. Pachomius of Patmos (a "Holy New Martyr Pachomius (1730)," buried on Patmos, appears
+May 21 -- likely the same person, title doesn't match cleanly) and Terence and Eunice (a "Martyrs
+Terence, Neonila and Children" falls on the same Oct 28 date -- likely the same identity, wife's name
+differs).
+
+**EOR confirmed: 205 -> 316 across today's sessions. 87 rows remain.**
+SEED_VERSION v256 -> v257-2026-09-07-eor-fourth-pass.
