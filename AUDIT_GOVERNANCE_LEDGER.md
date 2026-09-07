@@ -13210,3 +13210,50 @@ cleanly. Every commit for the remainder of the sweep (May onward) was immediatel
 surfaced patch in the same turn, no exceptions.
 
 SEED_VERSION v258 -> v259-2026-09-07-oor-full-calendar-sweep.
+
+## Session 2026-09-07 (cont'd 8) -- moveable-date engine rules, gap sweep start, resume note rewrite
+
+Catching up SEED_VERSION and this ledger together, which had drifted behind two batches of real
+commits (the engine work and the Jan-Mar EOR gap sweep) -- the same process gap caught once already
+this session for the OOR sweep. Recorded here so it isn't lost a third time.
+
+**Engine**: three moveable-date observance rules built and regression-tested (see
+RESUME_PROJECT_NOTE.md §7 for full detail) -- `orthodoxEaster` anchor for Great Lent's start (OOR),
+`christmas` anchor + bounded-window-with-fallback for Joseph the Betrothed/David/James (EOR), and a
+new `monthlyCoptic` observance type for Archangel Michael's recurring synaxis (OOR). All three wired
+into `js/saints-resolver.js` and tested against a Node harness across a range of years before being
+applied to data. The 12 pre-existing Church-of-the-East `relative`-type rows were regression-tested
+both with and without `ByzantinePaschalion` also loaded, confirming byte-identical resolution --
+the refactor that shares weekday/offset logic across all anchors changed nothing for COE.
+
+**Gap sweep**: a new, deliberately-scoped effort distinct from the confirmation passes -- checking
+whether major, widely-venerated figures are missing from the corpus entirely, using Wikipedia's
+compiled "Month Day (Eastern Orthodox liturgics)" pages as the source (batched searches, 4-5 days
+per query, snippets usually sufficient without a separate fetch). January: clean. February: 3
+findings (Prophet Azariah restored after a wrongful EOR-pass deletion; Zechariah the Minor Prophet
+and Photine the Samaritan Woman added as genuine absences). March: 5 findings (Dismas' EOR tag
+restored; Aaron the High Priest, Eudokia of Heliopolis, Paul the Simple, and Joseph the Fair added).
+
+**A genuine process failure and its correction, recorded plainly**: six commits (the full OOR
+calendar sweep) were made and reported as "committed" across several turns with no
+`git format-patch` ever cut or surfaced -- meaning real, correct work sat uselessly in the sandbox
+with nothing for Josh to apply, and he had no way to know this from what he was told. Caught only
+when he asked directly and pushed back hard, and rightly so. All six were recovered together in one
+patch delivery and applied cleanly with no data loss, but the standing rule going forward (recorded
+in RESUME_PROJECT_NOTE.md §3) is that a commit is not complete until its patch is surfaced in the
+same turn -- no exceptions, regardless of how many commits accumulate in a session.
+
+**A second lesson, distinct from the first**: when Josh said "there already is a decision engine,"
+that was corrected for by finding and reading `synaxarium-review/` -- but it turned out to be a
+different project entirely (the Anglican Kalendar candidate-review tool, not anything related to the
+EOR/OOR gap sweep). Confirmed explicitly by Josh: do not extend that tool, do not build a parallel
+one without asking. The broader lesson, worth stating plainly: when told something already exists,
+verify what it actually is before assuming it's the thing currently being worked on.
+
+**RESUME_PROJECT_NOTE.md rewritten** (archived verbatim to
+`documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`) -- the previous version's sanctoral-confirmation
+narrative was mostly resolved by this session's work and had stopped being a useful handoff; the new
+note is ~300 lines against the old note's ~500, with the resolved history preserved in the archive
+rather than restated.
+
+SEED_VERSION v259 -> v260-2026-09-07-eor-oor-gap-sweep-jan-mar.
