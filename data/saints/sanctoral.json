@@ -21709,6 +21709,66 @@
         "n": 2
       },
       "ruleSource": "CORRECTED 2026-09-03. Was a fixed 29 July, which appears in no edition -- the commemoration is in JANUARY. The second Friday after the Epiphany: 17 Jan 2020, 15 Jan 2021, 14 Jan 2022, 20 Jan 2023, 19 Jan 2024, 17 Jan 2025, 16 Jan 2026. 7/7, exactly one week after St John the Baptist in every edition. The Four Evangelists are named with them in 2020, 2021, 2023, 2024 and 2026 and commemorated separately a week later in 2022 and 2025 -- that grouping is editorial. Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars, ALL SEVEN editions 2020-2026 read in full."
+    },
+    {
+      "id": "prophet-azariah",
+      "name": "Holy Prophet Azariah",
+      "description": "Old Testament prophet, son of Oded, who prophesied to King Asa of Judah (2 Chronicles 15) -- distinct from Azariah/Abednego of the Three Holy Youths.",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "February 3",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 2,
+            "day": 3
+          }
+        ]
+      },
+      "ruleSource": "RESTORED 2026-09-07: this row was deleted during the EOR sanctoral pass (2026-09-07) on the finding of 'no Orthodox attestation found under any phrasing tried' against orthocal.info. Found afterward via Wikipedia's compiled Eastern Orthodox liturgics page for Feb 3, itself citing Pravoslavie.ru and Ecclesia.gr (the Greek Church's own calendar site) -- both primary-adjacent Orthodox calendar sources, not just a compiled encyclopedia entry. This was a false negative from orthocal.info's search coverage, not a genuine absence -- same category as the Clement of Rome case (EOR pass) and the Ephrem/Beheading-of-John-the-Baptist cases (OOR pass). Needs direct confirmation against orthocal.info's own get_day for Feb 3 (not yet re-checked with that specific tool this pass) or OCA/Pravoslavie directly before being marked fully CONFIRMED."
+    },
+    {
+      "id": "prophet-zechariah-minor-prophet",
+      "name": "Prophet Zechariah",
+      "description": "Old Testament prophet, one of the Twelve Minor Prophets (520 BC) -- distinct from Zechariah, father of John the Baptist.",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "February 8",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 2,
+            "day": 8
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Feb 8, citing Pravoslavie.ru and Ecclesia.gr. Not previously in this corpus at all under this identity -- the existing 'elizabeth-and-zechariah' row (ANG, Nov 5) is a different Zechariah (father of the Forerunner). Needs direct confirmation against orthocal.info or OCA before being marked fully CONFIRMED."
+    },
+    {
+      "id": "saint-photine-samaritan-woman",
+      "name": "Saint Photine, the Samaritan Woman",
+      "description": "The Samaritan Woman who met Christ at Jacob's Well (John 4), venerated in Orthodox tradition as an Equal-to-the-Apostles martyr.",
+      "type": "saint",
+      "tags": [
+        "EOR"
+      ],
+      "dayLegacy": "March 20",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 3,
+            "day": 20
+          }
+        ]
+      },
+      "ruleSource": "ADDED 2026-09-07: found via Wikipedia's compiled Eastern Orthodox liturgics page for Feb 26. A major, universally-known Gospel figure (the Samaritan Woman at the Well, John 4) with no entry at all in this corpus previously -- a genuine gap, not a minor local figure. Date corrected to Mar 20 per OCA (oca.org/saints/lives) -- Feb 26 is specifically the Greek-tradition date; this project's governing EOR source is the Slavic/OCA reckoning (established 2026-09-05). She is also kept on the moveable 'Sunday of the Samaritan Woman' (5th Sunday of Pascha) in all traditions -- a separate, not-yet-built moveable observance this row does not attempt to represent."
     }
   ]
 }
