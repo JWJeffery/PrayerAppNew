@@ -3242,17 +3242,14 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "February 16",
+      "dayLegacy": "Monday, 55 days before Pascha",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 2,
-            "day": 16
-          }
-        ]
+        "type": "relative",
+        "anchor": "orthodoxEaster",
+        "weekday": null,
+        "offsetDays": -55
       },
-      "tagNote": "OOR NOTE 2026-09-07: this row is stored as a FIXED date (Feb 16), but the start of Great Lent is inherently moveable in every tradition, Coptic included -- it is computed from that year's Pascha, not a fixed month/day. The 'fixed' observance type on this row is itself a structural error, not a sourcing gap; needs an ordinal/cycle rule like the Joseph-the-Betrothed row, not a coptic.io lookup. Left uncorrected pending that engineering work."
+      "tagNote": "STRUCTURAL FIX 2026-09-07: this row previously carried a FIXED date (Feb 16, correct only for 2026) despite Great Lent's start being inherently moveable. Rebuilt as a genuine moveable-date rule -- relative to a new 'orthodoxEaster' anchor (js/saints-resolver.js, kept deliberately distinct from the existing COE-only 'easter' anchor, whose default Paschalion in this resolver is Western/Gregorian, not the Julian/Alexandrian reckoning Coptic tradition actually uses) -- Pascha minus 55 days, always a Monday by construction (55 mod 7 = 6; Pascha is always Sunday). Verified against coptic.io and independently against published Orthodox calendar sources for 2026 (Pascha Apr 12 -> Feb 16) and tested programmatically across 2025-2028 before this change was made."
     },
     {
       "id": "charles-todd-quintard",
@@ -4957,7 +4954,18 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Joseph, husband of the Virgin Mary, a just man of Davids lineage, who was the foster- father of the son of God, Christ Jesus, who chose to be called the son of Joseph and to be subject to him as a son to his father.” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Joseph of Nazareth, Husband of Mary”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Joseph, husband of the Virgin Mary, a just man of Davids lineage, who was the foster- father of the son of God, Christ Jesus, who chose to be called the son of Joseph and to be subject to him as a son to his father.” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Joseph of Nazareth, Husband of Mary”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date.",
+      "traditionObservance": {
+        "EOR": {
+          "type": "relative",
+          "anchor": "christmas",
+          "weekday": 0,
+          "offsetDays": 1,
+          "maxOffsetDays": 6,
+          "fallbackOffsetDays": 1
+        }
+      },
+      "eorDateNote": "STRUCTURAL FIX 2026-09-07: EOR keeps Joseph the Betrothed, David the King and James the Brother of the Lord on the Sunday after Nativity, not a fixed date -- the shared Mar 19 date is Western tradition's, left untouched for ANG/LAT. Rule per GOARCH's own stated wording: \"the Sunday that falls on or immediately after the 26th [of December]... When there is no Sunday within this period, we celebrate this commemoration on the 26th\" -- the rare case when Christmas itself falls on a Sunday, which would otherwise push the naive search into January and collide with the Circumcision/Basil the Great feast. Implemented as a new bounded-window-with-fallback extension to the 'relative' observance type (js/saints-resolver.js), tested programmatically across 2020-2035 including both years in that range where Christmas falls on a Sunday (2022, 2033) before this change was made."
     },
     {
       "id": "st-mari-the-bishop",
@@ -18237,17 +18245,12 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 8",
+      "dayLegacy": "12th of every Coptic month",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 8
-          }
-        ]
+        "type": "monthlyCoptic",
+        "day": 12
       },
-      "tagNote": "OOR NOTE 2026-09-07: Archangel Michael is commemorated on the 12th of EVERY Coptic month (a recurring monthly commemoration, confirmed across all twelve months), not a single annual date -- this row's fixed-date schema cannot represent that structurally, same class of issue as Great Lent's start and Joseph the Betrothed. Left unconfirmed pending a real recurring-date engine rule, not a lookup fix."
+      "tagNote": "STRUCTURAL FIX 2026-09-07: this row previously carried a FIXED date (Nov 8, correct only for that specific Coptic-month occurrence in some year) despite Michael's commemoration recurring the 12th of EVERY Coptic month (confirmed across all twelve via coptic.io). Rebuilt as a new 'monthlyCoptic' observance type (js/saints-resolver.js), resolved through the same Alexandrian calendar engine already shared with the Ethiopian Sa'atat cycle (js/calendar-ethiopian.js). Verified programmatically: resolves to exactly one date per month across all of 2026, matching the earlier-confirmed Nov 21 (12 Hathor) occurrence exactly."
     },
     {
       "id": "mar-youkhanan-the-arab",
@@ -18309,18 +18312,14 @@
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Michael & all Bodiless Powers”. Confirmed by 3 of the six editions (2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
       "traditionObservance": {
-        "ANG": {
-          "type": "fixed",
-          "dates": [
-            {
-              "month": 9,
-              "day": 29
-            }
-          ]
+        "OOR": {
+          "type": "monthlyCoptic",
+          "day": 12
         }
       },
       "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “Saint Michael and All Angels” on September 29, against the shared November 8. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable.",
-      "tagNote": "OOR NOTE 2026-09-07: same structural issue as the row above -- Michael is commemorated the 12th of every Coptic month, not a single fixed annual date."
+      "tagNote": "OOR NOTE 2026-09-07: same structural issue as the row above -- Michael is commemorated the 12th of every Coptic month, not a single fixed annual date.",
+      "oorDateNote": "STRUCTURAL FIX 2026-09-07: same recurring-monthly commemoration as the 'holy-archangels-gabriel-and-michael' row above, given here via traditionObservance since this row's shared Nov 8 date may still serve ANG/LAT/EOR (unconfirmed, not addressed this pass)."
     },
     {
       "id": "dedication-of-the-lateran-basilica",

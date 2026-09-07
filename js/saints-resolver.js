@@ -130,6 +130,73 @@
         return entry.observance;
     }
 
+    /**
+     * Shared tail of 'relative' resolution: given an already-resolved anchor
+     * date, does `date` match `obs`'s weekday/offset/bounded-window rule?
+     * ADDED 2026-09-07, factored out so the three anchor branches ('easter',
+     * 'epiphany', 'christmas', 'orthodoxEaster') don't each duplicate it.
+     */
+    function _resolveRelativeAgainstAnchor(entry, obs, date, anchor) {
+        // BOUNDED WINDOW WITH FALLBACK. Needed for "the Sunday that falls on
+        // or immediately after Dec 26; when there is no Sunday within this
+        // period [through the 31st], we celebrate on the 26th" (GOARCH's own
+        // stated rule for Joseph the Betrothed, David and James) -- the
+        // ordinary forward weekday search below has no way to stop before
+        // spilling into January, which happens in the one case this rule
+        // exists for: the year Christmas itself falls on a Sunday. The
+        // fallback date is NOT required to be obs.weekday -- Dec 26 is a
+        // Monday in that case -- so this branch does its own full-date
+        // comparison rather than the plain weekday pre-check below.
+        if (obs.maxOffsetDays !== undefined) {
+            const startOffset = obs.offsetDays || 0;
+            let found = null;
+            for (let i = startOffset; i <= obs.maxOffsetDays; i++) {
+                const t = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + i);
+                if (obs.weekday === null || obs.weekday === undefined || t.getDay() === obs.weekday) {
+                    found = t;
+                    break;
+                }
+            }
+            const target = found || new Date(anchor.getFullYear(), anchor.getMonth(),
+                anchor.getDate() + (obs.fallbackOffsetDays !== undefined ? obs.fallbackOffsetDays : startOffset));
+            return target.getFullYear() === date.getFullYear()
+                && target.getMonth() === date.getMonth()
+                && target.getDate() === date.getDate();
+        }
+
+        if (obs.weekday !== null && obs.weekday !== undefined
+            && date.getDay() !== obs.weekday) return false;
+
+        // A pure day-offset from the anchor, with no weekday to land on.
+        if (obs.weekday === null || obs.weekday === undefined) {
+            const t = new Date(anchor.getFullYear(), anchor.getMonth(),
+                               anchor.getDate() + (obs.offsetDays || 0));
+            return t.getFullYear() === date.getFullYear()
+                && t.getMonth() === date.getMonth()
+                && t.getDate() === date.getDate();
+        }
+        // n > 0: the Nth occurrence of the weekday on or after
+        //        anchor + offsetDays (counting forward).
+        // n < 0: the |n|th occurrence STRICTLY BEFORE the anchor
+        //        (counting backward). Needed for commemorations kept on
+        //        the Friday BEFORE the Epiphany, which cannot be
+        //        expressed by counting forward from an offset without
+        //        the count spilling past the feast in some years.
+        const n = obs.n || 1;
+        let d = new Date(anchor.getFullYear(), anchor.getMonth(),
+                         anchor.getDate() + (n < 0 ? 0 : (obs.offsetDays || 0)));
+        if (n < 0) {
+            do { d.setDate(d.getDate() - 1); } while (d.getDay() !== obs.weekday);
+            d.setDate(d.getDate() - 7 * (Math.abs(n) - 1));
+        } else {
+            while (d.getDay() !== obs.weekday) d.setDate(d.getDate() + 1);
+            d.setDate(d.getDate() + 7 * (n - 1));
+        }
+        return d.getFullYear() === date.getFullYear()
+            && d.getMonth() === date.getMonth()
+            && d.getDate() === date.getDate();
+    }
+
     function occursOn(entry, date, opts) {
         if (!entry || !(date instanceof Date)) return false;
         const obs = observanceFor(entry, opts && opts.tradition);
@@ -157,9 +224,67 @@
         // The Epiphany itself is read from the calendar engine so that it
         // follows the church body's fixed-feast reckoning rather than being
         // hardcoded to a Gregorian date.
+        //
+        // ANCHOR 'orthodoxEaster' ADDED 2026-09-07, deliberately NOT folded
+        // into the existing 'easter' anchor above. This resolver's own
+        // default for COE's 'easter' anchor is easterMode: 'gregorian' (i.e.
+        // WESTERN Easter -- see _eastSyriacOptions above), not the Julian/
+        // Orthodox Paschalion. Reusing the 'easter' name for a Byzantine/
+        // Coptic moveable date would have meant that on any page loading
+        // BOTH engines (index.html loads both calendar-east-syriac.js and
+        // byzantine-paschalion.js), a silent Paschalion substitution could
+        // occur in one direction or the other depending on load order --
+        // wrong for COE's Mar Addai/Mar Papa if this code preferred
+        // ByzantinePaschalion, or wrong for EOR/OOR's own moveable dates if
+        // it preferred the COE engine's Gregorian-mode default. A distinct
+        // anchor name removes the ambiguity entirely: 'easter' keeps
+        // meaning exactly what it always has (COE's configured Paschalion,
+        // untouched code path below), and 'orthodoxEaster' always means the
+        // Julian/Alexandrian Paschalion that Byzantine and Coptic tradition
+        // actually use, regardless of what else happens to be loaded.
+        // Needed for Great Lent's start (OOR, Pascha - 55 days).
+        if (obs.type === 'relative' && (obs.anchor === 'orthodoxEaster')) {
+            let anchor = null;
+            const paschalion = global.ByzantinePaschalion || global.EasternOrthodoxCalendar;
+            if (paschalion) {
+                if (typeof paschalion.getOrthodoxPascha === 'function') {
+                    anchor = paschalion.getOrthodoxPascha(date.getFullYear());
+                } else if (typeof paschalion.computeOrthodoxPascha === 'function') {
+                    anchor = paschalion.computeOrthodoxPascha(date.getFullYear());
+                }
+            }
+            if (!anchor) {
+                // Explicitly request Julian mode here -- NOT this module's
+                // default -- since the whole point of this anchor is the
+                // Julian/Orthodox Paschalion regardless of _eastSyriacOptions.
+                const cal = global.EastSyriacCalendar;
+                if (cal && typeof cal.getSeason === 'function') {
+                    try {
+                        anchor = cal.getSeason(date, { easterMode: 'julian' }).easter;
+                    } catch (err) { /* fall through to legacy below */ }
+                }
+            }
+            if (!anchor) return saintOccursOnDate(entry.dayLegacy || entry.day, date);
+            return _resolveRelativeAgainstAnchor(entry, obs, date, anchor);
+        }
+
         if (obs.type === 'relative') {
-            if (obs.weekday !== null && obs.weekday !== undefined
-                && date.getDay() !== obs.weekday) return false;
+            const anchorName = obs.anchor || 'epiphany';
+            let anchor = null;
+
+            if (anchorName === 'christmas') {
+                // Fixed civil date (Dec 25 of the same Gregorian year) --
+                // ADDED 2026-09-07, no calendar engine needed at all. Needed
+                // for the "Sunday after Nativity" feast of Joseph the
+                // Betrothed, David and James (EOR) -- anchored to a fixed
+                // civil date, not a movable feast, so no Paschalion of any
+                // kind applies here.
+                anchor = new Date(date.getFullYear(), 11, 25);
+                return _resolveRelativeAgainstAnchor(entry, obs, date, anchor);
+            }
+
+            // 'easter' / 'epiphany' (default) -- UNCHANGED Church of the East
+            // path, byte-for-byte as before this session's additions.
             const cal = global.EastSyriacCalendar;
             if (!cal || typeof cal.getSeason !== 'function') {
                 return saintOccursOnDate(entry.dayLegacy || entry.day, date);
@@ -167,48 +292,34 @@
             try {
                 const o = (opts && opts.eastSyriacOptions) || _eastSyriacOptions;
                 const season = cal.getSeason(date, o);
-                // ANCHOR MADE EXPLICIT 2026-09-06. This was hard-wired to
-                // epiphanyGreg, which silently limited the rule to one anchor.
-                // Church of the East commemorations are anchored to the
-                // Resurrection at least as often -- the Diocese of California
-                // calendars for 2021, 2024 and 2026 place Mar Addai a fixed 28
-                // days after Easter and Mar Papa a fixed 152 days after it, on
-                // dates that move up to five days between years. Rules written
-                // before this change carry no `anchor` and default to Epiphany,
-                // so their behaviour is unchanged.
-                const anchorName = obs.anchor || 'epiphany';
-                const anchor = anchorName === 'easter' ? season.easter : season.epiphanyGreg;
-                if (!anchor) return false;
-                // A pure day-offset from the anchor, with no weekday to land on.
-                if (obs.weekday === null || obs.weekday === undefined) {
-                    const t = new Date(anchor.getFullYear(), anchor.getMonth(),
-                                       anchor.getDate() + (obs.offsetDays || 0));
-                    return t.getFullYear() === date.getFullYear()
-                        && t.getMonth() === date.getMonth()
-                        && t.getDate() === date.getDate();
-                }
-                // n > 0: the Nth occurrence of the weekday on or after
-                //        anchor + offsetDays (counting forward).
-                // n < 0: the |n|th occurrence STRICTLY BEFORE the anchor
-                //        (counting backward). Needed for commemorations kept on
-                //        the Friday BEFORE the Epiphany, which cannot be
-                //        expressed by counting forward from an offset without
-                //        the count spilling past the feast in some years.
-                const n = obs.n || 1;
-                let d = new Date(anchor.getFullYear(), anchor.getMonth(),
-                                 anchor.getDate() + (n < 0 ? 0 : (obs.offsetDays || 0)));
-                if (n < 0) {
-                    do { d.setDate(d.getDate() - 1); } while (d.getDay() !== obs.weekday);
-                    d.setDate(d.getDate() - 7 * (Math.abs(n) - 1));
-                } else {
-                    while (d.getDay() !== obs.weekday) d.setDate(d.getDate() + 1);
-                    d.setDate(d.getDate() + 7 * (n - 1));
-                }
-                return d.getFullYear() === date.getFullYear()
-                    && d.getMonth() === date.getMonth()
-                    && d.getDate() === date.getDate();
+                anchor = anchorName === 'easter' ? season.easter : season.epiphanyGreg;
             } catch (err) {
                 console.error('[SaintsResolver] relative resolution failed for', entry.id, err);
+                return false;
+            }
+            if (!anchor) return false;
+            return _resolveRelativeAgainstAnchor(entry, obs, date, anchor);
+        }
+
+        // "monthlyCoptic": a fixed day-of-month IN THE COPTIC CALENDAR,
+        // recurring every Coptic month. ADDED 2026-09-07. Needed for the
+        // Coptic Synaxis of Archangel Michael, kept the 12th of EVERY Coptic
+        // month (confirmed across all twelve, coptic.io) -- a genuinely
+        // recurring commemoration, not a single annual date, which none of
+        // fixed/ordinal/relative/cycle can represent. Uses the same
+        // Alexandrian calendar engine already shared with the Ethiopian
+        // Sa'atat cycle (js/calendar-ethiopian.js), since Coptic and Ethiopian
+        // dates share one calendar structure.
+        if (obs.type === 'monthlyCoptic') {
+            const cal = global.EthiopianCalendar;
+            if (!cal || typeof cal.getCopticDate !== 'function') {
+                return saintOccursOnDate(entry.dayLegacy || entry.day, date);
+            }
+            try {
+                const c = cal.getCopticDate(date);
+                return c.day === obs.day;
+            } catch (err) {
+                console.error('[SaintsResolver] monthlyCoptic resolution failed for', entry.id, err);
                 return false;
             }
         }
