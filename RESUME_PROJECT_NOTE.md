@@ -10,12 +10,44 @@ long, now largely-resolved narrative about the sanctoral confirmation effort —
 passes it described in progress are now essentially complete (see §7). The whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07:** `SEED_VERSION v260-2026-09-07-eor-oor-gap-sweep-jan-mar`. Check this
-against `audit-ledger.html`'s own `SEED_VERSION` const, not against this note's memory of itself —
-this header is not self-updating and has gone stale before. Cache-bust params currently
-`office-ui.js?v=221`, `explanations.js?v=220`, `prayers.js?v=221`, `saints-resolver.js?v=248`. The
-HEAD hash is deliberately not recorded here; it goes stale within a session — run
-`git log --oneline -1` against a fresh clone instead.
+**State as of 2026-09-07, end of session (Claude Sonnet account):** `SEED_VERSION` was last set by
+this account to `v260-2026-09-07-eor-oor-gap-sweep-jan-mar`, but **the repo has already moved past
+that by the time this note is being written** — `git log` shows two more commits
+(`dbede86 Add Joshua the Prophet to July 3 kalendar`, `d66c7a2 Clean Crosby and Thomas review
+metadata`) made by Josh's OTHER Claude account, working the Anglican Kalendar side via
+`synaxarium-review/` in parallel. **Josh runs (at least) two Claude accounts against this same repo
+concurrently.** Never trust this note's SEED_VERSION, HEAD, or "what's open" section at face value —
+always `git clone` fresh and check `audit-ledger.html`'s own `SEED_VERSION` const and `git log`
+before doing anything else, every single session, no exceptions. This note may already be stale by
+the time you read it, possibly by more than the two commits above.
+
+Cache-bust params as of this account's own last commit: `office-ui.js?v=221`,
+`explanations.js?v=220`, `prayers.js?v=221`, `saints-resolver.js?v=248` — re-check these too.
+
+---
+
+## 0. Immediate next task, requested by Josh at end of session
+
+**Check the entire coptic.io saint registry directly (not the Wikipedia-proxy method used for the
+EOR gap sweep in §7) and import whatever major figures are genuinely missing from OOR.** Josh's own
+words: "We will be done with it once you check the entire registry and do any other imports that are
+needed" — meaning this is understood as the task that closes out the OOR side of the gap-sweep work
+described in §7, once done properly against the live source rather than a proxy.
+
+**Blocker as of end of session: the coptic.io MCP connector was not responding.** `coptic_mcp_server.py`
+(repo root) is per-session infrastructure Josh must start each session (confirmed by him directly,
+2026-09-07) — running `python coptic_mcp_server.py` produced `[Errno 98] address already in use` on
+port 8000, meaning SOME process was already bound there, but the MCP tool still returned "not
+available in this turn" immediately after. This was never resolved before the session ended — the
+likely next step is checking whether the Codespace's port-8000 forwarding is actually set to
+**Public** (not just bound locally), since a locally-bound-but-not-forwarded port would produce
+exactly this symptom (server up, tool still unreachable). Ask Josh to check the Ports tab before
+assuming the server itself is broken.
+
+If the connector still won't come up, fall back to the same method already used for EOR: Wikipedia's
+per-Coptic-day pages (e.g. `Thout 18`, `Paremhat 21`, sourced from copticchurch.net/st-takla.org) —
+see §7's "New, actively in-progress" section for the batched-search methodology, which transfers
+directly (same approach, different page-naming convention).
 
 ---
 
@@ -82,6 +114,11 @@ Josh to repeat it.
   This bit once, 2026-09-07: `git add -A` swept in an unrelated batch of untracked files sitting in
   the working directory (the live `coptic_mcp_server.py` connector and its data) into a commit that
   was only supposed to touch the sanctoral JSON. No data was lost, but always name the exact path(s).
+- **Patch filenames with a period in them (e.g. containing "coptic.io") have caused "No such file or
+  directory" errors on Josh's end** when applying — likely a download/transfer quirk, not something
+  wrong with the patch itself. If a `git apply` fails with a missing-file error right after a patch
+  was surfaced, have Josh run `ls *.patch` first to see the actual filename before assuming the patch
+  wasn't delivered; re-surfacing under a short, period-free filename resolved it once already.
 - **Never use `json.dump()` on a huge file without version-controlled review** — prefer targeted
   edits. **Validate JSON before writing**, not after.
 - **When scripting a bulk edit against `data/saints/sanctoral.json`, key on `(id, month, day)`, never
