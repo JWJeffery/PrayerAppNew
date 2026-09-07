@@ -12980,3 +12980,40 @@ No OOR confirmation work done yet with this tool -- Josh asked to hold that for 
 This entry exists so the tool itself isn't lost between now and then.
 
 SEED_VERSION v254 -> v255-2026-09-07-coptic-mcp-added.
+
+## Session 2026-09-07 (cont'd 4) -- third EOR pass via Orthocal MCP: 22 more confirmed
+
+Continued the untouched-92 sweep from the prior pass. **22 more rows confirmed**: Prophet Habakkuk,
+Barbara of Nicomedia, Great Martyr Anastasia, Synaxis of the Theotokos, Martyr Anysia, Melania the
+Younger, Alypius the Stylite, Gregory of Decapolis, Philaret of Moscow, Nectarios of Aegina,
+Archangels Michael and Gabriel, Acindynus/Pegasius/Aphthonius/Elpidophorus/Anempodistus, Apostles
+Stachys and companions, Demetrius the Myrrh-streamer, Hilarion the Great, James son of Alphaeus,
+Nazarius/Gervasius/Protasius/Celsus, Trophimus/Sabbatius/Dorymedon, Hieromartyr Phocas of Sinope,
+the Founding of the Church of the Holy Sepulchre, Hieromartyr Eutychius (confirmed via a day lookup
+already on record from an earlier session's Bartholomew check -- same date, different row), the
+Translation of the Relics of St Theodore the Commander.
+
+**One near-miss caught before it reached the data**: Saint Innocent of Alaska looked confirmable at
+its stored date (Mar 19) from an earlier search result that returned Mar 31 and Oct 6 -- neither of
+which is Mar 19. The auto-apply script's unique-match check caught this because a *second*,
+already-confirmed "Saint Innocent of Alaska" row exists at Mar 30 (COE-sourced, from earlier work) --
+the script correctly declined to write a confirmation to the wrong row rather than silently
+overwriting or misattributing. Left unedited; this is a mismatch, not a confirmation, and needs the
+same governance-call treatment as the others.
+
+New mismatches found, added to the flagged list (not yet resolved): Sylvester I (stored Dec 31, real
+Jan 2), Catherine of Alexandria (stored Nov 25, real Nov 24 -- one day off), Marinus the Martyr
+(stored Oct 18, real Jul 6 or Aug 7), Saint Innocent of Alaska (per above). St. Pachomius of Patmos
+(May 21) has a plausible but unconfirmed match -- a "Holy New Martyr Pachomius (1730)" also
+commemorated May 21, buried on Patmos at the Church of St John the Theologian per the same source --
+likely the same person, but the title doesn't match closely enough to write as CONFIRMED without
+closer verification. The other four May 21 rows (Polyeuctus/Victorinus/Donatus, Agapitus of
+Markushev, Cassian the Greek, Vladimir Icon) found no match on that date at all -- Orthodox May 21 is
+Ascension and Sts. Constantine & Helen, nothing resembling these four.
+
+**No tag withdrawals this pass** -- done under real time pressure (promo credits expiring), so
+treat every "no match found" in this pass as provisional, not exhausted. Re-verify before writing
+any tagNote withdrawal based on this pass alone.
+
+**EOR confirmed: 205 -> 314 across today's sessions. 89 rows remain.**
+SEED_VERSION v255 -> v256-2026-09-07-eor-third-pass.

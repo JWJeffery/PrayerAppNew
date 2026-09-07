@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-07:** `SEED_VERSION v255-2026-09-07-coptic-mcp-added`, East Syriac corpus
+**State as of 2026-09-07:** `SEED_VERSION v256-2026-09-07-eor-third-pass`, East Syriac corpus
 448 components / 57 sequences, explanations harness 67 checks passing. **This header itself went stale
 for three days** — it still read v236/2026-09-05 after the 09-06 COE-diocese-scoping and 09-07
 Anglican-completion commits, even though the lower sections (§7/§8, the sanctoral table) were kept
@@ -183,7 +183,7 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 |---|---|---|
 | ANG | 297 | **0 — complete** |
 | COE | 87 | **0 — complete** |
-| EOR | 292 | 111 |
+| EOR | 314 | 89 |
 | LAT | 134 | 269 |
 | OOR | 128 | 240 |
 
@@ -278,13 +278,21 @@ check hasn't caught these, or duplicate ids are being tolerated for genuinely-di
 share a slug. Not investigated further this session; flagging so it isn't lost. A str_replace-based
 patch script needs `(id, month, day)` as the real key here, not `id` alone, until this is resolved.
 
-Confirmed total after this session: **292**, up from 205 at the start of the day. **111 EOR rows
-remain** — 19 flagged above needing your governance call, plus a further ~20 mismatches found in a
-second pass through the untouched rows (Pachomius the Great stored May 9 vs real May 15, Vladimir
-Icon stored May 21 vs only found at Jun 23, Macarius the Roman stored Aug 15 vs real Oct 23, and
-others — not yet written up in full, check conversation history for this session if picking this back
-up), and the rest genuinely untouched. The MCP connector makes the remainder tractable in the same
-session-by-session way the rest of this project works.
+Confirmed total after several sessions today: **314**, up from 205 at the start of the day. **89 EOR
+rows remain.** New mismatches found in the third pass, not yet in the list above, needing the same
+kind of governance call: Sylvester I (stored Dec 31, real date is Jan 2), Catherine of Alexandria
+(stored Nov 25, real Nov 24 -- one day off), Marinus the Martyr (stored Oct 18, real Jul 6 or Aug 7),
+Saint Innocent of Alaska (stored Mar 19 on the not-yet-confirmed row specifically, real Mar 31 or
+Oct 6 -- note a second "Saint Innocent of Alaska" row at Mar 30 already carries a ruleSource from
+earlier COE work; check before assuming these are the same claim). St. Pachomius of Patmos (May 21)
+has a plausible but unconfirmed match: a "Holy New Martyr Pachomius (1730)" also appears on May 21,
+described as buried on Patmos in the Church of St John the Theologian -- same person, most likely,
+but the name/title doesn't match cleanly enough to write as CONFIRMED without a closer look. The
+other four May 21 rows (Polyeuctus/Victorinus/Donatus, Agapitus of Markushev, Cassian the Greek,
+Vladimir Icon) found no match on that date at all -- May 21 in this Orthodox calendar is Ascension
+and Sts. Constantine & Helen, nothing resembling these four. No tag withdrawals done this pass
+(lower confidence than the first session's withdrawals — this was a faster sweep under real time
+pressure, so treat "no match found" here as provisional, not exhausted, until re-checked).
 
 **Church of the East dates are DIOCESAN, not universal.** The Diocese of California and the Diocese
 of Australia and New Zealand keep the same 2026 differently: fixed feasts are 13 days apart (Julian
