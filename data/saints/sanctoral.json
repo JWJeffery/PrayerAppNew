@@ -15853,7 +15853,8 @@
             "day": 1
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-07 against coptic.io: \"The Commemoration of the Virgin St. Mary, the Theotokos\" falls on this date (21 Tout), matching the stored day exactly."
     },
     {
       "id": "saint-th-r-se-of-lisieux",
@@ -15923,16 +15924,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 2",
+      "dayLegacy": "October 1",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 10,
-            "day": 2
+            "day": 1
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Cyprian (Cyprianus) and St. Justina\" falls Oct 1 (21 Tout) -- the same date as the Theotokos commemoration above. OOR is this row's only tag."
     },
     {
       "id": "saints-cyprian-and-justina",
@@ -15999,8 +16001,7 @@
       "description": "Bishop and martyr.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "October 3",
       "observance": {
@@ -16012,7 +16013,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Hieromartyr Dionysius the Areopagite, Bishop of Athens, & those with him”. Confirmed by 5 of the six editions (2021, 2022, 2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Hieromartyr Dionysius the Areopagite, Bishop of Athens, & those with him”. Confirmed by 5 of the six editions (2021, 2022, 2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-francis-of-assisi",
@@ -16043,16 +16045,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 4",
+      "dayLegacy": "April 29",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 10,
-            "day": 4
+            "month": 4,
+            "day": 29
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Hierotheos, of Athens\" falls Apr 29 (21 Baramouda). OOR is this row's only tag."
     },
     {
       "id": "saint-hierotheos-of-athens",
@@ -16093,25 +16096,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Martyr Charitina of Amisus”. Confirmed by 2 of the six editions (2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "saint-charitina",
-      "name": "Saint Charitina",
-      "description": "Virgin martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 5",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 5
-          }
-        ]
-      }
     },
     {
       "id": "saint-faustina-kowalska",
@@ -16260,16 +16244,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 7",
+      "dayLegacy": "November 28",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 10,
-            "day": 7
+            "month": 11,
+            "day": 28
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Consecration of the Church of St. Sergius and St. Bacchus\" falls Nov 28 (19 Hator). OOR is this row's only tag."
     },
     {
       "id": "saint-pelagia",
@@ -16279,16 +16264,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 8",
+      "dayLegacy": "October 21",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 10,
-            "day": 8
+            "day": 21
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Pelagia\" falls Oct 21 (11 Baba). OOR is this row's only tag."
     },
     {
       "id": "saint-tha-s",
@@ -16370,25 +16356,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Robert Grosseteste, Bishop, 1253”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
-      "id": "saint-james-son-of-alphaeus",
-      "name": "Saint James son of Alphaeus",
-      "description": "Apostle.",
-      "type": "apostle",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 9",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 9
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-john-leonardi",
       "name": "Saint John Leonardi",
       "description": "Founder of the Clerks Regular of the Mother of God.",
@@ -16446,25 +16413,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-10 rank 2), which places “Paulinus of York” on this day on the witness of: FAS; AM (tier: Provincial Anglican / Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
-    },
-    {
-      "id": "saint-eulampia",
-      "name": "Saint Eulampia",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 10",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 10
-          }
-        ]
-      }
     },
     {
       "id": "saint-francis-borgia",
@@ -16545,25 +16493,6 @@
       }
     },
     {
-      "id": "saint-philip-the-deacon",
-      "name": "Saint Philip the Deacon",
-      "description": "One of the Seven.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 11",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 11
-          }
-        ]
-      }
-    },
-    {
       "id": "martyrs-probus-tarachus-and-andronicus",
       "name": "Martyrs Probus, Tarachus, and Andronicus",
       "description": "Martyrs at Anazarbus.",
@@ -16582,25 +16511,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Martyrs Probus, Tarachus, & Andronicus, at Tarsus in Cilicia”. Confirmed by 2 of the six editions (2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "saint-cosmas-of-maiuma",
-      "name": "Saint Cosmas of Maiuma",
-      "description": "Hymnographer.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 12",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 12
-          }
-        ]
-      }
     },
     {
       "id": "saint-seraphin-of-montegranaro",
@@ -16670,16 +16580,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 13",
+      "dayLegacy": "October 26",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 10,
-            "day": 13
+            "day": 26
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Commemoration of the Sts. Carpus, Apollos (Papylus) and Peter\" falls Oct 26 (16 Baba). OOR is this row's only tag."
     },
     {
       "id": "martyrs-nazarius-gervasius-protasius-and-celsus",
@@ -16721,25 +16632,6 @@
       }
     },
     {
-      "id": "saint-nazarius",
-      "name": "Saint Nazarius",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 14",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 14
-          }
-        ]
-      }
-    },
-    {
       "id": "samuel-schereschewsky",
       "name": "Samuel Schereschewsky",
       "description": "Bishop of Shanghai, 1906.",
@@ -16758,25 +16650,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Samuel Isaac Joseph Schereschewsky, Bishop and Missionary, 1906”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
-      "id": "saint-euthymius",
-      "name": "Saint Euthymius",
-      "description": "Hermit (shared commemoration).",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 15",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 15
-          }
-        ]
-      }
     },
     {
       "id": "saint-teresa-of-jesus",
@@ -16913,7 +16786,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: coptic.io returns FOUR distinct 'Longinus' figures (the Soldier, an Abbot of El-Zugag Monastery, one martyred with Paul and Deenah, plus the Soldier's separate 'Appearance of the Head' occasion), none dated Oct 16, and this row's plain title gives no way to tell which is meant. Left unconfirmed rather than guess."
     },
     {
       "id": "prophet-hosea",
@@ -16924,17 +16798,17 @@
         "EOR",
         "OOR"
       ],
-      "dayLegacy": "October 17",
+      "dayLegacy": "March 5",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 10,
-            "day": 17
+            "month": 3,
+            "day": 5
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Fathers of the 7th Ecumenical Council Prophet Hosea”. Confirmed by 2 of the six editions (2021, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Hosea, the Prophet\" falls Mar 5 (26 Amshir). OOR is this row's only tag."
     },
     {
       "id": "saint-ignatius-of-antioch",
@@ -17050,17 +16924,17 @@
         "EOR",
         "OOR"
       ],
-      "dayLegacy": "October 19",
+      "dayLegacy": "October 31",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 10,
-            "day": 19
+            "day": 31
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Prophet Joel”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of Joel the Prophet\" falls Oct 31 (21 Baba). OOR is this row's only tag."
     },
     {
       "id": "saint-isaac-jogues-and-companions",
@@ -17122,25 +16996,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Antioch”. Confirmed by 5 of the six editions (2021, 2022, 2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "saint-artemius",
-      "name": "Saint Artemius",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 20",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 20
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-paul-of-the-cross",
       "name": "Saint Paul of the Cross",
       "description": "Founder of the Passionists.",
@@ -17166,8 +17021,7 @@
       "description": "Hermit.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "October 21",
       "observance": {
@@ -17178,7 +17032,8 @@
             "day": 21
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "ursula-and-companions",
@@ -17259,25 +17114,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “St. Demetrius St. Abercius the Bishop of Hieropolis, Equal-to- the-Apostles”. Confirmed by 2 of the six editions (2022, 2023). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
-    },
-    {
-      "id": "saint-abercius",
-      "name": "Saint Abercius",
-      "description": "Bishop.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 22",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 22
-          }
-        ]
-      }
     },
     {
       "id": "saint-john-paul-ii",
@@ -17401,25 +17237,6 @@
       }
     },
     {
-      "id": "saint-arethas",
-      "name": "Saint Arethas",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 24",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 24
-          }
-        ]
-      }
-    },
-    {
       "id": "crispin-and-crispinian",
       "name": "Crispin and Crispinian",
       "description": "Martyrs at Rome, c.287.",
@@ -17507,16 +17324,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 25",
+      "dayLegacy": "November 7",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 10,
-            "day": 25
+            "month": 11,
+            "day": 7
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"Martyrdom of the Sts. Marcian (Marcianus) and Mercurius\" falls Nov 7 (28 Baba). OOR is this row's only tag."
     },
     {
       "id": "saints-crispin-and-crispinian",
@@ -17604,16 +17422,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "October 26",
+      "dayLegacy": "November 8",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 10,
-            "day": 26
+            "month": 11,
+            "day": 8
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Demetrius of Thessalonica\" falls Nov 8 (29 Baba). OOR is this row's only tag."
     },
     {
       "id": "martyr-nestor-of-thessalonica",
@@ -17677,44 +17496,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/october/kalendar-v0.1-october-candidates.csv, row 10-27 rank 2), which places “Frumentius” on this day on the witness of: Great Church reference candidate (tier: Great Church supplement). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
-      "id": "saint-nestor",
-      "name": "Saint Nestor",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 27",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 27
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-simon-the-apostle",
-      "name": "Saint Simon the Apostle",
-      "description": "Apostle and martyr.",
-      "type": "apostle",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 28",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 28
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-terence-and-eunice",
       "name": "Saint Terence and Eunice",
       "description": "Martyrs.",
@@ -17741,8 +17522,7 @@
       "type": "apostle",
       "tags": [
         "ANG",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "October 28",
       "observance": {
@@ -17755,7 +17535,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Simon and Saint Jude, Apostles”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: no Orthodox attestation found under any phrasing tried, in this or the prior session, near or at the stored date."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: no Orthodox attestation found under any phrasing tried, in this or the prior session, near or at the stored date. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "james-hannington",
@@ -17776,25 +17556,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “James Hannington, Bishop, and his Companions, Martyrs, 1885”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
-      "id": "saint-abramius",
-      "name": "Saint Abramius",
-      "description": "Recluse.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 29",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 29
-          }
-        ]
-      }
     },
     {
       "id": "saint-narcissus-of-jerusalem",
@@ -17875,25 +17636,6 @@
       }
     },
     {
-      "id": "saint-zenobius",
-      "name": "Saint Zenobius",
-      "description": "Martyr.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 30",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 30
-          }
-        ]
-      }
-    },
-    {
       "id": "apostles-stachys-apellos-amplias-urban-narcissus-and-aristobulus",
       "name": "Apostles Stachys, Apellos, Amplias, Urban, Narcissus, and Aristobulus",
       "description": "Of the Seventy.",
@@ -17912,25 +17654,6 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Apostles Stachys, Apelles, Amplias, Urban, Narcissus and Aristobolus” on this date."
-    },
-    {
-      "id": "saint-stachys",
-      "name": "Saint Stachys",
-      "description": "Apostle.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "October 31",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 31
-          }
-        ]
-      }
     },
     {
       "id": "saint-wolfgang-of-regensburg",
