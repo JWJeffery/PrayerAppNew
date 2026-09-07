@@ -3271,7 +3271,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "tagNote": "OOR NOTE 2026-09-07: this row is stored as a FIXED date (Feb 16), but the start of Great Lent is inherently moveable in every tradition, Coptic included -- it is computed from that year's Pascha, not a fixed month/day. The 'fixed' observance type on this row is itself a structural error, not a sourcing gap; needs an ordinal/cycle rule like the Joseph-the-Betrothed row, not a coptic.io lookup. Left uncorrected pending that engineering work."
     },
     {
       "id": "charles-todd-quintard",
@@ -3833,8 +3834,7 @@
       "description": "Patriarch and defender of icons, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "February 25",
       "observance": {
@@ -3846,7 +3846,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Tarasius, Archbishop of Constantinople”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Tarasius, Archbishop of Constantinople”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-porphyry-of-gaza",
@@ -3855,8 +3856,7 @@
       "type": "saint",
       "tags": [
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "February 26",
       "observance": {
@@ -3868,7 +3868,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Porphyrius, Bishop of Gaza”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “St. Porphyrius, Bishop of Gaza”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "george-herbert",
@@ -3898,16 +3899,17 @@
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "February 27",
+      "dayLegacy": "March 31",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 2,
-            "day": 27
+            "month": 3,
+            "day": 31
           }
         ]
-      }
+      },
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date (Feb 27) was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of St. Kyrellos (Cyril), Bishop of Jerusalem\" falls Mar 31 (22 Baramhat). OOR is this row's only tag."
     },
     {
       "id": "saint-gabriel-of-our-lady-of-sorrows",
@@ -4014,8 +4016,7 @@
       "description": "Bishop and patron of Wales (shared commemoration).",
       "type": "saint",
       "tags": [
-        "ANG",
-        "OOR"
+        "ANG"
       ],
       "dayLegacy": "March 1",
       "observance": {
@@ -4027,7 +4028,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “David of Wales, Bishop, c. 544”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “David of Wales, Bishop, c. 544”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "hieromartyr-theodotus-bishop-of-cyrenia",
@@ -4293,8 +4295,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 7",
       "observance": {
@@ -4318,7 +4319,8 @@
           ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Mar 7) is ANG/LAT's. CONFIRMED against orthocal.info: their joint Orthodox commemoration falls Feb 1."
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Mar 7) is ANG/LAT's. CONFIRMED against orthocal.info: their joint Orthodox commemoration falls Feb 1.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-john-of-god",
@@ -4419,7 +4421,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “40 Martyrs of Sebaste”. Confirmed by 2 of the six editions (2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “40 Martyrs of Sebaste”. Confirmed by 2 of the six editions (2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "OOR NOTE 2026-09-07: only a plausible partial match found in coptic.io -- a 'Consecration of the First Church Dedicated for the Forty Martyrs of Sebaste' on Feb 22 (15 Amshir), a church-dedication occasion, not their martyrdom day, and Feb 22 doesn't match the stored Mar 9 closely enough to confirm as the same occasion. Left unconfirmed rather than force a match."
     },
     {
       "id": "venerable-theophanes-the-confessor",
@@ -4537,8 +4540,7 @@
       "description": "Theologian and hymnographer, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "March 11",
       "observance": {
@@ -4550,7 +4552,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2023 edition prints on this day: “St. Sophronius, Patriarch of Jerusalem”. Confirmed by ONE edition only (2023); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2023 edition prints on this day: “St. Sophronius, Patriarch of Jerusalem”. Confirmed by ONE edition only (2023); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "gregory-the-great-gregory-the-dialogist",
@@ -4560,8 +4563,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 12",
       "observance": {
@@ -4573,7 +4575,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Gregory the Great, Bishop and Theologian, 604”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Gregory the Great (the Dialogist), Pope of Rome” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Gregory the Great, Bishop and Theologian, 604”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Gregory the Great (the Dialogist), Pope of Rome” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-gregory-the-great",
@@ -4641,8 +4644,7 @@
       "description": "Patriarch and confessor, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "March 13",
       "observance": {
@@ -4654,7 +4656,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “St. Nicephorus, Patriarch of Constantinople Begins (US, Canada)”. Confirmed by ONE edition only (2022); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “St. Nicephorus, Patriarch of Constantinople Begins (US, Canada)”. Confirmed by ONE edition only (2022); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-roderick",
@@ -4702,8 +4705,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 14",
       "observance": {
@@ -4727,7 +4729,8 @@
           ]
         }
       },
-      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “Benedict of Nursia, Monastic, c. 543” on July 11, against the shared March 14. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable."
+      "angDateNote": "ANGLICAN DATE SPLIT OUT 2026-09-05. This row carries several tradition tags but a single shared date, and LFF — which controls for the Episcopal Church — keeps this identity on a different day: “Benedict of Nursia, Monastic, c. 543” on July 11, against the shared March 14. Rather than force one date on every tradition or split the identity into duplicate rows, the row now carries a traditionObservance entry giving ANG its own LFF date while the other tags keep the shared one. The schema was extended for exactly this: it already allowed one row to serve several traditions but gave it only one date, which made a wrong Anglican date unavoidable.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "martyr-agapius-and-companions",
@@ -4898,8 +4901,7 @@
       "tags": [
         "ANG",
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 18",
       "observance": {
@@ -4911,7 +4913,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Cyril of Jerusalem, Bishop and Theologian, 386”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Cyril, Archbishop of Jerusalem” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Cyril of Jerusalem, Bishop and Theologian, 386”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Cyril, Archbishop of Jerusalem” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: OOR's correct Coptic date is Mar 31, already a separate now-confirmed OOR-only row, not this row's Mar 18 (ANG/EOR/LAT) date."
     },
     {
       "id": "martyrs-chrysanthus-and-daria",
@@ -5039,8 +5042,7 @@
       "description": "Confessor.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "March 21",
       "observance": {
@@ -5052,7 +5054,8 @@
           }
         ]
       },
-      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St James the Confessor, bishop of the Studion” on this date."
+      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St James the Confessor, bishop of the Studion” on this date.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "thomas-ken",
@@ -5080,8 +5083,7 @@
       "description": "Widow and ascetic.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 22",
       "observance": {
@@ -5092,7 +5094,8 @@
             "day": 22
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "gregory-the-illuminator",
@@ -5120,8 +5123,7 @@
       "description": "Archbishop of Lima.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 23",
       "observance": {
@@ -5132,7 +5134,8 @@
             "day": 23
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "venerable-nicon-metanoeite",
@@ -5200,8 +5203,7 @@
       "description": "Daughter of Saint Bridget.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 24",
       "observance": {
@@ -5212,7 +5214,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "annunciation-of-the-lord-annunciation-of-the-theotokos",
@@ -5235,7 +5238,19 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, reflecting OCA/ROCOR practice: https://orthocal.info/readings/gregorian/2025/3/25/ and .../2027/3/25/), which lists the Annunciation of the Theotokos as a fixed Great Feast on March 25 every year on the New (Gregorian) calendar. The prior LFF confirmation established this date for ANG only, not EOR — an Anglican witness does not attest an Eastern date, per this project's own governance rule."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, reflecting OCA/ROCOR practice: https://orthocal.info/readings/gregorian/2025/3/25/ and .../2027/3/25/), which lists the Annunciation of the Theotokos as a fixed Great Feast on March 25 every year on the New (Gregorian) calendar. The prior LFF confirmation established this date for ANG only, not EOR — an Anglican witness does not attest an Eastern date, per this project's own governance rule.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 4,
+              "day": 7
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Mar 25) is ANG/LAT/EOR's. CONFIRMED against coptic.io: \"The Commemoration of the Life giving Annunciation\" falls Apr 7 (29 Baramhat) in the Coptic calendar."
     },
     {
       "id": "saint-dismas",
@@ -5243,8 +5258,7 @@
       "description": "The Penitent Thief crucified alongside Christ (Luke 23:39–43).",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 25",
       "observance": {
@@ -5256,7 +5270,7 @@
           }
         ]
       },
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: The Penitent Thief; not found as a discrete fixed commemoration in orthocal.info under any phrasing tried."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: The Penitent Thief; not found as a discrete fixed commemoration in orthocal.info under any phrasing tried. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "harriet-monsell",
@@ -5296,7 +5310,19 @@
             "day": 26
           }
         ]
-      }
+      },
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 4,
+              "day": 8
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Mar 26) is LAT's, unconfirmed. CONFIRMED against coptic.io: \"The Commemoration of the Archangel Gabriel the Announcer\" falls Apr 8 (30 Baramhat) -- the day after the Annunciation, matching the Gospel connection."
     },
     {
       "id": "synaxis-of-the-archangel-gabriel",
@@ -5344,8 +5370,7 @@
       "description": "Bishop and missionary.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 27",
       "observance": {
@@ -5357,7 +5382,7 @@
           }
         ]
       },
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: Western (Bavarian) missionary bishop; no Orthodox attestation found under any phrasing tried."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: Western (Bavarian) missionary bishop; no Orthodox attestation found under any phrasing tried. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-hesychius-of-jerusalem",
@@ -5365,8 +5390,7 @@
       "description": "Priest and theologian.",
       "type": "saint",
       "tags": [
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 28",
       "observance": {
@@ -5378,7 +5402,7 @@
           }
         ]
       },
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: orthocal.info carries a Hesychius the Martyr (Mar 2) and Hesychios the Wonderworker (Mar 6), neither matching this identity or the stored date closely enough to confirm."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: orthocal.info carries a Hesychius the Martyr (Mar 2) and Hesychios the Wonderworker (Mar 6), neither matching this identity or the stored date closely enough to confirm. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "john-keble",
@@ -5447,9 +5471,19 @@
               "day": 19
             }
           ]
+        },
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 4,
+              "day": 3
+            }
+          ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. The shared stored date (March 29) was inherited/unconfirmed. CONFIRMED against orthocal.info (Slavic/OCA): \"Ven. Macarius the Great\" (of Egypt) falls on January 19. Given as EOR traditionObservance rather than moving the shared date, since this row's OOR tag has not yet been separately confirmed and a duplicate 'saint-macarius-the-egyptian' row also exists at the stored April 10 (see that row's own note) -- both need Josh's eye for whether they're the same identity duplicated."
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. The shared stored date (March 29) was inherited/unconfirmed. CONFIRMED against orthocal.info (Slavic/OCA): \"Ven. Macarius the Great\" (of Egypt) falls on January 19. Given as EOR traditionObservance rather than moving the shared date, since this row's OOR tag has not yet been separately confirmed and a duplicate 'saint-macarius-the-egyptian' row also exists at the stored April 10 (see that row's own note) -- both need Josh's eye for whether they're the same identity duplicated.",
+      "oorDateNote": "OOR date CONFIRMED via traditionObservance 2026-09-07: \"The Departure of St. Macarius the Great\" falls Apr 3 (25 Baramhat) in the Coptic calendar -- distinct from EOR's separately-corrected Jan 19."
     },
     {
       "id": "saint-innocent-of-alaska",
@@ -5478,8 +5512,7 @@
       "type": "saint",
       "tags": [
         "EOR",
-        "LAT",
-        "OOR"
+        "LAT"
       ],
       "dayLegacy": "March 30",
       "observance": {
@@ -5491,7 +5524,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Ven. John Climacus of Sinai”. Confirmed by ONE edition only (2024); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Ven. John Climacus of Sinai”. Confirmed by ONE edition only (2024); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-mary-of-egypt",
@@ -5539,8 +5573,7 @@
       "description": "Bishop and martyr, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
       "type": "saint",
       "tags": [
-        "EOR",
-        "OOR"
+        "EOR"
       ],
       "dayLegacy": "March 31",
       "observance": {
@@ -5552,7 +5585,8 @@
           }
         ]
       },
-      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Hieromartyr Hypatius, Bishop of Gangra” on this date."
+      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Hieromartyr Hypatius, Bishop of Gangra” on this date.",
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
       "id": "saint-hypatius-of-gangra",
