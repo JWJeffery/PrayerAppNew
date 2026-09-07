@@ -1,3 +1,55 @@
+## Session 2026-09-06 -- a second diocese shows the derived Church of the East rules are Californian,
+## not universal. SEED_VERSION v247 -> v248.
+
+Josh supplied **Christ the Good Shepherd, Wakeley NSW** -- the Assyrian Diocese of Australia and New
+Zealand, 2026. Same church, same year, different diocese, which makes it a **control** on the 28
+rules derived hours earlier from the Diocese of California.
+
+**It failed that control**, in two consistent and separately meaningful ways.
+
+### Fixed feasts sit thirteen days later
+
+| Commemoration | California | Wakeley |
+|---|---|---|
+| Epiphany | 6 January | **19 January** |
+| All Saints | 15 November | **28 November** |
+| Mar Jacob the Mutilated | 19 November | **2 December** |
+
+Thirteen days is the Julian reckoning. This is not a new problem for the project to solve:
+`js/calendar-east-syriac.js` already carries a `fixedFeastMode` option built for exactly this, so the
+finding **validates existing machinery** rather than demanding new.
+
+### Week-anchored commemorations sit one week later
+
+Mar Addai, Mar Mari, Mar Ezekiel of Daqoq, Prophet Elijah, and the Greek and Assyrian Doctors -- all
+**+7 days**. A different kind of difference from the +13, and not explicable by calendar reckoning.
+
+### Consequence: a correction to this session's own work
+
+The 28 derived rules were written as though they were the Church of the East's. **They are the
+Diocese of California's.** All 34 affected rows now carry that scope explicitly in their
+`ruleSource`, naming the Wakeley comparison and both offsets, so no future session mistakes a
+diocesan reckoning for a universal one.
+
+**Nothing was re-dated.** The rules still reproduce every Californian printed date they were derived
+from, and California remains the governing source for the COE tag.
+
+### What was not claimed
+
+An apparent **+11 day offset on Palm Sunday was discarded rather than reported**: 9 April 2026 is a
+Thursday. It is a parse artefact, and it fits neither the Gregorian computus (Palm Sunday 29 March)
+nor the Julian (5 April). Two clusters were reliable and the third was not, so only two are stated.
+
+Wakeley is registered as `ACOE_ANZ_2026` at a comparative tier, with an explicit instruction not to
+mix its dates with Californian ones inside a single derivation. The registry now holds 18 witnesses.
+
+### Verification
+
+`sanctoral.json` edited by targeted string replacement, never `json.dump`; entry count unchanged at
+1,172; every California-derived row confirmed to carry the scope note, none missed.
+
+---
+
 ## Session 2026-09-06 -- the 150 untagged rows were not unsourced, they were modelled in the wrong
 ## kind. 28 identities re-derived from the California calendars. SEED_VERSION v246 -> v247.
 

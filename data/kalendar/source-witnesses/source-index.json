@@ -90,6 +90,13 @@
     "authority_tier": "governing_source_church_of_the_east",
     "notes": "Assyrian Church of the East, Diocese of California \u2014 printed ecclesiastical calendars. 2024 and 2026 in full (2024 full.pdf, 2026cal.pdf, 12 pages each, text layer present) plus the June, August, September and October 2021 pages as images (June21.jpg, Aug21.jpg, Sept21.jpg, oct21.jpg), read by OCR. Josh recovered these from the Internet Archive; they are the witness that carried the original 59 COE confirmations on 2026-09-03 and they now live in the repo rather than only in a past session. GOVERNING CALENDAR FOR THE COE TAG. Note that these calendars print MOVEABLE commemorations: a saint can shift five days between years, so a date read from one year is not a fixed date and must not be stored as one. Two years pin a candidate rule and a third tests it."
   },
+  "ACOE_ANZ_2026": {
+    "label": "Assyrian Church of the East, Diocese of Australia and New Zealand \u2014 Wakeley, Calendar 2026",
+    "path": "data/kalendar/source-witnesses/CGSC-CALENDAR-2026.pdf",
+    "kind": "church_of_the_east_diocesan_calendar",
+    "authority_tier": "comparative_witness_church_of_the_east",
+    "notes": "Assyrian Church of the East, Diocese of Australia and New Zealand \u2014 Christ the Good Shepherd Church, Wakeley NSW, ecclesiastical calendar 2026. 29 pages, text layer present, commemorations laid out in a grid with the day number leading each entry. SECOND DIOCESE FOR THE SAME YEAR, and its value is comparative: parsed against the Diocese of California 2026 it establishes that the two dioceses do NOT keep the same reckoning. Fixed feasts fall thirteen days later here (Epiphany 19 January, All Saints 28 November, Mar Jacob 2 December) \u2014 the Julian reckoning, which js/calendar-east-syriac.js already models through fixedFeastMode. Week-anchored commemorations fall one week later (Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah, the Greek and Assyrian Doctors). USE: to test whether a Church of the East rule is diocesan or universal. Do NOT mix its dates with Californian ones in a single derivation."
+  },
   "ETH": {
     "label": "Ethiopian Synaxarium",
     "path": "data/kalendar/source-witnesses/ethiopian-synaxarium.pdf",

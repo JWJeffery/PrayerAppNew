@@ -182,6 +182,12 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 | LAT | 134 | 269 |
 | OOR | 128 | 240 |
 
+**Church of the East dates are DIOCESAN, not universal.** The Diocese of California and the Diocese
+of Australia and New Zealand keep the same 2026 differently: fixed feasts are 13 days apart (Julian
+reckoning at Wakeley — what `fixedFeastMode` in `js/calendar-east-syriac.js` exists for) and
+week-anchored commemorations are 7 days apart. **California governs the COE tag**; Wakeley
+(`CGSC-CALENDAR-2026.pdf`) is a comparative witness only. Never mix the two inside one derivation.
+
 **A fixed date is a claim about the KIND of commemoration, not just its day.** The 150 untagged rows
 looked unsourceable for weeks because they stored fixed dates for MOVEABLE commemorations — the
 California calendars print Mar Abdisho across a four-week spread. Every matcher failed and the
