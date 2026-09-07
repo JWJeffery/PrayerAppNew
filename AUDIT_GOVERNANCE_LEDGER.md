@@ -12783,3 +12783,56 @@ follows today's weekday tune)," stating plainly what the automatic behavior actu
 
 **Verified:** all four items confirmed present in `index.html`, no duplicate ids introduced.
 `js/office-ui.js` unaffected, `node --check` still passes.
+
+## Session 2026-09-07 -- EOR sanctoral confirmation resumed; corrected an inflated count; orthocal.info authorized
+
+**Handoff account confirmed accurate and now current.** Josh confirmed Lucy's dismissal
+(2026-07-05, false certifications) is accurate and she remains uninvolved. Separately: the
+09-05-rewritten `RESUME_PROJECT_NOTE.md`'s opening "State as of" header had gone stale --
+still reading `SEED_VERSION v236`/2026-09-05 after three more days of real commits (09-06 COE
+diocese-scoping, 09-07 Anglican-tag completion), even though the note's lower sections (the
+sanctoral table, §7/§8) were kept current commit-by-commit the whole time. Root cause: nobody
+had reason to touch the header again once the note was rewritten -- it's not self-updating and
+nothing checks it against `audit-ledger.html`'s own `SEED_VERSION` const. Fixed.
+
+**EOR confirmation count was inflated by exactly the trap this project already named.** The table
+showed EOR at 266 confirmed / 146 remaining. Checked the underlying data directly
+(`data/saints/sanctoral.json`): 266 counted every EOR-tagged row carrying *any* `ruleSource`, but
+61 of those rows carry a `ruleSource` that only established the date via an Anglican witness (LFF,
+the Anglican Martyrology, or the Kalendar candidate matrix) -- none of which confirm an Orthodox
+observance. This is the identical "a row is not the same as a claim" issue the 2026-09-07
+Anglican-completion commit named explicitly for its own tag; it had not yet been applied to the EOR
+table. True OCA-sourced EOR confirmation was 205, not 266. Corrected count: **207 confirmed, 204
+remaining** (after this session's two additions below).
+
+**orthocal.info authorized as a working EOR source.** Josh's call, given as a standing decision
+("we will, at some point, expand into other Eastern Orthodox traditions, so this is truly a great
+find") rather than a one-off substitute. It mirrors OCA (Slavic tradition)/ROCOR practice with
+predictable per-date pages and a documented API; a Greek (Antiochian/GOA) option exists in beta for
+future expansion.
+
+**Two rows confirmed against it this session**, `ruleSource` extended (not replaced -- the existing
+LFF/ANG confirmation stays, since it doesn't establish EOR):
+- **Annunciation of the Lord (Annunciation of the Theotokos), March 25** -- confirmed via
+  orthocal.info's own indexed pages for 2025-03-25 and 2027-03-25 (this sandbox's `web_fetch` could
+  not reach the exact 2026 page directly; see below), which show it as a fixed Great Feast every
+  year on the New (Gregorian) calendar. Fixed feast, so the year checked doesn't matter.
+- **Martyrdom of Saint John the Baptist, August 29** -- confirmed directly against orthocal.info's
+  own Slavic/Gregorian page for 2026-08-29, fetched and read in full: commemorates the Beheading of
+  the Forerunner on this date, marked a strict fast day, consistent with universal Orthodox practice.
+
+**Found, the hard way: orthocal.info's arbitrary-date pages are not freely fetchable from this
+sandbox -- a tighter constraint than OCA's own site, which the note had already flagged as
+walkable-but-slow.** `web_fetch` here refuses any URL that isn't itself a literal prior
+search-result or fetch-result URL; a page's own "next/previous day" links appearing in its body
+text do NOT count as "seen," so day-to-day walking (the fallback the note assumed would work) is
+not available at all in this environment. `web_search` on a bare date mostly surfaces whatever the
+crawler indexed near today's real-world date, not the target date. Searching by the **saint or
+feast name** works far better and reliably surfaces the right page (or a corroborating Orthodox
+source for well-known fixed Great Feasts). Proposed to Josh, not yet actioned: a bulk pull of the
+year by Josh himself (browser or the site's own API, neither subject to this sandbox's restriction),
+pasted in -- the same fallback already used successfully for Grail1963 ch.80-150 (second AI agent),
+Tizaz, and Guba'ekana when a fetch tool hit a wall elsewhere on this project. Absent that, the
+remaining 204 rows are workable only one name-search at a time from in here -- budget accordingly.
+
+**SEED_VERSION v251 -> v252-2026-09-07-eor-orthocal-tranche-1.**

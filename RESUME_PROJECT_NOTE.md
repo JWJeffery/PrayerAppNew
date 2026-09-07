@@ -10,8 +10,13 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-05:** `SEED_VERSION v236`, East Syriac corpus 448 components / 57 sequences,
-explanations harness 67 checks passing. `SEED_VERSION` lives in **one place only** — a `const` near the
+**State as of 2026-09-07:** `SEED_VERSION v252-2026-09-07-eor-orthocal-tranche-1`, East Syriac corpus
+448 components / 57 sequences, explanations harness 67 checks passing. **This header itself went stale
+for three days** — it still read v236/2026-09-05 after the 09-06 COE-diocese-scoping and 09-07
+Anglican-completion commits, even though the lower sections (§7/§8, the sanctoral table) were kept
+current commit-by-commit the whole time. The header is not self-updating; check it against
+`audit-ledger.html`'s own `SEED_VERSION` const, not against this note's memory of itself.
+`SEED_VERSION` lives in **one place only** — a `const` near the
 bottom of `audit-ledger.html` (search the file for `const SEED_VERSION`). It is not a standalone file
 and not in `index.html`. The HEAD hash is deliberately not recorded here; it goes stale within a
 session. Run `git log --oneline -1` against a fresh clone instead. Cache-bust params are currently
@@ -178,9 +183,36 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 |---|---|---|
 | ANG | 297 | **0 — complete** |
 | COE | 87 | **0 — complete** |
-| EOR | 266 | 146 |
+| EOR | 207 | 204 |
 | LAT | 134 | 269 |
 | OOR | 128 | 240 |
+
+**The EOR figure above was corrected 2026-09-07 — read this before trusting any older count.** The
+table used to show EOR at 266/146, but that 266 counted every EOR-tagged row carrying *any*
+`ruleSource`, including 61 rows whose `ruleSource` only established the date via an Anglican witness
+(LFF, the Anglican Martyrology, or the Kalendar candidate matrix). An Anglican calendar does not
+confirm an Orthodox date — this is the same "row is not the same as a claim" trap the ANG-completion
+commit named explicitly, just not yet applied to this table. True OCA-confirmed EOR was **205** at
+the start of the day; two more (Annunciation, Martyrdom of St John the Baptist) were confirmed today
+against **orthocal.info**, a source Josh authorized 2026-09-07 as a working witness for EOR — it
+mirrors OCA (Slavic tradition)/ROCOR practice with predictable per-date pages and is intended to
+extend to other Eastern Orthodox traditions later, so treat it as a first-class source going forward,
+not a stopgap. The other 59 mis-attributed rows and the untouched 145 remain open; see below for why
+this will be slow.
+
+**Orthocal.info's arbitrary-date pages are NOT freely fetchable from this sandbox — worse than OCA's
+own site.** Confirmed 2026-09-07: `web_fetch` here refuses any URL that didn't come back as an actual
+search-result or fetch-result URL — this includes a page's own "next/previous day" links found in its
+body text, which do NOT count as "seen." `web_search` on a bare date (e.g. "2026 3 25") mostly
+surfaces whatever the crawler happened to index near *today's* real-world date, not the target date.
+Searching by the **saint or feast name** works much better and reliably surfaces the right orthocal.info
+page (or corroborating Orthodox sources — GOARCH, OrthodoxWiki — for very well-known fixed Great
+Feasts). **Practical path forward, proposed to Josh, not yet actioned:** have Josh pull the relevant
+orthocal.info page(s) — or the full year via its documented API at `orthocal.info/api/` — from his own
+browser, which isn't subject to this restriction, and paste the content in, the same fallback already
+used successfully for Grail1963 ch.80-150 (second AI agent), Tizaz, and Guba'ekana when a fetch tool
+hit a wall. Attempting this 204-row remainder one name-search at a time, from inside this sandbox, is
+possible but slow — budget it as a multi-session effort unless that bulk pull happens first.
 
 **Church of the East dates are DIOCESAN, not universal.** The Diocese of California and the Diocese
 of Australia and New Zealand keep the same 2026 differently: fixed feasts are 13 days apart (Julian
@@ -255,9 +287,19 @@ Oriental tradition; **the Ethiopian Synaxarium must not be used for OOR generall
 `Agent/OCA Sanctoral`. They read cleanly through the Drive connector and carry the whole year.
 January and February 2026 are done -- 45 rows confirmed. **The desk calendar is SELECTIVE**: one or
 two commemorations a day, not the full synaxis, so it confirms a date when it names an identity but
-its silence proves nothing. Use `oca.org/saints/lives` to adjudicate a single disputed day; it
-cannot do bulk. **Ask: put the six PDFs in `data/kalendar/source-witnesses/`** so they can be
-processed directly instead of one large Drive read at a time.
+its silence proves nothing. `oca.org/saints/lives` can adjudicate a single disputed day but not bulk.
+**Ask: put the six PDFs in `data/kalendar/source-witnesses/`** so they can be processed directly
+instead of one large Drive read at a time.
+
+**orthocal.info authorized 2026-09-07 as a working EOR source, Josh's call, meant to last.** It
+mirrors OCA (Slavic tradition)/ROCOR practice with clean per-date pages, a documented API, and per
+Josh: "we will, at some point, expand into other Eastern Orthodox traditions" via its Greek
+(Antiochian/GOA, beta) option — so this is not a one-off substitute, treat it as a first-class
+witness going forward. The catch, found the same day: its arbitrary-date pages aren't freely
+fetchable from inside this sandbox (see the corrected-EOR-count note above, by the confirmation
+table) — only name-based searches reliably land on the right page. A bulk pull of the full year
+by Josh himself (via the site's own `orthocal.info/api/` or by browsing) and pasting the result in
+would unblock this far faster than continuing to search name-by-name from in here.
 
 **OOR is still blocked on a file Josh holds and this repo does not:**
 `coptic-synaxarium.json.txt`. **Do not repeat the "366 days, 702 entries" figure** — it came from a

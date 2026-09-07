@@ -5253,7 +5253,7 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Annunciation of Our Lord Jesus Christ to the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, reflecting OCA/ROCOR practice: https://orthocal.info/readings/gregorian/2025/3/25/ and .../2027/3/25/), which lists the Annunciation of the Theotokos as a fixed Great Feast on March 25 every year on the New (Gregorian) calendar. The prior LFF confirmation established this date for ANG only, not EOR — an Anglican witness does not attest an Eastern date, per this project's own governance rule."
     },
     {
       "id": "saint-dismas",
@@ -14106,7 +14106,7 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Beheading of Saint John the Baptist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Beheading of Saint John the Baptist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 directly against orthocal.info's own Slavic/Gregorian page for 2026-08-29 (https://orthocal.info/readings/slavic/gregorian/2026/8/29/), fetched and read in full: it commemorates the Beheading of the Forerunner on this date and marks it a strict fast day, consistent with universal Orthodox practice. The prior LFF confirmation established this date for ANG only, not EOR."
     },
     {
       "id": "saint-john-the-baptist",
