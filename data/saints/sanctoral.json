@@ -4217,25 +4217,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “Ven. Gerasimus of the Jordan”. Confirmed by 3 of the six editions (2022, 2023, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "cuthbert",
-      "name": "Cuthbert",
-      "description": "Bishop of Lindisfarne, missionary, 687.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "March 5",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 3,
-            "day": 5
-          }
-        ]
-      }
-    },
-    {
       "id": "martyr-conon-of-isauria",
       "name": "Martyr Conon of Isauria",
       "description": "Martyr.",
@@ -6031,28 +6012,6 @@
           {
             "month": 4,
             "day": 11
-          }
-        ]
-      }
-    },
-    {
-      "id": "easter-sunday-the-resurrection-of-our-lord",
-      "name": "Easter Sunday (The Resurrection of Our Lord)",
-      "description": "The principal feast of the Christian year, venerated across all traditions.",
-      "type": "feast",
-      "tags": [
-        "ANG",
-        "LAT",
-        "EOR",
-        "OOR"
-      ],
-      "dayLegacy": "April 12",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 4,
-            "day": 12
           }
         ]
       }
@@ -10875,16 +10834,17 @@
       "tags": [
         "ANG"
       ],
-      "dayLegacy": "July 7",
+      "dayLegacy": "October 16",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 7,
-            "day": 7
+            "month": 10,
+            "day": 16
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-06 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (pp.6-18), which keeps on this day: “Hugh Latimer and Nicholas Ridley, Bishops and Martyrs, 1555, and Thomas Cranmer, Archbishop of Canterbury, 1556”. LFF is controlling in TEC. DATE CHANGED from July 7 to October 16 in this same edit: the July date was inherited from the old data and no Anglican witness in this repo uses it. NOT MERGED with the existing Hugh Latimer and Nicholas Ridley row on the same day, deliberately: LFF names three people in one commemoration and Cranmer is a distinct identity, so he takes his own row on the shared day — the same treatment already given to Vincent de Paul and Louise de Marillac, and to Richard Rolle and Margery Kempe. CORRECTION OF AN EARLIER READING: on 2026-09-05 this row was matched to LFF's 16 October and DISMISSED as matcher noise, on the assumption that a Cranmer/Latimer pairing had to be a false positive. It was not — LFF genuinely commemorates Cranmer with them. The dismissal was wrong and the match was right."
     },
     {
       "id": "great-martyr-procopius",

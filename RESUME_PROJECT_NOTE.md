@@ -155,7 +155,7 @@ never was a Maclean question.
   zero-Moses-year).
 
 ### The sanctoral confirmation debt -- the largest open item on the project
-1,170 entries; **575 carry a `ruleSource`**. **595 dates are still inherited and unconfirmed.**
+1,168 entries; **576 carry a `ruleSource`**. **592 dates are still inherited and unconfirmed.**
 
 **252 of the 309 rest on an Anglican witness.** 141 of those rows are ANG-only and are fully
 settled; the other 111 also carry EOR/LAT/OOR tags, and an Anglican calendar does **not** confirm
@@ -176,7 +176,7 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 
 | Tag | Confirmed | Remaining |
 |---|---|---|
-| ANG | 296 | 24 |
+| ANG | 297 | 21 |
 | COE | 87 | **0 — complete** |
 | EOR | 266 | 146 |
 | LAT | 134 | 269 |
@@ -196,6 +196,11 @@ before concluding there is no source.
 
 **Parsed so far:** LFF 2024, the Prayer Book calendar, the Kalendar v0.1 candidate matrices, the six
 OCA Desk Calendars, the Anglican Martyrology, the SEC master calendar.
+**The 21 remaining Anglican rows are exhausted against this repo.** Berard, Eutychius, Pancras,
+Junia, Magloire, Bean, Molly Brant, Anne Askew, Denys and the rest appear in none of LFF, the Prayer
+Book calendar, HWHM, the Anglican Martyrology, SEC or the Kalendar matrices. They need a witness the
+repo does not hold — do not re-run matchers over them expecting a different answer.
+
 **Holy Women Holy Men is parsed** — its calendar is pdf pages 19-32 only, 233 days.
 **Great Cloud of Witnesses and For All The Saints are PROSE, not calendars.** Running a calendar
 parser over them produces 31 September and matches everything to 1 December. If they are ever needed,

@@ -1,3 +1,54 @@
+## Session 2026-09-06 -- Cranmer restored to LFF's day; duplicate Cuthbert and the fixed-date Easter
+## Sunday row removed. SEED_VERSION v249 -> v250.
+
+Took the 24 remaining Anglican rows back to the controlling calendar. Two were actionable, and both
+turned on reading LFF properly rather than trusting an earlier judgement.
+
+### Thomas Cranmer -- a correction of my own dismissal
+
+On 2026-09-05 this row was matched to LFF's 16 October and **written off as matcher noise**, on the
+assumption that a Cranmer/Latimer pairing had to be a false positive.
+
+It was not. LFF 16 October reads:
+
+> Hugh Latimer and Nicholas Ridley, Bishops and Martyrs, 1555, and Thomas Cranmer, Archbishop of
+> Canterbury, 1556
+
+Three people in one commemoration. **The match was right and the dismissal was wrong.** Cranmer moves
+from 7 July -- a date no Anglican witness in this repo uses -- to **16 October**, confirmed. He is
+*not* merged into the existing Latimer and Ridley row: he is a distinct identity sharing a day, the
+same treatment already given to Vincent de Paul and Louise de Marillac, and to Richard Rolle and
+Margery Kempe.
+
+### Cuthbert -- a duplicate, not a dating problem
+
+The 5 March row is removed. The corpus already carries Saint Cuthbert of Lindisfarne at 20 March,
+which is LFF's day and already confirmed.
+
+### Easter Sunday removed
+
+The row sat at a **fixed 12 April**, tagged for all four traditions -- a date correct for one year and
+wrong for every other, **for the feast from which the entire moveable cycle is computed.** Same defect
+as the 20 temporal rows removed on 2026-09-05 and the Good Friday row removed with the Church of the
+East purge. Twenty-fourth instance found. Checked first that nothing in the codebase references its
+id.
+
+### The other 21 are at the end of what this repo can settle
+
+Berard, Eutychius, Pancras, Junia, Magloire, Bean, Molly Brant, Anne Askew, Denys and the rest appear
+in **none** of LFF, the Prayer Book calendar, Holy Women Holy Men, the Anglican Martyrology, the SEC
+calendar, or the Kalendar matrices. Not a parsing failure and not a matcher failure -- no Anglican
+witness held here carries them.
+
+Entries **1,170 -> 1,168**; ANG **296 -> 297** confirmed, 21 remaining.
+
+### Verification
+
+Through the resolver: Cranmer resolves 16 October for ANG; Latimer and Ridley still resolve on the
+same day; Cuthbert resolves 20 March; zero duplicate id/day pairs.
+
+---
+
 ## Session 2026-09-06 -- the Anglican remainder worked against Holy Women, Holy Men.
 ## SEED_VERSION v248 -> v249.
 
