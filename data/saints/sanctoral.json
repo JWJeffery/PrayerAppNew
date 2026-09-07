@@ -6465,9 +6465,9 @@
       "tagNote": "EOR TAG WITHDRAWN 2026-09-07 -- checked against orthocal.info's saint search: no match under this name in any form. Per this project's tag-withdrawal convention: exhausted, not merely unconfirmed, so the tag comes off rather than sitting open indefinitely. Restore if a witness naming this exact identity on this exact date is ever found. OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
     },
     {
-      "id": "saint-james-the-brother-of-the-lord",
-      "name": "Saint James the Brother of the Lord",
-      "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
+      "id": "saint-james-son-of-zebedee",
+      "name": "Holy Apostle James, Son of Zebedee",
+      "description": "One of the Twelve Apostles, brother of St. John the Theologian, martyred by Herod Agrippa I (Acts 12:2) -- distinct from James the Brother of the Lord (first Bishop of Jerusalem, correctly kept separately at Oct 23).",
       "type": "saint",
       "tags": [
         "EOR",
@@ -6484,7 +6484,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2026 edition prints on this day: “(Jacob), the brother of March 2026 May 2026 St. John the Theologian”. Confirmed by ONE edition only (2026); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried. IDENTITY CORRECTED 2026-09-07: this row's own ruleSource quotes the OCA Desk Calendar as printing the brother of St. John the Theologian -- that is James son of Zebedee, not James the Brother of the Lord (who was not John's brother and was not one of the Twelve). The date (Apr 30) and EOR/LAT tags are unaffected; only the identity's name/description/id were wrong, a duplicate-id artifact with the genuinely correct Oct 23 James-the-Brother-of-the-Lord row."
     },
     {
       "id": "jeremiah-the-prophet",

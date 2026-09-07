@@ -1,0 +1,3 @@
+OK      Translation:1_Meqabyan -- 41686 chars -> 1_meqabyan_wikitext.txt
+OK      Translation:2_Meqabyan -- 74432 chars -> 2_meqabyan_wikitext.txt
+OK      Translation:3_Meqabyan -- 40610 chars -> 3_meqabyan_wikitext.txt
