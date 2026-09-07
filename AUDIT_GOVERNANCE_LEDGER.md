@@ -13045,3 +13045,83 @@ differs).
 
 **EOR confirmed: 205 -> 316 across today's sessions. 87 rows remain.**
 SEED_VERSION v256 -> v257-2026-09-07-eor-fourth-pass.
+
+## Session 2026-09-07 (cont'd 6) -- fifth EOR pass: 87 -> 3 remaining; mismatches FIXED, not just flagged
+
+Josh's explicit direction this session: mismatches are to be corrected, not catalogued for a future
+governance call. Applied across the entire backlog, both newly-found and previously-flagged:
+
+**Direct date correction** (EOR-only tag, blank/absent `ruleSource`, so no other tradition's confirmed
+date was at risk): Theodosius of Chernigov (Feb 2 -> Feb 5), Bucolus of Smyrna (Feb 19 -> Feb 6),
+Macarius the Roman (Aug 15 -> Oct 23), Tiburtius (Apr 14 -> Nov 22), Innocent of Alaska/EOR-only-row
+(Mar 19 -> Oct 6, repose), Dometius of Persia (Aug 6 -> Aug 7 -- the prior session's discarded Aug 7
+hit was correct after all; the OLD stored date was simply wrong), St. Cassian the Greek (May 21 -> Oct 2).
+
+**`traditionObservance` used for shared-date rows** (this project's own 2026-09-05 schema extension,
+applied here for EOR specifically so ANG/LAT/OOR's dates on the same row are left untouched pending
+their own confirmation): Theophanes the Confessor (-> Mar 12), Macarius the Egyptian x2 duplicate rows
+(both -> Jan 19 -- flagged as probably-the-same-identity-duplicated, not merged), Phocas (-> Sept 22),
+Perpetua and Felicity (-> Feb 1), Irenaeus of Lyons (-> Aug 23), Joachim and Anne (-> Sept 9), Augustine
+of Hippo (-> Jun 15, with Monica), Elizabeth (-> Sept 6, with Zacharias), Leo the Great (-> Feb 18),
+Martin of Tours (-> Nov 12), Herman of Alaska (-> Dec 13, repose), Catherine of Alexandria (-> Nov 24),
+the Holy Innocents (-> Dec 29), John the Apostle (-> Sept 26, repose; May 8 disclosed as the alternate),
+Sylvester I (-> Jan 2; Dec 31 correctly left alone as the real WESTERN date, not touched).
+
+**Duplicate-id EOR cleanup**: five rows (Cyril and Methodius, Matthias, Cyril of Alexandria, Matthew
+the Apostle, Pachomius the Great) shared an id with a row that was *already* correctly EOR-confirmed
+under this project's own duplicate-id problem (58 collisions, logged 2026-09-07 earlier today). EOR
+withdrawn from the wrong-dated duplicate in each case, confirmed row left as sole EOR representation.
+Bartholomew similarly resolved: EOR withdrawn from the Aug 24 row (ANG/LAT date), since a separate
+Aug 25 "Return of the Relics" row already carries the correct EOR-confirmed date.
+
+**A live instance of the duplicate-id bug bit this session's own tooling.** A blind id-keyed
+confirmation write clobbered two unrelated rows sharing an id with ones being fixed (a second, OOR-only
+"saint-epiphanius-of-salamis" duplicate, and an ANG/LAT "saint-boniface" -- Boniface of Mainz, a
+different Boniface than the Dec 19 martyr). Caught by a full duplicate-id re-scan before trusting the
+batch; both rows restored to their pre-session state from a full-file backup taken at the start, then
+the confirmations re-applied correctly keyed on (id, month, day). No content was lost, but this is the
+same failure mode the project's `OPEN_ITEMS_FIXABILITY.md` and `saintAppliesToContext` cautions exist
+for, now demonstrated inside a script meant to prevent exactly this. **Any future tooling against this
+file must key on (id, month, day), never id alone, until the 58 collisions are resolved.**
+
+**EOR tag withdrawn** (multi-tag row kept for its other traditions, no Orthodox attestation found under
+any phrasing tried): Simon and Jude, Polyeuctus/Victorinus/Donatus.
+
+**EOR-only rows deleted** (no Orthodox attestation found, EOR was the row's only tag): Prophet Azariah,
+Basilides of Rome, Claudius Victor and Companions, Philosophos, Alexander of Jerusalem, Kyriaki of
+Nicomedia, Eumenius of Gortyna, Agapitus of Markushev, Vladimir Icon of the Mother of God. Firmus
+deleted separately as an unconfirmable match (only hit is a seven-martyr group on a different date,
+no detail in the row to confirm or rule out the same person).
+
+**EOR tag withdrawn from 11 further rows** (recent/Western Catholic saints -- de la Salle, Waldetrudis,
+Damien of Moloka'i, Bernadette Soubirous, Fidelis of Sigmaringen, Isidore of Seville, Sabinus of Egypt,
+Dismas, Rupert of Salzburg, Hesychius of Jerusalem, Ignatius of Rostov) -- LAT/OOR tags kept where
+present.
+
+**33 new plain confirmations** (name and date matched exactly, no correction needed): Theoctistus,
+Neophytus of Nicaea, Anastasius the Persian, Pamphilus and Companions, the 42 Martyrs of Amorium,
+Theophylact the Confessor, the Sign of the Cross over Jerusalem, Epiphanius of Salamis, Thalelaeus,
+Hermias of Comana, Timothy of Prusa, Isaurus and Companions, the relics of Cyrus and John, Emilian of
+Silistria, Eudocimus of Cappadocia, Pimen the Much-Ailing, Anicetus and Photius, Lupus of Thessalonica,
+the Sash/Cincture of the Theotokos, the Conception of St John the Baptist, Ignatius of Constantinople,
+Abramius the Recluse, Plato and Romanus, Amphilochius of Iconium, Boniface (the Dec 19 martyr), Theodore
+the Grapt, Simon the Myrrhgusher, the relics at the Gate of Eugenius, Marinus the Martyr (confirmed
+after all, at a distinct date from the ambiguous Jul 6/Aug 7 pair flagged last session). Two
+plausible-but-unconfirmed matches from the prior session resolved to CONFIRMED with the full story text:
+St. Pachomius of Patmos (relics explicitly at Patmos, matching the identity) and Terence and Eunice
+(same date, husband's name matches; wife's name variant disclosed, not independently reconciled).
+
+**3 rows deliberately left unconfirmed, each for a stated reason rather than silence:**
+- `saint-joseph-spouse-of-the-blessed-virgin-mary` -- the Orthodox commemoration is a genuinely
+  moveable Sunday (with David and James, after Nativity), not a fixed date at all. This row's schema
+  only holds `fixed` dates; representing EOR correctly needs a real `ordinal`/`cycle`
+  `traditionObservance` rule (computing the Sunday after Dec 25 per year), which is a build, not a
+  lookup. Not guessed at.
+- `saint-clement-of-rome` and `hieromartyr-clement-of-rome` -- NOT deleted despite no match in
+  orthocal.info under any phrasing tried, unlike the other no-match rows above. Clement of Rome is a
+  universally-venerated Apostolic Father; his absence from orthocal.info's Slavic index (which is
+  explicitly selective, not a full synaxarion) reads as a source gap, not a real absence. Needs a
+  different/fuller source, not deletion.
+
+**EOR confirmed: 316 -> 371 today. 87 unconfirmed -> 3 unconfirmed, each disclosed above.**
+SEED_VERSION v257 -> v258-2026-09-07-eor-fifth-pass-mismatches-fixed.
