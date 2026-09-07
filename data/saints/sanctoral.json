@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced. SCHEMA, extended 2026-09-05: an entry may carry an optional `traditionObservance` map of tradition code to observance rule. One identity is often kept on DIFFERENT DAYS by different traditions — Benedict of Nursia is 11 July for the Episcopal Church and 14 March in the East — and the schema previously allowed one row to hold several tradition tags but only ONE date, which forced either a date that is wrong for some of the row's own tags or a duplicate row per tradition. When a resolver asks on behalf of a tradition listed in `traditionObservance`, that rule applies; otherwise the shared `observance` does. The field is optional and additive, so every entry without it behaves exactly as before. LFF controls the ANG date in every case.",
+  "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced. SCHEMA, extended 2026-09-05: an entry may carry an optional `traditionObservance` map of tradition code to observance rule. One identity is often kept on DIFFERENT DAYS by different traditions — Benedict of Nursia is 11 July for the Episcopal Church and 14 March in the East — and the schema previously allowed one row to hold several tradition tags but only ONE date, which forced either a date that is wrong for some of the row's own tags or a duplicate row per tradition. When a resolver asks on behalf of a tradition listed in `traditionObservance`, that rule applies; otherwise the shared `observance` does. The field is optional and additive, so every entry without it behaves exactly as before. LFF controls the ANG date in every case. SCHEMA, extended 2026-09-07: an OOR-tagged entry may carry an optional `oorSubtradition` string naming which Oriental Orthodox church its content actually belongs to -- \"Armenian\", \"Ethiopian\", \"Syriac\", etc. OOR's governing confirmation source is Coptic Reader/coptic.io specifically (Josh, 2026-09-05); an entry with no `oorSubtradition` is implicitly Coptic and is checked against that source. An entry WITH `oorSubtradition` set to something other than Coptic is real content for that sub-tradition, not a Coptic-calendar mismatch -- it must not be checked against coptic.io, corrected toward a Coptic date, withdrawn, or deleted on the strength of a Coptic-source no-match. It stays OOR-tagged (OOR is the parent/Oriental-Orthodox tag) and awaits its own tradition's governing source, expected as this project expands into other Oriental Orthodox sub-traditions (Josh, 2026-09-07).",
   "entries": [
     {
       "id": "holy-name-of-jesus-circumcision-of-christ",
@@ -178,7 +178,8 @@
             "day": 3
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "martyr-gordius",
@@ -339,7 +340,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "synaxis-of-the-seventy-apostles",
@@ -378,7 +380,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "martyrs-theopemptus-and-theonas",
@@ -518,7 +521,8 @@
             "day": 7
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "synaxis-of-john-the-baptist",
@@ -617,7 +621,8 @@
             "day": 8
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "fourth-day-of-the-nativity",
@@ -636,7 +641,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "polyeuctus-of-melitine",
@@ -694,7 +700,8 @@
             "day": 10
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-gregory-of-nyssa",
@@ -793,7 +800,8 @@
             "day": 11
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "aelred-of-hexham",
@@ -891,7 +899,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "eighth-day-of-the-nativity",
@@ -910,7 +919,8 @@
             "day": 13
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "george-fox",
@@ -1010,7 +1020,8 @@
             "day": 14
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-felix-of-nola",
@@ -1129,7 +1140,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "eleventh-day-of-the-nativity",
@@ -1148,7 +1160,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-berard-and-companions",
@@ -1286,7 +1299,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "confession-of-saint-peter",
@@ -1343,7 +1357,8 @@
             "day": 18
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-prisca",
@@ -1859,7 +1874,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-xenia-of-rome",
@@ -3534,7 +3550,8 @@
             "day": 19
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-quodvultdeus",
@@ -6342,7 +6359,7 @@
         "ANG",
         "LAT",
         "EOR",
-        "OOR"
+        "COE"
       ],
       "dayLegacy": "April 25",
       "observance": {
@@ -6354,7 +6371,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Mark the Evangelist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Apostle and Evangelist Mark” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Mark the Evangelist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Apostle and Evangelist Mark” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {
       "id": "saint-symeon",
@@ -7255,7 +7273,8 @@
             "day": 12
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "saint-epiphanius-of-salamis",
@@ -7454,7 +7473,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "saint-dymphna",
@@ -8807,7 +8827,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-metrophanes-of-constantinople",
@@ -8887,7 +8908,8 @@
             "day": 5
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "ini-kopuria",
@@ -8986,7 +9008,8 @@
             "day": 7
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-robert-of-newminster",
@@ -13136,7 +13159,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "dormition-or-assumption-of-the-virgin-mary",
@@ -15395,7 +15419,8 @@
             "day": 15
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "great-martyr-euphemia",
@@ -15453,7 +15478,8 @@
             "day": 16
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-ninian",
@@ -15549,7 +15575,8 @@
             "day": 17
           }
         ]
-      }
+      },
+      "oorSubtradition": "Ethiopian"
     },
     {
       "id": "sophia-faith-hope-and-charity",
@@ -15855,7 +15882,8 @@
             "day": 20
           }
         ]
-      }
+      },
+      "oorSubtradition": "Armenian"
     },
     {
       "id": "saint-matthew-the-apostle",
@@ -15865,7 +15893,7 @@
       "tags": [
         "ANG",
         "LAT",
-        "OOR"
+        "COE"
       ],
       "dayLegacy": "September 21",
       "observance": {
@@ -15878,7 +15906,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Matthew, Apostle and Evangelist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: this row duplicates the id 'saint-matthew-the-apostle' with the already-EOR-confirmed row at Nov 16. The stored date here is not an Orthodox date for this identity; EOR removed so the confirmed row is the sole EOR representation."
+      "tagNote": "EOR TAG WITHDRAWN 2026-09-07: this row duplicates the id 'saint-matthew-the-apostle' with the already-EOR-confirmed row at Nov 16. The stored date here is not an Orthodox date for this identity; EOR removed so the confirmed row is the sole EOR representation. TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {
       "id": "hieromartyr-phocas",
@@ -17672,7 +17700,7 @@
         "ANG",
         "LAT",
         "EOR",
-        "OOR"
+        "COE"
       ],
       "dayLegacy": "October 18",
       "observance": {
@@ -17684,7 +17712,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Luke the Evangelist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Apostle and Evangelist St Luke” on this date. The prior confirmation above established this date for ANG only, not EOR."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Saint Luke the Evangelist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Apostle and Evangelist St Luke” on this date. The prior confirmation above established this date for ANG only, not EOR.",
+      "tagNote": "TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {
       "id": "saint-marinus-the-martyr",
@@ -18912,7 +18941,8 @@
             "day": 4
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "saints-of-the-old-testament",
@@ -19370,7 +19400,8 @@
             "day": 9
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "saint-nectarios-of-aegina",
@@ -19685,7 +19716,7 @@
       "tags": [
         "EOR",
         "LAT",
-        "OOR"
+        "COE"
       ],
       "dayLegacy": "November 16",
       "observance": {
@@ -19697,7 +19728,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Apostle & Evangelist Matthew”. Confirmed by 2 of the six editions (2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Apostle & Evangelist Matthew”. Confirmed by 2 of the six editions (2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {
       "id": "saint-elizabeth-of-hungary",
@@ -22060,7 +22092,7 @@
         "ANG",
         "LAT",
         "EOR",
-        "OOR"
+        "COE"
       ],
       "dayLegacy": "December 26",
       "observance": {
@@ -22072,7 +22104,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “2nd Day of the Nativity 20,000 Martyrs of Nicomedia Protomartyr Stephen of Bethlehem of Moscow & All Russia Nativity Holy Righteous Ones: Joseph Ven. Melania the Younger the Betrothed, David the King,”. Confirmed by ONE edition only (2022); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “2nd Day of the Nativity 20,000 Martyrs of Nicomedia Protomartyr Stephen of Bethlehem of Moscow & All Russia Nativity Holy Righteous Ones: Joseph Ven. Melania the Younger the Betrothed, David the King,”. Confirmed by ONE edition only (2022); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "tagNote": "TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {
       "id": "synaxis-of-the-theotokos",
@@ -22261,7 +22294,8 @@
             "day": 29
           }
         ]
-      }
+      },
+      "oorSubtradition": "Syriac"
     },
     {
       "id": "saint-thomas-becket",
