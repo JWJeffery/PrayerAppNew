@@ -54,3 +54,7 @@ Feasts, observances, commemorations, and events receive SINs because Universal O
 This is an identity-control pass, not a final-governance pass. The candidate rows still retain their underlying review burdens: source verification, date harmonization, Reformation-context handling, modern-figure review, social-impact caution, legendary-material review, Great Church labeling, and feast/genre review.
 
 The next hard audit should check that every monthly candidate CSV row has either a rank-1 SIN or an alternate-row SIN, and then decide whether the monthly candidate CSVs should receive an explicit `sin` column or remain paired with these external SIN maps.
+
+## Post-audit governance update
+
+On 2026-09-07, Josh governed Joshua the Prophet, Son of Nun, as the July 3 rank-1 identity on the Coptic Orthodox Church Synaxarium witness and assigned `UO-SIN-001106`. Thomas the Apostle remains on December 21 with `UO-SIN-000003`; references above to the earlier shared July 3/December 21 Thomas SIN describe the historical state of this audit.

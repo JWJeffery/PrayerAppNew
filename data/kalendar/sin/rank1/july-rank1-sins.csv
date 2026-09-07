@@ -1,7 +1,7 @@
 date,sin,canonical_name,entity_type,rank1_audit_status,rank1_result,review_flags
 07-01,UO-SIN-000001,Pauli Murray,person,rank1_controlled,rank preserved pending governance,modern review; social-impact caution
 07-02,UO-SIN-000002,Moses the Black,person,rank1_controlled,rank preserved pending governance,
-07-03,UO-SIN-000003,Thomas the Apostle,person,rank1_controlled,rank preserved pending apostle-date harmonization,date harmonization with 12-21
+07-03,UO-SIN-001106,"Joshua the Prophet, Son of Nun",person,rank1_controlled,rank preserved pending governance,
 07-04,UO-SIN-000004,Independence Day,observance,rank1_controlled,rank preserved pending genre governance,non-sanctoral civic observance; genre review
 07-05,UO-SIN-000005,Palladius,person,rank1_controlled,rank preserved pending source verification,source verification
 07-06,UO-SIN-000006,Eva Lee Matthews,person,rank1_controlled,rank preserved pending governance,modern review

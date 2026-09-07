@@ -64,6 +64,6 @@ Audit notes:
 
 ## Completion boundary
 
-The January-through-June repair expands February through June into full ranked candidate matrices and adds alternate-row SIN maps for each month. The SIN space currently runs through `UO-SIN-001105`.
+The January-through-June repair expands February through June into full ranked candidate matrices and adds alternate-row SIN maps for each month. The SIN space currently runs through `UO-SIN-001106`.
 
 If any monthly matrix is later revised, added to, split, or merged, the corresponding SIN map must be updated in the same commit or a clearly linked follow-up commit.

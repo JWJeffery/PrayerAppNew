@@ -45,3 +45,7 @@ Examples:
 ## Follow-up completed
 
 The alternate candidate rows have now received SINs in `data/kalendar/sin/alternate/`. This file remains as the rank-1 audit record, not the final word on first-six-month SIN coverage.
+
+## Post-audit governance update
+
+On 2026-09-07, Josh governed Joshua the Prophet, Son of Nun, as the July 3 rank-1 identity on the Coptic Orthodox Church Synaxarium witness and assigned `UO-SIN-001106`. Thomas the Apostle remains on December 21 with `UO-SIN-000003`. The counts and shared-SIN list above record the original audit tranche and are retained as historical evidence.

@@ -15887,44 +15887,29 @@
    "07-03": [
     {
      "rank": "1",
-     "candidate": "Thomas the Apostle",
-     "designation": "Apostle",
+     "candidate": "Joshua the Prophet (Son of Nun)",
+     "designation": "Prophet and Successor of Moses",
      "year_or_period": "",
-     "tradition": "Apostolic / Anglican-received",
-     "source_witnesses": "FAS; SEC; AM",
-     "source_tier": "Provincial / Anglican martyrology",
-     "preliminary_status": "Provisional strong candidate",
-     "ranking_rationale": "Strong apostolic candidate for July 3 in provincial sources, but conflicts with BCP December 21 placement.",
-     "review_flags": "apostle-date harmonization",
+     "tradition": "Biblical / Coptic Orthodox / Oriental Orthodox",
+     "source_witnesses": "Coptic Orthodox Church Synaxarium (Paona 26)",
+     "source_tier": "Coptic Orthodox synaxarium",
+     "preliminary_status": "Strong candidate",
+     "ranking_rationale": "Biblical prophet and successor of Moses; his Coptic commemoration of departure supplies a distinct July 3 witness while Thomas remains on the BCP/LFF date of December 21.",
+     "review_flags": "none",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "Hold until whole-year apostolic cycle is visible.",
+     "notes": "Governed by Josh on 2026-09-07 as the July 3 replacement for Thomas the Apostle.",
      "sin_status": "ok",
      "sin": {
-      "sin": "UO-SIN-000003",
-      "canonical_name": "Thomas the Apostle",
+      "sin": "UO-SIN-001106",
+      "canonical_name": "Joshua the Prophet, Son of Nun",
       "entity_type": "person",
       "audit_status": "rank1_controlled",
-      "audit_result": "rank preserved pending apostle-date harmonization",
-      "sin_review_flags": "date harmonization with 12-21",
+      "audit_result": "rank preserved pending governance",
+      "sin_review_flags": "",
       "source": "rank1"
      },
-     "harmonization": [
-      {
-       "candidate_or_group": "Thomas the Apostle",
-       "dates": [
-        "07-03",
-        "12-21"
-       ],
-       "date_annotations": {},
-       "non_date_notes": [],
-       "files_seen": "july; december",
-       "issue_type": "apostle-date harmonization",
-       "qc_status": "Open",
-       "notes": "July 3 is supported by some provincial sources but BCP/LFF use December 21; December likely controls unless whole-year apostolic cycle governs otherwise.",
-       "this_date_annotation": ""
-      }
-     ]
+     "harmonization": null
     }
    ],
    "07-04": [
@@ -33746,8 +33731,8 @@
        "non_date_notes": [],
        "files_seen": "july; december",
        "issue_type": "apostle-date harmonization",
-       "qc_status": "Open",
-       "notes": "July 3 is supported by some provincial sources but BCP/LFF use December 21; December likely controls unless whole-year apostolic cycle governs otherwise.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-09-07: Thomas remains on December 21 under BCP/LFF authority; the July 3 primary is Joshua the Prophet, Son of Nun, from the Coptic Orthodox Church Synaxarium.",
        "this_date_annotation": ""
       }
      ]
