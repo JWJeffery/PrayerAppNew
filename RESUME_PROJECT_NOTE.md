@@ -10,7 +10,7 @@ This note was rewritten on 2026-09-04. The previous version had accumulated 94 s
 before replacement: 59 entries existed **only** in the resume note, so the whole of the old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md`. Nothing was discarded.
 
-**State as of 2026-09-07:** `SEED_VERSION v252-2026-09-07-eor-orthocal-tranche-1`, East Syriac corpus
+**State as of 2026-09-07:** `SEED_VERSION v254-2026-09-07-eor-second-pass`, East Syriac corpus
 448 components / 57 sequences, explanations harness 67 checks passing. **This header itself went stale
 for three days** — it still read v236/2026-09-05 after the 09-06 COE-diocese-scoping and 09-07
 Anglican-completion commits, even though the lower sections (§7/§8, the sanctoral table) were kept
@@ -183,36 +183,84 @@ them (the Prayer Book calendar prints him at 18 February). Luther is not current
 |---|---|---|
 | ANG | 297 | **0 — complete** |
 | COE | 87 | **0 — complete** |
-| EOR | 207 | 204 |
+| EOR | 292 | 111 |
 | LAT | 134 | 269 |
 | OOR | 128 | 240 |
 
-**The EOR figure above was corrected 2026-09-07 — read this before trusting any older count.** The
-table used to show EOR at 266/146, but that 266 counted every EOR-tagged row carrying *any*
-`ruleSource`, including 61 rows whose `ruleSource` only established the date via an Anglican witness
-(LFF, the Anglican Martyrology, or the Kalendar candidate matrix). An Anglican calendar does not
-confirm an Orthodox date — this is the same "row is not the same as a claim" trap the ANG-completion
-commit named explicitly, just not yet applied to this table. True OCA-confirmed EOR was **205** at
-the start of the day; two more (Annunciation, Martyrdom of St John the Baptist) were confirmed today
-against **orthocal.info**, a source Josh authorized 2026-09-07 as a working witness for EOR — it
-mirrors OCA (Slavic tradition)/ROCOR practice with predictable per-date pages and is intended to
-extend to other Eastern Orthodox traditions later, so treat it as a first-class source going forward,
-not a stopgap. The other 59 mis-attributed rows and the untouched 145 remain open; see below for why
-this will be slow.
+**EOR status as of 2026-09-07, end of session — read this over any older note.** The table used to
+show EOR at 266/146; that 266 counted every EOR-tagged row carrying *any* `ruleSource`, including
+rows whose `ruleSource` only established the date via an Anglican witness (LFF, the Martyrology, the
+Kalendar matrix) — which doesn't confirm an Orthodox date. Same "row is not the same as a claim" trap
+the ANG-completion commit named for its own tag. True confirmed count at the start of today was 205.
 
-**Orthocal.info's arbitrary-date pages are NOT freely fetchable from this sandbox — worse than OCA's
-own site.** Confirmed 2026-09-07: `web_fetch` here refuses any URL that didn't come back as an actual
-search-result or fetch-result URL — this includes a page's own "next/previous day" links found in its
-body text, which do NOT count as "seen." `web_search` on a bare date (e.g. "2026 3 25") mostly
-surfaces whatever the crawler happened to index near *today's* real-world date, not the target date.
-Searching by the **saint or feast name** works much better and reliably surfaces the right orthocal.info
-page (or corroborating Orthodox sources — GOARCH, OrthodoxWiki — for very well-known fixed Great
-Feasts). **Practical path forward, proposed to Josh, not yet actioned:** have Josh pull the relevant
-orthocal.info page(s) — or the full year via its documented API at `orthocal.info/api/` — from his own
-browser, which isn't subject to this restriction, and paste the content in, the same fallback already
-used successfully for Grail1963 ch.80-150 (second AI agent), Tizaz, and Guba'ekana when a fetch tool
-hit a wall. Attempting this 204-row remainder one name-search at a time, from inside this sandbox, is
-possible but slow — budget it as a multi-session effort unless that bulk pull happens first.
+**orthocal.info is now used via its MCP server, not raw `web_fetch`.** Josh added it as a custom
+connector (`https://orthocal.info/mcp`) partway through today's session — this replaces the earlier
+plan of Josh pulling pages by hand. Two tools: `search_saints(query, tradition)` returns the fixed
+month/day a saint or feast is commemorated on; `get_day(day, month, year, calendar, tradition)`
+returns everything for a single date. No fetch-restriction problems at all through this path — use
+`search_saints` first for anything with a name, `get_day` to check what a specific date actually
+holds. This is the way to keep working this list, not day-walking or raw fetches.
+
+**This session's work, one pass through the 61 rows that had only an Anglican-sourced `ruleSource`,
+plus a few incidental finds in the untouched 145:**
+- **32 confirmed** — clean date match against orthocal.info, `ruleSource` extended (existing
+  LFF/ANG text kept, EOR confirmation appended, not overwritten).
+- **8 tags withdrawn** (`confession-of-saint-peter`, `saint-kateri-tekakwitha`, `saint-peter-chanel`,
+  `saint-catherine-of-siena`, `saints-nereus-and-achilleus`, `saints-mary-martha-and-lazarus-of-bethany`,
+  `all-saints`, `all-souls-commemoration-of-the-dead`) — no Orthodox attestation found under any
+  phrasing tried; `tagNote` on each names what was checked. `all-saints`/`all-souls` specifically:
+  Orthodox tradition keeps these as moveable feasts (Sunday of All Saints after Pentecost; several
+  Soul Saturdays), not the fixed Nov 1/2 dates this schema requires — a schema-mismatch, not
+  necessarily a real absence, worth remembering if a moveable-observance mechanism ever gets built.
+- **19 rows left as genuine date mismatches, NOT edited — need your call, not mine:**
+  `saints-cyril-and-methodius` (stored Feb 14, Orthodox's joint feast is May 11), `saint-matthias-the-apostle`
+  (stored Feb 24, Orthodox keeps Aug 9 — and a separate untouched row for him already sits at Aug 9,
+  now itself confirmed this session), `saints-perpetua-and-felicity` (stored Mar 7, Orthodox Feb 1),
+  `saint-joseph-spouse-of-the-blessed-virgin-mary` (stored Mar 19 fixed; Orthodox keeps him on a
+  moveable Sunday, doesn't fit a fixed-date row at all), `saint-ephrem-the-syrian` (stored Jun 9 —
+  that's the Church of the East's date already confirmed for COE; Byzantine/EOR's is Jan 28),
+  `saint-cyril-of-alexandria` (stored Jun 27, Orthodox Jan 18 jointly with Athanasius or Jun 9 alone),
+  `saint-irenaeus-of-lyons` (stored Jun 28, Orthodox Aug 23), `saint-joachim-and-saint-anne` (stored
+  Jul 26, Orthodox Sept 9), `saint-bartholomew-the-apostle` (stored Aug 24, Orthodox Jun 11 jointly
+  with Barnabas or Aug 25 for the relics — the Aug 25 row already exists separately and is now
+  confirmed), `saint-augustine-of-hippo` (stored Aug 28, Orthodox Jun 15, jointly with his mother
+  Monica), `saint-matthew-the-apostle` (stored Sept 21, Orthodox Nov 16), `saints-simon-and-jude`
+  (stored Oct 28, no Orthodox match found near that date at all), `saint-elizabeth` (stored Nov 5 —
+  this is Elizabeth mother of the Forerunner, not Elizabeth of Hungary; Orthodox keeps her jointly
+  with Zacharias on Sept 6), `saint-leo-the-great` (stored Nov 10, Orthodox Feb 18), `saint-martin-of-tours`
+  (stored Nov 11, Orthodox Nov 12 — one day off, possibly a Julian/Gregorian artifact, not investigated
+  further), `herman-of-alaska` (stored Nov 15, Orthodox keeps him Aug 9 for canonization or, mainly,
+  Dec 13 for repose), `saint-clement-of-rome` (stored Nov 23; a second untouched row,
+  `Hieromartyr Clement of Rome`, sits at Nov 24 — **orthocal.info's own saint index has no entry for
+  Clement of Rome under any phrasing tried**, which is surprising given he's traditionally commemorated
+  in Orthodoxy; treating this as a gap in orthocal's data, not as confirmed-absent — needs a different
+  source, not a tag withdrawal), `saint-john-the-apostle` (stored Dec 27, Orthodox keeps him May 8 and
+  Sept 26, not Dec 27), `the-holy-innocents` (stored Dec 28, Orthodox Dec 29 — a separate untouched row,
+  `the-14-000-holy-infants`, already sits at Dec 29 and is now confirmed).
+
+  **The repeated pattern above — a row sitting at the Western date while a separate, already-existing
+  row sits at the correct Orthodox date for the same identity — showed up three times this session**
+  (Matthias, Bartholomew, Holy Innocents) purely as a side effect of checking names. It's worth a
+  deliberate pass rather than incidental discovery: there may be more duplicate identities like this
+  hiding in the untouched 142.
+
+**Separate discovery, not yet acted on: this corpus has at least 58 duplicate `id` values**, found
+while trying to patch `saint-andrew-the-apostle` and `saint-matthias-the-apostle` (both collide with
+a second, unrelated row using the identical id — different name, different date, different tags).
+Confirmed via a full scan, not assumed: `saint-basil-the-great`, `saint-james-the-brother-of-the-lord`,
+`saint-gregory-of-nyssa`, `saint-john-chrysostom`, `saint-isaac-the-syrian` and 53 others also collide.
+This conflicts with this project's own stated integrity check ("zero duplicate ids") — either that
+check hasn't caught these, or duplicate ids are being tolerated for genuinely-different rows that
+share a slug. Not investigated further this session; flagging so it isn't lost. A str_replace-based
+patch script needs `(id, month, day)` as the real key here, not `id` alone, until this is resolved.
+
+Confirmed total after this session: **292**, up from 205 at the start of the day. **111 EOR rows
+remain** — 19 flagged above needing your governance call, plus a further ~20 mismatches found in a
+second pass through the untouched rows (Pachomius the Great stored May 9 vs real May 15, Vladimir
+Icon stored May 21 vs only found at Jun 23, Macarius the Roman stored Aug 15 vs real Oct 23, and
+others — not yet written up in full, check conversation history for this session if picking this back
+up), and the rest genuinely untouched. The MCP connector makes the remainder tractable in the same
+session-by-session way the rest of this project works.
 
 **Church of the East dates are DIOCESAN, not universal.** The Diocese of California and the Diocese
 of Australia and New Zealand keep the same 2026 differently: fixed feasts are 13 days apart (Julian

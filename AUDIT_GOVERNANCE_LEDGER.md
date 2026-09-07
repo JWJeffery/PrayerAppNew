@@ -12836,3 +12836,106 @@ Tizaz, and Guba'ekana when a fetch tool hit a wall elsewhere on this project. Ab
 remaining 204 rows are workable only one name-search at a time from in here -- budget accordingly.
 
 **SEED_VERSION v251 -> v252-2026-09-07-eor-orthocal-tranche-1.**
+
+## Session 2026-09-07 (cont'd) -- EOR via Orthocal MCP: 32 confirmed, 8 tags withdrawn, 19 flagged, 58 duplicate ids found
+
+**Josh added orthocal.info as a custom MCP connector mid-session** (`https://orthocal.info/mcp`),
+replacing the raw-fetch approach entirely. Two tools: `search_saints(query, tradition)` (returns
+fixed month/day for a name), `get_day(day, month, year, calendar, tradition)` (everything for one
+date). No fetch-restriction problems through this path -- this is now the standing method for EOR
+confirmation work, not day-walking or bulk pulls.
+
+**Worked the full list of 61 rows that had only an Anglican-sourced `ruleSource`** (flagged earlier
+today as not actually EOR-confirmed):
+
+- **32 confirmed** against orthocal.info, `ruleSource` extended rather than replaced on each --
+  Circumcision of Christ, Meeting of the Lord/Presentation, Agatha, Cyril of Jerusalem, Polycarp,
+  Gregory the Dialogist, Martin the Confessor, Mark the Evangelist, Athanasius the Great, Justin the
+  Philosopher, Barnabas, Nativity of the Forerunner, Peter and Paul, Macrina, Mary Magdalene,
+  Transfiguration, Lawrence, Dormition, Nativity of the Theotokos, Exaltation of the Cross, Luke the
+  Evangelist, James the Brother of the Lord, Entry of the Theotokos, Cecilia, Andrew the First-Called,
+  John of Damascus, Nicholas of Myra, Ambrose of Milan, Lucy of Syracuse, Daniel and the Three Youths,
+  Eve of the Nativity, Nativity of Christ.
+
+- **8 EOR tags withdrawn, each with a `tagNote`** naming what was checked and why it came off rather
+  than sitting open indefinitely (restorable if a witness ever surfaces): Confession of St Peter (Jan
+  18 in this calendar is Athanasius/Cyril, not a Petrine confession -- Orthodox keeps Peter jointly
+  with Paul, June 29, already a separate row), Kateri Tekakwitha, Peter Chanel, Catherine of Siena,
+  Nereus and Achilleus (no match under any phrasing tried), Mary/Martha/Lazarus of Bethany as a trio
+  (Lazarus Saturday is a separate moveable feast tied to Pascha), All Saints and All Souls (Orthodox
+  keeps these as moveable feasts -- Sunday of All Saints after Pentecost, several Soul Saturdays --
+  not fixed Nov 1/2 dates; a schema mismatch against this project's fixed-date rows, not necessarily a
+  real absence).
+
+- **3 incidental confirmations in the untouched 145**, found only because checking a mis-attributed
+  row's real Orthodox date led to an already-existing separate row at that correct date: Apostle
+  Matthias (Aug 9, vs. the wrong Feb 24 row), Return of the Relics of the Apostle Bartholomew (Aug 25,
+  vs. the wrong Aug 24 row), the 14,000 Holy Infants (Dec 29, vs. the wrong Dec 28 row). **This
+  Western-date-row-plus-correct-Orthodox-date-row pattern showed up three times purely as a side
+  effect** -- worth a deliberate sweep rather than leaving it to chance, since more are likely hiding
+  in the untouched 142.
+
+- **19 rows are genuine date mismatches, left unedited -- Josh's call, not mine**, per this project's
+  standing practice of not unilaterally merging or re-dating shared identities (the Cranmer/Most-Holy-
+  Name-of-Jesus precedent). Full list with each row's stored date and Orthodox date in
+  RESUME_PROJECT_NOTE.md. Shapes involved: straightforward different-day (Cyril & Methodius, Perpetua
+  & Felicity, Cyril of Alexandria, Irenaeus of Lyons, Joachim & Anna, Augustine of Hippo, Matthew the
+  Apostle, Elizabeth, Leo the Great, Herman of Alaska, John the Apostle); a fixed row whose real
+  Orthodox observance is moveable and doesn't fit the schema (Joseph the Betrothed); a row already
+  correctly confirmed for a *different* tradition on a date that isn't EOR's (Ephrem the Syrian --
+  COE's June 9 isn't Byzantine's Jan 28); a one-day-off case not investigated further (Martin of
+  Tours, Nov 11 stored vs. Nov 12 found -- possibly Julian/Gregorian); a case with no match found near
+  the stored date at all (Simon and Jude); and a case where **orthocal.info's own saint index has no
+  entry whatsoever for Clement of Rome**, under any phrasing tried, despite him being a traditionally
+  commemorated figure -- treated as a gap in orthocal's coverage, not confirmed-absent, so no tag
+  action taken.
+
+**Found, not fixed: at least 58 duplicate `id` values in this corpus.** Discovered while trying to
+patch `saint-andrew-the-apostle` and `saint-matthias-the-apostle` -- both ids collide with a second,
+unrelated row (different name, date, and tags) using the identical id string. Confirmed via a full
+scan of all 1,154 entries, not assumed. This directly conflicts with this project's own stated
+integrity check ("zero duplicate ids") -- either that check has been missing these, or duplicate ids
+are being deliberately tolerated where two genuinely different rows happen to share a slug. Not
+investigated or fixed this session -- flagging so it isn't lost. Practical consequence for future
+patch scripts: `id` alone is not a safe key for locating a specific row in this file; use
+`(id, month, day)` or disambiguate by `name` until this is resolved.
+
+**EOR confirmed: 205 -> 242 this session (247 total across today including the prior tranche's 2).
+161 EOR-tagged rows remain: 19 flagged above for Josh's decision, 142 genuinely untouched.**
+SEED_VERSION v252 -> v253-2026-09-07-eor-orthocal-mcp-tranche.
+
+## Session 2026-09-07 (cont'd 2) -- second EOR pass via Orthocal MCP: 50 more confirmed
+
+Continued the untouched-145 sweep with `search_saints`. **50 more rows confirmed** (full list in
+this session's chat, not reproduced here for space -- includes Gordius, Syncletica/Syncletike of
+Alexandria, Theopemptus and Theonas, Polyeuctus of Melitine, the Fathers Slain at Sinai and Raithu,
+Inna/Pinna/Rimma, Tryphon, Photius of Constantinople, Theodore Stratelates, Charalampus, Aquila and
+Priscilla (also confirms the separate Jul 14 Aquila row), Maron the Hermit, Theodotus of Cyrenia,
+Quadratus, Agapius, James the Confessor, Hypatius of Gangra, Mary of Egypt, Titus the Wonderworker,
+Nicetas the Confessor, Eutychius of Constantinople, Herodion and Agabus, Theodore of Sykeon, Timothy
+and Maura, Mocius, Glyceria, Basiliscus of Comana, Apostle Carpus, Theodotus of Ancyra, Onuphrius the
+Great, Aquilina of Byblos, Prophet Amos, Leontius at Tripoli, Eusebius of Samosata, Synaxis of the
+Twelve Apostles, Hyacinth of Caesarea, the 45 Martyrs of Nikopolis, Great Martyr Euphemia, Proclus and
+Hilary, Prophet Elias, Christina of Tyre, Prochorus and Nicanor, Prophet Micah, Florus and Laurus,
+John the Faster, Anthimus of Nicomedia, Sozon, Theodora of Alexandria, Autonomus).
+
+A further batch of mismatches was found in the same pass and left unedited pending Josh's call, same
+as the first 19 (not yet fully written up -- check this session's chat if picking this back up):
+Pachomius the Great (stored May 9, real May 15), the Vladimir Icon (stored May 21, only found at Jun
+23 in orthocal's index), Macarius the Egyptian (two rows, Mar 29 and Apr 10, real date Jan 19),
+Emilian (stored Jul 18, closest match Aug 8, possibly a different Emilian), Macarius the Roman (stored
+Aug 15, real Oct 23), Tiburtius (stored Apr 14, likely the same identity as the already-confirmed Nov
+22 Cecilia/Tiburtius/Valerian row).
+
+No match found under any phrasing tried, left as-is (not withdrawn -- lower confidence than the first
+session's withdrawals, since this batch wasn't cross-checked as thoroughly given time constraints):
+Neophytus of Nicaea, Anastasius the Persian, Prophet Azariah, Pamphilus, Sabinus of Egypt, Basilides
+of Rome, Rupert of Salzburg, Hesychius of Jerusalem, Isidore of Seville, Claudius/Victor companions,
+John Baptist de la Salle, Waldetrudis, Fidelis of Sigmaringen, the Sign of the Cross over Jerusalem,
+Epiphanius of Salamis, Alexander of Jerusalem, Thallelaios, Ignatius of Rostov, Hermias of Comana,
+Kyriaki of Nicomedia, Eudocimus, the Seven Maccabean Martyrs, Pimen of the Kiev Caves, Anicetus and
+Photius, Lupus of Thessalonica, the Deposition of the Cincture, Phocas the Gardener.
+
+**EOR confirmed: 205 -> 292 today. 111 EOR rows remain** (19 flagged after the first pass, roughly 20
+more mismatches from this pass, the rest genuinely untouched).
+SEED_VERSION v253 -> v254-2026-09-07-eor-second-pass.
