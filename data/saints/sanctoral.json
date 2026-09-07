@@ -5666,7 +5666,19 @@
           }
         ]
       },
-      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Our Holy Mother Mary of Egypt” on this date."
+      "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Our Holy Mother Mary of Egypt” on this date.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 4,
+              "day": 14
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Apr 1) is EOR's, already confirmed. CONFIRMED against coptic.io: \"The Departure of St. Mary of Egypt\" falls Apr 14 (6 Baramouda) in the Coptic calendar."
     },
     {
       "id": "james-lloyd-breck",
