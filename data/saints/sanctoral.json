@@ -3,6 +3,46 @@
   "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced. SCHEMA, extended 2026-09-05: an entry may carry an optional `traditionObservance` map of tradition code to observance rule. One identity is often kept on DIFFERENT DAYS by different traditions — Benedict of Nursia is 11 July for the Episcopal Church and 14 March in the East — and the schema previously allowed one row to hold several tradition tags but only ONE date, which forced either a date that is wrong for some of the row's own tags or a duplicate row per tradition. When a resolver asks on behalf of a tradition listed in `traditionObservance`, that rule applies; otherwise the shared `observance` does. The field is optional and additive, so every entry without it behaves exactly as before. LFF controls the ANG date in every case. SCHEMA, extended 2026-09-07: an OOR-tagged entry may carry an optional `oorSubtradition` string naming which Oriental Orthodox church its content actually belongs to -- \"Armenian\", \"Ethiopian\", \"Syriac\", etc. OOR's governing confirmation source is Coptic Reader/coptic.io specifically (Josh, 2026-09-05); an entry with no `oorSubtradition` is implicitly Coptic and is checked against that source. An entry WITH `oorSubtradition` set to something other than Coptic is real content for that sub-tradition, not a Coptic-calendar mismatch -- it must not be checked against coptic.io, corrected toward a Coptic date, withdrawn, or deleted on the strength of a Coptic-source no-match. It stays OOR-tagged (OOR is the parent/Oriental-Orthodox tag) and awaits its own tradition's governing source, expected as this project expands into other Oriental Orthodox sub-traditions (Josh, 2026-09-07).",
   "entries": [
     {
+      "id": "joshua-son-of-nun-the-prophet",
+      "name": "Joshua, Son of Nun, the Prophet",
+      "description": "Departure of Joshua, son of Nun, successor to Moses and leader of Israel into the Promised Land, commemorated in the Coptic Synaxarium.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "July 3",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 7,
+            "day": 3
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paoni) against Wikipedia's 'Coptic Synaxarium of the month of Paoni' page (episteme.tllm.fr/wiki/Paoni mirror), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Paoni 26 = 3 July (Gregorian, common year) prints: 'Departure of Joshua the Prophet, son of Nun.' Confirmed genuinely absent from THIS corpus (data/saints/sanctoral.json) before being added. NOTE ON A DIFFERENT SYSTEM: Joshua already has a SIN entry in the separate Anglican Kalendar candidate matrix (synaxarium-review/, data/kalendar/july/) for 3 July, added by Josh directly in an earlier session for unrelated reasons (a SIN slot needing a figure, and Joshua being his own namesake) -- that system is entirely distinct from this one (see AUDIT_GOVERNANCE_LEDGER.md, 2026-09-07: 'synaxarium-review/ is a separate project'), and this addition here is independently justified by the Coptic Synaxarium, not derived from or dependent on that other entry. Both systems now correctly carry Joshua on 3 July for their own reasons. NOT YET CROSS-CHECKED against coptic.io directly."
+    },
+    {
+      "id": "saint-simon-son-of-clopas-bishop-of-jerusalem",
+      "name": "Saint Simon, Son of Clopas, Bishop of Jerusalem",
+      "description": "Martyrdom of Simon, son of Clopas, second Bishop of Jerusalem and successor to St James the Just, commemorated in the Coptic Synaxarium. Distinct from Simon Peter and Simon the Zealot.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "July 16",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 7,
+            "day": 16
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Epip) against Wikipedia's 'Coptic Synaxarium of the month of Epip' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Epip 9 = 16 July (Gregorian, common year) prints: 'Martyrdom of St. Simon Cleophas, the Apostle.' Identified as Simon son of Clopas, second Bishop of Jerusalem (successor to James the Just), a distinct figure from Simon Peter and Simon the Zealot, both already present in this corpus under other names and dates. Confirmed genuinely absent under this identity before adding. FURTHER FINDINGS FROM EPIP, not acted on: 'Thaddaeus, the Apostle' (Epip 2 / 9 July) very likely the same figure already carried as 'Saint Jude Thaddeus' (19 June, ANG/LAT/EOR), on a different day -- not added as a second row. Peter and Paul's martyrdom (Epip 5 / 12 July) differs from the existing 29 June entry (ANG/LAT/EOR/OOR, confirmed) -- same figures, different day, not duplicated. Bishoy (Epip 8 / 15 July) and Shenouda (Epip 7 / 14 July) both EXACTLY MATCH existing OOR-confirmed rows -- useful independent validation that those two confirmations are correct. 'Mercurius and Ephraem' (Epip 30 / 6 August): Mercurius is already the corpus's Paopi addition; 'Ephraem' here is a MARTYR, and the corpus's only Ephraim entry is 'Venerable Ephraim the Syrian' (28 January, EOR only, NOT tagged OOR), the great Syriac hymnographer who died peacefully -- these read as two different people sharing a name rather than one figure on two days, and this corpus's own resume note had already flagged Ephrem the Syrian as needing a re-attempted search with different terms; that flag is not resolved by this finding and remains open, since a martyred Ephraem is not evidence about the Syrian father. NOT YET CROSS-CHECKED against coptic.io directly for Simon; confirm before treating as fully CONFIRMED."
+    },
+    {
       "id": "saint-jason-of-the-seventy",
       "name": "Saint Jason",
       "description": "Departure of Jason, one of the Seventy Apostles, host of Paul and Silas at Thessalonica (Acts 17), commemorated in the Coptic Synaxarium.",

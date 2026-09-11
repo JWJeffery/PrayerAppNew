@@ -10,7 +10,7 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v266-2026-09-07-oor-gap-sweep-parmouti-pashons-checked-1-added`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v267-2026-09-07-oor-gap-sweep-paoni-epip-checked-2-added`.
 **Josh's direction, 2026-09-07: do two Coptic months at a time from here** -- individual months were
 adding too little per pass to be worth a separate patch each.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
@@ -348,6 +348,15 @@ All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, 
 coptic.io cross-check. Full detail and reasoning for every open item is in
 `AUDIT_GOVERNANCE_LEDGER.md`.
 
+*Paoni + Epip* (8 Jun - 6 Aug, done together): two additions -- **Joshua, son of Nun** (3 July;
+NOTE this is unrelated to the SIN Josh separately added for Joshua in the Anglican Kalendar matrix on
+the same date -- two different systems, two independent justifications, see the ledger) and **Simon,
+son of Clopas, Bishop of Jerusalem** (16 July, distinct from Simon Peter and Simon the Zealot). Bishoy
+and Shenouda both EXACTLY matched their existing confirmed rows -- good independent validation.
+**The Ephrem the Syrian flag from 2026-09-03 is still open**: a martyred "Ephraem" turned up paired
+with Mercurius (6 August) but is very likely a different person from Ephraim the Syrian the
+hymnographer (28 January, EOR only) -- do not treat this as resolving that flag.
+
 *Parmouti + Pashons* (9 Apr - 7 Jun, done together): only ONE addition -- Saint Jason, one of the
 Seventy, host of Paul and Silas at Thessalonica (11 May). Parmouti yielded nothing at all -- every
 major figure checked already exists on a different day. Two more near-misses caught in Pashons (Job,
@@ -366,8 +375,8 @@ same Julian/Gregorian offset pattern seen via the ACOE diocesan comparison earli
 independently confirmed again here; also Agabus, Meletius/Malatius, Joseph of Arimathea, Macarius the
 Great, Narcissus of Jerusalem).
 
-**Remaining: May-June and August-December for EOR (7 months); Paoni, Epip, Mesori plus the
-intercalary Pi Kogi Enavot for OOR (3 Coptic months + the short intercalary month left).** This is a genuine multi-session undertaking
+**Remaining: May-June and August-December for EOR (7 months); Mesori plus the intercalary Pi Kogi
+Enavot for OOR -- the OOR sweep is nearly complete, one short pass left.** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.

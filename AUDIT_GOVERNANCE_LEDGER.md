@@ -1,3 +1,55 @@
+## Session 2026-09-07 continued -- Paoni and Epip checked, two additions including Joshua son of
+## Nun. SEED_VERSION v266 -> v267.
+
+Paoni (8 June - 7 July) and Epip (8 July - 6 August), against Wikipedia's full-month tables.
+
+### Two additions
+
+**Joshua, son of Nun, the Prophet** (Paoni 26 / 3 July) -- Moses' successor, confirmed absent from
+this corpus before adding.
+
+A note on provenance, so no future session reads this as circular: Josh separately gave Joshua a SIN
+entry in the **Anglican Kalendar candidate matrix** (`synaxarium-review/`) for the same 3 July date,
+in an earlier and entirely unrelated session -- he needed a figure for that slot and chose his own
+namesake. That system is confirmed distinct from this one. This addition rests independently on the
+Coptic Synaxarium's own testimony; the two systems now happen to agree for their own separate reasons.
+
+**Saint Simon, son of Clopas, Bishop of Jerusalem** (Epip 9 / 16 July) -- successor to James the Just,
+identified specifically as distinct from Simon Peter and Simon the Zealot (both already present under
+other names and dates). Confirmed absent under this identity before adding.
+
+### Further Epip findings, not acted on
+
+"Thaddaeus" (Epip 2) is very likely the same figure as the existing Jude Thaddeus (19 June), on a
+different day -- not duplicated. Peter and Paul's Epip 5 martyrdom differs from the confirmed 29 June
+entry, same figures, not duplicated.
+
+**Bishoy and Shenouda both exactly match existing OOR-confirmed rows** at their Coptic dates (15 and
+14 July respectively) -- useful independent validation that both of those prior confirmations are
+correct.
+
+### An old flag touched, but not resolved
+
+"Mercurius and Ephraem," martyred together (Epip 30 / 6 August). Mercurius is the corpus's own Paopi
+addition. "Ephraem" here is a **martyr**, while the corpus's only Ephraim entry is the Syrian
+hymnographer-father who died peacefully (28 January, EOR only, not tagged OOR). These read as two
+different people sharing a name, not one figure findable on a second day.
+
+The resume note has flagged since 2026-09-03 that Ephrem the Syrian needs a re-attempted search with
+different terms. **That flag remains open** -- a martyred namesake is not evidence about the Syrian
+father, and this finding does not resolve it.
+
+Confirmed rows unchanged at 576. Entries **1,071 -> 1,073**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched.
+
+**Remaining: one Coptic month (Mesori) plus the intercalary Pi Kogi Enavot** -- the OOR sweep is
+nearly complete.
+
+---
+
 ## Session 2026-09-07 continued -- Parmouti and Pashons checked; a spelling-variant near-miss joins
 ## the word-order near-misses. SEED_VERSION v265 -> v266.
 
