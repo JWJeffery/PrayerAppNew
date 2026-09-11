@@ -10,7 +10,9 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v263-2026-09-07-oor-gap-sweep-hathor-checked-1-added`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v264-2026-09-07-oor-gap-sweep-koiak-tobi-checked-5-added`.
+**Josh's direction, 2026-09-07: do two Coptic months at a time from here** -- individual months were
+adding too little per pass to be worth a separate patch each.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `audit-ledger.html`'s own
@@ -323,12 +325,24 @@ Anne-related date alongside the existing 26 July and 9 December ones); Clement o
 resolved does NOT match the file); and Gregory Thaumaturgus/Neocaesarea (30 November, eleven days from
 the existing 17 November entry).
 
+*Koiak + Tobi* (10 Dec - 7 Feb, done together): five additions -- King David the Prophet (1 January);
+Entrance of St Mary into the Temple (12 December); **Saint Takla Haymanot, the Ethiopian (2 January,
+tagged `oorSubtradition: 'Ethiopian'`)**; departure of Saint John the Evangelist (12 January --
+surprisingly had NO entry under any name before this, despite being one of the Twelve and author of a
+Gospel, three Epistles and Revelation); Obadiah the Prophet (23 January). Elijah, Theophany and
+Michael's monthly synaxis all reconfirmed already covered. The Miracle at Cana (21 January)
+deliberately NOT added -- it is an event, not a person, and the sweep's scope is major figures. Three
+more same-figure-different-day findings left open: the Holy Innocents' Coptic date (11 January,
+differs from the existing 28 December entry, which also lacks an OOR tag); Anthony the Great's
+Coptic departure (30 January, thirteen days from the existing 17 January entry); Timothy the
+Apostle's Coptic martyrdom (31 January, differs from the existing 22/26 January entries).
+
 All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, pending direct
 coptic.io cross-check. Full detail and reasoning for every open item is in
 `AUDIT_GOVERNANCE_LEDGER.md`.
 
-**Remaining: May-June and August-December for EOR (7 months); Koiak through Mesori plus the
-intercalary Pi Kogi Enavot for OOR (9 Coptic months).** This is a genuine multi-session undertaking
+**Remaining: May-June and August-December for EOR (7 months); Meshir through Mesori plus the
+intercalary Pi Kogi Enavot for OOR (7 Coptic months, now doing two at a time).** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.

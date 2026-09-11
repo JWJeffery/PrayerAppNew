@@ -1,3 +1,57 @@
+## Session 2026-09-07 continued -- Koiak and Tobi checked together, five additions. SEED_VERSION
+## v263 -> v264.
+
+Two Coptic months at once, per Josh: "please do two months at a time since we are adding so little."
+Koiak (10 December - 8 January) and Tobi (9 January - 7 February).
+
+### Koiak: three additions
+
+- **King David the Prophet** (Koiak 23 / 1 January) -- Israel's king, a major Old Testament figure
+  with no entry at all.
+- **Entrance of St Mary into the Temple** (Koiak 3 / 12 December), the Presentation feast, likewise
+  genuinely absent.
+- **Saint Takla Haymanot, the Ethiopian** (Koiak 24 / 2 January) -- one of the most venerated saints
+  of the Ethiopian Orthodox Tewahedo Church, tagged with the existing `oorSubtradition: 'Ethiopian'`
+  field rather than plain OOR, consistent with the 32 rows already scoped that way.
+
+### Tobi: two additions
+
+- **Departure of Saint John the Evangelist** (Tobi 4 / 12 January) -- one of the Twelve, author of a
+  Gospel, three Epistles and Revelation. **Surprisingly had no entry under any name** in this corpus
+  before this addition -- the most significant single-name absence of this pair of months.
+- **Obadiah the Prophet** (Tobi 15 / 23 January), one of the Twelve Minor Prophets.
+
+### Three candidates checked and found already covered
+
+Elijah's ascension (matches the existing Jan 14 OOR row exactly). The Theophany feast (matches the
+existing Jan 6 row exactly). Michael's monthly synaxis, noted again at Tobi 12 -- second confirmation
+the `monthlyCoptic` rule covers a real month correctly.
+
+### One event deliberately not added
+
+**The Miracle at Cana** (Tobi 13 / 21 January) is a commemorated liturgical event in the source, not
+a person. The gap sweep's own scope, per Josh, is **major venerated figures**, not events. Skipped as
+outside scope rather than added on a technicality.
+
+### Three same-figure-different-day findings left open
+
+- **The Holy Innocents'** Coptic date (Tobi 3 / 11 January) differs from the corpus's confirmed 28
+  December entry, which also lacks an OOR tag entirely.
+- **Anthony the Great's** Coptic departure (Tobi 22 / 30 January) is thirteen days from the existing
+  17 January EOR-confirmed entry.
+- **Timothy the Apostle's** Coptic martyrdom (Tobi 23 / 31 January) differs from the existing 22/26
+  January entries.
+
+Confirmed rows unchanged at 576. Entries **1,064 -> 1,069**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched.
+
+**Remaining: seven Coptic months** (Meshir through Mesori, plus Pi Kogi Enavot).
+
+---
+
 ## Session 2026-09-07 continued -- Hathor checked; the new monthlyCoptic rule confirmed live; a
 ## resume-note claim about Clement of Rome found not to match the file. SEED_VERSION v262 -> v263.
 
