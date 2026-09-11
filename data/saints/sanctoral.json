@@ -246,22 +246,22 @@
     {
       "id": "saint-mercurius-of-caesarea-abu-seifein",
       "name": "Saint Mercurius of Caesarea (Abu Seifein)",
-      "description": "Martyrdom of Saint Mercurius, one of the most widely venerated martyr-saints of the Coptic Church, commemorated in the Coptic Synaxarium.",
+      "description": "The martyrdom of Saint Philopater Mercurius, known as \"The One with Two Swords\" (Abu Seifein) -- one of the most widely venerated martyr-saints of the Coptic Church, commemorated in the Coptic Synaxarium.",
       "type": "saint",
       "tags": [
         "OOR"
       ],
-      "dayLegacy": "November 7",
+      "dayLegacy": "December 4",
       "observance": {
         "type": "fixed",
         "dates": [
           {
-            "month": 11,
-            "day": 7
+            "month": 12,
+            "day": 4
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paopi) against Wikipedia's 'Coptic Synaxarium of the month of Paopi' table (en.wikipedia.org/wiki/Paopi), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paopi 28 = 7 November (Gregorian, common year) prints: 'Martyrdom of the St. Marcian (Marcianus) & St. Mercurius.' Mercurius (Abu Seifein, \"Father of Two Swords\") is among the most widely venerated martyrs in the Coptic Church, with numerous churches dedicated to him; his absence from this corpus prior to this addition was a genuine gap in a major figure, not a marginal one. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout pass; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED."
+      "ruleSource": "Date CORRECTED 2026-09-11: this row was originally ADDED 2026-09-07 at Paopi 28 / 7 November, sourced from Wikipedia's 'Coptic Synaxarium of the month of Paopi' table, which prints on that day 'Martyrdom of the St. Marcian (Marcianus) & St. Mercurius.' That date is real but is a secondary joint commemoration, not Mercurius's primary feast -- already independently covered by the saint-marcian row (November 7, CONFIRMED against coptic.io 2026-09-07). His famous \"Two Swords\" epithet belongs to his own martyrdom, at Hator 25. Corrected against Wikipedia's per-day page (en.wikipedia.org/wiki/Hathor_25), which prints 'The martyrdom of Saint Philopater Mercurius, known as \"The One with Two Swords\"' and gives Hator 25 = 4 December (Gregorian, common year); cross-checked against the Saint Mercurius Wikipedia article, which lists his Coptic feasts as '25 Hathor/4-5 December (Martyrdom), 9 Paoni/16-17 June (Translation of relics), 25 Epip/1-2 August (Feast)' -- confirming Hathor 25 as the martyrdom proper, not one of the other two. Both pages cite CopticChurch.net, St-Takla.org, and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995), the same witness set used throughout the OOR sweep. NOT YET CROSS-CHECKED against coptic.io directly -- the coptic.io connector returned zero callable tools this session (see resume note); confirm against the primary tool before treating as fully CONFIRMED rather than CORRECTED. Do not re-add a duplicate Mercurius row at November 7 -- that date's commemoration is already carried by saint-marcian."
     },
     {
       "id": "prophet-isaiah-coptic-departure",
@@ -9209,7 +9209,6 @@
         "ANG",
         "LAT",
         "EOR",
-        "OOR",
         "COE"
       ],
       "dayLegacy": "June 9",
@@ -9223,6 +9222,7 @@
         ]
       },
       "ruleSource": "9 June in all seven editions. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions.",
+      "oorNote": "OOR tag REMOVED 2026-09-11. The speculative OOR tag on this row (flagged open since 2026-09-03, provisionally read 2026-09-07 as a coptic.io selective-index gap rather than a real absence) is now resolved the other way: four distinct search terms (Ephrem the Syrian, Ephrem, Ephraim, Ephrem of Edessa) all returned empty against coptic.io's search_saints, in the same session where the same tool found Mercurius instantly and richly -- a working tool returning genuinely empty, not a broken one. Treated as absent from the Coptic Synaxarium under this identity, not merely under-indexed. See the tagNote on the two saint-ephrem-of-edessa allowlist rows (June 10, June 18) for the same finding.",
       "traditionObservance": {
         "EOR": {
           "type": "fixed",
@@ -9294,7 +9294,7 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Ephrem of Edessa, Syria, Deacon, 373”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "OOR NOTE 2026-09-07: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Given Ephrem the Syrian's universal stature as a Father of the Church, this reads as a gap in coptic.io's selective index rather than a genuine absence -- same judgment as Clement of Rome during the EOR pass. Not withdrawn/deleted; needs a fuller Coptic source, not this one's silence."
+      "tagNote": "OOR NOTE 2026-09-07, RESOLVED 2026-09-11: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Originally read 2026-09-07 as a gap in coptic.io's selective index rather than a genuine absence, on the Clement-of-Rome precedent. Reopened and resolved 2026-09-11: the same four search terms, tried again in a session where the same tool found Mercurius instantly and richly, all still came back empty -- a working tool returning genuinely empty, not a broken one. Now treated as a real absence, not an index gap. This ANG-tagged row (Book of Common Prayer, June 10) is unaffected; the OOR tag itself has been removed from saint-ephrem-the-syrian (June 9)."
     },
     {
       "id": "saint-timothy-of-prusa",
@@ -9741,7 +9741,7 @@
           }
         ]
       },
-      "tagNote": "OOR NOTE 2026-09-07: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Given Ephrem the Syrian's universal stature as a Father of the Church, this reads as a gap in coptic.io's selective index rather than a genuine absence -- same judgment as Clement of Rome during the EOR pass. Not withdrawn/deleted; needs a fuller Coptic source, not this one's silence."
+      "tagNote": "OOR NOTE 2026-09-07, RESOLVED 2026-09-11: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Originally read 2026-09-07 as a gap in coptic.io's selective index rather than a genuine absence, on the Clement-of-Rome precedent. Reopened and resolved 2026-09-11: the same four search terms, tried again in a session where the same tool found Mercurius instantly and richly, all still came back empty -- a working tool returning genuinely empty, not a broken one. Now treated as a real absence, not an index gap. This row is a bookkeeping placeholder for that finding, not a confirmed Coptic observance date -- June 18 is not sourced as Ephrem's Coptic feast day; the OOR tag itself has been removed from saint-ephrem-the-syrian (June 9)."
     },
     {
       "id": "saint-mark-and-marcellian",
@@ -17636,7 +17636,8 @@
           }
         ]
       },
-      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"Martyrdom of the Sts. Marcian (Marcianus) and Mercurius\" falls Nov 7 (28 Baba). OOR is this row's only tag."
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"Martyrdom of the Sts. Marcian (Marcianus) and Mercurius\" falls Nov 7 (28 Baba). OOR is this row's only tag.",
+      "crossRefNote": "2026-09-11: this joint commemoration with Mercurius is real and unchanged. Mercurius's own row (saint-mercurius-of-caesarea-abu-seifein) has been moved to December 4 / Hator 25, his primary \"Two Swords\" martyrdom feast -- do not read that move as touching this Nov 7 pairing, and do not re-add a second Mercurius row here."
     },
     {
       "id": "saints-crispin-and-crispinian",

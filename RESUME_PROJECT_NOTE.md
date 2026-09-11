@@ -307,12 +307,22 @@ Thout 8), risking compounding an identity ambiguity already flagged elsewhere; T
 (Thout 23) sitting close to but distinct from her existing ANG/EOR dates.
 
 *Paopi* (11 Oct - 9 Nov): three additions -- Hannah the Prophetess, mother of Samuel (16 October);
-Saint Timon the Apostle, one of the Seven Deacons (5 November); and **Saint Mercurius of Caesarea,
-Abu Seifein (7 November) -- one of the most widely venerated martyrs in the whole Coptic Church, the
-single most significant gap found by either sweep so far.** Two findings left open: a Hilarion date
-twelve days off the corpus's existing 21 October entries (3 November in the Coptic source), and a
-Dionysius reference at 2 November that one mirror source rendered as a broken, unreadable link --
-nothing added on unreadable text.
+Saint Timon the Apostle, one of the Seven Deacons (5 November); and Saint Mercurius's Paopi 28 (7
+November) row, a real joint commemoration with St Marcian -- **but NOT his primary feast; see the
+2026-09-11 correction below.** Two findings left open: a Hilarion date twelve days off the corpus's
+existing 21 October entries (3 November in the Coptic source), and a Dionysius reference at 2
+November that one mirror source rendered as a broken, unreadable link -- nothing added on unreadable
+text.
+
+**CORRECTION, 2026-09-11**: Mercurius's famous "Two Swords" (Abu Seifein) epithet belongs to his own
+martyrdom at **Hator 25 / 4 December**, not the Paopi 28 pairing above -- that gap was in fact the
+single most significant gap found by either sweep, just mis-dated. The `saint-mercurius-of-caesarea-
+abu-seifein` row has been moved to December 4 accordingly; the Paopi 28/Nov 7 pairing with Marcian is
+real and untouched, already independently carried by the `saint-marcian` row. Sourced from Wikipedia's
+Hathor_25 page plus the Saint Mercurius article's own feast list (25 Hathor/4-5 Dec = Martyrdom, 9
+Paoni/16-17 Jun = Translation of relics, 25 Epip/1-2 Aug = Feast) -- same witness set as the rest of
+this sweep. **NOT YET CROSS-CHECKED against coptic.io directly** -- see "coptic.io connector down"
+below.
 
 *Hathor* (10 Nov - 9 Dec): one addition -- Saint Cleopas the Apostle, the Emmaus Road disciple (10
 November). Three candidates checked and found ALREADY COVERED (worth knowing before re-checking
@@ -353,9 +363,25 @@ NOTE this is unrelated to the SIN Josh separately added for Joshua in the Anglic
 the same date -- two different systems, two independent justifications, see the ledger) and **Simon,
 son of Clopas, Bishop of Jerusalem** (16 July, distinct from Simon Peter and Simon the Zealot). Bishoy
 and Shenouda both EXACTLY matched their existing confirmed rows -- good independent validation.
-**The Ephrem the Syrian flag from 2026-09-03 is still open**: a martyred "Ephraem" turned up paired
-with Mercurius (6 August) but is very likely a different person from Ephraim the Syrian the
-hymnographer (28 January, EOR only) -- do not treat this as resolving that flag.
+The Ephrem the Syrian flag from 2026-09-03 was still open as of that finding: a martyred "Ephraem"
+turned up paired with Mercurius (6 August) but is very likely a different person from Ephraim the
+Syrian the hymnographer (28 January, EOR only) -- that finding did not resolve the flag.
+
+**RESOLVED 2026-09-11**: a direct coptic.io session re-tried four search terms (Ephrem the Syrian,
+Ephrem, Ephraim, Ephrem of Edessa) -- all four came back empty, in the same session where the same
+tool found Mercurius instantly and richly. A working tool returning genuinely empty is real evidence
+of absence, not a search failure. Ephrem the Syrian is now treated as genuinely absent from the
+Coptic Synaxarium: the speculative OOR tag has been removed from `saint-ephrem-the-syrian`, and the
+tagNotes on both `saint-ephrem-of-edessa` allowlist rows updated to match. This flag is now closed.
+
+**coptic.io connector down, 2026-09-11**: the connector shows as connected in this session but
+exposes zero callable tools -- it's the GitHub Codespace backing it (`jubilant-journey-...
+.app.github.dev`), which almost certainly needs waking up on Josh's end (Codespaces sleep after
+inactivity); nothing to fix on this side. The Mercurius Hator 25 correction and the Ephrem resolution
+above were both made from Wikipedia sourcing per the established OOR methodology, since the primary
+tool wasn't reachable this session -- both marked NOT YET CROSS-CHECKED / pending confirmation
+accordingly. Confirm against coptic.io directly once the Codespace is awake, before treating either
+as fully CONFIRMED.
 
 *Parmouti + Pashons* (9 Apr - 7 Jun, done together): only ONE addition -- Saint Jason, one of the
 Seventy, host of Paul and Silas at Thessalonica (11 May). Parmouti yielded nothing at all -- every
