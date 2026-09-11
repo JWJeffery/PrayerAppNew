@@ -1,3 +1,46 @@
+## Session 2026-09-07 continued -- Parmouti and Pashons checked; a spelling-variant near-miss joins
+## the word-order near-misses. SEED_VERSION v265 -> v266.
+
+Parmouti (9 April - 8 May) and Pashons (9 May - 7 June), applying the broader-search discipline
+learned last pass.
+
+### Parmouti yielded nothing
+
+Every major figure checked -- Aaron the High Priest, James son of Zebedee, Ezekiel the Prophet,
+Joachim -- is already present in the corpus on a different day.
+
+**"St. Christopher" was deliberately left untouched rather than risked.** The corpus's only existing
+Christopher is St. Christopher Magallanes, a 20th-century Mexican martyr -- clearly a different
+identity -- and the Coptic source gives no detail to confirm which Christopher is meant. Adding him
+without knowing would have risked either a false duplicate or a false new identity, so the row was
+left alone rather than guessed at.
+
+### Pashons: two more near-misses caught
+
+Same broad-search discipline, same pattern as last pass:
+
+- "Job" already exists (6 May, EOR).
+- "Junia" already exists paired with Andronicus (17 May, EOR).
+- **"Shenoute" already exists under the alternate spelling "Shenouda"** (14 July, OOR) -- a *spelling*
+  variant this time, not a word-order variant like the previous pass's near-misses. A new failure
+  mode for the same underlying risk, worth naming as such.
+
+### One genuine addition
+
+**Saint Jason**, one of the Seventy Apostles who hosted Paul and Silas at Thessalonica (Acts 17),
+Pashons 3 / 11 May. Confirmed absent under any spelling before adding.
+
+Confirmed rows unchanged at 576. Entries **1,070 -> 1,071**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched,
+specifically no duplicate written for any of the three near-misses across this pass.
+
+**Remaining: three Coptic months** (Paoni, Epip, Mesori) plus the intercalary Pi Kogi Enavot.
+
+---
+
 ## Session 2026-09-07 continued -- Meshir and Paremhat checked; two near-miss duplicates caught
 ## before writing. SEED_VERSION v264 -> v265.
 

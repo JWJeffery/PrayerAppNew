@@ -10,7 +10,7 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v265-2026-09-07-oor-gap-sweep-meshir-paremhat-checked-1-added-two-near-misses-caught`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v266-2026-09-07-oor-gap-sweep-parmouti-pashons-checked-1-added`.
 **Josh's direction, 2026-09-07: do two Coptic months at a time from here** -- individual months were
 adding too little per pass to be worth a separate patch each.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
@@ -348,6 +348,16 @@ All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, 
 coptic.io cross-check. Full detail and reasoning for every open item is in
 `AUDIT_GOVERNANCE_LEDGER.md`.
 
+*Parmouti + Pashons* (9 Apr - 7 Jun, done together): only ONE addition -- Saint Jason, one of the
+Seventy, host of Paul and Silas at Thessalonica (11 May). Parmouti yielded nothing at all -- every
+major figure checked already exists on a different day. Two more near-misses caught in Pashons (Job,
+Junia both already present); a THIRD kind of near-miss appeared -- "Shenoute" already exists as
+"Shenouda" (14 July, OOR), a spelling variant rather than a word-order variant. One name (a
+"Christopher" in the Parmouti source) was deliberately left untouched rather than guessed at: the
+corpus's only existing Christopher is a clearly different 20th-century martyr, and the source gives
+no detail to tell which Christopher is meant -- when in doubt, leave the row alone rather than risk a
+false duplicate or a false new identity.
+
 *Meshir + Paremhat* (8 Feb - 8 Apr, done together): only ONE addition -- Saint Onesiphorus, one of
 the Seventy (3 April). Everything else checked either turned out already covered (Cyril of Jerusalem,
 Hosea, Polycarp all exact date matches to existing confirmed rows) or was a same-figure-different-day
@@ -356,8 +366,8 @@ same Julian/Gregorian offset pattern seen via the ACOE diocesan comparison earli
 independently confirmed again here; also Agabus, Meletius/Malatius, Joseph of Arimathea, Macarius the
 Great, Narcissus of Jerusalem).
 
-**Remaining: May-June and August-December for EOR (7 months); Parmouti through Mesori plus the
-intercalary Pi Kogi Enavot for OOR (5 Coptic months, two at a time).** This is a genuine multi-session undertaking
+**Remaining: May-June and August-December for EOR (7 months); Paoni, Epip, Mesori plus the
+intercalary Pi Kogi Enavot for OOR (3 Coptic months + the short intercalary month left).** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.
