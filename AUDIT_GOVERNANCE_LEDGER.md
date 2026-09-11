@@ -1,3 +1,46 @@
+## Session 2026-09-07 continued -- Paopi checked, three additions including a major gap.
+## SEED_VERSION v261 -> v262.
+
+Second month of the OOR gap sweep: Coptic month of Paopi (11 October - 9 November), against
+Wikipedia's full-month table.
+
+### Three unambiguous additions, each confirmed absent first
+
+- **Hannah the Prophetess, mother of Samuel** (Paopi 6 / 16 October) -- a major Old Testament figure
+  with no prior entry at all.
+- **Saint Timon the Apostle** (Paopi 26 / 5 November) -- one of the Seven Deacons of Acts 6, likewise
+  entirely absent.
+- **Saint Mercurius of Caesarea, Abu Seifein** (Paopi 28 / 7 November) -- **one of the most widely
+  venerated martyrs in the Coptic Church**, with numerous churches dedicated to him. His complete
+  absence before now is the most significant single gap found by either gap sweep to date -- not a
+  marginal figure missed at the edges, a major one missing outright.
+
+All three tagged OOR only.
+
+### Two findings left open, same caution as Thout
+
+1. **A Hilarion date discrepancy.** Paopi 24 (3 November) prints "Departure of St. Hilarion, the
+   Anchorite," but the corpus already carries "Saint Hilarion" (LAT, unconfirmed) and "Venerable
+   Hilarion the Great" (EOR, confirmed), both at 21 October -- twelve days earlier. Whether the
+   Coptic departure and the Western/Eastern commemorations are the same event on different
+   reckonings, or the Coptic Synaxarium genuinely keeps a separate day, was not determined.
+2. **A garbled source citation.** Paopi 23 (2 November) names a Dionysius martyrdom, but one of the
+   two mirror sources used for this month rendered the name as a broken wiki-link fragment rather
+   than legible text. The corpus's existing Dionysius the Areopagite entry is confirmed at 3 October,
+   a different day -- not assumed to be the same figure, and nothing added on the strength of
+   unreadable text.
+
+Confirmed rows unchanged at 576 -- all three additions are ADDED, not CONFIRMED, pending direct
+coptic.io cross-check per the standing caveat. Entries **1,060 -> 1,063**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched.
+
+**Remaining: ten Coptic months** (Hathor through Mesori, plus Pi Kogi Enavot).
+
+---
+
 ## Session 2026-09-07 continued -- OOR gap sweep started; coptic.io unreachable from this account;
 ## Wikipedia full-month tables used instead of per-day pages. SEED_VERSION v260 -> v261.
 

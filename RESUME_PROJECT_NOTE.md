@@ -10,7 +10,7 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v261-2026-09-07-oor-gap-sweep-thout-started-no-connector`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v262-2026-09-07-oor-gap-sweep-paopi-checked-3-added`.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `audit-ledger.html`'s own
@@ -288,18 +288,29 @@ it is Josh's own commit, applying a patch from the separate, parallel Anglican-K
 (`en.wikipedia.org/wiki/<MonthName>`, e.g. `Thout`) -- better than the per-day-page plan this note
 originally proposed, since one fetch covers the whole month rather than ~30 day-pages.
 
-**OOR progress: Thout (11 Sept - 10 Oct) checked, 1 of 12 Coptic months.** One addition made --
-Isaiah the Prophet, Thout 6 / 16 September, confirmed absent before adding, tagged OOR only. Four
-further findings surfaced and deliberately left open rather than acted on, each needing individual
-judgment: Bartholomew's Coptic martyrdom date (Thout 1) vs. the existing Western-dated row; whether
-the Coptic Moses (Thout 8) and the existing EOR-tagged "Holy Prophet Moses" (4 Sept) are the same
-figure on different reckonings or genuinely distinct; Zechariah's Coptic martyrdom (also Thout 8),
-which risks compounding an identity ambiguity already flagged elsewhere in the corpus rather than
-resolving it; and Thecla's Coptic feast (Thout 23) sitting close to but distinct from her existing
-ANG/EOR dates. Full detail and reasoning for each is in `AUDIT_GOVERNANCE_LEDGER.md`.
+**OOR progress: Thout and Paopi checked, 2 of 12 Coptic months.**
 
-**Remaining: May-June and August-December for EOR (7 months); Paopi through Mesori plus the
-intercalary Pi Kogi Enavot for OOR (11 Coptic months).** This is a genuine multi-session undertaking
+*Thout* (11 Sept - 10 Oct): one addition -- Isaiah the Prophet, Thout 6 / 16 September. Four findings
+left open needing individual judgment: Bartholomew's Coptic martyrdom date (Thout 1) vs. the existing
+Western-dated row; whether the Coptic Moses (Thout 8) and the existing EOR-tagged "Holy Prophet
+Moses" (4 Sept) are the same figure on different reckonings; Zechariah's Coptic martyrdom (also
+Thout 8), risking compounding an identity ambiguity already flagged elsewhere; Thecla's Coptic feast
+(Thout 23) sitting close to but distinct from her existing ANG/EOR dates.
+
+*Paopi* (11 Oct - 9 Nov): three additions -- Hannah the Prophetess, mother of Samuel (16 October);
+Saint Timon the Apostle, one of the Seven Deacons (5 November); and **Saint Mercurius of Caesarea,
+Abu Seifein (7 November) -- one of the most widely venerated martyrs in the whole Coptic Church, the
+single most significant gap found by either sweep so far.** Two findings left open: a Hilarion date
+twelve days off the corpus's existing 21 October entries (3 November in the Coptic source), and a
+Dionysius reference at 2 November that one mirror source rendered as a broken, unreadable link --
+nothing added on unreadable text.
+
+All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, pending direct
+coptic.io cross-check. Full detail and reasoning for every open item is in
+`AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Remaining: May-June and August-December for EOR (7 months); Hathor through Mesori plus the
+intercalary Pi Kogi Enavot for OOR (10 Coptic months).** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.
