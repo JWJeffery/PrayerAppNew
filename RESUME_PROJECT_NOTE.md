@@ -10,7 +10,7 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v264-2026-09-07-oor-gap-sweep-koiak-tobi-checked-5-added`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v265-2026-09-07-oor-gap-sweep-meshir-paremhat-checked-1-added-two-near-misses-caught`.
 **Josh's direction, 2026-09-07: do two Coptic months at a time from here** -- individual months were
 adding too little per pass to be worth a separate patch each.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
@@ -325,6 +325,13 @@ Anne-related date alongside the existing 26 July and 9 December ones); Clement o
 resolved does NOT match the file); and Gregory Thaumaturgus/Neocaesarea (30 November, eleven days from
 the existing 17 November entry).
 
+**METHOD WARNING, learned the hard way this pass: a narrow phrase search returning nothing is NOT
+proof of absence.** Before checking Meshir/Paremhat, two figures were nearly added as duplicates --
+"Paul the First Hermit" and "Daniel the Prophet" -- because a first search missed them under different
+word order ("Saint Paul of Thebes in Egypt"; "Prophet Daniel"). Daniel's existing row was not just the
+same identity but an EXACT DATE MATCH to the Coptic source being checked. Always run a second, broader
+search before concluding absence, not just the first phrase that comes to mind.
+
 *Koiak + Tobi* (10 Dec - 7 Feb, done together): five additions -- King David the Prophet (1 January);
 Entrance of St Mary into the Temple (12 December); **Saint Takla Haymanot, the Ethiopian (2 January,
 tagged `oorSubtradition: 'Ethiopian'`)**; departure of Saint John the Evangelist (12 January --
@@ -341,8 +348,16 @@ All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, 
 coptic.io cross-check. Full detail and reasoning for every open item is in
 `AUDIT_GOVERNANCE_LEDGER.md`.
 
-**Remaining: May-June and August-December for EOR (7 months); Meshir through Mesori plus the
-intercalary Pi Kogi Enavot for OOR (7 Coptic months, now doing two at a time).** This is a genuine multi-session undertaking
+*Meshir + Paremhat* (8 Feb - 8 Apr, done together): only ONE addition -- Saint Onesiphorus, one of
+the Seventy (3 April). Everything else checked either turned out already covered (Cyril of Jerusalem,
+Hosea, Polycarp all exact date matches to existing confirmed rows) or was a same-figure-different-day
+finding left open (the Presentation/Candlemas feast sits 13 days after the existing 2 Feb entry -- the
+same Julian/Gregorian offset pattern seen via the ACOE diocesan comparison earlier this session,
+independently confirmed again here; also Agabus, Meletius/Malatius, Joseph of Arimathea, Macarius the
+Great, Narcissus of Jerusalem).
+
+**Remaining: May-June and August-December for EOR (7 months); Parmouti through Mesori plus the
+intercalary Pi Kogi Enavot for OOR (5 Coptic months, two at a time).** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.

@@ -1,3 +1,61 @@
+## Session 2026-09-07 continued -- Meshir and Paremhat checked; two near-miss duplicates caught
+## before writing. SEED_VERSION v264 -> v265.
+
+Meshir (8 February - 9 March) and Paremhat (10 March - 8 April), against Wikipedia's full-month
+tables.
+
+### Only one genuine addition -- and the smaller yield is itself informative
+
+**Saint Onesiphorus** (Paremhat 25 / 3 April), one of the Seventy Apostles named in 2 Timothy for his
+kindness to Paul in prison. Confirmed absent under any name before adding.
+
+### The session's most important methodological finding
+
+A first pass flagged "Paul the First Hermit" (Meshir 2 / 9 February) and "Daniel the Prophet"
+(Paremhat 23 / 1 April) as absent, based on narrow phrase searches. **Both are already present**
+under different word order and naming convention -- "Saint Paul of Thebes in Egypt" (15 January, EOR,
+confirmed) and "Prophet Daniel" (1 April, OOR, confirmed).
+
+Daniel's case is the more serious of the two: **1 April is not merely the same identity on a
+different day, it is an exact date match to this Coptic source.** Had the first-pass search been
+trusted, this pass would have written a duplicate row asserting a date the corpus already has
+correctly confirmed.
+
+Caught by a second, broader check before any write. The lesson is recorded in Onesiphorus's own
+`ruleSource` so it survives independently of this ledger entry: **a narrow phrase match returning
+nothing is not proof of absence**, especially for common names that may appear under a reordered or
+differently-conventioned title.
+
+### Other candidates checked and found already covered
+
+- **Cyril of Jerusalem's** Coptic date (Paremhat 22 / 31 March) exactly matches the existing
+  OOR-confirmed row.
+- **Hosea the Prophet** (Meshir 26 / 5 March) exactly matches the existing EOR/OOR-confirmed row.
+- **Polycarp of Smyrna** (Meshir 29 / 8 March) exactly matches the existing OOR-confirmed row -- the
+  corpus already carries him twice, once per calendar reckoning, and this Coptic date confirms the
+  OOR entry is the correct one rather than needing a third.
+
+### Same-figure-different-day findings left open -- more numerous this pair than any prior pass
+
+- **The Presentation/Candlemas feast** (Meshir 8 / 15 February) sits **thirteen days** after the
+  existing confirmed 2 February entry -- the same Julian/Gregorian offset already seen and explained
+  via the ACOE diocesan comparison earlier this session, now observed independently in the Coptic
+  calendar too.
+- Agabus, Meletius/Malatius of Antioch (spelling close but not identical), Joseph of Arimathea,
+  Macarius the Great, and Narcissus of Jerusalem all have Coptic dates differing from their existing
+  entries.
+
+Confirmed rows unchanged at 576. Entries **1,069 -> 1,070**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched,
+and specifically no duplicate written for either near-miss.
+
+**Remaining: five Coptic months** (Parmouti through Mesori, plus Pi Kogi Enavot).
+
+---
+
 ## Session 2026-09-07 continued -- Koiak and Tobi checked together, five additions. SEED_VERSION
 ## v263 -> v264.
 

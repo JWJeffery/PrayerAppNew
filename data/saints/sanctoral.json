@@ -3,6 +3,26 @@
   "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced. SCHEMA, extended 2026-09-05: an entry may carry an optional `traditionObservance` map of tradition code to observance rule. One identity is often kept on DIFFERENT DAYS by different traditions — Benedict of Nursia is 11 July for the Episcopal Church and 14 March in the East — and the schema previously allowed one row to hold several tradition tags but only ONE date, which forced either a date that is wrong for some of the row's own tags or a duplicate row per tradition. When a resolver asks on behalf of a tradition listed in `traditionObservance`, that rule applies; otherwise the shared `observance` does. The field is optional and additive, so every entry without it behaves exactly as before. LFF controls the ANG date in every case. SCHEMA, extended 2026-09-07: an OOR-tagged entry may carry an optional `oorSubtradition` string naming which Oriental Orthodox church its content actually belongs to -- \"Armenian\", \"Ethiopian\", \"Syriac\", etc. OOR's governing confirmation source is Coptic Reader/coptic.io specifically (Josh, 2026-09-05); an entry with no `oorSubtradition` is implicitly Coptic and is checked against that source. An entry WITH `oorSubtradition` set to something other than Coptic is real content for that sub-tradition, not a Coptic-calendar mismatch -- it must not be checked against coptic.io, corrected toward a Coptic date, withdrawn, or deleted on the strength of a Coptic-source no-match. It stays OOR-tagged (OOR is the parent/Oriental-Orthodox tag) and awaits its own tradition's governing source, expected as this project expands into other Oriental Orthodox sub-traditions (Josh, 2026-09-07).",
   "entries": [
     {
+      "id": "saint-onesiphorus-of-the-seventy",
+      "name": "Saint Onesiphorus",
+      "description": "Departure of Onesiphorus, one of the Seventy Apostles, named in 2 Timothy for his kindness to Paul in prison, commemorated in the Coptic Synaxarium.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "April 3",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 4,
+            "day": 3
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paremhat) against Wikipedia's 'Coptic Synaxarium of the month of Paremhat' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paremhat 25 = 3 April (Gregorian, common year) prints: 'The martyrdom of Saint Onesiphorous, one of the Seventy Apostles.' Confirmed genuinely absent from this corpus before being added. TWO NEAR-MISSES CAUGHT BEFORE WRITING, worth recording as a method note: 'Paul the First Hermit' (Meshir 2 / 9 February) and 'Daniel the Prophet' (Paremhat 23 / 1 April) both looked absent under a narrow phrase search, but are already present as 'Saint Paul of Thebes in Egypt' (15 January, EOR) and 'Prophet Daniel' (1 April, OOR, CONFIRMED) -- the latter an exact date match to this Coptic source, not merely the same identity. Word-order and naming-convention differences defeated the first search; a second, broader check caught both before either was added as a duplicate. NOT YET CROSS-CHECKED against coptic.io directly for Onesiphorus -- found via the compiled Wikipedia table; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED."
+    },
+    {
       "id": "king-david-the-prophet-coptic",
       "name": "King David the Prophet",
       "description": "Departure of David, King of Israel and Prophet, commemorated in the Coptic Synaxarium.",
