@@ -401,11 +401,55 @@ same Julian/Gregorian offset pattern seen via the ACOE diocesan comparison earli
 independently confirmed again here; also Agabus, Meletius/Malatius, Joseph of Arimathea, Macarius the
 Great, Narcissus of Jerusalem).
 
-**Remaining: May-June and August-December for EOR (7 months); Mesori plus the intercalary Pi Kogi
-Enavot for OOR -- the OOR sweep is nearly complete, one short pass left.** This is a genuine multi-session undertaking
--- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
-check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
-any single note's tally of progress at face value, including this one.
+**Remaining: May-June and August-December for EOR (7 months).** This is a genuine multi-session
+undertaking -- do not attempt to rush it or skip the cross-check-against-corpus step to save time.
+When resuming, check `git log` and the ledger for the actual last-completed month before continuing
+-- do not trust any single note's tally of progress at face value, including this one.
+
+**Mesori + Pi Kogi Enavot (intercalary), 2026-09-11 -- OOR SWEEP CLOSED.** Checked against
+St-Takla.org's full-month Synaxarium tables (one fetch per month covers all ~30/6 days), the same
+witness family used throughout. FOUR ADDITIONS, each confirmed absent under any spelling first:
+Hezekiah the King (Misra 4 / 10 August) -- a major OT king with no prior entry at all; Saint John the
+Soldier (Misra 5 / 11 August) -- also venerated Byzantine-side as John the Warrior, absent from this
+corpus under any tradition; Abba Poemen the Hermit (El-Nasi 4 / 9 September) -- one of the most quoted
+Desert Fathers in the Apophthegmata Patrum, a real gap in a major figure; Saint Barsoma "the Naked"
+(El-Nasi 5 / 10 September). ONE THING CHECKED AND FOUND ALREADY CORRECT: the Coptic Transfiguration
+date (Misra 13 / 19 August) turned out to already be fixed and coptic.io-CONFIRMED from 2026-09-07
+(`transfiguration-of-the-lord`'s own `traditionObservance.OOR` + `oorDateNote`) -- checked directly
+before doing any work, avoiding a duplicate fix. SEVERAL SAME-FIGURE-DIFFERENT-DAY FINDINGS LEFT OPEN,
+the now-standard caution, not acted on: Seven Holy Youths of Ephesus (EOR-only 4 August; Coptic date
+Misra 20 / 26 August, no OOR tag at either day); Prophet Micah (EOR-only 14 August; Coptic date Misra
+22 / 28 August); Prophet Malachias (EOR-only 3 January; Coptic date Misra 30 / 5 September); Bessarion
+the Wonderworker of Egypt (EOR-only 6 June) vs. "Bessarion the Great" departure at Misra 25 / 31
+August -- possibly the same desert father, not determined; Amos the Prophet (already EOR+OOR at 15
+June) vs. this source's Nasie date (El-Nasi 5 / 10 September) for the same prophet -- the existing OOR
+tag's date is not re-verified here; Julietta (Misra 6 / 12 August) vs. the existing `mar-cyriacus-and-
+julitta` row (COE, 15 July) -- possibly the same martyr-mother paired differently by tradition. A
+STRUCTURAL FINDING FLAGGED FOR JOSH, NOT TOUCHED: the corpus's main Dormition/Assumption row
+(`dormition-or-assumption-of-the-virgin-mary`) carries its OOR tag at the shared Western 15 August
+date, while the Coptic Assumption is actually Misra 16 / 22 August -- and the corpus already has a
+`vigil-of-the-assumption` (21 Aug) and `afterfeast-of-the-assumption` (23 Aug) correctly bracketing
+22 August, with no primary-day OOR row at 22 August itself. There is also a separate `dormition-of-
+the-theotokos` row, OOR-only, also at 15 August, raising a possible duplicate-row question. This
+touches a major Marian feast and several existing rows at once -- too consequential to fix
+unilaterally; needs Josh's governance call, the same standard applied to other major-feast
+date/structure questions in this project. Numerous other Mesori/Nasie commemorations (numbered Popes
+of Alexandria, local martyrs and priests) were checked and deliberately not added, consistent with
+this sweep's whole-project standard of major/widely-venerated figures only, not every named figure a
+source prints. **THE FULL 13-MONTH OOR GAP SWEEP (Thout through Mesori, plus Pi Kogi Enavot) IS NOW
+CLOSED.** All additions from the whole sweep remain ADDED, not CONFIRMED, pending direct coptic.io
+cross-check -- the connector was unreachable throughout this entire sweep (see the note below).
+
+**coptic.io connector -- persistently broken, 2026-09-11, do not keep re-attempting without new
+information.** Across this session the connector cycled through `needs_reconnect` -> reinstalled ->
+port set to Private (a real, now-fixed cause) -> `isAuthless: false` despite the real public API
+(api.coptic.io, confirmed via its own docs at coptic.io/docs) being genuinely authless -> URL field
+briefly regressed to the bare Codespace URL instead of the port-forwarded one (also fixed) -> still
+`needs_reconnect`, zero tools, after every fix. Something about this connector's setup is not
+resolving cleanly across multiple distinct, independently-diagnosed problems; Josh has a support
+reference code from the last failure. Do not spend further session time re-diagnosing this from the
+Claude side without a specific new lead -- the fixes attempted so far were all correct for the
+symptom they addressed and none resolved it.
 
 ### Other known gaps, not yet worked
 - Check `data/saints/sanctoral.json` directly for any row still carrying an unresolved "needs your

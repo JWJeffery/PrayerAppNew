@@ -3,6 +3,86 @@
   "note": "Flat sanctoral. Every entry carries an explicit `observance` rule: fixed | cycle | ordinal. `dayLegacy` preserves the original month-file day string for audit. `ruleSource` records the evidence for any non-default rule; an entry without one is a fixed date inherited from the previous data and NOT independently confirmed against a printed calendar. An entry with an empty `tags` array is a retained-but-unsourced identity and carries a `tagsGap` field stating why; 170 entries are in that state. Such entries never resolve and never display. They are not dead data to be swept: they are the disclosed remains of the 2026-09-03 Layer 3 sourcing pass, kept so they can be re-sourced. SCHEMA, extended 2026-09-05: an entry may carry an optional `traditionObservance` map of tradition code to observance rule. One identity is often kept on DIFFERENT DAYS by different traditions — Benedict of Nursia is 11 July for the Episcopal Church and 14 March in the East — and the schema previously allowed one row to hold several tradition tags but only ONE date, which forced either a date that is wrong for some of the row's own tags or a duplicate row per tradition. When a resolver asks on behalf of a tradition listed in `traditionObservance`, that rule applies; otherwise the shared `observance` does. The field is optional and additive, so every entry without it behaves exactly as before. LFF controls the ANG date in every case. SCHEMA, extended 2026-09-07: an OOR-tagged entry may carry an optional `oorSubtradition` string naming which Oriental Orthodox church its content actually belongs to -- \"Armenian\", \"Ethiopian\", \"Syriac\", etc. OOR's governing confirmation source is Coptic Reader/coptic.io specifically (Josh, 2026-09-05); an entry with no `oorSubtradition` is implicitly Coptic and is checked against that source. An entry WITH `oorSubtradition` set to something other than Coptic is real content for that sub-tradition, not a Coptic-calendar mismatch -- it must not be checked against coptic.io, corrected toward a Coptic date, withdrawn, or deleted on the strength of a Coptic-source no-match. It stays OOR-tagged (OOR is the parent/Oriental-Orthodox tag) and awaits its own tradition's governing source, expected as this project expands into other Oriental Orthodox sub-traditions (Josh, 2026-09-07).",
   "entries": [
     {
+      "id": "hezekiah-the-king",
+      "name": "Hezekiah the King",
+      "description": "Departure of Hezekiah, King of Judah, commemorated in the Coptic Synaxarium.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "August 10",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 8,
+            "day": 10
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/12-masra.html), the same witness family (CopticChurch.net/St-Takla.org/1995 printed Synaxarium) used throughout this sweep -- coptic.io itself was unreachable this session (connector down; see resume note). Misra 4 = 10 August (Gregorian, common year) prints: \"Departure of Hezekiah the King.\" A major Old Testament king with no prior entry in this corpus under any name. Confirmed genuinely absent before adding. NOT YET CROSS-CHECKED against coptic.io directly -- confirm against the primary tool before treating as fully CONFIRMED rather than ADDED."
+    },
+    {
+      "id": "saint-john-the-soldier",
+      "name": "Saint John the Soldier",
+      "description": "Departure of St. John the Soldier, commemorated in the Coptic Synaxarium.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "August 11",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 8,
+            "day": 11
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table. Misra 5 = 11 August (Gregorian, common year) prints: \"Departure of St. John the Soldier.\" This figure (also venerated in the Byzantine tradition as Righteous John the Warrior/Voin, 30 July Old Style) has no entry anywhere in this corpus under any name or tradition -- confirmed genuinely absent before adding. This addition is scoped to OOR only, on this Coptic-sourced date; a separate EOR date for the same identity, if one exists, is not addressed here. NOT YET CROSS-CHECKED against coptic.io directly."
+    },
+    {
+      "id": "abba-poemen-the-hermit",
+      "name": "Abba Poemen the Hermit",
+      "description": "Departure of St. Poimen (Poemen), the Hermit, commemorated in the Coptic Synaxarium -- one of the most frequently quoted Desert Fathers in the Apophthegmata Patrum (Sayings of the Desert Fathers).",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "September 9",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 9,
+            "day": 9
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/13-nasie.html). El-Nasi 4 = 9 September (Gregorian, common year) prints: \"Departure of St. Poimen, the Hermit.\" Abba Poemen is one of the most widely quoted Desert Fathers in the Apophthegmata Patrum and had no entry anywhere in this corpus under any spelling (Poemen/Poimen) -- confirmed genuinely absent before adding, a real gap in a major figure. NOT YET CROSS-CHECKED against coptic.io directly."
+    },
+    {
+      "id": "saint-barsoma-the-naked",
+      "name": "Saint Barsoma the Naked",
+      "description": "Departure of St. Barsoma (Barsauma), known as \"the Naked,\" commemorated in the Coptic Synaxarium -- a well-known Egyptian ascetic saint.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "dayLegacy": "September 10",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 9,
+            "day": 10
+          }
+        ]
+      },
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table. El-Nasi 5 = 10 September (Gregorian, common year) prints: \"Departure of St. Barsoma, the 'Naked.'\" Confirmed genuinely absent from this corpus under any spelling before adding. NOTE, left open rather than acted on: the same day's table also lists \"Departure of the Righteous Amos, the Prophet\" -- this corpus's existing Amos row (prophet-amos, EOR+OOR, 15 June) is NOT moved or duplicated here, since that row's OOR tag may already rest on a different, unverified date; this is a same-figure-different-day question for a future pass, not resolved in this one. NOT YET CROSS-CHECKED against coptic.io directly."
+    },
+    {
       "id": "joshua-son-of-nun-the-prophet",
       "name": "Joshua, Son of Nun, the Prophet",
       "description": "Departure of Joshua, son of Nun, successor to Moses and leader of Israel into the Promised Land, commemorated in the Coptic Synaxarium.",
