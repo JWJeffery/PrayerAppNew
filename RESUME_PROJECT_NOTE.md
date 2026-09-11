@@ -5,49 +5,50 @@ permanent record of every decision lives in `AUDIT_GOVERNANCE_LEDGER.md`; the cl
 blocks each open item lives in `documentation/OPEN_ITEMS_FIXABILITY.md`. **Where this note and the
 repo disagree, the repo wins** — it may have moved since this was written.
 
-This note was rewritten on 2026-09-07. The previous version (2026-09-04 rewrite) had accumulated a
-long, now largely-resolved narrative about the sanctoral confirmation effort — the EOR and OOR
-passes it described in progress are now essentially complete (see §7). The whole of the old note is
+This note was rewritten 2026-09-07 (twice — once at session end, once more here after a further
+short continuation). The previous version (2026-09-04 rewrite) had accumulated a long, now
+largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07, end of session (Claude Sonnet account):** `SEED_VERSION` was last set by
-this account to `v260-2026-09-07-eor-oor-gap-sweep-jan-mar`, but **the repo has already moved past
-that by the time this note is being written** — `git log` shows two more commits
-(`dbede86 Add Joshua the Prophet to July 3 kalendar`, `d66c7a2 Clean Crosby and Thomas review
-metadata`) made by Josh's OTHER Claude account, working the Anglican Kalendar side via
-`synaxarium-review/` in parallel. **Josh runs (at least) two Claude accounts against this same repo
-concurrently.** Never trust this note's SEED_VERSION, HEAD, or "what's open" section at face value —
-always `git clone` fresh and check `audit-ledger.html`'s own `SEED_VERSION` const and `git log`
-before doing anything else, every single session, no exceptions. This note may already be stale by
-the time you read it, possibly by more than the two commits above.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v261-2026-09-07-oor-gap-sweep-thout-started-no-connector`.
+**As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
+Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
+"what's open" section at face value — `git clone` fresh and check `audit-ledger.html`'s own
+`SEED_VERSION` const and `git log --oneline -6` before doing anything else, every session, no
+exceptions.
 
-Cache-bust params as of this account's own last commit: `office-ui.js?v=221`,
-`explanations.js?v=220`, `prayers.js?v=221`, `saints-resolver.js?v=248` — re-check these too.
+Cache-bust params as of this account's own last commit (unchanged this continuation — no JS was
+touched): `office-ui.js?v=221`, `explanations.js?v=220`, `prayers.js?v=221`,
+`saints-resolver.js?v=248` — re-check these too, every session; do not assume they're still current
+just because they match here.
 
 ---
 
 ## 0. Immediate next task, requested by Josh at end of session
 
-**Check the entire coptic.io saint registry directly (not the Wikipedia-proxy method used for the
-EOR gap sweep in §7) and import whatever major figures are genuinely missing from OOR.** Josh's own
-words: "We will be done with it once you check the entire registry and do any other imports that are
-needed" — meaning this is understood as the task that closes out the OOR side of the gap-sweep work
-described in §7, once done properly against the live source rather than a proxy.
+**Check the entire coptic.io saint registry directly and import whatever major figures are genuinely
+missing from OOR.** Josh's own words: "We will be done with it once you check the entire registry
+and do any other imports that are needed."
 
-**Blocker as of end of session: the coptic.io MCP connector was not responding.** `coptic_mcp_server.py`
-(repo root) is per-session infrastructure Josh must start each session (confirmed by him directly,
-2026-09-07) — running `python coptic_mcp_server.py` produced `[Errno 98] address already in use` on
-port 8000, meaning SOME process was already bound there, but the MCP tool still returned "not
-available in this turn" immediately after. This was never resolved before the session ended — the
-likely next step is checking whether the Codespace's port-8000 forwarding is actually set to
-**Public** (not just bound locally), since a locally-bound-but-not-forwarded port would produce
-exactly this symptom (server up, tool still unreachable). Ask Josh to check the Ports tab before
-assuming the server itself is broken.
+**The coptic.io connector is per-Codespace infrastructure Josh runs and forwards locally
+(`coptic_mcp_server.py`, repo root) — it is not reachable from a fresh Claude account/session with no
+custom connector added, confirmed via `search_mcp_registry` returning nothing on 2026-09-07, not
+assumed.** Ask Josh directly whether the server is running and port 8000 is forwarded as **Public**
+in his Codespace's Ports tab before spending time on it; do not assume it will ever become available
+without him doing that setup step first.
 
-If the connector still won't come up, fall back to the same method already used for EOR: Wikipedia's
-per-Coptic-day pages (e.g. `Thout 18`, `Paremhat 21`, sourced from copticchurch.net/st-takla.org) —
-see §7's "New, actively in-progress" section for the batched-search methodology, which transfers
-directly (same approach, different page-naming convention).
+**Fallback in active use since 2026-09-07: Wikipedia's full-MONTH Coptic Synaxarium tables** —
+better than the old per-day-page plan. One page per Coptic month
+(`en.wikipedia.org/wiki/<MonthName>`, e.g. `Thout`, `Paopi`, `Hathor`...) carries the whole month's
+commemorations in one table, citing CopticChurch.net, St-Takla.org and the printed 1995 Saint George
+Coptic Orthodox Church Synaxarium — one fetch instead of ~30 day-page fetches. Use this for OOR
+unless/until the connector comes up.
+
+**Progress: Thout (11 Sept – 10 Oct) is the only month checked so far — 1 of 12 (see §7 for the four
+open findings from it that still need a decision before acting). Paopi through Mesori, plus the
+intercalary Pi Kogi Enavot, remain untouched.** Do not attempt the whole sweep in one pass — this was
+explicit guidance after Thout alone surfaced four items needing individual judgment calls
+(same-figure-different-reckoning questions, not simple absences).
 
 ---
 
@@ -260,33 +261,48 @@ results in both cases -- the refactor changed nothing for COE):
 
 Different question from the confirmation passes above -- not "is our stored date right" but "does
 the source have people we don't have AT ALL." Scoped deliberately per Josh (2026-09-07) to **major,
-widely-venerated figures only**, not a full synaxarion import -- a full daily synaxarion runs
-10-20+ names per day, almost all hyper-local figures this curated corpus was never trying to include.
+widely-venerated figures only**, not a full synaxarion import.
 
-**Method**: batched web searches against Wikipedia's compiled "Month Day (Eastern Orthodox
-liturgics)" pages (one per Gregorian day of the year, sourced from Pravoslavie.ru/Ecclesia.gr/OCA) --
-search 4-5 consecutive days at a time; the snippets alone usually carry enough of each day's list
-without a separate fetch per day. For OOR, the equivalent is Wikipedia's per-Coptic-day pages (e.g.
-`Thout 18`, `Paremhat 21`) -- **not yet tested this session**, EOR was worked first.
+**EOR method**: batched web searches against Wikipedia's compiled "Month Day (Eastern Orthodox
+liturgics)" pages (one per Gregorian day, sourced from Pravoslavie.ru/Ecclesia.gr/OCA) -- 4-5
+consecutive days at a time, snippets alone usually enough.
 
-**Progress: EOR January through March swept, clean/found as follows.** January: clean, no gaps.
-February: 3 findings -- `prophet-azariah` RESTORED (wrongly deleted during the EOR pass on an
-orthocal.info false negative -- Wikipedia's Feb 3 page, itself citing Pravoslavie.ru/Ecclesia.gr,
-shows he's genuinely kept); `prophet-zechariah-minor-prophet` and `saint-photine-samaritan-woman`
-ADDED (both genuinely absent under any identity -- Photine especially notable, a major Gospel figure
-with no entry at all; her date was corrected from Wikipedia's Feb 26 to Mar 20 after checking OCA
-directly, since Feb 26 is specifically Greek tradition and this project's governing EOR reckoning is
-Slavic/OCA). March: 5 findings -- Dismas the Good Thief got his EOR tag restored (an earlier EOR-pass
-withdrawal was incomplete checking); Aaron the High Priest, Eudokia of Heliopolis, Paul the Simple,
-and Joseph the Fair (the Patriarch, distinct from Joseph the Betrothed) all ADDED as genuine absences.
+**EOR progress: January through APRIL swept** (correcting an earlier version of this note, which
+undercounted this as "through March" -- always verify against `git log`, not this note's memory of
+it). January clean. February: 3 findings (`prophet-azariah` restored on an orthocal.info false
+negative; `prophet-zechariah-minor-prophet` and `saint-photine-samaritan-woman` added as genuine
+absences -- Photine's date corrected Feb 26 -> Mar 20 to match this project's Slavic/OCA reckoning
+rather than the Greek Feb 26). March: 5 findings (Dismas the Good Thief's EOR tag restored; Aaron the
+High Priest, Eudokia of Heliopolis, Paul the Simple, Joseph the Fair all added). **April: clean of
+missing figures, but a real identity-mislabeling bug was found and fixed** (see
+`AUDIT_GOVERNANCE_LEDGER.md`, commit `0989f34`, for the specific figure/row).
 
-Every new/restored row from this sweep is marked as needing direct orthocal.info/OCA confirmation
-rather than fully CONFIRMED -- found via a compiled secondary source (Wikipedia), not checked
-directly against the primary tool.
+Every new/restored EOR row is marked as needing direct orthocal.info/OCA confirmation rather than
+fully CONFIRMED -- found via Wikipedia, not the primary tool.
 
-**Remaining: April through December for EOR (9 months), then the full 12-month OOR/Coptic sweep
-using Wikipedia's per-Coptic-day pages.** This is a genuine multi-session undertaking -- do not
-attempt to rush it or skip the cross-check-against-corpus step to save time.
+**Note: `dbede86 Add Joshua the Prophet to July 3 kalendar` is NOT part of this systematic sweep** --
+it is Josh's own commit, applying a patch from the separate, parallel Anglican-Kalendar work via
+`synaxarium-review/` (see §2). Do not read it as evidence the EOR sweep has reached July; it hasn't.
+
+**OOR method, started 2026-09-07**: Wikipedia's **full-month** Coptic Synaxarium tables
+(`en.wikipedia.org/wiki/<MonthName>`, e.g. `Thout`) -- better than the per-day-page plan this note
+originally proposed, since one fetch covers the whole month rather than ~30 day-pages.
+
+**OOR progress: Thout (11 Sept - 10 Oct) checked, 1 of 12 Coptic months.** One addition made --
+Isaiah the Prophet, Thout 6 / 16 September, confirmed absent before adding, tagged OOR only. Four
+further findings surfaced and deliberately left open rather than acted on, each needing individual
+judgment: Bartholomew's Coptic martyrdom date (Thout 1) vs. the existing Western-dated row; whether
+the Coptic Moses (Thout 8) and the existing EOR-tagged "Holy Prophet Moses" (4 Sept) are the same
+figure on different reckonings or genuinely distinct; Zechariah's Coptic martyrdom (also Thout 8),
+which risks compounding an identity ambiguity already flagged elsewhere in the corpus rather than
+resolving it; and Thecla's Coptic feast (Thout 23) sitting close to but distinct from her existing
+ANG/EOR dates. Full detail and reasoning for each is in `AUDIT_GOVERNANCE_LEDGER.md`.
+
+**Remaining: May-June and August-December for EOR (7 months); Paopi through Mesori plus the
+intercalary Pi Kogi Enavot for OOR (11 Coptic months).** This is a genuine multi-session undertaking
+-- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
+check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
+any single note's tally of progress at face value, including this one.
 
 ### Other known gaps, not yet worked
 - Check `data/saints/sanctoral.json` directly for any row still carrying an unresolved "needs your

@@ -1,3 +1,57 @@
+## Session 2026-09-07 continued -- OOR gap sweep started; coptic.io unreachable from this account;
+## Wikipedia full-month tables used instead of per-day pages. SEED_VERSION v260 -> v261.
+
+### The connector
+
+`coptic_mcp_server.py` is per-Codespace infrastructure Josh runs and forwards locally. It is not
+reachable from this account -- confirmed via `search_mcp_registry`, not assumed. Fell back to the
+Wikipedia method the previous note anticipated.
+
+### A better instrument than the one planned
+
+Wikipedia carries a **full-month table per Coptic month** (`en.wikipedia.org/wiki/Thout`), citing
+CopticChurch.net, St-Takla.org, and the printed 1995 Saint George Coptic Orthodox Church Synaxarium
+-- not just the per-day pages the EOR sweep used. One fetch covers roughly 30 days instead of one page
+per day. Worth using for the remaining eleven months.
+
+### Thout checked -- one month of twelve
+
+**One unambiguous addition:** Isaiah the Prophet, departure commemorated Thout 6 / 16 September.
+Confirmed absent from the corpus under any spelling before adding. Tagged OOR only.
+
+**Four findings surfaced and deliberately left open**, because each needs more care than a bounded
+pass allows:
+
+1. **Bartholomew's Coptic martyrdom** is Thout 1 / 11 September. The corpus's Bartholomew row
+   (ANG/LAT/OOR) sits at 24 August, the Western feast. May be the same `traditionObservance` pattern
+   already used for Basil and Catherine of Alexandria, or may need a separate Coptic-specific row.
+   Not decided here.
+2. **Moses the Prophet's Coptic departure** is Thout 8 / 18 September. The corpus has "Holy Prophet
+   Moses" (EOR only, 4 September) and "Saint Moses the Black" (a different desert-father Moses, two
+   further dates). Whether the Coptic and EOR Moses are the same figure on different reckonings needs
+   checking, not assuming.
+3. **Zechariah's Coptic martyrdom**, also Thout 8, is ambiguous on its own terms: the corpus already
+   flags elsewhere that "Prophet Zechariah" and "Zechariah, father of John the Baptist" may be
+   conflated in at least one witness (OCA's joint commemoration, found during the EOR pass). Adding a
+   third date for a possibly-already-confused identity would compound the ambiguity, not resolve it.
+4. **Thecla's Coptic feast** is Thout 23 / 3 October. The corpus holds her at 23 September (ANG) and
+   24 September (EOR) -- a third, close-but-distinct date. Same open question as Bartholomew.
+
+**Verified not a gap:** the Theotokos commemoration on Thout 21 / 1 October is already covered -- the
+corpus's "Intercession of the Theotokos" (OOR, confirmed) already sits at 1 October.
+
+### Remaining
+
+Eleven Coptic months (Paopi through Mesori, plus the intercalary Pi Kogi Enavot). **Not attempted in
+one pass**, per the standing instruction not to rush this sweep.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion at the head of the entries array, revalidated with
+`json.loads`; entry count 1,059 -> 1,060; no existing row touched.
+
+---
+
 ## Session 2026-09-06 -- the Anglican tag is complete. SEED_VERSION v250 -> v251.
 
 Josh, on the 21 rows no Anglican witness in this repo carries: **remove them.**
