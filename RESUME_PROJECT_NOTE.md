@@ -10,7 +10,7 @@ short continuation). The previous version (2026-09-04 rewrite) had accumulated a
 largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
 preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v262-2026-09-07-oor-gap-sweep-paopi-checked-3-added`.
+**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v263-2026-09-07-oor-gap-sweep-hathor-checked-1-added`.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `audit-ledger.html`'s own
@@ -225,12 +225,19 @@ liturgical calendar and `calendar-east-syriac.js` -- genuine Church of the East 
 carried a COE tag at all. Fixed: OOR removed, COE added. If another row's own description names a
 different tradition's engine/calendar than its tags claim, trust the description over the tags.
 
-**Clement of Rome, resolved across both passes**: flagged during the EOR pass as "likely a
-coptic.io/orthocal.info source-gap, not a real absence" after a name search came up empty. During
-the OOR pass, a broader search term found him after all (Dec 8, 29 Hator). If a search for a major,
-universally-venerated figure comes up empty, that is real evidence to try alternate phrasings before
-concluding absence -- Ephrem the Syrian's case in the OOR pass was judged the same way and has NOT
-yet been re-attempted with a different term; worth revisiting.
+**Clement of Rome -- correction, 2026-09-07 (Hathor pass).** The claim just above (in an earlier
+version of this note) that the OOR pass "found him after all (Dec 8, 29 Hator)" and resolved the
+question **does not match the file**: checked directly during the Hathor gap-sweep pass, and no
+Clement row exists at 8 December. The corpus's only confirmed Clement of Rome is 23 November
+(ANG/EOR/LAT/OOR). Either that earlier finding was made and never actually written to
+`sanctoral.json`, or the claim was wrong from the start -- not determined which, and not fixed here,
+because the underlying question (one Coptic-specific date at 8 December distinct from 23 November,
+or no such date at all) is still open either way. **Do not trust this note's claims about what was
+"resolved" without checking the file directly -- this is the second time in one day a stale claim in
+this note has been caught against the actual repo state** (see the April/July EOR-progress correction
+above). The general lesson about trying alternate search phrasings before concluding absence still
+stands, and Ephrem the Syrian's case (OOR pass, judged the same way, not yet re-attempted) is still
+worth revisiting.
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 
@@ -305,12 +312,23 @@ twelve days off the corpus's existing 21 October entries (3 November in the Copt
 Dionysius reference at 2 November that one mirror source rendered as a broken, unreadable link --
 nothing added on unreadable text.
 
+*Hathor* (10 Nov - 9 Dec): one addition -- Saint Cleopas the Apostle, the Emmaus Road disciple (10
+November). Three candidates checked and found ALREADY COVERED (worth knowing before re-checking
+them): Michael's Coptic monthly synaxis (already served by the `monthlyCoptic` engine rule built
+earlier this session -- first live confirmation it actually works on a real day); Peter of Alexandria
+(exact match, 8 December, already OOR-confirmed); Anianus (exact match, 29 November, already present).
+Three more same-figure-different-day findings left open: St Anne's departure (20 November, a third
+Anne-related date alongside the existing 26 July and 9 December ones); Clement of Rome's Coptic date
+(8 December -- see the correction elsewhere in this note, an earlier claim that this was already
+resolved does NOT match the file); and Gregory Thaumaturgus/Neocaesarea (30 November, eleven days from
+the existing 17 November entry).
+
 All additions from both months are ADDED, not CONFIRMED -- found via Wikipedia, pending direct
 coptic.io cross-check. Full detail and reasoning for every open item is in
 `AUDIT_GOVERNANCE_LEDGER.md`.
 
-**Remaining: May-June and August-December for EOR (7 months); Hathor through Mesori plus the
-intercalary Pi Kogi Enavot for OOR (10 Coptic months).** This is a genuine multi-session undertaking
+**Remaining: May-June and August-December for EOR (7 months); Koiak through Mesori plus the
+intercalary Pi Kogi Enavot for OOR (9 Coptic months).** This is a genuine multi-session undertaking
 -- do not attempt to rush it or skip the cross-check-against-corpus step to save time. When resuming,
 check `git log` and the ledger for the actual last-completed month before continuing -- do not trust
 any single note's tally of progress at face value, including this one.

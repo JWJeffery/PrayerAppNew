@@ -1,3 +1,51 @@
+## Session 2026-09-07 continued -- Hathor checked; the new monthlyCoptic rule confirmed live; a
+## resume-note claim about Clement of Rome found not to match the file. SEED_VERSION v262 -> v263.
+
+Third month of the OOR gap sweep: Coptic month of Hathor (10 November - 9 December).
+
+### One unambiguous addition
+
+**Saint Cleopas the Apostle** (Hathor 1 / 10 November) -- the Emmaus Road disciple of Luke 24, a named
+Gospel figure with no entry under any name. Confirmed absent before adding. Tagged OOR only.
+
+### Three candidates checked and found already covered
+
+Worth recording because each looked plausible before checking:
+
+- **Michael the Archangel's Coptic monthly synaxis** (Hathor 12) is already served by the recurring
+  "12th of every Coptic month" row built earlier this session with the new `monthlyCoptic` observance
+  type -- **the first live confirmation that engine rule actually covers a real day in the sweep**,
+  not only the day it was originally written against.
+- **Peter of Alexandria**, the 17th Pope and "Seal of the Martyrs" (Hathor 29 / 8 December), is
+  already present, OOR, confirmed, at 8 December -- exact match.
+- **Anianus**, the 2nd Pope of Alexandria (Hathor 20 / 29 November), is already present at 29
+  November -- exact match.
+
+### Three same-figure-different-day findings left open
+
+1. **St Anne's departure** (Hathor 11 / 20 November) is a *third* Anne-related date in the corpus,
+   distinct from the existing 26 July nativity feast and the 9 December conception feast. Not assumed
+   redundant with either.
+2. **Clement of Rome's Coptic commemoration** (Hathor 29 / 8 December) is a different day from the
+   corpus's confirmed 23 November entry. **This contradicts the resume note's own §7**, which claimed
+   the OOR pass had already "found him after all (Dec 8, 29 Hator)" and resolved the question.
+   Checked directly against the file: no Clement row exists at 8 December. Either that claim was about
+   a finding never written to the corpus, or it was made and never committed. Recorded as a correction
+   to the note rather than silently fixed -- the underlying question (one Coptic date or two) is still
+   open either way.
+3. **Gregory Thaumaturgus / Gregory of Neocaesarea's Coptic date** (Hathor 21 / 30 November) is eleven
+   days from the corpus's existing entry at 17 November (EOR, unconfirmed).
+
+Confirmed rows unchanged at 576. Entries **1,063 -> 1,064**.
+
+### Verification
+
+`sanctoral.json` edited by direct insertion, revalidated with `json.loads`; no existing row touched.
+
+**Remaining: nine Coptic months** (Koiak through Mesori, plus Pi Kogi Enavot).
+
+---
+
 ## Session 2026-09-07 continued -- Paopi checked, three additions including a major gap.
 ## SEED_VERSION v261 -> v262.
 
