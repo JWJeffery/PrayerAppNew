@@ -19514,7 +19514,8 @@
             "day": 24
           }
         ]
-      }
+      },
+      "ruleSource": "Date CONFIRMED 2026-09-11 against orthocal.info, GREEK tradition specifically: \"Hieromartyr Clement, Pope of Rome\" (full name \"Holy Hieromartyr Clement, Bishop of Rome, ca. 100\") falls Nov 24, matching this row's stored date exactly. NOTE, disclosed rather than silently resolved: under orthocal.info's DEFAULT Slavic/OCA/ROCOR tradition (this project's own EOR baseline), searching \"Clement\" in any phrasing tried returns only Clement of Ancyra (Jan 23) and Clement of Ochrid (Jul 27) -- no Clement of Rome at all, under either Gregorian or Julian reckoning, checked directly via get_day for Nov 24/25 both calendars. This is NOT the OOR-style \"working tool, genuinely empty\" absence pattern -- the same tool's Greek option found him instantly, so this reads as a real Slavic/Greek practice difference (or a Slavic-side data gap in orthocal.info itself), not evidence he is unattested in Orthodoxy generally. Greek/Antiochian practice is documented elsewhere in this project as a beta option, not yet the governing EOR source. Left at Nov 24 (Greek-confirmed, matching prior storage) rather than moved or removed; a future session with a per-sub-tradition mechanism for EOR (the same shape as OOR's oorSubtradition field) may want to revisit whether this needs its own Slavic-vs-Greek split."
     },
     {
       "id": "saint-andrew-dung-lac-and-companions",

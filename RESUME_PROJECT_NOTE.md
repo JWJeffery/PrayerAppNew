@@ -241,6 +241,53 @@ above). The general lesson about trying alternate search phrasings before conclu
 stands, and Ephrem the Syrian's case (OOR pass, judged the same way, not yet re-attempted) is still
 worth revisiting.
 
+**ANOTHER STALE CLAIM CAUGHT, 2026-09-11: the "23 November" above is also wrong.** Checked directly
+against `sanctoral.json`: `hieromartyr-clement-of-rome` is stored at **November 24**, tagged EOR only
+(not ANG/EOR/LAT/OOR as claimed) -- there is a separate, different Catherine-of-Alexandria-adjacent
+row cluster near that date that may be the source of the confusion. This is now the THIRD time a
+specific date/tag claim in this note has been caught wrong against the actual file. The standing
+lesson bears repeating in the strongest terms: **do not cite a date, tag list, or "resolved" status
+from this note in place of opening the file** -- treat every claim above this line as a lead to verify,
+never as fact.
+
+**Orthocal connector confirmed WORKING, 2026-09-11 -- EOR confirmation work resumed.** Unlike
+coptic.io, Orthocal loaded and answered correctly all session (`search_saints`, `get_day`; Slavic
+default, Greek option, Julian/Gregorian both available). Three findings from this session, plus one
+full month actually re-verified:
+
+- **Clement of Rome fixed**: this row had genuinely NO ruleSource of any kind (not a stale-note issue,
+  a real gap in the file). CONFIRMED 2026-09-11 against orthocal.info's Greek-tradition option: exact
+  match at Nov 24. Disclosed rather than hidden: Slavic (this project's EOR baseline) returns no
+  Clement-of-Rome match at all under any phrasing tried, at either Nov 24 or Nov 25, Julian or
+  Gregorian -- this is a real Slavic/Greek practice difference (or a Slavic-side data gap in
+  orthocal.info), not the OOR-style "working tool, genuinely empty" absence pattern, since the same
+  tool's Greek option found him instantly. Left at Nov 24, matching both the prior stored value and
+  the Greek confirmation.
+- **Two rows that LOOKED unconfirmed by a crude file grep were already correctly resolved** by an
+  earlier session and should NOT be touched again: `saint-catherine-of-alexandria` (EOR/LAT row) and
+  `saint-sylvester-i` both carry their real EOR confirmation in `eorDateNote`/`traditionObservance`,
+  not the generic `ruleSource` field -- a naive `ruleSource`-only check flags these as gaps when they
+  are not. Check `eorDateNote` and `oorDateNote` too before treating any row as unconfirmed.
+- **May 2026 (all 31 EOR-tagged rows) re-verified against live orthocal.info, one row at a time.**
+  29 of 31 confirmed exactly correct as stored (a few needed a second search phrasing -- "Simon
+  Zelotes" not "Simon the Zealot," "Thalelaeus" not "Thallelaios," "Epiphanius"/"Methodius" alone
+  rather than the full paired name -- phrasing misses, not real gaps). TWO GENUINE FINDINGS, neither
+  simply fixable with a date edit:
+  - `st-pachomius-of-patmos` (New Martyr Pachomius) is stored as a FIXED May 21 date, but his real
+    Orthodox commemoration is **Ascension Day itself** (a movable feast) -- confirmed via `get_day`:
+    2026's Ascension happens to fall on May 21, which is almost certainly why he was filed as fixed
+    in the first place. This needs the same movable-date engine machinery as the three rules built
+    2026-09-07 (see below), not a plain date correction -- flagged for that engine work, not touched
+    here.
+  - `martyr-meletius-stratelates` (May 24) genuinely does not appear in orthocal.info under either
+    Slavic or Greek tradition, under any phrasing tried ("Meletius," "Meletius Stratelates"), and does
+    not appear in the live May 24, 2026 Gregorian `get_day` result either (that day's saints are Simeon
+    the Stylite, Nikita the Stylite, and Vincent of Lerins). A real open gap -- not resolved, not
+    removed; needs a different source or a Julian-offset check not yet tried.
+  Remaining May work: none -- May is DONE (31 of 31 rows checked; 29 confirmed as-is, 2 real findings
+  disclosed above, 0 rows needed a plain date correction this month). June and August-December (6
+  months, roughly 200 more EOR-tagged rows) are NOT started.
+
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 
 Previously flagged as needing "a real engine rule, not a lookup" -- now actually built, in
