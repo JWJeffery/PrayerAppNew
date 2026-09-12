@@ -13609,3 +13609,59 @@ note is ~300 lines against the old note's ~500, with the resolved history preser
 rather than restated.
 
 SEED_VERSION v259 -> v260-2026-09-07-eor-oor-gap-sweep-jan-mar.
+
+---
+
+## 2026-09-12 — `traditionObservance` was inert in the canonical async read path
+
+**Found while scoping the sub-tradition schema work**, not reported by a user.
+
+`SaintsResolver.resolveCommemorations(date, tradition, opts)` takes `tradition` as its
+second **positional** argument but passed only bare `opts` down to
+`_entriesOn() → occursOn() → observanceFor()`. Callers pass tradition positionally, never
+inside `opts`, so `observanceFor()` received `tradition === undefined` on every call through
+this path and fell through to the shared `observance` rule every time.
+
+This is the canonical read path used by every office renderer in `js/office-ui.js`. Net
+effect: the entire `traditionObservance` mechanism — added 2026-09-05 precisely so one
+identity could be kept on different days by different traditions — **did nothing in the live
+application**. `filterCachedByTradition()`, immediately below it in the same file, already
+did it correctly; the two public read paths silently disagreed, and that disagreement is how
+this was found.
+
+**Scale, measured:** 55 rows carry `traditionObservance`; **60 override entries resolve to a
+different day than their row's shared rule**. The data was correct in every case. The engine
+never read it. Affected includes the Coptic Annunciation, Coptic Nativity of the Theotokos,
+the Coptic Assumption, Coptic Transfiguration, and the EOR corrections from the entire
+May–November 2026 month-by-month confirmation pass.
+
+**Fix:** one line, mirroring `filterCachedByTradition` —
+`_entriesOn(entries, date, Object.assign({}, opts, { tradition }))`.
+`loadSaintsForDate()` left tradition-agnostic by design (admin dashboard entry point).
+
+**Verified** by four-part full-corpus sweep, not spot check: 58/58 overrides resolve on their
+own date; 58/58 clean of leakage onto the shared date; async and sync paths agree on
+1,680/1,680 date-by-tradition pairs across five traditions for a full year; 398 non-override
+rows unchanged, 0 regressions.
+
+### Consequence for the sub-tradition (option B) work
+Sub-tradition keys (`OOR:Coptic`) would have been **equally inert**, since they resolve through
+the same `observanceFor()`. Building B on the unfixed engine would have produced a schema that
+tested green in isolation and did nothing in the app. This fix is a hard prerequisite.
+
+### Second bug, exposed by the first
+`saint-andrew-the-apostle`'s OOR override (Dec 13, 4 Kiahk, coptic.io-confirmed 2026-09-07) was
+written to the **wrong row of a duplicate-id pair** — the COE-only vestigial ACOTE row, which
+carries no OOR tag, so it could never fire. The row holding the OOR tag had
+`traditionObservance: null`. Undetectable while the mechanism was inert. Moved to the correct
+row; `oorDateNote` amended to record the move. This is the duplicate-id hazard the workflow
+rules already warn about (key on `(id, month, day)`, never `id` alone).
+
+**Flagged, not fixed:** the COE-only row still carries `dayLegacy: "May 17"` against an
+observance of Nov 30 — left from the 2026-08-30 revert that moved the COE tag between rows.
+Structural question about duplicate ids, not a date question; left for deliberate decision.
+
+### Process note
+`SEED_VERSION` stood at v267, stale by seven commits: the whole EOR May–November pass
+(`640b7f5..e307466`) touched only `RESUME_PROJECT_NOTE.md` and `sanctoral.json`, never
+`audit-ledger.html`. Brought current. v267 → v268.

@@ -445,7 +445,23 @@
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
         const entries = await _loadSanctoral();
         const ctx = { tradition, includeEcumenical };
-        return _entriesOn(entries, date, opts).filter(s => saintAppliesToContext(s, ctx).ok);
+        // FIXED 2026-09-12: `tradition` must be threaded into the DATE rule, not
+        // only into the tag filter below. Callers pass it as the second
+        // positional argument (resolveCommemorations(date, 'EOR', {...})), not
+        // inside opts, so passing bare `opts` to _entriesOn left
+        // observanceFor() with tradition === undefined on every single call --
+        // which meant `traditionObservance` was silently INERT through this
+        // path, the canonical read path used by every office renderer in
+        // js/office-ui.js. 55 rows carry overrides and 60 of those override
+        // entries resolve to a different day than the shared rule, so each was
+        // rendering on another tradition's date in the live app while the data
+        // itself was correct. filterCachedByTradition() below already did this
+        // correctly, so the two public read paths disagreed with each other --
+        // that disagreement is how this was found. Verified against
+        // prophet-joel (EOR Oct 19 via override vs Oct 31 shared) before and
+        // after.
+        return _entriesOn(entries, date, Object.assign({}, opts, { tradition }))
+            .filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
     /**
