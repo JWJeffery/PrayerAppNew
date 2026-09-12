@@ -321,7 +321,25 @@ full month actually re-verified:
   of Crete; "Moses the Black" matched under Orthocal's own label "St Moses of Ethiopia" (confirmed
   same figure via the story text). Zero new open findings this month -- no Isaurus-shaped
   Greek-only-match cases turned up in August.
-  Remaining August work: none -- August is DONE. September-December (4 months, roughly 134 more
+  Remaining August work: none -- August is DONE.
+- **September 2026 (all 28 EOR-tagged rows) re-verified against live orthocal.info, one row at a
+  time.** ALL 28 confirmed exactly correct as stored -- third clean month in a row, zero date fixes
+  needed. One useful disambiguation confirmed rather than assumed: `prophet-zachariah` (Sep 5) could
+  plausibly refer to either the OT minor prophet Zechariah or to Zachariah, father of John the
+  Baptist -- checked the row's own stored description first ("Father of the Forerunner; martyred in
+  the Temple"), which already correctly identifies the NT figure, and Orthocal's Sep 5 entry
+  ("Prophet Zachariah and Elizabeth... Father of St John the Baptist") confirms it exactly. A few
+  phrasing misses resolved via `get_day`, not real gaps: "Encaenia of the Temple of the Resurrection"
+  and "Exaltation of the Holy Cross" are feast titles, not indexed as saints by `search_saints`, so
+  needed `get_day` to confirm (Sep 13 and Sep 14 respectively); "Euphrosyne of Alexandria" likewise
+  needed `get_day` (matched under "Our Righteous Mother Euphrosyne"); "Gregory of Armenia" needed
+  `get_day` too (found as "Hieromartyr Gregory of Armenia," story text confirms he is indeed Gregory
+  the Illuminator, Enlightener of Armenia). Noted for whenever July comes up, not acted on now: a
+  second, unsourced `saint-phocas` row exists at July 23 (from the earlier no-ruleSource sweep),
+  distinct from this month's confirmed `hieromartyr-phocas` at Sep 22 (Phocas, Bishop of Sinope) --
+  may be the same historical Phocas venerated under two different feast days (martyrdom vs.
+  translation), or two different Phocases; worth checking together when July is worked.
+  Remaining September work: none -- September is DONE. October-December (3 months, roughly 106 more
   EOR-tagged rows) are NOT started.
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
