@@ -339,8 +339,28 @@ full month actually re-verified:
   distinct from this month's confirmed `hieromartyr-phocas` at Sep 22 (Phocas, Bishop of Sinope) --
   may be the same historical Phocas venerated under two different feast days (martyrdom vs.
   translation), or two different Phocases; worth checking together when July is worked.
-  Remaining September work: none -- September is DONE. October-December (3 months, roughly 106 more
-  EOR-tagged rows) are NOT started.
+  Remaining September work: none -- September is DONE.
+- **July 2026 (all 27 EOR-tagged rows) re-verified against live orthocal.info, one row at a time.**
+  ALL 27 confirmed exactly correct -- fourth clean month in a row, zero date fixes needed.
+  **The Phocas loose end from the September note is now RESOLVED, not just checked**: `saint-phocas`
+  (July 23) was flagged by my crude no-`ruleSource` script as unsourced, same false-alarm shape as
+  Irenaeus/Ephrem/Catherine/Sylvester earlier -- opened the actual row and found it was already fully
+  resolved back on 2026-09-07: both EOR and OOR corrected via `traditionObservance` to Sep 22,
+  confirmed against orthocal.info AND coptic.io as the same identity as `hieromartyr-phocas`
+  ("Hieromartyr Phocas, Bishop of Sinope" and "Phocas the Gardener" both fall Sep 22). One and the
+  same Phocas, already correctly unified -- nothing left open here. Same story for
+  `saint-joachim-and-saint-anne` (July 26): already correctly resolved via `traditionObservance` to
+  Sep 9, matching `holy-ancestors-joachim-and-anna`. Lesson restated again: **always open the actual
+  row and check `eorDateNote`/`oorDateNote` before treating a bare `ruleSource` check as meaning
+  anything -- it has now produced a false alarm in every single month checked so far.** A few
+  ordinary phrasing misses along the way, not gaps: "Archangel Gabriel" alone found the July 13
+  Synaxis directly; "Marina the Great Martyr" needed "Marina Margaret Antioch"; "Macrina the Younger"
+  needed "Macrina" alone (correctly distinguished from her grandmother, also "Macrina," at May 30).
+  Remaining July work: none -- July is DONE.
+  Remaining EOR sweep: October, November, December (3 months, roughly 106 EOR-tagged rows) NOT
+  started. Two genuinely unresolved items still open from May: `st-pachomius-of-patmos` (needs the
+  movable-date engine, not a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained
+  gap in orthocal.info under both traditions tried).
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 
