@@ -7885,19 +7885,7 @@
           }
         ]
       },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 November 30, 2026 November 30. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal.",
-      "traditionObservance": {
-        "OOR": {
-          "type": "fixed",
-          "dates": [
-            {
-              "month": 12,
-              "day": 13
-            }
-          ]
-        }
-      },
-      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 30) is ANG/LAT/EOR/COE's. CONFIRMED against coptic.io: \"The Martyrdom of St. Andrew the Apostle, the Brother of St. Peter\" falls Dec 13 (4 Kiahk)."
+      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 November 30, 2026 November 30. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
     },
     {
       "id": "saint-paschal-baylon",
@@ -22014,7 +22002,19 @@
           }
         ]
       },
-      "ruleSource": "30 November in 2024 and 2026 -- 2/2. CONFIRMS the earlier revert. Western Europe keeps St Andrew on the Sunday of the Week After Ascension; California keeps the fixed 30 November. A genuine divergence between two dioceses of the same church, and this project follows California. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy, Glorious and Illustrious Apostle Andrew the First-Called” on this date. The COE confirmation above does not by itself confirm EOR."
+      "ruleSource": "30 November in 2024 and 2026 -- 2/2. CONFIRMS the earlier revert. Western Europe keeps St Andrew on the Sunday of the Week After Ascension; California keeps the fixed 30 November. A genuine divergence between two dioceses of the same church, and this project follows California. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy, Glorious and Illustrious Apostle Andrew the First-Called” on this date. The COE confirmation above does not by itself confirm EOR.",
+      "traditionObservance": {
+        "OOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 12,
+              "day": 13
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07; MOVED to this row 2026-09-12. The override was originally written to the OTHER row sharing this id -- the COE-only ACOTE row -- which carries no OOR tag, so it could never fire. This row is the one that actually holds the OOR tag. Shared date (Nov 30) is ANG/LAT/EOR/COE's. CONFIRMED against coptic.io: \"The Martyrdom of St. Andrew the Apostle, the Brother of St. Peter\" falls Dec 13 (4 Kiahk)."
     },
     {
       "id": "saint-jacob-of-nisibis",
