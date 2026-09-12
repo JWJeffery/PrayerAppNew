@@ -373,10 +373,38 @@ full month actually re-verified:
   (Orthocal renders the epithet as "Outpourer of Myrrh"); "Abramius the Recluse" and the "Stachys...
   Aristobulus" apostle group both needed `get_day` rather than a name search.
   Remaining October work: none -- October is DONE.
-  Remaining EOR sweep: November, December (2 months, roughly 70 EOR-tagged rows) NOT started. Two
-  genuinely unresolved items still open from May: `st-pachomius-of-patmos` (needs the movable-date
-  engine, not a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained gap in
-  orthocal.info under both traditions tried).
+- **November 2026 (all 37 EOR-tagged rows, including the newly-discovered duplicate) re-verified
+  against live orthocal.info, one row at a time.** **ONE SIGNIFICANT STRUCTURAL FIX MADE**: found that
+  `saint-clement-of-rome` (Nov 23, ANG/EOR/LAT/OOR, LFF-sourced) and `hieromartyr-clement-of-rome`
+  (Nov 24, EOR-only, confirmed via orthocal.info's Greek-tradition option back in May) are the SAME
+  historical figure duplicated across two rows, both carrying an EOR tag. `saint-clement-of-rome`'s
+  EOR tag had only ever inherited the shared ANG/LFF date (Nov 23) and was never separately
+  confirmed -- its own `oorDateNote` already said as much ("unconfirmed"). Rather than add a
+  `traditionObservance.EOR` override here (which would have shown him TWICE on Nov 24 in the EOR
+  view), the EOR tag was removed from `saint-clement-of-rome` entirely; EOR observance for this
+  identity is now solely and correctly owned by `hieromartyr-clement-of-rome`. ANG/LAT/OOR untouched.
+  **Bonus: this also resolves a long-standing mystery from earlier in this note** -- the "Clement of
+  Rome... Dec 8, 29 Hator" OOR finding that a prior session worried had been made but never written to
+  the file. It WAS written -- to `saint-clement-of-rome`'s `traditionObservance.OOR`, just under a
+  different row id than whoever went looking expected. That whole "second stale claim" mystery is now
+  explained, not just re-flagged.
+  ONE GENUINE OPEN FINDING, not forced into a match: `saint-james-the-hermit` (Nov 27, described in
+  this corpus as "Syrian ascetic") does not match either figure orthocal.info actually lists for that
+  day (Greatmartyr Jacob of Persia; James the Wonderworker, Bishop of Rostov) -- tried four phrasings,
+  none hit. Left open rather than assigned to either wrong figure.
+  Everything else confirmed clean, including several already-correct multi-tradition rows checked and
+  left alone rather than re-touched: `saint-elizabeth` (EOR Sep 6), `saint-leo-the-great` (EOR Feb 18),
+  `herman-of-alaska` (EOR Dec 13), `saint-martin-of-tours` (EOR Nov 12) -- all already properly
+  resolved via `traditionObservance` from earlier sessions. A few ordinary phrasing misses resolved
+  via `get_day`: "Plato and Romanus" needed "Platon and Roman"; "Philip the Apostle" needed `get_day`
+  directly (to distinguish from the Oct 11 Philip-of-the-Seventy-Deacons, already correctly a separate
+  row); "Amphilochius of Iconium" needed `get_day` ("Amphilocus").
+  Remaining November work: none -- November is DONE.
+  Remaining EOR sweep: December only (roughly 34 EOR-tagged rows) NOT started. Two genuinely
+  unresolved items still open from May: `st-pachomius-of-patmos` (needs the movable-date engine, not
+  a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained gap in orthocal.info under
+  both traditions tried). One new genuinely unresolved item from November: `saint-james-the-hermit`
+  (no match found under any phrasing tried).
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 

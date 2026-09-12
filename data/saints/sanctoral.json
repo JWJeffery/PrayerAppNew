@@ -19462,7 +19462,6 @@
       "type": "saint",
       "tags": [
         "ANG",
-        "EOR",
         "LAT",
         "OOR"
       ],
@@ -19488,6 +19487,7 @@
           ]
         }
       },
+      "eorTagNote": "EOR tag REMOVED 2026-09-11. This row's EOR tag inherited the shared Nov 23 (ANG/LFF-sourced) date without ever being separately confirmed -- its own oorDateNote already flagged the shared date as \"unconfirmed.\" This is the same historical Clement of Rome as hieromartyr-clement-of-rome (a separate row), whose EOR date was independently confirmed 2026-09 against orthocal.info's Greek-tradition option at Nov 24 -- NOT Nov 23. Rather than add a traditionObservance.EOR override here (which would duplicate him twice on Nov 24 in the EOR view), the tag is removed from this row; EOR observance for this identity is fully and correctly owned by hieromartyr-clement-of-rome. ANG/LAT/OOR are untouched and remain on this row.",
       "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Nov 23) is ANG/EOR/LAT's, unconfirmed. CONFIRMED against coptic.io: \"The Martyrdom of St. Clement, Pope of Rome\" falls Dec 8 (29 Hator) -- same date as the separately-confirmed Peter of Alexandria row. Note: this RESOLVES the EOR-pass's earlier 'likely source gap, not a real absence' flag for Clement of Rome -- coptic.io does carry him after all, under a different search term than tried during that pass."
     },
     {
