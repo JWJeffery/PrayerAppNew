@@ -48,19 +48,23 @@ file — at least 58 duplicate ids.**
 **SEED_VERSION was stale by seven commits** (v267, predating the entire EOR May–November pass,
 which never touched `audit-ledger.html`). Now v268.
 
-**IN PROGRESS — the sub-tradition schema (option B), Josh's decision 2026-09-12.**
-`traditionObservance` is to be extended to sub-tradition keys (`OOR:Coptic`, `OOR:Armenian`,
-`OOR:Syriac`), and `oorSubtradition` — which **no code currently reads anywhere**; it is pure
-documentation today — is to be made load-bearing. The engine fix above is a hard prerequisite:
-sub-tradition keys resolve through the same `observanceFor()` and would have been equally inert.
+**DONE 2026-09-12 — the sub-tradition schema (option B) is BUILT AND PUSHED.**
+`traditionObservance` now accepts sub-tradition keys (`OOR:Coptic`), resolved most-specific-first.
+`oorSubtradition` is load-bearing — it was read by no code at all before this. The field's
+documented semantics were WRONG and were corrected: absence does NOT mean Coptic (62 unscoped OOR
+rows are pan-Christian); it means *not sub-tradition-specific*. Backfill applied: 78 Coptic-only
+rows explicitly marked, all 39 bare `OOR` override keys re-keyed to `OOR:Coptic`. Wired via
+`profile.oorSubtradition` at the single `resolveCommemorations` wrapper. Non-destructive: no
+sub-tradition set = everything renders, exactly as before.
 
-**CRITICAL correction to the field's documented semantics, established 2026-09-12:** the
-`sanctoral.json` top-level note says an absent `oorSubtradition` means Coptic. **That is
-wrong and a filter built on it would break the calendar.** 62 of the 143 unscoped OOR rows are
-shared with other traditions (Epiphany, the Circumcision, Basil the Great, Matthias, the Forty
-Martyrs of Sebaste). The semantics that actually hold: `oorSubtradition` marks rows
-**exclusive** to a named sub-tradition; absence means *not sub-tradition-specific*. Current
-scoping: 143 unscoped, 23 Armenian, 6 Syriac, 3 Ethiopian — all 32 scoped rows are OOR-only.
+**THREE ROWS LEFT UNMARKED, NEEDING JOSH'S CALL:** `saint-abraham-of-carrhae`,
+`saint-abraham-the-hermit` (both Feb 14), `martyr-thespesios-of-cappadocia` (Jun 1) — no
+`ruleSource` at all, no Coptic attestation, read as Syriac/Byzantine. Possibly stray OOR tags.
+Not guessed at.
+
+**NO UI CONTROL EXISTS YET** for choosing a sub-tradition. The field is honoured but has no picker
+in Office Settings — reachable today only via a stored profile value. That is the obvious next
+engine task.
 
 **Dormition/Assumption cluster — researched and ready to build, not yet built.** Correct dates,
 each verified this session: ANG/LAT/EOR Aug 15 (EOR confirmed live on orthocal, Major Feast

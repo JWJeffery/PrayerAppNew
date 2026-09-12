@@ -13665,3 +13665,65 @@ Structural question about duplicate ids, not a date question; left for deliberat
 `SEED_VERSION` stood at v267, stale by seven commits: the whole EOR May–November pass
 (`640b7f5..e307466`) touched only `RESUME_PROJECT_NOTE.md` and `sanctoral.json`, never
 `audit-ledger.html`. Brought current. v267 → v268.
+
+---
+
+## 2026-09-12 — `oorSubtradition` made load-bearing; `traditionObservance` extended to sub-tradition keys
+
+Josh's decision, stated as "B, 5000%", between a row-per-sub-tradition approach and extending
+the schema; then "oorSubtradition — then we need to make sure it is used."
+
+**The problem.** One tradition code is not one practice. OOR spans Coptic, Armenian, Syriac and
+Ethiopian, and they do not agree on dates. The Dormition is the worked example: Coptic keeps the
+Assumption of the Body on 22 Aug (with the Dormition proper on 29 Jan, a separate feast seven
+months earlier), Armenian keeps the Sunday nearest 15 Aug, Syriac keeps 15 Aug. One `OOR` key
+cannot carry three dates.
+
+Separately, `oorSubtradition` had existed since 2026-09-07 and was **read by no code anywhere** —
+confirmed by grep; it appeared only in `audit-ledger.html`'s own prose.
+
+**Schema.** `traditionObservance` keys may now be a bare code (`OOR`) or a pair (`OOR:Coptic`).
+`observanceFor()` resolves most-specific-first. No existing key contained a colon, so additive.
+
+### The correction that mattered
+`sanctoral.json`'s own top-level note says an absent `oorSubtradition` means Coptic. **That is
+wrong.** 62 of the 143 unscoped OOR rows are shared with ANG/LAT/EOR/COE — Epiphany, the
+Circumcision, Basil the Great, Matthias, the Forty Martyrs of Sebaste. A filter built on the
+documented semantics would have hidden those from Armenian users. The rule that holds: the field
+marks a row **exclusive** to one sub-tradition; absence means *not sub-tradition-specific*.
+
+### Backfill, so absence means what it says
+- 78 genuinely Coptic-only rows explicitly marked `oorSubtradition: "Coptic"`.
+- All 39 bare `OOR` override keys re-keyed to `OOR:Coptic`. Every one was confirmed against a
+  Coptic source in its own note, so under the bare key an Armenian or Syriac user was being served
+  a Coptic date. They now fall through to the shared date.
+
+**Classification was evidence-based.** Each of the 81 OOR-only unscoped rows was classified by what
+its own description/`ruleSource`/`oorDateNote` cites. 76 carried explicit Coptic sourcing. Two more
+confirmed by inspection: `holy-archangels-gabriel-and-michael` uses the `monthlyCoptic` observance
+type; `saint-maximus-and-saint-domatius` has a coptic.io confirmation whose `ruleSource` states that
+an earlier Armenian scoping "was a mistake" (its description still stale-reads "(Armenian)").
+
+**Three rows left unmarked and flagged, not guessed:** `saint-abraham-of-carrhae`,
+`saint-abraham-the-hermit` (both Feb 14) and `martyr-thespesios-of-cappadocia` (Jun 1) have no
+`ruleSource` of any kind and no Coptic attestation in their own fields. They read as
+Syriac/Byzantine and may be stray OOR tags of the kind cleaned up elsewhere, but that is a scope
+call, not something to settle by marking them Coptic for convenience.
+
+**Non-destructive by design.** A caller naming no sub-tradition sees every OOR row exactly as
+before; an unrecognised stored value falls back to no narrowing. A bad setting must never silently
+hide commemorations.
+
+**Wired** via `profile.oorSubtradition` on the `ministryRole` pattern, injected at the single
+canonical `resolveCommemorations` wrapper so every renderer inherits it and no call site can forget.
+
+**Verified, full corpus:** 58/58 overrides resolve on their own date for their own scope; 58/58 no
+leakage; 1,680/1,680 read-path agreement; 398 non-override rows unchanged; unnarrowed OOR identical
+to prior behaviour on 336/336 days; ANG/LAT/EOR/COE unaffected on 1,344/1,344 pairs. Behavioural
+cases all correct, including the Annunciation serving Apr 7 to Coptic while Syriac falls through to
+the shared Mar 25.
+
+### Still open
+No UI control exists for choosing a sub-tradition. The field is settable and fully honoured but has
+no picker in Office Settings, so today it is reachable only via a stored profile value. The
+Dormition cluster and the two COE Marian rows are the next data step on top of this.

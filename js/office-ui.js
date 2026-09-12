@@ -698,7 +698,11 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     entryPageDefault: 'ask',
     traditionDefault: null,
     bookOfNeedsScope: 'tradition',
-    ministryRole: 'lay'
+    ministryRole: 'lay',
+    // ADDED 2026-09-12. Which Oriental Orthodox sub-tradition the user keeps.
+    // null means "not narrowed": every OOR row renders, which is exactly the
+    // behaviour before this field existed, so no existing user loses anything.
+    oorSubtradition: null
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -720,6 +724,11 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
+
+// The Oriental Orthodox sub-traditions currently represented in the sanctoral.
+// Josh, 2026-09-07: more are coming -- this set is expected to grow, and the
+// resolver treats an unrecognised value the same as null (no narrowing).
+const UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES = new Set(['Coptic', 'Armenian', 'Syriac', 'Ethiopian']);
 // Self-identified liturgical role, used to gate Book of Needs content this
 // project's own governance says shouldn't reach a default lay view
 // (priestly, sacramental, or administered-by-one-person-over-another
@@ -838,6 +847,13 @@ function normalizeUserProfileDefaults(raw) {
 
     if (!UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES.has(profile.ministryRole)) {
         profile.ministryRole = 'lay';
+    }
+
+    // An unknown or absent sub-tradition falls back to null, i.e. no narrowing:
+    // a bad stored value must never silently HIDE commemorations from someone.
+    if (profile.oorSubtradition !== null
+        && !UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES.has(profile.oorSubtradition)) {
+        profile.oorSubtradition = null;
     }
 
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
@@ -3161,7 +3177,17 @@ function getTraditionDisplayLabel(code) {
  * @returns {Promise<Array>}
  */
 async function resolveCommemorations(date, tradition, opts) {
-    return SaintsResolver.resolveCommemorations(date, tradition, opts);
+    // ADDED 2026-09-12. Injected HERE, at the one canonical wrapper, rather
+    // than at each of the call sites scattered through this file -- every
+    // renderer inherits the user's OOR sub-tradition without being touched,
+    // and there is no call site left to forget. An explicit opts.subtradition
+    // from a caller still wins, so the admin/dashboard paths can override.
+    const profile = getUserProfileDefaults();
+    const merged = Object.assign(
+        { subtradition: (profile && profile.oorSubtradition) || null },
+        opts || {}
+    );
+    return SaintsResolver.resolveCommemorations(date, tradition, merged);
 }
 
 const DAILY_OFFICE_RESOURCE_TIMEOUT_MS = 6500;

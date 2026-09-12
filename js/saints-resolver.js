@@ -122,10 +122,30 @@
      * that has an entry there, that rule is used instead of the shared
      * `observance`. Rows without the field behave exactly as before, so this is
      * additive and every existing entry keeps working untouched.
+     *
+     * EXTENDED 2026-09-12 to sub-tradition keys, at Josh's direction. One
+     * tradition code is not always one practice: OOR spans Coptic, Armenian,
+     * Syriac and Ethiopian, and they do not agree on dates. The Dormition is
+     * the worked example -- Coptic keeps the Assumption of the Body on 22 Aug
+     * (with the Dormition proper on 29 Jan, a separate feast seven months
+     * earlier), Armenian keeps it on the Sunday nearest 15 Aug, and Syriac
+     * keeps it on 15 Aug itself. A single `OOR` key cannot express three dates,
+     * and Josh has stated more sub-traditions are coming.
+     *
+     * A key may therefore be either a bare tradition code ('OOR') or a
+     * tradition:subtradition pair ('OOR:Coptic'). Resolution runs most-specific
+     * first: 'OOR:Coptic' beats 'OOR', which beats the shared `observance`.
+     * Keys are plain strings and no existing row contains a colon, so every
+     * current entry resolves exactly as it did before this change.
      */
-    function observanceFor(entry, tradition) {
-        if (tradition && entry.traditionObservance && entry.traditionObservance[tradition]) {
-            return entry.traditionObservance[tradition];
+    function observanceFor(entry, tradition, subtradition) {
+        const map = entry.traditionObservance;
+        if (tradition && map) {
+            if (subtradition) {
+                const scoped = map[tradition + ':' + subtradition];
+                if (scoped) return scoped;
+            }
+            if (map[tradition]) return map[tradition];
         }
         return entry.observance;
     }
@@ -199,7 +219,7 @@
 
     function occursOn(entry, date, opts) {
         if (!entry || !(date instanceof Date)) return false;
-        const obs = observanceFor(entry, opts && opts.tradition);
+        const obs = observanceFor(entry, opts && opts.tradition, opts && opts.subtradition);
         if (!obs) return saintOccursOnDate(entry.day || entry.dayLegacy, date);
 
         if (obs.type === 'fixed') {
@@ -365,6 +385,36 @@
     }
 
     /**
+     * Does `saint` survive the caller's OOR sub-tradition scope?
+     *
+     * ADDED 2026-09-12. `oorSubtradition` existed in the data from 2026-09-07
+     * but was read by NO CODE ANYWHERE -- it was pure documentation, and every
+     * scoped row rendered for every OOR user regardless of their practice.
+     *
+     * CORRECTED SEMANTICS, established against the data 2026-09-12: the
+     * `sanctoral.json` top-level note said an ABSENT `oorSubtradition` means
+     * Coptic. That is wrong, and a filter built on it would hide Epiphany, the
+     * Circumcision, Basil the Great, Matthias and the Forty Martyrs of Sebaste
+     * from Armenian users -- 62 unscoped OOR rows are shared with other
+     * traditions and are pan-Christian, not Coptic-specific. The rule that
+     * actually holds: the field marks a row EXCLUSIVE to one sub-tradition;
+     * absence means "not sub-tradition-specific", i.e. applies to all of them.
+     * The genuinely Coptic-only rows were explicitly marked `Coptic` in the
+     * same commit as this change, so absence now means what it says.
+     *
+     * A caller that names no sub-tradition sees everything, which is exactly
+     * the behaviour before this change -- so this is additive and no existing
+     * user loses a row they were seeing.
+     */
+    function appliesToSubtradition(saint, label, ctx) {
+        if (label !== 'OOR') return true;         // scope is OOR-specific only
+        const scope = saint.oorSubtradition;
+        if (!scope) return true;                  // not sub-tradition-specific
+        if (!ctx || !ctx.subtradition) return true;  // caller didn't narrow
+        return scope === ctx.subtradition;
+    }
+
+    /**
      * ctx = { tradition: 'ANG', includeEcumenical: true }
      * Returns { ok, label, isEcu }.
      */
@@ -375,7 +425,12 @@
         const isEcu = isDerivedEcumenical(tags);
 
         if (ctx.includeEcumenical && isEcu) return { ok: true, label: 'ECU', isEcu };
-        if (tags.includes(ctx.tradition))  return { ok: true, label: ctx.tradition, isEcu };
+        if (tags.includes(ctx.tradition)) {
+            if (!appliesToSubtradition(saint, ctx.tradition, ctx)) {
+                return { ok: false, label: null, isEcu };
+            }
+            return { ok: true, label: ctx.tradition, isEcu };
+        }
 
         return { ok: false, label: null, isEcu };
     }
@@ -443,8 +498,9 @@
      */
     async function resolveCommemorations(date, tradition, opts) {
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
+        const subtradition = (opts && opts.subtradition) || null;
         const entries = await _loadSanctoral();
-        const ctx = { tradition, includeEcumenical };
+        const ctx = { tradition, includeEcumenical, subtradition };
         // FIXED 2026-09-12: `tradition` must be threaded into the DATE rule, not
         // only into the tag filter below. Callers pass it as the second
         // positional argument (resolveCommemorations(date, 'EOR', {...})), not
@@ -460,7 +516,7 @@
         // that disagreement is how this was found. Verified against
         // prophet-joel (EOR Oct 19 via override vs Oct 31 shared) before and
         // after.
-        return _entriesOn(entries, date, Object.assign({}, opts, { tradition }))
+        return _entriesOn(entries, date, Object.assign({}, opts, { tradition, subtradition }))
             .filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
@@ -521,10 +577,11 @@
     function filterCachedByTradition(date, tradition, opts) {
         const entries = _sanctoral ? _sanctoral.entries : [];
         const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
-        const ctx = { tradition, includeEcumenical };
+        const subtradition = (opts && opts.subtradition) || null;
+        const ctx = { tradition, includeEcumenical, subtradition };
         // tradition is threaded into the date rule too, so a row kept on a
         // different day by this tradition resolves on ITS day, not the shared one
-        return _entriesOn(entries, date, Object.assign({}, opts, { tradition }))
+        return _entriesOn(entries, date, Object.assign({}, opts, { tradition, subtradition }))
             .filter(s => saintAppliesToContext(s, ctx).ok);
     }
 
