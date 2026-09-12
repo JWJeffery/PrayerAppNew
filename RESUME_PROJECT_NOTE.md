@@ -357,10 +357,26 @@ full month actually re-verified:
   Synaxis directly; "Marina the Great Martyr" needed "Marina Margaret Antioch"; "Macrina the Younger"
   needed "Macrina" alone (correctly distinguished from her grandmother, also "Macrina," at May 30).
   Remaining July work: none -- July is DONE.
-  Remaining EOR sweep: October, November, December (3 months, roughly 106 EOR-tagged rows) NOT
-  started. Two genuinely unresolved items still open from May: `st-pachomius-of-patmos` (needs the
-  movable-date engine, not a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained
-  gap in orthocal.info under both traditions tried).
+- **October 2026 (all 37 EOR-tagged rows) re-verified against live orthocal.info, one row at a time.**
+  36 of 37 confirmed exactly correct. **ONE REAL FIX MADE**: `prophet-joel` was stored at Oct 31 for
+  BOTH its EOR and OOR tags, but Oct 31 is only correct for OOR (Coptic, "Departure of Joel the
+  Prophet," confirmed against coptic.io 2026-09-07) -- EOR's real date is **Oct 19** ("Holy Prophet
+  Joel," confirmed against orthocal.info). The row's own `ruleSource` claimed "OOR is this row's only
+  tag," which was stale: an EOR tag had been added to the row at some point without giving EOR its
+  own date. Fixed via `traditionObservance.EOR` -> Oct 19, OOR's Oct 31 left untouched and correctly
+  sourced. Two rows flagged by my listing script or a spelling miss turned out to already be
+  correctly resolved from earlier sessions, not touched again: `saint-marinus-the-martyr` (Oct 18,
+  Greek-tradition confirmation from 2026-09-07, same Slavic/Greek pattern as Clement of Rome) and
+  `saint-terence-and-eunice` (Oct 28, a disclosed wife's-name variant -- Eunice vs. Neonila -- already
+  flagged as unreconciled rather than silently picked one way). A few ordinary phrasing misses
+  resolved via `get_day`, not gaps: "Demetrius the Myrrh-streamer" needed "Great Martyr Demetrius"
+  (Orthocal renders the epithet as "Outpourer of Myrrh"); "Abramius the Recluse" and the "Stachys...
+  Aristobulus" apostle group both needed `get_day` rather than a name search.
+  Remaining October work: none -- October is DONE.
+  Remaining EOR sweep: November, December (2 months, roughly 70 EOR-tagged rows) NOT started. Two
+  genuinely unresolved items still open from May: `st-pachomius-of-patmos` (needs the movable-date
+  engine, not a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained gap in
+  orthocal.info under both traditions tried).
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 

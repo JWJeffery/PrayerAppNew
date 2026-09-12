@@ -17316,7 +17316,19 @@
           }
         ]
       },
-      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of Joel the Prophet\" falls Oct 31 (21 Baba). OOR is this row's only tag."
+      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. CONFIRMED against coptic.io: \"The Departure of Joel the Prophet\" falls Oct 31 (21 Baba). This date is correct for OOR. The ruleSource's own claim that \"OOR is this row's only tag\" is now stale -- an EOR tag was added to this row at some point after that note was written, without giving EOR its own date; see eorDateNote below for the correction.",
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-11: the shared Oct 31 date is OOR's (Coptic), confirmed above. CONFIRMED against orthocal.info (Slavic): \"Holy Prophet Joel (8th c. BC)\" falls Oct 19, not Oct 31 -- a genuine different date per tradition, not a phrasing or index issue. Given as EOR traditionObservance rather than moving the shared date, since OOR's Oct 31 remains correctly sourced.",
+      "traditionObservance": {
+        "EOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 10,
+              "day": 19
+            }
+          ]
+        }
+      }
     },
     {
       "id": "saint-isaac-jogues-and-companions",
