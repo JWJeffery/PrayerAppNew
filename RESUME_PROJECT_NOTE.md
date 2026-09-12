@@ -301,8 +301,28 @@ full month actually re-verified:
   finds the figure instantly (`Isaurus the Holy Martyr, June 17, Greek only`) -- same shape as
   Clement of Rome above; noted, not fixed, since the row's stored date already matches the Greek
   confirmation.
-  Remaining June work: none -- June is DONE. August-December (5 months, roughly 168 more EOR-tagged
-  rows) are NOT started.
+  Remaining June work: none -- June is DONE.
+- **August 2026 (all 34 EOR-tagged rows) re-verified against live orthocal.info, one row at a time.**
+  ALL 34 confirmed exactly correct as stored -- another clean month, zero date fixes needed. Several
+  useful cross-tradition confirmations fell out of this pass: Prophet Micah's EOR date (Aug 14) is
+  independently solid, settling the EOR half of the Mesori-sweep finding about his different Coptic
+  date (Aug 28) -- both traditions' dates are now confirmed correct on their own terms, this is a
+  real same-figure-different-tradition situation, not an error either side; Bessarion the
+  Wonderworker's EOR date (already checked in June) and the Coptic "Bessarion the Great" question
+  from the Mesori sweep remain a genuinely open identity question, not resolved by this; Pimen/Poemen
+  the Great (Aug 27 here) is the same Desert Father as `abba-poemen-the-hermit`, added to the Coptic
+  side during the Mesori sweep at a different date -- good independent cross-confirmation, not a
+  conflict; Aug 28 also lists a Righteous Hezekiah, King of Judah independently, alongside Moses the
+  Black -- confirms Hezekiah (added to the Coptic side that same sweep, at Aug 10) is a real,
+  widely-attested figure, just on a different date in each tradition. A few phrasing misses resolved
+  on retry or via `get_day`, not real gaps: "Maccabean Martyrs" -> "Maccabees"; "Pimen of the Kiev
+  Caves" matched under his specific epithet "Pimen the Much-Ailing" (get_day confirmed same
+  monastery); "Myron the Presbyter" needed `get_day` since my first search pulled an unrelated Myron
+  of Crete; "Moses the Black" matched under Orthocal's own label "St Moses of Ethiopia" (confirmed
+  same figure via the story text). Zero new open findings this month -- no Isaurus-shaped
+  Greek-only-match cases turned up in August.
+  Remaining August work: none -- August is DONE. September-December (4 months, roughly 134 more
+  EOR-tagged rows) are NOT started.
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 
