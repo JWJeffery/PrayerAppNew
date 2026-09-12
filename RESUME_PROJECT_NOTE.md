@@ -11,12 +11,12 @@ old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic 
 alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
 note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
 
-**State as of 2026-09-12 (session ending near context limit):** the 13-month OOR/Coptic gap sweep
-(section 7 below) is CLOSED. The EOR sanctoral confirmation pass is now done for May, June, July,
-August, September, October, and November — only **December remains** (roughly 34 EOR-tagged rows,
-not yet touched). Do not trust any older claim in this note about "the immediate next task" being
-the Coptic registry check below (section 0's original text) — that work is finished; this paragraph
-supersedes it.
+**State as of 2026-09-12 (end of a long engineering session).** HEAD `b35b55c`, SEED_VERSION
+v269. This session was NOT sanctoral confirmation work — it fixed two live engine/data bugs and
+built the OOR sub-tradition schema (option B). The 13-month OOR/Coptic gap sweep remains CLOSED.
+The EOR confirmation pass still has **December only** outstanding (~33 EOR-effective rows, not
+started). Section 0 below supersedes every earlier claim in this note about "the immediate next
+task".
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
@@ -30,115 +30,132 @@ against the live file headers yourself before trusting any number written here.
 
 ## 0. Immediate next task for the next session
 
-### 2026-09-12 SESSION — read this before anything else
+**Session of 2026-09-12 ended here. Everything below was pushed and verified against a fresh
+clone of origin, not just reported green locally. HEAD b35b55c, SEED_VERSION v269.**
 
-**A live engine bug was found and fixed: `traditionObservance` was INERT in the canonical
-async read path.** `resolveCommemorations(date, tradition, opts)` never threaded `tradition`
-into the date rule, so `observanceFor()` always fell through to the shared `observance`.
-Every per-tradition date override — 60 of them resolving to a different day — was rendering
-on the wrong date in the live app while the data itself was correct. Fixed, swept and
-verified (58/58 overrides resolve, 1,680/1,680 date-by-tradition pairs now agree between the
-two read paths, 0 regressions). See `AUDIT_GOVERNANCE_LEDGER.md`, 2026-09-12.
+### THE IMMEDIATE NEXT TASK: build the Dormition/Assumption cluster + the two COE Marian rows
 
-**Second bug, exposed by the first:** `saint-andrew-the-apostle`'s OOR override was written to
-the wrong row of a duplicate-id pair (the COE-only row, which has no OOR tag). Moved to the
-row that carries the tag. **The duplicate-id hazard is real and is still unresolved across the
-file — at least 58 duplicate ids.**
+All the research is done and recorded below. This is a DATA job on top of an engine that is now
+ready for it. Content first as its own commit, then any engine wiring as a second — the pattern
+used twice this session. Cut `git format-patch`, surface the patch and hand Josh the literal
+`git am` / `git push` lines in the SAME turn as the commit. He applies these personally.
 
-**SEED_VERSION was stale by seven commits** (v267, predating the entire EOR May–November pass,
-which never touched `audit-ledger.html`). Now v268.
+**Correct dates, each verified this session against a primary source — do not re-derive, but DO
+open each row before editing it:**
 
-**DONE 2026-09-12 — the sub-tradition schema (option B) is BUILT AND PUSHED.**
-`traditionObservance` now accepts sub-tradition keys (`OOR:Coptic`), resolved most-specific-first.
-`oorSubtradition` is load-bearing — it was read by no code at all before this. The field's
-documented semantics were WRONG and were corrected: absence does NOT mean Coptic (62 unscoped OOR
-rows are pan-Christian); it means *not sub-tradition-specific*. Backfill applied: 78 Coptic-only
-rows explicitly marked, all 39 bare `OOR` override keys re-keyed to `OOR:Coptic`. Wired via
-`profile.oorSubtradition` at the single `resolveCommemorations` wrapper. Non-destructive: no
-sub-tradition set = everything renders, exactly as before.
+| Tradition | Observance | Date | Corpus state |
+|---|---|---|---|
+| ANG / LAT | St Mary the Virgin / Assumption | Aug 15 | correct |
+| EOR | Dormition of the Theotokos | Aug 15 | correct (confirmed live on orthocal, Major Feast Theotokos) |
+| EOR | Leavetaking of Dormition | Aug 23 | **`afterfeast-of-the-assumption` is MIS-TAGGED OOR** — it is Byzantine content; confirmed live on orthocal |
+| OOR:Coptic | Dormition proper (21 Tobi) | **Jan 29** | **MISSING ENTIRELY — new row needed** |
+| OOR:Coptic | Assumption of the Body (16 Mesori) | Aug 22 | present and correct |
+| OOR:Coptic | Last day, Fast of St Mary (15 Mesori) | Aug 21 | present as `vigil-of-the-assumption`; date right, **label wrong** — it is the fast's last day, not a bare eve |
+| OOR:Armenian | Assumption (Verapokhumn) | **Sunday nearest Aug 15** | `dormition-of-the-theotokos` — stored as FIXED Aug 15, structural mismatch |
+| OOR:Syriac | Dormition | Aug 15 | no row |
+| COE | Dormition | **Aug 15 (Gregorian)** | **MISSING — new row needed** |
+| COE | Protectress of the Harvest | **May 15** | see the May 15 question below |
+| COE | Commemoration of Mary + St James | Friday before Epiphany | **ALREADY EXISTS** as `saint-james-the-brother-of-the-lord` |
 
-**THREE ROWS LEFT UNMARKED, NEEDING JOSH'S CALL:** `saint-abraham-of-carrhae`,
-`saint-abraham-the-hermit` (both Feb 14), `martyr-thespesios-of-cappadocia` (Jun 1) — no
-`ruleSource` at all, no Coptic attestation, read as Syriac/Byzantine. Possibly stray OOR tags.
-Not guessed at.
+**`dormition-of-the-theotokos` is NOT a duplicate row.** An earlier version of this note suggested
+it might be. It is the Armenian row, correctly scoped `oorSubtradition: Armenian`. Do not merge or
+delete it.
 
-**NO UI CONTROL EXISTS YET** for choosing a sub-tradition. The field is honoured but has no picker
-in Office Settings — reachable today only via a stored profile value. That is the obvious next
-engine task.
+**The Armenian rule needs NO new engine machinery.** "Sunday nearest Aug 15" is identically "the
+first Sunday on or after Aug 12" — verified across 2020–2050, zero mismatches, all seven weekday
+cases exercised, window always Aug 12–18; 2026 resolves to Aug 16, matching the Armenian Prelacy's
+actual observance that year. That is exactly the bounded-window shape already built for Joseph the
+Betrothed (`maxOffsetDays`/`fallbackOffsetDays`). It needs one new fixed-date anchor branch in
+`js/saints-resolver.js`, not new search logic.
 
-**Dormition/Assumption cluster — researched and ready to build, not yet built.** Correct dates,
-each verified this session: ANG/LAT/EOR Aug 15 (EOR confirmed live on orthocal, Major Feast
-Theotokos); EOR Leavetaking Aug 23 — **currently mis-tagged OOR**, it is Byzantine content;
-Coptic Dormition 21 Tobi / **Jan 29 — MISSING from the corpus entirely**; Coptic Assumption of
-the Body 16 Mesori / Aug 22 (present, correct); Coptic last day of the Fast of St Mary 15
-Mesori / Aug 21 (present as "Vigil", date right, label wrong); Armenian **Sunday nearest Aug 15**
-(stored as fixed Aug 15 — structural mismatch); Syriac Aug 15 (no row). `dormition-of-the-theotokos`
-is **not** a duplicate — it is the Armenian row, correctly scoped.
+**COE Aug 15 is GREGORIAN, confirmed 3/3** — ACOE Diocese of California 2024 and 2026, and ACOTE
+Diocese of Western Europe 2026, all print it on plain Aug 15 against Gregorian grids (Transfiguration
+at 8/6, not 8/19). It does NOT need `fixedFeastMode`. The 2024 California edition names it
+explicitly: "Commemoration of the Falling Asleep (Dormition) of St. Mary the Blessed Virgin",
+preceded by "Rogation of the Blessed Virgin Mary (August 1-15)". These are the printed calendars
+already in `data/kalendar/source-witnesses/` (`2026cal.pdf`, `2024 full.pdf`, `English_2026_2.pdf`)
+— read them with `pdftotext -layout`, they are the primary witness and need no web research.
 
-**The Armenian rule needs no new engine machinery:** "Sunday nearest Aug 15" is identically
-"first Sunday on or after Aug 12" — verified across 2020–2050, zero mismatches, all seven
-weekday cases, window always Aug 12–18; 2026 resolves to Aug 16, matching the Armenian
-Prelacy's actual observance. That is the bounded-window shape already built for Joseph the
-Betrothed; it needs one new fixed-date anchor branch, not new search logic.
+**DO NOT cite `CGSC-CALENDAR-2026.pdf` as a Church of the East witness.** It is Christ the Good
+Shepherd, Wakeley, Australia. Mar Mari Emmanuel was ordained in the Ancient Church of the East,
+**excommunicated in 2014**, and founded that church as an INDEPENDENT East Syriac body in 2015. Its
+calendar is Julian +13 throughout with a Gregorian Nativity (Epiphany Jan 19, Transfiguration Aug 19,
+Dormition Aug 28) and it looks exactly like evidence of a Julian/Gregorian split. It is not ACOE or
+ACE. What the Ancient Church of the East proper does for Aug 15 remains genuinely unestablished —
+no ACE calendar is in the repo.
 
-**COE Marian gaps — I was WRONG earlier in this session and corrected it.** I claimed the East
-Syriac rite keeps no Dormition, on one Wikipedia witness. Two ACOE sources (William Toma,
-acoecalifornia.org; Rev. Tower Andrious, bethkokheh.assyrianchurch.org, citing Darmo's Ḥudra)
-both state the Church of the East keeps **three** Marian commemorations: the second Friday
-after Nativity ("The commemoration of Mary, the mother of Christ", Ḥudra I.601 — first Friday
-if a Friday coincides with Nativity/Epiphany); **May 15** (Protectress of the Harvest); and
-**August 15, the Dormition**, with a two-week fast Aug 1–15. Both also state all Wednesdays are
-dedicated to the Virgin in every office of the hours. COE currently has ZERO Marian rows — three
-real gaps. Wikipedia contradicts itself on this; do not rely on it.
+**TWO OPEN QUESTIONS FOR JOSH, NOT DECIDED:**
+1. **COE May 15.** Both California editions print "Commemoration of Mart Mariam the Blessed Virgin
+   **(Protectress of the Harvest)**" — same date, same harvest epithet, same agricultural function as
+   the Syriac Orthodox May 15 already in the corpus as `holy-virgin-mary-of-the-harvest`
+   (`oorSubtradition: Syriac`). Recommendation was a COE tag on that existing row rather than a
+   second row, since `oorSubtradition` scopes only the OOR side; the row's name and its "(Syriac)"
+   description would want widening. Not done — Josh's call.
+2. **The three unmarked OOR rows** (see below).
 
-**Two open questions for Josh on the COE side, NOT decided:** (1) whether COE's May 15 is the
-same feast as the existing `holy-virgin-mary-of-the-harvest` (OOR/Syriac, May 15) — the
-agricultural Marian triad is shared across East and West Syriac; (2) whether COE's Aug 15 is
-Julian or Gregorian — `calendar-east-syriac.js` already has `fixedFeastMode` because ACOE
-practice is split, and neither source says which governs Aug 15.
+**A trap that already nearly caused a duplicate:** the first COE Marian commemoration ALREADY EXISTS.
+California 2026 prints Jan 2 as "Commemoration of the Blessed Virgin Mary, **and of St. James the
+Brother of our Lord**" — a joint commemoration. The corpus has `saint-james-the-brother-of-the-lord`
+(COE, `relative`, anchor epiphany, weekday 5, n −1) — the James half, with Mary absent from its
+identity. The rule is correct and validated (Jan 2 in 2026, Jan 5 in 2024, both matching the printed
+editions; Western Europe independently prints Jan 2). This is a **naming/identity fix on an existing
+row, not a new row.**
+
+**CORRECTION ON RECORD:** earlier in the 2026-09-12 session Claude claimed the East Syriac rite keeps
+no Dormition at all, on a single Wikipedia witness. That was WRONG and Josh caught it. Two ACOE
+sources (William Toma, acoecalifornia.org; Rev. Tower Andrious, bethkokheh.assyrianchurch.org, citing
+Darmo's Ḥudra) both state the Church of the East keeps THREE Marian commemorations. Wikipedia
+contradicts itself on this point across two of its own articles. Do not rely on it here.
 
 ---
 
+### What was fixed and pushed on 2026-09-12 (context for the above)
 
-**Finish the EOR sanctoral confirmation pass: December only.** Same method as every month this
-session — pull all December-dated EOR-tagged rows from `data/saints/sanctoral.json` (watch for rows
-whose `traditionObservance.EOR` points to a DIFFERENT month than the row's base `dayLegacy`; check
-both month AND day, a bare day-only comparison produces false alarms), then confirm each one against
-the live `Orthocal:search_saints` / `Orthocal:get_day` MCP tools (already connected and working all
-session — unlike coptic.io, see below). Fix real mismatches directly via `traditionObservance.EOR`
-(the established pattern, e.g. this session's Prophet Joel and Clement-of-Rome-duplicate fixes).
-Disclose, don't force, anything that doesn't match under several phrasings — `get_day` on the actual
-date is more reliable than `search_saints` by name for oddly-titled feasts (translations, synaxes).
-Cut a `git format-patch` and hand Josh the exact `git am`/`git push` commands, same as every month
-this session — he applies these personally, always give him the literal commands.
+**1. `traditionObservance` was INERT in the canonical async read path.** `resolveCommemorations`
+never threaded `tradition` into the date rule, so `observanceFor()` always fell through to the shared
+`observance`. 55 rows carry overrides; **60 resolved to a different day than the shared rule and were
+rendering on the wrong date in the live app** while the data was correct. `filterCachedByTradition`
+already did it correctly — the two public read paths disagreed, and that disagreement is what
+surfaced it. One-line fix. Commit `eee6589`.
 
-**Two genuinely unresolved items remain from May, not yet fixed (need a governance call or more
-research, not another quick check):**
-- `st-pachomius-of-patmos` — stored as fixed May 21, but his real Orthodox commemoration is
-  **Ascension Day itself** (a movable feast). Needs the movable-date engine (see the three rules
-  built 2026-09-07, further down this note), not a plain date edit.
-- `martyr-meletius-stratelates` (May 24) — genuinely absent from orthocal.info under both Slavic and
-  Greek tradition options, several phrasings tried. Needs a different source or a Julian-offset check
-  not yet attempted.
+**2. `saint-andrew-the-apostle` duplicate-id bug, exposed by fixing #1.** The Dec 13 (4 Kiahk) Coptic
+override had been written to the wrong row of a duplicate-id pair — the COE-only row, which has no
+OOR tag, so it could never fire. Moved. **The duplicate-id hazard is real and STILL UNRESOLVED across
+the file — at least 58 duplicate ids. Key bulk edits on (id, month, day), never id alone.** Flagged
+but not fixed: that COE-only row still carries `dayLegacy: "May 17"` against an observance of Nov 30.
 
-**One new open item from November:** `saint-james-the-hermit` (Nov 27, described in this corpus as
-"Syrian ascetic") does not match either figure orthocal.info lists for that day. Not resolved.
+**3. Option B built: sub-tradition schema.** `traditionObservance` keys may now be `OOR:Coptic` style,
+resolved most-specific-first. `oorSubtradition` is load-bearing — **it was read by no code at all
+before this.** Wired via `profile.oorSubtradition` at the single `resolveCommemorations` wrapper in
+`office-ui.js`. Non-destructive: no sub-tradition set = everything renders, exactly as before.
 
-**coptic.io connector status, 2026-09-11/12 (for whenever OOR work resumes): still broken.** Across
-one full session it cycled through `needs_reconnect` -> reinstalled -> port set from Private to
-Public (a real fix, but not sufficient) -> `isAuthless: false` mismatch against the actual public API
-(confirmed genuinely authless via its own docs at coptic.io/docs) -> a URL regression to the bare
-Codespace host (also fixed) -> still `needs_reconnect`, zero tools, after every individual fix
-landed. This is not a quick fix; don't re-diagnose from scratch without a new lead. Orthocal, by
-contrast, has been reliable and fully functional every session — use it without hesitation for any
-EOR work.
+**THE SEMANTICS CORRECTION THAT MATTERED — do not undo it.** `sanctoral.json`'s own top-level note
+says an absent `oorSubtradition` means Coptic. **It does not.** 62 of the 143 unscoped OOR rows are
+shared with ANG/LAT/EOR/COE and are pan-Christian (Epiphany, the Circumcision, Basil the Great,
+Matthias, the Forty Martyrs of Sebaste). Absence means *not sub-tradition-specific*. A filter built on
+the note's wording would hide those from Armenian users. **The top-level note in `sanctoral.json`
+still contains the wrong wording and should be corrected when that file is next edited.**
 
-**Standing lesson from this whole session, worth repeating to whoever reads this next:** a bare
-`ruleSource`-only check for "is this row confirmed" produces false alarms constantly — this session
-alone hit five of them (Catherine of Alexandria, Sylvester I, Irenaeus of Lyons, Ephrem the Syrian,
-Phocas/Joachim-Anne). The real confirmation often lives in `eorDateNote` or `oorDateNote` instead,
-especially for rows using `traditionObservance` to split a date across traditions. **Always open the
-full row and check every date-note field before treating anything as an unconfirmed gap.**
+Backfill applied: 78 Coptic-only rows explicitly marked `Coptic`; all 39 bare `OOR` override keys
+re-keyed to `OOR:Coptic` (each was coptic.io/Synaxarium-confirmed in its own note, so under the bare
+key Armenian and Syriac users were being served Coptic dates; they now fall through to the shared
+date). Commits `092cf5b` and `b35b55c`.
+
+**THREE ROWS LEFT UNMARKED, NEEDING A DECISION:** `saint-abraham-of-carrhae`,
+`saint-abraham-the-hermit` (both Feb 14) and `martyr-thespesios-of-cappadocia` (Jun 1) have NO
+`ruleSource` of any kind and no Coptic attestation in their own fields. They read as Syriac/Byzantine
+and may be stray OOR tags of the kind already cleaned up elsewhere in this project. Deliberately not
+guessed at.
+
+**NO UI PICKER EXISTS** for choosing a sub-tradition. `profile.oorSubtradition` is settable,
+normalised and fully honoured end to end, but has no control in Office Settings — reachable today
+only via a stored profile value. Obvious next engine task after the Dormition data.
+
+**Still open from before this session:** the EOR December confirmation pass (~33 EOR-effective rows,
+not started); `st-pachomius-of-patmos` (needs the movable-date engine — his commemoration is Ascension
+Day itself); `martyr-meletius-stratelates` (May 24, absent from orthocal under both traditions);
+`saint-james-the-hermit` (Nov 27, no match under any phrasing). coptic.io connector still exposes zero
+tools; Orthocal has been reliable every session — use it without hesitation.
 
 ---
 
