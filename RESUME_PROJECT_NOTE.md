@@ -5,32 +5,81 @@ permanent record of every decision lives in `AUDIT_GOVERNANCE_LEDGER.md`; the cl
 blocks each open item lives in `documentation/OPEN_ITEMS_FIXABILITY.md`. **Where this note and the
 repo disagree, the repo wins** — it may have moved since this was written.
 
-This note was rewritten 2026-09-07 (twice — once at session end, once more here after a further
-short continuation). The previous version (2026-09-04 rewrite) had accumulated a long, now
-largely-resolved narrative about the sanctoral confirmation effort. The whole of that old note is
-preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`. Nothing was discarded.
+This note was rewritten 2026-09-07 (twice), then substantially updated in place 2026-09-11/12
+across a long session (EOR confirmation pass, month by month) rather than rewritten again — the
+old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic side and was left
+alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
+note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
 
-**State as of 2026-09-07 (Claude Sonnet account):** `SEED_VERSION v267-2026-09-07-oor-gap-sweep-paoni-epip-checked-2-added`.
-**Josh's direction, 2026-09-07: do two Coptic months at a time from here** -- individual months were
-adding too little per pass to be worth a separate patch each.
+**State as of 2026-09-12 (session ending near context limit):** the 13-month OOR/Coptic gap sweep
+(section 7 below) is CLOSED. The EOR sanctoral confirmation pass is now done for May, June, July,
+August, September, October, and November — only **December remains** (roughly 34 EOR-tagged rows,
+not yet touched). Do not trust any older claim in this note about "the immediate next task" being
+the Coptic registry check below (section 0's original text) — that work is finished; this paragraph
+supersedes it.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
-"what's open" section at face value — `git clone` fresh and check `audit-ledger.html`'s own
-`SEED_VERSION` const and `git log --oneline -6` before doing anything else, every session, no
-exceptions.
+"what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
+doing anything else, every session, no exceptions.
 
-Cache-bust params as of this account's own last commit (unchanged this continuation — no JS was
-touched): `office-ui.js?v=221`, `explanations.js?v=220`, `prayers.js?v=221`,
-`saints-resolver.js?v=248` — re-check these too, every session; do not assume they're still current
-just because they match here.
+Cache-bust params: not touched this session (only `data/saints/sanctoral.json` and this note were
+edited) — re-check `office-ui.js`/`explanations.js`/`prayers.js`/`saints-resolver.js` version params
+against the live file headers yourself before trusting any number written here.
 
 ---
 
-## 0. Immediate next task, requested by Josh at end of session
+## 0. Immediate next task for the next session
+
+**Finish the EOR sanctoral confirmation pass: December only.** Same method as every month this
+session — pull all December-dated EOR-tagged rows from `data/saints/sanctoral.json` (watch for rows
+whose `traditionObservance.EOR` points to a DIFFERENT month than the row's base `dayLegacy`; check
+both month AND day, a bare day-only comparison produces false alarms), then confirm each one against
+the live `Orthocal:search_saints` / `Orthocal:get_day` MCP tools (already connected and working all
+session — unlike coptic.io, see below). Fix real mismatches directly via `traditionObservance.EOR`
+(the established pattern, e.g. this session's Prophet Joel and Clement-of-Rome-duplicate fixes).
+Disclose, don't force, anything that doesn't match under several phrasings — `get_day` on the actual
+date is more reliable than `search_saints` by name for oddly-titled feasts (translations, synaxes).
+Cut a `git format-patch` and hand Josh the exact `git am`/`git push` commands, same as every month
+this session — he applies these personally, always give him the literal commands.
+
+**Two genuinely unresolved items remain from May, not yet fixed (need a governance call or more
+research, not another quick check):**
+- `st-pachomius-of-patmos` — stored as fixed May 21, but his real Orthodox commemoration is
+  **Ascension Day itself** (a movable feast). Needs the movable-date engine (see the three rules
+  built 2026-09-07, further down this note), not a plain date edit.
+- `martyr-meletius-stratelates` (May 24) — genuinely absent from orthocal.info under both Slavic and
+  Greek tradition options, several phrasings tried. Needs a different source or a Julian-offset check
+  not yet attempted.
+
+**One new open item from November:** `saint-james-the-hermit` (Nov 27, described in this corpus as
+"Syrian ascetic") does not match either figure orthocal.info lists for that day. Not resolved.
+
+**coptic.io connector status, 2026-09-11/12 (for whenever OOR work resumes): still broken.** Across
+one full session it cycled through `needs_reconnect` -> reinstalled -> port set from Private to
+Public (a real fix, but not sufficient) -> `isAuthless: false` mismatch against the actual public API
+(confirmed genuinely authless via its own docs at coptic.io/docs) -> a URL regression to the bare
+Codespace host (also fixed) -> still `needs_reconnect`, zero tools, after every individual fix
+landed. This is not a quick fix; don't re-diagnose from scratch without a new lead. Orthocal, by
+contrast, has been reliable and fully functional every session — use it without hesitation for any
+EOR work.
+
+**Standing lesson from this whole session, worth repeating to whoever reads this next:** a bare
+`ruleSource`-only check for "is this row confirmed" produces false alarms constantly — this session
+alone hit five of them (Catherine of Alexandria, Sylvester I, Irenaeus of Lyons, Ephrem the Syrian,
+Phocas/Joachim-Anne). The real confirmation often lives in `eorDateNote` or `oorDateNote` instead,
+especially for rows using `traditionObservance` to split a date across traditions. **Always open the
+full row and check every date-note field before treating anything as an unconfirmed gap.**
+
+---
+
+## 0b. Original immediate-next-task text from the 2026-09-07 rewrite (superseded, kept for context)
 
 **Check the entire coptic.io saint registry directly and import whatever major figures are genuinely
 missing from OOR.** Josh's own words: "We will be done with it once you check the entire registry
-and do any other imports that are needed."
+and do any other imports that are needed." **This work is now DONE** — see section 7 below, "OOR
+gap sweep CLOSED." The coptic.io-specific paragraphs immediately following this one are historical
+context for why the sweep used Wikipedia/St-Takla.org instead of the live connector, and remain
+accurate as history, not as a live task list.
 
 **The coptic.io connector is per-Codespace infrastructure Josh runs and forwards locally
 (`coptic_mcp_server.py`, repo root) — it is not reachable from a fresh Claude account/session with no
