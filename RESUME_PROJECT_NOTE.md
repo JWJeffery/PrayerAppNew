@@ -285,8 +285,24 @@ full month actually re-verified:
     the Stylite, Nikita the Stylite, and Vincent of Lerins). A real open gap -- not resolved, not
     removed; needs a different source or a Julian-offset check not yet tried.
   Remaining May work: none -- May is DONE (31 of 31 rows checked; 29 confirmed as-is, 2 real findings
-  disclosed above, 0 rows needed a plain date correction this month). June and August-December (6
-  months, roughly 200 more EOR-tagged rows) are NOT started.
+  disclosed above, 0 rows needed a plain date correction this month).
+- **June 2026 (all 32 EOR-tagged rows) re-verified against live orthocal.info, one row at a time.**
+  ALL 32 confirmed exactly correct as stored -- the cleanest month checked so far, zero new fixes
+  needed. A few phrasing misses along the way, not real gaps: "Lucillian" not "Loukilianos,"
+  "Theodore Stratelates"/"the Commander" (his plain-English epithet wasn't matching, the Greek
+  epithet was), "David of Thessalonica" not "...Thessaloniki." TWO ROWS FLAGGED BY MY OWN LISTING
+  SCRIPT AS JUNE MISMATCHES TURNED OUT TO BE FALSE ALARMS -- the script printed only the
+  `traditionObservance.EOR` override's DAY, not its MONTH, so a same-numbered day in a different
+  month read as a June date: `saint-irenaeus-of-lyons` (already correctly Aug 23 via
+  `traditionObservance`, confirmed again live) and `saint-ephrem-the-syrian` (already correctly Jan 28
+  via `traditionObservance`, confirmed again live) are BOTH fine and were not touched. One real
+  cross-tradition finding, left as-is rather than acted on: `Isaurus` (June 17) and `Barnabas`/
+  `Bartholomew` pairing type patterns keep surfacing where Slavic search comes up empty but Greek
+  finds the figure instantly (`Isaurus the Holy Martyr, June 17, Greek only`) -- same shape as
+  Clement of Rome above; noted, not fixed, since the row's stored date already matches the Greek
+  confirmation.
+  Remaining June work: none -- June is DONE. August-December (5 months, roughly 168 more EOR-tagged
+  rows) are NOT started.
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 
