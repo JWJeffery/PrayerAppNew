@@ -303,6 +303,24 @@
                 return _resolveRelativeAgainstAnchor(entry, obs, date, anchor);
             }
 
+            if (anchorName === 'august12') {
+                // Fixed civil date (Aug 12 of the same Gregorian year) --
+                // ADDED 2026-09-12, same shape as 'christmas' above, no
+                // calendar engine needed. Needed for the Armenian Apostolic
+                // Church's Dormition of the Theotokos, kept the "Sunday
+                // nearest 15 August" -- identically "the first Sunday on or
+                // after 12 August", since any 7-day window contains exactly
+                // one Sunday. Uses the existing bounded-window mechanism
+                // (maxOffsetDays/fallbackOffsetDays) with weekday: 0 and
+                // maxOffsetDays: 6, so the window is always Aug 12-18 and a
+                // match is guaranteed every year (the fallback branch in
+                // _resolveRelativeAgainstAnchor is unreachable for this rule
+                // but left in place for schema consistency, same as the
+                // 'christmas' anchor above).
+                anchor = new Date(date.getFullYear(), 7, 12);
+                return _resolveRelativeAgainstAnchor(entry, obs, date, anchor);
+            }
+
             // 'easter' / 'epiphany' (default) -- UNCHANGED Church of the East
             // path, byte-for-byte as before this session's additions.
             const cal = global.EastSyriacCalendar;

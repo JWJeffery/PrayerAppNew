@@ -13028,8 +13028,8 @@
     },
     {
       "id": "vigil-of-the-assumption",
-      "name": "Vigil of the Assumption",
-      "description": "Preparation for the feast of Mary.",
+      "name": "Last Day of the Fast of St Mary",
+      "description": "The final day of the two-week Coptic Fast of the Virgin (1-15 Mesori), which precedes the Assumption of her body the following day.",
       "type": "saint",
       "tags": [
         "OOR"
@@ -13045,26 +13045,24 @@
           }
         ]
       },
-      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. the day before the Coptic Assumption feast (Aug 22), derived rather than separately attested -- eves are derived, not cited, per standing practice. OOR is this row's only tag."
+      "ruleSource": "LABEL CORRECTED 2026-09-12: the date (Aug 21 / 15 Mesori) was already right, but framing it as a bare \"vigil/eve\" mischaracterized it -- it is the LAST DAY of the 15-day Coptic Fast of the Virgin (1-15 Mesori), not a one-day eve of the coming feast. Confirmed via multiple Coptic sources: tasbeha.org's \"St. Mary in the Synaxarium\" compilation (\"The feast of the ascent of her body to heaven: 16th of Misra... which is preceded by the Fast of The Virgin (15 days)\") and St. Verena American Coptic Orthodox Church's parish page (\"the fifteen-day fast devoted to the Theotokos\", ending at the 16 Mesori Assumption). Original (now-superseded) ruleSource: \"Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. the day before the Coptic Assumption feast (Aug 22), derived rather than separately attested -- eves are derived, not cited, per standing practice. OOR is this row's only tag.\""
     },
     {
       "id": "dormition-of-the-theotokos",
-      "name": "Dormition of the Theotokos",
-      "description": "Feast of the Virgin in the Armenian tradition.",
+      "name": "Dormition of the Theotokos (Armenian)",
+      "description": "Feast of the Virgin in the Armenian tradition, kept the Sunday nearest 15 August (Verapokhumn) rather than on a fixed date.",
       "type": "saint",
       "tags": [
         "OOR"
       ],
       "dayLegacy": "August 15",
       "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 15
-          }
-        ]
+        "type": "relative",
+        "anchor": "august12",
+        "weekday": 0,
+        "maxOffsetDays": 6
       },
+      "ruleSource": "STRUCTURAL FIX 2026-09-12: this row was stored as a FIXED Aug 15 date, but the Armenian Apostolic Church keeps the Dormition (Verapokhumn) on the Sunday nearest 15 August, not on a fixed civil date -- confirmed via Wikipedia's 'Dormition of the Mother of God' infobox ('Sunday nearest August 15: Armenian Apostolic Church'). Implemented as \"the first Sunday on or after Aug 12\" -- identical to \"nearest Aug 15\" since any 7-day window (Aug 12-18) contains exactly one Sunday -- using the existing bounded-window 'relative' observance type (new anchor 'august12', a fixed civil date needing no calendar engine, same shape as the existing 'christmas' anchor). Verified programmatically across 2020-2050: zero mismatches, all seven weekday cases exercised as the anchor date itself cycles through the week, window always Aug 12-18, 2026 resolves to Aug 16 -- matching the Armenian Prelacy's actual observance that year. This row is NOT a duplicate of the shared `dormition-or-assumption-of-the-virgin-mary` row (ANG/LAT/EOR, with its own OOR:Coptic override) -- per Josh's explicit direction, the two coexist and neither should be merged or deleted.",
       "oorSubtradition": "Armenian"
     },
     {
@@ -13101,6 +13099,68 @@
         }
       },
       "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Aug 15) is ANG/LAT/EOR's. CONFIRMED against coptic.io: \"The Assumption of the Body of the Pure Virgin St. Mary\" falls Aug 22 (16 Mesra)."
+    },
+    {
+      "id": "dormition-of-the-theotokos-coptic",
+      "name": "Dormition of the Theotokos (Coptic)",
+      "description": "The falling asleep of the Virgin Mary -- a distinct feast from the Coptic Assumption of her body seven months later (16 Mesori). Also commemorated on the 21st of every Coptic month.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "oorSubtradition": "Coptic",
+      "dayLegacy": "January 29 (21 Tobi)",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 1,
+            "day": 29
+          }
+        ]
+      },
+      "ruleSource": "NEW ROW 2026-09-12, per Josh's governance call. The Coptic Church keeps the Dormition (falling asleep) of the Virgin Mary as a feast distinct from the Assumption of her body, seven months apart -- confirmed via three independent sources: CopticChurch.net's Synaxarium (copticchurch.net/synaxarium/5_21.html: \"The Dormition of Our Lady, the Virgin Mary, the Theotokos\", 21 Tobi); St-Takla.org's own Synaxarium (same date, same text, st-takla.org/books/en/church/synaxarium/05-topah/21-toba-mary.html); and St. Verena American Coptic Orthodox Church's parish page (\"The Dormition of the Virgin Mary is on the 21st of Tobe (29th of January)... The Coptic Orthodox Church, however, celebrates [the Assumption of her body] on the 16th of Mesore (22nd of August)\"). This is distinct from the existing `dormition-or-assumption-of-the-virgin-mary` row's OOR:Coptic override (Aug 22, the Assumption of the Body) -- both are real, separately-attested Coptic feasts, not duplicates of one another."
+    },
+    {
+      "id": "dormition-of-the-theotokos-syriac",
+      "name": "Dormition of the Theotokos (Syriac)",
+      "description": "The falling asleep of the Virgin Mary, kept the same date as the Byzantine and Western feast.",
+      "type": "saint",
+      "tags": [
+        "OOR"
+      ],
+      "oorSubtradition": "Syriac",
+      "dayLegacy": "August 15",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 8,
+            "day": 15
+          }
+        ]
+      },
+      "ruleSource": "NEW ROW 2026-09-12, per Josh's governance call. The Syriac Orthodox Church keeps the Dormition/Assumption on August 15 -- confirmed via Wikipedia's \"Dormition of the Mother of God\" infobox (\"August 15: (Syriac Orthodox, some Eastern and Western churches)\") and independently via the technical paper \"Automating the Liturgical Calendar of the Syriac Orthodox Church\" (syriacorthodoxresources.org/Calendar/IVSCFSOCLitCalendar.pdf), which computes the liturgical year's movable Sundays explicitly \"from Transfiguration until Assumption (Aug 15th)\" -- treating Aug 15 as the Church's own fixed anchor for this feast, not a coincidental alignment with other traditions. Given as a standalone row rather than a traditionObservance key on the shared `dormition-or-assumption-of-the-virgin-mary` row, mirroring the pattern already established for the Armenian row (`dormition-of-the-theotokos`) -- one dedicated row per sub-tradition's own attested practice for this feast, per Josh's standing design for this cluster."
+    },
+    {
+      "id": "coe-dormition-of-the-theotokos",
+      "name": "Commemoration of the Falling Asleep (Dormition) of St. Mary the Blessed Virgin",
+      "description": "Commemorated at the close of the Rogation of the Blessed Virgin Mary (August 1-15). Church of the East reckoning.",
+      "type": "saint",
+      "tags": [
+        "COE"
+      ],
+      "dayLegacy": "August 15",
+      "observance": {
+        "type": "fixed",
+        "dates": [
+          {
+            "month": 8,
+            "day": 15
+          }
+        ]
+      },
+      "ruleSource": "NEW ROW 2026-09-12, per Josh's governance call. CONFIRMED 3/3 against printed diocesan calendars in data/kalendar/source-witnesses/, read directly via pdftotext -layout: ACOTE Diocese of California 2024 (\"15. Commemoration of the Falling Asleep (Dormition) of St. Mary the Blessed Virgin\", preceded by \"1. Rogation of the Blessed Virgin Mary (August 1-15)\"); California 2026 (\"15. Commemoration of St. Mary the Blessed Virgin, the mother of Christ\", same date, same preceding Rogation note); ACOTE Diocese of Western Europe 2026 (\"15  Commemoration of St Mary\", same date). GREGORIAN, not Julian: confirmed against these same calendars' own Transfiguration date (Aug 6 in all three editions, not Aug 19), ruling out fixedFeastMode. Does NOT use CGSC-CALENDAR-2026.pdf (Christ the Good Shepherd, Wakeley, Australia) as a witness -- that is an independent East Syriac body founded in 2015 by an excommunicated ACOE bishop, Julian +13 throughout (its own Transfiguration is Aug 19), and is not evidence of ACOE or ACE practice. What the Ancient Church of the East proper (as opposed to ACOE/ACOTE) does for this date remains genuinely unestablished -- no ACE calendar is held in this repo."
     },
     {
       "id": "saint-macarius-the-roman",
@@ -13143,13 +13203,12 @@
     },
     {
       "id": "afterfeast-of-the-assumption",
-      "name": "Afterfeast of the Assumption",
-      "description": "Continued celebration of the Virgin's glory.",
+      "name": "Leavetaking of the Dormition",
+      "description": "The close of the Byzantine Dormition feast, extending its celebration through the Leavetaking.",
       "type": "saint",
       "tags": [
-        "OOR"
+        "EOR"
       ],
-      "oorSubtradition": "Coptic",
       "dayLegacy": "August 23",
       "observance": {
         "type": "fixed",
@@ -13160,7 +13219,7 @@
           }
         ]
       },
-      "ruleSource": "Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. the day after the Coptic Assumption feast (Aug 22), derived rather than separately attested. OOR is this row's only tag."
+      "ruleSource": "TAG AND IDENTITY CORRECTED 2026-09-12: this row was mis-tagged OOR:Coptic with an unconfirmed, derived date (\"the day after the Coptic Assumption feast, derived rather than separately attested\"). It is in fact Byzantine content -- CONFIRMED live against orthocal.info (Slavic tradition): \"Leavetaking of Dormition\" falls Aug 23, matching the stored day exactly. Retagged EOR; OOR tag and oorSubtradition removed, as this has no Coptic attestation of its own. Original (now-superseded) ruleSource: \"Date CORRECTED 2026-09-07: stored date was inherited/unconfirmed. the day after the Coptic Assumption feast (Aug 22), derived rather than separately attested. OOR is this row's only tag.\""
     },
     {
       "id": "saint-stephen-of-hungary",

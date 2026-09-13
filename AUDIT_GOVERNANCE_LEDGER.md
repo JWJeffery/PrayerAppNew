@@ -13840,3 +13840,72 @@ the EOR tag. Moved from Nov 27 to Nov 26.
 
 **Net result: every EOR-side open item carried forward from the May, June, August, September, October
 and November sweeps is now closed.** Nothing remains open in the EOR calendar-year sweep.
+
+## 2026-09-12 — Dormition/Assumption cluster built: 3 new rows, 2 identity/label fixes, 1 engine rule
+
+The immediate-next-task data job specified in RESUME_PROJECT_NOTE.md section 0, executed in full.
+All dates were already researched and verified in that note; this entry records what was built from
+that research, plus one syntax/regression note.
+
+**`afterfeast-of-the-assumption` — retagged OOR:Coptic to EOR.** This row's date (Aug 23) was
+correct but derived/unconfirmed and mis-tagged Coptic. It is genuinely Byzantine content: CONFIRMED
+live against orthocal.info, "Leavetaking of Dormition" falls Aug 23 exactly. Renamed, retagged EOR,
+oorSubtradition removed.
+
+**`vigil-of-the-assumption` — relabeled, date unchanged.** Aug 21 (15 Mesori) was correct but framed
+as a bare "vigil/eve"; it is actually the LAST DAY of the Coptic Church's 15-day Fast of the Virgin
+(1-15 Mesori), confirmed via tasbeha.org's Synaxarium compilation and St. Verena parish's page.
+Renamed to "Last Day of the Fast of St Mary" with description corrected accordingly.
+
+**Three new rows created**, each independently sourced (none merely inherits another's date):
+- `dormition-of-the-theotokos-coptic` (OOR:Coptic, Jan 29 / 21 Tobi) — the Coptic Church's Dormition
+  proper, a feast distinct from the Assumption of the body seven months later. Sourced 3-ways:
+  CopticChurch.net's Synaxarium, St-Takla.org's Synaxarium, and St. Verena parish's page, all citing
+  21 Tobi = 29 January.
+- `dormition-of-the-theotokos-syriac` (OOR:Syriac, Aug 15) — sourced via Wikipedia's "Dormition of
+  the Mother of God" infobox and independently via the Syriac Orthodox Resources technical paper on
+  automating that Church's own liturgical calendar, which computes movable Sundays explicitly "from
+  Transfiguration until Assumption (Aug 15th)". Given as a standalone row (not a traditionObservance
+  key on the shared ANG/LAT/EOR row) to mirror the Armenian row's existing pattern — see the
+  duplicate-row note below.
+- `coe-dormition-of-the-theotokos` (COE, Aug 15, Gregorian) — CONFIRMED 3/3 by reading
+  data/kalendar/source-witnesses/2024 full.pdf, 2026cal.pdf, and English_2026_2.pdf directly with
+  `pdftotext -layout`. Gregorian confirmed by cross-checking these same calendars' own Transfiguration
+  date (Aug 6, not Aug 19). CGSC-CALENDAR-2026.pdf deliberately excluded as a witness per the resume
+  note's warning (Christ the Good Shepherd, Wakeley — an independent, excommunicated-founder East
+  Syriac body, not ACOE/ACE).
+
+**Engine change: new `august12` anchor for the `relative` observance type
+(js/saints-resolver.js).** The Armenian `dormition-of-the-theotokos` row was stored as a FIXED
+Aug 15 date but the Armenian Apostolic Church keeps the Dormition (Verapokhumn) on the Sunday
+nearest 15 August. Implemented as "the first Sunday on or after Aug 12" (identical to "nearest
+Aug 15" since a 7-day window always contains exactly one Sunday), reusing the existing bounded-window
+mechanism (`maxOffsetDays`) with a new fixed-civil-date anchor branch, same shape as the existing
+`christmas` anchor — no calendar engine dependency. Verified with a standalone Node harness across
+2020-2050: zero mismatches, all seven weekday cases exercised as the anchor cycles through the week,
+window always Aug 12-18, 2026 resolves to Aug 16 (matching the Armenian Prelacy's actual 2026
+observance). Also re-ran the project's own `scripts/saints/verify_sanctoral.js` (California) after
+this change: 115/124, identical to the pre-existing baseline — confirms nothing in the COE
+week-anchored engine was disturbed.
+
+**Deliberate non-change, flagged for any future session:** the shared
+`dormition-or-assumption-of-the-virgin-mary` row (ANG/LAT/EOR, OOR:Coptic override) is left as-is
+with its bare `OOR` tag and no Armenian- or Syriac-specific override. Per Josh's explicit instruction
+in the resume note ("`dormition-of-the-theotokos` is NOT a duplicate row... do not merge or delete
+it"), the Armenian and (now) Syriac rows exist as fully separate, standalone identities alongside
+this shared row rather than as traditionObservance keys on it. Whether the app's per-sub-tradition
+display logic could ever show BOTH the shared row's fallback Aug 15 AND a dedicated sub-tradition row
+to the same reader was not independently re-verified here — this entry trusts Josh's own prior
+design call, since the Armenian row has coexisted with the shared row without incident since
+2026-09-07. If a duplicate-display bug is ever found for Armenian or Syriac users, start here.
+
+**All two open governance questions from the original Dormition-cluster task are now also closed**
+(both resolved earlier in this same session, before this cluster was built): the COE May 15 harvest
+question (COE tag added to `holy-virgin-mary-of-the-harvest`) and the three unmarked stray OOR rows
+(all three removed as Byzantine-only figures). See this file's other 2026-09-12 entries.
+
+**Verified end-to-end** with a standalone Node harness exercising every row in this cluster against
+the real resolver for 2026: shared row correct for ANG/EOR (Aug 15) and OOR:Coptic (Aug 22, not
+Aug 15); Armenian correct (Aug 16, not Aug 15); Coptic-proper correct (Jan 29); Syriac correct
+(Aug 15); COE correct (Aug 15); Leavetaking correct (Aug 23, EOR); Last-Day-of-Fast correct (Aug 21,
+OOR:Coptic). All 11 checks passed.

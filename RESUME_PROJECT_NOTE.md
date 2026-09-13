@@ -11,21 +11,15 @@ old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic 
 alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
 note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
 
-**State as of 2026-09-12 (end of a long engineering session), UPDATED same day by a second session.**
-HEAD `b35b55c` / SEED_VERSION v269 reflects the engineering session (sub-tradition schema); a second
-session the same day did sanctoral CONFIRMATION and DATA work on top of it, not yet committed --
-see `git log` and diff against a fresh clone before trusting any of this. That second session: (1)
-added a COE tag to `holy-virgin-mary-of-the-harvest` per Josh's governance call; (2) resolved the
-three unmarked stray OOR rows flagged in the sub-tradition entry -- all three removed as
-Byzantine-only figures with no genuine Oriental Orthodox attestation; (3) closed the December EOR
-sweep (33/33 rows), fixing `saint-boniface`'s mismatched identity and moving
-`saint-stephen-protomartyr` EOR to Dec 27; (4) resolved all three individually-flagged EOR saints
-carried over from May/November (`st-pachomius-of-patmos`, `martyr-meletius-stratelates`,
-`saint-james-the-hermit` -- the last moved from Nov 27 to Nov 26). **The full EOR calendar-year
-sweep (Jan-Dec) and all its carried-over open items are now CLOSED.** Full detail in
-AUDIT_GOVERNANCE_LEDGER.md's two 2026-09-12 entries. Section 0 below (the Dormition/Assumption data
-job) is still the next task -- it was NOT touched by this second session, which worked the queue
-Josh gave it directly instead.
+**State as of 2026-09-12 (end of a long engineering session), UPDATED same day by a second session,
+UPDATED AGAIN by a third.** HEAD `79c9c6d` after the second session's push (COE tag, 3 stray-row
+removals, December EOR sweep, 3 flagged saints -- see AUDIT_GOVERNANCE_LEDGER.md's two entries under
+that date). A THIRD session the same day built the Dormition/Assumption cluster that section 0 below
+specifies: 3 new rows, 2 identity/label fixes, and one new engine anchor (`august12` in
+`js/saints-resolver.js`) for the Armenian movable date -- not yet committed as of this writing, see
+`git log` and diff against a fresh clone before trusting any of this. **Section 0's task is DONE.**
+Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry. The full EOR
+calendar-year sweep (Jan-Dec) and all its carried-over open items remain CLOSED (second session).
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
@@ -38,6 +32,23 @@ against the live file headers yourself before trusting any number written here.
 ---
 
 ## 0. Immediate next task for the next session
+
+**COMPLETED 2026-09-12 (third session of the day).** Everything below in this section was the task
+specification and research trail; the build itself is done, committed, and verified. See
+AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry (2026-09-12) for exactly
+what was built: 3 new rows (`dormition-of-the-theotokos-coptic` Jan 29, `dormition-of-the-theotokos-
+syriac` Aug 15, `coe-dormition-of-the-theotokos` Aug 15), 2 identity/label fixes
+(`afterfeast-of-the-assumption` retagged EOR, `vigil-of-the-assumption` relabeled), and one new
+engine anchor (`august12`, in `js/saints-resolver.js`) fixing the Armenian row's movable date —
+verified against a standalone Node harness across 2020-2050 (zero mismatches) and end-to-end against
+the real resolver for the whole cluster (11/11 checks passed). Both open governance questions below
+(COE May 15, the three unmarked OOR rows) were also closed this same day, before this cluster was
+built — see the ledger's other 2026-09-12 entries. **Next task for whoever picks this up: no
+specific data job is queued. The "NO UI PICKER" item flagged further down (a sub-tradition selector
+in Office Settings) is the obvious next engine task, per the note below, but has not been scoped or
+started.**
+
+---
 
 **Session of 2026-09-12 ended here. Everything below was pushed and verified against a fresh
 clone of origin, not just reported green locally. HEAD b35b55c, SEED_VERSION v269.**
