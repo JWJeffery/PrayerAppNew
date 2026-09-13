@@ -6966,7 +6966,7 @@
           }
         ]
       },
-      "ruleSource": "2 May in 2024 and 2026 -- 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
+      "ruleSource": "2 May in 2024 and 2026 -- 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021. DIOCESAN SCOPE, carried over 2026-09-12 from the superseded duplicate row of this same identity before it was removed, so the caveat is not lost with it: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such rather than presented as settled."
     },
     {
       "id": "saint-athanasius",
@@ -7861,26 +7861,6 @@
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “INTO JERUSALEM New Martyr John the New Ven. John of the Ancient (Palm Sunday) of Epirus Caves in Palestine Apostle Andronicus & Junia of the 70 Martyr Theodotus of of Prusa, & his companions with him ”. Confirmed by 4 of the six editions (2022, 2023, 2024, 2025). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
       "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
-    },
-    {
-      "id": "saint-andrew-the-apostle",
-      "name": "St. Andrew the Apostle",
-      "description": "One of the Twelve Apostles. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
-      "type": "saint",
-      "dayLegacy": "May 17",
-      "tags": [
-        "COE"
-      ],
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 11,
-            "day": 30
-          }
-        ]
-      },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 November 30, 2026 November 30. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
     },
     {
       "id": "saint-paschal-baylon",
@@ -11023,26 +11003,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Benedict of Nursia, Monastic, c. 543”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
     },
     {
-      "id": "mar-abraham-of-kashkar",
-      "name": "Mar Abraham of Kashkar",
-      "description": "Reviver of the community and abbot.",
-      "type": "saint",
-      "dayLegacy": "July 12",
-      "tags": [
-        "COE"
-      ],
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 2
-          }
-        ]
-      },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 May 2, 2026 May 2. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
-    },
-    {
       "id": "martyrs-proclus-and-hilary",
       "name": "Martyrs Proclus and Hilary",
       "description": "Martyrs of Ancyra.",
@@ -11430,23 +11390,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/july/kalendar-v0.1-july-candidates.csv, row 07-18 rank 2), which places “Elizabeth Ferard” on this day on the witness of: AM (tier: Anglican martyrology). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
     },
     {
-      "id": "mar-sabrisho",
-      "name": "Mar Sabrisho",
-      "description": "Catholicos and monk.",
-      "type": "saint",
-      "dayLegacy": "July 18",
-      "tags": [
-        "COE"
-      ],
-      "observance": {
-        "type": "ordinal",
-        "month": 10,
-        "weekday": 0,
-        "n": 1
-      },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2021 October 3, 2026 October 4. Across those years it resolves to the 1st Sunday of October, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
-    },
-    {
       "id": "saint-camillus-de-lellis",
       "name": "Saint Camillus de Lellis",
       "description": "Patron of hospitals and the sick.",
@@ -11686,7 +11629,7 @@
     {
       "id": "mar-qardagh",
       "name": "Mar Qardagh",
-      "description": "Governor and martyr.",
+      "description": "East Syriac martyr venerated in the region of Arbela (Erbil); a governor before his martyrdom. Identity text carried over 2026-09-12 from the ACOTE Diocese of Western Europe row for this same figure, removed that day as a duplicate; the DATE here is California's, not Western Europe's. See ruleSource.",
       "type": "saint",
       "dayLegacy": "July 23",
       "tags": [
@@ -11698,7 +11641,7 @@
         "weekday": 5,
         "n": 4
       },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2021 August 27, 2024 August 23, 2026 August 28. Across those years it resolves to the 4th Friday of August, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 3 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
+      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2021 August 27, 2024 August 23, 2026 August 28. Across those years it resolves to the 4th Friday of August, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 3 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal. DIOCESAN DIVERGENCE RESOLVED 2026-09-12, by Josh's explicit direction to follow California. This identity previously held TWO rows: this one, on California's 4th Friday of August, and a second on the ACOTE Diocese of Western Europe's Friday of the Seventh Week of Summer, verified against all seven of that diocese's 2020-2026 editions (6/7; the 2025 miss is that year's merger of the Sixth and Seventh Weeks of Summer). BOTH rendered every year, so this saint was printed TWICE annually on two different days (8/22 and 8/28 in 2025, 8/27 and 8/28 in 2027), colliding onto a single day only in 2026 -- a live defect confirmed at render level, not inferred from the data. The Western Europe row was removed. DISCLOSED, not smoothed away: the removed rule was the better-attested of the two (seven editions against this row's two printed years), and the choice was diocesan consistency with the rest of this corpus, NOT evidential strength. If this project ever revisits which diocese governs, this is one of the rows that should move."
     },
     {
       "id": "saint-bridget-of-sweden",
@@ -12790,7 +12733,7 @@
     {
       "id": "mar-shimon-bar-sabbae",
       "name": "Mar Shimon Bar Sabbae",
-      "description": "Catholicos and martyr.",
+      "description": "4th-century Catholicos-Patriarch of Seleucia-Ctesiphon, martyred under Shapur II. Identity text carried over 2026-09-12 from the ACOTE Diocese of Western Europe row for this same figure, removed that day as a duplicate; the DATE here is California's, not Western Europe's. See ruleSource.",
       "type": "saint",
       "dayLegacy": "August 10",
       "tags": [
@@ -12802,7 +12745,7 @@
         "weekday": 5,
         "n": 3
       },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 August 16, 2026 August 21. Across those years it resolves to the 3rd Friday of August, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
+      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 August 16, 2026 August 21. Across those years it resolves to the 3rd Friday of August, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal. DIOCESAN DIVERGENCE RESOLVED 2026-09-12, by Josh's explicit direction to follow California. This identity previously held TWO rows: this one, on California's 3rd Friday of August, and a second on the ACOTE Diocese of Western Europe's Friday of the Sixth Week of Summer, verified against all seven of that diocese's 2020-2026 editions (6/7; the 2025 miss is that year's merger of the Sixth and Seventh Weeks of Summer). BOTH rendered every year, so this saint was printed TWICE annually on two different days (8/15 and 8/21 in 2025, 8/20 and 8/21 in 2027), colliding onto a single day only in 2026 -- a live defect confirmed at render level, not inferred from the data. The Western Europe row was removed. DISCLOSED, not smoothed away: the removed rule was the better-attested of the two (seven editions against this row's two printed years), and the choice was diocesan consistency with the rest of this corpus, NOT evidential strength. If this project ever revisits which diocese governs, this is one of the rows that should move."
     },
     {
       "id": "saint-lawrence",
@@ -21923,23 +21866,6 @@
       "ruleSource": "Friday of the Second Week of the Resurrection. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (7/7)."
     },
     {
-      "id": "mar-qardagh",
-      "name": "St. Qardagh",
-      "description": "East Syriac martyr venerated in the region of Arbela (Erbil). (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "August 28",
-      "observance": {
-        "type": "cycle",
-        "cycle": "qayta",
-        "week": 7,
-        "weekday": 5
-      },
-      "ruleSource": "Friday of the Seventh Week of Summer. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (6/7; same 2025 compression as Mar Shimon Bar Sabbae, with whom he shared a day that year)."
-    },
-    {
       "id": "mar-sabrisho",
       "name": "Mar Sabrisho",
       "description": "Sabrisho of Beth Qoqa (or Beth Garmai). Confirmed at this date by two independent sources: the ACOTE Diocese of Western Europe 2026 calendar ('St. Sawrisho of Beth Qoqa, St. Steven, St. Khnana') and the ACOE Diocese of California 2026 calendar ('Mar Sabrisho of Bet-Qoqa'). The identity id was previously scattered across three different unsourced dates (Jul.18, Aug.20, Sept.12) with no citation for any of them -- all stripped.",
@@ -21972,23 +21898,6 @@
         "weekday": 5
       },
       "ruleSource": "CORRECTED TO CALIFORNIA 2026-09-03. The rule previously here (Friday of Resurrection week 5) was derived from the WESTERN EUROPE calendars. California places the spring commemoration of Mar Sargis and Mar Bacchus on the Friday of Resurrection week FOUR: 26 Apr 2024 and 1 May 2026, 2/2. The two dioceses differ by a week. Since this project follows California, the California rule governs. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
-    },
-    {
-      "id": "mar-shimon-bar-sabbae",
-      "name": "Mar Shimon Bar Sabbae",
-      "description": "4th-century Catholicos-Patriarch martyred under Shapur II. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
-      "type": "saint",
-      "tags": [
-        "COE"
-      ],
-      "dayLegacy": "August 21",
-      "observance": {
-        "type": "cycle",
-        "cycle": "qayta",
-        "week": 6,
-        "weekday": 5
-      },
-      "ruleSource": "Friday of the Sixth Week of Summer. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions (6/7; the 2025 miss is that year's merger of the Sixth and Seventh Weeks of Summer, an editorial compression the diocese applies to make the year fit, not a different rule)."
     },
     {
       "id": "mar-yokhannan-zaroqa",

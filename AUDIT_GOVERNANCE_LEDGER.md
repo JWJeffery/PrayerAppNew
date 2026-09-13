@@ -14037,3 +14037,71 @@ confirms **one line changed, one line added** — the note line only; the entry 
 1,077 and no commemoration row was touched.
 
 SEED_VERSION bumped to `v272-2026-09-12-sanctoral-note-corrected`.
+
+---
+
+## 2026-09-12 — Five duplicate rows removed: a live double-render bug, and the diocesan divergence behind two of them
+
+Item 8 on the fresh open-items list was "49 duplicate ids, never systematically resolved." Examining
+the population rather than acting on the headline number showed it is not one problem: 36 pairs carry
+different dates AND different tags, 10 different dates with the same tags, and only a handful ever
+collide. **The ones that matter are the ones that render twice on the same day for the same
+tradition, and that was established at render level, not by comparing data.**
+
+**A real bug, live in production.** On 2 May, the first Sunday of October and 30 November, a COE user
+saw **Mar Abraham of Kashkar, Mar Sabrisho and St Andrew the Apostle each printed twice.**
+
+**All three were one failure, and the file documents it against itself.** The 2026-08-30 consolidation
+pass folded scattered unsourced identities onto single sourced rows; each surviving row's own
+description says so — Andrew's reads "COE tag moved from the May.17 entry to this one", Abraham's says
+the Jul.12 and Nov.24 dates were "stripped". They were not stripped. The later 2026-09-06 date-
+derivation pass then found those same dead rows, took them at face value, and **moved their dates onto
+the correct day instead of deleting them**, resurrecting three rows that were supposed to be gone. The
+residues still carried the proof: `dayLegacy` of "May 17", "July 12" and "July 18" — precisely the
+dates the consolidation claimed to have removed.
+
+**SWEEPING THE CLASS FOUND TWO MORE THAT THE STATIC CHECK MISSED.** Comparing stored dates only finds
+collisions between rows of the same observance TYPE. Running every entry through the real resolver for
+all five traditions across 2025-2027 surfaced `mar-shimon-bar-sabbae` and `mar-qardagh`, each holding a
+California `ordinal` rule (3rd/4th Friday of August) AND an ACOTE Western Europe `cycle` rule (Friday
+of the 6th/7th Week of Summer). Both rendered every year, so each saint was printed **twice annually on
+two different days** — Shimon on 8/15 and 8/21 in 2025, 8/20 and 8/21 in 2027 — colliding onto a single
+day only in 2026. Worse than the collision case, and shipping. This is the standing "sweep the class,
+don't fix the instance" rule earning its place: fixing only the three found by inspection would have
+left two live.
+
+**JOSH'S DECISION, put to him explicitly with the evidence on both sides: follow California.** The
+Western Europe rows were removed. **Disclosed on both surviving rows rather than smoothed away: the
+removed rule was the better-attested of the two** — verified across all seven of that diocese's
+2020-2026 editions (6/7) against the survivor's two printed years, which its own ruleSource already
+called weak. The choice was diocesan consistency with the rest of this corpus, not evidential
+strength, and each row now says so and names itself as one that should move if this project ever
+revisits which diocese governs.
+
+**Nothing was discarded with the removed rows.** Abraham's keeper lacked the DIOCESAN SCOPE caveat its
+duplicate carried; that text was folded in before the row went. Shimon's and Qardagh's keepers carried
+only "Catholicos and martyr." and "Governor and martyr." as identity text, against real descriptions on
+the Western Europe rows; those were carried over, attributed, and flagged that the DATE is California's
+and the identity text is not.
+
+**VERIFIED:**
+- **Zero double-renders remain**, sweeping all five traditions across **2025-2035** (11 years) through
+  the real resolver — not the 3 years used to find the bug, deliberately widened before claiming it
+  closed.
+- All five identities still render, exactly once each, on California's date (2027: Abraham 5/2,
+  Sabrisho 10/3, Andrew 11/30, Shimon 8/20, Qardagh 8/27). **Removing a duplicate must not silently
+  remove the commemoration**, so this was checked rather than assumed.
+- All five ids remain in `js/coe-eligibility.js`'s Layer 3 allowlist and remain present in the data —
+  the allowlist keys on id, and the id survives on the kept row of every pair, so the gate is intact.
+- Andrew's multi-tradition row is untouched: tags ANG/LAT/EOR/OOR/COE and its `OOR:Coptic` Dec 13
+  override both intact.
+- Entry count 1,077 -> 1,072. Duplicate ids 49 -> 44. `git diff --stat` confirms one file changed.
+- Targeted string excision with brace matching, never `json.dump()`; every anchor asserted unique
+  within its own row's span before substituting; `json.loads()` validated before `open(p,'w')`.
+
+**The remaining 44 duplicate ids are NOT being renamed.** None of them double-render. Ids are
+referenced from `js/coe-eligibility.js` and `scripts/saints/*.json`, so making them unique is a
+cross-file change and an architectural decision, not a cleanup. The standing rule stands unchanged:
+**key any bulk edit on `(id, month, day)`, never on `id` alone.**
+
+SEED_VERSION bumped to `v273-2026-09-12-duplicate-rows-removed`.

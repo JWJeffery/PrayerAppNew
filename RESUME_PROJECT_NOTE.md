@@ -155,10 +155,20 @@ rendering on the wrong date in the live app** while the data was correct. `filte
 already did it correctly — the two public read paths disagreed, and that disagreement is what
 surfaced it. One-line fix. Commit `eee6589`.
 
+**DUPLICATE ROWS: five removed 2026-09-12 (session 5), including a live double-render bug.** Abraham
+of Kashkar, Sabrisho and Andrew each had a residue row left behind when the 2026-08-30 consolidation
+moved a date instead of deleting the row; all three printed TWICE for COE users. Sweeping the class
+through the real resolver found two more the static check missed -- Shimon Bar Sabbae and Qardagh,
+each holding a California ordinal rule AND a Western Europe cycle rule, printing twice a year on two
+different days. **Josh's call: follow California**; the better-attested Western Europe rule was
+removed and that fact is disclosed on both surviving rows. Zero double-renders remain across
+2025-2035. Duplicate ids 49 -> 44; the rest do not collide and are NOT being renamed (ids are
+referenced from `js/coe-eligibility.js` and `scripts/saints/*.json`). See the ledger entry.
+
 **2. `saint-andrew-the-apostle` duplicate-id bug, exposed by fixing #1.** The Dec 13 (4 Kiahk) Coptic
 override had been written to the wrong row of a duplicate-id pair — the COE-only row, which has no
-OOR tag, so it could never fire. Moved. **The duplicate-id hazard is real and STILL UNRESOLVED across
-the file — at least 58 duplicate ids. Key bulk edits on (id, month, day), never id alone.** Flagged
+OOR tag, so it could never fire. Moved. **The duplicate-id hazard is real and only PARTLY resolved across
+the file — 44 duplicate ids remain as of 2026-09-12, none of them colliding. Key bulk edits on (id, month, day), never id alone.** Flagged
 but not fixed: that COE-only row still carries `dayLegacy: "May 17"` against an observance of Nov 30.
 
 **3. Option B built: sub-tradition schema.** `traditionObservance` keys may now be `OOR:Coptic` style,
