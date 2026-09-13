@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**FONTS VENDORED 2026-09-12 (session 5).** Cormorant Garamond (subset from CatharsisFonts upstream,
+Regular/Italic/SemiBold) and IBM Plex Mono (from @ibm/plex-mono 2.5.0) live in `assets/fonts/` as
+woff2, 189KB total, with their OFL licences beside them -- self-hosted, no CDN. `@font-face` is
+declared in `css/office-shell.css` and is the ONE thing there not scoped under `body.shell-v2`,
+because it cannot be; no bytes download until something renders in the face. **The `✦` ornament does
+not exist in either face and Phase 2 must render it as inline SVG.**
+
 **UI REDESIGN PHASE 1 SHIPPED 2026-09-12 (session 5).** `css/office-shell.css` (token layer only,
 every selector scoped under `body.shell-v2`) and `js/shell-flag.js` (hidden dev toggle). Turn it on
 with `?shell=v2` in the URL, off with `?shell=v1`; a small badge bottom-right shows the state. No

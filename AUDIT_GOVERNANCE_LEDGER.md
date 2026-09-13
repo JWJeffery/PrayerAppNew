@@ -14259,3 +14259,56 @@ Phase 2 — the three-column grid, the two bars, the type scale and the Auto/Lig
 the next step and begins below the marked line at the foot of `css/office-shell.css`.
 
 SEED_VERSION bumped to `v275-2026-09-12-shell-phase-1-flagged-stylesheet`.
+
+---
+
+## 2026-09-12 — The two new faces vendored and subsetted, not pulled from a CDN
+
+`documentation/UI_REDESIGN_HANDOFF.md` §7 requires Cormorant Garamond and IBM Plex Mono to be
+self-hosted and subset rather than loaded from a CDN. Done here, ahead of Phase 2, so Phase 2's diff
+is about layout and nothing else.
+
+**Sources, both SIL Open Font License:**
+
+- **Cormorant Garamond** — `github.com/CatharsisFonts/Cormorant` (Christian Thalmann, Catharsis
+  Fonts). Subset from the upstream TTFs with `pyftsubset` to Latin, Latin Extended-A/B and Greek,
+  retaining `kern,liga,clig,calt,onum,dlig`. Three faces: Regular, Italic, SemiBold. 452–453 glyphs
+  each, 44–50KB.
+- **IBM Plex Mono** — `@ibm/plex-mono` 2.5.0 from npm, which ships woff2 upstream; taken as
+  published. Regular only, 1,049 glyphs, 49KB — it sets 10–11px letterspaced machine labels and
+  needs no other weight.
+
+**189KB of font data in total, four files.** Against the alternative of two full families from
+Google's CDN, this is smaller, has no third-party request on the critical path, and does not leak a
+request to Google on every load of a prayer app.
+
+**Licences travel with the files**, as the OFL requires: `assets/fonts/OFL-CormorantGaramond.txt` and
+`assets/fonts/LICENSE-IBMPlexMono.txt`. This project abandoned an entire lane over licensing, so the
+notices are not optional housekeeping. Do not delete them.
+
+**`@font-face` is global and cannot be scoped — that is safe, and here is why.** Declaring a face
+only makes the family *available*; browsers do not fetch a font until something actually renders in
+it, and nothing does while the flag is off. A user who never sees shell-v2 downloads zero font bytes.
+This is the one thing in the new stylesheet that is not under `body.shell-v2`, and it is the only
+kind of rule that can't be. Re-verified after the edit: 5 non-`@font-face` selectors, all still
+scoped, plus 4 `@font-face` blocks.
+
+**VERIFIED by opening the built files, not by trusting the build:** all four woff2 files parse with
+fontTools, report the expected internal names, and carry the characters the office actually needs —
+Latin with accents, macrons and carons, curly quotes, em and en dashes, the dagger, the middot.
+
+**ONE FINDING THAT CHANGES PHASE 2.** The `✦` page ornament specified in the handoff (`✦ ✦ ✦`
+beneath the office title) **does not exist in either face**, and cannot: it is a dingbat, absent from
+Cormorant and from Plex Mono. Left as a character it falls back to whatever the operating system
+supplies, which differs across macOS, Windows and Android — an inconsistent ornament sitting directly
+under the office title on the most composed screen in the app. **Phase 2 renders it as inline SVG
+instead**, which is consistent everywhere and takes its colour from `--uo-accent` like everything
+else. Recorded here so the decision isn't rediscovered as a bug later.
+
+Cormorant is a display face by its designer's own description — intended for large sizes, usable as
+text at high resolution. The handoff's 25px body floor sits inside that intended range rather than
+stretching it, which is worth knowing before anyone proposes lowering it.
+
+Cache-bust: `css/office-shell.css` 275 -> 276. No JS changed.
+
+SEED_VERSION bumped to `v276-2026-09-12-self-hosted-faces-vendored`.
