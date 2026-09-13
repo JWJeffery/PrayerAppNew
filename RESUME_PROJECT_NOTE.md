@@ -19,17 +19,17 @@ committed and pushed. **Section 0's task (below) is DONE** -- full detail in
 AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry. The full EOR calendar-year
 sweep (Jan-Dec) and every item carried over from it are CLOSED.
 
-**Session 4 (this one) did NOT produce a new task or new work.** Josh asked to see the open-items
-list; that request was interrupted before any list was compiled, and the session ended here on a
-token-budget warning instead. **No open-items list exists as output of this session -- do not
-assume one was generated and is sitting somewhere.** The next session's actual first move should be
-building that list fresh: read `documentation/OPEN_ITEMS_FIXABILITY.md` and cross-check it against
-`AUDIT_GOVERNANCE_LEDGER.md` (per the standing rule in section 1 below -- the fixability file has
-gone stale against the ledger before), rather than trusting anything about "open items" implied
-elsewhere in this note. The one concrete lead already on record: the sub-tradition UI picker.
-`profile.oorSubtradition` is fully wired end-to-end (built 2026-09-12) but has no control anywhere
-in Office Settings -- reachable today only by setting a stored profile value directly. That's a
-real, scoped, buildable next task if nothing higher-priority turns up in the open-items check.
+**Session 4 did NOT produce a new task or new work.** Josh asked to see the open-items list; that
+request was interrupted before any list was compiled, and the session ended on a token-budget
+warning instead.
+
+**Session 5 (2026-09-12) built that list.** The fixability file was six commits behind the ledger
+and **five of its rows were stale** -- all five corrected in `documentation/OPEN_ITEMS_FIXABILITY.md`
+and recorded in the ledger (`ordinary1/2/3.json`, the admin dark-mode toggle, dead `config.heading`,
+the empty-`tags` rows, and the Cathedral/Monastic control-vs-content conflation). Josh then directed
+work on four items off the resulting list: the sub-tradition UI picker, the wrong `sanctoral.json`
+top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
+2026-09-12 ledger entries for each.
 
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or

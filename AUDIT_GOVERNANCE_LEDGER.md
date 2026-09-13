@@ -13909,3 +13909,44 @@ the real resolver for 2026: shared row correct for ANG/EOR (Aug 15) and OOR:Copt
 Aug 15); Armenian correct (Aug 16, not Aug 15); Coptic-proper correct (Jan 29); Syriac correct
 (Aug 15); COE correct (Aug 15); Leavetaking correct (Aug 23, EOR); Last-Day-of-Fast correct (Aug 21,
 OOR:Coptic). All 11 checks passed.
+
+---
+
+## 2026-09-12 — `OPEN_ITEMS_FIXABILITY.md` swept for staleness: five stale rows corrected
+
+Josh asked for a fresh open-items list (the request that was interrupted at the end of the previous
+session). Per the standing rule in §1 of the resume note, the fixability file was cross-checked
+against this ledger AND against the actual repo rather than read off at face value. It was six
+commits behind the ledger — last touched at `290b8ee` (2026-09-11) while the ledger had been written
+at `59d3d70` — and five of its rows were wrong.
+
+**Corrected, each verified by direct probe, not by recollection:**
+
+1. **`ordinary1/2/3.json` architecture review** — was closed before the row was ever written. The
+   three-file split was deleted and replaced with a single `data/season/ordinary.json` in an earlier
+   BCP session and crossed off the running list on 2026-08-30. `find . -name 'ordinary*.json'`
+   returns exactly one file.
+2. **Admin dark-mode toggle** — fixed 2026-09-03. `data-app-dark-toggle` appears in five places in
+   `index.html`.
+3. **Dead `config.heading`** — zero occurrences remain in `js/`.
+4. **Empty-`tags` rows** — listed as a known defect awaiting an in-repo fix. It is neither a defect
+   nor a sweep: exactly two entries carry an empty `tags` array (`saint-mark-of-ephesus`,
+   `saints-sarbelus-and-barbea`), and `sanctoral.json`'s own top-level note states such entries are
+   deliberately retained unsourced identities that never resolve and never display. Reclassified,
+   not "fixed".
+5. **Cathedral/Monastic** — the row conflated two separate things, as this project's own documents
+   have done before. The CONTROL is live: `isEastSyriacCathedralMode()` has five call sites, fixed
+   2026-08-20 and re-audited 2026-09-03. Only the CONTENT axis — whether Maclean describes two
+   parallel forms of each hour at all — is an open research question. The row now says so
+   explicitly, with a note under Part 3 stating the distinction.
+
+**Method note worth keeping.** Four of the five were disprovable in under a minute with `find`,
+`grep` and one `json.load`. This is the third recorded instance of this file going stale. The
+standing lesson it already encodes ("reachability is a property to be probed, not recalled") applies
+to its own open/closed rows just as much as to source reachability, and that is now written into the
+file itself.
+
+Documentation-only change; no data, engine or rendered output touched. Verification calibrated
+accordingly, per the standing rule that documentation changes do not warrant scripture-level rigor.
+
+SEED_VERSION bumped to `v270-2026-09-12-fixability-file-staleness-sweep`.

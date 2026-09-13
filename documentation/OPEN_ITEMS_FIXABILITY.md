@@ -77,12 +77,19 @@ are held.
 | Item | What actually blocks it |
 |---|---|
 | **Royal Anthem sourcing** | Copyright. Two live options, neither authorised: OIRSI/Moolan permission request, or disclosed machine translation from Bedjan's public-domain Syriac. **Needs Josh's decision, not research.** |
-| **Cathedral/Monastic axis** | Research, and the repo already says so. `components/traditions/east-syriac/rubrics.json` records that this axis was **deleted** because Maclean does not describe two parallel forms of each hour the way the old build assumed — he describes one ferial form and, separately, festival/Sunday/memorial forms. The note says the distinction must be researched before rebuilding, not assumed. **The Sunhadus material in Maclean's Introduction is about which offices are obligatory and at what length — it is NOT a per-hour variant axis, and must not be used as if it were.** |
+| **Cathedral/Monastic axis** (the CONTENT question only — the control itself is live, see below) | Research, and the repo already says so. `components/traditions/east-syriac/rubrics.json` records that this axis was **deleted** because Maclean does not describe two parallel forms of each hour the way the old build assumed — he describes one ferial form and, separately, festival/Sunday/memorial forms. The note says the distinction must be researched before rebuilding, not assumed. **The Sunhadus material in Maclean's Introduction is about which offices are obligatory and at what length — it is NOT a per-hour variant axis, and must not be used as if it were.** |
 | **Coptic Prayer of the Veil** | O'Leary has seven hours and does not contain it. Needs a different Coptic edition; none identified. |
 | **Horologion splash wiring** | Full audit, per Josh 2026-09-04. Not a sourcing problem. |
 | **Whether ACE moved Denkha and Cross to Gregorian** | Needs a current ACE/ACOE authority, not a historical source |
 | **Mar Daniel the Physician** | Unruleable from data; needs judgement |
 | **Mar Mushi / St Jacob the Recluse** | Held FIXED pending the zero-Moses-year answer |
+
+**The Cathedral/Monastic CONTROL is not dead and must not be reported as such.** It was fixed
+2026-08-20 (dashboard green) and its behaviour was re-confirmed by direct audit 2026-09-03; verified
+again 2026-09-12, `isEastSyriacCathedralMode()` has five live call sites across `js/` and
+`index.html`. The row above concerns only the underlying **content axis** — whether Maclean
+describes two parallel forms of each hour at all — which remains an open research question. Two
+different things that have been conflated in this file's own history and in the resume note before.
 
 ---
 
@@ -93,10 +100,10 @@ These need no new source and no decision from Josh. They can be started at any t
 | Item | What it needs |
 |---|---|
 | **2038/2095 season overlap** | Engine reasoning plus Node simulation against real dates. Self-contained. |
-| **`ordinary1/2/3.json` architecture review** | Repo reading. Was deferred until other corrections landed, not blocked. |
-| **Admin dark-mode toggle** | Known defect, in-repo fix |
-| **Dead `config.heading`** | Known defect, in-repo fix |
-| **Empty-`tags` rows** | Known defect, in-repo fix |
+| ~~**`ordinary1/2/3.json` architecture review**~~ **CLOSED — was already done when this row was written** | The three-file split no longer exists: it was deleted and replaced with a single `data/season/ordinary.json` in an earlier BCP session, and crossed off the running open-items list on 2026-08-30 (see the ledger entry for that date). Verified against the repo 2026-09-12: `find . -name 'ordinary*.json'` returns exactly one file. |
+| ~~**Admin dark-mode toggle**~~ **CLOSED 2026-09-03** | Fixed that session. Verified 2026-09-12: the `data-app-dark-toggle` attribute selector is present in five places in `index.html`. |
+| ~~**Dead `config.heading`**~~ **CLOSED** | Verified 2026-09-12: zero occurrences of `config.heading` remain anywhere in `js/`. |
+| ~~**Empty-`tags` rows**~~ **NOT A SWEEP — 2 rows, disclosed by design** | Verified 2026-09-12 against `data/saints/sanctoral.json`: exactly two entries carry an empty `tags` array (`saint-mark-of-ephesus`, `saints-sarbelus-and-barbea`). Per the file's own top-level note these are deliberately retained unsourced identities that never resolve and never display, not dead data to be swept. Nothing to fix as a class. |
 | **Navigation governance conflict** | A decision for Josh — uniform headings vs. the navigation doc permitting local naming. Logged, unresolved, needs no research. |
 | **Education-layer coverage extension** | Content work within sources already held. Coverage currently ~49% (Coptic titles) to ~57% (East Syriac components). Deliberately excludes generic headings and individual psalm citations. |
 
@@ -132,3 +139,15 @@ This file went stale. Two rows sat here as “blocked on Maclean pages” for fi
 ledger had already closed them, and the resume note rewritten 2026-09-04 copied the error forward.
 **Check a row against `AUDIT_GOVERNANCE_LEDGER.md` before reporting it as open.** This file records
 what blocks an item; it is not itself proof the item is still open.
+
+## It went stale again — swept 2026-09-12
+
+Josh asked for a fresh open-items list. Cross-checking this file against the ledger and against the
+actual repo found **five stale rows**, all corrected above: `ordinary1/2/3.json` (closed before the
+row was ever written), the admin dark-mode toggle, dead `config.heading`, the empty-`tags` rows (a
+class of two, disclosed by design, not a defect), and the Cathedral/Monastic row's conflation of a
+live control with an open content question. Four of the five were verifiable in under a minute by
+probing the repo directly — `find`, `grep`, one `json.load`. **The probe is cheaper than the
+argument: check the repo, not this file, before calling anything open.** That is now the third
+recorded instance of this file going stale, so treat every unstruck row here as a lead to verify,
+never as a fact.
