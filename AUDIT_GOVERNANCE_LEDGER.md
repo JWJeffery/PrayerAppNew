@@ -13950,3 +13950,53 @@ Documentation-only change; no data, engine or rendered output touched. Verificat
 accordingly, per the standing rule that documentation changes do not warrant scripture-level rigor.
 
 SEED_VERSION bumped to `v270-2026-09-12-fixability-file-staleness-sweep`.
+
+---
+
+## 2026-09-12 — Sub-tradition UI picker built: `profile.oorSubtradition` is now reachable
+
+`profile.oorSubtradition` was made load-bearing on 2026-09-12 (`b35b55c`) and wired end to end, but
+had **no control anywhere in the interface** — the only way to set it was to write a stored profile
+value by hand. Josh directed this be built off the fresh open-items list.
+
+**BUILT.** A new select, `#profile-oor-subtradition` ("Oriental Orthodox sub-tradition"), in the
+local profile defaults panel in `index.html`, immediately after the Book of Needs role control. Five
+options: an empty default ("Show every Oriental Orthodox commemoration") plus Coptic, Armenian,
+Syriac, Ethiopian. `setUserProfileOorSubtradition()` in `js/office-ui.js` follows the exact shape of
+the `setUserProfileMinistryRole()` setter already beside it — validate against the existing
+`UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES` set, persist via `persistUserProfileDefaults()`. No new
+storage, validation or resolver machinery was added; the normaliser at `normalizeUserProfileDefaults()`
+already handled this field, including falling a bad stored value back to null rather than to Coptic.
+`syncUserProfileControls()` reads the stored value back into the select and the panel's summary
+sentence now states the setting in plain words.
+
+**The empty option maps to `null`, never to `'Coptic'`**, and the setter carries a comment saying so.
+This is the same semantics correction recorded in the `oorSubtradition` entry above: absence means
+"not sub-tradition-specific", not "Coptic". `sanctoral.json`'s top-level note still says otherwise and
+is corrected in a separate commit; anyone reading that note and "fixing" this setter to match would
+hide 62 pan-Christian rows from Armenian, Syriac and Ethiopian users.
+
+**VERIFIED, not assumed:**
+- Filter behaviour exercised end-to-end in a standalone Node harness against the real
+  `saints-resolver.js` and the real `sanctoral.json`, using `saintAppliesToContext` (per the standing
+  rule — not `occursOn`). Jan 29: the Coptic-scoped Dormition renders for a Coptic user and for an
+  un-narrowed user, and correctly does not for Armenian/Syriac/Ethiopian. Aug 15: the Syriac-scoped
+  Dormition renders only for Syriac, while the shared
+  `dormition-or-assumption-of-the-virgin-mary` renders for **every** sub-tradition — the pan-Christian
+  case that the wrong semantics would have broken, checked explicitly rather than reasoned about.
+  Total OOR-visible rows: 173 un-narrowed, 140 Coptic, 85 Armenian, 69 Syriac, 65 Ethiopian.
+- The select's option values are byte-identical to `UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES`, and
+  every `oorSubtradition` value actually present in the data (Armenian, Coptic, Ethiopian, Syriac) is
+  offerable in the select — checked programmatically, so no sub-tradition exists in the corpus that a
+  user cannot select, and no option exists that the validator would reject.
+- `node --check` passes on `js/office-ui.js` and `js/saints-resolver.js`.
+- Cache-bust bumped manually: `js/office-ui.js?v=269` -> `?v=270` in `index.html`.
+  `js/saints-resolver.js` is untouched and stays at `?v=269`.
+
+**Disclosed, not verified:** the select's own DOM round-trip (change event -> setter -> persisted ->
+read back into the control on re-open) was not exercised in a real browser from this side. The setter
+and sync paths are line-for-line the same as the four profile controls already shipping beside them,
+and the values are confirmed to match the validator, but that is code-shape reasoning, not a render
+check.
+
+SEED_VERSION bumped to `v271-2026-09-12-oor-subtradition-ui-picker`.

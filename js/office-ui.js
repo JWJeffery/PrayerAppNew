@@ -1041,6 +1041,23 @@ function setUserProfileMinistryRole(value) {
     persistUserProfileDefaults(profile);
 }
 
+function setUserProfileOorSubtradition(value) {
+    const profile = getUserProfileDefaults();
+
+    // The select's empty option means "not narrowed", which is null in the
+    // profile -- NEVER 'Coptic'. Absence means every OOR row renders, including
+    // the 62 unscoped rows that are shared with other traditions and are
+    // pan-Christian rather than Coptic-specific. (sanctoral.json's top-level
+    // note still claims absence means Coptic; it is wrong, and the resolver's
+    // own comment at appliesToSubtradition() records why. Do not "fix" this
+    // setter to match that note.)
+    profile.oorSubtradition = UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES.has(value)
+        ? value
+        : null;
+
+    persistUserProfileDefaults(profile);
+}
+
 function resetUniversalOfficeUserProfile() {
     clearUserEntryDefault();
     showTraditionEntry();
@@ -1081,6 +1098,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const traditionSelect = document.getElementById('profile-tradition-default');
     const bookNeedsSelect = document.getElementById('profile-book-needs-scope');
     const ministryRoleSelect = document.getElementById('profile-ministry-role');
+    const oorSubtraditionSelect = document.getElementById('profile-oor-subtradition');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -1097,6 +1115,10 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
 
     if (ministryRoleSelect) {
         ministryRoleSelect.value = normalized.ministryRole;
+    }
+
+    if (oorSubtraditionSelect) {
+        oorSubtraditionSelect.value = normalized.oorSubtradition || '';
     }
 
     if (summary) {
@@ -1123,7 +1145,14 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
         };
         const roleLabel = roleLabels[normalized.ministryRole] || roleLabels['lay'];
 
-        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}.`;
+        // Worded to state what narrowing actually does: it hides rows EXCLUSIVE
+        // to another sub-tradition and keeps the shared ones, which is not the
+        // same as "showing only Coptic saints".
+        const subtraditionLabel = normalized.oorSubtradition
+            ? `Oriental Orthodox commemorations narrowed to ${normalized.oorSubtradition} use, plus those kept across all the Oriental Orthodox churches`
+            : 'Oriental Orthodox commemorations shown for every sub-tradition';
+
+        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}.`;
     }
 }
 

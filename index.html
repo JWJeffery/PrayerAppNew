@@ -228,6 +228,17 @@
                     <option value="all">Show everything, regardless of role</option>
                 </select>
             </label>
+
+            <label class="app-profile-default-field" for="profile-oor-subtradition">
+                <span>Oriental Orthodox sub-tradition</span>
+                <select id="profile-oor-subtradition" onchange="setUserProfileOorSubtradition(this.value)">
+                    <option value="">Show every Oriental Orthodox commemoration (default)</option>
+                    <option value="Coptic">Coptic</option>
+                    <option value="Armenian">Armenian</option>
+                    <option value="Syriac">Syriac</option>
+                    <option value="Ethiopian">Ethiopian</option>
+                </select>
+            </label>
         </div>
 
         <div class="app-profile-defaults-actions">
@@ -1084,7 +1095,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=269" defer></script>
+<script src="js/office-ui.js?v=270" defer></script>
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 

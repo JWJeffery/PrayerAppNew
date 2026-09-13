@@ -184,9 +184,11 @@ date). Commits `092cf5b` and `b35b55c`.
 and may be stray OOR tags of the kind already cleaned up elsewhere in this project. Deliberately not
 guessed at.
 
-**NO UI PICKER EXISTS** for choosing a sub-tradition. `profile.oorSubtradition` is settable,
-normalised and fully honoured end to end, but has no control in Office Settings — reachable today
-only via a stored profile value. Obvious next engine task after the Dormition data.
+~~**NO UI PICKER EXISTS** for choosing a sub-tradition.~~ **BUILT 2026-09-12 (session 5).**
+`#profile-oor-subtradition` now sits in the local profile defaults panel, after the Book of Needs
+role control; `setUserProfileOorSubtradition()` in `js/office-ui.js`. The empty option maps to
+`null`, never `'Coptic'`. Filter behaviour verified in a Node harness via `saintAppliesToContext`;
+the DOM round-trip itself was not exercised in a browser and is disclosed as such in the ledger.
 
 **Still open from before this session:** the EOR December confirmation pass (~33 EOR-effective rows,
 not started); `st-pachomius-of-patmos` (needs the movable-date engine — his commemoration is Ascension
