@@ -31,6 +31,19 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**UI REDESIGN ADOPTED 2026-09-12 (session 5): `documentation/UI_REDESIGN_HANDOFF.md`.** An outside
+design proposal for the app shell, checked against the repo, corrected in fifteen places for
+governance, and adopted. Rail / page / margin; six phases, Phase 1 (a flagged stylesheet, nothing
+existing edited) is the entry point. **Two things to know before anyone starts:** (1) it conflicts
+with `documentation/universal-office-navigation-architecture.md`, which is marked CANONICAL and fixes
+the parchment surface as the shared visual language -- Phase 6 retires the parchment pass, so that
+needs Josh's decision before Phase 6, though not before Phase 1; (2) the eastern seasonal-colour dot
+is a SOURCED-CONTENT task with a named witness per tradition, not a shell task, and for East Syriac
+no dot is the likely correct answer. Also established while checking it: the 1979 BCP prescribes no
+liturgical colours at all (zero hits across 35,229 lines), yet `data/season/*.json` already carries
+`liturgicalColor` on 397 days -- so that field rests on something other than the BCP and wants a
+`ruleSource`. See the ledger entry.
+
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before

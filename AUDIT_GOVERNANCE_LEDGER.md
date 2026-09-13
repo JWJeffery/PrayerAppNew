@@ -14105,3 +14105,87 @@ cross-file change and an architectural decision, not a cleanup. The standing rul
 **key any bulk edit on `(id, month, day)`, never on `id` alone.**
 
 SEED_VERSION bumped to `v273-2026-09-12-duplicate-rows-removed`.
+
+---
+
+## 2026-09-12 — UI redesign handoff adopted as `documentation/UI_REDESIGN_HANDOFF.md`
+
+A design proposal for the app shell (entry, office reading view, settings) was brought in from
+outside and checked against the repo before being adopted. Its core move — one canon, *rail · page ·
+margin*, with everything not prayed aloud moved out of the text column into the margin — is kept, and
+so are its tokens, type scale and phase structure. Its structural claims about this repo were
+verified rather than taken on trust and all held: 4,241 lines in `css/office.css`, 496 `--app-*`
+hits, 306 `body.office-active` hits, 35 `innerHTML` sites in `js/office-ui.js`, all four sidebars and
+`#mode-selection` present as described, and Core Contract §4 specifying the resolved-office envelope
+exactly as the design leans on it.
+
+**Fifteen corrections were required before adoption**, each recorded in §8 of the document with its
+reason. The load-bearing ones:
+
+- **A gap dressed as a preference.** The proposal specified "the existing display-depth control as
+  full / incipits only". No such control exists. The Horologion's incipit state is a *coverage state*
+  — full psalm text is deferred in `js/horologion-engine.js` and the incipit emitted as a rubric. It
+  belongs in the margin as a `coverage-gap` diagnostic, not in the drawer as a setting. Shipping it
+  as a preference would have made the gap invisible by making it look chosen, which is what §11
+  forbids in its plainest form.
+- **Settled governance the design broke**, all restored: uniform "Office Settings" drawer heading;
+  a dark-mode toggle on every screen; "I'm not sure" routing to Anglican; the three
+  `entryPageDefault` routes; the five `#user-profile-defaults` controls and the ACOE/ACE
+  sub-selector, none of which live in the four sidebars and so were not covered by the proposal's own
+  acceptance criteria; and `toggleBcpOnly()`'s exact post-2026-09-03 contract.
+- **Cathedral/Monastic removed from the margin and the drawer** until the Maclean question is
+  settled — the control is live but the content axis was deliberately deleted pending research.
+- **The Roman lane is the Breviary 1960/1962**, not the Liturgy of the Hours, which was abandoned on
+  licensing.
+- **Diagnostics render all three §11 codes**, not just `not-yet-mapped`; the gutter label maps to
+  `units[].kind` as well as `units[].citation`.
+- **Horologion is repriced and moved last in Phase 5**: it already emits
+  `{tradition, officeKey, date, title, status, sections, diagnostics}` with a validator that
+  hard-requires those seven fields — a reconciliation between two payload shapes, not "an emitter
+  plus native labels".
+
+**Two findings from probing rather than reasoning, both affecting the seasonal-colour dot:**
+
+1. **The 1979 BCP prescribes no liturgical colours at all** — zero occurrences of "color" or
+   "colour" across all 35,229 lines of the in-repo text (`pdftotext -layout` on
+   `data/kalendar/source-witnesses/book_of_common_prayer.pdf`). TEC colour usage is customary, not
+   rubrical.
+2. **The Anglican mapping nonetheless already exists and is populated**: `data/season/*.json` carries
+   `liturgicalColor` on 397 days (green 231, white 81, purple 59, red 23, none 2, rose 1). So the
+   shell reads a field rather than building a mapping — but that field cannot rest on the BCP and
+   wants a `ruleSource` naming whatever witness it does rest on. Logged as a corpus task, not a
+   blocker.
+
+Eastern seasonal colours, per Josh's direction that the eastern lanes emit their own, are written as
+a **sourced-content task with a named witness per tradition**, not a shell task: Byzantine practice is
+customary and jurisdiction-variable, Coptic usage is thinner, and East Syriac has essentially no
+developed sequence, where no dot is the likely correct result and is honest silence (§11 rule 3).
+Until a lane supplies a sourced colour it shows no dot. An invented colour would be a fabrication
+placed in the ordo line, the most authoritative-looking strip on the screen.
+
+**Rublev's *Trinity* is struck from the proposed backgrounds.** An icon is a venerated object, not a
+texture; dimming one to 0.4 opacity and running prayer text across a face is the wrong relationship
+to the image. Byzantine ornament, a horologion or typikon leaf, or architectural stonework instead.
+The Coptic codex leaf and East Syriac Thaksa page stand — manuscript pages, not images of persons.
+
+**A CONFLICT WITH A CANONICAL DOCUMENT, RECORDED AND NOT OVERRIDDEN.**
+`documentation/universal-office-navigation-architecture.md` (2026-06-05) is marked *canonical
+app-wide design direction*. Its drawer rule is upheld here verbatim in effect. But it also fixes the
+shared visual language as the parchment surface and its own next steps propagate that shell to the
+Book of Needs and the Admin Dashboard — and Phase 6 of this handoff retires the parchment pass.
+**That needs Josh's decision before Phase 6.** It does not block Phase 1, which edits no existing
+rule. Recorded at the head of the new document as well as here, per the standing rule that scope
+conflicts are logged for deliberate resolution rather than resolved silently by whichever document
+was written last.
+
+Josh's decisions recorded in the document as given: three-state Auto/Light/Dark with Auto as the
+shipped default; Auto keyed to the office rather than the clock; Cathedral/Monastic hidden until
+settled; depth control in the margin beside its content; time-remaining cut rather than computed;
+resume-where-you-left-off deferred; mobile rail collapsing to a top strip with a bottom sheet named
+as the fallback. The Book of Needs stays out of scope on its own skin, and Universal Office mode
+renders the same canon one level up with the rail becoming the lanes.
+
+Documentation-only change; no data, engine or rendered output touched. The screens themselves
+(`handoff/screens/*.png`, ~7.5MB) are not carried in this patch and are added separately.
+
+SEED_VERSION bumped to `v274-2026-09-12-ui-redesign-handoff-adopted`.
