@@ -11,12 +11,21 @@ old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic 
 alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
 note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
 
-**State as of 2026-09-12 (end of a long engineering session).** HEAD `b35b55c`, SEED_VERSION
-v269. This session was NOT sanctoral confirmation work — it fixed two live engine/data bugs and
-built the OOR sub-tradition schema (option B). The 13-month OOR/Coptic gap sweep remains CLOSED.
-The EOR confirmation pass still has **December only** outstanding (~33 EOR-effective rows, not
-started). Section 0 below supersedes every earlier claim in this note about "the immediate next
-task".
+**State as of 2026-09-12 (end of a long engineering session), UPDATED same day by a second session.**
+HEAD `b35b55c` / SEED_VERSION v269 reflects the engineering session (sub-tradition schema); a second
+session the same day did sanctoral CONFIRMATION and DATA work on top of it, not yet committed --
+see `git log` and diff against a fresh clone before trusting any of this. That second session: (1)
+added a COE tag to `holy-virgin-mary-of-the-harvest` per Josh's governance call; (2) resolved the
+three unmarked stray OOR rows flagged in the sub-tradition entry -- all three removed as
+Byzantine-only figures with no genuine Oriental Orthodox attestation; (3) closed the December EOR
+sweep (33/33 rows), fixing `saint-boniface`'s mismatched identity and moving
+`saint-stephen-protomartyr` EOR to Dec 27; (4) resolved all three individually-flagged EOR saints
+carried over from May/November (`st-pachomius-of-patmos`, `martyr-meletius-stratelates`,
+`saint-james-the-hermit` -- the last moved from Nov 27 to Nov 26). **The full EOR calendar-year
+sweep (Jan-Dec) and all its carried-over open items are now CLOSED.** Full detail in
+AUDIT_GOVERNANCE_LEDGER.md's two 2026-09-12 entries. Section 0 below (the Dormition/Assumption data
+job) is still the next task -- it was NOT touched by this second session, which worked the queue
+Josh gave it directly instead.
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
@@ -536,11 +545,31 @@ full month actually re-verified:
   directly (to distinguish from the Oct 11 Philip-of-the-Seventy-Deacons, already correctly a separate
   row); "Amphilochius of Iconium" needed `get_day` ("Amphilocus").
   Remaining November work: none -- November is DONE.
-  Remaining EOR sweep: December only (roughly 34 EOR-tagged rows) NOT started. Two genuinely
-  unresolved items still open from May: `st-pachomius-of-patmos` (needs the movable-date engine, not
-  a plain fix) and `martyr-meletius-stratelates` (a real, still-unexplained gap in orthocal.info under
-  both traditions tried). One new genuinely unresolved item from November: `saint-james-the-hermit`
-  (no match found under any phrasing tried).
+- **December 2026 (all 33 EOR-tagged rows) re-verified against live orthocal.info, 2026-09-12 --
+  THE FULL EOR CALENDAR-YEAR SWEEP (Jan-Dec) IS NOW CLOSED.** 31 of 33 confirmed exactly correct as
+  stored. TWO REAL FIXES: `saint-boniface` (Dec 19) had the wrong name/description copy-pasted from
+  the OTHER duplicate-id `saint-boniface` row (Mainz missionary, June 5) even though its own
+  ruleSource already correctly identified "Martyr Boniface and Righteous Aglaida" -- corrected the
+  visible identity, left the date alone. `saint-stephen-protomartyr`'s EOR date moved from Dec 26 to
+  Dec 27 via `traditionObservance.EOR`: the old ruleSource rested on a single OCR'd desk-calendar
+  edition that visibly runs two days' columns together; live orthocal.info confirms Stephen is the
+  THIRD Day of the Nativity (Dec 27), with Dec 26 exclusively the Synaxis of the Theotokos. ANG/LAT
+  (Dec 26) and COE's own separately-flagged movable date on that row are untouched. One false alarm,
+  not touched: `saint-theodore-the-grapt` looked like a search-phrasing miss but its own ruleSource
+  already correctly resolves it ("Theodore the Branded").
+  **All three individually-flagged saints carried over from earlier sweeps are now resolved:**
+  `st-pachomius-of-patmos` needed NO engine work after all -- the May finding conflated his
+  HISTORICAL martyrdom on Ascension Day (1730) with his LITURGICAL commemoration; checked live in
+  three different years (2023, 2025, 2026) with Ascension on three different dates, and he's fixed at
+  May 21 every time. `martyr-meletius-stratelates` is genuinely absent from orthocal.info but fully
+  confirmed via oca.org's own saints database, matching this row's identity and description exactly
+  at May 24 -- a real coverage gap in orthocal.info, not a corpus error. `saint-james-the-hermit`
+  moved from Nov 27 to Nov 26: the original match was a false positive (bare "James" token against an
+  unrelated "Greatmartyr James of Persia"); the real figure is Saint James the Solitary, disciple of
+  St Maron, confirmed directly against oca.org's dedicated Nov 26 page (matches this row's own
+  "Syrian ascetic" description exactly).
+  **Remaining EOR sweep work: none.** Full detail on all five findings in
+  AUDIT_GOVERNANCE_LEDGER.md's 2026-09-12 December-sweep entry.
 
 ### Three real moveable-date engine rules were built and tested this session (2026-09-07)
 

@@ -3419,44 +3419,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2021 edition prints on this day: “Ven. Martinian of Caesarea”. Confirmed by ONE edition only (2021); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
     },
     {
-      "id": "saint-abraham-of-carrhae",
-      "name": "Saint Abraham of Carrhae",
-      "description": "Syrian bishop.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "February 14",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 2,
-            "day": 14
-          }
-        ]
-      }
-    },
-    {
-      "id": "saint-abraham-the-hermit",
-      "name": "Saint Abraham the Hermit",
-      "description": "Ascetic.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "February 14",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 2,
-            "day": 14
-          }
-        ]
-      }
-    },
-    {
       "id": "saint-auxentius-of-bithynia",
       "name": "Saint Auxentius of Bithynia",
       "description": "Hermit.",
@@ -7779,10 +7741,11 @@
     {
       "id": "holy-virgin-mary-of-the-harvest",
       "name": "Holy Virgin Mary of the Harvest",
-      "description": "Feast for blessing of crops (Syriac).",
+      "description": "Feast for blessing of crops (Syriac Orthodox); kept by the Church of the East as the Commemoration of Mart Mariam, Protectress of the Harvest.",
       "type": "saint",
       "tags": [
-        "OOR"
+        "OOR",
+        "COE"
       ],
       "dayLegacy": "May 15",
       "observance": {
@@ -7794,7 +7757,8 @@
           }
         ]
       },
-      "oorSubtradition": "Syriac"
+      "oorSubtradition": "Syriac",
+      "tagNote": "COE TAG ADDED 2026-09-12, per Josh's governance call: same date (May 15), same harvest epithet and agricultural function as the existing Syriac Orthodox row, tagged onto this row rather than split into a second one. Confirmed 2/2 in the ACOTE Diocese of California printed calendars in data/kalendar/source-witnesses/ (2024 full.pdf, 2026cal.pdf), both printing 'Commemoration of Mart Mariam the Blessed Virgin (Protectress of the Harvest)' fixed on May 15. The ACOTE Diocese of Western Europe 2026 edition (English_2026_2.pdf) has no matching text under this extraction method -- not confirmed there, scope is California only. No separate ruleSource added since the existing fixed May 15 rule already covers COE correctly."
     },
     {
       "id": "saint-dymphna",
@@ -8775,25 +8739,6 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Visitation of the Blessed Virgin Mary”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
-      "id": "martyr-thespesios-of-cappadocia",
-      "name": "Martyr Thespesios of Cappadocia",
-      "description": "Martyr under Diocletian.",
-      "type": "saint",
-      "tags": [
-        "OOR"
-      ],
-      "dayLegacy": "June 1",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 6,
-            "day": 1
-          }
-        ]
-      }
     },
     {
       "id": "saint-justin-martyr",
@@ -19753,23 +19698,23 @@
     },
     {
       "id": "saint-james-the-hermit",
-      "name": "Saint James the Hermit",
-      "description": "Syrian ascetic.",
+      "name": "Saint James the Solitary (Hermit) of Syria",
+      "description": "Syrian ascetic, disciple of St Maron, who lived on a mountain near Cyrrhus in Syria -- wore chains, ate only in the evening, and was granted power over demons and the gift of healing.",
       "type": "saint",
       "tags": [
         "EOR"
       ],
-      "dayLegacy": "November 27",
+      "dayLegacy": "November 26",
       "observance": {
         "type": "fixed",
         "dates": [
           {
             "month": 11,
-            "day": 27
+            "day": 26
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: “Greatmartyr James of Persia Archbishop David (Mahaffey) of Sitka”. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted."
+      "ruleSource": "DATE CORRECTED 2026-09-12. The original ruleSource (below, kept for the record) matched on the bare token \"James\" against the 2025 OCA desk calendar's Nov 27 entry \"Greatmartyr James of Persia\" -- a false match: Persia, a great-martyr, has no connection to this row's own description of a Syrian ascetic. This figure is identifiable and well-attested as SAINT JAMES THE SOLITARY (also called James the Hermit), disciple of St Maron (Feb 14), who lived in asceticism on a mountain near Cyrrhus in Syria -- an exact match to this row's description. CONFIRMED 2026-09-12 directly against oca.org, the governing site for the EOR tag (Josh, 2026-09-05): oca.org's own dedicated page (oca.org/saints/lives/2026/11/26/103400-venerable-james-the-solitary-of-syria) and its \"all lives commemorated on November 26\" page both place him at November 26, not 27; Wikipedia's \"November 26 (Eastern Orthodox liturgics)\" page independently corroborates the same date. orthocal.info's own live day-lookup for Nov 26 does not list him (a coverage gap in that database, not evidence against this identity -- oca.org is the more authoritative primary source per this project's own standing rule). Moved from Nov 27 to Nov 26 accordingly. ORIGINAL (now-superseded) ruleSource: \"Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2025 edition prints on this day: 'Greatmartyr James of Persia Archbishop David (Mahaffey) of Sitka'. Confirmed by ONE edition only (2025); the other five either do not cover this day or do not name this identity on it.. Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name.\""
     },
     {
       "id": "saint-james-the-persian",
@@ -20977,8 +20922,8 @@
     },
     {
       "id": "saint-boniface",
-      "name": "Saint Boniface",
-      "description": "Archbishop of Mainz, Missionary to the Germans and Martyr, 754.",
+      "name": "Saint Boniface and Righteous Aglaida",
+      "description": "Martyr at Rome under Diocletian, 290, with Righteous Aglaida. A different figure from the Archbishop of Mainz commemorated in this corpus at June 5 -- same name, unrelated identity.",
       "type": "saint",
       "tags": [
         "EOR"
@@ -20993,7 +20938,8 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-07 against orthocal.info (Slavic/OCA tradition): \"Martyr Boniface and Righteous Aglaida (290)\" falls on this date, matching the stored day exactly."
+      "ruleSource": "Date CONFIRMED 2026-09-07 against orthocal.info (Slavic/OCA tradition): \"Martyr Boniface and Righteous Aglaida (290)\" falls on this date, matching the stored day exactly.",
+      "tagNote": "IDENTITY CORRECTED 2026-09-12: this row's name/description had been copy-pasted from the OTHER saint-boniface row (Archbishop of Mainz, June 5, ANG/LAT) -- a duplicate-id pair, not a duplicate identity. The ruleSource already correctly cited \"Martyr Boniface and Righteous Aglaida (290)\" but the visible name/description still described the wrong Boniface entirely. Corrected to the actual EOR identity; the Mainz row at June 5 is untouched. Flagging again the standing duplicate-id hazard noted 2026-09-12 elsewhere in this file: at least 58 id pairs exist, and edits must key on (id, month, day), never id alone."
     },
     {
       "id": "saint-john-of-the-golden-gospel",
@@ -21298,7 +21244,19 @@
           }
         ]
       },
+      "traditionObservance": {
+        "EOR": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 12,
+              "day": 27
+            }
+          ]
+        }
+      },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “2nd Day of the Nativity 20,000 Martyrs of Nicomedia Protomartyr Stephen of Bethlehem of Moscow & All Russia Nativity Holy Righteous Ones: Joseph Ven. Melania the Younger the Betrothed, David the King,”. Confirmed by ONE edition only (2022); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "eorDateNote": "EOR DATE CORRECTED 2026-09-12: the ruleSource above rests on a single OCR'd desk-calendar edition (2022) whose text visibly runs two days' columns together (\"2nd Day of the Nativity ... Protomartyr Stephen ... Nativity Holy Righteous Ones\"). Checked live against orthocal.info (search_saints and get_day, Slavic tradition): the Protomartyr Stephen commemoration is structurally the THIRD Day of the Nativity, Dec 27, not the second -- Dec 26 is exclusively the Synaxis of the Most Holy Theotokos (confirmed on this corpus's own synaxis-of-the-theotokos row), with no Stephen commemoration listed there at all. EOR moved to Dec 27 via traditionObservance; ANG/LAT/COE observance at Dec 26 is untouched (Western Dec 26 and COE's own separately-flagged movable date are each correct on their own terms).",
       "tagNote": "TAG CORRECTED 2026-09-07: this row's own description cites the East Syriac (Church of the East) liturgical calendar and engine (calendar-east-syriac.js) explicitly -- this is COE content, not Oriental Orthodox. OOR removed, COE added."
     },
     {

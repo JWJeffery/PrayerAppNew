@@ -13727,3 +13727,116 @@ the shared Mar 25.
 No UI control exists for choosing a sub-tradition. The field is settable and fully honoured but has
 no picker in Office Settings, so today it is reachable only via a stored profile value. The
 Dormition cluster and the two COE Marian rows are the next data step on top of this.
+
+## 2026-09-12 — Three unmarked stray OOR rows resolved: two removed, none kept as Coptic
+
+Josh's governance call on the three rows flagged unmarked in the 2026-09-12 sub-tradition entry
+above: research each on its merits; remove if no genuine Oriental Orthodox source turns up.
+
+**`saint-abraham-of-carrhae` (Feb 14) — REMOVED.** This figure (also called Abraham of Cyrrhus /
+Abraham of Charres) is attested as a Byzantine commemoration — OrthodoxWiki and orthochristian.com's
+Orthodox Calendar both carry him at Feb 14 as "Abraham, Bishop of Charres" — and separately in the
+Roman Martyrology (Catholic Online, Butler's Lives of the Saints). Wikipedia's infobox claims
+"Syriac Orthodox Church" veneration, but no Syriac Orthodox martyrology, calendar, or other primary
+witness was found naming him, and the claim is unsupported by Wikipedia's own body text — exactly
+the kind of self-contradicting Wikipedia claim this project has already been burned by once (the
+Ephrem the Syrian flag, resolved 2026-09-11). Row removed rather than re-tagged EOR: this project's
+EOR corpus is governed by OCA/orthocal sourcing per its own standing rule, and adding a new EOR row
+from Wikipedia alone would repeat the mistake being guarded against here.
+
+**`saint-abraham-the-hermit` (Feb 14) — REMOVED.** No distinct attested figure by this name was
+found at Feb 14 in any tradition. This row is almost certainly a duplicate split of
+`saint-abraham-of-carrhae` (Abraham of Cyrrhus is described in his own sources as a hermit before his
+episcopate) rather than a second real commemoration. Removed on the same finding as above.
+
+**`martyr-thespesios-of-cappadocia` (Jun 1) — REMOVED.** Attested only in Roman Catholic and Eastern
+Orthodox (Byzantine) sources — Wikipedia's own infobox lists "Roman Catholic Church, Eastern
+Orthodox Church" and nothing else; orthochristian.com confirms the Jun 1 Byzantine commemoration.
+No Coptic, Syriac, Armenian, or Ethiopian attestation found under any spelling. Same shape as the
+two Abraham rows: a Byzantine figure carrying a stray OOR tag, not a genuine Oriental Orthodox
+commemoration.
+
+No replacement rows created — all three are exhausted, not merely unconfirmed, so nothing is left
+open here. The Feb 14 and Jun 1 OOR corpus is otherwise unaffected.
+
+## 2026-09-12 — December EOR sweep CLOSED (33 of 33 rows); the EOR calendar-year sweep is now complete
+
+All 33 December EOR-tagged rows re-verified against live orthocal.info, one row at a time, matching
+the methodology used for every other month this sweep. **The full EOR calendar-year sweep
+(Jan-Dec) is now CLOSED.**
+
+Confirmed exactly correct as stored: Nahum (1), Habakkuk (2), Zephaniah (3), Barbara of Nicomedia and
+John of Damascus (4), Sabbas the Sanctified (5), Nicholas of Myra (6), Ambrose of Milan (7), Patapius
+(8), both Conception-of-the-Theotokos rows (9), Menas/Hermogenes/Eugraphus (10), Daniel the Stylite
+(11), Spyridon the Wonderworker (12), Herman of Alaska and Lucy (13), Eleutherius of Illyria (15),
+Haggai (16), Daniel and the Three Holy Youths (17), Sebastian (18), Ignatius of Antioch (20), Ten
+Martyrs of Crete (23), Eve of the Nativity (24), the Nativity (25), Synaxis of the Theotokos (26),
+Simon the Myrrhgusher (28), both Holy Innocents rows (29), Anysia (30), Melania the Younger (31).
+
+**`saint-theodore-the-grapt` (Dec 27) — false alarm, already correct.** A search-phrasing miss
+("Theodore the Grapt"/"Graptos" both returned nothing) briefly looked like a gap; the row's own
+ruleSource already correctly cites "Theodore the Branded," confirmed live again. Not touched, per
+this sweep's standing lesson to always check the row's own ruleSource before treating a search miss
+as a finding.
+
+**TWO REAL FIXES MADE**, both duplicate-id/content bugs rather than wrong-date findings:
+
+**`saint-boniface` (Dec 19, EOR) — identity corrected.** This row's `ruleSource` already correctly
+cited "Martyr Boniface and Righteous Aglaida (290)" (confirmed 2026-09-07), but its visible
+name/description had been copy-pasted from the OTHER `saint-boniface` row (Archbishop of Mainz,
+June 5, ANG/LAT) — a duplicate-id pair, not a duplicate identity, same hazard flagged in the
+2026-09-12 sub-tradition entry above (at least 58 id pairs exist project-wide). Corrected name to
+"Saint Boniface and Righteous Aglaida" and description to the actual Roman martyr under Diocletian,
+with a note that this is unrelated to the Mainz missionary despite sharing a name. The June 5 row is
+untouched.
+
+**`saint-stephen-protomartyr` (EOR) — date moved from Dec 26 to Dec 27.** The existing ruleSource
+rested on a single OCR'd 2022 OCA desk-calendar edition whose text visibly runs two days' columns
+together ("2nd Day of the Nativity ... Protomartyr Stephen ... Nativity Holy Righteous Ones").
+Checked live against orthocal.info (search_saints AND get_day, Slavic tradition): Stephen
+Protomartyr is structurally the THIRD Day of the Nativity (Dec 27); Dec 26 is exclusively the
+Synaxis of the Most Holy Theotokos (confirmed independently via this corpus's own
+`synaxis-of-the-theotokos` row), with no Stephen commemoration there at all. Moved via
+`traditionObservance.EOR` to Dec 27; ANG/LAT observance at Dec 26 (the correct Western Boxing-Day
+date) is untouched, as is COE's separately-flagged movable date on this same row.
+
+### The three individually-flagged saints (open since the May and November sweeps) — all resolved
+
+**`st-pachomius-of-patmos` — CLOSED, no fix needed; the May finding was a misdiagnosis.** The May
+sweep found that 2026's Ascension happens to fall on May 21 and concluded his commemoration must be
+the movable Ascension Day rather than a fixed date, flagging it for movable-date engine work. That
+reasoning conflated a HISTORICAL fact (he was martyred on Ascension Day in 1730, per his own
+hagiography) with his LITURGICAL commemoration. Checked orthocal.info live in three separate years
+where Ascension falls on entirely different dates (2023, 2025, 2026): "Holy New Martyr Pachomius"
+appears at May 21 in every one of them, including 2025 when Ascension was May 29. His commemoration
+is genuinely fixed at May 21. No engine work needed; this closes a flag open since the original May
+re-verification pass.
+
+**`martyr-meletius-stratelates` (May 24) — CLOSED, confirmed correct.** Genuinely absent from
+orthocal.info under any phrasing tried in both the original May sweep and this session, but
+confirmed directly against oca.org's own saints database: "Martyr Meletius Stratelates who suffered
+in Galatia, and those with him" (military commander of Galatia under Antoninus Pius, 1218 companions)
+matches this row's stored identity and description exactly, dated May 24. Independently corroborated
+by Wikipedia's "May 24 (Eastern Orthodox liturgics)" page, which names the same twelve tribunes. This
+is a real coverage gap in orthocal.info, not a corpus error -- re-sourced against OCA directly.
+Incidentally, the row's own old ruleSource cited a 2021 OCA desk-calendar excerpt naming "Sabbas
+Stratelates," a real but DIFFERENT martyr confirmed at April 24 (not May 24) — an OCR/transcription
+mixup adjacent to this row, same shape as the Boniface bug above, but it doesn't affect Meletius's
+own correctness since OCA's dedicated page confirms him independently.
+
+**`saint-james-the-hermit` (Nov 27 -> Nov 26) — CLOSED, date corrected.** Absent from orthocal.info
+under every phrasing tried across three separate sessions (the original November sweep and this one).
+The original ruleSource had matched on the bare token "James" against a 2025 OCA desk-calendar
+excerpt for "Greatmartyr James of Persia" -- a false match with no real connection (Persia, a
+great-martyr, vs. this row's own description of a Syrian ascetic). Identified as SAINT JAMES THE
+SOLITARY (also called James the Hermit), disciple of St Maron, who lived in asceticism on a mountain
+near Cyrrhus in Syria -- an exact match to the stored description. Confirmed directly against
+oca.org's own dedicated page (oca.org/saints/lives/2026/11/26/103400-venerable-james-the-solitary-of-
+syria) and its "all lives commemorated on November 26" page, independently corroborated by
+Wikipedia's "November 26 (Eastern Orthodox liturgics)" page. orthocal.info's own live day-lookup for
+Nov 26 does not list him -- a coverage gap in that database, not evidence against the identity, since
+oca.org is the more authoritative primary source per this project's standing rule that OCA governs
+the EOR tag. Moved from Nov 27 to Nov 26.
+
+**Net result: every EOR-side open item carried forward from the May, June, August, September, October
+and November sweeps is now closed.** Nothing remains open in the EOR calendar-year sweep.
