@@ -108,7 +108,13 @@ body.shell-v2 {
     --uo-ink:           #e6dcc4;
     --uo-ink-quiet:     rgba(230, 220, 196, 0.62);
     --uo-accent:        #c9a84c;   /* gold */
-    --uo-rubric:        #c0392b;
+    /* #c0392b as proposed measures 3.69:1 on this ground. At the 25px body
+       floor that is WCAG "large text" and passes the 3:1 threshold — but the
+       handoff's own acceptance criterion says 4.5:1 on EVERY text element, and
+       rubrics also set at smaller sizes. Lightened 6.5% at identical hue and
+       saturation to reach 4.55:1. Revert to #c0392b if the designer prefers the
+       darker red and the criterion is relaxed for large text. */
+    --uo-rubric:        #d34839;
     --uo-hairline:      rgba(201, 168, 76, 0.12);
 
     /* Seasonal dot. Rendered ONLY where the lane itself supplies a sourced
@@ -152,48 +158,252 @@ body.shell-v2.uo-day {
     --uo-ground-raised: #f4ece0;
     --uo-ink:           #2a2118;
     --uo-ink-quiet:     rgba(42, 33, 24, 0.7);
-    --uo-accent:        #8a6a24;   /* bronze */
+    /* #8a6a24 as proposed measures 4.25:1 on the day ground, and this token
+       sets 10-11px machine labels — small text, where 4.5:1 is required and
+       there is no large-text exemption. Darkened 1.5% at identical hue and
+       saturation to reach 4.59:1. The change is not perceptible side by side;
+       the failure was. */
+    --uo-accent:        #846522;   /* bronze */
     --uo-rubric:        #8b1a10;
     --uo-hairline:      rgba(103, 58, 31, 0.14);
 }
 
 
 /* ---------------------------------------------------------------------------
-   DEV FLAG INDICATOR
+   PHASE 2 — THE THREE-COLUMN SHELL
 
-   Exists so the flag state is verifiable without opening devtools. Created by
-   js/shell-flag.js, never present in index.html, and removed in Phase 2 once
-   the shell itself is visible and the badge stops being the only evidence.
-
-   Deliberately inert: pointer-events none, no layout participation, no focus
-   trap, and it sits clear of the sidebar toggle at the left edge.
+   Ordo line across the top, rail / page / margin beneath, keeping-place bar at
+   the foot. The rail carries a placeholder and the margin is empty until the
+   envelope lands in Phase 3.
    --------------------------------------------------------------------------- */
 
-body.shell-v2 .uo-dev-flag {
-    position: fixed;
-    right: 12px;
-    bottom: 10px;
-    z-index: 9999;
-    padding: 3px 9px;
-    font-family: var(--uo-face-machine);
-    font-size: 10px;
-    letter-spacing: 0.18em;
+body.shell-v2 #main-content {
+    display: grid;
+    grid-template-columns: var(--uo-rail-width) minmax(0, 1fr) var(--uo-margin-width);
+    grid-template-rows: var(--uo-ordo-height) minmax(0, 1fr) var(--uo-keeping-height);
+    grid-template-areas:
+        "ordo ordo ordo"
+        "rail page margin"
+        "keep keep keep";
+    min-height: 100vh;
+    background: var(--uo-ground);
+    color: var(--uo-ink);
+    font-family: var(--uo-face-prayed);
+}
+
+body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }
+body.shell-v2 #main-content > .uo-rail    { grid-area: rail; }
+body.shell-v2 #main-content > .uo-page    { grid-area: page; }
+body.shell-v2 #main-content > .uo-margin  { grid-area: margin; }
+body.shell-v2 #main-content > .uo-keeping { grid-area: keep; }
+
+/* Hairlines and light do the separating — no borders around prayer. */
+body.shell-v2 .uo-ordo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 22px;
+    border-bottom: 1px solid var(--uo-hairline);
+}
+
+body.shell-v2 .uo-ordo-mark {
+    font-family: var(--uo-face-title);
+    font-size: 12px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--uo-accent);
-    background: rgba(8, 7, 12, 0.72);
-    border: 1px solid var(--uo-hairline);
-    border-radius: 2px;          /* the no-rounded-cards rule governs the page, not dev chrome */
-    opacity: 0.55;
-    pointer-events: none;
-    user-select: none;
+    white-space: nowrap;
 }
 
-body.shell-v2.uo-day .uo-dev-flag {
-    background: rgba(242, 235, 223, 0.78);
+body.shell-v2 .uo-ordo-day {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 17px;
+    color: var(--uo-ink);
 }
+
+/* #office-mode-title and #office-context-actions are MOVED into the ordo line
+   rather than hidden, so every existing affordance stays reachable in Phase 2.
+   Phase 4 gives them their proper homes. */
+body.shell-v2 .uo-ordo > #office-mode-title {
+    margin: 0;
+    font-family: var(--uo-face-title);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--uo-ink-quiet);
+    white-space: nowrap;
+}
+
+body.shell-v2 .uo-ordo > #office-context-actions {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+
+/* ── The rail ─────────────────────────────────────────────────────────────── */
+
+body.shell-v2 .uo-rail {
+    padding: 26px 20px;
+    border-right: 1px solid var(--uo-hairline);
+    overflow-y: auto;
+}
+
+body.shell-v2 .uo-rail-head,
+body.shell-v2 .uo-margin-head {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+    margin-bottom: 18px;
+}
+
+body.shell-v2 .uo-rail-placeholder {
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--uo-ink-quiet);
+}
+
+/* ── The page ─────────────────────────────────────────────────────────────── */
+
+body.shell-v2 .uo-page {
+    padding: 34px 40px 48px;
+    overflow-y: auto;
+    font-size: var(--uo-size-body);
+    line-height: var(--uo-leading-body);
+}
+
+body.shell-v2 .uo-ornament {
+    display: block;
+    width: 84px;
+    height: 12px;
+    margin: 0 auto 26px;
+    color: var(--uo-accent);
+    opacity: 0.85;
+}
+
+/* ── The margin ───────────────────────────────────────────────────────────── */
+
+body.shell-v2 .uo-margin {
+    padding: 26px 20px;
+    border-left: 1px solid var(--uo-hairline);
+    overflow-y: auto;
+    font-size: 15px;
+    line-height: 1.62;
+    color: var(--uo-ink-quiet);
+}
+
+/* ── The keeping-place bar ────────────────────────────────────────────────── */
+
+body.shell-v2 .uo-keeping {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 0 22px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+body.shell-v2 .uo-keeping-hint {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+}
+
+/* ── Auto / Light / Dark ──────────────────────────────────────────────────── */
+
+body.shell-v2 .uo-theme-control {
+    display: flex;
+    gap: 2px;
+    flex: 0 0 auto;
+}
+
+body.shell-v2 .uo-theme-button {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    background: transparent;
+    color: var(--uo-ink-quiet);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+body.shell-v2 .uo-theme-button:hover {
+    color: var(--uo-ink);
+}
+
+body.shell-v2 .uo-theme-button.is-on {
+    color: var(--uo-accent);
+    border-color: var(--uo-hairline);
+}
+
+body.shell-v2 .uo-theme-button:focus-visible {
+    outline: 2px solid var(--uo-accent);
+    outline-offset: 2px;
+}
+
+/* ── Mobile: rail becomes a top strip, margin moves inline ────────────────── */
+
+@media (max-width: 768px) {
+    body.shell-v2 #main-content {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+        grid-template-areas:
+            "ordo"
+            "rail"
+            "page"
+            "margin"
+            "keep";
+    }
+
+    body.shell-v2 .uo-rail {
+        border-right: none;
+        border-bottom: 1px solid var(--uo-hairline);
+        padding: 14px 18px;
+    }
+
+    body.shell-v2 .uo-margin {
+        border-left: none;
+        border-top: 1px solid var(--uo-hairline);
+    }
+
+    body.shell-v2 .uo-page { padding: 24px 20px 36px; }
+}
+
+/* ── Print: the page prints, the chrome does not ──────────────────────────── */
 
 @media print {
-    body.shell-v2 .uo-dev-flag { display: none; }
+    body.shell-v2 #main-content {
+        display: block;
+        min-height: 0;
+        background: #fff;
+        color: #000;
+    }
+
+    body.shell-v2 .uo-ordo,
+    body.shell-v2 .uo-rail,
+    body.shell-v2 .uo-keeping {
+        display: none;
+    }
+
+    /* The margin is NOT blanket-hidden: overlay attribution and diagnostics
+       must print as footnotes, because a printed office carrying a borrowed
+       prayer with its attribution stripped breaks the governance rule on paper,
+       where it cannot be recovered. Phase 3 marks those nodes; until they
+       exist the margin is empty and this rule has nothing to act on. */
+    body.shell-v2 .uo-margin {
+        border: none;
+        padding: 0;
+        margin-top: 18px;
+        font-size: 11px;
+        color: #000;
+    }
 }
 
 

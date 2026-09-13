@@ -31,6 +31,16 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**UI REDESIGN PHASE 2 SHIPPED 2026-09-12 (session 5).** Three-column grid, ordo line, keeping-place
+bar, type scale, and the three-state Auto/Light/Dark control -- all under `body.shell-v2`, in
+`js/office-shell.js` and `css/office-shell.css`. The shell MOVES existing nodes rather than rebuilding
+them, so every id and handler survives. Rail is a placeholder and margin is empty until the envelope
+lands in Phase 3. **Auto is keyed to the office** via the app's own navigator radio values; `orthros`
+is treated as day, a recorded judgement call. **Two contrast failures in the proposed palette were
+measured and corrected** (night rubric #c0392b -> #d34839, day bronze #8a6a24 -> #846522), both
+hue-preserving, both commented in place with the original value. **LAYOUT IS NOT VERIFIED** -- jsdom
+covered the DOM assembly and theme logic, but the rendered grid needs a browser.
+
 **FONTS VENDORED 2026-09-12 (session 5).** Cormorant Garamond (subset from CatharsisFonts upstream,
 Regular/Italic/SemiBold) and IBM Plex Mono (from @ibm/plex-mono 2.5.0) live in `assets/fonts/` as
 woff2, 189KB total, with their OFL licences beside them -- self-hosted, no CDN. `@font-face` is

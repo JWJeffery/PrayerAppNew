@@ -14,10 +14,9 @@
  *     setUniversalOfficeShell('v2' | 'v1')   from the console
  *
  * Once set by URL the choice persists in localStorage, so it survives ordinary
- * navigation within the app and a reload without the parameter. A small gold
- * "SHELL V2" badge appears bottom-right while the flag is on, so the state is
- * verifiable without opening devtools. Phase 2 removes the badge, when the
- * shell itself becomes the evidence.
+ * navigation within the app and a reload without the parameter. The badge that Phase 1 used to
+ * show the flag state has been removed now that Phase 2 makes the shell itself
+ * visible -- if you can see the three-column layout, the flag is on.
  *
  * WHY THIS IS A SEPARATE FILE AND NOT PART OF js/office-ui.js:
  * Phase 1's acceptance criterion is that the app is byte-identical in behaviour
@@ -37,7 +36,6 @@
 
     var STORAGE_KEY = 'universalOfficeShellV2';
     var CLASS_NAME  = 'shell-v2';
-    var BADGE_CLASS = 'uo-dev-flag';
 
     /* localStorage throws outright in some private-browsing modes rather than
        returning null. A dev flag must never be able to break the app for a real
@@ -76,23 +74,6 @@
         }
     }
 
-    function setBadge(on) {
-        var body = document.body;
-        if (!body) return;
-
-        var existing = body.querySelector('.' + BADGE_CLASS);
-        if (!on) {
-            if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
-            return;
-        }
-        if (existing) return;
-
-        var badge = document.createElement('div');
-        badge.className = BADGE_CLASS;
-        badge.setAttribute('aria-hidden', 'true');   /* dev chrome, not content */
-        badge.textContent = 'shell v2';
-        body.appendChild(badge);
-    }
 
     function apply(on) {
         var body = document.body;
@@ -102,7 +83,6 @@
         } else {
             body.classList.remove(CLASS_NAME);
         }
-        setBadge(on);
     }
 
     function resolve() {

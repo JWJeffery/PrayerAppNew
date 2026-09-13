@@ -13,13 +13,13 @@
     <!-- Redesigned office shell. Loaded AFTER office.css by design; every rule
          inside is scoped under body.shell-v2 and is unreachable while the dev
          flag is off. See documentation/UI_REDESIGN_HANDOFF.md. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=276">
+    <link rel="stylesheet" href="css/office-shell.css?v=277">
 </head>
 <body id="app-body" class="dark-mode">
 <!-- Hidden dev flag for the shell redesign. Must run here, immediately after
      <body> opens, so the class lands before first paint. ?shell=v2 to turn on,
      ?shell=v1 to turn off; the choice persists per browser. -->
-<script src="js/shell-flag.js?v=275"></script>
+<script src="js/shell-flag.js?v=277"></script>
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
@@ -1107,5 +1107,6 @@
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 
+<script src="js/office-shell.js?v=277" defer></script>
 </body>
 </html>

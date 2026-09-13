@@ -14312,3 +14312,103 @@ stretching it, which is worth knowing before anyone proposes lowering it.
 Cache-bust: `css/office-shell.css` 275 -> 276. No JS changed.
 
 SEED_VERSION bumped to `v276-2026-09-12-self-hosted-faces-vendored`.
+
+---
+
+## 2026-09-12 — UI redesign Phase 2: the three-column shell, and two contrast failures in the proposed palette
+
+Second implementation step of `documentation/UI_REDESIGN_HANDOFF.md`. Builds the rail / page / margin
+grid, the ordo line, the keeping-place bar, the type scale, and the three-state Auto / Light / Dark
+control. All of it scoped under `body.shell-v2`; with the flag off, nothing is built, nothing moves,
+and no listener is registered beyond one cheap class check.
+
+**The shell MOVES existing nodes, it does not rebuild them.** `#office-display` and `.saint-section`
+are re-parented into the page column; `#office-mode-title` and `#office-context-actions` into the ordo
+line. Every existing id, handler and piece of state survives, and every affordance that was reachable
+before — including the Book of Needs button — is still reachable. Rebuilding markup would have meant
+re-deriving state that the legacy path owns, which is Phase 3's job and only once the envelope exists.
+
+**The rail carries a placeholder and the margin is empty, deliberately.** Both need the resolved-office
+envelope, which no lane emits yet. Scraping the rendered DOM to fake rail items would be exactly the
+invented completeness this design exists to prevent, and it would look finished while being fiction.
+
+**AUTO IS KEYED TO THE OFFICE, AND THE OFFICE IDS ARE READ FROM THE APP, NOT INVENTED.** The twelve
+night offices are the app's own navigator option values, lifted from `js/office-ui.js`:
+`evening-office`, `compline-office`, `coptic-eleventh-hour` (Vespers), `coptic-twelfth-hour`
+(Compline), `coptic-midnight-office`, `ramsha`, `lelya`, `subaa`, `vespers`, `small-compline`,
+`great-compline`, `midnight-office`. The active office is read from whichever navigator radio is
+checked — the same signal the app itself reads — never by string-matching a visible label.
+
+- **`orthros` is a judgement call, recorded as one.** It begins in darkness and ends at sunrise. It is
+  treated as day, consistent with Morning Prayer, and the reasoning is in a comment beside the list
+  rather than left for someone to rediscover as a bug.
+- **The clock fallback survives, disclosed.** Where no office can be determined, Auto defers to the
+  app's existing `_defaultDarkModeForCurrentTime()` rather than guessing. The unflagged app's
+  clock-keyed behaviour is untouched.
+
+**WHY PERSISTING Light/Dark DOES NOT REOPEN A CLOSED BUG.** `js/office-ui.js` carries a comment
+stating the theme is deliberately NOT persisted, because persistence caused "always opens in dark mode
+regardless of the time". That bug was a TWO-state sticky toggle with no way back. Auto as an explicit
+third state IS the missing way back, and it is the default. The three-state control completes that fix
+rather than reversing it. Recorded here and in the code so nobody later reads the persistence as a
+regression and removes it without also removing Auto. `applyDarkMode()` is CALLED rather than
+reimplemented, so the two shells never disagree about the theme while both exist.
+
+**TWO CONTRAST FAILURES IN THE PROPOSED PALETTE, measured rather than assumed.** Every token pair in
+the stylesheet was run through the WCAG formula, with the quiet inks alpha-composited over their real
+grounds rather than measured as if opaque:
+
+1. **Night rubric `#c0392b` on `#08070c` = 3.69:1.** At the 25px body floor this is WCAG *large* text
+   and passes the 3:1 threshold — but the handoff's own acceptance criterion says 4.5:1 on every text
+   element, and rubrics also set smaller. Lightened at identical hue and saturation to `#d34839` =
+   4.55:1, a 6.5% lightness change.
+2. **Day bronze `#8a6a24` on `#f2ebdf` = 4.25:1.** This token sets 10–11px machine labels — small
+   text, no large-text exemption, genuinely failing. Darkened at identical hue and saturation to
+   `#846522` = 4.59:1, a 1.5% lightness change, imperceptible side by side in a way the failure was
+   not.
+
+Both changes are hue- and saturation-preserving and both are commented in place with the original
+value and the measurement, so the designer can revert either. **All eight pairs now pass AA; the worst
+is 4.55:1.**
+
+**The ornament is drawn, not typeset.** `✦` is a dingbat absent from both vendored faces, so as a
+character it renders differently on macOS, Windows and Android directly beneath the office title. It
+is now inline SVG, three paths, taking its colour from `currentColor` so it follows `--uo-accent`
+through both themes.
+
+**VERIFIED in jsdom, across the real code path** (the harness waits for `DOMContentLoaded` rather than
+calling the builder directly, because jsdom flips `readyState` asynchronously — a first version of the
+test passed vacuously by asserting before the listener fired):
+
+- Flag off: zero regions built, `#office-display` still a direct child of `#main-content`, the `<h1>`
+  untouched.
+- Flag on: all five regions built exactly once; the prayed text survives the move; the saint section
+  lands in the page; title and context actions land in the ordo; the Book of Needs button still
+  exists; the ornament is an `<svg>` with 3 paths, not a character.
+- Idempotent: calling the builder twice more yields 1 page and 1 ordo, not 3.
+- Auto resolved correctly for eleven offices across all four lanes — Compline, Evening Prayer, Ramsha,
+  Lelya, Coptic Twelfth Hour and Great Compline night; Morning Prayer, Noonday, Sapra, Coptic Sixth
+  Hour and Orthros day.
+- Clock fallback exercised in both directions with no office determinable.
+- Three-state control: defaults to Auto with nothing stored; Light and Dark each persist and light
+  their own button; returning to Auto clears storage and Compline resolves night again; exactly one
+  `aria-pressed="true"` at all times.
+
+**Not verified from here, and it is the part that matters most:** the actual rendered layout. Grid
+behaviour, the 1360×940 reproduction of screens 1a and 1b, font rendering at the 25px floor, and
+whether moving the title into a 64px ordo line looks right all need a browser and Josh's eyes.
+
+Print rules rewritten for the grid: ordo, rail and keeping bar do not print; the page does. The margin
+is deliberately NOT blanket-hidden — overlay attribution and diagnostics must print as footnotes,
+since a printed office carrying a borrowed prayer with its attribution stripped breaks the governance
+rule on paper where it cannot be recovered. Those nodes arrive in Phase 3; until then the margin is
+empty and the rule has nothing to act on.
+
+Mobile: rail collapses to a top strip above the page, margin moves inline beneath it, page full width,
+per Josh's direction to try the strip first.
+
+The Phase 1 dev badge and its CSS are removed — the shell is now its own evidence.
+
+Cache-bust: `office-shell.css` 276 -> 277, `shell-flag.js` 275 -> 277, new `office-shell.js` at 277.
+
+SEED_VERSION bumped to `v277-2026-09-12-shell-phase-2-three-column-grid`.
