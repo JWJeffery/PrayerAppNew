@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**PHASE 2 GRID SPECIFICITY FIX 2026-09-12.** The first Phase 2 push looked like nothing happened. The
+JS was fine; `body.shell-v2 #main-content` (0,2,1) LOST to `body.office-active #main-content.app-primary-canvas`
+(0,3,1) in office.css line 2248, so `display:grid` never applied. Structural rules against
+`#main-content` must be written at (0,3,1) or heavier until Phase 6 deletes the parchment pass --
+there is a comment in `css/office-shell.css` saying so. **jsdom cannot catch this class of bug: it
+does not resolve the cascade. Any phase touching layout needs a browser in its acceptance criteria.**
+
 **UI REDESIGN PHASE 2 SHIPPED 2026-09-12 (session 5).** Three-column grid, ordo line, keeping-place
 bar, type scale, and the three-state Auto/Light/Dark control -- all under `body.shell-v2`, in
 `js/office-shell.js` and `css/office-shell.css`. The shell MOVES existing nodes rather than rebuilding

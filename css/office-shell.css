@@ -177,18 +177,47 @@ body.shell-v2.uo-day {
    envelope lands in Phase 3.
    --------------------------------------------------------------------------- */
 
-body.shell-v2 #main-content {
+/* SPECIFICITY, and why these selectors look heavier than they need to.
+   css/office.css line 2248 carries:
+
+       body.office-active #main-content.app-primary-canvas { display: block; }
+
+   which is (0,3,1) — two classes and an id. A plainer
+   `body.shell-v2 #main-content` is (0,2,1) and LOSES to it, so `display: grid`
+   silently never applied and all five regions fell into normal flow. The
+   class-based rules further down had nothing competing with them and did apply,
+   which made the failure look like a half-working stylesheet rather than a
+   specificity loss.
+
+   Matched at (0,3,1) instead of reaching for !important: equal specificity, and
+   this file loads after office.css, so it wins on order. The background rule
+   needs (0,4,1) to clear `body.office-active.dark-mode #main-content`.
+
+   All of this disappears in Phase 6 when the parchment pass is deleted and this
+   file is unscoped. Until then, any NEW structural rule here that targets
+   #main-content must be written at this weight or it will lose the same way. */
+
+body.shell-v2 #main-content.app-primary-canvas {
     display: grid;
     grid-template-columns: var(--uo-rail-width) minmax(0, 1fr) var(--uo-margin-width);
-    grid-template-rows: var(--uo-ordo-height) minmax(0, 1fr) var(--uo-keeping-height);
+    /* Rows sized from content rather than the viewport: #main-content carries
+       large clamped padding from the parchment pass, so a 100vh minimum would
+       overflow by exactly that padding. */
+    grid-template-rows: auto minmax(320px, auto) auto;
     grid-template-areas:
         "ordo ordo ordo"
         "rail page margin"
         "keep keep keep";
-    min-height: 100vh;
-    background: var(--uo-ground);
+    column-gap: 0;
     color: var(--uo-ink);
     font-family: var(--uo-face-prayed);
+}
+
+/* Beats body.office-active.dark-mode #main-content (0,3,1) at (0,4,1). The
+   parchment gradients are two stacked background layers, so this must set
+   `background` wholesale rather than background-color. */
+body.shell-v2.office-active #main-content.app-primary-canvas {
+    background: var(--uo-ground);
 }
 
 body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }

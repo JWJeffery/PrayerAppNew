@@ -14412,3 +14412,52 @@ The Phase 1 dev badge and its CSS are removed — the shell is now its own evide
 Cache-bust: `office-shell.css` 276 -> 277, `shell-flag.js` 275 -> 277, new `office-shell.js` at 277.
 
 SEED_VERSION bumped to `v277-2026-09-12-shell-phase-2-three-column-grid`.
+
+---
+
+## 2026-09-12 — Phase 2 grid never applied: a specificity loss to the parchment pass
+
+Josh loaded `?shell=v2` and reported no visible difference. He was right about the experience and
+the screenshot showed why: **the JS had built every region correctly, but the grid rule lost a
+specificity contest and the five regions fell into normal flow.**
+
+**What was actually on screen**, and why it read as "nothing happened": the Auto/Light/Dark control
+was rendering top-right with Auto correctly pressed; `THE ORDER` and its italic placeholder were
+rendering in the middle of the page column; the three-diamond SVG ornament was drawn above the office
+card. All four are Phase 2 output. But every one of them is styled by a plain CLASS selector with
+nothing competing against it, so they applied — while the one rule that establishes the whole layout
+did not. The result looks identical to a stylesheet that failed to load, which is exactly why this
+was worth diagnosing rather than re-pushing.
+
+**The cause, precisely.** `css/office.css` line 2248:
+
+    body.office-active #main-content.app-primary-canvas { display: block; }
+
+That is (0,3,1) — two classes and an id. Phase 2 shipped `body.shell-v2 #main-content`, which is
+(0,2,1) and loses outright. `display: grid` never took effect. The same fault hid the ground:
+`body.office-active.dark-mode #main-content` at (0,3,1) beat the background declaration too.
+
+**Fixed by matching weight, not by `!important`.** The container rule is now
+`body.shell-v2 #main-content.app-primary-canvas` — an exact (0,3,1) tie with office.css, and
+`office-shell.css` loads after it, so order decides in the new shell's favour. The background rule is
+`body.shell-v2.office-active #main-content.app-primary-canvas` at (0,4,1), which clears the dark-mode
+gradient outright. Both are computed and recorded in a comment in the file rather than asserted:
+any NEW structural rule targeting `#main-content` must be written at this weight or it will lose the
+same way. All of it disappears in Phase 6 when the parchment pass goes and this file is unscoped.
+
+**Second fix in the same rule.** `min-height: 100vh` was wrong: `#main-content` carries large clamped
+padding from the parchment pass, so a viewport-height minimum overflows by exactly that padding.
+Rows are now `auto minmax(320px, auto) auto`, sized from content. The 340px left padding that clears
+the existing sidebar is deliberately left alone — the old sidebar is still present until Phase 4, and
+the grid lays out correctly inside the padding box.
+
+**The real lesson, worth more than the fix.** Phase 1's acceptance criterion — "flag on, nothing
+crashes" — was met and meant almost nothing. jsdom verified the DOM assembly faithfully and could
+never have caught this, because jsdom does not do cascade resolution. **Structural CSS in this repo
+cannot be verified without a browser**, and the parchment pass is an active adversary at (0,3,1)
+across dozens of rules. Phase 3's acceptance must include a human loading the page, not a passing
+harness.
+
+Cache-bust: `office-shell.css` 277 -> 278. No JS changed — the JS was never at fault.
+
+SEED_VERSION bumped to `v278-2026-09-12-shell-grid-specificity-fix`.
