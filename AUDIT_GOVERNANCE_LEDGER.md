@@ -14000,3 +14000,40 @@ and the values are confirmed to match the validator, but that is code-shape reas
 check.
 
 SEED_VERSION bumped to `v271-2026-09-12-oor-subtradition-ui-picker`.
+
+---
+
+## 2026-09-12 — `sanctoral.json`'s own top-level note corrected: it was wrong in two load-bearing places
+
+The `note` field at the head of `data/saints/sanctoral.json` is that file's own documentation and the
+first thing anyone reads before editing it. Two of its claims were false, one of them dangerously so.
+Flagged in the resume note since 2026-09-12's schema work; fixed here off the fresh open-items list.
+
+**1. The sub-tradition semantics were stated backwards.** The note said an entry with no
+`oorSubtradition` is "implicitly Coptic and is checked against that source." It is not. Absence means
+the row is NOT sub-tradition-specific — it applies to all of them. 62 of the unscoped OOR rows are
+shared with ANG/LAT/EOR/COE and are pan-Christian (Epiphany, the Circumcision, Basil the Great,
+Matthias, the Forty Martyrs of Sebaste). A filter built on the note's wording hides every one of them
+from Armenian, Syriac and Ethiopian users. This mattered concretely today: the resolver
+(`appliesToSubtradition()`) and the new Office Settings picker both implement the CORRECT semantics,
+so the file's own documentation was actively arguing against the shipped code, and anyone
+"fixing" the code to agree with the note would have broken real output. The note now states the
+correct rule, records why, and says explicitly not to correct the code back toward the old wording.
+What was true in the old sentence is kept: coptic.io remains OOR's governing confirmation source for
+an unscoped or Coptic-marked row (Josh, 2026-09-05).
+
+**2. The empty-`tags` figures were stale by two orders of magnitude.** The note said such entries
+carry a `tagsGap` field stating why, and that 170 entries were in that state. Checked directly: ZERO
+entries carry a `tagsGap` field, and exactly TWO have an empty `tags` array (`saint-mark-of-ephesus`,
+`saints-sarbelus-and-barbea`). The 170 figure described the file immediately after the 2026-09-03
+Layer 3 sourcing pass and was never updated as those rows were re-sourced or removed. Both the count
+and the field claim are now corrected in place, with the history stated rather than silently
+overwritten.
+
+**Method and verification.** Targeted string replacement on the raw file text, never `json.dump()`,
+per the standing rule. Both replacement targets asserted to occur exactly once before substituting.
+`json.loads()` validated the full result BEFORE `open(p,'w')`, not after. `git diff --numstat`
+confirms **one line changed, one line added** — the note line only; the entry count is unchanged at
+1,077 and no commemoration row was touched.
+
+SEED_VERSION bumped to `v272-2026-09-12-sanctoral-note-corrected`.

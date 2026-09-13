@@ -170,8 +170,10 @@ before this.** Wired via `profile.oorSubtradition` at the single `resolveCommemo
 says an absent `oorSubtradition` means Coptic. **It does not.** 62 of the 143 unscoped OOR rows are
 shared with ANG/LAT/EOR/COE and are pan-Christian (Epiphany, the Circumcision, Basil the Great,
 Matthias, the Forty Martyrs of Sebaste). Absence means *not sub-tradition-specific*. A filter built on
-the note's wording would hide those from Armenian users. **The top-level note in `sanctoral.json`
-still contains the wrong wording and should be corrected when that file is next edited.**
+the note's wording would hide those from Armenian users. ~~**The top-level note in `sanctoral.json`
+still contains the wrong wording.**~~ **CORRECTED 2026-09-12 (session 5)**, along with a second false
+claim in the same note (a `tagsGap` field no row carries, and 170 empty-`tags` entries where there
+are two). See the ledger entry.
 
 Backfill applied: 78 Coptic-only rows explicitly marked `Coptic`; all 39 bare `OOR` override keys
 re-keyed to `OOR:Coptic` (each was coptic.io/Synaxarium-confirmed in its own note, so under the bare
