@@ -11,27 +11,44 @@ old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic 
 alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
 note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
 
-**State as of 2026-09-12 (end of a long engineering session), UPDATED same day by a second session,
-UPDATED AGAIN by a third.** HEAD `79c9c6d` after the second session's push (COE tag, 3 stray-row
-removals, December EOR sweep, 3 flagged saints -- see AUDIT_GOVERNANCE_LEDGER.md's two entries under
-that date). A THIRD session the same day built the Dormition/Assumption cluster that section 0 below
-specifies: 3 new rows, 2 identity/label fixes, and one new engine anchor (`august12` in
-`js/saints-resolver.js`) for the Armenian movable date -- not yet committed as of this writing, see
-`git log` and diff against a fresh clone before trusting any of this. **Section 0's task is DONE.**
-Full detail in AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry. The full EOR
-calendar-year sweep (Jan-Dec) and all its carried-over open items remain CLOSED (second session).
+**State as of 2026-09-12 (end of a long day, four sessions deep).** HEAD `59d3d70`, confirmed via a
+fresh clone. Session 2 (COE tag, 3 stray-row removals, December EOR sweep, 3 flagged saints -- see
+AUDIT_GOVERNANCE_LEDGER.md) and session 3 (the Dormition/Assumption cluster: 3 new rows, 2
+identity/label fixes, the new `august12` engine anchor in `js/saints-resolver.js`) are BOTH
+committed and pushed. **Section 0's task (below) is DONE** -- full detail in
+AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry. The full EOR calendar-year
+sweep (Jan-Dec) and every item carried over from it are CLOSED.
+
+**Session 4 (this one) did NOT produce a new task or new work.** Josh asked to see the open-items
+list; that request was interrupted before any list was compiled, and the session ended here on a
+token-budget warning instead. **No open-items list exists as output of this session -- do not
+assume one was generated and is sitting somewhere.** The next session's actual first move should be
+building that list fresh: read `documentation/OPEN_ITEMS_FIXABILITY.md` and cross-check it against
+`AUDIT_GOVERNANCE_LEDGER.md` (per the standing rule in section 1 below -- the fixability file has
+gone stale against the ledger before), rather than trusting anything about "open items" implied
+elsewhere in this note. The one concrete lead already on record: the sub-tradition UI picker.
+`profile.oorSubtradition` is fully wired end-to-end (built 2026-09-12) but has no control anywhere
+in Office Settings -- reachable today only by setting a stored profile value directly. That's a
+real, scoped, buildable next task if nothing higher-priority turns up in the open-items check.
+
 **As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
 Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
 "what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
 doing anything else, every session, no exceptions.
 
-Cache-bust params: not touched this session (only `data/saints/sanctoral.json` and this note were
-edited) — re-check `office-ui.js`/`explanations.js`/`prayers.js`/`saints-resolver.js` version params
-against the live file headers yourself before trusting any number written here.
+Cache-bust params: not touched today — re-check `office-ui.js`/`explanations.js`/`prayers.js`/
+`saints-resolver.js` version params against the live file headers yourself before trusting any
+number written here.
 
 ---
 
 ## 0. Immediate next task for the next session
+
+**COMPLETED 2026-09-12, no replacement task queued.** Everything below in this section was today's
+task specification, now fully built (see the header above and the ledger entry it points to).
+Nothing has been substituted in its place. The next session should treat section 0 as closed
+history, not as a live task list, and start instead from the open-items check described in the
+header above.
 
 **COMPLETED 2026-09-12 (third session of the day).** Everything below in this section was the task
 specification and research trail; the build itself is done, committed, and verified. See
