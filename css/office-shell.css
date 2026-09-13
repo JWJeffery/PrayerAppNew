@@ -1,0 +1,147 @@
+/* ===========================================================================
+   css/office-shell.css — the redesigned office shell (rail · page · margin)
+
+   See documentation/UI_REDESIGN_HANDOFF.md for the full design and build plan.
+
+   PHASE 1 ONLY. This file currently declares the TOKEN LAYER and nothing else.
+   No structural rule, no layout, no typography is applied yet — those land in
+   Phase 2. Nothing in the app consumes these custom properties today, so
+   loading this file changes no rendering whatsoever.
+
+   THREE RULES THAT GOVERN EVERY EDIT TO THIS FILE UNTIL PHASE 6:
+
+   1. EVERYTHING IS SCOPED UNDER `body.shell-v2`. Not `:root`, not `body`, not a
+      bare element or class selector. The old parchment pass and this file must
+      be able to coexist without interleaving, which only works if this file can
+      never apply while the flag is off.
+
+   2. NO EXISTING RULE IS EDITED. This file is loaded AFTER css/office.css and
+      wins on specificity where it needs to. It does not reach back and change
+      office.css, and office.css does not know it exists.
+
+   3. TOKEN NAMES ARE PREFIXED `--uo-`. Verified 2026-09-12: no `--uo-` custom
+      property existed anywhere in css/, js/ or index.html before this file, so
+      these names cannot collide with the 25 `--app-*` tokens of the parchment
+      pass or with the original theme's `--gold` / `--ink` / `--rubric`.
+
+   The parchment pass is retired in Phase 6, at which point this file is
+   unscoped and the flag is dropped. Note that Phase 6 conflicts with
+   documentation/universal-office-navigation-architecture.md, which is marked
+   canonical and fixes the parchment surface as the shared visual language —
+   that conflict is recorded, not resolved, and needs Josh's decision before
+   Phase 6. It does not affect Phases 1–5.
+   =========================================================================== */
+
+
+/* ---------------------------------------------------------------------------
+   NIGHT — the default theme under the flag.
+   Compline, Evening Prayer, Vespers, Ramsha.
+
+   Theme is keyed to the OFFICE, not the clock: Evening Prayer said at 5pm in
+   June still renders night. The Auto/Light/Dark control that selects between
+   these two token sets is built in Phase 2; until then `body.shell-v2` simply
+   carries the night values and `body.shell-v2.uo-day` the day ones.
+   --------------------------------------------------------------------------- */
+
+body.shell-v2 {
+    --uo-ground:        #08070c;
+    --uo-ground-raised: #0b0912;
+    --uo-ink:           #e6dcc4;
+    --uo-ink-quiet:     rgba(230, 220, 196, 0.62);
+    --uo-accent:        #c9a84c;   /* gold */
+    --uo-rubric:        #c0392b;
+    --uo-hairline:      rgba(201, 168, 76, 0.12);
+
+    /* Seasonal dot. Rendered ONLY where the lane itself supplies a sourced
+       colour. Anglican reads the existing `liturgicalColor` field in
+       data/season/*.json (populated on 397 days). Eastern lanes emit their own,
+       as sourced content with a named witness per tradition — and for East
+       Syriac no dot is the likely correct result, which is honest silence, not
+       a gap. An invented colour here would sit in the ordo line, the most
+       authoritative-looking strip on the screen. */
+    --uo-season-green:  #4a7c59;
+    --uo-season-red:    #9b2335;
+    --uo-season-purple: #6b3070;
+    --uo-season-rose:   #a04060;
+    --uo-season-white:  #c9a84c;
+
+    /* Structural metrics. Consumed in Phase 2. */
+    --uo-rail-width:    236px;
+    --uo-margin-width:  268px;
+    --uo-ordo-height:   64px;
+    --uo-keeping-height: 46px;
+    --uo-gutter-width:  70px;
+
+    /* Type. The two new families are NOT loaded yet — Phase 2 self-hosts and
+       subsets Cormorant Garamond and IBM Plex Mono rather than pulling full
+       families from a CDN. The fallbacks below are deliberate and must stay
+       usable on their own until then. */
+    --uo-face-title:    'Cinzel', Georgia, serif;
+    --uo-face-prayed:   'Cormorant Garamond', Georgia, serif;
+    --uo-face-machine:  'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+    --uo-size-body:     25px;      /* floor, not a starting point */
+    --uo-leading-body:  1.72;
+}
+
+
+/* ---------------------------------------------------------------------------
+   DAY — Morning Prayer, the Sixth Hour.
+   --------------------------------------------------------------------------- */
+
+body.shell-v2.uo-day {
+    --uo-ground:        #f2ebdf;
+    --uo-ground-raised: #f4ece0;
+    --uo-ink:           #2a2118;
+    --uo-ink-quiet:     rgba(42, 33, 24, 0.7);
+    --uo-accent:        #8a6a24;   /* bronze */
+    --uo-rubric:        #8b1a10;
+    --uo-hairline:      rgba(103, 58, 31, 0.14);
+}
+
+
+/* ---------------------------------------------------------------------------
+   DEV FLAG INDICATOR
+
+   Exists so the flag state is verifiable without opening devtools. Created by
+   js/shell-flag.js, never present in index.html, and removed in Phase 2 once
+   the shell itself is visible and the badge stops being the only evidence.
+
+   Deliberately inert: pointer-events none, no layout participation, no focus
+   trap, and it sits clear of the sidebar toggle at the left edge.
+   --------------------------------------------------------------------------- */
+
+body.shell-v2 .uo-dev-flag {
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    z-index: 9999;
+    padding: 3px 9px;
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+    background: rgba(8, 7, 12, 0.72);
+    border: 1px solid var(--uo-hairline);
+    border-radius: 2px;          /* the no-rounded-cards rule governs the page, not dev chrome */
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+}
+
+body.shell-v2.uo-day .uo-dev-flag {
+    background: rgba(242, 235, 223, 0.78);
+}
+
+@media print {
+    body.shell-v2 .uo-dev-flag { display: none; }
+}
+
+
+/* ---------------------------------------------------------------------------
+   PHASE 2 BEGINS BELOW THIS LINE.
+
+   The three-column grid, the two bars, the type scale and the Auto/Light/Dark
+   control. Nothing here yet — Phase 1's acceptance criterion is that the app is
+   byte-identical in behaviour with the flag off and does not crash with it on.
+   --------------------------------------------------------------------------- */

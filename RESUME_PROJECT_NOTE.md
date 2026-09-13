@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**UI REDESIGN PHASE 1 SHIPPED 2026-09-12 (session 5).** `css/office-shell.css` (token layer only,
+every selector scoped under `body.shell-v2`) and `js/shell-flag.js` (hidden dev toggle). Turn it on
+with `?shell=v2` in the URL, off with `?shell=v1`; a small badge bottom-right shows the state. No
+existing rule was edited -- `index.html` gained 8 lines and nothing else changed. **Phase 2 is next**
+and begins below the marked line at the foot of `css/office-shell.css`: the three-column grid, the
+two bars, the type scale, and the Auto/Light/Dark control.
+
 **UI REDESIGN ADOPTED 2026-09-12 (session 5): `documentation/UI_REDESIGN_HANDOFF.md`.** An outside
 design proposal for the app shell, checked against the repo, corrected in fifteen places for
 governance, and adopted. Rail / page / margin; six phases, Phase 1 (a flagged stylesheet, nothing

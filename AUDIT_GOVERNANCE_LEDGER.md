@@ -14189,3 +14189,73 @@ Documentation-only change; no data, engine or rendered output touched. The scree
 (`handoff/screens/*.png`, ~7.5MB) are not carried in this patch and are added separately.
 
 SEED_VERSION bumped to `v274-2026-09-12-ui-redesign-handoff-adopted`.
+
+---
+
+## 2026-09-12 — UI redesign Phase 1: flagged shell stylesheet and hidden dev toggle
+
+First implementation step of `documentation/UI_REDESIGN_HANDOFF.md`. Phase 1's whole purpose is to
+establish the coexistence boundary between the new shell and the parchment pass **before** any
+visual work begins, so the two never have to be interleaved.
+
+**BUILT — two new files, and exactly eight added lines in `index.html`. No existing rule edited
+anywhere.**
+
+- `css/office-shell.css` — the token layer only. 22 custom properties under `body.shell-v2` (night)
+  and `body.shell-v2.uo-day` (day), plus the seasonal-dot palette, structural metrics and type
+  faces that Phase 2 will consume. **No structural rule, no layout, no typography is applied yet.**
+  Nothing in the app reads these properties today, so loading the file changes no rendering at all.
+- `js/shell-flag.js` — adds or removes `shell-v2` on `<body>`. `?shell=v2` turns it on and persists
+  it per browser; `?shell=v1` / `?shell=off` turns it off; `setUniversalOfficeShell('v2'|'v1')` does
+  the same from the console. A small badge appears bottom-right while the flag is on so the state is
+  verifiable without devtools; Phase 2 removes it, when the shell itself becomes the evidence.
+
+**Three decisions worth recording, because each is a smaller claim than the obvious alternative:**
+
+1. **A separate JS file rather than an addition to `js/office-ui.js`.** Phase 1's acceptance
+   criterion is that the app is byte-identical in behaviour with the flag off. Touching office-ui.js
+   would mean bumping its cache-bust param and re-verifying a 200KB file for nine lines of feature.
+   A new file nothing else imports is far easier to prove harmless.
+2. **The flag is NOT stored in `profile`.** It deliberately sits under its own localStorage key
+   rather than joining `entryPageDefault`, `ministryRole` and `oorSubtradition` in
+   `UNIVERSAL_OFFICE_USER_PROFILE_KEY`. Those record what a person chose about how they pray; this is
+   a build state that disappears at Phase 6. Putting it in the profile would leave a dead key in
+   every user's stored profile permanently.
+3. **Token prefix `--uo-`, verified free before use.** Confirmed by direct grep that no `--uo-`
+   property existed anywhere in `css/`, `js/` or `index.html`, so these cannot collide with the 25
+   `--app-*` tokens of the parchment pass or the original theme's `--gold`/`--ink`/`--rubric`.
+   Re-checked after writing: 22 new tokens, zero collisions with `css/office.css`, and nothing in
+   `office.css` references `--uo-` at all.
+
+**VERIFIED, not reasoned about:**
+
+- **Every selector in the new stylesheet is scoped under `body.shell-v2`** — parsed the file
+  programmatically, stripped comments, extracted all 5 selectors, confirmed zero unscoped. This is
+  the property the whole phase rests on: with the flag off, no rule in the file is reachable.
+- **The flag exercised in a real DOM** (jsdom), eight scenarios: cold load with nothing stored
+  (off); `?shell=v2` (on, persisted); reload with no param but stored state (on); `?shell=v1` and
+  `?shell=off` (off, storage cleared); a garbage `?shell=xyzzy` value (falls through to stored state
+  rather than throwing or defaulting on); an unrelated query param (ignored); and the console API
+  round-trip, including that turning it off removes the badge and that turning it on twice does not
+  produce two badges. In every case `dark-mode` and any other existing body class survived
+  untouched.
+- **Hostile storage case checked explicitly:** some private-browsing modes throw on `localStorage`
+  access rather than returning null. Simulated a throwing accessor; the script still applies the URL
+  override correctly and swallows the persistence failure. A dev flag must never be able to break the
+  app for someone praying an office.
+- `node --check` passes on `js/shell-flag.js`. `git diff --stat` confirms `index.html` is the only
+  modified file, 8 insertions, 0 deletions.
+- jsdom was installed with `--no-save`, then `node_modules` removed and `package-lock.json` restored
+  before committing, per the standing rule.
+
+**Cache-bust:** both new files carry `?v=275`. No existing file's param is touched, because no
+existing file changed.
+
+**Phase 1 acceptance met:** flag off → the app is byte-identical in behaviour (nothing reads the new
+tokens, no selector can match, the script adds no class); flag on → nothing crashes, and the only
+visible change is the dev badge.
+
+Phase 2 — the three-column grid, the two bars, the type scale and the Auto/Light/Dark control — is
+the next step and begins below the marked line at the foot of `css/office-shell.css`.
+
+SEED_VERSION bumped to `v275-2026-09-12-shell-phase-1-flagged-stylesheet`.
