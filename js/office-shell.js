@@ -135,6 +135,31 @@
             window.applyDarkMode(isDark);
         }
 
+        /* ONE CONTROL, NOT TWO.
+         *
+         * The legacy sidebar checkbox is hidden under the flag rather than
+         * synchronised with the three-state control. An earlier attempt at
+         * synchronisation treated a tick of that box as an explicit Light/Dark
+         * choice — but it is a TWO-state control with no Auto, so touching it
+         * could only ever move the user OFF Auto, permanently, with no
+         * discoverable way back. Worse, applyDarkMode() sets its `checked`
+         * property programmatically, so it flips state on its own. The result
+         * was a stored theme of "dark" and an office-keyed Auto that had
+         * quietly stopped working.
+         *
+         * The three-state control IS the dark toggle the governance requires on
+         * every screen, so hiding the duplicate satisfies that rule rather than
+         * breaking it. Done here rather than in CSS because the app rebuilds
+         * its sidebars with innerHTML, which would discard a one-time style;
+         * applyTheme runs on every office change, so any freshly built checkbox
+         * is caught. Phase 4 deletes these sidebars and this goes with them.
+         */
+        document.querySelectorAll('input[type="checkbox"][data-app-dark-toggle]')
+            .forEach(function (box) {
+                var row = box.closest ? box.closest('label') : null;
+                (row || box).style.display = 'none';
+            });
+
         var group = document.querySelector('.uo-theme-control');
         if (group) {
             group.querySelectorAll('button[data-uo-theme]').forEach(function (b) {
@@ -296,16 +321,6 @@
         document.addEventListener('change', function (ev) {
             var t = ev.target;
             if (!t) return;
-
-            /* The legacy sidebar Dark Mode checkbox and the new three-state
-               control are two faces of one setting until Phase 4 removes the
-               sidebar. Treat a legacy toggle as an explicit Light/Dark choice
-               so the two can never disagree — without this, ticking that box
-               changes body.dark-mode while uo-day goes stale. */
-            if (t.hasAttribute && t.hasAttribute('data-app-dark-toggle')) {
-                window.setUniversalOfficeTheme(t.checked ? 'dark' : 'light');
-                return;
-            }
 
             if (t.name && WATCHED[t.name]) {
                 applyTheme(readTheme());

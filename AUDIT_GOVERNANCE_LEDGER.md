@@ -14516,3 +14516,57 @@ rail holds a placeholder and the margin is empty (Phase 3), and the splash is un
 Cache-bust: `office-shell.css` 278 -> 279, `office-shell.js` 277 -> 279.
 
 SEED_VERSION bumped to `v279-2026-09-12-shell-auto-reresolve-and-layout-fixes`.
+
+---
+
+## 2026-09-12 — The legacy/new theme-control coupling silently disabled Auto. Reverted.
+
+Josh reported that switching Evening -> Morning went light but Morning -> Evening stayed light. Two
+plausible causes were checked in the repo and BOTH were wrong: the office radios use `office-time`
+with the values the resolver expects, and `applyDarkMode()` sets `el.checked` directly without
+dispatching an event. Rather than guess a third time, one console read settled it:
+
+    {"flag":"v2","stored":"dark","office":"evening-office","body":"shell-v2 dark-mode office-active"}
+
+**`stored: "dark"` — Auto was off.** The theme was pinned to an explicit Dark, so office changes
+could not move it. The resolver was working; it was never being consulted.
+
+**The cause was the coupling added hours earlier in the same session** (ledger entry above, "the
+legacy Dark Mode checkbox and the new three-state control are now one setting"). That change treated
+a `change` event on any `[data-app-dark-toggle]` as an explicit Light/Dark choice and wrote it to
+storage. But the legacy checkbox is a **two-state** control with no Auto: interacting with it could
+only ever move a user OFF Auto, permanently, with no discoverable way back — and `applyDarkMode()`
+sets its `checked` property programmatically as the theme changes, so it moves on its own. A feature
+built that morning to keep two controls honest is what turned the headline feature off.
+
+**REVERTED, and replaced with the simpler answer: one control, not two.** The legacy checkbox is now
+hidden while the flag is on. The three-state control IS the dark toggle governance requires on every
+screen, so removing the duplicate satisfies that rule rather than breaking it. Hidden from JS rather
+than CSS because the app rebuilds its sidebars with `innerHTML`, which would discard a one-time
+style; `applyTheme()` runs on every office change, so a freshly rebuilt checkbox is caught. Phase 4
+deletes these sidebars and this goes with them.
+
+**Two lessons, both about the shape of the mistake rather than the mistake:**
+
+1. **Synchronising a three-state control with a two-state one is not possible**, and trying produced
+   a one-way door. The asymmetry should have been obvious at the point of writing: there is no tick
+   of a checkbox that means "resume following the office".
+2. **Two wrong guesses in a row is the signal to stop guessing.** Both were repo-checkable and both
+   were checked — and both were wrong — because the failure was in code written in this same session,
+   which is the last place a search looks. One console read cost less than either guess and was
+   decisive. A one-line state dump should be the FIRST move on any "it does not do what you said",
+   not the third.
+
+**Verified in jsdom, mutating a live page rather than booting fresh worlds:** the legacy row is
+hidden under the flag; storage stays null (Auto) across boot; four consecutive office switches
+resolve day/night/day/night correctly with storage still null; a `change` event on the legacy
+checkbox no longer writes storage and Auto survives it; explicit Dark still persists; returning to
+Auto clears storage and resumes following the office.
+
+**Josh must click AUTO once** to clear the `"dark"` already written to his browser — or run
+`setUniversalOfficeTheme('auto')`. Nothing in this patch can clear a value already stored on a
+user's machine, and silently resetting it would be worse.
+
+Cache-bust: `office-shell.js` 279 -> 280. CSS unchanged.
+
+SEED_VERSION bumped to `v280-2026-09-12-one-theme-control-not-two`.

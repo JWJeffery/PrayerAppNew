@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**ONE THEME CONTROL, NOT TWO 2026-09-12.** The legacy sidebar Dark Mode checkbox is HIDDEN under
+`body.shell-v2`, not synchronised with the three-state control. Synchronising them wrote an explicit
+theme to storage on every legacy tick, which silently disabled Auto for good -- a two-state control
+has no tick meaning "resume following the office". Do not re-couple them. **Diagnostic lesson: on any
+"it does not behave as you said", dump the state from the console FIRST; two repo-checkable guesses
+were both wrong because the fault was in code written the same session.**
+
 **AUTO RE-RESOLVE FIX 2026-09-12.** Phase 2 applied the theme once at build time, so an office-keyed
 Auto never followed an office change -- night offices rendered light. Fixed with delegated listeners
 on `document` (the app rebuilds its nav with innerHTML, so directly-bound listeners do not survive).
