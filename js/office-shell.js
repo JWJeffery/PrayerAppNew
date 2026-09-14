@@ -246,6 +246,19 @@
         var saints = main.querySelector(':scope > .saint-section');
         if (saints) page.appendChild(saints);
 
+        /* The audit-dashboard link is a direct child of #main-content with no
+           id and no class — inline-styled markup. Left alone it has no
+           grid-area, so CSS auto-places it into an implicit FOURTH row below
+           the keeping bar, which is exactly where it appeared. It belongs in
+           the keeping bar's action slot. Matched on its href rather than
+           position, so re-ordering the markup cannot silently break this. */
+        var auditLink = main.querySelector(':scope > div > a[href="audit-ledger.html"]');
+        var auditBlock = auditLink ? auditLink.parentElement : null;
+        if (auditBlock && auditBlock.parentElement === main) {
+            keeping.querySelector('.uo-keeping-actions').appendChild(auditBlock);
+            auditBlock.style.margin = '0';
+        }
+
         main.insertBefore(ordo, main.firstChild);
         main.appendChild(rail);
         main.appendChild(page);
@@ -261,9 +274,58 @@
 
     window.buildUniversalOfficeShell = buildShell;
 
+    /**
+     * Auto has to be RE-RESOLVED, not resolved once.
+     *
+     * Phase 2 shipped with applyTheme() called only at build time. The office
+     * can change many times per session, and each change means a different
+     * answer from an office-keyed Auto — so Evening Prayer, the Coptic Twelfth
+     * Hour and Ramsha all rendered in whatever theme happened to be set when
+     * the shell was built. Every jsdom test passed because each booted a fresh
+     * page with a single office and never changed it: the harness could not see
+     * a bug that only exists over time.
+     *
+     * Listeners are delegated on `document` deliberately. The app rebuilds its
+     * navigation with innerHTML on every date and hour click, which destroys
+     * any listener bound directly to a radio; a delegated listener survives
+     * that.
+     */
+    function watchOfficeChanges() {
+        var WATCHED = { 'office-time': 1, 'cop-hour': 1, 'esy-hour-override': 1 };
+
+        document.addEventListener('change', function (ev) {
+            var t = ev.target;
+            if (!t) return;
+
+            /* The legacy sidebar Dark Mode checkbox and the new three-state
+               control are two faces of one setting until Phase 4 removes the
+               sidebar. Treat a legacy toggle as an explicit Light/Dark choice
+               so the two can never disagree — without this, ticking that box
+               changes body.dark-mode while uo-day goes stale. */
+            if (t.hasAttribute && t.hasAttribute('data-app-dark-toggle')) {
+                window.setUniversalOfficeTheme(t.checked ? 'dark' : 'light');
+                return;
+            }
+
+            if (t.name && WATCHED[t.name]) {
+                applyTheme(readTheme());
+            }
+        }, true);
+
+        /* Horologion keeps its office in a module global rather than a radio,
+           and the Universal Office selector re-enters the shell from the
+           splash. Neither fires a change event we can read, so re-resolve after
+           any click once the app has had a tick to update its state. Cheap:
+           applyTheme is a class toggle and a few attribute writes. */
+        document.addEventListener('click', function () {
+            window.setTimeout(function () { applyTheme(readTheme()); }, 0);
+        }, true);
+    }
+
     function init() {
         if (!shellOn()) return;
         buildShell();
+        watchOfficeChanges();
     }
 
     if (document.readyState === 'loading') {

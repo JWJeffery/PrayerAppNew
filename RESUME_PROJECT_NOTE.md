@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**AUTO RE-RESOLVE FIX 2026-09-12.** Phase 2 applied the theme once at build time, so an office-keyed
+Auto never followed an office change -- night offices rendered light. Fixed with delegated listeners
+on `document` (the app rebuilds its nav with innerHTML, so directly-bound listeners do not survive).
+The legacy sidebar Dark Mode checkbox now sets the three-state control explicitly, so the two cannot
+disagree while both exist. **Lesson recorded: every jsdom case booted a fresh page with one office,
+so the harness could not see a bug that only exists over time. Tests must mutate a live page.**
+
 **PHASE 2 GRID SPECIFICITY FIX 2026-09-12.** The first Phase 2 push looked like nothing happened. The
 JS was fine; `body.shell-v2 #main-content` (0,2,1) LOST to `body.office-active #main-content.app-primary-canvas`
 (0,3,1) in office.css line 2248, so `display:grid` never applied. Structural rules against

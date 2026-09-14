@@ -232,7 +232,12 @@ body.shell-v2 .uo-ordo {
     align-items: center;
     gap: 18px;
     padding: 0 22px;
+    min-height: var(--uo-ordo-height);
     border-bottom: 1px solid var(--uo-hairline);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--uo-ground);
 }
 
 body.shell-v2 .uo-ordo-mark {
@@ -275,7 +280,7 @@ body.shell-v2 .uo-ordo > #office-context-actions {
 body.shell-v2 .uo-rail {
     padding: 26px 20px;
     border-right: 1px solid var(--uo-hairline);
-    overflow-y: auto;
+    text-align: left;
 }
 
 body.shell-v2 .uo-rail-head,
@@ -297,9 +302,13 @@ body.shell-v2 .uo-rail-placeholder {
 
 /* ── The page ─────────────────────────────────────────────────────────────── */
 
+/* NOT a scroll container. The grid rows are content-sized, so an overflow
+   context here clipped the page against the keeping bar — "Confession of Sin"
+   was cut off mid-word rather than scrolling. #main-content already scrolls
+   natively (office.css styles its scrollbar), so the page simply grows and the
+   bars stay visible by sticking instead. */
 body.shell-v2 .uo-page {
     padding: 34px 40px 48px;
-    overflow-y: auto;
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
 }
@@ -318,7 +327,6 @@ body.shell-v2 .uo-ornament {
 body.shell-v2 .uo-margin {
     padding: 26px 20px;
     border-left: 1px solid var(--uo-hairline);
-    overflow-y: auto;
     font-size: 15px;
     line-height: 1.62;
     color: var(--uo-ink-quiet);
@@ -332,7 +340,18 @@ body.shell-v2 .uo-keeping {
     justify-content: space-between;
     gap: 18px;
     padding: 0 22px;
+    min-height: var(--uo-keeping-height);
     border-top: 1px solid var(--uo-hairline);
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    background: var(--uo-ground);
+}
+
+body.shell-v2 .uo-keeping-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 body.shell-v2 .uo-keeping-hint {

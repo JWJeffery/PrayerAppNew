@@ -14461,3 +14461,58 @@ harness.
 Cache-bust: `office-shell.css` 277 -> 278. No JS changed — the JS was never at fault.
 
 SEED_VERSION bumped to `v278-2026-09-12-shell-grid-specificity-fix`.
+
+---
+
+## 2026-09-12 — Auto never re-resolved: a bug that only exists over time, and three layout fixes
+
+Josh sent four screenshots of the running app. The grid was working correctly across all three lanes
+— rail left, page centre, margin right, keeping bar at the foot. They also showed a real bug that
+every test to date had passed straight through.
+
+**AUTO WAS APPLIED ONCE AND NEVER AGAIN.** `applyTheme()` was called only at build time. Evening
+Prayer, the Coptic Twelfth Hour and Ramsha — all night offices — were all rendering light, while an
+earlier screenshot of Evening Prayer taken minutes before showed it correctly dark. Changing office,
+or passing back through the splash where the legacy Dark Mode checkbox lives, left the theme stale.
+An office-keyed Auto has to be re-resolved on every office change by definition; shipping it as a
+one-shot made it decorative.
+
+**Why the harness passed anyway, which is the part worth keeping.** Every jsdom scenario booted a
+fresh page with one office and never changed it. The eleven-office Auto test looked thorough and was
+worthless for this: it proved the *resolver* correct eleven times and never once exercised the thing
+that was broken, which is re-resolution. **A test that constructs a fresh world per case cannot see a
+bug that only exists over time.** The new tests change the office on a live page and assert the
+theme follows.
+
+**Fixed** with listeners delegated on `document`, deliberately: the app rebuilds its navigation with
+`innerHTML` on every date and hour click, which destroys anything bound directly to a radio, and a
+delegated listener survives that. Radios `office-time`, `cop-hour` and `esy-hour-override` re-resolve
+on change. Horologion keeps its office in a module global rather than a radio and the splash re-enters
+the shell without firing anything readable, so a capture-phase click listener re-resolves after a tick
+— cheap, since applyTheme is a class toggle and a few attribute writes.
+
+**The legacy Dark Mode checkbox and the new three-state control are now one setting.** Until Phase 4
+removes the sidebar both are on screen at once, and screenshots 3 and 4 show them side by side. A
+tick of the legacy box is now treated as an explicit Light or Dark choice, so the two can never
+disagree; previously it changed `body.dark-mode` while `uo-day` went stale, which is part of what
+Josh was seeing.
+
+**Three layout fixes, all visible in the screenshots:**
+
+1. **The audit-dashboard link sat below the keeping bar.** It is a direct child of `#main-content`
+   with no id and no class — inline-styled markup — so it had no grid area and CSS auto-placed it
+   into an implicit fourth row. It now moves into the keeping bar's action slot, matched on its
+   `href` rather than its position so re-ordering the markup cannot silently break it.
+2. **The page clipped against the keeping bar** — "Confession of Sin" cut off mid-word rather than
+   scrolling. The three columns were each their own scroll container inside content-sized grid rows,
+   which creates an overflow context with nothing to scroll. `overflow-y` removed from all three;
+   `#main-content` already scrolls natively, and the ordo line and keeping bar are now `position:
+   sticky` so they stay visible instead.
+3. **Rail text was centre-aligned**, inheriting from the parchment pass. Set left.
+
+Still outstanding by design, not defects: the office card keeps its parchment styling (Phase 6), the
+rail holds a placeholder and the margin is empty (Phase 3), and the splash is untouched (Phase 4).
+
+Cache-bust: `office-shell.css` 278 -> 279, `office-shell.js` 277 -> 279.
+
+SEED_VERSION bumped to `v279-2026-09-12-shell-auto-reresolve-and-layout-fixes`.
