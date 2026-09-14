@@ -31,6 +31,15 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**SHELL THEME IS AUTHORITATIVE 2026-09-12.** `window.applyDarkMode` is wrapped at init: while the
+flag is on, any call not originating in the shell has its argument replaced by the shell's resolved
+theme. Needed because the app sets the theme itself after the shell does. **FOUND WHILE DIAGNOSING, A
+REAL BUG IN THE UNFLAGGED APP, NOT YET FIXED:** `updateUI()` in `js/office-ui.js` falls back to
+`getElementById('toggle-dark')?.checked !== false`, and `toggle-dark` exists ONCE in index.html inside
+the BCP panel -- so in every other lane the element is absent, `undefined !== false` is true, and the
+app forces DARK. Same hardcoded-id failure the `applyDarkMode` comment was written to fix, one
+function away. Its fallback should select by `[data-app-dark-toggle]`.
+
 **ONE THEME CONTROL, NOT TWO 2026-09-12.** The legacy sidebar Dark Mode checkbox is HIDDEN under
 `body.shell-v2`, not synchronised with the three-state control. Synchronising them wrote an explicit
 theme to storage on every legacy tick, which silently disabled Auto for good -- a two-state control

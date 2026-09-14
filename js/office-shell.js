@@ -110,6 +110,68 @@
         } catch (e) { /* not fatal */ }
     }
 
+    /* ONE CONTROL, NOT TWO. The legacy sidebar checkbox is hidden under the
+     * flag rather than synchronised with the three-state control: it is a
+     * two-state control with no Auto, so interacting with it could only ever
+     * move a user OFF Auto permanently. The three-state control IS the dark
+     * toggle governance requires on every screen, so hiding the duplicate
+     * satisfies that rule rather than breaking it. Done from JS because the app
+     * rebuilds its sidebars with innerHTML, which discards a one-time style.
+     * Phase 4 deletes these sidebars and this goes with them. */
+    function hideLegacyToggles() {
+        document.querySelectorAll('input[type="checkbox"][data-app-dark-toggle]')
+            .forEach(function (box) {
+                var row = box.closest ? box.closest('label') : null;
+                (row || box).style.display = 'none';
+            });
+    }
+
+    function resolvedIsDark() {
+        var mode = readTheme();
+        return (mode === 'dark') || (mode !== 'light' && autoIsDark());
+    }
+
+    /**
+     * THE SHELL'S THEME IS AUTHORITATIVE WHILE THE FLAG IS ON.
+     *
+     * The Agpeya and the Hudra both rendered their MORNING offices dark. The
+     * cause was not the resolver: it was that the app sets the theme itself,
+     * after the shell has already set it, from at least two places —
+     * `applyDarkMode(_defaultDarkModeForCurrentTime())` once the async kernel
+     * load finishes (which lands after DOMContentLoaded, so after buildShell),
+     * and `updateUI()` with no argument, which falls back to
+     * `getElementById('toggle-dark')?.checked !== false`. That id exists ONCE
+     * in index.html, in the BCP settings panel, so every other lane reads a
+     * checkbox belonging to a different tradition — and `undefined !== false`
+     * is true, so a missing element resolves to DARK. That is the same
+     * hardcoded-id failure mode the comment inside applyDarkMode() was written
+     * to fix, still live one function away, and it affects the unflagged app
+     * too.
+     *
+     * Rather than race those callers, every path funnels through
+     * applyDarkMode(). Wrapping it once means any current or future caller is
+     * corrected rather than fought. When the flag is off the wrapper is a
+     * pass-through and the app behaves exactly as before.
+     */
+    var nativeApplyDarkMode = null;
+    var applyingFromShell = false;
+
+    function installDarkModeGuard() {
+        if (typeof window.applyDarkMode !== 'function' || nativeApplyDarkMode) return;
+        nativeApplyDarkMode = window.applyDarkMode;
+        window.applyDarkMode = function (isDark) {
+            if (shellOn() && !applyingFromShell) {
+                isDark = resolvedIsDark();
+            }
+            var out = nativeApplyDarkMode.call(this, isDark);
+            if (shellOn()) {
+                document.body.classList.toggle('uo-day', !isDark);
+                hideLegacyToggles();
+            }
+            return out;
+        };
+    }
+
     /**
      * Applies the resolved theme.
      *
@@ -132,33 +194,12 @@
            while both exist. applyDarkMode() is the app's single source of truth
            for that and is called rather than reimplemented. */
         if (typeof window.applyDarkMode === 'function') {
-            window.applyDarkMode(isDark);
+            applyingFromShell = true;
+            try { window.applyDarkMode(isDark); }
+            finally { applyingFromShell = false; }
         }
 
-        /* ONE CONTROL, NOT TWO.
-         *
-         * The legacy sidebar checkbox is hidden under the flag rather than
-         * synchronised with the three-state control. An earlier attempt at
-         * synchronisation treated a tick of that box as an explicit Light/Dark
-         * choice — but it is a TWO-state control with no Auto, so touching it
-         * could only ever move the user OFF Auto, permanently, with no
-         * discoverable way back. Worse, applyDarkMode() sets its `checked`
-         * property programmatically, so it flips state on its own. The result
-         * was a stored theme of "dark" and an office-keyed Auto that had
-         * quietly stopped working.
-         *
-         * The three-state control IS the dark toggle the governance requires on
-         * every screen, so hiding the duplicate satisfies that rule rather than
-         * breaking it. Done here rather than in CSS because the app rebuilds
-         * its sidebars with innerHTML, which would discard a one-time style;
-         * applyTheme runs on every office change, so any freshly built checkbox
-         * is caught. Phase 4 deletes these sidebars and this goes with them.
-         */
-        document.querySelectorAll('input[type="checkbox"][data-app-dark-toggle]')
-            .forEach(function (box) {
-                var row = box.closest ? box.closest('label') : null;
-                (row || box).style.display = 'none';
-            });
+        hideLegacyToggles();
 
         var group = document.querySelector('.uo-theme-control');
         if (group) {
@@ -339,6 +380,7 @@
 
     function init() {
         if (!shellOn()) return;
+        installDarkModeGuard();
         buildShell();
         watchOfficeChanges();
     }

@@ -14570,3 +14570,60 @@ user's machine, and silently resetting it would be worse.
 Cache-bust: `office-shell.js` 279 -> 280. CSS unchanged.
 
 SEED_VERSION bumped to `v280-2026-09-12-one-theme-control-not-two`.
+
+---
+
+## 2026-09-12 — Agpeya and Hudra forced dark: an app-side hardcoded id, and the shell made authoritative
+
+Josh reported BCP working after the previous fix, but the Coptic Agpeya and the East Syriac Hudra
+both rendering their **morning** offices dark — and in both, the legacy sidebar Dark Mode checkbox
+still visible and ticked, so the hide had not run there either. Both symptoms had one cause: **the app
+sets the theme itself, after the shell has already set it.**
+
+**A REAL PRE-EXISTING BUG IN THE APP, found while diagnosing and affecting the UNFLAGGED app too.**
+`updateUI()` in `js/office-ui.js` resolves its default like this:
+
+    const isDark = typeof explicitIsDark === 'boolean'
+        ? explicitIsDark
+        : (document.getElementById('toggle-dark')?.checked !== false);
+
+`toggle-dark` occurs **once** in `index.html`, inside the BCP settings panel. Every other lane
+therefore reads a checkbox belonging to a different tradition — and when the element is absent
+`?.checked` is `undefined`, and `undefined !== false` is **true**, so a missing element resolves to
+DARK. This is precisely the hardcoded-id failure mode that the comment inside `applyDarkMode()` was
+written to fix ("Every dark-mode checkbox in the app, not a hardcoded subset… the same
+hardcoded-list omission already recorded twice"), still live one function away in the same file.
+**Logged here rather than fixed in this patch**: it is a defect in the unflagged app, it is not part
+of the shell redesign, and changing it touches behaviour outside the flag. It should be fixed
+properly on its own, and `updateUI()`'s fallback should select by `[data-app-dark-toggle]` like its
+neighbour rather than by a single id.
+
+The second setter is `applyDarkMode(_defaultDarkModeForCurrentTime())` at the end of the async kernel
+load, which lands AFTER `DOMContentLoaded` and therefore after `buildShell()`.
+
+**FIXED by making the shell authoritative at the single point every path funnels through**, rather
+than racing the callers. `window.applyDarkMode` is wrapped once at init: while the flag is on, any
+call that did not originate in the shell has its argument replaced by the shell's own resolved theme,
+`uo-day` is re-synced, and the legacy toggles are re-hidden. Calls from the shell set a flag so the
+wrapper does not re-resolve underneath them. **When the flag is off the wrapper is a pure
+pass-through** and the app behaves exactly as before.
+
+This also fixes the hide: it now runs on every `applyDarkMode` call rather than only on office
+change, so a sidebar rebuilt by `innerHTML` in any lane gets caught.
+
+**VERIFIED in jsdom with the app's real behaviour reproduced faithfully** — a working
+`applyDarkMode` that toggles both classes and syncs the checkboxes, and the real `updateUI()`
+including its `toggle-dark` lookup, in a lane where that id is absent:
+
+- Agpeya morning office under Auto renders light after boot, and stays light through `updateUI()`
+  with no argument, a direct `applyDarkMode(true)`, and the post-kernel-load clock call — each of
+  which would previously have forced dark.
+- Switching to `coptic-twelfth-hour` (Compline) still goes night, and `updateUI()` cannot flip it
+  back.
+- An explicit Light choice survives `updateUI()` even on a night office, and stays stored.
+- With the flag off, the app asks for dark and gets dark, and `uo-day` is never set.
+- The legacy row is hidden in every one of those states.
+
+Cache-bust: `office-shell.js` 280 -> 281. CSS unchanged.
+
+SEED_VERSION bumped to `v281-2026-09-12-shell-theme-authoritative`.
