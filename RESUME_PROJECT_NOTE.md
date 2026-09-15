@@ -31,6 +31,11 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**OFFICE IS RESOLVED BY LANE 2026-09-12.** Every lane's navigator radios are in the DOM and checked
+AT ONCE (`office-time`, `cop-hour`, `esy-hour-override` all had checked values simultaneously). A
+first-match-wins lookup therefore returned the BCP office in every lane. Key on `selectedMode`
+instead -- never on which radio happens to be checked first.
+
 **SHELL THEME IS AUTHORITATIVE 2026-09-12.** `window.applyDarkMode` is wrapped at init: while the
 flag is on, any call not originating in the shell has its argument replaced by the shell's resolved
 theme. Needed because the app sets the theme itself after the shell does. **FOUND WHILE DIAGNOSING, A

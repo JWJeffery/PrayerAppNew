@@ -14627,3 +14627,51 @@ including its `toggle-dark` lookup, in a lane where that id is absent:
 Cache-bust: `office-shell.js` 280 -> 281. CSS unchanged.
 
 SEED_VERSION bumped to `v281-2026-09-12-shell-theme-authoritative`.
+
+---
+
+## 2026-09-12 — Auto read the wrong lane's office: every lane's radios are checked at once
+
+Ramsha rendered light, the whole Agpeya rendered light, BCP Evening Prayer rendered dark. A console
+read of every checked radio, taken while sitting on the Agpeya at the Twelfth Hour, gave the answer
+in one line:
+
+    office-time=morning-office
+    cop-hour=coptic-twelfth-hour
+    esy-hour-override=ramsha
+
+**Every lane's navigator radios exist in the DOM simultaneously and all stay checked.** The resolver
+searched a fixed list — `office-time`, then `cop-hour`, then `esy-hour-override` — and returned the
+first checked radio it found. `office-time` is first, so **it answered with the BCP office in every
+lane**. The Agpeya and the Hudra were resolving to whatever the Daily Office happened to be set to,
+and at midday with BCP on Morning Prayer that meant light everywhere.
+
+**BCP was never actually working.** It appeared to, because it was the lane being read in all cases;
+the resolver had simply never consulted the lane in front of the user. A first-match-wins lookup over
+a shared DOM is not a lane resolver, and the three previous fixes in this area — re-resolution, the
+control coupling, the authoritative wrapper — were all correct and all downstream of a lookup that
+was reading the wrong input the whole time.
+
+**FIXED** by keying on `selectedMode`, which is the app's own record of the active lane:
+`coptic-agpeya` -> `cop-hour`, `east-syriac` -> `esy-hour-override`, `horologion` ->
+`selectedHorologionOffice` (a module global, not a radio), anything else -> `office-time`, which is
+what the app itself defaults to.
+
+**VERIFIED in jsdom with all three lanes' radios checked at once**, reproducing the exact console
+state, and with the clock stubbed to midday so any fallthrough would show as day:
+
+- Daily Office / `morning-office` -> day; Agpeya / `coptic-twelfth-hour` -> night; Hudra / `ramsha`
+  -> night; Horologion / `vespers` -> night.
+- The reverse leak checked too, which is the half the old code would still have passed by accident:
+  with BCP set to Compline, the Agpeya at its Morning Office correctly resolves DAY rather than
+  inheriting BCP's night, while the Agpeya at the Twelfth Hour is night on its own merits and the
+  Daily Office itself is night.
+
+**Method note.** Three rounds of this bug were diagnosed by reasoning from the code and each produced
+a real but insufficient fix. The one console read that enumerated actual DOM state settled it
+immediately and showed that the premise under all three was wrong. Recorded again because it is now
+the second time in this session: **on any "it does not behave as you said", dump real state first.**
+
+Cache-bust: `office-shell.js` 281 -> 282. CSS unchanged.
+
+SEED_VERSION bumped to `v282-2026-09-12-office-resolved-by-lane`.

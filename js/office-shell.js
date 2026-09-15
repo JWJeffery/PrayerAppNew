@@ -68,19 +68,43 @@
            judgement call rather than a fact. */
     };
 
-    /* The active office is whichever navigator radio is checked — the same
-       signal the app itself reads. No string-matching on visible labels. */
+    /**
+     * The active office, resolved BY LANE rather than by first match.
+     *
+     * Every lane's navigator radios exist in the DOM at once and stay checked.
+     * A console read on the Agpeya at the Twelfth Hour returned, simultaneously:
+     *
+     *     office-time=morning-office
+     *     cop-hour=coptic-twelfth-hour
+     *     esy-hour-override=ramsha
+     *
+     * An earlier version searched a fixed list with `office-time` first and
+     * returned the first checked radio it found — so it answered with the BCP
+     * office in EVERY lane, and the Agpeya and Hudra always resolved to
+     * whatever BCP happened to be set to. BCP appeared to work only because it
+     * was the lane being read every time; it was never actually consulting the
+     * lane in front of the user.
+     *
+     * `selectedMode` is the app's own record of which lane is active, so key on
+     * it. An unrecognised or null mode means the Daily Office, which is what
+     * the app itself defaults to.
+     */
     function currentOfficeId() {
-        var names = ['office-time', 'cop-hour', 'esy-hour-override'];
-        for (var i = 0; i < names.length; i++) {
-            var el = document.querySelector('input[name="' + names[i] + '"]:checked');
-            if (el && el.value) return el.value;
+        var mode = window.selectedMode;
+
+        if (mode === 'horologion') {
+            /* Horologion keeps its choice in a module global, not a radio. */
+            return typeof window.selectedHorologionOffice === 'string'
+                ? window.selectedHorologionOffice
+                : null;
         }
-        /* Horologion keeps its choice in a module global rather than a radio. */
-        if (typeof window.selectedHorologionOffice === 'string') {
-            return window.selectedHorologionOffice;
-        }
-        return null;
+
+        var name = (mode === 'coptic-agpeya') ? 'cop-hour'
+                 : (mode === 'east-syriac')   ? 'esy-hour-override'
+                 : 'office-time';
+
+        var el = document.querySelector('input[name="' + name + '"]:checked');
+        return (el && el.value) ? el.value : null;
     }
 
     function autoIsDark() {
