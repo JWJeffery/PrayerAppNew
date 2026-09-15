@@ -313,6 +313,12 @@
             '\u2191 \u2193 move by block \u00b7 space holds the place'));
         keeping.appendChild(el('div', 'uo-keeping-actions'));
 
+        /* The floating "Back to Modes" button is moved INTO the ordo row rather
+           than left fixed over it, where it covered the theme control. Matched
+           on its handler because the markup gives it no id or class. Moving the
+           node keeps its onclick intact. */
+        var backBtn = main.querySelector(':scope > button[onclick*="backToSplash"]');
+
         /* Move, never rebuild: these nodes carry live handlers and ids. */
         var moved = [];
         ['office-mode-title', 'office-context-actions'].forEach(function (id) {
@@ -336,6 +342,8 @@
             keeping.querySelector('.uo-keeping-actions').appendChild(auditBlock);
             auditBlock.style.margin = '0';
         }
+
+        if (backBtn) ordo.appendChild(backBtn);
 
         main.insertBefore(ordo, main.firstChild);
         main.appendChild(rail);

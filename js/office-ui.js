@@ -2979,9 +2979,27 @@ function toggleBcpOnly() {
 
 // ── Appearance ───────────────────────────────────────────────────────────────
 function updateUI(explicitIsDark) {
-    const isDark = typeof explicitIsDark === 'boolean'
-        ? explicitIsDark
-        : (document.getElementById('toggle-dark')?.checked !== false);
+    // Selects by attribute, not by a single id.
+    //
+    // This previously read `getElementById('toggle-dark')?.checked !== false`.
+    // `toggle-dark` occurs ONCE in index.html, inside the BCP settings panel, so
+    // every other lane was reading a checkbox belonging to a different
+    // tradition -- and when the element is absent `?.checked` is `undefined`,
+    // and `undefined !== false` is TRUE, so a missing element resolved to DARK.
+    // The Coptic Agpeya and the East Syriac Hudra both forced dark because of
+    // it. This is the same hardcoded-id failure mode recorded twice in
+    // applyDarkMode() immediately below, which is why that function selects on
+    // `[data-app-dark-toggle]`; updateUI() simply never got the same treatment.
+    //
+    // Falls back to the time-of-day default when no toggle exists at all, which
+    // is what the app does elsewhere, rather than to an arbitrary dark.
+    let isDark;
+    if (typeof explicitIsDark === 'boolean') {
+        isDark = explicitIsDark;
+    } else {
+        const box = document.querySelector('input[type="checkbox"][data-app-dark-toggle]');
+        isDark = box ? box.checked : _defaultDarkModeForCurrentTime();
+    }
     applyDarkMode(isDark);
 }
 

@@ -14971,3 +14971,48 @@ infrastructure, not the app.
 Cache-bust: `office-ui.js` and `anglican-envelope.js` 287 -> 288.
 
 SEED_VERSION bumped to `v288-2026-09-12-envelope-tidy`.
+
+---
+
+## 2026-09-12 — The `updateUI()` hardcoded id fixed in the unflagged app; the floating button rehomed
+
+Two items logged earlier in the session and deliberately deferred, now done. Both small, both
+contained.
+
+**1. `updateUI()` selected a theme checkbox by a single id — A REAL DEFECT IN THE UNFLAGGED APP.**
+
+    const isDark = typeof explicitIsDark === 'boolean'
+        ? explicitIsDark
+        : (document.getElementById('toggle-dark')?.checked !== false);
+
+`toggle-dark` occurs **once** in `index.html`, inside the BCP settings panel. Every other lane read a
+checkbox belonging to a different tradition, and when the element is absent `?.checked` is
+`undefined` — and `undefined !== false` is **true**, so a missing element resolved to DARK. That is
+why the Coptic Agpeya and the East Syriac Hudra forced dark, found while diagnosing the shell's theme
+and logged then rather than fixed inside a redesign patch.
+
+This is the same hardcoded-id failure mode recorded **twice** in the comment inside `applyDarkMode()`
+sitting immediately below it in the same file — which is precisely why that function selects on
+`[data-app-dark-toggle]`. `updateUI()` never got the same treatment. It now selects by the same
+attribute, and where no toggle exists at all it falls back to `_defaultDarkModeForCurrentTime()`,
+which is what the app does for every other "what is the right default right now" decision, rather
+than to an arbitrary dark.
+
+**This change is OUTSIDE the flag and affects the app as shipped.** It is in its own commit for that
+reason, not folded into shell work.
+
+**2. "Back to Modes" floated over the theme control.** The button is `position:fixed; top:12px;
+right:16px` written inline in `index.html`, so it sat on top of the Auto/Light/Dark control in the
+ordo line — visible in Josh's screenshots as a half-hidden `AUTO`. Under the flag the node is MOVED
+into the ordo row and made static, so it becomes the last item in that line instead of floating above
+it. Matched on its `onclick` because the markup gives it no id or class; moving the node preserves
+the handler. Inline styles beat stylesheet rules, so each inline property is overridden by name — a
+blanket rule would not have touched them. Phase 4 rehomes it properly.
+
+**VERIFIED in jsdom, both states:** with the flag on, the button ends up inside `.uo-ordo` as the
+last child after the theme control, its `onclick` intact, and no longer a child of `#main-content`;
+with the flag off, it stays exactly where it was with its inline style untouched.
+
+Cache-bust: `office-ui.js` 288 -> 289, `office-shell.js` and `office-shell.css` -> 289.
+
+SEED_VERSION bumped to `v289-2026-09-12-updateui-hardcoded-id-and-ordo-overlap`.

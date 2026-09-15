@@ -380,6 +380,23 @@ body.shell-v2 .uo-ordo > #office-context-actions {
     gap: 8px;
 }
 
+/* The app's "Back to Modes" button is position:fixed at top:12px right:16px,
+   written inline in index.html, so it floats over the ordo line and lands on
+   top of the Auto/Light/Dark control. Under the flag it becomes part of the
+   ordo row instead of floating above it: static, in flow, at the end of the
+   line. Inline styles beat stylesheet rules, so each property set inline has to
+   be named explicitly here — a blanket rule would not touch them.
+
+   Phase 4 rehomes this button properly; this keeps it usable until then. */
+body.shell-v2 #main-content.app-primary-canvas > .uo-ordo > button[onclick*="backToSplash"],
+body.shell-v2 .uo-ordo button[onclick*="backToSplash"] {
+    position: static;
+    top: auto;
+    right: auto;
+    flex: 0 0 auto;
+    margin: 0;
+}
+
 /* ── The rail ─────────────────────────────────────────────────────────────── */
 
 body.shell-v2 .uo-rail {

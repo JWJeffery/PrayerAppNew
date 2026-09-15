@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**`updateUI()` HARDCODED-ID BUG FIXED 2026-09-12** -- outside the flag, affecting the app as shipped.
+It read `getElementById('toggle-dark')?.checked !== false`; that id exists once, in the BCP panel, so
+in every other lane the element was absent and `undefined !== false` forced DARK. Now selects
+`[data-app-dark-toggle]` like `applyDarkMode()` does, falling back to the time-of-day default when no
+toggle exists. Also: "Back to Modes" (inline `position:fixed`) is moved into the ordo row under the
+flag so it stops covering the theme control.
+
 **RAIL CONFIRMED IN THE BROWSER 2026-09-12** against the live renderer, per office: Noonday, Compline
 and Morning Prayer each show their own order in their own labels. **SLOW LOADS ARE NOT FROM THIS WORK
 AND PREDATE IT (Josh confirmed):** every script lands at ~4.1-4.3s including files untouched all
