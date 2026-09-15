@@ -418,6 +418,63 @@
      * its subtree mutating IS the render landing. Debounced to one call per
      * frame: a render fires many mutations.
      */
+    /**
+     * Draw the rail and the ordo day-line from the resolved-office envelope.
+     *
+     * Contract §6: `blocks[].label` is rail item text VERBATIM — lane-native,
+     * never translated, never tidied. Contract §4: `context.calendarSummary`
+     * goes in the ordo line verbatim and the shell does not parse season or
+     * rank out of it.
+     *
+     * A lane that emits no envelope keeps the placeholder. That is the honest
+     * state for the three lanes that have no emitter yet, and it must not be
+     * papered over by inventing rail items from the rendered page.
+     */
+    function renderRailFromEnvelope(env) {
+        var rail = document.querySelector('.uo-rail');
+        if (!rail || !env || !Array.isArray(env.blocks)) return;
+
+        var head = rail.querySelector('.uo-rail-head');
+        rail.textContent = '';
+        rail.appendChild(head || el('div', 'uo-rail-head', 'The Order'));
+
+        if (!env.blocks.length) {
+            rail.appendChild(el('p', 'uo-rail-placeholder',
+                'This office resolved with no blocks. Nothing has been substituted.'));
+            return;
+        }
+
+        var list = el('ol', 'uo-rail-list');
+        env.blocks.forEach(function (b, i) {
+            var item = el('li', 'uo-rail-item');
+            item.appendChild(el('span', 'uo-rail-dot'));
+            item.appendChild(el('span', 'uo-rail-label', b.label));
+            item.setAttribute('data-uo-role', b.role || 'other');
+            list.appendChild(item);
+            if (i === 0) item.classList.add('is-current');
+        });
+        rail.appendChild(list);
+
+        var foot = el('div', 'uo-rail-foot',
+            'I of ' + env.blocks.length);
+        rail.appendChild(foot);
+    }
+
+    function renderOrdoFromEnvelope(env) {
+        var day = document.querySelector('.uo-ordo-day');
+        if (!day || !env || !env.context) return;
+        /* Verbatim, or nothing. The shell does not compose a day line. */
+        day.textContent = env.context.calendarSummary || '';
+    }
+
+    function watchEnvelope() {
+        document.addEventListener('universal-office-envelope', function (ev) {
+            if (!shellOn()) return;
+            renderRailFromEnvelope(ev.detail);
+            renderOrdoFromEnvelope(ev.detail);
+        });
+    }
+
     function watchRenderChanges() {
         if (typeof window.MutationObserver !== 'function') return;
         var target = document.getElementById('office-display');
@@ -456,6 +513,7 @@
         buildShell();
         watchOfficeChanges();
         watchRenderChanges();
+        watchEnvelope();
     }
 
     if (document.readyState === 'loading') {

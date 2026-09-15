@@ -4686,6 +4686,23 @@ async function renderBcpOffice() {
     }
 
     // ── Finalise DOM ──────────────────────────────────────────────────────────
+    // Phase 3, first slice: emit the resolved-office envelope alongside the
+    // markup, for the shell's rail and ordo day-line. This does NOT affect what
+    // is rendered. See js/anglican-envelope.js for why the envelope is emitted
+    // beside the HTML rather than rendered from, and what that costs.
+    if (window.AnglicanEnvelope) {
+        try {
+            window.AnglicanEnvelope.publish(
+                window.AnglicanEnvelope.emit(officeHtml, {
+                    calendarSummary: officeSubtitle || null,
+                    officeFamily: resolvedOfficeId || null
+                })
+            );
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
     applyExplanationLayer('office-display');
 

@@ -14878,3 +14878,59 @@ rather than a third anecdote.
 Cache-bust: `office-shell.js` 285 -> 286. CSS unchanged.
 
 SEED_VERSION bumped to `v286-2026-09-12-resolve-on-render`.
+
+---
+
+## 2026-09-12 — Phase 3, first slice: the Anglican lane emits an envelope; the rail becomes real
+
+Phase 3 as written in the handoff is a refactor of `renderBcpOffice()` — **890 lines, 90 template
+literals**, which decides what the office contains and writes its markup in the same breath, with no
+seam between the two. Creating that seam is the real work. Put to Josh as three options with that
+measurement; he chose **emit alongside**, and this is that slice.
+
+**What was built.** `js/anglican-envelope.js` produces a §4-shaped envelope — `tradition`,
+`officeFamily`, `context.calendarSummary`, `blocks[]` with `label`, `role` and `units[]` —
+published on a DOM event. `renderBcpOffice()` gained **one call, sixteen lines, immediately before
+its existing `innerHTML` assignment**, inside a try/catch that logs and continues. Nothing was
+removed and the render path is untouched: a mistake in the envelope surfaces as a wrong rail item,
+never as a broken office.
+
+The shell draws the rail from `blocks[].label` **verbatim** (§6: lane-native, never translated) and
+the ordo day-line from `context.calendarSummary` verbatim (§4: the shell does not parse season or
+rank out of it).
+
+**WHY READING THE EMITTED STRING IS NOT THE THING THE HANDOFF FORBIDS.** The handoff forbids building
+rail items by scraping the rendered page, and is right to — that invents structure the lane never
+stated. This reads the lane's own output string at the moment of emission, inside the function that
+produced it, before it reaches the DOM, and reads only the markers the Anglican renderer itself uses
+to mark a block: the `<span class="rubric-text">` label at the head of every block and the
+`<h4 class="passage-reference">` citation. **Those labels are the tradition's own words.** Nothing is
+inferred, translated or supplied. A block with no label gets no rail entry — a gap stays a gap.
+
+**THE COST, STATED NOW RATHER THAN DISCOVERED LATER.** The envelope and the HTML are produced by the
+same pass but independently, so they can drift. **The envelope is not yet the source of the page.**
+This is a stepping stone; when the refactor lands the page renders FROM the envelope and the drift
+disappears. That is written at the head of the new file, not buried here.
+
+**Role mapping is the one judgement this file makes, and it is made conservatively.** §7's taxonomy
+is closed by governance, so an unrecognised label maps to `other` — never to a nearby role that
+looks plausible. Verified: "Kyrie Pantocrator" resolves to `other`, not to `devotion` or `antiphon`.
+
+**`overlays` and `diagnostics` ship EMPTY and declared.** Neither is currently distinguishable in the
+markup — a borrowed devotion emits the same span as a native block — so populating them would mean
+guessing which is which. They wait for the refactor. An empty array that says "nothing known" is
+honest; a populated one built by pattern-matching would not be.
+
+**VERIFIED against a faithful fragment of the renderer's real Compline output:** seven blocks in
+emission order with labels byte-identical to the source; the two psalm citations attaching to `The
+Psalms` and `Jeremiah 14:9` to `The Lesson` — each citation to the block it follows, and dropped
+entirely if no block precedes it; `rankSummary` null because the Anglican lane supplies none; an
+office containing no labels yielding zero blocks rather than a fabricated skeleton.
+
+**NOT VERIFIED:** the rail as rendered, and whether the labels the live renderer emits match the
+fragment tested. Browser only.
+
+Cache-bust: `office-ui.js` 270 -> 287 (it changed, and its param had been untouched since v270),
+`office-shell.css` 285 -> 287, `office-shell.js` 286 -> 287, new `anglican-envelope.js` at 287.
+
+SEED_VERSION bumped to `v287-2026-09-12-anglican-envelope-first-slice`.

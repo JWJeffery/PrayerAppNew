@@ -31,6 +31,17 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**PHASE 3 FIRST SLICE SHIPPED 2026-09-12: the Anglican lane emits an envelope.**
+`js/anglican-envelope.js` builds a §4-shaped envelope from the renderer's own emitted markup;
+`renderBcpOffice()` gained ONE call of sixteen lines before its existing `innerHTML`, in a try/catch.
+The shell draws the rail from `blocks[].label` verbatim and the ordo day-line from
+`context.calendarSummary`. **The envelope is NOT yet the source of the page** -- it is emitted
+alongside, so the two can drift. That is the known cost of this slice, chosen over an 890-line
+refactor of `renderBcpOffice()`. `overlays` and `diagnostics` ship EMPTY because a borrowed devotion
+is not currently distinguishable from a native block in the markup; populating them would be
+guesswork. The remaining three lanes have no emitter and keep the rail placeholder, which is the
+honest state. **Full Phase 3 = refactor `renderBcpOffice()` so the page renders FROM the envelope.**
+
 **RE-RESOLVE ON THE RENDER, NOT THE CLICK 2026-09-12.** `renderOffice()` is async, so any handler on
 click or change reads the PREVIOUS office. A MutationObserver on `#office-display` (rewritten on every
 office, date and lane change) is the signal that the render landed. Three separate bugs this session
