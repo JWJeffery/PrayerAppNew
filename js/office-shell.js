@@ -89,23 +89,64 @@
      * it. An unrecognised or null mode means the Daily Office, which is what
      * the app itself defaults to.
      */
-    function currentOfficeId() {
-        var mode = window.selectedMode;
+    /**
+     * The active lane, read from the DOM.
+     *
+     * NOT from `window.selectedMode`. `js/office-ui.js` declares
+     * `let selectedMode = null;` at top level, and a top-level `let` in a
+     * classic script creates a binding in the global LEXICAL environment
+     * without becoming a property of `window` — so `window.selectedMode` is
+     * permanently undefined. A console dump showed `mode` missing from the
+     * output entirely, because JSON.stringify drops undefined values: the
+     * absence was the finding. The previous patch keyed on that property,
+     * looked correct, and changed nothing.
+     *
+     * The bare identifier IS readable via direct eval, but that cannot be
+     * exercised in jsdom — each eval there gets its own lexical scope, so a
+     * `let` in one is invisible to the next, while real script tags share one
+     * global environment. An untestable read is what let the last three fixes
+     * through, so this reads a DOM signal instead: each lane's settings drawer
+     * carries `mode-hidden` when inactive, and exactly one does not.
+     */
+    var LANE_PANELS = [
+        ['coptic-settings',      'coptic-agpeya',  'cop-hour'],
+        ['east-syriac-settings', 'east-syriac',    'esy-hour-override'],
+        ['generic-settings',     'horologion',     'shared-office-nav-horologion']
+    ];
 
-        if (mode === 'horologion') {
-            /* Horologion keeps its choice in a module global, not a radio. */
-            return typeof window.selectedHorologionOffice === 'string'
-                ? window.selectedHorologionOffice
-                : null;
+    function currentLane() {
+        for (var i = 0; i < LANE_PANELS.length; i++) {
+            var panel = document.getElementById(LANE_PANELS[i][0]);
+            if (panel && !panel.classList.contains('mode-hidden')) {
+                return LANE_PANELS[i];
+            }
         }
+        return [null, null, 'office-time'];   /* the Daily Office, the app's own default */
+    }
 
-        var name = (mode === 'coptic-agpeya') ? 'cop-hour'
-                 : (mode === 'east-syriac')   ? 'esy-hour-override'
-                 : 'office-time';
+    function currentOfficeId() {
+        var lane = currentLane();
+        var name = lane[2];
 
         var el = document.querySelector('input[name="' + name + '"]:checked');
-        return (el && el.value) ? el.value : null;
+        if (el && el.value) return el.value;
+
+        if (lane[1] === 'horologion') {
+            /* Horologion may keep its office only in a top-level `let`, which
+               is not a window property. Direct eval reaches the global lexical
+               binding; the typeof guard stops a ReferenceError if office-ui.js
+               has not loaded. Unverifiable in jsdom — browser only. */
+            try {
+                /* eslint-disable no-eval */
+                var h = eval('typeof selectedHorologionOffice !== "undefined" ? selectedHorologionOffice : undefined');
+                /* eslint-enable no-eval */
+                if (typeof h === 'string') return h;
+            } catch (e) { /* CSP without unsafe-eval, or not loaded */ }
+        }
+        return null;
     }
+
+
 
     function autoIsDark() {
         var office = currentOfficeId();
@@ -402,9 +443,27 @@
         }, true);
     }
 
+    /* The Coptic and East Syriac sidebars are built after DOMContentLoaded, so
+       a hide that runs only at build time or on office change misses them
+       entirely — `toggle-dark-coptic` was still visible with the attribute
+       present, which is what gave this away. Watch for them instead. */
+    function watchForLegacyToggles() {
+        if (typeof window.MutationObserver !== 'function') return;
+        var pending = false;
+        new window.MutationObserver(function () {
+            if (pending) return;
+            pending = true;
+            window.setTimeout(function () {
+                pending = false;
+                if (shellOn()) hideLegacyToggles();
+            }, 0);
+        }).observe(document.body, { childList: true, subtree: true });
+    }
+
     function init() {
         if (!shellOn()) return;
         installDarkModeGuard();
+        watchForLegacyToggles();
         buildShell();
         watchOfficeChanges();
     }

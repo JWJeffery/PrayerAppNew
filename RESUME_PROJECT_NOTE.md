@@ -31,6 +31,14 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**THE LANE IS READ FROM THE DOM 2026-09-12.** NOT from `window.selectedMode` -- `office-ui.js`
+declares it with a top-level `let`, which creates a global LEXICAL binding and never becomes a window
+property, so `window.selectedMode` is permanently undefined. Read the lane from which settings drawer
+lacks `mode-hidden` (`#coptic-settings`, `#east-syriac-settings`, `#generic-settings`), then that
+lane's own radio. **Do not reintroduce a `window.` read of any top-level `let` in office-ui.js.** Also:
+jsdom gives each `eval()` its own lexical scope, so bare-identifier reads CANNOT be tested there --
+prefer an observable DOM signal over anything untestable.
+
 **OFFICE IS RESOLVED BY LANE 2026-09-12.** Every lane's navigator radios are in the DOM and checked
 AT ONCE (`office-time`, `cop-hour`, `esy-hour-override` all had checked values simultaneously). A
 first-match-wins lookup therefore returned the BCP office in every lane. Key on `selectedMode`

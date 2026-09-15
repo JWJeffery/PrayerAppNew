@@ -14675,3 +14675,60 @@ the second time in this session: **on any "it does not behave as you said", dump
 Cache-bust: `office-shell.js` 281 -> 282. CSS unchanged.
 
 SEED_VERSION bumped to `v282-2026-09-12-office-resolved-by-lane`.
+
+---
+
+## 2026-09-12 — `window.selectedMode` does not exist: a top-level `let` is not a window property
+
+The previous patch keyed the theme resolver on `window.selectedMode`. It was correct in shape and
+changed nothing, because **that property has never existed.**
+
+`js/office-ui.js` line 3 declares `let selectedMode = null;`. A top-level `let` in a classic script
+creates a binding in the global LEXICAL environment and does **not** become a property of `window` —
+unlike `var`. So `window.selectedMode` is permanently `undefined`, the lane mapping fell through to
+its default, and every lane resolved as BCP exactly as before. Same for `selectedHorologionOffice`.
+
+**How it was found, and why it nearly wasn't.** A console dump returned:
+
+    {"office":"coptic-midnight-office","body":"shell-v2 uo-day light-mode office-active","darkboxes":[...]}
+
+`mode` is **absent from the output** — `JSON.stringify` drops `undefined` values. The absence was the
+finding. Confirmed directly afterwards in a `vm` context: a top-level `let` reads as `undefined`
+through the global object and resolves normally as a bare identifier.
+
+**A SECOND FINDING THAT CHANGED THE FIX.** The bare identifier IS readable via direct `eval`, and that
+was the first fix written. It cannot be tested here: in jsdom each `eval()` gets its own lexical
+scope, so a `let` declared in one is invisible to the next, while real `<script>` tags share a single
+global environment. The harness reported the Horologion lane failing for a reason that exists only in
+the harness. **An untestable read is precisely what let the last three fixes through**, so the eval
+approach was abandoned as the primary path.
+
+**FIXED by reading the lane from the DOM.** Each lane's settings drawer carries `mode-hidden` when
+inactive — `#coptic-settings`, `#east-syriac-settings`, `#generic-settings` — and exactly one does
+not. That is an observable signal, testable in jsdom, and independent of how the app declares its
+variables. Office then comes from that lane's own radio: `cop-hour`, `esy-hour-override`,
+`shared-office-nav-horologion`, or `office-time` for the Daily Office. The eval read survives only as
+a last-resort fallback for Horologion, wrapped in try/catch so a CSP without `unsafe-eval` degrades
+rather than throws, and labelled in the code as browser-only.
+
+**Also fixed: the legacy toggles were never hidden in the Coptic and East Syriac lanes.** The console
+dump showed `toggle-dark-coptic` with `attr: true` and `shown: true` — the attribute was right, so
+the selector was right; those sidebars are simply built AFTER `DOMContentLoaded`, and a hide that runs
+only at build time or on office change never sees them. A debounced `MutationObserver` on
+`document.body` now catches them whenever they appear.
+
+**VERIFIED in jsdom with the panels declared exactly as `index.html` declares them** and the clock
+stubbed to midday so any fallthrough shows as day: Daily Office/morning day, Agpeya/midnight-office
+night, Hudra/ramsha night, Horologion/vespers night, and back to Daily Office day. The reverse leak
+too — with BCP on Compline, the Agpeya at its Morning Office resolves day while the Daily Office
+itself resolves night. A sidebar inserted after load has its toggle hidden once the observer fires.
+
+**Fourth round on one bug.** Rounds one to three were each a real defect correctly fixed, and each sat
+downstream of a lookup reading the wrong input. What ended it was enumerating actual DOM and runtime
+state rather than reasoning about the code — twice now in this session. The standing rule is now
+explicit in the resume note: **on any "it does not behave as you said", dump real state first, and
+distrust any fix whose correctness cannot be exercised by a test.**
+
+Cache-bust: `office-shell.js` 282 -> 283. CSS unchanged.
+
+SEED_VERSION bumped to `v283-2026-09-12-lane-read-from-dom`.
