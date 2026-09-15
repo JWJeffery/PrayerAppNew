@@ -14732,3 +14732,39 @@ distrust any fix whose correctness cannot be exercised by a test.**
 Cache-bust: `office-shell.js` 282 -> 283. CSS unchanged.
 
 SEED_VERSION bumped to `v283-2026-09-12-lane-read-from-dom`.
+
+---
+
+## 2026-09-12 — Lane switches resolved too early; the duplicate toggle moved to CSS
+
+Two remaining defects from Josh's testing, both real.
+
+**1. A lane switch re-resolved against the OLD lane.** Ramsha -> Sapra worked (same lane), but
+arriving at BCP Compline from another lane stayed light, and only went dark after switching to
+Evening Prayer and back. The lane is read from which settings drawer lacks `mode-hidden`, and those
+classes change **asynchronously** — later than the `setTimeout(0)` that follows a click. So the
+resolver ran against the lane the user had just left. A `MutationObserver` now watches the `class`
+attribute on the three drawers and re-resolves whenever the lane change actually lands, however long
+the render takes. **Verified by switching lanes with no click and no hour change at all** — only the
+panel classes moving — across five transitions, with BCP parked on Compline and both eastern lanes on
+morning offices so any stale read shows as the wrong theme.
+
+**2. The legacy Dark Mode checkbox: hidden from CSS, after two failed JS attempts.** It is not in
+`index.html` at all — `office-ui.js` builds it, and the navigator is rebuilt with `innerHTML` on
+every render, which wipes an inline `display:none` and leaves the box visible until an observer
+catches up. Worse, the template writes `style="display:flex"` **inline on the label**, and an inline
+style beats any stylesheet rule, so a CSS rule aimed at the label would also have failed. The rule
+now targets the enclosing `.shared-office-nav-appearance-card` section, which carries no inline
+style, and is declarative so no rebuild can undo it.
+
+**Worth recording as a pattern, since this is the third time the same shape has bitten in one
+session:** JS that sets state on DOM the app rebuilds is a race by construction. Where the goal is
+"this must always be true", a stylesheet rule states it once; an imperative fix has to win every
+render. The two earlier instances were the same — hiding the toggle at build time, and hiding it on
+office change.
+
+Cache-bust: `office-shell.css` 279 -> 284, `office-shell.js` 283 -> 284. Both bumped to the same
+number deliberately; the CSS param had been left behind at 279 across four JS-only patches, which
+would have served a stale stylesheet to anyone with it cached.
+
+SEED_VERSION bumped to `v284-2026-09-12-lane-switch-and-css-hide`.

@@ -31,6 +31,15 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**LANE SWITCHES ARE OBSERVED, NOT INFERRED FROM CLICKS 2026-09-12.** The drawers' `mode-hidden`
+classes change asynchronously, later than any `setTimeout(0)` after a click, so a click-driven
+re-resolve reads the lane the user just LEFT. A MutationObserver on the three drawers' `class`
+attribute handles it. Also: the legacy Dark Mode checkbox is hidden by a CSS rule on
+`.shared-office-nav-appearance-card`, NOT from JS -- the navigator is rebuilt with innerHTML on every
+render, and its label carries an inline `display:flex` that beats any stylesheet rule aimed at the
+label. **Pattern: where something must ALWAYS be true of app-rebuilt DOM, state it in CSS; imperative
+fixes have to win every render.**
+
 **THE LANE IS READ FROM THE DOM 2026-09-12.** NOT from `window.selectedMode` -- `office-ui.js`
 declares it with a top-level `let`, which creates a global LEXICAL binding and never becomes a window
 property, so `window.selectedMode` is permanently undefined. Read the lane from which settings drawer

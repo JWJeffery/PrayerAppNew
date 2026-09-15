@@ -460,10 +460,41 @@
         }).observe(document.body, { childList: true, subtree: true });
     }
 
+    /**
+     * Re-resolve when the LANE changes, not only when the office does.
+     *
+     * Switching from the Daily Office to the Agpeya changes which settings
+     * drawer carries `mode-hidden`, but that happens asynchronously — later
+     * than the setTimeout(0) after the click. The resolver therefore read the
+     * OLD lane, and the theme only corrected itself once the user nudged the
+     * hour inside the new lane. Observed symptom: BCP Compline stayed light on
+     * arrival, then went dark after switching to Evening Prayer and back.
+     *
+     * Watching the class attribute on the three drawers catches the lane change
+     * whenever it actually lands, however long the render takes.
+     */
+    function watchLaneChanges() {
+        if (typeof window.MutationObserver !== 'function') return;
+        var pending = false;
+        var obs = new window.MutationObserver(function () {
+            if (pending) return;
+            pending = true;
+            window.setTimeout(function () {
+                pending = false;
+                if (shellOn()) applyTheme(readTheme());
+            }, 0);
+        });
+        LANE_PANELS.forEach(function (entry) {
+            var panel = document.getElementById(entry[0]);
+            if (panel) obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
+        });
+    }
+
     function init() {
         if (!shellOn()) return;
         installDarkModeGuard();
         watchForLegacyToggles();
+        watchLaneChanges();
         buildShell();
         watchOfficeChanges();
     }
