@@ -15016,3 +15016,46 @@ with the flag off, it stays exactly where it was with its inline style untouched
 Cache-bust: `office-ui.js` 288 -> 289, `office-shell.js` and `office-shell.css` -> 289.
 
 SEED_VERSION bumped to `v289-2026-09-12-updateui-hardcoded-id-and-ordo-overlap`.
+
+---
+
+## 2026-09-12 — One lane, three names for the same choice: Sapra rendered dark
+
+Josh reported Sapra — a MORNING office — rendering dark under the shell. A console dump on that
+screen gave it away by omission again: `hour` was absent from the output, meaning **no checked
+`esy-hour-override` radio existed at all**, while an earlier dump taken on a different screen had
+shown exactly that radio checked.
+
+**The East Syriac lane names the same choice three ways**: `esy-hour-override`, `esy-time`, and the
+shared navigator's own radio. The resolver was keyed on one of them. When the screen presented a
+different one, the lookup missed — and since the clock fallback had been deliberately removed during
+the demolition, a miss resolves to NIGHT. So a lookup failure did not show up as "no theme"; it
+showed up as the WRONG theme, on a morning office, which reads as a bug in the night-office list
+rather than in the lookup.
+
+**The shared navigator builds `name="shared-office-nav-${modeKey}"`** at `js/office-ui.js:2393. A
+dynamically constructed attribute name never appears in a grep of the source, which is why that whole
+family of names was invisible when the lane mapping was first written.
+
+**FIXED:** each lane now carries a CANDIDATE LIST of radio names, tried in order, first checked one
+wins. Coptic: `cop-hour`, `shared-office-nav-coptic`. East Syriac: `esy-hour-override`, `esy-time`,
+`shared-office-nav-eastSyriac`. Horologion: `shared-office-nav-horologion`. Daily Office:
+`office-time`, `shared-office-nav-daily`. **The list is per lane**, so this cannot reintroduce the
+earlier bug in which every lane answered with the BCP office.
+
+**VERIFIED in jsdom across every naming variant the lane can present**, with the Hudra active:
+`esy-time` alone resolves Sapra day and Ramsha night; the shared navigator alone resolves Sapra day;
+`esy-hour-override` alone resolves Sapra day; all three present and agreeing resolves Ramsha night;
+**no hour radio at all** still holds at night, since the office is then genuinely undeterminable; and
+with BCP parked on Compline, the Hudra at Sapra still resolves day — the cross-lane guard intact.
+
+**Also confirmed NOT a bug, from the same report:** the `?shell=v1` screen that appeared stuck on
+"Preparing Ramsha…" had in fact rendered — the dump showed Sapra content in `#office-display`; the
+screenshot caught a transient loading state. And the four `Permissions-Policy` console errors are
+GitHub's forwarding proxy sending ad-feature names Chrome does not recognise, present on every
+`app.github.dev` page; the "message channel closed" error is a browser extension, not page code.
+Neither is app output.
+
+Cache-bust: `office-shell.js` 289 -> 290.
+
+SEED_VERSION bumped to `v290-2026-09-12-lane-hour-candidate-names`.

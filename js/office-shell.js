@@ -108,10 +108,30 @@
      * through, so this reads a DOM signal instead: each lane's settings drawer
      * carries `mode-hidden` when inactive, and exactly one does not.
      */
+    /* Each lane names the SAME choice more than one way, so each carries a
+       CANDIDATE LIST rather than a single name.
+
+       A console dump on the Hudra returned no checked `esy-hour-override` at
+       all, while an earlier dump on a different screen had shown one -- that
+       lane also uses `esy-time` and the shared navigator's own radio. With the
+       clock fallback removed, a lookup miss resolves to night, so Sapra, a
+       MORNING office, rendered dark. The miss was silent because a single name
+       that happens to exist on one screen looks correct until it does not.
+
+       The shared navigator builds name="shared-office-nav-${modeKey}" at
+       js/office-ui.js:2393, which is why that name never appears in a grep of
+       the source and was easy to miss entirely.
+
+       Candidates are tried in order and the first CHECKED one wins. The list is
+       per lane, so this cannot reintroduce the earlier bug where every lane
+       answered with the BCP office. */
     var LANE_PANELS = [
-        ['coptic-settings',      'coptic-agpeya',  'cop-hour'],
-        ['east-syriac-settings', 'east-syriac',    'esy-hour-override'],
-        ['generic-settings',     'horologion',     'shared-office-nav-horologion']
+        ['coptic-settings',      'coptic-agpeya',
+            ['cop-hour', 'shared-office-nav-coptic']],
+        ['east-syriac-settings', 'east-syriac',
+            ['esy-hour-override', 'esy-time', 'shared-office-nav-eastSyriac']],
+        ['generic-settings',     'horologion',
+            ['shared-office-nav-horologion']]
     ];
 
     function currentLane() {
@@ -121,15 +141,17 @@
                 return LANE_PANELS[i];
             }
         }
-        return [null, null, 'office-time'];   /* the Daily Office, the app's own default */
+        return [null, null, ['office-time', 'shared-office-nav-daily']];   /* the Daily Office, the app's own default */
     }
 
     function currentOfficeId() {
         var lane = currentLane();
-        var name = lane[2];
+        var names = lane[2];
 
-        var el = document.querySelector('input[name="' + name + '"]:checked');
-        if (el && el.value) return el.value;
+        for (var i = 0; i < names.length; i++) {
+            var el = document.querySelector('input[name="' + names[i] + '"]:checked');
+            if (el && el.value) return el.value;
+        }
 
         if (lane[1] === 'horologion') {
             /* Horologion may keep its office only in a top-level `let`, which

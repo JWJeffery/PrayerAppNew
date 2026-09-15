@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**EACH LANE HAS SEVERAL NAMES FOR ITS HOUR RADIO 2026-09-12.** East Syriac uses `esy-hour-override`,
+`esy-time` AND `shared-office-nav-eastSyriac` for the same choice; the shared navigator builds its
+name dynamically (`shared-office-nav-${modeKey}`, office-ui.js:2393) so it never appears in a grep.
+Keying on one name made Sapra render dark, because a lookup MISS resolves to night and so shows up as
+a wrong theme rather than no theme. Each lane now carries a candidate list, tried in order. **When
+adding a lane, list every name its navigator can use.**
+
 **`updateUI()` HARDCODED-ID BUG FIXED 2026-09-12** -- outside the flag, affecting the app as shipped.
 It read `getElementById('toggle-dark')?.checked !== false`; that id exists once, in the BCP panel, so
 in every other lane the element was absent and `undefined !== false` forced DARK. Now selects
