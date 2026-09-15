@@ -170,6 +170,88 @@ body.shell-v2.uo-day {
 
 
 /* ---------------------------------------------------------------------------
+   DEMOLITION — the parchment pass does not reach the office screen
+
+   Phase 6 brought forward, for the office screen only, because coexistence was
+   costing more than it saved. The old skin dressed the prayed text in a rounded
+   860px card with its own background, border, inset highlight and 62px drop
+   shadow — inside the page column. That is why the running app still looked
+   like the old page in a new frame, and it is why the theme could never settle:
+   two systems were colouring the same pixels from different state.
+
+   Under `shell-v2` the shell owns the ground, the card and the theme outright.
+   Everything below neutralises a specific rule in css/office.css rather than
+   blanketing, so what is being undone stays legible and Phase 6 can delete the
+   originals by line.
+
+   SPECIFICITY: the rules being undone sit at (0,2,0) to (0,3,1). Each override
+   below is written at least as heavy and this file loads last. Anything new
+   added here must be too, or it will silently lose — that failure has already
+   happened once in this project and cost a full patch to diagnose.
+
+   OFF the office screen nothing changes: the splash, the Book of Needs, the
+   Bible browser and the admin dashboard keep the parchment skin and the old
+   theme behaviour untouched.
+   --------------------------------------------------------------------------- */
+
+/* office.css 1632 + 1648 — the card itself. Nothing but layout survives. */
+body.shell-v2.office-active .office-container,
+body.shell-v2.office-active.dark-mode .office-container {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    color: var(--uo-ink);
+}
+
+/* office.css 1658 + 1665 — the inset rule and the corner ornament. */
+body.shell-v2.office-active .office-container::before,
+body.shell-v2.office-active .office-container::after {
+    display: none;
+    content: none;
+}
+
+/* office.css 1670 — the card's headings return to the shell's own faces. */
+body.shell-v2.office-active .office-container h1,
+body.shell-v2.office-active .office-container h2,
+body.shell-v2.office-active .office-container h3 {
+    font-family: var(--uo-face-title);
+    color: var(--uo-ink);
+}
+
+/* The prayed text is Cormorant at the 25px floor, not the skin's Georgia. */
+body.shell-v2.office-active .office-container,
+body.shell-v2.office-active .office-container p,
+body.shell-v2.office-active .office-container li {
+    font-family: var(--uo-face-prayed);
+    font-size: var(--uo-size-body);
+    line-height: var(--uo-leading-body);
+}
+
+/* Rubrics keep their colour from the shell's tokens, which are contrast-checked
+   against both grounds; the skin's values were not. */
+body.shell-v2.office-active .office-container .rubric,
+body.shell-v2.office-active .office-container .rubric-text {
+    color: var(--uo-rubric);
+}
+
+/* office.css 1611 — #main-content's own padding cleared the old 340px sidebar.
+   The grid handles its own spacing; the sidebar clearance is restored in the
+   sidebar rule below so the drawer still has room while it exists. */
+body.shell-v2.office-active #main-content.app-primary-canvas {
+    padding: 0 0 0 340px;
+}
+
+body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
+    padding-left: 0;
+}
+
+
+/* ---------------------------------------------------------------------------
    ONE THEME CONTROL, NOT TWO
 
    The legacy sidebar Dark Mode checkbox is hidden while the flag is on. The

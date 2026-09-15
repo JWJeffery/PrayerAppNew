@@ -14768,3 +14768,64 @@ number deliberately; the CSS param had been left behind at 279 across four JS-on
 would have served a stale stylesheet to anyone with it cached.
 
 SEED_VERSION bumped to `v284-2026-09-12-lane-switch-and-css-hide`.
+
+---
+
+## 2026-09-12 — Demolition: the shell owns the office screen. Phase 6 brought forward for the skin.
+
+**Josh's call, and the right one.** Six consecutive patches went into making an office-keyed Auto
+survive alongside the old skin, and the seventh symptom — the Midnight Office rendering bright, the
+SPLASH rendering dark — made the pattern plain. Every one of those fixes was correct. Every one sat
+downstream of the next thing that also owned the theme. **Two systems owning one piece of global
+state cannot be reconciled by synchronising them harder**, and the plan's own Phase 1/2 premise —
+build beside the old shell, touch nothing — was sound for layout and wrong for theme. Layout could be
+scoped under `body.shell-v2` and the old skin never contested it. Theme is global state the old skin
+actively rewrites on every render.
+
+This should have been said after the second round rather than the sixth.
+
+**What was NOT done, and why.** The new shell cannot replace the old one outright yet: every word on
+the page still comes from the legacy `innerHTML` render path, and replacing that is the envelope
+emitter, per lane, four times. Deleting the renderer now would leave nothing to draw an office with.
+The SKIN and the THEME PATH are a different matter — neither is load-bearing for rendering text, and
+both are what the last six patches were fighting. So Phase 6 is brought forward for those two only,
+scoped to the office screen.
+
+**1. The shell no longer participates in the old theme system.** `applyTheme()` sets exactly one
+class, `uo-day`, and calls nothing. Removed: the `applyDarkMode` wrapper and its guard, the
+`MutationObserver` that re-hid rebuilt checkboxes, and the clock fallback. The old skin may set
+`body.dark-mode` whenever it likes — under `shell-v2` none of its rules reach the office screen any
+more, so it has nothing left to colour. **Off the office screen nothing changes at all**: the splash,
+the Book of Needs, the Bible browser and the admin dashboard keep the parchment skin and the old
+theme behaviour. That alone fixes the dark splash, which was the guard forcing the shell's theme onto
+a screen that is not the shell and has no office to key on.
+
+**Auto no longer falls back to the clock.** Auto is keyed to the office; where no office can be
+determined there is no office being prayed, so there is nothing to answer and it holds at night.
+Borrowing the old shell's clock rule is part of what made a morning office render dark.
+
+**2. The parchment pass no longer dresses the prayed text.** The old skin wrapped it in a rounded
+860px card with its own gradient background, border, inset highlight and a 62px drop shadow —
+*inside* the page column. That is why the running app still looked like the old page in a new frame.
+Each override undoes a specific rule in `css/office.css`, cited by line number, rather than
+blanketing: the card (1632, 1648), its inset rule and corner ornament (1658, 1665), its heading faces
+(1670), and `#main-content`'s padding (1611), with the 340px sidebar clearance deliberately retained
+because that drawer lives until Phase 4. Phase 6 can now delete the originals by line.
+
+**Specificity computed, not assumed.** The rules being undone sit at (0,2,1) and (0,3,1); every
+override is written at (0,3,1) or heavier and this file loads last. A note in the file states the
+requirement, because losing that contest silently has already cost one full patch in this project.
+
+**VERIFIED in jsdom:** Daily Office/Compline night, Agpeya/Midnight Office night, Hudra/Sapra day,
+Agpeya/Morning Office day, and back — with each lane switch made by moving `mode-hidden` alone, no
+click and no hour change. **Zero calls into `applyDarkMode` or `_defaultDarkModeForCurrentTime`
+across the whole run**, asserted by counting; `body.dark-mode` is left untouched for the screens that
+still want it. Explicit Light still overrides a night office without touching the legacy path.
+
+**NOT VERIFIED, and this is the patch where it matters most:** the rendered result. Removing a card's
+background, padding and shadow changes every line of spacing on the office page. The 25px floor now
+applies to text that was previously set at the skin's sizes. This needs Josh in a browser.
+
+Cache-bust: both files 284 -> 285.
+
+SEED_VERSION bumped to `v285-2026-09-12-demolition-shell-owns-the-office-screen`.

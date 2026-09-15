@@ -148,15 +148,13 @@
 
 
 
+    /* No clock fallback. Auto is keyed to the OFFICE; when no office can be
+       determined there is no office being prayed, so there is nothing for Auto
+       to answer and it holds at night rather than borrowing the old shell's
+       clock rule. Mixing the two is what made a morning office render dark. */
     function autoIsDark() {
         var office = currentOfficeId();
-        if (office) return !!NIGHT_OFFICES[office];
-        /* No office determinable — fall back to the app's existing clock rule
-           rather than guessing. Disclosed, not silent. */
-        if (typeof window._defaultDarkModeForCurrentTime === 'function') {
-            return !!window._defaultDarkModeForCurrentTime();
-        }
-        return true;
+        return office ? !!NIGHT_OFFICES[office] : true;
     }
 
     function readTheme() {
@@ -175,96 +173,32 @@
         } catch (e) { /* not fatal */ }
     }
 
-    /* ONE CONTROL, NOT TWO. The legacy sidebar checkbox is hidden under the
-     * flag rather than synchronised with the three-state control: it is a
-     * two-state control with no Auto, so interacting with it could only ever
-     * move a user OFF Auto permanently. The three-state control IS the dark
-     * toggle governance requires on every screen, so hiding the duplicate
-     * satisfies that rule rather than breaking it. Done from JS because the app
-     * rebuilds its sidebars with innerHTML, which discards a one-time style.
-     * Phase 4 deletes these sidebars and this goes with them. */
-    function hideLegacyToggles() {
-        document.querySelectorAll('input[type="checkbox"][data-app-dark-toggle]')
-            .forEach(function (box) {
-                var row = box.closest ? box.closest('label') : null;
-                (row || box).style.display = 'none';
-            });
-    }
-
-    function resolvedIsDark() {
-        var mode = readTheme();
-        return (mode === 'dark') || (mode !== 'light' && autoIsDark());
-    }
-
-    /**
-     * THE SHELL'S THEME IS AUTHORITATIVE WHILE THE FLAG IS ON.
-     *
-     * The Agpeya and the Hudra both rendered their MORNING offices dark. The
-     * cause was not the resolver: it was that the app sets the theme itself,
-     * after the shell has already set it, from at least two places —
-     * `applyDarkMode(_defaultDarkModeForCurrentTime())` once the async kernel
-     * load finishes (which lands after DOMContentLoaded, so after buildShell),
-     * and `updateUI()` with no argument, which falls back to
-     * `getElementById('toggle-dark')?.checked !== false`. That id exists ONCE
-     * in index.html, in the BCP settings panel, so every other lane reads a
-     * checkbox belonging to a different tradition — and `undefined !== false`
-     * is true, so a missing element resolves to DARK. That is the same
-     * hardcoded-id failure mode the comment inside applyDarkMode() was written
-     * to fix, still live one function away, and it affects the unflagged app
-     * too.
-     *
-     * Rather than race those callers, every path funnels through
-     * applyDarkMode(). Wrapping it once means any current or future caller is
-     * corrected rather than fought. When the flag is off the wrapper is a
-     * pass-through and the app behaves exactly as before.
-     */
-    var nativeApplyDarkMode = null;
-    var applyingFromShell = false;
-
-    function installDarkModeGuard() {
-        if (typeof window.applyDarkMode !== 'function' || nativeApplyDarkMode) return;
-        nativeApplyDarkMode = window.applyDarkMode;
-        window.applyDarkMode = function (isDark) {
-            if (shellOn() && !applyingFromShell) {
-                isDark = resolvedIsDark();
-            }
-            var out = nativeApplyDarkMode.call(this, isDark);
-            if (shellOn()) {
-                document.body.classList.toggle('uo-day', !isDark);
-                hideLegacyToggles();
-            }
-            return out;
-        };
-    }
-
     /**
      * Applies the resolved theme.
      *
-     * WHY PERSISTING light/dark IS SAFE HERE, despite the comment in
-     * office-ui.js saying the theme is deliberately not persisted: that comment
-     * records a real bug — a TWO-state sticky toggle meant "always opens dark
-     * regardless of the time", with no way back. Auto as an explicit third
-     * state IS the missing way back, and it is the default. The three-state
-     * control completes that fix rather than reversing it. Do not "restore"
-     * non-persistence without removing Auto first.
+     * THE SHELL OWNS THE THEME ALONE. It sets one class, `uo-day`, and talks to
+     * nothing else.
+     *
+     * It used to call `applyDarkMode()` and wrap it, to keep the old skin's
+     * `body.dark-mode` in step. That produced six patches in a row: the app
+     * re-set the theme after the shell did, from an async kernel load and from
+     * `updateUI()`; the legacy checkbox was rebuilt by innerHTML on every
+     * render; the guard then forced the shell's theme onto screens that are not
+     * the shell, which is why the SPLASH went dark. Two systems owning one
+     * piece of global state cannot be reconciled by synchronising them harder.
+     *
+     * So the shell no longer participates. The old skin may set
+     * `body.dark-mode` whenever it likes; under `shell-v2` none of its rules
+     * reach the office screen any more (see the neutralisation block in
+     * css/office-shell.css), so it has nothing left to colour. Off the office
+     * screen — the splash, the Book of Needs, the Bible browser — the old
+     * behaviour is untouched and the shell keeps its hands off.
      */
     function applyTheme(mode) {
         if (!shellOn()) return;
         var isDark = (mode === 'dark') || (mode !== 'light' && autoIsDark());
 
         document.body.classList.toggle('uo-day', !isDark);
-
-        /* Keep the old shell's own classes and every [data-app-dark-toggle]
-           checkbox in step, so the two systems never disagree about the theme
-           while both exist. applyDarkMode() is the app's single source of truth
-           for that and is called rather than reimplemented. */
-        if (typeof window.applyDarkMode === 'function') {
-            applyingFromShell = true;
-            try { window.applyDarkMode(isDark); }
-            finally { applyingFromShell = false; }
-        }
-
-        hideLegacyToggles();
 
         var group = document.querySelector('.uo-theme-control');
         if (group) {
@@ -443,23 +377,6 @@
         }, true);
     }
 
-    /* The Coptic and East Syriac sidebars are built after DOMContentLoaded, so
-       a hide that runs only at build time or on office change misses them
-       entirely — `toggle-dark-coptic` was still visible with the attribute
-       present, which is what gave this away. Watch for them instead. */
-    function watchForLegacyToggles() {
-        if (typeof window.MutationObserver !== 'function') return;
-        var pending = false;
-        new window.MutationObserver(function () {
-            if (pending) return;
-            pending = true;
-            window.setTimeout(function () {
-                pending = false;
-                if (shellOn()) hideLegacyToggles();
-            }, 0);
-        }).observe(document.body, { childList: true, subtree: true });
-    }
-
     /**
      * Re-resolve when the LANE changes, not only when the office does.
      *
@@ -492,8 +409,6 @@
 
     function init() {
         if (!shellOn()) return;
-        installDarkModeGuard();
-        watchForLegacyToggles();
         watchLaneChanges();
         buildShell();
         watchOfficeChanges();

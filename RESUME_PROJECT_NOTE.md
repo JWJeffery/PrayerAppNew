@@ -31,6 +31,17 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**DEMOLITION 2026-09-12: THE SHELL OWNS THE OFFICE SCREEN.** Phase 6 brought forward for the skin and
+the theme path only, after six patches trying to keep an office-keyed Auto alive beside the old skin.
+`applyTheme()` now sets ONE class (`uo-day`) and calls nothing -- no `applyDarkMode` wrapper, no
+clock fallback, no observers syncing two systems. The parchment card no longer dresses the prayed
+text: overrides in `css/office-shell.css` undo `css/office.css` 1611/1632/1648/1658/1665/1670 by line,
+so Phase 6 can delete the originals. **Off the office screen NOTHING changed** -- splash, Book of
+Needs, Bible browser and admin keep the old skin and old theme behaviour, which is what fixed the dark
+splash. **The render path is still legacy `innerHTML`; that is Phase 3, per lane.** Lesson: layout
+could coexist with the old skin, theme could not -- two systems owning one piece of global state
+cannot be reconciled by synchronising them harder.
+
 **LANE SWITCHES ARE OBSERVED, NOT INFERRED FROM CLICKS 2026-09-12.** The drawers' `mode-hidden`
 classes change asynchronously, later than any `setTimeout(0)` after a click, so a click-driven
 re-resolve reads the lane the user just LEFT. A MutationObserver on the three drawers' `class`
