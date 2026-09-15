@@ -80,10 +80,27 @@
         return ROLE_BY_LABEL[key] || 'other';
     }
 
+    /* Plain string replacement, not a throwaway <textarea> per label.
+       The first version created and discarded a DOM node for every block on
+       every render — measurable waste in the one place this file runs, and
+       pointless: the renderer emits a known, fixed set of entities. Anything
+       outside this set is left exactly as it is rather than guessed at, so an
+       unrecognised entity survives verbatim into the rail instead of being
+       mangled. */
+    var ENTITIES = {
+        '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"',
+        '&#39;': "'", '&apos;': "'", '&nbsp;': ' ',
+        '&rsquo;': '\u2019', '&lsquo;': '\u2018',
+        '&rdquo;': '\u201d', '&ldquo;': '\u201c',
+        '&mdash;': '\u2014', '&ndash;': '\u2013', '&hellip;': '\u2026'
+    };
+
     function decode(s) {
-        var el = document.createElement('textarea');
-        el.innerHTML = s;
-        return el.value.trim();
+        return String(s).replace(/&[a-z]+;|&#\d+;/gi, function (m) {
+            return Object.prototype.hasOwnProperty.call(ENTITIES, m.toLowerCase())
+                ? ENTITIES[m.toLowerCase()]
+                : m;
+        }).trim();
     }
 
     /**

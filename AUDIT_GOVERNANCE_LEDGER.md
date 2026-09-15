@@ -14934,3 +14934,40 @@ Cache-bust: `office-ui.js` 270 -> 287 (it changed, and its param had been untouc
 `office-shell.css` 285 -> 287, `office-shell.js` 286 -> 287, new `anglican-envelope.js` at 287.
 
 SEED_VERSION bumped to `v287-2026-09-12-anglican-envelope-first-slice`.
+
+---
+
+## 2026-09-12 — Envelope tidy: two wasteful things in the first slice, and a confirmed rail
+
+**The rail is correct in the browser, per office, against the LIVE renderer** — which was the one
+thing the first slice could not verify, having been tested against a reconstructed sample. Noonday
+renders The Invitatory / The Psalms / A Reading / Kyrie / The Lord's Prayer / Lord, Hear Our Prayer /
+The Collect / Closing (Noonday). Compline renders its own fifteen, including Antiphon and Nunc
+Dimittis. Morning Prayer renders Venite, Benedictus es Domine, The Epistle, A Song to the Lamb, The
+Apostles' Creed. All are the app's own labels verbatim; none came from the sample. The ordo day-line
+is landing too.
+
+**Two things fixed, both introduced by the first slice and both waste rather than defects:**
+
+1. **A throwaway `<textarea>` per label on every render.** The decoder created and discarded a DOM
+   node for each block to unescape entities. Replaced with plain string replacement over the fixed
+   set the renderer actually emits. **An unrecognised entity is now left verbatim rather than
+   guessed at**, so it survives into the rail unchanged instead of being mangled — verified with
+   `&frac12;`, which passes through untouched while `&rsquo;`, `&#39;`, `&amp;` and `&ndash;` decode
+   correctly. DOM node creation during emit asserted at **zero**.
+2. **The emit ran under `?shell=v1`.** Nothing outside the new shell consumes the envelope, so the
+   legacy path was paying for a feature it cannot use. Now gated on `body.shell-v2`.
+
+**ON THE SLOW LOADS, which are NOT from this work.** Josh reported "Fetching readings" crawling. A
+`performance` dump showed **every** script at 4.09–4.27s, including `bible-browser.js`,
+`explanations.js` and three other files untouched by any patch in this session, all finishing within
+200ms of each other. That is a server serving sequentially, not slow files — `office-shell.js` is
+20KB. Cause is `scripts/dev-spa-server.mjs` (single-threaded, no-cache headers on every response)
+plus the Codespaces forwarding proxy. **Josh confirmed the slowness predates today.** Logged as its
+own piece of work, not chased here; an attempt to A/B it against `python3 -m http.server` was
+abandoned when the forwarding layer refused to expose the second port — that is GitHub's
+infrastructure, not the app.
+
+Cache-bust: `office-ui.js` and `anglican-envelope.js` 287 -> 288.
+
+SEED_VERSION bumped to `v288-2026-09-12-envelope-tidy`.

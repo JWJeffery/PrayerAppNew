@@ -31,6 +31,12 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**RAIL CONFIRMED IN THE BROWSER 2026-09-12** against the live renderer, per office: Noonday, Compline
+and Morning Prayer each show their own order in their own labels. **SLOW LOADS ARE NOT FROM THIS WORK
+AND PREDATE IT (Josh confirmed):** every script lands at ~4.1-4.3s including files untouched all
+session, all within 200ms of each other -- `scripts/dev-spa-server.mjs` serves sequentially with
+no-cache headers, plus the Codespaces proxy. Its own piece of work when it blocks something.
+
 **PHASE 3 FIRST SLICE SHIPPED 2026-09-12: the Anglican lane emits an envelope.**
 `js/anglican-envelope.js` builds a §4-shaped envelope from the renderer's own emitted markup;
 `renderBcpOffice()` gained ONE call of sixteen lines before its existing `innerHTML`, in a try/catch.

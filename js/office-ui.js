@@ -4690,7 +4690,11 @@ async function renderBcpOffice() {
     // markup, for the shell's rail and ordo day-line. This does NOT affect what
     // is rendered. See js/anglican-envelope.js for why the envelope is emitted
     // beside the HTML rather than rendered from, and what that costs.
-    if (window.AnglicanEnvelope) {
+    // Gated on the flag: nothing outside the new shell consumes the envelope, so
+    // under ?shell=v1 this should not run at all. It was ungated on first
+    // write — harmless but wasteful, and it made the legacy path pay for a
+    // feature it cannot use.
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
         try {
             window.AnglicanEnvelope.publish(
                 window.AnglicanEnvelope.emit(officeHtml, {
