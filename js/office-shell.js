@@ -200,6 +200,19 @@
 
         document.body.classList.toggle('uo-day', !isDark);
 
+        /* The shell drives the old skin's classes too — one-way, by class
+           only, never by calling its theme function.
+           
+           Leaving them free to disagree is what produced pale-on-pale text: a
+           dump showed `body` carrying BOTH `dark-mode` and `uo-day`, so the
+           shell painted a light ground while office.css painted the descendants
+           for a dark one. The shell owns the office screen, and that has to
+           include the classes the remaining legacy rules key on. This is a
+           class write, not a call into applyDarkMode(), so it does not
+           reopen the two-systems fight that the demolition closed. */
+        document.body.classList.toggle('dark-mode', isDark);
+        document.body.classList.toggle('light-mode', !isDark);
+
         var group = document.querySelector('.uo-theme-control');
         if (group) {
             group.querySelectorAll('button[data-uo-theme]').forEach(function (b) {
@@ -390,6 +403,36 @@
      * Watching the class attribute on the three drawers catches the lane change
      * whenever it actually lands, however long the render takes.
      */
+    /**
+     * Re-resolve when the office RENDER lands.
+     *
+     * The change and click listeners above both fire before the app has
+     * finished re-rendering: `renderOffice()` is async, so at setTimeout(0) the
+     * navigator's checked state has not settled, and nothing ran again once it
+     * did. A dump on a Compline screen showed the resolver answering correctly
+     * when called by hand — `refreshUniversalOfficeShellTheme()` returned night
+     * immediately — while `uo-day` was still set from a stale earlier run. The
+     * resolver was never wrong; it was simply never re-run at the right moment.
+     *
+     * `#office-display` is rewritten on every office, date and lane change, so
+     * its subtree mutating IS the render landing. Debounced to one call per
+     * frame: a render fires many mutations.
+     */
+    function watchRenderChanges() {
+        if (typeof window.MutationObserver !== 'function') return;
+        var target = document.getElementById('office-display');
+        if (!target) return;
+        var pending = false;
+        new window.MutationObserver(function () {
+            if (pending) return;
+            pending = true;
+            window.setTimeout(function () {
+                pending = false;
+                if (shellOn()) applyTheme(readTheme());
+            }, 0);
+        }).observe(target, { childList: true, subtree: true });
+    }
+
     function watchLaneChanges() {
         if (typeof window.MutationObserver !== 'function') return;
         var pending = false;
@@ -412,6 +455,7 @@
         watchLaneChanges();
         buildShell();
         watchOfficeChanges();
+        watchRenderChanges();
     }
 
     if (document.readyState === 'loading') {

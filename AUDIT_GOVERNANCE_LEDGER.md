@@ -14829,3 +14829,52 @@ applies to text that was previously set at the skin's sizes. This needs Josh in 
 Cache-bust: both files 284 -> 285.
 
 SEED_VERSION bumped to `v285-2026-09-12-demolition-shell-owns-the-office-screen`.
+
+---
+
+## 2026-09-12 — The resolver was never wrong; it was never re-run at the right moment
+
+After the demolition, Compline rendered on a LIGHT ground with pale, barely readable text. A state
+dump settled both halves in one read:
+
+    {"uoDay":true,"body":"dark-mode shell-v2 uo-day office-active","stored":null,
+     "office":"compline-office","panels":["settings-panel:app-mode-drawer app-mode-drawer-daily",...],
+     "ground":"rgb(242,235,223)","ink":"rgb(42,33,24)"}
+
+Everything the resolver needs was correct: daily lane active, `compline-office` selected, nothing
+stored so Auto applies. Yet `uo-day` was set. Calling `refreshUniversalOfficeShellTheme()` by hand
+returned night **immediately**. So the resolver had been right all along and was simply holding a
+stale answer from an earlier run.
+
+**Cause: both listeners fire before the app finishes rendering.** `renderOffice()` is async. The
+`change` handler and the `click` handler's `setTimeout(0)` both run while the navigator still holds
+the PREVIOUS office, and nothing ran again once the new state landed. This is the same shape as the
+lane bug fixed earlier that day — a click-driven re-resolve racing an async render — one level down,
+on the office rather than the lane. **Fixed the same way and at the right signal:** a
+`MutationObserver` on `#office-display`, which is rewritten on every office, date and lane change, so
+its subtree mutating IS the render landing. Debounced to one call per frame.
+
+**Second half: the shell now drives the old skin's classes too.** The dump showed `body` carrying
+BOTH `dark-mode` and `uo-day` — the shell painting a light ground while `css/office.css` painted the
+descendants for a dark one, which is exactly the pale-on-pale text on screen. The demolition stopped
+the shell calling `applyDarkMode()`, correctly, but left the two class systems free to disagree. The
+shell owns the office screen, and that has to include the classes the remaining legacy rules key on.
+`applyTheme()` now toggles `dark-mode` and `light-mode` directly. **This is a class write, not a call
+into the app's theme function**, so it does not reopen the two-systems fight the demolition closed —
+the shell states the theme, the app is no longer asked to agree.
+
+**VERIFIED in jsdom by reproducing the real sequence** rather than a clean one: navigator rebuilt and
+click dispatched while it still reports the OLD office, then the navigator and `#office-display`
+updated a tick later as the async render lands. The theme is stale after the click, correct after the
+render, and correct again switching back. `uo-day` and `dark-mode` are asserted to DISAGREE with each
+other in every state — they are opposites, and the earlier bug was precisely that they agreed.
+Explicit Dark still overrides a morning office with the classes still consistent.
+
+**Third instance of one pattern in this session, now unmistakable:** anything that re-resolves on a
+click or a change event is racing an async render and will read stale state. Re-resolve on the render
+landing. The first two instances cost a patch each; this is written into the resume note as a rule
+rather than a third anecdote.
+
+Cache-bust: `office-shell.js` 285 -> 286. CSS unchanged.
+
+SEED_VERSION bumped to `v286-2026-09-12-resolve-on-render`.

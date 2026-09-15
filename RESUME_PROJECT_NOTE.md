@@ -31,6 +31,13 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**RE-RESOLVE ON THE RENDER, NOT THE CLICK 2026-09-12.** `renderOffice()` is async, so any handler on
+click or change reads the PREVIOUS office. A MutationObserver on `#office-display` (rewritten on every
+office, date and lane change) is the signal that the render landed. Three separate bugs this session
+had this one shape -- **do not add click-driven re-resolution.** Also: `applyTheme()` now toggles
+`dark-mode`/`light-mode` itself, by class, never by calling `applyDarkMode()`. Leaving them free to
+disagree put BOTH `dark-mode` and `uo-day` on `body` and produced pale-on-pale text.
+
 **DEMOLITION 2026-09-12: THE SHELL OWNS THE OFFICE SCREEN.** Phase 6 brought forward for the skin and
 the theme path only, after six patches trying to keep an office-keyed Auto alive beside the old skin.
 `applyTheme()` now sets ONE class (`uo-day`) and calls nothing -- no `applyDarkMode` wrapper, no
