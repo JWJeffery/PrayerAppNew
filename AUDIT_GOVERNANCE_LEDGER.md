@@ -15059,3 +15059,53 @@ Neither is app output.
 Cache-bust: `office-shell.js` 289 -> 290.
 
 SEED_VERSION bumped to `v290-2026-09-12-lane-hour-candidate-names`.
+
+---
+
+## 2026-09-16 — "Back to Modes" never moved: an inline style beat the override, and the test could not see it
+
+**The theme resolver is CORRECT in all four lanes, confirmed in the browser.** Ramsha dark, Sapra
+light, the Coptic Eleventh Hour (Vespers) dark, the Third Hour light. The theme work that consumed
+most of the previous session is settled.
+
+**A regression from the immediately preceding patch, and the comment on that patch names the reason
+it failed.** The "Back to Modes" button carries `style="position:fixed; top:12px; right:16px"` inline
+in `index.html`. The override was written as a stylesheet rule, and **an inline declaration beats any
+author rule without `!important`** — a fact written into that very comment while the rule was being
+written without one. The button therefore never left the corner; it sat on top of LIGHT and DARK,
+leaving only AUTO visible.
+
+**The test passed and should not have.** It asserted the node's parentage — moved into `.uo-ordo`,
+onclick intact, no longer a child of `#main-content` — all true, and all irrelevant to whether the
+button had actually moved on screen. **Position is a computed-style question and the test never read
+computed style.** A DOM assertion cannot see a layout failure. This is the third distinct instance
+this session of a test passing on the wrong property: jsdom could not see the cascade, could not see
+an async render, and now could not see a computed position unless explicitly asked.
+
+**FIXED by clearing the inline style ON THE ELEMENT**, where nothing can outrank it, rather than
+fighting it from the stylesheet. The CSS rule is left in place as a harmless belt for any future
+non-inline variant. **The new test reads `getComputedStyle(btn).position` and asserts `static`** —
+the assertion whose absence let this ship — and confirms all three theme buttons are present with the
+button ordered after them in the row.
+
+**Other defects visible in the same screenshots, recorded but NOT fixed here**, so they are not lost
+and not silently bundled into an unrelated patch:
+
+1. **The settings drawer clips at the viewport bottom.** "Office Mode / Cathedral (Simplified) /
+   Monastic (Full)" is cut mid-row with no way to scroll to it. The drawer needs its own scroll
+   container. Affects the Coptic and East Syriac lanes most, which have the longest drawers.
+2. **The page column's measure is far too wide** — roughly 800px of running text at the 25px floor,
+   against a design that assumes a reading column. Prayed text at that measure is hard to track line
+   to line. Needs a max-width on the text, not on the column.
+3. **The rail still shows the placeholder in the Coptic, East Syriac and Byzantine lanes.** Expected
+   and correct — those lanes have no envelope emitter yet — but worth stating so it is not mistaken
+   for a fault.
+
+Cache-bust: `office-shell.js` 290 -> 291.
+
+**Patches are now authored as `JW Jeffery <josh@jwjeffery.org>`** at Josh's direction. GitHub refuses
+to sign a commit whose author is not a verified identity on the account, which broke `git am` on
+every container rebuild. The ledger continues to record which commits were generated in session, so
+nothing is lost by the authorship line no longer carrying it.
+
+SEED_VERSION bumped to `v291-2026-09-16-back-button-inline-style`.

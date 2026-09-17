@@ -365,7 +365,22 @@
             auditBlock.style.margin = '0';
         }
 
-        if (backBtn) ordo.appendChild(backBtn);
+        if (backBtn) {
+            /* The inline style must be cleared ON THE ELEMENT. The previous
+               attempt moved the node and overrode `position` from the
+               stylesheet — but the button carries style="position:fixed;
+               top:12px; right:16px" inline, and an inline declaration beats any
+               author rule without !important. So it stayed pinned in the corner,
+               on top of LIGHT and DARK, leaving only AUTO visible. The jsdom
+               test asserted parentage and passed; it never read computed style,
+               which is exactly the gap that let this ship. */
+            backBtn.style.position = 'static';
+            backBtn.style.top = 'auto';
+            backBtn.style.right = 'auto';
+            backBtn.style.margin = '0';
+            backBtn.style.flex = '0 0 auto';
+            ordo.appendChild(backBtn);
+        }
 
         main.insertBefore(ordo, main.firstChild);
         main.appendChild(rail);

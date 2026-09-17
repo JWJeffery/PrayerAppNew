@@ -31,6 +31,23 @@ work on four items off the resulting list: the sub-tradition UI picker, the wron
 top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
 2026-09-12 ledger entries for each.
 
+**THEME CONFIRMED CORRECT IN ALL FOUR LANES 2026-09-16** (Ramsha dark, Sapra light, Eleventh Hour
+dark, Third Hour light). That work is done.
+
+**INLINE STYLES NEED CLEARING ON THE ELEMENT 2026-09-16.** "Back to Modes" carries
+`style="position:fixed"` inline; a stylesheet override without `!important` cannot beat it, so the
+button stayed in the corner covering LIGHT and DARK. **The test asserted DOM parentage and passed --
+position is a COMPUTED-STYLE question.** Third instance this session of a test passing on the wrong
+property. Assert `getComputedStyle` for anything about layout.
+
+**STILL OPEN, seen in the same screenshots:** (1) the settings drawer clips at the viewport bottom
+with no scroll -- "Monastic (Full)" unreachable; (2) the page column measure is ~800px, far too wide
+for prayed text at the 25px floor -- needs a max-width on the text; (3) the rail placeholder remains
+in the three lanes without emitters, which is correct.
+
+**PATCHES ARE NOW AUTHORED AS `JW Jeffery <josh@jwjeffery.org>`** so GitHub will sign them; authoring
+as Claude broke `git am` on every container rebuild.
+
 **EACH LANE HAS SEVERAL NAMES FOR ITS HOUR RADIO 2026-09-12.** East Syriac uses `esy-hour-override`,
 `esy-time` AND `shared-office-nav-eastSyriac` for the same choice; the shared navigator builds its
 name dynamically (`shared-office-nav-${modeKey}`, office-ui.js:2393) so it never appears in a grep.
