@@ -17,10 +17,14 @@
  *   3. Provides the three-state Auto / Light / Dark control.
  *
  * WHAT THIS DELIBERATELY DOES NOT DO
- *   The rail carries placeholders and the margin is empty. Both need the
- *   resolved-office envelope, which no lane emits yet — that is Phase 3. Fake
- *   rail items built by scraping the rendered DOM would be exactly the kind of
- *   invented completeness this design exists to prevent.
+ *   The rail and margin carry placeholders/stay empty for any lane that emits
+ *   no resolved-office envelope — three of four traditions, as of 2026-09-16.
+ *   For the one lane that does (Anglican), the rail draws its blocks and the
+ *   margin draws overlay/diagnostic cards from `overlays[]`/`diagnostics[]`
+ *   (added 2026-09-16 — see js/anglican-envelope.js). Fake rail items or
+ *   margin cards built by scraping the rendered DOM would be exactly the kind
+ *   of invented completeness this design exists to prevent; everything drawn
+ *   here comes from the envelope and nothing else.
  */
 
 (function () {
@@ -512,11 +516,83 @@
         day.textContent = env.context.calendarSummary || '';
     }
 
+    /* Contract §11: each diagnostic code carries its own wording, never one
+       generic "gap" message. */
+    var DIAGNOSTIC_WORDING = {
+        'not-yet-mapped': 'No proper is appointed for this day in the corpus. Nothing has been substituted.',
+        'source-blocked': 'This exists in scope but cannot yet be shown.',
+        'coverage-gap':   'A known gap, stated rather than hidden.'
+    };
+
+    function marginCard(kind, headText, bodyText) {
+        var card = el('div', 'uo-margin-card is-' + kind);
+        card.appendChild(el('div', 'uo-margin-card-head', headText));
+        card.appendChild(el('div', 'uo-margin-card-body', bodyText));
+        return card;
+    }
+
+    /**
+     * Draw the margin from the resolved-office envelope.
+     *
+     * Contract §9: overlays are borrowed, anchored, attributed, and never
+     * relabelled — a red left-bar "Overlay · borrowed" card naming the real
+     * tradition, per handoff §2. Contract §11: diagnostics get a gold
+     * left-bar card in each code's own wording.
+     *
+     * Handoff §1: at most two cards visible at once; the rest collapse to a
+     * quiet line that expands on click. Collapsed cards stay IN THE DOM
+     * (hidden by class, not omitted) so print — which does not run this
+     * click handler — still carries full attribution; see the `@media
+     * print` override in css/office-shell.css and the hazard note in
+     * documentation/UI_REDESIGN_HANDOFF.md §10.4 this exists to satisfy.
+     *
+     * An envelope with nothing to say leaves the margin EMPTY. Handoff §1:
+     * "A margin that needs a caption has failed" — silence is drawn, not
+     * captioned.
+     */
+    function renderMarginFromEnvelope(env) {
+        var margin = document.querySelector('.uo-margin');
+        if (!margin || !env) return;
+
+        var cards = [];
+        (Array.isArray(env.overlays) ? env.overlays : []).forEach(function (o) {
+            var body = (o.label || 'Devotion') +
+                (o.source ? ' \u2014 ' + o.source : ' \u2014 provenance not yet recorded in the corpus') +
+                (o.anchor ? '. Anchored ' + o.anchor + '.' : '.');
+            cards.push(marginCard('overlay', 'Overlay \u00b7 borrowed', body));
+        });
+        (Array.isArray(env.diagnostics) ? env.diagnostics : []).forEach(function (d) {
+            var wording = DIAGNOSTIC_WORDING[d.code] || d.message || 'A gap, stated rather than hidden.';
+            cards.push(marginCard('diagnostic', 'Diagnostic', d.block ? (d.block + ' \u2014 ' + wording) : wording));
+        });
+
+        margin.textContent = '';
+        if (!cards.length) return;   /* correct silence — no self-caption */
+
+        var visible = cards.slice(0, 2);
+        var rest = cards.slice(2);
+        visible.forEach(function (c) { margin.appendChild(c); });
+
+        if (rest.length) {
+            rest.forEach(function (c) { c.classList.add('uo-margin-card-collapsed'); });
+            var more = el('button', 'uo-margin-more',
+                rest.length + (rest.length === 1 ? ' more note' : ' more notes'));
+            more.type = 'button';
+            more.addEventListener('click', function () {
+                rest.forEach(function (c) { c.classList.remove('uo-margin-card-collapsed'); });
+                more.remove();
+            });
+            margin.appendChild(more);
+            rest.forEach(function (c) { margin.appendChild(c); });
+        }
+    }
+
     function watchEnvelope() {
         document.addEventListener('universal-office-envelope', function (ev) {
             if (!shellOn()) return;
             renderRailFromEnvelope(ev.detail);
             renderOrdoFromEnvelope(ev.detail);
+            renderMarginFromEnvelope(ev.detail);
         });
     }
 

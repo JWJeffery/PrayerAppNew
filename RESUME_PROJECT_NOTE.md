@@ -10,9 +10,14 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-16.** HEAD `0adb593`, SEED_VERSION `v292-2026-09-16-reading-measure`. The
-2026-09-12 sessions closed the sanctoral work described from section 1 down; everything from
-2026-09-12 onward has been the **UI redesign**, which is where the live work now is.
+**State as of 2026-09-16, before this session's patch is applied.** Fresh-clone HEAD was `f571b09`
+(the prior session's resume-note rewrite), SEED_VERSION `v293-2026-09-16-resume-note-rewritten` — both
+already stale relative to what this note said at the top when this session started, which is exactly
+the warning two lines up. This session's own patch is not yet applied; once Josh runs it, HEAD and
+SEED_VERSION move again (`v294-2026-09-16-overlay-diagnostic-margin-cards`) — check `git log` and
+`audit-ledger.html` fresh rather than trusting either number here. The 2026-09-12 sessions closed the
+sanctoral work described from section 1 down; everything from 2026-09-12 onward has been the **UI
+redesign**, which is where the live work now is.
 
 ---
 
@@ -33,20 +38,32 @@ text column into the margin. Six phases. **Phase 1 and 2 are done; Phase 3 is ha
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
-**PHASE 3 IS THE LIVE TASK AND IT IS HALF FINISHED.** `js/anglican-envelope.js` emits a §4-shaped
-envelope and the shell draws the rail and the ordo day-line from it — **confirmed in the browser
-against the live renderer**, per office: Noonday, Compline and Morning Prayer each show their own
-order in their own words. But **the envelope is not yet the source of the page.** It is built
-*alongside* the HTML in the same pass, so the two can drift, and `overlays` and `diagnostics` ship
-EMPTY because a borrowed devotion is not currently distinguishable from a native block in the markup.
+**PHASE 3 IS THE LIVE TASK AND IT IS STILL HALF FINISHED — THE REFACTOR ITSELF HAS NOT STARTED.**
+`js/anglican-envelope.js` emits a §4-shaped envelope and the shell draws the rail and the ordo
+day-line from it — **confirmed in the browser against the live renderer**, per office: Noonday,
+Compline and Morning Prayer each show their own order in their own words. **The envelope is still not
+the source of the page.** It is still built *alongside* the HTML in the same pass, so the two can
+still drift on anything other than what's described next — that has not changed this session.
 
-**Finishing Phase 3 means refactoring `renderBcpOffice()` so the page renders FROM the envelope.**
-That function is **890 lines with 90 template literals** and decides what the office contains while
-writing its markup in the same breath — there is no seam between the two, and creating that seam is
-the work. It is the largest single change in the plan. **Do not start it at the end of a long
-session.** The emitter has now proven it can read the structure correctly, which makes the refactor a
-much smaller bet than it looked before. Until it lands, **the margin stays empty** — that is expected,
-not a fault.
+**This session's patch (not yet applied — read `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-16 entry for
+the full account): `overlays[]` and `diagnostics[]` are no longer unconditionally empty.**
+`renderBcpOffice()` now tells the emitter, at the exact moment it emits one of the eight
+ecumenical/cross-tradition devotions, what it just emitted and where — real structural knowledge from
+the same pass, not a guess made downstream from a label string. The emitter uses that to split
+overlay blocks out of `blocks[]` correctly (contract §9) and to turn a known placeholder string
+("Text not found", "No collect appointed") into a `not-yet-mapped` diagnostic. The margin — empty
+since Phase 2 — now draws real cards from both. **Two Node/jsdom harnesses pass (14 cases total,
+listed in the ledger entry); NONE OF THIS HAS BEEN SEEN IN A BROWSER YET.** Ask Josh for a screenshot
+under `?shell=v2` with, e.g., the Agpeya Opening toggle on, before trusting it further — this project's
+own standing lesson is that jsdom cannot see everything a browser sees.
+
+**Finishing Phase 3 still means refactoring `renderBcpOffice()` so the page renders FROM the
+envelope — that work has not been touched.** That function is **890 lines with 90 template literals**
+and decides what the office contains while writing its markup in the same breath — there is no seam
+between the two, and creating that seam is still the work. It is still the largest single change in
+the plan. **Do not start it at the end of a long session.** The emitter has now proven it can read the
+structure correctly AND distinguish overlay from native content, which makes the refactor a somewhat
+smaller bet than it looked before — but it is still the whole render path of the largest lane.
 
 ### The demolition — why Phase 6 was partly brought forward
 
@@ -66,8 +83,10 @@ skin and old theme behaviour. That is what fixed the dark splash.
 
 ### Open, in rough priority order
 
-1. **The `renderBcpOffice()` refactor** (above). Fills the margin, puts gutter citations beside the
-   text, removes the envelope/HTML drift.
+1. **The `renderBcpOffice()` refactor** (above). Removes the envelope/HTML drift by making the page
+   render FROM the envelope. Overlay/diagnostic margin cards already work without it (this session's
+   patch — the envelope already carried citation data too, but nothing renders a gutter citation
+   beside the text yet; that's still page-column layout, still blocked on the refactor).
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

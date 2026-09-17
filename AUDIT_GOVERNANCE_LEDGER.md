@@ -15189,3 +15189,68 @@ Only the header and section 0 were replaced.
 Documentation-only change. No data, engine or rendered output touched.
 
 SEED_VERSION bumped to `v293-2026-09-16-resume-note-rewritten`.
+
+---
+
+## 2026-09-16 — Anglican envelope: overlays[] and diagnostics[] populated (Phase 3 increment, not the full refactor)
+
+**What this is not, stated first:** this is not `renderBcpOffice()` rendering FROM the envelope. The
+function still builds `officeHtml` and the envelope in the same pass, independently, exactly as
+before — that refactor (the seam between deciding content and writing markup) remains open and is
+still the largest single change in the plan. Nothing below touches the render path or changes any
+rendered output.
+
+**What it fixes.** `overlays[]` and `diagnostics[]` shipped EMPTY because the emitter had no way to
+tell a borrowed devotion from a native block by scraping the rendered markup alone, and a silently
+substituted placeholder ("Text not found", "No collect appointed") looked identical to real content.
+Both gaps are now closed at the source rather than by inference:
+
+- `renderBcpOffice()` now records, at the exact moment it emits one of the eight ecumenical /
+  cross-tradition devotions (Agpeya Opening, Prayer of the Hours, Prayer Before Reading, the Examen,
+  Kyrie Pantocrator, the Angelus, Trisagion, the Theotokion), what it just emitted and where —
+  `{label, source, anchor}` — and hands that list to `AnglicanEnvelope.emit()` as
+  `context.overlays`. This is real structural knowledge from the pass that already has it, not a
+  label-text guess made downstream.
+- `js/anglican-envelope.js`'s `emit()` moves any block whose label matches a hint out of `blocks[]`
+  and into `overlays[]` with real `source`/`anchor`, per contract §9 — never left in `blocks[]` as if
+  native (§4 rule 3). Where the corpus itself carries no `tradition` field on the component
+  (`ecu-angelus`, `ecu-trisagion` as of this date), `source` is `null` and the shell discloses
+  "provenance not yet recorded in the corpus" rather than a guessed tradition. The one inference made
+  anywhere in this change is the `cop-` id-prefix meaning Coptic Orthodox — the same prefix
+  convention the contract's own §7 creed/doxology amendment already cites as evidence (`cop-creed`,
+  `esy-nicene-creed`), not a new assumption.
+- `emit()` also scans each block's own emitted window for the two known placeholder strings and
+  records a `not-yet-mapped` diagnostic when found — naming a gap the renderer was already showing
+  on screen but never disclosing in the margin, without changing what's shown.
+- `js/office-shell.js` gained `renderMarginFromEnvelope()`, so the margin — empty since Phase 2 —
+  now actually draws cards from `overlays[]`/`diagnostics[]`: red left-bar "Overlay · borrowed" cards
+  per contract §9/handoff §2, gold left-bar diagnostic cards with each code's own contract wording
+  (§11), at most two visible with the rest behind a "N more notes" toggle (handoff §1). Collapsed
+  cards stay in the DOM rather than being omitted, so print still carries full attribution — the
+  `@media print` rule that already anticipated this ("Phase 3 marks those nodes; until they exist...")
+  now has something to act on, and its comment is corrected accordingly.
+- `css/office-shell.css` gained the card styling and the print-collapse override.
+
+**Testing.** No browser was available this session. Two Node harnesses were built and both pass
+clean:
+- A direct-call harness against `AnglicanEnvelope.emit()` (8 cases): native-only baseline unchanged;
+  overlay-hinted label correctly split out with source/anchor; a null-source overlay discloses rather
+  than guesses; a placeholder inside a block becomes a diagnostic; the same check at the LAST block
+  (the off-by-one most likely to be missed on the window-end calculation) is caught; an ordinary block
+  produces neither an overlay nor a false-positive diagnostic; no `__start` bookkeeping leaks into the
+  returned shape; a call with no `context.overlays` at all (old call shape) doesn't throw.
+- A jsdom harness against `office-shell.js`'s real event-driven path (6 cases): empty envelope leaves
+  the margin genuinely empty, no self-caption; a single overlay renders correctly with source and
+  anchor text; a null-source overlay discloses instead of guessing; a diagnostic renders with the
+  exact contract wording; three cards collapse to two-visible-plus-toggle with all three still present
+  in the DOM, and clicking the toggle reveals the third; re-dispatching on a new office clears the
+  previous margin rather than accumulating stale cards.
+
+Per the standing regression-testing convention (`js/saints-resolver.js`'s own harness pattern): this
+is Node simulation before trusting a change to render-adjacent code, not a substitute for Josh's
+screenshot the first time this actually loads under `?shell=v2`. **Not yet verified in a browser.**
+
+Cache-bust: `office-ui.js` 289 → 290, `anglican-envelope.js` 288 → 289, `office-shell.js` 291 → 292,
+`office-shell.css` 292 → 293.
+
+SEED_VERSION bumped to `v294-2026-09-16-overlay-diagnostic-margin-cards`.

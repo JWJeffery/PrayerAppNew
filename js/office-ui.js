@@ -3830,6 +3830,25 @@ window.openTraditionExplanation   = openTraditionExplanation;
 window.closeTraditionExplanation  = closeTraditionExplanation;
 window.setExplanationDepth        = setExplanationDepth;
 
+/**
+ * Real provenance for an ecumenical/cross-tradition component, for the
+ * envelope's overlays[] (contract §9). Never a guess: components/*.json
+ * carries an explicit `tradition` field on most of these; where it is
+ * missing (e.g. `ecu-angelus`, `ecu-trisagion` as of 2026-09-16), this
+ * returns null and the shell discloses "provenance not yet recorded in the
+ * corpus" rather than naming a tradition nobody attested. The one inference
+ * this makes is the `cop-` id prefix meaning Coptic Orthodox — the same
+ * prefix convention UNIVERSAL_OFFICE_CORE_CONTRACT.md §7's own creed/doxology
+ * amendment already cites as evidence (`cop-creed`, `esy-nicene-creed`), not
+ * a new assumption invented here.
+ */
+function overlaySourceLabel(comp) {
+    if (!comp) return null;
+    if (comp.tradition) return comp.tradition;
+    if (typeof comp.id === 'string' && comp.id.indexOf('cop-') === 0) return 'Coptic Orthodox (Agpeya)';
+    return null;
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -4000,14 +4019,26 @@ async function renderBcpOffice() {
     officeHtml += `<h2>${officeTitle}</h2>`;
     officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;
 
+    // Envelope overlay tracking (§9): real structural knowledge recorded at
+    // the exact moment each borrowed/ecumenical devotion is emitted, so
+    // js/anglican-envelope.js never has to guess overlay status from a label
+    // string. See the note there for the full account.
+    const overlayEmissions = [];
+
     // Pre-sequence ecumenical devotions (BCP offices only)
     if (document.getElementById('toggle-agpeya-opening')?.checked) {
         const agpeyaComp = appData.components.find(c => c.id === 'cop-agpeya-opening');
-        if (agpeyaComp) officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaComp.text}</span>`;
+        if (agpeyaComp) {
+            officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaComp.text}</span>`;
+            overlayEmissions.push({ label: 'Agpeya Opening', source: overlaySourceLabel(agpeyaComp), anchor: 'before the office' });
+        }
     }
     if (document.getElementById('toggle-east-syriac-hours')?.checked) {
         const esComp = appData.components.find(c => c.id === 'ecu-east-syriac-hours');
-        if (esComp) officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
+        if (esComp) {
+            officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
+            overlayEmissions.push({ label: 'Prayer of the Hours', source: overlaySourceLabel(esComp), anchor: 'before the office' });
+        }
     }
 
     // Pre-sequence Marian (before position — BCP offices only)
@@ -4019,6 +4050,7 @@ async function renderBcpOffice() {
         if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
             const raw = resolveText(theotokionComp, rite) || theotokionComp.text || '';
             officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
+            overlayEmissions.push({ label: 'Theotokion', source: overlaySourceLabel(theotokionComp), anchor: 'before the office' });
         }
     }
 // ── Bible book pre-fetch (parallel) ──────────────────────────────────────
@@ -4149,7 +4181,10 @@ async function renderBcpOffice() {
         if (item === 'VARIABLE_READING_OT' || item === 'VARIABLE_READING_EPISTLE' || item === 'VARIABLE_READING_GOSPEL') {
             if (item === 'VARIABLE_READING_OT' && document.getElementById('toggle-prayer-before-reading')?.checked) {
                 const pbr = appData.components.find(c => c.id === 'ecu-prayer-before-reading');
-                if (pbr) officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbr.text}</span>`;
+                if (pbr) {
+                    officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbr.text}</span>`;
+                    overlayEmissions.push({ label: 'Prayer Before Reading', source: overlaySourceLabel(pbr), anchor: 'before the Old Testament Lesson' });
+                }
             }
             let reading = '', title = '';
             if (item === 'VARIABLE_READING_OT') {
@@ -4384,6 +4419,7 @@ async function renderBcpOffice() {
                 const ex = appData.components.find(c => c.id === 'ecu-examen');
                 if (ex) {
                     officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(ex.text)}</div>`;
+                    overlayEmissions.push({ label: 'The Examen', source: overlaySourceLabel(ex), anchor: 'after the Compline collect' });
                 }
             }
             continue;
@@ -4403,7 +4439,10 @@ async function renderBcpOffice() {
 
             if (!isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
                 const kp = appData.components.find(c => c.id === 'ecu-kyrie-pantocrator');
-                if (kp) officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kp.text}</span>`;
+                if (kp) {
+                    officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kp.text}</span>`;
+                    overlayEmissions.push({ label: 'Kyrie Pantocrator', source: overlaySourceLabel(kp), anchor: 'after the Collect' });
+                }
             }
             continue;
         }
@@ -4464,6 +4503,7 @@ async function renderBcpOffice() {
                 if (angelusComp) {
                     const t = resolveText(angelusComp, rite) || angelusComp.text || '';
                     officeHtml += `<span class="rubric-text">The Angelus</span><span class="component-text">${t}</span>`;
+                    overlayEmissions.push({ label: 'The Angelus', source: overlaySourceLabel(angelusComp), anchor: 'within the Invitatory' });
                 }
             }
             const invitId = isMorning ? 'bcp-invitatory-full-mp' : 'bcp-invitatory-full-ep-noon-compline';
@@ -4687,7 +4727,10 @@ async function renderBcpOffice() {
         // Trisagion injection — after absolution, if toggled
         if (item === 'bcp-absolution-slot' && document.getElementById('toggle-trisagion')?.checked) {
             const tris = appData.components.find(c => c.id === 'ecu-trisagion');
-            if (tris) officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${tris.text}</span>`;
+            if (tris) {
+                officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${tris.text}</span>`;
+                overlayEmissions.push({ label: 'Trisagion', source: overlaySourceLabel(tris), anchor: 'after the Absolution' });
+            }
         }
     }
 
@@ -4700,14 +4743,19 @@ async function renderBcpOffice() {
         if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
             const raw = resolveText(theotokionComp, rite) || theotokionComp.text || '';
             officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
+            overlayEmissions.push({ label: 'Theotokion', source: overlaySourceLabel(theotokionComp), anchor: 'after the office' });
         }
     }
 
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     // Phase 3, first slice: emit the resolved-office envelope alongside the
-    // markup, for the shell's rail and ordo day-line. This does NOT affect what
-    // is rendered. See js/anglican-envelope.js for why the envelope is emitted
-    // beside the HTML rather than rendered from, and what that costs.
+    // markup, for the shell's rail, ordo day-line, and (2026-09-16) margin
+    // cards. This does NOT affect what is rendered. `overlayEmissions` above
+    // is real structural knowledge — which labels were just emitted as
+    // borrowed/ecumenical devotion, and where — handed to the emitter so it
+    // never has to guess overlay status from a label string alone. See
+    // js/anglican-envelope.js for why the envelope is emitted beside the HTML
+    // rather than rendered from, and what that still costs.
     // Gated on the flag: nothing outside the new shell consumes the envelope, so
     // under ?shell=v1 this should not run at all. It was ungated on first
     // write — harmless but wasteful, and it made the legacy path pay for a
@@ -4717,7 +4765,8 @@ async function renderBcpOffice() {
             window.AnglicanEnvelope.publish(
                 window.AnglicanEnvelope.emit(officeHtml, {
                     calendarSummary: officeSubtitle || null,
-                    officeFamily: resolvedOfficeId || null
+                    officeFamily: resolvedOfficeId || null,
+                    overlays: overlayEmissions
                 })
             );
         } catch (e) {

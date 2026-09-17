@@ -534,6 +534,60 @@ body.shell-v2 .uo-margin {
     color: var(--uo-ink-quiet);
 }
 
+/* Contract §9/§11, handoff §2: overlay cards carry a red left-bar, diagnostic
+   cards a gold one — the same left-bar-as-category convention, never a
+   rounded card or a drop shadow (handoff §7's "no rounded cards" rule
+   applies here same as on the page). */
+body.shell-v2 .uo-margin-card {
+    padding: 4px 0 4px 12px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--uo-hairline);
+}
+
+body.shell-v2 .uo-margin-card.is-overlay {
+    border-left-color: var(--uo-rubric);
+}
+
+body.shell-v2 .uo-margin-card.is-diagnostic {
+    border-left-color: var(--uo-accent);
+}
+
+body.shell-v2 .uo-margin-card-head {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+    margin-bottom: 4px;
+}
+
+body.shell-v2 .uo-margin-card-body {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--uo-ink);
+}
+
+/* Handoff §1: at most two cards visible; the rest collapse to this quiet
+   line rather than a caption explaining the margin. */
+body.shell-v2 .uo-margin-more {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--uo-face-machine);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+    cursor: pointer;
+}
+
+/* Collapsed cards stay in the DOM (never omitted) so print — which cannot
+   run the click handler that reveals them on screen — still carries full
+   overlay/diagnostic attribution. See the @media print override below. */
+body.shell-v2 .uo-margin-card-collapsed {
+    display: none;
+}
+
 /* ── The keeping-place bar ────────────────────────────────────────────────── */
 
 body.shell-v2 .uo-keeping {
@@ -654,14 +708,27 @@ body.shell-v2 .uo-theme-button:focus-visible {
     /* The margin is NOT blanket-hidden: overlay attribution and diagnostics
        must print as footnotes, because a printed office carrying a borrowed
        prayer with its attribution stripped breaks the governance rule on paper,
-       where it cannot be recovered. Phase 3 marks those nodes; until they
-       exist the margin is empty and this rule has nothing to act on. */
+       where it cannot be recovered. Populated for the Anglican lane as of
+       2026-09-16 (js/anglican-envelope.js); the other three lanes still emit
+       no envelope, so this rule still has nothing to act on for them. */
     body.shell-v2 .uo-margin {
         border: none;
         padding: 0;
         margin-top: 18px;
         font-size: 11px;
         color: #000;
+    }
+
+    /* On screen, a card past the first two is collapsed behind a click. Print
+       has no click, so every card prints regardless of on-screen collapse —
+       the expand control itself is the one thing that must not print, since
+       it is a UI affordance with nothing left for it to do on paper. */
+    body.shell-v2 .uo-margin-card-collapsed {
+        display: block;
+    }
+
+    body.shell-v2 .uo-margin-more {
+        display: none;
     }
 }
 
