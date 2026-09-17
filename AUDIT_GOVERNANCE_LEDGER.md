@@ -15109,3 +15109,43 @@ every container rebuild. The ledger continues to record which commits were gener
 nothing is lost by the authorship line no longer carrying it.
 
 SEED_VERSION bumped to `v291-2026-09-16-back-button-inline-style`.
+
+---
+
+## 2026-09-16 — A reading measure for the prayed text; and the drawer defect withdrawn
+
+**The measure.** The parchment card capped its content at 820px, and the demolition removed the card
+— taking the cap with it, which nobody noticed because the cap was a property of the thing being
+deleted rather than a rule of its own. The prayed text has been running the full width of the page
+column since: roughly 800px of unbroken line at the 25px body floor.
+
+Fixed with `--uo-measure: 62ch`, applied to the page column's CONTENT rather than to the column.
+Two decisions worth recording:
+
+- **`ch`, not pixels.** The measure tracks the font: change the body size or the face and the line
+  length follows. A pixel cap silently becomes wrong the moment either changes, and this design has
+  already changed its body face once.
+- **The content is capped, the column is not.** The page column keeps its grid width so the rule
+  under the office title, the ornament and the fade at the foot still span it, with the text centred
+  within. Capping the column instead would have dragged all of those to the left edge.
+
+62ch lands around 58–64 characters for Cormorant Garamond — inside the 45–75 that is legible for
+continuous reading. The reason this matters more here than in ordinary body copy: **prayed text is
+read aloud, line by line, and an over-long measure makes the eye lose its place on the return
+sweep.** That is the specific failure being prevented, not a general preference for narrow columns.
+
+On mobile the cap is removed entirely: below 768px the viewport is already narrower than the measure,
+and leaving it applied would float the text in a column narrower than the screen.
+
+**THE DRAWER-CLIPPING DEFECT IS WITHDRAWN, NOT FIXED.** It was logged from a screenshot in which
+"Monastic (Full)" appeared cut off at the viewport bottom. Checked before acting: **all four drawers
+already carry `height: 100vh` and `overflow-y: auto`** — `#settings-panel`, `#coptic-settings`,
+`#east-syriac-settings` and `#generic-settings` alike. They scroll. The screenshot almost certainly
+showed a drawer scrolled to the top with more content below it. Recorded here rather than silently
+dropped, and put back to Josh to confirm from the running app; a "fix" to a working scroll container
+would have been a change that did nothing while appearing to resolve a reported problem.
+
+Cache-bust: `office-shell.css` 289 -> 292. Note the CSS param had been left at 289 across three
+JS-only patches; anyone with it cached would have been served a stale stylesheet.
+
+SEED_VERSION bumped to `v292-2026-09-16-reading-measure`.

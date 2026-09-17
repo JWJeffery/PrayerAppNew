@@ -40,10 +40,12 @@ button stayed in the corner covering LIGHT and DARK. **The test asserted DOM par
 position is a COMPUTED-STYLE question.** Third instance this session of a test passing on the wrong
 property. Assert `getComputedStyle` for anything about layout.
 
-**STILL OPEN, seen in the same screenshots:** (1) the settings drawer clips at the viewport bottom
-with no scroll -- "Monastic (Full)" unreachable; (2) the page column measure is ~800px, far too wide
-for prayed text at the 25px floor -- needs a max-width on the text; (3) the rail placeholder remains
-in the three lanes without emitters, which is correct.
+**MEASURE FIXED 2026-09-16:** `--uo-measure: 62ch` on the page column's CONTENT (not the column, so
+the title rule and ornament still span it). The parchment card's 820px cap vanished with the card in
+the demolition, leaving prayed text running ~800px. `ch` not px, so it tracks the font. Cap removed
+below 768px. **DRAWER CLIPPING WITHDRAWN** -- all four drawers already have `height:100vh;
+overflow-y:auto`; the screenshot showed one scrolled to the top, not a broken container. The rail
+placeholder in the three lanes without emitters is correct and not a fault.
 
 **PATCHES ARE NOW AUTHORED AS `JW Jeffery <josh@jwjeffery.org>`** so GitHub will sign them; authoring
 as Claude broke `git am` on every container rebuild.

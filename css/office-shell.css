@@ -145,6 +145,16 @@ body.shell-v2 {
     --uo-face-prayed:   'Cormorant Garamond', Georgia, serif;
     --uo-face-machine:  'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
     --uo-size-body:     25px;      /* floor, not a starting point */
+
+    /* MEASURE — the width of the prayed text, not of the column.
+       Set in `ch` so it tracks the font rather than the viewport: if the body
+       size or the face changes, the line length follows. 62ch lands around
+       58-64 characters for Cormorant Garamond, inside the 45-75 that is legible
+       for continuous reading, and well under the ~800px of unbroken line the
+       page had after the parchment card's own 820px cap was removed with it.
+       Prayed text is read aloud, line by line, and an over-long measure makes
+       the eye lose its place on return — the specific failure this prevents. */
+    --uo-measure:       62ch;
     --uo-leading-body:  1.72;
 }
 
@@ -493,6 +503,18 @@ body.shell-v2 .uo-page {
     line-height: var(--uo-leading-body);
 }
 
+/* The measure is applied to the CONTENT, not the column: the page column keeps
+   its grid width so the ordo line, the rule under the title and the fade at the
+   foot still span it, while the text itself is held to a readable line and
+   centred within. Capping the column instead would drag every one of those to
+   the left edge. */
+body.shell-v2 .uo-page > #office-display,
+body.shell-v2 .uo-page > .saint-section,
+body.shell-v2 .uo-page > .uo-ornament {
+    max-width: var(--uo-measure);
+    margin-inline: auto;
+}
+
 body.shell-v2 .uo-ornament {
     display: block;
     width: 84px;
@@ -602,6 +624,15 @@ body.shell-v2 .uo-theme-button:focus-visible {
     }
 
     body.shell-v2 .uo-page { padding: 24px 20px 36px; }
+
+    /* On a phone the viewport is already narrower than the measure; letting the
+       cap apply there would leave the text floating in a column narrower than
+       the screen. */
+    body.shell-v2 .uo-page > #office-display,
+    body.shell-v2 .uo-page > .saint-section,
+    body.shell-v2 .uo-page > .uo-ornament {
+        max-width: none;
+    }
 }
 
 /* ── Print: the page prints, the chrome does not ──────────────────────────── */
