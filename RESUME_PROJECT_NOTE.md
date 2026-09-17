@@ -5,222 +5,167 @@ permanent record of every decision lives in `AUDIT_GOVERNANCE_LEDGER.md`; the cl
 blocks each open item lives in `documentation/OPEN_ITEMS_FIXABILITY.md`. **Where this note and the
 repo disagree, the repo wins** — it may have moved since this was written.
 
-This note was rewritten 2026-09-07 (twice), then substantially updated in place 2026-09-11/12
-across a long session (EOR confirmation pass, month by month) rather than rewritten again — the
-old 2026-09-07 material below in section 7 is still accurate for the OOR/Coptic side and was left
-alone; only the EOR status and this header/section 0 needed correcting. The whole of the pre-2026-09-07
-note is preserved verbatim at `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md`.
+**FIRST MOVE, EVERY SESSION, NO EXCEPTIONS.** `git clone` fresh, then `git log --oneline -10` and
+check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accounts against this repo
+concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
+params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-12 (end of a long day, four sessions deep).** HEAD `59d3d70`, confirmed via a
-fresh clone. Session 2 (COE tag, 3 stray-row removals, December EOR sweep, 3 flagged saints -- see
-AUDIT_GOVERNANCE_LEDGER.md) and session 3 (the Dormition/Assumption cluster: 3 new rows, 2
-identity/label fixes, the new `august12` engine anchor in `js/saints-resolver.js`) are BOTH
-committed and pushed. **Section 0's task (below) is DONE** -- full detail in
-AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry. The full EOR calendar-year
-sweep (Jan-Dec) and every item carried over from it are CLOSED.
-
-**Session 4 did NOT produce a new task or new work.** Josh asked to see the open-items list; that
-request was interrupted before any list was compiled, and the session ended on a token-budget
-warning instead.
-
-**Session 5 (2026-09-12) built that list.** The fixability file was six commits behind the ledger
-and **five of its rows were stale** -- all five corrected in `documentation/OPEN_ITEMS_FIXABILITY.md`
-and recorded in the ledger (`ordinary1/2/3.json`, the admin dark-mode toggle, dead `config.heading`,
-the empty-`tags` rows, and the Cathedral/Monastic control-vs-content conflation). Josh then directed
-work on four items off the resulting list: the sub-tradition UI picker, the wrong `sanctoral.json`
-top-level note, the duplicate-`id` population, and the `saint-andrew-the-apostle` COE row. See the
-2026-09-12 ledger entries for each.
-
-**THEME CONFIRMED CORRECT IN ALL FOUR LANES 2026-09-16** (Ramsha dark, Sapra light, Eleventh Hour
-dark, Third Hour light). That work is done.
-
-**INLINE STYLES NEED CLEARING ON THE ELEMENT 2026-09-16.** "Back to Modes" carries
-`style="position:fixed"` inline; a stylesheet override without `!important` cannot beat it, so the
-button stayed in the corner covering LIGHT and DARK. **The test asserted DOM parentage and passed --
-position is a COMPUTED-STYLE question.** Third instance this session of a test passing on the wrong
-property. Assert `getComputedStyle` for anything about layout.
-
-**MEASURE FIXED 2026-09-16:** `--uo-measure: 62ch` on the page column's CONTENT (not the column, so
-the title rule and ornament still span it). The parchment card's 820px cap vanished with the card in
-the demolition, leaving prayed text running ~800px. `ch` not px, so it tracks the font. Cap removed
-below 768px. **DRAWER CLIPPING WITHDRAWN** -- all four drawers already have `height:100vh;
-overflow-y:auto`; the screenshot showed one scrolled to the top, not a broken container. The rail
-placeholder in the three lanes without emitters is correct and not a fault.
-
-**PATCHES ARE NOW AUTHORED AS `JW Jeffery <josh@jwjeffery.org>`** so GitHub will sign them; authoring
-as Claude broke `git am` on every container rebuild.
-
-**EACH LANE HAS SEVERAL NAMES FOR ITS HOUR RADIO 2026-09-12.** East Syriac uses `esy-hour-override`,
-`esy-time` AND `shared-office-nav-eastSyriac` for the same choice; the shared navigator builds its
-name dynamically (`shared-office-nav-${modeKey}`, office-ui.js:2393) so it never appears in a grep.
-Keying on one name made Sapra render dark, because a lookup MISS resolves to night and so shows up as
-a wrong theme rather than no theme. Each lane now carries a candidate list, tried in order. **When
-adding a lane, list every name its navigator can use.**
-
-**`updateUI()` HARDCODED-ID BUG FIXED 2026-09-12** -- outside the flag, affecting the app as shipped.
-It read `getElementById('toggle-dark')?.checked !== false`; that id exists once, in the BCP panel, so
-in every other lane the element was absent and `undefined !== false` forced DARK. Now selects
-`[data-app-dark-toggle]` like `applyDarkMode()` does, falling back to the time-of-day default when no
-toggle exists. Also: "Back to Modes" (inline `position:fixed`) is moved into the ordo row under the
-flag so it stops covering the theme control.
-
-**RAIL CONFIRMED IN THE BROWSER 2026-09-12** against the live renderer, per office: Noonday, Compline
-and Morning Prayer each show their own order in their own labels. **SLOW LOADS ARE NOT FROM THIS WORK
-AND PREDATE IT (Josh confirmed):** every script lands at ~4.1-4.3s including files untouched all
-session, all within 200ms of each other -- `scripts/dev-spa-server.mjs` serves sequentially with
-no-cache headers, plus the Codespaces proxy. Its own piece of work when it blocks something.
-
-**PHASE 3 FIRST SLICE SHIPPED 2026-09-12: the Anglican lane emits an envelope.**
-`js/anglican-envelope.js` builds a §4-shaped envelope from the renderer's own emitted markup;
-`renderBcpOffice()` gained ONE call of sixteen lines before its existing `innerHTML`, in a try/catch.
-The shell draws the rail from `blocks[].label` verbatim and the ordo day-line from
-`context.calendarSummary`. **The envelope is NOT yet the source of the page** -- it is emitted
-alongside, so the two can drift. That is the known cost of this slice, chosen over an 890-line
-refactor of `renderBcpOffice()`. `overlays` and `diagnostics` ship EMPTY because a borrowed devotion
-is not currently distinguishable from a native block in the markup; populating them would be
-guesswork. The remaining three lanes have no emitter and keep the rail placeholder, which is the
-honest state. **Full Phase 3 = refactor `renderBcpOffice()` so the page renders FROM the envelope.**
-
-**RE-RESOLVE ON THE RENDER, NOT THE CLICK 2026-09-12.** `renderOffice()` is async, so any handler on
-click or change reads the PREVIOUS office. A MutationObserver on `#office-display` (rewritten on every
-office, date and lane change) is the signal that the render landed. Three separate bugs this session
-had this one shape -- **do not add click-driven re-resolution.** Also: `applyTheme()` now toggles
-`dark-mode`/`light-mode` itself, by class, never by calling `applyDarkMode()`. Leaving them free to
-disagree put BOTH `dark-mode` and `uo-day` on `body` and produced pale-on-pale text.
-
-**DEMOLITION 2026-09-12: THE SHELL OWNS THE OFFICE SCREEN.** Phase 6 brought forward for the skin and
-the theme path only, after six patches trying to keep an office-keyed Auto alive beside the old skin.
-`applyTheme()` now sets ONE class (`uo-day`) and calls nothing -- no `applyDarkMode` wrapper, no
-clock fallback, no observers syncing two systems. The parchment card no longer dresses the prayed
-text: overrides in `css/office-shell.css` undo `css/office.css` 1611/1632/1648/1658/1665/1670 by line,
-so Phase 6 can delete the originals. **Off the office screen NOTHING changed** -- splash, Book of
-Needs, Bible browser and admin keep the old skin and old theme behaviour, which is what fixed the dark
-splash. **The render path is still legacy `innerHTML`; that is Phase 3, per lane.** Lesson: layout
-could coexist with the old skin, theme could not -- two systems owning one piece of global state
-cannot be reconciled by synchronising them harder.
-
-**LANE SWITCHES ARE OBSERVED, NOT INFERRED FROM CLICKS 2026-09-12.** The drawers' `mode-hidden`
-classes change asynchronously, later than any `setTimeout(0)` after a click, so a click-driven
-re-resolve reads the lane the user just LEFT. A MutationObserver on the three drawers' `class`
-attribute handles it. Also: the legacy Dark Mode checkbox is hidden by a CSS rule on
-`.shared-office-nav-appearance-card`, NOT from JS -- the navigator is rebuilt with innerHTML on every
-render, and its label carries an inline `display:flex` that beats any stylesheet rule aimed at the
-label. **Pattern: where something must ALWAYS be true of app-rebuilt DOM, state it in CSS; imperative
-fixes have to win every render.**
-
-**THE LANE IS READ FROM THE DOM 2026-09-12.** NOT from `window.selectedMode` -- `office-ui.js`
-declares it with a top-level `let`, which creates a global LEXICAL binding and never becomes a window
-property, so `window.selectedMode` is permanently undefined. Read the lane from which settings drawer
-lacks `mode-hidden` (`#coptic-settings`, `#east-syriac-settings`, `#generic-settings`), then that
-lane's own radio. **Do not reintroduce a `window.` read of any top-level `let` in office-ui.js.** Also:
-jsdom gives each `eval()` its own lexical scope, so bare-identifier reads CANNOT be tested there --
-prefer an observable DOM signal over anything untestable.
-
-**OFFICE IS RESOLVED BY LANE 2026-09-12.** Every lane's navigator radios are in the DOM and checked
-AT ONCE (`office-time`, `cop-hour`, `esy-hour-override` all had checked values simultaneously). A
-first-match-wins lookup therefore returned the BCP office in every lane. Key on `selectedMode`
-instead -- never on which radio happens to be checked first.
-
-**SHELL THEME IS AUTHORITATIVE 2026-09-12.** `window.applyDarkMode` is wrapped at init: while the
-flag is on, any call not originating in the shell has its argument replaced by the shell's resolved
-theme. Needed because the app sets the theme itself after the shell does. **FOUND WHILE DIAGNOSING, A
-REAL BUG IN THE UNFLAGGED APP, NOT YET FIXED:** `updateUI()` in `js/office-ui.js` falls back to
-`getElementById('toggle-dark')?.checked !== false`, and `toggle-dark` exists ONCE in index.html inside
-the BCP panel -- so in every other lane the element is absent, `undefined !== false` is true, and the
-app forces DARK. Same hardcoded-id failure the `applyDarkMode` comment was written to fix, one
-function away. Its fallback should select by `[data-app-dark-toggle]`.
-
-**ONE THEME CONTROL, NOT TWO 2026-09-12.** The legacy sidebar Dark Mode checkbox is HIDDEN under
-`body.shell-v2`, not synchronised with the three-state control. Synchronising them wrote an explicit
-theme to storage on every legacy tick, which silently disabled Auto for good -- a two-state control
-has no tick meaning "resume following the office". Do not re-couple them. **Diagnostic lesson: on any
-"it does not behave as you said", dump the state from the console FIRST; two repo-checkable guesses
-were both wrong because the fault was in code written the same session.**
-
-**AUTO RE-RESOLVE FIX 2026-09-12.** Phase 2 applied the theme once at build time, so an office-keyed
-Auto never followed an office change -- night offices rendered light. Fixed with delegated listeners
-on `document` (the app rebuilds its nav with innerHTML, so directly-bound listeners do not survive).
-The legacy sidebar Dark Mode checkbox now sets the three-state control explicitly, so the two cannot
-disagree while both exist. **Lesson recorded: every jsdom case booted a fresh page with one office,
-so the harness could not see a bug that only exists over time. Tests must mutate a live page.**
-
-**PHASE 2 GRID SPECIFICITY FIX 2026-09-12.** The first Phase 2 push looked like nothing happened. The
-JS was fine; `body.shell-v2 #main-content` (0,2,1) LOST to `body.office-active #main-content.app-primary-canvas`
-(0,3,1) in office.css line 2248, so `display:grid` never applied. Structural rules against
-`#main-content` must be written at (0,3,1) or heavier until Phase 6 deletes the parchment pass --
-there is a comment in `css/office-shell.css` saying so. **jsdom cannot catch this class of bug: it
-does not resolve the cascade. Any phase touching layout needs a browser in its acceptance criteria.**
-
-**UI REDESIGN PHASE 2 SHIPPED 2026-09-12 (session 5).** Three-column grid, ordo line, keeping-place
-bar, type scale, and the three-state Auto/Light/Dark control -- all under `body.shell-v2`, in
-`js/office-shell.js` and `css/office-shell.css`. The shell MOVES existing nodes rather than rebuilding
-them, so every id and handler survives. Rail is a placeholder and margin is empty until the envelope
-lands in Phase 3. **Auto is keyed to the office** via the app's own navigator radio values; `orthros`
-is treated as day, a recorded judgement call. **Two contrast failures in the proposed palette were
-measured and corrected** (night rubric #c0392b -> #d34839, day bronze #8a6a24 -> #846522), both
-hue-preserving, both commented in place with the original value. **LAYOUT IS NOT VERIFIED** -- jsdom
-covered the DOM assembly and theme logic, but the rendered grid needs a browser.
-
-**FONTS VENDORED 2026-09-12 (session 5).** Cormorant Garamond (subset from CatharsisFonts upstream,
-Regular/Italic/SemiBold) and IBM Plex Mono (from @ibm/plex-mono 2.5.0) live in `assets/fonts/` as
-woff2, 189KB total, with their OFL licences beside them -- self-hosted, no CDN. `@font-face` is
-declared in `css/office-shell.css` and is the ONE thing there not scoped under `body.shell-v2`,
-because it cannot be; no bytes download until something renders in the face. **The `✦` ornament does
-not exist in either face and Phase 2 must render it as inline SVG.**
-
-**UI REDESIGN PHASE 1 SHIPPED 2026-09-12 (session 5).** `css/office-shell.css` (token layer only,
-every selector scoped under `body.shell-v2`) and `js/shell-flag.js` (hidden dev toggle). Turn it on
-with `?shell=v2` in the URL, off with `?shell=v1`; a small badge bottom-right shows the state. No
-existing rule was edited -- `index.html` gained 8 lines and nothing else changed. **Phase 2 is next**
-and begins below the marked line at the foot of `css/office-shell.css`: the three-column grid, the
-two bars, the type scale, and the Auto/Light/Dark control.
-
-**UI REDESIGN ADOPTED 2026-09-12 (session 5): `documentation/UI_REDESIGN_HANDOFF.md`.** An outside
-design proposal for the app shell, checked against the repo, corrected in fifteen places for
-governance, and adopted. Rail / page / margin; six phases, Phase 1 (a flagged stylesheet, nothing
-existing edited) is the entry point. **Two things to know before anyone starts:** (1) it conflicts
-with `documentation/universal-office-navigation-architecture.md`, which is marked CANONICAL and fixes
-the parchment surface as the shared visual language -- Phase 6 retires the parchment pass, so that
-needs Josh's decision before Phase 6, though not before Phase 1; (2) the eastern seasonal-colour dot
-is a SOURCED-CONTENT task with a named witness per tradition, not a shell task, and for East Syriac
-no dot is the likely correct answer. Also established while checking it: the 1979 BCP prescribes no
-liturgical colours at all (zero hits across 35,229 lines), yet `data/season/*.json` already carries
-`liturgicalColor` on 397 days -- so that field rests on something other than the BCP and wants a
-`ruleSource`. See the ledger entry.
-
-**As always, the repo may have moved past this by the time you read it — Josh runs (at least) two
-Claude accounts against this repo concurrently.** Never trust this note's SEED_VERSION, HEAD, or
-"what's open" section at face value — `git clone` fresh and check `git log --oneline -10` before
-doing anything else, every session, no exceptions.
-
-Cache-bust params: not touched today — re-check `office-ui.js`/`explanations.js`/`prayers.js`/
-`saints-resolver.js` version params against the live file headers yourself before trusting any
-number written here.
+**State as of 2026-09-16.** HEAD `0adb593`, SEED_VERSION `v292-2026-09-16-reading-measure`. The
+2026-09-12 sessions closed the sanctoral work described from section 1 down; everything from
+2026-09-12 onward has been the **UI redesign**, which is where the live work now is.
 
 ---
 
-## 0. Immediate next task for the next session
+## 0. Where the work actually stands
 
-**COMPLETED 2026-09-12, no replacement task queued.** Everything below in this section was today's
-task specification, now fully built (see the header above and the ledger entry it points to).
-Nothing has been substituted in its place. The next session should treat section 0 as closed
-history, not as a live task list, and start instead from the open-items check described in the
-header above.
+### The UI redesign, `documentation/UI_REDESIGN_HANDOFF.md`
 
-**COMPLETED 2026-09-12 (third session of the day).** Everything below in this section was the task
-specification and research trail; the build itself is done, committed, and verified. See
-AUDIT_GOVERNANCE_LEDGER.md's "Dormition/Assumption cluster built" entry (2026-09-12) for exactly
-what was built: 3 new rows (`dormition-of-the-theotokos-coptic` Jan 29, `dormition-of-the-theotokos-
-syriac` Aug 15, `coe-dormition-of-the-theotokos` Aug 15), 2 identity/label fixes
-(`afterfeast-of-the-assumption` retagged EOR, `vigil-of-the-assumption` relabeled), and one new
-engine anchor (`august12`, in `js/saints-resolver.js`) fixing the Armenian row's movable date —
-verified against a standalone Node harness across 2020-2050 (zero mismatches) and end-to-end against
-the real resolver for the whole cluster (11/11 checks passed). Both open governance questions below
-(COE May 15, the three unmarked OOR rows) were also closed this same day, before this cluster was
-built — see the ledger's other 2026-09-12 entries. **Next task for whoever picks this up: no
-specific data job is queued. The "NO UI PICKER" item flagged further down (a sub-tradition selector
-in Office Settings) is the obvious next engine task, per the note below, but has not been scoped or
-started.**
+An outside design proposal, verified against the repo, corrected in fifteen places for governance,
+and adopted. One canon — **rail · page · margin** — with everything not prayed aloud moved out of the
+text column into the margin. Six phases. **Phase 1 and 2 are done; Phase 3 is half done.**
+
+| Phase | State |
+|---|---|
+| 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
+| 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
+| 3 — Anglican lane emits the envelope | **half done** — see below |
+| 4 — threshold and Office Settings | not started |
+| 5 — the other three lanes | not started |
+| 6 — delete the old skin | **partly brought forward**, see the demolition note below |
+
+**PHASE 3 IS THE LIVE TASK AND IT IS HALF FINISHED.** `js/anglican-envelope.js` emits a §4-shaped
+envelope and the shell draws the rail and the ordo day-line from it — **confirmed in the browser
+against the live renderer**, per office: Noonday, Compline and Morning Prayer each show their own
+order in their own words. But **the envelope is not yet the source of the page.** It is built
+*alongside* the HTML in the same pass, so the two can drift, and `overlays` and `diagnostics` ship
+EMPTY because a borrowed devotion is not currently distinguishable from a native block in the markup.
+
+**Finishing Phase 3 means refactoring `renderBcpOffice()` so the page renders FROM the envelope.**
+That function is **890 lines with 90 template literals** and decides what the office contains while
+writing its markup in the same breath — there is no seam between the two, and creating that seam is
+the work. It is the largest single change in the plan. **Do not start it at the end of a long
+session.** The emitter has now proven it can read the structure correctly, which makes the refactor a
+much smaller bet than it looked before. Until it lands, **the margin stays empty** — that is expected,
+not a fault.
+
+### The demolition — why Phase 6 was partly brought forward
+
+Six consecutive patches went into keeping an office-keyed Auto alive alongside the old skin. Each was
+correct; each sat downstream of the next thing that also owned the theme. **Two systems owning one
+piece of global state cannot be reconciled by synchronising them harder.** Phase 1/2's premise —
+build beside the old shell, touch nothing — was right for layout and wrong for theme.
+
+So, for the office screen only: the shell owns the ground, the card and the theme outright.
+`applyTheme()` sets ONE class (`uo-day`) plus `dark-mode`/`light-mode` by class, and **never calls
+`applyDarkMode()`**. The parchment card no longer dresses the prayed text; overrides in
+`css/office-shell.css` undo `css/office.css` 1611/1632/1648/1658/1665/1670 **by line**, so Phase 6 can
+delete the originals rather than leave them scoped away forever.
+
+**Off the office screen NOTHING changed** — splash, Book of Needs, Bible browser and admin keep the old
+skin and old theme behaviour. That is what fixed the dark splash.
+
+### Open, in rough priority order
+
+1. **The `renderBcpOffice()` refactor** (above). Fills the margin, puts gutter citations beside the
+   text, removes the envelope/HTML drift.
+2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
+   stopgaps noted below.
+3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
+   placeholder, which is correct and not a fault. Horologion goes LAST: it already emits
+   `{tradition, officeKey, date, title, status, sections, diagnostics}` with a validator that
+   hard-requires those seven fields, so porting it is a reconciliation of two payload shapes.
+4. **`data/season/*.json`'s `liturgicalColor` needs a `ruleSource`.** It is populated on 397 days, but
+   **the 1979 BCP prescribes no liturgical colours at all** — zero hits for "color"/"colour" across
+   35,229 lines. So that field rests on something other than the BCP and nobody has said what.
+5. **Eastern seasonal colours** are a SOURCED-CONTENT task with a named witness per tradition, not a
+   shell task. For East Syriac, **no dot is the likely correct answer**.
+6. **The dev server is slow and it is not from this work.** Every script loads in ~4.1–4.3s including
+   files untouched all session, all landing within 200ms of each other — `scripts/dev-spa-server.mjs`
+   serves sequentially with no-cache headers, plus the Codespaces proxy. Josh confirms it predates
+   this work.
+7. **`documentation/universal-office-navigation-architecture.md` is marked CANONICAL and conflicts
+   with Phase 6.** It fixes the parchment surface as the shared visual language and its own next steps
+   propagate that shell further. **Needs Josh's decision before Phase 6.** Recorded, not overridden.
+
+---
+
+## 0a. Hard-won rules from the redesign. Read these before touching the shell.
+
+These each cost at least one full patch to learn. They are not style preferences.
+
+**SPECIFICITY.** `css/office.css` carries rules at (0,3,1) — e.g.
+`body.office-active #main-content.app-primary-canvas { display: block; }` at line 2248. A plain
+`body.shell-v2 #main-content` is (0,2,1) and **loses silently**. Any new structural rule against
+`#main-content` must be written at (0,3,1) or heavier. A comment in `css/office-shell.css` says so.
+
+**INLINE STYLES BEAT STYLESHEET RULES.** `index.html` writes `style="position:fixed"` and
+`style="display:flex"` inline on elements the shell needs to move or hide. A CSS override without
+`!important` cannot win. Clear the property **on the element** from JS, or target an ancestor that
+carries no inline style.
+
+**RE-RESOLVE ON THE RENDER, NOT THE CLICK.** `renderOffice()` is async. Any handler on `click` or
+`change` reads the PREVIOUS office. A `MutationObserver` on `#office-display` is the signal that the
+render landed. **Three separate bugs this session had this exact shape.**
+
+**WHERE SOMETHING MUST ALWAYS BE TRUE OF APP-REBUILT DOM, STATE IT IN CSS.** The navigator and the
+sidebars are rebuilt with `innerHTML` on every render, which wipes anything JS set. Imperative fixes
+must win every render; a stylesheet rule states it once.
+
+**`window.selectedMode` DOES NOT EXIST.** `office-ui.js` declares it with a top-level `let`, which
+creates a global *lexical* binding and never becomes a window property. Read the lane from the DOM
+instead: each settings drawer carries `mode-hidden` when inactive and exactly one does not.
+
+**EVERY LANE'S RADIOS ARE IN THE DOM AND CHECKED AT ONCE**, and each lane names its hour several ways
+(`esy-hour-override`, `esy-time`, `shared-office-nav-eastSyriac` are all the same choice). First-match
+lookup over a shared DOM is not a lane resolver. Keep the per-lane candidate lists. The shared
+navigator builds `name="shared-office-nav-${modeKey}"` at `office-ui.js:2393`, so those names never
+appear in a grep.
+
+**HARDCODED IDS ARE A RECURRING FAULT IN THIS FILE.** `getElementById('toggle-dark')` existed once, in
+the BCP panel, so every other lane read a checkbox belonging to a different tradition — and
+`undefined !== false` is TRUE, so a missing element resolved to DARK. Select by
+`[data-app-dark-toggle]`. The comment inside `applyDarkMode()` already recorded this failure mode
+twice before it happened a third time.
+
+### On testing, which is where this session actually went wrong
+
+**jsdom cannot see the cascade, an async render, or a computed style unless asked.** Three fixes this
+session passed their tests and failed in the browser: a grid rule that lost on specificity, a theme
+that never re-resolved, and a button that never moved. Each test asserted the wrong property —
+DOM parentage instead of computed position, a resolver's answer instead of whether it was re-run.
+
+**A harness that builds a fresh world per case cannot see a bug that only exists over time.** The
+eleven-office Auto test proved the resolver correct eleven times while never once exercising
+re-resolution, which was the broken part. **Mutate a live page.**
+
+**ON ANY "IT DOESN'T DO WHAT YOU SAID": DUMP REAL STATE FIRST.** Josh's console dumps settled four
+bugs that reasoning from the code had failed on — twice by what was MISSING from the output, since
+`JSON.stringify` drops `undefined`. Two repo-checkable guesses in a row is the signal to stop
+guessing. **Distrust any fix whose correctness cannot be exercised by a test.**
+
+---
+
+## 0b. Working with Josh on this
+
+He applies every patch himself via `git am` and pushes. Cut `git format-patch`, surface the patch,
+and give him the literal `git am` / `git push` lines **in the same turn as the commit**.
+
+**Patches are authored as `JW Jeffery <josh@jwjeffery.org>`.** GitHub refuses to sign a commit whose
+author is not a verified identity on his account, which broke `git am` on every container rebuild.
+`.git/config` also held `you@example.com` as committer, which outranks global config; that is now set
+locally too.
+
+**Avoid a period in the patch filename** — it has caused "No such file or directory" on his end.
+
+**He is a non-coder.** Landmarks in edit instructions must be unambiguous. But he reads output
+closely and has caught more real defects from screenshots than the test suite has.
+
+**His screenshots are the most reliable verification channel in this project.** When something is
+wrong on screen, ask for one — and read it before theorising.
+
+**Every commit carries the ledger entry, the resume-note update, `audit-ledger.html`'s SEED_VERSION,
+and the cache-bust bump for every touched file, together.** A CSS param left behind while JS moves has
+already served a stale stylesheet from cache twice.
 
 ---
 

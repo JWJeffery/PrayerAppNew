@@ -15149,3 +15149,43 @@ Cache-bust: `office-shell.css` 289 -> 292. Note the CSS param had been left at 2
 JS-only patches; anyone with it cached would have been served a stale stylesheet.
 
 SEED_VERSION bumped to `v292-2026-09-16-reading-measure`.
+
+---
+
+## 2026-09-16 — Resume note rewritten: a handoff again, not a stack of session bulletins
+
+The note had grown to 1,034 lines, with **fourteen blocks prepended to its header across two days of
+UI work**, each written at the moment of a fix and stacked newest-first. The result read as a reverse
+chronology of bugs rather than a statement of where the project stands — the exact failure mode the
+note's own first line warns against ("a handoff document, not a history"). Rewritten to 979 lines.
+
+**Everything from section 1 down is preserved verbatim.** That is the sanctoral, calendar and
+source-witness material from the 2026-09-07 through 2026-09-12 sessions, and it is still accurate.
+Only the header and section 0 were replaced.
+
+**What the new header does that the old one could not:**
+
+- **States the phase table plainly** — 1 and 2 done, 3 half done, 4 and 5 not started, 6 partly
+  brought forward — instead of requiring the reader to reconstruct it from fourteen dated bulletins.
+- **Names the live task and its real size.** Finishing Phase 3 means refactoring an 890-line function
+  with no seam between deciding content and writing markup, and the note now says so, including "do
+  not start it at the end of a long session."
+- **Collects the hard-won rules into one section (0a).** Specificity against the parchment pass;
+  inline styles beating stylesheet rules; re-resolve on the render not the click; state invariants in
+  CSS where the app rebuilds DOM; `window.selectedMode` does not exist; every lane's radios are
+  checked at once and each lane names its hour several ways; hardcoded ids are a recurring fault in
+  `office-ui.js`. **Each of these cost at least one full patch to learn**, and scattered across
+  bulletins they would have been re-learned.
+- **Records how the testing failed**, which is where this session actually went wrong: jsdom cannot
+  see the cascade, an async render, or a computed style unless asked; a harness that builds a fresh
+  world per case cannot see a bug that only exists over time; dump real state before theorising.
+  Three fixes passed their tests and failed in the browser, each asserting the wrong property.
+- **Keeps the open items in priority order** with the two that are NOT shell work flagged as such —
+  the `liturgicalColor` provenance gap and the eastern colour sourcing — so neither gets picked up as
+  a quick CSS job.
+- **Records the conflict with the canonical navigation document** as needing Josh's decision before
+  Phase 6, where a reader will meet it before starting Phase 6 rather than after.
+
+Documentation-only change. No data, engine or rendered output touched.
+
+SEED_VERSION bumped to `v293-2026-09-16-resume-note-rewritten`.
