@@ -15254,3 +15254,19 @@ Cache-bust: `office-ui.js` 289 → 290, `anglican-envelope.js` 288 → 289, `off
 `office-shell.css` 292 → 293.
 
 SEED_VERSION bumped to `v294-2026-09-16-overlay-diagnostic-margin-cards`.
+
+---
+
+## 2026-09-16 — Correction: the git am / GPG signing fix did not survive a container rebuild
+
+The resume note claimed this was settled ("that is now set locally too"). It recurred this session:
+applying the overlays/diagnostics patch failed with `error signing commit: ... 403 | Author is
+invalid`, then a stale `.git/rebase-apply` from that failed attempt blocked the retry. Both were
+resolved live (`git config commit.gpgsign false` locally, then `git am --abort` before re-running
+`git am`), and the patch applied and pushed cleanly as `0012cdc` once they were. The note is corrected
+to record that this class of fix does not survive a container rebuild and to give the actual recovery
+steps, rather than restate "fixed" as if it were permanent.
+
+Documentation-only change. No data, engine or rendered output touched.
+
+SEED_VERSION bumped to `v295-2026-09-16-gpg-signing-note-corrected`.

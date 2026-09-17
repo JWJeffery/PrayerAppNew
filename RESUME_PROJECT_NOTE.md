@@ -171,8 +171,14 @@ and give him the literal `git am` / `git push` lines **in the same turn as the c
 
 **Patches are authored as `JW Jeffery <josh@jwjeffery.org>`.** GitHub refuses to sign a commit whose
 author is not a verified identity on his account, which broke `git am` on every container rebuild.
-`.git/config` also held `you@example.com` as committer, which outranks global config; that is now set
-locally too.
+`.git/config` also held `you@example.com` as committer, which outranks global config; that was set
+locally too, back when this was first fixed. **It recurred anyway, 2026-09-16, after a container
+rebuild** — `git am` failed with `error signing commit: ... 403 | Author is invalid`, meaning
+whatever local identity/signing config had been set did not survive the rebuild. Do not assume "this
+was fixed" means it stays fixed across rebuilds; if `git am` fails this way again, the fix that worked
+this time was `git config commit.gpgsign false` (repo-local, not global) plus confirming
+`git config user.name`/`user.email` are set locally and match a verified email on Josh's GitHub
+account. A stale `.git/rebase-apply` from the failed attempt needed `git am --abort` before retrying.
 
 **Avoid a period in the patch filename** — it has caused "No such file or directory" on his end.
 
