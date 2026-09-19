@@ -15299,3 +15299,27 @@ jsdom harness; treated as adequately tested without a live screenshot for it spe
 Documentation-only change. No data, engine or rendered output touched.
 
 SEED_VERSION bumped to `v296-2026-09-19-overlay-cards-browser-confirmed`.
+
+---
+
+## 2026-09-19 — Session close: resume note updated for the dark/auto bug and the recurring GPG issue
+
+Documentation-only. Two things surfaced after the browser-confirmation commit above, both left for
+the next session rather than chased tonight:
+
+- Josh flagged the app defaulting to Dark instead of Auto under `?shell=v2`. Not investigated this
+  session. The resume note now names two candidate causes — `index.html`'s hardcoded
+  `class="dark-mode"` on `<body>`, and a possible fourth instance of the `getElementById` /
+  `undefined !== false` failure pattern §0a already documents happening three times in
+  `applyDarkMode()` — as a lead for whoever picks this up, not a diagnosis.
+- The `git am` GPG-signing failure (see the 2026-09-16 correction entry above) recurred TWICE MORE
+  today, in the same session, hours after `commit.gpgsign false` had already worked once. That is a
+  materially worse data point than "doesn't survive a container rebuild": repo-local config is not
+  reliably holding even within one sitting, for a reason not yet diagnosed. The note now records the
+  working recovery sequence (`commit.gpgsign false` + `git am --abort` + retry) as the first move on
+  any recurrence, and flags the underlying cause as worth investigating properly rather than
+  re-applying the workaround indefinitely.
+
+No data, engine or rendered output touched.
+
+SEED_VERSION bumped to `v297-2026-09-19-session-close-dark-auto-and-gpg-flagged`.

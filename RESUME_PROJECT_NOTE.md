@@ -10,12 +10,15 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-19.** Fresh-clone HEAD was `eceea01`, SEED_VERSION
-`v296-2026-09-19-overlay-cards-browser-confirmed` — trust neither at face value; see the FIRST MOVE
-line above. The 2026-09-16 patch (overlays/diagnostics, margin cards) is applied and browser-confirmed
-as of today; the follow-up GPG-note correction is applied too. The 2026-09-12 sessions closed the
-sanctoral work described from section 1 down; everything from 2026-09-12 onward has been the **UI
-redesign**, which is where the live work now is.
+**State as of 2026-09-19, end of session, before this closing patch is applied.** Fresh-clone HEAD
+was `e2b93e8`, SEED_VERSION `v296-2026-09-19-overlay-cards-browser-confirmed` — trust neither at face
+value; see the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
+`v297-2026-09-19-session-close-dark-auto-and-gpg-flagged` — check fresh rather than trusting either
+number here. Three patches landed this session before this one: the overlays/diagnostics/margin-cards
+increment (`0012cdc`), a GPG-signing note correction (`eceea01`), and a browser-confirmation record
+(`e2b93e8`). All three are on `origin/main`, all three verified against a fresh clone before being
+handed over. The 2026-09-12 sessions closed the sanctoral work described from section 1 down;
+everything from 2026-09-12 onward has been the **UI redesign**, which is where the live work now is.
 
 ---
 
@@ -108,6 +111,20 @@ skin and old theme behaviour. That is what fixed the dark splash.
 7. **`documentation/universal-office-navigation-architecture.md` is marked CANONICAL and conflicts
    with Phase 6.** It fixes the parchment surface as the shared visual language and its own next steps
    propagate that shell further. **Needs Josh's decision before Phase 6.** Recorded, not overridden.
+8. **The app is defaulting to Dark instead of Auto under `?shell=v2`, flagged by Josh 2026-09-19, NOT
+   YET INVESTIGATED.** Two candidate causes, neither confirmed: (a) `index.html`'s `<body>` tag
+   hardcodes `class="dark-mode"`, which may simply be winning before the shell's own Auto logic runs;
+   (b) this may be the exact failure shape §0a's "HARDCODED IDS ARE A RECURRING FAULT" entry already
+   documents — a lane-specific `getElementById` on a dark-mode checkbox resolving to `undefined`,
+   and `undefined !== false` being `true`, defaulting to dark. That entry describes this pattern
+   happening THREE TIMES already in `applyDarkMode()`; a fourth instance in whatever now drives the
+   shell's Auto/Light/Dark buttons (a separate codepath from `applyDarkMode()`, per the demolition
+   note above) is a plausible fourth. Also relevant: the legacy per-tradition "Dark Mode" checkboxes
+   (`toggle-dark`, `toggle-dark-book-of-needs`, `toggle-dark-bible`, etc.) still exist and still work
+   — Phase 6 hasn't deleted them — so two theme systems are currently live on the same page. Start by
+   reading whatever function the shell's Auto button actually calls, not by re-reading
+   `applyDarkMode()` cold; confirm with a console dump (§0a: "dump real state first") before
+   theorising further.
 
 ---
 
@@ -176,12 +193,25 @@ and give him the literal `git am` / `git push` lines **in the same turn as the c
 author is not a verified identity on his account, which broke `git am` on every container rebuild.
 `.git/config` also held `you@example.com` as committer, which outranks global config; that was set
 locally too, back when this was first fixed. **It recurred anyway, 2026-09-16, after a container
-rebuild** — `git am` failed with `error signing commit: ... 403 | Author is invalid`, meaning
-whatever local identity/signing config had been set did not survive the rebuild. Do not assume "this
-was fixed" means it stays fixed across rebuilds; if `git am` fails this way again, the fix that worked
-this time was `git config commit.gpgsign false` (repo-local, not global) plus confirming
-`git config user.name`/`user.email` are set locally and match a verified email on Josh's GitHub
-account. A stale `.git/rebase-apply` from the failed attempt needed `git am --abort` before retrying.
+rebuild** — `git am` failed with `error signing commit: ... 403 | Author is invalid`. **It then
+recurred TWICE MORE on 2026-09-19, in the SAME session, hours after `commit.gpgsign false` had
+already been set and had already worked once.** This is a stronger signal than "doesn't survive a
+rebuild": `commit.gpgsign false` (repo-local) is not reliably sticking at all in whatever this
+Codespace is doing, for reasons not yet diagnosed. **Do not assume any fix to this is durable, even
+within one sitting.** The recovery sequence that has worked every time so far, and should be tried
+first on any future `git am` failure with this signature:
+```
+git config commit.gpgsign false
+git am --abort
+git am <patch>
+git push origin main
+```
+`git am --abort` is safe even when nothing is actually mid-rebase — it no-ops harmlessly rather than
+erroring, and has been needed almost every time because the failed `gpg` signing step leaves a stale
+`.git/rebase-apply` behind. **Worth investigating properly next time this comes up, rather than just
+re-running the workaround again**: check whether something in this specific Codespace (a devcontainer
+setting, a global includeIf, an org policy) is force-re-enabling signing on each new shell, since
+repo-local config alone has now failed to hold multiple times.
 
 **Avoid a period in the patch filename** — it has caused "No such file or directory" on his end.
 
