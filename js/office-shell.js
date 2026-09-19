@@ -311,6 +311,15 @@
 
     function buildShell() {
         if (!shellOn()) return;
+        /* TEMPORARY DIAGNOSTIC -- dark/auto default bug, flagged 2026-09-19.
+           Captures state at the exact moment buildShell() runs, which a
+           console read after the fact cannot: document.readyState is always
+           "complete" by the time a person can type into devtools. Remove once
+           the race is confirmed or ruled out. */
+        console.log('[shell-diag] buildShell() firing. readyState=' + document.readyState +
+            ' officeId=' + JSON.stringify(currentOfficeId()) +
+            ' autoIsDark=' + autoIsDark() +
+            ' storedTheme=' + JSON.stringify(readTheme()));
         var main = document.getElementById('main-content');
         if (!main || main.querySelector(':scope > .uo-page')) return;   /* idempotent */
 
