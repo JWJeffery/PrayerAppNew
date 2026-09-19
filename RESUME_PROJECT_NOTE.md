@@ -10,12 +10,10 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-16, before this session's patch is applied.** Fresh-clone HEAD was `f571b09`
-(the prior session's resume-note rewrite), SEED_VERSION `v293-2026-09-16-resume-note-rewritten` — both
-already stale relative to what this note said at the top when this session started, which is exactly
-the warning two lines up. This session's own patch is not yet applied; once Josh runs it, HEAD and
-SEED_VERSION move again (`v294-2026-09-16-overlay-diagnostic-margin-cards`) — check `git log` and
-`audit-ledger.html` fresh rather than trusting either number here. The 2026-09-12 sessions closed the
+**State as of 2026-09-19.** Fresh-clone HEAD was `eceea01`, SEED_VERSION
+`v296-2026-09-19-overlay-cards-browser-confirmed` — trust neither at face value; see the FIRST MOVE
+line above. The 2026-09-16 patch (overlays/diagnostics, margin cards) is applied and browser-confirmed
+as of today; the follow-up GPG-note correction is applied too. The 2026-09-12 sessions closed the
 sanctoral work described from section 1 down; everything from 2026-09-12 onward has been the **UI
 redesign**, which is where the live work now is.
 
@@ -45,17 +43,22 @@ Compline and Morning Prayer each show their own order in their own words. **The 
 the source of the page.** It is still built *alongside* the HTML in the same pass, so the two can
 still drift on anything other than what's described next — that has not changed this session.
 
-**This session's patch (not yet applied — read `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-16 entry for
+**This session's patch (applied as `0012cdc`, read `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-16 entry for
 the full account): `overlays[]` and `diagnostics[]` are no longer unconditionally empty.**
 `renderBcpOffice()` now tells the emitter, at the exact moment it emits one of the eight
 ecumenical/cross-tradition devotions, what it just emitted and where — real structural knowledge from
 the same pass, not a guess made downstream from a label string. The emitter uses that to split
 overlay blocks out of `blocks[]` correctly (contract §9) and to turn a known placeholder string
 ("Text not found", "No collect appointed") into a `not-yet-mapped` diagnostic. The margin — empty
-since Phase 2 — now draws real cards from both. **Two Node/jsdom harnesses pass (14 cases total,
-listed in the ledger entry); NONE OF THIS HAS BEEN SEEN IN A BROWSER YET.** Ask Josh for a screenshot
-under `?shell=v2` with, e.g., the Agpeya Opening toggle on, before trusting it further — this project's
-own standing lesson is that jsdom cannot see everything a browser sees.
+since Phase 2 — now draws real cards from both. **Browser-confirmed 2026-09-19** (ledger entry of
+that date): the Angelus toggle on BCP Noonday Prayer produced the correct null-source disclosure
+card ("provenance not yet recorded in the corpus"), and adding Agpeya Opening alongside it produced
+the correct sourced card ("Coptic Orthodox (Agpeya)") in the same margin, correctly ordered. The
+Oriental Orthodoxy lane's own native Agpeya office was also checked and correctly shows an empty
+margin — that lane still emits no envelope; it is a different thing from the BCP-lane "Agpeya
+Opening" overlay toggle despite the shared name. Not exercised live: three-or-more overlays
+collapsing behind a "N more notes" toggle — pure UI plumbing, already covered by the jsdom harness,
+treated as adequately tested without a live screenshot for that specific case.
 
 **Finishing Phase 3 still means refactoring `renderBcpOffice()` so the page renders FROM the
 envelope — that work has not been touched.** That function is **890 lines with 90 template literals**

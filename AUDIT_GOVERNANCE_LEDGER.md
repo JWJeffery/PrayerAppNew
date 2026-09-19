@@ -15270,3 +15270,32 @@ steps, rather than restate "fixed" as if it were permanent.
 Documentation-only change. No data, engine or rendered output touched.
 
 SEED_VERSION bumped to `v295-2026-09-16-gpg-signing-note-corrected`.
+
+---
+
+## 2026-09-19 — Browser confirmation: overlay margin cards, both sourced and unsourced
+
+The 2026-09-16 entry above shipped `overlays[]`/`diagnostics[]` and the margin cards that draw from
+them with two Node/jsdom harnesses passing but explicitly **not verified in a browser** — no browser
+was available that session. Josh confirmed it against the live app on `?shell=v2` today, three
+screenshots:
+
+- **Oriental Orthodoxy lane, native Coptic Sixth Hour office** (Josh's first screenshot): empty rail,
+  empty margin. Correctly empty — that lane still emits no envelope (Phase 5, not started); this is
+  not the same thing as the "Agpeya Opening" BCP-lane overlay toggle, which two different things
+  sharing the word "Agpeya" made worth spelling out.
+- **BCP Noonday Prayer, Angelus toggle on** (second/third screenshots): one red-left-bar "Overlay ·
+  Borrowed" card reading "The Angelus — provenance not yet recorded in the corpus. Anchored within
+  the Invitatory." — the null-source disclosure path, confirmed live.
+- **Same office, Agpeya Opening toggle also on** (fourth screenshot): two cards, correctly ordered —
+  "Agpeya Opening — Coptic Orthodox (Agpeya). Anchored before the office." above the Angelus card from
+  the previous screenshot. The sourced path, confirmed live, alongside the unsourced one in the same
+  margin.
+
+Not exercised in the browser: three-or-more overlays collapsing to two-visible-plus-a-"N more
+notes"-toggle. That case is pure UI plumbing (no data-correctness risk) and is already covered by the
+jsdom harness; treated as adequately tested without a live screenshot for it specifically.
+
+Documentation-only change. No data, engine or rendered output touched.
+
+SEED_VERSION bumped to `v296-2026-09-19-overlay-cards-browser-confirmed`.
