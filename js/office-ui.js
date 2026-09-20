@@ -3849,6 +3849,173 @@ function overlaySourceLabel(comp) {
     return null;
 }
 
+/**
+ * renderBcpOffice()'s block-emission helpers — Phase 3, the actual refactor.
+ *
+ * Replaces the `officeHtml += \`<span class="rubric-text">...\`` string
+ * concatenation (890 lines, 90 call sites, per the handoff doc and
+ * AUDIT_GOVERNANCE_LEDGER.md's 2026-09-16 entry) with real DOM nodes built and
+ * appended one block at a time, directly into the real `#office-display`
+ * container -- not one giant string set via a single innerHTML assignment at
+ * the end. Every call site kept its own business logic (rotation, season
+ * lookup, rite fallback, toggle checks) completely untouched; only the
+ * emission tail of each branch changes, mechanically, shape by shape.
+ *
+ * This ALSO replaces js/anglican-envelope.js's regex-scrape approach for the
+ * Anglican lane: `blocks`/`overlays`/`diagnostics` are now built directly,
+ * from the same real structural knowledge the renderer already has at the
+ * moment of emission -- there is no second pass reading `<span
+ * class="rubric-text">` back out of an HTML string, and so no way for the
+ * envelope and the rendered page to drift, which was the entire cost the
+ * "emit alongside" slice named and accepted as temporary.
+ *
+ * Six shapes cover the whole function (confirmed by reading it end to end
+ * before writing any of this):
+ *   1. plain block        -- label + component-text
+ *   2. italic block        -- label + component-text wrapping <i>
+ *   3. paragraph-break italic block -- label + component-text DIV,
+ *      white-space:normal, applyParagraphBreaks()'d, always an overlay here
+ *      (Theotokion is the only caller)
+ *   4. reading block        -- label + passage-reference + reading-text +
+ *      ornamental divider
+ *   5. psalm block          -- label, then per-psalm passage-reference +
+ *      psalm-block (+ optional Gloria Patri), no divider
+ *   6. bare text            -- component-text only, no label, no rail entry
+ *      (matches the original exactly: a block with no rubric-text never got
+ *      one before either)
+ * Overlay tracking (previously the separate `overlayEmissions` array fed to
+ * js/anglican-envelope.js's `emit()`) is now just an argument to shapes 1-3:
+ * passing `overlayInfo` routes the same visual output into `overlays[]`
+ * instead of `blocks[]`, at the exact point of emission -- the same real
+ * knowledge `overlayEmissions.push(...)` used to record, just consumed
+ * directly instead of matched back up by label later.
+ *
+ * Diagnostics: previously inferred AFTER rendering, by scraping the finished
+ * HTML for a known placeholder string ("Text not found", "No collect
+ * appointed"). That inference is gone -- every call site that could produce
+ * one of those two strings already knows it did, right there, so it calls
+ * `pushDiagnostic()` directly instead. This is strictly more honest than the
+ * scrape it replaces: it cannot mis-attribute a placeholder to the wrong
+ * block, because there is no separate attribution step at all.
+ */
+function bcpMakeSpan(cls, html, opts) {
+    var el = document.createElement((opts && opts.tag) || 'span');
+    el.className = cls;
+    if (opts && opts.style) el.setAttribute('style', opts.style);
+    if (opts && opts.italic) {
+        var i = document.createElement('i');
+        i.innerHTML = html;
+        el.appendChild(i);
+    } else {
+        el.innerHTML = html;
+    }
+    return el;
+}
+
+function bcpRoleFor(label) {
+    return (window.AnglicanEnvelope && typeof window.AnglicanEnvelope.roleFor === 'function')
+        ? window.AnglicanEnvelope.roleFor(label)
+        : 'other';
+}
+
+/* Shapes 1-3: label + one text node, optionally italic or paragraph-broken,
+   optionally an overlay. `env` is the {blocks, overlays} pair being built for
+   this render; `overlayInfo` is {source, anchor} or null/undefined. */
+function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'rubric-text';
+    labelSpan.textContent = label;
+    container.appendChild(labelSpan);
+
+    /* 'para-italic' (Theotokion) and 'para' (the Examen) look alike apart from
+       italics -- confirmed against both actual call sites rather than
+       assumed, since they differ. */
+    var bodyOpts = shape === 'para-italic' ? { tag: 'div', style: 'white-space:normal', italic: true }
+                 : shape === 'para'        ? { tag: 'div', style: 'white-space:normal' }
+                 : shape === 'italic'      ? { italic: true }
+                 : {};
+    var body = (shape === 'para-italic' || shape === 'para')
+        ? bcpMakeSpan('component-text', applyParagraphBreaks(text), bodyOpts)
+        : bcpMakeSpan('component-text', text, bodyOpts);
+    container.appendChild(body);
+
+    if (overlayInfo) {
+        env.overlays.push({ label: label, source: overlayInfo.source || null, anchor: overlayInfo.anchor || null });
+    } else {
+        env.blocks.push({ label: label, role: bcpRoleFor(label), units: [] });
+    }
+}
+
+/* Shape 4: scripture reading -- label, citation, flowed text, divider. */
+function bcpEmitReading(container, env, title, citation, bodyText) {
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'rubric-text';
+    labelSpan.textContent = title;
+    container.appendChild(labelSpan);
+
+    var cite = document.createElement('h4');
+    cite.className = 'passage-reference';
+    cite.textContent = citation;
+    container.appendChild(cite);
+
+    container.appendChild(bcpMakeSpan('reading-text', formatScriptureAsFlow(bodyText), { tag: 'div' }));
+    bcpEmitDivider(container);
+
+    env.blocks.push({ label: title, role: bcpRoleFor(title), units: [{ kind: 'scripture', citation: citation }] });
+}
+
+/* Shape 5: the psalm block -- one label, then per-psalm citation + poetry
+   (+ optional Gloria Patri), no divider (matches the original exactly). */
+function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'rubric-text';
+    labelSpan.textContent = label;
+    container.appendChild(labelSpan);
+
+    var units = [];
+    psalmEntries.forEach(function (p) {
+        var cite = document.createElement('h4');
+        cite.className = 'passage-reference';
+        cite.textContent = 'Psalm ' + p.displayNumber;
+        container.appendChild(cite);
+        container.appendChild(bcpMakeSpan('psalm-block', formatPsalmAsPoetry(p.fullText), { tag: 'div' }));
+        /* Original always rendered this span when the toggle was checked,
+           even with gt resolving to an empty string -- null (toggle
+           unchecked) is the only case that skips it, not falsy. */
+        if (p.gloriaText !== null && p.gloriaText !== undefined) {
+            container.appendChild(bcpMakeSpan('component-text', p.gloriaText, { italic: true }));
+        }
+        units.push({ kind: 'scripture', citation: 'Psalm ' + p.displayNumber });
+    });
+    env.blocks.push({ label: label, role: bcpRoleFor(label), units: units });
+}
+
+/* Shape 6: bare text, no label -- never a rail entry, matching the original
+   (a block with no rubric-text never produced one before either). */
+function bcpEmitBare(container, text, opts) {
+    container.appendChild(bcpMakeSpan('component-text', text, opts));
+}
+
+function bcpEmitDivider(container) {
+    var div = document.createElement('div');
+    div.className = 'ornamental-divider';
+    div.innerHTML = '<div class="div-line-left"></div><span class="ornamental-divider-glyph">\u2726 \u271d \u2726</span><div class="div-line-right"></div>';
+    container.appendChild(div);
+}
+
+/* Contract §11: the same three real codes DIAGNOSTIC_WORDING in
+   js/anglican-envelope.js already names, called directly at the moment a
+   call site would otherwise have rendered a placeholder -- never inferred
+   afterward. */
+var BCP_DIAGNOSTIC_WORDING = {
+    'not-yet-mapped': 'No proper is appointed for this day in the corpus. Nothing has been substituted.',
+    'source-blocked': 'This exists in scope but cannot yet be shown.',
+    'coverage-gap':   'A known gap, stated rather than hidden.'
+};
+function bcpPushDiagnostic(env, code, blockLabel) {
+    env.diagnostics.push({ code: code, message: BCP_DIAGNOSTIC_WORDING[code], block: blockLabel });
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -4010,47 +4177,59 @@ async function renderBcpOffice() {
     if (!isMorning) { morningOT = ''; morningEpistle = ''; morningGospel = ''; }
     if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
 
-    // ── Begin HTML assembly ───────────────────────────────────────────────────
+    // ── Begin DOM assembly (Phase 3 refactor: real nodes, not one string) ────
     const officeTitle    = activeRubric?.officeName || 'Office';
     const officeSubtitle = dailyData.title || 'Day Title';
 
-    let officeHtml = `<div class="office-container">`;
-    officeHtml += `<p class="office-book-title">The Daily Office</p>`;
-    officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;
+    const container = document.createElement('div');
+    container.className = 'office-container';
 
-    // Envelope overlay tracking (§9): real structural knowledge recorded at
-    // the exact moment each borrowed/ecumenical devotion is emitted, so
-    // js/anglican-envelope.js never has to guess overlay status from a label
-    // string. See the note there for the full account.
-    const overlayEmissions = [];
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Daily Office';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = officeTitle;
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = officeSubtitle;
+    container.appendChild(subtitle);
+
+    // env replaces the old overlayEmissions array plus the scrape-based
+    // js/anglican-envelope.js pass: blocks/overlays/diagnostics are built
+    // directly, here, at the moment each is actually emitted.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
 
     // Pre-sequence ecumenical devotions (BCP offices only)
     if (document.getElementById('toggle-agpeya-opening')?.checked) {
         const agpeyaComp = appData.components.find(c => c.id === 'cop-agpeya-opening');
         if (agpeyaComp) {
-            officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaComp.text}</span>`;
-            overlayEmissions.push({ label: 'Agpeya Opening', source: overlaySourceLabel(agpeyaComp), anchor: 'before the office' });
+            bcpEmitBlock(container, env, 'Agpeya Opening', agpeyaComp.text,
+                { source: overlaySourceLabel(agpeyaComp), anchor: 'before the office' });
         }
     }
     if (document.getElementById('toggle-east-syriac-hours')?.checked) {
         const esComp = appData.components.find(c => c.id === 'ecu-east-syriac-hours');
         if (esComp) {
-            officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
-            overlayEmissions.push({ label: 'Prayer of the Hours', source: overlaySourceLabel(esComp), anchor: 'before the office' });
+            bcpEmitBlock(container, env, 'Prayer of the Hours', esComp.text,
+                { source: overlaySourceLabel(esComp), anchor: 'before the office' });
         }
     }
 
     // Pre-sequence Marian (before position — BCP offices only)
     if (marianElement !== 'none' && marianPos === 'before') {
         if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
-            const t = resolveText(marianComp, rite) || 'Text not found';
-            officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${t}</i></span>`;
+            const t = resolveText(marianComp, rite);
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'Marian Antiphon');
+            bcpEmitBlock(container, env, 'Marian Antiphon', t || 'Text not found', null, 'italic');
         }
         if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
             const raw = resolveText(theotokionComp, rite) || theotokionComp.text || '';
-            officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
-            overlayEmissions.push({ label: 'Theotokion', source: overlaySourceLabel(theotokionComp), anchor: 'before the office' });
+            bcpEmitBlock(container, env, 'Theotokion', raw,
+                { source: overlaySourceLabel(theotokionComp), anchor: 'before the office' }, 'para-italic');
         }
     }
 // ── Bible book pre-fetch (parallel) ──────────────────────────────────────
@@ -4143,8 +4322,9 @@ async function renderBcpOffice() {
             const comp = (openingOverride && appData.components.find(c => c.id === openingOverride))
                       || appData.components.find(c => c.id === `bcp-opening-${season}`)
                       || appData.components.find(c => c.id === 'bcp-opening-general');
-            const t = comp ? (resolveText(comp, rite) || 'Text not found') : 'Text not found';
-            officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${t}</span>`;
+            const t = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'Opening Sentence');
+            bcpEmitBlock(container, env, 'Opening Sentence', t || 'Text not found');
             continue;
         }
 
@@ -4153,7 +4333,7 @@ async function renderBcpOffice() {
             const antText = isMorning
                 ? (dailyData?.antiphon_mp || dailyData?.antiphon || '')
                 : (dailyData?.antiphon_ep || dailyData?.antiphon || '');
-            if (antText) officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${antText}</i></span>`;
+            if (antText) bcpEmitBlock(container, env, 'Antiphon', antText, null, 'italic');
             continue;
         }
 
@@ -4161,18 +4341,18 @@ async function renderBcpOffice() {
         if (item === 'VARIABLE_PSALM') {
             if (psalms) {
                 const psalmRefs = psalms.split(',').map(p => p.trim());
-                officeHtml += `<span class="rubric-text">${psalmRefs.length > 1 ? 'The Psalms' : 'The Psalm'}</span>`;
+                const psalmEntries = [];
                 for (const psalm of psalmRefs) {
                     const psalmId  = 'PSALM ' + psalm.replace(/^psalm\s+/i, '').trim().toUpperCase();
                     const fullText = await getScriptureText(psalmId);
-                    officeHtml += `<h4 class="passage-reference">Psalm ${psalmId.replace(/^PSALM\s+/i, '')}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                    let gloriaText = null;
                     if (document.getElementById('toggle-gloria-patri')?.checked) {
                         const gloria = appData.components.find(c => c.id === 'comm-gloria-patri');
-                        const gt = gloria ? (resolveText(gloria, rite) || '') : '';
-                        officeHtml += `<span class="component-text"><i>${gt}</i></span>`;
+                        gloriaText = gloria ? (resolveText(gloria, rite) || '') : '';
                     }
+                    psalmEntries.push({ displayNumber: psalmId.replace(/^PSALM\s+/i, ''), fullText, gloriaText });
                 }
+                bcpEmitPsalmBlock(container, env, psalmRefs.length > 1 ? 'The Psalms' : 'The Psalm', psalmEntries);
             }
             continue;
         }
@@ -4182,8 +4362,8 @@ async function renderBcpOffice() {
             if (item === 'VARIABLE_READING_OT' && document.getElementById('toggle-prayer-before-reading')?.checked) {
                 const pbr = appData.components.find(c => c.id === 'ecu-prayer-before-reading');
                 if (pbr) {
-                    officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbr.text}</span>`;
-                    overlayEmissions.push({ label: 'Prayer Before Reading', source: overlaySourceLabel(pbr), anchor: 'before the Old Testament Lesson' });
+                    bcpEmitBlock(container, env, 'Prayer Before Reading', pbr.text,
+                        { source: overlaySourceLabel(pbr), anchor: 'before the Old Testament Lesson' });
                 }
             }
             let reading = '', title = '';
@@ -4227,10 +4407,8 @@ async function renderBcpOffice() {
             if (item === 'VARIABLE_READING_EPISTLE')  { reading = isMorning ? morningEpistle : eveningEpistle; title = 'The Epistle'; }
             if (item === 'VARIABLE_READING_GOSPEL')   { reading = isMorning ? morningGospel  : eveningGospel;  title = 'The Holy Gospel'; }
             if (reading) {
-                officeHtml += `<span class="rubric-text">${title}</span><h4 class="passage-reference">${reading}</h4>`;
                 const text = await getScriptureText(reading);
-                officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
-                officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+                bcpEmitReading(container, env, title, reading, text);
             }
             continue;
         }
@@ -4286,8 +4464,9 @@ async function renderBcpOffice() {
             if (canticleId) {
                 const comp = appData.components.find(c => c.id === canticleId);
                 if (comp) {
-                    const t = resolveText(comp, rite) || 'Text not found';
-                    officeHtml += `<span class="rubric-text">${canticleLabel}</span><span class="component-text">${t}</span>`;
+                    const t = resolveText(comp, rite);
+                    if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', canticleLabel);
+                    bcpEmitBlock(container, env, canticleLabel, t || 'Text not found');
                 } else {
                     console.warn(`[renderOffice] VARIABLE_CANTICLE1: component not found — ${canticleId}`);
                 }
@@ -4332,8 +4511,9 @@ async function renderBcpOffice() {
             if (canticleId) {
                 const comp = appData.components.find(c => c.id === canticleId);
                 if (comp) {
-                    const t = resolveText(comp, rite) || 'Text not found';
-                    officeHtml += `<span class="rubric-text">${canticleLabel}</span><span class="component-text">${t}</span>`;
+                    const t = resolveText(comp, rite);
+                    if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', canticleLabel);
+                    bcpEmitBlock(container, env, canticleLabel, t || 'Text not found');
                 } else {
                     console.warn(`[renderOffice] VARIABLE_CANTICLE2: component not found — ${canticleId}`);
                 }
@@ -4353,7 +4533,7 @@ async function renderBcpOffice() {
             const comp = appData.components.find(c => c.id === blessingIds[idx]);
             if (comp) {
                 const t = resolveText(comp, rite) || comp.text || '';
-                officeHtml += `<span class="component-text">${t}</span>`;
+                bcpEmitBare(container, t);
             }
             continue;
         }
@@ -4365,7 +4545,6 @@ async function renderBcpOffice() {
         // own proper collects take priority, rotating daily, matching the BCP's own
         // ordering (the Day's Collect is presented as the secondary "if desired" option).
         if (item === 'VARIABLE_NOONDAY_COLLECT') {
-            officeHtml += `<span class="rubric-text">The Collect</span>`;
             const useDayCollect = document.getElementById('toggle-noonday-day-collect')?.checked ?? false;
             let cId;
             if (useDayCollect) {
@@ -4378,9 +4557,10 @@ async function renderBcpOffice() {
                 cId = noondayCollectIds[idx];
             }
             const comp = appData.components.find(c => c.id === cId);
-            const t = comp ? (resolveText(comp, rite) || 'No collect appointed') : 'No collect appointed';
-            officeHtml += `<span class="component-text">${t}</span>`;
-            officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+            const t = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'The Collect');
+            bcpEmitBlock(container, env, 'The Collect', t || 'No collect appointed');
+            bcpEmitDivider(container);
             continue;
         }
 
@@ -4389,7 +4569,6 @@ async function renderBcpOffice() {
         // days rotate among the 4 general options (or stay on Option 1 if the
         // rotation toggle is off, matching the Mission Prayer convention).
         if (item === 'VARIABLE_COMPLINE_COLLECT') {
-            officeHtml += `<span class="rubric-text">The Collect</span>`;
             const isSaturday = currentDate.getDay() === 6;
             let cId;
             if (isSaturday) {
@@ -4401,8 +4580,9 @@ async function renderBcpOffice() {
                 cId = complineCollectIds[idx];
             }
             const comp = appData.components.find(c => c.id === cId);
-            const t = comp ? (resolveText(comp, rite) || 'No collect appointed') : 'No collect appointed';
-            officeHtml += `<span class="component-text">${t}</span>`;
+            const t = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'The Collect');
+            bcpEmitBlock(container, env, 'The Collect', t || 'No collect appointed');
 
             if (document.getElementById('toggle-compline-additional-prayer')?.checked) {
                 const addlIds = ['bcp-collect-compline-addl-1', 'bcp-collect-compline-addl-2'];
@@ -4410,16 +4590,16 @@ async function renderBcpOffice() {
                 const addlComp = appData.components.find(c => c.id === addlIds[addlIdx]);
                 if (addlComp) {
                     const addlText = resolveText(addlComp, rite) || addlComp.text || '';
-                    officeHtml += `<span class="component-text">${addlText}</span>`;
+                    bcpEmitBare(container, addlText);
                 }
             }
-            officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+            bcpEmitDivider(container);
 
             if (document.getElementById('toggle-examen')?.checked) {
                 const ex = appData.components.find(c => c.id === 'ecu-examen');
                 if (ex) {
-                    officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(ex.text)}</div>`;
-                    overlayEmissions.push({ label: 'The Examen', source: overlaySourceLabel(ex), anchor: 'after the Compline collect' });
+                    bcpEmitBlock(container, env, 'The Examen', ex.text,
+                        { source: overlaySourceLabel(ex), anchor: 'after the Compline collect' }, 'para');
                 }
             }
             continue;
@@ -4427,21 +4607,21 @@ async function renderBcpOffice() {
 
         // VARIABLE_COLLECT — principal daily collect with manual ID mappings
         if (item === 'VARIABLE_COLLECT') {
-            officeHtml += `<span class="rubric-text">The Collect</span>`;
             let rawId = dailyData.collect || 'collect-default-ferial';
             let cId   = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
             if (cId === 'bcp-collect-transfiguration') cId = 'bcp-collect-the-transfiguration-of-our-lord';
 
             const comp = appData.components.find(c => c.id === cId);
-            const t    = comp ? (resolveText(comp, rite) || 'No collect appointed') : 'No collect appointed';
-            officeHtml += `<span class="component-text">${t}</span>`;
-            officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+            const t    = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'The Collect');
+            bcpEmitBlock(container, env, 'The Collect', t || 'No collect appointed');
+            bcpEmitDivider(container);
 
             if (!isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
                 const kp = appData.components.find(c => c.id === 'ecu-kyrie-pantocrator');
                 if (kp) {
-                    officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kp.text}</span>`;
-                    overlayEmissions.push({ label: 'Kyrie Pantocrator', source: overlaySourceLabel(kp), anchor: 'after the Collect' });
+                    bcpEmitBlock(container, env, 'Kyrie Pantocrator', kp.text,
+                        { source: overlaySourceLabel(kp), anchor: 'after the Collect' });
                 }
             }
             continue;
@@ -4471,7 +4651,7 @@ async function renderBcpOffice() {
             }
             if (wkComp) {
                 const t = resolveText(wkComp, rite) || wkComp.text || '';
-                officeHtml += `<span class="rubric-text">A Collect</span><span class="component-text">${t}</span>`;
+                bcpEmitBlock(container, env, 'A Collect', t);
             } else {
                 console.warn('[renderOffice] VARIABLE_WEEKDAY_COLLECT: no collect resolved — skipping');
             }
@@ -4489,7 +4669,7 @@ async function renderBcpOffice() {
             const comp = appData.components.find(c => c.id === missionPrayerIds[missionIdx]);
             if (comp) {
                 const t = resolveText(comp, rite) || comp.text || '';
-                officeHtml += `<span class="rubric-text">A Prayer for Mission</span><span class="component-text">${t}</span>`;
+                bcpEmitBlock(container, env, 'A Prayer for Mission', t);
             } else {
                 console.warn(`[renderOffice] VARIABLE_MISSION_PRAYER: ${missionPrayerIds[missionIdx]} not found`);
             }
@@ -4502,14 +4682,15 @@ async function renderBcpOffice() {
                 const angelusComp = appData.components.find(c => c.id === 'ecu-angelus');
                 if (angelusComp) {
                     const t = resolveText(angelusComp, rite) || angelusComp.text || '';
-                    officeHtml += `<span class="rubric-text">The Angelus</span><span class="component-text">${t}</span>`;
-                    overlayEmissions.push({ label: 'The Angelus', source: overlaySourceLabel(angelusComp), anchor: 'within the Invitatory' });
+                    bcpEmitBlock(container, env, 'The Angelus', t,
+                        { source: overlaySourceLabel(angelusComp), anchor: 'within the Invitatory' });
                 }
             }
             const invitId = isMorning ? 'bcp-invitatory-full-mp' : 'bcp-invitatory-full-ep-noon-compline';
             const invComp = appData.components.find(c => c.id === invitId);
-            const invText = invComp ? (resolveText(invComp, rite) || 'Text not found') : 'Text not found';
-            officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${invText}</span>`;
+            const invTextResolved = invComp ? resolveText(invComp, rite) : null;
+            if (!invTextResolved) bcpPushDiagnostic(env, 'not-yet-mapped', 'The Invitatory');
+            bcpEmitBlock(container, env, 'The Invitatory', invTextResolved || 'Text not found');
 
             if (isMorning || isEvening) {
                 // BCP p.45/85: Pascha Nostrum (Christ Our Passover) replaces the
@@ -4530,7 +4711,7 @@ async function renderBcpOffice() {
                     const pasch = appData.components.find(c => c.id === 'bcp-pascha-nostrum');
                     if (pasch) {
                         const pt = resolveText(pasch, rite) || pasch.text || '';
-                        officeHtml += `<span class="rubric-text">Christ Our Passover</span><span class="component-text">${pt}</span>`;
+                        bcpEmitBlock(container, env, 'Christ Our Passover', pt);
                     }
                 } else {
                     // BCP p.42/45 (Rite I) and p.82-83 (Rite II): "Then follows one
@@ -4551,7 +4732,7 @@ async function renderBcpOffice() {
                         if (comp) {
                             const t = resolveText(comp, rite) || comp.text || '';
                             const label = inviteIds[idx] === 'bcp-jubilate' ? 'Jubilate' : 'Venite';
-                            officeHtml += `<span class="rubric-text">${label}</span><span class="component-text">${t}</span>`;
+                            bcpEmitBlock(container, env, label, t);
                         }
                     }
                 }
@@ -4562,16 +4743,18 @@ async function renderBcpOffice() {
         // comm-lords-prayer — rite-aware
         if (item === 'comm-lords-prayer') {
             const comp = appData.components.find(c => c.id === 'comm-lords-prayer');
-            const t = comp ? (resolveText(comp, rite) || "Lord's Prayer not found") : "Lord's Prayer not found";
-            officeHtml += `<span class="rubric-text">The Lord's Prayer</span><span class="component-text">${t}</span>`;
+            const t = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', "The Lord's Prayer");
+            bcpEmitBlock(container, env, "The Lord's Prayer", t || "Lord's Prayer not found");
             continue;
         }
 
         // comm-kyrie — rite-aware
         if (item === 'comm-kyrie') {
             const comp = appData.components.find(c => c.id === 'comm-kyrie');
-            const t = comp ? (resolveText(comp, rite) || 'Kyrie not found') : 'Kyrie not found';
-            officeHtml += `<span class="rubric-text">Kyrie</span><span class="component-text">${t}</span>`;
+            const t = comp ? resolveText(comp, rite) : null;
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'Kyrie');
+            bcpEmitBlock(container, env, 'Kyrie', t || 'Kyrie not found');
             continue;
         }
 
@@ -4581,7 +4764,7 @@ async function renderBcpOffice() {
                 const comp = appData.components.find(c => c.id === 'bcp-litany');
                 if (comp) {
                     const t = resolveText(comp, rite) || comp.text || '';
-                    officeHtml += `<span class="rubric-text">${comp.title || 'The Great Litany'}</span><span class="component-text">${t}</span>`;
+                    bcpEmitBlock(container, env, comp.title || 'The Great Litany', t);
                 } else {
                     console.warn('[renderOffice] bcp-litany: component not found');
                 }
@@ -4601,7 +4784,7 @@ async function renderBcpOffice() {
                 const comp = appData.components.find(c => c.id === 'bcp-general-thanksgiving');
                 if (comp) {
                     const t = resolveText(comp, rite) || comp.text || '';
-                    officeHtml += `<span class="rubric-text">${comp.title || 'General Thanksgiving'}</span><span class="component-text">${t}</span>`;
+                    bcpEmitBlock(container, env, comp.title || 'General Thanksgiving', t);
                 } else {
                     console.warn('[renderOffice] bcp-general-thanksgiving: component not found');
                 }
@@ -4619,7 +4802,7 @@ async function renderBcpOffice() {
                 const comp = appData.components.find(c => c.id === 'bcp-chrysostom');
                 if (comp) {
                     const t = resolveText(comp, rite) || comp.text || '';
-                    officeHtml += `<span class="rubric-text">${comp.title || 'Prayer of St. Chrysostom'}</span><span class="component-text">${t}</span>`;
+                    bcpEmitBlock(container, env, comp.title || 'Prayer of St. Chrysostom', t);
                 } else {
                     console.warn('[renderOffice] bcp-chrysostom: component not found');
                 }
@@ -4642,7 +4825,7 @@ async function renderBcpOffice() {
             if (comp) {
                 let t = resolveText(comp, rite) || comp.text || '';
                 if (season === 'easter') t += ' Alleluia, alleluia, alleluia.';
-                officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text">${t}</span>`;
+                bcpEmitBlock(container, env, 'Antiphon', t);
             }
             continue;
         }
@@ -4717,7 +4900,7 @@ async function renderBcpOffice() {
         if (comp) {
             const t = resolveText(comp, rite) || comp.text || '';
             const label = DISPLAY_LABELS[compId] || comp.title || compId;
-            officeHtml += `<span class="rubric-text">${label}</span><span class="component-text">${t}</span>`;
+            bcpEmitBlock(container, env, label, t);
         } else if (compId && !compId.startsWith('VARIABLE_') && compId !== item) {
             console.warn(`[renderOffice] Generic lookup failed for resolved ID: ${compId} (from: ${item})`);
         } else if (compId && !compId.startsWith('VARIABLE_')) {
@@ -4728,8 +4911,8 @@ async function renderBcpOffice() {
         if (item === 'bcp-absolution-slot' && document.getElementById('toggle-trisagion')?.checked) {
             const tris = appData.components.find(c => c.id === 'ecu-trisagion');
             if (tris) {
-                officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${tris.text}</span>`;
-                overlayEmissions.push({ label: 'Trisagion', source: overlaySourceLabel(tris), anchor: 'after the Absolution' });
+                bcpEmitBlock(container, env, 'Trisagion', tris.text,
+                    { source: overlaySourceLabel(tris), anchor: 'after the Absolution' });
             }
         }
     }
@@ -4737,36 +4920,26 @@ async function renderBcpOffice() {
     // Post-sequence Marian (after position — BCP offices only)
     if (marianElement !== 'none' && marianPos === 'after') {
         if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
-            const t = resolveText(marianComp, rite) || 'Text not found';
-            officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${t}</i></span>`;
+            const t = resolveText(marianComp, rite);
+            if (!t) bcpPushDiagnostic(env, 'not-yet-mapped', 'Marian Antiphon');
+            bcpEmitBlock(container, env, 'Marian Antiphon', t || 'Text not found', null, 'italic');
         }
         if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
             const raw = resolveText(theotokionComp, rite) || theotokionComp.text || '';
-            officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
-            overlayEmissions.push({ label: 'Theotokion', source: overlaySourceLabel(theotokionComp), anchor: 'after the office' });
+            bcpEmitBlock(container, env, 'Theotokion', raw,
+                { source: overlaySourceLabel(theotokionComp), anchor: 'after the office' }, 'para-italic');
         }
     }
 
-    // ── Finalise DOM ──────────────────────────────────────────────────────────
-    // Phase 3, first slice: emit the resolved-office envelope alongside the
-    // markup, for the shell's rail, ordo day-line, and (2026-09-16) margin
-    // cards. This does NOT affect what is rendered. `overlayEmissions` above
-    // is real structural knowledge — which labels were just emitted as
-    // borrowed/ecumenical devotion, and where — handed to the emitter so it
-    // never has to guess overlay status from a label string alone. See
-    // js/anglican-envelope.js for why the envelope is emitted beside the HTML
-    // rather than rendered from, and what that still costs.
-    // Gated on the flag: nothing outside the new shell consumes the envelope, so
-    // under ?shell=v1 this should not run at all. It was ungated on first
-    // write — harmless but wasteful, and it made the legacy path pay for a
-    // feature it cannot use.
+    // ── Finalise DOM (Phase 3 refactor: real nodes throughout, one assignment
+    // to office-display, and the envelope assembled directly from `env` --
+    // no more scraping the rendered HTML for it) ─────────────────────────────
     if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
         try {
             window.AnglicanEnvelope.publish(
-                window.AnglicanEnvelope.emit(officeHtml, {
+                window.AnglicanEnvelope.assemble(env, {
                     calendarSummary: officeSubtitle || null,
-                    officeFamily: resolvedOfficeId || null,
-                    overlays: overlayEmissions
+                    officeFamily: resolvedOfficeId || null
                 })
             );
         } catch (e) {
@@ -4774,7 +4947,7 @@ async function renderBcpOffice() {
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    document.getElementById('office-display').replaceChildren(container);
     applyExplanationLayer('office-display');
 
     document.getElementById('date-header').innerText = 'Commemorations';

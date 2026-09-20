@@ -250,8 +250,37 @@
         };
     }
 
+    /**
+     * The direct-knowledge path -- Phase 3's actual refactor, added when
+     * renderBcpOffice() was converted to build blocks[]/overlays[]/
+     * diagnostics[] itself, at the moment of emission, rather than this file
+     * scraping them back out of the rendered HTML string afterward. `env` is
+     * exactly {blocks, overlays, diagnostics} as the renderer built it; this
+     * function's only job is to wrap that in the envelope shape and attach
+     * `context`, reusing the same role taxonomy and never re-deriving
+     * anything `emit()` above used to infer. `emit()` itself is kept,
+     * unchanged, only because it is still the reference implementation for
+     * any lane that has not been converted yet -- it is no longer called by
+     * the Anglican lane.
+     */
+    function assemble(env, context) {
+        return {
+            tradition: 'ANG',
+            officeFamily: (context && context.officeFamily) || null,
+            context: {
+                calendarSummary: (context && context.calendarSummary) || null,
+                rankSummary: null      /* the Anglican lane supplies none */
+            },
+            blocks: (env && env.blocks) || [],
+            overlays: (env && env.overlays) || [],
+            diagnostics: (env && env.diagnostics) || []
+        };
+    }
+
     window.AnglicanEnvelope = {
         emit: emit,
+        assemble: assemble,
+        roleFor: roleFor,
 
         /* The shell listens for this rather than polling. Publishing is
            separate from emitting so a failure to publish can never affect the

@@ -10,16 +10,17 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `ff5fba2`,
-SEED_VERSION `v298-2026-09-20-dark-auto-bug-fixed-office-active-guard` — trust neither at face
-value; see the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v299-2026-09-20-dark-auto-bug-live-confirmed` — check fresh rather than trusting either number
-here. Documentation-only: adds the live confirmation of the `ff5fba2` fix (Evening Prayer → Back to
-Modes, splash dark/light state now agrees with its own checkbox, no shell involvement). Item 8 below
-is fully closed. The GPG-signing issue (item unchanged from last session) is still open and still
-unexplained. The 2026-09-12 sessions closed the sanctoral work described from section 1
-down; everything from 2026-09-12 onward has been the **UI redesign**, which is where the live work
-now is.
+**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `ee938e2`,
+SEED_VERSION `v299-2026-09-20-dark-auto-bug-live-confirmed` — trust neither at face value; see the
+FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
+`v300-2026-09-20-renderbcpoffice-refactor` — check fresh rather than trusting either number here.
+**This is the `renderBcpOffice()` refactor itself** — Phase 3's actual remaining work, previously
+flagged in this note as "still not started" and "do not start at the end of a long session." Josh's
+explicit call: the session wasn't actually that long, proceed. See item 1 below and
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry for the full account, including two real mistakes
+caught and fixed before committing (a Gloria Patri null-vs-empty edge case, and a wrongly-assumed
+italic on the Examen's paragraph-broken block). **Not yet browser-confirmed** — that's the immediate
+next step, against Phase 3's own acceptance criteria in the handoff doc §9.
 
 ---
 
@@ -29,23 +30,45 @@ now is.
 
 An outside design proposal, verified against the repo, corrected in fifteen places for governance,
 and adopted. One canon — **rail · page · margin** — with everything not prayed aloud moved out of the
-text column into the margin. Six phases. **Phase 1 and 2 are done; Phase 3 is half done.**
+text column into the margin. Six phases. **Phase 1 and 2 are done; Phase 3's refactor is done, not
+yet browser-confirmed.**
 
 | Phase | State |
 |---|---|
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
-| 3 — Anglican lane emits the envelope | **half done** — see below |
+| 3 — Anglican lane emits the envelope | **refactor done 2026-09-20, not yet browser-confirmed** — see below |
 | 4 — threshold and Office Settings | not started |
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
-**PHASE 3 IS THE LIVE TASK AND IT IS STILL HALF FINISHED — THE REFACTOR ITSELF HAS NOT STARTED.**
-`js/anglican-envelope.js` emits a §4-shaped envelope and the shell draws the rail and the ordo
-day-line from it — **confirmed in the browser against the live renderer**, per office: Noonday,
-Compline and Morning Prayer each show their own order in their own words. **The envelope is still not
-the source of the page.** It is still built *alongside* the HTML in the same pass, so the two can
-still drift on anything other than what's described next — that has not changed this session.
+**PHASE 3'S REFACTOR IS DONE (2026-09-20) — THE NEXT STEP IS BROWSER CONFIRMATION, NOT MORE CODE.**
+`renderBcpOffice()` (`js/office-ui.js`) no longer builds one `officeHtml` string and scrapes it
+afterward. Every one of its ~90 emission sites now calls one of six small block-emission helpers
+(`bcpEmitBlock`, `bcpEmitReading`, `bcpEmitPsalmBlock`, `bcpEmitBare`, plus `bcpEmitDivider` and
+`bcpPushDiagnostic`) that build real DOM nodes directly into a `container` element AND push the same
+structural knowledge into `blocks[]`/`overlays[]`/`diagnostics[]` in the same call — no second pass
+reading labels back out of a finished HTML string. `js/anglican-envelope.js` gained `assemble(env,
+context)`, which wraps that directly-built data in the envelope shape; the old regex-scraping
+`emit()` function is kept, unchanged, as the reference implementation for lanes not yet converted
+(Phase 5), but the Anglican lane no longer calls it. Every branch's decision logic — rotation, season
+lookup, rite fallback, every BCP-alternative toggle — was verified line by line against the
+pre-refactor original, not rewritten from memory; `node --check` passes on both files. **Two real
+bugs were caught and fixed during the conversion, not introduced by it** — full account in
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry (title: "The renderBcpOffice() refactor: Phase 3's
+actual remaining work, done").
+
+**What is NOT yet done: any actual browser confirmation.** Phase 3's own acceptance criteria (handoff
+doc §9) are the standard: Morning Prayer, Noonday, Evening Prayer and Compline rendering correctly
+for a spread of dates including Holy Cross Day and a Sunday; the Hudra Prayer for Understanding
+appearing as a marked overlay, never as native content; a deliberately unmapped proper rendering a
+`not-yet-mapped` diagnostic; the seasonal dot still reading `liturgicalColor` correctly. None of that
+has been exercised live yet — do this before anything else in Phase 3/4/5.
+
+**Two renderers deliberately untouched, correctly out of scope:** `renderEastSyriac()` and the Coptic
+Agpeya renderer, further down `js/office-ui.js`, still build their own separate `officeHtml` strings
+the old way. Porting them is Phase 5. Do not confuse "the refactor is done" with "every lane is
+converted" — only the Anglican lane is.
 
 **This session's patch (applied as `0012cdc`, read `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-16 entry for
 the full account): `overlays[]` and `diagnostics[]` are no longer unconditionally empty.**
@@ -64,13 +87,10 @@ Opening" overlay toggle despite the shared name. Not exercised live: three-or-mo
 collapsing behind a "N more notes" toggle — pure UI plumbing, already covered by the jsdom harness,
 treated as adequately tested without a live screenshot for that specific case.
 
-**Finishing Phase 3 still means refactoring `renderBcpOffice()` so the page renders FROM the
-envelope — that work has not been touched.** That function is **890 lines with 90 template literals**
-and decides what the office contains while writing its markup in the same breath — there is no seam
-between the two, and creating that seam is still the work. It is still the largest single change in
-the plan. **Do not start it at the end of a long session.** The emitter has now proven it can read the
-structure correctly AND distinguish overlay from native content, which makes the refactor a somewhat
-smaller bet than it looked before — but it is still the whole render path of the largest lane.
+**Superseded 2026-09-20: the paragraph immediately above ("Finishing Phase 3 still means
+refactoring...") described the refactor as not yet started. It has since been done — see "PHASE 3'S
+REFACTOR IS DONE" above and the 2026-09-20 ledger entry.** Kept here only as the historical record of
+what the `0012cdc` increment actually delivered at the time.
 
 ### The demolition — why Phase 6 was partly brought forward
 
@@ -90,10 +110,10 @@ skin and old theme behaviour. That is what fixed the dark splash.
 
 ### Open, in rough priority order
 
-1. **The `renderBcpOffice()` refactor** (above). Removes the envelope/HTML drift by making the page
-   render FROM the envelope. Overlay/diagnostic margin cards already work without it (this session's
-   patch — the envelope already carried citation data too, but nothing renders a gutter citation
-   beside the text yet; that's still page-column layout, still blocked on the refactor).
+1. ~~The `renderBcpOffice()` refactor~~ — **DONE 2026-09-20, not yet browser-confirmed.** See "PHASE
+   3'S REFACTOR IS DONE" in §0 above and the 2026-09-20 ledger entry. Next step: Phase 3's own
+   acceptance criteria (handoff doc §9) against a real browser, then the gutter citation (still
+   page-column layout, was blocked on this refactor, may now be unblocked — check before assuming).
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

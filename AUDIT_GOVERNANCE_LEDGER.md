@@ -15398,3 +15398,80 @@ as the two red herrings above, not a recurrence of the bug. Before this fix, the
 produced a *mismatch* (checkbox unchecked, page dark anyway); now checkbox state and page state
 agree, which is the actual thing this fix was for. Item 8 in `RESUME_PROJECT_NOTE.md` and this entry
 can both be treated as closed.
+
+---
+
+## 2026-09-20 — The renderBcpOffice() refactor: Phase 3's actual remaining work, done
+
+This is the change `documentation/UI_REDESIGN_HANDOFF.md` §9 (Phase 3) and `RESUME_PROJECT_NOTE.md`
+§0 have been calling "the largest single change in the plan" since the overlays/diagnostics
+increment (`0012cdc`, 2026-09-16). That increment was explicitly the "emit alongside" slice, chosen
+over this one; this commit is the refactor itself.
+
+**What changed.** `renderBcpOffice()` (`js/office-ui.js`, ~970 lines, ~90 emission sites) built one
+`officeHtml` string via `+=` concatenation, then set it via a single `innerHTML` assignment at the
+end. `js/anglican-envelope.js` then re-derived the rail/margin envelope by regex-scraping that
+finished string for `<span class="rubric-text">` and `<h4 class="passage-reference">` markers — the
+two were built independently in the same pass and could drift, which the 2026-09-16 entry named as
+the accepted cost of the interim slice.
+
+Every one of the ~90 `officeHtml +=` sites is now a call into one of six small block-emission helpers
+(`js/office-ui.js`, just above `renderBcpOffice()`): `bcpEmitBlock` (plain / italic / paragraph-broken,
+optionally an overlay), `bcpEmitReading` (citation + flowed text + divider), `bcpEmitPsalmBlock`
+(per-psalm citation + poetry + optional Gloria Patri), and `bcpEmitBare` (component-text with no rail
+entry, for the two blocks — the closing blessing and Compline's additional prayer — that never had
+one). Each call builds real DOM nodes via `document.createElement`, appended directly to a single
+`container` element in true execution order, and simultaneously pushes the matching entry into
+`blocks[]`/`overlays[]`/`diagnostics[]` — the same real structural knowledge the renderer already has
+at the moment of emission, not a second pass reading it back out of a string. `container` replaces
+`office-display`'s content via `replaceChildren()`, not `innerHTML`.
+
+`js/anglican-envelope.js` gained `assemble(env, context)`, which wraps the renderer's own
+`{blocks, overlays, diagnostics}` in the envelope shape directly — no scraping. `emit()` (the
+scrape-based function) is kept, unchanged, as the reference implementation for any lane not yet
+converted; the Anglican lane no longer calls it. `roleFor()` is now exported so the renderer's helpers
+can call it directly with a real label, rather than a regex re-extracting one.
+
+**Diagnostics are now direct, not inferred.** The old path scraped the finished HTML for two known
+placeholder strings ("Text not found", "No collect appointed") and attributed whichever came up to
+whatever block's window it fell in. Every site that could produce one of those two strings now calls
+`bcpPushDiagnostic(env, 'not-yet-mapped', label)` directly, at the point it already knows it has
+nothing to substitute — there is no separate attribution step left to get wrong.
+
+**One real bug found and fixed during the conversion, not introduced by it:** the Gloria Patri span
+after each psalm always rendered when the toggle was checked, even when the resolved text came back
+empty — the original code's `officeHtml +=` was unconditional inside the toggle-checked branch. A
+naive first pass at `bcpEmitPsalmBlock` used `if (p.gloriaText)`, which would have silently dropped
+the empty-string case — caught before committing by comparing against the original's actual
+conditional structure line by line, not just its visible output. Fixed to check `!== null` instead of
+truthiness (`null` is reserved for "toggle unchecked, don't render at all"; `''` is "toggle checked,
+resolved empty, render the empty span" — the same distinction the original made).
+
+**One real shape mismatch also caught before committing:** the Examen's paragraph-broken block
+(`VARIABLE_COMPLINE_COLLECT`) is NOT italicized, unlike Theotokion's otherwise-identical
+paragraph-broken block (both pre- and post-position). A first draft of the "para" shape assumed
+italic unconditionally, generalizing from Theotokion alone; re-reading the Examen's actual original
+markup caught the difference before it was applied, and the shape system was split into `'para'`
+(plain) and `'para-italic'` (Theotokion only) rather than papered over with a flag guessed from one
+example.
+
+**Not changed:** every branch's actual decision logic — rotation, season lookup, rite fallback,
+BCP-alternative toggles, the whole `DISPLAY_LABELS` map — is untouched, verified line by line against
+the pre-refactor version rather than rewritten from memory of what it should do. `renderEastSyriac()`
+and the Coptic Agpeya renderer further down `js/office-ui.js` still use the old string-concatenation
+pattern — correctly out of scope here; porting them is Phase 5, per the handoff doc, and each still
+uses its own separate `officeHtml` variable, untouched by this commit.
+
+**Verification status, stated plainly:** `node --check js/office-ui.js` and
+`node --check js/anglican-envelope.js` both pass, and every one of the ~90 converted sites was checked
+against its own pre-refactor original side by side, not batch-transformed and trusted. This is NOT
+the same as a live browser confirmation. Phase 3's own acceptance criteria (handoff doc §9) are the
+standard to check against next: Morning Prayer, Noonday, Evening Prayer and Compline rendering
+correctly for a spread of dates including Holy Cross Day and a Sunday, the Hudra Prayer for
+Understanding appearing as a marked overlay, a deliberately unmapped proper rendering a
+`not-yet-mapped` diagnostic, and the seasonal dot still reading `liturgicalColor` correctly. None of
+that has been exercised live yet.
+
+Cache-bust: `js/office-ui.js` 290 → 291, `js/anglican-envelope.js` 289 → 290.
+
+SEED_VERSION bumped to `v300-2026-09-20-renderbcpoffice-refactor`.
