@@ -15810,3 +15810,62 @@ and the earlier typography fix's own (see the immediately preceding ledger entry
 
 Cache-bust `css/office-shell.css` 295 → 296. SEED_VERSION bumped to
 `v306-2026-09-20-gutter-keeping-bar-overlap-fixed`.
+
+---
+
+## 2026-09-20 continued — REVERTED: the "Bug 1 fixed" entry above broke scrolling entirely. Recorded plainly, not minimized.
+
+Josh's own words after applying the prior patch: **"The prayer card refuses to scroll."** That fix was
+wrong, and it broke the app worse than the bug it targeted. This entry reverts it and explains why,
+without softening the account.
+
+### What that fix did, and what it missed
+
+The prior entry changed `#main-content`'s own height from a fixed `100vh` to
+`height: auto; min-height: 100vh; overflow-y: visible`, reasoning — correctly, as far as it went — that
+a grid container with a definite height was capping its own rows to that height regardless of real
+content size.
+
+**What the reasoning missed, because it was done from source alone with no browser:** `#main-content`
+is not the outermost box on this screen. `css/office.css` line ~181 wraps it in
+`#daily-office-section`, which is `position: fixed; inset: 0; overflow: hidden` — a hard-clipped box
+pinned to exactly the viewport, by deliberate original design (its own comment: this is what lets the
+sidebar clip cleanly as it slides out via negative margin). Letting `#main-content` grow taller than
+that box meant the extra content was simply **clipped by the true outer box's `overflow: hidden`, with
+no scrollbar anywhere** — a hard content ceiling, which is a worse failure than the overlap it was
+meant to fix.
+
+### The measured numbers from the prior entry still stand, and still point at a real bug
+
+`#main-content`'s grid row genuinely was being capped to ~1132px inside a fixed ~1244px box, while the
+real office content — a full Morning Prayer, easily 8,000–12,000px at the shell's own 25px Cormorant
+floor — is far taller. Checked directly rather than assumed: `#main-content`'s actual static markup is
+1,876 characters, six ids, nothing resembling the ~10,000px of hidden content a private alternate
+theory (considered and discarded before this entry was written) suspected. The `scrollHeight` figure
+genuinely reflects one long, real office, not stray markup. **The mechanism identified was real; the
+fix touched the wrong element.**
+
+### Reverted here
+
+The three added declarations (`height: auto; min-height: 100vh; overflow-y: visible;`) removed from
+`body.shell-v2 #main-content.app-primary-canvas` in `css/office-shell.css`, restoring it exactly to its
+pre-regression state — the same `grid-template-*` rules from the original Phase 2 build, untouched.
+**Scrolling is restored to its state before tonight's bug-1 attempt.** The original overlap bug (the
+sticky keeping bar covering content) is back, not newly introduced by this revert, and is once again
+open.
+
+### Not acted on here, deliberately
+
+A candidate correct approach exists: give `.uo-page` itself — the actual scrolling content — 
+`overflow-y: auto` plus `min-height: 0` (the standard fix for a grid/flex item refusing to shrink to its
+track's assigned size, which is the classic cause of exactly this class of bug). But `css/office-shell.css`
+already carries a comment directly on `.uo-page` recording that **an overflow context was tried there
+once before and failed worse** ("Confession of Sin was cut off mid-word rather than scrolling"), for
+reasons that existing comment does not explain in enough detail to know whether `min-height: 0` was
+tried alongside it or not.
+
+Given two broken live deploys from source-only reasoning in one evening, **the candidate fix is being
+tested live in devtools with Josh, without another commit, before it is shipped as a third patch.**
+
+Cache-bust `css/office-shell.css` 296 → 297. SEED_VERSION bumped to
+`v307-2026-09-20-revert-broken-scroll-fix`.
