@@ -15616,3 +15616,45 @@ double-labeling itself was reproduced from Josh's screenshots, not this specific
 Cache-bust: `js/office-ui.js` 292 → 293.
 
 SEED_VERSION bumped to `v303-2026-09-20-gutter-citation-double-label-fix`.
+
+---
+
+## 2026-09-20 — Session close: two confirmed live bugs in the gutter citation feature, NOT fixed
+
+Session ending on token budget. Josh identified two real bugs from the screenshot review; neither is
+diagnosed or fixed yet. Recorded precisely so the next session starts from the right place instead of
+re-guessing.
+
+1. **The keeping-place bar overlaps page content.** In the scrolled screenshot Josh flagged, the
+   Invitatory block ("O God, make speed to save us...") is half covered by the sticky
+   "↑ ↓ MOVE BY BLOCK · SPACE HOLDS THE PLACE" / "AUDIT DASHBOARD" bar at the bottom of the viewport —
+   real content sitting underneath a fixed/sticky UI element instead of the page being bounded above
+   it. Likely cause, NOT yet confirmed: the gutter grid changes to `.uo-block`/`.office-container`
+   height/flow may have broken whatever previously reserved space for the sticky keeping-place bar
+   (see `css/office-shell.css`'s own comment on `.uo-page`: "NOT a scroll container... the grid rows
+   are content-sized... #main-content already scrolls natively... the bars stay visible by sticking
+   instead" — this stated design may no longer hold now that block content is wrapped in additional
+   `.uo-block` grid divs). Start here: inspect the keeping-place bar's CSS (position, z-index) against
+   `#main-content`'s scroll container now that page content is nested one level deeper in `.uo-block`
+   wrappers than before this feature existed.
+2. **Body prayer text renders in inconsistent fonts/sizes across the page**, confirmed by Josh across
+   multiple screenshots, not yet localized to a specific element or cause. NOT the gutter labels
+   specifically (those are a separate, deliberately different mono face) — this is the actual prayed
+   text itself varying where it should be uniform Cormorant Garamond at the 25px floor throughout.
+   Candidates to check first, none confirmed: (a) nested elements inside `.component-text`/
+   `.reading-text`/`.psalm-block` (produced by `applyParagraphBreaks()`/`formatScriptureAsFlow()`/
+   `formatPsalmAsPoetry()`) that aren't `p`/`li` and so fall outside the existing
+   `.office-container, .office-container p, .office-container li { font-family: var(--uo-face-prayed) }`
+   selector at css/office-shell.css line ~238; (b) the old skin's own font rules in `css/office.css`
+   bleeding through on elements the shell's selectors don't reach; (c) the new `.uo-block-body` wrapper
+   div itself not being covered by that selector (it is a `div`, not `p` or `li`, and neither is
+   `.office-container` itself a `p`/`li` — the base `.office-container` rule should still cascade via
+   inheritance, but confirm this rather than assume it). Start by inspecting actual rendered
+   `font-family`/`font-size` via devtools on two adjacent paragraphs that visibly differ, in the
+   browser, rather than reasoning from the CSS alone.
+
+Neither bug is fixed. Both need actual browser/devtools inspection before a real fix — reasoning from
+the CSS source alone was not sufficient to diagnose them and further guessing was correctly declined
+given the session's token budget. No code changed in this entry; documentation only.
+
+SEED_VERSION bumped to `v304-2026-09-20-session-close-two-gutter-bugs-open`.

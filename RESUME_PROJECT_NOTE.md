@@ -10,19 +10,42 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `f12e06f`,
-SEED_VERSION `v301-2026-09-20-renderbcpoffice-refactor-confirmed` — trust neither at face value; see
-the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v302-2026-09-20-gutter-citation-grid` — check fresh rather than trusting either number here. **The
-gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned mono
-gutter label and the text") — genuinely didn't exist before this patch; Phase 2 only ever recoloured
-the old flat layout. Built in `js/office-ui.js` (new `bcpWrapInGutter()` helper, a
+**State as of 2026-09-20, end of session.** Fresh-clone HEAD is `8a4d776`, SEED_VERSION
+`v304-2026-09-20-session-close-two-gutter-bugs-open` — trust neither at face value; see the FIRST
+MOVE line above.
+
+**The gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned
+mono gutter label and the text") — genuinely didn't exist before this session; Phase 2 only ever
+recoloured the old flat layout. Built in `js/office-ui.js` (new `bcpWrapInGutter()` helper, a
 `BCP_GUTTER_KIND_BY_LABEL` lookup table for non-scripture blocks) and `css/office-shell.css` (the grid
-itself, scoped to screen only — print and mobile both got deliberate handling, not an oversight; see
-`AUDIT_GOVERNANCE_LEDGER.md`'s third 2026-09-20 entry for the full account, including the proposed
-label mapping Josh confirmed before any code was written). **Not yet browser-confirmed** — this is
-new visual layout, not a refactor of already-working output, so it needs a live look more than most
-patches do.
+itself, scoped to screen only — print and mobile both got deliberate handling). Label mapping was
+confirmed with Josh before any code was written; a double-labeling bug (Collect/Canticle/Antiphon/
+Invitatory showing their kind word twice — once as the old in-page heading, once in the new gutter)
+was found in live review and fixed the same session (`a28af0d`).
+
+**TWO CONFIRMED LIVE BUGS ARE STILL OPEN, NOT FIXED.** Found by Josh in the same screenshot review,
+after the double-labeling fix. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s session-close entry
+(2026-09-20, last one) — summary:
+1. **The sticky keeping-place bar overlaps page content** — the Invitatory block was half covered by
+   the "↑ ↓ move by block" bar at the bottom of the viewport. Likely the `.uo-block` grid wrappers
+   changed the page's height/flow in a way that broke whatever previously kept the sticky bar clear of
+   content. NOT diagnosed. Start in devtools, not by reasoning from the CSS.
+2. **Body prayer text renders in inconsistent fonts/sizes across the page** — the actual prayed text
+   itself, not the gutter labels, confirmed by Josh across several screenshots. NOT localized to a
+   specific element yet. Candidates listed in the ledger entry, none confirmed. Start by inspecting
+   actual computed `font-family`/`font-size` on two visibly-different adjacent paragraphs in the
+   browser.
+
+**Both of these were missed by me in the prior review** — I looked at the screenshots without
+actually examining them closely enough to catch an obvious overlap and an obvious font
+inconsistency, and gave a confident-sounding but wrong non-answer twice before Josh had to spell out
+what was plainly visible. Whoever picks this up next should re-verify anything I "confirmed" as
+working in this session's screenshot reviews rather than trust it at face value — the standing rule
+in this note ("never trust X at face value") applies to my own read of visual output too, not only to
+HEAD/SEED_VERSION.
+
+Do not mark the gutter citation feature as done until both of these are actually fixed and
+re-confirmed live.
 
 ---
 
@@ -125,11 +148,11 @@ skin and old theme behaviour. That is what fixed the dark splash.
    See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
    both noted precisely in §0, worth a quick check).
-1a. ~~The gutter citation~~ — **BUILT 2026-09-20, not yet browser-confirmed.** Genuinely new layout,
-   not blocked wiring as this item previously assumed — see §0 above and the third 2026-09-20 ledger
-   entry for the full account, including the label-mapping design call and the print/mobile handling.
-   Next: an actual look in the browser, across at least one reading, one psalm, one canticle/collect,
-   and print preview.
+1a. **The gutter citation** — built, NOT done. Two confirmed live bugs still open (sticky bar
+   overlapping content; inconsistent body-text fonts/sizes) — see §0 above and
+   `AUDIT_GOVERNANCE_LEDGER.md`'s final 2026-09-20 entry. Next: fix both in devtools, then a full
+   re-review of every screenshot from this session's earlier "looks fine" pass, since that pass
+   missed both bugs and should not be trusted as-is.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
