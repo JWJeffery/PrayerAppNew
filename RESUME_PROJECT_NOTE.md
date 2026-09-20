@@ -11,8 +11,9 @@ concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at 
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
 **State as of 2026-09-20, end of session.** Fresh-clone HEAD at session start was `79d1203`; HEAD after
-this session's commits is `02ccfa9`, SEED_VERSION `v308-2026-09-20-gutter-bug1-fixed-live-confirmed` —
-trust neither at face value; see the FIRST MOVE line above.
+this session's last substantive commit was `02ccfa9`, followed by two note-hygiene commits
+(`a7f9587` and this one). SEED_VERSION `v309-2026-09-20-resume-note-dedup` — trust none of these at
+face value; see the FIRST MOVE line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
 
@@ -100,17 +101,12 @@ bugs were caught and fixed during the conversion, not introduced by it** — ful
 `AUDIT_GOVERNANCE_LEDGER.md`'s first 2026-09-20 entry (title: "The renderBcpOffice() refactor: Phase
 3's actual remaining work, done").
 
-**Live-confirmed the same day** (second 2026-09-20 ledger entry): all four offices, both themes
-correctly office-keyed, the Agpeya Opening overlay card (sourced and anchored correctly), and a
-`not-yet-mapped` diagnostic forced live by temporarily filtering a component out of `appData` in the
-browser console — no code or data file changed, reverted by reload. Two specific named items from
-the acceptance list were not specifically exercised — see the next paragraph.
-
-**Confirmed live 2026-09-20** (second ledger entry that date): all four offices across two dates and
-both themes, an overlay card (Agpeya Opening — sourced/anchored correctly), and a `not-yet-mapped`
-diagnostic (forced via a temporary console edit, since the corpus has no naturally-occurring gap
-handy). **Two specific items from the handoff doc's acceptance list were NOT specifically
-exercised** — say so precisely rather than claim full closure: the Hudra Prayer for Understanding
+**Confirmed live 2026-09-20** (second ledger entry that date): all four offices across two dates,
+both themes correctly office-keyed, an overlay card (Agpeya Opening — sourced/anchored correctly),
+and a `not-yet-mapped` diagnostic forced live by temporarily filtering a component out of `appData`
+in the browser console, since the corpus has no naturally-occurring gap handy — no code or data file
+changed, reverted by reload. **Two specific items from the handoff doc's acceptance list were NOT
+specifically exercised** — say so precisely rather than claim full closure: the Hudra Prayer for Understanding
 overlay by name (a different overlay toggle, Agpeya Opening, was tested instead — same code path,
 same class of confirmation, but not that exact named case), and the seasonal dot's
 `liturgicalColor` reading was not explicitly checked in any screenshot. Worth a quick look before

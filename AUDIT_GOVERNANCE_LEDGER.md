@@ -15973,3 +15973,38 @@ further here absent a reason to.
 **The gutter citation feature (handoff doc §1) is now fully done**: both bugs fixed, both
 live-confirmed, and this last open question closed by direct measurement rather than left as an
 assumption. No code changed in this entry — documentation only.
+
+---
+
+## Session 2026-09-20 continued -- RESUME_PROJECT_NOTE.md hygiene: stale HEAD claim and a
+## duplicated confirmation paragraph. SEED_VERSION v308 -> v309.
+
+Documentation only. No code, CSS or data file was touched, so no cache-bust param was bumped.
+
+### Two defects in the note itself, found by reading it back against origin after `a7f9587`
+
+**1. The "State as of 2026-09-20" block asserted a HEAD that was already wrong at the moment it was
+written.** It read "HEAD after this session's commits is `02ccfa9`" -- but `a7f9587`, the commit that
+edited that very paragraph, sits on top of `02ccfa9`. A note whose own first rule is "never trust
+this note's HEAD at face value" was nonetheless printing a stale one, and a stale sha in a handoff
+document is worse than no sha: it invites a session to skip the fresh-clone check. Rewritten to name
+`02ccfa9` as the last *substantive* commit and to state plainly that note-hygiene commits follow it,
+rather than pretending to a sha that cannot be known before the commit exists.
+
+**2. Section 0 stated the same Phase 3 live confirmation twice, in two near-identical paragraphs.**
+"**Live-confirmed the same day**" and "**Confirmed live 2026-09-20**" both described the same second
+2026-09-20 ledger entry -- same four offices, same Agpeya Opening overlay, same forced
+`not-yet-mapped` diagnostic, same two unexercised acceptance-list items -- differing only in which
+details each happened to carry. `a7f9587` removed the contradiction between them but left the
+duplication. Merged into one paragraph, keeping every detail either version held that the other did
+not: "across two dates" and "both themes correctly office-keyed" from the pair, the console-edit
+method and "no code or data file changed, reverted by reload" from the first, and the precise naming
+of the two items NOT exercised (the Hudra Prayer for Understanding overlay by name, and the seasonal
+dot's `liturgicalColor` reading) from the second. Nothing was dropped on the way through; no claim
+was strengthened.
+
+### What did not change
+
+The two unexercised acceptance-list items remain open and remain disclosed as such -- this entry
+makes no claim that either has since been checked. `.uo-margin` with several stacked cards likewise
+remains unmeasured. Phase 4 is still the next priority.
