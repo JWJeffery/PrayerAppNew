@@ -220,7 +220,21 @@
      * screen — the splash, the Book of Needs, the Bible browser — the old
      * behaviour is untouched and the shell keeps its hands off.
      */
-    function applyTheme(mode) {
+    function applyTheme(mode, source) {
+        /* TEMPORARY DIAGNOSTIC -- dark/auto default bug, flagged 2026-09-19.
+           Every applyTheme() call, tagged by which of the shell's several
+           re-resolution triggers fired it, so the exact sequence leading to a
+           wrong dark result can be read back afterward instead of guessed at.
+           Logs even when shellOn() is false, so a call that got silently
+           skipped is visible too. Remove once the race is confirmed or ruled
+           out. */
+        console.log('[shell-diag] applyTheme(' + JSON.stringify(mode) + ') from ' +
+            (source || 'unknown') + '. shellOn=' + shellOn() +
+            ' readyState=' + document.readyState +
+            ' officeId=' + JSON.stringify(typeof currentOfficeId === 'function' ? currentOfficeId() : undefined) +
+            ' autoIsDark=' + (typeof autoIsDark === 'function' ? autoIsDark() : undefined) +
+            ' bodyHadDark=' + document.body.classList.contains('dark-mode'));
+
         if (!shellOn()) return;
         var isDark = (mode === 'dark') || (mode !== 'light' && autoIsDark());
 
@@ -252,12 +266,12 @@
     window.setUniversalOfficeTheme = function (mode) {
         if (mode !== 'light' && mode !== 'dark') mode = 'auto';
         writeTheme(mode);
-        applyTheme(mode);
+        applyTheme(mode, 'setUniversalOfficeTheme');
         return mode;
     };
 
     window.refreshUniversalOfficeShellTheme = function () {
-        applyTheme(readTheme());
+        applyTheme(readTheme(), 'refreshUniversalOfficeShellTheme');
     };
 
     /* ── Chrome ──────────────────────────────────────────────────────────── */
@@ -311,15 +325,6 @@
 
     function buildShell() {
         if (!shellOn()) return;
-        /* TEMPORARY DIAGNOSTIC -- dark/auto default bug, flagged 2026-09-19.
-           Captures state at the exact moment buildShell() runs, which a
-           console read after the fact cannot: document.readyState is always
-           "complete" by the time a person can type into devtools. Remove once
-           the race is confirmed or ruled out. */
-        console.log('[shell-diag] buildShell() firing. readyState=' + document.readyState +
-            ' officeId=' + JSON.stringify(currentOfficeId()) +
-            ' autoIsDark=' + autoIsDark() +
-            ' storedTheme=' + JSON.stringify(readTheme()));
         var main = document.getElementById('main-content');
         if (!main || main.querySelector(':scope > .uo-page')) return;   /* idempotent */
 
@@ -405,7 +410,7 @@
            inserted once here and re-parented by the lane in Phase 3. */
         page.insertBefore(ornament(), page.firstChild);
 
-        applyTheme(readTheme());
+        applyTheme(readTheme(), 'buildShell');
     }
 
     window.buildUniversalOfficeShell = buildShell;
@@ -434,7 +439,7 @@
             if (!t) return;
 
             if (t.name && WATCHED[t.name]) {
-                applyTheme(readTheme());
+                applyTheme(readTheme(), 'watchOfficeChanges:change(' + t.name + ')');
             }
         }, true);
 
@@ -444,7 +449,7 @@
            any click once the app has had a tick to update its state. Cheap:
            applyTheme is a class toggle and a few attribute writes. */
         document.addEventListener('click', function () {
-            window.setTimeout(function () { applyTheme(readTheme()); }, 0);
+            window.setTimeout(function () { applyTheme(readTheme(), 'watchOfficeChanges:click'); }, 0);
         }, true);
     }
 
@@ -615,7 +620,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme());
+                if (shellOn()) applyTheme(readTheme(), 'watchRenderChanges');
             }, 0);
         }).observe(target, { childList: true, subtree: true });
     }
@@ -628,7 +633,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme());
+                if (shellOn()) applyTheme(readTheme(), 'watchLaneChanges');
             }, 0);
         });
         LANE_PANELS.forEach(function (entry) {
