@@ -16008,3 +16008,72 @@ was strengthened.
 The two unexercised acceptance-list items remain open and remain disclosed as such -- this entry
 makes no claim that either has since been checked. `.uo-margin` with several stacked cards likewise
 remains unmeasured. Phase 4 is still the next priority.
+
+---
+
+## Session 2026-09-20 continued -- Phase 3 acceptance-list follow-up: one item closed by
+## screenshot, one reclassified as unbuilt, one new mistagged-content finding opened.
+## SEED_VERSION v309 -> v310.
+
+Documentation only, except for the browser test itself, which changed no files. No code, CSS or data
+touched, so no cache-bust param bumped.
+
+### 1. "Prayer of the Hours" (Church of the East) overlay -- live-confirmed, closed
+
+Prior note wording named this "the Hudra Prayer for Understanding overlay by name" -- no component
+of that name exists anywhere in the corpus; that description was simply wrong. The real toggle is
+`toggle-east-syriac-hours` ("Prayer of the Hours", under Opening Devotions -> Church of the East),
+emitting `ecu-east-syriac-hours`.
+
+It was also wrongly described as "the same code path" as the already-tested Agpeya Opening overlay.
+It is not: `overlaySourceLabel()` (`js/office-ui.js:3845`) checks `comp.tradition` first, falling
+back to a `cop-` id-prefix match only when that field is absent. `cop-agpeya-opening` has no
+`tradition` field, so the Agpeya test only ever exercised the fallback branch. `ecu-east-syriac-hours`
+carries `tradition: 'Church of the East'` and takes the FIRST branch -- a genuinely different,
+previously unexercised code path.
+
+Tested live: checked the "Prayer of the Hours" box under a BCP office (`?shell=v2`). Screenshot
+confirms the margin renders `Overlay · Borrowed` / "Prayer of the Hours — Church of the East.
+Anchored before the office." with the correct body text. Closed as a rendering question.
+
+### 2. Seasonal dot's `liturgicalColor` reading -- reclassified: unbuilt, not untested
+
+Traced the full path before concluding anything: `CalendarEngine` resolves `liturgicalColor` per day;
+`renderBcpOffice()` passes it to `updateSeasonalTheme()` (`js/office-ui.js:4151`), which sets ONLY the
+old skin's `--accent` custom property. The shell's own `--uo-season-*` tokens
+(`css/office-shell.css:127-131`) have ZERO consumers anywhere in the repo -- a full-repo grep for
+`uo-season` returns exactly five hits, all five the declarations themselves. `buildShell()`'s ordo
+line (`js/office-shell.js:346-353`) is mark + day-line + theme control; there is no dot element to
+populate. The envelope's `context` object carries only `calendarSummary` and a hardcoded `null`
+`rankSummary` (`js/anglican-envelope.js:270-273`) -- no colour value reaches the shell at all.
+
+**Conclusion: there was never a dot to screenshot.** The prior note's framing ("not explicitly
+checked in any screenshot") implied a rendering gap in an otherwise-done feature; it is actually
+unbuilt Phase 4/5 surface area that had drifted into a Phase 3 acceptance list. Re-filed there
+(§0 open-items list) rather than left looking like an oversight in a closed feature.
+
+### 3. NEW FINDING, not resolved: `ecu-east-syriac-hours` reads as Byzantine content mistagged COE
+
+Running the live test above required reading the overlay's actual text: "Thou who at every season
+and every hour, in Heaven and on earth art worshipped and glorified, O Christ God; long-suffering,
+merciful and compassionate..." This is recognizable as the Byzantine Horologion's Prayer of the
+Hour -- said at the close of each of the fixed Hours, after the Kontakion of the day and the
+forty-fold Kyrie eleison, per the standard Byzantine daily-hours structure. It reads nothing like
+Hudra/East Syriac material.
+
+Corroborating structural evidence, not yet a full source check: this corpus's other two ecumenical
+components explicitly of Byzantine origin -- `ecu-prayer-before-reading` and `ecu-kyrie-pantocrator`
+-- both already carry `tradition: 'Byzantine Orthodox'` in `components/ecumenical.json`.
+`ecu-east-syriac-hours` alone among the "Church of the East" Opening-Devotions group carries
+`tradition: 'Church of the East'`, and is the only entry filed under that UI heading at all.
+
+**NOT ACTED ON.** A single text-wording match against general knowledge of Horologion structure is
+not this project's evidentiary standard for moving a source attribution -- that standard is a named
+primary or secondary witness, the same bar applied throughout the EOR/OOR sweeps and the Kalendar
+work. This needs a real check: Maclean's Hudra material (already in repo holdings, used throughout
+the East Syriac sourcing this project relies on) weighed directly against an actual Horologion
+source, before touching the `tradition` field, the UI heading it's filed under, or the component id
+itself. Flagged in `RESUME_PROJECT_NOTE.md` §0 as new open item 1b. If the mistag is confirmed, the
+practical risk is real: the overlay's margin card currently prints "Church of the East" as a
+confident-looking attribution on what may be Byzantine content, in exactly the spot Contract §9's
+disclosure cards exist to prevent that kind of error.

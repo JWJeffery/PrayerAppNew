@@ -10,10 +10,11 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, end of session.** Fresh-clone HEAD at session start was `79d1203`; HEAD after
-this session's last substantive commit was `02ccfa9`, followed by two note-hygiene commits
-(`a7f9587` and this one). SEED_VERSION `v309-2026-09-20-resume-note-dedup` — trust none of these at
-face value; see the FIRST MOVE line above.
+**State as of 2026-09-20, end of session (continued).** Fresh-clone HEAD at session start was
+`79d1203`; last substantive feature commit was `02ccfa9` (gutter citation closed), followed by three
+documentation-only commits: `a7f9587` (dedup), `86cca04` (further hygiene), and this one (the two
+Phase 3 acceptance-list follow-ups below). SEED_VERSION `v310-2026-09-20-phase3-acceptance-followup`
+— trust none of these at face value; see the FIRST MOVE line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
 
@@ -105,12 +106,49 @@ bugs were caught and fixed during the conversion, not introduced by it** — ful
 both themes correctly office-keyed, an overlay card (Agpeya Opening — sourced/anchored correctly),
 and a `not-yet-mapped` diagnostic forced live by temporarily filtering a component out of `appData`
 in the browser console, since the corpus has no naturally-occurring gap handy — no code or data file
-changed, reverted by reload. **Two specific items from the handoff doc's acceptance list were NOT
-specifically exercised** — say so precisely rather than claim full closure: the Hudra Prayer for Understanding
-overlay by name (a different overlay toggle, Agpeya Opening, was tested instead — same code path,
-same class of confirmation, but not that exact named case), and the seasonal dot's
-`liturgicalColor` reading was not explicitly checked in any screenshot. Worth a quick look before
-treating those two as covered.
+changed, reverted by reload. **Two specific items from the handoff doc's acceptance list were flagged as NOT specifically
+exercised. Both have now been followed up, 2026-09-20 continued — one closed, one reopened as
+something bigger than a missing screenshot:**
+
+1. **The "Prayer of the Hours" (Church of the East) overlay — live-confirmed by screenshot.**
+   There is no component named "Prayer for Understanding" anywhere in the corpus; that name in the
+   note's own prior wording doesn't match anything in `index.html` or `components/ecumenical.json`.
+   The real toggle is `toggle-east-syriac-hours`, labeled "Prayer of the Hours" under the Church of
+   the East heading, emitting `ecu-east-syriac-hours`. It is NOT the same code path as the Agpeya
+   Opening test: `overlaySourceLabel()` (`js/office-ui.js:3845`) branches on `comp.tradition` first,
+   falling back to a `cop-` id-prefix check only when that's absent. `cop-agpeya-opening` carries no
+   `tradition` field and so only ever exercised the fallback branch; `ecu-east-syriac-hours` carries
+   `tradition: 'Church of the East'` and takes the first branch — genuinely untested before now.
+   Screenshot confirms it renders correctly: `Overlay · Borrowed` / "Prayer of the Hours — Church of
+   the East. Anchored before the office." **Closed as a rendering question.**
+
+2. **The seasonal dot's `liturgicalColor` reading was never checked because there is no dot to
+   check — this is unbuilt, not untested, and the acceptance-list wording was wrong to call it a
+   missed screenshot.** Traced the full path: `CalendarEngine` resolves `liturgicalColor` and
+   `renderBcpOffice()` passes it to `updateSeasonalTheme()` (`js/office-ui.js:4151`), which sets only
+   the OLD skin's `--accent` custom property. The shell's five `--uo-season-*` tokens
+   (`css/office-shell.css:127-131`) have zero consumers anywhere in the repo — grep finds exactly
+   five hits, all five being the declarations themselves. `buildShell()`'s ordo line
+   (`js/office-shell.js:346-353`) is mark + day-line + theme control; no dot element exists to
+   render one into. The envelope's `context` object carries only `calendarSummary` and a hardcoded
+   `null` `rankSummary` (`js/anglican-envelope.js:270-273`) — no colour field reaches the shell at
+   all. **This is real Phase 4/5 work, not a Phase 3 gap.** Re-file it there rather than leaving it
+   looking like an oversight in an otherwise-closed acceptance list.
+
+**A new finding surfaced while running item 1, more consequential than the test it came from —
+NOT resolved, needs Josh's governance call before anything is touched:** the text under
+`ecu-east-syriac-hours` — "Thou who at every season and every hour, in Heaven and on earth art
+worshipped and glorified, O Christ God..." — reads as the Byzantine Horologion's Prayer of the Hour,
+said at each Hour after the Kontakion and the forty Lord-have-mercies, not Church of the East /
+Hudra content. This corpus's other two Byzantine ecumenical items
+(`ecu-prayer-before-reading`, `ecu-kyrie-pantocrator`) are already tagged `tradition: 'Byzantine
+Orthodox'`; this one is tagged `'Church of the East'` and shelved under a Hudra UI heading. If the
+tag is wrong, the overlay card is currently printing a confident, wrong attribution in the exact
+place the margin's disclosure cards exist to prevent it. **Not touched. A single secondary-source
+wording match is not this project's standard for moving an attribution** — needs a real witness
+check (Maclean's Hudra material already in the repo, weighed against an actual Horologion source)
+before any row, label, or tag is changed. Flagged here and in the ledger; do not silently re-tag
+either direction without that check.
 
 **Two renderers deliberately untouched, correctly out of scope:** `renderEastSyriac()` and the Coptic
 Agpeya renderer, further down `js/office-ui.js`, still build their own separate `officeHtml` strings
@@ -157,10 +195,25 @@ skin and old theme behaviour. That is what fixed the dark splash.
 
 ### Open, in rough priority order
 
-1. ~~The `renderBcpOffice()` refactor~~ — **DONE and substantially browser-confirmed, 2026-09-20.**
-   See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
-   specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
-   both noted precisely in §0, worth a quick check).
+1. ~~The `renderBcpOffice()` refactor~~ — **DONE and browser-confirmed, 2026-09-20 (continued).**
+   See §0 above and the 2026-09-20 ledger entries. Of the two acceptance-list items flagged as
+   unexercised: the "Prayer of the Hours" overlay is now live-confirmed by screenshot (closed); the
+   seasonal dot was found to be unbuilt, not untested, and is re-filed under Phase 4/5 rather than
+   here. **One new open item came out of closing the first**: the overlay's text reads as Byzantine
+   Horologion content mistagged `tradition: 'Church of the East'` — needs a real witness check
+   before any tag/label is touched. See §0 above for full detail.
+1b. **NEW, 2026-09-20 continued: `ecu-east-syriac-hours` ("Prayer of the Hours" under the Church
+   of the East devotion toggle) is very likely Byzantine Horologion content mistagged as Church of
+   the East.** Its text ("Thou who at every season and every hour...") is the Byzantine Prayer of the
+   Hour, said after the Kontakion and forty Lord-have-mercies at each canonical Hour — not Hudra
+   content. This corpus's other two Byzantine ecumenical items already carry
+   `tradition: 'Byzantine Orthodox'`; this one carries `tradition: 'Church of the East'` and sits
+   under a Hudra UI heading (`index.html`, Opening Devotions → Church of the East). **Not fixed.**
+   A single secondary-source text match is not this project's standard for moving an attribution —
+   check against Maclean's Hudra material already in the repo and an actual Horologion source before
+   touching the tag, the UI heading, or the component id. Whichever way it resolves, the fix is
+   small (a `tradition` field and, possibly, which Opening Devotions group it's filed under) — the
+   verification is the work.
 1a. ~~The gutter citation~~ — **DONE, 2026-09-20.** Both known bugs fixed and live-confirmed
    (eleven-screenshot, full-office scroll test); the `.uo-rail` truncation question raised alongside the
    fix was checked directly and closed (`scrollHeight`/`clientHeight` identical, nothing hidden). See
