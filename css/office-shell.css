@@ -414,9 +414,12 @@ body.shell-v2 .shared-office-nav-appearance-card {
 body.shell-v2 #main-content.app-primary-canvas {
     display: grid;
     grid-template-columns: var(--uo-rail-width) minmax(0, 1fr) var(--uo-margin-width);
-    /* Rows sized from content rather than the viewport: #main-content carries
-       large clamped padding from the parchment pass, so a 100vh minimum would
-       overflow by exactly that padding. */
+    /* Rows are sized against THIS element's own fixed height (css/office.css's
+       `height: 100vh`, deliberately left untouched -- see the 2026-09-20
+       comment on .uo-page below for why). This element itself does not
+       scroll (overflow-y: hidden, just below): .uo-page is the one grid
+       item that scrolls its own overflow, within whatever pixel height
+       this row resolves to. */
     grid-template-rows: auto minmax(320px, auto) auto;
     grid-template-areas:
         "ordo ordo ordo"
@@ -426,6 +429,7 @@ body.shell-v2 #main-content.app-primary-canvas {
     column-gap: 0;
     color: var(--uo-ink);
     font-family: var(--uo-face-prayed);
+    overflow-y: hidden;
 }
 
 /* Beats body.office-active.dark-mode #main-content (0,3,1) at (0,4,1). The
@@ -592,15 +596,48 @@ body.shell-v2 .uo-rail-placeholder {
 
 /* ── The page ─────────────────────────────────────────────────────────────── */
 
-/* NOT a scroll container. The grid rows are content-sized, so an overflow
-   context here clipped the page against the keeping bar — "Confession of Sin"
-   was cut off mid-word rather than scrolling. #main-content already scrolls
-   natively (office.css styles its scrollbar), so the page simply grows and the
-   bars stay visible by sticking instead. */
+/* THE PAGE IS THE SCROLL CONTAINER, 2026-09-20. Superseded twice in one
+   session before landing here -- read this before touching it again.
+
+   ATTEMPT 1 (reverted): let #main-content itself grow past the viewport and
+   scroll. Broke every long office completely -- #main-content is not
+   actually the outermost box on this screen. #daily-office-section
+   (css/office.css line ~181) wraps it as `position:fixed; inset:0;
+   overflow:hidden`, a hard-clipped viewport-sized box by original design
+   (it's what lets the sidebar clip cleanly on its slide-out animation).
+   Content taller than that was simply clipped, no scrollbar anywhere.
+
+   ATTEMPT 2 (this one, tested live end-to-end by Josh across a full Morning
+   Prayer, ordo/keeping bars confirmed fixed top and bottom throughout, no
+   text cut off): put the scroll on THIS element instead, and stop
+   #main-content from scrolling at all (`overflow-y: hidden` added to
+   `body.shell-v2 #main-content.app-primary-canvas` below). #main-content
+   keeps its original fixed height (css/office.css's `height: 100vh`,
+   untouched), so the grid's rows resolve to real pixel heights against it
+   as normal, and THIS row's box -- whatever height that resolves to --
+   becomes .uo-page's own internal viewport.
+
+   AN EARLIER COMMENT HERE (now removed) recorded that an overflow context
+   on this element had been tried once before and failed worse ("Confession
+   of Sin was cut off mid-word rather than scrolling"). The missing piece,
+   as far as can be told without knowing exactly what that earlier attempt
+   set: `min-height: 0`. A CSS grid item's default `min-height` is `auto`,
+   which means "at least as tall as my content" -- that default actively
+   BLOCKS the item from shrinking down to its track's assigned size, which
+   is what `overflow-y: auto` needs in order to have anything to scroll
+   inside. Without `min-height: 0`, the item just keeps growing past its
+   row instead, and depending on what the ANCESTOR box does with that
+   overflow, the result is either the clipping the old comment described or
+   the total-scroll-failure of attempt 1 above. With both `overflow-y: auto`
+   and `min-height: 0` set together, AND #main-content no longer competing
+   for the same scroll, this is the standard, well-established pattern for
+   a scrollable middle panel between a fixed header and footer. */
 body.shell-v2 .uo-page {
     padding: 34px 40px 48px;
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
+    overflow-y: auto;
+    min-height: 0;
 }
 
 /* The measure is applied to the CONTENT, not the column: the page column keeps

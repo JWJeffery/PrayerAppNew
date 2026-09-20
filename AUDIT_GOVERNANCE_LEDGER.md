@@ -15869,3 +15869,75 @@ tested live in devtools with Josh, without another commit, before it is shipped 
 
 Cache-bust `css/office-shell.css` 296 → 297. SEED_VERSION bumped to
 `v307-2026-09-20-revert-broken-scroll-fix`.
+
+---
+
+## 2026-09-20 continued — FIXED, LIVE-CONFIRMED: the keeping-place bar overlap, third attempt
+
+The bug is actually fixed now. Unlike the first attempt, this one was tested live by Josh — end to end,
+across a full office, with screenshots — before it was written to this file or shipped as a patch.
+
+### The full history, for whoever reads this next
+
+**Attempt 1** (see the earlier "Bug 1 of the two open gutter bugs FIXED" entry) diagnosed the real
+mechanism correctly: `#main-content`'s grid row was being capped against a fixed container height, and
+the real office content, far taller, spilled past it uncontained. But the fix grew `#main-content`
+itself — which fought `#daily-office-section`'s own `position: fixed; inset: 0; overflow: hidden` (the
+true outer viewport, not `#main-content`) and broke scrolling entirely. Josh: *"The prayer card refuses
+to scroll."* Reverted the same evening (see the "REVERTED" entry).
+
+**This attempt** takes the opposite approach: instead of growing `#main-content`, `.uo-page` — the
+actual grid item holding the scrollable prayer text — gets `overflow-y: auto; min-height: 0;`, while
+`#main-content` gets `overflow-y: hidden` so the two elements stop competing for the same scroll
+gesture. `#main-content`'s own `height: 100vh` (`css/office.css` line ~496) was deliberately left
+untouched this time, so the grid's rows still resolve to real, bounded pixel heights exactly as before
+— the difference is that `.uo-page` now **clips and scrolls its own overflow within that bounded
+height**, instead of spilling past it uncontained, which is what caused the overlap in the first place.
+
+`min-height: 0` was the missing piece. A CSS grid item's default `min-height` is `auto` — "at least as
+tall as my content" — and that default actively **blocks** the item from shrinking down to its track's
+assigned size, which is exactly what `overflow-y: auto` needs in order to have anything to scroll
+inside. Without it, the item just keeps growing past its row instead. This also explains a stale
+comment that was sitting on `.uo-page` before tonight, recording that an overflow context had been
+tried there once, pre-this-session, and failed worse ("Confession of Sin was cut off mid-word rather
+than scrolling") — very plausibly the same idea, missing this one declaration.
+
+### Tested live before being written here
+
+Josh applied the two declarations via the browser console first, with no commit. Then scrolled the
+real Morning Prayer office for this date end-to-end and sent eleven screenshots spanning the Opening
+Sentence through the closing Commemorations card. Confirmed directly from those screenshots:
+
+- The ordo bar (top) and the keeping-place bar (bottom — "MOVE BY BLOCK" / "AUDIT DASHBOARD") both stay
+  fixed in the exact same screen position across all eleven shots.
+- No text is cut off mid-word or mid-line anywhere in the sequence — the specific failure the old
+  `.uo-page` comment recorded from the earlier attempt.
+- Body text stays a uniform size and face throughout — bug 2's own fix, already shipped separately,
+  holding up under the same test.
+
+### Code
+
+`overflow-y: auto; min-height: 0;` added to `body.shell-v2 .uo-page`; `overflow-y: hidden;` added to
+the existing `body.shell-v2 #main-content.app-primary-canvas` grid rule — same selector already
+setting `display: grid` there, no new specificity introduced. The stale `.uo-page` comment was replaced
+with one recording both failed attempts and why this one differs, so a future session doesn't
+rediscover either dead end from scratch.
+
+### Flagged, not acted on here
+
+`.uo-rail` (the order list on the left) and `.uo-margin` (overlay/diagnostic cards on the right) were
+**not** given the same treatment, and neither has any overflow handling of its own. Since
+`#main-content` no longer scrolls at all, if either one's content is ever taller than its row's
+resolved height — a long rail for an office with many components, or several stacked margin cards —
+the excess would now be silently clipped and genuinely unreachable, not merely hidden behind a scroll
+the user could still reach.
+
+Not confirmed either way from tonight's test: the rail list shown in all eleven screenshots was
+identical throughout and never demonstrably scrolled, which is also exactly what a correctly-static,
+never-overflowing rail would look like. The screenshots don't distinguish between "the rail is fine"
+and "the rail is silently truncated." Raised directly with Josh rather than assumed either way. If the
+rail turns out to be cut off, the identical two-declaration fix applies to `.uo-rail` and `.uo-margin`
+as a follow-up.
+
+Cache-bust `css/office-shell.css` 297 → 298. SEED_VERSION bumped to
+`v308-2026-09-20-gutter-bug1-fixed-live-confirmed`.

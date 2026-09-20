@@ -11,7 +11,7 @@ concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at 
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
 **State as of 2026-09-20.** Fresh-clone HEAD was `79d1203` at the start of this session; SEED_VERSION
-`v307-2026-09-20-revert-broken-scroll-fix` after this session's commits — trust neither at face value; see the FIRST
+`v308-2026-09-20-gutter-bug1-fixed-live-confirmed` after this session's commits — trust neither at face value; see the FIRST
 MOVE line above.
 
 **The gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned
@@ -23,31 +23,35 @@ confirmed with Josh before any code was written; a double-labeling bug (Collect/
 Invitatory showing their kind word twice — once as the old in-page heading, once in the new gutter)
 was found in live review and fixed the same session (`a28af0d`).
 
-**OF THE TWO CONFIRMED LIVE BUGS: ONE'S FIX WAS SHIPPED, TESTED LIVE BY JOSH, AND FOUND TO BREAK
-SCROLLING ENTIRELY — REVERTED. THE OTHER IS FIXED BUT NOT YET LIVE-CONFIRMED.**
-1. **REVERTED — the sticky keeping-place bar overlapping page content is OPEN AGAIN.** A same-session
-   fix (`height: auto; min-height: 100vh; overflow-y: visible;` on `#main-content`) was diagnosed
-   correctly as far as the CSS source went, but missed that `#daily-office-section`
-   (`css/office.css` line ~181) — not `#main-content` — is the true outer viewport:
-   `position: fixed; inset: 0; overflow: hidden`, by deliberate design (it's what lets the sidebar clip
-   cleanly on its slide-out animation). Letting `#main-content` grow past that meant content was
-   silently clipped with no scrollbar at all — worse than the overlap. Josh caught it immediately
-   ("The prayer card refuses to scroll") and it was reverted the same session. Full account in
-   `AUDIT_GOVERNANCE_LEDGER.md`'s "REVERTED" entry — read this before touching this bug again.
-   **A candidate fix exists and is untested**: `overflow-y: auto; min-height: 0;` on `.uo-page` itself
-   (the standard fix for a grid/flex item that won't shrink to its assigned track size) rather than on
-   `#main-content`. **But `.uo-page`'s own existing comment in `css/office-shell.css` records that an
-   overflow context was tried there once before and failed worse** ("Confession of Sin was cut off
-   mid-word rather than scrolling") — for reasons not fully explained, so it's unknown whether
-   `min-height: 0` specifically was tried alongside it. Test this live in devtools with Josh BEFORE
-   shipping a third patch for this bug — two broken deploys from source-only reasoning in one evening is
-   the signal to stop guessing from the CSS and verify in the browser first, per this project's own
-   standing testing rule (§0a below).
-2. **FIXED, still not live-confirmed — body prayer text rendered in two faces at two sizes.** This fix
-   (the typography one, not the scroll one) has NOT been touched or implicated in tonight's regression.
-   Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED" entry.
-   Confirm in a screenshot: collects/canticles/psalms should render at the same size and face as
-   scripture readings, all in Cormorant Garamond at the 25px floor.
+**BOTH GUTTER BUGS ARE NOW FIXED AND LIVE-CONFIRMED.** The keeping-bar overlap took three attempts —
+read this before touching either fix again.
+1. **FIXED, LIVE-CONFIRMED — the sticky keeping-place bar overlap.** Third attempt. Attempt 1 grew
+   `#main-content` itself and broke scrolling entirely (`#daily-office-section`'s own
+   `position:fixed; overflow:hidden`, not `#main-content`, is the true outer viewport) — reverted the
+   same evening. This attempt instead gives `.uo-page` — the actual scrollable content —
+   `overflow-y: auto; min-height: 0;`, and gives `#main-content` `overflow-y: hidden` so the two stop
+   competing. `#main-content`'s `height: 100vh` was deliberately left untouched. `min-height: 0` was
+   the missing piece both this time and, very likely, in an earlier pre-session attempt recorded in a
+   now-replaced `.uo-page` comment: a grid item's default `min-height: auto` blocks it from shrinking to
+   its track's size, which is what `overflow-y: auto` needs to have anything to scroll. **Tested live by
+   Josh before being shipped**: applied via console first, then a full Morning Prayer scrolled
+   end-to-end, eleven screenshots confirming the ordo and keeping bars stay fixed top/bottom throughout
+   with nothing cut off. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED" entry —
+   read the two attempts before it too if this ever needs revisiting.
+   **OPEN FOLLOW-UP, not yet resolved**: `.uo-rail` and `.uo-margin` were NOT given the same treatment
+   and have no overflow handling of their own. Since `#main-content` no longer scrolls at all, either
+   one's content, if ever taller than its row, would now be silently clipped and genuinely unreachable.
+   Not confirmed either way — the test's screenshots don't distinguish "the rail is fine" from "the rail
+   is silently truncated," since it showed the same (possibly incomplete) list throughout. Ask Josh
+   directly whether the rail is showing every component of a long office (or check by inspecting the
+   rail against the actual component count) before assuming it's fine. If not, the identical fix applies
+   to both.
+2. **FIXED, LIVE-CONFIRMED — body prayer text was two faces at two sizes.** Confirmed as part of the
+   same eleven-screenshot test above — text stayed uniform Cormorant Garamond throughout. Full account
+   in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED" entry.
+
+Do not mark the gutter citation feature fully done until the `.uo-rail`/`.uo-margin` question above is
+resolved one way or the other.
 
 **Both of these were missed by me in the prior review** — I looked at the screenshots without
 actually examining them closely enough to catch an obvious overlap and an obvious font
@@ -161,13 +165,14 @@ skin and old theme behaviour. That is what fixed the dark splash.
    See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
    both noted precisely in §0, worth a quick check).
-1a. **The gutter citation** — built, NOT done. The overlap bug is OPEN AGAIN after a same-session fix
-   was reverted for breaking scrolling entirely (see §0 above and `AUDIT_GOVERNANCE_LEDGER.md`'s
-   "REVERTED" entry) — test the `.uo-page` `overflow-y:auto`/`min-height:0` candidate live in devtools
-   before shipping another patch for it. The typography fix (two faces/sizes) stands and needs a
-   screenshot to confirm. Next: verify typography live, test the scroll candidate live, THEN a full
-   re-review of every screenshot from the earlier "looks fine" pass, since that pass missed both bugs
-   originally and should not be trusted as-is.
+1a. **The gutter citation** — both known bugs fixed and live-confirmed by Josh (eleven-screenshot,
+   full-office scroll test). See §0 above and `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED"
+   entry (and the two attempts before it, worth reading if this bug ever resurfaces). **One open
+   question before calling the feature fully done**: whether `.uo-rail` or `.uo-margin` can silently
+   truncate for a long office or a margin with several cards, since neither has its own overflow
+   handling and `#main-content` no longer scrolls at all. Ask Josh directly, or check the rail against
+   an office with many components. If it's cut off, the identical `overflow-y:auto; min-height:0;` fix
+   applies to both.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
