@@ -15941,3 +15941,35 @@ as a follow-up.
 
 Cache-bust `css/office-shell.css` 297 → 298. SEED_VERSION bumped to
 `v308-2026-09-20-gutter-bug1-fixed-live-confirmed`.
+
+---
+
+## 2026-09-20 continued — `.uo-rail` follow-up question CLOSED: measured, not truncated
+
+The open question from the immediately preceding entry ("does `.uo-rail` silently clip a long office's
+component list, since it has no overflow handling of its own and `#main-content` no longer scrolls")
+is resolved, by direct measurement rather than by re-reading the same ambiguous screenshots again.
+
+Josh ran, in the console, against the live Morning Prayer office used in the prior test:
+
+```js
+const r = document.querySelector('.uo-rail-list') || document.querySelector('.uo-rail');
+console.log('rail:', r.scrollHeight, 'vs visible:', r.clientHeight, '→ hidden:', r.scrollHeight - r.clientHeight);
+console.log('last item shown:', r.lastElementChild?.textContent?.trim());
+```
+
+Result: `scrollHeight` and `clientHeight` are identical (696 vs 696, hidden: 0), and the last item
+shown is "Let Us Bless the Lord" — the office's real closing dismissal ("Let us bless the Lord. / Thanks
+be to God."), matching the final content block in the eleven-screenshot test from the prior entry
+exactly.
+
+**`.uo-rail` is not clipping anything.** Its own content genuinely fits within its row's resolved
+height for this office; there was nothing to hide. `.uo-margin` remains unmeasured — only one overlay
+card has been exercised in any test so far, so a margin with several stacked cards is still a
+theoretical, undemonstrated risk, not a confirmed one. Worth a similar direct measurement if a future
+session builds an office state with multiple overlay/diagnostic cards showing at once, but not chased
+further here absent a reason to.
+
+**The gutter citation feature (handoff doc §1) is now fully done**: both bugs fixed, both
+live-confirmed, and this last open question closed by direct measurement rather than left as an
+assumption. No code changed in this entry — documentation only.

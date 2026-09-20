@@ -38,14 +38,13 @@ read this before touching either fix again.
    end-to-end, eleven screenshots confirming the ordo and keeping bars stay fixed top/bottom throughout
    with nothing cut off. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED" entry —
    read the two attempts before it too if this ever needs revisiting.
-   **OPEN FOLLOW-UP, not yet resolved**: `.uo-rail` and `.uo-margin` were NOT given the same treatment
-   and have no overflow handling of their own. Since `#main-content` no longer scrolls at all, either
-   one's content, if ever taller than its row, would now be silently clipped and genuinely unreachable.
-   Not confirmed either way — the test's screenshots don't distinguish "the rail is fine" from "the rail
-   is silently truncated," since it showed the same (possibly incomplete) list throughout. Ask Josh
-   directly whether the rail is showing every component of a long office (or check by inspecting the
-   rail against the actual component count) before assuming it's fine. If not, the identical fix applies
-   to both.
+   **OPEN FOLLOW-UP — RESOLVED, measured not assumed**: `.uo-rail` was checked directly
+   (`scrollHeight` vs `clientHeight` in the console) against the same Morning Prayer office — identical
+   (696 vs 696, nothing hidden), and the last rail item ("Let Us Bless the Lord") matches the office's
+   real closing dismissal. The rail is not truncating anything. `.uo-margin` remains unmeasured (only
+   one overlay card has ever been exercised in any test) — a theoretical risk for several stacked cards,
+   not a confirmed one; worth the same direct measurement if that scenario ever comes up, not chased
+   further absent a reason to.
 2. **FIXED, LIVE-CONFIRMED — body prayer text was two faces at two sizes.** Confirmed as part of the
    same eleven-screenshot test above — text stayed uniform Cormorant Garamond throughout. Full account
    in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED" entry.
@@ -165,14 +164,12 @@ skin and old theme behaviour. That is what fixed the dark splash.
    See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
    both noted precisely in §0, worth a quick check).
-1a. **The gutter citation** — both known bugs fixed and live-confirmed by Josh (eleven-screenshot,
-   full-office scroll test). See §0 above and `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED"
-   entry (and the two attempts before it, worth reading if this bug ever resurfaces). **One open
-   question before calling the feature fully done**: whether `.uo-rail` or `.uo-margin` can silently
-   truncate for a long office or a margin with several cards, since neither has its own overflow
-   handling and `#main-content` no longer scrolls at all. Ask Josh directly, or check the rail against
-   an office with many components. If it's cut off, the identical `overflow-y:auto; min-height:0;` fix
-   applies to both.
+1a. ~~The gutter citation~~ — **DONE, 2026-09-20.** Both known bugs fixed and live-confirmed
+   (eleven-screenshot, full-office scroll test); the `.uo-rail` truncation question raised alongside the
+   fix was checked directly and closed (`scrollHeight`/`clientHeight` identical, nothing hidden). See
+   `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED" entry and the "CLOSED" entry right after it.
+   `.uo-margin` with several stacked cards remains untested (only one overlay card ever exercised) — a
+   theoretical risk, not a confirmed one, worth a similar direct measurement if that scenario comes up.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
