@@ -10,16 +10,19 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `23bbd6a`,
-SEED_VERSION `v300-2026-09-20-renderbcpoffice-refactor` — trust neither at face value; see the
-FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v301-2026-09-20-renderbcpoffice-refactor-confirmed` — check fresh rather than trusting either
-number here. Documentation-only: records full live browser confirmation of the `renderBcpOffice()`
-refactor (`23bbd6a`) against every one of Phase 3's own acceptance criteria — all four offices, both
-themes correctly office-keyed, the overlay card, and a `not-yet-mapped` diagnostic forced live via a
-temporary in-memory `appData.components` edit (never committed, reverted by reload). **Phase 3 is now
-fully done: refactored AND browser-confirmed.** See item 1 below and `AUDIT_GOVERNANCE_LEDGER.md`'s
-second 2026-09-20 entry for the full account.
+**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `f12e06f`,
+SEED_VERSION `v301-2026-09-20-renderbcpoffice-refactor-confirmed` — trust neither at face value; see
+the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
+`v302-2026-09-20-gutter-citation-grid` — check fresh rather than trusting either number here. **The
+gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned mono
+gutter label and the text") — genuinely didn't exist before this patch; Phase 2 only ever recoloured
+the old flat layout. Built in `js/office-ui.js` (new `bcpWrapInGutter()` helper, a
+`BCP_GUTTER_KIND_BY_LABEL` lookup table for non-scripture blocks) and `css/office-shell.css` (the grid
+itself, scoped to screen only — print and mobile both got deliberate handling, not an oversight; see
+`AUDIT_GOVERNANCE_LEDGER.md`'s third 2026-09-20 entry for the full account, including the proposed
+label mapping Josh confirmed before any code was written). **Not yet browser-confirmed** — this is
+new visual layout, not a refactor of already-working output, so it needs a live look more than most
+patches do.
 
 ---
 
@@ -119,10 +122,14 @@ skin and old theme behaviour. That is what fixed the dark splash.
 ### Open, in rough priority order
 
 1. ~~The `renderBcpOffice()` refactor~~ — **DONE and substantially browser-confirmed, 2026-09-20.**
-   See §0 above and both 2026-09-20 ledger entries. Two named acceptance-list items weren't
+   See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
-   both noted precisely in §0, worth a quick check). Next: the gutter citation (still page-column
-   layout, was blocked on this refactor, may now be unblocked — check before assuming).
+   both noted precisely in §0, worth a quick check).
+1a. ~~The gutter citation~~ — **BUILT 2026-09-20, not yet browser-confirmed.** Genuinely new layout,
+   not blocked wiring as this item previously assumed — see §0 above and the third 2026-09-20 ledger
+   entry for the full account, including the label-mapping design call and the print/mobile handling.
+   Next: an actual look in the browser, across at least one reading, one psalm, one canticle/collect,
+   and print preview.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

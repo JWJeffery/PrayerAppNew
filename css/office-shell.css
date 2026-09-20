@@ -249,6 +249,59 @@ body.shell-v2.office-active .office-container .rubric-text {
     color: var(--uo-rubric);
 }
 
+/* The gutter grid, handoff doc §1: "a two-column grid — a 70px right-aligned
+   mono gutter label and the text". Phase 3 follow-on to the renderBcpOffice()
+   refactor (js/office-ui.js), which was what made per-block DOM grouping
+   possible in the first place -- js/office-ui.js's block-emission helpers
+   wrap each unit's own content in a .uo-block/.uo-gutter-label pair; this is
+   purely the grid and typography, no content decision made here. Citation-
+   bearing units (readings, psalms) show the actual reference; kind-labelled
+   units (antiphon, canticle, collect, invitatory) show that word; everything
+   else gets an empty gutter cell -- left-edge alignment stays one consistent
+   column down the whole page regardless of which blocks carry a label and
+   which don't, rather than the page text jumping left and right block to
+   block.
+
+   SCREEN ONLY, entirely: css/office.css:1123 has its own @media print rule
+   for .passage-reference, and the handoff doc's own hazards list (§10) warns
+   print regresses silently if anything touching the grid forgets it. Rather
+   than design print behaviour for the gutter now (a separate task, not what
+   was asked for), this feature is scoped to the screen so print stays
+   byte-identical to before it existed: the .uo-block wrapper collapses back
+   to plain block flow (no grid columns) and .passage-reference prints
+   exactly as its own existing print rule already handles it. */
+@media screen {
+    body.shell-v2.office-active .office-container .uo-block {
+        display: grid;
+        grid-template-columns: var(--uo-gutter-width) 1fr;
+        column-gap: 18px;
+        align-items: start;
+    }
+
+    body.shell-v2.office-active .office-container .uo-gutter-label {
+        grid-column: 1;
+        text-align: right;
+        font-family: var(--uo-face-machine);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--uo-ink-quiet);
+        padding-top: 0.3em;   /* nudges the label toward the body text's cap-height rather than its ascender */
+    }
+
+    body.shell-v2.office-active .office-container .uo-block-body {
+        grid-column: 2;
+        min-width: 0;   /* lets long citations/reading text wrap inside the track instead of overflowing it */
+    }
+
+    /* The citation now lives in the gutter, not inline in the body -- the
+       page is "the prayed text only, nothing else" (handoff doc §1). The
+       element stays in the DOM; only the on-screen view hides it. */
+    body.shell-v2.office-active .office-container .uo-block-body .passage-reference {
+        display: none;
+    }
+}
+
 /* office.css 1611 — #main-content's own padding cleared the old 340px sidebar.
    The grid handles its own spacing; the sidebar clearance is restored in the
    sidebar rule below so the drawer still has room while it exists. */
@@ -686,6 +739,24 @@ body.shell-v2 .uo-theme-button:focus-visible {
     body.shell-v2 .uo-page > .saint-section,
     body.shell-v2 .uo-page > .uo-ornament {
         max-width: none;
+    }
+
+    /* The gutter grid deliberately does NOT port to mobile as-is (handoff doc
+       §10: mobile is a named hazard, "rewrite deliberately; do not port the
+       old rules" -- the same principle that already collapsed the rail to a
+       top strip applies here). A 70px reserved column plus its gap eats a
+       disproportionate share of an already-narrow phone viewport, so the
+       gutter label stacks ABOVE its block's text instead of beside it,
+       matching how the rail already collapses rather than force-fitting a
+       sidebar onto a phone screen. */
+    body.shell-v2.office-active .office-container .uo-block {
+        display: block;
+    }
+
+    body.shell-v2.office-active .office-container .uo-gutter-label {
+        display: block;
+        text-align: left;
+        margin-bottom: 2px;
     }
 }
 

@@ -15523,3 +15523,61 @@ or the gutter-citation page-column layout mentioned as a Phase 3 follow-on — s
 Documentation-only. No code touched.
 
 SEED_VERSION bumped to `v301-2026-09-20-renderbcpoffice-refactor-confirmed`.
+
+---
+
+## 2026-09-20 — Gutter citation: the page-column two-column grid, built
+
+Next item after the renderBcpOffice() refactor confirmation above, per Josh's direction. This was
+genuinely unbuilt work, not blocked wiring: `documentation/UI_REDESIGN_HANDOFF.md` §1 describes the
+page column as "a two-column grid — a 70px right-aligned mono gutter label and the text," but Phase 2
+only ever recoloured/refonted the existing flat layout (`.rubric-text` got `color:
+var(--uo-rubric)`, nothing more) — `--uo-gutter-width: 70px` and the IBM Plex Mono font were already
+loaded and ready, just never consumed by any actual grid rule.
+
+**Two design gaps closed before writing code, not mechanically:**
+- §8's `kind` taxonomy ("psalm, reading, collect, canticle, antiphon, rubric, etc.") wasn't populated
+  for most blocks — only scripture units carried `kind: 'scripture'`. Proposed a conservative mapping
+  to Josh before building: scripture shows its real citation; RUBRIC and ANTIPHON (the doc's own two
+  named examples) extended to three more established rail-label words — COLLECT, CANTICLE,
+  INVITATORY; everything else (Confession of Sin, the Lord's Prayer, Kyrie, General Thanksgiving,
+  Chrysostom, Mission Prayer, the Litany, Opening Sentence) gets no gutter label at all, since the
+  rail already names it and a repeated word adds nothing. Overlays get no gutter label either — the
+  margin card already marks them as borrowed. Confirmed with Josh before implementing.
+- Grouping: blocks were flat DOM siblings with no wrapper tying a block's own elements together for a
+  grid cell. `js/office-ui.js`'s emission helpers already know the correct grouping (they built it),
+  so they do the wrapping directly — `bcpWrapInGutter()` — rather than have the shell try to
+  re-derive block boundaries from a flat sibling list later.
+
+**Implementation, `js/office-ui.js`:** new `bcpWrapInGutter(container, gutterText, bodyNodes)` builds
+`<div class="uo-block"><div class="uo-gutter-label">...</div><div class="uo-block-body">...</div></div>`.
+`bcpEmitBlock` resolves its gutter text from one lookup table, `BCP_GUTTER_KIND_BY_LABEL`, keyed by
+the DISPLAYED label rather than component id — the same canticle can reach the page via two different
+code paths with the same label text (e.g. a Major Feast override and the generic `DISPLAY_LABELS`
+fallback both produce a Benedictus, under two slightly different label strings, both listed in the
+table so either path is caught). `bcpEmitReading` and `bcpEmitPsalmBlock` pass the real citation
+directly; the psalm helper gives each psalm its own gutter row, matching the contract's own unit
+granularity (§8: "one psalm" is the smallest attributable piece, not "the psalms" as a whole).
+`bcpEmitBare` wraps its bare text in an empty gutter cell too, purely so its left edge lines up with
+every other block rather than sitting flush against the margin.
+
+**Implementation, `css/office-shell.css`:** the grid rules, and the `.passage-reference` hide (the
+citation now lives in the gutter, not inline — the reading/psalm citation used to show twice
+otherwise). **Two real hazards from the handoff doc's own §10 caught and handled, not overlooked:**
+- **Print.** `css/office.css:1123` already has its own `@media print` rule depending on
+  `.passage-reference` being visible. The entire gutter feature — the grid, the hide rule, all of it —
+  is scoped inside `@media screen`, so print stays byte-identical to before this feature existed:
+  `.uo-block` collapses to plain block flow, `.passage-reference` prints exactly as it always did. No
+  new print design was invented; that's explicitly left as its own task rather than rushed here.
+- **Mobile.** The existing `max-width: 768px` breakpoint gets a stacking override: the gutter label
+  goes above its block's text instead of beside it, rather than force-fitting a 70px column plus gap
+  onto an already-narrow phone viewport. Matches the same "collapse, don't port" principle the rail
+  already uses at that breakpoint.
+
+Verified: `node --check js/office-ui.js` passes; CSS brace-balance checked (no linter available in
+this environment). **Not yet browser-confirmed** — genuinely new visual layout, not a refactor of
+already-working output, so this needs a live look before being trusted, more than most patches do.
+
+Cache-bust: `js/office-ui.js` 291 → 292, `css/office-shell.css` 293 → 294.
+
+SEED_VERSION bumped to `v302-2026-09-20-gutter-citation-grid`.

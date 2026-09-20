@@ -3918,9 +3918,77 @@ function bcpRoleFor(label) {
         : 'other';
 }
 
+/* The page-gutter grid, handoff doc §1 -- Phase 3 follow-on, built once the
+   refactor above made real per-block DOM grouping possible. `gutterText`
+   becomes the small mono label in the 70px column (see css/office-shell.css);
+   an empty/undefined value renders an empty cell so left-edge alignment
+   stays one consistent column regardless of which blocks carry a label.
+   `bodyNodes` are appended into the grid's content cell, in order. */
+function bcpWrapInGutter(container, gutterText, bodyNodes) {
+    var block = document.createElement('div');
+    block.className = 'uo-block';
+
+    var gutter = document.createElement('div');
+    gutter.className = 'uo-gutter-label';
+    gutter.textContent = gutterText || '';
+    block.appendChild(gutter);
+
+    var body = document.createElement('div');
+    body.className = 'uo-block-body';
+    bodyNodes.forEach(function (n) { body.appendChild(n); });
+    block.appendChild(body);
+
+    container.appendChild(block);
+}
+
+/* Gutter label by displayed rail label, NOT by component id -- the same
+   canticle can reach the page via two different code paths with the same
+   label text (e.g. VARIABLE_CANTICLE1's Major Feast override and the
+   generic DISPLAY_LABELS lookup both call a Benedictus setting "Benedictus
+   Dominus Deus"; only the generic lookup's own 'bcp-benedictus' entry says
+   "The Benedictus" -- both variants are listed below so either path is
+   caught). Deliberately conservative, per Josh's direction 2026-09-20:
+   scripture keeps its real citation (handled separately, see
+   bcpEmitReading/bcpEmitPsalmBlock); RUBRIC and ANTIPHON are the only kind
+   labels the handoff doc names explicitly, extended here to three more
+   established liturgical-function words already used as rail labels
+   (collect, canticle, invitatory). Everything else -- Confession of Sin,
+   the Lord's Prayer, Kyrie, General Thanksgiving, Chrysostom, Mission
+   Prayer, the Litany, Opening Sentence, overlays -- gets NO gutter label:
+   the rail already says what it is, and a repeated word adds nothing. A
+   label missing from this table is not a bug -- it just renders an empty
+   gutter cell, the same safe default as everything deliberately left out. */
+var BCP_GUTTER_KIND_BY_LABEL = {
+    'Antiphon':                   'ANTIPHON',
+    'The Collect':                'COLLECT',
+    'A Collect':                  'COLLECT',
+    'The Invitatory':             'INVITATORY',
+    'Venite':                     'CANTICLE',
+    'Jubilate':                   'CANTICLE',
+    'Christ Our Passover':        'CANTICLE',
+    'Benedictus Dominus Deus':    'CANTICLE',
+    'The Benedictus':             'CANTICLE',
+    'The Third Song of Isaiah':   'CANTICLE',
+    'A Song of Penitence':        'CANTICLE',
+    'The Song of Moses':          'CANTICLE',
+    'The First Song of Isaiah':   'CANTICLE',
+    'Benedictus es, Domine':      'CANTICLE',
+    'A Song of Creation':         'CANTICLE',
+    'The Second Song of Isaiah':  'CANTICLE',
+    'Te Deum Laudamus':           'CANTICLE',
+    'Nunc Dimittis':              'CANTICLE',
+    'The Song of the Redeemed':   'CANTICLE',
+    'A Song to the Lamb':         'CANTICLE',
+    'Glory to God':               'CANTICLE',
+    'The Magnificat':             'CANTICLE'
+};
+
 /* Shapes 1-3: label + one text node, optionally italic or paragraph-broken,
    optionally an overlay. `env` is the {blocks, overlays} pair being built for
-   this render; `overlayInfo` is {source, anchor} or null/undefined. */
+   this render; `overlayInfo` is {source, anchor} or null/undefined. Overlays
+   are deliberately never given a gutter kind here (see the table comment
+   above) -- they already get a margin card marking them as borrowed; a
+   gutter tag too would be redundant with that. */
 function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
     var labelSpan = document.createElement('span');
     labelSpan.className = 'rubric-text';
@@ -3937,7 +4005,9 @@ function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
     var body = (shape === 'para-italic' || shape === 'para')
         ? bcpMakeSpan('component-text', applyParagraphBreaks(text), bodyOpts)
         : bcpMakeSpan('component-text', text, bodyOpts);
-    container.appendChild(body);
+
+    var gutterText = overlayInfo ? '' : (BCP_GUTTER_KIND_BY_LABEL[label] || '');
+    bcpWrapInGutter(container, gutterText, [body]);
 
     if (overlayInfo) {
         env.overlays.push({ label: label, source: overlayInfo.source || null, anchor: overlayInfo.anchor || null });
@@ -3946,7 +4016,9 @@ function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
     }
 }
 
-/* Shape 4: scripture reading -- label, citation, flowed text, divider. */
+/* Shape 4: scripture reading -- label, citation (now shown in the gutter,
+   not inline -- see the .passage-reference display:none rule in
+   css/office-shell.css), flowed text, divider. */
 function bcpEmitReading(container, env, title, citation, bodyText) {
     var labelSpan = document.createElement('span');
     labelSpan.className = 'rubric-text';
@@ -3956,16 +4028,18 @@ function bcpEmitReading(container, env, title, citation, bodyText) {
     var cite = document.createElement('h4');
     cite.className = 'passage-reference';
     cite.textContent = citation;
-    container.appendChild(cite);
 
-    container.appendChild(bcpMakeSpan('reading-text', formatScriptureAsFlow(bodyText), { tag: 'div' }));
+    var body = bcpMakeSpan('reading-text', formatScriptureAsFlow(bodyText), { tag: 'div' });
+    bcpWrapInGutter(container, citation, [cite, body]);
     bcpEmitDivider(container);
 
     env.blocks.push({ label: title, role: bcpRoleFor(title), units: [{ kind: 'scripture', citation: citation }] });
 }
 
 /* Shape 5: the psalm block -- one label, then per-psalm citation + poetry
-   (+ optional Gloria Patri), no divider (matches the original exactly). */
+   (+ optional Gloria Patri), each psalm its own gutter row (the contract's
+   own unit granularity, §8: "one psalm" is the smallest attributable
+   piece), no divider (matches the original exactly). */
 function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
     var labelSpan = document.createElement('span');
     labelSpan.className = 'rubric-text';
@@ -3974,26 +4048,30 @@ function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
 
     var units = [];
     psalmEntries.forEach(function (p) {
+        var citationText = 'Psalm ' + p.displayNumber;
         var cite = document.createElement('h4');
         cite.className = 'passage-reference';
-        cite.textContent = 'Psalm ' + p.displayNumber;
-        container.appendChild(cite);
-        container.appendChild(bcpMakeSpan('psalm-block', formatPsalmAsPoetry(p.fullText), { tag: 'div' }));
+        cite.textContent = citationText;
+
+        var bodyNodes = [cite, bcpMakeSpan('psalm-block', formatPsalmAsPoetry(p.fullText), { tag: 'div' })];
         /* Original always rendered this span when the toggle was checked,
            even with gt resolving to an empty string -- null (toggle
            unchecked) is the only case that skips it, not falsy. */
         if (p.gloriaText !== null && p.gloriaText !== undefined) {
-            container.appendChild(bcpMakeSpan('component-text', p.gloriaText, { italic: true }));
+            bodyNodes.push(bcpMakeSpan('component-text', p.gloriaText, { italic: true }));
         }
-        units.push({ kind: 'scripture', citation: 'Psalm ' + p.displayNumber });
+        bcpWrapInGutter(container, citationText, bodyNodes);
+        units.push({ kind: 'scripture', citation: citationText });
     });
     env.blocks.push({ label: label, role: bcpRoleFor(label), units: units });
 }
 
 /* Shape 6: bare text, no label -- never a rail entry, matching the original
-   (a block with no rubric-text never produced one before either). */
+   (a block with no rubric-text never produced one before either). Still
+   wrapped in the gutter grid, empty, so its left edge lines up with every
+   other block on the page rather than sitting flush against the margin. */
 function bcpEmitBare(container, text, opts) {
-    container.appendChild(bcpMakeSpan('component-text', text, opts));
+    bcpWrapInGutter(container, '', [bcpMakeSpan('component-text', text, opts)]);
 }
 
 function bcpEmitDivider(container) {
