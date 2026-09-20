@@ -15581,3 +15581,38 @@ already-working output, so this needs a live look before being trusted, more tha
 Cache-bust: `js/office-ui.js` 291 → 292, `css/office-shell.css` 293 → 294.
 
 SEED_VERSION bumped to `v302-2026-09-20-gutter-citation-grid`.
+
+---
+
+## 2026-09-20 — Gutter citation: fix double-labeling (Collect/Canticle/Antiphon/Invitatory shown twice)
+
+Found by Josh in live screenshot review of the gutter citation feature above (`94a91f8`), same day.
+Real bug, confirmed: for the four kind-labelled categories (COLLECT, CANTICLE, ANTIPHON, INVITATORY),
+the in-page heading (e.g. "The Collect") still rendered exactly as before, immediately above the
+gutter's own "COLLECT" label sitting beside the same block's text — the same word shown twice in a
+row. Citation-bearing blocks (readings, psalms) were never affected: their heading ("The Holy
+Gospel") and gutter (the actual reference, e.g. "EPH 3:14-21") carry different information, so both
+staying was correct there.
+
+Fix, `js/office-ui.js`'s `bcpEmitBlock()`: the in-page `.rubric-text` heading is now only rendered
+when the gutter is NOT already carrying a kind word for that same label — i.e. when
+`BCP_GUTTER_KIND_BY_LABEL[label]` is empty. Every other block (citation-bearing, or genuinely
+label-less like Confession of Sin) is unaffected. The rail item and the envelope's own `blocks[]`
+entry still carry the block's real label regardless — only the duplicate in-page heading is
+suppressed, not the label itself.
+
+Two other things raised in the same review, not yet resolved:
+- **A visual gap Josh flagged as "a real problem"** in one screenshot (a scrolled view showing "The
+  Invitatory" heading and its INVITATORY gutter row) — not yet diagnosed precisely; asked Josh to
+  confirm exactly what looked wrong there before guessing further.
+- **"A lot of different fonts"** — the three-face system (Cinzel/Cormorant Garamond/IBM Plex Mono) is
+  as designed, and the IBM Plex Mono font file and `@font-face` declaration both check out correctly
+  on inspection, so this may be a real fallback failure or may just be the mono face reading similarly
+  to a small-caps serif at 10px in a screenshot — not yet confirmed either way.
+
+Verified: `node --check js/office-ui.js` passes. Not yet re-confirmed live against the fix (only the
+double-labeling itself was reproduced from Josh's screenshots, not this specific patch).
+
+Cache-bust: `js/office-ui.js` 292 → 293.
+
+SEED_VERSION bumped to `v303-2026-09-20-gutter-citation-double-label-fix`.

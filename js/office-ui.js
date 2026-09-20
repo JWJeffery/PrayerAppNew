@@ -3990,10 +3990,23 @@ var BCP_GUTTER_KIND_BY_LABEL = {
    above) -- they already get a margin card marking them as borrowed; a
    gutter tag too would be redundant with that. */
 function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
-    var labelSpan = document.createElement('span');
-    labelSpan.className = 'rubric-text';
-    labelSpan.textContent = label;
-    container.appendChild(labelSpan);
+    var gutterText = overlayInfo ? '' : (BCP_GUTTER_KIND_BY_LABEL[label] || '');
+
+    /* When the gutter already carries a kind word (COLLECT, CANTICLE,
+       ANTIPHON, INVITATORY), the in-page heading duplicated it -- "The
+       Collect" as a heading immediately above "COLLECT" in the gutter next
+       to the same text, the same word twice in a row. Found live 2026-09-20
+       (screenshot review) and fixed by dropping the heading specifically
+       when the gutter already says the same thing; every other block still
+       gets its heading exactly as before, since its gutter is either a real
+       citation (different information, both stay) or empty (nothing to
+       duplicate). */
+    if (!gutterText) {
+        var labelSpan = document.createElement('span');
+        labelSpan.className = 'rubric-text';
+        labelSpan.textContent = label;
+        container.appendChild(labelSpan);
+    }
 
     /* 'para-italic' (Theotokion) and 'para' (the Examen) look alike apart from
        italics -- confirmed against both actual call sites rather than
@@ -4006,7 +4019,6 @@ function bcpEmitBlock(container, env, label, text, overlayInfo, shape) {
         ? bcpMakeSpan('component-text', applyParagraphBreaks(text), bodyOpts)
         : bcpMakeSpan('component-text', text, bodyOpts);
 
-    var gutterText = overlayInfo ? '' : (BCP_GUTTER_KIND_BY_LABEL[label] || '');
     bcpWrapInGutter(container, gutterText, [body]);
 
     if (overlayInfo) {
