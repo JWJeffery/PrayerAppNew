@@ -10,58 +10,59 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20.** Fresh-clone HEAD was `79d1203` at the start of this session; SEED_VERSION
-`v308-2026-09-20-gutter-bug1-fixed-live-confirmed` after this session's commits — trust neither at face value; see the FIRST
-MOVE line above.
+**State as of 2026-09-20, end of session.** Fresh-clone HEAD at session start was `79d1203`; HEAD after
+this session's commits is `02ccfa9`, SEED_VERSION `v308-2026-09-20-gutter-bug1-fixed-live-confirmed` —
+trust neither at face value; see the FIRST MOVE line above.
 
-**The gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned
-mono gutter label and the text") — genuinely didn't exist before this session; Phase 2 only ever
-recoloured the old flat layout. Built in `js/office-ui.js` (new `bcpWrapInGutter()` helper, a
-`BCP_GUTTER_KIND_BY_LABEL` lookup table for non-scripture blocks) and `css/office-shell.css` (the grid
-itself, scoped to screen only — print and mobile both got deliberate handling). Label mapping was
-confirmed with Josh before any code was written; a double-labeling bug (Collect/Canticle/Antiphon/
-Invitatory showing their kind word twice — once as the old in-page heading, once in the new gutter)
-was found in live review and fixed the same session (`a28af0d`).
+## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
 
-**BOTH GUTTER BUGS ARE NOW FIXED AND LIVE-CONFIRMED.** The keeping-bar overlap took three attempts —
-read this before touching either fix again.
-1. **FIXED, LIVE-CONFIRMED — the sticky keeping-place bar overlap.** Third attempt. Attempt 1 grew
-   `#main-content` itself and broke scrolling entirely (`#daily-office-section`'s own
-   `position:fixed; overflow:hidden`, not `#main-content`, is the true outer viewport) — reverted the
-   same evening. This attempt instead gives `.uo-page` — the actual scrollable content —
-   `overflow-y: auto; min-height: 0;`, and gives `#main-content` `overflow-y: hidden` so the two stop
-   competing. `#main-content`'s `height: 100vh` was deliberately left untouched. `min-height: 0` was
-   the missing piece both this time and, very likely, in an earlier pre-session attempt recorded in a
-   now-replaced `.uo-page` comment: a grid item's default `min-height: auto` blocks it from shrinking to
-   its track's size, which is what `overflow-y: auto` needs to have anything to scroll. **Tested live by
-   Josh before being shipped**: applied via console first, then a full Morning Prayer scrolled
-   end-to-end, eleven screenshots confirming the ordo and keeping bars stay fixed top/bottom throughout
-   with nothing cut off. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED" entry —
-   read the two attempts before it too if this ever needs revisiting.
-   **OPEN FOLLOW-UP — RESOLVED, measured not assumed**: `.uo-rail` was checked directly
-   (`scrollHeight` vs `clientHeight` in the console) against the same Morning Prayer office — identical
-   (696 vs 696, nothing hidden), and the last rail item ("Let Us Bless the Lord") matches the office's
-   real closing dismissal. The rail is not truncating anything. `.uo-margin` remains unmeasured (only
-   one overlay card has ever been exercised in any test) — a theoretical risk for several stacked cards,
-   not a confirmed one; worth the same direct measurement if that scenario ever comes up, not chased
-   further absent a reason to.
-2. **FIXED, LIVE-CONFIRMED — body prayer text was two faces at two sizes.** Confirmed as part of the
-   same eleven-screenshot test above — text stayed uniform Cormorant Garamond throughout. Full account
-   in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED" entry.
+The page column's two-column grid (handoff doc §1: "a 70px right-aligned mono gutter label and the
+text") didn't exist before this session; Phase 2 only ever recoloured the old flat layout. Built in
+`js/office-ui.js` (`bcpWrapInGutter()`, `BCP_GUTTER_KIND_BY_LABEL`) and `css/office-shell.css` (the grid
+itself, screen-only — print and mobile both got deliberate handling). A double-labeling bug (Collect/
+Canticle/Antiphon/Invitatory showing their kind word twice) was found in live review and fixed the same
+session (`a28af0d`).
 
-Do not mark the gutter citation feature fully done until the `.uo-rail`/`.uo-margin` question above is
-resolved one way or the other.
+**Two live bugs were then found by Josh in screenshot review, missed by Claude on first pass** (a
+confident-sounding but wrong non-answer was given twice before Josh had to spell out what was plainly
+visible — worth remembering that "I looked at the screenshot" is not the same as examining it closely
+enough to catch an overlap or a font mismatch). Both are now fixed and, critically, both were proven
+with a real end-to-end scroll test rather than shipped on source-reading alone:
 
-**Both of these were missed by me in the prior review** — I looked at the screenshots without
-actually examining them closely enough to catch an obvious overlap and an obvious font
-inconsistency, and gave a confident-sounding but wrong non-answer twice before Josh had to spell out
-what was plainly visible. Whoever picks this up next should re-verify anything I "confirmed" as
-working in this session's screenshot reviews rather than trust it at face value — the standing rule
-in this note ("never trust X at face value") applies to my own read of visual output too, not only to
-HEAD/SEED_VERSION.
+1. **The sticky keeping-place bar overlapping page content — fixed on the third attempt.** Attempt 1
+   diagnosed the mechanism correctly (`#main-content`'s grid row was capped against a fixed container
+   height) but fixed the wrong element — it grew `#main-content` itself, which fought
+   `#daily-office-section`'s own `position:fixed; overflow:hidden` (the true outer viewport, pinned to
+   the sidebar's slide-out clip by original design) and broke scrolling entirely. Josh: *"The prayer
+   card refuses to scroll."* Reverted the same evening. **Attempt 3 (shipped)**: give `.uo-page` itself
+   — the actual scrollable content — `overflow-y: auto; min-height: 0;`, and give `#main-content`
+   `overflow-y: hidden` so the two stop competing for the same scroll. `#main-content`'s `height: 100vh`
+   was deliberately left untouched. `min-height: 0` was the missing piece: a grid item's default
+   `min-height: auto` blocks it from shrinking to its track's size, which `overflow-y: auto` needs in
+   order to have anything to scroll. **Tested live by Josh before being shipped**: applied via console
+   first, then a full Morning Prayer scrolled end-to-end, eleven screenshots confirming the ordo and
+   keeping bars stay fixed top/bottom throughout with nothing cut off. Full history in
+   `AUDIT_GOVERNANCE_LEDGER.md` — three consecutive 2026-09-20 entries ("Bug 1 ... FIXED", "REVERTED",
+   "FIXED, LIVE-CONFIRMED") — read all three before touching this again; the middle one is exactly the
+   mistake not to repeat.
+   **Follow-up question raised alongside the fix, now closed by measurement**: since `#main-content` no
+   longer scrolls at all, `.uo-rail` and `.uo-margin` — which have no overflow handling of their own —
+   could in principle silently truncate. Checked directly: `.uo-rail`'s `scrollHeight` and
+   `clientHeight` are identical for a full Morning Prayer (696 vs 696, nothing hidden), and its last
+   item ("Let Us Bless the Lord") matches the office's real closing dismissal. **`.uo-margin` remains
+   unmeasured** — only one overlay card has ever been exercised in any test — a theoretical risk for
+   several stacked cards, not a confirmed one. Worth the same direct measurement if a multi-card margin
+   state ever comes up; not chased further absent a reason to.
+2. **Body prayer text rendered in two faces at two sizes — fixed, same session.** The shell's
+   prayed-text rule matched `.office-container`, `p` and `li` only; every unit the Anglican lane
+   actually emits is `.component-text` / `.reading-text` / `.psalm-block`, and `css/office.css:2378`
+   sets face/size/line-height/colour on exactly those classes, which beats inheritance at any
+   specificity. Fixed with a new `@media screen` rule in `css/office-shell.css`. Confirmed as part of
+   the same eleven-screenshot scroll test above — text stayed uniform Cormorant Garamond throughout.
 
-Do not mark the gutter citation feature as done until both of these are actually fixed and
-re-confirmed live.
+**Nothing further to do here.** The feature is done. If it ever regresses, read the three-attempt
+history above before re-diagnosing from scratch — the wrong-element mistake (attempt 1) is an easy one
+to repeat if this gets picked up cold.
 
 ---
 
