@@ -10,17 +10,16 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `ee938e2`,
-SEED_VERSION `v299-2026-09-20-dark-auto-bug-live-confirmed` — trust neither at face value; see the
+**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `23bbd6a`,
+SEED_VERSION `v300-2026-09-20-renderbcpoffice-refactor` — trust neither at face value; see the
 FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v300-2026-09-20-renderbcpoffice-refactor` — check fresh rather than trusting either number here.
-**This is the `renderBcpOffice()` refactor itself** — Phase 3's actual remaining work, previously
-flagged in this note as "still not started" and "do not start at the end of a long session." Josh's
-explicit call: the session wasn't actually that long, proceed. See item 1 below and
-`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry for the full account, including two real mistakes
-caught and fixed before committing (a Gloria Patri null-vs-empty edge case, and a wrongly-assumed
-italic on the Examen's paragraph-broken block). **Not yet browser-confirmed** — that's the immediate
-next step, against Phase 3's own acceptance criteria in the handoff doc §9.
+`v301-2026-09-20-renderbcpoffice-refactor-confirmed` — check fresh rather than trusting either
+number here. Documentation-only: records full live browser confirmation of the `renderBcpOffice()`
+refactor (`23bbd6a`) against every one of Phase 3's own acceptance criteria — all four offices, both
+themes correctly office-keyed, the overlay card, and a `not-yet-mapped` diagnostic forced live via a
+temporary in-memory `appData.components` edit (never committed, reverted by reload). **Phase 3 is now
+fully done: refactored AND browser-confirmed.** See item 1 below and `AUDIT_GOVERNANCE_LEDGER.md`'s
+second 2026-09-20 entry for the full account.
 
 ---
 
@@ -30,19 +29,19 @@ next step, against Phase 3's own acceptance criteria in the handoff doc §9.
 
 An outside design proposal, verified against the repo, corrected in fifteen places for governance,
 and adopted. One canon — **rail · page · margin** — with everything not prayed aloud moved out of the
-text column into the margin. Six phases. **Phase 1 and 2 are done; Phase 3's refactor is done, not
-yet browser-confirmed.**
+text column into the margin. Six phases. **Phase 1, 2, and 3 are all done, including live
+confirmation.**
 
 | Phase | State |
 |---|---|
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
-| 3 — Anglican lane emits the envelope | **refactor done 2026-09-20, not yet browser-confirmed** — see below |
+| 3 — Anglican lane emits the envelope | **done and confirmed in the browser (2026-09-20)** — see below |
 | 4 — threshold and Office Settings | not started |
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
-**PHASE 3'S REFACTOR IS DONE (2026-09-20) — THE NEXT STEP IS BROWSER CONFIRMATION, NOT MORE CODE.**
+**PHASE 3 IS FULLY DONE (2026-09-20) — REFACTORED AND BROWSER-CONFIRMED.**
 `renderBcpOffice()` (`js/office-ui.js`) no longer builds one `officeHtml` string and scrapes it
 afterward. Every one of its ~90 emission sites now calls one of six small block-emission helpers
 (`bcpEmitBlock`, `bcpEmitReading`, `bcpEmitPsalmBlock`, `bcpEmitBare`, plus `bcpEmitDivider` and
@@ -55,15 +54,24 @@ context)`, which wraps that directly-built data in the envelope shape; the old r
 lookup, rite fallback, every BCP-alternative toggle — was verified line by line against the
 pre-refactor original, not rewritten from memory; `node --check` passes on both files. **Two real
 bugs were caught and fixed during the conversion, not introduced by it** — full account in
-`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry (title: "The renderBcpOffice() refactor: Phase 3's
-actual remaining work, done").
+`AUDIT_GOVERNANCE_LEDGER.md`'s first 2026-09-20 entry (title: "The renderBcpOffice() refactor: Phase
+3's actual remaining work, done").
 
-**What is NOT yet done: any actual browser confirmation.** Phase 3's own acceptance criteria (handoff
-doc §9) are the standard: Morning Prayer, Noonday, Evening Prayer and Compline rendering correctly
-for a spread of dates including Holy Cross Day and a Sunday; the Hudra Prayer for Understanding
-appearing as a marked overlay, never as native content; a deliberately unmapped proper rendering a
-`not-yet-mapped` diagnostic; the seasonal dot still reading `liturgicalColor` correctly. None of that
-has been exercised live yet — do this before anything else in Phase 3/4/5.
+**Live-confirmed the same day** (second 2026-09-20 ledger entry): all four offices, both themes
+correctly office-keyed, the Agpeya Opening overlay card (sourced and anchored correctly), and a
+`not-yet-mapped` diagnostic forced live by temporarily filtering a component out of `appData` in the
+browser console — no code or data file changed, reverted by reload. Two specific named items from
+the acceptance list were not specifically exercised — see the next paragraph.
+
+**Confirmed live 2026-09-20** (second ledger entry that date): all four offices across two dates and
+both themes, an overlay card (Agpeya Opening — sourced/anchored correctly), and a `not-yet-mapped`
+diagnostic (forced via a temporary console edit, since the corpus has no naturally-occurring gap
+handy). **Two specific items from the handoff doc's acceptance list were NOT specifically
+exercised** — say so precisely rather than claim full closure: the Hudra Prayer for Understanding
+overlay by name (a different overlay toggle, Agpeya Opening, was tested instead — same code path,
+same class of confirmation, but not that exact named case), and the seasonal dot's
+`liturgicalColor` reading was not explicitly checked in any screenshot. Worth a quick look before
+treating those two as covered.
 
 **Two renderers deliberately untouched, correctly out of scope:** `renderEastSyriac()` and the Coptic
 Agpeya renderer, further down `js/office-ui.js`, still build their own separate `officeHtml` strings
@@ -110,10 +118,11 @@ skin and old theme behaviour. That is what fixed the dark splash.
 
 ### Open, in rough priority order
 
-1. ~~The `renderBcpOffice()` refactor~~ — **DONE 2026-09-20, not yet browser-confirmed.** See "PHASE
-   3'S REFACTOR IS DONE" in §0 above and the 2026-09-20 ledger entry. Next step: Phase 3's own
-   acceptance criteria (handoff doc §9) against a real browser, then the gutter citation (still
-   page-column layout, was blocked on this refactor, may now be unblocked — check before assuming).
+1. ~~The `renderBcpOffice()` refactor~~ — **DONE and substantially browser-confirmed, 2026-09-20.**
+   See §0 above and both 2026-09-20 ledger entries. Two named acceptance-list items weren't
+   specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
+   both noted precisely in §0, worth a quick check). Next: the gutter citation (still page-column
+   layout, was blocked on this refactor, may now be unblocked — check before assuming).
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

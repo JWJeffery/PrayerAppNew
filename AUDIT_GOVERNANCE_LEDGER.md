@@ -15475,3 +15475,51 @@ that has been exercised live yet.
 Cache-bust: `js/office-ui.js` 290 → 291, `js/anglican-envelope.js` 289 → 290.
 
 SEED_VERSION bumped to `v300-2026-09-20-renderbcpoffice-refactor`.
+
+---
+
+## 2026-09-20 — renderBcpOffice() refactor: substantial live confirmation against Phase 3's acceptance criteria
+
+Follow-up to the refactor above (`23bbd6a`). Most acceptance criteria in
+`documentation/UI_REDESIGN_HANDOFF.md` §9 (Phase 3) confirmed live in the browser this session:
+
+- **All four offices render correctly**: Noonday and Evening Prayer confirmed for 2027-03-19 (Saint
+  Joseph), Morning Prayer confirmed for 2026-09-20 (Twentieth Sunday after Pentecost), Compline
+  confirmed via Office Settings mid-sequence (position "1 of 16"). Psalm citations, scripture readings
+  (with citation + flowed text via `bcpEmitReading`), the ornamental divider, dismissal versicles, and
+  a commemoration card all rendered correctly across both themes.
+- **Auto theme correctly office-keyed**: Evening Prayer rendered dark, Noonday/Morning rendered light,
+  in the same session, with no shell involvement bleeding onto other screens (consistent with the
+  2026-09-20 dark/auto bug fix above).
+- **Overlay card confirmed**: Agpeya Opening toggled on for Morning Prayer (2026-09-20) produced the
+  correct margin card — "OVERLAY · BORROWED — Agpeya Opening — Coptic Orthodox (Agpeya). Anchored
+  before the office." — sourced and anchored correctly, built directly from `env.overlays` with no
+  scraping involved.
+- **`not-yet-mapped` diagnostic confirmed**: forced live by temporarily filtering `comm-lords-prayer`
+  out of `appData.components` in the browser console (in-memory only, reverted by reload, nothing
+  committed) and re-rendering without a page reload. Produced the correct card — "DIAGNOSTIC — The
+  Lord's Prayer — No proper is appointed for this day in the corpus. Nothing has been substituted." —
+  confirming `bcpPushDiagnostic()` fires correctly the moment a branch has nothing to substitute,
+  with no separate scrape-and-attribute step to get wrong.
+- **Lectionary Gap path unaffected**: 2027-03-18 correctly shows "Lectionary Gap" / "No lectionary
+  entry exists in the data files for this date." This is `dailyData?._isFallback`, a separate,
+  pre-existing early-return path untouched by this refactor — confirmed still working, not a
+  regression and not evidence either way about the refactor itself.
+
+No console errors from the render path itself (the one uncaught error in the session log,
+`A listener indicated an asynchronous response...`, is standard Chrome extension noise, unrelated).
+
+**Two specific items from the handoff doc's own acceptance list were NOT specifically exercised** —
+stated precisely rather than folded into a blanket "all confirmed": the Hudra Prayer for
+Understanding overlay by name (Agpeya Opening was tested instead — same overlay code path, same
+class of confirmation, but not that exact named case), and the seasonal dot's `liturgicalColor`
+reading was not explicitly checked in any screenshot from this session.
+
+**Phase 3 is done: refactored and substantially browser-confirmed**, with the two gaps above worth a
+quick look before treating it as fully closed. Next work is Phase 4 (threshold and Office Settings)
+or the gutter-citation page-column layout mentioned as a Phase 3 follow-on — see
+`RESUME_PROJECT_NOTE.md` §"Open, in rough priority order" for current priority.
+
+Documentation-only. No code touched.
+
+SEED_VERSION bumped to `v301-2026-09-20-renderbcpoffice-refactor-confirmed`.
