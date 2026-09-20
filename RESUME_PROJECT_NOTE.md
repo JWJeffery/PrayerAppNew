@@ -10,17 +10,14 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `b403628`,
-SEED_VERSION still `v297-2026-09-19-session-close-dark-auto-and-gpg-flagged` — trust neither at face
+**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `ff5fba2`,
+SEED_VERSION `v298-2026-09-20-dark-auto-bug-fixed-office-active-guard` — trust neither at face
 value; see the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v298-2026-09-20-dark-auto-bug-fixed-office-active-guard` — check fresh rather than trusting either
-number here. Two TEMP diagnostic-only commits landed between v297 and this one (`5f3271a`, then
-`b403628`, both adding `console.log` tracing with no functional change) — both are fully reverted by
-this same patch, folded in rather than kept as separate commits, so `git log` will show the diagnostic
-code appear and disappear within this span rather than persisting. Item 8 below (dark/auto default
-bug) is now RESOLVED — see its entry for the fix and `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry
-for the full reproduction trail. The GPG-signing issue (item unchanged from last session) is still
-open and still unexplained. The 2026-09-12 sessions closed the sanctoral work described from section 1
+`v299-2026-09-20-dark-auto-bug-live-confirmed` — check fresh rather than trusting either number
+here. Documentation-only: adds the live confirmation of the `ff5fba2` fix (Evening Prayer → Back to
+Modes, splash dark/light state now agrees with its own checkbox, no shell involvement). Item 8 below
+is fully closed. The GPG-signing issue (item unchanged from last session) is still open and still
+unexplained. The 2026-09-12 sessions closed the sanctoral work described from section 1
 down; everything from 2026-09-12 onward has been the **UI redesign**, which is where the live work
 now is.
 
@@ -130,8 +127,13 @@ skin and old theme behaviour. That is what fixed the dark splash.
    were cleared along the way, not part of the fix: a forgotten `traditionDefault: church-of-the-east`
    in the local profile from an earlier real click (`resetUserTraditionDefault()` clears it), and a
    forgotten explicit `LIGHT` click that had written `'light'` to `universalOfficeShellTheme`
-   (cleared via `localStorage.removeItem`). See `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry for
-   the full reproduction trail.
+   (cleared via `localStorage.removeItem`). **Live-confirmed the same day**: Evening Prayer → Back to
+   Modes came back dark once more, but this time consistent with itself — the splash's own "DARK
+   MODE" checkbox (old skin, unrelated to the shell) was checked, from forgotten browser testing days
+   earlier, and unchecking it flipped the splash light immediately with no shell involvement either
+   way. Before the fix, the same reproduction had produced a *mismatch* (checkbox unchecked, page
+   dark anyway); checkbox and page state now agree, which is what this fix was for. See
+   `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry for the full reproduction trail.
 
 ---
 

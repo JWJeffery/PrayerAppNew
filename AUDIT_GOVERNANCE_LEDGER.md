@@ -15380,12 +15380,21 @@ added only by `js/office-ui.js`'s `selectMode()` when a real office lane is ente
 immediately without touching any class when it's absent; `currentOfficeId()` returns `null` rather
 than falling through to a stale radio.
 
-Verified: `node --check js/office-shell.js` passes. Not yet re-confirmed live in the browser after this
-exact patch (the two diagnostic commits it supersedes were each browser-confirmed before this one
-replaced their logging with the real fix) — worth a quick Back-to-Modes-from-Evening-Prayer check next
-session before treating this as fully closed.
+Verified: `node --check js/office-shell.js` passes. Live confirmation follows in the addendum below,
+appended the same day after `ff5fba2` landed.
 
 Cache-bust: `js/office-shell.js` 294 → 295 (net change from the pre-diagnostic baseline: 292 → 295,
 since 293/294 were the now-reverted diagnostic bumps).
 
 SEED_VERSION bumped to `v298-2026-09-20-dark-auto-bug-fixed-office-active-guard`.
+
+**Live confirmation, same day, after the patch above landed (`ff5fba2`):** Evening Prayer → Back to
+Modes reproduced once more. The splash came back dark — but this time consistent with itself: the
+splash's own "DARK MODE" checkbox was checked, and unchecking it flipped the splash light
+immediately, with no shell involvement at either state. That's the old skin's own sticky toggle
+working exactly as designed (a plain persisted setting, unrelated to Auto/office-keyed logic),
+apparently left checked from browser testing roughly two days earlier and forgotten — the same shape
+as the two red herrings above, not a recurrence of the bug. Before this fix, the same reproduction
+produced a *mismatch* (checkbox unchecked, page dark anyway); now checkbox state and page state
+agree, which is the actual thing this fix was for. Item 8 in `RESUME_PROJECT_NOTE.md` and this entry
+can both be treated as closed.
