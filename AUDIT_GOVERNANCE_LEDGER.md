@@ -15737,3 +15737,76 @@ render-level verification, and this has not had it yet.
 
 Cache-bust `css/office-shell.css` 294 → 295. SEED_VERSION bumped to
 `v305-2026-09-20-gutter-body-typography-uniform`.
+
+---
+
+## 2026-09-20 continued — Bug 1 of the two open gutter bugs FIXED: the sticky keeping-place bar overlapping page content
+
+The last of the two bugs from the session-close entry. Diagnosed from live measurements Josh took in
+devtools, not from reasoning about the CSS alone.
+
+### The measurements
+
+At a point where the overlap was visible on screen, `.uo-keeping`'s bounding rect, `#main-content`'s
+`gridTemplateRows`/`clientHeight`/`scrollHeight`/`scrollTop`, and `.uo-page`'s bounding rect:
+
+```
+keeping: { top: 904.5, bottom: 951.5 }
+rows: "65px 1132px 47px"
+clientHeight: 1244, scrollHeight: 11919, scrollTop: 292.5
+page: { top: -227.5, bottom: 904.5 }
+covered block (the Invitatory): { top: 891, bottom: 1047 }
+```
+
+### The cause, confirmed by those numbers rather than assumed
+
+`65 + 1132 + 47 = 1244`, exactly matching `clientHeight` to the pixel. Not a coincidence:
+`css/office.css`'s base `#main-content` rule (line ~496) still sets `height: 100vh; overflow-y: auto;`,
+unchanged and unoverridden anywhere under `shell-v2`. **A CSS grid container with a fixed (definite)
+height caps its `auto`-max rows to sum to exactly that height**, regardless of how tall their real
+content is — and grid rows do not clip their own overflow by default. So the middle row
+(`minmax(320px, auto)`, meant to hold the entire office) was squeezed into whatever space was left
+inside a fixed ~1244px box, and the real prayer text — far taller — spilled uncontained past that
+boundary.
+
+The `.uo-page` rect confirmed this directly: its own bottom (904.5) landed exactly at `.uo-keeping`'s
+top (904.5), zero gap, exactly as the grid's row placement intended. But the actual Invitatory block
+Josh was looking at ran to `y:1047` — 142px past its own row's edge — while `scrollHeight` (11919)
+measured nearly **ten times** `clientHeight` (1244). The office's real content was never wrong; the box
+meant to hold it was capped to a tenth of what it needed, and since grid rows don't clip, the overflow
+landed visually on top of the sticky bar positioned immediately after that undersized row.
+
+### The fix
+
+Three declarations added to the **existing** `body.shell-v2 #main-content.app-primary-canvas` grid rule
+in `css/office-shell.css` — the same selector already setting `display: grid` there, so no new
+specificity was introduced:
+
+```
+height: auto;
+min-height: 100vh;
+overflow-y: visible;
+```
+
+This lets the grid's own box track its real content instead of being pinned to the viewport, which is
+what its rows need in order to size correctly — matching the design this file's own `.uo-page` comment
+already describes ("the grid rows are content-sized"). Page-level scrolling then happens the ordinary
+way, at the document: `body.office-active` already sets `height: auto; overflow-y: auto;`
+(`css/office.css` line ~1621) and needed no change to support this.
+
+**Checked and left alone as correctly unaffected:** the `@media (max-width: 768px)` block only
+redefines `grid-template-columns`/`rows`/`areas`; it never touches height, so it inherits this fix
+rather than needing its own copy of it.
+
+### Not yet live-confirmed
+
+This is a diagnosis from Josh's own live measurements plus the CSS source — correct on the evidence,
+but the fix itself has not been seen in a browser. Ask for the same measurement snippet again after
+applying, or simply confirm the Invitatory (or any block) no longer sits under the keeping bar at any
+scroll position.
+
+**Both gutter bugs from the 2026-09-20 session close are now fixed**, pending this live confirmation
+and the earlier typography fix's own (see the immediately preceding ledger entry).
+
+Cache-bust `css/office-shell.css` 295 → 296. SEED_VERSION bumped to
+`v306-2026-09-20-gutter-keeping-bar-overlap-fixed`.

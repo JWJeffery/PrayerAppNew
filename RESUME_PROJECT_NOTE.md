@@ -11,7 +11,7 @@ concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at 
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
 **State as of 2026-09-20.** Fresh-clone HEAD was `79d1203` at the start of this session; SEED_VERSION
-`v305-2026-09-20-gutter-body-typography-uniform` after this session's commit — trust neither at face value; see the FIRST
+`v306-2026-09-20-gutter-keeping-bar-overlap-fixed` after this session's commits — trust neither at face value; see the FIRST
 MOVE line above.
 
 **The gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned
@@ -23,28 +23,35 @@ confirmed with Josh before any code was written; a double-labeling bug (Collect/
 Invitatory showing their kind word twice — once as the old in-page heading, once in the new gutter)
 was found in live review and fixed the same session (`a28af0d`).
 
-**OF THE TWO CONFIRMED LIVE BUGS, ONE IS FIXED AND ONE IS STILL OPEN.** Both were found by Josh in the
-same screenshot review, after the double-labeling fix.
-1. **STILL OPEN — the sticky keeping-place bar overlaps page content.** The Invitatory block was half
-   covered by the "↑ ↓ move by block" bar at the bottom of the viewport. Likely the `.uo-block` grid
-   wrappers changed the page's height/flow in a way that broke whatever previously kept the sticky bar
-   clear of content. NOT diagnosed. Start in devtools, not by reasoning from the CSS — one reading of
-   the source says `.uo-keeping` should not be able to stick at all (it is a grid item whose sticky
-   containing block is its own `keep` grid area, which is exactly its own height, giving a zero sticky
-   range), which contradicts what the screenshot plainly shows. That contradiction is the thing to
-   measure, not to argue from: get `getBoundingClientRect()` on `.uo-keeping` and on the block behind
-   it, plus `#main-content`'s `scrollTop`/`clientHeight`/`scrollHeight` and the computed `position` of
-   `.uo-keeping`, at the moment the overlap is on screen.
-2. **FIXED 2026-09-20 — body prayer text rendered in two faces at two sizes.** Diagnosed from the
-   cascade, full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED"
-   entry. The shell's prayed-text rule matched `.office-container`, `p` and `li` only, while every unit
-   the lane emits is `.component-text` / `.reading-text` / `.psalm-block` — and `css/office.css:2378`
-   sets face, size, line-height and colour on exactly those classes, which beats inheritance at any
-   specificity. Readings flow into real `<p>`s and so DID match the shell's rule, which is why a
-   Cormorant 25px reading sat above a Georgia ~17px collect. Fixed by a new `@media screen` rule at
-   (0,4,0) in `css/office-shell.css`. **Not yet live-confirmed, and the page will get visibly larger** —
-   collects, canticles and psalms rise to the 25px floor the readings already use. Confirm in a
-   screenshot before treating it as closed.
+**BOTH OF THE TWO CONFIRMED LIVE BUGS ARE NOW FIXED, NEITHER LIVE-CONFIRMED YET.** Both were found by
+Josh in the same 2026-09-20 screenshot review, after the double-labeling fix.
+1. **FIXED — the sticky keeping-place bar overlapping page content.** Diagnosed from live measurements
+   Josh took in devtools (`.uo-keeping`'s rect, `#main-content`'s `gridTemplateRows`/`clientHeight`/
+   `scrollHeight`, `.uo-page`'s rect), not from the CSS alone. Full account in
+   `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 1 of the two open gutter bugs FIXED" entry. CAUSE: `#main-content`
+   still carries `height: 100vh; overflow-y: auto;` from the old skin (`css/office.css` line ~496),
+   never overridden under shell-v2. A grid container with a fixed height caps its `auto`-max rows to sum
+   to exactly that height regardless of real content size, and grid rows don't clip overflow by default
+   — so the middle row was squeezed into a ~1244px box (measured: 65+1132+47=1244, matching clientHeight
+   exactly) while the real content was ~10× that (scrollHeight 11919), and the overflow spilled visually
+   onto the sticky bar positioned right after the undersized row. FIX: `height: auto; min-height: 100vh;
+   overflow-y: visible;` added to the existing `body.shell-v2 #main-content.app-primary-canvas` grid
+   rule in `css/office-shell.css` — no new selector, no specificity fight. Page-level scroll now happens
+   at the document, which `body.office-active` was already set up for.
+2. **FIXED — body prayer text rendered in two faces at two sizes.** Diagnosed from the cascade, full
+   account in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED" entry. The
+   shell's prayed-text rule matched `.office-container`, `p` and `li` only, while every unit the lane
+   emits is `.component-text` / `.reading-text` / `.psalm-block` — and `css/office.css:2378` sets face,
+   size, line-height and colour on exactly those classes, which beats inheritance at any specificity.
+   Fixed by a new `@media screen` rule at (0,4,0) in `css/office-shell.css`.
+
+**NEITHER FIX HAS BEEN SEEN IN A BROWSER YET.** Both are diagnoses from source and (for bug 1) live
+measurements, correct on the evidence available, but this project's own standing rule is that
+correctness claims need render-level verification. Confirm both in a screenshot before treating the
+gutter citation feature as done. The page will look visibly different in two ways: text will be larger
+(bug 2's fix), and the page will grow taller than one screen with the document itself scrolling rather
+than an internal panel (bug 1's fix) — that second change is the intended fix, not a new problem, but
+worth knowing before looking at it.
 
 **Both of these were missed by me in the prior review** — I looked at the screenshots without
 actually examining them closely enough to catch an obvious overlap and an obvious font
@@ -158,12 +165,11 @@ skin and old theme behaviour. That is what fixed the dark splash.
    See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
    both noted precisely in §0, worth a quick check).
-1a. **The gutter citation** — built, NOT done. One confirmed live bug still open (the sticky keeping-
-   place bar overlapping page content); the font/size inconsistency is fixed but not yet live-confirmed
-   — see §0 above and `AUDIT_GOVERNANCE_LEDGER.md`'s last two 2026-09-20 entries. Next: measure the
-   sticky bar in devtools, confirm the typography fix in a screenshot, then a full re-review of every
-   screenshot from the earlier "looks fine" pass, since that pass missed both bugs and should not be
-   trusted as-is.
+1a. **The gutter citation** — built, both known bugs fixed, NEITHER live-confirmed. See §0 above and
+   `AUDIT_GOVERNANCE_LEDGER.md`'s last three 2026-09-20 entries. Next: confirm both fixes in the browser
+   (a screenshot showing normal-size text with no overlap at any scroll position is enough), then a full
+   re-review of every screenshot from the earlier "looks fine" pass, since that pass missed both bugs
+   and should not be trusted as-is. Do not mark this feature done until that confirmation happens.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

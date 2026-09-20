@@ -421,10 +421,35 @@ body.shell-v2 #main-content.app-primary-canvas {
     grid-template-areas:
         "ordo ordo ordo"
         "rail page margin"
-        "keep keep keep";
+        "keep keep keep"
+    ;
     column-gap: 0;
     color: var(--uo-ink);
     font-family: var(--uo-face-prayed);
+    /* BUG FIX, 2026-09-20: css/office.css's base #main-content rule (line
+       ~496) still sets `height: 100vh; overflow-y: auto;`, unchanged and
+       unoverridden anywhere under shell-v2. A CSS grid container with a
+       FIXED (definite) height caps its `auto`-max rows to sum to exactly
+       that height -- it does not let them grow past it, no matter how tall
+       the actual content is -- and grid rows do not clip their own
+       overflow by default. So the middle row above (`minmax(320px, auto)`)
+       was being squeezed to whatever space was left inside a fixed
+       ~1244px box (measured live: 65+1132+47=1244, matching clientHeight
+       exactly), and the real prayer text -- far taller than that -- spilled
+       uncontained past the row's own boundary, landing on top of the
+       sticky keeping-place bar positioned immediately after it in the grid.
+       That is the "Invitatory half covered by the move-by-block bar" bug.
+       FIX: let this element's own height track its real content instead of
+       being pinned to the viewport, so its grid rows can size to what they
+       actually contain, matching the design this file's own .uo-page
+       comment already describes ("the grid rows are content-sized"). The
+       page-level scroll then happens the ordinary way, at the document
+       level -- body.office-active already sets height:auto/overflow-y:auto
+       (css/office.css line ~1621), so nothing needs to change there. min-
+       height keeps a short office filling the screen exactly as before. */
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
 }
 
 /* Beats body.office-active.dark-mode #main-content (0,3,1) at (0,4,1). The
