@@ -149,6 +149,22 @@
     }
 
     function currentOfficeId() {
+        /* Redundant with, not a substitute for, applyTheme()'s own
+           `office-active` guard just above it in this file -- that guard
+           already stops execution before this function is ever reached from
+           applyTheme(). Kept here too because currentOfficeId() answers "what
+           office is active" as a question in its own right, and the honest
+           answer off the office screen is "none" -- not whatever office-time
+           radio happens to still be checked from a prior lane. Those radios
+           are a persistent global set that nothing ever resets: once Evening
+           Prayer has been prayed once in a session, its radio stays checked
+           forever, invisible and stale, even back on the splash. Without this,
+           currentLane()'s own fallback ("no recognised lane panel visible
+           means the Daily Office must be active") would read that stale
+           radio as if it were live. FOUND 2026-09-19/20 (dark/auto default
+           bug) -- see AUDIT_GOVERNANCE_LEDGER.md for the full reproduction. */
+        if (!document.body.classList.contains('office-active')) return null;
+
         var lane = currentLane();
         var names = lane[2];
 
@@ -220,22 +236,21 @@
      * screen — the splash, the Book of Needs, the Bible browser — the old
      * behaviour is untouched and the shell keeps its hands off.
      */
-    function applyTheme(mode, source) {
-        /* TEMPORARY DIAGNOSTIC -- dark/auto default bug, flagged 2026-09-19.
-           Every applyTheme() call, tagged by which of the shell's several
-           re-resolution triggers fired it, so the exact sequence leading to a
-           wrong dark result can be read back afterward instead of guessed at.
-           Logs even when shellOn() is false, so a call that got silently
-           skipped is visible too. Remove once the race is confirmed or ruled
-           out. */
-        console.log('[shell-diag] applyTheme(' + JSON.stringify(mode) + ') from ' +
-            (source || 'unknown') + '. shellOn=' + shellOn() +
-            ' readyState=' + document.readyState +
-            ' officeId=' + JSON.stringify(typeof currentOfficeId === 'function' ? currentOfficeId() : undefined) +
-            ' autoIsDark=' + (typeof autoIsDark === 'function' ? autoIsDark() : undefined) +
-            ' bodyHadDark=' + document.body.classList.contains('dark-mode'));
-
-        if (!shellOn()) return;
+    function applyTheme(mode) {
+        /* Scoped to the office screen ONLY, per the demolition note above.
+           `body.office-active` is added by js/office-ui.js's selectMode() the
+           moment a real office lane is entered, and removed by backToSplash()
+           / showTraditionEntry() / showUniversalModeSelection(). Without this
+           check the shell wrote uo-day/dark-mode/light-mode onto `body`
+           unconditionally whenever shell-v2 was on, which reached the splash,
+           the Book of Needs and the Bible browser too -- exactly the
+           behaviour this comment block already claimed was fixed, and
+           wasn't. Confirmed by direct reproduction 2026-09-19/20 (dark/auto
+           default bug): Evening Prayer correctly dark, then Back to Modes
+           left the splash dark too, because nothing here checked whether an
+           office was still actually active before recomputing and writing
+           the theme classes. */
+        if (!shellOn() || !document.body.classList.contains('office-active')) return;
         var isDark = (mode === 'dark') || (mode !== 'light' && autoIsDark());
 
         document.body.classList.toggle('uo-day', !isDark);
@@ -266,12 +281,12 @@
     window.setUniversalOfficeTheme = function (mode) {
         if (mode !== 'light' && mode !== 'dark') mode = 'auto';
         writeTheme(mode);
-        applyTheme(mode, 'setUniversalOfficeTheme');
+        applyTheme(mode);
         return mode;
     };
 
     window.refreshUniversalOfficeShellTheme = function () {
-        applyTheme(readTheme(), 'refreshUniversalOfficeShellTheme');
+        applyTheme(readTheme());
     };
 
     /* ── Chrome ──────────────────────────────────────────────────────────── */
@@ -410,7 +425,7 @@
            inserted once here and re-parented by the lane in Phase 3. */
         page.insertBefore(ornament(), page.firstChild);
 
-        applyTheme(readTheme(), 'buildShell');
+        applyTheme(readTheme());
     }
 
     window.buildUniversalOfficeShell = buildShell;
@@ -439,7 +454,7 @@
             if (!t) return;
 
             if (t.name && WATCHED[t.name]) {
-                applyTheme(readTheme(), 'watchOfficeChanges:change(' + t.name + ')');
+                applyTheme(readTheme());
             }
         }, true);
 
@@ -449,7 +464,7 @@
            any click once the app has had a tick to update its state. Cheap:
            applyTheme is a class toggle and a few attribute writes. */
         document.addEventListener('click', function () {
-            window.setTimeout(function () { applyTheme(readTheme(), 'watchOfficeChanges:click'); }, 0);
+            window.setTimeout(function () { applyTheme(readTheme()); }, 0);
         }, true);
     }
 
@@ -620,7 +635,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme(), 'watchRenderChanges');
+                if (shellOn()) applyTheme(readTheme());
             }, 0);
         }).observe(target, { childList: true, subtree: true });
     }
@@ -633,7 +648,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme(), 'watchLaneChanges');
+                if (shellOn()) applyTheme(readTheme());
             }, 0);
         });
         LANE_PANELS.forEach(function (entry) {

@@ -15323,3 +15323,69 @@ the next session rather than chased tonight:
 No data, engine or rendered output touched.
 
 SEED_VERSION bumped to `v297-2026-09-19-session-close-dark-auto-and-gpg-flagged`.
+
+---
+
+## 2026-09-20 — Dark/auto default bug: root cause found and fixed (`applyTheme()` had no office-active guard)
+
+Flagged by Josh 2026-09-19 (see the session-close entry above), item 8 in `RESUME_PROJECT_NOTE.md`.
+Investigated and fixed this session after two dead-end hypotheses and two red herrings, both cleared
+via direct reproduction rather than assumed away.
+
+**Dead ends (both real code smells, neither the actual bug):**
+- Candidate (a) from the original flag, `index.html`'s hardcoded `class="dark-mode"` on `<body>`, is
+  overwritten by every real `applyTheme()` call and was never the cause.
+- Candidate (b), a fourth instance of the `getElementById`/`undefined !== false` failure shape already
+  documented three times in `applyDarkMode()`, does not apply here — `office-shell.js`'s theme control
+  buttons don't go through that function at all, confirmed by reading the actual call chain rather than
+  assuming the pattern repeated.
+- A script-execution-race hypothesis (office-shell.js's own deferred top-level `init()` running before
+  `office-ui.js`'s `DOMContentLoaded`-bound entry routing had selected an office) was proposed, tested
+  with a temporary `console.log` diagnostic, and disproved: `officeId` was already resolved
+  (`"morning-office"`) at `buildShell()` time in every capture. Diagnostic commits `5f3271a` and
+  `b403628` (both TEMP, both fully reverted by this commit) exist only to rule this out.
+
+**Two red herrings, cleared, not part of the fix:**
+- `localStorage['universalOffice.userProfile.v1']` carried `traditionDefault: "church-of-the-east"`
+  from an earlier real click (Josh: forced to click through the tradition-entry screen after a cache
+  clear when hard resets failed) — this explained why the app skipped the splash entirely on several
+  reproduction attempts, not the dark-mode symptom itself. Confirmed via
+  `localStorage.getItem('universalOffice.userProfile.v1')`; cleared with `resetUserTraditionDefault()`.
+- `localStorage['universalOfficeShellTheme']` carried an explicit `'light'` from a forgotten manual
+  click on the shell's own LIGHT button — this explained one specific non-reproduction (a correctly
+  *light* Evening Prayer, which should have been dark under real Auto), not the dark-splash symptom.
+  Confirmed via `localStorage.getItem`, cleared via `localStorage.removeItem`.
+
+**Actual root cause**, found by tagging every `applyTheme()` call site with its trigger and
+reproducing live end-to-end (office session → Back to Modes) with both red herrings cleared and
+console "Preserve log" on throughout: `applyTheme()` had no check for whether an office was actually
+active. It ran and wrote `uo-day`/`dark-mode`/`light-mode` onto `body` unconditionally whenever
+`shell-v2` was on — reaching the splash, the Book of Needs and the Bible browser too. This directly
+contradicts this project's own "demolition" note (`RESUME_PROJECT_NOTE.md`, "The demolition — why
+Phase 6 was partly brought forward"), which explicitly claims "off the office screen NOTHING changed
+... that is what fixed the dark splash." That claim was never backed by an actual runtime guard.
+
+Compounding it: `currentOfficeId()`'s fallback, when no `LANE_PANELS` entry is active, assumes "the
+Daily Office lane must be active" and reads whatever's checked in the persistent, never-reset
+`office-time` radio group. Once Evening Prayer has been prayed once in a session, that radio stays
+checked forever — including back on the splash, where no office is active at all. Reproduced exactly:
+Evening Prayer correctly resolved dark; "Back to Modes" (`backToSplash()` → `showUniversalModeSelection()`)
+left the splash dark too, with `applyTheme()` never even re-checking whether it should still be acting
+at all.
+
+**Fix**, `js/office-shell.js`: both `applyTheme()` and `currentOfficeId()` now check
+`document.body.classList.contains('office-active')` — a signal already present and reliable,
+added only by `js/office-ui.js`'s `selectMode()` when a real office lane is entered, removed only by
+`backToSplash()` / `showTraditionEntry()` / `showUniversalModeSelection()`. `applyTheme()` returns
+immediately without touching any class when it's absent; `currentOfficeId()` returns `null` rather
+than falling through to a stale radio.
+
+Verified: `node --check js/office-shell.js` passes. Not yet re-confirmed live in the browser after this
+exact patch (the two diagnostic commits it supersedes were each browser-confirmed before this one
+replaced their logging with the real fix) — worth a quick Back-to-Modes-from-Evening-Prayer check next
+session before treating this as fully closed.
+
+Cache-bust: `js/office-shell.js` 294 → 295 (net change from the pre-diagnostic baseline: 292 → 295,
+since 293/294 were the now-reverted diagnostic bumps).
+
+SEED_VERSION bumped to `v298-2026-09-20-dark-auto-bug-fixed-office-active-guard`.

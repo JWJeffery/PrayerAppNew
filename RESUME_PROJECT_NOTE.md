@@ -10,15 +10,19 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-19, end of session, before this closing patch is applied.** Fresh-clone HEAD
-was `e2b93e8`, SEED_VERSION `v296-2026-09-19-overlay-cards-browser-confirmed` — trust neither at face
+**State as of 2026-09-20, before this patch is applied.** Fresh-clone HEAD was `b403628`,
+SEED_VERSION still `v297-2026-09-19-session-close-dark-auto-and-gpg-flagged` — trust neither at face
 value; see the FIRST MOVE line above. Once this patch is applied, HEAD and SEED_VERSION move to
-`v297-2026-09-19-session-close-dark-auto-and-gpg-flagged` — check fresh rather than trusting either
-number here. Three patches landed this session before this one: the overlays/diagnostics/margin-cards
-increment (`0012cdc`), a GPG-signing note correction (`eceea01`), and a browser-confirmation record
-(`e2b93e8`). All three are on `origin/main`, all three verified against a fresh clone before being
-handed over. The 2026-09-12 sessions closed the sanctoral work described from section 1 down;
-everything from 2026-09-12 onward has been the **UI redesign**, which is where the live work now is.
+`v298-2026-09-20-dark-auto-bug-fixed-office-active-guard` — check fresh rather than trusting either
+number here. Two TEMP diagnostic-only commits landed between v297 and this one (`5f3271a`, then
+`b403628`, both adding `console.log` tracing with no functional change) — both are fully reverted by
+this same patch, folded in rather than kept as separate commits, so `git log` will show the diagnostic
+code appear and disappear within this span rather than persisting. Item 8 below (dark/auto default
+bug) is now RESOLVED — see its entry for the fix and `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry
+for the full reproduction trail. The GPG-signing issue (item unchanged from last session) is still
+open and still unexplained. The 2026-09-12 sessions closed the sanctoral work described from section 1
+down; everything from 2026-09-12 onward has been the **UI redesign**, which is where the live work
+now is.
 
 ---
 
@@ -111,20 +115,23 @@ skin and old theme behaviour. That is what fixed the dark splash.
 7. **`documentation/universal-office-navigation-architecture.md` is marked CANONICAL and conflicts
    with Phase 6.** It fixes the parchment surface as the shared visual language and its own next steps
    propagate that shell further. **Needs Josh's decision before Phase 6.** Recorded, not overridden.
-8. **The app is defaulting to Dark instead of Auto under `?shell=v2`, flagged by Josh 2026-09-19, NOT
-   YET INVESTIGATED.** Two candidate causes, neither confirmed: (a) `index.html`'s `<body>` tag
-   hardcodes `class="dark-mode"`, which may simply be winning before the shell's own Auto logic runs;
-   (b) this may be the exact failure shape §0a's "HARDCODED IDS ARE A RECURRING FAULT" entry already
-   documents — a lane-specific `getElementById` on a dark-mode checkbox resolving to `undefined`,
-   and `undefined !== false` being `true`, defaulting to dark. That entry describes this pattern
-   happening THREE TIMES already in `applyDarkMode()`; a fourth instance in whatever now drives the
-   shell's Auto/Light/Dark buttons (a separate codepath from `applyDarkMode()`, per the demolition
-   note above) is a plausible fourth. Also relevant: the legacy per-tradition "Dark Mode" checkboxes
-   (`toggle-dark`, `toggle-dark-book-of-needs`, `toggle-dark-bible`, etc.) still exist and still work
-   — Phase 6 hasn't deleted them — so two theme systems are currently live on the same page. Start by
-   reading whatever function the shell's Auto button actually calls, not by re-reading
-   `applyDarkMode()` cold; confirm with a console dump (§0a: "dump real state first") before
-   theorising further.
+8. ~~The app is defaulting to Dark instead of Auto under `?shell=v2`~~ — **RESOLVED 2026-09-20.**
+   Neither candidate cause from the original flag was it. The real bug: `applyTheme()` wrote
+   `uo-day`/`dark-mode`/`light-mode` onto `body` unconditionally whenever `shell-v2` was on, with
+   no check for whether an office was actually active — so it reached the splash, the Book of Needs
+   and the Bible browser too, contradicting this note's own §"demolition" claim that the shell
+   already kept its hands off those screens. Confirmed live: Evening Prayer correctly dark, then
+   Back to Modes left the splash dark too, because `currentOfficeId()`'s fallback read a stale,
+   never-reset `office-time` radio left over from the office just exited, and `applyTheme()` had no
+   guard to stop running at all once no office was active. Fix: both `applyTheme()` and
+   `currentOfficeId()` now check `body.office-active` (added by `selectMode()`, removed by
+   `backToSplash()` / `showTraditionEntry()` / `showUniversalModeSelection()`) and refuse to touch
+   theme state, or report an office, when it's absent. Two manual-override red herrings surfaced and
+   were cleared along the way, not part of the fix: a forgotten `traditionDefault: church-of-the-east`
+   in the local profile from an earlier real click (`resetUserTraditionDefault()` clears it), and a
+   forgotten explicit `LIGHT` click that had written `'light'` to `universalOfficeShellTheme`
+   (cleared via `localStorage.removeItem`). See `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-20 entry for
+   the full reproduction trail.
 
 ---
 
