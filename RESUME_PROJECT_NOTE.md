@@ -10,8 +10,8 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, end of session.** Fresh-clone HEAD is `8a4d776`, SEED_VERSION
-`v304-2026-09-20-session-close-two-gutter-bugs-open` — trust neither at face value; see the FIRST
+**State as of 2026-09-20.** Fresh-clone HEAD was `79d1203` at the start of this session; SEED_VERSION
+`v305-2026-09-20-gutter-body-typography-uniform` after this session's commit — trust neither at face value; see the FIRST
 MOVE line above.
 
 **The gutter citation** — the page column's two-column grid (handoff doc §1: "a 70px right-aligned
@@ -23,18 +23,28 @@ confirmed with Josh before any code was written; a double-labeling bug (Collect/
 Invitatory showing their kind word twice — once as the old in-page heading, once in the new gutter)
 was found in live review and fixed the same session (`a28af0d`).
 
-**TWO CONFIRMED LIVE BUGS ARE STILL OPEN, NOT FIXED.** Found by Josh in the same screenshot review,
-after the double-labeling fix. Full detail in `AUDIT_GOVERNANCE_LEDGER.md`'s session-close entry
-(2026-09-20, last one) — summary:
-1. **The sticky keeping-place bar overlaps page content** — the Invitatory block was half covered by
-   the "↑ ↓ move by block" bar at the bottom of the viewport. Likely the `.uo-block` grid wrappers
-   changed the page's height/flow in a way that broke whatever previously kept the sticky bar clear of
-   content. NOT diagnosed. Start in devtools, not by reasoning from the CSS.
-2. **Body prayer text renders in inconsistent fonts/sizes across the page** — the actual prayed text
-   itself, not the gutter labels, confirmed by Josh across several screenshots. NOT localized to a
-   specific element yet. Candidates listed in the ledger entry, none confirmed. Start by inspecting
-   actual computed `font-family`/`font-size` on two visibly-different adjacent paragraphs in the
-   browser.
+**OF THE TWO CONFIRMED LIVE BUGS, ONE IS FIXED AND ONE IS STILL OPEN.** Both were found by Josh in the
+same screenshot review, after the double-labeling fix.
+1. **STILL OPEN — the sticky keeping-place bar overlaps page content.** The Invitatory block was half
+   covered by the "↑ ↓ move by block" bar at the bottom of the viewport. Likely the `.uo-block` grid
+   wrappers changed the page's height/flow in a way that broke whatever previously kept the sticky bar
+   clear of content. NOT diagnosed. Start in devtools, not by reasoning from the CSS — one reading of
+   the source says `.uo-keeping` should not be able to stick at all (it is a grid item whose sticky
+   containing block is its own `keep` grid area, which is exactly its own height, giving a zero sticky
+   range), which contradicts what the screenshot plainly shows. That contradiction is the thing to
+   measure, not to argue from: get `getBoundingClientRect()` on `.uo-keeping` and on the block behind
+   it, plus `#main-content`'s `scrollTop`/`clientHeight`/`scrollHeight` and the computed `position` of
+   `.uo-keeping`, at the moment the overlap is on screen.
+2. **FIXED 2026-09-20 — body prayer text rendered in two faces at two sizes.** Diagnosed from the
+   cascade, full account in `AUDIT_GOVERNANCE_LEDGER.md`'s "Bug 2 of the two open gutter bugs FIXED"
+   entry. The shell's prayed-text rule matched `.office-container`, `p` and `li` only, while every unit
+   the lane emits is `.component-text` / `.reading-text` / `.psalm-block` — and `css/office.css:2378`
+   sets face, size, line-height and colour on exactly those classes, which beats inheritance at any
+   specificity. Readings flow into real `<p>`s and so DID match the shell's rule, which is why a
+   Cormorant 25px reading sat above a Georgia ~17px collect. Fixed by a new `@media screen` rule at
+   (0,4,0) in `css/office-shell.css`. **Not yet live-confirmed, and the page will get visibly larger** —
+   collects, canticles and psalms rise to the 25px floor the readings already use. Confirm in a
+   screenshot before treating it as closed.
 
 **Both of these were missed by me in the prior review** — I looked at the screenshots without
 actually examining them closely enough to catch an obvious overlap and an obvious font
@@ -148,11 +158,12 @@ skin and old theme behaviour. That is what fixed the dark splash.
    See §0 above and the first two 2026-09-20 ledger entries. Two named acceptance-list items weren't
    specifically exercised (the Hudra overlay by name, the seasonal dot's `liturgicalColor` reading —
    both noted precisely in §0, worth a quick check).
-1a. **The gutter citation** — built, NOT done. Two confirmed live bugs still open (sticky bar
-   overlapping content; inconsistent body-text fonts/sizes) — see §0 above and
-   `AUDIT_GOVERNANCE_LEDGER.md`'s final 2026-09-20 entry. Next: fix both in devtools, then a full
-   re-review of every screenshot from this session's earlier "looks fine" pass, since that pass
-   missed both bugs and should not be trusted as-is.
+1a. **The gutter citation** — built, NOT done. One confirmed live bug still open (the sticky keeping-
+   place bar overlapping page content); the font/size inconsistency is fixed but not yet live-confirmed
+   — see §0 above and `AUDIT_GOVERNANCE_LEDGER.md`'s last two 2026-09-20 entries. Next: measure the
+   sticky bar in devtools, confirm the typography fix in a screenshot, then a full re-review of every
+   screenshot from the earlier "looks fine" pass, since that pass missed both bugs and should not be
+   trusted as-is.
 2. **Phase 4** — threshold and Office Settings. Also deletes the four sidebars, and with them several
    stopgaps noted below.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail

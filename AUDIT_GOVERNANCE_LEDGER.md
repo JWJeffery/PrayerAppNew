@@ -15658,3 +15658,82 @@ the CSS source alone was not sufficient to diagnose them and further guessing wa
 given the session's token budget. No code changed in this entry; documentation only.
 
 SEED_VERSION bumped to `v304-2026-09-20-session-close-two-gutter-bugs-open`.
+
+---
+
+## 2026-09-20 continued — Bug 2 of the two open gutter bugs FIXED: body prayer text was rendering in two faces at two sizes
+
+The second of the two bugs recorded as "NOT diagnosed" in the entry immediately above. Diagnosed from
+the cascade and fixed. The first bug — the keeping-place bar overlapping page content — is **NOT**
+touched here and remains open.
+
+### The cause, traced rather than guessed
+
+`css/office-shell.css` line ~238 states the prayed-text face:
+
+```
+body.shell-v2.office-active .office-container,
+body.shell-v2.office-active .office-container p,
+body.shell-v2.office-active .office-container li { font-family: var(--uo-face-prayed); font-size: var(--uo-size-body); ... }
+```
+
+It matches `.office-container`, `p` and `li` — and nothing else. But every unit of prayed text the
+Anglican lane actually emits is one of four content classes, confirmed by reading the emitters rather
+than assuming (`js/office-ui.js`, `bcpMakeSpan` call sites):
+
+- `.component-text` — collects, canticles, antiphons, the Gloria Patri, bare text (`bcpEmitBlock`,
+  `bcpEmitBare`, the Gloria branch of `bcpEmitPsalmBlock`)
+- `.reading-text` — the scripture readings (`bcpEmitReading`)
+- `.psalm-block` → `.psalm-stanza` → `.psalm-half-verse` (`bcpEmitPsalmBlock`, via
+  `formatPsalmAsPoetry()`)
+
+`css/office.css` line 2378 sets `font-family`, `font-size`, `line-height` **and** `color` on exactly
+those classes at (0,3,0). **A specified declaration beats an inherited one at any specificity**, so
+the shell's face and size reached none of them, regardless of how heavy the shell's own selector was.
+They kept the old skin's Georgia at `clamp(1.02rem, 1.12vw, 1.18rem)` — roughly 16–19px against the
+shell's 25px floor — and the skin's `--app-ink` rather than `--uo-ink`.
+
+**What made it visible on screen rather than merely uniformly wrong:** scripture readings are flowed
+into real `<p>` elements by `formatScriptureAsFlow()`, and those `<p>`s **do** match the shell's rule.
+So a reading rendered in Cormorant at 25px sat directly above a collect in Georgia at ~17px, in the
+same gutter column, on the same screen. That is what Josh saw across several screenshots.
+
+**The gutter grid did not cause this.** It exposed it. Putting every block into one aligned column
+with a consistent left edge is exactly what makes two faces at two sizes impossible to miss; before
+it, the same inconsistency was spread across a ragged page. The bug predates the gutter work.
+
+### The fix
+
+A new `@media screen` rule in `css/office-shell.css` at (0,4,0) — heavier than office.css's (0,3,0),
+and this file loads last — naming the four content classes plus `.psalm-stanza .psalm-half-verse`,
+which additionally carries its own `color: var(--ink)` at (0,2,0) and so needs naming for colour even
+though it inherits the face. Sets `--uo-face-prayed` / `--uo-size-body` / `--uo-leading-body` /
+`--uo-ink`.
+
+This is the demolition pass finishing its own job. office.css 1611/1632/1648/1658/1665/1670 are
+already undone by line further up `office-shell.css`; 2378 is the same kind of rule and was simply
+missed when that list was drawn up. Phase 6 deletes it outright along with the rest.
+
+**SCREEN ONLY, deliberately** — the same scoping decision, for the same reason, as the gutter grid
+itself. `css/office.css` 1124–1125 sets its own print sizes (11pt) for `.component-text` and
+`.psalm-verse`; at (0,4,0) these rules would have beaten those in print too and put 25px on paper.
+Print is byte-identical to before this commit.
+
+### Disclosed, not fixed here
+
+The pre-existing `body.shell-v2.office-active .office-container p` rule is itself **not** print-scoped,
+so a reading's `<p>`s already take 25px in print today. That is a separate print regression which
+predates this fix and is untouched by it. Left for the print pass rather than folded in silently.
+
+### Not yet live-confirmed
+
+This is a cascade diagnosis from the files — correct on the evidence, but not checked in a browser.
+**The page will get visibly larger**: collects, canticles and psalms rise from ~17px to the documented
+25px floor, matching the readings that already render there. That is the shell's stated design (the
+`--uo-size-body` token's own comment: "floor, not a starting point"; the demolition section's "not the
+skin's Georgia"), not a new decision made here — but it is a large visual change and wants a screenshot
+before it is treated as closed. Per this project's own standing rule, a correctness claim needs
+render-level verification, and this has not had it yet.
+
+Cache-bust `css/office-shell.css` 294 → 295. SEED_VERSION bumped to
+`v305-2026-09-20-gutter-body-typography-uniform`.

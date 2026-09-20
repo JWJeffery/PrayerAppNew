@@ -242,6 +242,52 @@ body.shell-v2.office-active .office-container li {
     line-height: var(--uo-leading-body);
 }
 
+/* THE SAME FLOOR HAS TO REACH THE CONTENT CLASSES, NOT ONLY p/li.
+
+   Bug found by Josh in the 2026-09-20 screenshot review ("body prayer text
+   renders in inconsistent fonts/sizes across the page") and diagnosed from the
+   cascade, not guessed: the rule immediately above matches `.office-container`,
+   `p` and `li` and nothing else. Every unit of prayed text the Anglican lane
+   actually emits is one of four classes -- `.component-text` (collects,
+   canticles, antiphons, the Gloria, bare text), `.reading-text`,
+   `.psalm-block`/`.psalm-stanza`/`.psalm-half-verse` -- see js/office-ui.js's
+   bcpEmitBlock / bcpEmitReading / bcpEmitPsalmBlock / bcpEmitBare. css/office.css
+   line 2378 sets font-family, font-size, line-height AND colour on exactly those
+   classes at (0,3,0), and a SPECIFIED declaration beats an INHERITED one at any
+   specificity, so the shell's face and size reached none of them. They kept the
+   skin's Georgia at clamp(1.02rem, 1.12vw, 1.18rem) -- roughly 16-19px against
+   the shell's 25px.
+
+   What made it visible on the page rather than merely wrong everywhere: scripture
+   readings are flowed into real <p> elements by formatScriptureAsFlow(), and
+   those <p>s DO match the rule above. So a reading rendered in Cormorant at 25px
+   sat directly above a collect in Georgia at ~17px, in the same gutter column, on
+   the same screen. `.psalm-half-verse` additionally carries its own
+   `color: var(--ink)` at (0,2,0) in office.css, the old skin's token rather than
+   the shell's, so it is named here too.
+
+   This is the demolition pass finishing its own job: office.css 1611/1632/1648/
+   1658/1665/1670 were already undone by line further up this file; 2378 is the
+   same kind of rule and was simply missed. Phase 6 deletes it outright.
+
+   SCREEN ONLY, the same scoping decision and the same reason as the gutter grid
+   below: css/office.css:1124-1125 sets its own print sizes (11pt) for
+   .component-text and .psalm-verse, and at (0,4,0) these rules would beat those
+   in print too and put 25px on paper. Print stays exactly as it was. */
+@media screen {
+    body.shell-v2.office-active .office-container .component-text,
+    body.shell-v2.office-active .office-container .reading-text,
+    body.shell-v2.office-active .office-container .psalm-block,
+    body.shell-v2.office-active .office-container .psalm-stanza,
+    body.shell-v2.office-active .office-container .psalm-verse,
+    body.shell-v2.office-active .office-container .psalm-stanza .psalm-half-verse {
+        font-family: var(--uo-face-prayed);
+        font-size: var(--uo-size-body);
+        line-height: var(--uo-leading-body);
+        color: var(--uo-ink);
+    }
+}
+
 /* Rubrics keep their colour from the shell's tokens, which are contrast-checked
    against both grounds; the skin's values were not. */
 body.shell-v2.office-active .office-container .rubric,
