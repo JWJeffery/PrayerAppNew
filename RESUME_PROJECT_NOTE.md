@@ -10,11 +10,14 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-20, end of session (continued).** Fresh-clone HEAD at session start was
-`79d1203`; last substantive feature commit was `02ccfa9` (gutter citation closed), followed by three
-documentation-only commits: `a7f9587` (dedup), `86cca04` (further hygiene), and this one (the two
-Phase 3 acceptance-list follow-ups below). SEED_VERSION `v310-2026-09-20-phase3-acceptance-followup`
-— trust none of these at face value; see the FIRST MOVE line above.
+**State as of 2026-09-21.** Fresh-clone HEAD at 2026-09-20 session start was `79d1203`; that
+session's last substantive feature commit was `02ccfa9` (gutter citation closed), followed by
+documentation-only hygiene commits (`a7f9587`, `86cca04`, the Phase 3 acceptance follow-up, the
+sanctoral §7 prune). **This commit is a real content fix, not documentation**: `ecu-east-syriac-hours`
+retagged Byzantine Orthodox and moved to its own Opening Devotions group — see §0/priority item 1b
+below and the 2026-09-21 ledger entry for the full verification. SEED_VERSION
+`v311-2026-09-21-byzantine-hours-retag` — trust none of these at face value; see the FIRST MOVE line
+above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
 
@@ -202,18 +205,25 @@ skin and old theme behaviour. That is what fixed the dark splash.
    here. **One new open item came out of closing the first**: the overlay's text reads as Byzantine
    Horologion content mistagged `tradition: 'Church of the East'` — needs a real witness check
    before any tag/label is touched. See §0 above for full detail.
-1b. **NEW, 2026-09-20 continued: `ecu-east-syriac-hours` ("Prayer of the Hours" under the Church
-   of the East devotion toggle) is very likely Byzantine Horologion content mistagged as Church of
-   the East.** Its text ("Thou who at every season and every hour...") is the Byzantine Prayer of the
-   Hour, said after the Kontakion and forty Lord-have-mercies at each canonical Hour — not Hudra
-   content. This corpus's other two Byzantine ecumenical items already carry
-   `tradition: 'Byzantine Orthodox'`; this one carries `tradition: 'Church of the East'` and sits
-   under a Hudra UI heading (`index.html`, Opening Devotions → Church of the East). **Not fixed.**
-   A single secondary-source text match is not this project's standard for moving an attribution —
-   check against Maclean's Hudra material already in the repo and an actual Horologion source before
-   touching the tag, the UI heading, or the component id. Whichever way it resolves, the fix is
-   small (a `tradition` field and, possibly, which Opening Devotions group it's filed under) — the
-   verification is the work.
+1b. ~~`ecu-east-syriac-hours` mistagged as Church of the East~~ — **VERIFIED and FIXED,
+   2026-09-21.** Checked properly rather than acted on the wording match alone: the text does not
+   occur anywhere in `components/east-syriac.json`, this project's actual Maclean/Khudhra-sourced
+   Church of the East corpus, and the component had never carried a `meta.source` field at all —
+   unlike every properly-sourced component in this corpus, no source was ever recorded for the
+   Church of the East claim in the first place. Checked against a named Byzantine witness: the OCA's
+   own "Prayer of the Hours" page matches the stored text word for word, corroborated by the OCA's
+   Horologion PDFs (Sixth Hour, Small Compline) and other Byzantine parish sources. **Fixed:**
+   `tradition` changed to `'Byzantine Orthodox'` in `components/ecumenical.json`, with a
+   `meta.source` citation added (the component's first). Moved out of the "Church of the East" UI
+   group into its own "Byzantine Orthodox" group in Opening Devotions (`index.html`); tooltip
+   corrected to describe the actual Horologion content and note the correction. **Left deliberately
+   unchanged:** the component id `ecu-east-syriac-hours`, the DOM toggle id
+   `toggle-east-syriac-hours`, and the `eastSyriacHours` settings key all still carry the old,
+   now-inaccurate name. Renaming any of them would also require a settings-migration path — without
+   one, Josh's existing saved toggle state (if this devotion is currently checked) would silently
+   reset to unchecked on next load. The mismatch between the internal names and the corrected
+   content is real but cosmetic and low-risk; worth a coordinated rename with a migration step if it
+   ever bothers anyone, not urgent on its own.
 1a. ~~The gutter citation~~ — **DONE, 2026-09-20.** Both known bugs fixed and live-confirmed
    (eleven-screenshot, full-office scroll test); the `.uo-rail` truncation question raised alongside the
    fix was checked directly and closed (`scrollHeight`/`clientHeight` identical, nothing hidden). See

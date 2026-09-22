@@ -16077,3 +16077,58 @@ itself. Flagged in `RESUME_PROJECT_NOTE.md` §0 as new open item 1b. If the mist
 practical risk is real: the overlay's margin card currently prints "Church of the East" as a
 confident-looking attribution on what may be Byzantine content, in exactly the spot Contract §9's
 disclosure cards exist to prevent that kind of error.
+
+---
+
+## Session 2026-09-21 -- `ecu-east-syriac-hours` retagged Church of the East -> Byzantine
+## Orthodox, moved to its own Opening Devotions group, sourced for the first time.
+## SEED_VERSION v310 -> v311.
+
+Follows directly from the 2026-09-20 (continued) entry that flagged this as an open finding, not
+yet acted on. This entry closes it, with the verification done before anything was touched.
+
+### Verification, in order
+
+1. **Checked against the corpus's own real Church of the East material.** Full-text search of
+   `components/east-syriac.json` -- the actual Maclean/Khudhra-sourced corpus this project relies on
+   for every other East Syriac claim -- for the stored text ("every season and every hour") and near
+   variants. Zero matches. If this were genuinely Hudra content, it is very unlikely to be entirely
+   absent from the one file in this repo built specifically to hold Hudra content.
+
+2. **Checked the component's own sourcing history.** It had no `meta.source` field at all -- every
+   other properly-attributed component in this corpus (Agpeya Opening, for instance) carries one.
+   The Church of the East tag was never backed by a recorded source in the first place; there was
+   nothing to weigh against a correction beyond the tag itself.
+
+3. **Checked against a named Byzantine witness**, per this project's evidentiary standard (a witness,
+   not a wording resemblance). The Orthodox Church in America's own page, titled "Prayer of the
+   Hours" -- the same title used in this app -- prints the stored text VERBATIM, start to finish:
+   "Thou who at every season and every hour, in Heaven and on earth art worshipped and glorified, O
+   Christ God..." through "...For Thou art blessed unto ages of ages." Corroborated independently by
+   the OCA's own Horologion PDFs for the Sixth Hour and Small Compline, and by other Byzantine parish
+   sources, all describing this as the fixed Prayer of the Hour said after the Kontakion and the
+   forty-fold "Lord, have mercy" at each of the canonical Hours.
+
+### Fix applied
+
+- `components/ecumenical.json`: `ecu-east-syriac-hours`'s `tradition` field changed from
+  `"Church of the East"` to `"Byzantine Orthodox"`. Added `meta.source` (its first) documenting the
+  correction, the OCA witness, and the East Syriac corpus's silence on this text.
+- `index.html`: moved the "Prayer of the Hours" toggle out of the "Church of the East" nested-group
+  in Opening Devotions into its own new "Byzantine Orthodox" nested-group there. Corrected the
+  tooltip, which previously read "The Hudra is the Church of the East's canonical prayer book..." --
+  now describes the actual Horologion content and notes the 2026-09-21 correction.
+- No cache-bust param exists for `components/*.json` fetches (plain `fetch()`, no `?v=` convention)
+  or for `index.html` itself in this codebase; neither `office-ui.js` nor any `.css` file was
+  touched, so no `?v=` bump was needed or made.
+
+### Deliberately left unchanged, and why
+
+The component id `ecu-east-syriac-hours`, the DOM toggle id `toggle-east-syriac-hours`, and the
+`eastSyriacHours` key in the settings save/load object (`js/office-ui.js:2956,3026,3085,4304-4305`)
+all still carry the old, now-inaccurate name. Renaming any of them is pure identifier hygiene with a
+real practical cost: `saveSettings()`/`loadSettings()` key persisted state by these exact string
+names, so a rename with no migration path would silently reset this toggle to unchecked for anyone
+who currently has it on. Not done here. Worth a coordinated rename with an explicit migration step
+if it's ever a priority; the user-facing tag, grouping, and tooltip -- the parts that actually
+mislead someone reading the app -- are what's fixed.
