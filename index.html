@@ -437,6 +437,18 @@
     <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
+        <!-- Phase 4 headings inserted 2026-09-21, same discipline as the BCP drawer: ids/names/
+             onchange unchanged; only the ordo-buttons block (no id, calls shared global
+             functions changeDate()/resetDate() by name, not position) was moved earlier, ahead
+             of the Active Hour radios, to match the I/II order the other three drawers use. -->
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
+        <div class="ordo-buttons">
+            <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+            <button class="ordo-btn" onclick="resetDate()">Today</button>
+            <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+        </div>
+
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
         <div class="setting-group">
             <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
             <div id="cop-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">The Morning Office</div>
@@ -450,16 +462,16 @@
             <label><input type="radio" name="cop-hour" value="coptic-midnight-office" onchange="renderOffice()"> The Midnight Office (Three Nocturns)</label>
             <label><input type="radio" name="cop-hour" value="coptic-theotokia" onchange="renderOffice()"> Theotokia (automatically follows today's weekday tune)</label>
         </div>
-        <div class="ordo-buttons" style="margin-top:10px;">
-            <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-            <button class="ordo-btn" onclick="resetDate()">Today</button>
-            <button class="ordo-btn" onclick="changeDate(1)">Next</button>
-        </div>
     </div><!-- /coptic-settings -->
 
     <!-- Church of the East Liturgical Console -->
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
+
+        <!-- Phase 4 headings inserted 2026-09-21. Nothing below is moved -- this lane's existing
+             order (date readout+nav, then the hour-override panel, then mode/cycle/fast/anaphora)
+             already matched I/II/III, so headings are inserted only. -->
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
 
         <!-- Active Hour display -->
         <div class="setting-group">
@@ -473,6 +485,8 @@
         <button class="ordo-btn" onclick="esyToday()">Today</button>
         <button class="ordo-btn" onclick="esyChangeDate(1)">Next</button>
         </div>
+
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
         <!-- Override selection panel (hidden by default) -->
         <div id="esy-override-panel" style="display:none;">
             <div class="setting-group" style="margin-top:10px;">
@@ -503,6 +517,7 @@
             <input type="radio" name="esy-time" value="subaa">
         </div>
 
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
             <strong>Office Mode</strong>
             <label><input type="radio" name="esy-mode" value="cathedral" checked onchange="renderOffice(); renderSharedOfficeNavigation();"> Cathedral (Simplified)</label>
@@ -537,6 +552,13 @@
     <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
+        <!-- Phase 4 headings inserted 2026-09-21. The single "Liturgical Settings" container
+             previously held both the Office radio list and Calendar Mode; split into two so
+             Office (which hour) sits under II and Calendar Mode (how the fixed feasts are
+             reckoned) sits under III with Display -- no .setting-group is queried structurally
+             elsewhere in the JS (checked before splitting), so this is safe. -->
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
+
         <!-- Liturgical Ordo (date navigator) -->
         <div class="ordo-control">
             <strong>Liturgical Ordo</strong>
@@ -550,6 +572,8 @@
             <input type="date" id="generic-date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
             <div id="generic-calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
         </div>
+
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
 
         <!-- Liturgical Settings -->
         <div class="setting-group">
@@ -616,8 +640,12 @@
                     </label>
                 </div>
             </div>
+        </div>
 
-            <div class="nested-group" style="margin-top:8px;">
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
+
+        <div class="setting-group">
+            <div class="nested-group">
                 <strong style="color:#aaa; font-size:1em;">Calendar Mode</strong>
                 <select id="hor-eo-calendar-select"
                     onchange="selectEoMode(this.value)"

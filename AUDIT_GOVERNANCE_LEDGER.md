@@ -16237,3 +16237,57 @@ took real BCP settings with them") -- checked for it directly rather than trusti
    Left for a real answer, not a guess.
 5. **Deleting the four sidebars.** None deleted. One restructured internally; the other three
    untouched; the mode grid untouched.
+
+---
+
+## Session 2026-09-21 continued -- Phase 4 slice 2: I/II/III heading pass extended to the
+## Coptic, East Syriac, and Horologion drawers. SEED_VERSION v313 -> v314.
+
+Same discipline as slice 1 (BCP drawer, prior entry): headings inserted at existing content
+boundaries wherever the current order already matched I/II/III; content moved only where a move
+was itself safe and mechanically verifiable; no per-toggle content reclassification attempted.
+
+### Coptic drawer (`#coptic-settings`)
+
+The `ordo-buttons` block (Prev/Today/Next, no `id`, calls the shared global `changeDate()` /
+`resetDate()` by name) was moved ahead of the Active Hour radio group, so the drawer's order
+matches I (date) before II (which hour) -- previously the date buttons came after. "I · The Ordo"
+and "II · Which Office" headings inserted. No III content exists in this lane's drawer; none
+invented.
+
+### East Syriac drawer (`#east-syriac-settings`)
+
+No content moved. The existing order -- date readout and Prev/Today/Next nav, then the
+date+hour-override panel, then Office Mode/Current Cycle/Fasting Character/Anaphora -- already
+matched I/II/III, so headings were inserted only. The override panel's date field and its
+`esy-hour-override` canonical-hour radios were kept together under "II · Which Office" rather than
+split apart: in this lane the two are one interactive control (choosing an hour necessarily means
+choosing when), and forcing them into separate I/II containers would misrepresent how the control
+actually works, not clarify it.
+
+### Horologion/generic drawer (`#generic-settings`)
+
+"I · The Ordo" inserted before the existing date navigator, unmoved. The single "Liturgical
+Settings" container previously held both the 14-item Office radio list and the Calendar Mode
+(Old/New reckoning) selector as two nested-groups under one heading. Split into two: Office stays
+under "II · Which Office"; Calendar Mode now sits under a new "III · How You Keep It" alongside the
+existing Display section (Diagnostics toggle, Display Depth select). Checked before splitting that
+no JS anywhere queries `.setting-group` structurally (a repo-wide grep for `.setting-group')`
+returned nothing) -- the split changes only which `<div>` wraps which `<div>`, nothing a script
+could be relying on.
+
+### Verification, run once across the whole file rather than per-drawer
+
+Diffed `index.html` against a fresh clone of the pre-Phase-4 baseline (`bf9be2e`, before slice 1)
+for every `id="..."`, `name="..."`, `onchange="..."`, and `onclick="..."` attribute in the file:
+**all four sets identical.** Nothing dropped, renamed, or had its handler changed, across all four
+drawers and both slices combined. `<div>`/`</div>` counts balanced (263/263, up from 254 at the
+prior baseline -- consistent with the added heading and wrapper elements, not a leak).
+
+### Still open, unchanged from the prior entry's list, plus one item retired
+
+Borrowed-devotions consolidation, the seasonal dot, and the threshold screen remain open for the
+same reasons recorded in the prior ledger entry -- none of them attempted here either. One line from
+that list is now narrower: "the same pass for the Coptic/East Syriac/Horologion drawers" is done;
+what remains of item (d) is deleting or merging the four drawers into one shared element, which this
+slice did not do -- each is still its own `app-mode-drawer` panel, only reorganized internally.

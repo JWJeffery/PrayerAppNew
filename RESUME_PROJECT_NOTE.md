@@ -13,11 +13,12 @@ params likewise: read them out of `index.html` rather than trusting a number wri
 **State as of 2026-09-21 continued.** Fresh-clone HEAD at 2026-09-20 session start was `79d1203`;
 that session's last substantive feature commit was `02ccfa9`. Since then: `ecu-east-syriac-hours`
 retagged Byzantine Orthodox (§0/item 1b), the nav-architecture doc superseded on surface
-(§0/item 7), and this commit — **Phase 4 started, first slice only**: BCP drawer regrouped into
-I/II/III headings and the 2×2 office grid, BCP Only Mode moved to the drawer's foot. See §0/item 2
+(§0/item 7), Phase 4 slice 1 (BCP drawer headings/grid), and this commit — **Phase 4 slice 2: the
+same I/II/III heading pass for the Coptic, East Syriac, and Horologion drawers.** All four drawers
+now verified identical to the pre-Phase-4 baseline on every id/name/onchange/onclick. See §0/item 2
 for exactly what's done and what's deliberately still open (borrowed-devotions consolidation, the
-other three lane drawers, the threshold screen, sidebar deletion). SEED_VERSION
-`v313-2026-09-21-phase4-drawer-headings` — trust none of these at face value; see the FIRST MOVE
+threshold screen, sidebar deletion/merger). SEED_VERSION `v314-2026-09-21-phase4-remaining-drawers`
+— trust none of these at face value; see the FIRST MOVE
 line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
@@ -86,7 +87,7 @@ confirmation.**
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
 | 3 — Anglican lane emits the envelope | **done and confirmed in the browser (2026-09-20)** — see below |
-| 4 — threshold and Office Settings | **started 2026-09-21** — BCP drawer headings/grid only, see §0 item 2 |
+| 4 — threshold and Office Settings | **in progress** — all four drawers regrouped I/II/III; threshold and consolidation still open, see §0 item 2 |
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
@@ -231,24 +232,26 @@ skin and old theme behaviour. That is what fixed the dark splash.
    `AUDIT_GOVERNANCE_LEDGER.md`'s "FIXED, LIVE-CONFIRMED" entry and the "CLOSED" entry right after it.
    `.uo-margin` with several stacked cards remains untested (only one overlay card ever exercised) — a
    theoretical risk, not a confirmed one, worth a similar direct measurement if that scenario comes up.
-2. **Phase 4** — threshold and Office Settings. **STARTED 2026-09-21, first slice only.** The BCP
-   drawer's `<h3>Office Settings</h3>` heading, the `I · The Ordo` / `II · Which Office` /
-   `III · How You Keep It` section markers, and the 2×2 office-hour grid (§5) are done — verified
-   safe by diffing every `id=`, `name=`, and `onchange=` in `index.html` before/after: identical
-   sets, nothing dropped or renamed, only headings inserted and one toggle relocated. BCP Only Mode
-   moved to the actual foot of the drawer as its own group, per §5/§3.7 — confirmed against
-   `toggleBcpOnly()` first, which looks the checkbox up by id, not DOM position, so the move is
-   safe. **Deliberately NOT done in this slice, and not guessed at:** (a) the "borrowed devotions
-   with a count and a plain-language list" reclassification — the During/After/Opening Devotions
-   sections still mix native BCP options with ecumenical borrowings exactly as before; splitting
-   them needs a real content decision, not a blind move; (b) the seasonal dot in section I — still
-   correctly absent, unsourced (item 4 below); (c) the same pass for the Coptic, East Syriac, and
-   Horologion drawers (still their own separate `app-mode-drawer` panels, untouched); (d) **the
-   threshold screen itself** (replacing the five-button mode grid) — its "it is the hour of X" line
-   needs a tradition-agnostic hour-naming rule the handoff doc states in one sentence and doesn't
-   fully specify; building that from inference rather than a real spec would be exactly the kind of
-   fabrication this project's discipline exists to prevent. Also still open: deleting the four
-   sidebars outright (this slice restructured one of them, deleted none).
+2. **Phase 4** — threshold and Office Settings. **STARTED 2026-09-21, two slices so far.** Slice 1
+   (BCP drawer): `<h3>Office Settings</h3>` heading, `I · The Ordo` / `II · Which Office` /
+   `III · How You Keep It` markers, 2×2 office-hour grid (§5), BCP Only Mode moved to the drawer's
+   foot. Slice 2, same session: **the same I/II/III heading pass done for the other three
+   drawers** — Coptic, East Syriac, and Horologion/generic. Coptic's date-nav buttons moved ahead
+   of its hour radios (no id, calls shared `changeDate()`/`resetDate()` by name — safe). East
+   Syriac needed no moves at all; its existing order already matched I/II/III, so only headings
+   were inserted, with the override panel's date+hour-choice UI kept together under II rather than
+   artificially split, since it functions as one control there. Horologion's single "Liturgical
+   Settings" container was split into two — Office (which hour) under II, Calendar Mode (Old/New
+   reckoning) joined with Display under III — checked first that no JS queries `.setting-group`
+   structurally, so the split carries no risk. **All four drawers now verified identical to the
+   pre-Phase-4 baseline** on every `id=`, `name=`, `onchange=`, and `onclick=` in `index.html`, plus
+   balanced `<div>` tags — checked as one sweep across the whole file, not per-drawer. **Still
+   deliberately open, same reasons as before:** (a) borrowed-devotions consolidation with a count
+   (real per-toggle content decision, not attempted); (b) the seasonal dot (unsourced, item 4);
+   (c) **the threshold screen** (the five-button mode grid is untouched — its "hour of X" line
+   still needs a real spec answer, not an inferred one); (d) the four sidebars still exist as
+   separate panels — restructured internally, none deleted or merged into one shared drawer
+   element.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
    placeholder, which is correct and not a fault. Horologion goes LAST: it already emits
    `{tradition, officeKey, date, title, status, sections, diagnostics}` with a validator that
