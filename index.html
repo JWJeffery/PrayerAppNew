@@ -26,7 +26,38 @@
 
 <section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title">
     <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-entry" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
-    <div class="app-entry-kicker">The Universal Office</div>
+
+    <!-- Phase 4 threshold (UI_REDESIGN_HANDOFF.md §5), added 2026-09-21. Replaces the ask-state
+         entry point per §3.5 -- verified against initializeEntryRouting()/showTraditionEntry()
+         that #tradition-entry, not #mode-selection, is the actual ask-state screen; #mode-selection
+         (the true five-button grid) serves the separate 'universal' state and is untouched.
+         The existing family-tree picker below (#entry-family-grid etc.) is NOT removed -- it is
+         "Another office" per §5 ("the list of traditions is cut ... Another office already
+         carries the function"), hidden by default and revealed only on that click, so all of its
+         existing, carefully-fixed routing logic (unknown/anglican/church-of-the-east/etc., via the
+         single delegated handleTraditionEntryClick listener) keeps working unchanged.
+         Framing line and one-sentence descriptions: drafted by Claude, reviewed and approved by
+         Josh 2026-09-21 (framing line edited by Josh from "It is the hour of" to "It is time
+         for" -- Morning Prayer etc. are BCP offices, not hours; that vocabulary belongs to the
+         other three lanes). Text lives in BCP_THRESHOLD_OFFICE_TEXT in js/office-ui.js. -->
+    <div id="uo-threshold" class="app-uo-threshold">
+        <div class="app-entry-kicker">The Universal Office</div>
+        <div id="uo-threshold-timestamp" style="font-family:'Cinzel',serif; font-size:0.85em; letter-spacing:0.08em; color:#a89878; margin-bottom:6px;">&nbsp;</div>
+        <p style="font-family:'IM Fell English',serif; font-size:1.1em; color:#c8bfa8; margin:0 0 2px;">It is time for</p>
+        <h1 id="uo-threshold-office-name" style="font-family:'Cinzel',serif; font-size:88px; line-height:1.05; margin:0 0 10px; color:var(--gold);">&nbsp;</h1>
+        <p id="uo-threshold-description" style="font-family:'IM Fell English',serif; font-size:0.95em; color:#a89878; margin:0 0 18px; max-width:420px;">&nbsp;</p>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+            <button type="button" id="uo-threshold-begin" class="app-entry-family-card" style="min-width:220px;" onclick="beginFromUoThreshold()">
+                <span><strong>Begin</strong></span>
+            </button>
+            <button type="button" id="uo-threshold-another" onclick="showUoThresholdAnotherOffice()" style="background:none; border:none; color:#a89878; font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:6px;">Another office</button>
+            <button type="button" data-entry-tradition="unknown" style="background:none; border:none; color:#7a7060; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; padding:4px; opacity:0.75;">I'm not sure</button>
+            <button type="button" onclick="openBookOfNeedsForActiveOffice()" style="background:none; border:none; color:#7a7060; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; padding:4px; opacity:0.6;">Book of Needs</button>
+        </div>
+    </div>
+
+    <div id="uo-threshold-another-panel" hidden aria-hidden="true">
     <h1 id="tradition-entry-title">Where do you pray?</h1>
     <p class="app-entry-lede">Choose the Christian family you pray within. The app will remember your path and open there by default.</p>
 
@@ -119,6 +150,7 @@
             </span>
         </button>
     </div>
+    </div><!-- /uo-threshold-another-panel -->
 
     </section>
 

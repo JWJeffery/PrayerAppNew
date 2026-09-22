@@ -13,11 +13,13 @@ params likewise: read them out of `index.html` rather than trusting a number wri
 **State as of 2026-09-21 continued.** Fresh-clone HEAD at 2026-09-20 session start was `79d1203`;
 that session's last substantive feature commit was `02ccfa9`. Since then: `ecu-east-syriac-hours`
 retagged Byzantine Orthodox (§0/item 1b), the nav-architecture doc superseded on surface
-(§0/item 7), Phase 4 slice 1 (BCP drawer headings/grid), and this commit — **Phase 4 slice 2: the
-same I/II/III heading pass for the Coptic, East Syriac, and Horologion drawers.** All four drawers
-now verified identical to the pre-Phase-4 baseline on every id/name/onchange/onclick. See §0/item 2
-for exactly what's done and what's deliberately still open (borrowed-devotions consolidation, the
-threshold screen, sidebar deletion/merger). SEED_VERSION `v314-2026-09-21-phase4-remaining-drawers`
+(§0/item 7), Phase 4 slices 1-2 (all four drawers regrouped I/II/III), and this commit —
+**Phase 4 slice 3: the threshold screen built for BCP.** `#uo-threshold` replaces the old
+"Where do you pray?" as the default `ask`-state view; the existing family-tree picker survives
+intact as the "Another office" destination. Framing line and office descriptions drafted by
+Claude, reviewed and edited by Josh before being written in. See §0/item 2 for full detail and
+what's still open (the same threshold treatment for the other three lanes, borrowed-devotions
+consolidation, sidebar deletion/merger). SEED_VERSION `v315-2026-09-21-phase4-threshold`
 — trust none of these at face value; see the FIRST MOVE
 line above.
 
@@ -87,7 +89,7 @@ confirmation.**
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
 | 3 — Anglican lane emits the envelope | **done and confirmed in the browser (2026-09-20)** — see below |
-| 4 — threshold and Office Settings | **in progress** — all four drawers regrouped I/II/III; threshold and consolidation still open, see §0 item 2 |
+| 4 — threshold and Office Settings | **in progress** — threshold built (BCP only), all four drawers regrouped I/II/III; consolidation and the other 3 lanes' threshold text still open, see §0 item 2 |
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
@@ -252,6 +254,60 @@ skin and old theme behaviour. That is what fixed the dark splash.
    still needs a real spec answer, not an inferred one); (d) the four sidebars still exist as
    separate panels — restructured internally, none deleted or merged into one shared drawer
    element.
+
+   **Slice 3, 2026-09-21 continued: the threshold screen itself, built.** First established what
+   was actually blocking it, and found the block was smaller than first thought: the app already
+   has clock-to-hour resolution for every lane (`_defaultDailyOfficeForCurrentTime()`,
+   `_defaultCopticHourForCurrentTime()`, `_defaultHorologionOfficeForCurrentTime()`, East Syriac's
+   equivalent) — hour detection was never missing. What was genuinely open was only which lane's
+   vocabulary the threshold speaks before a tradition is chosen, and that's not actually an open
+   question either: §3 rule 4 already routes "I'm not sure" to Anglican, so BCP is already this
+   app's governed default lane. The threshold just applies that one screen earlier, using BCP's
+   own `_defaultDailyOfficeForCurrentTime()` and its existing label table
+   (`SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options`) rather than inventing a new tradition-neutral
+   scheme.
+
+   Also discovered mid-build that the handoff doc's "five-button mode grid" description doesn't
+   match the actual `ask`-state screen — verified directly against `initializeEntryRouting()`:
+   `#tradition-entry` (the Western/Eastern family-tree picker) is the real `ask` state;
+   `#mode-selection` (the true five-button grid) serves the separate `universal` state and was
+   correctly left untouched.
+
+   Built: a new `#uo-threshold` panel inside `#tradition-entry` — timestamp, framing line, the
+   BCP office name at 88px, a one-sentence description, Begin, Another office, a quiet I'm not
+   sure, and a quiet Book of Needs link (`openBookOfNeedsForActiveOffice()`, which already
+   resolves the right tradition-scoped Book of Needs even with no office yet selected — reused,
+   not rebuilt). The existing family-tree picker is NOT deleted: wrapped in
+   `#uo-threshold-another-panel`, hidden by default, revealed only by "Another office" — every
+   line of its existing routing (the single delegated `handleTraditionEntryClick` listener,
+   `resolveEntryTraditionRoute()`, the ACOE/ACE split) keeps working exactly as before, untouched.
+
+   **The framing line and four descriptions are real devotional copy, not an engineering call —
+   drafted by Claude, reviewed and edited by Josh 2026-09-21 before being written into the code.**
+   Josh corrected the first draft ("It is the hour of") to "It is time for" — Morning Prayer,
+   Noonday Prayer, Evening Prayer, and Compline are BCP offices, not hours; "hour" is the other
+   three lanes' vocabulary, not BCP's. Final text lives in `BCP_THRESHOLD_OFFICE_TEXT` in
+   `js/office-ui.js`.
+
+   One real bug caught before it shipped: an early version tried to force the opened office via
+   `window._forcedOfficeId`, set right before calling `selectMode('daily')` — checked the source
+   first and found `selectMode()` unconditionally resets that variable to `undefined` on entry,
+   so it would have silently done nothing. Removed; also turned out unnecessary, since
+   `selectMode('daily')` already recomputes the current hour itself via the same clock function
+   the threshold uses to display it.
+
+   Verified same as slices 1-2: every `id=`, `name=`, `onchange=` in `index.html` identical to
+   the pre-Phase-4 baseline, zero duplicate ids among the seven new ones added, `onclick=` diff
+   shows only the two new handlers with nothing missing, `<div>` tags balanced, `node --check`
+   clean on `js/office-ui.js`. Also checked `css/office.css` for `[hidden]`-selector overrides
+   that could have stopped the new wrapper from actually hiding — none apply to the new ids.
+
+   **Phase 4's threshold work is now functionally complete for BCP.** Not done, and not
+   attempted: the same threshold treatment for the other three lanes (each would need its own
+   framing line and hour text, in that lane's own vocabulary — Coptic/East Syriac/Horologion all
+   already have their own clock-to-hour functions, so the mechanism exists; the text does not,
+   same authorship-boundary reasoning as above). "Resume" (last-position memory) is explicitly
+   deferred per §5 itself — no persisted position exists yet.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
    placeholder, which is correct and not a fault. Horologion goes LAST: it already emits
    `{tradition, officeKey, date, title, status, sections, diagnostics}` with a validator that

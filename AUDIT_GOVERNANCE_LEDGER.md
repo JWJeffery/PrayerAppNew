@@ -16291,3 +16291,94 @@ same reasons recorded in the prior ledger entry -- none of them attempted here e
 that list is now narrower: "the same pass for the Coptic/East Syriac/Horologion drawers" is done;
 what remains of item (d) is deleting or merging the four drawers into one shared element, which this
 slice did not do -- each is still its own `app-mode-drawer` panel, only reorganized internally.
+
+---
+
+## Session 2026-09-21 continued -- Phase 4 slice 3: the threshold screen built for BCP,
+## replacing the old "Where do you pray?" as the ask-state default view. SEED_VERSION v314 -> v315.
+
+### The blocker turned out smaller than first recorded
+
+The prior entry (Phase 4 slice 2) left the threshold as blocked, reasoning that "it is the hour of
+X" needed a tradition-neutral hour-naming scheme the handoff doc didn't fully specify. Checked
+before building anything further: the app already has clock-to-hour resolution for every lane
+(`_defaultDailyOfficeForCurrentTime()`, `_defaultCopticHourForCurrentTime()`,
+`_defaultHorologionOfficeForCurrentTime()`, East Syriac's own equivalent) -- hour detection was
+never the missing piece. What remained open was only which lane's vocabulary the threshold speaks
+before a tradition is chosen, and that question is already answered elsewhere in this project's own
+governance: §3 rule 4 routes "I'm not sure" to Anglican specifically, meaning BCP is already the
+app's default lane. The threshold applies that same governed default one screen earlier, using
+BCP's own clock function and its existing office-label table
+(`SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options`) rather than inventing anything new.
+
+### A second discrepancy found and resolved before building
+
+The handoff doc describes the ask-state screen as "the five-button mode grid." Checked directly
+against `initializeEntryRouting()` rather than trusting the description: `#tradition-entry` (the
+Western/Eastern family-tree picker, "Where do you pray?") is the actual `ask`-state screen;
+`#mode-selection` (the real five-button grid) serves the separate `universal` state and was left
+untouched. The threshold was built inside `#tradition-entry`, matching what the code does rather
+than the doc's imprecise description of it.
+
+### What was built
+
+A new `#uo-threshold` panel, the default view inside `#tradition-entry`:
+- Timestamp line (day, date, time).
+- Framing line + BCP office name (88px) + one-sentence description, computed from
+  `_defaultDailyOfficeForCurrentTime()` and a new `BCP_THRESHOLD_OFFICE_TEXT` lookup table.
+- **Begin** -> `beginFromUoThreshold()` -> `selectMode('daily')`.
+- **Another office** -> `showUoThresholdAnotherOffice()`, which hides `#uo-threshold` and reveals
+  the existing family-tree picker, now wrapped in `#uo-threshold-another-panel`. Nothing in that
+  picker was rewritten -- same delegated `handleTraditionEntryClick` listener, same
+  `resolveEntryTraditionRoute()`, same ACOE/ACE split, all untouched, only gated behind a click.
+- A quiet **I'm not sure** (`data-entry-tradition="unknown"`, reusing the existing delegated
+  handler directly -- no new wiring needed for this one).
+- A quiet **Book of Needs** link, calling the existing `openBookOfNeedsForActiveOffice()`, which
+  already resolves the correct tradition-scoped Book of Needs even with no office yet selected.
+  Reused as-is rather than rebuilt.
+- `showTraditionEntry()` now calls `resetUoThresholdToDefault()` so the screen always opens on
+  the compact threshold, never a stale "Another office" state from a prior visit.
+
+### The framing line and descriptions: not an engineering decision, and not made unilaterally
+
+Declined to invent this text outright. Drafted candidates, flagged clearly as drafts, and asked
+Josh to approve, edit, or reject. Josh corrected the first draft's framing line -- "It is the hour
+of" -- to **"It is time for"**: Morning Prayer, Noonday Prayer, Evening Prayer, and Compline are
+BCP offices, not hours; "hour" is the vocabulary of the other three lanes, not BCP's. The four
+one-sentence descriptions were approved as drafted, unedited. Final text now lives in
+`BCP_THRESHOLD_OFFICE_TEXT` in `js/office-ui.js`, attributed in-code to this exchange.
+
+### A bug caught before it shipped, not after
+
+An early version of `beginFromUoThreshold()` set `window._forcedOfficeId` to the computed office
+value immediately before calling `selectMode('daily')`, intending to make Begin open the same
+office the threshold displayed. Checked the source before trusting this would work: `selectMode()`
+unconditionally resets `window._forcedOfficeId = undefined` as one of its first actions on every
+call (line ~1742 at the time of this check) -- the value would have been wiped before
+`initializeOfficeDefaultsForCurrentDateTime()` ever read it, so the forcing would have silently done
+nothing. Removed. Also turned out to be unnecessary regardless: `selectMode('daily')` already
+recomputes the current hour itself, via the exact same `_defaultDailyOfficeForCurrentTime()` call
+the threshold uses to decide what to display, so the two already agree without any forcing.
+
+### Verification
+
+Same discipline as slices 1-2, extended to cover the new JS: `node --check js/office-ui.js` clean.
+Every `id=`, `name=`, `onchange=` in `index.html` diffed identical to the pre-Phase-4 baseline.
+Zero duplicate ids among the seven newly added (`uo-threshold`, `uo-threshold-another`,
+`uo-threshold-another-panel`, `uo-threshold-begin`, `uo-threshold-description`,
+`uo-threshold-office-name`, `uo-threshold-timestamp`). `onclick=` diff shows exactly two new
+handlers (`beginFromUoThreshold()`, `showUoThresholdAnotherOffice()`) and nothing missing.
+`<div>`/`</div>` balanced. Checked `css/office.css` for `[hidden]`-selector overrides that could
+have stopped the new wrapper divs from actually hiding (two existing rules target
+`#entry-family-grid[hidden]` and `.app-entry-secondary-selector[hidden]` specifically) -- neither
+applies to the new ids, and no broad child-combinator `display` rule on `#tradition-entry`
+overrides the native `[hidden]` behavior, so no CSS change was needed.
+
+### Still open
+
+The same threshold treatment for Coptic, East Syriac, and Horologion -- each already has its own
+clock-to-hour function, so the mechanism exists; each needs its own framing line and hour
+descriptions in that lane's own vocabulary, which is real content work, same authorship boundary as
+BCP's. Borrowed-devotions consolidation and the four-drawers-into-one-element merger remain open
+from the prior entries. "Resume" (last-position memory) is explicitly out of scope per §5 itself --
+no persisted position exists yet to resume from.

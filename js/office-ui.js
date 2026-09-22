@@ -1270,6 +1270,71 @@ function showEntrySurface(container) {
     container.style.display = '';
 }
 
+// ── The threshold (Phase 4, UI_REDESIGN_HANDOFF.md §5), added 2026-09-21 ────────────────────
+// Reuses the existing per-lane clock-to-hour functions and the existing BCP office label
+// table (SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options) rather than inventing a new,
+// tradition-neutral hour vocabulary -- BCP is already the app's governed default lane
+// ("I'm not sure" -> Anglican, §3 rule 4), so the threshold simply speaks that lane's
+// language one screen earlier. SHARED_OFFICE_NAVIGATOR_CONFIGS is defined further down this
+// file but already initialized by the time DOMContentLoaded fires updateUoThresholdDisplay().
+// Threshold framing line and one-sentence descriptions, per BCP office. Drafted by Claude,
+// reviewed and approved by Josh 2026-09-21. The framing line reads "It is time for" (Josh's
+// edit from an earlier "It is the hour of" draft -- BCP calls these offices, not hours; "hour"
+// belongs to the other three lanes' own vocabulary, not BCP's).
+const BCP_THRESHOLD_OFFICE_TEXT = {
+    "morning-office":  "Psalms, the reading of Scripture, and the canticles of morning.",
+    "noonday-office":  "A brief pause in the day's work, kept with psalms and a short reading.",
+    "evening-office":  "Psalms, the reading of Scripture, and the Magnificat and Nunc Dimittis.",
+    "compline-office": "The last office of the day, kept with psalms before sleep.",
+};
+
+function updateUoThresholdDisplay() {
+    const now = new Date();
+    const officeValue = _defaultDailyOfficeForCurrentTime(now);
+    const officeOption = SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options.find(o => o.value === officeValue);
+    const officeLabel = officeOption ? officeOption.label : "Prayer";
+
+    const tsEl = document.getElementById('uo-threshold-timestamp');
+    if (tsEl) {
+        tsEl.textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })
+            + ' · ' + now.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+    }
+    const nameEl = document.getElementById('uo-threshold-office-name');
+    if (nameEl) nameEl.textContent = officeLabel;
+
+    const descEl = document.getElementById('uo-threshold-description');
+    if (descEl) descEl.textContent = BCP_THRESHOLD_OFFICE_TEXT[officeValue] || '';
+}
+
+function beginFromUoThreshold() {
+    // No office needs to be forced here: selectMode('daily') already calls
+    // initializeOfficeDefaultsForCurrentDateTime('daily'), which recomputes
+    // _defaultDailyOfficeForCurrentTime() itself and checks the matching radio --
+    // the same function this threshold used to compute what it displayed. An
+    // earlier version of this function tried to pass the value through
+    // window._forcedOfficeId; that variable is unconditionally reset to undefined
+    // at the top of selectMode() (checked directly in the source before removing
+    // this), so it never reached initializeOfficeDefaultsForCurrentDateTime() and
+    // was also simply unnecessary.
+    selectMode('daily');
+}
+
+function showUoThresholdAnotherOffice() {
+    const threshold = document.getElementById('uo-threshold');
+    const anotherPanel = document.getElementById('uo-threshold-another-panel');
+    if (threshold) { threshold.hidden = true; threshold.setAttribute('aria-hidden', 'true'); }
+    if (anotherPanel) { anotherPanel.hidden = false; anotherPanel.removeAttribute('aria-hidden'); }
+    selectTraditionFamily(null);
+}
+
+function resetUoThresholdToDefault() {
+    const threshold = document.getElementById('uo-threshold');
+    const anotherPanel = document.getElementById('uo-threshold-another-panel');
+    if (threshold) { threshold.hidden = false; threshold.removeAttribute('aria-hidden'); }
+    if (anotherPanel) { anotherPanel.hidden = true; anotherPanel.setAttribute('aria-hidden', 'true'); }
+    updateUoThresholdDisplay();
+}
+
 function showTraditionEntry() {
     const splashBg = document.getElementById('splash-bg');
     const traditionEntry = document.getElementById('tradition-entry');
@@ -1284,6 +1349,7 @@ function showTraditionEntry() {
     document.body.classList.remove('roman-breviary-dev-mode');
 
     selectTraditionFamily(null);
+    resetUoThresholdToDefault();
 }
 
 // FIXED 2026-09-02, found while diagnosing a real report: Josh forced showTraditionEntry()
