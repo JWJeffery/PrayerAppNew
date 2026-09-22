@@ -16132,3 +16132,47 @@ names, so a rename with no migration path would silently reset this toggle to un
 who currently has it on. Not done here. Worth a coordinated rename with an explicit migration step
 if it's ever a priority; the user-facing tag, grouping, and tooltip -- the parts that actually
 mislead someone reading the app -- are what's fixed.
+
+---
+
+## Session 2026-09-21 continued -- `universal-office-navigation-architecture.md` formally
+## superseded on surface by Josh's explicit ruling. Phase 6 cleared to proceed as written.
+## SEED_VERSION v311 -> v312.
+
+Documentation only. Resolves item 7 of the open-items list, flagged since before this session.
+
+### The conflict, restated precisely
+
+`documentation/universal-office-navigation-architecture.md` (2026-06-05, marked canonical
+app-wide design direction) fixed the parchment surface as the permanent shared visual language for
+every mode, and called for propagating it further to the Book of Needs and Admin Dashboard.
+`documentation/UI_REDESIGN_HANDOFF.md` (2026-09-12) retires the parchment pass entirely in its
+Phase 6. The handoff document's own author identified this conflict at the time and declined to
+resolve it unilaterally, recording explicitly that it needed Josh's call before Phase 6 began.
+
+Only the SURFACE section was ever in conflict. The navigation model -- left rail plus a settings
+drawer headed uniformly "Office Settings" across every mode, required parity across mode selector,
+all office traditions, Bible Reader, Book of Needs, and Admin -- was never contested; the handoff
+document carries that rule forward verbatim into its own §3.1.
+
+### Ruling
+
+Josh's decision, given directly: the redesign plan controls. Phase 6 proceeds as written in
+`UI_REDESIGN_HANDOFF.md`; the 2026-06-05 document's surface section is superseded.
+
+### What changed
+
+- `documentation/universal-office-navigation-architecture.md`: header rewritten from "Status:
+  canonical app-wide design direction" to record the 2026-09-21 supersession on surface, with the
+  navigation-model sections explicitly carved out as still in force. A dated ruling note added
+  directly below the header rather than silently editing or deleting the original canonical
+  language.
+- `RESUME_PROJECT_NOTE.md` §0 item 7 marked resolved with the ruling and its scope.
+
+### What this unblocks
+
+Nothing was blocked by this in practice -- Phase 4 (next up) touches navigation and settings, not
+surface, so it was never waiting on this ruling. What's now clear is that when Phase 6 itself
+starts, there is no longer an open governance question sitting in front of it: the redesign's
+parchment-removal plan has Josh's explicit authorization, on the record, in the same document that
+used to assert the opposite.

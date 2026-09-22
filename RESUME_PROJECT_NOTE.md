@@ -11,12 +11,12 @@ concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at 
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
 **State as of 2026-09-21.** Fresh-clone HEAD at 2026-09-20 session start was `79d1203`; that
-session's last substantive feature commit was `02ccfa9` (gutter citation closed), followed by
-documentation-only hygiene commits (`a7f9587`, `86cca04`, the Phase 3 acceptance follow-up, the
-sanctoral §7 prune). **This commit is a real content fix, not documentation**: `ecu-east-syriac-hours`
-retagged Byzantine Orthodox and moved to its own Opening Devotions group — see §0/priority item 1b
-below and the 2026-09-21 ledger entry for the full verification. SEED_VERSION
-`v311-2026-09-21-byzantine-hours-retag` — trust none of these at face value; see the FIRST MOVE line
+session's last substantive feature commit was `02ccfa9` (gutter citation closed). Since then:
+`ecu-east-syriac-hours` retagged Byzantine Orthodox (§0/item 1b), and this commit — **item 7
+resolved**: Josh ruled the redesign plan controls, `universal-office-navigation-architecture.md`
+superseded on surface accordingly, Phase 6 cleared to proceed as written. Next up per priority
+order: **item 2, Phase 4 (threshold and Office Settings)**, not yet started. SEED_VERSION
+`v312-2026-09-21-nav-doc-superseded` — trust none of these at face value; see the FIRST MOVE line
 above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
@@ -245,9 +245,13 @@ skin and old theme behaviour. That is what fixed the dark splash.
    files untouched all session, all landing within 200ms of each other — `scripts/dev-spa-server.mjs`
    serves sequentially with no-cache headers, plus the Codespaces proxy. Josh confirms it predates
    this work.
-7. **`documentation/universal-office-navigation-architecture.md` is marked CANONICAL and conflicts
-   with Phase 6.** It fixes the parchment surface as the shared visual language and its own next steps
-   propagate that shell further. **Needs Josh's decision before Phase 6.** Recorded, not overridden.
+7. ~~`documentation/universal-office-navigation-architecture.md` marked CANONICAL, conflicting with
+   Phase 6~~ — **RESOLVED, 2026-09-21. Josh's ruling: the redesign plan controls; Phase 6 proceeds
+   as written.** The nav doc's surface section (§6, parchment-as-permanent-identity) is superseded;
+   its navigation model (rail + "Office Settings" drawer, required mode parity) was never in
+   conflict and remains in force, carried verbatim into `UI_REDESIGN_HANDOFF.md` §3.1. Header of the
+   nav doc updated to record the supersession. Nothing was blocked on this — Phase 4 doesn't touch
+   surface — so this only matters once Phase 6 actually starts.
 8. ~~The app is defaulting to Dark instead of Auto under `?shell=v2`~~ — **RESOLVED 2026-09-20.**
    Neither candidate cause from the original flag was it. The real bug: `applyTheme()` wrote
    `uo-day`/`dark-mode`/`light-mode` onto `body` unconditionally whenever `shell-v2` was on, with

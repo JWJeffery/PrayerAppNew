@@ -1,8 +1,20 @@
 # Universal Office Navigation Architecture
 
-Status: canonical app-wide design direction  
-Date recorded: 2026-06-05  
+Status: SUPERSEDED ON SURFACE, 2026-09-21 — see note below. Navigation model (§ "Left navigation
+rail and settings drawer") remains canonical and is carried forward verbatim into
+`documentation/UI_REDESIGN_HANDOFF.md` §3.1.
+Date recorded: 2026-06-05
 Scope: Universal Office web app shell, office modes, Bible Reader, Book of Needs, and Admin
+
+**2026-09-21 — Josh's decision, recorded per this document's own governance:** this document's §6
+("Shared visual language") fixed the parchment surface as permanent app-wide visual identity and
+called for propagating it further, to the Book of Needs and Admin Dashboard. That directly
+conflicted with `documentation/UI_REDESIGN_HANDOFF.md`, whose Phase 6 retires the parchment pass.
+The handoff doc's own author flagged the conflict rather than resolve it unilaterally. **Josh's
+ruling: the newer redesign plan controls. Phase 6 proceeds as written in the handoff doc.** This
+document's §6 (surface) is superseded accordingly; its navigation sections (§ rail/drawer, §
+required mode parity) are unaffected and remain in force. See `AUDIT_GOVERNANCE_LEDGER.md`,
+2026-09-21 entry, and `RESUME_PROJECT_NOTE.md` §0 item 7.
 
 ## Purpose
 
