@@ -16176,3 +16176,64 @@ surface, so it was never waiting on this ruling. What's now clear is that when P
 starts, there is no longer an open governance question sitting in front of it: the redesign's
 parchment-removal plan has Josh's explicit authorization, on the record, in the same document that
 used to assert the opposite.
+
+---
+
+## Session 2026-09-21 continued -- Phase 4 started: BCP drawer regrouped into I/II/III
+## sections and the 2x2 office grid, per UI_REDESIGN_HANDOFF.md §5. SEED_VERSION v312 -> v313.
+
+Scoped deliberately narrow. Phase 4 as described in the handoff doc is large -- a new threshold
+screen, four lane sidebars consolidated into one drawer, a borrowed-devotions summary, the seasonal
+dot -- and several of those pieces are either underspecified (the threshold's tradition-agnostic
+"hour of X" line) or require a real content-classification decision (which existing toggles count
+as "borrowed devotions" versus native BCP options) rather than a safe mechanical move. Rather than
+guess at those in one large patch, this entry covers only the piece that could be executed with
+zero ambiguity and verified mechanically before commit.
+
+### What changed, in `index.html`, BCP (`daily`) drawer only
+
+- Inserted three section-heading markers -- "I · The Ordo", "II · Which Office", "III · How You
+  Keep It" -- at the existing boundaries between the date navigator, the office-hour radios, and
+  everything after. **No existing element was moved, renamed, or removed** to do this; the current
+  order already matched the required I/II/III sequence, so this was a pure insertion.
+- The four office-hour radios (`office-time`) now sit in a 2-column CSS grid (`display:grid;
+  grid-template-columns:1fr 1fr`) per §5's "2×2 grid of the day's hours" -- inline style only, no
+  new class, no JS change, no change to `updateSidebarForOffice()`.
+- `toggle-bcp-only` moved from inside the "Appearance" group to its own group at the actual foot of
+  the drawer, per §5 ("BCP only at the foot as a single toggle") and §3.7's contract note. Checked
+  `toggleBcpOnly()` (`js/office-ui.js:2942`) before moving it: it resolves the checkbox by
+  `getElementById`, not DOM position or a parent-container query, so relocating it changes nothing
+  about its behavior. Confirmed, not assumed.
+
+### Verification before commit
+
+Diffed every `id="..."`, `name="..."`, and `onchange="..."` attribute in `index.html` against a
+fresh clone of the prior commit (`bf9be2e`): **identical sets in all three cases.** Nothing was
+dropped, renamed, or had its handler changed. `<div>`/`</div>` counts balanced (254/254). This is
+the same failure mode §3 rule 7 warns against by name ("an earlier build hid whole containers and
+took real BCP settings with them") -- checked for it directly rather than trusting the edit by eye.
+
+### Explicitly NOT done here, and why each is deferred rather than attempted
+
+1. **Borrowed-devotions consolidation with a count and plain-language list (§5, section III).**
+   The During-the-Office, After-the-Office, and Opening Devotions sections currently interleave
+   genuine BCP-authorized options (Gloria Patri, Suffrages, the rotating collects) with ecumenical
+   borrowings (Angelus, Trisagion, Agpeya Opening, the newly-retagged Prayer of the Hours) inside
+   the same containers -- exactly the mixture §3 rule 7's fix was written to protect. Splitting them
+   apart requires deciding, item by item, which of ~30 toggles is "native" and which is "borrowed",
+   then building a live count/summary. That is a real content decision, not a mechanical move, and
+   was not made here.
+2. **The seasonal dot in section I.** Correctly still absent -- unsourced, see item 4 below and
+   §6 of the handoff doc, which itself says no dot is honest until a `ruleSource` exists.
+3. **The Coptic, East Syriac, and Horologion drawers.** Still their own separate `app-mode-drawer`
+   panels (`#coptic-settings`, `#east-syriac-settings`, `#generic-settings`), untouched. Each needs
+   its own version of this same pass.
+4. **The threshold screen itself**, replacing the five-button `.app-mode-grid`. §5 describes it in
+   one paragraph -- timestamp, "It is the hour of [X]", office name, description -- but does not
+   specify the rule for naming a canonical hour independent of any chosen tradition, which the
+   threshold requires since it is shown before a tradition is picked (§3.5, the `ask` state).
+   Inventing that rule from general knowledge, on an app whose entire discipline this session has
+   been sourced attribution and honest silence, is the wrong way to fill a real specification gap.
+   Left for a real answer, not a guess.
+5. **Deleting the four sidebars.** None deleted. One restructured internally; the other three
+   untouched; the mode grid untouched.

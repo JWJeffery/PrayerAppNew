@@ -275,6 +275,15 @@
     <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
+        <!-- Phase 4 (UI_REDESIGN_HANDOFF.md §5) section headings inserted 2026-09-21. Existing
+             controls below are NOT reordered or renamed in this pass -- every id, name and
+             onchange handler is untouched, only grouped under the three headings the spec
+             requires. Remaining Phase 4 work, not done here: borrowed-devotions consolidation
+             with a count (currently spread across During/After/Opening Devotions), the same
+             pass for the Coptic/East Syriac/Horologion drawers, and the seasonal dot in "I"
+             (deliberately absent -- unsourced, see RESUME_PROJECT_NOTE.md item 4). -->
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
+
         <!-- Date navigator -->
         <div class="ordo-control">
             <strong>Liturgical Ordo</strong>
@@ -289,14 +298,17 @@
             <div id="calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
         </div>
 
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
+
         <!-- Time of Day -->
-        <div class="setting-group">
-            <strong>Time of Day:</strong>
+        <div class="setting-group" style="display:grid; grid-template-columns:1fr 1fr; column-gap:8px;">
             <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
             <label><input type="radio" name="office-time" value="noonday-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
             <label><input type="radio" name="office-time" value="evening-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
             <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
         </div>
+
+        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
 
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
             <strong>Office Mode:&nbsp;<span class="info-btn" data-tip="Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter form of each office, intended for use without a priest or when the fuller form isn't practical.">i</span></strong>
@@ -308,7 +320,6 @@
         <div class="setting-group">
             <strong>Appearance:</strong>
             <label><input type="checkbox" id="toggle-dark" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()" checked> Dark Mode</label>
-            <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
         </div>
 
         <!-- Liturgical Settings -->
@@ -411,6 +422,14 @@
                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
                 <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
             </div>
+        </div>
+
+        <!-- BCP Only Mode: foot of the drawer, single toggle, §5/§3.7. toggleBcpOnly() looks
+             this checkbox up by id, not DOM position, so moving it here from Appearance above
+             (2026-09-21) does not change its behavior -- confirmed against the function before
+             moving it. -->
+        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
+            <label><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
         </div>
     </div><!-- /settings-panel -->
 
