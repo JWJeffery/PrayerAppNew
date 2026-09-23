@@ -16498,3 +16498,34 @@ while showing -- not one panel sharing space with a leftover footer from a diffe
 
 Verified: `<div>`/`</div>` balanced (278/278, unchanged -- pure styling edit), zero duplicate ids,
 `node --check` clean. Not yet re-confirmed by screenshot after this fix.
+
+---
+
+## Session 2026-09-22 continued -- threshold now fits in one screen (confirmed by screenshot),
+## but the fixed-position fix hid the "Sponsored by" credit link entirely. Restored inside the
+## threshold itself, styled for its dark palette. SEED_VERSION v318 -> v319.
+
+Josh confirmed by fresh screenshot that the prior fix worked as intended: the threshold now
+renders complete in one screen, no scrolling, timestamp through "Book of Needs" all visible
+together.
+
+He also caught a real regression that fix introduced: `position:fixed; inset:0` makes
+`#uo-threshold` an opaque layer covering the entire viewport for as long as it's the active
+screen. The "Sponsored by Musings, Ancient and Modern" credit link, previously reachable by
+scrolling `#mode-selection`, was now permanently hidden behind it -- not merely scrolled past,
+genuinely unreachable while the threshold shows.
+
+Fixed: the same sponsor link -- identical `href`
+(`https://musingsancientandmodern.substack.com/`) and identical text -- added inside
+`#uo-threshold` itself. Not a copy of the existing `.app-sponsor-link` CSS class as-is: that
+class's colors (`var(--app-ink-soft)`, `var(--app-rubric)`) are set for the old light/parchment
+skin and would have rendered low-contrast against the threshold's dark rood-screen background.
+Restyled inline to match the threshold's own gold/cream palette instead, same technique already
+used for the Book of Needs link on this same screen.
+
+The original sponsor link further down in `#mode-selection`, after `#user-profile-defaults`, was
+left in place rather than removed -- it's still what's visible if a person clicks "Another office"
+and the threshold hides itself out of the way, exactly as it worked before any of today's changes.
+
+Verified: `<div>`/`</div>` balanced (278/278), zero duplicate ids, the sponsor href now appears
+twice (intentional -- one per screen state, not a duplicate content). `node --check` clean.

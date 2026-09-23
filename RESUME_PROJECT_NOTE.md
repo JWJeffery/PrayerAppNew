@@ -10,18 +10,23 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-22 continued.** HEAD was `6489063` (first vertical-fit attempt). Josh sent
-two fresh screenshots: real progress — the threshold's own content now fits as one unit, top to
-bottom, with no internal truncation (unlike the prior attempt, which cut "Evening Prayer" off
-mid-word) — but the *page* still scrolled, because a "Sponsored by" footer line living in
-`#mode-selection` after `#uo-threshold` in the DOM was still adding height below the fold. The
-first fix only made `#uo-threshold` itself fit its own `100vh`; it never accounted for what sits
-after it as a sibling. **Fixed in this commit**: `#uo-threshold` changed from
-`position:relative; height:100vh` (participates in normal document flow, so trailing siblings
-still add page height) to `position:fixed; inset:0; z-index:5` (removed from document flow
-entirely — always exactly fills the viewport regardless of what else exists in the DOM below it).
-Not yet re-confirmed by screenshot. See §0/item 2. SEED_VERSION
-`v318-2026-09-22-threshold-fixed-position` — trust none of these at face value; see the FIRST MOVE
+**State as of 2026-09-22 continued.** HEAD was `e03fe60` (threshold moved to `position:fixed`).
+Josh confirmed by screenshot: **the threshold now fits in one screen, no scrolling at all** —
+timestamp through "Book of Needs" all visible together, matching the mockup's own "one still
+moment" intent. But Josh caught a real regression the fixed-position fix introduced: the
+"Sponsored by Musings, Ancient and Modern" credit link, which used to be visible by scrolling
+`#mode-selection`, was now permanently hidden behind the threshold's opaque `position:fixed`
+layer — not just scrolled past, genuinely unreachable, since the threshold now covers the whole
+viewport for as long as it's showing. **Fixed in this commit**: the exact same sponsor link (same
+`href`, same text — `https://musingsancientandmodern.substack.com/`, "Sponsored by Musings,
+Ancient and Modern") added inside `#uo-threshold` itself, styled to match the threshold's own
+dark palette rather than reusing `.app-sponsor-link`'s existing CSS as-is (that class is styled
+for the old light/parchment skin — `var(--app-ink-soft)` etc — and would have rendered
+low-contrast or illegible against the rood-screen background). The original sponsor link further
+down in `#mode-selection` was left in place, not removed — it's still what a person sees if they
+click "Another office" and the threshold's `display:none`s itself out of the way, exactly as
+before any of today's changes. Not yet re-confirmed by screenshot. See §0/item 2. SEED_VERSION
+`v319-2026-09-22-threshold-sponsor-link` — trust none of these at face value; see the FIRST MOVE
 line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement
