@@ -10,6 +10,19 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23.** HEAD before this commit was `2d80b3e`. Josh reached the threshold
+with `?entry=universal` (this also saves it as his default opening screen) and screenshot-confirmed
+the `•` separators. Two hardcoded strings in `#uo-threshold` fixed in `index.html`: "It is the hour
+of" restored to Josh's 2026-09-21 correction **"It is time for"** (the 2026-09-22 rebuild had copied
+the mockup's line and lost it), and "PRAYING TONIGHT IN" changed to **"PRAYING IN"** per Josh. The
+"Praying in" block is a static hand-written list in the markup, copied from the mockup and trimmed
+to three traditions. It is NOT CSS bleed-through, which is what the previous session wrongly told
+Josh. **Still to confirm:** whether a hard refresh still flashes the old "Where do you pray?"
+screen (the 2026-09-22 entry-flash fix). **Waiting on Josh:** the threshold framing line and
+descriptions for Coptic, East Syriac and Horologion were agreed in the 2026-09-22 session but never
+written into the repo. Do not redraft them; ask Josh to paste the agreed text. SEED_VERSION
+`v322-2026-09-23-threshold-wording`.
+
 **State as of 2026-09-22 continued (3), SESSION STOPPED HERE — 91% token budget.** HEAD is
 `4728399` (entry-flash fix), pushed and confirmed live via fresh clone. Josh confirmed the
 sponsor link is back, then reported a hard refresh briefly (~1/4 second) showing the old
@@ -625,7 +638,9 @@ Dormition Aug 28) and it looks exactly like evidence of a Julian/Gregorian split
 ACE. What the Ancient Church of the East proper does for Aug 15 remains genuinely unestablished —
 no ACE calendar is in the repo.
 
-**TWO OPEN QUESTIONS FOR JOSH, NOT DECIDED:**
+**BOTH QUESTIONS BELOW WERE CLOSED 2026-09-12** (ledger, Dormition-cluster entry): COE tag added
+to `holy-virgin-mary-of-the-harvest`; the three unmarked OOR rows removed as Byzantine-only. Kept
+only as history. Do not re-raise them.
 1. **COE May 15.** Both California editions print "Commemoration of Mart Mariam the Blessed Virgin
    **(Protectress of the Harvest)**" — same date, same harvest epithet, same agricultural function as
    the Syriac Orthodox May 15 already in the corpus as `holy-virgin-mary-of-the-harvest`
@@ -694,7 +709,7 @@ re-keyed to `OOR:Coptic` (each was coptic.io/Synaxarium-confirmed in its own not
 key Armenian and Syriac users were being served Coptic dates; they now fall through to the shared
 date). Commits `092cf5b` and `b35b55c`.
 
-**THREE ROWS LEFT UNMARKED, NEEDING A DECISION:** `saint-abraham-of-carrhae`,
+**THREE ROWS LEFT UNMARKED (CLOSED 2026-09-12: all three removed as Byzantine-only):** `saint-abraham-of-carrhae`,
 `saint-abraham-the-hermit` (both Feb 14) and `martyr-thespesios-of-cappadocia` (Jun 1) have NO
 `ruleSource` of any kind and no Coptic attestation in their own fields. They read as Syriac/Byzantine
 and may be stray OOR tags of the kind already cleaned up elsewhere in this project. Deliberately not

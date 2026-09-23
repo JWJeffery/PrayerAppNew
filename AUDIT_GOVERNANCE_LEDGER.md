@@ -16600,3 +16600,41 @@ else; nothing about their actual experience changes, only the wrong screen no lo
 
 Verified: `<div>`/`</div>` balanced (278/278, section tag change only -- no divs touched),
 `node --check` clean. Not yet re-confirmed by screenshot.
+
+---
+
+## Session 2026-09-23 -- threshold wording: Josh's "It is time for" correction restored, "tonight"
+## dropped from the tradition list. SEED_VERSION v321 -> v322.
+
+Josh reached the threshold via `?entry=universal` and sent a screenshot at 7:14 AM. Two hardcoded
+strings in `#uo-threshold` (`index.html`) were wrong:
+
+1. **"It is the hour of" -- a lost correction.** On 2026-09-21 Josh corrected the BCP framing line
+   to "It is time for" (Morning Prayer, Noonday Prayer, Evening Prayer and Compline are BCP
+   offices, not hours; "hour" is the other three lanes' vocabulary). The 2026-09-22 rebuild into
+   `#mode-selection` took the line from the design mockup instead and silently dropped his
+   correction. The office named beneath the line is still always the BCP office from
+   `_defaultDailyOfficeForCurrentTime()`, so the correction still applies. Restored.
+2. **"PRAYING TONIGHT IN" -- static text regardless of the time of day.** Josh's ruling: drop
+   "tonight". Now reads "PRAYING IN".
+
+### Conduct note
+
+In the previous session Josh asked what the "Praying tonight in / Anglican · BCP ... Hudra" block
+was, and was told it was CSS bleed-through. That was wrong. It is a static, hand-written list in
+`#uo-threshold`'s markup, copied from the design mockup's own tradition list and trimmed to the
+three traditions this app currently offers on this screen. It is not computed from anything and
+nothing leaks into it from other CSS.
+
+Also on record: at the start of this session, Claude repeated two items from `RESUME_PROJECT_NOTE.md`
+as open (the COE May 15 harvest question, and per-lane threshold copy needing
+authorship) without checking the ledger. The May 15 question was closed 2026-09-12 (COE tag on
+`holy-virgin-mary-of-the-harvest`; see the Dormition-cluster entry). The per-lane threshold copy
+for Coptic, East Syriac and Horologion was settled with Josh in the 2026-09-22 session, but the
+agreed text was never written into the repo or this ledger; it is pending Josh re-supplying it.
+
+### Verification
+
+Text-only change to two existing elements: no ids, attributes, handlers or elements added or
+removed. No JS or CSS touched, so no cache-bust change is needed.
+
