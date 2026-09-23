@@ -10,6 +10,20 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (6).** HEAD before this commit was `8ae06304`. The 15
+flagged same-person pairs checked individually against LFF 2024, not left as a number. **11 are
+not bugs** -- each is one tradition's own wording for a shared figure, same design already used
+elsewhere in this corpus. **4 were real: both rows carried the ANG tag on the same date**,
+meaning both would render together in the live office. LFF settled each: kept
+`saint-vincent-of-saragossa` (Jan 22), `gregory-the-great-gregory-the-dialogist` (Mar 12),
+`saint-athanasius-the-great` (May 2), `saint-basil-of-caesarea` (Jun 14); the ANG-only duplicate
+row on each date deleted, verified by (id, month, day), not id alone -- two other rows sharing
+those same four ids at different dates (Sep 3 Gregory/LAT, Jan 1 Basil/EOR-LAT-OOR) directly
+confirmed untouched. Entries 1072 -> 1068. **New, separate finding:** LFF's Jan 21 entry is a
+joint "Agnes and Cecilia" commemoration; the corpus's Agnes row doesn't include Cecilia --
+content gap, not a duplicate-row question, not fixed this session. SEED_VERSION
+`v329-2026-09-23-ang-duplicate-identity-resolved`.
+
 **State as of 2026-09-23, session end (5).** HEAD before this commit was `9d08ac38`. Two
 things in the prior entry were wrong and are corrected here: the "138 collisions" were NOT the
 already-closed "≥58 duplicate id" issue from 2026-09-12 (that was about same-id double-renders,

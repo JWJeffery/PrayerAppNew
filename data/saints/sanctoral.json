@@ -2075,26 +2075,6 @@
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Apostle Timothy of the 70”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one."
     },
     {
-      "id": "saint-vincent",
-      "name": "Saint Vincent",
-      "description": "Deacon of Saragossa, martyr.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "January 22",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 1,
-            "day": 22
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Vincent of Saragossa, Deacon and Martyr, 304”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
       "id": "saint-vincent-of-saragossa",
       "name": "Saint Vincent of Saragossa",
       "description": "Deacon and martyr.",
@@ -2114,7 +2094,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Vincent of Saragossa, Deacon and Martyr, 304”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Vincent of Saragossa, Deacon and Martyr, 304”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "red",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- assigned after resolving this date's duplicate ANG-tagged row (see AUDIT_GOVERNANCE_LEDGER.md)."
     },
     {
       "id": "phillips-brooks",
@@ -4978,27 +4960,9 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Gregory the Great, Bishop and Theologian, 604”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Gregory the Great (the Dialogist), Pope of Rome” on this date. The prior confirmation above established this date for ANG only, not EOR.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
-    },
-    {
-      "id": "saint-gregory-the-great",
-      "name": "Saint Gregory the Great",
-      "description": "Pope and Doctor; 'Father of Christian Worship'.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "March 12",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 3,
-            "day": 12
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Gregory the Great, Bishop and Theologian, 604”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- assigned after resolving this date's duplicate ANG-tagged row (see AUDIT_GOVERNANCE_LEDGER.md)."
     },
     {
       "id": "venerable-theophanes-the-confessor-of-sigriane",
@@ -7099,26 +7063,6 @@
       "ruleSource": "2 May in 2024 and 2026 -- 2/2. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021. DIOCESAN SCOPE, carried over 2026-09-12 from the superseded duplicate row of this same identity before it was removed, so the caveat is not lost with it: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such rather than presented as settled."
     },
     {
-      "id": "saint-athanasius",
-      "name": "Saint Athanasius",
-      "description": "Bishop of Alexandria and Teacher of the Faith, died 373 AD.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "May 2",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 2
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Athanasius of Alexandria, Bishop and Theologian, 373”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
       "id": "saint-athanasius-the-apostolic",
       "name": "Saint Athanasius the Apostolic",
       "description": "Patriarch of Alexandria and pillar of faith, died 373 AD.",
@@ -7172,7 +7116,9 @@
           ]
         }
       },
-      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (May 2) is ANG/EOR/LAT's, unconfirmed. CONFIRMED against coptic.io: same as the dedicated 'saint-athanasius-the-apostolic' row -- May 15 (7 Bashans)."
+      "oorDateNote": "OOR date CORRECTED via traditionObservance 2026-09-07. Shared date (May 2) is ANG/EOR/LAT's, unconfirmed. CONFIRMED against coptic.io: same as the dedicated 'saint-athanasius-the-apostolic' row -- May 15 (7 Bashans).",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- assigned after resolving this date's duplicate ANG-tagged row (see AUDIT_GOVERNANCE_LEDGER.md)."
     },
     {
       "id": "mar-daniel-the-physician",
@@ -9685,27 +9631,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Basil of Caesarea, Bishop and Theologian, 379”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
-    },
-    {
-      "id": "saint-basil-the-great",
-      "name": "Saint Basil the Great",
-      "description": "Bishop of Caesarea, Doctor of the Church, died 379.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "June 14",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 6,
-            "day": 14
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Basil the Great, Bishop of Caesarea, 379”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Basil of Caesarea, Bishop and Theologian, 379”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- assigned after resolving this date's duplicate ANG-tagged row (see AUDIT_GOVERNANCE_LEDGER.md)."
     },
     {
       "id": "saint-methodius-i-of-constantinople",

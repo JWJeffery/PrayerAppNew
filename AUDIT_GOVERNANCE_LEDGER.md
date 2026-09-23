@@ -17013,3 +17013,61 @@ Total sanctoral entries now carrying a sourced `liturgicalColor`: 180 (98 from t
 87 from this one, minus overlaps counted once; exact count checked directly against the file,
 not derived by arithmetic).
 
+---
+
+## Session 2026-09-23 continued -- the 15 flagged same-person pairs checked individually
+## against LFF 2024, not left as one number; 4 real ANG double-tag bugs found and fixed.
+## SEED_VERSION v328 -> v329.
+
+**Josh's question, answered precisely:** the 2026-07-07 "Sanctoral duplicate-date finding"
+session Josh is remembering was real, thorough, and closed -- but it checked a different shape
+of problem. That sweep found rows where ONE id carried MULTIPLE stored dates, and resolved each
+to the single LFF-correct date. What this session found is the opposite shape: TWO DIFFERENT
+ids, each with its own single date, on the same day. That earlier sweep's method would never
+have surfaced this; it isn't a gap in how thoroughly it was done, it's a different defect class
+entirely.
+
+**Checked all 15 against `lesser_feasts_and_fasts_-_2024__final_.pdf` directly** (the same
+source this project already treats as controlling for TEC), reading each date's actual printed
+entry rather than trusting name similarity:
+
+**11 of the 15 are NOT bugs.** Each pair is one row using ANG's own LFF-matching wording (e.g.
+"Wulfstan of Worcester," LFF's exact heading) and a second row, tagged LAT (sometimes also
+EOR/OOR), using that tradition's own separate naming convention for the same historical figure.
+This is the same multi-row-per-tradition design already established elsewhere in this corpus
+(the Richard of Chichester / Thomas Ken / Catherine of Alexandria / Monica cases from the
+2026-07-07 fix entry, kept as two rows on purpose). Wrongly characterized as "likely the same
+person, unresolved" in the prior entry -- corrected here. No action taken; none needed.
+
+**4 of the 15 are real bugs: both rows carried the ANG tag on the same date**, which means both
+would render simultaneously in the live BCP office -- an actual double-commemoration, the same
+defect class the 2026-09-12 duplicate-row session fixed elsewhere, just never caught here since
+these carry different ids. LFF 2024's own text settles each one:
+
+| Date | LFF 2024 says | Kept (matches LFF) | Removed |
+|---|---|---|---|
+| Jan 22 | "Vincent of Saragossa, Deacon and Martyr" | `saint-vincent-of-saragossa` (ANG/LAT/OOR) | `saint-vincent` (ANG only -- deleted, not just detagged, since removing its only tag would leave a dead row; same precedent as John of Beverley, 2026-07-07) |
+| Mar 12 | "Gregory the Great, Bishop and Theologian" | `gregory-the-great-gregory-the-dialogist` (ANG/EOR/LAT) | The Mar-12 `saint-gregory-the-great` row only -- same id exists separately at Sep 3 (LAT), untouched, keyed on (id, month, day) not id alone |
+| May 2 | "Athanasius of Alexandria, Bishop and Theologian" | `saint-athanasius-the-great` (ANG/EOR/LAT/OOR) | `saint-athanasius` (ANG only -- deleted) |
+| Jun 14 | "Basil of Caesarea, Bishop and Theologian" | `saint-basil-of-caesarea` (ANG only) | The Jun-14 `saint-basil-the-great` row only -- same id exists separately at Jan 1 (EOR/LAT/OOR), untouched |
+
+Entries: 1072 -> 1068. Each removal asserted to match exactly one entry, keyed on (id, month,
+day), before deletion -- this project's own standing rule after the 2026-09-12 incident where a
+blind id-keyed edit hit the wrong row of a duplicate-id pair. The four kept rows then colored
+against CPG's Lesser Feasts file (all four names match CPG's own entry for that date exactly):
+Vincent red, Gregory white, Athanasius white, Basil white.
+
+**One new finding, not a duplicate-row question, separately flagged:** LFF 2024's Jan 21 entry
+is "Agnes and Cecilia of Rome, Martyrs, 304 and c. 230" -- a JOINT commemoration. The corpus's
+ANG row (`saint-agnes`) names only Agnes; Cecilia does not appear to be part of it. This is a
+content-completeness gap, not something this session's identity-deduplication check was built to
+fix -- noted for Josh, not touched.
+
+### Verification
+
+`data/saints/sanctoral.json` re-parses as valid JSON; entry count confirmed 1072 -> 1068, not
+assumed. Live-verified against the real `SaintsResolver.js`: all four dates now return exactly
+one ANG entry each with the correct color; the two same-id rows at OTHER dates (Sep 3 Gregory,
+Jan 1 Basil) directly confirmed still present in the file, tags unchanged, untouched by the
+(id, month, day)-scoped deletion.
+
