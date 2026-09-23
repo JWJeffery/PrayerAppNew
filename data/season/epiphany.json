@@ -216,7 +216,7 @@
     "date": "2026-01-18",
     "title": "The Confession of Saint Peter the Apostle",
     "season": "Epiphany",
-    "liturgicalColor": "red",
+    "liturgicalColor": "white",
     "collect": "collect-st-peter-confession",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
@@ -230,7 +230,8 @@
     "reading_gospel_mp_year2": "John 21:15-22",
     "reading_ot_ep_year1": "Ezekiel 34:11-16",
     "reading_ot_ep_year2": "Ezekiel 34:11-16",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org) -- corrected from 'red'. Fixed apostle takes precedence over the coinciding Sunday, per Josh (2026-09-23)."
   },
   {
     "date": "2026-01-19",
@@ -343,7 +344,7 @@
     "date": "2026-01-25",
     "title": "The Conversion of Saint Paul the Apostle",
     "season": "Epiphany",
-    "liturgicalColor": "red",
+    "liturgicalColor": "white",
     "collect": "collect-st-paul-conversion",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
@@ -357,7 +358,8 @@
     "reading_gospel_mp_year2": "Acts 9:1-22",
     "reading_ot_ep_year1": "Ecclesiasticus 39:1-10",
     "reading_ot_ep_year2": "Ecclesiasticus 39:1-10",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org) -- corrected from 'red'. Fixed apostle takes precedence over the coinciding Sunday, per Josh (2026-09-23)."
   },
   {
     "date": "2026-01-26",

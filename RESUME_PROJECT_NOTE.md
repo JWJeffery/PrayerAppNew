@@ -10,6 +10,17 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (3).** HEAD before this commit was `a33a4e2`. Josh
+ruled: a fixed apostle's feast takes precedence over a coinciding Sunday. Resolves Jan 18
+(Confession of Peter, corrected white), Jan 25 (Conversion of Paul, corrected white), Oct 18 and
+Nov 1 (already correct, now cited) from the prior entry's 7 flagged dates. Separately, Josh
+asked which source backed Bartholomew's stored `red` -- checked, and the answer was none: no
+`ruleSource`, no citation of any kind. Corrected to CPG's `green`. **Two of the seven originally
+flagged dates remain genuinely open, both real customary differences with a citation on each
+side, not something to resolve by fiat:** Dec 13 (Advent 3, rose vs. CPG's plain purple/blue)
+and Dec 26 (Stephen, red vs. CPG's white). No SEED_VERSION bump this entry -- only
+`data/season/epiphany.json` and `data/season/ordinary.json` touched, no JS/HTML.
+
 **State as of 2026-09-23, session end (2).** HEAD before this commit was `76fbe1c`. Josh's own
 idea from a prior, lost session (check Forward Movement/Episcopal calendar vendors) led to
 Church Pension Group's official 2026 Liturgical eCalendar, uploaded and used to source

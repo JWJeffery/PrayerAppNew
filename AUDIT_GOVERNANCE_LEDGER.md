@@ -16854,3 +16854,35 @@ files and called the exact same functions `renderBcpOffice()` calls
 now render the CPG-sourced color exactly**, the 11 entries across the 7 flagged dates
 correctly left unchanged. `js/office-ui.js` cache-bust bumped 296 -> 297.
 
+---
+
+## Session 2026-09-23 continued -- two of the seven flagged liturgicalColor items resolved by
+## Josh's ruling; a third found to have no citation behind it at all.
+
+**Precedence ruling, Josh:** a fixed apostle's feast takes precedence over a Sunday it
+coincides with. This resolves all four Sunday-collision dates from the prior entry, not just
+the two color-affecting ones:
+- **Jan 18, Confession of Saint Peter** (`epiphany.json`) -- corrected `red` -> `white`, CPG's
+  own fixed-feast entry for this date (not the colliding Sunday's `green`).
+- **Jan 25, Conversion of Saint Paul** (`epiphany.json`) -- same correction, `red` -> `white`.
+- **Oct 18, Saint Luke** / **Nov 1, All Saints' Day** (`ordinary.json`) -- color was already
+  right; only the precedence question was open. Citation added now that it's resolved.
+
+**Saint Bartholomew, re-examined on Josh's direct question ("which corpus says this?"):** the
+existing `red` value carried no `ruleSource`, no citation, nothing -- checked the entry
+directly rather than trusting the prior entry's framing of this as "a real disagreement between
+two sources." It wasn't: a cited source (CPG, green) against an entirely uncited value. The
+prior entry's "far more common convention" line was this session's own unsourced editorializing,
+not a checked fact -- flagged here rather than left standing. Corrected `red` -> `green`.
+
+**Still open, unchanged:** Dec 13 (Advent 3, rose vs. CPG's plain purple/blue) and Dec 26
+(Stephen, white vs. red) -- both remain genuine customary differences with a real citation on
+each side, not resolved by today's precedence ruling.
+
+### Verification
+
+`node --check` clean on both `office-ui.js` and `calendar-engine.js` (unchanged this entry --
+only `data/season/epiphany.json` and `data/season/ordinary.json` edited). Both re-parse as
+valid JSON. Final values printed and confirmed: Confession of Peter and Conversion of Paul both
+`white`; Bartholomew `green`; Luke and All Saints' Day unchanged, now cited.
+
