@@ -10,6 +10,19 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23 continued.** HEAD before this commit was `bfe85cc`. Coptic, East
+Syriac, and Horologion now get the same threshold screen BCP has -- "It is the hour of X"
+(Coptic, Horologion) or "It is time for X" (East Syriac) -- instead of dropping straight into
+the office view. Built by generalizing BCP's existing `#uo-threshold` (`LANE_THRESHOLD_CONFIG`,
+`showLaneThreshold()` in `js/office-ui.js`), not three new screens. **Not yet screen-confirmed
+by Josh** -- no headless browser in the build environment, so only syntax and server-response
+checks were done. **Still to confirm on screen, in order:** (1) picking Coptic, East Syriac, or
+Horologion from "Where do you pray?" shows the threshold with the right office name/description
+and framing line before dropping into the office view; (2) the "Another office" grid's Coptic
+Agpeya card does the same; (3) "Begin" from each lane's threshold opens that lane's actual
+office view, at the same office the threshold named; (4) "Another office" from a lane threshold
+returns to the 5-card grid correctly. SEED_VERSION `v324-2026-09-23-lane-thresholds-wired`.
+
 **State as of 2026-09-23.** HEAD before this commit was `2d80b3e`. Josh reached the threshold
 with `?entry=universal` (this also saves it as his default opening screen) and screenshot-confirmed
 the `•` separators. Two hardcoded strings in `#uo-threshold` fixed in `index.html`: "It is the hour

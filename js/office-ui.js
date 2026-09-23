@@ -1333,11 +1333,47 @@ const HOROLOGION_THRESHOLD_OFFICE_TEXT = {
     "interhour-ninth":  "Three psalms and the Trisagion, appended in monastic practice.",
 };
 
-function updateUoThresholdDisplay() {
+// Lane thresholds (2026-09-23). Each entry tells updateUoThresholdDisplay() and
+// showLaneThreshold() everything they need for one lane: which SHARED_OFFICE_NAVIGATOR_CONFIGS
+// key holds its office labels, how to compute which office is due right now, which text table
+// holds its descriptions, and which framing line runs above the office name. The framing-line
+// choice is Josh's own liturgical call (2026-09-23): Coptic and Horologion are hour-based
+// ("It is the hour of"), matching the vocabulary in his own tables (Third Hour, Sixth Hour,
+// Ninth Hour, etc.); East Syriac is not on an hour system, so it takes BCP's "It is time for".
+// selectMode('daily') has no entry here -- BCP keeps its own original code path below unchanged.
+const LANE_THRESHOLD_CONFIG = {
+    "coptic-agpeya": {
+        configKey: "coptic",
+        framing: "It is the hour of",
+        textTable: COPTIC_THRESHOLD_OFFICE_TEXT,
+        currentOfficeValue: () => _defaultCopticHourForCurrentTime(new Date()),
+    },
+    "east-syriac": {
+        configKey: "eastSyriac",
+        framing: "It is time for",
+        textTable: EAST_SYRIAC_THRESHOLD_OFFICE_TEXT,
+        currentOfficeValue: () => getEastSyriacHourInfo().value,
+    },
+    "horologion": {
+        configKey: "horologion",
+        framing: "It is the hour of",
+        textTable: HOROLOGION_THRESHOLD_OFFICE_TEXT,
+        currentOfficeValue: () => _defaultHorologionOfficeForCurrentTime(new Date()),
+    },
+};
+
+function updateUoThresholdDisplay(mode = "daily") {
     const now = new Date();
-    const officeValue = _defaultDailyOfficeForCurrentTime(now);
-    const officeOption = SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options.find(o => o.value === officeValue);
-    const officeLabel = officeOption ? officeOption.label : "Prayer";
+    const lane = LANE_THRESHOLD_CONFIG[mode] || null;
+
+    const officeValue = lane ? lane.currentOfficeValue() : _defaultDailyOfficeForCurrentTime(now);
+    const configKey    = lane ? lane.configKey : "daily";
+    const officeOption = SHARED_OFFICE_NAVIGATOR_CONFIGS[configKey].options.find(o => o.value === officeValue);
+    const officeLabel  = officeOption ? officeOption.label : "Prayer";
+    const description  = lane ? (lane.textTable[officeValue] || "") : (BCP_THRESHOLD_OFFICE_TEXT[officeValue] || "");
+
+    const framingEl = document.getElementById('uo-threshold-framing');
+    if (framingEl) framingEl.textContent = lane ? lane.framing : "It is time for";
 
     const tsEl = document.getElementById('uo-threshold-timestamp');
     if (tsEl) {
@@ -1348,15 +1384,43 @@ function updateUoThresholdDisplay() {
     if (nameEl) nameEl.textContent = officeLabel;
 
     const descEl = document.getElementById('uo-threshold-description');
-    if (descEl) descEl.textContent = BCP_THRESHOLD_OFFICE_TEXT[officeValue] || '';
+    if (descEl) descEl.textContent = description;
 }
 
 function beginFromUoThreshold() {
-    // selectMode('daily') already calls initializeOfficeDefaultsForCurrentDateTime('daily'),
-    // which recomputes _defaultDailyOfficeForCurrentTime() itself and checks the matching radio
-    // -- the same function this threshold used to compute what it displayed. No value needs to
-    // be forced through.
-    selectMode('daily');
+    // selectMode(mode) already calls initializeOfficeDefaultsForCurrentDateTime(), which
+    // recomputes each lane's own current-office function itself and checks the matching radio/
+    // button -- the same functions this threshold used to compute what it displayed. No value
+    // needs to be forced through. window._uoThresholdMode is set by showLaneThreshold() for the
+    // three non-BCP lanes and cleared by showUoThresholdDefault()/showUniversalModeSelection()'s
+    // own call path, so a plain load (never set) still defaults to 'daily' exactly as before.
+    selectMode(window._uoThresholdMode || 'daily');
+}
+
+// Shows the same #uo-threshold screen BCP uses, but for one of the other three lanes -- called
+// from setUserTraditionDefault() (the single funnel every "Where do you pray?" and Church-of-
+// the-East-calendar-body pick already goes through) and from the "Another office" grid's Coptic
+// Agpeya card. Mirrors showUniversalModeSelection()'s own transition mechanics exactly, minus
+// persisting 'universal' as the saved default, since the caller has already persisted (or
+// deliberately not persisted, for the grid's one-off case) the real lane.
+function showLaneThreshold(mode) {
+    window._uoThresholdMode = mode;
+    syncUniversalOfficeAdvancedToolsVisibility();
+
+    const splashBg = document.getElementById('splash-bg');
+    const traditionEntry = document.getElementById('tradition-entry');
+    const modeSelection = document.getElementById('mode-selection');
+
+    hideAllActiveOfficeViews();
+    if (splashBg) splashBg.style.display = '';
+    hideEntrySurface(traditionEntry);
+    showEntrySurface(modeSelection);
+
+    document.body.classList.remove('office-active');
+    document.body.classList.remove('roman-breviary-dev-mode');
+
+    updateUoThresholdDisplay(mode);
+    showUoThresholdDefault();
 }
 
 function showUoThresholdGrid() {
@@ -1433,6 +1497,12 @@ function showUniversalModeSelection(persistDefault = false) {
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
 
+    // 2026-09-23: this always shows BCP's threshold (updateUoThresholdDisplay() with no
+    // argument), so any lane a previous showLaneThreshold() call left in window._uoThresholdMode
+    // must be cleared here too -- otherwise Begin could still route to that stale lane even
+    // though the screen is showing BCP's office name and text.
+    window._uoThresholdMode = undefined;
+
     updateUoThresholdDisplay();
     showUoThresholdDefault();
 }
@@ -1502,6 +1572,17 @@ function setUserTraditionDefault(tradition) {
     }
 
     console.info('[entry-routing] Opening tradition route:', route.storedDefault, '→', route.mode);
+
+    // 2026-09-23: the three lanes with a LANE_THRESHOLD_CONFIG entry (coptic-agpeya, east-
+    // syriac, horologion) now get the same "It is [time for/the hour of] X" threshold BCP's
+    // 'daily' route already had, instead of dropping straight into the office view. 'daily'
+    // itself and 'roman-breviary-dev' (no config entry) are untouched -- they still go straight
+    // to selectMode() exactly as before.
+    if (LANE_THRESHOLD_CONFIG[route.mode]) {
+        showLaneThreshold(route.mode);
+        return;
+    }
+
     selectMode(route.mode);
 }
 

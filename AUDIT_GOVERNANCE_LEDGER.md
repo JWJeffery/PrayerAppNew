@@ -16659,3 +16659,67 @@ is Josh's and is not to be reworded.
 
 Verification: `node --check js/office-ui.js` clean; `office-ui.js` cache-bust bumped 293 -> 294.
 
+---
+
+## Session 2026-09-23 continued -- Coptic, East Syriac, and Horologion now get the same
+## threshold screen BCP has, instead of dropping straight into the office view.
+## SEED_VERSION v323 -> v324.
+
+Phase 4 open item ("Threshold text and screens for the Coptic, East Syriac, and Horologion
+lanes") closed for text and wiring; the seasonal dot and drawer-merge remain separately open.
+
+**Wording, Josh's call 2026-09-23:** Coptic and Horologion use "It is the hour of" (matching the
+hour-based vocabulary in Josh's own tables -- Third Hour, Sixth Hour, Ninth Hour). East Syriac is
+not on an hour system and uses BCP's "It is time for". BCP itself is unchanged.
+
+**What changed, `js/office-ui.js`:**
+- New `LANE_THRESHOLD_CONFIG`, mapping each of the three `selectMode()` mode strings
+  (`coptic-agpeya`, `east-syriac`, `horologion`) to its `SHARED_OFFICE_NAVIGATOR_CONFIGS` key,
+  its framing line, its `*_THRESHOLD_OFFICE_TEXT` table (recorded last session), and the
+  existing function that already computes which office is due right now for that lane
+  (`_defaultCopticHourForCurrentTime`, `getEastSyriacHourInfo`,
+  `_defaultHorologionOfficeForCurrentTime` -- none of these are new; all three already existed
+  for each lane's own office picker).
+- `updateUoThresholdDisplay()` takes an optional `mode` argument (default `"daily"`, BCP's
+  original behavior, unchanged when called with no argument).
+- New `showLaneThreshold(mode)`, mirroring `showUniversalModeSelection()`'s own screen-
+  transition mechanics, minus persisting `'universal'` as the saved default.
+- `beginFromUoThreshold()` now reads `window._uoThresholdMode` (set by `showLaneThreshold()`)
+  instead of always calling `selectMode('daily')`.
+- **Bug caught and fixed before commit, not by Josh:** `showUniversalModeSelection()` always
+  shows BCP's threshold but never cleared `window._uoThresholdMode`, so returning to the BCP
+  screen after backing out of a lane threshold could still silently route `Begin` to the stale
+  lane. Added `window._uoThresholdMode = undefined;` there, following this file's existing
+  convention of clearing stale per-session override state at each transition (same pattern as
+  `window._esyTemporalOverride` at mode switches).
+- `setUserTraditionDefault()` -- the single funnel every "Where do you pray?" pick and the
+  Church-of-the-East calendar-body pick already goes through -- now calls `showLaneThreshold()`
+  instead of `selectMode()` directly for any route whose mode has a `LANE_THRESHOLD_CONFIG`
+  entry. `daily` and `roman-breviary-dev` have no entry and are unaffected.
+
+**What changed, `index.html`:**
+- The threshold's framing line got an id (`uo-threshold-framing`) so JS can swap its text per
+  lane; text unchanged for BCP.
+- The "Another office" grid's Coptic Agpeya card now calls `showLaneThreshold('coptic-agpeya')`
+  instead of `selectMode('coptic-agpeya')` directly (no persistence change -- this card never
+  persisted a default before and still doesn't).
+- The grid's Church of the East card was not touched: it already routes through `#tradition-
+  entry`'s ACOE/ACE calendar-body picker, which ends at `setUserTraditionDefault()`, so it
+  benefits automatically.
+- `js/office-ui.js` cache-bust bumped 294 -> 295.
+
+**Deliberately out of scope:** Horologion has no card in the "Another office" grid and none was
+added -- its only entry point remains Eastern Christian -> Eastern Orthodoxy in `#tradition-
+entry`, which already funnels through `setUserTraditionDefault()` and is covered. Adding a grid
+card for it is new navigation Josh has not asked for.
+
+### Verification
+
+`node --check js/office-ui.js` clean. Dev server started locally and served both files; grep
+confirmed `uo-threshold-framing`, `LANE_THRESHOLD_CONFIG`, and the modified
+`setUserTraditionDefault` are all present in what the server actually returns over HTTP -- not
+just in the source file. No headless browser is available in this environment, so the actual
+on-screen behavior (Coptic/East Syriac/Horologion thresholds appearing, correct office name and
+description, Begin routing to the right lane, Another Office returning to the grid) has NOT been
+visually confirmed and needs Josh's own screen.
+
