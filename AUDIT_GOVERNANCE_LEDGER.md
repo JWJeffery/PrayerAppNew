@@ -16886,3 +16886,61 @@ only `data/season/epiphany.json` and `data/season/ordinary.json` edited). Both r
 valid JSON. Final values printed and confirmed: Confession of Peter and Conversion of Paul both
 `white`; Bartholomew `green`; Luke and All Saints' Day unchanged, now cited.
 
+---
+
+## Session 2026-09-23 continued -- Dec 13/Dec 26 resolved per Josh's direct order (use CPG,
+## no more asking); Lesser Feast color overlay path investigated and partially wired.
+## SEED_VERSION v326 -> v327.
+
+**Dec 13 (Advent 3) and Dec 26 (Stephen):** Josh's order was explicit -- use CPG, stop asking.
+Both corrected and cited: Advent 3 `rose` -> `purple` (CPG's own "Purple or Blue," matching the
+value already used for the other three Advent Sundays); Stephen `red` -> `white`.
+
+### Lesser Feast color -- architecture found, 98 entries colored, real limits found by checking
+### rather than assuming
+
+`renderBcpOffice()` already resolves the day's Anglican commemorations (`angComms`, from
+`sanctoral.json` via `SaintsResolver`) in the same render pass that sets the color theme -- the
+two data pulls existed side by side and were never connected. Reordered so
+`resolveCommemorations()` runs before `updateSeasonalTheme()`, and a commemoration's own
+`liturgicalColor` (when present) now outranks both the day's season entry and the season default
+-- the same precedence direction as the fixed-apostle ruling above, extended here to Lesser
+Feasts as the more specific case; not separately confirmed by Josh for this exact situation,
+noted rather than silently assumed settled. The prior duplicate `resolveCommemorations('ANG', ...)`
+call further down the function (feeding the `#saint-display` panel) was removed; it now reuses
+the earlier result instead of fetching twice.
+
+**Parsed CPG's Lesser Feasts calendar** (`EpiscopalCalendar_Lesser_2026.ics`, 238 entries;
+Windows-1252 encoded, not UTF-8 -- caught by a decode error on "Óscar Romero," not assumed) and
+matched by month/day against `sanctoral.json`'s 1072 entries, `ANG`/`LAT`-tagged, `fixed`-type
+only.
+
+- **99 dates matched exactly one sanctoral candidate; 98 colored and cited** (one had no color
+  value in CPG's own file). Verified against the real, unmodified `SaintsResolver.js`, loaded in
+  Node with no reimplementation: `resolveCommemorations(date, 'ANG', ...)` for a known date
+  (Thomas Aquinas, Jan 28) returns the entry with `liturgicalColor: 'white'` intact -- the wiring
+  genuinely works end to end, not just on paper.
+- **Of those 98, only 50 are ANG-tagged and will actually appear in the live BCP office.** The
+  other 43 are `LAT`-tagged only. Checked directly: no renderer in `js/office-ui.js` calls
+  `resolveCommemorations()` with `'LAT'` anywhere -- these 43 entries' new color fields are real,
+  cited data, but currently reachable by nothing. Caught by testing against an actual LAT-only
+  entry (`saint-adrian-of-canterbury`) that came back empty from the ANG-scoped call, not assumed
+  correct because the write succeeded.
+- **138 dates had MORE than one ANG/LAT sanctoral candidate on the same day -- not touched.**
+  This is not a simple ambiguity to break by picking one: several of these look like they may be
+  the same identity recorded under two different rows (matching the project's own already-flagged
+  "at least 58 id pairs" duplicate-identity hazard, 2026-09-12 entry above), and others are
+  genuinely different people who happen to share a fixed date. Telling those two cases apart, and
+  deciding which row (if either) should carry CPG's color, is real identity-resolution work
+  outside today's scope -- guessing through 138 cases blind was rejected as unsafe rather than
+  attempted.
+- **1 CPG date had no sanctoral match at all** (Óscar Romero, Apr 18) -- not in the corpus under
+  any tag/date checked; not investigated further this session.
+
+### Verification
+
+`node --check js/office-ui.js` clean. `data/saints/sanctoral.json` re-parses as valid JSON.
+Live-tested against the real `SaintsResolver.js` (not reimplemented) for both a positive case
+(Thomas Aquinas, ANG-tagged, color returned correctly) and the LAT-only gap (Adrian of
+Canterbury, correctly returns empty for an ANG-scoped query) -- both checked, neither assumed.
+

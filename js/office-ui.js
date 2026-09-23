@@ -4350,15 +4350,27 @@ async function renderBcpOffice() {
     );
     const activeRubric = appData.rubrics.find(r => r.id === resolvedOfficeId);
 
+    // 2026-09-23: resolved here, before updateSeasonalTheme(), so a Lesser Feast's own
+    // sourced color (see below) can take precedence the same way a Sunday/Holy Day's already
+    // does. This is the SAME resolveCommemorations('ANG', ...) call the saint-display panel
+    // further down already makes -- calling it once here and reusing the result, rather than
+    // fetching it twice, since it's now needed earlier for color as well as for its existing
+    // display purpose later in this function.
+    const angCommsForColor = await resolveCommemorations(currentDate, 'ANG', { includeEcumenical: true });
+    const commemorationColor = angCommsForColor.find(s => s.liturgicalColor)?.liturgicalColor || null;
+
     // 2026-09-23: getSeasonAndFile()'s liturgicalColor is a flat per-SEASON default (one
     // color for all of Advent, all of Epiphany, etc.) -- correct for ordinary weekdays but
     // wrong for the ~30% of Sundays/Holy Days that carry their own proper color (a red
     // apostle inside green Ordinary Time, Palm Sunday red not purple, Trinity Sunday white
     // not green, etc.). dailyData is the specific matched entry for this exact day; when it
     // carries its own liturgicalColor (sourced -- see each entry's liturgicalColorSource),
-    // that takes precedence over the season's flat default. Ordinary ferial weekdays have no
-    // such field and correctly fall through to the season default unchanged.
-    updateSeasonalTheme(dailyData?.liturgicalColor || liturgicalColor || 'green');
+    // that takes precedence over the season's flat default. A Lesser Feast's own sourced
+    // color (commemorationColor -- only ~99 of 1072 sanctoral entries carry one so far, see
+    // AUDIT_GOVERNANCE_LEDGER.md) takes precedence over BOTH, since a named commemoration is
+    // more specific than either the season or an unremarkable ferial day. Ordinary weekdays
+    // with neither have no override and correctly fall through to the season default.
+    updateSeasonalTheme(commemorationColor || dailyData?.liturgicalColor || liturgicalColor || 'green');
 
     if (!dailyData) {
         document.getElementById('office-display').innerHTML =
@@ -5244,7 +5256,10 @@ async function renderBcpOffice() {
 
     document.getElementById('date-header').innerText = 'Commemorations';
     // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
-    const angComms = await resolveCommemorations(currentDate, 'ANG', { includeEcumenical: true });
+    // 2026-09-23: reuses angCommsForColor (resolved earlier in this function, before
+    // updateSeasonalTheme()) instead of calling resolveCommemorations() a second time with
+    // the same arguments.
+    const angComms = angCommsForColor;
 
 document.getElementById('saint-display').innerHTML = angComms
     .map(s => {

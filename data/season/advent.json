@@ -276,7 +276,7 @@
     "date": "2026-12-13",
     "title": "Third Sunday of Advent",
     "season": "Advent",
-    "liturgicalColor": "rose",
+    "liturgicalColor": "purple",
     "collect": "collect-advent-3",
     "marian_antiphon": "marian-alma-redemptoris",
     "antiphon_mp": "Our King and Savior now draws near: Come let us adore him.",
@@ -289,7 +289,8 @@
     "reading_ot_mp_year2": "Amos 9:11-15",
     "reading_epistle_ep_year2": "2 Thessalonians 2:1-3,13-17",
     "reading_gospel_mp_year2": "John 5:30-47",
-    "day_of_season": 15
+    "day_of_season": 15,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org) -- corrected from 'rose'."
   },
   {
     "date": "2026-12-14",

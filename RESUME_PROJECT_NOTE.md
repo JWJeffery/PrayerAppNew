@@ -10,6 +10,18 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (4).** HEAD before this commit was `a14cc76d`. Per
+Josh's direct order (use CPG, stop asking), Dec 13 and Dec 26 both corrected and cited. Lesser
+Feast color overlay investigated and partially wired: `renderBcpOffice()` now lets a day's
+commemoration color outrank the season default, verified against the real `SaintsResolver.js`.
+**Of 98 sanctoral entries colored, only 50 are ANG-tagged and actually live in the BCP office
+today** -- 43 are LAT-only and currently reachable by no renderer (real data, not yet useful).
+**138 dates were left untouched, not guessed through:** they have more than one ANG/LAT
+sanctoral candidate on the same day, which may be duplicate-identity rows (matching the
+already-flagged "≥58 id pairs" hazard) rather than a simple ambiguity to break blind. **1 CPG
+entry (Óscar Romero, Apr 18) has no sanctoral match at all.** SEED_VERSION
+`v327-2026-09-23-lesser-feast-color-partial`.
+
 **State as of 2026-09-23, session end (3).** HEAD before this commit was `a33a4e2`. Josh
 ruled: a fixed apostle's feast takes precedence over a coinciding Sunday. Resolves Jan 18
 (Confession of Peter, corrected white), Jan 25 (Conversion of Paul, corrected white), Oct 18 and

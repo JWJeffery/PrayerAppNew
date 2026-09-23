@@ -22,7 +22,7 @@
     "date": "December 26, 2025",
     "title": "St. Stephen, Deacon and Martyr",
     "season": "christmas",
-    "liturgicalColor": "red",
+    "liturgicalColor": "white",
     "collect": "collect-st-stephen",
     "antiphon_mp": "The Lord is glorious in his saints: Come let us adore him.",
     "antiphon_ep": "The Lord is glorious in his saints: Come let us adore him.",
@@ -36,7 +36,8 @@
     "reading_gospel_ep_year2": "Acts 7:59-8:8",
     "reading_ot_ep_year1": "Wisdom 4:7-15",
     "reading_ot_ep_year2": "Wisdom 4:7-15",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org) -- corrected from 'red'."
   },
   {
     "date": "December 27, 2025",
