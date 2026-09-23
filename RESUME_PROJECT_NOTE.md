@@ -10,6 +10,23 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-22 continued (3).** HEAD was `cf7cf73` (three interaction fixes). Josh
+confirmed the sponsor link is back, then reported one more thing: a hard refresh briefly (~1/4
+second) shows the old "Where do you pray?" screen before the actual threshold appears. **Traced,
+confirmed pre-existing — not something today's work introduced.** `#tradition-entry` has never
+carried a `hidden` attribute in its raw markup, unlike `#mode-selection`, which already does; it
+paints on first load for every visitor regardless of their stored routing default, until
+`initializeEntryRouting()` (on `DOMContentLoaded`) hides it. **Fixed in this commit**: added
+`hidden aria-hidden="true"` to `#tradition-entry`'s default markup, matching the pattern
+`#mode-selection` already uses. Confirmed safe before making the change: `showTraditionEntry()`'s
+fallback branch (the genuine first-time `ask` state, no stored default at all) already calls
+`showEntrySurface(traditionEntry)` unconditionally, which explicitly clears both the `hidden`
+attribute and any inline `display` — so first-time visitors see the screen appear at the same
+JS-execution moment `#mode-selection` already does for everyone else; nothing about their
+experience changes except that the wrong screen no longer flashes first. Not yet re-confirmed by
+screenshot. See §0/item 2. SEED_VERSION `v321-2026-09-22-entry-flash-fix` — trust none of these
+at face value; see the FIRST MOVE line above.
+
 **State as of 2026-09-22 continued (2).** HEAD was `898f79b` (sponsor link restored). Josh
 reported three things from live testing: (1) unchecking Dark Mode did nothing; (2) "Another
 office" did nothing; (3) confusion about the "Praying tonight in" text, which read as

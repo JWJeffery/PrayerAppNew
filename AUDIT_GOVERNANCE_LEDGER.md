@@ -16574,3 +16574,29 @@ way it's read, rather than leaving it dependent on CSS.
 `<div>`/`</div>` balanced (278/278, unchanged -- no elements added or removed, only edited).
 Confirmed `toggle-dark-splash` no longer appears anywhere in `index.html`. `node --check` clean
 on `js/office-ui.js`. Not yet re-confirmed by screenshot.
+
+---
+
+## Session 2026-09-22 continued -- fixed a brief flash of the old "Where do you pray?" screen
+## on load, confirmed pre-existing rather than introduced by today's work. SEED_VERSION
+## v320 -> v321.
+
+Josh confirmed the sponsor link is back, then reported a hard refresh briefly (~1/4 second) shows
+`#tradition-entry` before the actual routed screen (in his case, the universal-mode threshold)
+takes over. Checked before assuming this was a regression from today's changes: `#tradition-entry`
+has never carried a `hidden` attribute in its raw markup, unlike `#mode-selection`, which already
+does. It paints on every page load for every visitor, regardless of their stored routing default,
+until `initializeEntryRouting()` (fired on `DOMContentLoaded`) hides it and shows whichever screen
+actually applies. This is a pre-existing characteristic of the markup, not something introduced
+today.
+
+Fixed by adding `hidden aria-hidden="true"` to `#tradition-entry`'s default markup -- the exact
+pattern `#mode-selection` already uses successfully. Confirmed safe before making the change:
+`showTraditionEntry()`'s fallback branch (the genuine first-time `ask` state, with no stored
+default at all) already calls `showEntrySurface(traditionEntry)` unconditionally, which explicitly
+clears both the `hidden` attribute and any inline `display` -- so a real first-time visitor still
+sees the screen at the same JS-execution moment `#mode-selection` already appears for everyone
+else; nothing about their actual experience changes, only the wrong screen no longer paints first.
+
+Verified: `<div>`/`</div>` balanced (278/278, section tag change only -- no divs touched),
+`node --check` clean. Not yet re-confirmed by screenshot.

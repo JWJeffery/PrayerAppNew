@@ -24,7 +24,15 @@
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
 
-<section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title">
+<!-- Hidden by default, same pattern as #mode-selection below: without this, a visitor whose
+     stored default is 'universal' or a specific tradition briefly sees this ask-state screen
+     paint first, before initializeEntryRouting() (DOMContentLoaded) hides it and shows the
+     right one -- Josh caught this 2026-09-22 ("hard reset brings up the old 'where do you
+     pray' for about 1/4 second, then this"). showTraditionEntry()/showEntrySurface() already
+     correctly clear both the hidden attribute and any inline display when this screen is the
+     one that should actually show, so this is safe -- confirmed against that function before
+     making this change, the same way #mode-selection's existing hidden-by-default already works. -->
+<section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title" hidden aria-hidden="true">
     <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-entry" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
     <div class="app-entry-kicker">The Universal Office</div>
     <h1 id="tradition-entry-title">Where do you pray?</h1>
