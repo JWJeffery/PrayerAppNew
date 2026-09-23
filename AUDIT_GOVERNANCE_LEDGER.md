@@ -17096,3 +17096,34 @@ a tradition it doesn't govern.
 Valid JSON confirmed. Live-checked against the real `SaintsResolver.js`: Jan 21 2026, ANG scope,
 returns exactly the one updated entry with the corrected name and description.
 
+---
+
+## Session 2026-09-23 continued -- the seasonal dot itself built, closing out the piece of
+## Phase 4 this session sourced the data for but never actually finished. SEED_VERSION v330 -> v331.
+
+Per §6 of `UI_REDESIGN_HANDOFF.md`: "a single dot beside the day in the ordo line, never a wash
+over the page." The shell-v2/rail system's own `buildShell()` ordo line exists but is gated
+behind `shellOn()` and not the live default -- building the dot there would have been invisible
+to Josh in normal use. Built instead into the actual live skin, next to `.liturgical-title` (the
+visible day-title line `renderBcpOffice()` already renders), which is the real "beside the day"
+location in the skin Josh actually uses.
+
+Reuses the exact color already resolved earlier in the same function for `updateSeasonalTheme()`
+-- `commemorationColor || dailyData?.liturgicalColor || liturgicalColor`, tonight's own
+Lesser-Feast/Sunday/season-default precedence chain -- so the dot and the header accent color are
+always identical by construction, never computed twice. Palette copied verbatim from §6: green
+`#4a7c59`, red `#9b2335`, purple `#6b3070`, rose `#a04060`, white `#c9a84c`. A color of `none`, or
+no color at all, renders no dot -- honest silence per §11 rule 3, not an invented placeholder.
+
+### Verification
+
+`node --check js/office-ui.js` clean. Confirmed no function boundary sits between where
+`commemorationColor`/`dailyData`/`liturgicalColor` are declared and where the dot is built --
+same `renderBcpOffice()` scope throughout, not a stale reference across a function edge. Palette
+mapping tested standalone in Node: all five named colors resolve to their exact spec'd hex; `none`
+and `undefined` both correctly resolve to no dot. `js/office-ui.js` cache-bust bumped 297 -> 298.
+
+**Not yet screen-confirmed by Josh** -- this session cannot render a browser. Needs a look on a
+day where the color differs from the season default (e.g. any of tonight's 4 resolved
+Lesser-Feast dates) to see the dot rendering the more specific color, not just the season's own.
+

@@ -10,6 +10,16 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (8).** HEAD before this commit was `b550d23c`. Built the
+seasonal dot itself (§6) -- the piece of Phase 4 this session sourced the data for earlier
+tonight and then left unbuilt, which is exactly the "finish what we started" failure Josh named
+directly. Placed beside `.liturgical-title` in the actual live skin (not the gated, non-default
+shell-v2 rail), reusing the same color already resolved for the header theme so the two can never
+disagree. Palette matches §6 exactly; `none`/unset colors correctly show no dot. **Not yet
+screen-confirmed** -- no browser in this environment. Check it on a day where a Lesser Feast or
+Holy Day's own color differs from the season default, to see the dot follow the more specific
+color. SEED_VERSION `v331-2026-09-23-seasonal-dot-built`.
+
 **State as of 2026-09-23, session end (7).** HEAD before this commit was `16d470e2`.
 `saint-agnes` conformed to LFF 2024's actual Jan 21 entry per Josh's direct instruction: its own
 `ruleSource` already quoted "Agnes and Cecilia of Rome, Martyrs, 304 and c. 230," but `name`/

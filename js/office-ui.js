@@ -4500,6 +4500,27 @@ async function renderBcpOffice() {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = officeSubtitle;
+    // 2026-09-23: the seasonal dot, UI_REDESIGN_HANDOFF.md §6 -- "a single dot beside the
+    // day in the ordo line, never a wash over the page." Reuses the exact color already
+    // resolved above for updateSeasonalTheme() (commemorationColor || dailyData's own ||
+    // the season default), so the dot and the accent theme are always the same color by
+    // construction, never computed twice. Only the five colors §6 actually names get a dot
+    // -- 'none' and anything else render nothing, which is honest silence (§11 rule 3), not
+    // a gap to fill with an invented color.
+    const seasonalDotColor = {
+        green:  '#4a7c59',
+        red:    '#9b2335',
+        purple: '#6b3070',
+        rose:   '#a04060',
+        white:  '#c9a84c',
+    }[commemorationColor || dailyData?.liturgicalColor || liturgicalColor];
+    if (seasonalDotColor) {
+        const dot = document.createElement('span');
+        dot.className = 'seasonal-dot';
+        dot.setAttribute('aria-hidden', 'true');
+        dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${seasonalDotColor}; margin-left:0.5em; vertical-align:middle;`;
+        subtitle.appendChild(dot);
+    }
     container.appendChild(subtitle);
 
     // env replaces the old overlayEmissions array plus the scrape-based
