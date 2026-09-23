@@ -10,6 +10,38 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-22 continued (2).** HEAD was `898f79b` (sponsor link restored). Josh
+reported three things from live testing: (1) unchecking Dark Mode did nothing; (2) "Another
+office" did nothing; (3) confusion about the "Praying tonight in" text, which read as
+"Anglican · BCPCoptic · AgpeyaChurch of the East · Hudra" with no visible separation between
+items. All three investigated against the actual code before touching anything, not guessed at.
+
+**(2) was a real, well-understood bug**, found by reading `showUoThresholdGrid()`'s source
+directly: `#uo-threshold` carries an inline `display:flex` (added for the vertical-centering
+fix). Inline styles always beat the UA stylesheet's `[hidden] { display:none }` rule, so setting
+`.hidden = true` alone never actually hid the fixed, full-viewport threshold — it stayed painted
+over `#uo-threshold-grid` regardless of what the hidden attribute said. **Fixed**: both
+`showUoThresholdGrid()` and `showUoThresholdDefault()` now also set `.style.display` directly.
+
+**(1) traced to `applyDarkMode()`**: it only ever toggles `body.dark-mode`/`.light-mode` classes
+and syncs `[data-app-dark-toggle]` checkboxes — it has no mechanism to affect inline styles, and
+`#uo-threshold`'s entire palette is hardcoded inline, matching the design source's own rood-screen
+night aesthetic (which shows no light variant at all). **Fixed by removing the toggle from this
+screen**, rather than fabricating an ungrounded light-mode palette the source never specified — a
+control that visibly does nothing is worse than no control. If a real light variant is wanted,
+that's new design work for Josh to specify, not a missing wire-up to silently invent.
+
+**(3) is not actually a rendering bug**: the three-item "praying tonight in" list relied on CSS
+flex `gap` alone for spacing, which contributes zero actual whitespace when the text is copied or
+extracted as plain text (exactly what Josh's quoted string shows) — the on-screen spacing was
+almost certainly fine. **Fixed defensively anyway**: literal `&nbsp;&nbsp;•&nbsp;&nbsp;` separators
+added as real text content between items, so the list reads correctly whether viewed or copied,
+removing the ambiguity rather than leaving it to chance.
+
+Not yet re-confirmed by screenshot. See §0/item 2. SEED_VERSION
+`v320-2026-09-22-threshold-interaction-fixes` — trust none of these at face value; see the FIRST
+MOVE line above.
+
 **State as of 2026-09-22 continued.** HEAD was `e03fe60` (threshold moved to `position:fixed`).
 Josh confirmed by screenshot: **the threshold now fits in one screen, no scrolling at all** —
 timestamp through "Book of Needs" all visible together, matching the mockup's own "one still

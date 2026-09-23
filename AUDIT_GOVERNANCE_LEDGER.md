@@ -16529,3 +16529,48 @@ and the threshold hides itself out of the way, exactly as it worked before any o
 
 Verified: `<div>`/`</div>` balanced (278/278), zero duplicate ids, the sponsor href now appears
 twice (intentional -- one per screen state, not a duplicate content). `node --check` clean.
+
+---
+
+## Session 2026-09-22 continued -- three interaction bugs from live testing: Another Office
+## fixed (real bug), Dark Mode toggle removed (no light variant exists to wire it to),
+## Praying-tonight-in spacing hardened (was likely a copy-paste artifact, not a render bug).
+## SEED_VERSION v319 -> v320.
+
+Investigated each against the actual code before touching anything.
+
+### "Another office" does nothing -- real bug, found and fixed
+
+`showUoThresholdGrid()` set `#uo-threshold`'s `hidden` property to hide it. `#uo-threshold` also
+carries an inline `display:flex` style, added in the vertical-centering fix earlier this session.
+Inline styles have higher specificity than the UA stylesheet's `[hidden] { display:none }` rule,
+so the `hidden` attribute was being set correctly the whole time but never actually took visual
+effect -- the fixed, full-viewport threshold stayed rendered on top of `#uo-threshold-grid`
+regardless. Fixed by setting `.style.display` directly in both `showUoThresholdGrid()` and
+`showUoThresholdDefault()`, rather than relying on the attribute alone.
+
+### Unchecking Dark Mode does nothing -- toggle removed, not wired up
+
+`applyDarkMode()` only toggles `body.dark-mode`/`.light-mode` classes; it has no mechanism to
+reach into an element's own inline styles. `#uo-threshold`'s entire palette is hardcoded inline,
+matching the design source's rood-screen night aesthetic -- the mockup never shows a light variant
+of this screen at all. Rather than invent an ungrounded light-mode palette to make the toggle do
+something, removed the toggle from this screen entirely: a control that visibly does nothing is a
+worse bug than no control. A real light variant, if wanted, is new design work Josh would need to
+specify -- not something to guess at silently.
+
+### "Praying tonight in" text running together -- likely not a render bug, hardened anyway
+
+The three-item list relied on CSS flex `gap` alone for spacing. `gap` is a purely visual layout
+property and contributes zero literal whitespace when text is copied or extracted programmatically
+-- which is exactly what Josh's quoted string showed ("...BCPCoptic..." with no space). The
+on-screen rendering was almost certainly correct; the ambiguity was only in how the text reads
+once extracted. Fixed defensively regardless: literal `&nbsp;&nbsp;&#8226;&nbsp;&nbsp;` separators
+added as real text content between the three tradition entries, so the list is correct whichever
+way it's read, rather than leaving it dependent on CSS.
+
+### Verification
+
+`<div>`/`</div>` balanced (278/278, unchanged -- no elements added or removed, only edited).
+Confirmed `toggle-dark-splash` no longer appears anywhere in `index.html`. `node --check` clean
+on `js/office-ui.js`. Not yet re-confirmed by screenshot.

@@ -1321,16 +1321,21 @@ function beginFromUoThreshold() {
 }
 
 function showUoThresholdGrid() {
+    // BUG FOUND 2026-09-22 (Josh: "Another Office does nothing"): #uo-threshold carries an
+    // inline `display:flex` (set for the vertical-centering fix). Inline styles always beat
+    // the UA stylesheet's `[hidden] { display:none }` rule, so setting .hidden alone never
+    // actually hid it -- the fixed, full-viewport threshold stayed painted over the grid
+    // underneath regardless. Setting .style.display directly fixes this for real.
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
-    if (threshold) { threshold.hidden = true; threshold.setAttribute('aria-hidden', 'true'); }
+    if (threshold) { threshold.hidden = true; threshold.style.display = 'none'; threshold.setAttribute('aria-hidden', 'true'); }
     if (grid) { grid.hidden = false; grid.removeAttribute('aria-hidden'); }
 }
 
 function showUoThresholdDefault() {
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
-    if (threshold) { threshold.hidden = false; threshold.removeAttribute('aria-hidden'); }
+    if (threshold) { threshold.hidden = false; threshold.style.display = 'flex'; threshold.removeAttribute('aria-hidden'); }
     if (grid) { grid.hidden = true; grid.setAttribute('aria-hidden', 'true'); }
 }
 

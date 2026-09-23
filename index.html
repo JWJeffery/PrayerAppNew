@@ -135,7 +135,11 @@
         <div style="position:absolute; inset:0; background-image:url('images/rood-screen.png'); background-size:cover; background-position:center 40%; filter:blur(2px) saturate(0.75) brightness(0.5);"></div>
         <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 34% 46%, rgba(10,8,16,0.55) 0%, rgba(6,5,10,0.93) 62%, #040307 100%);"></div>
 
-        <label class="app-dark-toggle" style="position:absolute; top:20px; right:24px; z-index:1;"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
+        <!-- No Dark Mode toggle here: this screen is always dark (per the design source's
+             own rood-screen/night-prayer aesthetic, which shows no light variant), so a
+             checkbox implying otherwise would just be a control that visibly does nothing --
+             which is exactly the bug Josh reported 2026-09-22. If a real light variant is
+             ever wanted, that's new design work, not a missing wire-up. -->
 
         <div style="position:relative; padding:0 60px 0 92px; max-width:640px; max-height:100vh; overflow:hidden;">
             <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6);">THE UNIVERSAL OFFICE</div>
@@ -151,9 +155,11 @@
 
             <div style="margin-top:26px; padding-top:16px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
                 <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:9px;">PRAYING TONIGHT IN</div>
-                <div style="display:flex; flex-wrap:wrap; gap:6px 22px; font-size:16px; color:rgba(230,220,196,0.66);">
+                <div style="display:flex; flex-wrap:wrap; gap:6px 0; font-size:16px; color:rgba(230,220,196,0.66);">
                     <span>Anglican&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;BCP</span>
+                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
                     <span>Coptic&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Agpeya</span>
+                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
                     <span>Church of the East&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Hudra</span>
                 </div>
             </div>
