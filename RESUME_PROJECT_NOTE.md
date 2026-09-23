@@ -10,6 +10,24 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (2).** HEAD before this commit was `76fbe1c`. Josh's own
+idea from a prior, lost session (check Forward Movement/Episcopal calendar vendors) led to
+Church Pension Group's official 2026 Liturgical eCalendar, uploaded and used to source
+`liturgicalColor`. Real bug found: the per-entry color already existed in `data/season/*.json`
+(397 days) but `renderBcpOffice()` never read it, only a flat per-season default -- fixed in
+`js/office-ui.js`. 3 genuine data corrections made (2 filled a real gap: Good Friday/Holy
+Saturday had no color at all); 95 already-correct entries given a citation they lacked. 105/105
+non-flagged Sundays/Holy Days now verified rendering CPG's color end-to-end via the real engine.
+**7 dates deliberately left open, need Josh's call, see ledger for full detail:** Jan 18
+(Confession of Peter) and Jan 25 (Conversion of Paul) each collide with a Sunday CPG also marks
+for that date -- precedence AND color both open; Oct 18 (Luke) and Nov 1 (All Saints) have the
+same collision but color itself is already fine; Aug 24 (Bartholomew, CPG says green vs. the
+corpus's red) and Dec 26 (Stephen, CPG says white vs. the corpus's red) are genuine disagreements
+between two real sources; Dec 13 (Advent 3, rose vs. CPG's plain purple/blue) is a customary
+difference. **Lesser Feasts (238 entries) not touched at all** -- no `day_of_season` row of
+their own, so wiring these would need the sanctoral overlay path investigated first, not done
+this session. SEED_VERSION `v326-2026-09-23-liturgical-color-sourced`.
+
 **State as of 2026-09-23, session end.** HEAD before this commit was `3e46632`. All four
 threshold items from the previous entry are now confirmed on Josh's own screen: Coptic (Third
 Hour) and East Syriac (Sapra) thresholds show correct office/description, reachable from the

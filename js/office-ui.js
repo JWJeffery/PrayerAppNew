@@ -4341,7 +4341,6 @@ async function renderBcpOffice() {
         { season: 'ordinary', liturgicalColor: 'green', litYear: 'year1' }
     );
     const { season, liturgicalColor, litYear } = seasonInfo || { season: 'ordinary', liturgicalColor: 'green', litYear: 'year1' };
-    updateSeasonalTheme(liturgicalColor || 'green');
 
     const dailyData = await withDailyOfficeTimeout(
         CalendarEngine.fetchLectionaryData(currentDate),
@@ -4350,6 +4349,16 @@ async function renderBcpOffice() {
         null
     );
     const activeRubric = appData.rubrics.find(r => r.id === resolvedOfficeId);
+
+    // 2026-09-23: getSeasonAndFile()'s liturgicalColor is a flat per-SEASON default (one
+    // color for all of Advent, all of Epiphany, etc.) -- correct for ordinary weekdays but
+    // wrong for the ~30% of Sundays/Holy Days that carry their own proper color (a red
+    // apostle inside green Ordinary Time, Palm Sunday red not purple, Trinity Sunday white
+    // not green, etc.). dailyData is the specific matched entry for this exact day; when it
+    // carries its own liturgicalColor (sourced -- see each entry's liturgicalColorSource),
+    // that takes precedence over the season's flat default. Ordinary ferial weekdays have no
+    // such field and correctly fall through to the season default unchanged.
+    updateSeasonalTheme(dailyData?.liturgicalColor || liturgicalColor || 'green');
 
     if (!dailyData) {
         document.getElementById('office-display').innerHTML =

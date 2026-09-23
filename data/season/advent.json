@@ -16,7 +16,8 @@
     "reading_ot_mp_year2": "Amos 1:1-5,13-2:8",
     "reading_epistle_ep_year2": "1 Thessalonians 5:1-11",
     "reading_gospel_mp_year2": "Luke 21:5-19",
-    "day_of_season": 1
+    "day_of_season": 1,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-11-30",
@@ -39,7 +40,8 @@
     "fixed_month_day": true,
     "reading_ot_ep_year1": "Isaiah 55:1-5",
     "reading_ot_ep_year2": "Isaiah 55:1-5",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-01",
@@ -153,7 +155,8 @@
     "reading_ot_mp_year2": "Amos 6:1-14",
     "reading_epistle_ep_year2": "2 Thessalonians 1:5-12",
     "reading_gospel_mp_year2": "Luke 1:57-68",
-    "day_of_season": 8
+    "day_of_season": 8,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-07",
@@ -343,7 +346,8 @@
     "reading_ot_mp_year2": "Zechariah 3:1-10",
     "reading_epistle_ep_year2": "Revelation 4:1-8",
     "reading_gospel_mp_year2": "Matthew 24:45-51",
-    "day_of_season": 18
+    "day_of_season": 18,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-17",
@@ -381,7 +385,8 @@
     "reading_ot_mp_year2": "Zechariah 7:8-8:8",
     "reading_epistle_ep_year2": "Revelation 5:6-14",
     "reading_gospel_mp_year2": "Matthew 25:14-30",
-    "day_of_season": 20
+    "day_of_season": 20,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-19",
@@ -400,7 +405,8 @@
     "reading_ot_mp_year2": "Zechariah 8:9-17",
     "reading_epistle_ep_year2": "Revelation 6:1-17",
     "reading_gospel_mp_year2": "Matthew 25:31-46",
-    "day_of_season": 21
+    "day_of_season": 21,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-20",
@@ -424,7 +430,8 @@
     "reading_ot_ep_eve": "Job 42:1-6",
     "reading_epistle_ep_eve": "",
     "reading_gospel_ep_eve": "John 14:1-7",
-    "day_of_season": 22
+    "day_of_season": 22,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-21",
@@ -447,7 +454,8 @@
     "fixed_month_day": true,
     "reading_ot_ep_year1": "Isaiah 43:8-13",
     "reading_ot_ep_year2": "Isaiah 43:8-13",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "2026-12-22",
@@ -504,6 +512,7 @@
     "reading_ot_mp_year2": "Baruch 4:36-5:9",
     "reading_epistle_ep_year2": "Galatians 3:23-4:7",
     "reading_gospel_mp_year2": "Matthew 1:18-25",
-    "day_of_season": 26
+    "day_of_season": 26,
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   }
 ]

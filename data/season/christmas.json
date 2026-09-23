@@ -15,7 +15,8 @@
     "reading_ot_mp_year2": "Micah 4:1-5; 5:2-4",
     "reading_epistle_ep_year2": "1 John 4:7-16",
     "reading_gospel_mp_year2": "John 3:31-36",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "December 26, 2025",
@@ -55,7 +56,8 @@
     "reading_gospel_ep_year2": "1 John 5:1-12",
     "reading_ot_ep_year1": "Isaiah 44:1-8",
     "reading_ot_ep_year2": "Isaiah 44:1-8",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "December 28, 2025",
@@ -75,7 +77,8 @@
     "reading_gospel_ep_year2": "Mark 10:13-16",
     "reading_ot_ep_year1": "Isaiah 54:1-13",
     "reading_ot_ep_year2": "Isaiah 54:1-13",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "December 29, 2025",
@@ -149,7 +152,8 @@
     "reading_ot_mp_year2": "Isaiah 62:1-5,10-12",
     "reading_epistle_ep_year2": "Revelation 19:11-16",
     "reading_gospel_mp_year2": "Matthew 1:18-25",
-    "precedence": "major-feast"
+    "precedence": "major-feast",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "January 2, 2026",
@@ -200,7 +204,8 @@
     "reading_gospel_ep_year1": "John 6:41-47",
     "reading_ot_mp_year2": "Wisdom 7:3-14",
     "reading_epistle_ep_year2": "Colossians 3:12-17",
-    "reading_gospel_mp_year2": "John 6:41-47"
+    "reading_gospel_mp_year2": "John 6:41-47",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
   {
     "date": "January 5, 2026",
@@ -222,6 +227,7 @@
     "psalms_ep_eve": "Psalm 29, Psalm 98",
     "reading_ot_ep_eve": "Isaiah 66:18-23",
     "reading_epistle_ep_eve": "Romans 15:7-13",
-    "reading_gospel_ep_eve": ""
+    "reading_gospel_ep_eve": "",
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   }
 ]

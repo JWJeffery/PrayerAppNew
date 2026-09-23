@@ -16756,3 +16756,101 @@ the v324 entry's "deliberately out of scope" note -- its only entry point is Eas
 Eastern Orthodoxy in `#tradition-entry`), but it uses the exact same `LANE_THRESHOLD_CONFIG` path
 as Coptic and East Syriac, both of which are now confirmed.
 
+---
+
+## Session 2026-09-23 continued -- liturgicalColor sourced against Church Pension Group's
+## official 2026 Liturgical eCalendar, replacing a flat per-season default with a per-day
+## override for Sundays/Holy Days. SEED_VERSION v325 -> v326.
+
+Josh's own idea, given in a prior session and lost until re-supplied today (see the
+threshold-wording entries above for the parallel failure): check what published calendars
+Forward Movement and Episcopal liturgical-goods vendors actually provide to parishes. He
+uploaded Church Pension Group's official "Liturgical eCalendar" (eCal) for 2026 --
+`EpiscopalCalendar_SundaysHolyDays_2026.ics` and `EpiscopalCalendar_Lesser_2026.ics`, plus
+Outlook-compatibility variants -- each VEVENT's DESCRIPTION field citing lectionary year,
+season, liturgical color, and the day's propers.
+
+### What was found, checked against the app's own code, not assumed
+
+`liturgicalColor` was already a populated field on every entry in `data/season/*.json`
+(397 days total, per the 2026-09-12 handoff-adoption entry) -- but `renderBcpOffice()`
+(`js/office-ui.js`) never read it. It called `updateSeasonalTheme()` using only
+`CalendarEngine.getSeasonAndFile()`'s flat per-SEASON value (one color for all of Advent, all
+of Epiphany, etc.), fetching the actual per-day entry (`dailyData`, which already carried its
+own correct-or-not `liturgicalColor`) only afterward, for content. Confirmed by loading the
+real `calendar-engine.js` in Node (stubbed `window`/`fetch` to read local files, zero
+reimplementation of its algorithms) and running all 116 Sundays/Holy Days entries from the CPG
+file through both `getSeasonAndFile()` and `fetchLectionaryData()`: 30 of the 35 dates that
+looked wrong against the flat range were **already correct in the per-entry field** -- purely a
+dead-code bug, not a data error.
+
+### Fix 1 -- `js/office-ui.js`, `renderBcpOffice()`
+
+Reordered the `dailyData` fetch to happen before `updateSeasonalTheme()` is called, and changed
+the call from `updateSeasonalTheme(liturgicalColor || 'green')` to
+`updateSeasonalTheme(dailyData?.liturgicalColor || liturgicalColor || 'green')` -- the specific
+day's own sourced color now wins when present; ordinary ferial weekdays (no per-entry color)
+fall through to the season default exactly as before. No change to `CalendarEngine` itself.
+
+### Fix 2 -- `data/season/*.json`, per-entry sourcing
+
+Parsed all 116 CPG Sundays/Holy Days entries (both ISO-dated and long-format-dated entries --
+`christmas.json` and `lent.json` use `"December 26, 2025"`-style dates near the Dec/Jan
+boundary, not ISO; a first pass silently skipped both files entirely on this, caught by
+re-checking every non-ISO date field across all six season files rather than trusting the
+first pass's clean-looking output).
+
+- **3 genuine corrections, all previously uncontested gaps or errors, all now cited:**
+  `epiphany.json` "Saturday after the Epiphany" (white -> green, matching the broader "Sundays
+  after Epiphany 2 onward are green, not white" pattern CPG confirms); `lent.json` "Good
+  Friday" and "Holy Saturday" (both previously `"liturgicalColor": "none"` -- the corpus's
+  existing "none 2" count from the 2026-09-12 tally was exactly these two days -- filled to
+  red per CPG, flagged here as a filled gap rather than silently overwritten, since "no color"
+  for Good Friday is itself a real, if minority, custom).
+- **95 already-correct entries given an explicit `liturgicalColorSource` citation** (Church
+  Pension Group, Liturgical eCalendar 2026), where none existed before -- these were right by
+  construction, not by evidence; they are cited facts now, not coincidences.
+- **7 dates deliberately left untouched, flagged below for Josh, not silently resolved either
+  way:**
+  1. **Jan 18 / Jan 25** -- CPG carries TWO colliding VEVENTs on each date: a moveable Sunday
+     (Second/Third Sunday after Epiphany, green) and a fixed apostle's feast (Confession of
+     Peter / Conversion of Paul). The corpus currently shows `red` for both fixed-feast
+     entries, which matches NEITHER of CPG's two readings. Two open questions, not one:
+     which observance has precedence that year (BCP p.16's Sunday-vs-Holy-Day table), and
+     what color the winner takes.
+  2. **Oct 18 (Luke) / Nov 1 (All Saints)** -- same collision shape, but here the corpus's
+     existing color for the NAMED fixed feast already matches CPG's own fixed-feast entry
+     (Luke red, All Saints white); the only open question is the Sunday-precedence one, not
+     color.
+  3. **Aug 24, Saint Bartholomew** -- CPG's own dedicated entry for this feast (no collision)
+     says green; the corpus says red, which is the far more common convention for an apostle
+     traditionally counted a martyr. A genuine disagreement between two real sources, not a
+     collision artifact -- worth double-checking against a second witness before trusting
+     either.
+  4. **Dec 13, Third Sunday of Advent** -- CPG offers only "Purple or Blue" like every other
+     Advent Sunday; the corpus uses rose (the Gaudete-Sunday custom). A real customary
+     difference, not an error on either side.
+  5. **Dec 26, St. Stephen** -- CPG says white (the Twelve-Days-of-Christmas convention,
+     subordinating the martyr's own red to the festal season); the corpus says red (Stephen's
+     own proper color as protomartyr). Also a real customary difference, not an error.
+
+### Lesser Feasts (238 entries) -- NOT touched, and not safe to touch the same way
+
+Unlike Sundays/Holy Days, individual weekday saints' commemorations have no `day_of_season`
+row of their own in `data/season/*.json` -- the day renders as an ordinary seasonal weekday
+with the saint layered on as a sanctoral overlay. Whether an observed Lesser Feast changes the
+day's color from the season's own color is a real, unresolved liturgical-practice question
+(CPG's file marks these days by the saint's own proper color, e.g. red for the January martyrs
+Fabian/Agnes/Vincent even mid-Epiphany) that this session did not investigate the sanctoral
+rendering path for and did not attempt to wire. Genuinely open, separate from everything above.
+
+### Verification
+
+Every season JSON file re-parses as valid JSON after every edit pass (checked per-file, not
+assumed). `node --check` clean on both `office-ui.js` and `calendar-engine.js`. End-to-end
+check: loaded the real, unmodified `calendar-engine.js` in Node against the now-edited data
+files and called the exact same functions `renderBcpOffice()` calls
+(`getSeasonAndFile`/`fetchLectionaryData`) for all 116 CPG dates -- **105/105 non-flagged dates
+now render the CPG-sourced color exactly**, the 11 entries across the 7 flagged dates
+correctly left unchanged. `js/office-ui.js` cache-bust bumped 296 -> 297.
+
