@@ -10,22 +10,38 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-22 continued (3).** HEAD was `cf7cf73` (three interaction fixes). Josh
-confirmed the sponsor link is back, then reported one more thing: a hard refresh briefly (~1/4
-second) shows the old "Where do you pray?" screen before the actual threshold appears. **Traced,
-confirmed pre-existing — not something today's work introduced.** `#tradition-entry` has never
-carried a `hidden` attribute in its raw markup, unlike `#mode-selection`, which already does; it
-paints on first load for every visitor regardless of their stored routing default, until
-`initializeEntryRouting()` (on `DOMContentLoaded`) hides it. **Fixed in this commit**: added
+**State as of 2026-09-22 continued (3), SESSION STOPPED HERE — 91% token budget.** HEAD is
+`4728399` (entry-flash fix), pushed and confirmed live via fresh clone. Josh confirmed the
+sponsor link is back, then reported a hard refresh briefly (~1/4 second) showing the old
+"Where do you pray?" screen before the actual threshold appears. **Traced, confirmed
+pre-existing — not something today's work introduced.** `#tradition-entry` has never carried a
+`hidden` attribute in its raw markup, unlike `#mode-selection`, which already does; it paints on
+first load for every visitor regardless of their stored routing default, until
+`initializeEntryRouting()` (on `DOMContentLoaded`) hides it. **Fixed**: added
 `hidden aria-hidden="true"` to `#tradition-entry`'s default markup, matching the pattern
 `#mode-selection` already uses. Confirmed safe before making the change: `showTraditionEntry()`'s
 fallback branch (the genuine first-time `ask` state, no stored default at all) already calls
 `showEntrySurface(traditionEntry)` unconditionally, which explicitly clears both the `hidden`
 attribute and any inline `display` — so first-time visitors see the screen appear at the same
 JS-execution moment `#mode-selection` already does for everyone else; nothing about their
-experience changes except that the wrong screen no longer flashes first. Not yet re-confirmed by
-screenshot. See §0/item 2. SEED_VERSION `v321-2026-09-22-entry-flash-fix` — trust none of these
-at face value; see the FIRST MOVE line above.
+experience changes except that the wrong screen no longer flashes first. **Not yet re-confirmed
+by screenshot** — this is the single most important thing for next session (or Josh's next
+message) to do before treating any of today's threshold work as fully closed. SEED_VERSION
+`v321-2026-09-22-entry-flash-fix` — trust none of these at face value; see the FIRST MOVE line
+above.
+
+**Everything else from today's threshold work, for quick orientation:** the threshold (§4 of the
+real design source, not this repo's `UI_REDESIGN_HANDOFF.md` paraphrase) now lives correctly in
+`#mode-selection` (the `universal` state), full-bleed `position:fixed`, matching the mockup's
+actual CSS. Five real bugs were found and fixed across this session's back-and-forth with Josh,
+each confirmed against the code before touching anything: (1) the rejected first build was in the
+wrong screen entirely (`#tradition-entry` instead of `#mode-selection`) and used the wrong visual
+style; (2) the threshold didn't fit in one viewport, requiring scroll; (3) `position:fixed` fixed
+that but hid the "Sponsored by" credit link behind it; (4) "Another office" silently failed
+because an inline `display:flex` on `#uo-threshold` was overriding the `[hidden]` attribute's
+effect; (5) the Dark Mode toggle was removed rather than fabricated a fix for, since no light
+variant of this screen exists in the source to wire it to. Full detail on each, in order, is in
+the ledger entries dated 2026-09-22 and the state-as-of paragraphs below this one.
 
 **State as of 2026-09-22 continued (2).** HEAD was `898f79b` (sponsor link restored). Josh
 reported three things from live testing: (1) unchecking Dark Mode did nothing; (2) "Another
