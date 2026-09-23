@@ -131,35 +131,35 @@
          not approximated. The five-card grid below is preserved in full (every onclick
          untouched) as the "Another office" destination, matching the mockup's own "the list of
          traditions is cut ... Another office already carries the function." -->
-    <div id="uo-threshold" style="position:relative; min-height:100vh; overflow:hidden; background:#06050a; color:#e6dcc4; font-family:'Cormorant Garamond',Georgia,serif;">
+    <div id="uo-threshold" style="position:relative; height:100vh; overflow:hidden; background:#06050a; color:#e6dcc4; font-family:'Cormorant Garamond',Georgia,serif; display:flex; flex-direction:column; justify-content:center; box-sizing:border-box;">
         <div style="position:absolute; inset:0; background-image:url('images/rood-screen.png'); background-size:cover; background-position:center 40%; filter:blur(2px) saturate(0.75) brightness(0.5);"></div>
         <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 34% 46%, rgba(10,8,16,0.55) 0%, rgba(6,5,10,0.93) 62%, #040307 100%);"></div>
 
-        <label class="app-dark-toggle" style="position:relative; z-index:1;"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
+        <label class="app-dark-toggle" style="position:absolute; top:20px; right:24px; z-index:1;"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
 
-        <div style="position:relative; padding:90px 60px 70px 92px; max-width:640px;">
+        <div style="position:relative; padding:0 60px 0 92px; max-width:640px; max-height:100vh; overflow:hidden;">
             <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6);">THE UNIVERSAL OFFICE</div>
-            <div id="uo-threshold-timestamp" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6); margin-top:8px; margin-bottom:22px;">&nbsp;</div>
-            <div style="font-family:'Cinzel',serif; font-size:19px; letter-spacing:0.3em; color:rgba(230,220,196,0.6); text-transform:uppercase; margin-bottom:14px;">It is the hour of</div>
-            <div id="uo-threshold-office-name" style="font-family:'Cinzel',serif; font-size:88px; line-height:0.94; letter-spacing:0.04em; color:#e8d9b0; text-transform:uppercase;">&nbsp;</div>
-            <div id="uo-threshold-description" style="font-size:25px; line-height:1.6; color:rgba(230,220,196,0.72); margin-top:22px; max-width:520px;">&nbsp;</div>
+            <div id="uo-threshold-timestamp" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6); margin-top:6px; margin-bottom:16px;">&nbsp;</div>
+            <div style="font-family:'Cinzel',serif; font-size:16px; letter-spacing:0.3em; color:rgba(230,220,196,0.6); text-transform:uppercase; margin-bottom:8px;">It is the hour of</div>
+            <div id="uo-threshold-office-name" style="font-family:'Cinzel',serif; font-size:clamp(40px,6.5vh,80px); line-height:0.96; letter-spacing:0.04em; color:#e8d9b0; text-transform:uppercase;">&nbsp;</div>
+            <div id="uo-threshold-description" style="font-size:19px; line-height:1.45; color:rgba(230,220,196,0.72); margin-top:14px; max-width:520px;">&nbsp;</div>
 
-            <div style="display:flex; gap:16px; margin-top:40px;">
-                <button type="button" onclick="beginFromUoThreshold()" style="border:1px solid rgba(201,168,76,0.75); background:rgba(201,168,76,0.1); padding:16px 38px; font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.2em; color:#e8d9b0; text-transform:uppercase; box-shadow:0 0 30px rgba(201,168,76,0.14); cursor:pointer;">Begin</button>
-                <button type="button" onclick="showUoThresholdGrid()" style="border:1px solid rgba(201,168,76,0.25); background:none; padding:16px 30px; font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.2em; color:rgba(230,220,196,0.65); text-transform:uppercase; cursor:pointer;">Another office</button>
+            <div style="display:flex; gap:14px; margin-top:24px;">
+                <button type="button" onclick="beginFromUoThreshold()" style="border:1px solid rgba(201,168,76,0.75); background:rgba(201,168,76,0.1); padding:12px 32px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.2em; color:#e8d9b0; text-transform:uppercase; box-shadow:0 0 30px rgba(201,168,76,0.14); cursor:pointer;">Begin</button>
+                <button type="button" onclick="showUoThresholdGrid()" style="border:1px solid rgba(201,168,76,0.25); background:none; padding:12px 26px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.2em; color:rgba(230,220,196,0.65); text-transform:uppercase; cursor:pointer;">Another office</button>
             </div>
 
-            <div style="margin-top:54px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
-                <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:14px;">PRAYING TONIGHT IN</div>
-                <div style="display:flex; flex-wrap:wrap; gap:10px 26px; font-size:21px; color:rgba(230,220,196,0.66);">
+            <div style="margin-top:26px; padding-top:16px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:9px;">PRAYING TONIGHT IN</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px 22px; font-size:16px; color:rgba(230,220,196,0.66);">
                     <span>Anglican&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;BCP</span>
                     <span>Coptic&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Agpeya</span>
                     <span>Church of the East&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Hudra</span>
                 </div>
             </div>
 
-            <div style="margin-top:30px;">
-                <button type="button" onclick="openUniversalBookOfNeeds()" style="background:none; border:none; color:rgba(230,220,196,0.4); font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; padding:4px 0;">Book of Needs</button>
+            <div style="margin-top:14px;">
+                <button type="button" onclick="openUniversalBookOfNeeds()" style="background:none; border:none; color:rgba(230,220,196,0.4); font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; padding:4px 0;">Book of Needs</button>
             </div>
         </div>
     </div>

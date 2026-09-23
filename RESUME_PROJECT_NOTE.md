@@ -10,26 +10,21 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-22.** HEAD was `b827e90` (Phase 4 slice 3). Josh rejected slice 3's
-threshold outright on sight ("I hate that") — wrong visual style, and wrong screen entirely: it
-replaced content on `#tradition-entry` (the `ask` state, "Where do you pray?"), presuming a
-specific office ("It is time for Evening Prayer") in front of someone who hadn't even said who
-they are yet. **This commit is the fix, not just documentation.** Josh then provided the actual
-original design source — a zip containing `Universal Office Redesign.dc.html`, a pixel-precise
-HTML/CSS mockup, not just a picture — and its own build plan (§4) states plainly: **"Phase 4 —
-Replace `#mode-selection` with the threshold,"** not `#tradition-entry`. That single line resolves
-everything: `#tradition-entry` has been reverted to its original, untouched content (the
-Western/Eastern/"I'm not sure" family-tree picker is exactly right for a true first-time visitor
-and was never supposed to be touched); the threshold — "It is the hour of X," full-bleed
-`rood-screen.png` background, Cinzel/Cormorant Garamond/IBM Plex Mono type, a real bordered Begin
-button — now lives in `#mode-selection`, the `universal` state, where a person has already opted
-into browsing/comparing traditions and "it is the hour of Compline, praying tonight in three
-traditions" is genuinely appropriate context rather than presumptuous. See §0/item 2 for full
-detail, exact CSS values used, and what's still owed (the other three lanes' own threshold
-treatments, still using this same design source).
-what's still open (the same threshold treatment for the other three lanes, borrowed-devotions
-consolidation, sidebar deletion/merger). SEED_VERSION `v315-2026-09-21-phase4-threshold`
-— trust none of these at face value; see the FIRST MOVE
+**State as of 2026-09-22 continued.** HEAD was `c0104e2` (threshold corrected, placed in
+`#mode-selection`). Josh confirmed by screenshot it's the right screen with the right content --
+then found a real layout bug: the block was tall enough to require scrolling (confirmed by two
+screenshots, the second showing "PRAYER" cut off continuing from the first), which defeats the
+whole point of a threshold as one still moment, not a page. Fixed in this commit: the outer
+wrapper changed from `min-height:100vh` (can grow past the viewport) to `height:100vh` with
+`display:flex; justify-content:center` (vertically centers the content block instead of pinning
+it to the top with large fixed padding), office name font-size changed to
+`clamp(40px,6.5vh,80px)` so it scales down on shorter viewports instead of forcing overflow, and
+every inter-element margin/padding tightened (e.g. Begin/Another-office gap 40px->24px, the
+praying-tonight-in section's top margin 54px->26px). The Dark Mode toggle moved from inline flow
+to `position:absolute` in the corner so it no longer eats into the vertical budget. Not yet
+re-confirmed by screenshot after this fix — next message should verify it actually fits before
+treating this as closed. See §0/item 2. SEED_VERSION
+`v317-2026-09-22-threshold-vertical-fit` — trust none of these at face value; see the FIRST MOVE
 line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement

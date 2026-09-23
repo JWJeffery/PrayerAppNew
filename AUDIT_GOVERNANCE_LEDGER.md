@@ -16439,3 +16439,37 @@ The same threshold treatment for Coptic, East Syriac, and Horologion -- `images/
 `lane-byzantine.webp`, `lane-eastsyriac.webp` are already staged in this repo for exactly this.
 Borrowed-devotions consolidation and the four-drawers-into-one-element merger remain open,
 untouched by this fix.
+
+---
+
+## Session 2026-09-22 continued -- threshold vertical-fit bug fixed: content was tall enough
+## to require scrolling, defeating the point of a still, single-moment screen. SEED_VERSION
+## v316 -> v317.
+
+Josh confirmed by screenshot that the rebuilt threshold (prior entry) landed in the right place
+with the right content and the right button styling, then caught a real layout bug: two
+screenshots were needed to see the whole screen, the second showing "PRAYER" continuing from
+"EVENING" cut off at the bottom of the first. A threshold that requires scrolling contradicts its
+own purpose per the design source -- one still answer to "what should I pray now," not a page.
+
+Fixed in `index.html`'s `#uo-threshold` block only:
+- Outer wrapper: `min-height:100vh` (can grow past the viewport, forcing scroll) changed to
+  `height:100vh` with `display:flex; flex-direction:column; justify-content:center` -- vertically
+  centers the content instead of pinning it to the top with large fixed padding.
+- Office name: fixed `88px` changed to `clamp(40px,6.5vh,80px)`, so it scales down on shorter
+  browser windows instead of forcing overflow, while still reaching the source mockup's 88px
+  ceiling on tall viewports.
+- Every inter-element margin and padding tightened (top padding removed entirely in favor of
+  flex centering; Begin/Another-office gap 40px->24px; praying-tonight-in section's top margin
+  54px->26px; description font-size 25px->19px, line-height 1.6->1.45).
+- The Dark Mode toggle moved from the normal document flow to `position:absolute` in the top
+  corner, so it no longer consumes vertical space inside the centered content block.
+
+Verified against the same true baseline used for the prior entry: `id=`, `onchange=` identical
+except the five ids that entry already added; `onclick=` count consistent with the same three
+handlers already accounted for. `node --check` clean (js/office-ui.js untouched this entry).
+`<div>`/`</div>` balanced (278/278, unchanged from the prior entry -- this was a pure styling
+edit, no elements added or removed).
+
+Not yet re-confirmed by screenshot after this fix. Flagged explicitly in the resume note so the
+next message (or next session) checks before treating this as closed.
