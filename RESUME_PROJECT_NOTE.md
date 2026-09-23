@@ -10,21 +10,18 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-22 continued.** HEAD was `c0104e2` (threshold corrected, placed in
-`#mode-selection`). Josh confirmed by screenshot it's the right screen with the right content --
-then found a real layout bug: the block was tall enough to require scrolling (confirmed by two
-screenshots, the second showing "PRAYER" cut off continuing from the first), which defeats the
-whole point of a threshold as one still moment, not a page. Fixed in this commit: the outer
-wrapper changed from `min-height:100vh` (can grow past the viewport) to `height:100vh` with
-`display:flex; justify-content:center` (vertically centers the content block instead of pinning
-it to the top with large fixed padding), office name font-size changed to
-`clamp(40px,6.5vh,80px)` so it scales down on shorter viewports instead of forcing overflow, and
-every inter-element margin/padding tightened (e.g. Begin/Another-office gap 40px->24px, the
-praying-tonight-in section's top margin 54px->26px). The Dark Mode toggle moved from inline flow
-to `position:absolute` in the corner so it no longer eats into the vertical budget. Not yet
-re-confirmed by screenshot after this fix — next message should verify it actually fits before
-treating this as closed. See §0/item 2. SEED_VERSION
-`v317-2026-09-22-threshold-vertical-fit` — trust none of these at face value; see the FIRST MOVE
+**State as of 2026-09-22 continued.** HEAD was `6489063` (first vertical-fit attempt). Josh sent
+two fresh screenshots: real progress — the threshold's own content now fits as one unit, top to
+bottom, with no internal truncation (unlike the prior attempt, which cut "Evening Prayer" off
+mid-word) — but the *page* still scrolled, because a "Sponsored by" footer line living in
+`#mode-selection` after `#uo-threshold` in the DOM was still adding height below the fold. The
+first fix only made `#uo-threshold` itself fit its own `100vh`; it never accounted for what sits
+after it as a sibling. **Fixed in this commit**: `#uo-threshold` changed from
+`position:relative; height:100vh` (participates in normal document flow, so trailing siblings
+still add page height) to `position:fixed; inset:0; z-index:5` (removed from document flow
+entirely — always exactly fills the viewport regardless of what else exists in the DOM below it).
+Not yet re-confirmed by screenshot. See §0/item 2. SEED_VERSION
+`v318-2026-09-22-threshold-fixed-position` — trust none of these at face value; see the FIRST MOVE
 line above.
 
 ## The gutter citation is DONE — built, both bugs fixed, both live-confirmed, closed with measurement

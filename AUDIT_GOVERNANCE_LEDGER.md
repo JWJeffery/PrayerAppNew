@@ -16473,3 +16473,28 @@ edit, no elements added or removed).
 
 Not yet re-confirmed by screenshot after this fix. Flagged explicitly in the resume note so the
 next message (or next session) checks before treating this as closed.
+
+---
+
+## Session 2026-09-22 continued -- threshold still scrolled after the first vertical-fit fix,
+## because trailing sibling content (a "Sponsored by" footer line) was adding page height the
+## first fix didn't account for. SEED_VERSION v317 -> v318.
+
+Two fresh screenshots showed real progress from the prior fix -- the threshold's own content
+(timestamp through Book of Needs) now renders as one complete, non-truncated unit, unlike the
+original attempt which cut "Evening Prayer" off mid-word. But the page as a whole still required
+scrolling: a second screenshot, scrolled down, showed a "Sponsored by Musings, Ancient and Modern"
+line that isn't part of the threshold at all -- it's `#mode-selection`'s own existing footer,
+sitting as a sibling after `#uo-threshold` in the DOM.
+
+The prior fix set `#uo-threshold` to `height:100vh`, which makes that element itself exactly one
+viewport tall -- but it still participates in normal document flow, so anything after it as a
+sibling (like this footer) still adds to total page height and still forces a scrollbar.
+
+Fixed: `#uo-threshold` changed to `position:fixed; inset:0; z-index:5`, removing it from document
+flow entirely. It now always exactly fills the viewport regardless of what else exists in the DOM
+below it, which is the correct behavior for a screen that is meant to be the entire visible page
+while showing -- not one panel sharing space with a leftover footer from a different screen state.
+
+Verified: `<div>`/`</div>` balanced (278/278, unchanged -- pure styling edit), zero duplicate ids,
+`node --check` clean. Not yet re-confirmed by screenshot after this fix.
