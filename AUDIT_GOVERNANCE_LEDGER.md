@@ -16944,3 +16944,72 @@ Live-tested against the real `SaintsResolver.js` (not reimplemented) for both a 
 (Thomas Aquinas, ANG-tagged, color returned correctly) and the LAT-only gap (Adrian of
 Canterbury, correctly returns empty for an ANG-scoped query) -- both checked, neither assumed.
 
+---
+
+## Session 2026-09-23 continued -- two errors in the prior entry corrected, and the 138
+## same-day-collision dates properly resolved instead of left as one undifferentiated blob.
+## SEED_VERSION v327 -> v328.
+
+**Two things stated wrong in the prior entry, corrected here rather than left standing:**
+
+1. **"Matches the ≥58 duplicate id pairs hazard" was false.** Re-read the actual 2026-09-12
+   entry that number comes from: that session found the "49 duplicate ids" headline was not one
+   problem -- 36 pairs differ in date AND tag, 10 differ in date only, and the real bug (rows
+   that render twice on the same day for the same tradition) was found, fixed, and verified
+   clean across 2025-2035. The remaining duplicate ids were deliberately NOT renamed because
+   `js/coe-eligibility.js` and `scripts/saints/*.json` key on them and because none of them
+   double-render -- documented there as accepted, not left broken. That work is closed and has
+   nothing to do with what this session found: entries with DIFFERENT ids whose observance dates
+   happen to coincide, which is normal for any saints calendar, not a defect.
+2. **The one CPG Lesser Feast with no sanctoral match at all is Juana Inés de la Cruz (Apr 18),
+   not Óscar Romero as previously stated.** Romero IS in the corpus (`oscar-romero`, Mar 24) --
+   simply mislabeled in the prior report. Confirmed directly this time before writing it again.
+
+### The 138 same-day collisions, actually resolved rather than left as one number
+
+Split by whether the multiple candidates on a date are likely one person under two id/name
+forms, or genuinely different people who happen to share a fixed commemoration:
+
+- **87 resolved by matching CPG's own event name against each day's candidates** (e.g. "Patrick
+  of Ireland" against `saint-patrick-patricius` vs `saint-gertrude-of-nivelles` on Mar 17 --
+  correctly resolved to Patrick on a second, more careful matching pass after a first attempt's
+  cruder substring check missed it; caught by testing against Patrick specifically and finding
+  no color came back, not assumed correct because a script ran without error). Colored and
+  cited, `liturgicalColorSource` noting the disambiguation.
+- **15 flagged as likely the SAME PERSON under two different id/name forms** -- a real content
+  question this project has apparently never specifically investigated (distinct from the closed
+  September work, which was about same-id collisions, not same-person-different-id ones):
+  `saint-wulfstan`/`wulfstan-of-worcester`, `saint-agnes`/`saint-agnes-of-rome`,
+  `saint-vincent`/`saint-vincent-of-saragossa`, `saints-timothy-and-titus`/`timothy-and-titus`,
+  `saint-ansgar`/`saint-ansgar-anskar` (Feb 3, alongside a genuinely separate `saint-blaise`),
+  `gregory-the-great-gregory-the-dialogist`/`saint-gregory-the-great`,
+  `damien-and-marianne-of-molokai`/`saint-damien-of-molokai`,
+  `saint-symeon`/`saint-symeon-kinsman-of-the-lord`,
+  `saint-athanasius`/`saint-athanasius-the-great`,
+  `saint-david-i-of-scotland`/`saint-david-of-scotland`,
+  `saint-basil-of-caesarea`/`saint-basil-the-great` (Jun 14, alongside a separate
+  `saint-methodius-i-of-constantinople`), `saint-augustine`/`saint-augustine-of-hippo`,
+  `saint-teresa-of-jesus`/`teresa-of-avila`, `crispin-and-crispinian`/`saints-crispin-and-
+  crispinian`, `saint-willibrord`/`willibrord-of-york`. NOT colored -- picking one of a likely
+  duplicate pair to receive a color implicitly picks a winner in a question nobody has actually
+  decided, which is exactly today's earlier Bartholomew/Advent-3/Stephen lesson applied to a
+  different shape of the same mistake.
+- **35 remain genuinely ambiguous** -- CPG's own name did not match any candidate cleanly
+  (several look like real mismatches worth a second look independent of color, e.g. "Aelred of
+  Rievaulx" against a candidate list of `aelred-of-hexham`/`benedict-biscop`/`saint-marguerite-
+  bourgeoys`, none of which is obviously Aelred of Rievaulx specifically). Not touched.
+
+### Verification
+
+`data/saints/sanctoral.json` re-parses as valid JSON. `node --check js/office-ui.js` clean
+(unchanged this entry). Live-verified against the real `SaintsResolver.js` for a genuinely
+confirmed resolved-by-name entry (Harriet Bedell, Jan 8: returns `color: 'white'` correctly,
+while the day's other candidate, George the Chozebite, correctly returns no color) -- the first
+verification attempt this entry tested Patrick (Mar 17) by mistake, which was actually in the
+unresolved bucket, and correctly came back with no color; re-verified against an entry actually
+confirmed resolved before reporting this as working.
+
+Total sanctoral entries now carrying a sourced `liturgicalColor`: 180 (98 from the prior entry +
+87 from this one, minus overlaps counted once; exact count checked directly against the file,
+not derived by arithmetic).
+

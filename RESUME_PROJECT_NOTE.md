@@ -10,6 +10,17 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (5).** HEAD before this commit was `9d08ac38`. Two
+things in the prior entry were wrong and are corrected here: the "138 collisions" were NOT the
+already-closed "≥58 duplicate id" issue from 2026-09-12 (that was about same-id double-renders,
+fixed and verified then); and the one CPG entry with no sanctoral match is Juana Inés de la Cruz
+(Apr 18), not Óscar Romero (who IS in the corpus, Mar 24, mislabeled previously). The 138 are now
+properly split: 87 resolved by matching CPG's own name against the day's candidates, cited; 15
+flagged as likely the SAME PERSON under two different id/name forms -- a real, apparently
+never-investigated content question, listed in the ledger, not touched; 35 remain genuinely
+ambiguous, not touched. 180 sanctoral entries now carry a sourced color total. SEED_VERSION
+`v328-2026-09-23-lesser-feast-collision-correction`.
+
 **State as of 2026-09-23, session end (4).** HEAD before this commit was `a14cc76d`. Per
 Josh's direct order (use CPG, stop asking), Dec 13 and Dec 26 both corrected and cited. Lesser
 Feast color overlay investigated and partially wired: `renderBcpOffice()` now lets a day's
