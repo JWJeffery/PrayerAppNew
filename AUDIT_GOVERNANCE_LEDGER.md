@@ -16382,3 +16382,60 @@ descriptions in that lane's own vocabulary, which is real content work, same aut
 BCP's. Borrowed-devotions consolidation and the four-drawers-into-one-element merger remain open
 from the prior entries. "Resume" (last-position memory) is explicitly out of scope per §5 itself --
 no persisted position exists yet to resume from.
+
+---
+
+## Session 2026-09-22 -- Phase 4 threshold corrected: rejected slice 3 rebuilt in the right
+## place (#mode-selection, not #tradition-entry), matching the real design source directly.
+## SEED_VERSION v315 -> v316.
+
+Josh rejected slice 3 on sight ("I hate that") for two real reasons: wrong visual style, and
+wrong content for a first-time visitor -- naming a specific office ("It is time for Evening
+Prayer") as the first thing shown presumes a context a brand-new user doesn't have. He then
+provided the actual original design proposal as a zip, containing a working HTML/CSS mockup
+(`Universal Office Redesign.dc.html`) rather than only a picture -- its own §4 build plan states
+plainly: "Phase 4 -- Replace #mode-selection with the threshold." This repo's own
+`UI_REDESIGN_HANDOFF.md`, a paraphrase written by an earlier agent, had already drifted from that
+exact line by the time this session read it -- the same document that mislabeled
+#tradition-entry as "the five-button mode grid" earlier the same session. Both errors share one
+root cause: trusting a paraphrase over the source it was paraphrasing.
+
+### The fix
+
+`#tradition-entry` reverted to its exact pre-slice-3 content. Diffed against the true
+pre-threshold baseline (`1bdd910`) to confirm the revert is byte-exact, not approximate.
+
+The threshold rebuilt in `#mode-selection` (the `universal` state) instead: a full-bleed
+background using `images/rood-screen.png` -- already present in this repo, confirmed
+byte-identical to the zip's own copy via md5sum -- with the mockup's exact filter values
+(`blur(2px) saturate(0.75) brightness(0.5)`) and radial-gradient overlay. Cormorant Garamond and
+IBM Plex Mono added to the Google Fonts `<link>` (Cinzel was already loaded). Timestamp, "It is
+the hour of X," description, and a properly-built bordered/glowing Begin button replace the
+rejected version's reuse of `.app-entry-family-card` -- a class built for an icon+title+
+description card, stripped to a single word, which is why it rendered as an empty gray box.
+
+The original five-card grid (Daily Office, Book of Needs, Bible Browser, Coptic Agpeya, Church of
+the East) is fully preserved -- every `onclick` handler byte-identical to baseline -- now living
+in `#uo-threshold-grid`, revealed by the threshold's "Another office" button rather than shown by
+default. "Praying tonight in" lists only the three traditions this grid actually offers
+(Anglican/BCP, Coptic/Agpeya, Church of the East/Hudra); the mockup's own list named two
+traditions (Roman/Liturgy of the Hours, Russian-Slavic/Horologion) this app doesn't list here --
+left out rather than overclaimed, consistent with Roman's existing exclusion-until-it-lands rule.
+
+### Verification
+
+Compared against the TRUE pre-threshold baseline (`1bdd910`), not against slice 3's own
+already-wrong baseline, to avoid verifying a fix against a compromised reference point: every
+`id=`, `name=`, `onchange=`, `onclick=` in `index.html`, and every top-level function name in
+`js/office-ui.js`, diffed identical except the five new ids
+(`uo-threshold`, `uo-threshold-description`, `uo-threshold-grid`, `uo-threshold-office-name`,
+`uo-threshold-timestamp`) and four new functions (`beginFromUoThreshold`,
+`showUoThresholdDefault`, `showUoThresholdGrid`, `updateUoThresholdDisplay`) this fix itself
+adds. `node --check` clean. `<div>`/`</div>` balanced (278/278).
+
+### Still open
+
+The same threshold treatment for Coptic, East Syriac, and Horologion -- `images/lane-coptic.webp`,
+`lane-byzantine.webp`, `lane-eastsyriac.webp` are already staged in this repo for exactly this.
+Borrowed-devotions consolidation and the four-drawers-into-one-element merger remain open,
+untouched by this fix.

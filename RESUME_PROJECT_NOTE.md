@@ -10,14 +10,23 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
-**State as of 2026-09-21 continued.** Fresh-clone HEAD at 2026-09-20 session start was `79d1203`;
-that session's last substantive feature commit was `02ccfa9`. Since then: `ecu-east-syriac-hours`
-retagged Byzantine Orthodox (§0/item 1b), the nav-architecture doc superseded on surface
-(§0/item 7), Phase 4 slices 1-2 (all four drawers regrouped I/II/III), and this commit —
-**Phase 4 slice 3: the threshold screen built for BCP.** `#uo-threshold` replaces the old
-"Where do you pray?" as the default `ask`-state view; the existing family-tree picker survives
-intact as the "Another office" destination. Framing line and office descriptions drafted by
-Claude, reviewed and edited by Josh before being written in. See §0/item 2 for full detail and
+**State as of 2026-09-22.** HEAD was `b827e90` (Phase 4 slice 3). Josh rejected slice 3's
+threshold outright on sight ("I hate that") — wrong visual style, and wrong screen entirely: it
+replaced content on `#tradition-entry` (the `ask` state, "Where do you pray?"), presuming a
+specific office ("It is time for Evening Prayer") in front of someone who hadn't even said who
+they are yet. **This commit is the fix, not just documentation.** Josh then provided the actual
+original design source — a zip containing `Universal Office Redesign.dc.html`, a pixel-precise
+HTML/CSS mockup, not just a picture — and its own build plan (§4) states plainly: **"Phase 4 —
+Replace `#mode-selection` with the threshold,"** not `#tradition-entry`. That single line resolves
+everything: `#tradition-entry` has been reverted to its original, untouched content (the
+Western/Eastern/"I'm not sure" family-tree picker is exactly right for a true first-time visitor
+and was never supposed to be touched); the threshold — "It is the hour of X," full-bleed
+`rood-screen.png` background, Cinzel/Cormorant Garamond/IBM Plex Mono type, a real bordered Begin
+button — now lives in `#mode-selection`, the `universal` state, where a person has already opted
+into browsing/comparing traditions and "it is the hour of Compline, praying tonight in three
+traditions" is genuinely appropriate context rather than presumptuous. See §0/item 2 for full
+detail, exact CSS values used, and what's still owed (the other three lanes' own threshold
+treatments, still using this same design source).
 what's still open (the same threshold treatment for the other three lanes, borrowed-devotions
 consolidation, sidebar deletion/merger). SEED_VERSION `v315-2026-09-21-phase4-threshold`
 — trust none of these at face value; see the FIRST MOVE
@@ -89,7 +98,7 @@ confirmation.**
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
 | 3 — Anglican lane emits the envelope | **done and confirmed in the browser (2026-09-20)** — see below |
-| 4 — threshold and Office Settings | **in progress** — threshold built (BCP only), all four drawers regrouped I/II/III; consolidation and the other 3 lanes' threshold text still open, see §0 item 2 |
+| 4 — threshold and Office Settings | **in progress** — threshold rebuilt in the correct place (`#mode-selection`) matching the real design source; ask-state `#tradition-entry` reverted untouched; all four drawers regrouped I/II/III; consolidation and the other 3 lanes' threshold text still open, see §0 item 2 |
 | 5 — the other three lanes | not started |
 | 6 — delete the old skin | **partly brought forward**, see the demolition note below |
 
@@ -308,6 +317,54 @@ skin and old theme behaviour. That is what fixed the dark splash.
    already have their own clock-to-hour functions, so the mechanism exists; the text does not,
    same authorship-boundary reasoning as above). "Resume" (last-position memory) is explicitly
    deferred per §5 itself — no persisted position exists yet.
+
+   **CORRECTED 2026-09-22 — slice 3 was rejected and rebuilt in the right place.** Josh rejected
+   the above on sight: wrong visual style (built without checking the real design source first),
+   and wrong screen (naming a specific office as the first thing a true first-time visitor sees
+   is presumptuous — his direct words, and correct). Josh then provided the actual original design
+   proposal as a zip — `Universal Office Redesign.dc.html`, a working, pixel-precise HTML/CSS
+   mockup, not just a picture. **Its §4 build plan states plainly: "Phase 4 — Replace
+   `#mode-selection` with the threshold."** Not `#tradition-entry`. This repo's own
+   `UI_REDESIGN_HANDOFF.md` — a paraphrase written by an earlier agent — had already drifted from
+   that exact instruction by the time this session read it, the same way it mislabeled
+   `#tradition-entry` as "the five-button mode grid" earlier this same session. **Lesson: for any
+   further shell-v2 visual work, check the original zip directly — do not trust
+   `UI_REDESIGN_HANDOFF.md`'s prose for specifics it could have drifted on.**
+
+   Fixed: `#tradition-entry` reverted to its exact pre-slice-3 content — the family-tree picker is
+   correct as-is for a first-time visitor and was never supposed to be touched. The threshold now
+   lives in `#mode-selection` (the `universal` state) instead, where "it is the hour of Compline,
+   praying tonight in three traditions" is honest context for someone who already opted into
+   cross-tradition browsing, not a presumption sprung on a stranger. Visual style rebuilt from the
+   mockup's actual CSS values, not approximated: full-bleed `images/rood-screen.png` (already
+   sitting unused in this repo, confirmed byte-identical to the zip's copy via md5sum before
+   slice 3 was even rejected), `blur(2px) saturate(0.75) brightness(0.5)` plus a radial-gradient
+   dark overlay, Cinzel/Cormorant Garamond/IBM Plex Mono (the latter two newly added to the Google
+   Fonts `<link>`), and a real bordered/glowing Begin button — the rejected version had reused
+   `.app-entry-family-card`, a class built for an entirely different kind of card, and rendered as
+   an empty flat gray box.
+
+   The five-card grid (Daily Office / Book of Needs / Bible Browser / Coptic Agpeya / Church of
+   the East) is fully preserved, every `onclick` untouched, now living in `#uo-threshold-grid`,
+   revealed by the threshold's "Another office" button. "Praying tonight in" lists only the three
+   traditions this app actually offers today (Anglican/BCP, Coptic/Agpeya, Church of the
+   East/Hudra) — the mockup's own list included Roman/Liturgy of the Hours and Russian-Slavic/
+   Horologion, neither of which this grid currently offers (Roman is explicitly excluded from
+   listing until it lands, per governance rule 9; Horologion isn't a grid entry here) — so those
+   two were left out rather than overclaimed.
+
+   Verified against the TRUE pre-threshold baseline (`1bdd910`, before slice 3 ever touched
+   anything) rather than against slice 3's own already-wrong baseline: every `id=`, `name=`,
+   `onchange=`, `onclick=` in `index.html` and every top-level function in `js/office-ui.js`
+   diffed identical, with only the five new ids and two new onclick handlers this fix actually
+   adds showing up as new. `node --check` clean. Div tags balanced.
+
+   Still open, unchanged: the same threshold treatment for Coptic, East Syriac, and Horologion —
+   each needs its own framing line and description text, and now also its own correctly-placed
+   screen once their own entry paths are worked out (`images/lane-coptic.webp`,
+   `lane-byzantine.webp`, `lane-eastsyriac.webp` are already staged in this repo for exactly this,
+   confirmed present alongside the rood-screen asset). Borrowed-devotions consolidation and the
+   four-drawers-into-one-element merger remain open from earlier entries, untouched by this fix.
 3. **Emitters for Coptic, East Syriac, Horologion.** Those three lanes still show the rail
    placeholder, which is correct and not a fault. Horologion goes LAST: it already emits
    `{tradition, officeKey, date, title, status, sections, diagnostics}` with a validator that

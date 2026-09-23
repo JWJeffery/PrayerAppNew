@@ -26,38 +26,7 @@
 
 <section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title">
     <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-entry" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
-
-    <!-- Phase 4 threshold (UI_REDESIGN_HANDOFF.md §5), added 2026-09-21. Replaces the ask-state
-         entry point per §3.5 -- verified against initializeEntryRouting()/showTraditionEntry()
-         that #tradition-entry, not #mode-selection, is the actual ask-state screen; #mode-selection
-         (the true five-button grid) serves the separate 'universal' state and is untouched.
-         The existing family-tree picker below (#entry-family-grid etc.) is NOT removed -- it is
-         "Another office" per §5 ("the list of traditions is cut ... Another office already
-         carries the function"), hidden by default and revealed only on that click, so all of its
-         existing, carefully-fixed routing logic (unknown/anglican/church-of-the-east/etc., via the
-         single delegated handleTraditionEntryClick listener) keeps working unchanged.
-         Framing line and one-sentence descriptions: drafted by Claude, reviewed and approved by
-         Josh 2026-09-21 (framing line edited by Josh from "It is the hour of" to "It is time
-         for" -- Morning Prayer etc. are BCP offices, not hours; that vocabulary belongs to the
-         other three lanes). Text lives in BCP_THRESHOLD_OFFICE_TEXT in js/office-ui.js. -->
-    <div id="uo-threshold" class="app-uo-threshold">
-        <div class="app-entry-kicker">The Universal Office</div>
-        <div id="uo-threshold-timestamp" style="font-family:'Cinzel',serif; font-size:0.85em; letter-spacing:0.08em; color:#a89878; margin-bottom:6px;">&nbsp;</div>
-        <p style="font-family:'IM Fell English',serif; font-size:1.1em; color:#c8bfa8; margin:0 0 2px;">It is time for</p>
-        <h1 id="uo-threshold-office-name" style="font-family:'Cinzel',serif; font-size:88px; line-height:1.05; margin:0 0 10px; color:var(--gold);">&nbsp;</h1>
-        <p id="uo-threshold-description" style="font-family:'IM Fell English',serif; font-size:0.95em; color:#a89878; margin:0 0 18px; max-width:420px;">&nbsp;</p>
-
-        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
-            <button type="button" id="uo-threshold-begin" class="app-entry-family-card" style="min-width:220px;" onclick="beginFromUoThreshold()">
-                <span><strong>Begin</strong></span>
-            </button>
-            <button type="button" id="uo-threshold-another" onclick="showUoThresholdAnotherOffice()" style="background:none; border:none; color:#a89878; font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:6px;">Another office</button>
-            <button type="button" data-entry-tradition="unknown" style="background:none; border:none; color:#7a7060; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; padding:4px; opacity:0.75;">I'm not sure</button>
-            <button type="button" onclick="openBookOfNeedsForActiveOffice()" style="background:none; border:none; color:#7a7060; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; padding:4px; opacity:0.6;">Book of Needs</button>
-        </div>
-    </div>
-
-    <div id="uo-threshold-another-panel" hidden aria-hidden="true">
+    <div class="app-entry-kicker">The Universal Office</div>
     <h1 id="tradition-entry-title">Where do you pray?</h1>
     <p class="app-entry-lede">Choose the Christian family you pray within. The app will remember your path and open there by default.</p>
 
@@ -150,14 +119,54 @@
             </span>
         </button>
     </div>
-    </div><!-- /uo-threshold-another-panel -->
-
     </section>
 
 <div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">
+
+    <!-- Phase 4 threshold (UI_REDESIGN_HANDOFF.md §4, "Replace #mode-selection with the
+         threshold"), rebuilt 2026-09-22 against the actual design source (a zip Josh provided
+         containing Universal Office Redesign.dc.html, section #1c) rather than this repo's prose
+         paraphrase of it, which had already drifted on which screen this replaces. Background,
+         type, and button styling below are taken directly from that source's exact CSS values,
+         not approximated. The five-card grid below is preserved in full (every onclick
+         untouched) as the "Another office" destination, matching the mockup's own "the list of
+         traditions is cut ... Another office already carries the function." -->
+    <div id="uo-threshold" style="position:relative; min-height:100vh; overflow:hidden; background:#06050a; color:#e6dcc4; font-family:'Cormorant Garamond',Georgia,serif;">
+        <div style="position:absolute; inset:0; background-image:url('images/rood-screen.png'); background-size:cover; background-position:center 40%; filter:blur(2px) saturate(0.75) brightness(0.5);"></div>
+        <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 34% 46%, rgba(10,8,16,0.55) 0%, rgba(6,5,10,0.93) 62%, #040307 100%);"></div>
+
+        <label class="app-dark-toggle" style="position:relative; z-index:1;"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
+
+        <div style="position:relative; padding:90px 60px 70px 92px; max-width:640px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6);">THE UNIVERSAL OFFICE</div>
+            <div id="uo-threshold-timestamp" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.6); margin-top:8px; margin-bottom:22px;">&nbsp;</div>
+            <div style="font-family:'Cinzel',serif; font-size:19px; letter-spacing:0.3em; color:rgba(230,220,196,0.6); text-transform:uppercase; margin-bottom:14px;">It is the hour of</div>
+            <div id="uo-threshold-office-name" style="font-family:'Cinzel',serif; font-size:88px; line-height:0.94; letter-spacing:0.04em; color:#e8d9b0; text-transform:uppercase;">&nbsp;</div>
+            <div id="uo-threshold-description" style="font-size:25px; line-height:1.6; color:rgba(230,220,196,0.72); margin-top:22px; max-width:520px;">&nbsp;</div>
+
+            <div style="display:flex; gap:16px; margin-top:40px;">
+                <button type="button" onclick="beginFromUoThreshold()" style="border:1px solid rgba(201,168,76,0.75); background:rgba(201,168,76,0.1); padding:16px 38px; font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.2em; color:#e8d9b0; text-transform:uppercase; box-shadow:0 0 30px rgba(201,168,76,0.14); cursor:pointer;">Begin</button>
+                <button type="button" onclick="showUoThresholdGrid()" style="border:1px solid rgba(201,168,76,0.25); background:none; padding:16px 30px; font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.2em; color:rgba(230,220,196,0.65); text-transform:uppercase; cursor:pointer;">Another office</button>
+            </div>
+
+            <div style="margin-top:54px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:14px;">PRAYING TONIGHT IN</div>
+                <div style="display:flex; flex-wrap:wrap; gap:10px 26px; font-size:21px; color:rgba(230,220,196,0.66);">
+                    <span>Anglican&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;BCP</span>
+                    <span>Coptic&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Agpeya</span>
+                    <span>Church of the East&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Hudra</span>
+                </div>
+            </div>
+
+            <div style="margin-top:30px;">
+                <button type="button" onclick="openUniversalBookOfNeeds()" style="background:none; border:none; color:rgba(230,220,196,0.4); font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; padding:4px 0;">Book of Needs</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="uo-threshold-grid" hidden aria-hidden="true">
     <div class="app-mode-kicker">Universal Office Selector</div>
     <h1>The Universal Office</h1>
-    <label class="app-dark-toggle"><input type="checkbox" id="toggle-dark-splash" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()"> Dark Mode</label>
     <div class="app-mode-grid" aria-label="Choose a mode">
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
             <span class="app-mode-icon">☩</span>
@@ -216,6 +225,7 @@
         </button>
 
     </div>
+    </div><!-- /uo-threshold-grid -->
 
     <section id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true" aria-labelledby="user-profile-defaults-title">
         <div class="app-profile-defaults-copy">

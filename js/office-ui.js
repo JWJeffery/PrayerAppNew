@@ -1270,17 +1270,23 @@ function showEntrySurface(container) {
     container.style.display = '';
 }
 
-// ── The threshold (Phase 4, UI_REDESIGN_HANDOFF.md §5), added 2026-09-21 ────────────────────
-// Reuses the existing per-lane clock-to-hour functions and the existing BCP office label
-// table (SHARED_OFFICE_NAVIGATOR_CONFIGS.daily.options) rather than inventing a new,
-// tradition-neutral hour vocabulary -- BCP is already the app's governed default lane
-// ("I'm not sure" -> Anglican, §3 rule 4), so the threshold simply speaks that lane's
-// language one screen earlier. SHARED_OFFICE_NAVIGATOR_CONFIGS is defined further down this
-// file but already initialized by the time DOMContentLoaded fires updateUoThresholdDisplay().
-// Threshold framing line and one-sentence descriptions, per BCP office. Drafted by Claude,
-// reviewed and approved by Josh 2026-09-21. The framing line reads "It is time for" (Josh's
-// edit from an earlier "It is the hour of" draft -- BCP calls these offices, not hours; "hour"
-// belongs to the other three lanes' own vocabulary, not BCP's).
+// ── The threshold (Phase 4, UI_REDESIGN_HANDOFF.md §4/§5), rebuilt 2026-09-22 ───────────────
+// CORRECTED 2026-09-22: the original build (2026-09-21) put this in #tradition-entry (the ask
+// state -- "Where do you pray?"). Checked against the actual design source Josh provided (a zip
+// with the real mockup, not just this repo's prose paraphrase of it): §4's Phase 4 build plan
+// says explicitly "Replace #mode-selection with the threshold" -- the universal state (someone
+// who already chose to browse/compare traditions), not the ask state (a first-time visitor who
+// hasn't said who they are yet). Naming a specific office as the first thing a brand-new visitor
+// sees was the actual root of Josh's complaint ("It shouldn't be screaming 'It is time for
+// Evening Prayer'") -- #tradition-entry has been reverted to its original content untouched;
+// this lives in #mode-selection instead, where "It is the hour of X, praying tonight in five
+// traditions" is genuinely appropriate context, not presumptuous.
+//
+// Visual style also rebuilt from the source mockup directly (Universal Office Redesign.dc.html,
+// section #1c) rather than approximated: full-bleed rood-screen.png background (blurred,
+// darkened, exact filter/gradient values below), Cinzel/Cormorant Garamond/IBM Plex Mono type,
+// a real bordered Begin button (the rejected version reused .app-entry-family-card, a class
+// built for a different kind of card, and rendered as an empty flat gray box).
 const BCP_THRESHOLD_OFFICE_TEXT = {
     "morning-office":  "Psalms, the reading of Scripture, and the canticles of morning.",
     "noonday-office":  "A brief pause in the day's work, kept with psalms and a short reading.",
@@ -1296,7 +1302,7 @@ function updateUoThresholdDisplay() {
 
     const tsEl = document.getElementById('uo-threshold-timestamp');
     if (tsEl) {
-        tsEl.textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })
+        tsEl.textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).toUpperCase()
             + ' · ' + now.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
     }
     const nameEl = document.getElementById('uo-threshold-office-name');
@@ -1307,32 +1313,25 @@ function updateUoThresholdDisplay() {
 }
 
 function beginFromUoThreshold() {
-    // No office needs to be forced here: selectMode('daily') already calls
-    // initializeOfficeDefaultsForCurrentDateTime('daily'), which recomputes
-    // _defaultDailyOfficeForCurrentTime() itself and checks the matching radio --
-    // the same function this threshold used to compute what it displayed. An
-    // earlier version of this function tried to pass the value through
-    // window._forcedOfficeId; that variable is unconditionally reset to undefined
-    // at the top of selectMode() (checked directly in the source before removing
-    // this), so it never reached initializeOfficeDefaultsForCurrentDateTime() and
-    // was also simply unnecessary.
+    // selectMode('daily') already calls initializeOfficeDefaultsForCurrentDateTime('daily'),
+    // which recomputes _defaultDailyOfficeForCurrentTime() itself and checks the matching radio
+    // -- the same function this threshold used to compute what it displayed. No value needs to
+    // be forced through.
     selectMode('daily');
 }
 
-function showUoThresholdAnotherOffice() {
+function showUoThresholdGrid() {
     const threshold = document.getElementById('uo-threshold');
-    const anotherPanel = document.getElementById('uo-threshold-another-panel');
+    const grid = document.getElementById('uo-threshold-grid');
     if (threshold) { threshold.hidden = true; threshold.setAttribute('aria-hidden', 'true'); }
-    if (anotherPanel) { anotherPanel.hidden = false; anotherPanel.removeAttribute('aria-hidden'); }
-    selectTraditionFamily(null);
+    if (grid) { grid.hidden = false; grid.removeAttribute('aria-hidden'); }
 }
 
-function resetUoThresholdToDefault() {
+function showUoThresholdDefault() {
     const threshold = document.getElementById('uo-threshold');
-    const anotherPanel = document.getElementById('uo-threshold-another-panel');
+    const grid = document.getElementById('uo-threshold-grid');
     if (threshold) { threshold.hidden = false; threshold.removeAttribute('aria-hidden'); }
-    if (anotherPanel) { anotherPanel.hidden = true; anotherPanel.setAttribute('aria-hidden', 'true'); }
-    updateUoThresholdDisplay();
+    if (grid) { grid.hidden = true; grid.setAttribute('aria-hidden', 'true'); }
 }
 
 function showTraditionEntry() {
@@ -1349,7 +1348,6 @@ function showTraditionEntry() {
     document.body.classList.remove('roman-breviary-dev-mode');
 
     selectTraditionFamily(null);
-    resetUoThresholdToDefault();
 }
 
 // FIXED 2026-09-02, found while diagnosing a real report: Josh forced showTraditionEntry()
@@ -1390,6 +1388,9 @@ function showUniversalModeSelection(persistDefault = false) {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+
+    updateUoThresholdDisplay();
+    showUoThresholdDefault();
 }
 
 
