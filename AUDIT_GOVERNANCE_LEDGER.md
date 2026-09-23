@@ -16638,3 +16638,24 @@ agreed text was never written into the repo or this ledger; it is pending Josh r
 Text-only change to two existing elements: no ids, attributes, handlers or elements added or
 removed. No JS or CSS touched, so no cache-bust change is needed.
 
+---
+
+## Session 2026-09-23 continued -- per-lane threshold descriptions recorded in the repo.
+## SEED_VERSION v322 -> v323.
+
+The Coptic, East Syriac and Horologion threshold descriptions were agreed with Josh in the
+2026-09-22 session, but that session never wrote them into the repo, this ledger or the resume
+note. **Conduct note: a decision Josh made was lost because it was not encoded when it was made.**
+Josh re-supplied the text verbatim on 2026-09-23. It is now stored in `js/office-ui.js` as
+`COPTIC_THRESHOLD_OFFICE_TEXT`, `EAST_SYRIAC_THRESHOLD_OFFICE_TEXT` and
+`HOROLOGION_THRESHOLD_OFFICE_TEXT`, directly after `BCP_THRESHOLD_OFFICE_TEXT`, keyed by each
+lane's existing `SHARED_OFFICE_NAVIGATOR_CONFIGS` option values (every key checked against the
+config; all 7 Coptic, 5 East Syriac and 14 Horologion values match). Josh gave one line for the
+four Interhours; it is stored under each of the four keys. Coptic's `coptic-theotokia` option has
+no threshold text, as supplied.
+
+Stored, not wired: these lanes have no threshold screen yet. Wiring them is Phase 4 work. The text
+is Josh's and is not to be reworded.
+
+Verification: `node --check js/office-ui.js` clean; `office-ui.js` cache-bust bumped 293 -> 294.
+

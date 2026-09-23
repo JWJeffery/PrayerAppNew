@@ -18,10 +18,11 @@ the mockup's line and lost it), and "PRAYING TONIGHT IN" changed to **"PRAYING I
 "Praying in" block is a static hand-written list in the markup, copied from the mockup and trimmed
 to three traditions. It is NOT CSS bleed-through, which is what the previous session wrongly told
 Josh. **Still to confirm:** whether a hard refresh still flashes the old "Where do you pray?"
-screen (the 2026-09-22 entry-flash fix). **Waiting on Josh:** the threshold framing line and
-descriptions for Coptic, East Syriac and Horologion were agreed in the 2026-09-22 session but never
-written into the repo. Do not redraft them; ask Josh to paste the agreed text. SEED_VERSION
-`v322-2026-09-23-threshold-wording`.
+screen (the 2026-09-22 entry-flash fix). **Per-lane threshold descriptions are now in the repo**
+(`COPTIC_/EAST_SYRIAC_/HOROLOGION_THRESHOLD_OFFICE_TEXT` in `js/office-ui.js`, Josh's text verbatim,
+stored but not yet wired). They were agreed 2026-09-22 and lost because that session never encoded
+them; encode Josh's decisions in the same turn he makes them. SEED_VERSION
+`v323-2026-09-23-lane-threshold-text-recorded`.
 
 **State as of 2026-09-22 continued (3), SESSION STOPPED HERE — 91% token budget.** HEAD is
 `4728399` (entry-flash fix), pushed and confirmed live via fresh clone. Josh confirmed the

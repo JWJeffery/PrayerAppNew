@@ -1294,6 +1294,45 @@ const BCP_THRESHOLD_OFFICE_TEXT = {
     "compline-office": "The last office of the day, kept with psalms before sleep.",
 };
 
+// Threshold descriptions for the other three lanes. Text agreed with Josh in the 2026-09-22
+// session and supplied verbatim by him 2026-09-23 (it had not been written into the repo).
+// Keyed by each lane's own SHARED_OFFICE_NAVIGATOR_CONFIGS option values. NOT YET WIRED: those
+// lanes have no threshold screen yet. Do not reword; these are Josh's text, not engineering copy.
+const COPTIC_THRESHOLD_OFFICE_TEXT = {
+    "coptic-morning-office":  "Psalms, the Trisagion prayers, and the Gospel of the Resurrection.",
+    "coptic-third-hour":      "Psalms and the Trisagion prayers, with the hour's own troparia.",
+    "coptic-sixth-hour":      "Psalms and the Trisagion prayers, with the hour's own troparia.",
+    "coptic-ninth-hour":      "Psalms and the Trisagion prayers, with the hour's own troparia.",
+    "coptic-eleventh-hour":   "Psalms, the Trisagion prayers, and Vouchsafe, O Lord.",
+    "coptic-twelfth-hour":    "Psalms, the Prayer of Esaias, and the Litany of the Twelfth Hour.",
+    "coptic-midnight-office": "Psalms kept across three watches, each with its own troparion.",
+};
+
+const EAST_SYRIAC_THRESHOLD_OFFICE_TEXT = {
+    "sapra":  "Psalms, the Lakhumara, and the Tishbukhta of praise.",
+    "endana": "A short office of psalms and prayer, kept only during the Great Fast.",
+    "ramsha": "Psalms 141, 142, and 119, the Lakhumara, and the Karuzutha.",
+    "lelya":  "The weekday Qaltha and Shubakha, kept through the watches of the night.",
+    "subaa":  "Psalms and the Karuzutha, closing the day's prayer.",
+};
+
+const HOROLOGION_THRESHOLD_OFFICE_TEXT = {
+    "vespers":          "The Evening Office \u2014 psalmody, the Litany, and the Evening Hymn.",
+    "small-compline":   "The shorter night office, appointed for ordinary weekdays.",
+    "great-compline":   "The solemn night office of Great Lent and the eves of Nativity and Theophany.",
+    "midnight-office":  "Kept at the midnight hour, before Orthros on solemn occasions.",
+    "orthros":          "The Morning Office \u2014 psalmody, the Canon, and the Great Doxology.",
+    "first-hour":       "Fixed psalmody (Psalms 5, 89, 100) and the Trisagion prayers.",
+    "third-hour":       "Fixed psalmody (Psalms 16, 24, 50) and the Trisagion prayers.",
+    "sixth-hour":       "Fixed psalmody (Psalms 53, 54, 90) and the Trisagion prayers.",
+    "ninth-hour":       "Fixed psalmody (Psalms 83, 84, 85) and the Trisagion prayers.",
+    "typika":           "The Reader's Office, kept in place of the Liturgy when none is celebrated.",
+    "interhour-first":  "Three psalms and the Trisagion, appended in monastic practice.",
+    "interhour-third":  "Three psalms and the Trisagion, appended in monastic practice.",
+    "interhour-sixth":  "Three psalms and the Trisagion, appended in monastic practice.",
+    "interhour-ninth":  "Three psalms and the Trisagion, appended in monastic practice.",
+};
+
 function updateUoThresholdDisplay() {
     const now = new Date();
     const officeValue = _defaultDailyOfficeForCurrentTime(now);
