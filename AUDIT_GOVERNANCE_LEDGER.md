@@ -17071,3 +17071,28 @@ one ANG entry each with the correct color; the two same-id rows at OTHER dates (
 Jan 1 Basil) directly confirmed still present in the file, tags unchanged, untouched by the
 (id, month, day)-scoped deletion.
 
+---
+
+## Session 2026-09-23 continued -- saint-agnes conformed to LFF 2024's actual Jan 21 entry,
+## per Josh's direct instruction. SEED_VERSION v329 -> v330.
+
+`saint-agnes`'s own `ruleSource` already quoted LFF 2024's real heading -- "Agnes and Cecilia of
+Rome, Martyrs, 304 and c. 230" -- but `name` and `description` were never updated to match; they
+still read "Saint Agnes" / "Virgin and martyr." alone, Cecilia absent from the content itself
+even though the citation named her. Read LFF's fuller entry (pp.49-50: the biographical note and
+the collect itself, both headed "Agnes and Cecilia of Rome") to confirm the joint form is LFF's
+actual, consistent usage, not a one-line anomaly, before changing anything.
+
+**Changed:** `name` "Saint Agnes" -> "Agnes and Cecilia of Rome" (LFF's own heading, verbatim);
+`description` "Virgin and martyr." -> "Virgins and martyrs, 304 and c. 230." `id`, `tags`
+(`ANG` only), and `observance` (Jan 21, fixed) untouched -- scope is content only, matching what
+was actually wrong. `saint-agnes-of-rome` (the separate LAT/OOR row) is NOT touched: this fix is
+specifically LFF/TEC conformance, and the Roman Martyrology observes Agnes and Cecilia on
+separate days, so extending this change to that row would be applying TEC's calendar decision to
+a tradition it doesn't govern.
+
+### Verification
+
+Valid JSON confirmed. Live-checked against the real `SaintsResolver.js`: Jan 21 2026, ANG scope,
+returns exactly the one updated entry with the corrected name and description.
+

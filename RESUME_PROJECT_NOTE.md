@@ -10,6 +10,15 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (7).** HEAD before this commit was `16d470e2`.
+`saint-agnes` conformed to LFF 2024's actual Jan 21 entry per Josh's direct instruction: its own
+`ruleSource` already quoted "Agnes and Cecilia of Rome, Martyrs, 304 and c. 230," but `name`/
+`description` never matched it. Now read "Agnes and Cecilia of Rome" / "Virgins and martyrs, 304
+and c. 230." -- LFF's own heading, verbatim, checked against the fuller entry (pp.49-50) before
+writing it. `saint-agnes-of-rome` (LAT/OOR) deliberately untouched -- Rome observes Agnes and
+Cecilia separately; this is a TEC/LFF-specific fix, not a universal one. SEED_VERSION
+`v330-2026-09-23-agnes-cecilia-conformed-to-lff`.
+
 **State as of 2026-09-23, session end (6).** HEAD before this commit was `8ae06304`. The 15
 flagged same-person pairs checked individually against LFF 2024, not left as a number. **11 are
 not bugs** -- each is one tradition's own wording for a shared figure, same design already used
