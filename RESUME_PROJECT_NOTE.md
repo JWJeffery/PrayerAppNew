@@ -10,6 +10,17 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end.** HEAD before this commit was `3e46632`. All four
+threshold items from the previous entry are now confirmed on Josh's own screen: Coptic (Third
+Hour) and East Syriac (Sapra) thresholds show correct office/description, reachable from the
+grid's Coptic card, Begin opens the right office at the right hour, Another Office returns to
+the grid. **One thing changed after Josh saw it rendered:** he reversed his own earlier framing
+call -- Coptic and Horologion no longer say "It is the hour of" (his words: "just dumb", since
+the office name already contains "Hour"). All four lanes now read "It is time for" uniformly.
+Horologion itself wasn't separately screenshotted (no grid card for it -- see prior entry), but
+shares the identical code path as the two lanes that were confirmed. SEED_VERSION
+`v325-2026-09-23-lane-threshold-framing-unified`.
+
 **State as of 2026-09-23 continued.** HEAD before this commit was `bfe85cc`. Coptic, East
 Syriac, and Horologion now get the same threshold screen BCP has -- "It is the hour of X"
 (Coptic, Horologion) or "It is time for X" (East Syriac) -- instead of dropping straight into

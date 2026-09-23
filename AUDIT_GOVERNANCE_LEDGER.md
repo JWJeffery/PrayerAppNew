@@ -16723,3 +16723,36 @@ on-screen behavior (Coptic/East Syriac/Horologion thresholds appearing, correct 
 description, Begin routing to the right lane, Another Office returning to the grid) has NOT been
 visually confirmed and needs Josh's own screen.
 
+---
+
+## Session 2026-09-23 continued -- lane threshold framing unified to "It is time for" across
+## all four lanes, reversing Josh's own earlier call the same session. SEED_VERSION v324 -> v325.
+
+Josh's first ruling this session (recorded in the v323->v324 entry above) split the framing line
+by hour-based vocabulary: "It is the hour of" for Coptic and Horologion, "It is time for" for
+East Syriac and BCP. Seeing it rendered on screen (Coptic's Third Hour: "It is the hour of THE
+THIRD HOUR"), Josh called it "just dumb" -- the office name already contains "Hour", so the
+framing line repeats itself. He then pointed to East Syriac's screen ("It is time for SAPRA")
+twice as the version he wanted instead. `LANE_THRESHOLD_CONFIG` in `js/office-ui.js` changed:
+Coptic and Horologion's `framing` value changed from `"It is the hour of"` to `"It is time for"`.
+All four lanes (BCP, Coptic, East Syriac, Horologion) now read "It is time for" uniformly. No
+other change; the office-name/description logic, Begin/Another Office wiring, and everything
+else from the v324 entry is untouched. `js/office-ui.js` cache-bust bumped 295 -> 296.
+
+### Verification, all four items from the v324 entry now confirmed on Josh's own screen (this
+was the missing piece last entry flagged -- no headless browser here, so this only happens when
+Josh looks at it):
+1. Coptic (Third Hour) and East Syriac (Sapra) thresholds both confirmed showing the right
+   office name and description before dropping into the office view.
+2. Reached via the "Another office" grid's Coptic Agpeya card -- confirmed.
+3. Begin from the Coptic Third-Hour threshold opened the actual Coptic Agpeya office view, at
+   the Third Hour specifically (screenshot: sidebar radio on "The Third Hour / Terce", page
+   headed "The Third Hour (Agpeya)") -- confirmed.
+4. Another Office from a lane threshold returns to the 5-card grid -- confirmed by Josh directly
+   (not re-screenshotted).
+
+Horologion's threshold was not separately screenshotted this session (no grid card for it, per
+the v324 entry's "deliberately out of scope" note -- its only entry point is Eastern Christian ->
+Eastern Orthodoxy in `#tradition-entry`), but it uses the exact same `LANE_THRESHOLD_CONFIG` path
+as Coptic and East Syriac, both of which are now confirmed.
+

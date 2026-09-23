@@ -1336,15 +1336,16 @@ const HOROLOGION_THRESHOLD_OFFICE_TEXT = {
 // Lane thresholds (2026-09-23). Each entry tells updateUoThresholdDisplay() and
 // showLaneThreshold() everything they need for one lane: which SHARED_OFFICE_NAVIGATOR_CONFIGS
 // key holds its office labels, how to compute which office is due right now, which text table
-// holds its descriptions, and which framing line runs above the office name. The framing-line
-// choice is Josh's own liturgical call (2026-09-23): Coptic and Horologion are hour-based
-// ("It is the hour of"), matching the vocabulary in his own tables (Third Hour, Sixth Hour,
-// Ninth Hour, etc.); East Syriac is not on an hour system, so it takes BCP's "It is time for".
-// selectMode('daily') has no entry here -- BCP keeps its own original code path below unchanged.
+// holds its descriptions, and which framing line runs above the office name. Josh's first call
+// (2026-09-23) split this by hour-based vocabulary -- "It is the hour of" for Coptic/Horologion,
+// "It is time for" for East Syriac. Seeing it rendered, he reversed that the same session: "It
+// is the hour of THE THIRD HOUR" repeats itself (the office name already contains "Hour"), so
+// all three lanes now read "It is time for", matching BCP. selectMode('daily') has no entry
+// here -- BCP keeps its own original code path below unchanged.
 const LANE_THRESHOLD_CONFIG = {
     "coptic-agpeya": {
         configKey: "coptic",
-        framing: "It is the hour of",
+        framing: "It is time for",
         textTable: COPTIC_THRESHOLD_OFFICE_TEXT,
         currentOfficeValue: () => _defaultCopticHourForCurrentTime(new Date()),
     },
@@ -1356,7 +1357,7 @@ const LANE_THRESHOLD_CONFIG = {
     },
     "horologion": {
         configKey: "horologion",
-        framing: "It is the hour of",
+        framing: "It is time for",
         textTable: HOROLOGION_THRESHOLD_OFFICE_TEXT,
         currentOfficeValue: () => _defaultHorologionOfficeForCurrentTime(new Date()),
     },
