@@ -1295,3 +1295,226 @@ body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
 @media print {
     body.shell-v2 dialog.uo-drawer { display: none !important; }
 }
+
+
+/* ===========================================================================
+   ENTRY & UNIVERSAL SELECTOR SCREENS -- 2026-09-24, per Josh's direct request.
+
+   #tradition-entry ("Where do you pray?") and #mode-selection's own
+   #uo-threshold-grid ("Another office") had never been touched by this
+   redesign -- Phase 1-5 all stayed "off the office screen nothing changes"
+   (see the DEMOLITION comment far above). They still used the pre-redesign
+   parchment card system (rounded cards, drop shadows, gold-gradient icon
+   circles), so they were the one place in the app that still looked like a
+   different product from the office view they lead into -- Josh's own words:
+   "it looks very different from everything we've redesigned... very much
+   out of place."
+
+   SCOPE NOTE: this deliberately widens that "off the office screen" boundary
+   for these two screens ONLY, on Josh's direct instruction. Nothing else
+   outside the office screen (splash proper, Book of Needs, Bible Browser,
+   admin) is touched.
+
+   Restyled using the SAME flat, hairline-bordered component language
+   .uo-drawer-office already established just above (III · How you keep it),
+   not a new pattern -- per handoff §7's own governing rule: "no rounded
+   cards, no drop shadows on the page, no borders around prayer. Hairlines
+   and light do the separating."
+
+   REGROUPED, in index.html: Book of Needs and Bible Browser are tools, not
+   prayer traditions, and were previously indistinguishable cards in the same
+   5-card grid as Daily Office/Coptic Agpeya/Church of the East -- Josh's own
+   words, "the bible browser and book of needs do not answer the 'where do
+   you pray' question... it needs to be regrouped." Split into a primary
+   tradition grid (.app-mode-grid, now 3 cards) and a visibly smaller,
+   secondary "tools" row (.app-mode-tools-row) below a hairline and a quiet
+   label, so the two read as different categories at a glance rather than
+   five equal choices.
+
+   #tradition-entry keeps its existing family/tradition drill-down logic
+   (Western -> Anglican/Catholic, Eastern -> COE/EO/OO, COE -> ACOE/ACE)
+   completely untouched -- restyled only. Its own separate "Dark Mode"
+   checkbox is hidden here (not deleted -- ?shell=v1 keeps it, unaffected):
+   this screen now always renders in the night palette, the same choice
+   already made and Josh-approved for #uo-threshold ("a control that visibly
+   does nothing is worse than no control" -- 2026-09-22, see that screen's
+   own comment above). #splash-bg is correspondingly forced to its dark
+   treatment here too, slightly darker again, so the background doesn't
+   fight the now-always-dark card sitting on top of it; !important matches
+   the mobile breakpoint's own !important rule in css/office.css so this
+   still wins there.
+   =========================================================================== */
+
+body.shell-v2 #splash-bg {
+    filter: blur(3px) saturate(0.5) brightness(0.34) !important;
+    opacity: 0.4 !important;
+}
+
+body.shell-v2 #tradition-entry.app-tradition-entry,
+body.shell-v2 #mode-selection.app-mode-shell {
+    background: linear-gradient(180deg, rgba(8, 7, 12, 0.94), rgba(11, 9, 18, 0.90));
+    border: 1px solid var(--uo-hairline);
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--uo-ink);
+}
+
+body.shell-v2 #tradition-entry .app-dark-toggle {
+    display: none;
+}
+
+body.shell-v2 .app-entry-kicker,
+body.shell-v2 .app-mode-kicker {
+    font-family: var(--uo-face-machine);
+    color: var(--uo-accent);
+}
+
+body.shell-v2 #tradition-entry h1,
+body.shell-v2 #mode-selection.app-mode-shell h1 {
+    font-family: var(--uo-face-title);
+    color: var(--uo-ink);
+    text-shadow: none;
+}
+
+body.shell-v2 .app-entry-lede,
+body.shell-v2 #mode-selection.app-mode-shell p {
+    font-family: var(--uo-face-prayed);
+    color: var(--uo-ink-quiet);
+}
+
+body.shell-v2 .app-entry-panel-title {
+    font-family: var(--uo-face-machine);
+    color: var(--uo-accent);
+}
+
+/* Cards: flat, hairline-bordered, no shadow, no rounded corners -- the same
+   treatment .uo-drawer-office already uses for "II . Which office". */
+body.shell-v2 .app-entry-family-card,
+body.shell-v2 .app-entry-tradition-card,
+body.shell-v2 #mode-selection .mode-btn.app-mode-card {
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--uo-ink-quiet);
+}
+body.shell-v2 .app-entry-family-card:hover,
+body.shell-v2 .app-entry-family-card:focus-visible,
+body.shell-v2 .app-entry-tradition-card:hover,
+body.shell-v2 .app-entry-tradition-card:focus-visible,
+body.shell-v2 #mode-selection .mode-btn.app-mode-card:hover,
+body.shell-v2 #mode-selection .mode-btn.app-mode-card:focus-visible {
+    background: rgba(201, 168, 76, 0.08);
+    border-color: rgba(201, 168, 76, 0.6);
+    box-shadow: none;
+    transform: none;
+    color: var(--uo-ink);
+}
+
+body.shell-v2 .app-entry-family-icon,
+body.shell-v2 .app-entry-tradition-code,
+body.shell-v2 .app-mode-icon {
+    background: none;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    color: var(--uo-accent);
+    box-shadow: none;
+}
+
+body.shell-v2 .app-entry-family-card strong,
+body.shell-v2 .app-entry-tradition-card strong,
+body.shell-v2 .app-mode-title {
+    font-family: var(--uo-face-title);
+    color: var(--uo-ink);
+}
+body.shell-v2 .app-entry-family-card small,
+body.shell-v2 .app-entry-tradition-card small,
+body.shell-v2 .app-mode-subtitle {
+    font-family: var(--uo-face-prayed);
+    color: var(--uo-ink-quiet);
+}
+
+body.shell-v2 .app-entry-tradition-card.is-disabled,
+body.shell-v2 .app-entry-tradition-card:disabled {
+    opacity: 0.4;
+    filter: none;
+}
+
+body.shell-v2 .app-entry-back {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 0;
+    background: transparent;
+    color: var(--uo-accent);
+    font-family: var(--uo-face-prayed);
+}
+body.shell-v2 .app-entry-back:hover,
+body.shell-v2 .app-entry-back:focus-visible {
+    background: rgba(201, 168, 76, 0.08);
+    border-color: rgba(201, 168, 76, 0.6);
+    color: var(--uo-ink);
+    outline: none;
+}
+
+/* The regrouped tools row -- deliberately smaller and unornamented next to
+   the tradition grid above it, so the two read as different categories at a
+   glance, not five equal choices. */
+body.shell-v2 .app-mode-section-label {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+    margin: 0 0 10px;
+}
+/* Only the label AFTER a tradition grid gets the separating hairline -- the
+   first one (right under the <h1>) would otherwise draw a stray line
+   directly beneath the title. */
+body.shell-v2 .app-mode-grid + .app-mode-section-label {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+body.shell-v2 .app-mode-tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+body.shell-v2 .app-mode-tool-btn {
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.16);
+    border-radius: 0;
+    padding: 10px 16px;
+    color: var(--uo-ink-quiet);
+    font-family: var(--uo-face-prayed);
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+}
+body.shell-v2 .app-mode-tool-btn:hover,
+body.shell-v2 .app-mode-tool-btn:focus-visible {
+    border-color: rgba(201, 168, 76, 0.5);
+    outline: none;
+}
+body.shell-v2 .app-mode-tool-btn strong {
+    display: block;
+    font-family: var(--uo-face-title);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--uo-ink);
+    margin-bottom: 2px;
+}
+body.shell-v2 .app-mode-tool-btn:hover strong,
+body.shell-v2 .app-mode-tool-btn:focus-visible strong {
+    color: var(--uo-accent);
+}
+body.shell-v2 .app-mode-tool-btn small {
+    display: block;
+    color: var(--uo-ink-quiet);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+    body.shell-v2 .app-mode-tools-row {
+        flex-direction: column;
+    }
+}

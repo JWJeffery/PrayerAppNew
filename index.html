@@ -13,7 +13,7 @@
     <!-- Redesigned office shell. Loaded AFTER office.css by design; every rule
          inside is scoped under body.shell-v2 and is unreachable while the dev
          flag is off. See documentation/UI_REDESIGN_HANDOFF.md. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=299">
+    <link rel="stylesheet" href="css/office-shell.css?v=300">
 </head>
 <body id="app-body" class="dark-mode">
 <!-- Hidden dev flag for the shell redesign. Must run here, immediately after
@@ -191,28 +191,13 @@
     <div id="uo-threshold-grid" hidden aria-hidden="true">
     <div class="app-mode-kicker">Universal Office Selector</div>
     <h1>The Universal Office</h1>
-    <div class="app-mode-grid" aria-label="Choose a mode">
+    <div class="app-mode-section-label">Choose a tradition</div>
+    <div class="app-mode-grid" aria-label="Choose a tradition">
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
             <span class="app-mode-icon">☩</span>
             <span class="app-mode-copy">
                 <span class="app-mode-title">The Daily Office</span>
                 <span class="app-mode-subtitle">The Daily Office according to the 1979 Book of Common Prayer.</span>
-            </span>
-        </button>
-
-        <button class="mode-btn app-mode-card" onclick="openUniversalBookOfNeeds()">
-            <span class="app-mode-icon">✠</span>
-            <span class="app-mode-copy">
-                <span class="app-mode-title">Book of Needs</span>
-                <span class="app-mode-subtitle">Prayers, devotions, and occasional offices.</span>
-            </span>
-        </button>
-
-        <button class="mode-btn app-mode-card" onclick="openBibleBrowser()">
-            <span class="app-mode-icon">✦</span>
-            <span class="app-mode-copy">
-                <span class="app-mode-title">Bible Browser</span>
-                <span class="app-mode-subtitle">Read, compare, annotate, and study.</span>
             </span>
         </button>
 
@@ -239,15 +224,24 @@
                 <span class="app-mode-subtitle">Dev vertical slice from the pinned Divinum source pipeline.</span>
             </span>
         </button>
+    </div>
 
-        <button class="mode-btn app-mode-card app-mode-card-admin app-advanced-only" type="button" data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href='admin/admin.html'">
-            <span class="app-mode-icon">⚙</span>
-            <span class="app-mode-copy">
-                <span class="app-mode-title">Admin Console</span>
-                <span class="app-mode-subtitle">Corpus tools and project administration.</span>
-            </span>
+    <div class="app-mode-section-label">Not a tradition &mdash; tools</div>
+    <div class="app-mode-tools-row">
+        <button class="app-mode-tool-btn" type="button" onclick="openUniversalBookOfNeeds()">
+            <strong>Book of Needs</strong>
+            <small>Prayers, devotions, and occasional offices.</small>
         </button>
 
+        <button class="app-mode-tool-btn" type="button" onclick="openBibleBrowser()">
+            <strong>Bible Browser</strong>
+            <small>Read, compare, annotate, and study.</small>
+        </button>
+
+        <button class="app-mode-tool-btn app-advanced-only" type="button" data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href='admin/admin.html'">
+            <strong>Admin Console</strong>
+            <small>Corpus tools and project administration.</small>
+        </button>
     </div>
     </div><!-- /uo-threshold-grid -->
 

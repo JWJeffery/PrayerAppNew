@@ -22,6 +22,76 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE, LIVE-CONFIRMED, 2026-09-24 (latest, out-of-band entry — interrupted Phase 5 work on
+Josh's direct request): the entry screens redesigned and regrouped, off the Phase 5 build order.**
+Josh: *"I would like the entry screen redesigned before we move on to the Horologion... the
+current button locations do not make much sense."* Clarified twice before building (this note's
+own standing practice — do not guess on a design request that could waste real work): which
+screen, and what specifically felt wrong. His answer named the actual problem precisely: *"the
+bible browser and book of needs do not answer the 'where do you pray' question... it needs to be
+regrouped. It also looks very different from everything we've redesigned, so it looks very much
+out of place."* Investigation found the complaint pointed at `#uo-threshold-grid` ("Another
+office," reached from the universal threshold), not `#tradition-entry` ("Where do you pray?")
+which Josh had picked in the first clarifying question — that screen has no Book of Needs/Bible
+Browser button anywhere in it. Surfaced the mismatch with screenshots rather than silently
+overriding his answer or silently guessing which screen he meant.
+
+**Two real, disclosed findings, not assumptions:**
+1. `#uo-threshold-grid` mixed Book of Needs and Bible Browser (tools) into the same 5-card grid as
+   Daily Office/Coptic Agpeya/Church of the East (prayer traditions) — confirmed directly in
+   `index.html`, not inferred from the screenshot alone.
+2. Both `#tradition-entry` and `#uo-threshold-grid` had never been touched by this entire redesign
+   project — confirmed against `documentation/design/DESIGN_HANDOFF_SOURCE.md` and
+   `UI_REDESIGN_HANDOFF.md`, neither of which mentions either screen at all — so they still used
+   the pre-redesign parchment card system (rounded cards, drop shadows, gold-gradient icon
+   circles) while the actual office view has been dark/flat/hairline for months. This IS the "off
+   the office screen nothing changes" boundary the DEMOLITION comment in `css/office-shell.css`
+   documents — Phase 1-5 deliberately never crossed it. **This work deliberately widens that
+   boundary for these two screens only, on Josh's direct instruction** — nothing else outside the
+   office screen (splash proper, Book of Needs, Bible Browser, admin) was touched.
+
+**Built, reusing the already-established component language rather than inventing a new one**:
+handoff §7's own governing rule — *"no rounded cards, no drop shadows on the page, no borders
+around prayer. Hairlines and light do the separating"* — is exactly the flat, gold-hairline-bordered
+button style `.uo-drawer-office` already uses in the Office Settings drawer's "II · Which office."
+Both screens restyled to match it, scoped `body.shell-v2` in `css/office-shell.css`, using the
+existing `--uo-*` tokens (no new colors invented). `#uo-threshold-grid` regrouped in `index.html`:
+a "Choose a tradition" grid (Daily Office, Coptic Agpeya, Church of the East — Roman Breviary dev
+stays with them, still hidden) and a visibly smaller, separate "Not a tradition — tools" row (Book
+of Needs, Bible Browser — Admin Console stays with them, still hidden) below a hairline. Every
+existing `onclick`/id kept exactly as-is — moved, never rebuilt, same discipline as every other
+markup change in this project. `#tradition-entry`'s own family/tradition drill-down logic (Western
+→ Anglican/Catholic, Eastern → COE/EO/OO, COE → ACOE/ACE) is completely untouched, restyled only;
+its separate "Dark Mode" checkbox is hidden under shell-v2 (not deleted — `?shell=v1` keeps it),
+since the screen now always renders in the night palette — the same choice already made and
+Josh-approved for `#uo-threshold` itself ("a control that visibly does nothing is worse than no
+control," 2026-09-22). `#splash-bg` forced to a darker treatment under shell-v2 to match, with
+`!important` to beat the mobile breakpoint's own `!important` rule in `css/office.css`.
+
+**A real regression caught and fixed before shipping, not after**: the `index.html` markup change
+reaches BOTH shell versions (only the CSS is flag-scoped), so `?shell=v1`/no-flag briefly rendered
+the new "tools row" with no styling at all — unstyled fallback buttons, a real visual break to the
+old skin, which this project holds to a strict "flag off = untouched" bar. **Caught by testing all
+three states, not just the one being changed.** Fixed by adding matching (light-parchment) CSS for
+the same new classes directly in `css/office.css`, reusing the exact same `--app-*` tokens
+`.mode-btn.app-mode-card` already uses — old skin now renders the regrouped tools row properly, in
+its own established visual language, not broken and not silently left broken.
+
+**Verified live in headless Chromium, all three states** (`?shell=v2`, `?shell=v1`, no flag):
+screenshots of `#tradition-entry`, its Western/Eastern drill-down panels, `#uo-threshold`
+(untouched, already correct), and the regrouped `#uo-threshold-grid`, for each state. Confirmed
+functionally, not just visually: clicking a tradition card still fires its real, unchanged
+`onclick` (`showLaneThreshold('coptic-agpeya')`, confirmed via `js/office-ui.js:1412` — correctly
+shows that lane's own threshold screen, not a direct office jump, exactly as before); clicking a
+tool button (`openUniversalBookOfNeeds()`) correctly opens Book of Needs
+(`#individual-prayers-section` → `flex`, `#daily-office-section` → `none`). Zero console errors
+across all three states beyond the known sandboxed font-CDN cert failure. Cache-bust
+`office-shell.css` 299 → 300. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24,
+key `ui:entry-screens-redesigned-regrouped`. SEED_VERSION v339 → v340.
+
+**Phase 5 resumes where it left off — Horologion, lane 3 of 3 — nothing about this detour changes
+that scope**, see the "What that leaves" paragraph below this one.
+
 **State as of 2026-09-24. HEAD before this commit was `44d295e5`.** Phase 4's drawer itself
 (`documentation/design/screens/1c-threshold-ordo-drawer.png`) built for real, and a real,
 independently-confirmed engine bug fixed in the same session. **This environment turned out to
