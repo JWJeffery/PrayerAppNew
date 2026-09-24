@@ -171,16 +171,51 @@ anywhere near the Hulali) nor the render loop ever emits one. A pre-existing dis
 gap, not something this conversion should silently fix or silently carry forward unflagged.
 
 Full detail (identical wording): `AUDIT_GOVERNANCE_LEDGER.md`, `ui:phase5-east-syriac-lane-envelope`
-row, updated 2026-09-24. No SEED_VERSION bump -- documentation only, no JS/data touched.
+row, updated 2026-09-24.
 
-**What that leaves, concretely, for the next session — Phase 5, lane 2 of 3, East Syriac, per §9's
-own ordering (then Horologion last since §8.9 repriced it as a payload reconciliation rather than a
-fresh emitter):**
-- `renderEastSyriac()` is now scoped (see the investigation immediately above) but NOT converted.
-  Before writing the conversion: get Josh's call on the two flagged decisions (item 3's additive
-  title+psalms shape, item 7's fallback-state envelope question), then build the two new helpers
-  items 1-2 need.
-- Then Horologion, last (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
+**DONE, LIVE-CONFIRMED, 2026-09-24 continued further: the two flagged decisions resolved and
+`renderEastSyriac()` ported, same session.** Josh's answers: (1) "The goal is consistency unless a
+tradition requires otherwise" -- (yes). Resolved as: every scripture/psalm citation still gets its
+own gutter row and its own `unit` in the envelope (nothing hidden), but folds into the ONE
+`env.blocks` entry its parent component's title already opened, rather than a redundant second rail
+row repeating the same label -- confirmed against the real data (`components/east-syriac.json`)
+that titles like "First Marmitha"/"Second Shuraya"/"Letter Psalm" already ARE the citation-bearing
+label, not placeholders needing a separate heading. Same granularity `bcpEmitPsalmBlock`'s own
+contract already states (§8: "one psalm is the smallest attributable piece" is a UNIT, not a BLOCK),
+applied consistently rather than invented fresh here. (2) "I really don't know enough to make a
+decision" -- correctly a mechanism question, not a devotional one, so decided directly rather than
+pushed back a second time: "not yet rebuilt" (a genuine, disclosed gap) now publishes ONE block +
+ONE diagnostic (code `not-yet-mapped`, reusing BCP's own exact wording -- a precise match); "Endana
+outside the Great Fast" (correct, by-design absence per the primary source) publishes ONE block and
+deliberately NO diagnostic -- preserving the distinction the pre-port function already drew between
+the two states, not collapsed into one generic "nothing here."
+
+Built: one new lane-specific helper, `esyEmitCitation()` (mirrors `copEmitReading`'s own precedent --
+small, local, no divider -- but poetry-formatted via `formatPsalmAsPoetry`/class `psalm-block`, since
+this lane never uses flowing prose). The main loop calls `bcpEmitBlock()` unchanged for each
+component's title+body, then folds every citation from `comp.sections`/`psalms`/`psalmRef`/
+`scriptureRef` into that same block's `units`. Both fallback states are now DOM-built (matching every
+other state, and the already-live BCP Phase 3 precedent of building DOM unconditionally while gating
+only `.publish()` on shell-v2) and use `bcpEmitBlock`/`bcpPushDiagnostic` per decision 2.
+
+**Verified live, not just read**: this sandbox's own headless Chromium against
+`scripts/dev-spa-server.mjs`, eight real scenarios covering every shape found during scoping --
+Monday Ramsha (Marmitha/Shuraya units folding correctly), Sunday Lelya (Festival), Monday Lelya (the
+real Hulala test: Hulala I/II/III each correctly show 9-11 psalm units under ONE rail block,
+confirmed both in the raw envelope JSON and visually in a screenshot of the actual rail), Monday
+Sapra, Monday Suba'a, Endana outside the Fast (1 block, 0 diagnostics, confirmed), Sapra during the
+Great Fast (Mysteries-week fixed-psalm block), and Endana during the Great Fast (1 block, exactly 1
+diagnostic with the expected wording, confirmed). Zero `.ornamental-divider` nodes across all eight.
+Zero console errors beyond a Google Fonts cert failure already established as this sandbox's own
+network egress restriction (same finding the Coptic port recorded) -- confirmed identical under both
+`?shell=v2` and `?shell=v1`/no-flag; screenshots taken of both, old skin renders exactly as before
+with no visual regression from the new DOM/gutter-grid structure. Cache-bust `office-ui.js` 302 →
+303. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24 continued further ("Phase 5,
+lane 2"), SEED_VERSION v338 → v339.
+
+**What that leaves, concretely, for the next session — Phase 5, lane 3 of 3, Horologion, last per
+§9's own ordering (§8.9 repriced it as a payload reconciliation rather than a fresh emitter):**
+- Horologion is next (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
   still-missing lane-native day-summary line for the drawer, real content/engine work belonging to
   this lane's own Phase 5 slice, not a drawer fix.
 - Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-

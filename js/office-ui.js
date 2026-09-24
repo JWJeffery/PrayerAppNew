@@ -4390,6 +4390,37 @@ function copEmitReading(container, env, title, citation, bodyText) {
     }
 }
 
+/**
+ * East Syriac Hudra port -- Phase 5, lane 2 of 3 (documentation/UI_REDESIGN_HANDOFF.md §9).
+ * Shape mismatches against bcpEmitReading/bcpEmitPsalmBlock, found by reading renderEastSyriac()
+ * end to end before converting anything (recorded 2026-09-24 in RESUME_PROJECT_NOTE.md and
+ * AUDIT_GOVERNANCE_LEDGER.md, ui:phase5-east-syriac-lane-envelope):
+ *
+ * This lane renders EVERY scripture citation -- psalms, and even its one non-psalm citation
+ * (comp.scriptureRef, an Exodus canticle) -- as poetry (formatPsalmAsPoetry, class psalm-block),
+ * never as flowing prose. Neither bcpEmitReading nor copEmitReading fit (both are prose-shaped),
+ * so this is its own tiny emitter. It also never emits a leading label of its own -- confirmed
+ * 2026-09-24 that this lane's own component titles (e.g. "First Marmitha", "Second Shuraya",
+ * "Letter Psalm") already ARE the real citation-bearing label, shown once via the surrounding
+ * bcpEmitBlock call; a second "The Psalms"-style label immediately above the same content would
+ * just repeat it. Per Josh's 2026-09-24 ruling ("consistency unless a tradition requires
+ * otherwise"): every citation still gets its own gutter row and its own unit in the envelope --
+ * nothing is hidden -- it just folds into the ONE block its parent component's title already
+ * opened, rather than opening a second, redundant rail row. This matches bcpEmitPsalmBlock's own
+ * stated contract (§8: "one psalm is the smallest attributable piece") at the UNIT level, not the
+ * BLOCK level -- the same granularity, applied consistently, not a new rule invented for this lane.
+ * No divider (this lane has never had one anywhere, confirmed by inspection, same finding as
+ * Coptic's own copEmitReading).
+ */
+function esyEmitCitation(container, citationLabel, fullText) {
+    var cite = document.createElement('h4');
+    cite.className = 'passage-reference';
+    cite.textContent = citationLabel;
+    var body = bcpMakeSpan('psalm-block', formatPsalmAsPoetry(fullText), { tag: 'div' });
+    bcpWrapInGutter(container, citationLabel, [cite, body]);
+    return { kind: 'scripture', citation: citationLabel };
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -6254,43 +6285,125 @@ async function renderEastSyriac() {
     }
 
     if (!sequence) {
+        // DOM-based, not a fallback string -- built the same way as every other state in this
+        // function (and the same move renderBcpOffice()'s own Phase 3 refactor made for its own
+        // no-content states), so shell-v2 gets a populated rail here too instead of an inert one.
+        // Only the envelope PUBLISH is gated on shell-v2 below; the container itself is built and
+        // shown unconditionally, matching the already-live, already-verified BCP precedent (its
+        // block-emission helpers run regardless of shell flag; only .publish() is gated).
         const isEndanaOutsideFast = (officeKey === 'endana' && !isGreatFast);
-        const fallbackBody = isEndanaOutsideFast
-            ? `<p class="rubric-text">Not observed outside the Great Fast</p>`
-              + `<p class="component-text">Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
-              + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
-              + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
-              + `non-Fast days, per the primary source itself.</p>`
-            : `<p class="rubric-text">Not yet rebuilt</p>`
-              + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
-              + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
-              + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
-              + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`;
-        document.getElementById('office-display').innerHTML =
-            `<div class="office-container">`
-            + `<p class="office-book-title">The Hudra</p>`
-            + `<h2>${officeTitle}</h2>`
-            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
-            + (esyModeFallbackNote ? `<p class="rubric-text">${esyModeFallbackNote}</p>` : '')
-            + fallbackBody
-            + `</div>`;
+
+        const fbContainer = document.createElement('div');
+        fbContainer.className = 'office-container';
+
+        const fbBookTitle = document.createElement('p');
+        fbBookTitle.className = 'office-book-title';
+        fbBookTitle.textContent = 'The Hudra';
+        fbContainer.appendChild(fbBookTitle);
+
+        const fbH2 = document.createElement('h2');
+        fbH2.textContent = officeTitle;
+        fbContainer.appendChild(fbH2);
+
+        const fbSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + cycleSuffix;
+        const fbSubtitle = document.createElement('p');
+        fbSubtitle.className = 'liturgical-title';
+        fbSubtitle.textContent = fbSubtitleText;
+        fbContainer.appendChild(fbSubtitle);
+
+        if (esyModeFallbackNote) {
+            const fbNote = document.createElement('span');
+            fbNote.className = 'rubric-text';
+            fbNote.textContent = esyModeFallbackNote;
+            fbContainer.appendChild(fbNote);
+        }
+
+        const fbEnv = { blocks: [], overlays: [], diagnostics: [] };
+
+        // Endana outside the Fast is NOT a diagnostic: it is correct, by-design absence (the
+        // primary source gives this office no existence outside the Great Fast at all), not a
+        // gap this project simply hasn't rebuilt yet -- the same distinction the pre-port
+        // function already drew between the two states with different wording. "Not yet rebuilt"
+        // IS a genuine, disclosed content gap, so it gets the real diagnostic contract (§11)
+        // BCP already uses for exactly this situation, via bcpPushDiagnostic's existing
+        // 'not-yet-mapped' wording ("No proper is appointed for this day in the corpus. Nothing
+        // has been substituted.") -- an exact semantic match, not repurposed loosely.
+        if (isEndanaOutsideFast) {
+            bcpEmitBlock(fbContainer, fbEnv, 'Not observed outside the Great Fast',
+                `Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
+                + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
+                + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
+                + `non-Fast days, per the primary source itself.`,
+                null, undefined);
+        } else {
+            bcpEmitBlock(fbContainer, fbEnv, 'Not yet rebuilt',
+                `The Church of the East office content is being rebuilt from a verified primary source `
+                + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
+                + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
+                + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.`,
+                null, undefined);
+            bcpPushDiagnostic(fbEnv, 'not-yet-mapped', officeTitle);
+        }
+
+        if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+            try {
+                window.AnglicanEnvelope.publish({
+                    tradition: 'COE',
+                    officeFamily: officeKey || null,
+                    context: { calendarSummary: fbSubtitleText || null, rankSummary: null },
+                    blocks: fbEnv.blocks,
+                    overlays: fbEnv.overlays,
+                    diagnostics: fbEnv.diagnostics
+                });
+            } catch (e) {
+                console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+            }
+        }
+
+        document.getElementById('office-display').replaceChildren(fbContainer);
+        applyExplanationLayer('office-display');
         return;
     }
 
-    let officeHtml = `<div class="office-container">`;
-    officeHtml += `<p class="office-book-title">The Hudra</p>`;
-    officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`;
-    if (esyModeFallbackNote) officeHtml += `<p class="rubric-text">${esyModeFallbackNote}</p>`;
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Hudra';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = officeTitle;
+    container.appendChild(h2);
+
+    const officeSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + cycleSuffix;
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = officeSubtitleText;
+    container.appendChild(subtitle);
+
+    if (esyModeFallbackNote) {
+        const noteSpan = document.createElement('span');
+        noteSpan.className = 'rubric-text';
+        noteSpan.textContent = esyModeFallbackNote;
+        container.appendChild(noteSpan);
+    }
+
+    // env replaces the string-concatenated officeHtml entirely -- blocks/overlays/diagnostics
+    // built directly, here, at the moment each is actually emitted, the same pattern
+    // renderBcpOffice()/renderCopticAgpeya() established. overlays stays empty throughout this
+    // lane: nothing in the East Syriac Hudra borrows content from another tradition (confirmed
+    // 2026-09-24 by reading this function end to end), so there is nothing to mark as an overlay.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
 
     for (const itemId of sequence) {
         const comp = appData.components.find(c => c.id === itemId);
         if (!comp) {
             console.warn(`[renderEastSyriac] Component not found: ${itemId}`);
+            bcpPushDiagnostic(env, 'coverage-gap', itemId);
             continue;
         }
-
-        officeHtml += `<span class="rubric-text">${comp.title || itemId}</span>`;
 
         // Feast-name substitution (see FEAST_PS78_TERMS above for the
         // research this is based on, and its two deliberately-unresolved
@@ -6322,11 +6435,15 @@ async function renderEastSyriac() {
                 .split('[the feast]').join(resolved);
         }
 
-        // Components carrying `psalms` (plural, e.g. a Marmitha of several
-        // psalms) or `psalmRef` (a single citation, e.g. a Shuraya) resolve
-        // their actual verse text from this app's own verified Bible corpus,
-        // appended after the rubric text already embedded in `text`.
-        officeHtml += `<span class="component-text">${componentText}</span>`;
+        // Label + body: reuses bcpEmitBlock exactly as the Anglican/Coptic lanes do -- per Josh's
+        // 2026-09-24 ruling ("consistency unless a tradition requires otherwise"), and nothing
+        // here requires otherwise (BCP_GUTTER_KIND_BY_LABEL simply returns '' for every East
+        // Syriac term, the same safe empty-gutter default Coptic got). Pushes exactly ONE
+        // env.blocks entry for this component; any citations below (psalms/psalmRef/scriptureRef/
+        // sections) fold into THAT SAME block's units rather than opening a second rail row that
+        // would just repeat the title already shown -- see esyEmitCitation's own comment for why.
+        bcpEmitBlock(container, env, comp.title || itemId, componentText, null, undefined);
+        const activeBlock = env.blocks[env.blocks.length - 1];
 
         if (Array.isArray(comp.sections)) {
             // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs.
@@ -6334,41 +6451,53 @@ async function renderEastSyriac() {
             // psalm(s) or canticle(s) resolved from the corpus, mirroring
             // Maclean's actual structure (a proper prayer before each
             // subdivision of psalms within a Hulala, not one prayer for the
-            // whole Hulala).
+            // whole Hulala). Sections carry no label of their own -- matching
+            // the pre-port function, which never gave them individual headings.
             for (const section of comp.sections) {
                 if (section.prayer) {
-                    officeHtml += `<p class="component-text">${section.prayer}</p>`;
+                    bcpEmitBare(container, section.prayer, {});
                 }
                 const refs = Array.isArray(section.psalms) ? section.psalms.map(p => ({ label: `Psalm ${p}`, query: 'PSALM ' + p }))
                            : Array.isArray(section.scriptureRefs) ? section.scriptureRefs.map(r => ({ label: r, query: r }))
                            : [];
                 for (const ref of refs) {
                     const fullText = await getScriptureText(ref.query);
-                    officeHtml += `<h4 class="passage-reference">${ref.label}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                    activeBlock.units.push(esyEmitCitation(container, ref.label, fullText));
                 }
             }
         } else if (Array.isArray(comp.psalms)) {
             for (const psRef of comp.psalms) {
                 const fullText = await getScriptureText('PSALM ' + psRef);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                activeBlock.units.push(esyEmitCitation(container, `Psalm ${psRef}`, fullText));
             }
         } else if (comp.psalmRef) {
             const fullText = await getScriptureText('PSALM ' + comp.psalmRef);
-            officeHtml += `<h4 class="passage-reference">Psalm ${comp.psalmRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            activeBlock.units.push(esyEmitCitation(container, `Psalm ${comp.psalmRef}`, fullText));
         } else if (comp.scriptureRef) {
             // Non-Psalm scripture citation (e.g. the Exodus 15 canticle used as a
             // Shuraya substitute) -- comp.scriptureRef already carries the full
             // "BOOK chapter:verse" citation getScriptureText expects.
             const fullText = await getScriptureText(comp.scriptureRef);
-            officeHtml += `<h4 class="passage-reference">${comp.scriptureRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            activeBlock.units.push(esyEmitCitation(container, comp.scriptureRef, fullText));
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        try {
+            window.AnglicanEnvelope.publish({
+                tradition: 'COE',
+                officeFamily: officeKey || null,
+                context: { calendarSummary: officeSubtitleText || null, rankSummary: null },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
+    document.getElementById('office-display').replaceChildren(container);
     applyExplanationLayer('office-display');
 
     // ── Commemorations (Layer 3: individual saints) ─────────────────────────
