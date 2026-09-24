@@ -166,11 +166,16 @@ const psalterCycle = [
 ];
 
 // ── Seasonal Theme ───────────────────────────────────────────────────────────
-function updateSeasonalTheme(color) {
+function updateSeasonalTheme(color, isPrincipalGoldFeast) {
     let hex = '#4a7c59';
     if (color === 'purple') hex = '#6b3070';
     if (color === 'rose')   hex = '#a04060';
-    if (color === 'white')  hex = '#c9a84c';
+    // 2026-09-23: 'white' is #f5f1e4 (an actual strong white) everywhere except the two
+    // days EASTER_DOCUMENTATION.md explicitly documents as "Color: White (or Gold)" --
+    // Easter Day and Ascension Day, the only two places that note appears anywhere in the
+    // corpus. Not extended to other Principal Feasts (Christmas, Epiphany, Trinity Sunday,
+    // All Saints') since none of those carry that note; Josh can extend it if he wants to.
+    if (color === 'white')  hex = isPrincipalGoldFeast ? '#d4af37' : '#f5f1e4';
     if (color === 'green')  hex = '#4a7c59';
     if (color === 'red')    hex = '#9b2335';
     if (color === 'gold')   hex = '#b8860b';
@@ -4370,7 +4375,12 @@ async function renderBcpOffice() {
     // AUDIT_GOVERNANCE_LEDGER.md) takes precedence over BOTH, since a named commemoration is
     // more specific than either the season or an unremarkable ferial day. Ordinary weekdays
     // with neither have no override and correctly fall through to the season default.
-    updateSeasonalTheme(commemorationColor || dailyData?.liturgicalColor || liturgicalColor || 'green');
+    // 2026-09-23: the only two days documented anywhere as "White (or Gold)" --
+    // EASTER_DOCUMENTATION.md, Easter Day and Ascension Day specifically, nothing broader.
+    // Computed once here and reused by both the theme accent and the seasonal dot below, so
+    // the two can never disagree with each other.
+    const isPrincipalGoldFeast = dailyData?.title === 'Easter Day' || dailyData?.title === 'Ascension Day';
+    updateSeasonalTheme(commemorationColor || dailyData?.liturgicalColor || liturgicalColor || 'green', isPrincipalGoldFeast);
 
     if (!dailyData) {
         document.getElementById('office-display').innerHTML =
@@ -4512,7 +4522,7 @@ async function renderBcpOffice() {
         red:    '#9b2335',
         purple: '#6b3070',
         rose:   '#a04060',
-        white:  '#c9a84c',
+        white:  isPrincipalGoldFeast ? '#d4af37' : '#f5f1e4',
     }[commemorationColor || dailyData?.liturgicalColor || liturgicalColor];
     if (seasonalDotColor) {
         const dot = document.createElement('span');

@@ -17127,3 +17127,36 @@ and `undefined` both correctly resolve to no dot. `js/office-ui.js` cache-bust b
 day where the color differs from the season default (e.g. any of tonight's 4 resolved
 Lesser-Feast dates) to see the dot rendering the more specific color, not just the season's own.
 
+---
+
+## Session 2026-09-23 continued -- "white" split into an actual strong white and a separate
+## lustrous gold, the latter scoped to exactly the two days documented for it.
+## SEED_VERSION v331 -> v332.
+
+Josh asked whether today's gold rendering for "white" was recorded anywhere. It wasn't: the
+palette's `white: #c9a84c` value (§6 of the handoff doc, and this session's own dot work) is
+declared but never explained anywhere in the corpus. The one real, adjacent fact --
+`EASTER_DOCUMENTATION.md` notes "Color: White (or Gold)" -- exists for exactly two days, checked
+directly rather than assumed to cover more: Easter Day and Ascension Day, both explicitly ranked
+Principal Feast, and no other day anywhere in the corpus carries that note. Not extended to
+Christmas, Epiphany, Trinity Sunday, or All Saints' -- also Principal Feasts, but undocumented for
+gold, so left as plain white rather than assumed to share the exception.
+
+**Josh's ruling:** keep gold for Easter/Ascension specifically, but make it more lustrous
+(`#d4af37`, a proper metallic gold); everywhere else "white" becomes an actual strong white
+(`#f5f1e4`), not gold at all.
+
+**`js/office-ui.js`:** `updateSeasonalTheme(color, isPrincipalGoldFeast)` takes a new second
+argument; white now resolves to `#d4af37` when true, `#f5f1e4` otherwise.
+`isPrincipalGoldFeast` is computed once in `renderBcpOffice()` (`dailyData?.title === 'Easter
+Day' || dailyData?.title === 'Ascension Day'`) and passed to both the theme call and the
+seasonal dot's own color map, so the header accent and the dot can never disagree with each
+other. `js/office-ui.js` cache-bust bumped 298 -> 299.
+
+### Verification
+
+`node --check` clean. Live-checked against the real, unmodified `calendar-engine.js` for three
+dates: Easter Day and Ascension Day both resolve to the gold hex; a plain white Sunday within the
+Easter season (Fourth Sunday of Easter) resolves to the new strong white, not gold -- confirming
+the split is scoped to exactly the two documented days, not the whole season.
+

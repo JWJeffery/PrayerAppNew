@@ -10,6 +10,14 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (9).** HEAD before this commit was `8c4f0d44`. "White"
+split into two real colors: a strong white (`#f5f1e4`) for ordinary white days, and a more
+lustrous gold (`#d4af37`) scoped to exactly the two days `EASTER_DOCUMENTATION.md` documents as
+"White (or Gold)" -- Easter Day and Ascension Day, checked directly, not extended to other
+Principal Feasts that lack that note. Verified against the real engine: both named days resolve
+gold, a plain white Sunday inside the Easter season resolves to the new strong white. SEED_VERSION
+`v332-2026-09-23-white-gold-split`.
+
 **State as of 2026-09-23, session end (8).** HEAD before this commit was `b550d23c`. Built the
 seasonal dot itself (§6) -- the piece of Phase 4 this session sourced the data for earlier
 tonight and then left unbuilt, which is exactly the "finish what we started" failure Josh named
