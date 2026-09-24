@@ -10,6 +10,16 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**THE DESIGN MOCKUP IS IN THE REPO. `documentation/design/screens/*.png` (6 files) +
+`documentation/design/DESIGN_HANDOFF_SOURCE.md`. Josh has supplied this zip multiple times over
+two weeks because it kept getting lost between sessions. If asked to compare the UI against "the
+model" or judge whether something "looks elegant," open these PNGs directly — do not ask Josh to
+re-upload, re-describe, or re-locate them, and do not rely on `UI_REDESIGN_HANDOFF.md`'s prose
+alone when the actual pixels are sitting right there. `1c-threshold-ordo-drawer.png` is
+specifically the settings-drawer target; the current `#settings-panel` looks nothing like it, and
+Phase 4 (building that drawer for real) has never been started — confirmed by direct search of
+`js/office-shell.js` and `css/office-shell.css`, not assumed.**
+
 **State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
 the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's
 "consolidation with a count" item. Deliberately did NOT physically move the 8 toggles out of

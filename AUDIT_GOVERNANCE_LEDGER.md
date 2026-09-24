@@ -17257,3 +17257,52 @@ several toggles plus Theotokion active (3 of 8), nothing active (correct zero-st
 verified on an actual rendered page -- no browser in this environment; needs Josh's own screen,
 same as tonight's other UI work.
 
+---
+
+## Session 2026-09-23 continued -- THE DESIGN MOCKUP IS NOW IN THE REPO. Stop asking Josh to
+## re-upload it. SEED_VERSION v334 -> v335.
+
+Josh has supplied this mockup multiple times over the past two weeks and it was never committed
+anywhere durable -- lost between sessions every time, forcing him to re-upload it again and
+again. That failure ends here: the actual files are now IN THE REPOSITORY, not described in
+prose, not referenced by a Drive link that can rot or a chat upload that vanishes when the
+conversation ends.
+
+**`documentation/design/screens/*.png` (6 files) and `documentation/design/DESIGN_HANDOFF_SOURCE.md`
+are the real, original design mockup and its accompanying handoff document.** This is the source
+`documentation/UI_REDESIGN_HANDOFF.md` (already in the repo) was written from -- the same section
+structure, the same phase plan, the same design tokens -- but the committed handoff doc never
+carried the screenshots themselves. It does now, permanently, in `documentation/design/screens/`.
+
+**Any future session asked to compare the UI against "the model" reads these six PNGs directly.
+Do not ask Josh to re-upload, re-describe, or re-locate them. Do not rely on
+`documentation/UI_REDESIGN_HANDOFF.md`'s prose alone when the actual pixels are sitting right
+there in the same repo.**
+
+- `1a-compline.png` -- the reading-view reference implementation, night theme.
+- `1b-morning-prayer.png` -- same skeleton, day theme, stained-glass clerestory.
+- `1c-threshold-ordo-drawer.png` -- **the settings drawer target.** THIS is what every session's
+  screenshot of the current `#settings-panel` (checkbox lists, dark cards) is being judged
+  against, and it looks nothing alike. Three sections (Which Day / Which Office / How You Keep
+  It), tappable value-rows, a single "Borrowed devotions -- N ON" summary row with a
+  plain-language sentence naming which ones, not a scattered per-toggle badge list.
+- `2a/2b/2c-*.png` -- the same three-column canon (rail/page/margin) shown for Coptic, Byzantine,
+  and East Syriac lanes respectively.
+
+**Confirmed by direct search, not assumed, this same session: Phase 4 (the ordo drawer itself)
+has ZERO implementation anywhere in `js/office-shell.js` (674 lines) or `css/office-shell.css`
+(897 lines).** Phases 1-3 (the flagged stylesheet, the three-column reading-view shell, Anglican
+envelope emission) have substantial real code, gated behind `body.shell-v2`, not live by default.
+Every setting-drawer change made THIS SESSION (the lane thresholds, the seasonal dot, the
+borrowed-devotions count and in-place badges) was built into the OLD skin
+(`#settings-panel`/`renderBcpOffice()`'s string-built HTML) -- real, verified, working, but the
+same skin this handoff document's own Phase 6 says to delete once the new shell replaces it.
+
+### Verification
+
+All 6 PNGs and the handoff doc copied byte-for-byte from Josh's own upload (`Prayer_app_UX_redesign.zip`,
+`unzip -l` checked against the copied file sizes before commit, not assumed to match). This is a
+binary-file commit -- `git format-patch --binary` and a full `git am` round-trip against a fresh
+clone verified below before handing this off, since every other patch tonight was text-only and
+this is new ground.
+
