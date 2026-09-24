@@ -1976,6 +1976,10 @@ async function selectMode(mode) {
             genSettings.classList.add('sidebar-hidden');
             genSettings.classList.add('mode-hidden');
         }
+        if (copSettings) {
+            copSettings.classList.add('sidebar-hidden');
+            copSettings.classList.add('mode-hidden');
+        }
         if (esySettings) {
             esySettings.classList.remove('sidebar-hidden');
             esySettings.classList.remove('mode-hidden');
@@ -2010,6 +2014,10 @@ async function selectMode(mode) {
             esySettings.classList.add('sidebar-hidden');
             esySettings.classList.add('mode-hidden');
         }
+        if (copSettings) {
+            copSettings.classList.add('sidebar-hidden');
+            copSettings.classList.add('mode-hidden');
+        }
         if (genSettings) {
             genSettings.classList.remove('mode-hidden');
             genSettings.classList.remove('sidebar-hidden');
@@ -2040,7 +2048,7 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        for (const panel of [settingsPanel, ethSettings, esySettings, genSettings]) {
+        for (const panel of [settingsPanel, ethSettings, esySettings, genSettings, copSettings]) {
             if (panel) {
                 panel.classList.add('sidebar-hidden');
                 panel.classList.add('mode-hidden');
@@ -2099,6 +2107,10 @@ async function selectMode(mode) {
         if (genSettings) {
             genSettings.classList.add('sidebar-hidden');
             genSettings.classList.add('mode-hidden');
+        }
+        if (copSettings) {
+            copSettings.classList.add('sidebar-hidden');
+            copSettings.classList.add('mode-hidden');
         }
         if (settingsPanel) {
             settingsPanel.classList.remove('mode-hidden');
