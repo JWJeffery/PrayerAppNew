@@ -3576,8 +3576,7 @@ async function renderOffice() {
 //   1. Calls HorologionEngine.resolveOffice() — non-throwing by contract.
 //   2. Checks payload.status === "error" and renders a visible error block.
 //   3. Walks sections and items, rendering placeholders as visible dashed blocks.
-//   4. Publishes the resolved-office envelope (Phase 5, lane 3 of 3), gated on
-//      shell-v2 exactly like the other three lanes -- see
+//   4. Publishes the resolved-office envelope (Phase 5, lane 3 of 3) -- see
 //      _pushHorologionEnvelopeEntries() below for the item-type -> role mapping.
 //
 // No calendar logic, no feast resolution, no text composition belongs here.
@@ -3664,7 +3663,7 @@ async function renderHorologionOffice(officeKey) {
     contentDiv.innerHTML = contentHtml;
     container.appendChild(contentDiv);
 
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             // Reusing window.AnglicanEnvelope.publish() deliberately -- see the
             // identical comment on renderCopticAgpeya()'s own publish call: it is
@@ -5527,7 +5526,7 @@ async function renderBcpOffice() {
     // ── Finalise DOM (Phase 3 refactor: real nodes throughout, one assignment
     // to office-display, and the envelope assembled directly from `env` --
     // no more scraping the rendered HTML for it) ─────────────────────────────
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             window.AnglicanEnvelope.publish(
                 window.AnglicanEnvelope.assemble(env, {
@@ -6456,10 +6455,7 @@ async function renderEastSyriac() {
     if (!sequence) {
         // DOM-based, not a fallback string -- built the same way as every other state in this
         // function (and the same move renderBcpOffice()'s own Phase 3 refactor made for its own
-        // no-content states), so shell-v2 gets a populated rail here too instead of an inert one.
-        // Only the envelope PUBLISH is gated on shell-v2 below; the container itself is built and
-        // shown unconditionally, matching the already-live, already-verified BCP precedent (its
-        // block-emission helpers run regardless of shell flag; only .publish() is gated).
+        // no-content states), so the rail gets populated here too instead of staying inert.
         const isEndanaOutsideFast = (officeKey === 'endana' && !isGreatFast);
 
         const fbContainer = document.createElement('div');
@@ -6514,7 +6510,7 @@ async function renderEastSyriac() {
             bcpPushDiagnostic(fbEnv, 'not-yet-mapped', officeTitle);
         }
 
-        if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        if (window.AnglicanEnvelope) {
             try {
                 window.AnglicanEnvelope.publish({
                     tradition: 'COE',
@@ -6651,7 +6647,7 @@ async function renderEastSyriac() {
         }
     }
 
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             window.AnglicanEnvelope.publish({
                 tradition: 'COE',
@@ -6945,7 +6941,7 @@ async function renderCopticAgpeya() {
 
     // ── Finalise DOM (same move as renderBcpOffice()'s own Phase 3 close:
     // publish the envelope first, then one replaceChildren, not innerHTML) ──
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             // Reusing window.AnglicanEnvelope.publish() deliberately -- it is a
             // plain, tradition-neutral event dispatch (sets

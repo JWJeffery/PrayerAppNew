@@ -10,16 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/office.css?v=216">
     <link rel="stylesheet" href="css/bible-browser.css">
-    <!-- Redesigned office shell. Loaded AFTER office.css by design; every rule
-         inside is scoped under body.shell-v2 and is unreachable while the dev
-         flag is off. See documentation/UI_REDESIGN_HANDOFF.md. -->
+    <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
+         dev flag while it shipped safely alongside the old skin. Phase 6
+         (2026-09-24) made it the only office shell and dropped the flag; see
+         documentation/UI_REDESIGN_HANDOFF.md section 9. -->
     <link rel="stylesheet" href="css/office-shell.css?v=307">
 </head>
-<body id="app-body" class="dark-mode">
-<!-- Hidden dev flag for the shell redesign. Must run here, immediately after
-     <body> opens, so the class lands before first paint. ?shell=v2 to turn on,
-     ?shell=v1 to turn off; the choice persists per browser. -->
-<script src="js/shell-flag.js?v=277"></script>
+<body id="app-body" class="dark-mode shell-v2">
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
@@ -1211,13 +1208,13 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=305" defer></script>
+<script src="js/office-ui.js?v=306" defer></script>
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
-<script src="js/office-shell.js?v=296" defer></script>
-<!-- Phase 4: Office Settings as one drawer. Gated on body.shell-v2; inert without it. -->
-<script src="js/office-drawer.js?v=1" defer></script>
+<script src="js/office-shell.js?v=297" defer></script>
+<!-- Phase 4: Office Settings as one drawer. -->
+<script src="js/office-drawer.js?v=2" defer></script>
 </body>
 </html>

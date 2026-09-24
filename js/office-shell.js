@@ -3,9 +3,8 @@
  *
  * See documentation/UI_REDESIGN_HANDOFF.md.
  *
- * Everything here is gated on `body.shell-v2`. With the flag off this file
- * builds nothing, moves nothing, and registers no listeners beyond one cheap
- * check. The old shell is untouched.
+ * Phase 6 (2026-09-24) made this shell the only office shell and dropped the
+ * body.shell-v2 dev flag this file used to gate everything on.
  *
  * WHAT THIS DOES
  *   1. Turns #main-content into the rail / page / margin grid, adding four
@@ -30,12 +29,7 @@
 (function () {
     'use strict';
 
-    var SHELL_CLASS = 'shell-v2';
     var THEME_KEY   = 'universalOfficeShellTheme';   // 'auto' | 'light' | 'dark'
-
-    function shellOn() {
-        return !!document.body && document.body.classList.contains(SHELL_CLASS);
-    }
 
     /* ── Auto theme: keyed to the OFFICE, not the clock ──────────────────────
      *
@@ -250,7 +244,7 @@
            left the splash dark too, because nothing here checked whether an
            office was still actually active before recomputing and writing
            the theme classes. */
-        if (!shellOn() || !document.body.classList.contains('office-active')) return;
+        if (!document.body.classList.contains('office-active')) return;
         var isDark = (mode === 'dark') || (mode !== 'light' && autoIsDark());
 
         document.body.classList.toggle('uo-day', !isDark);
@@ -339,7 +333,6 @@
     }
 
     function buildShell() {
-        if (!shellOn()) return;
         var main = document.getElementById('main-content');
         if (!main || main.querySelector(':scope > .uo-page')) return;   /* idempotent */
 
@@ -635,7 +628,6 @@
 
     function watchEnvelope() {
         document.addEventListener('universal-office-envelope', function (ev) {
-            if (!shellOn()) return;
             renderRailFromEnvelope(ev.detail);
             renderOrdoFromEnvelope(ev.detail);
             renderMarginFromEnvelope(ev.detail);
@@ -653,7 +645,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme());
+                applyTheme(readTheme());
             }, 0);
         }).observe(target, { childList: true, subtree: true });
     }
@@ -666,7 +658,7 @@
             pending = true;
             window.setTimeout(function () {
                 pending = false;
-                if (shellOn()) applyTheme(readTheme());
+                applyTheme(readTheme());
             }, 0);
         });
         LANE_PANELS.forEach(function (entry) {
@@ -676,7 +668,6 @@
     }
 
     function init() {
-        if (!shellOn()) return;
         watchLaneChanges();
         buildShell();
         watchOfficeChanges();

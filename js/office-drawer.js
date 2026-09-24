@@ -2,8 +2,8 @@
  * Phase 4 — Office Settings, as ONE drawer (UI_REDESIGN_HANDOFF.md §5, §9;
  * target: documentation/design/screens/1c-threshold-ordo-drawer.png).
  *
- * Gated on `body.shell-v2`. With the flag off this file does nothing at all
- * and the four legacy sidebars behave exactly as before.
+ * Phase 6 (2026-09-24) dropped the body.shell-v2 dev flag this file used to
+ * gate itself on -- it now always runs.
  *
  * WHAT THIS IS, AND WHAT IT DELIBERATELY IS NOT
  *
@@ -35,10 +35,6 @@
  */
 (function () {
     'use strict';
-
-    function shellOn() {
-        return !!document.body && document.body.classList.contains('shell-v2');
-    }
 
     function el(tag, cls, text) {
         var n = document.createElement(tag);
@@ -516,7 +512,6 @@
     }
 
     function open() {
-        if (!shellOn()) return;
         if (!dialog) buildDialog();
         if (!dialog.open) dialog.showModal();
         refresh();
@@ -525,7 +520,6 @@
     /* ── The keeping-place bar entry (§1, §3.1) ───────────────────────────── */
 
     function ensureEntry() {
-        if (!shellOn()) return;
         var actions = document.querySelector('#main-content .uo-keeping-actions');
         if (!actions || actions.querySelector('.uo-drawer-open')) return;
         var b = el('button', 'uo-drawer-open', 'Office Settings');
@@ -536,7 +530,6 @@
     }
 
     function init() {
-        if (!shellOn()) return;
         /* The render landing is the signal (RESUME_PROJECT_NOTE §0a: re-resolve
            on the render, not the click). #office-display changes on every
            office, date and lane change; the shared navigator is rewritten after
