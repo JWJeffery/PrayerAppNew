@@ -17216,3 +17216,44 @@ the final file, not assumed from the revert script's own claim.
 
 Total sanctoral entries with a sourced color: 209.
 
+---
+
+## Session 2026-09-23 continued -- the borrowed-devotions count and in-place labels built,
+## the last piece of tonight's own open list. SEED_VERSION v333 -> v334.
+
+Per Phase 4 (UI_REDESIGN_HANDOFF.md §5, the 2026-09-21 comment in `index.html`): "borrowed-
+devotions consolidation with a count." Built the count half and an in-place labeling half;
+deliberately did NOT physically relocate the 8 existing toggles out of During/After/Opening
+Devotions into one section tonight -- that is real DOM surgery across three long-tooltipped
+sections this environment cannot render-check, and breaking a working handler in a change nobody
+can see until Josh looks at it is a worse outcome than leaving the fuller consolidation for a
+session where it can be verified on screen.
+
+**Classification (Josh confirmed, 2026-09-23, no changes):** borrowed --
+`toggle-angelus`, `toggle-trisagion`, `toggle-prayer-before-reading`, `toggle-examen`,
+`toggle-kyrie-pantocrator`, `toggle-agpeya-opening`, `toggle-east-syriac-hours`, and the Marian
+Element's `theotokion` value (also counted when `marian-element` is `both`, since that value
+includes it). `antiphon` alone (BCP Seasonal Antiphon) is native and not counted.
+
+**`index.html`:** each of the 8 labels gets a small `(borrowed)` marker inline, anchored on each
+label's own distinctive tooltip text so the match is unique -- no id, onchange, or tooltip
+touched. A new `#borrowed-devotions-count` line sits directly under "Office Settings," inside
+`#settings-panel` specifically (that id is unique in the file; the naive first attempt matched
+all 4 lanes' identical "Office Settings" heading and was caught by the assertion failing before
+anything wrote).
+
+**`js/office-ui.js`:** `updateBorrowedDevotionsCount()`, called from inside `saveSettings()` --
+every one of the 8 toggles and the Marian radios already call `saveSettings()` on change, so
+hooking it there covers all of them without touching any of their individual `onchange`
+attributes. Also called once after `loadSettings()` at initial hydration, so the count is
+correct on first paint, saved settings or not.
+
+### Verification
+
+Balanced tag counts confirmed unchanged in shape after the edit (div/span/label open=close).
+`node --check` clean. The count logic itself tested standalone against a mock DOM, three cases:
+several toggles plus Theotokion active (3 of 8), nothing active (correct zero-state text), and
+`marian-element` on `both` alone counting as one (not the "antiphon" component of "both"). Not
+verified on an actual rendered page -- no browser in this environment; needs Josh's own screen,
+same as tonight's other UI work.
+

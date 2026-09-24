@@ -10,6 +10,18 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
+the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's
+"consolidation with a count" item. Deliberately did NOT physically move the 8 toggles out of
+their three current sections into one -- real DOM surgery this environment can't render-check,
+left for a session where it can be verified on screen. Classification Josh already confirmed:
+Angelus, Trisagion, Prayer Before Reading, The Examen, Kyrie Pantocrator, Agpeya Opening, Prayer
+of the Hours, and Theotokion (counted under `both` too). `updateBorrowedDevotionsCount()` hooks
+into the existing `saveSettings()`, which all 8 already call, so no individual `onchange`
+touched. Balanced-tag counts and JS syntax confirmed; count logic tested against a mock DOM for
+three cases. **Not screen-confirmed** -- no browser here. SEED_VERSION
+`v334-2026-09-23-borrowed-devotions-count-built`.
+
 **State as of 2026-09-23, session end (10).** HEAD before this commit was `bdb0ccdc`. The 35
 (actually 41, after other fixes shifted the count) previously-ambiguous Lesser Feast dates worked
 through individually with a token-based matcher. Two real bugs caught before calling it done: a

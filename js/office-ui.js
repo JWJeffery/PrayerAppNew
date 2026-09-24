@@ -2111,6 +2111,7 @@ async function selectMode(mode) {
 
         await hydrateForDailyOffice();
         loadSettings();
+        updateBorrowedDevotionsCount();
         initializeOfficeDefaultsForCurrentDateTime('daily');
         updateSidebarForOffice();
         isHydrationComplete = true;
@@ -3209,7 +3210,35 @@ function updateUI(explicitIsDark) {
 // office time, etc.). A manual toggle during a session is a same-session
 // override only, not a sticky forever-preference -- that was the source of
 // the "always opens in dark mode regardless of the time" bug.
+// 2026-09-23: Phase 4 remainder (UI_REDESIGN_HANDOFF.md §5) -- borrowed-devotions count.
+// Native-vs-borrowed classification is Josh's own call (2026-09-23), not invented here: every
+// toggle listed carries no BCP page citation in its own tooltip, unlike every native option
+// nearby. The Marian Element's "theotokion" and "both" values both count Theotokion as active;
+// "antiphon" alone (the BCP Seasonal Antiphon) does not, since that option is native. Physical
+// relocation of these 8 controls out of their current three sections (During/After/Opening
+// Devotions) into one consolidated group is the fuller version of this Phase 4 item and was
+// deliberately NOT done tonight -- moving DOM without being able to render-check the result
+// risked breaking working tooltips/handlers for a change this environment can't verify. This
+// is the count-and-mark half only.
+const BORROWED_DEVOTION_IDS = [
+    'toggle-angelus', 'toggle-trisagion', 'toggle-prayer-before-reading',
+    'toggle-examen', 'toggle-kyrie-pantocrator',
+    'toggle-agpeya-opening', 'toggle-east-syriac-hours',
+];
+function updateBorrowedDevotionsCount() {
+    const el = document.getElementById('borrowed-devotions-count');
+    if (!el) return;
+    let active = BORROWED_DEVOTION_IDS.filter(id => document.getElementById(id)?.checked).length;
+    const marian = document.querySelector('input[name="marian-element"]:checked')?.value;
+    if (marian === 'theotokion' || marian === 'both') active += 1;
+    const total = BORROWED_DEVOTION_IDS.length + 1; // +1 for Theotokion
+    el.textContent = active > 0
+        ? `${active} of ${total} borrowed devotions active`
+        : `No borrowed devotions active (${total} available)`;
+}
+
 function saveSettings() {
+    updateBorrowedDevotionsCount();
     const settings = {
         bcpOnly:             document.getElementById('toggle-bcp-only')?.checked || false,
         officeTime:          document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',

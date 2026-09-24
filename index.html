@@ -340,6 +340,7 @@
     <!-- Settings panel -->
     <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
+        <div id="borrowed-devotions-count" style="color:rgba(201,168,76,0.65); font-family:'IBM Plex Mono',monospace; font-size:0.68em; letter-spacing:0.06em; margin-top:2px; margin-bottom:10px;">No borrowed devotions active (8 available)</div>
 
         <!-- Phase 4 (UI_REDESIGN_HANDOFF.md §5) section headings inserted 2026-09-21. Existing
              controls below are NOT reordered or renamed in this pass -- every id, name and
@@ -428,9 +429,9 @@
         <div class="setting-group" id="during-office-section">
             <strong>During the Office:&nbsp;<span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
             <label><input type="checkbox" id="toggle-gloria-patri"          onchange="renderOffice(); saveSettings()" checked> Gloria Patri&nbsp;<span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
-            <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus&nbsp;<span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
-            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion&nbsp;<span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
-            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading&nbsp;<span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
+            <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
+            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
+            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
             <div class="nested-group" id="invitatory-settings-group" style="margin-top:8px;">
                 <strong style="color:#aaa; font-size:1em;">The Invitatory</strong>
                 <label style="margin-top:4px;"><input type="checkbox" id="toggle-rotate-invitatory-psalm" onchange="renderOffice(); saveSettings()" checked> Rotate Venite/Jubilate Daily&nbsp;<span class="info-btn" data-tip="BCP p.42/82: 'one of the Invitatory Psalms, Venite or Jubilate' — a genuinely free daily choice, no seasonal restriction. Rotates by calendar date; uncheck to always use Venite.">i</span></label>
@@ -453,8 +454,8 @@
         <!-- After the Office -->
         <div class="setting-group" id="closing-devotions-section">
             <strong>After the Office:&nbsp;<span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
-            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen&nbsp;<span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
-            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator&nbsp;<span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
+            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
+            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
             <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages&nbsp;<span class="info-btn" data-tip="BCP p.54/96 — a short set of versicles and responses said after the Apostles' Creed, before the Collects. This checkbox controls whether the whole set appears; see 'Rotate Suffrages A/B Daily' below to choose which of the two BCP-authorized sets is used.">i</span></label>
             <label><input type="checkbox" id="toggle-rotate-suffrages" onchange="renderOffice(); saveSettings()" checked> Rotate Suffrages A/B Daily&nbsp;<span class="info-btn" data-tip="BCP p.54/96 offers two equally-authorized sets of Suffrages, A and B — previously only A existed. Rotates between them by calendar date; uncheck to always use Suffrages A.">i</span></label>
             <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany&nbsp;<span class="info-btn" data-tip="BCP p.148. A longer, separate penitential litany, especially appropriate for Ash Wednesday, Rogation Days, and other days of solemn entreaty. The BCP permits it at the end of Morning or Evening Prayer, or as a separate devotion — offered here as an occasional addition, not routine daily content.">i</span></label>
@@ -471,18 +472,18 @@
             <strong>Opening Devotions:&nbsp;<span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
             <div class="nested-group">
                 <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
-                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span></label>
             </div>
             <div class="nested-group" style="margin-top:8px;">
                 <strong style="color:#aaa; font-size:1em;">Byzantine Orthodox</strong>
-                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours&nbsp;<span class="info-btn" data-tip="The Horologion's fixed Prayer of the Hour, said after the Kontakion and the forty-fold Kyrie eleison at each of the canonical Hours. Corrected 2026-09-21 -- previously mislabeled Church of the East; verified word-for-word against the OCA's Horologion texts.">i</span></label>
+                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="The Horologion's fixed Prayer of the Hour, said after the Kontakion and the forty-fold Kyrie eleison at each of the canonical Hours. Corrected 2026-09-21 -- previously mislabeled Church of the East; verified word-for-word against the OCA's Horologion texts.">i</span></label>
             </div>
             <div class="nested-group" style="margin-top:8px;">
                 <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
                 <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
                 <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
                 <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion&nbsp;<span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
+                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
                 <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
                 <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
@@ -1216,7 +1217,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=299" defer></script>
+<script src="js/office-ui.js?v=300" defer></script>
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 
