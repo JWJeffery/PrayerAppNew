@@ -1119,10 +1119,32 @@ body.shell-v2 .uo-theme-button:focus-visible {
    Governance: UI_REDESIGN_HANDOFF.md §3.1 (heading "Office Settings",
    section I "The Ordo"), §5, §3.7 (BCP Only at the foot).
 
-   The four legacy sidebars stay in the DOM as the source of truth for every
-   setting but are not shown under the flag; their real controls that the
-   drawer does not summarise are MOVED into it by js/office-drawer.js. Phase 6
-   deletes the sidebars and these two hiding rules with them.
+   The four legacy sidebars stay permanently in the DOM as the source of
+   truth for every setting, hidden by the two rules just below. Some of their
+   real controls (the borrowed devotions, BCP's "further" section, BCP Only
+   Mode) are MOVED into the drawer by js/office-drawer.js's moveRealControls();
+   most of the rest (Rite, Gospel placement, the 30-Day Psalter, Creed, Marian
+   element/position, East Syriac's Cathedral/Monastic use, Horologion's
+   calendar/display-depth selects, and every "which office" control) are only
+   ever READ from and written back to their real, still-in-place <input>/
+   <select> elements by office-drawer.js's radioRow()/checkboxRow()/
+   selectRow() and by js/office-ui.js's own render functions.
+
+   CORRECTED 2026-09-24, Phase 6: this comment previously said Phase 6 would
+   delete the sidebars and these two hiding rules outright. Attempting that
+   found it would break real liturgical settings -- confirmed by reading
+   radioRow()/checkboxRow()/selectRow() (js/office-drawer.js), which state
+   plainly that the controls they surface are read in place, never moved,
+   and by grepping js/office-ui.js's render functions, which read many of
+   the same elements directly (e.g. document.querySelector('input[name=
+   "rite"]:checked')). Deleting the sidebar markup without first moving
+   every one of those controls into the drawer's own DOM would silently
+   break Rite/Gospel-placement/Creed selection and more. That move has not
+   been done. The sidebars and these two hiding rules stay, permanently, as
+   the real (invisible) home for these controls, until a future session
+   does that fuller migration -- not a Phase 6 deliverable as originally
+   scoped. See RESUME_PROJECT_NOTE.md and AUDIT_GOVERNANCE_LEDGER.md for
+   the full account.
    --------------------------------------------------------------------------- */
 
 body.shell-v2.office-active #sidebar-toggle,

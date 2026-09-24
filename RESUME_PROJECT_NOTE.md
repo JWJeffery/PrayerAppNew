@@ -22,6 +22,54 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE, LIVE-CONFIRMED, 2026-09-24 (latest): Phase 6, stage 4 — real scope correction found and
+acted on, not a straight execution of the plan as written.** The plan (and `css/office-shell.css`'s
+own prior comment) said Stage 4 would delete the four legacy settings sidebars
+(`#settings-panel`/`#coptic-settings`/`#east-syriac-settings`/`#generic-settings`) and their two
+`display:none` hiding rules outright. Attempting it — reading `js/office-drawer.js`'s own
+`radioRow()`/`checkboxRow()`/`selectRow()` functions before touching anything, per this session's
+standing discipline — found that claim was wrong. Those three functions build synthetic drawer
+controls that **read from and write back to the real, still-in-place `<input>`/`<select>` elements**
+(their own comments say so plainly: "read, never moved"); they never move the originals into the
+drawer's own DOM the way `moveRealControls()`'s wholesale-move sections do for the borrowed
+devotions and BCP's "further" section. This covers Rite, Officiant, the 30-Day Psalter, Creed,
+Gospel placement, Marian element/position, East Syriac's Cathedral/Monastic use, and both of
+Horologion's calendar/display-depth selects — real, currently-working liturgical settings, not
+cosmetic ones. On top of that, every "which office" control (the actual hour/office picker for all
+four lanes) is read the same way, via the existing shared-office-nav mechanism
+(`setSharedOfficeNavHour()` in `js/office-ui.js`), which also writes back to these same real
+elements. Deleting the sidebar markup without first moving every one of these controls into the
+drawer's own DOM would have silently broken real office rendering (wrong Rite, wrong Gospel
+placement, etc.), not just made a setting temporarily unreachable. **That fuller migration was not
+done and is not part of what shipped today** — it's real, additional, unattempted work for a future
+session, not a quick fix.
+
+**What actually shipped**: the two mobile-repair mechanisms of the same name ("UO MOBILE DRAWER
+REPAIR") that Stage 3's own deferral note had already flagged as safe once the sidebars were
+confirmed permanently hidden — this stage confirmed that and deleted both. The JS block
+(`js/office-ui.js`, was ~117 lines) patched `selectMode()`/`toggleSidebar()` to manage
+`mobile-sidebar-open`/`sidebar-hidden` classes on the legacy sidebars and `#sidebar-toggle`; since
+`#sidebar-toggle` is now permanently `display:none !important` and unclickable, and
+`#main-content.sidebar-hidden` has zero rules anywhere in `css/office-shell.css` (confirmed by grep),
+this was pure dead weight. Separately, a genuinely distinct CSS block also found this session and
+NOT part of the original plan's inventory — `css/office.css`'s own "Horologion mobile stacked shell
+repair" (`#daily-office-section:has(#generic-settings:not(.mode-hidden))`, ~58 lines) — was confirmed
+dead the same way (its target is permanently invisible) and deleted too. A second, larger CSS block
+sharing the same "UO MOBILE DRAWER REPAIR" name (`css/office.css`, ~170 lines) turned out to set
+foundational mobile viewport positioning for `#daily-office-section`/`html`/`body`, not just sidebar
+classes — genuinely unclear whether the new shell's own mobile CSS fully supersedes it or still
+depends on it. Left untouched rather than guessed at; disclosed here rather than silently skipped.
+
+**Corrected the misleading comment** in `css/office-shell.css` (the "Phase 6 deletes the sidebars"
+line) to state the real, verified finding, with the full reasoning inline so a future session doesn't
+repeat the same wrong assumption. Verified live: all four lanes still render and publish correctly;
+Book of Needs and the drawer's synthetic controls (spot-checked: Rite toggle actually flips the real
+underlying radio) are unaffected; the pre-existing lane-switch fix from stage 2 still holds; mobile
+layout at 390px width screenshotted and compared directly against the pre-stage-4 commit in a
+throwaway git worktree — identical, including a pre-existing title-overflow cosmetic issue confirmed
+NOT caused by this stage. Zero console errors. Cache-bust `office.css` 218 → 219, `office-ui.js`
+307 → 308.
+
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest): two dashboard rows corrected for staleness, plus one
 real orphaned-content gap found and wired.** Josh asked "What is open and not blocked?", got a
 ledger audit back, then asked directly about two of the surfaced amber/red rows: **"What remains?
