@@ -464,12 +464,10 @@ body.shell-v2.office-active #main-content.app-primary-canvas {
    Keyed on data-uo-tradition (set by applyTraditionGround() in
    js/office-shell.js from the envelope's own env.tradition -- never guessed
    from the rendered page). A tradition with no rule below simply shows the
-   plain --uo-ground colour underneath -- an honest, disclosed gap for Coptic
-   (OOR) and East Syriac (COE), not a placeholder or a borrowed image; see
-   the ledger for why (network access blocked sourcing real images for them
-   this session). NEVER a Western Gothic image behind an Eastern lane --
-   HANDOFF.md's own explicit rule -- so ANG is the only tradition matched
-   here until real per-lane images exist.
+   plain --uo-ground colour underneath -- an honest, disclosed gap, not a
+   placeholder or a borrowed image; see the ledger for which lanes still
+   lack one and why. NEVER a Western Gothic image behind an Eastern lane --
+   HANDOFF.md's own explicit rule.
    --------------------------------------------------------------------------- */
 
 body.shell-v2.office-active #main-content.app-primary-canvas::before {
@@ -513,6 +511,90 @@ body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-trad
     background-image: url('/images/chartres-rose.png');
     filter: blur(9px) saturate(0.35) brightness(0.7);
     opacity: 0.22;
+}
+
+/* Coptic (OOR) -- Walters W.739, fol. 1r: a Coptic parchment fragment of the
+   Book of Exodus, 8th century CE. CORRECTED 2026-09-24: first attributed in
+   this file as "W.592, 1684 Arabic Gospels" and its license recorded as CC0
+   -- both wrong, caught by reading the file's own embedded XMP/IPTC metadata
+   rather than trusting the verbal description that came with it. The actual
+   embedded rights field reads: "Licensed for use under Creative Commons
+   Attribution-NonCommercial-ShareAlike 3.0 Unported... creativecommons.org/
+   licenses/by-nc-sa/3.0/legalcode" -- CC BY-NC-SA, not CC0. Fine for this
+   non-commercial app with attribution given (see images/CREDITS.md), but a
+   real correctness catch, not a formality -- do not re-cite the old "CC0"
+   claim anywhere. Supplied by Josh directly, cropped locally
+   (images/coptic-walters-w739.jpg) to remove the black photography
+   background and the pale binding-gutter strip down the original scan's
+   left edge -- an uncropped scan would have shown a hard black border once
+   veiled, exactly the failure Josh flagged.
+
+   This image is busier and higher-contrast than either Anglican image --
+   its own legible ink glyphs compete with live UI text far more readily
+   than blurred architecture does, so it needed its own tuning pass, not a
+   copy of the Anglican numbers. VERIFIED BY MEASUREMENT, not eyeballed, and
+   iterated twice: a Playwright screenshot at 2x device scale, sampled on a
+   4px grid across the live rendered page column, pixels within 60 units of
+   --uo-ink or --uo-rubric excluded (those are text/rubric pixels, not
+   background), remaining pixels' real WCAG relative luminance computed and
+   compared against --uo-ink. First pass (blur 14px, opacity 0.24, brightness
+   0.32) measured 14:1 at the median -- comfortably safe but the image was
+   essentially invisible, defeating the point. Raised twice, re-measured each
+   time, landing here: median 10.1:1, p95 8.6:1 (both still clear WCAG AAA's
+   7:1), p99 5.3:1 (clears AA's 4.5:1) -- only a single top-0.01% outlier
+   pixel dips below that, consistent with one bright spot in the manuscript
+   scan itself, not a systemic legibility problem. */
+body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+    background-image: url('/images/coptic-walters-w739.jpg');
+    filter: blur(16px) saturate(0.4) brightness(0.85);
+    opacity: 0.6;
+}
+
+/* East Syriac (COE) -- Wikimedia Commons, "File:East Syriac Script Thaksa.jpg":
+   an 18th-century Thaksa (service book) opening, Chaldean Syrian Church,
+   Thrissur. Public domain, verified directly on the Commons file page (not
+   assumed): tagged both CC-PD-Mark and PD-old-70-expired. Source:
+   https://commons.wikimedia.org/wiki/File:East_Syriac_Script_Thaksa.jpg .
+   Cropped locally (images/east-syriac-thaksa.jpg) to remove a thin black
+   scan-edge vignette, not a wide photography backdrop like the Coptic scan
+   needed. Low source resolution (624x386 before crop) -- acceptable here
+   because the blur this treatment already applies erases fine pixelation
+   regardless of source size; confirmed by looking at the actual live render,
+   not assumed from the numbers alone. Tuned and VERIFIED BY MEASUREMENT the
+   same way as Coptic (see that rule's own comment for the method) --
+   numbers below are this image's own result, not copied from Coptic's. */
+body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+    background-image: url('/images/east-syriac-thaksa.jpg');
+    filter: blur(10px) saturate(0.5) brightness(0.6);
+    opacity: 0.42;
+}
+
+/* Byzantine/Eastern Orthodox (EOR) -- Walters W.528, fol. 188r: the ornamented
+   headpiece and zoomorphic initial opening the Gospel of John, Greek Gospel
+   Book, early 13th century CE. DELIBERATELY an ornament-and-text page, not a
+   figural image: UI_REDESIGN_HANDOFF.md's own correction to the original
+   design proposal states plainly that an icon "is a venerated object, not a
+   texture" and vetoes using one this way; W.528's own single surviving
+   miniature (a different folio, an Evangelist portrait) was never a
+   candidate for that same reason. Confirmed by looking at the actual page
+   before cropping -- geometric interlace, floral ornament, two peacocks and
+   the manuscript's own incipit text, nothing figural. License CC BY-NC-SA
+   3.0 Unported, per that manuscript's own TEI description (same terms as
+   the Coptic W.739 page -- both Walters manuscripts, not CC0). Cropped
+   locally (images/byzantine-w528-headpiece.jpg) to remove the photography
+   background.
+
+   INERT AS OF 2026-09-24: Phase 5's Horologion lane (env.tradition 'EOR')
+   is not built yet, so no envelope will ever set data-uo-tradition="EOR"
+   today -- this rule cannot be exercised live and its blur/opacity below
+   are a starting estimate, NOT measured against real rendered text the way
+   the ANG/OOR/COE numbers above are. Re-verify by the same measurement
+   method once that lane emits a real envelope, before trusting these
+   numbers as final. */
+body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="EOR"]::before {
+    background-image: url('/images/byzantine-w528-headpiece.jpg');
+    filter: blur(14px) saturate(0.45) brightness(0.55);
+    opacity: 0.4;
 }
 
 body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }

@@ -22,8 +22,8 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**PARTIALLY DONE, LIVE-CONFIRMED, 2026-09-24 (latest): per-lane veiled ground imagery built —
-Anglican done, Coptic/East Syriac/Byzantine blocked on real images, not guessed at.** This is the
+**DONE, LIVE-CONFIRMED, 2026-09-24: per-lane veiled ground imagery — all four lanes now have a
+real, sourced, measured image (Byzantine provisional pending Horologion's own build).** This is the
 THIRD time Josh raised this — read that as: earlier sessions (including this one, on the first
 pass) checked the design docs' PROSE but never actually looked at the design's own PNG screenshots
 pixel-by-pixel against a live render. Josh supplied 4 of the actual mockup images directly in chat
@@ -45,42 +45,54 @@ rail/page/margin/keeping grid areas), holding only the background-image + blur/o
 `filter:blur()` on `#main-content` itself, which would blur the prayer text too, not just the
 ground behind it.
 
-**Anglican (ANG) is the only lane wired with a real image** — the two already in this repo,
-already established elsewhere in this exact app (`rood-screen.png` for `#uo-threshold`'s own
-"night-prayer aesthetic"; `chartres-rose.png` behind the entry screen). Night offices get the
-rood-screen archway; day offices (`body.uo-day`) get the Chartres rose window, matching HANDOFF.md
-1b's own description of a stained-glass band for Morning Prayer. **One real tuning bug caught live,
-not shipped blind**: the rose window at the same blur/opacity as the rood-screen read as wallpaper,
-not texture — exactly what the source document warns against — because it is a much busier, more
-saturated image. Given its own heavier blur (9px vs 3px) and lower opacity (0.22 vs 0.48),
-confirmed by screenshot before shipping.
+**Anglican (ANG)** — the two Western Gothic images already in this repo (`rood-screen.png` night,
+`chartres-rose.png` day, matching HANDOFF.md 1b's stained-glass description for Morning Prayer).
+**One real tuning bug caught live, not shipped blind**: the rose window at the rood-screen's own
+blur/opacity read as wallpaper, not texture — it's far busier and more saturated. Given its own
+heavier blur (9px vs 3px) and lower opacity (0.22 vs 0.48), confirmed by screenshot.
 
-**Coptic (OOR) and East Syriac (COE) have NO image — confirmed as flat `--uo-ground`, not a broken
-image or a placeholder.** Blocked on a real constraint, disclosed rather than worked around:
-this sandbox's network egress proxy returns 403 for `commons.wikimedia.org` AND
-`upload.wikimedia.org` (checked both directly, WebFetch and raw `curl`), so no real, licence-
-verifiable public-domain image could be sourced this session for either lane — and HANDOFF.md's
-own rule ("do not reuse the Western Gothic images... behind Eastern lanes") explicitly forbids
-covering the gap with what's already on hand. **Needs one of two things from Josh**: widen this
-session's network access to reach an image source (Wikimedia Commons was the obvious candidate —
-`Liturgical codex Louvre E10094.jpg` looked like a real, well-licensed candidate for the Coptic
-leaf before the block was hit), or supply the images directly, the same way he's supplied primary
-source text pages before. Byzantine (`EOR`/Horologion) has no lane built yet at all (Phase 5 lane
-3) so is correctly out of scope for this pass, but the SAME blocker will apply when that lane is
-built — HANDOFF.md's corrected guidance (`UI_REDESIGN_HANDOFF.md`, not the original proposal)
-explicitly vetoes Rublev's *Trinity* for this slot and calls for "a Byzantine horologion or
-typikon leaf, headpiece ornament, or architectural stonework" instead.
+**Coptic (OOR), East Syriac (COE), and Byzantine (EOR) — session continued once network access was
+widened and Josh supplied the Coptic image directly.** A real correction along the way, worth
+recording plainly: the Coptic image was first attributed as "Walters W.592, 1684 Arabic Gospels,
+CC0" — both wrong. **Reading the file's own embedded XMP/IPTC metadata** (not the verbal
+description that came with it) showed it is actually **Walters W.739, fol. 1r, an 8th-century
+Coptic parchment fragment of the Book of Exodus**, licensed **CC BY-NC-SA 3.0**, not CC0. Fine for
+this non-commercial app with attribution, but a real catch — verify the artifact itself, not the
+label. East Syriac sourced from Wikimedia Commons ("File:East Syriac Script Thaksa.jpg," an
+18th-century Thaksa, Chaldean Syrian Church, Thrissur) — license confirmed directly from the live
+Commons page's own category tags (`CC-PD-Mark` + `PD-old-70-expired`), genuine public domain.
+Byzantine sourced from Walters W.528 fol. 188r — an *ornamented headpiece and zoomorphic initial*
+opening the Gospel of John, deliberately NOT the manuscript's one surviving miniature (an Evangelist
+portrait) — per `UI_REDESIGN_HANDOFF.md`'s own correction to the original proposal, an icon "is a
+venerated object, not a texture," so only ornament-and-text pages were candidates. Confirmed by
+looking at the actual page before cropping: geometric interlace, floral ornament, two peacocks,
+incipit text — nothing figural. All three cropped locally with Pillow to remove black photography
+backgrounds and scan-edge artifacts, checked by looking at the cropped result, not file size.
 
-**Verified live**: screenshots of Anglican night (Compline/Evening Prayer) and day (Morning
-Prayer), confirming the veil is genuinely subtle and text stays fully legible in both; Coptic
-confirmed flat with zero console errors and zero broken-image artifacts; `?shell=v1`/no-flag
-confirmed completely unaffected (`data-uo-tradition` is never set — `applyTraditionGround()` is
-only called from `watchEnvelope()`, itself gated on `shellOn()`). Cache-bust `office-shell.css`
-300 → 301, `office-shell.js` 295 → 296. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, key
-`ui:per-lane-ground-imagery`.
+**Coptic and East Syriac tuned by MEASUREMENT, not eyeballed — and the first attempt was wrong in
+the other direction.** A Playwright script screenshots the live rendered page at 2x scale, samples
+a 4px grid, excludes pixels near `--uo-ink`/`--uo-rubric` (real text, not background), and computes
+real WCAG relative luminance/contrast on what's left. First Coptic pass (blur 14px, opacity 0.24)
+measured 14:1 — very safe, and **the image was essentially invisible**, defeating the entire point
+of having it. Raised twice, re-measured each time: final Coptic settings measure 10.1:1 at the
+median, 8.6:1 at p95 (both still clear WCAG AAA's 7:1), 5.3:1 at p99 (clears AA's 4.5:1) — visibly
+present texture, not wallpaper, not invisible either. East Syriac measured 8.2:1 median, 7.3:1 p95,
+6.97:1 p99 on its own first real attempt. Byzantine's numbers are a starting estimate only (11.9:1
+median against a stand-in office, since Horologion doesn't exist yet to test against) — flagged in
+the CSS itself as needing the same real measurement once that lane ships.
 
-**Phase 5 (Horologion, lane 3 of 3) is still next once Coptic/East Syriac imagery is unblocked or
-explicitly deferred by Josh** — see the "What that leaves" paragraph further below.
+**Verified live in all four lanes, plus old-skin regression**: Anglican night/day, Coptic, and East
+Syriac all screenshotted from the real running app; Byzantine previewed by forcing the attribute
+(no real lane to render into yet); `?shell=v1`/no-flag confirmed completely unaffected — computed
+`::before` background-image is literally `none` there, `data-uo-tradition` never set. Zero console
+errors beyond the known sandboxed Google Fonts failure. Cache-bust `office-shell.css` 300 → 303,
+`office-shell.js` 295 → 296. **New file**: `images/CREDITS.md` — shelfmark, source URL, and license
+for every image, including the Coptic correction recorded plainly rather than quietly fixed. Full
+detail: `AUDIT_GOVERNANCE_LEDGER.md`, key `ui:per-lane-ground-imagery`.
+
+**Phase 5 (Horologion, lane 3 of 3) is next** — see the "What that leaves" paragraph further below.
+When that lane is built, re-measure the Byzantine ground image against its real rendered text before
+trusting the current placeholder numbers.
 
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest, out-of-band entry — interrupted Phase 5 work on
 Josh's direct request): the entry screens redesigned and regrouped, off the Phase 5 build order.**
