@@ -22,6 +22,47 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE, LIVE-CONFIRMED, 2026-09-24 (latest): two dashboard rows corrected for staleness, plus one
+real orphaned-content gap found and wired.** Josh asked "What is open and not blocked?", got a
+ledger audit back, then asked directly about two of the surfaced amber/red rows: **"What remains?
+You told me this was complete"** (`coe:rebuild:milestone`, an amber row dated 2026-08-19 reading
+"REBUILD IN PROGRESS") and **"Wire it"** (`coe:festival-evening:content-built-not-wired`, amber,
+also dated 2026-08-19). Both rows turned out to be milestone markers from the very first day of
+their respective work, never updated despite substantial real progress in later sessions —
+confirmed live, not assumed: Sunday and Feast-of-our-Lord Ramsha/Lelya/Sapra all render real
+Festival content today (`sunday-ramsha-qdham/wathar-sequence` and `sunday-sapra-qdham/wathar-
+sequence` already reference the 20 `esy-festival-*` components the 08-19 note describes, resolved
+through placeholder-resolution code already in `js/office-ui.js`, wired in later 2026-08-27/08-29
+sessions that never updated this row). Both rows corrected to green with the real history restored.
+
+**One real gap found while verifying, not assumed away: `memorials-lelya-sequence` — a complete,
+ready-to-route 17-item sequence built the same 2026-08-19 session — had ZERO references anywhere
+in `js/office-ui.js`, confirmed by grep. Fully built content sitting orphaned since the day it was
+written.** Wired via a new `isMemorialDay` check (`EastSyriacCalendar.getDayClass().dayClass ===
+'commemoration'`, an existing engine classification, previously unused in this file), routing
+Lelya to it on a real non-Sunday, non-Feast, non-Fast commemoration day, at lower priority than the
+existing Feast-Lelya and Fast-Lelya branches. Verified live against a real date (Friday, February
+13, 2026 — "Commemoration of the Faithful Departed", found by scanning four years of dates): the
+body now correctly shows "Memorials of Saints / No Qaltha / Hulali 12, 13, 14" instead of the
+ordinary ferial Friday office. A real first-pass bug caught before landing on the right date: the
+initial date scan omitted `easterMode`, silently using a different Paschalion than the app's own
+default and finding the wrong Friday — caught by the render unexpectedly showing Fast content for
+what should have been a non-Lenten date, re-scanned correctly rather than assumed right.
+
+**Explicitly NOT solved, disclosed rather than guessed at: Ramsha and Sapra have no Memorial-
+specific sequence built at all** — unlike Lelya, there is no pre-assembled sequence waiting to be
+pointed at; the four commemoration-of-the-departed First/Second Anthem forms and the Suba'a-append
+exist only as loose components, and picking which of the four forms applies needs a per-
+commemoration class/state field this project's calendar layer doesn't carry. Also disclosed: the
+Layer-2 commemorations array driving `isMemorialDay` is narrow by design (1-8 named days a year,
+confirmed by a live 4-year scan) and is NOT the same system as the much larger individual-saint
+Layer 3 sanctoral calendar tracked elsewhere on this dashboard (`coe:layer3:week-anchoring-
+discovered`) — that layer is not wired into `getDayClass()` at all, and this fix does not touch it.
+
+Cache-bust `office-ui.js` 304 → 305. Full four-lane UI sweep and the Sunday/weekday regression
+check both re-run clean, zero console errors. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, keys
+`coe:rebuild:milestone` and `coe:festival-evening:content-built-not-wired`.
+
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest): Phase 5, lane 3 of 3 — Horologion envelope port.
 Phase 5 is now COMPLETE, all three lanes (Coptic, East Syriac, Horologion) plus the original
 Anglican port.** Josh: *"Move on to the Horologion now."* Read `renderHorologionOffice()`,

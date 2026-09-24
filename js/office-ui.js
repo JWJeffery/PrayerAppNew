@@ -5693,6 +5693,22 @@ async function renderEastSyriac() {
         ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).commemorations.some(c => c.type === 'feast')
         : false;
 
+    // Individual-saint memorial days (getDayClass's own dayClass === 'commemoration':
+    // a real, non-feast commemoration exists that day). Wired 2026-09-24 --
+    // components/traditions/east-syriac/rubrics.json's memorials-lelya-sequence
+    // (built 2026-08-19 from Maclean pp.68-84 alongside the Festival Evening
+    // Service) had zero references anywhere in this file until now, confirmed by
+    // grep before writing this: fully built content sitting orphaned. Ramsha and
+    // Sapra have NO equivalent assembled Memorial sequence yet -- Maclean's own
+    // Memorial content for those offices (the four commemoration-of-the-departed
+    // First/Second Anthem forms, the Suba'a appended afterward) exists only as
+    // loose components, not yet assembled into a sequence the way Lelya's was.
+    // That remains open; this wiring covers Lelya only, the one office where the
+    // content was already a complete, ready-to-route sequence.
+    const isMemorialDay = (typeof EastSyriacCalendar !== 'undefined')
+        ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).dayClass === 'commemoration'
+        : false;
+
     // The actual feast commemoration object (not just the boolean above),
     // reused below to resolve the two places in the Feast-of-our-Lord
     // Night Service where Maclean's own text names the specific feast
@@ -5902,6 +5918,18 @@ async function renderEastSyriac() {
     // already-verified Fast handling is left to win rather than guessing).
     if (officeKey === 'lelya' && isFeastDay && !lelyaFastSequenceName) {
         sequenceKey = 'feast-lelya-sequence';
+    } else if (officeKey === 'lelya' && isMemorialDay && dayName !== 'sunday' && !lelyaFastSequenceName) {
+        // A Feast of our Lord always wins over a coinciding memorial (the branch
+        // above), and Sunday's own Night Service always wins over a coinciding
+        // weekday memorial (matching how Sunday already takes precedence
+        // everywhere else in this function) -- a real memorial only reaches this
+        // branch when neither of those applies. Overrides Wednesday's own
+        // Before/After Motwa variation too, on the same reasoning already
+        // established for the Feast branch just above: this is inferred from
+        // this codebase's existing feast-over-weekday-variation precedent, not
+        // separately confirmed against Maclean's own stated priority order for
+        // this specific case.
+        sequenceKey = 'memorials-lelya-sequence';
     }
 
     // Endana ("Prayer at Noon in the Fast") has no content outside the
