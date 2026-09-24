@@ -17379,3 +17379,115 @@ Documentation and one HTML/JS dashboard file only -- no application code, data, 
 output touched by this session.
 
 SEED_VERSION bumped to `v337-2026-09-24-ui-redesign-catalogued-into-dashboard`.
+---
+
+## Session 2026-09-24 continued -- Phase 5, lane 1: the Coptic Agpeya renderer ported to the
+## resolved-office envelope, live-confirmed across all eight of its own sequence-item shapes.
+## SEED_VERSION v337 -> v338.
+
+Josh's direction: proceed with the Agpeya render. First conversion of a non-Anglican lane since
+the contract envelope was specified.
+
+### Why this was smaller than the Anglican refactor
+
+`renderCopticAgpeya()` is one ~190-line loop over 8 named sequence-item shapes
+(`VARIABLE_COP_LESSON`, `VARIABLE_COP_CANTICLE`, `VARIABLE_COP_PSALMS`,
+`VARIABLE_COP_ANTIPHONAL_PSALM`, the two Midnight Office nocturn-psalm shapes,
+`VARIABLE_COP_THEOTOKIA_SECTIONS`, and a generic component lookup) -- not `renderBcpOffice()`'s
+970 lines and ~90 individual call sites. Read end to end before writing anything, per this
+project's own standing discipline.
+
+### Reuse, not duplication
+
+`bcpEmitBlock`, `bcpEmitPsalmBlock`, `bcpWrapInGutter`, `bcpRoleFor`, and `bcpPushDiagnostic` --
+built for the Anglican lane's own Phase 3 refactor -- turned out to contain nothing
+Anglican-specific in their actual behavior; each just takes a container/env and a label/text.
+Confirmed this by reading them, not assumed. `BCP_GUTTER_KIND_BY_LABEL[label] || ''` simply
+returns an empty gutter cell for any label it doesn't recognise, which is the correct default for
+Coptic content -- no Coptic-specific gutter-kind vocabulary has been proposed to or agreed with
+Josh yet, and inventing some unasked would repeat the exact mistake the Anglican gutter work was
+careful to avoid (that work waited for Josh's confirmation before adding CANTICLE/COLLECT/etc.).
+Called these four helpers directly from `renderCopticAgpeya()` rather than writing near-duplicate
+`cop*` versions of each.
+
+### One real shape mismatch, found and handled rather than papered over
+
+`bcpEmitReading()` unconditionally calls `bcpEmitDivider()` after a citation+reading. Grepped the
+pre-port `renderCopticAgpeya()` for `ornamental-divider`: zero hits, confirming this lane has never
+emitted one anywhere. Reusing `bcpEmitReading()` as-is would have visibly added dividers to a lane
+that never had them -- a real, avoidable regression. Rather than add an options flag to the
+Anglican lane's own helper (and risk that lane, which is live and browser-confirmed), wrote one
+small new function, `copEmitReading()`, mirroring `bcpEmitReading()`'s first three nodes exactly
+and stopping before the divider. It also covers a second case the Anglican shape doesn't have at
+all: the Theotokia's own `lessonCitation`, which O'Leary gives no separate heading for -- passing
+an empty title skips the label span entirely and skips the `blocks[]` push (no label, no rail
+entry, the same rule `bcpEmitBare`'s own comment already states), while the citation still reaches
+the page via the gutter cell.
+
+### Envelope shape
+
+Published via `window.AnglicanEnvelope.publish()` directly -- confirmed, by reading it, that
+`publish()` is a plain tradition-neutral event dispatch (sets `window.__universalOfficeEnvelope`,
+fires `universal-office-envelope`) and that the shell's own listener chain
+(`watchEnvelope`/`renderRailFromEnvelope`/`renderOrdoFromEnvelope`/`renderMarginFromEnvelope` in
+`js/office-shell.js`) reads `env.tradition`/`env.blocks`/`env.context`/`env.overlays`/
+`env.diagnostics` generically, nothing gated to `'ANG'`. Built the envelope object directly
+(`tradition: 'OOR'`, `officeFamily` the active `cop-hour` value, `context.calendarSummary` the
+lane's own date-title string, `context.rankSummary: null` -- this lane computes no rank) rather
+than adding a near-duplicate `CopticEnvelope.assemble()` module for what would be a one-line object
+literal. `tradition: 'OOR'` matches the sanctoral ANG/LAT/EOR/OOR/COE tagging convention already
+used throughout `sanctoral.json` and `traditionObservance` -- not the separate 2-letter
+`ANG`/`OO`/`COE`/`EO` scheme `BOOK_OF_NEEDS_MODE_CONTEXTS` also carries in this same file, which is
+a different, narrower convention for a different purpose. `overlays[]` stays permanently empty for
+this lane: confirmed the Coptic Agpeya borrows nothing from another tradition, unlike BCP's own
+Agpeya-Opening-style toggles which borrow INTO BCP. No seasonal dot added -- section 6 requires a
+named Coptic-specific colour witness before any dot renders, and none has been sourced yet (see the
+`ui:phase5-eastern-seasonal-colors-sourcing` dashboard row).
+
+### One small, deliberate, disclosed behavioural addition
+
+The three pre-existing `console.warn`-only "not found" paths (a missing Theotokia section
+component, a missing reused psalm set, a missing generic component) rendered nothing at all before
+this port -- not even a placeholder, just silent absence. Each now also calls
+`bcpPushDiagnostic(env, 'coverage-gap', ...)`. This is the one place this port does more than a
+pure refactor, and it is strictly safe: it only fires exactly where nothing rendered before either,
+so no currently-working content path is affected, and it moves an invisible gap into the honest
+disclosure contract §11 already requires elsewhere in this app.
+
+### Verification, two ways
+
+1. **jsdom, against the real extracted functions, not reimplementations.** Extracted
+   `bcpMakeSpan`/`bcpRoleFor`/`bcpWrapInGutter`/`bcpEmitBlock`/`bcpEmitPsalmBlock`/`bcpEmitBare`/
+   `bcpEmitDivider`/`bcpPushDiagnostic`/`copEmitReading` plus their small dependencies directly out
+   of `js/office-ui.js` by source, evaluated them in a jsdom document, and ran 27 assertions across
+   5 cases: a labelled reading (citation, no divider, correct `blocks[]` entry), an unlabelled
+   reading (no rubric-text span, no `blocks[]` entry, citation still present), a multi-entry psalm
+   block (one label, N per-psalm citations, no divider, no stray Gloria span when `gloriaText` is
+   undefined), a `'para'`-shaped component block (DIV not span, `white-space:normal`,
+   paragraph-broken), and a diagnostic push (correct code/wording/block). All 27 passed.
+2. **Live, in this sandbox's own headless Chromium** (`/opt/pw-browsers/chromium-1194`, confirmed
+   working the same way the 2026-09-24 drawer session confirmed it), against the real app served by
+   `scripts/dev-spa-server.mjs` under `?shell=v2`, across five different Coptic hours chosen
+   specifically to exercise every one of the 8 shapes with real content rather than a synthetic
+   fixture: Morning Office (Lesson, Psalms, generic components -- Doxologies, Trisagion, Creed,
+   Kyrie); Sixth Hour (confirms the antiphonal-psalm shape -- "Psalm 55 (with the Troparion's
+   Refrain)" as its own rail item); Eleventh Hour (confirms the canticle shape -- "Nunc Dimittis,"
+   citation `LUKE 2:29-32`); Twelfth Hour; Midnight Office (confirms all three nocturn-psalm shapes
+   at once, including the two that reuse the Eleventh/Twelfth Hour's own already-appointed psalm
+   sets rather than re-specifying them); and the day's own Theotokia (confirms the section-loop
+   shape with real Psali/Theotokia/Crown titles). Across all five: zero `.ornamental-divider` nodes
+   anywhere (confirming the divider-mismatch fix held under real content, not just the synthetic
+   jsdom case), zero diagnostics fired for any tested hour (the Coptic corpus is complete for every
+   one, consistent with its GREEN status since 2026-08-18), zero console errors beyond a Google
+   Fonts 403 -- confirmed, by checking the failing request directly, to be this sandbox's own
+   network egress allowlist rejecting `fonts.googleapis.com`, unrelated to this change and the same
+   class of environment noise this ledger has already flagged for GitHub's forwarding proxy and
+   browser-extension messages. The rail shows real, lane-native Coptic labels under `?shell=v2` for
+   the first time ever -- previously confirmed genuinely empty (2026-09-19, correctly so, since no
+   envelope existed); now genuinely populated, envelope `tradition` correctly `'OOR'` throughout.
+
+Cache-bust: `js/office-ui.js` 301 -> 302.
+
+Next: East Syriac, per section 9's own lane ordering.
+
+SEED_VERSION bumped to `v338-2026-09-24-phase5-coptic-lane-envelope-built`.

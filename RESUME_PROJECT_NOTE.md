@@ -105,30 +105,36 @@ into one line the way BCP's own day line does. Building that is real content/eng
 to Phase 5 (porting the Horologion lane), not a drawer fix — the drawer can only surface a day line
 once the lane actually has one to hand it.
 
-**DONE, 2026-09-24 (later same day): the dashboard-cataloguing task set at the end of the prior
-session is complete.** Read `UI_REDESIGN_HANDOFF.md` in full plus this project's own
-`AUDIT_GOVERNANCE_LEDGER.md` narrative for Phases 1–4 end to end (roughly fifty session entries,
-2026-09-12 through 2026-09-23), cross-checked against the live repo rather than trusted at face
-value, and found the dashboard was carrying only six UI-redesign rows total — Phases 1, 2 and 3 in
-full, and the threshold screen specifically, had never been recorded as a row at all despite being
-real, committed, live-confirmed work. Twelve new rows added for that genuinely-done-but-unledgered
-work, plus six new rows tracking what's genuinely still open (see below). **The placement question
-this note flagged last session is now settled — Josh's direction: give it its own array.** All
-eighteen UI-redesign rows now live in `const UI_REDESIGN = [...]` (not `BCP_ENGINES`, which never
-should have been holding them), rendered under a new dashboard section, "IX. UI Redesign — rail ·
-page · margin shell." `BCP_ENGINES` is back to being only engine-correctness rows. Full detail of
-this session in `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24 continued, SEED_VERSION
-v336 → v337.
+**DONE, 2026-09-24 (later still): Phase 5 lane 1 of 3 -- the Coptic Agpeya renderer now emits the
+real envelope, live-confirmed.** `renderCopticAgpeya()` (~190 lines, 8 sequence-item shapes)
+converted from string-concatenated `officeHtml` to real DOM nodes plus `blocks[]`/`overlays[]`/
+`diagnostics[]` built at the moment of emission -- the same move `renderBcpOffice()`'s own Phase 3
+refactor made. Reuses the Anglican lane's own `bcpEmitBlock`/`bcpEmitPsalmBlock`/`bcpWrapInGutter`/
+`bcpRoleFor`/`bcpPushDiagnostic` directly (confirmed nothing in them is Anglican-specific) rather
+than duplicating them. One genuine shape mismatch found and handled with a small new
+`copEmitReading()`: `bcpEmitReading()` always adds an ornamental divider, and this lane has never
+had one anywhere. Envelope tradition `'OOR'`; `overlays[]` stays empty (this lane borrows nothing);
+no seasonal dot (no Coptic colour witness sourced yet). Verified two ways: a 27-assertion jsdom
+harness against the real extracted functions (all shapes), and live in this sandbox's own headless
+Chromium under `?shell=v2` across five hours chosen to exercise every shape with real content
+(Morning Office, Sixth Hour, Eleventh Hour, Twelfth Hour, Midnight Office, the day's Theotokia) --
+zero dividers, zero diagnostics, zero non-environmental console errors throughout; the rail now
+shows real Coptic labels where it was confirmed empty as recently as 2026-09-19. Cache-bust
+`office-ui.js` 301 → 302. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24
+continued ("Phase 5, lane 1"), SEED_VERSION v337 → v338.
 
-**What that leaves, concretely, for the next session — Phase 5, per §9's own ordering (Coptic
-first, then East Syriac, then Horologion last since §8.9 repriced it as a payload reconciliation
-rather than a fresh emitter):**
-- Phase 5 itself: porting Coptic, East Syriac, then Horologion to emit the real envelope — none of
-  the three lanes emit one yet; only Anglican does (`ui:phase5-coptic-lane-envelope`,
-  `ui:phase5-east-syriac-lane-envelope`, `ui:phase5-horologion-lane-envelope-and-day-line` in the
-  dashboard now track each as its own row rather than one undifferentiated "Phase 5" line).
-- The Horologion day line (above) — real content/engine work belonging to that lane's own Phase 5
-  slice, not a drawer fix.
+**What that leaves, concretely, for the next session — Phase 5, lane 2 of 3, East Syriac, per §9's
+own ordering (then Horologion last since §8.9 repriced it as a payload reconciliation rather than a
+fresh emitter):**
+- `renderEastSyriac()` still uses its own separate string-concatenated `officeHtml` pattern,
+  unconverted (`ui:phase5-east-syriac-lane-envelope` on the dashboard). Read it end to end before
+  converting anything, the same discipline the Coptic port used -- it is a larger, multi-session
+  rebuild (Maclean-sourced, only partially complete book-by-book) and may have its own shape
+  mismatches the way the divider was for Coptic; do not assume the same helpers drop in unchanged
+  without checking.
+- Then Horologion, last (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
+  still-missing lane-native day-summary line for the drawer, real content/engine work belonging to
+  this lane's own Phase 5 slice, not a drawer fix.
 - Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-
   specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
   omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own

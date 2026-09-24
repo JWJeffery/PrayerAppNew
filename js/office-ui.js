@@ -4344,6 +4344,52 @@ function bcpPushDiagnostic(env, code, blockLabel) {
     env.diagnostics.push({ code: code, message: BCP_DIAGNOSTIC_WORDING[code], block: blockLabel });
 }
 
+/**
+ * Coptic Agpeya port -- Phase 5, lane 1 of 3 (documentation/UI_REDESIGN_HANDOFF.md §9).
+ *
+ * renderCopticAgpeya() is far smaller than renderBcpOffice() was (one ~190-line
+ * loop over 8 sequence-item shapes, not 970 lines / ~90 sites), so most of it
+ * reuses the SAME emission helpers the Anglican refactor built just above --
+ * bcpEmitBlock/bcpEmitPsalmBlock/bcpWrapInGutter/bcpRoleFor/bcpPushDiagnostic
+ * take a container+env and a label/text; nothing in them is Anglican-specific,
+ * and BCP_GUTTER_KIND_BY_LABEL simply returns '' for any label it doesn't
+ * recognise (an empty gutter cell), which is the correct default here since no
+ * Coptic-specific gutter-kind words have been agreed with Josh yet -- the same
+ * conservative default the handoff doc itself calls for rather than inventing
+ * new gutter vocabulary unasked.
+ *
+ * ONE genuine shape mismatch, confirmed by reading the pre-port function end to
+ * end rather than assumed: bcpEmitReading() unconditionally calls
+ * bcpEmitDivider() afterward. renderCopticAgpeya has never emitted an
+ * ornamental divider anywhere -- confirmed by grepping the pre-port function
+ * for 'ornamental-divider': zero hits. Reusing bcpEmitReading as-is would have
+ * visibly added dividers this lane never had. Rather than add an options flag
+ * to the Anglican lane's own helper and risk a regression there for a Coptic
+ * need, this is its own small function below, mirroring bcpEmitReading's first
+ * three nodes exactly and stopping before the divider.
+ */
+function copEmitReading(container, env, title, citation, bodyText) {
+    if (title) {
+        var labelSpan = document.createElement('span');
+        labelSpan.className = 'rubric-text';
+        labelSpan.textContent = title;
+        container.appendChild(labelSpan);
+    }
+    var cite = document.createElement('h4');
+    cite.className = 'passage-reference';
+    cite.textContent = citation;
+    var body = bcpMakeSpan('reading-text', formatScriptureAsFlow(bodyText), { tag: 'div' });
+    bcpWrapInGutter(container, citation, [cite, body]);
+    /* No title -- e.g. the Theotokia's own lessonCitation, which O'Leary's
+       structure gives no separate heading for -- means no rail entry either,
+       the same "no label, no block" rule bcpEmitBare's own comment states.
+       The citation still reaches the page (the gutter cell above), just not
+       the rail/envelope. */
+    if (title) {
+        env.blocks.push({ label: title, role: bcpRoleFor(title), units: [{ kind: 'scripture', citation: citation }] });
+    }
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -6421,10 +6467,43 @@ async function renderCopticAgpeya() {
         copDateLabel.textContent = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     }
 
-    let officeHtml = `<div class="office-container">`;
-    officeHtml += `<p class="office-book-title">The Coptic Agpeya</p>`;
-    officeHtml += `<h2>${activeRubric.officeName || 'The Morning Office'}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>`;
+    // ── Begin DOM assembly (Phase 5 port: real nodes, not one string --
+    // same move renderBcpOffice() made in its own Phase 3 refactor) ─────────
+    const officeSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Coptic Agpeya';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = activeRubric.officeName || 'The Morning Office';
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = officeSubtitleText;
+    // No seasonal dot here, deliberately: UI_REDESIGN_HANDOFF.md §6 requires a
+    // named, jurisdiction-specific witness before any Eastern lane gets one
+    // (Coptic usage is "thinner and less codified than the Western sequence,"
+    // per the spec's own wording), and none has been sourced yet -- see the
+    // ui:phase5-eastern-seasonal-colors-sourcing row on the dashboard. An
+    // invented dot would be exactly the fabrication §6 warns against; no dot
+    // is honest silence until that sourcing work happens.
+    container.appendChild(subtitle);
+
+    // env replaces the string-concatenated officeHtml entirely -- blocks/
+    // overlays/diagnostics are built directly, here, at the moment each is
+    // actually emitted, the same pattern renderBcpOffice() established.
+    // overlays stays empty throughout this lane: nothing in the Coptic
+    // Agpeya borrows content from another tradition (unlike BCP's Agpeya
+    // Opening/Prayer of the Hours/Angelus toggles, which borrow INTO BCP),
+    // so there is nothing to mark as an overlay here -- confirmed by reading
+    // the pre-port function end to end, not assumed from the shape of BCP's.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
 
     for (let item of (activeRubric.sequence || [])) {
         item = item.trim();
@@ -6435,8 +6514,7 @@ async function renderCopticAgpeya() {
             const lesson = activeRubric.lesson;
             if (lesson && lesson.citation) {
                 const text = await getScriptureText(lesson.citation);
-                officeHtml += `<span class="rubric-text">${lesson.label || 'The Lesson'}</span><h4 class="passage-reference">${lesson.citation}</h4>`;
-                officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
+                copEmitReading(container, env, lesson.label || 'The Lesson', lesson.citation, text);
             }
             continue;
         }
@@ -6449,8 +6527,7 @@ async function renderCopticAgpeya() {
             const canticle = activeRubric.canticle;
             if (canticle && canticle.citation) {
                 const text = await getScriptureText(canticle.citation);
-                officeHtml += `<span class="rubric-text">${canticle.label || 'The Canticle'}</span><h4 class="passage-reference">${canticle.citation}</h4>`;
-                officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
+                copEmitReading(container, env, canticle.label || 'The Canticle', canticle.citation, text);
             }
             continue;
         }
@@ -6464,12 +6541,12 @@ async function renderCopticAgpeya() {
                     ...(psalmsSpec.fixed ? [psalmsSpec.fixed] : []),
                     ...(Array.isArray(psalmsSpec.set) ? psalmsSpec.set : [])
                 ];
-                officeHtml += `<span class="rubric-text">The Psalms</span>`;
+                const psalmEntries = [];
                 for (const psNum of psalmNums) {
                     const fullText = await getScriptureText('PSALM ' + psNum);
-                    officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                    psalmEntries.push({ displayNumber: psNum, fullText: fullText });
                 }
+                bcpEmitPsalmBlock(container, env, 'The Psalms', psalmEntries);
             }
             continue;
         }
@@ -6483,9 +6560,8 @@ async function renderCopticAgpeya() {
             const antSpec = activeRubric.antiphonalPsalm;
             if (antSpec && antSpec.reference) {
                 const fullText = await getScriptureText('PSALM ' + antSpec.reference);
-                officeHtml += `<span class="rubric-text">${antSpec.label || ('Psalm ' + antSpec.reference)}</span>`;
-                officeHtml += `<h4 class="passage-reference">Psalm ${antSpec.reference}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                bcpEmitPsalmBlock(container, env, antSpec.label || ('Psalm ' + antSpec.reference),
+                    [{ displayNumber: antSpec.reference, fullText: fullText }]);
             }
             continue;
         }
@@ -6496,9 +6572,7 @@ async function renderCopticAgpeya() {
             const spec = activeRubric.firstNocturnPsalm;
             if (spec && spec.reference) {
                 const fullText = await getScriptureText('PSALM ' + spec.reference);
-                officeHtml += `<span class="rubric-text">The Psalm</span>`;
-                officeHtml += `<h4 class="passage-reference">Psalm ${spec.reference}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                bcpEmitPsalmBlock(container, env, 'The Psalm', [{ displayNumber: spec.reference, fullText: fullText }]);
             }
             continue;
         }
@@ -6518,14 +6592,15 @@ async function renderCopticAgpeya() {
                     ...(psalmsSpec.fixed ? [psalmsSpec.fixed] : []),
                     ...(Array.isArray(psalmsSpec.set) ? psalmsSpec.set : [])
                 ];
-                officeHtml += `<span class="rubric-text">The Psalms</span>`;
+                const psalmEntries = [];
                 for (const psNum of psalmNums) {
                     const fullText = await getScriptureText('PSALM ' + psNum);
-                    officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                    psalmEntries.push({ displayNumber: psNum, fullText: fullText });
                 }
+                bcpEmitPsalmBlock(container, env, 'The Psalms', psalmEntries);
             } else {
                 console.warn(`[renderCopticAgpeya] Could not find psalms for ${sourceRubricId} to resolve ${item}`);
+                bcpPushDiagnostic(env, 'coverage-gap', 'The Psalms');
             }
             continue;
         }
@@ -6543,14 +6618,16 @@ async function renderCopticAgpeya() {
                 const sectionComp = appData.components.find(c => c.id === section.component);
                 if (sectionComp) {
                     const t = resolveText(sectionComp, rite) || sectionComp.text || '';
-                    officeHtml += `<span class="rubric-text">${sectionComp.title || section.component}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
+                    bcpEmitBlock(container, env, sectionComp.title || section.component, t, null, 'para');
                 } else {
                     console.warn(`[renderCopticAgpeya] Theotokia section component not found: ${section.component}`);
+                    bcpPushDiagnostic(env, 'coverage-gap', section.component);
                 }
                 if (section.lessonCitation) {
                     const lessonText = await getScriptureText(section.lessonCitation);
-                    officeHtml += `<h4 class="passage-reference">${section.lessonCitation}</h4>`;
-                    officeHtml += `<div class="reading-text">${formatScriptureAsFlow(lessonText)}</div>`;
+                    // No label -- O'Leary gives this lesson no separate heading beyond the
+                    // section it belongs to, matching the pre-port function exactly.
+                    copEmitReading(container, env, '', section.lessonCitation, lessonText);
                 }
             }
             continue;
@@ -6561,13 +6638,42 @@ async function renderCopticAgpeya() {
         const comp = appData.components.find(c => c.id === item);
         if (comp) {
             const t = resolveText(comp, rite) || comp.text || '';
-            officeHtml += `<span class="rubric-text">${comp.title || item}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
+            bcpEmitBlock(container, env, comp.title || item, t, null, 'para');
         } else {
             console.warn(`[renderCopticAgpeya] Component not found: ${item}`);
+            bcpPushDiagnostic(env, 'coverage-gap', item);
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    // ── Finalise DOM (same move as renderBcpOffice()'s own Phase 3 close:
+    // publish the envelope first, then one replaceChildren, not innerHTML) ──
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        try {
+            // Reusing window.AnglicanEnvelope.publish() deliberately -- it is a
+            // plain, tradition-neutral event dispatch (sets
+            // window.__universalOfficeEnvelope, fires 'universal-office-envelope'),
+            // not Anglican-specific logic; the shell's own listener
+            // (js/office-shell.js: watchEnvelope/renderRailFromEnvelope/
+            // renderOrdoFromEnvelope/renderMarginFromEnvelope) reads env.tradition,
+            // env.blocks, env.context, env.overlays and env.diagnostics generically
+            // and was confirmed, by reading it, to contain nothing gated to
+            // tradition 'ANG'. Building the envelope object directly here rather
+            // than adding a parallel CopticEnvelope.assemble() avoids a second
+            // near-duplicate wrapper for a one-line object literal.
+            window.AnglicanEnvelope.publish({
+                tradition: 'OOR',
+                officeFamily: selectedHourId || null,
+                context: { calendarSummary: officeSubtitleText || null, rankSummary: null },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
+    document.getElementById('office-display').replaceChildren(container);
     applyExplanationLayer('office-display');
 
     // Senkessar is intentionally not shown here -- parked separately per
