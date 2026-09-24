@@ -533,21 +533,23 @@ body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-trad
    its own legible ink glyphs compete with live UI text far more readily
    than blurred architecture does, so it needed its own tuning pass, not a
    copy of the Anglican numbers. VERIFIED BY MEASUREMENT, not eyeballed, and
-   iterated twice: a Playwright screenshot at 2x device scale, sampled on a
-   4px grid across the live rendered page column, pixels within 60 units of
-   --uo-ink or --uo-rubric excluded (those are text/rubric pixels, not
-   background), remaining pixels' real WCAG relative luminance computed and
-   compared against --uo-ink. First pass (blur 14px, opacity 0.24, brightness
-   0.32) measured 14:1 at the median -- comfortably safe but the image was
-   essentially invisible, defeating the point. Raised twice, re-measured each
-   time, landing here: median 10.1:1, p95 8.6:1 (both still clear WCAG AAA's
-   7:1), p99 5.3:1 (clears AA's 4.5:1) -- only a single top-0.01% outlier
-   pixel dips below that, consistent with one bright spot in the manuscript
-   scan itself, not a systemic legibility problem. */
+   iterated THREE times, the third time on Josh's own direct correction
+   ("Agpeya just looks like a blur") after the first two passes had chased
+   contrast numbers into invisibility -- a real lesson, not just a number
+   to hit: pass 1 (blur 14px, opacity 0.24, brightness 0.32) measured 14:1,
+   very safe, image essentially invisible; pass 2 (blur 16px, opacity 0.6,
+   brightness 0.85) measured 10.1:1 median, more visible but still read as
+   an undifferentiated wash, not recognizable manuscript texture -- both
+   were measured correctly and both still failed the actual goal. Pass 3
+   dropped blur from 16px to 6px (opacity/brightness otherwise similar) so
+   the page's own text columns became genuinely perceptible, confirmed by
+   looking at the live screenshot, not the contrast number alone; still
+   safe at 12.4:1 median, 11.4:1 p95, 6.2:1 p99 (all clear WCAG AA's 4.5:1,
+   AAA's 7:1 except the same single top-0.01% outlier pixel as before). */
 body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
     background-image: url('/images/coptic-walters-w739.jpg');
-    filter: blur(16px) saturate(0.4) brightness(0.85);
-    opacity: 0.6;
+    filter: blur(6px) saturate(0.5) brightness(0.6);
+    opacity: 0.5;
 }
 
 /* East Syriac (COE) -- Wikimedia Commons, "File:East Syriac Script Thaksa.jpg":
@@ -586,15 +588,21 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
 
    INERT AS OF 2026-09-24: Phase 5's Horologion lane (env.tradition 'EOR')
    is not built yet, so no envelope will ever set data-uo-tradition="EOR"
-   today -- this rule cannot be exercised live and its blur/opacity below
-   are a starting estimate, NOT measured against real rendered text the way
-   the ANG/OOR/COE numbers above are. Re-verify by the same measurement
-   method once that lane emits a real envelope, before trusting these
-   numbers as final. */
+   today -- this rule cannot be exercised live against real Horologion text,
+   only previewed by forcing the attribute against a stand-in office (BCP's
+   own). Blur dropped from an initial 14px to 6px, matching the same fix
+   the Coptic rule needed after Josh flagged both as "just a blur" -- at
+   14px the headpiece's own interlace and ornament weren't recognizable as
+   anything, just a soft brown wash; at 6px the pattern and the two
+   peacocks are genuinely visible. Contrast against the stand-in text: 11.8:1
+   median, 9.5:1 p95 (both clear AAA), 4.0:1 p99 (essentially at AA's
+   4.5:1 line). Re-verify by the same measurement method against REAL
+   Horologion text once that lane ships a real envelope -- both the
+   image's visibility and this p99 figure specifically. */
 body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="EOR"]::before {
     background-image: url('/images/byzantine-w528-headpiece.jpg');
-    filter: blur(14px) saturate(0.45) brightness(0.55);
-    opacity: 0.4;
+    filter: blur(6px) saturate(0.55) brightness(0.55);
+    opacity: 0.42;
 }
 
 body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }

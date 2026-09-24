@@ -90,9 +90,25 @@ errors beyond the known sandboxed Google Fonts failure. Cache-bust `office-shell
 for every image, including the Coptic correction recorded plainly rather than quietly fixed. Full
 detail: `AUDIT_GOVERNANCE_LEDGER.md`, key `ui:per-lane-ground-imagery`.
 
+**CORRECTED, same day, on Josh's direct feedback: "Agpeya just looks like a blur... so does that
+last daily office screen."** He was right, and it's a real lesson, not just a number to re-tune:
+Coptic and Byzantine had both been measured for contrast correctly, twice each, and STILL failed
+the actual goal — a passing contrast ratio proves text stays readable, it says nothing about
+whether the image itself is recognizable as anything. Coptic's first pass (14:1 contrast) was
+essentially invisible; the second pass (10.1:1) was more visible but still read as an
+undifferentiated brown wash, not manuscript texture — both were "safe" and both still looked like
+nothing. The actual fix was dropping blur sharply (Coptic 16px → 6px, Byzantine 14px → 6px) rather
+than adjusting opacity or brightness further — confirmed by looking at the resulting screenshot,
+not the contrast number, which is the same discipline Josh asked for the first time and which
+should have caught this before he had to say so a second time. Both still measure safely (Coptic
+12.4:1 median / 6.2:1 p99; Byzantine 11.8:1 median / 4.0:1 p99 against its stand-in text) — the
+fix was never in tension with legibility, it was simply the wrong knob being turned. Coptic's
+manuscript text columns and Byzantine's interlace pattern and peacocks are now genuinely visible.
+Cache-bust `office-shell.css` 303 → 304.
+
 **Phase 5 (Horologion, lane 3 of 3) is next** — see the "What that leaves" paragraph further below.
 When that lane is built, re-measure the Byzantine ground image against its real rendered text before
-trusting the current placeholder numbers.
+trusting the current placeholder numbers — and look at the screenshot, not just the ratio.
 
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest, out-of-band entry — interrupted Phase 5 work on
 Josh's direct request): the entry screens redesigned and regrouped, off the Phase 5 build order.**
