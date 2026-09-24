@@ -22,8 +22,81 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE, LIVE-CONFIRMED, 2026-09-24 (latest): Phase 5, lane 3 of 3 — Horologion envelope port.
+Phase 5 is now COMPLETE, all three lanes (Coptic, East Syriac, Horologion) plus the original
+Anglican port.** Josh: *"Move on to the Horologion now."* Read `renderHorologionOffice()`,
+`_renderHorologionItem()`, `_renderHorologionDiagnostics()`, the display-depth reduction system,
+and `js/horologion-engine.js`'s `resolveOffice()`/`_computeBaselineTone()`/
+`_computeLiturgicalSeason()` end to end before touching anything, same discipline as lanes 1-2.
+Two real findings from that reading, both acted on:
+1. **`TRADITION = 'BYZC'`, not `'EOR'`.** The ground-imagery work two sessions ago had already
+   shipped `[data-uo-tradition="EOR"]` in `css/office-shell.css` plus matching references in
+   `images/CREDITS.md`, copying the general ANG/LAT/EOR/OOR/COE sanctoral-calendar tagging
+   convention used elsewhere in this project — but `HorologionEngine`'s own authoritative constant
+   is `BYZC`. That CSS rule would never have matched a real envelope. Fixed everywhere (CSS
+   selector, `images/CREDITS.md`, this note) — the sanctoral calendar's own separate `EOR` tag
+   (a different subsystem entirely, confirmed 2026-09-07 to be a different project) was left alone.
+2. **No fasting-character data exists anywhere in the engine** (confirmed by grep — zero hits) —
+   only tone (`_computeBaselineTone`) and season/Holy-Week-day (`_computeLiturgicalSeason`). The
+   new `context.calendarSummary` composer (`HorologionEngine.getCalendarSummary()`, new exported
+   function) only claims what those two actually provide: "Tone N" ordinarily, "Great Lent — Tone
+   N" in Great Lent, a named Holy Week day ("Great and Holy Thursday") in Holy Week, and the
+   existing "Bright Week (Paschal Tone)" label in Bright Week. Verified live: "Tone 7" on an
+   ordinary date, "Great Lent — Tone 6" on March 8, 2026.
+
+**Built**: the item-type → role mapping is fresh, not reused from `js/anglican-envelope.js`'s
+`ROLE_BY_LABEL` table — that table was found (reading it end to end) to already contain several
+non-contract-compliant role strings of its own (`penitential`, `invitatory`, `collect`,
+`lords-prayer`, `thanksgiving`, `suffrages`) — a pre-existing Anglican discrepancy, disclosed here,
+left alone as out of scope for this lane. `item.type` maps far more directly onto the contract's
+closed 13-role taxonomy anyway: `psalm`/`kathisma` → `psalmody`, `stichera` → `hymn`, `litany` →
+`intercession`, `rubric` → `rubric`, everything else → `other`. `sequence` items (recursive
+containers) get no block of their own — structural grouping, not a liturgical unit — each child
+contributes its own block at the same granularity every other item type uses.
+`_renderHorologionItem()`'s own HTML-string output is untouched (a known-good, already-tested
+render), now wrapped in a real DOM node instead of a raw `innerHTML` assignment, matching the
+"DOM node, not string" precedent lanes 1-2 set; a new parallel `_pushHorologionEnvelopeEntries()`
+walks the same items and builds `env.blocks`/`env.diagnostics` alongside, so the visible render is
+byte-for-byte what it was before this port.
+
+**Placeholder/unresolved items now get a real `coverage-gap` diagnostic**, per the explicit
+governance ruling already on record (`UI_REDESIGN_HANDOFF.md` §8 item 3: the Horologion's
+incipit-only/deferred-psalm-text state is a stated gap, never framed as a user preference and
+never silently dropped) — the pre-port code rendered these as visible dashed blocks but never
+recorded them in any diagnostics contract; this closes that gap too. Verified live against a real
+placeholder date (Orthros, March 8 2026, Great Lent): 3 unresolved kathisma slots produced 3
+real `coverage-gap` diagnostics, each with the contract's own wording ("A known gap, stated rather
+than hidden."), alongside the pre-existing public-beta banner, which is unchanged.
+
+**A second real bug found and fixed as a direct result of finally being able to check the
+Byzantine ground image against real Horologion text, not a BCP stand-in**: the image's night-mode
+tuning (verified two sessions ago) held up fine, but the exact same darkened-image numbers,
+composited over the day theme's near-white ground instead of the night theme's near-black one,
+compressed into a flat wash — contrast against live text still measured safely (6.8:1 median, real
+screenshot), so this would NOT have been caught by contrast alone, only by looking at the
+screenshot, the same lesson from the "just looks like a blur" correction two sessions ago, now
+caught proactively instead of by Josh a third time. Fixed with a day-mode-specific override,
+the same move Anglican's own day override already made for the rose window: raise brightness
+back toward the source image instead of darkening it further, lower opacity instead. Re-verified
+by screenshot — the headpiece's interlace and the two peacocks are now recognizable in both
+themes. Neither Coptic nor East Syriac has been checked for the same day-mode gap yet — both use
+the same single-rule-for-both-themes pattern Byzantine had, so it's a real, disclosed, open
+question, not assumed either way.
+
+**Verified live in headless Chromium**: all Horologion offices with real resolvers (Vespers,
+Orthros, First/Third/Sixth/Ninth Hour, Small Compline, Great Compline, Typika, Midnight Office,
+an Interhour) across multiple dates, including a genuine "not appointed today" state (Great
+Compline outside its appointed days — correctly one rubric block, not a bug) and the real
+placeholder date above. Zero console errors. Also re-ran the full four-lane sweep (Anglican,
+Coptic, East Syriac, Horologion) and the existing `?shell=v1` regression check — all unaffected.
+Cache-bust `office-ui.js` 303 → 304, `office-shell.css` 304 → 305 → 306 (EOR→BYZC fix, then the
+day-mode fix). `js/horologion-engine.js` has no cache-bust param in `index.html` (loaded
+unversioned). Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, key
+`ui:phase5-horologion-lane-envelope-and-day-line`.
+
 **DONE, LIVE-CONFIRMED, 2026-09-24: per-lane veiled ground imagery — all four lanes now have a
-real, sourced, measured image (Byzantine provisional pending Horologion's own build).** This is the
+real, sourced, measured image (Byzantine's own numbers were provisional at the time; re-verified
+against real Horologion text once that lane shipped — see the entry above).** This is the
 THIRD time Josh raised this — read that as: earlier sessions (including this one, on the first
 pass) checked the design docs' PROSE but never actually looked at the design's own PNG screenshots
 pixel-by-pixel against a live render. Josh supplied 4 of the actual mockup images directly in chat
@@ -51,7 +124,7 @@ ground behind it.
 blur/opacity read as wallpaper, not texture — it's far busier and more saturated. Given its own
 heavier blur (9px vs 3px) and lower opacity (0.22 vs 0.48), confirmed by screenshot.
 
-**Coptic (OOR), East Syriac (COE), and Byzantine (EOR) — session continued once network access was
+**Coptic (OOR), East Syriac (COE), and Byzantine (BYZC) — session continued once network access was
 widened and Josh supplied the Coptic image directly.** A real correction along the way, worth
 recording plainly: the Coptic image was first attributed as "Walters W.592, 1684 Arabic Gospels,
 CC0" — both wrong. **Reading the file's own embedded XMP/IPTC metadata** (not the verbal
@@ -106,9 +179,8 @@ fix was never in tension with legibility, it was simply the wrong knob being tur
 manuscript text columns and Byzantine's interlace pattern and peacocks are now genuinely visible.
 Cache-bust `office-shell.css` 303 → 304.
 
-**Phase 5 (Horologion, lane 3 of 3) is next** — see the "What that leaves" paragraph further below.
-When that lane is built, re-measure the Byzantine ground image against its real rendered text before
-trusting the current placeholder numbers — and look at the screenshot, not just the ratio.
+**SUPERSEDED 2026-09-24: Phase 5 (Horologion, lane 3 of 3) is DONE — see the entry near the top of
+this note.** Left here only so the correction is visible in place; do not re-cite "is next."
 
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest, out-of-band entry — interrupted Phase 5 work on
 Josh's direct request): the entry screens redesigned and regrouped, off the Phase 5 build order.**
@@ -371,19 +443,20 @@ with no visual regression from the new DOM/gutter-grid structure. Cache-bust `of
 303. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24 continued further ("Phase 5,
 lane 2"), SEED_VERSION v338 → v339.
 
-**What that leaves, concretely, for the next session — Phase 5, lane 3 of 3, Horologion, last per
-§9's own ordering (§8.9 repriced it as a payload reconciliation rather than a fresh emitter):**
-- Horologion is next (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
-  still-missing lane-native day-summary line for the drawer, real content/engine work belonging to
-  this lane's own Phase 5 slice, not a drawer fix.
+**SUPERSEDED 2026-09-24 — Phase 5 is now fully closed (all three lanes: Coptic, East Syriac,
+Horologion), see the entry near the top of this note. What that actually leaves, concretely, for
+the next session:**
 - Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-
   specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
   omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own
   warning.
+- Whether Coptic and East Syriac's ground images have the same day-mode "flat wash" gap Byzantine
+  was just found and fixed to have — un-investigated, disclosed rather than assumed either way (see
+  the Horologion entry near the top of this note).
 - Phase 6 (deleting the old skin app-wide, plus the Book of Needs' own design pass after) is
-  untouched and correctly blocked on Phase 5 finishing first, per the build order in §9. The
+  untouched and now correctly unblocked — Phase 5 is complete, per the build order in §9. The
   navigation-architecture governance conflict that used to sit in front of Phase 6 is already
-  resolved (Josh's 2026-09-21 ruling) — nothing else is blocking it once Phase 5 closes.
+  resolved (Josh's 2026-09-21 ruling) — nothing else is blocking it now.
 
 **State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
 the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's

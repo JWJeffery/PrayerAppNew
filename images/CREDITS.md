@@ -49,7 +49,7 @@ the per-lane ground imagery work and were already in production use.
 - Cropped locally to remove a thin black scan-edge vignette (a few pixels on the left
   and right edges, not a wide photography backdrop).
 
-## Byzantine / Eastern Orthodox (EOR)
+## Byzantine / Eastern Orthodox (BYZC)
 
 - **File**: `byzantine-w528-headpiece.jpg` (cropped from the museum original)
 - **Manuscript**: Walters Art Museum, **Ms. W.528, folio 188r** — the ornamented
@@ -70,13 +70,22 @@ the per-lane ground imagery work and were already in production use.
 - **License**: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
   (CC BY-NC-SA 3.0), per that manuscript's own published TEI description — the same
   terms as the Coptic W.739 image above, not CC0.
-- **Status**: sourced and wired (`css/office-shell.css`, `data-uo-tradition="EOR"`)
-  but currently **inert** — the Horologion lane (Phase 5, lane 3 of 3) is not built
-  yet, so no envelope sets this attribute in production today. The blur/opacity
-  values are a starting estimate, not yet measured against real rendered Horologion
-  text the way the other three lanes' values are; re-verify by the same measurement
-  method (see `css/office-shell.css`'s own comment on the Coptic rule) once that lane
-  ships a real envelope.
+- **Status**: sourced, wired, and now LIVE — the Horologion lane (Phase 5, lane 3 of
+  3) ships a real envelope as of 2026-09-24 (`data-uo-tradition="BYZC"`, corrected
+  that same day from an initial `"EOR"`, which did not match `HorologionEngine`'s
+  own authoritative `const TRADITION = 'BYZC'`). Re-verified against real rendered
+  Horologion text (Orthros, Great Lent, March 2026), not a stand-in: contrast against
+  live text stayed safe in both themes, and the headpiece's interlace and the two
+  peacocks are genuinely recognizable, confirmed by screenshot, not assumed. Night
+  mode kept its original tuning unchanged (blur 6px, saturate 0.55, brightness 0.55,
+  opacity 0.42) — it held up. Day mode needed its own override, added this same day
+  once real content could finally be checked: the night-mode numbers, composited
+  over the near-white day ground instead of the near-black night ground, compressed
+  into a flat wash even though the text-contrast number still passed. Fixed the way
+  the Anglican lane's own day override already solves the same problem — raise
+  brightness back toward the source image (1.05, not darkened) and lower opacity
+  (0.3) instead of crushing the image dark first (see `css/office-shell.css`'s own
+  comment on this rule for the full account).
 
 ## Method note
 

@@ -8845,10 +8845,47 @@ async function _resolveInterhourSlots(officeKey, sections, dateObj) {
     }
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// getCalendarSummary(dateObj) — Phase 5 Horologion envelope port.
+//
+// Composes the one-line day summary the envelope contract's
+// context.calendarSummary field expects (documentation/UI_REDESIGN_HANDOFF.md
+// §2), from the two real data sources this engine actually has: tone
+// (_computeBaselineTone) and season/Holy Week day (_computeLiturgicalSeason).
+// There is no fasting-character computation anywhere in this engine
+// (confirmed by inspection) — this summary does not claim one.
+function getCalendarSummary(dateObj) {
+    const toneResult = _computeBaselineTone(dateObj);
+    const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+
+    const HOLY_WEEK_DAY_LABELS = {
+        'palm-sunday':     'Palm Sunday',
+        'great-monday':    'Great and Holy Monday',
+        'great-tuesday':   'Great and Holy Tuesday',
+        'great-wednesday': 'Great and Holy Wednesday',
+        'great-thursday':  'Great and Holy Thursday',
+        'great-friday':    'Great and Holy Friday',
+        'great-saturday':  'Great and Holy Saturday'
+    };
+
+    if (seasonResult.season === 'holy-week') {
+        const dayLabel = HOLY_WEEK_DAY_LABELS[seasonResult.holyWeekDay] || 'Holy Week';
+        return dayLabel;
+    }
+    if (seasonResult.season === 'bright-week') {
+        return toneResult.toneLabel;
+    }
+    if (seasonResult.season === 'great-lent') {
+        return `Great Lent — ${toneResult.toneLabel}`;
+    }
+    return toneResult.toneLabel;
+}
+
 return {
     getOfficeSkeleton,
     resolveOffice,
-    validateOfficePayload
+    validateOfficePayload,
+    getCalendarSummary
 };
 })();
 

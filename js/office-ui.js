@@ -3576,6 +3576,9 @@ async function renderOffice() {
 //   1. Calls HorologionEngine.resolveOffice() — non-throwing by contract.
 //   2. Checks payload.status === "error" and renders a visible error block.
 //   3. Walks sections and items, rendering placeholders as visible dashed blocks.
+//   4. Publishes the resolved-office envelope (Phase 5, lane 3 of 3), gated on
+//      shell-v2 exactly like the other three lanes -- see
+//      _pushHorologionEnvelopeEntries() below for the item-type -> role mapping.
 //
 // No calendar logic, no feast resolution, no text composition belongs here.
 //
@@ -3587,6 +3590,8 @@ async function renderHorologionOffice(officeKey) {
     const payload = await HorologionEngine.resolveOffice(currentDate, officeKey, { eoMode: selectedEoMode });
 
     // ── Error state: surface explicitly, never silently blank ────────────────
+    // No envelope is published here -- there is no resolved content to describe,
+    // and the error block itself is the honest signal, same as the pre-port code.
     if (payload.status === 'error') {
         const msg = (payload.diagnostics.warnings || []).join(' ') || 'Unknown error.';
         display.innerHTML =
@@ -3608,35 +3613,171 @@ async function renderHorologionOffice(officeKey) {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    let html = `<div class="office-container">`;
-    html += `<p class="office-book-title">The Horologion</p>`;
-    html += `<h2>${payload.title}</h2>`;
-    html += `<p class="liturgical-title">${dateLabel}</p>`;
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Horologion';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = payload.title;
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = dateLabel;
+    container.appendChild(subtitle);
 
     // Diagnostic banner when variable slots remain unresolved
     if (payload.diagnostics.placeholderSlots > 0) {
-        html +=
-            `<div style="border:1px solid var(--rubric); border-radius:4px; ` +
-            `padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); ` +
-            `font-family:'Cinzel',serif; letter-spacing:0.04em;">` +
+        const banner = document.createElement('div');
+        banner.setAttribute('style',
+            'border:1px solid var(--rubric); border-radius:4px; padding:10px 14px; ' +
+            'margin:12px 0; font-size:0.8em; color:var(--rubric); font-family:\'Cinzel\',serif; ' +
+            'letter-spacing:0.04em;');
+        banner.textContent =
             `⚠ Public-beta notice: unresolved slot(s) remain visible below. ` +
-            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.` +
-            `</div>`;
+            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.`;
+        container.appendChild(banner);
     }
 
+    // env replaces nothing pre-existing here (this lane never built one) -- it is
+    // built alongside the same _renderHorologionItem() string output the display
+    // has always used, via _pushHorologionEnvelopeEntries() below, so the visible
+    // render is byte-for-byte what it was before this port; only the envelope is new.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
+
+    const contentDiv = document.createElement('div');
+    let contentHtml = '';
     for (const section of payload.sections) {
-        html +=
+        contentHtml +=
             `<h3 class="rubric-heading" style="margin-top:1.5em; font-family:'Cinzel',serif; ` +
             `font-size:1em; letter-spacing:0.1em; text-transform:uppercase; color:var(--rubric);">` +
             `${section.label}</h3>`;
         for (const item of section.items) {
-            html += _renderHorologionItem(item);
+            contentHtml += _renderHorologionItem(item);
+            _pushHorologionEnvelopeEntries(env, item);
+        }
+    }
+    contentDiv.innerHTML = contentHtml;
+    container.appendChild(contentDiv);
+
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        try {
+            // Reusing window.AnglicanEnvelope.publish() deliberately -- see the
+            // identical comment on renderCopticAgpeya()'s own publish call: it is
+            // tradition-neutral, and the shell's listener reads env.tradition/
+            // blocks/context/overlays/diagnostics generically. tradition is 'BYZC',
+            // matching HorologionEngine's own authoritative `const TRADITION`
+            // (js/horologion-engine.js), not the 'EOR' sanctoral-calendar tag used
+            // elsewhere in this project for a different subsystem.
+            window.AnglicanEnvelope.publish({
+                tradition: 'BYZC',
+                officeFamily: officeKey || null,
+                context: {
+                    calendarSummary: HorologionEngine.getCalendarSummary(currentDate) || null,
+                    rankSummary: null
+                },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
         }
     }
 
-    html += `</div>`;
-    display.innerHTML = html;
+    display.replaceChildren(container);
     applyExplanationLayer('office-display');
+}
+
+/* Phase 5, lane 3 of 3 -- maps a resolved Horologion item to the contract's
+   closed 13-role taxonomy (UNIVERSAL_OFFICE_CORE_CONTRACT.md §7) by item.type,
+   built fresh rather than reusing js/anglican-envelope.js's ROLE_BY_LABEL
+   table, which was found (2026-09-24, reading it end to end) to contain
+   several non-compliant role strings of its own (penitential, invitatory,
+   collect, lords-prayer, thanksgiving, suffrages) -- a pre-existing Anglican
+   discrepancy, out of scope to fix here, but not one to copy into a new lane.
+   item.type maps far more directly onto the taxonomy than any label table
+   could: kathisma/psalm -> psalmody, stichera -> hymn, litany -> intercession,
+   rubric -> rubric, matching the taxonomy's own worked examples in §7's prose. */
+var HOR_ROLE_BY_TYPE = {
+    psalm: 'psalmody',
+    stichera: 'hymn',
+    kathisma: 'psalmody',
+    litany: 'intercession'
+};
+
+/* Walks one resolved (or unresolved) Horologion item and adds its contribution
+   to env -- one block per item, recursing into `sequence` containers rather
+   than giving the container itself a block (a sequence is structural grouping,
+   not a liturgical unit; each child already gets its own block at the same
+   granularity every other item type uses). Unresolved/placeholder items
+   contribute NO block -- there is no content to attribute -- but DO contribute
+   a real 'coverage-gap' diagnostic, per the explicit governance ruling
+   (UI_REDESIGN_HANDOFF.md §8 item 3): the Horologion's incipit-only/deferred
+   state is a stated gap, never a silently-dropped placeholder and never framed
+   as a user preference. */
+function _pushHorologionEnvelopeEntries(env, item) {
+    const isUnresolved =
+        item.type === 'placeholder' ||
+        item.status === 'unresolved' ||
+        item.status === 'placeholder';
+
+    if (isUnresolved) {
+        bcpPushDiagnostic(env, 'coverage-gap', item.label || item.key || 'Horologion slot');
+        return;
+    }
+
+    if (item.type === 'sequence') {
+        if (Array.isArray(item.items)) {
+            item.items.forEach(function (child) { _pushHorologionEnvelopeEntries(env, child); });
+        }
+        return;
+    }
+
+    if (item.type === 'rubric') {
+        // An instruction, not source content -- no unit to attribute.
+        env.blocks.push({ label: item.text || item.label || 'Rubric', role: 'rubric', units: [] });
+        return;
+    }
+
+    if (item.type === 'kathisma') {
+        const units = [];
+        const stases = Array.isArray(item.stases) ? item.stases : [];
+        stases.forEach(function (stasis, si) {
+            const psalms = Array.isArray(stasis.psalms) ? stasis.psalms : [];
+            psalms.forEach(function (psalm) {
+                units.push({ kind: 'psalm', citation: psalm.title || ('Stasis ' + (si + 1)) });
+            });
+        });
+        env.blocks.push({ label: item.label || 'Kathisma', role: 'psalmody', units: units });
+        return;
+    }
+
+    if (item.type === 'litany') {
+        env.blocks.push({ label: item.label || 'Litany', role: 'intercession', units: [{ kind: 'litany', citation: null }] });
+        return;
+    }
+
+    if (item.type === 'psalm' || item.type === 'stichera') {
+        env.blocks.push({
+            label: item.label || (item.type === 'psalm' ? 'Psalm' : 'Sticheron'),
+            role: HOR_ROLE_BY_TYPE[item.type],
+            units: [{ kind: item.type, citation: item.label || null }]
+        });
+        return;
+    }
+
+    // Fallback: "text" and any other resolved item type -- the same fallback
+    // branch _renderHorologionItem() itself falls through to.
+    env.blocks.push({
+        label: item.label || item.key || 'Text',
+        role: 'other',
+        units: [{ kind: item.type || 'text', citation: null }]
+    });
 }
 
 // Renders a single Horologion item as HTML.

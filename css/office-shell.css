@@ -571,7 +571,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
     opacity: 0.42;
 }
 
-/* Byzantine/Eastern Orthodox (EOR) -- Walters W.528, fol. 188r: the ornamented
+/* Byzantine/Eastern Orthodox (BYZC) -- Walters W.528, fol. 188r: the ornamented
    headpiece and zoomorphic initial opening the Gospel of John, Greek Gospel
    Book, early 13th century CE. DELIBERATELY an ornament-and-text page, not a
    figural image: UI_REDESIGN_HANDOFF.md's own correction to the original
@@ -586,11 +586,12 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    locally (images/byzantine-w528-headpiece.jpg) to remove the photography
    background.
 
-   INERT AS OF 2026-09-24: Phase 5's Horologion lane (env.tradition 'EOR')
-   is not built yet, so no envelope will ever set data-uo-tradition="EOR"
-   today -- this rule cannot be exercised live against real Horologion text,
-   only previewed by forcing the attribute against a stand-in office (BCP's
-   own). Blur dropped from an initial 14px to 6px, matching the same fix
+   Corrected 2026-09-24: this selector originally read data-uo-tradition="EOR",
+   copying the general ANG/LAT/EOR/OOR/COE sanctoral convention used elsewhere
+   in the project. HorologionEngine's own authoritative constant (const
+   TRADITION = 'BYZC' in js/horologion-engine.js) is 'BYZC', not 'EOR' -- fixed
+   here, in images/CREDITS.md, and in the resume note/ledger, as part of
+   building the Horologion envelope port. Blur dropped from an initial 14px to 6px, matching the same fix
    the Coptic rule needed after Josh flagged both as "just a blur" -- at
    14px the headpiece's own interlace and ornament weren't recognizable as
    anything, just a soft brown wash; at 6px the pattern and the two
@@ -599,10 +600,29 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    4.5:1 line). Re-verify by the same measurement method against REAL
    Horologion text once that lane ships a real envelope -- both the
    image's visibility and this p99 figure specifically. */
-body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="EOR"]::before {
+body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
     background-image: url('/images/byzantine-w528-headpiece.jpg');
     filter: blur(6px) saturate(0.55) brightness(0.55);
     opacity: 0.42;
+}
+/* Day-mode override, added once the Horologion lane shipped a real envelope
+   and this rule could finally be checked against real Horologion text rather
+   than a stand-in -- caught live 2026-09-24: the night-mode numbers above
+   (darkened image, brightness 0.55) hold up well against the near-black night
+   ground (#08070c), but the SAME darkened image composited at low opacity over
+   the near-white day ground (#f2ebdf, body.shell-v2.uo-day) compresses toward
+   a flat light wash -- contrast against day ink (#2a2118) still measured safe
+   (6.8:1 median, 15:1 max, real screenshot of live Orthros text), but the
+   image's own internal tonal range read as washed-out, not textured. Fixed the
+   way ANG's own existing day override already solves it for the rose window:
+   do not darken toward the night palette at all -- raise brightness back
+   toward the source image's own tones and lower opacity instead, so veiling
+   comes from transparency, not from crushing the image dark first. Re-verified
+   by screenshot against real Orthros text (Great Lent, Tone 6, March 2026):
+   the headpiece's interlace and the two peacocks are recognizable, not a wash. */
+body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
+    filter: blur(6px) saturate(0.5) brightness(1.05);
+    opacity: 0.3;
 }
 
 body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }
