@@ -16,9 +16,112 @@ two weeks because it kept getting lost between sessions. If asked to compare the
 model" or judge whether something "looks elegant," open these PNGs directly — do not ask Josh to
 re-upload, re-describe, or re-locate them, and do not rely on `UI_REDESIGN_HANDOFF.md`'s prose
 alone when the actual pixels are sitting right there. `1c-threshold-ordo-drawer.png` is
-specifically the settings-drawer target; the current `#settings-panel` looks nothing like it, and
-Phase 4 (building that drawer for real) has never been started — confirmed by direct search of
-`js/office-shell.js` and `css/office-shell.css`, not assumed.**
+specifically the settings-drawer target.**
+
+**SUPERSEDED 2026-09-24: the claim immediately above that Phase 4's drawer "has never been
+started" is no longer true — see the entry directly below. Left here only so the correction is
+visible in place; do not re-cite the old claim.**
+
+**State as of 2026-09-24. HEAD before this commit was `44d295e5`.** Phase 4's drawer itself
+(`documentation/design/screens/1c-threshold-ordo-drawer.png`) built for real, and a real,
+independently-confirmed engine bug fixed in the same session. **This environment turned out to
+have a working headless Chromium the whole time** (`playwright`, pre-installed browser binary at
+`/opt/pw-browsers/chromium-1194`) — prior sessions' repeated "no browser here" / "not
+screen-confirmed" caveats were wrong. Every claim below was exercised in a real rendered page, not
+inferred from source.
+
+**Built: `js/office-drawer.js` (new file), a single Office Settings drawer replacing all four
+legacy sidebars under `body.shell-v2`.** Native `<dialog>` + `showModal()` — focus trap, Esc-close,
+inert background and focus return for free, no dependency. It keeps NO state of its own: Sections
+I (`The Ordo`) and II (`Which office`) drive the app's existing lane-neutral navigator API
+(`changeSharedOfficeNavDate`, `todaySharedOfficeNavDate`, `setSharedOfficeNavDate`,
+`setSharedOfficeNavHour` — all pre-existing in `js/office-ui.js`, not new). Section III's compact
+value rows (Rite, Officiant, Psalter, Creed, Gospel, Marian element, per-lane rows for Coptic/East
+Syriac/Horologion) are `<select>`s that `.click()` the real legacy `<input>` they represent, so
+that control's own existing `onchange` handler runs exactly as if Josh had clicked it in the old
+sidebar — nothing was reimplemented. Everything else — the 7 borrowed-devotion toggles
+(consolidated behind a "Borrowed devotions — N on" summary with a plain-language list, matching
+1c's own "Kyrie Pantocrator · Hudra Prayer for Understanding. Each keeps its own name and its own
+tradition." copy), the remaining native BCP choices (behind a second, separate "Further Prayer
+Book choices" expander), and BCP Only Mode (a real toggle switch at the foot, §3.7) — is **MOVED
+into the drawer, same DOM nodes, same ids, same handlers, never rebuilt.** `css/office-shell.css`
+gained the drawer's stylesheet plus two small override blocks needed to beat two pre-existing
+`!important` rules in `css/office.css` (the old 340px sidebar-clearance padding, and the parchment
+pass's light rounded `<select>`/`<input type=date>` styling) — both identified by reading the
+actual winning rule first, not guessed at. `index.html` loads the new script after
+`office-shell.js`; `css/office-shell.css` bumped to `?v=299`.
+
+**Verified live, in this order, with zero console/page errors throughout:** opened the drawer from
+Compline; switched to Evening Prayer via the II grid and confirmed the real `office-time` radio and
+the page title both updated; changed Rite/30-Day Psalter/Creed via III and confirmed each real
+legacy control changed; expanded "Choose borrowed devotions," checked Kyrie Pantocrator, confirmed
+the drawer's own count, the legacy `#borrowed-devotions-count` line, and the margin's own overlay
+card all agreed; added Theotokion via the Marian Element row and confirmed the count and list both
+updated; toggled BCP Only and confirmed all 7 borrowed toggles came back unchecked, the drawer's
+own expander correctly disappeared (nothing left to show), and genuine BCP controls (Gloria Patri
+etc.) stayed visible — the exact contract §3.7 requires; stepped the date forward and back to
+Today; pressed Esc and confirmed the dialog closed and focus returned to the opening button;
+**reloaded the page and confirmed every changed setting survived** (Rite, 30-Day Psalter, Kyrie
+Pantocrator, Theotokion). Then repeated the open/II-grid/III-rows sequence in all three other
+lanes (Coptic, East Syriac, Horologion) and confirmed each shows its own lane-correct office grid
+and its own lane-correct III rows (Cathedral/Monastic + Explanations for East Syriac; Calendar
+Mode/Display Depth/Diagnostics + Explanations for Horologion). **Also confirmed, directly on the
+untouched pre-session code (`git stash` before testing), that flag-off behaviour
+(`?shell=v1` / no flag) is byte-for-byte identical to before this session** — the drawer script is
+fully inert without `body.shell-v2`.
+
+**Two of Josh's three governance calls from the end of the prior session, both applied:**
+
+1. **Cathedral/Monastic stays VISIBLE in the East Syriac drawer**, overriding
+   `UI_REDESIGN_HANDOFF.md` §8.4's instruction to hide it. Recorded as the deliberate resolution in
+   `audit-ledger.html` (`engine:suffrages-venite-compline-uncheck-bug-fixed`'s neighbor entry,
+   `ui:phase4-drawer-built`) — §8.4 itself is NOT edited, since the handoff doc is a record of the
+   original design correction and should stay as written; this note and the ledger are where a
+   deliberate override belongs.
+2. **A real, independently-confirmed engine bug found and fixed, not just a drawer-porting
+   question:** `updateSidebarForOffice()`'s `setVisible()` helper unchecked (and, via
+   `saveSettings()`, permanently persisted as unchecked) every BCP toggle it hid for the
+   current office — so visiting Compline silently and permanently turned off Suffrages and
+   "Rotate Venite/Jubilate Daily" everywhere, including back at Morning/Evening Prayer, where both
+   default to checked. **Confirmed present on the untouched pre-session code with the shell flag
+   OFF** — this is not a drawer bug, it predates this session's work entirely and was simply never
+   caught before. **Fixed**: `setVisible()` now only hides the row; it no longer touches
+   `.checked`. Confirmed safe before shipping — every control this function hides is read by
+   `renderOffice()` only inside the office-specific branch that actually uses it (e.g.
+   `suffragesChecked` feeds only the Morning/Evening Prayer branch), so a stale `checked` value
+   while a control sits hidden for an unrelated office never reaches that office's own rendered
+   output. Live-verified: visited Compline, then Evening Prayer, both toggles remained on.
+   `js/office-ui.js` cache-bust bumped `300 -> 301`.
+
+**Still open from the prior session's third item — Horologion's drawer day line.** The prior
+session left it blank rather than show a mislabeled reading (its only text names the calendar
+MODE, not the liturgical day). Josh's direction this session was "we should fix that," meaning
+build a real one, not just suppress the wrong one — **not done yet.** `js/horologion-engine.js`'s
+own resolved payload (`{tradition, officeKey, date, title, status, sections, diagnostics}`,
+UI_REDESIGN_HANDOFF.md §8.9) has no lane-native day-summary string of the kind the Anglican
+envelope's `context.calendarSummary` supplies — the tone/week/fast information exists
+(`_computeBaselineTone()` and neighbors in `js/horologion-engine.js`) but nothing yet composes it
+into one line the way BCP's own day line does. Building that is real content/engine work belonging
+to Phase 5 (porting the Horologion lane), not a drawer fix — the drawer can only surface a day line
+once the lane actually has one to hand it.
+
+**Immediate next task, Josh's direction this session: "architect the fuck out of" the full spec
+and put each remaining piece into the dashboard (`audit-ledger.html`), which was already two weeks
+overdue by his account.** Two Phase 4 ledger rows were added this session
+(`ui:phase4-drawer-built`, `engine:suffrages-venite-compline-uncheck-bug-fixed`) as the concrete
+example of what "architecting it into the dashboard" means going forward — every further Phase
+4/5/6 milestone should land in `audit-ledger.html` the same way, in the same commit as the code,
+not batched later. **What that leaves, concretely, for next session:**
+- Phases 5 and 6 still have zero rows of their own in `audit-ledger.html` — only the Phase 4 rows
+  added this session exist there. The dashboard's own BCP_ENGINES section is where Phase-numbered
+  UI rows have been landing (see `ui:body-typography-uniform` and the `ui:keeping-bar-*` entries
+  for the existing pattern to match); consider whether Phase-tracking rows belong in a dedicated
+  place instead, now that there will be several of them — not decided this session, flagged for
+  the next one.
+- The Horologion day line (above).
+- Phase 5 itself: porting Coptic, East Syriac, then Horologion last (§8.9) to emit the real
+  envelope — none of the three lanes emit one yet; only Anglican does.
+- Phase 6 (deleting the old skin) is untouched and correctly blocked on Phase 5.
 
 **State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
 the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's

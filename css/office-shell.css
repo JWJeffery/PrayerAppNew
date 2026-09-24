@@ -351,8 +351,14 @@ body.shell-v2.office-active .office-container .rubric-text {
 /* office.css 1611 — #main-content's own padding cleared the old 340px sidebar.
    The grid handles its own spacing; the sidebar clearance is restored in the
    sidebar rule below so the drawer still has room while it exists. */
-body.shell-v2.office-active #main-content.app-primary-canvas {
-    padding: 0 0 0 340px;
+/* Phase 4 (2026-09-24): the 340px legacy sidebar no longer sits beside the
+   grid under the flag -- Office Settings is one drawer, opened from the
+   keeping-place bar (js/office-drawer.js). No clearance to reserve. */
+body.shell-v2.office-active #main-content.app-primary-canvas,
+body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
+    /* !important because office.css:2270/2274 reserve the old sidebar's
+       width with !important at (1,2,1); this is (1,3,1). */
+    padding: 0 !important;
 }
 
 body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
@@ -895,3 +901,397 @@ body.shell-v2 .uo-theme-button:focus-visible {
    control. Nothing here yet — Phase 1's acceptance criterion is that the app is
    byte-identical in behaviour with the flag off and does not crash with it on.
    --------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------
+   PHASE 4 — OFFICE SETTINGS, ONE DRAWER
+   Target: documentation/design/screens/1c-threshold-ordo-drawer.png.
+   Governance: UI_REDESIGN_HANDOFF.md §3.1 (heading "Office Settings",
+   section I "The Ordo"), §5, §3.7 (BCP Only at the foot).
+
+   The four legacy sidebars stay in the DOM as the source of truth for every
+   setting but are not shown under the flag; their real controls that the
+   drawer does not summarise are MOVED into it by js/office-drawer.js. Phase 6
+   deletes the sidebars and these two hiding rules with them.
+   --------------------------------------------------------------------------- */
+
+body.shell-v2.office-active #sidebar-toggle,
+body.shell-v2.office-active .app-mode-drawer {
+    display: none !important;
+}
+
+body.shell-v2 .uo-drawer-open {
+    background: transparent;
+    border: 0;
+    padding: 4px 0;
+    color: var(--uo-accent);
+    font-family: var(--uo-face-title);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-open:hover,
+body.shell-v2 .uo-drawer-open:focus-visible { color: var(--uo-ink); }
+
+body.shell-v2 dialog.uo-drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: 430px;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    background: var(--uo-ground-raised);
+    color: var(--uo-ink);
+    border: 0;
+    border-left: 1px solid rgba(201, 168, 76, 0.28);
+    font-family: var(--uo-face-prayed);
+}
+body.shell-v2 dialog.uo-drawer[open] { display: flex; }
+body.shell-v2 dialog.uo-drawer::backdrop { background: rgba(4, 3, 8, 0.45); }
+body.shell-v2.uo-day dialog.uo-drawer::backdrop { background: rgba(42, 33, 24, 0.18); }
+
+body.shell-v2 .uo-drawer-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 40px 36px 8px;
+}
+body.shell-v2 .uo-drawer-title {
+    margin: 0;
+    font-family: var(--uo-face-machine);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+}
+body.shell-v2 .uo-drawer-close {
+    background: transparent;
+    border: 0;
+    color: var(--uo-ink-quiet);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+body.shell-v2 .uo-drawer-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 8px 36px 24px;
+}
+
+body.shell-v2 .uo-drawer-section-head {
+    margin: 26px 0 12px;
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+}
+
+/* I · The Ordo */
+body.shell-v2 .uo-drawer-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(201, 168, 76, 0.28);
+    height: 52px;
+    padding: 0 6px;
+}
+body.shell-v2 .uo-drawer-step {
+    background: transparent;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    color: var(--uo-ink-quiet);
+    font-size: 14px;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-step:hover { color: var(--uo-ink); }
+body.shell-v2 .uo-drawer-date {
+    font-family: var(--uo-face-title);
+    font-variant: small-caps;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    color: var(--uo-ink);
+}
+body.shell-v2 .uo-drawer-dayline {
+    margin-top: 12px;
+    font-size: 17px;
+    color: var(--uo-ink-quiet);
+}
+body.shell-v2 .uo-drawer-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: 2px;
+}
+body.shell-v2 .uo-drawer-fact {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 16px;
+}
+body.shell-v2 .uo-drawer-fact-value { color: var(--uo-ink-quiet); text-align: right; }
+body.shell-v2 .uo-drawer-datetools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+body.shell-v2 .uo-drawer-link {
+    background: transparent;
+    border: 0;
+    padding: 4px 0;
+    color: var(--uo-accent);
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-datepick {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--uo-hairline);
+    color: var(--uo-ink-quiet);
+    font-family: var(--uo-face-machine);
+    font-size: 11px;
+    color-scheme: dark;
+}
+body.shell-v2.uo-day .uo-drawer-datepick { color-scheme: light; }
+
+/* II · Which office */
+body.shell-v2 .uo-drawer-offices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+body.shell-v2 .uo-drawer-office {
+    min-height: 46px;
+    padding: 8px 14px;
+    text-align: left;
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    color: var(--uo-ink-quiet);
+    font-family: var(--uo-face-prayed);
+    font-size: 17px;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-office:hover { color: var(--uo-ink); }
+body.shell-v2 .uo-drawer-office[aria-checked="true"] {
+    border-color: rgba(201, 168, 76, 0.7);
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--uo-ink);
+}
+body.shell-v2 .uo-drawer-office:disabled { opacity: 0.35; cursor: default; }
+
+/* III · How you keep it — label left, value right, no boxes */
+body.shell-v2 .uo-drawer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 34px;
+    font-size: 18px;
+    color: var(--uo-ink);
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-row-value {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 4px 0;
+    text-align: right;
+    text-align-last: right;
+    color: var(--uo-ink);
+    font-family: var(--uo-face-title);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    max-width: 60%;
+}
+body.shell-v2 .uo-drawer-row-value option {
+    background: var(--uo-ground-raised);
+    color: var(--uo-ink);
+    text-transform: none;
+}
+body.shell-v2 .uo-drawer-row-value:focus-visible,
+body.shell-v2 .uo-drawer-office:focus-visible,
+body.shell-v2 .uo-drawer-step:focus-visible,
+body.shell-v2 .uo-drawer-link:focus-visible {
+    outline: 1px solid var(--uo-accent);
+    outline-offset: 2px;
+}
+body.shell-v2 .uo-drawer-rows > .uo-drawer-link { margin-top: 6px; }
+
+body.shell-v2 .uo-drawer-borrowed {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--uo-hairline);
+}
+body.shell-v2 .uo-drawer-borrowed-row { cursor: default; }
+body.shell-v2 .uo-drawer-borrowed-count {
+    font-family: var(--uo-face-title);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+}
+body.shell-v2 .uo-drawer-borrowed-list {
+    margin: 6px 0 0;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--uo-ink-quiet);
+}
+
+body.shell-v2 .uo-drawer-details { margin-top: 12px; }
+body.shell-v2 .uo-drawer-details > summary {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uo-accent);
+    cursor: pointer;
+    padding: 4px 0;
+}
+body.shell-v2 .uo-drawer-further {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+/* Moved legacy controls: flattened into the drawer's language. Their inline
+   tooltips (.info-btn) and ids are untouched. */
+body.shell-v2 .uo-drawer-moved {
+    padding: 6px 0 4px;
+    font-size: 16px;
+    color: var(--uo-ink);
+}
+body.shell-v2 .uo-drawer-moved .setting-group,
+body.shell-v2 .uo-drawer-moved .nested-group {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+body.shell-v2 .uo-drawer-moved strong {
+    display: block;
+    margin: 10px 0 4px;
+    font-family: var(--uo-face-machine);
+    font-weight: 400;
+    font-size: 10px !important;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet) !important;
+}
+body.shell-v2 .uo-drawer-moved label {
+    display: block;
+    margin: 6px 0;
+    line-height: 1.45;
+    color: var(--uo-ink);
+    font-family: var(--uo-face-prayed);
+    font-size: 16px;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-moved input[type="checkbox"],
+body.shell-v2 .uo-drawer-foot input[type="checkbox"] {
+    accent-color: #c9a84c;
+    margin-right: 8px;
+}
+
+/* BCP Only at the foot, a single toggle */
+body.shell-v2 .uo-drawer-foot {
+    padding: 18px 36px 26px;
+    border-top: 1px solid var(--uo-hairline);
+}
+body.shell-v2 .uo-drawer-foot[hidden] { display: none; }
+body.shell-v2 .uo-drawer-bcp-only label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--uo-face-machine);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"] {
+    order: 2;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 44px;
+    height: 22px;
+    margin: 0;
+    border: 1px solid rgba(201, 168, 76, 0.45);
+    border-radius: 11px;
+    position: relative;
+    cursor: pointer;
+}
+body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(201, 168, 76, 0.55);
+    transition: left 0.15s;
+}
+body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"]:checked::before {
+    left: 24px;
+    background: #c9a84c;
+}
+
+/* The parchment pass (office.css ~1849) forces a light rounded box on every
+   select and date input under body.office-active with !important. Inside the
+   drawer that pass has no business; overridden at higher specificity. */
+body.shell-v2.office-active dialog.uo-drawer select.uo-drawer-row-value,
+body.shell-v2.office-active dialog.uo-drawer input.uo-drawer-datepick {
+    background: transparent !important;
+    color: var(--uo-ink) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--uo-face-title) !important;
+}
+body.shell-v2.office-active dialog.uo-drawer input.uo-drawer-datepick {
+    border-bottom: 1px solid var(--uo-hairline) !important;
+    font-family: var(--uo-face-machine) !important;
+    color: var(--uo-ink-quiet) !important;
+}
+body.shell-v2.office-active dialog.uo-drawer button {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
+    border: 0 !important;
+    padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+    body.shell-v2 dialog.uo-drawer { width: 100vw; }
+    body.shell-v2 .uo-drawer-head,
+    body.shell-v2 .uo-drawer-body,
+    body.shell-v2 .uo-drawer-foot { padding-left: 22px; padding-right: 22px; }
+}
+
+@media print {
+    body.shell-v2 dialog.uo-drawer { display: none !important; }
+}

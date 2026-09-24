@@ -3097,7 +3097,18 @@ function updateSidebarForOffice() {
         if (!el) return;
         const row = el.closest('label') || el.closest('.nested-group') || el.parentElement;
         if (row) row.style.display = visible ? '' : 'none';
-        if (!visible) el.checked = false;
+        // FIXED 2026-09-24: this used to also set el.checked = false whenever a
+        // control was hidden for the current office -- e.g. every visit to
+        // Compline unchecked Suffrages and Rotate Venite/Jubilate, and that
+        // unchecked state was then saved by saveSettings(), so returning to
+        // Morning/Evening Prayer showed them off too, silently overriding their
+        // true defaults (checked). Confirmed harmless to stop doing: every
+        // control this function hides is read by renderOffice() only inside the
+        // office-specific branch that actually uses it (e.g. suffragesChecked at
+        // js/office-ui.js:4365 feeds only the Morning/Evening Prayer branch), so
+        // its checked state while hidden for an unrelated office never reaches
+        // that office's own output. Hiding the row is enough; the setting itself
+        // must survive the visit.
     }
 
     setVisible('toggle-angelus',               !isCompline);
