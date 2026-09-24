@@ -17306,3 +17306,76 @@ binary-file commit -- `git format-patch --binary` and a full `git am` round-trip
 clone verified below before handing this off, since every other patch tonight was text-only and
 this is new ground.
 
+---
+
+## Session 2026-09-24 continued -- the UI redesign catalogued onto the dashboard for the first
+## time, and split into its own array. SEED_VERSION v336 -> v337.
+
+Josh's direction from the end of the prior session ("architect the full spec... and put each
+remaining piece into the dashboard"), acted on directly.
+
+### What was actually on the dashboard versus what was actually built
+
+Checked before writing anything: `audit-ledger.html` carried exactly two rows for the entire UI
+redesign (`ui:phase4-drawer-built`, `engine:suffrages-venite-compline-uncheck-bug-fixed`, both
+from the immediately preceding session) plus four earlier bug-fix rows from the 2026-09-20 gutter
+work (`ui:body-typography-uniform`, the three `ui:keeping-bar-*` rows). **Everything else --
+Phases 1, 2 and 3 in full, and the threshold screen specifically -- had never been recorded as a
+dashboard row at all**, despite being real, committed, live-confirmed work spanning roughly fifty
+session entries in this file from 2026-09-12 through 2026-09-23. The threshold in particular
+(`#uo-threshold` inside `#mode-selection`, four rounds of Josh-confirmed live bug fixes, wired to
+all four lanes) is arguably the single most user-visible piece of Phase 4 and had zero presence on
+the dashboard before this entry.
+
+### What was done
+
+Read `documentation/UI_REDESIGN_HANDOFF.md` in full, then this file's own Phase 1 through Phase 4
+narrative end to end, then cross-checked specific claims against the live repo rather than trusting
+the narrative alone (confirmed via direct grep that `index.html` really does contain the rebuilt
+`#uo-threshold`, that `office-shell.js` really does implement the margin-card collapse and the
+three-state theme control, etc., per this project's own standing rule against trusting a claim
+without re-deriving it). Wrote twelve new rows to `audit-ledger.html` covering: Phase 1 (flagged
+stylesheet), Phase 2 (three-column shell, including the demolition-brought-forward decision),
+Phase 3 (the Anglican envelope refactor and gutter citation work, including the
+`ecu-east-syriac-hours` Byzantine-mistagged-as-COE correction folded in as part of that arc), the
+threshold screen, the seasonal dot plus its CPG-sourced `liturgicalColor`, and the
+navigation-architecture governance resolution -- six rows genuinely done and previously invisible.
+Six more rows track what `UI_REDESIGN_HANDOFF.md` section 9 still calls for and nothing has been
+built against yet: the three remaining Phase 5 lane ports (Coptic, East Syriac, Horologion --
+including the still-blank drawer day line, correctly filed as real content/engine work rather than
+a drawer bug), the Roman lane (correctly red/blocked, not scheduled), eastern seasonal-colour
+sourcing for Byzantine and Coptic (a corpus task, not a shell task, per section 6's own warning
+against doing it from general knowledge), and Phase 6 in full (today's "demolition" only ever
+covered the office screen, not the whole app).
+
+### The array split
+
+Asked Josh directly whether these belonged in `BCP_ENGINES` -- the array the two prior UI rows had
+landed in purely because it was the array open that session, not because UI-redesign rows are an
+engine-correctness audit of the kind that array actually tracks. Josh's direction: give them their
+own array. All eighteen UI-redesign rows (the twelve new ones plus the six pre-existing
+`ui:*`/`engine:suffrages-*` rows, moved out rather than duplicated) now live in a new
+`const UI_REDESIGN = [...]`, rendered under a new top-level dashboard section, "IX. UI Redesign --
+rail * page * margin shell", via `hydrateAndRender(UI_REDESIGN, ...)` in `init()`. `BCP_ENGINES`
+now holds 51 entries, none of them UI-redesign rows. Verified: both `<script>` blocks in
+`audit-ledger.html` parse clean (`node --check`), all 193 `key:` values across the whole file are
+still unique after the move (nothing duplicated, nothing dropped), and the moved rows' own
+cross-references to each other (e.g. the Phase 3 row naming `ui:keeping-bar-*` and
+`ui:body-typography-uniform` by key) still resolve, since keys are addressed by name regardless of
+which array holds them.
+
+### A process gap noticed in passing, not acted on here
+
+The immediately preceding session (the Phase 4 drawer build, `829f0fb`, SEED_VERSION v335 -> v336)
+updated `RESUME_PROJECT_NOTE.md` and `audit-ledger.html` but this file's own tail shows no narrative
+entry for it -- the same "ledger update slipped behind a real commit" failure this project's own
+workflow rules have flagged at least twice before. Not backfilled here, since reconstructing it
+secondhand risks asserting detail beyond what was actually verified live that session; flagging it
+is enough for now. `RESUME_PROJECT_NOTE.md`'s own header is updated in the same commit as this entry
+to reflect that the cataloguing task it set is done and to name Phase 5 (Coptic lane first, per
+section 9's own ordering) as the next concrete piece of work.
+
+Documentation and one HTML/JS dashboard file only -- no application code, data, or rendered office
+output touched by this session.
+
+SEED_VERSION bumped to `v337-2026-09-24-ui-redesign-catalogued-into-dashboard`.

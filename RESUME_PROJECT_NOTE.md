@@ -105,23 +105,38 @@ into one line the way BCP's own day line does. Building that is real content/eng
 to Phase 5 (porting the Horologion lane), not a drawer fix — the drawer can only surface a day line
 once the lane actually has one to hand it.
 
-**Immediate next task, Josh's direction this session: "architect the fuck out of" the full spec
-and put each remaining piece into the dashboard (`audit-ledger.html`), which was already two weeks
-overdue by his account.** Two Phase 4 ledger rows were added this session
-(`ui:phase4-drawer-built`, `engine:suffrages-venite-compline-uncheck-bug-fixed`) as the concrete
-example of what "architecting it into the dashboard" means going forward — every further Phase
-4/5/6 milestone should land in `audit-ledger.html` the same way, in the same commit as the code,
-not batched later. **What that leaves, concretely, for next session:**
-- Phases 5 and 6 still have zero rows of their own in `audit-ledger.html` — only the Phase 4 rows
-  added this session exist there. The dashboard's own BCP_ENGINES section is where Phase-numbered
-  UI rows have been landing (see `ui:body-typography-uniform` and the `ui:keeping-bar-*` entries
-  for the existing pattern to match); consider whether Phase-tracking rows belong in a dedicated
-  place instead, now that there will be several of them — not decided this session, flagged for
-  the next one.
-- The Horologion day line (above).
-- Phase 5 itself: porting Coptic, East Syriac, then Horologion last (§8.9) to emit the real
-  envelope — none of the three lanes emit one yet; only Anglican does.
-- Phase 6 (deleting the old skin) is untouched and correctly blocked on Phase 5.
+**DONE, 2026-09-24 (later same day): the dashboard-cataloguing task set at the end of the prior
+session is complete.** Read `UI_REDESIGN_HANDOFF.md` in full plus this project's own
+`AUDIT_GOVERNANCE_LEDGER.md` narrative for Phases 1–4 end to end (roughly fifty session entries,
+2026-09-12 through 2026-09-23), cross-checked against the live repo rather than trusted at face
+value, and found the dashboard was carrying only six UI-redesign rows total — Phases 1, 2 and 3 in
+full, and the threshold screen specifically, had never been recorded as a row at all despite being
+real, committed, live-confirmed work. Twelve new rows added for that genuinely-done-but-unledgered
+work, plus six new rows tracking what's genuinely still open (see below). **The placement question
+this note flagged last session is now settled — Josh's direction: give it its own array.** All
+eighteen UI-redesign rows now live in `const UI_REDESIGN = [...]` (not `BCP_ENGINES`, which never
+should have been holding them), rendered under a new dashboard section, "IX. UI Redesign — rail ·
+page · margin shell." `BCP_ENGINES` is back to being only engine-correctness rows. Full detail of
+this session in `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24 continued, SEED_VERSION
+v336 → v337.
+
+**What that leaves, concretely, for the next session — Phase 5, per §9's own ordering (Coptic
+first, then East Syriac, then Horologion last since §8.9 repriced it as a payload reconciliation
+rather than a fresh emitter):**
+- Phase 5 itself: porting Coptic, East Syriac, then Horologion to emit the real envelope — none of
+  the three lanes emit one yet; only Anglican does (`ui:phase5-coptic-lane-envelope`,
+  `ui:phase5-east-syriac-lane-envelope`, `ui:phase5-horologion-lane-envelope-and-day-line` in the
+  dashboard now track each as its own row rather than one undifferentiated "Phase 5" line).
+- The Horologion day line (above) — real content/engine work belonging to that lane's own Phase 5
+  slice, not a drawer fix.
+- Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-
+  specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
+  omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own
+  warning.
+- Phase 6 (deleting the old skin app-wide, plus the Book of Needs' own design pass after) is
+  untouched and correctly blocked on Phase 5 finishing first, per the build order in §9. The
+  navigation-architecture governance conflict that used to sit in front of Phase 6 is already
+  resolved (Josh's 2026-09-21 ruling) — nothing else is blocking it once Phase 5 closes.
 
 **State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
 the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's
