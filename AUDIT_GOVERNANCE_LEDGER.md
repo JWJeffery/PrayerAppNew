@@ -17653,3 +17653,155 @@ payload reconciliation rather than a fresh emitter, and it additionally needs th
 lane-native day-summary line built).
 
 SEED_VERSION bumped to `v339-2026-09-24-phase5-east-syriac-lane-envelope-built`.
+
+## Session 2026-09-24 continued -- Phase 5, lane 3 (last): the Byzantine Horologion renderer ported
+## to the envelope, AND the drawer's missing day-summary line built. Phase 5 is now closed for all
+## three lanes it covers. SEED_VERSION v339 -> v340.
+
+Two deliverables, both in this session, both flagged separately in the prior resume note: the
+envelope port itself, and the Horologion drawer day line section 8 item 9 and the 2026-09-24 note
+both named as real engine work, not a drawer fix.
+
+### The envelope port: a genuine reconciliation, not a fresh emitter
+
+`js/horologion-engine.js`'s `resolveOffice()` already returns a normalized `{sections:
+[{id, label, notes, items: [...]}]}` payload -- not a raw `officeHtml` string the way the Anglican,
+Coptic, and East Syriac lanes all started from. Section 8 item 9's own repricing ("a reconciliation
+between two payload shapes already validated in code, not a fresh emitter plus native labels") held
+up under actual reading: the real work was mapping `sections`/`items` onto `blocks[]`/`units[]`, not
+inventing office structure from scratch the way the officeHtml-based ports had to.
+
+`renderHorologionOffice()` and its own `_renderHorologionItem()` -- the last lane still building one
+string -- read end to end first. Eight item-type branches, more than any prior lane's single
+emission loop: `placeholder`/`unresolved`, `rubric`, `sequence` (recursive -- a child item is
+rendered through the exact same builder, exactly as the pre-port function already did), `psalm`,
+`stichera`, `kathisma` (its own nested `stases`/`psalms`/`verses` structure with an inter-stasis
+Glory doxology, the last stasis's own extended Alleluia form), `litany` (each line role-tagged
+Deacon/Priest/Reader/Bishop/Choir), and repeat-aware `text` (1-3 spelled out in full, 4+ compressed
+as "(×N)", per the corpus's own stated governance rule). All eight ported to a new
+`horBuildItemNode(item)`, a direct branch-for-branch port to real DOM-node construction -- escaping
+is no longer manual (`textContent` escapes by construction, replacing the pre-port's own
+`escapeHtml()`/`formatParagraphText()` pair with `horFormatParagraphs()`, which builds real `<p>`/
+`<br>` nodes straight from raw text).
+
+A new `horEmitTopItem(container, env, item)`, with no pre-port equivalent, is the other half: called
+once per section-level item -- never for a nested `sequence` child, which stays inside its parent's
+own node and is not separately counted, the same "one liturgical item, one block" granularity the
+East Syriac port's Hulala handling already established -- it appends `horBuildItemNode(item)`'s node
+via `bcpWrapInGutter()` (the same gutter grid the three prior ports already use) and pushes exactly
+one `blocks[]` entry. Per contract section 8, `units[]` is populated ONLY where an item carries a
+genuine citable reference: a standalone `psalm` item, or each psalm nested inside a `kathisma`'s own
+`stases` (its citation drawn from the psalm's own `title`, or `Psalm N` when only a bare number is
+present) -- matching `bcpEmitBlock`'s own already-established convention that a plain fixed-text
+block pushes `units: []`, not one unit per sub-paragraph of a `sequence`'s own children. A kathisma's
+several psalm units stay under ONE gutter row (empty gutter text) rather than splitting its cohesive
+stasis/doxology presentation into one row per psalm -- a single citable unit still gets its own
+gutter row, same as every other lane.
+
+Role assignment tries `bcpRoleFor(label)` first (correctly covers the handful of shared-vocabulary
+labels this lane might reuse) and falls back to a small item-type map (`psalm`/`kathisma` ->
+`psalmody`, `stichera` -> `hymn`, `litany` -> `intercession`, `rubric` -> `rubric`) whenever that
+returns `'other'` -- the same two-step pattern the East Syriac port established, for the identical
+reason: this lane's own labels ("Psalm 103 (LXX) — Bless the Lord, O My Soul," "The Usual Beginning")
+were never going to match BCP's English label table by string lookup. A new `horLabelFor(item)`
+computes the SAME best-available label used both as `horWrapDepth()`'s disclosure summary text and
+as the envelope block's own label, so the rail and the on-page collapsed-disclosure summary (under
+the reader/educational display-depth profiles) never disagree with each other.
+
+Two existing, unrelated features carried through unchanged in shape, only their string-building
+internals converted: the reader/educational display-depth disclosure
+(`_horologionBodyWrap` -> `horWrapDepth`, operating on a real node now -- `node.textContent.length`
+replaces the original's regex tag-strip as the plain-text length measure for the "is this long
+enough to collapse" check, a more accurate equivalent of the same test) and the dev-only
+`resolvedAs` diagnostics annotation (`_renderHorologionDiagnostics` -> `horDiagNode`; `_horDiagLayer`
+kept completely verbatim, since it was already a pure string function needing no DOM change at all).
+Neither feature was dropped or altered in behaviour.
+
+**Cleanup, not accumulation:** `_renderHorologionItem()`, the pre-port `_horologionBodyWrap()`, and
+`_renderHorologionDiagnostics()` were all deleted outright once nothing else called them --
+confirmed first by a repo-wide grep for each name (only office-ui.js's own internals and one stale
+doc comment in `js/explanations.js` referenced them, no audit script, no other renderer). This is
+unlike the Anglican lane's own `emit()`, kept as a live reference implementation for lanes not yet
+converted at the time -- once Horologion converts, nothing depends on its own pre-port string
+builder, so keeping it around would just be dead code. The one stale cross-reference in
+`js/explanations.js`'s own doc comment updated to name `horWrapDepth()` instead.
+
+### The day-summary line: real engine work, exactly as both flags said
+
+Separately from the render port, `js/horologion-engine.js` gained `_composeDaySummary(dateObj)`,
+closing the item both section 8 item 9 and the 2026-09-24 resume note flagged as still open --
+"the tone/week/fast information exists... but nothing yet composes it into one line the way BCP's
+own day line does." Reuses exactly the season/tone computations already established in this same
+file (`_computeBaselineTone()`, `_computeLiturgicalSeason()`, `_computeSundayAfterPentecost()`, and
+the identical Clean-Monday week arithmetic `_resolveTriodionTroparion()` already uses) rather than
+deriving anything new: `Tone N` or `Tone N · Week M after Pentecost` in ordinary time, `Great Lent,
+Week N`, a named Holy Week day (`Great and Holy Wednesday`, etc., standard Byzantine usage, the same
+register this engine's own code already uses for `great-lent`/`bright-week`/`holy-week` as plain
+terms), or `Bright Week (Paschal Tone)`.
+
+**Deliberately composes no fasting-strictness label.** Unlike the East Syriac calendar's
+`getDayClass()` (`seasonLabel`/`fastLabel`/`anaphoraLabel`, all sourced), this engine has no sourced
+fasting-character data anywhere in its own corpus -- confirmed by grep, nothing resembling a
+fast-strictness table exists in `js/horologion-engine.js`. Inventing one here would be exactly the
+fabrication this project's own standing discipline forbids (the repeated "honest degradation over
+fabrication" rulings already on record in this ledger); `Great Lent` and `Holy Week` already carry
+that meaning in standard usage, which is as far as this function goes without new, separately-sourced
+corpus work of its own.
+
+Wired into `resolveOffice()`'s own payload as a new `daySummary` field, consumed by the render port
+above as `context.calendarSummary`. **No drawer code changed at all**: `js/office-drawer.js`'s own
+`dayLineText()` already preferred `.uo-ordo-day`'s text (populated from `context.calendarSummary` by
+`js/office-shell.js`'s pre-existing `renderOrdoFromEnvelope()`) over its per-lane fallback table,
+which has never had a Horologion entry -- supplying a real `daySummary` value was the entire fix;
+the drawer's own read path was already correct and waiting for it.
+
+### Verification, two ways
+
+1. **An old-vs-new byte-for-byte comparison harness**, the same method the East Syriac port used:
+   headless Chromium loading the real app twice via `scripts/dev-spa-server.mjs`, one run with
+   `page.route()` swapping in the pre-port `js/office-ui.js` (read via `git show HEAD:js/office-ui.js`
+   before any edit) for the "old" render only, both driven through the identical
+   `selectMode('horologion')` / `currentDate` / `renderHorologionOffice(officeKey)` sequence -- across
+   all 14 office keys this engine currently supports (`vespers`, `small-compline`, `first-hour`,
+   `third-hour`, `sixth-hour`, `ninth-hour`, `orthros`, `midnight-office`, `great-compline`, `typika`,
+   `interhour-first`, `interhour-third`, `interhour-sixth`, `interhour-ninth`) at 8 dates chosen to
+   span every season this engine distinguishes: two ordinary weekdays at different tones, a Saturday
+   (exercising the tone-anticipation path), Great Lent weeks 1 and 3, Palm Sunday, Great and Holy
+   Wednesday, and Pascha itself (Bright Week). 112 combinations total. **All 112 matched exactly**,
+   once each run's `.uo-gutter-label` text was excluded from the comparison -- the same pre-existing,
+   already-shipped-with-Coptic-and-East-Syriac gutter/citation duplication documented in this
+   ledger's East Syriac entry above, not something this port introduced, and invisible under
+   `?shell=v2`'s own CSS. Zero page errors in either run across all 112 cases.
+2. **Live inspection of the actual envelope and the actual rendered page.** `window
+   .__universalOfficeEnvelope` for Great Lent Orthros (2027-03-15) confirms `tradition: 'EOR'`,
+   `officeFamily: 'orthros'`, `context.calendarSummary: 'Great Lent, Week 1'`, 26 blocks, 0 overlays,
+   0 diagnostics (this date's content is fully built), and a `Kathisma 4` block carrying
+   `role: 'psalmody'` with 8 correctly-ordered psalm units (`Psalm 24` through `Psalm 31`) --
+   confirming the kathisma unit-extraction fix works against real, deeply-nested multi-stasis
+   content, not just a synthetic single-psalm case. A full-page screenshot of the same render under
+   `?shell=v2` shows the rail populated with real, lane-native Horologion labels for the first time
+   ever (The Usual Beginning, six Six-Psalms citations by number, The Great Litany (Mirnaya
+   Ektenia), Alleluia (Great Lent), the Lenten Troparion, Theotokion, Kathisma 4 through 6,
+   Sessional Hymns, Psalm 50, The Canon, Kontakion, Exapostilarion) -- previously genuinely empty
+   under shell-v2, since no envelope existed for this lane at all. A second screenshot, of the
+   opened Office Settings drawer on the same render, shows **"Great Lent, Week 1" as the drawer's
+   day line** -- the field the resume note named as the single most important open item for this
+   lane, now showing real, correctly-composed content end to end, not the blank space it showed
+   before this session.
+
+Cache-bust: `js/office-ui.js` 303 -> 304. `js/horologion-engine.js` carries no cache-bust parameter
+in `index.html` and none was added -- out of scope for this change, consistent with the standing
+practice of not touching what wasn't asked for.
+
+**This closes Phase 5.** All three lanes it covers (Coptic, East Syriac, Horologion) now emit the
+shared resolved-office envelope, the same shape the Anglican lane's own Phase 3 refactor
+established. Only the Roman lane (the 1960/1962 Breviary, contract section 12) remains unconverted,
+and it correctly stays out of scope: per the `ui:phase5-roman-lane` dashboard row, that lane is
+blocked on its own underlying content build (abandoned on licensing, see the `brev:gates`/
+`brev:completed` rows), not on any shell-side work -- there is no Roman office for a shell renderer
+to convert yet. Per the build order in section 9, Phase 6 (deleting the old skin app-wide, plus the
+Book of Needs' own design pass after) is next; the navigation-architecture governance question that
+used to sit in front of it was already resolved 2026-09-21, so nothing new blocks it now that Phase
+5 is closed.
+
+SEED_VERSION bumped to `v340-2026-09-24-phase5-horologion-lane-envelope-and-day-line-built`.

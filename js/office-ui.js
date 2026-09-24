@@ -3045,22 +3045,26 @@ function _isHonestyNotice(item) {
     return HONESTY_KEYWORDS.some(kw => haystack.includes(kw));
 }
 
-// Wraps body HTML in a disclosure control for reader/educational profiles.
-// Full profile and honesty notices always return html unchanged.
-function _horologionBodyWrap(html, item, summaryLabel) {
+// Wraps a body DOM node in a disclosure control for reader/educational
+// profiles. Full profile and honesty notices always return the node
+// unchanged. Phase 5 port: same decision logic as the pre-port
+// `_horologionBodyWrap(html, item, summaryLabel)`, operating on a real node
+// instead of an HTML string -- `node.textContent.length` replaces the
+// original's regex tag-strip as the plain-text length measure, a more
+// accurate equivalent of the same "how long is this once rendered" check.
+function horWrapDepth(node, item, summaryLabel) {
     const profile = selectedHorologionReductionProfile;
-    if (profile === 'full') return html;
-    if (_isHonestyNotice(item)) return html;
+    if (profile === 'full') return node;
+    if (_isHonestyNotice(item)) return node;
 
     // Reader: collapse kathismata and genuinely long body text only.
     // This preserves short fixed prayers/sequences needed for ordinary lay use.
     // Educational: collapse broad body-text categories while preserving honesty notices.
     const EDUC_TYPES = new Set(['kathisma', 'psalm', 'sequence', 'stichera', 'text']);
 
-    const plainHtml = String(html || '').replace(/<[^>]*>/g, ' ');
-    const textLen   = Math.max(String(item.text || '').length, plainHtml.length);
-    const childCnt  = Array.isArray(item.items) ? item.items.length : 0;
-    const isLong    = item.type === 'kathisma' || textLen > 1400 || childCnt > 8;
+    const textLen  = Math.max(String(item.text || '').length, (node.textContent || '').length);
+    const childCnt = Array.isArray(item.items) ? item.items.length : 0;
+    const isLong   = item.type === 'kathisma' || textLen > 1400 || childCnt > 8;
     const readerCollapsibleType =
         item.type === 'kathisma' || item.type === 'psalm' || item.type === 'stichera' || item.type === 'text' || item.type === 'sequence';
 
@@ -3068,14 +3072,18 @@ function _horologionBodyWrap(html, item, summaryLabel) {
         (profile === 'reader'      && readerCollapsibleType && isLong) ||
         (profile === 'educational' && (EDUC_TYPES.has(item.type) || !item.type));
 
-    if (!shouldCollapse) return html;
+    if (!shouldCollapse) return node;
 
-    const raw  = String(summaryLabel || item.label || item.key || 'Show text');
-    const safe = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    return `<details class="hor-depth-disclosure">`
-         + `<summary class="rubric-text" style="cursor:pointer;">${safe}</summary>`
-         + html
-         + `</details>`;
+    const raw = String(summaryLabel || item.label || item.key || 'Show text');
+    const details = document.createElement('details');
+    details.className = 'hor-depth-disclosure';
+    const summary = document.createElement('summary');
+    summary.className = 'rubric-text';
+    summary.style.cursor = 'pointer';
+    summary.textContent = raw;
+    details.appendChild(summary);
+    details.appendChild(node);
+    return details;
 }
 
 // ── Tradition sidebar compatibility wrappers ──────────────────────────────
@@ -3608,229 +3616,185 @@ async function renderHorologionOffice(officeKey) {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    let html = `<div class="office-container">`;
-    html += `<p class="office-book-title">The Horologion</p>`;
-    html += `<h2>${payload.title}</h2>`;
-    html += `<p class="liturgical-title">${dateLabel}</p>`;
+    // ── Begin DOM assembly (Phase 5 port: real nodes, not one string --
+    // same move renderBcpOffice()/renderCopticAgpeya()/renderEastSyriac()
+    // already made) ───────────────────────────────────────────────────────
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Horologion';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = payload.title;
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = dateLabel;
+    container.appendChild(subtitle);
 
     // Diagnostic banner when variable slots remain unresolved
     if (payload.diagnostics.placeholderSlots > 0) {
-        html +=
-            `<div style="border:1px solid var(--rubric); border-radius:4px; ` +
-            `padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); ` +
-            `font-family:'Cinzel',serif; letter-spacing:0.04em;">` +
-            `⚠ Public-beta notice: unresolved slot(s) remain visible below. ` +
-            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.` +
-            `</div>`;
+        const banner = document.createElement('div');
+        banner.style.cssText = 'border:1px solid var(--rubric); border-radius:4px; ' +
+            "padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); " +
+            "font-family:'Cinzel',serif; letter-spacing:0.04em;";
+        banner.textContent = `⚠ Public-beta notice: unresolved slot(s) remain visible below. ` +
+            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.`;
+        container.appendChild(banner);
     }
 
+    // env replaces the string-concatenated html entirely -- blocks/overlays/
+    // diagnostics are built directly, here, at the moment each is actually
+    // emitted, the same pattern the Anglican, Coptic, and East Syriac ports
+    // established. overlays[] stays empty throughout this lane: nothing in
+    // this renderer borrows content from another tradition.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
+
     for (const section of payload.sections) {
-        html +=
-            `<h3 class="rubric-heading" style="margin-top:1.5em; font-family:'Cinzel',serif; ` +
-            `font-size:1em; letter-spacing:0.1em; text-transform:uppercase; color:var(--rubric);">` +
-            `${section.label}</h3>`;
+        const heading = document.createElement('h3');
+        heading.className = 'rubric-heading';
+        heading.style.cssText = "margin-top:1.5em; font-family:'Cinzel',serif; " +
+            'font-size:1em; letter-spacing:0.1em; text-transform:uppercase; color:var(--rubric);';
+        heading.textContent = section.label;
+        container.appendChild(heading);
+
         for (const item of section.items) {
-            html += _renderHorologionItem(item);
+            horEmitTopItem(container, env, item);
         }
     }
 
-    html += `</div>`;
-    display.innerHTML = html;
+    // ── Publish envelope + finalise DOM (same move Phase 3/5 already
+    // established: publish first, then one replaceChildren, not innerHTML) ──
+    // tradition 'EOR' matches the sanctoral ANG/LAT/EOR/OOR/COE convention
+    // (Eastern Orthodox) -- this lane's own internal engine identity string
+    // is 'BYZC' (see TRADITION in js/horologion-engine.js), kept as-is;
+    // only the envelope uses the shared shell-wide convention, same as the
+    // Coptic ('OOR') and East Syriac ('COE') ports before it.
+    // context.calendarSummary is payload.daySummary, newly composed by the
+    // engine itself (js/horologion-engine.js's _composeDaySummary()) -- the
+    // lane-native day-summary line UI_REDESIGN_HANDOFF.md §8.9 flagged as
+    // still missing; the drawer's own dayLineText() already reads
+    // .uo-ordo-day, populated from this same field, so no drawer change was
+    // needed once the engine actually supplies one.
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        try {
+            window.AnglicanEnvelope.publish({
+                tradition: 'EOR',
+                officeFamily: officeKey || null,
+                context: { calendarSummary: payload.daySummary || null, rankSummary: null },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
+    display.replaceChildren(container);
     applyExplanationLayer('office-display');
 }
 
-// Renders a single Horologion item as HTML.
-// Placeholder/unresolved items always produce a visible block — never silently omitted.
-function _renderHorologionItem(item) {
-    const isUnresolved =
-        item.type === 'placeholder' ||
-        item.status === 'unresolved' ||
-        item.status === 'placeholder';
+/**
+ * Horologion port -- Phase 5, lane 3 of 3 (documentation/UI_REDESIGN_HANDOFF.md
+ * section 9, last per section 8 item 9's own repricing: a payload
+ * reconciliation, not a fresh emitter, since js/horologion-engine.js already
+ * produces a normalized `sections`/`items` payload rather than a raw
+ * officeHtml string the way the other three lanes started from).
+ *
+ * horBuildItemNode(item) is a direct port of the pre-port
+ * _renderHorologionItem()'s eight branches (placeholder/unresolved, rubric,
+ * sequence, psalm, stichera, kathisma, litany, repeat-aware text, and the
+ * generic text fallback) to real DOM-node construction, recursing for a
+ * 'sequence' item's own children exactly as the original did. Escaping is no
+ * longer manual: `textContent` escapes by construction, so the pre-port's
+ * own escapeHtml()/formatParagraphText() pair is replaced by
+ * horFormatParagraphs() below, which builds real <p>/<br> nodes directly
+ * from the raw (unescaped) text -- same visible result, no second escaping
+ * pass to keep in sync with the string version.
+ *
+ * horEmitTopItem(container, env, item) is the new half, with no pre-port
+ * equivalent: called once per section-level item (never for a nested
+ * sequence child, which stays inside its parent's own node and is not
+ * separately counted), it appends horBuildItemNode(item)'s node to the page
+ * via bcpWrapInGutter() -- the same gutter grid the Anglican/Coptic/East
+ * Syriac ports already use -- and pushes exactly one blocks[] entry. Per
+ * contract section 8, units[] is populated ONLY where the item carries a
+ * genuine citable reference (a psalm, standalone or within a kathisma's own
+ * stases), matching the convention bcpEmitBlock's own shapes 1-3 already
+ * established: a plain fixed-text block pushes units:[], only the
+ * scripture-bearing shapes populate it -- not one unit per sub-paragraph of
+ * a 'sequence' item's own children.
+ *
+ * Role assignment tries bcpRoleFor() first (covers the handful of shared-
+ * vocabulary labels this lane might share with BCP) and falls back to a
+ * small item-type map (psalm/kathisma -> psalmody, stichera -> hymn,
+ * litany -> intercession, rubric -> rubric) when that returns 'other' --
+ * the same two-step pattern the East Syriac port established, for the same
+ * reason: this lane's own labels ("Psalm 103 (LXX) -- Bless the Lord, O My
+ * Soul", "Troparion of the Day") were never going to match BCP's English
+ * label table by string lookup.
+ */
+function horFormatParagraphs(text) {
+    const frag = document.createDocumentFragment();
+    String(text || '').split(/\n\n+/).forEach((para) => {
+        const p = document.createElement('p');
+        para.split(/\n/).forEach((line, li) => {
+            if (li > 0) p.appendChild(document.createElement('br'));
+            p.appendChild(document.createTextNode(line));
+        });
+        frag.appendChild(p);
+    });
+    return frag;
+}
 
-    if (isUnresolved) {
-        const label   = item.label || item.key;
-        const devNote = item.note
-            ? `<span style="font-size:0.78em; opacity:0.7; display:block; margin-top:4px;">${item.note}</span>`
-            : '';
-        return `<div style="border:1px dashed var(--rubric); border-radius:3px; ` +
-            `padding:8px 12px; margin:8px 0; opacity:0.75;">` +
-            `<span class="rubric-text" style="font-size:0.85em;">Unresolved public-beta slot: ${label}.</span>` +
-            devNote +
-            `</div>`;
+function horRenderRepeatedText(text, repeat) {
+    const count = Number(repeat);
+    const wrap = document.createElement('div');
+    wrap.className = 'horologion-text';
+
+    if (!Number.isInteger(count) || count <= 1) {
+        wrap.appendChild(horFormatParagraphs(text));
+        return wrap;
     }
 
-    // Shared HTML-escape helper used by all resolved text branches.
-    function escapeHtml(str) {
-        return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
+    // Governance rule:
+    // 1–3 = spell out in full
+    // 4+  = compress as (×N)
+    if (count <= 3) {
+        for (let i = 0; i < count; i++) wrap.appendChild(horFormatParagraphs(text));
+        return wrap;
     }
 
-    function formatParagraphText(text) {
-        const safe = escapeHtml(String(text || ''));
-        return safe
-            .replace(/\n\n+/g, '</p><p>')
-            .replace(/\n/g, '<br>');
-    }
+    const compressed = `${String(text || '')} (×${count})`;
+    wrap.appendChild(horFormatParagraphs(compressed));
+    return wrap;
+}
 
-    function renderRepeatedText(text, repeat) {
-        const count = Number(repeat);
-
-        if (!Number.isInteger(count) || count <= 1) {
-            return `<div class="horologion-text"><p>${formatParagraphText(text)}</p></div>`;
-        }
-
-        // Governance rule:
-        // 1–3 = spell out in full
-        // 4+  = compress as (×N)
-        if (count <= 3) {
-            let out = '<div class="horologion-text">';
-            for (let i = 0; i < count; i++) {
-                out += `<p>${formatParagraphText(text)}</p>`;
-            }
-            out += '</div>';
-            return out;
-        }
-
-        const compressed = `${String(text || '')} (×${count})`;
-        return `<div class="horologion-text"><p>${formatParagraphText(compressed)}</p></div>`;
-    }
-
-    if (item.type === 'rubric') {
-        const base = `<span class="rubric-text">${item.text || ''}</span>`;
-        return base + _renderHorologionDiagnostics(item, escapeHtml);
-    }
-
-    // New: ordered liturgical sequence container.
-    // Each child item is rendered recursively through the same renderer.
-    if (item.type === 'sequence') {
-        const label = item.label
-            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
-            : '';
-
-        const children = Array.isArray(item.items)
-            ? item.items.map(child => _renderHorologionItem(child)).join('')
-            : '';
-
-        const seqHtml = `<div class="horologion-sequence">${children}</div>`;
-        return `${label}${_horologionBodyWrap(seqHtml, item, item.label || 'Section')}`;
-    }
-
-    // type: "psalm" — render label then body text.
-    if (item.type === 'psalm') {
-        const label    = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const body     = formatParagraphText(item.text || '');
-        const bodyHtml = `<div class="horologion-text"><p>${body}</p></div>`;
-        return `${label}${_horologionBodyWrap(bodyHtml, item, item.label || 'Psalm')}`;
-    }
-
-    // type: "stichera" — render rubric label then verse text (same layout as psalm).
-    if (item.type === 'stichera') {
-        const label    = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const body     = formatParagraphText(item.text || '');
-        const bodyHtml = `<div class="horologion-text"><p>${body}</p></div>`;
-        return `${label}${_horologionBodyWrap(bodyHtml, item, item.label || 'Sticheron')}` +
-               _renderHorologionDiagnostics(item, escapeHtml);
-    }
-
-    // v5.5: type: "kathisma" — full psalm text organized by stasis.
-    // item.stases: [ { stasis: number, psalms: [ { number, title, verses: string[] } ] } ]
-    // Inter-stasis Glory doxology prompts appended after each stasis.
-    if (item.type === 'kathisma') {
-        const headerLabel = item.label
-            ? `<p class="rubric-text" style="margin-bottom:0.3em;">${escapeHtml(item.label)}</p>`
-            : '';
-        const lxxNote = item.psalmsLxx
-            ? `<p class="rubric-text" style="font-size:0.82em; opacity:0.8; margin-bottom:0.6em;">` +
-              `Psalms ${escapeHtml(item.psalmsLxx)} (LXX) — OCA/Antiochian English Psalter</p>`
-            : '';
-
-        const stases = Array.isArray(item.stases) ? item.stases : [];
-        let stasisHtml = '';
-
-        for (let si = 0; si < stases.length; si++) {
-            const stasis = stases[si];
-            const psalms = Array.isArray(stasis.psalms) ? stasis.psalms : [];
-            let psalmHtml = '';
-
-            for (const psalm of psalms) {
-                const psalmTitle = psalm.title
-                    ? `<p class="rubric-text" style="margin:0.6em 0 0.2em; font-size:0.9em;">${escapeHtml(psalm.title)}</p>`
-                    : '';
-                const verses = Array.isArray(psalm.verses) ? psalm.verses : [];
-                const verseHtml = verses.map((v, idx) =>
-                    `<p style="margin:0.15em 0;">${escapeHtml(String(idx + 1))}.&nbsp;${escapeHtml(v)}</p>`
-                ).join('');
-                psalmHtml += `<div class="horologion-psalm-block">${psalmTitle}${verseHtml}</div>`;
-            }
-
-            const isLast = (si === stases.length - 1);
-            const doxology = isLast
-                ? `<p class="rubric-text" style="margin:0.7em 0 0.2em; font-size:0.88em; font-style:italic;">Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen. Alleluia, alleluia, alleluia. Glory to Thee, O God. (×3)</p>`
-                : `<p class="rubric-text" style="margin:0.7em 0 0.2em; font-size:0.88em; font-style:italic;">Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen.</p>`;
-
-            stasisHtml += `<div class="horologion-kathisma-stasis">${psalmHtml}${doxology}</div>`;
-        }
-
-        const variantNote = item.variantNote
-            ? `<p class="rubric-text" style="font-size:0.8em; opacity:0.75; margin-top:0.5em;">(${escapeHtml(item.variantNote)})</p>`
-            : '';
-
-        const kathismaHtml = `<div class="horologion-kathisma">${headerLabel}${lxxNote}${stasisHtml}${variantNote}</div>`;
-        return _horologionBodyWrap(kathismaHtml, item, item.label || 'Kathisma') +
-               _renderHorologionDiagnostics(item, escapeHtml);
-    }
-
-    // type: "litany" — render each line role-tagged.
-    if (item.type === 'litany') {
-        const lines = String(item.text || '').split('\n');
-        let out = '<div class="horologion-litany">';
-        for (const line of lines) {
-            const trimmed = line.trim();
-            if (!trimmed) {
-                out += '<div style="height:0.5em;"></div>';
-            } else if (/^(Deacon|Priest|Reader|Bishop):/.test(trimmed)) {
-                out += `<p class="rubric-text" style="margin:0.2em 0;">${escapeHtml(trimmed)}</p>`;
-            } else if (/^Choir:/.test(trimmed)) {
-                out += `<p class="component-text" style="margin:0.15em 0 0.15em 1.5em; font-style:italic;">${escapeHtml(trimmed)}</p>`;
-            } else {
-                out += `<p class="component-text" style="margin:0.2em 0;">${escapeHtml(trimmed)}</p>`;
-            }
-        }
-        out += '</div>';
-        return out;
-    }
-
-    // New: repeat-aware plain text rendering.
-    if (item.type === 'text' && item.repeat !== undefined) {
-        const label = item.label
-            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
-            : '';
-        return `${label}${_horologionBodyWrap(renderRepeatedText(item.text || '', item.repeat), item, item.label || 'Text')}`;
-    }
-
-    // Fallback: type "text" or any other resolved item.
-    const formatted = formatParagraphText(item.text || '');
-    const baseHtml  = `<div class="horologion-text"><p>${formatted}</p></div>`;
-    return _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
-           _renderHorologionDiagnostics(item, escapeHtml);
+// Best-available label for one item, matching the pre-port's own per-branch
+// fallback strings exactly (used both as horWrapDepth()'s summaryLabel and
+// as this item's envelope block label, so the two never disagree).
+function horLabelFor(item) {
+    if (item.label) return item.label;
+    if (item.type === 'rubric') return item.text || item.key || 'Rubric';
+    const FALLBACK = { sequence: 'Section', psalm: 'Psalm', stichera: 'Sticheron', kathisma: 'Kathisma', litany: 'Litany', text: 'Text' };
+    return FALLBACK[item.type] || item.key || 'Text';
 }
 
 // ── v5.4: Diagnostics annotation helper ──────────────────────────────────────
-// Returns a diagnostics HTML string when _horDiagnosticsEnabled is true and
-// the item's resolvedAs is in the known variable-slot set.
-// Returns '' (empty string) in all other cases — safe to concatenate unconditionally.
+// Returns a diagnostics DOM node when _horDiagnosticsEnabled is true and the
+// item's resolvedAs is in the known variable-slot set, else null -- safe to
+// conditionally append unconditionally.
 //
-// Called from: rubric branch, stichera branch, and fallback text branch of
-// _renderHorologionItem(). Fixed corpus items never carry a recognized resolvedAs
-// and will always receive ''.
-//
-// escapeHtml is passed in from the caller's closure to avoid duplication.
-function _renderHorologionDiagnostics(item, escapeHtml) {
-    if (!_horDiagnosticsEnabled || !item.resolvedAs) return '';
+// Called from: rubric branch, stichera branch, kathisma branch, and fallback
+// text branch of horBuildItemNode(). Fixed corpus items never carry a
+// recognized resolvedAs and will always receive null.
+function horDiagNode(item) {
+    if (!_horDiagnosticsEnabled || !item.resolvedAs) return null;
 
     const DIAG_SLOTS = new Set([
         'menaion-feast-troparion',   'menaion-text-unavailable',
@@ -3847,7 +3811,7 @@ function _renderHorologionDiagnostics(item, escapeHtml) {
         'sunday-small-vespers-resurrectional-aposticha'
     ]);
 
-    if (!DIAG_SLOTS.has(item.resolvedAs)) return '';
+    if (!DIAG_SLOTS.has(item.resolvedAs)) return null;
 
     const layer   = _horDiagLayer(item.resolvedAs);
     const toneStr = (typeof item.tone === 'number') ? `tone ${item.tone}` : null;
@@ -3859,17 +3823,15 @@ function _renderHorologionDiagnostics(item, escapeHtml) {
         item.source ? `source: ${item.source}` : null
     ].filter(Boolean);
 
-    return (
-        `<div style="` +
-            `font-size:0.68em; font-family:monospace; ` +
-            `color:rgba(100,180,100,0.7); ` +
-            `margin:-2px 0 6px 0; padding:2px 6px; ` +
-            `border-left:2px solid rgba(100,180,100,0.3); ` +
-            `letter-spacing:0.02em; line-height:1.4;` +
-        `">` +
-        escapeHtml(parts.join('  ·  ')) +
-        `</div>`
-    );
+    const div = document.createElement('div');
+    div.style.cssText =
+        'font-size:0.68em; font-family:monospace; ' +
+        'color:rgba(100,180,100,0.7); ' +
+        'margin:-2px 0 6px 0; padding:2px 6px; ' +
+        'border-left:2px solid rgba(100,180,100,0.3); ' +
+        'letter-spacing:0.02em; line-height:1.4;';
+    div.textContent = parts.join('  ·  ');
+    return div;
 }
 
 // ── v5.4: Map resolvedAs to a human-readable layer label ─────────────────────
@@ -3891,6 +3853,276 @@ function _horDiagLayer(resolvedAs) {
         resolvedAs.endsWith('-lenten-rubric') ||
         resolvedAs.endsWith('-pending'))                            return 'Fallback';
     return null;
+}
+
+// Builds one item's DOM node -- recursive for a 'sequence' item's own
+// children. Never touches env itself; horEmitTopItem() does that once, for
+// the top-level item only. Placeholder/unresolved items always produce a
+// visible node — never silently omitted, matching the pre-port original.
+function horBuildItemNode(item) {
+    const isUnresolved =
+        item.type === 'placeholder' ||
+        item.status === 'unresolved' ||
+        item.status === 'placeholder';
+
+    if (isUnresolved) {
+        const label = item.label || item.key;
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'border:1px dashed var(--rubric); border-radius:3px; ' +
+            'padding:8px 12px; margin:8px 0; opacity:0.75;';
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'rubric-text';
+        labelSpan.style.fontSize = '0.85em';
+        labelSpan.textContent = `Unresolved public-beta slot: ${label}.`;
+        wrap.appendChild(labelSpan);
+        if (item.note) {
+            const note = document.createElement('span');
+            note.style.cssText = 'font-size:0.78em; opacity:0.7; display:block; margin-top:4px;';
+            note.textContent = item.note;
+            wrap.appendChild(note);
+        }
+        return wrap;
+    }
+
+    if (item.type === 'rubric') {
+        const frag = document.createDocumentFragment();
+        const span = document.createElement('span');
+        span.className = 'rubric-text';
+        span.textContent = item.text || '';
+        frag.appendChild(span);
+        const diag = horDiagNode(item);
+        if (diag) frag.appendChild(diag);
+        return frag;
+    }
+
+    // Ordered liturgical sequence container. Each child item is rendered
+    // recursively through this same builder.
+    if (item.type === 'sequence') {
+        const frag = document.createDocumentFragment();
+        if (item.label) {
+            const labelP = document.createElement('p');
+            labelP.className = 'rubric-text';
+            labelP.style.marginBottom = '0.4em';
+            labelP.textContent = item.label;
+            frag.appendChild(labelP);
+        }
+        const seqDiv = document.createElement('div');
+        seqDiv.className = 'horologion-sequence';
+        (Array.isArray(item.items) ? item.items : []).forEach((child) => {
+            seqDiv.appendChild(horBuildItemNode(child));
+        });
+        frag.appendChild(horWrapDepth(seqDiv, item, item.label || 'Section'));
+        return frag;
+    }
+
+    // type: "psalm" — render label then body text.
+    if (item.type === 'psalm') {
+        const frag = document.createDocumentFragment();
+        if (item.label) {
+            const labelP = document.createElement('p');
+            labelP.className = 'rubric-text';
+            labelP.style.marginBottom = '0.4em';
+            labelP.textContent = item.label;
+            frag.appendChild(labelP);
+        }
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'horologion-text';
+        bodyDiv.appendChild(horFormatParagraphs(item.text || ''));
+        frag.appendChild(horWrapDepth(bodyDiv, item, item.label || 'Psalm'));
+        return frag;
+    }
+
+    // type: "stichera" — render rubric label then verse text (same layout as psalm).
+    if (item.type === 'stichera') {
+        const frag = document.createDocumentFragment();
+        if (item.label) {
+            const labelP = document.createElement('p');
+            labelP.className = 'rubric-text';
+            labelP.style.marginBottom = '0.4em';
+            labelP.textContent = item.label;
+            frag.appendChild(labelP);
+        }
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'horologion-text';
+        bodyDiv.appendChild(horFormatParagraphs(item.text || ''));
+        frag.appendChild(horWrapDepth(bodyDiv, item, item.label || 'Sticheron'));
+        const diag = horDiagNode(item);
+        if (diag) frag.appendChild(diag);
+        return frag;
+    }
+
+    // v5.5: type: "kathisma" — full psalm text organized by stasis.
+    // item.stases: [ { stasis: number, psalms: [ { number, title, verses: string[] } ] } ]
+    // Inter-stasis Glory doxology prompts appended after each stasis.
+    if (item.type === 'kathisma') {
+        const kathismaDiv = document.createElement('div');
+        kathismaDiv.className = 'horologion-kathisma';
+
+        if (item.label) {
+            const headerLabel = document.createElement('p');
+            headerLabel.className = 'rubric-text';
+            headerLabel.style.marginBottom = '0.3em';
+            headerLabel.textContent = item.label;
+            kathismaDiv.appendChild(headerLabel);
+        }
+        if (item.psalmsLxx) {
+            const lxxNote = document.createElement('p');
+            lxxNote.className = 'rubric-text';
+            lxxNote.style.cssText = 'font-size:0.82em; opacity:0.8; margin-bottom:0.6em;';
+            lxxNote.textContent = `Psalms ${item.psalmsLxx} (LXX) — OCA/Antiochian English Psalter`;
+            kathismaDiv.appendChild(lxxNote);
+        }
+
+        const stases = Array.isArray(item.stases) ? item.stases : [];
+        stases.forEach((stasis, si) => {
+            const stasisDiv = document.createElement('div');
+            stasisDiv.className = 'horologion-kathisma-stasis';
+
+            for (const psalm of (Array.isArray(stasis.psalms) ? stasis.psalms : [])) {
+                const psalmDiv = document.createElement('div');
+                psalmDiv.className = 'horologion-psalm-block';
+                if (psalm.title) {
+                    const psalmTitle = document.createElement('p');
+                    psalmTitle.className = 'rubric-text';
+                    psalmTitle.style.cssText = 'margin:0.6em 0 0.2em; font-size:0.9em;';
+                    psalmTitle.textContent = psalm.title;
+                    psalmDiv.appendChild(psalmTitle);
+                }
+                (Array.isArray(psalm.verses) ? psalm.verses : []).forEach((v, idx) => {
+                    const vp = document.createElement('p');
+                    vp.style.margin = '0.15em 0';
+                    vp.appendChild(document.createTextNode(`${idx + 1}. ${v}`));
+                    psalmDiv.appendChild(vp);
+                });
+                stasisDiv.appendChild(psalmDiv);
+            }
+
+            const isLast = (si === stases.length - 1);
+            const doxology = document.createElement('p');
+            doxology.className = 'rubric-text';
+            doxology.style.cssText = 'margin:0.7em 0 0.2em; font-size:0.88em; font-style:italic;';
+            doxology.textContent = isLast
+                ? 'Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen. Alleluia, alleluia, alleluia. Glory to Thee, O God. (×3)'
+                : 'Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen.';
+            stasisDiv.appendChild(doxology);
+
+            kathismaDiv.appendChild(stasisDiv);
+        });
+
+        if (item.variantNote) {
+            const variantNote = document.createElement('p');
+            variantNote.className = 'rubric-text';
+            variantNote.style.cssText = 'font-size:0.8em; opacity:0.75; margin-top:0.5em;';
+            variantNote.textContent = `(${item.variantNote})`;
+            kathismaDiv.appendChild(variantNote);
+        }
+
+        const frag = document.createDocumentFragment();
+        frag.appendChild(horWrapDepth(kathismaDiv, item, item.label || 'Kathisma'));
+        const diag = horDiagNode(item);
+        if (diag) frag.appendChild(diag);
+        return frag;
+    }
+
+    // type: "litany" — render each line role-tagged.
+    if (item.type === 'litany') {
+        const out = document.createElement('div');
+        out.className = 'horologion-litany';
+        String(item.text || '').split('\n').forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) {
+                const spacer = document.createElement('div');
+                spacer.style.height = '0.5em';
+                out.appendChild(spacer);
+            } else if (/^(Deacon|Priest|Reader|Bishop):/.test(trimmed)) {
+                const p = document.createElement('p');
+                p.className = 'rubric-text';
+                p.style.margin = '0.2em 0';
+                p.textContent = trimmed;
+                out.appendChild(p);
+            } else if (/^Choir:/.test(trimmed)) {
+                const p = document.createElement('p');
+                p.className = 'component-text';
+                p.style.cssText = 'margin:0.15em 0 0.15em 1.5em; font-style:italic;';
+                p.textContent = trimmed;
+                out.appendChild(p);
+            } else {
+                const p = document.createElement('p');
+                p.className = 'component-text';
+                p.style.margin = '0.2em 0';
+                p.textContent = trimmed;
+                out.appendChild(p);
+            }
+        });
+        return out;
+    }
+
+    // New: repeat-aware plain text rendering.
+    if (item.type === 'text' && item.repeat !== undefined) {
+        const frag = document.createDocumentFragment();
+        if (item.label) {
+            const labelP = document.createElement('p');
+            labelP.className = 'rubric-text';
+            labelP.style.marginBottom = '0.4em';
+            labelP.textContent = item.label;
+            frag.appendChild(labelP);
+        }
+        frag.appendChild(horWrapDepth(horRenderRepeatedText(item.text || '', item.repeat), item, item.label || 'Text'));
+        return frag;
+    }
+
+    // Fallback: type "text" or any other resolved item.
+    const bodyDiv = document.createElement('div');
+    bodyDiv.className = 'horologion-text';
+    bodyDiv.appendChild(horFormatParagraphs(item.text || ''));
+    const frag = document.createDocumentFragment();
+    frag.appendChild(horWrapDepth(bodyDiv, item, item.label || item.key || 'Text'));
+    const diag = horDiagNode(item);
+    if (diag) frag.appendChild(diag);
+    return frag;
+}
+
+// Emits exactly one top-level item as one blocks[] entry -- called once per
+// section-level item, never for a nested sequence child (which stays inside
+// its parent's own node and is not separately counted).
+function horEmitTopItem(container, env, item) {
+    const node  = horBuildItemNode(item);
+    const label = horLabelFor(item);
+
+    let role = bcpRoleFor(label);
+    if (role === 'other') {
+        const TYPE_ROLE = { psalm: 'psalmody', kathisma: 'psalmody', stichera: 'hymn', litany: 'intercession', rubric: 'rubric' };
+        role = TYPE_ROLE[item.type] || 'other';
+    }
+
+    const units = [];
+    if (item.type === 'psalm') {
+        units.push({ kind: 'psalm', citation: item.lxxNumber ? `Psalm ${item.lxxNumber} (LXX)` : label });
+    } else if (item.type === 'kathisma' && Array.isArray(item.stases)) {
+        for (const stasis of item.stases) {
+            for (const psalm of (Array.isArray(stasis.psalms) ? stasis.psalms : [])) {
+                const citation = psalm.title || (psalm.number != null ? `Psalm ${psalm.number}` : null);
+                if (citation) units.push({ kind: 'psalm', citation });
+            }
+        }
+    }
+
+    // A single citable unit gets its own gutter row, same as every other
+    // lane's psalm citations; a kathisma's several units stay in one row
+    // (empty gutter) rather than splitting its cohesive stasis/doxology
+    // presentation into one gutter row per psalm.
+    const gutterText = units.length === 1 ? units[0].citation : (BCP_GUTTER_KIND_BY_LABEL[label] || '');
+    bcpWrapInGutter(container, gutterText, [node]);
+
+    env.blocks.push({ label, role, units });
+
+    const isUnresolved =
+        item.type === 'placeholder' ||
+        item.status === 'unresolved' ||
+        item.status === 'placeholder';
+    if (isUnresolved) {
+        bcpPushDiagnostic(env, 'not-yet-mapped', label);
+    }
 }
 // ── Deterministic daily rotation helper ─────────────────────────────────────
 // Used to rotate among a fixed, ordered list of authorized text options based
@@ -3973,7 +4205,7 @@ function applyExplanationLayer(rootId) {
         }
 
         // Depth 2 — structural explanation, as a <details> disclosure. Same
-        // pattern already proven in _horologionBodyWrap().
+        // pattern already proven in horWrapDepth().
         if (selectedExplanationDepth >= 2 && entry.structural) {
             const det = document.createElement('details');
             det.className = 'uo-explanation-structural';

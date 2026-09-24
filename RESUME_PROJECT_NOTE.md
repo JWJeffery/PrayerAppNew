@@ -158,26 +158,49 @@ labels for the first time under `?shell=v2`, and a Hulala's gutter correctly sho
 once, not twice. Cache-bust `office-ui.js` 302 → 303. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
 entry dated 2026-09-24 continued ("Phase 5, lane 2"), SEED_VERSION v338 → v339.
 
-**What that leaves, concretely, for the next session — Phase 5, lane 3 of 3, Horologion, per §9's
-own ordering (last, since §8.9 repriced it as a payload reconciliation rather than a fresh
-emitter):**
-- `renderHorologion`-family code still needs the same envelope-emission treatment
-  (`ui:phase5-horologion-lane-envelope-and-day-line` on the dashboard) -- read it end to end first,
-  the same discipline both prior ports used; `js/horologion-engine.js` already emits its own
-  validated payload close to but not identical to the contract shape (sections vs. blocks, no
-  overlays, no context), so this is reconciling two already-validated shapes, not writing a fresh
-  emitter from a raw officeHtml string the way Coptic and East Syriac both were.
-- Also includes building the still-missing lane-native day-summary line for the drawer (tone/week/
-  fast composed into one line the way BCP's own day line does) -- real content/engine work belonging
-  to this lane's own Phase 5 slice, not a drawer fix.
+**DONE, 2026-09-24 (later still): Phase 5 lane 3 of 3 -- the Byzantine Horologion renderer now
+emits the real envelope, AND the drawer's missing day line is built. Phase 5 is now closed.**
+`renderHorologionOffice()`/`_renderHorologionItem()` -- the last lane still building one officeHtml
+string -- converted to real DOM nodes plus `blocks[]`/`overlays[]`/`diagnostics[]`, same pattern as
+the three prior ports. This really was the reconciliation §8.9 predicted, not a fresh emitter:
+`js/horologion-engine.js`'s `resolveOffice()` already returns a normalized `{sections:[{label,
+items}]}` payload, so the real work was mapping that onto `blocks[]`/`units[]`. All eight of the
+pre-port function's item-type branches (placeholder, rubric, recursive sequence, psalm, stichera,
+kathisma with its own nested stases/psalms/verses, role-tagged litany, repeat-aware text) ported to
+a new `horBuildItemNode()`; a new `horEmitTopItem()` (no pre-port equivalent) pushes exactly one
+block per section-level item via the same gutter grid the other three lanes use, with `units[]`
+populated only for genuine psalm citations (matching `bcpEmitBlock`'s own convention). Role
+assignment upgrades off `bcpRoleFor()`'s `'other'` default the same way East Syriac's did. Two
+existing features (reader/educational display-depth collapsing; dev-only diagnostics annotation)
+ported alongside without being dropped. The three now-fully-dead pre-port functions were deleted
+outright, not left around -- confirmed nothing else called them first. Separately,
+`js/horologion-engine.js` gained `_composeDaySummary()`, reusing the engine's own already-existing
+tone/season computations (no new date arithmetic) to produce `'Tone N'`, `'Tone N · Week M after
+Pentecost'`, `'Great Lent, Week N'`, a named Holy Week day, or `'Bright Week (Paschal Tone)'` --
+deliberately no fasting-strictness label, since this engine has no sourced fasting-character data
+anywhere (inventing one would be fabrication). Wired into the payload as `daySummary`; the drawer's
+own `dayLineText()` already read `.uo-ordo-day` and needed no changes at all once a real value
+existed to populate it. **Verified two ways:** an old-vs-new byte-for-byte comparison harness across
+all 14 office keys this engine supports × 8 dates spanning every season (ordinary, Great Lent,
+Holy Week, Bright Week) -- 112 combinations, all matching exactly; and live inspection confirming a
+Great Lent Orthros Kathisma block carries correct psalm units (Psalm 24-31), a screenshot showing
+the rail populated with real Horologion labels for the first time under `?shell=v2`, and a second
+screenshot of the opened Office Settings drawer showing **"Great Lent, Week 1"** as the day line --
+the exact field this note flagged as the most important open item for this lane, now working end to
+end. Cache-bust `office-ui.js` 303 → 304. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated
+2026-09-24 continued ("Phase 5, lane 3"), SEED_VERSION v339 → v340.
+
+**What that leaves, concretely, for the next session — Phase 6, per §9's own build order.** All
+three lanes Phase 5 covers (Coptic, East Syriac, Horologion) now emit the shared envelope; only
+Roman (the 1960/1962 Breviary) remains unconverted, and it correctly stays out of scope -- blocked
+on its own content build (abandoned on licensing), not on any shell work, so there is no Roman
+office yet for a renderer to convert. Phase 6 (deleting the old skin app-wide, plus the Book of
+Needs' own design pass after) is next and has nothing blocking it: the navigation-architecture
+governance conflict that used to sit in front of it was already resolved 2026-09-21.
 - Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-
   specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
   omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own
-  warning.
-- Phase 6 (deleting the old skin app-wide, plus the Book of Needs' own design pass after) is
-  untouched and correctly blocked on Phase 5 finishing first, per the build order in §9. The
-  navigation-architecture governance conflict that used to sit in front of Phase 6 is already
-  resolved (Josh's 2026-09-21 ruling) — nothing else is blocking it once Phase 5 closes.
+  warning. Not blocking Phase 6, but still open.
 
 **State as of 2026-09-23, session end (11).** HEAD before this commit was `4ce699ed`. Built
 the borrowed-devotions count and in-place `(borrowed)` labels -- the count half of Phase 4's

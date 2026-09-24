@@ -37,7 +37,7 @@
  *   No second tooltip implementation is introduced.
  *
  * - Depth 2 uses a <details> disclosure, the same pattern already proven in
- *   _horologionBodyWrap().
+ *   horWrapDepth() (js/office-ui.js).
  */
 (function (global) {
     'use strict';

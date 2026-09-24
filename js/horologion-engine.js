@@ -692,6 +692,7 @@ const _interhourFixedDataCache = {};
             variant:    'baseline',
             status:     status,
             sections:   sections,
+            daySummary: _composeDaySummary(dateObj),
             diagnostics: {
                 implementedSlots,
                 placeholderSlots,
@@ -2370,6 +2371,68 @@ const pascha = _getOrthodoxPascha(year);
         }
 
         return { season: 'ordinary', holyWeekDay: null };
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v9.0: _composeDaySummary(dateObj)
+    //
+    // One-line, lane-native summary of the liturgical day -- tone and, where
+    // applicable, week -- for the shell's own day line (contract §4's
+    // context.calendarSummary, the field UI_REDESIGN_HANDOFF.md §8.9 flagged
+    // as missing for this lane). Reuses exactly the season/tone computations
+    // already established above (_computeBaselineTone(),
+    // _computeLiturgicalSeason(), _computeSundayAfterPentecost(), and the
+    // same Clean-Monday week arithmetic _resolveTriodionTroparion() already
+    // uses below) rather than deriving anything new.
+    //
+    // Deliberately composes NO fasting-strictness label: unlike the East
+    // Syriac calendar's getDayClass() (seasonLabel/fastLabel/anaphoraLabel,
+    // all sourced), this engine has no sourced fasting-character data
+    // anywhere in its own corpus. Inventing one here would be exactly the
+    // fabrication this project's own standing discipline forbids (see
+    // AUDIT_GOVERNANCE_LEDGER.md's repeated "honest degradation over
+    // fabrication" rulings) -- "Great Lent" and "Holy Week" already carry
+    // that meaning in standard usage, which is as far as this function goes
+    // without new, separately-sourced corpus work.
+    // ──────────────────────────────────────────────────────────────────────
+    const HOLY_WEEK_DAY_LABELS = {
+        'palm-sunday':     'Palm Sunday',
+        'great-monday':    'Great and Holy Monday',
+        'great-tuesday':   'Great and Holy Tuesday',
+        'great-wednesday': 'Great and Holy Wednesday',
+        'great-thursday':  'Great and Holy Thursday',
+        'great-friday':    'Great and Holy Friday',
+        'great-saturday':  'Great and Holy Saturday'
+    };
+
+    function _composeDaySummary(dateObj) {
+        const toneResult   = _computeBaselineTone(dateObj);
+        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+
+        if (seasonResult.season === 'bright-week') {
+            return 'Bright Week (Paschal Tone)';
+        }
+        if (seasonResult.season === 'holy-week') {
+            return HOLY_WEEK_DAY_LABELS[seasonResult.holyWeekDay] || 'Holy Week';
+        }
+        if (seasonResult.season === 'great-lent') {
+            // Same Clean-Monday week arithmetic _resolveTriodionTroparion()
+            // already uses (below) -- not a second, independent derivation.
+            const year        = dateObj.getFullYear();
+            const pascha       = _getOrthodoxPascha(year);
+            const MS_PER_DAY   = 86400000;
+            const cleanMonday  = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+            const localDate    = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+            const daysSinceCleanMonday = Math.round((localDate.getTime() - cleanMonday.getTime()) / MS_PER_DAY);
+            const lentWeek     = Math.floor(daysSinceCleanMonday / 7) + 1;
+            return `Great Lent, Week ${lentWeek}`;
+        }
+
+        // Ordinary time.
+        const sap = _computeSundayAfterPentecost(dateObj);
+        return sap
+            ? `Tone ${toneResult.tone} · Week ${sap} after Pentecost`
+            : `Tone ${toneResult.tone}`;
     }
 
     // ──────────────────────────────────────────────────────────────────────
