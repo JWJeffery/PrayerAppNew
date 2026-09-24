@@ -123,15 +123,63 @@ shows real Coptic labels where it was confirmed empty as recently as 2026-09-19.
 `office-ui.js` 301 → 302. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24
 continued ("Phase 5, lane 1"), SEED_VERSION v337 → v338.
 
+**INVESTIGATED, NOT BUILT, 2026-09-24 continued: `renderEastSyriac()` (js/office-ui.js:5413-6419,
+~1000 lines) read end to end before touching anything, per this note's own instruction.** No code
+changed this pass -- this is the scoping the Coptic port's own handoff called for, written down so
+it isn't re-derived cold. ~850 of the ~1000 lines are date/season/cycle logic that builds a
+`sequence` array of component ids (Qdham/Wathar alternation, Great Fast branches, Rogation of the
+Ninevites, feast-name substitution) and need NO change. The emission itself is a ~90-line loop
+(6280-6369) plus a separate early-return fallback (6256-6278) and an unrelated commemorations block
+after it (6374-6419). Confirmed against `js/office-shell.js:385`: that commemorations block is
+already out of scope for this port -- the shell just moves `.saint-section` into `.uo-page` as a
+live node, it was never part of the envelope contract, so it can stay untouched exactly as the
+Coptic port left its own equivalent.
+
+**Real shape mismatches found, none of which let the Anglican/Coptic helpers drop in unchanged:**
+1. No existing reading helper fits. `bcpEmitReading`/`copEmitReading` always render flowing prose
+   (`formatScriptureAsFlow`, class `reading-text`). East Syriac renders EVERY scripture citation --
+   psalms, and even its one non-psalm citation (`comp.scriptureRef`, e.g. an Exodus canticle) -- as
+   poetry (`formatPsalmAsPoetry`, class `psalm-block`). A new emitter is needed; there is no
+   "poetry-formatted, non-psalm-numbered citation" helper anywhere yet.
+2. Hulala sections (`comp.sections`, the 21 Hulali) have no analog: an array of `{prayer, psalms}`
+   pairs, each section's own short prayer followed by its psalms, each psalm its own "Psalm N" +
+   poetry block, no divider, and critically NO leading label for the set -- unlike
+   `bcpEmitPsalmBlock`, which always emits one. Needs its own small helper, not a reuse.
+3. Title+text+psalms is currently ADDITIVE, not either/or: every sequence item always gets a plain
+   title/text span pair emitted first, and *then*, if that same component also carries
+   `comp.psalms`/`comp.psalmRef`/`comp.scriptureRef`, extra psalm blocks are appended after it with
+   no additional label of their own. `bcpEmitPsalmBlock` assumes it supplies the only label. This is
+   a real design decision (a label-less psalm-block variant, or two separate `env.blocks` pushes
+   sharing one gutter row?), not something to infer -- flagging rather than picking.
+4. No dividers anywhere in this renderer (confirmed by inspection, same finding as Coptic) -- any
+   reading-style helper built for this lane must not call `bcpEmitDivider`.
+5. `rite` is computed at the top of the function (`js/office-ui.js:5420`) but never referenced again
+   -- confirmed dead by grep. Unlike BCP/Coptic's `resolveText(comp, rite)`, East Syriac components
+   have no rite-variant text; `comp.text` is used directly.
+6. No gutter vocabulary agreed for this lane yet (Shuraya/Qaltha/Marmitha/Motwa/Tishbukhta/Hulala
+   don't match `BCP_GUTTER_KIND_BY_LABEL`) -- safe by default (empty gutter cell, same as Coptic got),
+   named here so it isn't mistaken for an oversight later.
+7. The "not yet rebuilt" / "Endana outside the Fast" fallback (6256-6278) bypasses the loop entirely
+   and returns before touching `env` or publishing an envelope at all. Whether shell-v2 should get an
+   envelope here too (empty blocks + a diagnostic) versus the old skin's static message is an open
+   question -- not decided here, flagged for Josh's call before it's built either way.
+
+Incidental, unrelated to the port itself: Hulala components' own `meta.note` states "the Gloria said
+after each [section]" (confirmed via `components/east-syriac.json`, e.g. `esy-hulala-1`), but neither
+the current sequence data (checked `monday-lelya-sequence` directly -- no Gloria-Patri-shaped id
+anywhere near the Hulali) nor the render loop ever emits one. A pre-existing disclosed-style content
+gap, not something this conversion should silently fix or silently carry forward unflagged.
+
+Full detail (identical wording): `AUDIT_GOVERNANCE_LEDGER.md`, `ui:phase5-east-syriac-lane-envelope`
+row, updated 2026-09-24. No SEED_VERSION bump -- documentation only, no JS/data touched.
+
 **What that leaves, concretely, for the next session — Phase 5, lane 2 of 3, East Syriac, per §9's
 own ordering (then Horologion last since §8.9 repriced it as a payload reconciliation rather than a
 fresh emitter):**
-- `renderEastSyriac()` still uses its own separate string-concatenated `officeHtml` pattern,
-  unconverted (`ui:phase5-east-syriac-lane-envelope` on the dashboard). Read it end to end before
-  converting anything, the same discipline the Coptic port used -- it is a larger, multi-session
-  rebuild (Maclean-sourced, only partially complete book-by-book) and may have its own shape
-  mismatches the way the divider was for Coptic; do not assume the same helpers drop in unchanged
-  without checking.
+- `renderEastSyriac()` is now scoped (see the investigation immediately above) but NOT converted.
+  Before writing the conversion: get Josh's call on the two flagged decisions (item 3's additive
+  title+psalms shape, item 7's fallback-state envelope question), then build the two new helpers
+  items 1-2 need.
 - Then Horologion, last (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
   still-missing lane-native day-summary line for the drawer, real content/engine work belonging to
   this lane's own Phase 5 slice, not a drawer fix.
