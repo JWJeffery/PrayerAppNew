@@ -22,6 +22,46 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE (attempted, reverted), LIVE-CONFIRMED, 2026-09-24 (latest): Phase 6 stage 5 — unscoping
+`css/office-shell.css` found to be unsafe while stage 3's deferred office.css cleanup is still
+outstanding; comment corrections kept, the actual selector change reverted.** Wrote a script to
+mechanically strip the now-permanent `.shell-v2` class token from every selector in the file
+(matching stage 3's own tinycss2-based approach), reasoning that removing the same token uniformly
+from every rule would preserve each rule's specificity *relative to every other rule in this same
+file*. That reasoning was correct but incomplete — it says nothing about specificity *relative to
+still-existing `css/office.css` rules*, several of which this file's own rules were deliberately
+given extra `.shell-v2` weight to beat (the exact same pattern documented in this file's own
+`#main-content.app-primary-canvas` specificity comment). Applied the change, ran the full
+verification sweep, and found a real regression: `#tradition-entry`'s card background rendered
+with a visibly different gradient. Root-caused, not just reverted blind: `body.shell-v2
+#tradition-entry.app-tradition-entry` (specificity with two classes) stripped down to `body
+#tradition-entry.app-tradition-entry` (one class) — weak enough to newly lose against `office.css`'s
+still-live `body.dark-mode #tradition-entry.app-tradition-entry` rule, which stage 3 could not
+delete for the same reason it couldn't delete the rest of that screen's CSS (see stage 3's own
+deferral: office-shell.css only recolors those cards, it never rebuilt their layout, so the base
+rules are still load-bearing). Confirmed empirically, not just theorized: swapped between the two
+CSS versions at the same real moment (a git-show of the pre-stage-5 file vs. the stripped one) and
+diffed — 397,828 of 1,278,400 pixels differed under the stripped version, 0 under the original.
+
+**Reverted the selector change; kept the (accurate, low-risk) documentation corrections.** Restored
+`css/office-shell.css` to its stage-4 committed content, then re-applied two comment rewrites on
+top: the file's own header (previously said "Phase 1 only" and "unscoped in Phase 6" as future-tense
+claims, both now wrong) now explains plainly that this file's selectors remain scoped under
+`.shell-v2` **on purpose**, not as an oversight, and names exactly why (the entry-screen specificity
+dependency just found) and what unscoping safely requires first (finishing the office.css cleanup
+stage 3 deferred). The `#main-content.app-primary-canvas` specificity comment was updated too: that
+*specific* historical fight really is over (confirmed by grep — both competing office.css rules from
+that comment's own account are gone, deleted in stage 3) and says so, while explaining why the extra
+specificity weight was left in place anyway rather than trimmed rule-by-rule now. Verified live after
+reverting: both entry screens pixel-identical to their pre-stage-5 baseline (0 nonzero pixels); full
+four-lane sweep, Book of Needs, and drawer functionality (Rite toggle spot-checked end to end) all
+clean. Zero parse errors. Cache-bust `office-shell.css` 307 → 308 (content changed — comments only).
+
+**Net effect of stage 5: no functional CSS change shipped, real documentation improvement shipped,
+and a second confirmed reason (on top of stage 3's own finding) that "unscope this file" and "delete
+the entry-screen's old CSS" are the same piece of work, not two independent ones — whichever session
+does one should plan to do both together.**
+
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest): Phase 6, stage 4 — real scope correction found and
 acted on, not a straight execution of the plan as written.** The plan (and `css/office-shell.css`'s
 own prior comment) said Stage 4 would delete the four legacy settings sidebars

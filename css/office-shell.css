@@ -3,33 +3,45 @@
 
    See documentation/UI_REDESIGN_HANDOFF.md for the full design and build plan.
 
-   PHASE 1 ONLY. This file currently declares the TOKEN LAYER and nothing else.
-   No structural rule, no layout, no typography is applied yet — those land in
-   Phase 2. Nothing in the app consumes these custom properties today, so
-   loading this file changes no rendering whatsoever.
+   Phases 1-5 built this file behind a `body.shell-v2` dev flag, kept scoped so
+   it could coexist with the old parchment pass without interleaving edits.
+   Phase 6 (2026-09-24) made this shell the app's only office shell and
+   dropped the flag itself -- `body` now carries `shell-v2` as a permanent
+   literal class (js/shell-flag.js, the toggle mechanism, is gone).
 
-   THREE RULES THAT GOVERN EVERY EDIT TO THIS FILE UNTIL PHASE 6:
+   THIS FILE'S OWN SELECTORS ARE STILL SCOPED UNDER `.shell-v2`, ON PURPOSE,
+   NOT AS A LEFTOVER. A full unscope was attempted the same day and reverted:
+   several rules here (e.g. the #tradition-entry/#mode-selection recolor
+   rules below) use `.shell-v2` as extra specificity weight to beat a real,
+   still-existing competing rule of the same target in css/office.css --
+   stripping it dropped those rules below the office.css rule's own
+   specificity and caused a real, verified regression (screenshot diff, not
+   guessed). office.css's own old parchment CSS for those two screens
+   couldn't be deleted either, the same day, for the matching reason (Stage
+   3's own deferral: office-shell.css only recolors those screens' cards, it
+   never rebuilt the grid layout the base rules still provide). Unscoping
+   this file safely needs that office.css cleanup done FIRST, not the other
+   way around -- future work, not done here. See RESUME_PROJECT_NOTE.md and
+   AUDIT_GOVERNANCE_LEDGER.md for the full account.
 
-   1. EVERYTHING IS SCOPED UNDER `body.shell-v2`. Not `:root`, not `body`, not a
-      bare element or class selector. The old parchment pass and this file must
-      be able to coexist without interleaving, which only works if this file can
-      never apply while the flag is off.
+   TWO RULES THAT STILL GOVERN THIS FILE:
 
-   2. NO EXISTING RULE IS EDITED. This file is loaded AFTER css/office.css and
-      wins on specificity where it needs to. It does not reach back and change
-      office.css, and office.css does not know it exists.
+   1. NO EXISTING RULE IN css/office.css IS EDITED. This file loads AFTER
+      office.css and wins on specificity where it needs to. It does not reach
+      back and change office.css.
 
-   3. TOKEN NAMES ARE PREFIXED `--uo-`. Verified 2026-09-12: no `--uo-` custom
+   2. TOKEN NAMES ARE PREFIXED `--uo-`. Verified 2026-09-12: no `--uo-` custom
       property existed anywhere in css/, js/ or index.html before this file, so
-      these names cannot collide with the 25 `--app-*` tokens of the parchment
-      pass or with the original theme's `--gold` / `--ink` / `--rubric`.
+      these names cannot collide with the (now largely deleted) `--app-*`
+      tokens of the parchment pass or with the original theme's `--gold` /
+      `--ink` / `--rubric`.
 
-   The parchment pass is retired in Phase 6, at which point this file is
-   unscoped and the flag is dropped. Note that Phase 6 conflicts with
-   documentation/universal-office-navigation-architecture.md, which is marked
-   canonical and fixes the parchment surface as the shared visual language —
-   that conflict is recorded, not resolved, and needs Josh's decision before
-   Phase 6. It does not affect Phases 1–5.
+   Book of Needs still runs the parchment pass and gets its own design pass
+   separately, per UI_REDESIGN_HANDOFF.md section 9 -- Phase 6 only ever
+   covered the office screen. The navigation-architecture governance conflict
+   that used to sit in front of Phase 6 was resolved 2026-09-21 (Josh's
+   ruling; see AUDIT_GOVERNANCE_LEDGER.md, gov:navigation-architecture-
+   surface-superseded) before this phase started.
    =========================================================================== */
 
 
@@ -397,25 +409,23 @@ body.shell-v2 .shared-office-nav-appearance-card {
    envelope lands in Phase 3.
    --------------------------------------------------------------------------- */
 
-/* SPECIFICITY, and why these selectors look heavier than they need to.
-   css/office.css line 2248 carries:
+/* SPECIFICITY — historical note, kept because it explains why the two rules
+   below still carry more classes than a fresh file would use.
+   Originally css/office.css carried a competing
+   `body.office-active #main-content.app-primary-canvas { display: block; }`
+   at (0,3,1), which beat this file's plainer first draft and silently
+   defeated `display: grid`. Matched at equal specificity rather than reaching
+   for `!important`, relying on this file loading after office.css to win on
+   order. A `.dark-mode` sibling needed (0,4,1) to clear the same way.
 
-       body.office-active #main-content.app-primary-canvas { display: block; }
-
-   which is (0,3,1) — two classes and an id. A plainer
-   `body.shell-v2 #main-content` is (0,2,1) and LOSES to it, so `display: grid`
-   silently never applied and all five regions fell into normal flow. The
-   class-based rules further down had nothing competing with them and did apply,
-   which made the failure look like a half-working stylesheet rather than a
-   specificity loss.
-
-   Matched at (0,3,1) instead of reaching for !important: equal specificity, and
-   this file loads after office.css, so it wins on order. The background rule
-   needs (0,4,1) to clear `body.office-active.dark-mode #main-content`.
-
-   All of this disappears in Phase 6 when the parchment pass is deleted and this
-   file is unscoped. Until then, any NEW structural rule here that targets
-   #main-content must be written at this weight or it will lose the same way. */
+   Phase 6 (2026-09-24) deleted both of those competing office.css rules
+   outright, so THIS SPECIFIC fight is over -- confirmed by grep, not assumed.
+   The extra classes below are no longer load-bearing for THIS pair and could
+   be trimmed, but a blanket unscope of the whole file was tried the same day
+   and reverted (see this file's own header comment) after it broke a
+   DIFFERENT pair of rules (the entry-screen ones) whose office.css opponent
+   is still very much alive. Left at full weight here too, for consistency,
+   rather than trim rule-by-rule and invite the same class of mistake. */
 
 body.shell-v2 #main-content.app-primary-canvas {
     display: grid;
