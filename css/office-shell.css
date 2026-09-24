@@ -443,6 +443,76 @@ body.shell-v2 #main-content.app-primary-canvas {
    `background` wholesale rather than background-color. */
 body.shell-v2.office-active #main-content.app-primary-canvas {
     background: var(--uo-ground);
+    position: relative;
+}
+
+/* ---------------------------------------------------------------------------
+   PER-LANE GROUND IMAGERY -- 2026-09-24. HANDOFF.md §6 (Imagery): "Lane-
+   appropriate... grounds", each "under a heavy veil at 0.4-0.55 opacity as
+   texture, never as wallpaper" -- called for in the original design proposal,
+   never built in any of Phases 1-5 (confirmed: #main-content's computed
+   background was a flat solid colour, no image, checked directly against a
+   live render before writing this). Found on Josh's third time raising it.
+
+   A separate ::before layer, not filter:blur() on #main-content itself --
+   that would blur the rail/page/margin text it contains, not just the
+   background. ::before is position:absolute, which removes it from grid
+   flow automatically (the CSS Grid spec excludes absolutely-positioned grid
+   items from placement), so it cannot disturb the ordo/rail/page/margin/
+   keeping grid areas above it; z-index keeps it under them.
+
+   Keyed on data-uo-tradition (set by applyTraditionGround() in
+   js/office-shell.js from the envelope's own env.tradition -- never guessed
+   from the rendered page). A tradition with no rule below simply shows the
+   plain --uo-ground colour underneath -- an honest, disclosed gap for Coptic
+   (OOR) and East Syriac (COE), not a placeholder or a borrowed image; see
+   the ledger for why (network access blocked sourcing real images for them
+   this session). NEVER a Western Gothic image behind an Eastern lane --
+   HANDOFF.md's own explicit rule -- so ANG is the only tradition matched
+   here until real per-lane images exist.
+   --------------------------------------------------------------------------- */
+
+body.shell-v2.office-active #main-content.app-primary-canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px) saturate(0.7) brightness(0.42);
+    opacity: 0.48;
+}
+
+body.shell-v2 #main-content.app-primary-canvas > .uo-ordo,
+body.shell-v2 #main-content.app-primary-canvas > .uo-rail,
+body.shell-v2 #main-content.app-primary-canvas > .uo-page,
+body.shell-v2 #main-content.app-primary-canvas > .uo-margin,
+body.shell-v2 #main-content.app-primary-canvas > .uo-keeping {
+    position: relative;
+    z-index: 1;
+}
+
+/* Anglican (ANG) -- images already in this repo, already vetted as
+   Western/Gothic-appropriate (used elsewhere in this same app: rood-screen.png
+   for #uo-threshold's own "night-prayer aesthetic", chartres-rose.png behind
+   the entry screen). Night offices (the default palette) get the rood-screen
+   archway; day offices (body.uo-day) get the Chartres rose window, matching
+   HANDOFF.md 1b's own description of a stained-glass band under a heavy veil
+   for Morning Prayer. */
+body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+    background-image: url('/images/rood-screen.png');
+}
+/* The rose window is far busier and more saturated than the rood-screen archway
+   -- at the shared blur/opacity above it read as wallpaper, not texture, exactly
+   what HANDOFF.md's own rule warns against. Heavier blur and a lower opacity
+   specifically for this image, confirmed live before shipping (screenshot
+   comparison, not guessed). */
+body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+    background-image: url('/images/chartres-rose.png');
+    filter: blur(9px) saturate(0.35) brightness(0.7);
+    opacity: 0.22;
 }
 
 body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }

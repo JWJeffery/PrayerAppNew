@@ -538,6 +538,23 @@
         rail.appendChild(foot);
     }
 
+    /**
+     * Per-lane ground imagery -- HANDOFF.md §6 (Imagery): "Lane-appropriate...
+     * grounds", each "under a heavy veil... as texture, never as wallpaper",
+     * explicitly never the Western Gothic images behind an Eastern lane. Sets
+     * a data attribute css/office-shell.css keys its background-image rules
+     * off of; a lane with no sourced image yet (Coptic 'OOR', East Syriac
+     * 'COE' as of 2026-09-24) simply has no rule to match, so #main-content
+     * keeps its plain --uo-ground colour -- an honest, disclosed gap, not a
+     * placeholder or a borrowed image standing in for one.
+     */
+    function applyTraditionGround(env) {
+        var main = document.getElementById('main-content');
+        if (!main || !env) return;
+        if (env.tradition) main.setAttribute('data-uo-tradition', env.tradition);
+        else main.removeAttribute('data-uo-tradition');
+    }
+
     function renderOrdoFromEnvelope(env) {
         var day = document.querySelector('.uo-ordo-day');
         if (!day || !env || !env.context) return;
@@ -622,6 +639,7 @@
             renderRailFromEnvelope(ev.detail);
             renderOrdoFromEnvelope(ev.detail);
             renderMarginFromEnvelope(ev.detail);
+            applyTraditionGround(ev.detail);
         });
     }
 

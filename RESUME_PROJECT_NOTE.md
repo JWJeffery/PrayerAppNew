@@ -22,6 +22,66 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**PARTIALLY DONE, LIVE-CONFIRMED, 2026-09-24 (latest): per-lane veiled ground imagery built —
+Anglican done, Coptic/East Syriac/Byzantine blocked on real images, not guessed at.** This is the
+THIRD time Josh raised this — read that as: earlier sessions (including this one, on the first
+pass) checked the design docs' PROSE but never actually looked at the design's own PNG screenshots
+pixel-by-pixel against a live render. Josh supplied 4 of the actual mockup images directly in chat
+and asked squarely: *"What is the point of uploading the file if you aren't even going to examine
+what is in it to ensure that you are building out what you were asked to build out instead of just
+a shell of it?"* Fair, and the finding was real: `#main-content`'s computed background under
+shell-v2 was a flat solid colour, `rgb(8,7,12)`, checked directly — no image, anywhere, on any
+lane, despite HANDOFF.md §6 (Imagery) stating plainly: *"Lane-appropriate... grounds... under a
+heavy veil at 0.4–0.55 opacity as texture, never as wallpaper."* Phases 1–5 all shipped without
+this. Not tracked anywhere in the ledger before now — genuinely undiscovered, not a known/deferred
+gap.
+
+**Built**: `applyTraditionGround()` in `js/office-shell.js`, hooked into the existing
+`watchEnvelope()` handler (same place rail/ordo/margin already render from the envelope) — sets
+`data-uo-tradition` on `#main-content` from `env.tradition`, never guessed from the rendered page.
+`css/office-shell.css` keys a new `::before` layer off that attribute: a separate absolutely-
+positioned pseudo-element (removed from grid flow automatically, so it cannot disturb the ordo/
+rail/page/margin/keeping grid areas), holding only the background-image + blur/opacity — NOT
+`filter:blur()` on `#main-content` itself, which would blur the prayer text too, not just the
+ground behind it.
+
+**Anglican (ANG) is the only lane wired with a real image** — the two already in this repo,
+already established elsewhere in this exact app (`rood-screen.png` for `#uo-threshold`'s own
+"night-prayer aesthetic"; `chartres-rose.png` behind the entry screen). Night offices get the
+rood-screen archway; day offices (`body.uo-day`) get the Chartres rose window, matching HANDOFF.md
+1b's own description of a stained-glass band for Morning Prayer. **One real tuning bug caught live,
+not shipped blind**: the rose window at the same blur/opacity as the rood-screen read as wallpaper,
+not texture — exactly what the source document warns against — because it is a much busier, more
+saturated image. Given its own heavier blur (9px vs 3px) and lower opacity (0.22 vs 0.48),
+confirmed by screenshot before shipping.
+
+**Coptic (OOR) and East Syriac (COE) have NO image — confirmed as flat `--uo-ground`, not a broken
+image or a placeholder.** Blocked on a real constraint, disclosed rather than worked around:
+this sandbox's network egress proxy returns 403 for `commons.wikimedia.org` AND
+`upload.wikimedia.org` (checked both directly, WebFetch and raw `curl`), so no real, licence-
+verifiable public-domain image could be sourced this session for either lane — and HANDOFF.md's
+own rule ("do not reuse the Western Gothic images... behind Eastern lanes") explicitly forbids
+covering the gap with what's already on hand. **Needs one of two things from Josh**: widen this
+session's network access to reach an image source (Wikimedia Commons was the obvious candidate —
+`Liturgical codex Louvre E10094.jpg` looked like a real, well-licensed candidate for the Coptic
+leaf before the block was hit), or supply the images directly, the same way he's supplied primary
+source text pages before. Byzantine (`EOR`/Horologion) has no lane built yet at all (Phase 5 lane
+3) so is correctly out of scope for this pass, but the SAME blocker will apply when that lane is
+built — HANDOFF.md's corrected guidance (`UI_REDESIGN_HANDOFF.md`, not the original proposal)
+explicitly vetoes Rublev's *Trinity* for this slot and calls for "a Byzantine horologion or
+typikon leaf, headpiece ornament, or architectural stonework" instead.
+
+**Verified live**: screenshots of Anglican night (Compline/Evening Prayer) and day (Morning
+Prayer), confirming the veil is genuinely subtle and text stays fully legible in both; Coptic
+confirmed flat with zero console errors and zero broken-image artifacts; `?shell=v1`/no-flag
+confirmed completely unaffected (`data-uo-tradition` is never set — `applyTraditionGround()` is
+only called from `watchEnvelope()`, itself gated on `shellOn()`). Cache-bust `office-shell.css`
+300 → 301, `office-shell.js` 295 → 296. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, key
+`ui:per-lane-ground-imagery`.
+
+**Phase 5 (Horologion, lane 3 of 3) is still next once Coptic/East Syriac imagery is unblocked or
+explicitly deferred by Josh** — see the "What that leaves" paragraph further below.
+
 **DONE, LIVE-CONFIRMED, 2026-09-24 (latest, out-of-band entry — interrupted Phase 5 work on
 Josh's direct request): the entry screens redesigned and regrouped, off the Phase 5 build order.**
 Josh: *"I would like the entry screen redesigned before we move on to the Horologion... the
