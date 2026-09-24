@@ -5410,6 +5410,98 @@ document.getElementById('saint-display').innerHTML = angComms
 // established for the Coptic Agpeya rebuild -- Maclean cites psalms by
 // number, he doesn't supply his own translation of their text.
 //
+/**
+ * East Syriac Hudra port -- Phase 5, lane 2 of 3 (documentation/UI_REDESIGN_HANDOFF.md
+ * section 9). Emits one component's rubric-text/component-text pair plus any
+ * psalms/readings it carries, as real DOM nodes plus one blocks[] entry with
+ * its own units[] -- the same move the Anglican and Coptic ports already made.
+ *
+ * TWO genuine shape mismatches, found by reading renderEastSyriac() end to end
+ * before writing this, that the existing bcpEmit-family and copEmitReading
+ * helpers do not cover:
+ *
+ * 1. Every scripture reference in this lane -- psalms AND non-psalm scripture
+ *    alike (e.g. the Exodus 15 canticle used as a Shuraya substitute) --
+ *    renders as poetry (.psalm-block, formatPsalmAsPoetry), never as flowing
+ *    reading text (.reading-text, formatScriptureAsFlow). bcpEmitReading and
+ *    copEmitReading both use the flowing-text shape, so neither fits here;
+ *    confirmed by reading the pre-port function's own scriptureRef branch
+ *    directly (it already used psalm-block, not reading-text).
+ * 2. One sequence item (one component id) can itself carry MULTIPLE readings.
+ *    A Hulala's `sections` array interleaves an optional proper prayer with
+ *    one or more psalms/scripture refs per section, all following the same
+ *    rubric-text/component-text pair, with no heading of its own. Per
+ *    contract section 8, one Hulala is one block and each psalm/reading
+ *    within it is one of that block's own units -- not a new block each, the
+ *    way Coptic's separate VARIABLE_* sequence items were.
+ *
+ * Role assignment: bcpRoleFor() is tried first (it already correctly covers
+ * shared components this lane reuses verbatim, e.g. "The Lord's Prayer" ->
+ * lords-prayer), and only upgraded off its 'other' default using the
+ * component's own known shape (sections/psalms/psalmRef -> psalmody,
+ * scriptureRef -> reading) -- ROLE_BY_LABEL is English BCP vocabulary and
+ * was never going to match a Syriac-transliterated label like "Hulala I" or
+ * "Qaltha" by string lookup alone.
+ */
+async function esyEmitComponent(container, env, comp, itemId, componentText) {
+    const label = comp.title || itemId;
+
+    const labelSpan = document.createElement('span');
+    labelSpan.className = 'rubric-text';
+    labelSpan.textContent = label;
+    container.appendChild(labelSpan);
+
+    const gutterText = BCP_GUTTER_KIND_BY_LABEL[label] || '';
+    bcpWrapInGutter(container, gutterText, [bcpMakeSpan('component-text', componentText, {})]);
+
+    const units = [];
+    const emitPsalmUnit = async (displayLabel, query) => {
+        const fullText = await getScriptureText(query);
+        const cite = document.createElement('h4');
+        cite.className = 'passage-reference';
+        cite.textContent = displayLabel;
+        const body = bcpMakeSpan('psalm-block', formatPsalmAsPoetry(fullText), { tag: 'div' });
+        bcpWrapInGutter(container, displayLabel, [cite, body]);
+        units.push({ kind: 'psalm', citation: displayLabel });
+    };
+
+    if (Array.isArray(comp.sections)) {
+        // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs. Each
+        // section's own proper prayer is rendered, followed by its psalm(s)
+        // or canticle(s) -- mirrors Maclean's actual structure (a proper
+        // prayer before each subdivision of psalms within a Hulala, not one
+        // prayer for the whole Hulala), same as the pre-port loop.
+        for (const section of comp.sections) {
+            if (section.prayer) {
+                bcpWrapInGutter(container, '', [bcpMakeSpan('component-text', section.prayer, { tag: 'p' })]);
+            }
+            const refs = Array.isArray(section.psalms) ? section.psalms.map(p => ({ label: `Psalm ${p}`, query: 'PSALM ' + p }))
+                       : Array.isArray(section.scriptureRefs) ? section.scriptureRefs.map(r => ({ label: r, query: r }))
+                       : [];
+            for (const ref of refs) {
+                await emitPsalmUnit(ref.label, ref.query);
+            }
+        }
+    } else if (Array.isArray(comp.psalms)) {
+        for (const psRef of comp.psalms) {
+            await emitPsalmUnit(`Psalm ${psRef}`, 'PSALM ' + psRef);
+        }
+    } else if (comp.psalmRef) {
+        await emitPsalmUnit(`Psalm ${comp.psalmRef}`, 'PSALM ' + comp.psalmRef);
+    } else if (comp.scriptureRef) {
+        // Non-Psalm scripture citation -- comp.scriptureRef already carries
+        // the full "BOOK chapter:verse" citation getScriptureText expects.
+        await emitPsalmUnit(comp.scriptureRef, comp.scriptureRef);
+    }
+
+    let role = bcpRoleFor(label);
+    if (role === 'other') {
+        if (Array.isArray(comp.sections) || Array.isArray(comp.psalms) || comp.psalmRef) role = 'psalmody';
+        else if (comp.scriptureRef) role = 'reading';
+    }
+    env.blocks.push({ label: label, role: role, units: units });
+}
+
 async function renderEastSyriac() {
     if (!appData || !appData.eastSyriacRubrics) {
         document.getElementById('office-display').innerHTML =
@@ -6253,122 +6345,149 @@ async function renderEastSyriac() {
                                  + (window._esyTemporalOverride.active ? ' \u2726 override' : '');
     }
 
+    // \u2500\u2500 Begin DOM assembly (Phase 5 port: real nodes, not one string --
+    // same move renderBcpOffice() and renderCopticAgpeya() already made) \u2500\u2500\u2500\u2500
+    const officeSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + cycleSuffix;
+
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Hudra';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = officeTitle;
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = officeSubtitleText;
+    // No seasonal dot here, deliberately -- same reasoning as the Coptic port
+    // (ui:phase5-eastern-seasonal-colors-sourcing row): this lane's own
+    // colour question is different again (spec section 6: "essentially no
+    // developed colour sequence... no dot is the likely correct result") and
+    // still needs its own deliberate, recorded decision, not an invented dot.
+    container.appendChild(subtitle);
+
+    if (esyModeFallbackNote) {
+        const note = document.createElement('p');
+        note.className = 'rubric-text';
+        note.textContent = esyModeFallbackNote;
+        container.appendChild(note);
+    }
+
+    // env replaces the string-concatenated officeHtml entirely -- blocks/
+    // overlays/diagnostics are built directly, here, at the moment each is
+    // actually emitted, the same pattern the Anglican and Coptic ports
+    // established. overlays[] stays empty throughout this lane: confirmed by
+    // reading the pre-port function end to end that this lane borrows
+    // nothing from another tradition (unlike BCP's Agpeya-Opening-style
+    // toggles, which borrow INTO BCP).
+    const env = { blocks: [], overlays: [], diagnostics: [] };
+
     if (!sequence) {
         const isEndanaOutsideFast = (officeKey === 'endana' && !isGreatFast);
-        const fallbackBody = isEndanaOutsideFast
-            ? `<p class="rubric-text">Not observed outside the Great Fast</p>`
-              + `<p class="component-text">Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
-              + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
-              + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
-              + `non-Fast days, per the primary source itself.</p>`
-            : `<p class="rubric-text">Not yet rebuilt</p>`
-              + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
-              + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
-              + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
-              + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`;
-        document.getElementById('office-display').innerHTML =
-            `<div class="office-container">`
-            + `<p class="office-book-title">The Hudra</p>`
-            + `<h2>${officeTitle}</h2>`
-            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
-            + (esyModeFallbackNote ? `<p class="rubric-text">${esyModeFallbackNote}</p>` : '')
-            + fallbackBody
-            + `</div>`;
-        return;
-    }
+        // Two distinct, honest states, matching the pre-port text exactly --
+        // just built as real nodes now instead of an HTML string. Neither is
+        // an error: per contract section 11 rule 3, a genuinely empty result
+        // (Endana outside the Fast) is correct, not a gap, so it gets no
+        // diagnostic; the "not yet rebuilt" state is a disclosed content gap
+        // (section 11's "not-yet-mapped"), so it does.
+        if (isEndanaOutsideFast) {
+            const rubric = document.createElement('p');
+            rubric.className = 'rubric-text';
+            rubric.textContent = 'Not observed outside the Great Fast';
+            container.appendChild(rubric);
 
-    let officeHtml = `<div class="office-container">`;
-    officeHtml += `<p class="office-book-title">The Hudra</p>`;
-    officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`;
-    if (esyModeFallbackNote) officeHtml += `<p class="rubric-text">${esyModeFallbackNote}</p>`;
+            const body = document.createElement('p');
+            body.className = 'component-text';
+            body.textContent = `Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
+                + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
+                + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
+                + `non-Fast days, per the primary source itself.`;
+            container.appendChild(body);
+        } else {
+            const rubric = document.createElement('p');
+            rubric.className = 'rubric-text';
+            rubric.textContent = 'Not yet rebuilt';
+            container.appendChild(rubric);
 
-    for (const itemId of sequence) {
-        const comp = appData.components.find(c => c.id === itemId);
-        if (!comp) {
-            console.warn(`[renderEastSyriac] Component not found: ${itemId}`);
-            continue;
+            const body = document.createElement('p');
+            body.className = 'component-text';
+            body.append(
+                'The Church of the East office content is being rebuilt from a verified primary source (A.J. Maclean, ',
+                (() => { const em = document.createElement('em'); em.textContent = 'East Syrian Daily Offices'; return em; })(),
+                `, 1894) one day and one hour at a time, replacing an earlier build that had no source citations. `
+                + `${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been built yet. `
+                + `See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.`
+            );
+            container.appendChild(body);
+
+            bcpPushDiagnostic(env, 'not-yet-mapped', officeTitle);
         }
-
-        officeHtml += `<span class="rubric-text">${comp.title || itemId}</span>`;
-
-        // Feast-name substitution (see FEAST_PS78_TERMS above for the
-        // research this is based on, and its two deliberately-unresolved
-        // terms). Resolved at render time, not baked into the component's
-        // own stored text, so both the disclosed-gap fallback and the
-        // resolved forms stay backed by the same single component.
-        let componentText = comp.text || '';
-        if (itemId === 'esy-feast-lelya-ps78-farcing-gap' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
-            componentText = `<p class="rubric-text">They say Psalm 78, farced thus: between each pair of clauses, `
-                + `\u2018Hallelu\u2019 four times, \u2018Hallelujah in ${FEAST_PS78_TERMS[feastCommem.key]}.\u2019</p>`;
-        } else if (itemId === 'esy-night-anthem-prayer-third' && feastCommem) {
-            // "N" here carries none of the Psalm 78 farcing's ambiguity --
-            // Maclean's own convention is simply "insert the feast's
-            // name," and this calendar engine already has a correct label
-            // for all seven Feasts of our Lord, not just the six above.
-            componentText = componentText.replace('the festival of N', `the festival of ${feastCommem.label}`);
-        } else if (itemId === 'esy-festival-incense-psalms-feast-farcing' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
-            // Same six-term table as Psalm 78 above, reused rather than
-            // duplicated -- this is the Ramsha sibling of that farcing,
-            // researched together (see FEAST_PS78_TERMS's own note). This
-            // template is possessive ("glorious is thy ___"), unlike the
-            // Night Service's "Hallelujah in ___" -- FEAST_PS78_TERMS's
-            // own values carry a leading "the" for that other template
-            // ("the Nativity of Christ"), which would double up here
-            // ("thy the Nativity of Christ"); stripped for this one.
-            const resolved = FEAST_PS78_TERMS[feastCommem.key].replace(/^the /, '');
-            componentText = componentText
-                .replace('[Nativity, or Epiphany, or Entrance, or Resurrection, or Ascension, or Descent, or Revelation, or Cross]', resolved)
-                .split('[the feast]').join(resolved);
-        }
-
-        // Components carrying `psalms` (plural, e.g. a Marmitha of several
-        // psalms) or `psalmRef` (a single citation, e.g. a Shuraya) resolve
-        // their actual verse text from this app's own verified Bible corpus,
-        // appended after the rubric text already embedded in `text`.
-        officeHtml += `<span class="component-text">${componentText}</span>`;
-
-        if (Array.isArray(comp.sections)) {
-            // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs.
-            // Each section's own proper prayer is rendered, followed by its
-            // psalm(s) or canticle(s) resolved from the corpus, mirroring
-            // Maclean's actual structure (a proper prayer before each
-            // subdivision of psalms within a Hulala, not one prayer for the
-            // whole Hulala).
-            for (const section of comp.sections) {
-                if (section.prayer) {
-                    officeHtml += `<p class="component-text">${section.prayer}</p>`;
-                }
-                const refs = Array.isArray(section.psalms) ? section.psalms.map(p => ({ label: `Psalm ${p}`, query: 'PSALM ' + p }))
-                           : Array.isArray(section.scriptureRefs) ? section.scriptureRefs.map(r => ({ label: r, query: r }))
-                           : [];
-                for (const ref of refs) {
-                    const fullText = await getScriptureText(ref.query);
-                    officeHtml += `<h4 class="passage-reference">${ref.label}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-                }
+    } else {
+        for (const itemId of sequence) {
+            const comp = appData.components.find(c => c.id === itemId);
+            if (!comp) {
+                console.warn(`[renderEastSyriac] Component not found: ${itemId}`);
+                bcpPushDiagnostic(env, 'coverage-gap', itemId);
+                continue;
             }
-        } else if (Array.isArray(comp.psalms)) {
-            for (const psRef of comp.psalms) {
-                const fullText = await getScriptureText('PSALM ' + psRef);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+
+            // Feast-name substitution (see FEAST_PS78_TERMS above for the
+            // research this is based on, and its two deliberately-unresolved
+            // terms). Resolved at render time, not baked into the component's
+            // own stored text, so both the disclosed-gap fallback and the
+            // resolved forms stay backed by the same single component.
+            let componentText = comp.text || '';
+            if (itemId === 'esy-feast-lelya-ps78-farcing-gap' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
+                componentText = `<p class="rubric-text">They say Psalm 78, farced thus: between each pair of clauses, `
+                    + `\u2018Hallelu\u2019 four times, \u2018Hallelujah in ${FEAST_PS78_TERMS[feastCommem.key]}.\u2019</p>`;
+            } else if (itemId === 'esy-night-anthem-prayer-third' && feastCommem) {
+                // "N" here carries none of the Psalm 78 farcing's ambiguity --
+                // Maclean's own convention is simply "insert the feast's
+                // name," and this calendar engine already has a correct label
+                // for all seven Feasts of our Lord, not just the six above.
+                componentText = componentText.replace('the festival of N', `the festival of ${feastCommem.label}`);
+            } else if (itemId === 'esy-festival-incense-psalms-feast-farcing' && feastCommem && FEAST_PS78_TERMS[feastCommem.key]) {
+                // Same six-term table as Psalm 78 above, reused rather than
+                // duplicated -- this is the Ramsha sibling of that farcing,
+                // researched together (see FEAST_PS78_TERMS's own note). This
+                // template is possessive ("glorious is thy ___"), unlike the
+                // Night Service's "Hallelujah in ___" -- FEAST_PS78_TERMS's
+                // own values carry a leading "the" for that other template
+                // ("the Nativity of Christ"), which would double up here
+                // ("thy the Nativity of Christ"); stripped for this one.
+                const resolved = FEAST_PS78_TERMS[feastCommem.key].replace(/^the /, '');
+                componentText = componentText
+                    .replace('[Nativity, or Epiphany, or Entrance, or Resurrection, or Ascension, or Descent, or Revelation, or Cross]', resolved)
+                    .split('[the feast]').join(resolved);
             }
-        } else if (comp.psalmRef) {
-            const fullText = await getScriptureText('PSALM ' + comp.psalmRef);
-            officeHtml += `<h4 class="passage-reference">Psalm ${comp.psalmRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
-        } else if (comp.scriptureRef) {
-            // Non-Psalm scripture citation (e.g. the Exodus 15 canticle used as a
-            // Shuraya substitute) -- comp.scriptureRef already carries the full
-            // "BOOK chapter:verse" citation getScriptureText expects.
-            const fullText = await getScriptureText(comp.scriptureRef);
-            officeHtml += `<h4 class="passage-reference">${comp.scriptureRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+
+            await esyEmitComponent(container, env, comp, itemId, componentText);
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    // \u2500\u2500 Publish envelope + finalise DOM (same move Phase 3/5 already
+    // established: publish first, then one replaceChildren, not innerHTML) \u2500\u2500
+    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+        try {
+            window.AnglicanEnvelope.publish({
+                tradition: 'COE',
+                officeFamily: officeKey || null,
+                context: { calendarSummary: officeSubtitleText || null, rankSummary: null },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
+    document.getElementById('office-display').replaceChildren(container);
     applyExplanationLayer('office-display');
 
     // ── Commemorations (Layer 3: individual saints) ─────────────────────────
@@ -6398,23 +6517,31 @@ async function renderEastSyriac() {
     // since the fabricated majority of the old data no longer carries a COE
     // tag at all pending real re-sourcing (documented as future work, not
     // silently dropped).
-    const coeRaw      = await resolveCommemorations(currentDate, 'COE');
-    const coeEligible = (typeof CoeEligibility !== 'undefined')
-        ? CoeEligibility.filter(coeRaw)
-        : [];
+    //
+    // Matches the pre-port control flow exactly: this block only ran when a
+    // real sequence had just rendered (the old `!sequence` branch returned
+    // before ever reaching it). Preserved as-is rather than changed to also
+    // run on the "not yet rebuilt" fallback -- that would be a behavioural
+    // change beyond this port's scope, not a refactor.
+    if (sequence) {
+        const coeRaw      = await resolveCommemorations(currentDate, 'COE');
+        const coeEligible = (typeof CoeEligibility !== 'undefined')
+            ? CoeEligibility.filter(coeRaw)
+            : [];
 
-    const saintSection = document.querySelector('.saint-section');
-    if (coeEligible.length > 0) {
-        document.getElementById('date-header').innerText = 'Commemorated Holy Figures';
-        document.getElementById('date-header').style.display = '';
-        if (saintSection) saintSection.style.display = '';
-        document.getElementById('saint-display').innerHTML = coeEligible
-            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
-            .join('');
-    } else {
-        document.getElementById('saint-display').innerHTML = '';
-        document.getElementById('date-header').style.display = 'none';
-        if (saintSection) saintSection.style.display = 'none';
+        const saintSection = document.querySelector('.saint-section');
+        if (coeEligible.length > 0) {
+            document.getElementById('date-header').innerText = 'Commemorated Holy Figures';
+            document.getElementById('date-header').style.display = '';
+            if (saintSection) saintSection.style.display = '';
+            document.getElementById('saint-display').innerHTML = coeEligible
+                .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+                .join('');
+        } else {
+            document.getElementById('saint-display').innerHTML = '';
+            document.getElementById('date-header').style.display = 'none';
+            if (saintSection) saintSection.style.display = 'none';
+        }
     }
 }
 

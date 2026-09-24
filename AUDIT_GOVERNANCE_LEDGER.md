@@ -17491,3 +17491,165 @@ Cache-bust: `js/office-ui.js` 301 -> 302.
 Next: East Syriac, per section 9's own lane ordering.
 
 SEED_VERSION bumped to `v338-2026-09-24-phase5-coptic-lane-envelope-built`.
+
+## Session 2026-09-24 continued -- Phase 5, lane 2: the East Syriac Hudra renderer ported to the
+## resolved-office envelope, live-confirmed against the pre-port function byte-for-byte.
+## SEED_VERSION v338 -> v339.
+
+`renderEastSyriac()` is a much larger function than either of the two lanes already ported --
+~1,020 lines against `renderCopticAgpeya()`'s ~190, matching the resume note's own warning that
+this lane "may have its own shape mismatches... do not assume the same helpers drop in unchanged."
+Read end to end before writing anything, per standing discipline.
+
+### What stayed untouched
+
+The ~850-line decision block (lines 5413-6340 of the pre-port file) computes, from the current
+date, hour selection, and Cathedral/Monastic mode: the Qdham/Wathar fortnightly cycle (and which
+offices actually vary by it); Great Fast (Sauma) substitutions for Sapra/Lelya/Ramsha, including the
+Weeks-of-the-Mysteries psalm-block swap and the Quta'a addendum; the Rogation of the Ninevites'
+three-day Lelya substitutions; Feast-of-our-Lord weekday handling (Festival structure regardless of
+day-of-week, Psalm 78 farcing term resolution, the Night Anthem's "N" substitution); Sunday Lelya's
+Advent/Hallowing/Palm-Sunday psalm substitutions and seasonal Tishbukhta selection; Sunday Ramsha's
+Royal Anthem ending/Marmitha-group/prayer-after selection by season; and the Blessing of the Months.
+None of it was rewritten, reordered, or re-derived from memory -- only the emission tail (the
+`officeHtml` string-concatenation loop that turns the resolved `sequence` array into markup, ~115
+lines) was converted. Confirmed by diff: the change touches nothing above the line computing
+`cycleSuffix`, and the entire decision block reads identically before and after in `git diff`.
+
+### Two genuine shape mismatches, not one
+
+The Coptic port needed one small deviation from the Anglican lane's own `bcpEmit*` helpers (the
+divider). This lane needed two, both real and both confirmed by reading the pre-port function's own
+code directly rather than assumed by analogy:
+
+1. **Every scripture reference in this lane renders as poetry, never as flowing text.** Psalms
+   *and* non-psalm scripture alike -- e.g. the Exodus 15 canticle used as a Shuraya substitute in
+   the Rogation material -- use `.psalm-block`/`formatPsalmAsPoetry()`. `bcpEmitReading()` and
+   `copEmitReading()` both use the flowing-text shape (`.reading-text`/`formatScriptureAsFlow()`),
+   confirmed by reading their own bodies; neither fits here, so this port does not call either.
+2. **One sequence item can itself carry multiple readings.** A Hulala's own `sections` array
+   interleaves an optional proper prayer with one or more psalms/scripture refs per section, all
+   following the same rubric-text/component-text pair and with no heading of its own -- structurally
+   different from Coptic's separate `VARIABLE_COP_*` sequence items, each of which was its own,
+   independently-labelled block. Per contract section 8 ("one Hulala is one block, each psalm is one
+   of its units"), this is built as a single `blocks[]` entry carrying several `units[]`, not several
+   small blocks.
+
+Both are handled by one new function, `esyEmitComponent(container, env, comp, itemId,
+componentText)`, placed immediately before `renderEastSyriac()` -- not by adding options flags to
+the Anglican lane's own helpers, which would have risked a regression there for a need specific to
+this lane. It still reuses `bcpMakeSpan`/`bcpWrapInGutter`/`bcpRoleFor`/`bcpPushDiagnostic` and
+`BCP_GUTTER_KIND_BY_LABEL` directly for the pieces that do match (the label/text pair itself, the
+gutter grid, diagnostic wording) -- confirmed, by reading them, that nothing in those four is
+Anglican-specific.
+
+### Role assignment: a deliberate, disclosed judgement call
+
+`bcpRoleFor(label)` is English-BCP-label-keyed (`ROLE_BY_LABEL` matches strings like "the collect,"
+"the lord's prayer"), so it correctly recognises the handful of components this lane reuses verbatim
+from the shared corpus, but returns `'other'` for every genuinely Syriac-transliterated label
+("Hulala XV," "Qaltha," "Motwa," "Tishbukhta") by construction -- there was never going to be a
+string match. Rather than leave every East Syriac block as `'other'`, `esyEmitComponent()` upgrades
+off that default using the component's own already-known shape: `sections`/`psalms`/`psalmRef`
+present -> `psalmody`; `scriptureRef` present -> `reading`. This stays within the closed taxonomy
+(section 7 rule 1) and encodes no tradition-specific meaning (rule 2) -- it is exactly the same kind
+of structural inference the taxonomy already expects a lane to make for its own native vocabulary.
+
+### The pre-existing "not yet rebuilt" fallback, converted too -- and two of its own mistakes caught
+
+Most day/hour/cycle combinations in this lane are still honestly unbuilt (per the header comment,
+this is a "multi-session rebuild, in progress"), so the `!sequence` fallback is not a rare edge case
+-- it is this lane's single most common real state. Converting only the happy path and leaving this
+fallback as a bare `innerHTML` string would have meant the shell's rail/margin showed stale or empty
+content, rather than the honest diagnostic contract section 11 calls for, on the majority of actual
+visits to this lane. So it was converted too, preserving its exact two states verbatim: Endana
+outside the Great Fast (genuinely not part of the office on non-Fast days -- correctly gets **no**
+diagnostic, per section 11 rule 3's "silence can be correct"), and the generic "not yet rebuilt"
+state (a disclosed content gap -- now also calls `bcpPushDiagnostic(env, 'not-yet-mapped',
+officeTitle)`, so the shell's margin can show it too, not just the page body).
+
+Two real mistakes in the first draft of this conversion were caught before shipping, by diffing the
+new text against the original character for character rather than eyeballing it:
+
+- The rewrite had silently drifted the pre-port's plain ASCII apostrophes (`Maclean's`, `Quta'a`,
+  `isn't`, `hasn't`) to typographic curly quotes (`’`) -- an unauthorized change to source text
+  that an old-vs-new comparison harness caught immediately. Reverted to the exact original characters.
+- The rewrite had also flattened `<em>East Syrian Daily Offices</em>` to plain text, losing the book
+  title's italics. Fixed by building a real `<em>` child node instead of using `textContent` for that
+  paragraph.
+
+A third mistake was caught the same way, in the control flow rather than the text: an early draft of
+this port removed the pre-port's early `return` inside the `!sequence` branch (needed structurally,
+since the new code publishes the envelope and calls `replaceChildren()` once, after both branches,
+rather than returning early from inside the fallback). Removing that `return` silently changed
+behaviour -- the Layer 3 commemorations block below it, which the pre-port function only ever ran
+after a **real** sequence had rendered, would now also have run after the "not yet rebuilt" fallback.
+Caught by re-reading the diff against the original before shipping, not by testing; fixed by wrapping
+that block in `if (sequence) { ... }` instead of relying on an early return, preserving the original
+behaviour exactly while still letting the envelope publish and the fallback DOM attach in every case.
+
+### Envelope identity
+
+`tradition: 'COE'` -- matching `resolveCommemorations(currentDate, 'COE')`, already called lower in
+this same function for Layer 3 saints, and the same ANG/LAT/EOR/OOR/COE sanctoral convention the
+Coptic port's own `'OOR'` follows. `officeFamily` is the active `esy-time` value (`sapra`/`ramsha`/
+`lelya`/`subaa`/`endana`). `overlays[]` stays permanently empty: confirmed, by reading the pre-port
+function end to end, that this lane borrows nothing from another tradition.
+
+### Verification, two ways
+
+1. **An old-vs-new byte-for-byte comparison harness**, not a synthetic jsdom fixture: headless
+   Chromium (`/opt/pw-browsers/chromium-1194`) loading the real app twice in parallel via
+   `scripts/dev-spa-server.mjs`, one run with `page.route()` swapping in the pre-port
+   `js/office-ui.js` (read via `git show HEAD:js/office-ui.js` before any edit) for the "old" render
+   only, the other running the working tree's new code unmodified -- both driven through the same
+   `selectMode('east-syriac')` / Monastic-mode toggle / `window._esyTemporalOverride` /
+   `renderEastSyriac()` sequence for 12 real dates chosen to exercise the branches actually read
+   above: ferial Monday Ramsha, Sunday Ramsha (Royal Anthem/Marmitha/Suyakhi), Saturday and Wednesday
+   Lelya (both Hulala-bearing, Wednesday additionally exercising its own qdham/wathar Motwa split),
+   Monday Sapra, Monday Subaa, Endana outside the Fast, a Sunday inside the Great Fast, Rogation
+   Monday, Fast-season weekday Sapra and Ramsha, and first-of-month Ramsha (Blessing of the Months).
+   All 12 matched **exactly**, once each run's `.uo-gutter-label` text -- present only in the new
+   run's DOM -- was excluded from the comparison (see below for why that exclusion is correct, not a
+   loophole).
+2. **Live inspection of the actual envelope object**, `window.__universalOfficeEnvelope`, on several
+   of the same cases: Saturday Lelya's `Hulala XV` block carries `role: 'psalmody'` with four
+   correctly-ordered psalm units (`Psalm 102`-`105`), confirming the sections-shape mismatch fix
+   works with real multi-section content, not just a single-psalm case. A gap was forced live in the
+   console exactly the way the 2026-09-20/09-24 sessions before this one did it (`delete
+   appData.eastSyriacRubrics['monday-ramsha-wathar-sequence']`, reverted immediately after), and the
+   result correctly showed the "not yet rebuilt" text with `blocks: []`, one `not-yet-mapped`
+   diagnostic, and zero console errors -- satisfying contract section 4 rule 5 (a valid envelope with
+   empty blocks and a stated diagnostic) directly, not just by inspection of the code.
+
+**On the citation-duplication question the comparison harness first flagged, and why it isn't a
+bug:** the initial run of the old-vs-new harness (before the `.uo-gutter-label` exclusion) reported
+every psalm citation appearing twice in raw `textContent` under the new code, e.g. "Psalm 11Psalm
+11In the Lord I take refuge...". Investigated directly rather than assumed benign: this is not new to
+this port. `bcpEmitPsalmBlock()` and `copEmitReading()` -- both already shipped, both already used by
+the Anglican and Coptic lanes -- build the exact same structure, a `<h4 class="passage-reference">`
+carrying the citation *and* the same citation text again in `.uo-gutter-label` via
+`bcpWrapInGutter()`. Reproduced live on the already-shipped Coptic port loaded under the *old* flat
+skin (no `?shell=v2`) to confirm: "The LessonEPHESIANS 4:1-6EPHESIANS 4:1-6..." -- the identical
+duplication, pre-existing, not introduced here. The CSS that suppresses the redundant
+`.passage-reference` node (`body.shell-v2 .office-container .uo-block-body .passage-reference` ->
+`display:none`, `css/office-shell.css`) is scoped to `body.shell-v2` specifically, by design (the
+flat skin never had a gutter to move the citation into), so the duplication is real in the DOM but
+was never visible under the shell this app actually ships. A full-page screenshot of Saturday Lelya
+under `?shell=v2` confirms the rail now shows real, lane-native East Syriac labels for the first time
+ever (The Opening, The Lord's Prayer (farced with the Qanona), Hulala XV-XXI, Qaltha, Prayer before
+the Motwa, The Motwa, Motwa: Closing Verses, Prayer of the Shubakha, Shubakha (Psalm of Glory),
+Tishbukhta, The Karuzutha) -- previously genuinely empty under shell-v2, since no envelope existed. A
+second, scrolled screenshot of the Hulala XV block confirms "PSALM 102" renders once, correctly, in
+the gutter column beside its poetry, with no visible duplication on screen. Zero console errors
+across every test beyond one unrelated sandbox TLS/certificate-authority message on an external
+resource, the same class of environment noise this ledger has already flagged for other unrelated
+network restrictions in this sandbox.
+
+Cache-bust: `js/office-ui.js` 302 -> 303.
+
+Next: Horologion, per section 9's own lane ordering (last, since section 8 item 9 reprices it as a
+payload reconciliation rather than a fresh emitter, and it additionally needs the still-missing
+lane-native day-summary line built).
+
+SEED_VERSION bumped to `v339-2026-09-24-phase5-east-syriac-lane-envelope-built`.

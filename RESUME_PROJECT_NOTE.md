@@ -123,18 +123,53 @@ shows real Coptic labels where it was confirmed empty as recently as 2026-09-19.
 `office-ui.js` 301 → 302. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-24
 continued ("Phase 5, lane 1"), SEED_VERSION v337 → v338.
 
-**What that leaves, concretely, for the next session — Phase 5, lane 2 of 3, East Syriac, per §9's
-own ordering (then Horologion last since §8.9 repriced it as a payload reconciliation rather than a
-fresh emitter):**
-- `renderEastSyriac()` still uses its own separate string-concatenated `officeHtml` pattern,
-  unconverted (`ui:phase5-east-syriac-lane-envelope` on the dashboard). Read it end to end before
-  converting anything, the same discipline the Coptic port used -- it is a larger, multi-session
-  rebuild (Maclean-sourced, only partially complete book-by-book) and may have its own shape
-  mismatches the way the divider was for Coptic; do not assume the same helpers drop in unchanged
-  without checking.
-- Then Horologion, last (`ui:phase5-horologion-lane-envelope-and-day-line`) -- includes building the
-  still-missing lane-native day-summary line for the drawer, real content/engine work belonging to
-  this lane's own Phase 5 slice, not a drawer fix.
+**DONE, 2026-09-24 (later still): Phase 5 lane 2 of 3 -- the East Syriac Hudra renderer now emits
+the real envelope, verified byte-for-byte against the pre-port function.** `renderEastSyriac()`'s
+~850-line decision block (Qdham/Wathar cycle, Great Fast/Rogation/Feast-of-our-Lord substitutions,
+Sunday Ramsha's Royal Anthem selection, etc.) is much larger than Coptic's and was read end to end,
+then left completely untouched -- only the ~115-line emission tail was converted, same move as
+Coptic's own port. **Two genuine shape mismatches this time, not one:** (1) every scripture
+reference in this lane, psalms and non-psalm canticles alike, renders as poetry
+(`.psalm-block`/`formatPsalmAsPoetry`), never as flowing reading text, so neither `bcpEmitReading`
+nor `copEmitReading` fits; (2) a single sequence item (one Hulala) can carry several psalms/readings
+across its own `sections` array with no heading of its own -- per contract §8 this is one block with
+several units, not several blocks. Both handled by one new `esyEmitComponent()` rather than
+distorting the Anglican lane's own helpers. Role assignment upgrades off `bcpRoleFor()`'s `'other'`
+default using the component's own known shape (psalms/sections → `psalmody`, scripture → `reading`),
+since `ROLE_BY_LABEL` is English-BCP-keyed and was never going to match Syriac labels like "Hulala
+XV" or "Qaltha." The pre-existing "not yet rebuilt" fallback -- this lane's single most common real
+state -- was converted too, now pushing a `not-yet-mapped` diagnostic; two of the conversion's own
+mistakes (curly quotes drifted in for the original's plain apostrophes; `<em>East Syrian Daily
+Offices</em>`'s italics flattened to plain text) and one control-flow mistake (the Layer 3
+commemorations block's original guard -- it only ever ran after a real sequence, never after the
+fallback -- briefly dropped) were all caught by diffing against the original before shipping, not by
+testing, and fixed. Envelope tradition `'COE'`; `overlays[]` stays empty (this lane borrows nothing).
+**Verified two ways:** an old-vs-new byte-for-byte comparison harness (headless Chromium loading the
+real app twice, one run with the pre-port `office-ui.js` swapped in via `page.route()`) across 12
+real dates chosen to exercise ferial/festival/Fast/Rogation/Hulala/Blessing-of-Months branches --
+all 12 matched exactly once the new run's `.uo-gutter-label` text was excluded (a pre-existing,
+already-shipped duplication shared with `bcpEmitPsalmBlock`/`copEmitReading`, confirmed by
+reproducing the identical duplication live on Coptic under the old flat skin -- not something this
+port introduced, and invisible under `?shell=v2`'s own CSS); and live inspection of
+`window.__universalOfficeEnvelope` confirming Saturday Lelya's `Hulala XV` block carries `role:
+'psalmody'` with four correctly-ordered psalm units, plus a live-forced gap correctly rendering zero
+blocks and one `not-yet-mapped` diagnostic. Screenshots confirm the rail now shows real East Syriac
+labels for the first time under `?shell=v2`, and a Hulala's gutter correctly shows its psalm citation
+once, not twice. Cache-bust `office-ui.js` 302 → 303. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-24 continued ("Phase 5, lane 2"), SEED_VERSION v338 → v339.
+
+**What that leaves, concretely, for the next session — Phase 5, lane 3 of 3, Horologion, per §9's
+own ordering (last, since §8.9 repriced it as a payload reconciliation rather than a fresh
+emitter):**
+- `renderHorologion`-family code still needs the same envelope-emission treatment
+  (`ui:phase5-horologion-lane-envelope-and-day-line` on the dashboard) -- read it end to end first,
+  the same discipline both prior ports used; `js/horologion-engine.js` already emits its own
+  validated payload close to but not identical to the contract shape (sections vs. blocks, no
+  overlays, no context), so this is reconciling two already-validated shapes, not writing a fresh
+  emitter from a raw officeHtml string the way Coptic and East Syriac both were.
+- Also includes building the still-missing lane-native day-summary line for the drawer (tone/week/
+  fast composed into one line the way BCP's own day line does) -- real content/engine work belonging
+  to this lane's own Phase 5 slice, not a drawer fix.
 - Eastern seasonal-colour sourcing (§6) — Byzantine and Coptic each need a named jurisdiction-
   specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
   omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own
