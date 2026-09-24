@@ -36,6 +36,15 @@ the per-lane ground imagery work and were already in production use.
 - Supplied directly by the project owner; cropped locally to remove the black
   photography backdrop and a pale binding-gutter strip along the original scan's left
   edge.
+- **Day-mode fix, 2026-09-24**: found while checking whether the Byzantine lane's own
+  day-mode "flat wash" bug (see that lane's own entry below) also affected this one.
+  It did, more severely — the Morning Office (Prime), a real day office, measured only
+  4.87:1 median contrast (the night-mode tuning cites 12.4:1) and the manuscript was
+  essentially invisible on screen. Fixed with a `body.shell-v2.uo-day`-scoped override
+  in `css/office-shell.css`: brightness raised toward the source image instead of
+  darkened further, opacity raised too (0.5 → 0.44 net after two passes) rather than
+  relying on darkness to veil it; blur unchanged. Re-verified by screenshot against
+  real Morning Office text: manuscript text columns are now genuinely visible.
 
 ## Church of the East (COE)
 
@@ -48,6 +57,13 @@ the per-lane ground imagery work and were already in production use.
   Commons page's own category tags, not assumed.
 - Cropped locally to remove a thin black scan-edge vignette (a few pixels on the left
   and right edges, not a wide photography backdrop).
+- **Day-mode fix, 2026-09-24**: same sweep as Coptic and Byzantine above. Sapra
+  (Morning Prayer), the real day office, measured a safer 8.36:1 median than Coptic's
+  day-mode failure, and the cross ornament stayed faintly perceptible, but noticeably
+  fainter than this same image's own night-mode rendering. Fixed with the same
+  `uo-day`-scoped override pattern: brightness raised, opacity lowered (0.42 → 0.3);
+  blur unchanged. Re-verified by screenshot: the cross ornament is now clearly visible,
+  matching the night-mode quality.
 
 ## Byzantine / Eastern Orthodox (BYZC)
 

@@ -551,6 +551,22 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
     filter: blur(6px) saturate(0.5) brightness(0.6);
     opacity: 0.5;
 }
+/* Day-mode override -- found 2026-09-24 while checking whether Byzantine's own
+   day-mode "flat wash" bug (see that rule's own comment) also affected this
+   lane. It did, and worse: Coptic's Morning Office (Prime), the real day
+   office, measured only 4.87:1 median contrast (uncomfortably close to AA's
+   4.5:1 floor, not the 12.4:1 the night-mode comment above cites) and the
+   manuscript was essentially invisible on screen -- the exact "just a blur"
+   failure, this time never caught because this lane was only ever verified
+   against its own night offices. Same fix as Byzantine's day override:
+   brightness raised toward the source image instead of darkened further,
+   opacity lowered instead of relying on darkness to veil it; blur unchanged
+   (6px already confirmed legible). Re-verified by screenshot against real
+   Morning Office text. */
+body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+    filter: blur(6px) saturate(0.5) brightness(1.15);
+    opacity: 0.44;
+}
 
 /* East Syriac (COE) -- Wikimedia Commons, "File:East Syriac Script Thaksa.jpg":
    an 18th-century Thaksa (service book) opening, Chaldean Syrian Church,
@@ -569,6 +585,20 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
     background-image: url('/images/east-syriac-thaksa.jpg');
     filter: blur(10px) saturate(0.5) brightness(0.6);
     opacity: 0.42;
+}
+/* Day-mode override -- found 2026-09-24 in the same sweep as the Coptic and
+   Byzantine day-mode fixes (see those rules' own comments for the full
+   account). Sapra (Morning Prayer), the real day office, measured a safer
+   8.36:1 median than Coptic's day-mode failure, and the cross ornament stayed
+   faintly perceptible rather than vanishing outright, but noticeably fainter
+   than this same image's own night-mode rendering (already on record as
+   "clearly recognizable"). Same fix: brightness raised toward the source
+   image instead of darkened, opacity lowered; blur unchanged (10px already
+   confirmed legible at night). Re-verified by screenshot against real Sapra
+   text. */
+body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+    filter: blur(10px) saturate(0.5) brightness(1.05);
+    opacity: 0.3;
 }
 
 /* Byzantine/Eastern Orthodox (BYZC) -- Walters W.528, fol. 188r: the ornamented

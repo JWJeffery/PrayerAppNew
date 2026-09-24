@@ -79,9 +79,23 @@ caught proactively instead of by Josh a third time. Fixed with a day-mode-specif
 the same move Anglican's own day override already made for the rose window: raise brightness
 back toward the source image instead of darkening it further, lower opacity instead. Re-verified
 by screenshot — the headpiece's interlace and the two peacocks are now recognizable in both
-themes. Neither Coptic nor East Syriac has been checked for the same day-mode gap yet — both use
-the same single-rule-for-both-themes pattern Byzantine had, so it's a real, disclosed, open
-question, not assumed either way.
+themes.
+
+**SUPERSEDED same day — Josh asked directly: "Check if Coptic and East Syriac have the same
+day-mode gap." They did.** Coptic was the worse of the two: its real day office (the Morning
+Office/Prime) measured only 4.87:1 median contrast (uncomfortably close to AA's 4.5:1 floor, not
+the 12.4:1 the night-mode tuning cites) and the manuscript was essentially invisible on screen —
+the exact "just a blur" failure, never caught before because this lane had only ever been verified
+against its own night offices. East Syriac was milder: its day office (Sapra) measured a safer
+8.36:1 median and the cross ornament stayed faintly perceptible, but noticeably fainter than this
+same image's own night-mode rendering. Fixed both with the identical day-mode-override pattern
+Byzantine just got: brightness raised toward the source image instead of darkened, opacity
+adjusted, blur unchanged. Re-verified by screenshot for both: Coptic's manuscript text columns and
+East Syriac's cross ornament are now genuinely visible, matching each lane's own night-mode
+quality. Re-verified contrast stayed safe after tuning (Coptic 7.23:1 median, East Syriac 12.59:1
+median). Confirmed both real day offices via their actual radio controls
+(`cop-hour`=`coptic-morning-office`, `esy-time`=`sapra`), not forced attributes. Full four-lane
+sweep and `?shell=v1` re-run clean, zero console errors. Cache-bust `office-shell.css` 306 → 307.
 
 **Verified live in headless Chromium**: all Horologion offices with real resolvers (Vespers,
 Orthros, First/Third/Sixth/Ninth Hour, Small Compline, Great Compline, Typika, Midnight Office,
@@ -450,9 +464,6 @@ the next session:**
   specific witness; East Syriac's likely "no dot" needs a deliberate recorded decision, not silent
   omission. A corpus task, not shell work, and must not be done from general knowledge per §6's own
   warning.
-- Whether Coptic and East Syriac's ground images have the same day-mode "flat wash" gap Byzantine
-  was just found and fixed to have — un-investigated, disclosed rather than assumed either way (see
-  the Horologion entry near the top of this note).
 - Phase 6 (deleting the old skin app-wide, plus the Book of Needs' own design pass after) is
   untouched and now correctly unblocked — Phase 5 is complete, per the build order in §9. The
   navigation-architecture governance conflict that used to sit in front of Phase 6 is already
