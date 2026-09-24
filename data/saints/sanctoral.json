@@ -1849,7 +1849,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Wulfstan of Worcester, Bishop, 1095”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Wulfstan of Worcester, Bishop, 1095”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "martyrs-inna-pinna-and-rimma",
@@ -1889,7 +1891,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Richard Rolle, Walter Hilton, and Margery Kempe, Mystics, 1349, 1396, and c. 1440”. DATE CHANGED from January 20 to November 9 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, pp.6-18), which prints on this day: “Richard Rolle, Walter Hilton, and Margery Kempe, Mystics, 1349, 1396, and c. 1440”. DATE CHANGED from January 20 to November 9 in this same edit. The row had been confirmed earlier today against a SECONDARY Anglican witness which keeps this figure on the old day. Josh's rule, stated 2026-09-05: LFF is controlling in TEC and every other Anglican source is a secondary witness, admitted to include as many saints as possible but never to override LFF. LFF carries this identity, so LFF decides the date and the earlier confirmation is superseded. Found by auditing every secondary-witness confirmation against the LFF calendar once that rule was given — not by re-reading the row.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-euthymius-the-great",
@@ -1992,7 +1996,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Agnes and Cecilia of Rome, Martyrs, 304 and c. 230”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Agnes and Cecilia of Rome, Martyrs, 304 and c. 230”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "red",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-agnes-of-rome",
@@ -2340,7 +2346,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Timothy and Titus, Companions of Saint Paul”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Timothy and Titus, Companions of Saint Paul”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token. Tied with another candidate; the ANG-tagged one was preferred since it is the one actually observed for this tradition."
     },
     {
       "id": "venerable-xenophon-and-family",
@@ -2833,7 +2841,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Ansgar, bishop and patron of Denmark.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “Ansgar, bishop and patron of Denmark.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token."
     },
     {
       "id": "saint-blaise",
@@ -5261,7 +5271,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Patrick of Ireland, Bishop and Missionary, 461”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Patrick of Ireland, Bishop and Missionary, 461”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-cyril-of-jerusalem",
@@ -5586,7 +5598,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Óscar Romero, Archbishop and Martyr, 1980, and the Martyrs of El Salvador”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Óscar Romero, Archbishop and Martyr, 1980, and the Martyrs of El Salvador”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-catherine-of-sweden",
@@ -6310,7 +6324,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-07 rank 1), which places “Tikhon of Moscow” on this day on the witness of: BCP bracketed; LFF; HWHM; GCW; AM (tier: Current TEC/LFF / TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against this project's own Kalendar v0.1 candidate matrix (data/kalendar/april/kalendar-v0.1-april-candidates.csv, row 04-07 rank 1), which places “Tikhon of Moscow” on this day on the witness of: BCP bracketed; LFF; HWHM; GCW; AM (tier: Current TEC/LFF / TEC secondary). Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. RANK IS NOT THE DATE: rank orders which candidate takes precedence when several share a day, so a rank-2 or rank-3 candidate is still placed on this date by the witnesses named — it is the precedence question, still decision_status Pending in the matrix, that rank speaks to. Rows carrying a date-harmonization flag were deliberately excluded from this pass and remain unconfirmed.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "apostles-herodion-and-agabus",
@@ -6563,7 +6579,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Damien, Priest, 1889, and Marianne Cope, Monastic, 1918, of Hawai‘i”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Damien, Priest, 1889, and Marianne Cope, Monastic, 1918, of Hawai‘i”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-damien-of-moloka-i",
@@ -8513,7 +8531,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Bede, the Venerable, Priest, and Monk of Jarrow, 735”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Bede, the Venerable, Priest, and Monk of Jarrow, 735”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-gregory-vii",
@@ -8593,7 +8613,9 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Augustine, First Archbishop of Canterbury, 605”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-philip-neri",
@@ -9433,7 +9455,9 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Ephrem of Edessa, Syria, Deacon, 373”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "tagNote": "OOR NOTE 2026-09-07, RESOLVED 2026-09-11: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Originally read 2026-09-07 as a gap in coptic.io's selective index rather than a genuine absence, on the Clement-of-Rome precedent. Reopened and resolved 2026-09-11: the same four search terms, tried again in a session where the same tool found Mercurius instantly and richly, all still came back empty -- a working tool returning genuinely empty, not a broken one. Now treated as a real absence, not an index gap. This ANG-tagged row (Book of Common Prayer, June 10) is unaffected; the OOR tag itself has been removed from saint-ephrem-the-syrian (June 9)."
+      "tagNote": "OOR NOTE 2026-09-07, RESOLVED 2026-09-11: no Coptic attestation found under any phrasing tried (Ephrem, Ephraim, Ephrem the Syrian, Ephrem of Edessa). Originally read 2026-09-07 as a gap in coptic.io's selective index rather than a genuine absence, on the Clement-of-Rome precedent. Reopened and resolved 2026-09-11: the same four search terms, tried again in a session where the same tool found Mercurius instantly and richly, all still came back empty -- a working tool returning genuinely empty, not a broken one. Now treated as a real absence, not an index gap. This ANG-tagged row (Book of Common Prayer, June 10) is unaffected; the OOR tag itself has been removed from saint-ephrem-the-syrian (June 9).",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-timothy-of-prusa",
@@ -10957,7 +10981,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Priscilla and Aquila, Coworkers of the Apostle Paul”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Priscilla and Aquila, Coworkers of the Apostle Paul”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "hieromartyr-pancratius-of-taormina",
@@ -11586,7 +11612,9 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “The Church of England remembers on this day St Gregory of Nyssa and his sister Saint Macrina.”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date. EOR separately CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Macrina, sister of St Basil the Great and St Gregory of Nyssa” on this date. The prior confirmation above established this date for ANG only, not EOR.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "prophet-elias-elijah",
@@ -12854,7 +12882,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which carries this figure on this day. THE MATCHING PASSAGE COULD NOT BE ISOLATED AUTOMATICALLY for this row, so no excerpt is quoted rather than quoting the day’s opening lines, which name a different saint. Verify against the printed day before relying on this row.. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which carries this figure on this day. THE MATCHING PASSAGE COULD NOT BE ISOLATED AUTOMATICALLY for this row, so no excerpt is quoted rather than quoting the day’s opening lines, which name a different saint. Verify against the printed day before relying on this row.. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token."
     },
     {
       "id": "holy-martyr-lawrence-the-archdeacon",
@@ -13082,7 +13112,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Jonathan Myrick Daniels, Martyr, 1965”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Jonathan Myrick Daniels, Martyr, 1965”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "prophet-micah",
@@ -13888,7 +13920,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Louis, King of France, 1270”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Louis, King of France, 1270”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token. Tied with another candidate; the ANG-tagged one was preferred since it is the one actually observed for this tradition."
     },
     {
       "id": "saint-titus-the-apostle",
@@ -14045,7 +14079,9 @@
         }
       },
       "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Aug 28) is ANG/LAT's. CONFIRMED against orthocal.info: Augustine's Orthodox commemoration is jointly with his mother Monica on Jun 15.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried."
+      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-moses-the-black",
@@ -14109,7 +14145,9 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “The Beheading of Saint John the Baptist”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book. EOR separately CONFIRMED 2026-09-07 directly against orthocal.info's own Slavic/Gregorian page for 2026-08-29 (https://orthocal.info/readings/slavic/gregorian/2026/8/29/), fetched and read in full: it commemorates the Beheading of the Forerunner on this date and marks it a strict fast day, consistent with universal Orthodox practice. The prior LFF confirmation established this date for ANG only, not EOR.",
-      "tagNote": "OOR NOTE 2026-09-07: no Coptic attestation found for the Beheading specifically under any phrasing tried, which is surprising for so major a feast -- treated as a gap in coptic.io's selective index (same judgment as Clement of Rome and Ephrem the Syrian), not a real absence. Not withdrawn."
+      "tagNote": "OOR NOTE 2026-09-07: no Coptic attestation found for the Beheading specifically under any phrasing tried, which is surprising for so major a feast -- treated as a gap in coptic.io's selective index (same judgment as Clement of Rome and Ephrem the Syrian), not a real absence. Not withdrawn.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-john-the-baptist",
@@ -14793,7 +14831,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Constance, Thecla, Ruth, Frances, Charles Parsons, and Louis Schuyler, Martyrs, 1878”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Constance, Thecla, Ruth, Frances, Charles Parsons, and Louis Schuyler, Martyrs, 1878”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "holy-ancestors-joachim-and-anna",
@@ -17248,7 +17288,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Samuel Isaac Joseph Schereschewsky, Bishop and Missionary, 1906”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Samuel Isaac Joseph Schereschewsky, Bishop and Missionary, 1906”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-teresa-of-jesus",
@@ -17287,7 +17329,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Teresa of Avila, Mystic and Monastic Reformer, 1582”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Teresa of Avila, Mystic and Monastic Reformer, 1582”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "venerable-euthymius-the-new",
@@ -17991,7 +18035,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Alfred the Great, King of the West Saxons, 899”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Calendar of the Church Year in data/kalendar/source-witnesses/book_of_common_prayer.pdf, pp.19-30, which prints on this day: “Alfred the Great, King of the West Saxons, 899”. Not in the LFF calendar. Confirmed instead against the Prayer Book calendar, which controls where LFF is silent (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "greatmartyr-demetrius-the-myrrh-streamer",
@@ -18805,7 +18851,9 @@
           }
         ]
       },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “When Willibrord was seven, his father decided to become a hermit, and Willibrord was sent to St.” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Willibrord, Bishop and Missionary, 739”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date."
+      "ruleSource": "Date CONFIRMED 2026-09-05 against the Anglican Martyrology (data/kalendar/source-witnesses/martyrology-12-09-19.pdf), which reads on this day, in the passage naming this figure: “When Willibrord was seven, his father decided to become a hermit, and Willibrord was sent to St.” and the Scottish Episcopal Church master calendar 2025-2026 (data/kalendar/source-witnesses/sec-master-calendar-2025-2026.csv), which keeps on this day: “Willibrord, Bishop and Missionary, 739”. Used because LFF and the Prayer Book calendar are both silent on this figure, and Josh's rule is that where LFF is silent the other Anglican witnesses control. Matched on distinctive name tokens with the day held fixed. CITATION CORRECTED 2026-09-05: these quotations originally reproduced the opening lines of the day rather than the passage that actually matched. The martyrology prints many biographies under one date, so quoting its opening could name an entirely different saint — Elizabeth of Hungary's citation quoted St Hilda of Whitby. Every martyrology citation now quotes the sentence that names its own figure, so each can be checked against the source on its face. NOTE ON THE SEC WITNESS where cited: rows the SEC marks as transferred were excluded from the index entirely, since a transferred keeping is not evidence of the proper date.",
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token. Tied with another candidate; the ANG-tagged one was preferred since it is the one actually observed for this tradition."
     },
     {
       "id": "archangels-michael-and-gabriel",
@@ -19603,7 +19651,9 @@
             "day": 20
           }
         ]
-      }
+      },
+      "liturgicalColor": "white",
+      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by shared name token after an initial substring match missed it."
     },
     {
       "id": "saint-gregory-of-decapolis",

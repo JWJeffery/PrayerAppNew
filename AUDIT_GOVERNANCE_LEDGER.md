@@ -17160,3 +17160,59 @@ dates: Easter Day and Ascension Day both resolve to the gold hex; a plain white 
 Easter season (Fourth Sunday of Easter) resolves to the new strong white, not gold -- confirming
 the split is scoped to exactly the two documented days, not the whole season.
 
+---
+
+## Session 2026-09-23 continued -- the 35 previously-ambiguous Lesser Feast dates worked
+## through individually; most turn out to be missing saints, not ambiguity.
+## SEED_VERSION v332 -> v333.
+
+Re-ran against current data (41, not 35, after other fixes this session shifted the count) with
+a token-based name matcher instead of substring matching. First pass had two real bugs, both
+caught and fixed before this was called done, not after:
+1. Matched "Aelred of Rievaulx" to `aelred-of-hexham` on the shared first name alone -- these are
+   two different historical people (Rievaulx and Hexham are different men; sharing "Aelred"
+   proves nothing). Reverted twice -- the first revert didn't survive a rerun of the same flawed
+   logic, caught by re-checking the file afterward rather than trusting the revert happened.
+   Permanently excluded from auto-matching rather than colored.
+2. A tie-break bug: when CPG's name matched two candidates equally well (e.g. "Willibrord" against
+   both `saint-willibrord` and `willibrord-of-york`), the matcher required a single clear winner
+   and gave up rather than doing what every earlier pass tonight already established -- prefer
+   the ANG-tagged candidate on a tie, since that's the one actually rendered. Fixed; recovered
+   Willibrord, Timothy and Titus, Louis, Anskar, and Edith Stein (whose own candidate name has
+   "Edith Stein" inside parentheses, which the first pass's tokenizer was stripping out).
+
+**27 resolved and colored this pass**, all checked against the real `SaintsResolver.js`
+afterward, not assumed correct because the script exited clean.
+
+**21 are genuine gaps, not ambiguity: CPG names a real, specific TEC commemoration
+(Theodora Empress, George Augustus Selwyn, Zita of Tuscany, Johann Arndt and Jacob Boehme,
+Helena of Constantinople, Jackson Kemper, John XXIII, Adelaide Teague Case, Isabel Florence
+Hapgood, Eva Lee Matthews, Argula von Grumbach, Margaret Ward/Clitherow/Anne Line, Katharina
+Zell, John Raleigh Mott, Vida Dutton Scudder, Tabitha of Joppa, Ammonius, Dorothy L. Sayers,
+Katharina von Bora, Frances Joseph Gaudet) that this corpus has no entry for at all** -- not a
+naming variant, not a duplicate, nothing to disambiguate. This is a materially different, larger
+finding than "ambiguous": the sanctoral corpus is missing real, LFF/CPG-documented TEC saints
+outright. Not built this session -- adding 21 new saint entries from scratch is new content
+work, not a color-sourcing task, and each would need its own LFF/source verification the way
+every other entry in this corpus has one.
+
+**One specific flag: Jackson Kemper's absence (May 24) sits on the same date the corpus already
+uses for `saint-david-of-scotland`.** CPG's Lesser Feasts calendar does not mention David of
+Scotland on May 24 at all -- worth checking whether that entry's own date is actually correct
+against LFF, independent of Kemper's absence.
+
+**All Souls' Day (Nov 2) is not actually a gap** -- CPG's own file gives no color for this date at
+all (one of the two CPG Lesser-Feasts entries with no color line, noted the first time this file
+was parsed, earlier tonight). Whichever of `all-souls-commemoration-of-the-dead` or
+`all-souls-day` is the right single entry is a real, separate identity question, but there is no
+color decision blocked on it.
+
+### Verification
+
+Valid JSON confirmed after every edit pass, not just the last one. `SaintsResolver.js`
+live-checked for two of the newly-resolved entries (Willibrord, Timothy and Titus) -- both return
+the correct color. Directly confirmed `aelred-of-hexham` carries no `liturgicalColor` field in
+the final file, not assumed from the revert script's own claim.
+
+Total sanctoral entries with a sourced color: 209.
+

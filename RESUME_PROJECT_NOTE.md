@@ -10,6 +10,22 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**State as of 2026-09-23, session end (10).** HEAD before this commit was `bdb0ccdc`. The 35
+(actually 41, after other fixes shifted the count) previously-ambiguous Lesser Feast dates worked
+through individually with a token-based matcher. Two real bugs caught before calling it done: a
+false match (Aelred of Rievaulx ≠ Aelred of Hexham, reverted -- the first revert didn't survive a
+rerun, caught by re-checking the file, not trusting the script) and a tie-break bug that lost
+several easy cases (Willibrord, Timothy and Titus, Louis) to "no clear winner" when they should
+have simply preferred the ANG-tagged candidate, same as every earlier fix tonight. **27 resolved
+and colored, verified against the real resolver. 21 are genuine corpus gaps** -- CPG names a real
+TEC saint (Theodora Empress, Jackson Kemper, Zita of Tuscany, and 18 more) this corpus has no
+entry for at all, not a naming or duplicate question -- new content work, not done this session.
+**Jackson Kemper's absence sits on the same date as the existing `saint-david-of-scotland`
+entry** -- worth checking whether that entry's own May 24 date is actually right against LFF,
+since CPG doesn't mention David of Scotland there at all. All Souls' Day is not a real gap: CPG's
+own file gives it no color at all. 209 sanctoral entries total now carry a sourced color.
+SEED_VERSION `v333-2026-09-23-lesser-feast-gaps-resolved`.
+
 **State as of 2026-09-23, session end (9).** HEAD before this commit was `8c4f0d44`. "White"
 split into two real colors: a strong white (`#f5f1e4`) for ordinary white days, and a more
 lustrous gold (`#d4af37`) scoped to exactly the two days `EASTER_DOCUMENTATION.md` documents as
