@@ -82,9 +82,100 @@ and the Nunc Dimittis are all correctly ordered and match both sources.
 
 ---
 
-## GRAND COMPLINE — not yet audited
+## GRAND COMPLINE — audited (structural/spot-check level), 1 finding
 
-## THE FOUR HOURS — not yet audited
+**Scope note**: unlike Vespers, this office's live output is already 45/45 real content (0
+placeholders) and structurally mature. Audited at the structural/section-ordering level against both
+sources (confirmed opening sequence, conditional Psalm 69/Great Canon gating in Lent week 1, the two
+psalm cycles, the "God is with us" placement, and the full closing sequence word-for-word against
+`UNABHOR1997` pp.228-231) rather than re-verifying every psalm's full text line-by-line — the existing
+build's actual wording was not found to diverge from the sources anywhere it was checked. This is a
+lighter pass than Vespers got; flagged here rather than left silently implied, in case that gap
+matters when this list is used to plan the fix.
+
+### Finding GC1 — SOURCING: skeleton cites an unapproved source, not either governing text
+
+`data/horologion/great-compline.json`'s own description says: "Source witness: orthodoxprayer.org
+Great Compline." That is a website, not `HAPGOOD1922` or `UNABHOR1997` — neither is this project's own
+approved governing source for Byzantine structure (Hapgood, approved 2026-09-04) nor the source
+supplied specifically for offices Hapgood omits. Spot-checking the live output's actual wording
+against `UNABHOR1997` (the closing sequence, pp.228-231) found close, consistent agreement — so
+there's no live evidence the *content* is wrong — but the citation itself doesn't point at an approved
+source, and the content has never actually been checked line-by-line against one. Recorded as a
+sourcing-governance finding distinct from a content-correctness finding: the citation should be
+corrected to whichever approved source the content is verified against, once that verification
+happens.
+
+### No structural ordering discrepancies found
+
+Opening (Usual Beginning) → conditional Psalm 69/Great Canon (Lent week 1) or Psalms 4, 6, 12 →
+doxology → Psalms 24, 30, 90 → "God is with us" → Day Being Past → Angelic Hymn → Creed → Trisagion/
+weekday troparia/Prayer of Basil → second Come-let-us-worship → Psalms 50, 101 → Prayer of Manasseh →
+Trisagion → sixth-tone troparia → Kyrie 40 (Prayer of St. Maradius) → third Come-let-us-worship →
+Psalms 69/142 → Small Doxology → Canon → closing block (Kyrie 40/Prayer of the Hours → More Honourable
+→ Prayer of Ephraim, omitted Fridays → Trisagion → Supplicatory Prayer to the Theotokos → Prayer of
+Antiochus → ...→ dismissal) all match both sources' own ordering everywhere checked.
+
+## THE FOUR HOURS — audited, 3 findings (2 shared across all four, 1 Third-Hour-specific)
+
+All four Hours (`data/horologion/first-hour.json`, `third-hour.json`, `sixth-hour.json`,
+`ninth-hour.json`) share one skeleton pattern: `[opening]` (usual-beginning) → `[psalmody]` (3 fixed
+psalms — verified correct against both sources for First and Sixth Hour, matching standard Byzantine
+assignment once Hapgood's KJV-vs-LXX psalm-numbering offset is accounted for: her Roman-numeral
+citations run +1 relative to this app's LXX numbering throughout the range checked) → `[trisagion]` →
+`[troparia]` (troparion + Theotokion) → `[prayer-and-dismissal]`. Live-verified via `resolveOffice()`
+for an ordinary non-Lenten Wednesday (2026-09-30), all four fully resolved (0 placeholders each, aside
+from the Theotokion slots — see below).
+
+### Finding H1 — BUG: Third Hour's "prayer-of-the-third-hour" renders Lent-only troparion text year-round
+
+Live-verified: on an ordinary September Wednesday (nowhere near Great Lent), `third-hour`'s
+`prayer-of-the-third-hour` slot renders "O Lord God, Who didst send down Thy Most Holy Spirit at the
+third hour upon Thine Apostles: take Him not from us..." — `UNABHOR1997` (p.116) is explicit and
+unambiguous that this exact text belongs under a section literally headed "LENTEN SERVICE," introduced
+with "(If Lent, skip to LENTEN SERVICE below.)" It is not a year-round fixed prayer. Confirmed as a
+real content bug, not a labeling quirk, by comparing against the other three Hours: `first-hour`,
+`sixth-hour`, and `ninth-hour` each render a distinct, substantial, genuine year-round "Prayer of the
+Hour" text in the equivalent slot on the same test date (respectively "O Christ, the True Light...",
+"O God and Lord of powers...", "O Master and Lord, Jesus Christ our God, Who art long-suffering...") —
+all three read as authentic, correctly-sourced prayers proper to each hour. Third Hour is the outlier:
+its slot currently holds what should be a Lent-only troparion, not its own year-round prayer. The
+correct year-round Prayer of the Third Hour still needs to be sourced and substituted in; the current
+text should be gated to Great Lent only (as an addition to the troparia, matching how the other
+sources gate it) or dropped from this slot entirely, not left rendering unconditionally.
+
+### Finding H2 — GAP/MISPLACEMENT, shared by all four Hours: the mid-office Trisagion is the wrong (fuller) form, and the correct short form is missing
+
+Both sources agree each Hour's *opening* (before the psalms) uses the full complex (O Heavenly
+King/Trisagion/Our Father/Lord have mercy ×12/Come let us worship) — confirmed already correctly
+present in the app's own `[opening]` → `usual-beginning` sequence. But **between the psalms and the
+troparia**, both sources show only a short unit — Alleluia ×3, Lord have mercy ×3, Glory — not the
+full complex again (`HAPGOOD1922`, Third Hour, p.44-45: "Alleluia, alleluia, alleluia. Glory to thee,
+O God. (Thrice.) Lord, have mercy. (Thrice.) Glory to the Father... Then the Hymn for the Day"). The
+app's `[trisagion]` section, positioned exactly there, instead renders the FULL O-Heavenly-
+King/Trisagion/Our-Father/12×-mercy complex a second time — dumped verbatim from
+`verify_hours.mjs`'s output, confirmed live. The full complex's real place is a *second* occurrence,
+after the troparia/Theotokion and before the dismissal (both sources show it there, `HAPGOOD1922`
+eliding it with "..." as previously-given text, a standard convention in that book for repeated fixed
+material — not proof it's short there). The app's skeleton has no section or item at all in that later
+position — so as it stands, the full complex appears once, in the wrong place (mid-office instead of
+at the close), and the short mid-office unit it should have replaced isn't rendered by anything.
+
+### Finding H3 — GAP, shared by all four Hours: no "Blessed is the Lord God, blessed is the Lord day by day" verse
+
+Both sources place this fixed verse (a paraphrase of Ps.68:19-20) directly after the Theotokion and
+before the (repeated) Trisagion, in every one of the four Hours — confirmed directly in Third Hour's
+text (`UNABHOR1997` p.116: "Blessed is the Lord God, blessed is the Lord day by day; the God of our
+salvation shall prosper us along the way; our God is the God of salvation."; `HAPGOOD1922` gives the
+same verse in its own wording). No item in any of the four Hours' skeletons represents it.
+
+### Confirmed correct / honestly disclosed (not findings)
+
+Psalm assignments (First Hour 5/89/100, Third Hour 16/24/50 — the two directly checked against both
+sources) are correct. The Theotokion slots for all four Hours correctly and honestly disclose that the
+Little Hours' own Theotokion corpus isn't yet imported, rather than fabricating text — not a finding.
+The `troparion-of-the-day` slots correctly disclose the weekday troparion as deferred pending Menaion
+import — not a finding, matches this project's standing policy.
 
 ## TYPIKA — not yet audited
 
