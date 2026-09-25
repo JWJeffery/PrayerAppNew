@@ -22,8 +22,31 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**RAIL DOT FOLLOW-UP: TWO REAL BUGS THE FIRST PASS MISSED, 2026-09-25 continued yet further still
-(latest).** Josh redeployed the batch below and found, live, that the rail-dot fix was genuinely
+**BIBLE READER: HIGHLIGHT COLORS AND A GENUINELY UNREACHABLE HEADER, 2026-09-25 continued yet
+further still still (latest).** Josh sent a screenshot, then "Highlighting colors....all brown?"
+**Colors**: all 5 highlight swatches (yellow/pink/green/blue/purple) rendered identically brown —
+`#bible-selection-toolbar button` (an ID+type selector, meant to bronze-style the Highlight/Note/
+Fathers action buttons) beat the swatch color classes on specificity regardless of source order,
+since the swatches are themselves `<button>` elements in that same toolbar. Fixed with
+`:not(.bible-highlight-swatch)`. **Header**: investigating the Dark Mode toggle's own odd floating
+position surfaced a much bigger, real, pre-existing bug — the ENTIRE Bible Reader header (title,
+translation/search controls, the toggle, Back to Modes) was silently unreachable on every load, not
+merely misplaced. Root cause: the base `body{}` CSS rule unconditionally centers its flex child
+and hides overflow, with no override for `.office-active`; the real office sections dodge this by
+being `position:fixed` (removed from body's layout entirely), but `#bible-browser-section` never
+got that treatment, so any passage taller than one viewport got vertically centered with its top
+half — the whole header — pushed above `y:0`, unreachable since a page can't scroll negative.
+Confirmed via a screenshot at `scrollY:0` before touching any code: header already invisible on
+the very first render. Fixed by giving `openBibleBrowser()`/`closeBibleBrowser()` the same kind of
+body-style reset `selectMode()` already does for every real office. **Verified live**: full header
+now visible and reachable on open; normal scrolling still works; the Dark Mode toggle sits
+correctly in-flow (same root cause already fixed once this session on Book of Needs' identical
+control) and works; close/reopen correctly restores the splash's own centering. Cache-bust
+`office.css v226 → v227`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+continued (Bible Reader highlight colors and header reachability), SEED_VERSION v366 → v367.
+
+**RAIL DOT FOLLOW-UP: TWO REAL BUGS THE FIRST PASS MISSED, 2026-09-25 continued yet further
+still.** Josh redeployed the batch below and found, live, that the rail-dot fix was genuinely
 broken on two of three lanes plus a real edge case on the third. **(1)** "You didn't fix the
 scrolling ball on the left on the Agpeya" / "its super bugggy in the church of the east" — root
 cause: the explanation-tooltip layer nests a small "i" icon span INSIDE many `.rubric-text`

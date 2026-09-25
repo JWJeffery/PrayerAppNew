@@ -189,7 +189,19 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
-#bible-selection-toolbar button {
+/* FIXED 2026-09-25, per Josh's live report ("Highlighting colors....all
+   brown?"): this ID+type selector matches EVERY <button> inside the
+   toolbar, including the five .bible-highlight-swatch color buttons --
+   and #bible-selection-toolbar button (0,1,1) beats
+   .bible-highlight-swatch-yellow/pink/green/blue/purple (0,1,0) on
+   specificity regardless of source order, so every swatch inherited this
+   rule's single background and lost its own distinct color.
+   :not(.bible-highlight-swatch) added here and to the two other
+   background-setting instances of this same selector below (the
+   design-forward pass and its :hover) so this styling reaches the
+   Highlight/Note/Fathers action buttons it was written for without also
+   reaching the color swatches, which must keep their own five colors. */
+#bible-selection-toolbar button:not(.bible-highlight-swatch) {
     border: 1px solid rgba(201, 168, 76, 0.38);
     background: rgba(201, 168, 76, 0.1);
     color: var(--gold);
@@ -1394,7 +1406,7 @@
 
 .bible-design-chip,
 .bible-tool-btn,
-#bible-selection-toolbar button {
+#bible-selection-toolbar button:not(.bible-highlight-swatch) {
     border-color: rgba(103, 58, 31, 0.20);
     color: #fff8ec;
     background: linear-gradient(180deg, #764416, #5a2f12);
@@ -1407,7 +1419,7 @@
 }
 
 .bible-tool-btn:hover,
-#bible-selection-toolbar button:hover {
+#bible-selection-toolbar button:hover:not(.bible-highlight-swatch) {
     background: linear-gradient(180deg, #87511f, #673817);
 }
 

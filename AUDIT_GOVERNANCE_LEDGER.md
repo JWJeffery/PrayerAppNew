@@ -19637,3 +19637,66 @@ Cache-bust `js/office-shell.js v299 -> v300`. `index.html` also edited (PRAYING 
 cache-bust param of its own.
 
 SEED_VERSION bumped to `v366-2026-09-25-rail-dot-tooltip-and-bottom-edge-fixed`.
+
+## Session 2026-09-25 continued -- Bible Reader: highlight colors, and a header genuinely unreachable since day one
+
+Josh sent a screenshot with no message, then separately: "Highlighting colors....all brown?"
+
+### Highlight colors all rendering as one brown
+
+Root-caused via computed style, not source-reading alone:
+`.bible-highlight-swatch-yellow/pink/green/blue/purple` (css/bible-browser.css) each define a real,
+distinct pastel gradient, and the swatch buttons' markup and JS (`renderHighlightColorSwatches()`,
+`js/bible-browser/bible-browser.js`) are correct too. The actual computed `background` on every
+swatch measured identically: `linear-gradient(rgb(118, 68, 22), rgb(90, 47, 18))` -- a bronze
+gradient belonging to a DIFFERENT rule, `#bible-selection-toolbar button` (an ID+type selector,
+specificity 0,1,1), written to give the Highlight/Note/Fathers action buttons a consistent bronze
+look. Every `.bible-highlight-swatch-*` rule is a pure class selector (0,1,0) -- lower specificity,
+so it always loses to `#bible-selection-toolbar button` regardless of source order, and since the
+five swatches are themselves literally `<button>` elements inside that same toolbar, they inherited
+the action buttons' background too. FIXED: `:not(.bible-highlight-swatch)` added to the three
+background-setting instances of `#bible-selection-toolbar button` (the base pass, the design-forward
+pass, and its `:hover`) so the bronze treatment reaches only the buttons it was written for. VERIFIED
+LIVE: all five swatches now measure their own correct gradient; the Highlight/Note/Fathers buttons
+still measure the original bronze gradient, unchanged.
+
+### The whole Bible Reader header was unreachable, not merely misplaced
+
+Investigating the Dark Mode toggle's own odd position (found via the same screenshot, no separate
+report needed) surfaced a much larger, real bug. `css/office.css`'s base, unconditional `body {}`
+rule sets `height:100vh; overflow-y:hidden; display:flex; align-items:center; justify-content:center;`
+-- there is no `body.office-active` override for these anywhere in the codebase. The two real office
+sections (`#daily-office-section`, `#individual-prayers-section`) are immune because both are
+`position:fixed`, which removes them from body's flex layout entirely; `#bible-browser-section`
+never received that same treatment, so body's own flex centering vertically centers it as an
+ordinary flow child -- and once its rendered content exceeds one viewport height (true for any
+passage of routine length), the TOP HALF, including the entire header (title, translation/search
+controls, the Dark Mode toggle, Back to Modes), is centered above `y:0`. A page can never scroll to
+negative `scrollY`, so that portion has been permanently unreachable on every load, since before this
+session -- not a regression from anything touched here. Screenshotted at `scrollY:0` immediately
+after opening, before touching any code, to confirm: the capture showed a partial search-field
+cut off at the very top edge with "STUDY TOOLS" already fully visible below it -- already scrolled
+past the real header from the first render, with no way back up to it. Every real office-active
+mode gets the equivalent of this fix already, via `selectMode()` (`js/office-ui.js`) resetting body's
+inline height/overflow/align-items/justify-content on entry; Bible Browser has always had its own
+separate `openBibleBrowser()`/`closeBibleBrowser()` pair and never received it. FIXED: `openBibleBrowser()`
+now sets `document.body.style.height='auto'; overflowY='auto'; alignItems=''; justifyContent='';`,
+and `closeBibleBrowser()` resets all four back to `''` so returning to the splash restores its own
+(separate, already-correct) `body:not(.office-active)` "stained-glass viewport stabilization" rule
+--confirmed by reading that rule directly, not assumed, that it already handles the splash correctly
+with its own `!important`-scoped height/overflow/align-items values. VERIFIED LIVE, full screenshot
+before and after: header (title, translation dropdown, passage field, Dark Mode toggle, Back to
+Modes) fully visible and reachable from the top on open; scrolling down still reaches the full
+passage normally (confirmed `scrollY` advancing to 476 against a 1476px-tall page); the Dark Mode
+toggle now both looks right (in the header's own flex row, `position:static`, alongside the "Design
+Pilot" chip and Back to Modes button -- the exact same `position:absolute`-escapes-to-viewport root
+cause already found and fixed once this session on Book of Needs' identical control) and works
+(click flips `body.dark-mode`/`light-mode` and the checkbox's own `checked` state stays correctly
+synced); closing and reopening correctly restores the splash's own centering. Zero console errors.
+
+Cache-bust `css/office.css v226 -> v227`. `css/bible-browser.css` and `js/bible-browser/bible-browser.js`
+carry no cache-bust query param at all in index.html -- a pre-existing gap in this part of the
+codebase, disclosed here rather than fixed unprompted (introducing a new versioning convention for
+these two files is separate scope from this fix).
+
+SEED_VERSION bumped to `v367-2026-09-25-bible-reader-highlight-colors-and-header-reachability-fixed`.

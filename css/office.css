@@ -2501,7 +2501,19 @@ body.roman-breviary-dev-mode #main-content.sidebar-hidden {
     margin: 0;
 }
 
+/* FIXED 2026-09-25, found while investigating a related report on this same
+   .app-dark-toggle component (Book of Needs): the shared rule's
+   position:absolute pins to the nearest POSITIONED ancestor's corner, but
+   none of .bible-design-header-actions/.bible-design-hero/.bible-design-shell/
+   #bible-browser-section ever set position:relative, so the toggle escaped
+   all the way to the page's own top-right corner -- disconnected from the
+   header row it visually belongs in (the "Design Pilot" chip and "Back to
+   Modes" button either side of it), and fixed in place regardless of how far
+   the passage text was scrolled. .bible-design-header-actions is already a
+   proper flex row built to hold exactly this control; position:static lets
+   it take its real place there instead. */
 .bible-design-header-actions .app-dark-toggle {
+    position: static;
     margin: 0;
 }
 

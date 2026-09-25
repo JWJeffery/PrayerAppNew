@@ -2602,6 +2602,38 @@ async function initializeBibleBrowser() {
 
         document.body.classList.add("office-active");
 
+        // FIXED 2026-09-25, found while investigating a report on the Dark
+        // Mode toggle's position: the whole Bible Reader header (title,
+        // translation/search controls, this toggle, Back to Modes) was
+        // silently unreachable on every load, not just visually misplaced.
+        // css/office.css's base `body` rule sets height:100vh, overflow-y:
+        // hidden, and align-items:center unconditionally -- there is no
+        // `body.office-active` override for these. The real office sections
+        // (#daily-office-section, #individual-prayers-section) are immune
+        // because they are position:fixed, which removes them from body's
+        // flex layout entirely; #bible-browser-section never got that same
+        // treatment, so body's own flex centering vertically centers it, and
+        // once its rendered content is taller than one viewport (routine, for
+        // a passage of any length) the top half -- the entire header -- is
+        // centered ABOVE y:0, a page can never scroll to a negative
+        // scrollY, so that portion was permanently unreachable. Every other
+        // office-active mode gets the equivalent of this reset from
+        // selectMode() (js/office-ui.js); Bible Browser has always had its
+        // own separate open/close pair and never received it. Restored on
+        // close, below, so returning to the splash keeps its own centering.
+        document.body.style.height = "auto";
+        document.body.style.overflowY = "auto";
+        document.body.style.alignItems = "";
+        document.body.style.justifyContent = "";
+
+        // Same root cause already found and fixed on Book of Needs' identical
+        // control: this screen's Dark Mode checkbox was left at its bare,
+        // unchecked HTML default and never synced to the theme actually in
+        // effect. js/office-shell.js's shell theme system already governs
+        // body.dark-mode/light-mode by the time this screen shows.
+        const darkToggle = $("toggle-dark-bible");
+        if (darkToggle) darkToggle.checked = document.body.classList.contains("dark-mode");
+
         const state = loadLastState();
         const input = $("bible-reference-input");
         if (input && !input.value.trim()) {
@@ -2622,6 +2654,13 @@ async function initializeBibleBrowser() {
         if (splash) splash.style.display = "";
         if (modeSelection) modeSelection.style.display = "";
         document.body.classList.remove("office-active");
+        // Undo the height/overflow/align-items override openBibleBrowser() sets
+        // (see its own comment) so the splash's normal single-viewport
+        // centering, which those properties exist for, applies again.
+        document.body.style.height = "";
+        document.body.style.overflowY = "";
+        document.body.style.alignItems = "";
+        document.body.style.justifyContent = "";
         hideSelectionToolbar();
         history.replaceState(null, "", "/");
     }
