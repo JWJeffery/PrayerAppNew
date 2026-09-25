@@ -1749,3 +1749,116 @@ body.shell-v2 .app-mode-tool-btn small {
         flex-direction: column;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: typography + sizing port (Stage 1 of 6).
+
+   The rules above only ever recolored these screens (font-family/color) --
+   they never carried the actual type sizing office.css still supplies
+   (font-size/line-height/letter-spacing/margin/text-transform). Ported here
+   verbatim from office.css so the old rules can be deleted later (Stage 4)
+   without losing sizing. Genuinely unscoped from the start (no body.shell-v2
+   prefix) -- shell-v2 is permanent, and this file's own Group 6 rules above
+   are being unscoped in the same pass (Stage 6). See
+   documentation/entry-screen-unscoping (this session's plan) /
+   RESUME_PROJECT_NOTE.md / audit-ledger.html's ui:phase6-retire-old-skin row
+   for the full staged account. */
+
+.app-entry-kicker,
+.app-mode-kicker {
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+#tradition-entry h1 {
+    font-size: clamp(2.35rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: 0.008em;
+    margin: 0 0 10px;
+}
+
+#mode-selection.app-mode-shell h1 {
+    font-size: clamp(2.65rem, 6.5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: 0.008em;
+    margin: 0 0 10px;
+}
+
+.app-entry-lede {
+    font-size: clamp(1rem, 1.6vw, 1.24rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    margin: 0 0 28px;
+    max-width: 640px;
+}
+
+#mode-selection.app-mode-shell p {
+    font-size: clamp(1rem, 1.6vw, 1.28rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    margin: 0 0 28px;
+    max-width: 560px;
+}
+
+.app-entry-panel-title {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.app-entry-family-card strong,
+.app-entry-tradition-card strong {
+    display: block;
+    font-size: 1.14rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.app-mode-title {
+    display: block;
+    font-size: 1.15rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.app-entry-family-card small,
+.app-entry-tradition-card small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    line-height: 1.25;
+}
+
+.app-mode-subtitle {
+    display: block;
+    font-size: 0.90rem;
+    line-height: 1.25;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card,
+#mode-selection .mode-btn.app-mode-card {
+    cursor: pointer;
+    text-align: left;
+}
+
+#mode-selection .mode-btn.app-mode-card {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.app-entry-tradition-card.is-disabled,
+.app-entry-tradition-card:disabled {
+    cursor: not-allowed;
+}
+
+.app-entry-back {
+    font-size: 0.84rem;
+    padding: 7px 13px;
+    cursor: pointer;
+}
