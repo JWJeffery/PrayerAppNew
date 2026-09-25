@@ -72,7 +72,7 @@ across lay/reader/priest profiles and the toggle, both on and off — every comb
 exactly as the rank ordering predicts. A separate question raised in the same conversation
 (whether the toggle's *label* should reference traditions instead of ministries) was investigated
 and found to be based on a misunderstanding — the label is accurate to what the control does —
-and was explicitly left unchanged, pending Josh's own follow-up, not silently altered either way.
+and Josh confirmed directly: leave it as-is. Settled, not open.
 Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued, SEED_VERSION v357 →
 v358.
 
