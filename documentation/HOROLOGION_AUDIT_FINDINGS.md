@@ -1,12 +1,32 @@
 # Horologion Full Audit — Findings Log
 
-**Status: audit in progress, no fixes applied yet.** Per Josh's instruction: "Keep auditing. Record
-every error, and then we'll fix everything at once." This file is the running record. Each finding is
-verified against both `HAPGOOD1922` and `UNABHOR1997` (`data/kalendar/source-witnesses/source-index.json`)
-wherever both cover the office, and against the actual live resolver output (`resolveOffice()` in
-`js/horologion-engine.js`), never against the skeleton file alone — a skeleton's declared item order
-is not proof of the rendered order unless confirmed live (see the Vespers kathisma/stichera finding
-below, which required exactly that check).
+**Status: all 8 offices/office-groups audited. No fixes applied yet.** Per Josh's instruction: "Keep
+auditing. Record every error, and then we'll fix everything at once." This file is the running record.
+Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
+(`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
+actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
+skeleton file alone — a skeleton's declared item order is not proof of the rendered order unless
+confirmed live (see the Vespers kathisma/stichera finding below, which required exactly that check).
+
+## Summary, for planning the fix pass
+
+| Office | Findings | Headline |
+|---|---|---|
+| Vespers | 6 (1 bug, 5 gaps) | Kathisma sequenced after "Lord, I have cried"; 5 missing litanies/prayers |
+| Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
+| The four Hours | 3 (1 bug, 2 shared gaps) | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; a fixed verse missing from all four |
+| Typika | 7 (3 bugs, 3 gaps, 1 scope correction) | **Epistle/Gospel lectionary silently broken at runtime** (`resolveScripturePericope is not defined`); Beatitudes before the Psalms instead of after; duplicated Lord's Prayer |
+| Orthros/Matins | 2 (2 gaps) | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
+| Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
+| Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
+
+**27 findings total** across 7 audited office-groups (8 offices, since the four Hours share one entry).
+Two findings (Typika T1, a live console error) rank as the clearest, highest-confidence bugs in the
+whole audit. The recurring pattern worth noticing before the fix pass: at least four different offices
+(Vespers, Typika, Orthros, Midnight Office) show a component sequenced in the wrong position relative
+to both sources agreeing on the correct order — this looks like a systemic authoring pattern, not
+isolated mistakes, and the fix pass should probably re-verify ordering deliberately in every office it
+touches, not just the ones with a finding already recorded here.
 
 Audit order: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins → Midnight Office →
 Small Compline.
@@ -286,6 +306,88 @@ rubric reads as a reasoned, aware disclosure of real Typikon complexity (weekday
 varies by season), not an error — not investigated further given time, but not flagged as a finding
 either.
 
-## MIDNIGHT OFFICE — not yet audited
+## MIDNIGHT OFFICE — audited, 1 major structural finding + 3 specific findings
 
-## SMALL COMPLINE — not yet audited
+**This is the office `UNABHOR1997` was specifically supplied to source**, since `HAPGOOD1922` omits it
+entirely (confirmed in Phase 1). Read `UNABHOR1997` pp.1-19 (the Weekday form) in full.
+
+### Finding M0 — MAJOR: the real office has three distinct forms; the app builds one generic form for all days
+
+`UNABHOR1997` gives **three separate, substantially different offices**: "The Midnight Office for
+Weekdays" (pp.1-19), "...for Saturdays" (pp.21-39), and "...for Sundays" (pp.40-45) — different psalms,
+different canons, different closing material. `data/horologion/midnight-office.json`'s own description
+says "the ordinary (weekday/Sunday) Midnight Office" as if one structure serves both, and the skeleton
+has no day-of-week branching at all. This is a bigger gap than a missing component: it's a missing axis
+of variation. Given the scope, the findings below are scoped to the **Weekday** form only, read in
+full; the Saturday and Sunday forms were confirmed to exist and to differ (different psalms visible at
+their own section starts, e.g. Saturday's own Psalm 50 opening at p.21 followed by a completely
+different sequence reaching Psalms 64-69 by its ninth kathisma) but were not read in the same depth
+given time — that remains outstanding even after this pass.
+
+### Finding M1 — BUG: Psalm 117 does not appear anywhere in the real Weekday Midnight Office
+
+The app declares `psalm-50`, `psalm-117`, `psalm-118` as the office's fixed psalmody. `UNABHOR1997`'s
+actual sequence after Psalm 50 is: the Prayers of St. Macarius the Great (see M2), then "THE
+SEVENTEENTH KATHISMA" — which *is* Psalm 118 in its entirety, read in three stases — not a separate
+Psalm 117 anywhere before, between, or after. Checked specifically for it (searched the full extracted
+text for "Psalm 117" and Roman/alternate renderings) and found no occurrence.
+
+### Finding M2 — GAP: the Prayers of St. Macarius the Great are entirely missing
+
+Directly after Psalm 50, `UNABHOR1997` gives "Prayer 1, of St. Macarius the Great" (full text present,
+p.3) — the app's `[psalmody]` section goes straight from `psalm-50` to `psalm-117` with nothing between.
+
+### Finding M3 — GAP: the closing sequence (Canon to the Holy Trinity, Psalms 120 and 133, and the true dismissal complex) is not represented
+
+After the Kathisma, `UNABHOR1997` has a Canon (a "wise virgins"/oil-lamp themed Ode structure,
+concluding in a Theotokion), then "Lord, have mercy" ×40 and "the Prayer of the Hours" (the same fixed
+prayer seen in Great Compline's closing this audit), "More honourable than the Cherubim," a second "O
+come, let us worship," and finally **Psalms 120 and 133** before the closing Trisagion and dismissal.
+None of this — the Canon, the ×40 Kyrie/Prayer of the Hours, the second Come-let-us-worship, or Psalms
+120/133 — appears anywhere in the skeleton, which jumps from its single "trisagion-prayers" placeholder
+directly to the troparia and a generic closing prayer.
+
+**Given the scope of M0-M3 together, this office needs to be substantially rebuilt against
+`UNABHOR1997` rather than patched — the current skeleton represents perhaps a third of the real
+Weekday office's actual content, has one wrong psalm, and doesn't yet account for the Saturday/Sunday
+forms at all.**
+
+## SMALL COMPLINE — audited, 4 findings
+
+Read `UNABHOR1997` pp.238-244 (through the day-of-week troparia table) in full. Psalms 50, 69, and 142
+are correctly assigned (all three confirmed present in that exact order in the source) — not a finding.
+
+### Finding SC1 — GAP: three fixed prayers missing between the Small Doxology and "Vouchsafe, O Lord"
+
+`UNABHOR1997` p.240-241 gives, in order after the Small Doxology ("Glory to God in the highest..."):
+"Every night will I bless Thee, and I will praise Thy name for ever..." and "Lord, Thou hast been our
+refuge in generation and generation..." — both fixed texts — *before* reaching "Vouchsafe, O Lord, to
+keep us this night without sin." The app's `[doxology-creed]` section has only two items (`doxology`,
+`creed`) with nothing between them; whatever `doxology`'s live content actually contains needs checking
+against this (not yet done at the same live-verification depth as other offices, given time — flagged
+here so it isn't silently assumed fine).
+
+### Finding SC2 — GAP: "Vouchsafe, O Lord, to keep us this night without sin" and its continuation missing
+
+Same fixed prayer already found missing from Vespers (Finding V4) and implicated in Great Compline's
+build; here too (`UNABHOR1997` p.241, continuing "Let Thy mercy, O Lord, be upon us... Blessed art
+Thou, O Lord, teach me Thy statutes...") it sits between the two prayers in SC1 and the Creed. Not
+represented in the skeleton.
+
+### Finding SC3 — GAP: "It is truly meet"/"More honourable than the Cherubim" missing after the Creed
+
+`UNABHOR1997` p.241-242, after the (deferred, Menaion/Octoechos-dependent) canon: "It is truly meet to
+bless thee... More honourable than the Cherubim..." No item in the skeleton represents it, between
+`creed` and the `[trisagion]` section.
+
+### Finding SC4 — SCOPE CORRECTION, same pattern as Typika Finding T7: the day-of-week troparia are a fixed table, not Menaion-dependent
+
+The app's `troparion-of-the-day` under `[troparia]` presumably discloses (unverified live at the same
+depth as other offices, given time) a Menaion dependency matching the pattern seen everywhere else in
+this corpus. But `UNABHOR1997` pp.242-244 gives Small Compline's day-of-week troparia as a **fixed
+table**, independent of the Menaion: Sunday night — the Bodiless Powers; Monday night — the Forerunner;
+Tuesday and Thursday nights — "Save, O Lord, Thy people" (with St. Nicholas added Wednesday); Friday
+night — All Saints; Saturday night — the Resurrection troparion and kontakion in the week's own tone
+(both given in full, tones 1 and 2 shown as the worked examples). Same correction as Typika T7: this
+slot is not actually blocked on Menaion import the way the app's naming convention (`troparion-of-the-
+day`, shared with genuinely Menaion-dependent slots elsewhere) suggests.
