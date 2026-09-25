@@ -22,7 +22,28 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**BOOK OF NEEDS DASHBOARD ROWS CLARIFIED, 2026-09-25 continued yet further (latest).** Fourth item
+**BYZANTINE HOROLOGION TEMPORARILY UNWIRED FROM TESTERS, 2026-09-25 continued still further
+(latest).** Josh, moved to top of queue mid-session: "I am not providing my testers with access
+to The Horologion, because it has not been fully audited and corrected... gray it out like you do
+with 'Catholic'... then resurface the web." Found and gated THREE reachable paths, not one: (1)
+the entry-card picker (`index.html`) — "Eastern Orthodoxy" now `is-disabled`/`disabled`/
+`aria-disabled`, same pattern as "Catholic"; (2) the profile "Default tradition" dropdown — its
+`eastern-orthodox` `<option>` now `disabled`; (3) **the one that actually mattered** — a
+returning tester whose browser already had `eastern-orthodox` saved as their entry default would
+otherwise skip the entry screen entirely and land straight in Horologion every time
+(`getUserEntryDefault()` auto-routes past the picker for a stored default). Added a guard in
+`initializeEntryRouting()` (`js/office-ui.js`) that clears that stale stored default and falls
+through to the normal (now-disabled-card) entry screen instead. Confirmed the "Another office"
+grid never had a Horologion card to begin with, and no `?entry=`/`?mode=` URL shortcut exists for
+it — no fourth gate needed. **Live-verified in headless Chromium, including the returning-user
+case specifically** (pre-seeded `eastern-orthodox` into localStorage, reloaded, confirmed
+`office-active` false / `selectedMode` null / entry screen shown / stale profile cleared) — zero
+console errors. UI-level pause only, no Byzantine content or code touched — dashboard section VI
+carries a note marking exactly what to reverse and where. Cache-bust `office-ui.js?v=312 -> v313`.
+Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Byzantine Horologion
+temporarily unwired from testers), SEED_VERSION v362 → v363.
+
+**BOOK OF NEEDS DASHBOARD ROWS CLARIFIED, 2026-09-25 continued yet further.** Fourth item
 of Josh's ordered plan: figure out what the two stale "unclear whether content exists" dashboard
 rows actually refer to. They were section VII, "The Book of Needs" -- simply never updated since
 an early point when only governance scaffolding existed, even as the feature grew into a fully-

@@ -171,7 +171,7 @@
   <div id="coeSection"></div>
 
   <h2>VI. The Byzantine (Slavic) Divine Office</h2>
-  <p class="section-note">Naming note: "Horologion" is one of four constituent books (fixed hours) — not the name of the whole office. This lane is being built Slavic-first, with Greek, Antiochian, etc. planned for later. Menaion and Triodion/Pentecostarion completeness is already known-incomplete, not merely unverified — flagged red rather than yellow.</p>
+  <p class="section-note">Naming note: "Horologion" is one of four constituent books (fixed hours) — not the name of the whole office. This lane is being built Slavic-first, with Greek, Antiochian, etc. planned for later. Menaion and Triodion/Pentecostarion completeness is already known-incomplete, not merely unverified — flagged red rather than yellow. <strong>TEMPORARILY UNWIRED from the tradition chooser, 2026-09-25, per Josh's direct instruction — testers must not reach this lane until it is fully audited and corrected.</strong> Disabled at the entry card, the profile default-tradition dropdown, and the startup auto-skip for a returning tester whose browser already had it saved as default (index.html, js/office-ui.js). This is a UI-level pause, not a content change — nothing below was touched or fixed.</p>
   <div id="byzantineSection"></div>
 
   <h2>VII. The Book of Needs</h2>
@@ -891,7 +891,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v362-2026-09-25-book-of-needs-dashboard-rows-clarified';
+const SEED_VERSION = 'v363-2026-09-25-horologion-temporarily-unwired';
 
 function checkSeedVersion(){
   let storedValue = null;

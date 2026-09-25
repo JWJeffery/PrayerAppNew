@@ -19345,3 +19345,57 @@ Josh's plan treats "figure out what these refer to" as its own step, separate fr
 the 25-prayer UI/governance gap is now a well-scoped, visible red item rather than a mystery.
 
 SEED_VERSION bumped to `v362-2026-09-25-book-of-needs-dashboard-rows-clarified`.
+
+## Session 2026-09-25 continued -- Byzantine Horologion temporarily unwired from testers
+
+Josh, mid-session, moved this to the top of the queue: "Currently, I am not providing my testers
+with access to The Horologion, because it has not been fully audited and corrected. So, I would
+like you to do a temporary unwire, gray it out like you do with 'Catholic' on the tradition
+chooser, and then resurface the web." Direct consequence of this session's own Ethiopian
+Senkessar reaudit finding above -- Josh drawing the same "don't ship what hasn't been checked"
+line around Byzantine content pending the equivalent audit for that lane, in advance of any
+finding, not in response to one yet made about Byzantine specifically.
+
+Found three, not one, places a tester could reach Horologion, and gated all three:
+
+1. **The entry-card picker** (`index.html`, `#entry-eastern-options`) -- the "Eastern Orthodoxy"
+   card changed from a live `data-entry-tradition="eastern-orthodox"` button to
+   `class="app-entry-tradition-card is-disabled" disabled aria-disabled="true"`, exact same
+   pattern already used for "Catholic" in the Western panel. Reason text: "Byzantine Horologion
+   is paused for a content audit."
+2. **The profile "Default tradition" dropdown** (`index.html`, `#profile-tradition-default`) --
+   the `eastern-orthodox` `<option>` given `disabled`, matching how `latin-catholic` is already
+   disabled there.
+3. **The startup auto-skip for a returning tester** (`js/office-ui.js`, `initializeEntryRouting()`)
+   -- the real gap the first two don't cover: a tester who visited before this pause and already
+   has `eastern-orthodox` saved as their entry default would otherwise load straight past the
+   entry screen into Horologion on every future visit, since `getUserEntryDefault()` skips the
+   picker entirely for a stored default. Added a guard: if the stored default is
+   `eastern-orthodox`, clear it (`clearUserEntryDefault()`) and fall through to the normal entry
+   screen instead, where the card now shows disabled. Commented as temporary and reversible,
+   naming the other two files to also re-enable.
+
+Confirmed via a repo-wide check that the "Another office" grid (`#uo-threshold-grid`, the
+alternate destination selector reached from `showUoThresholdGrid()`) never had a Horologion/
+Byzantine card at all -- Daily Office, Coptic Agpeya, Church of the East, and the advanced-only
+Roman Breviary dev slice only -- so no fourth gate was needed there. Also confirmed no `?entry=`
+or `?mode=` URL query-parameter shortcut exists for this lane (only `roman-breviary-dev` and
+`universal` are recognized entry overrides).
+
+VERIFIED LIVE in headless Chromium, four separate checks: the entry card renders disabled with
+`aria-disabled`, no `data-entry-tradition` attribute, and the audit-paused reason text; the
+profile dropdown option renders disabled; and -- the case that actually matters -- a fresh page
+load with `eastern-orthodox` pre-seeded into `localStorage` as the stored profile default (`{
+entryPageDefault: 'tradition', traditionDefault: 'eastern-orthodox' }`) correctly does NOT open
+Horologion: `document.body.classList.contains('office-active')` is false, `window.selectedMode` is
+null, the tradition-entry screen is visible instead, and the stale profile itself is cleared from
+storage rather than merely ignored. Zero console/page errors across all four checks.
+
+This is a UI-level pause, not a content fix -- no Byzantine data or rendering code was touched,
+and no content-audit work was performed on this lane in this session (Byzantine's real content
+audit, if and when Josh asks for it, would parallel the Ethiopian Senkessar work above: source
+sanctoral.json/office-ui.js/horologion-engine.js against a named witness). Dashboard section VI
+carries a note at the top marking this unwire and naming exactly what to reverse.
+`Cache-bust js/office-ui.js?v=312 -> v313.`
+
+SEED_VERSION bumped to `v363-2026-09-25-horologion-temporarily-unwired`.

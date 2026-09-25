@@ -1645,7 +1645,20 @@ function initializeEntryRouting() {
     // entry flow, not just via a directly-set profile default from a prior visit. Routes
     // through getUserEntryDefault() -- the already-built, already-correct logic this
     // bypass was silently overriding -- instead of unconditionally skipping it.
-    const storedDefault = getUserEntryDefault();
+    let storedDefault = getUserEntryDefault();
+
+    // TEMPORARY, 2026-09-25, per Josh's direct instruction: Byzantine Horologion is not
+    // yet fully audited and must not reach testers, including a returning tester whose
+    // browser already has 'eastern-orthodox' saved as their entry default from before
+    // this pause. Clear it and fall through to the entry screen (where the Eastern
+    // Orthodoxy card is now shown disabled) rather than silently reopening the lane.
+    // Reverse by deleting this block once the audit clears -- the entry-card and
+    // profile-dropdown disables (index.html) are the other two places to re-enable.
+    if (storedDefault === 'eastern-orthodox') {
+        clearUserEntryDefault();
+        storedDefault = null;
+    }
+
     if (storedDefault === 'universal') {
         showUniversalModeSelection(false);
         return;
