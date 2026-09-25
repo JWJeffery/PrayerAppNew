@@ -65,19 +65,33 @@ East (screenshot showed Wathar Friday), the left "THE ORDER" rail lists more ite
 visible rail height, and the rail itself does not scroll — "The order....is longer than this....it
 needs to scroll with the content on the right."
 
-**FLAGGED BY JOSH, NOT YET INVESTIGATED — "a problem to fix later," Bible Reader "What the
-Fathers Say" panel, 2026-09-25.** Josh sent a screenshot mid-turn (no further description; said
-explicitly to fix it later, not now) of the Bible Reader open to Genesis 42 with the "What the
-Fathers Say" panel open. Visible in the screenshot: the panel renders as a floating card
-overlapping the top-right of the passage text rather than appearing in-flow with the rest of the
-Study Tools panel — worth checking for the same `position:absolute`-with-no-positioned-ancestor
-root cause already found and fixed multiple times elsewhere this session (Book of Needs and Bible
-Reader dark-mode toggles). Also visible: "Commentary for Genesis has not been added yet" / "No
-Church Fathers commentary found in the current index" — this itself is very likely correct,
-honesty-preserving disclosure (Genesis Fathers commentary genuinely not yet in the corpus), not a
-bug, per this project's standing unsourced-content rule — do not "fix" by fabricating commentary.
-**Not investigated yet — no root cause confirmed, nothing fixed.** Pick this up before the next
-redeploy.
+**"WHAT THE FATHERS SAY" — INVESTIGATED, CONFIRMED NOT A BUG (a real scope gap, awaiting Josh's
+direction), 2026-09-25.** Follow-up asked Josh directly what specifically looked wrong (position,
+or content); his answer: "The content is missing. It should not be. It used to work..." — a content
+question, not the positioning question I'd first guessed at. Investigated both:
+
+*Positioning*: reproduced live, confirmed the top-right floating placement is deliberate, working
+`mode: "study"` code in `positionContextPanel()` (`js/bible-browser/bible-browser.js`) — not an
+accidental `position:absolute`-escapes-its-ancestor bug like the other floating-panel fixes this
+session. No change made; nothing was actually wrong here.
+
+*Missing content*: root-caused via `data/commentary/patristic-witness-runtime/manifest.json`, whose
+own `runtimePolicy` discloses `"includedBooks": ["hebrews"]` — **only Hebrews has ever been in the
+browser runtime**, out of 81,644 entries held in the full local source-intake output
+(`.external/generated/patristic-witness`, gitignored, not present in a fresh clone). Confirmed via
+`git log --follow`: `scripts/build-patristic-witness-runtime.mjs`'s `runtimeBooks` array was
+hardcoded to `["hebrews"]` from its very first commit (2026-06-03), with the script's own generated
+comment "initial proof slice; expand book set intentionally" and the manifest's own stated reason
+("Do not ship the full 170MB+ patristic source-intake output into web-release until paging/indexing
+is designed") — this was **never a regression**. Live-verified both sides directly through
+`UniversalOfficePassageGuide.loadFathersForRanges()`: Hebrews 1:1-14 correctly returns 188 real
+entries (Clement of Alexandria first, cards render correctly); Genesis 42:1-4 correctly returns 0
+with the honest "has not been added yet" disclosure — exactly the coded, intended behavior for any
+book outside the one-book runtime slice. Josh's "it used to work" almost certainly reflects testing
+on Hebrews previously, not a regression on Genesis. **Expanding book coverage is a real, scoped
+content decision (which books, how much size to add to the web-release bundle, whether the
+`.external` source-intake needs re-fetching), not a quick fix — asked Josh which books/how much
+before touching anything.** Nothing changed in code for this item.
 
 **THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still.** Josh said
 "Proceed with the rest of the que[ue]" -- resuming item 5 of his own original ordered plan, the last
