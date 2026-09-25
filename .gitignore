@@ -4,6 +4,11 @@ dist/
 web-release/
 web-release.zip
 
+# Local Claude Code tooling scratch space (e.g. isolated worktrees created
+# for background subagents) -- never repository content, self-cleans once
+# the agent that created it finishes.
+.claude/
+
 # Universal Office source-intake workspaces
 .external/
 
