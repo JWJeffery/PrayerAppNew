@@ -299,15 +299,24 @@ body.uo-day {
    same kind of rule and was simply missed. Phase 6 deletes it outright.
 
    SCREEN ONLY, the same scoping decision and the same reason as the gutter grid
-   below: css/office.css:1124-1125 sets its own print sizes (11pt) for
-   .component-text and .psalm-verse, and at (0,4,0) these rules would beat those
-   in print too and put 25px on paper. Print stays exactly as it was. */
+   below: css/office.css:819 sets its own print size (11pt) for .component-text,
+   and at (0,4,0) this rule would beat that in print too and put 25px on paper.
+   Print stays exactly as it was.
+
+   CORRECTED 2026-09-25: this rule used to also list .office-container
+   .psalm-verse, and the paragraph above used to cite office.css's print rule
+   for .psalm-verse alongside .component-text. Both citations are gone now --
+   confirmed via a repo-wide grep for the class, nothing anywhere renders
+   .psalm-verse; the live psalm renderer emits .psalm-block/.psalm-stanza/
+   .psalm-half-verse instead (already covered by the other selectors here). It
+   was leftover from an earlier, superseded psalm-rendering approach. Dropped
+   from this selector list (matched nothing) and from office.css's own print
+   block (same reason), rather than left as dead weight pointing at itself. */
 @media screen {
     .office-container .component-text,
     .office-container .reading-text,
     .office-container .psalm-block,
     .office-container .psalm-stanza,
-    .office-container .psalm-verse,
     .office-container .psalm-stanza .psalm-half-verse {
         font-family: var(--uo-face-prayed);
         font-size: var(--uo-size-body);
@@ -336,8 +345,10 @@ body.uo-day {
    which don't, rather than the page text jumping left and right block to
    block.
 
-   SCREEN ONLY, entirely: css/office.css:1123 has its own @media print rule
-   for .passage-reference, and the handoff doc's own hazards list (§10) warns
+   SCREEN ONLY, entirely: css/office.css:818 has its own @media print rule
+   for .passage-reference (line number corrected 2026-09-25 -- the file has
+   shifted since this comment was written; the rule itself is unchanged and
+   still live), and the handoff doc's own hazards list (§10) warns
    print regresses silently if anything touching the grid forgets it. Rather
    than design print behaviour for the gutter now (a separate task, not what
    was asked for), this feature is scoped to the screen so print stays

@@ -743,16 +743,6 @@ body.light-mode .ethiopian-theme .rubric-text {
     font-weight: 500;
 }
 
-/* ── Print: collapse Ethiopian rubric styling ── */
-@media print {
-    .ethiopian-theme .rubric-text {
-        border-left: none;
-        padding-left: 0;
-        font-size: 10pt;
-        font-weight: 400;
-    }
-}
-
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -781,10 +771,13 @@ body.light-mode .ethiopian-theme .rubric-text {
    PRINT STYLES
    ============================================ */
 @media print {
+    /* .ordo-control/.setting-group removed 2026-09-25: not dead selectors
+       (they're the "moved legacy controls" now living inside dialog.uo-drawer),
+       but redundant -- office-shell.css's own print rule already hides that
+       whole dialog with !important, and a hidden parent hides every
+       descendant regardless of the descendant's own display value. */
     #mode-selection,
     .mode-btn,
-    .ordo-control,
-    .setting-group,
     #date-header,
     .saint-section {
         display: none !important;
@@ -824,8 +817,6 @@ body.light-mode .ethiopian-theme .rubric-text {
     }
     .passage-reference { color: #666 !important; font-size: 10pt; font-style: italic; }
     .component-text { font-size: 11pt; line-height: 1.4; color: black !important; margin-bottom: 0.15in; page-break-inside: avoid; }
-    .psalm-verse { font-size: 11pt; line-height: 1.5; margin-bottom: 0.1in; page-break-inside: avoid; }
-    .verse-num { color: #666 !important; font-size: 8pt; }
     hr { border: 0.5pt solid #999 !important; margin: 0.15in 0 !important; }
     a { text-decoration: none; color: black !important; }
     * { background: white !important; }
