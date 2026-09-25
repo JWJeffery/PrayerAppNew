@@ -22,6 +22,18 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**FLAGGED BY JOSH, NOT YET INVESTIGATED — "The Order" rail doesn't scroll with the office content,
+2026-09-25.** Josh, again explicitly "to fix later": on Church of the East (screenshot showed
+Wathar Friday), the left "THE ORDER" rail (the same rail whose dot-position bugs were fixed earlier
+this session) lists more items than fit in the visible rail height, and the rail itself does not
+scroll — "The order....is longer than this....it needs to scroll with the content on the right."
+Likely candidates once picked up: the rail container may have a fixed/`100vh`-relative height with
+`overflow` not set to scroll, or it scrolls but only when the mouse is directly over the (currently
+very short-looking) rail column rather than in sync with the main content pane. Worth checking
+whether this is specific to Church of the East's longer orders (more items than BCP/Coptic ever
+have) or a general rail-height bug that just happens to be more visible here. **Not investigated
+yet — no root cause confirmed, nothing fixed.**
+
 **FLAGGED BY JOSH, NOT YET INVESTIGATED — "a problem to fix later," Bible Reader "What the
 Fathers Say" panel, 2026-09-25.** Josh sent a screenshot mid-turn (no further description; said
 explicitly to fix it later, not now) of the Bible Reader open to Genesis 42 with the "What the
