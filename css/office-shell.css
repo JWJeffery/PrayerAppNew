@@ -382,14 +382,19 @@ body.uo-day {
 /* Phase 4 (2026-09-24): the 340px legacy sidebar no longer sits beside the
    grid under the flag -- Office Settings is one drawer, opened from the
    keeping-place bar (js/office-drawer.js). No clearance to reserve. */
-body.shell-v2.office-active #main-content.app-primary-canvas,
-body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
-    /* !important because office.css:2270/2274 reserve the old sidebar's
-       width with !important at (1,2,1); this is (1,3,1). */
+.office-active #main-content.app-primary-canvas,
+.office-active #main-content.app-primary-canvas.sidebar-hidden {
+    /* CORRECTED 2026-09-25: the "office.css:2270/2274" citation was already
+       stale -- that region holds unrelated Roman Breviary content today.
+       The real, current competitors are office.css's bare #main-content
+       (padding:40px 40px 40px 340px, (1,0,0)) and .sidebar-hidden
+       (padding-left:80px, (1,1,0)), neither !important -- already beaten
+       on specificity alone at (1,2,0)/(1,3,0) once unscoped, and beaten
+       twice over since every declaration here is !important regardless. */
     padding: 0 !important;
 }
 
-body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
+.office-active #main-content.app-primary-canvas.sidebar-hidden {
     padding-left: 0;
 }
 
@@ -467,7 +472,7 @@ body.shell-v2 .shared-office-nav-appearance-card {
 /* Beats body.office-active.dark-mode #main-content (0,3,1) at (0,4,1). The
    parchment gradients are two stacked background layers, so this must set
    `background` wholesale rather than background-color. */
-body.shell-v2.office-active #main-content.app-primary-canvas {
+.office-active #main-content.app-primary-canvas {
     background: var(--uo-ground);
     position: relative;
 }
@@ -496,7 +501,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas {
    HANDOFF.md's own explicit rule.
    --------------------------------------------------------------------------- */
 
-body.shell-v2.office-active #main-content.app-primary-canvas::before {
+.office-active #main-content.app-primary-canvas::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -509,11 +514,11 @@ body.shell-v2.office-active #main-content.app-primary-canvas::before {
     opacity: 0.48;
 }
 
-body.shell-v2 #main-content.app-primary-canvas > .uo-ordo,
-body.shell-v2 #main-content.app-primary-canvas > .uo-rail,
-body.shell-v2 #main-content.app-primary-canvas > .uo-page,
-body.shell-v2 #main-content.app-primary-canvas > .uo-margin,
-body.shell-v2 #main-content.app-primary-canvas > .uo-keeping {
+#main-content.app-primary-canvas > .uo-ordo,
+#main-content.app-primary-canvas > .uo-rail,
+#main-content.app-primary-canvas > .uo-page,
+#main-content.app-primary-canvas > .uo-margin,
+#main-content.app-primary-canvas > .uo-keeping {
     position: relative;
     z-index: 1;
 }
@@ -525,7 +530,7 @@ body.shell-v2 #main-content.app-primary-canvas > .uo-keeping {
    archway; day offices (body.uo-day) get the Chartres rose window, matching
    HANDOFF.md 1b's own description of a stained-glass band under a heavy veil
    for Morning Prayer. */
-body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
     background-image: url('/images/rood-screen.png');
 }
 /* The rose window is far busier and more saturated than the rood-screen archway
@@ -533,7 +538,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    what HANDOFF.md's own rule warns against. Heavier blur and a lower opacity
    specifically for this image, confirmed live before shipping (screenshot
    comparison, not guessed). */
-body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
     background-image: url('/images/chartres-rose.png');
     filter: blur(9px) saturate(0.35) brightness(0.7);
     opacity: 0.22;
@@ -572,7 +577,7 @@ body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-trad
    looking at the live screenshot, not the contrast number alone; still
    safe at 12.4:1 median, 11.4:1 p95, 6.2:1 p99 (all clear WCAG AA's 4.5:1,
    AAA's 7:1 except the same single top-0.01% outlier pixel as before). */
-body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
     background-image: url('/images/coptic-walters-w739.jpg');
     filter: blur(6px) saturate(0.5) brightness(0.6);
     opacity: 0.5;
@@ -589,7 +594,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    opacity lowered instead of relying on darkness to veil it; blur unchanged
    (6px already confirmed legible). Re-verified by screenshot against real
    Morning Office text. */
-body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
     filter: blur(6px) saturate(0.5) brightness(1.15);
     opacity: 0.44;
 }
@@ -607,7 +612,7 @@ body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-trad
    not assumed from the numbers alone. Tuned and VERIFIED BY MEASUREMENT the
    same way as Coptic (see that rule's own comment for the method) --
    numbers below are this image's own result, not copied from Coptic's. */
-body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
     background-image: url('/images/east-syriac-thaksa.jpg');
     filter: blur(10px) saturate(0.5) brightness(0.6);
     opacity: 0.42;
@@ -622,7 +627,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    image instead of darkened, opacity lowered; blur unchanged (10px already
    confirmed legible at night). Re-verified by screenshot against real Sapra
    text. */
-body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
     filter: blur(10px) saturate(0.5) brightness(1.05);
     opacity: 0.3;
 }
@@ -656,7 +661,7 @@ body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-trad
    4.5:1 line). Re-verify by the same measurement method against REAL
    Horologion text once that lane ships a real envelope -- both the
    image's visibility and this p99 figure specifically. */
-body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
+.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
     background-image: url('/images/byzantine-w528-headpiece.jpg');
     filter: blur(6px) saturate(0.55) brightness(0.55);
     opacity: 0.42;
@@ -676,7 +681,7 @@ body.shell-v2.office-active #main-content.app-primary-canvas[data-uo-tradition="
    comes from transparency, not from crushing the image dark first. Re-verified
    by screenshot against real Orthros text (Great Lent, Tone 6, March 2026):
    the headpiece's interlace and the two peacocks are recognizable, not a wash. */
-body.shell-v2.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
     filter: blur(6px) saturate(0.5) brightness(1.05);
     opacity: 0.3;
 }
@@ -744,8 +749,8 @@ body.shell-v2 .uo-ordo > #office-context-actions {
    be named explicitly here — a blanket rule would not touch them.
 
    Phase 4 rehomes this button properly; this keeps it usable until then. */
-body.shell-v2 #main-content.app-primary-canvas > .uo-ordo > button[onclick*="backToSplash"],
-body.shell-v2 .uo-ordo button[onclick*="backToSplash"] {
+#main-content.app-primary-canvas > .uo-ordo > button[onclick*="backToSplash"],
+.uo-ordo button[onclick*="backToSplash"] {
     position: static;
     top: auto;
     right: auto;
