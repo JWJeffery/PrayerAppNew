@@ -686,14 +686,14 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
     opacity: 0.3;
 }
 
-body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }
-body.shell-v2 #main-content > .uo-rail    { grid-area: rail; }
-body.shell-v2 #main-content > .uo-page    { grid-area: page; }
-body.shell-v2 #main-content > .uo-margin  { grid-area: margin; }
-body.shell-v2 #main-content > .uo-keeping { grid-area: keep; }
+#main-content > .uo-ordo    { grid-area: ordo; }
+#main-content > .uo-rail    { grid-area: rail; }
+#main-content > .uo-page    { grid-area: page; }
+#main-content > .uo-margin  { grid-area: margin; }
+#main-content > .uo-keeping { grid-area: keep; }
 
 /* Hairlines and light do the separating — no borders around prayer. */
-body.shell-v2 .uo-ordo {
+.uo-ordo {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -706,7 +706,7 @@ body.shell-v2 .uo-ordo {
     background: var(--uo-ground);
 }
 
-body.shell-v2 .uo-ordo-mark {
+.uo-ordo-mark {
     font-family: var(--uo-face-title);
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -715,7 +715,7 @@ body.shell-v2 .uo-ordo-mark {
     white-space: nowrap;
 }
 
-body.shell-v2 .uo-ordo-day {
+.uo-ordo-day {
     flex: 1 1 auto;
     text-align: center;
     font-size: 17px;
@@ -725,7 +725,7 @@ body.shell-v2 .uo-ordo-day {
 /* #office-mode-title and #office-context-actions are MOVED into the ordo line
    rather than hidden, so every existing affordance stays reachable in Phase 2.
    Phase 4 gives them their proper homes. */
-body.shell-v2 .uo-ordo > #office-mode-title {
+.uo-ordo > #office-mode-title {
     margin: 0;
     font-family: var(--uo-face-title);
     font-size: 15px;
@@ -735,7 +735,7 @@ body.shell-v2 .uo-ordo > #office-mode-title {
     white-space: nowrap;
 }
 
-body.shell-v2 .uo-ordo > #office-context-actions {
+.uo-ordo > #office-context-actions {
     margin: 0;
     display: flex;
     gap: 8px;
@@ -760,14 +760,14 @@ body.shell-v2 .uo-ordo > #office-context-actions {
 
 /* ── The rail ─────────────────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-rail {
+.uo-rail {
     padding: 26px 20px;
     border-right: 1px solid var(--uo-hairline);
     text-align: left;
 }
 
-body.shell-v2 .uo-rail-head,
-body.shell-v2 .uo-margin-head {
+.uo-rail-head,
+.uo-margin-head {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -776,13 +776,13 @@ body.shell-v2 .uo-margin-head {
     margin-bottom: 18px;
 }
 
-body.shell-v2 .uo-rail-list {
+.uo-rail-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-body.shell-v2 .uo-rail-item {
+.uo-rail-item {
     display: flex;
     align-items: baseline;
     gap: 10px;
@@ -792,7 +792,7 @@ body.shell-v2 .uo-rail-item {
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .uo-rail-dot {
+.uo-rail-dot {
     flex: 0 0 auto;
     width: 5px;
     height: 5px;
@@ -804,18 +804,18 @@ body.shell-v2 .uo-rail-dot {
 
 /* Contract §6: the label is the tradition's own word. Nothing here
    capitalises, truncates or re-cases it. */
-body.shell-v2 .uo-rail-label {
+.uo-rail-label {
     min-width: 0;
 }
 
-body.shell-v2 .uo-rail-item.is-current {
+.uo-rail-item.is-current {
     color: var(--uo-ink);
     font-family: var(--uo-face-title);
     font-size: 17px;
     letter-spacing: 0.04em;
 }
 
-body.shell-v2 .uo-rail-item.is-current .uo-rail-dot {
+.uo-rail-item.is-current .uo-rail-dot {
     width: 9px;
     height: 9px;
     opacity: 1;
@@ -823,7 +823,7 @@ body.shell-v2 .uo-rail-item.is-current .uo-rail-dot {
     box-shadow: 0 0 8px 1px rgba(201, 168, 76, 0.45);
 }
 
-body.shell-v2 .uo-rail-foot {
+.uo-rail-foot {
     margin-top: 22px;
     padding-top: 14px;
     border-top: 1px solid var(--uo-hairline);
@@ -834,7 +834,7 @@ body.shell-v2 .uo-rail-foot {
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .uo-rail-placeholder {
+.uo-rail-placeholder {
     font-size: 15px;
     line-height: 1.6;
     font-style: italic;
