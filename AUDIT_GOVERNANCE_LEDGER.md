@@ -19180,3 +19180,143 @@ Two files of application code touched (`js/office-ui.js`, `js/horologion-engine.
 `data/saints/sanctoral.json` -- no CSS, no markup.
 
 SEED_VERSION bumped to `v360-2026-09-25-eastern-seasonal-colors-sourced-and-wired`.
+
+## Session 2026-09-25 continued -- Ethiopian Senkessar full reaudit (all 13 months)
+
+Third item of Josh's explicit ordered plan: "we will reaudit the Ethiopian Synaxarium (all of
+it)." Prior state: only Ginbot days 1-17 had ever been checked against Budge, finding
+"hallucinated saints (quota-filling inventions with no source) and real saints displaced to the
+wrong calendar day"; the remaining 12 months (plus the intercalary Pagumen) were flagged amber,
+"not yet audited." A standing production blocker
+(`documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md`, 2026-07-04)
+already named Budge's *Book of the Saints of the Ethiopian Orthodox Tewahedo Church* as the
+required "source-controlled daily roster" and laid out a resolution sequence: build a complete
+366-day manifest, classify every named figure and paragraph, remove or quarantine the untraced,
+then rebuild -- explicitly deferred until after the Catholic offices are complete. This session's
+work is the audit half of that sequence, not the rebuild.
+
+### Building the source manifest (blocker step 1)
+
+The repo already holds the source PDF at `data/kalendar/source-witnesses/ethiopian-synaxarium.pdf`
+(773 pages, Budge's translation). `pdftotext -layout` (poppler-utils, installed fresh this
+session -- not previously available in the container) extracted clean, day-segmented text for
+all 13 months; verified against the PDF's own printed table of contents (Meskerem p.1 through
+Paguemen p.731) that every month's page range was captured. A header-parsing pass split the
+extraction into a genuine day-indexed manifest: 360 days across the 12 ordinary months (30 each)
+plus 6 for Paguemen (the source's own text confirms it covers both the 5-day and 6-day/leap-year
+form), 366 total -- matching the Ethiopian calendar exactly, with zero missing or duplicated days.
+This manifest itself is the concrete deliverable of blocker step 1, verified against the primary
+source directly, not reconstructed from memory or inferred from titles.
+
+### Cross-checking the corpus (blocker steps 2-3, name-level only)
+
+Every day file in `data/synaxarium/ethiopian/` (`meskerem.json` through `nehase.json`, 12 files,
+360 days) had its title field's named figures extracted and checked against the corresponding
+day's Budge text, using fuzzy matching tuned to absorb ordinary transliteration variance
+(Silvanus/Sylvanus-style spelling, honorific stripping) without loosening past the point of
+producing false positives on genuinely different figures. Days the corpus's own
+`senkessar-index.json` already documents under `key_feasts` (fixed/recurring Ethiopian monthly
+feasts -- Michael, Mary, the Cross, the Trinity, etc., 61 days total across the 12 months) were
+excluded from the Budge comparison rather than judged, since those follow a separate liturgical
+convention that Budge's daily narrative was never expected to cover, and this project does not
+yet hold a named, citable source for that fixed-monthly-feast calendar itself -- disclosed as a
+smaller, separate sourcing gap, not folded into this audit's headline finding.
+
+Per-month results (names checked on ordinary, non-key-feast days only):
+
+| Month | Names | Same-day match | Displaced (other day) | Untraced anywhere | Ambiguous (common name) |
+|---|---|---|---|---|---|
+| Meskerem | 24 | 6 | 15 | 2 | 1 |
+| Tekemt (Tiqimt) | 25 | 2 | 17 | 4 | 2 |
+| Hedar (Hidar) | 22 | 0 | 16 | 4 | 2 |
+| Tahsas | 25 | 2 | 9 | 3 | 11 |
+| Tir | 23 | 5 | 6 | 3 | 9 |
+| Yekatit | 55 | 10 | 14 | 31 | 0 |
+| Megabit | 52 | 10 | 10 | 32 | 0 |
+| Miyazia (Miazia) | 57 | 9 | 18 | 30 | 0 |
+| Ginbot | 79 | 9 | 31 | 35 | 4 |
+| Senne (Sene) | 80 | 7 | 26 | 43 | 4 |
+| Hamle | 51 | 3 | 19 | 29 | 0 |
+| Nehasse (Nehase) | 25 | 4 | 11 | 7 | 3 |
+| **Total** | **518** | **67 (13.9%)** | **192 (37.1%)** | **223 (43.0%)** | **36 (7.0%)** |
+
+Present in every single one of the 12 months, not isolated to Ginbot -- and considerably worse
+than Ginbot's own days-1-17 finding suggested for the corpus as a whole. Only 13.9% of ordinary-
+day named figures are attested by Budge on their claimed day; over a third are real Budge figures
+attached to the wrong day; nearly half cannot be found anywhere in the full 366-day source at
+all, meeting this project's own `untraced` / `probable_hallucination` categories from the
+blocker doc's classification scheme.
+
+### A second, distinct finding: the corpus contradicts itself about its own recurring fillers
+
+Spot-checking the "untraced" flags surfaced a pattern: several names recur on the *same day
+number* across *different months*, suggesting an attempt at fixed monthly commemorations --
+but the different months disagree with each other about what that commemoration is:
+
+- Day 2: "St. Job the Patriarch" in Tekemt/Hedar/Tahsas/Tir/Nehasse, but "St. John the Baptist"
+  in Meskerem, and "St. John the Baptist (Monthly)" in Senne.
+- Day 13: "St. Basalide" in Meskerem/Tekemt/Hedar/Tahsas, but "The Miracle at Cana of Galilee" in
+  Tir, "St. Arsenius (Monthly)" in Ginbot, "St. Arsenius the Great (Monthly)" in Senne, and "St.
+  Arsenius the Great" (untagged) in Nehasse.
+- Day 14: "St. Gebre Mesqel" in Tekemt/Hedar/Tahsas/Tir, but "St. Pachomius -- Father of Koinonia"
+  in Ginbot, "St. Pachomius the Great" in Nehasse, and "St. Jerome (Monthly)" in Senne.
+- Day 22: "St. Isaac of Nineveh" present (untagged) in Meskerem/Tekemt/Hedar/Tahsas/Tir/Nehasse,
+  explicitly tagged "(Monthly)" in Miyazia and Senne -- but entirely absent from Yekatit,
+  Megabit, Ginbot, and Hamle.
+
+If these were genuine fixed monthly commemorations, every month should agree on which saint
+belongs to a given day number; the disagreement itself is evidence they were generated per-month
+rather than drawn from one consistent, real monthly-commemoration source -- the exact "quota-
+filling... deprecated production heuristic" the blocker doc already named as a risk, now
+confirmed with concrete cross-month examples rather than suspected in the abstract.
+
+### Hand-verified, not automation-only
+
+Automated string matching alone is not sufficient evidence for a finding this serious, so a
+sample was read directly against the source PDF's extracted text. Hedar (Hidar) days 2-5 were
+checked in full: the corpus claims "St. Job the Patriarch," "St. Zechariah the Prophet," "St.
+John the Apostle," and "St. Philip the Apostle" respectively; Budge's actual text for those four
+days names Abba Sanitius and Abba Peter (Alexandrian archbishops), "the great Saint Cyriacus,"
+Saints Epimachus and Azarianus (Roman martyrs), and the arrival of the head of Saint Longinus --
+zero overlap across all four days, both directions (none of the corpus's four names appear in
+Budge's text for those days, and none of Budge's real figures for those days appear in the
+corpus). Tekemt (Tiqimt) day 1 was checked the same way: the corpus claims "St. Adam,
+First-Formed (Monthly Commemoration)" and "St. Kyriakos the Hermit"; Budge's actual Tekemt 1
+commemorates Anastasia of Rome (correctly present in the corpus, one of its few genuine matches),
+plus Saint Haritan/Cheriton, Susannah the virgin, and Mary the sister of Lazarus -- none of whom
+appear anywhere in the corpus's Tekemt 1 entry, while Adam and Kyriakos, which do appear, are
+absent from Budge's text for that day.
+
+### Pagumen is a notable exception
+
+The 13th month (Pagumen/Paguemen, 6 days including the leap-year sixth day) was checked by hand
+rather than through the automated pipeline, given its small size. It is meaningfully better
+sourced than the other 12 months: day 2 ("St. Titus the Apostle") matches Budge's "Saint Titus
+the apostle" exactly; day 3 ("The Archangel Raphael") matches Budge's "the glorious angel
+Rufa'el (Raphael) the archangel" exactly; day 4 ("St. Benjamin the Hermit") matches Budge's
+"Saint Abba Benjamin (Baymon)" exactly. Recorded here so the finding isn't flattened into "every
+month is equally bad" -- it isn't.
+
+### What this pass did not do
+
+This is a name-level cross-check across the full 366-day corpus -- a major expansion of coverage
+from "17 days of 1 month" to "every day of all 13 months" -- not the full per-paragraph
+classification (`source_summary` / `source_paraphrase` / `invented_connective_tissue` /
+`unsupported_biographical_detail`, etc.) the provenance-audit blocker doc's resolution sequence
+calls for; that remains real, separate, larger follow-on work. The fixed-monthly-feast days
+(`key_feasts` in `senkessar-index.json`) were excluded rather than judged, since no named source
+for that calendar exists in this project yet -- sourcing one is a disclosed prerequisite for
+auditing those specific days, not something guessed at here. No remediation was performed on any
+of the 13 months: this corpus remains what the blocker doc already called it, quarantined and
+not source-trusted, and confirmed via a repo-wide grep that it is still parked -- not wired into
+any live-rendering UI (`senkessarIndex`/`senkessarCache` in `js/office-ui.js` are lazy-load
+scaffolding for a future Ethiopian office, not yet invoked by any render path) -- so there is no
+current production exposure. The blocker doc's own scheduling rule (defer active remediation
+until the Catholic offices are complete) is unchanged by this session; only the audit's
+completeness and severity assessment is updated, from "1 month partially checked, 12 unknown" to
+"all 13 months checked, severity quantified and corroborated by hand."
+
+Dashboard `eth:senk:other` moved from amber ("not yet audited") to red, matching `eth:senk:ginbot`
+and reflecting the same class of finding now confirmed corpus-wide.
+
+SEED_VERSION bumped to `v361-2026-09-25-ethiopian-senkessar-full-reaudit`.

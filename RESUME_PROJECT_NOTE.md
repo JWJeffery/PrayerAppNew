@@ -22,7 +22,50 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**EASTERN SEASONAL-COLOUR SOURCING, 2026-09-25 continued further still (latest).** First item of
+**ETHIOPIAN SENKESSAR: FULL 13-MONTH REAUDIT, 2026-09-25 continued yet further (latest).** Third
+item of Josh's ordered plan. Previously only Ginbot days 1-17 had been checked against the
+project's Budge source PDF, finding hallucinated and displaced saints; the other 12 months (plus
+the intercalary Pagumen) were flagged amber, "not yet audited." **Built the full 366-day source
+manifest first** (blocker-doc step 1, `documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_
+PROVENANCE_AUDIT_BLOCKER.md`) — installed poppler-utils (not previously in the container),
+extracted all 773 pages of `data/kalendar/source-witnesses/ethiopian-synaxarium.pdf` with
+`pdftotext -layout`, verified the extraction against the PDF's own printed table of contents,
+parsed it into a genuine day-indexed manifest covering all 366 days with zero gaps or
+duplicates. **Then cross-checked every named figure in every day's title across all 12 ordinary
+months** (360 days) against the correct day's Budge text — fuzzy-matched to absorb ordinary
+spelling variance without losing precision, and with the corpus's own `senkessar-index.json`
+`key_feasts` days (Michael, Mary, the Cross, etc. — a separate, non-Budge liturgical convention)
+excluded rather than judged. **Result, considerably worse than Ginbot 1-17 alone suggested**: of
+518 ordinary-day names checked, only 67 (13.9%) are attested by Budge on their claimed day; 192
+(37%) are real Budge figures on the WRONG day; 223 (43%) can't be found anywhere in the full
+366-day source at all — present in every one of the 12 months, not isolated to Ginbot. **A second,
+distinct finding**: the corpus's own apparent day-of-month recurring fillers contradict
+themselves across different months (e.g. day 2 is "Job the Patriarch" in five months but "John
+the Baptist" in Meskerem and Senne; day 13 is "Basalide" in four months but "Arsenius (Monthly)"
+in three others; day 22's "Isaac of Nineveh" appears in eight months, two of them explicitly
+tagged "(Monthly)," but is simply absent in four more) — strong evidence these were generated
+per-month rather than drawn from one real, consistent monthly-commemoration source. **Hand-
+verified, not automation alone**: Hedar days 2-5 read directly against Budge's text confirm zero
+overlap between the corpus's claimed saints (Job, Zechariah, John the Apostle, Philip the
+Apostle) and Budge's actual figures for those four days (Abba Sanitius & Abba Peter, Saint
+Cyriacus, Saints Epimachus & Azarianus, Saint Longinus); Tekemt day 1 likewise confirms the
+corpus's claimed Adam and Kyriakos are absent from Budge's real day-1 text (Anastasia — correctly
+present in the corpus — plus Haritan/Cheriton, Susannah, and Mary the sister of Lazarus, none of
+whom made it into the corpus entry). **Pagumen (13th month) is a notable exception** — checked by
+hand given its small size, meaningfully better sourced than the other 12 (Titus the Apostle,
+Archangel Raphael, and Abba Benjamin all exact matches to Budge). **Disclosed, not faked**: this
+is a name-level cross-check across the whole corpus, not the full per-paragraph classification
+taxonomy the blocker doc's resolution sequence calls for; the fixed-monthly-feast days were
+excluded rather than judged, since no named source for that separate calendar exists in this
+project yet; no remediation was performed — confirmed via grep that this corpus remains parked,
+not wired into any live-rendering UI, so there is no current production exposure. The blocker
+doc's own scheduling rule (defer active remediation until the Catholic offices are complete) is
+unchanged; only the audit's completeness and severity assessment is updated. Dashboard
+`eth:senk:other` moved amber → red, matching `eth:senk:ginbot`. Full detail:
+`AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Ethiopian Senkessar full
+reaudit), SEED_VERSION v360 → v361.
+
+**EASTERN SEASONAL-COLOUR SOURCING, 2026-09-25 continued further still.** First item of
 Josh's explicit ordered plan ("Eastern seasonal-colour sourcing — Yes, please conduct this. Once
 this is done, I want to use the web deploy feature... Then, we will reaudit the Ethiopian
 Synaxarium... Then you will figure out needs:content/needs:governance... Then the engine audit
