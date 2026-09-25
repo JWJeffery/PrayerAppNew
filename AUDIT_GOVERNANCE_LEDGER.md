@@ -17494,6 +17494,1254 @@ SEED_VERSION bumped to `v338-2026-09-24-phase5-coptic-lane-envelope-built`.
 
 ---
 
+## Backfilled 2026-09-25 continued -- seven entries below (SEED_VERSION v339 through v356)
+## reconstructed for the record, since this file's own narrative stopped at v338 while real
+## work continued for a full day through v356 (Phase 5 lanes 2-3, Phase 6 in full, and the
+## Book of Needs design pass) -- see the v337 entry above, which already disclosed this same
+## kind of gap once, and the v357 entry below, which flagged it again before this backfill.
+
+Reconstructed from this repo's own contemporaneous record, not from memory or after-the-fact
+narration: each entry below is built directly from the exact dashboard row (`audit-ledger.html`,
+read via a safe `node -e` eval of the live array, never regex-guessed against escaped quotes)
+that the corresponding session itself wrote at the time, plus git history where a row's own text
+left a SEED_VERSION boundary unstated. Every version transition below was confirmed directly
+against `git show <hash>:audit-ledger.html` across the actual commit range, not inferred from
+row order alone -- see the note inside the third entry (ground imagery) for the one boundary
+that needed this cross-check. Nothing here claims fresh live verification; it restates what was
+already verified live, at the time, per the cited row's own account.
+
+---
+
+## Session 2026-09-24 continued -- Phase 5, lane 2: the East Syriac Hudra renderer
+## ported to the resolved-office envelope, live-confirmed. SEED_VERSION v338 -> v339.
+
+Phase 5, lane 2 of 3 -- the East Syriac Hudra renderer ported to emit the resolved-
+office envelope, same shape as the Anglican and Coptic conversions; DONE, live-confirmed
+
+Per UI_REDESIGN_HANDOFF.md section 9. renderEastSyriac() still uses its own separate
+officeHtml string-concatenation pattern, unconverted. Cathedral/Monastic content-axis
+visibility in this lane's drawer was already decided by Josh (kept visible, overriding
+handoff section 8.4 -- see the ui:phase4-drawer-built row) but that only governs the
+DRAWER control; the actual office-page rail/margin for this lane still renders nothing
+under shell-v2 until this port happens. East Syriac's own seasonal-colour question is
+different from Byzantine/Coptic's (spec section 6: 'essentially no developed colour
+sequence... no dot is the likely correct result, and is honest silence, not a gap to be
+filled') -- tracked on the eastern-seasonal-colours row since it needs a deliberate
+decision recorded, not silent omission. 2026-09-24 continued: renderEastSyriac()
+(js/office-ui.js:5413-6419, ~1000 lines) read end to end, no code changed, per the
+discipline the Coptic port's own handoff called for. ~850 lines are date/season/cycle
+logic (Qdham/Wathar alternation, Great Fast branches, Rogation of the Ninevites, feast-
+name substitution) that need no change at all -- the real emission is a ~90-line loop
+(6280-6369) plus a separate early-return fallback (6256-6278). The tail commemorations
+block (6374-6419) is confirmed OUT of scope for this port: js/office-shell.js:385 just
+moves .saint-section into .uo-page as a live node, never reads it into the envelope, so
+it can stay untouched exactly as the Coptic port left its own equivalent. SEVEN concrete
+shape mismatches found, none letting the Anglican/Coptic helpers drop in unchanged: (1)
+no reading helper fits -- bcpEmitReading/copEmitReading always render flowing prose
+(formatScriptureAsFlow, class reading-text), but East Syriac renders EVERY scripture
+citation, including its one non-psalm citation, as poetry (formatPsalmAsPoetry, class
+psalm-block) -- a new emitter is needed, there is no 'poetry-formatted, non-psalm-
+numbered citation' helper anywhere yet; (2) Hulala sections (comp.sections, the 21
+Hulali) have no analog -- an array of {prayer, psalms} pairs, each section's own prayer
+plus per-psalm poetry blocks, no divider, and critically NO leading label for the set,
+unlike bcpEmitPsalmBlock which always emits one -- needs its own small helper; (3)
+title+text+psalms emission is currently ADDITIVE not either/or -- every sequence item
+gets a plain title/text span pair first, then, if that component also carries
+comp.psalms/psalmRef/scriptureRef, extra psalm blocks get appended after it with no
+label of their own, while bcpEmitPsalmBlock assumes it supplies the only label -- a real
+design decision (label-less variant vs. two blocks sharing one gutter row), flagged
+rather than picked; (4) no dividers anywhere in this renderer, confirmed by inspection,
+same finding as Coptic; (5) `rite` is computed at the top of the function (line 5420)
+but never referenced again, confirmed dead by grep -- unlike BCP/Coptic's
+resolveText(comp, rite), East Syriac components have no rite-variant text, comp.text is
+used directly; (6) no gutter vocabulary agreed for this lane
+(Shuraya/Qaltha/Marmitha/Motwa/Tishbukhta/Hulala don't match BCP_GUTTER_KIND_BY_LABEL)
+-- safe by default, same empty-cell fallback Coptic got, named here so it isn't mistaken
+for an oversight later; (7) the 'not yet rebuilt'/'Endana outside the Fast' fallback
+(6256-6278) bypasses the loop entirely and returns before touching env or publishing an
+envelope at all -- whether shell-v2 should get an envelope here too (empty blocks + a
+diagnostic) versus the old skin's static message is an open question, not decided,
+flagged for Josh's call. INCIDENTAL, unrelated to the port itself: Hulala components'
+own meta.note states 'the Gloria said after each [section]' (confirmed via
+components/east-syriac.json, e.g. esy-hulala-1), but neither the current sequence data
+(checked monday-lelya-sequence directly -- no Gloria-Patri-shaped id anywhere near the
+Hulali) nor the render loop ever emits one -- a pre-existing disclosed-style content
+gap, not something this conversion should silently fix or silently carry forward
+unflagged. Full detail (identical wording): RESUME_PROJECT_NOTE.md, 'INVESTIGATED, NOT
+BUILT, 2026-09-24 continued' entry. No SEED_VERSION bump -- documentation only, no
+JS/data touched. BUILT AND LIVE-CONFIRMED, 2026-09-24 continued further, after Josh
+resolved the two flagged decisions: (1) 'The goal is consistency unless a tradition
+requires otherwise' -- resolved as: every scripture/psalm citation still gets its own
+gutter row and its own unit in the envelope (nothing hidden), but folds into the ONE
+env.blocks entry its parent component's title already opened, rather than opening a
+redundant second rail row repeating the same label -- confirmed against the actual data
+(components/east-syriac.json) that titles like 'First Marmitha'/'Second Shuraya'/'Letter
+Psalm' already ARE the real citation-bearing label, not a placeholder needing its own
+separate heading. This is the same granularity bcpEmitPsalmBlock's own contract already
+states (section 8: 'one psalm is the smallest attributable piece' is a UNIT, not a
+BLOCK), applied consistently rather than invented fresh for this lane. (2) The fallback-
+envelope question -- Josh: 'I really don't know enough to make a decision,' correctly
+identified as a mechanism question, not a devotional one, so decided directly rather
+than pushed back: the 'not yet rebuilt' state (a genuine, disclosed content gap) now
+publishes an envelope with ONE block and ONE diagnostic (code 'not-yet-mapped', reusing
+BCP's own exact wording, a precise semantic match); the 'Endana outside the Great Fast'
+state (correct, by-design absence per the primary source, not a gap) publishes an
+envelope with ONE block and deliberately NO diagnostic -- preserving the distinction the
+pre-port function already drew between the two states with different wording, rather
+than collapsing them into one generic 'nothing here' treatment. BUILT: one new lane-
+specific helper, esyEmitCitation() (mirrors copEmitReading's own precedent -- small,
+local, no divider -- but poetry-formatted via formatPsalmAsPoetry/class psalm-block
+rather than prose, since this lane never uses flowing prose for scripture); the main
+loop now calls bcpEmitBlock() unchanged for each component's title+body (reused exactly
+as Anglican/Coptic use it, per decision 1), then folds every citation from
+comp.sections/psalms/psalmRef/scriptureRef into that same just-pushed block's units
+array. The two fallback states (6256-6278, now DOM-built rather than an innerHTML
+string, matching every other state in this function and the same already-live BCP
+Phase-3 precedent of building DOM unconditionally while gating only envelope .publish()
+on shell-v2) use bcpEmitBlock/bcpPushDiagnostic per decision 2. VERIFIED LIVE, not just
+read: this sandbox's own headless Chromium (playwright, /opt/pw-browsers/chromium-1194)
+against scripts/dev-spa-server.mjs, eight real scenarios covering every shape found
+during scoping -- Monday Ramsha (Marmitha/Shuraya multi-psalm and single-psalm units
+folding correctly), Sunday Lelya (Festival, no Hulala), Monday Lelya (the real Hulala
+test: Hulala I/II/III each correctly show 9-11 psalm units under ONE rail block,
+confirmed both in the raw envelope JSON and visually in a screenshot of the actual
+rail), Monday Sapra, Monday Suba'a, Endana outside the Fast (confirmed: 1 block, 0
+diagnostics), Sapra during the Great Fast (fast sequence, Mysteries-week fixed-psalm
+block), and Endana during the Great Fast (confirmed: 1 block, exactly 1 diagnostic with
+the expected 'not-yet-mapped' wording). Zero .ornamental-divider nodes across all eight
+(confirmed by inspection this lane needed none, per shape mismatch 4 above). Zero
+console errors beyond a Google Fonts cert failure already established as this sandbox's
+own network egress restriction (same finding the Coptic port's own verification
+recorded), confirmed identical under BOTH ?shell=v2 and ?shell=v1/no-flag -- screenshots
+taken of both, old skin renders exactly as before with no visual regression from the new
+DOM/gutter-grid structure (which is inert without the shell-v2 stylesheet, the same
+already-proven BCP precedent). Cache-bust js/office-ui.js 302 -> 303. SEED_VERSION v338
+-> v339. Next: Horologion, last, per the build order this note's own dashboard row
+already states (ui:phase5-horologion-lane-envelope-and-day-line).
+
+SEED_VERSION bumped to `v339-2026-09-24-phase5-east-syriac-lane-envelope-built`.
+
+
+
+---
+
+## Session 2026-09-24 continued -- out-of-band interrupt to Phase 5: the entry screens
+## (#tradition-entry, #uo-threshold-grid) redesigned and regrouped on Josh's direct
+## request. SEED_VERSION v339 -> v340.
+
+Entry screens (#tradition-entry, #uo-threshold-grid) redesigned and regrouped -- out-of-
+band interrupt to Phase 5, on Josh's direct request; DONE, live-confirmed
+
+2026-09-24. Josh: 'I would like the entry screen redesigned before we move on to the
+Horologion... the current button locations do not make much sense.' Clarified twice
+before building rather than guessing on a design request that could waste real work:
+which screen, and what specifically felt wrong. His answer named the problem precisely:
+'the bible browser and book of needs do not answer the where do you pray question... it
+needs to be regrouped. It also looks very different from everything we've redesigned, so
+it looks very much out of place.' Investigation found the complaint actually pointed at
+#uo-threshold-grid ('Another office', reached from the universal threshold screen), not
+#tradition-entry ('Where do you pray?') which Josh had picked in the first clarifying
+question -- that screen has no Book of Needs/Bible Browser button anywhere in it,
+confirmed directly in index.html. Surfaced the mismatch with screenshots (both screens)
+rather than silently overriding his answer or silently guessing which one he meant. TWO
+REAL FINDINGS: (1) #uo-threshold-grid mixed Book of Needs and Bible Browser (tools) into
+the same 5-card grid as Daily Office/Coptic Agpeya/Church of the East (prayer
+traditions), confirmed directly in the markup. (2) Both #tradition-entry and #uo-
+threshold-grid had never been touched by this entire redesign project -- confirmed
+against documentation/design/DESIGN_HANDOFF_SOURCE.md and UI_REDESIGN_HANDOFF.md,
+neither of which mentions either screen -- so they still used the pre-redesign parchment
+card system (rounded cards, drop shadows, gold-gradient icon circles) while the office
+view itself has been dark/flat/hairline for months. This is exactly the 'off the office
+screen nothing changes' boundary documented in css/office-shell.css's own DEMOLITION
+comment; Phase 1-5 deliberately never crossed it. This work deliberately widens that
+boundary for these two screens only, on Josh's direct instruction -- nothing else
+outside the office screen (splash proper, Book of Needs, Bible Browser, admin) touched.
+BUILT, reusing the already-established component language rather than inventing a new
+one: handoff section 7's own governing rule ('no rounded cards, no drop shadows on the
+page, no borders around prayer. Hairlines and light do the separating') is exactly the
+flat, gold-hairline-bordered button style .uo-drawer-office already uses in the Office
+Settings drawer's 'II . Which office'. Both screens restyled to match it, scoped
+body.shell-v2 in css/office-shell.css, using the existing --uo-* tokens, no new colors
+invented. #uo-threshold-grid regrouped in index.html: a 'Choose a tradition' grid (Daily
+Office, Coptic Agpeya, Church of the East -- Roman Breviary dev stays with them, still
+hidden) and a visibly smaller, separate 'Not a tradition -- tools' row (Book of Needs,
+Bible Browser -- Admin Console stays with them, still hidden) below a hairline. Every
+existing onclick/id kept exactly as-is -- moved, never rebuilt. #tradition-entry's own
+family/tradition drill-down logic (Western -> Anglican/Catholic, Eastern -> COE/EO/OO,
+COE -> ACOE/ACE) completely untouched, restyled only; its separate 'Dark Mode' checkbox
+hidden under shell-v2 (not deleted -- ?shell=v1 keeps it) since the screen now always
+renders in the night palette, the same choice already made and Josh-approved for #uo-
+threshold itself ('a control that visibly does nothing is worse than no control',
+2026-09-22). #splash-bg forced to a darker treatment under shell-v2 to match, !important
+to beat the mobile breakpoint's own !important rule in css/office.css. A REAL REGRESSION
+CAUGHT AND FIXED BEFORE SHIPPING, not after: the index.html markup change reaches BOTH
+shell versions (only the CSS is flag-scoped), so ?shell=v1/no-flag briefly rendered the
+new 'tools row' with no styling at all -- caught by testing all three states, not just
+the one being changed. Fixed by adding matching light-parchment CSS for the same new
+classes directly in css/office.css, reusing the exact same --app-* tokens .mode-btn.app-
+mode-card already uses -- old skin now renders the regrouped tools row properly in its
+own established visual language. VERIFIED LIVE in headless Chromium, all three states
+(?shell=v2, ?shell=v1, no flag): screenshots of #tradition-entry, its Western/Eastern
+drill-down panels, #uo-threshold (untouched, already correct), and the regrouped #uo-
+threshold-grid, for each state. Confirmed functionally, not just visually: clicking a
+tradition card still fires its real, unchanged onclick (showLaneThreshold('coptic-
+agpeya'), confirmed via js/office-ui.js:1412 -- correctly shows that lane's own
+threshold screen, not a direct office jump, exactly as before); clicking a tool button
+(openUniversalBookOfNeeds()) correctly opens Book of Needs (#individual-prayers-section
+-> flex, #daily-office-section -> none). Zero console errors across all three states
+beyond the known sandboxed font-CDN cert failure. Cache-bust office-shell.css 299 ->
+300. SEED_VERSION v339 -> v340. Phase 5 resumes where it left off -- Horologion, lane 3
+of 3 -- nothing about this detour changes that scope.
+
+SEED_VERSION bumped to `v340-2026-09-24-entry-screens-redesigned-regrouped`.
+
+
+
+---
+
+## Session 2026-09-24 continued -- per-lane veiled ground imagery built (spec section
+## 6), across three sub-passes the same day: Anglican wired, then Coptic/East
+## Syriac/Byzantine sourced once network access widened, then a blur correction after
+## Josh flagged two lanes as unrecognizable wallpaper rather than texture. SEED_VERSION
+## v340 -> v343.
+
+Per-lane veiled ground imagery (HANDOFF.md section 6) -- ALL FOUR LANES now have a real,
+sourced, measured image (Byzantine provisional pending Horologion's own build); DONE,
+live-confirmed
+
+2026-09-24. THIRD TIME Josh raised this across sessions. He supplied 4 of the actual
+mockup screenshots directly in chat and asked: 'What is the point of uploading the file
+if you aren't even going to examine what is in it to ensure that you are building out
+what you were asked to build out instead of just a shell of it?' -- fair: earlier passes
+this session (and presumably earlier sessions) had checked the design docs' PROSE but
+never actually compared a live render against the mockup's own PNGs pixel by pixel. THE
+FINDING WAS REAL: #main-content's computed background under shell-v2 was a flat solid
+colour, rgb(8,7,12), checked directly against a live render -- no image anywhere, on any
+lane, despite HANDOFF.md section 6 (Imagery) stating plainly: 'Lane-appropriate...
+grounds... under a heavy veil at 0.4-0.55 opacity as texture, never as wallpaper.'
+Phases 1-5 (BCP, Coptic, East Syriac, all marked done/live-confirmed) all shipped
+without it. Not tracked anywhere in this ledger before now -- a genuinely undiscovered
+gap, not a known deferred one. BUILT: applyTraditionGround() in js/office-shell.js,
+hooked into the existing watchEnvelope() handler (same place rail/ordo/margin already
+render from the envelope) -- sets data-uo-tradition on #main-content from env.tradition,
+never guessed from the rendered page. css/office-shell.css keys a new ::before layer off
+that attribute: a separate absolutely-positioned pseudo-element (removed from grid flow
+automatically per the CSS Grid spec, so it cannot disturb the
+ordo/rail/page/margin/keeping grid areas), holding only the background-image plus
+blur/opacity -- deliberately NOT filter:blur() on #main-content itself, which would blur
+the prayer text too, not just the ground behind it. ANGLICAN (ANG) is the only lane
+wired with a real image -- the two already in this repo, already established elsewhere
+in this exact app (rood-screen.png for #uo-threshold's own 'night-prayer aesthetic';
+chartres-rose.png behind the entry screen, this same session). Night offices get the
+rood-screen archway; day offices (body.uo-day) get the Chartres rose window, matching
+HANDOFF.md 1b's own description of a stained-glass band for Morning Prayer. ONE REAL
+TUNING BUG CAUGHT LIVE, not shipped blind: the rose window at the same blur/opacity as
+the rood-screen read as wallpaper, not texture -- exactly what the source document warns
+against -- because it is a much busier, more saturated image than the archway. Given its
+own heavier blur (9px vs 3px) and lower opacity (0.22 vs 0.48), confirmed by screenshot
+comparison before shipping, not guessed. COPTIC (OOR) AND EAST SYRIAC (COE) HAVE NO
+IMAGE -- confirmed as flat --uo-ground, not a broken image, not a placeholder. Blocked
+on a real, disclosed constraint: this sandbox's network egress proxy returns 403 for
+BOTH commons.wikimedia.org and upload.wikimedia.org (checked directly, both WebFetch and
+raw curl), so no real, licence-verifiable public-domain image could be sourced this
+session -- and HANDOFF.md's own rule ('do not reuse the Western Gothic images... behind
+Eastern lanes') explicitly forbids covering the gap with what's already on hand. A real
+candidate was found before the block hit (Liturgical codex Louvre E10094.jpg on
+Wikimedia Commons, for the Coptic leaf) but never verified or fetched. NEEDS ONE OF TWO
+THINGS FROM JOSH: widen this session's network access to reach an image source, or
+supply the images directly, the same way he has supplied primary source text pages
+before. BYZANTINE (EOR/Horologion) has no lane built yet at all (Phase 5 lane 3) so is
+correctly out of scope for this pass, but the SAME blocker will apply when that lane is
+built -- UI_REDESIGN_HANDOFF.md's own corrected guidance (not the original proposal,
+which named Rublev's Trinity and was overridden for sound reasons already recorded
+elsewhere in this ledger) calls for 'a Byzantine horologion or typikon leaf, headpiece
+ornament, or architectural stonework' instead. VERIFIED LIVE: screenshots of Anglican
+night (Evening Prayer/Compline) and day (Morning Prayer), confirming the veil is
+genuinely subtle and text stays fully legible in both; Coptic confirmed flat with zero
+console errors and zero broken-image artifacts; ?shell=v1/no-flag confirmed completely
+unaffected (data-uo-tradition is never set -- applyTraditionGround() is only called from
+watchEnvelope(), itself gated on shellOn()). Cache-bust office-shell.css 300 -> 301,
+office-shell.js 295 -> 296. SEED_VERSION v340 -> v341. 2026-09-24 CONTINUED, SAME DAY --
+network access widened by Josh, then he supplied the Coptic image directly: all three
+remaining lanes now have real images, sourced and measured. A REAL CORRECTION, not a
+quiet fix: the Coptic image had first been attributed as 'Walters W.592, 1684 Arabic
+Gospels, CC0' -- both wrong, caught by reading the file's own embedded XMP/IPTC metadata
+(photoshop:Source, description, rights fields) rather than trusting the verbal
+description it arrived with. The metadata is unambiguous: identifier W.739.000001,
+description 'folio 1r from Walters Ms. W.739, Fragment of the book of Exodus, on
+parchment, 8th century CE', rights 'Licensed for use under Creative Commons Attribution-
+NonCommercial-ShareAlike 3.0 Unported... creativecommons.org/licenses/by-nc-
+sa/3.0/legalcode'. NOT CC0. File renamed images/coptic-walters-w592.jpg ->
+images/coptic-walters-w739.jpg; every comment and doc reference corrected; CC BY-NC-SA
+is workable here (non-commercial app, attribution given, recorded in the new
+images/CREDITS.md) but the earlier CC0 claim must not be re-cited anywhere. EAST SYRIAC
+(COE): Wikimedia Commons, 'File:East Syriac Script Thaksa.jpg' -- an 18th-century Thaksa
+(service book) opening, Chaldean Syrian Church, Thrissur. License verified directly from
+the live Commons page's own category tags (fetched via curl once network access widened;
+WebFetch itself still reported blocked for this domain even after the widening, worth
+knowing for next time -- raw curl worked): 'CC-PD-Mark' and 'PD-old-70-expired' both
+present, genuine public domain, exactly the two tags Josh asked to be confirmed. Source:
+https://commons.wikimedia.org/wiki/File:East_Syriac_Script_Thaksa.jpg . Cropped locally
+(images/east-syriac-thaksa.jpg) to remove a thin (single-digit-pixel) black scan-edge
+vignette, not a wide photography backdrop like Coptic needed. Low native resolution
+(624x386 before crop) accepted deliberately -- confirmed by looking at the actual live
+render that the blur this treatment already applies erases any pixelation, not assumed
+from the numbers. BYZANTINE (EOR): Walters W.528, fol. 188r -- the ornamented headpiece
+and zoomorphic initial opening the Gospel of John, a Greek Gospel Book, early 13th
+century CE. Folio-to-image mapping resolved via the manuscript's own published TEI XML
+(a <surface n="fol. 188r"> pointing at master/W528_000377_1100.tif), not guessed from
+sequential numbering. DELIBERATELY not a figural image: per UI_REDESIGN_HANDOFF.md's own
+correction to the original design proposal, an icon 'is a venerated object, not a
+texture' and using one this way is explicitly ruled out; W.528's own single surviving
+miniature (a different folio, an Evangelist portrait, itself 'painted over in the
+twentieth century' per the manuscript's own catalogue description) was never a candidate
+for that same reason. Confirmed by looking directly at the fetched page before cropping,
+not assumed from its catalogue Form field alone: geometric interlace panel, floral
+ornament, two peacocks and a stork, the manuscript's own incipit text (kata Ioannen) --
+nothing figural or venerated. License CC BY-NC-SA 3.0, per that manuscript's own TEI
+description -- same terms as Coptic, both Walters manuscripts, neither CC0. STATUS:
+sourced, cropped, and wired in css/office-shell.css, but INERT -- Phase 5's Horologion
+lane does not exist yet, so no envelope will ever set data-uo-tradition="EOR" in
+production; the blur/opacity values are a starting estimate only, previewed by forcing
+the attribute against the BCP office's own rendered text as a stand-in (measured 11.9:1
+median, 4.0:1 at p99 against that proxy text) rather than real Horologion content, and
+explicitly flagged in the CSS's own comment to be re-measured by the same method once
+that lane ships a real envelope. ALL THREE NEW IMAGES CROPPED LOCALLY WITH PILLOW (pip-
+installed this session; no ImageMagick available), verified by looking at the actual
+cropped result each time, not by file size -- per Josh's own explicit instruction after
+an earlier crop needed a second pass. COPTIC AND EAST SYRIAC TUNED BY MEASUREMENT, NOT
+EYEBALLED, per Josh's other explicit instruction ('have it check contrast against the
+actual body text... if the two compete, lower the opacity or blur the image slightly'):
+a Playwright script screenshots the live rendered office page at 2x device scale,
+samples a 4px pixel grid, excludes any sample within 60 RGB units of --uo-ink or --uo-
+rubric (real text/rubric pixels, not background), computes true WCAG relative luminance
+on every remaining sample, and reports the contrast ratio against --uo-ink at several
+percentiles. Coptic's FIRST tuned pass (blur 14px, opacity 0.24, brightness 0.32)
+measured 14:1 at the median -- comfortably safe by any accessibility standard, but the
+manuscript was essentially invisible on screen, defeating the entire purpose of having
+lane-appropriate imagery at all; caught by looking at the actual screenshot, not
+trusting the number alone. Raised twice more, re-measured live each time: final Coptic
+settings (blur 16px, saturate 0.4, brightness 0.85, opacity 0.6) measure median 10.1:1,
+p95 8.6:1 (both still comfortably clear WCAG AAA's 7:1 threshold), p99 5.3:1 (clears
+AA's 4.5:1), with only a single top-0.01% outlier pixel dipping lower -- consistent with
+one bright spot already present in the manuscript scan itself, not a systemic legibility
+problem. East Syriac's first real tuning attempt (blur 10px, saturate 0.5, brightness
+0.6, opacity 0.42) already measured well -- median 8.2:1, p95 7.3:1, p99 6.97:1 -- and
+was kept without further iteration. VERIFIED LIVE, all three newly-sourced lanes, in
+this sandbox's own headless Chromium: Coptic and East Syriac both screenshotted from the
+real running app under normal navigation (selectMode), showing genuine visible
+manuscript texture -- the East Syriac cross ornament and faint text lines are clearly
+perceptible -- while live liturgical text stays fully crisp and readable in both;
+Byzantine previewed by forced attribute (no real lane exists to navigate into).
+Confirmed again, after all three additions, that ?shell=v1/no-flag remains completely
+untouched: computed #main-content ::before background-image is literally the string
+'none' there, not merely unset. Zero console errors across every check this session
+beyond the already-established sandboxed Google Fonts CDN failure. NEW FILE:
+images/CREDITS.md -- shelfmark or Commons page, direct source URL, and exact license for
+every one of the (now) six ground images, Anglican's original two included for
+completeness even though they predate this work and carry no separate provenance record
+of their own. Cache-bust office-shell.css 301 -> 303 (two bumps, one per sourcing pass).
+SEED_VERSION v341 -> v342. 2026-09-24 CONTINUED FURTHER, SAME DAY -- corrected on Josh's
+direct feedback: 'Agpeya just looks like a blur... so does that last daily office
+screen.' He was right, and it is a real lesson about what 'measured' actually proves,
+not just a number to re-tune: Coptic and Byzantine had BOTH already been contrast-
+measured correctly, twice each, and both still failed the actual goal -- a passing WCAG
+ratio proves live text stays readable ON TOP of the image, it says nothing about whether
+the image underneath is recognizable as anything at all. Coptic's first pass (14:1
+median) was essentially invisible; the second, more-visible pass (10.1:1 median, the one
+shipped in the previous entry above) still read as an undifferentiated brown wash under
+real inspection, not manuscript texture -- both were 'safe' by the metric and both still
+looked like nothing, which is exactly the 'shell of it' failure mode Josh had already
+named once this session. THE ACTUAL FIX was blur, not opacity or brightness: Coptic
+dropped from blur(16px) to blur(6px) (saturate/brightness/opacity essentially unchanged
+-- brightness 0.6 vs 0.85, opacity 0.5 vs 0.6, minor); Byzantine dropped from blur(14px)
+to blur(6px) (saturate 0.55 vs 0.45, brightness unchanged at 0.55, opacity 0.42 vs 0.4,
+minor). Confirmed by looking at the resulting screenshot each time, not the contrast
+number -- the same discipline already asked for once this session, which should have
+caught this before a second correction was needed. Both still measure safely at the new
+settings: Coptic 12.4:1 median, 11.4:1 p95, 6.2:1 p99 (all clear AAA except the same
+single top-0.01% outlier pixel as the prior pass); Byzantine (against its BCP stand-in
+text, still inert/unverifiable against real content) 11.8:1 median, 9.5:1 p95, 4.0:1 p99
+-- p99 sits essentially at AA's 4.5:1 line, flagged in the CSS comment itself as
+something to re-check once Horologion ships real text, alongside the pre-existing flag
+that these numbers are provisional at all. East Syriac was NOT touched -- Josh's
+complaint named only Agpeya and 'that last daily office screen' (the Byzantine preview
+forced onto the BCP office), and East Syriac's own live screenshot already showed
+clearly recognizable cross ornament and text lines at its existing blur(10px) setting,
+confirmed by re-looking at it before deciding not to change it rather than assuming it
+was fine. Re-verified ?shell=v1/no-flag unaffected after this change too. Cache-bust
+office-shell.css 303 -> 304. Phase 5 (Horologion, lane 3 of 3) is next; when it ships,
+re-measure the Byzantine ground image against its own real rendered text before trusting
+today's placeholder numbers -- and look at the screenshot, not just the ratio, this time
+from the start.
+
+(Note: this row's own text does not spell out the exact SEED_VERSION string for its third, same-day "blur fix" continuation -- only the two prior sub-passes are explicitly numbered (v340->v341, v341->v342) inside the row. The v342->v343 boundary for that final correction is confirmed here by elimination, directly from git history: `git show <hash>:audit-ledger.html` across the commits in this range shows the live SEED_VERSION constant reaching v343 only at the point the next row below -- Horologion, `v343-...`) begins, with no other row accounting for that step.)
+
+SEED_VERSION bumped to `v343-2026-09-24-per-lane-ground-imagery-built-and-tuned`.
+
+
+
+---
+
+## Session 2026-09-24 continued -- Phase 5, lane 3 of 3 (last): the Byzantine Horologion
+## renderer ported to the resolved-office envelope, plus a real lane-native day-summary
+## line. PHASE 5 IS NOW COMPLETE, all three lanes. Same day, continued: the Coptic/East
+## Syriac day-mode ground-image legibility gap (found while re-checking Horologion's own
+## new day-mode ground image) fixed for both lanes too. SEED_VERSION v343 -> v345.
+
+Phase 5, lane 3 of 3 (last per spec section 8 item 9) -- Byzantine Horologion renderer
+ported to the envelope, plus a real lane-native day-summary line (tone/week, no fast
+data exists); DONE, live-confirmed. PHASE 5 IS NOW COMPLETE, all three lanes.
+
+2026-09-24. Josh: 'Move on to the Horologion now.' Read
+renderHorologionOffice()/_renderHorologionItem()/_renderHorologionDiagnostics(), the
+display-depth reduction system, and horologion-engine.js's
+resolveOffice()/_computeBaselineTone()/_computeLiturgicalSeason() end to end before
+touching anything, same discipline as lanes 1-2. TWO REAL FINDINGS from that reading:
+(1) HorologionEngine's own authoritative constant is const TRADITION = 'BYZC', not 'EOR'
+-- the ground-imagery work two sessions ago had already shipped [data-uo-
+tradition="EOR"] in css/office-shell.css plus matching references in images/CREDITS.md
+and this ledger's own ui:per-lane-ground-imagery row, copying the general
+ANG/LAT/EOR/OOR/COE sanctoral-calendar tagging convention used elsewhere in this project
+(a genuinely different subsystem, confirmed 2026-09-07 to be a different project) --
+that CSS rule would never have matched a real envelope. Fixed everywhere: CSS selector,
+images/CREDITS.md, RESUME_PROJECT_NOTE.md; this ledger's own historical EOR-per-lane-
+ground-imagery entry left as-is (a true record of what was believed at the time) rather
+than rewritten. (2) No fasting-character data exists anywhere in the engine (confirmed
+by grep, zero hits) -- only tone (_computeBaselineTone) and season/Holy-Week-day
+(_computeLiturgicalSeason). BUILT: HorologionEngine.getCalendarSummary(dateObj), a new
+exported composer, added to the module's own return object alongside
+getOfficeSkeleton/resolveOffice/validateOfficePayload -- claims only what those two real
+sources actually provide: 'Tone N' ordinarily, 'Great Lent -- Tone N' in Great Lent, a
+named Holy Week day ('Great and Holy Thursday') in Holy Week, the existing 'Bright Week
+(Paschal Tone)' label in Bright Week. Verified live: 'Tone 7' on an ordinary date,
+'Great Lent -- Tone 6' on March 8 2026. renderHorologionOffice() converted from an
+innerHTML string to a real DOM container, matching the DOM-node precedent lanes 1-2 set;
+_renderHorologionItem()'s own HTML-string output is UNCHANGED (a known-good, already-
+tested render), now appended via a wrapped sub-container rather than a bulk innerHTML
+assignment, so the visible render is byte-for-byte what it was before this port --
+confirmed no .office-container > direct-child CSS selector exists anywhere that an extra
+wrapping div could break (checked both office.css and office-shell.css). A new parallel
+function, _pushHorologionEnvelopeEntries(), walks the same items and builds
+env.blocks/env.diagnostics alongside, using a role mapping built FRESH from item.type
+rather than reusing js/anglican-envelope.js's ROLE_BY_LABEL table -- that table was
+found, reading it end to end, to already contain several non-contract-compliant role
+strings of its own (penitential, invitatory, collect, lords-prayer, thanksgiving,
+suffrages), a pre-existing Anglican discrepancy, disclosed here and left alone as out of
+scope for this lane. item.type maps directly onto the contract's closed 13-role
+taxonomy: psalm/kathisma -> psalmody, stichera -> hymn, litany -> intercession, rubric
+-> rubric, everything else -> other. sequence items (recursive containers) get no block
+of their own -- structural grouping, not a liturgical unit -- each child contributes its
+own block at the same granularity every other item type uses. Placeholder/unresolved
+items now get a real coverage-gap diagnostic, per the explicit governance ruling already
+on record (UI_REDESIGN_HANDOFF.md section 8 item 3: the Horologion's incipit-
+only/deferred-psalm-text state is a stated gap, never framed as a preference, never
+silently dropped) -- the pre-port code rendered these as visible dashed blocks but never
+recorded them in any diagnostics contract; closed that gap too. Verified live against a
+real placeholder date (Orthros, March 8 2026, Great Lent): 3 unresolved kathisma slots
+produced 3 real coverage-gap diagnostics with the contract's own exact wording,
+alongside the pre-existing public-beta banner, unchanged. A SECOND REAL BUG found and
+fixed as a direct result of finally being able to check the Byzantine ground image
+against real Horologion text instead of a BCP stand-in: the image's night-mode tuning
+(verified two sessions ago) held up fine against real content, but the exact same
+darkened-image numbers, composited over the day theme's near-white ground (#f2ebdf)
+instead of the night theme's near-black one (#08070c), compressed into a flat wash --
+contrast against live day-mode text still measured safely (6.8:1 median, real screenshot
+of live Orthros text), so this would NOT have been caught by contrast alone, only by
+looking at the screenshot, the same lesson from the 'just looks like a blur' correction
+two sessions ago, caught proactively this time instead of by Josh a third time. Fixed
+with a day-mode-specific override for BYZC, the same move Anglican's own day override
+already made for the rose window: raise brightness back toward the source image (1.05,
+not darkened) instead of darkening it further, lower opacity (0.3) instead of relying on
+darkness to veil it. Re-verified by screenshot at 2x scale: the headpiece's interlace
+and the two peacocks are genuinely recognizable in both themes now (day-mode contrast
+after the fix: 10.5:1 median, still comfortably safe). VERIFIED LIVE in headless
+Chromium: all Horologion offices with real resolvers (Vespers, Orthros,
+First/Third/Sixth/Ninth Hour, Small Compline, Great Compline, Typika, Midnight Office,
+an Interhour) across multiple dates, including a genuine 'not appointed today' state
+(Great Compline outside its appointed days -- correctly renders as one rubric block, not
+a bug, confirmed by reading the raw payload directly) and the real placeholder date
+above. Also re-ran the full four-lane sweep (Anglican, Coptic, East Syriac, Horologion)
+and the existing ?shell=v1 regression check -- all unaffected, zero console errors
+throughout. Cache-bust office-ui.js 303 -> 304, office-shell.css 304 -> 305 (EOR->BYZC
+fix) -> 306 (day-mode fix). horologion-engine.js has no cache-bust param in index.html,
+loaded unversioned. SEED_VERSION v343 -> v344. 2026-09-24 CONTINUED, SAME DAY -- Josh
+asked directly: 'Check if Coptic and East Syriac have the same day-mode gap.' They did.
+Coptic was the worse of the two: its real day office (the Morning Office/Prime, driven
+via its actual cop-hour radio control, not a forced attribute) measured only 4.87:1
+median contrast -- uncomfortably close to AA's 4.5:1 floor, nowhere near the 12.4:1 the
+night-mode tuning cites -- and the manuscript was essentially invisible on screen, the
+exact 'just a blur' failure, never caught before because this lane had only ever been
+verified against its own night offices. East Syriac was milder: its day office (Sapra,
+via its actual esy-time radio) measured a safer 8.36:1 median and the cross ornament
+stayed faintly perceptible, but noticeably fainter than this same image's own night-mode
+rendering. FIXED both with the identical day-mode-override pattern Byzantine just got,
+in css/office-shell.css: brightness raised toward the source image instead of darkened
+(Coptic 0.6 -> 1.15, East Syriac 0.6 -> 1.05), opacity adjusted (Coptic 0.5 -> 0.44 net
+after two tuning passes -- the first pass at 0.34 was still too faint, caught by looking
+at the screenshot rather than trusting the improved-but-still-low contrast number, the
+same discipline this session's earlier corrections established; East Syriac 0.42 ->
+0.3), blur unchanged on both (already confirmed legible at night). Re-verified by
+screenshot: Coptic's manuscript text columns and East Syriac's cross ornament are both
+now genuinely visible, matching each lane's own night-mode quality. Re-verified contrast
+stayed safe after tuning: Coptic 7.23:1 median, East Syriac 12.59:1 median. Full four-
+lane sweep and ?shell=v1 regression re-run clean, zero console errors. Cache-bust
+office-shell.css 306 -> 307. PHASE 5 IS NOW FULLY CLOSED with NO disclosed-but-unfixed
+day-mode gap remaining on any lane -- what's left before Phase 6: Eastern seasonal-
+colour sourcing (section 6, a corpus task, not shell work) only.
+
+SEED_VERSION bumped to `v345-2026-09-24-phase5-complete-horologion-lane-and-day-mode-ground-image-fixed`.
+
+
+
+---
+
+## Session 2026-09-24 continued -- the orphaned East Syriac Memorial Night Service
+## wired; two stale Church-of-the-East dashboard rows corrected to reflect real progress
+## since their first-day-only status. SEED_VERSION v345 -> v346.
+
+Two dashboard rows in this ledger's own tracker had gone stale, never updated past their very first day of construction (2026-08-19) despite real progress in later sessions. Investigated and corrected both, and found one genuine orphaned-content gap along the way.
+
+### `coe:rebuild:milestone`
+
+Church of the East -- entire prior (unsourced) build deleted 2026-08-19; rebuild from
+Maclean 1894 now substantially complete, not merely 'in progress'
+
+2026-08-19: the entire prior East Syriac build (components/east-syriac.json,
+components/traditions/east-syriac/rubrics.json, 76 components across 16 sequences) was
+deleted. It had zero source citations anywhere and used mechanically-invented content
+confirmed unrelated to any real source (e.g. the deleted marmithaMap assigned Monday =
+Psalms 4,5,6 by pure sequential-block generation; the actual source's Monday First
+Marmitha is Psalms 11-14). Rebuilding from A.J. Maclean, East Syrian Daily Offices
+(London: Rivington, Percival & Co., 1894) -- confirmed public domain, archive.org item
+eastsyriandailyo00macluoft, NOT_IN_COPYRIGHT per archive.org's own copyright review.
+2026-09-24 -- Josh asked 'What remains?' after this row surfaced amber ('REBUILD IN
+PROGRESS') in an open-items audit. Corrected: this milestone row was never updated past
+its very first day, despite dozens of real construction/audit sessions since (Hulala
+XVII-XXI corrections, Wednesday Motwa built and wired, Sunday-in-Fast Canon, weekday-
+Feast wiring, the Festival Evening Service audited above, and more -- see this
+dashboard's other coe:* rows and AUDIT_GOVERNANCE_LEDGER.md for the full session-by-
+session record). components/traditions/east-syriac/rubrics.json now holds 57 top-level
+sequences covering all seven weekdays' Ramsha/Lelya/Sapra/Suba'a plus Sunday, Feast,
+Fast, and (as of today) Memorial variants; rubrics.json's own _rebuild_todo note is
+itself stale in places (it still lists two ferial-evening gaps -- Saturday-Qdham,
+Friday-Wathar -- that were confirmed, live, to already be full 33-item built sequences,
+not gaps). The rebuild is genuinely substantial and stable, which is why Phase 5 ported
+it to the envelope shell -- 'complete' would still overclaim it, though: real,
+individually-tracked, disclosed gaps remain, each needing either a decision from Josh or
+a source this project doesn't hold (not vague unfinishedness) -- Royal Anthem proper
+text (copyright, needs a licensing decision), Ramsha/Sapra Memorial-day content (see
+coe:festival-evening's own row, just fixed), minor hours scope, the Cathedral/Monastic
+content axis, Compline/Suba'a's standalone-vs-joined-on status, the reigning-Catholicos-
+name mechanism, and any Khudhra/Geza/Kashkul seasonal material (explicitly outside
+Maclean's own stated scope). Each already has its own tracked row or
+documentation/OPEN_ITEMS_FIXABILITY.md entry; this row's correction is about status, not
+content.
+
+### `coe:festival-evening:content-built-not-wired`
+
+Festival Evening Service (Sundays, Feasts, Memorials) -- Sunday/Feast wiring found
+ALREADY DONE (stale row, done in later 2026-08-27/08-29 sessions never reflected here);
+Memorial-Lelya wired 2026-09-24; Memorial-Ramsha/Sapra remains genuinely unbuilt
+
+2026-08-19: built from Maclean 1894 pp.68-84 (supplied by Josh). 20 new components
+covering every fixed/invariable element the source actually gives: the Sunday/Festival
+opening prayer (reusing First Monday's, but sung) and the Memorial variant (reused
+unchanged from ferias); the Marmitha psalm-citation table (four groups depending on day
+classification, no proper anthem text exists here); the censer prayer with its three
+real farced antiphon sets (Sundays/Festivals/Memorials, all built on Psalm 84 -- actual
+text, not citations); the Lakhumara cross-reference (said five times on Feasts of our
+Lord, per Maclean); the First Shuraya psalm-citation table (Sunday-of-Shawu'a only, no
+proper text -- none exists for Festivals/Memorials); the First and Second Anthems in
+full (four commemoration-of-the-departed forms each: Sons of the Church, Laymen,
+Women/Men, Children -- said specifically when a memorial of the dead is kept that
+evening, distinct from the Royal Anthem); the Sunday/Feast Karuzutha's additional
+clauses; the Suyakhi's two prefacing prayers (the Suyakhi psalms themselves are feast-
+specific Khudhra content, not given); six seasonal Royal Anthem endings (Advent-
+Epiphany, Epiphany's own Shawu'a, Apostles, Summer-to-Holy-Cross, Holy-Cross-to-
+Hallowing, Hallowing-of-the-Church Sundays) plus the shared 'O Mary' refrain extracted
+into its own reusable component rather than left as Maclean's own internal abbreviation
+('as above'), so the rendered text is always complete; the full prayer-after-the-Royal-
+Anthem pool (nine distinct occasions, no gaps); and the Suba'a (Compline) appended on
+Memorials, reusing the ferial Karuzutha body and closing prayers per Maclean's own 'as
+on ferias' cross-references. One real, disclosed content gap: the Royal Anthem's own
+proper body (day-specific, said every Sunday and feast) is Khudhra content and is not
+printed anywhere in Maclean's book. Extensive research this session found no public-
+domain English translation of it -- the one credible academic source found (Moolan 1985,
+a doctoral dissertation with a full translation of the Subara/Nativity season's propers)
+is itself still under copyright and cannot be used without a license from the rights
+holder (OIRSI, Kottayam); pursuing that license is a live option Josh may take up
+separately, not resolved here. The gap is marked with its own rubric component (esy-
+festival-royal-anthem-rubric) transcribing Maclean's own instruction verbatim, not
+filled with any guessed or paraphrased text. Deliberately NOT wired into a rubrics.json
+sequence and NOT selectable in the app yet as of this 2026-08-19 note -- per explicit
+instruction, content was written first with wiring deferred to a separate pass. 210
+components total (190 + 20); sequence count unchanged at 24 until wiring is built.
+2026-09-24 -- Josh asked 'What remains?' about this row after it surfaced amber in an
+open-items audit; investigation found this row was badly stale. The wiring it describes
+as deferred was actually done in later sessions that never updated this row: sunday-
+ramsha-qdham/wathar-sequence and sunday-sapra-qdham/wathar-sequence (in
+components/traditions/east-syriac/rubrics.json) already reference the esy-festival-*
+components built above, resolved via __MARMITHA_GROUP__/__ROYAL_ANTHEM_ENDING__/__PRAYER
+_BEFORE_ROYAL_ANTHEM__/__PRAYER_AFTER_ROYAL_ANTHEM__ placeholder-resolution code already
+present in js/office-ui.js (~lines 6320-6404), and a weekday Feast of our Lord already
+reuses these same Sunday-named sequences via festivalSequenceDayKey (built 2026-08-27,
+see the coe:sunday-lelya-closing-verse row's own note for that session). VERIFIED LIVE:
+Sunday Ramsha/Lelya/Sapra all render real Festival content (confirmed by page text, not
+just absence of an error), and a weekday Thursday still renders plain ferial content
+unaffected. ONE REAL GAP FOUND AND CLOSED THIS SESSION: memorials-lelya-sequence (built
+2026-08-19 alongside the rest of this content, a complete, ready-to-route 17-item
+sequence -- Hulali 12/13/14, the Memorial Motwa, Qali d'Shahra prayers, Memorial
+Tishbukhta and Karuzutha) had ZERO references anywhere in js/office-ui.js, confirmed by
+grep before touching anything -- fully built content sitting orphaned since the day it
+was written. Wired via a new isMemorialDay check
+(EastSyriacCalendar.getDayClass().dayClass === 'commemoration', the engine's own
+existing Layer-2 classification, previously unused in this file) that routes Lelya to
+memorials-lelya-sequence on a real non-Sunday, non-Feast, non-Fast commemoration day, at
+lower priority than both the Feast-Lelya and Fast-Lelya branches (matching this
+function's own established priority pattern). VERIFIED LIVE against a real date (Friday,
+February 13, 2026 -- 'Commemoration of the Faithful Departed', the one non-Lenten
+Layer-2 commemoration day found by scanning 4 years of dates): title still reads 'Lelya
+-- Night Office' but the body now correctly shows 'Memorials of Saints / No Qaltha /
+Hulali 12, 13, 14' instead of the ordinary ferial Friday office. A REAL FIRST-PASS BUG
+caught before landing on the right date: the initial scan used
+EastSyriacCalendar.getDayClass(date, {}) with no easterMode, which silently used a
+different Paschalion than the app's own default ('gregorian', selectedCoeEasterMode's
+actual default) and found the wrong Friday (Feb 20 instead of Feb 13) -- re-scanned with
+the matching option, caught by the render unexpectedly showing Fast content for what
+should have been a non-Lenten date, not assumed correct from the first pass. REMAINS
+OPEN, explicitly NOT solved this session, genuinely different in kind from 'wire it'
+(there is no equivalent pre-assembled Ramsha or Sapra Memorial sequence the way Lelya
+had): Ramsha and Sapra have no Memorial-specific sequence built at all -- the four
+commemoration-of-the-departed First/Second Anthem forms and the Suba'a-append exist only
+as loose components, never assembled, and picking which of the four forms applies to a
+given commemoration needs data (a per-commemoration class/state field) this project's
+calendar layer does not currently carry. SEPARATELY, ALSO DISCLOSED: this Layer-2
+commemorations array (feeding isMemorialDay) is narrow by design -- only 1-8 named
+liturgical commemorations a year (the pre-Fast Fridays plus one Commemoration of the
+Faithful Departed), confirmed by a live 4-year scan. It is NOT the same system as the
+much larger individual-saint Layer 3 sanctoral calendar tracked separately on this
+dashboard (coe:layer3:week-anchoring-discovered, coe:layer3-saints:push-toward-100pct)
+-- that layer is not wired into getDayClass().commemorations at all and this session's
+fix does not touch it or claim to. Cache-bust office-ui.js 304 -> 305. Full four-lane UI
+sweep and Sunday/weekday regression check both re-run clean, zero console errors.
+
+SEED_VERSION bumped to `v346-2026-09-24-coe-festival-evening-memorial-lelya-wired-stale-rows-corrected`.
+
+---
+
+## Session 2026-09-24/25 continued -- Phase 6: the old --app-* parchment pass and legacy
+## render path retired outright across many staged, independently-verified commits (flag
+## dropped, drawer coverage confirmed, CSS deletion, the four legacy sidebars fully
+## migrated into the Office Settings drawer and then deleted, the entry/threshold
+## screens ported off the old parchment CSS and office-shell.css fully unscoped, a
+## mobile-grid regression hotfixed along the way, the mobile-repair and print CSS blocks
+## each split into dead vs. load-bearing). PHASE 6 IS NOW COMPLETE. SEED_VERSION v346 ->
+## v355.
+
+Phase 6 -- delete the old --app-* parchment pass and the legacy render path outright,
+unscope office-shell.css, drop the dev flag; Book of Needs gets its own design pass
+after. IN PROGRESS -- flag dropped and most old-skin CSS deleted (done, 2026-09-24); the
+four legacy sidebars and #sidebar-toggle deleted outright via a full mode-
+detection/navigator-host refactor (done, 2026-09-25); the entry/threshold screens' old
+parchment CSS deleted and office-shell.css's corresponding block unscoped, via a 6-stage
+port-then-delete-then-unscope sequence (done, 2026-09-25); the entry-screen hairline
+modernized to var(--uo-hairline) (done, 2026-09-25); a dead-code mobile/print office-
+grid bug found while auditing for the unscoping, plus the mobile rail-height bug it
+exposed, both fixed (done, 2026-09-25); the remaining ~187 body.shell-v2 occurrences in
+office-shell.css unscoped across 8 staged commits, two real specificity gaps found and
+fixed beyond the original audit, plus the one selector left scoped that pass (.shared-
+office-nav-appearance-card, its stale 'Phase 4 deletes it' comment corrected) (done,
+2026-09-25) -- office-shell.css now carries ZERO body.shell-v2 selectors anywhere; the
+third mobile-repair CSS block investigated and resolved -- confirmed load-bearing (not
+legacy cruft), one confirmed-dead sub-rule deleted (done, 2026-09-25); the legacy print
+block split into dead vs. load-bearing and cleaned up, two selectors confirmed shared
+with Book of Needs and deliberately kept, an ephemeral print-verification check built
+and run since no baseline of any kind existed to regenerate against (done, 2026-09-25).
+PHASE 6 IS NOW COMPLETE. Book of Needs' own design pass, deferred to after Phase 6 as
+originally stated, is now done too -- see ui:book-of-needs-design-pass.
+
+Per UI_REDESIGN_HANDOFF.md section 9. Governance question resolved 2026-09-21
+(gov:navigation-architecture-surface-superseded); started 2026-09-24 once Phase 5
+closed, on Josh's direct instruction, planned in EnterPlanMode with three parallel
+Explore agents mapping the CSS architecture, the flag's full usage, and the print/mobile
+CSS state before any edit. STAGE 1 (flag dropped): body.shell-v2 is now a permanent
+literal class on <body>; js/shell-flag.js deleted outright; js/office-shell.js and
+js/office-drawer.js had every shellOn() guard removed; js/office-ui.js's five
+AnglicanEnvelope.publish() call sites no longer check the flag. Verified live: app loads
+correctly with zero query params, ?shell=v1 has no effect (expected), all four lanes
+render and publish, Book of Needs untouched. STAGE 2 (drawer coverage verified, one real
+bug fixed): enumerated every control in the four legacy sidebars and confirmed each
+already has a home in the drawer (most moved wholesale by moveRealControls(), some
+reconstructed as synthetic rows, 'which office' covered by the existing shared-office-
+nav mechanism) -- no migration code needed. While verifying live across all four lanes,
+found and fixed a real pre-existing bug (confirmed on the pre-Phase-6 commit too, not
+introduced by stage 1): selectMode()'s east-syriac/horologion/roman-breviary-dev/default
+branches all forgot to hide #coptic-settings when activating, so office-drawer.js's
+currentModeKey() (which picks the first non-mode-hidden legacy sidebar) kept reading
+Coptic's own office list after any visit to Coptic Agpeya, regardless of which lane was
+actually active. Fixed by adding the missing hide block to all four branches. STAGE 3
+(partial -- CSS deletion): removed every body.office-active-scoped rule from
+css/office.css (~1550 lines, confirmed office-only by cross-referencing js/office-ui.js,
+the only file that toggles that class) via a tinycss2-based script rather than manual
+edits, since the rules were scattered across the whole 4302-line file; a handful of
+selectors shared with Book of Needs/Admin (the 'Back to Modes' button family) were
+trimmed rather than deleted wholesale. Also deleted the now-fully-dead .office-
+container::after corner-ornament rule (already neutralized both by the new shell and by
+Book of Needs' own override). Deliberately did NOT delete .office-container's base rule
+or ::before -- confirmed live, by screenshot diff, that Book of Needs relies on both by
+omission (padding, margin, box-sizing, position, the inset ruled border are never
+redeclared in its own override block). ATTEMPTED AND REVERTED, disclosed rather than
+forced: the old parchment CSS for #tradition-entry/#uo-threshold-grid. Screenshotted
+before committing and found a real regression -- office-shell.css only recolors these
+screens' cards, it never rebuilds the grid layout itself (.app-entry-family-grid, .app-
+mode-grid), so deleting the base layout rules collapsed the three-card 'Where do you
+pray?' grid into an unstyled row. Reverted cleanly (pixel-identical to baseline after
+revert, confirmed). The same caution was extended to the legacy print block, which mixes
+office-only rules with styling Book of Needs' print output also depends on (confirmed
+via js/prayers.js rendering the same classes) -- left untouched. STAGE 4 (real scope
+correction, not a straight execution): the plan and css/office-shell.css's own prior
+comment said this stage deletes the four legacy sidebars and their two hiding rules
+outright. Reading js/office-drawer.js's radioRow()/checkboxRow()/selectRow() functions
+before touching anything found their own comments state plainly the controls they
+surface are 'read, never moved' -- they proxy to the real, still-in-place
+<input>/<select> elements rather than relocating them, covering Rite, Officiant, the
+30-Day Psalter, Creed, Gospel placement, Marian element/position, East Syriac's
+Cathedral/Monastic use, both Horologion selects, and every 'which office' control (via
+the existing setSharedOfficeNavHour mechanism). Deleting the sidebar markup without
+first moving every one of these into the drawer's own DOM would have silently broken
+real liturgical rendering (wrong Rite, wrong Gospel placement), not just hidden a
+setting. That fuller migration was NOT done and is real, unattempted future work -- the
+sidebars and their two hiding rules stay, permanently, not as a temporary
+Phase-6-pending state. What DID ship this stage: two dead 'UO MOBILE DRAWER
+REPAIR'-named mechanisms confirmed genuinely safe -- js/office-ui.js's ~117-line block
+(patched selectMode/toggleSidebar for classes on elements now permanently display:none
+and unclickable) and css/office.css's ~58-line Horologion-specific :has(#generic-
+settings...) mobile repair (same reasoning: its target is permanently invisible) -- both
+deleted. A THIRD, larger block sharing the same CSS comment name (~170 lines, sets
+foundational #daily-office-section/html/body mobile viewport positioning, not just
+sidebar classes) was found and deliberately left untouched -- genuinely unclear whether
+the new shell's own mobile CSS supersedes it, not guessed at. Corrected the misleading
+css/office-shell.css comment that had claimed Phase 6 would delete the sidebars,
+replacing it with the verified finding and full reasoning. Verified live: all four
+lanes, Book of Needs, drawer synthetic controls (Rite toggle spot-checked end to end),
+the stage-2 lane-switch fix, and mobile layout at 390px (diffed against a throwaway git
+worktree of the pre-stage-4 commit -- identical, including a confirmed pre-existing
+cosmetic title-overflow issue). Zero console errors throughout. Cache-bust office.css
+216->217->218->219, office-ui.js 305->306->307->308. REMAINING at that point: the
+deferred entry-screen CSS split, the legacy print block, the full sidebar-control
+migration, Stage 5, and Stage 6. STAGE 5 (attempted, reverted -- confirms stage 3's
+deferral was correct, not just cautious): wrote a tinycss2 script to mechanically strip
+the now-permanent .shell-v2 class token from every selector in css/office-shell.css,
+reasoning that stripping the same token uniformly preserves each rule's specificity
+relative to every OTHER rule in that same file. True, but incomplete -- says nothing
+about specificity relative to css/office.css rules this file's own rules were
+deliberately given extra .shell-v2 weight to beat (the exact pattern this file's own
+#main-content.app-primary-canvas specificity comment already documents). Applied it, ran
+the verification sweep, found a real regression: #tradition-entry's card background
+rendered a visibly different gradient. Root-caused: body.shell-v2 #tradition-entry.app-
+tradition-entry (two classes) stripped to body #tradition-entry.app-tradition-entry (one
+class) -- weak enough to newly LOSE against office.css's still-live body.dark-mode
+#tradition-entry.app-tradition-entry, which stage 3 could not delete for the exact same
+reason it couldn't delete the rest of that screen's CSS. Confirmed empirically, not
+theorized: swapped between the two file versions at the same real moment and diffed --
+397,828 of 1,278,400 pixels differed under the stripped version, 0 under the original.
+REVERTED the selector change; kept two accurate, low-risk comment corrections on top of
+the restored stage-4 content -- the file's own header now says plainly its selectors
+remain scoped under .shell-v2 ON PURPOSE (not an oversight), naming why and what
+unscoping safely needs first; the #main-content specificity comment now says THAT
+specific historical fight really is over (both competing office.css rules it names are
+confirmed gone) while explaining why the extra weight was left in place anyway rather
+than trimmed rule-by-rule. Verified live after reverting: both entry screens pixel-
+identical to baseline (0 nonzero pixels); full four-lane sweep, Book of Needs, and
+drawer functionality all clean; zero parse errors. Cache-bust office-shell.css 307->308
+(comment-only content change). Net effect: no functional CSS shipped this stage, a real
+documentation improvement did, and a second confirmed reason that 'unscope this file'
+and 'delete the entry-screen's old CSS' are the same piece of work, not two independent
+ones. STAGE 6 (final verification + docs): this note and RESUME_PROJECT_NOTE.md are that
+documentation pass; no further print-output regeneration was attempted this session
+beyond what stages 1-4 already verified live (shell-v2's own print CSS was confirmed
+already built and correct by this session's own planning research, not rebuilt here) --
+full print-preview screenshot verification against a pre-Phase-6 baseline remains real,
+undone work for a future session, alongside everything else this row's REMAINING list
+above already names. 2026-09-25 CONTINUED -- Josh: 'Migrate the remaining sidebar
+controls into the drawer.' Stage 4's finding above (the fuller migration was 'real,
+unattempted future work') is now done. Read radioRow()/checkboxRow()/selectRow() again
+to confirm their exact contract (proxy to the real <input>/<select> in place, never move
+it) before writing anything, then read index.html's full sidebar markup (lines 332-744
+across all four legacy panels) to enumerate every control not already covered by that
+read-in-place pattern or by moveRealControls()'s existing physical moves (BORROWED_IDS,
+BCP's during-office/closing-devotions/lectionary-alternates groups, toggle-bcp-only).
+Eleven remaining groups had no home in the drawer's own DOM: BCP's office-time radio
+group and ang-office-mode radio group, the rite radio group, the marian-element nested
+group, Coptic's cop-hour radio group, East Syriac's esy-override-panel, esy-time radio
+group, and esy-mode radio group, and Horologion's horologion-office nested group, hor-
+eo-calendar-select nested group, and hor-depth-select nested group. Added a new hidden
+host, hosts.legacyState (a plain div, display:none, appended to the dialog alongside the
+existing hosts.foot), and a new moveLegacyStateControls() function, called last from
+moveRealControls(), that physically appendChild()s each of the eleven groups (located
+via their real name/id attributes, walking up to the nearest .setting-group/.nested-
+group/div ancestor) into that hidden host -- the same physical-move mechanism
+moveRealControls() already uses elsewhere, not a new pattern. Deliberately left in place
+and NOT moved: toggle-dark (a shared control, not lane-specific), hor-btn-diag (a
+diagnostics button, not a setting), East Syriac's read-only display boxes, and the date
+pickers -- none of these are settings the drawer's own contract covers. Verified live
+across all four lanes: a presence check confirmed all eleven groups now render inside
+.uo-drawer-legacy-state (hostChildCount: 11 in every lane); a functional sweep exercised
+the Rite toggle, the Marian-element toggle, Coptic's office-switch via the drawer's own
+grid, East Syriac's Cathedral/Monastic toggle, Horologion's display-depth toggle, and
+Horologion's office-switch via the drawer grid -- all passed, all driving the real
+backing inputs correctly. Re-ran the full existing regression sweep (stage1-check,
+stage1-bon-check, both entry-screen screenshots, debug-modekey) -- pixel-identical to
+baseline, zero console errors. Screenshotted the open BCP drawer directly and confirmed
+no stray or duplicate controls. Cache-bust office-drawer.js 2 -> 3. SEED_VERSION v348 ->
+v349. This closes the real prerequisite Stage 4 identified and disclosed -- physically
+deleting the four legacy sidebars' HTML and their two hiding rules in css/office-
+shell.css is now unblocked, but remains separate, not-yet-requested future work,
+alongside the deferred entry-screen CSS split, the legacy print block cleanup, the third
+~170-line 'UO MOBILE DRAWER REPAIR' CSS block left untouched in stage 4, and stage 6's
+still-undone print-preview regeneration. 2026-09-25 CONTINUED, SAME DAY -- Josh: 'Now
+delete the legacy sidebar HTML and their hiding rules.' Investigated before touching
+anything and found this was NOT the mechanical deletion the original plan assumed: the
+four sidebar divs are the app's only 'which tradition is active' state
+(selectMode()/toggleSidebar()/backToSplash() track the active lane purely by toggling a
+mode-hidden class on these exact elements, and js/office-shell.js's currentLane() and
+js/office-drawer.js's currentModeKey() independently re-derive the same thing from the
+DOM, both because window.selectedMode doesn't exist -- a bare top-level let is never a
+window property, a bug class AUDIT_GOVERNANCE_LEDGER.md already recorded once); and
+renderSharedOfficeNavigation() (the CURRENT, live 'which office' picker, not old dead
+UI) injects itself as a literal child of whichever sidebar matches the active mode.
+Deleting the divs as originally planned would have broken tradition-switching and the
+office picker outright. Disclosed this to Josh; he chose the full refactor over leaving
+the sidebars in place permanently. Planned in EnterPlanMode (a Plan agent independently
+verified the investigation's key claims, corrected one detail -- office-shell.js's
+currentLane() panelId slot was provably unused by any caller -- and caught two real
+gaps: a footgun in exposing selectedMode as a mirrored variable instead of a function,
+which would have reintroduced the exact stale-copy bug the ledger already recorded once,
+and a MutationObserver in office-drawer.js's init() that also iterated the old per-panel
+array shape). Five staged, independently-committed, independently-verified stages: STAGE
+1 exposed js/office-ui.js's existing selectedMode-to-modeKey mapper on window (a
+function, never a mirrored variable) and rewrote office-shell.js's
+currentLane()/currentOfficeId() and office-drawer.js's currentModeKey() to use it
+instead of reading the DOM; caught and fixed a second real bug while doing it, unrelated
+to the plan -- office-shell.js's watchLaneChanges() iterated the same array shape being
+restructured, would have crashed. New cross-lane-stress.mjs (load -> Coptic -> East
+Syriac -> Horologion -> BCP in one session) confirmed correct mode detection and zero
+cross-lane office-grid contamination -- the one scenario nothing existing tested, and
+exactly the mechanism being changed. STAGE 2 pointed renderSharedOfficeNavigation() at
+one new neutral host (#legacy-office-controls) instead of the active sidebar, and
+deleted ~150 lines of legacy-hiding machinery (_sharedOfficeNavigatorHideLegacy() and
+two helpers) that existed only to keep the live navigator from clashing with old sidebar
+content sitting next to it -- confirmed by grep those functions were called nowhere else
+first. Found and updated one now-obsolete audit script (audit-shared-office-navigation-
+polish.mjs) that tested for the deleted machinery directly; found two others (audit-
+shared-office-navigation-apparatus.mjs, a browser-console QC tool) already broken for
+unrelated pre-existing reasons (stale Ethiopian-mode markers, an assertion that the
+sidebars are visible -- untrue since shell-v2 became unconditional, well before this
+session) -- left alone, disclosed rather than silently patched or silently ignored.
+STAGE 3a extended moveLegacyStateControls() to cover five real gaps a full cross-
+reference surfaced: #ecumenical-devotions-section (an empty shell after earlier moves,
+but still read by id for its bcp-only-hidden class -- leaving it unmoved would have made
+the Marian rows show even under BCP Only Mode, a real regression, reproduced and
+confirmed fixed by new bcp-only-marian-check.mjs), hor-btn-diag (previously documented
+as deliberately unread -- that was wrong, buildKeep() does read it), East Syriac's
+separate Active Hour group, its three Cycle/Fasting/Anaphora display boxes, and the
+BCP/Horologion date-picker blocks. STAGE 3b physically moved the remaining real markup
+of all four sidebars into #legacy-office-controls as static HTML (every id/name/onchange
+handler preserved exactly; only decorative chrome -- headers, I/II/III section dividers,
+Coptic's duplicate Prev/Today/Next -- dropped), confirmed via new borrowed-summary-
+check.mjs that simplifying the markup didn't break borrowedSummary()'s
+childNodes[1]-based label extraction. STAGE 4 deleted the four sidebar divs, #sidebar-
+toggle, toggleSidebar(), office-drawer.js's now-redundant per-panel MutationObserver,
+and every confirmed-dead CSS block this unblocked (base panel positioning, the mobile
+and print @media blocks' panel-scoped lines -- trimmed from mixed selector lists that
+also held still-live rules, not deleted wholesale -- the 'UO MOBILE DRAWER REPAIR'
+block's panel-scoped sub-rules, the already-empty 'UO HOROLOGION MOBILE SPECIFICITY FIX'
+comment shell, and the roman-breviary-dev-mode sidebar-toggle rule); left the
+body.mobile-sidebar-open dimming rule alone, confirmed already inert for unrelated
+reasons (that class is never set by any JS in the repo). STAGE 5 removed the now-dead
+getElementById(panelId)-plus-classList bookkeeping left behind in selectMode() and
+backToSplash(). Verified live at every stage: the full accumulated script suite
+(migration-check, migration-functional, migration-check2, bcp-only-marian-check, hor-
+diag-esy-boxes-check, nav-single-host-check, nav-office-switch-bcp-esy, borrowed-
+summary-check, cross-lane-stress, stage1-check, stage1-bon-check) stayed clean and
+mostly byte-identical to a pre-Stage-1 baseline throughout, zero console errors; entry-
+screen, open-drawer, and 390px-mobile screenshots pixel-consistent at every stage
+boundary. Two apparent regressions in office-switch tests (East Syriac, Horologion
+'before' matching 'after') were investigated rather than dismissed -- both confirmed to
+be real wall-clock time already matching the live time-of-day default (03:34 UTC ->
+Sapra/Orthros, both legitimate), not test flakiness, confirmed by switching to a
+guaranteed-different office and watching the title actually change. Cache-bust
+index.html refs: office-ui.js 308->309->310->311->312, office-shell.js (the JS file)
+297->298 (Stage 1 only), office-drawer.js 3->4->5->6, office-shell.css (the CSS file,
+distinct from office-shell.js above) 308->309 (Stage 4 only, for the deleted hiding
+rule), office.css 219->220. SEED_VERSION v349 -> v350. REMAINING, disclosed not done:
+office-shell.css unscoping (the original Phase 6 stage 5, attempted and reverted once
+already, a real specificity fight against office.css rules that still exist), the
+deferred entry-screen CSS split, the legacy print block cleanup, the third ~170-line
+mobile-repair CSS block whose relationship to the new shell's own mobile CSS is still
+genuinely unresolved, and print-preview regeneration against a pre-Phase-6 baseline.
+2026-09-25 CONTINUED, SAME DAY -- Josh chose to do the deferred entry-screen CSS split
+and office-shell.css unscoping together (offered as a combined option after the sidebar
+deletion work above finished), given both prior attempts at pieces of this had already
+been tried and reverted for the same underlying reason: office-shell.css only ever
+recolored #tradition-entry ('Where do you pray?') and #mode-selection/#uo-threshold-grid
+('Choose a tradition') -- it never rebuilt their actual grid layout or viewport-
+centering math, so deleting office.css's rules broke real behavior, and unscoping
+office-shell.css (which relied on extra .shell-v2 specificity to beat still-live
+office.css rules) broke it a second way. This time: port every missing declaration into
+office-shell.css FIRST, verify it reproduces today's exact appearance, only THEN delete
+the office.css originals and unscope. Researched via an Explore agent (full selector map
+with exact line numbers) and a Plan agent (staged sequence from that map) -- both used
+as a starting draft, neither trusted blindly: reviewing both against the actual files
+directly caught two real transcription errors before they could cause a third revert.
+(1) border-radius:22px in office.css's two max-width:760px overrides is provably dead
+code today -- office-shell.css's unconditional border-radius:0 (specificity (0,1,2,1))
+already beats it (0,1,1,0) regardless of viewport, confirmed live via getComputedStyle
+reading '0px' at every one of 6 tested viewports including mobile; the port deliberately
+omitted this value rather than reviving dead-code-turned-live rounded corners. (2) the
+family-grid/tradition-panel/mode-grid hairline (border-top: rgba(103,58,31,0.12), the
+old parchment brown) has no office-shell.css override at all -- confirmed live it's
+still rendering in that brown today -- and var(--uo-hairline) on this always-night-
+palette screen resolves to a visibly different GOLD (rgba(201,168,76,0.12)); porting the
+token would have been a real, if subtle, unrequested visual change disguised as a
+neutral refactor. Ported the literal brown value instead, preserving exact current
+appearance; flagged the one remaining old-palette color on an otherwise fully-restyled
+screen as a separate, undecided design question for Josh, not resolved here. Execution
+discipline set explicitly given these two catches: every declaration ported was copied
+via Read directly from the cited office.css line range at edit time, never retyped from
+the plan or agent output. Six stages, each independently committed and verified
+(screenshots at 6 viewports -- covering the 3-col/2-col grids, the 861px/761px
+collapses, the 1100x760 desktop variant, and combined narrow+short viewports -- PLUS
+getComputedStyle spot-checks, since a pixel screenshot diff alone isn't guaranteed to
+surface a subtle single-property miss): STAGE 1 ported typography (kicker/h1/lede/panel-
+title/card-title-subtitle sizing, cursor/text-align) as genuinely unscoped selectors.
+STAGE 2 ported card-grid and icon layout -- the gap that caused the FIRST prior revert
+(the family grid collapsing into an unstyled row). STAGE 3 ported container sizing and
+the three viewport-stabilization breakpoints -- office.css declares #tradition-entry's
+sizing TWICE (a base rule, then a later same-specificity 'viewport stabilization pass'
+rule that wins for every property it redeclares); only the winning, later values were
+ported, confirmed live at every viewport including the 1100x760 and sub-760-height
+combinations nothing else in the matrix exercises. STAGE 4 deleted office.css's old
+rules (preserving every [hidden]/display:none visibility and drill-down step-routing
+gate, #splash-bg's own rules including its ::before responsive sub-rules, and .app-
+sponsor-link). While investigating this deletion, found and verified safe a THIRD thing
+neither research pass caught: a much older, pre-redesign bare #mode-selection/#mode-
+selection h1/#mode-selection p rule (specificity (0,1,0,0)/(0,1,0,1)) predating the
+.app-mode-shell system entirely -- checked by hand and then confirmed live via direct
+CSS-rule inspection that every property it sets is still outranked by a still-live,
+higher-specificity .app-mode-shell-qualified rule, so it stays exactly as dead as it
+always was, not reactivated by deleting its higher-specificity competitor. STAGE 4's own
+verification also caught a REAL BUG this session introduced in Stage 2: the icon port
+for .app-entry-family-icon/.app-entry-tradition-code dropped border-radius:999px,
+turning the drill-down icons from circular to square -- caught because the screenshot
+diff showed an identical 1152-pixel diff across every viewport regardless of size
+(unlike the established ~50-pixel clock-noise pattern, which scales with nothing and
+stays small), investigated immediately rather than assumed benign, and fixed forward in
+the same Stage 2 block (Stage 2 was already pushed; per this repo's own convention,
+never amend pushed history) with the gap disclosed in Stage 4's own commit message. New
+entry-routing-check.mjs drove the actual drill-down flow (family -> Western -> back ->
+family -> Eastern) confirming the visibility gates still route correctly, not just look
+right in a screenshot. STAGE 5 confirmed via direct CSS-rule inspection (not just
+computed-style values, which can tie at the same value from a different source) that
+#tradition-entry's background and .app-entry-kicker's color now trace to exactly one
+rule each, zero competitors -- the precondition for stage 6. STAGE 6 mechanically
+stripped body.shell-v2 from the ~45 pre-existing Group 6 selectors, safe by construction
+now that stage 4 removed what they needed the extra specificity to beat -- verified
+against stage 4 (pre-unscope), not stage 0, specifically to catch a rule dropping from
+tied-but-winning to losing, the exact failure shape of the original revert. Full app-
+wide regression sweep (migration-check, migration-functional, stage1-check, stage1-bon-
+check, cross-lane-stress, mobile-check) re-run clean after all six stages, zero console
+errors; Book of Needs screenshotted directly and confirmed completely unaffected (the
+.mode-btn base class it shares with the entry screens was never touched, only .app-mode-
+card and other entry-screen-specific classes). Cache-bust office-shell.css 309(from
+prior work)->310->311->312->313, office.css 220->221. SEED_VERSION v350 -> v351.
+REMAINING, disclosed not done: unscoping the rest of office-shell.css (~186 of ~231
+total body.shell-v2 occurrences -- the .office-container recolor, the three-column uo-
+ordo/rail/page/margin/keeping shell internals, the .uo-drawer-* Office Settings drawer
+-- none audited against the rest of office.css in this pass, a separately-scoped task of
+comparable size to what was just done), the legacy print block cleanup, the third
+~170-line mobile-repair CSS block, print-preview regeneration, and the hairline-color
+design question flagged above. 2026-09-25 CONTINUED, SAME DAY -- Josh: settle the
+hairline color question, then proceed with the unscoping and its audit. HAIRLINE
+(settled): modernized the family-grid/tradition-panel/mode-grid border-top from the
+literal ported brown (rgba(103,58,31,0.12)) to var(--uo-hairline), which resolves to
+gold (rgba(201,168,76,0.12)) on this always-night-palette screen -- matching every other
+hairline on the screen and the section's own stated rule ('hairlines and light do the
+separating'). Verified via getComputedStyle at both selectors, a JSON+pixel diff against
+the last committed stage showing the ONLY differences were these two borderTopColor
+values (layout, grid columns, everything else byte-identical), and the full regression
+sweep. Cache-bust office-shell.css 314. Commit 70b77f3. AUDIT (started, redirected by a
+real find): began the ~186-occurrence unscoping audit via three parallel Explore agents
+mapping the root token block, .office-container, the #main-content shell grid, the uo-
+ordo/rail/page/margin/keeping internals, and the .uo-drawer-* settings drawer against
+office.css for competing selectors. Two real findings surfaced, held for the unscoping
+plan itself, not yet acted on: naively stripping .shell-v2 from .uo-drawer-moved
+input[type=checkbox] would lose margin-right to office.css's still-live .setting-group
+label input[type=checkbox] (an outright specificity loss, not a tie); .uo-drawer-moved
+strong/label would become exact specificity ties with office.css rivals, saved only by
+stylesheet load order, not a real specificity margin. While verifying a third agent's
+claim about #main-content's mobile/print media queries, found a genuine, currently-live
+production bug completely unrelated to unscoping: the media queries at office-shell.css
+lines 1021/1076 (mobile grid collapse, print layout) were written as body.shell-v2
+#main-content, missing .app-primary-canvas -- one class short of the always-on base
+rule's specificity, (1,1,1) vs (1,2,1) -- so both have been dead code since written;
+verified live via getComputedStyle, #main-content's real width (1128px) silently
+overflowed a 375px viewport with the excess clipped, not scrollable, squeezing the
+actual prayer-text column to 0px on every office at phone width. Disclosed to Josh
+rather than silently folded into or deferred past the unscoping work; he chose to fix it
+first, as its own hotfix. FIXED: added .app-primary-canvas to both selectors, matching
+the base rule's specificity so the later, narrower-media rule wins by source order
+(confirmed no property overlap with office.css's own !important-heavy mobile/print
+#main-content rules, so no new cross-file conflict introduced). Fixing it exposed a
+second, previously-unreachable bug caught before shipping: .uo-rail (the office step-
+list nav) had no height cap for its 'top strip' mobile layout, so a long office (East
+Syriac: 33 steps; Horologion) grew the rail to 1300px+ and squeezed the prayer text to
+~0px again, just on the other axis -- tested across four traditions (Daily: unaffected,
+no rail; Coptic Agpeya 10 items; East Syriac 33; Horologion) before Josh chose to fix
+this in the same hotfix rather than ship a half-working one. Capped .uo-rail at max-
+height:34vh with its own overflow-y:auto, matching how .uo-page already scrolls its own
+overflow rather than growing past its grid row. Verified: single-column grid-template-
+areas now applies at <=768px and display:block applies under @media print; prayer text
+gets 270-520px instead of 0px on every long-rail tradition tested; zero pixel diff and
+identical grid-template-columns/rows/areas at 1440/1024/820px width (above the 768px
+threshold, confirming no desktop regression); full regression sweep clean. Cache-bust
+office-shell.css 315->316. Commit cd0df5a. The broader unscoping audit's own findings
+(drawer-checkbox risk, tie risk, plus the root-token/.office-container/shell-grid
+findings from the other two agents) are held for the unscoping plan itself, not yet
+executed. SEED_VERSION v351 -> v352. 2026-09-25 CONTINUED, SAME DAY -- executed the
+unscoping plan. A Plan agent drafted a staged sequence from the three research agents'
+findings; spot-verified directly against the live file before writing it (dialog.uo-
+drawer confirmed real and already-used at line 1178; the .uo-drawer-moved trio's exact
+lines and declarations matched; the #main-content grid trio's three line numbers matched
+exactly). EIGHT STAGES, each independently committed, verified against the immediately-
+prior stage (not Stage 0) with both a 4-lane x 6-viewport getComputedStyle sweep and
+pixel-diffed screenshots: STAGE 1 unscoped the root --uo-* token blocks to
+:root/body.uo-day (zero collisions anywhere in the repo). STAGE 2 unscoped the drawer's
+bulk chrome (~72 selectors) to bare selectors, plus body.office-active for the drawer's
+own parchment-override group; corrected a stale comment citing a nonexistent office.css
+rule. A 472px screenshot diff on the BCP Only Mode toggle was investigated, not
+dismissed: content proven byte-identical, a rerun proven stable, checked state proven
+deterministic, and 2x crops showed the identical off state -- concluded sub-pixel anti-
+aliasing jitter on a small circular thumb, not a regression. STAGE 3 fixed the one real
+drawer risk the audit flagged: .uo-drawer-moved strong/label/input[checkbox] would land
+at an exact specificity tie (strong/label) or an outright LOSS (checkbox -- office.css's
+.setting-group label input[checkbox] is one selector-chain element ahead, which would
+have silently reverted margin-right from 8px to 6px) against still-live office.css
+.setting-group rules. Fixed by anchoring on dialog.uo-drawer (real, already-used)
+instead of body.shell-v2, giving a genuine specificity margin instead of a load-order
+tie. Also discovered mid-stage that BCP/Horologion's clock-driven default office was
+drifting between captures during this long session (Sixth Hour -> Ninth Hour), confirmed
+by comparing rendered titles rather than assumed a CSS bug; added office-pinning to the
+verification script for the remaining stages. STAGE 4 unscoped the .office-container
+recolor group. FOUND AND FIXED A REAL GAP THE THREE-AGENT AUDIT MISSED: re-verifying
+which office.css rule actually wins after a naive strip (not trusting the audit's table
+as exhaustive) found the base .office-container rule itself, and its reappearance in the
+p/li selector list, would ALSO land at an exact specificity tie against office.css's own
+bare .office-container (line 365 -- background/max-width/width/margin/padding/border-
+radius/box-shadow/color, nearly the same property set) -- the audit's table had only
+computed this tie for the ::before/::after variant. Fixed the same way, kept .office-
+active for a real margin. Confirmed via direct document.styleSheets rule inspection, not
+just computed values, that the shell's rule is now the sole winner with a real margin.
+Book of Needs re-verified with an actual selected prayer (not just the picker screen) --
+its id-anchored office.css override continues to win, unaffected. STAGE 5, the highest-
+stakes stage: unscoped the #main-content.app-primary-canvas grid trio (base + mobile +
+print) together, in lockstep, preserving the equal-specificity/source-order-decides
+relationship the mobile-grid hotfix had just established -- splitting them would have
+changed a deliberate tie into an outright win, same visual result today but a more
+fragile mechanism. Zero diffs across all 24 lane/viewport checks; print emulation
+confirmed display:block still applies. STAGE 6 unscoped the remaining #main-content
+standalone rules (background variant, ground-image ::before, z-index group, back-button,
+8 per-tradition decorative rules) and the office-active padding override, independently
+re-confirming its 'office.css:2270/2274' citation was already stale (that region is
+unrelated Roman Breviary content today) before relying on it. Flagged rather than
+touched: .shared-office-nav-appearance-card, whose own comment claims it was to be
+deleted with the legacy sidebars -- the sidebars are gone and this rule still exists, a
+stale claim outside this pass's audited scope. STAGE 7 unscoped the ordo line and the
+full rail family; verified the mobile rail height cap (34vh, from the earlier hotfix)
+still applies correctly on the two long-rail lanes. STAGE 8 unscoped
+page/margin/keeping/theme-control and the remaining mobile/print media-query leftovers;
+found and fixed a second real gap, this one from Stage 2 itself -- a final whole-file
+grep sweep caught .uo-drawer-open and its hover/focus states still scoped, missed
+because Stage 2's edit range started at dialog.uo-drawer's line number and .uo-drawer-
+open (the ordo-line button that opens the drawer, a different element) sits just before
+it in the file. Fixed the same way as the rest of Stage 2 (confirmed zero office.css
+competitor first). Full regression sweep (migration-check, migration-functional,
+stage1-check, stage1-bon-check, cross-lane-stress, mobile-check) re-run clean after all
+eight stages. Cache-bust office-shell.css 314(from the hotfix)->325 across the sequence.
+SEED_VERSION v352 -> v353. REMAINING: .shared-office-nav-appearance-card (one selector,
+disclosed above, not fixed), the legacy print block cleanup, the third ~170-line mobile-
+repair CSS block, and print-preview regeneration -- none of which were in this plan's
+audited scope. 2026-09-25 CONTINUED, SAME DAY -- Josh: 'Go ahead and fix .shared-office-
+nav-appearance-card now too.' Investigated before touching, same discipline as every
+stage above: its own comment claimed Phase 4 deletes it alongside the sidebars, but the
+sidebars are gone and this rule is unrelated to them -- it hides the SHARED OFFICE
+NAVIGATOR's own built-in 'Appearance' card (js/office-ui.js's
+renderSharedOfficeNavigation(), rendered whenever a lane config sets
+showAppearanceToggle:true -- confirmed still true for three lane configs today by grep,
+so the card genuinely still renders, with its own legacy Dark Mode checkbox, superseded
+by the shell's Auto/Light/Dark control the same way the sidebars' own copy was, but a
+distinct element -- still needed, not dead). Confirmed office.css has zero rules for
+this class at all (grep) -- nothing to compete with, safe to unscope outright. Corrected
+the stale comment. Verified: the card still renders and still computes display:none in
+all three lane configs that set showAppearanceToggle; 24-way getComputedStyle + 24
+screenshots zero diffs from the prior commit; whole-file grep confirms office-shell.css
+now carries ZERO real body.shell-v2 selectors anywhere (only prose mentions inside
+comments); full regression sweep clean. This closes the office-shell.css unscoping work
+in full. SEED_VERSION v353 -> v354. 2026-09-25 CONTINUED, SAME DAY -- Josh, asked 'are
+you telling me the UI refactoring is complete', got an honest no (Phases 1-5 done, Phase
+6 still had three disclosed remaining items, Book of Needs untouched), then: 'Proceed
+with six.' Researched all three remaining Phase 6 items via three parallel Explore
+agents before touching anything. Findings changed the shape of all three: MOBILE-REPAIR
+BLOCK (css/office.css:2091-2189, already trimmed from ~170 to 99 lines by an earlier
+stage) -- of eleven selector groups, only ONE confirmed dead (a body.mobile-sidebar-open
+#daily-office-section::after dim overlay -- zero JS anywhere sets that class).
+Everything else is live, and the html/body plus #main-content overflow-x:hidden rules
+appear to be the SOLE mechanism preventing horizontal scroll at mobile widths on both
+Daily Office and Book of Needs -- office-shell.css has zero html/body selectors and
+never references #daily-office-section at all. The 'genuinely unclear whether the new
+shell supersedes it' question is resolved: it does not: load-bearing, not legacy cruft.
+Deleted only the one dead rule; verified
+document.documentElement.scrollWidth===window.innerWidth at 375/390px on both Daily
+Office and Book of Needs, before and after (identical, as expected since the deleted
+rule was unreachable). PRINT BLOCK CLEANUP (css/office.css, two @media print blocks) --
+split dead from load-bearing rather than treated as one unit. Confirmed 100% dead and
+deleted: the .ethiopian-theme print rule (same basis as this project's prior full
+removal of .ethiopian-theme elsewhere), .psalm-verse/.verse-num (no code renders these
+classes -- the live psalm renderer emits .psalm-block/.psalm-stanza/.psalm-half-verse
+instead, leftovers from a superseded approach). Removed as redundant (not dead -- the
+classes are used, but already hidden by their own always-on ancestor #legacy-office-
+controls's inline display:none, confirmed via a hidden-ancestor DOM walk): .ordo-
+control/.setting-group from the print display:none list. Explicitly KEPT, confirmed
+shared with Book of Needs via direct js/prayers.js evidence (lines 454/468/471 render
+both classes for the real single-prayer print path, and office-shell.css has no print
+rule for either -- office.css's rule is the ONLY thing governing their print
+appearance): .office-container, .component-text -- deleting either would have been the
+exact regression a prior session's own comment warned about when it left this block
+untouched. Corrected two office-shell.css comments citing this block (one stale line
+number for .passage-reference, one citing the now-deleted .psalm-verse as a reason to
+stay screen-only-scoped) and removed the matching dead .office-container .psalm-verse
+selector from office-shell.css's own screen-only typography rule (matched nothing, same
+evidence) -- one small addition beyond the plan's stated comment-only scope for that
+file, disclosed rather than left as a second copy of the same dead weight. PRINT-PREVIEW
+BASELINE -- confirmed via full-repo search that none ever existed: zero
+Playwright/Puppeteer print-emulation references anywhere, zero print screenshot/PDF
+artifacts, the RESUME_PROJECT_NOTE mentions of a 'pre-Phase-6 baseline' were the only
+place the idea appeared, never actually captured. Printing has no in-app affordance at
+all (no Print button anywhere, confirmed by grep -- purely Ctrl/Cmd+P). Josh chose
+ephemeral verification over permanent committed tooling. Built a throwaway Playwright
+print-emulation script covering all seven printable states (five office lanes sharing
+#main-content's print path, Book of Needs, Bible Browser) plus the open settings drawer,
+captured honestly as a 'before this cleanup' reference rather than a fictional pre-
+Phase-6 snapshot. Re-ran after the edit: two property diffs investigated, not dismissed
+-- .setting-group/.ordo-control's own display changed none-to-block as expected (a
+hidden-ancestor walk confirms they stay invisible regardless); body background/color
+showed small RGB jitter that reproduced identically on a same-code rerun, proving pre-
+existing headless-Chromium print-rendering noise, not a regression. Screenshot pixel-
+diff 0/8 nonzero across every printable state. Full regression sweep clean. PHASE 6 IS
+NOW COMPLETE -- every item disclosed as remaining is closed; only Book of Needs' own
+design pass remains, explicitly out of Phase 6's scope from the start. SEED_VERSION v354
+-> v355.
+
+SEED_VERSION bumped to `v355-2026-09-25-phase6-complete`.
+
+---
+
+## Session 2026-09-25 continued -- Book of Needs got its own design pass, deferred by
+## the handoff doc to run after Phase 6; and two real JS syntax errors in this file's
+## own UI_REDESIGN array, found and fixed along the way. SEED_VERSION v355 -> v356.
+
+Book of Needs' own design pass, deferred by UI_REDESIGN_HANDOFF.md section 5 to run
+after Phase 6 -- DONE, 2026-09-25. Two stacked layers of old-skin CSS (a dark base layer
+and a 'parchment app shell propagation pass', pale-gold-on-cream text that was nearly
+illegible in its own 'dark mode') replaced with one consolidated block using the office
+shell's own tokens, type, and 'no rounded cards, no drop shadows, hairlines separate'
+rule -- not the office's rail/page/margin grid, which the handoff doc's own §5 says
+would misrepresent what this screen is.
+
+Josh, directly: 'Give Book of Needs its own design pass now too.' Researched before
+proposing anything, given this project's own history of a redesign being rejected on
+sight for being 'built without checking the real design source first'
+(RESUME_PROJECT_NOTE.md, 'CORRECTED 2026-09-22'). Confirmed via full-repo search: no
+design source exists for Book of Needs anywhere -- the six design screens and
+DESIGN_HANDOFF_SOURCE.md cover only the office/entry/threshold screens; the original
+mockup Josh has supplied before ('Universal Office Redesign.dc.html') isn't in this repo
+and never covered Book of Needs even when it existed. The one surviving direction is the
+handoff's own reason for excluding it: 'It is not an hour: no ordered blocks, no
+liturgical day, no rail to draw -- forcing it into rail · page · margin would
+misrepresent what it is.' Asked Josh directly how to proceed rather than guess; he chose
+a design grounded in the shell's existing system, proposed in full before any code,
+approved via ExitPlanMode. COLORS/TYPE: same literal values as office-shell.css's --uo-*
+tokens, under an independent --bon-* name. THEME MECHANISM DELIBERATELY NOT SHARED:
+found while researching that office-shell.js's applyTheme() is explicitly scoped to
+body.office-active only, its own comment calling that separation a hard-won fix ('six
+patches in a row... two systems owning one piece of global state cannot be reconciled by
+synchronising them harder') -- wiring Book of Needs into the shell's Auto/Light/Dark
+control would have undone that on purpose-built boundary, so Book of Needs keeps its own
+existing Dark Mode toggle and body.dark-mode/body.light-mode classes unchanged, just
+recolored to the same palette. PICKER: reuses the settings drawer's own row/group visual
+language (.uo-drawer-section-head/.uo-drawer-office) -- the drawer already solves the
+identical shape of problem, a long list grouped under section headers, one selectable at
+a time. Pure CSS reskin, zero DOM/JS change to the dropdown
+(selectPrayer()/togglePrayerDropdown() untouched). SINGLE-PRAYER DISPLAY: no card, the
+same treatment the office's own prayer text already gets -- floats on the ground, capped
+to the same 62ch measure. One JS change, disclosed not guessed: js/prayers.js's
+showSinglePrayer() had an inline style on the source-citation paragraph that would have
+silently beaten the new stylesheet rule regardless of specificity (inline always wins)
+-- removed, letting the new CSS rule actually govern. TWO REAL BUGS FOUND AND FIXED
+while assembling the new rule, not just the intended reskin: two already-existing
+!important-heavy selector lists combined Book of Needs with the unrelated Admin
+Dashboard (.admin-app-shell) -- Book of Needs removed from both lists (Admin's own copy
+kept verbatim, untouched, out of scope), since the !important would otherwise have
+completely overridden the new button styling regardless of specificity; and one fully-
+redundant duplicate of .app-book-needs-show-all (same specificity, later in the file,
+would have silently won the old parchment colors back by source order) deleted. Updated
+scripts/audit-book-of-needs-design-shell.mjs's one stale marker (a literal comment
+string naming the retired 'parchment' pass) -- every other assertion (class names, ids,
+onclick handlers) was already unaffected since no DOM/JS structure changed. VERIFIED:
+getComputedStyle + screenshots across dark/light theme and three viewports (wide
+desktop, mid desktop, 390px mobile) for the selection screen, an open dropdown, and a
+displayed prayer -- every color/font value matches the proposal exactly. Confirmed
+tradition-scoping and role-gating filtering still work (East Syriac context: 78->4
+visible options, universal: 78, show-above-role toggle functions) -- unrelated to
+styling but easy to break by accident. Ran every Book-of-Needs-specific audit script;
+found ONE PRE-EXISTING FAILURE (audit-book-of-needs-tradition-context.mjs: 'tradition
+filtering is strict'), confirmed present on the unmodified prior commit via git stash --
+i.e. NOT introduced by this change, a content/data governance matter out of scope for a
+visual pass, flagged here rather than silently fixed or silently ignored. Full
+regression sweep (migration-check, migration-functional, stage1-check, stage1-bon-check,
+cross-lane-stress, mobile-check) clean. SEED_VERSION v355 -> v356.
+
+### Two real JS syntax errors in this file's own UI_REDESIGN array, found and fixed along the way
+
+Found while spot-verifying the Book of Needs ledger row just added: the whole
+UI_REDESIGN array failed to parse. Two earlier commits that same session (the .shared-
+office-nav-appearance-card fix doc, and the mobile-repair block doc) had used literal
+double quotes around short phrases ("Phase 4 deletes it", "office.css:2270/2274",
+"genuinely unclear whether the new shell supersedes it") inside already double-quoted JS
+string literals -- each pair silently closed the string early, turning the quoted phrase
+itself into invalid bare JS tokens. Confirmed via node --check on the extracted <script>
+content and via a live browser load (both failed with the exact "Unexpected identifier"
+errors this describes) before believing it was real, then confirmed fixed the same way
+after.
+
+Wrote a small scanner (walks name:"..."/note:"..." fields respecting \" escapes, flags
+any that close before the next , or }) to find every instance at once rather than fixing
+them one at a time by trial and error -- zero remaining after these three fixes. All
+three replaced with single quotes, matching this file's own established convention for
+quoting a phrase inside a string.
+
+NOT resolved in this commit, found while re-verifying live: the dashboard's own
+checkSeedVersion() now throws "Cannot read properties of undefined (reading 'list')"
+once the script actually parses -- a second, separate bug this syntax error had been
+masking. Flagged for the next session. (Now fixed -- see the 2026-09-25 continued entry
+below, which root-caused this as window.storage never having been a real API at all, not
+merely this syntax error's side effect.)
+
+SEED_VERSION bumped to `v356-2026-09-25-book-of-needs-design-pass`.
+
+---
+
 ## Session 2026-09-25 continued -- two housekeeping items properly root-caused and fixed:
 ## `window.storage` (never a real API) replaced with real `localStorage` in `audit-ledger.html`;
 ## the stale `tradition filtering is strict` audit assertion corrected to match the actual,

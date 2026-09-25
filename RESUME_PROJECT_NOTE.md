@@ -49,10 +49,17 @@ test assertion (a literal string match against old code phrasing), not a real fi
 real `prayerOptionAppliesToContext()` filters correctly, just phrased differently since a legitimate
 later addition (role-gating) was stacked on top. **Fixed the assertion**; 21/21 checks now pass. Full
 detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued, SEED_VERSION v356 → v357.
-Disclosed, not fixed: `AUDIT_GOVERNANCE_LEDGER.md` itself has no narrative entry for Phase 5 lanes
-2-3, Phase 6, or the Book of Needs design pass (its tail stopped at v338 despite SEED_VERSION already
-at v356 before this session) — a pre-existing gap, already disclosed once before (the v337 entry),
-now disclosed again rather than backfilled, for the same reason given there.
+**SUPERSEDED 2026-09-25 continued further — BACKFILLED, on Josh's direct instruction.** The gap
+above (`AUDIT_GOVERNANCE_LEDGER.md`'s tail stopped at v338 despite `SEED_VERSION` reaching v356) is
+now closed: seven entries covering v339 through v356 added, reconstructed directly from
+`audit-ledger.html`'s own contemporaneous dashboard rows (extracted via a safe `node -e` eval of the
+live array, not regex against escaped quotes) plus git history for the one version boundary
+(`v342`→`v343`) no row's own text stated explicitly. Every transition confirmed directly against
+`git show <hash>:audit-ledger.html` across the real commit range, not inferred from row order.
+Disclosed plainly at the top of the backfilled block: this is reconstruction from the existing
+record, not fresh live re-verification — it restates what each session already verified live, per
+that session's own account, not a new check performed now. `AUDIT_GOVERNANCE_LEDGER.md` now reads
+continuously from v337 through the current v357 with no gap.
 
 **BOOK OF NEEDS GOT ITS OWN DESIGN PASS, 2026-09-25 — AND TWO REAL JS SYNTAX BUGS IN
 `audit-ledger.html` WERE FOUND AND FIXED ALONG THE WAY.** After Phase 6 closed (entry directly
