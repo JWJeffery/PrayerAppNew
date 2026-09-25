@@ -1018,7 +1018,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Mobile: rail becomes a top strip, margin moves inline ────────────────── */
 
 @media (max-width: 768px) {
-    body.shell-v2 #main-content {
+    body.shell-v2 #main-content.app-primary-canvas {
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto auto minmax(0, 1fr) auto auto;
         grid-template-areas:
@@ -1029,10 +1029,20 @@ body.shell-v2 .uo-theme-button:focus-visible {
             "keep";
     }
 
+    /* "Top strip" only means anything if it's actually short: an office with
+       a long step list (East Syriac, Horologion) has 20-30+ .uo-rail-item
+       entries, and this media query was dead code until the specificity fix
+       just above it, so nothing ever caught that an uncapped rail crowds the
+       actual prayer text (.uo-page) down to a sliver on a long office.
+       Capped and independently scrollable, matching how .uo-page already
+       scrolls its own overflow rather than growing past its row. */
     body.shell-v2 .uo-rail {
         border-right: none;
         border-bottom: 1px solid var(--uo-hairline);
         padding: 14px 18px;
+        max-height: 34vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     body.shell-v2 .uo-margin {
@@ -1073,7 +1083,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Print: the page prints, the chrome does not ──────────────────────────── */
 
 @media print {
-    body.shell-v2 #main-content {
+    body.shell-v2 #main-content.app-primary-canvas {
         display: block;
         min-height: 0;
         background: #fff;
