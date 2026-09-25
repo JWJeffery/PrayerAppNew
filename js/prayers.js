@@ -425,6 +425,20 @@ function resetBookOfNeedsView() {
     document.getElementById('individual-prayers-section').style.paddingTop = '0';
     document.getElementById('prayer-selection').style.display = 'block';
     document.getElementById('prayer-select-list')?.classList.remove('open');
+
+    // FIXED 2026-09-25, found via Josh's direct report ("it does not work"): this
+    // screen's own Dark Mode checkbox was left at its bare, unchecked HTML default
+    // and never synced to the theme that's actually active -- selectMode() sets
+    // body.office-active unconditionally for every mode including 'prayers', so
+    // js/office-shell.js's applyTheme() (driven by the shell's own Auto/Light/Dark
+    // control) is already governing body.dark-mode/light-mode by the time this
+    // screen appears, same as any real office. The checkbox just never learned
+    // that. Clicking it still worked -- applyDarkMode() correctly writes the
+    // class either way -- but its STARTING state could show the opposite of
+    // what was actually on screen, so a click could silently confirm the
+    // current state instead of changing it, reading as "does nothing."
+    const darkToggle = document.getElementById('toggle-dark-book-of-needs');
+    if (darkToggle) darkToggle.checked = document.body.classList.contains('dark-mode');
 }
 
 window.applyBookOfNeedsContext = applyBookOfNeedsContext;

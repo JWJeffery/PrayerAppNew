@@ -349,8 +349,11 @@
         margin.setAttribute('aria-label', 'The margin');
 
         var keeping = el('div', 'uo-keeping');
-        keeping.appendChild(el('div', 'uo-keeping-hint',
-            '\u2191 \u2193 move by block \u00b7 space holds the place'));
+        /* Empty on purpose, per Josh's direct instruction ("the text is odd,
+           remove it") -- kept as an empty node rather than deleted outright so
+           .uo-keeping's justify-content:space-between still has two children
+           and .uo-keeping-actions stays pinned to the right edge as before. */
+        keeping.appendChild(el('div', 'uo-keeping-hint'));
         keeping.appendChild(el('div', 'uo-keeping-actions'));
 
         /* The floating "Back to Modes" button is moved INTO the ordo row rather
@@ -447,8 +450,33 @@
            and the Universal Office selector re-enters the shell from the
            splash. Neither fires a change event we can read, so re-resolve after
            any click once the app has had a tick to update its state. Cheap:
-           applyTheme is a class toggle and a few attribute writes. */
-        document.addEventListener('click', function () {
+           applyTheme is a class toggle and a few attribute writes.
+
+           FIXED 2026-09-25, found via Josh's direct report on the Book of
+           Needs dark-mode checkbox ("it does not work"): this fired after
+           EVERY click anywhere in the app, including a click on the old,
+           separately-owned [data-app-dark-toggle] checkboxes themselves.
+           applyDarkMode() (js/office-ui.js) would set body.dark-mode/
+           light-mode correctly, then within one tick this handler called
+           applyTheme(readTheme()) and silently reverted it back to the
+           shell's own theme decision -- the checkbox's own .checked state
+           was left showing the change while body's actual classes had
+           already been reverted out from under it, exactly the "two
+           systems fighting" failure this file's own applyTheme() comment
+           already names. Book of Needs is body.office-active (selectMode()
+           sets it unconditionally for every mode), so applyTheme() was
+           never gated out here the way it is on the true non-office
+           splash/Bible-browser screens. Narrowest fix: a click that
+           originated on one of those old-style toggles is excluded from
+           this re-resolve, leaving the Horologion/office-click tracking
+           this listener exists for untouched. */
+        document.addEventListener('click', function (ev) {
+            // .app-dark-toggle is the whole clickable pill (label + input,
+            // including its "Dark Mode" text) -- checked on the wrapper, not
+            // just [data-app-dark-toggle] itself, since a native label click
+            // anywhere in the pill reaches the label as ev.target, not the
+            // input inside it.
+            if (ev.target && ev.target.closest('.app-dark-toggle')) return;
             window.setTimeout(function () { applyTheme(readTheme()); }, 0);
         }, true);
     }
@@ -521,6 +549,176 @@
         var foot = el('div', 'uo-rail-foot',
             'I of ' + env.blocks.length);
         rail.appendChild(foot);
+
+        // FIXED 2026-09-25, found via Josh's direct report ("that never moves as the
+        // user scrolls... it seems to me that it ought to"): the dot and the "I of N"
+        // footer were both hardcoded to the FIRST item at render time and never
+        // touched again. computeRailWaypoints() (below) measures where each rail
+        // item's content actually begins on the page, and the scroll listener set up
+        // in watchRailScroll() keeps both in sync with real reading position from
+        // here on.
+        window.requestAnimationFrame(computeRailWaypoints);
+    }
+
+    var ROMAN_NUMERALS = [
+        [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'],
+        [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+    ];
+    function toRoman(n) {
+        var out = '';
+        ROMAN_NUMERALS.forEach(function (pair) {
+            while (n >= pair[0]) { out += pair[1]; n -= pair[0]; }
+        });
+        return out;
+    }
+
+    /* One waypoint per rail item: the Y offset (within .uo-page's own scrollable
+       content, not the viewport) where that item's content begins. Matched to a
+       same-text .rubric-text span where the lane emits one -- most blocks do. A
+       rail item whose lane rendered no distinct rubric for it (an Invitatory or a
+       Collect that only carries an inline all-caps heading inside its own .uo-block,
+       for instance) inherits its predecessor's Y offset rather than getting a
+       guessed one of its own: scrolling into that content still correctly advances
+       the dot to at least the nearest preceding item, never leaves it behind. */
+    var railWaypoints = [];
+    var railCurrentIndex = -1;
+
+    function computeRailWaypoints() {
+        var rail = document.querySelector('.uo-rail');
+        var page = document.querySelector('.uo-page');
+        railWaypoints = [];
+        if (!rail || !page) return;
+
+        var items = Array.prototype.slice.call(rail.querySelectorAll('.uo-rail-item'));
+        if (!items.length) return;
+
+        var rubrics = Array.prototype.slice.call(
+            document.querySelectorAll('#office-display .rubric-text'));
+        var pageTop = page.getBoundingClientRect().top - page.scrollTop;
+        var rubricPointer = 0;
+        var lastY = 0;
+
+        // FIXED 2026-09-25, found via Josh's live report on the Coptic Agpeya
+        // ("You didn't fix the scrolling ball"): the explanation-tooltip layer
+        // (applyExplanationLayer) nests an <span class="info-btn"> holding the
+        // literal character "i" INSIDE some .rubric-text spans, so a plain
+        // .textContent read picked up "Prayer of Esaias i" against a rail label
+        // of "Prayer of Esaias" -- almost every match failed, most items silently
+        // fell back to inheriting a neighbor's position, and only the two or
+        // three items that happened to have no tooltip got a real waypoint. Read
+        // only the rubric's own direct text nodes (excluding any nested element,
+        // tooltip marker or otherwise) so a tooltip never changes what counts as
+        // a match.
+        function ownText(el) {
+            var out = '';
+            for (var k = 0; k < el.childNodes.length; k++) {
+                if (el.childNodes[k].nodeType === 3) out += el.childNodes[k].textContent;
+            }
+            return out.trim();
+        }
+
+        items.forEach(function (item) {
+            var labelEl = item.querySelector('.uo-rail-label');
+            var labelText = labelEl ? labelEl.textContent.trim() : '';
+            var matched = null;
+            for (var j = rubricPointer; j < rubrics.length; j++) {
+                if (ownText(rubrics[j]) === labelText) {
+                    matched = rubrics[j];
+                    rubricPointer = j + 1;
+                    break;
+                }
+            }
+            var y = matched ? (matched.getBoundingClientRect().top - pageTop) : lastY;
+            railWaypoints.push({ item: item, y: y });
+            lastY = y;
+        });
+
+        updateRailCurrent();
+    }
+
+    /* How far below the top of .uo-page's own viewport a block must cross before
+       it counts as "current" -- matches where a reader's eye actually sits, not
+       the literal top pixel, so the dot advances a little ahead of a block
+       scrolling fully into view rather than lagging behind it. */
+    var RAIL_CURRENT_THRESHOLD_PX = 120;
+
+    function updateRailCurrent() {
+        if (!railWaypoints.length) return;
+        var page = document.querySelector('.uo-page');
+        if (!page) return;
+        var scrollY = page.scrollTop;
+
+        var current = railWaypoints[0];
+        var currentIndex = 0;
+
+        // FIXED 2026-09-25, found via Josh's live report (rail stuck on "The
+        // Collect" with "Closing (Noonday)" visibly on screen, at the very
+        // bottom of the page): a short final block can sit closer to the end
+        // of the document than RAIL_CURRENT_THRESHOLD_PX -- Noonday Prayer's
+        // own "Closing (Noonday)" waypoint measured ~5624px down a ~6102px
+        // page whose max scrollTop is only 5214px, so scrollY + threshold
+        // (5334px) could never reach it and the last item was permanently
+        // unreachable. At the true bottom of scroll (within 2px, matching how
+        // browsers already report an exact match despite subpixel rounding),
+        // the last item is current outright -- no page has content below its
+        // own final block to scroll to.
+        var atBottom = (scrollY + page.clientHeight) >= (page.scrollHeight - 2);
+        if (atBottom) {
+            current = railWaypoints[railWaypoints.length - 1];
+            currentIndex = railWaypoints.length - 1;
+        } else {
+            for (var i = 0; i < railWaypoints.length; i++) {
+                if (railWaypoints[i].y <= scrollY + RAIL_CURRENT_THRESHOLD_PX) {
+                    current = railWaypoints[i];
+                    currentIndex = i;
+                } else {
+                    break;
+                }
+            }
+        }
+
+        railWaypoints.forEach(function (wp) {
+            wp.item.classList.toggle('is-current', wp.item === current.item);
+        });
+
+        var rail = document.querySelector('.uo-rail');
+        var foot = rail ? rail.querySelector('.uo-rail-foot') : null;
+        if (foot) {
+            foot.textContent = toRoman(currentIndex + 1) + ' of ' + railWaypoints.length;
+        }
+
+        // FIXED 2026-09-25, per Josh's own wording live: "it needs to scroll
+        // with the content on the right." Making .uo-rail scrollable (see its
+        // CSS rule) only lets a reader scroll it manually; on a long order
+        // (30+ items is routine for East Syriac/Horologion) the highlighted
+        // "current" item could still scroll out of the rail's own visible
+        // area as the reader progresses through the office, exactly the
+        // "doesn't stay in sync" complaint. Scrolls the rail (only, via
+        // block:'nearest' -- never the page itself, which is what the user
+        // is actually scrolling) just enough to keep the current item
+        // visible, and only when it actually changes, so a reader who is
+        // manually browsing the rail by hand isn't fought on every scroll
+        // frame of the page.
+        if (currentIndex !== railCurrentIndex) {
+            railCurrentIndex = currentIndex;
+            if (current.item.scrollIntoView) {
+                current.item.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+            }
+        }
+    }
+
+    function watchRailScroll() {
+        var page = document.querySelector('.uo-page');
+        if (!page) return;
+        var ticking = false;
+        page.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(function () {
+                ticking = false;
+                updateRailCurrent();
+            });
+        });
     }
 
     /**
@@ -638,6 +836,12 @@
             window.setTimeout(function () {
                 pending = false;
                 applyTheme(readTheme());
+                // Content changed -- the rail's waypoint positions (computeRailWaypoints,
+                // used by the scroll-tracked current-item dot) may now be stale even
+                // without a fresh envelope event (e.g. a drawer toggle re-rendering the
+                // same office). Re-measured here as a safety net alongside the theme
+                // re-apply this observer already does for the same reason.
+                computeRailWaypoints();
             }, 0);
         }).observe(target, { childList: true, subtree: true });
     }
@@ -676,6 +880,7 @@
         watchOfficeChanges();
         watchRenderChanges();
         watchEnvelope();
+        watchRailScroll();
     }
 
     if (document.readyState === 'loading') {

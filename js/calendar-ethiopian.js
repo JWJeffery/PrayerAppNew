@@ -15,7 +15,12 @@
  * Method: Julian Day Number (JDN) approach.
  *   Converts the Gregorian date to a JDN, then applies the Alexandrian
  *   algorithm. This handles Pagume correctly (5 days normally, 6 in a
- *   leap year) and is valid across all historical and future dates.
+ *   leap year) and is valid for any date on or after the epoch below
+ *   (jdnToEthiopian uses JS's `%`, a remainder not a true modulo, so a
+ *   negative `r` -- any date before the epoch -- silently produces a
+ *   negative dayOfYear/monthIndex rather than erroring; not a concern
+ *   for a modern liturgical app, but "all historical dates" overstated
+ *   the real range).
  *
  * Epoch:
  *   1 Meskerem 1 EC = JDN 1724221 = 29 August 8 AD (Julian)

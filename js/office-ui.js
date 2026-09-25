@@ -640,6 +640,20 @@ function backToSplash() {
     // Remove office-active so body returns to its splash flex-centering state
     document.body.classList.remove('office-active');
 
+    // FIXED 2026-09-25, found via a real report (Josh: live screenshot of theuniversaloffice.com
+    // showing "The Universal Office" selector grid with every heading and card rendered nearly
+    // illegible -- dark ink on the screen's own permanently-dark background). Root cause:
+    // js/office-shell.js's applyTheme() only ever WRITES `uo-day` while body.office-active is
+    // present (by design, per its own comment), but nothing ever REMOVED it on the way back out.
+    // A day-themed office (uo-day added) followed by any return to the splash/mode-selection
+    // screens left uo-day stuck on <body> -- and since :root's `body.uo-day` rule sets the DAY
+    // ink colors unconditionally, not scoped to office-active, the always-dark entry/threshold
+    // screens then painted their text in near-black day-theme ink. Reproduced exactly (pixel-
+    // identical to Josh's screenshot) by forcing uo-day before calling this function. Fixed
+    // symmetrically with the office-active removal directly above, matching how this class is
+    // scoped everywhere else in the shell.
+    document.body.classList.remove('uo-day');
+
     // Clear any forced office override
     window._forcedOfficeId = undefined;
 
@@ -1427,6 +1441,7 @@ function showTraditionEntry() {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     selectTraditionFamily(null);
 }
@@ -1469,6 +1484,7 @@ function showUniversalModeSelection(persistDefault = false) {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     // 2026-09-23: this always shows BCP's threshold (updateUoThresholdDisplay() with no
     // argument), so any lane a previous showLaneThreshold() call left in window._uoThresholdMode
@@ -1507,6 +1523,75 @@ function ensureSplashForegroundVisible() {
 function scheduleSplashForegroundGuard() {
     window.setTimeout(ensureSplashForegroundVisible, 160);
     window.setTimeout(ensureSplashForegroundVisible, 850);
+}
+
+// ── Tradition availability (admin-controlled offline/paused traditions) ──────
+// Generalizes the Byzantine Horologion's 2026-09-25 manual pause into a data-
+// driven gate: data/tradition-availability.json is the single source of truth
+// for which whole traditions are reachable, read here and applied to the entry
+// cards + profile dropdown. See documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+const TRADITION_AVAILABILITY_URL = 'data/tradition-availability.json';
+
+// Fail-safe only: if the JSON can't be fetched (bad deploy, offline load, etc.),
+// isTraditionAvailable() falls back to this set for the entry-routing guard --
+// the one gate Josh called "the one that actually mattered" (a returning tester's
+// stale stored default silently reopening a paused lane) must never regress even
+// when the data-driven path can't run. The entry cards/dropdown need no such
+// fallback: their disabled/aria-disabled markup in index.html already ships
+// matching today's real state, so a failed fetch just leaves that baseline alone.
+const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set(['eastern-orthodox']);
+
+async function loadTraditionAvailability() {
+    try {
+        const response = await Promise.race([
+            fetch(TRADITION_AVAILABILITY_URL),
+            new Promise((_, reject) => window.setTimeout(() => reject(new Error('tradition-availability fetch timeout')), 1500)),
+        ]);
+        if (!response.ok) return null;
+        const data = await response.json();
+        return (data && data.traditions && typeof data.traditions === 'object') ? data.traditions : null;
+    } catch (err) {
+        console.warn('[tradition-availability] Could not load data/tradition-availability.json, entry screen keeps its shipped defaults:', err);
+        return null;
+    }
+}
+
+function isTraditionAvailable(tradition, availability) {
+    if (availability && Object.prototype.hasOwnProperty.call(availability, tradition)) {
+        return availability[tradition].available !== false;
+    }
+    return !TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK.has(tradition);
+}
+
+function applyTraditionAvailabilityToDOM(availability) {
+    if (!availability) return; // fetch failed/timed out -- leave index.html's shipped baseline as-is
+
+    document.querySelectorAll('[data-entry-tradition]').forEach(card => {
+        const entry = availability[card.dataset.entryTradition];
+        if (!entry) return;
+        const available = entry.available !== false;
+        card.classList.toggle('is-disabled', !available);
+        card.disabled = !available;
+        card.setAttribute('aria-disabled', available ? 'false' : 'true');
+        const subtitle = card.querySelector('small');
+        if (subtitle) {
+            subtitle.textContent = available
+                ? (card.dataset.availableSubtitle || subtitle.textContent)
+                : (entry.reason || subtitle.textContent);
+        }
+    });
+
+    const dropdown = document.getElementById('profile-tradition-default');
+    if (dropdown) {
+        Array.from(dropdown.options).forEach(option => {
+            const entry = availability[option.value];
+            if (!entry) return;
+            const available = entry.available !== false;
+            const baseLabel = option.dataset.availableLabel || option.textContent;
+            option.disabled = !available;
+            option.textContent = available ? baseLabel : `${baseLabel} — ${entry.reason || 'unavailable'}`;
+        });
+    }
 }
 
 function resolveEntryTraditionRoute(tradition) {
@@ -1617,11 +1702,21 @@ function resetUserTraditionDefault() {
     showTraditionEntry();
 }
 
-function initializeEntryRouting() {
+async function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
     scheduleSplashForegroundGuard();
+
+    // Awaited here, before anything is shown: the entry/mode screens are already
+    // hidden-by-default until this function decides which one to display (see the
+    // comment on #tradition-entry in index.html), so there is no flash-of-wrong-
+    // state risk in waiting on a same-origin JSON fetch (capped at 1.5s) at this
+    // point. Applies disabled/reason text to the entry cards and profile dropdown
+    // for any tradition the admin has paused, then feeds the same data into the
+    // stale-stored-default guard below.
+    const traditionAvailability = await loadTraditionAvailability();
+    applyTraditionAvailabilityToDOM(traditionAvailability);
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 
@@ -1645,7 +1740,22 @@ function initializeEntryRouting() {
     // entry flow, not just via a directly-set profile default from a prior visit. Routes
     // through getUserEntryDefault() -- the already-built, already-correct logic this
     // bypass was silently overriding -- instead of unconditionally skipping it.
-    const storedDefault = getUserEntryDefault();
+    let storedDefault = getUserEntryDefault();
+
+    // GENERALIZED 2026-09-25, engine-audit-sweep follow-up: this used to be a single
+    // hard-coded `if (storedDefault === 'eastern-orthodox')` block, written the same day
+    // Byzantine Horologion was paused. It's now data-driven via
+    // data/tradition-availability.json (isTraditionAvailable() above) so any tradition the
+    // admin panel marks unavailable gets a returning tester's stale stored default cleared
+    // here, not just Horologion specifically -- falling through to the entry screen (where
+    // the card is now shown disabled, per applyTraditionAvailabilityToDOM() above) rather
+    // than silently reopening a paused lane. See
+    // documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+    if (storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
+        clearUserEntryDefault();
+        storedDefault = null;
+    }
+
     if (storedDefault === 'universal') {
         showUniversalModeSelection(false);
         return;
@@ -3342,6 +3452,42 @@ async function renderHorologionOffice(officeKey) {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = dateLabel;
+    // ADDED 2026-09-25, spec section 6 (Byzantine/Slavic liturgical colour).
+    // Same "a single dot beside the day, never a wash over the page" contract
+    // the Anglican lane's own dot already implements (see renderBcpOffice()),
+    // reused here rather than duplicated blind: a saint/feast's own sourced
+    // liturgicalColorEOR wins when one is commemorated that day (matching the
+    // Anglican pattern where a Lesser Feast's own colour outranks the season
+    // default); Great Lent falls back to purple (this palette's dark/penitential
+    // entry -- Bulgakov's own scheme grades Lenten weekdays black-to-purple by
+    // day, a distinction this dot deliberately does not attempt, per its own
+    // "never a wash" contract); every other day falls back to gold, Bulgakov's
+    // own stated general-season default ("used when not using some other
+    // colour"). Only the six colours actually sourced get a dot -- anything
+    // else renders nothing, honest silence rather than an invented colour.
+    try {
+        const eorComms = await resolveCommemorations(currentDate, 'EOR', { includeEcumenical: false });
+        const eorColor = eorComms.find(s => s.liturgicalColorEOR)?.liturgicalColorEOR
+            || (HorologionEngine.getLiturgicalSeason(currentDate) === 'great-lent' ? 'purple' : 'gold');
+        const eorDotColor = {
+            gold:   '#c9a84c',
+            blue:   '#3a6ea5',
+            red:    '#9b2335',
+            purple: '#6b3070',
+            green:  '#4a7c59',
+            white:  '#f5f1e4',
+        }[eorColor];
+        if (eorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${eorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
     container.appendChild(subtitle);
 
     // Diagnostic banner when variable slots remain unresolved
@@ -6495,13 +6641,38 @@ async function renderCopticAgpeya() {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = officeSubtitleText;
-    // No seasonal dot here, deliberately: UI_REDESIGN_HANDOFF.md §6 requires a
-    // named, jurisdiction-specific witness before any Eastern lane gets one
-    // (Coptic usage is "thinner and less codified than the Western sequence,"
-    // per the spec's own wording), and none has been sourced yet -- see the
-    // ui:phase5-eastern-seasonal-colors-sourcing row on the dashboard. An
-    // invented dot would be exactly the fabrication §6 warns against; no dot
-    // is honest silence until that sourcing work happens.
+    // ADDED 2026-09-25, spec section 6. SOURCED, PARTIALLY WIRED -- disclosed,
+    // not silently shipped incomplete. Coptic practice has no codified
+    // per-feast colour scheme (confirmed directly: a Coptic liturgical-
+    // vestments researcher who checked the canons found none, beyond "the
+    // tunic must be white" -- tasbeha.org community discussion); the commonly-
+    // observed but non-canonical folk custom (white default, red for martyr
+    // commemorations, purple during fasting periods) was built anyway on
+    // Josh's direct instruction. White/red are wired below, from each day's
+    // own sourced liturgicalColorOOR (data/saints/sanctoral.json). Purple is
+    // NOT wired: it would need a Coptic fasting-period calendar (Great Lent,
+    // the Nativity/Apostles'/Virgin Mary fasts, on the Coptic church's own
+    // Alexandrian computus -- distinct from both the Western and Byzantine
+    // reckonings already built for other lanes) that does not exist anywhere
+    // in this codebase, confirmed by a repo-wide search before writing this.
+    // Building one is real, separate engine work, not a data-sourcing gap --
+    // flagged here and on the dashboard rather than faked with a guessed date
+    // range or silently dropped from the approved 3-colour scheme.
+    try {
+        const oorComms = await resolveCommemorations(currentDate, 'OOR', { includeEcumenical: false });
+        const oorColor = oorComms.find(s => s.liturgicalColorOOR)?.liturgicalColorOOR || 'white';
+        const oorDotColor = { white: '#f5f1e4', red: '#9b2335' }[oorColor];
+        if (oorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${oorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
     container.appendChild(subtitle);
 
     // env replaces the string-concatenated officeHtml entirely -- blocks/

@@ -1382,7 +1382,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
     // Returns: { tone: number (1–8) | null, brightWeek: boolean,
     //            toneLabel: string, paschaISO: string }
     // ──────────────────────────────────────────────────────────────────────
-    function _computeBaselineTone(dateObj) {
+    function _computeBaselineTone(dateObj, anticipatory = true) {
         const localDate = new Date(
             dateObj.getFullYear(),
             dateObj.getMonth(),
@@ -1410,10 +1410,20 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             };
         }
 
-        // Step 4: For Saturday, the liturgical day is Sunday (next day).
-        // Use the upcoming Sunday date to compute the tone.
+        // Step 4: For Saturday VESPERS specifically, the liturgical day is
+        // Sunday (next day) -- "Saturday evening belongs liturgically to
+        // Sunday" per this function's own rule (3) above. Gated on
+        // `anticipatory` (default true, i.e. every pre-existing caller keeps
+        // today's behavior unchanged) -- FIXED 2026-09-25, found by the
+        // engine-audit sweep: _resolveOrthrosSlots called this function
+        // un-gated and combined its Saturday-shifted tone with the raw
+        // (unshifted) dateObj.getDay()===6 to index the weekday canon/
+        // sessional-hymns/etc. corpora, so Saturday Orthros -- which belongs
+        // to the OUTGOING week, not the incoming one; only Vespers
+        // anticipates -- was silently rendered with next week's tone.
+        // _resolveOrthrosSlots now passes anticipatory=false.
         let toneDate = localDate;
-        if (localDate.getDay() === 6) {
+        if (anticipatory && localDate.getDay() === 6) {
             toneDate = new Date(localDate.getFullYear(), localDate.getMonth(), localDate.getDate() + 1);
         }
 
@@ -3488,7 +3498,10 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         ]);
 
         const dayOfWeek    = dateObj.getDay();
-        const toneResult   = _computeBaselineTone(dateObj);
+        // anticipatory=false: Orthros belongs to the day it's actually prayed
+        // on, including Saturday -- only Vespers anticipates Sunday. See the
+        // 2026-09-25 comment on _computeBaselineTone's Step 4.
+        const toneResult   = _computeBaselineTone(dateObj, false);
         const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
 
         // Hoist season booleans once — used by multiple slot branches below.
@@ -8881,11 +8894,25 @@ function getCalendarSummary(dateObj) {
     return toneResult.toneLabel;
 }
 
+// ADDED 2026-09-25, for the seasonal dot (spec section 6, Byzantine/Slavic
+// liturgical colour): getCalendarSummary() above already computes the raw
+// season internally but only ever returns a formatted display string, never
+// the season value itself. Rather than have the caller re-derive the season
+// by parsing that string (fragile -- 'Great Lent' is only a substring of the
+// summary, not the whole thing) or re-implement _computeLiturgicalSeason's
+// own logic a second time, this exposes the same already-computed value
+// directly.
+function getLiturgicalSeason(dateObj) {
+    const toneResult = _computeBaselineTone(dateObj);
+    return _computeLiturgicalSeason(dateObj, toneResult).season;
+}
+
 return {
     getOfficeSkeleton,
     resolveOffice,
     validateOfficePayload,
-    getCalendarSummary
+    getCalendarSummary,
+    getLiturgicalSeason
 };
 })();
 

@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=225">
+    <link rel="stylesheet" href="css/office.css?v=227">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
          (2026-09-24) made it the only office shell and dropped the flag; see
          documentation/UI_REDESIGN_HANDOFF.md section 9. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=327">
+    <link rel="stylesheet" href="css/office-shell.css?v=328">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
 
@@ -64,14 +64,14 @@
     <div id="entry-western-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Western Christian</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican" data-available-subtitle="TEC 1979 Book of Common Prayer Daily Office.">
             <span class="app-entry-tradition-code">ANG</span>
             <span>
                 <strong>Anglican</strong>
                 <small>TEC 1979 Book of Common Prayer Daily Office.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true">
+        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true" data-entry-tradition="latin-catholic" data-available-subtitle="Liturgy of the Hours.">
             <span class="app-entry-tradition-code">LC</span>
             <span>
                 <strong>Catholic</strong>
@@ -83,21 +83,21 @@
     <div id="entry-eastern-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Eastern Christian</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-coe-step="true">
+        <button class="app-entry-tradition-card" type="button" data-entry-coe-step="true" data-entry-tradition="church-of-the-east" data-available-subtitle="East Syriac Hudra office stream.">
             <span class="app-entry-tradition-code">COE</span>
             <span>
                 <strong>Church of the East</strong>
                 <small>East Syriac Hudra office stream.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="eastern-orthodox">
+        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true" data-entry-tradition="eastern-orthodox" data-available-subtitle="Byzantine Horologion offices.">
             <span class="app-entry-tradition-code">EO</span>
             <span>
                 <strong>Eastern Orthodoxy</strong>
-                <small>Byzantine Horologion offices.</small>
+                <small>Byzantine Horologion is paused for a content audit.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox" data-available-subtitle="The Coptic Agpeya, Book of Hours.">
             <span class="app-entry-tradition-code">OO</span>
             <span>
                 <strong>Oriental Orthodoxy</strong>
@@ -109,14 +109,14 @@
     <div id="entry-coe-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true" data-entry-back-to="eastern">Back</button>
         <div class="app-entry-panel-title">Church of the East</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="acoe">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="acoe" data-available-subtitle="Gregorian calendar, adopted 1964.">
             <span class="app-entry-tradition-code" style="font-size:0.62rem; letter-spacing:0.02em;">ACOE</span>
             <span>
                 <strong>Assyrian Church of the East</strong>
                 <small>Gregorian calendar, adopted 1964.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="ancient">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="ancient" data-available-subtitle="Julian calendar, the traditional reckoning.">
             <span class="app-entry-tradition-code">ACE</span>
             <span>
                 <strong>Ancient Church of the East</strong>
@@ -158,18 +158,15 @@
                 <button type="button" onclick="showUoThresholdGrid()" style="border:1px solid rgba(201,168,76,0.25); background:none; padding:12px 26px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.2em; color:rgba(230,220,196,0.65); text-transform:uppercase; cursor:pointer;">Another office</button>
             </div>
 
+            <!-- FIXED 2026-09-25, per Josh's direct instruction: the "PRAYING IN"
+                 list that used to sit here was a hardcoded, manually-maintained
+                 span list in this file, disconnected from what the app actually
+                 offers (it never automatically reflected the Horologion unwire
+                 above, for instance) and redundant with "Another office"'s own
+                 grid just below, which already lists the same lanes from their
+                 own real markup. Removed rather than made to compute live, per
+                 Josh's own choice. -->
             <div style="margin-top:26px; padding-top:16px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
-                <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:9px;">PRAYING IN</div>
-                <div style="display:flex; flex-wrap:wrap; gap:6px 0; font-size:16px; color:rgba(230,220,196,0.66);">
-                    <span>Anglican&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;BCP</span>
-                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
-                    <span>Coptic&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Agpeya</span>
-                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
-                    <span>Church of the East&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Hudra</span>
-                </div>
-            </div>
-
-            <div style="margin-top:14px;">
                 <button type="button" onclick="openUniversalBookOfNeeds()" style="background:none; border:none; color:rgba(230,220,196,0.4); font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; padding:4px 0;">Book of Needs</button>
             </div>
 
@@ -263,11 +260,11 @@
                 <span>Default tradition</span>
                 <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
                     <option value="">No tradition selected</option>
-                    <option value="anglican">The Episcopal Church</option>
-                    <option value="oriental-orthodox">Oriental Orthodoxy</option>
-                    <option value="church-of-the-east">Church of the East</option>
-                    <option value="eastern-orthodox">Eastern Orthodoxy</option>
-                    <option value="latin-catholic" disabled>Latin Catholic — Liturgy of the Hours pending</option>
+                    <option value="anglican" data-available-label="The Episcopal Church">The Episcopal Church</option>
+                    <option value="oriental-orthodox" data-available-label="Oriental Orthodoxy">Oriental Orthodoxy</option>
+                    <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
+                    <option value="eastern-orthodox" disabled data-available-label="Eastern Orthodoxy">Eastern Orthodoxy — paused for a content audit</option>
+                    <option value="latin-catholic" disabled data-available-label="Latin Catholic">Latin Catholic — Liturgy of the Hours pending</option>
                 </select>
             </label>
 
@@ -1072,13 +1069,13 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=312" defer></script>
-<script src="js/prayers.js?v=221"></script>
+<script src="js/office-ui.js?v=315" defer></script>
+<script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
-<script src="js/office-shell.js?v=298" defer></script>
+<script src="js/office-shell.js?v=301" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
-<script src="js/office-drawer.js?v=6" defer></script>
+<script src="js/office-drawer.js?v=7" defer></script>
 </body>
 </html>

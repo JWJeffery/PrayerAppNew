@@ -1,4 +1,12 @@
 {
+  "HAPGOOD1922": {
+    "label": "Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church, revised edition (1922)",
+    "path": "data/kalendar/source-witnesses/hapgood-service-book-1922.txt",
+    "sectionMapPath": "data/kalendar/source-witnesses/hapgood-service-book-1922-section-map.json",
+    "kind": "byzantine_service_book",
+    "authority_tier": "byzantine_governing_structure",
+    "notes": "Public domain (1922 revised edition, endorsed by Patriarch Tikhon; text unchanged in substance from the 1906 first edition per Hapgood's own front matter). GOVERNING SOURCE for Byzantine (Slavic recension) office STRUCTURE, approved by Josh 2026-09-04 -- see documentation/HOROLOGION_TESTING_PROTOCOL.md and data/explanations/byzantine.json for the full approval record. Full verbatim OCR text (44,029 lines) downloaded 2026-09-25 directly from the Internet Archive item 03510459.emory.edu (658pp Emory University scan) via `curl`, not via WebFetch's lossy small-model summarization -- confirmed complete (matches the archive.org metadata's stated file size exactly; spans from the title page through the closing Communion-of-Saints material, Cambridge/Riverside Press colophon at the true end of file). sectionMapPath is a machine-extracted (not hand-typed) map of the book's own running headers to page number and line number in this file, built 2026-09-25; it covers the book's own printed pp.5-571 (Great Vespers through Prayers in Preparation for Holy Communion) and stops before Appendix B, whose headings use a different typographic convention not yet mapped. CONFIRMED GAPS in this source, from Hapgood's own Preface (p.ix) and independently verified against this file's own running-header map: she explicitly states she omitted even the skeleton of the Midnight Service (Polunoshtchnitza/Polunotchnitza) and of Little (Small) Vespers; Small/Little Compline is likewise never a running header anywhere in this file. A separate, currently unidentified source is needed for those three offices' structure -- see documentation/HOROLOGION_SOURCE_AUDIT.md."
+  },
   "LFF": {
     "label": "Lesser Feasts and Fasts 2024",
     "path": "data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf",

@@ -392,7 +392,13 @@ const EastSyriacCalendar = (() => {
         // The season begins the Sunday that opens that week.
         const eliyaSliwaStart = addDays(qaytaStart, 49); // 7 × 7
 
-        const crossDay    = fixedFeastDate(easterYear, 9, 13, fixedFeastMode);
+        // FIXED 2026-09-25, found by the engine-audit sweep: this file's own
+        // documentation (line 57: "Holy Cross (Sliwa): Sep 14 Julian = Sep 27
+        // Gregorian") and the comment directly above both state Sep 14; the
+        // day argument here was 13, a genuine numeric transcription slip
+        // surfaced directly to users via the COE_FEAST_HOLY_CROSS
+        // commemoration note (resolving one day early in Julian mode).
+        const crossDay    = fixedFeastDate(easterYear, 9, 14, fixedFeastMode);
         const crossSunday = nextSundayOnOrAfter(crossDay);
 
         // Muse: begins when Eliya's SEVEN weeks are complete, not on Cross
@@ -419,6 +425,21 @@ const EastSyriacCalendar = (() => {
         // first Oct Sunday, or Cross Sunday falls after it), Muse is omitted.
         const useMuse = museStart < qudashIdtaStart;
 
+        // FIXED 2026-09-25, found by the engine-audit sweep: when museStart
+        // > qudashIdtaStart (useMuse false -- Eliya's fixed 7 weeks run past
+        // Qudash 'Idta's independently-fixed start, "as in 2022" per the
+        // comment above), Eliya-Sliwa's own end was still computed as
+        // addDays(museStart, -1) unconditionally -- past qudashIdtaStart, not
+        // clamped to it. getSeason() scans this array in order and returns
+        // the first match, so every date in that overlap window (7 real days
+        // in 2022; verified up to 21 days in other years) misclassified as
+        // 'eliya-sliwa' when the engine's own Qudash-Idta start says it
+        // should already be 'qudash-idta'. Clamping to whichever of
+        // museStart/qudashIdtaStart comes first removes the overlap in both
+        // the useMuse and !useMuse cases -- when useMuse is true,
+        // museStart < qudashIdtaStart already, so min() is a no-op there.
+        const eliyaSliwaEnd = addDays(museStart < qudashIdtaStart ? museStart : qudashIdtaStart, -1);
+
         const seasons = [
             { name: 'subara',      start: subaraStart,    end: addDays(denkhaStart,    -1) },
             { name: 'denkha',      start: denkhaStart,    end: addDays(saumaStart,     -1) },
@@ -426,7 +447,7 @@ const EastSyriacCalendar = (() => {
             { name: 'qyamta',      start: qyamtaStart,    end: addDays(shliheStart,    -1) },
             { name: 'shlihe',      start: shliheStart,    end: addDays(qaytaStart,     -1) },
             { name: 'qayta',       start: qaytaStart,     end: addDays(eliyaSliwaStart,-1) },
-            { name: 'eliya-sliwa', start: eliyaSliwaStart,end: addDays(museStart,      -1) },
+            { name: 'eliya-sliwa', start: eliyaSliwaStart,end: eliyaSliwaEnd },
         ];
 
         if (useMuse) {

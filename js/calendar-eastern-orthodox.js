@@ -8,8 +8,13 @@
  *   _verifyPascha
  * }
  *
- * Algorithm: Julian Paschalion (Meeus/standard Orthodox method),
- * then Julian→Gregorian conversion by adding the century-based offset.
+ * Algorithm: Julian Paschalion (Meeus/standard Orthodox method), then
+ * Julian→Gregorian conversion via Julian Day Number. julianDateToMs()
+ * converts a Julian-calendar (y,m,d) to an absolute JDN using the Julian
+ * calendar's own JDN formula (no Gregorian correction term); JDN is
+ * calendar-agnostic, so reading the resulting Date back out with JS's
+ * (Gregorian) getFullYear/getMonth/getDate already yields the correct
+ * Gregorian civil date -- no further offset is added or needed.
  *
  * NO private engine calls. Zero dependencies on other calendar modules.
  *
@@ -78,10 +83,19 @@
     const f = Math.floor((d + e + 114) / 31); // 3=March, 4=April
     const g = ((d + e + 114) % 31) + 1;
 
-    const offset   = julianToGregorianOffset(y);
+    // FIXED 2026-09-25, found by the engine-audit sweep: julianDateToMs()
+    // below converts the Julian-calendar (y,f,g) to an absolute Julian Day
+    // Number using the Julian calendar's own JDN formula (no Gregorian
+    // correction term). JDN is calendar-agnostic, so new Date(julianMs),
+    // read back with JS's (Gregorian) getFullYear/getMonth/getDate, is
+    // ALREADY the correct Gregorian civil date -- adding
+    // julianToGregorianOffset(y) again on top double-counted the offset,
+    // pushing every computed Pascha exactly `offset` days (13, for the
+    // 1900-2099 century) too late. Verified against this file's own
+    // _verifyPascha() / KNOWN_PASCHA_DATES: was 0/16 passing (every year off
+    // by exactly 13 days), now 16/16.
     const julianMs = julianDateToMs(y, f, g);
-    const gregMs   = julianMs + offset * 86400000;
-    const raw      = new Date(gregMs);
+    const raw      = new Date(julianMs);
     // Return clean local midnight
     return new Date(raw.getFullYear(), raw.getMonth(), raw.getDate());
   }

@@ -22,7 +22,364 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**BOOK OF NEEDS GETS A REAL GROUND IMAGE, 2026-09-25 continued further still (latest).** Josh:
+**HOROLOGION FULL AUDIT — PHASE 1 (RESOURCES), 2026-09-25 (latest).** Josh: "I want a full audit
+of the horologion. Start with determining what ought to be there. Let's pull together all of the
+resources that we need in order to do this correctly." **This is resource-gathering only — no
+Horologion content has been audited or changed yet.** Full detail:
+`documentation/HOROLOGION_SOURCE_AUDIT.md` (read this before starting the actual audit). The
+headline result: this lane's governing structural source, Hapgood's 1906/1922 *Service Book*
+(public domain), had only ever been consulted in truncated fragments across this project's history
+— traced this session to a `WebFetch`-tool artifact (it silently summarizes a document this long
+down to ~50-75 pages via its own small-model processing step), not a real reachability wall.
+Downloaded the complete 658-page text directly instead: now saved at
+`data/kalendar/source-witnesses/hapgood-service-book-1922.txt` (44,029 lines) with a
+machine-extracted page/line map at `...hapgood-service-book-1922-section-map.json`, both registered
+in `source-index.json`. Confirms Vespers, all four Hours, Typika, both Divine Liturgies, and Grand
+Compline are fully present (pp.5-164); confirms (her own Preface + zero running headers in the
+section map) that the Midnight Service, Little Vespers, and Small Compline are NOT in Hapgood at
+all. **Real, unresolved gap surfaced**: this app's Midnight Office/Small Compline skeleton files
+cite no named source edition whatsoever. Candidate identified precisely: Holy Trinity Publications'
+*The Unabbreviated Horologion or Book of the Hours* (Jordanville, NY, ISBN 978-0-88465-371-4) — the
+specific book already cited vaguely as "Jordanville Horologion (2008 edition)" throughout the
+existing corpus, but not actually held anywhere in the repo or Josh's Drive. **Needs Josh: does he
+have or can he get this (or another named edition) to supply pages from for the Midnight
+Office/Small Compline gap specifically**, matching the Maclean/O'Leary precedent. Also checked
+fresh: Lambertsen's Octoechos (governs hymnography, separate question from structure) still not
+under its announced free public license as of this session — no change since 2026-09-04. Proposed
+audit order once confirmed: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins
+(all covered by Hapgood already in hand), Midnight Office/Small Compline once sourced. **Not
+started.**
+
+**ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25.** Resolves the "TODO, next
+session" note below (kept here, struck through in spirit, for history). Design confirmed with
+Josh first (whole traditions only, JSON-backed, admin UI) via `AskUserQuestion`, written up in
+`documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md`, then built after Josh said "proceed."
+New `data/tradition-availability.json` (seeded with today's real state) replaces the three
+hand-edited gates from the original Horologion unwire with one file, read by `index.html`'s entry
+cards + profile dropdown and by `js/office-ui.js`'s now-`async initializeEntryRouting()`. The
+original hard-coded `eastern-orthodox`/`latin-catholic` disabled markup in `index.html` was
+deliberately **kept**, not removed — it's the fail-safe: if the JSON can't be fetched, the entry
+screen simply keeps shipping today's real state, and a hard-coded fallback set still protects the
+stale-stored-default routing guard (the case Josh called "the one that actually mattered") even
+then. New "Tradition Availability" panel in `admin/admin.html` lets Josh toggle a tradition
+paused/available (prompting for a reason) and copy out updated JSON to paste back into the real
+file — **there is no backend**, so this cannot push changes to testers by itself; the panel says so
+on-screen. Verified live in headless Chromium: fresh load, a stale-EO-default returning tester
+(cleared correctly), a valid-Anglican-default returning tester (correctly not cleared), the JSON
+fetch forced to fail (fallback still protects EO), and the admin panel's toggle/restore/JSON-output
+round-trip. Cache-bust `office-ui.js v314 -> v315`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (admin tradition-availability control panel), SEED_VERSION
+v368 → v369.
+
+**"THE ORDER" RAIL SCROLL, FIXED 2026-09-25.** Resolves the flag below (kept for history). Root
+cause confirmed live before fixing: `.uo-rail` shares a CSS grid row with `.uo-page`, and never got
+the `overflow-y: auto` + `min-height: 0` pair `.uo-page` already uses to scroll its own overflow
+within `#main-content`'s fixed, non-scrolling height — `.uo-rail` still had the grid default
+`min-height: auto`, so a long order (33 items measured on Church of the East Ramsha) just got
+clipped by `#main-content`'s own `overflow-y: hidden` with no scrollbar reachable at all. Same fix
+applied (`css/office-shell.css`). Also, per Josh's own wording ("scroll *with* the content," not
+just "be scrollable"): `updateRailCurrent()` (`js/office-shell.js`) now auto-scrolls the rail to
+keep the highlighted "current" item visible as the reader scrolls the office, only when it actually
+changes so it never fights a reader manually browsing the rail by hand. Verified live in headless
+Chromium: the 33-item rail now scrolls, the highlighted item follows page scroll into view within
+the rail, and a short rail (Anglican, 16 items, everything already fits) shows no regression.
+Cache-bust `office-shell.css v327 → v328`, `office-shell.js v300 → v301`. Full detail:
+`AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued ("The Order" rail fixed),
+SEED_VERSION v369 → v370.
+
+**FLAGGED BY JOSH, NOT YET INVESTIGATED — "The Order" rail doesn't scroll with the office content,
+2026-09-25.** (Original note, kept for history:) Josh, explicitly "to fix later": on Church of the
+East (screenshot showed Wathar Friday), the left "THE ORDER" rail lists more items than fit in the
+visible rail height, and the rail itself does not scroll — "The order....is longer than this....it
+needs to scroll with the content on the right."
+
+**"WHAT THE FATHERS SAY" — INVESTIGATED, CONFIRMED NOT A BUG (a real scope gap, awaiting Josh's
+direction), 2026-09-25.** Follow-up asked Josh directly what specifically looked wrong (position,
+or content); his answer: "The content is missing. It should not be. It used to work..." — a content
+question, not the positioning question I'd first guessed at. Investigated both:
+
+*Positioning*: reproduced live, confirmed the top-right floating placement is deliberate, working
+`mode: "study"` code in `positionContextPanel()` (`js/bible-browser/bible-browser.js`) — not an
+accidental `position:absolute`-escapes-its-ancestor bug like the other floating-panel fixes this
+session. No change made; nothing was actually wrong here.
+
+*Missing content*: root-caused via `data/commentary/patristic-witness-runtime/manifest.json`, whose
+own `runtimePolicy` discloses `"includedBooks": ["hebrews"]` — **only Hebrews has ever been in the
+browser runtime**, out of 81,644 entries held in the full local source-intake output
+(`.external/generated/patristic-witness`, gitignored, not present in a fresh clone). Confirmed via
+`git log --follow`: `scripts/build-patristic-witness-runtime.mjs`'s `runtimeBooks` array was
+hardcoded to `["hebrews"]` from its very first commit (2026-06-03), with the script's own generated
+comment "initial proof slice; expand book set intentionally" and the manifest's own stated reason
+("Do not ship the full 170MB+ patristic source-intake output into web-release until paging/indexing
+is designed") — this was **never a regression**. Live-verified both sides directly through
+`UniversalOfficePassageGuide.loadFathersForRanges()`: Hebrews 1:1-14 correctly returns 188 real
+entries (Clement of Alexandria first, cards render correctly); Genesis 42:1-4 correctly returns 0
+with the honest "has not been added yet" disclosure — exactly the coded, intended behavior for any
+book outside the one-book runtime slice. Josh's "it used to work" almost certainly reflects testing
+on Hebrews previously, not a regression on Genesis. **Expanding book coverage is a real, scoped
+content decision (which books, how much size to add to the web-release bundle, whether the
+`.external` source-intake needs re-fetching), not a quick fix — asked Josh which books/how much
+before touching anything.** Nothing changed in code for this item.
+
+**Josh's decision, same session**: leave it exactly as-is for now (Hebrews-only, current "has not
+been added yet" message unchanged) — "We will return to this later." Do not expand book coverage,
+do not touch the UI message, without Josh raising this again.
+
+**THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still.** Josh said
+"Proceed with the rest of the que[ue]" -- resuming item 5 of his own original ordered plan, the last
+unstarted phase. Audited (CODE, not content) the 9 engine/calendar files the dashboard had carried as
+amber "not engine-audited this session" since 2026-07-10: `calendar-eastern-orthodox.js`,
+`calendar-east-syriac.js`, `calendar-ethiopian.js`, `horologion-engine.js`, `menaion-resolver.js`,
+`orthros-eothinon-engine.js`, `coe-eligibility.js`, `byzantine-paschalion.js`, plus one file from
+`js/octoechos/*`. Used 6 parallel background subagents (each required to reproduce every claimed bug
+by actually running the code, not just reading it), then independently re-verified every finding
+myself before fixing anything. **Four real bugs fixed**: (1) Eastern Orthodox Pascha computed 13 days
+too late -- a double-counted Julian/Gregorian offset (`_verifyPascha()` self-check went 0/16 -> 16/16)
+-- severe but currently unreachable live, since `getEOSeasonRanges()`, its only caller, is itself
+never called anywhere. (2) East Syriac Eliya-Sliwa season overlapped Qudash 'Idta by up to ~21 days
+in some years -- an unclamped season-end date. (3) East Syriac Holy Cross Day was one day off
+(Sep 13 instead of the file's own documented Sep 14 Julian), resolving that feast a day early. (4)
+Horologion Saturday Orthros was silently rendered with next week's tone instead of its own -- the
+Vespers-only "Saturday anticipates Sunday" rule was being applied to Orthros too. Also fixed a minor
+`rank:0`-coerced-to-null inconsistency in `menaion-resolver.js` (currently inert, no rank-0 entries
+exist yet). **Investigated and correctly determined NOT a bug**: a subagent flagged
+`_finalizeOrthrosReleaseHonestyPatch` (Horologion) as discarding a "complete" Sunday sessional-hymns
+corpus -- checked the underlying data file myself, which discloses its own texts as "provisional...
+pending source confirmation," so the override is this project's own unsourced-content rule working
+correctly, not a defect. Implementing the agent's suggested fix would have been a real regression.
+Confirmed clean: `byzantine-paschalion.js`, `coe-eligibility.js`, `orthros-eothinon-engine.js`'s core
+arithmetic. Two low-priority, currently-dead-code findings left unfixed and disclosed on the
+dashboard rather than silently ignored. None of the 5 touched files carry a cache-bust param, so none
+needed bumping. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (the
+engine audit sweep), SEED_VERSION v367 -> v368. This closes out the last item of Josh's original
+ordered plan. **REDEPLOYED 2026-09-25 continued further still** -- `npm run release:web` rebuilt
+and sent to Josh, folded together with the admin tradition-availability panel and the "Order" rail
+scroll fix (both built after this entry was originally written; see their own entries above).
+`npm run audit:admin-release-support` and `npm run audit:bible-browser-smoke` both passed against
+the rebuild; `data/tradition-availability.json` and the updated `admin/admin.html` confirmed present
+in `web-release/`. Horologion remains gated (unaffected by this batch -- still pending its own
+content audit per Josh's "temporary unwire" instruction).
+
+**BIBLE READER: HIGHLIGHT COLORS AND A GENUINELY UNREACHABLE HEADER, 2026-09-25 continued yet
+further still still.** Josh sent a screenshot, then "Highlighting colors....all brown?"
+**Colors**: all 5 highlight swatches (yellow/pink/green/blue/purple) rendered identically brown —
+`#bible-selection-toolbar button` (an ID+type selector, meant to bronze-style the Highlight/Note/
+Fathers action buttons) beat the swatch color classes on specificity regardless of source order,
+since the swatches are themselves `<button>` elements in that same toolbar. Fixed with
+`:not(.bible-highlight-swatch)`. **Header**: investigating the Dark Mode toggle's own odd floating
+position surfaced a much bigger, real, pre-existing bug — the ENTIRE Bible Reader header (title,
+translation/search controls, the toggle, Back to Modes) was silently unreachable on every load, not
+merely misplaced. Root cause: the base `body{}` CSS rule unconditionally centers its flex child
+and hides overflow, with no override for `.office-active`; the real office sections dodge this by
+being `position:fixed` (removed from body's layout entirely), but `#bible-browser-section` never
+got that treatment, so any passage taller than one viewport got vertically centered with its top
+half — the whole header — pushed above `y:0`, unreachable since a page can't scroll negative.
+Confirmed via a screenshot at `scrollY:0` before touching any code: header already invisible on
+the very first render. Fixed by giving `openBibleBrowser()`/`closeBibleBrowser()` the same kind of
+body-style reset `selectMode()` already does for every real office. **Verified live**: full header
+now visible and reachable on open; normal scrolling still works; the Dark Mode toggle sits
+correctly in-flow (same root cause already fixed once this session on Book of Needs' identical
+control) and works; close/reopen correctly restores the splash's own centering. Cache-bust
+`office.css v226 → v227`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+continued (Bible Reader highlight colors and header reachability), SEED_VERSION v366 → v367.
+
+**RAIL DOT FOLLOW-UP: TWO REAL BUGS THE FIRST PASS MISSED, 2026-09-25 continued yet further
+still.** Josh redeployed the batch below and found, live, that the rail-dot fix was genuinely
+broken on two of three lanes plus a real edge case on the third. **(1)** "You didn't fix the
+scrolling ball on the left on the Agpeya" / "its super bugggy in the church of the east" — root
+cause: the explanation-tooltip layer nests a small "i" icon span INSIDE many `.rubric-text`
+elements, so `computeRailWaypoints()`'s exact-text match against the plain rail label failed for
+almost every tooltipped item (most of Coptic Agpeya's and East Syriac's), silently inheriting a
+neighbor's position instead of getting its own. Fixed with `ownText()` — reads only a rubric's own
+direct text nodes, ignoring any nested element. **(2)** BCP Noonday Prayer stuck on "The Collect"
+at the absolute bottom of scroll, with "Closing (Noonday)" clearly on screen — root cause: a short
+final block's own waypoint sat further down than the maximum reachable `scrollTop + threshold`
+could ever reach. Fixed: `updateRailCurrent()` now snaps to the last item outright once the page
+is scrolled to its true bottom. **Verified live across the full scroll range on all three lanes** —
+BCP Noonday now correctly reaches "Closing (Noonday)" (VIII of 8); Coptic Agpeya and East Syriac
+both progress smoothly through every distinct item to their real final one. **Separately**, removed
+the threshold splash's hardcoded "PRAYING IN" tradition list — Josh asked why it was still there;
+it was disconnected from what's actually available (never reflected the Horologion unwire) and
+redundant with the "Another office" grid right below it; asked rather than assumed, Josh chose to
+remove it. Cache-bust `office-shell.js v299 → v300`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (rail dot follow-up), SEED_VERSION v365 → v366.
+
+**OFFICE SHELL / DRAWER / BOOK OF NEEDS UI BATCH -- EIGHT REAL FIXES, 2026-09-25 continued yet
+further.** Josh sent a batch of live screenshots; asked for the whole batch fixed
+before redeploying ("When all the UI issues are resolved, resurface a web deployment" — not
+redeployed yet as of this entry, more items were still incoming). Each investigated to a real root
+cause:
+1. **Keeping-bar hint text removed** — turned out to describe a keyboard "move by block" feature
+   that was never actually built (grepped the whole app for key handlers, found none).
+2. **Rail dot now tracks real scroll position** — was hardcoded to item 0 forever, "I of N" footer
+   likewise frozen at "I". Built real waypoint tracking (`computeRailWaypoints()`/
+   `updateRailCurrent()`, `js/office-shell.js`) matching rail labels to `.rubric-text` spans by
+   text, since the rail and the rendered page don't correspond 1:1 by DOM position.
+3. **Book of Needs Dark Mode toggle: two separate real bugs.** Position — the shared corner-pin CSS
+   had no positioning context to pin to on this redesigned screen, so it escaped to the full
+   viewport corner; taken out of absolute positioning, placed in-flow. "Does not work" — (a) the
+   checkbox's own checked state was never synced to the actual theme, AND (b) a genuine "two
+   systems fighting" bug: `js/office-shell.js`'s global click listener (built for Horologion
+   office-change tracking) was silently reverting the checkbox's own theme change within one tick,
+   since Book of Needs carries `body.office-active` the same as any real office. Fixed by excluding
+   `.app-dark-toggle` clicks from that listener.
+4. **Commemoration card now follows dark mode** — its background was hardcoded to a fixed light
+   gradient with `!important`, ignoring the `--app-surface`/`--app-surface-strong` variables this
+   same file already defines correctly for dark mode; only the text color was ever theme-aware.
+5/8. **Drawer: "How you keep it" renamed to "Options" and moved before "Which office"** — per
+   Josh's own reasoning, Options can change what Which Office even shows (East Syriac's Cathedral/
+   Monastic choice).
+6. **"Borrowed Devotions" renamed to "Additional Devotions," each item now shows its tradition** —
+   sourced from `components/ecumenical.json`/`coptic.json` where recorded (Ignatian, Byzantine
+   Orthodox — including a 2026-09-21 correction carried forward, not the misleading toggle id);
+   Angelus/Trisagion flagged in-code as common-knowledge attribution, not yet a citation this
+   project has verified itself.
+7. **"Further Prayer Book Choices" reordered** — daily-applicable options now precede the
+   single-day alternate-reading toggles, not the reverse.
+
+All eight verified live in headless Chromium, zero console errors beyond the pre-existing
+sandboxed font-CDN failure. Cache-bust `office.css v225→v226`, `prayers.js v221→v222`,
+`office-shell.js v298→v299`, `office-drawer.js v6→v7`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (office shell/drawer/Book of Needs UI batch), SEED_VERSION v364 →
+v365.
+
+**REAL LIVE BUG: STALE `uo-day` CLASS MADE THE ENTRY SCREENS NEARLY ILLEGIBLE, 2026-09-25
+continued still further.** Josh sent a live screenshot of theuniversaloffice.com's
+"Universal Office Selector" grid with every heading and card barely visible — "Holdup! This is a
+problem!" — then confirmed "Its doing it in the codespace as well" once asked, ruling out a stale-
+deployment theory before it was even proposed (both environments run this same repo). Root-caused:
+`js/office-shell.js`'s `applyTheme()` only ever ADDS the `uo-day` class to `<body>` while
+`office-active` is present, but nothing ever REMOVED it on the way back out — and `:root`'s
+`body.uo-day` rule sets the DAY theme's dark ink colors unconditionally, not scoped to
+`office-active`, while the entry/threshold/mode-selection screens are *always* dark by design. So
+visiting any day-themed office and then returning to those screens left near-black day-ink text
+painted over a screen that never stops being dark — reproduced pixel-identical to Josh's own
+screenshot before touching any code. **Fixed**: `document.body.classList.remove('uo-day')` added
+to all three functions that already remove `office-active` on exit — `backToSplash()`,
+`showTraditionEntry()`, `showUniversalModeSelection()` (`js/office-ui.js`). Live-verified, 5
+checks: an active day office still correctly keeps both classes together; all three exit paths
+now leave full-contrast text; re-entering an office afterward still works normally. Cache-bust
+`office-ui.js v313 -> v314`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+(this session, `ui:stale-uo-day-class-fixed`), SEED_VERSION v363 → v364.
+
+**RESOLVED — see "ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25" near the top of
+this file.** (Original note, kept for history:) Josh: "we need to build an admin control panel that
+allows us to take certain offices or whole offices offline with a click." Today's Horologion unwire
+(entry below) was done by hand across three files (`index.html` ×2, `js/office-ui.js`) — real,
+verified, but manual and easy to get wrong or forget a spot next time.
+
+**BYZANTINE HOROLOGION TEMPORARILY UNWIRED FROM TESTERS, 2026-09-25 continued still further.**
+Josh, moved to top of queue mid-session: "I am not providing my testers with access
+to The Horologion, because it has not been fully audited and corrected... gray it out like you do
+with 'Catholic'... then resurface the web." Found and gated THREE reachable paths, not one: (1)
+the entry-card picker (`index.html`) — "Eastern Orthodoxy" now `is-disabled`/`disabled`/
+`aria-disabled`, same pattern as "Catholic"; (2) the profile "Default tradition" dropdown — its
+`eastern-orthodox` `<option>` now `disabled`; (3) **the one that actually mattered** — a
+returning tester whose browser already had `eastern-orthodox` saved as their entry default would
+otherwise skip the entry screen entirely and land straight in Horologion every time
+(`getUserEntryDefault()` auto-routes past the picker for a stored default). Added a guard in
+`initializeEntryRouting()` (`js/office-ui.js`) that clears that stale stored default and falls
+through to the normal (now-disabled-card) entry screen instead. Confirmed the "Another office"
+grid never had a Horologion card to begin with, and no `?entry=`/`?mode=` URL shortcut exists for
+it — no fourth gate needed. **Live-verified in headless Chromium, including the returning-user
+case specifically** (pre-seeded `eastern-orthodox` into localStorage, reloaded, confirmed
+`office-active` false / `selectedMode` null / entry screen shown / stale profile cleared) — zero
+console errors. UI-level pause only, no Byzantine content or code touched — dashboard section VI
+carries a note marking exactly what to reverse and where. Cache-bust `office-ui.js?v=312 -> v313`.
+Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Byzantine Horologion
+temporarily unwired from testers), SEED_VERSION v362 → v363.
+
+**BOOK OF NEEDS DASHBOARD ROWS CLARIFIED, 2026-09-25 continued yet further.** Fourth item
+of Josh's ordered plan: figure out what the two stale "unclear whether content exists" dashboard
+rows actually refer to. They were section VII, "The Book of Needs" -- simply never updated since
+an early point when only governance scaffolding existed, even as the feature grew into a fully-
+built, role-gated, imaged 103-prayer corpus. Ran all 10 `audit:book-of-needs-*` scripts live: 7
+pass clean, 3 fail, all three tracing to one root cause -- 25 `coe-maclean-*` (East Syriac,
+Maclean-sourced) prayers exist in `data/prayers.json` with real taxonomy in `js/prayers.js`, but
+were never given an `<option>` in `index.html`'s picker (so a user can never see or select them,
+regardless of role) and were never added to the source-governance provenance inventory either.
+Replaced the 2 vague rows with 9 accurate per-script rows. **Not fixed this pass** — Josh's plan
+treats "figure out what these refer to" as its own step; the 25-prayer gap is now a well-scoped,
+visible red item, not a mystery. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+continued (what needs:content/needs:governance actually refer to), SEED_VERSION v361 → v362.
+
+**ETHIOPIAN SENKESSAR: FULL 13-MONTH REAUDIT, 2026-09-25 continued yet further.** Third
+item of Josh's ordered plan. Previously only Ginbot days 1-17 had been checked against the
+project's Budge source PDF, finding hallucinated and displaced saints; the other 12 months (plus
+the intercalary Pagumen) were flagged amber, "not yet audited." **Built the full 366-day source
+manifest first** (blocker-doc step 1, `documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_
+PROVENANCE_AUDIT_BLOCKER.md`) — installed poppler-utils (not previously in the container),
+extracted all 773 pages of `data/kalendar/source-witnesses/ethiopian-synaxarium.pdf` with
+`pdftotext -layout`, verified the extraction against the PDF's own printed table of contents,
+parsed it into a genuine day-indexed manifest covering all 366 days with zero gaps or
+duplicates. **Then cross-checked every named figure in every day's title across all 12 ordinary
+months** (360 days) against the correct day's Budge text — fuzzy-matched to absorb ordinary
+spelling variance without losing precision, and with the corpus's own `senkessar-index.json`
+`key_feasts` days (Michael, Mary, the Cross, etc. — a separate, non-Budge liturgical convention)
+excluded rather than judged. **Result, considerably worse than Ginbot 1-17 alone suggested**: of
+518 ordinary-day names checked, only 67 (13.9%) are attested by Budge on their claimed day; 192
+(37%) are real Budge figures on the WRONG day; 223 (43%) can't be found anywhere in the full
+366-day source at all — present in every one of the 12 months, not isolated to Ginbot. **A second,
+distinct finding**: the corpus's own apparent day-of-month recurring fillers contradict
+themselves across different months (e.g. day 2 is "Job the Patriarch" in five months but "John
+the Baptist" in Meskerem and Senne; day 13 is "Basalide" in four months but "Arsenius (Monthly)"
+in three others; day 22's "Isaac of Nineveh" appears in eight months, two of them explicitly
+tagged "(Monthly)," but is simply absent in four more) — strong evidence these were generated
+per-month rather than drawn from one real, consistent monthly-commemoration source. **Hand-
+verified, not automation alone**: Hedar days 2-5 read directly against Budge's text confirm zero
+overlap between the corpus's claimed saints (Job, Zechariah, John the Apostle, Philip the
+Apostle) and Budge's actual figures for those four days (Abba Sanitius & Abba Peter, Saint
+Cyriacus, Saints Epimachus & Azarianus, Saint Longinus); Tekemt day 1 likewise confirms the
+corpus's claimed Adam and Kyriakos are absent from Budge's real day-1 text (Anastasia — correctly
+present in the corpus — plus Haritan/Cheriton, Susannah, and Mary the sister of Lazarus, none of
+whom made it into the corpus entry). **Pagumen (13th month) is a notable exception** — checked by
+hand given its small size, meaningfully better sourced than the other 12 (Titus the Apostle,
+Archangel Raphael, and Abba Benjamin all exact matches to Budge). **Disclosed, not faked**: this
+is a name-level cross-check across the whole corpus, not the full per-paragraph classification
+taxonomy the blocker doc's resolution sequence calls for; the fixed-monthly-feast days were
+excluded rather than judged, since no named source for that separate calendar exists in this
+project yet; no remediation was performed — confirmed via grep that this corpus remains parked,
+not wired into any live-rendering UI, so there is no current production exposure. The blocker
+doc's own scheduling rule (defer active remediation until the Catholic offices are complete) is
+unchanged; only the audit's completeness and severity assessment is updated. Dashboard
+`eth:senk:other` moved amber → red, matching `eth:senk:ginbot`. Full detail:
+`AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Ethiopian Senkessar full
+reaudit), SEED_VERSION v360 → v361.
+
+**EASTERN SEASONAL-COLOUR SOURCING, 2026-09-25 continued further still.** First item of
+Josh's explicit ordered plan ("Eastern seasonal-colour sourcing — Yes, please conduct this. Once
+this is done, I want to use the web deploy feature... Then, we will reaudit the Ethiopian
+Synaxarium... Then you will figure out needs:content/needs:governance... Then the engine audit
+sweep."). Two governance decisions Josh made directly, via `AskUserQuestion`, before any building
+began: Coptic gets the non-canonical white/red/purple folk custom built anyway despite having no
+codified scheme ("Build the loose 3-color folk custom anyway"), and Byzantine gets full rigorous
+scope, not a partial dot ("Full scope: build the feast-category classifier first"). **Byzantine**:
+sourced a real named witness — Bulgakov's *Reference Book for Priestly Church Servers*
+(Russian Synodal-era) for the standard 6-color Slavic/Byzantine scheme (gold/blue/red/purple/
+green/white). Classified all 381 EOR-tagged `data/saints/sanctoral.json` entries via the Orthocal
+MCP tool (`search_saints`'s `full_name` field carries reliable classification signal, e.g.
+"Bishop of X" = hierarch), writing new `liturgicalColorEOR`/`liturgicalColorEORSource` fields
+rather than overwriting the pre-existing ANG-only `liturgicalColor`/`liturgicalColorSource` pair
+(30 entries already carried that field from CPG sourcing — a real schema collision, resolved by
+namespacing rather than clobbering). Final distribution: 147 red / 133 gold / 72 green / 21 blue /
+4 white / 2 purple, 42 left uncorroborated rather than guessed. Great Lent's season-level purple
+fallback (for days with no color-bearing commemoration) required a new `getLiturgicalSeason()`
+export from `js/horologion-engine.js`, built on the engine's existing internal
+`_computeLiturgicalSeason()`. Wired live into `renderHorologionOffice()` (`js/office-ui.js`) as a
+small colored dot next to the date, same visual mechanism the Anglican BCP lane already used.
+**Coptic**: research confirmed — not merely failed to find — that Coptic practice has no codified
+per-feast color scheme beyond "the tunic must be white" (a named tasbeha.org researcher's finding);
+built the folk custom Josh approved anyway from 140 of 173 OOR-tagged entries (Coptic and
+null-subtradition only — the 33 Armenian/Syriac/Ethiopian-subtradition entries deliberately
+excluded, out of scope), wired white/red into `renderCopticAgpeya()`. Purple/fasting days are
+**not** wired — disclosed rather than faked, because no Coptic fasting-calendar engine exists yet
+to drive it. Live-verified extensively in headless Chromium: Great Lent with/without a
+color-bearing commemoration, a martyr day, a Theotokos feast, Coptic default and martyr days, a
+full four-lane regression sweep, and the `?shell=v1` variant — all clean, zero console errors.
+Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Eastern seasonal-colour
+sourcing), SEED_VERSION v359 → v360.
+
+**BOOK OF NEEDS GETS A REAL GROUND IMAGE, 2026-09-25 continued further still.** Josh:
 "We've been adding muted graphics behind everything. Let's do that here as well. However, we need
 to do imagery that is more or less ecumenical across the apostolic traditions." The design pass
 had deliberately shipped none — its own CSS comment said Book of Needs "has no one tradition of
