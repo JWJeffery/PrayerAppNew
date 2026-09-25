@@ -22,7 +22,76 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**PHASE 6 IS NOW COMPLETE, 2026-09-25 (latest).** Josh asked directly whether the UI refactoring
+**BOOK OF NEEDS GOT ITS OWN DESIGN PASS, 2026-09-25 (latest) — AND TWO REAL JS SYNTAX BUGS IN
+`audit-ledger.html` WERE FOUND AND FIXED ALONG THE WAY.** After Phase 6 closed (entry directly
+below), Josh said "Give Book of Needs its own design pass now too." Researched first, per standing
+practice: confirmed via full-repo search that **no design source for Book of Needs exists anywhere**
+— the six PNGs in `documentation/design/screens/` and `DESIGN_HANDOFF_SOURCE.md` cover only the
+office/entry/threshold screens, and the handoff's own stated reason survives: *"It is not an hour:
+no ordered blocks, no liturgical day, no rail to draw."* Asked Josh how to proceed rather than
+guessing; he chose "propose a design grounded in the existing shell system." Wrote a full proposal
+(saved as a plan, approved via ExitPlanMode) before writing any code, then implemented it in full:
+
+- **One consolidated CSS block** (`css/office.css`, headed `BOOK OF NEEDS -- its own design pass,
+  2026-09-25`) replaced roughly a dozen scattered old-skin rules (dark base layer + a later
+  "parchment app shell" override, cream/gold gradients, heavy shadows, rounded corners). New block
+  defines `--bon-*` custom properties under `#individual-prayers-section` with the **same literal
+  values** as the shell's `--uo-*` tokens (ground/ink/accent/rubric/hairline, both night and day),
+  reuses `--uo-face-title` (Cinzel) for titles and `--uo-face-prayed` (Cormorant Garamond) at the
+  office's own body size/leading for prayer text, and `--uo-face-machine` (IBM Plex Mono) for
+  kickers/group headers — no new visual ideas, everything copied from an already-approved rule.
+- **Theme mechanism deliberately kept separate, not merged into the shell's.** `js/office-shell.js`'s
+  `applyTheme()` is explicitly scoped to `body.office-active` only, with its own comment calling
+  this a hard-won fix after "six patches in a row." Wiring Book of Needs into the shell's Auto/
+  Light/Dark control would have undone that deliberate boundary. Instead Book of Needs keeps its own
+  existing Dark Mode toggle and `body.dark-mode`/`body.light-mode` classes exactly as before —
+  same look, independently driven.
+- **The prayer picker (103 prayers/23 groups) was reskinned, not rebuilt**, by reusing the settings
+  drawer's own row/group visual language (`.uo-drawer-section-head`/`.uo-drawer-office`'s
+  hairline-separated rows) — zero DOM/JS changes to the picker's own dropdown code.
+- **Two real pre-existing bugs found and fixed while assembling the new CSS, not caused by it**:
+  two `!important`-heavy selector lists incorrectly combined `#individual-prayers-section
+  .app-mode-return` with `.admin-app-shell .app-mode-return`, which would have silently overridden
+  all new Book of Needs button styling regardless of specificity — removed only the Book-of-Needs
+  fragment, left Admin's copy untouched; and a fully redundant later-in-file duplicate of
+  `.app-book-needs-show-all` at the same specificity, which would have won the source-order tie and
+  silently restored the old parchment colors — deleted, its explanatory comment preserved on the
+  new rule.
+- `js/prayers.js`'s `showSinglePrayer()` had a large inline `style="font-family:'Cinzel',serif;..."`
+  attribute on the source-citation `<p>` that would have beaten the new stylesheet rule regardless
+  of specificity (inline always wins) — removed, now styled purely by CSS.
+- Verified via `getComputedStyle` + screenshots across dark/light × 3 viewports, tradition-scoping
+  functional check (78→4→78 visible prayers through the filter chain), and a full regression sweep.
+  `scripts/audit-book-of-needs-design-shell.mjs` had its stale "parchment app shell" marker updated
+  to match and passes. **Flagged, not fixed, and not fully verified pre-existing**:
+  `scripts/audit-book-of-needs-tradition-context.mjs` fails on "tradition filtering is strict" —
+  believed unrelated to this pass, but the check used (`git stash`) only reverts uncommitted
+  changes, not this session's many prior commits, so this is provisional, not confirmed. Re-verify
+  against a true pre-session commit before treating it as settled.
+
+**While updating `audit-ledger.html`'s ledger row for this work, found the ledger's own giant
+`UI_REDESIGN` script had been silently broken since earlier this session** — three separate
+instances of a real, repeatable bug I had introduced myself in earlier commits: using literal
+double quotes to set off a short quoted phrase *inside* an already double-quoted JS string literal
+(e.g. `name:"...its stale "Phase 4 deletes it" comment..."`), which silently truncates the string
+early and turns the rest into invalid bare tokens — and a single syntax error anywhere in a
+`<script>` block prevents the *entire* block from executing, not just the broken line. Found via a
+custom Python scanner plus `node --check` on the extracted script (NOT caught by the `grep -c`
+substring checks used after earlier edits this session — a real gap in verification discipline;
+any future `audit-ledger.html` edit should be validated with `node --check`, not substring presence
+alone). All three fixed (inner double quotes → single quotes, matching the file's own convention
+elsewhere); confirmed via `node --check` (exit 0) and a live Playwright load (`UI_REDESIGN rows: 21`
+— the array now loads and executes). Committed as `3345abc`.
+
+**NOT YET FIXED, discovered in the very same live-verification pass, flagged for next session:**
+loading `audit-ledger.html` live now throws `TypeError: Cannot read properties of undefined
+(reading 'list') at checkSeedVersion (audit-ledger.html:890:39) at init (:917:9)`, logged as "seed
+version reseed failed — dashboard may show stale data until this succeeds." This was masked by the
+syntax errors above until they were fixed, so it is unknown how long it has existed or whether it
+predates this session. Needs root-cause investigation next session — start at `checkSeedVersion`,
+line 890.
+
+**PHASE 6 IS NOW COMPLETE, 2026-09-25.** Josh asked directly whether the UI refactoring
 was done; the honest answer was no — Phases 1–5 were done, but Phase 6 still had three disclosed
 remaining items and Book of Needs hadn't been touched. He said "Proceed with six." Researched all
 three via three parallel Explore agents before touching anything, since this exact file has already
