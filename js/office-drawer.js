@@ -30,8 +30,14 @@
  * option (a11y-dialog) is itself now a thin layer over the same element; the
  * one thing it adds — close on backdrop click — is done below in a few lines.
  *
- * Lane is read from the DOM (which drawer lacks `mode-hidden`), never from
- * `window.selectedMode`, which does not exist — see RESUME_PROJECT_NOTE §0a.
+ * Lane is read via js/office-ui.js's own exposed
+ * `window._sharedOfficeNavigatorModeKey()` (Phase 6, sidebar-deletion
+ * refactor) — a function, not `window.selectedMode` itself, which still
+ * does not exist (a bare top-level `let` in office-ui.js, never a `window`
+ * property — see RESUME_PROJECT_NOTE §0a). A function always reads the
+ * live value; a mirrored variable would go stale the moment selectedMode is
+ * reassigned by bare identifier, which is exactly the bug class
+ * AUDIT_GOVERNANCE_LEDGER.md already recorded once.
  */
 (function () {
     'use strict';
@@ -45,18 +51,10 @@
 
     /* ── Lane ─────────────────────────────────────────────────────────────── */
 
-    var LANES = [
-        ['coptic-settings',      'coptic'],
-        ['east-syriac-settings', 'eastSyriac'],
-        ['generic-settings',     'horologion']
-    ];
-
     function currentModeKey() {
-        for (var i = 0; i < LANES.length; i++) {
-            var p = document.getElementById(LANES[i][0]);
-            if (p && !p.classList.contains('mode-hidden')) return LANES[i][1];
-        }
-        return 'daily';
+        var k = (typeof window._sharedOfficeNavigatorModeKey === 'function')
+            ? window._sharedOfficeNavigatorModeKey() : null;
+        return (k === 'coptic' || k === 'eastSyriac' || k === 'horologion') ? k : 'daily';
     }
 
     /* ── Moving real controls ─────────────────────────────────────────────── */

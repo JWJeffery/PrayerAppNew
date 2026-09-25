@@ -2335,6 +2335,16 @@ function _sharedOfficeNavigatorModeKey() {
     if (selectedMode === "daily" || !selectedMode) return "daily";
     return null;
 }
+/* Exposed so js/office-shell.js and js/office-drawer.js can read the active
+   lane without re-deriving it from the DOM. `selectedMode` itself is a bare
+   top-level `let` (line 3), never a `window` property, so a function is
+   exposed instead of mirroring the variable -- a mirrored copy would go
+   stale the moment `selectedMode` is reassigned by bare identifier
+   elsewhere in this file, silently reintroducing the exact bug class
+   recorded in AUDIT_GOVERNANCE_LEDGER.md (a prior fix assumed
+   window.selectedMode worked and shipped a no-op). This function always
+   reads the current value. */
+window._sharedOfficeNavigatorModeKey = _sharedOfficeNavigatorModeKey;
 
 function _sharedOfficeNavigatorIsoDate(date) {
     const d = date instanceof Date && !Number.isNaN(date.getTime()) ? date : new Date();

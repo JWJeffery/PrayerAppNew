@@ -88,23 +88,20 @@
      * the app itself defaults to.
      */
     /**
-     * The active lane, read from the DOM.
+     * The active lane, read via js/office-ui.js's own exposed mapper.
      *
-     * NOT from `window.selectedMode`. `js/office-ui.js` declares
-     * `let selectedMode = null;` at top level, and a top-level `let` in a
-     * classic script creates a binding in the global LEXICAL environment
-     * without becoming a property of `window` — so `window.selectedMode` is
-     * permanently undefined. A console dump showed `mode` missing from the
-     * output entirely, because JSON.stringify drops undefined values: the
-     * absence was the finding. The previous patch keyed on that property,
-     * looked correct, and changed nothing.
-     *
-     * The bare identifier IS readable via direct eval, but that cannot be
-     * exercised in jsdom — each eval there gets its own lexical scope, so a
-     * `let` in one is invisible to the next, while real script tags share one
-     * global environment. An untestable read is what let the last three fixes
-     * through, so this reads a DOM signal instead: each lane's settings drawer
-     * carries `mode-hidden` when inactive, and exactly one does not.
+     * CORRECTED (Phase 6, sidebar-deletion refactor): this used to read the
+     * DOM instead, because `window.selectedMode` didn't exist -- `let
+     * selectedMode = null;` at office-ui.js's top level is a lexical
+     * binding, never a `window` property, so `window.selectedMode` was
+     * permanently undefined (see AUDIT_GOVERNANCE_LEDGER.md for the prior
+     * bug this caused). office-ui.js now exposes
+     * `window._sharedOfficeNavigatorModeKey()` instead -- a function, not a
+     * mirrored variable, so it always reads the live value rather than a
+     * stale copy. That function already existed there (it drives
+     * renderSharedOfficeNavigation()) and already does exactly the mapping
+     * this file needs: 'coptic-agpeya' -> 'coptic', 'east-syriac' ->
+     * 'eastSyriac', 'horologion' -> 'horologion', anything else -> 'daily'.
      */
     /* Each lane names the SAME choice more than one way, so each carries a
        CANDIDATE LIST rather than a single name.
@@ -123,23 +120,18 @@
        Candidates are tried in order and the first CHECKED one wins. The list is
        per lane, so this cannot reintroduce the earlier bug where every lane
        answered with the BCP office. */
-    var LANE_PANELS = [
-        ['coptic-settings',      'coptic-agpeya',
-            ['cop-hour', 'shared-office-nav-coptic']],
-        ['east-syriac-settings', 'east-syriac',
-            ['esy-hour-override', 'esy-time', 'shared-office-nav-eastSyriac']],
-        ['generic-settings',     'horologion',
-            ['shared-office-nav-horologion']]
-    ];
+    var MODE_KEY_TO_LANE = {
+        coptic:     ['coptic-agpeya', ['cop-hour', 'shared-office-nav-coptic']],
+        eastSyriac: ['east-syriac',   ['esy-hour-override', 'esy-time', 'shared-office-nav-eastSyriac']],
+        horologion: ['horologion',    ['shared-office-nav-horologion']]
+    };
 
     function currentLane() {
-        for (var i = 0; i < LANE_PANELS.length; i++) {
-            var panel = document.getElementById(LANE_PANELS[i][0]);
-            if (panel && !panel.classList.contains('mode-hidden')) {
-                return LANE_PANELS[i];
-            }
-        }
-        return [null, null, ['office-time', 'shared-office-nav-daily']];   /* the Daily Office, the app's own default */
+        var modeKey = (typeof window._sharedOfficeNavigatorModeKey === 'function')
+            ? window._sharedOfficeNavigatorModeKey() : null;
+        var entry = modeKey && MODE_KEY_TO_LANE[modeKey];
+        if (entry) return entry;
+        return [null, ['office-time', 'shared-office-nav-daily']];   /* the Daily Office, the app's own default */
     }
 
     function currentOfficeId() {
@@ -160,14 +152,14 @@
         if (!document.body.classList.contains('office-active')) return null;
 
         var lane = currentLane();
-        var names = lane[2];
+        var names = lane[1];
 
         for (var i = 0; i < names.length; i++) {
             var el = document.querySelector('input[name="' + names[i] + '"]:checked');
             if (el && el.value) return el.value;
         }
 
-        if (lane[1] === 'horologion') {
+        if (lane[0] === 'horologion') {
             /* Horologion may keep its office only in a top-level `let`, which
                is not a window property. Direct eval reaches the global lexical
                binding; the typeof guard stops a ReferenceError if office-ui.js
@@ -650,6 +642,17 @@
         }).observe(target, { childList: true, subtree: true });
     }
 
+    /* Purely a DOM-mutation-watching concern (when do the legacy panels'
+       classes change), unrelated to currentLane()'s mode-detection logic
+       above -- kept as its own small id list rather than reused from
+       MODE_KEY_TO_LANE (an object, not iterable the same way). Likely
+       redundant with watchRenderChanges()'s own #office-display observer
+       just above (every selectMode() branch rewrites #office-display's
+       innerHTML too, so that observer already fires on every lane switch)
+       -- not removed here to stay within Stage 1's scope; safe to retire
+       alongside the panels themselves once they're deleted. */
+    var LEGACY_LANE_PANEL_IDS = ['coptic-settings', 'east-syriac-settings', 'generic-settings'];
+
     function watchLaneChanges() {
         if (typeof window.MutationObserver !== 'function') return;
         var pending = false;
@@ -661,8 +664,8 @@
                 applyTheme(readTheme());
             }, 0);
         });
-        LANE_PANELS.forEach(function (entry) {
-            var panel = document.getElementById(entry[0]);
+        LEGACY_LANE_PANEL_IDS.forEach(function (id) {
+            var panel = document.getElementById(id);
             if (panel) obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
         });
     }
