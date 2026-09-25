@@ -2157,30 +2157,6 @@ async function init() {
         console.error('[init] Kernel load failed:', err);
     }
 }
-function toggleSidebar() {
-    const bcpPanel = document.getElementById('settings-panel');
-    const ethPanel = document.getElementById('ethiopian-settings');
-    const esyPanel = document.getElementById('east-syriac-settings');
-    const genPanel = document.getElementById('generic-settings');
-    const main     = document.getElementById('main-content');
-    const toggle   = document.getElementById('sidebar-toggle');
-
-    let activePanel;
-    if (esyPanel && !esyPanel.classList.contains('mode-hidden')) {
-        activePanel = esyPanel;
-    } else if (ethPanel && !ethPanel.classList.contains('mode-hidden')) {
-        activePanel = ethPanel;
-    } else if (genPanel && !genPanel.classList.contains('mode-hidden')) {
-        activePanel = genPanel;
-    } else {
-        activePanel = bcpPanel;
-    }
-
-    const isHidden = activePanel.classList.toggle('sidebar-hidden');
-    main.classList.toggle('sidebar-hidden', isHidden);
-    if (toggle) toggle.style.opacity = isHidden ? '0.65' : '0.5';
-}
-
 // ── Date Controls ────────────────────────────────────────────────────────────
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);

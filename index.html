@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=219">
+    <link rel="stylesheet" href="css/office.css?v=220">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
          (2026-09-24) made it the only office shell and dropped the flag; see
          documentation/UI_REDESIGN_HANDOFF.md section 9. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=308">
+    <link rel="stylesheet" href="css/office-shell.css?v=309">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
 
@@ -321,12 +321,6 @@
 <!-- ── Daily Office ──────────────────────────────────────────────────────── -->
 <div id="daily-office-section" class="app-office-mode-shell">
 
-    <!-- Sidebar toggle tab -->
-    <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings" class="app-nav-rail-toggle">
-        <span class="toggle-cross">☩</span>
-        <div class="toggle-dots"><span></span><span></span><span></span></div>
-        <span class="toggle-cross">☩</span>
-    </div>
 
     <!-- Phase 6 (sidebar-deletion refactor, Stage 3b): the single neutral
          host renderSharedOfficeNavigation() (js/office-ui.js) injects the
@@ -612,18 +606,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Settings panel -->
-    <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily"></div><!-- /settings-panel -->
-
-    <!-- Coptic Agpeya Liturgical Console -->
-    <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic"></div><!-- /coptic-settings -->
-
-    <!-- Church of the East Liturgical Console -->
-    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac"></div><!-- /east-syriac-settings -->
-
-    <!-- Generic Sidebar Shell — Horologion and future traditions -->
-    <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion"></div>
 
     <!-- Main content area -->
     <div id="main-content" class="app-primary-canvas">
@@ -1090,13 +1072,13 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=310" defer></script>
+<script src="js/office-ui.js?v=311" defer></script>
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
 <script src="js/office-shell.js?v=298" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
-<script src="js/office-drawer.js?v=5" defer></script>
+<script src="js/office-drawer.js?v=6" defer></script>
 </body>
 </html>

@@ -208,193 +208,6 @@ body.light-mode .mode-btn:hover {
     z-index: 200;
 }
 
-/* ── Sidebar Toggle ── */
-#sidebar-toggle {
-    position: relative;
-    width: 36px;
-    flex-shrink: 0;
-    background: linear-gradient(180deg, #0d0801 0%, #1a0f04 50%, #0d0801 100%);
-    border-right: 1px solid rgba(201,168,76,0.3);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    z-index: 101;
-    user-select: none;
-    opacity: 0.5;
-}
-#sidebar-toggle:hover {
-    opacity: 1;
-    background: linear-gradient(180deg, #1a0f04 0%, #241508 50%, #1a0f04 100%);
-}
-.toggle-cross {
-    color: var(--gold);
-    font-size: 20px;
-    line-height: 1;
-    writing-mode: horizontal-tb;
-    opacity: 0.9;
-}
-.toggle-dots {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-}
-.toggle-dots span {
-    display: block;
-    width: 14px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.6;
-    border-radius: 1px;
-}
-
-/* ── Settings Panel ── */
-#settings-panel {
-    position: fixed;
-    top: 0;
-    left: 36px;
-    width: 300px;
-    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-    color: var(--sidebar-text);
-    font-size: 17px;
-    padding: 28px 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(201, 168, 76, 0.3);
-    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    text-align: left;
-    box-sizing: border-box;
-}
-#settings-panel.sidebar-hidden {
-    transform: translateX(-336px);
-    pointer-events: none;
-}
-/* Completely remove from flex flow when the other mode is active */
-#settings-panel.mode-hidden {
-    display: none !important;
-}
-
-/* ── Ethiopian Sa'atat Sidebar ── */
-#ethiopian-settings {
-    position: fixed;
-    top: 0;
-    left: 36px;
-    width: 300px;
-    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-    color: var(--sidebar-text);
-    font-size: 17px;
-    padding: 28px 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(201,168,76,0.3);
-    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    text-align: left;
-    box-sizing: border-box;
-}
-#ethiopian-settings.sidebar-hidden {
-    transform: translateX(-336px);
-    pointer-events: none;
-}
-/* Completely remove from flex flow when the other mode is active */
-#ethiopian-settings.mode-hidden {
-    display: none !important;
-}
-
-/* ── Church of the East Sidebar ── */
-#east-syriac-settings {
-    position: fixed;
-    top: 0;
-    left: 36px;
-    width: 300px;
-    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-    color: var(--sidebar-text);
-    font-size: 17px;
-    padding: 28px 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(201,168,76,0.3);
-    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    text-align: left;
-    box-sizing: border-box;
-}
-#east-syriac-settings.sidebar-hidden {
-    transform: translateX(-336px);
-    pointer-events: none;
-}
-/* Completely remove from flex flow when the other mode is active */
-#east-syriac-settings.mode-hidden {
-    display: none !important;
-}
-/* ── Generic Sidebar Shell (Horologion + future traditions) ── */
-#generic-settings {
-    position: fixed;
-    top: 0;
-    left: 36px;
-    width: 300px;
-    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-    color: var(--sidebar-text);
-    font-size: 17px;
-    padding: 28px 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(201,168,76,0.3);
-    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    text-align: left;
-    box-sizing: border-box;
-}
-#generic-settings.sidebar-hidden {
-    transform: translateX(-336px);
-    pointer-events: none;
-}
-/* Completely remove from flex flow when the other mode is active */
-#generic-settings.mode-hidden {
-    display: none !important;
-}
-
-/* ── Coptic Agpeya Sidebar ── */
-#coptic-settings {
-    position: fixed;
-    top: 0;
-    left: 36px;
-    width: 300px;
-    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-    color: var(--sidebar-text);
-    font-size: 17px;
-    padding: 28px 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(201,168,76,0.3);
-    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    text-align: left;
-    box-sizing: border-box;
-}
-#coptic-settings.sidebar-hidden {
-    transform: translateX(-336px);
-    pointer-events: none;
-}
-/* Completely remove from flex flow when the other mode is active */
-#coptic-settings.mode-hidden {
-    display: none !important;
-}
-
 /* ── Horologion office selector radio list ──────────────────────────────── */
 .hor-office-list {
     display: flex;
@@ -943,45 +756,15 @@ body.light-mode .ethiopian-theme .rubric-text {
 /* ============================================
    RESPONSIVE
    ============================================ */
-/* ── Mobile: sidebar becomes overlay, content never shrinks ── */
+/* ── Mobile: content never shrinks. The panel-scoped overlay/dim rules that
+   used to live here (positioning the four legacy sidebars and dimming
+   content behind them) were deleted with the sidebars themselves (Phase 6,
+   sidebar-deletion refactor) -- confirmed dead, not guessed: those ids no
+   longer exist anywhere in index.html. ── */
 @media (max-width: 768px) {
-    #settings-panel,
-    #ethiopian-settings,
-    #east-syriac-settings,
-    #generic-settings,
-    #coptic-settings {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        z-index: 300;
-        flex: 0 0 300px;
-        margin-left: 0 !important;
-        transition: transform 0.3s ease;
-    }
-    #settings-panel.sidebar-hidden,
-    #ethiopian-settings.sidebar-hidden,
-    #east-syriac-settings.sidebar-hidden,
-    #generic-settings.sidebar-hidden,
-    #coptic-settings.sidebar-hidden {
-        transform: translateX(-300px);
-        margin-left: 0 !important;
-    }
     #main-content {
         width: 100vw !important;
         margin-left: 0 !important;
-    }
-
-    /* Dim content behind open sidebar */
-    #daily-office-section:has(#settings-panel:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#ethiopian-settings:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#east-syriac-settings:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#coptic-settings:not(.sidebar-hidden))::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: 299;
     }
 }
 
@@ -999,11 +782,6 @@ body.light-mode .ethiopian-theme .rubric-text {
    ============================================ */
 @media print {
     #mode-selection,
-    #settings-panel,
-    #ethiopian-settings,
-    #east-syriac-settings,
-    #generic-settings,
-    #coptic-settings,
     .mode-btn,
     .ordo-control,
     .setting-group,
@@ -1051,8 +829,6 @@ body.light-mode .ethiopian-theme .rubric-text {
     hr { border: 0.5pt solid #999 !important; margin: 0.15in 0 !important; }
     a { text-decoration: none; color: black !important; }
     * { background: white !important; }
-    #ethiopian-settings { display: none !important; }
-    #east-syriac-settings { display: none !important; }
 }
 
 /* App-wide parchment design propagation pass */
@@ -2820,68 +2596,11 @@ body:not(.office-active) {
         box-sizing: border-box !important;
     }
 
-    #sidebar-toggle {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        bottom: 0 !important;
-        width: 44px !important;
-        height: 100dvh !important;
-        z-index: 520 !important;
-        opacity: 0.86 !important;
-        touch-action: manipulation !important;
-    }
-
-    #settings-panel,
-    #ethiopian-settings,
-    #east-syriac-settings,
-    #generic-settings,
-    #coptic-settings {
-        position: fixed !important;
-        top: 0 !important;
-        left: 44px !important;
-        width: min(86vw, 320px) !important;
-        max-width: calc(100vw - 44px) !important;
-        height: 100dvh !important;
-        max-height: 100dvh !important;
-        margin: 0 !important;
-        padding: 22px 16px 36px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        transform: translateX(calc(-100% - 48px)) !important;
-        transition: transform 0.24s ease !important;
-        z-index: 510 !important;
-        box-sizing: border-box !important;
-        -webkit-overflow-scrolling: touch;
-        pointer-events: none !important;
-    }
-
-    #settings-panel.mode-hidden,
-    #ethiopian-settings.mode-hidden,
-    #east-syriac-settings.mode-hidden,
-    #generic-settings.mode-hidden,
-    #coptic-settings.mode-hidden {
-        display: none !important;
-    }
-
-    body.mobile-sidebar-open #settings-panel:not(.mode-hidden),
-    body.mobile-sidebar-open #ethiopian-settings:not(.mode-hidden),
-    body.mobile-sidebar-open #east-syriac-settings:not(.mode-hidden),
-    body.mobile-sidebar-open #generic-settings:not(.mode-hidden),
-    body.mobile-sidebar-open #coptic-settings:not(.mode-hidden) {
-        display: block !important;
-        transform: translateX(0) !important;
-        pointer-events: auto !important;
-    }
-
-    body:not(.mobile-sidebar-open) #settings-panel:not(.mode-hidden),
-    body:not(.mobile-sidebar-open) #ethiopian-settings:not(.mode-hidden),
-    body:not(.mobile-sidebar-open) #east-syriac-settings:not(.mode-hidden),
-    body:not(.mobile-sidebar-open) #generic-settings:not(.mode-hidden),
-    body:not(.mobile-sidebar-open) #coptic-settings:not(.mode-hidden) {
-        transform: translateX(calc(-100% - 48px)) !important;
-        pointer-events: none !important;
-    }
+    /* The #sidebar-toggle and per-panel positioning/open-close rules that
+       used to live here were deleted with the four legacy sidebars and
+       #sidebar-toggle itself (Phase 6, sidebar-deletion refactor) --
+       confirmed dead, not guessed: those ids no longer exist anywhere in
+       index.html. */
 
     #main-content,
     #main-content.sidebar-hidden {
@@ -2935,20 +2654,6 @@ body:not(.office-active) {
         box-sizing: border-box !important;
     }
 
-    #settings-panel input,
-    #settings-panel select,
-    #ethiopian-settings input,
-    #ethiopian-settings select,
-    #east-syriac-settings input,
-    #east-syriac-settings select,
-    #generic-settings input,
-    #generic-settings select,
-    #coptic-settings input,
-    #coptic-settings select {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
     .setting-group label {
         white-space: normal !important;
     }
@@ -2963,19 +2668,6 @@ body:not(.office-active) {
     }
 }
 /* === UO MOBILE DRAWER REPAIR END === */
-
-/* === UO HOROLOGION MOBILE SPECIFICITY FIX START === */
-/*
-   The earlier Horologion mobile stack rule uses:
-   #daily-office-section:has(#generic-settings:not(.mode-hidden)) #generic-settings
-
-   That selector is more specific than the generic mobile drawer repair block.
-   These rules intentionally match/exceed that specificity and restore the
-   Horologion settings panel to the same off-canvas drawer model as the other
-   office families.
-*/
-
-/* === UO HOROLOGION MOBILE SPECIFICITY FIX END === */
 
 /* Roman Breviary 1960/1962 dev slice layout */
 .rb1960-dev-slice {
@@ -3088,10 +2780,6 @@ body:not(.office-active) {
 }
 
 /* Roman Breviary 1960/1962 sidebarless dev route */
-body.roman-breviary-dev-mode #sidebar-toggle {
-    display: none;
-}
-
 body.roman-breviary-dev-mode #main-content,
 body.roman-breviary-dev-mode #main-content.sidebar-hidden {
     padding-left: 40px;

@@ -709,16 +709,18 @@
         /* The render landing is the signal (RESUME_PROJECT_NOTE §0a: re-resolve
            on the render, not the click). #office-display changes on every
            office, date and lane change; the shared navigator is rewritten after
-           it. Both are watched; refresh is one call per frame. */
+           it -- this one observer already covers every lane switch, since
+           every selectMode() branch rewrites #office-display's innerHTML and
+           #office-display is #main-content's direct child. A second
+           per-panel observer (watching the four legacy sidebars' own class
+           attribute) used to run alongside this one; removed with the
+           sidebars themselves (Phase 6, sidebar-deletion refactor) -- it was
+           never the only signal, just a belt-and-suspenders one, confirmed
+           live (open drawer, switch lanes, still refreshes) before removing
+           it. */
         var obs = new MutationObserver(function () { ensureEntry(); refreshSoon(); });
         var main = document.getElementById('main-content');
         if (main) obs.observe(main, { childList: true, subtree: true });
-        ['settings-panel', 'coptic-settings', 'east-syriac-settings', 'generic-settings']
-            .forEach(function (id) {
-                var p = document.getElementById(id);
-                if (p) obs.observe(p, { childList: true, subtree: true,
-                                        attributes: true, attributeFilter: ['class'] });
-            });
         ensureEntry();
     }
 

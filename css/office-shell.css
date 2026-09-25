@@ -1129,38 +1129,27 @@ body.shell-v2 .uo-theme-button:focus-visible {
    Governance: UI_REDESIGN_HANDOFF.md §3.1 (heading "Office Settings",
    section I "The Ordo"), §5, §3.7 (BCP Only at the foot).
 
-   The four legacy sidebars stay permanently in the DOM as the source of
-   truth for every setting, hidden by the two rules just below. Some of their
-   real controls (the borrowed devotions, BCP's "further" section, BCP Only
-   Mode) are MOVED into the drawer by js/office-drawer.js's moveRealControls();
-   most of the rest (Rite, Gospel placement, the 30-Day Psalter, Creed, Marian
-   element/position, East Syriac's Cathedral/Monastic use, Horologion's
-   calendar/display-depth selects, and every "which office" control) are only
-   ever READ from and written back to their real, still-in-place <input>/
-   <select> elements by office-drawer.js's radioRow()/checkboxRow()/
-   selectRow() and by js/office-ui.js's own render functions.
-
-   CORRECTED 2026-09-24, Phase 6: this comment previously said Phase 6 would
-   delete the sidebars and these two hiding rules outright. Attempting that
-   found it would break real liturgical settings -- confirmed by reading
-   radioRow()/checkboxRow()/selectRow() (js/office-drawer.js), which state
-   plainly that the controls they surface are read in place, never moved,
-   and by grepping js/office-ui.js's render functions, which read many of
-   the same elements directly (e.g. document.querySelector('input[name=
-   "rite"]:checked')). Deleting the sidebar markup without first moving
-   every one of those controls into the drawer's own DOM would silently
-   break Rite/Gospel-placement/Creed selection and more. That move has not
-   been done. The sidebars and these two hiding rules stay, permanently, as
-   the real (invisible) home for these controls, until a future session
-   does that fuller migration -- not a Phase 6 deliverable as originally
-   scoped. See RESUME_PROJECT_NOTE.md and AUDIT_GOVERNANCE_LEDGER.md for
-   the full account.
+   CLOSED 2026-09-25, Phase 6 sidebar-deletion refactor: the four legacy
+   sidebars this comment used to describe (kept permanently in the DOM,
+   hidden by two rules that lived here) are gone. Getting there took three
+   real prerequisites, each confirmed by reading the actual code before
+   touching it, not assumed: (1) mode detection was rebuilt on
+   js/office-ui.js's own selectedMode instead of reading a mode-hidden
+   class off these exact divs (js/office-shell.js's currentLane(),
+   js/office-drawer.js's currentModeKey()); (2) renderSharedOfficeNavigation()
+   was repointed at one neutral host instead of injecting into whichever
+   sidebar matched the active mode; (3) every remaining real control
+   (Rite, Gospel placement, Creed, Marian element/position, East Syriac's
+   Cathedral/Monastic use, Horologion's calendar/display-depth selects,
+   the Diagnostics toggle, the BCP-Only-Mode gate on the Marian rows, and
+   more) was relocated into that same neutral host as static HTML, so
+   every id/name lookup that used to find them inside a legacy sidebar
+   keeps finding them, just relocated. Only then were the sidebars and
+   #sidebar-toggle deleted from index.html, along with the two hiding
+   rules that used to sit here. See RESUME_PROJECT_NOTE.md and the
+   ui:phase6-retire-old-skin row in audit-ledger.html for the full staged
+   account.
    --------------------------------------------------------------------------- */
-
-body.shell-v2.office-active #sidebar-toggle,
-body.shell-v2.office-active .app-mode-drawer {
-    display: none !important;
-}
 
 body.shell-v2 .uo-drawer-open {
     background: transparent;
