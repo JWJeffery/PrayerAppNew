@@ -114,7 +114,7 @@
    carries the night values and `body.shell-v2.uo-day` the day ones.
    --------------------------------------------------------------------------- */
 
-body.shell-v2 {
+:root {
     --uo-ground:        #08070c;
     --uo-ground-raised: #0b0912;
     --uo-ink:           #e6dcc4;
@@ -175,7 +175,7 @@ body.shell-v2 {
    DAY — Morning Prayer, the Sixth Hour.
    --------------------------------------------------------------------------- */
 
-body.shell-v2.uo-day {
+body.uo-day {
     --uo-ground:        #f2ebdf;
     --uo-ground-raised: #f4ece0;
     --uo-ink:           #2a2118;
