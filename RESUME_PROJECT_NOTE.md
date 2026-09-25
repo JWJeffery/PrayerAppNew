@@ -68,15 +68,83 @@ pixel-identical to its pre-migration baseline (0 nonzero pixels), zero console e
 Screenshotted the open drawer itself too: no stray or duplicate old-skin controls leaked into view —
 the moved elements are genuinely invisible, exactly as intended.
 
-**What this unlocks, not yet done**: the four legacy sidebars' remaining content is now either
-already-moved (borrowed devotions, BCP's further choices, BCP Only Mode — done in an earlier
-session) or moved by this session (the controls above) or confirmed safe to leave behind (display-only
-boxes, two dead toggles). Deleting the sidebar HTML itself, and the two `display:none` hiding rules
-in `css/office-shell.css` that exist only to hide them, is real next work for a future session — not
-done here, and not attempted, since that's Phase 6 stage 4's own deferred deletion step, now
-unblocked but still a separate action. Cache-bust `office-drawer.js` 2 → 3.
+**What this unlocked, now also DONE**: the four legacy sidebars' remaining content was, at that
+point, either already-moved, moved by that session's work, or confirmed safe to leave behind. See
+the entry immediately below for the sidebar HTML deletion itself, done later the same day.
 
-**DONE (attempted, reverted), LIVE-CONFIRMED, 2026-09-24 (latest): Phase 6 stage 5 — unscoping
+**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the four legacy sidebars and `#sidebar-toggle` are
+deleted outright — not just hidden.** Josh, directly: "Now delete the legacy sidebar HTML and their
+hiding rules." Investigating first (same discipline as every other Phase 6 stage) found this was
+**not** the mechanical deletion the original plan assumed. Two real blockers, confirmed by reading
+the actual code, not guessed:
+
+1. **The four sidebar divs are the app's only "which tradition is active" state.** `selectMode()`/
+   `toggleSidebar()`/`backToSplash()` track the active lane purely by toggling a `mode-hidden` class
+   on these exact elements. Two *other* files independently re-derive the same thing from the DOM —
+   `js/office-shell.js`'s `currentLane()` and `js/office-drawer.js`'s `currentModeKey()` — both
+   because `window.selectedMode` doesn't exist: `js/office-ui.js`'s `let selectedMode` is a bare
+   top-level `let`, never a `window` property, a bug class `AUDIT_GOVERNANCE_LEDGER.md` already
+   recorded once.
+2. **The CURRENT, live "which office" picker is injected as a literal child of whichever sidebar
+   matches the active mode**, not old dead UI sitting near it. `renderSharedOfficeNavigation()`
+   (`js/office-ui.js`) does `document.getElementById(config.panelId)` and appends the real,
+   working navigator into it.
+
+Deleting the divs as originally planned would have broken tradition-switching and the office picker
+outright. Disclosed this to Josh; he chose the full refactor over leaving the sidebars in place
+permanently. Planned in `EnterPlanMode`, with a Plan agent independently verifying the investigation
+and catching two real gaps before any code was written: exposing `selectedMode` as a **mirrored
+variable** (rather than a function) would have gone stale the instant it was reassigned by bare
+identifier, reintroducing the exact bug class above; and a `MutationObserver` in
+`office-drawer.js`'s `init()` also iterated the array shape about to be restructured.
+
+**Five staged, independently-committed, independently-verified stages** (each with its own real
+verification, not just "should work"):
+- **Stage 1**: exposed `js/office-ui.js`'s existing `selectedMode`→`modeKey` mapper on `window` (a
+  function, never a mirrored variable); rewrote `currentLane()`/`currentOfficeId()`/
+  `currentModeKey()` to use it. Caught and fixed a second real bug while doing it, unrelated to the
+  plan — `office-shell.js`'s `watchLaneChanges()` iterated the same array shape being restructured,
+  would have crashed. New `cross-lane-stress.mjs` (load → Coptic → East Syriac → Horologion → BCP,
+  one session) confirmed correct mode detection and zero cross-lane office-grid contamination — the
+  one scenario nothing existing tested, and exactly the mechanism being changed.
+- **Stage 2**: pointed `renderSharedOfficeNavigation()` at one new neutral host
+  (`#legacy-office-controls`) instead of the active sidebar; deleted ~150 lines of legacy-hiding
+  machinery that existed only to keep the live navigator from clashing with old sidebar content next
+  to it. Found and updated one now-obsolete audit script; found two others already broken for
+  unrelated pre-existing reasons (stale Ethiopian-mode markers, an assertion the sidebars are
+  visible — untrue since `shell-v2` became unconditional, well before this session) — left alone,
+  disclosed rather than silently patched or ignored.
+- **Stage 3a**: extended `moveLegacyStateControls()` to cover five real gaps a full cross-reference
+  surfaced — most importantly `#ecumenical-devotions-section`, whose `bcp-only-hidden` class is
+  still read by `buildKeep()`'s Marian-rows gate; leaving it unmoved would have shown Marian settings
+  even under BCP Only Mode. Reproduced and confirmed fixed.
+- **Stage 3b**: physically moved the remaining real markup of all four sidebars into
+  `#legacy-office-controls` as static HTML — every id/name/onchange handler preserved exactly, only
+  decorative chrome dropped. Confirmed the simplified markup doesn't break `borrowedSummary()`'s
+  `childNodes[1]`-based label extraction.
+- **Stage 4**: deleted the four sidebar divs, `#sidebar-toggle`, `toggleSidebar()`, and every
+  confirmed-dead CSS block this unblocked — trimmed from mixed selector lists where real, still-live
+  rules (`#main-content`, `.shared-office-nav`, `.mode-btn`, etc.) shared the same block, not deleted
+  wholesale.
+- **Stage 5**: removed the now-dead `getElementById(panelId)`-plus-`classList` bookkeeping left in
+  `selectMode()`/`backToSplash()`.
+
+Two apparent regressions in office-switch tests (East Syriac, Horologion "before" matching "after")
+were investigated rather than dismissed — both confirmed to be real wall-clock time already matching
+the live time-of-day default, not test flakiness, confirmed by switching to a guaranteed-different
+office and watching the title actually change. Full accumulated script suite stayed clean at every
+stage boundary, zero console errors; entry-screen, open-drawer, and 390px-mobile screenshots
+pixel-consistent throughout. Cache-bust `office-ui.js` 308→312 (across stages), `office-shell.js`
+(the JS file) 297→298, `office-drawer.js` 3→6, `office-shell.css` (the CSS file — distinct from
+`office-shell.js` above) 308→309, `office.css` 219→220. SEED_VERSION v349 → v350.
+
+**Remaining, disclosed, not done**: `office-shell.css` unscoping (the original Phase 6 stage 5,
+attempted and reverted once already — see the entry below), the deferred entry-screen CSS split, the
+legacy print block cleanup, the third ~170-line mobile-repair CSS block whose relationship to the new
+shell's own mobile CSS is still genuinely unresolved, and print-preview regeneration against a
+pre-Phase-6 baseline.
+
+**DONE (attempted, reverted), LIVE-CONFIRMED, 2026-09-24: Phase 6 stage 5 — unscoping
 `css/office-shell.css` found to be unsafe while stage 3's deferred office.css cleanup is still
 outstanding; comment corrections kept, the actual selector change reverted.** Wrote a script to
 mechanically strip the now-permanent `.shell-v2` class token from every selector in the file
