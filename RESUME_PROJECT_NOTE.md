@@ -22,7 +22,39 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**BOOK OF NEEDS GOT ITS OWN DESIGN PASS, 2026-09-25 (latest) — AND TWO REAL JS SYNTAX BUGS IN
+**TWO HOUSEKEEPING ITEMS PROPERLY ROOT-CAUSED AND FIXED, 2026-09-25 continued (latest).** Josh
+reported the dashboard displaying incorrectly on a fresh GitHub Codespaces checkout of this branch
+(headings/notes rendering, every book/office stamp grid missing, in both light and dark mode —
+toggling theme changed nothing). Traced by reproducing commit `3345abc~1` locally and comparing
+screenshots pixel-for-pixel against Josh's own — exact match. **Root cause: the codespace was six
+commits behind** (`git fetch` showed `8290726d..8efe271a`); `git pull` fixed it immediately — not a
+code defect. While investigating, picked up the two items the entry below had left "for next
+session": **`checkSeedVersion`'s TypeError, properly root-caused this time** — `window.storage`
+(`get`/`set`/`list`/`delete`, used throughout this file) has never been a real browser API, confirmed
+exhaustively (grepped the whole repo, used nowhere else, never assigned anywhere, unchanged since
+this file's very first commit `35f9e11`). Nobody caught it in months of real use because the true
+source of truth for every stamp has always been the hardcoded `status:`/`note:` fields committed by
+hand each session — `window.storage` only ever backed a secondary feature (clicking a stamp
+in-browser to override it locally), silently dead since day one, invisible because every call was
+try/catch-swallowed back to the correct committed defaults. **Fixed**: replaced with real
+`localStorage`, namespaced under a new `audit-ledger:` prefix (can't collide with the dark-mode
+toggle's own working `uo-ledger-dark` key, the model this fix follows). Live-verified: zero console
+errors, a manual stamp click now genuinely persists across reload, reset-all still works correctly.
+**And the pre-existing `audit-book-of-needs-tradition-context.mjs` "tradition filtering is strict"
+failure, properly re-verified** — the prior session's `git stash` check only reverted uncommitted
+changes, not that session's own ~40 prior commits, so it was rightly flagged "provisional." Re-checked
+against the actual last commit before that whole session began (`438a1fa`, via a clean `git
+worktree`) — same failure, now genuinely confirmed pre-existing. Root-caused further: it's a stale
+test assertion (a literal string match against old code phrasing), not a real filtering bug — the
+real `prayerOptionAppliesToContext()` filters correctly, just phrased differently since a legitimate
+later addition (role-gating) was stacked on top. **Fixed the assertion**; 21/21 checks now pass. Full
+detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued, SEED_VERSION v356 → v357.
+Disclosed, not fixed: `AUDIT_GOVERNANCE_LEDGER.md` itself has no narrative entry for Phase 5 lanes
+2-3, Phase 6, or the Book of Needs design pass (its tail stopped at v338 despite SEED_VERSION already
+at v356 before this session) — a pre-existing gap, already disclosed once before (the v337 entry),
+now disclosed again rather than backfilled, for the same reason given there.
+
+**BOOK OF NEEDS GOT ITS OWN DESIGN PASS, 2026-09-25 — AND TWO REAL JS SYNTAX BUGS IN
 `audit-ledger.html` WERE FOUND AND FIXED ALONG THE WAY.** After Phase 6 closed (entry directly
 below), Josh said "Give Book of Needs its own design pass now too." Researched first, per standing
 practice: confirmed via full-repo search that **no design source for Book of Needs exists anywhere**
@@ -83,13 +115,13 @@ alone). All three fixed (inner double quotes → single quotes, matching the fil
 elsewhere); confirmed via `node --check` (exit 0) and a live Playwright load (`UI_REDESIGN rows: 21`
 — the array now loads and executes). Committed as `3345abc`.
 
-**NOT YET FIXED, discovered in the very same live-verification pass, flagged for next session:**
-loading `audit-ledger.html` live now throws `TypeError: Cannot read properties of undefined
-(reading 'list') at checkSeedVersion (audit-ledger.html:890:39) at init (:917:9)`, logged as "seed
-version reseed failed — dashboard may show stale data until this succeeds." This was masked by the
-syntax errors above until they were fixed, so it is unknown how long it has existed or whether it
-predates this session. Needs root-cause investigation next session — start at `checkSeedVersion`,
-line 890.
+**SUPERSEDED 2026-09-25 continued: FIXED — see the top entry.** loading `audit-ledger.html` live
+threw `TypeError: Cannot read properties of undefined (reading 'list') at checkSeedVersion
+(audit-ledger.html:890:39) at init (:917:9)`, logged as "seed version reseed failed — dashboard may
+show stale data until this succeeds." This was masked by the syntax errors above until they were
+fixed. Root cause turned out to be much older than this session: `window.storage` was never a real
+API, present unchanged since this file's first-ever commit. Left here only so the original finding
+stays visible in place; do not re-cite it as still open.
 
 **PHASE 6 IS NOW COMPLETE, 2026-09-25.** Josh asked directly whether the UI refactoring
 was done; the honest answer was no — Phases 1–5 were done, but Phase 6 still had three disclosed

@@ -17491,3 +17491,96 @@ Cache-bust: `js/office-ui.js` 301 -> 302.
 Next: East Syriac, per section 9's own lane ordering.
 
 SEED_VERSION bumped to `v338-2026-09-24-phase5-coptic-lane-envelope-built`.
+
+---
+
+## Session 2026-09-25 continued -- two housekeeping items properly root-caused and fixed:
+## `window.storage` (never a real API) replaced with real `localStorage` in `audit-ledger.html`;
+## the stale `tradition filtering is strict` audit assertion corrected to match the actual,
+## correct filtering logic. SEED_VERSION v356 -> v357.
+
+Note: this file's own tail stopped at `v338` despite `SEED_VERSION` in `audit-ledger.html` already
+at `v356` when this entry begins -- Phase 5 lanes 2-3, all of Phase 6, and the Book of Needs design
+pass have real dashboard rows and `RESUME_PROJECT_NOTE.md` entries but no narrative entry in this
+file. The `v337` entry above already disclosed this same kind of gap once ("Not backfilled here,
+since reconstructing it secondhand risks asserting detail beyond what was actually verified live
+that session") -- same reasoning applies here, at larger scale. Not backfilled in this entry either;
+flagged so it isn't mistaken for an oversight.
+
+Josh reported the dashboard displaying incorrectly on a fresh GitHub Codespaces checkout of this
+branch: headings and notes rendering, every book/office stamp grid missing, in both light and dark
+mode. Traced by reproducing the exact pre-`3345abc` commit locally and comparing screenshots
+pixel-for-pixel against Josh's own -- an exact match. Root cause: the codespace was simply six
+commits behind (`git fetch` showed `8290726d..8efe271a`); `git pull` fixed it immediately -- not a
+code defect at all.
+
+### `checkSeedVersion` TypeError, properly root-caused this time
+
+The prior session's note flagged `TypeError: Cannot read properties of undefined (reading 'list')
+at checkSeedVersion` as "not yet fixed... needs root-cause investigation" -- but only established
+that it was a caught, non-crashing `console.error`, not why it happened. Investigated properly:
+`window.storage` -- the API `loadStatus`/`saveStatus`/`checkSeedVersion`/the `#resetAll` handler all
+call (`get`/`set`/`list`/`delete`) -- has never been a real browser API. Confirmed exhaustively:
+grepped the entire repo, found it used nowhere but this one file, never assigned anywhere,
+including in this file's own very first commit (`35f9e11`). Live-tested in this sandbox's headless
+Chromium (`/opt/pw-browsers/chromium-1194`): `typeof window.storage` is `undefined` in a plain
+browser with no extensions.
+
+This explains why nobody caught it in months of real use: the actual source of truth for every
+stamp's status/note has always been the hardcoded `status:`/`note:` fields committed directly into
+this file's own data arrays -- every "Update dashboard" commit across this project's history edits
+those fields by hand. `window.storage` only ever backed a secondary feature (clicking a stamp
+in-browser to override its status locally, without a code change) -- silently non-functional since
+day one, invisible because every call sat inside a try/catch that fell through to the committed
+defaults, which were always the intended values anyway. Josh confirmed independently that the
+dark-mode toggle (a different, adjacent mechanism, lines ~989/993) genuinely has persisted correctly
+for months via real `localStorage` -- the working model this fix now extends to the rest of the
+file.
+
+**Fixed**: replaced all four `window.storage.get/set/list/delete` call sites (`loadStatus`,
+`saveStatus`, `checkSeedVersion`, the `#resetAll` handler) with real `localStorage`, namespaced under
+a new `audit-ledger:` key prefix so it can never collide with the dark-mode toggle's own
+`uo-ledger-dark` key. `checkSeedVersion`'s reseed-on-version-bump logic reimplemented by walking
+`localStorage` directly (backwards, to avoid the classic re-indexing-while-removing bug) rather than
+calling a nonexistent `.list()`. Verified live in headless Chromium: zero console errors on load or
+reload; clicking a stamp now genuinely changes its color AND survives a reload (confirmed via a
+direct `localStorage` dump); "reset all to seed data" correctly clears every ledger key while
+leaving `uo-ledger-dark` untouched. `node --check` clean on both extracted inline `<script>` blocks.
+
+### `audit-book-of-needs-tradition-context.mjs`: "tradition filtering is strict" -- properly
+### re-verified, then fixed (a stale test, not a real bug)
+
+The prior session's ledger row for the Book of Needs design pass had confirmed this failure via
+`git stash` -- which only reverts *uncommitted* changes, not the ~40 commits of that same session's
+own prior work, so `RESUME_PROJECT_NOTE.md`'s own top section correctly flagged the check as
+"provisional, not confirmed." Re-verified properly this session: checked out the actual last commit
+before that whole session began (`438a1fa`, 2026-09-24 23:16, immediately preceding `7b2ea8c`'s
+"Phase 6 stage 1") into a clean `git worktree` and ran the audit script there directly. Same single
+failure, byte-identical. **Now genuinely confirmed pre-existing**, not merely provisional.
+
+Went further and root-caused it rather than leaving it at "confirmed pre-existing": the check does a
+literal string match for `'return traditions.includes(context);'` inside `js/prayers.js`. The actual
+`prayerOptionAppliesToContext()` function -- unchanged in this area for a long time, confirmed via
+`git log -S` -- reads:
+
+```js
+function prayerOptionAppliesToContext(option, context) {
+    if (context !== 'UNIVERSAL') {
+        const traditions = getBookOfNeedsTraditionsForPrayer(prayerId);
+        if (!traditions.includes(context)) return false;
+    }
+    return prayerOptionMeetsRoleRequirement(option.dataset.value);
+}
+```
+
+Functionally identical strict filtering, phrased as a negated early return, with a legitimate later
+addition (role-gating via `prayerOptionMeetsRoleRequirement`) stacked on top -- the audit assertion
+was simply never updated to match. Confirmed this exact mismatch already existed at the `438a1fa`
+baseline too, so it long predates even this session. **Fixed**: the assertion now matches the actual
+code (`if (!traditions.includes(context)) return false;`). Re-ran: 21/21 checks pass. Also re-ran
+`audit:book-of-needs-design-shell` as a sanity check on the adjacent script -- still passes.
+
+Two files changed (`audit-ledger.html`, `scripts/audit-book-of-needs-tradition-context.mjs`) plus
+this documentation pass -- no application code, data, or rendered office output touched.
+
+SEED_VERSION bumped to `v357-2026-09-25-ledger-storage-and-stale-audit-fixed`.
