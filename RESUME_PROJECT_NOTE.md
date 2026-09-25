@@ -22,7 +22,40 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**BOOK OF NEEDS GETS A REAL GROUND IMAGE, 2026-09-25 continued further still (latest).** Josh:
+**EASTERN SEASONAL-COLOUR SOURCING, 2026-09-25 continued further still (latest).** First item of
+Josh's explicit ordered plan ("Eastern seasonal-colour sourcing — Yes, please conduct this. Once
+this is done, I want to use the web deploy feature... Then, we will reaudit the Ethiopian
+Synaxarium... Then you will figure out needs:content/needs:governance... Then the engine audit
+sweep."). Two governance decisions Josh made directly, via `AskUserQuestion`, before any building
+began: Coptic gets the non-canonical white/red/purple folk custom built anyway despite having no
+codified scheme ("Build the loose 3-color folk custom anyway"), and Byzantine gets full rigorous
+scope, not a partial dot ("Full scope: build the feast-category classifier first"). **Byzantine**:
+sourced a real named witness — Bulgakov's *Reference Book for Priestly Church Servers*
+(Russian Synodal-era) for the standard 6-color Slavic/Byzantine scheme (gold/blue/red/purple/
+green/white). Classified all 381 EOR-tagged `data/saints/sanctoral.json` entries via the Orthocal
+MCP tool (`search_saints`'s `full_name` field carries reliable classification signal, e.g.
+"Bishop of X" = hierarch), writing new `liturgicalColorEOR`/`liturgicalColorEORSource` fields
+rather than overwriting the pre-existing ANG-only `liturgicalColor`/`liturgicalColorSource` pair
+(30 entries already carried that field from CPG sourcing — a real schema collision, resolved by
+namespacing rather than clobbering). Final distribution: 147 red / 133 gold / 72 green / 21 blue /
+4 white / 2 purple, 42 left uncorroborated rather than guessed. Great Lent's season-level purple
+fallback (for days with no color-bearing commemoration) required a new `getLiturgicalSeason()`
+export from `js/horologion-engine.js`, built on the engine's existing internal
+`_computeLiturgicalSeason()`. Wired live into `renderHorologionOffice()` (`js/office-ui.js`) as a
+small colored dot next to the date, same visual mechanism the Anglican BCP lane already used.
+**Coptic**: research confirmed — not merely failed to find — that Coptic practice has no codified
+per-feast color scheme beyond "the tunic must be white" (a named tasbeha.org researcher's finding);
+built the folk custom Josh approved anyway from 140 of 173 OOR-tagged entries (Coptic and
+null-subtradition only — the 33 Armenian/Syriac/Ethiopian-subtradition entries deliberately
+excluded, out of scope), wired white/red into `renderCopticAgpeya()`. Purple/fasting days are
+**not** wired — disclosed rather than faked, because no Coptic fasting-calendar engine exists yet
+to drive it. Live-verified extensively in headless Chromium: Great Lent with/without a
+color-bearing commemoration, a martyr day, a Theotokos feast, Coptic default and martyr days, a
+full four-lane regression sweep, and the `?shell=v1` variant — all clean, zero console errors.
+Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (Eastern seasonal-colour
+sourcing), SEED_VERSION v359 → v360.
+
+**BOOK OF NEEDS GETS A REAL GROUND IMAGE, 2026-09-25 continued further still.** Josh:
 "We've been adding muted graphics behind everything. Let's do that here as well. However, we need
 to do imagery that is more or less ecumenical across the apostolic traditions." The design pass
 had deliberately shipped none — its own CSS comment said Book of Needs "has no one tradition of

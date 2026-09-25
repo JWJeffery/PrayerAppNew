@@ -3342,6 +3342,42 @@ async function renderHorologionOffice(officeKey) {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = dateLabel;
+    // ADDED 2026-09-25, spec section 6 (Byzantine/Slavic liturgical colour).
+    // Same "a single dot beside the day, never a wash over the page" contract
+    // the Anglican lane's own dot already implements (see renderBcpOffice()),
+    // reused here rather than duplicated blind: a saint/feast's own sourced
+    // liturgicalColorEOR wins when one is commemorated that day (matching the
+    // Anglican pattern where a Lesser Feast's own colour outranks the season
+    // default); Great Lent falls back to purple (this palette's dark/penitential
+    // entry -- Bulgakov's own scheme grades Lenten weekdays black-to-purple by
+    // day, a distinction this dot deliberately does not attempt, per its own
+    // "never a wash" contract); every other day falls back to gold, Bulgakov's
+    // own stated general-season default ("used when not using some other
+    // colour"). Only the six colours actually sourced get a dot -- anything
+    // else renders nothing, honest silence rather than an invented colour.
+    try {
+        const eorComms = await resolveCommemorations(currentDate, 'EOR', { includeEcumenical: false });
+        const eorColor = eorComms.find(s => s.liturgicalColorEOR)?.liturgicalColorEOR
+            || (HorologionEngine.getLiturgicalSeason(currentDate) === 'great-lent' ? 'purple' : 'gold');
+        const eorDotColor = {
+            gold:   '#c9a84c',
+            blue:   '#3a6ea5',
+            red:    '#9b2335',
+            purple: '#6b3070',
+            green:  '#4a7c59',
+            white:  '#f5f1e4',
+        }[eorColor];
+        if (eorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${eorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
     container.appendChild(subtitle);
 
     // Diagnostic banner when variable slots remain unresolved
@@ -6495,13 +6531,38 @@ async function renderCopticAgpeya() {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = officeSubtitleText;
-    // No seasonal dot here, deliberately: UI_REDESIGN_HANDOFF.md §6 requires a
-    // named, jurisdiction-specific witness before any Eastern lane gets one
-    // (Coptic usage is "thinner and less codified than the Western sequence,"
-    // per the spec's own wording), and none has been sourced yet -- see the
-    // ui:phase5-eastern-seasonal-colors-sourcing row on the dashboard. An
-    // invented dot would be exactly the fabrication §6 warns against; no dot
-    // is honest silence until that sourcing work happens.
+    // ADDED 2026-09-25, spec section 6. SOURCED, PARTIALLY WIRED -- disclosed,
+    // not silently shipped incomplete. Coptic practice has no codified
+    // per-feast colour scheme (confirmed directly: a Coptic liturgical-
+    // vestments researcher who checked the canons found none, beyond "the
+    // tunic must be white" -- tasbeha.org community discussion); the commonly-
+    // observed but non-canonical folk custom (white default, red for martyr
+    // commemorations, purple during fasting periods) was built anyway on
+    // Josh's direct instruction. White/red are wired below, from each day's
+    // own sourced liturgicalColorOOR (data/saints/sanctoral.json). Purple is
+    // NOT wired: it would need a Coptic fasting-period calendar (Great Lent,
+    // the Nativity/Apostles'/Virgin Mary fasts, on the Coptic church's own
+    // Alexandrian computus -- distinct from both the Western and Byzantine
+    // reckonings already built for other lanes) that does not exist anywhere
+    // in this codebase, confirmed by a repo-wide search before writing this.
+    // Building one is real, separate engine work, not a data-sourcing gap --
+    // flagged here and on the dashboard rather than faked with a guessed date
+    // range or silently dropped from the approved 3-colour scheme.
+    try {
+        const oorComms = await resolveCommemorations(currentDate, 'OOR', { includeEcumenical: false });
+        const oorColor = oorComms.find(s => s.liturgicalColorOOR)?.liturgicalColorOOR || 'white';
+        const oorDotColor = { white: '#f5f1e4', red: '#9b2335' }[oorColor];
+        if (oorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${oorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
     container.appendChild(subtitle);
 
     // env replaces the string-concatenated officeHtml entirely -- blocks/

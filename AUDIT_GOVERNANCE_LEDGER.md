@@ -19045,3 +19045,138 @@ ministries" toggle's label should reference traditions instead -- was investigat
 separately; see the `needs:minister-role-gating-wired` entry above. Not part of this entry's scope.
 
 SEED_VERSION bumped to `v359-2026-09-25-book-of-needs-ecumenical-ground-imagery`.
+
+---
+
+## Session 2026-09-25 continued -- Eastern seasonal-colour sourcing (spec section 6): Byzantine's
+## full six-category scheme sourced and classified against all 379 EOR sanctoral entries; Coptic's
+## genuine absence of a codified scheme confirmed and its folk custom built anyway on Josh's
+## instruction; both wired into a live seasonal dot. SEED_VERSION v359 -> v360.
+
+Josh: conduct the sourcing this dashboard row had flagged as blocked.
+
+### Byzantine: a real, citable witness -- Bulgakov, not general knowledge
+
+Confirmed via web research (OrthodoxWiki, corroborated by a second, independent source -- Saint
+John the Evangelist Orthodox Church) that the detailed six-colour scheme traces to **Bulgakov's
+Reference Book for Priestly Church Servers**, the classical Russian Synodal-era liturgical
+reference. Confirmed the ancient Byzantine Typikon itself specifies only light/dark, not this
+detail -- the six-colour system is a genuine Slavic development, matching the OCA/Slavic baseline
+this project already uses elsewhere (orthocal.info's standing authorization). Checked whether OCA's
+own site publishes a colour calendar of its own -- it does not; Bulgakov is the real witness.
+
+The scheme: gold (Christ/prophets/apostles/hierarchs, general season default), blue (Theotokos/
+angels/virgins), red (martyrs), purple/dark-red (Cross feasts), green (monastics), dark/black
+graduated (Great Lent).
+
+### Classifying all 379 EOR entries
+
+Read the full EOR-tagged slice of `data/saints/sanctoral.json` (379 entries) and classified each
+into the six categories. ~200 were classifiable directly from the corpus's own honorific naming
+(Martyr, Hieromartyr, Venerable, Apostle, Prophet). The remaining ~180 needed individual research:
+used the `Orthocal` MCP tool's `search_saints`, whose `full_name` field reliably carries the real
+classification signal even when the corpus's own bare "Saint X" name doesn't (e.g. "Saint Gregory
+of Nyssa" -> Orthocal's own full name "Our Holy Father Gregory, **Bishop** of Nyssa" -> hierarch).
+Cross-checked ambiguous identities (which of several same-named figures) against each entry's own
+`dayLegacy` field rather than guessing (e.g. `saint-emilian`, July 18, confirmed as the Martyr of
+Silistria, not the different Confessor-Bishop of Cyzicus found in the same search).
+
+Final distribution: 147 red, 133 gold, 72 green, 21 blue, 4 white, 2 purple. 42 of 379 (11%) are
+explicitly flagged `UNCORROBORATED` in their own `liturgicalColorEORSource` field -- Orthocal's
+index returned no match for these (well-documented figures like Cyril and Methodius, several Desert
+Fathers, several Roman-era martyrs); classified from general knowledge with the gap disclosed
+per-entry rather than presented with the same confidence as a sourced match.
+
+**One genuine special case, disclosed rather than mechanically defaulted**: the Beheading of John
+the Baptist (Aug 29) departs from his other prophet-group gold feasts. Confirmed via web search
+that this is kept as a strict fast day in explicit remembrance of his "violent martyrdom" -- red,
+not the mechanical gold his other commemorations get.
+
+### A real schema question, resolved without touching existing Anglican data
+
+`data/saints/sanctoral.json` already carries `liturgicalColor`/`liturgicalColorSource` on ~30 of
+these same EOR-tagged entries -- from the earlier Anglican Lesser Feast work, sourced from CPG
+(Church Pension Group). A saint's Anglican-customary colour and Byzantine-customary colour can
+genuinely differ (Polycarp: CPG says purple for ANG use, Bulgakov says red for EOR use -- both
+correct for their own tradition). Confirmed by reading `js/office-ui.js` that the existing field is
+hardcoded to `resolveCommemorations(date, 'ANG', ...)` only, never read by any Byzantine code path
+-- so a **new**, separate field pair, `liturgicalColorEOR`/`liturgicalColorEORSource`, was added
+rather than overwriting or restructuring the existing one. Verified live that both values coexist
+correctly on the same entry without collision.
+
+### Great Lent's own season-level fallback
+
+`HorologionEngine.getCalendarSummary()` already computed the raw liturgical season internally but
+only ever returned a formatted display string ("Great Lent — Tone 6"), never the season value
+itself. Added a small, additive export, `getLiturgicalSeason(dateObj)`, returning the same
+already-computed value directly rather than have the caller re-derive it by parsing the summary
+string (fragile) or reimplementing the season logic a second time. Wired as the seasonal dot's
+fallback when no saint is commemorated that day, with the same precedence the Anglican dot already
+established: a day's own sourced colour still wins over the season default when one exists.
+Verified live: March 8 2026 (Great Lent, but St Theophylact the Confessor's own gold day)
+correctly shows gold; February 24 2026 (Great Lent, no EOR commemoration that day) correctly falls
+back to purple.
+
+### Coptic: the real surprise -- genuinely uncodified, not merely unsourced
+
+Every source found agrees Coptic practice is overwhelmingly white by default, with red loosely
+associated with martyrs -- but a Coptic liturgical-vestments researcher on tasbeha.org, after
+directly checking the canons, states plainly: "I found no explicit color rules for these
+vestments... the only rule is that the tunic must be white." A deacon in the same thread confirms
+colour choice is local custom/symbolism, not canon. This is the same finding this project already
+made for East Syriac ("no dot is the honest result") -- newly confirmed for Coptic too, not assumed
+by analogy.
+
+Put the real choice to Josh rather than picking one: no dot at all, a static white dot, or the
+loose non-canonical folk custom anyway, clearly labelled as custom rather than codified rule. He
+chose the folk custom.
+
+### Coptic classification, scoped honestly
+
+Classified 140 of 173 OOR-tagged entries by a keyword classifier matching the Coptic Synaxarium's
+own vocabulary ("Martyrdom of X" signals a martyr; "Departure of X" signals a peaceful death): 44
+red, 96 white (the default). Scoped to the 78 entries explicitly tagged `oorSubtradition: "Coptic"`
+plus the 62 tagged with no sub-tradition at all -- which this corpus's own 2026-09-12 convention
+(`js/office-ui.js`) already treats as "not narrowed to a specific sub-tradition," i.e. generically
+applicable. **Deliberately did NOT extend this Coptic-sourced classification to the 33 entries
+explicitly tagged Armenian, Syriac, or Ethiopian** -- a different Oriental Orthodox church's own
+liturgical-colour custom was never researched, and assuming it matches Coptic practice would be
+exactly the unwarranted cross-tradition extension this project's own sourcing discipline has
+already warned against elsewhere (the Byzantine ground-image work's own "never a Western image
+behind an Eastern lane" rule, applied here to colour custom instead of imagery). Those 33 entries
+carry no `liturgicalColorOOR` field at all -- disclosed as out of scope, not silently guessed.
+
+### Purple (fasting) NOT wired -- a real missing prerequisite, not a shortcut
+
+Confirmed by a repo-wide search that **no Coptic fasting-period calendar exists anywhere in this
+codebase**. Coptic Great Lent and the other Coptic fasts (Nativity, Apostles', the Virgin Mary
+fast) run on the Coptic church's own Alexandrian computus, distinct from both the Western and
+Byzantine reckonings already built for other lanes. Building one is real, separate engine work --
+not a data-sourcing gap this session's research could close, and not faked with a guessed date
+range. Disclosed on the dashboard and in the code comment at the point where purple would be wired,
+so this reads as a known, named gap rather than an oversight.
+
+### Engine wiring
+
+Both `renderHorologionOffice()` and `renderCopticAgpeya()` (`js/office-ui.js`) now build a real
+seasonal-dot `<span>` beside the `.liturgical-title`, the identical visual contract the Anglican
+dot already established (`renderBcpOffice()`) -- a single small dot, never a wash over the page.
+Each lookup is wrapped in `try`/`catch`: a commemoration-lookup failure must never block the office
+itself from rendering; the dot is a disclosure, not a dependency.
+
+### Verified live
+
+Headless Chromium via `scripts/dev-spa-server.mjs`. Byzantine: a monastic-saint day (green,
+confirmed), a hieromartyr day (Polycarp, red), a Theotokos feast (Dormition, blue), Great Lent with
+a commemoration (gold, the day wins) and without one (purple, the season fallback) -- all confirmed
+against their exact expected hex values, not just "looks about right." Coptic: the default (white)
+and a martyr day (red) both confirmed. Full four-lane regression sweep (daily / coptic-agpeya /
+east-syriac / horologion) and a `?shell=v1` check both re-run clean, zero console errors throughout.
+
+East Syriac was left deliberately dotless -- not revisited this pass; nothing in this session's
+research changes the spec's own prior working assumption for that lane.
+
+Two files of application code touched (`js/office-ui.js`, `js/horologion-engine.js`) plus
+`data/saints/sanctoral.json` -- no CSS, no markup.
+
+SEED_VERSION bumped to `v360-2026-09-25-eastern-seasonal-colors-sourced-and-wired`.

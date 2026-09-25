@@ -8881,11 +8881,25 @@ function getCalendarSummary(dateObj) {
     return toneResult.toneLabel;
 }
 
+// ADDED 2026-09-25, for the seasonal dot (spec section 6, Byzantine/Slavic
+// liturgical colour): getCalendarSummary() above already computes the raw
+// season internally but only ever returns a formatted display string, never
+// the season value itself. Rather than have the caller re-derive the season
+// by parsing that string (fragile -- 'Great Lent' is only a substring of the
+// summary, not the whole thing) or re-implement _computeLiturgicalSeason's
+// own logic a second time, this exposes the same already-computed value
+// directly.
+function getLiturgicalSeason(dateObj) {
+    const toneResult = _computeBaselineTone(dateObj);
+    return _computeLiturgicalSeason(dateObj, toneResult).season;
+}
+
 return {
     getOfficeSkeleton,
     resolveOffice,
     validateOfficePayload,
-    getCalendarSummary
+    getCalendarSummary,
+    getLiturgicalSeason
 };
 })();
 
