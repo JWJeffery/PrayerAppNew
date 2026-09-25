@@ -2009,3 +2009,100 @@ body.shell-v2 .app-mode-tool-btn small {
         min-height: 76px;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: container sizing + viewport-stabilization port
+   (Stage 3 of 6, the highest-stakes of the six -- ported and verified via
+   both screenshots AND getComputedStyle spot-checks at 6 viewports before
+   anything in office.css was touched).
+
+   office.css sets #tradition-entry's width/max-width/max-height/margin/
+   overflow-y/backdrop-filter TWICE: a base rule, then a later "viewport
+   stabilization pass" rule with identical selector specificity that wins
+   for every property it redeclares, confirmed live via getComputedStyle at
+   every tested viewport (e.g. max-height:none at <=760px width, not the
+   base rule's calc(100vh-40px)). Only the WINNING (later) values are
+   ported below, plus whatever the base rule alone still supplies
+   (padding/box-sizing/position/z-index/text-align, never redeclared
+   anywhere else). #mode-selection has no such second declaration -- its
+   width/max-width/max-height come only from its one base rule.
+
+   border-radius:22px in both screens' <=760px overrides is OMITTED,
+   confirmed dead by the same reasoning as Stage 2 (Group 6's unconditional
+   border-radius:0 already wins at every viewport, confirmed live). The
+   asymmetry that #tradition-entry gets max-height:none at <=760px width
+   while #mode-selection keeps max-height:calc(100vh - 24px) is preserved
+   deliberately -- that's current, tested behavior, not an inconsistency to
+   fix here. */
+
+#tradition-entry.app-tradition-entry {
+    padding: clamp(28px, 4.5vw, 58px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+#mode-selection.app-mode-shell {
+    position: relative;
+    width: min(1080px, calc(100vw - 40px));
+    max-width: 1080px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: clamp(28px, 4.5vw, 58px);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* The winning (later-cascading) width/max-width/max-height/margin for
+   #tradition-entry, from office.css's viewport-stabilization pass. */
+#tradition-entry.app-tradition-entry {
+    width: min(860px, calc(100vw - 48px));
+    max-width: 860px;
+    max-height: calc(100vh - 48px);
+    max-height: calc(100svh - 48px);
+    max-height: calc(100dvh - 48px);
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+    overflow-y: auto;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+#mode-selection.app-mode-shell {
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+}
+
+@media (min-width: 1100px) and (min-height: 760px) {
+    #tradition-entry.app-tradition-entry {
+        width: min(900px, calc(100vw - 72px));
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 860px) {
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: clamp(72px, 11vh, 128px);
+    }
+}
+
+@media (max-width: 760px) {
+    #mode-selection.app-mode-shell {
+        width: min(100vw - 24px, 560px);
+        max-height: calc(100vh - 24px);
+        padding: 28px 22px;
+    }
+
+    #tradition-entry.app-tradition-entry {
+        width: min(100vw - 28px, 560px);
+        max-height: none;
+        padding: 28px 22px;
+    }
+}
+
+@media (max-height: 760px) {
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: 38px;
+    }
+}
