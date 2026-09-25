@@ -22,7 +22,53 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the sidebar-control migration Phase 6 stage 4 found
+**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): entry-screen hairline modernized; a real, currently-live
+mobile/print grid bug found and fixed, along with a second bug it exposed.** Josh: settle the
+hairline color question, then unscope the rest of `office-shell.css` and do the audit that needs.
+**Hairline (settled)**: the family-grid/tradition-panel/mode-grid `border-top` — left as the literal
+brown per the entry below's finding 2 — modernized to `var(--uo-hairline)` (gold on this
+always-night-palette screen), matching every other hairline there. Verified via `getComputedStyle`
+and a pixel/JSON diff showing only the two `borderTopColor` values changed. Commit `70b77f3`.
+
+**Audit (started, redirected)**: began the ~186-occurrence unscoping audit via three parallel Explore
+agents (root tokens, `.office-container`, `#main-content` shell grid; the `uo-ordo`/rail/page/margin/
+keeping internals; the `.uo-drawer-*` drawer). Two real risks surfaced for the eventual unscoping
+plan (not yet acted on): unscoping `.uo-drawer-moved input[type="checkbox"]` would lose
+`margin-right` outright to a still-live `office.css` rule (not a tie — a real loss); two more
+`.uo-drawer-moved` selectors would become exact specificity ties with `office.css` rivals, saved only
+by stylesheet load order.
+
+While verifying one agent's claim, found a **real, currently-live production bug unrelated to
+unscoping**: `office-shell.css`'s mobile (`@media max-width:768px`, line 1021) and print
+(`@media print`, line 1076) `#main-content` overrides were written without `.app-primary-canvas` —
+one class short of the always-on base rule's specificity — so both have been dead code since
+written. Confirmed live: at 375px, `getComputedStyle(#main-content).gridTemplateColumns` read
+`"236px 0px 268px"` — the desktop 3-column grid, never the intended mobile single column — with the
+actual prayer-text column squeezed to 0px and `#main-content`'s real width (1128px) silently
+overflowing the 375px viewport, clipped rather than scrollable. `mobile-check.mjs` never caught this
+because it only checks for console errors, never computed grid geometry. Disclosed to Josh rather
+than folded silently into the unscoping plan or deferred past it; he chose to fix it now, as its own
+hotfix, before the unscoping plan continues.
+
+**Fixed**: added `.app-primary-canvas` to both selectors (matches the base rule's specificity so the
+later, narrower-media rule wins by source order; confirmed no property overlap with `office.css`'s
+own mobile/print `#main-content` rules, so no new cross-file conflict). This exposed a **second**
+bug, caught before shipping rather than after: `.uo-rail` had no height cap for its "top strip"
+mobile layout, so a long office (East Syriac: 33 steps; Horologion) grew the rail to 1300px+ and
+squeezed the prayer text to ~0px again, on the other axis — tested across four traditions (Daily:
+unaffected, no rail; Coptic Agpeya 10 items; East Syriac 33; Horologion) before Josh chose to fix
+this in the same hotfix. Capped `.uo-rail` at `max-height:34vh` with its own `overflow-y:auto`,
+matching how `.uo-page` already scrolls its own overflow rather than growing past its grid row.
+Verified: single-column layout now genuinely applies at ≤768px and `display:block` under print;
+prayer text gets 270–520px instead of 0px on every long-rail tradition tested; zero pixel diff and
+identical grid geometry at 1440/1024/820px width (above the 768px threshold — no desktop regression);
+full regression sweep clean. Cache-bust `office-shell.css` 314→316. Commit `cd0df5a`.
+
+**Remaining**: the broader unscoping plan itself — not yet written, now that the code it will touch
+is actually correct — covering the root tokens/`.office-container`/shell-grid findings, the two
+`.uo-drawer-moved` risks above, and everything else the three research agents mapped.
+
+**DONE, LIVE-CONFIRMED, 2026-09-25: the sidebar-control migration Phase 6 stage 4 found
 missing — done.** Josh, directly: "Migrate the remaining sidebar controls into the drawer." This is
 exactly the prerequisite stage 4's own note named as real, unattempted work: every control
 `radioRow()`/`checkboxRow()`/`selectRow()` surfaces via a synthetic drawer row reads its real
