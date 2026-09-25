@@ -652,41 +652,8 @@ function backToSplash() {
     // currently doing.
     window._esyTemporalOverride = { active: false, date: null, hourId: null };
 
-    // Reset all settings panels to their default hidden states so the next
-    // mode selection starts clean (avoids e.g. East Syriac settings panel
-    // bleeding into a subsequent Daily Office load)
-   const settingsPanel = document.getElementById('settings-panel');
-    const ethSettings   = document.getElementById('ethiopian-settings');
-    const copSettings   = document.getElementById('coptic-settings');
-    const esySettings   = document.getElementById('east-syriac-settings');
-    const genSettings   = document.getElementById('generic-settings');
-    const mainContent   = document.getElementById('main-content');
-
-    // On splash, ALL panels are hidden. The next selectMode() call is solely
-    // responsible for activating whichever panel is correct for that mode.
-    // Do NOT restore #settings-panel here — that was the original splash
-    // deformation bug. Splash has no sidebar at all.
-    if (settingsPanel) {
-        settingsPanel.classList.add('sidebar-hidden');
-        settingsPanel.classList.add('mode-hidden');
-    }
-    if (ethSettings) {
-        ethSettings.classList.add('sidebar-hidden');
-        ethSettings.classList.add('mode-hidden');
-    }
-    if (copSettings) {
-        copSettings.classList.add('sidebar-hidden');
-        copSettings.classList.add('mode-hidden');
-    }
-    if (esySettings) {
-        esySettings.classList.add('sidebar-hidden');
-        esySettings.classList.add('mode-hidden');
-    }
-    if (genSettings) {
-        genSettings.classList.add('sidebar-hidden');
-        genSettings.classList.add('mode-hidden');
-    }
-       if (mainContent) {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
         mainContent.classList.remove('sidebar-hidden');
     }
 }
@@ -1895,15 +1862,7 @@ async function selectMode(mode) {
     window._esyTemporalOverride = { active: false, date: null, hourId: null };
 
 
-    // Mode transition invariant: exactly one office drawer is active for the selected mode.
-    // All non-active drawers must be both mode-hidden and sidebar-hidden so toggleSidebar()
-    // cannot target a stale drawer after cross-tradition navigation.
-    const settingsPanel = document.getElementById('settings-panel');
-    const ethSettings   = document.getElementById('ethiopian-settings');
-    const copSettings   = document.getElementById('coptic-settings');
-    const esySettings   = document.getElementById('east-syriac-settings');
-    const genSettings   = document.getElementById('generic-settings');
-    const mainContent   = document.getElementById('main-content');
+    const mainContent = document.getElementById('main-content');
 
     if (mode === 'prayers') {
         // ── Book of Needs ─────────────────────────────────────────────────────
@@ -1929,26 +1888,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (copSettings) {
-            copSettings.classList.remove('sidebar-hidden');
-            copSettings.classList.remove('mode-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
@@ -1964,26 +1903,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (copSettings) {
-            copSettings.classList.add('sidebar-hidden');
-            copSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.remove('sidebar-hidden');
-            esySettings.classList.remove('mode-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
@@ -2002,26 +1921,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (copSettings) {
-            copSettings.classList.add('sidebar-hidden');
-            copSettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.remove('mode-hidden');
-            genSettings.classList.remove('sidebar-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         updateGenericDateDisplay();
@@ -2047,13 +1946,6 @@ async function selectMode(mode) {
         // the lane pipeline without claiming full Roman Breviary coverage.
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
-
-        for (const panel of [settingsPanel, ethSettings, esySettings, genSettings, copSettings]) {
-            if (panel) {
-                panel.classList.add('sidebar-hidden');
-                panel.classList.add('mode-hidden');
-            }
-        }
 
         if (mainContent) {
             mainContent.classList.remove('sidebar-hidden');
@@ -2096,26 +1988,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (copSettings) {
-            copSettings.classList.add('sidebar-hidden');
-            copSettings.classList.add('mode-hidden');
-        }
-        if (settingsPanel) {
-            settingsPanel.classList.remove('mode-hidden');
-            settingsPanel.classList.remove('sidebar-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
