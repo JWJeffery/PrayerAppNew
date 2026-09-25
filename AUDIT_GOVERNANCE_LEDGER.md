@@ -19970,3 +19970,79 @@ changing anything a clarifying question is going back to Josh about what specifi
 rather than guess-fixing behavior that may be intentional.
 
 SEED_VERSION bumped to `v370-2026-09-25-order-rail-scroll-fixed`.
+
+## Session 2026-09-25 continued -- the Horologion full audit, phase 1: resources gathered, scope set
+
+Josh: "I want a full audit of the horologion. Start with determining what ought to be there. Let's
+pull together all of the resources that we need in order to do this correctly. 'Science the Fuck Out
+of This' like Mark Whatney would say." This entry is that first phase -- resource-gathering and
+scoping only. **Nothing in the shipped Horologion content was changed.** Full detail and the complete
+reasoning trail: `documentation/HOROLOGION_SOURCE_AUDIT.md`.
+
+### The headline result: Hapgood's full governing text is now actually in the repo
+
+This lane's approved governing structural source, Isabel Hapgood's 1906/1922 *Service Book of the
+Holy Orthodox-Catholic Apostolic (Greco-Russian) Church* (public domain), had only ever been
+consulted in fragments across this project's history -- an archive.org text stream that truncated
+before Appendix B, plus one manually-uploaded excerpt of pp.592-615. Confirmed this session that the
+truncation was a `WebFetch`-tool artifact, not a real reachability wall: `WebFetch`'s own description
+states it "processes the content with a small, fast model," and testing it directly against this
+exact book confirmed it silently summarizes a 658-page document down to roughly its first 50-75 pages
+before ever answering a question about it -- the same failure shape already documented for Maclean's
+djvu-stream truncation, but this time traced to the fetching tool itself, not the source. Bypassed by
+downloading the file directly with `curl` instead: the complete 44,029-line OCR text, verified against
+archive.org's own stated file size, now lives at
+`data/kalendar/source-witnesses/hapgood-service-book-1922.txt`, with a machine-extracted (not
+hand-typed) page/line map of every office's running header at
+`data/kalendar/source-witnesses/hapgood-service-book-1922-section-map.json`. Both registered in
+`source-index.json` under `HAPGOOD1922`.
+
+### What Hapgood confirms and what it doesn't cover
+
+Cross-checked the book's own running headers against its Preface: Great Vespers, the All-Night Vigil
+(Vespers+Matins combined), all four Hours, Typika, both Divine Liturgies, and Grand Compline are all
+fully present as real service text (pp.5-164). Her Preface states outright, and the section map
+independently confirms (zero running headers anywhere in the mapped 571 pages), that she omitted the
+Midnight Service, Little Vespers, and Small/Little Compline entirely. This app currently builds a
+Midnight Office and a Small Compline anyway -- their `data/horologion/*.json` skeleton files cite no
+named source edition at all, just "the ordinary... Midnight Office of the Constantinopolitan
+Horologion" with no citation. **This is a real, surfaced gap, not yet resolved**: per this project's
+own no-reconstruction rule, those two offices cannot be responsibly audited or corrected until a real
+source is identified. Candidate identified: Holy Trinity Publications' *The Unabbreviated Horologion
+or Book of the Hours* (Jordanville, NY) -- precisely pinned down this session (title, publisher,
+ISBN 978-0-88465-371-4) as the specific edition already cited throughout the existing corpus under
+the vague label "Jordanville Horologion (2008 edition)" for weekday troparion/kathisma/prokeimenon
+tables. It is in copyright, a modern edition, and not present in the repo or (searched this session)
+in Josh's Google Drive -- every existing citation to it is therefore currently unverifiable against
+the primary text. As an *unabbreviated* Horologion it almost certainly contains the Midnight Office
+and Small Compline in full, making it the natural source to close the gap if Josh can supply pages,
+matching the working Maclean/O'Leary precedent from the East Syriac lane.
+
+### Also checked fresh, not assumed
+
+Lambertsen's *Octoechos* (governs tone hymnography, separately from Hapgood's structure) remains
+in-copyright and NOT yet under the free public license the Lambertsen Foundation announced targeting
+"early 2026" -- checked directly against damascenepress.org this session (2026-09-25): still
+described only as "in the process of developing." No change from the status recorded 2026-09-04.
+
+### The inventory, for the record
+
+A complete Slavic-recension Horologion's daily cycle: Vespers (Great/ordinary/Little), Compline
+(Great/Small), Midnight Office, Matins/Orthros, the four Hours plus their Interhours, and Typika, all
+threaded through by the cross-cutting Octoechos/troparion/theotokion corpora. The resolver
+(`js/horologion-engine.js`) currently routes 10 distinct offices plus 4 interhours to a dedicated
+resolver function -- confirmed by reading the actual routing switch, not the file's own header
+comment, which is stale and still claims only Vespers is built. `structure.json`'s
+`governance.byzantine_release_roadmap.critical_path_offices` list, which might be expected to already
+answer "what's built," turns out to cover only 6 items and should not be read as a comprehensive
+inventory.
+
+### Proposed next step, not yet started
+
+Audit one office at a time against the now-complete Hapgood text, same discipline as this session's
+earlier engine-audit sweep -- every claim reproduced against the actual source, nothing trusted from a
+prior comment. Suggested order: Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins first
+(all fully covered by Hapgood already in hand); Midnight Office and Small Compline once Josh supplies
+a real source for them. Awaiting his confirmation of this scope before the line-by-line work begins.
+
+SEED_VERSION bumped to `v371-2026-09-25-horologion-audit-phase-1-resources-gathered`.

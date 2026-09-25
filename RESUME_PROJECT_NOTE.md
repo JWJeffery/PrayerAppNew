@@ -22,6 +22,34 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**HOROLOGION FULL AUDIT — PHASE 1 (RESOURCES), 2026-09-25 (latest).** Josh: "I want a full audit
+of the horologion. Start with determining what ought to be there. Let's pull together all of the
+resources that we need in order to do this correctly." **This is resource-gathering only — no
+Horologion content has been audited or changed yet.** Full detail:
+`documentation/HOROLOGION_SOURCE_AUDIT.md` (read this before starting the actual audit). The
+headline result: this lane's governing structural source, Hapgood's 1906/1922 *Service Book*
+(public domain), had only ever been consulted in truncated fragments across this project's history
+— traced this session to a `WebFetch`-tool artifact (it silently summarizes a document this long
+down to ~50-75 pages via its own small-model processing step), not a real reachability wall.
+Downloaded the complete 658-page text directly instead: now saved at
+`data/kalendar/source-witnesses/hapgood-service-book-1922.txt` (44,029 lines) with a
+machine-extracted page/line map at `...hapgood-service-book-1922-section-map.json`, both registered
+in `source-index.json`. Confirms Vespers, all four Hours, Typika, both Divine Liturgies, and Grand
+Compline are fully present (pp.5-164); confirms (her own Preface + zero running headers in the
+section map) that the Midnight Service, Little Vespers, and Small Compline are NOT in Hapgood at
+all. **Real, unresolved gap surfaced**: this app's Midnight Office/Small Compline skeleton files
+cite no named source edition whatsoever. Candidate identified precisely: Holy Trinity Publications'
+*The Unabbreviated Horologion or Book of the Hours* (Jordanville, NY, ISBN 978-0-88465-371-4) — the
+specific book already cited vaguely as "Jordanville Horologion (2008 edition)" throughout the
+existing corpus, but not actually held anywhere in the repo or Josh's Drive. **Needs Josh: does he
+have or can he get this (or another named edition) to supply pages from for the Midnight
+Office/Small Compline gap specifically**, matching the Maclean/O'Leary precedent. Also checked
+fresh: Lambertsen's Octoechos (governs hymnography, separate question from structure) still not
+under its announced free public license as of this session — no change since 2026-09-04. Proposed
+audit order once confirmed: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins
+(all covered by Hapgood already in hand), Midnight Office/Small Compline once sourced. **Not
+started.**
+
 **ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25.** Resolves the "TODO, next
 session" note below (kept here, struck through in spirit, for history). Design confirmed with
 Josh first (whole traditions only, JSON-backed, admin UI) via `AskUserQuestion`, written up in
