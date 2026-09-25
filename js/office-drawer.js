@@ -121,16 +121,49 @@
        pattern as moveRealControls() above: the same real nodes, same ids,
        same onchange handlers, never rebuilt.
 
-       Left OUT, on purpose, confirmed unread anywhere outside their own
-       onchange: #settings-panel's "Appearance" Dark Mode checkbox
-       (toggle-dark, superseded by the shell's own independent Auto/Light/
-       Dark control) and #generic-settings's Diagnostics toggle button
-       (hor-btn-diag, a dev-only display toggle, not a persisted value
-       another function reads back). Also left out: the three East Syriac
-       "Current Cycle"/"Fasting Character"/"Anaphora" display boxes and the
-       BCP/Horologion date-picker inputs -- these are written TO by render
-       logic, never read FROM, so nothing depends on their DOM location; out
-       of scope for a control migration. */
+       EXTENDED (Phase 6, sidebar-deletion refactor): the legacy sidebars
+       are being deleted outright, not just hidden, so every real element
+       any code still reads by id/name -- not just this drawer's own move/
+       read functions -- must be preserved somewhere, whether or not it has
+       its own drawer UI. Confirmed by reading every remaining reference
+       before moving anything:
+         - #ecumenical-devotions-section: its Marian nested-group and two
+           borrowed-devotion checkboxes already left it individually above,
+           leaving it an empty shell -- but toggleBcpOnly() (office-ui.js)
+           and this file's own buildKeep() both still find it purely by
+           getElementById('ecumenical-devotions-section') to read/write its
+           bcp-only-hidden class, position-independent. Moved wholesale so
+           that check keeps working unchanged.
+         - hor-btn-diag: previously left out as "a dev-only display toggle,
+           not a persisted value another function reads back" -- that was
+           wrong, buildKeep()'s horologion branch does read it
+           (getElementById('hor-btn-diag')) to build a working Diagnostics
+           row. Moved (its own nested-group, distinct from the already-moved
+           Display Depth nested-group) so that row keeps working.
+         - East Syriac's "Active Hour" setting-group
+           (esy-active-hour-label/esy-active-date-label/esy-override-toggle)
+           -- a separate setting-group from esy-override-panel, not
+           previously covered. esy-active-date-label is read by this file's
+           own DAY_LINE_FALLBACK.eastSyriac.
+         - esy-cycle-box/esy-fast-box/esy-anaphora-box -- three separate
+           setting-groups, each read by this file's buildOrdo() eastSyriac
+           branch and written by office-ui.js's render logic; confirmed
+           both null-guard their lookups, no crash risk either way.
+         - BCP's and Horologion's own .ordo-control blocks (date-picker/
+           generic-date-picker plus their display-date/calendar-info
+           siblings and Prev/Today/Next buttons) -- still read/written by id
+           (updateDatePicker(), updateGenericDateDisplay(), setCustomDate())
+           even though neither needs its own new drawer UI, superseded by
+           the shared navigator's own stepper/picker.
+
+       Still left OUT, on purpose, confirmed unread anywhere by id: only
+       #settings-panel's "Appearance" Dark Mode checkbox (toggle-dark) --
+       the shell provides its own lane-agnostic Auto/Light/Dark control,
+       and every synthetic dark-mode toggle the shared navigator builds for
+       coptic/eastSyriac/horologion uses the shared data-app-dark-toggle
+       attribute, not this element's id; grepped the whole repo for
+       getElementById('toggle-dark') and found zero hits outside its own
+       onchange. */
     function moveLegacyStateControls() {
         var host = hosts.legacyState;
 
@@ -194,6 +227,44 @@
         var horDepthSelect = document.getElementById('hor-depth-select');
         var horDepthGroup = horDepthSelect ? horDepthSelect.closest('.nested-group') : null;
         if (horDepthGroup) host.appendChild(horDepthGroup);
+
+        // #ecumenical-devotions-section: now-empty shell, moved so
+        // toggleBcpOnly()'s/buildKeep()'s bcp-only-hidden class check
+        // keeps working (both find it by id, not position).
+        var ecoSection = document.getElementById('ecumenical-devotions-section');
+        if (ecoSection) host.appendChild(ecoSection);
+
+        // Horologion: Diagnostics button's own nested-group (distinct from
+        // the already-moved Display Depth nested-group above).
+        var horDiagBtn = document.getElementById('hor-btn-diag');
+        var horDiagGroup = horDiagBtn ? horDiagBtn.closest('.nested-group') : null;
+        if (horDiagGroup) host.appendChild(horDiagGroup);
+
+        // East Syriac: "Active Hour" setting-group (esy-active-hour-label,
+        // esy-active-date-label, esy-override-toggle) -- separate from
+        // esy-override-panel, already moved above.
+        var esyActiveLabel = document.getElementById('esy-active-hour-label');
+        var esyActiveGroup = esyActiveLabel ? esyActiveLabel.closest('.setting-group') : null;
+        if (esyActiveGroup) host.appendChild(esyActiveGroup);
+
+        // East Syriac: Cycle/Fasting/Anaphora display boxes -- three
+        // separate setting-groups.
+        ['esy-cycle-box', 'esy-fast-box', 'esy-anaphora-box'].forEach(function (id) {
+            var box = document.getElementById(id);
+            var g = box ? box.closest('.setting-group') : null;
+            if (g) host.appendChild(g);
+        });
+
+        // BCP and Horologion date-picker blocks -- no dedicated drawer UI
+        // needed (superseded by the shared navigator's own stepper/picker),
+        // but still read/written by id.
+        var bcpDatePicker = document.getElementById('date-picker');
+        var bcpOrdoControl = bcpDatePicker ? bcpDatePicker.closest('.ordo-control') : null;
+        if (bcpOrdoControl) host.appendChild(bcpOrdoControl);
+
+        var horDatePicker = document.getElementById('generic-date-picker');
+        var horOrdoControl = horDatePicker ? horDatePicker.closest('.ordo-control') : null;
+        if (horOrdoControl) host.appendChild(horOrdoControl);
     }
 
     /* ── Value rows: a native <select> standing in front of real radios ──── */
