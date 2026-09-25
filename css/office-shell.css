@@ -443,7 +443,7 @@ body.shell-v2 .shared-office-nav-appearance-card {
    is still very much alive. Left at full weight here too, for consistency,
    rather than trim rule-by-rule and invite the same class of mistake. */
 
-body.shell-v2 #main-content.app-primary-canvas {
+#main-content.app-primary-canvas {
     display: grid;
     grid-template-columns: var(--uo-rail-width) minmax(0, 1fr) var(--uo-margin-width);
     /* Rows are sized against THIS element's own fixed height (css/office.css's
@@ -1034,7 +1034,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Mobile: rail becomes a top strip, margin moves inline ────────────────── */
 
 @media (max-width: 768px) {
-    body.shell-v2 #main-content.app-primary-canvas {
+    #main-content.app-primary-canvas {
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto auto minmax(0, 1fr) auto auto;
         grid-template-areas:
@@ -1099,7 +1099,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Print: the page prints, the chrome does not ──────────────────────────── */
 
 @media print {
-    body.shell-v2 #main-content.app-primary-canvas {
+    #main-content.app-primary-canvas {
         display: block;
         min-height: 0;
         background: #fff;
